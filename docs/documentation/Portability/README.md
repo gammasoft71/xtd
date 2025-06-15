@@ -4,15 +4,15 @@ sidebar_position: 10
 
 # Portability
 
-The Portability section provide informations about Operating System supported, Compilers and Development Environment tools.
+The Portability section provides information about supported Operating Systems, compilers, and development environment tools.
 
-## C++17
+## C++20
 
-xtd support C++17 or above.
+xtd 0.2.0 and later requires **C++20 or above**.
 
-As of 2018, C++17 is the name for the most recent revision of the [ISO/IEC 14882](https://en.wikipedia.org/wiki/ISO/IEC_14882) standard for the [C++](https://en.wikipedia.org/wiki/C%2B%2B) programming language.
+As of 2020, C++20 is the name for the most recent major revision of the [ISO/IEC 14882](https://en.wikipedia.org/wiki/ISO/IEC_14882) standard for the [C++](https://en.wikipedia.org/wiki/C%2B%2B) programming language.
 
-For more information see [wikipedia](https://en.wikipedia.org/wiki/C%2B%2B17) and [cppreference](https://en.cppreference.com/).
+For more information see [wikipedia](https://en.wikipedia.org/wiki/C%2B%2B20) and [cppreference](https://en.cppreference.com/w/cpp/20).
 
 ## Libraries dependency
 
@@ -20,47 +20,49 @@ xtd is currently in development mode and the only [xtd.forms.native.wxwidgets](h
 
 wxWidgets 3.2.2.1 will be automatically installed with xtd.
 
-In the future xtd.forms will use [xtd.forms.native.win32](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.win32/README.md) on Windows, [xtd.forms.native.cocoa](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.cocoa/README.md) on macOS and [xtd.forms.native.gtk4](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.gtk4/README.md) on linux. Other backend like [xtd.forms.native.qt5](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.qt5/README.md) will be ported too.
+In the future, xtd.forms will use [xtd.forms.native.win32](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.win32/README.md) on Windows, [xtd.forms.native.cocoa](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.cocoa/README.md) on macOS, and [xtd.forms.native.gtk4](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.gtk4/README.md) on Linux. Other backends like [xtd.forms.native.qt5](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.qt5/README.md) may be ported too.
 
 ## Operating System Supported
 
-Actually xtd run on Windows, macOS, Linux, iOS and Android Operating System.
+xtd currently runs on Windows, macOS, Linux, iOS, and Android operating systems.
 
-### Windows 10 - 32 and 64 bits or later
+### Windows
 
 [![Windows](/pictures/os/Windows.png)](https://microsoft.com/windows)
 
-### macOS 10.15 (OS X Catalina) - 64 bits or later
+xtd is supported on Windows 10 or later, where Win32 APIs are used for native integration.
+
+### macOS
 
 [![macOS](/pictures/os/macOS.png)](https://apple.com/macos/)
 
-### Linux - 32 and 64 bits
+### Linux
 
-#### CentOS 7 or later
+#### CentOS
 
 [![CentOS](/pictures/os/CentOS.png)](https://centos.org)
 
-#### Debian 9.2.1 or later
+#### Debian
 
 [![Debian](/pictures/os/Debian.png)](https://debian.org)
 
-#### Elementary OS 0.4 or later
+#### Elementary
 
 [![Elementary OS](/pictures/os/ElementaryOS.png)](https://elementary.io)
 
-#### Fedora 26 or later
+#### Fedora
 
 [![Fedora](/pictures/os/Fedora.png)](https://getfedora.org)
 
-#### LinuxMint 18.2 or later
+#### LinuxMint
 
 [![LinuxMint](/pictures/os/LinuxMint.png)](https://linuxmint.com)
 
-#### Redhat 7.4 or later
+#### Redhat
 
 [![Redhat](/pictures/os/Redhat.png)](https://redhat.com)
 
-#### Ubuntu 18.04 or later
+#### Ubuntu
 
 [![Ubuntu](/pictures/os/Ubuntu.png)](https://ubuntu.com)
 
@@ -78,13 +80,17 @@ Actually xtd run on Windows, macOS, Linux, iOS and Android Operating System.
 
 [![Haiku](/pictures/os/Haiku.png)](https://haiku-os.org)
 
-### iOS 14 - 64 bits or later [manual installation]
+### iOS 64 bits [manual installation]
 
 [![iOS](/pictures/os/iOS.png)](https://apple.com/ios)
 
-### android 10 64 bits or later [manual installation]
+### Android 64 bits [manual installation]
 
 [![android](/pictures/os/Android.png)](https://android.com)
+
+### Note
+> ⚠️ **Note**  
+> While xtd can be built and run on iOS and Android, full graphical support (`xtd.forms`) is currently not available on these platforms.
 
 ## The xtd libraries portability list
 
@@ -100,39 +106,33 @@ Actually xtd run on Windows, macOS, Linux, iOS and Android Operating System.
 
 ## Tests and coverage
 
-xtd is every time tested with Continuous Integration tools.
+xtd is continuously tested with CI tools.
 
-### AppVeyor
+### GitHub Actions
 
-[![AppVeyor](/pictures/ci/AppVeyor.png)](https://ci.appveyor.com)
+[![GitHubActions](/pictures/ci/GitHubActions.png)](https://github.com/gammasoft71/xtd/actions)
 
-Configurations :
+Configurations:
 
-* Visual Studio 2019 Win32
-* Visual Studio 2019 Win64
-
-### Travis CI
-
-[![TravisCI](/pictures/ci/TravisCI.png)](https://travis-ci.com)
-
-Configurations :
-
-* macOS Xcode 11.6
-* linux g++ 9
+* **Windows**: Visual Studio 2022 (Win32 and Win64)
+* **macOS**: Xcode 14.2
+* **Linux**: GCC 11 and Clang 14
 
 ### Codecov
 
 [![Codecov](/pictures/ci/Codecov.png)](https://codecov.io)
 
+Test coverage reports are automatically uploaded to Codecov after each build.
+
 ## Development Environment Tools
 
-With CMake, xtd support many Development Environment Tools.
+With CMake, xtd supports many development environment tools.
 
-### Microsoft Visual Studio 2019 or later
+### Microsoft Visual Studio
 
 [![VisualStudio](/pictures/dev_tools/VisualStudio.png)](https://visualstudio.com)
 
-### Xcode 11.6 or later
+### Xcode 14.2 or later
 
 [![Xcode](/pictures/dev_tools/Xcode.png)](https://developer.apple.com/xcode)
 
@@ -140,23 +140,23 @@ With CMake, xtd support many Development Environment Tools.
 
 [![VisualStudioCode](/pictures/dev_tools/VisualStudioCode.png)](https://visualstudio.com)
 
-### CLion 2017.2 or later
+### CLion
 
 [![CLion](/pictures/dev_tools/CLion.png)](https://jetbrains.com/clion)
 
-### Eclipse CDT 8.0 or later
+### Eclipse CDT
 
 [![EclipseCDT](/pictures/dev_tools/EclipseCDT.png)](https://eclipse.org/cdt)
 
-### Code::Blocks 13.12 or later
+### Code::Blocks
 
 [![CodeBlocks](/pictures/dev_tools/CodeBlocks.png)](http://codeblocks.org)
 
-### KDevelop 3 or later
+### KDevelop
 
 [![KDevelop](/pictures/dev_tools/KDevelop.png)](https://kdevelop.org)
 
-### CodeLite 11 or later
+### CodeLite
 
 [![CodeLite](/pictures/dev_tools/CodeLite.png)](https://codelite.org)
 
@@ -172,16 +172,16 @@ With CMake, xtd support many Development Environment Tools.
 
 The compilers listed below are supported with xtd :
 
-* Xcode 11.6 - Apple clang version 11.0.3 or later
-* clang 10 or later
-* GCC 10 or later
-* Visual Studio 2019 RTW 16.0 or later
+* Apple Clang 14.0.0 (Xcode 14.2) or later  
+* Clang 14.0.0 or later  
+* GCC 11.0 or later  
+* Microsoft Visual Studio 2022 (MSVC 14.30) or later
 
 ## Native
 
 xtd has a thin layer by library if needed to abstract operating system. This layer is called naturally **native**.
 
-For add a new Operating System, you juste have to implement native api for the new target Operating System.
+To add support for a new operating system, you simply need to implement the corresponding native API for that target.
 
 ### Native API by library
 
