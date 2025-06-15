@@ -17,13 +17,11 @@ namespace xtd {
           assert::are_equal("color [dodger_blue]", v.to_string());
         }
         
-#if defined(__xtd__cpp_lib_char8_t)
         void test_method_(_color_operator_on_char8_ptr) {
           auto v = u8"dodger blue"_color;
           assert::is_instance_of<color>(v);
           assert::are_equal("color [dodger_blue]", v.to_string());
         }
-#endif
         
         void test_method_(_color_operator_on_char16_ptr) {
           auto v = u"dodger blue"_color;
