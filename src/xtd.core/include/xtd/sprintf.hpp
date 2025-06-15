@@ -71,7 +71,6 @@ namespace xtd {
   /// @remarks you can use std::basic_string or std::wstring with format param %%s.
   template<class ...args_t>
   xtd::string sprintf(const xtd::string& fmt, args_t&& ... args) {return xtd::string::sprintf(fmt, std::forward<args_t>(args)...);}
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Writes the text representation of the specified arguments list, to basic_string using the specified format information.
   /// @param fmt A composite format basic_string.
   /// @param args arguments list to write using format.
@@ -133,7 +132,6 @@ namespace xtd {
   /// @remarks you can use std::basic_string or std::wstring with format param %%s.
   template<class ...args_t>
   xtd::u8string sprintf(const xtd::u8string& fmt, args_t&& ... args) {return xtd::string::sprintf(fmt.to_string(), std::forward<args_t>(args)...);}
-#endif
   /// @brief Writes the text representation of the specified arguments list, to basic_string using the specified format information.
   /// @param fmt A composite format basic_string.
   /// @param args arguments list to write using format.
@@ -321,10 +319,8 @@ namespace xtd {
   /// @cond
   template<class ...args_t>
   xtd::string sprintf(const char* fmt, args_t&& ... args) {return xtd::string::sprintf(std::string {fmt}, std::forward<args_t>(args)...);}
-#if defined(__xtd__cpp_lib_char8_t)
   template<class ...args_t>
   xtd::u8string sprintf(const char8_t* fmt, args_t&& ... args) {return xtd::string::sprintf(std::u8string {fmt}, std::forward<args_t>(args)...);}
-#endif
   template<class ...args_t>
   xtd::u16string sprintf(const char16_t* fmt, args_t&& ... args) {return xtd::string::sprintf(std::u16string {fmt}, std::forward<args_t>(args)...);}
   template<class ...args_t>

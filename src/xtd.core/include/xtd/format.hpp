@@ -18,7 +18,6 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<class ...args_t>
   xtd::string format(const xtd::string& fmt, args_t&& ... args) {return xtd::string::format(fmt, std::forward<args_t>(args)...);}
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
   /// @param fmt A composite format string.
   /// @param args arguments list to write using format.
@@ -27,7 +26,6 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<class ...args_t>
   xtd::u8string format(const xtd::u8string& fmt, args_t&& ... args) {return xtd::string::format(fmt.to_string(), std::forward<args_t>(args)...);}
-#endif
   /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
   /// @param fmt A composite format string.
   /// @param args arguments list to write using format.
@@ -56,10 +54,8 @@ namespace xtd {
   /// @cond
   template<class ...args_t>
   xtd::string format(const char* fmt, args_t&& ... args) {return xtd::string::format(std::string {fmt}, std::forward<args_t>(args)...);}
-#if defined(__xtd__cpp_lib_char8_t)
   template<class ...args_t>
   xtd::u8string format(const char8_t* fmt, args_t&& ... args) {return xtd::string::format(std::u8string {fmt}, std::forward<args_t>(args)...);}
-#endif
   template<class ...args_t>
   xtd::u16string format(const char16_t* fmt, args_t&& ... args) {return xtd::string::format(std::u16string {fmt}, std::forward<args_t>(args)...);}
   template<class ...args_t>

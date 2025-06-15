@@ -7,7 +7,6 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-#if defined(__xtd__cpp_lib_char8_t)
   /// @name Aliases
   
   /// @{
@@ -27,5 +26,4 @@ namespace xtd {
   /// @ingroup xtd_core system
   using u8string_comparer = xtd::basic_string_comparer<xtd::char8>;
   /// @}
-#endif
 }

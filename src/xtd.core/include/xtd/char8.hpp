@@ -12,7 +12,6 @@ namespace xtd {
   /// @name Native types
   
   /// @{
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Represents a 8-bit unicode character.
   /// @par Header
   /// ```cpp
@@ -25,6 +24,5 @@ namespace xtd {
   /// @ingroup xtd_core types
   /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/types).
   using char8 = char8_t;
-#endif
   /// @}
 }

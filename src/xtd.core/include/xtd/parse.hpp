@@ -451,7 +451,6 @@ namespace xtd {
       return false;
     }
   }
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -467,7 +466,6 @@ namespace xtd {
       return false;
     }
   }
-#endif
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -529,7 +527,6 @@ namespace xtd {
       return false;
     }
   }
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -545,7 +542,6 @@ namespace xtd {
       return false;
     }
   }
-#endif
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -629,7 +625,6 @@ namespace xtd {
       return false;
     }
   }
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -645,7 +640,6 @@ namespace xtd {
       return false;
     }
   }
-#endif
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -707,7 +701,6 @@ namespace xtd {
       return false;
     }
   }
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -723,7 +716,6 @@ namespace xtd {
       return false;
     }
   }
-#endif
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd

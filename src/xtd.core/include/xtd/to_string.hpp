@@ -274,7 +274,6 @@ namespace xtd {
   template<class type_t, class period_t>
   inline std::string to_string(const std::chrono::duration<type_t, period_t>& value, const std::string& fmt, const std::locale& loc) {return __duration_formatter(fmt, value, loc);}
 
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd
@@ -287,7 +286,6 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
   inline std::string to_string(const char8& value, const std::string& fmt, const std::locale& loc) {return __character_formatter(fmt, value, loc);}
-#endif
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
@@ -330,17 +328,13 @@ namespace xtd {
   
   /// @cond
   std::string to_string(const char* value, const std::string& fmt, const std::locale& loc);
-#if defined(__xtd__cpp_lib_char8_t)
   std::string to_string(const char8* value, const std::string& fmt, const std::locale& loc);
-#endif
   std::string to_string(const char16* value, const std::string& fmt, const std::locale& loc);
   std::string to_string(const char32* value, const std::string& fmt, const std::locale& loc);
   std::string to_string(const wchar* value, const std::string& fmt, const std::locale& loc);
   std::string to_string(const std::string& value, const std::string& fmt, const std::locale& loc);
   std::string to_string(const xtd::string& value, const std::string& fmt, const std::locale& loc);
-#if defined(__xtd__cpp_lib_char8_t)
   std::string to_string(const std::u8string& value, const std::string& fmt, const std::locale& loc);
-#endif
   std::string to_string(const std::u16string& value, const std::string& fmt, const std::locale& loc);
   std::string to_string(const std::u32string& value, const std::string& fmt, const std::locale& loc);
   std::string to_string(const std::wstring& value, const std::string& fmt, const std::locale& loc);
@@ -770,7 +764,6 @@ namespace xtd {
   template<>
   inline std::wstring to_string(const std::wstring& value, const std::wstring& fmt, const std::locale& loc) {return __string_formatter(fmt, value, loc);}
   
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
   /// xtd
@@ -783,7 +776,6 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<>
   inline std::wstring to_string(const char8& value, const std::wstring& fmt, const std::locale& loc) {return __character_formatter(fmt, value, loc);}
-#endif
   
   /// @brief Convert a specified value into a string with specified format and locale.
   /// @par Namespace
