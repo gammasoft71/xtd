@@ -104,9 +104,7 @@ namespace xtd {
         
         /// @cond
         void push_back(const char* text);
-#if defined(__xtd__cpp_lib_char8_t)
         void push_back(const char8* text);
-#endif
         void push_back(const char16* text);
         void push_back(const char32* text);
         void push_back(const wchar* text);
