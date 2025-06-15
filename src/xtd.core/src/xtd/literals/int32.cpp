@@ -15,11 +15,9 @@ int32 xtd::literals::operator""_i32(const char* s, xtd::size n) {
   return as<int32>(string(s, s + n));
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 int32 xtd::literals::operator""_i32(const char8* s, xtd::size n) {
   return as<int32>(string(s, s + n));
 }
-#endif
 
 int32 xtd::literals::operator""_i32(const char16* s, xtd::size n) {
   return as<int32>(std::u16string(s, s + n));
@@ -45,11 +43,9 @@ int32 xtd::literals::operator""_s32(const char* s, xtd::size n) {
   return as<int32>(string(s, s + n));
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 int32 xtd::literals::operator""_s32(const char8* s, xtd::size n) {
   return as<int32>(string(s, s + n));
 }
-#endif
 
 int32 xtd::literals::operator""_s32(const char16* s, xtd::size n) {
   return as<int32>(std::u16string(s, s + n));

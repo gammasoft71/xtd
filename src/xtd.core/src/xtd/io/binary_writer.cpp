@@ -126,11 +126,9 @@ void binary_writer::write(const std::string& value) {
   write(string(value));
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 void binary_writer::write(const std::u8string& value) {
   write(string(value));
 }
-#endif
 
 void binary_writer::write(const std::u16string& value) {
   write(string(value));
@@ -148,11 +146,9 @@ void binary_writer::write(const char* value) {
   write(string(value));
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 void binary_writer::write(const char8* value) {
   write(string(value));
 }
-#endif
 
 void binary_writer::write(const char16* value) {
   write(string(value));

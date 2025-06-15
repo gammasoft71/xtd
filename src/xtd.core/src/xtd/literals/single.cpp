@@ -15,11 +15,9 @@ float xtd::literals::operator""_f(const char* s, xtd::size n) {
   return as<float>(string(s, s + n));
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 float xtd::literals::operator""_f(const char8* s, xtd::size n) {
   return as<float>(string(s, s + n));
 }
-#endif
 
 float xtd::literals::operator""_f(const char16* s, xtd::size n) {
   return as<float>(std::u16string(s, s + n));

@@ -15,11 +15,9 @@ uint32 xtd::literals::operator""_u32(const char* s, xtd::size n) {
   return as<uint32>(string(s, s + n));
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 uint32 xtd::literals::operator""_u32(const char8* s, xtd::size n) {
   return as<uint32>(string(s, s + n));
 }
-#endif
 
 uint32 xtd::literals::operator""_u32(const char16* s, xtd::size n) {
   return as<uint32>(std::u16string(s, s + n));

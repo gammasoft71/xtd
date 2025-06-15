@@ -7,11 +7,9 @@ version xtd::literals::operator""_vers(const char* s, xtd::size n) {
   return version::parse(string {s});
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 version xtd::literals::operator""_vers(const char8* s, xtd::size n) {
   return version::parse(string {s});
 }
-#endif
 
 version xtd::literals::operator""_vers(const char16* s, xtd::size n) {
   return version::parse(string {s});

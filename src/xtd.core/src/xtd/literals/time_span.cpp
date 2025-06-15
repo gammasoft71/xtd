@@ -39,11 +39,9 @@ time_span xtd::literals::operator""_ts(const char* s, xtd::size n) {
   return time_span::parse(string {s});
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 time_span xtd::literals::operator""_ts(const char8* s, xtd::size n) {
   return time_span::parse(string {s});
 }
-#endif
 
 time_span xtd::literals::operator""_ts(const char16* s, xtd::size n) {
   return time_span::parse(string {s});
