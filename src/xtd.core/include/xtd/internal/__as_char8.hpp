@@ -14,7 +14,6 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new char8 object converted from value.
@@ -966,5 +965,4 @@ namespace xtd {
   inline char8 as<char8>(wchar* value) {
     return xtd::convert::to_char8(value);
   }
-#endif
 }
