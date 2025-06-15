@@ -27,7 +27,6 @@ namespace xtd {
     /// ```
     xtd::string operator""_s(const char* s, xtd::size n);
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
     /// xtd
@@ -40,7 +39,6 @@ namespace xtd {
     /// xtd::console::out << s << xtd::environment::new_line;
     /// ```
     xtd::string operator""_s(const char8* s, xtd::size n);
-#endif
     
     /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace

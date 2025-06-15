@@ -24,7 +24,6 @@ namespace xtd {
     /// ```
     xtd::guid operator""_guid(const char* s, xtd::size n);
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into xtd::guid.
     /// @par Namespace
     /// xtd
@@ -37,7 +36,6 @@ namespace xtd {
     /// xtd::console::out << g << xtd::environment::new_line;
     /// ```
     xtd::guid operator""_guid(const char8* s, xtd::size n);
-#endif
     
     /// @brief Used to convert specified value into xtd::guid.
     /// @par Namespace

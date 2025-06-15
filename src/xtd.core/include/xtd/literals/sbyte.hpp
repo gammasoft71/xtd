@@ -51,7 +51,6 @@ namespace xtd {
     /// ```
     sbyte operator""_i8(const char* s, std::size_t n);
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
     /// xtd
@@ -63,7 +62,6 @@ namespace xtd {
     /// xtd::console::out << u8"125"_i8 << xtd::environment::new_line;
     /// ```
     sbyte operator""_i8(const char8_t* s, std::size_t n);
-#endif
     
     /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
@@ -137,7 +135,6 @@ namespace xtd {
     /// ```
     sbyte operator""_s8(const char* s, std::size_t n);
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
     /// xtd
@@ -149,7 +146,6 @@ namespace xtd {
     /// xtd::console::out << u8"125"_s8 << xtd::environment::new_line;
     /// ```
     sbyte operator""_s8(const char8_t* s, std::size_t n);
-#endif
     
     /// @brief Used to convert specified value into sbyte.
     /// @par Namespace

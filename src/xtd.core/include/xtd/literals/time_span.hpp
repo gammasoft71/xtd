@@ -128,7 +128,6 @@ namespace xtd {
     /// ```
     xtd::time_span operator""_ts(const char* s, xtd::size n);
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into xtd::time_span.
     /// @par Namespace
     /// xtd
@@ -141,7 +140,6 @@ namespace xtd {
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
     xtd::time_span operator""_ts(const char8* s, xtd::size n);
-#endif
     
     /// @brief Used to convert specified value into xtd::time_span.
     /// @par Namespace

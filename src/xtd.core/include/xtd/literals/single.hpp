@@ -51,7 +51,6 @@ namespace xtd {
     /// ```
     float operator""_f(const char* s, std::size_t n);
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
     /// xtd
@@ -63,7 +62,6 @@ namespace xtd {
     /// xtd::console::out << u8"125"_f << xtd::environment::new_line;
     /// ```
     float operator""_f(const char8_t* s, std::size_t n);
-#endif
     
     /// @brief Used to convert specified value into byte.
     /// @par Namespace

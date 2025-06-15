@@ -24,7 +24,6 @@ namespace xtd {
     /// ```
     xtd::version operator""_vers(const char* s, xtd::size n);
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into xtd::version.
     /// @par Namespace
     /// xtd
@@ -37,7 +36,6 @@ namespace xtd {
     /// xtd::console::out << v << xtd::environment::new_line;
     /// ```
     xtd::version operator""_vers(const char8* s, xtd::size n);
-#endif
     
     /// @brief Used to convert specified value into xtd::version.
     /// @par Namespace

@@ -64,7 +64,6 @@ namespace xtd {
   /// @remarks xtd::u32string implements xtd::basic_string and therefore offers the full (immutable) API of [std::u32string](https://en.cppreference.com/w/cpp/string).
   using u32string = xtd::basic_string<xtd::char32>;
   
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Represents text as a sequence of UTF-8 code units.
   /// @par Namespace
   /// xtd
@@ -75,7 +74,6 @@ namespace xtd {
   /// @remarks If you want the same mutable string class, you can use xtd::text::u8string_builder class.
   /// @remarks xtd::u8string implements xtd::basic_string and therefore offers the full (immutable) API of [std::u8string](https://en.cppreference.com/w/cpp/string).
   using u8string = xtd::basic_string<xtd::char8>;
-#endif
   
   /// @brief Represents text as a sequence of UTF-16 code unit on Windows or UTF-32 code unit on non-Windows systems.
   /// @par Namespace
