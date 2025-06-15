@@ -2,6 +2,8 @@
 /// @brief Contains __xtd_std_version definitions.
 #pragma once
 /// @cond
+#include "../check_cpp_version.hpp"
+
 #if !defined(__XTD_STD_INTERNAL__)
 #error "Do not include this file: Internal use only"
 #endif
