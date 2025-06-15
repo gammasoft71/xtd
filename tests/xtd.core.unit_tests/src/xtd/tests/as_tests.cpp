@@ -21,11 +21,9 @@ namespace xtd::tests {
       assert::is_true(is<int>(as<int>((char)'a')));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(char8_as_int) {
       assert::is_true(is<int>(as<int>((char8)'a')));
     }
-#endif
     
     void test_method_(char16_as_int) {
       assert::is_true(is<int>(as<int>((char16)'a')));

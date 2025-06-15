@@ -32,7 +32,6 @@ namespace xtd {
           assert::throws<xtd::format_exception>([] {"42str"_f;});
         }
         
-#if defined(__xtd__cpp_lib_char8_t)
         void test_method_(_f_operator_on_char8_ptr) {
           auto v = u8"42.0"_f;
           assert::is_true(is<float>(v));
@@ -42,7 +41,6 @@ namespace xtd {
         void test_method_(_f_operator_on_invalid_char8_ptr) {
           assert::throws<xtd::format_exception>([] {u8"42str"_f;});
         }
-#endif
         
         void test_method_(_f_operator_on_char16_ptr) {
           auto v = u"42.0"_f;

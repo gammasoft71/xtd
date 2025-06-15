@@ -17,13 +17,11 @@ namespace xtd {
           assert::are_equal("string", v);
         }
         
-#if defined(__xtd__cpp_lib_char8_t)
         void test_method_(_s_operator_on_char8_ptr) {
           auto v = u8"string"_s;
           assert::is_instance_of<string>(v);
           assert::are_equal("string", v);
         }
-#endif
         
         void test_method_(_s_operator_on_char16_ptr) {
           auto v = u"string"_s;

@@ -17,13 +17,11 @@ namespace xtd {
           assert::are_equal("192.168.0.1", v.to_string());
         }
         
-#if defined(__xtd__cpp_lib_char8_t)
         void test_method_(_ip_operator_on_char8_ptr) {
           auto v = u8"192.168.0.1"_ip;
           assert::is_instance_of<ip_address>(v);
           assert::are_equal("192.168.0.1", v.to_string());
         }
-#endif
         
         void test_method_(_ip_operator_on_char16_ptr) {
           auto v = u"192.168.0.1"_ip;
