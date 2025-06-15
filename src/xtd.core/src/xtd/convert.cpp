@@ -73,12 +73,10 @@ std::any convert::to_any(char value) noexcept {
   return value;
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 std::any convert::to_any(char8 value) {
   //return value;
   throw_helper::throws(exception_case::invalid_cast);
 }
-#endif
 
 std::any convert::to_any(char16 value) noexcept {
   return value;
@@ -148,11 +146,9 @@ std::any convert::to_any(const std::string& value) noexcept {
   return value;
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 std::any convert::to_any(const std::u8string& value) noexcept {
   return value;
 }
-#endif
 
 std::any convert::to_any(const std::u16string& value) noexcept {
   return value;
@@ -174,7 +170,6 @@ std::any convert::to_any(char* value) noexcept {
   return value;
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 std::any convert::to_any(const char8* value) {
   //return value;
   throw_helper::throws(exception_case::invalid_cast);
@@ -184,7 +179,6 @@ std::any convert::to_any(char8* value) {
   //return value;
   throw_helper::throws(exception_case::invalid_cast);
 }
-#endif
 
 std::any convert::to_any(const char16* value) noexcept {
   return value;
@@ -278,11 +272,9 @@ bool convert::to_boolean(char value) {
   throw_helper::throws(exception_case::invalid_cast);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 bool convert::to_boolean(char8 value) {
   throw_helper::throws(exception_case::invalid_cast);
 }
-#endif
 
 bool convert::to_boolean(char16 value) {
   throw_helper::throws(exception_case::invalid_cast);
@@ -352,11 +344,9 @@ bool convert::to_boolean(const std::string& value) {
   return string::parse<bool>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 bool convert::to_boolean(const std::u8string& value) {
   return string::parse<bool>(value);
 }
-#endif
 
 bool convert::to_boolean(const std::u16string& value) {
   return string::parse<bool>(value);
@@ -378,7 +368,6 @@ bool convert::to_boolean(char* value) {
   return string::parse<bool>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 bool convert::to_boolean(const char8* value) {
   return string::parse<bool>(value);
 }
@@ -386,7 +375,6 @@ bool convert::to_boolean(const char8* value) {
 bool convert::to_boolean(char8* value) {
   return string::parse<bool>(value);
 }
-#endif
 
 bool convert::to_boolean(const char16* value) {
   return string::parse<bool>(value);
@@ -432,11 +420,9 @@ xtd::byte convert::to_byte(char value) noexcept {
   return static_cast<xtd::byte>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 xtd::byte convert::to_byte(char8 value) noexcept {
   return static_cast<xtd::byte>(value);
 }
-#endif
 
 xtd::byte convert::to_byte(char16 value) {
   if (value > static_cast<char16>(std::numeric_limits<xtd::byte>::max())) throw_helper::throws(exception_case::overflow);
@@ -531,11 +517,9 @@ xtd::byte convert::to_byte(const std::string& value) {
   return string::parse<xtd::byte>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 xtd::byte convert::to_byte(const std::u8string& value) {
   return string::parse<xtd::byte>(value);
 }
-#endif
 
 xtd::byte convert::to_byte(const std::u16string& value) {
   return string::parse<xtd::byte>(value);
@@ -557,7 +541,6 @@ xtd::byte convert::to_byte(char* value) {
   return string::parse<xtd::byte>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 xtd::byte convert::to_byte(const char8* value) {
   return string::parse<xtd::byte>(value);
 }
@@ -565,7 +548,6 @@ xtd::byte convert::to_byte(const char8* value) {
 xtd::byte convert::to_byte(char8* value) {
   return string::parse<xtd::byte>(value);
 }
-#endif
 
 xtd::byte convert::to_byte(const char16* value) {
   return string::parse<xtd::byte>(value);
@@ -611,11 +593,9 @@ char convert::to_char(char value) noexcept {
   return value;
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 char convert::to_char(char8 value) noexcept {
   return static_cast<char>(value);
 }
-#endif
 
 char convert::to_char(char16 value) {
   if (value > static_cast<char16>(255)) throw_helper::throws(exception_case::overflow);
@@ -702,12 +682,10 @@ char convert::to_char(const std::string& value) {
   return to_char(value[0]);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 char convert::to_char(const std::u8string& value) {
   if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
-#endif
 
 char convert::to_char(const std::u16string& value) {
   if (value.size() != 1) throw_helper::throws(exception_case::format);
@@ -734,7 +712,6 @@ char convert::to_char(char* value) {
   return to_char(value[0]);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 char convert::to_char(const char8* value) {
   if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
@@ -744,7 +721,6 @@ char convert::to_char(char8* value) {
   if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
-#endif
 
 char convert::to_char(const char16* value) {
   if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
@@ -776,7 +752,6 @@ char convert::to_char(wchar* value) {
   return to_char(value[0]);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 char8 convert::to_char8(std::any value) {
   throw_helper::throws(exception_case::invalid_cast);
 }
@@ -951,7 +926,6 @@ char8 convert::to_char8(wchar* value) {
   if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
-#endif
 
 char16 convert::to_char16(std::any value) {
   try {
@@ -977,11 +951,9 @@ char16 convert::to_char16(char value) noexcept {
   return static_cast<char16>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 char16 convert::to_char16(char8 value) noexcept {
   return static_cast<char16>(value);
 }
-#endif
 
 char16 convert::to_char16(char16 value) noexcept {
   return value;
@@ -1065,12 +1037,10 @@ char16 convert::to_char16(const std::string& value) {
   return to_char(value[0]);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 char16 convert::to_char16(const std::u8string& value) {
   if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
-#endif
 
 char16 convert::to_char16(const std::u16string& value) {
   if (value.size() != 1) throw_helper::throws(exception_case::format);
@@ -1097,7 +1067,6 @@ char16 convert::to_char16(char* value) {
   return to_char(value[0]);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 char16 convert::to_char16(const char8* value) {
   if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
@@ -1107,7 +1076,6 @@ char16 convert::to_char16(char8* value) {
   if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
-#endif
 
 char16 convert::to_char16(const char16* value) {
   if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
@@ -1163,11 +1131,9 @@ char32 convert::to_char32(char value) noexcept {
   return static_cast<char32>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 char32 convert::to_char32(char8 value) noexcept {
   return static_cast<char32>(value);
 }
-#endif
 
 char32 convert::to_char32(char16 value) noexcept {
   return static_cast<char32>(value);
@@ -1249,12 +1215,10 @@ char32 convert::to_char32(const std::string& value) {
   return to_char(value[0]);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 char32 convert::to_char32(const std::u8string& value) {
   if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
-#endif
 
 char32 convert::to_char32(const std::u16string& value) {
   if (value.size() != 1) throw_helper::throws(exception_case::format);
@@ -1281,7 +1245,6 @@ char32 convert::to_char32(char* value) {
   return to_char(value[0]);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 char32 convert::to_char32(const char8* value) {
   if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
@@ -1291,7 +1254,6 @@ char32 convert::to_char32(char8* value) {
   if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
-#endif
 
 char32 convert::to_char32(const char16* value) {
   if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
@@ -1347,11 +1309,9 @@ wchar convert::to_wchar(char value) noexcept {
   return static_cast<wchar>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 wchar convert::to_wchar(char8 value) noexcept {
   return static_cast<wchar>(value);
 }
-#endif
 
 wchar convert::to_wchar(char16 value) noexcept {
   return static_cast<wchar>(value);
@@ -1435,12 +1395,10 @@ wchar convert::to_wchar(const std::string& value) {
   return to_char(value[0]);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 wchar convert::to_wchar(const std::u8string& value) {
   if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
-#endif
 
 wchar convert::to_wchar(const std::u16string& value) {
   if (value.size() != 1) throw_helper::throws(exception_case::format);
@@ -1467,7 +1425,6 @@ wchar convert::to_wchar(char* value) {
   return to_char(value[0]);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 wchar convert::to_wchar(const char8* value) {
   if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
@@ -1477,7 +1434,6 @@ wchar convert::to_wchar(char8* value) {
   if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
-#endif
 
 wchar convert::to_wchar(const char16* value) {
   if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
@@ -1529,11 +1485,9 @@ decimal convert::to_decimal(char value) noexcept {
   return static_cast<decimal>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 decimal convert::to_decimal(char8 value) noexcept {
   return static_cast<decimal>(value);
 }
-#endif
 
 decimal convert::to_decimal(char16 value) noexcept {
   return static_cast<decimal>(value);
@@ -1603,11 +1557,9 @@ decimal convert::to_decimal(const std::string& value) {
   return string::parse<decimal>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 decimal convert::to_decimal(const std::u8string& value) {
   return string::parse<decimal>(value);
 }
-#endif
 
 decimal convert::to_decimal(const std::u16string& value) {
   return string::parse<decimal>(value);
@@ -1629,7 +1581,6 @@ decimal convert::to_decimal(char* value) {
   return string::parse<decimal>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 decimal convert::to_decimal(const char8* value) {
   return string::parse<decimal>(value);
 }
@@ -1637,7 +1588,6 @@ decimal convert::to_decimal(const char8* value) {
 decimal convert::to_decimal(char8* value) {
   return string::parse<decimal>(value);
 }
-#endif
 
 decimal convert::to_decimal(const char16* value) {
   return string::parse<decimal>(value);
@@ -1683,11 +1633,9 @@ double convert::to_double(char value) noexcept {
   return static_cast<double>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 double convert::to_double(char8 value) noexcept {
   return static_cast<double>(value);
 }
-#endif
 
 double convert::to_double(char16 value) noexcept {
   return static_cast<double>(value);
@@ -1757,11 +1705,9 @@ double convert::to_double(const std::string& value) {
   return string::parse<double>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 double convert::to_double(const std::u8string& value) {
   return string::parse<double>(value);
 }
-#endif
 
 double convert::to_double(const std::u16string& value) {
   return string::parse<double>(value);
@@ -1783,7 +1729,6 @@ double convert::to_double(char* value) {
   return string::parse<double>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 double convert::to_double(const char8* value) {
   return string::parse<double>(value);
 }
@@ -1791,7 +1736,6 @@ double convert::to_double(const char8* value) {
 double convert::to_double(char8* value) {
   return string::parse<double>(value);
 }
-#endif
 
 double convert::to_double(const char16* value) {
   return string::parse<double>(value);
@@ -1837,11 +1781,9 @@ float convert::to_single(char value) noexcept {
   return static_cast<float>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 float convert::to_single(char8 value) noexcept {
   return static_cast<float>(value);
 }
-#endif
 
 float convert::to_single(char16 value) noexcept {
   return static_cast<float>(value);
@@ -1911,11 +1853,9 @@ float convert::to_single(const std::string& value) {
   return string::parse<float>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 float convert::to_single(const std::u8string& value) {
   return string::parse<float>(value);
 }
-#endif
 
 float convert::to_single(const std::u16string& value) {
   return string::parse<float>(value);
@@ -1937,7 +1877,6 @@ float convert::to_single(char* value) {
   return string::parse<float>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 float convert::to_single(const char8* value) {
   return string::parse<float>(value);
 }
@@ -1945,7 +1884,6 @@ float convert::to_single(const char8* value) {
 float convert::to_single(char8* value) {
   return string::parse<float>(value);
 }
-#endif
 
 float convert::to_single(const char16* value) {
   return string::parse<float>(value);
@@ -1991,11 +1929,9 @@ int16 convert::to_int16(char value) noexcept {
   return static_cast<int16>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 int16 convert::to_int16(char8 value) noexcept {
   return static_cast<int16>(value);
 }
-#endif
 
 int16 convert::to_int16(char16 value) noexcept {
   return static_cast<int16>(value);
@@ -2086,11 +2022,9 @@ int16 convert::to_int16(const std::string& value) {
   return string::parse<int16>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 int16 convert::to_int16(const std::u8string& value) {
   return string::parse<int16>(value);
 }
-#endif
 
 int16 convert::to_int16(const std::u16string& value) {
   return string::parse<int16>(value);
@@ -2112,7 +2046,6 @@ int16 convert::to_int16(char* value) {
   return string::parse<int16>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 int16 convert::to_int16(const char8* value) {
   return string::parse<int16>(value);
 }
@@ -2120,7 +2053,6 @@ int16 convert::to_int16(const char8* value) {
 int16 convert::to_int16(char8* value) {
   return string::parse<int16>(value);
 }
-#endif
 
 int16 convert::to_int16(const char16* value) {
   return string::parse<int16>(value);
@@ -2166,11 +2098,9 @@ int32 convert::to_int32(char value) noexcept {
   return static_cast<int32>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 int32 convert::to_int32(char8 value) noexcept {
   return static_cast<int32>(value);
 }
-#endif
 
 int32 convert::to_int32(char16 value) noexcept {
   return static_cast<int32>(value);
@@ -2257,11 +2187,9 @@ int32 convert::to_int32(const std::string& value) {
   return string::parse<int32>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 int32 convert::to_int32(const std::u8string& value) {
   return string::parse<int32>(value);
 }
-#endif
 
 int32 convert::to_int32(const std::u16string& value) {
   return string::parse<int32>(value);
@@ -2283,7 +2211,6 @@ int32 convert::to_int32(char* value) {
   return string::parse<int32>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 int32 convert::to_int32(const char8* value) {
   return string::parse<int32>(value);
 }
@@ -2291,7 +2218,6 @@ int32 convert::to_int32(const char8* value) {
 int32 convert::to_int32(char8* value) {
   return string::parse<int32>(value);
 }
-#endif
 
 int32 convert::to_int32(const char16* value) {
   return string::parse<int32>(value);
@@ -2337,11 +2263,9 @@ int64 convert::to_int64(char value) noexcept {
   return static_cast<int64>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 int64 convert::to_int64(char8 value) noexcept {
   return static_cast<int64>(value);
 }
-#endif
 
 int64 convert::to_int64(char16 value) noexcept {
   return static_cast<int64>(value);
@@ -2423,11 +2347,9 @@ int64 convert::to_int64(const std::string& value) {
   return string::parse<int64>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 int64 convert::to_int64(const std::u8string& value) {
   return string::parse<int64>(value);
 }
-#endif
 
 int64 convert::to_int64(const std::u16string& value) {
   return string::parse<int64>(value);
@@ -2449,7 +2371,6 @@ int64 convert::to_int64(char* value) {
   return string::parse<int64>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 int64 convert::to_int64(const char8* value) {
   return string::parse<int64>(value);
 }
@@ -2457,7 +2378,6 @@ int64 convert::to_int64(const char8* value) {
 int64 convert::to_int64(char8* value) {
   return string::parse<int64>(value);
 }
-#endif
 
 int64 convert::to_int64(const char16* value) {
   return string::parse<int64>(value);
@@ -2503,11 +2423,9 @@ slong convert::to_llong(char value) noexcept {
   return static_cast<slong>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 slong convert::to_llong(char8 value) noexcept {
   return static_cast<slong>(value);
 }
-#endif
 
 slong convert::to_llong(char16 value) noexcept {
   return static_cast<slong>(value);
@@ -2589,11 +2507,9 @@ slong convert::to_llong(const std::string& value) {
   return string::parse<slong>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 slong convert::to_llong(const std::u8string& value) {
   return string::parse<slong>(value);
 }
-#endif
 
 slong convert::to_llong(const std::u16string& value) {
   return string::parse<slong>(value);
@@ -2615,7 +2531,6 @@ slong convert::to_llong(char* value) {
   return string::parse<slong>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 slong convert::to_llong(const char8* value) {
   return string::parse<slong>(value);
 }
@@ -2623,7 +2538,6 @@ slong convert::to_llong(const char8* value) {
 slong convert::to_llong(char8* value) {
   return string::parse<slong>(value);
 }
-#endif
 
 slong convert::to_llong(const char16* value) {
   return string::parse<slong>(value);
@@ -2669,11 +2583,9 @@ sbyte convert::to_sbyte(char value) noexcept {
   return static_cast<sbyte>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 sbyte convert::to_sbyte(char8 value) noexcept {
   return static_cast<sbyte>(value);
 }
-#endif
 
 sbyte convert::to_sbyte(char16 value) {
   if (value > static_cast<char16>(std::numeric_limits<sbyte>::max())) throw_helper::throws(exception_case::overflow);
@@ -2767,11 +2679,9 @@ sbyte convert::to_sbyte(const std::string& value) {
   return string::parse<sbyte>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 sbyte convert::to_sbyte(const std::u8string& value) {
   return string::parse<sbyte>(value);
 }
-#endif
 
 sbyte convert::to_sbyte(const std::u16string& value) {
   return string::parse<sbyte>(value);
@@ -2793,7 +2703,6 @@ sbyte convert::to_sbyte(char* value) {
   return string::parse<sbyte>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 sbyte convert::to_sbyte(const char8* value) {
   return string::parse<sbyte>(value);
 }
@@ -2801,7 +2710,6 @@ sbyte convert::to_sbyte(const char8* value) {
 sbyte convert::to_sbyte(char8* value) {
   return string::parse<sbyte>(value);
 }
-#endif
 
 sbyte convert::to_sbyte(const char16* value) {
   return string::parse<sbyte>(value);
@@ -2847,11 +2755,9 @@ uint16 convert::to_uint16(char value) noexcept {
   return static_cast<uint16>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 uint16 convert::to_uint16(char8 value) noexcept {
   return static_cast<uint16>(value);
 }
-#endif
 
 uint16 convert::to_uint16(char16 value) noexcept {
   return static_cast<uint16>(value);
@@ -2943,11 +2849,9 @@ uint16 convert::to_uint16(const std::string& value) {
   return string::parse<uint16>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 uint16 convert::to_uint16(const std::u8string& value) {
   return string::parse<uint16>(value);
 }
-#endif
 
 uint16 convert::to_uint16(const std::u16string& value) {
   return string::parse<uint16>(value);
@@ -2969,7 +2873,6 @@ uint16 convert::to_uint16(char* value) {
   return string::parse<uint16>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 uint16 convert::to_uint16(const char8* value) {
   return string::parse<uint16>(value);
 }
@@ -2977,7 +2880,6 @@ uint16 convert::to_uint16(const char8* value) {
 uint16 convert::to_uint16(char8* value) {
   return string::parse<uint16>(value);
 }
-#endif
 
 uint16 convert::to_uint16(const char16* value) {
   return string::parse<uint16>(value);
@@ -3023,11 +2925,9 @@ uint32 convert::to_uint32(char value) noexcept {
   return static_cast<uint32>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 uint32 convert::to_uint32(char8 value) noexcept {
   return static_cast<uint32>(value);
 }
-#endif
 
 uint32 convert::to_uint32(char16 value) noexcept {
   return static_cast<uint32>(value);
@@ -3117,11 +3017,9 @@ uint32 convert::to_uint32(const std::string& value) {
   return string::parse<uint32>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 uint32 convert::to_uint32(const std::u8string& value) {
   return string::parse<uint32>(value);
 }
-#endif
 
 uint32 convert::to_uint32(const std::u16string& value) {
   return string::parse<uint32>(value);
@@ -3143,7 +3041,6 @@ uint32 convert::to_uint32(char* value) {
   return string::parse<uint32>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 uint32 convert::to_uint32(const char8* value) {
   return string::parse<uint32>(value);
 }
@@ -3151,7 +3048,6 @@ uint32 convert::to_uint32(const char8* value) {
 uint32 convert::to_uint32(char8* value) {
   return string::parse<uint32>(value);
 }
-#endif
 
 uint32 convert::to_uint32(const char16* value) {
   return string::parse<uint32>(value);
@@ -3197,11 +3093,9 @@ uint64 convert::to_uint64(char value) noexcept {
   return static_cast<uint64>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 uint64 convert::to_uint64(char8 value) noexcept {
   return static_cast<uint64>(value);
 }
-#endif
 
 uint64 convert::to_uint64(char16 value) noexcept {
   return static_cast<uint64>(value);
@@ -3289,11 +3183,9 @@ uint64 convert::to_uint64(const string& value, xtd::byte from_base) {
   }
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 uint64 convert::to_uint64(const std::u8string& value) {
   return string::parse<uint64>(value);
 }
-#endif
 
 uint64 convert::to_uint64(const std::u16string& value) {
   return string::parse<uint64>(value);
@@ -3315,7 +3207,6 @@ uint64 convert::to_uint64(char* value) {
   return string::parse<uint64>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 uint64 convert::to_uint64(const char8* value) {
   return string::parse<uint64>(value);
 }
@@ -3323,7 +3214,6 @@ uint64 convert::to_uint64(const char8* value) {
 uint64 convert::to_uint64(char8* value) {
   return string::parse<uint64>(value);
 }
-#endif
 
 uint64 convert::to_uint64(const char16* value) {
   return string::parse<uint64>(value);
@@ -3369,11 +3259,9 @@ xtd::ulong convert::to_ullong(char value) noexcept {
   return static_cast<xtd::ulong>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 xtd::ulong convert::to_ullong(char8 value) noexcept {
   return static_cast<xtd::ulong>(value);
 }
-#endif
 
 xtd::ulong convert::to_ullong(char16 value) noexcept {
   return static_cast<xtd::ulong>(value);
@@ -3461,11 +3349,9 @@ xtd::ulong convert::to_ullong(const std::string& value) {
   return string::parse<xtd::ulong>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 xtd::ulong convert::to_ullong(const std::u8string& value) {
   return string::parse<xtd::ulong>(value);
 }
-#endif
 
 xtd::ulong convert::to_ullong(const std::u16string& value) {
   return string::parse<xtd::ulong>(value);
@@ -3487,7 +3373,6 @@ xtd::ulong convert::to_ullong(char* value) {
   return string::parse<xtd::ulong>(value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 xtd::ulong convert::to_ullong(const char8* value) {
   return string::parse<xtd::ulong>(value);
 }
@@ -3495,7 +3380,6 @@ xtd::ulong convert::to_ullong(const char8* value) {
 xtd::ulong convert::to_ullong(char8* value) {
   return string::parse<xtd::ulong>(value);
 }
-#endif
 
 xtd::ulong convert::to_ullong(const char16* value) {
   return string::parse<xtd::ulong>(value);
@@ -3547,11 +3431,9 @@ string convert::to_string(char value) noexcept {
   return string::format("{}", value);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 string convert::to_string(char8 value) noexcept {
   return string::format("{}", value);
 }
-#endif
 
 string convert::to_string(char16 value) noexcept {
   return string::format("{}", value);
@@ -3711,11 +3593,9 @@ string convert::to_string(const std::string& value) {
   return value;
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 string convert::to_string(const std::u8string& value) {
   return value;
 }
-#endif
 
 string convert::to_string(const std::u16string& value) {
   return value;
@@ -3737,7 +3617,6 @@ string convert::to_string(char* value) {
   return value;
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 string convert::to_string(const char8* value) {
   return value;
 }
@@ -3745,7 +3624,6 @@ string convert::to_string(const char8* value) {
 string convert::to_string(char8* value) {
   return value;
 }
-#endif
 
 string convert::to_string(const char16* value) {
   return value;
