@@ -7,7 +7,6 @@ using namespace xtd;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
-#if defined(__xtd__cpp_lib_char8_t)
   class test_class_(format_u8string_string_tests) {
     void test_method_(format_string_with_default_argument) {
       assert::are_equal(u8"string", format(u8"{0}", "string"));
@@ -57,5 +56,4 @@ namespace xtd::tests {
       assert::are_equal(u8"string", format(u8"{}", std::wstring(L"string")));
     }
   };
-#endif
 }

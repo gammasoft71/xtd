@@ -36,12 +36,10 @@ namespace xtd::tests {
       assert::are_equal('a', std::any_cast<char>(convert::to_any(value)));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_any_from_char8) {
       char8 value = u8'a';
       assert::throws<invalid_cast_exception>([&] {convert::to_any(value);});
     }
-#endif
     
     void test_method_(to_any_from_char16) {
       char16 value = u'a';
@@ -128,12 +126,10 @@ namespace xtd::tests {
       assert::are_equal("42", std::any_cast<std::string>(convert::to_any(value)));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_any_from_u8string) {
       std::u8string value = u8"42";
       assert::are_equal(u8"42", std::any_cast<std::u8string>(convert::to_any(value)));
     }
-#endif
     
     void test_method_(to_any_from_u16string) {
       std::u16string value = u"42";
@@ -155,12 +151,10 @@ namespace xtd::tests {
       assert::are_equal("42", std::any_cast<const char*>(convert::to_any(value)));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_any_from_literal_char8) {
       const char8* value = u8"42";
       assert::throws<invalid_cast_exception>([&] {convert::to_any(value);});
     }
-#endif
     
     void test_method_(to_any_from_literal_char16) {
       const char16* value = u"42";
@@ -213,12 +207,10 @@ namespace xtd::tests {
       assert::throws<invalid_cast_exception>([&] {convert::to_boolean(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_boolean_from_char8) {
       char8 value = u8'a';
       assert::throws<invalid_cast_exception>([&] {convert::to_boolean(value);});
     }
-#endif
     
     void test_method_(to_boolean_from_char16) {
       char16 value = u'a';
@@ -337,7 +329,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_boolean(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_boolean_from_u8string) {
       std::u8string value = u8"true";
       assert::is_true(convert::to_boolean(value));
@@ -346,7 +337,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_boolean(value);});
     }
-#endif
     
     void test_method_(to_boolean_from_u16string) {
       std::u16string value = u"true";
@@ -384,7 +374,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_boolean(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_boolean_from_literal_char8) {
       const char8* value = u8"true";
       assert::is_true(convert::to_boolean(value));
@@ -393,7 +382,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_boolean(value);});
     }
-#endif
     
     void test_method_(to_boolean_from_literal_char16) {
       const char16* value = u"true";
@@ -462,14 +450,12 @@ namespace xtd::tests {
       assert::is_zero(convert::to_byte(value));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_byte_from_char8) {
       char8 value = u8'a';
       assert::are_equal(97u, convert::to_byte(value));
       value = 0;
       assert::is_zero(convert::to_byte(value));
     }
-#endif
     
     void test_method_(to_byte_from_char16) {
       char16 value = u'a';
@@ -658,7 +644,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_byte(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_byte_from_u8string) {
       std::u8string value = u8"42";
       assert::are_equal(42u, convert::to_byte(value));
@@ -667,7 +652,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_byte(value);});
     }
-#endif
     
     void test_method_(to_byte_from_u16string) {
       std::u16string value = u"42";
@@ -705,7 +689,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_byte(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_byte_from_literal_char8) {
       const char8* value = u8"42";
       assert::are_equal(42u, convert::to_byte(value));
@@ -714,7 +697,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_byte(value);});
     }
-#endif
     
     void test_method_(to_byte_from_literal_char16) {
       const char16* value = u"42";
@@ -781,14 +763,12 @@ namespace xtd::tests {
       assert::is_zero(convert::to_char(value));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_char_from_char8) {
       char8 value = u8'a';
       assert::are_equal('a', convert::to_char(value));
       value = 0;
       assert::is_zero(convert::to_char(value));
     }
-#endif
     
     void test_method_(to_char_from_char16) {
       char16 value = u'a';
@@ -965,14 +945,12 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_char(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_char_from_u8string) {
       std::u8string value = u8"a";
       assert::are_equal('a', convert::to_char(value));
       value = u8"ab";
       assert::throws<format_exception>([&] {convert::to_char(value);});
     }
-#endif
     
     void test_method_(to_char_from_u16string) {
       std::u16string value = u"a";
@@ -1002,14 +980,12 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_char(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_char_from_literal_char8) {
       const char8* value = u8"a";
       assert::are_equal('a', convert::to_char(value));
       value = u8"ab";
       assert::throws<format_exception>([&] {convert::to_char(value);});
     }
-#endif
     
     void test_method_(to_char_from_literal_char16) {
       const char16* value = u"a";
@@ -1039,7 +1015,6 @@ namespace xtd::tests {
       assert::is_zero(convert::to_char(value));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_char8_from_any) {
       // Cannot build on macOS: std::any with char8 does not link!
       //std::any value = u8'a';
@@ -1321,7 +1296,6 @@ namespace xtd::tests {
       value = values::zero;
       assert::is_zero(convert::to_char8(value));
     }
-#endif
     
     void test_method_(to_char16_from_any) {
       std::any value = u'a';
@@ -1354,14 +1328,12 @@ namespace xtd::tests {
       assert::is_zero(convert::to_char16(value));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_char16_from_char8) {
       char8 value = u8'a';
       assert::are_equal(u'a', convert::to_char16(value));
       value = 0;
       assert::is_zero(convert::to_char16(value));
     }
-#endif
     
     void test_method_(to_char16_from_char16) {
       char16 value = u'a';
@@ -1530,14 +1502,12 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_char16(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_char16_from_u8string) {
       std::u8string value = u8"a";
       assert::are_equal(u'a', convert::to_char16(value));
       value = u8"ab";
       assert::throws<format_exception>([&] {convert::to_char16(value);});
     }
-#endif
     
     void test_method_(to_char16_from_u16string) {
       std::u16string value = u"a";
@@ -1567,14 +1537,12 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_char16(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_char16_from_literal_char8) {
       const char8* value = u8"a";
       assert::are_equal(u'a', convert::to_char16(value));
       value = u8"ab";
       assert::throws<format_exception>([&] {convert::to_char16(value);});
     }
-#endif
     
     void test_method_(to_char16_from_literal_char16) {
       const char16* value = u"a";
@@ -1635,14 +1603,12 @@ namespace xtd::tests {
       assert::is_zero(convert::to_char32(value));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_char32_from_char8) {
       char8 value = u8'a';
       assert::are_equal(U'a', convert::to_char32(value));
       value = 0;
       assert::is_zero(convert::to_char32(value));
     }
-#endif
     
     void test_method_(to_char32_from_char16) {
       char16 value = u'a';
@@ -1799,14 +1765,12 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_char32(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_char32_from_u8string) {
       std::u8string value = u8"a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = u8"ab";
       assert::throws<format_exception>([&] {convert::to_char32(value);});
     }
-#endif
     
     void test_method_(to_char32_from_u16string) {
       std::u16string value = u"a";
@@ -1836,14 +1800,12 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_char32(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_char32_from_literal_char8) {
       const char8* value = u8"a";
       assert::are_equal(U'a', convert::to_char32(value));
       value = u8"ab";
       assert::throws<format_exception>([&] {convert::to_char32(value);});
     }
-#endif
     
     void test_method_(to_char32_from_literal_char16) {
       const char16* value = u"a";
@@ -1904,14 +1866,12 @@ namespace xtd::tests {
       assert::is_zero(convert::to_wchar(value));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_wchar_from_char8) {
       char8 value = u8'a';
       assert::are_equal(L'a', convert::to_wchar(value));
       value = 0;
       assert::is_zero(convert::to_wchar(value));
     }
-#endif
     
     void test_method_(to_wchar_from_char16) {
       char16 value = u'a';
@@ -2080,14 +2040,12 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_wchar(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_wchar_from_u8string) {
       std::u8string value = u8"a";
       assert::are_equal(L'a', convert::to_wchar(value));
       value = u8"ab";
       assert::throws<format_exception>([&] {convert::to_wchar(value);});
     }
-#endif
     
     void test_method_(to_wchar_from_u16string) {
       std::u16string value = u"a";
@@ -2117,14 +2075,12 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_wchar(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_wchar_from_literal_char8) {
       const char8* value = u8"a";
       assert::are_equal(L'a', convert::to_wchar(value));
       value = u8"ab";
       assert::throws<format_exception>([&] {convert::to_wchar(value);});
     }
-#endif
     
     void test_method_(to_wchar_from_literal_char16) {
       const char16* value = u"a";
@@ -2187,14 +2143,12 @@ namespace xtd::tests {
       assert::is_zero(convert::to_decimal(value));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_decimal_from_char8) {
       char8 value = u8'a';
       assert::are_equal(97.0l, convert::to_decimal(value));
       value = 0;
       assert::is_zero(convert::to_decimal(value));
     }
-#endif
     
     void test_method_(to_decimal_from_char16) {
       char16 value = u'a';
@@ -2320,7 +2274,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_decimal(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_decimal_from_u8string) {
       std::u8string value = u8"42.0";
       assert::are_equal(42.0l, convert::to_decimal(value));
@@ -2329,7 +2282,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_decimal(value);});
     }
-#endif
     
     void test_method_(to_decimal_from_u16string) {
       std::u16string value = u"42.0";
@@ -2367,7 +2319,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_decimal(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_decimal_from_literal_char8) {
       const char8* value = u8"42.0";
       assert::are_equal(42.0l, convert::to_decimal(value));
@@ -2376,7 +2327,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_decimal(value);});
     }
-#endif
     
     void test_method_(to_decimal_from_literal_char16) {
       const char16* value = u"42.0";
@@ -2445,14 +2395,12 @@ namespace xtd::tests {
       assert::is_zero(convert::to_double(value));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_double_from_char8) {
       char8 value = u8'a';
       assert::are_equal(97.0, convert::to_double(value));
       value = 0;
       assert::is_zero(convert::to_double(value));
     }
-#endif
     
     void test_method_(to_double_from_char16) {
       char16 value = u'a';
@@ -2578,7 +2526,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_double(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_double_from_u8string) {
       std::u8string value = u8"42.0";
       assert::are_equal(42.0, convert::to_double(value));
@@ -2587,7 +2534,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_double(value);});
     }
-#endif
     
     void test_method_(to_double_from_u16string) {
       std::u16string value = u"42.0";
@@ -2625,7 +2571,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_double(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_double_from_literal_char8) {
       const char8* value = u8"42.0";
       assert::are_equal(42.0, convert::to_double(value));
@@ -2634,7 +2579,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_double(value);});
     }
-#endif
     
     void test_method_(to_double_from_literal_char16) {
       const char16* value = u"42.0";
@@ -2703,14 +2647,12 @@ namespace xtd::tests {
       assert::is_zero(convert::to_single(value));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_single_from_char8) {
       char8 value = u8'a';
       assert::are_equal(97.0f, convert::to_single(value));
       value = 0;
       assert::is_zero(convert::to_single(value));
     }
-#endif
     
     void test_method_(to_single_from_char16) {
       char16 value = u'a';
@@ -2836,7 +2778,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_single(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_single_from_u8string) {
       std::u8string value = u8"42.0";
       assert::are_equal(42.0f, convert::to_single(value));
@@ -2845,7 +2786,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_single(value);});
     }
-#endif
     
     void test_method_(to_single_from_u16string) {
       std::u16string value = u"42.0";
@@ -2883,7 +2823,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_single(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_single_from_literal_char8) {
       const char8* value = u8"42.0";
       assert::are_equal(42.0f, convert::to_single(value));
@@ -2892,7 +2831,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_single(value);});
     }
-#endif
     
     void test_method_(to_single_from_literal_char16) {
       const char16* value = u"42.0";
@@ -2961,14 +2899,12 @@ namespace xtd::tests {
       assert::is_zero(convert::to_int16(value));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_int16_from_char8) {
       char8 value = u8'a';
       assert::are_equal(97, convert::to_int16(value));
       value = 0;
       assert::is_zero(convert::to_int16(value));
     }
-#endif
     
     void test_method_(to_int16_from_char16) {
       char16 value = u'a';
@@ -3135,7 +3071,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_int16(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_int16_from_u8string) {
       std::u8string value = u8"42";
       assert::are_equal(42, convert::to_int16(value));
@@ -3144,7 +3079,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_int16(value);});
     }
-#endif
     
     void test_method_(to_int16_from_u16string) {
       std::u16string value = u"42";
@@ -3182,7 +3116,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_int16(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_int16_from_literal_char8) {
       const char8* value = u8"42";
       assert::are_equal(42, convert::to_int16(value));
@@ -3191,7 +3124,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_int16(value);});
     }
-#endif
     
     void test_method_(to_int16_from_literal_char16) {
       const char16* value = u"42";
@@ -3260,14 +3192,12 @@ namespace xtd::tests {
       assert::is_zero(convert::to_int32(value));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_int32_from_char8) {
       char8 value = u8'a';
       assert::are_equal(97, convert::to_int32(value));
       value = 0;
       assert::is_zero(convert::to_int32(value));
     }
-#endif
     
     void test_method_(to_int32_from_char16) {
       char16 value = u'a';
@@ -3424,7 +3354,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_int32(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_int32_from_u8string) {
       std::u8string value = u8"42";
       assert::are_equal(42, convert::to_int32(value));
@@ -3433,7 +3362,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_int32(value);});
     }
-#endif
     
     void test_method_(to_int32_from_u16string) {
       std::u16string value = u"42";
@@ -3471,7 +3399,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_int32(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_int32_from_literal_char8) {
       const char8* value = u8"42";
       assert::are_equal(42, convert::to_int32(value));
@@ -3480,7 +3407,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_int32(value);});
     }
-#endif
     
     void test_method_(to_int32_from_literal_char16) {
       const char16* value = u"42";
@@ -3549,14 +3475,12 @@ namespace xtd::tests {
       assert::is_zero(convert::to_int64(value));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_int64_from_char8) {
       char8 value = u8'a';
       assert::are_equal(97l, convert::to_int64(value));
       value = 0;
       assert::is_zero(convert::to_int64(value));
     }
-#endif
     
     void test_method_(to_int64_from_char16) {
       char16 value = u'a';
@@ -3703,7 +3627,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_int64(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_int64_from_u8string) {
       std::u8string value = u8"42";
       assert::are_equal(42l, convert::to_int64(value));
@@ -3712,7 +3635,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_int64(value);});
     }
-#endif
     
     void test_method_(to_int64_from_u16string) {
       std::u16string value = u"42";
@@ -3750,7 +3672,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_int64(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_int64_from_literal_char8) {
       const char8* value = u8"42";
       assert::are_equal(42l, convert::to_int64(value));
@@ -3759,7 +3680,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_int64(value);});
     }
-#endif
     
     void test_method_(to_int64_from_literal_char16) {
       const char16* value = u"42";
@@ -3828,14 +3748,12 @@ namespace xtd::tests {
       assert::is_zero(convert::to_llong(value));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_llong_from_char8) {
       char8 value = u8'a';
       assert::are_equal(97ll, convert::to_llong(value));
       value = 0;
       assert::is_zero(convert::to_llong(value));
     }
-#endif
     
     void test_method_(to_llong_from_char16) {
       char16 value = u'a';
@@ -3982,7 +3900,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_llong(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_llong_from_u8string) {
       std::u8string value = u8"42";
       assert::are_equal(42ll, convert::to_llong(value));
@@ -3991,7 +3908,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_llong(value);});
     }
-#endif
     
     void test_method_(to_llong_from_u16string) {
       std::u16string value = u"42";
@@ -4029,7 +3945,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_llong(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_llong_from_literal_char8) {
       const char8* value = u8"42";
       assert::are_equal(42ll, convert::to_llong(value));
@@ -4038,7 +3953,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_llong(value);});
     }
-#endif
     
     void test_method_(to_llong_from_literal_char16) {
       const char16* value = u"42";
@@ -4107,14 +4021,12 @@ namespace xtd::tests {
       assert::is_zero(convert::to_sbyte(value));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_sbyte_from_char8) {
       char8 value = u8'a';
       assert::are_equal(97, convert::to_sbyte(value));
       value = 0;
       assert::is_zero(convert::to_sbyte(value));
     }
-#endif
     
     void test_method_(to_sbyte_from_char16) {
       char16 value = u'a';
@@ -4287,7 +4199,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_sbyte(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_sbyte_from_u8string) {
       std::u8string value = u8"42";
       assert::are_equal(42, convert::to_sbyte(value));
@@ -4296,7 +4207,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_sbyte(value);});
     }
-#endif
     
     void test_method_(to_sbyte_from_u16string) {
       std::u16string value = u"42";
@@ -4334,7 +4244,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_sbyte(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_sbyte_from_literal_char8) {
       const char8* value = u8"42";
       assert::are_equal(42, convert::to_sbyte(value));
@@ -4343,7 +4252,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_sbyte(value);});
     }
-#endif
     
     void test_method_(to_sbyte_from_literal_char16) {
       const char16* value = u"42";
@@ -4412,14 +4320,12 @@ namespace xtd::tests {
       assert::is_zero(convert::to_uint16(value));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_uint16_from_char8) {
       char8 value = u8'a';
       assert::are_equal(97u, convert::to_uint16(value));
       value = 0;
       assert::is_zero(convert::to_uint16(value));
     }
-#endif
     
     void test_method_(to_uint16_from_char16) {
       char16 value = u'a';
@@ -4584,7 +4490,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint16(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_uint16_from_u8string) {
       std::u8string value = u8"42";
       assert::are_equal(42u, convert::to_uint16(value));
@@ -4593,7 +4498,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_uint16(value);});
     }
-#endif
     
     void test_method_(to_uint16_from_u16string) {
       std::u16string value = u"42";
@@ -4631,7 +4535,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint16(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_uint16_from_literal_char8) {
       const char8* value = u8"42";
       assert::are_equal(42u, convert::to_uint16(value));
@@ -4640,7 +4543,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_uint16(value);});
     }
-#endif
     
     void test_method_(to_uint16_from_literal_char16) {
       const char16* value = u"42";
@@ -4709,14 +4611,12 @@ namespace xtd::tests {
       assert::is_zero(convert::to_uint32(value));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_uint32_from_char8) {
       char8 value = u8'a';
       assert::are_equal(97u, convert::to_uint32(value));
       value = 0;
       assert::is_zero(convert::to_uint32(value));
     }
-#endif
     
     void test_method_(to_uint32_from_char16) {
       char16 value = u'a';
@@ -4869,7 +4769,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint32(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_uint32_from_u8string) {
       std::u8string value = u8"42";
       assert::are_equal(42u, convert::to_uint32(value));
@@ -4878,7 +4777,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_uint32(value);});
     }
-#endif
     
     void test_method_(to_uint32_from_u16string) {
       std::u16string value = u"42";
@@ -4916,7 +4814,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint32(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_uint32_from_literal_char8) {
       const char8* value = u8"42";
       assert::are_equal(42u, convert::to_uint32(value));
@@ -4925,7 +4822,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_uint32(value);});
     }
-#endif
     
     void test_method_(to_uint32_from_literal_char16) {
       const char16* value = u"42";
@@ -4994,14 +4890,12 @@ namespace xtd::tests {
       assert::is_zero(convert::to_uint64(value));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_uint64_from_char8) {
       char8 value = u8'a';
       assert::are_equal(97u, convert::to_uint64(value));
       value = 0;
       assert::is_zero(convert::to_uint64(value));
     }
-#endif
     
     void test_method_(to_uint64_from_char16) {
       char16 value = u'a';
@@ -5146,7 +5040,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint64(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_uint64_from_u8string) {
       std::u8string value = u8"42";
       assert::are_equal(42u, convert::to_uint64(value));
@@ -5155,7 +5048,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_uint64(value);});
     }
-#endif
     
     void test_method_(to_uint64_from_u16string) {
       std::u16string value = u"42";
@@ -5193,7 +5085,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_uint64(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_uint64_from_literal_char8) {
       const char8* value = u8"42";
       assert::are_equal(42u, convert::to_uint64(value));
@@ -5202,7 +5093,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_uint64(value);});
     }
-#endif
     
     void test_method_(to_uint64_from_literal_char16) {
       const char16* value = u"42";
@@ -5271,14 +5161,12 @@ namespace xtd::tests {
       assert::is_zero(convert::to_ullong(value));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_ullong_from_char8) {
       char8 value = u8'a';
       assert::are_equal(97llu, convert::to_ullong(value));
       value = 0;
       assert::is_zero(convert::to_ullong(value));
     }
-#endif
     
     void test_method_(to_ullong_from_char16) {
       char16 value = u'a';
@@ -5423,7 +5311,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_ullong(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_ullong_from_u8string) {
       std::u8string value = u8"42";
       assert::are_equal(42llu, convert::to_ullong(value));
@@ -5432,7 +5319,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_ullong(value);});
     }
-#endif
     
     void test_method_(to_ullong_from_u16string) {
       std::u16string value = u"42";
@@ -5470,7 +5356,6 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_ullong(value);});
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(to_ullong_from_literal_char8) {
       const char8* value = u8"42";
       assert::are_equal(42llu, convert::to_ullong(value));
@@ -5479,7 +5364,6 @@ namespace xtd::tests {
       value = u8"bad value";
       assert::throws<format_exception>([&] {convert::to_ullong(value);});
     }
-#endif
     
     void test_method_(to_ullong_from_literal_char16) {
       const char16* value = u"42";

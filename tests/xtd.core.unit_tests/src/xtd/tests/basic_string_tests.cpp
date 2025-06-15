@@ -27,9 +27,7 @@ namespace xtd::tests {
   test_class_attribute<basic_string_tests<char>> basic_string_tests_class_char_attr {"basic_string_tests<char>"};
   test_class_attribute<basic_string_tests<char16>> basic_string_tests_class_char16_attr {"basic_string_tests<char16>"};
   test_class_attribute<basic_string_tests<char32>> basic_string_tests_class_char32_attr {"basic_string_tests<char32>"};
-#if defined(__xtd__cpp_lib_char8_t)
   test_class_attribute<basic_string_tests<char8>> basic_string_tests_class_char8_attr {"basic_string_tests<char8>"};
-#endif
   test_class_attribute<basic_string_tests<wchar>> basic_string_tests_class_wchar_attr {"basic_string_tests<wchar>"};
 
   template<class char_t>
@@ -47,9 +45,7 @@ namespace xtd::tests {
     
     void test_method_(value_type) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) return;
-#endif
       else assert::are_equal(typeof_<char_t>(), typeof_<typename basic_string<char_t>::value_type>());
     }
     
@@ -67,33 +63,25 @@ namespace xtd::tests {
     
     void test_method_(reference) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) return;
-#endif
       else assert::are_equal(typeof_<char_t&>(), typeof_<typename basic_string<char_t>::reference>());
     }
     
     void test_method_(const_reference) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) return;
-#endif
       else assert::are_equal(typeof_<const char_t&>(), typeof_<typename basic_string<char_t>::const_reference>());
     }
     
     void test_method_(pointer) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) return;
-#endif
       else assert::are_equal(typeof_<char_t*>(), typeof_<typename basic_string<char_t>::pointer>());
     }
     
     void test_method_(const_pointer) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) return;
-#endif
       else assert::are_equal(typeof_<const char_t*>(), typeof_<typename basic_string<char_t>::const_pointer>());
     }
     
@@ -155,12 +143,10 @@ namespace xtd::tests {
     }
     
     void test_method_(constructor_with_basic_string_char8) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s = basic_string<xtd::char8>(u8"A test string");
       assert::are_equal(u8"A test string", basic_string<char_t>(s));
       assert::are_equal(u8"A test string", s);
       assert::is_empty(basic_string<char_t>(basic_string<char_t>("")));
-#endif
     }
     
     void test_method_(constructor_with_basic_string_wchar) {
@@ -192,12 +178,10 @@ namespace xtd::tests {
     }
 
     void test_method_(constructor_with_basic_string_char8_and_index) {
-#if defined(__xtd__cpp_lib_char8_t)
       assert::are_equal(u8"string", basic_string<char_t>(basic_string<char8>(u8"A test string"), 7));
       assert::are_equal(u8"g", basic_string<char_t>(basic_string<char8>(u8"A test string"), 12));
       assert::is_empty(basic_string<char_t>(basic_string<char8>(u8"A test string"), 13));
       assert::throws<argument_out_of_range_exception>([]{basic_string<char_t>(basic_string<char8>(u8"A test string"), 14);});
-#endif
     }
 
     void test_method_(constructor_with_basic_string_wchar_and_index) {
@@ -226,11 +210,9 @@ namespace xtd::tests {
     }
 
     void test_method_(constructor_with_basic_string_char8_and_index_and_count) {
-#if defined(__xtd__cpp_lib_char8_t)
       assert::are_equal(u8"str", basic_string<char_t>(basic_string<char8>(u8"A test string"), 7, 3));
       assert::are_equal(u8"string", basic_string<char_t>(basic_string<char8>(u8"A test string"), 7, 6));
       assert::throws<argument_out_of_range_exception>([]{basic_string<char_t>(basic_string<char8>(u8"A test string"), 7, 7);});
-#endif
     }
 
     void test_method_(constructor_with_basic_string_wchar_and_index_and_count) {
@@ -267,12 +249,10 @@ namespace xtd::tests {
     }
 
     void test_method_(constructor_with_count_and_char8_character) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s = basic_string<char_t>(10, char8 {'*'});
       assert::are_equal(10_z, s.length());
       for (auto index = 0_z; index < s.length(); ++index)
         assert::are_equal(char_t {'*'}, s[index]);
-#endif
     }
 
     void test_method_(constructor_with_count_and_wchar_character) {
@@ -304,12 +284,10 @@ namespace xtd::tests {
     }
     
     void test_method_(constructor_with_char8_character_and_count) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s = basic_string<char_t>(char8 {'*'}, 10);
       assert::are_equal(10_z, s.length());
       for (auto index = 0_z; index < s.length(); ++index)
         assert::are_equal(char_t {'*'}, s[index]);
-#endif
     }
     
     void test_method_(constructor_with_wchar_character_and_count) {
@@ -338,11 +316,9 @@ namespace xtd::tests {
     }
 
     void test_method_(constructor_with_count_and_char8_pointer) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto p = u8"A test string\U0001F603";
       auto s = basic_string<char_t>(p);
       assert::are_equal(u8"A test string\U0001F603", s);
-#endif
     }
 
     void test_method_(constructor_with_count_and_wchar_pointer) {
@@ -370,11 +346,9 @@ namespace xtd::tests {
     }
     
     void test_method_(constructor_with_count_and_char8_pointer_and_count) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto p = u8"A test string";
       auto s = basic_string<char_t>(p, 6);
       assert::are_equal(u8"A test", s);
-#endif
     }
     
     void test_method_(constructor_with_count_and_wchar_pointer_and_count) {
@@ -396,9 +370,7 @@ namespace xtd::tests {
     }
 
     void test_method_(constructor_with_std_basic_string_char8) {
-#if defined(__xtd__cpp_lib_char8_t)
       assert::are_equal(u8"A test string", basic_string<char_t>(std::basic_string<char8>(u8"A test string")));
-#endif
     }
 
     void test_method_(constructor_with_std_basic_string_wchar) {
@@ -423,9 +395,7 @@ namespace xtd::tests {
     }
 
     void test_method_(constructor_with_initializer_list_char8) {
-#if defined(__xtd__cpp_lib_char8_t)
       assert::are_equal(u8"A test string", basic_string<char_t>(std::initializer_list<char8> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}));
-#endif
     }
 
     void test_method_(constructor_with_initializer_list_wchar) {
@@ -452,11 +422,9 @@ namespace xtd::tests {
     
     void test_method_(c_str) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-#if defined(__xtd__cpp_lib_char8_t)
       assert::is_empty(basic_string<char_t> {}.c_str());
       assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string<char_t> {"A test string"}.c_str());
       if constexpr(std::is_same<char_t, char8>::value) return;
-#endif
       else {
         assert::are_equal(typeof_<const char_t*>(), typeof_(basic_string<char_t> {}.c_str()));
         assert::is_empty(basic_string<char_t> {}.c_str());
@@ -494,7 +462,6 @@ namespace xtd::tests {
     
     void test_method_(data) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-#if defined(__xtd__cpp_lib_char8_t)
       assert::is_empty(basic_string<char_t> {}.data());
       assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string<char_t> {"A test string"}.data());
       if constexpr(std::is_same<char_t, char8>::value) return;
@@ -503,11 +470,6 @@ namespace xtd::tests {
         assert::is_empty(basic_string<char_t> {}.data());
         assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string<char_t> {"A test string"}.data());
       }
-#else
-      assert::are_equal(typeof_<const char_t*>(), typeof_(basic_string<char_t> {}.data()));
-      assert::is_empty(basic_string<char_t> {}.data());
-      assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string<char_t> {"A test string"}.data());
-#endif
     }
     
     void test_method_(empty) {
@@ -1095,11 +1057,9 @@ namespace xtd::tests {
     }
     
     void test_method_(to_u8string) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s = basic_string<char_t> {"A test string"};
       assert::is_instance_of<u8string>(s.to_u8string());
       assert::are_equal(u8"A test string", s.to_u8string());
-#endif
     }
     
     void test_method_(to_upper) {
@@ -1334,9 +1294,7 @@ namespace xtd::tests {
     }
     
     void test_method_(concat_with_four_u8_string_literals) {
-#if defined(__xtd__cpp_lib_char8_t)
       assert::are_equal("A test string to test", basic_string<char_t>::concat(u8"A ", u8"test ", u8"string ", u8"to test"));
-#endif
     }
 
     void test_method_(concat_with_four_wstring_literals) {
@@ -1360,9 +1318,7 @@ namespace xtd::tests {
     }
 
     void test_method_(concat_with_four_char8_basic_string) {
-#if defined(__xtd__cpp_lib_char8_t)
       assert::are_equal("A test string to test", basic_string<char_t>::concat(basic_string<char8> {"A "}, basic_string<char8> {"test "}, basic_string<char8> {"string "}, basic_string<char8> {"to test"}));
-#endif
     }
     
     void test_method_(concat_with_four_wchar_basic_string) {
@@ -1390,9 +1346,7 @@ namespace xtd::tests {
     }
     
     void test_method_(concat_with_three_u8_string_literals) {
-#if defined(__xtd__cpp_lib_char8_t)
       assert::are_equal("A test string to test", basic_string<char_t>::concat(u8"A test ", u8"string ", u8"to test"));
-#endif
     }
     
     void test_method_(concat_with_three_wstring_literals) {
@@ -1416,9 +1370,7 @@ namespace xtd::tests {
     }
     
     void test_method_(concat_with_three_char8_basic_string) {
-#if defined(__xtd__cpp_lib_char8_t)
       assert::are_equal("A test string to test", basic_string<char_t>::concat(basic_string<char8> {"A test "}, basic_string<char8> {"string "}, basic_string<char8> {"to test"}));
-#endif
     }
     
     void test_method_(concat_with_three_wchar_basic_string) {
@@ -1446,9 +1398,7 @@ namespace xtd::tests {
     }
     
     void test_method_(concat_with_two_u8_string_literals) {
-#if defined(__xtd__cpp_lib_char8_t)
       assert::are_equal("A test string to test", basic_string<char_t>::concat(u8"A test string ", u8"to test"));
-#endif
     }
     
     void test_method_(concat_with_two_wstring_literals) {
@@ -1472,9 +1422,7 @@ namespace xtd::tests {
     }
     
     void test_method_(concat_with_two_char8_basic_string) {
-#if defined(__xtd__cpp_lib_char8_t)
       assert::are_equal("A test string to test", basic_string<char_t>::concat(basic_string<char8> {"A test string "}, basic_string<char8> {"to test"}));
-#endif
     }
     
     void test_method_(concat_with_two_wchar_basic_string) {
@@ -1557,13 +1505,11 @@ namespace xtd::tests {
     }
     
     void test_method_(format_char8) {
-#if defined(__xtd__cpp_lib_char8_t)
       assert::are_equal("A test string to test", basic_string<char_t>::format(u8"{}", "A test string to test"));
       assert::are_equal("A test string to test", basic_string<char_t>::format(u8"{}", u"A test string to test"));
       assert::are_equal("A test string to test", basic_string<char_t>::format(u8"{}", U"A test string to test"));
       assert::are_equal("A test string to test", basic_string<char_t>::format(u8"{}", u8"A test string to test"));
       assert::are_equal("A test string to test", basic_string<char_t>::format(u8"{}", L"A test string to test"));
-#endif
     }
     
     void test_method_(format_wchar) {
@@ -1606,9 +1552,7 @@ namespace xtd::tests {
     void test_method_(sprintf_char) {
       if constexpr(std::is_same<char_t, char16>::value) return;
       else if constexpr(std::is_same<char_t, char32>::value) return;
-#if defined(__xtd__cpp_lib_char8_t)
       else if constexpr(std::is_same<char_t, char8>::value) return;
-#endif
       else if constexpr (std::is_same<char_t, wchar>::value) return;
       else assert::are_equal("A test string to test", basic_string<char_t>::sprintf("%s", "A test string to test"));
     }
@@ -1616,9 +1560,7 @@ namespace xtd::tests {
     void test_method_(sprintf_char16) {
       if constexpr(std::is_same<char_t, char16>::value) return;
       else if constexpr(std::is_same<char_t, char32>::value) return;
-#if defined(__xtd__cpp_lib_char8_t)
       else if constexpr(std::is_same<char_t, char8>::value) return;
-#endif
       else if constexpr (std::is_same<char_t, wchar>::value) return;
       else assert::are_equal("A test string to test", basic_string<char_t>::sprintf(u"%s", "A test string to test"));
     }
@@ -1626,29 +1568,23 @@ namespace xtd::tests {
     void test_method_(sprintf_char32) {
       if constexpr(std::is_same<char_t, char16>::value) return;
       else if constexpr(std::is_same<char_t, char32>::value) return;
-#if defined(__xtd__cpp_lib_char8_t)
       else if constexpr(std::is_same<char_t, char8>::value) return;
-#endif
       else if constexpr (std::is_same<char_t, wchar>::value) return;
       else assert::are_equal("A test string to test", basic_string<char_t>::sprintf(U"%s", "A test string to test"));
     }
 
     void test_method_(sprintf_char8) {
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char16>::value) return;
       else if constexpr(std::is_same<char_t, char32>::value) return;
       else if constexpr(std::is_same<char_t, char8>::value) return;
       else if constexpr (std::is_same<char_t, wchar>::value) return;
       else assert::are_equal("A test string to test", basic_string<char_t>::sprintf(u8"%s", "A test string to test"));
-#endif
     }
 
     void test_method_(sprintf_wchar) {
       if constexpr(std::is_same<char_t, char16>::value) return;
       else if constexpr(std::is_same<char_t, char32>::value) return;
-#if defined(__xtd__cpp_lib_char8_t)
       else if constexpr(std::is_same<char_t, char8>::value) return;
-#endif
       else if constexpr (std::is_same<char_t, wchar>::value) return;
       else assert::are_equal("A test string to test", basic_string<char_t>::sprintf(L"%s", "A test string to test"));
     }
@@ -1715,13 +1651,11 @@ namespace xtd::tests {
     }
 
     void test_method_(equal_operator_basic_string_char8) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s1 = basic_string<char_t> {};
       auto s2 = basic_string<char8>(u8"A test string");
       s1 = s2;
       assert::are_equal(u8"A test string", s1);
       assert::are_equal(u8"A test string", s2);
-#endif
     }
 
     void test_method_(equal_operator_basic_string_wchar) {
@@ -1754,12 +1688,10 @@ namespace xtd::tests {
     }
     
     void test_method_(equal_operator_move_basic_string_char8) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s1 = basic_string<char_t> {};
       auto s2 = basic_string<char8>(u8"A test string");
       s1 = std::move(s2);
       assert::are_equal(u8"A test string", s1);
-#endif
     }
     
     void test_method_(equal_operator_move_basic_string_wchar) {
@@ -1794,13 +1726,11 @@ namespace xtd::tests {
     }
     
     void test_method_(equal_operator_std_basic_string_char8) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s1 = basic_string<char_t> {};
       auto s2 = std::basic_string<char8>(u8"A test string");
       s1 = s2;
       assert::are_equal(u8"A test string", s1);
       assert::are_equal(u8"A test string", s2);
-#endif
     }
     
     void test_method_(equal_operator_std_basic_string_wchar) {
@@ -1833,12 +1763,10 @@ namespace xtd::tests {
     }
     
     void test_method_(equal_operator_move_std_basic_string_char8) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s1 = basic_string<char_t> {};
       auto s2 = std::basic_string<char8>(u8"A test string");
       s1 = std::move(s2);
       assert::are_equal(u8"A test string", s1);
-#endif
     }
     
     void test_method_(equal_operator_move_std_basic_string_wchar) {
@@ -1873,13 +1801,11 @@ namespace xtd::tests {
     }
     
     void test_method_(equal_operator_char8_pointer) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s1 = basic_string<char_t> {};
       auto s2 = u8"A test string";
       s1 = s2;
       assert::are_equal(u8"A test string", s1);
       assert::are_equal(u8"A test string", s2);
-#endif
     }
     
     void test_method_(equal_operator_wchar_pointer) {
@@ -1915,13 +1841,11 @@ namespace xtd::tests {
     }
 
     void test_method_(equal_operator_char8) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s = basic_string<char_t> {};
       auto c = u8'C';
       s = c;
       assert::are_equal(u8'C', c);
       assert::are_equal("C", s);
-#endif
     }
 
     void test_method_(equal_operator_wchar) {
@@ -1954,12 +1878,10 @@ namespace xtd::tests {
     }
 
     void test_method_(equal_operator_initializer_list_char8) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s = basic_string<char_t> {};
       auto il = std::initializer_list<char8> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'};
       s = il;
       assert::are_equal(u8"A test string", s);
-#endif
     }
 
     void test_method_(equal_operator_initializer_list_wchar) {
@@ -1994,13 +1916,11 @@ namespace xtd::tests {
     }
     
     void test_method_(addition_assignment_operator_basic_string_char8) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s1 = basic_string<char_t> {"A test"};
       auto s2 = basic_string<char8> {u8" string"};
       s1 += s2;
       assert::are_equal(u8"A test string", s1);
       assert::are_equal(u8" string", s2);
-#endif
     }
     
     void test_method_(addition_assignment_operator_basic_string_wchar) {
@@ -2033,12 +1953,10 @@ namespace xtd::tests {
     }
     
     void test_method_(addition_assignment_operator_move_basic_string_char8) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s1 = basic_string<char_t> {"A test"};
       auto s2 = basic_string<char8> {u8" string"};
       s1 += std::move(s2);
       assert::are_equal(u8"A test string", s1);
-#endif
     }
     
     void test_method_(addition_assignment_operator_move_basic_string_wchar) {
@@ -2073,13 +1991,11 @@ namespace xtd::tests {
     }
     
     void test_method_(addition_assignment_operator_std_basic_string_char8) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s1 = basic_string<char_t> {"A test"};
       auto s2 = std::basic_string<char8> {u8" string"};
       s1 += s2;
       assert::are_equal(u8"A test string", s1);
       assert::are_equal(u8" string", s2);
-#endif
     }
     
     void test_method_(addition_assignment_operator_std_basic_string_wchar) {
@@ -2109,11 +2025,9 @@ namespace xtd::tests {
     }
     
     void test_method_(addition_assignment_operator_char8_pointer) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s = basic_string<char_t> {"A test"};
       s += u8" string";
       assert::are_equal(u8"A test string", s);
-#endif
     }
     
     void test_method_(addition_assignment_operator_wchar_pointer) {
@@ -2141,11 +2055,9 @@ namespace xtd::tests {
     }
     
     void test_method_(addition_assignment_operator_char8) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s = basic_string<char_t> {"A test"};
       s += u8'$';
       assert::are_equal(u8"A test$", s);
-#endif
     }
     
     void test_method_(addition_assignment_operator_wchar) {
@@ -2182,14 +2094,12 @@ namespace xtd::tests {
     }
     
     void test_method_(addition_operator_basic_string_char8) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s1 = basic_string<char_t> {"A test"};
       auto s2 = basic_string<char8> {u8" string"};
       auto s3 = s1 + s2;
       assert::are_equal("A test string", s3);
       assert::are_equal("A test", s1);
       assert::are_equal(" string", s2);
-#endif
     }
     
     void test_method_(addition_operator_basic_string_wchar) {
@@ -2226,13 +2136,11 @@ namespace xtd::tests {
     }
     
     void test_method_(addition_operator_move_basic_string_char8) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s1 = basic_string<char_t> {"A test"};
       auto s2 = basic_string<char8> {u8" string"};
       auto s3 = std::move(s1) + std::move(s2);
       assert::are_equal("A test string", s3);
       assert::is_empty(s1);
-#endif
     }
     
     void test_method_(addition_operator_move_basic_string_wchar) {
@@ -2271,14 +2179,12 @@ namespace xtd::tests {
     }
     
     void test_method_(addition_operator_move_lhs_basic_string_char8) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s1 = basic_string<char_t> {"A test"};
       auto s2 = basic_string<char8> {u8" string"};
       auto s3 = std::move(s1) + s2;
       assert::are_equal("A test string", s3);
       assert::is_empty(s1);
       assert::are_equal(" string", s2);
-#endif
     }
     
     void test_method_(addition_operator_move_lhs_basic_string_wchar) {
@@ -2315,13 +2221,11 @@ namespace xtd::tests {
     }
     
     void test_method_(addition_operator_move_rhs_basic_string_char8) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s1 = basic_string<char_t> {"A test"};
       auto s2 = basic_string<char8> {u8" string"};
       auto s3 = s1 + std::move(s2);
       assert::are_equal("A test string", s3);
       assert::are_equal("A test", s1);
-#endif
     }
     
     void test_method_(addition_operator_move_rhs_basic_string_wchar) {
@@ -2360,14 +2264,12 @@ namespace xtd::tests {
     }
     
     void test_method_(addition_operator_std_basic_string_char8) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s1 = basic_string<char_t> {"A test"};
       auto s2 = std::basic_string<char8> {u8" string"};
       auto s3 = s1 + s2;
       assert::are_equal("A test string", s3);
       assert::are_equal("A test", s1);
       assert::are_equal(u8" string", s2);
-#endif
     }
     
     void test_method_(addition_operator_std_basic_string_wchar) {
@@ -2404,13 +2306,11 @@ namespace xtd::tests {
     }
     
     void test_method_(addition_operator_char8_pointer_rhs) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s1 = basic_string<char_t> {"A test"};
       auto s2 = u8" string";
       auto s3 = s1 + s2;
       assert::are_equal("A test string", s3);
       assert::are_equal("A test", s1);
-#endif
     }
     
     void test_method_(addition_operator_wchar_pointer_rhs) {
@@ -2446,13 +2346,11 @@ namespace xtd::tests {
     }
     
     void test_method_(addition_operator_move_lhs_char8_pointer_rhs) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s1 = basic_string<char_t> {"A test"};
       auto s2 = u8" string";
       auto s3 = std::move(s1) + s2;
       assert::are_equal("A test string", s3);
       assert::is_empty(s1);
-#endif
     }
     
     void test_method_(addition_operator_move_lhs_wchar_pointer_rhs) {
@@ -2488,13 +2386,11 @@ namespace xtd::tests {
     }
     
     void test_method_(addition_operator_char8_pointer_lhs) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s1 = u8"A test";
       auto s2 = basic_string<char_t> {" string"};
       auto s3 = s1 + s2;
       assert::are_equal("A test string", s3);
       assert::are_equal(" string", s2);
-#endif
     }
     
     void test_method_(addition_operator_wchar_pointer_lhs) {
@@ -2527,12 +2423,10 @@ namespace xtd::tests {
     }
     
     void test_method_(addition_operator_char8_pointer_lhs_move_rhs) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s1 = u8"A test";
       auto s2 = basic_string<char_t> {" string"};
       auto s3 = s1 + std::move(s2);
       assert::are_equal("A test string", s3);
-#endif
     }
     
     void test_method_(addition_operator_wchar_pointer_lhs_move_rhs) {
@@ -2570,14 +2464,12 @@ namespace xtd::tests {
     }
     
     void test_method_(addition_operator_char8_rhs) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s = basic_string<char_t> {"A test"};
       auto c = u8'$';
       auto r = s + c;
       assert::are_equal("A test$", r);
       assert::are_equal("A test", s);
       assert::are_equal(u8'$', c);
-#endif
     }
     
     void test_method_(addition_operator_wchar_rhs) {
@@ -2617,14 +2509,12 @@ namespace xtd::tests {
     }
     
     void test_method_(addition_operator_move_lhs_char8_rhs) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto s = basic_string<char_t> {"A test"};
       auto c = u8'$';
       auto r = std::move(s) + c;
       assert::are_equal("A test$", r);
       assert::is_empty(s);
       assert::are_equal(u8'$', c);
-#endif
     }
     
     void test_method_(addition_operator_move_lhs_wchar_rhs) {
@@ -2664,14 +2554,12 @@ namespace xtd::tests {
     }
     
     void test_method_(addition_operator_char8_lhs) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto c = u8'$';
       auto s = basic_string<char_t> {"A test"};
       auto r = c + s;
       assert::are_equal("$A test", r);
       assert::are_equal(u8'$', c);
       assert::are_equal("A test", s);
-#endif
     }
     
     void test_method_(addition_operator_wchar_lhs) {
@@ -2708,13 +2596,11 @@ namespace xtd::tests {
     }
     
     void test_method_(addition_operator_char8_lhs_move_rhs) {
-#if defined(__xtd__cpp_lib_char8_t)
       auto c = u8'$';
       auto s = basic_string<char_t> {"A test"};
       auto r = c + std::move(s);
       assert::are_equal("$A test", r);
       assert::are_equal(u8'$', c);
-#endif
     }
     
     void test_method_(addition_operator_wchar_lhs_move_rhs) {

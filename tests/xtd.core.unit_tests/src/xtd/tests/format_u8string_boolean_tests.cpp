@@ -8,7 +8,6 @@ using namespace xtd;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
-#if defined(__xtd__cpp_lib_char8_t)
   class test_class_(format_u8string_boolean_tests) {
     void test_method_(format_false_with_default_argument) {
       assert::are_equal(u8"false", format(u8"{0}", false));
@@ -90,5 +89,4 @@ namespace xtd::tests {
       assert::throws<xtd::format_exception>([] {format(u8"{0:z1}", true);});
     }
   };
-#endif
 }

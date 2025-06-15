@@ -80,7 +80,6 @@ namespace {
 }
 
 namespace xtd::tests {
-#if defined(__xtd__cpp_lib_char8_t)
   template<class value_t>
   class format_u8string_tm_tests;
   
@@ -275,5 +274,4 @@ namespace xtd::tests {
       #endif
     }
   };
-#endif
 }
