@@ -1,12 +1,12 @@
 # xtd
 
-**xtd (pronounced "extend") is a modern C++17/20 framework to create console (CLI), forms (GUI) and unit test (xUnit) applications on Windows, macOS, Linux, iOS, Android, FreeBSD, and Haiku.**
+**xtd (pronounced "extend") is a modern C++20 framework to create console (CLI), forms (GUI) and unit test (xUnit) applications and libraries on Windows, macOS, Linux, iOS, Android, FreeBSD, and Haiku.**
 
 [![logo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/logo.png)](https://gammasoft71.github.io/xtd)
 
 **Write Once, Run Everywhere!**
 
-[![License](https://img.shields.io/github/license/gammasoft71/xtd)](https://gammasoft71.github.io/xtd/docs/documentation/license) [![Language](https://img.shields.io/badge/language-C++17/20-004080.svg)](https://gammasoft71.github.io/xtd/docs/documentation/portability) [![web](https://img.shields.io/badge/website-xtd-004080.svg)](https://gammasoft71.github.io/xtd) [![Reference Guide](https://img.shields.io/badge/code-reference%20guide-004080.svg)](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html) [![wiki](https://img.shields.io/badge/wiki-xtd-004080.svg)](https://github.com/gammasoft71/xtd/wiki) [![discord](https://img.shields.io/badge/discord-gammasoft-7289DA.svg)](https://discordapp.com/users/gammasoft#9288) [![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download)
+[![License](https://img.shields.io/github/license/gammasoft71/xtd)](https://gammasoft71.github.io/xtd/docs/documentation/license) [![Language](https://img.shields.io/badge/language-C++20-004080.svg)](https://gammasoft71.github.io/xtd/docs/documentation/portability) [![web](https://img.shields.io/badge/website-xtd-004080.svg)](https://gammasoft71.github.io/xtd) [![Reference Guide](https://img.shields.io/badge/code-reference%20guide-004080.svg)](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html) [![wiki](https://img.shields.io/badge/wiki-xtd-004080.svg)](https://github.com/gammasoft71/xtd/wiki) [![discord](https://img.shields.io/badge/discord-gammasoft-7289DA.svg)](https://discordapp.com/users/gammasoft#9288) [![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download)
  
 # Latest news
 
@@ -22,7 +22,7 @@
 * a collection of native C++ classes libraries, to **extend** std;
 * API close to the .net API with a modern C++ approach and full integration with the std standard;
 * xtd is designed to manage GUI controls and dialogs in pure [native mode](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/control_appearance) or with [CSS styles](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
-* written in efficient, modern [C++17/20](https://en.cppreference.com/w/) with [RAII](https://en.cppreference.com/w/cpp/language/raii) programming idiom;
+* written in efficient, modern [C++20](https://en.cppreference.com/w/) with [RAII](https://en.cppreference.com/w/cpp/language/raii) programming idiom;
 * and [highly portable](https://gammasoft71.github.io/xtd/docs/documentation/portability) and available on [many different platforms](https://gammasoft71.github.io/xtd/docs/documentation/portability);
 * See [features](https://gammasoft71.github.io/xtd/docs/documentation/features) for more informations.
 
@@ -35,7 +35,7 @@ xtd is composed of several libraries.
 ### xtd.core
 
 [![core](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.core.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)
-The [xtd.core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html) library is modern C++17/20 libraries of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which c++ applications, components, and controls are built.
+The [xtd.core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html) library is modern C++20 libraries of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which c++ applications, components, and controls are built.
 
 ### xtd.drawing
 
@@ -50,7 +50,7 @@ The [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group_
 ### xtd.tunit
 
 [![tunit](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.tunit.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html)
-The [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html) library is a unit-testing framework for modern C++17/20, inspired by [Microsoft.VisualStudio.TestTools.Cpp](https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference).
+The [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html) library is a unit-testing framework for modern C++20, inspired by [Microsoft.VisualStudio.TestTools.Cpp](https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference).
 
 ## Getting Started
 

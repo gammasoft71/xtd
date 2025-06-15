@@ -81,7 +81,7 @@ Like the whole [xtd framework](xtd_explanations.md), **xtd.forms** provides a hi
 
 ### xtd.forms high level API
 
-**xtd.forms** offers all the advantages of an API in modern C++ 17/20.
+**xtd.forms** offers all the advantages of an API in modern C++20.
 
 **xtd.forms** contains a large amount of objects such as: 
  * components
