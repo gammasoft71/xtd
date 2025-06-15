@@ -6,9 +6,9 @@ const FeatureList = [
   {
     description: (
       <>
-      (*) See <a href="docs/documentation/portability#the-xtd-libraries-portability-list">portability</a> for more information.
+      <i>(*) See <a href="docs/documentation/portability#the-xtd-libraries-portability-list">portability</a> for more information.</i>
       <br/>
-      <br/><b>Write Once, Run Everywhere!</b>
+      <br/><font size="2">Write Once, Run Everywhere!</font>
       </>
     ),
   },
