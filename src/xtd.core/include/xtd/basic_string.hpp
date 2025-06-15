@@ -147,14 +147,12 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = str.chars_;
       else chars_ = __xtd_convert_to_string<value_type>(str.chars_);
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const basic_string<xtd::char8>& str) noexcept {
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = str.chars_;
       else chars_ = __xtd_convert_to_string<value_type>(str.chars_);
     }
-#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const basic_string<xtd::wchar>& str) noexcept {
@@ -183,7 +181,6 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = base_type(str.chars_, allocator);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(str.chars_), allocator);
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
@@ -191,7 +188,6 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = base_type(str.chars_, allocator);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(str.chars_), allocator);
     }
-#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
@@ -227,7 +223,6 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = base_type(str.chars_, index);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str.chars_, index)));
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified substring at index.
     /// @param str The string to copy.
     /// @param index The index of the first substring character where start copy.
@@ -237,7 +232,6 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = base_type(str.chars_, index);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str.chars_, index)));
     }
-#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified substring at index.
     /// @param str The string to copy.
     /// @param index The index of the first substring character where start copy.
@@ -278,7 +272,6 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = base_type(str.chars_, index, allocator);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str.chars_, index)), allocator);
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified substring at index and allocator.
     /// @param str The string to copy.
     /// @param index The index of the first substring character where start copy.
@@ -289,7 +282,6 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = base_type(str.chars_, index, allocator);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str.chars_, index)), allocator);
     }
-#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified substring at index and allocator.
     /// @param str The string to copy.
     /// @param index The index of the first substring character where start copy.
@@ -331,7 +323,6 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = base_type(str.chars_, index, count);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str.chars_, index, count)));
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified substring at index and count characters.
     /// @param str The string to copy.
     /// @param index The index of the first substring character where start copy.
@@ -342,7 +333,6 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = base_type(str.chars_, index, count);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str.chars_, index, count)));
     }
-#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified substring at index and count characters.
     /// @param str The string to copy.
     /// @param index The index of the first substring character where start copy.
@@ -387,7 +377,6 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = base_type(str.chars_, index, count, allocator);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str.chars_, index, count)), allocator);
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified substring at index, count characters and allocator.
     /// @param str The string to copy.
     /// @param index The index of the first substring character where start copy.
@@ -399,7 +388,6 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = base_type(str.chars_, index, count, allocator);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str.chars_, index, count)), allocator);
     }
-#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified substring at index, count characters and allocator.
     /// @param str The string to copy.
     /// @param index The index of the first substring character where start copy.
@@ -449,7 +437,6 @@ namespace xtd {
     /// @param character The character copied.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(xtd::size count, xtd::char32 character, const allocator_type& allocator) : basic_string(std::basic_string<xtd::char32>(count, character), allocator) {}
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
     /// @param count The number of copies of character.
     /// @param character The character copied.
@@ -459,7 +446,6 @@ namespace xtd {
     /// @param character The character copied.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(xtd::size count, xtd::char8 character, const allocator_type& allocator) : basic_string(std::basic_string<xtd::char8>(count, character), allocator) {}
-#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
     /// @param count The number of copies of character.
     /// @param character The character copied.
@@ -498,7 +484,6 @@ namespace xtd {
     /// @param count The number of copies of character.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(xtd::char32 character, xtd::size count, const allocator_type& allocator) : basic_string(std::basic_string<xtd::char32>(count, character), allocator) {}
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
     /// @param character The character copied.
     /// @param count The number of copies of character.
@@ -508,7 +493,6 @@ namespace xtd {
     /// @param count The number of copies of character.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(xtd::char8 character, xtd::size count, const allocator_type& allocator) : basic_string(std::basic_string<xtd::char8>(count, character), allocator) {}
-#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified count copies of character.
     /// @param character The character copied.
     /// @param count The number of copies of character.
@@ -540,7 +524,6 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = std::basic_string<xtd::char32>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str));
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const xtd::char8* str) {  // Can't be explicit by design.
@@ -548,7 +531,6 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = std::basic_string<xtd::char8>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str));
     }
-#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const xtd::wchar* str) {  // Can't be explicit by design.
@@ -581,7 +563,6 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = std::basic_string<xtd::char32>(str, allocator);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str), allocator);
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
@@ -590,7 +571,6 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = std::basic_string<xtd::char8>(str, allocator);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str), allocator);
     }
-#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy, and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
@@ -621,7 +601,6 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = std::basic_string<xtd::char32>(str, count);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str, count));
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified substring and count characters.
     /// @param count The number of substring characters to copy.
     basic_string(const xtd::char8* str, xtd::size count) {
@@ -629,7 +608,6 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = std::basic_string<xtd::char8>(str, count);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str, count));
     }
-#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified substring and count characters.
     /// @param count The number of substring characters to copy.
     basic_string(const xtd::wchar* str, xtd::size count) {
@@ -665,7 +643,6 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = std::basic_string<xtd::char32>(str, count, allocator);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str, count), allocator);
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified substring, count characters and allocator.
     /// @param str The string to copy.
     /// @param count The number of substring characters to copy.
@@ -675,7 +652,6 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = std::basic_string<xtd::char8>(str, count, allocator);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str, count), allocator);
     }
-#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified substring, count characters and allocator.
     /// @param str The string to copy.
     /// @param count The number of substring characters to copy.
@@ -704,14 +680,12 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = str;
       else chars_ = __xtd_convert_to_string<value_type>(str);
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const std::basic_string<xtd::char8>& str) noexcept { // Can't be explicit by design.
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = str;
       else chars_ = __xtd_convert_to_string<value_type>(str);
     }
-#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const std::basic_string<xtd::wchar>& str) noexcept { // Can't be explicit by design.
@@ -740,7 +714,6 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = base_type(str, allocator);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(str), allocator);
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
@@ -748,7 +721,6 @@ namespace xtd {
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = base_type(str, allocator);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(str), allocator);
     }
-#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy and allocator.
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
@@ -803,11 +775,9 @@ namespace xtd {
     /// @brief Initializes a new instance of xtd::basic_string with specified initializer list.
     /// @param il The initializer list to fill.
     basic_string(std::initializer_list<xtd::char32> il) : basic_string(std::basic_string<xtd::char32>(il)) {}
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified initializer list.
     /// @param il The initializer list to fill.
     basic_string(std::initializer_list<xtd::char8> il) : basic_string(std::basic_string<xtd::char8>(il)) {}
-#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified initializer list.
     /// @param il The initializer list to fill.
     basic_string(std::initializer_list<xtd::wchar> il) : basic_string(std::basic_string<xtd::wchar>(il)) {}
@@ -824,12 +794,10 @@ namespace xtd {
     /// @param il The initializer list to fill.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(std::initializer_list<xtd::char32> il, const allocator_type& allocator) : basic_string(std::basic_string<xtd::char32>(il), allocator) {}
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Initializes a new instance of xtd::basic_string with specified initializer list and allocator.
     /// @param il The initializer list to fill.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(std::initializer_list<xtd::char8> il, const allocator_type& allocator) : basic_string(std::basic_string<xtd::char8>(il), allocator) {}
-#endif
     /// @brief Initializes a new instance of xtd::basic_string with specified initializer list and allocator.
     /// @param il The initializer list to fill.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
@@ -1931,14 +1899,12 @@ namespace xtd {
       else return __xtd_convert_to_string<xtd::char32>(chars_);
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Converts the value of this instance to a xtd::basic_string <xtd::char8>.
     /// @return The current string.
     basic_string<xtd::char8> to_u8string() const noexcept {
       if constexpr (std::is_same_v<xtd::char8, char_t>) return chars_;
       else return __xtd_convert_to_string<xtd::char8>(chars_);
     }
-#endif
     
     /// @brief Returns a copy of the current xtd::basic_string converted to uppercase.
     /// @return A string in uppercase.
@@ -2456,7 +2422,6 @@ namespace xtd {
       else chars_ = __xtd_convert_to_string<value_type>(str.chars());
       return *this;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of str.
     /// @param str String to use as data source.
     /// @return This current instance.
@@ -2465,7 +2430,6 @@ namespace xtd {
       else chars_ = __xtd_convert_to_string<value_type>(str.chars());
       return *this;
     }
-#endif
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of str.
     /// @param str String to use as data source.
     /// @return This current instance.
@@ -2499,7 +2463,6 @@ namespace xtd {
       else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)));
       return *this;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in `str` is moved from `str` into this string). `str` is in a valid but unspecified state afterwards.
     /// @param str String to use as data source.
     /// @return This current instance.
@@ -2508,7 +2471,6 @@ namespace xtd {
       else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str.chars_)));
       return *this;
     }
-#endif
     /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in `str` is moved from `str` into this string). `str` is in a valid but unspecified state afterwards.
     /// @param str String to use as data source.
     /// @return This current instance.
@@ -2542,7 +2504,6 @@ namespace xtd {
       else chars_ = __xtd_convert_to_string<value_type>(str);
       return *this;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
     /// @param str String to use as data source.
     /// @return This current instance.
@@ -2551,7 +2512,6 @@ namespace xtd {
       else chars_ = __xtd_convert_to_string<value_type>(str);
       return *this;
     }
-#endif
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
     /// @param str String to use as data source.
     /// @return This current instance.
@@ -2585,7 +2545,6 @@ namespace xtd {
       else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str)));
       return *this;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
     /// @param str String to use as data source.
     /// @return This current instance.
@@ -2594,7 +2553,6 @@ namespace xtd {
       else chars_ = std::move(__xtd_convert_to_string<value_type>(std::move(str)));
       return *this;
     }
-#endif
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
     /// @param str String to use as data source.
     /// @return This current instance.
@@ -2634,7 +2592,6 @@ namespace xtd {
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str));
       return *this;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
     /// @param str String litteral pointer to use as data source.
     /// @exception xtd::tring_null_pointer_exception The `str` is null.
@@ -2645,7 +2602,6 @@ namespace xtd {
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str));
       return *this;
     }
-#endif
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `str`.
     /// @param str String litteral pointer to use as data source.
     /// @exception xtd::tring_null_pointer_exception The `str` is null.
@@ -2678,7 +2634,6 @@ namespace xtd {
       *this = basic_string(1, character);
       return  *this;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Copy assignment operator. Replaces the contents with the specified character.
     /// @param character The character to use as data source.
     /// @return This current instance.
@@ -2686,7 +2641,6 @@ namespace xtd {
       *this = basic_string(1, character);
       return  *this;
     }
-#endif
     /// @brief Copy assignment operator. Replaces the contents with the specified character.
     /// @param character The character to use as data source.
     /// @return This current instance.
@@ -2716,7 +2670,6 @@ namespace xtd {
       *this = basic_string(il);
       return *this;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of the specified initializer list.
     /// @param il The initialiazer list to use as data source.
     /// @return This current instance.
@@ -2724,7 +2677,6 @@ namespace xtd {
       *this = basic_string(il);
       return *this;
     }
-#endif
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of the specified initializer list.
     /// @param il The initialiazer list to use as data source.
     /// @return This current instance.
@@ -2757,7 +2709,6 @@ namespace xtd {
       else chars_ += __xtd_convert_to_string<value_type>(str.chars_);
       return *this;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
@@ -2766,7 +2717,6 @@ namespace xtd {
       else chars_ += __xtd_convert_to_string<value_type>(str.chars_);
       return *this;
     }
-#endif
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
@@ -2800,7 +2750,6 @@ namespace xtd {
       else chars_ += __xtd_convert_to_string<value_type>(std::move(str.chars_));
       return *this;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
@@ -2809,7 +2758,6 @@ namespace xtd {
       else chars_ += __xtd_convert_to_string<value_type>(std::move(str.chars_));
       return *this;
     }
-#endif
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
@@ -2843,7 +2791,6 @@ namespace xtd {
       else chars_ += __xtd_convert_to_string<value_type>(str);
       return *this;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
@@ -2852,7 +2799,6 @@ namespace xtd {
       else chars_ += __xtd_convert_to_string<value_type>(str);
       return *this;
     }
-#endif
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
@@ -2882,7 +2828,6 @@ namespace xtd {
       chars_ += basic_string(str).chars_;
       return *this;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
@@ -2890,7 +2835,6 @@ namespace xtd {
       chars_ += basic_string(str).chars_;
       return *this;
     }
-#endif
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
@@ -2919,7 +2863,6 @@ namespace xtd {
       chars_ += basic_string(1, ch).chars_;
       return *this;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param ch Character value to append.
     /// @return This current instance with characters added.
@@ -2927,7 +2870,6 @@ namespace xtd {
       chars_ += basic_string(1, ch).chars_;
       return *this;
     }
-#endif
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param ch Character value to append.
     /// @return This current instance with characters added.
@@ -2963,7 +2905,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -2973,7 +2914,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-#endif
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3011,7 +2951,6 @@ namespace xtd {
       result += std::move(rhs);
       return result;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3021,7 +2960,6 @@ namespace xtd {
       result += std::move(rhs);
       return result;
     }
-#endif
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3059,7 +2997,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3069,7 +3006,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-#endif
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3107,7 +3043,6 @@ namespace xtd {
       result += std::move(rhs);
       return result;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3117,7 +3052,6 @@ namespace xtd {
       result += std::move(rhs);
       return result;
     }
-#endif
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3155,7 +3089,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3165,7 +3098,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-#endif
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3206,7 +3138,6 @@ namespace xtd {
       else result += __xtd_convert_to_string<xtd::char32>(rhs.chars());
       return result;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3217,7 +3148,6 @@ namespace xtd {
       else result += __xtd_convert_to_string<xtd::char8>(rhs.chars());
       return result;
     }
-#endif
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3256,7 +3186,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3266,7 +3195,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-#endif
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3304,7 +3232,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3314,7 +3241,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-#endif
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3352,7 +3278,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3362,7 +3287,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-#endif
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3400,8 +3324,6 @@ namespace xtd {
       result += std::move(rhs);
       return result;
     }
-
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3411,7 +3333,6 @@ namespace xtd {
       result += std::move(rhs);
       return result;
     }
-#endif
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3449,7 +3370,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The character who will follow the `lhs`.
@@ -3459,7 +3379,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-#endif
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The character who will follow the `lhs`.
@@ -3497,7 +3416,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The character who will follow the `lhs`.
@@ -3507,7 +3425,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-#endif
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The string characters who will precede the `rhs`.
     /// @param rhs The character who will follow the `lhs`.
@@ -3545,7 +3462,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3555,7 +3471,6 @@ namespace xtd {
       result += rhs;
       return result;
     }
-#endif
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3593,7 +3508,6 @@ namespace xtd {
       result += std::move(rhs);
       return result;
     }
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3603,7 +3517,6 @@ namespace xtd {
       result += std::move(rhs);
       return result;
     }
-#endif
     /// @brief Addition operator. Returns a string containing characters from `lhs` followed by the characters from `rhs`.
     /// @param lhs The character who will precede the `rhs`.
     /// @param rhs The string characters who will follow the `lhs`.
@@ -3669,9 +3582,7 @@ namespace xtd {
     friend class basic_string<char>;
     friend class basic_string<xtd::char16>;
     friend class basic_string<xtd::char32>;
-#if defined(__xtd__cpp_lib_char8_t)
     friend class basic_string<xtd::char8>;
-#endif
     friend class basic_string<xtd::wchar>;
 
     static const xtd::array<value_type> default_split_separators;
@@ -3682,9 +3593,7 @@ namespace xtd {
       if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::string>::value) return std::forward<arg_t>(arg).c_str();
       else if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::u16string>::value) return std::forward<arg_t>(arg).c_str();
       else if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::u32string>::value) return std::forward<arg_t>(arg).c_str();
-#if defined(__xtd__cpp_lib_char8_t)
       else if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::u8string>::value) return std::forward<arg_t>(arg).c_str();
-#endif
       else if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::wstring>::value) return std::forward<arg_t>(arg).c_str();
       else if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, basic_string>::value) return std::forward<arg_t>(arg).c_str();
       else return std::forward<arg_t>(arg);

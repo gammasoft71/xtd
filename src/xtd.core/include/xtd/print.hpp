@@ -47,7 +47,6 @@ namespace xtd {
   void print(FILE* file, const char* fmt, args_t&& ... values) {
     __xtd_print_with_file_write__(false, file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Writes the text representation of the specified list of values to the file output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
   /// @param file A file output stream.
@@ -58,7 +57,6 @@ namespace xtd {
   void print(FILE* file, const char8_t* fmt, args_t&& ... values) {
     __xtd_print_with_file_write__(false, file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
-#endif
   /// @brief Writes the text representation of the specified list of values to the file output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
   /// @param file A file output stream.
@@ -124,7 +122,6 @@ namespace xtd {
   void print(std::ostream& os, const char* fmt, args_t&& ... values) {
     __xtd_print_with_ostream_write__(false, os, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Writes the text representation of the specified list of values to the output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
   /// @param os The output stream to insert data into.
@@ -134,7 +131,6 @@ namespace xtd {
   void print(std::ostream& os, const char8_t* fmt, args_t&& ... values) {
     __xtd_print_with_ostream_write__(false, os, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
-#endif
   /// @brief Writes the text representation of the specified list of values to the output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
   /// @param os The output stream to insert data into.
@@ -186,14 +182,12 @@ namespace xtd {
   /// @param values Values to write,
   template<class ...args_t>
   void print(const char* fmt, args_t&& ... values) {print(stdout, fmt, std::forward<args_t>(values)...);}
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Writes the text representation of the specified list of values to the standard output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
   /// @param fmt A composite format string.
   /// @param values Values to write,
   template<class ...args_t>
   void print(const char8_t* fmt, args_t&& ... values) {print(stdout, fmt, std::forward<args_t>(values)...);}
-#endif
   /// @brief Writes the text representation of the specified list of values to the standard output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
   /// @param fmt A composite format string.

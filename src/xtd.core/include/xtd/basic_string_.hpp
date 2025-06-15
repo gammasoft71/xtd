@@ -451,7 +451,6 @@ inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, char>
   return out;
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 template<>
 inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::char8>(std::basic_string<xtd::char8>&& str) noexcept {
   auto out = std::basic_string<xtd::char16> {};
@@ -475,7 +474,6 @@ inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::
   }
   return out;
 }
-#endif
 
 template<>
 inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, char>(std::basic_string<char>&& str) noexcept {
@@ -503,7 +501,6 @@ inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, char>(s
   return out;
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 template<>
 inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::char8>(std::basic_string<xtd::char8>&& str) noexcept {
   auto out = std::basic_string<xtd::wchar> {};
@@ -529,7 +526,6 @@ inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::ch
   }
   return out;
 }
-#endif
 
 template<>
 inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, char>(std::basic_string<char>&& str) noexcept {
@@ -550,7 +546,6 @@ inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, char>
   return out;
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 template<>
 inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::char8>(std::basic_string<xtd::char8>&& str) noexcept {
   auto out = std::basic_string<xtd::char32> {};
@@ -569,7 +564,6 @@ inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::
   }
   return out;
 }
-#endif
 
 template<>
 inline std::basic_string<char> __xtd_convert_to_string<char, char>(std::basic_string<char>&& str) noexcept {
@@ -586,19 +580,16 @@ inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::
   return std::move(str);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 template<>
 inline std::basic_string<xtd::char8> __xtd_convert_to_string<xtd::char8, xtd::char8>(std::basic_string<xtd::char8>&& str) noexcept {
   return std::move(str);
 }
-#endif
 
 template<>
 inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::wchar>(std::basic_string<xtd::wchar>&& str) noexcept {
   return std::move(str);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 template<>
 inline std::basic_string<xtd::char8> __xtd_convert_to_string<xtd::char8, char>(std::basic_string<char>&& str) noexcept {
   return std::basic_string<xtd::char8> {reinterpret_cast<const xtd::char8*>(str.c_str())};
@@ -608,7 +599,6 @@ template<>
 inline std::basic_string<char> __xtd_convert_to_string<char, xtd::char8>(std::basic_string<xtd::char8>&& str) noexcept {
   return std::basic_string<char> {reinterpret_cast<const char*>(str.c_str())};
 }
-#endif
 
 template<>
 inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::char32>(std::basic_string<xtd::char32>&& str) noexcept {
@@ -695,7 +685,6 @@ inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, char>
   return out;
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 template<>
 inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::char8>(const std::basic_string<xtd::char8>& str) noexcept {
   auto out = std::basic_string<xtd::char16> {};
@@ -719,7 +708,6 @@ inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::
   }
   return out;
 }
-#endif
 
 template<>
 inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, char>(const std::basic_string<char>& str) noexcept {
@@ -747,7 +735,6 @@ inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, char>(c
   return out;
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 template<>
 inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::char8>(const std::basic_string<xtd::char8>& str) noexcept {
   auto out = std::basic_string<xtd::wchar> {};
@@ -773,7 +760,6 @@ inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::ch
   }
   return out;
 }
-#endif
 
 template<>
 inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, char>(const std::basic_string<char>& str) noexcept {
@@ -794,7 +780,6 @@ inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, char>
   return out;
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 template<>
 inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::char8>(const std::basic_string<xtd::char8>& str) noexcept {
   auto out = std::basic_string<xtd::char32> {};
@@ -813,7 +798,6 @@ inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::
   }
   return out;
 }
-#endif
 
 template<>
 inline std::basic_string<char> __xtd_convert_to_string<char, char>(const std::basic_string<char>& str) noexcept {
@@ -830,19 +814,16 @@ inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::
   return str;
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 template<>
 inline std::basic_string<xtd::char8> __xtd_convert_to_string<xtd::char8, xtd::char8>(const std::basic_string<xtd::char8>& str) noexcept {
   return str;
 }
-#endif
 
 template<>
 inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::wchar>(const std::basic_string<xtd::wchar>& str) noexcept {
   return str;
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 template<>
 inline std::basic_string<xtd::char8> __xtd_convert_to_string<xtd::char8, char>(const std::basic_string<char>& str) noexcept {
   return reinterpret_cast<const xtd::char8*>(str.c_str());
@@ -852,7 +833,6 @@ template<>
 inline std::basic_string<char> __xtd_convert_to_string<char, xtd::char8>(const std::basic_string<xtd::char8>& str) noexcept {
   return reinterpret_cast<const char*>(str.c_str());
 }
-#endif
 
 template<>
 inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::char32>(const std::basic_string<xtd::char32>& str) noexcept {

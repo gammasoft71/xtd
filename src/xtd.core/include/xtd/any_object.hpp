@@ -137,23 +137,17 @@ namespace xtd {
     inline ptr<object> boxing_ptr(args_t&& ...args) noexcept {return new box<type_t>(args...);}
     //inline ptr<object> boxing_ptr(const object& value) noexcept {return new value;}
     inline ptr<object> boxing_ptr(const char* value) noexcept {return new_ptr<string>(value);}
-#if defined(__xtd__cpp_lib_char8_t)
     inline ptr<object> boxing_ptr(const char8* value) noexcept {return  new_ptr<string>(value);}
-#endif
     inline ptr<object> boxing_ptr(const char16* value) noexcept {return new_ptr<string>(value);}
     inline ptr<object> boxing_ptr(const char32* value) noexcept {return new_ptr<string>(value);}
     inline ptr<object> boxing_ptr(const wchar* value) noexcept {return new_ptr<string>(value);}
     inline ptr<object> boxing_ptr(const char& value) noexcept {return new_ptr<char_object>(value);}
-#if defined(__xtd__cpp_lib_char8_t)
     inline ptr<object> boxing_ptr(const char8& value) noexcept {return new_ptr<char8_object>(value);}
-#endif
     inline ptr<object> boxing_ptr(const char16& value) noexcept {return new_ptr<char16_object>(value);}
     inline ptr<object> boxing_ptr(const char32& value) noexcept {return new_ptr<char32_object>(value);}
     inline ptr<object> boxing_ptr(const wchar& value) noexcept {return new_ptr<wchar_object>(value);}
     inline ptr<object> boxing_ptr(char& value) noexcept {return new_ptr<char_object>(value);}
-#if defined(__xtd__cpp_lib_char8_t)
     inline ptr<object> boxing_ptr(char8& value) noexcept {return new_ptr<char8_object>(value);}
-#endif
     inline ptr<object> boxing_ptr(char16& value) noexcept {return new_ptr<char16_object>(value);}
     inline ptr<object> boxing_ptr(char32& value) noexcept {return new_ptr<char32_object>(value);}
     inline ptr<object> boxing_ptr(wchar& value) noexcept {return new_ptr<wchar_object>(value);}

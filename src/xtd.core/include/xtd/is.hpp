@@ -21,10 +21,8 @@ namespace xtd {
   inline bool is(char16 value) {return false;}
   template<class value_t>
   inline bool is(char32 value) {return false;}
-#if defined(__xtd__cpp_lib_char8_t)
   template<class value_t>
   inline bool is(char8 value) {return false;}
-#endif
   template<class value_t>
   inline bool is(wchar value) {return false;}
   template<class value_t>
@@ -143,7 +141,6 @@ namespace xtd {
     return true;
   }
   
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
   /// ```cpp
@@ -165,7 +162,6 @@ namespace xtd {
   inline bool is<char8>(char8 value) {
     return true;
   }
-#endif
 
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
