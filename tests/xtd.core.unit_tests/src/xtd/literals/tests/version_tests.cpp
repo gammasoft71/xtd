@@ -16,13 +16,11 @@ namespace xtd {
           assert::are_equal("1.2.3", v.to_string());
         }
         
-#if defined(__xtd__cpp_lib_char8_t)
         void test_method_(_vers_operator_on_char8_ptr) {
           auto v = u8"1.2.3"_vers;
           assert::is_instance_of<version>(v);
           assert::are_equal("1.2.3", v.to_string());
         }
-#endif
         
         void test_method_(_vers_operator_on_char16_ptr) {
           auto v = u"1.2.3"_vers;

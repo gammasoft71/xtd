@@ -88,10 +88,8 @@ namespace xtd::tests {
     }
     
     void test_method_(format_string8) {
-#if defined(__xtd__cpp_lib_char8_t)
       std::any a = std::u8string {u8"string"};
       assert::are_equal(u8"string", string::format("{}", a));
-#endif
     }
     
     void test_method_(format_string16) {

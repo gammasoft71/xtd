@@ -36,7 +36,6 @@ namespace xtd {
           assert::throws<xtd::format_exception>([] {"42str"_i16;});
         }
         
-#if defined(__xtd__cpp_lib_char8_t)
         void test_method_(_i16_operator_on_char8_ptr) {
           auto v = u8"42"_i16;
           assert::is_true(is<int16>(v));
@@ -46,7 +45,6 @@ namespace xtd {
         void test_method_(_i16_operator_on_invalid_char8_ptr) {
           assert::throws<xtd::format_exception>([] {u8"42str"_i16;});
         }
-#endif
         
         void test_method_(_i16_operator_on_char16_ptr) {
           auto v = u"42"_i16;
@@ -104,7 +102,6 @@ namespace xtd {
           assert::throws<xtd::format_exception>([] {"42str"_s16;});
         }
         
-#if defined(__xtd__cpp_lib_char8_t)
         void test_method_(_s16_operator_on_char8_ptr) {
           auto v = u8"42"_s16;
           assert::is_true(is<int16>(v));
@@ -114,7 +111,6 @@ namespace xtd {
         void test_method_(_s16_operator_on_invalid_char8_ptr) {
           assert::throws<xtd::format_exception>([] {u8"42str"_s16;});
         }
-#endif
         
         void test_method_(_s16_operator_on_char16_ptr) {
           auto v = u"42"_s16;

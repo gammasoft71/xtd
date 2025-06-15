@@ -16,12 +16,10 @@ namespace xtd {
           assert::are_equal("Belgium"_t, string {v});
         }
         
-#if defined(__xtd__cpp_lib_char8_t)
         void test_method_(_t_operator_on_char8_ptr) {
           auto v = u8"Belgium"_t;
           assert::are_equal(u8"Belgium"_t, string {v});
         }
-#endif
         
         void test_method_(_t_operator_on_char16_ptr) {
           auto v = u"Belgium"_t;

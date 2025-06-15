@@ -34,13 +34,11 @@ namespace xtd {
           assert::are_equal(U'a'_c, v);
         }
         
-#if defined(__xtd__cpp_lib_char8_t)
         void test_method_(_c_operator_on_char8) {
           auto v = u8'a'_c;
           assert::is_true(is<char32>(v));
           assert::are_equal(u8'a'_c, v);
         }
-#endif
         
         void test_method_(_c_operator_on_wchar) {
           auto v = L'a'_c;

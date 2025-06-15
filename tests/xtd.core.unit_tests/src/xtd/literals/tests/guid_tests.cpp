@@ -17,13 +17,11 @@ namespace xtd {
           assert::are_equal("1dae5efa-d701-42b9-8d61-09d3b38f802a", v.to_string());
         }
         
-#if defined(__xtd__cpp_lib_char8_t)
         void test_method_(_guid_operator_on_char8_ptr) {
           auto v = u8"1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
           assert::is_instance_of<guid>(v);
           assert::are_equal("1dae5efa-d701-42b9-8d61-09d3b38f802a", v.to_string());
         }
-#endif
         
         void test_method_(_guid_operator_on_char16_ptr) {
           auto v = u"1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
