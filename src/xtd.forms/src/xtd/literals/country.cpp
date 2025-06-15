@@ -17,11 +17,9 @@ country xtd::literals::operator""_country(const char* s, xtd::size n) {
   return get_country(string {s});
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 country xtd::literals::operator""_country(const char8* s, xtd::size n) {
   return get_country(string {s});
 }
-#endif
 
 country xtd::literals::operator""_country(const char16* s, xtd::size n) {
   return get_country(string {s});
