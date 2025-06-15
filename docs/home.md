@@ -15,7 +15,7 @@
 * Free and open-source ([MIT License](https://github.com/gammasoft71/xtd/blob/master/docs/license.md));
 * a collection of native C++ classes libraries, to complete std;
 * API close to the .net API with a modern C++ approach and full integration with the std standard;
-* written in efficient, modern C++17/20 with [RAII](https://en.cppreference.com/w/cpp/language/raii) programming idiom;
+* written in efficient, modern C++20 with [RAII](https://en.cppreference.com/w/cpp/language/raii) programming idiom;
 * and [highly portable](portability.md#the-xtd-libraries-portability-list) and available on [many different platforms](portability.md#operating-system-supported);
 
 ## xtd libraries architecture
@@ -27,7 +27,7 @@ xtd is composed of several libraries grouped by package.
 ### system
 
 [![core](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.core.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)
-The [xtd.core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html) library is modern C++17/20 libraries of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which c++ applications, components, and controls are built.
+The [xtd.core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html) library is modern C++20 libraries of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which c++ applications, components, and controls are built.
 
 ### drawing
 
@@ -42,7 +42,7 @@ The [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group_
 ### tunit
 
 [![tunit](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd.tunit.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html)
-The [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html) library is a unit-testing framework for modern C++17/20, inspired by [Microsoft.VisualStudio.TestTools.Cpp](https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference).
+The [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html) library is a unit-testing framework for modern C++20, inspired by [Microsoft.VisualStudio.TestTools.Cpp](https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference).
 
 
 See [xtd libraries hierarchy](hierarchy.md).

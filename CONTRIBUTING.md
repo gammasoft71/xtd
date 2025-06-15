@@ -1,6 +1,6 @@
 # xtd
 
-**xtd (pronounced "extend") is a modern C++17/20 framework to create console, GUI (forms like WinForms) and unit test applications on Microsoft Windows, Apple macOS, Linux, iOS and android.**
+**xtd (pronounced "extend") is a modern C++20 framework to create console, GUI (forms like WinForms) and unit test applications on Microsoft Windows, Apple macOS, Linux, iOS and android.**
 
 ## Getting Started
 

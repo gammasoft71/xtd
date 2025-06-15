@@ -6,7 +6,7 @@ The Portability section provide informations about Operating System supported, C
 
 ## In this section
 
-* [C++17](#c++17)
+* [C++20](#c++20)
 * [Operating System Supported](#operating-system-supported)
 * [Libraries dependency](#libraries-dependency)
 * [The xtd libraries portability list](#the-xtd-libraries-portability-list)
@@ -15,13 +15,13 @@ The Portability section provide informations about Operating System supported, C
 * [Compilers](#compilers)
 * [Native](#native)
 
-## C++17
+## C++20
 
-xtd support C++17 or above.
+xtd support C++20 or above.
 
-As of 2018, C++17 is the name for the most recent revision of the [ISO/IEC 14882](https://en.wikipedia.org/wiki/ISO/IEC_14882) standard for the [C++](https://en.wikipedia.org/wiki/C%2B%2B) programming language.
+C++20 is the name for the most recent revision of the [ISO/IEC 14882](https://en.wikipedia.org/wiki/ISO/IEC_14882) standard for the [C++](https://en.wikipedia.org/wiki/C%2B%2B) programming language.
 
-For more information see [wikipedia](https://en.wikipedia.org/wiki/C%2B%2B17) and [cppreference](https://en.cppreference.com/).
+For more information see [wikipedia](https://en.wikipedia.org/wiki/C%2B%2B20) and [cppreference](https://en.cppreference.com/).
 
 ## Libraries dependency
 
@@ -136,7 +136,7 @@ With CMake, xtd support many Development Environment Tools.
 
 [![VisualStudioCode](pictures/dev_tools/VisualStudioCode.png)](https://visualstudio.com)
 
-### CLion 2017.2 or later
+### CLion 2020.2 or later
 
 [![CLion](pictures/dev_tools/CLion.png)](https://jetbrains.com/clion)
 
