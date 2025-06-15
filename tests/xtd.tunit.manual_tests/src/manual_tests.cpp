@@ -43,15 +43,6 @@ namespace xtd::tunit::tests {
     void test_method_(test_method1) {
       assert::is_true(true);
     }
-
-    void test_method_(test_method2) {
-      assert::is_true(false);
-    }
-
-    void test_method_(test_method3) {
-      assert::ignore();
-      assert::is_true(false);
-    }
   };
 }
 
