@@ -27,9 +27,7 @@ namespace xtd::text::tests {
   test_class_attribute<basic_string_builder_tests<char>> basic_string_builder_tests_class_char_attr {"basic_string_builder_tests<char>"};
   test_class_attribute<basic_string_builder_tests<char16>> basic_string_builder_tests_class_char16_attr {"basic_string_builder_tests<char16>"};
   test_class_attribute<basic_string_builder_tests<char32>> basic_string_builder_tests_class_char32_attr {"basic_string_builder_tests<char32>"};
-#if defined(__xtd__cpp_lib_char8_t)
   test_class_attribute<basic_string_builder_tests<char8>> basic_string_builder_tests_class_char8_attr {"basic_string_builder_tests<char8>"};
-#endif
   test_class_attribute<basic_string_builder_tests<wchar>> basic_string_builder_tests_class_wchar_attr {"basic_string_builder_tests<wchar>"};
 
   template<class char_t>
@@ -47,12 +45,8 @@ namespace xtd::text::tests {
     
     void test_method_(value_type) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) return;
       else assert::are_equal(typeof_<char_t>(), typeof_<typename basic_string_builder<char_t>::value_type>());
-#else
-      assert::are_equal(typeof_<char_t>(), typeof_<typename basic_string_builder<char_t>::value_type>());
-#endif
     }
     
     void test_method_(allocator_type) {
@@ -69,42 +63,26 @@ namespace xtd::text::tests {
     
     void test_method_(reference) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) return;
       else assert::are_equal(typeof_<char_t&>(), typeof_<typename basic_string_builder<char_t>::reference>());
-#else
-      assert::are_equal(typeof_<char_t&>(), typeof_<typename basic_string_builder<char_t>::reference>());
-#endif
     }
     
     void test_method_(const_reference) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) return;
       else assert::are_equal(typeof_<const char_t&>(), typeof_<typename basic_string_builder<char_t>::const_reference>());
-#else
-      assert::are_equal(typeof_<const char_t&>(), typeof_<typename basic_string_builder<char_t>::const_reference>());
-#endif
     }
     
     void test_method_(pointer) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) return;
       else assert::are_equal(typeof_<char_t*>(), typeof_<typename basic_string_builder<char_t>::pointer>());
-#else
-      assert::are_equal(typeof_<char_t*>(), typeof_<typename basic_string_builder<char_t>::pointer>());
-#endif
     }
     
     void test_method_(const_pointer) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) return;
       else assert::are_equal(typeof_<const char_t*>(), typeof_<typename basic_string_builder<char_t>::const_pointer>());
-#else
-      assert::are_equal(typeof_<const char_t*>(), typeof_<typename basic_string_builder<char_t>::const_pointer>());
-#endif
     }
     
     void test_method_(iterator) {
@@ -251,12 +229,8 @@ namespace xtd::text::tests {
     
     void test_method_(c_str) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(!std::is_same<char_t, char8>::value)
         assert::are_equal(typeof_<const char_t*>(), typeof_(basic_string_builder<char_t> {}.c_str()));
-#else
-      assert::are_equal(typeof_<const char_t*>(), typeof_(basic_string_builder<char_t> {}.c_str()));
-#endif
       assert::is_empty(basic_string_builder<char_t> {}.c_str());
       assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string_builder<char_t> {"A test string"}.c_str());
     }
@@ -300,12 +274,8 @@ namespace xtd::text::tests {
     void test_method_(data_const) {
       const auto str = basic_string_builder<char_t> {};
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(!std::is_same<char_t, char8>::value)
         assert::are_equal(typeof_<const char_t*>(), typeof_(str.data()));
-#else
-      assert::are_equal(typeof_<const char_t*>(), typeof_(str.data()));
-#endif
       assert::is_empty(str.data());
       assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string_builder<char_t> {"A test string"}.data());
     }
@@ -508,18 +478,14 @@ namespace xtd::text::tests {
       if constexpr(std::is_same<char_t, char>::value) s.append(" to test", 8);
       if constexpr(std::is_same<char_t, char16>::value) s.append(u" to test", 8);
       if constexpr(std::is_same<char_t, char32>::value) s.append(U" to test", 8);
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) s.append(u8" to test", 8);
-#endif
       if constexpr(std::is_same<char_t, wchar>::value) s.append(L" to test", 8);
       assert::are_equal("A test string to test", s.to_string());
 
       if constexpr(std::is_same<char_t, char>::value) s.append(" and check", 4);
       if constexpr(std::is_same<char_t, char16>::value) s.append(u" and check", 4);
       if constexpr(std::is_same<char_t, char32>::value) s.append(U" and check", 4);
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) s.append(u8" and check", 4);
-#endif
       if constexpr(std::is_same<char_t, wchar>::value) s.append(L" and check", 4);
       assert::are_equal("A test string to test and", s.to_string());
     }
@@ -529,9 +495,7 @@ namespace xtd::text::tests {
       if constexpr(std::is_same<char_t, char>::value) s.append(" to test");
       if constexpr(std::is_same<char_t, char16>::value) s.append(u" to test");
       if constexpr(std::is_same<char_t, char32>::value) s.append(U" to test");
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) s.append(u8" to test");
-#endif
       if constexpr(std::is_same<char_t, wchar>::value) s.append(L" to test");
       assert::are_equal("A test string to test", s.to_string());
     }
@@ -853,9 +817,7 @@ namespace xtd::text::tests {
       if constexpr(std::is_same<char_t, char>::value) s.insert(6, " to test");
       if constexpr(std::is_same<char_t, char16>::value) s.insert(6, u" to test");
       if constexpr(std::is_same<char_t, char32>::value) s.insert(6, U" to test");
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) s.insert(6, u8" to test");
-#endif
       if constexpr(std::is_same<char_t, wchar>::value) s.insert(6, L" to test");
       assert::are_equal("A test to test string", s.to_string());
     }
@@ -865,18 +827,14 @@ namespace xtd::text::tests {
       if constexpr(std::is_same<char_t, char>::value) s.insert(6, " to test", 8);
       if constexpr(std::is_same<char_t, char16>::value) s.insert(6, u" to test", 8);
       if constexpr(std::is_same<char_t, char32>::value) s.insert(6, U" to test", 8);
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) s.insert(6, u8" to test", 8);
-#endif
       if constexpr(std::is_same<char_t, wchar>::value) s.insert(6, L" to test", 8);
       assert::are_equal("A test to test string", s.to_string());
 
       if constexpr(std::is_same<char_t, char>::value) s.insert(9, " and check", 4);
       if constexpr(std::is_same<char_t, char16>::value) s.insert(9, u" and check", 4);
       if constexpr(std::is_same<char_t, char32>::value) s.insert(9, U" and check", 4);
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) s.insert(9, u8" and check", 4);
-#endif
       if constexpr(std::is_same<char_t, wchar>::value) s.insert(9, L" and check", 4);
       assert::are_equal("A test to and test string", s.to_string());
     }
@@ -1000,9 +958,7 @@ namespace xtd::text::tests {
       if constexpr(std::is_same<char_t, char>::value) s.replace(2_z, 4_z, "value string", 5_z);
       if constexpr(std::is_same<char_t, char16>::value) s.replace(2_z, 4_z, u"value string", 5_z);
       if constexpr(std::is_same<char_t, char32>::value) s.replace(2_z, 4_z, U"value string", 5_z);
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) s.replace(2_z, 4_z, u8"value string", 5_z);
-#endif
       if constexpr(std::is_same<char_t, wchar>::value) s.replace(2_z, 4_z, L"value string", 5_z);
       assert::are_equal("A value string", s.to_string());
     }
@@ -1012,9 +968,7 @@ namespace xtd::text::tests {
       if constexpr(std::is_same<char_t, char>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, "value string", 5_z);
       if constexpr(std::is_same<char_t, char16>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, u"value string", 5_z);
       if constexpr(std::is_same<char_t, char32>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, U"value string", 5_z);
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, u8"value string", 5_z);
-#endif
       if constexpr(std::is_same<char_t, wchar>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, L"value string", 5_z);
       assert::are_equal("A value string", s.to_string());
     }
@@ -1024,9 +978,7 @@ namespace xtd::text::tests {
       if constexpr(std::is_same<char_t, char>::value) s.replace(2_z, 4_z, "value");
       if constexpr(std::is_same<char_t, char16>::value) s.replace(2_z, 4_z, u"value");
       if constexpr(std::is_same<char_t, char32>::value) s.replace(2_z, 4_z, U"value");
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) s.replace(2_z, 4_z, u8"value");
-#endif
       if constexpr(std::is_same<char_t, wchar>::value) s.replace(2_z, 4_z, L"value");
       assert::are_equal("A value string", s.to_string());
     }
@@ -1036,9 +988,7 @@ namespace xtd::text::tests {
       if constexpr(std::is_same<char_t, char>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, "value");
       if constexpr(std::is_same<char_t, char16>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, u"value");
       if constexpr(std::is_same<char_t, char32>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, U"value");
-#if defined(__xtd__cpp_lib_char8_t)
       if constexpr(std::is_same<char_t, char8>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, u8"value");
-#endif
       if constexpr(std::is_same<char_t, wchar>::value) s.replace(s.begin() + 2_z, s.begin() + 6_z, L"value");
       assert::are_equal("A value string", s.to_string());
     }

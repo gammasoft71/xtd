@@ -38,7 +38,6 @@ namespace xtd {
 }
 
 namespace xtd::tests {
-#if defined(__xtd__cpp_lib_char8_t)
   class test_class_(format_u8string_object_tests) {
     void test_method_(format_point_with_default_argument) {
       assert::are_equal(u8"(42, 24)", format(u8"{0}", point {42, 24}));
@@ -72,5 +71,4 @@ namespace xtd::tests {
       assert::throws<xtd::format_exception>([] {format(u8"{0:, }", point {42, 24});});
     }
   };
-#endif
 }

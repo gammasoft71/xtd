@@ -25,7 +25,6 @@ template<> struct xtd::enum_register<xtd::tests::day> {
 };
 
 namespace xtd::tests {
-#if defined(__xtd__cpp_lib_char8_t)
   class test_class_(format_u8string_enum_class_tests) {
     void test_method_(format_sunday_with_default_argument) {
       assert::are_equal(u8"sunday", format(u8"{0}", day::sunday));
@@ -63,5 +62,4 @@ namespace xtd::tests {
       assert::throws<xtd::format_exception>([] {format(u8"{0:e}", day::tuesday);});
     }
   };
-#endif
 }

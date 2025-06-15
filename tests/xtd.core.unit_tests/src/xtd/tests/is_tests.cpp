@@ -67,7 +67,6 @@ namespace xtd::tests {
       assert::is_false(is<char32>(v));
     }
     
-#if defined(__xtd__cpp_lib_char8_t)
     void test_method_(is_char8_with_char) {
       char8 v = u8'a';
       assert::is_true(is<char8>(v));
@@ -77,7 +76,6 @@ namespace xtd::tests {
       int v = 42;
       assert::is_false(is<char8>(v));
     }
-#endif
     
     void test_method_(is_wchar_with_char) {
       wchar v = L'a';

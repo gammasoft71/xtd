@@ -19,7 +19,6 @@ std::basic_ostream<char_t>& operator <<(std::basic_ostream<char_t>& os, const ::
 }
 
 namespace xtd::tests {
-#if defined(__xtd__cpp_lib_char8_t)
   class test_class_(format_u8string_object_without_xtd_to_string_tests) {
     void test_method_(format_location_with_default_argument) {
       assert::throws<xtd::format_exception>([] {format(u8"{0}", ::size_sof {42, 24});});
@@ -41,5 +40,4 @@ namespace xtd::tests {
       assert::throws<xtd::format_exception>([] {format(u8"{0:G}", ::size_sof {42, 24});});
     }
   };
-#endif
 }
