@@ -197,10 +197,13 @@ var searchData=
   ['user_5ftrash_5ffull_194',['user_trash_full',['../classxtd_1_1drawing_1_1status__system__images.html#af4503f58a117bdb22d08a8ced0da0aef',1,'xtd::drawing::status_system_images::user_trash_full() noexcept'],['../classxtd_1_1drawing_1_1status__system__images.html#a15687fcdd30fa943364d3e1b053b46b8',1,'xtd::drawing::status_system_images::user_trash_full(const xtd::drawing::size &amp;size) noexcept']]],
   ['using_2ehpp_195',['using.hpp',['../using_8hpp.html',1,'']]],
   ['using_5f_196',['using_',['../group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f',1,'using.hpp']]],
-  ['ustring_2ehpp_197',['ustring.hpp',['../ustring_8hpp.html',1,'']]],
-  ['utc_198',['utc',['../classxtd_1_1time__zone__info.html#a8523cfdd8ed4a8db88e5ebdb04af91f3',1,'xtd::time_zone_info::utc()'],['../group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaa52d33cb937bbdab234ab1729a0f8225b',1,'xtd::utc']]],
-  ['utc_5fnow_199',['utc_now',['../classxtd_1_1date__time.html#a15f9bf48847f8d981f8c37bde44308b0',1,'xtd::date_time']]],
-  ['utilities_5fsystem_5fmonitor_200',['utilities_system_monitor',['../classxtd_1_1drawing_1_1applications__system__images.html#a64fddbcd16d510d9d1032ee225dfef59',1,'xtd::drawing::applications_system_images::utilities_system_monitor() noexcept'],['../classxtd_1_1drawing_1_1applications__system__images.html#abcc663e0d3a2dce42be7df8d1ffb35c2',1,'xtd::drawing::applications_system_images::utilities_system_monitor(const xtd::drawing::size &amp;size) noexcept']]],
-  ['utilities_5fterminal_201',['utilities_terminal',['../classxtd_1_1drawing_1_1applications__system__images.html#ab1f4dfd006b71a27354fe1f68adc9659',1,'xtd::drawing::applications_system_images::utilities_terminal() noexcept'],['../classxtd_1_1drawing_1_1applications__system__images.html#aa77fd56aa9392a65750dbc16517e8ff0',1,'xtd::drawing::applications_system_images::utilities_terminal(const xtd::drawing::size &amp;size) noexcept']]],
-  ['uzbekistan_202',['uzbekistan',['../classxtd_1_1forms_1_1countries.html#af5b3dbc093b2cd2a2852bda080e84ec5',1,'xtd::forms::countries']]]
+  ['ustring_197',['ustring',['../group__strings.html#ga6740756710f29c0742a183f24f7547b9',1,'xtd']]],
+  ['ustring_2ehpp_198',['ustring.hpp',['../ustring_8hpp.html',1,'']]],
+  ['ustring_5fbuilder_199',['ustring_builder',['../group__strings.html#ga4ef9ebda22eadb7370c2efed9c94e4dc',1,'xtd::text']]],
+  ['ustring_5fbuilder_2ehpp_200',['ustring_builder.hpp',['../ustring__builder_8hpp.html',1,'']]],
+  ['utc_201',['utc',['../classxtd_1_1time__zone__info.html#a8523cfdd8ed4a8db88e5ebdb04af91f3',1,'xtd::time_zone_info::utc()'],['../group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaa52d33cb937bbdab234ab1729a0f8225b',1,'xtd::utc']]],
+  ['utc_5fnow_202',['utc_now',['../classxtd_1_1date__time.html#a15f9bf48847f8d981f8c37bde44308b0',1,'xtd::date_time']]],
+  ['utilities_5fsystem_5fmonitor_203',['utilities_system_monitor',['../classxtd_1_1drawing_1_1applications__system__images.html#a64fddbcd16d510d9d1032ee225dfef59',1,'xtd::drawing::applications_system_images::utilities_system_monitor() noexcept'],['../classxtd_1_1drawing_1_1applications__system__images.html#abcc663e0d3a2dce42be7df8d1ffb35c2',1,'xtd::drawing::applications_system_images::utilities_system_monitor(const xtd::drawing::size &amp;size) noexcept']]],
+  ['utilities_5fterminal_204',['utilities_terminal',['../classxtd_1_1drawing_1_1applications__system__images.html#ab1f4dfd006b71a27354fe1f68adc9659',1,'xtd::drawing::applications_system_images::utilities_terminal() noexcept'],['../classxtd_1_1drawing_1_1applications__system__images.html#aa77fd56aa9392a65750dbc16517e8ff0',1,'xtd::drawing::applications_system_images::utilities_terminal(const xtd::drawing::size &amp;size) noexcept']]],
+  ['uzbekistan_205',['uzbekistan',['../classxtd_1_1forms_1_1countries.html#af5b3dbc093b2cd2a2852bda080e84ec5',1,'xtd::forms::countries']]]
 ];
