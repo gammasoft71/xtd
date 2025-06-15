@@ -19,7 +19,7 @@ To define an event, you use the [xtd::event](events.md) class in your [event](ev
 Delegates are described in the next section.
 
 In general, to trigger an event, you add a method marked as `protected` and `virtual`. Name this method `on_`event_name; for example, `on_data_received`.
-The method must take a parameter that specifies an event data object, which is an object of type [xtd::event_ags](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event__args.html) or a derived type. You provide this method to allow derived classes to override the event trigger logic. 
+The method must take a parameter that specifies an event data object, which is an object of type [xtd::event_args](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event__args.html) or a derived type. You provide this method to allow derived classes to override the event trigger logic. 
 A derived class must always call the `on_`event_name method of the base class to ensure that the registered delegates receive the event.
 
 The following example shows how to declare an event named `threshold_reached`. The event is associated with the [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate and triggered by a method called `on_threshold_reached`.
@@ -78,7 +78,7 @@ For example, the [xtd::forms::dialog_closed_event_args](https://gammasoft71.gith
 You determine the event data class associated with an event by examining the event's delegate. 
 For example, the [dialog_closed_event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga93712f46c124e6ca40b40a2d9e14fc60) delegate includes the [dialog_closed_event_args](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1dialog__closed__event__args.html) class as one of its parameters.
 
-The [xtd::event_args](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event__args.htmlhttps://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event__args.html) class is the base type for all event data classes. 
+The [xtd::event_args](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event__args.html) class is the base type for all event data classes. 
 [xtd:event_args](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event__args.html) is also the class you use when an event is not associated with any data.
 When you create an event that is only intended to inform other classes that something has happened and does not need to pass any data, include the xtd:event_args class as the second parameter in the delegate. 
 You can pass the value [xtd::event_args::empty](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event__args.html) when no data is provided. 
