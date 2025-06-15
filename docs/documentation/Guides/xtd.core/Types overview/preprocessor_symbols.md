@@ -234,7 +234,7 @@ The following table represents the different preprocessor symbols for the C++ st
 | `__cplusplus = 199711L`| [C++98](https://www.open-std.org/jtc1/sc22/wg21/) (not supported) |
 | `__cplusplus = 201103L`| [C++11](https://en.wikipedia.org/wiki/C%2B%2B11) (not supported)  |
 | `__cplusplus = 201402L`| [C++14](https://en.wikipedia.org/wiki/C%2B%2B14) (not supported)  |
-| `__cplusplus = 201703L`| [C++17](https://en.wikipedia.org/wiki/C%2B%2B17)                  |
+| `__cplusplus = 201703L`| [C++17](https://en.wikipedia.org/wiki/C%2B%2B17) (not supported)  |
 | `__cplusplus = 202002L`| [C++20](https://en.wikipedia.org/wiki/C%2B%2B20)                  |
 | `__cplusplus = 202302L`| [C++23](https://en.wikipedia.org/wiki/C%2B%2B23)                  |
 | `__cplusplus = 202600L`| [C++26](https://en.wikipedia.org/wiki/C%2B%2B26)                  |

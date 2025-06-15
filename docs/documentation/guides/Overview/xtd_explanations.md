@@ -47,7 +47,7 @@ sidebar_position: 7
 
 What are the criteria for a modern C++ framework in 2019 :
 
-* C++17/20 modern
+* C++20 modern
 * [RAII](https://en.cppreference.com/w/cpp/language/raii) programming idiom.
 * Use of namespace and no prefix
 * No defines for constants and no macros for functions or event logging.

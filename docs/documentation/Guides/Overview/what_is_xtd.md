@@ -10,14 +10,14 @@ With `xtd`, you can use multiple languages, editors, and libraries to build for 
 
 ## Languages
 
-You can write `xtd` apps in modern **C++17** or above and **C** (For more info about c binding see [xtd_c project](https://github.com/gammasoft71/xtd_c).
+You can write `xtd` apps in modern **C++20** or above and **C** (For more info about c binding see [xtd_c project](https://github.com/gammasoft71/xtd_c).
 
-* **C++17** is a simple, modern, object-oriented, and type-safe programming language (For more information about c++ see [cppreference](https://en.cppreference.com/w/cpp)).
+* **C++20** is a simple, modern, object-oriented, and type-safe programming language (For more information about c++ see [cppreference](https://en.cppreference.com/w/cpp)).
 * **C** is an approachable language with a simple syntax for building type-safe (For more information about c++ see [cppreference](https://en.cppreference.com/w/c)).
 
 ## Cross Platform
 
-Whether you're working in **C++17**, or **C**, your code will run natively on any compatible operating system. You can build many types of apps with `xtd`. 
+Whether you're working in **C++20**, or **C**, your code will run natively on any compatible operating system. You can build many types of apps with `xtd`. 
 Some are cross-platform, and some target a specific set of operating systems and devices. (For mode information see [portability](/docs/documentation/Portability)).
 
 ## One consistent API
