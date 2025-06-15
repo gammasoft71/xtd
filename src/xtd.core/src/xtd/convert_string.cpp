@@ -84,11 +84,11 @@ string convert_string::to_string(wchar* str) noexcept {
   return str;
 }
 
+#if defined(__xtd__cpp_lib_char8_t)
 u8string convert_string::to_u8string(const string& str) noexcept {
   return str;
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 u8string convert_string::to_u8string(const std::string& str) noexcept {
   return str;
 }
