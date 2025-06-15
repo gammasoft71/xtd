@@ -55,11 +55,13 @@ namespace ball {
   private:
     label color_label_;
     label light_point_color_label_;
+    label opcacity_label_;
     label size_label_;
     label default_settings_label_;
 
     xtd::forms::color_picker color_color_picker_;
     xtd::forms::color_picker light_point_color_color_picker_;
+    numeric_up_down opacity_numeric_up_down_;
     numeric_up_down size_numeric_up_down_;
     xtd::forms::button reset_button_;
   };

@@ -18,5 +18,8 @@ setting(color xtd::drawing::color USER "xtd::drawing::color::from_argb(0xBC, 0, 
 # Represents the color of the ball's light poin.
 setting(light_point_color xtd::drawing::color USER "xtd::drawing::color::from_argb(0xFF, 0xAA, 0x7E)")
 
+# Represents the opacity in percent.
+setting(opacity double USER "1.0")
+
 # Represents the settings form location in pixels.
 setting(settings_form_location xtd::drawing::point USER "200, 100")
