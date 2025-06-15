@@ -2,6 +2,7 @@
 /// @brief Contains xtd fundamental types.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+#include "check_cpp_version.hpp"
 #include "boolean.hpp"
 #include "byte.hpp"
 #include "char.hpp"
