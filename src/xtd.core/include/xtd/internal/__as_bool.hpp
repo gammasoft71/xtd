@@ -104,7 +104,6 @@ namespace xtd {
     return xtd::convert::to_boolean(value);
   }
   
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
@@ -127,7 +126,6 @@ namespace xtd {
   inline bool as<bool>(char8 value) {
     return xtd::convert::to_boolean(value);
   }
-#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -554,7 +552,6 @@ namespace xtd {
     return xtd::convert::to_boolean(value);
   }
   
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
@@ -600,7 +597,6 @@ namespace xtd {
   inline bool as<bool>(std::u8string& value) {
     return xtd::convert::to_boolean(value);
   }
-#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -786,7 +782,6 @@ namespace xtd {
     return xtd::convert::to_boolean(value);
   }
   
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new bool object converted from value.
@@ -832,7 +827,6 @@ namespace xtd {
   inline bool as<bool>(char8* value) {
     return xtd::convert::to_boolean(value);
   }
-#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.

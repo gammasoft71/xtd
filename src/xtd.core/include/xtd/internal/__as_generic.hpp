@@ -107,7 +107,6 @@ namespace xtd {
     return static_cast<new_type_t>(value);
   }
   
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
@@ -129,7 +128,6 @@ namespace xtd {
   new_type_t as(char8 value) {
     return static_cast<new_type_t>(value);
   }
-#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -610,7 +608,6 @@ namespace xtd {
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
@@ -656,7 +653,6 @@ namespace xtd {
     }
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
-#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -840,7 +836,6 @@ namespace xtd {
     return reinterpret_cast<new_type_t>(value);
   }
   
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new new_type_t object converted from value.
@@ -884,7 +879,6 @@ namespace xtd {
   new_type_t as(char8* value) {
     return reinterpret_cast<new_type_t>(value);
   }
-#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.

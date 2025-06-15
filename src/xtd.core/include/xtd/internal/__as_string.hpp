@@ -128,7 +128,6 @@ namespace xtd {
     return xtd::convert::to_string(value);
   }
   
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
@@ -151,7 +150,6 @@ namespace xtd {
   inline string as<string>(char8 value) {
     return xtd::convert::to_string(value);
   }
-#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.

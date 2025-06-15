@@ -104,7 +104,6 @@ namespace xtd {
     return xtd::convert::to_single(value);
   }
   
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
@@ -127,7 +126,6 @@ namespace xtd {
   inline float as<float>(char8 value) {
     return xtd::convert::to_single(value);
   }
-#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -554,7 +552,6 @@ namespace xtd {
     return xtd::convert::to_single(value);
   }
   
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
@@ -600,7 +597,6 @@ namespace xtd {
   inline float as<float>(std::u8string& value) {
     return xtd::convert::to_single(value);
   }
-#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
@@ -786,7 +782,6 @@ namespace xtd {
     return xtd::convert::to_single(value);
   }
   
-#if defined(__xtd__cpp_lib_char8_t)
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new float object converted from value.
@@ -832,7 +827,6 @@ namespace xtd {
   inline float as<float>(char8* value) {
     return xtd::convert::to_single(value);
   }
-#endif
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
