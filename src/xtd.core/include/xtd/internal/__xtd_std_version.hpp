@@ -21,10 +21,6 @@
 #define __xtd__cpp_lib_any
 #endif
 
-#if defined(__cpp_lib_char8_t)
-#define __xtd__cpp_lib_char8_t
-#endif
-
 #if defined(__cpp_lib_filesystem)
 #define __xtd__cpp_lib_filesystem
 #endif
