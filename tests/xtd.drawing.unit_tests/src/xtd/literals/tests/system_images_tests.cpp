@@ -18,13 +18,11 @@ namespace xtd {
           assert::are_equal(system_images::from_name("system-file-manager"), v);
         }
         
-#if defined(__xtd__cpp_lib_char8_t)
         void test_method_(_image_operator_on_char8_ptr) {
           auto v = u8"system-file-manager"_image;
           assert::is_instance_of<image>(v);
           assert::are_equal(system_images::from_name("system-file-manager"), v);
         }
-#endif
         
         void test_method_(_image_operator_on_char16_ptr) {
           auto v = u"system-file-manager"_image;
