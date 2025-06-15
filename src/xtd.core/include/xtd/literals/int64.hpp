@@ -51,7 +51,6 @@ namespace xtd {
     /// ```
     int64 operator""_i64(const char* s, std::size_t n);
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into int64.
     /// @par Namespace
     /// xtd
@@ -63,7 +62,6 @@ namespace xtd {
     /// xtd::console::out << u8"125"_i64 << xtd::environment::new_line;
     /// ```
     int64 operator""_i64(const char8_t* s, std::size_t n);
-#endif
     
     /// @brief Used to convert specified value into int64.
     /// @par Namespace
@@ -137,7 +135,6 @@ namespace xtd {
     /// ```
     int64 operator""_s64(const char* s, std::size_t n);
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into int64.
     /// @par Namespace
     /// xtd
@@ -149,7 +146,6 @@ namespace xtd {
     /// xtd::console::out << u8"125"_s64 << xtd::environment::new_line;
     /// ```
     int64 operator""_s64(const char8_t* s, std::size_t n);
-#endif
     
     /// @brief Used to convert specified value into int64.
     /// @par Namespace

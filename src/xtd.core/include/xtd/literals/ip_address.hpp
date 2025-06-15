@@ -26,7 +26,6 @@ namespace xtd {
     /// ```
     xtd::net::ip_address operator""_ip(const char* s, xtd::size n);
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
     /// xtd
@@ -41,7 +40,6 @@ namespace xtd {
     /// xtd::console::out << ip_v6 << xtd::environment::new_line;
     /// ```
     xtd::net::ip_address operator""_ip(const char8* s, xtd::size n);
-#endif
     
     /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace

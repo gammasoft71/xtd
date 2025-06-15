@@ -39,7 +39,6 @@ namespace xtd {
     /// ```
     char32 operator""_c(char c);
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into char32.
     /// @par Namespace
     /// xtd
@@ -51,7 +50,6 @@ namespace xtd {
     /// xtd::console::out << 'a'_c << xtd::environment::new_line;
     /// ```
     char32 operator""_c(char8_t c);
-#endif
     
     /// @brief Used to convert specified value into char32.
     /// @par Namespace

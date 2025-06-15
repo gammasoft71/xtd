@@ -50,7 +50,6 @@ namespace xtd {
     /// ```
     xtd::size operator""_uz(const char* s, xtd::size n);
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into xtd::size.
     /// @par Namespace
     /// xtd
@@ -62,7 +61,6 @@ namespace xtd {
     /// xtd::console::out << u8"125"_z << xtd::environment::new_line;
     /// ```
     xtd::size operator""_uz(const char8_t* s, xtd::size n);
-#endif
     
     /// @brief Used to convert specified value into xtd::size.
     /// @par Namespace
@@ -136,7 +134,6 @@ namespace xtd {
     /// ```
     xtd::size operator""_z(const char* s, xtd::size n);
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into signed xtd::size.
     /// @par Namespace
     /// xtd
@@ -148,7 +145,6 @@ namespace xtd {
     /// xtd::console::out << u8"125"_z << xtd::environment::new_line;
     /// ```
     xtd::size operator""_z(const char8_t* s, xtd::size n);
-#endif
     
     /// @brief Used to convert specified value into signed xtd::size.
     /// @par Namespace

@@ -51,7 +51,6 @@ namespace xtd {
     /// ```
     int16 operator""_i16(const char* s, std::size_t n);
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into int16.
     /// @par Namespace
     /// xtd
@@ -63,7 +62,6 @@ namespace xtd {
     /// xtd::console::out << u8"125"_i16 << xtd::environment::new_line;
     /// ```
     int16 operator""_i16(const char8_t* s, std::size_t n);
-#endif
     
     /// @brief Used to convert specified value into int16.
     /// @par Namespace
@@ -137,7 +135,6 @@ namespace xtd {
     /// ```
     int16 operator""_s16(const char* s, std::size_t n);
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into int16.
     /// @par Namespace
     /// xtd
@@ -149,7 +146,6 @@ namespace xtd {
     /// xtd::console::out << u8"125"_s16 << xtd::environment::new_line;
     /// ```
     int16 operator""_s16(const char8_t* s, std::size_t n);
-#endif
     
     /// @brief Used to convert specified value into int16.
     /// @par Namespace

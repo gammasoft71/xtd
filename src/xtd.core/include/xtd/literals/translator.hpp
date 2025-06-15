@@ -28,7 +28,6 @@ namespace xtd {
     /// ```
     const char* operator""_t(const char* s, xtd::size n) noexcept;
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to translate specified string into locale.
     /// @par Namespace
     /// xtd
@@ -41,7 +40,6 @@ namespace xtd {
     /// xtd::console::out << s << xtd::environment::new_line;
     /// ```
     xtd::string operator""_t(const char8* s, xtd::size n) noexcept;
-#endif
     
     /// @brief Used to translate specified string into locale.
     /// @par Namespace

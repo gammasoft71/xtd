@@ -51,7 +51,6 @@ namespace xtd {
     /// ```
     int32 operator""_i32(const char* s, std::size_t n);
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into int32.
     /// @par Namespace
     /// xtd
@@ -63,7 +62,6 @@ namespace xtd {
     /// xtd::console::out << u8"125"_i32 << xtd::environment::new_line;
     /// ```
     int32 operator""_i32(const char8_t* s, std::size_t n);
-#endif
     
     /// @brief Used to convert specified value into int32.
     /// @par Namespace
@@ -137,7 +135,6 @@ namespace xtd {
     /// ```
     int32 operator""_s32(const char* s, std::size_t n);
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into int32.
     /// @par Namespace
     /// xtd
@@ -149,7 +146,6 @@ namespace xtd {
     /// xtd::console::out << u8"125"_s32 << xtd::environment::new_line;
     /// ```
     int32 operator""_s32(const char8_t* s, std::size_t n);
-#endif
     
     /// @brief Used to convert specified value into int32.
     /// @par Namespace

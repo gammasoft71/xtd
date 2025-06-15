@@ -51,7 +51,6 @@ namespace xtd {
     /// ```
     xtd::byte operator""_b(const char* s, std::size_t n);
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
     /// xtd
@@ -63,7 +62,6 @@ namespace xtd {
     /// xtd::console::out << u8"125"_b << xtd::environment::new_line;
     /// ```
     xtd::byte operator""_b(const char8_t* s, std::size_t n);
-#endif
     
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
@@ -137,7 +135,6 @@ namespace xtd {
     /// ```
     xtd::byte operator""_u8(const char* s, std::size_t n);
     
-#if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
     /// xtd
@@ -149,7 +146,6 @@ namespace xtd {
     /// xtd::console::out << u8"125"_u8 << xtd::environment::new_line;
     /// ```
     xtd::byte operator""_u8(const char8_t* s, std::size_t n);
-#endif
     
     /// @brief Used to convert specified value into byte.
     /// @par Namespace

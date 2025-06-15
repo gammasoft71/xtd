@@ -200,16 +200,12 @@ namespace xtd {
       virtual void write(const string& value);
       /// @cond
       virtual void write(const std::string& value);
-#if defined(__xtd__cpp_lib_char8_t)
       virtual void write(const std::u8string& value);
-#endif
       virtual void write(const std::u16string& value);
       virtual void write(const std::u32string& value);
       virtual void write(const std::wstring& value);
       virtual void write(const char* value);
-#if defined(__xtd__cpp_lib_char8_t)
       virtual void write(const char8* value);
-#endif
       virtual void write(const char16* value);
       virtual void write(const char32* value);
       virtual void write(const wchar* value);
@@ -258,9 +254,7 @@ namespace xtd {
       binary_writer& operator <<(float value) {write(value); return *this;}
       binary_writer& operator <<(const string& value) {write(value); return *this;}
       binary_writer& operator <<(const char* value) {write(value); return *this;}
-#if defined(__xtd__cpp_lib_char8_t)
       binary_writer& operator <<(const char8* value) {write(value); return *this;}
-#endif
       binary_writer& operator <<(const char16* value) {write(value); return *this;}
       binary_writer& operator <<(const char32* value) {write(value); return *this;}
       binary_writer& operator <<(const wchar* value) {write(value); return *this;}
