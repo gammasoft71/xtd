@@ -17,13 +17,11 @@ namespace xtd {
           assert::are_equal("country [name=Belgium, alpha_2_code=BE, alpha_3_code=BEL, numeric_code=56]", v.to_string());
         }
         
-#if defined(__xtd__cpp_lib_char8_t)
         void test_method_(_country_operator_on_char8_ptr_from_name) {
           auto v = u8"Belgium"_country;
           assert::is_instance_of<country>(v);
           assert::are_equal("country [name=Belgium, alpha_2_code=BE, alpha_3_code=BEL, numeric_code=56]", v.to_string());
         }
-#endif
         
         void test_method_(_country_operator_on_char16_ptr_from_name) {
           auto v = u"Belgium"_country;
@@ -49,13 +47,11 @@ namespace xtd {
           assert::are_equal("country [name=Belgium, alpha_2_code=BE, alpha_3_code=BEL, numeric_code=56]", v.to_string());
         }
         
-#if defined(__xtd__cpp_lib_char8_t)
         void test_method_(_country_operator_on_char8_ptr_from_alpha_2_code) {
           auto v = u8"BE"_country;
           assert::is_instance_of<country>(v);
           assert::are_equal("country [name=Belgium, alpha_2_code=BE, alpha_3_code=BEL, numeric_code=56]", v.to_string());
         }
-#endif
         
         void test_method_(_country_operator_on_char16_ptr_from_alpha_2_code) {
           auto v = u"BE"_country;
@@ -81,13 +77,11 @@ namespace xtd {
           assert::are_equal("country [name=Belgium, alpha_2_code=BE, alpha_3_code=BEL, numeric_code=56]", v.to_string());
         }
         
-#if defined(__xtd__cpp_lib_char8_t)
         void test_method_(_country_operator_on_char8_ptr_from_alpha_3_code) {
           auto v = u8"BEL"_country;
           assert::is_instance_of<country>(v);
           assert::are_equal("country [name=Belgium, alpha_2_code=BE, alpha_3_code=BEL, numeric_code=56]", v.to_string());
         }
-#endif
         
         void test_method_(_country_operator_on_char16_ptr_from_alpha_3_code) {
           auto v = u"BEL"_country;
