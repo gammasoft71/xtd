@@ -8,7 +8,7 @@ const FeatureList = [
       <>
       <i>(*) See <a href="docs/documentation/portability#the-xtd-libraries-portability-list">portability</a> for more information.</i>
       <br/>
-      <br/><font size="2">Write Once, Run Everywhere!</font>
+      <br/><font size="5">Write Once, Run Everywhere!</font>
       </>
     ),
   },
