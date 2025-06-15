@@ -15,11 +15,9 @@ xtd::size xtd::literals::operator""_uz(const char* s, xtd::size n) {
   return as<xtd::size>(string(s, s + n));
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 xtd::size xtd::literals::operator""_uz(const char8* s, xtd::size n) {
   return as<xtd::size>(string(s, s + n));
 }
-#endif
 
 xtd::size xtd::literals::operator""_uz(const char16* s, xtd::size n) {
   return as<xtd::size>(std::u16string(s, s + n));
@@ -45,11 +43,9 @@ xtd::size xtd::literals::operator""_z(const char* s, xtd::size n) {
   return as<xtd::size>(string(s, s + n));
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 xtd::size xtd::literals::operator""_z(const char8* s, xtd::size n) {
   return as<xtd::size>(string(s, s + n));
 }
-#endif
 
 xtd::size xtd::literals::operator""_z(const char16* s, xtd::size n) {
   return as<xtd::size>(std::u16string(s, s + n));

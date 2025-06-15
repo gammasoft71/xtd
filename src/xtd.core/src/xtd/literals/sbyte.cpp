@@ -15,11 +15,9 @@ sbyte xtd::literals::operator""_i8(const char* s, xtd::size n) {
   return as<sbyte>(string(s, s + n));
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 sbyte xtd::literals::operator""_i8(const char8* s, xtd::size n) {
   return as<sbyte>(string(s, s + n));
 }
-#endif
 
 sbyte xtd::literals::operator""_i8(const char16* s, xtd::size n) {
   return as<sbyte>(std::u16string(s, s + n));
@@ -45,11 +43,9 @@ sbyte xtd::literals::operator""_s8(const char* s, xtd::size n) {
   return as<sbyte>(string(s, s + n));
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 sbyte xtd::literals::operator""_s8(const char8* s, xtd::size n) {
   return as<sbyte>(string(s, s + n));
 }
-#endif
 
 sbyte xtd::literals::operator""_s8(const char16* s, xtd::size n) {
   return as<sbyte>(std::u16string(s, s + n));

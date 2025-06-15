@@ -7,11 +7,9 @@ string xtd::literals::operator""_s(const char* s, xtd::size n) {
   return string(s, s + n);
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 string xtd::literals::operator""_s(const char8* s, xtd::size n) {
   return string(s, s + n);
 }
-#endif
 
 string xtd::literals::operator""_s(const char16* s, xtd::size n) {
   return string(std::u16string(s, s + n));
