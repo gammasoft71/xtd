@@ -69,7 +69,7 @@ You can use [xtdc](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc/REA
 [license](/docs/documentation/license) : Free and open-source ([MIT License](https://opensource.org/licenses/MIT))
 
 [![cpp](/pictures/xtd.cpp.png)](https://en.cppreference.com/w/)
-[modern c++ 17/20](https://en.cppreference.com/w/) : 
+[modern C++20](https://en.cppreference.com/w/) : 
 Written in efficient, modern [C++20](https://en.cppreference.com/w/) with [RAII](https://en.cppreference.com/w/cpp/language/raii) programming idiom. API close to the .net API with a modern C++ approach and full integration with the std standard and highly portable and available on many different platforms;
 
 ## See also

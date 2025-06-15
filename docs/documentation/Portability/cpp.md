@@ -30,7 +30,7 @@ Compilers list where xtd.forms are tested
 * GCC 10 or later
 * Visual Studio 2019 RTW 16.0 or later
 
-More compilers can be used see [C++ compiler support for C++20](https://en.cppreference.com/w/cpp/compiler_support#cpp17).
+More compilers can be used see [C++ compiler support for C++20](https://en.cppreference.com/w/cpp/compiler_support#cpp20).
 
 ## See also
 
