@@ -355,7 +355,6 @@ namespace xtd {
   /// @cond
   inline std::string to_string(const char*  value, const std::string& fmt) {return to_string(value, fmt, std::locale());}
 
-#if defined(__xtd__cpp_lib_three_way_comparison)
   template<>
   inline std::string to_string(const std::partial_ordering& value, const std::string& fmt, const std::locale& loc) {
     if (value == std::partial_ordering::less) return "less";
@@ -376,7 +375,6 @@ namespace xtd {
     if (value == std::weak_ordering::greater) return "greater";
     return "equivalent";
   }
-#endif
 
   template<class value_t>
   inline std::string to_string(const value_t* value, const std::string& fmt, const std::locale& loc) {

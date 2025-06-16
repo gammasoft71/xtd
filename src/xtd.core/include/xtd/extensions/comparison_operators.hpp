@@ -57,7 +57,6 @@ namespace xtd {
       /// @return `true` if lhs greater than or equal to rhs; otherwise `false`.
       friend bool operator >=(const type_t& lhs, const type_t& rhs) noexcept {return lhs.compare_to(rhs) >= 0;}
       
-#if defined(__xtd__cpp_lib_three_way_comparison)
       /// @brief Three-way comparison operator with specidied lhs ans rhs values.
       /// @param lhs The left hand side value to compare.
       /// @param rhs The right hand side value to compare.
@@ -70,7 +69,6 @@ namespace xtd {
         if (lhs.compare_to(rhs) > 0) return std::strong_ordering::greater;
         return std::strong_ordering::equivalent;
       }
-#endif
       /// @}
     
     private:
