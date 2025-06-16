@@ -55,7 +55,7 @@ install
 
 ### macOS
 
-1. Install Xcode 14.2 or later
+1. Install Xcode 15.0 or later
   
    In order to build xtd, you first need download and install Xcode from App Store and install "Commands line tools".
 
