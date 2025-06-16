@@ -28,7 +28,6 @@ namespace xtd {
       /// @name Public Static Methods
       
       /// @{
-      #if defined(__xtd__cpp_lib_filesystem)
       /// @brief Assumes that two directories are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -54,7 +53,6 @@ namespace xtd {
       /// xtd::tunit::directory_assume::are_equal(d1, d2, "User message..."); // test throws an abort_error exception.
       /// ```
       static void are_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
-      #endif
       /// @brief Assumes that two xtd::io::directory_info are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -85,7 +83,6 @@ namespace xtd {
       /// ```
       static void are_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       
-      #if defined(__xtd__cpp_lib_filesystem)
       /// @brief Assumes that two std::filesystem::directory_entry are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -111,7 +108,6 @@ namespace xtd {
       /// xtd::tunit::directory_assume::are_not_equal(d1, d2, "User message..."); // test throws an abort_error exception.
       /// ```
       static void are_not_equal(const std::filesystem::directory_entry& expected, const std::filesystem::directory_entry& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
-      #endif
       /// @brief Assumes that two xtd::io::directory_info are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -142,7 +138,6 @@ namespace xtd {
       /// ```
       static void are_not_equal(const xtd::io::directory_info& expected, const xtd::io::directory_info& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       
-      #if defined(__xtd__cpp_lib_filesystem)
       /// @brief Asserts that directory not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -170,8 +165,6 @@ namespace xtd {
       /// xtd::tunit::directory_assume::does_not_exist(d1); // test throws an assert_error exception.
       /// ```
       static void does_not_exist(const std::filesystem::directory_entry& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
-      #endif
-      
       /// @brief Asserts that directory not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -243,7 +236,6 @@ namespace xtd {
       static void does_not_exist(const char_t* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_exist(xtd::basic_string<char_t>(directory), message, stack_frame);}
       /// @endcond
       
-      #if defined(__xtd__cpp_lib_filesystem)
       /// @brief Assumes that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -271,8 +263,6 @@ namespace xtd {
       /// xtd::tunit::directory_assume::exists(d2); // test throws an assert_error exception.
       /// ```
       static void exists(const std::filesystem::directory_entry& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
-      #endif
-      
       /// @brief Assumes that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
