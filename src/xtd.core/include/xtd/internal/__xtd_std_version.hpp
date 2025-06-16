@@ -17,16 +17,13 @@
 /// @cond
 #include <version>
 
-#if defined(__cpp_lib_any) || __cplusplus >= 201703l
-#define __xtd__cpp_lib_any
-#endif
+// Example :
+//#if defined(__cpp_lib_any) || __cplusplus >= 201703l
+//#define __xtd__cpp_lib_any
+//#endif
 
 #if (defined(__cpp_lib_format) && defined(_MSC_VER) && _MSC_VER >= 1932) || (defined(__apple_build_version__) && __apple_build_version__ >= 15000300) || (!defined(__APPLE__) && defined(__GNUC__) && __GNUC__ >= 13) || (!defined(__APPLE__) && defined(__clang_major__) && __clang_major__ >= 15)
 #define __xtd__cpp_lib_format
-#endif
-
-#if defined(__cpp_lib_optional) || __cplusplus >= 201703l
-#define __xtd__cpp_lib_optional
 #endif
 
 #if defined(__cpp_lib_ranges) || __cplusplus >= 202002l
