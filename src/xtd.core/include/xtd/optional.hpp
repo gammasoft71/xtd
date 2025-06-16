@@ -161,10 +161,10 @@ namespace std {
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Represents the null_opt alias on [std::nullopt_t](https://en.cppreference.com/w/cpp/utility/optional/nullopt_t).
+  /// @brief Represents the optional alias on [std::optional](https://en.cppreference.com/w/cpp/utility/optional).
   /// @par Header
   /// ```cpp
-  /// #include <xtd/null_opt>
+  /// #include <xtd/optional>
   /// ```
   /// @par Namespace
   /// xtd

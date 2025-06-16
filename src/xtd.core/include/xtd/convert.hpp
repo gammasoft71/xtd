@@ -42,228 +42,228 @@ namespace xtd {
     /// @remarks The valueless character, "=", is used for trailing padding. The end of s can consist of zero, one, or two padding characters.
     static xtd::array<xtd::byte> from_base64_string(const xtd::string& s);
     
-    /// @brief Convert std::any to std::any.
+    /// @brief Convert xtd::any to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
-    /// std::any value = true;
+    /// xtd::any value = true;
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(std::any value) noexcept;
-    /// @brief Convert bool to std::any.
+    static xtd::any to_any(xtd::any value) noexcept;
+    /// @brief Convert bool to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
     /// bool value = true;
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(bool value) noexcept;
-    /// @brief Convert xtd::byte to std::any.
+    static xtd::any to_any(bool value) noexcept;
+    /// @brief Convert xtd::byte to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
     /// xtd::byte value = 42;
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(xtd::byte value) noexcept;
-    /// @brief Convert char to std::any.
+    static xtd::any to_any(xtd::byte value) noexcept;
+    /// @brief Convert char to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
     /// char value = 'a';
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(char value) noexcept;
-    /// @brief Convert char8 to std::any.
+    static xtd::any to_any(char value) noexcept;
+    /// @brief Convert char8 to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @exception xtd::invalid_cast_exception throws always exception.
     /// @par Examples
     /// ```cpp
     /// char8 value = u8'a';
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(char8 value);
-    /// @brief Convert char16 to std::any.
+    static xtd::any to_any(char8 value);
+    /// @brief Convert char16 to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
     /// char16 value = u'a';
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(char16 value) noexcept;
-    /// @brief Convert char32 to std::any.
+    static xtd::any to_any(char16 value) noexcept;
+    /// @brief Convert char32 to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
     /// char32 value = U'a';
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(char32 value) noexcept;
-    /// @brief Convert wchar to std::any.
+    static xtd::any to_any(char32 value) noexcept;
+    /// @brief Convert wchar to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
     /// wchar value = L'a';
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(wchar value) noexcept;
-    /// @brief Convert decimal to std::any.
+    static xtd::any to_any(wchar value) noexcept;
+    /// @brief Convert decimal to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
     /// decimal value = 42.50l;
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(decimal value) noexcept;
-    /// @brief Convert double to std::any.
+    static xtd::any to_any(decimal value) noexcept;
+    /// @brief Convert double to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
     /// double value = 42.50;
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(double value) noexcept;
-    /// @brief Convert float to std::any.
+    static xtd::any to_any(double value) noexcept;
+    /// @brief Convert float to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
-    /// @brief Convert double to std::any.
+    /// @return A new xtd::any object converted from value.
+    /// @brief Convert double to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
     /// float value = 42.50f;
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(float value) noexcept;
-    /// @brief Convert int16 to std::any.
+    static xtd::any to_any(float value) noexcept;
+    /// @brief Convert int16 to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
     /// int16 value = 42;
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(int16 value) noexcept;
-    /// @brief Convert int32 to std::any.
+    static xtd::any to_any(int16 value) noexcept;
+    /// @brief Convert int32 to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
     /// int32 value = 42;
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(int32 value) noexcept;
-    /// @brief Convert int64 to std::any.
+    static xtd::any to_any(int32 value) noexcept;
+    /// @brief Convert int64 to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
     /// int6_4t value = 42l;
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(int64 value) noexcept;
-    /// @brief Convert slong to std::any.
+    static xtd::any to_any(int64 value) noexcept;
+    /// @brief Convert slong to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
     /// slong value = 42ll;
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(slong value) noexcept;
-    /// @brief Convert sbyte to std::any.
+    static xtd::any to_any(slong value) noexcept;
+    /// @brief Convert sbyte to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
     /// sbyte value = 42;
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(sbyte value) noexcept;
-    /// @brief Convert uint16 to std::any.
+    static xtd::any to_any(sbyte value) noexcept;
+    /// @brief Convert uint16 to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
     /// uint16 value = 42u;
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(uint16 value) noexcept;
-    /// @brief Convert uint32 to std::any.
+    static xtd::any to_any(uint16 value) noexcept;
+    /// @brief Convert uint32 to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
     /// uint32 value = 42u;
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(uint32 value) noexcept;
-    /// @brief Convert uint64 to std::any.
+    static xtd::any to_any(uint32 value) noexcept;
+    /// @brief Convert uint64 to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
     /// uint64 value = 42ul;
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(uint64 value) noexcept;
-    /// @brief Convert slong to std::any.
+    static xtd::any to_any(uint64 value) noexcept;
+    /// @brief Convert slong to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
     /// xtd::ulong value = 42ull;
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(xtd::ulong value) noexcept;
-    /// @brief Convert string to std::any.
+    static xtd::any to_any(xtd::ulong value) noexcept;
+    /// @brief Convert string to xtd::any.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
     /// string value = "42";
     /// any result = convert::to_any(value);
     /// ```
-    static std::any to_any(const xtd::string& value) noexcept;
+    static xtd::any to_any(const xtd::string& value) noexcept;
     /// @cond
-    static std::any to_any(const std::string& value) noexcept;
-    static std::any to_any(const std::u8string& value) noexcept;
-    static std::any to_any(const std::u16string& value) noexcept;
-    static std::any to_any(const std::u32string& value) noexcept;
-    static std::any to_any(const std::wstring& value) noexcept;
-    static std::any to_any(const char* value) noexcept;
-    static std::any to_any(char* value) noexcept;
-    static std::any to_any(const char8* value);
-    static std::any to_any(char8* value);
-    static std::any to_any(const char16* value) noexcept;
-    static std::any to_any(char16* value) noexcept;
-    static std::any to_any(const char32* value) noexcept;
-    static std::any to_any(char32* value) noexcept;
-    static std::any to_any(const wchar* value) noexcept;
-    static std::any to_any(wchar* value) noexcept;
+    static xtd::any to_any(const std::string& value) noexcept;
+    static xtd::any to_any(const std::u8string& value) noexcept;
+    static xtd::any to_any(const std::u16string& value) noexcept;
+    static xtd::any to_any(const std::u32string& value) noexcept;
+    static xtd::any to_any(const std::wstring& value) noexcept;
+    static xtd::any to_any(const char* value) noexcept;
+    static xtd::any to_any(char* value) noexcept;
+    static xtd::any to_any(const char8* value);
+    static xtd::any to_any(char8* value);
+    static xtd::any to_any(const char16* value) noexcept;
+    static xtd::any to_any(char16* value) noexcept;
+    static xtd::any to_any(const char32* value) noexcept;
+    static xtd::any to_any(char32* value) noexcept;
+    static xtd::any to_any(const wchar* value) noexcept;
+    static xtd::any to_any(wchar* value) noexcept;
     /// @endcond
     /// @brief Convert type_t to bool.
     /// @param value object to convert.
-    /// @return A new std::any object converted from value.
+    /// @return A new xtd::any object converted from value.
     /// @par Examples
     /// ```cpp
     /// address_family value = address_family::inter_network;
     /// any result = convert::to_any(value);
     /// ```
     template<class type_t>
-    static std::any to_any(type_t value) {
+    static xtd::any to_any(type_t value) {
       try {
-        return std::any(value);
+        return xtd::any(value);
       } catch (...) {
         xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);;
       }
@@ -278,16 +278,16 @@ namespace xtd {
     /// @return The string representation, in base 64, of the contents of `in_array`.
     static xtd::string to_base64_string(const xtd::read_only_span<xtd::byte>& bytes);
 
-    /// @brief Convert std::any to bool.
+    /// @brief Convert xtd::any to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     /// @par Examples
     /// ```cpp
-    /// std::any value = true;
+    /// xtd::any value = true;
     /// bool result = convert::to_boolean(value);
     /// ```
-    static bool to_boolean(std::any value);
+    static bool to_boolean(xtd::any value);
     /// @brief Convert bool to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
@@ -507,15 +507,15 @@ namespace xtd {
       return static_cast<bool>(value);
     }
     
-    /// @brief Convert std::any to byte.
+    /// @brief Convert xtd::any to byte.
     /// @param value object to convert.
     /// @return A new xtd::byte object converted from value.
     /// @par Examples
     /// ```cpp
-    /// std::any value = 42;
+    /// xtd::any value = 42;
     /// xtd::byte result = convert::to_byte(value);
     /// ```
-    static xtd::byte to_byte(std::any value);
+    static xtd::byte to_byte(xtd::any value);
     /// @brief Convert bool to byte.
     /// @param value object to convert.
     /// @return A new xtd::byte object converted from value.
@@ -756,15 +756,15 @@ namespace xtd {
       return static_cast<xtd::byte>(value);
     }
     
-    /// @brief Convert std::any to char.
+    /// @brief Convert xtd::any to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
     /// @par Examples
     /// ```cpp
-    /// std::any value = 42;
+    /// xtd::any value = 42;
     /// char result = convert::to_char(value);
     /// ```
-    static char to_char(std::any value);
+    static char to_char(xtd::any value);
     /// @brief Convert bool to char.
     /// @param value object to convert.
     /// @return A new char object converted from value.
@@ -993,15 +993,15 @@ namespace xtd {
       return static_cast<char>(value);
     }
     
-    /// @brief Convert std::any to char8.
+    /// @brief Convert xtd::any to char8.
     /// @param value object to convert.
     /// @return A new char8 object converted from value.
     /// @par Examples
     /// ```cpp
-    /// std::any value = 42;
+    /// xtd::any value = 42;
     /// char8 result = convert::to_char8(value);
     /// ```
-    static char8 to_char8(std::any value);
+    static char8 to_char8(xtd::any value);
     /// @brief Convert bool to char8.
     /// @param value object to convert.
     /// @return A new char8 object converted from value.
@@ -1230,15 +1230,15 @@ namespace xtd {
       return static_cast<char8>(value);
     }
     
-    /// @brief Convert std::any to char16.
+    /// @brief Convert xtd::any to char16.
     /// @param value object to convert.
     /// @return A new char16 object converted from value.
     /// @par Examples
     /// ```cpp
-    /// std::any value = 42;
+    /// xtd::any value = 42;
     /// char16 result = convert::to_char16(value);
     /// ```
-    static char16 to_char16(std::any value);
+    static char16 to_char16(xtd::any value);
     /// @brief Convert bool to char16.
     /// @param value object to convert.
     /// @return A new char16 object converted from value.
@@ -1464,15 +1464,15 @@ namespace xtd {
       return static_cast<char16>(value);
     }
     
-    /// @brief Convert std::any to char32.
+    /// @brief Convert xtd::any to char32.
     /// @param value object to convert.
     /// @return A new char32 object converted from value.
     /// @par Examples
     /// ```cpp
-    /// std::any value = 42;
+    /// xtd::any value = 42;
     /// char32 result = convert::to_char32(value);
     /// ```
-    static char32 to_char32(std::any value);
+    static char32 to_char32(xtd::any value);
     /// @brief Convert bool to char32.
     /// @param value object to convert.
     /// @return A new char32 object converted from value.
@@ -1696,15 +1696,15 @@ namespace xtd {
       return static_cast<char32>(value);
     }
     
-    /// @brief Convert std::any to wchar.
+    /// @brief Convert xtd::any to wchar.
     /// @param value object to convert.
     /// @return A new wchar object converted from value.
     /// @par Examples
     /// ```cpp
-    /// std::any value = 42;
+    /// xtd::any value = 42;
     /// wchar result = convert::to_wchar(value);
     /// ```
-    static wchar to_wchar(std::any value);
+    static wchar to_wchar(xtd::any value);
     /// @brief Convert bool to wchar.
     /// @param value object to convert.
     /// @return A new wchar object converted from value.
@@ -1930,15 +1930,15 @@ namespace xtd {
       return static_cast<wchar>(value);
     }
     
-    /// @brief Convert std::any to decimal.
+    /// @brief Convert xtd::any to decimal.
     /// @param value object to convert.
     /// @return A new decimal object converted from value.
     /// @par Examples
     /// ```cpp
-    /// std::any value = 42;
+    /// xtd::any value = 42;
     /// decimal result = convert::to_decimal(value);
     /// ```
-    static decimal to_decimal(std::any value);
+    static decimal to_decimal(xtd::any value);
     /// @brief Convert bool to decimal.
     /// @param value object to convert.
     /// @return A new decimal object converted from value.
@@ -2153,15 +2153,15 @@ namespace xtd {
       return static_cast<decimal>(value);
     }
     
-    /// @brief Convert std::any to double.
+    /// @brief Convert xtd::any to double.
     /// @param value object to convert.
     /// @return A new double object converted from value.
     /// @par Examples
     /// ```cpp
-    /// std::any value = 42;
+    /// xtd::any value = 42;
     /// double result = convert::to_double(value);
     /// ```
-    static double to_double(std::any value);
+    static double to_double(xtd::any value);
     /// @brief Convert bool to double.
     /// @param value object to convert.
     /// @return A new double object converted from value.
@@ -2376,15 +2376,15 @@ namespace xtd {
       return static_cast<double>(value);
     }
     
-    /// @brief Convert std::any to single.
+    /// @brief Convert xtd::any to single.
     /// @param value object to convert.
     /// @return A new float object converted from value.
     /// @par Examples
     /// ```cpp
-    /// std::any value = 42;
+    /// xtd::any value = 42;
     /// float result = convert::to_single(value);
     /// ```
-    static float to_single(std::any value);
+    static float to_single(xtd::any value);
     /// @brief Convert bool to single.
     /// @param value object to convert.
     /// @return A new float object converted from value.
@@ -2599,15 +2599,15 @@ namespace xtd {
       return static_cast<float>(value);
     }
     
-    /// @brief Convert std::any to int16.
+    /// @brief Convert xtd::any to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
     /// @par Examples
     /// ```cpp
-    /// std::any value = 42;
+    /// xtd::any value = 42;
     /// int16 result = convert::to_int16(value);
     /// ```
-    static int16 to_int16(std::any value);
+    static int16 to_int16(xtd::any value);
     /// @brief Convert bool to int16.
     /// @param value object to convert.
     /// @return A new int16 object converted from value.
@@ -2844,15 +2844,15 @@ namespace xtd {
       return static_cast<int16>(value);
     }
     
-    /// @brief Convert std::any to int32.
+    /// @brief Convert xtd::any to int32.
     /// @param value object to convert.
     /// @return A new int32 object converted from value.
     /// @par Examples
     /// ```cpp
-    /// std::any value = 42;
+    /// xtd::any value = 42;
     /// int32 result = convert::to_int32(value);
     /// ```
-    static int32 to_int32(std::any value);
+    static int32 to_int32(xtd::any value);
     /// @brief Convert bool to int32.
     /// @param value object to convert.
     /// @return A new int32 object converted from value.
@@ -3085,15 +3085,15 @@ namespace xtd {
       return static_cast<int32>(value);
     }
     
-    /// @brief Convert std::any to int64.
+    /// @brief Convert xtd::any to int64.
     /// @param value object to convert.
     /// @return A new int64 object converted from value.
     /// @par Examples
     /// ```cpp
-    /// std::any value = 42;
+    /// xtd::any value = 42;
     /// int64 result = convert::to_int64(value);
     /// ```
-    static int64 to_int64(std::any value);
+    static int64 to_int64(xtd::any value);
     /// @brief Convert bool to int64.
     /// @param value object to convert.
     /// @return A new int64 object converted from value.
@@ -3321,15 +3321,15 @@ namespace xtd {
       return static_cast<int64>(value);
     }
     
-    /// @brief Convert std::any to slong.
+    /// @brief Convert xtd::any to slong.
     /// @param value object to convert.
     /// @return A new slong object converted from value.
     /// @par Examples
     /// ```cpp
-    /// std::any value = 42;
+    /// xtd::any value = 42;
     /// slong result = convert::to_llong(value);
     /// ```
-    static slong to_llong(std::any value);
+    static slong to_llong(xtd::any value);
     /// @brief Convert bool to slong.
     /// @param value object to convert.
     /// @return A new slong object converted from value.
@@ -3557,15 +3557,15 @@ namespace xtd {
       return static_cast<slong>(value);
     }
     
-    /// @brief Convert std::any to sbyte.
+    /// @brief Convert xtd::any to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte object converted from value.
     /// @par Examples
     /// ```cpp
-    /// std::any value = 42;
+    /// xtd::any value = 42;
     /// sbyte result = convert::to_sbyte(value);
     /// ```
-    static sbyte to_sbyte(std::any value);
+    static sbyte to_sbyte(xtd::any value);
     /// @brief Convert bool to sbyte.
     /// @param value object to convert.
     /// @return A new sbyte object converted from value.
@@ -3806,15 +3806,15 @@ namespace xtd {
       return static_cast<sbyte>(value);
     }
     
-    /// @brief Convert std::any to uint16.
+    /// @brief Convert xtd::any to uint16.
     /// @param value object to convert.
     /// @return A new uint16 object converted from value.
     /// @par Examples
     /// ```cpp
-    /// std::any value = 42;
+    /// xtd::any value = 42;
     /// uint16 result = convert::to_uint16(value);
     /// ```
-    static uint16 to_uint16(std::any value);
+    static uint16 to_uint16(xtd::any value);
     /// @brief Convert bool to uint16.
     /// @param value object to convert.
     /// @return A new uint16 object converted from value.
@@ -4052,15 +4052,15 @@ namespace xtd {
       return static_cast<uint16>(value);
     }
     
-    /// @brief Convert std::any to uint32.
+    /// @brief Convert xtd::any to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
     /// @par Examples
     /// ```cpp
-    /// std::any value = 42;
+    /// xtd::any value = 42;
     /// uint32 result = convert::to_uint32(value);
     /// ```
-    static uint32 to_uint32(std::any value);
+    static uint32 to_uint32(xtd::any value);
     /// @brief Convert bool to uint32.
     /// @param value object to convert.
     /// @return A new uint32 object converted from value.
@@ -4296,15 +4296,15 @@ namespace xtd {
       return static_cast<uint32>(value);
     }
     
-    /// @brief Convert std::any to uint64.
+    /// @brief Convert xtd::any to uint64.
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.
     /// @par Examples
     /// ```cpp
-    /// std::any value = 42;
+    /// xtd::any value = 42;
     /// uint64 result = convert::to_uint64(value);
     /// ```
-    static uint64 to_uint64(std::any value);
+    static uint64 to_uint64(xtd::any value);
     /// @brief Convert bool to uint64.
     /// @param value object to convert.
     /// @return A new uint64 object converted from value.
@@ -4538,15 +4538,15 @@ namespace xtd {
       return static_cast<uint64>(value);
     }
     
-    /// @brief Convert std::any to xtd::ulong.
+    /// @brief Convert xtd::any to xtd::ulong.
     /// @param value object to convert.
     /// @return A new xtd::ulong object converted from value.
     /// @par Examples
     /// ```cpp
-    /// std::any value = 42;
+    /// xtd::any value = 42;
     /// xtd::ulong result = convert::to_ullong(value);
     /// ```
-    static xtd::ulong to_ullong(std::any value);
+    static xtd::ulong to_ullong(xtd::any value);
     /// @brief Convert bool to xtd::ulong.
     /// @param value object to convert.
     /// @return A new xtd::ulong object converted from value.
@@ -4780,15 +4780,15 @@ namespace xtd {
       return static_cast<xtd::ulong>(value);
     }
     
-    /// @brief Convert std::any to string.
+    /// @brief Convert xtd::any to string.
     /// @param value object to convert.
     /// @return A new string object converted from value.
     /// @par Examples
     /// ```cpp
-    /// std::any value = 42;
+    /// xtd::any value = 42;
     /// string result = convert::to_string(value);
     /// ```
-    static string to_string(std::any value);
+    static string to_string(xtd::any value);
     /// @brief Convert bool to string.
     /// @param value object to convert.
     /// @return A new string object converted from value.

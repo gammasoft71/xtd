@@ -52,7 +52,7 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// std::any value = true;
+  /// xtd::any value = true;
   /// bool result = as<bool>(value);
   /// ```
   template<class type_t>
@@ -76,7 +76,7 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// std::any value = true;
+  /// xtd::any value = true;
   /// bool result = as<bool>(value);
   /// ```
   template<class type_t>

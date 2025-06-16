@@ -11,7 +11,7 @@
 #include <vector>
 
 /// @cond
-extern std::unordered_map<std::type_index, std::function<std::string(std::any const&)>> __any_stringer__;
+extern std::unordered_map<std::type_index, std::function<std::string(xtd::any const&)>> __any_stringer__;
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

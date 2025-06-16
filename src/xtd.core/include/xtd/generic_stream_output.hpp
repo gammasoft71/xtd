@@ -25,7 +25,7 @@
 #include <vector>
 
 /// @cond
-extern std::unordered_map<std::type_index, std::function<std::string(std::any const&)>> __any_stringer__;
+extern std::unordered_map<std::type_index, std::function<std::string(xtd::any const&)>> __any_stringer__;
 
 /*
 template<class char_t, class char_traits_t, class type_t>
@@ -195,7 +195,7 @@ inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream
 }
 
 template<class char_t, class char_traits_t>
-inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, std::any value) {
+inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, xtd::any value) {
   auto it = __any_stringer__.find(std::type_index(value.type()));
   if (it == __any_stringer__.cend()) return os << "(unregistered)";
   return os << it->second(value);

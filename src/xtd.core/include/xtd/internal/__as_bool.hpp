@@ -29,11 +29,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// std::any value = true;
+  /// xtd::any value = true;
   /// bool result = as<bool>(value);
   /// ```
   template<>
-  inline bool as<bool>(std::any value) {
+  inline bool as<bool>(xtd::any value) {
     return xtd::convert::to_boolean(value);
   }
   

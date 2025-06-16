@@ -29,11 +29,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// std::any value = true;
+  /// xtd::any value = true;
   /// decimal result = as<decimal>(value);
   /// ```
   template<>
-  inline decimal as<decimal>(std::any value) {
+  inline decimal as<decimal>(xtd::any value) {
     return xtd::convert::to_decimal(value);
   }
   
