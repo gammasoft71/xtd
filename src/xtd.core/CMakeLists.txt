@@ -425,8 +425,6 @@ add_sources(
   "include/xtd/scope_exit"
   "include/xtd/self.hpp"
   "include/xtd/self"
-  "include/xtd/semaphore.hpp"
-  "include/xtd/semaphore"
   "include/xtd/shared_ptr_object.hpp"
   "include/xtd/shared_ptr_object"
   "include/xtd/signal.hpp"
