@@ -8,14 +8,14 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(cpp_language_tests) {
-    static constexpr int32 cpp20 = 202002L;
-    static constexpr int32 cpp17 = 201703L;
-    static constexpr int32 cpp14 = 201402L;
-    static constexpr int32 cpp11 = 201103L;
-    static constexpr int32 cpp98 = 199711L;
-    static constexpr int32 cpp_pre98 = 1L;
+    static constexpr int32 cpp20 = 202002l;
+    static constexpr int32 cpp17 = 201703l;
+    static constexpr int32 cpp14 = 201402l;
+    static constexpr int32 cpp11 = 201103l;
+    static constexpr int32 cpp98 = 199711l;
+    static constexpr int32 cpp_pre98 = 1l;
     static constexpr int32 cpp_unknown = 0;
-    static constexpr int32 cpp20_experimental = 201707L;
+    static constexpr int32 cpp20_experimental = 201707l;
     
     void test_method_(default_ctor) {
       cpp_language cl;
