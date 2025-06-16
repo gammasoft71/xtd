@@ -258,7 +258,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>  }</div>
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span> </div>
 <div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>  <span class="keyword">template</span>&lt;&gt;</div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>  <span class="keyword">inline</span> std::string <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>(<span class="keyword">const</span> std::any&amp; value, <span class="keyword">const</span> std::string&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc) {</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>  <span class="keyword">inline</span> std::string <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#gafbdc6699af0a474de2a4ab8a5997b7d8">xtd::any</a>&amp; value, <span class="keyword">const</span> std::string&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc) {</div>
 <div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>    <span class="keyword">auto</span> iterator = __any_stringer__.<a class="code hl_function" href="classxtd_1_1basic__string.html#a995fc327f844695b7d54bb8c9dcefd64">find</a>(std::type_index(value.type()));</div>
 <div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>    <span class="keywordflow">return</span> iterator != __any_stringer__.cend() ? <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">xtd::to_string</a>(iterator-&gt;second(value), fmt, loc) : <span class="stringliteral">&quot;(unregistered)&quot;</span>;</div>
 <div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>  }</div>
@@ -459,6 +459,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="agroup__types_html_ga6d54527a3ec7b15afb917a6ba73a4ece"><div class="ttname"><a href="group__types.html#ga6d54527a3ec7b15afb917a6ba73a4ece">xtd::intptr</a></div><div class="ttdeci">intmax_t intptr</div><div class="ttdoc">Represent a pointer or a handle.</div><div class="ttdef"><b>Definition</b> intptr.hpp:23</div></div>
 <div class="ttc" id="agroup__types_html_gaa8cad5eec279a2f84d8b8d2392b2201c"><div class="ttname"><a href="group__types.html#gaa8cad5eec279a2f84d8b8d2392b2201c">xtd::char16</a></div><div class="ttdeci">char16_t char16</div><div class="ttdoc">Represents a 16-bit unicode character.</div><div class="ttdef"><b>Definition</b> char16.hpp:26</div></div>
 <div class="ttc" id="agroup__types_html_gafab2aed44c397da401a7bc0b6ba53ca9"><div class="ttname"><a href="group__types.html#gafab2aed44c397da401a7bc0b6ba53ca9">xtd::char32</a></div><div class="ttdeci">char32_t char32</div><div class="ttdoc">Represents a 32-bit unicode character.</div><div class="ttdef"><b>Definition</b> char32.hpp:23</div></div>
+<div class="ttc" id="agroup__types_html_gafbdc6699af0a474de2a4ab8a5997b7d8"><div class="ttname"><a href="group__types.html#gafbdc6699af0a474de2a4ab8a5997b7d8">xtd::any</a></div><div class="ttdeci">std::any any</div><div class="ttdoc">Represents the any alias on std::any.</div><div class="ttdef"><b>Definition</b> any.hpp:24</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 <div class="ttc" id="anamespacextd_html_a2b4bd6a98991447f6d1d2b4870a2f3b5"><div class="ttname"><a href="namespacextd.html#a2b4bd6a98991447f6d1d2b4870a2f3b5">xtd::begin</a></div><div class="ttdeci">const_iterator begin() const</div><div class="ttdoc">Returns an iterator to the beginning.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:183</div></div>
 <div class="ttc" id="anamespacextd_html_a2ed47ae86e395ccbe84ab1857c78c4e0"><div class="ttname"><a href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">xtd::to_string</a></div><div class="ttdeci">string to_string() const noexcept override</div><div class="ttdoc">Returns the string representation of this xtd::read_only_span &lt;type_t&gt; object.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:375</div></div>
@@ -469,7 +470,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 15 2025 20:45:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jun 16 2025 10:33:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

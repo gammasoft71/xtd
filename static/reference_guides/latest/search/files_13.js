@@ -25,7 +25,7 @@ var searchData=
   ['selector_2ehpp_22',['selector.hpp',['../selector_8hpp.html',1,'']]],
   ['selector_5fmap_2ehpp_23',['selector_map.hpp',['../selector__map_8hpp.html',1,'']]],
   ['self_2ehpp_24',['self.hpp',['../self_8hpp.html',1,'']]],
-  ['semaphore_2ehpp_25',['semaphore.hpp',['../semaphore_8hpp.html',1,'(Global Namespace)'],['../threading_2semaphore_8hpp.html',1,'(Global Namespace)']]],
+  ['semaphore_2ehpp_25',['semaphore.hpp',['../semaphore_8hpp.html',1,'']]],
   ['semaphore_5ffull_5fexception_2ehpp_26',['semaphore_full_exception.hpp',['../semaphore__full__exception_8hpp.html',1,'']]],
   ['send_5fpackets_5felement_2ehpp_27',['send_packets_element.hpp',['../send__packets__element_8hpp.html',1,'']]],
   ['sepia_5feffect_2ehpp_28',['sepia_effect.hpp',['../sepia__effect_8hpp.html',1,'']]],
