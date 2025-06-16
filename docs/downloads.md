@@ -30,11 +30,11 @@ In the future xtd.forms will use [xtd.forms.native.win32](https://github.com/gam
 
 ## Installation
 
-### Windows 10 or later
+### Windows
 
-1. Install Microsoft Visual Studio 2019 Community or later
+1. Install Microsoft Visual Studio 2022 Community or later
   
-   In order to build xtd, you first need download and install Microsoft Visual Studio 2019 community from [https://www.visualstudio.com](https://www.visualstudio.com).
+   In order to build xtd, you first need download and install Microsoft Visual Studio 2022 community from [https://www.visualstudio.com](https://www.visualstudio.com).
 
 2. Install CMake 3.20 or later
   
@@ -53,9 +53,9 @@ install
 
 4. Create as many applications as you want with xtd.
 
-### macOS 10.15 or later
+### macOS
 
-1. Install Xcode 11.6 or later
+1. Install Xcode 14.2 or later
   
    In order to build xtd, you first need download and install Xcode from App Store and install "Commands line tools".
 
@@ -80,17 +80,17 @@ cd xtd_path_name
 
 ### Linux distribution fully supported by xtd install 
 
-The following list contains the Linux distributions fully supported by the xtd installation:
+The following list contains the Linux distributions with g++ 11 or later fully supported by the xtd installation:
 
-* [CentOS 7 or later](https://www.centos.org/);
-* [Debian 9.7 or later](https://www.debian.org/);
-* [Elementary OS 5.0 or later](https://elementary.io/);
-* [Fedora 29 or later](https://getfedora.org/);
-* [LinuxMint 19.1 or later](https://www.linuxmint.com/);
+* [CentOS](https://www.centos.org/);
+* [Debian](https://www.debian.org/);
+* [Elementary](https://elementary.io/);
+* [Fedora](https://getfedora.org/);
+* [LinuxMint](https://www.linuxmint.com/);
 * [openSUSE Tumbleweed](https://get.opensuse.org/tumbleweed/);
-* [RedHat 7.5 or later](https://www.redhat.com/);
-* [Rocky 9 or later](https://rockylinux.org/);
-* [Ubuntu 19.04 or later](https://ubuntu.com/);
+* [RedHat](https://www.redhat.com/);
+* [Rocky](https://rockylinux.org/);
+* [Ubuntu](https://ubuntu.com/);
 
 1. Do the following in "Terminal" to Build and install xtd :
 
@@ -105,7 +105,7 @@ cd xtd_path_name
 
 ### Other linux distribution
 
-1. Install g++ 9 or later
+1. Install g++ 11 or later
   
    In order to build , you first need download and install g++ 9 or later.
 
