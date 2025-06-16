@@ -115,7 +115,7 @@ xtd is continuously tested with CI tools.
 Configurations:
 
 * **Windows**: Visual Studio 2022 (Win32 and Win64)
-* **macOS**: Xcode 14.2
+* **macOS**: Xcode 15.0
 * **Linux**: GCC 11 and Clang 14
 
 ### Codecov
