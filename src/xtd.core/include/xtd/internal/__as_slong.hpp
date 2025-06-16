@@ -29,11 +29,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// std::any value = true;
+  /// xtd::any value = true;
   /// slong result = as<slong>(value);
   /// ```
   template<>
-  inline slong as<slong>(std::any value) {
+  inline slong as<slong>(xtd::any value) {
     return xtd::convert::to_llong(value);
   }
   

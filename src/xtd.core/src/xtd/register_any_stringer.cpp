@@ -6,7 +6,7 @@
 
 using namespace xtd;
 
-std::unordered_map<std::type_index, std::function<std::string(std::any const&)>> __any_stringer__ {
+std::unordered_map<std::type_index, std::function<std::string(xtd::any const&)>> __any_stringer__ {
   __to_any_stringer__<void>([]()->std::string {return "{}";}),
   __to_any_stringer__<bool>([](auto value)->std::string {return string::format("{}", value);}),
   __to_any_stringer__<char>([](auto value)->std::string {return string::format("{}", value);}),

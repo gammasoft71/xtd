@@ -29,11 +29,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// std::any value = true;
+  /// xtd::any value = true;
   /// uint64 result = as<uint64>(value);
   /// ```
   template<>
-  inline uint64 as<uint64>(std::any value) {
+  inline uint64 as<uint64>(xtd::any value) {
     return xtd::convert::to_uint64(value);
   }
   

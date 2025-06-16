@@ -29,11 +29,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// std::any value = true;
+  /// xtd::any value = true;
   /// float result = as<float>(value);
   /// ```
   template<>
-  inline float as<float>(std::any value) {
+  inline float as<float>(xtd::any value) {
     return xtd::convert::to_single(value);
   }
   

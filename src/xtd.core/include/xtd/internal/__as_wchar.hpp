@@ -29,11 +29,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// std::any value = true;
+  /// xtd::any value = true;
   /// wchar result = as<wchar>(value);
   /// ```
   template<>
-  inline wchar as<wchar>(std::any value) {
+  inline wchar as<wchar>(xtd::any value) {
     return xtd::convert::to_wchar(value);
   }
   

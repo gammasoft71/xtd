@@ -5,15 +5,15 @@
 #include "unregister_any_stringer.hpp"
 
 /// @cond
-extern std::unordered_map<std::type_index, std::function<std::string(std::any const&)>> __any_stringer__;
+extern std::unordered_map<std::type_index, std::function<std::string(xtd::any const&)>> __any_stringer__;
 
 template<class type_t, class function_t>
-inline std::pair<const std::type_index, std::function<std::string(std::any const&)>> __to_any_stringer__(function_t const& func) {
+inline std::pair<const std::type_index, std::function<std::string(xtd::any const&)>> __to_any_stringer__(function_t const& func) {
   return {
     std::type_index(typeid(type_t)),
-    [f = func](std::any const & value)->std::string {
+    [f = func](xtd::any const & value)->std::string {
       if constexpr(std::is_void_v<type_t>) return f();
-      else return f(std::any_cast<const type_t&>(value));
+      else return f(xtd::any_cast<const type_t&>(value));
     }
   };
 }

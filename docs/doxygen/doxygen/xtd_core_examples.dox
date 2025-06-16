@@ -353,7 +353,7 @@
 /// Show how to use format xtd::format class.
 ///
 /// @example format_any.cpp
-/// Show how to use format xtd::format class with std::any.
+/// Show how to use format xtd::format class with xtd::any.
 ///
 /// @example format_associative_containers.cpp
 /// Show how to use format xtd::format class with associative containers.

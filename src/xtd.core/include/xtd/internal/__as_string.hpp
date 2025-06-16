@@ -29,11 +29,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// std::any value = true;
+  /// xtd::any value = true;
   /// xtd::ulong result = as<xtd::ulong>(value);
   /// ```
   template<>
-  inline string as<string>(std::any value) {
+  inline string as<string>(xtd::any value) {
     return xtd::convert::to_string(value);
   }
   

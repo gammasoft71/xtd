@@ -17,23 +17,23 @@ namespace xtd::tests {
     };
     
     void test_method_(to_any_from_any) {
-      std::any value = 42;
-      assert::are_equal(42, std::any_cast<int>(convert::to_any(value)));
+      any value = 42;
+      assert::are_equal(42, xtd::any_cast<int>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_bool) {
       bool value = true;
-      assert::is_true(std::any_cast<bool>(convert::to_any(value)));
+      assert::is_true(xtd::any_cast<bool>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_byte) {
       xtd::byte value = 42;
-      assert::are_equal(42u, std::any_cast<xtd::byte>(convert::to_any(value)));
+      assert::are_equal(42u, xtd::any_cast<xtd::byte>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_char) {
       char value = 'a';
-      assert::are_equal('a', std::any_cast<char>(convert::to_any(value)));
+      assert::are_equal('a', xtd::any_cast<char>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_char8) {
@@ -43,112 +43,112 @@ namespace xtd::tests {
     
     void test_method_(to_any_from_char16) {
       char16 value = u'a';
-      assert::are_equal(u'a', std::any_cast<char16>(convert::to_any(value)));
+      assert::are_equal(u'a', xtd::any_cast<char16>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_char32) {
       char32 value = U'a';
-      assert::are_equal(U'a', std::any_cast<char32>(convert::to_any(value)));
+      assert::are_equal(U'a', xtd::any_cast<char32>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_wchar) {
       wchar value = L'a';
-      assert::are_equal(L'a', std::any_cast<wchar>(convert::to_any(value)));
+      assert::are_equal(L'a', xtd::any_cast<wchar>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_decimal) {
       decimal value = 42.0l;
-      assert::are_equal(42.0l, std::any_cast<decimal>(convert::to_any(value)));
+      assert::are_equal(42.0l, xtd::any_cast<decimal>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_double) {
       double value = 42.0;
-      assert::are_equal(42.0, std::any_cast<double>(convert::to_any(value)));
+      assert::are_equal(42.0, xtd::any_cast<double>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_float) {
       float value = 42.0f;
-      assert::are_equal(42.0f, std::any_cast<float>(convert::to_any(value)));
+      assert::are_equal(42.0f, xtd::any_cast<float>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_int16) {
       int16 value = 42;
-      assert::are_equal(42, std::any_cast<int16>(convert::to_any(value)));
+      assert::are_equal(42, xtd::any_cast<int16>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_int32) {
       int32 value = 42;
-      assert::are_equal(42, std::any_cast<int32>(convert::to_any(value)));
+      assert::are_equal(42, xtd::any_cast<int32>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_int64) {
       int64 value = 42l;
-      assert::are_equal(42l, std::any_cast<int64>(convert::to_any(value)));
+      assert::are_equal(42l, xtd::any_cast<int64>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_llong) {
       slong value = 42ll;
-      assert::are_equal(42ll, std::any_cast<slong>(convert::to_any(value)));
+      assert::are_equal(42ll, xtd::any_cast<slong>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_sbyte) {
       sbyte value = 42;
-      assert::are_equal(42, std::any_cast<sbyte>(convert::to_any(value)));
+      assert::are_equal(42, xtd::any_cast<sbyte>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_uint16) {
       uint16 value = 42u;
-      assert::are_equal(42u, std::any_cast<uint16>(convert::to_any(value)));
+      assert::are_equal(42u, xtd::any_cast<uint16>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_uint32) {
       uint32 value = 42u;
-      assert::are_equal(42u, std::any_cast<uint32>(convert::to_any(value)));
+      assert::are_equal(42u, xtd::any_cast<uint32>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_uint64) {
       uint64 value = 42lu;
-      assert::are_equal(42lu, std::any_cast<uint64>(convert::to_any(value)));
+      assert::are_equal(42lu, xtd::any_cast<uint64>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_ullong) {
       xtd::ulong value = 42llu;
-      assert::are_equal(42llu, std::any_cast<xtd::ulong>(convert::to_any(value)));
+      assert::are_equal(42llu, xtd::any_cast<xtd::ulong>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_string) {
       string value = "42";
-      assert::are_equal("42", std::any_cast<string>(convert::to_any(value)));
+      assert::are_equal("42", xtd::any_cast<string>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_std_string) {
       std::string value = "42";
-      assert::are_equal("42", std::any_cast<std::string>(convert::to_any(value)));
+      assert::are_equal("42", xtd::any_cast<std::string>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_u8string) {
       std::u8string value = u8"42";
-      assert::are_equal(u8"42", std::any_cast<std::u8string>(convert::to_any(value)));
+      assert::are_equal(u8"42", xtd::any_cast<std::u8string>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_u16string) {
       std::u16string value = u"42";
-      assert::are_equal(u"42", std::any_cast<std::u16string>(convert::to_any(value)));
+      assert::are_equal(u"42", xtd::any_cast<std::u16string>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_u32string) {
       std::u32string value = U"42";
-      assert::are_equal(U"42", std::any_cast<std::u32string>(convert::to_any(value)));
+      assert::are_equal(U"42", xtd::any_cast<std::u32string>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_wstring) {
       std::wstring value = L"42";
-      assert::are_equal(L"42", std::any_cast<std::wstring>(convert::to_any(value)));
+      assert::are_equal(L"42", xtd::any_cast<std::wstring>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_literal_char) {
       const char* value = "42";
-      assert::are_equal("42", std::any_cast<const char*>(convert::to_any(value)));
+      assert::are_equal("42", xtd::any_cast<const char*>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_literal_char8) {
@@ -158,33 +158,33 @@ namespace xtd::tests {
     
     void test_method_(to_any_from_literal_char16) {
       const char16* value = u"42";
-      assert::are_equal(u"42", std::any_cast<const char16*>(convert::to_any(value)));
+      assert::are_equal(u"42", xtd::any_cast<const char16*>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_literal_char32) {
       const char32* value = U"42";
-      assert::are_equal(U"42", std::any_cast<const char32*>(convert::to_any(value)));
+      assert::are_equal(U"42", xtd::any_cast<const char32*>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_literal_wchar) {
       const wchar* value = L"42";
-      assert::are_equal(L"42", std::any_cast<const wchar*>(convert::to_any(value)));
+      assert::are_equal(L"42", xtd::any_cast<const wchar*>(convert::to_any(value)));
     }
     
     void test_method_(to_any_from_values) {
       values value = values::two;
-      assert::are_equal(values::two, std::any_cast<values>(convert::to_any(value)));
+      assert::are_equal(values::two, xtd::any_cast<values>(convert::to_any(value)));
     }
     
     void test_method_(to_boolean_from_any) {
-      std::any value = true;
+      any value = true;
       assert::is_true(convert::to_boolean(value));
       value = false;
       assert::is_false(convert::to_boolean(value));
     }
     
     void test_method_(to_boolean_from_any_failed) {
-      std::any value = "not a bool";
+      any value = "not a bool";
       assert::throws<invalid_cast_exception>([&] {convert::to_boolean(value);});
     }
     
@@ -418,14 +418,14 @@ namespace xtd::tests {
     }
     
     void test_method_(to_byte_from_any) {
-      std::any value = static_cast<xtd::byte>(42);
+      any value = static_cast<xtd::byte>(42);
       assert::are_equal(42u, convert::to_byte(value));
       value = static_cast<xtd::byte>(0);
       assert::is_zero(convert::to_byte(value));
     }
     
     void test_method_(to_byte_from_any_failed) {
-      std::any value = "not a byte";
+      any value = "not a byte";
       assert::throws<invalid_cast_exception>([&] {convert::to_byte(value);});
     }
     
@@ -733,14 +733,14 @@ namespace xtd::tests {
     }
     
     void test_method_(to_char_from_any) {
-      std::any value = 'a';
+      any value = 'a';
       assert::are_equal('a', convert::to_char(value));
       value = '\0';
       assert::is_zero(convert::to_char(value));
     }
     
     void test_method_(to_char_from_any_failed) {
-      std::any value = "not a char";
+      any value = "not a char";
       assert::throws<invalid_cast_exception>([&] {convert::to_char(value);});
     }
     
@@ -1016,13 +1016,13 @@ namespace xtd::tests {
     }
     
     void test_method_(to_char8_from_any) {
-      // Cannot build on macOS: std::any with char8 does not link!
-      //std::any value = u8'a';
+      // Cannot build on macOS: any with char8 does not link!
+      //any value = u8'a';
       //assert::throws<invalid_cast_exception>([&]{convert::to_char8(value);});
     }
     
     void test_method_(to_char8_from_any_failed) {
-      std::any value = "not a char";
+      any value = "not a char";
       assert::throws<invalid_cast_exception>([&] {convert::to_char8(value);});
     }
     
@@ -1298,14 +1298,14 @@ namespace xtd::tests {
     }
     
     void test_method_(to_char16_from_any) {
-      std::any value = u'a';
+      any value = u'a';
       assert::are_equal(u'a', convert::to_char16(value));
       value = u'\0';
       assert::is_zero(convert::to_char16(value));
     }
     
     void test_method_(to_char16_from_any_failed) {
-      std::any value = "not a char";
+      any value = "not a char";
       assert::throws<invalid_cast_exception>([&] {convert::to_char16(value);});
     }
     
@@ -1573,14 +1573,14 @@ namespace xtd::tests {
     }
     
     void test_method_(to_char32_from_any) {
-      std::any value = U'a';
+      any value = U'a';
       assert::are_equal(U'a', convert::to_char32(value));
       value = U'\0';
       assert::is_zero(convert::to_char32(value));
     }
     
     void test_method_(to_char32_from_any_failed) {
-      std::any value = "not a char";
+      any value = "not a char";
       assert::throws<invalid_cast_exception>([&] {convert::to_char32(value);});
     }
     
@@ -1836,14 +1836,14 @@ namespace xtd::tests {
     }
     
     void test_method_(to_wchar_from_any) {
-      std::any value = L'a';
+      any value = L'a';
       assert::are_equal(L'a', convert::to_wchar(value));
       value = L'\0';
       assert::is_zero(convert::to_wchar(value));
     }
     
     void test_method_(to_wchar_from_any_failed) {
-      std::any value = "not a char";
+      any value = "not a char";
       assert::throws<invalid_cast_exception>([&] {convert::to_wchar(value);});
     }
     
@@ -2111,14 +2111,14 @@ namespace xtd::tests {
     }
     
     void test_method_(to_decimal_from_any) {
-      std::any value = 42.0l;
+      any value = 42.0l;
       assert::are_equal(42.0l, convert::to_decimal(value));
       value = 0.0l;
       assert::is_zero(convert::to_decimal(value));
     }
     
     void test_method_(to_decimal_from_any_failed) {
-      std::any value = "not a byte";
+      any value = "not a byte";
       assert::throws<invalid_cast_exception>([&] {convert::to_decimal(value);});
     }
     
@@ -2363,14 +2363,14 @@ namespace xtd::tests {
     }
     
     void test_method_(to_double_from_any) {
-      std::any value = 42.0;
+      any value = 42.0;
       assert::are_equal(42.0, convert::to_double(value));
       value = 0.0;
       assert::is_zero(convert::to_double(value));
     }
     
     void test_method_(to_double_from_any_failed) {
-      std::any value = "not a byte";
+      any value = "not a byte";
       assert::throws<invalid_cast_exception>([&] {convert::to_double(value);});
     }
     
@@ -2615,14 +2615,14 @@ namespace xtd::tests {
     }
     
     void test_method_(to_single_from_any) {
-      std::any value = 42.0f;
+      any value = 42.0f;
       assert::are_equal(42.0f, convert::to_single(value));
       value = 0.0f;
       assert::is_zero(convert::to_single(value));
     }
     
     void test_method_(to_single_from_any_failed) {
-      std::any value = "not a byte";
+      any value = "not a byte";
       assert::throws<invalid_cast_exception>([&] {convert::to_single(value);});
     }
     
@@ -2867,14 +2867,14 @@ namespace xtd::tests {
     }
     
     void test_method_(to_int16_from_any) {
-      std::any value = static_cast<int16>(42);
+      any value = static_cast<int16>(42);
       assert::are_equal(42, convert::to_int16(value));
       value = static_cast<int16>(0);
       assert::is_zero(convert::to_int16(value));
     }
     
     void test_method_(to_int16_from_any_failed) {
-      std::any value = "not a byte";
+      any value = "not a byte";
       assert::throws<invalid_cast_exception>([&] {convert::to_int16(value);});
     }
     
@@ -3160,14 +3160,14 @@ namespace xtd::tests {
     }
     
     void test_method_(to_int32_from_any) {
-      std::any value = static_cast<int32>(42);
+      any value = static_cast<int32>(42);
       assert::are_equal(42, convert::to_int32(value));
       value = static_cast<int32>(0);
       assert::is_zero(convert::to_int32(value));
     }
     
     void test_method_(to_int32_from_any_failed) {
-      std::any value = "not a byte";
+      any value = "not a byte";
       assert::throws<invalid_cast_exception>([&] {convert::to_int32(value);});
     }
     
@@ -3443,14 +3443,14 @@ namespace xtd::tests {
     }
     
     void test_method_(to_int64_from_any) {
-      std::any value = static_cast<int64>(42);
+      any value = static_cast<int64>(42);
       assert::are_equal(42l, convert::to_int64(value));
       value = static_cast<int64>(0);
       assert::is_zero(convert::to_int64(value));
     }
     
     void test_method_(to_int64_from_any_failed) {
-      std::any value = "not a byte";
+      any value = "not a byte";
       assert::throws<invalid_cast_exception>([&] {convert::to_int64(value);});
     }
     
@@ -3716,14 +3716,14 @@ namespace xtd::tests {
     }
     
     void test_method_(to_llong_from_any) {
-      std::any value = static_cast<slong>(42ll);
+      any value = static_cast<slong>(42ll);
       assert::are_equal(42ll, convert::to_llong(value));
       value = static_cast<slong>(0ll);
       assert::is_zero(convert::to_llong(value));
     }
     
     void test_method_(to_llong_from_any_failed) {
-      std::any value = "not a byte";
+      any value = "not a byte";
       assert::throws<invalid_cast_exception>([&] {convert::to_llong(value);});
     }
     
@@ -3989,14 +3989,14 @@ namespace xtd::tests {
     }
     
     void test_method_(to_sbyte_from_any) {
-      std::any value = static_cast<sbyte>(42);
+      any value = static_cast<sbyte>(42);
       assert::are_equal(42, convert::to_sbyte(value));
       value = static_cast<sbyte>(0);
       assert::is_zero(convert::to_sbyte(value));
     }
     
     void test_method_(to_sbyte_from_any_failed) {
-      std::any value = "not a byte";
+      any value = "not a byte";
       assert::throws<invalid_cast_exception>([&] {convert::to_sbyte(value);});
     }
     
@@ -4288,14 +4288,14 @@ namespace xtd::tests {
     }
     
     void test_method_(to_uint16_from_any) {
-      std::any value = static_cast<uint16>(42);
+      any value = static_cast<uint16>(42);
       assert::are_equal(42u, convert::to_uint16(value));
       value = static_cast<uint16>(0);
       assert::is_zero(convert::to_uint16(value));
     }
     
     void test_method_(to_uint16_from_any_failed) {
-      std::any value = "not a byte";
+      any value = "not a byte";
       assert::throws<invalid_cast_exception>([&] {convert::to_uint16(value);});
     }
     
@@ -4579,14 +4579,14 @@ namespace xtd::tests {
     }
     
     void test_method_(to_uint32_from_any) {
-      std::any value = static_cast<uint32>(42);
+      any value = static_cast<uint32>(42);
       assert::are_equal(42u, convert::to_uint32(value));
       value = static_cast<uint32>(0);
       assert::is_zero(convert::to_uint32(value));
     }
     
     void test_method_(to_uint32_from_any_failed) {
-      std::any value = "not a byte";
+      any value = "not a byte";
       assert::throws<invalid_cast_exception>([&] {convert::to_uint32(value);});
     }
     
@@ -4858,14 +4858,14 @@ namespace xtd::tests {
     }
     
     void test_method_(to_uint64_from_any) {
-      std::any value = static_cast<uint64>(42);
+      any value = static_cast<uint64>(42);
       assert::are_equal(42u, convert::to_uint64(value));
       value = static_cast<uint64>(0);
       assert::is_zero(convert::to_uint64(value));
     }
     
     void test_method_(to_uint64_from_any_failed) {
-      std::any value = "not a byte";
+      any value = "not a byte";
       assert::throws<invalid_cast_exception>([&] {convert::to_uint64(value);});
     }
     
@@ -5129,14 +5129,14 @@ namespace xtd::tests {
     }
     
     void test_method_(to_ullong_from_any) {
-      std::any value = static_cast<xtd::ulong>(42);
+      any value = static_cast<xtd::ulong>(42);
       assert::are_equal(42llu, convert::to_ullong(value));
       value = static_cast<xtd::ulong>(0);
       assert::is_zero(convert::to_ullong(value));
     }
     
     void test_method_(to_ullong_from_any_failed) {
-      std::any value = "not a byte";
+      any value = "not a byte";
       assert::throws<invalid_cast_exception>([&] {convert::to_ullong(value);});
     }
     

@@ -482,9 +482,9 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<class type_t>
-  bool is(std::any value) {
+  bool is(xtd::any value) {
     try {
-      std::any_cast<type_t>(value);
+      xtd::any_cast<type_t>(value);
       return true;
     } catch (const std::bad_cast&) {
       return false;
@@ -502,7 +502,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<>
-  inline bool is<std::any>(std::any value) {
+  inline bool is<xtd::any>(xtd::any value) {
     return true;
   }
   

@@ -29,11 +29,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// std::any value = true;
+  /// xtd::any value = true;
   /// char result = as<char>(value);
   /// ```
   template<>
-  inline char as<char>(std::any value) {
+  inline char as<char>(xtd::any value) {
     return xtd::convert::to_char(value);
   }
   

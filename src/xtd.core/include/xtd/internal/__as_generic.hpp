@@ -29,13 +29,13 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// std::any value = 42;
+  /// xtd::any value = 42;
   /// int result = as<int>(value);
   /// ```
   template<class new_type_t>
-  new_type_t as(std::any value) {
+  new_type_t as(xtd::any value) {
     try {
-      return std::any_cast<new_type_t>(value);
+      return xtd::any_cast<new_type_t>(value);
     } catch (const std::exception& e) {
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }

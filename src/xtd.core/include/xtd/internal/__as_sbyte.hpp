@@ -29,11 +29,11 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @par Examples
   /// ```cpp
-  /// std::any value = true;
+  /// xtd::any value = true;
   /// sbyte result = as<sbyte>(value);
   /// ```
   template<>
-  inline sbyte as<sbyte>(std::any value) {
+  inline sbyte as<sbyte>(xtd::any value) {
     return xtd::convert::to_sbyte(value);
   }
   

@@ -6,6 +6,12 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::make_any_object operator creates a xtd::any_object object.
+  /// @par Header
+  /// ```cpp
+  /// #include <xtd/make_any_object>
+  /// ```
+  /// @par Namespace
+  /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core

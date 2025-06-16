@@ -403,7 +403,7 @@ namespace xtd {
   }
 
   template<>
-  inline std::string to_string(const std::any& value, const std::string& fmt, const std::locale& loc) {
+  inline std::string to_string(const xtd::any& value, const std::string& fmt, const std::locale& loc) {
     auto iterator = __any_stringer__.find(std::type_index(value.type()));
     return iterator != __any_stringer__.cend() ? xtd::to_string(iterator->second(value), fmt, loc) : "(unregistered)";
   }
