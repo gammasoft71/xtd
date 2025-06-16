@@ -2,11 +2,11 @@
 
 #include "semaphore_base.hpp"
 #include "../../../include/xtd/int32_object.hpp"
-#include "../../../include/xtd/semaphore.hpp"
 #include "../../../include/xtd/invalid_operation_exception.hpp"
 #include "../../../include/xtd/threading/interlocked.hpp"
 #include <atomic>
 #include <condition_variable>
+#include <semaphore>
 
 class xtd::threading::semaphore::unnamed_semaphore : public semaphore_base {
 public:
