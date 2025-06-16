@@ -353,7 +353,6 @@ namespace xtd {
     /// @return `true` if lhs is not equal to rhs; otherwise `false`.
     friend bool operator !=(const reference_wrapper_object& lhs, const type_t& rhs) noexcept {return !lhs.equals(rhs);}
     
-#if defined(__xtd__cpp_lib_three_way_comparison)
     /// @brief Three-way comparison operator with specidied lhs ans rhs values.
     /// @param lhs The left hand side value to compare.
     /// @param rhs The right hand side value to compare.
@@ -368,7 +367,6 @@ namespace xtd {
       if (dynamic_cast<const type_t*>(rhs_ptr) && lhs.compare_to(static_cast<const type_t&>(rhs)) == 0) return std::strong_ordering::equivalent;
       return std::strong_ordering::less;
     }
-#endif
     /// @}
 
   private:
