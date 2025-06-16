@@ -146,13 +146,13 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span>&amp; <a class="code hl_function" href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">is</a> = <a class="code hl_variable" href="#a7c103233b3e74cb63538b48616b7fd02">console::in</a>;</div>
+<div class="line">  <span class="keyword">auto</span>&amp; <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> = <a class="code hl_variable" href="#a7c103233b3e74cb63538b48616b7fd02">console::in</a>;</div>
 <div class="line">  <span class="keyword">auto</span>&amp; os = <a class="code hl_variable" href="#a923837ac84baf01726703e0474ca4888">console::out</a>;</div>
 <div class="line">  </div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Ola Mundo!&quot;</span> &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;What is your name: &quot;</span>;</div>
 <div class="line">  <span class="keyword">auto</span> name = string::empty_string;</div>
-<div class="line">  <a class="code hl_function" href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">is</a> &gt;&gt; name;</div>
+<div class="line">  <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> &gt;&gt; name;</div>
 <div class="line">  </div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Buenos Dias, &quot;</span> &lt;&lt; name &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
 <div class="line">}</div>
@@ -165,7 +165,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="ttc" id="aclassxtd_1_1console_html_a7c103233b3e74cb63538b48616b7fd02"><div class="ttname"><a href="#a7c103233b3e74cb63538b48616b7fd02">xtd::console::in</a></div><div class="ttdeci">static std::istream in</div><div class="ttdoc">Gets the standard input stream. A std::basic_istream&lt;char_t&gt; that represents the standard input strea...</div><div class="ttdef"><b>Definition</b> console.hpp:47</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a923837ac84baf01726703e0474ca4888"><div class="ttname"><a href="#a923837ac84baf01726703e0474ca4888">xtd::console::out</a></div><div class="ttdeci">static std::ostream out</div><div class="ttdoc">Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...</div><div class="ttdef"><b>Definition</b> console.hpp:52</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_a19a9aa87ee20eb3789058621ed161c4e"><div class="ttname"><a href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">xtd::environment::new_line</a></div><div class="ttdeci">static xtd::string new_line() noexcept</div><div class="ttdoc">Gets the newline string defined for this environment.</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga52ae9030016acf7d943cd428e943dc02"><div class="ttname"><a href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">xtd::is</a></div><div class="ttdeci">bool is(std::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:485</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga8419620dc289ac0d790372a1616e993f"><div class="ttname"><a href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">xtd::is</a></div><div class="ttdeci">bool is(xtd::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:485</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Fields</h2></td></tr>
@@ -358,7 +358,7 @@ Inheritance diagram for xtd::console:</div>
 <tr class="memitem:a19961b978cee051919d0048121b4123d" id="r_a19961b978cee051919d0048121b4123d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19961b978cee051919d0048121b4123d">set_error</a> (const std::ostream &amp;os)</td></tr>
 <tr class="memdesc:a19961b978cee051919d0048121b4123d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the error property to the specified std::ostream object.  <br /></td></tr>
 <tr class="separator:a19961b978cee051919d0048121b4123d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade0f16e420bdb1b3fc74492987c47689" id="r_ade0f16e420bdb1b3fc74492987c47689"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade0f16e420bdb1b3fc74492987c47689">set_in</a> (const std::istream &amp;<a class="el" href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">is</a>)</td></tr>
+<tr class="memitem:ade0f16e420bdb1b3fc74492987c47689" id="r_ade0f16e420bdb1b3fc74492987c47689"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ade0f16e420bdb1b3fc74492987c47689">set_in</a> (const std::istream &amp;<a class="el" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a>)</td></tr>
 <tr class="memdesc:ade0f16e420bdb1b3fc74492987c47689"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the int property to the specified std::istream object.  <br /></td></tr>
 <tr class="separator:ade0f16e420bdb1b3fc74492987c47689"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87d167b8caea4c48a34906a6d5aa86c2" id="r_a87d167b8caea4c48a34906a6d5aa86c2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87d167b8caea4c48a34906a6d5aa86c2">set_out</a> (const std::ostream &amp;os)</td></tr>
@@ -3261,7 +3261,7 @@ such as a text file, that has an actual end-of-file character. </dd></dl>
 <div class="line">  <span class="keywordflow">do</span> {</div>
 <div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> = <a class="code hl_function" href="#ab89501d1732741a45d43b62ed28ef7b9">console::read</a>();</div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
-<div class="line">      ch = <a class="code hl_function" href="classxtd_1_1convert.html#a777bf9f81ebd2f7e092466f24f28ce12">convert::to_char32</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>);</div>
+<div class="line">      ch = <a class="code hl_function" href="classxtd_1_1convert.html#a4ef8aa91ca84732b9526c238323d1206">convert::to_char32</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>);</div>
 <div class="line">      <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1box__char.html#abe16960a01b56d932a322b3b12572d96">char_object::is_white_space</a>(ch)) {</div>
 <div class="line">        <a class="code hl_function" href="#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(m3, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>);</div>
 <div class="line">        <span class="keywordflow">if</span> (ch == 0x0a)</div>
@@ -3316,7 +3316,7 @@ such as a text file, that has an actual end-of-file character. </dd></dl>
 <div class="ttc" id="aclassxtd_1_1box__char_html_abe16960a01b56d932a322b3b12572d96"><div class="ttname"><a href="classxtd_1_1box__char.html#abe16960a01b56d932a322b3b12572d96">xtd::box_char&lt; char &gt;::is_white_space</a></div><div class="ttdeci">static bool is_white_space(char c) noexcept</div><div class="ttdef"><b>Definition</b> box_char.hpp:187</div></div>
 <div class="ttc" id="aclassxtd_1_1box__integer_html_abacf9950b09d5d214dcfa6205559785d"><div class="ttname"><a href="classxtd_1_1box__integer.html#abacf9950b09d5d214dcfa6205559785d">xtd::box_integer::min_value</a></div><div class="ttdeci">static constexpr type_t min_value</div><div class="ttdoc">Represents the smallest possible value of type_t. This field is constant.</div><div class="ttdef"><b>Definition</b> box_integer.hpp:70</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ab89501d1732741a45d43b62ed28ef7b9"><div class="ttname"><a href="#ab89501d1732741a45d43b62ed28ef7b9">xtd::console::read</a></div><div class="ttdeci">static int32 read()</div><div class="ttdoc">Reads the next character from the standard input stream.</div></div>
-<div class="ttc" id="aclassxtd_1_1convert_html_a777bf9f81ebd2f7e092466f24f28ce12"><div class="ttname"><a href="classxtd_1_1convert.html#a777bf9f81ebd2f7e092466f24f28ce12">xtd::convert::to_char32</a></div><div class="ttdeci">static char32 to_char32(std::any value)</div><div class="ttdoc">Convert std::any to char32.</div></div>
+<div class="ttc" id="aclassxtd_1_1convert_html_a4ef8aa91ca84732b9526c238323d1206"><div class="ttname"><a href="classxtd_1_1convert.html#a4ef8aa91ca84732b9526c238323d1206">xtd::convert::to_char32</a></div><div class="ttdeci">static char32 to_char32(xtd::any value)</div><div class="ttdoc">Convert xtd::any to char32.</div></div>
 <div class="ttc" id="aclassxtd_1_1overflow__exception_html"><div class="ttname"><a href="classxtd_1_1overflow__exception.html">xtd::overflow_exception</a></div><div class="ttdoc">The exception that is thrown when an arithmetic, casting, or conversion operation in a checked contex...</div><div class="ttdef"><b>Definition</b> overflow_exception.hpp:18</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -4032,13 +4032,13 @@ template&lt;class ... args_t&gt; </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span>&amp; <a class="code hl_function" href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">is</a> = <a class="code hl_variable" href="#a7c103233b3e74cb63538b48616b7fd02">console::in</a>;</div>
+<div class="line">  <span class="keyword">auto</span>&amp; <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> = <a class="code hl_variable" href="#a7c103233b3e74cb63538b48616b7fd02">console::in</a>;</div>
 <div class="line">  <span class="keyword">auto</span>&amp; os = <a class="code hl_variable" href="#a923837ac84baf01726703e0474ca4888">console::out</a>;</div>
 <div class="line">  </div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Ola Mundo!&quot;</span> &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;What is your name: &quot;</span>;</div>
 <div class="line">  <span class="keyword">auto</span> name = string::empty_string;</div>
-<div class="line">  <a class="code hl_function" href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">is</a> &gt;&gt; name;</div>
+<div class="line">  <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> &gt;&gt; name;</div>
 <div class="line">  </div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Buenos Dias, &quot;</span> &lt;&lt; name &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
 <div class="line">}</div>
@@ -4079,13 +4079,13 @@ template&lt;class ... args_t&gt; </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span>&amp; <a class="code hl_function" href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">is</a> = <a class="code hl_variable" href="#a7c103233b3e74cb63538b48616b7fd02">console::in</a>;</div>
+<div class="line">  <span class="keyword">auto</span>&amp; <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> = <a class="code hl_variable" href="#a7c103233b3e74cb63538b48616b7fd02">console::in</a>;</div>
 <div class="line">  <span class="keyword">auto</span>&amp; os = <a class="code hl_variable" href="#a923837ac84baf01726703e0474ca4888">console::out</a>;</div>
 <div class="line">  </div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Ola Mundo!&quot;</span> &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;What is your name: &quot;</span>;</div>
 <div class="line">  <span class="keyword">auto</span> name = string::empty_string;</div>
-<div class="line">  <a class="code hl_function" href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">is</a> &gt;&gt; name;</div>
+<div class="line">  <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> &gt;&gt; name;</div>
 <div class="line">  </div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Buenos Dias, &quot;</span> &lt;&lt; name &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
 <div class="line">}</div>
@@ -4143,7 +4143,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 15 2025 20:45:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jun 16 2025 10:33:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

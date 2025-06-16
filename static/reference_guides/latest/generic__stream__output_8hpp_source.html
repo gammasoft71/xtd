@@ -124,7 +124,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;valarray&gt;</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">extern</span> std::unordered_map&lt;std::type_index, std::function&lt;std::string(std::any <span class="keyword">const</span>&amp;)&gt;&gt; __any_stringer__;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">extern</span> std::unordered_map&lt;std::type_index, std::function&lt;std::string(<a class="code hl_typedef" href="group__types.html#gafbdc6699af0a474de2a4ab8a5997b7d8">xtd::any</a> <span class="keyword">const</span>&amp;)&gt;&gt; __any_stringer__;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">/*</span></div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">template&lt;class char_t, class char_traits_t, class type_t&gt;</span></div>
@@ -294,11 +294,12 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>}</div>
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">char</span>_t, <span class="keyword">class</span> <span class="keywordtype">char</span>_traits_t&gt;</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="keyword">inline</span> std::basic_ostream&lt;char_t, char_traits_t&gt;&amp; operator &lt;&lt;(std::basic_ostream&lt;char_t, char_traits_t&gt;&amp; os, std::any value) {</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="keyword">inline</span> std::basic_ostream&lt;char_t, char_traits_t&gt;&amp; operator &lt;&lt;(std::basic_ostream&lt;char_t, char_traits_t&gt;&amp; os, <a class="code hl_typedef" href="group__types.html#gafbdc6699af0a474de2a4ab8a5997b7d8">xtd::any</a> value) {</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  <span class="keyword">auto</span> it = __any_stringer__.find(std::type_index(value.type()));</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  <span class="keywordflow">if</span> (it == __any_stringer__.cend()) <span class="keywordflow">return</span> os &lt;&lt; <span class="stringliteral">&quot;(unregistered)&quot;</span>;</div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  <span class="keywordflow">return</span> os &lt;&lt; it-&gt;second(value);</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>}</div>
+<div class="ttc" id="agroup__types_html_gafbdc6699af0a474de2a4ab8a5997b7d8"><div class="ttname"><a href="group__types.html#gafbdc6699af0a474de2a4ab8a5997b7d8">xtd::any</a></div><div class="ttdeci">std::any any</div><div class="ttdoc">Represents the any alias on std::any.</div><div class="ttdef"><b>Definition</b> any.hpp:24</div></div>
 <div class="ttc" id="anamespacextd_html_a31261a8eef815d75bbe44a418ea4023f"><div class="ttname"><a href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">xtd::first</a></div><div class="ttdeci">read_only_span&lt; type_t, count &gt; first() const</div><div class="ttdoc">Obtains a subspan consisting of the first count elements of the sequence.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:282</div></div>
 <div class="ttc" id="anamespacextd_html_a3a39828bd6261156752c2d0eda4c625a"><div class="ttname"><a href="namespacextd.html#a3a39828bd6261156752c2d0eda4c625a">xtd::end</a></div><div class="ttdeci">const_iterator end() const</div><div class="ttdoc">Returns an iterator to the end.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:213</div></div>
 <div class="ttc" id="anamespacextd_html_aa7ce9a70ea867f52d614f508f8911d27"><div class="ttname"><a href="namespacextd.html#aa7ce9a70ea867f52d614f508f8911d27">xtd::print</a></div><div class="ttdeci">void print(FILE *file, arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the file output stream.</div><div class="ttdef"><b>Definition</b> print.hpp:19</div></div>
@@ -306,7 +307,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 15 2025 20:45:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jun 16 2025 10:33:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

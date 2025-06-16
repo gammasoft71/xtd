@@ -96,7 +96,7 @@ $(function(){ initResizable(false); });
   <div class="headertitle"><div class="title">directory_assert_are_equal.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use <a class="el" href="classxtd_1_1tunit_1_1directory__assert.html#aaacdb768cc24bedc9bc69302816437be" title="Asserts that two xtd::io::directory_info are equal.">xtd::tunit::directory_assert::are_equal</a> method.</p>
+<p>Shows how to use <a class="el" href="classxtd_1_1tunit_1_1directory__assert.html#a01ee7fa57d39f11580179f2fa7d96193" title="Asserts that two std::filesystem::directory_entry are equal.">xtd::tunit::directory_assert::are_equal</a> method.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -107,12 +107,12 @@ $(function(){ initResizable(false); });
 <div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
 <div class="line">    <span class="keywordtype">void</span> <a id="a0" name="a0"></a><a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case_succeed) {</div>
 <div class="line">      <span class="keyword">auto</span> di = <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">directory_info</a> {<a class="code hl_function" href="classxtd_1_1io_1_1path.html#ac7e0063a515ff37aab6582a208c0b136">path::get_temp_path</a>()};</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1tunit_1_1directory__assert.html#aaacdb768cc24bedc9bc69302816437be">directory_assert::are_equal</a>(<a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">directory_info</a> {<a class="code hl_function" href="classxtd_1_1io_1_1path.html#ac7e0063a515ff37aab6582a208c0b136">path::get_temp_path</a>()}, di);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1tunit_1_1directory__assert.html#a01ee7fa57d39f11580179f2fa7d96193">directory_assert::are_equal</a>(<a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">directory_info</a> {<a class="code hl_function" href="classxtd_1_1io_1_1path.html#ac7e0063a515ff37aab6582a208c0b136">path::get_temp_path</a>()}, di);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case_failed) {</div>
 <div class="line">      <span class="keyword">auto</span> di = <a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">directory_info</a> {<a class="code hl_function" href="classxtd_1_1environment.html#a465e71972e122d4bbdaa943ae02d4cd8">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a54b53072540eeeb8f8e9343e71f28176">environment::special_folder::system</a>)};</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1tunit_1_1directory__assert.html#aaacdb768cc24bedc9bc69302816437be">directory_assert::are_equal</a>(<a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">directory_info</a> {<a class="code hl_function" href="classxtd_1_1io_1_1path.html#ac7e0063a515ff37aab6582a208c0b136">path::get_temp_path</a>()}, di);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1tunit_1_1directory__assert.html#a01ee7fa57d39f11580179f2fa7d96193">directory_assert::are_equal</a>(<a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">directory_info</a> {<a class="code hl_function" href="classxtd_1_1io_1_1path.html#ac7e0063a515ff37aab6582a208c0b136">path::get_temp_path</a>()}, di);</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -140,7 +140,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a></div><div class="ttdoc">Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...</div><div class="ttdef"><b>Definition</b> directory_info.hpp:130</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1path_html_ac7e0063a515ff37aab6582a208c0b136"><div class="ttname"><a href="classxtd_1_1io_1_1path.html#ac7e0063a515ff37aab6582a208c0b136">xtd::io::path::get_temp_path</a></div><div class="ttdeci">static xtd::string get_temp_path() noexcept</div><div class="ttdoc">Returns the path of the current user&#39;s temporary folder.</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1console__unit__test_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1console__unit__test.html">xtd::tunit::console_unit_test</a></div><div class="ttdoc">The console_unit_test class is console unit test interface.</div><div class="ttdef"><b>Definition</b> console_unit_test.hpp:23</div></div>
-<div class="ttc" id="aclassxtd_1_1tunit_1_1directory__assert_html_aaacdb768cc24bedc9bc69302816437be"><div class="ttname"><a href="classxtd_1_1tunit_1_1directory__assert.html#aaacdb768cc24bedc9bc69302816437be">xtd::tunit::directory_assert::are_equal</a></div><div class="ttdeci">static void are_equal(const xtd::io::directory_info &amp;expected, const xtd::io::directory_info &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that two xtd::io::directory_info are equal.</div></div>
+<div class="ttc" id="aclassxtd_1_1tunit_1_1directory__assert_html_a01ee7fa57d39f11580179f2fa7d96193"><div class="ttname"><a href="classxtd_1_1tunit_1_1directory__assert.html#a01ee7fa57d39f11580179f2fa7d96193">xtd::tunit::directory_assert::are_equal</a></div><div class="ttdeci">static void are_equal(const std::filesystem::directory_entry &amp;expected, const std::filesystem::directory_entry &amp;actual, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Asserts that two std::filesystem::directory_entry are equal.</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1unit__test_html_a5af4f6910e81e2442af475ad838b5b9a"><div class="ttname"><a href="classxtd_1_1tunit_1_1unit__test.html#a5af4f6910e81e2442af475ad838b5b9a">xtd::tunit::unit_test::run</a></div><div class="ttdeci">int32 run() noexcept</div><div class="ttdoc">Runs all tests in this unit_test object and prints the result.</div></div>
 <div class="ttc" id="agroup__tunit_html_ga1fa6dc01b83d00ce9e92402c9694c6af"><div class="ttname"><a href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a></div><div class="ttdeci">#define test_method_(method_name)</div><div class="ttdoc">Add test method to class test.</div><div class="ttdef"><b>Definition</b> test_method_attribute.hpp:72</div></div>
 <div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition</b> binary_reader.hpp:17</div></div>
@@ -150,7 +150,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 15 2025 20:45:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jun 16 2025 10:33:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
