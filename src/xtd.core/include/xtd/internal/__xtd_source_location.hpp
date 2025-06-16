@@ -10,6 +10,23 @@
 #include <source_location>
 using __xtd_source_location__ = std::source_location;
 #else
+// Fallback implementation for std::source_location for compatibility reasons.
+//
+// Although std::source_location is part of C++20 and supported in recent compiler versions,
+// the support on Apple platforms (Xcode/Clang) is still incomplete or inconsistent,
+// especially on versions prior to Xcode 15.4.
+//
+// This fallback uses compiler builtins (__builtin_FILE, __builtin_LINE, etc.) to
+// provide similar functionality without relying on std::source_location.
+//
+// We keep this fallback to ensure compatibility with older toolchains and to avoid
+// breaking CI or user builds when newer Xcode versions are not available.
+//
+// Once support for std::source_location becomes reliable across all supported
+// Xcode versions, this fallback can be removed.
+//
+// See: https://developer.apple.com/forums/thread/713513 for related discussion.
+//
 #include <cstdint>
 
 #define __XTD_FILE__ __builtin_FILE()
