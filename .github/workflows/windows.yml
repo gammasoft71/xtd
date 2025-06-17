@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     name: Build on Windows (${{ matrix.arch }}) ${{ matrix.build_type }}
-    runs-on: windows-latest
+    runs-on: windows-2022
     strategy:
       matrix:
         arch: [Win32, x64]
@@ -52,7 +52,7 @@ jobs:
           -A ${{ matrix.arch }} `
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} `
           -DCMAKE_TOOLCHAIN_FILE=${{ github.workspace }}\vcpkg\scripts\buildsystems\vcpkg.cmake `
-          -DXTD_BUILD_CPP_STANDARD=23 `
+          -DXTD_BUILD_CPP_STANDARD=20 `
           -DXTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM=ON `
           -DXTD_BUILD_TESTS_XTD_CORE=OFF `
           -DXTD_BUILD_TESTS_XTD_DRAWING=OFF `
