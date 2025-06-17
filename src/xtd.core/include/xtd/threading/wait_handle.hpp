@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::threading::wait_handle exception.
+/// @brief Contains xtd::threading::wait_handle class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 
@@ -227,11 +227,11 @@ namespace xtd {
 
       /// @cond
       template<class ...items_t>
-      static size_t wait_all(items_t... items) {return wait_all(timeout::infinite, items...);}
+      static bool wait_all(items_t... items) {return wait_all(timeout::infinite, items...);}
       template<class ...items_t>
-      static size_t wait_all(const time_span& timeout, items_t... items) {return wait_all(as<int32>(timeout.total_milliseconds()), items...);}
+      static bool wait_all(const time_span& timeout, items_t... items) {return wait_all(as<int32>(timeout.total_milliseconds()), items...);}
       template<class ...items_t>
-      static size_t wait_all(int32 milliseconds_timeout, items_t... items) {
+      static bool wait_all(int32 milliseconds_timeout, items_t... items) {
         auto wait_handle_pointers = xtd::array<wait_handle*> {};
         fill_wait_handle_pointers(wait_handle_pointers, items...);
         return wait_all(wait_handle_pointers, milliseconds_timeout);
