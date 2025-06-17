@@ -11,7 +11,8 @@ on:
 jobs:
   build:
     name: Build on macOS ${{ matrix.build_type }}
-    runs-on: macos-latest
+    #runs-on: macos-latest
+    runs-on: macos-13
     strategy:
       matrix:
         build_type: [Debug, Release]
