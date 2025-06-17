@@ -12,7 +12,7 @@ jobs:
   build:
     name: Build on macOS ${{ matrix.build_type }}
     #runs-on: macos-latest
-    runs-on: macos-13
+    runs-on: macos-14
     strategy:
       matrix:
         build_type: [Debug, Release]
@@ -33,7 +33,7 @@ jobs:
         cmake .. \
           -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
           -DCMAKE_INSTALL_PREFIX=~/local \
-          -DXTD_BUILD_CPP_STANDARD=23 \
+          -DXTD_BUILD_CPP_STANDARD=20 \
           -DXTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM=ON \
           -DXTD_BUILD_TESTS_XTD_CORE=ON \
           -DXTD_BUILD_TESTS_XTD_DRAWING=ON \
