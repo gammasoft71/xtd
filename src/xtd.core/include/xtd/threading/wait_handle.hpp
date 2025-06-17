@@ -170,10 +170,10 @@ namespace xtd {
       /// @exception xtd::threading::abandoned_mutex_exception The wait completed because a thread exited without releasing a mutex.
       template<class collection_t>
       static bool wait_all(const collection_t& wait_handles, int32 milliseconds_timeout) {
-        auto wait_handle_pointers = xtd::array<wait_handle*> {};
+        auto wait_handle_pointers = std::vector<wait_handle*> {};
         for (auto& item : wait_handles)
-          wait_handle_pointers.resize(wait_handle_pointers.size() + 1, const_cast<wait_handle*>(as<wait_handle>(&item)));
-        return wait_all(wait_handle_pointers, milliseconds_timeout);
+          wait_handle_pointers.push_back(const_cast<wait_handle*>(as<wait_handle>(&item)));
+        return wait_all(array<wait_handle*> {wait_handle_pointers}, milliseconds_timeout);
       }
       
       /// @brief Waits for all the elements in the specified collection to receive a signal, using a xtd::time_span value to measure the time interval.
@@ -207,10 +207,10 @@ namespace xtd {
       /// @exception xtd::threading::abandoned_mutex_exception The wait completed because a thread exited without releasing a mutex.
       template<class collection_t>
       static size_t wait_any(const collection_t& wait_handles, int32 milliseconds_timeout) {
-        auto wait_handle_pointers = xtd::array<wait_handle*> {};
+        auto wait_handle_pointers = std::vector<wait_handle*> {};
         for (auto& item : wait_handles)
-          wait_handle_pointers.resize(wait_handle_pointers.size() + 1, const_cast<wait_handle*>(as<wait_handle>(&item)));
-        return wait_any(wait_handle_pointers, milliseconds_timeout);
+          wait_handle_pointers.push_back(const_cast<wait_handle*>(as<wait_handle>(&item)));
+        return wait_any(xtd::array<wait_handle*> {wait_handle_pointers}, milliseconds_timeout);
       }
       
       /// @brief Waits for any of the elements in the specified collection to receive a signal, using a xtd::time_span to measure the time interval.
@@ -232,18 +232,18 @@ namespace xtd {
       static bool wait_all(const time_span& timeout, items_t... items) {return wait_all(as<int32>(timeout.total_milliseconds()), items...);}
       template<class ...items_t>
       static bool wait_all(int32 milliseconds_timeout, items_t... items) {
-        auto wait_handle_pointers = xtd::array<wait_handle*> {};
+        auto wait_handle_pointers = std::vector<wait_handle*> {};
         fill_wait_handle_pointers(wait_handle_pointers, items...);
-        return wait_all(wait_handle_pointers, milliseconds_timeout);
+        return wait_all(xtd::array<wait_handle*> {wait_handle_pointers}, milliseconds_timeout);
       }
       template<class item_t>
       static bool wait_all(const std::initializer_list<item_t>& wait_handles) {return wait_all(wait_handles, timeout::infinite);}
       template<class item_t>
       static bool wait_all(const std::initializer_list<item_t>& wait_handles, int32 milliseconds_timeout) {
-        auto wait_handle_pointers = xtd::array<wait_handle*> {};
+        auto wait_handle_pointers = std::vector<wait_handle*> {};
         for (auto& item : wait_handles)
-          wait_handle_pointers.resize(wait_handle_pointers.size() + 1, const_cast<wait_handle*>(as<wait_handle>(&item)));
-        return wait_all(wait_handle_pointers, milliseconds_timeout);
+          wait_handle_pointers.push_back(const_cast<wait_handle*>(as<wait_handle>(&item)));
+        return wait_all(xtd::array<wait_handle*> {wait_handle_pointers}, milliseconds_timeout);
       }
       template<class item_t>
       static bool wait_all(const std::initializer_list<item_t>& wait_handles, const time_span& timeout) {return wait_all(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));}
@@ -267,18 +267,18 @@ namespace xtd {
       static size_t wait_any(const time_span& timeout, items_t... items) {return wait_any(as<int32>(timeout.total_milliseconds()), items...);}
       template<class ...items_t>
       static size_t wait_any(int32 milliseconds_timeout, items_t... items) {
-        auto wait_handle_pointers = xtd::array<wait_handle*> {};
+        auto wait_handle_pointers = std::vector<wait_handle*> {};
         fill_wait_handle_pointers(wait_handle_pointers, items...);
-        return wait_any(wait_handle_pointers, milliseconds_timeout);
+        return wait_any(xtd::array<wait_handle*> {wait_handle_pointers}, milliseconds_timeout);
       }
       template<class item_t>
       static size_t wait_any(const std::initializer_list<item_t>& wait_handles) {return wait_any(wait_handles, timeout::infinite);}
       template<class item_t>
       static size_t wait_any(const std::initializer_list<item_t>& wait_handles, int32 milliseconds_timeout) {
-        auto wait_handle_pointers = xtd::array<wait_handle*> {};
+        auto wait_handle_pointers = std::vector<wait_handle*> {};
         for (auto& item : wait_handles)
-          wait_handle_pointers.resize(wait_handle_pointers.size() + 1, const_cast<wait_handle*>(as<wait_handle>(&item)));
-        return wait_any(wait_handle_pointers, milliseconds_timeout);
+          wait_handle_pointers.push_back(const_cast<wait_handle*>(as<wait_handle>(&item)));
+        return wait_any(xtd::array<wait_handle*> {wait_handle_pointers}, milliseconds_timeout);
       }
       template<class item_t>
       static size_t wait_any(const std::initializer_list<item_t>& wait_handles, const time_span& timeout) {return wait_any(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));}
@@ -317,13 +317,13 @@ namespace xtd {
 
     private:
       template<class item_t, class ...items_t>
-      static void fill_wait_handle_pointers(xtd::array<wait_handle*>& wait_handle_pointers, item_t& first, items_t&... rest) {
-        wait_handle_pointers.resize(wait_handle_pointers.size() + 1, const_cast<wait_handle*>(as<wait_handle>(&first)));
+      static void fill_wait_handle_pointers(std::vector<wait_handle*>& wait_handle_pointers, item_t& first, items_t&... rest) {
+        wait_handle_pointers.push_back(const_cast<wait_handle*>(as<wait_handle>(&first)));
         fill_wait_handle_pointers(wait_handle_pointers, rest...);
       }
       template<class item_t>
-      static void fill_wait_handle_pointers(xtd::array<wait_handle*>& wait_handle_pointers, item_t& item) {
-        wait_handle_pointers.resize(wait_handle_pointers.size() + 1, const_cast<wait_handle*>(as<wait_handle>(&item)));
+      static void fill_wait_handle_pointers(std::vector<wait_handle*>& wait_handle_pointers, item_t& item) {
+        wait_handle_pointers.push_back(const_cast<wait_handle*>(as<wait_handle>(&item)));
       }
     };
   }
