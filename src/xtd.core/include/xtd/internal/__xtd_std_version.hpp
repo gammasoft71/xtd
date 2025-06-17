@@ -21,7 +21,7 @@
 #define __xtd__cpp_lib_format
 #endif
 
-#if defined(__cpp_lib_ranges) || __cplusplus >= 202002l
+#if defined(__cpp_lib_ranges)
 #define __xtd__cpp_lib_ranges
 #endif
 
