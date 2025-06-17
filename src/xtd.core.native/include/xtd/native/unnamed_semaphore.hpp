@@ -50,12 +50,6 @@ namespace xtd {
       /// @warning Internal use only
       static void destroy(intmax_t handle);
       
-      /// @brief Open named semaphore with specified name.
-      /// @param name The name, if the synchronization object is to be shared with other processes.
-      /// @return The handle of the opened semaphore.
-      /// @warning Internal use only
-      static intmax_t open(const std::string& name);
-      
       /// @brief Signal named semaphore with specified semaphore handle.
       /// @param handle The semaphore handle to signal.
       /// @return `true` if succeed; otherwise `false`.
