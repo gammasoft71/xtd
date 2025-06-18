@@ -113,12 +113,10 @@ private:
   }
   
   static void on_program_exit() {
-    console::__internal_rstc__(); // reset terminal mode
     environment::on_program_exit(program_exit_event_args {});
   }
   
   static void on_program_quick_exit() {
-    console::__internal_rstc__(); // reset terminal mode
     environment::on_program_exit(program_exit_event_args {xtd::exit_mode::quick});
   }
   
