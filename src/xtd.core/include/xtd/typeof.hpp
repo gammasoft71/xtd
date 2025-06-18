@@ -42,6 +42,6 @@ namespace xtd {
   /// xtd::type_object type2 = typeof_(i);
   /// ```
   /// @remarks The typeof_ operator cannot be overloaded.
-#define typeof_ \
-  xtd::__s__::__typeof_
+  #define typeof_ \
+    xtd::__s__::__typeof_
 }
