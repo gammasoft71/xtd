@@ -191,6 +191,12 @@ namespace xtd {
       /// @warning Internal use only
       static bool reset_color();
       
+      /// @brief Resets terminale mode and sets the foreground and background console colors to their defaults.
+      /// @remarks The foreground and background colors are restored to the colors that existed when the current process began. For more information, see the foreground_color and background_color properties.
+      /// @return `true` if successfull; otherwise `false`.
+      /// @warning Internal use only
+      static bool reset_console();
+      
       /// @brief Sets the position of the cursor.
       /// @param left The column position of the cursor. Columns are numbered from left to right starting at 0.
       /// @param top The row position of the cursor. Rows are numbered from top to bottom starting at 0.

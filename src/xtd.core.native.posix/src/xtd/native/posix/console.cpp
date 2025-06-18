@@ -108,6 +108,11 @@ namespace {
       return isatty(fileno(stdout)) && (terminal == "xterm" || terminal == "xterm-color" || terminal == "xterm-256color" || terminal == "screen" || terminal == "screen-256color" || terminal == "linux" || terminal == "cygwin");
     }
     
+    void reset_terminal_mode() {
+      pop_status();
+      reset_colors_and_attributes();
+    }
+    
     static terminal terminal_;
     
   private:
@@ -117,8 +122,7 @@ namespace {
       icanon(true);
     }
     ~terminal() {
-      pop_status();
-      reset_colors_and_attributes();
+      reset_terminal_mode();
     }
     
     void reset_colors_and_attributes() {
@@ -143,7 +147,6 @@ namespace {
       tcsetattr(0, TCSANOW, &status);
       return status;
     }
-    
     
     int8_t peek_character {-1};
     std::vector<termios> statuses;
@@ -744,13 +747,13 @@ bool console::foreground_color(int32_t color) {
 }
 
 int32_t console::input_code_page() {
-  // There is no way to define the console output code page under posix.
-  // By default, the console input code page is in UTF-8.
+  // There is no way to define the console input code page under unix.
+  // By default, the console intput code page is in UTF-8.
   return ::input_code_page;
 }
 
 bool console::input_code_page(int32_t code_page) {
-  // There is no way to define the console output code page under posix.
+  // There is no way to define the console input code page under unix.
   // By default, the console input code page is in UTF-8.
   ::input_code_page = code_page;
   return true;
@@ -774,13 +777,13 @@ bool console::number_lock() {
 }
 
 int32_t console::output_code_page() {
-  // There is no way to define the console output code page under posix.
+  // There is no way to define the console output code page under unix.
   // By default, the console output code page is in UTF-8.
   return ::output_code_page;
 }
 
 bool console::output_code_page(int32_t code_page) {
-  // There is no way to define the console output code page under posix.
+  // There is no way to define the console output code page under unix.
   // By default, the console output code page is in UTF-8.
   ::output_code_page = code_page;
   return true;
@@ -800,6 +803,11 @@ void console::register_user_cancel_callback(std::function<bool(int32_t)> user_ca
 }
 
 bool console::reset_color() {
+  return console::background_color(CONSOLE_COLOR_DEFAULT) && console::foreground_color(CONSOLE_COLOR_DEFAULT);
+}
+
+bool console::reset_console() {
+  terminal::terminal_.reset_terminal_mode();
   return console::background_color(CONSOLE_COLOR_DEFAULT) && console::foreground_color(CONSOLE_COLOR_DEFAULT);
 }
 

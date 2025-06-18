@@ -71,7 +71,10 @@ private:
     std::signal(signal, signal_catcher::on_abnormal_termination_occured);
     auto e = signal_cancel_event_args {xtd::signal::abnormal_termination};
     environment::on_cancel_signal(e);
-    if (!e.cancel()) environment::quick_exit(128 + last_signal_.value_or(signal)); //throw_helper::throws(exception_case::thread_abort);
+    if (!e.cancel()) {
+      console::__internal_rstc__(); // reset terminal mode
+      environment::quick_exit(128 + last_signal_.value_or(signal)); //throw_helper::throws(exception_case::thread_abort);
+    }
   }
   
   static void on_floating_point_exception_occured(int32 signal) {
@@ -80,6 +83,7 @@ private:
     environment::on_cancel_signal(e);
     if (!e.cancel()) {
       last_signal_ = signal;
+      console::__internal_rstc__(); // reset terminal mode
       throw_helper::throws(exception_case::arithmetic);
     }
   }
@@ -90,6 +94,7 @@ private:
     environment::on_cancel_signal(e);
     if (!e.cancel()) {
       last_signal_ = signal;
+      console::__internal_rstc__(); // reset terminal mode
       throw_helper::throws(exception_case::invalid_operation);
     }
   }
@@ -102,15 +107,18 @@ private:
     ce.cancel(console::on_cancel_key_press(static_cast<int32>(console_special_key::control_c)));
     if (!se.cancel() && !ce.cancel()) {
       last_signal_ = signal;
+      console::__internal_rstc__(); // reset terminal mode
       throw_helper::throws(exception_case::interrupt);
     }
   }
   
   static void on_program_exit() {
+    console::__internal_rstc__(); // reset terminal mode
     environment::on_program_exit(program_exit_event_args {});
   }
   
   static void on_program_quick_exit() {
+    console::__internal_rstc__(); // reset terminal mode
     environment::on_program_exit(program_exit_event_args {xtd::exit_mode::quick});
   }
   
@@ -120,6 +128,7 @@ private:
     environment::on_cancel_signal(e);
     if (!e.cancel()) {
       last_signal_ = signal;
+      console::__internal_rstc__(); // reset terminal mode
       throw_helper::throws(exception_case::access_violation); //exit(128 + signal);
     }
   }
@@ -128,7 +137,10 @@ private:
     std::signal(signal, signal_catcher::on_software_termination_occured);
     auto e = signal_cancel_event_args {xtd::signal::software_termination};
     environment::on_cancel_signal(e);
-    if (!e.cancel()) throw_helper::throws(exception_case::software_termination);
+    if (!e.cancel()) {
+      console::__internal_rstc__(); // reset terminal mode
+      throw_helper::throws(exception_case::software_termination);
+    }
   }
   
   inline static std::optional<int32> last_signal_;

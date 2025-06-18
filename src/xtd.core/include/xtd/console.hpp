@@ -493,6 +493,8 @@ namespace xtd {
     /// @param values Values to write,
     template<class ...args_t>
     static void write_line(const xtd::string& fmt, args_t&& ... values) {write_line_(xtd::string::format(fmt, std::forward<args_t>(values)...));}
+
+    static void __internal_rstc__();
     /// @}
     
   private:
