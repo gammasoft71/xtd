@@ -107,6 +107,11 @@ namespace {
       return isatty(fileno(stdout)) && (terminal == "xterm" || terminal == "xterm-color" || terminal == "xterm-256color" || terminal == "screen" || terminal == "screen-256color" || terminal == "linux" || terminal == "cygwin");
     }
     
+    void reset_terminal_mode() {
+      pop_status();
+      reset_colors_and_attributes();
+    }
+    
     static terminal terminal_;
     
   private:
@@ -116,8 +121,7 @@ namespace {
       icanon(true);
     }
     ~terminal() {
-      pop_status();
-      reset_colors_and_attributes();
+      reset_terminal_mode();
     }
     
     void reset_colors_and_attributes() {
@@ -143,7 +147,6 @@ namespace {
       return status;
     }
     
-
     int8_t peek_character {-1};
     std::vector<termios> statuses;
   };
@@ -831,6 +834,11 @@ void console::register_user_cancel_callback(std::function<bool(int32_t)> user_ca
 }
 
 bool console::reset_color() {
+  return console::background_color(CONSOLE_COLOR_DEFAULT) && console::foreground_color(CONSOLE_COLOR_DEFAULT);
+}
+
+bool console::reset_console() {
+  terminal::terminal_.reset_terminal_mode();
   return console::background_color(CONSOLE_COLOR_DEFAULT) && console::foreground_color(CONSOLE_COLOR_DEFAULT);
 }
 

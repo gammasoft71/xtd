@@ -409,3 +409,7 @@ void console::write_line_(const string& value) {
   out << value << '\n';
   if (auto_flush_out()) out.flush();
 }
+
+void console::__internal_rstc__() {
+  native::console::reset_console();
+}

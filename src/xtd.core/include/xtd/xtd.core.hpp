@@ -266,6 +266,7 @@
 #include "web/css/selector_map.hpp"
 #include "abstract.hpp"
 #include "abstract_object.hpp"
+#include "access_violation_exception.hpp"
 #include "action.hpp"
 #include "add_last_arg_to_command.hpp"
 #include "any_object.hpp"

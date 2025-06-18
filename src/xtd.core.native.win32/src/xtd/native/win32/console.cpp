@@ -73,20 +73,24 @@ namespace {
   
   class terminal final {
   public:
-    static terminal terminal_;
-    
     void force_compiler_optimizer_to_create_object() {
     }
-    
-  private:
-    terminal() = default;
-    ~terminal() {
+        
+    void reset_terminal_mode() {
       auto csbi = CONSOLE_SCREEN_BUFFER_INFO {};
       GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
       
       csbi.wAttributes &= 0xFF0F;
       csbi.wAttributes |= ((int32_t)background_color_ << 4) | (int32_t)foreground_color_;
       SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes);
+    }
+
+    static terminal terminal_;
+    
+  private:
+    terminal() = default;
+    ~terminal() {
+      reset_terminal_mode();
     }
     
     int32_t background_color_ = __default_background_color();
@@ -299,6 +303,11 @@ bool console::reset_color() {
   auto result = console::background_color(CONSOLE_COLOR_DEFAULT);
   result = console::foreground_color(CONSOLE_COLOR_DEFAULT) && result;
   return result;
+}
+
+bool console::reset_console() {
+  terminal::terminal_.reset_terminal_mode();
+  return console::background_color(CONSOLE_COLOR_DEFAULT) && console::foreground_color(CONSOLE_COLOR_DEFAULT);
 }
 
 bool console::set_cursor_position(int32_t left, int32_t top) {
