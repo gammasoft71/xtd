@@ -216,7 +216,7 @@ namespace xtd {
     /// @}
     
   private:
-    xtd::array<xtd::byte> data_ = xtd::array<xtd::byte>(16);
+    std::vector<xtd::byte> data_ = std::vector<xtd::byte>(16);
   };
 }
 
