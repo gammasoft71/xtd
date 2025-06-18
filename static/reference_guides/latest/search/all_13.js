@@ -383,7 +383,7 @@ var searchData=
   ['size_5ftype_2ehpp_380',['size_type.hpp',['../size__type_8hpp.html',1,'']]],
   ['size_5fwe_381',['size_we',['../classxtd_1_1forms_1_1cursors.html#a5709ac3249937e1e70666e34de5cf7cc',1,'xtd::forms::cursors']]],
   ['sizeof_2ehpp_382',['sizeof.hpp',['../sizeof_8hpp.html',1,'']]],
-  ['sizeof_5f_383',['sizeof_',['../group__keywords.html#gacff264255bb80f00c1447fda6524b0ec',1,'sizeof.hpp']]],
+  ['sizeof_5f_383',['sizeof_',['../group__keywords.html#ga7e5173499dc845cf977362c967c8589e',1,'sizeof.hpp']]],
   ['sizes_384',['sizes',['../classxtd_1_1drawing_1_1system__images.html#a4a6f7ba7d8850f75302b0ef9014eea87',1,'xtd::drawing::system_images::sizes()'],['../classxtd_1_1drawing_1_1system__images__base.html#a611c5a0e16939f3767ddc1976f2da362',1,'xtd::drawing::system_images_base::sizes()'],['../classxtd_1_1forms_1_1images.html#accbd3961a16d09bdba2218aedeee9e2f',1,'xtd::forms::images::sizes()']]],
   ['sizing_5fborder_5fwidth_385',['sizing_border_width',['../classxtd_1_1forms_1_1system__information.html#a47f1c4b0e59cd154f3005a9fa864bfcc',1,'xtd::forms::system_information']]],
   ['sizing_5fgrip_386',['sizing_grip',['../classxtd_1_1forms_1_1status__bar.html#aacdf488da01df7a78d63c4ac3a16a7cd',1,'xtd::forms::status_bar::sizing_grip() const noexcept'],['../classxtd_1_1forms_1_1status__bar.html#a132848ec5dba3e9810a4be933a766088',1,'xtd::forms::status_bar::sizing_grip(bool value)']]],
