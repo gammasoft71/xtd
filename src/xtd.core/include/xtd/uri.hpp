@@ -700,16 +700,19 @@ namespace xtd {
     void set_uri(const xtd::string& uri, xtd::uri_kind kind);
     void set_user_info(xtd::string& escapeUri);
     
-    xtd::string original_uri_;
-    xtd::string scheme_;
-    xtd::string scheme_delimiter_;
-    xtd::string user_info_;
-    xtd::string host_;
-    xtd::string port_;
-    xtd::string path_;
-    xtd::string query_;
-    xtd::string fragment_;
-    xtd::uri_kind kind_ = xtd::uri_kind::absolute;
+    struct data {
+      xtd::string original_uri;
+      xtd::string scheme;
+      xtd::string scheme_delimiter;
+      xtd::string user_info;
+      xtd::string host;
+      xtd::string port;
+      xtd::string path;
+      xtd::string query;
+      xtd::string fragment;
+      xtd::uri_kind kind = xtd::uri_kind::absolute;
+    };
+    ptr<data> data_ = new_ptr<data>();
   };
 }
 

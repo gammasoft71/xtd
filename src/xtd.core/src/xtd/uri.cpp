@@ -26,11 +26,11 @@ uri::uri(const string& uri_string, uri_kind kind) {
 }
 
 uri::uri(const uri& base_uri, const string& relative_uri) {
-  set_uri(base_uri.original_uri_ + relative_uri, base_uri.kind_);
+  set_uri(base_uri.data_->original_uri + relative_uri, base_uri.data_->kind);
 }
 
 uri::uri(const uri& base_uri, const uri& relative_uri) {
-  set_uri(base_uri.original_uri_ + relative_uri.original_uri_, base_uri.kind_);
+  set_uri(base_uri.data_->original_uri + relative_uri.data_->original_uri, base_uri.data_->kind);
 }
 
 string uri::absolute_path() const {
@@ -64,7 +64,7 @@ string uri::host() const {
 }
 
 uri_host_name_type uri::host_name_type() const {
-  if (kind_ != uri_kind::absolute) throw_helper::throws(exception_case::invalid_operation);
+  if (data_->kind != uri_kind::absolute) throw_helper::throws(exception_case::invalid_operation);
   
   if (!host().empty()) {
     auto address = ip_address();
@@ -89,11 +89,11 @@ string uri::idn_host() const {
 }
 
 bool uri::is_absolute_uri() const {
-  return kind_ == uri_kind::absolute;
+  return data_->kind == uri_kind::absolute;
 }
 
 bool uri::is_default_port() const {
-  if (kind_ != uri_kind::absolute) throw_helper::throws(exception_case::invalid_operation);
+  if (data_->kind != uri_kind::absolute) throw_helper::throws(exception_case::invalid_operation);
   
   auto prt = -1;
   if (string::try_parse<int32>(get_components(uri_components::port, uri_format::uri_escaped), prt) == true) return false;
@@ -101,12 +101,12 @@ bool uri::is_default_port() const {
 }
 
 bool uri::is_file() const {
-  if (kind_ != uri_kind::absolute) throw_helper::throws(exception_case::invalid_operation);
+  if (data_->kind != uri_kind::absolute) throw_helper::throws(exception_case::invalid_operation);
   return scheme() == uri_scheme_file;
 }
 
 bool uri::is_loopback() const {
-  if (kind_ != uri_kind::absolute) throw_helper::throws(exception_case::invalid_operation);
+  if (data_->kind != uri_kind::absolute) throw_helper::throws(exception_case::invalid_operation);
   if (!host().empty()) {
     auto address = ip_address();
     if (ip_address::try_parse(host(), address) == true && ip_address::is_loopback(address)) return true;
@@ -115,7 +115,7 @@ bool uri::is_loopback() const {
 }
 
 bool uri::is_unc() const {
-  if (kind_ != uri_kind::absolute) throw_helper::throws(exception_case::invalid_operation);
+  if (data_->kind != uri_kind::absolute) throw_helper::throws(exception_case::invalid_operation);
   return scheme() == uri::uri_scheme_file && !host().empty();
 }
 
@@ -124,8 +124,8 @@ string uri::local_path() const {
 }
 
 const string& uri::original_string() const {
-  if (kind_ != uri_kind::absolute) throw_helper::throws(exception_case::invalid_operation);
-  return original_uri_;
+  if (data_->kind != uri_kind::absolute) throw_helper::throws(exception_case::invalid_operation);
+  return data_->original_uri;
 }
 
 string uri::path_and_query() const {
@@ -240,21 +240,21 @@ int32 uri::from_hex(char digit) {
 }
 
 string uri::get_components(uri_components components, uri_format format) const {
-  if (kind_ != uri_kind::absolute) throw_helper::throws(exception_case::invalid_operation);
+  if (data_->kind != uri_kind::absolute) throw_helper::throws(exception_case::invalid_operation);
   
   auto str = string::empty_string;
-  if ((components & uri_components::scheme) == uri_components::scheme) str += format_componant(scheme_, format);
-  if ((components & uri_components::scheme) == uri_components::scheme && (components & ~uri_components::scheme) != uri_components::none) str += format_componant(scheme_delimiter_, format);
-  if ((components & uri_components::user_info) == uri_components::user_info) str += format_componant(user_info_, format);
-  if ((components & uri_components::user_info) == uri_components::user_info && user_info_.size() && (components & ~uri_components::user_info) != uri_components::none) str += format_componant("@", format);
-  if ((components & uri_components::host) == uri_components::host) str += format_host_componant(host_, format);
-  if ((components & uri_components::port) == uri_components::port && port_.size() && (components & ~uri_components::port) != uri_components::none) str += format_componant(":", format);
-  if ((components & uri_components::port) == uri_components::port) str += format_componant(port_, format);
-  if ((components & uri_components::path) == uri_components::path) str += format_componant(path_, format);
-  if ((components & uri_components::query) == uri_components::query && query_.size() && (components & ~uri_components::query) != uri_components::none) str += format_componant("?", format);
-  if ((components & uri_components::query) == uri_components::query) str += format_componant(query_, format);
-  if ((components & uri_components::fragment) == uri_components::fragment && fragment_.size() && (components & ~uri_components::fragment) != uri_components::none) str += format_componant("#", format);
-  if ((components & uri_components::fragment) == uri_components::fragment) str += format_componant(fragment_, format);
+  if ((components & uri_components::scheme) == uri_components::scheme) str += format_componant(data_->scheme, format);
+  if ((components & uri_components::scheme) == uri_components::scheme && (components & ~uri_components::scheme) != uri_components::none) str += format_componant(data_->scheme_delimiter, format);
+  if ((components & uri_components::user_info) == uri_components::user_info) str += format_componant(data_->user_info, format);
+  if ((components & uri_components::user_info) == uri_components::user_info && data_->user_info.size() && (components & ~uri_components::user_info) != uri_components::none) str += format_componant("@", format);
+  if ((components & uri_components::host) == uri_components::host) str += format_host_componant(data_->host, format);
+  if ((components & uri_components::port) == uri_components::port && data_->port.size() && (components & ~uri_components::port) != uri_components::none) str += format_componant(":", format);
+  if ((components & uri_components::port) == uri_components::port) str += format_componant(data_->port, format);
+  if ((components & uri_components::path) == uri_components::path) str += format_componant(data_->path, format);
+  if ((components & uri_components::query) == uri_components::query && data_->query.size() && (components & ~uri_components::query) != uri_components::none) str += format_componant("?", format);
+  if ((components & uri_components::query) == uri_components::query) str += format_componant(data_->query, format);
+  if ((components & uri_components::fragment) == uri_components::fragment && data_->fragment.size() && (components & ~uri_components::fragment) != uri_components::none) str += format_componant("#", format);
+  if ((components & uri_components::fragment) == uri_components::fragment) str += format_componant(data_->fragment, format);
   if ((components & uri_components::strong_port) == uri_components::strong_port && (components & ~uri_components::strong_port) != uri_components::none) str += format_componant(":", format);
   if ((components & uri_components::strong_port) == uri_components::strong_port) str += format_componant(string::format("{}", port()), format);
   
@@ -282,10 +282,10 @@ char uri::hex_unescape(const string& pattern, size_t& index) {
 }
 
 bool uri::is_base_of(const uri& uri) const {
-  auto path = path_.remove(path_.size() - 1).last_index_of('/') == string::npos ? path_ : path_.remove(path_.remove(path_.size() - 1).last_index_of('/'));
-  auto uri_path = uri.path_.remove(uri.path_.size() - 1).last_index_of('/') == string::npos ? uri.path_ : uri.path_.remove(uri.path_.remove(uri.path_.size() - 1).last_index_of('/'));
+  auto path = data_->path.remove(data_->path.size() - 1).last_index_of('/') == string::npos ? data_->path : data_->path.remove(data_->path.remove(data_->path.size() - 1).last_index_of('/'));
+  auto uri_path = uri.data_->path.remove(uri.data_->path.size() - 1).last_index_of('/') == string::npos ? uri.data_->path : uri.data_->path.remove(uri.data_->path.remove(uri.data_->path.size() - 1).last_index_of('/'));
   
-  return scheme_ == uri.scheme_ && scheme_delimiter_ == uri.scheme_delimiter_ && host_ == uri.host_ && port_ == uri.port_ && path == uri_path;
+  return data_->scheme == uri.data_->scheme && data_->scheme_delimiter == uri.data_->scheme_delimiter && data_->host == uri.data_->host && data_->port == uri.data_->port && path == uri_path;
 }
 
 bool uri::is_hex_digit(char character) {
@@ -308,13 +308,13 @@ bool uri::is_hex_encoding(const string& pattern, size_t index) {
 bool uri::is_well_formed_original_string() {
   auto well_formated_original_string = true;
   
-  for (auto index = 0_z; !well_formated_original_string && index < original_uri_.size(); ++index)
-    well_formated_original_string = !(is_hex_encoding(original_uri_, index) || need_to_escape_uri_char(original_uri_[index]));
+  for (auto index = 0_z; !well_formated_original_string && index < data_->original_uri.size(); ++index)
+    well_formated_original_string = !(is_hex_encoding(data_->original_uri, index) || need_to_escape_uri_char(data_->original_uri[index]));
     
-  if (well_formated_original_string == true) well_formated_original_string = path::is_path_rooted(original_uri_);
-  if (well_formated_original_string == true) well_formated_original_string = original_uri_.index_of('\\') != string::npos;
-  if (well_formated_original_string == true) well_formated_original_string = !(scheme_delimiter_.size() == 0 && host_.size() != 0);
-  if (well_formated_original_string == true) well_formated_original_string = check_scheme_name(scheme_);
+  if (well_formated_original_string == true) well_formated_original_string = path::is_path_rooted(data_->original_uri);
+  if (well_formated_original_string == true) well_formated_original_string = data_->original_uri.index_of('\\') != string::npos;
+  if (well_formated_original_string == true) well_formated_original_string = !(data_->scheme_delimiter.size() == 0 && data_->host.size() != 0);
+  if (well_formated_original_string == true) well_formated_original_string = check_scheme_name(data_->scheme);
   
   return well_formated_original_string;
 }
@@ -356,11 +356,11 @@ bool uri::equals(const object& obj) const noexcept {
 }
 
 bool uri::equals(const uri& uri) const noexcept {
-  return scheme_ == uri.scheme_ && scheme_delimiter_ == uri.scheme_delimiter_ && host_ == uri.host_ && port_ == uri.port_ && path_ == uri.path_ && query_ == uri.query_ && kind_ == uri.kind_;
+  return data_->scheme == uri.data_->scheme && data_->scheme_delimiter == uri.data_->scheme_delimiter && data_->host == uri.data_->host && data_->port == uri.data_->port && data_->path == uri.data_->path && data_->query == uri.data_->query && data_->kind == uri.data_->kind;
 }
 
 size uri::get_hash_code() const noexcept {
-  return hash_code::combine(original_uri_, scheme_, scheme_delimiter_, user_info_, host_, port_, path_, query_, fragment_, kind_);
+  return hash_code::combine(data_->original_uri, data_->scheme, data_->scheme_delimiter, data_->user_info, data_->host, data_->port, data_->path, data_->query, data_->fragment, data_->kind);
 }
 
 string uri::to_string() const noexcept {
@@ -400,7 +400,7 @@ void uri::set_fragment(string& escape_uri) {
   if (index_start == 0) index_start = escape_uri.size();
   if (index_start == string::npos) return;
   
-  fragment_ = escape_uri.substring(index_start, escape_uri.size() - index_start);
+  data_->fragment = escape_uri.substring(index_start, escape_uri.size() - index_start);
   if (index_start != escape_uri.size())
     escape_uri = escape_uri.remove(index_start - 1, escape_uri.size() - index_start + 1);
 }
@@ -410,14 +410,14 @@ void uri::set_host(string& escape_uri) {
     auto index_start = escape_uri.index_of(']');
     if (index_start == string::npos) index_start = escape_uri.size();
     if (index_start != string::npos) {
-      host_ = escape_uri.remove(index_start + 1).to_lower();
+      data_->host = escape_uri.remove(index_start + 1).to_lower();
       escape_uri = escape_uri.substring(index_start + 1);
     }
   } else {
     auto index_start = escape_uri.index_of_any({':', '/', '?', '#'});
     if (index_start == string::npos) index_start = escape_uri.size();
     if (index_start != string::npos) {
-      host_ = escape_uri.remove(index_start).to_lower();
+      data_->host = escape_uri.remove(index_start).to_lower();
       escape_uri = escape_uri.substring(index_start);
     }
   }
@@ -426,12 +426,12 @@ void uri::set_host(string& escape_uri) {
 void uri::set_path(string& escape_uri) {
   auto index_start = escape_uri.index_of_any({'?', '#'});
   if (index_start != string::npos) {
-    path_ = escape_uri.remove(index_start);
+    data_->path = escape_uri.remove(index_start);
     escape_uri = escape_uri.substring(index_start);
     return;
   }
   
-  path_ = escape_uri.empty() ? "/" : escape_uri;
+  data_->path = escape_uri.empty() ? "/" : escape_uri;
   escape_uri = string::empty_string;
 }
 
@@ -446,8 +446,8 @@ void uri::set_port(string& escape_uri) {
     
     if (index_start == string::npos) return;
     
-    port_ = escape_uri.remove(index_start);
-    parse<int32>(port_);
+    data_->port = escape_uri.remove(index_start);
+    parse<int32>(data_->port);
     
     escape_uri = escape_uri.substring(index_start);
   } catch (...) {
@@ -460,7 +460,7 @@ void uri::set_query(string& escape_uri) {
   if (index_start == 0) index_start = escape_uri.size();
   if (index_start == string::npos) return;
   
-  query_ = escape_uri.substring(index_start, escape_uri.size() - index_start);
+  data_->query = escape_uri.substring(index_start, escape_uri.size() - index_start);
   if (index_start != escape_uri.size())
     escape_uri = escape_uri.remove(index_start - 1, escape_uri.size() - index_start + 1);
 }
@@ -468,27 +468,27 @@ void uri::set_query(string& escape_uri) {
 void uri::set_scheme(string& escape_uri) {
   auto index_start = escape_uri.index_of(scheme_delimiter);
   if (index_start != string::npos)
-    scheme_delimiter_ = scheme_delimiter;
+    data_->scheme_delimiter = scheme_delimiter;
   else {
     index_start = escape_uri.index_of(':');
     if (index_start != string::npos)
-      scheme_delimiter_ = ":";
+      data_->scheme_delimiter = ":";
   }
   
   if (index_start != string::npos) {
-    scheme_ = escape_uri.remove(index_start).to_lower();
-    escape_uri = escape_uri.substring(index_start + scheme_delimiter_.size());
+    data_->scheme = escape_uri.remove(index_start).to_lower();
+    escape_uri = escape_uri.substring(index_start + data_->scheme_delimiter.size());
   }
 }
 
 void uri::set_uri(const string& uri, uri_kind kind) {
-  original_uri_ = uri;
-  kind_ = kind;
+  data_->original_uri = uri;
+  data_->kind = kind;
   
-  auto original_uri = original_uri_.trim(' ');
+  auto original_uri = data_->original_uri.trim(' ');
   
   set_scheme(original_uri);
-  if (scheme_ != "news") {
+  if (data_->scheme != "news") {
     set_user_info(original_uri);
     set_host(original_uri);
     set_port(original_uri);
@@ -497,12 +497,12 @@ void uri::set_uri(const string& uri, uri_kind kind) {
   set_fragment(original_uri);
   set_query(original_uri);
   
-  if (kind_ == uri_kind::absolute) {
-    if (scheme_.size() == 0) throw_helper::throws(exception_case::uri_format);
-    if (scheme_ != "news" && host_.size() == 0) throw_helper::throws(exception_case::uri_format);
-    if (check_scheme_name(scheme_) == false) throw_helper::throws(exception_case::uri_format);
-  } else if (kind_ == uri_kind::relative) {
-    if (scheme_.size() != 0 && host_.size() != 0) throw_helper::throws(exception_case::uri_format);
+  if (data_->kind == uri_kind::absolute) {
+    if (data_->scheme.size() == 0) throw_helper::throws(exception_case::uri_format);
+    if (data_->scheme != "news" && data_->host.size() == 0) throw_helper::throws(exception_case::uri_format);
+    if (check_scheme_name(data_->scheme) == false) throw_helper::throws(exception_case::uri_format);
+  } else if (data_->kind == uri_kind::relative) {
+    if (data_->scheme.size() != 0 && data_->host.size() != 0) throw_helper::throws(exception_case::uri_format);
   }
   
   if (original_uri.size() != 0) throw_helper::throws(exception_case::uri_format);
@@ -511,7 +511,7 @@ void uri::set_uri(const string& uri, uri_kind kind) {
 void uri::set_user_info(string& escape_uri) {
   auto index_start = escape_uri.index_of('@');
   if (index_start != string::npos && index_start < escape_uri.index_of_any({'/', '?', '#'})) {
-    user_info_ = escape_uri.remove(index_start);
+    data_->user_info = escape_uri.remove(index_start);
     if (index_start < escape_uri.size()) index_start++;
     escape_uri = escape_uri.substring(index_start);
   }
