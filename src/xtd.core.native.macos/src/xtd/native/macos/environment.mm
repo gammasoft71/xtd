@@ -54,6 +54,7 @@ namespace {
       }
     }
     
+    if (major == 26) return make_tuple("macOS", "Tahoe", version);
     if (major == 15) return make_tuple("macOS", "Sequoia", version);
     if (major == 14) return make_tuple("macOS", "Sonoma", version);
     if (major == 13) return make_tuple("macOS", "Ventura", version);
