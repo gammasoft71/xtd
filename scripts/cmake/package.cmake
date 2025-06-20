@@ -9,7 +9,7 @@ set(CPACK_COMPONENTS_GROUPING ALL_COMPONENTS_IN_ONE)
 SET(CPACK_OUTPUT_FILE_PREFIX "${CMAKE_CURRENT_BINARY_DIR}/_packages")
 
 set(CPACK_PACKAGE_CONTACT "gammasoft71@gmail.com")
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Free open-source modern C++17 / C++20 framework to create console, forms (GUI like WinForms) and unit test applications on Microsoft Windows, Apple macOS and Linux." CACHE STRING "Package description for the package metadata")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Free open-source modern C++20 framework to create console, forms (GUI like WinForms) and unit test applications on Microsoft Windows, Apple macOS and Linux." CACHE STRING "Package description for the package metadata")
 set(CPACK_PACKAGE_INSTALL_DIRECTORY ${CPACK_PACKAGE_NAME})
 set(CPACK_PACKAGE_NAME ${PROJECT_NAME} CACHE STRING "The resulting package name")
 set(CPACK_PACKAGE_VENDOR "Gammasoft71")
