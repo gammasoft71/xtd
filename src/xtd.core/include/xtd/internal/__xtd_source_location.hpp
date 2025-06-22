@@ -28,22 +28,18 @@ using __xtd_source_location__ = std::source_location;
 // See: https://developer.apple.com/forums/thread/713513 for related discussion.
 //
 #include <cstdint>
-
-#define __XTD_FILE__ __builtin_FILE()
-#define __XTD_LINE__ __builtin_LINE()
-#define __XTD_FUNC__ __builtin_FUNCTION()
-#define __XTD_COLUMN__ __builtin_COLUMN()
+#include <memory>
 
 class __xtd_source_location__ {
 public:
-  const char* file_name() const noexcept {return data_.file;}
-  uint32_t line() const noexcept {return data_.line;}
-  const char* function_name() const noexcept {return data_.func;}
-  uint32_t column() const noexcept {return data_.column;}
+  const char* file_name() const noexcept {return data_->file;}
+  uint32_t line() const noexcept {return data_->line;}
+  const char* function_name() const noexcept {return data_->func;}
+  uint32_t column() const noexcept {return data_->column;}
   
-  static __xtd_source_location__ current(const char* file = __XTD_FILE__, uint32_t line = __XTD_LINE__, const char* func = __XTD_FUNC__, uint32_t column = __XTD_COLUMN__) noexcept {
+  static __xtd_source_location__ current(const char* file = __builtin_FILE(), uint32_t line = __builtin_LINE(), const char* func = __builtin_FUNCTION(), uint32_t column = __builtin_COLUMN()) noexcept {
     auto csl = __xtd_source_location__ {};
-    csl.data_ = {file, line, func, column};
+    *csl.data_ = {file, line, func, column};
     return csl;
   }
   
@@ -53,12 +49,8 @@ private:
     uint32_t line;
     const char* func;
     uint32_t column;
-  } data_;
+  };
+  std::shared_ptr<data> data_ = std::make_shared<data>();
 };
-
-#undef __XTD_FILE__
-#undef __XTD_LINE__
-#undef __XTD_FUNC__
-#undef __XTD_COLUMN__
 #endif
 /// @endcond
