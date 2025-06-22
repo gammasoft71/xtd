@@ -19,14 +19,8 @@ xtdc run
 ## Output
 
 ```
-items = [true, 42, This is a string, win32s, Another string, 4.2, 02:25:43]
-items = [true, 42, This is a string, win32s, Another string, 4.2, 02:25:43]
-
-true
-42
-"THIS IS A STRING"
-platform_id::win32s
-"ANOTHER STRING"
-4.2
-02:25:43
+42       --> "42"
+42       --> 0x002A
+12:24:42 --> 42 seconds
+0.42     --> [0.42]
 ```
