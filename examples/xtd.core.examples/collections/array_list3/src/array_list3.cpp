@@ -1,34 +1,23 @@
 #include <xtd/collections/array_list>
 #include <xtd/console>
-#include <xtd/platform_id>
 #include <xtd/time_span>
 
 using namespace xtd;
 using namespace xtd::collections;
 
 auto main() -> int {
-  auto items = array_list {true, 42, "This is a string", platform_id::win32s, u8"Another string", 4.2f, 2_h + 25_min + 43_s};
-  
-  console::write_line("items = [{}]", string::join(", ", items));
-  console::write_line("items = {}", items);
-  console::write_line();
-  
-  for (auto item : items) {
-    if (is<string>(item)) console::write_line("{}", as<string>(item).to_upper().quoted());
-    else if (is<platform_id>(item)) console::write_line("{}::{}", typeof_(as<platform_id>(item)).name(), item);
-    else console::write_line("{}", item);
+  for (auto item : collections::array_list {"42", 42, 12_h + 24_m + 42_s, .42}) {
+    console::write("{,-8} --> ", item);
+    if (is<string>(item)) console::write_line("{}", as<string>(item).quoted());
+    else if (is<int>(item)) console::write_line("0x{:X4}", as<int>(item));
+    else if (is<time_span>(item)) console::write_line("{} seconds", as<time_span>(item).seconds());
+    else console::write_line("[{}]", item);
   }
 }
 
-// This code produces the following output :
+// This code can produces the following output:
 //
-// items = [true, 42, This is a string, win32s, Another string, 4.2, 02:25:43]
-// items = [true, 42, This is a string, win32s, Another string, 4.2, 02:25:43]
-//
-// true
-// 42
-// "THIS IS A STRING"
-// platform_id::win32s
-// "ANOTHER STRING"
-// 4.2
-// 02:25:43
+// 42       --> "42"
+// 42       --> 0x002A
+// 12:24:42 --> 42 seconds
+// 0.42     --> [0.42]
