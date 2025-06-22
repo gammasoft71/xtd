@@ -460,8 +460,10 @@ namespace xtd {
         /// dictionary(init.begin(), init.end())
         /// ```
         explicit dictionary(std::initializer_list<base_value_type> init, size_type bucket_count = 0, const hasher_t& hash = hasher_t {}, const equator_t& equal = equator_t {}, const allocator_type& alloc = allocator_type {}) : data_(xtd::new_ptr<data>(bucket_count)) {
-          for (const auto& [key, value] : init)
-            add(key, value);
+          for (const auto& [key, value] : init) {
+            if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+            (*this)[key] = value;
+          }
         }
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
         /// @param init Initializer list to initialize the elements of the container with.
@@ -474,8 +476,10 @@ namespace xtd {
         /// ```
         /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
         dictionary(std::initializer_list<base_value_type> init, size_type bucket_count, const allocator_type& alloc) : data_(xtd::new_ptr<data>(bucket_count)) {
-          for (const auto& [key, value] : init)
-            add(key, value);
+          for (const auto& [key, value] : init) {
+            if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+            (*this)[key] = value;
+          }
         }
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
         /// @param init Initializer list to initialize the elements of the container with.
@@ -489,8 +493,10 @@ namespace xtd {
         /// ```
         /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
         dictionary(std::initializer_list<base_value_type> init, size_type bucket_count, const hasher_t& hash, const allocator_type& alloc) : data_(xtd::new_ptr<data>(bucket_count)) {
-          for (const auto& [key, value] : init)
-            add(key, value);
+          for (const auto& [key, value] : init) {
+            if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+            (*this)[key] = value;
+          }
         }
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
         /// @param init Initializer list to initialize the elements of the container with.
@@ -506,8 +512,10 @@ namespace xtd {
         /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
         template <class init_key_t, class init_value_t>
         explicit dictionary(std::initializer_list<key_value_pair<init_key_t, init_value_t>> init, size_type bucket_count = 0, const hasher_t& hash = hasher_t {}, const equator_t& equal = equator_t {}, const allocator_type& alloc = allocator_type {}) : data_(xtd::new_ptr<data>(bucket_count)) {
-          for (const auto& [key, value] : init)
-            add(key, value);
+          for (const auto& [key, value] : init) {
+            if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+            (*this)[key] = value;
+          }
         }
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
         /// @param init Initializer list to initialize the elements of the container with.
@@ -521,8 +529,10 @@ namespace xtd {
         /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
         template <class init_key_t, class init_value_t>
         dictionary(std::initializer_list<key_value_pair<init_key_t, init_value_t>> init, size_type bucket_count, const allocator_type& alloc) : data_(xtd::new_ptr<data>(bucket_count)) {
-          for (const auto& [key, value] : init)
-            add(key, value);
+          for (const auto& [key, value] : init) {
+            if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+            (*this)[key] = value;
+          }
         }
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
         /// @param init Initializer list to initialize the elements of the container with.
@@ -537,8 +547,10 @@ namespace xtd {
         /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
         template <class init_key_t, class init_value_t>
         dictionary(std::initializer_list<key_value_pair<init_key_t, init_value_t>> init, size_type bucket_count, const hasher_t& hash, const allocator_type& alloc) : data_(xtd::new_ptr<data>(bucket_count)) {
-          for (const auto& [key, value] : init)
-            add(key, value);
+          for (const auto& [key, value] : init) {
+            if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+            (*this)[key] = value;
+          }
         }
         /// @}
         
