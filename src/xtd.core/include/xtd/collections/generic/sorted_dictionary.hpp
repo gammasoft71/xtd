@@ -34,8 +34,8 @@ namespace xtd {
       /// The following shows how to use xtd::collections::generic::sorted_dictionary.
       /// @include sorted_dictionary.cpp
       template<class key_t, class value_t, class lesser_t = helpers::lesser<key_t>, class allocator_t = helpers::allocator<std::pair<const key_t, value_t>>>
-      using sorted_dictionary = dictionary<key_t, value_t, helpers::hasher<key_t>, helpers::equator<key_t>, allocator_t>;
-      //using sorted_dictionary = std::map<key_t, value_t, lesser_t, allocator_t>;
+      //using sorted_dictionary = dictionary<key_t, value_t, helpers::hasher<key_t>, helpers::equator<key_t>, allocator_t>;
+      using sorted_dictionary = std::map<key_t, value_t, lesser_t, allocator_t>;
     }
   }
 }
