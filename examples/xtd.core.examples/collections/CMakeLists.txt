@@ -9,6 +9,7 @@ add_projects(
   array_list3
   bit_array
   hashtable
+  hashtable2
   ienumerable
   ienumerator
   ilist
