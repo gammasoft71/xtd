@@ -22,7 +22,7 @@ xtdc run
 double    -> 0.42
 0.42      -> "double"
 12:24:42  -> "time_span"
-int       -> 0x42
+int       -> 0x002A
 string    -> "42"
 42        -> "string"
 42        -> "int"
