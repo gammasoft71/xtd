@@ -25,7 +25,7 @@ namespace xtd {
         /// xtd
         /// @par Library
         /// xtd.core
-        /// @ingroup xtd_core extensions
+        /// @ingroup xtd_core extensions_generic_collections
         /// @warning Internal use only for xtd::iequatable interfece.
         template<class type_t, class collection_t>
         class collection_operators {
