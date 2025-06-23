@@ -3,12 +3,11 @@
 ## In this article
 
 * [Overview](#overview)
-* [std collections](#std-collections)
+* [std collections](#xtd-collections)
   * [Sequence collections](#sequence-collections)
   * [Associative collections](#associative-collections)
   * [Unordered associative collections](#unordered-associative-collections)
   * [Collections adaptors](#collections-adaptors)
-* [xtd collections](#xtd-collections)
   * [Collections with events](#collections-with-events)
   * [Specialized collections](#specialized-collections)
   * [Thread-safe collections](#thread-safe-collections)
@@ -69,8 +68,6 @@ Container adaptors provide a different interface for sequential collections.
 | [std::flat_map](https://en.cppreference.com/w/cpp/container/flat_map)             | Adapts two collections to provide a collection of key-value pairs, sorted by unique keys. |
 | [std::flat_multiset](https://en.cppreference.com/w/cpp/container/flat_multiset)   | Adapts a container to provide a collection of keys, sorted by keys.                       |
 | [std::flat_multimap](https://en.cppreference.com/w/cpp/container/flat_multimap)   | Adapts two collections to provide a collection of key-value pairs, sorted by keys.        |
-
-## xtd collections
 
 ### Collections with events
 
