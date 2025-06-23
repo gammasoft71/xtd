@@ -12,7 +12,7 @@ auto main() -> int {
   for (auto [key, value] : items) {
     console::write("{,-9} -> ", key);
     if (is<string>(value)) console::write_line("{}", as<string>(value).quoted());
-    else if (is<int>(value)) console::write_line("0x{:X4}", value);
+    else if (is<int>(value)) console::write_line("0x{:X4}", as<int>(value));
     else if (is<time_span>(value)) console::write_line("{} seconds", as<time_span>(value).seconds());
     else console::write_line("{}", value);
   }
@@ -31,7 +31,7 @@ auto main() -> int {
 // 0.42      -> "double"
 // 12:24:42  -> "time_span"
 // 42        -> "int"
-// int       -> 0x42
+// int       -> 0x002A
 // double    -> 0.42
 // 42        -> "string"
 // time_span -> 42 seconds
