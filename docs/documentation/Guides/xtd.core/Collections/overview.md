@@ -24,10 +24,10 @@ To complete the std, xtd implements some owner collections.
 
 Sequence collections implement data structures which can be accessed sequentially.
 
-| xtd container                                                                                                        | std container equivalent                                                      | Definition                              |
-| -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | --------------------------------------- |
-| [xtd::array\<type_t, length=1>](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1array.html)    | [std::vector\<T>](https://en.cppreference.com/w/cpp/container/vector.html)    | Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays. |
-| [xtd::fixed_array\<type_t>](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1fixed__array.html) | [std::array\<T, N>](https://en.cppreference.com/w/cpp/container/array)        | Represents a fixed array class.   |
+| xtd container                                                                                                         | std container equivalent                                                       | Definition                              |
+| --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ | --------------------------------------- |
+| [xtd::array\<type_t, length=1\>](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1array.html)    | [std::vector\<T\>](https://en.cppreference.com/w/cpp/container/vector.html)    | Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays. |
+| [xtd::fixed_array\<type_t\>](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1fixed__array.html) | [std::array\<T, N\>](https://en.cppreference.com/w/cpp/container/array)        | Represents a fixed array class.   |
 | [std::vector](https://en.cppreference.com/w/cpp/container/vector)             | Represents a sdynamic contiguous array. |
 | [std::deque](https://en.cppreference.com/w/cpp/container/deque)               | Represents a sdouble-ended queue.       |
 | [std::forward_list](https://en.cppreference.com/w/cpp/container/forward_list) | Represents a ssingly-linked list.       |
