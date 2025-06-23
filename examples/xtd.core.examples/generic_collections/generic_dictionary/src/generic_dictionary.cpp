@@ -27,11 +27,11 @@ public:
     
     // The operator [] is another name for the indexer, so you
     // can omit its name when accessing elements.
-    console::write_line("For key = \"rtf\", value = {0}.", xtd::as_const(open_with)["rtf"]);
+    console::write_line("For key = \"rtf\", value = {0}.", open_with["rtf"]);
     
     // The indexer can be used to change the value associated with a key.
     open_with["rtf"] = "winword.exe";
-    console::write_line("For key = \"rtf\", value = {0}.", xtd::as_const(open_with)["rtf"]);
+    console::write_line("For key = \"rtf\", value = {0}.", open_with["rtf"]);
     
     // If a key does not exist, setting the indexer for that key
     // adds a new key/value pair.
@@ -39,7 +39,7 @@ public:
     
     // The indexer throws an exception if the requested key is not in the dictionary.
     try {
-      console::write_line("For key = \"tif\", value = {0}.", xtd::as_const(open_with)["tif"]);
+      console::write_line("For key = \"tif\", value = {0}.", open_with["tif"]);
     } catch (const key_not_found_exception&) {
       console::write_line("key = \"tif\" is not found.");
     }
@@ -56,7 +56,7 @@ public:
     // contains_key can be used to test keys before inserting them.
     if (!open_with.contains_key("ht")) {
       open_with.add("ht", "hypertrm.exe");
-      console::write_line("value added for key = \"ht\": {0}", xtd::as_const(open_with)["ht"]);
+      console::write_line("value added for key = \"ht\": {0}", open_with["ht"]);
     }
     
     // When you use for each to enumerate dictionary elements,
