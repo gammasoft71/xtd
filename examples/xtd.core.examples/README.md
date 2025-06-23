@@ -17,6 +17,11 @@
 * [any](any/any/README.md) shows how to use [xtd::any_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1any__object.html) class.
 * [any](any_info/any_info/README.md) shows how to use [xtd::any_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1any__object.html) class.
 
+## [array](array/README.md)
+
+* [array](array/array/README.md) shows how to use how to use [xtd::array](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1array.html) class.
+* [array2](array/array2/README.md) shows how to use [xtd::array](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1array.html) class.
+
 ## [Bit converter](bit_converter/README.md)
 
 * [bit_converter](bit_converter/bit_converter/README.md) shows hows how to use [xtd::bit_converter](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1bit__converter.html) class.
