@@ -9,6 +9,8 @@
 [xtd.core.examples](xtd.core.examples/README.md) contains xtd.core library examples (CLI).
 
 * [Hello Worlds](xtd.core.examples/hello_worlds/README.md) contains xtd.core "Hello, World!" examples.
+* [Any](xtd.core.examples/any/README.md) contains any examples.
+* [Array](xtd.core.examples/array/README.md) contains array examples.
 * [Bit Converter](xtd.core.examples/bit_converter/README.md) contains bit converter examples.
 * [Boxing](xtd.core.examples/boxing/README.md) contains boxing and unboxing examples.
 * [Collections](xtd.core.examples/collections/README.md) contains collections examples.
@@ -40,6 +42,8 @@
 * [Processes](xtd.core.examples/processes/README.md) contains process examples.
 * [Random](xtd.core.examples/random/README.md) contains random examples.
 * [Span](xtd.core.examples/span/README.md) contains span examples.
+* [Sprintf](xtd.core.examples/sprintf/README.md) contains sprintf examples.
+* [Startups](xtd.core.examples/startups/README.md) contains startups examples.
 * [Strings](xtd.core.examples/strings/README.md) contains strings examples.
 * [Text](xtd.core.examples/text/README.md) contains text examples.
 * [Threading](xtd.core.examples/threading/README.md) contains threading examples.
