@@ -97,9 +97,9 @@ inline xtd::basic_array<type_t, allocator_t>::basic_array(const array<size_type,
   }
 }
 
-//template<>
 template<class type_t, class allocator_t>
 inline xtd::collections::object_model::read_only_collection<type_t> xtd::array<>::as_read_only(const xtd::array<type_t, 1, allocator_t>& array) {
   return xtd::collections::object_model::read_only_collection<type_t> {array};
 }
+
 /// @endcond

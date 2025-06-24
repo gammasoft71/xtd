@@ -67,7 +67,7 @@ namespace xtd {
     /// The following example wraps an array in a read-only xtd::collections::object_model::read_only_collection<type_t>.
     /// @include array_as_read_only.cpp
     template<class type_t, class allocator_t>
-    static xtd::collections::object_model::read_only_collection<type_t> as_read_only(const xtd::array<type_t, 1, allocator_t>& array);
+    static xtd::collections::object_model::read_only_collection<type_t> as_read_only(const xtd::array<type_t, 1, allocator_t>& array); // defined in array_.hpp file
 
     /// @brief Searches a range of elements in a one-dimensional sorted array for a value, using the xtd::icomparable interface implemented by each element of the array and by the specified value.
     /// @param array The sorted one-dimensional array to search.
@@ -113,7 +113,7 @@ namespace xtd {
     /// @remarks This method is an O(log n) operation, where n is length.
     template<class type_t, class allocator_t>
     static xtd::size binary_search(const array<type_t, 1, allocator_t>& array, xtd::size index, xtd::size count, const type_t& value, const xtd::collections::generic::icomparer<type_t>& comparer) {
-      if (index + count > array->Length) helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+      if (index + count > array->Length) helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       typename std::vector<type_t>::const_iterator first = array.array.begin();
       typename std::vector<type_t>::const_iterator last = array.array.begin();
       std::advance(first, index);
@@ -164,6 +164,49 @@ namespace xtd {
     /// @remarks This method is an O(log n) operation, where n is length.
     template<class type_t, class allocator_t>
     static xtd::size binary_search(const array<type_t, 1, allocator_t>& array, const type_t& value, const xtd::collections::generic::icomparer<type_t>& comparer) {return binary_search(array, 0, array.Length, value, comparer);}
+    
+    /// @brief Clears the contents of an array.
+    /// @param array The array to clear.
+    template<class type_t, xtd::size rank, class allocator_t>
+    static void clear(const array<type_t, rank, allocator_t>& array) {
+      clear(array, 0, array.data_->items.size());
+    }
+
+    /// @brief Sets a range of elements in an array to the default value of each element type.
+    /// @param array The array whose elements need to be cleared.
+    /// @param index The starting index of the range of elements to clear.
+    /// @param length The number of elements to clear.
+    /// @exception xtd::index_out_of_range_exception The sum of `index` and `length` is greater than the size of array.
+    /// @par Examples
+    /// The following example uses the xtd::array::clear method to reset integer values in a one-dimensional, two-dimensional, and three-dimensional array.
+    /// @include array_clear.cpp
+    template<class type_t, xtd::size rank, class allocator_t>
+    static void clear(const array<type_t, rank, allocator_t>& array, xtd::size index, xtd::size length) {
+      if (index + length > array.data_->items.size()) helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+      for (auto i = xtd::size {}; i < length; ++i)
+        array.data_->items[index + i] = type_t {};
+    }
+    
+    /// @brief Copies a range of elements from an xtd::array starting at the first element and pastes them into another xtd::array starting at the first element. The length is specified as an xtd::size.
+    /// @param source_array The xtd::array that contains the data to copy.
+    /// @param destination_array The xtd::rray that receives the data.
+    /// @param length An xtd::size that represents the number of elements to copy.
+    /// @exception xtd::argument_out_of_range_exception The `length` is greater than `source_array` size.<ber>-or-<br>The `length` is greater than `destination_array` size.
+    template<class source_type_t, xtd::size source_rank, class source_allocator_t, class destination_type_t, xtd::size destination_rank, class destination_allocator_t>
+    static void copy(const array<source_type_t, source_rank, source_allocator_t>& source_array, const array<destination_type_t, destination_rank, destination_allocator_t>& destination_array, xtd::size length) {
+      copy(source_array, 0, destination_array, 0, length);
+    }
+    
+    /// @brief Copies a range of elements from an xtd::array starting at the specified source index and pastes them to another xtd::array starting at the specified destination index. The length and the indexes are specified as 64-bit integers.
+    /// @param source_array The xtd::rray that contains the data to copy.
+    /// @param source_index An xtd::size that represents the index in `source_array` at which copying begins.
+    /// @param destination_array The xtd::array that receives the data.
+    /// @param destination_index An xtd::size that represents the index in `destination_array` at which storing begins.
+    /// @param length An xtd::size that represents the number of elements to copy.
+    /// @exception xtd::argument_out_of_range_exception The sum of the `source_index` and `length` is greater than `source_array` size.<ber>-or-<br>The sum of the `destination_index` and `length` is greater than `destination_array` size.
+    template<class source_type_t, xtd::size source_rank, class source_allocator_t, class destination_type_t, xtd::size destination_rank, class destination_allocator_t>
+    static void copy(const array<source_type_t, source_rank, source_allocator_t>& source_array, xtd::size source_index, const array<destination_type_t, destination_rank, destination_allocator_t>& destination_array, xtd::size destination_index, xtd::size length); // defined in as.hpp file
+    
     /// @}
   };
 }
