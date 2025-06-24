@@ -5,6 +5,8 @@ find_package(xtd REQUIRED)
 
 add_projects(
   array
+  array_as_read_only
   array2
+  array3
 )
 
