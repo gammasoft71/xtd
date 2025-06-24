@@ -521,7 +521,7 @@ namespace xtd {
         /// @return An object that acts as a read-only wrapper around the current xtd::collections::generic::list <type_t>.
         /// @remarks To prevent any modifications to the xtd::collections::generic::list <type_t> object, expose it only through this wrapper. A xtd::collections::object_model::read_only_collection <type_t> object does not expose methods that modify the collection. However, if changes are made to the underlying xtd::collections::generic::list <type_t> object, the read-only collection reflects those changes.
         /// @remarks This method is an O(1) operation.
-        read_only_collection as_read_only() const noexcept {return read_only_collection {new_ptr<list<value_type>>(*this)};}
+        read_only_collection as_read_only() const noexcept {return read_only_collection {*this};}
 
         /// @brief Replaces the contents with count copies of value value.
         /// @param count The new size of the container.
