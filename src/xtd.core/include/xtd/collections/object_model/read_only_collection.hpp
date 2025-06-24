@@ -237,7 +237,7 @@ namespace xtd {
         /// @param index The position of the element to return.
         /// @return Reference to the requested element.
         /// @exception xtd::not_supported_exception is always thrown.
-        reference operator [](size_type index) override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_supported);}
+        reference operator [](size_type index) override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_supported, "Collection is read-only.");}
         /// @}
 
       protected:
