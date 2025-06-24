@@ -56,6 +56,23 @@ namespace xtd {
       const xtd::collections::generic::icomparer<type_t>* comparer_;
     };
     
+    class comparison_comparer {
+      template<class comparison_t>
+      using comparison = std::function<int32(comparison_t x, comparison_t y)>;
+      
+    public:
+      comparison_comparer() = default;
+      comparison_comparer(comparison<const type_t&> c) : comparer(c) {}
+
+      comparison_comparer(const comparison_comparer& mc) = default;
+      comparison_comparer& operator=(const comparison_comparer& mc) = default;
+
+      bool operator()(const type_t& e1, const type_t& e2) const {return comparer(e1, e2) < 0;}
+
+    private:
+      comparison<const type_t&> comparer;
+    };
+    
   public:
     /// @name Public Aliases
     
