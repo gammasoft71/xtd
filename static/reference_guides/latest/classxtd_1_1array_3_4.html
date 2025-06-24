@@ -143,77 +143,76 @@ Some methods, such as xtd::array::create_instance, xtd::array::copy, xtd::array:
 <dd>
 The <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> is not guaranteed to be sorted. You must sort the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> prior to performing operations (such as xtd::array::binary_search) that require the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> to be sorted. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates different methods to create an array. <div class="fragment"></div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example creates and initializes an array and displays its properties and its elements. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/array&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example creates and initializes an array and displays its properties and its elements. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/any_object&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/array&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">template</span>&lt;size rank&gt;</div>
-<div class="line"><span class="keyword">auto</span> print_values(<span class="keyword">const</span> <a class="code hl_function" href="classxtd_1_1array.html#a4dbeb21711b15525741125c0b2249a26">array&lt;int, rank&gt;</a>&amp; my_arr) {</div>
-<div class="line">  <span class="keyword">auto</span> my_enumerator = my_arr.get_enumerator();</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0_z;</div>
-<div class="line">  <span class="keyword">auto</span> cols = my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#a4132e3affe66da23dc58780f520124e2">get_length</a>(my_arr.<a class="code hl_function" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">rank</a>() - 1);</div>
-<div class="line">  <span class="keywordflow">while</span> (my_enumerator.move_next()) {</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; cols) ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>;</div>
-<div class="line">    <span class="keywordflow">else</span> {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 1;</div>
-<div class="line">    }</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;  {,8}&quot;</span>, my_enumerator.current());</div>
-<div class="line">  }</div>
+<div class="line"><span class="keyword">auto</span> print_values(<span class="keyword">const</span> <a class="code hl_function" href="classxtd_1_1array.html#a4dbeb21711b15525741125c0b2249a26">array&lt;int&gt;</a>&amp; my_arr) {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> : my_arr)</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\t{}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> print_values(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1array.html">array&lt;any_object&gt;</a>&amp; my_arr) {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a> : my_arr)</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\t{}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">// Creates and initializes a new three-dimensional array of type int.</span></div>
-<div class="line">  <span class="keyword">auto</span> my_arr = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;int, 3&gt;</a>(2, 3, 4);</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#a6ac6c2f6144b73e261745e2bec9f6771">get_lower_bound</a>(0); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt;= my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#ab74ed5a54361b742c7e27ff7b180a986">get_upper_bound</a>(0); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) {</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515">j</a> = my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#a6ac6c2f6144b73e261745e2bec9f6771">get_lower_bound</a>(1); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515">j</a> &lt;= my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#ab74ed5a54361b742c7e27ff7b180a986">get_upper_bound</a>(1); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515">j</a>) {</div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8ce4b16b22b58894aa86c421e8759df3">k</a> = my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#a6ac6c2f6144b73e261745e2bec9f6771">get_lower_bound</a>(2); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8ce4b16b22b58894aa86c421e8759df3">k</a> &lt;= my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#ab74ed5a54361b742c7e27ff7b180a986">get_upper_bound</a>(2); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8ce4b16b22b58894aa86c421e8759df3">k</a>)</div>
-<div class="line">        my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#a16b80cc0f2926f2b4fcfb5f5c1346eb7">set_value</a>(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int&gt;</a>((<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> * 100) + (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515">j</a> * 10) + <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8ce4b16b22b58894aa86c421e8759df3">k</a>), {<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515">j</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8ce4b16b22b58894aa86c421e8759df3">k</a>});</div>
-<div class="line">    }</div>
-<div class="line">  }</div>
+<div class="line">  <span class="comment">// Creates and initializes a new integer array and a new Object array.</span></div>
+<div class="line">  <span class="keyword">auto</span> my_int_array = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;int&gt;</a> {1, 2, 3, 4, 5};</div>
+<div class="line">  <span class="keyword">auto</span> my_obj_array = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;any_object&gt;</a> {26, 27, 28, 29, 30};</div>
 <div class="line">  </div>
-<div class="line">  <span class="comment">// Displays the properties of the array.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The array has {} dimension(s) and a total of {} elements.&quot;</span>, my_arr.<a class="code hl_function" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">rank</a>(), my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">length</a>());</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;    length     lower     upper&quot;</span>);</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0_z; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; my_arr.<a class="code hl_function" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">rank</a>(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) {</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;{}:{,8}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>, my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#a4132e3affe66da23dc58780f520124e2">get_length</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>));</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;  {,8}  {,8}&quot;</span>, my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#a6ac6c2f6144b73e261745e2bec9f6771">get_lower_bound</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>), my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#ab74ed5a54361b742c7e27ff7b180a986">get_upper_bound</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>));</div>
-<div class="line">  }</div>
+<div class="line">  <span class="comment">// Prints the initial values of both arrays.</span></div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Initially,&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;integer array:&quot;</span>);</div>
+<div class="line">  print_values(my_int_array);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;Object array: &quot;</span>);</div>
+<div class="line">  print_values(my_obj_array);</div>
 <div class="line">  </div>
-<div class="line">  <span class="comment">// Displays the contents of the Array.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The array contains the following values:&quot;</span>);</div>
-<div class="line">  print_values(my_arr);</div>
+<div class="line">  <span class="comment">// Copies the first two elements from the integer array to the Object array.</span></div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1array.html">array&lt;&gt;::copy</a>(my_int_array, my_obj_array, 2);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Prints the values of the modified arrays.</span></div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nAfter copying the first two elements of the integer array to the Object array,&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;integer array:&quot;</span>);</div>
+<div class="line">  print_values(my_int_array);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;Object array: &quot;</span>);</div>
+<div class="line">  print_values(my_obj_array);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Copies the last two elements from the Object array to the integer array.</span></div>
+<div class="line">  System.Array.Copy(my_obj_array, my_obj_array.GetUpperBound(0) - 1, my_int_array, my_int_array.GetUpperBound(0) - 1, 2);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Prints the values of the modified arrays.</span></div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nAfter copying the last two elements of the Object array to the integer array,&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;integer array:&quot;</span>);</div>
+<div class="line">  print_values(my_int_array);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;Object array: &quot;</span>);</div>
+<div class="line">  print_values(my_obj_array);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The array has 3 dimension(s) and a total of 24 elements.</span></div>
-<div class="line"><span class="comment">//     length     lower     upper</span></div>
-<div class="line"><span class="comment">// 0:       2         0         1</span></div>
-<div class="line"><span class="comment">// 1:       3         0         2</span></div>
-<div class="line"><span class="comment">// 2:       4         0         3</span></div>
+<div class="line"><span class="comment">//         length  lower   upper</span></div>
+<div class="line"><span class="comment">// 0:      2       0       1</span></div>
+<div class="line"><span class="comment">// 1:      3       0       2</span></div>
+<div class="line"><span class="comment">// 2:      4       0       3</span></div>
 <div class="line"><span class="comment">// The array contains the following values:</span></div>
-<div class="line"><span class="comment">//          0         1         2         3</span></div>
-<div class="line"><span class="comment">//         10        11        12        13</span></div>
-<div class="line"><span class="comment">//         20        21        22        23</span></div>
-<div class="line"><span class="comment">//        100       101       102       103</span></div>
-<div class="line"><span class="comment">//        110       111       112       113</span></div>
-<div class="line"><span class="comment">//        120       121       122       123</span></div>
+<div class="line"><span class="comment">//         0       1       2       3</span></div>
+<div class="line"><span class="comment">//         10      11      12      13</span></div>
+<div class="line"><span class="comment">//         20      21      22      23</span></div>
+<div class="line"><span class="comment">//         100     101     102     103</span></div>
+<div class="line"><span class="comment">//         110     111     112     113</span></div>
+<div class="line"><span class="comment">//         120     121     122     123</span></div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:61</div></div>
-<div class="ttc" id="aclassxtd_1_1array_html_a2580a0452fad2d6279b669977324fe11"><div class="ttname"><a href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array::rank</a></div><div class="ttdeci">xtd::size rank() const noexcept override</div><div class="ttdoc">Gets the rank (number of dimensions) of the array.</div><div class="ttdef"><b>Definition</b> array.hpp:90</div></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_a16b80cc0f2926f2b4fcfb5f5c1346eb7"><div class="ttname"><a href="classxtd_1_1basic__array.html#a16b80cc0f2926f2b4fcfb5f5c1346eb7">xtd::basic_array::set_value</a></div><div class="ttdeci">void set_value(const type_t &amp;value, const xtd::array&lt; size_type &gt; &amp;indexes)</div><div class="ttdoc">Sets a value to the element at the specified position in the multidimensional array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:400</div></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_a4132e3affe66da23dc58780f520124e2"><div class="ttname"><a href="classxtd_1_1basic__array.html#a4132e3affe66da23dc58780f520124e2">xtd::basic_array::get_length</a></div><div class="ttdeci">constexpr size_type get_length(size_type dimension) const</div><div class="ttdoc">Gets the total number of elements in all the dimensions of the array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:329</div></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_a6ac6c2f6144b73e261745e2bec9f6771"><div class="ttname"><a href="classxtd_1_1basic__array.html#a6ac6c2f6144b73e261745e2bec9f6771">xtd::basic_array::get_lower_bound</a></div><div class="ttdeci">constexpr size_type get_lower_bound(size_type dimension) const</div><div class="ttdoc">Gets the lower bound of the specified dimension in the array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:347</div></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_aaf70989e6cabeaccefd32e3b760753ef"><div class="ttname"><a href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">xtd::basic_array::length</a></div><div class="ttdeci">virtual size_type length() const noexcept</div><div class="ttdoc">Gets a size that represents the total number of elements in all the dimensions of the array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:192</div></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_ab74ed5a54361b742c7e27ff7b180a986"><div class="ttname"><a href="classxtd_1_1basic__array.html#ab74ed5a54361b742c7e27ff7b180a986">xtd::basic_array::get_upper_bound</a></div><div class="ttdeci">constexpr size_type get_upper_bound(size_type dimension) const</div><div class="ttdoc">Gets the upper bound of the specified dimension in the array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:359</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:462</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515">xtd::console_key::j</a></div><div class="ttdeci">@ j</div><div class="ttdoc">The J key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:106</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a8ce4b16b22b58894aa86c421e8759df3"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8ce4b16b22b58894aa86c421e8759df3">xtd::console_key::k</a></div><div class="ttdeci">@ k</div><div class="ttdoc">The K key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:108</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">xtd::console_key::o</a></div><div class="ttdeci">@ o</div><div class="ttdoc">The O key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:116</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
@@ -222,6 +221,22 @@ The <a class="el" href="classxtd_1_1array.html" title="Provides methods for crea
 <tr class="memitem:a5179d74132dcbcfbc401245b7763bb25"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1collections_1_1object__model_1_1read__only__collection.html">xtd::collections::object_model::read_only_collection</a>&lt; type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5179d74132dcbcfbc401245b7763bb25">as_read_only</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 1, allocator_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>)</td></tr>
 <tr class="memdesc:a5179d74132dcbcfbc401245b7763bb25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a read-only wrapper for the specified array.  <br /></td></tr>
 <tr class="separator:a5179d74132dcbcfbc401245b7763bb25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbc725cbaa6921af2a081d75776ed98a" id="r_acbc725cbaa6921af2a081d75776ed98a"><td class="memTemplParams" colspan="2">template&lt;class type_t, class allocator_t&gt; </td></tr>
+<tr class="memitem:acbc725cbaa6921af2a081d75776ed98a"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#acbc725cbaa6921af2a081d75776ed98a">binary_search</a> (const <a class="el" href="classxtd_1_1array.html">array</a>&lt; type_t, 1, allocator_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> index, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">length</a>, const type_t &amp;value)</td></tr>
+<tr class="memdesc:acbc725cbaa6921af2a081d75776ed98a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches a range of elements in a one-dimensional sorted array for a value, using the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface implemented by each element of the array and by the specified value.  <br /></td></tr>
+<tr class="separator:acbc725cbaa6921af2a081d75776ed98a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f112ab3974bb607c3fcc109b1baa035" id="r_a3f112ab3974bb607c3fcc109b1baa035"><td class="memTemplParams" colspan="2">template&lt;class type_t, class allocator_t&gt; </td></tr>
+<tr class="memitem:a3f112ab3974bb607c3fcc109b1baa035"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a3f112ab3974bb607c3fcc109b1baa035">binary_search</a> (const <a class="el" href="classxtd_1_1array.html">array</a>&lt; type_t, 1, allocator_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="classxtd_1_1basic__array.html#a2e50b538f5aa4913d3180fcee49499c2">count</a>, const type_t &amp;value, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;comparer)</td></tr>
+<tr class="memdesc:a3f112ab3974bb607c3fcc109b1baa035"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches a range of elements in a one-dimensional sorted array for a value, using the specified xtd::icomparer interface.  <br /></td></tr>
+<tr class="separator:a3f112ab3974bb607c3fcc109b1baa035"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5130daab1b3dae1a2761c64bbc1e1dcb" id="r_a5130daab1b3dae1a2761c64bbc1e1dcb"><td class="memTemplParams" colspan="2">template&lt;class type_t, class allocator_t&gt; </td></tr>
+<tr class="memitem:a5130daab1b3dae1a2761c64bbc1e1dcb"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5130daab1b3dae1a2761c64bbc1e1dcb">binary_search</a> (const <a class="el" href="classxtd_1_1array.html">array</a>&lt; type_t, 1, allocator_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, const type_t &amp;value)</td></tr>
+<tr class="memdesc:a5130daab1b3dae1a2761c64bbc1e1dcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches an entire one-dimensional sorted array for a specific element, using the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface implemented by each element of the array and by the specified object.  <br /></td></tr>
+<tr class="separator:a5130daab1b3dae1a2761c64bbc1e1dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d713fa77497cafb05de46157f6669d6" id="r_a4d713fa77497cafb05de46157f6669d6"><td class="memTemplParams" colspan="2">template&lt;class type_t, class allocator_t&gt; </td></tr>
+<tr class="memitem:a4d713fa77497cafb05de46157f6669d6"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a4d713fa77497cafb05de46157f6669d6">binary_search</a> (const <a class="el" href="classxtd_1_1array.html">array</a>&lt; type_t, 1, allocator_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, const type_t &amp;value, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;comparer)</td></tr>
+<tr class="memdesc:a4d713fa77497cafb05de46157f6669d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches a range of elements in a one-dimensional sorted array for a value, using the specified xtd::icomparer interface.  <br /></td></tr>
+<tr class="separator:a4d713fa77497cafb05de46157f6669d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a4dbeb21711b15525741125c0b2249a26" id="r_a4dbeb21711b15525741125c0b2249a26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1array.html#a4dbeb21711b15525741125c0b2249a26">array</a> ()=default</td></tr>
@@ -599,17 +614,400 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <p>Returns a read-only wrapper for the specified array. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">array</td><td>The one-dimensional, zero-based array to wrap in a read-only ReadOnlyCollection&lt;type_t&gt; wrapper. </td></tr>
+    <tr><td class="paramname">array</td><td>The one-dimensional, zero-based array to wrap in a read-only <a class="el" href="classxtd_1_1collections_1_1object__model_1_1read__only__collection.html" title="Provides the base class for a generic read-only collection.">xtd::collections::object_model::read_only_collection&lt;type_t&gt;</a> wrapper. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A read-only ReadOnlyCollection&lt;type_t&gt; wrapper for the specified array. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A read-only <a class="el" href="classxtd_1_1collections_1_1object__model_1_1read__only__collection.html" title="Provides the base class for a generic read-only collection.">xtd::collections::object_model::read_only_collection&lt;type_t&gt;</a> wrapper for the specified array. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>To prevent any modifications to the array, expose the array only through this wrapper. </dd>
 <dd>
 A collection that is read-only is simply a collection with a wrapper that prevents modifying the collection; therefore, if changes are made to the underlying collection, the read-only collection reflects those changes. </dd>
 <dd>
 This method is an O(n) operation. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example wraps an array in a read-only ReadOnlyCollection&lt;type_t&gt;. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example wraps an array in a read-only <a class="el" href="classxtd_1_1collections_1_1object__model_1_1read__only__collection.html" title="Provides the base class for a generic read-only collection.">xtd::collections::object_model::read_only_collection&lt;type_t&gt;</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/array&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/not_supported_exception&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> print_index_and_values(<span class="keyword">const</span> <a class="code hl_function" href="classxtd_1_1array.html#a4dbeb21711b15525741125c0b2249a26">array&lt;string&gt;</a>&amp; my_arr)  {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0_z; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">length</a>(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   [{0}] : {1}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>, my_arr[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>]);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> print_index_and_values(<span class="keyword">const</span> ilist&lt;string&gt;&amp; my_list)  {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0_z; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; my_list.count(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>( <span class="stringliteral">&quot;   [{0}] : {1}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>, my_list[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>]);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// Create and initialize a new string array.</span></div>
+<div class="line">  <span class="keyword">auto</span> my_arr = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;The&quot;</span>, <span class="stringliteral">&quot;quick&quot;</span>, <span class="stringliteral">&quot;brown&quot;</span>, <span class="stringliteral">&quot;fox&quot;</span>};</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Display the values of the array.</span></div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The string array initially contains the following values:&quot;</span>);</div>
+<div class="line">  print_index_and_values(my_arr);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Create a read-only ilist wrapper around the array.</span></div>
+<div class="line">  <span class="keyword">auto</span> my_list = <a class="code hl_function" href="#a5179d74132dcbcfbc401245b7763bb25">array&lt;&gt;::as_read_only</a>(my_arr);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Display the values of the read-only ilist.</span></div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The read-only ilist contains the following values:&quot;</span>);</div>
+<div class="line">  print_index_and_values(my_list);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Attempt to change a value through the wrapper.</span></div>
+<div class="line">  <span class="keywordflow">try</span> {</div>
+<div class="line">    my_list[3] = <span class="stringliteral">&quot;CAT&quot;</span>;</div>
+<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1not__supported__exception.html">not_supported_exception</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{} - {}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.get_type(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.message());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">  }</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Change a value in the original array.</span></div>
+<div class="line">  my_arr[2] = <span class="stringliteral">&quot;RED&quot;</span>;</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Display the values of the array.</span></div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After changing the third element, the string array contains the following values:&quot;</span>);</div>
+<div class="line">  print_index_and_values( my_arr );</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Display the values of the read-only ilist.</span></div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After changing the third element, the read-only ilist contains the following values:&quot;</span>);</div>
+<div class="line">  print_index_and_values(my_list);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// The string array initially contains the following values:</span></div>
+<div class="line"><span class="comment">//    [0] : The</span></div>
+<div class="line"><span class="comment">//    [1] : quick</span></div>
+<div class="line"><span class="comment">//    [2] : brown</span></div>
+<div class="line"><span class="comment">//    [3] : fox</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// The read-only ilist contains the following values:</span></div>
+<div class="line"><span class="comment">//    [0] : The</span></div>
+<div class="line"><span class="comment">//    [1] : quick</span></div>
+<div class="line"><span class="comment">//    [2] : brown</span></div>
+<div class="line"><span class="comment">//    [3] : fox</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// xtd::not_supported_exception - Collection is read-only.</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// After changing the third element, the string array contains the following values:</span></div>
+<div class="line"><span class="comment">//    [0] : The</span></div>
+<div class="line"><span class="comment">//    [1] : quick</span></div>
+<div class="line"><span class="comment">//    [2] : RED</span></div>
+<div class="line"><span class="comment">//    [3] : fox</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// After changing the third element, the read-only ilist contains the following values:</span></div>
+<div class="line"><span class="comment">//    [0] : The</span></div>
+<div class="line"><span class="comment">//    [1] : quick</span></div>
+<div class="line"><span class="comment">//    [2] : RED</span></div>
+<div class="line"><span class="comment">//    [3] : fox</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="ttc" id="aclassxtd_1_1array_3_4_html_a5179d74132dcbcfbc401245b7763bb25"><div class="ttname"><a href="#a5179d74132dcbcfbc401245b7763bb25">xtd::array&lt;&gt;::as_read_only</a></div><div class="ttdeci">static xtd::collections::object_model::read_only_collection&lt; type_t &gt; as_read_only(const xtd::array&lt; type_t, 1, allocator_t &gt; &amp;array)</div><div class="ttdoc">Returns a read-only wrapper for the specified array.</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__array_html_aaf70989e6cabeaccefd32e3b760753ef"><div class="ttname"><a href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">xtd::basic_array::length</a></div><div class="ttdeci">virtual size_type length() const noexcept</div><div class="ttdoc">Gets a size that represents the total number of elements in all the dimensions of the array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:209</div></div>
+<div class="ttc" id="aclassxtd_1_1not__supported__exception_html"><div class="ttname"><a href="classxtd_1_1not__supported__exception.html">xtd::not_supported_exception</a></div><div class="ttdoc">The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...</div><div class="ttdef"><b>Definition</b> not_supported_exception.hpp:18</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
+<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:16</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="acbc725cbaa6921af2a081d75776ed98a" name="acbc725cbaa6921af2a081d75776ed98a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbc725cbaa6921af2a081d75776ed98a">&#9670;&#160;</a></span>binary_search() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt;&gt;::binary_search </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">array</a>&lt; type_t, 1, allocator_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>array</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>length</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searches a range of elements in a one-dimensional sorted array for a value, using the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface implemented by each element of the array and by the specified value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>The sorted one-dimensional array to search. </td></tr>
+    <tr><td class="paramname">index</td><td>The starting index of the range to search. </td></tr>
+    <tr><td class="paramname">length</td><td>The length of the range to search. </td></tr>
+    <tr><td class="paramname">value</td><td>The object to search for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260" title="Represents a 32-bit signed integer.">int32</a> The index of the specified value in the specified array, if value is found; otherwise, a negative number. If value is not found and value is less than one or more elements in array, the negative number returned is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than all elements in array, the negative number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted array, the return value can be incorrect and a negative number could be returned, even if value is present in array. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1rank__exception.html" title="The exception that is thrown when an array with the wrong number of dimensions is passed to a method.">xtd::rank_exception</a></td><td>array is multidimensional. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>index is less than the lower bound of array. <br  />
+-or-&lt;bre&gt; length is less than zero. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>index and length do not specify a valid range in array. <br  />
+-or-&lt;bre&gt; value is of a type that is not compatible with the elements of array. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>value does not implement the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface, and the search encounters an element that does not implement the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method does not support searching arrays that contain negative indexes. array must be sorted before calling this method. </dd>
+<dd>
+If the array does not contain the specified value, the method returns a negative integer. You can apply the bitwise complement operator ~ to the negative result to produce an index. If this index is one greater than the upper bound of the array, there are no elements larger than value in the array. Otherwise, it is the index of the first element that is larger than value. </dd>
+<dd>
+Either value or every element of array must implement the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface, which is used for comparisons. The elements of array must already be sorted in increasing value according to the sort order defined by the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> implementation; otherwise, the result might be incorrect. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If value does not implement the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface, the elements of array are not tested for <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> before the search begins. An exception is thrown if the search encounters an element that does not implement <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Duplicate elements are allowed. If the array contains more than one element equal to value, the method returns the index of only one of the occurrences, and not necessarily the first one. </dd>
+<dd>
+null can always be compared with any other reference type; therefore, comparisons with null do not generate an exception. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>For every element tested, value is passed to the appropriate <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> implementation, even if value is null. That is, the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> implementation determines how a given element compares to null. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method is an O(log n) operation, where n is length. </dd></dl>
+
+</div>
+</div>
+<a id="a3f112ab3974bb607c3fcc109b1baa035" name="a3f112ab3974bb607c3fcc109b1baa035"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f112ab3974bb607c3fcc109b1baa035">&#9670;&#160;</a></span>binary_search() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt;&gt;::binary_search </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">array</a>&lt; type_t, 1, allocator_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>array</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>comparer</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searches a range of elements in a one-dimensional sorted array for a value, using the specified xtd::icomparer interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>The sorted one-dimensional array to search. </td></tr>
+    <tr><td class="paramname">index</td><td>The starting index of the range to search. </td></tr>
+    <tr><td class="paramname">length</td><td>The length of the range to search. </td></tr>
+    <tr><td class="paramname">value</td><td>The object to search for. </td></tr>
+    <tr><td class="paramname">comparer</td><td>The xtd::icomparer implementation to use when comparing elements. <br  />
+-or-&lt;bre&gt; null to use the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> implementation of each element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260" title="Represents a 32-bit signed integer.">int32</a> The index of the specified value in the specified array, if value is found; otherwise, a negative number. If value is not found and value is less than one or more elements in array, the negative number returned is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than all elements in array, the negative number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted array, the return value can be incorrect and a negative number could be returned, even if value is present in array. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1rank__exception.html" title="The exception that is thrown when an array with the wrong number of dimensions is passed to a method.">xtd::rank_exception</a></td><td>array is multidimensional. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>index is less than the lower bound of array. <br  />
+-or-&lt;bre&gt; length is less than zero. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>index and length do not specify a valid range in array. <br  />
+-or-&lt;bre&gt; value is of a type that is not compatible with the elements of array. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>value does not implement the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface, and the search encounters an element that does not implement the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method does not support searching arrays that contain negative indexes. array must be sorted before calling this method. </dd>
+<dd>
+If the array does not contain the specified value, the method returns a negative integer. You can apply the bitwise complement operator ~ to the negative result to produce an index. If this index is one greater than the upper bound of the array, there are no elements larger than value in the array. Otherwise, it is the index of the first element that is larger than value. </dd>
+<dd>
+The comparer customizes how the elements are compared. For example, you can use a xtd::collections::case_insensitive_comparer as the comparer to perform case-insensitive string searches. </dd>
+<dd>
+If comparer is not null, the elements of array are compared to the specified value using the specified xtd::icomparer implementation. The elements of array must already be sorted in increasing value according to the sort order defined by comparer; otherwise, the result might be incorrect. </dd>
+<dd>
+If comparer is null, the comparison is done using the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> implementation provided by the element itself or by the specified value. The elements of array must already be sorted in increasing value according to the sort order defined by the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> implementation; otherwise, the result might be incorrect. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If comparer is null and value does not implement the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface, the elements of array are not tested for <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> before the search begins. An exception is thrown if the search encounters an element that does not implement <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Duplicate elements are allowed. If the array contains more than one element equal to value, the method returns the index of only one of the occurrences, and not necessarily the first one. </dd>
+<dd>
+null can always be compared with any other reference type; therefore, comparisons with null do not generate an exception when using <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>For every element tested, value is passed to the appropriate <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> implementation, even if value is null. That is, the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> implementation determines how a given element compares to null. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method is an O(log n) operation, where n is length. </dd></dl>
+
+</div>
+</div>
+<a id="a5130daab1b3dae1a2761c64bbc1e1dcb" name="a5130daab1b3dae1a2761c64bbc1e1dcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5130daab1b3dae1a2761c64bbc1e1dcb">&#9670;&#160;</a></span>binary_search() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt;&gt;::binary_search </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">array</a>&lt; type_t, 1, allocator_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>array</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searches an entire one-dimensional sorted array for a specific element, using the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface implemented by each element of the array and by the specified object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>The sorted one-dimensional array to search. </td></tr>
+    <tr><td class="paramname">value</td><td>The object to search for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260" title="Represents a 32-bit signed integer.">int32</a> The index of the specified value in the specified array, if value is found; otherwise, a negative number. If value is not found and value is less than one or more elements in array, the negative number returned is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than all elements in array, the negative number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted array, the return value can be incorrect and a negative number could be returned, even if value is present in array. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1rank__exception.html" title="The exception that is thrown when an array with the wrong number of dimensions is passed to a method.">xtd::rank_exception</a></td><td>array is multidimensional. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>value is of a type that is not compatible with the elements of array. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>value does not implement the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface, and the search encounters an element that does not implement the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method does not support searching arrays that contain negative indexes. array must be sorted before calling this method. </dd>
+<dd>
+If the array does not contain the specified value, the method returns a negative integer. You can apply the bitwise complement operator ~ to the negative result to produce an index. If this index is one greater than the upper bound of the array, there are no elements larger than value in the array. Otherwise, it is the index of the first element that is larger than value. </dd>
+<dd>
+Either value or every element of array must implement the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface, which is used for comparisons. The elements of array must already be sorted in increasing value according to the sort order defined by the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> implementation; otherwise, the result might be incorrect. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Ifvalue does not implement the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface, the elements of array are not tested for <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> before the search begins. An exception is thrown if the search encounters an element that does not implement <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Duplicate elements are allowed. If the array contains more than one element equal to value, the method returns the index of only one of the occurrences, and not necessarily the first one. </dd>
+<dd>
+null can always be compared with any other reference type; therefore, comparisons with null do not generate an exception. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>For every element tested, value is passed to the appropriate <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> implementation, even if value is null. That is, the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> implementation determines how a given element compares to null. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method is an O(log n) operation, where n is the Length of array. </dd></dl>
+
+</div>
+</div>
+<a id="a4d713fa77497cafb05de46157f6669d6" name="a4d713fa77497cafb05de46157f6669d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d713fa77497cafb05de46157f6669d6">&#9670;&#160;</a></span>binary_search() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt;&gt;::binary_search </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">array</a>&lt; type_t, 1, allocator_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>array</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>comparer</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searches a range of elements in a one-dimensional sorted array for a value, using the specified xtd::icomparer interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>The sorted one-dimensional array to search. </td></tr>
+    <tr><td class="paramname">value</td><td>The object to search for. </td></tr>
+    <tr><td class="paramname">comparer</td><td>The xtd::icomparer implementation to use when comparing elements. <br  />
+-or-&lt;bre&gt; null to use the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> implementation of each element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260" title="Represents a 32-bit signed integer.">int32</a> The index of the specified value in the specified array, if value is found; otherwise, a negative number. If value is not found and value is less than one or more elements in array, the negative number returned is the bitwise complement of the index of the first element that is larger than value. If value is not found and value is greater than all elements in array, the negative number returned is the bitwise complement of (the index of the last element plus 1). If this method is called with a non-sorted array, the return value can be incorrect and a negative number could be returned, even if value is present in array. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1rank__exception.html" title="The exception that is thrown when an array with the wrong number of dimensions is passed to a method.">xtd::rank_exception</a></td><td>array is multidimensional. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>index is less than the lower bound of array. <br  />
+-or-&lt;bre&gt; length is less than zero. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>index and length do not specify a valid range in array. <br  />
+-or-&lt;bre&gt; value is of a type that is not compatible with the elements of array. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>value does not implement the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface, and the search encounters an element that does not implement the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method does not support searching arrays that contain negative indexes. array must be sorted before calling this method. </dd>
+<dd>
+If the array does not contain the specified value, the method returns a negative integer. You can apply the bitwise complement operator ~ to the negative result to produce an index. If this index is one greater than the upper bound of the array, there are no elements larger than value in the array. Otherwise, it is the index of the first element that is larger than value. </dd>
+<dd>
+The comparer customizes how the elements are compared. For example, you can use a xtd::collections::case_insensitive_comparer as the comparer to perform case-insensitive string searches. </dd>
+<dd>
+If comparer is not null, the elements of array are compared to the specified value using the specified xtd::icomparer implementation. The elements of array must already be sorted in increasing value according to the sort order defined by comparer; otherwise, the result might be incorrect. </dd>
+<dd>
+If comparer is null, the comparison is done using the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> implementation provided by the element itself or by the specified value. The elements of array must already be sorted in increasing value according to the sort order defined by the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> implementation; otherwise, the result might be incorrect. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If comparer is null and value does not implement the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface, the elements of array are not tested for <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> before the search begins. An exception is thrown if the search encounters an element that does not implement <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Duplicate elements are allowed. If the array contains more than one element equal to value, the method returns the index of only one of the occurrences, and not necessarily the first one. </dd>
+<dd>
+null can always be compared with any other reference type; therefore, comparisons with null do not generate an exception when using <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>For every element tested, value is passed to the appropriate <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> implementation, even if value is null. That is, the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> implementation determines how a given element compares to null. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method is an O(log n) operation, where n is length. </dd></dl>
 
 </div>
 </div>
@@ -651,7 +1049,7 @@ This method is an O(n) operation. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 23 2025 21:17:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jun 24 2025 13:39:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

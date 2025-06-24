@@ -150,77 +150,76 @@ Some methods, such as xtd::array::create_instance, xtd::array::copy, xtd::array:
 <dd>
 The <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> is not guaranteed to be sorted. You must sort the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> prior to performing operations (such as xtd::array::binary_search) that require the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> to be sorted. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates different methods to create an array. <div class="fragment"></div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example creates and initializes an Array and displays its properties and its elements. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/array&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example creates and initializes an Array and displays its properties and its elements. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/any_object&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/array&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">template</span>&lt;size rank&gt;</div>
-<div class="line"><span class="keyword">auto</span> print_values(<span class="keyword">const</span> <a class="code hl_function" href="#a5365a16f187dd7945dc0f7154c55cbf3">array&lt;int, rank&gt;</a>&amp; my_arr) {</div>
-<div class="line">  <span class="keyword">auto</span> my_enumerator = my_arr.get_enumerator();</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0_z;</div>
-<div class="line">  <span class="keyword">auto</span> cols = my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#a4132e3affe66da23dc58780f520124e2">get_length</a>(my_arr.<a class="code hl_function" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">rank</a>() - 1);</div>
-<div class="line">  <span class="keywordflow">while</span> (my_enumerator.move_next()) {</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; cols) ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>;</div>
-<div class="line">    <span class="keywordflow">else</span> {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 1;</div>
-<div class="line">    }</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;  {,8}&quot;</span>, my_enumerator.current());</div>
-<div class="line">  }</div>
+<div class="line"><span class="keyword">auto</span> print_values(<span class="keyword">const</span> <a class="code hl_function" href="#a5365a16f187dd7945dc0f7154c55cbf3">array&lt;int&gt;</a>&amp; my_arr) {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> : my_arr)</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\t{}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> print_values(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1array.html">array&lt;any_object&gt;</a>&amp; my_arr) {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a> : my_arr)</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\t{}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">// Creates and initializes a new three-dimensional array of type int.</span></div>
-<div class="line">  <span class="keyword">auto</span> my_arr = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;int, 3&gt;</a>(2, 3, 4);</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#a6ac6c2f6144b73e261745e2bec9f6771">get_lower_bound</a>(0); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt;= my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#ab74ed5a54361b742c7e27ff7b180a986">get_upper_bound</a>(0); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) {</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515">j</a> = my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#a6ac6c2f6144b73e261745e2bec9f6771">get_lower_bound</a>(1); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515">j</a> &lt;= my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#ab74ed5a54361b742c7e27ff7b180a986">get_upper_bound</a>(1); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515">j</a>) {</div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8ce4b16b22b58894aa86c421e8759df3">k</a> = my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#a6ac6c2f6144b73e261745e2bec9f6771">get_lower_bound</a>(2); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8ce4b16b22b58894aa86c421e8759df3">k</a> &lt;= my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#ab74ed5a54361b742c7e27ff7b180a986">get_upper_bound</a>(2); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8ce4b16b22b58894aa86c421e8759df3">k</a>)</div>
-<div class="line">        my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#a16b80cc0f2926f2b4fcfb5f5c1346eb7">set_value</a>(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int&gt;</a>((<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> * 100) + (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515">j</a> * 10) + <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8ce4b16b22b58894aa86c421e8759df3">k</a>), {<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515">j</a>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8ce4b16b22b58894aa86c421e8759df3">k</a>});</div>
-<div class="line">    }</div>
-<div class="line">  }</div>
+<div class="line">  <span class="comment">// Creates and initializes a new integer array and a new Object array.</span></div>
+<div class="line">  <span class="keyword">auto</span> my_int_array = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;int&gt;</a> {1, 2, 3, 4, 5};</div>
+<div class="line">  <span class="keyword">auto</span> my_obj_array = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;any_object&gt;</a> {26, 27, 28, 29, 30};</div>
 <div class="line">  </div>
-<div class="line">  <span class="comment">// Displays the properties of the array.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The array has {} dimension(s) and a total of {} elements.&quot;</span>, my_arr.<a class="code hl_function" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">rank</a>(), my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">length</a>());</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;    length     lower     upper&quot;</span>);</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0_z; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; my_arr.<a class="code hl_function" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">rank</a>(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) {</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;{}:{,8}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>, my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#a4132e3affe66da23dc58780f520124e2">get_length</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>));</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;  {,8}  {,8}&quot;</span>, my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#a6ac6c2f6144b73e261745e2bec9f6771">get_lower_bound</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>), my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#ab74ed5a54361b742c7e27ff7b180a986">get_upper_bound</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>));</div>
-<div class="line">  }</div>
+<div class="line">  <span class="comment">// Prints the initial values of both arrays.</span></div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Initially,&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;integer array:&quot;</span>);</div>
+<div class="line">  print_values(my_int_array);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;Object array: &quot;</span>);</div>
+<div class="line">  print_values(my_obj_array);</div>
 <div class="line">  </div>
-<div class="line">  <span class="comment">// Displays the contents of the Array.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The array contains the following values:&quot;</span>);</div>
-<div class="line">  print_values(my_arr);</div>
+<div class="line">  <span class="comment">// Copies the first two elements from the integer array to the Object array.</span></div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1array.html">array&lt;&gt;::copy</a>(my_int_array, my_obj_array, 2);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Prints the values of the modified arrays.</span></div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nAfter copying the first two elements of the integer array to the Object array,&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;integer array:&quot;</span>);</div>
+<div class="line">  print_values(my_int_array);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;Object array: &quot;</span>);</div>
+<div class="line">  print_values(my_obj_array);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Copies the last two elements from the Object array to the integer array.</span></div>
+<div class="line">  System.Array.Copy(my_obj_array, my_obj_array.GetUpperBound(0) - 1, my_int_array, my_int_array.GetUpperBound(0) - 1, 2);</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Prints the values of the modified arrays.</span></div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nAfter copying the last two elements of the Object array to the integer array,&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;integer array:&quot;</span>);</div>
+<div class="line">  print_values(my_int_array);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;Object array: &quot;</span>);</div>
+<div class="line">  print_values(my_obj_array);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The array has 3 dimension(s) and a total of 24 elements.</span></div>
-<div class="line"><span class="comment">//     length     lower     upper</span></div>
-<div class="line"><span class="comment">// 0:       2         0         1</span></div>
-<div class="line"><span class="comment">// 1:       3         0         2</span></div>
-<div class="line"><span class="comment">// 2:       4         0         3</span></div>
+<div class="line"><span class="comment">//         length  lower   upper</span></div>
+<div class="line"><span class="comment">// 0:      2       0       1</span></div>
+<div class="line"><span class="comment">// 1:      3       0       2</span></div>
+<div class="line"><span class="comment">// 2:      4       0       3</span></div>
 <div class="line"><span class="comment">// The array contains the following values:</span></div>
-<div class="line"><span class="comment">//          0         1         2         3</span></div>
-<div class="line"><span class="comment">//         10        11        12        13</span></div>
-<div class="line"><span class="comment">//         20        21        22        23</span></div>
-<div class="line"><span class="comment">//        100       101       102       103</span></div>
-<div class="line"><span class="comment">//        110       111       112       113</span></div>
-<div class="line"><span class="comment">//        120       121       122       123</span></div>
+<div class="line"><span class="comment">//         0       1       2       3</span></div>
+<div class="line"><span class="comment">//         10      11      12      13</span></div>
+<div class="line"><span class="comment">//         20      21      22      23</span></div>
+<div class="line"><span class="comment">//         100     101     102     103</span></div>
+<div class="line"><span class="comment">//         110     111     112     113</span></div>
+<div class="line"><span class="comment">//         120     121     122     123</span></div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:61</div></div>
-<div class="ttc" id="aclassxtd_1_1array_html_a2580a0452fad2d6279b669977324fe11"><div class="ttname"><a href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array::rank</a></div><div class="ttdeci">xtd::size rank() const noexcept override</div><div class="ttdoc">Gets the rank (number of dimensions) of the array.</div><div class="ttdef"><b>Definition</b> array.hpp:90</div></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_a16b80cc0f2926f2b4fcfb5f5c1346eb7"><div class="ttname"><a href="classxtd_1_1basic__array.html#a16b80cc0f2926f2b4fcfb5f5c1346eb7">xtd::basic_array::set_value</a></div><div class="ttdeci">void set_value(const type_t &amp;value, const xtd::array&lt; size_type &gt; &amp;indexes)</div><div class="ttdoc">Sets a value to the element at the specified position in the multidimensional array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:400</div></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_a4132e3affe66da23dc58780f520124e2"><div class="ttname"><a href="classxtd_1_1basic__array.html#a4132e3affe66da23dc58780f520124e2">xtd::basic_array::get_length</a></div><div class="ttdeci">constexpr size_type get_length(size_type dimension) const</div><div class="ttdoc">Gets the total number of elements in all the dimensions of the array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:329</div></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_a6ac6c2f6144b73e261745e2bec9f6771"><div class="ttname"><a href="classxtd_1_1basic__array.html#a6ac6c2f6144b73e261745e2bec9f6771">xtd::basic_array::get_lower_bound</a></div><div class="ttdeci">constexpr size_type get_lower_bound(size_type dimension) const</div><div class="ttdoc">Gets the lower bound of the specified dimension in the array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:347</div></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_aaf70989e6cabeaccefd32e3b760753ef"><div class="ttname"><a href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">xtd::basic_array::length</a></div><div class="ttdeci">virtual size_type length() const noexcept</div><div class="ttdoc">Gets a size that represents the total number of elements in all the dimensions of the array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:192</div></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_ab74ed5a54361b742c7e27ff7b180a986"><div class="ttname"><a href="classxtd_1_1basic__array.html#ab74ed5a54361b742c7e27ff7b180a986">xtd::basic_array::get_upper_bound</a></div><div class="ttdeci">constexpr size_type get_upper_bound(size_type dimension) const</div><div class="ttdoc">Gets the upper bound of the specified dimension in the array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:359</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:462</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a363b122c528f54df4a0446b6bab05515">xtd::console_key::j</a></div><div class="ttdeci">@ j</div><div class="ttdoc">The J key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:106</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a8ce4b16b22b58894aa86c421e8759df3"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8ce4b16b22b58894aa86c421e8759df3">xtd::console_key::k</a></div><div class="ttdeci">@ k</div><div class="ttdoc">The K key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:108</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">xtd::console_key::o</a></div><div class="ttdeci">@ o</div><div class="ttdoc">The O key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:116</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
@@ -1804,7 +1803,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 23 2025 21:17:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jun 24 2025 13:39:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
