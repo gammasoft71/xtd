@@ -856,9 +856,10 @@ void main_form::show_about_dialog() {
   dialog.copyright("Copyright (c) 2025 Gammasoft.\nAll rights reserved.");
   dialog.website("https://gammasoft71.wixsite.com/gammasoft");
   dialog.website_label("gammasoft website");
-  dialog.authors({"Gammasoft", "Bader", "Contributors"});
-  dialog.translators({"Gammasoft", "Contributors"});
-  dialog.artists({"Gammasoft"});
+  /// @todo Remove comment when about_dialog fixed authors
+  //dialog.authors({"Gammasoft", "Bader", "Contributors"});
+  //dialog.translators({"Gammasoft", "Contributors"});
+  //dialog.artists({"Gammasoft"});
   dialog.license("MIT License\n"
     "\n"
     "Copyright (c) 2025 Gammasoft.\n"
