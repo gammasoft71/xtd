@@ -10,6 +10,7 @@ sidebar_position: 6
 - [Release 0.2.0 (beta)](#release-020-beta)
 - [Release 0.3.0 (beta)](#release-030-beta)
 - [Release 0.4.0 (beta)](#release-040-beta)
+- [Release 0.5.0 (beta)](#release-050-beta)
 - [Release 1.0.0 (relase)](#release-100-release)
 - [Release 2.0.0 (relase)](#release-200-release)
 - [Release 3.0.0 (relase)](#release-300-release)
@@ -56,42 +57,30 @@ see [Issues 0.2.0](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label
 | [#175](https://github.com/gammasoft71/xtd/issues/175) | xtd.drawing              | graphics                                | Gammasoft | ![status](/pictures/releases/status/done.png)    |
 | [#54](https://github.com/gammasoft71/xtd/issues/54)   | xtd.forms                | box_renderer                            | Gammasoft | ![status](/pictures/releases/status/done.png)    |
 | [#55](https://github.com/gammasoft71/xtd/issues/55)   | xtd.forms                | button_renderer                         | Gammasoft | ![status](/pictures/releases/status/done.png)    |
-| [#53](https://github.com/gammasoft71/xtd/issues/53)   | xtd.forms                | check_box_renderer                      | Gammasoft |                                                  |
-| [#62](https://github.com/gammasoft71/xtd/issues/62)   | xtd.forms                | color_picker_renderer                   | Gammasoft |                                                  |
-| [#63](https://github.com/gammasoft71/xtd/issues/63)   | xtd.forms                | command_link_button_renderer            | Gammasoft |                                                  |
 | [#64](https://github.com/gammasoft71/xtd/issues/64)   | xtd.forms                | command_link_buttons                    | Gammasoft | ![status](/pictures/releases/status/done.png)    |
 | [#65](https://github.com/gammasoft71/xtd/issues/65)   | xtd.forms                | context_menu                            | Gammasoft | ![status](/pictures/releases/status/done.png)    |
 | [#66](https://github.com/gammasoft71/xtd/issues/66)   | xtd.forms                | control_renderer                        | Gammasoft | ![status](/pictures/releases/status/done.png)    |
-| [#67](https://github.com/gammasoft71/xtd/issues/67)   | xtd.forms                | dot_matrix_display_renderer             | Gammasoft |                                                  |
 | [#68](https://github.com/gammasoft71/xtd/issues/68)   | xtd.forms                | find_box                                | Gammasoft | ![status](/pictures/releases/status/done.png)    |
 | [#69](https://github.com/gammasoft71/xtd/issues/69)   | xtd.forms                | find_dialog                             | Gammasoft | ![status](/pictures/releases/status/done.png)    |
 | [#139](https://github.com/gammasoft71/xtd/issues/139) | xtd.forms                | folder_browser_box                      | Gammasoft | ![status](/pictures/releases/status/done.png)    |
 | [#70](https://github.com/gammasoft71/xtd/issues/70)   | xtd.forms                | font_box                                | Bader     | ![status](/pictures/releases/status/done.png)    |
-| [#71](https://github.com/gammasoft71/xtd/issues/71)   | xtd.forms                | font_picker_renderer                    | Gammasoft |                                                  |
 | [#72](https://github.com/gammasoft71/xtd/issues/72)   | xtd.forms                | form_renderer                           | Gammasoft | ![status](/pictures/releases/status/done.png)    |
-| [#73](https://github.com/gammasoft71/xtd/issues/73)   | xtd.forms                | fourteen_segment_display_renderer       | Gammasoft |                                                  |
 | [#74](https://github.com/gammasoft71/xtd/issues/74)   | xtd.forms                | image_renderer                          | Gammasoft | ![status](/pictures/releases/status/done.png)    |
 | [#75](https://github.com/gammasoft71/xtd/issues/75)   | xtd.forms                | label_renderer                          | Gammasoft | ![status](/pictures/releases/status/done.png)    |
-| [#76](https://github.com/gammasoft71/xtd/issues/76)   | xtd.forms                | lcd_label_renderer                      | Gammasoft |                                                  |
 | [#77](https://github.com/gammasoft71/xtd/issues/77)   | xtd.forms                | light_button                            | Gammasoft | ![status](/pictures/releases/status/done.png)    |
 | [#78](https://github.com/gammasoft71/xtd/issues/78)   | xtd.forms                | light_button_renderer                   | Gammasoft | ![status](/pictures/releases/status/done.png)    |
 | [#79](https://github.com/gammasoft71/xtd/issues/79)   | xtd.forms                | light_buttons                           | Gammasoft | ![status](/pictures/releases/status/done.png)    |
 | [#80](https://github.com/gammasoft71/xtd/issues/80)   | xtd.forms                | month_calender                          | Gammasoft | ![status](/pictures/releases/status/done.png)    |
-| [#82](https://github.com/gammasoft71/xtd/issues/82)   | xtd.forms                | nine_segment_display_renderer           | Gammasoft |                                                  |
 | [#83](https://github.com/gammasoft71/xtd/issues/83)   | xtd.forms                | open_file_box                           | Bader     | ![status](/pictures/releases/status/done.png)    |
 | [#84](https://github.com/gammasoft71/xtd/issues/84)   | xtd.forms                | panel_renderer                          | Gammasoft | ![status](/pictures/releases/status/done.png)    |
 | [#84](https://github.com/gammasoft71/xtd/issues/177)  | xtd.forms                | popup_panel                             | Gammasoft | ![status](/pictures/releases/status/done.png)    |
 | [#85](https://github.com/gammasoft71/xtd/issues/85)   | xtd.forms                | progress_box                            | Bader     | ![status](/pictures/releases/status/done.png)    |
-| [#86](https://github.com/gammasoft71/xtd/issues/86)   | xtd.forms                | radio_button_renderer                   | Gammasoft |                                                  |
 | [#87](https://github.com/gammasoft71/xtd/issues/87)   | xtd.forms                | replace_box                             | Gammasoft | ![status](/pictures/releases/status/done.png)    |
 | [#88](https://github.com/gammasoft71/xtd/issues/88)   | xtd.forms                | replace_dialog                          | Gammasoft | ![status](/pictures/releases/status/done.png)    |
 | [#89](https://github.com/gammasoft71/xtd/issues/89)   | xtd.forms                | save_file_box                           | Bader     | ![status](/pictures/releases/status/done.png)    |
-| [#90](https://github.com/gammasoft71/xtd/issues/90)   | xtd.forms                | seven_segment_display_renderer          | Gammasoft |                                                  |
-| [#91](https://github.com/gammasoft71/xtd/issues/91)   | xtd.forms                | sixteen_segment_display_renderer        | Gammasoft |                                                  |
 | [#93](https://github.com/gammasoft71/xtd/issues/93)   | xtd.forms                | status_bar                              | Gammasoft | ![status](/pictures/releases/status/started.png) |
 | [#129](https://github.com/gammasoft71/xtd/issues/129) | xtd.forms                | status_bar_renderer                     | Gammasoft | ![status](/pictures/releases/status/done.png)    |
 | [#94](https://github.com/gammasoft71/xtd/issues/94)   | xtd.forms                | style_sheets                            | Gammasoft | ![status](/pictures/releases/status/started.png) |
-| [#95](https://github.com/gammasoft71/xtd/issues/95)   | xtd.forms                | switch_button_renderer                  | Gammasoft |                                                  |
 | [#96](https://github.com/gammasoft71/xtd/issues/96)   | xtd.forms                | text_renderer                           | Gammasoft | ![status](/pictures/releases/status/done.png)    |
 | [#97](https://github.com/gammasoft71/xtd/issues/97)   | xtd.forms                | themes                                  | Gammasoft | ![status](/pictures/releases/status/started.png) |
 | [#98](https://github.com/gammasoft71/xtd/issues/98)   | xtd.forms                | toggle_button_renderer                  | Gammasoft | ![status](/pictures/releases/status/done.png)    |
@@ -108,6 +97,31 @@ see [Issues 0.3.0](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label
 ### Enhancements
 
 [Milestone 0.3.0](https://github.com/gammasoft71/xtd/milestone/2)
+
+| Issue                                                 | Library                  | Enhancements                            | Developer | status                                           |
+| ----------------------------------------------------- | ------------------------ | --------------------------------------- | --------- | ------------------------------------------------ |
+| [#53](https://github.com/gammasoft71/xtd/issues/53)   | xtd.forms                | check_box_renderer                      | Gammasoft |                                                  |
+| [#62](https://github.com/gammasoft71/xtd/issues/62)   | xtd.forms                | color_picker_renderer                   | Gammasoft |                                                  |
+| [#63](https://github.com/gammasoft71/xtd/issues/63)   | xtd.forms                | command_link_button_renderer            | Gammasoft |                                                  |
+| [#67](https://github.com/gammasoft71/xtd/issues/67)   | xtd.forms                | dot_matrix_display_renderer             | Gammasoft |                                                  |
+| [#71](https://github.com/gammasoft71/xtd/issues/71)   | xtd.forms                | font_picker_renderer                    | Gammasoft |                                                  |
+| [#73](https://github.com/gammasoft71/xtd/issues/73)   | xtd.forms                | fourteen_segment_display_renderer       | Gammasoft |                                                  |
+| [#76](https://github.com/gammasoft71/xtd/issues/76)   | xtd.forms                | lcd_label_renderer                      | Gammasoft |                                                  |
+| [#82](https://github.com/gammasoft71/xtd/issues/82)   | xtd.forms                | nine_segment_display_renderer           | Gammasoft |                                                  |
+| [#86](https://github.com/gammasoft71/xtd/issues/86)   | xtd.forms                | radio_button_renderer                   | Gammasoft |                                                  |
+| [#90](https://github.com/gammasoft71/xtd/issues/90)   | xtd.forms                | seven_segment_display_renderer          | Gammasoft |                                                  |
+| [#91](https://github.com/gammasoft71/xtd/issues/91)   | xtd.forms                | sixteen_segment_display_renderer        | Gammasoft |                                                  |
+| [#95](https://github.com/gammasoft71/xtd/issues/95)   | xtd.forms                | switch_button_renderer                  | Gammasoft |                                                  |
+
+## Release 0.4.0 (beta)
+
+### Bugs
+
+see [Issues 0.4.0](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A0.4.0+is%3Aopen)
+
+### Enhancements
+
+[Milestone 0.4.0](https://github.com/gammasoft71/xtd/milestone/4)
 
 | Issue                                                 | Library                  | Enhancements                            | Developer | status                                           |
 | ----------------------------------------------------- | ------------------------ | --------------------------------------- | --------- | ------------------------------------------------ |
@@ -156,15 +170,15 @@ see [Issues 0.3.0](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label
 | [#138](https://github.com/gammasoft71/xtd/issues/138) | xtd.forms                | v_scroll_bar_renderer                   | Gammasoft |                                                  |
 | [#180](https://github.com/gammasoft71/xtd/issues/180) | xtd.forms                | message_notifier                        | Bader     | ![status](/pictures/releases/status/started.png) |
 
-## Release 0.4.0 (beta)
+## Release 0.5.0 (beta)
 
 ### Bugs
 
-see [Issues 0.4.0](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A0.4.0+is%3Aopen)
+see [Issues 0.5.0](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A0.5.0+is%3Aopen)
 
 ### Enhancements
 
-[Milestone 0.4.0](https://github.com/gammasoft71/xtd/milestone/4)
+[Milestone 0.5.0](https://github.com/gammasoft71/xtd/milestone/8)
 
 | Issue                                                 | Library                  | Enhancements                            | Developer | status                                           |
 | ----------------------------------------------------- | ------------------------ | --------------------------------------- | --------- | ------------------------------------------------ |
