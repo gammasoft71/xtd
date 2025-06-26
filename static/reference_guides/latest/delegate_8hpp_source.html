@@ -751,33 +751,35 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>    }</div>
 <div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>    </div>
 <div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>  <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> are_equals(<span class="keyword">const</span> std::function&lt;result_t(arguments_t...)&gt;&amp; fct1, <span class="keyword">const</span> std::function&lt;result_t(arguments_t...)&gt;&amp; fct2) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>      <span class="keywordflow">return</span> fct1.target_type() == fct2.target_type() &amp;&amp; (fct1.template target&lt;result_t(*)(arguments_t...)&gt;() == fct2.template target&lt;result_t(*)(arguments_t...)&gt;() || *fct1.template target&lt;result_t(*)(arguments_t...)&gt;() == *fct2.template target&lt;result_t(*)(arguments_t...)&gt;());</div>
-<div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span>    }</div>
-<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>    </div>
-<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> are_equals(<span class="keyword">const</span> std::function&lt;result_t()&gt;&amp; fct1, <span class="keyword">const</span> std::function&lt;result_t()&gt;&amp; fct2) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>      <span class="keywordflow">return</span> fct1.target_type() == fct2.target_type() &amp;&amp; (fct1.template target&lt;result_t(*)()&gt;() == fct2.template target&lt;result_t(*)()&gt;() || *fct1.template target&lt;result_t(*)()&gt;() == *fct2.template target&lt;result_t(*)()&gt;());</div>
-<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>    }</div>
-<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span>    </div>
-<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>    <span class="keyword">static</span> <span class="keyword">typename</span> no_arguments_function_collection::const_iterator find(<span class="keyword">typename</span> no_arguments_function_collection::const_iterator begin, <span class="keyword">typename</span> no_arguments_function_collection::const_iterator end, <span class="keyword">const</span> no_arguments_function_t&amp; function) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>      <span class="keyword">auto</span> iterator = std::find_if(begin, end, [&amp;](<span class="keyword">auto</span> item) {<span class="keywordflow">return</span> are_equals(item, function);});</div>
-<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>      <span class="keywordflow">if</span> (iterator != end) <span class="keywordflow">return</span> iterator;</div>
-<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacextd.html#a3a39828bd6261156752c2d0eda4c625a">end</a>;</div>
-<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>    }</div>
-<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>    </div>
-<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>    <span class="keyword">static</span> <span class="keyword">typename</span> function_collection::const_iterator find(<span class="keyword">typename</span> function_collection::const_iterator begin, <span class="keyword">typename</span> function_collection::const_iterator end, <span class="keyword">const</span> function_t&amp; function) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>      <span class="keyword">auto</span> iterator = std::find_if(begin, end, [&amp;](<span class="keyword">auto</span> item) {<span class="keywordflow">return</span> are_equals(item, function);});</div>
-<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>      <span class="keywordflow">if</span> (iterator != end) <span class="keywordflow">return</span> iterator;</div>
-<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacextd.html#a3a39828bd6261156752c2d0eda4c625a">end</a>;</div>
-<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>    }</div>
-<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>    </div>
-<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span>    <a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;data&gt;</a> data_ = <a class="code hl_function" href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e">xtd::new_sptr&lt;data&gt;</a>();</div>
-<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span>  };</div>
+<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>    <span class="keyword">struct </span>delegate_async_state;</div>
+<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>    </div>
+<div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> are_equals(<span class="keyword">const</span> std::function&lt;result_t(arguments_t...)&gt;&amp; fct1, <span class="keyword">const</span> std::function&lt;result_t(arguments_t...)&gt;&amp; fct2) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>      <span class="keywordflow">return</span> fct1.target_type() == fct2.target_type() &amp;&amp; (fct1.template target&lt;result_t(*)(arguments_t...)&gt;() == fct2.template target&lt;result_t(*)(arguments_t...)&gt;() || *fct1.template target&lt;result_t(*)(arguments_t...)&gt;() == *fct2.template target&lt;result_t(*)(arguments_t...)&gt;());</div>
+<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>    }</div>
+<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>    </div>
+<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> are_equals(<span class="keyword">const</span> std::function&lt;result_t()&gt;&amp; fct1, <span class="keyword">const</span> std::function&lt;result_t()&gt;&amp; fct2) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span>      <span class="keywordflow">return</span> fct1.target_type() == fct2.target_type() &amp;&amp; (fct1.template target&lt;result_t(*)()&gt;() == fct2.template target&lt;result_t(*)()&gt;() || *fct1.template target&lt;result_t(*)()&gt;() == *fct2.template target&lt;result_t(*)()&gt;());</div>
+<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>    }</div>
+<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>    </div>
+<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>    <span class="keyword">static</span> <span class="keyword">typename</span> no_arguments_function_collection::const_iterator find(<span class="keyword">typename</span> no_arguments_function_collection::const_iterator begin, <span class="keyword">typename</span> no_arguments_function_collection::const_iterator end, <span class="keyword">const</span> no_arguments_function_t&amp; function) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>      <span class="keyword">auto</span> iterator = std::find_if(begin, end, [&amp;](<span class="keyword">auto</span> item) {<span class="keywordflow">return</span> are_equals(item, function);});</div>
+<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>      <span class="keywordflow">if</span> (iterator != end) <span class="keywordflow">return</span> iterator;</div>
+<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacextd.html#a3a39828bd6261156752c2d0eda4c625a">end</a>;</div>
+<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>    }</div>
+<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>    </div>
+<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>    <span class="keyword">static</span> <span class="keyword">typename</span> function_collection::const_iterator find(<span class="keyword">typename</span> function_collection::const_iterator begin, <span class="keyword">typename</span> function_collection::const_iterator end, <span class="keyword">const</span> function_t&amp; function) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>      <span class="keyword">auto</span> iterator = std::find_if(begin, end, [&amp;](<span class="keyword">auto</span> item) {<span class="keywordflow">return</span> are_equals(item, function);});</div>
+<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>      <span class="keywordflow">if</span> (iterator != end) <span class="keywordflow">return</span> iterator;</div>
+<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="namespacextd.html#a3a39828bd6261156752c2d0eda4c625a">end</a>;</div>
+<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span>    }</div>
+<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span>    </div>
+<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>    <a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;data&gt;</a> data_ = <a class="code hl_function" href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e">xtd::new_sptr&lt;data&gt;</a>();</div>
+<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>  };</div>
 </div>
-<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>}</div>
-<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span> </div>
-<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span><span class="comment">// Required for begin_invoke and end_invoke methods implementation.</span></div>
-<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span><span class="preprocessor">#include &quot;<a class="code" href="thread__pool_8hpp.html">threading/thread_pool.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>}</div>
+<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span> </div>
+<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span><span class="comment">// Required for begin_invoke and end_invoke methods implementation.</span></div>
+<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span><span class="preprocessor">#include &quot;<a class="code" href="thread__pool_8hpp.html">threading/thread_pool.hpp</a>&quot;</span></div>
 <div class="ttc" id="aany_8hpp_html"><div class="ttname"><a href="any_8hpp.html">any.hpp</a></div><div class="ttdoc">Contains xtd::any type and std::bad_any_cast exception.</div></div>
 <div class="ttc" id="aargument__null__exception_8hpp_html"><div class="ttname"><a href="argument__null__exception_8hpp.html">argument_null_exception.hpp</a></div><div class="ttdoc">Contains xtd::argument_null_exception exception.</div></div>
 <div class="ttc" id="aasync__result_8hpp_html"><div class="ttname"><a href="async__result_8hpp.html">async_result.hpp</a></div><div class="ttdoc">Contains xtd::async_result alias.</div></div>
@@ -857,7 +859,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 25 2025 17:02:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jun 26 2025 23:07:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
