@@ -80,18 +80,18 @@ namespace xtd {
     /// @remarks Calling front on an empty container causes undefined behavior.
     virtual const_reference back() const {return at(count() - 1);}
 
-    /// @brief Returns an iterator to the first element of the enumarable.
+    /// @brief Returns an iterator to the first element of the enumerable.
     /// @return Iterator to the first element.
     const_iterator begin() const noexcept {return cbegin();}
-    /// @brief Returns an iterator to the first element of the enumarable.
+    /// @brief Returns an iterator to the first element of the enumerable.
     /// @return Iterator to the first element.
     iterator begin() noexcept {return iterator {data()};}
 
-    /// @brief Returns an iterator to the first element of the enumarable.
+    /// @brief Returns an iterator to the first element of the enumerable.
     /// @return Iterator to the first element.
     const_iterator cbegin() const noexcept {return const_iterator {data()};}
 
-    /// @brief Returns an iterator to the element following the last element of the enumarable.
+    /// @brief Returns an iterator to the element following the last element of the enumerable.
     /// @return Iterator to the element following the last element.
     const_iterator cend() const noexcept {return const_iterator {data() + len};}
     
@@ -112,10 +112,10 @@ namespace xtd {
     /// @return `true` if the container is empty, `false` otherwise.
     virtual bool empty() const noexcept {return len == xtd::size {0};}
 
-    /// @brief Returns an iterator to the element following the last element of the enumarable.
+    /// @brief Returns an iterator to the element following the last element of the enumerable.
     /// @return Iterator to the element following the last element.
     const_iterator end() const noexcept {return cend();}
-    /// @brief Returns an iterator to the element following the last element of the enumarable.
+    /// @brief Returns an iterator to the element following the last element of the enumerable.
     /// @return Iterator to the element following the last element.
     iterator end() noexcept {return iterator {data() + len};}
     /// @brief Returns a reference to the first element in the container.
