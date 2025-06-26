@@ -248,10 +248,10 @@ namespace xtd {
         /// @remarks Calling front on an empty container causes undefined behavior.
         virtual const_reference back() const {return at(count() - 1);}
         
-        /// @brief Returns an iterator to the first element of the enumarable.
+        /// @brief Returns an iterator to the first element of the enumerable.
         /// @return Iterator to the first element.
         const_iterator begin() const noexcept override {return ienumerable<value_type>::begin();}
-        /// @brief Returns an iterator to the first element of the enumarable.
+        /// @brief Returns an iterator to the first element of the enumerable.
         /// @return Iterator to the first element.
         iterator begin() noexcept override {return ienumerable<value_type>::begin();}
         
@@ -307,11 +307,11 @@ namespace xtd {
           reserve(value);
         }
         
-        /// @brief Returns an iterator to the first element of the enumarable.
+        /// @brief Returns an iterator to the first element of the enumerable.
         /// @return Iterator to the first element.
         const_iterator cbegin() const noexcept override {return ienumerable<value_type>::cbegin();}
         
-        /// @brief Returns an iterator to the element following the last element of the enumarable.
+        /// @brief Returns an iterator to the element following the last element of the enumerable.
         /// @return Iterator to the element following the last element.
         const_iterator cend() const noexcept override {return ienumerable<value_type>::cend();}
         
@@ -361,10 +361,10 @@ namespace xtd {
         /// @return `true` if the container is empty, `false` otherwise.
         virtual bool empty() const noexcept {return data_->items.empty();}
         
-        /// @brief Returns an iterator to the element following the last element of the enumarable.
+        /// @brief Returns an iterator to the element following the last element of the enumerable.
         /// @return Iterator to the element following the last element.
         const_iterator end() const noexcept override {return ienumerable<value_type>::end();}
-        /// @brief Returns an iterator to the element following the last element of the enumarable.
+        /// @brief Returns an iterator to the element following the last element of the enumerable.
         /// @return Iterator to the element following the last element.
         iterator end() noexcept override {return ienumerable<value_type>::end();}
         

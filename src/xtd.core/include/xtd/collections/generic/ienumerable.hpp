@@ -15,11 +15,11 @@ namespace xtd {
       /// @par Definition
       /// ```cpp
       /// template<class type_t>
-      /// class ienumarable interface_
+      /// class ienumerable interface_
       /// ```
       /// @par Header
       /// ```cpp
-      /// #include <xtd/collections/generic/ienumarable>
+      /// #include <xtd/collections/generic/ienumerable>
       /// ```
       /// @par Namespace
       /// xtd::collections::generic
