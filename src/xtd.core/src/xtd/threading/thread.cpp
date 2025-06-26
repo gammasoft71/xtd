@@ -272,6 +272,7 @@ bool thread::join_all(int32 milliseconds_timeout) {
   auto sw = stopwatch::start_new();
   if (!thread_pool::join_all(milliseconds_timeout)) return false;
 
+  auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
   auto thread_pointers = list<thread*> {};
   for (auto& thread : get_static_data().threads)
     thread_pointers.add(thread.get());
@@ -469,14 +470,15 @@ thread::static_data& thread::get_static_data() {
 }
 
 thread& thread::get_thread(intptr thread_id) {
+  static auto& ut = unmanaged_thread();
   try {
     if (thread_id == main_thread_id_) return main_thread();
     auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
     for (auto& thread : get_static_data().threads)
       if (thread->data_ && thread->data_->thread_id == thread_id) return *thread;
-    return unmanaged_thread();
+    return ut;
   } catch(...) {
-    return unmanaged_thread();
+    return ut;
   }
 }
 
