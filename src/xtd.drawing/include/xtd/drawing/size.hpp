@@ -4,6 +4,7 @@
 #pragma once
 #include "../drawing_export.hpp"
 #include "size_f.hpp"
+#include <xtd/icomparable>
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/string>
@@ -28,7 +29,7 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing coordinates
-    struct drawing_export_ size : xtd::object, xtd::iequatable<size> {
+    struct drawing_export_ size : xtd::object, xtd::icomparable<size>, xtd::iequatable<size> {
       /// @name Public Fields
       
       /// @{
@@ -77,6 +78,17 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      /// @brief Compares the current instance with another object of the same type.
+      /// @param obj An object to compare with this instance.
+      /// @return A 32-bit signed integer that indicates the relative order of the objects being compared.
+      /// The return value has these meanings:
+      ///
+      /// | Value             | Condition                          |
+      /// | ----------------- | ---------------------------------- |
+      /// | Less than zero    | This instance is less than obj.    |
+      /// | Zero              | This instance is equal to obj.     |
+      /// | Greater than zero | This instance is greater than obj. |
+      int32 compare_to(const xtd::drawing::size& obj) const noexcept override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.

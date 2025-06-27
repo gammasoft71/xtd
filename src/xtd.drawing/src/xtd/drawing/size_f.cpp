@@ -21,6 +21,14 @@ size_f size_f::add(const size_f& size1, const size_f& size2) noexcept {
   return size1 + size2;
 }
 
+xtd::int32 size_f::compare_to(const size_f& obj) const noexcept {
+  if (width < obj.width) return -1;
+  if (width > obj.width) return 1;
+  if (height < obj.height) return -1;
+  if (height > obj.height) return 1;
+  return 0;
+}
+
 bool size_f::equals(const object& obj) const noexcept {
   return is<size_f>(obj) && equals(static_cast<const size_f&>(obj));
 }
