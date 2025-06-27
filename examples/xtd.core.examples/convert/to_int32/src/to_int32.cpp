@@ -25,7 +25,7 @@ auto main() -> int {
   console::write_line("Convert any to int :");
   console::write_line("--------------------");
   auto any_value = std::make_any<int>(42);
-  console::write_line("any_cast<int>(any_value)     = {}", any_cast<int>(any_value));
+  console::write_line("any_cast<int>(any_value)     = {}", std::any_cast<int>(any_value));
   console::write_line("as<int>(any_value)           = {}", as<int>(any_value));
   console::write_line("convert::to_int32(any_value) = {}", convert::to_int32(any_value));
   console::write_line();
