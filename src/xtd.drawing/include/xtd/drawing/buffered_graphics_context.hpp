@@ -73,7 +73,7 @@ namespace xtd {
       inline static const int BUFFER_BUSY_PAINTING = 1; //graphics buffer is busy being created/painting
       inline static const int BUFFER_BUSY_DESTROYING = 2; //graphics buffer is busy destroying
       
-      xtd::drawing::buffered_graphics buffer_;
+      xtd::ptr<xtd::drawing::buffered_graphics> buffer_;
       xtd::drawing::size buffered_size_;
       int busy_ = BUFFER_FREE;
       xtd::drawing::graphics compat_graphics_;
