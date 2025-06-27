@@ -1,21 +1,8 @@
 #include <xtd/xtd>
 
-namespace xtd::tests {
-  class form1 : public form {
-  public:
-    static auto main() {
-      application::system_controls(true);
-      application::run(form1 {});
-    }
-    
-    form1() {
-      text("form1");
-      button1.click += [&] {message_box::show(*this, "Hello, World! !");};
-    }
-    
-  private:
-    button button1 = button::create(*this, "button1", {10, 10});
-  };
+auto main() -> int {
+  auto form1 = form::create("form1");
+  auto button1 = button::create(form1, "button1", {10, 10});
+  button1.click += [&] {message_box::show(form1, "Hello, World! !");};
+  application::run(form1);
 }
-
-startup_(tests::form1::main);

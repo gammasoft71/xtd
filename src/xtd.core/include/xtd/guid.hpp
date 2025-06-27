@@ -158,7 +158,7 @@ namespace xtd {
     
     /// @brief Returns a 16-element byte array that contains the value of this instance.
     /// @return A 16-element byte array.
-    const xtd::array<xtd::byte>& to_byte_array() const noexcept;
+    xtd::array<xtd::byte> to_byte_array() const noexcept;
     
     /// @brief Returns a string representation of the value of this instance in registry format.
     /// @return The value of this xtd::guid, formatted by using the "D" format specifier as follows:

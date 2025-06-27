@@ -98,7 +98,7 @@ size guid::get_hash_code() const noexcept {
   return result.to_hash_code();
 }
 
-const array<byte>& guid::to_byte_array() const noexcept {
+array<byte> guid::to_byte_array() const noexcept {
   return data_;
 }
 
