@@ -21,7 +21,7 @@ buffered_graphics_context& buffered_graphics_context::maximum_buffer(const xtd::
 
 
 void buffered_graphics_context::allocate(const xtd::drawing::graphics& target_graphics, const xtd::drawing::rectangle& target_rectangle) {
-  compat_graphics_ = target_graphics;
+  *compat_graphics_ = target_graphics;
   
 }
 
