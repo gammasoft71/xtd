@@ -1346,31 +1346,30 @@ This constructor is an O(n) operation, where n is the number of elements in dict
 <div class="line">    <span class="keyword">auto</span> open_with = <a class="code hl_typedef" href="group__generic__collections.html#ga49fc8f84e06c44f96cbc96b8d7705a5b">sorted_dictionary&lt;string, string&gt;</a> {};</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Add some elements to the dictionary.</span></div>
-<div class="line">    open_with.add(<span class="stringliteral">&quot;txt&quot;</span>, <span class="stringliteral">&quot;notepad.exe&quot;</span>);</div>
-<div class="line">    open_with.add(<span class="stringliteral">&quot;bmp&quot;</span>, <span class="stringliteral">&quot;paint.exe&quot;</span>);</div>
-<div class="line">    open_with.add(<span class="stringliteral">&quot;dib&quot;</span>, <span class="stringliteral">&quot;paint.exe&quot;</span>);</div>
-<div class="line">    open_with.add(<span class="stringliteral">&quot;rtf&quot;</span>, <span class="stringliteral">&quot;wordpad.exe&quot;</span>);</div>
+<div class="line">    open_with.insert({<span class="stringliteral">&quot;txt&quot;</span>, <span class="stringliteral">&quot;notepad.exe&quot;</span>});</div>
+<div class="line">    open_with.insert({<span class="stringliteral">&quot;bmp&quot;</span>, <span class="stringliteral">&quot;paint.exe&quot;</span>});</div>
+<div class="line">    open_with.insert({<span class="stringliteral">&quot;dib&quot;</span>, <span class="stringliteral">&quot;paint.exe&quot;</span>});</div>
+<div class="line">    open_with.insert({<span class="stringliteral">&quot;rtf&quot;</span>, <span class="stringliteral">&quot;wordpad.exe&quot;</span>});</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Create a dictionary of strings with string keys, and</span></div>
 <div class="line">    <span class="comment">// initialize it with the contents of the sorted dictionary.</span></div>
-<div class="line">    <span class="keyword">auto</span> copy = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary&lt;string, string&gt;</a>(open_with);</div>
+<div class="line">    <span class="keyword">auto</span> copy = dictionary&lt;string, string&gt;(open_with.begin(), open_with.end());</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// List the contents of the copy.</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
-<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">const</span> <a class="code hl_struct" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair&lt;string, string&gt;</a>&amp; kvp : copy)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;key = {0}, value = {1}&quot;</span>, kvp.key(), kvp.value());</div>
+<div class="line">    console::write_line();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">const</span> key_value_pair&lt;string, string&gt;&amp; kvp : copy)</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;key = {0}, value = {1}&quot;</span>, kvp.key(), kvp.value());</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(example::main);</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">// This code can produce the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// key = txt, value = notepad.exe</span></div>
 <div class="line"><span class="comment">// key = bmp, value = paint.exe</span></div>
 <div class="line"><span class="comment">// key = dib, value = paint.exe</span></div>
 <div class="line"><span class="comment">// key = rtf, value = wordpad.exe</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1dictionary_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a></div><div class="ttdoc">Represents a collection of keys and values.</div><div class="ttdef"><b>Definition</b> dictionary.hpp:67</div></div>
 <div class="ttc" id="agroup__generic__collections_html_ga49fc8f84e06c44f96cbc96b8d7705a5b"><div class="ttname"><a href="group__generic__collections.html#ga49fc8f84e06c44f96cbc96b8d7705a5b">xtd::collections::generic::sorted_dictionary</a></div><div class="ttdeci">std::map&lt; key_t, value_t, lesser_t, allocator_t &gt; sorted_dictionary</div><div class="ttdoc">Represents a collection of key/value pairs that are sorted on the key.</div><div class="ttdef"><b>Definition</b> sorted_dictionary.hpp:38</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -6788,7 +6787,7 @@ template&lt;class key_t, class value_t, class hasher_t = helpers::hasher&lt;key_
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 27 2025 10:21:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jun 27 2025 20:52:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
