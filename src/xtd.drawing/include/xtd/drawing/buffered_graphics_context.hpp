@@ -76,7 +76,7 @@ namespace xtd {
       xtd::ptr<xtd::drawing::buffered_graphics> buffer_;
       xtd::drawing::size buffered_size_;
       int busy_ = BUFFER_FREE;
-      xtd::drawing::graphics compat_graphics_;
+      xtd::ptr<xtd::drawing::graphics> compat_graphics_;
       bool invalidate_when_free_ = false;
       xtd::drawing::size maximum_buffer_ {75 * 3, 32 * 3}; //by defualt, the size of our maxbuffer will be 3 x standard button size.
       xtd::drawing::point target_location_;
