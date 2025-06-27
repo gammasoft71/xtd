@@ -25,28 +25,28 @@ namespace xtd {
     /// @include linq_from3.cpp
     /// @see xtd::linq::enumerable::from methods for all overloads of xtd::linq::from.
     template<class collection_t>
-    const auto& from(const collection_t& source) noexcept {
+    auto from(const collection_t& source) noexcept {
       return enumerable::as_enumerable(source);
     }
     /// @cond
     template<class input_iterator_t>
-    const auto& from(input_iterator_t first, input_iterator_t last) noexcept {
+    auto from(input_iterator_t first, input_iterator_t last) noexcept {
       return enumerable::as_enumerable(first, last);
     }
     template<class source_t>
-    const xtd::collections::generic::ienumerable<source_t>& from(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
+    auto from(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
       return enumerable::as_enumerable(source);
     }
     template<class source_t>
-    const xtd::collections::generic::ienumerable<source_t>& from(const std::initializer_list<source_t>& source) noexcept{
+    auto from(const std::initializer_list<source_t>& source) noexcept{
       return enumerable::as_enumerable(source);
     }
     template<class input_iterator_t>
-    const auto& from(input_iterator_t iterator, size_t length) noexcept {
+    auto from(input_iterator_t iterator, size_t length) noexcept {
       return enumerable::as_enumerable(iterator, iterator + length);
     }
     template<class source_t, size_t length>
-    const auto& from(const source_t (&array)[length]) noexcept {
+    auto from(const source_t (&array)[length]) noexcept {
       return enumerable::as_enumerable(array, array + length);
     }
     /// @endcond

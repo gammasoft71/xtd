@@ -141,7 +141,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use Append to append a value to the end of the sequence.
           /// @include enumerable_append.cpp
-          const ienumerable<source_t>& append(const source_t& element) const noexcept {
+          auto append(const source_t& element) const noexcept {
             return xtd::linq::enumerable::append(base(), element);
           }
 
@@ -150,7 +150,7 @@ namespace xtd {
           /// @par Example
           /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
           /// @include enumerable_as_enumerable.cpp
-          const ienumerable<source_t>& as_enumerable() const noexcept {
+          auto as_enumerable() const noexcept {
             return xtd::linq::enumerable::as_enumerable(base());
           }
 
@@ -166,7 +166,7 @@ namespace xtd {
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains each element of the source sequence cast to the specified type.
           /// @exception xtd::invalid_cast_exception An element in the sequence cannot be cast to type `result_t`.
           template <class result_t>
-          const ienumerable<result_t>& cast() const noexcept {
+          auto cast() const noexcept {
             return xtd::linq::enumerable::cast<result_t>(base());
           }
 
@@ -175,14 +175,14 @@ namespace xtd {
           /// @param source A sequence of values to chunk.
           /// @param size The maximum size of each chunk.
           /// @return A sequence of chunks of size at most size.
-          const ienumerable<xtd::array<source_t>>& chunk(size_t size) const {
+          auto chunk(size_t size) const {
             return xtd::linq::enumerable::chunk(base(), size);
           }
 
           /// @brief Concatenates two sequences.
           /// @param second The sequence to concatenate to the current sequence.
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains the concatenated elements of the two input sequences.
-          const ienumerable<source_t>& concat(const ienumerable<source_t>& second) const noexcept {
+          auto concat(const ienumerable<source_t>& second) const noexcept {
             return xtd::linq::enumerable::concat(base(), second);
           }
 
@@ -235,7 +235,7 @@ namespace xtd {
           /// The following code example demonstrates how to use xtd::linq::enumerable::count_by <source_t>(const ienumerable <source_t>&, const std::function <key_t(const source_t&)>&) to count the number of elements in a sequence grouped by key.
           /// @include enumerable_count_by.cpp
           template <class key_t>
-          const ienumerable<key_value_pair<key_t, xtd::size>>& count_by(const std::function<key_t(const source_t&)>& key_selector) const noexcept {
+          auto count_by(const std::function<key_t(const source_t&)>& key_selector) const noexcept {
             return xtd::linq::enumerable::count_by<key_t, source_t>(base(), key_selector);
           }
           
@@ -248,20 +248,20 @@ namespace xtd {
           /// The following code example demonstrates how to use xtd::linq::enumerable::count_by <source_t>(const ienumerable <source_t>&, const std::function <key_t(const source_t&)>&) to count the number of elements in a sequence grouped by key.
           /// @include enumerable_count_by.cpp
           template <class key_t>
-          const ienumerable<key_value_pair<key_t, xtd::size>>& count_by(const std::function<key_t(const source_t&)>& key_selector, const iequality_comparer<key_t>& key_comparer) const noexcept {
+          auto count_by(const std::function<key_t(const source_t&)>& key_selector, const iequality_comparer<key_t>& key_comparer) const noexcept {
             return xtd::linq::enumerable::count_by<key_t, source_t>(base(), key_selector, key_comparer);
           }
           
           /// @brief Returns the elements of the specified sequence or the type parameter's default value in a singleton collection if the current sequence is empty.
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains default_value if source is empty; otherwise, source.
-          const ienumerable<source_t>& default_if_empty() const noexcept {
+          auto default_if_empty() const noexcept {
             return xtd::linq::enumerable::default_if_empty(base());
           }
           
           /// @brief Returns the elements of the specified sequence or the specified value in a singleton collection if the current sequence is empty.
           /// @param default_value The value to return if the sequence is empty.
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains default_value if source is empty; otherwise, source.
-          const ienumerable<source_t>& default_if_empty(const source_t& default_value) const noexcept {
+          auto default_if_empty(const source_t& default_value) const noexcept {
             return xtd::linq::enumerable::default_if_empty(base(), default_value);
           }
 
@@ -301,7 +301,7 @@ namespace xtd {
           /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
           /// @include enumerable_range.cpp.cpp
           template<class result_t>
-          const ienumerable<result_t>& select(const std::function<result_t(const source_t&)>& selector) const {
+          auto select(const std::function<result_t(const source_t&)>& selector) const {
             return xtd::linq::enumerable::select<result_t, source_t>(base(), selector);
           }
           /// @brief Projects each element of a sequence into a new form.
@@ -311,7 +311,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
           /// @include enumerable_range.cpp.cpp
-          const ienumerable<source_t>& select(const std::function<source_t(const source_t&)>& selector) const {
+          auto select(const std::function<source_t(const source_t&)>& selector) const {
             return xtd::linq::enumerable::select(base(), selector);
           }
           /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
@@ -323,7 +323,7 @@ namespace xtd {
           /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&, size_t)>&) to project over a sequence of values and use the index of each element.
           /// @include enumerable_select.cpp
           template<class result_t>
-          const ienumerable<result_t>& select(const std::function<result_t(const source_t&, size_t index)>& selector) const {
+          auto select(const std::function<result_t(const source_t&, size_t index)>& selector) const {
             return xtd::linq::enumerable::select<result_t, source_t>(base(), selector);
           }
           /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
@@ -333,7 +333,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&, size_t)>&) to project over a sequence of values and use the index of each element.
           /// @include enumerable_select.cpp
-          const ienumerable<source_t>& select(const std::function<source_t(const source_t&, size_t index)>& selector) const {
+          auto select(const std::function<source_t(const source_t&, size_t index)>& selector) const {
             return xtd::linq::enumerable::select(base(), selector);
           }
 
@@ -350,7 +350,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::where <source_t>(const ienumerable <source_t>&, const std::function<bool (const source_t&)>&) to filter a sequence.
           /// @include enumerable_where.cpp
-          const ienumerable<source_t>& where(const std::function<bool(const source_t&)>& predicate) const {
+          auto where(const std::function<bool(const source_t&)>& predicate) const {
             return xtd::linq::enumerable::where(base(), predicate);
           }
           /// @brief Filters a sequence of values based on a predicate. Each element's index is used in the logic of the predicate function.
@@ -359,7 +359,7 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::where <source_t>(const ienumerable <source_t>&, const std::function<bool (const source_t&, size_t)>&) to filter a sequence based on a predicate that involves the index of each element.
           /// @include enumerable_where2.cpp
-          const ienumerable<source_t>& where(const std::function<bool(const source_t&, size_t)>& predicate) const {
+          auto where(const std::function<bool(const source_t&, size_t)>& predicate) const {
             return xtd::linq::enumerable::where(base(), predicate);
           }
           /// @}
