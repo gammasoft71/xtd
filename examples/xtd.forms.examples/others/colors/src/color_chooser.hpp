@@ -121,7 +121,7 @@ namespace colors_example {
       auto index = selected_index();
       selected_index(npos);
       colors_.clear();
-      auto colors = std::any_cast<const xtd::array<xtd::drawing::color>&(*)() noexcept>(colors_choice_.selected_item().tag());
+      auto colors = as<const xtd::array<xtd::drawing::color>&(*)() noexcept>(colors_choice_.selected_item().tag());
       for (auto iterator = colors().rbegin(); iterator != colors().rend(); ++iterator)
         add_color_panel(*iterator);
       if (index == npos || colors_.size() == 0) return;
@@ -132,7 +132,7 @@ namespace colors_example {
     
     void on_color_panel_click(xtd::object & sender, const xtd::event_args & e) {
       selected_index(npos);
-      selected_index(colors_.size() - 1 - std::any_cast<size_t>(xtd::as<control>(sender).tag()));
+      selected_index(colors_.size() - 1 - as<size_t>(xtd::as<control>(sender).tag()));
     }
     
     void on_selected_index_changed(const xtd::event_args& e) {
@@ -151,7 +151,7 @@ namespace colors_example {
     void on_selected_color_changed(const xtd::event_args& e) {
       for (auto color : colors_)
         if (color->color() == selected_color_) {
-          selected_index(colors_.size() - 1 - std::any_cast<size_t>(color->tag()));
+          selected_index(colors_.size() - 1 - as<size_t>(color->tag()));
           break;
         }
       selected_color_changed(*this, e);
