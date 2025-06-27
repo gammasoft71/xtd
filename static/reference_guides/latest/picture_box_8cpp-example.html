@@ -143,7 +143,7 @@ $(function(){ initResizable(false); });
 <div class="line">      choice1.items().push_back_range({{<span class="stringliteral">&quot;normal&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga1bed745e8ce3f19294e1c4de1f3d97deafea087517c26fadd409bd4b9dc642555">picture_box_size_mode::normal</a>}, {<span class="stringliteral">&quot;stretch_image&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga1bed745e8ce3f19294e1c4de1f3d97dea4cd168022200e9a07cdadd9ab1fcf88c">picture_box_size_mode::stretch_image</a>}, {<span class="stringliteral">&quot;auto_size&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga1bed745e8ce3f19294e1c4de1f3d97deac74b6cc0033c255d1b2a0e6f9660b1a5">picture_box_size_mode::auto_size</a>}, {<span class="stringliteral">&quot;center_image&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga1bed745e8ce3f19294e1c4de1f3d97dea0fd0915dae681076399b75db0d5c4800">picture_box_size_mode::center_image</a>}, {<span class="stringliteral">&quot;zoom&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga1bed745e8ce3f19294e1c4de1f3d97dea15913c103a5238e5a80ac2f498ee090d">picture_box_size_mode::zoom</a>}});</div>
 <div class="line">      choice1.selected_index(0);</div>
 <div class="line">      choice1.selected_value_changed += [&amp;] {</div>
-<div class="line">        picture_box1.size_mode(std::any_cast&lt;picture_box_size_mode&gt;(choice1.selected_item().tag()));</div>
+<div class="line">        picture_box1.size_mode(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;picture_box_size_mode&gt;</a>(choice1.selected_item().tag()));</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      picture_box1.parent(*<span class="keyword">this</span>);</div>
@@ -151,7 +151,7 @@ $(function(){ initResizable(false); });
 <div class="line">      picture_box1.location({20, 65});</div>
 <div class="line">      picture_box1.size({260, 260});</div>
 <div class="line">      picture_box1.image(properties::resources::logo());</div>
-<div class="line">      picture_box1.size_mode(std::any_cast&lt;picture_box_size_mode&gt;(choice1.selected_item().tag()));</div>
+<div class="line">      picture_box1.size_mode(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;picture_box_size_mode&gt;</a>(choice1.selected_item().tag()));</div>
 <div class="line">      picture_box1.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">anchor_styles::left</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">anchor_styles::right</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a71f262d796bed1ab30e8a2d5a8ddee6f">anchor_styles::bottom</a>);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -168,6 +168,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclassxtd_1_1forms_1_1choice_html"><div class="ttname"><a href="classxtd_1_1forms_1_1choice.html">xtd::forms::choice</a></div><div class="ttdoc">Represents a choice control.</div><div class="ttdef"><b>Definition</b> choice.hpp:37</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1picture__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1picture__box.html">xtd::forms::picture_box</a></div><div class="ttdoc">Represents a standard Windows picture box.</div><div class="ttdef"><b>Definition</b> picture_box.hpp:34</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga1bed745e8ce3f19294e1c4de1f3d97dea0fd0915dae681076399b75db0d5c4800"><div class="ttname"><a href="group__xtd__forms.html#gga1bed745e8ce3f19294e1c4de1f3d97dea0fd0915dae681076399b75db0d5c4800">xtd::forms::picture_box_size_mode::center_image</a></div><div class="ttdeci">@ center_image</div><div class="ttdoc">The image is displayed in the center if the picture_box is larger than the image. If the image is lar...</div><div class="ttdef"><b>Definition</b> picture_box_size_mode.hpp:30</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga1bed745e8ce3f19294e1c4de1f3d97dea15913c103a5238e5a80ac2f498ee090d"><div class="ttname"><a href="group__xtd__forms.html#gga1bed745e8ce3f19294e1c4de1f3d97dea15913c103a5238e5a80ac2f498ee090d">xtd::forms::picture_box_size_mode::zoom</a></div><div class="ttdeci">@ zoom</div><div class="ttdoc">The size of the image is increased or decreased maintaining the size ratio.</div><div class="ttdef"><b>Definition</b> picture_box_size_mode.hpp:32</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga1bed745e8ce3f19294e1c4de1f3d97dea4cd168022200e9a07cdadd9ab1fcf88c"><div class="ttname"><a href="group__xtd__forms.html#gga1bed745e8ce3f19294e1c4de1f3d97dea4cd168022200e9a07cdadd9ab1fcf88c">xtd::forms::picture_box_size_mode::stretch_image</a></div><div class="ttdeci">@ stretch_image</div><div class="ttdoc">The image within the picture_box is stretched or shrunk to fit the size of the picture_box.</div><div class="ttdef"><b>Definition</b> picture_box_size_mode.hpp:26</div></div>
@@ -185,7 +186,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 27 2025 10:21:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jun 27 2025 20:51:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

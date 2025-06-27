@@ -154,10 +154,10 @@ Inheritance diagram for xtd::forms::country:</div>
 <div class="line">        countries_list_box.items().push_back({country.name(), country});</div>
 <div class="line">      countries_list_box.sorted(<span class="keyword">true</span>);</div>
 <div class="line">      countries_list_box.selected_value_changed += [&amp;] {</div>
-<div class="line">        country_flag_picture_box.image(bitmap(any_cast&lt;forms::country&gt;(countries_list_box.selected_item().tag()).flag(), {256, 192}));</div>
-<div class="line">        country_flag_squared_picture_box.image(bitmap(any_cast&lt;forms::country&gt;(countries_list_box.selected_item().tag()).flag_squared(), {128, 128}));</div>
-<div class="line">        country_emoticon_label.text(any_cast&lt;forms::country&gt;(countries_list_box.selected_item().tag()).emoticon());</div>
-<div class="line">        country_code_label.text(string::format(<span class="stringliteral">&quot;Codes : {} ({}) / {}&quot;</span>, any_cast&lt;forms::country&gt;(countries_list_box.selected_item().tag()).alpha_3_code(), any_cast&lt;forms::country&gt;(countries_list_box.selected_item().tag()).alpha_2_code(), any_cast&lt;forms::country&gt;(countries_list_box.selected_item().tag()).numeric_code()));</div>
+<div class="line">        country_flag_picture_box.image(bitmap(as&lt;forms::country&gt;(countries_list_box.selected_item().tag()).flag(), {256, 192}));</div>
+<div class="line">        country_flag_squared_picture_box.image(bitmap(as&lt;forms::country&gt;(countries_list_box.selected_item().tag()).flag_squared(), {128, 128}));</div>
+<div class="line">        country_emoticon_label.text(as&lt;forms::country&gt;(countries_list_box.selected_item().tag()).emoticon());</div>
+<div class="line">        country_code_label.text(string::format(<span class="stringliteral">&quot;Codes : {} ({}) / {}&quot;</span>, as&lt;forms::country&gt;(countries_list_box.selected_item().tag()).alpha_3_code(), as&lt;forms::country&gt;(countries_list_box.selected_item().tag()).alpha_2_code(), as&lt;forms::country&gt;(countries_list_box.selected_item().tag()).numeric_code()));</div>
 <div class="line">      };</div>
 <div class="line">      countries_list_box.selected_item(countries::belgium().<a class="code hl_function" href="group__threading.html#ga5ee11cda9ca27346d53de02c7c4883ea">name</a>());</div>
 <div class="line">      </div>
@@ -770,7 +770,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 27 2025 10:21:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jun 27 2025 20:52:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
