@@ -114,7 +114,7 @@ inline void xtd::array<>::copy(const array<source_type_t, source_rank, source_al
   if (source_index + length > source_array.data_->items.size()) helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
   if (destination_index + length > destination_array.data_->items.size()) helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
   for (auto i = xtd::size {}; i < length; ++i)
-    destination_array.data_->items[destination_index + i] = as<source_type_t>(source_array.data_->items[source_index + i]);
+    destination_array.data_->items[destination_index + i] = as<destination_type_t>(source_array.data_->items[source_index + i]);
 }
 
 namespace std {
