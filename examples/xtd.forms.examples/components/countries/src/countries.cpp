@@ -32,10 +32,10 @@ namespace countries_example {
         countries_list_box.items().push_back({country.name(), country});
       countries_list_box.sorted(true);
       countries_list_box.selected_value_changed += [&] {
-        country_flag_picture_box.image(bitmap(any_cast<forms::country>(countries_list_box.selected_item().tag()).flag(), {256, 192}));
-        country_flag_squared_picture_box.image(bitmap(any_cast<forms::country>(countries_list_box.selected_item().tag()).flag_squared(), {128, 128}));
-        country_emoticon_label.text(any_cast<forms::country>(countries_list_box.selected_item().tag()).emoticon());
-        country_code_label.text(string::format("Codes : {} ({}) / {}", any_cast<forms::country>(countries_list_box.selected_item().tag()).alpha_3_code(), any_cast<forms::country>(countries_list_box.selected_item().tag()).alpha_2_code(), any_cast<forms::country>(countries_list_box.selected_item().tag()).numeric_code()));
+        country_flag_picture_box.image(bitmap(as<forms::country>(countries_list_box.selected_item().tag()).flag(), {256, 192}));
+        country_flag_squared_picture_box.image(bitmap(as<forms::country>(countries_list_box.selected_item().tag()).flag_squared(), {128, 128}));
+        country_emoticon_label.text(as<forms::country>(countries_list_box.selected_item().tag()).emoticon());
+        country_code_label.text(string::format("Codes : {} ({}) / {}", as<forms::country>(countries_list_box.selected_item().tag()).alpha_3_code(), as<forms::country>(countries_list_box.selected_item().tag()).alpha_2_code(), as<forms::country>(countries_list_box.selected_item().tag()).numeric_code()));
       };
       countries_list_box.selected_item(countries::belgium().name());
       
