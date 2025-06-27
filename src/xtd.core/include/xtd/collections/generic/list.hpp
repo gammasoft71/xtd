@@ -1538,8 +1538,8 @@ namespace xtd::collections::generic::extensions {
 
 namespace xtd::linq {
   template <class source_t>
-  inline const xtd::collections::generic::list<source_t>& enumerable::to_list(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
-    static thread_local auto result = xtd::collections::generic::list<source_t> {};
+  inline auto enumerable::to_list(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
+    auto result = xtd::collections::generic::list<source_t> {};
     result = xtd::collections::generic::list<source_t> {source};
     return result;
   }
