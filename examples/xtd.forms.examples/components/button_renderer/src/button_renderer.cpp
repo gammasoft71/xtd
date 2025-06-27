@@ -23,7 +23,7 @@ namespace button_renderer_example {
       choice_theme.location({10, 10});
       choice_theme.items().push_back("default theme");
       auto names = application::style_sheet_names();
-      sort(names.begin(), names.end());
+      names.sort();
       choice_theme.items().push_back_range(names);
       choice_theme.selected_index(0);
       choice_theme.selected_index_changed += [&] {
