@@ -10,14 +10,14 @@ public:
     auto open_with = sorted_dictionary<string, string> {};
     
     // Add some elements to the dictionary.
-    open_with.add("txt", "notepad.exe");
-    open_with.add("bmp", "paint.exe");
-    open_with.add("dib", "paint.exe");
-    open_with.add("rtf", "wordpad.exe");
+    open_with.insert({"txt", "notepad.exe"});
+    open_with.insert({"bmp", "paint.exe"});
+    open_with.insert({"dib", "paint.exe"});
+    open_with.insert({"rtf", "wordpad.exe"});
     
     // Create a dictionary of strings with string keys, and
     // initialize it with the contents of the sorted dictionary.
-    auto copy = dictionary<string, string>(open_with);
+    auto copy = dictionary<string, string>(open_with.begin(), open_with.end());
     
     // List the contents of the copy.
     console::write_line();
@@ -28,7 +28,7 @@ public:
 
 startup_(example::main);
 
-// This code produces the following output :
+// This code can produce the following output :
 //
 // key = txt, value = notepad.exe
 // key = bmp, value = paint.exe
