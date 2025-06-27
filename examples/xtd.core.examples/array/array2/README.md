@@ -19,16 +19,15 @@ xtdc run
 ## Output
 
 ```
-The array has 3 dimension(s) and a total of 24 elements.
-        length  lower   upper
-0:      2       0       1
-1:      3       0       2
-2:      4       0       3
-The array contains the following values:
-        0       1       2       3
-        10      11      12      13
-        20      21      22      23
-        100     101     102     103
-        110     111     112     113
-        120     121     122     123
+Initially,
+integer array:	1	2	3	4	5
+Object array: 	26	27	28	29	30
+
+After copying the first two elements of the integer array to the Object array,
+integer array:	1	2	3	4	5
+Object array: 	1	2	28	29	30
+
+After copying the last two elements of the Object array to the integer array,
+integer array:	1	2	3	29	30
+Object array: 	1	2	28	29	30
 ```

@@ -6,13 +6,13 @@ using namespace xtd;
 
 auto print_values(const array<int>& my_arr) {
   for (auto i : my_arr)
-    console::write_line("\t{}", i);
+    console::write("\t{}", i);
   console::write_line();
 }
 
 auto print_values(const array<any_object>& my_arr) {
   for (auto o : my_arr)
-    console::write_line("\t{}", o);
+    console::write("\t{}", o);
   console::write_line();
 }
 
@@ -38,8 +38,8 @@ auto main() -> int {
   console::write("Object array: ");
   print_values(my_obj_array);
   
-  // Copies the last two elements from the Object array to the integer array.
-  System.Array.Copy(my_obj_array, my_obj_array.GetUpperBound(0) - 1, my_int_array, my_int_array.GetUpperBound(0) - 1, 2);
+  // Copies the last two elements from the object array to the integer array.
+  xtd::array<>::copy(my_obj_array, my_obj_array.get_upper_bound(0) - 1, my_int_array, my_int_array.get_upper_bound(0) - 1, 2);
   
   // Prints the values of the modified arrays.
   console::write_line("\nAfter copying the last two elements of the Object array to the integer array,");
@@ -51,15 +51,14 @@ auto main() -> int {
 
 // This code produces the following output :
 //
-// The array has 3 dimension(s) and a total of 24 elements.
-//         length  lower   upper
-// 0:      2       0       1
-// 1:      3       0       2
-// 2:      4       0       3
-// The array contains the following values:
-//         0       1       2       3
-//         10      11      12      13
-//         20      21      22      23
-//         100     101     102     103
-//         110     111     112     113
-//         120     121     122     123
+// Initially,
+// integer array:  1  2  3  4  5
+// Object array:   26  27  28  29  30
+//
+// After copying the first two elements of the integer array to the Object array,
+// integer array:  1  2  3  4  5
+// Object array:   1  2  28  29  30
+//
+// After copying the last two elements of the Object array to the integer array,
+// integer array:  1  2  3  29  30
+// Object array:   1  2  28  29  30
