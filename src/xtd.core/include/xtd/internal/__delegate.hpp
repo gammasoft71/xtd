@@ -153,7 +153,7 @@ xtd::async_result xtd::delegate<result_t(arguments_t...)>::begin_invoke(xtd::asy
 template<typename result_t, typename... arguments_t>
 struct xtd::delegate<result_t(arguments_t...)>::delegate_async_state {
   std::shared_ptr<async_result_invoke> async;
-  std::tuple<arguments_t...> arguments;
+  std::tuple<std::decay_t<arguments_t>...> arguments;
   std::function<result_t(arguments_t...)> invoker;
   delegate* self;
   std::function<xtd::any_object(std::shared_ptr<delegate_async_state>)> start = [](std::shared_ptr<delegate_async_state> state) {
