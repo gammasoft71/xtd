@@ -25,7 +25,7 @@ auto main() -> int {
   console::write_line("Convert any to byte :");
   console::write_line("---------------------");
   auto any_value = std::make_any<byte>(42);
-  console::write_line("any_cast<byte>(any_value)   = {}", any_cast<byte>(any_value));
+  console::write_line("any_cast<byte>(any_value)   = {}", std::any_cast<byte>(any_value));
   console::write_line("as<byte>(any_value)         = {}", as<byte>(any_value));
   console::write_line("convert::to_byte(any_value) = {}", convert::to_byte(any_value));
   console::write_line();
