@@ -31,7 +31,7 @@ public:
     .size({150, 35})
     .text("Select multiple files")
     .click += [] {
-      auto file_names = list<string> {};
+      auto file_names = array<string> {};
       auto res = open_file_box::show(file_names, "Please select multiple files...", open_file_box_options::check_file_exists | open_file_box_options::show_hidden_files);
       if (res == dialog_result::ok)
         message_box::show(string::format("Selected files are:\n{}", string::join("\n", file_names)));
