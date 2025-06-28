@@ -17,7 +17,7 @@ public:
     button1.click += [&] {
       static about_dialog dialog;
       dialog.dialog_appearance(dialog_appearance::system);
-      dialog.icon(xtd::drawing::bitmap {gammasoft_64x64_xpm});
+      dialog.icon(xtd::drawing::image::from_xpm_data(gammasoft_64x64_xpm));
       dialog.name("About dialog system");
       dialog.version("1.0");
       dialog.long_version("1.0.0");
