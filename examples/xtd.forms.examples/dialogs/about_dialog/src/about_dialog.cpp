@@ -17,7 +17,7 @@ public:
     about_button.text("About...");
     about_button.click += [&] {
       static auto dialog = about_dialog {};
-      dialog.icon(xtd::drawing::bitmap {gammasoft_64x64_xpm});
+      dialog.icon(xtd::drawing::image::from_xpm_data(gammasoft_64x64_xpm));
       dialog.name("About dialog");
       dialog.version("1.0");
       dialog.long_version("1.0.0");
