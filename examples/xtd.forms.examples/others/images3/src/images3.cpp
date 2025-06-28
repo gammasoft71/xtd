@@ -25,7 +25,7 @@ namespace example {
       choice_theme.width(323);
       choice_theme.items().push_back("current theme");
       auto names = application::style_sheet_names();
-      sort(names.begin(), names.end());
+      names.sort();
       choice_theme.items().push_back_range(names);
       choice_theme.selected_index(0);
       choice_theme.selected_index_changed += event_handler(*this, &form1::update_form);
