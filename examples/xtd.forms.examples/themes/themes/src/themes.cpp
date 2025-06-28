@@ -263,7 +263,7 @@ public:
     themes_choice.anchor(anchor_styles::left | anchor_styles::right | anchor_styles::bottom);
     themes_choice.items().push_back("current theme");
     auto names = application::style_sheet_names();
-    sort(names.begin(), names.end());
+    names.sort();
     themes_choice.items().push_back_range(names);
     themes_choice.selected_index_changed += [&] {
       if (themes_choice.selected_index() == 0) application::style_sheet(application::system_style_sheet());
