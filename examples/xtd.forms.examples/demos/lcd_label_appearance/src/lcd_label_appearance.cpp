@@ -31,7 +31,7 @@ namespace lcd_label_appearance_example {
       lcd_style_choice.width(180);
       lcd_style_choice.items().push_back_range({{"Seven segment display", lcd_style::seven_segment_display}, {"Nine segment display", lcd_style::nine_segment_display}, {"Fourteen segment display", lcd_style::fourteen_segment_display}, {"Sixteen segment display", lcd_style::sixteen_segment_display}, {"Dot matrix display", lcd_style::dot_matrix_display}});
       lcd_style_choice.selected_value_changed += [&] {
-        label_lcd_label.lcd_style(std::any_cast<lcd_style>(lcd_style_choice.selected_item().tag()));
+        label_lcd_label.lcd_style(as<lcd_style>(lcd_style_choice.selected_item().tag()));
         segment_style_choice.items().clear();
         if (lcd_style_choice.selected_item().value() == "Dot matrix display") {
           segment_style_choice.items().push_back_range({{"Standard (or round)", dot_matrix_style::standard}, {"Square", dot_matrix_style::square}});
@@ -51,10 +51,8 @@ namespace lcd_label_appearance_example {
       segment_style_choice.width(180);
       segment_style_choice.selected_value_changed += [&] {
         auto style = segment_style_choice.selected_item().tag();
-        if (std::any_cast<dot_matrix_style>(&style))
-          label_lcd_label.dot_matrix_style(std::any_cast<forms::dot_matrix_style>(segment_style_choice.selected_item().tag()));
-        else
-          label_lcd_label.segment_style(std::any_cast<forms::segment_style>(segment_style_choice.selected_item().tag()));
+        if (is<dot_matrix_style>(style)) label_lcd_label.dot_matrix_style(as<forms::dot_matrix_style>(segment_style_choice.selected_item().tag()));
+        else label_lcd_label.segment_style(as<forms::segment_style>(segment_style_choice.selected_item().tag()));
       };
       segment_style_choice.selected_index(0);
       
