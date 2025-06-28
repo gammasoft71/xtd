@@ -153,7 +153,7 @@ $(function(){ initResizable(false); });
 <div class="line">    .<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>({150, 35})</div>
 <div class="line">    .<a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>(<span class="stringliteral">&quot;Select multiple files&quot;</span>)</div>
 <div class="line">    .click += [] {</div>
-<div class="line">      <span class="keyword">auto</span> file_names = <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;string&gt;</a> {};</div>
+<div class="line">      <span class="keyword">auto</span> file_names = <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {};</div>
 <div class="line">      <span class="keyword">auto</span> res = <a class="code hl_function" href="classxtd_1_1forms_1_1open__file__box.html#af449b8ce00d5128baf4072c3fdb7e712">open_file_box::show</a>(file_names, <span class="stringliteral">&quot;Please select multiple files...&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga14ef30da7042ad4c3d67475454a0a426aad5ee608a7939c27f6fc36fbcf5d37db">open_file_box_options::check_file_exists</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#gga14ef30da7042ad4c3d67475454a0a426a91f4a44445c056813a5bc81d7ab6b049">open_file_box_options::show_hidden_files</a>);</div>
 <div class="line">      <span class="keywordflow">if</span> (res == <a class="code hl_enumvalue" href="group__xtd__forms.html#gga4f0cffaa8fcb3708782f28d60386c525a444bcb3a3fcf8389296c49467f27e1d6">dialog_result::ok</a>)</div>
 <div class="line">        <a class="code hl_function" href="classxtd_1_1forms_1_1message__box.html#a265c0deaf6d4fef2014f9b27a2631eec">message_box::show</a>(string::format(<span class="stringliteral">&quot;Selected files are:\n{}&quot;</span>, string::join(<span class="stringliteral">&quot;\n&quot;</span>, file_names)));</div>
@@ -168,7 +168,7 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:79</div></div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:61</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.hpp:49</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
@@ -186,7 +186,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 28 2025 19:16:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jun 28 2025 19:31:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
