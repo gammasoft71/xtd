@@ -17,7 +17,7 @@ namespace xtd {
     namespace generic {
       /// @brief The xtd::collections::generic::extensions namespace contains collection and interface extensions.
       namespace extensions {
-        /// @brief Internal enumarable iterators definition.
+        /// @brief Internal enumerable iterators definition.
         /// @par Definition
         /// ```cpp
         /// template<class type_t, class enumerable_t, class iterator_tag_t =  std::bidirectional_iterator_tag>
@@ -44,7 +44,7 @@ namespace xtd {
         ///   console::write_line(part);
         /// ```
         /// @warning Internal use only for xtd::collections::generic::ienumerable interfece.
-        template<class type_t, class enumerable_t, class iterator_tag_t =  std::bidirectional_iterator_tag>
+        template<class type_t, class enumerable_t, class iterator_tag_t = std::bidirectional_iterator_tag>
         class enumerable_iterators {
           /// @cond
           class enumerable_iterator : public xtd::icomparable<enumerable_iterator>, public xtd::iequatable<enumerable_iterator> {
@@ -65,7 +65,7 @@ namespace xtd {
             enumerable_iterator(enumerable_iterator&& value) noexcept = default;
             enumerable_iterator(const enumerable_iterator& value) noexcept : enumerable_(value.enumerable_), enumerator_(value.enumerable_->get_enumerator()), pos_ {value.pos_} {reset();}
             enumerable_iterator& operator =(enumerable_iterator&& value) noexcept = default;
-            enumerable_iterator& operator =(const enumerable_iterator& value) const noexcept {
+            const enumerable_iterator& operator =(const enumerable_iterator& value) const noexcept {
               enumerable_ = value.enumerable_;
               enumerator_ = value.enumerable_->get_enumerator();
               pos_ = value.pos_;
@@ -88,21 +88,41 @@ namespace xtd {
             const_pointer operator ->() const {return &operator*();}
             pointer operator ->() {return &operator*();}
             
-            enumerable_iterator& operator ++() const noexcept {
+            const enumerable_iterator& operator ++() const noexcept {
               if (pos_ != std::numeric_limits<xtd::size>::max()) pos_ = enumerator_.move_next() ? pos_ + 1 : std::numeric_limits<xtd::size>::max();
               return const_cast<enumerable_iterator&>(*this);
             }
-            enumerable_iterator operator ++(int) const noexcept {
+            const enumerable_iterator operator ++(int) const noexcept {
               auto current = *this;
               operator ++();
               return current;
             }
             
-            enumerable_iterator& operator --() const noexcept {
+            enumerable_iterator& operator ++() noexcept {
+              if (pos_ != std::numeric_limits<xtd::size>::max()) pos_ = enumerator_.move_next() ? pos_ + 1 : std::numeric_limits<xtd::size>::max();
+              return const_cast<enumerable_iterator&>(*this);
+            }
+            enumerable_iterator operator ++(int) noexcept {
+              auto current = *this;
+              operator ++();
+              return current;
+            }
+            
+            const enumerable_iterator& operator --() const noexcept {
               if (pos_ != 0) pos_ = enumerator_.move_next() ? pos_ - 1 : std::numeric_limits<xtd::size>::max();
               return const_cast<enumerable_iterator&>(*this);
             }
-            enumerable_iterator operator --(int) const noexcept {
+            const enumerable_iterator operator --(int) const noexcept {
+              auto current = *this;
+              operator --();
+              return current;
+            }
+            
+            enumerable_iterator& operator --() noexcept {
+              if (pos_ != 0) pos_ = enumerator_.move_next() ? pos_ - 1 : std::numeric_limits<xtd::size>::max();
+              return const_cast<enumerable_iterator&>(*this);
+            }
+            enumerable_iterator operator --(int) noexcept {
               auto current = *this;
               operator --();
               return current;
@@ -141,34 +161,34 @@ namespace xtd {
           /// @name Public Aliases
           
           /// @{
-          /// @brief Represents the iterator of enumarable value type.
+          /// @brief Represents the iterator of enumerable value type.
           using iterator = enumerable_iterator;
-          /// @brief Represents the const iterator of enumarable value type.
+          /// @brief Represents the const iterator of enumerable value type.
           using const_iterator = const enumerable_iterator;
           /// @}
           
           /// @name Public Methods
           
           /// @{
-          /// @brief Returns an iterator to the first element of the enumarable.
+          /// @brief Returns an iterator to the first element of the enumerable.
           /// @return Iterator to the first element.
           virtual const_iterator begin() const {return cbegin();}
-          /// @brief Returns an iterator to the first element of the enumarable.
+          /// @brief Returns an iterator to the first element of the enumerable.
           /// @return Iterator to the first element.
           virtual iterator begin() {return iterator {static_cast<enumerable_t*>(this), 0};}
           
-          /// @brief Returns an iterator to the first element of the enumarable.
+          /// @brief Returns an iterator to the first element of the enumerable.
           /// @return Iterator to the first element.
           virtual const_iterator cbegin() const {return const_iterator {static_cast<const enumerable_t*>(this), 0};}
           
-          /// @brief Returns an iterator to the element following the last element of the enumarable.
+          /// @brief Returns an iterator to the element following the last element of the enumerable.
           /// @return Iterator to the element following the last element.
           virtual const_iterator cend() const {return const_iterator {static_cast<const enumerable_t*>(this), const_iterator::npos()};}
           
-          /// @brief Returns an iterator to the element following the last element of the enumarable.
+          /// @brief Returns an iterator to the element following the last element of the enumerable.
           /// @return Iterator to the element following the last element.
           virtual const_iterator end() const {return cend();}
-          /// @brief Returns an iterator to the element following the last element of the enumarable.
+          /// @brief Returns an iterator to the element following the last element of the enumerable.
           /// @return Iterator to the element following the last element.
           virtual iterator end() {return iterator {static_cast<enumerable_t*>(this), iterator::npos()};}
           /// @}
