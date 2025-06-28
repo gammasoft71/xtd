@@ -64,7 +64,7 @@ int shape::y(int index) const {
 
 shape shape::generate() noexcept {
   static auto rnd = xtd::random {};
-  static auto [min, max] = std::ranges::minmax(enum_object<>::get_values_as_int32<tetris::tetrominoes>());
+  static auto [min, max] = std::ranges::minmax(enum_object<>::get_values_as_int32<tetris::tetrominoes>().items());
   return shape {as<tetris::tetrominoes>(rnd.next(min + 1, max + 1))};
 }
 
