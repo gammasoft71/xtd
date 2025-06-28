@@ -9,12 +9,12 @@ using namespace xtd::forms;
 namespace custom_event_example {
   class custom_event_args : public event_args {
   public:
-    explicit custom_event_args(const std::any& tag) noexcept : tag_ {tag} {}
+    explicit custom_event_args(const any_object& tag) noexcept : tag_ {tag} {}
     
-    std::any tag() const noexcept {return tag_;}
+    any_object tag() const noexcept {return tag_;}
     
   private:
-    std::any tag_;
+    any_object tag_;
   };
   
   using custom_event_handler = generic_event_handler<const custom_event_args&>;
@@ -30,7 +30,7 @@ namespace custom_event_example {
       };
       
       custom_event += [&](object& sender, const custom_event_args& e) {
-        message_box::show(*this, string::format("Receive custom_event event ({})", any_cast<int>(e.tag())), "Custom event");
+        message_box::show(*this, string::format("Receive custom_event event ({})", as<int>(e.tag())), "Custom event");
       };
     }
     
