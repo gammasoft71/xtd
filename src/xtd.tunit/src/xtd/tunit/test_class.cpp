@@ -100,7 +100,7 @@ const test_class::test_collection& test_class::test_methods() const noexcept {
 
 void test_class::run(const unit_test& unit_test) {
   if (settings::default_settings().shuffle_test())
-    shuffle(tests_.begin(), tests_.end(), settings::default_settings().random_seed() ? random(settings::default_settings().random_seed()).generator() : random().generator());
+    (settings::default_settings().random_seed() ? xtd::random(settings::default_settings().random_seed()) : xtd::random()).shuffle(tests_);
     
   if (!settings::default_settings().brief()) unit_test.event_listener_->on_class_initialize_start(class_event_args(*this, unit_test));
   if (class_initialize().method() != nullptr)
