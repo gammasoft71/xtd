@@ -947,9 +947,9 @@ namespace xtd {
         /// @remarks Removes the element at `pos`.
         /// @remarks References and iterators to the erased elements are invalidated. Other iterators and references are not invalidated.
         /// @remarks The iterator `pos` must be valid and dereferenceable. Thus the xtd::collections::generic::dictionary::end iterator (which is valid, but is not dereferenceable) cannot be used as a value for `pos`.
-        const_iterator erase(const_iterator pos) {
+        iterator erase(const_iterator pos) {
           ++data_->version;
-          return to_const_type_iterator(data_->items.erase(to_const_base_type_iterator(pos)));
+          return to_type_iterator(data_->items.erase(to_const_base_type_iterator(pos)));
         }
         /// @brief Erases elements.
         /// @param first The first iterator of the range of elements to remove.
@@ -959,9 +959,9 @@ namespace xtd {
         /// @remarks Removes the elements in the range [`first`, `last`), which must be a valid range in `*this`.
         /// @remarks References and iterators to the erased elements are invalidated. Other iterators and references are not invalidated.
         /// @remarks The iterator `pos` must be valid and dereferenceable. Thus the xtd::collections::generic::dictionary::end() iterator (which is valid, but is not dereferenceable) cannot be used as a value for `pos`.
-        const_iterator erase(const_iterator first, const_iterator last) {
+        iterator erase(const_iterator first, const_iterator last) {
           ++data_->version;
-          return to_const_type_iterator(data_->items.erase(to_const_base_type_iterator(first), to_const_base_type_iterator(last)));
+          return to_type_iterator(data_->items.erase(to_const_base_type_iterator(first), to_const_base_type_iterator(last)));
         }
         /// @brief Erases elements.
         /// @param key The key value of the elements to remove.
@@ -1009,8 +1009,8 @@ namespace xtd {
         /// @param key The key value of the element to search for.
         /// @return An iterator to the requested element. If no such element is found, past-the-end (see xtd::collections::generic::dictionary::end) iterator is returned.
         /// @remarks Finds an element with key equivalent to `key`.
-        const_iterator find(const key_t& key) {
-          return to_const_type_iterator(data_->items.find(key));
+        iterator find(const key_t& key) {
+          return to_type_iterator(data_->items.find(key));
         }
         
         /// @brief Finds element with specific key.
@@ -1124,9 +1124,9 @@ namespace xtd {
         /// @remarks Inserts `value`, using `hint` as a non-binding suggestion to where the search should start.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
-        const_iterator insert(const_iterator hint, const value_type& value) {
+        iterator insert(const_iterator hint, const value_type& value) {
           ++data_->version;
-          return to_const_type_iterator(data_->items.insert(to_const_base_type_iterator(hint), value));
+          return to_type_iterator(data_->items.insert(to_const_base_type_iterator(hint), value));
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param hint The iterator, used as a suggestion as to where to insert the content.
@@ -1135,9 +1135,9 @@ namespace xtd {
         /// @remarks Inserts `value`, using `hint` as a non-binding suggestion to where the search should start.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
-        const_iterator insert(const_iterator hint, value_type&& value) {
+        iterator insert(const_iterator hint, value_type&& value) {
           ++data_->version;
-          return to_const_type_iterator(data_->items.insert(to_const_base_type_iterator(hint), value));
+          return to_type_iterator(data_->items.insert(to_const_base_type_iterator(hint), value));
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param hint The iterator, used as a suggestion as to where to insert the content.
@@ -1148,9 +1148,9 @@ namespace xtd {
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
         template <class type_t>
-        const_iterator insert(const_iterator hint, type_t&& value) {
+        iterator insert(const_iterator hint, type_t&& value) {
           ++data_->version;
-          return to_const_type_iterator(data_->items.insert(to_const_base_type_iterator(hint), value));
+          return to_type_iterator(data_->items.insert(to_const_base_type_iterator(hint), value));
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param first The first iterator of the range of elements to insert.
@@ -1206,9 +1206,9 @@ namespace xtd {
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
-        const_iterator insert(const_iterator hint, node_type&& nh) {
+        iterator insert(const_iterator hint, node_type&& nh) {
           ++data_->version;
-          return to_const_type_iterator(data_->items.inser(to_const_base_type_iterator(hint), nh));
+          return to_type_iterator(data_->items.inser(to_const_base_type_iterator(hint), nh));
         }
         
         /// @brief Inserts an element or assigns to the current element if the key already exists.
@@ -1246,9 +1246,9 @@ namespace xtd {
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
         template <class type_t>
-        const_iterator insert_or_assign(const_iterator hint, const key_t& k, type_t&& obj) {
+        iterator insert_or_assign(const_iterator hint, const key_t& k, type_t&& obj) {
           ++data_->version;
-          return to_const_type_iterator(data_->items.insert_or_assign(to_const_base_type_iterator(hint), k, obj));
+          return to_type_iterator(data_->items.insert_or_assign(to_const_base_type_iterator(hint), k, obj));
         }
         /// @brief Inserts an element or assigns to the current element if the key already exists.
         /// @param hint The iterator to the position before which the new element will be inserted.
@@ -1259,9 +1259,9 @@ namespace xtd {
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
         template <class type_t>
-        const_iterator insert_or_assign(const_iterator hint, key_t&& k, type_t&& obj) {
+        iterator insert_or_assign(const_iterator hint, key_t&& k, type_t&& obj) {
           ++data_->version;
-          return to_const_type_iterator(data_->items.insert_or_assign(to_const_base_type_iterator(hint), std::move(k), obj));
+          return to_type_iterator(data_->items.insert_or_assign(to_const_base_type_iterator(hint), std::move(k), obj));
         }
         
         /// @brief Returns the function used to compare keys for equality.
@@ -1450,9 +1450,9 @@ namespace xtd {
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
         template <class ...args_t>
-        const_iterator try_emplace(const_iterator hint, const key_t& k, args_t&&... args) {
+        iterator try_emplace(const_iterator hint, const key_t& k, args_t&&... args) {
           ++data_->version;
-          return to_const_type_iterator(data_->items.try_emplace(to_const_base_type_iterator(hint), k, std::forward<args_t>(args)...));
+          return to_type_iterator(data_->items.try_emplace(to_const_base_type_iterator(hint), k, std::forward<args_t>(args)...));
         }
         /// @brief Inserts in-place if the key does not exist, does nothing if the key exists.
         /// @param hint The iterator to the position before which the new element will be inserted.
@@ -1463,9 +1463,9 @@ namespace xtd {
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
         template <class ...args_t>
-        const_iterator try_emplace(const_iterator hint, key_t&& k, args_t&&... args) {
+        iterator try_emplace(const_iterator hint, key_t&& k, args_t&&... args) {
           ++data_->version;
-          return to_const_type_iterator(data_->items.try_emplace(to_const_base_type_iterator(hint), std::move(k), std::forward<args_t>(args)...));
+          return to_type_iterator(data_->items.try_emplace(to_const_base_type_iterator(hint), std::move(k), std::forward<args_t>(args)...));
         }
         
         /// @brief Gets the value associated with the specified key.
