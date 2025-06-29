@@ -53,9 +53,9 @@ namespace xtd {
             using iterator_category = iterator_tag_t;
             using iterator_concept  = iterator_tag_t;
             using difference_type = xtd::ptrdiff;
-            using pointer = value_type*;
+            using pointer = const value_type*;
             using const_pointer = const value_type*;
-            using reference = value_type&;
+            using reference = const value_type&;
             using const_reference = const value_type&;
 
             static constexpr xtd::size npos() {return std::numeric_limits<xtd::size>::max();}
@@ -65,13 +65,6 @@ namespace xtd {
             enumerable_iterator(enumerable_iterator&& value) noexcept = default;
             enumerable_iterator(const enumerable_iterator& value) noexcept : enumerable_(value.enumerable_), enumerator_(value.enumerable_->get_enumerator()), pos_ {value.pos_} {reset();}
             enumerable_iterator& operator =(enumerable_iterator&& value) noexcept = default;
-            const enumerable_iterator& operator =(const enumerable_iterator& value) const noexcept {
-              enumerable_ = value.enumerable_;
-              enumerator_ = value.enumerable_->get_enumerator();
-              pos_ = value.pos_;
-              reset();
-              return const_cast<enumerable_iterator&>(*this);
-            }
             enumerable_iterator& operator =(const enumerable_iterator& value) noexcept {
               enumerable_ = value.enumerable_;
               enumerator_ = value.enumerable_->get_enumerator();
@@ -84,9 +77,9 @@ namespace xtd {
             bool equals(const enumerable_iterator& rhs) const noexcept override {return pos_ == rhs.pos_;}
 
             const_reference operator *() const {return enumerator_.current();}
-            reference operator *() {return const_cast<reference>(enumerator_.current());}
+            value_type& operator *() {return const_cast<value_type&>(enumerator_.current());}
             const_pointer operator ->() const {return &operator*();}
-            pointer operator ->() {return &operator*();}
+            value_type* operator ->() {return &operator*();}
             
             const enumerable_iterator& operator ++() const noexcept {
               if (pos_ != std::numeric_limits<xtd::size>::max()) pos_ = enumerator_.move_next() ? pos_ + 1 : std::numeric_limits<xtd::size>::max();
@@ -129,7 +122,9 @@ namespace xtd {
             }
             
             template<class value_t>
-            enumerable_iterator operator +(value_t value) const noexcept {return enumerable_iterator {enumerable_, pos_ + value};}
+            const enumerable_iterator operator +(value_t value) const noexcept {return enumerable_iterator {enumerable_, pos_ + value};}
+            template<class value_t>
+            enumerable_iterator operator +(value_t value) noexcept {return enumerable_iterator {enumerable_, pos_ + value};}
             template<class value_t>
             enumerable_iterator& operator +=(value_t value) noexcept {
               *this = *this + value;
@@ -309,3 +304,16 @@ namespace xtd {
     }
   }
 }
+
+/// @cond
+namespace std {
+  template<typename type_t, typename enumerable_t, class iterator_tag_t>
+  struct iterator_traits<typename xtd::collections::generic::extensions::enumerable_iterators<type_t, enumerable_t, iterator_tag_t>> {
+    using value_type = type_t;
+    using reference = const type_t&;
+    using pointer = const type_t*;
+    using difference_type = std::ptrdiff_t;
+    using iterator_category = std::input_iterator_tag;
+  };
+}
+/// @endcond
