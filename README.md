@@ -89,9 +89,9 @@ At each commit, a build and unit tests are performed for the following configura
 | FreeBSD          | x64                     | Clang / GCC   | Debug / Release | [![Manually](https://img.shields.io/badge/build-manually-004080?branch=master&logo=gitHub&.svg)]()                                                                                          |
 | Haiku _(*)_      | x86                     | GCC           | Debug           | [![Manually](https://img.shields.io/badge/build-manually-004080?branch=master&logo=gitHub&.svg)]()                                                                                          |
 
-Unit test coverage is also checked at each commit [![codecov](https://codecov.io/gh/gammasoft71/xtd/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd)
-
  _(*) [xtd.core and xtd.tunit only](https://gammasoft71.github.io/xtd/docs/documentation/portability)._
+ 
+Unit test coverage is also checked at each commit [![codecov](https://codecov.io/gh/gammasoft71/xtd/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd)
 
 | Deploy to GitHub Pages                   | status                                                                                                                                                                                                           |
 | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
