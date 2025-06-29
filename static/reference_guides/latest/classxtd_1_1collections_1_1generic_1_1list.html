@@ -594,10 +594,10 @@ For an immutable version of the <a class="el" href="classxtd_1_1collections_1_1g
 <tr class="memitem:a28b5ffdf2e45321d747ae1915a567166" id="r_a28b5ffdf2e45321d747ae1915a567166"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28b5ffdf2e45321d747ae1915a567166">copy_to</a> (<a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> index, <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> array_index, <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438">count</a>) const</td></tr>
 <tr class="memdesc:a28b5ffdf2e45321d747ae1915a567166"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; to a compatible one-dimensional array, starting at the specified index of the target array.  <br /></td></tr>
 <tr class="separator:a28b5ffdf2e45321d747ae1915a567166"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcb88022d7e3064b010738e9a9458447" id="r_abcb88022d7e3064b010738e9a9458447"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
-<tr class="memitem:abcb88022d7e3064b010738e9a9458447"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#abcb88022d7e3064b010738e9a9458447">emplace</a> (<a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> pos, args_t &amp;&amp;... args)</td></tr>
-<tr class="memdesc:abcb88022d7e3064b010738e9a9458447"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a new element into the container directly before <code>pos</code>.  <br /></td></tr>
-<tr class="separator:abcb88022d7e3064b010738e9a9458447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef4911ad349ea1833ee092d78bf4954e" id="r_aef4911ad349ea1833ee092d78bf4954e"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
+<tr class="memitem:aef4911ad349ea1833ee092d78bf4954e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="#a274fd98d54c220fc795243e7f94b706a">iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aef4911ad349ea1833ee092d78bf4954e">emplace</a> (<a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> pos, args_t &amp;&amp;... args)</td></tr>
+<tr class="memdesc:aef4911ad349ea1833ee092d78bf4954e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a new element into the container directly before <code>pos</code>.  <br /></td></tr>
+<tr class="separator:aef4911ad349ea1833ee092d78bf4954e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a735d03795f8a73d0edd6841d641a7751" id="r_a735d03795f8a73d0edd6841d641a7751"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:a735d03795f8a73d0edd6841d641a7751"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="#aac7c62a32fa0361f8b969d031d874109">reference</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a735d03795f8a73d0edd6841d641a7751">emplace_back</a> (args_t &amp;&amp;... args)</td></tr>
 <tr class="memdesc:a735d03795f8a73d0edd6841d641a7751"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a new element to the end of the container. The element is constructed through <a href="https://en.cppreference.com/w/cpp/memory/allocator_traits/construct">std::allocator_traits::construct</a>, which typically uses placement-new to construct the element in-place at the location provided by the container. The arguments <code>args...</code> are forwarded to the constructor as <code>std::forward&lt;Args&gt;(args)...</code>.  <br /></td></tr>
@@ -614,25 +614,25 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memitem:aef0aa83c22b30391f4b5ab74434fd696" id="r_aef0aa83c22b30391f4b5ab74434fd696"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef0aa83c22b30391f4b5ab74434fd696">index_of</a> (const type_t &amp;value, <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> index, <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438">count</a>) const</td></tr>
 <tr class="memdesc:aef0aa83c22b30391f4b5ab74434fd696"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases the specified elements from the container.  <br /></td></tr>
 <tr class="separator:aef0aa83c22b30391f4b5ab74434fd696"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8dd2fa33fc4c56db0c6d1f12a871b1a" id="r_aa8dd2fa33fc4c56db0c6d1f12a871b1a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8dd2fa33fc4c56db0c6d1f12a871b1a">insert</a> (<a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> pos, const type_t &amp;value)</td></tr>
-<tr class="memdesc:aa8dd2fa33fc4c56db0c6d1f12a871b1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts elements at the specified location in the container.  <br /></td></tr>
-<tr class="separator:aa8dd2fa33fc4c56db0c6d1f12a871b1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af57e3b8aa782f5f4998d443ac2cbf149" id="r_af57e3b8aa782f5f4998d443ac2cbf149"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af57e3b8aa782f5f4998d443ac2cbf149">insert</a> (<a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> pos, const type_t &amp;&amp;value)</td></tr>
-<tr class="memdesc:af57e3b8aa782f5f4998d443ac2cbf149"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts elements at the specified location in the container.  <br /></td></tr>
-<tr class="separator:af57e3b8aa782f5f4998d443ac2cbf149"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7960764467d02010ea4b415015a4d580" id="r_a7960764467d02010ea4b415015a4d580"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7960764467d02010ea4b415015a4d580">insert</a> (<a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> pos, <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438">count</a>, const type_t &amp;value)</td></tr>
-<tr class="memdesc:a7960764467d02010ea4b415015a4d580"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts elements at the specified location in the container.  <br /></td></tr>
-<tr class="separator:a7960764467d02010ea4b415015a4d580"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3c63a8838c3cdde124a2e410306c273" id="r_aa3c63a8838c3cdde124a2e410306c273"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3c63a8838c3cdde124a2e410306c273">insert</a> (<a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> pos, <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438">count</a>, type_t &amp;&amp;value)</td></tr>
-<tr class="memdesc:aa3c63a8838c3cdde124a2e410306c273"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts elements at the specified location in the container.  <br /></td></tr>
-<tr class="separator:aa3c63a8838c3cdde124a2e410306c273"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4eb93cbf064ed4e2b6b90c22ff6b1555" id="r_a4eb93cbf064ed4e2b6b90c22ff6b1555"><td class="memTemplParams" colspan="2">template&lt;class input_iterator_t&gt; </td></tr>
-<tr class="memitem:a4eb93cbf064ed4e2b6b90c22ff6b1555"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a4eb93cbf064ed4e2b6b90c22ff6b1555">insert</a> (<a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> pos, input_iterator_t <a class="el" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">first</a>, input_iterator_t <a class="el" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d">last</a>)</td></tr>
-<tr class="memdesc:a4eb93cbf064ed4e2b6b90c22ff6b1555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts elements at the specified location in the container.  <br /></td></tr>
-<tr class="separator:a4eb93cbf064ed4e2b6b90c22ff6b1555"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39730bfae3ea79d17d8f24fd96d4b7f4" id="r_a39730bfae3ea79d17d8f24fd96d4b7f4"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39730bfae3ea79d17d8f24fd96d4b7f4">insert</a> (<a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> pos, const std::initializer_list&lt; type_t &gt; &amp;<a class="el" href="#a27466a777d60253e29dcbbe2e6c0d8a1">items</a>)</td></tr>
-<tr class="memdesc:a39730bfae3ea79d17d8f24fd96d4b7f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts elements at the specified location in the container.  <br /></td></tr>
-<tr class="separator:a39730bfae3ea79d17d8f24fd96d4b7f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7d8138ef7c2a2181ed4411cb7f309ce" id="r_ac7d8138ef7c2a2181ed4411cb7f309ce"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a274fd98d54c220fc795243e7f94b706a">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7d8138ef7c2a2181ed4411cb7f309ce">insert</a> (<a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> pos, const type_t &amp;value)</td></tr>
+<tr class="memdesc:ac7d8138ef7c2a2181ed4411cb7f309ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts elements at the specified location in the container.  <br /></td></tr>
+<tr class="separator:ac7d8138ef7c2a2181ed4411cb7f309ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb1c131d58b8bd5177c91bf2d82c67e0" id="r_afb1c131d58b8bd5177c91bf2d82c67e0"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a274fd98d54c220fc795243e7f94b706a">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb1c131d58b8bd5177c91bf2d82c67e0">insert</a> (<a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> pos, const type_t &amp;&amp;value)</td></tr>
+<tr class="memdesc:afb1c131d58b8bd5177c91bf2d82c67e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts elements at the specified location in the container.  <br /></td></tr>
+<tr class="separator:afb1c131d58b8bd5177c91bf2d82c67e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9861a7833d6235284881c054f778223" id="r_af9861a7833d6235284881c054f778223"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a274fd98d54c220fc795243e7f94b706a">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9861a7833d6235284881c054f778223">insert</a> (<a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> pos, <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438">count</a>, const type_t &amp;value)</td></tr>
+<tr class="memdesc:af9861a7833d6235284881c054f778223"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts elements at the specified location in the container.  <br /></td></tr>
+<tr class="separator:af9861a7833d6235284881c054f778223"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ddf206f4ee0607579b583746d203bee" id="r_a8ddf206f4ee0607579b583746d203bee"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a274fd98d54c220fc795243e7f94b706a">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ddf206f4ee0607579b583746d203bee">insert</a> (<a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> pos, <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438">count</a>, type_t &amp;&amp;value)</td></tr>
+<tr class="memdesc:a8ddf206f4ee0607579b583746d203bee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts elements at the specified location in the container.  <br /></td></tr>
+<tr class="separator:a8ddf206f4ee0607579b583746d203bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef385f6967c69f5bfc67f074d3ec69c6" id="r_aef385f6967c69f5bfc67f074d3ec69c6"><td class="memTemplParams" colspan="2">template&lt;class input_iterator_t&gt; </td></tr>
+<tr class="memitem:aef385f6967c69f5bfc67f074d3ec69c6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="#a274fd98d54c220fc795243e7f94b706a">iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aef385f6967c69f5bfc67f074d3ec69c6">insert</a> (<a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> pos, input_iterator_t <a class="el" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">first</a>, input_iterator_t <a class="el" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d">last</a>)</td></tr>
+<tr class="memdesc:aef385f6967c69f5bfc67f074d3ec69c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts elements at the specified location in the container.  <br /></td></tr>
+<tr class="separator:aef385f6967c69f5bfc67f074d3ec69c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7b102244c652efa520c79733e3937a3" id="r_ae7b102244c652efa520c79733e3937a3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a274fd98d54c220fc795243e7f94b706a">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7b102244c652efa520c79733e3937a3">insert</a> (<a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> pos, const std::initializer_list&lt; type_t &gt; &amp;<a class="el" href="#a27466a777d60253e29dcbbe2e6c0d8a1">items</a>)</td></tr>
+<tr class="memdesc:ae7b102244c652efa520c79733e3937a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts elements at the specified location in the container.  <br /></td></tr>
+<tr class="separator:ae7b102244c652efa520c79733e3937a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0494a6cf9b13b86f9155e6be4ee485b2" id="r_a0494a6cf9b13b86f9155e6be4ee485b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0494a6cf9b13b86f9155e6be4ee485b2">insert</a> (<a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> index, const type_t &amp;value) override</td></tr>
 <tr class="memdesc:a0494a6cf9b13b86f9155e6be4ee485b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts an element into the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; at the specified index.  <br /></td></tr>
 <tr class="separator:a0494a6cf9b13b86f9155e6be4ee485b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -4343,7 +4343,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The <a class="el" href="#a1ef4c073b2d33df08aa60c2135181120" title="Searches the entire sorted xtd::collections::generic::list &lt;type_t&gt; for an element using the default ...">xtd::collections::generic::list::binary_search</a> method overload is then used to search for two strings that are not in the list, and the <a class="el" href="#aa8dd2fa33fc4c56db0c6d1f12a871b1a" title="Inserts elements at the specified location in the container.">xtd::collections::generic::list::insert</a> method is used to insert them. The return value of the <a class="el" href="#a1ef4c073b2d33df08aa60c2135181120" title="Searches the entire sorted xtd::collections::generic::list &lt;type_t&gt; for an element using the default ...">xtd::collections::generic::list::binary_search</a> method is greater than <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> in each case, because the strings are not in the list. Taking the bitwise complement of this number produces the index of the first element in the list that is larger than the search string, and inserting at this location preserves the sort order. The second search string is larger than any element in the list, so the insertion position is at the end of the list. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The <a class="el" href="#a1ef4c073b2d33df08aa60c2135181120" title="Searches the entire sorted xtd::collections::generic::list &lt;type_t&gt; for an element using the default ...">xtd::collections::generic::list::binary_search</a> method overload is then used to search for two strings that are not in the list, and the <a class="el" href="#ac7d8138ef7c2a2181ed4411cb7f309ce" title="Inserts elements at the specified location in the container.">xtd::collections::generic::list::insert</a> method is used to insert them. The return value of the <a class="el" href="#a1ef4c073b2d33df08aa60c2135181120" title="Searches the entire sorted xtd::collections::generic::list &lt;type_t&gt; for an element using the default ...">xtd::collections::generic::list::binary_search</a> method is greater than <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> in each case, because the strings are not in the list. Taking the bitwise complement of this number produces the index of the first element in the list that is larger than the search string, and inserting at this location preserves the sort order. The second search string is larger than any element in the list, so the insertion position is at the end of the list. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
@@ -4895,8 +4895,8 @@ This method is an O(n) operation, where n is <a class="el" href="#a9fc65d3d8c22e
 
 </div>
 </div>
-<a id="abcb88022d7e3064b010738e9a9458447" name="abcb88022d7e3064b010738e9a9458447"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abcb88022d7e3064b010738e9a9458447">&#9670;&#160;</a></span>emplace()</h2>
+<a id="aef4911ad349ea1833ee092d78bf4954e" name="aef4911ad349ea1833ee092d78bf4954e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef4911ad349ea1833ee092d78bf4954e">&#9670;&#160;</a></span>emplace()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4909,7 +4909,7 @@ template&lt;class ... args_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::emplace </td>
+          <td class="memname"><a class="el" href="#a274fd98d54c220fc795243e7f94b706a">iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::emplace </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
         </tr>
@@ -5127,7 +5127,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <dd>
 Iterators (including the <a class="el" href="#a938c175d84c2ef69d7524d1a014e035c" title="Returns an iterator to the element following the last element of the enumerable.">xtd::collections::generic::list::end()</a> iterator) and references to the elements at or after the point of the erase are invalidated. </dd>
 <dd>
-The iterator <code>pos</code> must be valid and dereferenceable. Thus the <a class="el" href="#a938c175d84c2ef69d7524d1a014e035c" title="Returns an iterator to the element following the last element of the enumerable.">xtd::collections::generic::list::end()</a> iterator (which is valid, but is not dereferenceable) cannot be used as a value for <code>pos. / @remarks If</code>pos<code>refers to the last element, then thextd::collections::generic::list:: <a class="el" href="#a938c175d84c2ef69d7524d1a014e035c" title="Returns an iterator to the element following the last element of the enumerable.">end()</a> iterator is returned. virtual <a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1" title="Represents the const iterator of list value type.">const_iterator</a> erase(const_iterator pos) { ++data_-&gt;version; return to_const_type_iterator(data_-&gt;items.erase(to_const_base_type_iterator(pos))); } / @brief Erases the specified elements from the container. / @param pos The iterator to the element to remove. / @return Iterator following the last removed element. / @remarks Removes the elements in the range [</code>first<code>,</code>last<code>). / @remarks Iterators (including the <a class="el" href="#a938c175d84c2ef69d7524d1a014e035c" title="Returns an iterator to the element following the last element of the enumerable.">xtd::collections::generic::list::end()</a> iterator) and references to the elements at or after the point of the erase are invalidated. / @remarks The iterator</code>first<code>does not need to be dereferenceable if</code>first == last<code>: erasing an empty range is a no-op. / @remarks If</code>last == <a class="el" href="#a938c175d84c2ef69d7524d1a014e035c" title="Returns an iterator to the element following the last element of the enumerable.">end()</a><code>prior to removal, then the updated <a class="el" href="#a938c175d84c2ef69d7524d1a014e035c" title="Returns an iterator to the element following the last element of the enumerable.">xtd::collections::generic::list::end()</a> iterator is returned. / @remarks If [</code>first<code>,</code>last<code>) is an empty range, then</code>last` is returned. virtual <a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1" title="Represents the const iterator of list value type.">const_iterator</a> erase(const_iterator first, const_iterator last) { ++data_-&gt;version; return to_const_type_iterator(data_-&gt;items.erase(to_const_base_type_iterator(first), to_const_base_type_iterator(last))); }</dd></dl>
+The iterator <code>pos</code> must be valid and dereferenceable. Thus the <a class="el" href="#a938c175d84c2ef69d7524d1a014e035c" title="Returns an iterator to the element following the last element of the enumerable.">xtd::collections::generic::list::end()</a> iterator (which is valid, but is not dereferenceable) cannot be used as a value for <code>pos. / @remarks If</code>pos<code>refers to the last element, then thextd::collections::generic::list:: <a class="el" href="#a938c175d84c2ef69d7524d1a014e035c" title="Returns an iterator to the element following the last element of the enumerable.">end()</a> iterator is returned. virtual iterator erase(const_iterator pos) { ++data_-&gt;version; return to_type_iterator(data_-&gt;items.erase(to_const_base_type_iterator(pos))); } / @brief Erases the specified elements from the container. / @param pos The iterator to the element to remove. / @return Iterator following the last removed element. / @remarks Removes the elements in the range [</code>first<code>,</code>last<code>). / @remarks Iterators (including the <a class="el" href="#a938c175d84c2ef69d7524d1a014e035c" title="Returns an iterator to the element following the last element of the enumerable.">xtd::collections::generic::list::end()</a> iterator) and references to the elements at or after the point of the erase are invalidated. / @remarks The iterator</code>first<code>does not need to be dereferenceable if</code>first == last<code>: erasing an empty range is a no-op. / @remarks If</code>last == <a class="el" href="#a938c175d84c2ef69d7524d1a014e035c" title="Returns an iterator to the element following the last element of the enumerable.">end()</a><code>prior to removal, then the updated <a class="el" href="#a938c175d84c2ef69d7524d1a014e035c" title="Returns an iterator to the element following the last element of the enumerable.">xtd::collections::generic::list::end()</a> iterator is returned. / @remarks If [</code>first<code>,</code>last<code>) is an empty range, then</code>last` is returned. virtual iterator erase(const_iterator first, const_iterator last) { ++data_-&gt;version; return to_type_iterator(data_-&gt;items.erase(to_const_base_type_iterator(first), to_const_base_type_iterator(last))); }</dd></dl>
 <p>/ Determines whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; contains elements that match the conditions defined by the specified predicate. /</p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">match</td><td>The <a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab" title="Represents a delegate that defines a set of criteria and determines whether the specified object meet...">xtd::predicate</a> &lt;type_t&gt; delegate that defines the conditions of the elements to search for. / </td></tr>
@@ -5744,8 +5744,8 @@ This method is an O(n) operation, where n is count. list get_range(size_type ind
 
 </div>
 </div>
-<a id="aa8dd2fa33fc4c56db0c6d1f12a871b1a" name="aa8dd2fa33fc4c56db0c6d1f12a871b1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8dd2fa33fc4c56db0c6d1f12a871b1a">&#9670;&#160;</a></span>insert() <span class="overload">[1/8]</span></h2>
+<a id="ac7d8138ef7c2a2181ed4411cb7f309ce" name="ac7d8138ef7c2a2181ed4411cb7f309ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7d8138ef7c2a2181ed4411cb7f309ce">&#9670;&#160;</a></span>insert() <span class="overload">[1/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5756,7 +5756,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::insert </td>
+          <td class="memname">virtual <a class="el" href="#a274fd98d54c220fc795243e7f94b706a">iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::insert </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
         </tr>
@@ -5788,8 +5788,8 @@ If after the operation the new <a class="el" href="#ac58e0941ae647494403850c8280
 
 </div>
 </div>
-<a id="af57e3b8aa782f5f4998d443ac2cbf149" name="af57e3b8aa782f5f4998d443ac2cbf149"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af57e3b8aa782f5f4998d443ac2cbf149">&#9670;&#160;</a></span>insert() <span class="overload">[2/8]</span></h2>
+<a id="afb1c131d58b8bd5177c91bf2d82c67e0" name="afb1c131d58b8bd5177c91bf2d82c67e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb1c131d58b8bd5177c91bf2d82c67e0">&#9670;&#160;</a></span>insert() <span class="overload">[2/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5800,7 +5800,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::insert </td>
+          <td class="memname">virtual <a class="el" href="#a274fd98d54c220fc795243e7f94b706a">iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::insert </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
         </tr>
@@ -5832,8 +5832,8 @@ If after the operation the new <a class="el" href="#ac58e0941ae647494403850c8280
 
 </div>
 </div>
-<a id="a7960764467d02010ea4b415015a4d580" name="a7960764467d02010ea4b415015a4d580"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7960764467d02010ea4b415015a4d580">&#9670;&#160;</a></span>insert() <span class="overload">[3/8]</span></h2>
+<a id="af9861a7833d6235284881c054f778223" name="af9861a7833d6235284881c054f778223"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9861a7833d6235284881c054f778223">&#9670;&#160;</a></span>insert() <span class="overload">[3/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5844,7 +5844,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::insert </td>
+          <td class="memname">virtual <a class="el" href="#a274fd98d54c220fc795243e7f94b706a">iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::insert </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
         </tr>
@@ -5882,8 +5882,8 @@ If after the operation the new <a class="el" href="#ac58e0941ae647494403850c8280
 
 </div>
 </div>
-<a id="aa3c63a8838c3cdde124a2e410306c273" name="aa3c63a8838c3cdde124a2e410306c273"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3c63a8838c3cdde124a2e410306c273">&#9670;&#160;</a></span>insert() <span class="overload">[4/8]</span></h2>
+<a id="a8ddf206f4ee0607579b583746d203bee" name="a8ddf206f4ee0607579b583746d203bee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ddf206f4ee0607579b583746d203bee">&#9670;&#160;</a></span>insert() <span class="overload">[4/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5894,7 +5894,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::insert </td>
+          <td class="memname">virtual <a class="el" href="#a274fd98d54c220fc795243e7f94b706a">iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::insert </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
         </tr>
@@ -5932,8 +5932,8 @@ If after the operation the new <a class="el" href="#ac58e0941ae647494403850c8280
 
 </div>
 </div>
-<a id="a4eb93cbf064ed4e2b6b90c22ff6b1555" name="a4eb93cbf064ed4e2b6b90c22ff6b1555"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4eb93cbf064ed4e2b6b90c22ff6b1555">&#9670;&#160;</a></span>insert() <span class="overload">[5/8]</span></h2>
+<a id="aef385f6967c69f5bfc67f074d3ec69c6" name="aef385f6967c69f5bfc67f074d3ec69c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef385f6967c69f5bfc67f074d3ec69c6">&#9670;&#160;</a></span>insert() <span class="overload">[5/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5946,7 +5946,7 @@ template&lt;class input_iterator_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::insert </td>
+          <td class="memname"><a class="el" href="#a274fd98d54c220fc795243e7f94b706a">iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::insert </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
         </tr>
@@ -5985,8 +5985,8 @@ If after the operation the new <a class="el" href="#ac58e0941ae647494403850c8280
 
 </div>
 </div>
-<a id="a39730bfae3ea79d17d8f24fd96d4b7f4" name="a39730bfae3ea79d17d8f24fd96d4b7f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39730bfae3ea79d17d8f24fd96d4b7f4">&#9670;&#160;</a></span>insert() <span class="overload">[6/8]</span></h2>
+<a id="ae7b102244c652efa520c79733e3937a3" name="ae7b102244c652efa520c79733e3937a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7b102244c652efa520c79733e3937a3">&#9670;&#160;</a></span>insert() <span class="overload">[6/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5997,7 +5997,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::insert </td>
+          <td class="memname">virtual <a class="el" href="#a274fd98d54c220fc795243e7f94b706a">iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::insert </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
         </tr>
@@ -6859,7 +6859,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 29 2025 01:17:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jun 29 2025 11:30:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
