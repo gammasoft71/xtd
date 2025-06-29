@@ -162,7 +162,7 @@ int32 unit_test::run() noexcept {
     
     for (repeat_iteration_ = 1; repeat_iteration_ <= settings::default_settings().repeat_test() || settings::default_settings().repeat_test() < 0; ++repeat_iteration_) {
       if (settings::default_settings().shuffle_test())
-        std::shuffle(test_classes().begin(), test_classes().end(), random.generator());
+        random.shuffle(test_classes());
       
       try {
         if (!settings::default_settings().brief()) event_listener_->on_unit_test_start(tunit_event_args(*this));
