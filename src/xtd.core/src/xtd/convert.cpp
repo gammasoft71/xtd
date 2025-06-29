@@ -22,7 +22,7 @@ array<byte> convert::from_base64_string(const string& s) {
   auto in_ = 0_z;
   auto char_array_4 = fixed_array<byte, 4> {};
   auto char_array_3 = fixed_array<byte, 3> {};
-  list<byte> ret;
+  auto ret = list<byte> {};
   
   while (in_len-- && ( s[in_] != '=') && is_base64(s[in_])) {
     char_array_4[i++] = s[in_]; in_++;
