@@ -44,24 +44,93 @@ namespace xtd {
         ///   console::write_line(part);
         /// ```
         /// @warning Internal use only for xtd::collections::generic::ienumerable interfece.
-        template<class type_t, class enumerable_t, class iterator_tag_t = std::bidirectional_iterator_tag>
+        //template<class type_t, class enumerable_t, class iterator_tag_t = std::bidirectional_iterator_tag>
+        template<class type_t, class enumerable_t, class iterator_tag_t = std::forward_iterator_tag>
         class enumerable_iterators {
           /// @cond
-          class enumerable_iterator : public xtd::icomparable<enumerable_iterator>, public xtd::iequatable<enumerable_iterator> {
+          class const_enumerable_iterator : public xtd::icomparable<const_enumerable_iterator>, public xtd::iequatable<const_enumerable_iterator> {
           public:
             using value_type = type_t;
             using iterator_category = iterator_tag_t;
             using iterator_concept  = iterator_tag_t;
             using difference_type = xtd::ptrdiff;
             using pointer = const value_type*;
-            using const_pointer = const value_type*;
             using reference = const value_type&;
-            using const_reference = const value_type&;
+            
+            static constexpr xtd::size npos() {return std::numeric_limits<xtd::size>::max();}
+            
+            const_enumerable_iterator() = default;
+            const_enumerable_iterator(const enumerable_t* enumerable, xtd::size pos) : enumerable_ {enumerable}, enumerator_ {enumerable->get_enumerator()}, pos_ {pos} {reset();}
+            const_enumerable_iterator(const_enumerable_iterator&& value) noexcept = default;
+            const_enumerable_iterator(const const_enumerable_iterator& value) noexcept : enumerable_(value.enumerable_), enumerator_(value.enumerable_->get_enumerator()), pos_ {value.pos_} {reset();}
+            const_enumerable_iterator& operator =(const_enumerable_iterator&& value) noexcept = default;
+            const_enumerable_iterator& operator =(const const_enumerable_iterator& value) noexcept {
+              enumerable_ = value.enumerable_;
+              enumerator_ = value.enumerable_->get_enumerator();
+              pos_ = value.pos_;
+              reset();
+              return const_cast<const_enumerable_iterator&>(*this);
+            }
+            
+            int32 compare_to(const const_enumerable_iterator& rhs) const noexcept override {return pos_ < rhs.pos_ ? -1 : pos_ > rhs.pos_ ? 1 : 0;}
+            bool equals(const const_enumerable_iterator& rhs) const noexcept override {return pos_ == rhs.pos_;}
+            
+            reference operator *() const {return enumerator_.current();}
+            pointer operator ->() const {return &operator*();}
+            
+            const_enumerable_iterator& operator ++() noexcept {
+              if (pos_ != std::numeric_limits<xtd::size>::max()) pos_ = enumerator_.move_next() ? pos_ + 1 : std::numeric_limits<xtd::size>::max();
+              return const_cast<const_enumerable_iterator&>(*this);
+            }
+            const_enumerable_iterator operator ++(int) noexcept {
+              auto current = *this;
+              operator ++();
+              return current;
+            }
+            
+            template<class value_t>
+            const const_enumerable_iterator operator +(value_t value) const noexcept {return const_enumerable_iterator {enumerable_, pos_ + value};}
+            template<class value_t>
+            const_enumerable_iterator operator +(value_t value) noexcept {return const_enumerable_iterator {enumerable_, pos_ + value};}
+            template<class value_t>
+            const_enumerable_iterator& operator +=(value_t value) noexcept {
+              *this = *this + value;
+              return *this;
+            }
+            difference_type operator -(const_enumerable_iterator value) const noexcept {
+              if (pos_ == std::numeric_limits<xtd::size>::max()) return std::numeric_limits<xtd::size>::max();
+              return static_cast<difference_type>(pos_ - value.pos_);
+            }
+            
+          private:
+            void reset() {
+              if (pos_ == std::numeric_limits<xtd::size>::max()) return;
+              enumerator_.reset();
+              for (auto index = xtd::size {}; index <= pos_; ++index)
+                if (enumerator_.move_next() == false) {
+                  pos_ = std::numeric_limits<xtd::size>::max();
+                  break;
+                }
+            }
+            
+            const enumerable_t* enumerable_ = nullptr;
+            enumerator<type_t> enumerator_;
+            xtd::size pos_ = 0;
+          };
+
+          class enumerable_iterator : public xtd::icomparable<enumerable_iterator>, public xtd::iequatable<enumerable_iterator> {
+          public:
+            using value_type = type_t;
+            using iterator_category = iterator_tag_t;
+            using iterator_concept  = iterator_tag_t;
+            using difference_type = xtd::ptrdiff;
+            using pointer = value_type*;
+            using reference = value_type&;
 
             static constexpr xtd::size npos() {return std::numeric_limits<xtd::size>::max();}
 
             enumerable_iterator() = default;
-            enumerable_iterator(const enumerable_t* enumerable, xtd::size pos) : enumerable_ {enumerable}, enumerator_ {enumerable->get_enumerator()}, pos_ {pos} {reset();}
+            enumerable_iterator(enumerable_t* enumerable, xtd::size pos) : enumerable_ {enumerable}, enumerator_ {enumerable->get_enumerator()}, pos_ {pos} {reset();}
             enumerable_iterator(enumerable_iterator&& value) noexcept = default;
             enumerable_iterator(const enumerable_iterator& value) noexcept : enumerable_(value.enumerable_), enumerator_(value.enumerable_->get_enumerator()), pos_ {value.pos_} {reset();}
             enumerable_iterator& operator =(enumerable_iterator&& value) noexcept = default;
@@ -76,20 +145,8 @@ namespace xtd {
             int32 compare_to(const enumerable_iterator& rhs) const noexcept override {return pos_ < rhs.pos_ ? -1 : pos_ > rhs.pos_ ? 1 : 0;}
             bool equals(const enumerable_iterator& rhs) const noexcept override {return pos_ == rhs.pos_;}
 
-            const_reference operator *() const {return enumerator_.current();}
-            value_type& operator *() {return const_cast<value_type&>(enumerator_.current());}
-            const_pointer operator ->() const {return &operator*();}
-            value_type* operator ->() {return &operator*();}
-            
-            const enumerable_iterator& operator ++() const noexcept {
-              if (pos_ != std::numeric_limits<xtd::size>::max()) pos_ = enumerator_.move_next() ? pos_ + 1 : std::numeric_limits<xtd::size>::max();
-              return const_cast<enumerable_iterator&>(*this);
-            }
-            const enumerable_iterator operator ++(int) const noexcept {
-              auto current = *this;
-              operator ++();
-              return current;
-            }
+            reference operator *() const {return const_cast<value_type&>(enumerator_.current());}
+            pointer operator ->() const {return &operator*();}
             
             enumerable_iterator& operator ++() noexcept {
               if (pos_ != std::numeric_limits<xtd::size>::max()) pos_ = enumerator_.move_next() ? pos_ + 1 : std::numeric_limits<xtd::size>::max();
@@ -98,26 +155,6 @@ namespace xtd {
             enumerable_iterator operator ++(int) noexcept {
               auto current = *this;
               operator ++();
-              return current;
-            }
-            
-            const enumerable_iterator& operator --() const noexcept {
-              if (pos_ != 0) pos_ = enumerator_.move_next() ? pos_ - 1 : std::numeric_limits<xtd::size>::max();
-              return const_cast<enumerable_iterator&>(*this);
-            }
-            const enumerable_iterator operator --(int) const noexcept {
-              auto current = *this;
-              operator --();
-              return current;
-            }
-            
-            enumerable_iterator& operator --() noexcept {
-              if (pos_ != 0) pos_ = enumerator_.move_next() ? pos_ - 1 : std::numeric_limits<xtd::size>::max();
-              return const_cast<enumerable_iterator&>(*this);
-            }
-            enumerable_iterator operator --(int) noexcept {
-              auto current = *this;
-              operator --();
               return current;
             }
             
@@ -135,8 +172,12 @@ namespace xtd {
               return static_cast<difference_type>(pos_ - value.pos_);
             }
             
+            operator const_enumerable_iterator() const noexcept {
+              return const_enumerable_iterator(enumerable_, pos_);
+            }
+            
           private:
-            void reset() const {
+            void reset() {
               if (pos_ == std::numeric_limits<xtd::size>::max()) return;
               enumerator_.reset();
               for (auto index = xtd::size {}; index <= pos_; ++index)
@@ -146,9 +187,9 @@ namespace xtd {
                 }
             }
             
-            mutable const enumerable_t* enumerable_ = nullptr;
-            mutable enumerator<type_t> enumerator_;
-            mutable xtd::size pos_ = 0;
+            enumerable_t* enumerable_ = nullptr;
+            enumerator<type_t> enumerator_;
+            xtd::size pos_ = 0;
           };
           /// @endcond
           
@@ -159,7 +200,7 @@ namespace xtd {
           /// @brief Represents the iterator of enumerable value type.
           using iterator = enumerable_iterator;
           /// @brief Represents the const iterator of enumerable value type.
-          using const_iterator = const enumerable_iterator;
+          using const_iterator = const_enumerable_iterator;
           /// @}
           
           /// @name Public Methods
