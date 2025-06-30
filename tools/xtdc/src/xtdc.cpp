@@ -2,6 +2,7 @@
 //#include "project_management.hpp"
 #include <xtd/collections/generic/list>
 #include <xtd/char_object>
+#include <xtd/random>
 #include <xtd/startup>
 
 using namespace xtd;
@@ -17,12 +18,13 @@ namespace xtdc_command {
         return -1;
       }
       
+      auto show_floppy = false;
       auto show_help = false;
       auto show_info = false;
       auto show_version = false;
       string invalid_option;
       list<string> command_args;
-      if (process_xtdc_arguments(args, show_help, show_info, show_version, command_args, invalid_option) == false) {
+      if (process_xtdc_arguments(args, show_floppy, show_help, show_info, show_version, command_args, invalid_option) == false) {
         if (!invalid_option.empty())
           console::write_line("Unknown option: {0}", invalid_option);
         else
@@ -31,10 +33,60 @@ namespace xtdc_command {
         return -1;
       }
       
-      return run_commands(show_help, show_info, show_version, invalid_option, command_args);
+      return run_commands(show_floppy, show_help, show_info, show_version, invalid_option, command_args);
     }
     
   private:
+    static std::list<string> get_floppy() noexcept {
+      static auto floppy_quotes = array {
+        "I was around long before std::format, and I'll be around again when it's deprecated.",
+        "Floppy: keeping it retro since the dawn of computing.",
+        "If it ain’t broken, it’s probably because Floppy’s been here.",
+        "Saving data one spin at a time.",
+        "Floppy doesn’t just store bits, it stores memories.",
+        "Old school cool with a modern soul.",
+        "When in doubt, trust Floppy to hold your legacy.",
+        "Less flashy, more classy — that’s Floppy."
+      };
+
+      return {
+        u8"████████████████████████████████████████████████████████████",
+        u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████",
+        u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████",
+        u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░██████████",
+        u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████████",
+        u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████████",
+        u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████████",
+        u8"███████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░█████████████",
+        u8"██████████████████████████████████████████████████████████████████████",
+        u8"██████████████████████████████████████████████████████████████████████",
+        u8"██████████████████████████▀▄▄▄▄▀███████▀▄▄▄▄▀█████████████████████████",
+        u8"███████████████████████████▀▀▀▀███████▀▀▀▀▀███████████████████████████",
+        u8"██████████████████████████      ▀████       ▀█████████████████████████",
+        u8"███████████             ▐         ▀▀         ▐              ██████████",
+        u8"█████████               ▐   ███   ▌▐   ███   ▐               █████████",
+        u8"█████████               ▐   █▄▄▌  ▌▐  ▐▄▄█   ▐               █████████",
+        u8"█████████                ▐▄  ▀▀ ▄▀  ▀▄ ▀▀  ▄▀                █████████",
+        u8"█████████                  ▀▀▄▄▀      ▀▀▄▄▀                  █████████",
+        u8"█████████                                                    █████████",
+        u8"█████████                 █▄                ▌                █████████",
+        u8"█████████                  ▌▀▀▄          ▄██                 █████████",
+        u8"█████████                  ▐   ▀▀▄▄▄▄▄▄█▀ █▌                 █████████",
+        u8"█████████                   ▐            ▄█                  █████████",
+        u8"█████████                    █          ▄█                   █████████",
+        u8"█████████                     ▀▄       █▀                    █████████",
+        u8"█████████                       ▀▄▄▄▄██▀                     █████████",
+        u8"█████████                                                    █████████",
+        u8"█████████                                                    █████████",
+        u8"█████████                                                    █████████",
+        u8"█████████                                                    █████████",
+        u8"█████████                                                    █████████",
+        u8"██████████████████████████████████████████████████████████████████",
+        u8"",
+        string::format(u8"[💾 Floppy] - {}", floppy_quotes[xtd::random {}.next(floppy_quotes.length())]),
+      };
+    }
+    
     static std::list<string> get_help() noexcept {
       return {
         "",
@@ -678,9 +730,11 @@ namespace xtdc_command {
       return 0;
     }
     
-    static bool process_xtdc_arguments(const list<string>& args, bool& show_help, bool& show_info, bool& show_version, list<string>& command_args, string& invalid_option) {
+    static bool process_xtdc_arguments(const list<string>& args, bool& show_floppy, bool& show_help, bool& show_info, bool& show_version, list<string>& command_args, string& invalid_option) {
       for (size_t i = 0; i < args.size(); i += 1) {
-        if (args[i] == "-h" || args[i] == "--help")
+        if (args[i] == "-f" || args[i] == "--floppy")
+          show_floppy = true;
+        else if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
         else if (args[i] == "-i" || args[i] == "--info")
           show_info = true;
@@ -913,9 +967,10 @@ namespace xtdc_command {
       return -1;
     }
     
-    static int run_commands(bool show_help, bool show_info, bool show_version, string invalid_option, const list<string>& command_args) {
-      if (show_version || show_info || show_help) {
+    static int run_commands(bool show_floppy, bool show_help, bool show_info, bool show_version, string invalid_option, const list<string>& command_args) {
+      if (show_floppy || show_version || show_info || show_help) {
         console::write_line(get_version());
+        if (show_floppy) console::write_line(string::join("\n", get_floppy()));
         if (show_info) console::write_line(string::join("\n", get_info()));
         if (show_help) console::write_line(string::join("\n", get_help()));
         return 0;
