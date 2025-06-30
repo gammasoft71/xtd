@@ -112,11 +112,11 @@ Inheritance diagram for xtd::collections::generic::extensions::enumerable_iterat
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidirectional_iterator_tag&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::forward_iterator_tag&gt;<br />
 class xtd::collections::generic::extensions::enumerable_iterators&lt; type_t, enumerable_t, iterator_tag_t &gt;</div><p>Internal enumerable iterators definition. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> enumerable_t, <span class="keyword">class</span> iterator_tag_t =  std::b<span class="keywordtype">id</span>irectional_iterator_tag&gt;</div>
 <div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">enumerable_iterators</a>;</div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a></div><div class="ttdoc">Internal enumerable iterators definition.</div><div class="ttdef"><b>Definition</b> enumerable_iterators.hpp:48</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a></div><div class="ttdoc">Internal enumerable iterators definition.</div><div class="ttdef"><b>Definition</b> enumerable_iterators.hpp:49</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/extensions/enumerable_iterators&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -124,7 +124,7 @@ class xtd::collections::generic::extensions::enumerable_iterators&lt; type_t, en
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html" title="Internal enumerable iterators definition.">xtd::collections::generic::extensions::enumerable_iterators</a> &lt;type_t&gt; class is use to hide the complexity of c++ <a href="https://en.cppreference.com/w/cpp/iterator/iterator">std::iterator</a>. </dd>
 <dd>
-The objective is for any collection inheriting from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; interface to provide the iterator and <a class="el" href="#a75470cb0387e1459f1a87c300f097560" title="Represents the const iterator of enumerable value type.">const_iterator</a> types and <code>begin</code> and <code>end</code> methods needed to be able to iterate the collection as for example : <div class="fragment"><div class="line"><span class="keyword">auto</span> parts = part_collection {};</div>
+The objective is for any collection inheriting from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; interface to provide the iterator and <a class="el" href="#a68ccd204890affdd96968357dcb634db" title="Represents the const iterator of enumerable value type.">const_iterator</a> types and <code>begin</code> and <code>end</code> methods needed to be able to iterate the collection as for example : <div class="fragment"><div class="line"><span class="keyword">auto</span> parts = part_collection {};</div>
 <div class="line">parts.add(part {<span class="stringliteral">&quot;item one&quot;</span>, <a class="code hl_function" href="classxtd_1_1guid.html#a07f13762e0fdf7369b7cd2929ca78ca1">guid::new_guid</a>()});</div>
 <div class="line"><span class="comment">// ...</span></div>
 <div class="line">parts.add(part {<span class="stringliteral">&quot;item n&quot;</span>, <a class="code hl_function" href="classxtd_1_1guid.html#a07f13762e0fdf7369b7cd2929ca78ca1">guid::new_guid</a>()}});</div>
@@ -140,24 +140,24 @@ The objective is for any collection inheriting from the <a class="el" href="clas
 <tr class="memitem:a887f291bffea0f450760702ed2682590" id="r_a887f291bffea0f450760702ed2682590"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a887f291bffea0f450760702ed2682590">iterator</a></td></tr>
 <tr class="memdesc:a887f291bffea0f450760702ed2682590"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the iterator of enumerable value type.  <br /></td></tr>
 <tr class="separator:a887f291bffea0f450760702ed2682590"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75470cb0387e1459f1a87c300f097560" id="r_a75470cb0387e1459f1a87c300f097560"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75470cb0387e1459f1a87c300f097560">const_iterator</a></td></tr>
-<tr class="memdesc:a75470cb0387e1459f1a87c300f097560"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the const iterator of enumerable value type.  <br /></td></tr>
-<tr class="separator:a75470cb0387e1459f1a87c300f097560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68ccd204890affdd96968357dcb634db" id="r_a68ccd204890affdd96968357dcb634db"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68ccd204890affdd96968357dcb634db">const_iterator</a></td></tr>
+<tr class="memdesc:a68ccd204890affdd96968357dcb634db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the const iterator of enumerable value type.  <br /></td></tr>
+<tr class="separator:a68ccd204890affdd96968357dcb634db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a7b9f8c15358cc78f7265ffe8f6480579" id="r_a7b9f8c15358cc78f7265ffe8f6480579"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a75470cb0387e1459f1a87c300f097560">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b9f8c15358cc78f7265ffe8f6480579">begin</a> () const</td></tr>
+<tr class="memitem:a7b9f8c15358cc78f7265ffe8f6480579" id="r_a7b9f8c15358cc78f7265ffe8f6480579"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a68ccd204890affdd96968357dcb634db">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b9f8c15358cc78f7265ffe8f6480579">begin</a> () const</td></tr>
 <tr class="memdesc:a7b9f8c15358cc78f7265ffe8f6480579"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the first element of the enumerable.  <br /></td></tr>
 <tr class="separator:a7b9f8c15358cc78f7265ffe8f6480579"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1e3a53b1e5c0e7769075bd28132d959" id="r_ad1e3a53b1e5c0e7769075bd28132d959"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a887f291bffea0f450760702ed2682590">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1e3a53b1e5c0e7769075bd28132d959">begin</a> ()</td></tr>
 <tr class="memdesc:ad1e3a53b1e5c0e7769075bd28132d959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the first element of the enumerable.  <br /></td></tr>
 <tr class="separator:ad1e3a53b1e5c0e7769075bd28132d959"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c64ad67e8894d51bd1ee7da6f397e14" id="r_a9c64ad67e8894d51bd1ee7da6f397e14"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a75470cb0387e1459f1a87c300f097560">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c64ad67e8894d51bd1ee7da6f397e14">cbegin</a> () const</td></tr>
+<tr class="memitem:a9c64ad67e8894d51bd1ee7da6f397e14" id="r_a9c64ad67e8894d51bd1ee7da6f397e14"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a68ccd204890affdd96968357dcb634db">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c64ad67e8894d51bd1ee7da6f397e14">cbegin</a> () const</td></tr>
 <tr class="memdesc:a9c64ad67e8894d51bd1ee7da6f397e14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the first element of the enumerable.  <br /></td></tr>
 <tr class="separator:a9c64ad67e8894d51bd1ee7da6f397e14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab461dd402e7464666ba6657864ea5f40" id="r_ab461dd402e7464666ba6657864ea5f40"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a75470cb0387e1459f1a87c300f097560">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab461dd402e7464666ba6657864ea5f40">cend</a> () const</td></tr>
+<tr class="memitem:ab461dd402e7464666ba6657864ea5f40" id="r_ab461dd402e7464666ba6657864ea5f40"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a68ccd204890affdd96968357dcb634db">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab461dd402e7464666ba6657864ea5f40">cend</a> () const</td></tr>
 <tr class="memdesc:ab461dd402e7464666ba6657864ea5f40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the element following the last element of the enumerable.  <br /></td></tr>
 <tr class="separator:ab461dd402e7464666ba6657864ea5f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f943e5420e93551f9d764a055a8e50a" id="r_a5f943e5420e93551f9d764a055a8e50a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a75470cb0387e1459f1a87c300f097560">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f943e5420e93551f9d764a055a8e50a">end</a> () const</td></tr>
+<tr class="memitem:a5f943e5420e93551f9d764a055a8e50a" id="r_a5f943e5420e93551f9d764a055a8e50a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a68ccd204890affdd96968357dcb634db">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f943e5420e93551f9d764a055a8e50a">end</a> () const</td></tr>
 <tr class="memdesc:a5f943e5420e93551f9d764a055a8e50a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the element following the last element of the enumerable.  <br /></td></tr>
 <tr class="separator:a5f943e5420e93551f9d764a055a8e50a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cc1239887628ed8028bdd1339af135a" id="r_a1cc1239887628ed8028bdd1339af135a"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a887f291bffea0f450760702ed2682590">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cc1239887628ed8028bdd1339af135a">end</a> ()</td></tr>
@@ -197,7 +197,7 @@ The objective is for any collection inheriting from the <a class="el" href="clas
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidirectional_iterator_tag&gt; </div>
+template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::forward_iterator_tag&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t, iterator_tag_t &gt;::iterator</td>
@@ -209,13 +209,13 @@ template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidire
 
 </div>
 </div>
-<a id="a75470cb0387e1459f1a87c300f097560" name="a75470cb0387e1459f1a87c300f097560"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75470cb0387e1459f1a87c300f097560">&#9670;&#160;</a></span>const_iterator</h2>
+<a id="a68ccd204890affdd96968357dcb634db" name="a68ccd204890affdd96968357dcb634db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68ccd204890affdd96968357dcb634db">&#9670;&#160;</a></span>const_iterator</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidirectional_iterator_tag&gt; </div>
+template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::forward_iterator_tag&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t, iterator_tag_t &gt;::const_iterator</td>
@@ -234,13 +234,13 @@ template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidire
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidirectional_iterator_tag&gt; </div>
+template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::forward_iterator_tag&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="#a75470cb0387e1459f1a87c300f097560">const_iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t, iterator_tag_t &gt;::begin </td>
+          <td class="memname">virtual <a class="el" href="#a68ccd204890affdd96968357dcb634db">const_iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t, iterator_tag_t &gt;::begin </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -264,7 +264,7 @@ template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidire
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidirectional_iterator_tag&gt; </div>
+template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::forward_iterator_tag&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -294,13 +294,13 @@ template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidire
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidirectional_iterator_tag&gt; </div>
+template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::forward_iterator_tag&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="#a75470cb0387e1459f1a87c300f097560">const_iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t, iterator_tag_t &gt;::cbegin </td>
+          <td class="memname">virtual <a class="el" href="#a68ccd204890affdd96968357dcb634db">const_iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t, iterator_tag_t &gt;::cbegin </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -324,13 +324,13 @@ template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidire
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidirectional_iterator_tag&gt; </div>
+template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::forward_iterator_tag&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="#a75470cb0387e1459f1a87c300f097560">const_iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t, iterator_tag_t &gt;::cend </td>
+          <td class="memname">virtual <a class="el" href="#a68ccd204890affdd96968357dcb634db">const_iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t, iterator_tag_t &gt;::cend </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -354,13 +354,13 @@ template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidire
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidirectional_iterator_tag&gt; </div>
+template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::forward_iterator_tag&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="#a75470cb0387e1459f1a87c300f097560">const_iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t, iterator_tag_t &gt;::end </td>
+          <td class="memname">virtual <a class="el" href="#a68ccd204890affdd96968357dcb634db">const_iterator</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t, iterator_tag_t &gt;::end </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -384,7 +384,7 @@ template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidire
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidirectional_iterator_tag&gt; </div>
+template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::forward_iterator_tag&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -414,7 +414,7 @@ template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidire
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidirectional_iterator_tag&gt; </div>
+template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::forward_iterator_tag&gt; </div>
 <div class="memtemplate">
 template&lt;class source_collection_t, class target_collection_t&gt; </div>
 <table class="mlabels">
@@ -466,7 +466,7 @@ template&lt;class source_collection_t, class target_collection_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidirectional_iterator_tag&gt; </div>
+template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::forward_iterator_tag&gt; </div>
 <div class="memtemplate">
 template&lt;class source_collection_t, class target_collection_t&gt; </div>
 <table class="mlabels">
@@ -518,7 +518,7 @@ template&lt;class source_collection_t, class target_collection_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidirectional_iterator_tag&gt; </div>
+template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::forward_iterator_tag&gt; </div>
 <div class="memtemplate">
 template&lt;class source_collection_t, class target_collection_t&gt; </div>
 <table class="mlabels">
@@ -570,7 +570,7 @@ template&lt;class source_collection_t, class target_collection_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidirectional_iterator_tag&gt; </div>
+template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::forward_iterator_tag&gt; </div>
 <div class="memtemplate">
 template&lt;class source_collection_t, class target_collection_t&gt; </div>
 <table class="mlabels">
@@ -622,7 +622,7 @@ template&lt;class source_collection_t, class target_collection_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidirectional_iterator_tag&gt; </div>
+template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::forward_iterator_tag&gt; </div>
 <div class="memtemplate">
 template&lt;class source_collection_t, class target_collection_t&gt; </div>
 <table class="mlabels">
@@ -674,7 +674,7 @@ template&lt;class source_collection_t, class target_collection_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::bidirectional_iterator_tag&gt; </div>
+template&lt;class type_t, class enumerable_t, class iterator_tag_t = std::forward_iterator_tag&gt; </div>
 <div class="memtemplate">
 template&lt;class source_collection_t, class target_collection_t&gt; </div>
 <table class="mlabels">
@@ -727,7 +727,7 @@ template&lt;class source_collection_t, class target_collection_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 29 2025 11:30:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jun 30 2025 10:59:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
