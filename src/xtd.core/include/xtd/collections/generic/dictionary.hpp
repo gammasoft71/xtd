@@ -607,7 +607,7 @@ namespace xtd {
         
         /// @brief Returns an iterator to the element following the last element of the enumerable.
         /// @return Iterator to the element following the last element.
-        iterator end() noexcept override {return ienumerable<value_type>::cend();}
+        iterator end() noexcept override {return ienumerable<value_type>::end();}
         
         /// @brief Gets a value indicating whether the xtd::collections::generic::icollection <type_t> is read-only.
         /// @return `true` if the xtd::collections::generic::icollection <type_t> is read-only; otherwise, `false`.
@@ -918,7 +918,7 @@ namespace xtd {
         template <class equal_range_key_t>
         key_value_pair<const_iterator, const_iterator> equal_range(const equal_range_key_t& key) const {
           const auto& [first, last] = data_->items.equal_range(key);
-          return {to_type_iterator(first), to_type_iterator(last)};
+          return {to_const_type_iterator(first), to_const_type_iterator(last)};
         }
         
         /// @brief Returns range of elements matching a specific key.
@@ -937,7 +937,7 @@ namespace xtd {
         /// @remarks Returns a range containing all elements in the container with key equivalent to `x`. This overload participates in overload resolution only if `hasher_t::is_transparent` and `equator_t::is_transparent` are valid and each denotes a type. This assumes that such Hash is callable with both `equal_range_key_t` and `key_t` type, and that the `equator_t` is transparent, which, together, allows calling this function without constructing an instance of `key_t`.
         key_value_pair<const_iterator, const_iterator> equal_range(const key_t& x) const {
           const auto& [first, last] = data_->items.equal_range(x);
-          return {to_type_iterator(first), to_type_iterator(last)};
+          return {to_const_type_iterator(first), to_const_type_iterator(last)};
         }
 
         /// @brief Erases elements.
