@@ -98,7 +98,7 @@ namespace xtd {
     /// @param first The iterator to the first element of the sequence.
     /// @param last The iterator to the last element of the sequence.
     template<class iterator_t>
-    constexpr span(iterator_t first, iterator_t last) : data_ {&(*first)}, length_ {extent != dynamic_extent ? extent : static_cast<size_type>(std::distance(first, last))} {}
+    constexpr span(iterator_t first, iterator_t last) : data_ {const_cast<pointer>(&(*first))}, length_ {extent != dynamic_extent ? extent : static_cast<size_type>(std::distance(first, last))} {}
     /* Conflict with span(collection_t& items, xtd::size count)
     /// @brief Creates an xtd::span with specified iterator and count.
     /// @param first The iterator to the first element of the sequence.
