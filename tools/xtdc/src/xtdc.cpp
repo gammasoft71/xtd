@@ -37,7 +37,7 @@ namespace xtdc_command {
     }
     
   private:
-    static std::list<string> get_floppy() noexcept {
+    static list<string> get_floppy() noexcept {
       static auto floppy_quotes = array {
         "I was around long before std::format, and I'll be around again when it's deprecated.",
         "Floppy: keeping it retro since the dawn of computing.",
@@ -87,7 +87,7 @@ namespace xtdc_command {
       };
     }
     
-    static std::list<string> get_help() noexcept {
+    static list<string> get_help() noexcept {
       return {
         "",
         "Usage: xtdc [<options> | command [<command-argument>] [<command-options>]]",
