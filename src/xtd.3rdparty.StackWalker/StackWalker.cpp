@@ -92,9 +92,13 @@
 
 #pragma comment(lib, "version.lib") // for "VerQueryValue"
 
-#pragma warning(disable : 4826)
-#if _MSC_VER >= 1900
-#pragma warning(disable : 4091)   // For fix unnamed enums from DbgHelp.h
+#ifdef _MSC_VER
+#  pragma warning(push)
+#  pragma warning(disable : 4324) // C4324: struct was padded due to alignment - expected for StackWalkerInternal
+#  pragma warning(disable : 4826)
+#  if _MSC_VER >= 1900
+#    pragma warning(disable : 4091)   // For fix unnamed enums from DbgHelp.h
+#  endif
 #endif
 
 
@@ -1453,3 +1457,7 @@ void StackWalker::OnSymInit(LPCSTR szSearchPath, DWORD symOptions, LPCSTR szUser
 void StackWalker::OnOutput(LPCSTR buffer) {
   OutputDebugStringA(buffer);
 }
+
+#ifdef _MSC_VER
+#  pragma warning(pop)
+#endif
