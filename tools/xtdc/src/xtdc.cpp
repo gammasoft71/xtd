@@ -13,6 +13,7 @@ namespace xtdc_command {
   class xtdc final :public project_base {
   public:
     static auto main(const argument_collection& args) {
+      console::output_code_page(65001);
       if (args.size() == 0) {
         console::write_line(string::join("\n", get_help()));
         return -1;
