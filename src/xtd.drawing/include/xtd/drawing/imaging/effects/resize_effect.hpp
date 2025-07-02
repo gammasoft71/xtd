@@ -68,7 +68,7 @@ namespace xtd {
           /// @remarks The `fill_color` color is used to fill borders when resizing is greater than the original size.
           resize_effect(const xtd::drawing::size& size, const xtd::drawing::color& fill_color);
           /// @}
-
+          
           /// @name Public Properties
           
           /// @{
@@ -77,22 +77,22 @@ namespace xtd {
           /// @remarks The `auto_determine_fill_color` boolean is used to determina automatically de best color to fill borders when resizing is greater than the original size.
           /// @remarks The 'fill_color' has no effect if `auto_determine_fill_color` is set to `true'.
           bool auto_determine_fill_color = false;
-
+          
           /// @brief Gets or sets the fill color.
           /// @param fill_color The fill color. The default value is xtd::drawing::color::transparent.
           /// @remarks The `fill_color` color is used to fill borders when resizing is greater than the original size.
           /// @remarks The 'fill_color' has no effect if `auto_determine_fill_color` is set to `true'.
           xtd::drawing::color fill_color = xtd::drawing::color::transparent;
-
+          
           /// @brief Gets or sets the new rectangle.
           /// @param size The new rectangle.
           xtd::drawing::rectangle rectangle;
-
+          
           /// @brief Sets the new size.
           /// @param size The new size.
           void size(const xtd::drawing::size& value);
           /// @}
-
+          
         protected:
           /// @name Protected Methods
           

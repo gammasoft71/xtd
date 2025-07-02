@@ -57,7 +57,7 @@ namespace xtd {
   /// ```
   template<class type_t>
   inline type_t as(any_object& o) {
-    if (is<box<type_t>>(o.value())) return as<box<type_t>>(o.value()).value;
+    if (is<box<type_t>>(o.value())) return as<box<type_t >> (o.value()).value;
     return __polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
   }
   
@@ -81,10 +81,10 @@ namespace xtd {
   /// ```
   template<class type_t>
   inline type_t as(const any_object& o) {
-    if (is<box<type_t>>(o.value())) return as<box<type_t>>(o.value()).value;
+    if (is<box<type_t>>(o.value())) return as<box<type_t >> (o.value()).value;
     return __polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
   }
- 
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.
@@ -107,7 +107,7 @@ namespace xtd {
   inline string as<string>(xtd::any_object& value) {
     return xtd::convert::to_string(value);
   }
-
+  
   /// @brief Casts a type into another type.
   /// @param value object to convert.
   /// @return A new xtd::ulong object converted from value.

@@ -77,7 +77,7 @@ namespace xtd {
         trace_form_base::write_line(debug);
       }
       /// @}
-
+      
     protected:
       /// @name Protected Methods
       
@@ -86,7 +86,7 @@ namespace xtd {
       /// @return A new object that is a copy of this instance.
       /// @par Notes to Implementers
       /// All controls must be override the clone method.
-      xtd::uptr<xtd::object> clone() const override;      
+      xtd::uptr<xtd::object> clone() const override;
       /// @}
       
     private:

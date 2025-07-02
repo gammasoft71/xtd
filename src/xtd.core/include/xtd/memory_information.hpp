@@ -19,7 +19,7 @@ namespace xtd {
   /// @include memory_information.cpp
   class core_export_ memory_information static_ {
   public:
-   
+  
     /// @name Public Static Methods
     
     /// @{
@@ -38,7 +38,7 @@ namespace xtd {
     /// @include memory_information.cpp
     /// @remarks The free process memory is equal to xtd::memory_information::get_total_process_memory minus xtd::memory_information::get_used_process_memory.
     static xtd::size get_free_process_memory() noexcept;
-
+    
     /// @brief Gets the free virtual memory in bytes.
     /// @return The free virtual memory value.
     /// @par Examples
@@ -46,7 +46,7 @@ namespace xtd {
     /// @include memory_information.cpp
     /// @remarks The free virtual memory is equal to xtd::memory_information::get_total_virtual_memory minus xtd::memory_information::get_used_virtual_memory.
     static xtd::size get_free_virtual_memory() noexcept;
-
+    
     /// @brief Gets the total physical memory in bytes.
     /// @return The total physical memory value.
     /// @par Examples
@@ -73,7 +73,7 @@ namespace xtd {
     /// @remarks Each OS has its own way of managing and allocating virtual memory.
     /// @remarks It is possible that the OS has no virtual memory, in which case the method will return 0.
     static xtd::size get_total_virtual_memory() noexcept;
-
+    
     /// @brief Gets the used physical memory information in bytes.
     /// @return The used physical memory value.
     /// @par Examples

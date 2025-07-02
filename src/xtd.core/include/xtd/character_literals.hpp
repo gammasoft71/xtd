@@ -25,7 +25,7 @@ namespace xtd {
     /// xtd::console::out << 42_c << xtd::environment::new_line;
     /// ```
     char32 operator""_c(unsigned long long c);
-
+    
     /// @brief Used to convert specified value into char32.
     /// @par Namespace
     /// xtd

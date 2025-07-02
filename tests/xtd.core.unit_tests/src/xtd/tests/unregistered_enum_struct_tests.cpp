@@ -26,7 +26,7 @@ namespace xtd::tests {
     }
     
     void test_method_(format_with_invalid_enum) {
-      assert::are_equal("5", string::format("{}", as<unregistered_enum_struct_test>(5)));
+      assert::are_equal("5", string::format("{}", as < unregistered_enum_struct_test > (5)));
     }
     
     void test_method_(format_with_specified_format) {
@@ -43,16 +43,16 @@ namespace xtd::tests {
     }
     
     void test_method_(parse) {
-      assert::are_equal(unregistered_enum_struct_test::none, string::parse<unregistered_enum_struct_test>("0"));
-      assert::are_equal(unregistered_enum_struct_test::one, string::parse<unregistered_enum_struct_test>("1"));
-      assert::are_equal(unregistered_enum_struct_test::two, string::parse<unregistered_enum_struct_test>("2"));
-      assert::are_equal(unregistered_enum_struct_test::three, string::parse<unregistered_enum_struct_test>("3"));
-      assert::are_equal(unregistered_enum_struct_test::four, string::parse<unregistered_enum_struct_test>("4"));
+      assert::are_equal(unregistered_enum_struct_test::none, string::parse < unregistered_enum_struct_test > ("0"));
+      assert::are_equal(unregistered_enum_struct_test::one, string::parse < unregistered_enum_struct_test > ("1"));
+      assert::are_equal(unregistered_enum_struct_test::two, string::parse < unregistered_enum_struct_test > ("2"));
+      assert::are_equal(unregistered_enum_struct_test::three, string::parse < unregistered_enum_struct_test > ("3"));
+      assert::are_equal(unregistered_enum_struct_test::four, string::parse < unregistered_enum_struct_test > ("4"));
     }
     
     void test_method_(parse_with_invalid_enum) {
-      assert::are_equal(as<unregistered_enum_struct_test>(5), string::parse<unregistered_enum_struct_test>("5"));
-      assert::throws<format_exception>([] {string::parse<unregistered_enum_struct_test>("one");});
+      assert::are_equal(as < unregistered_enum_struct_test > (5), string::parse < unregistered_enum_struct_test > ("5"));
+      assert::throws < format_exception > ([] {string::parse < unregistered_enum_struct_test > ("one");});
     }
   };
 }

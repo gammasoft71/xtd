@@ -42,12 +42,12 @@ ip_host_entry dns::get_host_entry(const string& host_name_or_address) {
   
   auto addresses = native::dns::get_addresses(host);
   host_entry.address_list(array<ip_address> {addresses.size()});
-  for (auto index= 0_z; index < addresses.size(); ++index)
+  for (auto index = 0_z; index < addresses.size(); ++index)
     host_entry.address_list()[index] = ip_address(addresses[index]);
-
+    
   auto aliases = native::dns::get_aliases(host);
   host_entry.aliases(array<string> {aliases.size()});
-  for (auto index= 0_z; index < aliases.size(); ++index)
+  for (auto index = 0_z; index < aliases.size(); ++index)
     host_entry.aliases()[index] = aliases[index];
     
   native::dns::destroy(host);

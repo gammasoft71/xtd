@@ -18,7 +18,7 @@ namespace xtd {
     xtd::type_object __typeof_(const type_t& value) noexcept {
       return xtd::type_object(typeid(value));
     }
-
+    
     inline xtd::type_object __typeof_(const xtd::type& value) noexcept {
       return xtd::type_object(value);
     }
@@ -42,6 +42,6 @@ namespace xtd {
   /// xtd::type_object type2 = typeof_(i);
   /// ```
   /// @remarks The typeof_ operator cannot be overloaded.
-  #define typeof_ \
-    xtd::__s__::__typeof_
+#define typeof_ \
+  xtd::__s__::__typeof_
 }

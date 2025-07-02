@@ -11,7 +11,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/out_of_memory_exception>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

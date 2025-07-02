@@ -9,15 +9,15 @@ namespace {
     if (source_image == xtd::drawing::image::empty) return source_image;
     if (size.width == source_image.width() && size.height == source_image.height()) return source_image;
     if (size.width < 1 || size.height < 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-
+    
     if (source_image.width() % size.width == 0 && source_image.width() >= size.width && source_image.height() % size.height == 0 && source_image.height() >= size.height)
       return shrink_interpolation(source_image, size);
-    
+      
     const auto source_width = source_image.width();
     const auto source_height = source_image.height();
     const auto source_alpha = reinterpret_cast<const xtd::drawing::helpers::alpha*>(source_image.alpha());
     const auto source_rgb = reinterpret_cast<const xtd::drawing::helpers::rgb*>(source_image.rgb());
-
+    
     if (static_cast<xtd::size>(source_width) > xtd::size_object::max_value >> 16) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "The source image width is greather than 281474976710655 pixels");
     if (static_cast<xtd::size>(source_height) > xtd::size_object::max_value >> 16) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "The source image height is greather than 281474976710655 pixels");
     
@@ -26,7 +26,7 @@ namespace {
     auto result_image = xtd::drawing::bitmap {result_width, result_height};
     auto result_alpha = reinterpret_cast<xtd::drawing::helpers::alpha*>(result_image.alpha());
     auto result_rgb = reinterpret_cast<xtd::drawing::helpers::rgb*>(result_image.rgb());
-
+    
     const auto delta_x = (static_cast<xtd::size>(source_width) << 16) / result_width;
     const auto delta_y = (static_cast<xtd::size>(source_height) << 16) / result_height;
     
@@ -44,7 +44,7 @@ namespace {
       }
       source_y += delta_y;
     }
-        
+    
     return result_image;
   }
 }

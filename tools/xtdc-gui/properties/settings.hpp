@@ -14,7 +14,7 @@ namespace xtdc_gui::properties {
   class settings : public xtd::object {
   public:
     /// @name Public Constructors
-
+    
     /// @{
     /// @brief Initializes a new instance of the xtdc_gui::properties::settings class.
     /// @remarks All properties are reloaded with the last saved value.
@@ -25,15 +25,15 @@ namespace xtdc_gui::properties {
       if (load) reload();
     }
     /// @}
-
+    
     /// @cond
     settings(settings&&) noexcept = default;
     settings(const settings&) noexcept = default;
     settings& operator =(const settings&) noexcept = default;
     /// @endcond
-
+    
     /// @name Public Properties
-
+    
     /// @{
     /// @brief Gets the menu_visible user setting property.
     /// @return A bool value.
@@ -44,7 +44,7 @@ namespace xtdc_gui::properties {
       menu_visible_ = value;
       return *this;
     }
-
+    
     /// @brief Gets the auto_close user setting property.
     /// @return A bool value.
     bool auto_close() const noexcept {return auto_close_;}
@@ -54,7 +54,7 @@ namespace xtdc_gui::properties {
       auto_close_ = value;
       return *this;
     }
-
+    
     /// @brief Gets the create_propject_folder user setting property.
     /// @return A xtd::string value.
     xtd::string create_propject_folder() const noexcept {return create_propject_folder_;}
@@ -64,7 +64,7 @@ namespace xtdc_gui::properties {
       create_propject_folder_ = value;
       return *this;
     }
-
+    
     /// @brief Gets the open_propject_folder user setting property.
     /// @return A xtd::string value.
     xtd::string open_propject_folder() const noexcept {return open_propject_folder_;}
@@ -74,7 +74,7 @@ namespace xtdc_gui::properties {
       open_propject_folder_ = value;
       return *this;
     }
-
+    
     /// @brief Gets the open_recent_propjects user setting property.
     /// @return A xtd::string value.
     xtd::string open_recent_propjects() const noexcept {return open_recent_propjects_;}
@@ -84,7 +84,7 @@ namespace xtdc_gui::properties {
       open_recent_propjects_ = value;
       return *this;
     }
-
+    
     /// @brief Gets the create_recent_propjects user setting property.
     /// @return A xtd::string value.
     xtd::string create_recent_propjects() const noexcept {return create_recent_propjects_;}
@@ -94,7 +94,7 @@ namespace xtdc_gui::properties {
       create_recent_propjects_ = value;
       return *this;
     }
-
+    
     /// @brief Gets the language_index user setting property.
     /// @return A size_t value.
     size_t language_index() const noexcept {return language_index_;}
@@ -104,7 +104,7 @@ namespace xtdc_gui::properties {
       language_index_ = value;
       return *this;
     }
-
+    
     /// @brief Gets the platform_index user setting property.
     /// @return A size_t value.
     size_t platform_index() const noexcept {return platform_index_;}
@@ -114,7 +114,7 @@ namespace xtdc_gui::properties {
       platform_index_ = value;
       return *this;
     }
-
+    
     /// @brief Gets the type_index user setting property.
     /// @return A size_t value.
     size_t type_index() const noexcept {return type_index_;}
@@ -124,7 +124,7 @@ namespace xtdc_gui::properties {
       type_index_ = value;
       return *this;
     }
-
+    
     /// @brief Gets the use_defaul_ide user setting property.
     /// @return A bool value.
     bool use_defaul_ide() const noexcept {return use_defaul_ide_;}
@@ -134,7 +134,7 @@ namespace xtdc_gui::properties {
       use_defaul_ide_ = value;
       return *this;
     }
-
+    
     /// @brief Gets the user_path_ide user setting property.
     /// @return A xtd::string value.
     xtd::string user_path_ide() const noexcept {return user_path_ide_;}
@@ -144,7 +144,7 @@ namespace xtdc_gui::properties {
       user_path_ide_ = value;
       return *this;
     }
-
+    
     /// @brief Gets the settings_form_location user setting property.
     /// @return A xtd::drawing::point value.
     xtd::drawing::point settings_form_location() const noexcept {return settings_form_location_;}
@@ -154,11 +154,11 @@ namespace xtdc_gui::properties {
       settings_form_location_ = value;
       return *this;
     }
-
+    
     /// @}
-
+    
     /// @name Public Methods
-
+    
     /// @{
     /// @brief Reload all properties with the last saved values.
     /// @remarks See [Settings](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/settings) for more informations.
@@ -176,14 +176,14 @@ namespace xtdc_gui::properties {
       user_path_ide_ = settings_.read("user_path_ide", user_path_ide_);
       settings_form_location_ = settings_.read("settings_form_location", settings_form_location_);
     }
-
+    
     /// @brief Reset all properties to their default values.
     /// @remarks See [Settings](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/settings) for more informations.
     void reset() noexcept {
       settings_.reset();
       *this = settings {false};
     }
-
+    
     /// @brief Save all properties.
     /// @remarks See [Settings](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/settings) for more informations.
     void save() noexcept {
@@ -202,9 +202,9 @@ namespace xtdc_gui::properties {
       settings_.save();
     }
     /// @}
-
+    
     /// @name Public Static Properties
-
+    
     /// @{
     /// @brief Gets the default instance of settings.
     /// @return The default instance.
@@ -214,7 +214,7 @@ namespace xtdc_gui::properties {
       return default_settings;
     }
     /// @}
-
+    
   private:
     xtd::configuration::settings settings_;
     bool menu_visible_ {true};

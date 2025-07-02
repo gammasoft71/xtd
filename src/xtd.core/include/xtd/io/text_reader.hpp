@@ -61,24 +61,24 @@ namespace xtd {
       /// @brief Reads the next character from the input stream and advances the character position by one character.
       /// @return The next character from the input stream, or EOF if no more characters are available.
       virtual int32 read();
-     
+      
       /// @brief Reads the characters from the current reader and writes the data to the specified buffer.
       /// @param buffer When this method returns, contains the specified span of characters replaced by the characters read from the current source.
       /// @return The number of characters that have been read. The number will be less than or equal to the buffer length, depending on whether the data is available within the reader. This method returns 0 (zero) if it is called when no more characters are left to read.
       virtual size_t read(xtd::span<char>& buffer);
-
+      
       /// @brief Reads a specified maximum number of characters from the current text reader and writes the data to a buffer, beginning at the specified index.
       /// @param buffer When this method returns, this parameter contains the specified character array with the values between index and (index + count -1) replaced by the characters read from the current source.
       /// @param index The position in buffer at which to begin writing.
       /// @param count The maximum number of characters to read.
       /// @return The number of characters that have been read. The number will be less than or equal to count, depending on whether all input characters have been read.
       virtual size_t read(xtd::array<char>& buffer, size_t index, size_t count);
-
+      
       /// @brief Reads the characters from the current stream and writes the data to a buffer.
       /// @param buffer When this method returns, contains the specified span of characters replaced by the characters read from the current source.
       /// @return The number of characters that have been read. The number will be less than or equal to the buffer length, depending on whether all input characters have been read.
       virtual size_t read_block(xtd::span<char>& buffer);
-
+      
       /// @brief Reads a specified maximum number of characters from the current text reader and writes the data to a buffer, beginning at the specified index.
       /// @param buffer When this method returns, this parameter contains the specified character array with the values between index and (index + count -1) replaced by the characters read from the current source.
       /// @param index The position in buffer at which to begin writing.

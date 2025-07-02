@@ -172,7 +172,7 @@ namespace xtd {
         /// @param height Height of the bounding rectangle that defines the image.
         /// @warning Internal use only
         static void draw_image(intptr handle, intptr image, float dest_x, float dest_y, float dest_width, float dest_height, float src_x, float src_y, float src_width, float src_height);
-
+        
         /// @brief Draws the specified dosabled image at the specified location and size.
         /// @param handle The graphics handle.
         /// @param image An image handle to draw.

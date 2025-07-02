@@ -43,7 +43,7 @@ namespace xtd {
           /// @param new_color The color used when RGB color is under or equal the threshold value.
           color_substitution_effect(int32 threshold, color source_color, color new_color);
           /// @}
-
+          
           /// @name Public Properties
           
           /// @{
@@ -51,16 +51,16 @@ namespace xtd {
           /// @param threshold The threshold value (from 0 to 765).
           /// @remarks The threshold is the sum of the RGB components.
           int32 threshold = 0;
-
+          
           /// @brief Gets or sets the extraction color.
           /// @param source_color The extraction color.
           color source_color;
-
+          
           /// @brief Gets or sets the other pixels color.
           /// @param new_color The other pixels color.
           color new_color;
           /// @}
-
+          
         protected:
           /// @name Protected Methods
           

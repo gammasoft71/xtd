@@ -13,7 +13,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/date_time_kind>
   /// ```
-    /// @par Library
+  /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @remarks A member of the xtd::date_time_kind enumeration is returned by the xtd::date_time::kind property.

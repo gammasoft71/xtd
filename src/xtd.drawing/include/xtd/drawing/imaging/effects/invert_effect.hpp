@@ -41,7 +41,7 @@ namespace xtd {
           /// @param percent The percent factor in %.
           explicit invert_effect(double percent);
           /// @}
-
+          
           /// @name Public Properties
           
           /// @{
@@ -50,7 +50,7 @@ namespace xtd {
           /// @remarks `0.0` will represents the original image. `0.5`gray image. `1.0` will provide image with inverted colors.
           double percent = 0.0;
           /// @}
-
+          
         protected:
           /// @name Protected Methods
           

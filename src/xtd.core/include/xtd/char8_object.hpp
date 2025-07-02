@@ -15,7 +15,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/char8_object>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

@@ -42,7 +42,7 @@ namespace xtd {
           /// @param rotate_flip_type A xtd::drawing::rotate_flip_type member that specifies the type of rotation and flip to apply to the image.
           explicit rotate_flip_effect(xtd::drawing::rotate_flip_type rotate_flip_type);
           /// @}
-
+          
           /// @name Public Properties
           
           /// @{
@@ -50,7 +50,7 @@ namespace xtd {
           /// @param rotate_flip_type A xtd::drawing::rotate_flip_type member that specifies the type of rotation and flip to apply to the image.
           xtd::drawing::rotate_flip_type rotate_flip_type = xtd::drawing::rotate_flip_type::rotate_none_flip_none;
           /// @}
-
+          
         protected:
           /// @name Protected Methods
           

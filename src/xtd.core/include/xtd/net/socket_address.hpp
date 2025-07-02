@@ -96,7 +96,7 @@ namespace xtd {
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
       bool equals(const socket_address& other) const noexcept override;
-
+      
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;

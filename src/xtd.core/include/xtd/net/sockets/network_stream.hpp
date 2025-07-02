@@ -52,7 +52,7 @@ namespace xtd {
         /// @param owns_socket Set to `true` to indicate that the xtd::net::sockets::network_stream will take ownership of the xtd::net::sockets::socket; otherwise, `false`.
         /// @remarks The xtd::net::sockets::network_stream is created with read/write access to the specified xtd::net::sockets::socket. If the value of owns_socket parameter is `true`, the xtd::net::sockets::network_stream takes ownership of the underlying xtd::net::sockets::socket, and calling the close method also closes the underlying xtd::net::sockets::socket.
         network_stream(const xtd::net::sockets::socket& socket, bool owns_socket);
-
+        
         /// @brief Initializes a new instance of the network_stream class for the specified xtd::net::sockets::socket with the specified access rights.
         /// @param socket The xtd::net::sockets::socket that the xtd::net::sockets::network_stream will use to send and receive data.
         /// @param access A bitwise combination of the xtd::io::file_access values that specify the type of access given to the xtd::net::sockets::network_stream over the provided xtd::net::sockets::socket.
@@ -131,7 +131,7 @@ namespace xtd {
         /// @brief Flushes data from the stream. This method is reserved for future use.
         /// @remarks The Flush method implements the xtd::io::stream::flush method; however, because xtd::net::sockets::network_stream is not buffered, it has no effect on network streams. Calling the xtd::net::sockets::network_stream::flush method does not throw an exception.
         void flush() override;
-
+        
         using xtd::io::stream::read;
         /// @brief Reads a block of bytes from the current stream and writes the data to a buffer.
         /// @param buffer When this method returns, contains the specified byte array with the values between `offset` and (`offset` + `count` - 1) replaced by the characters read from the current stream.

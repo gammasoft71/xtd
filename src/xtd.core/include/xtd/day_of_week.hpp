@@ -13,7 +13,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/day_of_week>
   /// ```
-    /// @par Library
+  /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @par Examples

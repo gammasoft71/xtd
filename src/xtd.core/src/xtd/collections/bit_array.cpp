@@ -191,7 +191,7 @@ bool bit_array::has_all_set() const noexcept {
   constexpr int32 all_set_bits = -1; // 0xFFFFFFFF
   for (auto index = 0_z; index < int_count; ++index)
     if (bit_array_[index] != all_set_bits) return false;
-  
+    
   if (!extra_bits) return true;
   
   auto mask = static_cast<int32>(1 << extra_bits) - 1;
@@ -203,10 +203,10 @@ bool bit_array::has_any_set() const noexcept {
   auto extra_bits = length_ & (32 - 1); // equivalent to length % 32, since 32 is a power of 2
   auto int_count = get_int32_array_length_from_bit_length(length_);
   if (extra_bits) int_count--;
-
+  
   for (auto index = 0_z; index < int_count; ++index)
     if (bit_array_[index] != 0) return true;
-  
+    
   if (!extra_bits) return false;
   
   return ((bit_array_[int_count] & (1 << extra_bits)) - 1) != 0;
@@ -249,7 +249,7 @@ void bit_array::set_all(bool value) {
 
 string bit_array::to_string() const noexcept {
   flush(); // Must be call first
-  return string::format( "[{}]", string::join(", ", *this));
+  return string::format("[{}]", string::join(", ", *this));
 }
 
 const bit_array& bit_array::xor_(const bit_array& value) {

@@ -101,7 +101,7 @@ namespace xtd::io::tests {
       assert::are_equal("xtd::io::end_of_stream_exception : Attempted to read past the end of the stream." + environment::new_line() + stack_frame.to_string(), e.to_string());
       assert::are_equal("Attempted to read past the end of the stream.", e.what());
     }
-
+    
     void test_method_(constructor_with_empty_message) {
       auto e = end_of_stream_exception {""};
       assert::are_equal("xtd::io::end_of_stream_exception", e.get_type().full_name());
@@ -216,7 +216,7 @@ namespace xtd::io::tests {
       assert::are_equal("xtd::io::end_of_stream_exception : Attempted to read past the end of the stream." + environment::new_line() + stack_frame.to_string(), e.to_string());
       assert::are_equal("Attempted to read past the end of the stream.", e.what());
     }
-
+    
     void test_method_(constructor_with_message_and_inner_exception) {
       auto inner_exception = argument_exception {};
       auto e = end_of_stream_exception {"Test excpetion message.", inner_exception};

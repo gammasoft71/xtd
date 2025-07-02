@@ -99,7 +99,7 @@ namespace {
 @end
 
 namespace {
-  static bool PatternCompare(const std::string& fileName, const std::string& pattern) {
+  static bool PatternCompare(const std::string & fileName, const std::string & pattern) {
     if (pattern.empty())
       return fileName.empty();
       
@@ -115,14 +115,14 @@ namespace {
     return ((pattern[0] == '?') || (fileName[0] == pattern[0])) && PatternCompare(strings::substring(fileName, 1), strings::substring(pattern, 1));
   }
   
-  static bool PatternCompare(const std::string& fileName, const std::vector<std::string>& patterns) {
+  static bool PatternCompare(const std::string & fileName, const std::vector<std::string>& patterns) {
     for (auto pattern : patterns)
       if (PatternCompare(fileName, pattern))
         return true;
     return false;
   }
   
-  static NSView* CreateFilterViewForFileDialog(NSSavePanel* savePanel, const std::vector<std::pair<std::string, std::vector<std::string>>>& filters, int filterIndex) {
+  static NSView * CreateFilterViewForFileDialog(NSSavePanel * savePanel, const std::vector<std::pair<std::string, std::vector<std::string>>>& filters, int filterIndex) {
     NSPopUpButton* popUpButton = [[[NSPopUpButton alloc ] initWithFrame:NSMakeRect(62, 0, 256, 30) pullsDown:NO] autorelease];
     for (auto filter : filters)
       [popUpButton addItemWithTitle:[NSString stringWithUTF8String:filter.first.c_str()]];

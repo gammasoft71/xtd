@@ -590,13 +590,13 @@ forms::dialog_result form::show_sheet_dialog(const iwin32_window& owner) {
   data_->previous_screen = xtd::new_sptr<screen>(screen::from_control(*this));
   recreate_handle();
   data_->dialog_result = forms::dialog_result::none;
-  application::raise_enter_thread_modal(event_args::empty);  
+  application::raise_enter_thread_modal(event_args::empty);
   return is_handle_created() ? static_cast<forms::dialog_result>(native::form::show_sheet_dialog(handle())) : dialog_result::cancel;
 }
 
 forms::create_params form::create_params() const noexcept {
   auto create_params = container_control::create_params();
-
+  
   create_params.class_name("form");
   
   if (get_state(state::modal)) create_params.ex_style(create_params.ex_style() | WS_EX_MODALWINDOW);

@@ -124,7 +124,7 @@ namespace xtd {
       static_assert(std::is_base_of<xtd::object, object_b_t>::value, "object_b does not inherit from xtd::object");
       return object_a == object_b;
     }
-
+    
     /// @brief Determines whether the specified object instances are the same instance.
     /// @param object_a The first object to compare.
     /// @param object_b The second object to compare.

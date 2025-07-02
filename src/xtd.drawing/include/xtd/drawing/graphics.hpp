@@ -626,7 +626,7 @@ namespace xtd {
       /// @remarks An xtd::drawing::image stores a value for pixel width and a value for horizontal resolution (dots per inch). The physical width, measured in inches, of an image is the pixel width divided by the horizontal resolution. For example, an image with a pixel width of 216 and a horizontal resolution of 72 dots per inch has a physical width of 3 inches. Similar remarks apply to pixel height and physical height.
       /// @remarks This method draws an image using its physical size, so the image will have its correct size in inches regardless of the resolution (dots per inch) of the display device. For example, suppose an image has a pixel width of 216 and a horizontal resolution of 72 dots per inch. If you call this method to draw that image on a device that has a resolution of 96 dots per inch, the pixel width of the rendered image will be (216/72)*96 = 288.
       void draw_image(const xtd::drawing::image& image, const xtd::drawing::point_f& dest_point, float src_x, float src_y, float srd_width, float src_height);
-
+      
       /// @brief Draws a specified image using its original physical size at a specified location.
       /// @param image xtd::drawing::image to draw.
       /// @param point xtd::drawing::point structure that specifies the upper-left corner of the drawn image.
@@ -1332,7 +1332,7 @@ namespace xtd {
       
       xtd::string to_string() const noexcept override {return get_type().full_name();}
       /// @}
-
+      
       /// @name Public Static Methods
       
       /// @{
@@ -1370,7 +1370,7 @@ namespace xtd {
       /// * xtd::drawing::imaging::pixel_format::format_16bpp_gray_scale
       static graphics from_image(const xtd::drawing::image& image);
       /// @}
-
+      
     private:
       friend xtd::drawing::image;
       friend xtd::drawing::region;

@@ -31,7 +31,7 @@ private:
   using param_type = param_t;
   using move_next_type = std::function<bool(param_type&)>;
   using reset_type = std::function<void(param_type&)>;
-
+  
   __opaque_xtd_linq_lazy_enumerable__() = default;
   __opaque_xtd_linq_lazy_enumerable__(__opaque_xtd_linq_lazy_enumerable__&&) = default;
   __opaque_xtd_linq_lazy_enumerable__(const __opaque_xtd_linq_lazy_enumerable__&) = default;
@@ -54,7 +54,7 @@ private:
     void reset() override {
       reset_(params_);
     }
-
+    
   private:
     param_type& params_;
     move_next_type& move_next_;

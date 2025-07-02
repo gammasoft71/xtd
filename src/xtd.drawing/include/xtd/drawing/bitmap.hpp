@@ -194,7 +194,7 @@ namespace xtd {
       /// @return The xtd::drawing::bitmap that this method creates.
       static bitmap from_hicon(xtd::intptr icon);
       /// @}
-
+      
     private:
       bitmap() = default;
     };

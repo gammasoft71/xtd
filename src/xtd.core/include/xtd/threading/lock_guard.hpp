@@ -32,7 +32,7 @@ namespace xtd {
     class core_export_ lock_guard final : public object {
     public:
       /// @name Public Constructors
-
+      
       /// @{
       /// @brief Create a xtd::threading::lock_guard object and acquires an exclusive lock on the specified obj.
       /// @param obj The object on which to acquire the monitor lock.
@@ -44,9 +44,9 @@ namespace xtd {
       /// @cond
       ~lock_guard();
       /// @endcond
-
+      
       /// @name Public Methods
-
+      
       /// @{
       /// @brief Notifies a thread in the waiting queue of a change in the locked object's state.
       /// @remarks Only the current owner of the lock can signal a waiting object using xtd::threading::monitor::pulse.
@@ -56,7 +56,7 @@ namespace xtd {
       /// @remarks The xtd::threading::monitor::pulse, xtd::threading::monitor::pulse_all, and xtd::threading::monitor::wait methods must be invoked from within a synchronized block of code.
       /// @remarks To signal multiple threads, use the xtd::threading::monitor::pulse_all method.
       void pulse();
-
+      
       /// @brief Notifies all waiting threads of a change in the object's state.
       /// @remarks The thread that currently owns the lock on the specified object invokes this method to signal all threads waiting to acquire the lock on the object. After the signal is sent, the waiting threads are moved to the ready queue. When the thread that invoked xtd::threading::monitor::xtd::threading::monitor::pulse_all releases the lock, the next thread in the ready queue acquires the lock.
       /// @remarks Note that a synchronized object holds several references, including a reference to the thread that currently holds the lock, a reference to the ready queue, which contains the threads that are ready to obtain the lock, and a reference to the waiting queue, which contains the threads that are waiting for notification of a change in the object's state.
@@ -64,7 +64,7 @@ namespace xtd {
       /// @remarks The remarks for the xtd::threading::monitor::pulse method explain what happens if xtd::threading::monitor::pulse is called when no threads are waiting.
       /// @remarks To signal a single thread, use the xtd::threading::monitor::pulse method.
       void pulse_all();
-
+      
       /// @brief Releases the lock on an object and blocks the current thread until it reacquires the lock. If the specified time-out interval elapses, the thread enters the ready queue.
       /// @param obj The object on which to wait.
       /// @param milliseconds_timeout The number of milliseconds to wait before the thread enters the ready queue.

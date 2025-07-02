@@ -38,7 +38,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/unboxing>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -150,7 +150,7 @@ namespace xtd {
     return value;
   }
    */
-
+  
   inline char unboxing(const char& value) noexcept {return value;}
   inline char8 unboxing(const char8& value) noexcept {return value;}
   inline char16 unboxing(const char16& value) noexcept {return value;}

@@ -27,7 +27,7 @@ namespace xtd::tests {
     void test_method_(difference_type) {
       assert::are_equal(typeof_<ptrdiff>(), typeof_<span<int>::difference_type>());
     }
-
+    
     void test_method_(pointer) {
       assert::are_equal(typeof_<const int*>(), typeof_<span<const int>::pointer>());
       assert::are_equal(typeof_<int*>(), typeof_<span<int>::pointer>());
@@ -37,7 +37,7 @@ namespace xtd::tests {
       assert::are_equal(typeof_<const int*>(), typeof_<span<const int>::const_pointer>());
       assert::are_equal(typeof_<const int*>(), typeof_<span<int>::const_pointer>());
     }
-
+    
     void test_method_(reference) {
       assert::are_equal(typeof_<const int&>(), typeof_<span<const int>::reference>());
       assert::are_equal(typeof_<int&>(), typeof_<span<int>::reference>());
@@ -47,17 +47,17 @@ namespace xtd::tests {
       assert::are_equal(typeof_<const int&>(), typeof_<span<const int>::const_reference>());
       assert::are_equal(typeof_<const int&>(), typeof_<span<int>::const_reference>());
     }
-
+    
     void test_method_(iterator) {
-      assert::are_equal(typeof_<wrap_pointer_iterator<const int*>>(), typeof_<span<const int>::iterator>());
-      assert::are_equal(typeof_<wrap_pointer_iterator<int*>>(), typeof_<span<int>::iterator>());
+      assert::are_equal(typeof_<wrap_pointer_iterator<const int*>>(), typeof_<span<const int>::iterator > ());
+      assert::are_equal(typeof_<wrap_pointer_iterator<int*>>(), typeof_<span<int>::iterator > ());
     }
     
     void test_method_(const_iterator) {
-      assert::are_equal(typeof_<const wrap_pointer_iterator<const int*>>(), typeof_<span<const int>::const_iterator>());
-      assert::are_equal(typeof_<const wrap_pointer_iterator<int*>>(), typeof_<span<int>::const_iterator>());
+      assert::are_equal(typeof_<const wrap_pointer_iterator<const int*>>(), typeof_<span<const int>::const_iterator > ());
+      assert::are_equal(typeof_<const wrap_pointer_iterator<int*>>(), typeof_<span<int>::const_iterator > ());
     }
-
+    
     void test_method_(reverse_iterator) {
       assert::are_equal(typeof_<std::reverse_iterator<wrap_pointer_iterator<const int*>>>(), typeof_<span<const int>::reverse_iterator>());
       assert::are_equal(typeof_<std::reverse_iterator<wrap_pointer_iterator<int*>>>(), typeof_<span<int>::reverse_iterator>());
@@ -67,7 +67,7 @@ namespace xtd::tests {
       assert::are_equal(typeof_<const std::reverse_iterator<wrap_pointer_iterator<const int*>>>(), typeof_<span<const int>::const_reverse_iterator>());
       assert::are_equal(typeof_<const std::reverse_iterator<wrap_pointer_iterator<int*>>>(), typeof_<span<int>::const_reverse_iterator>());
     }
-
+    
     void test_method_(constructor_default) {
       auto s = span<int>();
       assert::is_null(s.data());
@@ -97,7 +97,7 @@ namespace xtd::tests {
       assert::are_equal(3_z, s.size());
       collection_assert::are_equal({10, 20, 30}, s);
     }
-
+    
     void test_method_(constructor_with_iterators) {
       auto a = array {10, 20, 30, 40, 50};
       auto s = span(a.begin(), a.end());
@@ -113,7 +113,7 @@ namespace xtd::tests {
       assert::are_equal(3_z, s.size());
       collection_assert::are_equal({10, 20, 30}, s);
     }
-
+    
     void test_method_(constructor_with_const_iterator_and_count) {
       /* Conflict with span(collection_t& items, xtd::size count)
        const auto a = array {10, 20, 30, 40, 50};
@@ -133,7 +133,7 @@ namespace xtd::tests {
        collection_assert::are_equal({10, 20, 30}, s);
        */
     }
-
+    
     void test_method_(constructor_with_iterator_and_count) {
       /* Conflict with span(collection_t& items, xtd::size count)
        auto a = array {10, 20, 30, 40, 50};
@@ -153,7 +153,7 @@ namespace xtd::tests {
        collection_assert::are_equal({10, 20, 30}, s);
        */
     }
-
+    
     void test_method_(constructor_with_const_native_array) {
       const int a[] = {10, 20, 30, 40, 50};
       auto s = span(a);
@@ -169,7 +169,7 @@ namespace xtd::tests {
       assert::are_equal(3_z, s.size());
       collection_assert::are_equal({10, 20, 30}, s);
     }
-
+    
     void test_method_(constructor_with_native_array) {
       int a[] = {10, 20, 30, 40, 50};
       auto s = span(a);
@@ -177,7 +177,7 @@ namespace xtd::tests {
       assert::are_equal(5_z, s.size());
       collection_assert::are_equal({10, 20, 30, 40, 50}, s);
     }
-
+    
     void test_method_(constructor_with_native_array_and_static_extent) {
       int a[] = {10, 20, 30, 40, 50};
       auto s = span<int, 3>(a);
@@ -185,7 +185,7 @@ namespace xtd::tests {
       assert::are_equal(3_z, s.size());
       collection_assert::are_equal({10, 20, 30}, s);
     }
-
+    
     void test_method_(constructor_with_const_std_array) {
       const auto a = std::array {10, 20, 30, 40, 50};
       auto s = span(a);
@@ -201,7 +201,7 @@ namespace xtd::tests {
       assert::are_equal(3_z, s.size());
       collection_assert::are_equal({10, 20, 30}, s);
     }
-
+    
     void test_method_(constructor_with_std_array) {
       auto a = std::array {10, 20, 30, 40, 50};
       auto s = span(a);
@@ -217,7 +217,7 @@ namespace xtd::tests {
       assert::are_equal(3_z, s.size());
       collection_assert::are_equal({10, 20, 30}, s);
     }
-
+    
     void test_method_(constructor_with_const_range) {
       const auto a = array {10, 20, 30, 40, 50};
       auto s = span(a);
@@ -233,7 +233,7 @@ namespace xtd::tests {
       assert::are_equal(3_z, s.size());
       collection_assert::are_equal({10, 20, 30}, s);
     }
-
+    
     void test_method_(constructor_with_range) {
       auto a = array {10, 20, 30, 40, 50};
       auto s = span(a);
@@ -249,7 +249,7 @@ namespace xtd::tests {
       assert::are_equal(3_z, s.size());
       collection_assert::are_equal({10, 20, 30}, s);
     }
-
+    
     void test_method_(constructor_with_initializer_list) {
       auto a = {10, 20, 30, 40, 50};
       auto s = span(a);
@@ -265,7 +265,7 @@ namespace xtd::tests {
       assert::are_equal(3_z, s.size());
       collection_assert::are_equal({10, 20, 30}, s);
     }
-
+    
     void test_method_(constructor_with_const_collection) {
       const auto a = array {10, 20, 30, 40, 50};
       auto s = span(a);
@@ -281,7 +281,7 @@ namespace xtd::tests {
       assert::are_equal(3_z, s.size());
       collection_assert::are_equal({10, 20, 30}, s);
     }
-
+    
     void test_method_(constructor_with_collection) {
       auto a = array {10, 20, 30, 40, 50};
       auto s = span(a);
@@ -297,7 +297,7 @@ namespace xtd::tests {
       assert::are_equal(3_z, s.size());
       collection_assert::are_equal({10, 20, 30}, s);
     }
-
+    
     void test_method_(constructor_with_const_collection_and_length) {
       const auto a = array {10, 20, 30, 40, 50};
       auto s = span(a, 4_z);
@@ -313,7 +313,7 @@ namespace xtd::tests {
       assert::are_equal(3_z, s.size());
       collection_assert::are_equal({10, 20, 30}, s);
     }
-
+    
     void test_method_(constructor_with_collection_and_length) {
       auto a = array {10, 20, 30, 40, 50};
       auto s = span(a, 4_z);
@@ -361,7 +361,7 @@ namespace xtd::tests {
       assert::are_equal(3_z, s.size());
       collection_assert::are_equal({20, 30, 40}, s);
     }
-
+    
     void test_method_(constructor_with_const_pointer_and_size) {
       const int a[] = {10, 20, 30, 40, 50};
       auto s = span(a, 5);
@@ -377,7 +377,7 @@ namespace xtd::tests {
       assert::are_equal(3_z, s.size());
       collection_assert::are_equal({10, 20, 30}, s);
     }
-
+    
     void test_method_(constructor_with_pointer_and_size) {
       int a[] = {10, 20, 30, 40, 50};
       auto s = span(a, 5);
@@ -529,7 +529,7 @@ namespace xtd::tests {
       const auto s = span(a);
       assert::are_equal(s.data(), s.rend().base().data());
     }
-
+    
     void test_method_(rend) {
       auto a = array {10, 20, 30, 40, 50};
       auto s = span(a);
@@ -617,7 +617,7 @@ namespace xtd::tests {
       assert::are_equal(0, s.at(2));
       assert::are_equal(0, s.at(3));
       assert::are_equal(0, s.at(4));
-
+      
       assert::are_equal(0, a.at(0));
       assert::are_equal(0, a.at(1));
       assert::are_equal(0, a.at(2));
@@ -636,13 +636,13 @@ namespace xtd::tests {
       assert::are_equal(30, sc.at(2));
       assert::are_equal(40, sc.at(3));
       assert::are_equal(50, sc.at(4));
-
+      
       assert::are_equal(10, ac.at(0));
       assert::are_equal(20, ac.at(1));
       assert::are_equal(30, ac.at(2));
       assert::are_equal(40, ac.at(3));
       assert::are_equal(50, ac.at(4));
-
+      
       auto sc2 = span<int, 4> {ac};
       assert::throws<argument_exception>([&] {s.copy_to(sc2);});
     }
@@ -799,7 +799,7 @@ namespace xtd::tests {
       auto s = string {"Hello, World!"};
       auto ss = span<const char>(s);
       assert::are_equal("Hello, World!", ss.to_string());
-
+      
       assert::are_equal("[]", span<int>::empty_span.to_string());
     }
     
@@ -834,7 +834,7 @@ namespace xtd::tests {
       assert::are_equal(40, s[3]);
       assert::are_equal(50, s[4]);
       assert::throws<index_out_of_range_exception>([&] {s[5];});
-      assert::throws<index_out_of_range_exception>([] {span<int> {}[0];});
+      assert::throws<index_out_of_range_exception>([] {span<int> {} [0];});
     }
     
     void test_method_(index_operator) {
@@ -846,7 +846,7 @@ namespace xtd::tests {
       assert::are_equal(40, s[3]);
       assert::are_equal(50, s[4]);
       assert::throws<index_out_of_range_exception>([&] {s[5];});
-      assert::throws<index_out_of_range_exception>([] {span<int> {}[0];});
+      assert::throws<index_out_of_range_exception>([] {span<int> {} [0];});
     }
   };
 }

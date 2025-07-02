@@ -42,7 +42,7 @@ namespace xtd::threading::tests {
       assert::is_false(monitor::is_entered(lock_object));
       assert::throws<synchronization_lock_exception>([&] {monitor::exit(lock_object);});
     }
-
+    
     void test_method_(lock_object) {
       object lock_object;
       assert::is_false(monitor::is_entered(lock_object));
@@ -51,7 +51,7 @@ namespace xtd::threading::tests {
       monitor::exit(lock_object);
       assert::is_false(monitor::is_entered(lock_object));
     }
-
+    
     void test_method_(lock_int) {
       auto lock_int = 0;
       assert::is_false(monitor::is_entered(lock_int));
@@ -60,7 +60,7 @@ namespace xtd::threading::tests {
       monitor::exit(lock_int);
       assert::is_false(monitor::is_entered(lock_int));
     }
-
+    
     void test_method_(lock_string) {
       assert::is_false(monitor::is_entered("lock_string"));
       monitor::enter("lock_string");
@@ -68,7 +68,7 @@ namespace xtd::threading::tests {
       monitor::exit("lock_string");
       assert::is_false(monitor::is_entered("lock_string"));
     }
-
+    
     void test_method_(enter_lock_string_exit_other_string) {
       monitor::enter("lock_string");
       assert::throws<synchronization_lock_exception>([&] {monitor::exit("other_string");});

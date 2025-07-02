@@ -48,7 +48,7 @@ namespace xtd {
         class enumerable_iterators {
           /// @cond
           template<class iterator_enumerable_t>
-          class enumerable_iterator : public xtd::icomparable<enumerable_iterator<iterator_enumerable_t>>, public xtd::iequatable<enumerable_iterator<iterator_enumerable_t>> {
+          class enumerable_iterator : public xtd::icomparable<enumerable_iterator<iterator_enumerable_t>>, public xtd::iequatable<enumerable_iterator<iterator_enumerable_t >> {
           public:
             using value_type = type_t;
             using iterator_category = std::forward_iterator_tag;
@@ -56,9 +56,9 @@ namespace xtd {
             using difference_type = xtd::ptrdiff;
             using pointer = value_type*;
             using reference = value_type&;
-
+            
             static constexpr xtd::size npos() {return std::numeric_limits<xtd::size>::max();}
-
+            
             enumerable_iterator() = default;
             enumerable_iterator(iterator_enumerable_t* enumerable, xtd::size pos) : enumerable_ {enumerable}, enumerator_ {enumerable->get_enumerator()}, pos_ {pos} {reset();}
             enumerable_iterator(enumerable_iterator&& value) noexcept = default;
@@ -74,7 +74,7 @@ namespace xtd {
             
             int32 compare_to(const enumerable_iterator& rhs) const noexcept override {return pos_ < rhs.pos_ ? -1 : pos_ > rhs.pos_ ? 1 : 0;}
             bool equals(const enumerable_iterator& rhs) const noexcept override {return pos_ == rhs.pos_;}
-
+            
             reference operator *() const {return const_cast<value_type&>(enumerator_.current());}
             pointer operator ->() const {return &operator*();}
             
@@ -158,7 +158,7 @@ namespace xtd {
           /// @return Iterator to the element following the last element.
           virtual iterator end() {return iterator {static_cast<enumerable_t*>(this), iterator::npos()};}
           /// @}
-
+          
           /// @name Public Static Methods
           
           /// @{
@@ -215,7 +215,7 @@ namespace xtd {
             for (auto index = ptrdiff {}; index < std::distance(source_collection.cbegin(), value); ++index, ++result);
             return result;
           }
-
+          
           /// @brief Converts source iterator to target iterator.
           /// @param value The source iterator to convert.
           /// @param source The source collection from which the source iterator originates.

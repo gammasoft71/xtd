@@ -315,15 +315,15 @@ namespace xtdc_command {
           return make_platform_target_path(line.replace(xtd::string::format("{}_BINARY_DIR:STATIC=", target), xtd::string::empty_string), target, release);
       //if (xtd::environment::os_version().is_linux()) return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", target);
       //return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", target, target);
-
-      xtd::delegate<xtd::string(const xtd::string& path, const xtd::string& target)> find_target {[&](const xtd::string& path, const xtd::string& target)->xtd::string {
-        if (xtd::io::file::exists(xtd::io::path::combine(path, target))) return xtd::io::path::combine(path, target);
-        for (auto& directory : xtd::io::directory::get_directories(path))
-          return find_target(directory, target);
-        if (xtd::environment::os_version().is_linux()) return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", target);
-        return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", target, target);
-      }};
       
+      xtd::delegate<xtd::string(const xtd::string& path, const xtd::string& target)> find_target {[&](const xtd::string & path, const xtd::string & target)->xtd::string {
+          if (xtd::io::file::exists(xtd::io::path::combine(path, target))) return xtd::io::path::combine(path, target);
+          for (auto& directory : xtd::io::directory::get_directories(path))
+            return find_target(directory, target);
+          if (xtd::environment::os_version().is_linux()) return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", target);
+          return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", target, target);
+        }};
+        
       return find_target(build_path(), target);
     }
     

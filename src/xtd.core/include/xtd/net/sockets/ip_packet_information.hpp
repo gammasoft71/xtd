@@ -60,7 +60,7 @@ namespace xtd {
         /// @return An int32 value, which represents the index of the network interface. You can use this index with xtd::net::network_information::network_interface::get_all_network_interfaces() to get more information about the relevant interface.
         int32 interface() const noexcept;
         /// @}
-
+        
         /// @name Public Methods
         
         /// @{
@@ -72,12 +72,12 @@ namespace xtd {
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
         bool equals(const ip_packet_information& other) const noexcept override;
-
+        
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
         xtd::size get_hash_code() const noexcept override;
         /// @}
-
+        
       private:
         friend class socket;
         xtd::net::ip_address address_;

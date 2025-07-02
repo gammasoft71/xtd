@@ -286,7 +286,7 @@ namespace xtd {
       explicit directory_info(const xtd::string& path);
       /// @}
       
-      /// @cond      
+      /// @cond
       directory_info() = default;
       /// @endcond
       

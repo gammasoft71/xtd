@@ -24,13 +24,13 @@ namespace xtd::collections::generic::tests {
     }
     
     void test_method_(base_type) {
-      assert::are_equal(typeof_<std::vector<int>>(), typeof_<list<int>::base_type>());
+      assert::are_equal(typeof_<std::vector<int>>(), typeof_<list<int>::base_type > ());
     }
     
     void test_method_(base_type_bool) {
-      assert::are_equal(typeof_<std::vector<byte>>(), typeof_<list<bool>::base_type>());
+      assert::are_equal(typeof_<std::vector<byte>>(), typeof_<list<bool>::base_type > ());
     }
-
+    
     void test_method_(size_type) {
       assert::are_equal(typeof_<xtd::size>(), typeof_<list<int>::size_type>());
       assert::are_equal(typeof_<list<bool>::base_type::size_type>(), typeof_<list<int>::size_type>());
@@ -44,19 +44,19 @@ namespace xtd::collections::generic::tests {
     void test_method_(reference) {
       assert::are_equal(typeof_<int&>(), typeof_<list<int>::reference>());
     }
-
+    
     void test_method_(const_reference) {
       assert::are_equal(typeof_<const int&>(), typeof_<list<int>::const_reference>());
     }
-
+    
     void test_method_(pointer) {
       assert::are_equal(typeof_<int*>(), typeof_<list<int>::pointer>());
     }
-
+    
     void test_method_(const_pointer) {
       assert::are_equal(typeof_<const int*>(), typeof_<list<int>::const_pointer>());
     }
-
+    
     void test_method_(iterator) {
       assert::are_equal(typeof_<ilist<int>::iterator>(), typeof_<list<int>::iterator>());
     }
@@ -64,7 +64,7 @@ namespace xtd::collections::generic::tests {
     void test_method_(const_iterator) {
       assert::are_equal(typeof_<ilist<int>::const_iterator>(), typeof_<list<int>::const_iterator>());
     }
-
+    
     void test_method_(reverse_iterator) {
       assert::are_equal(typeof_<list<int>::base_type::reverse_iterator>(), typeof_<list<int>::reverse_iterator>());
     }
@@ -72,7 +72,7 @@ namespace xtd::collections::generic::tests {
     void test_method_(const_reverse_iterator) {
       assert::are_equal(typeof_<list<int>::base_type::const_reverse_iterator>(), typeof_<list<int>::const_reverse_iterator>());
     }
-
+    
     void test_method_(default_constructor) {
       auto items = list<string> {};
       assert::is_zero(items.capacity());
@@ -85,27 +85,27 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(3_z, items.count());
       collection_assert::are_equal({false, false, false}, items);
     }
-
+    
     void test_method_(constructor_with_count_and_type) {
       auto items = list<int>(3, 42);
       assert::are_equal(3_z, items.count());
       collection_assert::are_equal({42, 42, 42}, items);
     }
-
+    
     void test_method_(constructor_with_iterators) {
       auto v = array {84, 42, 21};
       auto items = list<int>(v.begin(), v.end());
       assert::are_equal(3_z, items.count());
       collection_assert::are_equal({84, 42, 21}, items);
     }
-
+    
     void test_method_(constructor_with_base_type) {
       auto bt = list<int>::base_type {84, 42, 21};
       auto items = list<int>(bt);
       assert::are_equal(3_z, items.count());
       collection_assert::are_equal({84, 42, 21}, items);
     }
-
+    
     void test_method_(constructor_with_list) {
       auto l = list {84, 42, 21};
       auto items = list(l);
@@ -113,7 +113,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(3_z, items.count());
       collection_assert::are_equal({84, 42, 21}, items);
     }
-
+    
     void test_method_(constructor_with_move_list) {
       auto l = list {84, 42, 21};
       auto items = list(std::move(l));
@@ -121,7 +121,7 @@ namespace xtd::collections::generic::tests {
       collection_assert::are_equal({84, 42, 21}, items);
       collection_assert::is_empty(l);
     }
-
+    
     void test_method_(constructor_with_move_base_type) {
       auto bt = list<int>::base_type {84, 42, 21};
       auto items = list<int>(std::move(bt));
@@ -151,17 +151,17 @@ namespace xtd::collections::generic::tests {
     void test_method_(capaciy) {
       auto items = list {84, 42, 21};
       assert::are_equal(3_z, items.count());
-
+      
       items.capacity(42);
       assert::is_greater_or_equal(items.capacity(), 42_z);
       assert::are_equal(3_z, items.count());
     }
-
+    
     void test_method_(cbegin) {
       auto items = list {84, 42, 21};
       assert::are_equal(84, *items.cbegin());
     }
-
+    
     void test_method_(cend) {
       auto items = list {84, 42, 21};
       assert::are_equal(0, *items.cend());
@@ -177,7 +177,7 @@ namespace xtd::collections::generic::tests {
       items.resize(50);
       assert::are_equal(50_z, items.count());
     }
-
+    
     void test_method_(crbegin) {
       auto items = list {84, 42, 21};
       assert::are_equal(21, *items.crbegin());
@@ -210,11 +210,11 @@ namespace xtd::collections::generic::tests {
       
       collection_assert::are_equal({63, 31, 10}, items);
     }
-
+    
     void test_method_(empty) {
       assert::is_true(list<int> {}.empty());
       assert::is_false(list<int> {42}.empty());
-
+      
       auto items = list<int> {};
       assert::is_true(items.empty());
       items.capacity(42);
@@ -237,7 +237,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(84, items.front());
       assert::throws<index_out_of_range_exception>([&] {list<int> {}.front();});
     }
-      
+    
     void test_method_(front) {
       auto items = list {84, 42, 21};
       items.front() = 10;
@@ -245,17 +245,17 @@ namespace xtd::collections::generic::tests {
       auto empty_items = list<int> {};
       assert::throws<index_out_of_range_exception>([&] {empty_items.front() = 10;});
     }
-
+    
     void test_method_(is_fixed_size) {
       // Is always false;
       assert::is_false(list<int> {}.is_fixed_size());
     }
-
+    
     void test_method_(is_read_only) {
       // Is always false;
       assert::is_false(list<int> {}.is_read_only());
     }
-
+    
     void test_method_(is_synchronized) {
       // Is always false;
       assert::is_false(list<int> {}.is_synchronized());
@@ -265,7 +265,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(typeof_<list<int>::base_type>(), typeof_(list {1, 2, 3, 4, 5}.items()));
       collection_assert::are_equal({1, 2, 3, 4, 5}, list {1, 2, 3, 4, 5}.items());
     }
-
+    
     void test_method_(items) {
       auto items = list {84, 42, 21};
       assert::are_equal(typeof_<list<int>::base_type>(), typeof_(items.items()));
@@ -303,7 +303,7 @@ namespace xtd::collections::generic::tests {
       // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
       //assert::throws<argument_out_of_range_exception>([&] {*items.rend();});
     }
-
+    
     void test_method_(size) {
       auto items = list<int> {};
       assert::is_zero(items.size());
@@ -324,48 +324,50 @@ namespace xtd::collections::generic::tests {
       auto synchronized_items = list<int> {};
       
       delegate<void()> {[&] {
-        lock_ (synchronized_items.sync_root()) {
-          synchronized_items.add(1);
-          synchronized_items.add(2);
-          synchronized_items.add(3);
+          lock_(synchronized_items.sync_root()) {
+            synchronized_items.add(1);
+            synchronized_items.add(2);
+            synchronized_items.add(3);
+          }
         }
-      }}.begin_invoke();
+      }.begin_invoke();
       threading::thread::sleep(5);
-
+      
       delegate<void()> {[&] {
-        lock_ (synchronized_items.sync_root()) {
-          synchronized_items.add(4);
-          synchronized_items.add(5);
-          synchronized_items.add(6);
+          lock_(synchronized_items.sync_root()) {
+            synchronized_items.add(4);
+            synchronized_items.add(5);
+            synchronized_items.add(6);
+          }
         }
-      }}.begin_invoke();
+      }.begin_invoke();
       threading::thread::sleep(15);
-
-      lock_ (synchronized_items.sync_root()) {
+      
+      lock_(synchronized_items.sync_root()) {
         collection_assert::are_equal({1, 2, 3, 4, 5, 6}, synchronized_items);
       }
       threading::thread_pool::join_all();
     }
-
+    
     void test_method_(at) {
       auto items = list {84, 42, 21};
       
       assert::are_equal(84, items.at(0));
       assert::are_equal(42, items.at(1));
       assert::are_equal(21, items.at(2));
-      assert::throws<index_out_of_range_exception>([&]{[[maybe_unused]] auto i = items[3];});
+      assert::throws<index_out_of_range_exception>([&] {[[maybe_unused]] auto i = items[3];});
       
       items.at(0) = 63;
       items.at(1) = 31;
       items.at(2) = 10;
-      assert::throws<index_out_of_range_exception>([&]{items[3] = 5;});
+      assert::throws<index_out_of_range_exception>([&] {items[3] = 5;});
       
       collection_assert::are_equal({63, 31, 10}, items);
     }
-
+    
     void test_method_(add) {
       auto items = list<int> {};
-
+      
       items.add(1);
       collection_assert::are_equal({1}, items);
       items.add(2);
@@ -378,13 +380,13 @@ namespace xtd::collections::generic::tests {
     
     void test_method_(add_range) {
       auto items = list<int> {};
-
+      
       items.add_range({1, 2, 3, 4});
       collection_assert::are_equal({1, 2, 3, 4}, items);
-
+      
       items.add_range(list {5, 6, 7, 8});
       collection_assert::are_equal({1, 2, 3, 4, 5, 6, 7, 8}, items);
-
+      
       items.add_range(as<ienumerable<int>>(list {9, 10, 11, 12}));
       collection_assert::are_equal({1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}, items);
     }
@@ -404,7 +406,7 @@ namespace xtd::collections::generic::tests {
       auto dest = array<int>(3);
       items.copy_to(dest, 0);
       collection_assert::are_equal({84, 42, 21}, dest);
-
+      
       dest = array<int>(5);
       items.copy_to(dest, 2);
       collection_assert::are_equal({0, 0, 84, 42, 21}, dest);
@@ -412,7 +414,7 @@ namespace xtd::collections::generic::tests {
       dest = array<int>(7);
       items.copy_to(dest, 2);
       collection_assert::are_equal({0, 0, 84, 42, 21, 0, 0}, dest);
-
+      
       dest = array<int>(3);
       assert::throws<argument_exception>([&] {items.copy_to(dest, 1);});
     }
@@ -438,32 +440,32 @@ namespace xtd::collections::generic::tests {
     void test_method_(for_each) {
       auto items = list {1, 2, 3, 4, 5};
       auto accumulator = 0;
-      for (auto item: items)
+      for (auto item : items)
         accumulator += item;
       assert::are_equal(15, accumulator);
     }
-
+    
     void test_method_(get_enumerator) {
       auto items = list {1, 2, 3, 4, 5};
       auto enumerator = items.get_enumerator();
       auto accumulator = 0;
-      while(enumerator.move_next())
+      while (enumerator.move_next())
         accumulator += enumerator.current();
       assert::are_equal(15, accumulator);
     }
-
+    
     void test_method_(index_operator) {
       auto items = list {84, 42, 21};
       
       assert::are_equal(84, items[0]);
       assert::are_equal(42, items[1]);
       assert::are_equal(21, items[2]);
-      assert::throws<index_out_of_range_exception>([&]{[[maybe_unused]] auto i = items[3];});
+      assert::throws<index_out_of_range_exception>([&] {[[maybe_unused]] auto i = items[3];});
       
       items[0] = 63;
       items[1] = 31;
       items[2] = 10;
-      assert::throws<index_out_of_range_exception>([&]{items[3] = 5;});
+      assert::throws<index_out_of_range_exception>([&] {items[3] = 5;});
       
       collection_assert::are_equal({63, 31, 10}, items);
     }

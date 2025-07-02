@@ -39,7 +39,7 @@ namespace xtd {
       class named_event_wait_handle;
       class unnamed_event_wait_handle;
       struct data;
-    
+      
     public:
       /// @name Public Constructors
       
@@ -100,13 +100,13 @@ namespace xtd {
       /// @remarks If the initial state of the event is nonsignaled, threads that wait on the event will block. If the initial state is signaled, and the xtd::threading::event_reset_mode::manual_reset flag is specified for mode, threads that wait on the event will not block. If the initial state is signaled, and mode is xtd::threading::event_reset_mode::auto_reset, the first thread that waits on the event will be released immediately, after which the event will reset, and subsequent threads will block.
       event_wait_handle(bool initial_state, event_reset_mode mode, const string& name, bool& created_new);
       /// @}
-
+      
       /// @cond
       template<class char_t>
       explicit event_wait_handle(const char_t* name) : event_wait_handle(string(name)) {}
       ~event_wait_handle();
       /// @endcond
-
+      
       /// @name Public Properties
       
       /// @{
@@ -129,7 +129,7 @@ namespace xtd {
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
       bool equals(const event_wait_handle& other) const noexcept override;
-
+      
       /// @brief Sets the state of the event to nonsignaled, causing threads to block.
       /// @return `true` if the operation succeeds; otherwise, `false`.
       /// @exception xtd::object_closed_exception The xtd::threading::wait_handle::close() method was previously called on this xtd::threading::event_wait_handle.
@@ -143,7 +143,7 @@ namespace xtd {
       /// @remarks For an xtd::threading::event_wait_handle with xtd::threading::event_reset_mode::manual_reset (including xtd::threading:::manual_reset_event), calling the Set method leaves the wait handle in a signaled state until its xtd::threading::event_wait_handle::reset method is called.
       bool set();
       /// @}
-
+      
       /// @name Public Static Methods
       
       /// @{
@@ -159,7 +159,7 @@ namespace xtd {
       /// @remarks The xtd::threading::event_wait_handle::open_existing method tries to open the specified named system event. To create the system event when it does not already exist, use one of the xtd::threading::event_wait_handle constructors that has a name parameter.
       /// @remarks Multiple calls to this method that use the same value for name do not necessarily return the same xtd::threading::event_wait_handle object, even though the objects that are returned represent the same named system event.
       static event_wait_handle open_existing(const string& name);
-
+      
       /// @brief Opens the specified named synchronization event, if it already exists, and returns a value that indicates whether the operation succeeded.
       /// @param name The name of the synchronization object to be opened and shared with other processes. The name is case-sensitive. The backslash character (\) is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name.
       /// @param result When this method returns, contains a The xtd::threading::event_wait_handle object that represents the named synchronization event if the call succeeded, or null if the call failed. This parameter is treated as uninitialized.
@@ -174,16 +174,16 @@ namespace xtd {
       /// @remarks Multiple calls to this method that use the same value for name do not necessarily return the same xtd::threading::event_wait_handle object, even though the objects that are returned represent the same named system event.
       static bool try_open_existing(const string& name, event_wait_handle& result) noexcept;
       /// @}
-
+      
     protected:
       /// @name Protected Methods
       
       /// @{
       bool signal() override;
-
+      
       bool wait(int32 milliseconds_timeout) override;
       /// @}
-
+      
     private:
       void create(bool initial_state, bool& created_new);
       

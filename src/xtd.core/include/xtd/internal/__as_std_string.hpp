@@ -19,7 +19,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -47,7 +47,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -67,7 +67,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -87,7 +87,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -107,7 +107,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -127,7 +127,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -147,7 +147,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -167,7 +167,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -187,7 +187,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -207,7 +207,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -227,7 +227,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -247,7 +247,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -267,7 +267,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -287,7 +287,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -307,7 +307,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -327,7 +327,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -347,7 +347,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -367,7 +367,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -387,7 +387,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -407,7 +407,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -427,7 +427,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -447,7 +447,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -467,7 +467,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -487,7 +487,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -507,7 +507,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -527,7 +527,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -547,7 +547,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -567,7 +567,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -587,7 +587,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -607,7 +607,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -627,7 +627,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -647,7 +647,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -667,7 +667,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -687,7 +687,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -707,7 +707,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -727,7 +727,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -747,7 +747,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -767,7 +767,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -787,7 +787,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -807,7 +807,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -827,7 +827,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -847,7 +847,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -867,7 +867,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -887,7 +887,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -907,7 +907,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -927,7 +927,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -947,7 +947,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -967,7 +967,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -987,7 +987,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1007,7 +1007,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1027,7 +1027,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1047,7 +1047,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1067,7 +1067,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1087,7 +1087,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1107,7 +1107,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1127,7 +1127,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1147,7 +1147,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1167,7 +1167,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1187,7 +1187,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1207,7 +1207,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1227,7 +1227,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1247,7 +1247,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1267,7 +1267,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1287,7 +1287,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1307,7 +1307,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1327,7 +1327,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1347,7 +1347,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1367,7 +1367,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1387,7 +1387,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1407,7 +1407,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1427,7 +1427,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1447,7 +1447,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1467,7 +1467,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1487,7 +1487,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1507,7 +1507,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1527,7 +1527,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1547,7 +1547,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1567,7 +1567,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1587,7 +1587,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1607,7 +1607,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1627,7 +1627,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1647,7 +1647,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1667,7 +1667,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1687,7 +1687,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1707,7 +1707,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1727,7 +1727,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1747,7 +1747,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1767,7 +1767,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1787,7 +1787,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1807,7 +1807,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1827,7 +1827,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1847,7 +1847,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1867,7 +1867,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1887,7 +1887,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1907,7 +1907,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1927,7 +1927,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1947,7 +1947,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1967,7 +1967,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1987,7 +1987,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2007,7 +2007,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2027,7 +2027,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2047,7 +2047,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2067,7 +2067,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2087,7 +2087,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2107,7 +2107,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2127,7 +2127,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2147,7 +2147,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2167,7 +2167,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2187,7 +2187,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2207,7 +2207,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2227,7 +2227,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2247,7 +2247,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2267,7 +2267,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2287,7 +2287,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2307,7 +2307,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2327,7 +2327,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2347,7 +2347,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2367,7 +2367,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2387,7 +2387,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2407,7 +2407,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2427,7 +2427,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2447,7 +2447,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2467,7 +2467,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2487,7 +2487,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2507,7 +2507,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2527,7 +2527,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2547,7 +2547,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2567,7 +2567,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2587,7 +2587,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2607,7 +2607,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -2627,7 +2627,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/as>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

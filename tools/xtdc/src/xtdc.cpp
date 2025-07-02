@@ -10,7 +10,7 @@ using namespace xtd::collections::generic;
 using namespace xtd::diagnostics;
 
 namespace xtdc_command {
-  class xtdc final :public project_base {
+  class xtdc final : public project_base {
   public:
     static auto main(const argument_collection& args) {
       console::output_code_page(65001);
@@ -87,7 +87,7 @@ namespace xtdc_command {
         "Floppy: the original proof that good things last.",
         "Even in a digital age, Floppy’s got soul.",
       };
-
+      
       return {
         u8"████████████████████████████████████████████████████████████",
         u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████",
@@ -317,7 +317,7 @@ namespace xtdc_command {
       };
     }
     
-
+    
     static list<string> get_update_help() noexcept {
       return {
         "Regenrates a project.",
@@ -1014,7 +1014,7 @@ namespace xtdc_command {
         if (show_help) console::write_line(string::join("\n", get_help()));
         return 0;
       }
-      static std::map<string, std::function<int(const list<string>&)>> commands {{"add", add}, {"build", build}, {"clean", clean}, {"documentation", documentation}, {"examples", examples}, {"generate", generate}, {"guide", guide}, {"help", help}, {"install", install}, {"new", new_project::execute}, {"open", open}, {"update", update}, {"run", run}, {"targets", targets}, {"test", test}, {"uninstall", uninstall}, {"web", web}};
+      static std::map<string, std::function<int(const list<string>&) >> commands {{"add", add}, {"build", build}, {"clean", clean}, {"documentation", documentation}, {"examples", examples}, {"generate", generate}, {"guide", guide}, {"help", help}, {"install", install}, {"new", new_project::execute}, {"open", open}, {"update", update}, {"run", run}, {"targets", targets}, {"test", test}, {"uninstall", uninstall}, {"web", web}};
       auto it = commands.find(command_args[0]);
       if (it == commands.end()) return invalid_command(command_args);
       return it->second(command_args);

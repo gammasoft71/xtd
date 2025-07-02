@@ -397,9 +397,9 @@ string time_span::make_string_from_duration(bool constant) const {
 
 int32 time_span::try_parse_internal(const string& value, time_span& result) {
   result = time_span::zero;
-
+  
   if (value.empty()) return parse_format;
-
+  
   auto days = 0, hours = 0, minutes = 0, seconds = 0, ticks = 0;
   auto items = value.split({'-', ':', '.', '\0'}, string_split_options::remove_empty_entries);
   
@@ -448,7 +448,7 @@ int32 time_span::try_parse_internal(const string& value, time_span& result) {
   if (0 > minutes || minutes > 60) return parse_overflow;
   if (0 > seconds || seconds > 60) return parse_overflow;
   
-  result = time_span {days * ticks_per_day + hours * ticks_per_hour + minutes * ticks_per_minute + seconds * ticks_per_second + ticks};
+  result = time_span {days* ticks_per_day + hours* ticks_per_hour + minutes* ticks_per_minute + seconds* ticks_per_second + ticks};
   if (value[0] == '-') result = result.negate();
   return parse_succeed;
 }

@@ -11,7 +11,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/argument_out_of_range_exception>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -170,7 +170,7 @@ namespace xtd {
     template<class value_t>
     static void throw_if_zero(const value_t& value, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {if (value == static_cast<value_t>(0)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range, string::format("value ('{0}') must be a non-zero value. (Parameter '{1}')\nActual value was {0}.", value, param_name, stack_frame).c_str());}
     /// @}
-
+    
   private:
     const char* default_message() const noexcept {return "Specified argument is out of range of valid values."_t;}
   };

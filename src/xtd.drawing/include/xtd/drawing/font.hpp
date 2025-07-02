@@ -286,7 +286,7 @@ namespace xtd {
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
-
+      
       /// @brief Returns the line spacing, in pixels, of this font.
       /// @return The line spacing, in pixels, of this font.
       /// @remarks The line spacing of a xtd::drawing::font is the vertical distance between the base lines of two consecutive lines of text. Thus, the line spacing includes the blank space between lines along with the height of the character itself.
@@ -329,7 +329,7 @@ namespace xtd {
       /// @return The font this method creates.
       static font from_hfont(const intptr hfont);
       /// @}
-
+      
     private:
       friend class graphics;
       friend class system_fonts;

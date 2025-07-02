@@ -47,7 +47,7 @@ namespace xtd {
         /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
         template<class exception_t>
         key_not_found_exception(const xtd::optional<xtd::string>& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : xtd::system_exception(message, inner_exception, stack_frame) {error_code(h_result::make_error_code(h_result::COR_E_KEYNOTFOUND));}
-         /// @}
+        /// @}
         
         /// @cond
         key_not_found_exception(const key_not_found_exception&) = default;

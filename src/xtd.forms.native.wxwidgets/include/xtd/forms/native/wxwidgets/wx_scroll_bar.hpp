@@ -34,13 +34,13 @@ namespace xtd {
         
         static long style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = common_control_style_to_wx_style(style, ex_style);
-
+          
           if ((style & SBS_VERT) == SBS_VERT) wx_style |= wxSB_VERTICAL;
           else wx_style |= wxSB_HORIZONTAL;
           
           return wx_style;
         }
-
+        
         int32 large_change_ = 1;
         int32 minimum_ = 0;
         int32 maximum_ = 100;

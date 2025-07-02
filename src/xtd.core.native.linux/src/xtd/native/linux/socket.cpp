@@ -58,21 +58,21 @@ namespace {
     if (it == protocol_types.end()) return IPPROTO_IP;
     return it->second;
   }
-
+  
   static int32_t socket_option_level_to_native(int32_t socket_option_level) {
     static auto socket_option_levels = map<int32_t, int32_t> {{SOCKET_OPTION_LEVEL_SOCKET, SOL_SOCKET}, {SOCKET_OPTION_LEVEL_IP, IPPROTO_IP}, {SOCKET_OPTION_LEVEL_IP_V6, IPPROTO_IPV6}, {SOCKET_OPTION_LEVEL_TCP, IPPROTO_TCP}, {SOCKET_OPTION_LEVEL_UDP, IPPROTO_UDP}};
     auto it = socket_option_levels.find(socket_option_level);
     if (it == socket_option_levels.end()) return SOL_SOCKET;
     return it->second;
   }
-
+  
   static int32_t socket_option_name_to_native(int32_t socket_option_name) {
     static auto socket_option_names = map<int32_t, int32_t> {{SOCKET_OPTION_NAME_DEBUG, SO_DEBUG}, {SOCKET_OPTION_NAME_ACCEPT_CONNECTION, SO_ACCEPTCONN}, {SOCKET_OPTION_NAME_REUSE_ADDRESS, SO_REUSEADDR}, {SOCKET_OPTION_NAME_KEEP_ALIVE, SO_KEEPALIVE}, {SOCKET_OPTION_NAME_DONT_ROUTE, SO_DONTROUTE}, {SOCKET_OPTION_NAME_BROADCAST, SO_BROADCAST}, /*{SOCKET_OPTION_NAME_USE_LOOPBACK, SO_},*/ {SOCKET_OPTION_NAME_LINGER, SO_LINGER}, {SOCKET_OPTION_NAME_EXCLUSIVE_ADDRESS_USE, SO_REUSEADDR}, {SOCKET_OPTION_NAME_OUT_OF_BAND_INLINE, SO_OOBINLINE}, {SOCKET_OPTION_NAME_SEND_BUFFER, SO_SNDBUF}, {SOCKET_OPTION_NAME_RECEIVE_BUFFER, SO_RCVBUF}, {SOCKET_OPTION_NAME_SEND_LOW_WATER, SO_SNDLOWAT}, {SOCKET_OPTION_NAME_RECEIVE_LOW_WATER, SO_RCVLOWAT}, {SOCKET_OPTION_NAME_SEND_TIMEOUT, SO_SNDTIMEO}, {SOCKET_OPTION_NAME_RECEIVE_TIMEOUT, SO_RCVTIMEO}, {SOCKET_OPTION_NAME_ERROR, SO_ERROR}, {SOCKET_OPTION_NAME_TYPE, SO_TYPE}, /*{SOCKET_OPTION_NAME_MAX_CONNECTION, SO_},*/ {SOCKET_OPTION_NAME_IP_OPTIONS, IP_OPTIONS}, {SOCKET_OPTION_NAME_HEADER_INCLUDED, IP_HDRINCL}, {SOCKET_OPTION_NAME_TYPE_OF_SERVICE, IP_TOS}, {SOCKET_OPTION_NAME_IP_TIME_TO_LIVE, IP_TTL}, {SOCKET_OPTION_NAME_MULTICAST_INTERFACE, IP_MULTICAST_IF}, {SOCKET_OPTION_NAME_MULTICAST_TIME_TO_LIVE, IP_MULTICAST_TTL}, {SOCKET_OPTION_NAME_MULTICAST_LOOPBACK, IP_MULTICAST_LOOP}, {SOCKET_OPTION_NAME_ADD_MEMBERSHIP, IP_ADD_MEMBERSHIP}, {SOCKET_OPTION_NAME_DROP_MEMBERSHIP, IP_DROP_MEMBERSHIP}, {SOCKET_OPTION_NAME_DONT_FRAGMENT, IP_NODEFRAG}, {SOCKET_OPTION_NAME_ADD_SOURCE_MEMBERSHIP, IP_ADD_SOURCE_MEMBERSHIP}, {SOCKET_OPTION_NAME_DROP_SOURCE_MEMBERSHIP, IP_DROP_SOURCE_MEMBERSHIP}, {SOCKET_OPTION_NAME_BLOCK_SOURCE, IP_BLOCK_SOURCE}, {SOCKET_OPTION_NAME_UNBLOCK_SOURCE, IP_UNBLOCK_SOURCE}, {SOCKET_OPTION_NAME_PACKET_INFORMATION, IP_PKTINFO}, {SOCKET_OPTION_NAME_HOP_LIMIT, IPV6_HOPLIMIT}, /*{SOCKET_OPTION_NAME_IP_PROTECT_LEVEL, IPV6_},*/ {SOCKET_OPTION_NAME_IP_V6_ONLY, IPV6_V6ONLY}, /*{SOCKET_OPTION_NAME_NO_DELAY, TCP_}, {SOCKET_OPTION_NAME_BSD_URGENT, TCP_}, {SOCKET_OPTION_NAME_EXPEDITED, TCP_}, {SOCKET_OPTION_NAME_NO_CHECKSUM, UDP_}, {SOCKET_OPTION_NAME_CHECKSUM_COVERAGE, ...}, {SOCKET_OPTION_NAME_UPDATE_ACCEPT_CONTEXT, ...}, {SOCKET_OPTION_NAME_UPDATE_CONNECT_CONTEXT, ...},*/};
     auto it = socket_option_names.find(socket_option_name);
     if (it == socket_option_names.end()) return -1;
     return it->second;
   }
-
+  
   static int32_t socket_type_to_native(int32_t socket_type) {
     static auto socket_types = map<int32_t, int32_t> {{SOCKET_TYPE_UNKNOWN, SOCK_STREAM | SOCK_CLOEXEC}, {SOCKET_TYPE_STREAM, SOCK_STREAM | SOCK_CLOEXEC}, {SOCKET_TYPE_DGRAM, SOCK_DGRAM | SOCK_CLOEXEC}, {SOCKET_TYPE_RAW, SOCK_RAW | SOCK_CLOEXEC}, {SOCKET_TYPE_RDM, SOCK_RDM | SOCK_CLOEXEC}, {SOCKET_TYPE_SEQPACKET, SOCK_SEQPACKET | SOCK_CLOEXEC}};
     auto it = socket_types.find(socket_type);
@@ -167,7 +167,7 @@ int32_t socket::get_socket_option(intmax_t handle, int32_t socket_option_level, 
     *reinterpret_cast<int32_t*>(option) = static_cast<int32_t>(timeout.tv_sec * 1000 + timeout.tv_usec / 1000);
     return result;
   }
-
+  
   return ::getsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), reinterpret_cast<void*>(option), reinterpret_cast<socklen_t*>(&option_length));
 }
 
@@ -224,7 +224,7 @@ int32_t socket::listen(intmax_t handle, size_t backlog) {
 
 int32_t socket::poll(intmax_t handle, int32_t microseconds, int32_t mode) {
   if (handle == 0 || microseconds < 0) return -1;
-
+  
   auto poll_fd = pollfd {};
   poll_fd.fd = static_cast<int32_t>(handle);
   switch (mode) {
@@ -247,7 +247,7 @@ int32_t socket::receive_from(intmax_t handle, vector<uint8_t>& buffer, size_t of
   auto address_length = static_cast<socklen_t>(socket_address.size());
   auto result = static_cast<int32_t>(::recvfrom(static_cast<int32_t>(handle), &buffer.data()[offset], size, flags, reinterpret_cast<sockaddr*>(socket_address.data()), &address_length));
   //if (socket_address.size() != address_length) socket_address.resize(address_length);
-
+  
   if (result == -1 && errno == EBADF) errno = EINTR;
   if (result == -1 && errno == EAGAIN) errno = ETIMEDOUT;
   return result;
@@ -255,43 +255,43 @@ int32_t socket::receive_from(intmax_t handle, vector<uint8_t>& buffer, size_t of
 
 int32_t socket::select(vector<intmax_t>& check_read, vector<intmax_t>& check_write, vector<intmax_t>& check_error, int32_t microseconds) {
   size_t nfds = 0;
-
+  
   auto read_fds = fd_set {};
   FD_ZERO(&read_fds);
   for (auto i = 0U; i < check_read.size() && i < FD_SETSIZE; i++)
     FD_SET(static_cast<int32_t>(check_read[i]), &read_fds);
   if (check_read.size() > nfds) nfds = check_read.size();
-
+  
   auto write_fds = fd_set {};
   FD_ZERO(&write_fds);
   for (auto i = 0U; i < check_write.size() && i < FD_SETSIZE; i++)
     FD_SET(static_cast<int32_t>(check_write[i]), &write_fds);
   if (check_write.size() > nfds) nfds = check_write.size();
-
+  
   auto error_fds = fd_set {};
   FD_ZERO(&error_fds);
   for (auto i = 0U; i < check_error.size() && i < FD_SETSIZE; i++)
     FD_SET(static_cast<int32_t>(check_error[i]), &error_fds);
   if (check_error.size() > nfds) nfds = check_error.size();
-
+  
   auto timeout = timeval {microseconds / 1000000, microseconds % 1000000};
   auto result = ::select(static_cast<int32_t>(nfds + 1), &read_fds, &write_fds, &error_fds, microseconds == -1 ? nullptr : &timeout);
-
+  
   for (auto i = 0U; i < check_read.size(); i++) {
     FD_CLR(static_cast<int32_t>(check_read[i]), &read_fds);
     if (FD_ISSET(static_cast<int32_t>(check_read[i]), &read_fds) == 0) check_read[i] = 0;
   }
-
+  
   for (auto i = 0U; i < check_write.size(); i++) {
     FD_CLR(static_cast<int32_t>(check_write[i]), &write_fds);
     if (FD_ISSET(static_cast<int32_t>(check_write[i]), &write_fds) == 0) check_write[i] = 0;
   }
-
+  
   for (auto i = 0U; i < check_error.size(); i++) {
     FD_CLR(static_cast<int32_t>(check_error[i]), &error_fds);
     if (FD_ISSET(static_cast<int32_t>(check_error[i]), &error_fds) == 0) check_error[i] = 0;
   }
-
+  
   return result;
 }
 
@@ -305,14 +305,14 @@ int32_t socket::send_to(intmax_t handle, const vector<uint8_t>& buffer, size_t o
 
 int32_t socket::set_blocking(intmax_t handle, bool blocking) {
   auto result = -1;
-
+  
   if ((result = fcntl(static_cast<int32_t>(handle), F_GETFL, 0)) != -1) {
     auto flags = result;
     if (blocking == true) flags &= ~O_NONBLOCK;
     else flags |= O_NONBLOCK;
     result = fcntl(static_cast<int32_t>(handle), F_SETFL, flags)  == -1 ? -1 : 0;
   }
-
+  
   return result;
 }
 
@@ -326,7 +326,7 @@ int32_t socket::set_socket_option(intmax_t handle, int32_t socket_option_level, 
     return -1;
   }
   if (socket_option_level == SOCKET_OPTION_LEVEL_SOCKET && (socket_option_name == SOCKET_OPTION_NAME_SEND_TIMEOUT || socket_option_name == SOCKET_OPTION_NAME_RECEIVE_TIMEOUT)) {
-    timeval timeout = {*reinterpret_cast<const int32_t*>(option) / 1000, *reinterpret_cast<const int32_t*>(option) % 1000 * 1000};
+    timeval timeout = {*reinterpret_cast<const int32_t*>(option) / 1000, * reinterpret_cast<const int32_t*>(option) % 1000 * 1000};
     return ::setsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), &timeout, sizeof(timeval));
   }
   return setsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), reinterpret_cast<const void*>(option), static_cast<socklen_t>(option_length));

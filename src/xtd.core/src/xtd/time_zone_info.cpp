@@ -91,7 +91,7 @@ time_zone_info::transition_time time_zone_info::adjustement_rule::daylight_trans
 }
 
 bool time_zone_info::adjustement_rule::equals(const object& obj) const noexcept {
-  return is<adjustement_rule>(obj) && equals(static_cast<const adjustement_rule &>(obj));
+  return is<adjustement_rule>(obj) && equals(static_cast<const adjustement_rule&>(obj));
 }
 
 bool time_zone_info::adjustement_rule::equals(const adjustement_rule& ar) const noexcept {
@@ -208,7 +208,7 @@ xtd::date_time time_zone_info::convert_to_utc(const xtd::date_time& date_time) {
 }
 
 bool time_zone_info::equals(const object& obj) const noexcept {
-  return is<time_zone_info>(obj) && equals(static_cast<const time_zone_info &>(obj));
+  return is<time_zone_info>(obj) && equals(static_cast<const time_zone_info&>(obj));
 }
 
 bool time_zone_info::equals(const time_zone_info& tzi) const noexcept {

@@ -83,7 +83,7 @@ namespace {
     for (auto y = 0; y < height; ++y)
       for (auto x = 0; x < width; ++x) {
         auto source_pixel = y * width + x;
-        auto result_pixel = (width - x -1) * height + y;
+        auto result_pixel = (width - x - 1) * height + y;
         result_alpha[result_pixel] = source_alpha[source_pixel];
         result_rgb[result_pixel] = source_rgb[source_pixel];
       }
@@ -120,7 +120,7 @@ namespace {
     auto it = image_formats.find(image_format);
     return it == image_formats.end() ? IFM_UNKNOWN : it->second;
   }
-
+  
   std::tuple<array<xtd::byte>, int32, int32> get_data_from_xbm(const string& filename) {
     auto lines = file::read_all_lines(filename);
     auto offset = 0_z;
@@ -138,7 +138,7 @@ namespace {
         bits.add(byte_object::parse(b.trim(), xtd::number_styles::hex_number));
     return std::make_tuple(bits.to_array(), width, height);
   }
-
+  
   ptr<char*[]> get_data_from_xpm(const string& filename) {
     static thread_local list<string> lines;
     lines = file::read_all_lines(filename);
@@ -191,7 +191,7 @@ image::image(const string& filename, bool use_icm) : data_(xtd::new_sptr<data>()
     data_->handle = native::image::create(bits.get(), frame_resolutions);
     data_->raw_format = imaging::image_format::xpm();
   } else data_->handle = native::image::create(filename, use_icm, frame_resolutions);
-
+  
   if (data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
   data_->frame_dimensions.clear();
   for (auto frame_resolution : frame_resolutions) {
@@ -354,7 +354,7 @@ int32 image::width() const noexcept {
 
 image image::clone() const {
   if (*this == image::empty) return *this;
-
+  
   auto result = xtd::drawing::image {width(), height()};
   auto graphics = result.create_graphics();
   graphics.draw_image(*this, rectangle({0, 0, width(), height()}));
@@ -425,7 +425,7 @@ xtd::size image::get_hash_code() const noexcept {
   for (const auto& property_id : property_id_list())
     result.add(property_id);
   for (const auto& property_item : property_items())
-  result.add(property_item);
+    result.add(property_item);
   result.add(raw_format());
   result.add(size());
   //result.add(tag());
@@ -592,7 +592,7 @@ void image::resize(const xtd::drawing::rectangle& rect, const xtd::drawing::colo
         rgb[pixel] = {fill_color.r(), fill_color.g(), fill_color.b()};
       }
       
-      for (auto x = offset_x +width(); x < rect.width; ++x) {
+      for (auto x = offset_x + width(); x < rect.width; ++x) {
         auto pixel = y * rect.width + x;
         alpha[pixel].a = fill_color.a();
         rgb[pixel] = {fill_color.r(), fill_color.g(), fill_color.b()};
@@ -636,7 +636,7 @@ void image::update_properties() {
   native::image::color_palette(data_->handle, palette_entries, data_->palette.flags_);
   for (auto [a, r, g, b] : palette_entries)
     data_->palette.entries_.push_back(color::from_argb(a, r, g, b));
-  
+    
   data_->pixel_format = static_cast<imaging::pixel_format>(native::image::pixel_format(data_->handle));
   
   auto physical_width = 0, physical_height = 0;

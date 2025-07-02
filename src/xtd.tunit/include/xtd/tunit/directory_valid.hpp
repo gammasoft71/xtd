@@ -263,7 +263,7 @@ namespace xtd {
       /// xtd::tunit::directory_valid::exists(d1); // test ok.
       /// xtd::tunit::directory_valid::exists(d2); // test throws an assert_error exception.
       /// ```
-      static void exists(const std::filesystem::directory_entry& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());      
+      static void exists(const std::filesystem::directory_entry& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Validates that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.

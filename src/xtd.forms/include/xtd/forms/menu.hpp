@@ -127,7 +127,7 @@ namespace xtd {
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
-
+      
       /// @brief Gets the context_menu that contains this menu.
       /// @return The context_menu that contains this menu. The default is no value.
       /// @remarks This method allows you to obtain a reference to the context_menu that this menu is contained in. This property returns no value if the menu is not contained in a context_menu. This can occur if the menu is contained in a menu_item or main_menu, or if the menu is not contained in any menu. You can use this property to determine whether a menu is currently being used, and also to determine where.

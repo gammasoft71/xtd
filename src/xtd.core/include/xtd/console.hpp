@@ -24,7 +24,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/console>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -410,7 +410,7 @@ namespace xtd {
     /// @param intercept Determines whether to display the pressed key in the console window. `true` to not display the pressed key; otherwise, `false`
     /// @return The next line of characters from the input stream, or "" if no more lines are available.
     static xtd::string read_line(bool intercept);
-
+    
     /// @brief Sets the foreground and background console colors to their defaults.
     /// @remarks The foreground and background colors are restored to the colors that existed when the current process began. For more information, see the foreground_color and background_color properties.
     static bool reset_color();
@@ -465,7 +465,7 @@ namespace xtd {
     template<class type_t>
     static void write(std::initializer_list<type_t>&& il) {write_(xtd::string::format("{}", il));}
     /// @endcond
-
+    
     /// @brief Writes the text representation of the specified list of values to the standard output stream using the specified format information.
     /// @tparam ...args_t Types of the values to write.
     /// @param fmt A composite format string.
@@ -486,7 +486,7 @@ namespace xtd {
     template<class type_t>
     static void write_line(const std::initializer_list<type_t>& il) {write_line_(xtd::string::format("{}", il));}
     /// @endcond
-
+    
     /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.
     /// @tparam ...args_t Types of the values to write.
     /// @param fmt A composite format string.
@@ -494,7 +494,7 @@ namespace xtd {
     template<class ...args_t>
     static void write_line(const xtd::string& fmt, args_t&& ... values) {write_line_(xtd::string::format(fmt, std::forward<args_t>(values)...));}
     /// @}
-
+    
     /// @cond
     static void __internal_rstc__();
     /// @endcond

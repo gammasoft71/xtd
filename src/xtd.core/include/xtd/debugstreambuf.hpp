@@ -13,7 +13,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/debugstreambuf>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

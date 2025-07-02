@@ -40,7 +40,7 @@ namespace xtd {
           assert::is_instance_of<country>(v);
           assert::are_equal("country [name=Belgium, alpha_2_code=BE, alpha_3_code=BEL, numeric_code=56]", v.to_string());
         }
-
+        
         void test_method_(_country_operator_on_char_ptr_from_alpha_2_code) {
           auto v = "BE"_country;
           assert::is_instance_of<country>(v);
@@ -70,7 +70,7 @@ namespace xtd {
           assert::is_instance_of<country>(v);
           assert::are_equal("country [name=Belgium, alpha_2_code=BE, alpha_3_code=BEL, numeric_code=56]", v.to_string());
         }
-
+        
         void test_method_(_country_operator_on_char_ptr_from_alpha_3_code) {
           auto v = "BEL"_country;
           assert::is_instance_of<country>(v);

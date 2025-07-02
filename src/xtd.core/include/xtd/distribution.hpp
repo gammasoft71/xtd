@@ -17,7 +17,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/distribution>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

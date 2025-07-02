@@ -86,15 +86,16 @@ void background_worker::run_worker_async() {
   if (data_->worker_result) data_->worker.end_invoke(data_->worker_result);
   data_->invoker = xtd::new_uptr<form>();
   data_->worker = action<> {[&] {
-    auto e = do_work_event_args {data_->argument};
-    on_do_work(e);
-    data_->invoker->begin_invoke([&] {
-      on_run_worker_completed(run_worker_completed_event_args(any_object {}, std::nullopt, data_->cancellation_pending));
-      data_->invoker = nullptr;
-      data_->cancellation_pending = false;
-    });
-    data_->is_busy = false;
-  }};
+      auto e = do_work_event_args {data_->argument};
+      on_do_work(e);
+      data_->invoker->begin_invoke([&] {
+        on_run_worker_completed(run_worker_completed_event_args(any_object {}, std::nullopt, data_->cancellation_pending));
+        data_->invoker = nullptr;
+        data_->cancellation_pending = false;
+      });
+      data_->is_busy = false;
+    }
+  };
   data_->worker_result = data_->worker.begin_invoke();
 }
 

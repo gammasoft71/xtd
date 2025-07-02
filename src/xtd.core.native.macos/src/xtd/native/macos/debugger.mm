@@ -21,7 +21,7 @@ bool debugger::is_attached() {
   auto ppid = getppid();
   auto parent_info = proc_bsdinfo {};
   if (proc_pidinfo(ppid, PROC_PIDTBSDINFO, 0, &parent_info, sizeof(parent_info)) != -1)
-    return std::string {parent_info.pbi_name}.find("debugserver") !=std::string::npos;
+    return std::string {parent_info.pbi_name}.find("debugserver") != std::string::npos;
   return false;
 }
 

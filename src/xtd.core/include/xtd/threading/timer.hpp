@@ -127,7 +127,7 @@ namespace xtd {
       /// @remarks The callback parameter is invoked once after due_time elapses, and thereafter each time the period time interval elapses.
       timer(const timer_callback& callback, const xtd::any_object& state, uint32 due_time, uint32 period);
       /// @}
-
+      
       /// @cond
       template<class callback_t>
       timer(callback_t callback) : timer(timer_callback {callback}) {}
@@ -181,7 +181,7 @@ namespace xtd {
       /// @brief Releases all resources used by the current instance of xtd::threading::timer.
       void close();
       /// @}
-
+      
     private:
       xtd::sptr<data> data_;
     };

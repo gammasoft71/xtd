@@ -187,7 +187,7 @@ namespace xtd {
       /// @return A xtd::forms::about_dialog::user_tab_page_collection that contains the control objects in this about box.
       /// @remarks This property is used to add user tab pages in this about dialog.
       const user_tab_page_collection& user_tab_pages() const noexcept;
-
+      
       /// @brief Gets the product version.
       /// @return The product version.
       xtd::string version() const noexcept;
@@ -225,7 +225,7 @@ namespace xtd {
       /// @param owner The owner of the about box dialog.
       void show(const iwin32_window& owner);
       /// @}
-
+      
       /// @name Public Static Methods
       
       /// @{
@@ -237,7 +237,7 @@ namespace xtd {
       /// @return New xtd::forms::about_dialog with executing xtd::reflection::assembly informations.
       static about_dialog from_executing_assembly_informations();
       /// @}
-
+      
     private:
       xtd::sptr<data> data_;
     };

@@ -25,7 +25,7 @@ namespace xtd {
   /// @remarks If you need to get the fully-qualified name, you can use the typeof_ expression along with nameof. For example:
   /// ```cpp
   /// class c {
-  /// public: 
+  /// public:
   ///   void f(int i) {
   ///     log(xtd::string::format("{0}::{1}", typeof_<c>(), nameof_(f)), "method entry");
   ///   }

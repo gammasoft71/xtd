@@ -34,7 +34,7 @@ namespace xtd {
       
       /// @brief Displays the xtd about box.
       static void show();
-      /// @}      
+      /// @}
     };
   }
 }

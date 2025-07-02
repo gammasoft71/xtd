@@ -8,7 +8,7 @@
 class xtd::threading::semaphore::named_semaphore : public semaphore_base {
 public:
   ~named_semaphore() {destroy();}
-
+  
   intptr handle() const noexcept override {
     return handle_;
   }
@@ -38,7 +38,7 @@ public:
     handle_ = native::named_semaphore::open(name);
     return handle_ != invalid_handle;
   }
-
+  
   bool signal(bool& io_error, int32 release_count, int32& previous_count) override {
     io_error = false;
     return native::named_semaphore::signal(handle_, release_count, previous_count, io_error);

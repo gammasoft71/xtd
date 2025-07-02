@@ -38,20 +38,20 @@ namespace sleepfor {
   private:
     static string get_error() {
       return "sleepfor : invalid params\n"
-        "Try 'sleepfor --help' for more information.";
+             "Try 'sleepfor --help' for more information.";
     }
     
     static string get_usage() {
       return "Usage\n"
-        "  sleepfor [duration] [--nanoseconds| -milliseconds| -seconds| -minutes|]\n"
-        "\n"
-        "-ns, --nanoseconds  : The specified duration is in nanoseconds.\n"
-        "-ms, --milliseconds : The specified duration is in milliseconds. Is the default.\n"
-        "-s, --seconds       : The specified duration is in seconds.\n"
-        "-m, --minutes       : The specified duration is in minutes.\n"
-        "-i, --indefinitely  : sleep indefinitely.\n"
-        "-v, --version       : Shows version information.\n"
-        "-h, --help          : Shows this help page.";
+             "  sleepfor [duration] [--nanoseconds| -milliseconds| -seconds| -minutes|]\n"
+             "\n"
+             "-ns, --nanoseconds  : The specified duration is in nanoseconds.\n"
+             "-ms, --milliseconds : The specified duration is in milliseconds. Is the default.\n"
+             "-s, --seconds       : The specified duration is in seconds.\n"
+             "-m, --minutes       : The specified duration is in minutes.\n"
+             "-i, --indefinitely  : sleep indefinitely.\n"
+             "-v, --version       : Shows version information.\n"
+             "-h, --help          : Shows this help page.";
     }
     
     static string get_version() {

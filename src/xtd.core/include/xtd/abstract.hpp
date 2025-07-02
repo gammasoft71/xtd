@@ -11,7 +11,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/abstract>
   /// ```
-    /// @par Library
+  /// @par Library
   /// xtd.core
   /// @ingroup xtd_core keywords
   /// @remarks This keyword has no other use than to tag a class to abstract.
@@ -22,6 +22,6 @@ namespace xtd {
   ///   virtual std::string to_string() = 0;
   /// };
   /// ```
-  #define abstract_ \
-    : public xtd::abstract_object
+#define abstract_ \
+: public xtd::abstract_object
 }

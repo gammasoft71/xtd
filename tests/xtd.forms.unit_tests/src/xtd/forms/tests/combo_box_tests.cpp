@@ -470,7 +470,7 @@ namespace xtd::forms::tests {
       assert::are_equal("Item3", combo_box.selected_item().value());
       assert::is_false(combo_box.sorted());
     }
-
+    
     void test_method_(create_with_parent) {
       auto form = forms::form::create();
       auto combo_box = forms::combo_box::create(form);

@@ -119,7 +119,7 @@ namespace xtd {
       /// | trimming       | none                                                   |
       static xtd::drawing::string_format generic_typographic() noexcept;
       /// @}
-
+      
     private:
       xtd::drawing::string_alignment alignment_ = xtd::drawing::string_alignment::near;
       xtd::drawing::string_format_flags format_flags_ = static_cast<xtd::drawing::string_format_flags>(0);

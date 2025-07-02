@@ -42,7 +42,7 @@ namespace xtd {
       /// @remarks The xtd::collections::generic::icollection <type_t> interface extends xtd::collections::generic::ienumerable <type_t>; xtd::collections::generic::idictionary <key_t, value_t> and xtd::collections::generic::ilist <type_t> are more specialized interfaces that extend xtd::collections::generic::icollection <type_t>. A xtd::collections::generic::idictionary <key_t, value_t> implementation is a collection of key/value pairs, like the xtd::collections::generic::dictoinary <key_t, value_t> class. A xtd::collections::generic::ilist <type_t> implementation is a collection of values, and its members can be accessed by index, like the xtd::collections::generic::list <type_t> class.
       /// @remarks If neither the xtd::collections::generic::idictionary <key_t, value_t> interface nor the xtd::collections::generic::ilist <type_t> interface meet the requirements of the required collection, derive the new collection class from the xtd::collections::generic::icollection <type_t> interface instead for more flexibility.
       template<class type_t>
-      class icollection : public xtd::collections::generic::ienumerable<type_t>, public xtd::collections::generic::extensions::collection_operators<type_t, icollection<type_t>> {
+      class icollection : public xtd::collections::generic::ienumerable<type_t>, public xtd::collections::generic::extensions::collection_operators<type_t, icollection<type_t >> {
       public:
         /// @name Public Aliases
         
@@ -54,19 +54,19 @@ namespace xtd {
         /// @brief Represents the const iterator of xtd::collections::generic::ienumerable value type.
         using const_iterator = typename xtd::collections::generic::ienumerable<type_t>::const_iterator;
         /// @}
-
+        
         /// @name Public Properties
         
         /// @{
         /// @brief Gets the number of elements contained in the xtd::collections::generic::icollection <type_t>.
         /// @return The number of elements contained in the xtd::collections::generic::icollection <type_t>.
         virtual xtd::size count() const noexcept = 0;
-
+        
         /// @brief Gets a value indicating whether the xtd::collections::generic::icollection <type_t> is read-only.
         /// @return `true` if the xtd::collections::generic::icollection <type_t> is read-only; otherwise, `false`.
         /// @remarks A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the xtd::collections::generic::icollection <type_t> interface only supports addition and removal operations. For example, the xtd::collections::generic::icollection::is_read_only property of an array that is cast or converted to an xtd::collections::generic::icollection <type_t> object returns `true`, even though individual array elements can be modified.
         virtual bool is_read_only() const noexcept = 0;
-
+        
         /// @brief Gets a value indicating whether access to the xtd::collections::generic::icollection <type_t> is synchronized (thread safe).
         /// @return `true` if access to the xtd::collections::generic::icollection <type_t> is synchronized (thread safe); otherwise, `false`.
         /// @remarks xtd::collections::generic::icollection::sync_root returns an object, which can be used to synchronize access to the xtd::collections::generic::icollection <type_t>.
@@ -82,7 +82,7 @@ namespace xtd {
         /// }
         /// @endcode
         virtual bool is_synchronized() const noexcept = 0;
-
+        
         /// @brief Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollection <type_t>.
         /// @return An object that can be used to synchronize access to the the xtd::collections::generic::icollection <type_t>.
         /// @remarks For collections whose underlying store is not publicly available, the expected implementation is to return the current instance. Note that the pointer to the current instance might not be sufficient for collections that wrap other collections; those should return the underlying collection's `sync_root` property.
@@ -106,7 +106,7 @@ namespace xtd {
         /// @endcode
         virtual const xtd::object& sync_root() const noexcept = 0;
         /// @}
-
+        
         /// @name Public Methods
         
         /// @{
@@ -114,12 +114,12 @@ namespace xtd {
         /// @param item The object to add to the xtd::collections::generic::icollection <type_t>.
         /// @exception xtd::not_supported_exception The xtd::collections::generic::icollection <type_t> is read-only.
         virtual void add(const type_t& item) = 0;
-
+        
         /// @brief Removes all items from the xtd::collections::generic::icollection <type_t>.
         /// @exception xtd::not_supported_exception The xtd::collections::generic::icollection <type_t> is read-only.
         /// @remarks xtd::collections::generic::icollection::count must be set to 0, and references to other objects from elements of the collection must be released.
         virtual void clear() = 0;
-
+        
         /// @brief Determines whether the xtd::collections::generic::icollection <type_t> contains a specific value.
         /// @param item The object to locate in the xtd::collections::generic::icollection <type_t>.
         /// @return `true` if item is found in the xtd::collections::generic::icollection <type_t>; otherwise, `false`.
@@ -131,7 +131,7 @@ namespace xtd {
         /// @param array_index The zero-based index in `array` at which copying begins.
         /// @exception xtd::argument_exception The number of elements in the source xtd::collections::generic::icollection <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
         virtual void copy_to(xtd::array<type_t>& array, xtd::size array_index) const = 0;
-
+        
         /// @brief Removes the first occurrence of a specific object from the xtd::collections::generic::icollection <type_t>.
         /// @param item The object to remove from the xtd::collections::generic::icollection <type_t>.
         /// @return `true` if item was successfully removed from the xtd::collections::generic::icollection <type_t>; otherwise, `false`. This method also returns `false` if item is not found in the original xtd::collections::generic::icollection <type_t>.

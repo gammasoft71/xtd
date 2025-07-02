@@ -70,7 +70,7 @@ namespace xtd {
           
           return wx_style;
         }
-
+        
         void SetBackgroundColour(const wxColour& colour) override {
           // Do not set back color for system button...
         }

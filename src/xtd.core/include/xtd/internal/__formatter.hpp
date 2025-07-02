@@ -62,7 +62,7 @@ inline std::string __binary_formatter__(value_t value, xtd::int32 precision) {
 inline std::string __currency_formatter__(long double value, const std::locale& locale) {
   auto ss = std::stringstream {};
   ss.imbue(locale);
-  ss << std::showbase << std::fixed << std::put_money(value * std::pow(10, std::use_facet<std::moneypunct<char>>(locale).frac_digits()));
+  ss << std::showbase << std::fixed << std::put_money(value * std::pow(10, std::use_facet<std::moneypunct<char >> (locale).frac_digits()));
   return ss.str();
 }
 
@@ -126,7 +126,7 @@ inline std::string __floating_point_formatter__(type_t value, const std::string&
   auto possible_formats = {'b', 'B', 'c', 'C', 'e', 'E', 'f', 'F', 'g', 'G', 'n', 'N', 'p', 'P', 'x', 'X'};
   if (fmt.size() > 3 || std::find(possible_formats.begin(), possible_formats.end(), fmt[0]) == possible_formats.end() || (fmt.size() >= 2 && !std::isdigit(fmt[1])) || (fmt.size() == 3 && !std::isdigit(fmt[2])))
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Custom format not yet implemented");
-  
+    
   auto precision = 0;
   try {
     if (fmt.size() > 1) precision = std::stoi(fmt.substr(1));
@@ -165,7 +165,7 @@ inline std::string __numeric_formatter__(type_t value, const std::string& format
   auto possible_formats = {'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'n', 'N', 'o', 'O', 'p', 'P', 'x', 'X'};
   if (fmt.size() > 3 || std::find(possible_formats.begin(), possible_formats.end(), fmt[0]) == possible_formats.end() || (fmt.size() >= 2 && !std::isdigit(fmt[1])) || (fmt.size() == 3 && !std::isdigit(fmt[2])))
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Custom fmt not yet implemented");
-  
+    
   auto precision = 0;
   if (fmt[0] == 'b' || fmt[0] == 'B' || fmt[0] == 'd' || fmt[0] == 'D' || fmt[0] == 'o' || fmt[0] == 'O' || fmt[0] == 'x' || fmt[0] == 'X') {
     try {

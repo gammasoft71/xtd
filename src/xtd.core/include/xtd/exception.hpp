@@ -85,7 +85,7 @@ namespace xtd {
     /// @brief Sets error associate to the exception
     /// @param value An error_code represent a Error associate to the exception
     virtual void error_code(const std::error_code& value) noexcept;
-
+    
     /// @brief Gets the exception instance that caused the current exception.
     /// @return An instance of exception that describes the error that caused the current exception. The inner_exception property returns the same value as was passed into the constructor, or a null reference if the inner exception value was not supplied to the constructor.
     virtual exception_ref inner_exception() const noexcept;
@@ -117,7 +117,7 @@ namespace xtd {
     /// @brief Returns a string that represents the current exception.
     /// @return A string that represents the current exception.
     xtd::string to_string() const noexcept override;
-
+    
     /// @brief Gets message associate to the exception
     /// @return A string represent a massage associate to the exception
     const char* what() const noexcept override;
@@ -133,15 +133,15 @@ namespace xtd {
     /// @paran enable triue if stack trace enabled; otherwise `false`.
     static void enable_stack_trace(bool enable) noexcept;
     /// @}
-
+    
   private:
     exception(const xtd::optional<xtd::string>& message, uptr<xtd::exception>&& inner_exception, const xtd::diagnostics::stack_frame& stack_frame, bool);
     xtd::string stack_trace_to_string() const noexcept;
     
     const xtd::string& get_name() const noexcept;
-
+    
     struct data;
-    ptr<data> data_;    
+    ptr < data > data_;
     static bool enable_stack_trace_;
   };
 }

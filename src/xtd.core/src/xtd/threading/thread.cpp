@@ -252,7 +252,7 @@ bool thread::join(int32 milliseconds_timeout) {
     }
     data_->joinable = false;
     auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
-    auto iterator = std::find_if(get_static_data().threads.begin(), get_static_data().threads.end(), [&](const auto& value) {return value->data_ ? value->data_->managed_thread_id == data_->managed_thread_id : false;});
+    auto iterator = std::find_if(get_static_data().threads.begin(), get_static_data().threads.end(), [&](const auto & value) {return value->data_ ? value->data_->managed_thread_id == data_->managed_thread_id : false;});
     if (iterator == get_static_data().threads.end()) return result;
     (*iterator)->data_.reset();
     get_static_data().threads.erase(iterator);
@@ -271,12 +271,12 @@ void thread::join_all() {
 bool thread::join_all(int32 milliseconds_timeout) {
   auto sw = stopwatch::start_new();
   if (!thread_pool::join_all(milliseconds_timeout)) return false;
-
+  
   auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
   auto thread_pointers = list<thread*> {};
   for (auto& thread : get_static_data().threads)
     thread_pointers.add(thread.get());
-
+    
   if (sw.elapsed_milliseconds() > milliseconds_timeout || join_all_ptr(thread_pointers, milliseconds_timeout - as<int32>(sw.elapsed_milliseconds())) == false) return false;
   get_static_data().threads.clear();
   return true;
@@ -365,7 +365,7 @@ bool thread::yield() noexcept {
   return native::thread::yield();
 }
 
-bool thread::join_all(const std::initializer_list<sptr<thread>>& threads){
+bool thread::join_all(const std::initializer_list<sptr<thread>>& threads) {
   return join_all(threads, timeout::infinite);
 }
 
@@ -380,7 +380,7 @@ bool thread::join_all(const std::initializer_list<sptr<thread>>& threads, const 
   return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
-bool thread::join_all(const std::initializer_list<uptr<thread>>& threads){
+bool thread::join_all(const std::initializer_list<uptr<thread>>& threads) {
   return join_all(threads, timeout::infinite);
 }
 
@@ -464,12 +464,12 @@ intptr thread::get_current_thread_id() noexcept {
   return native::thread::get_thread_id(get_current_thread_handle());
 }
 
-thread::static_data& thread::get_static_data() {
+thread::static_data & thread::get_static_data() {
   static auto data = static_data {};
   return data;
 }
 
-thread& thread::get_thread(intptr thread_id) {
+thread & thread::get_thread(intptr thread_id) {
   static auto& ut = unmanaged_thread();
   try {
     if (thread_id == main_thread_id_) return main_thread();
@@ -477,7 +477,7 @@ thread& thread::get_thread(intptr thread_id) {
     for (auto& thread : get_static_data().threads)
       if (thread->data_ && thread->data_->thread_id == thread_id) return *thread;
     return ut;
-  } catch(...) {
+  } catch (...) {
     return ut;
   }
 }
@@ -485,7 +485,8 @@ thread& thread::get_thread(intptr thread_id) {
 void thread::interrupt_internal() {
   struct cancel_thread {
     ~cancel_thread() {
-      if (data_->managed_thread_id != 1) native::thread::cancel(data_->handle);}
+      if (data_->managed_thread_id != 1) native::thread::cancel(data_->handle);
+    }
     thread::data* data_ = nullptr;
   } cancel_thread {data_.get()};
   data_->interrupted = false;
@@ -547,7 +548,7 @@ void thread::thread_proc() {
   if (data_->handle == invalid_handle) data_->handle = get_current_thread_handle();
   if (!data_->name.empty()) native::thread::set_current_thread_name(data_->name);
   if (data_->priority != thread_priority::normal) native::thread::set_priority(data_->handle, as<int32>(data_->priority));
-
+  
   if (!data_->thread_start.is_empty()) data_->thread_start();
   else if (!data_->parameterized_thread_start.is_empty()) data_->parameterized_thread_start(data_->parameter);
   else throw_helper::throws(exception_case::invalid_operation);
@@ -560,13 +561,13 @@ void thread::thread_proc() {
   
   if (!is_background()) return;
   auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
-  auto iterator = std::find_if(get_static_data().threads.begin(), get_static_data().threads.end(), [&](const auto& value) {return value->data_ ? value->data_->managed_thread_id == data_->managed_thread_id : false;});
+  auto iterator = std::find_if(get_static_data().threads.begin(), get_static_data().threads.end(), [&](const auto & value) {return value->data_ ? value->data_->managed_thread_id == data_->managed_thread_id : false;});
   if (iterator == get_static_data().threads.end()) return;
   (*iterator)->data_.reset();
   get_static_data().threads.erase(iterator);
 }
 
-thread& thread::unmanaged_thread() {
+thread & thread::unmanaged_thread() {
   static auto unmanaged_thread = threading::thread {};
   if (unmanaged_thread.is_unstarted()) {
     unmanaged_thread.data_->state &= ~threading::thread_state::unstarted;
@@ -602,7 +603,8 @@ void this_thread::priority(thread_priority priority) {
 }
 
 intptr this_thread::thread_id() noexcept {
-  return thread::current_thread().thread_id();}
+  return thread::current_thread().thread_id();
+}
 
 intptr this_thread::get_id() noexcept {
   return thread::current_thread().thread_id();

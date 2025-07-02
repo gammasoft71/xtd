@@ -7,7 +7,7 @@
 #include <vector>
 
 namespace xtdc_command {
-  class new_project final :public project_base {
+  class new_project final : public project_base {
   public:
     static int execute(const xtd::array<xtd::string>& args) {
       auto show_help = false;

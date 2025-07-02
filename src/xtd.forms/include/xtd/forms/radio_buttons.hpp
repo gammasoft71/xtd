@@ -114,7 +114,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button abort(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent about radio_button.
       /// @return The created radio_button.
       static radio_button about();
@@ -203,7 +203,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button about(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent actual_size radio_button.
       /// @return The created radio_button.
       static radio_button actual_size();
@@ -292,7 +292,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button actual_size(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent add radio_button.
       /// @return The created radio_button.
       static radio_button add();
@@ -381,7 +381,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button add(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent alignment radio_button.
       /// @return The created radio_button.
       static radio_button alignment();
@@ -470,7 +470,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button alignment(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent align_left radio_button.
       /// @return The created radio_button.
       static radio_button align_left();
@@ -559,7 +559,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button align_left(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent align_right radio_button.
       /// @return The created radio_button.
       static radio_button align_right();
@@ -648,7 +648,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button align_right(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent apply radio_button.
       /// @return The created radio_button.
       static radio_button apply();
@@ -737,7 +737,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button apply(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent ascending radio_button.
       /// @return The created radio_button.
       static radio_button ascending();
@@ -826,7 +826,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button ascending(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent back radio_button.
       /// @return The created radio_button.
       static radio_button back();
@@ -915,7 +915,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button back(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent bold radio_button.
       /// @return The created radio_button.
       static radio_button bold();
@@ -1004,7 +1004,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button bold(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent bottom radio_button.
       /// @return The created radio_button.
       static radio_button bottom();
@@ -1093,7 +1093,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button bottom(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent cancel radio_button.
       /// @return The created radio_button.
       static radio_button cancel();
@@ -1182,7 +1182,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button cancel(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent cdrom radio_button.
       /// @return The created radio_button.
       static radio_button cdrom();
@@ -1271,7 +1271,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button cdrom(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent centered radio_button.
       /// @return The created radio_button.
       static radio_button centered();
@@ -1360,7 +1360,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button centered(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent clear radio_button.
       /// @return The created radio_button.
       static radio_button clear();
@@ -1449,7 +1449,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button clear(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent close radio_button.
       /// @return The created radio_button.
       static radio_button close();
@@ -1538,7 +1538,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button close(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent color radio_button.
       /// @return The created radio_button.
       static radio_button color();
@@ -1627,7 +1627,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button color(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent contents radio_button.
       /// @return The created radio_button.
       static radio_button contents();
@@ -1716,7 +1716,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button contents(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent convert radio_button.
       /// @return The created radio_button.
       static radio_button convert();
@@ -1805,7 +1805,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button convert(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent copy radio_button.
       /// @return The created radio_button.
       static radio_button copy();
@@ -1894,7 +1894,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button copy(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent customize radio_button.
       /// @return The created radio_button.
       static radio_button customize();
@@ -1983,7 +1983,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button customize(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent cut radio_button.
       /// @return The created radio_button.
       static radio_button cut();
@@ -2072,7 +2072,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button cut(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent del radio_button.
       /// @return The created radio_button.
       static radio_button del();
@@ -2161,7 +2161,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button del(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent descending radio_button.
       /// @return The created radio_button.
       static radio_button descending();
@@ -2250,7 +2250,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button descending(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent down radio_button.
       /// @return The created radio_button.
       static radio_button down();
@@ -2339,7 +2339,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button down(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent edit radio_button.
       /// @return The created radio_button.
       static radio_button edit();
@@ -2428,7 +2428,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button edit(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent execute radio_button.
       /// @return The created radio_button.
       static radio_button execute();
@@ -2517,7 +2517,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button execute(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent exit radio_button.
       /// @return The created radio_button.
       static radio_button exit();
@@ -2606,7 +2606,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button exit(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent file radio_button.
       /// @return The created radio_button.
       static radio_button file();
@@ -2695,7 +2695,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button file(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent find radio_button.
       /// @return The created radio_button.
       static radio_button find();
@@ -2784,7 +2784,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button find(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent first radio_button.
       /// @return The created radio_button.
       static radio_button first();
@@ -2873,7 +2873,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button first(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent floppy radio_button.
       /// @return The created radio_button.
       static radio_button floppy();
@@ -2962,7 +2962,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button floppy(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent font radio_button.
       /// @return The created radio_button.
       static radio_button font();
@@ -3051,7 +3051,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button font(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent forward radio_button.
       /// @return The created radio_button.
       static radio_button forward();
@@ -3140,7 +3140,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button forward(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent harddisk radio_button.
       /// @return The created radio_button.
       static radio_button harddisk();
@@ -3229,7 +3229,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button harddisk(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent help radio_button.
       /// @return The created radio_button.
       static radio_button help();
@@ -3318,7 +3318,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button help(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent home radio_button.
       /// @return The created radio_button.
       static radio_button home();
@@ -3407,7 +3407,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button home(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent ignore radio_button.
       /// @return The created radio_button.
       static radio_button ignore();
@@ -3496,7 +3496,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button ignore(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent indent radio_button.
       /// @return The created radio_button.
       static radio_button indent();
@@ -3585,7 +3585,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button indent(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent index radio_button.
       /// @return The created radio_button.
       static radio_button index();
@@ -3674,7 +3674,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button index(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent info radio_button.
       /// @return The created radio_button.
       static radio_button info();
@@ -3763,7 +3763,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button info(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent italic radio_button.
       /// @return The created radio_button.
       static radio_button italic();
@@ -3852,7 +3852,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button italic(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent justified radio_button.
       /// @return The created radio_button.
       static radio_button justified();
@@ -3941,7 +3941,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button justified(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent jump_to radio_button.
       /// @return The created radio_button.
       static radio_button jump_to();
@@ -4030,7 +4030,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button jump_to(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent last radio_button.
       /// @return The created radio_button.
       static radio_button last();
@@ -4119,7 +4119,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button last(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent network radio_button.
       /// @return The created radio_button.
       static radio_button network();
@@ -4208,7 +4208,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button network(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent new_ radio_button.
       /// @return The created radio_button.
       static radio_button new_();
@@ -4297,7 +4297,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button new_(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent next radio_button.
       /// @return The created radio_button.
       static radio_button next();
@@ -4386,7 +4386,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button next(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent no radio_button.
       /// @return The created radio_button.
       static radio_button no();
@@ -4475,7 +4475,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button no(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent ok radio_button.
       /// @return The created radio_button.
       static radio_button ok();
@@ -4564,7 +4564,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button ok(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent open radio_button.
       /// @return The created radio_button.
       static radio_button open();
@@ -4653,7 +4653,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button open(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent options radio_button.
       /// @return The created radio_button.
       static radio_button options();
@@ -4742,7 +4742,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button options(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent paste radio_button.
       /// @return The created radio_button.
       static radio_button paste();
@@ -4831,7 +4831,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button paste(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent preferences radio_button.
       /// @return The created radio_button.
       static radio_button preferences();
@@ -4920,7 +4920,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button preferences(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent previous radio_button.
       /// @return The created radio_button.
       static radio_button previous();
@@ -5009,7 +5009,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button previous(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent print radio_button.
       /// @return The created radio_button.
       static radio_button print();
@@ -5098,7 +5098,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button print(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent print_preview radio_button.
       /// @return The created radio_button.
       static radio_button print_preview();
@@ -5187,7 +5187,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button print_preview(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent properties radio_button.
       /// @return The created radio_button.
       static radio_button properties();
@@ -5276,7 +5276,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button properties(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent quit radio_button.
       /// @return The created radio_button.
       static radio_button quit();
@@ -5365,7 +5365,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button quit(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent redo radio_button.
       /// @return The created radio_button.
       static radio_button redo();
@@ -5454,7 +5454,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button redo(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent refresh radio_button.
       /// @return The created radio_button.
       static radio_button refresh();
@@ -5543,7 +5543,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button refresh(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent remove radio_button.
       /// @return The created radio_button.
       static radio_button remove();
@@ -5632,7 +5632,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button remove(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent replace radio_button.
       /// @return The created radio_button.
       static radio_button replace();
@@ -5721,7 +5721,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button replace(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent retry radio_button.
       /// @return The created radio_button.
       static radio_button retry();
@@ -5810,7 +5810,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button retry(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent revert_to_saved radio_button.
       /// @return The created radio_button.
       static radio_button revert_to_saved();
@@ -5899,7 +5899,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button revert_to_saved(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent save radio_button.
       /// @return The created radio_button.
       static radio_button save();
@@ -5988,7 +5988,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button save(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent save_as radio_button.
       /// @return The created radio_button.
       static radio_button save_as();
@@ -6077,7 +6077,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button save_as(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent search radio_button.
       /// @return The created radio_button.
       static radio_button search();
@@ -6166,7 +6166,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button search(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent select_all radio_button.
       /// @return The created radio_button.
       static radio_button select_all();
@@ -6255,7 +6255,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button select_all(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent settings radio_button.
       /// @return The created radio_button.
       static radio_button settings();
@@ -6344,7 +6344,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button settings(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent spell_check radio_button.
       /// @return The created radio_button.
       static radio_button spell_check();
@@ -6433,7 +6433,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button spell_check(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent stop radio_button.
       /// @return The created radio_button.
       static radio_button stop();
@@ -6522,7 +6522,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button stop(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent strikeout radio_button.
       /// @return The created radio_button.
       static radio_button strikeout();
@@ -6611,7 +6611,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button strikeout(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent tools radio_button.
       /// @return The created radio_button.
       static radio_button tools();
@@ -6700,7 +6700,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button tools(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent top radio_button.
       /// @return The created radio_button.
       static radio_button top();
@@ -6789,7 +6789,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button top(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent undelete radio_button.
       /// @return The created radio_button.
       static radio_button undelete();
@@ -6878,7 +6878,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button undelete(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent underline radio_button.
       /// @return The created radio_button.
       static radio_button underline();
@@ -6967,7 +6967,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button underline(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent undo radio_button.
       /// @return The created radio_button.
       static radio_button undo();
@@ -7056,7 +7056,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button undo(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent unindent radio_button.
       /// @return The created radio_button.
       static radio_button unindent();
@@ -7145,7 +7145,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button unindent(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent up radio_button.
       /// @return The created radio_button.
       static radio_button up();
@@ -7234,7 +7234,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button up(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent view radio_button.
       /// @return The created radio_button.
       static radio_button view();
@@ -7323,7 +7323,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button view(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent window radio_button.
       /// @return The created radio_button.
       static radio_button window();
@@ -7412,7 +7412,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button window(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent yes radio_button.
       /// @return The created radio_button.
       static radio_button yes();
@@ -7501,7 +7501,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button yes(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent zoom_in radio_button.
       /// @return The created radio_button.
       static radio_button zoom_in();
@@ -7590,7 +7590,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button zoom_in(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent zoom_out radio_button.
       /// @return The created radio_button.
       static radio_button zoom_out();
@@ -7679,7 +7679,7 @@ namespace xtd {
       /// @param name The name of the radio_button.
       /// @return The created radio_button.
       static radio_button zoom_out(const control& parent, bool checked, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined radio_button that represent zoom_to_fit radio_button.
       /// @return The created radio_button.
       static radio_button zoom_to_fit();

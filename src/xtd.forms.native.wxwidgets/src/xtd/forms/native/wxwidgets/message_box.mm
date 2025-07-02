@@ -77,8 +77,8 @@ void message_box::show_sheet(xtd::delegate<void(int32)> on_dialog_closed, intptr
   @autoreleasepool {
     NSAlert* alert = create_alert(text, caption, style, display_help_button);
     [alert beginSheetModalForWindow:[reinterpret_cast<control_handler*>(control)->control()->GetHandle() window] completionHandler: ^ (NSModalResponse return_code) {
-            on_dialog_closed(convert_to_dialog_rsult(style, return_code));
-          }];
+      on_dialog_closed(convert_to_dialog_rsult(style, return_code));
+    }];
   }
 }
 #endif

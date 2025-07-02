@@ -22,7 +22,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/convert>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -277,7 +277,7 @@ namespace xtd {
     /// @param bytes An read only span of 8-bit unsigned integers.
     /// @return The string representation, in base 64, of the contents of `in_array`.
     static xtd::string to_base64_string(const xtd::read_only_span<xtd::byte>& bytes);
-
+    
     /// @brief Convert xtd::any to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.

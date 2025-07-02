@@ -65,10 +65,10 @@ void speech_synthesizer::speak(intmax_t handle, const std::string& text_to_speak
 void speech_synthesizer::speak_async(intmax_t handle, const std::string& text_to_speak, std::function<void()> on_speak_completed) {
   reinterpret_cast<speech_synthesizer_data*>(handle)->process_handle = native::process::shell_execute("", reinterpret_cast<speech_synthesizer_data*>(handle)->say_cmd_file_name, text_to_speak, "", PROCESS_WINDOW_STYLE_HIDDEN);
   auto wait_process_thread = std::thread {[on_speak_completed, handle] {
-    int32_t exit_code = 0;
-    native::process::wait(reinterpret_cast<speech_synthesizer_data*>(handle)->process_handle, exit_code);
-    on_speak_completed();
-  }};
+      int32_t exit_code = 0;
+      native::process::wait(reinterpret_cast<speech_synthesizer_data*>(handle)->process_handle, exit_code);
+      on_speak_completed();
+    }};
   wait_process_thread.detach();
 }
 

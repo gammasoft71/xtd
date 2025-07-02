@@ -26,7 +26,7 @@ namespace xtd::threading::tests {
       }
       assert::is_false(monitor::is_entered("lock_string"));
     }
-
+    
     void test_method_(lock_int) {
       int lock_int = 0;
       assert::is_false(monitor::is_entered(lock_int));

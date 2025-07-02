@@ -42,7 +42,7 @@ namespace xtd {
           /// @remarks The threshold is the sum of the RGB components.
           explicit threshold_effect(int32 threshold);
           /// @}
-
+          
           /// @name Public Properties
           
           /// @{
@@ -51,7 +51,7 @@ namespace xtd {
           /// @remarks The threshold is the sum of the RGB components.
           int32 threshold = 0;
           /// @}
-
+          
         protected:
           /// @name Protected Methods
           

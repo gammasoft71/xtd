@@ -11,7 +11,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/argument_exception>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -100,7 +100,7 @@ namespace xtd {
     /// @exception xtd::argument_exception `argument` is empty or consists only of white-space characters.
     static void throw_if_empty_or_white_space(const xtd::string& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {if (xtd::string::is_empty(argument.replace(" ", ""))) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, string::format("The value cannot be an empty string or composed entirely of whitespace. (Parameter '{}')", param_name, stack_frame).c_str());}
     /// @}
-
+    
   private:
     const char* default_message() const noexcept {return "Value does not fall within the expected range."_t;}
   };

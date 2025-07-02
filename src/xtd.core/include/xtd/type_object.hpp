@@ -30,7 +30,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/type_object>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -42,19 +42,19 @@ namespace xtd {
     type_object(const type_object&) noexcept = default;
     type_object& operator=(const type_object&) noexcept;
     /// @endcond
-
+    
     /// @par Public Properties
     /// @{
     /// @brief Gets the fully qualified name of the type_object, including the namespace of the type_object.
     /// @return The fully qualified name of the type_object, including the namespace of the type_object.
     /// @remarks For example, the fully qualified name of the xtd::string type is xtd::string.
     xtd::string full_name() const noexcept;
-
+    
     /// @brief Gets the name of the type_object.
     /// @return The name of the type_object.
     /// @remarks For example, the name of the xtd::string type is string.
     xtd::string name() const noexcept;
-
+    
     /// @brief Gets the namespace of the type_object.
     /// @return The namespace of the type_object.
     /// @remarks For example, the namespace of the xtd::string type is xtd::
@@ -71,11 +71,11 @@ namespace xtd {
     /// @param type The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
     bool equals(const type_object& type) const noexcept override;
-
+    
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
     xtd::size get_hash_code() const noexcept override;
-
+    
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
     xtd::string to_string() const noexcept override;
@@ -88,10 +88,10 @@ namespace xtd {
     friend type_object xtd::__s__::__typeof_(const type_t& value) noexcept;
     friend type_object xtd::__s__::__typeof_(const xtd::type& value) noexcept;
     friend class xtd::object;
-
+    
     type_object() noexcept;
     type_object(const xtd::type& type) noexcept;
-
+    
     const xtd::type& type_;
   };
   /// @}

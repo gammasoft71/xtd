@@ -43,7 +43,7 @@ namespace xtd {
           /// @param lower_color The color used when RGB color is under or equal the threshold value.
           bitonal_effect(int32 threshold, color upper_color, color lower_color);
           /// @}
-
+          
           /// @name Public Properties
           
           /// @{
@@ -51,16 +51,16 @@ namespace xtd {
           /// @param threshold The threshold value (from 0 to 765).
           /// @remarks The threshold is the sum of the RGB components.
           int32 threshold = 0;
-
+          
           /// @brief Gets or sets the color used when RGB color is upper the threshold value.
           /// @param upper_color The color used when RGB color is upper the threshold value.
           color upper_color;
-
+          
           /// @brief Gets or sets the color used when RGB color is under or equal the threshold value.
           /// @param lower_color The color used when RGB color is under or equal the threshold value.
           color lower_color;
           /// @}
-
+          
         protected:
           /// @name Protected Methods
           

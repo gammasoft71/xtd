@@ -315,7 +315,7 @@ namespace xtd {
   /// @remarks you can use std::basic_string or std::wstring with format param %%s.
   template<class ...args_t>
   xtd::wstring sprintf(const xtd::wstring& fmt, args_t&& ... args) {return xtd::string::sprintf(fmt.to_string(), std::forward<args_t>(args)...);}
-
+  
   /// @cond
   template<class ...args_t>
   xtd::string sprintf(const char* fmt, args_t&& ... args) {return xtd::string::sprintf(std::string {fmt}, std::forward<args_t>(args)...);}

@@ -33,7 +33,7 @@ intmax_t dns::get_host_by_address(const string& host_address, int32_t host_addre
 }
 
 intmax_t dns::get_host_by_name(const string& host_name) {
-  auto lock = lock_guard<mutex>{ dns_mutex };
+  auto lock = lock_guard<mutex> { dns_mutex };
   auto host = gethostbyname(host_name.c_str());
   if (host == nullptr) return 0;
   return reinterpret_cast<intmax_t>(new hostent(*host));

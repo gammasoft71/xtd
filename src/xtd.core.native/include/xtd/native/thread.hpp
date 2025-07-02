@@ -58,7 +58,7 @@ namespace xtd {
       /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
       static bool detach(intmax_t handle);
-
+      
       /// @brief Gets the current thread handle.
       /// @return The current thread handle.
       /// @warning Internal use only
@@ -87,7 +87,7 @@ namespace xtd {
       /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
       static bool set_current_thread_name(const std::string& name);
-
+      
       /// @brief Sets the thread priority.
       /// @param handle The thread handle.
       /// @param priority The thread priority.
@@ -100,19 +100,19 @@ namespace xtd {
       /// * 3 : above_normal
       /// * 4 : highest
       static bool set_priority(intmax_t handle, int32_t priority);
-
+      
       /// @brief Suspends the current thread for a specified time.
       /// @param milliseconds_timeout The number of milliseconds for which the thread is blocked. Specify zero (0) to indicate that this thread should be suspended to allow other waiting threads to execute. Specify -1 to block the thread indefinitely.
       /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
       static void sleep(int32_t milliseconds_timeout);
-
+      
       /// @brief Suspend thread with specified handle.
       /// @param handle The thread handle.
       /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
       static bool suspend(intmax_t handle);
-
+      
       /// @brief Causes the calling thread to yield execution to another thread that is ready to run on the current processor.
       /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only

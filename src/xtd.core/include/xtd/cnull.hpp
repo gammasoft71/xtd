@@ -19,7 +19,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/cnull>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

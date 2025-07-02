@@ -298,7 +298,7 @@ bool process::start() {
       process.data_->exception_pointer_ = std::current_exception();
       allow_to_continue = true;
     }
-  }, *this, std::ref(allow_to_continue)};
+  }, * this, std::ref(allow_to_continue)};
   while (!allow_to_continue) std::this_thread::yield();
   if (!data_->exception_pointer_) return true;
   if (data_->start_info_.use_shell_execute() && data_->start_info_.error_dialog())  message_box_message_(data_->start_info_.file_name());

@@ -38,7 +38,7 @@ namespace {
   using module_info = tuple<string, size_t>;
   using command = tuple<string, vector<size_t>>;
   using command_collection = unordered_map<string, command>;
-
+  
   module_info get_module_info(void* trace) {
     using link_map_ptr = link_map*;
     auto info = Dl_info {};
@@ -46,17 +46,17 @@ namespace {
     if (!dladdr1(trace, &info, reinterpret_cast<void**>(&link_map), RTLD_DL_LINKMAP)) return {"", numeric_limits<size_t>::max()};
     return {info.dli_fname, link_map->l_addr};
   }
-
+  
   command_collection get_commands(const address_collection& addresses) {
     auto commands = command_collection {};
     for (auto index =  size_t {0}; index < addresses.size(); ++index) {
       auto [name, offset] = get_module_info(addresses[index]);
       if (name.empty()) continue;
-
+      
       auto& [command, indices] = commands[name];
       if (command.empty()) {
         auto ss = stringstream {};
-        ss << "addr2line -C -f -e \"" << name <<"\"";
+        ss << "addr2line -C -f -e \"" << name << "\"";
         command = ss.str();
       }
       auto ss = stringstream {};
@@ -69,7 +69,7 @@ namespace {
   
   frame_collection get_frames(const command_collection& commands, size_t count, bool need_file_info) {
     auto frames = frame_collection {count};
-
+    
     for (const auto& [name, command] : commands) {
       auto& [command_to_run, indices] = command;
       //cout << "[command] = " << command_to_run << endl;
@@ -89,13 +89,13 @@ namespace {
           frame_strings[index + 1].erase(frame_strings[index + 1].begin(), frame_strings[index + 1].begin() + frame_strings[index + 1].find(":") + 1);
           try {
             line = stoi(frame_strings[index + 1].substr(0, frame_strings[index + 1].find(" ")));
-          } catch(...) {
+          } catch (...) {
           }
         }
         frames[indices[index / 2]] = {file_name, line, size_t {}, method, size_t {}};
       }
     }
-
+    
     return frames;
   }
 }
@@ -109,7 +109,7 @@ stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool n
   addresses.resize(static_cast<size_t>(backtrace(addresses.data(), static_cast<int>(addresses.size()))));
   if (skip_frames + get_native_offset() > addresses.size() || skip_frames > numeric_limits<size_t>::max() - get_native_offset()) return {};
   addresses.erase(addresses.begin(), addresses.begin() + skip_frames + get_native_offset() - 1);
-
+  
   auto frames = frame_collection {};
   for (const auto& frame : ::get_frames(get_commands(addresses), addresses.size(), need_file_info)) {
     if (get<3>(frame) == "__libc_start_call_main") break;

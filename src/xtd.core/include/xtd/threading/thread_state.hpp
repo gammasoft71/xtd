@@ -51,6 +51,7 @@ flags_attribute_(xtd::threading, thread_state);
 
 template<> struct xtd::enum_register<xtd::threading::thread_state> {
   explicit operator auto() const noexcept {
-    return xtd::enum_collection<xtd::threading::thread_state> {{xtd::threading::thread_state::running, "running"}, {xtd::threading::thread_state::stop_requested, "stop_requested"}, {xtd::threading::thread_state::suspend_requested, "suspend_requested"}, {xtd::threading::thread_state::background, "background"}, {xtd::threading::thread_state::unstarted, "unstarted"}, {xtd::threading::thread_state::stopped, "stopped"}, {xtd::threading::thread_state::wait_sleep_join, "wait_sleep_join"}, {xtd::threading::thread_state::suspended, "suspended"}, {xtd::threading::thread_state::abort_requested, "abort_requested"}, {xtd::threading::thread_state::aborted, "aborted"}};}
+    return xtd::enum_collection<xtd::threading::thread_state> {{xtd::threading::thread_state::running, "running"}, {xtd::threading::thread_state::stop_requested, "stop_requested"}, {xtd::threading::thread_state::suspend_requested, "suspend_requested"}, {xtd::threading::thread_state::background, "background"}, {xtd::threading::thread_state::unstarted, "unstarted"}, {xtd::threading::thread_state::stopped, "stopped"}, {xtd::threading::thread_state::wait_sleep_join, "wait_sleep_join"}, {xtd::threading::thread_state::suspended, "suspended"}, {xtd::threading::thread_state::abort_requested, "abort_requested"}, {xtd::threading::thread_state::aborted, "aborted"}};
+  }
 };
 /// @endcond

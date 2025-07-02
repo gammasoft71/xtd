@@ -16,7 +16,7 @@ namespace xtdc_gui {
     
   protected:
     void on_form_closed(const xtd::forms::form_closed_event_args& e) override;
-
+    
   private:
     xtd::forms::label auto_close_label_;
     xtd::forms::check_box auto_close_check_box_;

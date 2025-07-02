@@ -21,7 +21,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/convert_pointer>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -146,7 +146,7 @@ namespace xtd {
     static xtd::ptr<new_type_t> to_ptr(xtd::ptr<current_type_t>&& value) {
       return to_shared_ptr<new_type_t>(std::move(value));
     }
-
+    
     /// @brief Casts a type into another type.
     /// @par Namespace
     /// xtd
@@ -236,7 +236,7 @@ namespace xtd {
       }
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
     }
-
+    
     /// @brief Casts a type into another type.
     /// @par Namespace
     /// xtd

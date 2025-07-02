@@ -27,10 +27,10 @@ namespace {
     __environment_argc = argc;
     __environment_argv = argv;
   }
-
+  
   using distribution_dictionary = map<string, string>;
   
-#if defined(__HAIKU__)
+  #if defined(__HAIKU__)
   const distribution_dictionary& get_distribution_key_values() {
     static auto distribution_key_values = distribution_dictionary {};
     if (!distribution_key_values.empty()) return distribution_key_values;
@@ -49,7 +49,7 @@ namespace {
     
     return distribution_key_values;
   }
-#else
+  #else
   const distribution_dictionary& get_distribution_key_values() {
     static auto distribution_key_values = distribution_dictionary {};
     if (!distribution_key_values.empty()) return distribution_key_values;
@@ -60,25 +60,25 @@ namespace {
       if (key_value.size() != 2) continue;
       distribution_key_values.insert({key_value[0], xtd::native::linux::strings::replace(key_value[1], "\"", "")});
     }
-
+  
     return distribution_key_values;
   }
-#endif
-
-#if defined(__HAIKU__)
+  #endif
+  
+  #if defined(__HAIKU__)
   /// Workaround std::quick_exit and std::at_quick_exit are not implemented on Haiku !
   void (*__on_quick_exit__)(void) = nullptr;
-#endif
+  #endif
 }
 
 int32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
-#if defined(__HAIKU__)
+  #if defined(__HAIKU__)
   /// Workaround std::quick_exit and std::at_quick_exit are not implemented on Haiku !
   __on_quick_exit__ = on_quick_exit;
   return 0;
-#else
+  #else
   return std::at_quick_exit(on_quick_exit);
-#endif
+  #endif
 }
 
 vector<string> environment::get_command_line_args() {
@@ -186,7 +186,7 @@ map<string, string>& environment::get_environment_variables(int32_t target) {
     }
     return envs;
   }
-
+  
   if (target == ENVIRONMENT_VARIABLE_TARGET_USER || target == ENVIRONMENT_VARIABLE_TARGET_MACHINE) {
     static auto envs = map<string, string> {};
     envs.clear();
@@ -195,7 +195,7 @@ map<string, string>& environment::get_environment_variables(int32_t target) {
     //  envs[name] = key.get_value(name).to_string();
     return envs;
   }
-
+  
   static auto envs = map<string, string> {};
   return envs;
 }
@@ -212,9 +212,9 @@ string environment::get_machine_name() {
 }
 
 int32_t environment::get_os_platform_id() {
-#if defined(__ANDROID__)
+  #if defined(__ANDROID__)
   return PLATFORM_ANDROID;
-#elif defined(__HAIKU__)
+  #elif defined(__HAIKU__)
   return PLATFORM_HAIKU;
   #else
   if (linux::shell_execute::run("uname", "-a").find("Linux") != string::npos) return PLATFORM_LINUX;
@@ -249,15 +249,15 @@ size_t environment::get_system_page_size() {
 }
 
 uint32_t environment::get_tick_count() {
-#if defined(__HAIKU__)
+  #if defined(__HAIKU__)
   return 0;
-#else
+  #else
   // https://stackoverflow.com/questions/1540627/what-api-do-i-call-to-get-the-system-uptime
   using struct_sysinfo = struct sysinfo;
   auto info = struct_sysinfo {};
   sysinfo(&info);
   return info.uptime * 1000;
-#endif
+  #endif
 }
 
 bool environment::get_user_administrator() {
@@ -294,13 +294,13 @@ string environment::new_line() {
 }
 
 void environment::quick_exit(int32_t exit_code) noexcept {
-#if defined(__HAIKU__)
+  #if defined(__HAIKU__)
   /// Workaround std::quick_exit and std::at_quick_exit are not implemented on Haiku !
   if (__on_quick_exit__) __on_quick_exit__();
   std::_Exit(exit_code);
-#else
+  #else
   std::quick_exit(exit_code);
-#endif
+  #endif
 }
 
 void environment::set_environment_variable(const string& name, const string& value, int32_t target) {

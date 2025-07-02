@@ -74,7 +74,7 @@ namespace xtd {
   ///          0 - Success
   ///          1 - Fail (COERROR)
   ///
-  ///      R - reserved portion of the facility code, corresponds to NT's 
+  ///      R - reserved portion of the facility code, corresponds to NT's
   ///              second severity bit.
   ///
   ///      C - reserved portion of the facility code, corresponds to NT's
@@ -337,7 +337,7 @@ namespace xtd {
     /// @brief File invalid.
     static constexpr int32 ERROR_FILE_INVALID = static_cast<int32>(0x800703EE);
     /// @}
-
+    
     /// @name Public Static Methods
     
     /// @{
@@ -345,12 +345,12 @@ namespace xtd {
     /// @param h_result The HRESULT value.
     /// @return `true` is failed; otherwise `false`.
     static bool failed(int32 h_result) noexcept;
-
+    
     /// @brief Gets the code portion of the specified HRESULT.
     /// @param h_result The HRESULT value.
     /// @return The code portion of `h_result`.
     static int32 get_code(int32 h_result) noexcept;
-
+    
     /// @brief The facility of the specified HRESULT, which indicates what API or framework originated this error.
     /// @param h_result The HRESULT value.
     /// @return The facility of `h_result`.
@@ -486,7 +486,7 @@ namespace xtd {
     /// | FACILITY_JSCRIPT                                  | 2306    | 0x902 |
     /// | FACILITY_PIDGENX                                  | 2561    | 0xA01 |
     static int32 get_facility(int32 h_result) noexcept;
-
+    
     /// @brief Gets an array of HRESULT.
     /// @return An array of HRESULT.
     static const xtd::array<int32>& get_h_results() noexcept;
@@ -495,11 +495,11 @@ namespace xtd {
     /// @param h_result The HRESULT value.
     /// @return The message of `h_result`.
     static string get_message(int32 h_result) noexcept;
-
+    
     /// @brief Gets The HRESULT messages.
     /// @return The h_result messages.
     static const std::unordered_map<int32, string>& get_messages() noexcept;
-
+    
     /// @brief Gets the name of the specified HRESULT.
     /// @param h_result The HRESULT value.
     /// @return The name of `h_result`.
@@ -508,7 +508,7 @@ namespace xtd {
     /// @brief Gets The HRESULT names.
     /// @return The h_result names.
     static const std::unordered_map<int32, string>& get_names() noexcept;
-
+    
     /// @brief The severity of the specified HRESULT, which indicates what API or framework originated this error.
     /// @param h_result The HRESULT value.
     /// @return The severity of `h_result`.
@@ -518,26 +518,26 @@ namespace xtd {
     /// | SEVERITY_SUCCESS | 0       | 0x0 |
     /// | SEVERITY_ERROR   | 1       | 0x1 |
     static int32 get_severity(int32 h_result) noexcept;
-
+    
     /// @brief Obtains a reference to the static error category object for HRESULT errors. The object is required to override the virtual function error_category::name() to return a pointer to the string "h_result_category". It is used to identify error conditions that correspond to the HRESULT error codes.
     /// @return A reference to the static object of unspecified runtime type, derived from [std::error_category](https://en.cppreference.com/w/cpp/error/error_category).
     static const std::error_category& h_result_category() noexcept;
-
+    
     /// @brief Provides a generic is error test for the specified HRESULT.
     /// @param h_result The HRESULT value.
     /// @return `true` is error; otherwise `false`.
     static bool is_error(int32 h_result) noexcept;
-
+    
     /// @brief Creates error code value for the specified HRESULT.
     /// @param h_result The HRESULT value.
     /// @return Error code corresponding to `h_result`.
     static std::error_code make_error_code(int h_result) noexcept;
-
+    
     /// @brief Provides a generic success test for the specified HRESULT.
     /// @param h_result The HRESULT value.
     /// @return `true` is secceeded; otherwise `false`.
     static bool succeeded(int32 h_result) noexcept;
-
+    
     /// @brief Gets the name of the specified HRESULT.
     /// @param h_result The HRESULT value.
     /// @return The name of `h_result`.

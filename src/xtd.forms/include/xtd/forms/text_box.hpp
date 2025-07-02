@@ -112,7 +112,7 @@ namespace xtd {
       
       /// @{
       void append_text(const xtd::string& value) override;
-
+      
       void select(size_t start, size_t length) override;
       /// @}
       

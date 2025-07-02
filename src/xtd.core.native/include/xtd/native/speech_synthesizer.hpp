@@ -39,7 +39,7 @@ namespace xtd {
     class core_native_export_ speech_synthesizer final {
       speech_synthesizer() = delete;
       friend xtd::speech::synthesis::speech_synthesizer;
-    
+      
     protected:
       /// @name Protectedstatic  methods
       

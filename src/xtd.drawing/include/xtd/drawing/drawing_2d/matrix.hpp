@@ -148,7 +148,7 @@ namespace xtd {
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
         xtd::size get_hash_code() const noexcept override;
-
+        
         /// @brief Inverts this xtd::drawing::drawing_2d::matrix, if it is invertible.
         void invert();
         

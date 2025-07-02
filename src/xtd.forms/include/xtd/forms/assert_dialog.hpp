@@ -65,7 +65,7 @@ namespace xtd {
       /// @param value The new dialog message text.
       /// @return Current input_dialog instance.
       assert_dialog& message(const xtd::string& value);
-
+      
       /// @brief Gets stack frame.
       /// @return The stack frame.
       /// @deprecated Will be removed in version 0.4.0.
@@ -89,11 +89,11 @@ namespace xtd {
       xtd::forms::dialog_result show_dialog(const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Runs assert dialog box.
       xtd::forms::dialog_result show_dialog(const iwin32_window& owner, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
-
+      
       /// @brief Runs assert dialog box.
       /// @remarks The result will done in async. Check result_dialog property after dialog box closed to obtain the result.
       void show_sheet(const iwin32_window& owner, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
-
+      
       /// @brief Runs assert dialog box.
       xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @}
@@ -117,7 +117,7 @@ namespace xtd {
       /// @}
       
     private:
-    void set_message() noexcept;
+      void set_message() noexcept;
       xtd::sptr<data> data_;
     };
   }

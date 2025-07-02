@@ -49,17 +49,17 @@ namespace xtd {
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
     bool equals(const xtd::object& other) const noexcept override;
-
+    
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
     xtd::size get_hash_code() const noexcept override;
-
+    
     /// @brief Calculates the final hash code after consecutive xtd::hash_code::add invocations.
     /// @return The calculated hash code.
     /// @remarks This method must be called at most once per instance of xtd::hash_code.
     xtd::size to_hash_code() const noexcept;
     /// @}
-
+    
     /// @name Public Static Methods
     
     /// @{
@@ -69,7 +69,7 @@ namespace xtd {
     template<class ...args_t>
     static xtd::size combine(args_t... values) noexcept {return combine_iterator(generate_uniqueness_seed(), values...);}
     /// @}
-
+    
   private:
     template<class type_t, class ...args_t>
     static xtd::size combine_iterator(xtd::size seed, const type_t& value, args_t... values) noexcept {return combine_iterator(hash_combine(seed, xtd::collections::generic::helpers::hasher<type_t> {}(value)), values...);}

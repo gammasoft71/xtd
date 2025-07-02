@@ -46,7 +46,7 @@ namespace xtd {
           /// @param interpolation_mode One of xtd::drawing::drawing_2d::interpolation_mode values.
           explicit scale_effect(const xtd::drawing::size& size, xtd::drawing::drawing_2d::interpolation_mode interpolation_mode);
           /// @}
-
+          
           /// @name Public Properties
           
           /// @{
@@ -58,7 +58,7 @@ namespace xtd {
           /// @param interpolation_mode One of xtd::drawing::drawing_2d::interpolation_mode values
           xtd::drawing::drawing_2d::interpolation_mode interpolation_mode = xtd::drawing::drawing_2d::interpolation_mode::default_value;
           /// @}
-
+          
         protected:
           /// @name Protected Methods
           

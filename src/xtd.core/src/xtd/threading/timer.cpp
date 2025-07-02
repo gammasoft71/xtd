@@ -17,13 +17,13 @@ struct timer::data {
   int32 period {-1};
   any_object state{this};
   wait_callback timer_proc = wait_callback {[&] {
-    if (due_time > 0) sleep.wait_one(due_time);
-    while (!closed) {
-      callback(state);
-      sleep.wait_one(period);
-    }
-    event.set();
-  }};
+      if (due_time > 0) sleep.wait_one(due_time);
+      while (!closed) {
+        callback(state);
+        sleep.wait_one(period);
+      }
+      event.set();
+    }};
 };
 
 timer::timer(const timer_callback& callback) : timer(callback, this, -1, -1) {

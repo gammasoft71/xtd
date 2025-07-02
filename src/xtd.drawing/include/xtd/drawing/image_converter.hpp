@@ -35,7 +35,7 @@ namespace xtd {
       /// @return The converted image from base64 string.
       /// @remarks The first eight bytes contain the width followed by the height of the image. The following bytes contain the ARGB components of the image pixels.
       static xtd::drawing::image from_base64_string(const xtd::string& value);
-
+      
       /// @brief Convert specified image to byte array.
       /// @param value The image to convert into byte array.
       /// @return A byte array that contains the image.
@@ -78,7 +78,7 @@ namespace xtd {
       /// @param stream The input stream that contains the image.
       /// @return The converted image from stream.
       static xtd::drawing::image to_image(std::istream& stream);
-
+      
       /// @brief Convert specified image to stream.
       /// @param value The image to convert.
       /// @param stream The output stream where to write the image.

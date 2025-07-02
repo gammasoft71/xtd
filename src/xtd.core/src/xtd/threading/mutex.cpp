@@ -86,7 +86,7 @@ void mutex::release_mutex() {
 bool mutex::try_lock() noexcept {
   try {
     return wait_one(0);
-  } catch(...) {
+  } catch (...) {
     return false;
   }
 }
@@ -94,7 +94,7 @@ bool mutex::try_lock() noexcept {
 bool mutex::try_lock_for(const time_span& timeout) noexcept {
   try {
     return wait_one(static_cast<int32>(timeout.total_milliseconds()));
-  } catch(...) {
+  } catch (...) {
     return false;
   }
 }
@@ -102,7 +102,7 @@ bool mutex::try_lock_for(const time_span& timeout) noexcept {
 bool mutex::try_lock_until(const date_time& timeout_time) noexcept {
   try {
     return try_lock_for(date_time::now() - timeout_time);
-  } catch(...) {
+  } catch (...) {
     return false;
   }
 }

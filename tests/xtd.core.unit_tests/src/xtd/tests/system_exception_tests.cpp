@@ -101,7 +101,7 @@ namespace xtd::tests {
       assert::are_equal("xtd::system_exception : System error." + environment::new_line() + stack_frame.to_string(), e.to_string());
       assert::are_equal("System error.", e.what());
     }
-
+    
     void test_method_(constructor_with_empty_message) {
       auto e = system_exception {""};
       assert::are_equal("xtd::system_exception", e.get_type().full_name());
@@ -216,7 +216,7 @@ namespace xtd::tests {
       assert::are_equal("xtd::system_exception : System error." + environment::new_line() + stack_frame.to_string(), e.to_string());
       assert::are_equal("System error.", e.what());
     }
-
+    
     void test_method_(constructor_with_message_and_inner_exception) {
       auto inner_exception = argument_exception {};
       auto e = system_exception {"Test excpetion message.", inner_exception};

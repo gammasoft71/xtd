@@ -225,7 +225,7 @@ namespace {
       
       for (const auto& user_page : user_pages)
         tab_control_about_.tab_pages().push_back(user_page);
-      
+        
       /** @todo Activate the following commment if about dialog must be modal on Windows.
       if (show_modal_) {
         auto o = owner;

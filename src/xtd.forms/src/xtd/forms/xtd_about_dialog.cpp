@@ -17,7 +17,7 @@ struct xtd_about_dialog::data {
 
 xtd_about_dialog::xtd_about_dialog() : data_(xtd::new_sptr<data>()) {
   data_->informations_tag_page.text("Informations");
-
+  
   data_->dialog.icon(properties::resources::xtd());
   data_->dialog.name("About xtd");
   data_->dialog.version(environment::version().to_string(2));
@@ -46,9 +46,9 @@ xtd_about_dialog::xtd_about_dialog() : data_(xtd::new_sptr<data>()) {
   data_->text_reports_text_box.multiline(true);
   data_->text_reports_text_box.parent(data_->informations_tag_page);
   data_->text_reports_text_box.read_only(true);
-  data_->text_reports_text_box.text(system_report::to_string(system_report::reports::libraries|system_report::reports::processor|system_report::reports::operating_system|system_report::reports::compiler|system_report::reports::language|system_report::reports::locale|system_report::reports::toolkit|system_report::reports::screens));
+  data_->text_reports_text_box.text(system_report::to_string(system_report::reports::libraries | system_report::reports::processor | system_report::reports::operating_system | system_report::reports::compiler | system_report::reports::language | system_report::reports::locale | system_report::reports::toolkit | system_report::reports::screens));
   data_->text_reports_text_box.word_wrap(false);
-
+  
 }
 
 void xtd_about_dialog::show() {

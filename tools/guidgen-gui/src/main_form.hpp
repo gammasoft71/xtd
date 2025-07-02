@@ -16,7 +16,7 @@ namespace guidgen_gui {
       using namespace xtd::drawing;
       using namespace xtd::forms;
       using namespace xtd::threading;
-
+      
       client_size({645, 350});
       minimum_client_size(client_size());
       controls().push_back_range({count_label_, count_numeric_up_down_, format_label_, format_choice_, generate_button_, result_text_box_});
@@ -47,32 +47,33 @@ namespace guidgen_gui {
       generate_button_.text("Generate"_t);
       generate_button_.click += [&] {
         result_text_box_.text("");
-        auto generate = threading::thread {[&]{
-          begin_invoke([&] {
-            count_numeric_up_down_.enabled(false);
-            format_choice_.enabled(false);
-            generate_button_.enabled(false);
-            result_text_box_.enabled(false);
-            application::use_wait_cursor(true);
-            application::do_events();
-          });
-          
-          for (int count = 0; count < (count_numeric_up_down_.text() == "" ? count_numeric_up_down_.value() : parse<int>(count_numeric_up_down_.text())); count++) {
+        auto generate = threading::thread {
+          [&]{
             begin_invoke([&] {
-              result_text_box_.append_text(xtd::guid::new_guid().to_string(as<string>(format_choice_.selected_item().tag())));
-              result_text_box_.append_text(environment::new_line());
+              count_numeric_up_down_.enabled(false);
+              format_choice_.enabled(false);
+              generate_button_.enabled(false);
+              result_text_box_.enabled(false);
+              application::use_wait_cursor(true);
+              application::do_events();
             });
-          }
-          
-          begin_invoke([&] {
-            count_numeric_up_down_.enabled(true);
-            format_choice_.enabled(true);
-            generate_button_.enabled(true);
-            result_text_box_.enabled(true);
-            application::use_wait_cursor(false);
-            application::do_events();
-          });
-        }};
+            
+            for (int count = 0; count < (count_numeric_up_down_.text() == "" ? count_numeric_up_down_.value() : parse<int>(count_numeric_up_down_.text())); count++) {
+              begin_invoke([&] {
+                result_text_box_.append_text(xtd::guid::new_guid().to_string(as<string>(format_choice_.selected_item().tag())));
+                result_text_box_.append_text(environment::new_line());
+              });
+            }
+            
+            begin_invoke([&] {
+              count_numeric_up_down_.enabled(true);
+              format_choice_.enabled(true);
+              generate_button_.enabled(true);
+              result_text_box_.enabled(true);
+              application::use_wait_cursor(false);
+              application::do_events();
+            });
+          }};
         generate.start();
         generate.detach();
       };

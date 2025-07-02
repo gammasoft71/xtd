@@ -23,7 +23,7 @@ namespace xtd {
         friend xtd::forms::message_notifier;
       protected:
         /// @name Protected Static Methods
-
+        
         /// @{
         /// @brief Shows message notifier
         /// @param hwnd Parent window handle.

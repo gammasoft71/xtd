@@ -326,7 +326,7 @@ forms::create_params label::create_params() const noexcept {
     if (border_style() == xtd::forms::border_style::fixed_single) create_params.style(create_params.style() | WS_BORDER);
     else if (border_style() != xtd::forms::border_style::none) create_params.ex_style(create_params.ex_style() | WS_EX_CLIENTEDGE);
   }
-
+  
   if (data_->flat_style != xtd::forms::flat_style::system) create_params.style(create_params.style() | SS_OWNERDRAW);
   
   if (data_->auto_ellipsis) create_params.style(create_params.style() | SS_ENDELLIPSIS);

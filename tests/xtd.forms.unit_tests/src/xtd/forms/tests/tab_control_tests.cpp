@@ -157,7 +157,7 @@ namespace xtd::forms::tests {
       assert::are_equal(image_list, tab_control.image_list());
       assert::are_equal(1_z, tab_control.image_list().images().size());
     }
-
+    
     void test_method_(native_handle) {
       forms::form form;
       tab_control_for_test tab_control;
@@ -180,22 +180,22 @@ namespace xtd::forms::tests {
       forms::tab_page tab_page1;
       tab_control.parent(form);
       
-      assert::throws<argument_out_of_range_exception>([&]{tab_control.selected_index(0);});
+      assert::throws<argument_out_of_range_exception>([&] {tab_control.selected_index(0);});
       tab_control.tab_pages().push_back(tab_page1);
       tab_control.selected_index(0);
       assert::are_equal(0_z, tab_control.selected_index());
-      assert::throws<argument_out_of_range_exception>([&]{tab_control.selected_index(1);});
+      assert::throws<argument_out_of_range_exception>([&] {tab_control.selected_index(1);});
     }
     
     void test_method_(selected_index_without_form) {
       tab_control_for_test tab_control;
       forms::tab_page tab_page1;
       
-      assert::throws<argument_out_of_range_exception>([&]{tab_control.selected_index(0);});
+      assert::throws<argument_out_of_range_exception>([&] {tab_control.selected_index(0);});
       tab_control.tab_pages().push_back(tab_page1);
       tab_control.selected_index(0);
       assert::are_equal(0_z, tab_control.selected_index());
-      assert::throws<argument_out_of_range_exception>([&]{tab_control.selected_index(1);});
+      assert::throws<argument_out_of_range_exception>([&] {tab_control.selected_index(1);});
     }
     
     void test_method_(tab_pages_add_pages_with_tab_pages_push_back) {
@@ -237,7 +237,7 @@ namespace xtd::forms::tests {
       assert::are_equal(tab_page2, tab_control.tab_pages()[1].get());
       assert::are_equal(tab_page3, tab_control.tab_pages()[2].get());
     }
-
+    
     void test_method_(tab_pages_add_pages_with_tab_page_parent) {
       forms::form form;
       tab_control_for_test tab_control;
@@ -260,7 +260,7 @@ namespace xtd::forms::tests {
       assert::are_same(tab_page2, tab_control.tab_pages()[1].get());
       assert::are_same(tab_page3, tab_control.tab_pages()[2].get());
     }
-
+    
     void test_method_(tab_pages_remove_pages_with_tab_page_parent) {
       forms::form form;
       tab_control_for_test tab_control;
@@ -276,7 +276,7 @@ namespace xtd::forms::tests {
       assert::are_same(tab_page3, tab_control.tab_pages()[1].get());
       assert::is_null(tab_page2.parent());
     }
-
+    
     void test_method_(tab_pages_remove_pages_with_tab_pages_eraqe_at) {
       forms::form form;
       tab_control_for_test tab_control;
@@ -292,7 +292,7 @@ namespace xtd::forms::tests {
       assert::are_same(tab_page3, tab_control.tab_pages()[1].get());
       assert::is_null(tab_page2.parent());
     }
-
+    
     void test_method_(tab_pages_remove_pages_with_tab_pages_clear) {
       forms::form form;
       tab_control_for_test tab_control;

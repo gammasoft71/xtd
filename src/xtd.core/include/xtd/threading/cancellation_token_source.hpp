@@ -44,7 +44,7 @@ namespace xtd {
       cancellation_token_source(int32 milliseconds_delay);
       cancellation_token_source(const time_span& delay);
       /// @}
-
+      
       /// @cond
       cancellation_token_source();
       cancellation_token_source(const cancellation_token_source& cancellation_token_source);
@@ -64,11 +64,11 @@ namespace xtd {
       
       /// @{
       /// @}
-
+      
     private:
       bool can_be_canceled() const noexcept;
       threading::wait_handle& wait_handle() noexcept;
-
+      
       friend class cancellation_token;
       xtd::sptr<data> data_;
     };

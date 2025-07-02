@@ -15,7 +15,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/double_object>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

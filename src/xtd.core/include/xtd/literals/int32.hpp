@@ -98,7 +98,7 @@ namespace xtd {
     /// xtd::console::out << L"125"_i32 << xtd::environment::new_line;
     /// ```
     int32 operator""_i32(const wchar_t* s, std::size_t n);
-
+    
     /// @brief Used to convert specified value into int32.
     /// @par Namespace
     /// xtd

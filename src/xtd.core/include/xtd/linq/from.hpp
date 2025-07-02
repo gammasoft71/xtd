@@ -38,7 +38,7 @@ namespace xtd {
       return enumerable::as_enumerable(source);
     }
     template<class source_t>
-    auto from(const std::initializer_list<source_t>& source) noexcept{
+    auto from(const std::initializer_list<source_t>& source) noexcept {
       return enumerable::as_enumerable(source);
     }
     template<class input_iterator_t>

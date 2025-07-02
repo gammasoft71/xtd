@@ -54,7 +54,7 @@ namespace xtd {
         /// @brief Represents an empty item that value is equal to xtd::string::empty_string and tag has no vlaue.
         static const item empty;
         /// @}
-
+        
         /// @name Public Constructors
         
         /// @{
@@ -117,7 +117,7 @@ namespace xtd {
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
         xtd::size get_hash_code() const noexcept override;
-
+        
         /// @brief Returns a string containing the value of the item.
         /// @return A string containing the value of the item.
         xtd::string to_string() const noexcept override;

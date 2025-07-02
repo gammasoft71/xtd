@@ -21,7 +21,7 @@ namespace xtd::forms {
       auto wave3 = enabled ? xtd::array {8, 4, 2, 4, 8, 16, 0, 16} : xtd::array {0, 0, 0, 0, 0, 0, 0, 0};
       auto wave4 = enabled ? xtd::array {16, 8, 4, 2, 4, 8, 16, 0} : xtd::array {0, 0, 0, 0, 0, 0, 0, 0};
       auto wave5 = enabled ? xtd::array {0, 16, 8, 4, 2, 4, 8, 16} : xtd::array {0, 0, 0, 0, 0, 0, 0, 0};
-
+      
       graphics.fill_rounded_rectangle(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x1, y + (wave1[frame_] ? line_height / wave1[frame_] / 2 : 0), line_width, (wave1[frame_] ? line_height - line_height / wave1[frame_] : line_height), line_width / 2);
       graphics.fill_rounded_rectangle(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x2, y + (wave2[frame_] ? line_height / wave2[frame_] / 2 : 0), line_width, (wave2[frame_] ? line_height - line_height / wave2[frame_] : line_height), line_width / 2);
       graphics.fill_rounded_rectangle(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x3, y + (wave3[frame_] ? line_height / wave3[frame_] / 2 : 0), line_width, (wave3[frame_] ? line_height - line_height / wave3[frame_] : line_height), line_width / 2);

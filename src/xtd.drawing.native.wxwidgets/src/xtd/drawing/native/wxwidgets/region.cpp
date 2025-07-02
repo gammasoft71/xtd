@@ -19,14 +19,14 @@ namespace {
   //const auto max_value = as<int32>(single_object::max_value);
   //const auto min_value = as<int32>(single_object::min_value);
   // Workaround for infinite region on linux
-#if defined(__WXGTK__)
+  #if defined(__WXGTK__)
   const auto max_value = 0xFFFFF / 2;
   const auto min_value = -(0xFFFFF / 2);
-#else
+  #else
   const auto max_value = int32_object::max_value / 2;
   const auto min_value = -(int32_object::max_value / 2);
-#endif
-
+  #endif
+  
   static const wxColour mask_color = wxColour(255, 0, 255);
   static wxBitmap create_graphics_path_bitmap(wxGraphicsPath& path) noexcept {
     double x = .0f, y = .0f, width = .0f, height = .0f;

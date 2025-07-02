@@ -24,7 +24,7 @@ inline void __xtd_delegate_any_cast<void>(const xtd::any_object& value) {
 
 template<class result_t>
 inline xtd::any_object __xtd_delegate_invoker(std::function<result_t()> invoke) {
-  if constexpr (!std::is_void_v<result_t>) return xtd::any_object(invoke());
+  if constexpr(!std::is_void_v<result_t>) return xtd::any_object(invoke());
   else {
     invoke();
     return xtd::any_object {};
@@ -33,7 +33,7 @@ inline xtd::any_object __xtd_delegate_invoker(std::function<result_t()> invoke) 
 
 template<typename function_t, typename... arguments_t>
 inline xtd::any_object __xtd_delegate_invoker(function_t&& invoke, arguments_t&&... arguments) {
-  if constexpr (!std::is_void_v<std::invoke_result_t<function_t, arguments_t...>>)
+  if constexpr(!std::is_void_v<std::invoke_result_t<function_t, arguments_t...>>)
     return xtd::any_object(std::invoke(std::forward<function_t>(invoke), std::forward<arguments_t>(arguments)...));
   else {
     std::invoke(std::forward<function_t>(invoke), std::forward<arguments_t>(arguments)...);
@@ -166,12 +166,12 @@ struct xtd::delegate<result_t(arguments_t...)>::delegate_async_state {
 template<class result_t, class ...arguments_t>
 xtd::async_result xtd::delegate<result_t(arguments_t...)>::begin_invoke(xtd::async_callback async_callback, const xtd::any_object& async_state, arguments_t&&... arguments) {
   auto state = std::make_shared<delegate_async_state>();
-
+  
   state->async = xtd::new_sptr<async_result_invoke>(async_callback, async_state);
   state->arguments = std::make_tuple(std::forward<arguments_t>(arguments)...);
   state->invoker = [state](arguments_t... args) {return state->self->invoke(std::forward<arguments_t>(args)...);};
   state->self = this;
-
+  
   threading::thread_pool::queue_user_work_item([state] {
     state->async->data_->result = state->start(state);
     state->async->data_->is_completed = true;

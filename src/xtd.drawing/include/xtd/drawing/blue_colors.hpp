@@ -93,7 +93,7 @@ namespace xtd {
       /// @brief Gets an array of colors.
       static const xtd::array<xtd::drawing::color>& get_colors() noexcept;
       
-
+      
       static const xtd::array<xtd::string>& get_color_names() noexcept;
       /// @}
     };

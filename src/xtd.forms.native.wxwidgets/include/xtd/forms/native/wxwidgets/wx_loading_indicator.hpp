@@ -49,7 +49,7 @@ namespace xtd {
           
           return wx_style;
         }
-
+        
         bool owner_draw_ = false;
       };
     }

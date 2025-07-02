@@ -55,9 +55,9 @@ namespace xtd {
       screens = 0b10000000000000,
       /// @brief System informations collection.
       system_informations = 0b100000000000000,
-      all = stack_trace|libraries|processor|operating_system|compiler|language|locale|toolkit|environment_variables|special_folders|system_colors|generic_font_families|system_fonts|screens|system_informations
+      all = stack_trace | libraries | processor | operating_system | compiler | language | locale | toolkit | environment_variables | special_folders | system_colors | generic_font_families | system_fonts | screens | system_informations
     };
-
+    
     /// @name Public Aliases
     
     /// @{

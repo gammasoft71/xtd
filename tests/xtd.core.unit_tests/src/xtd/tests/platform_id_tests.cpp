@@ -103,7 +103,7 @@ namespace xtd::tests {
       assert::are_equal("aix", enum_object<>::to_string(platform_id::aix));
       assert::are_equal(platform_id::aix, enum_object<>::parse<platform_id>("aix"));
     }
-
+    
     void test_method_(mingw) {
       assert::are_equal(15, enum_object<>::to_int32(platform_id::mingw));
       assert::are_equal("mingw", enum_object<>::to_string(platform_id::mingw));
@@ -121,7 +121,7 @@ namespace xtd::tests {
       assert::are_equal("posix", enum_object<>::to_string(platform_id::posix));
       assert::are_equal(platform_id::posix, enum_object<>::parse<platform_id>("posix"));
     }
-
+    
     void test_method_(other) {
       assert::are_equal(32767, enum_object<>::to_int32(platform_id::other));
       assert::are_equal("other", enum_object<>::to_string(platform_id::other));

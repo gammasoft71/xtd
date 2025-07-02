@@ -49,7 +49,7 @@ namespace xtd {
         /// @return A guid structure that represents this image_format object.
         const xtd::guid guid() const noexcept;
         /// @}
-
+        
         /// @name Public Static Properties
         
         /// @{
@@ -144,7 +144,7 @@ namespace xtd {
         /// @brief Gets the PNM memory.
         /// @return An image_format object that indicates the PNM memory image format.
         static image_format memory_pnm() noexcept;
-
+        
         /// @brief Gets the pcx (PCX) image format.
         /// @return An image_format object that indicates the PCX image format.
         static image_format pcx() noexcept;
@@ -217,7 +217,7 @@ namespace xtd {
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
         xtd::size get_hash_code() const noexcept override;
-
+        
         /// @brief Converts this image_format object to a human-readable string.
         /// @return A string that represents this image_format object.
         xtd::string to_string() const noexcept override;

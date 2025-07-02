@@ -36,7 +36,7 @@ intptr __xtd__macos_system_colors_text_box_text__();
 namespace {
   bool is_windows_dark_mode() {
     #if defined(__WXMSW__)
-    auto value = DWORD{};
+    auto value = DWORD {};
     auto value_size = DWORD {sizeof(value)};
     if (RegGetValue(HKEY_CURRENT_USER, L"Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize", L"AppsUseLightTheme", RRF_RT_REG_DWORD, nullptr, &value, &value_size) == ERROR_SUCCESS)
       return __xtd_win32_enable_dark_mode__ != 0 && (value == 0 || __xtd_win32_enable_dark_mode__ == 1);

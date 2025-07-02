@@ -89,7 +89,7 @@ namespace {
     bool key_available() {
       if (peek_character != -1)
         return true;
-      
+        
       push_status();
       echo(false);
       icanon(false);
@@ -302,7 +302,7 @@ namespace {
       // Ctrl + [a; z]
       if ((key >= 1 && key <= 7) || (key >= 10 && key <= 11) || (key >= 14 && key <= 18) || (key >= 20 && key <= 26))
         return key_info {key + 'A' - 1, key, false, true, false};
-      
+        
       switch (key) {
         case 50086 : return key_info {0, U'æ', alt, false, false};
         case 50054 : return key_info {0, U'Æ', alt, false, false};
@@ -400,7 +400,7 @@ namespace {
       
       if (key_info::keys.find(std::string(1, toupper((char)key))) != key_info::keys.end())
         return key_info {toupper(key), key, alt, false, key >= 'A' && key <= 'Z'};
-      
+        
       return key_info {0, key, alt, false, key >= 'A' && key <= 'Z'};
     }
     
@@ -628,7 +628,7 @@ namespace {
         snd_pcm_prepare(pcm_handle);
         for (unsigned int buffer_index = 0; buffer_index < frames_per_buffer; ++buffer_index)
           buffer[buffer_index] = (buffer_index % (sample_rate / frequency) < (sample_rate / frequency) / 2) ? 255 : 0;
-        
+          
         int written_frames = snd_pcm_writei(pcm_handle, buffer, frames_per_buffer);
         if (written_frames < 0) snd_pcm_recover(pcm_handle, written_frames, 0);
       }
@@ -822,9 +822,9 @@ std::string console::title() {
   /// @todo get console get title on linux and macOS
   /** Didn't work correctly!
    std::cout << "\x1b[21t" << std::endl;
-   
+  
    if (!terminal.key_available()) return ::title;
-   
+  
    std::string title;
    for (auto c = terminal.getch(); terminal::terminal_.key_available(); c = terminal::terminal_.getch())
    title.push_back(static_cast<char>(c));

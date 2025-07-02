@@ -42,19 +42,19 @@ namespace xtd {
           /// @param percent The percent factor in % (from 0.0 to 2.0).
           color_effect(const xtd::drawing::color& color, double percent);
           /// @}
-
+          
           /// @name Public Properties
           
           /// @{
           /// @brief Gets or sets the color to add / remove.
           /// @param color The color to add / remove.
           xtd::drawing::color color = color::white;
-
+          
           /// @brief Gets or sets the percent factor in %.
           /// @param percent The percent factor in % (from 0.0 to 2.0).
           double percent = 1.0;
           /// @}
-
+          
         protected:
           /// @name Protected Methods
           

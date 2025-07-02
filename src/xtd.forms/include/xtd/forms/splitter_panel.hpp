@@ -78,7 +78,7 @@ namespace xtd {
       /// @return New xtd::forms::splitter_panel created.
       static splitter_panel create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
-
+      
     protected:
       /// @name Protected Methods
       

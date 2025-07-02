@@ -15,7 +15,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/enum_set_attribute>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

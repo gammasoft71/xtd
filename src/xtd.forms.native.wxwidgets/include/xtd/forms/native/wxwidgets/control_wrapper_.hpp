@@ -43,7 +43,7 @@ namespace xtd::forms::native {
     if (event_handler_ == nullptr || event_handler_->control() == nullptr) return false;
     if (event_handler_->control()->IsBeingDeleted()) return false;
     if (static_cast<xtd::drawing::native::wx_application*>(wxTheApp)->exceptionStored) return  process_result_;
-
+    
     //diagnostics::debug::write_line_if(event.GetEventType() != wxEVT_UPDATE_UI && event.GetEventType() != wxEVT_IDLE, string::format("control_wrapper<{}>::ProcessEvent {}", typeof_<control_t>().full_name(), to_string(event)));
     
     // keyboard events
@@ -153,10 +153,10 @@ namespace xtd::forms::native {
   template<class control_t>
   inline intptr control_wrapper<control_t>::convert_to_virtual_key(const wxKeyEvent& key_event) {
     if (key_event.GetUnicodeKey() != WXK_NONE && key_event.GetUnicodeKey() != WXK_DELETE) return static_cast<intptr>(key_event.GetUnicodeKey());
-#if defined(__WXOSX__)
+    #if defined(__WXOSX__)
     if (key_event.GetKeyCode() == WXK_NONE && key_event.GetRawKeyCode() == kVK_Function) return VK_FUNCTION;
-#endif
-
+    #endif
+    
     switch (key_event.GetKeyCode()) {
       case WXK_NONE: return VK_NONE;
       case WXK_BACK: return VK_BACK;
@@ -173,12 +173,12 @@ namespace xtd::forms::native {
       case WXK_CLEAR: return VK_CLEAR;
       case WXK_SHIFT: return VK_SHIFT;
       case WXK_ALT: return VK_MENU;
-#if defined(__WXOSX__)
+        #if defined(__WXOSX__)
       case WXK_RAW_CONTROL: return key_event.GetRawKeyCode() == kVK_Control ? VK_LWIN : VK_RWIN;
       case WXK_COMMAND: return VK_CONTROL;
-#else
+        #else
       case WXK_CONTROL: return VK_CONTROL;
-#endif
+        #endif
       case WXK_MENU: return VK_MENU;
       case WXK_PAUSE: return VK_PAUSE;
       case WXK_CAPITAL: return VK_CAPITAL;
@@ -236,7 +236,7 @@ namespace xtd::forms::native {
       case WXK_SCROLL: return VK_SCROLL;
       case WXK_PAGEUP: return VK_PAGEUP;
       case WXK_PAGEDOWN: return VK_PAGEDOWN;
-        /// --> num pad special keys
+      /// --> num pad special keys
       case WXK_NUMPAD_SPACE: return VK_SPACE;
       case WXK_NUMPAD_TAB: return VK_TAB;
       case WXK_NUMPAD_ENTER: return VK_RETURN;
@@ -256,7 +256,7 @@ namespace xtd::forms::native {
       case WXK_NUMPAD_INSERT: return VK_INSERT;
       case WXK_NUMPAD_DELETE: return VK_DELETE;
       case WXK_NUMPAD_EQUAL: return '=';
-        /// <-- num pad special keys
+      /// <-- num pad special keys
       case WXK_NUMPAD_MULTIPLY: return VK_MULTIPLY;
       case WXK_NUMPAD_ADD: return VK_ADD;
       case WXK_NUMPAD_SEPARATOR: return VK_SEPARATOR;
@@ -266,7 +266,7 @@ namespace xtd::forms::native {
       case WXK_WINDOWS_LEFT: return xtd::environment::os_version().is_macos() ? VK_CONTROL : VK_LWIN;
       case WXK_WINDOWS_RIGHT: return xtd::environment::os_version().is_macos() ? VK_CONTROL : VK_RWIN;
       case WXK_WINDOWS_MENU: return VK_APPS;
-        //case WXK_RAW_CONTROL: return xtd::forms::keys::control_key;
+      //case WXK_RAW_CONTROL: return xtd::forms::keys::control_key;
       case WXK_SPECIAL1: return VK_OEM_1;
       case WXK_SPECIAL2: return VK_OEM_2;
       case WXK_SPECIAL3: return VK_OEM_3;
@@ -327,11 +327,11 @@ namespace xtd::forms::native {
   inline int32 control_wrapper<control_t>::get_virtual_keys(const wxMouseState& mouse_state) {
     int32 virtual_keys = 0;
     
-#if defined(__WXOSX__)
+    #if defined(__WXOSX__)
     if (mouse_state.RawControlDown()) virtual_keys |= MK_CONTROL;
-#else
+    #else
     if (mouse_state.ControlDown()) virtual_keys |= MK_CONTROL;
-#endif
+    #endif
     if (mouse_state.ShiftDown()) virtual_keys |= MK_SHIFT;
     if (mouse_state.LeftIsDown()) virtual_keys |= MK_LBUTTON;
     if (mouse_state.MiddleIsDown()) virtual_keys |= MK_MBUTTON;
@@ -568,15 +568,15 @@ namespace xtd::forms::native {
   
   template<class control_t>
   inline void control_wrapper<control_t>::wx_evt_key_down(wxEvent& event) {
-#if defined (__WXMSW__)
+    #if defined (__WXMSW__)
     if (static_cast<wxKeyEvent&>(event).GetKeyCode() == WXK_WINDOWS_LEFT || static_cast<wxKeyEvent&>(event).GetKeyCode() == WXK_WINDOWS_RIGHT) return;
-#elif defined(__WXGTK__)
-  if (static_cast<wxKeyEvent&>(event).GetKeyCode() == WXK_NONE && static_cast<wxKeyEvent&>(event).GetRawKeyCode() == GDK_KEY_ISO_Level3_Shift) {
+    #elif defined(__WXGTK__)
+    if (static_cast<wxKeyEvent&>(event).GetKeyCode() == WXK_NONE && static_cast<wxKeyEvent&>(event).GetRawKeyCode() == GDK_KEY_ISO_Level3_Shift) {
       static_cast<wxKeyEvent&>(event).m_keyCode = WXK_ALT;
       event_handler_->send_message(reinterpret_cast<intptr>(event_handler_), WM_KEYDOWN, convert_to_virtual_key(static_cast<wxKeyEvent&>(event)), 0, reinterpret_cast<intptr>(&event));
       return;
-  }
-#elif defined(__WXOSX__)
+    }
+    #elif defined(__WXOSX__)
     static auto functionKeyModifierIsDown = false;
     if (static_cast<wxKeyEvent&>(event).GetKeyCode() != WXK_NONE || static_cast<wxKeyEvent&>(event).GetRawKeyCode() != kVK_Function) functionKeyModifierIsDown = false;
     else {
@@ -587,19 +587,19 @@ namespace xtd::forms::native {
         return;
       }
     }
-#endif
+    #endif
     event_handler_->send_message(reinterpret_cast<intptr>(event_handler_), WM_KEYDOWN, convert_to_virtual_key(static_cast<wxKeyEvent&>(event)), 0, reinterpret_cast<intptr>(&event));
   }
   
   template<class control_t>
   inline void control_wrapper<control_t>::wx_evt_key_up(wxEvent& event) {
-#if defined(__WXGTK__)
-  if (static_cast<wxKeyEvent&>(event).GetKeyCode() == WXK_NONE && static_cast<wxKeyEvent&>(event).GetRawKeyCode() == GDK_KEY_ISO_Level3_Shift) {
+    #if defined(__WXGTK__)
+    if (static_cast<wxKeyEvent&>(event).GetKeyCode() == WXK_NONE && static_cast<wxKeyEvent&>(event).GetRawKeyCode() == GDK_KEY_ISO_Level3_Shift) {
       static_cast<wxKeyEvent&>(event).m_keyCode = WXK_ALT;
       event_handler_->send_message(reinterpret_cast<intptr>(event_handler_), WM_KEYUP, convert_to_virtual_key(static_cast<wxKeyEvent&>(event)), 0, reinterpret_cast<intptr>(&event));
       return;
-  }
-  #endif
+    }
+    #endif
     event.Skip(!event_handler_->send_message(reinterpret_cast<intptr>(event_handler_), WM_KEYUP, convert_to_virtual_key(static_cast<wxKeyEvent&>(event)), 0, reinterpret_cast<intptr>(&event)));
   }
   

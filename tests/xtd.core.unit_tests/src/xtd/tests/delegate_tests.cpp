@@ -174,7 +174,7 @@ namespace xtd::tests {
       d += delegate<void(string&)> {static_method2};
       d += delegate<void(string&)> {c, &container::member_method2};
       d += delegate<void(string&)> {l};
-    
+      
       d = delegate<void(string&)>::remove(d, {static_method2});
       
       assert::are_equal(2_z, d.size());

@@ -40,7 +40,7 @@ namespace xtdc_command {
     }
     
     void create_application_properties(const xtd::string& name, const xtd::string& path) const {
-      auto lines = xtd::array<xtd::string>{
+      auto lines = xtd::array<xtd::string> {
         xtd::string::format("target_name(\"{}\")", name),
       };
       

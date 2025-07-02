@@ -91,19 +91,19 @@ namespace xtd {
       /// @exception xtd::io::io_xception name is invalid. This can be for various reasons, including some restrictions that may be placed by the operating system, such as an unknown prefix or invalid characters. Note that the name and common prefixes "Global\" and "Local\" are case-sensitive.<br>-or-<br>There was some other error. The HResult property may provide more information.
       mutex(bool initially_owned, const string& name, bool& created_new);
       /// @}
-
+      
       /// @cond
       template<class char_t>
       explicit mutex(const char_t* name) : mutex(string(name)) {}
       ~mutex();
       /// @endcond
-
+      
       /// @name Public Properties
       
       /// @{
       intptr handle() const noexcept override;
       void handle(intptr value) override;
-
+      
       /// @brief Returns the underlying implementation-defined native handle object.
       /// @return Implementation-defined native handle object.
       native_handle_type native_handle() const noexcept;
@@ -124,7 +124,7 @@ namespace xtd {
       /// @remarks Prior unlock() operations on the same mutex synchronize-with (as defined in std::memory_order) this operation.
       /// @note xtd::threading::mutex::lock() is usually not called directly: std::unique_lock, std::scoped_lock, and std::lock_guard are used to manage exclusive locking.
       void lock();
-
+      
       /// @brief Releases the Mutex once.
       /// @exception xtd::object_closed_exception the handle is invalid
       void release_mutex();
@@ -158,7 +158,7 @@ namespace xtd {
       /// @remarks Prior unlock() operation on the same mutex synchronizes-with (as defined in std::memory_order) this operation if it returns `true`.
       /// @remarks If try_lock_until is called by a thread that already owns the mutex, the behavior is undefined.
       bool try_lock_until(const date_time& timeout_time) noexcept;
-
+      
       /// @brief Unlocks the mutex.
       /// @remarks The mutex must be locked by the current thread of execution, otherwise, the behavior is undefined.
       /// @remarks This operation synchronizes-with (as defined in std::memory_order) any subsequent lock operation that obtains ownership of the same mutex.
@@ -182,16 +182,16 @@ namespace xtd {
       /// @return `true` if the named mutex was opened successfully; otherwise, `false`. In some cases, `false` may be returned for invalid names.
       static bool try_open_existing(const string& name, mutex& result) noexcept;
       /// @}
-
+      
     protected:
       /// @name Protected Methods
       
       /// @{
       bool signal() override;
-
+      
       bool wait(int32 milliseconds_timeout) override;
       /// @}
-
+      
     private:
       friend class thread;
       void create(bool initially_owned, bool& created_new);

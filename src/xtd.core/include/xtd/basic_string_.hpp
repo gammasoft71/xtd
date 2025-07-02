@@ -152,9 +152,9 @@ inline xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> xtd
       sub_string.chars_.clear();
     }
   }
-
+  
   if (size() > 0 && std::find(split_char_separators.begin(), split_char_separators.end(), at(size() - 1)) != split_char_separators.end() && options != xtd::string_split_options::remove_empty_entries) result.push_back(basic_string {});
-
+  
   return result;
 }
 
@@ -195,7 +195,8 @@ inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t
 
 template<class char_t, class traits_t, class allocator_t>
 inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::trim(value_type trim_char) const noexcept {
-  return trim(xtd::array<value_type> {trim_char});}
+  return trim(xtd::array<value_type> {trim_char});
+}
 
 template<class char_t, class traits_t, class allocator_t>
 inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::trim(const xtd::array<value_type>& trim_chars) const noexcept {
@@ -291,13 +292,13 @@ inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t
           
           if (index_alignment_separator != std::basic_string<char>::npos && index_format_separator != std::basic_string<char>::npos && index_alignment_separator > index_format_separator)
             index_alignment_separator = std::basic_string<char>::npos;
-          
+            
           if (index_alignment_separator != basic_string<char_t>::npos)
             fi.alignment = format_str.substr(index_alignment_separator + 1, index_format_separator != std::basic_string<char>::npos ? index_format_separator - index_alignment_separator - 1 : std::basic_string<char>::npos);
-          
+            
           if (index_format_separator != basic_string<char>::npos)
             fi.format = format_str.substr(index_format_separator + 1);
-          
+            
           if (index_alignment_separator == 0 || index_format_separator == 0)
             fi.index = index++;
           else {
@@ -361,8 +362,8 @@ template<class char_t, class traits_t, class allocator_t>
 inline const xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>::value_type> xtd::basic_string<char_t, traits_t, allocator_t>::default_trim_chars = {9, 10, 11, 12, 13, 32};
 
 template<class arg_t>
-void __basic_string_extract_format_arg(std::basic_string<char>& fmt, xtd::size& index, std::vector<__format_information<char>>& formats, arg_t&& arg) {
-//void __basic_string_extract_format_arg(xtd::basic_string<char>& fmt, xtd::size& index, std::vector<__format_information<char>>& formats, arg_t&& arg) {
+void __basic_string_extract_format_arg(std::basic_string<char>& fmt, xtd::size& index, std::vector<__format_information<char >> & formats, arg_t&& arg) {
+  //void __basic_string_extract_format_arg(xtd::basic_string<char>& fmt, xtd::size& index, std::vector<__format_information<char>>& formats, arg_t&& arg) {
   auto offset = xtd::size {0};
   for (auto& format : formats) {
     format.location += offset;
@@ -388,9 +389,9 @@ void __basic_string_extract_format_arg(std::basic_string<char>& fmt, xtd::size& 
 }
 
 template<class ...args_t>
-void __basic_string_extract_format_arg(xtd::basic_string<char>& fmt, std::vector<__format_information<char>>& formats, args_t&&... args) {
+void __basic_string_extract_format_arg(xtd::basic_string<char>& fmt, std::vector<__format_information<char >> & formats, args_t&&... args) {
   auto index = xtd::size {0};
-  (__basic_string_extract_format_arg(const_cast<std::basic_string<char>&>(fmt.chars()), index, formats, args), ...);
+  (__basic_string_extract_format_arg(const_cast<std::basic_string<char>& > (fmt.chars()), index, formats, args), ...);
   //(__basic_string_extract_format_arg(fmt, index, formats, args), ...);
   unused_(index); // workaround to mute gcc warning: unused-but-set-variable
 }
@@ -622,7 +623,8 @@ inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::
 
 template<>
 inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::char16>(std::basic_string<xtd::char16>&& str) noexcept {
-  return __xtd_convert_to_string<xtd::wchar>(__xtd_convert_to_string<char>(std::move(str)));}
+  return __xtd_convert_to_string<xtd::wchar>(__xtd_convert_to_string<char>(std::move(str)));
+}
 
 template<>
 inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::char32>(std::basic_string<xtd::char32>&& str) noexcept {

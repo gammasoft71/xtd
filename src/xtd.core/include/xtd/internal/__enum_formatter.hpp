@@ -18,7 +18,7 @@ template<class char_t, class value_t>
 inline std::basic_string<char_t> __enum_formatter(const std::basic_string<char_t>& format, value_t value, const std::locale& loc) {
   auto fmt = format;
   if (fmt.empty()) fmt = {'G'};
-
+  
   switch (fmt[0]) {
     case 'b':
     case 'B':

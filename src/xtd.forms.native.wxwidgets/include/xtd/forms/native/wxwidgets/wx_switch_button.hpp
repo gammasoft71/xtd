@@ -57,7 +57,7 @@ namespace xtd {
           
           return wx_style;
         }
-
+        
         wxSize GetClientSize() const override {
           return control()->GetSize();
         }

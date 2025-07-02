@@ -43,7 +43,7 @@ namespace xtd {
     /// @return The value of the current instance in the specified format.
     virtual xtd::string to_string(const xtd::string& format, const std::locale& loc) const = 0;
     /// @}
-  
+    
     
     /// @cond
     std::string __opague_internal_formatable__(intptr, intptr, intptr, intptr) const;

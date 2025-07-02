@@ -245,7 +245,7 @@ namespace xtd {
       template<class char_t>
       static void does_not_exist(const char_t* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_exist(xtd::basic_string<char_t>(directory), message, stack_frame);}
       /// @endcond
-
+      
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -272,7 +272,7 @@ namespace xtd {
       /// xtd::tunit::directory_assert::exists(d1); // test ok.
       /// xtd::tunit::directory_assert::exists(d2); // test throws an assert_error exception.
       /// ```
-      static void exists(const std::filesystem::directory_entry& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());      
+      static void exists(const std::filesystem::directory_entry& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Asserts that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.

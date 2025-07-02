@@ -106,7 +106,7 @@ namespace xtd::io::tests {
       assert::are_equal("xtd::io::file_not_found_exception : Unable to find the specified file." + environment::new_line() + stack_frame.to_string(), e.to_string());
       assert::are_equal("Unable to find the specified file.", e.what());
     }
-
+    
     void test_method_(constructor_with_empty_message) {
       auto e = file_not_found_exception {""};
       assert::are_equal("xtd::io::file_not_found_exception", e.get_type().full_name());
@@ -223,7 +223,7 @@ namespace xtd::io::tests {
       assert::are_equal("xtd::io::file_not_found_exception : Unable to find the specified file." + environment::new_line() + stack_frame.to_string(), e.to_string());
       assert::are_equal("Unable to find the specified file.", e.what());
     }
-
+    
     void test_method_(constructor_with_nullopt_message_and_file_name) {
       auto e = file_not_found_exception {nullopt, "my_file.txt"};
       assert::are_equal("xtd::io::file_not_found_exception", e.get_type().full_name());
@@ -264,7 +264,7 @@ namespace xtd::io::tests {
       assert::are_equal("xtd::io::file_not_found_exception : Could not load file 'my_file.txt'. The system cannot find the file specified." + environment::new_line() + stack_frame.to_string(), e.to_string());
       assert::are_equal("Could not load file 'my_file.txt'. The system cannot find the file specified.", e.what());
     }
-
+    
     void test_method_(constructor_with_message_and_file_name) {
       auto e = file_not_found_exception {"Test excpetion message.", "my_file.txt"};
       assert::are_equal("xtd::io::file_not_found_exception", e.get_type().full_name());
@@ -350,7 +350,7 @@ namespace xtd::io::tests {
       assert::are_equal("xtd::io::file_not_found_exception : Unable to find the specified file." + environment::new_line() + stack_frame.to_string(), e.to_string());
       assert::are_equal("Unable to find the specified file.", e.what());
     }
-
+    
     void test_method_(constructor_with_message_and_inner_exception) {
       auto inner_exception = argument_exception {};
       auto e = file_not_found_exception {"Test excpetion message.", inner_exception};

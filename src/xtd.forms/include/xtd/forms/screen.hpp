@@ -73,7 +73,7 @@ namespace xtd {
       /// @remarks If scale factor is equal to 1.0 is a standard display; greater than 1.0 is a high DPI display.
       /// @remarks See get_standard_pixels_per_inch() for more informations.
       double scale_factor() const noexcept;
-            
+      
       /// @brief Gets the working area of the display. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
       /// @return A xtd::drawing::rectangle, representing the working area of the display.
       /// @remarks The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.
@@ -110,7 +110,7 @@ namespace xtd {
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
       /// @}
-
+      
       /// @name Public Static Methods
       
       /// @{

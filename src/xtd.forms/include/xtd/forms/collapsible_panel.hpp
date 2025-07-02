@@ -59,7 +59,7 @@ namespace xtd {
       /// @return Current label instance.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
       virtual collapsible_panel& border_style(std::nullptr_t);
-
+      
       /// @brief Gets a value indicating whether the collapsible_panel is in the expanded.
       /// @return `true` if collapsible_panel is expanded; otherwise `false`.
       bool expanded() const noexcept;

@@ -44,14 +44,14 @@ namespace xtd {
         func<value_t> value_factory;
         std::map<intptr, value_t> values;
       };
-
+      
       struct lock_guard_mutex {
         lock_guard_mutex(mutex& mutex) : mutex_(mutex) {mutex_.lock();}
         ~lock_guard_mutex() {mutex_.unlock();}
       private:
         mutex& mutex_;
       };
-
+      
     public:
       /// @name Public Constructors
       
@@ -76,7 +76,7 @@ namespace xtd {
         data_->track_all_values = track_all_values;
       }
       /// @}
-
+      
       /// @cond
       template<class func_t>
       explicit thread_local_object(func_t value_factory) : thread_local_object(func<value_t> {value_factory}) {}
@@ -86,7 +86,7 @@ namespace xtd {
       thread_local_object(const thread_local_object&) = default;
       thread_local_object& operator =(const thread_local_object& other) = default;
       /// @endcond
-
+      
       /// @name Public Properties
       
       /// @{
@@ -96,7 +96,7 @@ namespace xtd {
         lock_guard_mutex lock {data_->mutex};
         return data_->values.find(thread::current_thread().thread_id()) != data_->values.end();
       }
-
+      
       /// @brief Gets the value of this instance for the current thread.
       /// @return Returns an instance of the object that this xtd::threading::thread_local_object::value is responsible for initializing.
       /// @remarks If this instance was not previously initialized for the current thread, accessing xtd::threading::thread_local_object::value will attempt to initialize it. If an initialization function was supplied during the construction, that initialization will happen by invoking the function to retrieve the initial value for xtd::threading::thread_local_object::value. Otherwise, the default value of value_t will be used.
@@ -127,7 +127,7 @@ namespace xtd {
         return values;
       }
       /// @}
-
+      
       /// @name Public Methods
       
       /// @{
@@ -135,7 +135,7 @@ namespace xtd {
         return string::format("{}", value());
       }
       /// @}
-
+      
     private:
       mutable xtd::sptr<data> data_ = xtd::new_sptr<data>();
     };

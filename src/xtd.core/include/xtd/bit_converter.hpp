@@ -16,7 +16,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/bit_converter>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -215,7 +215,7 @@ namespace xtd {
     /// The following code example converts the bit patterns of uint64 values to xtd::byte xtd::arrays with the get_bytes method.
     /// @include bit_converterget_bytesxtd::uint64.cpp
     static xtd::array<xtd::byte> get_bytes(uint64 value) noexcept;
-
+    
     /// @cond
     static xtd::array<xtd::byte> get_bytes(slong value) noexcept;
     static xtd::array<xtd::byte> get_bytes(xtd::ulong value) noexcept;
@@ -259,7 +259,7 @@ namespace xtd {
     /// The following code example converts elements of xtd::byte xtd::arrays to Boolean values with the to_boolean method.
     /// @include bit_converterto_boolean.cpp
     static bool to_boolean(const read_only_span<xtd::byte>& value, xtd::size start_index);
-
+    
     /// @brief Returns a char32 converted from two bytes at a specified position in a xtd::byte xtd::array.
     /// @param value An xtd::array of bytes.
     /// @param start_index The starting position within value.
@@ -278,7 +278,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_char method converts the bytes from index start_index to start_index + 3 to an xtd::int32 value. The order of bytes in the xtd::array must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static char32 to_char(const read_only_span<xtd::byte>& value, xtd::size start_index);
-
+    
     /// @brief Returns a double-precision floating point number converted from eight bytes at a specified position in a xtd::byte xtd::array.
     /// @param value An xtd::array of bytes.
     /// @param start_index The starting position within value.
@@ -297,7 +297,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_double method converts the bytes from index start_index to start_index + 7 to a Double value. The order of bytes in the xtd::array must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static double to_double(const read_only_span<xtd::byte>& value, xtd::size start_index);
-
+    
     /// @brief Returns a 16-bit signed integer converted from two bytes at a specified position in a xtd::byte xtd::array.
     /// @param value An xtd::array of bytes.
     /// @param start_index The starting position within value.
@@ -316,7 +316,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_int16 method converts the bytes from index start_index to start_index + 1 to an xtd::int16 value. The order of bytes in the xtd::array must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static int16 to_int16(const read_only_span<xtd::byte>& value, xtd::size start_index);
-
+    
     /// @brief Returns a 32-bit signed integer converted from two bytes at a specified position in a xtd::byte xtd::array.
     /// @param value An xtd::array of bytes.
     /// @param start_index The starting position within value.
@@ -335,7 +335,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_int32 method converts the bytes from index start_index to start_index + 3 to an xtd::int32 value. The order of bytes in the xtd::array must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static int32 to_int32(const read_only_span<xtd::byte>& value, xtd::size start_index);
-
+    
     /// @brief Returns a 64-bit signed integer converted from two bytes at a specified position in a xtd::byte xtd::array.
     /// @param value An xtd::array of bytes.
     /// @param start_index The starting position within value.
@@ -354,7 +354,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_int64 method converts the bytes from index start_index to start_index + 7 to an xtd::int64 value. The order of bytes in the xtd::array must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static int64 to_int64(const read_only_span<xtd::byte>& value, xtd::size start_index);
-
+    
     /// @brief Returns a single-precision floating point number converted from eight bytes at a specified position in a xtd::byte xtd::array.
     /// @param value An xtd::array of bytes.
     /// @param start_index The starting position within value.
@@ -373,7 +373,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_single method converts the bytes from index start_index to start_index + 3 to a Double value. The order of bytes in the xtd::array must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static float to_single(const read_only_span<xtd::byte>& value, xtd::size start_index);
-
+    
     /// @brief Returns a 16-bit unsigned integer converted from two bytes at a specified position in a xtd::byte xtd::array.
     /// @param value An xtd::array of bytes.
     /// @param start_index The starting position within value.
@@ -392,7 +392,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_uint16 method converts the bytes from index start_index to start_index + 1 to an xtd::uint16 value. The order of bytes in the xtd::array must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static uint16 to_uint16(const read_only_span<xtd::byte>& value, xtd::size start_index);
-
+    
     /// @brief Returns a 32-bit signed integer converted from two bytes at a specified position in a xtd::byte xtd::array.
     /// @param value An xtd::array of bytes.
     /// @param start_index The starting position within value.
@@ -411,7 +411,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_uint32 method converts the bytes from index start_index to start_index + 3 to an xtd::uint32 value. The order of bytes in the xtd::array must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static uint32 to_uint32(const read_only_span<xtd::byte>& value, xtd::size start_index);
-
+    
     /// @brief Returns a 64-bit unsigned integer converted from two bytes at a specified position in a xtd::byte xtd::array.
     /// @param value An xtd::array of bytes.
     /// @param start_index The starting position within value.
@@ -430,7 +430,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_uint64 method converts the bytes from index start_index to start_index + 7 to an xtd::uint64 value. The order of bytes in the xtd::array must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static uint64 to_uint64(const read_only_span<xtd::byte>& value, xtd::size start_index);
-
+    
     /// @brief Returns a xtd::size converted from two bytes at a specified position in a xtd::byte xtd::array.
     /// @param value An xtd::array of bytes.
     /// @param start_index The starting position within value.
@@ -449,7 +449,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @remarks The to_size method converts the bytes from index start_index to start_index + 7 to an xtd::size value. The order of bytes in the xtd::array must reflect the endianness of the computer system's architecture; for more information, see the Remarks section of the bit_converter class topic.
     static xtd::size to_size(const read_only_span<xtd::byte>& value, xtd::size start_index);
-
+    
     /// @brief Converts the numeric value of each element of a specified xtd::array of bytes to its equivalent hexadecimal xtd::string representation.
     /// @param value An xtd::array of bytes.
     /// @return xtd::string A xtd::string of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00".
@@ -468,7 +468,7 @@ namespace xtd {
     /// The following code example converts xtd::byte xtd::arrays to xtd::string objects with the to_string method.
     /// @include bit_converterto_string.cpp
     static xtd::string to_string(const read_only_span<xtd::byte>& value);
-
+    
     /// @brief Converts the numeric value of each element of a specified sub xtd::array of bytes to its equivalent hexadecimal xtd::string representation.
     /// @param value An xtd::array of bytes.
     /// @param start_index The starting position within value.
@@ -491,7 +491,7 @@ namespace xtd {
     /// The following code example converts xtd::byte xtd::arrays to xtd::string objects with the to_string method.
     /// @include bit_converterto_string2.cpp
     static xtd::string to_string(const read_only_span<xtd::byte>& value, xtd::size start_index);
-
+    
     /// @brief Converts the numeric value of each element of a specified sub xtd::array of bytes to its equivalent hexadecimal xtd::string representation.
     /// @param value An xtd::array of bytes.
     /// @param start_index The starting position within value.

@@ -13,7 +13,7 @@ namespace xtd::threading::tests {
       barrier b;
       assert::is_zero(b.participant_count());
     }
-
+    
     void test_method_(ctr_with_participant) {
       barrier b {5};
       assert::are_equal(5, b.participant_count());
@@ -22,7 +22,7 @@ namespace xtd::threading::tests {
     void test_method_(ctr_with_invalid_participant) {
       assert::throws<argument_exception>([] {barrier b {-1};});
     }
-
+    
     void test_method_(ctr_with_participant_and_post_phase_action) {
       barrier b {5, [&]()->barrier& {return b;}};
       assert::are_equal(5, b.participant_count());
@@ -31,22 +31,22 @@ namespace xtd::threading::tests {
     void test_method_(ctr_with_invalid_participant_and_post_phase_action) {
       assert::throws<argument_exception>([] {barrier b {-1, [&]()->barrier& {return b;}};});
     }
-
+    
     void test_method_(participant_count) {
       assert::is_zero(barrier {}.participant_count());
       assert::are_equal(5, barrier {5}.participant_count());
     }
-
+    
     void test_method_(current_phase_number) {
       assert::is_zero(barrier {}.current_phase_number());
       assert::is_zero(barrier {5}.current_phase_number());
     }
-
+    
     void test_method_(participants_remaining) {
       assert::is_zero(barrier {}.participants_remaining());
       assert::are_equal(5, barrier {5}.participants_remaining());
     }
-
+    
     void test_method_(add_participant) {
       barrier b {5};
       assert::are_equal(5, b.participant_count());
@@ -58,7 +58,7 @@ namespace xtd::threading::tests {
       assert::are_equal(7, b.participant_count());
       assert::are_equal(7, b.participants_remaining());
     }
-
+    
     void test_method_(add_participants) {
       barrier b {5};
       assert::are_equal(5, b.participant_count());
@@ -155,9 +155,9 @@ namespace xtd::threading::tests {
       auto post_phase_action_count = 0;
       auto thread_ran_count = 0;
       barrier b {3, [&] {
-        ++post_phase_action_count;
-        assert::are_equal(2, thread_ran_count);
-      }
+          ++post_phase_action_count;
+          assert::are_equal(2, thread_ran_count);
+        }
       };
       auto thread_action = [&] {
         interlocked::increment(thread_ran_count);

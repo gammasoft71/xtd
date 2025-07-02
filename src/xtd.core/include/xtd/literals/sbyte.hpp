@@ -98,7 +98,7 @@ namespace xtd {
     /// xtd::console::out << L"125"_i8 << xtd::environment::new_line;
     /// ```
     sbyte operator""_i8(const wchar_t* s, std::size_t n);
-
+    
     /// @brief Used to convert specified value into sbyte.
     /// @par Namespace
     /// xtd

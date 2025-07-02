@@ -203,7 +203,7 @@ namespace xtd {
       /// xtd::tunit::string_assume::does_not_start_with("val", s, "User message..."); // test throws an abort_error exception.
       /// ```
       static void does_not_start_with(const xtd::string& item, const xtd::string& string, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
-
+      
       /// @brief Validates that string starts with item.
       /// @param item object to verify.
       /// @param collection that contains object.

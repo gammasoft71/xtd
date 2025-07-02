@@ -8,7 +8,7 @@
 class xtd::threading::mutex::named_mutex : public mutex::mutex_base {
 public:
   ~named_mutex() {destroy();}
-
+  
   intptr handle() const noexcept override {
     return handle_;
   }

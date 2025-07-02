@@ -215,7 +215,7 @@ intmax_t process::shell_execute(const std::string& verb, const std::string& file
 
 process::started_process process::start(const std::string& file_name, const std::string& arguments, const std::string& working_directory, int32_t process_window_style, int32_t process_creation_flags, std::tuple<bool, bool, bool> redirect_standard_streams) {
   if (!is_valid_process(&macos::strings::split, file_name, working_directory)) return std::make_tuple(0, 0, std::unique_ptr<std::ostream> {}, std::unique_ptr<std::istream> {}, std::unique_ptr<std::istream> {});
-
+  
   auto [redirect_standard_input, redirect_standard_output, redirect_standard_error] = redirect_standard_streams;
   auto pipe_result = 0;
   int32_t pipe_stdin[] = {0, 0};

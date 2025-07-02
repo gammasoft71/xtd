@@ -7,7 +7,7 @@
 #endif
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {  
+namespace xtd {
   /// @name Aliases
   
   /// @{
@@ -41,13 +41,13 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_to_array_t<type_t>>>
-  class basic_array : public xtd::array_abstract_object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<basic_array<type_t, allocator_t>> {
+  class basic_array : public xtd::array_abstract_object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<basic_array<type_t, allocator_t >> {
     class comparer {
     public:
       comparer(const xtd::collections::generic::icomparer<type_t>* comparer) : comparer_(comparer) { }
       comparer(const comparer&) = default;
       comparer(comparer&&) = default;
-      comparer& operator=(const comparer& comparer) = default;
+      comparer& operator=(const comparer & comparer) = default;
       comparer& operator=(comparer&&) = default;
       
       bool operator()(const type_t& e1, const type_t& e2) const noexcept {return comparer_ && comparer_->compare(e1, e2) < 0;}
@@ -63,12 +63,12 @@ namespace xtd {
     public:
       comparison_comparer() = default;
       comparison_comparer(comparison<const type_t&> c) : comparer(c) {}
-
-      comparison_comparer(const comparison_comparer& mc) = default;
-      comparison_comparer& operator=(const comparison_comparer& mc) = default;
-
+      
+      comparison_comparer(const comparison_comparer & mc) = default;
+      comparison_comparer& operator=(const comparison_comparer & mc) = default;
+      
       bool operator()(const type_t& e1, const type_t& e2) const {return comparer(e1, e2) < 0;}
-
+      
     private:
       comparison<const type_t&> comparer;
     };
@@ -113,7 +113,7 @@ namespace xtd {
     /// @}
     
     /// @cond
-    basic_array(const basic_array& array) { if (array.data_) *data_ = *array.data_;}
+    basic_array(const basic_array & array) { if (array.data_) *data_ = *array.data_;}
     basic_array(basic_array&& array) = default;
     /// @endcond
     
@@ -195,10 +195,10 @@ namespace xtd {
     
     /// @brief Returns the underlying base type items.
     /// @return The underlying base type items.
-    virtual const base_type& items() const noexcept {return data_->items;}
+    virtual const base_type & items() const noexcept {return data_->items;}
     /// @brief Returns the underlying base type items.
     /// @return The underlying base type items.
-    virtual base_type& items() noexcept {return data_->items;}
+    virtual base_type & items() noexcept {return data_->items;}
     
     /// @brief Gets a size that represents the total number of elements in all the dimensions of the array.
     /// @return A size that represents the total number of elements in all the dimensions of the array; zero if there are no elements in the array.
@@ -245,7 +245,7 @@ namespace xtd {
     /// @return The number of elements in the container.
     virtual size_type size() const noexcept {return data_->items.size();}
     
-    const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
+    const xtd::object & sync_root() const noexcept override {return data_->sync_root;}
     /// @}
     
     /// @name Public Methods
@@ -281,7 +281,7 @@ namespace xtd {
       if (rank() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::rank);
       if (index + length() > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       for (auto increment = size_type {0}; increment < length(); ++increment)
-        array[index + increment] = at(increment);
+      array[index + increment] = at(increment);
     }
     
     /// @brief Copies all the elements of the current one-dimensional array to the specified one-dimensional array starting at the specified destination array index. The index is specified as a 64-bit integer.
@@ -290,9 +290,9 @@ namespace xtd {
     /// @exception xtd::argument_exception `array` is multidimensional.
     /// @exception xtd::argument_out_of_range_exception `index` is outside the range of valid indexes for array.
     void copy_to(xtd::array<type_t>& array, xtd::int64 index) const {copy_to(array, static_cast<xtd::size>(index));}
-
-    bool equals(const object& obj) const noexcept override {return dynamic_cast<const basic_array<value_type>*>(&obj) && equals(static_cast<const basic_array<value_type>&>(obj));}
-    bool equals(const basic_array& rhs) const noexcept override {
+    
+    bool equals(const object & obj) const noexcept override {return dynamic_cast<const basic_array<value_type>*>(&obj) && equals(static_cast<const basic_array<value_type>&>(obj));}
+    bool equals(const basic_array & rhs) const noexcept override {
       if (count() != rhs.count()) return false;
       for (size_type i = 0; i < count(); i++)
         if (!xtd::collections::generic::helpers::equator<type_t> {}(data_->items.at(i), rhs.data_->items.at(i))) return false;
@@ -301,17 +301,17 @@ namespace xtd {
     
     /// @brief Assigns the value to all elements in the container.
     /// @param value The value to assign to the elements.
-    virtual void fill(const value_type& value) noexcept {
+    virtual void fill(const value_type & value) noexcept {
       for (auto& item : data_->items)
         item = value;
     }
     
     xtd::collections::generic::enumerator<value_type> get_enumerator() const noexcept override {
-      struct basic_array_enumerator : public xtd::collections::generic::ienumerator<value_type> {
+      struct basic_array_enumerator : public xtd::collections::generic::ienumerator < value_type > {
       public:
-        explicit basic_array_enumerator(const basic_array& items, size_type version) : items_(items), version_(version) {}
+        explicit basic_array_enumerator(const basic_array & items, size_type version) : items_(items), version_(version) {}
         
-        const value_type& current() const override {
+        const value_type & current() const override {
           if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
           if (index_ < items_.count()) return items_[index_];
           static thread_local auto default_value = value_type {};
@@ -328,12 +328,12 @@ namespace xtd {
           index_ = basic_array::npos;
         }
         
-      protected:
+protected:
         const basic_array& items_;
         size_type index_ = basic_array::npos;
         size_type version_ = 0;
       };
-      return {new_ptr<basic_array_enumerator>(*this, data_->version)};
+      return {new_ptr < basic_array_enumerator > (*this, data_->version)};
     }
     
     /// @brief Gets the total number of elements in all the dimensions of the array.
@@ -352,7 +352,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates methods to get the length of an array.
     /// @include array_get_length.cpp
-    constexpr xtd::int64 get_long_length(size_type dimension) const {return static_cast<xtd::int64>(get_upper_bound(dimension) + 1);}
+    constexpr xtd::int64 get_long_length(size_type dimension) const {return static_cast < xtd::int64 > (get_upper_bound(dimension) + 1);}
     
     /// @brief Gets the lower bound of the specified dimension in the array.
     /// @param dimension A zero-based dimension of the array whose lower bound needs to be determined.
@@ -382,7 +382,7 @@ namespace xtd {
     /// @param indexes An array that represents the position of the element to get.
     /// @return The value at the specified position in the multidimensional array.
     /// @exception xtd::index_out_of_range_exception If `indexes` is outside the range of valid indexes for the corresponding dimension of the current array.
-    const value_type& get_value(const xtd::array<size_type>& indexes) const;
+    const value_type & get_value(const xtd::array < size_type > & indexes) const;
     
     /// @brief Determines the index of a specific item in the xtd::array <type_t>.
     /// @param value The object to locate in the xtd::array.
@@ -414,11 +414,11 @@ namespace xtd {
     /// @param value The new value for the specified element.
     /// @param indexes An array that represents the position of the element to set.
     /// @exception xtd::index_out_of_range_exception Either `indexes` is outside the range of valid indexes for the current array.
-    void set_value(const type_t& value, const xtd::array<size_type>& indexes) {operator()(indexes) = value;}
+    void set_value(const type_t& value, const xtd::array < size_type > & indexes) {operator()(indexes) = value;}
     
     /// @brief Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
     /// @remarks All iterators and references remain valid. The xtd::array::end() iterator is invalidated.
-    virtual void swap(basic_array& other) noexcept {
+    virtual void swap(basic_array & other) noexcept {
       ++data_->version;
       data_->items.swap(other.data_->items);
     }
@@ -436,7 +436,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to determine the index of the first occurrence of a specified element.
     /// @include array_index_of.cpp
-    static size_type index_of(const basic_array& array, const value_type& value) noexcept {return index_of(array, value, 0, array.length());}
+    static size_type index_of(const basic_array & array, const value_type & value) noexcept {return index_of(array, value, 0, array.length());}
     
     /// @brief Determines the index of a specific item in the array specified.
     /// @param array The object to locate in the array.
@@ -447,7 +447,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to determine the index of the first occurrence of a specified element.
     /// @include array_index_of.cpp
-    static size_type index_of(const basic_array& array, const value_type& value, size_type index) {return index_of(array, value, index, array.length() - index);}
+    static size_type index_of(const basic_array & array, const value_type & value, size_type index) {return index_of(array, value, index, array.length() - index);}
     
     /// @brief Determines the index of a specific item in the array specified.
     /// @param array The object to locate in the array.
@@ -459,28 +459,28 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to determine the index of the first occurrence of a specified element.
     /// @include array_index_of.cpp
-    static size_type index_of(const basic_array& array, const value_type& value, size_type index, size_type count) {
+    static size_type index_of(const basic_array & array, const value_type & value, size_type index, size_type count) {
       if (index > array.length() || index + count > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       
       if (array.size() == 0) return npos;
       for (auto increment = size_type {0}; increment < count; ++increment) {
-        if (xtd::collections::generic::helpers::equator<type_t> {}(array[index + increment], value))
+        if (xtd::collections::generic::helpers::equator < type_t > {}(array[index + increment], value))
           return index + increment;
       }
       return npos;
     }
-
+    
     /// @brief Reverses the order of the elements in the entire xtd::basic_array.
     /// @remarks This method uses std::reverse to reverse the order of the elements, such that the element at xtd::basic_array <type_t>[i], where `i` is any index within the range, moves to xtd::basic_array <type_t>[j], where `j` equals index plus index plus count minus `i` minus 1.
     /// @remarks This method is an O(n) operation, where n is xtd::basic_array::count.
-    static void reverse(basic_array& array) noexcept {reverse(array, 0, array.count());}
+    static void reverse(basic_array & array) noexcept {reverse(array, 0, array.count());}
     /// @brief Reverses the order of the elements in the specified range.
     /// @param index The zero-based starting index of the range to reverse.
     /// @param count The number of elements in the range to reverse.
     /// @exception xtd::argument_out_of_range_exception `index` and `count` do not denote a valid range of elements in the xtd::basic_array.
     /// @remarks This method uses std::reverse to reverse the order of the elements, such that the element at xtd::basic_array <type_t>[i], where `i` is any index within the range, moves to xtd::basic_array <type_t>[j], where `j` equals index plus index plus count minus `i` minus 1.
     /// @remarks This method is an O(n) operation, where n is `count`.
-    static void reverse(basic_array& array, size_type index, size_type count) {
+    static void reverse(basic_array & array, size_type index, size_type count) {
       if (index > array.size() || index + count > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if (count == 0) return;
       ++array.data_->version;
@@ -494,7 +494,7 @@ namespace xtd {
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of other.
     /// @param other Another container to use as data source.
     /// @return This current instance.
-    basic_array& operator =(const basic_array& other) {
+    basic_array& operator =(const basic_array & other) {
       *data_ = *other.data_;
       return *this;
     }
@@ -505,7 +505,7 @@ namespace xtd {
     /// @brief Replaces the contents with those identified by initializer list ilist.
     /// @param items Initializer list to use as data source
     /// @return This current instance.
-    basic_array& operator =(std::initializer_list<type_t>& items) {
+    basic_array& operator =(std::initializer_list < type_t > & items) {
       data_->version = 0;
       data_->items = items;
       data_->upper_bound[0] = data_->items.size() - 1;
@@ -525,10 +525,10 @@ namespace xtd {
     
     /// @brief Returns a reference to the underlying base type.
     /// @return Reference to the underlying base type.
-    operator const base_type&() const noexcept {return data_->items;}
+    operator const base_type & () const noexcept {return data_->items;}
     /// @brief Returns a reference to the underlying base type.
     /// @return Reference to the underlying base type.
-    operator base_type&() noexcept {return data_->items;}
+    operator base_type & () noexcept {return data_->items;}
     
     /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
     /// @param indexes An array that represents the multidimension index of the array element to get.
@@ -537,7 +537,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to use operator [] to list the elements of an array.
     /// @include array_array_operator_functor.cpp
-    type_t& operator()(const xtd::array<size_type>& indexes);
+    type_t& operator()(const xtd::array < size_type > & indexes);
     
     /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
     /// @param indexes An array that represents the multidimension index of the array element to get.
@@ -546,56 +546,56 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to use operator [] to list the elements of an array.
     /// @include array_array_operator_functor.cpp
-    const type_t& operator()(const xtd::array<size_type>& indexes) const;
+    const type_t& operator()(const xtd::array < size_type > & indexes) const;
     /// @}
     
   private:
-    template<class type_array_t, size_type rank_array_t, class allocator_array_t>
+    template < class type_array_t, size_type rank_array_t, class allocator_array_t >
     friend class array;
     
     basic_array() = default;
-    basic_array(const array<size_type, 1>& lengths);
-    basic_array(const array<size_type, 1>& lengths, const value_type& value);
-
+    basic_array(const array < size_type, 1 > & lengths);
+    basic_array(const array < size_type, 1 > & lengths, const value_type & value);
+    
     basic_array(const_pointer array, size_type length) {
       if (array == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
       data_->items = base_type {array, array + length};
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
-    basic_array(const xtd::collections::generic::ienumerable<type_t>& enumerable) {
+    basic_array(const xtd::collections::generic::ienumerable < type_t > & enumerable) {
       for (const auto& value : enumerable)
         data_->items.push_back(value);
       data_->lower_bound.push_back(0);
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
-    basic_array(const std::vector<type_t>& array) {
+    basic_array(const std::vector < type_t > & array) {
       data_->items = array;
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
-    basic_array(std::vector<type_t>&& array) {
+    basic_array(std::vector < type_t > && array) {
       data_->items = std::move(array);
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
-    basic_array(std::initializer_list<type_t> il) {
+    basic_array(std::initializer_list < type_t > il) {
       data_->items.assign(il.begin(), il.end());
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
-    basic_array(std::initializer_list<std::initializer_list<type_t>> il)  {
-      for (const std::initializer_list<type_t>& il1 : il)
+    basic_array(std::initializer_list < std::initializer_list < type_t>> il)  {
+      for (const std::initializer_list < type_t > & il1 : il)
         data_->items.insert(data_->items.end(), il1.begin(), il1.end());
       data_->upper_bound[0] = il.size() - 1;
       data_->lower_bound.push_back(0);
       data_->upper_bound.push_back((*il.begin()).size() - 1);
     }
     
-    basic_array(std::initializer_list<std::initializer_list<std::initializer_list<type_t>>> il)  {
-      for (const std::initializer_list<std::initializer_list<type_t>>& il1 : il)
-        for (const std::initializer_list<type_t>& il2 : il1)
+    basic_array(std::initializer_list < std::initializer_list < std::initializer_list<type_t>>> il)  {
+      for (const std::initializer_list < std::initializer_list < type_t>>& il1 : il)
+        for (const std::initializer_list < type_t > & il2 : il1)
           data_->items.insert(data_->items.end(), il2.begin(), il2.end());
       data_->upper_bound[0] = il.size() - 1;
       data_->lower_bound.push_back(0);
@@ -604,7 +604,7 @@ namespace xtd {
       data_->upper_bound.push_back((*(*il.begin()).begin()).size() - 1);
     }
     
-    template<class input_iterator_t>
+    template < class input_iterator_t >
     basic_array(input_iterator_t first, input_iterator_t last) {
       data_->items.assign(first, last);
       data_->lower_bound.push_back(0);
@@ -616,7 +616,7 @@ namespace xtd {
     void insert(size_type index, const type_t& value) override {}
     bool remove(const type_t& item) override {return false;}
     void remove_at(size_type index) override {}
-
+    
     typename base_type::iterator to_base_type_iterator(iterator value) noexcept {
       if (value == begin()) return data_->items.begin();
       if (value == end()) return data_->items.end();
@@ -632,11 +632,11 @@ namespace xtd {
     struct array_data {
       size_type version = 0;
       base_type items;
-      std::vector<size_type> lower_bound {0};
-      std::vector<size_type> upper_bound {std::numeric_limits<size_type>::max()};
+      std::vector < size_type > lower_bound {0};
+      std::vector < size_type > upper_bound {std::numeric_limits < size_type >::max()};
       object sync_root;
     };
     
-    xtd::ptr<array_data> data_ = xtd::new_ptr<array_data>();
+    xtd::ptr < array_data > data_ = xtd::new_ptr < array_data > ();
   };
 }

@@ -45,7 +45,7 @@ namespace xtd {
       /// @return A string containing the copyright information.
       const string& copyright() const noexcept;
       /// @}
-
+      
       /// @name Public Methods
       
       /// @{
@@ -62,7 +62,7 @@ namespace xtd {
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
       /// @}
-
+      
     protected:
       xtd::sptr<object> get_type_id() const noexcept override;
       

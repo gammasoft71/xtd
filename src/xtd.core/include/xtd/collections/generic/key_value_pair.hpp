@@ -76,14 +76,14 @@ namespace xtd {
         template<class... args1_t, class... args2_t>
         key_value_pair(std::piecewise_construct_t, std::tuple<args1_t...> first_args, std::tuple<args2_t...> second_args) : first {first_args}, second {second_args} {}
         /// @}
-
+        
         /// @cond
         key_value_pair(key_value_pair&&) = default;
         key_value_pair(const key_value_pair&) = default;
         key_value_pair& operator =(key_value_pair&&) = default;
         key_value_pair& operator =(const key_value_pair&) = default;
         /// @endcond
-
+        
         /// @name Public Properties
         
         /// @{
@@ -103,7 +103,7 @@ namespace xtd {
         
         /// @name Public Methods
         
-        /// @{        
+        /// @{
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object; otherwise, `false`
@@ -113,7 +113,7 @@ namespace xtd {
         /// @param value The key_value_pair to compare with the current object.
         /// @return `true` if the specified object is equal to the current object; otherwise, `false`.
         bool equals(const key_value_pair& value) const noexcept override {return first == value.first && second == value.second;}
-
+        
         /// @brief Returns a String representation of the key_value_pair<key_t, value_t>, using the String representations of the key and value.
         /// @return const String A String representation of the key_value_pair<key_t, value_t>, which includes the String representations of the key and value.
         /// @return String
@@ -145,7 +145,7 @@ namespace xtd {
       /// @ingroup xtd_core generic_collections
       /// @remarks xtd::collections::generic::key_value_pair is same as [std::pair](https://en.cppreference.com/w/cpp/utility/pair).
       template <>
-      struct key_value_pair<> static_ {
+      struct key_value_pair < > static_ {
         /// @name Public Static Methods
         
         /// @{
@@ -155,18 +155,18 @@ namespace xtd {
         /// @param key The key of the key_value_pair.
         /// @param value The value of the key_value_pair.
         /// @return The key_value_pair value type.
-        template<class key_t, class value_t>
-        static key_value_pair<key_t, value_t> create(key_t key, value_t value) {return key_value_pair<key_t, value_t>(key, value);}
+        template < class key_t, class value_t >
+        static key_value_pair < key_t, value_t > create(key_t key, value_t value) {return key_value_pair < key_t, value_t > (key, value);}
         /// @}
       };
       
       /// @cond
       // C++17 deduction guides for xtd::collections::generic::key_value_pair
       // {
-      template<class key_t, class value_t>
-      key_value_pair(key_t, value_t) -> key_value_pair<key_t, value_t>;
+      template < class key_t, class value_t >
+      key_value_pair(key_t, value_t) -> key_value_pair < key_t, value_t >;
       // }
       /// @endcond
-  }
+    }
   }
 }

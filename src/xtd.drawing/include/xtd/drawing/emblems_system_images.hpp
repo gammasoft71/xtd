@@ -27,12 +27,12 @@ namespace xtd {
     class drawing_export_ emblems_system_images final : private system_images_base {
     public:
       /// @name Public Static Properties
-
+      
       /// @{
       /// @brief Gets system image from specified name.
       /// @return The default size in pixels (32 x 32).
       static xtd::drawing::size default_size() noexcept;
-
+      
       /// @brief Gets the emblems system image "emblem-default".
       /// @return The xtd::drawing::image "emblem-default".
       static xtd::drawing::image emblem_default() noexcept;
@@ -40,7 +40,7 @@ namespace xtd {
       /// @param size The emblems system image size in pixels.
       /// @return The xtd::drawing::image "emblem-default".
       static xtd::drawing::image emblem_default(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the emblems system image "emblem-documents".
       /// @return The xtd::drawing::image "emblem-documents".
       static xtd::drawing::image emblem_documents() noexcept;
@@ -48,7 +48,7 @@ namespace xtd {
       /// @param size The emblems system image size in pixels.
       /// @return The xtd::drawing::image "emblem-documents".
       static xtd::drawing::image emblem_documents(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the emblems system image "emblem-downloads".
       /// @return The xtd::drawing::image "emblem-downloads".
       static xtd::drawing::image emblem_downloads() noexcept;
@@ -56,7 +56,7 @@ namespace xtd {
       /// @param size The emblems system image size in pixels.
       /// @return The xtd::drawing::image "emblem-downloads".
       static xtd::drawing::image emblem_downloads(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the emblems system image "emblem-favorite".
       /// @return The xtd::drawing::image "emblem-favorite".
       static xtd::drawing::image emblem_favorite() noexcept;
@@ -64,7 +64,7 @@ namespace xtd {
       /// @param size The emblems system image size in pixels.
       /// @return The xtd::drawing::image "emblem-favorite".
       static xtd::drawing::image emblem_favorite(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the emblems system image "emblem-important".
       /// @return The xtd::drawing::image "emblem-important".
       static xtd::drawing::image emblem_important() noexcept;
@@ -72,7 +72,7 @@ namespace xtd {
       /// @param size The emblems system image size in pixels.
       /// @return The xtd::drawing::image "emblem-important".
       static xtd::drawing::image emblem_important(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the emblems system image "emblem-locked".
       /// @return The xtd::drawing::image "emblem-locked".
       static xtd::drawing::image emblem_locked() noexcept;
@@ -80,7 +80,7 @@ namespace xtd {
       /// @param size The emblems system image size in pixels.
       /// @return The xtd::drawing::image "emblem-locked".
       static xtd::drawing::image emblem_locked(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the emblems system image "emblem-mail".
       /// @return The xtd::drawing::image "emblem-mail".
       static xtd::drawing::image emblem_mail() noexcept;
@@ -88,7 +88,7 @@ namespace xtd {
       /// @param size The emblems system image size in pixels.
       /// @return The xtd::drawing::image "emblem-mail".
       static xtd::drawing::image emblem_mail(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the emblems system image "emblem-new".
       /// @return The xtd::drawing::image "emblem-new".
       static xtd::drawing::image emblem_new() noexcept;
@@ -96,7 +96,7 @@ namespace xtd {
       /// @param size The emblems system image size in pixels.
       /// @return The xtd::drawing::image "emblem-new".
       static xtd::drawing::image emblem_new(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the emblems system image "emblem-photos".
       /// @return The xtd::drawing::image "emblem-photos".
       static xtd::drawing::image emblem_photos() noexcept;
@@ -104,7 +104,7 @@ namespace xtd {
       /// @param size The emblems system image size in pixels.
       /// @return The xtd::drawing::image "emblem-photos".
       static xtd::drawing::image emblem_photos(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the emblems system image "emblem-readonly".
       /// @return The xtd::drawing::image "emblem-readonly".
       static xtd::drawing::image emblem_readonly() noexcept;
@@ -112,7 +112,7 @@ namespace xtd {
       /// @param size The emblems system image size in pixels.
       /// @return The xtd::drawing::image "emblem-readonly".
       static xtd::drawing::image emblem_readonly(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the emblems system image "emblem-shared".
       /// @return The xtd::drawing::image "emblem-shared".
       static xtd::drawing::image emblem_shared() noexcept;
@@ -120,7 +120,7 @@ namespace xtd {
       /// @param size The emblems system image size in pixels.
       /// @return The xtd::drawing::image "emblem-shared".
       static xtd::drawing::image emblem_shared(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the emblems system image "emblem-symbolic-link".
       /// @return The xtd::drawing::image "emblem-symbolic-link".
       static xtd::drawing::image emblem_symbolic_link() noexcept;
@@ -128,7 +128,7 @@ namespace xtd {
       /// @param size The emblems system image size in pixels.
       /// @return The xtd::drawing::image "emblem-symbolic-link".
       static xtd::drawing::image emblem_symbolic_link(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the emblems system image "emblem-synchronizing".
       /// @return The xtd::drawing::image "emblem-synchronizing".
       static xtd::drawing::image emblem_synchronizing() noexcept;
@@ -136,7 +136,7 @@ namespace xtd {
       /// @param size The emblems system image size in pixels.
       /// @return The xtd::drawing::image "emblem-synchronizing".
       static xtd::drawing::image emblem_synchronizing(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the emblems system image "emblem-system".
       /// @return The xtd::drawing::image "emblem-system".
       static xtd::drawing::image emblem_system() noexcept;
@@ -144,7 +144,7 @@ namespace xtd {
       /// @param size The emblems system image size in pixels.
       /// @return The xtd::drawing::image "emblem-system".
       static xtd::drawing::image emblem_system(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the emblems system image "emblem-unlocked".
       /// @return The xtd::drawing::image "emblem-unlocked".
       static xtd::drawing::image emblem_unlocked() noexcept;
@@ -152,7 +152,7 @@ namespace xtd {
       /// @param size The emblems system image size in pixels.
       /// @return The xtd::drawing::image "emblem-unlocked".
       static xtd::drawing::image emblem_unlocked(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the emblems system image "emblem-unreadable".
       /// @return The xtd::drawing::image "emblem-unreadable".
       static xtd::drawing::image emblem_unreadable() noexcept;
@@ -160,11 +160,11 @@ namespace xtd {
       /// @param size The emblems system image size in pixels.
       /// @return The xtd::drawing::image "emblem-unreadable".
       static xtd::drawing::image emblem_unreadable(const xtd::drawing::size& size) noexcept;
-
+      
       /// @}
-
+      
       /// @name Public Static Methods
-
+      
       /// @{
       /// @brief Gets an array of images.
       /// @return The array of images.
@@ -173,7 +173,7 @@ namespace xtd {
       /// @param size The images size in pixels.
       /// @return The array of images.
       static xtd::array<xtd::drawing::image> get_images(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an array of image names.
       /// @return The array of image names.
       static const xtd::array<xtd::string>& get_image_names() noexcept;

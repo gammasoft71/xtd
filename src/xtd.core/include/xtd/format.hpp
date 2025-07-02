@@ -50,7 +50,7 @@ namespace xtd {
   /// @remarks for more information about format see @ref FormatPage "Format".
   template<class ...args_t>
   xtd::wstring format(const xtd::wstring& fmt, args_t&& ... args) {return xtd::string::format(fmt.to_string(), std::forward<args_t>(args)...);}
-
+  
   /// @cond
   template<class ...args_t>
   xtd::string format(const char* fmt, args_t&& ... args) {return xtd::string::format(std::string {fmt}, std::forward<args_t>(args)...);}

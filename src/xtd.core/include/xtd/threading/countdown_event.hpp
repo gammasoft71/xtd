@@ -39,7 +39,7 @@ namespace xtd {
       /// @remarks If initial_count is 0, the event is created in a signaled state.
       explicit countdown_event(int32 initial_count);
       /// @}
-
+      
       /// @cond
       countdown_event();
       countdown_event(countdown_event&&) = default;
@@ -47,7 +47,7 @@ namespace xtd {
       countdown_event& operator =(const countdown_event& other);
       ~countdown_event();
       /// @endcond
-
+      
       /// @name Public Properties
       
       /// @{
@@ -55,12 +55,12 @@ namespace xtd {
       /// @return The number of remaining signals required to set the event.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       int32 current_count() const;
-
+      
       /// @brief Gets the numbers of signals initially required to set the event.
       /// @return The number of signals initially required to set the event.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       int32 initial_count() const;
-
+      
       /// @brief ndicates whether the xtd::threading::countdown_event object's current count has reached zero.
       /// @return `true` if the current count is zero; otherwise, `false`.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
@@ -76,7 +76,7 @@ namespace xtd {
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       xtd::threading::wait_handle& wait_handle();
       /// @}
-
+      
       /// @name Public Methods
       
       /// @{
@@ -93,7 +93,7 @@ namespace xtd {
       
       /// @brief Close the current instance of the xtd::threading::countdown_event  class.
       void close();
-
+      
       /// @brief Resets the xtd::threading::countdown_event to the value of xtd::threading::countdown_event::initial_count.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       /// @remarks This method resets xtd::threading::countdown_event::initial_count for all subsequent accesses of the property on the current instance.
@@ -125,7 +125,7 @@ namespace xtd {
       /// @param count The value by which to increase xtd::threading::countdown_event::current_count.
       /// @return `true` if the increment succeeded; otherwise, `false`. If CurrentCount is already at zero, this method will return `false`.
       bool try_add_count(int32 count) noexcept;
-
+      
       /// @brief Blocks the current thread until the xtd::threading::countdown_event is set.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
       /// @remarks The caller of this method blocks indefinitely until the current instance is set. The caller will return immediately if the event is currently in a set state.
@@ -165,7 +165,7 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out..
       bool wait(const time_span& timeout, const cancellation_token& cancellation_token);
       /// @}
-
+      
     private:
       xtd::sptr<data> data_;
       bool wait_wtih_cancellation_token();

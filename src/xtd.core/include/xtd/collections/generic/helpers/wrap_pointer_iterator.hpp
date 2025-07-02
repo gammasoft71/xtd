@@ -32,7 +32,7 @@ namespace xtd {
         /// xtd.core
         /// @ingroup xtd_core helpers_generic_collections
         template<class value_t, class iterator_tag_t = std::bidirectional_iterator_tag>
-        class wrap_pointer_iterator : public xtd::icomparable<wrap_pointer_iterator<value_t, iterator_tag_t>>, public xtd::iequatable<wrap_pointer_iterator<value_t, iterator_tag_t>> {
+        class wrap_pointer_iterator : public xtd::icomparable<wrap_pointer_iterator<value_t, iterator_tag_t>>, public xtd::iequatable<wrap_pointer_iterator<value_t, iterator_tag_t >> {
         public:
           /// @name Public Aliases
           
@@ -64,7 +64,7 @@ namespace xtd {
           /// @param pointer The pointer value.
           explicit wrap_pointer_iterator(value_t pointer) noexcept : data_ {pointer} {}
           /// @}
-
+          
           /// @cond
           wrap_pointer_iterator(const wrap_pointer_iterator& value) noexcept = default;
           wrap_pointer_iterator& operator =(const wrap_pointer_iterator& value) noexcept = default;
@@ -82,14 +82,14 @@ namespace xtd {
           /// @return The iterator data.
           value_t& data() noexcept {return data_;}
           /// @}
-
+          
           /// @name Public methods
           
           /// @{
           int32 compare_to(const wrap_pointer_iterator& rhs) const noexcept override {return data_ < rhs.data_ ? -1 : data_ > rhs.data_ ? 1 : 0;}
           bool equals(const wrap_pointer_iterator& rhs) const noexcept override {return data_ == rhs.data_;}
           /// @}
-
+          
           /// @name Public Operators
           
           /// @{
@@ -133,7 +133,7 @@ namespace xtd {
           /// @return The difference between current iterator and the specified iterator.
           xtd::ptrdiff operator -(wrap_pointer_iterator value) const noexcept {return data_ - value.data_;}
           /// @}
-
+          
         private:
           mutable value_t data_ = nullptr;
         };

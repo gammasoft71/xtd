@@ -79,18 +79,18 @@ namespace xtd {
     /// @return Reference to the first element.
     /// @remarks Calling front on an empty container causes undefined behavior.
     virtual const_reference back() const {return at(count() - 1);}
-
+    
     /// @brief Returns an iterator to the first element of the enumerable.
     /// @return Iterator to the first element.
     const_iterator begin() const noexcept {return cbegin();}
     /// @brief Returns an iterator to the first element of the enumerable.
     /// @return Iterator to the first element.
     iterator begin() noexcept {return iterator {data()};}
-
+    
     /// @brief Returns an iterator to the first element of the enumerable.
     /// @return Iterator to the first element.
     const_iterator cbegin() const noexcept {return const_iterator {data()};}
-
+    
     /// @brief Returns an iterator to the element following the last element of the enumerable.
     /// @return Iterator to the element following the last element.
     const_iterator cend() const noexcept {return const_iterator {data() + len};}
@@ -98,7 +98,7 @@ namespace xtd {
     /// @brief Gets the number of elements contained in the xtd::collections::generic::list <type_t>.
     /// @return The number of elements contained in the xtd::collections::generic::list <type_t>.
     size_type count() const noexcept {return size();}
-
+    
     /// @brief Returns pointer to the underlying array serving as element storage.
     /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
     /// @remarks The pointer is such that range [xtd::array::data(), xtd::array::data() + xtd::array::size()) is always a valid range, even if the container is empty (xtd::array::data() is not dereferenceable in that case).
@@ -107,11 +107,11 @@ namespace xtd {
     /// @return Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element.
     /// @remarks The pointer is such that range [xtd::array::data(), xtd::array::data() + xtd::array::size()) is always a valid range, even if the container is empty (xtd::array::data() is not dereferenceable in that case).
     pointer data() noexcept {return items_;}
-
+    
     /// @brief Checks if the container has no elements, i.e. whether xtd::array::begin() == xtd::array::end().
     /// @return `true` if the container is empty, `false` otherwise.
     virtual bool empty() const noexcept {return len == xtd::size {0};}
-
+    
     /// @brief Returns an iterator to the element following the last element of the enumerable.
     /// @return Iterator to the element following the last element.
     const_iterator end() const noexcept {return cend();}
@@ -126,19 +126,19 @@ namespace xtd {
     /// @return Reference to the first element.
     /// @remarks Calling front on an empty container causes undefined behavior.
     virtual const_reference front() const {return at(0);}
-
+    
     /// @brief Returns the underlying base type items.
     /// @return The underlying base type items.
     virtual const_base_type items() const noexcept {return items_;}
     /// @brief Returns the underlying base type items.
     /// @return The underlying base type items.
     virtual base_type items() noexcept {return items_;}
-
+    
     /// @brief Gets a size that represents the total number of elements in all the dimensions of the array.
     /// @return A size that represents the total number of elements in all the dimensions of the array; zero if there are no elements in the array.
     /// @remarks Retrieving the value of this property is an O(1) operation.
     virtual size_type length() const noexcept {return size();}
-
+    
     /// @brief Returns the number of elements in the container, i.e. std::distance(xtd::array::begin(), xtd::array::end()).
     /// @return The number of elements in the container.
     xtd::size size() const noexcept {return len;}
@@ -170,18 +170,18 @@ namespace xtd {
       for (auto& item : *this)
         item = value_type {};
     }
-
+    
     /// @brief Fills the elements of this span with a specified value.
     /// @param value The value to assign to each element of the span.
     void fill(const type_t& value) {
       for (auto& item : *this)
         item = value;
     }
-
+    
     /// @brief Copies the elements of the xtd::collections::generic::list <type_t> to a new array.
     /// @return An array containing copies of the elements of the xtd::fixed_array <type_t, xtd::size>.
     virtual xtd::array<value_type> to_array() const noexcept {return size() ? xtd::array<value_type>(data(), size()) : xtd::array<value_type> {};}
-
+    
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
     xtd::string to_string() const noexcept override {return xtd::string::format("[{}]", xtd::string::join(", ", *this));}
@@ -207,5 +207,5 @@ namespace xtd {
   };
   
   template <class type_t, class... args_t>
-  fixed_array(type_t, args_t...) -> fixed_array<type_t, 1 + sizeof...(args_t)>;
+  fixed_array(type_t, args_t...) -> fixed_array < type_t, 1 + sizeof...(args_t) >;
 }

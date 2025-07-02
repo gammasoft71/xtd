@@ -15,7 +15,7 @@ namespace keycodes::properties {
   class settings : public xtd::object {
   public:
     /// @name Public Constructors
-
+    
     /// @{
     /// @brief Initializes a new instance of the keycodes::properties::settings class.
     /// @remarks All properties are reloaded with the last saved value.
@@ -26,15 +26,15 @@ namespace keycodes::properties {
       if (load) reload();
     }
     /// @}
-
+    
     /// @cond
     settings(settings&&) noexcept = default;
     settings(const settings&) noexcept = default;
     settings& operator =(const settings&) noexcept = default;
     /// @endcond
-
+    
     /// @name Public Properties
-
+    
     /// @{
     /// @brief Gets the menu_visible user setting property.
     /// @return A bool value.
@@ -45,7 +45,7 @@ namespace keycodes::properties {
       menu_visible_ = value;
       return *this;
     }
-
+    
     /// @brief Gets the show_key_down user setting property.
     /// @return A bool value.
     bool show_key_down() const noexcept {return show_key_down_;}
@@ -55,7 +55,7 @@ namespace keycodes::properties {
       show_key_down_ = value;
       return *this;
     }
-
+    
     /// @brief Gets the show_key_press user setting property.
     /// @return A bool value.
     bool show_key_press() const noexcept {return show_key_press_;}
@@ -65,7 +65,7 @@ namespace keycodes::properties {
       show_key_press_ = value;
       return *this;
     }
-
+    
     /// @brief Gets the location user setting property.
     /// @return A xtd::drawing::point value.
     xtd::drawing::point location() const noexcept {return location_;}
@@ -75,7 +75,7 @@ namespace keycodes::properties {
       location_ = value;
       return *this;
     }
-
+    
     /// @brief Gets the size user setting property.
     /// @return A xtd::drawing::size value.
     xtd::drawing::size size() const noexcept {return size_;}
@@ -85,11 +85,11 @@ namespace keycodes::properties {
       size_ = value;
       return *this;
     }
-
+    
     /// @}
-
+    
     /// @name Public Methods
-
+    
     /// @{
     /// @brief Reload all properties with the last saved values.
     /// @remarks See [Settings](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/settings) for more informations.
@@ -100,14 +100,14 @@ namespace keycodes::properties {
       location_ = settings_.read("location", location_);
       size_ = settings_.read("size", size_);
     }
-
+    
     /// @brief Reset all properties to their default values.
     /// @remarks See [Settings](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/settings) for more informations.
     void reset() noexcept {
       settings_.reset();
       *this = settings {false};
     }
-
+    
     /// @brief Save all properties.
     /// @remarks See [Settings](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/settings) for more informations.
     void save() noexcept {
@@ -119,9 +119,9 @@ namespace keycodes::properties {
       settings_.save();
     }
     /// @}
-
+    
     /// @name Public Static Properties
-
+    
     /// @{
     /// @brief Gets the default instance of settings.
     /// @return The default instance.
@@ -131,7 +131,7 @@ namespace keycodes::properties {
       return default_settings;
     }
     /// @}
-
+    
   private:
     xtd::configuration::settings settings_;
     bool menu_visible_ {true};

@@ -39,7 +39,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/date_time>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -208,7 +208,7 @@ namespace xtd {
     /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.<br>-or-<br>month is less than 1 or greater than 12.<br>-or-<br>day is less than 1 or greater than the number of days in month.<br>-or-<br>hour is less than 0 or greater than 23.<br>-or-<br>minute is less than 0 or greater than 59<br>-or-<br>second is less than 0 or greater than 59<br>-or-<br>millisecond is less than 0 or greater than 999.
     /// @remarks This constructor interpretsyear, month, and day as a year, month, and day in the Gregorian calendar.
     date_time(uint32 year, uint32 month, uint32 day, uint32 hour, uint32 minute, uint32 second, uint32 millisecond, date_time_kind kind);
-
+    
     /// @brief Initializes a new instance of the xtd::date_time structure to a specified time point.
     /// @param time_point A [std::chrono::time_point](https://en.cppreference.com/w/cpp/chrono/time_point) value.
     /// @remarks This constructor can be used for example to convert [std::chrono::system_clock::time_point](https://en.cppreference.com/w/cpp/chrono/system_clock) to xtd::date_time.
@@ -217,7 +217,7 @@ namespace xtd {
       using namespace std::chrono;
       *this = from_time_t(system_clock::to_time_t(system_clock::now() + duration_cast<system_clock::duration>(time_point - clock_t::now())), date_time_kind::local);
     }
-
+    
     /// @brief Initializes a new instance of the xtd::date_time structure to a specified time point, and Coordinated Universal Time (UTC) or local time.
     /// @param time_point A [std::chrono::time_point](https://en.cppreference.com/w/cpp/chrono/time_point) value.
     /// @param kind One of the enumeration values that indicates whether year, month, day, hour, minute and second specify a local time, Coordinated Universal Time (UTC), or neither.
@@ -466,7 +466,7 @@ namespace xtd {
     /// uint23_t millisecond = moment.millisecond();
     /// ```
     uint32 second() const noexcept;
-
+    
     /// @brief Gets the number of ticks that represent the date and time of this instance.
     /// @return The number of ticks that represent the date and time of this instance. The value is between xtd::date_time::min_value.ticks and xtd::date_time::max_value.ticks.
     /// @par Examples
@@ -480,7 +480,7 @@ namespace xtd {
     /// The following example uses the xtd::date_time::ticks property to display the number of ticks that have elapsed since the beginning of the century.
     /// @include date_time_ticks2.cpp
     xtd::ticks ticks_duration() const noexcept;
-
+    
     /// @brief Gets the time of day for this instance.
     /// @return A time interval that represents the fraction of the day that has elapsed since midnight.
     /// @par Examples
@@ -645,11 +645,11 @@ namespace xtd {
     /// @param other An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
     bool equals(const date_time& other) const noexcept override;
-
+    
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
     xtd::size get_hash_code() const noexcept override;
-
+    
     /// @brief Converts the value of this instance to all the string representations supported by the standard date and time format specifiers.
     /// @return A string array where each element is the representation of the value of this instance formatted with one of the standard date and time format specifiers.
     array<string> get_date_time_formats() const noexcept;
@@ -704,7 +704,7 @@ namespace xtd {
     /// @remarks A Windows file time is a 64-bit value that represents the number of 100-nanosecond intervals that have elapsed since 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC). Windows uses a file time to record when an application creates, accesses, or writes to a file.
     /// @remarks The xtd::date_time::to_file_time method uses the xtd::date_time::kind property to determine whether the current xtd::date_time object is a local time, a UTC time, or an unspecified kind of time which is treated as a local time.
     int64 to_file_time() const;
-
+    
     /// @brief Converts the value of the current xtd::date_time object to a Windows file time.
     /// @return The value of the current xtd::date_time object expressed as a Windows file time.
     /// @exception xtd::argument_out_of_range_exception The resulting file time would represent a date and time before 12:00 midnight January 1, 1601 C.E. UTC.
@@ -867,7 +867,7 @@ namespace xtd {
     /// | 'z'    | writes time zone "local" or "UTC".                                                                                          |
     /// | 'Z'    | writes time zone "local" or "UTC".                                                                                          |
     xtd::string to_string(const string& format, const std::locale& loc) const override;
-
+    
     /// @brief Converts the value of the current xtd::date_time object to [std::time_t](https://en.cppreference.com/w/cpp/chrono/c/time_t).
     /// @return The value of the current xtd::date_time object expressed as [std::time_t](https://en.cppreference.com/w/cpp/chrono/c/time_t).
     /// @remarks [std::time_t](https://en.cppreference.com/w/cpp/chrono/c/time_t) is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
@@ -894,7 +894,7 @@ namespace xtd {
     /// | xtd::date_time_kind::unspecified | The current xtd::date_time object is assumed to be a local time, and the conversion is performed as if xtd::date_time::kind were Local. |
     date_time to_universal_time() const;
     /// @}
-
+    
     /// @name Public Static Methods
     
     /// @{
@@ -1132,7 +1132,7 @@ namespace xtd {
     /// | \%t    | writes horizontal tab character.                                                                                            |
     /// @remarks See [std::put_time](https://en.cppreference.com/w/cpp/io/manip/put_time) for more information.
     static xtd::string sprintf(const string& format, const date_time& value);
-
+    
     /// @brief Converts the specified string representation of a date and time to its xtd::date_time equivalent and returns a value that indicates whether the conversion succeeded.
     /// @param s A string containing a date and time to convert.
     /// @param result When this method returns, contains the xtd::date_time value equivalent to the date and time contained in s, if the conversion succeeded, or xtd::date_time::min_value if the conversion failed. The conversion fails if the s parameter is an empty string (""), or does not contain a valid string representation of a date and time.
@@ -1184,10 +1184,10 @@ struct std::formatter<xtd::date_time> : std::formatter<std::string> {
       format_value += *iterator;
     return iterator;
   }
-  
+
   template<class object_t, class format_context_t>
   auto format(const object_t& obj, format_context_t& ctx) const {return std::format_to(ctx.out(), "{}", std::string {obj.to_string(format_value)});}
-  
+
 private:
   std::string format_value;
 };

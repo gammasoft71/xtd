@@ -44,7 +44,7 @@ namespace xtd {
           /// @ramrks The `1.0` values are default and represent the original color.
           gamma_correction_effect(double r, double g, double b);
           /// @}
-
+          
           /// @name Public Properties
           
           /// @{
@@ -61,7 +61,7 @@ namespace xtd {
           /// @remarks The `1.0` value is default and represents the original blue componant color.
           double b = 1.0;
           /// @}
-
+          
         protected:
           /// @name Protected Methods
           

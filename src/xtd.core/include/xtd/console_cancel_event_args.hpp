@@ -12,7 +12,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/console_cancel_event_args>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

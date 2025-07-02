@@ -15,7 +15,7 @@ namespace xtd::forms {
       auto wave1 = enabled ? xtd::array {0, 2, 4, 2, 0, -2, -4, -2} : xtd::array {0, 0, 0, 0, 0, 0, 0, 0};
       auto wave2 = enabled ? xtd::array {-4, -2, 0, 2, 4, 2, 0, -2} : xtd::array {0, 0, 0, 0, 0, 0, 0, 0};
       auto wave3 = enabled ? xtd::array {0, -2, -4, -2, 0, 2, 4, 2} : xtd::array {0, 0, 0, 0, 0, 0, 0, 0};
-
+      
       graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x1, y - wave1[frame_], dot_size, dot_size);
       graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x2, y - wave2[frame_], dot_size, dot_size);
       graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x3, y - wave3[frame_], dot_size, dot_size);

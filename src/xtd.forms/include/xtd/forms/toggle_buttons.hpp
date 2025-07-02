@@ -170,7 +170,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button abort(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent about toggle_button.
       /// @return The created toggle_button.
       static toggle_button about();
@@ -315,7 +315,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button about(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent actual_size toggle_button.
       /// @return The created toggle_button.
       static toggle_button actual_size();
@@ -460,7 +460,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button actual_size(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent add toggle_button.
       /// @return The created toggle_button.
       static toggle_button add();
@@ -605,7 +605,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button add(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent alignment toggle_button.
       /// @return The created toggle_button.
       static toggle_button alignment();
@@ -750,7 +750,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button alignment(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent align_left toggle_button.
       /// @return The created toggle_button.
       static toggle_button align_left();
@@ -895,7 +895,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button align_left(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent align_right toggle_button.
       /// @return The created toggle_button.
       static toggle_button align_right();
@@ -1040,7 +1040,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button align_right(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent apply toggle_button.
       /// @return The created toggle_button.
       static toggle_button apply();
@@ -1185,7 +1185,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button apply(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent ascending toggle_button.
       /// @return The created toggle_button.
       static toggle_button ascending();
@@ -1330,7 +1330,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button ascending(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent back toggle_button.
       /// @return The created toggle_button.
       static toggle_button back();
@@ -1475,7 +1475,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button back(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent bold toggle_button.
       /// @return The created toggle_button.
       static toggle_button bold();
@@ -1620,7 +1620,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button bold(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent bottom toggle_button.
       /// @return The created toggle_button.
       static toggle_button bottom();
@@ -1765,7 +1765,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button bottom(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent cancel toggle_button.
       /// @return The created toggle_button.
       static toggle_button cancel();
@@ -1910,7 +1910,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button cancel(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent cdrom toggle_button.
       /// @return The created toggle_button.
       static toggle_button cdrom();
@@ -2055,7 +2055,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button cdrom(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent centered toggle_button.
       /// @return The created toggle_button.
       static toggle_button centered();
@@ -2200,7 +2200,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button centered(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent clear toggle_button.
       /// @return The created toggle_button.
       static toggle_button clear();
@@ -2345,7 +2345,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button clear(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent close toggle_button.
       /// @return The created toggle_button.
       static toggle_button close();
@@ -2490,7 +2490,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button close(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent color toggle_button.
       /// @return The created toggle_button.
       static toggle_button color();
@@ -2635,7 +2635,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button color(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent contents toggle_button.
       /// @return The created toggle_button.
       static toggle_button contents();
@@ -2780,7 +2780,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button contents(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent convert toggle_button.
       /// @return The created toggle_button.
       static toggle_button convert();
@@ -2925,7 +2925,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button convert(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent copy toggle_button.
       /// @return The created toggle_button.
       static toggle_button copy();
@@ -3070,7 +3070,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button copy(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent customize toggle_button.
       /// @return The created toggle_button.
       static toggle_button customize();
@@ -3215,7 +3215,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button customize(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent cut toggle_button.
       /// @return The created toggle_button.
       static toggle_button cut();
@@ -3360,7 +3360,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button cut(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent del toggle_button.
       /// @return The created toggle_button.
       static toggle_button del();
@@ -3505,7 +3505,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button del(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent descending toggle_button.
       /// @return The created toggle_button.
       static toggle_button descending();
@@ -3650,7 +3650,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button descending(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent down toggle_button.
       /// @return The created toggle_button.
       static toggle_button down();
@@ -3795,7 +3795,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button down(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent edit toggle_button.
       /// @return The created toggle_button.
       static toggle_button edit();
@@ -3940,7 +3940,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button edit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent execute toggle_button.
       /// @return The created toggle_button.
       static toggle_button execute();
@@ -4085,7 +4085,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button execute(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent exit toggle_button.
       /// @return The created toggle_button.
       static toggle_button exit();
@@ -4230,7 +4230,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button exit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent file toggle_button.
       /// @return The created toggle_button.
       static toggle_button file();
@@ -4375,7 +4375,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button file(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent find toggle_button.
       /// @return The created toggle_button.
       static toggle_button find();
@@ -4520,7 +4520,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button find(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent first toggle_button.
       /// @return The created toggle_button.
       static toggle_button first();
@@ -4665,7 +4665,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button first(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent floppy toggle_button.
       /// @return The created toggle_button.
       static toggle_button floppy();
@@ -4810,7 +4810,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button floppy(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent font toggle_button.
       /// @return The created toggle_button.
       static toggle_button font();
@@ -4955,7 +4955,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button font(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent forward toggle_button.
       /// @return The created toggle_button.
       static toggle_button forward();
@@ -5100,7 +5100,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button forward(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent harddisk toggle_button.
       /// @return The created toggle_button.
       static toggle_button harddisk();
@@ -5245,7 +5245,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button harddisk(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent help toggle_button.
       /// @return The created toggle_button.
       static toggle_button help();
@@ -5390,7 +5390,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button help(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent home toggle_button.
       /// @return The created toggle_button.
       static toggle_button home();
@@ -5535,7 +5535,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button home(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent ignore toggle_button.
       /// @return The created toggle_button.
       static toggle_button ignore();
@@ -5680,7 +5680,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button ignore(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent indent toggle_button.
       /// @return The created toggle_button.
       static toggle_button indent();
@@ -5825,7 +5825,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button indent(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent index toggle_button.
       /// @return The created toggle_button.
       static toggle_button index();
@@ -5970,7 +5970,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button index(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent info toggle_button.
       /// @return The created toggle_button.
       static toggle_button info();
@@ -6115,7 +6115,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button info(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent italic toggle_button.
       /// @return The created toggle_button.
       static toggle_button italic();
@@ -6260,7 +6260,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button italic(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent justified toggle_button.
       /// @return The created toggle_button.
       static toggle_button justified();
@@ -6405,7 +6405,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button justified(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent jump_to toggle_button.
       /// @return The created toggle_button.
       static toggle_button jump_to();
@@ -6550,7 +6550,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button jump_to(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent last toggle_button.
       /// @return The created toggle_button.
       static toggle_button last();
@@ -6695,7 +6695,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button last(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent network toggle_button.
       /// @return The created toggle_button.
       static toggle_button network();
@@ -6840,7 +6840,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button network(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent new_ toggle_button.
       /// @return The created toggle_button.
       static toggle_button new_();
@@ -6985,7 +6985,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button new_(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent next toggle_button.
       /// @return The created toggle_button.
       static toggle_button next();
@@ -7130,7 +7130,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button next(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent no toggle_button.
       /// @return The created toggle_button.
       static toggle_button no();
@@ -7275,7 +7275,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button no(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent ok toggle_button.
       /// @return The created toggle_button.
       static toggle_button ok();
@@ -7420,7 +7420,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button ok(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent open toggle_button.
       /// @return The created toggle_button.
       static toggle_button open();
@@ -7565,7 +7565,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button open(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent options toggle_button.
       /// @return The created toggle_button.
       static toggle_button options();
@@ -7710,7 +7710,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button options(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent paste toggle_button.
       /// @return The created toggle_button.
       static toggle_button paste();
@@ -7855,7 +7855,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button paste(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent preferences toggle_button.
       /// @return The created toggle_button.
       static toggle_button preferences();
@@ -8000,7 +8000,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button preferences(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent previous toggle_button.
       /// @return The created toggle_button.
       static toggle_button previous();
@@ -8145,7 +8145,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button previous(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent print toggle_button.
       /// @return The created toggle_button.
       static toggle_button print();
@@ -8290,7 +8290,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button print(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent print_preview toggle_button.
       /// @return The created toggle_button.
       static toggle_button print_preview();
@@ -8435,7 +8435,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button print_preview(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent properties toggle_button.
       /// @return The created toggle_button.
       static toggle_button properties();
@@ -8580,7 +8580,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button properties(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent quit toggle_button.
       /// @return The created toggle_button.
       static toggle_button quit();
@@ -8725,7 +8725,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button quit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent redo toggle_button.
       /// @return The created toggle_button.
       static toggle_button redo();
@@ -8870,7 +8870,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button redo(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent refresh toggle_button.
       /// @return The created toggle_button.
       static toggle_button refresh();
@@ -9015,7 +9015,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button refresh(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent remove toggle_button.
       /// @return The created toggle_button.
       static toggle_button remove();
@@ -9160,7 +9160,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button remove(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent replace toggle_button.
       /// @return The created toggle_button.
       static toggle_button replace();
@@ -9305,7 +9305,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button replace(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent retry toggle_button.
       /// @return The created toggle_button.
       static toggle_button retry();
@@ -9450,7 +9450,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button retry(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent revert_to_saved toggle_button.
       /// @return The created toggle_button.
       static toggle_button revert_to_saved();
@@ -9595,7 +9595,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button revert_to_saved(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent save toggle_button.
       /// @return The created toggle_button.
       static toggle_button save();
@@ -9740,7 +9740,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button save(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent save_as toggle_button.
       /// @return The created toggle_button.
       static toggle_button save_as();
@@ -9885,7 +9885,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button save_as(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent search toggle_button.
       /// @return The created toggle_button.
       static toggle_button search();
@@ -10030,7 +10030,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button search(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent select_all toggle_button.
       /// @return The created toggle_button.
       static toggle_button select_all();
@@ -10175,7 +10175,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button select_all(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent settings toggle_button.
       /// @return The created toggle_button.
       static toggle_button settings();
@@ -10320,7 +10320,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button settings(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent spell_check toggle_button.
       /// @return The created toggle_button.
       static toggle_button spell_check();
@@ -10465,7 +10465,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button spell_check(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent stop toggle_button.
       /// @return The created toggle_button.
       static toggle_button stop();
@@ -10610,7 +10610,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button stop(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent strikeout toggle_button.
       /// @return The created toggle_button.
       static toggle_button strikeout();
@@ -10755,7 +10755,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button strikeout(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent tools toggle_button.
       /// @return The created toggle_button.
       static toggle_button tools();
@@ -10900,7 +10900,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button tools(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent top toggle_button.
       /// @return The created toggle_button.
       static toggle_button top();
@@ -11045,7 +11045,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button top(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent undelete toggle_button.
       /// @return The created toggle_button.
       static toggle_button undelete();
@@ -11190,7 +11190,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button undelete(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent underline toggle_button.
       /// @return The created toggle_button.
       static toggle_button underline();
@@ -11335,7 +11335,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button underline(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent undo toggle_button.
       /// @return The created toggle_button.
       static toggle_button undo();
@@ -11480,7 +11480,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button undo(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent unindent toggle_button.
       /// @return The created toggle_button.
       static toggle_button unindent();
@@ -11625,7 +11625,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button unindent(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent up toggle_button.
       /// @return The created toggle_button.
       static toggle_button up();
@@ -11770,7 +11770,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button up(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent view toggle_button.
       /// @return The created toggle_button.
       static toggle_button view();
@@ -11915,7 +11915,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button view(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent window toggle_button.
       /// @return The created toggle_button.
       static toggle_button window();
@@ -12060,7 +12060,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button window(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent yes toggle_button.
       /// @return The created toggle_button.
       static toggle_button yes();
@@ -12205,7 +12205,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button yes(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent zoom_in toggle_button.
       /// @return The created toggle_button.
       static toggle_button zoom_in();
@@ -12350,7 +12350,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button zoom_in(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent zoom_out toggle_button.
       /// @return The created toggle_button.
       static toggle_button zoom_out();
@@ -12495,7 +12495,7 @@ namespace xtd {
       /// @param name The name of the toggle_button.
       /// @return The created toggle_button.
       static toggle_button zoom_out(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined toggle_button that represent zoom_to_fit toggle_button.
       /// @return The created toggle_button.
       static toggle_button zoom_to_fit();

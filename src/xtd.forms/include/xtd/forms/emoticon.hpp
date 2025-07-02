@@ -158,7 +158,7 @@ namespace xtd {
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
-
+      
       /// @brief Returns a string containing the codepoints of the emoticons.
       /// @return A string containing the codepoints of the emoticon. Empty string ("") for none codepoints.
       xtd::string to_string() const noexcept override;

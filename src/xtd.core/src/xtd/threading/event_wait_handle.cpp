@@ -38,7 +38,7 @@ event_wait_handle::event_wait_handle(bool initial_state, const string& name, boo
 }
 
 event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode) : event_wait_handle(initial_state, mode, string::empty_string) {
-  
+
 }
 event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, const string& name) : data_(xtd::new_sptr<event_wait_handle::data>()) {
   data_->mode = mode;

@@ -14,7 +14,7 @@ namespace {
   // Helper function to calculate average color of a given set of pixels
   color calculate_average_color(const list<color>& colors) {
     if (colors.empty()) return color::transparent;
-    
+  
     auto r = 0_u32, g = 0_u32, b = 0_u32;
     for (const auto& c : colors) {
       r += c.r();
@@ -24,7 +24,7 @@ namespace {
     auto count = colors.count();
     return color::from_argb(255, r / count, g / count, b / count);
   }
-
+  
   // Function to get images pixels
   list<color> get_image_colors(const image& image) {
     auto bitmap = drawing::bitmap {image};
@@ -46,14 +46,14 @@ namespace {
     auto max_value = std::max({r, g, b});
     auto min_value = std::min({r, g, b});
     auto delta = max_value - min_value;
-    
+  
     // Increase saturation
     if (delta > 0) {
       r = std::min(255, r + delta / 2);
       g = std::min(255, g + delta / 2);
       b = std::min(255, b + delta / 2);
     }
-    
+  
     // Adjust brightness if needed
     auto brightness = (r + g + b) / 3;
     if (brightness < 100) {
@@ -61,7 +61,7 @@ namespace {
       g = std::min(255, g + 30);
       b = std::min(255, b + 30);
     }
-    
+  
     return color::from_argb(255, r, g, b);
   }
   
@@ -72,7 +72,7 @@ namespace {
     return enhance_color(avg_color);
   }
   */
-
+  
   // Determine the best fill color
   color determine_fill_color(const image& image) {
     if (image == drawing::image::empty) return color::transparent;

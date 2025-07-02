@@ -24,13 +24,13 @@ namespace xtdc_gui {
     const xtd::string& path() const noexcept {return path_;}
     const xtd::drawing::image& picture() const noexcept {return picture_;}
     const xtd::string& output() const noexcept {return output_;}
-
+    
     int32 compare_to(const xtd_example_item& value) const noexcept override {return name_.compare_to(value.name_);}
-
+    
     bool equals(const object& obj) const noexcept override {return is<xtd_example_item>(obj) && equals(static_cast<const xtd_example_item&>(obj));}
-
+    
     bool equals(const xtd_example_item& value) const noexcept override {return name_.equals(value.name_);}
-
+    
     static const xtd::array<xtd_example_item>& get_cmake_examples() {
       static auto examples = xtd::array<xtd_example_item> {};
       if (examples.empty()) examples = xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.cmake.examples"));
@@ -56,13 +56,13 @@ namespace xtdc_gui {
     }
     
     xtd::size get_hash_code() const noexcept override {return name_.get_hash_code();}
-
+    
     static const xtd::array<xtd_example_item>& get_tunit_examples() {
       static auto examples = xtd::array<xtd_example_item> {};
       if (examples.empty()) examples = xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.tunit.examples"));
       return examples;
     }
-
+    
   private:
     static xtd::array<xtd_example_item> get_examples(const xtd::string& examples_path) {
       auto examples = xtd::collections::generic::list<xtd_example_item> {};

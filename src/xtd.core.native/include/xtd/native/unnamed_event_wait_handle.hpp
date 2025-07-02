@@ -57,13 +57,13 @@ namespace xtd {
       /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
       static bool set(intmax_t handle, bool& io_error);
-
+      
       /// @brief Sets the state of the event to nonsignaled, causing threads to block.
       /// @param handle The event wait handle handle to reset.
       /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
       static bool reset(intmax_t handle, bool& io_error);
-
+      
       /// @brief Wait named event wait handle with specified event wait handle handle, timeout and manual reset.
       /// @param handle The event wait handle handle to wait.
       /// @param milliseconds_timeout The timeout in milliseconds (-1 is infinite timeout).

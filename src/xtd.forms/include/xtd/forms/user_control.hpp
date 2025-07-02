@@ -113,7 +113,7 @@ namespace xtd {
       /// @return New xtd::forms::user_control created.
       static user_control create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
-
+      
     protected:
       /// @name Protected Properties
       

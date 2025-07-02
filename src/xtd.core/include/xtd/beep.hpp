@@ -12,7 +12,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/beep>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

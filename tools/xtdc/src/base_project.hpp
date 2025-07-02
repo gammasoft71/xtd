@@ -31,7 +31,7 @@ namespace xtdc_command {
     const xtd::string& current_path() const noexcept {return current_path_;}
     
   protected:
-    static std::tuple<xtd::array<xtd::string>, xtd::array<xtd::string>> get_c_sources(const xtd::string& current_path, const xtd::string& path) {
+    static std::tuple<xtd::array<xtd::string>, xtd::array<xtd::string >> get_c_sources(const xtd::string& current_path, const xtd::string& path) {
       xtd::collections::generic::list<xtd::string> headers;
       xtd::collections::generic::list<xtd::string> sources;
       for (auto file : xtd::io::directory::get_files(path, "*.h"))
@@ -50,7 +50,7 @@ namespace xtdc_command {
       return std::make_tuple(headers.to_array(), sources.to_array());
     }
     
-    static std::tuple<xtd::array<xtd::string>, xtd::array<xtd::string>> get_cpp_sources(const xtd::string& current_path, const xtd::string& path) {
+    static std::tuple<xtd::array<xtd::string>, xtd::array<xtd::string >> get_cpp_sources(const xtd::string& current_path, const xtd::string& path) {
       xtd::collections::generic::list<xtd::string> headers;
       xtd::collections::generic::list<xtd::string> sources;
       for (auto file : xtd::io::directory::get_files(path, "*.hpp"))
@@ -69,7 +69,7 @@ namespace xtdc_command {
       return std::make_tuple(headers.to_array(), sources.to_array());
     }
     
-    static std::tuple<xtd::array<xtd::string>, xtd::array<xtd::string>, xtd::array<xtd::string>> get_csharp_sources(const xtd::string& current_path, const xtd::string& path) {
+    static std::tuple<xtd::array<xtd::string>, xtd::array<xtd::string>, xtd::array<xtd::string >> get_csharp_sources(const xtd::string& current_path, const xtd::string& path) {
       xtd::collections::generic::list<xtd::string> sources;
       xtd::collections::generic::list<xtd::string> configs;
       xtd::collections::generic::list<xtd::string> xamls;
@@ -93,7 +93,7 @@ namespace xtdc_command {
       return std::make_tuple(sources.to_array(), configs.to_array(), xamls.to_array());
     }
     
-    static std::tuple<xtd::array<xtd::string>, xtd::array<xtd::string>> get_objectivec_sources(const xtd::string& current_path, const xtd::string& path) {
+    static std::tuple<xtd::array<xtd::string>, xtd::array<xtd::string >> get_objectivec_sources(const xtd::string& current_path, const xtd::string& path) {
       xtd::collections::generic::list<xtd::string> headers;
       xtd::collections::generic::list<xtd::string> sources;
       for (auto file : xtd::io::directory::get_files(path, "*.h"))

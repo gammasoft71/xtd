@@ -36,8 +36,8 @@ namespace xtd {
         
         void test_method_(_c_operator_on_char8) {
           auto v = u8'a'_c;
-          assert::is_true(is<char32>(v));
-          assert::are_equal(u8'a'_c, v);
+            assert::is_true(is<char32>(v));
+            assert::are_equal(u8'a'_c, v);
         }
         
         void test_method_(_c_operator_on_wchar) {

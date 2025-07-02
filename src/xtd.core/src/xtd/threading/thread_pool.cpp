@@ -117,7 +117,7 @@ registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle&
 bool thread_pool::set_max_threads(size_t worker_threads, size_t completion_port_threads) {
   if (worker_threads < environment::processor_count() || completion_port_threads < environment::processor_count())
     return false;
-  
+    
   max_threads_ = worker_threads;
   max_asynchronous_io_threads_ = completion_port_threads;
   
@@ -130,7 +130,7 @@ bool thread_pool::set_max_threads(size_t worker_threads, size_t completion_port_
 bool thread_pool::set_min_threads(size_t worker_threads, size_t completion_port_threads) {
   if (worker_threads >= max_threads_ || completion_port_threads >= max_asynchronous_io_threads_)
     return false;
-  
+    
   min_threads_ = worker_threads;
   min_asynchronous_io_threads_ = completion_port_threads;
   

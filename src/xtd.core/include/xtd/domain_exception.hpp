@@ -11,7 +11,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/domain_exception>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

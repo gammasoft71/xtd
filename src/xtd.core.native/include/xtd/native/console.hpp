@@ -177,7 +177,7 @@ namespace xtd {
       /// @remarks The five parameters will contains informations on key pressed.
       /// @warning Internal use only
       static void read_key(char32_t& key_char, char32_t& key_code, bool& alt, bool& shift, bool& ctrl);
-     
+      
       /// @brief Register the user cancel callback.
       /// @param user_cancel_callback The user cancel callback method to register.
       /// @remarks This callback is call when when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break key are pressed simultaneously (Ctrl+C or Ctrl+Break).
@@ -233,7 +233,7 @@ namespace xtd {
       /// @return `true` if successfull; otherwise `false`.
       /// @warning Internal use only
       static bool window_height(int32_t height);
-     
+      
       /// @brief Gets the left of the console window area.
       /// @return The left of the console window measured in columns.
       /// @warning Internal use only

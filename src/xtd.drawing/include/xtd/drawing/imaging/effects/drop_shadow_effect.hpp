@@ -51,7 +51,7 @@ namespace xtd {
           /// @param color The shadow color.
           drop_shadow_effect(const xtd::drawing::size& shadow, int32 blur, const xtd::drawing::color& color);
           /// @}
-
+          
           /// @name Public Properties
           
           /// @{
@@ -65,7 +65,7 @@ namespace xtd {
           /// @param size The horizontal and vertical shadow.
           xtd::drawing::size shadow;
           /// @}
-
+          
         protected:
           /// @name Protected Methods
           

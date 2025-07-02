@@ -23,7 +23,7 @@ namespace xtd {
       /// @brief Represents a collection of objects.
       /// @par Header
       /// ```cpp
-      /// #include <xtd/forms/layout/arranged_element_collection> 
+      /// #include <xtd/forms/layout/arranged_element_collection>
       /// ```
       /// @par Namespace
       /// xtd::forms::layout
@@ -482,14 +482,14 @@ namespace xtd {
         virtual void on_item_added(size_t index, type_t& item) {
           item_added(index, item);
         }
-
+        
         /// @brief Raises the xtd::forms::layout::arranged_element_collection::item_updated event.
         /// @param index The index of the item.
         /// @param item The item updated.
         virtual void on_item_updated(size_t index, type_t& item) {
           item_updated(index, item);
         }
-
+        
         /// @brief Raises the xtd::forms::layout::arranged_element_collection::item_removed event.
         /// @param index The index of the item.
         /// @param item The item removed.
@@ -497,7 +497,7 @@ namespace xtd {
           item_removed(index, item);
         }
         /// @}
-
+        
       private:
         mutable std::vector<value_type, allocator_type> collection_;
         bool inserting_ = false;

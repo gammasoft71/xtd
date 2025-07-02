@@ -73,9 +73,9 @@ namespace xtd::tests {
     }
     
     void test_method_(create_compiler_with_compiler_id_invalid_version_build_type_release_and_is_64_bit) {
-#if !defined (__APPLE__)
+      #if !defined (__APPLE__)
       assert::throws<argument_exception>([] {compiler {static_cast<compiler_id>(4), {1, 2, 3}, build_type::release, true};});
-#endif
+      #endif
     }
   };
 }

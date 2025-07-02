@@ -80,20 +80,20 @@ namespace set_path {
   private:
     static string get_error() {
       return "set_path : invalid params\n"
-        "Try 'set_path --help' for more information.";
+             "Try 'set_path --help' for more information.";
     }
     
     static string get_usage() {
       return "Usage\n"
-        "  set_path [options] folder\n"
-        "\n"
-        "-a, --add           : Add folder to path (set by default).\n"
-        "-r, --remove        : Remove folder from path.\n"
-        "-s, --system        : Use Sytem path. (User path by default). (*)\n"
-        "-v, --version       : Shows version information.\n"
-        "-h, --help          : Shows this help page.\n"
-        "\n"
-        "(*) System option is valid only on Windows. You must in administrator mode.";
+             "  set_path [options] folder\n"
+             "\n"
+             "-a, --add           : Add folder to path (set by default).\n"
+             "-r, --remove        : Remove folder from path.\n"
+             "-s, --system        : Use Sytem path. (User path by default). (*)\n"
+             "-v, --version       : Shows version information.\n"
+             "-h, --help          : Shows this help page.\n"
+             "\n"
+             "(*) System option is valid only on Windows. You must in administrator mode.";
     }
     
     static string get_version() {

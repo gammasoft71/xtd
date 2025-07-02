@@ -15,22 +15,22 @@ namespace xtd::net::tests {
       string host_name;
       assert::does_not_throw([&] {host_name = dns::get_host_name();});
     }
-
+    
     void test_method_(get_host_addresses_from_local_host_addrress_strring) {
       array<ip_address> addresses = dns::get_host_addresses("127.0.0.1");
       collection_assert::are_equal({ip_address(127, 0, 0, 1)}, addresses);
     }
-
+    
     void test_method_(get_host_addresses_from_local_host_name) {
       array<ip_address> addresses = dns::get_host_addresses("localhost");
       collection_assert::contains({ip_address(127, 0, 0, 1)}, addresses);
     }
-
+    
     void test_method_(get_host_addresses_from_host_name) {
       array<ip_address> addresses = dns::get_host_addresses(dns::get_host_name());
       assert::is_greater_or_equal(addresses.size(), 1u);
     }
-
+    
     void test_method_(get_host_entry_from_local_host_address_string) {
       ip_host_entry host_entry = dns::get_host_entry("127.0.0.1");
       #if !_WIN32
@@ -39,7 +39,7 @@ namespace xtd::net::tests {
       #endif
       collection_assert::are_equal({ip_address(127, 0, 0, 1)}, host_entry.address_list());
     }
-
+    
     void test_method_(get_host_entry_from_local_host_name) {
       ip_host_entry host_entry = dns::get_host_entry("localhost");
       #if !_WIN32
@@ -48,13 +48,13 @@ namespace xtd::net::tests {
       #endif
       collection_assert::contains({ip_address(127, 0, 0, 1)}, host_entry.address_list());
     }
-
+    
     void test_method_(get_host_entry_from_host_name) {
       ip_host_entry host_entry = dns::get_host_entry(dns::get_host_name());
       string_assert::starts_with(dns::get_host_name().to_lower(), host_entry.host_name().to_lower());
       assert::is_greater_or_equal(host_entry.address_list().size(), 1u);
     }
-
+    
     void test_method_(get_host_entry_from_host_address) {
       #if !_WIN32 && !__APPLE__
       ip_host_entry host_entry = dns::get_host_entry(dns::get_host_entry(dns::get_host_name()).address_list()[0]);
@@ -62,7 +62,7 @@ namespace xtd::net::tests {
       assert::is_greater_or_equal(host_entry.address_list().size(), 1u);
       #endif
     }
-
+    
     void test_method_(get_host_entry_from_host_address_string) {
       #if !_WIN32 && !__APPLE__
       ip_host_entry host_entry = dns::get_host_entry(dns::get_host_entry(dns::get_host_name()).address_list()[0].to_string());

@@ -16,7 +16,7 @@ stream::streambuf::streambuf(stream& owner) : owner_{owner} {
 
 stream::streambuf::int_type stream::streambuf::underflow() {
   auto int_read = owner_.read_byte();
-  if(int_read == stream::eof) return stream::eof;
+  if (int_read == stream::eof) return stream::eof;
   value_ = as<byte>(int_read);
   setg(value_ptr_, value_ptr_, value_ptr_ + 1);
   return int_read;
@@ -61,7 +61,7 @@ void stream::copy_to(std::ostream& destination, xtd::size buffer_size) {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
   if (buffer_size == 0_z) throw_helper::throws(exception_case::argument_out_of_range);
-
+  
   auto copy_count = math::min(buffer_size, length() - position());
   if (copy_count == 0) return;
   for (auto index = 0_z; index < copy_count; ++index) {
@@ -79,7 +79,7 @@ size stream::read(span<byte>& buffer) {
     if (value == eof) return index;
     buffer[index] = as<byte>(value);
   }
-    
+  
   return buffer.length();
 }
 
@@ -112,10 +112,10 @@ void stream::read_exactly(array<byte>& buffer) {
 void stream::read_exactly(array<byte>& buffer, size offset, size count) {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
-
+  
   if (count == 0_z) return;
   if (offset >= buffer.size() || offset + count > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
-
+  
   auto total_read_count = 0_z;
   
   while (total_read_count < count) {

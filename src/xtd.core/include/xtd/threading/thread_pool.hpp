@@ -51,9 +51,9 @@ namespace xtd {
     /// @warning You can use the xtd::threading::thread_pool::set_min_threads method to increase the minimum number of threads. However, unnecessarily increasing these values can cause performance problems. If too many tasks start at the same time, all of them might appear to be slow. In most cases the thread pool will perform better with its own algorithm for allocating threads.
     class core_export_ thread_pool static_ {
       friend class registered_wait_handle;
-
+      
       struct static_data;
-
+      
       template<class callback_t>
       class thread_item : public object {
         struct sdata {
@@ -89,10 +89,10 @@ namespace xtd {
         bool unregistered() const noexcept {return data->unregistered;}
         void unregistered(bool value) noexcept {data->unregistered = value;}
         wait_handle* wait_object() noexcept {return data->wait_object;}
-
+        
         void run() {data->callback(data->state);}
         void run(bool timeout) {data->callback(data->state, timeout);}
-
+        
       private:
         ptr<sdata> data = xtd::new_ptr<sdata>();
       };
@@ -101,10 +101,10 @@ namespace xtd {
       using thread_pool_asynchronous_io_item = thread_item<wait_or_timer_callback>;
       using thread_pool_item_collection = xtd::collections::generic::list<thread_pool_item>;
       using thread_pool_asynchronous_io_item_collection = xtd::collections::generic::list<thread_pool_asynchronous_io_item>;
-
+      
     public:
       /// @name Public Static Methods
-
+      
       /// @{
       /// @brief Close all resources and worker threads.
       /// @remarks The close method waits for the end of running worker threads, but will not wait for unstarted worker threads.
@@ -112,13 +112,13 @@ namespace xtd {
       /// @remarks #startup_calls xtd::thread_pool::close method.
       /// @remarks xtd::threading::thread::join_all, xtd::threading::thread::join_all(int32), xtd::threading::thread::join_all(const xtd::time_span&) methods call xtd::threading::thread_pool::close method too.
       static void close();
-
+      
       /// @brief Retrieves the difference between the maximum number of thread pool threads returned by the GetMaxThreads method, and the number currently active.
       /// @param worker_threads The number of available worker threads
       /// @param completion_port_threads The number of available asynchronous I/O threads.
       /// @remarks When xtd::threading::thread_pool::get_available_threads returns, the variable specified by worker_threads contains the number of additional worker threads that can be started, and the variable specified by completion_port_threads contains the number of additional asynchronous I/O threads that can be started.
       static void get_available_threads(size_t& worker_threads, size_t& completion_port_threads);
-
+      
       /// @brief Retrieves the number of requests to the thread pool that can be active concurrently. All requests above that number remain queued until thread pool threads become available.
       /// @param worker_threads The maximum number of worker threads in the thread pool.
       /// @param completion_port_threads The maximum number of asynchronous I/O threads in the thread pool.
@@ -131,7 +131,7 @@ namespace xtd {
       /// @param worker_threads The maximum number of worker threads in the thread pool.
       /// @param completion_port_threads The maximum number of asynchronous I/O threads in the thread pool.
       static void get_min_threads(size_t& worker_threads, size_t& completion_port_threads);
-
+      
       /// @brief Join all resources and worker threads.
       /// @remarks The join_all method waits for the end of running worker threads, but will not wait for unstarted worker threads.
       /// @remarks You can use this method to ensure that all pending threads are closed, and that resources are also closed.
@@ -150,7 +150,7 @@ namespace xtd {
       /// @remarks If one or more threads are not joinable, they will be skipped.
       /// @remarks You can use this method to ensure that all pending threads are closed, and that resources are also closed.
       static bool join_all(const time_span& timeout);
-
+      
       /// @brief Queues a method for execution. The method executes when a thread pool thread becomes available.
       /// @param callback A pointer function that represents the method to be executed.
       /// @return `true` if the method is successfully queued; NotSupportException is thrown if the work item could not be queued
@@ -160,14 +160,14 @@ namespace xtd {
       /// @param state An object containing data to be used by the method.
       /// @return `true` if the method is successfully queued; NotSupportedException is thrown if the work item could not be queued
       static bool queue_user_work_item(const wait_callback& callback, const xtd::any_object& state);
-
+      
       /// @cond
       template<class callback_t>
       static bool queue_user_work_item(callback_t callback) {return queue_user_work_item(wait_callback {callback});}
       template<class callback_t>
       static bool queue_user_work_item(callback_t callback, const xtd::any_object& state) {return queue_user_work_item(wait_callback {callback}, state);}
       /// @endcond
-
+      
       /// @brief Registers a delegate to wait for a xtd::threading::wait_handle, specifying a 32-bit signed integer for the time-out in milliseconds.
       /// @param wait_object The xtd::threading::wait_handle to register. Use a xtd::threading::wait_handle other than Mutex
       /// @param callback A pointer function to call when the wait_object parameter is signaled.
@@ -204,7 +204,7 @@ namespace xtd {
       /// @return registered_wait_handle The xtd::threading::registered_wait_handle that encapsulates the native handle.
       /// @exception xtd::argument_out_of_range_exception The milliseconds_timeout_interval parameter is less than -1.
       static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callback, const xtd::any_object& state, uint32 milliseconds_timeout_interval, bool execute_only_once);
-
+      
       /// @cond
       template<class callback_t>
       static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, const xtd::any_object& state, int32 milliseconds_timeout_interval, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, milliseconds_timeout_interval, execute_only_once);}
@@ -228,7 +228,7 @@ namespace xtd {
       /// @return `true` if the change is successful; otherwise, `false`.
       static bool set_min_threads(size_t worker_threads, size_t completion_port_threads);
       /// @}
-
+      
     private:
       friend class xtd::threading::thread;
       static void asynchronous_io_run();
@@ -239,7 +239,7 @@ namespace xtd {
       static bool join_all_threads(int32 milliseconds_timeout);
       static bool join_all_asynchronous_io_threads(int32 milliseconds_timeout);
       static void run();
-
+      
       static size_t max_threads_;
       static size_t max_asynchronous_io_threads_;
       static size_t min_threads_;

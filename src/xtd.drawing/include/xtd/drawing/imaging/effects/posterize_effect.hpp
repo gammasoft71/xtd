@@ -43,7 +43,7 @@ namespace xtd {
           /// @remarks If the level is equal to or less than 1, the image is black.
           explicit posterize_effect(int32 levels);
           /// @}
-
+          
           /// @name Public Properties
           
           /// @{
@@ -53,7 +53,7 @@ namespace xtd {
           /// @remarks If the level is equal to or less than 1, the image is black.
           int32 levels = 256;
           /// @}
-
+          
         protected:
           /// @name Protected Methods
           

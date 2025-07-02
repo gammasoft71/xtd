@@ -23,7 +23,7 @@ void disabled_effect::apply(xtd::drawing::image& image) const {
   auto brightness = math::clamp(this->brightness, 0.0f, 1.0f);
   auto alpha = reinterpret_cast<helpers::alpha*>(image.alpha());
   auto rgb = reinterpret_cast<helpers::rgb*>(image.rgb());
-
+  
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;

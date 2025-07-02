@@ -69,7 +69,7 @@ namespace xtd {
           
           return wx_style;
         }
-
+        
         bool auto_size = false;
         bool owner_draw_ = false;
       };

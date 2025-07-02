@@ -87,7 +87,7 @@ namespace xtd {
   void print(FILE* file, const wchar_t* fmt, args_t&& ... values) {
     __xtd_print_with_file_write__(false, file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
-
+  
   /// @brief Writes the text representation of the specified value to the output stream.
   /// @tparam arg_t The type of the value to write.
   /// @param os The output stream to insert data into.

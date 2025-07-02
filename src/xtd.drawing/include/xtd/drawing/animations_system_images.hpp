@@ -27,12 +27,12 @@ namespace xtd {
     class drawing_export_ animations_system_images final : private system_images_base {
     public:
       /// @name Public Static Properties
-
+      
       /// @{
       /// @brief Gets system image from specified name.
       /// @return The default size in pixels (32 x 32).
       static xtd::drawing::size default_size() noexcept;
-
+      
       /// @brief Gets the animations system image "process-working".
       /// @return The xtd::drawing::image "process-working".
       static xtd::drawing::image process_working() noexcept;
@@ -40,11 +40,11 @@ namespace xtd {
       /// @param size The animations system image size in pixels.
       /// @return The xtd::drawing::image "process-working".
       static xtd::drawing::image process_working(const xtd::drawing::size& size) noexcept;
-
+      
       /// @}
-
+      
       /// @name Public Static Methods
-
+      
       /// @{
       /// @brief Gets an array of images.
       /// @return The array of images.
@@ -53,7 +53,7 @@ namespace xtd {
       /// @param size The images size in pixels.
       /// @return The array of images.
       static xtd::array<xtd::drawing::image> get_images(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an array of image names.
       /// @return The array of image names.
       static const xtd::array<xtd::string>& get_image_names() noexcept;

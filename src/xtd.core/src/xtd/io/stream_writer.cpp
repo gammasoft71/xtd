@@ -49,7 +49,7 @@ void stream_writer::auto_flush(bool auto_flush) {
 }
 
 std::optional<ref<std::ostream>> stream_writer::base_stream() const {
-  return stream_ ? std::optional<ref<std::ostream>>(*stream_) : std::optional<ref<std::ostream>>();
+  return stream_ ? std::optional<ref<std::ostream>>(*stream_) : std::optional<ref<std::ostream >> ();
 }
 
 void stream_writer::close() {

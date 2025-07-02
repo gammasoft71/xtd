@@ -394,7 +394,7 @@ namespace xtd {
         /// | 2     | inherit |
         /// @warning Internal use only
         static void right_to_left(intptr control, int32 value);
-
+        
         /// @brief Send a message with specified hwnd, message, wparam and lparam.
         /// @param control Control window handle.
         /// @param hwnd The window handle of the message.

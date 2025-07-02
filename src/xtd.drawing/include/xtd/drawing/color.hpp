@@ -619,7 +619,7 @@ namespace xtd {
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
       bool equals(const color& other) const noexcept override;
-
+      
       /// @brief Gets the hue-saturation-brightness (HSB) brightness value for this xtd::drawing::color structure.
       /// @return The brightness of this xtd::drawing::color. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
       /// @par Examples
@@ -674,7 +674,7 @@ namespace xtd {
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
-
+      
       /// @brief Gets the hue-saturation-brightness (HSB) hue value, in degrees, for this xtd::drawing::color structure.
       /// @return The hue, in degrees, of this xtd::drawing::color. The hue is measured in degrees, ranging from 0.0 through 360.0, in HSL color space.
       /// @par Examples
@@ -1255,7 +1255,7 @@ namespace xtd {
       /// @param v The Y'UV `V` value of this xtd::drawing::color. The y ranges from -0.5 through0.5. When `U` and `V` are both 0, the color is neutral (gray). Positive `U` values represent the red-green axis, and positive `V` values represent the blue-yellow axis
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       static xtd::drawing::color from_yuv(float y, float u, float v) noexcept;
-
+      
       /// @brief Creates a new lighter color of the specified color with 33% factor.
       /// @param color The color to light.
       /// @return The new color.
@@ -1290,7 +1290,7 @@ namespace xtd {
       xtd::string name_;
     };
   }
-
+  
   /// @brief Creates a xtd::drawing::color class from the specified name.
   /// @param name A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration or hexadecimal value that represents argb value, or four decimal values separated by a comma representing respectively a, r, g, b, values.
   /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.

@@ -87,10 +87,10 @@ namespace xtd::tests {
     void test_method_(parse_styles_none_with_trailing_minus_sign) {
       if (std::is_signed<value_t>::value)
         assert::throws<format_exception>([] {xtd::parse<value_t>("42-", number_styles::none);});
-#if !defined(__linux__)
+      #if !defined(__linux__)
       else
         assert::throws<format_exception>([] {xtd::parse<value_t>("42-", number_styles::number);});
-#endif
+      #endif
     }
     
     void test_method_(parse_styles_none_with_two_trailing_minus_sign) {

@@ -9,7 +9,7 @@
 #include <pthread.h>
 #include <unistd.h>
 
-inline static const pthread_mutex_t* MUTEX_FAILED = reinterpret_cast<pthread_mutex_t *>(-1);
+inline static const pthread_mutex_t* MUTEX_FAILED = reinterpret_cast<pthread_mutex_t*>(-1);
 
 static inline int pthread_mutex_milliseconds_timedlock(pthread_mutex_t* mut, int32_t milliseconds_timeout) {
   struct timespec timeout;

@@ -27,12 +27,12 @@ namespace xtd {
     class drawing_export_ international_system_images final : private system_images_base {
     public:
       /// @name Public Static Properties
-
+      
       /// @{
       /// @brief Gets system image from specified name.
       /// @return The default size in pixels (32 x 32).
       static xtd::drawing::size default_size() noexcept;
-
+      
       /// @brief Gets the international system image "flag-af".
       /// @return The xtd::drawing::image "flag-af".
       static xtd::drawing::image flag_af() noexcept;
@@ -40,7 +40,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-af".
       static xtd::drawing::image flag_af(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ax".
       /// @return The xtd::drawing::image "flag-ax".
       static xtd::drawing::image flag_ax() noexcept;
@@ -48,7 +48,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ax".
       static xtd::drawing::image flag_ax(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-al".
       /// @return The xtd::drawing::image "flag-al".
       static xtd::drawing::image flag_al() noexcept;
@@ -56,7 +56,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-al".
       static xtd::drawing::image flag_al(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-dz".
       /// @return The xtd::drawing::image "flag-dz".
       static xtd::drawing::image flag_dz() noexcept;
@@ -64,7 +64,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-dz".
       static xtd::drawing::image flag_dz(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-as".
       /// @return The xtd::drawing::image "flag-as".
       static xtd::drawing::image flag_as() noexcept;
@@ -72,7 +72,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-as".
       static xtd::drawing::image flag_as(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ad".
       /// @return The xtd::drawing::image "flag-ad".
       static xtd::drawing::image flag_ad() noexcept;
@@ -80,7 +80,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ad".
       static xtd::drawing::image flag_ad(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ao".
       /// @return The xtd::drawing::image "flag-ao".
       static xtd::drawing::image flag_ao() noexcept;
@@ -88,7 +88,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ao".
       static xtd::drawing::image flag_ao(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ai".
       /// @return The xtd::drawing::image "flag-ai".
       static xtd::drawing::image flag_ai() noexcept;
@@ -96,7 +96,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ai".
       static xtd::drawing::image flag_ai(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-aq".
       /// @return The xtd::drawing::image "flag-aq".
       static xtd::drawing::image flag_aq() noexcept;
@@ -104,7 +104,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-aq".
       static xtd::drawing::image flag_aq(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ag".
       /// @return The xtd::drawing::image "flag-ag".
       static xtd::drawing::image flag_ag() noexcept;
@@ -112,7 +112,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ag".
       static xtd::drawing::image flag_ag(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ar".
       /// @return The xtd::drawing::image "flag-ar".
       static xtd::drawing::image flag_ar() noexcept;
@@ -120,7 +120,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ar".
       static xtd::drawing::image flag_ar(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-am".
       /// @return The xtd::drawing::image "flag-am".
       static xtd::drawing::image flag_am() noexcept;
@@ -128,7 +128,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-am".
       static xtd::drawing::image flag_am(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-aw".
       /// @return The xtd::drawing::image "flag-aw".
       static xtd::drawing::image flag_aw() noexcept;
@@ -136,7 +136,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-aw".
       static xtd::drawing::image flag_aw(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-au".
       /// @return The xtd::drawing::image "flag-au".
       static xtd::drawing::image flag_au() noexcept;
@@ -144,7 +144,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-au".
       static xtd::drawing::image flag_au(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-at".
       /// @return The xtd::drawing::image "flag-at".
       static xtd::drawing::image flag_at() noexcept;
@@ -152,7 +152,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-at".
       static xtd::drawing::image flag_at(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-az".
       /// @return The xtd::drawing::image "flag-az".
       static xtd::drawing::image flag_az() noexcept;
@@ -160,7 +160,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-az".
       static xtd::drawing::image flag_az(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-bs".
       /// @return The xtd::drawing::image "flag-bs".
       static xtd::drawing::image flag_bs() noexcept;
@@ -168,7 +168,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-bs".
       static xtd::drawing::image flag_bs(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-bh".
       /// @return The xtd::drawing::image "flag-bh".
       static xtd::drawing::image flag_bh() noexcept;
@@ -176,7 +176,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-bh".
       static xtd::drawing::image flag_bh(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-bd".
       /// @return The xtd::drawing::image "flag-bd".
       static xtd::drawing::image flag_bd() noexcept;
@@ -184,7 +184,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-bd".
       static xtd::drawing::image flag_bd(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-bb".
       /// @return The xtd::drawing::image "flag-bb".
       static xtd::drawing::image flag_bb() noexcept;
@@ -192,7 +192,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-bb".
       static xtd::drawing::image flag_bb(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-by".
       /// @return The xtd::drawing::image "flag-by".
       static xtd::drawing::image flag_by() noexcept;
@@ -200,7 +200,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-by".
       static xtd::drawing::image flag_by(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-be".
       /// @return The xtd::drawing::image "flag-be".
       static xtd::drawing::image flag_be() noexcept;
@@ -208,7 +208,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-be".
       static xtd::drawing::image flag_be(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-bz".
       /// @return The xtd::drawing::image "flag-bz".
       static xtd::drawing::image flag_bz() noexcept;
@@ -216,7 +216,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-bz".
       static xtd::drawing::image flag_bz(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-bj".
       /// @return The xtd::drawing::image "flag-bj".
       static xtd::drawing::image flag_bj() noexcept;
@@ -224,7 +224,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-bj".
       static xtd::drawing::image flag_bj(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-bm".
       /// @return The xtd::drawing::image "flag-bm".
       static xtd::drawing::image flag_bm() noexcept;
@@ -232,7 +232,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-bm".
       static xtd::drawing::image flag_bm(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-bt".
       /// @return The xtd::drawing::image "flag-bt".
       static xtd::drawing::image flag_bt() noexcept;
@@ -240,7 +240,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-bt".
       static xtd::drawing::image flag_bt(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-bo".
       /// @return The xtd::drawing::image "flag-bo".
       static xtd::drawing::image flag_bo() noexcept;
@@ -248,7 +248,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-bo".
       static xtd::drawing::image flag_bo(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-bq".
       /// @return The xtd::drawing::image "flag-bq".
       static xtd::drawing::image flag_bq() noexcept;
@@ -256,7 +256,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-bq".
       static xtd::drawing::image flag_bq(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ba".
       /// @return The xtd::drawing::image "flag-ba".
       static xtd::drawing::image flag_ba() noexcept;
@@ -264,7 +264,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ba".
       static xtd::drawing::image flag_ba(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-bw".
       /// @return The xtd::drawing::image "flag-bw".
       static xtd::drawing::image flag_bw() noexcept;
@@ -272,7 +272,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-bw".
       static xtd::drawing::image flag_bw(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-bv".
       /// @return The xtd::drawing::image "flag-bv".
       static xtd::drawing::image flag_bv() noexcept;
@@ -280,7 +280,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-bv".
       static xtd::drawing::image flag_bv(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-br".
       /// @return The xtd::drawing::image "flag-br".
       static xtd::drawing::image flag_br() noexcept;
@@ -288,7 +288,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-br".
       static xtd::drawing::image flag_br(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-io".
       /// @return The xtd::drawing::image "flag-io".
       static xtd::drawing::image flag_io() noexcept;
@@ -296,7 +296,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-io".
       static xtd::drawing::image flag_io(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-bn".
       /// @return The xtd::drawing::image "flag-bn".
       static xtd::drawing::image flag_bn() noexcept;
@@ -304,7 +304,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-bn".
       static xtd::drawing::image flag_bn(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-bg".
       /// @return The xtd::drawing::image "flag-bg".
       static xtd::drawing::image flag_bg() noexcept;
@@ -312,7 +312,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-bg".
       static xtd::drawing::image flag_bg(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-bf".
       /// @return The xtd::drawing::image "flag-bf".
       static xtd::drawing::image flag_bf() noexcept;
@@ -320,7 +320,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-bf".
       static xtd::drawing::image flag_bf(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-bi".
       /// @return The xtd::drawing::image "flag-bi".
       static xtd::drawing::image flag_bi() noexcept;
@@ -328,7 +328,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-bi".
       static xtd::drawing::image flag_bi(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-cv".
       /// @return The xtd::drawing::image "flag-cv".
       static xtd::drawing::image flag_cv() noexcept;
@@ -336,7 +336,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-cv".
       static xtd::drawing::image flag_cv(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-kh".
       /// @return The xtd::drawing::image "flag-kh".
       static xtd::drawing::image flag_kh() noexcept;
@@ -344,7 +344,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-kh".
       static xtd::drawing::image flag_kh(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-cm".
       /// @return The xtd::drawing::image "flag-cm".
       static xtd::drawing::image flag_cm() noexcept;
@@ -352,7 +352,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-cm".
       static xtd::drawing::image flag_cm(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ca".
       /// @return The xtd::drawing::image "flag-ca".
       static xtd::drawing::image flag_ca() noexcept;
@@ -360,7 +360,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ca".
       static xtd::drawing::image flag_ca(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ky".
       /// @return The xtd::drawing::image "flag-ky".
       static xtd::drawing::image flag_ky() noexcept;
@@ -368,7 +368,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ky".
       static xtd::drawing::image flag_ky(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-cf".
       /// @return The xtd::drawing::image "flag-cf".
       static xtd::drawing::image flag_cf() noexcept;
@@ -376,7 +376,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-cf".
       static xtd::drawing::image flag_cf(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-td".
       /// @return The xtd::drawing::image "flag-td".
       static xtd::drawing::image flag_td() noexcept;
@@ -384,7 +384,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-td".
       static xtd::drawing::image flag_td(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-cl".
       /// @return The xtd::drawing::image "flag-cl".
       static xtd::drawing::image flag_cl() noexcept;
@@ -392,7 +392,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-cl".
       static xtd::drawing::image flag_cl(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-cn".
       /// @return The xtd::drawing::image "flag-cn".
       static xtd::drawing::image flag_cn() noexcept;
@@ -400,7 +400,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-cn".
       static xtd::drawing::image flag_cn(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-cx".
       /// @return The xtd::drawing::image "flag-cx".
       static xtd::drawing::image flag_cx() noexcept;
@@ -408,7 +408,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-cx".
       static xtd::drawing::image flag_cx(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-cc".
       /// @return The xtd::drawing::image "flag-cc".
       static xtd::drawing::image flag_cc() noexcept;
@@ -416,7 +416,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-cc".
       static xtd::drawing::image flag_cc(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-co".
       /// @return The xtd::drawing::image "flag-co".
       static xtd::drawing::image flag_co() noexcept;
@@ -424,7 +424,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-co".
       static xtd::drawing::image flag_co(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-km".
       /// @return The xtd::drawing::image "flag-km".
       static xtd::drawing::image flag_km() noexcept;
@@ -432,7 +432,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-km".
       static xtd::drawing::image flag_km(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-cg".
       /// @return The xtd::drawing::image "flag-cg".
       static xtd::drawing::image flag_cg() noexcept;
@@ -440,7 +440,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-cg".
       static xtd::drawing::image flag_cg(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-cd".
       /// @return The xtd::drawing::image "flag-cd".
       static xtd::drawing::image flag_cd() noexcept;
@@ -448,7 +448,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-cd".
       static xtd::drawing::image flag_cd(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ck".
       /// @return The xtd::drawing::image "flag-ck".
       static xtd::drawing::image flag_ck() noexcept;
@@ -456,7 +456,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ck".
       static xtd::drawing::image flag_ck(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-cr".
       /// @return The xtd::drawing::image "flag-cr".
       static xtd::drawing::image flag_cr() noexcept;
@@ -464,7 +464,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-cr".
       static xtd::drawing::image flag_cr(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ci".
       /// @return The xtd::drawing::image "flag-ci".
       static xtd::drawing::image flag_ci() noexcept;
@@ -472,7 +472,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ci".
       static xtd::drawing::image flag_ci(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-hr".
       /// @return The xtd::drawing::image "flag-hr".
       static xtd::drawing::image flag_hr() noexcept;
@@ -480,7 +480,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-hr".
       static xtd::drawing::image flag_hr(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-cu".
       /// @return The xtd::drawing::image "flag-cu".
       static xtd::drawing::image flag_cu() noexcept;
@@ -488,7 +488,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-cu".
       static xtd::drawing::image flag_cu(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-cw".
       /// @return The xtd::drawing::image "flag-cw".
       static xtd::drawing::image flag_cw() noexcept;
@@ -496,7 +496,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-cw".
       static xtd::drawing::image flag_cw(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-cy".
       /// @return The xtd::drawing::image "flag-cy".
       static xtd::drawing::image flag_cy() noexcept;
@@ -504,7 +504,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-cy".
       static xtd::drawing::image flag_cy(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-cz".
       /// @return The xtd::drawing::image "flag-cz".
       static xtd::drawing::image flag_cz() noexcept;
@@ -512,7 +512,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-cz".
       static xtd::drawing::image flag_cz(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-dk".
       /// @return The xtd::drawing::image "flag-dk".
       static xtd::drawing::image flag_dk() noexcept;
@@ -520,7 +520,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-dk".
       static xtd::drawing::image flag_dk(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-dj".
       /// @return The xtd::drawing::image "flag-dj".
       static xtd::drawing::image flag_dj() noexcept;
@@ -528,7 +528,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-dj".
       static xtd::drawing::image flag_dj(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-dm".
       /// @return The xtd::drawing::image "flag-dm".
       static xtd::drawing::image flag_dm() noexcept;
@@ -536,7 +536,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-dm".
       static xtd::drawing::image flag_dm(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-do".
       /// @return The xtd::drawing::image "flag-do".
       static xtd::drawing::image flag_do() noexcept;
@@ -544,7 +544,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-do".
       static xtd::drawing::image flag_do(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ec".
       /// @return The xtd::drawing::image "flag-ec".
       static xtd::drawing::image flag_ec() noexcept;
@@ -552,7 +552,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ec".
       static xtd::drawing::image flag_ec(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-eg".
       /// @return The xtd::drawing::image "flag-eg".
       static xtd::drawing::image flag_eg() noexcept;
@@ -560,7 +560,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-eg".
       static xtd::drawing::image flag_eg(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-sv".
       /// @return The xtd::drawing::image "flag-sv".
       static xtd::drawing::image flag_sv() noexcept;
@@ -568,7 +568,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-sv".
       static xtd::drawing::image flag_sv(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-gq".
       /// @return The xtd::drawing::image "flag-gq".
       static xtd::drawing::image flag_gq() noexcept;
@@ -576,7 +576,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-gq".
       static xtd::drawing::image flag_gq(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-er".
       /// @return The xtd::drawing::image "flag-er".
       static xtd::drawing::image flag_er() noexcept;
@@ -584,7 +584,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-er".
       static xtd::drawing::image flag_er(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ee".
       /// @return The xtd::drawing::image "flag-ee".
       static xtd::drawing::image flag_ee() noexcept;
@@ -592,7 +592,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ee".
       static xtd::drawing::image flag_ee(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-sz".
       /// @return The xtd::drawing::image "flag-sz".
       static xtd::drawing::image flag_z() noexcept;
@@ -600,7 +600,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-sz".
       static xtd::drawing::image flag_z(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-et".
       /// @return The xtd::drawing::image "flag-et".
       static xtd::drawing::image flag_et() noexcept;
@@ -608,7 +608,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-et".
       static xtd::drawing::image flag_et(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-fk".
       /// @return The xtd::drawing::image "flag-fk".
       static xtd::drawing::image flag_fk() noexcept;
@@ -616,7 +616,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-fk".
       static xtd::drawing::image flag_fk(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-fo".
       /// @return The xtd::drawing::image "flag-fo".
       static xtd::drawing::image flag_fo() noexcept;
@@ -624,7 +624,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-fo".
       static xtd::drawing::image flag_fo(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-fj".
       /// @return The xtd::drawing::image "flag-fj".
       static xtd::drawing::image flag_fj() noexcept;
@@ -632,7 +632,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-fj".
       static xtd::drawing::image flag_fj(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-fi".
       /// @return The xtd::drawing::image "flag-fi".
       static xtd::drawing::image flag_fi() noexcept;
@@ -640,7 +640,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-fi".
       static xtd::drawing::image flag_fi(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-fr".
       /// @return The xtd::drawing::image "flag-fr".
       static xtd::drawing::image flag_fr() noexcept;
@@ -648,7 +648,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-fr".
       static xtd::drawing::image flag_fr(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-gf".
       /// @return The xtd::drawing::image "flag-gf".
       static xtd::drawing::image flag_gf() noexcept;
@@ -656,7 +656,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-gf".
       static xtd::drawing::image flag_gf(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-pf".
       /// @return The xtd::drawing::image "flag-pf".
       static xtd::drawing::image flag_pf() noexcept;
@@ -664,7 +664,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-pf".
       static xtd::drawing::image flag_pf(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-tf".
       /// @return The xtd::drawing::image "flag-tf".
       static xtd::drawing::image flag_tf() noexcept;
@@ -672,7 +672,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-tf".
       static xtd::drawing::image flag_tf(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ga".
       /// @return The xtd::drawing::image "flag-ga".
       static xtd::drawing::image flag_ga() noexcept;
@@ -680,7 +680,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ga".
       static xtd::drawing::image flag_ga(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-gm".
       /// @return The xtd::drawing::image "flag-gm".
       static xtd::drawing::image flag_gm() noexcept;
@@ -688,7 +688,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-gm".
       static xtd::drawing::image flag_gm(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ge".
       /// @return The xtd::drawing::image "flag-ge".
       static xtd::drawing::image flag_ge() noexcept;
@@ -696,7 +696,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ge".
       static xtd::drawing::image flag_ge(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-de".
       /// @return The xtd::drawing::image "flag-de".
       static xtd::drawing::image flag_de() noexcept;
@@ -704,7 +704,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-de".
       static xtd::drawing::image flag_de(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-gh".
       /// @return The xtd::drawing::image "flag-gh".
       static xtd::drawing::image flag_gh() noexcept;
@@ -712,7 +712,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-gh".
       static xtd::drawing::image flag_gh(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-gi".
       /// @return The xtd::drawing::image "flag-gi".
       static xtd::drawing::image flag_gi() noexcept;
@@ -720,7 +720,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-gi".
       static xtd::drawing::image flag_gi(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-gr".
       /// @return The xtd::drawing::image "flag-gr".
       static xtd::drawing::image flag_gr() noexcept;
@@ -728,7 +728,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-gr".
       static xtd::drawing::image flag_gr(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-gl".
       /// @return The xtd::drawing::image "flag-gl".
       static xtd::drawing::image flag_gl() noexcept;
@@ -736,7 +736,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-gl".
       static xtd::drawing::image flag_gl(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-gd".
       /// @return The xtd::drawing::image "flag-gd".
       static xtd::drawing::image flag_gd() noexcept;
@@ -744,7 +744,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-gd".
       static xtd::drawing::image flag_gd(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-gp".
       /// @return The xtd::drawing::image "flag-gp".
       static xtd::drawing::image flag_gp() noexcept;
@@ -752,7 +752,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-gp".
       static xtd::drawing::image flag_gp(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-gu".
       /// @return The xtd::drawing::image "flag-gu".
       static xtd::drawing::image flag_gu() noexcept;
@@ -760,7 +760,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-gu".
       static xtd::drawing::image flag_gu(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-gt".
       /// @return The xtd::drawing::image "flag-gt".
       static xtd::drawing::image flag_gt() noexcept;
@@ -768,7 +768,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-gt".
       static xtd::drawing::image flag_gt(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-gg".
       /// @return The xtd::drawing::image "flag-gg".
       static xtd::drawing::image flag_gg() noexcept;
@@ -776,7 +776,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-gg".
       static xtd::drawing::image flag_gg(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-gn".
       /// @return The xtd::drawing::image "flag-gn".
       static xtd::drawing::image flag_gn() noexcept;
@@ -784,7 +784,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-gn".
       static xtd::drawing::image flag_gn(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-gw".
       /// @return The xtd::drawing::image "flag-gw".
       static xtd::drawing::image flag_gw() noexcept;
@@ -792,7 +792,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-gw".
       static xtd::drawing::image flag_gw(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-gy".
       /// @return The xtd::drawing::image "flag-gy".
       static xtd::drawing::image flag_gy() noexcept;
@@ -800,7 +800,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-gy".
       static xtd::drawing::image flag_gy(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ht".
       /// @return The xtd::drawing::image "flag-ht".
       static xtd::drawing::image flag_ht() noexcept;
@@ -808,7 +808,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ht".
       static xtd::drawing::image flag_ht(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-hm".
       /// @return The xtd::drawing::image "flag-hm".
       static xtd::drawing::image flag_hm() noexcept;
@@ -816,7 +816,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-hm".
       static xtd::drawing::image flag_hm(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-va".
       /// @return The xtd::drawing::image "flag-va".
       static xtd::drawing::image flag_va() noexcept;
@@ -824,7 +824,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-va".
       static xtd::drawing::image flag_va(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-hn".
       /// @return The xtd::drawing::image "flag-hn".
       static xtd::drawing::image flag_hn() noexcept;
@@ -832,7 +832,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-hn".
       static xtd::drawing::image flag_hn(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-hk".
       /// @return The xtd::drawing::image "flag-hk".
       static xtd::drawing::image flag_hk() noexcept;
@@ -840,7 +840,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-hk".
       static xtd::drawing::image flag_hk(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-hu".
       /// @return The xtd::drawing::image "flag-hu".
       static xtd::drawing::image flag_hu() noexcept;
@@ -848,7 +848,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-hu".
       static xtd::drawing::image flag_hu(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-is".
       /// @return The xtd::drawing::image "flag-is".
       static xtd::drawing::image flag_is() noexcept;
@@ -856,7 +856,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-is".
       static xtd::drawing::image flag_is(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-in".
       /// @return The xtd::drawing::image "flag-in".
       static xtd::drawing::image flag_in() noexcept;
@@ -864,7 +864,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-in".
       static xtd::drawing::image flag_in(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-id".
       /// @return The xtd::drawing::image "flag-id".
       static xtd::drawing::image flag_id() noexcept;
@@ -872,7 +872,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-id".
       static xtd::drawing::image flag_id(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ir".
       /// @return The xtd::drawing::image "flag-ir".
       static xtd::drawing::image flag_ir() noexcept;
@@ -880,7 +880,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ir".
       static xtd::drawing::image flag_ir(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-iq".
       /// @return The xtd::drawing::image "flag-iq".
       static xtd::drawing::image flag_iq() noexcept;
@@ -888,7 +888,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-iq".
       static xtd::drawing::image flag_iq(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ie".
       /// @return The xtd::drawing::image "flag-ie".
       static xtd::drawing::image flag_ie() noexcept;
@@ -896,7 +896,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ie".
       static xtd::drawing::image flag_ie(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-im".
       /// @return The xtd::drawing::image "flag-im".
       static xtd::drawing::image flag_im() noexcept;
@@ -904,7 +904,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-im".
       static xtd::drawing::image flag_im(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-il".
       /// @return The xtd::drawing::image "flag-il".
       static xtd::drawing::image flag_il() noexcept;
@@ -912,7 +912,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-il".
       static xtd::drawing::image flag_il(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-it".
       /// @return The xtd::drawing::image "flag-it".
       static xtd::drawing::image flag_it() noexcept;
@@ -920,7 +920,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-it".
       static xtd::drawing::image flag_it(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-jm".
       /// @return The xtd::drawing::image "flag-jm".
       static xtd::drawing::image flag_jm() noexcept;
@@ -928,7 +928,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-jm".
       static xtd::drawing::image flag_jm(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-jp".
       /// @return The xtd::drawing::image "flag-jp".
       static xtd::drawing::image flag_jp() noexcept;
@@ -936,7 +936,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-jp".
       static xtd::drawing::image flag_jp(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-je".
       /// @return The xtd::drawing::image "flag-je".
       static xtd::drawing::image flag_je() noexcept;
@@ -944,7 +944,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-je".
       static xtd::drawing::image flag_je(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-jo".
       /// @return The xtd::drawing::image "flag-jo".
       static xtd::drawing::image flag_jo() noexcept;
@@ -952,7 +952,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-jo".
       static xtd::drawing::image flag_jo(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-kz".
       /// @return The xtd::drawing::image "flag-kz".
       static xtd::drawing::image flag_kz() noexcept;
@@ -960,7 +960,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-kz".
       static xtd::drawing::image flag_kz(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ke".
       /// @return The xtd::drawing::image "flag-ke".
       static xtd::drawing::image flag_ke() noexcept;
@@ -968,7 +968,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ke".
       static xtd::drawing::image flag_ke(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ki".
       /// @return The xtd::drawing::image "flag-ki".
       static xtd::drawing::image flag_ki() noexcept;
@@ -976,7 +976,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ki".
       static xtd::drawing::image flag_ki(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-kp".
       /// @return The xtd::drawing::image "flag-kp".
       static xtd::drawing::image flag_kp() noexcept;
@@ -984,7 +984,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-kp".
       static xtd::drawing::image flag_kp(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-kr".
       /// @return The xtd::drawing::image "flag-kr".
       static xtd::drawing::image flag_kr() noexcept;
@@ -992,7 +992,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-kr".
       static xtd::drawing::image flag_kr(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-kw".
       /// @return The xtd::drawing::image "flag-kw".
       static xtd::drawing::image flag_kw() noexcept;
@@ -1000,7 +1000,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-kw".
       static xtd::drawing::image flag_kw(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-kg".
       /// @return The xtd::drawing::image "flag-kg".
       static xtd::drawing::image flag_kg() noexcept;
@@ -1008,7 +1008,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-kg".
       static xtd::drawing::image flag_kg(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-la".
       /// @return The xtd::drawing::image "flag-la".
       static xtd::drawing::image flag_la() noexcept;
@@ -1016,7 +1016,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-la".
       static xtd::drawing::image flag_la(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-lv".
       /// @return The xtd::drawing::image "flag-lv".
       static xtd::drawing::image flag_lv() noexcept;
@@ -1024,7 +1024,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-lv".
       static xtd::drawing::image flag_lv(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-lb".
       /// @return The xtd::drawing::image "flag-lb".
       static xtd::drawing::image flag_lb() noexcept;
@@ -1032,7 +1032,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-lb".
       static xtd::drawing::image flag_lb(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ls".
       /// @return The xtd::drawing::image "flag-ls".
       static xtd::drawing::image flag_ls() noexcept;
@@ -1040,7 +1040,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ls".
       static xtd::drawing::image flag_ls(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-lr".
       /// @return The xtd::drawing::image "flag-lr".
       static xtd::drawing::image flag_lr() noexcept;
@@ -1048,7 +1048,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-lr".
       static xtd::drawing::image flag_lr(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ly".
       /// @return The xtd::drawing::image "flag-ly".
       static xtd::drawing::image flag_ly() noexcept;
@@ -1056,7 +1056,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ly".
       static xtd::drawing::image flag_ly(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-li".
       /// @return The xtd::drawing::image "flag-li".
       static xtd::drawing::image flag_li() noexcept;
@@ -1064,7 +1064,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-li".
       static xtd::drawing::image flag_li(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-lt".
       /// @return The xtd::drawing::image "flag-lt".
       static xtd::drawing::image flag_lt() noexcept;
@@ -1072,7 +1072,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-lt".
       static xtd::drawing::image flag_lt(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-lu".
       /// @return The xtd::drawing::image "flag-lu".
       static xtd::drawing::image flag_lu() noexcept;
@@ -1080,7 +1080,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-lu".
       static xtd::drawing::image flag_lu(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-mo".
       /// @return The xtd::drawing::image "flag-mo".
       static xtd::drawing::image flag_mo() noexcept;
@@ -1088,7 +1088,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-mo".
       static xtd::drawing::image flag_mo(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-mg".
       /// @return The xtd::drawing::image "flag-mg".
       static xtd::drawing::image flag_mg() noexcept;
@@ -1096,7 +1096,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-mg".
       static xtd::drawing::image flag_mg(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-mw".
       /// @return The xtd::drawing::image "flag-mw".
       static xtd::drawing::image flag_mw() noexcept;
@@ -1104,7 +1104,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-mw".
       static xtd::drawing::image flag_mw(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-my".
       /// @return The xtd::drawing::image "flag-my".
       static xtd::drawing::image flag_my() noexcept;
@@ -1112,7 +1112,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-my".
       static xtd::drawing::image flag_my(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-mv".
       /// @return The xtd::drawing::image "flag-mv".
       static xtd::drawing::image flag_mv() noexcept;
@@ -1120,7 +1120,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-mv".
       static xtd::drawing::image flag_mv(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ml".
       /// @return The xtd::drawing::image "flag-ml".
       static xtd::drawing::image flag_ml() noexcept;
@@ -1128,7 +1128,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ml".
       static xtd::drawing::image flag_ml(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-mt".
       /// @return The xtd::drawing::image "flag-mt".
       static xtd::drawing::image flag_mt() noexcept;
@@ -1136,7 +1136,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-mt".
       static xtd::drawing::image flag_mt(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-mh".
       /// @return The xtd::drawing::image "flag-mh".
       static xtd::drawing::image flag_mh() noexcept;
@@ -1144,7 +1144,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-mh".
       static xtd::drawing::image flag_mh(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-mq".
       /// @return The xtd::drawing::image "flag-mq".
       static xtd::drawing::image flag_mq() noexcept;
@@ -1152,7 +1152,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-mq".
       static xtd::drawing::image flag_mq(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-mr".
       /// @return The xtd::drawing::image "flag-mr".
       static xtd::drawing::image flag_mr() noexcept;
@@ -1160,7 +1160,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-mr".
       static xtd::drawing::image flag_mr(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-mu".
       /// @return The xtd::drawing::image "flag-mu".
       static xtd::drawing::image flag_mu() noexcept;
@@ -1168,7 +1168,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-mu".
       static xtd::drawing::image flag_mu(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-yt".
       /// @return The xtd::drawing::image "flag-yt".
       static xtd::drawing::image flag_yt() noexcept;
@@ -1176,7 +1176,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-yt".
       static xtd::drawing::image flag_yt(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-mx".
       /// @return The xtd::drawing::image "flag-mx".
       static xtd::drawing::image flag_mx() noexcept;
@@ -1184,7 +1184,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-mx".
       static xtd::drawing::image flag_mx(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-fm".
       /// @return The xtd::drawing::image "flag-fm".
       static xtd::drawing::image flag_fm() noexcept;
@@ -1192,7 +1192,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-fm".
       static xtd::drawing::image flag_fm(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-md".
       /// @return The xtd::drawing::image "flag-md".
       static xtd::drawing::image flag_md() noexcept;
@@ -1200,7 +1200,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-md".
       static xtd::drawing::image flag_md(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-mc".
       /// @return The xtd::drawing::image "flag-mc".
       static xtd::drawing::image flag_mc() noexcept;
@@ -1208,7 +1208,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-mc".
       static xtd::drawing::image flag_mc(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-mn".
       /// @return The xtd::drawing::image "flag-mn".
       static xtd::drawing::image flag_mn() noexcept;
@@ -1216,7 +1216,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-mn".
       static xtd::drawing::image flag_mn(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-me".
       /// @return The xtd::drawing::image "flag-me".
       static xtd::drawing::image flag_me() noexcept;
@@ -1224,7 +1224,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-me".
       static xtd::drawing::image flag_me(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ms".
       /// @return The xtd::drawing::image "flag-ms".
       static xtd::drawing::image flag_ms() noexcept;
@@ -1232,7 +1232,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ms".
       static xtd::drawing::image flag_ms(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ma".
       /// @return The xtd::drawing::image "flag-ma".
       static xtd::drawing::image flag_ma() noexcept;
@@ -1240,7 +1240,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ma".
       static xtd::drawing::image flag_ma(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-mz".
       /// @return The xtd::drawing::image "flag-mz".
       static xtd::drawing::image flag_mz() noexcept;
@@ -1248,7 +1248,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-mz".
       static xtd::drawing::image flag_mz(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-mm".
       /// @return The xtd::drawing::image "flag-mm".
       static xtd::drawing::image flag_mm() noexcept;
@@ -1256,7 +1256,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-mm".
       static xtd::drawing::image flag_mm(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-na".
       /// @return The xtd::drawing::image "flag-na".
       static xtd::drawing::image flag_na() noexcept;
@@ -1264,7 +1264,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-na".
       static xtd::drawing::image flag_na(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-nr".
       /// @return The xtd::drawing::image "flag-nr".
       static xtd::drawing::image flag_nr() noexcept;
@@ -1272,7 +1272,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-nr".
       static xtd::drawing::image flag_nr(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-np".
       /// @return The xtd::drawing::image "flag-np".
       static xtd::drawing::image flag_np() noexcept;
@@ -1280,7 +1280,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-np".
       static xtd::drawing::image flag_np(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-nl".
       /// @return The xtd::drawing::image "flag-nl".
       static xtd::drawing::image flag_nl() noexcept;
@@ -1288,7 +1288,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-nl".
       static xtd::drawing::image flag_nl(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-nc".
       /// @return The xtd::drawing::image "flag-nc".
       static xtd::drawing::image flag_nc() noexcept;
@@ -1296,7 +1296,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-nc".
       static xtd::drawing::image flag_nc(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-nz".
       /// @return The xtd::drawing::image "flag-nz".
       static xtd::drawing::image flag_nz() noexcept;
@@ -1304,7 +1304,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-nz".
       static xtd::drawing::image flag_nz(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ni".
       /// @return The xtd::drawing::image "flag-ni".
       static xtd::drawing::image flag_ni() noexcept;
@@ -1312,7 +1312,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ni".
       static xtd::drawing::image flag_ni(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ne".
       /// @return The xtd::drawing::image "flag-ne".
       static xtd::drawing::image flag_ne() noexcept;
@@ -1320,7 +1320,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ne".
       static xtd::drawing::image flag_ne(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ng".
       /// @return The xtd::drawing::image "flag-ng".
       static xtd::drawing::image flag_ng() noexcept;
@@ -1328,7 +1328,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ng".
       static xtd::drawing::image flag_ng(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-nu".
       /// @return The xtd::drawing::image "flag-nu".
       static xtd::drawing::image flag_nu() noexcept;
@@ -1336,7 +1336,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-nu".
       static xtd::drawing::image flag_nu(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-nf".
       /// @return The xtd::drawing::image "flag-nf".
       static xtd::drawing::image flag_nf() noexcept;
@@ -1344,7 +1344,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-nf".
       static xtd::drawing::image flag_nf(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-mk".
       /// @return The xtd::drawing::image "flag-mk".
       static xtd::drawing::image flag_mk() noexcept;
@@ -1352,7 +1352,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-mk".
       static xtd::drawing::image flag_mk(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-mp".
       /// @return The xtd::drawing::image "flag-mp".
       static xtd::drawing::image flag_mp() noexcept;
@@ -1360,7 +1360,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-mp".
       static xtd::drawing::image flag_mp(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-no".
       /// @return The xtd::drawing::image "flag-no".
       static xtd::drawing::image flag_no() noexcept;
@@ -1368,7 +1368,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-no".
       static xtd::drawing::image flag_no(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-om".
       /// @return The xtd::drawing::image "flag-om".
       static xtd::drawing::image flag_om() noexcept;
@@ -1376,7 +1376,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-om".
       static xtd::drawing::image flag_om(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-pk".
       /// @return The xtd::drawing::image "flag-pk".
       static xtd::drawing::image flag_pk() noexcept;
@@ -1384,7 +1384,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-pk".
       static xtd::drawing::image flag_pk(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-pw".
       /// @return The xtd::drawing::image "flag-pw".
       static xtd::drawing::image flag_pw() noexcept;
@@ -1392,7 +1392,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-pw".
       static xtd::drawing::image flag_pw(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ps".
       /// @return The xtd::drawing::image "flag-ps".
       static xtd::drawing::image flag_ps() noexcept;
@@ -1400,7 +1400,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ps".
       static xtd::drawing::image flag_ps(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-pa".
       /// @return The xtd::drawing::image "flag-pa".
       static xtd::drawing::image flag_pa() noexcept;
@@ -1408,7 +1408,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-pa".
       static xtd::drawing::image flag_pa(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-pg".
       /// @return The xtd::drawing::image "flag-pg".
       static xtd::drawing::image flag_pg() noexcept;
@@ -1416,7 +1416,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-pg".
       static xtd::drawing::image flag_pg(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-py".
       /// @return The xtd::drawing::image "flag-py".
       static xtd::drawing::image flag_py() noexcept;
@@ -1424,7 +1424,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-py".
       static xtd::drawing::image flag_py(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-pe".
       /// @return The xtd::drawing::image "flag-pe".
       static xtd::drawing::image flag_pe() noexcept;
@@ -1432,7 +1432,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-pe".
       static xtd::drawing::image flag_pe(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ph".
       /// @return The xtd::drawing::image "flag-ph".
       static xtd::drawing::image flag_ph() noexcept;
@@ -1440,7 +1440,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ph".
       static xtd::drawing::image flag_ph(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-pn".
       /// @return The xtd::drawing::image "flag-pn".
       static xtd::drawing::image flag_pn() noexcept;
@@ -1448,7 +1448,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-pn".
       static xtd::drawing::image flag_pn(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-pl".
       /// @return The xtd::drawing::image "flag-pl".
       static xtd::drawing::image flag_pl() noexcept;
@@ -1456,7 +1456,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-pl".
       static xtd::drawing::image flag_pl(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-pt".
       /// @return The xtd::drawing::image "flag-pt".
       static xtd::drawing::image flag_pt() noexcept;
@@ -1464,7 +1464,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-pt".
       static xtd::drawing::image flag_pt(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-pr".
       /// @return The xtd::drawing::image "flag-pr".
       static xtd::drawing::image flag_pr() noexcept;
@@ -1472,7 +1472,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-pr".
       static xtd::drawing::image flag_pr(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-qa".
       /// @return The xtd::drawing::image "flag-qa".
       static xtd::drawing::image flag_qa() noexcept;
@@ -1480,7 +1480,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-qa".
       static xtd::drawing::image flag_qa(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-re".
       /// @return The xtd::drawing::image "flag-re".
       static xtd::drawing::image flag_re() noexcept;
@@ -1488,7 +1488,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-re".
       static xtd::drawing::image flag_re(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ro".
       /// @return The xtd::drawing::image "flag-ro".
       static xtd::drawing::image flag_ro() noexcept;
@@ -1496,7 +1496,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ro".
       static xtd::drawing::image flag_ro(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ru".
       /// @return The xtd::drawing::image "flag-ru".
       static xtd::drawing::image flag_ru() noexcept;
@@ -1504,7 +1504,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ru".
       static xtd::drawing::image flag_ru(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-rw".
       /// @return The xtd::drawing::image "flag-rw".
       static xtd::drawing::image flag_rw() noexcept;
@@ -1512,7 +1512,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-rw".
       static xtd::drawing::image flag_rw(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-bl".
       /// @return The xtd::drawing::image "flag-bl".
       static xtd::drawing::image flag_bl() noexcept;
@@ -1520,7 +1520,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-bl".
       static xtd::drawing::image flag_bl(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-sh".
       /// @return The xtd::drawing::image "flag-sh".
       static xtd::drawing::image flag_sh() noexcept;
@@ -1528,7 +1528,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-sh".
       static xtd::drawing::image flag_sh(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-kn".
       /// @return The xtd::drawing::image "flag-kn".
       static xtd::drawing::image flag_kn() noexcept;
@@ -1536,7 +1536,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-kn".
       static xtd::drawing::image flag_kn(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-lc".
       /// @return The xtd::drawing::image "flag-lc".
       static xtd::drawing::image flag_lc() noexcept;
@@ -1544,7 +1544,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-lc".
       static xtd::drawing::image flag_lc(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-mf".
       /// @return The xtd::drawing::image "flag-mf".
       static xtd::drawing::image flag_mf() noexcept;
@@ -1552,7 +1552,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-mf".
       static xtd::drawing::image flag_mf(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-pm".
       /// @return The xtd::drawing::image "flag-pm".
       static xtd::drawing::image flag_pm() noexcept;
@@ -1560,7 +1560,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-pm".
       static xtd::drawing::image flag_pm(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-vc".
       /// @return The xtd::drawing::image "flag-vc".
       static xtd::drawing::image flag_vc() noexcept;
@@ -1568,7 +1568,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-vc".
       static xtd::drawing::image flag_vc(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ws".
       /// @return The xtd::drawing::image "flag-ws".
       static xtd::drawing::image flag_ws() noexcept;
@@ -1576,7 +1576,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ws".
       static xtd::drawing::image flag_ws(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-sm".
       /// @return The xtd::drawing::image "flag-sm".
       static xtd::drawing::image flag_sm() noexcept;
@@ -1584,7 +1584,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-sm".
       static xtd::drawing::image flag_sm(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-st".
       /// @return The xtd::drawing::image "flag-st".
       static xtd::drawing::image flag_st() noexcept;
@@ -1592,7 +1592,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-st".
       static xtd::drawing::image flag_st(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-sa".
       /// @return The xtd::drawing::image "flag-sa".
       static xtd::drawing::image flag_sa() noexcept;
@@ -1600,7 +1600,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-sa".
       static xtd::drawing::image flag_sa(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-sn".
       /// @return The xtd::drawing::image "flag-sn".
       static xtd::drawing::image flag_sn() noexcept;
@@ -1608,7 +1608,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-sn".
       static xtd::drawing::image flag_sn(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-rs".
       /// @return The xtd::drawing::image "flag-rs".
       static xtd::drawing::image flag_rs() noexcept;
@@ -1616,7 +1616,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-rs".
       static xtd::drawing::image flag_rs(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-sc".
       /// @return The xtd::drawing::image "flag-sc".
       static xtd::drawing::image flag_sc() noexcept;
@@ -1624,7 +1624,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-sc".
       static xtd::drawing::image flag_sc(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-sl".
       /// @return The xtd::drawing::image "flag-sl".
       static xtd::drawing::image flag_sl() noexcept;
@@ -1632,7 +1632,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-sl".
       static xtd::drawing::image flag_sl(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-sg".
       /// @return The xtd::drawing::image "flag-sg".
       static xtd::drawing::image flag_sg() noexcept;
@@ -1640,7 +1640,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-sg".
       static xtd::drawing::image flag_sg(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-sx".
       /// @return The xtd::drawing::image "flag-sx".
       static xtd::drawing::image flag_sx() noexcept;
@@ -1648,7 +1648,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-sx".
       static xtd::drawing::image flag_sx(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-sk".
       /// @return The xtd::drawing::image "flag-sk".
       static xtd::drawing::image flag_sk() noexcept;
@@ -1656,7 +1656,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-sk".
       static xtd::drawing::image flag_sk(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-si".
       /// @return The xtd::drawing::image "flag-si".
       static xtd::drawing::image flag_si() noexcept;
@@ -1664,7 +1664,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-si".
       static xtd::drawing::image flag_si(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-sb".
       /// @return The xtd::drawing::image "flag-sb".
       static xtd::drawing::image flag_sb() noexcept;
@@ -1672,7 +1672,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-sb".
       static xtd::drawing::image flag_sb(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-so".
       /// @return The xtd::drawing::image "flag-so".
       static xtd::drawing::image flag_so() noexcept;
@@ -1680,7 +1680,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-so".
       static xtd::drawing::image flag_so(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-za".
       /// @return The xtd::drawing::image "flag-za".
       static xtd::drawing::image flag_za() noexcept;
@@ -1688,7 +1688,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-za".
       static xtd::drawing::image flag_za(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-gs".
       /// @return The xtd::drawing::image "flag-gs".
       static xtd::drawing::image flag_gs() noexcept;
@@ -1696,7 +1696,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-gs".
       static xtd::drawing::image flag_gs(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ss".
       /// @return The xtd::drawing::image "flag-ss".
       static xtd::drawing::image flag_ss() noexcept;
@@ -1704,7 +1704,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ss".
       static xtd::drawing::image flag_ss(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-es".
       /// @return The xtd::drawing::image "flag-es".
       static xtd::drawing::image flag_es() noexcept;
@@ -1712,7 +1712,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-es".
       static xtd::drawing::image flag_es(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-lk".
       /// @return The xtd::drawing::image "flag-lk".
       static xtd::drawing::image flag_lk() noexcept;
@@ -1720,7 +1720,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-lk".
       static xtd::drawing::image flag_lk(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-sd".
       /// @return The xtd::drawing::image "flag-sd".
       static xtd::drawing::image flag_sd() noexcept;
@@ -1728,7 +1728,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-sd".
       static xtd::drawing::image flag_sd(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-sr".
       /// @return The xtd::drawing::image "flag-sr".
       static xtd::drawing::image flag_sr() noexcept;
@@ -1736,7 +1736,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-sr".
       static xtd::drawing::image flag_sr(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-sj".
       /// @return The xtd::drawing::image "flag-sj".
       static xtd::drawing::image flag_sj() noexcept;
@@ -1744,7 +1744,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-sj".
       static xtd::drawing::image flag_sj(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-se".
       /// @return The xtd::drawing::image "flag-se".
       static xtd::drawing::image flag_se() noexcept;
@@ -1752,7 +1752,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-se".
       static xtd::drawing::image flag_se(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ch".
       /// @return The xtd::drawing::image "flag-ch".
       static xtd::drawing::image flag_ch() noexcept;
@@ -1760,7 +1760,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ch".
       static xtd::drawing::image flag_ch(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-sy".
       /// @return The xtd::drawing::image "flag-sy".
       static xtd::drawing::image flag_sy() noexcept;
@@ -1768,7 +1768,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-sy".
       static xtd::drawing::image flag_sy(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-tw".
       /// @return The xtd::drawing::image "flag-tw".
       static xtd::drawing::image flag_tw() noexcept;
@@ -1776,7 +1776,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-tw".
       static xtd::drawing::image flag_tw(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-tj".
       /// @return The xtd::drawing::image "flag-tj".
       static xtd::drawing::image flag_tj() noexcept;
@@ -1784,7 +1784,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-tj".
       static xtd::drawing::image flag_tj(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-tz".
       /// @return The xtd::drawing::image "flag-tz".
       static xtd::drawing::image flag_tz() noexcept;
@@ -1792,7 +1792,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-tz".
       static xtd::drawing::image flag_tz(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-th".
       /// @return The xtd::drawing::image "flag-th".
       static xtd::drawing::image flag_th() noexcept;
@@ -1800,7 +1800,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-th".
       static xtd::drawing::image flag_th(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-tl".
       /// @return The xtd::drawing::image "flag-tl".
       static xtd::drawing::image flag_tl() noexcept;
@@ -1808,7 +1808,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-tl".
       static xtd::drawing::image flag_tl(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-tg".
       /// @return The xtd::drawing::image "flag-tg".
       static xtd::drawing::image flag_tg() noexcept;
@@ -1816,7 +1816,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-tg".
       static xtd::drawing::image flag_tg(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-tk".
       /// @return The xtd::drawing::image "flag-tk".
       static xtd::drawing::image flag_tk() noexcept;
@@ -1824,7 +1824,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-tk".
       static xtd::drawing::image flag_tk(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-to".
       /// @return The xtd::drawing::image "flag-to".
       static xtd::drawing::image flag_to() noexcept;
@@ -1832,7 +1832,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-to".
       static xtd::drawing::image flag_to(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-tt".
       /// @return The xtd::drawing::image "flag-tt".
       static xtd::drawing::image flag_tt() noexcept;
@@ -1840,7 +1840,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-tt".
       static xtd::drawing::image flag_tt(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-tn".
       /// @return The xtd::drawing::image "flag-tn".
       static xtd::drawing::image flag_tn() noexcept;
@@ -1848,7 +1848,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-tn".
       static xtd::drawing::image flag_tn(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-tr".
       /// @return The xtd::drawing::image "flag-tr".
       static xtd::drawing::image flag_tr() noexcept;
@@ -1856,7 +1856,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-tr".
       static xtd::drawing::image flag_tr(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-tm".
       /// @return The xtd::drawing::image "flag-tm".
       static xtd::drawing::image flag_tm() noexcept;
@@ -1864,7 +1864,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-tm".
       static xtd::drawing::image flag_tm(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-tc".
       /// @return The xtd::drawing::image "flag-tc".
       static xtd::drawing::image flag_tc() noexcept;
@@ -1872,7 +1872,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-tc".
       static xtd::drawing::image flag_tc(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-tv".
       /// @return The xtd::drawing::image "flag-tv".
       static xtd::drawing::image flag_tv() noexcept;
@@ -1880,7 +1880,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-tv".
       static xtd::drawing::image flag_tv(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ug".
       /// @return The xtd::drawing::image "flag-ug".
       static xtd::drawing::image flag_ug() noexcept;
@@ -1888,7 +1888,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ug".
       static xtd::drawing::image flag_ug(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ua".
       /// @return The xtd::drawing::image "flag-ua".
       static xtd::drawing::image flag_ua() noexcept;
@@ -1896,7 +1896,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ua".
       static xtd::drawing::image flag_ua(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ae".
       /// @return The xtd::drawing::image "flag-ae".
       static xtd::drawing::image flag_ae() noexcept;
@@ -1904,7 +1904,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ae".
       static xtd::drawing::image flag_ae(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-gb".
       /// @return The xtd::drawing::image "flag-gb".
       static xtd::drawing::image flag_gb() noexcept;
@@ -1912,7 +1912,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-gb".
       static xtd::drawing::image flag_gb(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-us".
       /// @return The xtd::drawing::image "flag-us".
       static xtd::drawing::image flag_us() noexcept;
@@ -1920,7 +1920,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-us".
       static xtd::drawing::image flag_us(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-um".
       /// @return The xtd::drawing::image "flag-um".
       static xtd::drawing::image flag_um() noexcept;
@@ -1928,7 +1928,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-um".
       static xtd::drawing::image flag_um(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-uy".
       /// @return The xtd::drawing::image "flag-uy".
       static xtd::drawing::image flag_uy() noexcept;
@@ -1936,7 +1936,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-uy".
       static xtd::drawing::image flag_uy(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-uz".
       /// @return The xtd::drawing::image "flag-uz".
       static xtd::drawing::image flag_uz() noexcept;
@@ -1944,7 +1944,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-uz".
       static xtd::drawing::image flag_uz(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-vu".
       /// @return The xtd::drawing::image "flag-vu".
       static xtd::drawing::image flag_vu() noexcept;
@@ -1952,7 +1952,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-vu".
       static xtd::drawing::image flag_vu(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ve".
       /// @return The xtd::drawing::image "flag-ve".
       static xtd::drawing::image flag_ve() noexcept;
@@ -1960,7 +1960,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ve".
       static xtd::drawing::image flag_ve(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-vn".
       /// @return The xtd::drawing::image "flag-vn".
       static xtd::drawing::image flag_vn() noexcept;
@@ -1968,7 +1968,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-vn".
       static xtd::drawing::image flag_vn(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-vg".
       /// @return The xtd::drawing::image "flag-vg".
       static xtd::drawing::image flag_vg() noexcept;
@@ -1976,7 +1976,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-vg".
       static xtd::drawing::image flag_vg(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-vi".
       /// @return The xtd::drawing::image "flag-vi".
       static xtd::drawing::image flag_vi() noexcept;
@@ -1984,7 +1984,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-vi".
       static xtd::drawing::image flag_vi(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-wf".
       /// @return The xtd::drawing::image "flag-wf".
       static xtd::drawing::image flag_wf() noexcept;
@@ -1992,7 +1992,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-wf".
       static xtd::drawing::image flag_wf(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-eh".
       /// @return The xtd::drawing::image "flag-eh".
       static xtd::drawing::image flag_eh() noexcept;
@@ -2000,7 +2000,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-eh".
       static xtd::drawing::image flag_eh(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-ye".
       /// @return The xtd::drawing::image "flag-ye".
       static xtd::drawing::image flag_ye() noexcept;
@@ -2008,7 +2008,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-ye".
       static xtd::drawing::image flag_ye(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-zm".
       /// @return The xtd::drawing::image "flag-zm".
       static xtd::drawing::image flag_zm() noexcept;
@@ -2016,7 +2016,7 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-zm".
       static xtd::drawing::image flag_zm(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the international system image "flag-zw".
       /// @return The xtd::drawing::image "flag-zw".
       static xtd::drawing::image flag_zw() noexcept;
@@ -2024,11 +2024,11 @@ namespace xtd {
       /// @param size The international system image size in pixels.
       /// @return The xtd::drawing::image "flag-zw".
       static xtd::drawing::image flag_zw(const xtd::drawing::size& size) noexcept;
-
+      
       /// @}
-
+      
       /// @name Public Static Methods
-
+      
       /// @{
       /// @brief Gets an array of images.
       /// @return The array of images.
@@ -2037,7 +2037,7 @@ namespace xtd {
       /// @param size The images size in pixels.
       /// @return The array of images.
       static xtd::array<xtd::drawing::image> get_images(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an array of image names.
       /// @return The array of image names.
       static const xtd::array<xtd::string>& get_image_names() noexcept;

@@ -20,7 +20,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/enum_register>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

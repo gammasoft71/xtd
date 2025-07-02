@@ -22,7 +22,7 @@ public:
   intptr handle() const noexcept {return *handle_;}
   
   void pulse() {xtd::native::condition_variable::pulse(*handle_);}
-
+  
   void pulse_all() {xtd::native::condition_variable::pulse_all(*handle_);}
   
   bool wait(const monitor::critical_section& critical_section, int32 milliseconds_timeout) {return xtd::native::condition_variable::wait(*handle_, critical_section.handle(), milliseconds_timeout);}

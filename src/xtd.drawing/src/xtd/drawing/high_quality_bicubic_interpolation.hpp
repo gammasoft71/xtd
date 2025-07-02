@@ -10,7 +10,7 @@ namespace {
     
     if (source_image.width() % size.width == 0 && source_image.width() >= size.width && source_image.height() % size.height == 0 && source_image.height() >= size.height)
       return shrink_interpolation(source_image, size);
-    
+      
     const auto scale_x = static_cast<double>(source_image.width()) / size.width;
     const auto scale_y = static_cast<double>(source_image.height()) / size.height;
     const auto passes = static_cast<xtd::int32>(xtd::math::ceiling(xtd::math::max(xtd::math::log(scale_x, 2), xtd::math::log(scale_y, 2))));

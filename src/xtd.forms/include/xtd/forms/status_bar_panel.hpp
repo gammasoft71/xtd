@@ -234,7 +234,7 @@ namespace xtd {
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
-
+      
       /// @brief Returns a string that represents the xtd::forms::status_bar_panel control.
       /// @return A xtd::string that represents the current xtd::forms::status_bar_panel.
       /// @remarks The xtd::forms::status_bar_panel::to_string method returns a string that includes the type and the value of the xtd::forms::status_bar_panel::style and xtd::forms::status_bar_panel::text properties.

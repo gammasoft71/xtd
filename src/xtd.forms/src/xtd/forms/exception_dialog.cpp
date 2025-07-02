@@ -64,7 +64,7 @@ namespace {
       text_box_details_.read_only(true);
       text_box_details_.word_wrap(false);
       text_box_details_.text(generate_report());
-
+      
       auto_size(true);
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       accept_button(button_continue_);

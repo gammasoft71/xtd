@@ -143,9 +143,9 @@ namespace xtd::net::sockets::tests {
     }
     
     void test_method_(constructor_with_address_family_internet_network_socket_type_dgram_and_protocol_type_udp) {
-#if defined(__XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM__)
+      #if defined(__XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM__)
       return;
-#endif
+      #endif
       assume::is_true(socket::os_supports_ip_v4());
       socket s(address_family::inter_network, socket_type::dgram, protocol_type::udp);
       assert::are_equal(address_family::inter_network, s.address_family());

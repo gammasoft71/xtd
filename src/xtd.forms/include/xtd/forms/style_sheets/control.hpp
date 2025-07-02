@@ -233,7 +233,7 @@ namespace xtd {
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
         xtd::size get_hash_code() const noexcept override;
-
+        
         /// @brief Gets solid background color.
         /// @return The solid background color.
         xtd::drawing::color get_solid_background_color() const noexcept;
@@ -253,7 +253,7 @@ namespace xtd {
         /// @return The string format.
         xtd::drawing::string_format make_string_format() const noexcept override;
         /// @}
-
+        
         /// @name Public Static Methods
         
         /// @{
@@ -261,7 +261,7 @@ namespace xtd {
         /// @return New control created.
         static control create_control() {return control();}
         /// @}
-
+        
       private:
         bool auto_ellipsis_ = false;
         xtd::forms::style_sheets::margin margin_ {length(0)};

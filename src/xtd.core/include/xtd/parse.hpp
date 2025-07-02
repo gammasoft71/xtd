@@ -481,7 +481,7 @@ namespace xtd {
       return false;
     }
   }
-
+  
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -557,7 +557,7 @@ namespace xtd {
       return false;
     }
   }
-
+  
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -655,7 +655,7 @@ namespace xtd {
       return false;
     }
   }
-
+  
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd
@@ -731,7 +731,7 @@ namespace xtd {
       return false;
     }
   }
-
+  
   /// @brief Convert a string into a type.
   /// @par Namespace
   /// xtd

@@ -15,13 +15,13 @@ namespace xtd::tests {
     void test_method_(default_constructor) {
       assert::are_equal(std::default_random_engine {static_cast<uint32>(environment::tick_count().count())}, xtd::random {}.generator());
     }
-
+    
     void test_method_(constructor_with_seed) {
       assert::are_equal(std::default_random_engine {1}, xtd::random {0}.generator());
       assert::are_equal(std::default_random_engine {2}, xtd::random {1}.generator());
       assert::are_equal(std::default_random_engine {11}, xtd::random {10}.generator());
     }
-
+    
     void test_method_(constructor_with_device) {
       // to be defined...
     }
@@ -61,7 +61,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_macos()) collection_assert::are_equal({false, true, false, true, false, false, true, false, true, true, true, false, true, true, true, true}, items);
       else if (environment::os_version().is_windows()) collection_assert::are_equal({false, true, true, false, false, false, true, false, false, true, true, true, false, true, true, false}, items);
     }
-
+    
     void test_method_(get_items_double_with_choices_array_and_length) {
       auto items = xtd::random {1}.get_items<double>(array<double> {0.3, 0.5, 0.8}, 16);
       assert::are_equal(16_z, items.length());
@@ -79,7 +79,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_macos()) collection_assert::are_equal({1, 2, 1, 2, 1, 0, 2, 0, 3, 3, 3, 1, 3, 2, 2, 2}, items);
       else if (environment::os_version().is_windows()) collection_assert::are_equal({1, 3, 3, 1, 1, 0, 2, 0, 1, 2, 2, 2, 1, 2, 2, 1}, items);
     }
-
+    
     void test_method_(get_items_boolean_with_choices_read_only_span_and_length) {
       auto items = xtd::random {1}.get_items<boolean>(read_only_span<boolean> {false, true}, 16);
       assert::are_equal(16_z, items.length());
@@ -87,7 +87,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_macos()) collection_assert::are_equal({false, true, false, true, false, false, true, false, true, true, true, false, true, true, true, true}, items);
       else if (environment::os_version().is_windows()) collection_assert::are_equal({false, true, true, false, false, false, true, false, false, true, true, true, false, true, true, false}, items);
     }
-
+    
     void test_method_(get_items_double_with_choices_read_only_span_and_length) {
       auto items = xtd::random {1}.get_items<double>(read_only_span<double> {0.3, 0.5, 0.8}, 16);
       assert::are_equal(16_z, items.length());
@@ -106,7 +106,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_macos()) collection_assert::are_equal({1, 2, 1, 2, 1, 0, 2, 0, 3, 3, 3, 1, 3, 2, 2, 2}, items);
       else if (environment::os_version().is_windows()) collection_assert::are_equal({1, 3, 3, 1, 1, 0, 2, 0, 1, 2, 2, 2, 1, 2, 2, 1}, items);
     }
-
+    
     void test_method_(get_items_boolean_with_choices_read_only_span_and_destination) {
       auto items_list = list<boolean>(16);
       auto items = span<boolean>(items_list);
@@ -115,7 +115,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_macos()) collection_assert::are_equal({false, true, false, true, false, false, true, false, true, true, true, false, true, true, true, true}, items);
       else if (environment::os_version().is_windows()) collection_assert::are_equal({false, true, true, false, false, false, true, false, false, true, true, true, false, true, true, false}, items);
     }
-
+    
     void test_method_(get_items_double_with_choices_read_only_span_and_destination) {
       auto items_list = list<double>(16);
       auto items = span<double>(items_list);
@@ -168,7 +168,7 @@ namespace xtd::tests {
         assert::are_equal(5.7622615115016E+307, rnd.next<double>());
       }
     }
-
+    
     void test_method_(next_int_with_max_value_less_or_equal_to_1) {
       auto rnd = xtd::random {1};
       assert::are_equal(0, rnd.next(0));
@@ -178,14 +178,14 @@ namespace xtd::tests {
       assert::are_equal(0, rnd.next(1));
       assert::are_equal(0, rnd.next(1));
     }
-
+    
     void test_method_(next_boolean_with_max_value_equal_to_false) {
       auto rnd = xtd::random {1};
       assert::are_equal(false, rnd.next(false));
       assert::are_equal(false, rnd.next(false));
       assert::are_equal(false, rnd.next(false));
     }
-
+    
     void test_method_(next_double_with_max_value_equal_to_0) {
       auto rnd = xtd::random {1};
       assert::are_equal(0.0, rnd.next(0.0));
@@ -238,7 +238,7 @@ namespace xtd::tests {
         assert::are_equal(false, rnd.next(true));
       }
     }
-
+    
     void test_method_(next_int_with_min_and_max_with_same_value_or_same_value_plus_one) {
       auto rnd = xtd::random {1};
       assert::are_equal(4, rnd.next(4, 4));
@@ -260,7 +260,7 @@ namespace xtd::tests {
       assert::are_equal(4, rnd.next(4.0, 4.0));
       assert::are_equal(4, rnd.next(4.0, 4.0));
     }
-
+    
     void test_method_(next_int_with_min_and_max_value) {
       auto rnd = xtd::random {1};
       if (environment::os_version().is_linux()) {
@@ -283,7 +283,7 @@ namespace xtd::tests {
         assert::are_equal(5, rnd.next(4, 8));
       }
     }
-
+    
     void test_method_(next_boolean_with_min_and_max_value) {
       auto rnd = xtd::random {1};
       if (environment::os_version().is_linux()) {
@@ -306,7 +306,7 @@ namespace xtd::tests {
         assert::are_equal(false, rnd.next(true));
       }
     }
-
+    
     void test_method_(next_double_with_min_and_max_value) {
       auto rnd = xtd::random {1};
       if (environment::os_version().is_linux()) {
@@ -398,7 +398,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_macos()) collection_assert::are_equal({3.05724499436841E+307, 1.40799380865409E+308, 6.82008001395177E+307, 1.4309938939764E+308, 8.75521324746089E+307, 2.17125118507379E+307, 1.11301169446026E+308, 4.21111506851151E+306, 1.78002018649878E+308, 1.67764808807204E+308, 1.53181729602797E+308, 5.50089521182878E+307, 1.65938980435499E+308, 1.2871027636892E+308, 1.05713757977953E+308, 1.49080742553487E+308}, values);
       else if (environment::os_version().is_windows()) collection_assert::are_equal({3.32721e+307, 1.67462e+308, 1.70373e+308, 8.7143e+307, 5.76226e+307, 2.77612e+307, 1.25634e+308, 2.15634e+307, 8.72197e+307, 1.13747e+308, 1.47092e+308, 1.22787e+308, 8.9626e+307, 1.05488e+308, 1.2939e+308, 4.647e+307}, values);
     }
-
+    
     void test_method_(next_values_with_span_of_ints) {
       auto rnd = xtd::random {1};
       auto values = array<int>(16_z);

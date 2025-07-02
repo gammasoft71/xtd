@@ -28,12 +28,12 @@ namespace xtd {
     class drawing_export_ xtd_system_images final : private system_images_base {
     public:
       /// @name Public Static Properties
-
+      
       /// @{
       /// @brief Gets system image from specified name.
       /// @return The default size in pixels (32 x 32).
       static xtd::drawing::size default_size() noexcept;
-
+      
       /// @brief Gets the xtd system image "gammasoft".
       /// @return The xtd::drawing::image "gammasoft".
       static xtd::drawing::image gammasoft() noexcept;
@@ -41,7 +41,7 @@ namespace xtd {
       /// @param size The xtd system image size in pixels.
       /// @return The xtd::drawing::image "gammasoft".
       static xtd::drawing::image gammasoft(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the xtd system image "xtd".
       /// @return The xtd::drawing::image "xtd".
       static xtd::drawing::image xtd() noexcept;
@@ -49,7 +49,7 @@ namespace xtd {
       /// @param size The xtd system image size in pixels.
       /// @return The xtd::drawing::image "xtd".
       static xtd::drawing::image xtd(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the xtd system image "xtd-console".
       /// @return The xtd::drawing::image "xtd-console".
       static xtd::drawing::image xtd_console() noexcept;
@@ -57,7 +57,7 @@ namespace xtd {
       /// @param size The xtd system image size in pixels.
       /// @return The xtd::drawing::image "xtd-console".
       static xtd::drawing::image xtd_console(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the xtd system image "xtd-forms".
       /// @return The xtd::drawing::image "xtd-forms".
       static xtd::drawing::image xtd_forms() noexcept;
@@ -65,7 +65,7 @@ namespace xtd {
       /// @param size The xtd system image size in pixels.
       /// @return The xtd::drawing::image "xtd-forms".
       static xtd::drawing::image xtd_forms(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the xtd system image "xtd-tunit".
       /// @return The xtd::drawing::image "xtd-tunit".
       static xtd::drawing::image xtd_tunit() noexcept;
@@ -73,7 +73,7 @@ namespace xtd {
       /// @param size The xtd system image size in pixels.
       /// @return The xtd::drawing::image "xtd-tunit".
       static xtd::drawing::image xtd_tunit(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the xtd system image "xtd-core".
       /// @return The xtd::drawing::image "xtd-core".
       static xtd::drawing::image xtd_core() noexcept;
@@ -81,7 +81,7 @@ namespace xtd {
       /// @param size The xtd system image size in pixels.
       /// @return The xtd::drawing::image "xtd-core".
       static xtd::drawing::image xtd_core(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the xtd system image "xtd-delegates".
       /// @return The xtd::drawing::image "xtd-delegates".
       static xtd::drawing::image xtd_delegates() noexcept;
@@ -89,7 +89,7 @@ namespace xtd {
       /// @param size The xtd system image size in pixels.
       /// @return The xtd::drawing::image "xtd-delegates".
       static xtd::drawing::image xtd_delegates(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the xtd system image "xtd-diagnostics".
       /// @return The xtd::drawing::image "xtd-diagnostics".
       static xtd::drawing::image xtd_diagnostics() noexcept;
@@ -97,7 +97,7 @@ namespace xtd {
       /// @param size The xtd system image size in pixels.
       /// @return The xtd::drawing::image "xtd-diagnostics".
       static xtd::drawing::image xtd_diagnostics(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the xtd system image "xtd-drawing".
       /// @return The xtd::drawing::image "xtd-drawing".
       static xtd::drawing::image xtd_drawing() noexcept;
@@ -105,7 +105,7 @@ namespace xtd {
       /// @param size The xtd system image size in pixels.
       /// @return The xtd::drawing::image "xtd-drawing".
       static xtd::drawing::image xtd_drawing(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the xtd system image "xtd-io".
       /// @return The xtd::drawing::image "xtd-io".
       static xtd::drawing::image xtd_io() noexcept;
@@ -113,7 +113,7 @@ namespace xtd {
       /// @param size The xtd system image size in pixels.
       /// @return The xtd::drawing::image "xtd-io".
       static xtd::drawing::image xtd_io(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the xtd system image "xtd-strings".
       /// @return The xtd::drawing::image "xtd-strings".
       static xtd::drawing::image xtd_strings() noexcept;
@@ -121,7 +121,7 @@ namespace xtd {
       /// @param size The xtd system image size in pixels.
       /// @return The xtd::drawing::image "xtd-strings".
       static xtd::drawing::image xtd_strings(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the xtd system image "xtd-cmake".
       /// @return The xtd::drawing::image "xtd-cmake".
       static xtd::drawing::image xtd_cmake() noexcept;
@@ -129,11 +129,11 @@ namespace xtd {
       /// @param size The xtd system image size in pixels.
       /// @return The xtd::drawing::image "xtd-cmake".
       static xtd::drawing::image xtd_cmake(const xtd::drawing::size& size) noexcept;
-
+      
       /// @}
-
+      
       /// @name Public Static Methods
-
+      
       /// @{
       /// @brief Gets an array of images.
       /// @return The array of images.
@@ -142,7 +142,7 @@ namespace xtd {
       /// @param size The images size in pixels.
       /// @return The array of images.
       static xtd::array<xtd::drawing::image> get_images(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an array of image names.
       /// @return The array of image names.
       static const xtd::array<xtd::string>& get_image_names() noexcept;

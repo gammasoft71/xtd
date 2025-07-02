@@ -84,7 +84,7 @@ namespace xtd {
       /// @pram height The height of this Rectangle structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle_f::height property will also cause a change in the xtd::drawing::rectangle_f::bottom property of the xtd::drawing::rectangle_f. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
       float height = .0f;
-
+      
       /// @brief Gets the y-coordinate that is the sum of the xtd::drawing::rectangle_f::y and xtd::drawing::rectangle_f::height property values of this xtd::drawing::rectangle_f structure.
       /// @return The y-coordinate that is the sum of xtd::drawing::rectangle_f::y and xtd::drawing::rectangle_f::height of this xtd::drawing::rectangle_f.
       /// @remarks The value of the xtd::drawing::rectangle_f::bottom property represents the y-coordinate of the first point at the bottom edge of the xtd::drawing::rectangle_f that is not contained in the xtd::drawing::rectangle_f.
@@ -167,7 +167,7 @@ namespace xtd {
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
-
+      
       /// @brief Enlarges this xtd::drawing::rectangle_f by the specified amount.
       /// @param sz The amount to inflate this rectangle.
       /// @remarks This method enlarges this rectangle, not a copy of it. The rectangle is enlarged in both directions along an axis. For example, if a 50 by 50 rectangle is enlarged by 50 in the x-axis, the resultant rectangle will be 150 units long (the original 50, the 50 in the minus direction, and the 50 in the plus direction) maintaining the rectangle's geometric center.
@@ -183,11 +183,11 @@ namespace xtd {
       /// @param rect The rectangle to test.
       /// @return This method returns `true` if there is any intersection, otherwise `false`.
       bool intersects_with(const rectangle_f& rect) const noexcept;
-
+      
       /// @brief Replaces this xtd::drawing::rectangle_f with the intersection of itself and the specified xtd::drawing::rectangle_f.
       /// @param rect The xtd::drawing::rectangle_f with which to intersect.
       void make_intersect(const rectangle_f& rect) noexcept;
-
+      
       /// @brief Replaces this xtd::drawing::rectangle_f with the union of itself and the specified xtd::drawing::rectangle_f.
       /// @param rect The xtd::drawing::rectangle_f with which to union.
       void make_union(const rectangle_f& rect) noexcept;
@@ -231,7 +231,7 @@ namespace xtd {
       /// @return The new xtd::drawing::rectangle_f that this method creates.
       /// @remarks This method creates a xtd::drawing::rectangle_f with the specified upper-left and lower-right corners.
       static rectangle_f from_ltrb(float left, float top, float right, float bottom) noexcept;
-
+      
       /// @brief Creates and returns an enlarged copy of the specified xtd::drawing::rectangle_f structure. The copy is enlarged by the specified amount. The original xtd::drawing::rectangle_f structure remains unmodified.
       /// @param rect The xtd::drawing::rectangle_f with which to start. This rectangle is not modified.
       /// @param x The amount to inflate the specified rectangle horizontally.

@@ -56,7 +56,7 @@ namespace xtd {
         /// @param message The error code that indicates the error that occurred.
         /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
         explicit socket_exception(xtd::net::sockets::socket_error socket_error, const std::optional<xtd::string>& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
-
+        
         /// @brief Create a new instance of class socket_exception
         /// @param message Message string associate to the exception.
         /// @param error Error code associate to the exception.

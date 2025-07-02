@@ -112,7 +112,7 @@ namespace xtd {
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
         xtd::size get_hash_code() const noexcept override;
-
+        
         xtd::string to_string() const noexcept override;
         
         /// @brief Return a xtd::string that represents the css format of the current xtd::forms::style_sheets::theme object.
@@ -141,7 +141,7 @@ namespace xtd {
         /// @return `true` if succeed; otherwise `false`.
         static bool try_parse(const xtd::string& text, theme& result) noexcept;
         /// @}
-
+        
       private:
         xtd::string name_;
         xtd::string description_;

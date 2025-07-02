@@ -55,7 +55,7 @@ file_not_found_exception::file_not_found_exception(const string& message, const 
   this->help_link(help_link);
 }
 
-file_not_found_exception::file_not_found_exception(const string& message, const std::exception& inner_exception, const std::error_code& error, const string& help_link, const xtd::diagnostics::stack_frame& stack_frame) : io_exception(message, stack_frame), defined_message_ {true}{
+file_not_found_exception::file_not_found_exception(const string& message, const std::exception& inner_exception, const std::error_code& error, const string& help_link, const xtd::diagnostics::stack_frame& stack_frame) : io_exception(message, stack_frame), defined_message_ {true} {
   error_code(error);
   this->help_link(help_link);
 }

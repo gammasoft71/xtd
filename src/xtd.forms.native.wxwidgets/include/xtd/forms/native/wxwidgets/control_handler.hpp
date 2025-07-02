@@ -144,7 +144,7 @@ namespace xtd {
         
         static long common_container_style_to_wx_style(size_t style, size_t ex_style) {
           long wx_style = common_control_style_to_wx_style(style, ex_style);
-         
+          
           //if ((ex_style & WS_EX_CONTROLPARENT) wx_style = wxCONTROL_PARENT;
           
           return wx_style;

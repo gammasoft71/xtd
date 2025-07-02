@@ -102,7 +102,7 @@ namespace xtd {
         /// Implementing this interface requires implementing the nongeneric IEnumerator interface. The xtd::collections::generic::ienumerator::current property appears on both interfaces, and has different return types. Implement the nongeneric xtd::collections::generic::ienumerator::current property as an explicit interface implementation. This allows any consumer of the nongeneric interface to consume the generic interface.
         virtual const type_t& current() const = 0;
         /// @}
-
+        
         /// @name Public Methods
         
         /// @{

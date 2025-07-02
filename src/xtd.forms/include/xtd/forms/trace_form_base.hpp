@@ -16,7 +16,7 @@ xtd::string& __xtd_forms_trace_form_base_default_text_box_name__() noexcept;
 namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
-    
+  
     /// @brief Represents a base form for debug_form and trace_form forms. This class cannot be instantiated.
     /// @par Header
     /// ```cpp

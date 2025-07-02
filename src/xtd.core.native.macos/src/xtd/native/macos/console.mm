@@ -66,7 +66,7 @@ namespace {
       status.c_cc[VTIME] = 0; // Can be discarded.
       return tcsetattr(0, TCSANOW, &status) == 0;
     }
-
+    
     int32_t getch() {
       if (peek_character != -1) {
         auto character = peek_character;
@@ -77,10 +77,10 @@ namespace {
       push_status();
       echo(false);
       icanon(false);
-
+      
       auto character = '\0';
       while (read(0, &character, 1) != 1);
-
+      
       pop_status();
       return character;
     }
@@ -127,7 +127,7 @@ namespace {
     void reset_colors_and_attributes() {
       if (is_ansi_supported()) std::cout << "\x1b]0;\x7" << std::flush;
     }
-
+    
     termios push_status() {
       auto status = termios {};
       tcgetattr(0, &status);
@@ -301,11 +301,11 @@ namespace {
       // Ctrl + [a; z]
       if ((key >= 1 && key <= 7) || (key >= 10 && key <= 11) || (key >= 14 && key <= 18) || (key >= 20 && key <= 26))
         return key_info {key + 'A' - 1, key, false, true, false};
-      
+        
       switch (key) {
         case 50086 : return key_info {0, U'æ', alt, false, false};
         case 50054 : return key_info {0, U'Æ', alt, false, false};
-      case 50079 : return key_info {0, U'ß', alt, false, false};
+        case 50079 : return key_info {0, U'ß', alt, false, false};
         case -1426005368 : return key_info {0, U'∫', alt, false, false};
         case 49833 : return key_info {0, U'©', alt, false, false};
         case 49826 : return key_info {0, U'¢', alt, false, false};
@@ -610,10 +610,10 @@ namespace {
       
       auto au_render_callback_struct = AURenderCallbackStruct {&audio::au_renderer_proc, nullptr};
       if (AudioUnitSetProperty(audio_unit, kAudioUnitProperty_SetRenderCallback, kAudioUnitScope_Input, 0, &au_render_callback_struct, sizeof(au_render_callback_struct)) != noErr) return;
-
+      
       auto audio_stream_basic_description = AudioStreamBasicDescription {simple_rate, kAudioFormatLinearPCM, 0, 1, 1, 1, 1, bits_per_channel, 0};
       if (AudioUnitSetProperty(audio_unit, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &audio_stream_basic_description, sizeof(audio_stream_basic_description)) != noErr) return;
-
+      
       if (AudioUnitInitialize(audio_unit) != noErr) return;
       if (AudioOutputUnitStart(audio_unit) != noErr) return;
       initialized = true;

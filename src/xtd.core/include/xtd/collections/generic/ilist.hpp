@@ -82,7 +82,7 @@ namespace xtd {
         /// @remarks If `index` equals the number of items in the xtd::collections::generic::ilist <type_t>, then item is appended to the list.
         /// @remarks In collections of contiguous elements, such as lists, the elements that follow the insertion point move down to accommodate the new element. If the collection is indexed, the indexes of the elements that are moved are also updated. This behavior does not apply to collections where elements are conceptually grouped into buckets, such as a hash table.
         virtual void insert(xtd::size index, const type_t& item) = 0;
-
+        
         /// @brief Removes the xtd::collections::generic::ilist <type_t> item at the specified index.
         /// @param index The zero-based index of the item to remove.
         /// @exception xtd::argument_out_of_range_exception `index` is not a valid index in the xtd::collections::generic::ilist <type_t>.
@@ -90,7 +90,7 @@ namespace xtd {
         /// @remarks In collections of contiguous elements, such as lists, the elements that follow the removed element move up to occupy the vacated spot. If the collection is indexed, the indexes of the elements that are moved are also updated. This behavior does not apply to collections where elements are conceptually grouped into buckets, such as a hash table.
         virtual void remove_at(xtd::size index) = 0;
         /// @}
-
+        
         /// @name Public Operators
         
         /// @{

@@ -19,7 +19,7 @@ namespace keycodes {
     key_control& key_value(const xtd::string& value);
     key_control& key_modfiers(const xtd::string& value);
     key_control& line_visible(bool value);
-        
+    
   protected:
     xtd::uptr<xtd::object> clone() const override {
       auto result = xtd::new_uptr<key_control>(*this);

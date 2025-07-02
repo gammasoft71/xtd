@@ -345,7 +345,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_accept(xtd::async_callback callback,
       ar->error_code_ = s.get_last_error_();
       ar->exception_ = std::current_exception();
     }
-  }, *this, ar, callback};
+  }, * this, ar, callback};
   operation_thread.detach();
   return ar;
 }
@@ -381,7 +381,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_disconnect(bool reuse_socket, xtd::a
       ar->error_code_ = s.get_last_error_();
       ar->exception_ = std::current_exception();
     }
-  }, *this, reuse_socket, ar, callback};
+  }, * this, reuse_socket, ar, callback};
   operation_thread.detach();
   return ar;
 }
@@ -402,7 +402,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_receive(array<xtd::byte>& buffer, si
       ar->error_code_ = s.get_last_error_();
       ar->exception_ = std::current_exception();
     }
-  }, *this, &buffer, offset, size, socket_flags, ar, callback};
+  }, * this, &buffer, offset, size, socket_flags, ar, callback};
   operation_thread.detach();
   return ar;
 }
@@ -423,7 +423,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_receive(array<xtd::byte>& buffer, si
       ar->error_code_ = s.get_last_error_();
       ar->exception_ = std::current_exception();
     }
-  }, *this, &buffer, offset, size, socket_flags, ar, callback};
+  }, * this, &buffer, offset, size, socket_flags, ar, callback};
   operation_thread.detach();
   return ar;
 }
@@ -444,7 +444,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_receive_from(array<xtd::byte>& buffe
       ar->error_code_ = s.get_last_error_();
       ar->exception_ = std::current_exception();
     }
-  }, *this, &buffer, offset, size, socket_flags, ar, callback};
+  }, * this, &buffer, offset, size, socket_flags, ar, callback};
   operation_thread.detach();
   return ar;
 }
@@ -466,7 +466,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_receive_message_from(array<xtd::byte
       ar->error_code_ = s.get_last_error_();
       ar->exception_ = std::current_exception();
     }
-  }, *this, &buffer, offset, size, ar, callback};
+  }, * this, &buffer, offset, size, ar, callback};
   operation_thread.detach();
   return ar;
 }
@@ -487,7 +487,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_send(const array<xtd::byte>& buffer,
       ar->error_code_ = s.get_last_error_();
       ar->exception_ = std::current_exception();
     }
-  }, *this, buffer, offset, size, socket_flags, ar, callback};
+  }, * this, buffer, offset, size, socket_flags, ar, callback};
   operation_thread.detach();
   return ar;
 }
@@ -508,7 +508,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_send(const array<xtd::byte>& buffer,
       ar->error_code_ = s.get_last_error_();
       ar->exception_ = std::current_exception();
     }
-  }, *this, buffer, offset, size, socket_flags, ar, callback};
+  }, * this, buffer, offset, size, socket_flags, ar, callback};
   operation_thread.detach();
   return ar;
 }
@@ -528,7 +528,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_send_to(const array<xtd::byte>& buff
       ar->error_code_ = s.get_last_error_();
       ar->exception_ = std::current_exception();
     }
-  }, *this, buffer, offset, size, socket_flags, remote_end_point, ar, callback};
+  }, * this, buffer, offset, size, socket_flags, remote_end_point, ar, callback};
   operation_thread.detach();
   return ar;
 }
@@ -954,7 +954,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_connect_(xtd::sptr<xtd::net::end_poi
       ar->error_code_ = s.get_last_error_();
       ar->exception_ = std::current_exception();
     }
-  }, *this, remote_end_point, ar, callback};
+  }, * this, remote_end_point, ar, callback};
   operation_thread.detach();
   return ar;
 }

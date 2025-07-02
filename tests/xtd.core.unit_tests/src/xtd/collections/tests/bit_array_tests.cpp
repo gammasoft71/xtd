@@ -31,7 +31,7 @@ namespace xtd::collections::tests {
     void test_method_(difference_type) {
       assert::are_equal(typeof_<ptrdiff>(), typeof_<bit_array::difference_type>());
     }
-
+    
     void test_method_(reference) {
       assert::are_equal(typeof_<bool&>(), typeof_<bit_array::reference>());
     }
@@ -55,43 +55,43 @@ namespace xtd::collections::tests {
     void test_method_(const_iterator) {
       assert::are_equal(typeof_<xtd::collections::generic::ienumerable<bool>::const_iterator>(), typeof_<bit_array::const_iterator>());
     }
-
+    
     void test_method_(constructor) {
       auto bits = bit_array {};
       assert::is_zero(bits.count());
       collection_assert::is_empty(bits);
     }
-
+    
     void test_method_(constructor_with_length) {
       auto bits = bit_array(5);
       assert::are_equal(5_z, bits.count());
       collection_assert::are_equal({false, false, false, false, false}, bits);
     }
-
+    
     void test_method_(constructor_with_length_and_false) {
       auto bits = bit_array(5, false);
       assert::are_equal(5_z, bits.count());
       collection_assert::are_equal({false, false, false, false, false}, bits);
     }
-
+    
     void test_method_(constructor_with_length_and_true) {
       auto bits = bit_array(5, true);
       assert::are_equal(5_z, bits.count());
       collection_assert::are_equal({true, true, true, true, true}, bits);
     }
-
+    
     void test_method_(constructor_with_bool_initializer_list) {
       auto bits = bit_array {true, false, false, true, true};
       assert::are_equal(5_z, bits.count());
       collection_assert::are_equal({true, false, false, true, true}, bits);
     }
-
+    
     void test_method_(constructor_with_bool_array) {
       auto bits = bit_array(array {true, false, false, true, true});
       assert::are_equal(5_z, bits.count());
       collection_assert::are_equal({true, false, false, true, true}, bits);
     }
-
+    
     void test_method_(constructor_with_byte_array) {
       auto bits = bit_array(array<byte> {0, 1, 2, 5, 40});
       assert::are_equal(40_z, bits.count());
@@ -105,11 +105,11 @@ namespace xtd::collections::tests {
     void test_method_(constructor_with_int32_array) {
       auto bits = bit_array(array {0, 1, 2, 5, 40});
       assert::are_equal(160_z, bits.count());
-        for (auto index = 0_z; index < 160_z ; ++index)
-          if (index == 32 || index == 65 || index == 96 || index == 98 || index == 131 || index == 133)
-            assert::is_true(bits[index]);
-          else
-            assert::is_false(bits[index]);
+      for (auto index = 0_z; index < 160_z ; ++index)
+        if (index == 32 || index == 65 || index == 96 || index == 98 || index == 131 || index == 133)
+          assert::is_true(bits[index]);
+        else
+          assert::is_false(bits[index]);
     }
     
     void test_method_(copy_constructor) {
@@ -186,7 +186,7 @@ namespace xtd::collections::tests {
       bits = bit_array(1);
       assert::is_false(bits.empty());
     }
-  
+    
     void test_method_(length) {
       auto bits = bit_array(4, true);
       assert::are_equal(4_z, bits.length());
@@ -235,7 +235,7 @@ namespace xtd::collections::tests {
       assert::is_false(bits.at(3));
       assert::throws<argument_out_of_range_exception>([&] {bits.at(4);});
     }
-
+    
     void test_method_(clone) {
       auto bits1 = bit_array {true, true, false, false};
       auto bits2 = as<bit_array>(bits1.clone());
@@ -273,7 +273,7 @@ namespace xtd::collections::tests {
       
       bits.get(0) = false;
       assert::is_false(bits.get(0));
-
+      
       bits.get(2) = true;
       assert::is_true(bits.get(2));
     }
@@ -302,7 +302,7 @@ namespace xtd::collections::tests {
       assert::is_true(enumerator.current());
       assert::is_false(enumerator.move_next());
     }
-
+    
     void test_method_(not_) {
       auto bits = bit_array {true, true, false, false};
       collection_assert::are_equal({false, false, true, true}, bits.not_());
@@ -341,7 +341,7 @@ namespace xtd::collections::tests {
       auto bits = bit_array {true, false, false, true, true};
       assert::are_equal("[true, false, false, true, true]", bits.to_string());
     }
-
+    
     void test_method_(xor_) {
       auto bits = bit_array {true, true, false, false};
       collection_assert::are_equal({false, true, true, false}, bits.xor_({true, false, true, false}));
@@ -373,7 +373,7 @@ namespace xtd::collections::tests {
       
       bits[0] = false;
       assert::is_false(bits[0]);
-
+      
       bits[2] = true;
       assert::is_true(bits[2]);
     }

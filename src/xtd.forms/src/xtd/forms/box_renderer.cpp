@@ -277,7 +277,7 @@ void box_renderer::fill_box(xtd::drawing::graphics& graphics, const xtd::drawing
   auto fill_rect = box_model.get_fill_rectangle(bounds);
   auto radius_top_left = box_model.border_radius().top_left().get_pixels(bounds) - box_model.border_width().top().get_pixels(bounds);
   auto radius_top_right = box_model.border_radius().top_right().get_pixels(bounds) - box_model.border_width().top().get_pixels(bounds);
-
+  
   if (radius_top_left < 0) radius_top_left = 0;
   if (radius_top_right < 0) radius_top_right = 0;
   

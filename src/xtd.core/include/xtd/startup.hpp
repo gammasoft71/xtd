@@ -47,7 +47,7 @@ namespace xtd {
     static int safe_run(main_function_t main_function) {
       return internal_safe_run(main_function, std::nullopt, std::nullopt);
     }
-
+    
     /// @brief Safely call the specified application's main entry point, argc and argv.
     /// @param main_function The main method to safety call.
     /// @param argc the main argc param.
@@ -73,7 +73,7 @@ namespace xtd {
       return internal_safe_run(main_function, argc, argv);
     }
     /// @}
-
+    
     /// @cond
     static int safe_run(xtd::delegate<void()> main_function, int argc, char* argv[]);
     static int safe_run(xtd::delegate<void()> main_function);
@@ -96,7 +96,7 @@ namespace xtd {
     static int safe_run(int (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
     static int safe_run(int (*main_function)(const xtd::argument_collection&));
     /// @endcond
-
+    
   private:
     template<class main_function_t>
     static int internal_safe_run(main_function_t main_function, std::optional<int> argc, std::optional<char**> argv) {
@@ -105,15 +105,16 @@ namespace xtd {
         auto exit_code = argc == std::nullopt && argv == std::nullopt ? run(main_function) : run(main_function, argc.value(), argv.value());
         end_safe_run();
         return exit_code;
-      } catch(const std::exception& e) {
+      } catch (const std::exception& e) {
         __show_generic_exception_message__(e);
         return EXIT_FAILURE;
-      } catch(...) {\
+      } catch (...) {
+        \
         __show_generic_exception_message__();
         return EXIT_FAILURE;
       }
     }
-
+    
     static void init_safe_run();
     
     static void end_safe_run();
