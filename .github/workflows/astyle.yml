@@ -1,0 +1,47 @@
+name: astyle
+
+on:
+  pull_request:
+    branches: [ master ]
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    name: Formating code
+    runs-on: macos-14
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Installing astyle
+      run: brew list astyle || brew install astyle
+
+    - name: Installing wxwidgets
+      run: brew list wxwidgets || brew install wxwidgets
+
+    - name: Configuring CMake
+      run: |
+        mkdir -p build && cd build
+        cmake .. \
+          -DXTD_BUILD_CPP_STANDARD=20 \
+          -DXTD_ENABLE_RUN_ASTYLE=ON
+
+    - name: Building xtd
+      run: cmake --build build --target run_astyle
+
+    - name: Commit and push changes if any
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add .
+        # Check if there is anything to commit
+        if ! git diff --cached --quiet; then
+          git commit -m "Apply astyle formatting via GitHub Action"
+          git push origin HEAD:master
+        else
+          echo "No changes to commit"
+        fi
