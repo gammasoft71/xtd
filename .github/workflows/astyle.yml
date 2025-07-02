@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     if: github.actor != 'github-actions[bot]'
-    name: Formating code
+    name: Formatting code
     runs-on: macos-14
 
     steps:
@@ -30,7 +30,7 @@ jobs:
           -DXTD_BUILD_CPP_STANDARD=20 \
           -DXTD_ENABLE_RUN_ASTYLE=ON
 
-    - name: Building xtd
+    - name: Building xtd and running astyle
       run: cmake --build build --target run_astyle
 
     - name: Commit and push changes if any
@@ -38,7 +38,6 @@ jobs:
         git config user.name "github-actions[bot]"
         git config user.email "github-actions[bot]@users.noreply.github.com"
         git add .
-        # Check if there is anything to commit
         if ! git diff --cached --quiet; then
           git commit -m "Apply astyle formatting via GitHub Action"
           git push origin HEAD:master
