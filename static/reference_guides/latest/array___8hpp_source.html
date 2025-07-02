@@ -187,7 +187,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> allocator_t&gt;</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="keyword">inline</span> xtd::basic_array&lt;type_t, allocator_t&gt;::basic_array(<span class="keyword">const</span> array&lt;size_type, 1&gt;&amp; lengths, <span class="keyword">const</span> value_type&amp; value) {</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  data_-&gt;items = base_type(lengths.aggregate([&amp;](<span class="keyword">const</span> size_type&amp; accumulator, <span class="keyword">const</span> size_type&amp; value) {return accumulator * value;}));</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  data_-&gt;items = base_type(lengths.aggregate([&amp;](<span class="keyword">const</span> size_type &amp; accumulator, <span class="keyword">const</span> size_type &amp; value) {return accumulator * value;}));</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  data_-&gt;lower_bound.clear();</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  data_-&gt;upper_bound.clear();</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> length : lengths) {</div>
@@ -221,7 +221,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 2 2025 10:54:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jul 2 2025 20:22:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

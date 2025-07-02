@@ -112,7 +112,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keyword">class </span>shared_ptr_object : <span class="keyword">public</span> xtd::object, <span class="keyword">public</span> xtd::icomparable&lt;shared_ptr_object&lt;type_t&gt;&gt;, <span class="keyword">public</span> xtd::iequatable&lt;shared_ptr_object&lt;type_t&gt;&gt; {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keyword">class </span>shared_ptr_object : <span class="keyword">public</span> xtd::object, <span class="keyword">public</span> xtd::icomparable&lt;shared_ptr_object&lt;type_t&gt;&gt;, <span class="keyword">public</span> xtd::iequatable&lt;shared_ptr_object&lt;type_t &gt;&gt; {</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">using </span>base_type = std::shared_ptr&lt;type_t&gt;;</div>
@@ -152,7 +152,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">bool</span> owner_before(<span class="keyword">const</span> std::shared_ptr&lt;value_t&gt;&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> ptr_.owner_before(other);}</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordtype">bool</span> owner_before( <span class="keyword">const</span> std::weak_ptr&lt;value_t&gt;&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> ptr_.owner_before(other);}</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordtype">bool</span> owner_before(<span class="keyword">const</span> std::weak_ptr&lt;value_t&gt;&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> ptr_.owner_before(other);}</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    </div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keyword">const</span> base_type&amp; pointer() const noexcept {<span class="keywordflow">return</span> ptr_;}</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    </div>
@@ -224,7 +224,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    }</div>
 <div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    </div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    type_t&amp; operator *() const noexcept {<span class="keywordflow">return</span> ptr_.operator *();}</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    type_t&amp; operator *() const noexcept {<span class="keywordflow">return</span> ptr_.operator * ();}</div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    </div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    type_t* operator -&gt;() const noexcept {<span class="keywordflow">return</span> ptr_.operator -&gt;();}</div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    </div>
@@ -280,7 +280,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 2 2025 10:55:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jul 2 2025 20:22:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
