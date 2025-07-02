@@ -38,38 +38,38 @@ namespace xtd::collections::generic::helpers::tests {
     void test_method_(const_reference) {
       assert::are_equal(typeof_<int* const&>(), typeof_<wrap_pointer_iterator<int*>::const_reference>());
     }
-
+    
     void test_method_(constructor_with_pointer) {
       auto a = array {10, 20, 30, 40, 50};
       auto i = wrap_pointer_iterator<int*> {a.data()};
       assert::are_equal(a.data(), i.data());
     }
-
+    
     void test_method_(data_const) {
       auto a = array {10, 20, 30, 40, 50};
       auto i = wrap_pointer_iterator<int*> {a.data()};
       assert::are_equal(a.data(), xtd::as_const(i.data()));
     }
-
+    
     void test_method_(data) {
       auto a = array {10, 20, 30, 40, 50};
       auto i = wrap_pointer_iterator<int*> {a.data()};
       i.data() = xtd::as_const(i.data()) + 1;
       assert::are_equal(a.data() + 1, xtd::as_const(i.data()));
     }
-
+    
     void test_method_(const_reference_operator) {
       auto a = array {10, 20, 30, 40, 50};
       auto i = wrap_pointer_iterator<int*> {a.data()};
       assert::are_equal(*a.data(), *xtd::as_const(i));
     }
-
+    
     void test_method_(reference_operator) {
       auto a = array {10, 20, 30, 40, 50};
       auto i = wrap_pointer_iterator<int*> {a.data()};
       assert::are_equal(*a.data(), *i);
     }
-
+    
     void test_method_(const_pointer_operator) {
       auto a = array {"a b"_s, "c d"_s, "e f"_s, "g h"_s, "i j"_s};
       auto i = wrap_pointer_iterator<string*> {a.data()};
@@ -77,7 +77,7 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal("a", r[0]);
       assert::are_equal("b", r[1]);
     }
-
+    
     void test_method_(pointer_operator) {
       auto a = array {"a b"_s, "c d"_s, "e f"_s, "g h"_s, "i j"_s};
       auto i = wrap_pointer_iterator<string*> {a.data()};
@@ -85,7 +85,7 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal("a", r[0]);
       assert::are_equal("b", r[1]);
     }
-
+    
     void test_method_(const_pre_increment_operator) {
       auto a = array {10, 20, 30, 40, 50};
       auto i = wrap_pointer_iterator<int*> {a.data()};
@@ -93,7 +93,7 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(*(a.data() + 1), *(++xtd::as_const(i)));
       assert::are_equal(*(a.data() + 1), *i);
     }
-
+    
     void test_method_(pre_increment_operator) {
       auto a = array {10, 20, 30, 40, 50};
       auto i = wrap_pointer_iterator<int*> {a.data()};
@@ -101,7 +101,7 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(*(a.data() + 1), *(++i));
       assert::are_equal(*(a.data() + 1), *i);
     }
-
+    
     void test_method_(const_post_increment_operator) {
       auto a = array {10, 20, 30, 40, 50};
       auto i = wrap_pointer_iterator<int*> {a.data()};
@@ -109,7 +109,7 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(*(a.data()), *(xtd::as_const(i)++));
       assert::are_equal(*(a.data() + 1), *i);
     }
-
+    
     void test_method_(post_increment_operator) {
       auto a = array {10, 20, 30, 40, 50};
       auto i = wrap_pointer_iterator<int*> {a.data()};
@@ -117,7 +117,7 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(*(a.data()), *(i++));
       assert::are_equal(*(a.data() + 1), *i);
     }
-
+    
     void test_method_(add_operator) {
       auto a = array {10, 20, 30, 40, 50};
       auto i = wrap_pointer_iterator<int*> {a.data()};

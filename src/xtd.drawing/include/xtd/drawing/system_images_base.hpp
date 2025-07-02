@@ -37,7 +37,7 @@ namespace xtd {
       /// @brief Gets system image from specified name.
       /// @return The default size in pixels (32 x 32).
       static xtd::drawing::size default_size() noexcept;
-
+      
       /// @brief Gets the image contexts.
       /// @return An wtd::string array that contains the image contexts.
       /// @remarks The system images are grouped by contaxt.

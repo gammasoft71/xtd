@@ -32,7 +32,7 @@ namespace xtd::forms::visual_styles::tests {
       assert::are_equal("checked", enum_object<>::to_string(push_button_state::checked));
       assert::are_equal(push_button_state::checked, enum_object<>::parse<push_button_state>("checked"));
     }
-
+    
     void test_method_(disabled) {
       assert::are_equal(5, enum_object<>::to_int32(push_button_state::disabled));
       assert::are_equal("disabled", enum_object<>::to_string(push_button_state::disabled));

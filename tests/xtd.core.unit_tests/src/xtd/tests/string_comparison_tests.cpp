@@ -19,7 +19,7 @@ namespace xtd::tests {
       assert::are_equal("current_culture_ignore_case", enum_object<>::to_string(string_comparison::current_culture_ignore_case));
       assert::are_equal(string_comparison::current_culture_ignore_case, enum_object<>::parse<string_comparison>("current_culture_ignore_case"));
     }
-
+    
     void test_method_(invariant_culture) {
       assert::are_equal(2, enum_object<>::to_int32(string_comparison::invariant_culture));
       assert::are_equal("invariant_culture", enum_object<>::to_string(string_comparison::invariant_culture));
@@ -31,7 +31,7 @@ namespace xtd::tests {
       assert::are_equal("invariant_culture_ignore_case", enum_object<>::to_string(string_comparison::invariant_culture_ignore_case));
       assert::are_equal(string_comparison::invariant_culture_ignore_case, enum_object<>::parse<string_comparison>("invariant_culture_ignore_case"));
     }
-
+    
     void test_method_(ordinal) {
       assert::are_equal(4, enum_object<>::to_int32(string_comparison::ordinal));
       assert::are_equal("ordinal", enum_object<>::to_string(string_comparison::ordinal));

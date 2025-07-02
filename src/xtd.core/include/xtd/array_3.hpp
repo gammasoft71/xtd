@@ -7,7 +7,7 @@
 #endif
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {  
+namespace xtd {
   /// @brief Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays.
   /// @par Definition
   /// ```cpp
@@ -114,11 +114,11 @@ namespace xtd {
     /// @param items The initializer list to initialize the elements of the container with.
     array(std::initializer_list<std::initializer_list<std::initializer_list<type_t>>> items) : basic_array<type_t, allocator_t>(items) {}
     /// @}
-
+    
     /// @cond
     ~array() {}
     /// @endcond
-
+    
     /// @name Public Properties
     
     /// @{

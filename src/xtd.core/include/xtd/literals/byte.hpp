@@ -98,7 +98,7 @@ namespace xtd {
     /// xtd::console::out << L"125"_b << xtd::environment::new_line;
     /// ```
     xtd::byte operator""_b(const wchar_t* s, std::size_t n);
-
+    
     /// @brief Used to convert specified value into byte.
     /// @par Namespace
     /// xtd

@@ -36,10 +36,10 @@ namespace xtd {
           long wx_style = common_control_style_to_wx_style(style, ex_style);
           
           if ((style & CC_ALPHACOLOR) == CC_ALPHACOLOR) wx_style |= wxCLRP_SHOW_ALPHA;
-
+          
           return wx_style;
         }
-
+        
         void SetBackgroundColour(const wxColour& colour) override {
           control_handler::SetBackgroundColour(colour);
           static_cast<wxColourPickerCtrl*>(control())->GetPickerCtrl()->SetBackgroundColour(colour);

@@ -303,7 +303,7 @@ namespace xtd {
       /// @return New xtd::forms::dot_matrix_display created.
       static dot_matrix_display create(const control& parent, const dots_collection& dots, bool show_back_dot, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
-
+      
     protected:
       /// @name Protected Properties
       

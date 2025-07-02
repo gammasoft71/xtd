@@ -34,7 +34,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/box>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -54,19 +54,19 @@ namespace xtd {
   /// console::write_line("result = {}", result); // Display: result = true;
   /// ```
   template<class type_t>
-  struct box : xtd::object, xtd::icomparable<box<type_t>>, xtd::iequatable<box<type_t>>, xtd::iformatable {
+  struct box : xtd::object, xtd::icomparable<box<type_t>>, xtd::iequatable<box<type_t >>, xtd::iformatable {
     /// @name Public Aliases
     
     /// @{
     /// Represents the value type.
     using value_type = type_t;
-
+    
     /// Represents the reference type.
     using reference = type_t&;
     
     /// Represents the cont reference type.
     using const_reference = const type_t&;
-
+    
     /// Represents the reference type.
     using pointer = type_t*;
     
@@ -129,20 +129,20 @@ namespace xtd {
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
     int32 compare_to(const box& value) const noexcept override {return xtd::collections::generic::helpers::comparer<value_type> {}(this->value, value.value);}
-
+    
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const object& obj) const noexcept override {return is<box<value_type>>(obj) && equals(static_cast<const box<value_type>&>(obj));}
+    bool equals(const object& obj) const noexcept override {return is<box<value_type>>(obj) && equals(static_cast<const box<value_type>& > (obj));}
     /// @brief Indicates whether the current object is equal to another object of the same type.
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
     bool equals(const box& value) const noexcept override {return xtd::collections::generic::helpers::equator<value_type> {}(this->value, value.value);}
-
+    
     /// @brief Serves as a hash function for a particular type.
     /// @return size_t A hash code for the current object.
     xtd::size get_hash_code() const noexcept override {return hash_code::combine(value);}
-
+    
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
     xtd::string to_string() const noexcept override {return std::is_integral<value_type>::value || std::is_floating_point<value_type>::value || std::is_enum<type>::value || std::is_pointer<type>::value || std::is_base_of<xtd::istringable, value_type>::value || std::is_base_of<xtd::object, value_type>::value ? xtd::string::format("{}", value) : typeof_<value_type>().full_name();}
@@ -156,7 +156,7 @@ namespace xtd {
     /// @return The string representation of the value of this instance as specified by format.
     xtd::string to_string(const xtd::string& format, const std::locale& loc) const override {return xtd::string::format(xtd::string::format("{{:{}}}", format), value);}
     /// @}
-
+    
     /// @name Public Static Methods
     
     /// @{
@@ -164,7 +164,7 @@ namespace xtd {
     /// @param value A string containing a `value_type` to convert.
     /// @return A `value_type` equivalent to the native value contained in value.
     static value_type parse(const xtd::string& value) {return xtd::parse<value_type>(value);}
-
+    
     /// @brief Converts the string to its `value_type` equivalent. A return value indicates whether the conversion succeeded or failed.
     /// @param value A string containing a `value_type` to convert.
     /// @param result A `value_type` equivalent to the native value contained in value.

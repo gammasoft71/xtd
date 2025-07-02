@@ -46,7 +46,7 @@ settings_form::settings_form() {
     ide_path_text_box_.enabled(!use_default_ide_check_box_.checked());
     ide_path_button_.enabled(!use_default_ide_check_box_.checked());
   };
-
+  
   ide_path_label_.enabled(!use_default_ide_check_box_.checked());
   ide_path_label_.location({0, 101});
   ide_path_label_.text("IDE path :");

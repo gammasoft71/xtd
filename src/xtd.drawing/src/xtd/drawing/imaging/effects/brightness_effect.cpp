@@ -19,7 +19,7 @@ void brightness_effect::apply(xtd::drawing::image& image) const {
   auto rgb = reinterpret_cast<helpers::rgb*>(image.rgb());
   auto blend_target = percent < 1.0 ? helpers::rgb {} : helpers::rgb {.r = 255, .g = 255, .b = 255};
   auto blend_factor = percent < 1.0 ? 1.0 - percent : percent - 1.0;
-
+  
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;

@@ -136,7 +136,7 @@ namespace xtd {
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
-
+      
       /// @brief Gets the column number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.
       /// @return The file column number, or 0 (zero) if the file column number cannot be determined.
       /// @par Examples
@@ -262,7 +262,7 @@ namespace xtd {
       static auto get_stack_frames(const xtd::string& str, xtd::size skip_frames, bool need_file_info) noexcept;
       
       struct data;
-      ptr<data> data_;      
+      ptr<data> data_;
     };
   }
 }

@@ -66,7 +66,7 @@ namespace xtd {
         /// Implementations are required to ensure that if the xtd::collections::generic::iequality_comparer::equals method returns `true` for two objects `x` and `y`, then the value returned by the xtd::collections::generic::iequality_comparer::get_hash_code method for `x` must equal the value returned for `y`.
         xtd::size get_hash_code(const type_t& obj) const noexcept override {return xtd::collections::generic::helpers::hasher<type_t> {}(obj);}
         /// @}
-      
+        
       private:
         equality_comparer() = default;
       };

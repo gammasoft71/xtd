@@ -341,7 +341,7 @@ namespace xtd {
         /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
         static const style_sheet& system_style_sheet() noexcept;
         /// @}
-
+        
         /// @name Public Methods
         
         /// @{

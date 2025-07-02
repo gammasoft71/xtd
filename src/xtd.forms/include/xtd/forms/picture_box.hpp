@@ -65,7 +65,7 @@ namespace xtd {
       /// @return Current label instance.
       /// @remarks You can use this property to add a border to the control. This property is typically used to differentiate a label that labels another control from a label that displays the status of a process in an application.
       virtual picture_box& border_style(std::nullptr_t);
-
+      
       /// @brief Gets the image that is displayed by picture_box.
       /// @return The xtd::drawing::image to display.
       /// @remarks The image property is set to the xtd::drawing::image to display. You can do this either at design time or at run time.
@@ -106,7 +106,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
       /// @return New xtd::forms::picture_box created.
-      static picture_box create( const drawing::point& location, const drawing::size& size);
+      static picture_box create(const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::picture_box with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::picture_box.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::picture_box.
@@ -203,7 +203,7 @@ namespace xtd {
       xtd::uptr<xtd::object> clone() const override;
       
       drawing::size measure_control() const noexcept override;
-
+      
       /// @brief Overrides the on_handle_created(const event_args&) method.
       /// @param e An event_args that contains the event data.
       void on_handle_created(const event_args& e) override;

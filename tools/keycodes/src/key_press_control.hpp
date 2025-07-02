@@ -21,7 +21,7 @@ namespace keycodes {
       if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
       return result;
     }
-
+    
   private:
     xtd::forms::label key_event_label_;
     xtd::forms::label key_char_label_;

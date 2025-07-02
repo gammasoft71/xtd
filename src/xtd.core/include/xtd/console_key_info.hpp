@@ -15,7 +15,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/console_key_info>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -74,10 +74,10 @@ namespace xtd {
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
     bool equals(const console_key_info& key_info) const noexcept override;
-
+    
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
-    xtd::size get_hash_code() const noexcept override;    
+    xtd::size get_hash_code() const noexcept override;
     /// @}
     
   private:

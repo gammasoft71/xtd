@@ -37,7 +37,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd_about_dialog class.
       xtd_about_dialog();
       /// @}
-     
+      
       /// @name Public Methods
       
       /// @{

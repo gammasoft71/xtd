@@ -28,12 +28,12 @@ namespace xtd {
     class drawing_export_ categories_system_images final : private system_images_base {
     public:
       /// @name Public Static Properties
-
+      
       /// @{
       /// @brief Gets system image from specified name.
       /// @return The default size in pixels (32 x 32).
       static xtd::drawing::size default_size() noexcept;
-
+      
       /// @brief Gets the categories system image "applications-accessories".
       /// @return The xtd::drawing::image "applications-accessories".
       static xtd::drawing::image applications_accessories() noexcept;
@@ -41,7 +41,7 @@ namespace xtd {
       /// @param size The categories system image size in pixels.
       /// @return The xtd::drawing::image "applications-accessories".
       static xtd::drawing::image applications_accessories(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the categories system image "applications-development".
       /// @return The xtd::drawing::image "applications-development".
       static xtd::drawing::image applications_development() noexcept;
@@ -49,7 +49,7 @@ namespace xtd {
       /// @param size The categories system image size in pixels.
       /// @return The xtd::drawing::image "applications-development".
       static xtd::drawing::image applications_development(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the categories system image "applications-engineering".
       /// @return The xtd::drawing::image "applications-engineering".
       static xtd::drawing::image applications_engineering() noexcept;
@@ -57,7 +57,7 @@ namespace xtd {
       /// @param size The categories system image size in pixels.
       /// @return The xtd::drawing::image "applications-engineering".
       static xtd::drawing::image applications_engineering(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the categories system image "applications-games".
       /// @return The xtd::drawing::image "applications-games".
       static xtd::drawing::image applications_games() noexcept;
@@ -65,7 +65,7 @@ namespace xtd {
       /// @param size The categories system image size in pixels.
       /// @return The xtd::drawing::image "applications-games".
       static xtd::drawing::image applications_games(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the categories system image "applications-graphics".
       /// @return The xtd::drawing::image "applications-graphics".
       static xtd::drawing::image applications_graphics() noexcept;
@@ -73,7 +73,7 @@ namespace xtd {
       /// @param size The categories system image size in pixels.
       /// @return The xtd::drawing::image "applications-graphics".
       static xtd::drawing::image applications_graphics(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the categories system image "applications-internet".
       /// @return The xtd::drawing::image "applications-internet".
       static xtd::drawing::image applications_internet() noexcept;
@@ -81,7 +81,7 @@ namespace xtd {
       /// @param size The categories system image size in pixels.
       /// @return The xtd::drawing::image "applications-internet".
       static xtd::drawing::image applications_internet(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the categories system image "applications-multimedia".
       /// @return The xtd::drawing::image "applications-multimedia".
       static xtd::drawing::image applications_multimedia() noexcept;
@@ -89,7 +89,7 @@ namespace xtd {
       /// @param size The categories system image size in pixels.
       /// @return The xtd::drawing::image "applications-multimedia".
       static xtd::drawing::image applications_multimedia(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the categories system image "applications-office".
       /// @return The xtd::drawing::image "applications-office".
       static xtd::drawing::image applications_office() noexcept;
@@ -97,7 +97,7 @@ namespace xtd {
       /// @param size The categories system image size in pixels.
       /// @return The xtd::drawing::image "applications-office".
       static xtd::drawing::image applications_office(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the categories system image "applications-other".
       /// @return The xtd::drawing::image "applications-other".
       static xtd::drawing::image applications_other() noexcept;
@@ -105,7 +105,7 @@ namespace xtd {
       /// @param size The categories system image size in pixels.
       /// @return The xtd::drawing::image "applications-other".
       static xtd::drawing::image applications_other(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the categories system image "applications-science".
       /// @return The xtd::drawing::image "applications-science".
       static xtd::drawing::image applications_science() noexcept;
@@ -113,7 +113,7 @@ namespace xtd {
       /// @param size The categories system image size in pixels.
       /// @return The xtd::drawing::image "applications-science".
       static xtd::drawing::image applications_science(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the categories system image "applications-system".
       /// @return The xtd::drawing::image "applications-system".
       static xtd::drawing::image applications_system() noexcept;
@@ -121,7 +121,7 @@ namespace xtd {
       /// @param size The categories system image size in pixels.
       /// @return The xtd::drawing::image "applications-system".
       static xtd::drawing::image applications_system(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the categories system image "applications-utilities".
       /// @return The xtd::drawing::image "applications-utilities".
       static xtd::drawing::image applications_utilities() noexcept;
@@ -129,7 +129,7 @@ namespace xtd {
       /// @param size The categories system image size in pixels.
       /// @return The xtd::drawing::image "applications-utilities".
       static xtd::drawing::image applications_utilities(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the categories system image "preferences-desktop".
       /// @return The xtd::drawing::image "preferences-desktop".
       static xtd::drawing::image preferences_desktop() noexcept;
@@ -137,7 +137,7 @@ namespace xtd {
       /// @param size The categories system image size in pixels.
       /// @return The xtd::drawing::image "preferences-desktop".
       static xtd::drawing::image preferences_desktop(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the categories system image "preferences-desktop-peripherals".
       /// @return The xtd::drawing::image "preferences-desktop-peripherals".
       static xtd::drawing::image preferences_desktop_peripherals() noexcept;
@@ -145,7 +145,7 @@ namespace xtd {
       /// @param size The categories system image size in pixels.
       /// @return The xtd::drawing::image "preferences-desktop-peripherals".
       static xtd::drawing::image preferences_desktop_peripherals(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the categories system image "preferences-desktop-personal".
       /// @return The xtd::drawing::image "preferences-desktop-personal".
       static xtd::drawing::image preferences_desktop_personal() noexcept;
@@ -153,7 +153,7 @@ namespace xtd {
       /// @param size The categories system image size in pixels.
       /// @return The xtd::drawing::image "preferences-desktop-personal".
       static xtd::drawing::image preferences_desktop_personal(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the categories system image "preferences-other".
       /// @return The xtd::drawing::image "preferences-other".
       static xtd::drawing::image preferences_other() noexcept;
@@ -161,7 +161,7 @@ namespace xtd {
       /// @param size The categories system image size in pixels.
       /// @return The xtd::drawing::image "preferences-other".
       static xtd::drawing::image preferences_other(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the categories system image "preferences-system".
       /// @return The xtd::drawing::image "preferences-system".
       static xtd::drawing::image preferences_system() noexcept;
@@ -169,7 +169,7 @@ namespace xtd {
       /// @param size The categories system image size in pixels.
       /// @return The xtd::drawing::image "preferences-system".
       static xtd::drawing::image preferences_system(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the categories system image "preferences-system-network".
       /// @return The xtd::drawing::image "preferences-system-network".
       static xtd::drawing::image preferences_system_network() noexcept;
@@ -177,7 +177,7 @@ namespace xtd {
       /// @param size The categories system image size in pixels.
       /// @return The xtd::drawing::image "preferences-system-network".
       static xtd::drawing::image preferences_system_network(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the categories system image "system-help".
       /// @return The xtd::drawing::image "system-help".
       static xtd::drawing::image system_help() noexcept;
@@ -185,11 +185,11 @@ namespace xtd {
       /// @param size The categories system image size in pixels.
       /// @return The xtd::drawing::image "system-help".
       static xtd::drawing::image system_help(const xtd::drawing::size& size) noexcept;
-
+      
       /// @}
-
+      
       /// @name Public Static Methods
-
+      
       /// @{
       /// @brief Gets an array of images.
       /// @return The array of images.
@@ -198,7 +198,7 @@ namespace xtd {
       /// @param size The images size in pixels.
       /// @return The array of images.
       static xtd::array<xtd::drawing::image> get_images(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an array of image names.
       /// @return The array of image names.
       static const xtd::array<xtd::string>& get_image_names() noexcept;

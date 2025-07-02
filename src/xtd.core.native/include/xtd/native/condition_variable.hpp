@@ -53,12 +53,12 @@ namespace xtd {
       /// @param handle The condition variable handle to pulse.
       /// @return `true` if succeed; otherwise `false`.
       static void pulse(intmax_t handle);
-
+      
       /// @brief Pulse all waiting condition variable with specified condition variable handle.
       /// @param handle The condition variable handle to pulse all.
       /// @return `true` if succeed; otherwise `false`.
       static void pulse_all(intmax_t handle);
-
+      
       /// @brief Wait`condition variable with specified condition variable handle.
       /// @param handle The condition variable handle to release.
       /// @param critical_section_handle The critical section handle associate to the condition variable handle.

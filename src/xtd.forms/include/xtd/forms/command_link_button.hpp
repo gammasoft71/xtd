@@ -38,7 +38,7 @@ namespace xtd {
     /// @include command_link_button.cpp
     class forms_export_ command_link_button : public button_base {
       struct data;
-
+      
     public:
       /// @name Public Constructors
       
@@ -57,7 +57,7 @@ namespace xtd {
       /// @brief Sets the mode by which the button automatically resizes itself.
       /// @param value One of the AutoSizeMode values. The default value is grow_only.
       virtual command_link_button& auto_size_mode(forms::auto_size_mode value);
-
+      
       /// @brief Gets the main text associated with this control.
       /// @return The main text associated with this control.
       virtual xtd::string& main_text() const noexcept;
@@ -65,7 +65,7 @@ namespace xtd {
       /// @param text The main text associated with this control.
       /// @return Current control.
       virtual command_link_button& main_text(const xtd::string& value);
-
+      
       /// @brief Gets the supplementary text associated with this control.
       /// @return The supplementary text associated with this control.
       virtual xtd::string& supplementary_text() const noexcept;
@@ -73,7 +73,7 @@ namespace xtd {
       /// @param text The supplementary text associated with this control.
       /// @return Current control.
       virtual command_link_button& supplementary_text(const xtd::string& value);
-
+      
       /// @brief Gets the text associated with this control.
       /// @return The text associated with this control.
       xtd::string& text() const noexcept override;
@@ -82,7 +82,7 @@ namespace xtd {
       /// @return Current control.
       /// @remarks Is equivalent to calling the texts property with what's before first "\n" as text and after first "\n" as supplementary_text.
       xtd::forms::control& text(const xtd::string& value) override;
-
+      
       /// @brief Gets text and supplementary text.
       /// @return A tuple of two strings that represent main text and supplementary text.
       virtual std::tuple<xtd::string, xtd::string> texts() const noexcept;
@@ -112,7 +112,7 @@ namespace xtd {
       [[deprecated("Replaced by xtd::forms::command_link_button::set_texts - Will be removed in version 0.4.0.")]]
       control& texts(const xtd::string& text, const xtd::string& supplementary_text);
       /// @}
-
+      
       /// @name Public Static Methods
       
       /// @{
@@ -240,7 +240,7 @@ namespace xtd {
       drawing::size measure_control() const noexcept override;
       void on_handle_created(const event_args& e) override;
       /// @}
-
+      
     private:
       xtd::sptr<data> data_;
     };

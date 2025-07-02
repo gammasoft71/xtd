@@ -131,7 +131,7 @@ namespace xtdc_gui {
     xtd::forms::button next_button_;
     
     settings_form settings_form_;
-
+    
     xtd::forms::menu_item file_open_project_menu_item_ {"Open a project or solution", {*this, overload_<>(&main_form::open_project)}, xtd::drawing::bitmap(xtd::drawing::bitmap::from_xpm_data(xtd_open_examples_icon), xtd::forms::menu_images::size()), xtd::forms::shortcut::ctrl_o};
     xtd::forms::menu_item file_run_project_menu_item_ {"Run a project", {*this, overload_<>(&main_form::run_project)}, xtd::drawing::bitmap(xtd::drawing::bitmap::from_xpm_data(xtd_run_icon), xtd::forms::menu_images::size()), xtd::forms::shortcut::ctrl_r};
     xtd::forms::menu_item file_create_new_project_menu_item_ {"Create new project", {*this, overload_<>(&main_form::new_project)}, xtd::drawing::bitmap(xtd::drawing::bitmap::from_xpm_data(xtd_new_icon), xtd::forms::menu_images::size()), xtd::forms::shortcut::ctrl_n};

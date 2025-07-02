@@ -746,7 +746,7 @@ void main_form::new_project(const string& project_path, project_type type, proje
   add_to_open_recent_projects(project_path);
   background_worker_ = xtd::new_uptr<background_worker>();
   background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
-    std::tuple<string, string, string> new_project = *as<ptr<std::tuple<string, string, string>>>(e.argument());
+    std::tuple<string, string, string> new_project = *as<ptr<std::tuple<string, string, string >>> (e.argument());
     begin_invoke([&] {
       progress_dialog_ = xtd::new_uptr<progress_dialog>();
       progress_dialog_->text(string::format("Creating {} project", path::get_file_name(std::get<2>(new_project))));
@@ -861,14 +861,14 @@ void main_form::show_about_dialog() {
   //dialog.translators({"Gammasoft", "Contributors"});
   //dialog.artists({"Gammasoft"});
   dialog.license("MIT License\n"
-    "\n"
-    "Copyright (c) 2025 Gammasoft.\n"
-    "\n"
-    "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n"
-    "\n"
-    "The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n"
-    "\n"
-    "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n");
+                 "\n"
+                 "Copyright (c) 2025 Gammasoft.\n"
+                 "\n"
+                 "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n"
+                 "\n"
+                 "The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n"
+                 "\n"
+                 "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n");
   dialog.show();
 }
 

@@ -28,12 +28,12 @@ namespace xtd {
     class drawing_export_ devices_system_images final : private system_images_base {
     public:
       /// @name Public Static Properties
-
+      
       /// @{
       /// @brief Gets system image from specified name.
       /// @return The default size in pixels (32 x 32).
       static xtd::drawing::size default_size() noexcept;
-
+      
       /// @brief Gets the devices system image "audio-card".
       /// @return The xtd::drawing::image "audio-card".
       static xtd::drawing::image audio_card() noexcept;
@@ -41,7 +41,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "audio-card".
       static xtd::drawing::image audio_card(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "audio-input-microphone".
       /// @return The xtd::drawing::image "audio-input-microphone".
       static xtd::drawing::image audio_input_microphone() noexcept;
@@ -49,7 +49,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "audio-input-microphone".
       static xtd::drawing::image audio_input_microphone(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "battery".
       /// @return The xtd::drawing::image "battery".
       static xtd::drawing::image battery() noexcept;
@@ -57,7 +57,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "battery".
       static xtd::drawing::image battery(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "camera-photo".
       /// @return The xtd::drawing::image "camera-photo".
       static xtd::drawing::image camera_photo() noexcept;
@@ -65,7 +65,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "camera-photo".
       static xtd::drawing::image camera_photo(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "camera-video".
       /// @return The xtd::drawing::image "camera-video".
       static xtd::drawing::image camera_video() noexcept;
@@ -73,7 +73,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "camera-video".
       static xtd::drawing::image camera_video(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "camera-web".
       /// @return The xtd::drawing::image "camera-web".
       static xtd::drawing::image camera_web() noexcept;
@@ -81,7 +81,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "camera-web".
       static xtd::drawing::image camera_web(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "computer".
       /// @return The xtd::drawing::image "computer".
       static xtd::drawing::image computer() noexcept;
@@ -89,7 +89,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "computer".
       static xtd::drawing::image computer(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "drive-harddisk".
       /// @return The xtd::drawing::image "drive-harddisk".
       static xtd::drawing::image drive_harddisk() noexcept;
@@ -97,7 +97,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "drive-harddisk".
       static xtd::drawing::image drive_harddisk(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "drive-optical".
       /// @return The xtd::drawing::image "drive-optical".
       static xtd::drawing::image drive_optical() noexcept;
@@ -105,7 +105,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "drive-optical".
       static xtd::drawing::image drive_optical(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "drive-removable-media-usb-pendrive".
       /// @return The xtd::drawing::image "drive-removable-media-usb-pendrive".
       static xtd::drawing::image drive_removable_media_usb_pendrive() noexcept;
@@ -113,7 +113,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "drive-removable-media-usb-pendrive".
       static xtd::drawing::image drive_removable_media_usb_pendrive(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "drive-removable-media".
       /// @return The xtd::drawing::image "drive-removable-media".
       static xtd::drawing::image drive_removable_media() noexcept;
@@ -121,7 +121,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "drive-removable-media".
       static xtd::drawing::image drive_removable_media(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "input-gaming".
       /// @return The xtd::drawing::image "input-gaming".
       static xtd::drawing::image input_gaming() noexcept;
@@ -129,7 +129,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "input-gaming".
       static xtd::drawing::image input_gaming(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "input-keyboard".
       /// @return The xtd::drawing::image "input-keyboard".
       static xtd::drawing::image input_keyboard() noexcept;
@@ -137,7 +137,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "input-keyboard".
       static xtd::drawing::image input_keyboard(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "input-mouse".
       /// @return The xtd::drawing::image "input-mouse".
       static xtd::drawing::image input_mouse() noexcept;
@@ -145,7 +145,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "input-mouse".
       static xtd::drawing::image input_mouse(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "input-tablet".
       /// @return The xtd::drawing::image "input-tablet".
       static xtd::drawing::image input_tablet() noexcept;
@@ -153,7 +153,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "input-tablet".
       static xtd::drawing::image input_tablet(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "media-flash".
       /// @return The xtd::drawing::image "media-flash".
       static xtd::drawing::image media_flash() noexcept;
@@ -161,7 +161,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "media-flash".
       static xtd::drawing::image media_flash(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "media-floppy".
       /// @return The xtd::drawing::image "media-floppy".
       static xtd::drawing::image media_floppy() noexcept;
@@ -169,7 +169,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "media-floppy".
       static xtd::drawing::image media_floppy(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "media-optical-audio".
       /// @return The xtd::drawing::image "media-optical-audio".
       static xtd::drawing::image media_optical_audio() noexcept;
@@ -177,7 +177,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "media-optical-audio".
       static xtd::drawing::image media_optical_audio(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "media-optical-blu-ray".
       /// @return The xtd::drawing::image "media-optical-blu-ray".
       static xtd::drawing::image media_optical_blu_ray() noexcept;
@@ -185,7 +185,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "media-optical-blu-ray".
       static xtd::drawing::image media_optical_blu_ray(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "media-optical-data".
       /// @return The xtd::drawing::image "media-optical-data".
       static xtd::drawing::image media_optical_data() noexcept;
@@ -193,7 +193,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "media-optical-data".
       static xtd::drawing::image media_optical_data(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "media-optical-dvd-video".
       /// @return The xtd::drawing::image "media-optical-dvd-video".
       static xtd::drawing::image media_optical_dvd_video() noexcept;
@@ -201,7 +201,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "media-optical-dvd-video".
       static xtd::drawing::image media_optical_dvd_video(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "media-optical-dvd".
       /// @return The xtd::drawing::image "media-optical-dvd".
       static xtd::drawing::image media_optical_dvd() noexcept;
@@ -209,7 +209,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "media-optical-dvd".
       static xtd::drawing::image media_optical_dvd(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "media-optical-mixed-cd".
       /// @return The xtd::drawing::image "media-optical-mixed-cd".
       static xtd::drawing::image media_optical_mixed_cd() noexcept;
@@ -217,7 +217,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "media-optical-mixed-cd".
       static xtd::drawing::image media_optical_mixed_cd(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "media-optical-recordable".
       /// @return The xtd::drawing::image "media-optical-recordable".
       static xtd::drawing::image media_optical_recordable() noexcept;
@@ -225,7 +225,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "media-optical-recordable".
       static xtd::drawing::image media_optical_recordable(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "media-optical-video".
       /// @return The xtd::drawing::image "media-optical-video".
       static xtd::drawing::image media_optical_video() noexcept;
@@ -233,7 +233,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "media-optical-video".
       static xtd::drawing::image media_optical_video(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "media-optical".
       /// @return The xtd::drawing::image "media-optical".
       static xtd::drawing::image media_optical() noexcept;
@@ -241,7 +241,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "media-optical".
       static xtd::drawing::image media_optical(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "media-tape".
       /// @return The xtd::drawing::image "media-tape".
       static xtd::drawing::image media_tape() noexcept;
@@ -249,7 +249,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "media-tape".
       static xtd::drawing::image media_tape(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "modem".
       /// @return The xtd::drawing::image "modem".
       static xtd::drawing::image modem() noexcept;
@@ -257,7 +257,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "modem".
       static xtd::drawing::image modem(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "multimedia-player".
       /// @return The xtd::drawing::image "multimedia-player".
       static xtd::drawing::image multimedia_player() noexcept;
@@ -265,7 +265,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "multimedia-player".
       static xtd::drawing::image multimedia_player(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "network-wired".
       /// @return The xtd::drawing::image "network-wired".
       static xtd::drawing::image network_wired() noexcept;
@@ -273,7 +273,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "network-wired".
       static xtd::drawing::image network_wired(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "network-wireless".
       /// @return The xtd::drawing::image "network-wireless".
       static xtd::drawing::image network_wireless() noexcept;
@@ -281,7 +281,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "network-wireless".
       static xtd::drawing::image network_wireless(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "pda".
       /// @return The xtd::drawing::image "pda".
       static xtd::drawing::image pda() noexcept;
@@ -289,7 +289,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "pda".
       static xtd::drawing::image pda(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "phone".
       /// @return The xtd::drawing::image "phone".
       static xtd::drawing::image phone() noexcept;
@@ -297,7 +297,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "phone".
       static xtd::drawing::image phone(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "printer".
       /// @return The xtd::drawing::image "printer".
       static xtd::drawing::image printer() noexcept;
@@ -305,7 +305,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "printer".
       static xtd::drawing::image printer(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "scanner".
       /// @return The xtd::drawing::image "scanner".
       static xtd::drawing::image scanner() noexcept;
@@ -313,7 +313,7 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "scanner".
       static xtd::drawing::image scanner(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the devices system image "video-display".
       /// @return The xtd::drawing::image "video-display".
       static xtd::drawing::image video_display() noexcept;
@@ -321,11 +321,11 @@ namespace xtd {
       /// @param size The devices system image size in pixels.
       /// @return The xtd::drawing::image "video-display".
       static xtd::drawing::image video_display(const xtd::drawing::size& size) noexcept;
-
+      
       /// @}
-
+      
       /// @name Public Static Methods
-
+      
       /// @{
       /// @brief Gets an array of images.
       /// @return The array of images.
@@ -334,7 +334,7 @@ namespace xtd {
       /// @param size The images size in pixels.
       /// @return The array of images.
       static xtd::array<xtd::drawing::image> get_images(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an array of image names.
       /// @return The array of image names.
       static const xtd::array<xtd::string>& get_image_names() noexcept;

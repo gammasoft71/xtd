@@ -51,11 +51,11 @@ namespace xtd::tests {
     void test_method_(format_string_with_wstring) {
       assert::are_equal(u"string", format(u"{}", wstring("string")));
     }
-
+    
     void test_method_(format_string_with_std_string) {
       assert::are_equal(u"string", format(u"{}", std::string("string")));
     }
-
+    
     void test_method_(format_string_with_std_u8string) {
       assert::are_equal(u"string", format(u"{}", std::u8string(u8"string")));
     }

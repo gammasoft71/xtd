@@ -23,20 +23,20 @@ using namespace xtd::tunit;
 namespace xtd::text::tests {
   template<class value_t>
   class basic_string_builder_tests;
-
+  
   test_class_attribute<basic_string_builder_tests<char>> basic_string_builder_tests_class_char_attr {"basic_string_builder_tests<char>"};
   test_class_attribute<basic_string_builder_tests<char16>> basic_string_builder_tests_class_char16_attr {"basic_string_builder_tests<char16>"};
   test_class_attribute<basic_string_builder_tests<char32>> basic_string_builder_tests_class_char32_attr {"basic_string_builder_tests<char32>"};
   test_class_attribute<basic_string_builder_tests<char8>> basic_string_builder_tests_class_char8_attr {"basic_string_builder_tests<char8>"};
   test_class_attribute<basic_string_builder_tests<wchar>> basic_string_builder_tests_class_wchar_attr {"basic_string_builder_tests<wchar>"};
-
+  
   template<class char_t>
   class basic_string_builder_tests : public test_class {
   public:
     // ______________________________________________________________________________________________________________________________________________
     //                                                                                                                                        Aliases
     void test_method_(base_type) {
-      assert::are_equal(typeof_<typename std::basic_string<char_t>>(), typeof_<typename basic_string_builder<char_t>::base_type>());
+      assert::are_equal(typeof_<typename std::basic_string<char_t>>(), typeof_<typename basic_string_builder<char_t>::base_type > ());
     }
     
     void test_method_(traits_type) {
@@ -100,20 +100,20 @@ namespace xtd::text::tests {
     void test_method_(const_reverse_iterator) {
       assert::are_equal(typeof_<typename std::basic_string<char_t>::const_reverse_iterator>(), typeof_<typename basic_string_builder<char_t>::const_reverse_iterator>());
     }
-
+    
     // ______________________________________________________________________________________________________________________________________________
     //                                                                                                                                         Fields
     void test_method_(npos) {
       assert::are_equal(size_object::max_value, basic_string_builder<char_t>::npos);
     }
-
+    
     // ______________________________________________________________________________________________________________________________________________
     //                                                                                                                                   Constructors
     void test_method_(default_constructor) {
       auto s = basic_string_builder<char_t> {};
       assert::is_zero(s.length());
     }
-
+    
     void test_method_(constructor_with_basic_string_builder) {
       auto s = basic_string_builder<char_t>("A test string");
       assert::are_equal("A test string", basic_string_builder<char_t>(s).to_string());
@@ -125,13 +125,13 @@ namespace xtd::text::tests {
       assert::are_equal("string", basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 7).to_string());
       assert::are_equal("g", basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 12).to_string());
       assert::is_empty(basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 13).to_string());
-      assert::throws<argument_out_of_range_exception>([]{basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 14);});
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 14);});
     }
     
     void test_method_(constructor_with_basic_string_and_index_and_count) {
       assert::are_equal("str", basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 7, 3).to_string());
       assert::are_equal("string", basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 7, 6).to_string());
-      assert::throws<argument_out_of_range_exception>([]{basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 7, 7).to_string();});
+      assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t>(basic_string_builder<char_t>("A test string"), 7, 7).to_string();});
     }
     
     void test_method_(move_constructor_with_basic_string) {
@@ -200,7 +200,7 @@ namespace xtd::text::tests {
       assert::are_equal("test", s.to_string());
       assert::is_greater_or_equal(s.capacity(), 512_z);
     }
-
+    
     // ______________________________________________________________________________________________________________________________________________
     //                                                                                                                                     Properties
     
@@ -268,7 +268,7 @@ namespace xtd::text::tests {
       auto s = basic_string_builder<char_t> {"A test string"};
       auto iterator = s.cend();
       // Attempting to access cend results in undefined behaviour in Windows.
-      if (!environment::os_version().is_windows()) assert::does_not_throw([&]{ [[maybe_unused]] auto v = *iterator;});
+      if (!environment::os_version().is_windows()) assert::does_not_throw([&] { [[maybe_unused]] auto v = *iterator;});
     }
     
     void test_method_(data_const) {
@@ -291,7 +291,7 @@ namespace xtd::text::tests {
       assert::are_equal(char_t {'r'}, *(data + 2));
       assert::are_equal("C rest string", s.to_string());
     }
-
+    
     void test_method_(empty) {
       assert::is_true(basic_string_builder<char_t> {}.empty());
       assert::is_false(basic_string_builder<char_t> {"A test string"}.empty());
@@ -301,7 +301,7 @@ namespace xtd::text::tests {
       auto s = basic_string_builder<char_t> {"A test string"};
       auto iterator = s.end();
       // Attempting to access end results in undefined behaviour in Windows.
-      if (!environment::os_version().is_windows()) assert::does_not_throw([&]{ [[maybe_unused]] auto v = *iterator;});
+      if (!environment::os_version().is_windows()) assert::does_not_throw([&] { [[maybe_unused]] auto v = *iterator;});
     }
     
     void test_method_(front_const) {
@@ -315,12 +315,12 @@ namespace xtd::text::tests {
       s.front() = 'B';
       assert::are_equal(char_t {'B'}, s.front());
     }
-
+    
     void test_method_(length_const) {
       assert::is_zero(basic_string_builder<char_t> {}.length());
       assert::are_equal(13_z, basic_string_builder<char_t> {"A test string"}.length());
     }
-
+    
     void test_method_(length) {
       auto s = basic_string_builder<char_t> {"A test string"};
       assert::are_equal(13_z, s.length());
@@ -335,7 +335,7 @@ namespace xtd::text::tests {
       assert::are_equal(char_t {' '}, s[1]);
       assert::are_equal(char_t {'t'}, s[2]);
     }
-
+    
     void test_method_(max_capacity) {
       assert::are_equal(std::basic_string<char_t> {}.max_size(), basic_string_builder<char_t> {}.max_capacity());
       assert::are_equal(1024_z, basic_string_builder<char_t> (255_z, 1024_z).max_capacity());
@@ -349,10 +349,10 @@ namespace xtd::text::tests {
       assert::is_zero(basic_string_builder<char_t> {}.size());
       assert::are_equal(13_z, basic_string_builder<char_t> {"A test string"}.size());
     }
-
+    
     // ______________________________________________________________________________________________________________________________________________
     //                                                                                                                                        Methods
-
+    
     void test_method_(append_basic_string) {
       auto s = basic_string_builder<char_t> {"A test string"};
       s.append(basic_string<char_t> {" to test"});
@@ -367,47 +367,47 @@ namespace xtd::text::tests {
       auto s = basic_string_builder<char_t> {"A test string"};
       s.append(basic_string<char_t> {" to test"}, 1, 4);
       assert::are_equal("A test stringto t", s.to_string());
-      assert::throws<argument_out_of_range_exception>([&]{s.append(basic_string<char_t> {" value"}, 7, 0);});
-      assert::throws<argument_out_of_range_exception>([&]{s.append(basic_string<char_t> {" value"}, 2, 5);});
+      assert::throws<argument_out_of_range_exception>([&] {s.append(basic_string<char_t> {" value"}, 7, 0);});
+      assert::throws<argument_out_of_range_exception>([&] {s.append(basic_string<char_t> {" value"}, 2, 5);});
     }
-
+    
     void test_method_(append_bool) {
       assert::are_equal("A test string false", basic_string_builder<char_t> {"A test string "}.append(false).to_string());
       assert::are_equal("A test string true", basic_string_builder<char_t> {"A test string "}.append(true).to_string());
     }
-
+    
     void test_method_(append_byte) {
       assert::are_equal("A test string 42", basic_string_builder<char_t> {"A test string "}.append(42_s8).to_string());
     }
-
+    
     void test_method_(append_decimal) {
       assert::are_equal("A test string 0.42", basic_string_builder<char_t> {"A test string "}.append(.42l).to_string());
     }
-
+    
     void test_method_(append_double) {
       assert::are_equal("A test string 0.42", basic_string_builder<char_t> {"A test string "}.append(.42).to_string());
     }
-
+    
     void test_method_(append_float) {
       assert::are_equal("A test string 0.42", basic_string_builder<char_t> {"A test string "}.append(.42_f).to_string());
     }
-
+    
     void test_method_(append_int16) {
       assert::are_equal("A test string 42", basic_string_builder<char_t> {"A test string "}.append(42_s16).to_string());
     }
-
+    
     void test_method_(append_int32) {
       assert::are_equal("A test string 42", basic_string_builder<char_t> {"A test string "}.append(42_s32).to_string());
     }
-
+    
     void test_method_(append_int64) {
       assert::are_equal("A test string 42", basic_string_builder<char_t> {"A test string "}.append(42_s64).to_string());
     }
-
+    
     void test_method_(append_sbyte) {
       assert::are_equal("A test string 42", basic_string_builder<char_t> {"A test string "}.append(42_u8).to_string());
     }
-
+    
     void test_method_(append_uint16) {
       assert::are_equal("A test string 42", basic_string_builder<char_t> {"A test string "}.append(42_u16).to_string());
     }
@@ -431,7 +431,7 @@ namespace xtd::text::tests {
     void test_method_(append_ulong) {
       assert::are_equal("A test string 42", basic_string_builder<char_t> {"A test string "}.append(ulong {42}).to_string());
     }
-
+    
     void test_method_(append_object_t) {
       assert::are_equal("A test string 02:03:24", basic_string_builder<char_t> {"A test string "}.append(2_h + 3_min + 24_s).to_string());
     }
@@ -443,7 +443,7 @@ namespace xtd::text::tests {
     void test_method_(append_value_type_and_repeat_count) {
       assert::are_equal("A test string @@@@@", basic_string_builder<char_t> {"A test string "}.append(char_t {'@'}, 5).to_string());
     }
-
+    
     void test_method_(append_basic_string_builder) {
       auto s = basic_string_builder<char_t> {"A test string"};
       s.append(basic_string_builder<char_t> {" to test"});
@@ -453,26 +453,26 @@ namespace xtd::text::tests {
       s.append(basic_string_builder<char_t> {" and other"});
       assert::are_equal("A test string to test and other", s.to_string());
     }
-
+    
     void test_method_(append_basic_string_builder_and_pos) {
       auto s = basic_string_builder<char_t> {"A test string"};
       s.append(basic_string_builder<char_t> {" to test"}, 3);
       assert::are_equal("A test string test", s.to_string());
       s.append(basic_string_builder<char_t> {" and other"}, 4);
       assert::are_equal("A test string test other", s.to_string());
-      assert::throws<argument_out_of_range_exception>([&]{s.append(basic_string_builder<char_t> {" value"}, 7);});
+      assert::throws<argument_out_of_range_exception>([&] {s.append(basic_string_builder<char_t> {" value"}, 7);});
     }
-
+    
     void test_method_(append_basic_string_builder_and_pos_and_count) {
       auto s = basic_string_builder<char_t> {"A test string"};
       s.append(basic_string_builder<char_t> {" to test"}, 3, 2);
       assert::are_equal("A test string t", s.to_string());
       s.append(basic_string_builder<char_t> {" and other"}, 4, 3);
       assert::are_equal("A test string t ot", s.to_string());
-      assert::throws<argument_out_of_range_exception>([&]{s.append(basic_string_builder<char_t> {" value"}, 7, 0);});
-      assert::throws<argument_out_of_range_exception>([&]{s.append(basic_string_builder<char_t> {" value"}, 2, 5);});
+      assert::throws<argument_out_of_range_exception>([&] {s.append(basic_string_builder<char_t> {" value"}, 7, 0);});
+      assert::throws<argument_out_of_range_exception>([&] {s.append(basic_string_builder<char_t> {" value"}, 2, 5);});
     }
-
+    
     void test_method_(append_const_pointer_and_count) {
       auto s = basic_string_builder<char_t> {"A test string"};
       if constexpr(std::is_same<char_t, char>::value) s.append(" to test", 8);
@@ -481,7 +481,7 @@ namespace xtd::text::tests {
       if constexpr(std::is_same<char_t, char8>::value) s.append(u8" to test", 8);
       if constexpr(std::is_same<char_t, wchar>::value) s.append(L" to test", 8);
       assert::are_equal("A test string to test", s.to_string());
-
+      
       if constexpr(std::is_same<char_t, char>::value) s.append(" and check", 4);
       if constexpr(std::is_same<char_t, char16>::value) s.append(u" and check", 4);
       if constexpr(std::is_same<char_t, char32>::value) s.append(U" and check", 4);
@@ -489,7 +489,7 @@ namespace xtd::text::tests {
       if constexpr(std::is_same<char_t, wchar>::value) s.append(L" and check", 4);
       assert::are_equal("A test string to test and", s.to_string());
     }
-
+    
     void test_method_(append_const_pointer) {
       auto s = basic_string_builder<char_t> {"A test string"};
       if constexpr(std::is_same<char_t, char>::value) s.append(" to test");
@@ -513,7 +513,7 @@ namespace xtd::text::tests {
     void test_method_(append_initializer_list) {
       assert::are_equal("A test string to test", basic_string_builder<char_t> {"A test string"}.append({' ', 't', 'o', ' ', 't', 'e', 's', 't'}).to_string());
     }
- 
+    
     void test_method_(append_format_with_args) {
       assert::are_equal("A test string to test", basic_string_builder<char_t> {"A test string"}.append_format(" {} {}", "to", "test").to_string());
     }
@@ -533,7 +533,7 @@ namespace xtd::text::tests {
     void test_method_(append_line_with_basic_string) {
       assert::are_equal("A test string to test\n", basic_string_builder<char_t> {"A test string"}.append_line(" to test").to_string());
     }
-
+    
     void test_method_(at_const) {
       const auto s = basic_string_builder<char_t>("A test string");
       assert::are_equal(char_t {'A'}, s.at(0));
@@ -549,8 +549,8 @@ namespace xtd::text::tests {
       assert::are_equal(char_t {'i'}, s.at(10));
       assert::are_equal(char_t {'n'}, s.at(11));
       assert::are_equal(char_t {'g'}, s.at(12));
-      assert::throws<index_out_of_range_exception>([&]{s.at(13);});
-      assert::throws<index_out_of_range_exception>([&]{basic_string_builder<char_t> {}.at(0);});
+      assert::throws<index_out_of_range_exception>([&] {s.at(13);});
+      assert::throws<index_out_of_range_exception>([&] {basic_string_builder<char_t> {}.at(0);});
     }
     
     void test_method_(at) {
@@ -558,7 +558,7 @@ namespace xtd::text::tests {
       assert::are_equal(char_t {'t'}, s.at(2));
       s.at(2) = char_t {'b'};
       assert::are_equal(char_t {'b'}, s.at(2));
-      assert::throws<index_out_of_range_exception>([&]{s.at(13) = char_t {'z'};});
+      assert::throws<index_out_of_range_exception>([&] {s.at(13) = char_t {'z'};});
       assert::are_equal("A best string", s.to_string());
     }
     
@@ -620,7 +620,7 @@ namespace xtd::text::tests {
       assert::throws<argument_out_of_range_exception>([&] {s.copy_to(3, a, 7, 0);});
       assert::throws<argument_out_of_range_exception>([&] {s.copy_to(3, a, 2, 6);});
     }
-
+    
     void test_method_(equals_object) {
       auto s1 = basic_string_builder<char_t> {"A test string"};
       auto s2 = basic_string_builder<char_t> {"A test string"};
@@ -629,7 +629,7 @@ namespace xtd::text::tests {
       assert::is_true(s1.equals(o1));
       assert::is_false(s1.equals(o2));
     }
-
+    
     void test_method_(equals) {
       assert::is_true(basic_string_builder<char_t> {"A test string"}.equals(basic_string_builder<char_t> {"A test string"}));
       assert::is_false(basic_string_builder<char_t> {"A test string"}.equals(basic_string_builder<char_t> {"B test strong"}));
@@ -664,7 +664,7 @@ namespace xtd::text::tests {
       assert::are_equal("A test", s.to_string());
       assert::are_equal(s.end(), i);
     }
-
+    
     void test_method_(find) {
       assert::are_equal(2_z, basic_string_builder<char_t> {"A test string"}.find(basic_string<char_t> {"test"}));
       assert::are_equal(4_z, basic_string_builder<char_t> {"A test string"}.find(char_t {'s'}));
@@ -679,12 +679,12 @@ namespace xtd::text::tests {
       assert::are_equal(15_z, basic_string_builder<char_t> {"A test string to test"}.find_first_not_of(basic_string<char_t> {"Aeginrst "}));
       assert::are_equal(1_z, basic_string_builder<char_t> {"A test string to test"}.find_first_not_of(char_t {'A'}));
     }
-
+    
     void test_method_(find_last_of) {
       assert::are_equal(15_z, basic_string_builder<char_t> {"A test string to test"}.find_last_of(basic_string<char_t> {"Baco"}));
       assert::are_equal(16_z, basic_string_builder<char_t> {"A test string to test"}.find_last_of(char_t {' '}));
     }
-
+    
     void test_method_(find_last_not_of) {
       assert::are_equal(12_z, basic_string_builder<char_t> {"A test string to test"}.find_last_not_of(basic_string<char_t> {"eost "}));
       assert::are_equal(19_z, basic_string_builder<char_t> {"A test string to test"}.find_last_not_of(char_t {'t'}));
@@ -693,7 +693,7 @@ namespace xtd::text::tests {
     void test_method_(get_allocator) {
       assert::are_equal(typeof_<typename std::allocator<char_t>>(), typeof_(basic_string_builder<char_t> {"A test string"}.get_allocator()));
     }
-
+    
     void test_method_(get_base_type) {
       assert::are_equal(typeof_<typename std::basic_string<char_t>>(), typeof_(basic_string_builder<char_t> {}.get_base_type()));
       assert::is_empty(basic_string_builder<char_t> {}.get_base_type());
@@ -766,7 +766,7 @@ namespace xtd::text::tests {
       assert::are_equal("A test 42 string", basic_string_builder<char_t> {"A test  string"}.insert(7, 42_z).to_string());
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, 42_z);});
     }
-
+    
     void test_method_(insert_with_index_and_uint16) {
       assert::are_equal("A test 42 string", basic_string_builder<char_t> {"A test  string"}.insert(7, 42_u16).to_string());
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, 42_u16);});
@@ -791,12 +791,12 @@ namespace xtd::text::tests {
       assert::are_equal("A test 42 string", basic_string_builder<char_t> {"A test  string"}.insert(7, ulong {42}).to_string());
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, ulong {42});});
     }
-
+    
     void test_method_(insert_with_index_and_object) {
       assert::are_equal("A test 09:24:03 string", basic_string_builder<char_t> {"A test  string"}.insert(7, 9_h + 24_min + 3_s).to_string());
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, 9_h + 24_min + 3_s);});
     }
-
+    
     void test_method_(insert_with_index_and_value_type) {
       assert::are_equal("A test $ string", basic_string_builder<char_t> {"A test  string"}.insert(7, char_t {'$'}).to_string());
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, char_t {'$'});});
@@ -830,7 +830,7 @@ namespace xtd::text::tests {
       if constexpr(std::is_same<char_t, char8>::value) s.insert(6, u8" to test", 8);
       if constexpr(std::is_same<char_t, wchar>::value) s.insert(6, L" to test", 8);
       assert::are_equal("A test to test string", s.to_string());
-
+      
       if constexpr(std::is_same<char_t, char>::value) s.insert(9, " and check", 4);
       if constexpr(std::is_same<char_t, char16>::value) s.insert(9, u" and check", 4);
       if constexpr(std::is_same<char_t, char32>::value) s.insert(9, U" and check", 4);
@@ -838,19 +838,19 @@ namespace xtd::text::tests {
       if constexpr(std::is_same<char_t, wchar>::value) s.insert(9, L" and check", 4);
       assert::are_equal("A test to and test string", s.to_string());
     }
-
+    
     void test_method_(insert_with_index_and_basic_string_builder) {
       assert::are_equal("A test to test string", basic_string_builder<char_t> {"A test string"}.insert(6, basic_string_builder<char_t> {" to test"}).to_string());
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, basic_string_builder<char_t> {" to test"});});
     }
-
+    
     void test_method_(insert_with_index_basic_string_builder_index_and_count) {
       assert::are_equal("A test test string", basic_string_builder<char_t> {"A test string"}.insert(6, basic_string_builder<char_t> {" to test"}, 3, 5).to_string());
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, basic_string_builder<char_t> {" to test"}, 3, 5);});
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(6, basic_string_builder<char_t> {" to test"}, 9, 0);});
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(6, basic_string_builder<char_t> {" to test"}, 3, 6);});
     }
-
+    
     void test_method_(insert_with_index_basic_string_builder_and_index) {
       assert::are_equal("A test test string", basic_string_builder<char_t> {"A test string"}.insert(6, basic_string_builder<char_t> {" to test"}, 3).to_string());
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A test string"}.insert(14, basic_string_builder<char_t> {" to test"}, 3);});
@@ -897,7 +897,7 @@ namespace xtd::text::tests {
       // Attempting to access cbegin + an out of range index results in undefined behaviour in Windows.
       if (!environment::os_version().is_windows()) assert::throws<argument_out_of_range_exception>([&] {s.insert(s.begin() + 14, {' ', 't', 'o', ' ', 't', 'e', 's', 't'});});
     }
-
+    
     void test_method_(pop_back) {
       auto s = basic_string_builder<char_t> {"A test string"};
       s.pop_back();
@@ -929,13 +929,13 @@ namespace xtd::text::tests {
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A value string to value"}.replace(basic_string<char_t>("value"), basic_string<char_t>("test"), 24, 0);});
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t> {"A value string to value"}.replace(basic_string<char_t>("value"), basic_string<char_t>("test"), 2, 22);});
     }
-
+    
     void test_method_(replace_with_pos_count_and_str) {
       assert::are_equal("A value string", basic_string_builder<char_t> {"A test string"}.replace(2_z, 4_z, basic_string_builder<char_t> {"value"}).to_string());
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t>("A test string").replace(14_z, 0_z, basic_string_builder<char_t> {"value"});});
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t>("A test string").replace(2_z, 12_z, basic_string_builder<char_t> {"value"});});
     }
-
+    
     void test_method_(replace_with_first_last_and_str) {
       auto s = basic_string_builder<char_t> {"A test string"};
       assert::are_equal("A value string", s.replace(s.begin() + 2_z, s.begin() + 6_z, basic_string_builder<char_t> {"value"}).to_string());
@@ -998,12 +998,12 @@ namespace xtd::text::tests {
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t>("A test string").replace(14_z, 0_z, 5_z, char_t {'*'});});
       assert::throws<argument_out_of_range_exception>([] {basic_string_builder<char_t>("A test string").replace(2_z, 12_z, 5_z, char_t {'*'});});
     }
-
+    
     void test_method_(replace_with_first_last_count2_and_ch) {
       auto s = basic_string_builder<char_t> {"A test string"};
       assert::are_equal("A ***** string", s.replace(s.begin() + 2_z, s.begin() + 6_z, 5_z, char_t {'*'}).to_string());
     }
-
+    
     void test_method_(replace_with_first_last_and_ilist) {
       auto s = basic_string_builder<char_t> {"A test string"};
       assert::are_equal("A value string", s.replace(s.begin() + 2_z, s.begin() + 6_z, {'v', 'a', 'l', 'u', 'e'}).to_string());
@@ -1016,7 +1016,7 @@ namespace xtd::text::tests {
       assert::is_greater_or_equal(s.capacity(), 512_z);
       assert::throws<argument_out_of_range_exception>([&] {s.reserve(std::string().max_size() + 1);});
     }
-
+    
     void test_method_(resize_with_count) {
       auto s = basic_string_builder<char_t> {"A test string"};
       assert::are_equal(13_z, s.length());
@@ -1031,7 +1031,7 @@ namespace xtd::text::tests {
       assert::are_equal(char_t {' '}, s[1]);
       assert::are_equal(char_t {'t'}, s[2]);
     }
-
+    
     void test_method_(resize_with_count_and_char) {
       auto s = basic_string_builder<char_t> {"A test string"};
       assert::are_equal(13_z, s.length());
@@ -1046,7 +1046,7 @@ namespace xtd::text::tests {
       assert::are_equal(char_t {' '}, s[1]);
       assert::are_equal(char_t {'t'}, s[2]);
     }
-
+    
     void test_method_(rfind) {
       assert::are_equal(17_z, basic_string_builder<char_t> {"A test string to test"}.rfind(basic_string<char_t> {"test"}));
       assert::are_equal(19_z, basic_string_builder<char_t> {"A test string to test"}.rfind(char_t {'s'}));
@@ -1064,7 +1064,7 @@ namespace xtd::text::tests {
     void test_method_(substr) {
       assert::are_equal("A test string", basic_string_builder<char_t> {"A test string"}.substr().to_string());
     }
-
+    
     void test_method_(swap) {
       auto s1 = basic_string_builder<char_t> {"A test string"};
       auto s2 = basic_string_builder<char_t> {"Another test string"};
@@ -1084,7 +1084,7 @@ namespace xtd::text::tests {
       assert::throws<argument_out_of_range_exception>([] {basic_string<char_t> {"A test string"}.substr(2, 12);});
       assert::throws<argument_out_of_range_exception>([] {basic_string<char_t> {"A test string"}.substr(14, 4);});
     }
-
+    
     void test_method_(to_string) {
       auto s = basic_string_builder<char_t> {"A test string"};
       assert::is_instance_of<string>(s.to_string());
@@ -1108,16 +1108,16 @@ namespace xtd::text::tests {
       assert::are_equal(char_t {'i'}, s[10]);
       assert::are_equal(char_t {'n'}, s[11]);
       assert::are_equal(char_t {'g'}, s[12]);
-      assert::throws<index_out_of_range_exception>([&]{s[13];});
-      assert::throws<index_out_of_range_exception>([&]{basic_string_builder<char_t> {}[0];});
+      assert::throws<index_out_of_range_exception>([&] {s[13];});
+      assert::throws<index_out_of_range_exception>([&] {basic_string_builder<char_t> {} [0];});
     }
-
+    
     void test_method_(cast_operator_base_type) {
       auto s = std::basic_string<char_t> {};
       s = basic_string_builder<char_t>("A test string");
       collection_assert::are_equal(std::initializer_list<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, s);
     }
-
+    
     void test_method_(equal_operator_basic_string) {
       auto s1 = basic_string_builder<char_t> {};
       auto s2 = basic_string_builder<char_t>("A test string");
@@ -1140,7 +1140,7 @@ namespace xtd::text::tests {
       auto s2 = b.c_str();
       s1 = s2;
       assert::are_equal("A test string", s1.to_string());
-     }
+    }
     
     void test_method_(equal_operator_value_type) {
       auto s = basic_string_builder<char_t> {};
@@ -1311,7 +1311,7 @@ namespace xtd::text::tests {
       ss << s1 << s2;
       assert::are_equal(L"A test string", ss.str());
     }
-
+    
     void test_method_(input_stream_operator_char) {
       auto is = basic_string_builder<char> {"TestString"};
       std::basic_istringstream<char> iss {is};
@@ -1320,7 +1320,7 @@ namespace xtd::text::tests {
       iss >> s;
       assert::are_equal("TestString", s.to_string());
     }
-
+    
     void test_method_(input_stream_operator_wchar) {
       auto is = basic_string_builder<wchar> {L"TestString"};
       std::basic_istringstream<wchar> iss {is};

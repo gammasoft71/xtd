@@ -75,7 +75,7 @@ namespace xtd {
         xtd::sptr<data> data_;
       };
     }
-
+    
     /// @brief The xtd::drawing::drawing2d namespace provides advanced two-dimensional and vector graphics functionality.
     /// @deprecated Replaced by xtd::drawing::drawing_2d - Will be removed in version 0.4.0.
     namespace [[deprecated("Replaced by xtd::drawing::drawing_2d - Will be removed in version 0.4.0.")]] drawing2d {

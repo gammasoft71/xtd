@@ -31,14 +31,14 @@ namespace {
     auto dataDir = ntHdr->OptionalHeader.DataDirectory;
     return RVA2VA<T>(moduleBase, dataDir[entryID].VirtualAddress);
   }
-    
+  
   PIMAGE_THUNK_DATA FindAddressByOrdinal(void* moduleBase, PIMAGE_THUNK_DATA impName, PIMAGE_THUNK_DATA impAddr, uint16 ordinal) {
     for (; impName->u1.Ordinal; ++impName, ++impAddr) {
       if (IMAGE_SNAP_BY_ORDINAL(impName->u1.Ordinal) && IMAGE_ORDINAL(impName->u1.Ordinal) == ordinal) return impAddr;
     }
     return nullptr;
   }
- 
+  
   PIMAGE_THUNK_DATA FindDelayLoadThunkInModule(void* moduleBase, const char* dllName, uint16 ordinal) {
     auto imports = DataDirectoryFromModuleBase<PIMAGE_DELAYLOAD_DESCRIPTOR>(moduleBase, IMAGE_DIRECTORY_ENTRY_DELAY_IMPORT);
     for (; imports->DllNameRVA; ++imports) {

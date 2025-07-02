@@ -33,7 +33,7 @@ bool wait_handle::signal_and_wait(wait_handle& to_signal, wait_handle& to_wait, 
   return signal_and_wait(to_signal, to_wait, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
-bool wait_handle::wait_all(const std::initializer_list<sptr<wait_handle>>& wait_handles){
+bool wait_handle::wait_all(const std::initializer_list<sptr<wait_handle>>& wait_handles) {
   return wait_all(wait_handles, timeout::infinite);
 }
 
@@ -48,7 +48,7 @@ bool wait_handle::wait_all(const std::initializer_list<sptr<wait_handle>>& wait_
   return wait_all(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
-bool wait_handle::wait_all(const std::initializer_list<uptr<wait_handle>>& wait_handles){
+bool wait_handle::wait_all(const std::initializer_list<uptr<wait_handle>>& wait_handles) {
   return wait_all(wait_handles, timeout::infinite);
 }
 

@@ -85,17 +85,17 @@ namespace xtd {
       /// @param y The y-coordinate of the upper-left corner of this xtd::drawing::rectangle structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle::y property will also cause a change in the xtd::drawing::rectangle::bottom property of the xtd::drawing::rectangle.
       int32 y = 0;
-
+      
       /// @brief Gets or sets the width of this xtd::drawing::rectangle structure.
       /// @param width The width of this xtd::drawing::rectangle structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle::width property will also cause a change in the xtd::drawing::rectangle::bottom property of the xtd::drawing::rectangle. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
       int32 width = 0;
-
+      
       /// @brief Gets or sets the height of this xtd::drawing::rectangle structure.
       /// @param height The height of this Rectangle structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle::height property will also cause a change in the xtd::drawing::rectangle::bottom property of the xtd::drawing::rectangle. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
       int32 height = 0;
-
+      
       /// @brief Gets the y-coordinate that is the sum of the xtd::drawing::rectangle::y and xtd::drawing::rectangle::height property values of this xtd::drawing::rectangle structure.
       /// @return The y-coordinate that is the sum of xtd::drawing::rectangle::y and xtd::drawing::rectangle::height of this xtd::drawing::rectangle.
       /// @remarks The value of the xtd::drawing::rectangle::bottom property represents the y-coordinate of the first point at the bottom edge of the xtd::drawing::rectangle that is not contained in the xtd::drawing::rectangle.
@@ -189,16 +189,16 @@ namespace xtd {
       /// @remarks This method enlarges this rectangle, not a copy of it. The rectangle is enlarged in both directions along an axis. For example, if a 50 by 50 rectangle is enlarged by 50 in the x-axis, the resultant rectangle will be 150 units long (the original 50, the 50 in the minus direction, and the 50 in the plus direction) maintaining the rectangle's geometric center.
       /// @remarks If either x or y is negative, the xtd::drawing::rectangle structure is deflated in the corresponding direction.
       void inflate(int32 width, int32 height) noexcept;
-
+      
       /// @brief Determines if this rectangle intersects with rect.
       /// @param rect The rectangle to test.
       /// @return This method returns `true` if there is any intersection, otherwise `false`.
       bool intersects_with(const rectangle& rect) const noexcept;
-
+      
       /// @brief Replaces this xtd::drawing::rectangle with the intersection of itself and the specified xtd::drawing::rectangle.
       /// @param rect The xtd::drawing::rectangle with which to intersect.
       void make_intersect(const rectangle& rect) noexcept;
-
+      
       /// @brief Replaces this xtd::drawing::rectangle with the union of itself and the specified xtd::drawing::rectangle.
       /// @param rect The xtd::drawing::rectangle with which to union.
       void make_union(const rectangle& rect) noexcept;
@@ -273,7 +273,7 @@ namespace xtd {
       /// @param b A rectangle to union.
       /// @return A xtd::drawing::rectangle structure that bounds the union of the two xtd::drawing::rectangle structures.
       static rectangle make_union(const rectangle& a, const rectangle& b) noexcept;
-
+      
       /// @brief Creates and returns an offsetted copy of the specified xtd::drawing::rectangle structure. The copy is offsetted by the specified amount. The original xtd::drawing::rectangle structure remains unmodified.
       /// @param rect The xtd::drawing::rectangle with which to start. This rectangle is not modified.
       /// @param pos The amount to offset the specified rectangle.

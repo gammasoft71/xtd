@@ -138,13 +138,13 @@ namespace xtd {
       /// @remarks If you want to find out whether a named system semaphore exists, use the xtd::threading::semaphore::open_existing method. The xtd::threading::semaphore::open_existing method attempts to open an existing named semaphore, and throws an exception if the system semaphore does not exist.
       semaphore(int32 initial_count, int32 maximum_count, const string& name, bool& created_new);
       /// @}
-
+      
       /// @cond
       template<class char_t>
       explicit semaphore(const char_t* name) : semaphore(string(name)) {}
       ~semaphore();
       /// @endcond
-
+      
       /// @name Public Properties
       
       /// @{
@@ -167,7 +167,7 @@ namespace xtd {
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
       bool equals(const semaphore& other) const noexcept override;
-
+      
       /// @brief Exits the semaphore and returns the previous count.
       /// @return The count on the semaphore before the xtd::threading::semaphore::release method was called.
       /// @exception xtd::threading::semaphore_full_exception The semaphore count is already at the maximum value.
@@ -184,7 +184,7 @@ namespace xtd {
       /// @remarks If a xtd::threading::semaphore_full_exception is thrown by the xtd::threading::release method, it does not necessarily indicate a problem with the calling thread. A programming error in another thread might have caused that thread to exit the semaphore more times than it entered.
       int32 release(int32 release_count);
       /// @}
-
+      
       /// @name Public Static Methods
       
       /// @{
@@ -197,7 +197,7 @@ namespace xtd {
       /// @remarks The xtd::threading::semaphore::open_existing method tries to open the specified named semaphore. To create the system semaphore when it does not already exist, use one of the xtd::threading::semaphore constructors that has a name parameter.
       /// @remarks Multiple calls to this method that use the same value for name do not necessarily return the same xtd::threading::semaphore object, even though the objects that are returned represent the same named system semaphore.
       static semaphore open_existing(const string& name);
-
+      
       /// @brief Opens the specified named semaphore, if it already exists, and returns a value that indicates whether the operation succeeded.
       /// @param name The name of the synchronization object to be shared with other processes. The name is case-sensitive. The backslash character (\) is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name.
       /// @param result When this method returns, contains a xtd::threading::semaphore object that represents the named semaphore if the call succeeded.
@@ -207,16 +207,16 @@ namespace xtd {
       /// @remarks Multiple calls to this method that use the same value for name do not necessarily return the same xtd::threading::semaphore object, even though the objects that are returned represent the same named system semaphore.
       static bool try_open_existing(const string& name, semaphore& result) noexcept;
       /// @}
-
+      
     protected:
       /// @name Protected Methods
       
       /// @{
       bool signal() override;
-
+      
       bool wait(int32 milliseconds_timeout) override;
       /// @}
-
+      
     private:
       void create(int32 initial_count, int32 maximum_count, bool& created_new);
       xtd::sptr<semaphore_base> semaphore_;

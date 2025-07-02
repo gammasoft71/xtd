@@ -169,7 +169,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.
       /// @return New xtd::forms::light_button created.
-      static light_button create( const drawing::point& location, const drawing::size& size);
+      static light_button create(const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::light_button with specified location, size, and name.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.

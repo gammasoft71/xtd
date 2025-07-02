@@ -210,7 +210,7 @@ namespace xtd {
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
-
+      
       /// @brief Returns a string that represents the xtd::forms::tool_bar_button control.
       /// @return A xtd::string that represents the current xtd::forms::tool_bar_button.
       /// @remarks The xtd::forms::tool_bar_button::to_string method returns a string that includes the type and the value of the xtd::forms::tool_bar_button::style and xtd::forms::tool_bar_button::text properties.
@@ -292,7 +292,7 @@ namespace xtd {
       /// @return A new object that is a copy of this instance.
       /// @par Notes to Implementers
       /// All controls must be override the clone method.
-      xtd::uptr<xtd::object> clone() const override;      
+      xtd::uptr<xtd::object> clone() const override;
       /// @}
       
     private:

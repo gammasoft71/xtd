@@ -77,7 +77,7 @@ namespace xtd {
       status_bar(const status_bar&) = default;
       status_bar& operator =(const status_bar&) = default;
       /// @endcond
-
+      
       /// @name Public Properties
       
       /// @{
@@ -137,7 +137,7 @@ namespace xtd {
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       xtd::event<status_bar, xtd::forms::status_bar_panel_click_event_handler> panel_click;
       /// @}
-
+      
       /// @name Public Static Methods
       
       /// @{

@@ -16,486 +16,486 @@ namespace xtd::tests {
     void test_method_(S_OK) {
       assert::are_equal(static_cast<int32>(0x00000000), h_result::S_OK);
     }
-
+    
     void test_method_(S_FALSE) {
       assert::are_equal(static_cast<int32>(0x00000001), h_result::S_FALSE);
     }
-
+    
     void test_method_(COR_E_ABANDONEDMUTEX) {
       assert::are_equal(static_cast<int32>(0x8013152D), h_result::COR_E_ABANDONEDMUTEX);
       assert::are_equal(static_cast<int32>(0x152D), h_result::get_code(h_result::COR_E_ABANDONEDMUTEX));
       assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_ABANDONEDMUTEX));
       assert::are_equal(1, h_result::get_severity(h_result::COR_E_ABANDONEDMUTEX));
     }
-
+    
     void test_method_(COR_E_AMBIGUOUSIMPLEMENTATION) {
       assert::are_equal(static_cast<int32>(0x8013106A), h_result::COR_E_AMBIGUOUSIMPLEMENTATION);
     }
-
+    
     void test_method_(COR_E_AMBIGUOUSMATCH) {
       assert::are_equal(static_cast<int32>(0x8000211D), h_result::COR_E_AMBIGUOUSMATCH);
     }
-
+    
     void test_method_(COR_E_APPDOMAINUNLOADED) {
       assert::are_equal(static_cast<int32>(0x80131014), h_result::COR_E_APPDOMAINUNLOADED);
     }
-
+    
     void test_method_(COR_E_APPLICATION) {
       assert::are_equal(static_cast<int32>(0x80131600), h_result::COR_E_APPLICATION);
     }
-
+    
     void test_method_(COR_E_ARGUMENT) {
       assert::are_equal(static_cast<int32>(0x80070057), h_result::COR_E_ARGUMENT);
     }
-
+    
     void test_method_(COR_E_ARGUMENTOUTOFRANGE) {
       assert::are_equal(static_cast<int32>(0x80131502), h_result::COR_E_ARGUMENTOUTOFRANGE);
     }
-
+    
     void test_method_(COR_E_ARITHMETIC) {
       assert::are_equal(static_cast<int32>(0x80070216), h_result::COR_E_ARITHMETIC);
     }
-
+    
     void test_method_(COR_E_ARRAYTYPEMISMATCH) {
       assert::are_equal(static_cast<int32>(0x80131503), h_result::COR_E_ARRAYTYPEMISMATCH);
     }
-
+    
     void test_method_(COR_E_BADEXEFORMAT) {
       assert::are_equal(static_cast<int32>(0x800700C1), h_result::COR_E_BADEXEFORMAT);
     }
-
+    
     void test_method_(COR_E_BADIMAGEFORMAT) {
       assert::are_equal(static_cast<int32>(0x8007000B), h_result::COR_E_BADIMAGEFORMAT);
     }
-
+    
     void test_method_(COR_E_CANNOTUNLOADAPPDOMAIN) {
       assert::are_equal(static_cast<int32>(0x80131015), h_result::COR_E_CANNOTUNLOADAPPDOMAIN);
     }
-
+    
     void test_method_(COR_E_CODECONTRACTFAILED) {
       assert::are_equal(static_cast<int32>(0x80131542), h_result::COR_E_CODECONTRACTFAILED);
     }
-
+    
     void test_method_(COR_E_CONTEXTMARSHAL) {
       assert::are_equal(static_cast<int32>(0x80131504), h_result::COR_E_CONTEXTMARSHAL);
     }
-
+    
     void test_method_(COR_E_CUSTOMATTRIBUTEFORMAT) {
       assert::are_equal(static_cast<int32>(0x80131605), h_result::COR_E_CUSTOMATTRIBUTEFORMAT);
     }
-
+    
     void test_method_(COR_E_DATAMISALIGNED) {
       assert::are_equal(static_cast<int32>(0x80131541), h_result::COR_E_DATAMISALIGNED);
     }
-
+    
     void test_method_(COR_E_DIRECTORYNOTFOUND) {
       assert::are_equal(static_cast<int32>(0x80070003), h_result::COR_E_DIRECTORYNOTFOUND);
     }
-
+    
     void test_method_(COR_E_DIVIDEBYZERO) {
       assert::are_equal(static_cast<int32>(0x80020012), h_result::COR_E_DIVIDEBYZERO);
     }
-
+    
     void test_method_(COR_E_DLLNOTFOUND) {
       assert::are_equal(static_cast<int32>(0x80131524), h_result::COR_E_DLLNOTFOUND);
     }
-
+    
     void test_method_(COR_E_DRIVENOTFOUND) {
       assert::are_equal(static_cast<int32>(0x80070007), h_result::COR_E_DRIVENOTFOUND);
     }
-
+    
     void test_method_(COR_E_DUPLICATEWAITOBJECT) {
       assert::are_equal(static_cast<int32>(0x80131529), h_result::COR_E_DUPLICATEWAITOBJECT);
     }
-
+    
     void test_method_(COR_E_ENDOFSTREAM) {
       assert::are_equal(static_cast<int32>(0x80070026), h_result::COR_E_ENDOFSTREAM);
     }
-
+    
     void test_method_(COR_E_ENTRYPOINTNOTFOUND) {
       assert::are_equal(static_cast<int32>(0x80131523), h_result::COR_E_ENTRYPOINTNOTFOUND);
     }
-
+    
     void test_method_(COR_E_EXCEPTION) {
       assert::are_equal(static_cast<int32>(0x80131500), h_result::COR_E_EXCEPTION);
     }
-
+    
     void test_method_(COR_E_EXECUTIONENGINE) {
       assert::are_equal(static_cast<int32>(0x80131506), h_result::COR_E_EXECUTIONENGINE);
     }
-
+    
     void test_method_(COR_E_FAILFAST) {
       assert::are_equal(static_cast<int32>(0x80131623), h_result::COR_E_FAILFAST);
     }
-
+    
     void test_method_(COR_E_FIELDACCESS) {
       assert::are_equal(static_cast<int32>(0x80131507), h_result::COR_E_FIELDACCESS);
     }
-
+    
     void test_method_(COR_E_FILELOAD) {
       assert::are_equal(static_cast<int32>(0x80131621), h_result::COR_E_FILELOAD);
     }
-
+    
     void test_method_(COR_E_FILENOTFOUND) {
       assert::are_equal(static_cast<int32>(0x80070002), h_result::COR_E_FILENOTFOUND);
     }
-
+    
     void test_method_(COR_E_FORMAT) {
       assert::are_equal(static_cast<int32>(0x80131537), h_result::COR_E_FORMAT);
     }
-
+    
     void test_method_(COR_E_INDEXOUTOFRANGE) {
       assert::are_equal(static_cast<int32>(0x80131508), h_result::COR_E_INDEXOUTOFRANGE);
     }
-
+    
     void test_method_(COR_E_INSUFFICIENTEXECUTIONSTACK) {
       assert::are_equal(static_cast<int32>(0x80131578), h_result::COR_E_INSUFFICIENTEXECUTIONSTACK);
     }
-
+    
     void test_method_(COR_E_INSUFFICIENTMEMORY) {
       assert::are_equal(static_cast<int32>(0x8013153D), h_result::COR_E_INSUFFICIENTMEMORY);
     }
-
+    
     void test_method_(COR_E_INVALIDCAST) {
       assert::are_equal(static_cast<int32>(0x80004002), h_result::COR_E_INVALIDCAST);
     }
-
+    
     void test_method_(COR_E_INVALIDCOMOBJECT) {
       assert::are_equal(static_cast<int32>(0x80131527), h_result::COR_E_INVALIDCOMOBJECT);
     }
-
+    
     void test_method_(COR_E_INVALIDFILTERCRITERIA) {
       assert::are_equal(static_cast<int32>(0x80131601), h_result::COR_E_INVALIDFILTERCRITERIA);
     }
-
+    
     void test_method_(COR_E_INVALIDOLEVARIANTTYPE) {
       assert::are_equal(static_cast<int32>(0x80131531), h_result::COR_E_INVALIDOLEVARIANTTYPE);
     }
-
+    
     void test_method_(COR_E_INVALIDOPERATION) {
       assert::are_equal(static_cast<int32>(0x80131509), h_result::COR_E_INVALIDOPERATION);
     }
-
+    
     void test_method_(COR_E_INVALIDPROGRAM) {
       assert::are_equal(static_cast<int32>(0x8013153A), h_result::COR_E_INVALIDPROGRAM);
     }
-
+    
     void test_method_(COR_E_IO) {
       assert::are_equal(static_cast<int32>(0x80131620), h_result::COR_E_IO);
     }
-
+    
     void test_method_(COR_E_KEYNOTFOUND) {
       assert::are_equal(static_cast<int32>(0x80131577), h_result::COR_E_KEYNOTFOUND);
     }
-
+    
     void test_method_(COR_E_MARSHALDIRECTIVE) {
       assert::are_equal(static_cast<int32>(0x80131535), h_result::COR_E_MARSHALDIRECTIVE);
     }
-
+    
     void test_method_(COR_E_MEMBERACCESS) {
       assert::are_equal(static_cast<int32>(0x8013151A), h_result::COR_E_MEMBERACCESS);
     }
-
+    
     void test_method_(COR_E_METHODACCESS) {
       assert::are_equal(static_cast<int32>(0x80131510), h_result::COR_E_METHODACCESS);
     }
-
+    
     void test_method_(COR_E_MISSINGFIELD) {
       assert::are_equal(static_cast<int32>(0x80131511), h_result::COR_E_MISSINGFIELD);
     }
-
+    
     void test_method_(COR_E_MISSINGMANIFESTRESOURCE) {
       assert::are_equal(static_cast<int32>(0x80131532), h_result::COR_E_MISSINGMANIFESTRESOURCE);
     }
-
+    
     void test_method_(COR_E_MISSINGMEMBER) {
       assert::are_equal(static_cast<int32>(0x80131512), h_result::COR_E_MISSINGMEMBER);
     }
-
+    
     void test_method_(COR_E_MISSINGMETHOD) {
       assert::are_equal(static_cast<int32>(0x80131513), h_result::COR_E_MISSINGMETHOD);
     }
-
+    
     void test_method_(COR_E_MISSINGSATELLITEASSEMBLY) {
       assert::are_equal(static_cast<int32>(0x80131536), h_result::COR_E_MISSINGSATELLITEASSEMBLY);
     }
-
+    
     void test_method_(COR_E_MULTICASTNOTSUPPORTED) {
       assert::are_equal(static_cast<int32>(0x80131514), h_result::COR_E_MULTICASTNOTSUPPORTED);
     }
-
+    
     void test_method_(COR_E_NOTFINITENUMBER) {
       assert::are_equal(static_cast<int32>(0x80131528), h_result::COR_E_NOTFINITENUMBER);
     }
-
+    
     void test_method_(COR_E_NOTSUPPORTED) {
       assert::are_equal(static_cast<int32>(0x80131515), h_result::COR_E_NOTSUPPORTED);
     }
-
+    
     void test_method_(COR_E_OBJECTCLOSED) {
       assert::are_equal(static_cast<int32>(0x80131622), h_result::COR_E_OBJECTCLOSED);
     }
-
+    
     void test_method_(COR_E_OPERATIONCANCELED) {
       assert::are_equal(static_cast<int32>(0x8013153B), h_result::COR_E_OPERATIONCANCELED);
     }
-
+    
     void test_method_(COR_E_OUTOFMEMORY) {
       assert::are_equal(static_cast<int32>(0x8007000E), h_result::COR_E_OUTOFMEMORY);
     }
-
+    
     void test_method_(COR_E_OVERFLOW) {
       assert::are_equal(static_cast<int32>(0x80131516), h_result::COR_E_OVERFLOW);
     }
-
+    
     void test_method_(COR_E_PATHTOOLONG) {
       assert::are_equal(static_cast<int32>(0x800700CE), h_result::COR_E_PATHTOOLONG);
     }
-
+    
     void test_method_(COR_E_PLATFORMNOTSUPPORTED) {
       assert::are_equal(static_cast<int32>(0x80131539), h_result::COR_E_PLATFORMNOTSUPPORTED);
     }
-
+    
     void test_method_(COR_E_RANK) {
       assert::are_equal(static_cast<int32>(0x80131517), h_result::COR_E_RANK);
     }
-
+    
     void test_method_(COR_E_REFLECTIONTYPELOAD) {
       assert::are_equal(static_cast<int32>(0x80131602), h_result::COR_E_REFLECTIONTYPELOAD);
     }
-
+    
     void test_method_(COR_E_RUNTIMEWRAPPED) {
       assert::are_equal(static_cast<int32>(0x8013153E), h_result::COR_E_RUNTIMEWRAPPED);
     }
-
+    
     void test_method_(COR_E_SAFEARRAYRANKMISMATCH) {
       assert::are_equal(static_cast<int32>(0x80131538), h_result::COR_E_SAFEARRAYRANKMISMATCH);
     }
-
+    
     void test_method_(COR_E_SAFEARRAYTYPEMISMATCH) {
       assert::are_equal(static_cast<int32>(0x80131533), h_result::COR_E_SAFEARRAYTYPEMISMATCH);
     }
-
+    
     void test_method_(COR_E_SECURITY) {
       assert::are_equal(static_cast<int32>(0x8013150A), h_result::COR_E_SECURITY);
     }
-
+    
     void test_method_(COR_E_SERIALIZATION) {
       assert::are_equal(static_cast<int32>(0x8013150C), h_result::COR_E_SERIALIZATION);
     }
-
+    
     void test_method_(COR_E_STACKOVERFLOW) {
       assert::are_equal(static_cast<int32>(0x800703E9), h_result::COR_E_STACKOVERFLOW);
     }
-
+    
     void test_method_(COR_E_SYNCHRONIZATIONLOCK) {
       assert::are_equal(static_cast<int32>(0x80131518), h_result::COR_E_SYNCHRONIZATIONLOCK);
     }
-
+    
     void test_method_(COR_E_SYSTEM) {
       assert::are_equal(static_cast<int32>(0x80131501), h_result::COR_E_SYSTEM);
     }
-
+    
     void test_method_(COR_E_TARGET) {
       assert::are_equal(static_cast<int32>(0x80131603), h_result::COR_E_TARGET);
     }
-
+    
     void test_method_(COR_E_TARGETINVOCATION) {
       assert::are_equal(static_cast<int32>(0x80131604), h_result::COR_E_TARGETINVOCATION);
     }
-
+    
     void test_method_(COR_E_TARGETPARAMCOUNT) {
       assert::are_equal(static_cast<int32>(0x8002000E), h_result::COR_E_TARGETPARAMCOUNT);
     }
-
+    
     void test_method_(COR_E_THREADABORTED) {
       assert::are_equal(static_cast<int32>(0x80131530), h_result::COR_E_THREADABORTED);
     }
-
+    
     void test_method_(COR_E_THREADINTERRUPTED) {
       assert::are_equal(static_cast<int32>(0x80131519), h_result::COR_E_THREADINTERRUPTED);
     }
-
+    
     void test_method_(COR_E_THREADSTART) {
       assert::are_equal(static_cast<int32>(0x80131525), h_result::COR_E_THREADSTART);
     }
-
+    
     void test_method_(COR_E_THREADSTATE) {
       assert::are_equal(static_cast<int32>(0x80131520), h_result::COR_E_THREADSTATE);
     }
-
+    
     void test_method_(COR_E_TIMEOUT) {
       assert::are_equal(static_cast<int32>(0x80131505), h_result::COR_E_TIMEOUT);
     }
-
+    
     void test_method_(COR_E_TYPEACCESS) {
       assert::are_equal(static_cast<int32>(0x80131543), h_result::COR_E_TYPEACCESS);
     }
-
+    
     void test_method_(COR_E_TYPEINITIALIZATION) {
       assert::are_equal(static_cast<int32>(0x80131534), h_result::COR_E_TYPEINITIALIZATION);
     }
-
+    
     void test_method_(COR_E_TYPELOAD) {
       assert::are_equal(static_cast<int32>(0x80131522), h_result::COR_E_TYPELOAD);
     }
-
+    
     void test_method_(COR_E_TYPEUNLOADED) {
       assert::are_equal(static_cast<int32>(0x80131013), h_result::COR_E_TYPEUNLOADED);
     }
-
+    
     void test_method_(COR_E_UNAUTHORIZEDACCESS) {
       assert::are_equal(static_cast<int32>(0x80070005), h_result::COR_E_UNAUTHORIZEDACCESS);
     }
-
+    
     void test_method_(COR_E_VERIFICATION) {
       assert::are_equal(static_cast<int32>(0x8013150D), h_result::COR_E_VERIFICATION);
     }
-
+    
     void test_method_(COR_E_WAITHANDLECANNOTBEOPENED) {
       assert::are_equal(static_cast<int32>(0x8013152C), h_result::COR_E_WAITHANDLECANNOTBEOPENED);
     }
-
+    
     void test_method_(CO_E_NOTINITIALIZED) {
       assert::are_equal(static_cast<int32>(0x800401F0), h_result::CO_E_NOTINITIALIZED);
     }
-
+    
     void test_method_(DISP_E_PARAMNOTFOUND) {
       assert::are_equal(static_cast<int32>(0x80020004), h_result::DISP_E_PARAMNOTFOUND);
     }
-
+    
     void test_method_(DISP_E_TYPEMISMATCH) {
       assert::are_equal(static_cast<int32>(0x80020005), h_result::DISP_E_TYPEMISMATCH);
     }
-
+    
     void test_method_(DISP_E_BADVARTYPE) {
       assert::are_equal(static_cast<int32>(0x80020008), h_result::DISP_E_BADVARTYPE);
     }
-
+    
     void test_method_(DISP_E_OVERFLOW) {
       assert::are_equal(static_cast<int32>(0x8002000A), h_result::DISP_E_OVERFLOW);
     }
-
+    
     void test_method_(DISP_E_DIVBYZERO) {
       assert::are_equal(static_cast<int32>(0x80020012), h_result::DISP_E_DIVBYZERO);
     }
-
+    
     void test_method_(E_ABORT) {
       assert::are_equal(static_cast<int32>(0x80004004), h_result::E_ABORT);
     }
-
+    
     void test_method_(E_BOUNDS) {
       assert::are_equal(static_cast<int32>(0x8000000B), h_result::E_BOUNDS);
     }
-
+    
     void test_method_(E_CHANGED_STATE) {
       assert::are_equal(static_cast<int32>(0x8000000C), h_result::E_CHANGED_STATE);
     }
-
+    
     void test_method_(E_FILENOTFOUND) {
       assert::are_equal(static_cast<int32>(0x80070002), h_result::E_FILENOTFOUND);
     }
-
+    
     void test_method_(E_FAIL) {
       assert::are_equal(static_cast<int32>(0x80004005), h_result::E_FAIL);
     }
-
+    
     void test_method_(E_HANDLE) {
       assert::are_equal(static_cast<int32>(0x80070006), h_result::E_HANDLE);
     }
-
+    
     void test_method_(E_INVALIDARG) {
       assert::are_equal(static_cast<int32>(0x80070057), h_result::E_INVALIDARG);
     }
-
+    
     void test_method_(E_NOTIMPL) {
       assert::are_equal(static_cast<int32>(0x80004001), h_result::E_NOTIMPL);
     }
-
+    
     void test_method_(E_POINTER) {
       assert::are_equal(static_cast<int32>(0x80004003), h_result::E_POINTER);
     }
-
+    
     void test_method_(E_UNEXPECTED) {
       assert::are_equal(static_cast<int32>(0x8000FFFF), h_result::E_UNEXPECTED);
     }
-
+    
     void test_method_(ERROR_MRM_MAP_NOT_FOUND) {
       assert::are_equal(static_cast<int32>(0x80073B1F), h_result::ERROR_MRM_MAP_NOT_FOUND);
     }
-
+    
     void test_method_(ERROR_TIMEOUT) {
       assert::are_equal(static_cast<int32>(0x800705B4), h_result::ERROR_TIMEOUT);
     }
-
+    
     void test_method_(RO_E_CLOSED) {
       assert::are_equal(static_cast<int32>(0x80000013), h_result::RO_E_CLOSED);
     }
-
+    
     void test_method_(RPC_E_CHANGED_MODE) {
       assert::are_equal(static_cast<int32>(0x80010106), h_result::RPC_E_CHANGED_MODE);
     }
-
+    
     void test_method_(TYPE_E_TYPEMISMATCH) {
       assert::are_equal(static_cast<int32>(0x80028CA0), h_result::TYPE_E_TYPEMISMATCH);
     }
-
+    
     void test_method_(STG_E_PATHNOTFOUND) {
       assert::are_equal(static_cast<int32>(0x80030003), h_result::STG_E_PATHNOTFOUND);
     }
-
+    
     void test_method_(CTL_E_PATHNOTFOUND) {
       assert::are_equal(static_cast<int32>(0x800A004C), h_result::CTL_E_PATHNOTFOUND);
     }
-
+    
     void test_method_(CTL_E_FILENOTFOUND) {
       assert::are_equal(static_cast<int32>(0x800A0035), h_result::CTL_E_FILENOTFOUND);
     }
-
+    
     void test_method_(FUSION_E_INVALID_NAME) {
       assert::are_equal(static_cast<int32>(0x80131047), h_result::FUSION_E_INVALID_NAME);
     }
-
+    
     void test_method_(FUSION_E_REF_DEF_MISMATCH) {
       assert::are_equal(static_cast<int32>(0x80131040), h_result::FUSION_E_REF_DEF_MISMATCH);
     }
-
+    
     void test_method_(ERROR_TOO_MANY_OPEN_FILES) {
       assert::are_equal(static_cast<int32>(0x80070004), h_result::ERROR_TOO_MANY_OPEN_FILES);
     }
-
+    
     void test_method_(ERROR_SHARING_VIOLATION) {
       assert::are_equal(static_cast<int32>(0x80070020), h_result::ERROR_SHARING_VIOLATION);
     }
-
+    
     void test_method_(ERROR_LOCK_VIOLATION) {
       assert::are_equal(static_cast<int32>(0x80070021), h_result::ERROR_LOCK_VIOLATION);
     }
-
+    
     void test_method_(ERROR_OPEN_FAILED) {
       assert::are_equal(static_cast<int32>(0x8007006E), h_result::ERROR_OPEN_FAILED);
     }
-
+    
     void test_method_(ERROR_DISK_CORRUPT) {
       assert::are_equal(static_cast<int32>(0x80070571), h_result::ERROR_DISK_CORRUPT);
     }
-
+    
     void test_method_(ERROR_UNRECOGNIZED_VOLUME) {
       assert::are_equal(static_cast<int32>(0x800703ED), h_result::ERROR_UNRECOGNIZED_VOLUME);
     }
-
+    
     void test_method_(ERROR_DLL_INIT_FAILED) {
       assert::are_equal(static_cast<int32>(0x8007045A), h_result::ERROR_DLL_INIT_FAILED);
     }
-
+    
     void test_method_(MSEE_E_ASSEMBLYLOADINPROGRESS) {
       assert::are_equal(static_cast<int32>(0x80131016), h_result::MSEE_E_ASSEMBLYLOADINPROGRESS);
     }
-
+    
     void test_method_(ERROR_FILE_INVALID) {
       assert::are_equal(static_cast<int32>(0x800703EE), h_result::ERROR_FILE_INVALID);
     }
-
+    
     void test_method_(failed_with_ERROR_FILE_INVALID) {
       assert::is_true(h_result::failed(h_result::ERROR_FILE_INVALID));
     }
@@ -803,7 +803,7 @@ namespace xtd::tests {
     void test_method_(failed_with_COR_E_DRIVENOTFOUND) {
       assert::is_true(h_result::failed(h_result::COR_E_DRIVENOTFOUND));
     }
-
+    
     void test_method_(failed_with_COR_E_AMBIGUOUSMATCH) {
       assert::is_true(h_result::failed(h_result::COR_E_AMBIGUOUSMATCH));
     }
@@ -1431,7 +1431,7 @@ namespace xtd::tests {
     void test_method_(get_code_with_COR_E_SYSTEM) {
       assert::are_equal(static_cast<int32>(0x1501), h_result::get_code(h_result::COR_E_SYSTEM));
     }
-
+    
     void test_method_(get_facility_with_ERROR_FILE_INVALID) {
       assert::are_equal(static_cast<int32>(0x7), h_result::get_facility(h_result::ERROR_FILE_INVALID));
     }
@@ -1899,7 +1899,7 @@ namespace xtd::tests {
     void test_method_(get_facility_with_COR_E_SYSTEM) {
       assert::are_equal(static_cast<int32>(0x13), h_result::get_facility(h_result::COR_E_SYSTEM));
     }
-
+    
     void test_method_(get_h_results) {
       assert::are_equal(117_z, h_result::get_h_results().size());
       collection_assert::contains({h_result::ERROR_FILE_INVALID}, h_result::get_h_results());
@@ -2020,59 +2020,59 @@ namespace xtd::tests {
       collection_assert::contains({h_result::STG_E_PATHNOTFOUND}, h_result::get_h_results());
       collection_assert::contains({h_result::COR_E_SYSTEM}, h_result::get_h_results());
     }
-
+    
     void test_method_(get_message_with_S_OK) {
       assert::are_equal("Operation successful.", h_result::get_message(h_result::S_OK));
     }
-
+    
     void test_method_(get_message_with_S_FALSE) {
       assert::are_equal("Operation successful but returned no results.", h_result::get_message(h_result::S_FALSE));
     }
-
+    
     void test_method_(get_message_with_COR_E_ABANDONEDMUTEX) {
       assert::are_equal("The wait completed due to an abandoned mutex.", h_result::get_message(h_result::COR_E_ABANDONEDMUTEX));
     }
-
+    
     void test_method_(get_message_with_COR_E_AMBIGUOUSIMPLEMENTATION) {
       assert::are_equal("Ambiguous implementation found.", h_result::get_message(h_result::COR_E_AMBIGUOUSIMPLEMENTATION));
     }
-
+    
     void test_method_(get_message_with_COR_E_AMBIGUOUSMATCH) {
       assert::are_equal("Ambiguous match found.", h_result::get_message(h_result::COR_E_AMBIGUOUSMATCH));
     }
-
+    
     void test_method_(get_message_with_COR_E_APPDOMAINUNLOADED) {
       assert::are_equal("Attempted to access an unloaded AppDomain.", h_result::get_message(h_result::COR_E_APPDOMAINUNLOADED));
     }
-
+    
     void test_method_(get_message_with_COR_E_APPLICATION) {
       assert::are_equal("Error in the application.", h_result::get_message(h_result::COR_E_APPLICATION));
     }
-
+    
     void test_method_(get_message_with_COR_E_ARGUMENT) {
       assert::are_equal("Value does not fall within the expected range.", h_result::get_message(h_result::COR_E_ARGUMENT));
     }
-
+    
     void test_method_(get_message_with_COR_E_ARGUMENTOUTOFRANGE) {
       assert::are_equal("Specified argument was out of the range of valid values.", h_result::get_message(h_result::COR_E_ARGUMENTOUTOFRANGE));
     }
-
+    
     void test_method_(get_message_with_COR_E_ARITHMETIC) {
       assert::are_equal("Overflow or underflow in the arithmetic operation.", h_result::get_message(h_result::COR_E_ARITHMETIC));
     }
-
+    
     void test_method_(get_message_with_COR_E_ARRAYTYPEMISMATCH) {
       assert::are_equal("Attempted to access an element as a type incompatible with the array.", h_result::get_message(h_result::COR_E_ARRAYTYPEMISMATCH));
     }
-
+    
     void test_method_(get_message_with_COR_E_BADEXEFORMAT) {
       assert::are_equal("Format of the executable (.exe) cannot be run.", h_result::get_message(h_result::COR_E_BADEXEFORMAT));
     }
-
+    
     void test_method_(get_message_with_COR_E_BADIMAGEFORMAT) {
       assert::are_equal("Format of the executable (.exe) or library (.dll) is invalid.", h_result::get_message(h_result::COR_E_BADIMAGEFORMAT));
     }
-
+    
     void test_method_(get_message_with_COR_E_CANNOTUNLOADAPPDOMAIN) {
       assert::are_equal("Attempt to unload the AppDomain failed.", h_result::get_message(h_result::COR_E_CANNOTUNLOADAPPDOMAIN));
     }
@@ -2112,7 +2112,7 @@ namespace xtd::tests {
     void test_method_(get_message_with_COR_E_DRIVEOTFOUND) {
       assert::are_equal("Could not find the drive. The drive might not be ready or might not be mapped.", h_result::get_message(h_result::COR_E_DRIVENOTFOUND));
     }
-
+    
     void test_method_(get_message_with_COR_E_ENDOFSTREAM) {
       assert::are_equal("Attempted to read past the end of the stream.", h_result::get_message(h_result::COR_E_ENDOFSTREAM));
     }
@@ -2260,7 +2260,7 @@ namespace xtd::tests {
     void test_method_(get_message_with_COR_E_PLATFORMNOTSUPPORTED) {
       assert::are_equal("Operation is not supported on this platform.", h_result::get_message(h_result::COR_E_PLATFORMNOTSUPPORTED));
     }
-
+    
     void test_method_(get_message_with_COR_E_RANK) {
       assert::are_equal("Attempted to operate on an array with the incorrect number of dimensions.", h_result::get_message(h_result::COR_E_RANK));
     }
@@ -2296,95 +2296,95 @@ namespace xtd::tests {
     void test_method_(get_message_with_COR_E_SYNCHRONIZATIONLOCK) {
       assert::are_equal("Object synchronization method was called from an unsynchronized block of code.", h_result::get_message(h_result::COR_E_SYNCHRONIZATIONLOCK));
     }
-
+    
     void test_method_(get_message_with_COR_E_SYSTEM) {
       assert::are_equal("System error.", h_result::get_message(h_result::COR_E_SYSTEM));
     }
-
+    
     void test_method_(get_message_with_COR_E_TARGET) {
       assert::are_equal("Exception of type 'xtd::reflection::target_exception' was thrown.", h_result::get_message(h_result::COR_E_TARGET));
     }
-
+    
     void test_method_(get_message_with_COR_E_TARGETINVOCATION) {
       assert::are_equal("Exception has been thrown by the target of an invocation.", h_result::get_message(h_result::COR_E_TARGETINVOCATION));
     }
-
+    
     void test_method_(get_message_with_COR_E_TARGETPARAMCOUNT) {
       assert::are_equal("Number of parameters specified does not match the expected number.", h_result::get_message(h_result::COR_E_TARGETPARAMCOUNT));
     }
-
+    
     void test_method_(get_message_with_COR_E_THREADABORTED) {
       assert::are_equal("Thread was aborted.", h_result::get_message(h_result::COR_E_THREADABORTED));
     }
-
+    
     void test_method_(get_message_with_COR_E_THREADINTERRUPTED) {
       assert::are_equal("Thread was interrupted from a waiting state.", h_result::get_message(h_result::COR_E_THREADINTERRUPTED));
     }
-
+    
     void test_method_(get_message_with_COR_E_THREADSTART) {
       assert::are_equal("Thread start failure.", h_result::get_message(h_result::COR_E_THREADSTART));
     }
-
+    
     void test_method_(get_message_with_COR_E_THREADSTATE) {
       assert::are_equal("Thread was in an invalid state for the operation being executed.", h_result::get_message(h_result::COR_E_THREADSTATE));
     }
-
+    
     void test_method_(get_message_with_COR_E_TIMEOUT) {
       assert::are_equal("The operation has timed out.", h_result::get_message(h_result::COR_E_TIMEOUT));
     }
-
+    
     void test_method_(get_message_with_COR_E_TYPEACCESS) {
       assert::are_equal("Attempt to access the type failed.", h_result::get_message(h_result::COR_E_TYPEACCESS));
     }
-
+    
     void test_method_(get_message_with_COR_E_TYPEINITIALIZATION) {
       assert::are_equal("The type initializer for 'value' threw an exception.", h_result::get_message(h_result::COR_E_TYPEINITIALIZATION));
     }
-
+    
     void test_method_(get_message_with_COR_E_TYPELOAD) {
       assert::are_equal("Failure has occurred while loading a type.", h_result::get_message(h_result::COR_E_TYPELOAD));
     }
-
+    
     void test_method_(get_message_with_COR_E_TYPEUNLOADED) {
       assert::are_equal("Type had been unloaded.", h_result::get_message(h_result::COR_E_TYPEUNLOADED));
     }
-
+    
     void test_method_(get_message_with_COR_E_UNAUTHORIZEDACCESS) {
       assert::are_equal("Attempted to perform an unauthorized operation.", h_result::get_message(h_result::COR_E_UNAUTHORIZEDACCESS));
     }
-
+    
     void test_method_(get_message_with_COR_E_VERIFICATION) {
       assert::are_equal("Operation could destabilize the runtime.", h_result::get_message(h_result::COR_E_VERIFICATION));
     }
-
+    
     void test_method_(get_message_with_COR_E_WAITHANDLECANNOTBEOPENED) {
       assert::are_equal("No handle of the given name exists.", h_result::get_message(h_result::COR_E_WAITHANDLECANNOTBEOPENED));
     }
-
+    
     void test_method_(get_message_with_CO_E_NOTINITIALIZED) {
       assert::are_equal("Not initialized", h_result::get_message(h_result::CO_E_NOTINITIALIZED));
     }
-
+    
     void test_method_(get_message_with_DISP_E_PARAMNOTFOUND) {
       assert::are_equal("Could not find the parameter.", h_result::get_message(h_result::DISP_E_PARAMNOTFOUND));
     }
-
+    
     void test_method_(get_message_with_DISP_E_TYPEMISMATCH) {
       assert::are_equal("Attempt to access a variable with an incompatible type.", h_result::get_message(h_result::DISP_E_TYPEMISMATCH));
     }
-
+    
     void test_method_(get_message_with_DISP_E_BADVARTYPE) {
       assert::are_equal("Invalid variable type.", h_result::get_message(h_result::DISP_E_BADVARTYPE));
     }
-
+    
     void test_method_(get_message_with_DISP_E_OVERFLOW) {
       assert::are_equal("Arithmetic operation resulted in an overflow.", h_result::get_message(h_result::DISP_E_OVERFLOW));
     }
-
+    
     void test_method_(get_message_with_DISP_E_DIVBYZERO) {
       assert::are_equal("Attempted to divide by zero.", h_result::get_message(h_result::DISP_E_DIVBYZERO));
     }
-
+    
     void test_method_(get_message_with_E_ABORT) {
       assert::are_equal("Operation aborted.", h_result::get_message(h_result::E_ABORT));
     }
@@ -2416,7 +2416,7 @@ namespace xtd::tests {
     void test_method_(get_message_with_E_NOTIMPL) {
       assert::are_equal("The method or operation is not implemented.", h_result::get_message(h_result::E_NOTIMPL));
     }
-
+    
     void test_method_(get_message_with_E_POINTER) {
       assert::are_equal("Attempted to read or write protected memory. This is often an indication that other memory is corrupt.", h_result::get_message(h_result::E_POINTER));
     }
@@ -2424,83 +2424,83 @@ namespace xtd::tests {
     void test_method_(get_message_with_E_UNEXPECTED) {
       assert::are_equal("Unexpected failure.", h_result::get_message(h_result::E_UNEXPECTED));
     }
-
+    
     void test_method_(get_message_with_ERROR_MRM_MAP_NOT_FOUND) {
       assert::are_equal("Resource map not found.", h_result::get_message(h_result::ERROR_MRM_MAP_NOT_FOUND));
     }
-
+    
     void test_method_(get_message_with_ERROR_TIMEOUT) {
       assert::are_equal("The operation has timed out.", h_result::get_message(h_result::ERROR_TIMEOUT));
     }
-
+    
     void test_method_(get_message_with_RO_E_CLOSED) {
       assert::are_equal("The object has been closed.", h_result::get_message(h_result::RO_E_CLOSED));
     }
-
+    
     void test_method_(get_message_with_RPC_E_CHANGED_MODE) {
       assert::are_equal("Cannot change the current thread mode.", h_result::get_message(h_result::RPC_E_CHANGED_MODE));
     }
-
+    
     void test_method_(get_message_with_TYPE_E_TYPEMISMATCH) {
       assert::are_equal("Incompatible type.", h_result::get_message(h_result::TYPE_E_TYPEMISMATCH));
     }
-
+    
     void test_method_(get_message_with_STG_E_PATHNOTFOUND) {
       assert::are_equal("Attempted to access a path that is not on the disk.", h_result::get_message(h_result::STG_E_PATHNOTFOUND));
     }
-
+    
     void test_method_(get_message_with_CTL_E_PATHNOTFOUND) {
       assert::are_equal("Attempted to access a path that is not on the disk.", h_result::get_message(h_result::CTL_E_PATHNOTFOUND));
     }
-
+    
     void test_method_(get_message_with_CTL_E_FILENOTFOUND) {
       assert::are_equal("Unable to find the specified file.", h_result::get_message(h_result::CTL_E_FILENOTFOUND));
     }
-
+    
     void test_method_(get_message_with_FUSION_E_INVALID_NAME) {
       assert::are_equal("Fusion invalid name exception.", h_result::get_message(h_result::FUSION_E_INVALID_NAME));
     }
-
+    
     void test_method_(get_message_with_FUSION_E_REF_DEF_MISMATCH) {
       assert::are_equal("Fusion the reference definition is incompatible.", h_result::get_message(h_result::FUSION_E_REF_DEF_MISMATCH));
     }
-
+    
     void test_method_(get_message_with_ERROR_TOO_MANY_OPEN_FILES) {
       assert::are_equal("Too many open files.", h_result::get_message(h_result::ERROR_TOO_MANY_OPEN_FILES));
     }
-
+    
     void test_method_(get_message_with_ERROR_SHARING_VIOLATION) {
       assert::are_equal("Sharing violation.", h_result::get_message(h_result::ERROR_SHARING_VIOLATION));
     }
-
+    
     void test_method_(get_message_with_ERROR_LOCK_VIOLATION) {
       assert::are_equal("Lock violations.", h_result::get_message(h_result::ERROR_LOCK_VIOLATION));
     }
-
+    
     void test_method_(get_message_with_ERROR_OPEN_FAILED) {
       assert::are_equal("Open failed.", h_result::get_message(h_result::ERROR_OPEN_FAILED));
     }
-
+    
     void test_method_(get_message_with_ERROR_DISK_CORRUPT) {
       assert::are_equal("Disk corrupt.", h_result::get_message(h_result::ERROR_DISK_CORRUPT));
     }
-
+    
     void test_method_(get_message_with_ERROR_UNRECOGNIZED_VOLUME) {
       assert::are_equal("Unrecognized volume.", h_result::get_message(h_result::ERROR_UNRECOGNIZED_VOLUME));
     }
-
+    
     void test_method_(get_message_with_ERROR_DLL_INIT_FAILED) {
       assert::are_equal("DLL init failed.", h_result::get_message(h_result::ERROR_DLL_INIT_FAILED));
     }
-
+    
     void test_method_(get_message_with_MSEE_E_ASSEMBLYLOADINPROGRESS) {
       assert::are_equal("Assembly load in progress.", h_result::get_message(h_result::MSEE_E_ASSEMBLYLOADINPROGRESS));
     }
-
+    
     void test_method_(get_message_with_ERROR_FILE_INVALID) {
       assert::are_equal("File invalid.", h_result::get_message(h_result::ERROR_FILE_INVALID));
     }
-
+    
     void test_method_(get_messages) {
       using h_result_message_pair = std::pair<int32, string>;
       assert::are_equal(117_z, h_result::get_messages().size());
@@ -3090,7 +3090,7 @@ namespace xtd::tests {
     void test_method_(get_name_with_COR_E_SYSTEM) {
       assert::are_equal("COR_E_SYSTEM", h_result::get_name(h_result::COR_E_SYSTEM));
     }
-
+    
     void test_method_(get_names) {
       using h_result_name_pair = std::pair<int32, string>;
       assert::are_equal(117_z, h_result::get_names().size());
@@ -3212,7 +3212,7 @@ namespace xtd::tests {
       collection_assert::contains({h_result_name_pair {h_result::STG_E_PATHNOTFOUND, "STG_E_PATHNOTFOUND"}}, h_result::get_names());
       collection_assert::contains({h_result_name_pair {h_result::COR_E_SYSTEM, "COR_E_SYSTEM"}}, h_result::get_names());
     }
-
+    
     void test_method_(get_severity_with_ERROR_FILE_INVALID) {
       assert::are_equal(1, h_result::get_severity(h_result::ERROR_FILE_INVALID));
     }
@@ -3801,7 +3801,7 @@ namespace xtd::tests {
       assert::are_equal("Attempted to access a path that is not on the disk.", xtd::h_result::h_result_category().message(h_result::STG_E_PATHNOTFOUND));
       assert::are_equal("System error.", xtd::h_result::h_result_category().message(h_result::COR_E_SYSTEM));
     }
-
+    
     void test_method_(is_error_with_ERROR_FILE_INVALID) {
       assert::is_true(h_result::is_error(h_result::ERROR_FILE_INVALID));
     }
@@ -4269,7 +4269,7 @@ namespace xtd::tests {
     void test_method_(is_error_with_COR_E_SYSTEM) {
       assert::is_true(h_result::is_error(h_result::COR_E_SYSTEM));
     }
-
+    
     void test_method_(make_error_code_with_ERROR_FILE_INVALID) {
       assert::are_equal(static_cast<int32>(0x800703EE), h_result::make_error_code(h_result::ERROR_FILE_INVALID).value());
       assert::are_equal("h_result_category", h_result::make_error_code(h_result::ERROR_FILE_INVALID).category().name());
@@ -4737,7 +4737,7 @@ namespace xtd::tests {
       assert::are_equal("h_result_category", h_result::make_error_code(h_result::COR_E_DRIVENOTFOUND).category().name());
       assert::are_equal("Could not find the drive. The drive might not be ready or might not be mapped.", h_result::make_error_code(h_result::COR_E_DRIVENOTFOUND).message());
     }
-
+    
     void test_method_(make_error_code_with_COR_E_BADEXEFORMAT) {
       assert::are_equal(static_cast<int32>(0x800700C1), h_result::make_error_code(h_result::COR_E_BADEXEFORMAT).value());
       assert::are_equal("h_result_category", h_result::make_error_code(h_result::COR_E_BADEXEFORMAT).category().name());
@@ -4971,13 +4971,13 @@ namespace xtd::tests {
       assert::are_equal("h_result_category", h_result::make_error_code(h_result::COR_E_SYSTEM).category().name());
       assert::are_equal("System error.", h_result::make_error_code(h_result::COR_E_SYSTEM).message());
     }
-
+    
     void test_method_(make_error_code_with_unknown_value) {
       assert::are_equal(static_cast<int32>(0xFF00FF00), h_result::make_error_code(0xFF00FF00).value());
       assert::are_equal("h_result_category", h_result::make_error_code(0xFF00FF00).category().name());
       assert::are_equal("Unknown h_result 0xFF00FF00 (-16711936)", h_result::make_error_code(0xFF00FF00).message());
     }
-
+    
     void test_method_(succeeded_with_ERROR_FILE_INVALID) {
       assert::is_false(h_result::succeeded(h_result::ERROR_FILE_INVALID));
     }
@@ -5289,7 +5289,7 @@ namespace xtd::tests {
     void test_method_(succeeded_with_COR_E_DRIVENOTFOUND) {
       assert::is_false(h_result::succeeded(h_result::COR_E_DRIVENOTFOUND));
     }
-
+    
     void test_method_(succeeded_with_COR_E_BADEXEFORMAT) {
       assert::is_false(h_result::succeeded(h_result::COR_E_BADEXEFORMAT));
     }
@@ -5445,7 +5445,7 @@ namespace xtd::tests {
     void test_method_(succeeded_with_COR_E_SYSTEM) {
       assert::is_false(h_result::succeeded(h_result::COR_E_SYSTEM));
     }
-
+    
     void test_method_(to_string_with_ERROR_FILE_INVALID) {
       assert::are_equal("ERROR_FILE_INVALID", h_result::to_string(h_result::ERROR_FILE_INVALID));
     }

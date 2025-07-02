@@ -40,7 +40,7 @@ namespace xtd {
       /// @return `true` if lhs is not equal to rhs; otherwise `false`.
       friend bool operator !=(const type_t& lhs, const type_t& rhs) noexcept {return !lhs.equals(rhs);}
       /// @}
-    
+      
     private:
       friend equatable_t;
       equality_operators() = default;

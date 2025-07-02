@@ -57,13 +57,13 @@ namespace xtd {
         /// @param x The first entity to compare.
         /// @param y The second entity to compare.
         /// @return A 32-bit signed integer that indicates the relative order of the entities being compared. The return value has these meanings:
-        /// 
+        ///
         /// | Value             | Condition            |
         /// |-------------------|----------------------|
         /// | Less than zero    | x is less than y.    |
         /// | Zero              | x equals y.          |
         /// | Greater than zero | x is greater than y. |
-        result_type compare(const first_argument_type& x, const second_argument_type& y) const noexcept override {return helpers::comparer<type_t> {} (x, y);}
+        result_type compare(const first_argument_type& x, const second_argument_type& y) const noexcept override {return helpers::comparer<type_t> {}(x, y);}
         
         //static ptr<comparer<type_t>> create (xtd::comparison<type_t> comparison) {
         //  return {};
@@ -78,7 +78,7 @@ namespace xtd {
         comparer() = default;
         /// @}
       };
-
+      
       /// @cond
       template<class type_t>
       inline const comparer<type_t> comparer<type_t>::default_comparer;

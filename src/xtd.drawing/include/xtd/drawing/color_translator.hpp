@@ -56,14 +56,14 @@ namespace xtd {
       /// @return The xtd::drawing::color structure that represents the translated HSVA color or xtd::drawing::color::empty if text is empty ("").
       /// @exception xtd:format_exception text is not a valid HSVA color name.
       static xtd::drawing::color from_hsva(const xtd::string& text);
-
+      
       /// @brief Translates an HTML color representation to a GDI+ xtd::drawing::color structure.
       /// @param text The string representation of the HTML color to translate.
       /// @return The xtd::drawing::color structure that represents the translated HTML color or xtd::drawing::color::empty if text is empty ("").
       /// @exception xtd:format_exception text is not a valid HTML color name.
       /// @remarks This method translates a string representation of an HTML color name, such as bBlue or red, to a GDI+ xtd::drawing::color structure.
       static xtd::drawing::color from_html(const xtd::string& text);
-
+      
       /// @brief Translates an RGB color representation to a GDI+ xtd::drawing::color structure.
       /// @param text The string representation of the RGB color to translate.
       /// @return The xtd::drawing::color structure that represents the translated RGB color or xtd::drawing::color::empty if text is empty ("").
@@ -81,7 +81,7 @@ namespace xtd {
       /// @return The xtd::drawing::color structure that represents the translated Win32 color or xtd::drawing::color::empty if text is empty ("").
       /// @exception xtd:format_exception text is not a valid Win32 color name.
       static xtd::drawing::color from_win32(int32 value);
-
+      
       /// @brief Translates the specified xtd::drawing::color structure to an HEX string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The string that represents the HEX color.
@@ -92,7 +92,7 @@ namespace xtd {
       /// @return The string that represents the HEX color.
       /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HEX color (e.g. "#ff6347").
       static xtd::string to_hex(const xtd::drawing::color& value, bool auto_hexa) noexcept;
-
+      
       /// @brief Translates the specified xtd::drawing::color structure to an HSL string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @param auto_alpha If `true` and alpha channel is not 100% shows alpha value; otherwise always not show alpha value.
@@ -105,13 +105,13 @@ namespace xtd {
       /// @return The string that represents the HSL color.
       /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HSL color (e.g. "hsl(9, 100%, 64%)").
       static xtd::string to_hsl(const xtd::drawing::color& value, bool auto_alpha) noexcept;
-
+      
       /// @brief Translates the specified xtd::drawing::color structure to an HSLA string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The string that represents the HSL color.
       /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HSLA color (e.g. "hsla(9, 100%, 64%, 0.6)").
       static xtd::string to_hsla(const xtd::drawing::color& value) noexcept;
-
+      
       /// @brief Translates the specified xtd::drawing::color structure to an HSV string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The string that represents the HSL color.
@@ -123,19 +123,19 @@ namespace xtd {
       /// @return The string that represents the HSL color.
       /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HSV color (e.g. "hsl(9, 100%, 64%)").
       static xtd::string to_hsv(const xtd::drawing::color& value, bool auto_hsva) noexcept;
-
+      
       /// @brief Translates the specified xtd::drawing::color structure to an HSVA string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The string that represents the HSL color.
       /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HSVA color (e.g. "hsva(9, 100%, 64%, 0.6)").
       static xtd::string to_hsva(const xtd::drawing::color& value) noexcept;
-
+      
       /// @brief Translates the specified xtd::drawing::color structure to an HTML string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The string that represents the HTML color.
       /// @remarks This method translates a xtd::drawing::color structure to a string representation of an HTML color. This is the commonly used name of a color, such as "red", "blue", or "green", and not string representation of a numeric color value, such as "#ff6347" or "rgba(255, 99, 71, 0.5)" if alpha less than 255.
       static xtd::string to_html(const xtd::drawing::color& value) noexcept;
-
+      
       /// @brief Translates the specified xtd::drawing::color structure to an RGB string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The string that represents the RGB color.
@@ -147,13 +147,13 @@ namespace xtd {
       /// @return The string that represents the RGB color.
       /// @remarks This method translates an xtd::drawing::color structure into a string representation of a RGB color (e.g."rgb(255, 99, 71)").
       static xtd::string to_rgb(const xtd::drawing::color& value, bool auto_rgba) noexcept;
-
+      
       /// @brief Translates the specified xtd::drawing::color structure to an RGBA string color representation.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The string that represents the RGBA color.
       /// @remarks This method translates an xtd::drawing::color structure into a string representation of a RGBA color (e.g."rgba(255, 99, 71, 0.5)").
       static xtd::string to_rgba(const xtd::drawing::color& value) noexcept;
-
+      
       /// @brief Translates the specified xtd::drawing::color structure to a Windows color.
       /// @param value The xtd::drawing::color structure to translate.
       /// @return The Windows color value.

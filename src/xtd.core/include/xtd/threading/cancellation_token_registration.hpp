@@ -32,7 +32,7 @@ namespace xtd {
       
       /// @{
       /// @}
-
+      
       /// @cond
       cancellation_token_registration();
       cancellation_token_registration(const cancellation_token_registration& cancellation_token_registration);
@@ -49,9 +49,9 @@ namespace xtd {
       
       /// @{
       /// @}
-
+      
     private:
-
+    
     };
   }
 }

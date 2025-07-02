@@ -78,11 +78,11 @@ namespace xtd {
       /// @brief Gets product information.
       /// @return A string containing the product information.
       const string& product() const noexcept;
-
+      
       /// @brief Gets the path for the executable file that started the application, not including the executable name.
       /// @return The path for the executable file that started the application.
       string location_path() const noexcept;
-
+      
       /// @brief Gets title information.
       /// @return A string containing the title information.
       const string& title() const noexcept;

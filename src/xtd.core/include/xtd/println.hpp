@@ -176,7 +176,7 @@ namespace xtd {
   template<class type_t>
   void println(const std::initializer_list<type_t>& il) {xtd::println(stdout, il);}
   /// @endcond
-
+  
   /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
   /// @param fmt A composite format string.

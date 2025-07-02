@@ -29,7 +29,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   template<class char_t>
-  class basic_string_comparer : public xtd::object, public xtd::collections::generic::icomparer<xtd::basic_string<char_t>>, public xtd::collections::generic::iequality_comparer<xtd::basic_string<char_t>> {
+  class basic_string_comparer : public xtd::object, public xtd::collections::generic::icomparer<xtd::basic_string<char_t>>, public xtd::collections::generic::iequality_comparer<xtd::basic_string<char_t >> {
   public:
     /// @name Public Static Properties
     
@@ -53,7 +53,7 @@ namespace xtd {
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);
       //return create(culture_info::current_culture);
     }
-
+    
     /// @brief Gets a xtd::basic_string_comparer object that performs case-insensitive string comparisons using the word comparison rules of the current culture.
     /// @return A xtd::basic_string_comparer object.
     /// @remarks The current culture is the xtd::globalization::culture_info object associated with the current thread; it is returned by the xtd::globalization::culture_info::current_culture property.
@@ -75,7 +75,7 @@ namespace xtd {
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);
       //return create(culture_info::current_culture, true);
     }
-
+    
     static basic_string_comparer invariant_culture() {
       /// @todo Uncomment following lines when xtd::globalization::culture_info and xtd::globalization::compare_options are developped.
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);
@@ -96,7 +96,7 @@ namespace xtd {
       static auto result = from_comparison(string_comparison::ordinal);
       return result;
     }
-
+    
     /// @brief Gets a xtd::basic_string_comparer object that performs a case-insensitive ordinal string comparison.
     /// @return A xtd::basic_string_comparer object.
     /// @remarks The xtd::basic_string_comparer returned by the xtd::basic_string_comparer::ordinal_ignore_case property treats the characters in the strings to compare as if they were converted to uppercase using the conventions of the invariant culture, and then performs a simple byte comparison that is independent of language. This is most appropriate when comparing strings that are generated programmatically or when comparing case-insensitive resources such as paths and filenames.
@@ -123,8 +123,8 @@ namespace xtd {
     /// @remarks The xtd::basic_string_comparer::compare(const string&, const string&) method is slightly more efficient than the xtd::basic_string_comparer::compare(const object_t&, consy object_t&) method because no conversion of the `x` and `y` arguments is needed to perform the comparison.
     template <class object_t>
     int32 compare(const object_t& x, const object_t& y) const  {
-      if (is<basic_string<char_t>>(x) && is<basic_string<char_t>>(y)) return compare(as<basic_string<char_t>>(x), as<basic_string<char_t>>(y));
-      if (is<icomparable<object_t>>(x) && is<icomparable<object_t>>(y)) return as<icomparable<object_t>>(x).compare_to(y);
+      if (is<basic_string<char_t>>(x) && is<basic_string<char_t>>(y)) return compare(as<basic_string<char_t >> (x), as<basic_string<char_t >> (y));
+      if (is<icomparable<object_t>>(x) && is<icomparable<object_t>>(y)) return as<icomparable<object_t >> (x).compare_to(y);
       if (is<object>(x) && is<object>(y) && as<object>(x) == as<object>(y)) return 0;
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
     }
@@ -158,7 +158,7 @@ namespace xtd {
         default: return x.compare_to(y);
       }
     }
-
+    
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
@@ -168,7 +168,7 @@ namespace xtd {
     bool equals(const object& obj) const noexcept override {
       return is<basic_string_comparer>(obj) && reinterpret_cast<const basic_string_comparer&>(obj).comparison_ == comparison_;
     }
-
+    
     /// @brief When overridden in a derived class, indicates whether two objects are equal.
     /// @param x An object to compare to `y`.
     /// @param y An object to compare to `x`.
@@ -177,15 +177,16 @@ namespace xtd {
     template <class object_t>
     bool equals(const object_t& x, const object_t& y) const  {
       if (&x == &y) return true;
-      if (is<basic_string<char_t>>(x) && is<basic_string<char_t>>(y)) return equals(as<basic_string<char_t>>(x), as<basic_string<char_t>>(y));
-      if (is<iequatable<object_t>>(x) && is<iequatable<object_t>>(y)) return as<iequatable<object_t>>(x).equals(y);
+      if (is<basic_string<char_t>>(x) && is<basic_string<char_t>>(y)) return equals(as<basic_string<char_t >> (x), as<basic_string<char_t >> (y));
+      if (is<iequatable<object_t>>(x) && is<iequatable<object_t>>(y)) return as<iequatable<object_t >> (x).equals(y);
       if (is<object>(x) && is<object>(y) && as<object>(x) == as<object>(y)) return 0;
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
     }
     /// @cond
     bool equals(const char_t* x, const char_t* y) const {
       if (x == y) return true;
-      return equals(basic_string<char_t> {x}, basic_string<char_t> {y});}
+      return equals(basic_string<char_t> {x}, basic_string<char_t> {y});
+    }
     bool equals(const basic_string<char_t>& x, const char_t* y) const {return equals(x, basic_string<char_t> {y});}
     bool equals(const char_t* x, const basic_string<char_t>& y) const {return equals(basic_string<char_t> {x}, y);}
     /// @endcond
@@ -207,7 +208,7 @@ namespace xtd {
         default : return x.equals(y);
       }
     }
-        
+    
     using xtd::object::get_hash_code;
     /// @brief When overridden in a derived class, gets the hash code for the specified object.
     /// @param obj An object.
@@ -215,7 +216,7 @@ namespace xtd {
     /// @remarks The xtd::basic_string_comparer::get_hash_code(const string&) method is more efficient than the xtd::basic_string_comparer::get_hash_code(const object&) method because the obj parameter does not have to be converted to perform the operation.
     template <class object_t>
     xtd::size get_hash_code(const object_t& obj) const  {
-      if (is<basic_string<char_t>>(obj)) return get_hash_code(as<basic_string<char_t>>(obj));
+      if (is<basic_string<char_t>>(obj)) return get_hash_code(as<basic_string<char_t >> (obj));
       if (is<object>(obj)) return as<object>(obj).get_hash_code();
       return xtd::hash_code::combine(obj);
     }
@@ -239,7 +240,7 @@ namespace xtd {
       }
     }
     /// @}
-
+    
     /// @name Public Static Methods
     
     /// @{
@@ -265,7 +266,7 @@ namespace xtd {
         compare_options = get_compare_options();
         return true;
       }
-      
+    
       compare_info = xtd::globalization::compare_info {};
       compare_options = xtd::globalization::compare_options::none;
       return false;
@@ -277,8 +278,8 @@ namespace xtd {
     /// @return `true` if comparer is a well-known ordinal string comparer; otherwise, `false`.
     /// @remarks A "well-known ordinal comparer" describes a comparer that behaves identically to xtd::basic_string_comparer::ordinal when passed to xtd::collections::generic::dictionary <key_t, value_t> or xtd::collections::generic::hash_set <type_t>. For example, xtd::collections::generic::equality_comparer::default_equality_comparer is a well-known ordinal comparer because a xtd::collections::generic::dictionary <key_t, value_t> given xtd::collections::generic::equality_comparer::default_equality_comparer as a constructor argument will behave identically to a xtd::collections::generic::dictionary <key_t, value_t> given xtd::string_comparer::ordinal as a constructor argument. If `ignore_case` is `true` on method exit, then `comparer` behaves identically to xtd::basic_string_comparer::ordinal_ignore_case when passed to the constructor of such a collection.
     static bool is_well_known_ordinal_comparer(const xtd::collections::generic::iequality_comparer<xtd::basic_string<char_t>>& comparer, bool& ignore_case) {
-      if (xtd::is<xtd::basic_string_comparer<char_t>>(comparer) && (xtd::as<xtd::basic_string_comparer<char_t>>(comparer).comparison_ == xtd::string_comparison::ordinal || xtd::as<xtd::basic_string_comparer<char_t>>(comparer).comparison_ == xtd::string_comparison::ordinal_ignore_case)) {
-        ignore_case = xtd::is<xtd::basic_string_comparer<char_t>>(comparer) && xtd::as<xtd::basic_string_comparer<char_t>>(comparer).comparison_ == xtd::string_comparison::ordinal_ignore_case;
+      if (xtd::is<xtd::basic_string_comparer<char_t>>(comparer) && (xtd::as<xtd::basic_string_comparer<char_t>>(comparer).comparison_ == xtd::string_comparison::ordinal || xtd::as<xtd::basic_string_comparer<char_t >> (comparer).comparison_ == xtd::string_comparison::ordinal_ignore_case)) {
+        ignore_case = xtd::is<xtd::basic_string_comparer<char_t>>(comparer) && xtd::as<xtd::basic_string_comparer<char_t >> (comparer).comparison_ == xtd::string_comparison::ordinal_ignore_case;
         return true;
       }
       
@@ -286,7 +287,7 @@ namespace xtd {
       return false;
     }
     /// @}
-
+    
   protected:
     /// @name Protected Constructors
     
@@ -310,12 +311,12 @@ namespace xtd {
     basic_string_comparer create(const xtd::globalization::culture_info& culture, xtd::globalization::compare_options options) {
       return basic_string_comparer {culture, options};
     } */
-
+    
     /// @brief Initializes a new instance of the xtd::basic_string_comparer class.
     basic_string_comparer() = default;
     /// @}
     
-
+    
   private:
     explicit basic_string_comparer(xtd::string_comparison comparison) : comparison_ {comparison} {
       /// @todo Remove following lines when xtd::globalization::culture_info and xtd::globalization::compare_options are developped.

@@ -83,7 +83,7 @@ namespace xtd {
         /// | Zero              | This instance is equal to obj.     |
         /// | Greater than zero | This instance is greater than obj. |
         int32 compare_to(const item& value) const noexcept override;
-
+        
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
@@ -96,7 +96,7 @@ namespace xtd {
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
         xtd::size get_hash_code() const noexcept override;
-
+        
         /// @brief Returns a string containing the vague of the item.
         /// @return A string containing the value of the item.
         xtd::string to_string() const noexcept override;
@@ -133,7 +133,7 @@ namespace xtd {
       domain_up_down(const domain_up_down&) = default;
       domain_up_down& operator =(const domain_up_down&) = default;
       /// @endcond
-
+      
       /// @name Public Properties
       
       /// @{
@@ -353,7 +353,7 @@ namespace xtd {
       /// All controls must be override the clone method.
       xtd::uptr<xtd::object> clone() const override;
       
-      void on_handle_created(const event_args& e) override;      
+      void on_handle_created(const event_args& e) override;
       void on_lost_focus(const event_args& e) override;
       
       /// @brief Raises the domain_up_down::selected_item_changed event.

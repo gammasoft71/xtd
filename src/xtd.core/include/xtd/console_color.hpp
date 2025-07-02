@@ -10,7 +10,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/console_color>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

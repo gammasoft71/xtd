@@ -7,7 +7,8 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
-color color_converter::alpha_blend(const drawing::color& fore_color, const drawing::color& back_color, double alpha) noexcept {;
+color color_converter::alpha_blend(const drawing::color& fore_color, const drawing::color& back_color, double alpha) noexcept {
+  ;
   return average(fore_color, back_color, alpha);
 }
 

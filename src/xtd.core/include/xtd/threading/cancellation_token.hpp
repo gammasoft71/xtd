@@ -47,7 +47,7 @@ namespace xtd {
       /// @remarks Two empty cancellation tokens are always equal.
       static cancellation_token none;
       /// @}
-
+      
       /// @name Public Constructors
       
       /// @{
@@ -57,7 +57,7 @@ namespace xtd {
       /// @remarks If canceled is `true`, both xtd::threading::cancellation_token::can_be_canceled and xtd::threading::cancellation_token::is_cancellation_requested will be `true`.
       cancellation_token(bool canceled);
       /// @}
-
+      
       /// @cond
       cancellation_token();
       cancellation_token(const cancellation_token& cancellation_token) = default;
@@ -71,7 +71,7 @@ namespace xtd {
       /// @brief Gets whether this token is capable of being in the canceled state.
       /// @return `true` if this token is capable of being in the canceled state; otherwise, `false`.
       bool can_be_canceled() const noexcept;
-
+      
       /// @brief Gets whether cancellation has been requested for this token.
       /// @return `true` if cancellation has been requested for this token; otherwise, `false`.
       /// @remarks This property indicates whether cancellation has been requested for this token, either through the token initially being constructed in a canceled state, or through calling xtd::threading::cancellation_token_source::cancel on the token's associated xtd::threading::cancellation_token_source.
@@ -98,7 +98,7 @@ namespace xtd {
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
-
+      
       /// @brief Throws a xtd::operation_canceled_exception if this token has had cancellation requested.
       /// @exception xtd::operation_canceled_exception The token has had cancellation requested.
       /// @remarks This method provides functionality equivalent to:
@@ -108,11 +108,11 @@ namespace xtd {
       /// ```
       void throw_if_cancellation_requested() const;
       /// @}
-
+      
     private:
       friend class cancellation_token_source;
       explicit cancellation_token(cancellation_token_source& token_source);
-
+      
       bool canceled_ = false;
       cancellation_token_source* token_source_ = nullptr;
       xtd::sptr<threading::wait_handle> wait_handle_;

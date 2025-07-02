@@ -116,7 +116,7 @@ namespace xtd {
     /// xtd::string s = 42.0_sb2;
     /// xtd::console::out << s << xtd::environment::new_line;
     /// ```
-    xtd::string operator""_sb2( long double s);
+    xtd::string operator""_sb2(long double s);
     
     /// @brief Used to convert the specified value to xtd::string with a binary format with two digits.
     /// @par Namespace

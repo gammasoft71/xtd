@@ -45,11 +45,11 @@ namespace xtd::tests {
         result_.async_state("Started");
         result_.is_completed(false);
         thread_ = threading::thread {[this] {
-          threading::thread::sleep(2_ms);
-          result_.async_state("Ended");
-          result_.is_completed(true);
-          as<xtd::threading::auto_reset_event>(result_.async_wait_handle()).set();
-        }};
+            threading::thread::sleep(2_ms);
+            result_.async_state("Ended");
+            result_.is_completed(true);
+            as<xtd::threading::auto_reset_event>(result_.async_wait_handle()).set();
+          }};
         thread_.start();
         return result_;
       }
@@ -64,14 +64,14 @@ namespace xtd::tests {
       test_async_result result_;
     };
     
-     void test_method_(test_async_result_ctor) {
-     test_async_result ar;
-     
-     assert::is_false(ar.async_state().has_value());
-     assert::is_false(ar.completed_synchronously());
-     assert::is_false(ar.is_completed());
-     assert::is_false(ar.async_wait_handle().wait_one(0));
-     }
+    void test_method_(test_async_result_ctor) {
+      test_async_result ar;
+      
+      assert::is_false(ar.async_state().has_value());
+      assert::is_false(ar.completed_synchronously());
+      assert::is_false(ar.is_completed());
+      assert::is_false(ar.async_wait_handle().wait_one(0));
+    }
     
     void test_method_(execute_test_async_runner) {
       test_async_runner runner;

@@ -63,7 +63,7 @@ namespace xtd {
       /// @param end The ending xtd::date_time value of the range.
       /// @return This current instance.
       date_time end;
-
+      
       /// @brief Gets or sets the starting date and time of the selection range.
       /// @param start The starting xtd::date_time value of the range.
       /// @return This current instance.

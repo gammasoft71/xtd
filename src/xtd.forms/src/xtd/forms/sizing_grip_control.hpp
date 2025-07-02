@@ -17,7 +17,7 @@ protected:
     if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
     return result;
   }
-
+  
   void on_paint(paint_event_args& e) override {
     /// @todo Replace following code by drawing style_sheet sizing grip image.
     auto sizing_grip_color = back_color().is_dark() ? xtd::drawing::color_converter::light(back_color()) : xtd::drawing::color_converter::dark(back_color());

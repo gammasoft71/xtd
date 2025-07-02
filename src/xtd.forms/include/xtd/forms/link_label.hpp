@@ -109,7 +109,7 @@ namespace xtd {
       link_label(const link_label&) = default;
       link_label& operator =(const link_label&) = default;
       /// @endcond
-
+      
       /// @name Public Properties
       
       /// @{
@@ -204,7 +204,7 @@ namespace xtd {
       /// @remarks When a xtd::forms::link_label control is created, a default hyperlink that contains all the text within the xtd::forms::link_label control is added to the xtd::forms::link_label::link_collection. You can override this default link by specifying a new link area with the xtd::forms::link_label::link_area property, or specify a link using the xtd::forms::link_label::link_collection::push_back method of the xtd::forms::link_label::link_collection. You can also remove the default hyperlink by using the xtd::forms::link_label::link_collection::erase method of the xtd::forms::link_label::link_collection class.
       /// @remarks If you do not need to specify more than one link to display within the xtd::forms::link_label, you can use the xtd::forms::link_label::link_area property.
       link_label& links(const link_collection& value);
-
+      
       /// @brief Gets the mouse pointer to use when the mouse pointer is within the bounds of the xtd::forms::link_label.
       /// @return The xtd::forms::cursor to use when the mouse pointer is within the xtd::forms::link_label bounds.
       xtd::forms::cursor override_cursor() const noexcept;
@@ -281,13 +281,13 @@ namespace xtd {
       /// @brief A factory to create an xtd::forms::link_label with specified text, and location.
       /// @param text A string that represent text of the xtd::forms::link_label.
       /// @param links A xtd::forms::link_label::link_collection that represents the links contained within the xtd::forms::link_label control.
-     /// @param location A xtd::drawing::point that represent location of the xtd::forms::link_label.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::link_label.
       /// @return New xtd::forms::link_label created.
       static link_label create(const xtd::string& text, const link_collection& links, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::link_label with specified text, location, and size.
       /// @param text A string that represent text of the xtd::forms::link_label.
       /// @param links A xtd::forms::link_label::link_collection that represents the links contained within the xtd::forms::link_label control.
-     /// @param location A xtd::drawing::point that represent location of the xtd::forms::link_label.
+      /// @param location A xtd::drawing::point that represent location of the xtd::forms::link_label.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::link_label.
       /// @return New xtd::forms::link_label created.
       static link_label create(const xtd::string& text, const link_collection& links, const drawing::point& location, const drawing::size& size);
@@ -419,7 +419,7 @@ namespace xtd {
       void on_links_link_added(size_t pos, const link& link);
       void on_links_link_removed(size_t pos, const link& link);
       void on_links_link_updated(size_t pos, const link& link);
-
+      
       xtd::sptr<data> data_;
     };
   }

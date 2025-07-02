@@ -60,11 +60,11 @@ void memory_stream::flush() {
 size memory_stream::read(array<byte>& buffer, size offset, size count) {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
-
+  
   if (count == 0_z) return 0_z;
   if (offset >= buffer.size() || offset + count > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->static_buffer && (data_->position + count > capacity())) throw_helper::throws(exception_case::not_supported);
-
+  
   auto read_count = math::min(length() - data_->position, count);
   if (!read_count) return 0_z;
   for (auto index = read_count; index > 0; --index)
@@ -82,24 +82,24 @@ void memory_stream::set_length(size value) {
 }
 
 array<byte> memory_stream::to_array() const {
-  return data_->static_buffer? *data_->static_buffer : data_->dynamic_buffer.to_array();
+  return data_->static_buffer ? *data_->static_buffer : data_->dynamic_buffer.to_array();
 }
 
 void memory_stream::write(const array<byte>& buffer, size offset, size count) {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_write()) throw_helper::throws(exception_case::not_supported);
-
+  
   if (count == 0_z) return;
   if (offset >= buffer.size() || offset + count > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->static_buffer && data_->position + count > capacity()) throw_helper::throws(exception_case::not_supported);
-
+  
   if (length() < position()) {
     auto fill_count = position() - length();
     data_->position = 0;
     for (auto index = 0_z; index < fill_count; ++index)
       abstract_write_byte_unchecked({});
   }
-
+  
   for (auto index = count; index > 0; --index)
     abstract_write_byte_unchecked(buffer[offset++]);
 }
@@ -107,7 +107,7 @@ void memory_stream::write(const array<byte>& buffer, size offset, size count) {
 void memory_stream::write_to(std::ostream& stream) {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
-
+  
   auto current_postion = position();
   position(0_z);
   copy_to(stream);
@@ -120,7 +120,7 @@ xtd::byte memory_stream::abstract_read_byte_unchecked() {
 }
 
 void memory_stream::abstract_write_byte_unchecked(xtd::byte b) {
-  if (data_->static_buffer) (*data_->static_buffer)[data_->position] = b;
+  if (data_->static_buffer)(*data_->static_buffer)[data_->position] = b;
   else if (data_->position < data_->dynamic_buffer.size()) data_->dynamic_buffer[data_->position] = b;
   else data_->dynamic_buffer.add(b);
   data_->position += 1;

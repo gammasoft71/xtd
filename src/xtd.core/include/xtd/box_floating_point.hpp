@@ -19,7 +19,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/box°floating_point>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -66,7 +66,7 @@ namespace xtd {
     /// @}
     
     /// @name Public Static Methods
-
+    
     /// @{
     /// @brief Determines whether the specified value is finite (zero, subnormal, or normal).
     /// @param value A floating-point number.

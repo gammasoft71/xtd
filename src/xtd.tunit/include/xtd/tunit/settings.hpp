@@ -82,7 +82,7 @@ namespace xtd {
       /// @brief Sets break immediatly on failure.
       /// @param break_on_failure `true` if break immediatly on failure; otherwise `false`. The default value is `false`.
       void break_on_failure(bool break_on_failure) noexcept;
-
+      
       /// @brief Gets brief.
       /// @return `true` if brief; otherwise `false`. The default value is `false`.
       bool brief() const noexcept;
@@ -103,7 +103,7 @@ namespace xtd {
       /// @return `true` if stack trace enabled; otherwise `false`. The default value is `false`.
       /// @warning If the valueur is set to `true`, unit test execution time will increase sharply.
       bool enable_stack_trace() const noexcept;
-
+      
       /// @brief Sets stack trace enabled.
       /// @param enable_stack_trace `true` if stack trace enabled; otherwise `false`. The default value is `false`.
       /// @warning If the valueur is set to `true`, unit test execution time will increase sharply.
@@ -112,7 +112,7 @@ namespace xtd {
       /// @brief Gets unit test end time.
       /// @return Unit test end time.
       const xtd::date_time& end_time() const noexcept;
-
+      
       /// @brief Gets exit status.
       /// @return exit status. The value by default is `EXIT_SUCCESS`.
       /// @remarks When an error occurred in unit test the value is set to `EXIT_FAILURE`.
@@ -174,7 +174,7 @@ namespace xtd {
       /// @brief Sets output sjon path.
       /// @param output_jsonl_path Output json path. The default value is xtd::string::empty_string ("").
       void output_json_path(const xtd::string& output_json_path) noexcept;
-
+      
       /// @brief Gets output xml.
       /// @return `true` for generate xml report; otherwise `false`. The default value is `false`.
       bool output_xml() const noexcept;
@@ -235,7 +235,7 @@ namespace xtd {
       /// @param break_on_failure `true` if throw on failure; otherwise `false`. The default value is `false`.
       void throw_on_failure(bool break_on_failure) noexcept;
       /// @}
-
+      
       /// @name Public Static Properties
       
       /// @{
@@ -266,12 +266,12 @@ namespace xtd {
       /// | throw_on_failure       | `false`        |
       static xtd::tunit::settings& default_settings() noexcept;
       /// @}
-
+      
     private:
       friend class xtd::tunit::ostream_event_listener;
       friend class xtd::tunit::ostream_unit_test;
       friend class xtd::tunit::unit_test;
-
+      
       void end_time(const xtd::date_time& end_time) noexcept;
       void start_time(const xtd::date_time& start_time) noexcept;
       

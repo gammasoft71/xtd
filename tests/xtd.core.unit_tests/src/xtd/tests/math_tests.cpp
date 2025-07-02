@@ -321,7 +321,7 @@ namespace xtd::tests {
       assert::are_equal(-8.0, math::floor(-7.1));
       assert::are_equal(-8.0, math::floor(-7.6));
     }
-        
+    
     void test_method_(log) {
       assert::are_equal(0.18232155679395459, math::log(1.2), 0.0000000000000001);
       assert::is_true(double_object::is_negative_infinity(math::log(0)));

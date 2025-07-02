@@ -45,7 +45,7 @@ namespace xtd {
       /// @brief Represents a frame collection.
       using frame_collection = std::vector<frame>;
       /// @}
-
+      
       /// @name Protected Static Methods
       
       /// @{

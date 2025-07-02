@@ -104,7 +104,7 @@ xtd::string path::get_random_file_name(size_t name_length, size_t extension_leng
   if (extension_length) random_file_name += '.';
   for (auto index = 0_z; index < extension_length; ++index)
     random_file_name += valid_chars[rand.next(0, as<int32>(valid_chars.size() - 1))];
-  
+    
   return random_file_name;
 }
 

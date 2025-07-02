@@ -37,7 +37,7 @@ namespace {
       compute_bilinear_precalculate(precalculates[0], source_pixel, source_pixel_maximum);
     }
   }
-
+  
   xtd::drawing::image bilinear_interpolation(const xtd::drawing::image& source_image, const xtd::drawing::size& size) {
     if (source_image == xtd::drawing::image::empty) return source_image;
     if (size.width == source_image.width() && size.height == source_image.height()) return source_image;
@@ -56,7 +56,7 @@ namespace {
     
     auto vertical_precalculates = xtd::collections::generic::list<bilinear_precalculate>(result_height);
     auto horizontal_precalculates = xtd::collections::generic::list<bilinear_precalculate>(result_width);
-
+    
     resample_bilinear_precalculates(vertical_precalculates, source_height);
     resample_bilinear_precalculates(horizontal_precalculates, source_width);
     
@@ -97,7 +97,7 @@ namespace {
         result_rgb[result_pixel].b = static_cast<xtd::byte>(xtd::math::round(b1 * dy1 + b2 * dy));
       }
     }
-
+    
     return result_image;
   }
 }

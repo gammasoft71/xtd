@@ -28,7 +28,7 @@ namespace xtd::io::tests {
     /*
     struct memory_stream : std::stringstream {
       memory_stream() : std::stringstream {std::ios_base::in | std::ios_base::out | std::ios_base::binary} {}
-      
+    
       using std::stringstream::write;
       void write(const array<byte>& bytes) {write(bytes, 0_z, bytes.size());}
       void write(const array<byte>& bytes, size offset, size count) {write(reinterpret_cast<const char*>(bytes.data() + offset), count);}
@@ -161,7 +161,7 @@ namespace xtd::io::tests {
       assert::are_equal(42_z, reader.read_size());
       assert::are_equal(size_object::max_value, reader.read_size());
     }
-
+    
     void test_method_(read_time_span) {
       auto stream = memory_stream {};
       stream.write(bit_converter::get_bytes(time_span::min_value.ticks()));

@@ -80,14 +80,14 @@ file_settings::string_collection file_settings::sections() const noexcept {
 }
 
 std::optional<ref<std::iostream>> file_settings::stream() const noexcept {
-  return stream_ ? std::optional<ref<std::iostream>> {*stream_} : std::nullopt;
+return stream_ ? std::optional<ref<std::iostream>> {*stream_} : std::nullopt;
 }
 
 xtd::string file_settings::top_file_comment() const noexcept {
   return convert_comment_to_text(top_file_comment_);
 }
 
-file_settings& file_settings::top_file_comment(const xtd::string& value) noexcept {
+file_settings & file_settings::top_file_comment(const xtd::string& value) noexcept {
   top_file_comment_ = convert_text_to_comment(value);
   return *this;
 }
@@ -101,11 +101,11 @@ bool file_settings::equals(const file_settings& other) const noexcept {
 }
 
 void file_settings::from_string(const xtd::string& text) {
-  auto unescaping = [](const string& line) {return line.replace("\\\\", "\\").replace("\\\'", "\'").replace("\\\"", "\"").replace("\\0", "\0").replace("\\a", "\a").replace("\\t", "\t").replace("\\r", "\r").replace("\\n", "\n").replace("\\;", ";").replace("\\#", "#").replace("\\=", "=").replace("\\:", ":").replace("\\ ", " ");};
-  auto separate_comment = [](const string& line, string& comment) {
+  auto unescaping = [](const string & line) {return line.replace("\\\\", "\\").replace("\\\'", "\'").replace("\\\"", "\"").replace("\\0", "\0").replace("\\a", "\a").replace("\\t", "\t").replace("\\r", "\r").replace("\\n", "\n").replace("\\;", ";").replace("\\#", "#").replace("\\=", "=").replace("\\:", ":").replace("\\ ", " ");};
+  auto separate_comment = [](const string & line, string & comment) {
     auto result = line.trim();
     auto start_with_section = result.starts_with(section_start_delimiter);
-
+    
     auto last_index = result.last_index_of(start_with_section ? section_end_delimiter : string_delimiter);
     if (last_index == result.npos) last_index = 0;
     if (result.index_of_any({comment_delimiter, alt_comment_delimiter}, last_index) != result.npos) {
@@ -120,9 +120,9 @@ void file_settings::from_string(const xtd::string& text) {
   auto comment_break = false;
   for (auto line : text.split({10, 13})) {
     line = line.trim();
-    if (string::is_empty(line)) {
+    if (string::is_empty(line))
       comment_break = true;
-    } else if (line.starts_with(comment_delimiter) || line.starts_with(alt_comment_delimiter)) {
+    else if (line.starts_with(comment_delimiter) || line.starts_with(alt_comment_delimiter)) {
       if (section_key_values_.empty() && !comment_break) top_file_comment_ += line + environment::new_line();
       else comment += line + environment::new_line();
     } else {
@@ -140,7 +140,7 @@ void file_settings::from_string(const xtd::string& text) {
         //if (!string::is_empty(comment)) after_section_comment_[section] = comment;
         //comment = string::empty_string;
         auto key_value = line.split(key_value_separator);
-        if (key_value.size() == 1 ) {
+        if (key_value.size() == 1) {
           if (!string::is_empty(comment)) before_key_value_comment_[section][unescaping(key_value[0].trim().trim(string_delimiter))] = comment;
           section_key_values_[section][unescaping(key_value[0].trim().trim(string_delimiter))] = "";
         } else {
@@ -219,14 +219,14 @@ void file_settings::save_as(std::ostream& stream) {
 }
 
 string file_settings::to_string() const noexcept {
-  auto split_comment = [](const string& comments) {
+  auto split_comment = [](const string & comments) {
     auto result = string::empty_string;
     for (auto comment : comments.split({10, 13}))
       result += string::format("{}\n", comment);
     return result;
   };
   auto text = string::empty_string;
-  if (!string::is_empty(top_file_comment_)) 
+  if (!string::is_empty(top_file_comment_))
     text += split_comment(top_file_comment_);
   for (auto [section, key_value] : section_key_values_) {
     text += text.size() == 0 ? "" : environment::new_line();
@@ -243,11 +243,11 @@ string file_settings::to_string() const noexcept {
       }
       if (key_value_comment_.find(section) == key_value_comment_.end())
         text += string::format("{} {} {}\n", key, key_value_separator, value.starts_with(' ') || value.starts_with('\t') || value.ends_with(' ') || value.ends_with('\t') || value.contains(comment_delimiter) || value.contains(alt_comment_delimiter) || value.contains(key_value_separator) ? string::format("\"{}\"", value) : value);
-     else {
+      else {
         auto k_it = key_value_comment_.at(section).find(key);
         text += string::format("{} {} {}{}\n", key, key_value_separator, value.starts_with(' ') || value.starts_with('\t') || value.ends_with(' ') || value.ends_with('\t') || value.contains(comment_delimiter) || value.contains(alt_comment_delimiter) || value.contains(key_value_separator) ? string::format("\"{}\"", value) : value, k_it != key_value_comment_.at(section).end() && !string::is_empty(k_it->second) ? string::format(" {}", k_it->second) : "");
       }
-
+      
       if (after_key_value_comment_.find(section) != after_key_value_comment_.end()) {
         auto ak_it = after_key_value_comment_.at(section).find(key);
         if (ak_it != after_key_value_comment_.at(section).end() && !string::is_empty(ak_it->second)) text += split_comment(ak_it->second);
@@ -266,11 +266,11 @@ void file_settings::write(const string& section, const string& key, const string
   write_string(section, key, value);
 }
 
-const file_settings::string_dictionary& file_settings::operator [](const string& section) const noexcept {
+const file_settings::string_dictionary & file_settings::operator [](const string& section) const noexcept {
   return section_key_values_.at(section);
 }
 
-file_settings::string_dictionary& file_settings::operator [](const string& section) noexcept {
+file_settings::string_dictionary & file_settings::operator [](const string& section) noexcept {
   return section_key_values_[section];
 }
 

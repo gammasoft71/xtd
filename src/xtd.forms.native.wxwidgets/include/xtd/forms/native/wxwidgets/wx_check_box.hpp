@@ -51,7 +51,7 @@ namespace xtd {
           long wx_style = common_control_style_to_wx_style(style, ex_style);
           
           wx_style |= wxCHK_3STATE;
-
+          
           if ((style & BS_AUTO3STATE) == BS_AUTO3STATE) wx_style |= wxCHK_ALLOW_3RD_STATE_FOR_USER;
           else if ((style & BS_3STATE) == BS_3STATE) wx_style |= wxCHK_ALLOW_3RD_STATE_FOR_USER;
           
@@ -67,7 +67,7 @@ namespace xtd {
           
           return wx_style;
         }
-
+        
         wxSize GetClientSize() const override {
           return control()->GetSize();
         }

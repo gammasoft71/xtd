@@ -524,7 +524,7 @@ namespace xtd {
         /// @remarks The byte array returned by the Value property contains data in one of several different primitive types. To use the data, determine the data type using the type property and convert the byte array accordingly.
         void value(const xtd::array<xtd::byte>& value) noexcept;
         /// @}
-
+        
         /// @name Public Properties
         
         /// @{
@@ -541,7 +541,7 @@ namespace xtd {
         /// @return A hash code for the current object.
         xtd::size get_hash_code() const noexcept override;
         /// @}
-
+        
       private:
         xtd::int32 id_ = 0;
         xtd::int16 type_ = 1;

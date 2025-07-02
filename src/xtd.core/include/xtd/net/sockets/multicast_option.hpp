@@ -92,7 +92,7 @@ namespace xtd {
         /// @return the current instance.
         multicast_option& local_address(const xtd::net::ip_address& value) noexcept;
         /// @}
-
+        
         /// @name Public Methods
         
         /// @{

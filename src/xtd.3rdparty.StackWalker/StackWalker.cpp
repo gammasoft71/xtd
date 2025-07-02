@@ -240,11 +240,11 @@ typedef DWORD64(__stdcall* PTRANSLATE_ADDRESS_ROUTINE64)(HANDLE      hProcess,
 static void MyStrCpy(char* szDest, size_t nMaxDestSize, const char* szSrc) {
   if (nMaxDestSize == 0)
     return;
-#if defined (_MSC_VER)
+  #if defined (_MSC_VER)
   strncpy_s(szDest, nMaxDestSize, szSrc, _TRUNCATE);
-#else
+  #else
   strncpy(szDest, szSrc, nMaxDestSize);
-#endif
+  #endif
   // INFO: _TRUNCATE will ensure that it is null-terminated;
   // but with older compilers (<1400) it uses "strncpy" and this does not!)
   szDest[nMaxDestSize - 1] = 0;
@@ -291,43 +291,43 @@ public:
     TCHAR szTemp[4096];
     // But before we do this, we first check if the ".local" file exists
     if (GetModuleFileName(NULL, szTemp, 4096) > 0) {
-#if defined (_MSC_VER)
+      #if defined (_MSC_VER)
       _tcscat_s(szTemp, _T(".local"));
-#else
+      #else
       _tcscat_s(szTemp, 4096, _T(".local"));
-#endif
+      #endif
       if (GetFileAttributes(szTemp) == INVALID_FILE_ATTRIBUTES) {
         // ".local" file does not exist, so we can try to load the dbghelp.dll from the "Debugging Tools for Windows"
         // Ok, first try the new path according to the architecture:
         #ifdef _M_IX86
         if ((m_hDbhHelp == NULL) && (GetEnvironmentVariable(_T("ProgramFiles"), szTemp, 4096) > 0)) {
-#if defined (_MSC_VER)
+          #if defined (_MSC_VER)
           _tcscat_s(szTemp, _T("\\Debugging Tools for Windows (x86)\\dbghelp.dll"));
-#else
+          #else
           _tcscat_s(szTemp, 4096, _T("\\Debugging Tools for Windows (x86)\\dbghelp.dll"));
-#endif
+          #endif
           // now check if the file exists:
           if (GetFileAttributes(szTemp) != INVALID_FILE_ATTRIBUTES)
             m_hDbhHelp = LoadLibrary(szTemp);
         }
         #elif _M_X64
         if ((m_hDbhHelp == NULL) && (GetEnvironmentVariable(_T("ProgramFiles"), szTemp, 4096) > 0)) {
-#if defined (_MSC_VER)
+          #if defined (_MSC_VER)
           _tcscat_s(szTemp, _T("\\Debugging Tools for Windows (x64)\\dbghelp.dll"));
-#else
+          #else
           _tcscat_s(szTemp, 4096, _T("\\Debugging Tools for Windows (x64)\\dbghelp.dll"));
-#endif
+          #endif
           // now check if the file exists:
           if (GetFileAttributes(szTemp) != INVALID_FILE_ATTRIBUTES)
             m_hDbhHelp = LoadLibrary(szTemp);
         }
         #elif _M_IA64
         if ((m_hDbhHelp == NULL) && (GetEnvironmentVariable(_T("ProgramFiles"), szTemp, 4096) > 0)) {
-#if defined (_MSC_VER)
+          #if defined (_MSC_VER)
           _tcscat_s(szTemp, _T("\\Debugging Tools for Windows (ia64)\\dbghelp.dll"));
-#else
+          #else
           _tcscat_s(szTemp, 4096, _T("\\Debugging Tools for Windows (ia64)\\dbghelp.dll"));
-#endif
+          #endif
           // now check if the file exists:
           if (GetFileAttributes(szTemp) != INVALID_FILE_ATTRIBUTES)
             m_hDbhHelp = LoadLibrary(szTemp);
@@ -335,11 +335,11 @@ public:
         #endif
         // If still not found, try the old directories...
         if ((m_hDbhHelp == NULL) && (GetEnvironmentVariable(_T("ProgramFiles"), szTemp, 4096) > 0)) {
-#if defined (_MSC_VER)
+          #if defined (_MSC_VER)
           _tcscat_s(szTemp, _T("\\Debugging Tools for Windows\\dbghelp.dll"));
-#else
+          #else
           _tcscat_s(szTemp, 4096, _T("\\Debugging Tools for Windows\\dbghelp.dll"));
-#endif
+          #endif
           // now check if the file exists:
           if (GetFileAttributes(szTemp) != INVALID_FILE_ATTRIBUTES)
             m_hDbhHelp = LoadLibrary(szTemp);
@@ -347,11 +347,11 @@ public:
         #if defined _M_X64 || defined _M_IA64
         // Still not found? Then try to load the (old) 64-Bit version:
         if ((m_hDbhHelp == NULL) && (GetEnvironmentVariable(_T("ProgramFiles"), szTemp, 4096) > 0)) {
-#if defined (_MSC_VER)
+          #if defined (_MSC_VER)
           _tcscat_s(szTemp, _T("\\Debugging Tools for Windows 64-Bit\\dbghelp.dll"));
-#else
+          #else
           _tcscat_s(szTemp, 4096, _T("\\Debugging Tools for Windows 64-Bit\\dbghelp.dll"));
-#endif
+          #endif
           if (GetFileAttributes(szTemp) != INVALID_FILE_ATTRIBUTES)
             m_hDbhHelp = LoadLibrary(szTemp);
         }
@@ -581,9 +581,9 @@ private:
       hToolhelp = LoadLibrary(dllname[i]);
       if (hToolhelp == NULL)
         continue;
-      pCT32S = reinterpret_cast<tCT32S>(GetProcAddress(hToolhelp, "CreateToolhelp32Snapshot"));
-      pM32F = reinterpret_cast<tM32F>(GetProcAddress(hToolhelp, "Module32First"));
-      pM32N = reinterpret_cast<tM32N>(GetProcAddress(hToolhelp, "Module32Next"));
+      pCT32S = reinterpret_cast < tCT32S > (GetProcAddress(hToolhelp, "CreateToolhelp32Snapshot"));
+      pM32F = reinterpret_cast < tM32F > (GetProcAddress(hToolhelp, "Module32First"));
+      pM32N = reinterpret_cast < tM32N > (GetProcAddress(hToolhelp, "Module32Next"));
       if ((pCT32S != NULL) && (pM32F != NULL) && (pM32N != NULL))
         break; // found the functions!
       FreeLibrary(hToolhelp);
@@ -654,19 +654,19 @@ private:
     if (hPsapi == NULL)
       return FALSE;
       
-    pEPM = reinterpret_cast<tEPM>(GetProcAddress(hPsapi, "EnumProcessModules"));
-    pGMFNE = reinterpret_cast<tGMFNE>(GetProcAddress(hPsapi, "GetModuleFileNameExA"));
-    pGMBN = reinterpret_cast<tGMFNE>(GetProcAddress(hPsapi, "GetModuleBaseNameA"));
-    pGMI = reinterpret_cast<tGMI>(GetProcAddress(hPsapi, "GetModuleInformation"));
+    pEPM = reinterpret_cast < tEPM > (GetProcAddress(hPsapi, "EnumProcessModules"));
+    pGMFNE = reinterpret_cast < tGMFNE > (GetProcAddress(hPsapi, "GetModuleFileNameExA"));
+    pGMBN = reinterpret_cast < tGMFNE > (GetProcAddress(hPsapi, "GetModuleBaseNameA"));
+    pGMI = reinterpret_cast < tGMI > (GetProcAddress(hPsapi, "GetModuleInformation"));
     if ((pEPM == NULL) || (pGMFNE == NULL) || (pGMBN == NULL) || (pGMI == NULL)) {
       // we couldn't find all functions
       FreeLibrary(hPsapi);
       return FALSE;
     }
     
-    hMods = reinterpret_cast<HMODULE*>(malloc(sizeof(HMODULE) * (TTBUFLEN / sizeof(HMODULE))));
-    tt = reinterpret_cast<char*>(malloc(sizeof(char) * TTBUFLEN));
-    tt2 = reinterpret_cast<char*>(malloc(sizeof(char) * TTBUFLEN));
+    hMods = reinterpret_cast < HMODULE* > (malloc(sizeof(HMODULE) * (TTBUFLEN / sizeof(HMODULE))));
+    tt = reinterpret_cast < char* > (malloc(sizeof(char) * TTBUFLEN));
+    tt2 = reinterpret_cast < char* > (malloc(sizeof(char) * TTBUFLEN));
     if ((hMods == NULL) || (tt == NULL) || (tt2 == NULL))
       goto cleanup;
       
@@ -776,7 +776,7 @@ cleanup:
           case 8: //SymVirtual:
             szSymType = "Virtual";
             break;
-          default: 
+          default:
             break;
         }
       }
@@ -819,7 +819,7 @@ public:
     memcpy(pData, pModuleInfo, sizeof(IMAGEHLP_MODULE64_V3));
     static bool s_useV3Version = true;
     if (s_useV3Version) {
-      if (this->pSGMI(hProcess, baseAddr, reinterpret_cast<IMAGEHLP_MODULE64_V3*>(pData)) != FALSE) {
+      if (this->pSGMI(hProcess, baseAddr, reinterpret_cast < IMAGEHLP_MODULE64_V3* > (pData)) != FALSE) {
         // only copy as much memory as is reserved...
         memcpy(pModuleInfo, pData, sizeof(IMAGEHLP_MODULE64_V3));
         pModuleInfo->SizeOfStruct = sizeof(IMAGEHLP_MODULE64_V3);
@@ -832,7 +832,7 @@ public:
     // could not retrieve the bigger structure, try with the smaller one (as defined in VC7.1)...
     pModuleInfo->SizeOfStruct = sizeof(IMAGEHLP_MODULE64_V2);
     memcpy(pData, pModuleInfo, sizeof(IMAGEHLP_MODULE64_V2));
-    if (this->pSGMI(hProcess, baseAddr, reinterpret_cast<IMAGEHLP_MODULE64_V3*>(pData)) != FALSE) {
+    if (this->pSGMI(hProcess, baseAddr, reinterpret_cast < IMAGEHLP_MODULE64_V3* > (pData)) != FALSE) {
       // only copy as much memory as is reserved...
       memcpy(pModuleInfo, pData, sizeof(IMAGEHLP_MODULE64_V2));
       pModuleInfo->SizeOfStruct = sizeof(IMAGEHLP_MODULE64_V2);
@@ -947,7 +947,7 @@ BOOL StackWalker::LoadModules() {
   char* szSymPath = NULL;
   if ((this->m_options & SymBuildPath) != 0) {
     const size_t nSymPathLen = 4096;
-    szSymPath = reinterpret_cast<char*>(malloc(nSymPathLen));
+    szSymPath = reinterpret_cast < char* > (malloc(nSymPathLen));
     if (szSymPath == NULL) {
       SetLastError(ERROR_NOT_ENOUGH_MEMORY);
       return FALSE;
@@ -1148,7 +1148,7 @@ BOOL StackWalker::ShowCallstack(HANDLE                    hThread,
 #error "Platform not supported!"
   #endif
   
-  pSym = reinterpret_cast<IMAGEHLP_SYMBOL64*>(malloc(sizeof(IMAGEHLP_SYMBOL64) + STACKWALK_MAX_NAMELEN));
+  pSym = reinterpret_cast < IMAGEHLP_SYMBOL64* > (malloc(sizeof(IMAGEHLP_SYMBOL64) + STACKWALK_MAX_NAMELEN));
   if (!pSym)
     goto cleanup; // not enough memory...
   memset(pSym, 0, sizeof(IMAGEHLP_SYMBOL64) + STACKWALK_MAX_NAMELEN);
@@ -1168,7 +1168,7 @@ BOOL StackWalker::ShowCallstack(HANDLE                    hThread,
     // deeper frame could not be found.
     // CONTEXT need not to be supplied if imageTyp is IMAGE_FILE_MACHINE_I386!
     if (!this->m_sw->pSW(imageType, this->m_hProcess, hThread, &s, &c, myReadProcMem,
-        this->m_sw->pSFTA, this->m_sw->pSGMB, NULL)) {
+      this->m_sw->pSFTA, this->m_sw->pSGMB, NULL)) {
       // INFO: "StackWalk64" does not set "GetLastError"...
       this->OnDbgHelpErr("StackWalk64", 0, s.AddrPC.Offset);
       break;
@@ -1196,7 +1196,7 @@ BOOL StackWalker::ShowCallstack(HANDLE                    hThread,
       // we seem to have a valid PC
       // show procedure info (SymGetSymFromAddr64())
       if (this->m_sw->pSGSFA(this->m_hProcess, s.AddrPC.Offset, &(csEntry.offsetFromSmybol),
-          pSym) != FALSE) {
+        pSym) != FALSE) {
         MyStrCpy(csEntry.name, STACKWALK_MAX_NAMELEN, pSym->Name);
         // UnDecorateSymbolName()
         this->m_sw->pUDSN(pSym->Name, csEntry.undName, STACKWALK_MAX_NAMELEN, UNDNAME_NAME_ONLY);
@@ -1208,7 +1208,7 @@ BOOL StackWalker::ShowCallstack(HANDLE                    hThread,
       if (this->m_sw->pSGLFA != NULL) {
         // yes, we have SymGetLineFromAddr64()
         if (this->m_sw->pSGLFA(this->m_hProcess, s.AddrPC.Offset, &(csEntry.offsetFromLine),
-            &Line) != FALSE) {
+          &Line) != FALSE) {
           csEntry.lineNumber = Line.LineNumber;
           MyStrCpy(csEntry.lineFileName, STACKWALK_MAX_NAMELEN, Line.FileName);
         } else
@@ -1308,7 +1308,7 @@ BOOL StackWalker::ShowObject(LPVOID pObject) {
   DWORD64            dwAddress = DWORD64(pObject);
   DWORD64            dwDisplacement = 0;
   const SIZE_T       symSize = sizeof(IMAGEHLP_SYMBOL64) + STACKWALK_MAX_NAMELEN;
-  IMAGEHLP_SYMBOL64* pSym = reinterpret_cast<IMAGEHLP_SYMBOL64*>(malloc(symSize));
+  IMAGEHLP_SYMBOL64* pSym = reinterpret_cast < IMAGEHLP_SYMBOL64* > (malloc(symSize));
   if (!pSym)
     return FALSE;
   memset(pSym, 0, symSize);

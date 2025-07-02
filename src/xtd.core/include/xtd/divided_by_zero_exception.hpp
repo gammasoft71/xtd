@@ -11,7 +11,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/divided_by_zero_exception>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

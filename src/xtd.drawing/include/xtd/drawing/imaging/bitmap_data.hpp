@@ -27,29 +27,29 @@ namespace xtd {
         /// @param value The pixel height of the xtd::drawing::bitmap object.
         /// @return This current instance.
         int32 height = 0;
-
+        
         /// @brief Gets or sets the format of the pixel information in the xtd::drawing::bitmap object that returned this xtd::drawing::imaging::bitmap_data object.
         /// @param value A xtd::drawing::imaging::pixel_format that specifies the format of the pixel information in the associated xtd::drawing::bitmap object.
         /// @return This current instance.
         /// @remarks The format defines how many bits of memory are needed to store the color information for a single pixel.
         xtd::drawing::imaging::pixel_format pixel_format = xtd::drawing::imaging::pixel_format::undefined;
-
+        
         /// @brief Reserved. Do not use.
         /// @param value Reserved. Do not use.
         /// @return This current instance.
         int32 reserved = 0;
-
+        
         /// @brief Gets or sets or sets the address of the first pixel data in the bitmap. This can also be thought of as the first scan line in the bitmap.
         /// @param value The address of the first pixel data in the bitmap.
         /// @return This current instance.
         intptr scan0 = 0;
-
+        
         /// @brief Gets or sets the stride width (also called scan width) of the xtd::drawing::bitmap object.
         /// @param value The stride width, in bytes, of the xtd::drawing::bitmap object.
         /// @return This current instance.
         /// @remarks The stride is the width of a single row of pixels (a scan line), rounded up to a four-byte boundary. If the stride is positive, the bitmap is top-down. If the stride is negative, the bitmap is bottom-up.
         int32 stride = 0;
-
+        
         /// @brief Gets or sets or sets the pixel width of the xtd::drawing::bitmap object. This can also be thought of as the number of pixels in one scan line.
         /// @param value The pixel width of the xtd::drawing::bitmap object.
         /// @return This current instance.

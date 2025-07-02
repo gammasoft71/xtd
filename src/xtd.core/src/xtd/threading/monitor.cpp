@@ -22,7 +22,7 @@ using namespace xtd::threading;
 
 struct monitor::item {
   monitor::critical_section critical_section;
-  xtd::sptr<std::atomic<int32>> used_count = xtd::new_sptr<std::atomic<int32>>(0);
+  xtd::sptr<std::atomic<int32>> used_count = xtd::new_sptr<std::atomic<int32 >> (0);
   std::optional<string> name;
   thread_local_object<intptr> thread_id {[] {return thread::invalid_thread_id;}};
   monitor::condition_variable condition_variable;
@@ -90,7 +90,7 @@ void monitor::pulse_ptr(object_ptr obj) {
   
   if (monitor_item == nullptr) throw_helper::throws(exception_case::invalid_operation);
   if (monitor_item->thread_id.value() != thread::current_thread().thread_id()) throw_helper::throws(exception_case::synchronization_lock);
-
+  
   monitor_item->condition_variable.pulse();
 }
 
@@ -102,7 +102,7 @@ void monitor::pulse_all_ptr(object_ptr obj) {
   
   if (monitor_item == nullptr) throw_helper::throws(exception_case::invalid_operation);
   if (monitor_item->thread_id.value() != thread::current_thread().thread_id()) throw_helper::throws(exception_case::synchronization_lock);
-
+  
   monitor_item->condition_variable.pulse_all();
 }
 
@@ -133,7 +133,7 @@ bool monitor::wait_ptr(object_ptr obj, int32 milliseconds_timeout) {
   
   if (monitor_item == nullptr) throw_helper::throws(exception_case::invalid_operation);
   if (monitor_item->thread_id.value() != thread::current_thread().thread_id()) throw_helper::throws(exception_case::synchronization_lock);
-
+  
   return monitor_item->condition_variable.wait(monitor_item->critical_section, milliseconds_timeout);
 }
 

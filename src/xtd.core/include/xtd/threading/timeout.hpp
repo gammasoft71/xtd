@@ -33,7 +33,7 @@ namespace xtd {
     class core_export_ timeout static_ {
     public:
       /// @name Public Fields
-
+      
       /// @{
       /// @brief A constant used to specify an infinite waiting period. This field is constant.
       /// @remarks The value of this constant is -1. For threading methods that accept a timeout parameter, such as Thread::Sleep(int32) and Thread::Join(int32), this value is used to suppress timeout behavior.

@@ -250,7 +250,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void stop();
         /// @}
-
+        
         /// @name Public Static Methods
         
         /// @{
@@ -259,7 +259,7 @@ namespace xtd {
         /// @return xtd::net::sockets::tcp_listener A new xtd::net::sockets::tcp_listener instance to listen on the specified port.
         static tcp_listener create(uint16 port);
         /// @}
-
+        
       protected:
         /// @name Protected Properties
         

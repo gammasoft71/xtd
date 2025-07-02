@@ -23,7 +23,7 @@ namespace xtd {
     }
   }
   /// @endcond
-
+  
   /// @brief Used to obtain the size in bytes of the object representation of type or expression.
   /// @par Namespace
   /// xtd
@@ -40,6 +40,6 @@ namespace xtd {
   /// xtd::size size2 = sizeof_(i);
   /// ```
   /// @remarks The typeof_ operator cannot be overloaded.
-  #define sizeof_ \
-    xtd::__s__::__sizeof_
+#define sizeof_ \
+  xtd::__s__::__sizeof_
 }

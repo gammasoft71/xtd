@@ -15,7 +15,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/convert_string>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -1093,7 +1093,7 @@ namespace xtd {
     /// wstring s1 = string_converter::to_wstring(c1);
     /// ```
     static xtd::wstring to_wstring(wchar* str) noexcept;
-
+    
     /// @brief Converts string_t to xtd::string.
     /// @param str string to convert.
     /// @return The converted string.

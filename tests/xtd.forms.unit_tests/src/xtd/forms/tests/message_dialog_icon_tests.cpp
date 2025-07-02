@@ -38,7 +38,7 @@ namespace xtd::forms::tests {
       assert::are_equal("information", enum_object<>::to_string(message_dialog_icon::information));
       assert::are_equal(message_dialog_icon::information, enum_object<>::parse<message_dialog_icon>("information"));
     }
-
+    
     void test_method_(hand) {
       assert::are_equal(16, enum_object<>::to_int32(message_dialog_icon::hand));
       assert::are_equal("error", enum_object<>::to_string(message_dialog_icon::hand));

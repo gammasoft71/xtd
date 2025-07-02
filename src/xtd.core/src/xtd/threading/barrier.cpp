@@ -111,11 +111,11 @@ bool barrier::signal_and_wait(int32 milliseconds_timeout) {
       data_->run_post_phase_action = true;
       try {
         if (!data_->post_phase_action.is_empty()) data_->post_phase_action(*this);
-      } catch(...) {
+      } catch (...) {
         data_->throw_barrier_post_phase_exception = true;
       }
       data_->run_post_phase_action = false;
-
+      
       ++data_->current_phase_number;
       data_->participants_remaining.exchange(data_->participant_count);
       

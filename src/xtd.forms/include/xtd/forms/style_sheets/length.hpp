@@ -137,7 +137,7 @@ namespace xtd {
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
         xtd::size get_hash_code() const noexcept override;
-
+        
         /// @brief Gets the legnth in pixels.
         /// @param rect The xtd::drawing::rectangle is used to compute the length for relative length units.
         /// @return The legnth in pixels.

@@ -74,7 +74,7 @@ namespace xtd {
       tool_bar(const tool_bar&) = default;
       tool_bar& operator =(const tool_bar&) = default;
       /// @endcond
-
+      
       /// @name Public Properties
       
       /// @{

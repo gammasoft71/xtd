@@ -28,7 +28,7 @@
 #undef __XTD_ARRAY_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {  
+namespace xtd {
   /// @brief Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays.
   /// @par Definition
   /// ```cpp
@@ -83,24 +83,24 @@ namespace xtd {
     array(const array& array) : xtd::basic_array<type_t, allocator_t>(array) {}
     array(array&& array) = default;
     /// @endcond
-
+    
     /// @name Public Properties
     
     /// @{
     xtd::size rank() const noexcept override {return rank_;}
     /// @}
-
+    
     /// @name Public Operators
     
     /// @{
     array& operator=(const array&) = default;
     array& operator=(array&&) = default;
     /// @}
-
+    
   private:
     friend class array<>;
     array(const array<xtd::size>& lengths, bool) : basic_array<type_t, allocator_t>(lengths) {}
-   };
+  };
 }
 
 #define __XTD_ARRAY_INTERNAL__
@@ -129,7 +129,7 @@ auto xtd::linq::enumerable::chunk(const ienumerable<source_t>& source, size_t si
     }
   }
   if (chunk.size() != 0) chunks.items.push_back(chunk);
-
+  
   return chunks;
 }
 /// @endcond

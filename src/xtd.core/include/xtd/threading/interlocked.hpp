@@ -40,7 +40,7 @@ namespace xtd {
     class core_export_ interlocked static_ {
     public:
       /// @name Public Static Methods
-
+      
       /// @{
       /// @brief Adds two 32-bit integers and replaces the first integer with the sum, as an atomic operation.
       /// @param location A variable containing the first value to be added. The sum of the two values is stored in location.
@@ -133,7 +133,7 @@ namespace xtd {
       static type_t exchange(type_t& location, type_t value) {
         type_t original = location;
         lock_(location)
-          location = value;
+        location = value;
         return original;
       }
       /// @brief Sets a double-precision floating point number to a specified value and returns the original value, as an atomic operation.
@@ -170,7 +170,7 @@ namespace xtd {
       static type_t exchange(object& location, const object& value) noexcept {
         type_t original = location;
         lock_(location)
-          location = value;
+        location = value;
         return original;
       }
       /// @brief Sets a double-precision floating point number to a specified value and returns the original value, as an atomic operation.

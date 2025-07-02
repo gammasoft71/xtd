@@ -41,7 +41,7 @@ namespace xtd {
           /// @param threshold The threshold value (from 0 to 765).
           explicit solarize_effect(int32 threshold);
           /// @}
-
+          
           /// @name Public Properties
           
           /// @{
@@ -49,7 +49,7 @@ namespace xtd {
           /// @param threshold The threshold value (from 0 to 255).
           int32 threshold = 255;
           /// @}
-
+          
         protected:
           /// @name Protected Methods
           

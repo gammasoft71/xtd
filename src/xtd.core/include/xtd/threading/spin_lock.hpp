@@ -47,20 +47,20 @@ namespace xtd {
       /// @remarks The parameterless constructor for xtd::threading::spin_lock tracks thread ownership.
       spin_lock(bool enable_thread_owner_tracking);
       /// @}
-
+      
       /// @cond
       spin_lock(spin_lock&&) = default;
       spin_lock(const spin_lock&) = default;
       spin_lock& operator =(const spin_lock& other) = default;
       /// @endcond
-
+      
       /// @name Public Properties
       
       /// @{
       /// @brief Gets whether the lock is currently held by any thread.
       /// @return `true` if the lock is currently held by any thread; otherwise `false`.
       bool is_held() const noexcept;
-
+      
       /// @brief Gets whether the lock is held by the current thread.
       /// @return `true` if the lock is held by the current thread; otherwise `false`.
       /// @remarks If the lock was initialized to track owner threads, this will return whether the lock is acquired by the current thread. It is invalid to use this property when the lock was initialized to not track thread ownership.
@@ -70,7 +70,7 @@ namespace xtd {
       /// @return `true` if thread ownership tracking is enabled for this instance; otherwise `false`.
       bool is_thread_owner_tracking_enabled() const noexcept;
       /// @}
-
+      
       /// @name Public Methods
       
       /// @{
@@ -91,7 +91,7 @@ namespace xtd {
       /// @remarks Calling Exit with the use_memory_barrier argument set to `true` will improve the fairness of the lock at the expense of some performance. The default xtd::threading::spin_lock::exit overload behaves as if specifying `true` for use_memory_barrier.
       /// @remarks If you call xtd::threading::spin_lock::exit without having first called xtd::threading::spin_lock::enter the internal state of the xtd::threading::spin_lock can become corrupted.
       void exit(bool use_memory_barrier);
-
+      
       /// @brief Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the method call, lock_taken can be examined reliably to determine whether the lock was acquired.
       /// @param lock_taken True if the lock is acquired; otherwise, `false`.
       /// @exception xtd::threading::lock_recursion_exception Thread ownership tracking is enabled, and the current thread has already acquired this lock.
@@ -110,7 +110,7 @@ namespace xtd {
       /// @remarks Unlike xtd::threading::spin_lock::enter, xtd::threading::spin_lock::try_enter will not block indefinitely waiting for the lock to be available. It will block until either the lock is available or until the timeout has expired.
       void try_enter(const time_span& timeout, bool& lock_taken);
       /// @}
-
+      
     private:
       mutable xtd::sptr<data> data_;
     };

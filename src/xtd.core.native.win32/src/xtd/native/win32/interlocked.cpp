@@ -35,11 +35,11 @@ __slong__ interlocked::compare_exchange(__slong__& location, __slong__ value, __
 #pragma warning(disable:4311)
 #pragma warning(disable:4312)
 void* interlocked::compare_exchange(void*& location, void* value, void* comparand) {
-#if !defined(_WIN64)
+  #if !defined(_WIN64)
   return reinterpret_cast<void*>(InterlockedCompareExchange(reinterpret_cast<long*>(&location), reinterpret_cast<long>(value), reinterpret_cast<long>(comparand)));
- #else
+  #else
   return reinterpret_cast<void*>(InterlockedCompareExchange64(reinterpret_cast<long long*>(&location), reinterpret_cast<long long>(value), reinterpret_cast<long long>(comparand)));
-#endif
+  #endif
 }
 #pragma warning(pop)
 
@@ -68,11 +68,11 @@ __slong__ interlocked::exchange(__slong__& location, __slong__ value) {
 #pragma warning(disable:4311)
 #pragma warning(disable:4312)
 void* interlocked::exchange(void*& location, void* value) {
-#if !defined(_WIN64)
+  #if !defined(_WIN64)
   return reinterpret_cast<void*>(InterlockedExchange(reinterpret_cast<long*>(&location), reinterpret_cast<long>(value)));
-#else
+  #else
   return reinterpret_cast<void*>(InterlockedExchange64(reinterpret_cast<long long*>(&location), reinterpret_cast<long long>(value)));
-#endif
+  #endif
 }
 #pragma warning(pop)
 

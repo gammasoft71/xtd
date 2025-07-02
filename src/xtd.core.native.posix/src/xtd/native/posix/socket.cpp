@@ -38,7 +38,7 @@ namespace {
     if (it == socket_errors.end()) return -1;
     return it->second;
   }
-
+  
   static int32_t protocol_type_to_native(int32_t protocol_type) {
     static map<int32_t, int32_t> protocol_types = {/*{PROTOCOL_TYPE_UNKNOWN, IPPROTO_}, {PROTOCOL_TYPE_IP_V6_HOP_BY_HOP_OPTIONS, IPPROTO_}, {PROTOCOL_TYPE_UNSPECIFIED, IPPROTO_},*/ {PROTOCOL_TYPE_IP, IPPROTO_IP}, {PROTOCOL_TYPE_ICMP, IPPROTO_ICMP}, {PROTOCOL_TYPE_IGMP, IPPROTO_IGMP}, {PROTOCOL_TYPE_GGP, 3 /*IPPROTO_GGP*/}, {PROTOCOL_TYPE_IP_V4, IPPROTO_IPIP}, {PROTOCOL_TYPE_TCP, IPPROTO_TCP}, {PROTOCOL_TYPE_PUP, IPPROTO_PUP}, {PROTOCOL_TYPE_UDP, IPPROTO_UDP}, {PROTOCOL_TYPE_IDP, IPPROTO_IDP}, {PROTOCOL_TYPE_IP_V6, IPPROTO_IPV6}, {PROTOCOL_TYPE_IP_V6_ROUTING_HEADER, IPPROTO_ROUTING}, {PROTOCOL_TYPE_IP_V6_FRAGMENT_HEADER, IPPROTO_FRAGMENT}, {PROTOCOL_TYPE_IP_SEC_ENCAPSULATING_SECURITY_PAYLOAD, IPPROTO_ESP}, {PROTOCOL_TYPE_IP_SEC_AUTHENTICATION_HEADER, IPPROTO_AH}, {PROTOCOL_TYPE_ICMP_V6, IPPROTO_ICMPV6}, {PROTOCOL_TYPE_IP_V6_NO_NEXT_HEADER, IPPROTO_NONE}, {PROTOCOL_TYPE_IP_V6_DESTINATION_OPTIONS, IPPROTO_DSTOPTS}, {PROTOCOL_TYPE_ND, IPPROTO_IP}, {PROTOCOL_TYPE_RAW, IPPROTO_RAW} /*{PROTOCOL_TYPE_IPX, IPPROTO_}, {PROTOCOL_TYPE_SPX, IPPROTO_IP}, {PROTOCOL_TYPE_SPX_2, IPPROTO_},*/};
     auto it = protocol_types.find(protocol_type);
@@ -313,7 +313,7 @@ int32_t socket::set_socket_option(intmax_t handle, int32_t socket_option_level, 
     return -1;
   }
   if (socket_option_level == SOCKET_OPTION_LEVEL_SOCKET && (socket_option_name == SOCKET_OPTION_NAME_SEND_TIMEOUT || socket_option_name == SOCKET_OPTION_NAME_RECEIVE_TIMEOUT)) {
-    timeval timeout = {*reinterpret_cast<const int32_t*>(option) / 1000, *reinterpret_cast<const int32_t*>(option) % 1000 * 1000};
+    timeval timeout = {*reinterpret_cast<const int32_t*>(option) / 1000, * reinterpret_cast<const int32_t*>(option) % 1000 * 1000};
     return ::setsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), &timeout, sizeof(timeval));
   }
   return setsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), reinterpret_cast<const void*>(option), static_cast<socklen_t>(option_length));

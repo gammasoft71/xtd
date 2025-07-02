@@ -22,5 +22,5 @@ namespace xtd::tunit::tests {
   void test_(string_assume_are_equal_ignoring_case_u32string_succeed_tests, test_result) {
     auto [output, result] = run_test_("xtd::tunit::tests::string_assume_are_equal_ignoring_case_u32string_succeed_tests.*");
     assert_value_(0, result);
-  }  
+  }
 }

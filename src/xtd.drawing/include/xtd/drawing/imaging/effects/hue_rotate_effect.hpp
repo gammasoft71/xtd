@@ -41,7 +41,7 @@ namespace xtd {
           /// @param angle The angle in degrees (form 0 to 360).
           explicit hue_rotate_effect(int32 angle);
           /// @}
-
+          
           /// @name Public Properties
           
           /// @{
@@ -49,7 +49,7 @@ namespace xtd {
           /// @param angle The angle in degrees (form 0 to 360).
           int32 angle = 0;
           /// @}
-
+          
         protected:
           /// @name Protected Methods
           

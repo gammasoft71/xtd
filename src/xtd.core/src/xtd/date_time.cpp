@@ -57,7 +57,7 @@ namespace {
   static std::tuple<uint32, uint32> get_year_and_day_of_year(int64 days) {
     auto year = 1_s64;
     auto day_of_year = days;
-
+    
     if (day_of_year >= days_per_400_years) {
       auto chunks = day_of_year / days_per_400_years;
       year += chunks * 400;
@@ -106,7 +106,7 @@ namespace {
     }
     return std::make_tuple(month, as<uint32>(day));
   }
-
+  
   static uint32 get_month(int64 day_of_year, uint32 year) {
     auto [month, day] = get_month_and_day(day_of_year, year);
     return month;
@@ -361,11 +361,11 @@ array<string> date_time::get_date_time_formats() const noexcept {
   for (auto format = 'a'; format <= 'z'; ++format) {
     try {
       date_time_formats.emplace_back(self_.to_string(string::format("{}", format)));
-    } catch(...) {
+    } catch (...) {
     }
     try {
       date_time_formats.emplace_back(self_.to_string(string::format("{}", char_object::to_upper(format))));
-    } catch(...) {
+    } catch (...) {
     }
   }
   return date_time_formats.to_array();

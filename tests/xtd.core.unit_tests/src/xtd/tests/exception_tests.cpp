@@ -107,7 +107,7 @@ namespace xtd::tests {
       assert::are_equal("xtd::exception : Exception of type 'xtd::exception' was thrown." + environment::new_line() + stack_frame.to_string(), e.to_string());
       assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.what());
     }
-
+    
     void test_method_(constructor_with_empty_message) {
       auto e = exception {""};
       assert::are_equal("xtd::exception", e.get_type().full_name());
@@ -125,7 +125,7 @@ namespace xtd::tests {
       string_assert::starts_with("xtd::exception", e.to_string());
       assert::are_equal("xtd::exception", e.what());
     }
-
+    
     void test_method_(constructor_with_message_empty_and_stack_frame) {
       auto stack_frame = xtd::diagnostics::stack_frame::current();
       auto e = exception {"", stack_frame};
@@ -224,7 +224,7 @@ namespace xtd::tests {
       assert::are_equal("xtd::exception : Exception of type 'xtd::exception' was thrown." + environment::new_line() + stack_frame.to_string(), e.to_string());
       assert::are_equal("Exception of type 'xtd::exception' was thrown.", e.what());
     }
-
+    
     void test_method_(constructor_with_message_and_inner_exception) {
       auto inner_exception = argument_exception {};
       auto e = exception {"Test excpetion message.", inner_exception};

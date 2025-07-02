@@ -1223,9 +1223,9 @@ namespace xtd::forms::tests {
     void test_method_(style_sheet_without_parent) {
       control_for_test control;
       style_sheets::style_sheet ss("control {"
-        "  border-style: solid;"
-        "  border-color: blue;"
-        "}");
+                                   "  border-style: solid;"
+                                   "  border-color: blue;"
+                                   "}");
       control.style_sheet(ss);
       assert::are_equal(ss, control.style_sheet());
     }
@@ -1235,9 +1235,9 @@ namespace xtd::forms::tests {
       control_for_test control;
       control.parent(form);
       style_sheets::style_sheet ss("control {"
-        "  border-style: solid;"
-        "  border-color: blue;"
-        "}");
+                                   "  border-style: solid;"
+                                   "  border-color: blue;"
+                                   "}");
       control.style_sheet(ss);
       assert::are_equal(ss, control.style_sheet());
     }
@@ -2143,7 +2143,7 @@ namespace xtd::forms::tests {
           auto m = message::create(handle(), WM_NULL, 0, 0);
           wnd_proc(m);
         }
-
+        
       protected:
         void on_create_control() override {
           control::on_create_control();
@@ -2661,7 +2661,7 @@ namespace xtd::forms::tests {
       assert::are_equal(control2, control.controls()[1].get());
       assert::are_equal(control3, control.controls()[2].get());
     }
-
+    
     void test_method_(controls_remove_controls) {
       forms::form form;
       control_for_test control;

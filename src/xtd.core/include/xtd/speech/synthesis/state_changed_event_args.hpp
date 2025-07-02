@@ -43,9 +43,9 @@ namespace xtd {
         state_changed_event_args(state_changed_event_args&&) = default;
         state_changed_event_args& operator =(const state_changed_event_args&) = default;
         /// @endcond
-
+        
         /// @name Public Properties
-
+        
         /// @{
         /// @brief Gets the state of the xtd::speech::synthesis::speech_synthesizer before the xtd::speech::synthesis::speech_synthesizer::state_changed event.
         /// @return The state of the synthesizer before the state changed.

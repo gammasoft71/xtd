@@ -57,7 +57,7 @@ namespace xtd {
           if (exceptionStored) std::rethrow_exception(exceptionStored);
           return result;
         }
-
+        
         bool ProcessEvent(wxEvent& event) override {
           if (exceptionStored) return wxApp::ProcessEvent(event);
           if (event.GetEventType() == wxEVT_ACTIVATE_APP) {

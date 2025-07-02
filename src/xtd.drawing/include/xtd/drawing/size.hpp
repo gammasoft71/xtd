@@ -64,7 +64,7 @@ namespace xtd {
       /// @param width The horizontal component of this xtd::drawing::size class, typically measured in pixels.
       /// @remarks The unit for the xtd::drawing::size::height and xtd::drawing::size::width of the xtd::drawing::size class depend on the xtd::drawing::graphics:page_unit and xtd::drawing::graphics::page_scale settings for the xtd::drawing::::graphics object that is used to draw.
       int32 width = 0;
-
+      
       /// @brief Gets or sets he vertical component of this xtd::drawing::size class.
       /// @param height The vertical component of this xtd::drawing::size class, typically measured in pixels.
       /// @remarks The unit for the xtd::drawing::size::height and xtd::drawing::size::width of the xtd::drawing::size class depend on the xtd::drawing::graphics:page_unit and xtd::drawing::graphics::page_scale settings for the xtd::drawing::::graphics object that is used to draw.
@@ -101,7 +101,7 @@ namespace xtd {
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
-
+      
       /// @brief Creates a human-readable string that represents this xtd::drawing::size class.
       /// @return A xtd::string that represents this xtd::drawing::size.
       xtd::string to_string() const noexcept override;

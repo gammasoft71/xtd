@@ -102,7 +102,7 @@ namespace xtd::io::tests {
       string_assert::starts_with("xtd::io::directory_not_found_exception : Attempted to access a path that is not on the disk." + environment::new_line() + stack_frame.to_string(), e.to_string());
       assert::are_equal("Attempted to access a path that is not on the disk.", e.what());
     }
-
+    
     void test_method_(constructor_with_empty_message) {
       auto e = directory_not_found_exception {""};
       assert::are_equal("xtd::io::directory_not_found_exception", e.get_type().full_name());
@@ -217,7 +217,7 @@ namespace xtd::io::tests {
       assert::are_equal("xtd::io::directory_not_found_exception : Attempted to access a path that is not on the disk." + environment::new_line() + stack_frame.to_string(), e.to_string());
       assert::are_equal("Attempted to access a path that is not on the disk.", e.what());
     }
-
+    
     void test_method_(constructor_with_message_and_inner_exception) {
       auto inner_exception = argument_exception {};
       auto e = directory_not_found_exception {"Test excpetion message.", inner_exception};

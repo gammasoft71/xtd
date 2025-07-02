@@ -256,7 +256,7 @@ namespace xtd::drawing::tests {
     }
     
     void draw_strings_with_string_format(object& sender, paint_event_args& e) {
-      
+    
       auto rect = rectangle(100, 340, e.clip_rectangle().width - 200, e.clip_rectangle().height - 487);
       draw_grid(rect, e.graphics());
       

@@ -161,10 +161,10 @@ namespace xtd {
         /// @brief Serves as a hash function for a particular type.
         /// @return A hash code for the current object.
         xtd::size get_hash_code() const noexcept override;
-
+        
         xtd::string to_string() const noexcept override;
         /// @}
-
+        
         /// @name Public Static Methods
         
         /// @{
@@ -174,7 +174,7 @@ namespace xtd {
         /// @return New instance of brush.
         static xtd::uptr<xtd::drawing::brush> make_brush(const xtd::forms::style_sheets::background_image& image, const xtd::drawing::rectangle& rect);
         /// @}
-
+        
       private:
         friend class style_sheet;
         xtd::forms::style_sheets::image_type image_type_ = style_sheets::image_type::none;

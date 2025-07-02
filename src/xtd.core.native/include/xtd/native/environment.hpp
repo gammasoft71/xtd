@@ -50,7 +50,7 @@ namespace xtd {
       /// @return 0​ if the registration succeeds, nonzero value otherwise.
       /// @warning Internal use only
       static int32_t at_quick_exit(void (*on_quick_exit)(void));
-
+      
       /// @brief Returns a string array containing the command-line arguments for the current process.
       /// @return An array of string where each element contains a command-line argument. The first element is the executable file name, and the following zero or more elements contain the remaining command-line arguments.
       /// @warning Internal use only

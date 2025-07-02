@@ -215,7 +215,7 @@ namespace xtd {
       template<class ...args_t>
       void write_line(const xtd::string& fmt, args_t&& ... args) noexcept {write_line(xtd::string::format(fmt, std::forward<args_t>(args)...));}
       /// @}
-
+      
       /// @name Public Static Methods
       
       /// @{
@@ -224,7 +224,7 @@ namespace xtd {
       /// @return text_writer A thread-safe text_writer object.
       static synchronized_text_writer synchronised(text_writer& writer) noexcept;
       /// @}
-
+      
     protected:
       /// @name Protected constructors
       

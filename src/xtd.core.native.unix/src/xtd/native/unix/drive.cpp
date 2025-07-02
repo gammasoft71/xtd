@@ -66,7 +66,7 @@ std::vector<std::string> drive::get_drives() {
       for (string drive : directory::enumerate_directories(amovible_mounted_point, "*")) {
         struct statvfs stat;
         //if (statvfs(drive.c_str(), &stat) == 0 && string(stat.f_mntonname) != root_drive)
-          drives.push_back(drive);
+        drives.push_back(drive);
       }
     }
   }
@@ -89,7 +89,7 @@ bool drive::get_volume_information(const std::string& root_path_name, std::strin
   struct statfs stat;
   if (statfs(root_path_name.c_str(), &stat) != 0)
     return false;
-  
+    
   volume_name = root_path_name;
   file_system_name = stat.f_fstypename;
   return true;

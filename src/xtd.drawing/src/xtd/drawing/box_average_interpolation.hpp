@@ -23,7 +23,7 @@ namespace {
       precalculate.box_end = value % new_size != 0 ? value / new_size : (value / new_size) - 1;
     }
   }
-
+  
   xtd::drawing::image box_average_interpolation(const xtd::drawing::image& source_image, const xtd::drawing::size& size) {
     if (source_image == xtd::drawing::image::empty) return source_image;
     if (size.width == source_image.width() && size.height == source_image.height()) return source_image;
@@ -31,7 +31,7 @@ namespace {
     
     if (source_image.width() % size.width == 0 && source_image.width() >= size.width && source_image.height() % size.height == 0 && source_image.height() >= size.height)
       return shrink_interpolation(source_image, size);
-    
+      
     const auto source_width = source_image.width();
     const auto source_height = source_image.height();
     const auto source_alpha = reinterpret_cast<const xtd::drawing::helpers::alpha*>(source_image.alpha());
@@ -48,8 +48,8 @@ namespace {
     
     resample_box_precalculates(vertical_precalculates, source_height);
     resample_box_precalculates(horizontal_precalculates, source_width);
-
-    for (auto y = 0; y < result_height; y++ ) {
+    
+    for (auto y = 0; y < result_height; y++) {
       const auto& vertical_precalculate = vertical_precalculates[y];
       for (auto x = 0; x < result_width; ++x) {
         const auto& horizontal_precalculate = horizontal_precalculates[x];

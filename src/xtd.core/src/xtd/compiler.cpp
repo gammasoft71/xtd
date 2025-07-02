@@ -134,7 +134,7 @@ xtd::string compiler::get_apple_clang_additional_information() const noexcept {
   if (version_string.contains("1.6 (70)")) return "Xcode 3.2.5";
   if (version_string.contains("1.5 (60)")) return "Xcode 3.2.3, 3.2.4";
   if (version_string.contains("1.0.2")) return "Xcode 3.2";
-
+  
   if (version().major() == 16) return "Xcode 16.0, 16.1";
   if (version().major() == 15) return "Xcode 15.0, 15.0.1, 15.1, 15.2, 15.3";
   if (version().major() == 14) return "Xcode 14.0, 14.0.1, 14.1, 14.2, 14.3, 14.3.1";
@@ -177,7 +177,7 @@ xtd::string compiler::get_compiler_version_string(const xtd::string& compiler_na
     auto psi = process_start_info {compiler_name, "--version"};
     auto p = process::start(psi.use_shell_execute(false).redirect_standard_output(true)).wait_for_exit();
     version_strings[compiler_name] = stream_reader(p.standard_output()).read_line();
-  } catch(...) {
+  } catch (...) {
     version_strings[compiler_name] = string::format("{} {}", name(), version());
   }
   return version_strings[compiler_name];

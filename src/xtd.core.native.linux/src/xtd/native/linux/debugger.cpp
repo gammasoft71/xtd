@@ -19,11 +19,11 @@ namespace {
   std::string get_process_name(pid_t pid) {
     auto stat_file = std::ifstream {"/proc/" + std::to_string(pid) + "/status"};
     if (!stat_file) return "Unknown";
-
+    
     auto line = std::string {};
     getline(stat_file, line);
     auto start = line.find("Name:\t") + 1;
-
+    
     if (start == std::string::npos) return "Unknown";
     start += std::string {"Name:\t"}.size() - 1;
     return line.substr(start, line.size() - start);
@@ -48,7 +48,7 @@ bool debugger::launch() {
 }
 
 int32_t debugger::show_assert_dialog(const std::string& text, const std::string& caption) {
-#if defined(__XTD_USE_GTK__)
+  #if defined(__XTD_USE_GTK__)
   gtk_init_check(0, nullptr);
   auto dialog = gtk_message_dialog_new(nullptr, GtkDialogFlags::GTK_DIALOG_MODAL, GtkMessageType::GTK_MESSAGE_ERROR, GtkButtonsType::GTK_BUTTONS_NONE, "%s", text.c_str());
   gtk_window_set_title(GTK_WINDOW(dialog), caption.c_str());
@@ -58,9 +58,9 @@ int32_t debugger::show_assert_dialog(const std::string& text, const std::string&
   auto return_code = gtk_dialog_run(GTK_DIALOG(dialog));
   gtk_widget_hide(dialog);
   return return_code == GTK_RESPONSE_YES ? ADR_ABORT : (return_code == GTK_RESPONSE_NO ? ADR_RETRY : ADR_IGNORE);
-#else
+  #else
   return ADR_ABORT;
-#endif
+  #endif
 }
 
 void debugger::log(int32_t level, const std::string& category, const std::string& message) {

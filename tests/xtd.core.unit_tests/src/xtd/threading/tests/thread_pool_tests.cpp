@@ -30,8 +30,8 @@ namespace xtd::threading::tests {
     void test_method_(queue_user_work_item_one) {
       auto count = 0;
       auto action = wait_callback {[&] {
-        interlocked::increment(count);
-      }};
+          interlocked::increment(count);
+        }};
       thread_pool::queue_user_work_item(action);
       thread::sleep(5);
       thread_pool::close();
@@ -41,8 +41,8 @@ namespace xtd::threading::tests {
     void test_method_(queue_user_work_item_after_close) {
       auto count = 0;
       auto action = wait_callback {[&] {
-        interlocked::increment(count);
-      }};
+          interlocked::increment(count);
+        }};
       thread_pool::queue_user_work_item(action);
       thread::sleep(5);
       thread_pool::close();
@@ -51,15 +51,15 @@ namespace xtd::threading::tests {
       thread_pool::close();
       assert::are_equal(2, count);
     }
-
+    
     void test_method_(queue_user_work_item_min_thread) {
       size_t min_worker_threads = 0;
       size_t min_completion_port_threads = 0;
       thread_pool::get_min_threads(min_worker_threads, min_completion_port_threads);
       auto count = 0;
       auto action = wait_callback {[&] {
-        interlocked::increment(count);
-      }};
+          interlocked::increment(count);
+        }};
       for (auto index = 0_z; index < min_worker_threads; ++index)
         thread_pool::queue_user_work_item(action);
       thread::sleep(5);

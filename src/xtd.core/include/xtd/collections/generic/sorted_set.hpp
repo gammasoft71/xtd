@@ -33,7 +33,7 @@ namespace xtd {
       /// @par Examples
       /// The following example demonstrates how to merge two disparate sets. This example creates two xtd::collections::generic::sorted_set objects, and populates them with even and odd numbers, respectively. A third xtd::collections::generic::sorted_set object is created from the set that contains the even numbers. The example then calls the UnionWith method, which adds the odd number set to the third set.
       /// @include sorted_set.cpp
-      template<class type_t, class lesser_t = xtd::collections::generic::helpers::lesser<type_t>, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+      template<class type_t, class lesser_t = xtd::collections::generic::helpers::lesser<type_t>, class allocator_t = xtd::collections::generic::helpers::allocator<type_t >>
       using sorted_set = std::set<type_t, lesser_t, allocator_t>;
     }
   }

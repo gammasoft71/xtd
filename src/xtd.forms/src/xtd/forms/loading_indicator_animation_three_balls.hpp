@@ -15,7 +15,7 @@ namespace xtd::forms {
       auto size1 = enabled ? xtd::array {4, 4, 2, 2, 0, 0, 2, 2} : xtd::array {0, 0, 0, 0, 0, 0, 0, 0};
       auto size2 = enabled ? xtd::array {2, 2, 4, 4, 2, 2, 0, 0} : xtd::array {0, 0, 0, 0, 0, 0, 0, 0};
       auto size3 = enabled ? xtd::array {0, 0, 2, 2, 4, 4, 2, 2} : xtd::array {0, 0, 0, 0, 0, 0, 0, 0};
-
+      
       graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x1 - size1[frame_] / 2, y - size1[frame_] / 2, dot_size + size1[frame_], dot_size + size1[frame_]);
       graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x2 - size2[frame_] / 2, y - size2[frame_] / 2, dot_size + size2[frame_], dot_size + size2[frame_]);
       graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x3 - size3[frame_] / 2, y - size3[frame_] / 2, dot_size + size3[frame_], dot_size + size3[frame_]);

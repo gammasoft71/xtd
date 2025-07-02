@@ -42,7 +42,7 @@ namespace xtd {
           /// @remarks Thus, `1.0` returns the original image, while the other values give a saturate image.
           explicit saturate_effect(double percent);
           /// @}
-
+          
           /// @name Public Properties
           
           /// @{
@@ -51,7 +51,7 @@ namespace xtd {
           /// @remarks Thus, `1.0` returns the original image, while the other values give a saturate image.
           double percent = 1.0;
           /// @}
-
+          
         protected:
           /// @name Protected Methods
           

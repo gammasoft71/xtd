@@ -98,7 +98,7 @@ namespace xtd {
     /// xtd::console::out << L"125"_i16 << xtd::environment::new_line;
     /// ```
     int16 operator""_i16(const wchar_t* s, std::size_t n);
-
+    
     /// @brief Used to convert specified value into int16.
     /// @par Namespace
     /// xtd

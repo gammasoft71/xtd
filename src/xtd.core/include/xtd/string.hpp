@@ -31,7 +31,7 @@ namespace xtd {
   /// @remarks If you want the same mutable string class, you can use xtd::text::string_builder class.
   /// @remarks xtd::string implements xtd::basic_string and therefore offers the full (immutable) API of [std::string](https://en.cppreference.com/w/cpp/string/basic_string).
   using ustring = xtd::string;
-
+  
   /// @brief Converts a signed integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.

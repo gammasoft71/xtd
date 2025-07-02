@@ -15,7 +15,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/decimal_object>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

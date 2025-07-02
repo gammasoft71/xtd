@@ -34,9 +34,9 @@ void condition_variable::pulse_all(intmax_t handle) {
 bool condition_variable::wait(intmax_t handle, intmax_t critical_section_handle, int32_t milliseconds_timeout) {
   if (handle == reinterpret_cast<intmax_t>(MUTEX_FAILED)) return false;
   if (reinterpret_cast<pthread_mutex_t*>(critical_section_handle) == nullptr) return false;
-
+  
   if (milliseconds_timeout == -1) return pthread_cond_wait(reinterpret_cast<pthread_cond_t*>(handle), reinterpret_cast<pthread_mutex_t*>(critical_section_handle));
-
+  
   auto timeout = timespec {};
   clock_gettime(CLOCK_REALTIME, &timeout);
   timeout.tv_sec += milliseconds_timeout / 1000;

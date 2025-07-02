@@ -27,8 +27,8 @@ inline std::basic_string<char_t> __parse_remove_decorations(const std::basic_str
     while (str.size() > 0 && (str[str.size() - 1] == 9 || str[str.size() - 1] == 10 || str[str.size() - 1] == 11 || str[str.size() - 1] == 12 || str[str.size() - 1] == 13 || str[str.size() - 1] == 32))
       str.erase(str.size() - 1, 1);
   }
-  if ((styles & xtd::number_styles::allow_currency_symbol) == xtd::number_styles::allow_currency_symbol && str.find(std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol()) == 0) str.erase(0, std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol().size());
-  if ((styles & xtd::number_styles::allow_currency_symbol) == xtd::number_styles::allow_currency_symbol && str.rfind(std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol()) + std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol().size() == str.size()) str.resize(str.size() - std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol().size());
+  if ((styles & xtd::number_styles::allow_currency_symbol) == xtd::number_styles::allow_currency_symbol && str.find(std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol()) == 0) str.erase(0, std::use_facet<std::moneypunct<char_t >> (std::locale()).curr_symbol().size());
+  if ((styles & xtd::number_styles::allow_currency_symbol) == xtd::number_styles::allow_currency_symbol && str.rfind(std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol()) + std::use_facet<std::moneypunct<char_t>>(std::locale()).curr_symbol().size() == str.size()) str.resize(str.size() - std::use_facet<std::moneypunct<char_t >> (std::locale()).curr_symbol().size());
   if ((styles & xtd::number_styles::allow_binary_specifier) == xtd::number_styles::allow_binary_specifier && (str.find("0b") == 0 || str.find("0B") == 0)) str.erase(0, 2);
   if ((styles & xtd::number_styles::allow_octal_specifier) == xtd::number_styles::allow_octal_specifier && str.find('0') == 0) str.erase(0, 1);
   if ((styles & xtd::number_styles::allow_hex_specifier) == xtd::number_styles::allow_hex_specifier && (str.find("0x") == 0 || str.find("0X") == 0)) str.erase(0, 2);
@@ -77,7 +77,7 @@ inline void __parse_check_valid_characters(const std::basic_string<char_t>& str,
   if ((styles & xtd::number_styles::allow_binary_specifier) == xtd::number_styles::allow_binary_specifier) valid_characters.erase(2);
   if ((styles & xtd::number_styles::allow_octal_specifier) == xtd::number_styles::allow_octal_specifier) valid_characters.erase(7);
   if ((styles & xtd::number_styles::allow_hex_specifier) == xtd::number_styles::allow_hex_specifier) valid_characters += std::basic_string<char_t> {'A', 'B', 'C', 'D', 'E', 'F', 'a', 'b', 'c', 'd', 'e', 'f'};
-  if ((styles & xtd::number_styles::allow_decimal_point) == xtd::number_styles::allow_decimal_point) valid_characters += std::basic_string<char_t> {std::use_facet<std::numpunct<char_t>>(std::locale()).decimal_point(), '.'};
+  if ((styles & xtd::number_styles::allow_decimal_point) == xtd::number_styles::allow_decimal_point) valid_characters += std::basic_string<char_t> {std::use_facet<std::numpunct<char_t >> (std::locale()).decimal_point(), '.'};
   if ((styles & xtd::number_styles::allow_thousands) == xtd::number_styles::allow_thousands) valid_characters += std::use_facet<std::numpunct<char_t>>(std::locale()).thousands_sep();
   if ((styles & xtd::number_styles::allow_exponent) == xtd::number_styles::allow_exponent) valid_characters += std::basic_string<char_t> {'E', 'e', '+', '-'};
   

@@ -134,13 +134,13 @@ int32 unit_test::run() noexcept {
   return startup::safe_run(delegate<int()>([this] {
     if (parse_arguments(arguments))
       return settings::default_settings().exit_status();
-    
+      
     if (settings::default_settings().count_tests()) {
       auto count = 0;
       for (auto test_class : test_classes())
         for (auto test : test_class.test()->tests())
           count++;
-      
+          
       return count_tests(count);
     }
     
@@ -149,7 +149,7 @@ int32 unit_test::run() noexcept {
       for (auto test_class : test_classes())
         for (auto test : test_class.test()->tests())
           tests.push_back(test_class.test()->name() + '.' + test.name());
-      
+          
       if (settings::default_settings().output_json()) write_list_tests_json();
       if (settings::default_settings().output_xml()) write_list_tests_xml();
       
@@ -163,7 +163,7 @@ int32 unit_test::run() noexcept {
     for (repeat_iteration_ = 1; repeat_iteration_ <= settings::default_settings().repeat_test() || settings::default_settings().repeat_test() < 0; ++repeat_iteration_) {
       if (settings::default_settings().shuffle_test())
         random.shuffle(test_classes());
-      
+        
       try {
         if (!settings::default_settings().brief()) event_listener_->on_unit_test_start(tunit_event_args(*this));
         
@@ -279,7 +279,7 @@ string unit_test::get_filename(const string& path) {
   const auto last_slash_idx = filename.find_last_of("\\/");
   if (string::npos != last_slash_idx)
     filename = filename.remove(0, last_slash_idx + 1);
-  
+    
   const auto period_idx = filename.rfind('.');
   if (string::npos != period_idx)
     filename = filename.remove(period_idx);

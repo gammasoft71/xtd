@@ -72,7 +72,7 @@ namespace xtd {
         template<class value_t>
         static property from(value_t value) {return property(string::format("{}", value));}
         /// @}
-
+        
       private:
         xtd::string value_;
       };

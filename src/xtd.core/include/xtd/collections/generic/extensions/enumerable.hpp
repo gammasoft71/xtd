@@ -41,7 +41,7 @@ namespace xtd {
           /// @brief Represents the ienumerable value type.
           template <class type_t>
           using ienumerable = typename xtd::linq::enumerable::ienumerable<type_t>;
-
+          
           /// @brief Represents the list value type.
           template <class type_t>
           using list = typename xtd::linq::enumerable::list<type_t>;
@@ -106,7 +106,7 @@ namespace xtd {
           result_t aggregate(const accumulate_t& seed, const std::function<accumulate_t(const source_t&, const accumulate_t&)>& func, const std::function<result_t(const accumulate_t&)>& result_selector) const {
             return xtd::linq::enumerable::aggregate(base(), seed, func, result_selector);
           }
-
+          
           /// @brief Determines whether all elements of a sequence satisfy a condition.
           /// @param predicate A function to test each element for a condition.
           /// @return `true` if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, `false`.
@@ -144,7 +144,7 @@ namespace xtd {
           auto append(const source_t& element) const noexcept {
             return xtd::linq::enumerable::append(base(), element);
           }
-
+          
           /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
           /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
           /// @par Example
@@ -153,7 +153,7 @@ namespace xtd {
           auto as_enumerable() const noexcept {
             return xtd::linq::enumerable::as_enumerable(base());
           }
-
+          
           /// @brief Computes the average of a sequence of source_t values.
           /// @return The average of this sequence of values.
           /// @exception xtd::invalid_operation_exception this sequence contains no elements.
@@ -169,7 +169,7 @@ namespace xtd {
           auto cast() const noexcept {
             return xtd::linq::enumerable::cast<result_t>(base());
           }
-
+          
           /// @brief Splits the elements of a sequence into chunks of size at most size.
           /// @tparam source_t The type of the elements of source.
           /// @param source A sequence of values to chunk.
@@ -178,14 +178,14 @@ namespace xtd {
           auto chunk(size_t size) const {
             return xtd::linq::enumerable::chunk(base(), size);
           }
-
+          
           /// @brief Concatenates two sequences.
           /// @param second The sequence to concatenate to the current sequence.
           /// @return An xtd::collections::generic::ienumerable <type_t> that contains the concatenated elements of the two input sequences.
           auto concat(const ienumerable<source_t>& second) const noexcept {
             return xtd::linq::enumerable::concat(base(), second);
           }
-
+          
           /// @brief Determines whether a sequence contains a specified element by using the default equality comparer.
           /// @param value The value to locate in the sequence.
           /// @return `true` if the source sequence contains an element that has the specified value; otherwise, `false`.
@@ -200,7 +200,7 @@ namespace xtd {
           bool contains(const source_t& value, const xtd::collections::generic::iequality_comparer<source_t>& comparer) const noexcept {
             return xtd::linq::enumerable::contains(base(), value, comparer);
           }
-
+          
           /// @brief Returns the number of elements in current sequence.
           /// @return The number of elements in the input sequence.
           /// @par Examples
@@ -226,7 +226,7 @@ namespace xtd {
           xtd::size count(const source_t& value) const noexcept {
             return xtd::linq::enumerable::count(base(), value);
           }
-
+          
           /// @brief Returns the count of elements in the current sequence grouped by key.
           /// @tparam key_t The type of the key returned by `key_selector`.
           /// @param key_selector A function to extract the key for each element.
@@ -264,7 +264,7 @@ namespace xtd {
           auto default_if_empty(const source_t& default_value) const noexcept {
             return xtd::linq::enumerable::default_if_empty(base(), default_value);
           }
-
+          
           /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
           /// @param predicate A function to test each element for a condition.
           /// @param default_value The default value to return if the sequence is empty.
@@ -278,7 +278,7 @@ namespace xtd {
           source_t first_or_default(const std::function<bool(const source_t&)>& predicate) const noexcept {
             return xtd::linq::enumerable::first_or_default(base(), predicate);
           }
-
+          
           /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
           /// @param default_value The default value to return if the sequence is empty.
           /// @return `default_value`  if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
@@ -291,7 +291,7 @@ namespace xtd {
           source_t first_or_default() const noexcept {
             return xtd::linq::enumerable::first_or_default(base());
           }
-
+          
           /// @brief Projects each element of a sequence into a new form.
           /// @tparam result_t The type of the resulting value.
           /// @param source A sequence of values to invoke a transform function on.
@@ -336,7 +336,7 @@ namespace xtd {
           auto select(const std::function<source_t(const source_t&, size_t index)>& selector) const {
             return xtd::linq::enumerable::select(base(), selector);
           }
-
+          
           /// @brief Creates a xtd::collections::generic::list <type_t> from an xtd::collections::generic::ienumerable <type_t>.
           /// @return A xtd::collections::generic::list <type_t> that contains elements from the input sequence.
           /// @par Examples

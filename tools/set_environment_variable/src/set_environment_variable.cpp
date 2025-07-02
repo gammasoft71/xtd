@@ -30,9 +30,9 @@ namespace set_path {
         console::write_line(get_error());
         return -1;
       }
-
+      
       if (string::is_empty(key)) show_help = true;
-
+      
       if (environment_variable_system && environment::os_version().is_windows() && !environment::user_administrator()) {
         console::write_line("ERROR : Launch set_environment_variable in administrator mode.");
         return -1;
@@ -46,7 +46,7 @@ namespace set_path {
         if (environment::os_version().is_windows()) current_value = win32_read_environment_variable_system(key, environment_variable_system);
         else if (environment::os_version().is_macos()) current_value = macos_read_environment_variable_system(key, environment_variable_system);
         else if (environment::os_version().is_linux()) current_value = linux_read_environment_variable_system(key, environment_variable_system);
-
+        
         if (add && current_value == value) {
           console::write_line("The key \"{}\" already contains value \"{}\". Do nothing.", key, value);
           return 0;
@@ -56,7 +56,7 @@ namespace set_path {
           console::write_line("The key \"{}\" does not exist. Do nothing.", key);
           return 0;
         }*/
-                
+        
         auto result = 0;
         if (environment::os_version().is_windows()) result = win32_write_environment_variable_system(environment_variable_system, key, value);
         else if (environment::os_version().is_macos()) result = macos_write_environment_variable_system(environment_variable_system, key, value);
@@ -71,21 +71,21 @@ namespace set_path {
   private:
     static string get_error() {
       return "set_environment_variable : invalid params\n"
-        "Try 'set_environment_variable --help' for more information.";
+             "Try 'set_environment_variable --help' for more information.";
     }
     
     static string get_usage() {
       return "Usage\n"
-        "  set_environment_variable [options] key [value]\n"
-        "\n"
-        "-a, --add           : Add value to key (set by default). (*)\n"
-        "-r, --remove        : Remove key.\n"
-        "-s, --system        : Use environment variable System. (Environment variable User by default). (**)\n"
-        "-v, --version       : Shows version information.\n"
-        "-h, --help          : Shows this help page.\n"
-        "\n"
-        "(*) If the value is empty, then it's identical to the --remove option.\n"
-        "(**) System option is valid only on Windows. You must in administrator mode.";
+             "  set_environment_variable [options] key [value]\n"
+             "\n"
+             "-a, --add           : Add value to key (set by default). (*)\n"
+             "-r, --remove        : Remove key.\n"
+             "-s, --system        : Use environment variable System. (Environment variable User by default). (**)\n"
+             "-v, --version       : Shows version information.\n"
+             "-h, --help          : Shows this help page.\n"
+             "\n"
+             "(*) If the value is empty, then it's identical to the --remove option.\n"
+             "(**) System option is valid only on Windows. You must in administrator mode.";
     }
     
     static string get_version() {
@@ -101,8 +101,8 @@ namespace set_path {
         else if (args[index] == "-h" || args[index] == "--help") show_help = true;
         //else if (!string::is_empty(key)) return false;
         else {
-        key = args[index];
-        if (index + 1 < args.size()) value = args[++index];
+          key = args[index];
+          if (index + 1 < args.size()) value = args[++index];
         }
       }
       
@@ -112,7 +112,7 @@ namespace set_path {
         remove = true;
         add = false;
       }
-
+      
       return !string::is_empty(key) || show_help || show_version;
     }
     
@@ -167,7 +167,7 @@ namespace set_path {
         }
         return 0;
       }
-   
+      
       auto new_value = convert_string::to_wstring(value);
       status = RegSetValueEx(environment_key, convert_string::to_wstring(key).c_str(), 0, REG_SZ, reinterpret_cast<const BYTE*>(convert_string::to_wstring(new_value).c_str()), static_cast<DWORD>((new_value.size() + 1) * sizeof(wchar_t)));
       if (status != ERROR_SUCCESS) {
@@ -186,7 +186,7 @@ namespace set_path {
         console::write_line("An error 0x{:X8} occurred when close registry key", status);
         return 4;
       }
-
+      
       auto result = SendMessageTimeout(HWND_BROADCAST, WM_SETTINGCHANGE, 0, (LPARAM)L"Environment", SMTO_ABORTIFHUNG, 5000, NULL);
       if (result == 0) {
         console::write_line("An error 0x{:X8} occurred when SendMessageTimeout", GetLastError());

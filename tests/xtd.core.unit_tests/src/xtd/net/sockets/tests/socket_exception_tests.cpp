@@ -1028,7 +1028,7 @@ namespace xtd::net::sockets::tests {
       if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : Unknown error: 486", e.to_string());
       if (environment::os_version().is_macos()) assert::are_equal("Unknown error: 486", e.what());
     }
-
+    
     void test_method_(constructor_with_socket_error_sock_error_as_int) {
       auto e = socket_exception {enum_object {socket_error::sock_error}.to_int32()};
       assert::are_equal("xtd::net::sockets::socket_exception", e.get_type().full_name());

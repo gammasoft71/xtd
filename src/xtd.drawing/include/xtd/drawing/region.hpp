@@ -91,11 +91,11 @@ namespace xtd {
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
       bool equals(const region& other) const noexcept override;
-
+      
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
-
+      
       /// @brief Updates this xtd::drawing::region to contain only the portion of its interior that does not intersect with the specified xtd::drawing::graphics_path.
       /// @param path The xtd::drawing::graphics_path to exclude from this xtd::drawing::region.
       void exclude(const xtd::drawing::drawing_2d::graphics_path& path) noexcept;
@@ -300,7 +300,7 @@ namespace xtd {
       /// @param dy The amount to offset this xtd::drawing::region vertically.
       void translate(float dx, float dy) noexcept;
       /// @}
-
+      
       /// @name Public Static Methods
       
       /// @{
@@ -310,14 +310,14 @@ namespace xtd {
       /// @return `true` if the interior of region is identical to the interior of this region when the transformation associated with the `g` parameter is applied; otherwise, `false`.
       /// @remarks The current transformation of the graphics context `g` is used to compute the region interiors on the drawing surface.
       static bool equals(const region& region, const xtd::drawing::graphics& g) noexcept;
-
+      
       /// @brief Initializes a new xtd::drawing::region from a handle to the specified existing GDI region.
       /// @param hrgn A handle to an existing xtd::drawing::region.
       /// @return The new xtd::drawing::region.
       /// @remarks This method creates a new xtd::drawing::region with an interior defined by the existing xtd::drawing::region referred to by the handle in the hrgn parameter.
       static xtd::drawing::region from_hrgn(intptr hrgn);
       /// @}
-
+      
     private:
       xtd::sptr<data> data_;
     };

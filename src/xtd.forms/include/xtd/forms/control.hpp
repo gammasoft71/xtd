@@ -294,7 +294,7 @@ namespace xtd {
             base::push_back(control_ref);
           }
         }
-
+        
         /// @}
         
       protected:
@@ -310,11 +310,11 @@ namespace xtd {
           }
         }
         /// @}
-
+        
       private:
         using xtd::forms::layout::arranged_element_collection<control_ref>::insert;
         using xtd::forms::layout::arranged_element_collection<control_ref>::push_back;
-
+        
         bool keep_cloned_controls_ = false;
         static xtd::collections::generic::list<xtd::sptr<xtd::forms::control>> controls_;
       };
@@ -360,7 +360,7 @@ namespace xtd {
       /// @cond
       control(control&& rhs);
       control(const control&) = default;
-      control& operator =(const control&) = default;
+      control& operator = (const control&) = default;
       ~control();
       /// @endcond
       
@@ -817,7 +817,7 @@ namespace xtd {
       /// @cond
       virtual control& right_to_left(std::nullptr_t);
       /// @endcond
-
+      
       /// @brief Gets the height and width of the control.
       /// @return The size that represents the height and width of the control in pixels.
       virtual drawing::size size() const noexcept;
@@ -960,7 +960,7 @@ namespace xtd {
       virtual void bring_to_front();
       
       int32 compare_to(const control& value) const noexcept override;
-
+      
       /// @brief Forces the creation of the visible control, including the creation of the handle and any visible child controls.
       /// @remarks The create_control method forces a handle to be created for the control and its child controls. This method is used when you need a handle immediately for manipulation of the control or its children; simply calling a control's constructor does not create the Handle.
       /// @remarks create_control does not create a control handle if the control's visible property is `false`. You can either call the create_control method or access the handle property to create the control's handle regardless of the control's visibility, but in this case, no window handles are created for the control's children.
@@ -1028,7 +1028,7 @@ namespace xtd {
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
-
+      
       /// @brief Conceals the control from the user.
       /// @remarks Hiding the control is equivalent to setting the visible property to `false`. After the hide method is called, the visible property returns a value of `false` until the show method is called.
       virtual void hide();
@@ -1090,7 +1090,7 @@ namespace xtd {
       /// @param p The client coordinate  xtd::drawing::point to convert.
       /// @return A xtd::drawing::point that represents the converted  xtd::drawing::point, p, in screen coordinates.
       xtd::drawing::point point_to_screen(const xtd::drawing::point& p) const;
-
+      
       /// @brief Places (posts) a message in the message queue with specified hwnd, message, wparam and lparam.
       /// @param hwnd The window handle of the message.
       /// @param msg The ID number for the message.
@@ -1098,7 +1098,7 @@ namespace xtd {
       /// @param lparam The LParam field of the message.
       /// @return `true` if message posted; otherwise `false`.
       bool post_message(intptr hwnd, int32 msg, intptr wparam, intptr lparam) const;
-
+      
       /// @brief Preprocesses keyboard or input messages within the message loop before they are dispatched.
       /// @param message A xtd::forms::message, passed by reference, that represents the message to process. The possible values are WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR.
       /// @return `true` if the message was processed by the control; otherwise, `false`.
@@ -1834,7 +1834,7 @@ namespace xtd {
       /// @remarks This event is raised if the xtd::forms::control::right_to_left property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> right_to_left_changed;
-
+      
       /// @brief Occurs when the value of the xtd::forms::control::size property changes.
       /// @remarks This event is raised if the xtd::forms::control::size property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
@@ -1849,7 +1849,7 @@ namespace xtd {
       /// @remarks This event is raised if the xtd::drawing::system_colors is changed. For example when automatic dark mode switching on macOS.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> system_colors_changed;
-
+      
       /// @brief Occurs when the xtd::forms::control::tab_stop property value changes.
       /// @remarks This event is raised if the xtd::forms::control::tab_stop property is changed by either a programmatic modification or user interaction.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
@@ -2141,7 +2141,7 @@ namespace xtd {
       /// @brief Raises the xtd::forms::control::right_to_left_changed event.
       /// @param e An xtd::event_args that contains the event data.
       virtual void on_right_to_left_changed(const event_args& e);
-
+      
       /// @brief Raises the xtd::forms::control::size_changed event.
       /// @param e An xtd::event_args that contains the event data.
       virtual void on_size_changed(const event_args& e);
@@ -2202,7 +2202,7 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// When overriding set_client_size_core(int32, int32) in a derived class, be sure to call the base class's set_client_size_core(int32, int32) method so that the client_size property is adjusted.
       virtual void set_client_size_core(int32 width, int32 height);
-            
+      
       /// @brief Sets the parent handle of the control.
       /// @param handle The parent handle.
       void set_parent(intptr handle);

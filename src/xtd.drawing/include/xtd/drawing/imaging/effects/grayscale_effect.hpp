@@ -41,7 +41,7 @@ namespace xtd {
           /// @param percent The percent factor in %.
           explicit grayscale_effect(double percent);
           /// @}
-
+          
           /// @name Public Properties
           
           /// @{
@@ -50,7 +50,7 @@ namespace xtd {
           /// @remarks Thus, `1.0` will make the color completely gray, while `0.0` return the original image.
           double percent = 1.0;
           /// @}
-
+          
         protected:
           /// @name Protected Methods
           

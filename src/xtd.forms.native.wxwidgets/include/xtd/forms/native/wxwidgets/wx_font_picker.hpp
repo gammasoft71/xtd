@@ -38,7 +38,7 @@ namespace xtd {
           
           return wx_style;
         }
-
+        
         void SetBackgroundColour(const wxColour& colour) override {
           control_handler::SetBackgroundColour(colour);
           static_cast<wxFontPickerCtrl*>(control())->GetPickerCtrl()->SetBackgroundColour(colour);

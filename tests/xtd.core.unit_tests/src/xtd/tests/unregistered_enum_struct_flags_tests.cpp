@@ -15,7 +15,7 @@ enum struct unregistered_enum_struct_flags_test {
   four = 0b1000
 };
 
-inline unregistered_enum_struct_flags_test operator |(unregistered_enum_struct_flags_test lhs, unregistered_enum_struct_flags_test rhs) {return static_cast<unregistered_enum_struct_flags_test>(static_cast<std::underlying_type<unregistered_enum_struct_flags_test>::type>(lhs) | static_cast<std::underlying_type<unregistered_enum_struct_flags_test>::type>(rhs));}
+inline unregistered_enum_struct_flags_test operator |(unregistered_enum_struct_flags_test lhs, unregistered_enum_struct_flags_test rhs) {return static_cast < unregistered_enum_struct_flags_test > (static_cast < std::underlying_type<unregistered_enum_struct_flags_test>::type>(lhs) | static_cast < std::underlying_type < unregistered_enum_struct_flags_test >::type > (rhs));}
 
 namespace xtd::tests {
   class test_class_(unregistered_enum_struct_flags_tests) {
@@ -30,7 +30,7 @@ namespace xtd::tests {
     }
     
     void test_method_(format_with_invalid_enum) {
-      assert::are_equal("16", string::format("{}", as<unregistered_enum_struct_flags_test>(16)));
+      assert::are_equal("16", string::format("{}", as < unregistered_enum_struct_flags_test > (16)));
     }
     
     void test_method_(format_with_specified_format) {
@@ -47,18 +47,18 @@ namespace xtd::tests {
     }
     
     void test_method_(parse) {
-      assert::are_equal(unregistered_enum_struct_flags_test::none, string::parse<unregistered_enum_struct_flags_test>("0"));
-      assert::are_equal(unregistered_enum_struct_flags_test::one, string::parse<unregistered_enum_struct_flags_test>("1"));
-      assert::are_equal(unregistered_enum_struct_flags_test::two, string::parse<unregistered_enum_struct_flags_test>("2"));
-      assert::are_equal(unregistered_enum_struct_flags_test::three, string::parse<unregistered_enum_struct_flags_test>("4"));
-      assert::are_equal(unregistered_enum_struct_flags_test::four, string::parse<unregistered_enum_struct_flags_test>("8"));
-      assert::are_equal(unregistered_enum_struct_flags_test::one | unregistered_enum_struct_flags_test::two, string::parse<unregistered_enum_struct_flags_test>("3"));
-      assert::are_equal(unregistered_enum_struct_flags_test::three | unregistered_enum_struct_flags_test::four, string::parse<unregistered_enum_struct_flags_test>("12"));
+      assert::are_equal(unregistered_enum_struct_flags_test::none, string::parse < unregistered_enum_struct_flags_test > ("0"));
+      assert::are_equal(unregistered_enum_struct_flags_test::one, string::parse < unregistered_enum_struct_flags_test > ("1"));
+      assert::are_equal(unregistered_enum_struct_flags_test::two, string::parse < unregistered_enum_struct_flags_test > ("2"));
+      assert::are_equal(unregistered_enum_struct_flags_test::three, string::parse < unregistered_enum_struct_flags_test > ("4"));
+      assert::are_equal(unregistered_enum_struct_flags_test::four, string::parse < unregistered_enum_struct_flags_test > ("8"));
+      assert::are_equal(unregistered_enum_struct_flags_test::one | unregistered_enum_struct_flags_test::two, string::parse < unregistered_enum_struct_flags_test > ("3"));
+      assert::are_equal(unregistered_enum_struct_flags_test::three | unregistered_enum_struct_flags_test::four, string::parse < unregistered_enum_struct_flags_test > ("12"));
     }
     
     void test_method_(parse_with_invalid_enum) {
-      assert::are_equal(as<unregistered_enum_struct_flags_test>(16), string::parse<unregistered_enum_struct_flags_test>("16"));
-      assert::throws<format_exception>([] {string::parse<unregistered_enum_struct_flags_test>("one");});
+      assert::are_equal(as < unregistered_enum_struct_flags_test > (16), string::parse < unregistered_enum_struct_flags_test > ("16"));
+      assert::throws < format_exception > ([] {string::parse < unregistered_enum_struct_flags_test > ("one");});
     }
   };
 }

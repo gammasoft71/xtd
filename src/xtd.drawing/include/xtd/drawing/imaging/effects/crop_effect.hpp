@@ -47,19 +47,19 @@ namespace xtd {
           /// @remarks The poition is esual to xtd::drawing::point {0, 0}.
           explicit crop_effect(const xtd::drawing::size& size);
           /// @}
-
+          
           /// @name Public Properties
           
           /// @{
           /// @brief Gets or sets the new rectangle.
           /// @param size The new rectangle.
           xtd::drawing::rectangle rectangle;
-
+          
           /// @brief Sets the new size.
           /// @param size The new size.
           void size(const xtd::drawing::size& value);
           /// @}
-
+          
         protected:
           /// @name Protected Methods
           

@@ -49,11 +49,11 @@ namespace xtd {
       /// @remarks Use this class to obtain information on drives. The drive name must be either an uppercase or lowercase letter from 'a' to 'z'. You cannot use this method to obtain information on drive names that are null or use UNC (\\server\share) paths.
       explicit drive_info(const xtd::string& drive_name);
       /// @}
-
+      
       /// @cond
       drive_info() = default;
       /// @endcond
-
+      
       /// @name Public Properties
       
       /// @{
@@ -150,7 +150,7 @@ namespace xtd {
       /// @remarks This method returns the xtd::io::drive_info::name property.
       xtd::string to_string() const noexcept override;
       /// @}
-
+      
       /// @name Public Static Methods
       
       /// @{
@@ -164,7 +164,7 @@ namespace xtd {
       /// @remarks This method retrieves all logical drive names on a computer. You can use this information to iterate through the array and obtain information on the drives using other xtd::io::drive_info methods and properties. Use the xtd::io::drive_info::is_ready property to test whether a drive is ready because using this method on a drive that is not ready will throw a xtd::io::io_exception.
       static xtd::array<xtd::io::drive_info> get_drives() noexcept;
       /// @}
-
+      
     private:
       xtd::string drive_name_;
     };

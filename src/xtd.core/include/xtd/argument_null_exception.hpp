@@ -11,7 +11,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/argument_null_exception>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -118,7 +118,7 @@ namespace xtd {
     static void throw_if_null(std::nullptr_t argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null, string::format("The value cannot be null. (Parameter '{}')", param_name, stack_frame).c_str());}
     /// @endcond
     /// @}
-
+    
   private:
     const char* default_message() const noexcept {return "Value cannot be null."_t;}
   };

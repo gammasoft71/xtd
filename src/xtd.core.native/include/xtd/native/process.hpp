@@ -50,9 +50,9 @@ namespace xtd {
       /// * [2] : The created ostream for the standard input.
       /// * [3] : The created istream for the standard output.
       /// * [4] : The created istream for the standard error.
-      using started_process = std::tuple<intmax_t, int32_t, std::unique_ptr<std::ostream>, std::unique_ptr<std::istream>, std::unique_ptr<std::istream>>;
+      using started_process = std::tuple<intmax_t, int32_t, std::unique_ptr<std::ostream>, std::unique_ptr<std::istream>, std::unique_ptr<std::istream >>;
       /// @}
-
+      
       /// @name Protected Static Methods
       
       /// @{

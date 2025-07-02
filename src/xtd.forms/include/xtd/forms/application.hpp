@@ -57,7 +57,7 @@ namespace xtd {
       /// @return `true` if the caller can quit this application; otherwise, `false`.
       /// @remarks This method returns `false` if it is called from a control being hosted within a Web browser. Thus, the control cannot quit the application.
       static bool allow_quit() noexcept;
-
+      
       /// @brief Gets the application context associate to the application.
       /// @return An application context.
       /// @remarks The application context can be created by the user and sent to the application when the xtd::forms::application::run method is called.
@@ -75,7 +75,7 @@ namespace xtd {
       /// @remarks The default value is `true`.
       /// @remarks This method has an effect only on linux.
       static void button_images(bool value);
-
+      
       /// @brief Gets the path for the application data that is shared among all users.
       /// @return The path for the application data that is shared among all users.
       /// @remarks If a path does not exist, one is created in the following format: base_path\company_name\product_name\product_version
@@ -100,7 +100,7 @@ namespace xtd {
       /// }
       /// ```
       static xtd::string company_name() noexcept;
-
+      
       /// @brief Gets a value indicating whether dark mode is enabled for the application.
       /// @return True is dark mode enabled; otherwise `false`.
       static bool dark_mode() noexcept;
@@ -123,7 +123,7 @@ namespace xtd {
       /// @brief Gets the path for the executable file that started the application, including the executable name.
       /// @return The path and executable name for the executable file that started the application.<br><br>
       static xtd::string executable_path() noexcept;
-
+      
       /// @brief Gets a value indicating whether font size correction is enabled.
       /// @return `true` if font size correction is enabled; otherwise `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
@@ -149,8 +149,8 @@ namespace xtd {
       /// @param value `true` if xtd framework keep cloned control is enabled; otherwise `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks By default the value is `false`.
-       static void keep_cloned_controls(bool value);
-
+      static void keep_cloned_controls(bool value);
+      
       /// @brief Gets a value indicating whether light mode is enabled for the application.
       /// @return True is light mode enabled; otherwise `false`.
       static bool light_mode() noexcept;
@@ -170,7 +170,7 @@ namespace xtd {
       /// @return The optional main form.
       /// @remarks The return value doesn't necessarily contain the main form, as an application doesn't always have a main form. In fact, the xtd::forms::application method can be called with the xtd::forms::application_context class, which doesn't contain a main form.
       static std::optional<form_ref> main_form();
-
+      
       /// @brief Gets menu images are enabled.
       /// @return `true` if menu images aree enabled; otherwise `false`.
       /// @remarks The default value is `true`.
@@ -183,7 +183,7 @@ namespace xtd {
       /// @remarks The default value is `true`.
       /// @remarks This method has an effect only on linux.
       static void menu_images(bool value);
-
+      
       /// @brief Gets a value indicating whether a message loop exists on this thread.
       /// @return `true` if a message loop exists; otherwise, `false`.
       static bool message_loop() noexcept;
@@ -235,7 +235,7 @@ namespace xtd {
       /// @remarks By default, xtd uses the standard control (xtd::forms::control_appearance::standard) with this method you can change to force the use of system control (xtd::forms::control_appearance::system) instead.
       /// @remarks The xtd::forms::control::control_appearance method can still be used to modify the control's appearance on the fly.
       static void system_controls(bool value);
-
+      
       /// @brief Gets a value indicating whether the system font size is enabled.
       /// @return `true` if the system font size is enabled; otherwise `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
@@ -243,7 +243,7 @@ namespace xtd {
       /// @remarks If you enable this option, you can use the actual font size of the system if it exceeds 9 points and at the same time the default sizes of the different controls will be adapted as well.
       /// @remarks This method has an effect only on Gtk.
       static bool system_font_size() noexcept;
-
+      
       /// @brief Sets a value indicating whether the system font size is enabled.
       /// @param value `true` if the system font size is enabled; otherwise `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
@@ -251,7 +251,7 @@ namespace xtd {
       /// @remarks If you enable this option, you can use the actual font size of the system if it exceeds 9 points and at the same time the default sizes of the different controls will be adapted as well.
       /// @remarks This method has an effect only on Gtk.
       static void system_font_size(bool value);
-
+      
       /// @brief Gets system xtd::forms::style_sheets::style_sheet style sheet.
       /// @return The system xtd::forms::style_sheets::style_sheet style sheet.
       /// @remarks The system style sheet is the style sheet corresponding to the current Operating System and the current Desktop Environment.

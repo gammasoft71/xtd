@@ -298,7 +298,7 @@ color color::from_hsl(float hue, float saturation, float lightness) noexcept {
 
 color color::from_known_color(known_color color) {
   switch (color) {
-      // "Web" colors
+    // "Web" colors
     case known_color::transparent: return drawing::color {color::from_argb(0x00000000), color};
     case known_color::alice_blue: return drawing::color {color::from_argb(0xFFF0F8FF), color};
     case known_color::antique_white: return drawing::color {color::from_argb(0xFFFAEBD7), color};
@@ -441,8 +441,8 @@ color color::from_known_color(known_color color) {
     case known_color::white_smoke: return drawing::color {color::from_argb(0xFFF5F5F5), color};
     case known_color::yellow: return drawing::color {color::from_argb(0xFFFFFF00), color};
     case known_color::yellow_green: return drawing::color {color::from_argb(0xFF9ACD32), color};
-
-      // Apple colors
+    
+    // Apple colors
     case known_color::apple_black: return drawing::color {color::from_argb(0xFF000000), color};
     case known_color::apple_blue: return drawing::color {color::from_argb(0xFF0000FF), color};
     case known_color::apple_brown: return drawing::color {color::from_argb(0xFF996633), color};
@@ -454,8 +454,8 @@ color color::from_known_color(known_color color) {
     case known_color::apple_red: return drawing::color {color::from_argb(0xFFFB0207), color};
     case known_color::apple_yellow: return drawing::color {color::from_argb(0xFFFFFF0A), color};
     case known_color::apple_white: return drawing::color {color::from_argb(0xFFFFFFFF), color};
-
-      // Crayons colors
+    
+    // Crayons colors
     case known_color::crayon_licorice: return drawing::color {color::from_argb(0xFF000000), color};
     case known_color::crayon_lead: return drawing::color {color::from_argb(0xFF191919), color};
     case known_color::crayon_tungsten: return drawing::color {color::from_argb(0xFF333333), color};
@@ -504,8 +504,8 @@ color color::from_known_color(known_color color) {
     case known_color::crayon_lavendar: return drawing::color {color::from_argb(0xFFCC66FF), color};
     case known_color::crayon_bubblegum: return drawing::color {color::from_argb(0xFFFC66FF), color};
     case known_color::crayon_carnation: return drawing::color {color::from_argb(0xFFFC6FCF), color};
-
-      // "System" colors
+    
+    // "System" colors
     case known_color::accent: return drawing::color {color::from_handle(native::system_colors::accent()), color};
     case known_color::accent_text: return drawing::color {color::from_handle(native::system_colors::accent_text()), color};
     case known_color::active_border: return drawing::color {color::from_handle(native::system_colors::active_border()), color};

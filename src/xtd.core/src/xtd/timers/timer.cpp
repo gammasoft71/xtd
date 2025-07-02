@@ -17,7 +17,7 @@ struct timer::data {
   auto_reset_event event {true};
   time_span interval {100};
   auto_reset_event sleep {false};
-  wait_callback timer_proc = wait_callback {[&](const any_object& arg) {
+  wait_callback timer_proc = wait_callback {[&](const any_object & arg) {
     as<timer*>(arg)->data_->event.reset();
     sleep.wait_one(interval);
     while (enabled) {
@@ -92,11 +92,11 @@ std::optional<ref<isynchronize_invoke>> timer::synchronizing_object() const noex
   return std::optional<ref<isynchronize_invoke>> {*data_->synchronizing_object};
 }
 
-timer& timer::synchronizing_object(isynchronize_invoke& value) {
+timer & timer::synchronizing_object(isynchronize_invoke& value) {
   data_->synchronizing_object = &value;
   return *this;
 }
-timer& timer::synchronizing_object(std::nullptr_t value) {
+timer & timer::synchronizing_object(std::nullptr_t value) {
   data_->synchronizing_object = nullptr;
   return *this;
 }

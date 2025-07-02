@@ -336,7 +336,7 @@ namespace xtd {
       /// @brief Closes the form.
       /// @remarks When a form is closed, all resources created within the object are closed and the form is disposed. You can prevent the closing of a form at run time by handling the closing event and setting the cancel property of the cancel_event_args passed as a parameter to your event handler. If the form you are closing is the startup form of your application, your application ends.
       void close();
-
+      
       bool pre_process_message(const xtd::forms::message& message) override;
       
       /// @brief Shows the form as a modal dialog box.

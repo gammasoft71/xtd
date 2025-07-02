@@ -41,7 +41,7 @@ namespace xtd {
           /// @param percent The percent factor in %.
           explicit opacity_effect(double percent);
           /// @}
-
+          
           /// @name Public Properties
           
           /// @{
@@ -50,7 +50,7 @@ namespace xtd {
           /// @remarks `0.0` will represents a transparent image. `1.0` will provide the original image.
           double percent = 1.0;
           /// @}
-
+          
         protected:
           /// @name Protected Methods
           

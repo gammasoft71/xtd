@@ -39,7 +39,7 @@ namespace xtd {
   /// delete_unique_ptr_object(version); // Not mandatory.
   /// @endcode
   template<class type_t, class deleter_t>
-  class unique_ptr_object : public xtd::object, public xtd::icomparable<unique_ptr_object<type_t, deleter_t>>, public xtd::iequatable<unique_ptr_object<type_t, deleter_t>> {
+  class unique_ptr_object : public xtd::object, public xtd::icomparable<unique_ptr_object<type_t, deleter_t>>, public xtd::iequatable<unique_ptr_object<type_t, deleter_t >> {
   public:
     /// @name Public Aliases
     
@@ -53,14 +53,14 @@ namespace xtd {
     /// @brief Represent the pointer type.
     using pointer_type = typename base_type::pointer;
     /// @}
-
+    
     /// @name Public Static Fields
     
     /// @{
     /// @brief Represents the empty xtd::unique_ptr_object. This field is constant.
     static const unique_ptr_object empty;
     /// @}
-
+    
     /// @name Public Constructors
     
     /// @{
@@ -97,7 +97,7 @@ namespace xtd {
     /// @brief Initializes a new instance of the xtd::unique_ptr_object class with specified unique pointer object.
     /// @param value The unique pointer object.
     unique_ptr_object(const base_type& value) = delete;
-
+    
     /// @brief Initializes a new instance of the xtd::unique_ptr_object class with specified pointer.
     /// @param ptr The pointer.
     template<class pointer_t>
@@ -120,7 +120,7 @@ namespace xtd {
     template<class value_t>
     unique_ptr_object(std::unique_ptr<value_t>&& value) noexcept : ptr_ {std::move(value)} {}
     /// @}
-
+    
     /// @name Public Properties
     
     /// @{
@@ -131,7 +131,7 @@ namespace xtd {
     /// @return The underlying base type pointer.
     base_type& pointer() noexcept {return ptr_;}
     /// @}
-
+    
     /// @name Public Methods
     
     /// @{
@@ -146,7 +146,7 @@ namespace xtd {
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
     int32 compare_to(const unique_ptr_object& obj) const noexcept override {return to_pointer() < obj.to_pointer() ? -1 : to_pointer() > obj.to_pointer() ? 1 : 0;}
-
+    
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
@@ -155,15 +155,15 @@ namespace xtd {
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
     bool equals(const unique_ptr_object& value) const noexcept override {return ptr_ == value.ptr_;}
-
+    
     /// @brief Gets the stored pointer.
     /// @return The stored pointer.
     element_type* get() const noexcept {return ptr_.get();}
-
+    
     /// @brief Serves as a hash function for a particular type.
     /// @return size_t A hash code for the current object.
     xtd::size get_hash_code() const noexcept override {return (ptr_ ? xtd::hash_code::combine(to_pointer()) : 0);}
-
+    
     /// @brief Releases the stored pointer.
     /// @return The stored pointer.
     pointer_type release() noexcept {return ptr_.release();}
@@ -183,12 +183,12 @@ namespace xtd {
     /// @brief Resets the current object. Set the current object with specified pointer.
     /// @param null The null pointer.
     void reset(xtd::null_ptr null) noexcept {ptr_.reset(null);}
-
-
+    
+    
     /// @brief Swaps this current instance with specified unique pointer object.
     /// @param ptr The unique pointer object to swap with this current instance.
     void swap(unique_ptr_object& ptr) noexcept {ptr_.swap(ptr.ptr_);}
-
+    
     /// @brief Gets the stored object.
     /// @return The stored object.
     type_t& to_object() const noexcept {return *to_pointer();}
@@ -202,18 +202,18 @@ namespace xtd {
     /// @brief Gets the stored pointer.
     /// @return The stored pointer.
     element_type* to_pointer() const noexcept {return get();}
-
+    
     /// @brief Gets the stored pointer with specified `target_t` type.
     /// @return The stored pointer.
     /// @exception xtd::cast_exception If the current object can't be casted in target_t.
     template<typename target_t>
     target_t* to_pointer() const;
-
+    
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
     xtd::string to_string() const noexcept override;
     /// @}
-
+    
     /// @name Public Operators
     
     /// @{
@@ -239,11 +239,11 @@ namespace xtd {
       ptr_ = std::move(value);
       return *this;
     }
-
+    
     /// @brief Gets the stored object.
     /// @return The stored object.
-    type_t& operator *() const noexcept {return ptr_.operator *();}
-
+    type_t& operator *() const noexcept {return ptr_.operator * ();}
+    
     /// @brief Gets the stored pointer.
     /// @return The stored pointer.
     type_t* operator ->() const noexcept {return ptr_.operator ->();}
@@ -252,29 +252,29 @@ namespace xtd {
     /// @param index The array index.
     /// @return A reference to the index-th element of the array, i.e., `get()[index]`.
     element_type& operator[](std::ptrdiff_t index) const {return ptr_.operator [](index);}
-
+    
     /// @brief Checks if the stored pointer is not null.
     /// @return `true`if stored pointer is non null; otherwise `false`.
     explicit operator bool() const noexcept {return ptr_.operator bool();}
     /// @}
-
+    
   private:
     template<class value_t, class other_deleter_t>
     friend class xtd::unique_ptr_object;
-
+    
     template<class value_t, class allocator_t>
     friend class xtd::basic_array;
     
     template<class value_t, class allocator_t>
     friend class xtd::collections::generic::list;
-
+    
     friend class xtd::linq::enumerable;
     
     unique_ptr_object& operator =(const unique_ptr_object& value) noexcept {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);}
     
     base_type ptr_;
   };
-
+  
   template<class type_t, class deleter_t>
   inline const unique_ptr_object<type_t, deleter_t>  unique_ptr_object<type_t, deleter_t>::empty;
   /// @}

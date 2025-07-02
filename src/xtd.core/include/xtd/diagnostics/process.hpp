@@ -767,7 +767,7 @@ namespace xtd {
       /// @remarks Because the associated process has exited, the Handle property of the component no longer points to an existing process resource. Instead, the handle can be used only to access the operating system's information about the process resource. The system is aware of handles to exited processes that have not been released by xtd::diagnostics::process components, so it keeps the xtd::diagnostics::process::exit_time and xtd::diagnostics::process::handle information in memory until the xtd::diagnostics::process component specifically frees the resources. For this reason, any time you call xtd::diagnostics::process::start for a xtd::diagnostics::process instance, call xtd::diagnostics::process::close when the associated process has terminated and you no longer need any administrative information about it. xtd::diagnostics::process::close frees the memory allocated to the exited process.
       process& wait_for_exit(int32 milliseconds);
       /// @}
-
+      
       /// @name Public Static Methods
       
       /// @{

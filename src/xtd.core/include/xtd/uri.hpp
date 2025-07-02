@@ -503,7 +503,7 @@ namespace xtd {
     /// @name Public Methods
     
     /// @{
-   
+    
     /// @brief Gets the specified components of the current instance using the specified escaping for special characters.
     /// @param components A bitwise combination of the xtd::uri_components values that specifies which parts of the current instance to return to the caller.
     /// @param format One of the xtd::uri_format values that controls how special characters are escaped.
@@ -574,7 +574,7 @@ namespace xtd {
     /// @remarks When International Resource Identifier (URI) and Internationalized Domain Name (IDN) support are enabled, the string used to construct this xtd::uri are considered well-formed in accordance with RFC 3986 and RFC 3987. Punycode names used to support URI contain only ASCII characters and always start with the xn-- prefix.
     /// @remarks For more information on URI support, see the Remarks section for the xtd::uri class.
     bool is_well_formed_original_string();
-     
+    
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
@@ -583,11 +583,11 @@ namespace xtd {
     /// @param uri The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
     bool equals(const xtd::uri& uri) const noexcept override;
-
+    
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
     xtd::size get_hash_code() const noexcept override;
-
+    
     /// @brief Gets a canonical string representation for the specified xtd::uri instance.
     /// @return string A string instance that contains the unescaped canonical representation of the xtd::uri instance. All characters are unescaped except #, ?, and %.
     /// @remarks The string returned by this method does not contain port information when the port is the default port for the scheme.
@@ -685,7 +685,7 @@ namespace xtd {
     /// @remarks Many Web browsers escape spaces inside of URIs into plus ("+") characters; however, the unescape_data_string method does not convert plus characters into spaces because this behavior is not standard across all URI schemes.
     static xtd::string unescape_data_string(const xtd::string& value);
     /// @}
-
+    
   private:
     static string format_componant(const string& str, uri_format format);
     static string format_host_componant(const string& str, uri_format format);

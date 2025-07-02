@@ -328,7 +328,7 @@ namespace xtd {
       /// @{
       bool equals(const object& other) const noexcept override {return is<xtd_library>(other) && equals(static_cast<const xtd_library&>(other));}
       bool equals(const xtd_library& other) const noexcept override {return name_ == other.name_ && version_ == other.version_ && include_path_ == other.include_path_ && library_path_ == other.library_path_ && resources_path_ == other.resources_path_;}
-
+      
       xtd::string to_string() const noexcept override;
       /// @}
       
@@ -389,11 +389,11 @@ namespace xtd {
     /// @brief Gets a unique identifier for the current managed thread.
     /// @return An id that represents a unique identifier for this thread.
     static int32 current_managed_thread_id() noexcept;
-
+    
     /// @brief Gets a unique identifier for the current thread.
     /// @return An id that represents a unique identifier for this thread.
     static intptr current_thread_id() noexcept;
-
+    
     /// @brief Gets the exit code of the process.
     /// @return A 32-bit signed integer containing the exit code. The default value is 0 (zero), which indicates that the process completed successfully.
     /// @remarks If the main method returns void, you can use this property to set the exit code that will be returned to the calling environment. If Main does not return void, this property is ignored. The initial value of this property is zero.
@@ -622,7 +622,7 @@ namespace xtd {
     /// @brief Returns an array of string containing the names of the logical drives on the current computer.
     /// @return An array of strings where each element contains the name of a logical drive. For example, if the computer's hard drive is the first logical drive, the first element returned is "C:\".
     static xtd::collections::specialized::string_collection get_logical_drives();
-
+    
     /// @brief Terminates this process and returns an exit code to the operating system without completely cleaning the resources..
     /// @remarks Use xtd::environment::exit_code method to return to the operating system.
     [[noreturn]] static void quick_exit() noexcept;
@@ -633,7 +633,7 @@ namespace xtd {
     /// @brief Terminates this process and returns an exit status to the operating system without completely cleaning the resources..
     /// @param exit_status One of xtd::exit_status values.
     [[noreturn]] static void quick_exit(xtd::exit_status exit_status) noexcept;
-
+    
     /// @brief Sends xtd::signal to the program. The xtd::environment::cancel_signal event is invoked with the specified signal
     /// @param signal One of xtd::signal values that represents the signal sent to the program.
     static void raise(xtd::signal signal);
@@ -664,7 +664,7 @@ namespace xtd {
   private:
     static void on_cancel_signal(signal_cancel_event_args& e);
     static void on_program_exit(const program_exit_event_args& e);
-
+    
     static xtd::string get_folder_path_(environment::special_folder folder, environment::special_folder_option option, bool is_gui_application = target_type().is_guid_application());
     inline static const string xtd_root_path() {return xtd::io::path::get_full_path(string::is_empty(__XTD_ROOT_PATH__) ? (string::is_empty(get_environment_variable("XTD_ROOT_PATH")) ? io::path::get_full_path(io::path::combine(io::path::get_directory_name(xtd::diagnostics::source_location::current().file_name()), "..", "..")) : get_environment_variable("XTD_ROOT_PATH")) : __XTD_ROOT_PATH__);}
     static signal_catcher signal_catcher_;

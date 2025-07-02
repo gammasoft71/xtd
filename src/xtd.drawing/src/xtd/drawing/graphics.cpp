@@ -433,7 +433,7 @@ void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle_f& dest_rect, float src_x, float src_y, float src_width, float src_height) {
   if (dest_rect.width < 0 || dest_rect.height < 0) throw_helper::throws(exception_case::argument);
   if (src_width < 0 || src_height < 0) throw_helper::throws(exception_case::argument);
-
+  
   if (src_width == 0 || src_height == 0) return;
   if (dest_rect.width == 0 || dest_rect.height == 0) return;
   auto result_image = image;
@@ -1008,7 +1008,7 @@ float graphics::to_page_unit(float value, graphics_unit page_unit, float page_sc
 int32 graphics::to_pixels(int32 value) const {
   return as<int32>(to_pixels(as<float>(value)));
 }
-                   
+
 float graphics::to_pixels(float value) const {
   return to_pixels(value, data_->page_unit, data_->page_scale, dpi_x());
 }

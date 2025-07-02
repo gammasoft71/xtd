@@ -75,7 +75,7 @@ namespace xtd {
         void test_method_(_b_operator_on_invalid_wchar_ptr) {
           assert::throws<xtd::format_exception>([] {L"42str"_b;});
         }
-
+        
         void test_method_(_u8_operator_on_long_double) {
           auto v = 42.0_u8;
           assert::is_true(is<byte>(v));

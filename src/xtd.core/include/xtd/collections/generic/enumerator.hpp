@@ -49,8 +49,8 @@ namespace xtd {
         /// @cond
         enumerator(enumerator&& enumerator) = default;
         enumerator(const enumerator& enumerator) = default;
-        enumerator& operator =(enumerator&& enumerator) = default;
-        enumerator& operator =(const enumerator& enumerator) = default;
+        enumerator& operator = (enumerator && enumerator) = default;
+        enumerator& operator = (const enumerator& enumerator) = default;
         /// @endcond
         
         /// @{
@@ -75,11 +75,11 @@ namespace xtd {
         /// @exception xtd::not_supported_exception The enumerator does not support being reset.
         void reset() override {enumerator_->reset();}
         /// @}
-      
+        
       private:
         ptr<ienumerator<type_t>> enumerator_;
       };
-
+      
       /// @brief Supports a simple iteration over a generic collection.
       /// @par Definition
       /// ```cpp
@@ -116,7 +116,7 @@ namespace xtd {
           using const_iterator = typename collection_t::const_iterator;
           struct internal_enumerator : public ienumerator<value_type> {
           public:
-            explicit internal_enumerator(const collection_t& items, const vertion_t* current_version) : items_(items), version_(current_version ? *current_version : vertion_t {}), current_version_(current_version) {}
+            explicit internal_enumerator(const collection_t& items, const vertion_t* current_version) : items_(items), version_(current_version ? * current_version : vertion_t {}), current_version_(current_version) {}
             
             const value_type& current() const override {
               if (current_version_ && version_ != *current_version_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");

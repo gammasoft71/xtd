@@ -93,7 +93,7 @@ namespace xtd {
     template <xtd::size count = 0>
     constexpr span() : data_ {xtd::null}, length_ {0} {}
     
-    /// @brief 
+    /// @brief
     /// @brief Creates an xtd::span with specified iterators.
     /// @param first The iterator to the first element of the sequence.
     /// @param last The iterator to the last element of the sequence.
@@ -106,17 +106,17 @@ namespace xtd {
     template<class iterator_t>
     span(iterator_t first, xtd::size count) : data_ {&(*first)}, length_ {extent != dynamic_extent ? extent : count} {}
      */
-#if defined(__xtd__cpp_lib_type_identity)
+    #if defined(__xtd__cpp_lib_type_identity)
     /// @brief Creates an xtd::span with specified native array.
     /// @param array The native array to construct a view for.
     template<xtd::size len>
     constexpr span(std::type_identity_t<element_type> (&array)[len]) noexcept : data_ {array}, length_ {extent != dynamic_extent ? extent : len} {}
-#else
+    #else
     /// @brief Creates an xtd::span with specified native array.
     /// @param array The native array to construct a view for.
     template<xtd::size len>
-    constexpr span(element_type (&array)[len]) noexcept : data_ {const_cast<element_type*>(array)}, length_ {extent != dynamic_extent ? extent : len} {}
-#endif
+    constexpr span(element_type(&array)[len]) noexcept : data_ {const_cast<element_type*>(array)}, length_ {extent != dynamic_extent ? extent : len} {}
+    #endif
     /// @brief Creates an xtd::span with specified std::array.
     /// @param array The std::array to construct a view for.
     template<class array_type_t, xtd::size len>
@@ -125,28 +125,28 @@ namespace xtd {
     /// @param array The std::array to construct a view for.
     template<class array_type_t, xtd::size len>
     constexpr span(std::array<array_type_t, len>& array) noexcept : data_ {array.data()}, length_ {extent != dynamic_extent ? extent : len} {}
-#if defined(__xtd__cpp_lib_ranges)
+    #if defined(__xtd__cpp_lib_ranges)
     /// @brief Creates an xtd::span with specified range.
     /// @param range The range to construct a view for.
     template<class range_t>
     constexpr span(range_t&& range) noexcept : data_ {xtd::ranges::data(range)}, length_ {extent != dynamic_extent ? extent : xtd::ranges::size(range)} {}
-#else
+    #else
     /// @brief Creates an xtd::span with specified range.
     /// @param range The range to construct a view for.
     template<class range_t>
     constexpr span(range_t&& range) noexcept : data_ {range.data()}, length_ {extent != dynamic_extent ? extent : range.size()} {}
-#endif
-#if __cplusplus >= 202002l
+    #endif
+    #if __cplusplus >= 202002l
     /// @brief Creates an xtd::span with specified initializer list.
     /// @param items The initializer list to construct a view for.
     constexpr span(std::initializer_list<type_t> items) noexcept requires std::is_const_v<element_type> : data_ {items.begin()}, length_ {extent != dynamic_extent ? extent : items.size()} {}
-#else
+    #else
     /// @brief Creates an xtd::span with specified initializer list.
     /// @param items The initializer list to construct a view for.
     constexpr span(std::initializer_list<type_t> items) noexcept : data_ {const_cast<type_t*>(items.begin())}, length_ {extent != dynamic_extent ? extent : items.size()} {
       static_assert(std::is_const_v<element_type>, "type_t must be const");
     }
-#endif
+    #endif
     /* Conflict with span(range_t&& range) noexcept
     /// @brief Creates an xtd::span with specified collection.
     /// @param items The collection to construct a view for.
@@ -176,7 +176,7 @@ namespace xtd {
       if (!data) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
     }
     /// @}
-
+    
     /// @cond
     constexpr span(span&& items) = default;
     constexpr span(const span& items) = default;
@@ -247,11 +247,11 @@ namespace xtd {
     /// @brief Returns a value that indicates whether the current xtd::span <type_t> is empty.
     /// @return `true` if the current span is empty; otherwise, `false`.
     constexpr bool is_empty() const noexcept {return !length_;}
-
+    
     /// @brief Returns the length of the current span.
     /// @return The length of the current span.
     constexpr size_type length() const noexcept {return length_;}
-
+    
     /// @brief Returns a reverse iterator to the beginning.
     /// @return The reverse iterator of the first element.
     const_reverse_iterator rbegin() const {return crbegin();}
@@ -310,11 +310,11 @@ namespace xtd {
       if (!try_copy_to(destination))
         xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
     }
-
+    
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const object& obj) const noexcept override {return is<span<value_type>>(obj) && equals(static_cast<const span<value_type>&>(obj));}
+    bool equals(const object& obj) const noexcept override {return is<span<value_type>>(obj) && equals(static_cast<const span<value_type>& > (obj));}
     /// @brief Indicates whether the current object is equal to another object of the same type.
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
@@ -351,7 +351,7 @@ namespace xtd {
         result.add(item);
       return result.to_hash_code();
     }
-
+    
     /// @brief Obtains a subspan consisting of the last N elements of the sequence
     /// @param count The count elements.
     /// @return A span `r` that is a view over the last `count` elements of `*this`, such that `r.data() == this->data() + (this->size() - count) && r.size() == count`.
@@ -367,7 +367,7 @@ namespace xtd {
       if (count > length_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       return span<type_t> {data_ + length_ - count, count};
     }
-
+    
     /// @brief Forms a slice out of the current span starting at a specified index for a specified length.
     /// @param start The zero-based index at which to begin this slice.
     /// @param length The desired length for the slice.
@@ -377,7 +377,7 @@ namespace xtd {
     span<type_t> slice() const {
       return lenght == xtd::dynamic_extent ? slice(start) : slice(start, lenght);
     }
-
+    
     /// @brief Forms a slice out of the current span that begins at a specified index.
     /// @param start The zero-based index at which to begin the slice.
     /// @return A span that consists of all elements of the current span from `start` to the end of the span.
@@ -395,7 +395,7 @@ namespace xtd {
       if (start > length_ || start + length > length_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       return span<type_t> {data_ + start, length};
     }
-
+    
     /// @brief Forms a subspan of the current span starting at a specified index for a specified length.
     /// @param offset The zero-based index at which to begin this slice.
     /// @param count The desired length for the slice.
@@ -456,7 +456,7 @@ namespace xtd {
     /// @exception xtd::index_out_of_range_exception `index` is less than zero or greater than or equal to xtd::span::length.
     reference operator[](size_type index) {return at(index);}
     /// @}
-
+    
   private:
     pointer data_ = null;
     size_type length_ = size_type {};
@@ -470,7 +470,7 @@ namespace xtd {
   // {
   template<class iterator_t>
   span(iterator_t, iterator_t) -> span<typename iterator_t::value_type>;
-
+  
   template<class type_t, xtd::size len>
   span(type_t (&)[len]) noexcept -> span<type_t>;
   
@@ -479,30 +479,30 @@ namespace xtd {
   
   template< class type_t, xtd::size len>
   span(std::array<type_t, len>&) noexcept -> span<type_t>;
-
-#if defined(__xtd__cpp_lib_ranges)
+  
+  #if defined(__xtd__cpp_lib_ranges)
   template<class range_t>
   span(range_t&&) noexcept -> span<std::remove_reference_t<xtd::ranges::range_reference_t<range_t>>>;
-#else
+  #else
   template<class range_t>
   span(range_t&&) noexcept -> span<std::remove_reference_t<typename range_t::value_type>>;
-#endif
-
+  #endif
+  
   template<class type_t>
   span(std::initializer_list<type_t>) noexcept -> span<const type_t>;
-
+  
   template<class collection_t>
   span(const collection_t& items) noexcept -> span<const typename collection_t::value_type>;
   
   template<class collection_t>
   span(const collection_t&, xtd::size) -> span<const typename collection_t::value_type>;
-
+  
   template<class collection_t>
   span(collection_t&, xtd::size) -> span<typename collection_t::value_type>;
   
   template<class collection_t>
   span(const collection_t&, xtd::size, xtd::size) -> span<const typename collection_t::value_type>;
-
+  
   template<class collection_t>
   span(collection_t&, xtd::size, xtd::size) -> span<typename collection_t::value_type>;
   

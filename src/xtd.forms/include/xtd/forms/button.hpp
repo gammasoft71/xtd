@@ -63,7 +63,7 @@ namespace xtd {
       button(const button&) = default;
       button& operator =(const button&) = default;
       /// @endcond
-
+      
       /// @name Public Properties
       
       /// @{
@@ -202,7 +202,7 @@ namespace xtd {
       /// @return New xtd::forms::button created.
       static button create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
-
+      
     protected:
       /// @name Protected Properties
       
@@ -222,7 +222,7 @@ namespace xtd {
       /// @par Notes to Implementers
       /// All controls must be override the clone method.
       xtd::uptr<xtd::object> clone() const override;
-
+      
       drawing::size measure_control() const noexcept override;
       
       void on_click(const event_args& e) override;
@@ -235,7 +235,7 @@ namespace xtd {
       void on_mouse_up(const mouse_event_args& e) override;
       void on_paint(paint_event_args& e) override;
       /// @}
-
+      
     private:
       void auto_repeat_perform_click();
       void on_auto_repeat_timer_tick(object& sender, const event_args& e);

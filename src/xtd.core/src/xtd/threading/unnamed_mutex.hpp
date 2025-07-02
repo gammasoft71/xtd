@@ -6,7 +6,7 @@
 class xtd::threading::mutex::unnamed_mutex : public mutex_base {
 public:
   ~unnamed_mutex() {destroy();}
-
+  
   intptr handle() const noexcept override {
     return handle_ ? reinterpret_cast<intptr>(handle_.get()) : invalid_handle;
   }
@@ -14,7 +14,7 @@ public:
   void handle(intptr value) override {
     handle_.reset(reinterpret_cast<std::recursive_timed_mutex*>(value));
   }
-
+  
   bool create(bool initially_owned) override {
     handle_ = xtd::new_sptr<std::recursive_timed_mutex>();
     if (initially_owned) wait(0);
@@ -24,7 +24,7 @@ public:
   bool create(bool initially_owned, const string& name) override {
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   }
-
+  
   void destroy() override {
     if (!handle_) return;
     handle_.reset();
@@ -33,13 +33,13 @@ public:
   bool open(const string& name) override {
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   }
-
+  
   bool signal(bool& io_error) override {
     io_error = false;
     handle_->unlock();
     return true;
   }
-
+  
   uint32 wait(int32 milliseconds_timeout) override {
     if (milliseconds_timeout == timeout::infinite) handle_->lock();
     else if (handle_->try_lock_for(std::chrono::milliseconds {milliseconds_timeout}) == false) return 0x00000102;

@@ -14,14 +14,14 @@ namespace xtd::linq::tests {
     void test_method_(ienumerable_defined_before_foreach) {
       auto items = list {1, 2, 3, 4, 5};
       auto accumulator = 0;
-      foreach_ (auto item, items)
-        accumulator += item;
+      foreach_(auto item, items)
+      accumulator += item;
       assert::are_equal(15, accumulator);
     }
-
+    
     void test_method_(ienumerable_defined_in_foreach) {
       auto accumulator = 0;
-      foreach_ (auto item, list {1, 2, 3, 4, 5})
+      foreach_(auto item, list {1, 2, 3, 4, 5})
       accumulator += item;
       assert::are_equal(15, accumulator);
     }
@@ -29,22 +29,22 @@ namespace xtd::linq::tests {
     void test_method_(vector_defined_before_foreach) {
       auto items = std::vector {1, 2, 3, 4, 5};
       auto accumulator = 0;
-      foreach_ (auto item, items)
-        accumulator += item;
+      foreach_(auto item, items)
+      accumulator += item;
       assert::are_equal(15, accumulator);
     }
     
     void test_method_(vector_defined_in_foreach) {
       auto accumulator = 0;
-      foreach_ (auto item, std::vector {1, 2, 3, 4, 5})
-        accumulator += item;
+      foreach_(auto item, std::vector {1, 2, 3, 4, 5})
+      accumulator += item;
       assert::are_equal(15, accumulator);
     }
     
     void test_method_(with_break) {
       auto accumulator = 0;
       auto index = 0;
-      foreach_ (auto item, list {1, 2, 3, 4, 5}) {
+      foreach_(auto item, list {1, 2, 3, 4, 5}) {
         accumulator += item;
         if (++index == 2) break;
       }
@@ -54,7 +54,7 @@ namespace xtd::linq::tests {
     void test_method_(with_continue) {
       auto accumulator = 0;
       auto index = 0;
-      foreach_ (auto item, list {1, 2, 3, 4, 5}) {
+      foreach_(auto item, list {1, 2, 3, 4, 5}) {
         if (++index <= 2) continue;
         accumulator += item;
       }

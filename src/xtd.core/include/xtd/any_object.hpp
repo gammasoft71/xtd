@@ -46,13 +46,13 @@ namespace xtd {
     template<class type_t> // Can't be explicit by design.
     any_object(const type_t& value) noexcept : value_(boxing_ptr(value)) {}
     /// @}
-
+    
     /// @cond
     any_object(any_object&&) noexcept = default;
     any_object(any_object&) noexcept = default;
     any_object(const any_object&) noexcept = default;
     /// @endcond
-
+    
     /// @name Public Properties
     
     /// @{
@@ -100,11 +100,11 @@ namespace xtd {
       if (has_value() != other.has_value()) return false;
       return value_->equals(*other.value_);
     }
-
+    
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
     xtd::size get_hash_code() const noexcept override {return has_value() ? value_->get_hash_code() : 0;}
-
+    
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
     string to_string() const noexcept override {return has_value() ? value_->to_string() : "(null)";}
@@ -181,7 +181,7 @@ namespace xtd {
     
     ptr<object> value_;
   };
-
+  
   /// @cond
   template<class type_t, class bool_t>
   struct __is_enum_any_object__ {};
@@ -212,25 +212,25 @@ namespace xtd {
   template<class type_t>
   bool is(any_object& o) {
     if (is<box<type_t>>(o.value())) return true;
-    return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
+    return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type > {}(o);
   }
   
   template<class type_t>
   bool is(const any_object& o) {
     if (is<box<type_t>>(o.value())) return true;
-    return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
+    return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type > {}(o);
   }
   
   template<class type_t>
   bool is(any_object* o) {
     if (is<box<type_t>>(o->value())) return true;
-    return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(*o);
+    return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type > {}(*o);
   }
   
   template<class type_t>
   bool is(const any_object* o) {
     if (is<box<type_t>>(o->value())) return true;
-    return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(*o);
+    return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type > {}(*o);
   }
   /// @endcond
 }

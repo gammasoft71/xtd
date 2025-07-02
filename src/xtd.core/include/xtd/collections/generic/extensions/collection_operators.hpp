@@ -41,7 +41,7 @@ namespace xtd {
             self.add(item);
             return self;
           }
-
+          
           /// @brief The shift right operator removes tthe first occurrence of a specific object from the xtd::collections::generic::icollection <type_t>.
           /// @param item The object to remove from the xtd::collections::generic::icollection <type_t>.
           /// @exception xtd::not_supported_exception The xtd::collections::generic::icollection <type_t> is read-only.
@@ -53,7 +53,7 @@ namespace xtd {
             return self;
           }
           /// @}
-        
+          
         private:
           friend collection_t;
           collection_operators() = default;

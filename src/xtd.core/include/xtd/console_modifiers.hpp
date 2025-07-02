@@ -11,7 +11,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/console_modifiers>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

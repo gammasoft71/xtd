@@ -54,7 +54,7 @@ namespace xtd::tests {
     void test_method_(current_thread_id) {
       assert::are_equal(threading::thread::current_thread().thread_id(), environment::current_thread_id());
     }
-
+    
     void test_method_(exit_code) {
       assert::is_zero(environment::exit_code());
       environment::exit_code(42);

@@ -37,7 +37,7 @@ namespace xtd {
         /// @param r byte The blue component value of this xtd::drawing::helpers::argb.
         xtd::byte b = 0;
         /// @}
-
+        
         /// @name Public Static Methods
         
         /// @{

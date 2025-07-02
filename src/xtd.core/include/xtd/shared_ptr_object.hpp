@@ -27,7 +27,7 @@ namespace xtd {
   /// delete_shared_ptr_object(version); // Not mandatory.
   /// @endcode
   template<class type_t>
-  class shared_ptr_object : public xtd::object, public xtd::icomparable<shared_ptr_object<type_t>>, public xtd::iequatable<shared_ptr_object<type_t>> {
+  class shared_ptr_object : public xtd::object, public xtd::icomparable<shared_ptr_object<type_t>>, public xtd::iequatable<shared_ptr_object<type_t >> {
   public:
     /// @name Public Aliases
     
@@ -118,7 +118,7 @@ namespace xtd {
     /// @param other The std::weak_ptr to be compared.
     /// @return `true` if thid current instance precedes `other`; otherwise `false`.
     template<class value_t>
-    bool owner_before( const std::weak_ptr<value_t>& other) const noexcept {return ptr_.owner_before(other);}
+    bool owner_before(const std::weak_ptr<value_t>& other) const noexcept {return ptr_.owner_before(other);}
     
     /// @brief Returns the underlying base type pointer.
     /// @return The underlying base type pointer.
@@ -257,7 +257,7 @@ namespace xtd {
     
     /// @brief Gets the stored object.
     /// @return The stored object.
-    type_t& operator *() const noexcept {return ptr_.operator *();}
+    type_t& operator *() const noexcept {return ptr_.operator * ();}
     
     /// @brief Gets the stored pointer.
     /// @return The stored pointer.

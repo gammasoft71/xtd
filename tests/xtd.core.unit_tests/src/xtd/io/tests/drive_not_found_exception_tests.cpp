@@ -101,7 +101,7 @@ namespace xtd::io::tests {
       assert::are_equal("xtd::io::drive_not_found_exception : Could not find the drive. The drive might not be ready or might not be mapped." + environment::new_line() + stack_frame.to_string(), e.to_string());
       assert::are_equal("Could not find the drive. The drive might not be ready or might not be mapped.", e.what());
     }
-
+    
     void test_method_(constructor_with_empty_message) {
       auto e = drive_not_found_exception {""};
       assert::are_equal("xtd::io::drive_not_found_exception", e.get_type().full_name());
@@ -216,7 +216,7 @@ namespace xtd::io::tests {
       assert::are_equal("xtd::io::drive_not_found_exception : Could not find the drive. The drive might not be ready or might not be mapped." + environment::new_line() + stack_frame.to_string(), e.to_string());
       assert::are_equal("Could not find the drive. The drive might not be ready or might not be mapped.", e.what());
     }
-
+    
     void test_method_(constructor_with_message_and_inner_exception) {
       auto inner_exception = argument_exception {};
       auto e = drive_not_found_exception {"Test excpetion message.", inner_exception};

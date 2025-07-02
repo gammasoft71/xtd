@@ -425,7 +425,7 @@ namespace xtd {
       template<class expected_t, class actual_t>
       static void contains(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         for (const auto& item : expected) {
-          if (std::find_if(std::begin(actual), std::end(actual), [&](const auto& value) {return value == item;}) == std::end(actual)) {
+          if (std::find_if(std::begin(actual), std::end(actual), [&](const auto & value) {return value == item;}) == std::end(actual)) {
             fail("contains " + join_items(expected), join_items(actual), message, stack_frame);
             return;
           }
@@ -499,7 +499,7 @@ namespace xtd {
       template<class expected_t, class actual_t>
       static void does_not_contain(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         for (const auto& item : expected) {
-          if (std::find_if(std::begin(actual), std::end(actual), [&](const auto& value) {return value == item;}) == std::end(actual)) {
+          if (std::find_if(std::begin(actual), std::end(actual), [&](const auto & value) {return value == item;}) == std::end(actual)) {
             succeed(message, stack_frame);
             return;
           }
@@ -673,14 +673,14 @@ namespace xtd {
     private:
       template <class expected_iterator_t, class actual_iterator_t>
       static bool equals(expected_iterator_t expected_begin, expected_iterator_t expected_end, actual_iterator_t actual_begin, actual_iterator_t actual_end) {
-        return std::equal(expected_begin, expected_end, actual_begin, actual_end, [&](const auto& expected, const auto& actual) {return base_assert::equals(expected, actual);});
+        return std::equal(expected_begin, expected_end, actual_begin, actual_end, [&](const auto & expected, const auto & actual) {return base_assert::equals(expected, actual);});
       }
-
+      
       template <class expected_iterator_t, class actual_iterator_t>
       static bool equivalents(expected_iterator_t expected_begin, expected_iterator_t expected_end, actual_iterator_t actual_begin, actual_iterator_t actual_end) {
         if (std::distance(expected_begin, expected_end) != std::distance(actual_begin, actual_end)) return false;
         for (auto iterator = expected_begin; iterator != expected_end; ++iterator)
-          if (std::find_if(actual_begin, actual_end, [&](const auto& value) {return base_assert::equals(value, *iterator);}) == actual_end) return false;
+          if (std::find_if(actual_begin, actual_end, [&](const auto & value) {return base_assert::equals(value, *iterator);}) == actual_end) return false;
         return true;
       }
     };

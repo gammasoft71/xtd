@@ -53,7 +53,7 @@ namespace xtd {
     
     /// @{
     /// @}
-
+    
     /// @name Public Static Methods
     
     /// @{
@@ -68,7 +68,7 @@ namespace xtd {
     /// @include array_as_read_only.cpp
     template<class type_t, class allocator_t>
     static xtd::collections::object_model::read_only_collection<type_t> as_read_only(const xtd::array<type_t, 1, allocator_t>& array); // defined in array_.hpp file
-
+    
     /// @brief Searches a range of elements in a one-dimensional sorted array for a value, using the xtd::icomparable interface implemented by each element of the array and by the specified value.
     /// @param array The sorted one-dimensional array to search.
     /// @param index The starting index of the range to search.
@@ -171,7 +171,7 @@ namespace xtd {
     static void clear(const array<type_t, rank, allocator_t>& array) {
       clear(array, 0, array.data_->items.size());
     }
-
+    
     /// @brief Sets a range of elements in an array to the default value of each element type.
     /// @param array The array whose elements need to be cleared.
     /// @param index The starting index of the range of elements to clear.

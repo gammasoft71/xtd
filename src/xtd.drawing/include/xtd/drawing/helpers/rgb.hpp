@@ -83,7 +83,7 @@ namespace xtd {
           return {get_hue(), get_saturation(), get_lightness()};
         }
         /// @}
-
+        
         /// @name Public Static Methods
         
         /// @{
@@ -106,7 +106,7 @@ namespace xtd {
             .b = alpha_blend(fore_componant.b, back_componant.b, alpha),
           };
         }
-
+        
         /// @brief Returns the weighted average color component between the two given color components.
         /// @param fore_core The foreground color component.
         /// @param back_color The background color component.

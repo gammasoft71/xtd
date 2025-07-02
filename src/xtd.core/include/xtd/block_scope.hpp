@@ -9,7 +9,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/block_scope>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

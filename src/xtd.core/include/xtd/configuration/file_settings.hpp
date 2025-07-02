@@ -36,7 +36,7 @@ namespace xtd {
       /// @{
       /// @brief Represents a xtd::collections::generic::sorted_dictionary with the key and the value strongly typed to be strings.
       using string_dictionary = std::map<xtd::string, xtd::string>;
-
+      
       /// @brief Represents a collection of strings.
       using string_collection = xtd::collections::specialized::string_collection;
       /// @}
@@ -107,8 +107,8 @@ namespace xtd {
       /// file_open = resources/symbolic_open.png
       /// file_save = resources/symbolic_save.png
       /// ```
-     void auto_save(bool value) noexcept;
-
+      void auto_save(bool value) noexcept;
+      
       /// @brief Gets bottom file comment text.
       /// @return Bottom file comment text.
       /// @par Examples
@@ -150,13 +150,13 @@ namespace xtd {
       /// # Modifications must be made with care, as they may result in incorrect behavior.
       /// ```
       file_settings& bottom_file_comment(const xtd::string& value) noexcept;
-
+      
       /// @brief Gets the file path of the current instance.
       /// @return The file path of the current instance.
       /// @remarks If no file the property can be return xtd::string::empty_string.
       /// @warning Don't manipulate the file yourself, otherwise the expected result may be undefined.
       const xtd::string& file_path() const noexcept;
-
+      
       /// @brief Gets all key-value pairs from global section.
       /// @return The key-value pairs map.
       /// @remarks This method is equivalent to call xtd::configuration::file_settings::key_values (const xtd::string& section) with xtd::string::empty_string paramreter.
@@ -176,7 +176,7 @@ namespace xtd {
       /// @return The keys collection from the specified section.
       /// @remarks Use xtd::string::empty_string paramreter to get keys of the global section.
       string_collection keys(const xtd::string& section) const noexcept;
-
+      
       /// @brief Gets all sections.
       /// @return The sections colection.
       string_collection sections() const noexcept;
@@ -185,7 +185,7 @@ namespace xtd {
       /// @return The stream of the current instance.
       /// @warning Don't manipulate the stream yourself, otherwise the expected result may be undefined.
       std::optional<xtd::ref<std::iostream>> stream() const noexcept;
-
+      
       /// @brief Gets top file comment text.
       /// @return Top file comment textr.
       /// @remarks Generally used to read descriptions of the xtd::configuration::file_settings : authors, copyright, version, etc.
@@ -250,7 +250,7 @@ namespace xtd {
       /// @par Notes to inheritors
       /// To create your own file_settings with another format, you just need to override the xtd::configuration::file_settings::from_string and xtd::configuration::file_settings::to_string methods.
       virtual void from_string(const xtd::string& text);
-
+      
       /// @brief Loads settings from specified file.
       /// @param file_path The file path to load settings.
       /// @par Examples
@@ -272,7 +272,7 @@ namespace xtd {
       /// @brief Loads settings from specified stream.
       /// @param stream The stream to load settings.
       void load(std::istream& stream);
-
+      
       /// @brief Reads a value for specified key in the global section. If not found default value is used.
       /// @param key The key used to read a value.
       /// @param default_value A string used if value not found.
@@ -307,7 +307,7 @@ namespace xtd {
       type_t read(const xtd::string& section, const xtd::string& key, const type_t& default_value) {
         return xtd::parse<type_t>(read_string(section, key, xtd::string::format("{}", default_value)));
       }
-
+      
       /// @brief Removes the specified key from the global section.
       /// @param key The key to remove from the global section.
       /// @remarks To write permanently use the xtd::configuration::file_settings::save method.
@@ -472,7 +472,7 @@ namespace xtd {
       /// @param stream The stream to save the current settings.
       /// @remarks The settings are saved in the specified settings stream.
       void save_as(std::ostream& stream);
-
+      
       /// @brief Returns a xtd::string that represents the current setting in [INI format](https://en.wikipedia.org/wiki/INI_file).
       /// @return A string that represents the current setting.
       /// @par Notes to inheritors
@@ -592,7 +592,7 @@ namespace xtd {
       /// Use this operator to read value from section like xtd::configuration::file_settings::read method.
       /// ```cpp
       /// auto fs = file_settings {"my_file.ini"};
-      /// auto v1 = fs["section1"]["key1"]; 
+      /// auto v1 = fs["section1"]["key1"];
       /// // Is equivalent to call :
       /// // auto v1 = fs.read("section1", "key1", string::empty_string);
       /// ```
@@ -614,11 +614,11 @@ namespace xtd {
     protected:
       virtual xtd::string convert_comment_to_text(const xtd::string& text) const noexcept;
       virtual xtd::string convert_text_to_comment(const xtd::string& text) const noexcept;
-
+      
     private:
       xtd::string read_string(const xtd::string& section, const xtd::string& key, const xtd::string& default_value) noexcept;
       void write_string(const xtd::string& section, const xtd::string& key, const xtd::string& value) noexcept;
-
+      
       bool auto_save_ = false;
       std::map<xtd::string, string_dictionary> after_key_value_comment_;
       std::map<xtd::string, xtd::string> after_section_comment_;

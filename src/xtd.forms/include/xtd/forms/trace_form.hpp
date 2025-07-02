@@ -77,7 +77,7 @@ namespace xtd {
       
       void flush() override;
       /// @}
-
+      
     protected:
       /// @name Protected Methods
       

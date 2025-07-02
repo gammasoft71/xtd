@@ -94,7 +94,7 @@ namespace xtd {
       /// @return Current seven_segment_display.
       virtual seven_segment_display& value(forms::segments value);
       /// @}
-
+      
       /// @name Public Methods
       
       /// @{
@@ -106,7 +106,7 @@ namespace xtd {
       /// @param on `true` to set to on; otherwise `false`.
       virtual void set_segments(forms::segments segment, bool value);
       /// @}
-
+      
       /// @name Public Static Methods
       
       /// @{
@@ -320,7 +320,7 @@ namespace xtd {
       /// @param graphics A xtd::drawing::graphics from on_paint method.
       /// @param color A xtd::drawing::color used to draw segment.
       virtual void draw_pc(drawing::graphics& graphics, const drawing::color& color);
-
+      
       void on_back_color_changed(const event_args& e) override;
       
       void on_enabled_changed(const event_args& e) override;

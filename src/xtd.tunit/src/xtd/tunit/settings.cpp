@@ -74,11 +74,11 @@ bool settings::is_match_test_name(const string& test_class_name, const string& t
   for (const auto& filter_test : filter_tests())
     if (!filter_test.starts_with('-'))
       result |= pattern_compare(test_class_name + "." + test_name, filter_test);
-  
+      
   for (const auto& filter_test : filter_tests())
     if (filter_test.starts_with('-'))
       result &= !pattern_compare(test_class_name + "." + test_name, filter_test.substring(1));
-
+      
   return result;
 }
 

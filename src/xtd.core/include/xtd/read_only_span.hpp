@@ -87,12 +87,12 @@ namespace xtd {
     template <xtd::size count = 0>
     constexpr read_only_span() : data_ {xtd::null}, length_ {0} {}
     
-    /// @brief 
+    /// @brief
     /// @brief Creates an xtd::read_only_span with specified iterators.
     /// @param first The iterator to the first element of the sequence.
     /// @param last The iterator to the last element of the sequence.
     template<class iterator_t>
-    constexpr read_only_span(iterator_t first, iterator_t last) : data_ {&(*first)}, length_ {extent != dynamic_extent ? extent : static_cast<size_type>(std::distance(first, last))} {}
+    constexpr read_only_span(iterator_t first, iterator_t last) : data_ { & (*first)}, length_ {extent != dynamic_extent ? extent : static_cast<size_type>(std::distance(first, last))} {}
     /* Conflict with read_only_span(collection_t& items, xtd::size count)
     /// @brief Creates an xtd::read_only_span with specified iterator and count.
     /// @param first The iterator to the first element of the sequence.
@@ -100,32 +100,32 @@ namespace xtd {
     template<class iterator_t>
     read_only_span(iterator_t first, xtd::size count) : data_ {&(*first)}, length_ {extent != dynamic_extent ? extent : count} {}
      */
-#if defined(__xtd__cpp_lib_type_identity)
+    #if defined(__xtd__cpp_lib_type_identity)
     /// @brief Creates an xtd::read_only_span with specified native array.
     /// @param array The native array to construct a view for.
     template<xtd::size len>
     constexpr read_only_span(const std::type_identity_t<element_type> (&array)[len]) noexcept : data_ {array}, length_ {extent != dynamic_extent ? extent : len} {}
-#else
+    #else
     /// @brief Creates an xtd::read_only_span with specified native array.
     /// @param array The native array to construct a view for.
     template<xtd::size len>
-    constexpr read_only_span(const element_type (&array)[len]) noexcept : data_ {array}, length_ {extent != dynamic_extent ? extent : len} {}
-#endif
+    constexpr read_only_span(const element_type(&array)[len]) noexcept : data_ {array}, length_ {extent != dynamic_extent ? extent : len} {}
+    #endif
     /// @brief Creates an xtd::read_only_span with specified std::array.
     /// @param array The std::array to construct a view for.
     template<class array_type_t, xtd::size len>
     constexpr read_only_span(const std::array<array_type_t, len>& array) noexcept : data_ {array.data()}, length_ {extent != dynamic_extent ? extent : len} {}
-#if defined(__xtd__cpp_lib_ranges)
+    #if defined(__xtd__cpp_lib_ranges)
     /// @brief Creates an xtd::read_only_span with specified range.
     /// @param range The range to construct a view for.
     template<class range_t>
     constexpr read_only_span(range_t&& range) noexcept : data_ {xtd::ranges::data(range)}, length_ {extent != dynamic_extent ? extent : xtd::ranges::size(range)} {}
-#else
+    #else
     /// @brief Creates an xtd::read_only_span with specified range.
     /// @param range The range to construct a view for.
     template<class range_t>
     constexpr read_only_span(range_t&& range) noexcept : data_ {range.data()}, length_ {extent != dynamic_extent ? extent : range.size()} {}
-#endif
+    #endif
     /// @brief Creates an xtd::read_only_span with specified initializer list.
     /// @param items The initializer list to construct a view for.
     constexpr read_only_span(std::initializer_list<type_t> items) noexcept : data_ {items.begin()}, length_ {extent != dynamic_extent ? extent : items.size()} {}
@@ -158,7 +158,7 @@ namespace xtd {
       if (!data) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
     }
     /// @}
-
+    
     /// @cond
     constexpr read_only_span(read_only_span&& items) = default;
     constexpr read_only_span(const read_only_span& items) = default;
@@ -223,11 +223,11 @@ namespace xtd {
     /// @brief Returns a value that indicates whether the current xtd::read_only_span <type_t> is empty.
     /// @return `true` if the current read_only_span is empty; otherwise, `false`.
     constexpr bool is_empty() const noexcept {return !length_;}
-
+    
     /// @brief Returns the length of the current read_only_span.
     /// @return The length of the current read_only_span.
     constexpr size_type length() const noexcept {return length_;}
-
+    
     /// @brief Returns a reverse iterator to the beginning.
     /// @return The reverse iterator of the first element.
     const_reverse_iterator rbegin() const {return crbegin();}
@@ -265,11 +265,11 @@ namespace xtd {
       if (!try_copy_to(destination))
         xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
     }
-
+    
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const object& obj) const noexcept override {return is<read_only_span<value_type>>(obj) && equals(static_cast<const read_only_span<value_type>&>(obj));}
+    bool equals(const object& obj) const noexcept override {return is<read_only_span<value_type>>(obj) && equals(static_cast<const read_only_span<value_type>& > (obj));}
     /// @brief Indicates whether the current object is equal to another object of the same type.
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
@@ -315,7 +315,7 @@ namespace xtd {
       if (count > length_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       return read_only_span<type_t> {data_ + length_ - count, count};
     }
-
+    
     /// @brief Forms a slice out of the current read_only_span starting at a specified index for a specified length.
     /// @param start The zero-based index at which to begin this slice.
     /// @param length The desired length for the slice.
@@ -325,7 +325,7 @@ namespace xtd {
     read_only_span<type_t> slice() const {
       return lenght == xtd::dynamic_extent ? slice(start) : slice(start, lenght);
     }
-
+    
     /// @brief Forms a slice out of the current read_only_span that begins at a specified index.
     /// @param start The zero-based index at which to begin the slice.
     /// @return A read_only_span that consists of all elements of the current read_only_span from `start` to the end of the read_only_span.
@@ -343,7 +343,7 @@ namespace xtd {
       if (start > length_ || start + length > length_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       return read_only_span<type_t> {data_ + start, length};
     }
-
+    
     /// @brief Forms a subspan of the current read_only_span starting at a specified index for a specified length.
     /// @param offset The zero-based index at which to begin this slice.
     /// @param count The desired length for the slice.
@@ -366,7 +366,7 @@ namespace xtd {
     /// @brief Copies the contents of this read_only_span into a new array.
     /// @return An array containing the data in the current read_only_span.
     xtd::array<std::remove_cv_t<type_t>> to_array() const noexcept {
-      return data_ && length_ ? xtd::array<std::remove_cv_t<type_t>>(data_, length_) : xtd::array<std::remove_cv_t<type_t>> {};
+      return data_ && length_ ? xtd::array<std::remove_cv_t<type_t>>(data_, length_) : xtd::array<std::remove_cv_t<type_t >> {};
     }
     
     /// @brief Returns the string representation of this xtd::read_only_span <type_t> object.
@@ -399,7 +399,7 @@ namespace xtd {
     /// @exception xtd::index_out_of_range_exception `index` is less than zero or greater than or equal to xtd::read_only_span::length.
     const_reference operator[](size_type index) const {return at(index);}
     /// @}
-
+    
   private:
     pointer data_ = null;
     size_type length_ = size_type {};
@@ -416,18 +416,18 @@ namespace xtd {
   
   template<class type_t, xtd::size len>
   read_only_span(const type_t (&array)[len]) -> read_only_span<type_t>;
-
+  
   template< class type_t, xtd::size len>
   read_only_span(const std::array<type_t, len>& array) -> read_only_span<type_t>;
-
-#if defined(__xtd__cpp_lib_ranges)
+  
+  #if defined(__xtd__cpp_lib_ranges)
   template<class range_t>
   read_only_span(range_t&& items) -> read_only_span<typename std::remove_reference_t<xtd::ranges::range_reference_t<range_t>>>;
-#else
+  #else
   template<class range_t>
   read_only_span(range_t&& items) -> read_only_span<typename range_t::value_type>;
-#endif
-
+  #endif
+  
   template<class collection_t>
   read_only_span(const collection_t& items) -> read_only_span<typename collection_t::value_type>;
   
@@ -436,7 +436,7 @@ namespace xtd {
   
   template<class collection_t>
   read_only_span(const collection_t& items, xtd::size, xtd::size) -> read_only_span<typename collection_t::value_type>;
-
+  
   template<class type_t>
   read_only_span(const type_t* data, xtd::size size) -> read_only_span<type_t>;
   // }

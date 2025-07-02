@@ -40,7 +40,7 @@ namespace xtd {
       animation(const animation&) = default;
       animation& operator =(const animation&) = default;
       /// @endcond
-
+      
       /// @name Public Properties
       
       /// @{
@@ -89,7 +89,7 @@ namespace xtd {
       /// @brief Stops animation of the animation control.
       void stop();
       /// @}
-
+      
       /// @name Public Static Methods
       
       /// @{

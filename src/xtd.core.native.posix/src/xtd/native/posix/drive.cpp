@@ -89,7 +89,7 @@ bool drive::get_volume_information(const std::string& root_path_name, std::strin
   struct statvfs stat;
   if (statvfs(root_path_name.c_str(), &stat) != 0)
     return false;
-  
+    
   volume_name = root_path_name;
   file_system_name = stat.f_fstypename;
   return true;

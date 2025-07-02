@@ -60,7 +60,7 @@ namespace xtd {
           
           const list_type_t& operator [](xtd::size index) const override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
           list_type_t& operator [](xtd::size index) override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
-
+          
         private:
           bool is_fixed_size() const noexcept override {return false;}
           bool is_synchronized() const noexcept override {return false;}
@@ -77,7 +77,7 @@ namespace xtd {
         /// @brief Represents the list value type.
         using value_type = type_t;
         /// @brief Represents the list base type.
-        using base_type = const xtd::collections::generic::ilist<value_type>&;
+        using base_type = const xtd::collections::generic::ilist<value_type>& ;
         /// @brief Represents the list size type (usually xtd::size).
         using size_type = xtd::size;
         /// @brief Represents the list difference type (usually xtd::ptrdiff).
@@ -102,7 +102,7 @@ namespace xtd {
         /// @brief This is a special value equal to the maximum value representable by the type xtd::size.
         inline static constexpr xtd::size npos = std::numeric_limits<xtd::size>::max();
         /// @}
-
+        
         /// @name Public Constructors
         
         /// @{
@@ -215,7 +215,7 @@ namespace xtd {
         /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::object_model::read_only_collection::count.
         xtd::size index_of(const type_t& item) const noexcept override {return items_.index_of(item);}
         /// @}
-
+        
         /// @name Public Operators
         
         /// @{
@@ -239,7 +239,7 @@ namespace xtd {
         /// @exception xtd::not_supported_exception is always thrown.
         reference operator [](size_type index) override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_supported, "Collection is read-only.");}
         /// @}
-
+        
       protected:
         /// @name Protected Properties
         
@@ -256,7 +256,7 @@ namespace xtd {
         /// @remarks Retrieving the value of this property is an O(1) operation.
         base_type items() noexcept {return items_;}
         /// @}
-
+        
       private:
         bool is_fixed_size() const noexcept override {return false;}
         bool is_read_only() const noexcept override {return false;}

@@ -15,7 +15,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/wchar_object>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

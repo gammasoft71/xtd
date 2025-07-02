@@ -160,7 +160,7 @@ namespace xtd {
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
-
+      
       /// @brief Maps the xtd::net::ip_address object to an IPv4 address.
       /// @return An IPv4 address.
       /// @remarks Dual-stack sockets always require IPv6 addresses. The ability to interact with an IPv4 address requires the use of the IPv4-mapped IPv6 address format. Any IPv4 addresses must be represented in the IPv4-mapped IPv6 address format which enables an IPv6 only application to communicate with an IPv4 node. The IPv4-mapped IPv6 address format allows the IPv4 address of an IPv4 node to be represented as an IPv6 address. The IPv4 address is encoded into the low-order 32 bits of the IPv6 address, and the high-order 96 bits hold the fixed prefix 0:0:0:0:0:FFFF. The IPv4-mapped IPv6 address format is specified in RFC 4291. For more information, see www.ietf.org/rfc/rfc4291.txt.
@@ -175,7 +175,7 @@ namespace xtd {
       /// @return A string that contains the IP address in either IPv4 dotted-quad or in IPv6 colon-hexadecimal notation.
       xtd::string to_string() const noexcept override;
       /// @}
-
+      
       /// @name Public Static Methods
       
       /// @{
@@ -310,7 +310,7 @@ namespace xtd {
       /// @return bool `true` if str is a valid IP address; otherwise, `false`.
       static bool try_parse(const xtd::string& str, ip_address& address) noexcept;
       /// @}
-
+      
     private:
       friend xtd::net::sockets::socket;
       static constexpr xtd::size number_of_numbers_ = 8;

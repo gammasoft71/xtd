@@ -35,7 +35,7 @@ namespace xtd {
   /// console::write_line("version = {}", ver_ref.to_string());
   /// @endcode
   template<class type_t>
-  class reference_wrapper_object : public xtd::object, public xtd::icomparable<reference_wrapper_object<type_t>>, public xtd::iequatable<reference_wrapper_object<type_t>> {
+  class reference_wrapper_object : public xtd::object, public xtd::icomparable<reference_wrapper_object<type_t>>, public xtd::iequatable<reference_wrapper_object<type_t >> {
   public:
     /// @name Public Aliases
     
@@ -47,14 +47,14 @@ namespace xtd {
     /// @brief Represent the referenced type.
     using reference_type = typename base_type::type;
     /// @}
-
+    
     /// @name Public Static Fields
     
     /// @{
     /// @brief Represents the empty xtd::reference_wrapper_object. This field is constant.
     static const reference_wrapper_object empty;
     /// @}
-
+    
     /// @name Public Constructors
     
     /// @{
@@ -110,7 +110,7 @@ namespace xtd {
     template<class value_t>
     reference_wrapper_object(std::reference_wrapper<value_t>&& value) noexcept : ref_ {std::move(value)} {}
     /// @}
-
+    
     /// @name Public Properties
     
     /// @{
@@ -140,7 +140,7 @@ namespace xtd {
       return ref_.value();
     }
     /// @}
-
+    
     /// @name Public Methods
     
     /// @{
@@ -160,7 +160,7 @@ namespace xtd {
       if (!ref_.has_value() && obj.ref_.has_value()) return -1;
       return &ref_.value().get() < &obj.ref_.value().get() ? -1 : &ref_.value().get() > &obj.ref_.value().get() ? 1 : 0;
     }
-
+    
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
@@ -174,7 +174,7 @@ namespace xtd {
       if (!ref_.has_value() && value.ref_.has_value()) return false;
       return &ref_.value().get() == &value.ref_.value().get();
     }
-
+    
     /// @brief Gets the stored reference.
     /// @return The stored reference.
     /// @exception xtd::null_pointer_exception If xtd::reference_wrapper_object is empty.
@@ -191,11 +191,11 @@ namespace xtd {
       if (!ref_.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       return ref_.value();
     }
-
+    
     /// @brief Serves as a hash function for a particular type.
     /// @return size_t A hash code for the current object.
     xtd::size get_hash_code() const noexcept override {return (ref_.has_value() ? xtd::hash_code::combine(&reference()) : 0);}
-
+    
     /// @brief Resets the current object. Set the current object to null.
     /// @remarks xtd::reference_wrapper_object::usecount property is decremented. If alias count equal 0 the object T is deleted.
     void reset() noexcept {ref_.reset();}
@@ -207,12 +207,12 @@ namespace xtd {
     /// @brief Resets the current object. Set the current object with specified null value.
     /// @param null The null value.
     void reset(xtd::null_ptr null) noexcept {ref_.reset();}
-
-
+    
+    
     /// @brief Swaps this current instance with specified reference object.
     /// @param value The reference object to swap with this current instance.
     void swap(reference_wrapper_object& value) noexcept {std::swap(ref_, value.ref_);}
-
+    
     /// @brief Gets the stored object.
     /// @return The stored object.
     /// @exception xtd::null_pointer_exception If xtd::reference_wrapper_object is empty.
@@ -236,18 +236,18 @@ namespace xtd {
     /// @brief Gets the stored reference.
     /// @return The stored reference.
     type& to_reference() const {return get();}
-
+    
     /// @brief Gets the stored reference with specified `target_t` type.
     /// @return The stored reference.
     /// @exception xtd::cast_exception If the current object can't be casted in target_t.
     template<typename target_t>
     target_t to_reference() const;
-
+    
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
     xtd::string to_string() const noexcept override;
     /// @}
-
+    
     /// @name Public Operators
     
     /// @{
@@ -323,7 +323,7 @@ namespace xtd {
       ref_ = value;
       return *this;
     }
-
+    
     /// @brief Gets the stored object.
     /// @return The stored object.
     /// @exception xtd::null_pointer_exception If xtd::reference_wrapper_object is empty.
@@ -336,12 +336,12 @@ namespace xtd {
     ///   else println("value = {}", value.get());
     /// }
     /// @endcode
-    operator type&() const {return get();}
-
+    operator type& () const {return get();}
+    
     /// @brief Checks if the stored reference is not empty.
     /// @return `true`if stored reference is not empty; otherwise `false`.
     explicit operator bool() const noexcept {return ref_.has_value();}
-
+    
     /// @brief Equal to operator with specidied lhs ans rhs values.
     /// @param lhs The left hand side value to compare.
     /// @param rhs The right hand side value to compare.
@@ -368,13 +368,13 @@ namespace xtd {
       return std::strong_ordering::less;
     }
     /// @}
-
+    
   private:
     template<class other_t>
     friend class reference_wrapper_object;
     std::optional<base_type> ref_;
   };
-
+  
   template<class type_t>
   inline const reference_wrapper_object<type_t>  reference_wrapper_object<type_t>::empty;
   /// @}

@@ -4,7 +4,7 @@ using namespace xtd;
 using namespace xtd::threading;
 
 struct cancellation_token_registration::data {
-  
+
 };
 
 

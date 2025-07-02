@@ -49,7 +49,7 @@ namespace {
     GetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), &mode);
     return SetConsoleMode(GetStdHandle(STD_INPUT_HANDLE), mode & ~ENABLE_ECHO_INPUT) == TRUE;
   }();
-
+  
   bool treat_control_c_as_input =  false;
   auto background_color = CONSOLE_COLOR_DEFAULT;
   auto foreground_color = CONSOLE_COLOR_DEFAULT;
@@ -75,7 +75,7 @@ namespace {
   public:
     void force_compiler_optimizer_to_create_object() {
     }
-        
+    
     void reset_terminal_mode() {
       auto csbi = CONSOLE_SCREEN_BUFFER_INFO {};
       GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
@@ -84,7 +84,7 @@ namespace {
       csbi.wAttributes |= ((int32_t)background_color_ << 4) | (int32_t)foreground_color_;
       SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), csbi.wAttributes);
     }
-
+    
     static terminal terminal_;
     
   private:
@@ -372,7 +372,7 @@ bool console::window_left(int32_t left) {
   GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
   csbi.srWindow.Left = static_cast<int16_t>(left);
   csbi.srWindow.Right += static_cast<int16_t>(left);
-
+  
   return SetConsoleWindowInfo(GetStdHandle(STD_OUTPUT_HANDLE), TRUE, &csbi.srWindow) == TRUE;
 }
 

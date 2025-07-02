@@ -410,7 +410,7 @@ namespace xtd {
         /// @return A new icon handle.
         /// @warning Internal use only
         static intptr get_hicon(intptr image);
-                
+        
         /// @brief Gets the horizontal resolution, in pixels per inch, of the image.
         /// @param image The image handle.
         /// @return The horizontal resolution, in pixels per inch, of the image.
@@ -472,7 +472,7 @@ namespace xtd {
         /// @return The image format that represents the file format of this image (see image_formats.h for more information).
         /// @warning Internal use only
         static size_t raw_format(intptr image);
-
+        
         /// @brief Sets the resolution for this bitmap.
         /// @param image The image handle.
         /// @param x_dpi The horizontal resolution, in dots per inch, of the xtd::drawing::bitmap.
@@ -508,7 +508,7 @@ namespace xtd {
         /// @param height The height, in pixels, of the image.
         /// @warning Internal use only
         static void size(intptr image, int32& width, int32& height);
-
+        
         /// @brief Unlocks this Bitmap from system memory.
         /// @param image The image handle.
         /// @param image_data_height The pixel height of the bitmap object. Also sometimes referred to as the number of scan lines.

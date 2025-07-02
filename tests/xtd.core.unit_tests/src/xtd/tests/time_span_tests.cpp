@@ -142,8 +142,8 @@ namespace xtd::tests {
     }
     
     void test_method_(operator_divide_by_zero_exception) {
-      assert::throws<divided_by_zero_exception>([]{time_span {42} / time_span {0};});
-      assert::throws<divided_by_zero_exception>([]{time_span {42} / .0;});
+      assert::throws<divided_by_zero_exception>([] {time_span {42} / time_span {0};});
+      assert::throws<divided_by_zero_exception>([] {time_span {42} / .0;});
     }
     
     void test_method_(operator_minus) {
@@ -355,8 +355,8 @@ namespace xtd::tests {
     }
     
     void test_method_(divide_by_zero_exception) {
-      assert::throws<divided_by_zero_exception>([]{time_span {42}.divide(time_span {0});});
-      assert::throws<divided_by_zero_exception>([]{time_span {42}.divide(.0);});
+      assert::throws<divided_by_zero_exception>([] {time_span {42}.divide(time_span {0});});
+      assert::throws<divided_by_zero_exception>([] {time_span {42}.divide(.0);});
     }
     
     void test_method_(duration) {

@@ -71,14 +71,14 @@ bool thread::set_priority(intmax_t handle, int32_t priority) {
   auto sched_param = ::sched_param {};
   if (::pthread_getschedparam(thread_cast_<pthread_t>(handle), &policy, &sched_param) != 0)
     return false;
-
+    
   sched_param.sched_priority = static_cast<int32_t>(ceil((static_cast<double>(priority) * (sched_get_priority_max(policy) - sched_get_priority_min(policy)) / 4) + sched_get_priority_min(policy)));
   return pthread_setschedparam(thread_cast_<pthread_t>(handle), policy, &sched_param) == 0;
 }
 
 void thread::sleep(int32_t milliseconds_timeout) {
   auto infinite_sleep = [] {while (true) std::this_thread::sleep_for(std::chrono::hours::max());};
-  if (milliseconds_timeout == -1) infinite_sleep();
+if (milliseconds_timeout == -1) infinite_sleep();
   else if (milliseconds_timeout == 0) yield();
   else std::this_thread::sleep_for(std::chrono::milliseconds {milliseconds_timeout});
 }

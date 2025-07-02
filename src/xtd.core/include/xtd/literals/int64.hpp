@@ -98,7 +98,7 @@ namespace xtd {
     /// xtd::console::out << L"125"_i64 << xtd::environment::new_line;
     /// ```
     int64 operator""_i64(const wchar_t* s, std::size_t n);
-
+    
     /// @brief Used to convert specified value into int64.
     /// @par Namespace
     /// xtd

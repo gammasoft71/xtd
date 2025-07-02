@@ -255,7 +255,7 @@ namespace xtd {
       xtd::forms::create_params create_params() const noexcept override;
       xtd::drawing::size default_size() const noexcept override;
       /// @}
-
+      
       /// @name Protectedd Methods
       
       /// @{

@@ -72,7 +72,7 @@ namespace xtd {
       /// @brief Sets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
       /// @param interval An xtd::time_span specifying the interval before the tick event is raised relative to the last occurrence of the tick event. The value must be greater than zero.
       timer& interval(const time_span& interval);
-
+      
       /// @brief Gets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
       /// @return An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
       /// @remarks To get the number of seconds in the interval, divide this number by 1,000.

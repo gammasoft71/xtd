@@ -12,7 +12,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/forms/object_ref>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd::forms
   /// @par Library
   /// xtd.forms

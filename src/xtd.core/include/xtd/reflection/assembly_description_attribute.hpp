@@ -34,7 +34,7 @@ namespace xtd {
       /// @param description The description information.
       explicit assembly_description_attribute(const string& description);
       /// @}
-
+      
       /// @cond
       /// Internal used only
       assembly_description_attribute(const string& description, const object& executing_assembly);
@@ -47,7 +47,7 @@ namespace xtd {
       /// @return A string containing the decription information.
       const string& description() const noexcept;
       /// @}
-
+      
       /// @name Public Methods
       
       /// @{
@@ -64,7 +64,7 @@ namespace xtd {
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
       /// @}
-
+      
     protected:
       xtd::sptr<object> get_type_id() const noexcept override;
       

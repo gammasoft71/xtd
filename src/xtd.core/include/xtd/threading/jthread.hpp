@@ -57,7 +57,7 @@ namespace xtd {
       /// @remarks A thread does not begin executing when it is created. To schedule the thread for execution, call the xtd::threading::jthread::start method.
       jthread(const xtd::threading::thread_start& start, int32 max_stack_size);
       /// @}
-
+      
       /// @name Public Static Methods
       
       /// @{
@@ -82,12 +82,12 @@ namespace xtd {
       jthread(const jthread&) = default;
       jthread& operator=(const jthread&) = default;
       template<class start_t>
-
+      
       static jthread start_new(start_t start) {return start_new(thread_start {start});}
       template<class start_t>
       static jthread start_new(start_t start, const xtd::any_object& obj) {return start_new(parameterized_thread_start {start}, obj);}
       /// @endcond
-    
+      
     private:
       using thread::auto_join;
     };

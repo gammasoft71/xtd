@@ -123,7 +123,7 @@ namespace xtd::native::win32 {
       std::for_each(str.begin(), str.end(), [&](auto c) {result += static_cast<char>(std::tolower(c)); });
       return result;
     }
-
+    
     static std::string to_string(const std::wstring& str) { return to_string(str.c_str()); }
     static std::string to_string(const wchar_t* str) {
       std::string out;
@@ -137,7 +137,7 @@ namespace xtd::native::win32 {
             codepoint |= character - 0xdc00;
           else
             codepoint = character;
-          
+            
           if (codepoint <= 0x7f)
             out.append(1, static_cast<char>(codepoint));
           else if (codepoint <= 0x7ff) {
@@ -159,13 +159,13 @@ namespace xtd::native::win32 {
       }
       return out;
     }
-
+    
     static const std::string to_upper(const std::string& str) noexcept {
       std::string result;
       std::for_each(str.begin(), str.end(), [&](auto c) {result += static_cast<char>(std::toupper(c)); });
       return result;
     }
-
+    
     static std::wstring to_wstring(const std::string& str) { return to_wstring(str.c_str()); }
     static std::wstring to_wstring(const char* str) {
       std::wstring out;
@@ -188,7 +188,7 @@ namespace xtd::native::win32 {
       }
       return out;
     }
-
+    
     static std::string trim_end(const std::string& str, const std::vector<char>& trim_chars) noexcept {
       if (!str.size()) return str;
       auto result = str;

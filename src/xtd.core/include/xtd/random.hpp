@@ -178,7 +178,7 @@ namespace xtd {
     /// @return A double-precision floating point number greater than or equal to 0.0, and less than 1.0.
     /// @remarks This method is the public version of the protected method, sample
     virtual double next_double() const;
-
+    
     /// @brief Fills the elements of a specified xtd::span of bytes with random numbers.
     /// @param buffer An xtd::span of bytes to contain random numbers.
     /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<value_t>::max().
@@ -187,7 +187,7 @@ namespace xtd {
       for (auto index = 0_z; index < buffer.size(); ++index)
         buffer[index] = next<value_t>();
     }
-
+    
     /// @brief Fills the elements of a specified array of bytes with random numbers.
     /// @param buffer An array of bytes to contain random numbers.
     /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<value_t>::max().
@@ -196,7 +196,7 @@ namespace xtd {
       auto span_buffer = span<value_t> {buffer};
       next_values(span_buffer);
     }
-
+    
     /// @brief Returns a nonnegative random number.
     /// @return A 64-bit signed integer greater than or equal to zero and less than std::numeric_limits<int32>::max())
     virtual int64 next_int64() const;
@@ -214,7 +214,7 @@ namespace xtd {
     /// @remarks The next(int32, int32) overload returns random integers that range from min_value to max_value – 1. However, if max_value equals min_value, the method returns min_value.
     /// @remarks Unlike the other overloads of the next method, which return only non-negative values, this method can return a negative random integer.
     virtual int64 next_int64(int64 min_value, int64 max_value) const;
-
+    
     /// @brief Returns a random number between 0.0 and 1.0
     /// @return A single-precision floating point number greater than or equal to 0.0, and less than 1.0.
     virtual single next_single() const;
@@ -234,7 +234,7 @@ namespace xtd {
       shuffle(span_values);
     }
     /// @}
-
+    
   protected:
     /// @brief Returns a random number between 0.0 and 1.0
     /// @return A double-precision floating point number greater than or equal to 0.0, and less than 1.0.

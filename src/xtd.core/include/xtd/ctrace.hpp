@@ -16,7 +16,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/ctrace>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -28,7 +28,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/ctrace>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

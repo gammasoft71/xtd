@@ -129,7 +129,7 @@ void translator::initialize() {
   try {
     static object sync_root;
     auto lock = threading::lock_guard {sync_root};
-  } catch(...) {
+  } catch (...) {
   }
   
   if (language_.empty()) {
@@ -146,14 +146,14 @@ void translator::initialize() {
       translated_languages_.insert(item);
     parse_locale(xtd_locale_path);
   }
-
+  
   auto application_locale_path = environment::os_version().is_macos_platform() ? io::path::combine(io::path::get_directory_name(environment::get_command_line_args()[0]), "..", "Resources", "locale") : io::path::combine(io::path::get_directory_name(environment::get_command_line_args()[0]), "locale");
   if (directory::exists(application_locale_path)) {
     for (auto item : directory::get_directories(application_locale_path))
       translated_languages_.insert(item);
     parse_locale(application_locale_path);
   }
-
+  
   language_initialized = language_;
 }
 

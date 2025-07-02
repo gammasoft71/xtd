@@ -51,7 +51,7 @@ namespace xtd {
       /// @param handle The mutex handle to destroy.
       /// @warning Internal use only
       static void destroy(intmax_t handle);
-            
+      
       /// @brief Signal named mutex with specified mutex handle.
       /// @param handle The mutex handle to signal.
       /// @return `true` if succeed; otherwise `false`.

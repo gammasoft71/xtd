@@ -72,7 +72,7 @@ namespace {
       delete item;
     __control_handler_to_delete_items__.clear();
   }
-
+  
   static bool application_initialized = false;
 }
 
@@ -121,9 +121,9 @@ void application::do_idle() {
 }
 
 void application::enable_button_images(bool value) {
-#if defined(__WXGTK__)
+  #if defined(__WXGTK__)
   __xtd_gtk_enable_button_images__ = value;
-#endif
+  #endif
 }
 
 void application::enable_dark_mode(bool value) {

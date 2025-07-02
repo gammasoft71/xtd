@@ -28,8 +28,8 @@ namespace {
     aboutText.LowerCase();
     return itemText == aboutText || itemText == "about";
   }
-#endif
-
+  #endif
+  
   static bool is_quit_item(const xtd::string& text, size_t shortcut) {
     wxString itemText = text.chars();
     itemText.Replace("&", "");
@@ -41,18 +41,18 @@ namespace {
     exitText.LowerCase();
     return (itemText == exitText || itemText == "exit" || itemText == "quit") && (shortcut == (VK_CONTROL_MODIFIER | VK_Q) || shortcut == (VK_ALT_MODIFIER | VK_F4));
   }
-
-#if defined(__WXOSX__)
+  
+  #if defined(__WXOSX__)
   static bool is_preferences_item(const xtd::string& text) {
     wxString itemText = text.chars();
     itemText.Replace("&", "");
     itemText.Replace(".", "");
     itemText.LowerCase();
-#  ifdef __MAC_13_0
+    #  ifdef __MAC_13_0
     wxString preferenceText = "&Settings..."_t;
-#  else
+    #  else
     wxString preferenceText = "&Preferences"_t;
-#  endif
+    #  endif
     preferenceText.Replace("&", "");
     preferenceText.Replace(".", "");
     preferenceText.LowerCase();
@@ -61,24 +61,24 @@ namespace {
   #endif
   
   static xtd::string make_item_text(const xtd::string& text, size_t shortcut) {
-#if defined(__WXOSX__)
+    #if defined(__WXOSX__)
     if (is_about_item(text)) return "";
     if (is_quit_item(text, shortcut)) return "";
-#  ifdef __MAC_13_0
+    #  ifdef __MAC_13_0
     if (is_preferences_item(text)) return xtd::string {"&Settings..."_t} + "\tCtrl+,";
-#  else
+    #  else
     if (is_preferences_item(text)) return xtd::string {"&Preference"_t} + "\tCtrl+,";
-#  endif
-#elif defined(__WXMSW__)
-      if (is_quit_item(text, shortcut)) return text + "\tAlt+F4";
-#elif defined(__WXGTK__)
-      if (is_quit_item(text, shortcut)) return text + "\tCtrl+Q";
-#endif
+    #  endif
+    #elif defined(__WXMSW__)
+    if (is_quit_item(text, shortcut)) return text + "\tAlt+F4";
+    #elif defined(__WXGTK__)
+    if (is_quit_item(text, shortcut)) return text + "\tCtrl+Q";
+    #endif
     if (shortcut == VK_NONE) return text;
     auto key = ""_s;
-#if defined(__WXOSX__)
+    #if defined(__WXOSX__)
     if ((shortcut & VK_META_MODIFIER) == VK_META_MODIFIER) key += (key.empty() ? ""_s : "+"_s) + "RawCtrl"_s;
-#endif
+    #endif
     if ((shortcut & VK_CONTROL_MODIFIER) == VK_CONTROL_MODIFIER) key += (key.empty() ? ""_s : "+"_s) + "Ctrl"_s;
     if ((shortcut & VK_ALT_MODIFIER) == VK_ALT_MODIFIER) key += (key.empty() ? ""_s : "+"_s) + "Alt"_s;
     if ((shortcut & VK_SHIFT_MODIFIER) == VK_SHIFT_MODIFIER) key += (key.empty() ? ""_s : "+"_s) + "Shift"_s;

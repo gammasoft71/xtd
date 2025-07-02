@@ -114,7 +114,7 @@ namespace xtd {
       /// @remarks The position property is identical to the control::mouse_position property.
       static void position(const drawing::point& position);
       /// @}
-
+      
       /// @name Methodds
       
       /// @{
@@ -135,7 +135,7 @@ namespace xtd {
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
-
+      
       /// @brief Returns a string containing the name of the cursor.
       /// @return A string containing the name of the cursor.
       xtd::string to_string() const noexcept override;

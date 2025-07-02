@@ -500,7 +500,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         socket& ttl(xtd::byte value);
         /// @}
-
+        
         /// @name Public Static Properties
         
         /// @{
@@ -514,7 +514,7 @@ namespace xtd {
         /// @remarks The operating system may support both IPv4 and IPv6 protocols.
         static bool os_supports_ip_v6() noexcept;
         /// @}
-
+        
         /// @name Public Methods
         
         /// @{
@@ -1581,7 +1581,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         static size_t select(xtd::collections::generic::ilist<socket>& check_read, xtd::collections::generic::ilist<socket>& check_write, xtd::collections::generic::ilist<socket>& check_error, int32 microseconds);
         /// @}
-
+        
       private:
         static xtd::net::sockets::socket_error get_last_error_();
         xtd::sptr<xtd::iasync_result> begin_connect_(xtd::sptr<xtd::net::end_point> remote_end_point, xtd::async_callback callback, const xtd::any_object& state);

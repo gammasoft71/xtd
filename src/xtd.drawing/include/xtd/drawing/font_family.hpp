@@ -59,7 +59,7 @@ namespace xtd {
       font_family();
       font_family& operator =(const font_family& value);
       /// @endcond
-
+      
       /// @name Public Properties
       
       /// @{
@@ -67,7 +67,7 @@ namespace xtd {
       /// @return A String that represents the name of this font_family.
       const xtd::string& name() const noexcept;
       /// @}
-
+      
       /// @name Public Static Properties
       
       /// @{
@@ -114,11 +114,11 @@ namespace xtd {
       /// @param style A font_style that contains style information for the font.
       /// @return The height of the em square.
       int32 get_em_height(font_style style) const noexcept;
-
+      
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
-
+      
       /// @brief Returns the line spacing, in design units, of the font_family of the specified style. The line spacing is the vertical distance between the base lines of two consecutive lines of text.
       /// @param style A font_style that contains style information for the font.
       /// @return The distance between two consecutive lines of text.

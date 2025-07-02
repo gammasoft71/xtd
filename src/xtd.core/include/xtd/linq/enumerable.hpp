@@ -39,7 +39,7 @@ namespace xtd {
   
   /// @brief Provides classes and interfaces that support queries that use Language-Integrated Query (LINQ).
   namespace linq {
-
+  
     /// @brief Provides a set of static methods for querying objects that implement ienumerable <type_t>.
     /// @par Definition
     /// ```cpp
@@ -170,7 +170,7 @@ namespace xtd {
           aggregated = func(aggregated, item);
         return result_selector(aggregated);
       }
-
+      
       /// @brief Determines whether all elements of a sequence satisfy a condition.
       /// @tparam source_t The type of the elements of source.
       /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
@@ -185,7 +185,7 @@ namespace xtd {
           if (!predicate(item)) return false;
         return true;
       }
-            
+      
       /// @brief Determines whether a sequence contains any elements.
       /// @tparam source_t The type of the elements of source.
       /// @param source The xtd::collections::generic::ienumerable <type_t> to check for emptiness.
@@ -230,13 +230,13 @@ namespace xtd {
         result.items.push_back(element);
         return result;
       }
-
+      
       /*
       template<class source_t>
       static auto append(const ienumerable<source_t>& source, const source_t& element) noexcept {
         using param_type = std::tuple<source_t, enumerator<source_t>, source_t, bool>;
         auto result = __opaque_xtd_linq_lazy_enumerable__<source_t, param_type> {};
-        
+      
         result = __opaque_xtd_linq_lazy_enumerable__<source_t, param_type> {
           std::make_tuple(source_t {}, source.get_enumerator(), element, false),
           [](param_type& params) {
@@ -244,31 +244,31 @@ namespace xtd {
             auto& source_enumerator = std::get<1>(params);
             const auto& element = std::get<2>(params);
             auto& appended = std::get<3>(params);
-            
+      
             if (source_enumerator.move_next()) {
               result = source_enumerator.current();
               return true;
             }
-            
+      
             if (!appended) {
               appended = true;
               result = element;
               return true;
             }
-            
+      
             return false;
           },
           [](param_type& params) {
             auto& result = std::get<0>(params);
             auto& source_enumerator = std::get<1>(params);
             auto& appended = std::get<3>(params);
-            
+      
             result = source_t {};
             source_enumerator.reset();
             appended = false;
           }
         };
-        
+      
         return result;
       }*/
       
@@ -355,7 +355,7 @@ namespace xtd {
       static auto as_enumerable(const source_t (&array)[length]) noexcept {
         return as_enumerable(array, array + length);
       }
-
+      
       /// @brief Computes the average of a sequence of xtd::decimal values.
       /// @param source A sequence of xtd::decimal values to calculate the average of.
       /// @return The average of the sequence of values.
@@ -381,28 +381,28 @@ namespace xtd {
       /// @return The average of the sequence of values.
       /// @exception xtd::invalid_operation_exception `source` contains no elements.
       static double average(const ienumerable<xtd::int64>& source);
-
+      
       /// @brief Computes the average of a sequence of optional xtd::decimal values.
       /// @param source A sequence of optional xtd::decimal values to calculate the average of.
       /// @return The average of the sequence of values, or xtd::nullopt if the source sequence is empty or contains only values that are xtd::nullopt.
-      static xtd::optional<xtd::decimal> average(const ienumerable<xtd::optional<xtd::decimal>>& source) noexcept;
+      static xtd::optional<xtd::decimal> average(const ienumerable<xtd::optional<xtd::decimal >> & source) noexcept;
       /// @brief Computes the average of a sequence of optional double values.
       /// @param source A sequence of optional double values to calculate the average of.
       /// @return The average of the sequence of values, or xtd::nullopt if the source sequence is empty or contains only values that are xtd::nullopt.
-      static xtd::optional<double> average(const ienumerable<xtd::optional<double>>& source) noexcept;
+      static xtd::optional<double> average(const ienumerable<xtd::optional<double >> & source) noexcept;
       /// @brief Computes the average of a sequence of optional float values.
       /// @param source A sequence of optional float values to calculate the average of.
       /// @return The average of the sequence of values, or xtd::nullopt if the source sequence is empty or contains only values that are xtd::nullopt.
-      static xtd::optional<float> average(const ienumerable<xtd::optional<float>>& source) noexcept;
+      static xtd::optional<float> average(const ienumerable<xtd::optional<float >> & source) noexcept;
       /// @brief Computes the average of a sequence of optional xtd::int32 values.
       /// @param source A sequence of optional xtd::int32 values to calculate the average of.
       /// @return The average of the sequence of values, or xtd::nullopt if the source sequence is empty or contains only values that are xtd::nullopt.
-      static xtd::optional<double> average(const ienumerable<xtd::optional<xtd::int32>>& source) noexcept;
+      static xtd::optional<double> average(const ienumerable<xtd::optional<xtd::int32 >> & source) noexcept;
       /// @brief Computes the average of a sequence of optional xtd::int64 values.
       /// @param source A sequence of optional xtd::int64 values to calculate the average of.
       /// @return The average of the sequence of values, or xtd::nullopt if the source sequence is empty or contains only values that are xtd::nullopt.
-      static xtd::optional<double> average(const ienumerable<xtd::optional<xtd::int64>>& source) noexcept;
-
+      static xtd::optional<double> average(const ienumerable<xtd::optional<xtd::int64 >> & source) noexcept;
+      
       /// @brief Casts the elements of an xtd::collections::generic::ienumerable to the specified type.
       /// @tparam result_t The type of the resulting value.
       /// @tparam source_t The type of the elements of source.
@@ -421,7 +421,7 @@ namespace xtd {
       /// @zxception xtd::argument_out_of_range_exception `size` is equal to 0.
       template<class source_t>
       static auto chunk(const ienumerable<source_t>& source, xtd::size size); // Defined in include/xtd/array.hpp
-
+      
       /// @brief Concatenates two sequences.
       /// @tparam source_t The type of the elements of source.
       /// @param first The first sequence to concatenate.
@@ -477,7 +477,7 @@ namespace xtd {
         while (enumerator.move_next()) ++count;
         return count;
       }
-
+      
       /// @brief Returns a number that represents how many elements in the specified sequence satisfy a condition.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence that contains elements to be tested and counted.
@@ -488,9 +488,9 @@ namespace xtd {
       /// @include enumerable_count2.cpp
       template<class source_t>
       static xtd::size count(const ienumerable<source_t>& source, const std::function<bool(const source_t&)>& predicate) noexcept {
-        return where<source_t>(source,predicate).count();
+        return where<source_t>(source, predicate).count();
       }
-
+      
       /// @brief Returns the number of elements with the specified value.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence that contains elements to be tested and counted.
@@ -500,7 +500,7 @@ namespace xtd {
       static xtd::size count(const ienumerable<source_t>& source, const source_t& value) noexcept {
         return count<source_t>(source, [value](const source_t& item) -> bool {return item == value;});
       }
-
+      
       /// @brief Returns the count of elements in the source sequence grouped by key.
       /// @tparam source_t The type of the elements of source.
       /// @tparam key_t The type of the key returned by `key_selector`.
@@ -556,7 +556,7 @@ namespace xtd {
       static auto default_if_empty(const ienumerable<source_t>& source) noexcept {
         return default_if_empty(source, source_t {});
       }
-
+      
       /// @brief Returns the elements of the specified sequence or the specified value in a singleton collection if the sequence is empty.
       /// @tparam source_t The type of the elements of source.
       /// @param source The sequence to return a default value for if it is empty.
@@ -571,10 +571,10 @@ namespace xtd {
         result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         if (!any(source)) result.items.push_back(default_value);
         else for (const auto& item : source)
-          result.items.push_back(item);
+            result.items.push_back(item);
         return result;
       }
-
+      
       /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to return an element from.
@@ -612,7 +612,7 @@ namespace xtd {
       static source_t first_or_default(const ienumerable<source_t>& source) noexcept {
         return first_or_default(source, source_t {});
       }
-
+      
       /// @brief Generates a sequence of integral numbers within a specified range.
       /// @param count The number of sequential integers to generate.
       /// @return An xtd::collections::generic::ienumerable <xtd::int32> that contains a range of sequential integral numbers.
@@ -648,13 +648,13 @@ namespace xtd {
       static auto range(type_t start, type_t count, type_t step) {
         using param_type = std::tuple<type_t, type_t, type_t, type_t>;
         auto numbers = __opaque_xtd_linq_lazy_enumerable__<type_t, param_type> {};
-
+        
         if (step == type_t {}) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
         if (count < type_t {}) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-
+        
         numbers = __opaque_xtd_linq_lazy_enumerable__<type_t, param_type> {
           std::make_tuple(start, count, step, type_t {}),
-          [](param_type& params) {
+          [](param_type & params) {
             auto& result = std::get<0>(params);
             auto& count = std::get<1>(params);
             auto& step = std::get<2>(params);
@@ -662,13 +662,13 @@ namespace xtd {
             if (index != 0) result += step;
             return index++ < count;
           },
-          [start, count, step](param_type& params) {
+          [start, count, step](param_type & params) {
             params = std::make_tuple(start, count, step, type_t {});
           }
         };
         return numbers;
       }
-
+      
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values.
@@ -746,7 +746,7 @@ namespace xtd {
       static auto from(const source_t (&array)[length]) noexcept {
         return as_enumerable(array, array + length);
       }
-
+      
       /// @brief Projects each element of a sequence into a new form.
       /// @tparam result_t The type of the resulting value.
       /// @tparam source_t The type of the elements of source.
@@ -815,7 +815,7 @@ namespace xtd {
           result.items.push_back(selector(item, index++));
         return result;
       }
-
+      
       /// @brief Creates a xtd::collections::generic::list <type_t> from an xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the elements of source.
       /// @param source The xtd::collections::generic::ienumerable <type_t> to create a xtd::collections::generic::list <type_t> from.

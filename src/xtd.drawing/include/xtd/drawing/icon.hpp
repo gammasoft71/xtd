@@ -147,11 +147,11 @@ namespace xtd {
       /// @param other An object to compare with this object.
       /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
       bool equals(const icon& other) const noexcept override;
- 
+      
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
-
+      
       /// @brief Saves this xtd::drawing::icon to the specified output filename.
       /// @param filename The file to save to.
       void save(const xtd::string& filename) const;
@@ -183,7 +183,7 @@ namespace xtd {
       /// @remarks When using this method, you must dispose of the original icon by using the DestroyIcon method in the Windows API to ensure that the resources are released.
       static icon from_handle(intptr handle);
       /// @}
-
+      
     private:
       explicit icon(const bitmap& bitmap);
       

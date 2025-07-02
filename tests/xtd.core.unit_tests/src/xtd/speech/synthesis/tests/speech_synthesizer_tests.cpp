@@ -12,14 +12,14 @@ namespace xtd::speech::synthesis::tests {
       auto speech = speech_synthesizer {};
       assert::are_equal("xtd::speech::synthesis::speech_synthesizer", speech.to_string());
     }
-
+    
     void test_method_(state) {
       auto s = speech_synthesizer {};
       assert::are_equal(synthesizer_state::ready, s.state());
       s.speak("");
       assert::are_equal(synthesizer_state::ready, s.state());
     }
-
+    
     void test_method_(speak_with_prompt) {
       auto s = speech_synthesizer {};
       auto p = prompt("");
@@ -31,7 +31,7 @@ namespace xtd::speech::synthesis::tests {
     void test_method_(speak_with_string) {
       assert::does_not_throw([] {speech_synthesizer {}.speak("");});
     }
-
+    
     void test_method_(speak_async_with_prompt) {
       auto s = speech_synthesizer {};
       auto p = prompt("");
@@ -44,13 +44,13 @@ namespace xtd::speech::synthesis::tests {
       auto p = s.speak_async("");
       assert::is_true(p.is_completed());
     }
-
+    
     void test_method_(speak_completed) {
       auto has_completed_event = false;
       auto s = speech_synthesizer {};
       auto p = prompt("");
-
-      s.speak_completed += [&](object& sender, const speak_completed_event_args& e) {
+      
+      s.speak_completed += [&](object & sender, const speak_completed_event_args & e) {
         assert::is_false(e.cancelled());
         assert::is_false(e.error().has_value());
         assert::are_same(p, e.prompt());
@@ -58,17 +58,17 @@ namespace xtd::speech::synthesis::tests {
         assert::is_false(e.user_state().has_value());
         has_completed_event = true;
       };
-
+      
       s.speak(p);
       assert::is_true(has_completed_event);
     }
-
+    
     void test_method_(speak_started) {
       auto has_started_event = false;
       auto s = speech_synthesizer {};
       auto p = prompt("");
       
-      s.speak_started += [&](object& sender, const speak_started_event_args& e) {
+      s.speak_started += [&](object & sender, const speak_started_event_args & e) {
         assert::is_false(e.cancelled());
         assert::is_false(e.error().has_value());
         assert::are_same(p, e.prompt());
@@ -79,13 +79,13 @@ namespace xtd::speech::synthesis::tests {
       s.speak(p);
       assert::is_true(has_started_event);
     }
-
+    
     void test_method_(state_changed) {
       auto state_changed_event_value = 0;
       auto s = speech_synthesizer {};
       auto p = prompt("");
       
-      s.state_changed += [&](object& sender, const state_changed_event_args& e) {
+      s.state_changed += [&](object & sender, const state_changed_event_args & e) {
         if (state_changed_event_value == 0) {
           assert::are_equal(synthesizer_state::ready, e.previous_state());
           assert::are_equal(synthesizer_state::speaking, e.state());

@@ -99,7 +99,7 @@ void trace_form_base::on_fore_color_changed(const event_args& e) {
 }
 
 void trace_form_base::write(const string& trace) {
-  auto writer = [self = this, trace=trace] {
+  auto writer = [self = this, trace = trace] {
     auto lck = lock {*self};
     if (self->need_header()) self->write_header();
     self->data_->text.append_text(trace);

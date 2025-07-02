@@ -21,7 +21,7 @@ namespace xtd {
     /// @cond
     class null_stream;
     /// @endcond
-
+    
     /// @brief Provides a generic view of a sequence of bytes. This is an abstract class.
     /// ```cpp
     /// class core_export_ stream :  public xtd::abstract_object, public std::iostream;
@@ -51,7 +51,7 @@ namespace xtd {
         xtd::threading::manual_reset_event async_event_;
         std::exception_ptr exception_;
       };
-
+      
       class streambuf : public std::streambuf {
       public:
         explicit streambuf(stream& owner);
@@ -70,7 +70,7 @@ namespace xtd {
       
       /// @{
       /// @}
-
+      
       /// @name Public Fields
       
       /// @{
@@ -89,29 +89,29 @@ namespace xtd {
       /// @brief When overridden in a derived class, gets a value indicating whether the current stream supports reading.
       /// @return `true` if the stream supports reading; otherwise, `false`.
       virtual bool can_read() const noexcept = 0;
-
+      
       /// @brief When overridden in a derived class, gets a value indicating whether the current stream supports seeking.
       /// @return `true` if the stream supports seeking; otherwise, `false`.
       virtual bool can_seek() const noexcept = 0;
-
+      
       /// @brief Gets a value that determines whether the current stream can time out.
       /// @return A value that determines whether the current stream can time out.
       /// @remarks The xtd::io::stream::can_timeout property always returns `false`. Some stream implementations require different behavior, such as xtd::net::sockets::network_stream, which times out if network connectivity is interrupted or lost. If you are implementing a stream that must be able to time out, this property should be overridden to return `true`.
       virtual bool can_timeout() const noexcept;
-
+      
       /// @brief Gets a value indicating whether the current stream supports writing.
       /// @return `true` if the stream supports writing; otherwise, `false`.
       virtual bool can_write() const noexcept = 0;
-
+      
       /// @brief Indicates if the stream is closed
       /// @return `true` if the stream is closed, `false` otherwise
       virtual bool is_closed() const noexcept;
-
+      
       /// @brief When overridden in a derived class, gets the length in bytes of the stream.
       /// @return The length of the stream in bytes.
       /// @exception xtd::not_supported_exception A class derived from xtd::io::stream does not support seeking and the length is unknown.
       virtual xtd::size length() const = 0;
-
+      
       /// @brief When overridden in a derived class, gets the position within the current stream.
       /// @return The current position within the stream.
       /// @exception xtd::not_supported_exception The stream does not support seeking.
@@ -137,14 +137,14 @@ namespace xtd {
       /// @par Notes to Inheritors
       /// The xtd::io::stream::read_timeout property should be overridden to provide the appropriate behavior for the stream. If the stream does not support timing out, this property should raise an xtd::invalid_operation_exception.
       virtual void read_timeout(int32 value);
-
+      
       /// @brief Gets a value, in milliseconds, that determines how long the stream will attempt to write before timing out.
       /// @return A value, in milliseconds, that determines how long the stream will attempt to write before timing out.
       /// @exception xtd::invalid_operation_exception The xtd::io::stream::write_timeout method always throws an xtd::invalid_operation_exception.
       /// @par Notes to Inheritors
       /// The xtd::io::stream::write_timeout property should be overridden to provide the appropriate behavior for the stream. If the stream does not support timing out, this property should raise an xtd::invalid_operation_exception.
       virtual int32 write_timeout() const;
-
+      
       /// @brief Sets a value, in milliseconds, that determines how long the stream will attempt to write before timing out.
       /// @param value A value, in milliseconds, that determines how long the stream will attempt to write before timing out.
       /// @exception xtd::invalid_operation_exception The xtd::io::stream::write_timeout method always throws an xtd::invalid_operation_exception.
@@ -184,9 +184,9 @@ namespace xtd {
       /// @exception xtd::io::end_of_stream_exception `throw_on_end_of_stream` is `true` and the end of the stream is reached before reading `minimum_bytes` bytes of data.
       /// @remarks When `minimum_bytes` is 0 (zero), this read operation will be completed without waiting for available data in the stream.
       xtd::size read_at_least(xtd::array<xtd::byte>& buffer, xtd::size minimum_bytes, bool throw_on_end_of_stream = true);
-
+      
       virtual int32 read_byte();
-
+      
       /// @brief Reads bytes from the current stream and advances the position within the stream until the buffer is filled.
       /// @param buffer A region of memory. When this method returns, the contents of this region are replaced by the bytes read from the current stream
       /// @exception xtd::end_of_stream_exception The end of the stream is reached before filling the buffer.
@@ -200,13 +200,13 @@ namespace xtd {
       /// @exception xtd::io::end_of_stream_exception `throw_on_end_of_stream` is `true` and the end of the stream is reached before reading `minimum_bytes` bytes of data.
       /// @remarks When `count` is 0 (zero), this read operation will be completed without waiting for available data in the stream.
       void read_exactly(xtd::array<xtd::byte>& buffer, xtd::size offset, xtd::size count);
-
+      
       virtual void set_length(xtd::size value) = 0;
       
       using std::iostream::write;
       virtual void write(xtd::span<const xtd::byte> buffer);
       virtual void write(const xtd::array<xtd::byte>& buffer, xtd::size offset, xtd::size count) = 0;
-
+      
       virtual void write_byte(xtd::byte value);
       /// @}
       

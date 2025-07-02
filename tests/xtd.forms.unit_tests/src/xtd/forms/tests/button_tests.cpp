@@ -450,7 +450,7 @@ namespace xtd::forms::tests {
       assert::are_equal(100, button.auto_repeat_interval());
       assert::are_equal(dialog_result::none, button.dialog_result());
     }
-
+    
     void test_method_(create_with_parent) {
       auto form = forms::form::create();
       auto button = forms::button::create(form);

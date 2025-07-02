@@ -49,15 +49,15 @@ namespace xtd {
       /// @brief Gets a value indicating whether the current stream supports reading.
       /// @return `true` if the stream supports reading; otherwise, `false`.
       bool can_read() const noexcept override;
-
+      
       /// @brief Gets a value indicating whether the current stream supports seeking.
       /// @return `true` if the stream supports seeking; otherwise, `false`.
       bool can_seek() const noexcept override;
-
+      
       /// @brief Gets a value indicating whether the current stream supports writing.
       /// @return `true` if the stream supports writing; otherwise, `false`.
       bool can_write() const noexcept override;
-
+      
       /// @brief Gets the number of bytes allocated for this stream.
       /// @return The length of the usable portion of the buffer for the stream.
       /// @exception xtd::argument_out_of_range_exception A capacity is less than the current length of the stream.
@@ -68,11 +68,11 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception A capacity is less than the current length of the stream.
       /// @remarks `capacity` is the buffer length for system-provided byte arrays. `capacity` cannot be set to a value less than the current length of the stream.
       void capacity(xtd::size value);
-
+      
       /// @brief Gets the length of the stream in bytes.
       /// @return The length of the stream in bytes.
       xtd::size length() const override;
-
+      
       /// @brief Gets the current position within the stream.
       /// @return The current position within the stream.
       xtd::size position() const override;
@@ -106,12 +106,12 @@ namespace xtd {
       /// @param loc A value of type xtd::io::seek_origin, which acts as the seek reference point.
       /// @return The new position within the stream, calculated by combining the initial reference point and the offset.
       xtd::size seek(std::streamoff offset, seek_origin loc);
-
+      
       /// @brief Sets the length of the current stream to the specified value.
       /// @param value The value at which to set the length.
       /// @remarks If the specified value is less than the current length of the stream, the stream is truncated. If after the truncation the current position within the stream is past the end of the stream, the xtd::io::memery_stream::read_byte method returns -1, the xtd::io::memery_stream::read method reads zero bytes into the provided byte array, and xtd::io::memery_stream::write and xtd::io::memery_stream::write_byte methods append specified bytes at the end of the stream, increasing its length. If the specified value is larger than the current capacity and the stream is resizable, the capacity is increased, and the current position within the stream is unchanged. If the length is increased, the contents of the stream between the old and the new length are initialized to zeros.
       void set_length(xtd::size value) override;
-
+      
       /// @brief Writes the stream contents to a byte array, regardless of the Position property.
       /// @return A new byte array.
       /// @remarks This method omits unused bytes in xtd::io::memory_stream from the array. To get the entire buffer, use the xtd::io::memory_stream::get_buffer method.
@@ -142,7 +142,7 @@ namespace xtd {
     private:
       xtd::byte abstract_read_byte_unchecked();
       void abstract_write_byte_unchecked(xtd::byte b);
-
+      
       struct data {
         xtd::array<byte>* static_buffer = null;
         xtd::collections::generic::list<byte> dynamic_buffer;

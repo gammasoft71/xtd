@@ -71,7 +71,7 @@ namespace xtd {
       /// @param interval The time between events. The value in milliseconds must be greater than zero and less than or equal to int32_object::max_value.
       explicit timer(const xtd::time_span& interval);
       /// @}
-
+      
       /// @cond
       timer(const timer& timer);
       timer& operator=(const timer& timer);
@@ -91,7 +91,7 @@ namespace xtd {
       /// @remarks If the xtd::timers::timer is already enabled when the xtd::timers::timer::start method is called, the interval is reset. If xtd::timers::timer::auto_reset is `false`, the xtd::timers::timer::start method must be called in order to start the count again.
       /// @remarks Resetting the interval affects when the xtd::timers::timer::elapsed event is raised. For example, if you set the interval to 5 seconds and then set the xtd::timers::timer::enabled property to `true`, the count starts at the time xtd::timers::timer::enabled is set. If you reset the interval to 10 seconds when the count is 3 seconds, the xtd::timers::timer::elapsed event is raised for the first time 13 seconds after the xtd::timers::timer::enabled property was set to `true`.
       timer& auto_reset(bool value);
-
+      
       /// @brief Gets a value indicating whether the xtd::timers::timer should raise the xtd::timers::timer::elapsed event.
       /// @return `true` if the xtd::timers::timer should raise the xtd::timers::timer::elapsed event; otherwise, `false`. The default is `false`.
       /// @exception xtd::object_closed_exception This property cannot be set because the timer has been closed.
@@ -110,7 +110,7 @@ namespace xtd {
       /// @remarks If xtd::timers::timer::enabled is set to `true` and xtd::timers::timer::auto_reset is set to `false`, the xtd::timers::timer raises the xtd::timers::timer::elapsed event only once, the first time the interval elapses.
       /// @remarks If the interval is set after the xtd::timers::timer has started, the count is reset. For example, if you set the interval to 5 seconds and then set the xtd::timers::timer::enabled property to `true`, the count starts at the time xtd::timers::timer::enabled is set. If you reset the interval to 10 seconds when count is 3 seconds, the xtd::timers::timer::elapsed event is raised for the first time 13 seconds after Enabled was set to `true`.
       timer& enabled(bool value);
-
+      
       /// @brief Gets the interval, expressed in milliseconds, at which to raise the xtd::timers::timer::elapsed event.
       /// @return The time, in milliseconds, between xtd::timers::timer::elapsed events. The value must be greater than zero, and less than or equal to xtd::int32_object::max_value. The default is 100 milliseconds.
       /// @exception xtd::argument_exception The interval is less than or equal to zero.<br>-or<br>The interval is greater than xtd::int32_object::max_value.
@@ -168,24 +168,24 @@ namespace xtd {
       /// @remarks Even if xtd::timers::timer::synchronizing_object is not std::nullopt, xtd::timers::timer::elapsed events can occur after the xtd::timers::timer::close or xtd::timers::timer::stop method has been called or after the xtd::timers::timer:enabled property has been set to `false`, because the signal to raise the xtd::timers::timer::elapsed event is always queued for execution on a thread pool thread. One way to resolve this race condition is to set a flag that tells the event handler for the xtd::timers::timer::elapsed event to ignore subsequent events.
       event<timer, elapsed_event_handler> elapsed;
       /// @}
-
+      
       /// @name Public Methods
       
       /// @{
       /// @brief Releases the resources used by the xtd::timers::timer.
       void close();
-
+      
       /// @brief Starts raising the xtd::timers::timer::elapsed event by setting xtd::timers::timer::enabled to `true`.
       /// @remarks If xtd::timers::timer::start is called and xtd::timers::timer::auto_reset is set to `false`, the xtd::timers::timer raises the xtd::timers::timer::elapsed event only once, the first time the interval elapses. If xtd::timers::timer::start is called and xtd::timers::timer::auto_reset is `true`, the xtd::timers::timer raises the xtd::timers::timer::elapsed event the first time the interval elapses and continues to raise the event on the specified interval.
       /// @note If xtd::timers::timer::auto_reset is `false`, the xtd::timers::timer::start method must be called in order to start the count again.
       void start();
-
+      
       /// @brief Stops raising the xtd::timers::timer::elapsed event by setting xtd::timers::timer::enabled to `false`.
       /// @remarks You can also stop timing by setting xtd::timers::timer::enabled to `false`.
       /// @note The signal to raise the xtd::timers::timer::elapsed event is always queued for execution on a xtd::threading::thread_pool thread, so the event-handling method might run on one thread at the same time that a call to the xtd::timers::timer::stop method runs on another thread. This might result in the xtd::timers::timer::elapsed event being raised after the xtd::timers::timer::stop method is called. The second code example in the Examples section shows one way to work around this race condition.
       void stop();
       /// @}
-
+      
     private:
       void on_elpased(const elapsed_event_args& e);
       xtd::sptr<data> data_;

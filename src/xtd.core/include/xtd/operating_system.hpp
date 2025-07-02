@@ -142,7 +142,7 @@ namespace xtd {
     /// @brief Determines whether the current platform is AIX.
     /// @return `true` if the current platform is AIX; otherwise, `false`.
     bool is_aix() const noexcept;
-
+    
     /// @brief Determines whether the current platform is Android.
     /// @return `true` if the current platform is Android; otherwise, `false`.
     bool is_android() const noexcept;
@@ -159,15 +159,15 @@ namespace xtd {
     /// @brief Determines whether the current platform is Darwin (macOS, iOS, tvOS, or watchOS).
     /// @return `true` if the current platform is Darwin; otherwise, `false`.
     bool is_darwin() const noexcept;
-
+    
     /// @brief Determines whether the current platform is FreeBSD.
     /// @return `true` if the current platform is FreeBSD; otherwise, `false`.
     bool is_free_bsd() const noexcept;
-
+    
     /// @brief Determines whether the current platform is Haiku.
     /// @return `true` if the current platform is Haiku; otherwise, `false`.
     bool is_haiku() const noexcept;
-
+    
     /// @brief Determines whether the current platform is iOS.
     /// @return `true` if the current platform is iOS; otherwise, `false`.
     bool is_ios() const noexcept;
@@ -175,7 +175,7 @@ namespace xtd {
     /// @brief Determines whether the current platform is Linux.
     /// @return `true` if the current platform is Linux; otherwise, `false`.
     bool is_linux() const noexcept;
-
+    
     /// @brief Determines whether the current platform is macOS.
     /// @return `true` if the current platform is macOS; otherwise, `false`.
     bool is_macos() const noexcept;
@@ -184,7 +184,7 @@ namespace xtd {
     /// @return `true` if the current platform is macOS, iOS, tvOS, or watchOS; otherwise, `false`.
     /// @remarks This is an alias of `is_apple_platform()` and exists for naming consistency. Prefer `is_apple_platform()` for semantic clarity.
     bool is_macos_platform() const noexcept;
-   
+    
     /// @brief Determines whether the current platform is MINGW.
     /// @return `true` if the current platform is MINGW; otherwise, `false`.
     bool is_mingw() const noexcept;
@@ -204,7 +204,7 @@ namespace xtd {
     /// It excludes platforms like Windows, and other non-posix environments.
     /// @note In this implementation, Unix and POSIX platforms overlap significantly but are semantically distinguished.
     bool is_posix_platform() const noexcept;
-
+    
     /// @brief Determines whether the current platform is Unix family.
     /// @return `true` if the current platform is Unix family; otherwise, `false`.
     /// @remarks Returns true if the current platform is a Unix or Unix-like operating system.
@@ -240,7 +240,7 @@ namespace xtd {
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
     xtd::size get_hash_code() const noexcept override;
-
+    
     /// @brief Converts the value of this operating_system object to its equivalent string representation.
     /// @return The string representation of the values returned by the platform, version, and service_pack methods.
     xtd::string to_string() const noexcept override;

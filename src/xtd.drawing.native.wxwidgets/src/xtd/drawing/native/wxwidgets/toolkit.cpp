@@ -49,9 +49,9 @@ namespace {
       if (func.Contains("DoGetSize") && cond == "\"m_window\"" && msg == "wxClientDCImpl without a window?") return;
       
       if (xtd::diagnostics::debug::__should_aborted__(!show_wx_assert.enabled(), "wxAssert", string::format("cond={}, msg={}", string {cond.c_str()}, string {msg.c_str()}), stack_frame {string {file.c_str()}, as<uint32>(line), string {func.c_str()}})) debug_break_();
-    } catch(const xtd::exception& e) {
+    } catch (const xtd::exception& e) {
       if (xtd::diagnostics::debug::__should_aborted__(!show_wx_assert.enabled(), "xtd_assert_handler", string::format("Exception occured : {}", e.to_string()))) debug_break_();
-    } catch(const std::exception& e) {
+    } catch (const std::exception& e) {
       if (xtd::diagnostics::debug::__should_aborted__(!show_wx_assert.enabled(), "xtd_assert_handler", string::format("Exception occured : {}", e.what()))) debug_break_();
     }
   }
@@ -72,13 +72,13 @@ intptr xtd::drawing::native::toolkit::initialize() {
   int32 argc = 0;
   wxEntryStart(argc, reinterpret_cast<char**>(0));
   // Workaround : On macOS, call only one wxApp::CallOnInit because after calling wxApp::CleanUp, calling wxApp::CallOnInit again is blocking...
-#if defined(__APPLE__)
+  #if defined(__APPLE__)
   call_once_ {
     wxTheApp->CallOnInit();
   };
-#else
+  #else
   wxTheApp->CallOnInit();
-#endif
+  #endif
   wxTheApp->SetExitOnFrameDelete(false);
   wxInitAllImageHandlers();
   return 0;

@@ -164,7 +164,7 @@ namespace xtd {
       /// @param tt The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
       bool equals(const transition_time& tt) const noexcept override;
-
+      
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
@@ -254,7 +254,7 @@ namespace xtd {
       /// @param ar The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
       bool equals(const adjustement_rule& ar) const noexcept override;
-
+      
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
@@ -327,14 +327,14 @@ namespace xtd {
     /// @remarks The value of the SupportsDaylightSavingTime property for the local time zone returned by the time_zone_info.Local property reflects the setting of the Control Panel Date and Time application's checkbox that defines whether the system automatically adjusts for daylight saving time. If it is unchecked, or if no checkbox is displayed for a time zone, the value of this property is `false`.
     bool supports_daylight_saving_time() const noexcept;
     /// @}
-
+    
     /// @name Public Static Properties
     
     /// @{
     /// @brief Gets a time_zone_info object that represents the local time zone.
     /// @return time_zone_info An object that represents the local time zone.
     static const time_zone_info& local() noexcept;
-
+    
     /// @brief Gets a time_zone_info object that represents the Coordinated Universal Time (UTC) zone.
     /// @return time_zone_info An object that represents the Coordinated Universal Time (UTC) zone.
     static const time_zone_info& utc() noexcept;
@@ -361,7 +361,7 @@ namespace xtd {
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
     xtd::size get_hash_code() const noexcept override;
-
+    
     /// @brief Indicates whether a specified date and time falls in the range of daylight saving time for the time zone of the current xtd::time_zone_info object.
     /// @param date_time A date and time value.
     /// @return `true` if the date_time parameter is a daylight saving time; otherwise, `false`.
@@ -369,7 +369,7 @@ namespace xtd {
     
     xtd::string to_string() const noexcept override;
     /// @}
-
+    
     /// @name Public Static Methods
     
     /// @{

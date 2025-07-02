@@ -70,7 +70,7 @@ namespace xtd {
         return std::strong_ordering::equivalent;
       }
       /// @}
-    
+      
     private:
       friend comparable_t;
       comparison_operators() = default;

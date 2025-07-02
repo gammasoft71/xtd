@@ -589,7 +589,8 @@ void lcd_label::seven_segment_display_digit::set_character(char32 value) {
     {U'|', forms::segments::b | forms::segments::c}, {' ', forms::segments::none},
     {U'.', forms::segments::dp},
     {U',', forms::segments::dp},
-    {U':', forms::segments::pc}};
+    {U':', forms::segments::pc}
+  };
   if (character_ != value) {
     auto it = characters.find(value);
     if (it == characters.end()) throw_helper::throws(exception_case::argument, string::format("Only characters : \"{}\" are valid"_t, get_valid_characters()).c_str());

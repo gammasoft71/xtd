@@ -15,7 +15,7 @@ struct assert_dialog::data {
 };
 
 assert_dialog::assert_dialog() : data_(xtd::new_sptr<data>()) {
-  data_->dialog.dialog_closed += [this](const object& sender, const dialog_closed_event_args& e) {on_dialog_closed(e);};
+  data_->dialog.dialog_closed += [this](const object & sender, const dialog_closed_event_args & e) {on_dialog_closed(e);};
   reset();
 }
 

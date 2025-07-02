@@ -89,7 +89,7 @@ namespace xtd::forms::tests {
       assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons());
       // The following test may fail: The user can place the mouse in the upper left position of the screen {0, 0}...
       // assert::are_not_equal(drawing::point::empty, forms::control::mouse_position());
-
+      
       assert::is_zero(animation.elapsed());
       assert::is_zero(animation.elapsed_milliseconds());
       assert::is_zero(animation.elapsed_nanoseconds());

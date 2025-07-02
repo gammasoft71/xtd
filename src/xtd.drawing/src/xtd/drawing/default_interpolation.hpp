@@ -10,7 +10,7 @@ namespace {
     
     if (size.width < source_image.width() && size.height < source_image.height())
       return box_average_interpolation(source_image, size);
-    
+      
     return bicubic_interpolation(source_image, size);
   }
 }

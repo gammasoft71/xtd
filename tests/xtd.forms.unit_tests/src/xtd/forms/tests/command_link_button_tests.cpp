@@ -678,7 +678,7 @@ namespace xtd::forms::tests {
       assert::are_equal(image_list::empty, command_link_button.image_list());
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
-
+    
     void test_method_(create_with_parent) {
       auto form = forms::form::create();
       auto command_link_button = forms::command_link_button::create(form);
@@ -1266,7 +1266,7 @@ namespace xtd::forms::tests {
       assert::are_equal(image_list::empty, command_link_button.image_list());
       assert::are_equal(content_alignment::middle_left, command_link_button.text_align());
     }
-
+    
     void test_method_(set_client_size) {
       form form;
       command_link_button_for_test command_link_button;

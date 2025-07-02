@@ -11,8 +11,8 @@ intmax_t unnamed_mutex::create(bool initially_owned) {
   auto handle = new pthread_mutex_t;
   auto mutex_attribute = pthread_mutexattr_t {};
   if (pthread_mutexattr_init(&mutex_attribute) != 0 ||
-      pthread_mutexattr_settype(&mutex_attribute, PTHREAD_MUTEX_RECURSIVE) != 0 ||
-      pthread_mutex_init(handle, &mutex_attribute) != 0) {
+    pthread_mutexattr_settype(&mutex_attribute, PTHREAD_MUTEX_RECURSIVE) != 0 ||
+    pthread_mutex_init(handle, &mutex_attribute) != 0) {
     delete handle;
     return reinterpret_cast<intmax_t>(MUTEX_FAILED);
   }

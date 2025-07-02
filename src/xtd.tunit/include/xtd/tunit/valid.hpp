@@ -1247,7 +1247,7 @@ namespace xtd {
           error();
         }
       }
-
+      
       /// @brief Validates that the statement throws a particular exception when called.
       /// @tparam exception_t The exception type that must be throw.
       /// @param statement The statement that verify.

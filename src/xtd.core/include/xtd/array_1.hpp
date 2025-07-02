@@ -7,7 +7,7 @@
 #endif
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {  
+namespace xtd {
   /// @brief Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays.
   /// @par Definition
   /// ```cpp
@@ -69,7 +69,7 @@ namespace xtd {
     /// @brief Represents the const reverse iterator of array value type.
     using const_reverse_iterator = typename xtd::basic_array<type_t, allocator_t>::const_reverse_iterator;
     /// @}
-
+    
     /// @name Public Constructors
     
     /// @{
@@ -145,21 +145,21 @@ namespace xtd {
     template<class input_iterator_t>
     array(input_iterator_t first, input_iterator_t last) : basic_array<type_t, allocator_t>(first, last) {}
     /// @}
-
+    
     /// @cond
     ~array() {}
     /// @endcond
-
+    
     /// @name Public Properties
     
     /// @{
     xtd::size rank() const noexcept override {return 1;}
     /// @}
-
+    
     /// @name Public Methods
     
     /// @{
-
+    
     /// @brief Copies all the elements of the current one-dimensional array to the specified one-dimensional array starting at the specified destination array index. The index is specified as a 32-bit integer.
     /// @param array The one-dimensional array that is the destination of the elements copied from the current array.
     /// @param index The index in array at which copying begins.
@@ -176,7 +176,7 @@ namespace xtd {
     /// The following code example shows how to copy an Array to another native Array.
     /// @include ArrayCopyTo.cpp
     void copy_to(xtd::array<type_t>& array, size_type index) const override {basic_array<type_t, allocator_t>::copy_to(array, index);}
-
+    
     using xtd::basic_array<type_t, allocator_t>::get_value;
     /// @brief Gets the value at the specified position in the one-dimensional Array. The index is specified as a 32-bit integer.
     /// @param index The position of the Array element to get.
@@ -193,8 +193,8 @@ namespace xtd {
     /// @exception IndexOutOfRangeException index is outside the range of valid indexes for the current Array.
     void set_value(const value_type& value, size_type index) {operator()(index) = value;}
     /// @}
-
-
+    
+    
     /// @name Public Operators
     
     /// @{

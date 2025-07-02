@@ -33,7 +33,7 @@ binary_writer::~binary_writer() {
 }
 
 std::optional<ref<std::ostream>> binary_writer::base_stream() const {
-  return stream_ ? std::optional<ref<std::ostream>>(*stream_) : std::optional<ref<std::ostream>>();
+  return stream_ ? std::optional<ref<std::ostream>>(*stream_) : std::optional<ref<std::ostream >> ();
 }
 
 void binary_writer::close() {

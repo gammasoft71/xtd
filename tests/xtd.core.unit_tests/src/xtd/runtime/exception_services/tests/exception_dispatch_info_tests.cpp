@@ -46,7 +46,7 @@ namespace xtd::runtime::exception_services::tests {
         assert::fail();
       }
     }
-
+    
     void test_method_(convert_to_bool_operator) {
       assert::is_false(exception_dispatch_info {} ? true : false);
       assert::is_true(exception_dispatch_info::capture(exception {}) ? true : false);

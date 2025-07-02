@@ -27,12 +27,12 @@ namespace xtd {
     class drawing_export_ status_system_images final : private system_images_base {
     public:
       /// @name Public Static Properties
-
+      
       /// @{
       /// @brief Gets system image from specified name.
       /// @return The default size in pixels (32 x 32).
       static xtd::drawing::size default_size() noexcept;
-
+      
       /// @brief Gets the status system image "appointment-missed".
       /// @return The xtd::drawing::image "appointment-missed".
       static xtd::drawing::image appointment_missed() noexcept;
@@ -40,7 +40,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "appointment-missed".
       static xtd::drawing::image appointment_missed(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "appointment-soon".
       /// @return The xtd::drawing::image "appointment-soon".
       static xtd::drawing::image appointment_soon() noexcept;
@@ -48,7 +48,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "appointment-soon".
       static xtd::drawing::image appointment_soon(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "audio-volume-high".
       /// @return The xtd::drawing::image "audio-volume-high".
       static xtd::drawing::image audio_volume_high() noexcept;
@@ -56,7 +56,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "audio-volume-high".
       static xtd::drawing::image audio_volume_high(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "audio-volume-low".
       /// @return The xtd::drawing::image "audio-volume-low".
       static xtd::drawing::image audio_volume_low() noexcept;
@@ -64,7 +64,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "audio-volume-low".
       static xtd::drawing::image audio_volume_low(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "audio-volume-medium".
       /// @return The xtd::drawing::image "audio-volume-medium".
       static xtd::drawing::image audio_volume_medium() noexcept;
@@ -72,7 +72,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "audio-volume-medium".
       static xtd::drawing::image audio_volume_medium(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "audio-volume-muted".
       /// @return The xtd::drawing::image "audio-volume-muted".
       static xtd::drawing::image audio_volume_muted() noexcept;
@@ -80,7 +80,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "audio-volume-muted".
       static xtd::drawing::image audio_volume_muted(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "battery-caution".
       /// @return The xtd::drawing::image "battery-caution".
       static xtd::drawing::image battery_caution() noexcept;
@@ -88,7 +88,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "battery-caution".
       static xtd::drawing::image battery_caution(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "battery-low".
       /// @return The xtd::drawing::image "battery-low".
       static xtd::drawing::image battery_low() noexcept;
@@ -96,7 +96,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "battery-low".
       static xtd::drawing::image battery_low(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "dialog-error".
       /// @return The xtd::drawing::image "dialog-error".
       static xtd::drawing::image dialog_error() noexcept;
@@ -104,7 +104,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "dialog-error".
       static xtd::drawing::image dialog_error(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "dialog-information".
       /// @return The xtd::drawing::image "dialog-information".
       static xtd::drawing::image dialog_information() noexcept;
@@ -112,7 +112,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "dialog-information".
       static xtd::drawing::image dialog_information(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "dialog-password".
       /// @return The xtd::drawing::image "dialog-password".
       static xtd::drawing::image dialog_password() noexcept;
@@ -120,7 +120,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "dialog-password".
       static xtd::drawing::image dialog_password(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "dialog-question".
       /// @return The xtd::drawing::image "dialog-question".
       static xtd::drawing::image dialog_question() noexcept;
@@ -128,7 +128,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "dialog-question".
       static xtd::drawing::image dialog_question(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "dialog-warning".
       /// @return The xtd::drawing::image "dialog-warning".
       static xtd::drawing::image dialog_warning() noexcept;
@@ -136,7 +136,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "dialog-warning".
       static xtd::drawing::image dialog_warning(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "folder-drag-accept".
       /// @return The xtd::drawing::image "folder-drag-accept".
       static xtd::drawing::image folder_drag_accept() noexcept;
@@ -144,7 +144,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "folder-drag-accept".
       static xtd::drawing::image folder_drag_accept(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "folder-open".
       /// @return The xtd::drawing::image "folder-open".
       static xtd::drawing::image folder_open() noexcept;
@@ -152,7 +152,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "folder-open".
       static xtd::drawing::image folder_open(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "folder-visiting".
       /// @return The xtd::drawing::image "folder-visiting".
       static xtd::drawing::image folder_visiting() noexcept;
@@ -160,7 +160,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "folder-visiting".
       static xtd::drawing::image folder_visiting(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "image-loading".
       /// @return The xtd::drawing::image "image-loading".
       static xtd::drawing::image image_loading() noexcept;
@@ -168,7 +168,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "image-loading".
       static xtd::drawing::image image_loading(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "image-missing".
       /// @return The xtd::drawing::image "image-missing".
       static xtd::drawing::image image_missing() noexcept;
@@ -176,7 +176,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "image-missing".
       static xtd::drawing::image image_missing(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "mail-attachment".
       /// @return The xtd::drawing::image "mail-attachment".
       static xtd::drawing::image mail_attachment() noexcept;
@@ -184,7 +184,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "mail-attachment".
       static xtd::drawing::image mail_attachment(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "mail-unread".
       /// @return The xtd::drawing::image "mail-unread".
       static xtd::drawing::image mail_unread() noexcept;
@@ -192,7 +192,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "mail-unread".
       static xtd::drawing::image mail_unread(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "mail-read".
       /// @return The xtd::drawing::image "mail-read".
       static xtd::drawing::image mail_read() noexcept;
@@ -200,7 +200,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "mail-read".
       static xtd::drawing::image mail_read(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "mail-replied".
       /// @return The xtd::drawing::image "mail-replied".
       static xtd::drawing::image mail_replied() noexcept;
@@ -208,7 +208,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "mail-replied".
       static xtd::drawing::image mail_replied(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "mail-signed".
       /// @return The xtd::drawing::image "mail-signed".
       static xtd::drawing::image mail_signed() noexcept;
@@ -216,7 +216,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "mail-signed".
       static xtd::drawing::image mail_signed(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "mail-signed-verified".
       /// @return The xtd::drawing::image "mail-signed-verified".
       static xtd::drawing::image mail_signed_verified() noexcept;
@@ -224,7 +224,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "mail-signed-verified".
       static xtd::drawing::image mail_signed_verified(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "media-playlist-repeat".
       /// @return The xtd::drawing::image "media-playlist-repeat".
       static xtd::drawing::image media_playlist_repeat() noexcept;
@@ -232,7 +232,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "media-playlist-repeat".
       static xtd::drawing::image media_playlist_repeat(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "media-playlist-shuffle".
       /// @return The xtd::drawing::image "media-playlist-shuffle".
       static xtd::drawing::image media_playlist_shuffle() noexcept;
@@ -240,7 +240,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "media-playlist-shuffle".
       static xtd::drawing::image media_playlist_shuffle(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "network-error".
       /// @return The xtd::drawing::image "network-error".
       static xtd::drawing::image network_error() noexcept;
@@ -248,7 +248,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "network-error".
       static xtd::drawing::image network_error(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "network-idle".
       /// @return The xtd::drawing::image "network-idle".
       static xtd::drawing::image network_idle() noexcept;
@@ -256,7 +256,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "network-idle".
       static xtd::drawing::image network_idle(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "network-offline".
       /// @return The xtd::drawing::image "network-offline".
       static xtd::drawing::image network_offline() noexcept;
@@ -264,7 +264,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "network-offline".
       static xtd::drawing::image network_offline(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "network-receive".
       /// @return The xtd::drawing::image "network-receive".
       static xtd::drawing::image network_receive() noexcept;
@@ -272,7 +272,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "network-receive".
       static xtd::drawing::image network_receive(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "network-transmit".
       /// @return The xtd::drawing::image "network-transmit".
       static xtd::drawing::image network_transmit() noexcept;
@@ -280,7 +280,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "network-transmit".
       static xtd::drawing::image network_transmit(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "network-transmit-receive".
       /// @return The xtd::drawing::image "network-transmit-receive".
       static xtd::drawing::image network_transmit_receive() noexcept;
@@ -288,7 +288,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "network-transmit-receive".
       static xtd::drawing::image network_transmit_receive(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "printer-error".
       /// @return The xtd::drawing::image "printer-error".
       static xtd::drawing::image printer_error() noexcept;
@@ -296,7 +296,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "printer-error".
       static xtd::drawing::image printer_error(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "printer-printing".
       /// @return The xtd::drawing::image "printer-printing".
       static xtd::drawing::image printer_printing() noexcept;
@@ -304,7 +304,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "printer-printing".
       static xtd::drawing::image printer_printing(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "security-high".
       /// @return The xtd::drawing::image "security-high".
       static xtd::drawing::image security_high() noexcept;
@@ -312,7 +312,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "security-high".
       static xtd::drawing::image security_high(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "security-medium".
       /// @return The xtd::drawing::image "security-medium".
       static xtd::drawing::image security_medium() noexcept;
@@ -320,7 +320,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "security-medium".
       static xtd::drawing::image security_medium(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "security-low".
       /// @return The xtd::drawing::image "security-low".
       static xtd::drawing::image security_low() noexcept;
@@ -328,7 +328,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "security-low".
       static xtd::drawing::image security_low(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "software-update-available".
       /// @return The xtd::drawing::image "software-update-available".
       static xtd::drawing::image software_update_available() noexcept;
@@ -336,7 +336,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "software-update-available".
       static xtd::drawing::image software_update_available(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "software-update-urgent".
       /// @return The xtd::drawing::image "software-update-urgent".
       static xtd::drawing::image software_update_urgent() noexcept;
@@ -344,7 +344,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "software-update-urgent".
       static xtd::drawing::image software_update_urgent(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "task-due".
       /// @return The xtd::drawing::image "task-due".
       static xtd::drawing::image task_due() noexcept;
@@ -352,7 +352,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "task-due".
       static xtd::drawing::image task_due(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "task-past-due".
       /// @return The xtd::drawing::image "task-past-due".
       static xtd::drawing::image task_past_due() noexcept;
@@ -360,7 +360,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "task-past-due".
       static xtd::drawing::image task_past_due(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "user-available".
       /// @return The xtd::drawing::image "user-available".
       static xtd::drawing::image user_available() noexcept;
@@ -368,7 +368,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "user-available".
       static xtd::drawing::image user_available(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "user-away".
       /// @return The xtd::drawing::image "user-away".
       static xtd::drawing::image user_away() noexcept;
@@ -376,7 +376,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "user-away".
       static xtd::drawing::image user_away(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "user-idle".
       /// @return The xtd::drawing::image "user-idle".
       static xtd::drawing::image user_idle() noexcept;
@@ -384,7 +384,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "user-idle".
       static xtd::drawing::image user_idle(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "user-offline".
       /// @return The xtd::drawing::image "user-offline".
       static xtd::drawing::image user_offline() noexcept;
@@ -392,7 +392,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "user-offline".
       static xtd::drawing::image user_offline(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "user-trash-full".
       /// @return The xtd::drawing::image "user-trash-full".
       static xtd::drawing::image user_trash_full() noexcept;
@@ -400,7 +400,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "user-trash-full".
       static xtd::drawing::image user_trash_full(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "weather-clear".
       /// @return The xtd::drawing::image "weather-clear".
       static xtd::drawing::image weather_clear() noexcept;
@@ -408,7 +408,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "weather-clear".
       static xtd::drawing::image weather_clear(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "weather-clear-night".
       /// @return The xtd::drawing::image "weather-clear-night".
       static xtd::drawing::image weather_clear_night() noexcept;
@@ -416,7 +416,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "weather-clear-night".
       static xtd::drawing::image weather_clear_night(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "weather-few-clouds".
       /// @return The xtd::drawing::image "weather-few-clouds".
       static xtd::drawing::image weather_few_clouds() noexcept;
@@ -424,7 +424,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "weather-few-clouds".
       static xtd::drawing::image weather_few_clouds(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "weather-few-clouds-night".
       /// @return The xtd::drawing::image "weather-few-clouds-night".
       static xtd::drawing::image weather_few_clouds_night() noexcept;
@@ -432,7 +432,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "weather-few-clouds-night".
       static xtd::drawing::image weather_few_clouds_night(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "weather-fog".
       /// @return The xtd::drawing::image "weather-fog".
       static xtd::drawing::image weather_fog() noexcept;
@@ -440,7 +440,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "weather-fog".
       static xtd::drawing::image weather_fog(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "weather-overcast".
       /// @return The xtd::drawing::image "weather-overcast".
       static xtd::drawing::image weather_overcast() noexcept;
@@ -448,7 +448,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "weather-overcast".
       static xtd::drawing::image weather_overcast(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "weather-severe-alert".
       /// @return The xtd::drawing::image "weather-severe-alert".
       static xtd::drawing::image weather_severe_alert() noexcept;
@@ -456,7 +456,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "weather-severe-alert".
       static xtd::drawing::image weather_severe_alert(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "weather-showers".
       /// @return The xtd::drawing::image "weather-showers".
       static xtd::drawing::image weather_showers() noexcept;
@@ -464,7 +464,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "weather-showers".
       static xtd::drawing::image weather_showers(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "weather-showers-scattered".
       /// @return The xtd::drawing::image "weather-showers-scattered".
       static xtd::drawing::image weather_showers_scattered() noexcept;
@@ -472,7 +472,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "weather-showers-scattered".
       static xtd::drawing::image weather_showers_scattered(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "weather-snow".
       /// @return The xtd::drawing::image "weather-snow".
       static xtd::drawing::image weather_snow() noexcept;
@@ -480,7 +480,7 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "weather-snow".
       static xtd::drawing::image weather_snow(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets the status system image "weather-storm".
       /// @return The xtd::drawing::image "weather-storm".
       static xtd::drawing::image weather_storm() noexcept;
@@ -488,11 +488,11 @@ namespace xtd {
       /// @param size The status system image size in pixels.
       /// @return The xtd::drawing::image "weather-storm".
       static xtd::drawing::image weather_storm(const xtd::drawing::size& size) noexcept;
-
+      
       /// @}
-
+      
       /// @name Public Static Methods
-
+      
       /// @{
       /// @brief Gets an array of images.
       /// @return The array of images.
@@ -501,7 +501,7 @@ namespace xtd {
       /// @param size The images size in pixels.
       /// @return The array of images.
       static xtd::array<xtd::drawing::image> get_images(const xtd::drawing::size& size) noexcept;
-
+      
       /// @brief Gets an array of image names.
       /// @return The array of image names.
       static const xtd::array<xtd::string>& get_image_names() noexcept;

@@ -11,7 +11,7 @@ namespace xtd {
     /// @cond
     class control;
     /// @endcond
-
+    
     /// @brief Represents a const control reference.
     /// @par Header
     /// ```cpp

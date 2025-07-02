@@ -19,7 +19,7 @@ namespace xtd {
     class settings;
   }
   /// @endcond
-
+  
   /// @brief The xtd::forms::native namespace contains internal native API definitions to access underlying toolkits used by xtd.forms library.
   /// @warning Internal use only
   namespace native {

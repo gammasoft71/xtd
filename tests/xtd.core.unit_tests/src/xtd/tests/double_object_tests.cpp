@@ -34,7 +34,7 @@ namespace xtd::tests {
     void test_method_(positive_infinity) {
       assert::are_equal(std::numeric_limits<double>::infinity(), double_object::positive_infinity);
     }
-
+    
     void test_method_(is_infinity) {
       assert::is_false(double_object::is_infinity(0.0));
       assert::is_false(double_object::is_infinity(1.0));

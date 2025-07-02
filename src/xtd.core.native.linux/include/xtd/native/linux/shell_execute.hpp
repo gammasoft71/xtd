@@ -18,18 +18,18 @@ namespace xtd::native::linux {
       const auto command = file_name + (arguments.empty() ? "" : (" " + arguments));
       auto file_stream = popen(command.c_str(), "r");
       if (file_stream == nullptr) return {};
-
+      
       auto result = std::string {};
       while (!feof(file_stream)) {
         auto buffer = std::string(buffer_size, '\0');
         if (fread(buffer.data(), 1, buffer.size(), file_stream) == 0) break;
-          result += buffer;
+        result += buffer;
       }
-
+      
       pclose(file_stream);
       return result;
     }
-
+    
   private:
     shell_execute() = delete;
     static constexpr size_t buffer_size = 128;

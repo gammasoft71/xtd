@@ -170,7 +170,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button abort(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent about light_button.
       /// @return The created light_button.
       static light_button about();
@@ -315,7 +315,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button about(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent actual_size light_button.
       /// @return The created light_button.
       static light_button actual_size();
@@ -460,7 +460,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button actual_size(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent add light_button.
       /// @return The created light_button.
       static light_button add();
@@ -605,7 +605,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button add(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent alignment light_button.
       /// @return The created light_button.
       static light_button alignment();
@@ -750,7 +750,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button alignment(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent align_left light_button.
       /// @return The created light_button.
       static light_button align_left();
@@ -895,7 +895,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button align_left(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent align_right light_button.
       /// @return The created light_button.
       static light_button align_right();
@@ -1040,7 +1040,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button align_right(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent apply light_button.
       /// @return The created light_button.
       static light_button apply();
@@ -1185,7 +1185,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button apply(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent ascending light_button.
       /// @return The created light_button.
       static light_button ascending();
@@ -1330,7 +1330,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button ascending(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent back light_button.
       /// @return The created light_button.
       static light_button back();
@@ -1475,7 +1475,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button back(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent bold light_button.
       /// @return The created light_button.
       static light_button bold();
@@ -1620,7 +1620,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button bold(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent bottom light_button.
       /// @return The created light_button.
       static light_button bottom();
@@ -1765,7 +1765,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button bottom(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent cancel light_button.
       /// @return The created light_button.
       static light_button cancel();
@@ -1910,7 +1910,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button cancel(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent cdrom light_button.
       /// @return The created light_button.
       static light_button cdrom();
@@ -2055,7 +2055,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button cdrom(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent centered light_button.
       /// @return The created light_button.
       static light_button centered();
@@ -2200,7 +2200,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button centered(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent clear light_button.
       /// @return The created light_button.
       static light_button clear();
@@ -2345,7 +2345,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button clear(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent close light_button.
       /// @return The created light_button.
       static light_button close();
@@ -2490,7 +2490,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button close(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent color light_button.
       /// @return The created light_button.
       static light_button color();
@@ -2635,7 +2635,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button color(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent contents light_button.
       /// @return The created light_button.
       static light_button contents();
@@ -2780,7 +2780,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button contents(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent convert light_button.
       /// @return The created light_button.
       static light_button convert();
@@ -2925,7 +2925,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button convert(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent copy light_button.
       /// @return The created light_button.
       static light_button copy();
@@ -3070,7 +3070,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button copy(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent customize light_button.
       /// @return The created light_button.
       static light_button customize();
@@ -3215,7 +3215,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button customize(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent cut light_button.
       /// @return The created light_button.
       static light_button cut();
@@ -3360,7 +3360,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button cut(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent del light_button.
       /// @return The created light_button.
       static light_button del();
@@ -3505,7 +3505,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button del(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent descending light_button.
       /// @return The created light_button.
       static light_button descending();
@@ -3650,7 +3650,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button descending(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent down light_button.
       /// @return The created light_button.
       static light_button down();
@@ -3795,7 +3795,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button down(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent edit light_button.
       /// @return The created light_button.
       static light_button edit();
@@ -3940,7 +3940,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button edit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent execute light_button.
       /// @return The created light_button.
       static light_button execute();
@@ -4085,7 +4085,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button execute(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent exit light_button.
       /// @return The created light_button.
       static light_button exit();
@@ -4230,7 +4230,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button exit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent file light_button.
       /// @return The created light_button.
       static light_button file();
@@ -4375,7 +4375,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button file(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent find light_button.
       /// @return The created light_button.
       static light_button find();
@@ -4520,7 +4520,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button find(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent first light_button.
       /// @return The created light_button.
       static light_button first();
@@ -4665,7 +4665,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button first(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent floppy light_button.
       /// @return The created light_button.
       static light_button floppy();
@@ -4810,7 +4810,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button floppy(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent font light_button.
       /// @return The created light_button.
       static light_button font();
@@ -4955,7 +4955,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button font(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent forward light_button.
       /// @return The created light_button.
       static light_button forward();
@@ -5100,7 +5100,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button forward(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent harddisk light_button.
       /// @return The created light_button.
       static light_button harddisk();
@@ -5245,7 +5245,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button harddisk(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent help light_button.
       /// @return The created light_button.
       static light_button help();
@@ -5390,7 +5390,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button help(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent home light_button.
       /// @return The created light_button.
       static light_button home();
@@ -5535,7 +5535,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button home(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent ignore light_button.
       /// @return The created light_button.
       static light_button ignore();
@@ -5680,7 +5680,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button ignore(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent indent light_button.
       /// @return The created light_button.
       static light_button indent();
@@ -5825,7 +5825,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button indent(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent index light_button.
       /// @return The created light_button.
       static light_button index();
@@ -5970,7 +5970,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button index(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent info light_button.
       /// @return The created light_button.
       static light_button info();
@@ -6115,7 +6115,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button info(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent italic light_button.
       /// @return The created light_button.
       static light_button italic();
@@ -6260,7 +6260,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button italic(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent justified light_button.
       /// @return The created light_button.
       static light_button justified();
@@ -6405,7 +6405,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button justified(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent jump_to light_button.
       /// @return The created light_button.
       static light_button jump_to();
@@ -6550,7 +6550,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button jump_to(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent last light_button.
       /// @return The created light_button.
       static light_button last();
@@ -6695,7 +6695,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button last(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent network light_button.
       /// @return The created light_button.
       static light_button network();
@@ -6840,7 +6840,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button network(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent new_ light_button.
       /// @return The created light_button.
       static light_button new_();
@@ -6985,7 +6985,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button new_(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent next light_button.
       /// @return The created light_button.
       static light_button next();
@@ -7130,7 +7130,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button next(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent no light_button.
       /// @return The created light_button.
       static light_button no();
@@ -7275,7 +7275,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button no(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent ok light_button.
       /// @return The created light_button.
       static light_button ok();
@@ -7420,7 +7420,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button ok(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent open light_button.
       /// @return The created light_button.
       static light_button open();
@@ -7565,7 +7565,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button open(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent options light_button.
       /// @return The created light_button.
       static light_button options();
@@ -7710,7 +7710,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button options(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent paste light_button.
       /// @return The created light_button.
       static light_button paste();
@@ -7855,7 +7855,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button paste(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent preferences light_button.
       /// @return The created light_button.
       static light_button preferences();
@@ -8000,7 +8000,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button preferences(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent previous light_button.
       /// @return The created light_button.
       static light_button previous();
@@ -8145,7 +8145,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button previous(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent print light_button.
       /// @return The created light_button.
       static light_button print();
@@ -8290,7 +8290,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button print(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent print_preview light_button.
       /// @return The created light_button.
       static light_button print_preview();
@@ -8435,7 +8435,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button print_preview(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent properties light_button.
       /// @return The created light_button.
       static light_button properties();
@@ -8580,7 +8580,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button properties(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent quit light_button.
       /// @return The created light_button.
       static light_button quit();
@@ -8725,7 +8725,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button quit(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent redo light_button.
       /// @return The created light_button.
       static light_button redo();
@@ -8870,7 +8870,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button redo(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent refresh light_button.
       /// @return The created light_button.
       static light_button refresh();
@@ -9015,7 +9015,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button refresh(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent remove light_button.
       /// @return The created light_button.
       static light_button remove();
@@ -9160,7 +9160,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button remove(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent replace light_button.
       /// @return The created light_button.
       static light_button replace();
@@ -9305,7 +9305,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button replace(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent retry light_button.
       /// @return The created light_button.
       static light_button retry();
@@ -9450,7 +9450,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button retry(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent revert_to_saved light_button.
       /// @return The created light_button.
       static light_button revert_to_saved();
@@ -9595,7 +9595,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button revert_to_saved(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent save light_button.
       /// @return The created light_button.
       static light_button save();
@@ -9740,7 +9740,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button save(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent save_as light_button.
       /// @return The created light_button.
       static light_button save_as();
@@ -9885,7 +9885,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button save_as(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent search light_button.
       /// @return The created light_button.
       static light_button search();
@@ -10030,7 +10030,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button search(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent select_all light_button.
       /// @return The created light_button.
       static light_button select_all();
@@ -10175,7 +10175,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button select_all(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent settings light_button.
       /// @return The created light_button.
       static light_button settings();
@@ -10320,7 +10320,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button settings(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent spell_check light_button.
       /// @return The created light_button.
       static light_button spell_check();
@@ -10465,7 +10465,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button spell_check(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent stop light_button.
       /// @return The created light_button.
       static light_button stop();
@@ -10610,7 +10610,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button stop(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent strikeout light_button.
       /// @return The created light_button.
       static light_button strikeout();
@@ -10755,7 +10755,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button strikeout(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent tools light_button.
       /// @return The created light_button.
       static light_button tools();
@@ -10900,7 +10900,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button tools(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent top light_button.
       /// @return The created light_button.
       static light_button top();
@@ -11045,7 +11045,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button top(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent undelete light_button.
       /// @return The created light_button.
       static light_button undelete();
@@ -11190,7 +11190,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button undelete(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent underline light_button.
       /// @return The created light_button.
       static light_button underline();
@@ -11335,7 +11335,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button underline(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent undo light_button.
       /// @return The created light_button.
       static light_button undo();
@@ -11480,7 +11480,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button undo(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent unindent light_button.
       /// @return The created light_button.
       static light_button unindent();
@@ -11625,7 +11625,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button unindent(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent up light_button.
       /// @return The created light_button.
       static light_button up();
@@ -11770,7 +11770,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button up(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent view light_button.
       /// @return The created light_button.
       static light_button view();
@@ -11915,7 +11915,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button view(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent window light_button.
       /// @return The created light_button.
       static light_button window();
@@ -12060,7 +12060,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button window(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent yes light_button.
       /// @return The created light_button.
       static light_button yes();
@@ -12205,7 +12205,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button yes(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent zoom_in light_button.
       /// @return The created light_button.
       static light_button zoom_in();
@@ -12350,7 +12350,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button zoom_in(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent zoom_out light_button.
       /// @return The created light_button.
       static light_button zoom_out();
@@ -12495,7 +12495,7 @@ namespace xtd {
       /// @param name The name of the light_button.
       /// @return The created light_button.
       static light_button zoom_out(const control& parent, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
-
+      
       /// @brief Create a system-defined light_button that represent zoom_to_fit light_button.
       /// @return The created light_button.
       static light_button zoom_to_fit();

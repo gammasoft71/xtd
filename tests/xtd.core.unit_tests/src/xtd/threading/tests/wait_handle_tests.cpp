@@ -28,7 +28,7 @@ namespace xtd::threading::tests {
       unnamed_mutex(unnamed_mutex&&) = default;
       unnamed_mutex(const unnamed_mutex&) = default;
       unnamed_mutex& operator=(const unnamed_mutex&) = default;
-
+      
       intptr handle() const noexcept override {return mutex_ ? reinterpret_cast<intptr>(mutex_.get()) : invalid_handle;}
       void handle(intptr value) override {mutex_.reset(reinterpret_cast<std::recursive_timed_mutex*>(value));}
       
@@ -50,26 +50,26 @@ namespace xtd::threading::tests {
       bool wait(int32_t milliseconds_timeout) override {
         if (!mutex_) throw_helper::throws(exception_case::object_closed);
         if (milliseconds_timeout < -1) throw_helper::throws(exception_case::argument_out_of_range);
-
+        
         if (milliseconds_timeout != timeout::infinite) return (locked_ = mutex_->try_lock_for(std::chrono::milliseconds {milliseconds_timeout}));
         mutex_->lock();
         locked_ = true;
         return locked_;
       }
-
+      
     private:
       xtd::sptr<std::recursive_timed_mutex> mutex_ = xtd::new_sptr<std::recursive_timed_mutex>();
       bool locked_ = false;
     };
     
     void test_method_(invalid_handle) {
-#if defined(_WIN32)
+      #if defined(_WIN32)
       assert::are_equal(reinterpret_cast<intptr>(INVALID_HANDLE_VALUE), wait_handle::invalid_handle);
-#elif defined(__linux__) || defined(__APPLE__)
+      #elif defined(__linux__) || defined(__APPLE__)
       assert::are_equal(reinterpret_cast<intptr>(SEM_FAILED), wait_handle::invalid_handle);
-#endif
+      #endif
     }
-
+    
     void test_method_(wait_timeout) {
       assert::are_equal(std::numeric_limits<size_t>::max(), wait_handle::wait_timeout);
     }
@@ -84,14 +84,14 @@ namespace xtd::threading::tests {
       assert::is_true(m.wait_one());
       assert::is_true(m.locked());
     }
-
+    
     void test_method_(wait_one_and_release_mutex) {
       auto m = unnamed_mutex {};
       assert::is_true(m.wait_one());
       assert::does_not_throw([&] {m.release_mutex();});
       assert::is_false(m.locked());
     }
-
+    
     void test_method_(wait_one_and_release_mutex_and_release_mutex) {
       auto m = unnamed_mutex {};
       assert::is_true(m.wait_one());
@@ -99,7 +99,7 @@ namespace xtd::threading::tests {
       assert::does_not_throw([&] {m.release_mutex();});
       assert::is_false(m.locked());
     }
-
+    
     void test_method_(wait_one_and_wait_one_and_release_mutex) {
       auto m = unnamed_mutex {};
       assert::is_true(m.wait_one());
@@ -108,13 +108,13 @@ namespace xtd::threading::tests {
       assert::does_not_throw([&] {m.release_mutex();});
       assert::is_false(m.locked());
     }
-
+    
     void test_method_(close_and_wait_one) {
       auto m = unnamed_mutex {};
       m.close();
       assert::throws<object_closed_exception>([&] {m.wait_one();});
     }
-
+    
     void test_method_(close_and_release_mutex) {
       auto m = unnamed_mutex {};
       m.close();

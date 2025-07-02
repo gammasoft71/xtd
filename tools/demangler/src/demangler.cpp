@@ -48,17 +48,17 @@ namespace demangler {
   private:
     static auto get_error() noexcept -> string {
       return "demangler : invalid params\n"
-        "Try 'demangler --help' for more information.";
+             "Try 'demangler --help' for more information.";
     }
     
     static auto get_usage() noexcept -> string {
       return "Usage\n"
-        "  demangler stack_trace_file [–o output_demangled_file]\n"
-        "\n"
-        "-o, --output  : Write result in output_demangled_file.\n"
-        "-q, --quiet   : Do not write result on stdout.\n"
-        "-v, --version : Shows version information.\n"
-        "-h, --help    : Shows this help page.";
+             "  demangler stack_trace_file [–o output_demangled_file]\n"
+             "\n"
+             "-o, --output  : Write result in output_demangled_file.\n"
+             "-q, --quiet   : Do not write result on stdout.\n"
+             "-v, --version : Shows version information.\n"
+             "-h, --help    : Shows this help page.";
     }
     
     static auto get_version() noexcept -> string {
@@ -73,9 +73,9 @@ namespace demangler {
           else if ((args[index] == "-o" || args[index] == "--output") && index < args.size()) output_file = args[++index];
           else if ((args[index] == "-q" || args[index] == "--quiet")) quiet = true;
           else input_file = args[index];
-        
+          
         return show_help || show_version || !input_file.empty();
-      } catch(...) {
+      } catch (...) {
         return false;
       }
     }

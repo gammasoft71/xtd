@@ -38,7 +38,7 @@ namespace xtd {
       xtd::size get_hash_code() const noexcept override {
         return hash_code::combine(text_);
       }
-
+      
     private:
       xtd::string text_;
     };

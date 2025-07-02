@@ -184,7 +184,7 @@ namespace xtd {
       /// @return The characters after the last directory separator character in path. If the last character of path is a directory or volume separator character, this method returns string empty ("").
       /// @remarks The separator characters used to determine the start of the file name are directory_separator_char and alt_directory_separator_char.
       static xtd::string get_file_name(const xtd::string& path);
-
+      
       /// @brief Returns the file name of the specified path string without the extension.
       /// @param path The path of the file.
       /// @return The string returned by xtd::io::path::get_file_name, minus the last period (.) and all characters following it.
@@ -231,14 +231,14 @@ namespace xtd {
       /// @return A random folder name or file name.
       /// @remarks The get_random_file_name method returns a cryptographically strong, random string that can be used as either a folder name or a file name. Unlike GetTempFileName, get_random_file_name does not create a file. When the security of your file system is paramount, this method should be used instead of GetTempFileName.
       static xtd::string get_random_file_name(size_t name_size, size_t extension_size);
-
+      
       /// @brief Creates a uniquely named, zero-byte temporary file on disk and returns the full path of that file.
       /// @return The full path of the temporary file.
       /// @remarks This method creates a temporary file with a .TMP file extension. The temporary file is created within the user’s temporary folder, which is the path returned by the GetTempPath method.
       /// @remarks The GetTempFileName method will raise an IOException if it is used to create more than 65535 files without deleting previous temporary files.
       /// @remarks The GetTempFileName method will raise an IOException if no unique temporary file name is available. To resolve this error, delete all unneeded temporary files.
       static xtd::string get_temp_file_name();
-
+      
       /// @brief Returns the path of the current user's temporary folder.
       /// @return string The path to the temporary folder, ending with a backslash.
       /// @remarks This method checks for the existence of environment variables in the following order and uses the first path found:

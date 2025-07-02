@@ -38,7 +38,7 @@ namespace xtd {
     /// @remarks Normally you should use the std::locale() method. This function only exists if you have a good reason to bypass std::locale().
     /// @warning If you set the language with this method, and you use the std::locale method afterwards, translator will use the language initialized with this method and not with std::locale().
     static void language(const xtd::string& language);
-
+    
     /// @brief Gets the global locale.
     /// @return The global locale.
     /// @remarks is same a call `std::locale {};`
@@ -51,7 +51,7 @@ namespace xtd {
     /// @param value The global locale.
     /// @remarks is same a call `std::locale::global(value);`
     static void locale(const std::locale& value);
-
+    
     /// @brief Gets an array of languages supported by the application.
     /// @return An array of languages supported by the application.
     static xtd::array<xtd::string> languages();

@@ -45,19 +45,19 @@ namespace xtd {
           /// @param brightness The brightness.
           explicit disabled_effect(float brightness);
           /// @}
-
+          
           /// @name Public Properties
           
           /// @{
           /// @brief Sets the background color.
           /// @param value The background color.
           void back_color(const xtd::drawing::color& value);
-
+          
           /// @brief Gets or sets the brightness.
           /// @param brightness The brightness.
           float brightness = system_colors::control().get_brightness();
           /// @}
-
+          
         protected:
           /// @name Protected Methods
           

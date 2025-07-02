@@ -21,7 +21,7 @@ intmax_t thread::create(std::function<void(intmax_t)> start, intmax_t obj, int32
     start_obj->first(start_obj->second);
     delete start_obj;
     return nullptr;
-  }, reinterpret_cast<void*>( new std::pair<std::function<void(intmax_t)>, intmax_t> {start, obj}));
+  }, reinterpret_cast<void*>(new std::pair<std::function<void(intmax_t)>, intmax_t> {start, obj}));
   if (error != 0) return reinterpret_cast<intmax_t>(PTHREAD_FAILED);
   // The POSIX standard provides no mechanism by which a thread A can suspend the execution of another thread B, without cooperation from B. The only way to implement a suspend/resume mechanism is to have B check periodically some global variable for a suspend request and then suspend itself on a condition variable, which another thread can signal later to restart B.
   id = reinterpret_cast<intmax_t>(thread);
@@ -63,14 +63,14 @@ bool thread::set_priority(intmax_t handle, int32_t priority) {
   auto schedParam = sched_param {};
   if (::pthread_getschedparam(reinterpret_cast<pthread_t>(handle), &policy, &schedParam) != 0)
     return false;
-  
+    
   schedParam.sched_priority = static_cast<int32_t>(std::ceil((static_cast<double>(priority) * (sched_get_priority_max(policy) - sched_get_priority_min(policy)) / 4) + sched_get_priority_min(policy)));
   return pthread_setschedparam(reinterpret_cast<pthread_t>(handle), policy, &schedParam) == 0;
 }
 
 void thread::sleep(int32_t milliseconds_timeout) {
   auto infinite_sleep = [] {while (true) std::this_thread::sleep_for(std::chrono::hours::max());};
-  if (milliseconds_timeout == -1) infinite_sleep();
+if (milliseconds_timeout == -1) infinite_sleep();
   else if (milliseconds_timeout == 0) yield();
   else std::this_thread::sleep_for(std::chrono::milliseconds {milliseconds_timeout});
 }

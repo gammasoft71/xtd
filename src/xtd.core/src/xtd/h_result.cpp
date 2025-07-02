@@ -48,8 +48,8 @@ const std::unordered_map<int32, string>& h_result::get_names() noexcept {
     {COR_E_APPLICATION, "COR_E_APPLICATION"},
     {COR_E_ARGUMENT, "COR_E_ARGUMENT"},
     {COR_E_ARGUMENTOUTOFRANGE, "COR_E_ARGUMENTOUTOFRANGE"},
-    {COR_E_ARITHMETIC , "COR_E_ARITHMETIC"},
-    {COR_E_ARRAYTYPEMISMATCH , "COR_E_ARRAYTYPEMISMATCH"},
+    {COR_E_ARITHMETIC, "COR_E_ARITHMETIC"},
+    {COR_E_ARRAYTYPEMISMATCH, "COR_E_ARRAYTYPEMISMATCH"},
     {COR_E_BADEXEFORMAT, "COR_E_BADEXEFORMAT"},
     {COR_E_BADIMAGEFORMAT, "COR_E_BADIMAGEFORMAT"},
     {COR_E_CANNOTUNLOADAPPDOMAIN, "COR_E_CANNOTUNLOADAPPDOMAIN"},
@@ -162,7 +162,7 @@ const std::unordered_map<int32, string>& h_result::get_names() noexcept {
   };
   return h_result_names;
 }
- 
+
 string h_result::get_name(int32 h_result) noexcept {
   auto iterator = get_names().find(h_result);
   if (iterator == get_names().end()) return string::format("0x{:X8}", static_cast<uint32>(h_result));
@@ -180,8 +180,8 @@ const std::unordered_map<int32, string>& h_result::get_messages() noexcept {
     {COR_E_APPLICATION, "Error in the application."_t},
     {COR_E_ARGUMENT, "Value does not fall within the expected range."_t},
     {COR_E_ARGUMENTOUTOFRANGE, "Specified argument was out of the range of valid values."_t},
-    {COR_E_ARITHMETIC , "Overflow or underflow in the arithmetic operation."},
-    {COR_E_ARRAYTYPEMISMATCH , "Attempted to access an element as a type incompatible with the array."_t},
+    {COR_E_ARITHMETIC, "Overflow or underflow in the arithmetic operation."},
+    {COR_E_ARRAYTYPEMISMATCH, "Attempted to access an element as a type incompatible with the array."_t},
     {COR_E_BADEXEFORMAT, "Format of the executable (.exe) cannot be run."_t},
     {COR_E_BADIMAGEFORMAT, "Format of the executable (.exe) or library (.dll) is invalid."_t},
     {COR_E_CANNOTUNLOADAPPDOMAIN, "Attempt to unload the AppDomain failed."_t},
@@ -302,9 +302,9 @@ int32 h_result::get_severity(int32 h_result) noexcept {
 const std::error_category& h_result::h_result_category() noexcept {
   struct h_result_category : public std::error_category {
     std::string message(int h_result) const override {return xtd::h_result::get_message(h_result);}
-    const char* name() const noexcept override{return "h_result_category";}
+    const char* name() const noexcept override {return "h_result_category";}
   };
-
+  
   static auto result = h_result_category {};
   return result;
 }

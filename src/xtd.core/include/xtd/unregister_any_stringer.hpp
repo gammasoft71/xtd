@@ -20,8 +20,8 @@ namespace xtd {
   /// @par Header
   /// ```cpp
   /// #include <xtd/any>
-/// ```
-/// @par Namespace
+  /// ```
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

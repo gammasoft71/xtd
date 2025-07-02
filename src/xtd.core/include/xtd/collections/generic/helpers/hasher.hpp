@@ -47,7 +47,7 @@ namespace xtd {
           /// @}
           
           /// @name Public Operators
-
+          
           /// @{
           /// @brief Serves as a hash function for a specified key with a particular type (type_t).
           /// @param key The key to hash.

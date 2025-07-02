@@ -41,7 +41,7 @@ namespace xtd {
           /// @param percent The percent factor in %.
           explicit contrast_effect(double percent);
           /// @}
-
+          
           /// @name Public Properties
           
           /// @{
@@ -50,7 +50,7 @@ namespace xtd {
           /// @remarks `0.0` will make the image completely black. `1.0` is default and represents the original image. Values over `1.0` will provide brighter results.
           double percent = 100.0;
           /// @}
-
+          
         protected:
           /// @name Protected Methods
           

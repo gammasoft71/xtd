@@ -77,7 +77,7 @@ namespace xtd {
       /// @cond
       ~wait_handle();
       /// @endcond
-
+      
       /// @name Public Properties
       
       /// @{
@@ -224,7 +224,7 @@ namespace xtd {
       template<class collection_t>
       static size_t wait_any(const collection_t& wait_handles, const time_span& timeout) {return wait_any(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));}
       /// @}
-
+      
       /// @cond
       template<class ...items_t>
       static bool wait_all(items_t... items) {return wait_all(timeout::infinite, items...);}
@@ -260,7 +260,7 @@ namespace xtd {
       static bool wait_all(const xtd::array<xtd::uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout);
       static bool wait_all(const xtd::array<xtd::uptr<wait_handle>>& wait_handles, const time_span& timeout);
       static bool wait_all(const xtd::array<wait_handle*>& wait_handles, int32 milliseconds_timeout);
-
+      
       template<class ...items_t>
       static size_t wait_any(items_t... items) {return wait_any(timeout::infinite, items...);}
       template<class ...items_t>
@@ -296,7 +296,7 @@ namespace xtd {
       static size_t wait_any(const xtd::array<xtd::uptr<wait_handle>>& wait_handles, const time_span& timeout);
       static size_t wait_any(const xtd::array<wait_handle*>& wait_handles, int32 milliseconds_timeout);
       /// @endcond
-
+      
     protected:
       /// @name Protected Methods
       
@@ -314,10 +314,10 @@ namespace xtd {
       /// @remarks Override this function for all derived object
       virtual bool wait(int32 milliseconds_timeout) = 0;
       /// @}
-
+      
     private:
       template<class item_t, class ...items_t>
-      static void fill_wait_handle_pointers(std::vector<wait_handle*>& wait_handle_pointers, item_t& first, items_t&... rest) {
+      static void fill_wait_handle_pointers(std::vector<wait_handle*>& wait_handle_pointers, item_t& first, items_t& ... rest) {
         wait_handle_pointers.push_back(const_cast<wait_handle*>(as<wait_handle>(&first)));
         fill_wait_handle_pointers(wait_handle_pointers, rest...);
       }

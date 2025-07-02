@@ -51,7 +51,7 @@ namespace xtd::tests {
     void test_method_(format_string_with_wstring) {
       assert::are_equal("string", format("{}", wstring("string")));
     }
-
+    
     void test_method_(format_string_with_std_string) {
       assert::are_equal("string", format("{}", std::string("string")));
     }

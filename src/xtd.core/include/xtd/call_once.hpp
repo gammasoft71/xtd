@@ -27,7 +27,7 @@ namespace xtd {
   
   template<class function_t>
   auto operator +(call_once, function_t&& function) {
-    return __xtd_call_once_object__<function_t>{std::forward<function_t>(function)};
+    return __xtd_call_once_object__<function_t> {std::forward<function_t>(function)};
   }
   /// @endcond
 }

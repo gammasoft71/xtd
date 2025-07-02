@@ -13,7 +13,7 @@ namespace {
   inline constexpr double spline_weight(double value) {
     return (spline_cube(value + 2) - 4 * spline_cube(value + 1) + 6 * spline_cube(value) - 4 * spline_cube(value - 1)) / 6;
   }
-
+  
   struct bicubic_precalculate : xtd::object {
     xtd::fixed_array<double, 4> weight;
     xtd::fixed_array<xtd::int32, 4> offset;
@@ -26,7 +26,7 @@ namespace {
       precalculate.weight[k + 1] = spline_weight(k - decimals);
     }
   }
-
+  
   inline void resample_bicubic_precalculates(xtd::collections::generic::list<bicubic_precalculate>& precalculates, xtd::int32 old_size) {
     const auto new_size = static_cast<xtd::int32>(precalculates.size());
     if (old_size <= 0 || new_size == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
@@ -42,7 +42,7 @@ namespace {
       compute_bicubic_precalculate(precalculates[0], source_pixel, old_size);
     }
   }
-
+  
   xtd::drawing::image bicubic_interpolation(const xtd::drawing::image& source_image, const xtd::drawing::size& size) {
     if (source_image == xtd::drawing::image::empty) return source_image;
     if (size.width == source_image.width() && size.height == source_image.height()) return source_image;
@@ -52,7 +52,7 @@ namespace {
     const auto source_height = source_image.height();
     const auto source_alpha = reinterpret_cast<const xtd::drawing::helpers::alpha*>(source_image.alpha());
     const auto source_rgb = reinterpret_cast<const xtd::drawing::helpers::rgb*>(source_image.rgb());
-
+    
     const auto result_width = size.width;
     const auto result_height = size.height;
     auto result_image = xtd::drawing::bitmap {result_width, result_height};

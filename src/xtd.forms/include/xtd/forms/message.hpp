@@ -46,7 +46,7 @@ namespace xtd {
       /// @param hwnd The window handle of the message.
       /// @remarks Window handle is a value that uniquely identifies a window on the system. This property returns a handle of the window whose window procedure receives this message. It is useful when your code need to interact with some native Windows API functions that expect window handles as parameters.
       intptr hwnd = 0;
-
+      
       /// @brief Gets or sets the ID number for the message.
       /// @param msg The ID number for the message.
       uint32 msg = 0;
@@ -55,12 +55,12 @@ namespace xtd {
       /// @param wparam The wparam field of the message.
       /// @remarks The value of this field depends on the message. Use the wparam field to get information that is important to handling the message. This field is typically used to store small pieces of information, such as flags.
       intptr wparam = 0;
-
+      
       /// @brief Sets the lparam field of the message.
       /// @param lparam The lparam field of the message.
       /// @remarks The value of this field depends on the message. Use the lparam field to get information that is important for handling the message. lparam is typically used to store an object if it is needed by the message.
       intptr lparam = 0;
-
+      
       /// @brief Gets or sets the value that is returned to Windows in response to handling the message.
       /// @param result The return value of the message.
       intptr result = 0;
@@ -70,7 +70,7 @@ namespace xtd {
       /// @warning Internal use only
       intptr __handle__ = 0;
       /// @}
-
+      
       /// @name Public Methods
       
       /// @{
@@ -86,7 +86,7 @@ namespace xtd {
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
       xtd::size get_hash_code() const noexcept override;
-
+      
       /// @brief Gets the lparam value and converts the value to an object.
       /// @tparam type The type to use to create an instance. This type must be declared as a structure type.
       /// @return An object that represents an instance of the class specified by the template parameter, with the data from the lparam field of the message.

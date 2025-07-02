@@ -95,7 +95,7 @@ xtd::uint64 version::to_uint64() const {
   if (minor_ / 100 != 0) throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   if (build_ != -1 && build_ / 100 != 0) throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   if (revision_ != -1 && revision_ / 100 != 0) throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
-
+  
   auto result = 0_u64;
   result += major_ * 1000000_u64;
   result += minor_ * 10000_u64;
@@ -120,7 +120,7 @@ version version::parse(const xtd::string& input) {
   auto versions = xtd::collections::specialized::string_collection {};
   for (auto it = std::sregex_token_iterator {input.chars().begin(), input.chars().end(), rgx, -1}, end = std::sregex_token_iterator {}; it != end; ++it)
     versions.push_back(it->str());
-  
+    
   switch (versions.size()) {
     case 2: return version {string::parse<int32>(versions[0]), string::parse<int32>(versions[1])};
     case 3: return version {string::parse<int32>(versions[0]), string::parse<int32>(versions[1]), string::parse<int32>(versions[2])};

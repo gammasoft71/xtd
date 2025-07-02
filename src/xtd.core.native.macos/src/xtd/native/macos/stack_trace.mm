@@ -21,13 +21,13 @@ namespace {
   using address_collection = vector<address>;
   using frame = tuple<string, size_t, size_t, string, size_t>;
   using frame_collection = vector<frame>;
-
+  
   tuple<string, size_t> get_method_and_offset(address address) {
     auto dl_info = Dl_info {};
     if (!dladdr(address, &dl_info)) return make_tuple("", numeric_limits<size_t>::max());
     return make_tuple(__xtd_abi_demangle(dl_info.dli_sname ? dl_info.dli_sname : ""), reinterpret_cast<size_t>(address) - reinterpret_cast<size_t>(dl_info.dli_saddr));
   }
-
+  
   frame_collection get_frames_without_file_info(const address_collection& addresses) {
     auto frames = ::frame_collection {};
     for (const auto& address : addresses) {
@@ -36,7 +36,7 @@ namespace {
     }
     return frames;
   }
-
+  
   frame_collection get_frames(const address_collection& addresses) {
     auto ss = stringstream {};
     ss << "atos -p " << getpid() << " ";
@@ -79,7 +79,7 @@ stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool n
   addresses.resize(static_cast<size_t>(backtrace(addresses.data(), static_cast<int>(addresses.size()))));
   if (skip_frames + get_native_offset() > addresses.size() || skip_frames > numeric_limits<size_t>::max() - get_native_offset()) return {};
   addresses.erase(addresses.begin(), addresses.begin() + skip_frames + get_native_offset());
-
+  
   auto frames = frame_collection {};
   for (const auto& frame : need_file_info ? ::get_frames(addresses) : get_frames_without_file_info(addresses)) {
     if (get<3>(frame) == "start") break;

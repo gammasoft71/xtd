@@ -165,7 +165,7 @@ int32_t socket::get_socket_option(intmax_t handle, int32_t socket_option_level, 
 }
 
 int32_t socket::get_socket_linger_option(intmax_t handle, bool& enabled, uint32_t& linger_time) {
-  auto l= linger {static_cast<int32_t>(enabled), static_cast<int32_t>(linger_time)};
+  auto l = linger {static_cast<int32_t>(enabled), static_cast<int32_t>(linger_time)};
   auto linger_size = size_t {0};
   auto result = ::getsockopt(static_cast<int32_t>(handle), SOL_SOCKET, SO_LINGER, &l, reinterpret_cast<socklen_t*>(&linger_size));
   if (result == 0) {
@@ -324,7 +324,7 @@ int32_t socket::set_socket_option(intmax_t handle, int32_t socket_option_level, 
     return -1;
   }
   if (socket_option_level == SOCKET_OPTION_LEVEL_SOCKET && (socket_option_name == SOCKET_OPTION_NAME_SEND_TIMEOUT || socket_option_name == SOCKET_OPTION_NAME_RECEIVE_TIMEOUT)) {
-    auto timeout = timeval {*reinterpret_cast<const int32_t*>(option) / 1000, *reinterpret_cast<const int32_t*>(option) % 1000 * 1000};
+    auto timeout = timeval {*reinterpret_cast<const int32_t*>(option) / 1000, * reinterpret_cast<const int32_t*>(option) % 1000 * 1000};
     return ::setsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), &timeout, sizeof(timeval));
   }
   return setsockopt(static_cast<int32_t>(handle), socket_option_level_to_native(socket_option_level), socket_option_name_to_native(socket_option_name), reinterpret_cast<const void*>(option), static_cast<socklen_t>(option_length));

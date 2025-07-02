@@ -69,7 +69,7 @@ image image_converter::to_image(const xtd::read_only_span<xtd::byte>& value) {
   index += 4;
   if (value.size() < static_cast<xtd::size>(8 + width * height * 4)) throw_helper::throws(xtd::helpers::exception_case::argument);
   if (width < 1 || height < 1) throw_helper::throws(xtd::helpers::exception_case::argument);
-
+  
   auto result = bitmap {width, height};
   auto result_alpha = reinterpret_cast<alpha*>(result.alpha());
   auto result_rgb = reinterpret_cast<rgb*>(result.rgb());

@@ -58,7 +58,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -162,7 +162,7 @@ namespace xtd {
   inline bool is<char8>(char8 value) {
     return true;
   }
-
+  
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
   /// ```cpp
@@ -184,13 +184,13 @@ namespace xtd {
   inline bool is<wchar>(wchar value) {
     return true;
   }
-
+  
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -212,7 +212,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -234,7 +234,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -256,7 +256,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -278,7 +278,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -300,7 +300,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -322,7 +322,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -344,7 +344,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -366,7 +366,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -388,7 +388,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -410,7 +410,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -432,7 +432,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -454,7 +454,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -476,7 +476,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -496,7 +496,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -511,7 +511,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -531,7 +531,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -546,7 +546,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -566,7 +566,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -581,7 +581,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/is>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core

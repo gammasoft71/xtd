@@ -43,7 +43,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/boxing>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -59,7 +59,7 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/boxing>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
@@ -68,7 +68,7 @@ namespace xtd {
   template<class type_t, class ...args_t>
   inline box<type_t> boxing(args_t&& ...args) noexcept {return box<type_t>(args...);}
   /// @}
-
+  
   /// @cond
   inline const object& boxing(const object& value) noexcept {return value;}
   inline string boxing(const char* value) noexcept {return string(value);}

@@ -39,7 +39,7 @@ namespace xtdc_command {
     }
     
     void create_application_properties(const xtd::string& name, const xtd::string& path) const {
-      auto lines = xtd::array<xtd::string>{
+      auto lines = xtd::array<xtd::string> {
         xtd::string::format("target_default_namespace(\"{}\")", name),
         xtd::string::format("target_name(\"{}\")", name),
         xtd::string::format("target_startup(tunit_main_)", name),
@@ -49,7 +49,7 @@ namespace xtdc_command {
     }
     
     void create_assembly_info(const xtd::string& name, const xtd::string& path) const {
-      auto lines = xtd::array<xtd::string>{
+      auto lines = xtd::array<xtd::string> {
         xtd::string::format("assembly_title(\"{}\")", name),
         "assembly_description(\"\")",
         "assembly_company(\"\")",
@@ -61,7 +61,7 @@ namespace xtdc_command {
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "properties", "assembly_info.cmake"), lines);
     }
-
+    
     void create_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
         "cmake_minimum_required(VERSION 3.20)",
