@@ -12,7 +12,7 @@ var searchData=
   ['debugstreambuf_9',['debugstreambuf',['../classxtd_1_1debugstreambuf.html',1,'xtd']]],
   ['default_5ftrace_5flistener_10',['default_trace_listener',['../classxtd_1_1diagnostics_1_1default__trace__listener.html',1,'xtd::diagnostics']]],
   ['delegate_3c_20result_5ft_28_29_3e_11',['delegate&lt; result_t()&gt;',['../classxtd_1_1delegate_3_01result__t_07_08_4.html',1,'xtd']]],
-  ['delegate_3c_20result_5ft_28arguments_5ft_2e_2e_2e_29_3e_12',['delegate&lt; result_t(arguments_t...)&gt;',['../classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html',1,'xtd']]],
+  ['delegate_3c_20result_5ft_28arguments_5ft_2e_2e_2e_29_20_3e_12',['delegate&lt; result_t(arguments_t...) &gt;',['../classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_01_4.html',1,'xtd']]],
   ['devices_5fsystem_5fimages_13',['devices_system_images',['../classxtd_1_1drawing_1_1devices__system__images.html',1,'xtd::drawing']]],
   ['dialog_5fclosed_5fevent_5fargs_14',['dialog_closed_event_args',['../classxtd_1_1forms_1_1dialog__closed__event__args.html',1,'xtd::forms']]],
   ['dictionary_15',['dictionary',['../classxtd_1_1collections_1_1generic_1_1dictionary.html',1,'xtd::collections::generic']]],

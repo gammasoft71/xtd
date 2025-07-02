@@ -211,7 +211,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>    </div>
 <div class="line"><a id="l00408" name="l00408"></a><span class="lineno"><a class="line" href="classxtd_1_1console.html#a01a96244846df28bb0178e3728434243">  408</a></span>    <span class="keyword">static</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> <a class="code hl_function" href="classxtd_1_1console.html#a01a96244846df28bb0178e3728434243">read_line</a>();</div>
 <div class="line"><a id="l00412" name="l00412"></a><span class="lineno"><a class="line" href="classxtd_1_1console.html#a0d0c13bc9aba9c2a20b47f96608b56fd">  412</a></span>    <span class="keyword">static</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> <a class="code hl_function" href="classxtd_1_1console.html#a0d0c13bc9aba9c2a20b47f96608b56fd">read_line</a>(<span class="keywordtype">bool</span> intercept);</div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span></div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>    </div>
 <div class="line"><a id="l00416" name="l00416"></a><span class="lineno"><a class="line" href="classxtd_1_1console.html#aa238558f28b619a37668f9129b098600">  416</a></span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classxtd_1_1console.html#aa238558f28b619a37668f9129b098600">reset_color</a>();</div>
 <div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>    </div>
 <div class="line"><a id="l00424" name="l00424"></a><span class="lineno"><a class="line" href="classxtd_1_1console.html#ace49300f3a5875c474af63de69275025">  424</a></span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1console.html#ace49300f3a5875c474af63de69275025">set_cursor_position</a>(<a class="code hl_typedef" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> left, <a class="code hl_typedef" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> top);</div>
@@ -229,7 +229,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>    </div>
 <div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
 <div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">write</a>(std::initializer_list&lt;type_t&gt;&amp;&amp; il) {write_(xtd::string::format(<span class="stringliteral">&quot;{}&quot;</span>, il));}</div>
-<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span></div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>    </div>
 <div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>    <span class="keyword">template</span>&lt;<span class="keyword">class </span>...args_t&gt;</div>
 <div class="line"><a id="l00474" name="l00474"></a><span class="lineno"><a class="line" href="classxtd_1_1console.html#a544767ccc08e8dec47e22fd776c5e0d7">  474</a></span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1console.html#a544767ccc08e8dec47e22fd776c5e0d7">write</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; fmt, args_t&amp;&amp; ... values) {write_(xtd::string::format(fmt, std::forward&lt;args_t&gt;(values)...));}</div>
 <div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>    </div>
@@ -240,10 +240,10 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span>    </div>
 <div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
 <div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">write_line</a>(<span class="keyword">const</span> std::initializer_list&lt;type_t&gt;&amp; il) {write_line_(xtd::string::format(<span class="stringliteral">&quot;{}&quot;</span>, il));}</div>
-<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span></div>
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>    </div>
 <div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span>    <span class="keyword">template</span>&lt;<span class="keyword">class </span>...args_t&gt;</div>
 <div class="line"><a id="l00495" name="l00495"></a><span class="lineno"><a class="line" href="classxtd_1_1console.html#a8dd72580e3d5ef899d455935fd08ddb8">  495</a></span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1console.html#a8dd72580e3d5ef899d455935fd08ddb8">write_line</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; fmt, args_t&amp;&amp; ... values) {write_line_(xtd::string::format(fmt, std::forward&lt;args_t&gt;(values)...));}</div>
-<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span></div>
+<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>    </div>
 <div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> __internal_rstc__();</div>
 <div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>    </div>
 <div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span>  <span class="keyword">private</span>:</div>
@@ -353,7 +353,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 2 2025 10:55:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jul 2 2025 20:22:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
