@@ -79,7 +79,7 @@ namespace xtd {
             pointer operator ->() const {return &operator*();}
             
             enumerable_iterator& operator ++() noexcept {
-              if (pos_ != std::numeric_limits<xtd::size>::max()) pos_ = enumerator_.move_next() ? pos_ + 1 : std::numeric_limits<xtd::size>::max();
+              if (pos_ != npos()) pos_ = enumerator_.move_next() ? pos_ + 1 : npos();
               return const_cast<enumerable_iterator&>(*this);
             }
             enumerable_iterator operator ++(int) noexcept {
@@ -98,7 +98,7 @@ namespace xtd {
               return *this;
             }
             difference_type operator -(enumerable_iterator value) const noexcept {
-              if (pos_ == std::numeric_limits<xtd::size>::max()) return std::numeric_limits<xtd::size>::max();
+              if (pos_ == npos()) return npos();
               return static_cast<difference_type>(pos_ - value.pos_);
             }
             
@@ -108,11 +108,11 @@ namespace xtd {
             
           private:
             void reset() {
-              if (pos_ == std::numeric_limits<xtd::size>::max()) return;
+              if (pos_ == npos()) return;
               enumerator_.reset();
               for (auto index = xtd::size {}; index <= pos_; ++index)
                 if (enumerator_.move_next() == false) {
-                  pos_ = std::numeric_limits<xtd::size>::max();
+                  pos_ = npos();
                   break;
                 }
             }
