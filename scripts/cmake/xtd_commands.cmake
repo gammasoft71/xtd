@@ -2352,7 +2352,7 @@ add_definitions(-D__XTD_ROOT_PATH__="${XTD_ROOT_PATH}")
 #endif ()
 
 ################################################################################
-# Run astyle coommand
+# Run astyle command
 
 if (NOT ASTYLE_SOURCE_FILES)
   set(ASTYLE_SOURCE_FILES
@@ -2425,7 +2425,7 @@ if (XTD_ENABLE_RUN_CPPCHECK AND NOT RUN_CPPCHECK_ONLY_ONCE)
     -j ${XTD_PROCESSOR_COUNT}
     --language=c++
     --report-progress
-    --std=c++17
+    --std=c++20
     --suppressions-list=${CMAKE_BINARY_DIR}/cppcheck_false_positive
     --template='[{file}:{line}]: ({severity}) {{id}} {message}'
   )
