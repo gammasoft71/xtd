@@ -15,7 +15,8 @@ sidebar_position: 16
 
 ## Development tips
 
-* [Computer Guid](/docs/documentation/Internal/computer_guid) provides information about about computer guid.
+* [Add new control](/docs/documentation/Internal/add_new_control) provides information on how to create a new xtd control.
+* [Computer Guid](/docs/documentation/Internal/computer_guid) provides information about computer guid.
 * [Exceptions](/docs/documentation/Internal/exceptions) provides information about exceptions.
 * [h_results](/docs/documentation/Internal/hresults) provides information about h_results.
 * [Gnome default size of controls](/docs/documentation/Internal/default_size_of_controls_g) provides information about default control sizes on Gnome.
@@ -31,6 +32,7 @@ sidebar_position: 16
 
 ## Build
 
+* [CI build status](/docs/documentation/Internal/ci_build_status) provides CI xtd build status.
 * [Speed up build](/docs/documentation/Internal/speedup_build) provides investigations to speed up the build of xtd.
 * [ios_build](/docs/documentation/Internal/ios_build) provides information about iOS build.
 
@@ -46,3 +48,6 @@ sidebar_position: 16
 ## Proposals
 
 * [Class organization](/docs/documentation/Internal/class_organization) provides a proposal for class organization.
+
+## Others
+
