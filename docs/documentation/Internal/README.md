@@ -13,9 +13,16 @@ sidebar_position: 16
 
 * [Developer's Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/developer/index.html)
 
+## Build
+
+* [CI build status](/docs/documentation/Internal/ci_build_status) provides CI xtd build status.
+* [Speed up build](/docs/documentation/Internal/speedup_build) provides investigations to speed up the build of xtd.
+* [ios_build](/docs/documentation/Internal/ios_build) provides information about iOS build.
+
 ## Development tips
 
 * [Add new control](/docs/documentation/Internal/add_new_control) provides information on how to create a new xtd control.
+* [Code pages](/docs/documentation/Internal/code_pages) provides list of encodings.
 * [Computer Guid](/docs/documentation/Internal/computer_guid) provides information about computer guid.
 * [Exceptions](/docs/documentation/Internal/exceptions) provides information about exceptions.
 * [h_results](/docs/documentation/Internal/hresults) provides information about h_results.
@@ -30,16 +37,14 @@ sidebar_position: 16
 * [Key events](/docs/documentation/Internal/key_events) provides information about key events.
 * [Globalization](/docs/documentation/Internal/globalization) provides ideas on importing globalization into xtd.
 
-## Build
-
-* [CI build status](/docs/documentation/Internal/ci_build_status) provides CI xtd build status.
-* [Speed up build](/docs/documentation/Internal/speedup_build) provides investigations to speed up the build of xtd.
-* [ios_build](/docs/documentation/Internal/ios_build) provides information about iOS build.
-
 ## Externals tips
 
 * [Wix themes](/docs/documentation/Internal/wix_themes) provides information about website themes (Wix).
 * [wxWidgets window styles](/docs/documentation/Internal/wxwidgets_window_styles) provides information about Windows styles of wxWidgets.
+
+## tools
+
+* [clang-format](/docs/documentation/Internal/clang_format) provides information about clang-format Evaluation for xtd.
 
 ## Informations
 
@@ -48,6 +53,4 @@ sidebar_position: 16
 ## Proposals
 
 * [Class organization](/docs/documentation/Internal/class_organization) provides a proposal for class organization.
-
-## Others
 

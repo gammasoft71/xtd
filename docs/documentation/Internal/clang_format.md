@@ -8,6 +8,36 @@ The goal was to determine whether `clang-format` could match the strict and eleg
 
 ---
 
+## CMake command
+
+```cmake
+option(XTD_DOWNLOAD_CLANG_FORMAT "Download and build clang-format from Github" OFF)
+option(XTD_ENABLE_RUN_CLANG_FORMAT "Enable run clang-format (format) command" OFF)
+
+################################################################################
+# Run clang-format command
+
+if (XTD_ENABLE_RUN_CLANG_FORMAT AND NOT RUN_CLANG_FORMAT_ONLY_ONCE)
+  set(RUN_CLANG_FORMAT_ONLY_ONCE TRUE)
+  find_program(CLANG_FORMAT_EXE NAMES clang-format)
+
+  if (CLANG_FORMAT_EXE AND XTD_ENABLE_RUN_CLANG_FORMAT)
+    file(GLOB_RECURSE CLANG_FORMAT_SOURCE_FILES
+      ${CMAKE_SOURCE_DIR}/*.cpp
+      ${CMAKE_SOURCE_DIR}/*.hpp
+    )
+
+    add_custom_target(run_clang_format
+      COMMAND ${CLANG_FORMAT_EXE} -i -style=file ${CLANG_FORMAT_SOURCE_FILES}
+      COMMENT "Running clang-format"
+    )
+    set_target_properties(run_clang_format PROPERTIES FOLDER commands)
+  endif()
+endif ()
+```
+
+These CMake lines are used to add the `run_clang_format` compilation target.
+
 ## Configuration Used
 
 ```yaml
