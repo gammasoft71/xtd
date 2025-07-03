@@ -52,6 +52,126 @@ namespace xtd::tests {
       }
     }
     
+    void test_method_(get_bytes_char8) {
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(u8' ')) {
+        bytes_assert::are_equal(0x20, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(u8'*')) {
+        bytes_assert::are_equal(0x2A, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(u8'3')) {
+        bytes_assert::are_equal(0x33, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(u8'A')) {
+        bytes_assert::are_equal(0x41, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(u8'[')) {
+        bytes_assert::are_equal(0x5B, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(u8'a')) {
+        bytes_assert::are_equal(0x61, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(u8'{')) {
+        bytes_assert::are_equal(0x7B, 0x00, 0x00, 0x00, bytes);
+      }
+    }
+    
+    void test_method_(get_bytes_char16) {
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(u' ')) {
+        bytes_assert::are_equal(0x20, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(u'*')) {
+        bytes_assert::are_equal(0x2A, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(u'3')) {
+        bytes_assert::are_equal(0x33, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(u'A')) {
+        bytes_assert::are_equal(0x41, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(u'[')) {
+        bytes_assert::are_equal(0x5B, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(u'a')) {
+        bytes_assert::are_equal(0x61, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(u'{')) {
+        bytes_assert::are_equal(0x7B, 0x00, 0x00, 0x00, bytes);
+      }
+    }
+    
+    void test_method_(get_bytes_char32) {
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(U' ')) {
+        bytes_assert::are_equal(0x20, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(U'*')) {
+        bytes_assert::are_equal(0x2A, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(U'3')) {
+        bytes_assert::are_equal(0x33, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(U'A')) {
+        bytes_assert::are_equal(0x41, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(U'[')) {
+        bytes_assert::are_equal(0x5B, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(U'a')) {
+        bytes_assert::are_equal(0x61, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(U'{')) {
+        bytes_assert::are_equal(0x7B, 0x00, 0x00, 0x00, bytes);
+      }
+    }
+    
+    void test_method_(get_bytes_wchar) {
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(L' ')) {
+        bytes_assert::are_equal(0x20, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(L'*')) {
+        bytes_assert::are_equal(0x2A, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(L'3')) {
+        bytes_assert::are_equal(0x33, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(L'A')) {
+        bytes_assert::are_equal(0x41, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(L'[')) {
+        bytes_assert::are_equal(0x5B, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(L'a')) {
+        bytes_assert::are_equal(0x61, 0x00, 0x00, 0x00, bytes);
+      }
+      
+      block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(L'{')) {
+        bytes_assert::are_equal(0x7B, 0x00, 0x00, 0x00, bytes);
+      }
+    }
+
     void test_method_(get_bytes_double) {
       block_scope_(array<xtd::byte> bytes = bit_converter::get_bytes(0.0)) {
         bytes_assert::are_equal(0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, bytes);
