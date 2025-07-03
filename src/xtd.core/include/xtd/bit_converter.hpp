@@ -110,7 +110,7 @@ namespace xtd {
     /// @include bit_converterget_bytesBoolean.cpp
     static xtd::array<xtd::byte> get_bytes(bool value) noexcept;
     
-    /// @brief Returns the specified xhar value as an xtd::array of bytes.
+    /// @brief Returns the specified char value as an xtd::array of bytes.
     /// @param value A char value.
     /// @return An xtd::array of bytes with length 4.
     /// @par Examples
@@ -118,8 +118,8 @@ namespace xtd {
     /// @include bit_converterget_bytes_char.cpp
     static xtd::array<xtd::byte> get_bytes(char value) noexcept;
     
-    /// @brief Returns the specified xhar value as an xtd::array of bytes.
-    /// @param value A char value.
+    /// @brief Returns the specified xtd::char8 value as an xtd::array of bytes.
+    /// @param value A xtd::char8 value.
     /// @return An xtd::array of bytes with length 4.
     /// @par Examples
     /// The following code example converts the bit patterns of char values to xtd::byte xtd::arrays with the get_bytes method.
