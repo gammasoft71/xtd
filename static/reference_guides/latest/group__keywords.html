@@ -270,7 +270,7 @@ Macros</h2></td></tr>
 <p>This keyword is used to represents an abstract class. </p>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/abstract_object&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Library </dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This keyword has no other use than to tag a class to abstract. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">class </span>foo <a class="code hl_define" href="#gac618f4bf4029759cf6ca31a94b89151a">abstract_object_</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -301,7 +301,7 @@ Macros</h2></td></tr>
 <p>The specified expression is cleared automatically when the scope is ended. </p>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/block_scope&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="comment">// values is released automatically after the end closure }.</span></div>
 <div class="line"><a class="code hl_define" href="#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> values = {1, 2, 3, 4, 5}) {</div>
@@ -1248,7 +1248,7 @@ You can't use the await_ keyword in the body of a lock_ statement. </dd></dl>
 <div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(thread_test::main)</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Output: run_me called</span></div>
-<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:167</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">xtd::console_key::b</a></div><div class="ttdeci">@ b</div><div class="ttdoc">The B key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:90</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">xtd::console_key::t</a></div><div class="ttdeci">@ t</div><div class="ttdoc">The T key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:126</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -1440,7 +1440,7 @@ You can't use the await_ keyword in the body of a lock_ statement. </dd></dl>
 Because the argument needs to be an expression syntactically, there are many things disallowed that are not useful to list. The following are worth mentioning that produce errors: predefined types (for example, int or void), nullable types (Point?), array types (Customer[,]), pointer types (Buffer*), qualified alias (A::B), and unbound generic types (Dictionary&lt;,&gt;), preprocessing symbols (DEBUG), and labels (loop:). </dd>
 <dd>
 If you need to get the fully-qualified name, you can use the typeof_ expression along with nameof. For example: <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">c</a> {</div>
-<div class="line"><span class="keyword">public</span>: </div>
+<div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keywordtype">void</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">f</a>(<span class="keywordtype">int</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) {</div>
 <div class="line">    log(xtd::string::format(<span class="stringliteral">&quot;{0}::{1}&quot;</span>, <a class="code hl_define" href="#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_&lt;c&gt;</a>(), <a class="code hl_define" href="#gabe3976c5f529fab9b255e38ced18b281">nameof_</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">f</a>)), <span class="stringliteral">&quot;method entry&quot;</span>);</div>
 <div class="line">  }</div>
@@ -3773,7 +3773,7 @@ You can't use the await_ keyword in the body of a lock_guard_ statement. </dd></
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 26 2025 23:08:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jul 3 2025 09:05:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

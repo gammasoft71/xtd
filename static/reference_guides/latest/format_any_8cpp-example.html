@@ -132,7 +132,7 @@ $(function(){ initResizable(false); });
 <div class="line">  <a class="code hl_function" href="group__system.html#gad7c8890de68091b1a95110ec75c34e99">register_any_stringer&lt;character&gt;</a>([](<span class="keyword">auto</span> value) {<span class="keywordflow">return</span> value.to_string();});</div>
 <div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; <span class="stringliteral">&quot;After register_any_stringer : &quot;</span> &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
 <div class="line">  </div>
-<div class="line">  unregister_any_stringer&lt;character&gt;();</div>
+<div class="line">  <a class="code hl_function" href="group__system.html#ga690f99e87ad4402abed7510a5e18bc15">unregister_any_stringer&lt;character&gt;</a>();</div>
 <div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; <span class="stringliteral">&quot;After unregister_any_stringer : &quot;</span> &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -145,6 +145,7 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="comment">// After unregister_any_stringer : (unregistered)</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a923837ac84baf01726703e0474ca4888"><div class="ttname"><a href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">xtd::console::out</a></div><div class="ttdeci">static std::ostream out</div><div class="ttdoc">Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...</div><div class="ttdef"><b>Definition</b> console.hpp:52</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_a19a9aa87ee20eb3789058621ed161c4e"><div class="ttname"><a href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">xtd::environment::new_line</a></div><div class="ttdeci">static xtd::string new_line() noexcept</div><div class="ttdoc">Gets the newline string defined for this environment.</div></div>
+<div class="ttc" id="agroup__system_html_ga690f99e87ad4402abed7510a5e18bc15"><div class="ttname"><a href="group__system.html#ga690f99e87ad4402abed7510a5e18bc15">xtd::unregister_any_stringer</a></div><div class="ttdeci">void unregister_any_stringer()</div><div class="ttdoc">Unregister an any stringer method for a specified type.</div><div class="ttdef"><b>Definition</b> unregister_any_stringer.hpp:33</div></div>
 <div class="ttc" id="agroup__system_html_gad7c8890de68091b1a95110ec75c34e99"><div class="ttname"><a href="group__system.html#gad7c8890de68091b1a95110ec75c34e99">xtd::register_any_stringer</a></div><div class="ttdeci">void register_any_stringer(const function_t &amp;func)</div><div class="ttdoc">Register an any stringer method for a specified type.</div><div class="ttdef"><b>Definition</b> register_any_stringer.hpp:38</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 <div class="ttc" id="anamespacextd_html_a2ed47ae86e395ccbe84ab1857c78c4e0"><div class="ttname"><a href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">xtd::to_string</a></div><div class="ttdeci">string to_string() const noexcept override</div><div class="ttdoc">Returns the string representation of this xtd::read_only_span &lt;type_t&gt; object.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:375</div></div>
@@ -152,7 +153,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jun 26 2025 23:07:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jul 3 2025 09:05:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
