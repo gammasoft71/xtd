@@ -16,19 +16,23 @@ array<byte> bit_converter::get_bytes(bool value) noexcept {
 }
 
 array<byte> bit_converter::get_bytes(char value) noexcept {
-  return bit_converter::get_bytes(((uint32)value));
+  return bit_converter::get_bytes(static_cast<uint32>(value));
+}
+
+array<byte> bit_converter::get_bytes(char8 value) noexcept {
+  return bit_converter::get_bytes(static_cast<uint32>(value));
 }
 
 array<byte> bit_converter::get_bytes(char16 value) noexcept {
-  return bit_converter::get_bytes(((uint32)value));
+  return bit_converter::get_bytes(static_cast<uint32>(value));
 }
 
 array<byte> bit_converter::get_bytes(char32 value) noexcept {
-  return bit_converter::get_bytes(((uint32)value));
+  return bit_converter::get_bytes(static_cast<uint32>(value));
 }
 
 array<byte> bit_converter::get_bytes(wchar value) noexcept {
-  return bit_converter::get_bytes(((uint32)value));
+  return bit_converter::get_bytes(static_cast<uint32>(value));
 }
 
 array<byte> bit_converter::get_bytes(double value) noexcept {

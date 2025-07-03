@@ -110,36 +110,44 @@ namespace xtd {
     /// @include bit_converterget_bytesBoolean.cpp
     static xtd::array<xtd::byte> get_bytes(bool value) noexcept;
     
-    /// @brief Returns the specified Char value as an xtd::array of bytes.
-    /// @param value A Char value.
+    /// @brief Returns the specified xhar value as an xtd::array of bytes.
+    /// @param value A char value.
     /// @return An xtd::array of bytes with length 4.
     /// @par Examples
-    /// The following code example converts the bit patterns of Char values to xtd::byte xtd::arrays with the get_bytes method.
-    /// @include bit_converterget_bytesChar.cpp
+    /// The following code example converts the bit patterns of char values to xtd::byte xtd::arrays with the get_bytes method.
+    /// @include bit_converterget_bytes_char.cpp
     static xtd::array<xtd::byte> get_bytes(char value) noexcept;
     
-    /// @brief Returns the specified Char value as an xtd::array of bytes.
-    /// @param value A Char value.
+    /// @brief Returns the specified xhar value as an xtd::array of bytes.
+    /// @param value A char value.
     /// @return An xtd::array of bytes with length 4.
     /// @par Examples
-    /// The following code example converts the bit patterns of Char values to xtd::byte xtd::arrays with the get_bytes method.
-    /// @include bit_converterget_bytesChar.cpp
+    /// The following code example converts the bit patterns of char values to xtd::byte xtd::arrays with the get_bytes method.
+    /// @include bit_converterget_bytes_char.cpp
+    static xtd::array<xtd::byte> get_bytes(char8 value) noexcept;
+    
+    /// @brief Returns the specified xtd::char16 value as an xtd::array of bytes.
+    /// @param value A xtd::char16 value.
+    /// @return An xtd::array of bytes with length 4.
+    /// @par Examples
+    /// The following code example converts the bit patterns of xtd::char16 values to xtd::byte xtd::arrays with the get_bytes method.
+    /// @include bit_converterget_bytes_char.cpp
     static xtd::array<xtd::byte> get_bytes(char16 value) noexcept;
     
-    /// @brief Returns the specified Char value as an xtd::array of bytes.
-    /// @param value A Char value.
+    /// @brief Returns the specified xtd::char32 value as an xtd::array of bytes.
+    /// @param value A xtd::char32 value.
     /// @return An xtd::array of bytes with length 4.
     /// @par Examples
-    /// The following code example converts the bit patterns of Char values to xtd::byte xtd::arrays with the get_bytes method.
-    /// @include bit_converterget_bytesChar.cpp
+    /// The following code example converts the bit patterns of xtd::char32 values to xtd::byte xtd::arrays with the get_bytes method.
+    /// @include bit_converterget_bytes_char.cpp
     static xtd::array<xtd::byte> get_bytes(char32 value) noexcept;
     
-    /// @brief Returns the specified Char value as an xtd::array of bytes.
-    /// @param value A Char value.
+    /// @brief Returns the specified wchar value as an xtd::array of bytes.
+    /// @param value A wchar value.
     /// @return An xtd::array of bytes with length 4.
     /// @par Examples
-    /// The following code example converts the bit patterns of Char values to xtd::byte xtd::arrays with the get_bytes method.
-    /// @include bit_converterget_bytesChar.cpp
+    /// The following code example converts the bit patterns of wchar values to xtd::byte xtd::arrays with the get_bytes method.
+    /// @include bit_converterget_bytes_char.cpp
     static xtd::array<xtd::byte> get_bytes(wchar value) noexcept;
     
     /// @brief Returns the specified double value as an xtd::array of bytes.
