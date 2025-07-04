@@ -19,7 +19,7 @@ xtdc run
 ## Output
 
 ```
-This example of methods of the BitConverter class
+This example of methods of the bit_converter class
 generates the following output.
 
                  argument                    byte array
