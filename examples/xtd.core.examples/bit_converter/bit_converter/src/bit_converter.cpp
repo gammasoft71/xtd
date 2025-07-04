@@ -14,7 +14,7 @@ auto main() -> int {
   auto a_char = '*';
   auto a_bool = true;
   
-  console::write_line("This example of methods of the BitConverter class"
+  console::write_line("This example of methods of the bit_converter class"
     "\ngenerates the following output.\n");
   console::write_line(formatter, "argument", "byte array");
   console::write_line(formatter, "--------", "----------");
@@ -31,7 +31,7 @@ auto main() -> int {
 
 // This code produces the following output :
 //
-// This example of methods of the BitConverter class
+// This example of methods of the bit_converter class
 // generates the following output.
 //
 //                  argument                    byte array
