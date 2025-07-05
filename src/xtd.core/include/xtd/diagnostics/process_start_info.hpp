@@ -784,7 +784,7 @@ namespace xtd {
       process_start_info& user_name(const xtd::string& value) noexcept;
       
       /// @brief Gets a value indicating whether to use the operating system shell to start the process.
-      /// @return `true` if the shell should be used when starting the process; `false` if the process should be created directly from the executable file. The default is `true`.
+      /// @return `true` if the shell should be used when starting the process; `false` if the process should be created directly from the executable file. The default is `false`.
       /// @remarks Setting this property to `false` enables you to redirect input, output, and error streams.
       /// @note xtd::diagnostics::process_start_info::use_shell_execute must be `false` if the xtd::diagnostics::process_start_info::user_name property is not an empty string, or an xtd::invalid_operation_exception will be thrown when the xtd::diagnostics::process::start(process_start_info) method is called.
       /// @remarks When you use the operating system shell to start processes, you can start any document (which is any registered file type associated with an executable that has a default open action) and perform operations on the file, such as printing, by using the Process object. When xtd::diagnostics::process_start_info::use_shell_execute is `false`, you can start only executables by using the xtd::diagnostics::process object.
@@ -793,7 +793,7 @@ namespace xtd {
       /// @remarks When xtd::diagnostics::process_start_info::use_shell_execute is `false`, the xtd::diagnostics::process_start_info::working_directory property is not used to find the executable. Instead, it is used only by the process that is started and has meaning only within the context of the new process. When xtd::diagnostics::process_start_info::use_shell_execute is `false`, the xtd::diagnostics::process_start_info::file_name property can be either a fully qualified path to the executable, or a simple executable name that the system will attempt to find within folders specified by the PATH environment variable.
       bool use_shell_execute() const noexcept;
       /// @brief Sets a value indicating whether to use the operating system shell to start the process.
-      /// @param value `true` if the shell should be used when starting the process; `false` if the process should be created directly from the executable file. The default is `true`.
+      /// @param value `true` if the shell should be used when starting the process; `false` if the process should be created directly from the executable file. The default is `false`.
       /// @return The current instance of process_start_info.
       /// @remarks Setting this property to `false` enables you to redirect input, output, and error streams.
       /// @note xtd::diagnostics::process_start_info::use_shell_execute must be `false` if the xtd::diagnostics::process_start_info::user_name property is not an empty string, or an xtd::invalid_operation_exception will be thrown when the xtd::diagnostics::process::start(process_start_info) method is called.
@@ -866,7 +866,7 @@ namespace xtd {
       bool redirect_standard_input_ = false;
       bool redirect_standard_output_ = false;
       xtd::string user_name_;
-      bool use_shell_execute_ = true;
+      bool use_shell_execute_ = false;
       xtd::string verb_;
       xtd::diagnostics::process_window_style window_style_ = xtd::diagnostics::process_window_style::normal;
       xtd::string working_directory_;

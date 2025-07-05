@@ -750,22 +750,22 @@ namespace xtdc_command {
     }
     
     static int documentation(const list<string>& args) {
-      process::start("https://gammasoft71.github.io/xtd/docs/documentation").wait_for_exit();
+      process::start(process_start_info {"https://gammasoft71.github.io/xtd/docs/documentation"}.use_shell_execute(true));
       return 0;
     }
     
     static int examples(const list<string>& args) {
-      process::start("https://github.com/gammasoft71/xtd/blob/master/examples/README.md").wait_for_exit();
+      process::start(process_start_info {"https://github.com/gammasoft71/xtd/blob/master/examples/README.md"}.use_shell_execute(true));
       return 0;
     }
     
     static int guide(const list<string>& args) {
-      process::start("https://gammasoft71.github.io/xtd/reference_guides/latest/index.html").wait_for_exit();
+        process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/index.html"}.use_shell_execute(true));
       return 0;
     }
     
     static int web(const list<string>& args) {
-      process::start("https://gammasoft71.github.io/xtd").wait_for_exit();
+          process::start(process_start_info {"https://gammasoft71.github.io/xtd"}.use_shell_execute(true));
       return 0;
     }
     

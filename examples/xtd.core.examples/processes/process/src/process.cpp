@@ -8,7 +8,6 @@ using namespace xtd::diagnostics;
 auto main() -> int {
   try {
     block_scope_(auto my_process = process {}) {
-      my_process.start_info().use_shell_execute(false);
       // You can start any process other guidgen.
       my_process.start_info().file_name("guidgen");
       my_process.start_info().create_no_window(true);

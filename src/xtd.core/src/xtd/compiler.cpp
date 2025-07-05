@@ -175,7 +175,7 @@ xtd::string compiler::get_compiler_version_string(const xtd::string& compiler_na
   if (iterator != version_strings.end()) return iterator->second;
   try {
     auto psi = process_start_info {compiler_name, "--version"};
-    auto p = process::start(psi.use_shell_execute(false).redirect_standard_output(true)).wait_for_exit();
+    auto p = process::start(psi.redirect_standard_output(true)).wait_for_exit();
     version_strings[compiler_name] = stream_reader(p.standard_output()).read_line();
   } catch (...) {
     version_strings[compiler_name] = string::format("{} {}", name(), version());

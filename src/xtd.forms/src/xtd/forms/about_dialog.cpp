@@ -179,7 +179,7 @@ namespace {
       link_label_website_.text(!website_label.empty() ? website_label : website);
       link_label_website_.link_clicked += [website](object & sender, link_label_clicked_event_args & e) {
         e.visited(true);
-        diagnostics::process::start(website);
+        diagnostics::process::start(diagnostics::process_start_info {website}.use_shell_execute(true));
       };
       
       label_copyright_.height(static_cast<int32>(23 * copyright.split('\n').size()));

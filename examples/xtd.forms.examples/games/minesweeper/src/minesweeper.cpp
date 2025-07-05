@@ -333,7 +333,7 @@ void minesweeper_form::on_about_menu_click(object& sender, const xtd::event_args
 }
 
 void minesweeper_form::on_help_content_menu_click(object& sender, const xtd::event_args& e) {
-  diagnostics::process::start("https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/minesweeper/resources/help.md");
+  diagnostics::process::start(diagnostics::process_start_info {"https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/minesweeper/resources/help.md"}.use_shell_execute(true));
 }
 
 void minesweeper_form::on_custom_menu_click(object& sender, const xtd::event_args& e) {

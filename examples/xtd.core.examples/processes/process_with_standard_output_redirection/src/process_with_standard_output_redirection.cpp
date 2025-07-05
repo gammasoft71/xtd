@@ -8,7 +8,6 @@ using namespace xtd::io;
 
 auto main() -> int {
   auto start_info = process_start_info {"xtdc", "--help"};
-  start_info.use_shell_execute(false);
   start_info.redirect_standard_output(true);
   
   auto& standard_output = process::start(start_info).standard_output();
