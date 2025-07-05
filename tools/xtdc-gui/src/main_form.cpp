@@ -213,7 +213,7 @@ main_form::main_form() {
   open_xtd_examples_information_link_label_.text_align(content_alignment::top_left);
   open_xtd_examples_information_link_label_.padding(xtd::forms::padding(5));
   //open_xtd_examples_information_link_label_.link_clicked += [](object & sender, link_label_clicked_event_args & e) {
-  //  process::start(as<string>(e.link().link_data()));
+  //  process::start(process_start_info {as<string>(e.link().link_data())}.use_shell_execute(true));
   //};
   
   open_xtd_examples_information_picture_label_.parent(open_xtd_examples_panel_);
@@ -645,7 +645,7 @@ main_form::main_form() {
           progress_dialog_->marquee(true);
           progress_dialog_->show_sheet_dialog(*this);
         });
-        process::start(process_start_info().file_name("xtdc").arguments(string::format("open {}", as<string>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+        process::start(process_start_info().file_name("xtdc").arguments(string::format("open {}", as<string>(e.argument()))).create_no_window(true)).wait_for_exit();
       };
       background_worker_->run_worker_completed += [&] {
         begin_invoke([&] {
@@ -754,8 +754,8 @@ void main_form::new_project(const string& project_path, project_type type, proje
       progress_dialog_->marquee(true);
       progress_dialog_->show_sheet_dialog(*this);
     });
-    process::start(process_start_info().file_name("xtdc").arguments(string::format("new {} -s {} {}", std::get<0>(new_project), std::get<1>(new_project), std::get<2>(new_project)).c_str()).use_shell_execute(false).create_no_window(true)).wait_for_exit();
-    process::start(process_start_info().file_name("xtdc").arguments(string::format("open {}", std::get<2>(new_project)).c_str()).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(string::format("new {} -s {} {}", std::get<0>(new_project), std::get<1>(new_project), std::get<2>(new_project)).c_str()).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(string::format("open {}", std::get<2>(new_project)).c_str()).create_no_window(true)).wait_for_exit();
   };
   background_worker_->run_worker_completed += [&] {
     begin_invoke([&] {
@@ -785,7 +785,7 @@ void main_form::open_project(const string& project_path) {
       progress_dialog_->marquee(true);
       progress_dialog_->show_sheet_dialog(*this);
     });
-    process::start(process_start_info().file_name("xtdc").arguments(string::format("open {}", as<string>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(string::format("open {}", as<string>(e.argument()))).create_no_window(true)).wait_for_exit();
   };
   background_worker_->run_worker_completed += [&] {
     begin_invoke([&] {
@@ -829,7 +829,7 @@ void main_form::run_project(const string& project_path) {
       progress_dialog_->marquee(true);
       progress_dialog_->show_sheet_dialog(*this);
     });
-    process::start(process_start_info().file_name("xtdc").arguments(string::format("run {}", as<string>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(string::format("run {}", as<string>(e.argument()))).create_no_window(true)).wait_for_exit();
   };
   background_worker_->run_worker_completed += [&] {
     begin_invoke([&] {

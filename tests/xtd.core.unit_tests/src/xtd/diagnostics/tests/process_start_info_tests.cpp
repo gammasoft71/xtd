@@ -12,7 +12,7 @@ namespace xtd::diagnostics::tests {
       process_start_info si;
       assert::is_empty(si.file_name());
       assert::is_empty(si.arguments());
-      assert::is_true(si.use_shell_execute());
+      assert::is_false(si.use_shell_execute());
     }
   };
 }

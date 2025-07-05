@@ -31,7 +31,7 @@ auto main() -> int {
   label_label.parent(tab_page_labels);
   label_label.text("xtd::forms::label");
   label_label.link_clicked += [] {
-    process::start("https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1label.html");
+    process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1label.html"}.use_shell_execute(true));
   };
   
   label default_label;
@@ -87,7 +87,7 @@ auto main() -> int {
   link_label_label.parent(tab_page_labels);
   link_label_label.text("xtd::forms::link_label");
   link_label_label.link_clicked += [] {
-    process::start("https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1link__label.html");
+    process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1link__label.html"}.use_shell_execute(true));
   };
   
   link_label default_link_label;
@@ -137,7 +137,7 @@ auto main() -> int {
   lcd_label_label.parent(tab_page_labels);
   lcd_label_label.text("xtd::forms::lcd_label");
   lcd_label_label.link_clicked += [] {
-    process::start("https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1lcd__label.html");
+    process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1lcd__label.html"}.use_shell_execute(true));
   };
   
   lcd_label default_lcd_label;
@@ -179,7 +179,7 @@ auto main() -> int {
   text_box_label.parent(tab_page_texts);
   text_box_label.text("xtd::forms::text_box");
   text_box_label.link_clicked += [] {
-    process::start("https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1text__box.html");
+    process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1text__box.html"}.use_shell_execute(true));
   };
   
   text_box default_text_box;
@@ -230,7 +230,7 @@ auto main() -> int {
   button_label.parent(tab_page_buttons);
   button_label.text("xtd::forms::button");
   button_label.link_clicked += [] {
-    process::start("https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html");
+    process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1button.html"}.use_shell_execute(true));
   };
   
   button default_button;
@@ -277,7 +277,7 @@ auto main() -> int {
   toggle_button_label.parent(tab_page_buttons);
   toggle_button_label.text("xtd::forms::toggle_button");
   toggle_button_label.link_clicked += [] {
-    process::start("https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1toggle__button.html");
+    process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1toggle__button.html"}.use_shell_execute(true));
   };
   
   toggle_button default_toggle_button;
@@ -323,7 +323,7 @@ auto main() -> int {
   swicth_button_label.parent(tab_page_buttons);
   swicth_button_label.text("xtd::forms::switch_button");
   swicth_button_label.link_clicked += [] {
-    process::start("https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1switch__button.html");
+    process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1switch__button.html"}.use_shell_execute(true));
   };
   
   switch_button default_swicth_button;
@@ -372,7 +372,7 @@ auto main() -> int {
   check_box_label.parent(tab_page_buttons);
   check_box_label.text("xtd::forms::check_box");
   check_box_label.link_clicked += [] {
-    process::start("https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1check__box.html");
+    process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1check__box.html"}.use_shell_execute(true));
   };
   
   check_box default_check_box;
@@ -428,7 +428,7 @@ auto main() -> int {
   radio_button_label.parent(tab_page_buttons);
   radio_button_label.text("xtd::forms::radio_button");
   radio_button_label.link_clicked += [] {
-    process::start("https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1radio__button.html");
+    process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1radio__button.html"}.use_shell_execute(true));
   };
   
   radio_button radio_button_one;
@@ -482,7 +482,7 @@ auto main() -> int {
   command_link_button_label.parent(tab_page_buttons);
   command_link_button_label.text("xtd::forms::command_link_button");
   command_link_button_label.link_clicked += [] {
-    process::start("https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1link__label.html");
+    process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1link__label.html"}.use_shell_execute(true));
   };
   
   command_link_button default_command_link_button;
@@ -515,7 +515,7 @@ auto main() -> int {
   up_down_button_label.parent(tab_page_buttons);
   up_down_button_label.text("xtd::forms::up_down_button");
   up_down_button_label.link_clicked += [] {
-    process::start("https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1up__down__button.html");
+    process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1up__down__button.html"}.use_shell_execute(true));
   };
   
   up_down_button default_up_down_button;
@@ -544,7 +544,7 @@ auto main() -> int {
   color_picker_label.parent(tab_page_pickers);
   color_picker_label.text("xtd::forms::color_picker");
   color_picker_label.link_clicked += [] {
-    process::start("https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1color__picker.html");
+    process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1color__picker.html"}.use_shell_execute(true));
   };
   
   color_picker default_color_picker;
@@ -577,7 +577,7 @@ auto main() -> int {
   list_box_label.parent(tab_page_lists);
   list_box_label.text("xtd::forms::list_box");
   list_box_label.link_clicked += [] {
-    process::start("https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1list__box.html");
+    process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1list__box.html"}.use_shell_execute(true));
   };
   
   list_box list_box_items;
@@ -610,7 +610,7 @@ auto main() -> int {
   checked_list_box_label.parent(tab_page_lists);
   checked_list_box_label.text("xtd::forms::checked_list_box");
   checked_list_box_label.link_clicked += [] {
-    process::start("https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1checked__list__box.html");
+    process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1checked__list__box.html"}.use_shell_execute(true));
   };
   
   checked_list_box default_checked_list_box;
@@ -643,7 +643,7 @@ auto main() -> int {
   combo_box_label.parent(tab_page_lists);
   combo_box_label.text("xtd::forms::combo_box");
   combo_box_label.link_clicked += [] {
-    process::start("https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1combo__box.html");
+    process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1combo__box.html"}.use_shell_execute(true));
   };
   
   combo_box combo_box_drop_down;

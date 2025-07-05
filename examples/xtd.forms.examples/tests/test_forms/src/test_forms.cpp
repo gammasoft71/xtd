@@ -62,7 +62,6 @@ private:
           start_info.arguments(xtd::string::join(" ", xtd::argument_collection(args.begin() + 1, args.end())));
           
         append_text(xtd::environment::new_line());
-        start_info.use_shell_execute(false);
         start_info.redirect_standard_error(true);
         start_info.redirect_standard_output(true);
         

@@ -10,5 +10,5 @@ using namespace xtd::io;
 auto main() -> int {
   auto bmp = image_gif::properties::resources::gammasoft_gif();
   bmp.save(path::combine(path::get_temp_path(), "image_gif.png"));
-  process::start(path::combine(path::get_temp_path(), "image_gif.png"));
+  process::start(process_start_info {path::combine(path::get_temp_path(), "image_gif.png")}.use_shell_execute(true));
 }
