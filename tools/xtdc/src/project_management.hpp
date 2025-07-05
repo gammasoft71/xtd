@@ -138,7 +138,7 @@ namespace xtdc_command {
       if (xtd::environment::os_version().is_windows_platform())
         launch_and_wait_process("cmake", xtd::string::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? xtd::string::format(" --clean-first {}", target) : ""), false, false);
       else if (xtd::environment::os_version().is_macos_platform())
-        launch_and_wait_process("cmake", xtd::string::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? xtd::string::format(" --clean-first {}", target) : ""), true, false);
+        launch_and_wait_process("cmake", xtd::string::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? xtd::string::format(" --clean-first {}", target) : ""), false, false);
       else
         launch_and_wait_process("cmake", xtd::string::format("--build {}{}", xtd::io::path::combine(build_path(), release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? " --clean-first {}" : ""), false, false);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Build project aborted.";
@@ -563,7 +563,7 @@ namespace xtdc_command {
       if (xtd::environment::os_version().is_windows_platform() && (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), xtd::string::format("{}.sln", name)))))
         launch_and_wait_process("cmake", xtd::string::format("-S {} -B {}", path_, build_path()), false, false);
       else if (xtd::environment::os_version().is_macos_platform() && (first_generation || !xtd::io::directory::exists(xtd::io::path::combine(build_path(), xtd::string::format("{}.xcodeproj", name)))))
-        launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"Xcode\"", path_, build_path()), true, false);
+        launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"Xcode\"", path_, build_path()), false, false);
       else if (xtd::environment::os_version().is_unix_platform()) {
         if (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), "Debug", xtd::string::format("{}.cbp", name)))) {
           change_current_directory current_directory_debug {xtd::io::path::combine(build_path(), "Debug")};
@@ -599,8 +599,6 @@ namespace xtdc_command {
       process.start_info().redirect_standard_output(!shell_execute && !verbose);
       process.start_info().redirect_standard_error(!shell_execute && !verbose);
       process.start();
-      if (process.start_info().redirect_standard_output()) xtd::io::stream_reader {process.standard_output()}.read_to_end();
-      if (process.start_info().redirect_standard_error()) xtd::io::stream_reader {process.standard_error()}.read_to_end();
       process.wait_for_exit();
       last_exit_code_ = process.exit_code();
     }
