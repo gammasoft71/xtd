@@ -240,7 +240,7 @@ namespace xtdc_command {
       return xtd::string::format("{0}Project {1} updated{0}", xtd::environment::new_line(), get_name());
     }
     
-    xtd::string run(const xtd::string& target, bool release, bool wait_process) const {
+    xtd::string run(const xtd::string& target, bool release, bool no_wait) const {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} does not exists or is empty! Run project aborted.", path_);
       build(target, false, release);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Run project aborted.";
@@ -249,13 +249,12 @@ namespace xtdc_command {
       //if (target_path.empty()) return "The target does not exist! Run project aborted.";
       if (!((xtd::environment::os_version().is_macos_platform() && is_gui(target_path) && xtd::io::directory::exists(target_path)) || xtd::io::file::exists(target_path))) return xtd::string::format("The target \"{}\" does not exist! Run project aborted.", target_path);
       
-      xtd::console::clear();
       xtd::diagnostics::process process;
       process.start_info(xtd::diagnostics::process_start_info(target_path));
       process.start_info().use_shell_execute(is_gui(target_path));
       //xtd::console::write_line("execute : \"{}\" with arguments \"{}\"", process.start_info().file_name(), process.start_info().arguments());
       process.start();
-      if (wait_process) process.wait_for_exit();
+      if (!no_wait) process.wait_for_exit();
       return "";
     }
     
