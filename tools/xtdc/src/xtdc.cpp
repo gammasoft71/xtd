@@ -760,12 +760,12 @@ namespace xtdc_command {
     }
     
     static int guide(const list<string>& args) {
-        process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/index.html"}.use_shell_execute(true));
+      process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/index.html"}.use_shell_execute(true));
       return 0;
     }
     
     static int web(const list<string>& args) {
-          process::start(process_start_info {"https://gammasoft71.github.io/xtd"}.use_shell_execute(true));
+      process::start(process_start_info {"https://gammasoft71.github.io/xtd"}.use_shell_execute(true));
       return 0;
     }
     

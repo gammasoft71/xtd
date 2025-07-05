@@ -6,7 +6,7 @@ auto main() -> int {
   auto process = diagnostics::process::start(start_info);
   auto& standard_output = process.standard_output();
   auto process_output_reader = stream_reader {standard_output};
-  while(!process_output_reader.end_of_stream())
+  while (!process_output_reader.end_of_stream())
     console::write_line(process_output_reader.read_line());
   process.wait_for_exit();
   console::write_line(process.exit_code());
@@ -26,7 +26,7 @@ auto main() -> int {
   auto portability_sw = stream_writer(path::combine(cppcheck_path, "portability.txt"));
   auto style_sw = stream_writer(path::combine(cppcheck_path, "style.txt"));
   auto warning_sw = stream_writer(path::combine(cppcheck_path, "warning.txt"));
-
+  
   while (!source_sr.end_of_stream()) {
     auto line = source_sr.read_line();
     if (line.contains("]: ( error )")) error_sw.write_line(line);

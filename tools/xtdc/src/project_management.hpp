@@ -248,7 +248,7 @@ namespace xtdc_command {
       auto target_path = target.empty() ? get_first_target_path(release) : get_target_path(target, release);
       //if (target_path.empty()) return "The target does not exist! Run project aborted.";
       if (!((xtd::environment::os_version().is_macos_platform() && is_gui(target_path) && xtd::io::directory::exists(target_path)) || xtd::io::file::exists(target_path))) return xtd::string::format("The target \"{}\" does not exist! Run project aborted.", target_path);
-
+      
       xtd::console::clear();
       xtd::diagnostics::process process;
       process.start_info(xtd::diagnostics::process_start_info(target_path));
