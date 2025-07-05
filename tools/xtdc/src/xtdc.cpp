@@ -669,10 +669,10 @@ namespace xtdc_command {
       auto show_help = false;
       string invalid_option;
       auto release = false;
-      auto wait = false;
+      auto no_wait = false;
       string target;
       string path;
-      if (!process_run_arguments(args, show_help, release, wait, target, path, invalid_option)) {
+      if (!process_run_arguments(args, show_help, release, no_wait, target, path, invalid_option)) {
         if (!invalid_option.empty())
           console::write_line("Unknown option: {0}", invalid_option);
         else
@@ -683,7 +683,7 @@ namespace xtdc_command {
       if (show_help)
         console::write_line(string::join("\n", get_run_help()));
       else
-        console::write_line(project_management(get_project_full_path_from_path(path)).run(target, release, wait));
+        console::write_line(project_management(get_project_full_path_from_path(path)).run(target, release, !no_wait));
       return 0;
     }
     
@@ -928,7 +928,7 @@ namespace xtdc_command {
       return true;
     }
     
-    static bool process_run_arguments(const list<string>& args, bool& show_help, bool& release, bool& wait, string& target, string& path, string& invalid_option) {
+    static bool process_run_arguments(const list<string>& args, bool& show_help, bool& release, bool& no_wait, string& target, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
@@ -938,8 +938,8 @@ namespace xtdc_command {
           release = true;
         else if (args[i] == "-t" || args[i] == "--target")
           target = args[++i];
-        else if (args[i] == "-w" || args[i] == "--wait")
-          wait = true;
+        else if (args[i] == "-nw" || args[i] == "--no_wait")
+          no_wait = true;
         else if (path.empty())
           path = args[i];
         else if (args[i].starts_with('-')) {
