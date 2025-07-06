@@ -838,7 +838,7 @@ namespace xtd {
       /// @cond
       int32 compare_to(const process& o) const noexcept override {return this < &o ? -1 : this > &o ? 1 : 0;}
       /// @endcond
-  
+      
     protected:
       /// @name Protected Methods
       
