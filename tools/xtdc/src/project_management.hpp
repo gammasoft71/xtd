@@ -135,15 +135,14 @@ namespace xtdc_command {
       else generate_project(verbose);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Build project aborted.";
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
-      if (xtd::environment::os_version().is_windows_platform()) {
+      if (xtd::environment::os_version().is_windows_platform())
         launch_and_wait_process("cmake", xtd::string::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? xtd::string::format(" --clean-first {}", target) : ""), false, verbose);
-        if (last_exit_code() == EXIT_SUCCESS) return "\nBuild succeeded";
-      } else if (xtd::environment::os_version().is_macos_platform())
+      else if (xtd::environment::os_version().is_macos_platform())
         launch_and_wait_process("cmake", xtd::string::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? xtd::string::format(" --clean-first {}", target) : ""), false, verbose);
       else
         launch_and_wait_process("cmake", xtd::string::format("--build {}{}", xtd::io::path::combine(build_path(), release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? " --clean-first {}" : ""), false, verbose);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Build project aborted.";
-      return "";
+      return xtd::environment::os_version().is_macos_platform() ? "" : "\n** BUILD SUCCEEDED **";
     }
     
     xtd::string clean(bool release, bool verbose = true) const {
