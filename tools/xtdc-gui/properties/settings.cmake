@@ -7,7 +7,7 @@ setting(open_propject_folder xtd::string USER "xtd::environment::get_folder_path
 setting(open_recent_propjects xtd::string USER "")
 setting(create_recent_propjects xtd::string USER "")
 setting(language_index size_t USER "1")
-setting(platform_index size_t USER "static_cast<size_t>(xtd::environment::os_version().is_windows_platform() ? 1 : xtd::environment::os_version().is_unix_platform() ? 2 : 3)")
+setting(platform_index size_t USER "static_cast<size_t>(xtd::environment::os_version().is_windows_platform() ? 1 : xtd::environment::os_version().is_macos_platform() ? 3 : 2)")
 setting(type_index size_t USER "0")
 setting(use_defaul_ide bool USER "true")
 setting(user_path_ide xtd::string USER "")

@@ -117,7 +117,7 @@ namespace xtdc_gui {
       return output;
     }
     
-    static xtd::string get_os_postfix() noexcept {return xtd::environment::os_version().is_windows_platform() ? "w" : xtd::environment::os_version().is_unix_platform() ? "g" : "m";}
+    static xtd::string get_os_postfix() noexcept {return xtd::environment::os_version().is_windows_platform() ? "w" : xtd::environment::os_version().is_macos_platform() ? "m" : "g";}
     static xtd::string get_theme_postfix() noexcept {return xtd::forms::application::dark_mode() ? "d" : "";}
     
     inline static const xtd::string xtd_share_path_ = xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::xtd_install), "share", "xtd");
