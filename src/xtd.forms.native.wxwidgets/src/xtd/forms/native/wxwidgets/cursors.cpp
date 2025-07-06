@@ -123,7 +123,7 @@ intptr cursors::pan_east() {
 }
 
 intptr cursors::pan_ne() {
-  return create_cursor_from_resources("pan_ne", environment::os_version().is_unix_platform()  && !environment::os_version().is_macos_platform()? drawing::point {18, 5} : drawing::point {12, 18});
+  return create_cursor_from_resources("pan_ne", environment::os_version().is_unix_platform()  && !environment::os_version().is_macos_platform() ? drawing::point {18, 5} : drawing::point {12, 18});
 }
 
 intptr cursors::pan_north() {
