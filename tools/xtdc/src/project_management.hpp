@@ -217,7 +217,6 @@ namespace xtdc_command {
       auto xtdc_default_ide = xtd::environment::get_environment_variable("XTDC_DEFAULT_IDE");
       if (!xtd::string::is_empty(xtdc_default_ide)) {
         if (xtdc_default_ide == "devenv") launch_and_wait_process(xtd::string::format("{}.sln", xtd::io::path::combine(build_path(), get_name())), true, false);
-        if (xtdc_default_ide == "codeblocks") launch_and_wait_process(xtd::string::format("{}.cbp", xtd::io::path::combine(build_path(), release ? "Release" : "Debug", get_name())), true, false);
         else launch_and_wait_process(xtdc_default_ide, path_, false, false);
       } else if (xtd::environment::os_version().is_windows_platform()) launch_and_wait_process(xtd::string::format("{}.sln", xtd::io::path::combine(build_path(), get_name())), true, false);
       else if (xtd::environment::os_version().is_macos_platform()) launch_and_wait_process(xtd::string::format("{}.xcodeproj", xtd::io::path::combine(build_path(), get_name())), true, false);
@@ -225,7 +224,6 @@ namespace xtdc_command {
         if (xtd::io::file::exists("/usr/bin/code")) launch_and_wait_process("code", path_, false, false);
         else if (xtd::io::file::exists("/usr/bin/gvim")) launch_and_wait_process("gvim", path_, false, false);
         else if (xtd::io::file::exists("/usr/bin/vim")) launch_and_wait_process("vim", path_, false, false);
-        else if (xtd::io::file::exists("/usr/bin/codeblocks")) launch_and_wait_process(xtd::string::format("{}.cbp", xtd::io::path::combine(build_path(), release ? "Release" : "Debug", get_name())), true, false);
         else if (xtd::io::file::exists("/usr/bin/kdevelop")) launch_and_wait_process("kdevelop", path_, false, false);
         else if (xtd::io::file::exists("/usr/bin/qtcreator")) launch_and_wait_process("qtcreator", path_, false, false);
         else return xtd::string::format("{0}The project {1} has not been opened bacause no IDE has been found!{0}", xtd::environment::new_line(), get_name());
@@ -569,13 +567,13 @@ namespace xtdc_command {
         if (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), "Debug", xtd::string::format("{}.cbp", name)))) {
           change_current_directory current_directory_debug {xtd::io::path::combine(build_path(), "Debug")};
           xtd::io::directory::create_directory(xtd::io::path::combine(build_path(), "Debug"));
-          launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Debug")), false, verbose);
+          launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Debug")), false, verbose);
           patch_cbp_file(name, "Debug");
         }
         if (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), "Release", xtd::string::format("{}.cbp", name)))) {
           change_current_directory current_directory_release {xtd::io::path::combine(build_path(), "Release")};
           xtd::io::directory::create_directory(xtd::io::path::combine(build_path(), "Release"));
-          launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Release")), false, verbose);
+          launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Release")), false, verbose);
           patch_cbp_file(name, "Release");
         }
       }
