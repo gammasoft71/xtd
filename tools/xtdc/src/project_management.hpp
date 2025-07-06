@@ -126,32 +126,32 @@ namespace xtdc_command {
       xtd::io::file::write_all_lines(xtd::io::path::combine(path_, "CMakeLists.txt"), lines);
       generate_project(name);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Add project aborted.";
-      return xtd::string::format("{0}Project {1} added{0}", xtd::environment::new_line(), path_);
+      return xtd::string::format("{0}The project {1} was added successfully.{0}", xtd::environment::new_line(), path_);
     }
     
-    xtd::string build(const xtd::string& target, bool clean_first, bool release) const {
+    xtd::string build(const xtd::string& target, bool clean_first, bool release, bool verbose = true) const {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} does not exists or is empty! Build project aborted.", path_);
-      if (clean_first) clean(release);
-      else generate_project();
+      if (clean_first) clean(release, verbose);
+      else generate_project(verbose);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Build project aborted.";
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
       if (xtd::environment::os_version().is_windows_platform())
-        launch_and_wait_process("cmake", xtd::string::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? xtd::string::format(" --clean-first {}", target) : ""), false, false);
+        launch_and_wait_process("cmake", xtd::string::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? xtd::string::format(" --clean-first {}", target) : ""), false, verbose);
       else if (xtd::environment::os_version().is_macos_platform())
-        launch_and_wait_process("cmake", xtd::string::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? xtd::string::format(" --clean-first {}", target) : ""), false, false);
+        launch_and_wait_process("cmake", xtd::string::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? xtd::string::format(" --clean-first {}", target) : ""), false, verbose);
       else
-        launch_and_wait_process("cmake", xtd::string::format("--build {}{}", xtd::io::path::combine(build_path(), release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? " --clean-first {}" : ""), false, false);
+        launch_and_wait_process("cmake", xtd::string::format("--build {}{}", xtd::io::path::combine(build_path(), release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? " --clean-first {}" : ""), false, verbose);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Build project aborted.";
-      return xtd::string::format("{0}Project {1} built{0}", xtd::environment::new_line(), path_);
+      return "";
     }
     
-    xtd::string clean(bool release) const {
+    xtd::string clean(bool release, bool verbose = true) const {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} does not exists or is empty! Clean project aborted.", path_);
       auto build_path = xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(this->build_path(), release ? "Release" : "Debug") : this->build_path();
       if (xtd::io::directory::exists(build_path)) xtd::io::directory::remove(build_path, true);
-      generate_project();
+      generate_project(verbose);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Clean project aborted.";
-      return xtd::string::format("{0}Project {1} cleaned{0}", xtd::environment::new_line(), path_);
+      return "";
     }
     
     xtd::string create(const xtd::string& name, project_type type, project_sdk sdk, project_language language) const {
@@ -174,7 +174,7 @@ namespace xtdc_command {
       } [type](name, sdk, language, true);
       generate_project(name);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Create project aborted.";
-      return xtd::string::format("{0}Project {1} created{0}", xtd::environment::new_line(), path_);
+      return xtd::string::format("{0}The project {1} was created successfully.{0}", xtd::environment::new_line(), path_);
     }
     
     xtd::string generate(const xtd::string& name, project_type type, project_sdk sdk, project_language language) const {
@@ -197,7 +197,7 @@ namespace xtdc_command {
       } [type](name, sdk, language);
       generate_project(name);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Create project aborted.";
-      return xtd::string::format("{0}Project {1} created{0}", xtd::environment::new_line(), path_);
+      return xtd::string::format("{0}The project {1} was created successfully.{0}", xtd::environment::new_line(), path_);
     }
     
     xtd::string install(bool release) const {
@@ -205,7 +205,7 @@ namespace xtdc_command {
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
       build("install", false, release);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Install project aborted.";
-      return xtd::string::format("{0}Project {1} installed{0}", xtd::environment::new_line(), path_);
+      return xtd::string::format("{0}The project {1} was installed successfully.{0}", xtd::environment::new_line(), path_);
     }
     
     xtd::string open(bool release) const {
@@ -227,9 +227,9 @@ namespace xtdc_command {
         else if (xtd::io::file::exists("/usr/bin/codeblocks")) launch_and_wait_process(xtd::string::format("{}.cbp", xtd::io::path::combine(build_path(), release ? "Release" : "Debug", get_name())), true, false);
         else if (xtd::io::file::exists("/usr/bin/kdevelop")) launch_and_wait_process("kdevelop", path_, false, false);
         else if (xtd::io::file::exists("/usr/bin/qtcreator")) launch_and_wait_process("qtcreator", path_, false, false);
-        else return xtd::string::format("{0}Project {1} has not been opened bacause no IDE has been found!{0}", xtd::environment::new_line(), get_name());
+        else return xtd::string::format("{0}The project {1} has not been opened bacause no IDE has been found!{0}", xtd::environment::new_line(), get_name());
       }
-      return xtd::string::format("{0}Project {1} opened{0}", xtd::environment::new_line(), get_name());
+      return xtd::string::format("{0}The project {1} was opened successfully.{0}", xtd::environment::new_line(), get_name());
     }
     
     xtd::string update(const xtd::string& target) const {
@@ -237,12 +237,12 @@ namespace xtdc_command {
       change_current_directory current_directory {build_path()};
       generate_project(target);
       if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Update project aborted.";
-      return xtd::string::format("{0}Project {1} updated{0}", xtd::environment::new_line(), get_name());
+      return xtd::string::format("{0}The roject {1} was updated sucessfully.{0}", xtd::environment::new_line(), get_name());
     }
     
     xtd::string run(const xtd::string& target, bool release, bool no_wait) const {
       if (!is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} does not exists or is empty! Run project aborted.", path_);
-      build(target, false, release);
+      build(target, false, release, false);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Run project aborted.";
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
       auto target_path = target.empty() ? get_first_target_path(release) : get_target_path(target, release);
@@ -274,7 +274,7 @@ namespace xtdc_command {
       build("", false, release);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Test project aborted.";
       launch_and_wait_process("ctest", xtd::string::format("--output-on-failure --build-config {}", release ? "release" : "debug"), false, false);
-      return xtd::string::format("{0}Project {1} tested{0}", xtd::environment::new_line(), path_);
+      return xtd::string::format("{0}The project {1} was tested successfully.{0}", xtd::environment::new_line(), path_);
     }
     
     xtd::string uninstall(bool release) const {
@@ -291,7 +291,7 @@ namespace xtdc_command {
       }
       
       xtd::io::file::remove(xtd::io::path::combine(xtd::environment::os_version().is_unix_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path(), "install_manifest.txt"));
-      return xtd::string::format("{0}Project {1} uninstalled{0}", xtd::environment::new_line(), path_);
+      return xtd::string::format("{0}The project {1} was uninstalled successfully.{0}", xtd::environment::new_line(), path_);
     }
     
   private:
@@ -553,28 +553,28 @@ namespace xtdc_command {
       } [sdk](name);
     }
     
-    void generate_project() const {generate_project(xtd::io::path::get_file_name(path_));}
+    void generate_project(bool verbose = true) const {generate_project(xtd::io::path::get_file_name(path_), verbose);}
     
-    void generate_project(xtd::string name) const {
+    void generate_project(xtd::string name, bool verbose = true) const {
       bool first_generation = !xtd::io::directory::exists(build_path());
       xtd::io::directory::create_directory(build_path());
       change_current_directory current_directory {build_path()};
       if (!first_generation && name.empty()) name = get_name();
       if (xtd::environment::os_version().is_windows_platform() && (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), xtd::string::format("{}.sln", name)))))
-        launch_and_wait_process("cmake", xtd::string::format("-S {} -B {}", path_, build_path()), false, false);
+        launch_and_wait_process("cmake", xtd::string::format("-S {} -B {}", path_, build_path()), false, verbose);
       else if (xtd::environment::os_version().is_macos_platform() && (first_generation || !xtd::io::directory::exists(xtd::io::path::combine(build_path(), xtd::string::format("{}.xcodeproj", name)))))
-        launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"Xcode\"", path_, build_path()), false, false);
+        launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"Xcode\"", path_, build_path()), false, verbose);
       else if (xtd::environment::os_version().is_unix_platform()) {
         if (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), "Debug", xtd::string::format("{}.cbp", name)))) {
           change_current_directory current_directory_debug {xtd::io::path::combine(build_path(), "Debug")};
           xtd::io::directory::create_directory(xtd::io::path::combine(build_path(), "Debug"));
-          launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Debug")), false, false);
+          launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Debug")), false, verbose);
           patch_cbp_file(name, "Debug");
         }
         if (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), "Release", xtd::string::format("{}.cbp", name)))) {
           change_current_directory current_directory_release {xtd::io::path::combine(build_path(), "Release")};
           xtd::io::directory::create_directory(xtd::io::path::combine(build_path(), "Release"));
-          launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Release")), false, false);
+          launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"CodeBlocks - Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Release")), false, verbose);
           patch_cbp_file(name, "Release");
         }
       }
