@@ -255,6 +255,7 @@ namespace xtdc_command {
       //xtd::console::write_line("execute : \"{}\" with arguments \"{}\"", process.start_info().file_name(), process.start_info().arguments());
       process.start();
       if (!no_wait) process.wait_for_exit();
+      xtd::threading::thread::sleep(250); // workaround : sometimes the terminal prompt is displayed before the end of the process.
       return "";
     }
     
