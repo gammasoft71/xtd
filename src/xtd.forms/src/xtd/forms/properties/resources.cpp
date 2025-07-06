@@ -11,7 +11,7 @@ using namespace forms::properties;
 
 namespace {
   string get_os_postfix() noexcept {
-    return environment::os_version().is_windows_platform() ? "_w" : environment::os_version().is_unix_platform() ? "_g" : environment::os_version().is_macos_platform() ? "_m" : "";
+    return environment::os_version().is_windows_platform() ? "_w" : environment::os_version().is_macos_platform() ? "_m" : environment::os_version().is_unix_platform() ? "_g" : "";
   }
 }
 

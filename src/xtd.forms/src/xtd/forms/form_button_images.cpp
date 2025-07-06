@@ -298,7 +298,7 @@ xtd::drawing::size form_button_images::size() {
 xtd::drawing::size form_button_images::size(bool maximized_form) {
   static auto is_windows = environment::os_version().is_windows_platform();
   static auto is_macos = environment::os_version().is_macos_platform();
-  static auto is_unix = environment::os_version().is_unix_platform();
+  static auto is_unix = environment::os_version().is_unix_platform() && !environment::os_version().is_macos_platform();
   if (is_windows) return {90, maximized_form ? 42 : 58};
   if (is_macos) return {24, 24};
   if (is_unix) return {64, 64};
