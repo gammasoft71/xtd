@@ -1,6 +1,7 @@
 #include "new_project.hpp"
 //#include "project_management.hpp"
 #include <xtd/collections/generic/list>
+#include <xtd/diagnostics/stopwatch>
 #include <xtd/char_object>
 #include <xtd/random>
 #include <xtd/startup>
@@ -533,8 +534,11 @@ namespace xtdc_command {
       if (show_help)
         console::write_line(string::join("\n", get_build_help()));
       else {
+        auto sw = stopwatch::start_new();
         auto result = project_management(get_project_full_path_from_path(path)).build(target, clean_first, release);
         if (!result.empty()) console::write_line(result);
+        sw.stop();
+        console::write_line("\nTime Elapsed {0}{1:H}:{1:M}:{1:S}.{1:L}", sw.elapsed().days() ? string::format("{d}.", sw.elapsed().days()) : "", sw.elapsed());
       }
       return 0;
     }
