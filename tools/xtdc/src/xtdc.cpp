@@ -532,8 +532,10 @@ namespace xtdc_command {
       }
       if (show_help)
         console::write_line(string::join("\n", get_build_help()));
-      else
-        console::write_line(project_management(get_project_full_path_from_path(path)).build(target, clean_first, release));
+      else {
+        auto result = project_management(get_project_full_path_from_path(path)).build(target, clean_first, release);
+        if (!result.empty()) console::write_line(result);
+      }
       return 0;
     }
     
@@ -552,8 +554,10 @@ namespace xtdc_command {
       }
       if (show_help)
         console::write_line(string::join("\n", get_clean_help()));
-      else
-        console::write_line(project_management(get_project_full_path_from_path(path)).clean(release));
+      else {
+        auto result = project_management(get_project_full_path_from_path(path)).clean(release);
+        if (!result.empty()) console::write_line(result);
+      }
       return 0;
     }
     
@@ -682,8 +686,10 @@ namespace xtdc_command {
       }
       if (show_help)
         console::write_line(string::join("\n", get_run_help()));
-      else
-        console::write_line(project_management(get_project_full_path_from_path(path)).run(target, release, !no_wait));
+      else {
+        auto result = project_management(get_project_full_path_from_path(path)).run(target, release, !no_wait);
+        if (!result.empty()) console::write_line(result);
+      }
       return 0;
     }
     
