@@ -109,7 +109,10 @@ Inheritance diagram for xtd::diagnostics::process:</div>
  <div class="center">
   <img src="classxtd_1_1diagnostics_1_1process.png" usemap="#xtd::diagnostics::process_map" alt=""/>
   <map id="xtd::diagnostics::process_map" name="xtd::diagnostics::process_map">
-<area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,0,148,24"/>
+<area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,56,441,80"/>
+<area href="classxtd_1_1icomparable.html" alt="xtd::icomparable&lt; process &gt;" shape="rect" coords="451,56,892,80"/>
+<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="225,0,666,24"/>
+<area href="classxtd_1_1extensions_1_1comparison__operators.html" alt="xtd::extensions::comparison_operators&lt; process, icomparable&lt; process &gt; &gt;" shape="rect" coords="676,0,1117,24"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
@@ -308,6 +311,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:af2d19ef177db62351b58a42f22138dbe" id="r_af2d19ef177db62351b58a42f22138dbe"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#af2d19ef177db62351b58a42f22138dbe">to_string</a> () const noexcept</td></tr>
 <tr class="memdesc:af2d19ef177db62351b58a42f22138dbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
 <tr class="separator:af2d19ef177db62351b58a42f22138dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e5ad6ed9d798584e8b9be5749d6faa5" id="r_a8e5ad6ed9d798584e8b9be5749d6faa5"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1icomparable.html#a8e5ad6ed9d798584e8b9be5749d6faa5">compare_to</a> (const <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a5075140835d0bc504791c76b04c33d2b">process</a> &amp;obj) const noexcept=0</td></tr>
+<tr class="memdesc:a8e5ad6ed9d798584e8b9be5749d6faa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
+<tr class="separator:a8e5ad6ed9d798584e8b9be5749d6faa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
 <tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
@@ -822,7 +828,7 @@ You can call xtd::diagnostics::process::get_processes_by_name, passing it an exe
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(my_stream_reader.read_line());</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html">xtd::diagnostics::process_start_info</a></div><div class="ttdoc">Specifies a set of values that are used when you start a process.</div><div class="ttdef"><b>Definition</b> process_start_info.hpp:39</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process.html">xtd::diagnostics::process</a></div><div class="ttdoc">Provides access to local and remote processes and enables you to start and stop local system processe...</div><div class="ttdef"><b>Definition</b> process.hpp:49</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process.html">xtd::diagnostics::process</a></div><div class="ttdoc">Provides access to local and remote processes and enables you to start and stop local system processe...</div><div class="ttdef"><b>Definition</b> process.hpp:50</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1process_html_a764c6d95b61925b947ff01f150ea9ae4"><div class="ttname"><a href="#a764c6d95b61925b947ff01f150ea9ae4">xtd::diagnostics::process::start_info</a></div><div class="ttdeci">const xtd::diagnostics::process_start_info &amp; start_info() const</div><div class="ttdoc">Gets the properties to pass to the xtd::diagnostics::process::start() method of the xtd::diagnostics:...</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1process_html_a9e09a8c158d401459b4ab4aa37a6f06e"><div class="ttname"><a href="#a9e09a8c158d401459b4ab4aa37a6f06e">xtd::diagnostics::process::standard_error</a></div><div class="ttdeci">std::istream &amp; standard_error()</div><div class="ttdoc">Gets a stream used to read the error output of the application.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1process_html_ad2e7a8e4f20f883bda963515cd8e5e44"><div class="ttname"><a href="#ad2e7a8e4f20f883bda963515cd8e5e44">xtd::diagnostics::process::start</a></div><div class="ttdeci">bool start()</div><div class="ttdoc">Starts (or reuses) the process resource that is specified by the xtd::diagnostics::process::start_inf...</div></div>
@@ -1894,7 +1900,7 @@ The event is enabled during asynchronous read operations on <a class="el" href="
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 6 2025 09:43:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jul 6 2025 10:31:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
