@@ -18,7 +18,7 @@ auto main(int argc, const char * argv[]) -> int {
 }
 ```
 
-## Code with xtd
+## xtd code
 
 ```cpp
 #include <xtd/xtd>
@@ -51,7 +51,7 @@ five
 
 * xtd allows you to retrieve the arguments passed to the application without the need to go through `int argc, const char* argv[]`. 
   This greatly simplifies the structure of the hand.
-* The first argument returned is always the way to the executable.
+* The first argument returned is always the executable file with path.
 
 ## See also
 
