@@ -52,3 +52,8 @@ five
 * xtd allows you to retrieve the arguments passed to the application without the need to go through `int argc, const char* argv[]`. 
   This greatly simplifies the structure of the hand.
 * The first argument returned is always the way to the executable.
+
+## See also
+
+* [Triks & Tips](/docs/documentation/tricks_and_tips)
+* [Documentation](/docs/documentation)
