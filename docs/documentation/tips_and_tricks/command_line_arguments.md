@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Command line arguments
 
-Here is a new example illustrating a practical trick with xtd: how to retrieve command line settings in a simple and elegant way.
+Here is a new example illustrating a practical trick with xtd: how to retrieve command line arguments in a simple and elegant way.
 
 ## Modern C++ code
 
