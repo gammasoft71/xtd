@@ -92,7 +92,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'documentation/tips_and_tricks',
+            docId: 'tips_and_tricks',
             position: 'left',
             label: 'Tips & Tricks',
           },
