@@ -15,13 +15,13 @@ namespace xtdc_command {
   public:
     static auto main(const argument_collection& args) {
       console::output_code_page(65001);
-      
+
       if (args.size() == 0) {
         write_line_error("No parameters.");
         console::write_line(string::join("\n", get_help()));
         return EXIT_FAILURE;
       }
-      
+
       auto show_floppy = false;
       auto show_help = false;
       auto show_info = false;
@@ -34,10 +34,10 @@ namespace xtdc_command {
         console::write_line(string::join("\n", get_help()));
         return EXIT_FAILURE;
       }
-      
+
       return run_commands(show_floppy, show_help, show_info, show_version, invalid_option, command_args);
     }
-    
+
   private:
     static list<string> get_floppy() noexcept {
       static auto floppy_quotes = array {
@@ -88,7 +88,7 @@ namespace xtdc_command {
         "Floppy: the original proof that good things last.",
         "Even in a digital age, Floppy’s got soul.",
       };
-      
+
       return {
         u8"████████████████████████████████████████████████████████████",
         u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████",
@@ -126,7 +126,7 @@ namespace xtdc_command {
         string::format(u8"[💾 Floppy] - {}", floppy_quotes[xtd::random {}.next(floppy_quotes.length())]),
       };
     }
-    
+
     static list<string> get_help() noexcept {
       return {
         "",
@@ -136,7 +136,7 @@ namespace xtdc_command {
         "  -i, --info       Display information.",
         "  -v, --version    Display version in use.",
         "  -h, --help       Display help.",
-        
+
         "",
         "command:",
         "  new              Initializes project.",
@@ -161,7 +161,7 @@ namespace xtdc_command {
         "",
       };
     }
-    
+
     static list<string> get_add_help() noexcept {
       return {
         "Add new project to project.",
@@ -196,7 +196,7 @@ namespace xtdc_command {
         "    xtdc add --help",
       };
     }
-    
+
     static list<string> get_build_help() noexcept {
       return {
         "Builds a project.",
@@ -219,7 +219,7 @@ namespace xtdc_command {
         "    xtdc build --help"
       };
     }
-    
+
     static list<string> get_clean_help() noexcept {
       return {
         "Clean build output(s).",
@@ -240,7 +240,7 @@ namespace xtdc_command {
         "    xtdc clean --help",
       };
     }
-    
+
     static list<string> get_generate_help() noexcept {
       return {
         "Generate project.",
@@ -275,7 +275,7 @@ namespace xtdc_command {
         "    xtdc generate --help",
       };
     }
-    
+
     static list<string> get_install_help() noexcept {
       return {
         "Install a project.",
@@ -296,7 +296,7 @@ namespace xtdc_command {
         "    xtdc install --help",
       };
     }
-    
+
     static list<string> get_open_help() noexcept {
       return {
         "Open a project in default ide.",
@@ -317,8 +317,8 @@ namespace xtdc_command {
         "    xtdc open --help",
       };
     }
-    
-    
+
+
     static list<string> get_update_help() noexcept {
       return {
         "Regenrates a project.",
@@ -339,7 +339,7 @@ namespace xtdc_command {
         "    xtdc update --help",
       };
     }
-    
+
     static list<string> get_run_help() noexcept {
       return {
         "Compiles and immediately executes a project.",
@@ -363,7 +363,7 @@ namespace xtdc_command {
         "    xtdc run --help",
       };
     }
-    
+
     static list<string> get_targets_help() noexcept {
       return {
         "List project targets.",
@@ -382,7 +382,7 @@ namespace xtdc_command {
         "    xtdc list --help",
       };
     }
-    
+
     static list<string> get_test_help() noexcept {
       return {
         "Runs unit tests using the test runner specified in the project.",
@@ -403,7 +403,7 @@ namespace xtdc_command {
         "    xtdc test --help",
       };
     }
-    
+
     static list<string> get_uninstall_help() noexcept {
       return {
         "Uninstall a project.",
@@ -424,7 +424,7 @@ namespace xtdc_command {
         "    xtdc uninstall --help",
       };
     }
-    
+
     static list<string> get_info() noexcept {
       return {
         "",
@@ -451,7 +451,7 @@ namespace xtdc_command {
         "",
       };
     }
-    
+
     static string get_xtd_version() noexcept {
       auto result = string::format("xtd Framework:{}", environment::new_line());
       for (auto library : environment::xtd_libraries()) {
@@ -463,15 +463,15 @@ namespace xtdc_command {
       }
       return result;
     }
-    
+
     static string get_version() noexcept {
       return string::format("xtdc version {}, (c) {:L} by Gammasoft", get_version_number(), xtd::date_time::now());
     }
-    
+
     static string get_version_number() noexcept {
       return environment::version().to_string();
     }
-    
+
     static int add(const list<string>& args) {
       auto show_help = false;
       string invalid_option;
@@ -485,7 +485,7 @@ namespace xtdc_command {
         console::write_line(string::join("\n", get_add_help()));
         return EXIT_FAILURE;
       }
-      
+
       if (show_help) {
         console::write_line(string::join("\n", get_add_help()));
         return EXIT_SUCCESS;
@@ -494,7 +494,7 @@ namespace xtdc_command {
       if (type.empty()) type = "gui";
       if (sdk.empty()) sdk = "xtd";
       if (name.empty()) name = get_project_name_from_path(path);
-      
+
       if (name.empty()) {
         write_line_error("The name is empty.");
         return EXIT_FAILURE;
@@ -507,7 +507,7 @@ namespace xtdc_command {
         write_line_error("The size of the name is invalid, the size must be less than or equal to 128.");
         return EXIT_FAILURE;
       }
-      
+
       xtdc_command::project_type project_type = std::map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
       xtdc_command::project_sdk project_sdk = std::map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtk+4", xtdc_command::project_sdk::gtk4}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"qt6", xtdc_command::project_sdk::qt6}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}, {"xtd_c", xtdc_command::project_sdk::xtd_c}} [sdk];
       xtdc_command::project_language project_language = std::map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtk+4", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"qt6", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"xtd_c", xtdc_command::project_language::c}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
@@ -524,7 +524,7 @@ namespace xtdc_command {
       }
       return status == operation_status::success ? EXIT_SUCCESS : EXIT_FAILURE;
     }
-    
+
     static int build(const list<string>& args) {
       auto show_help = false;
       string invalid_option;
@@ -555,7 +555,7 @@ namespace xtdc_command {
       console::write_line("Time Elapsed {0}{1:H}:{1:M}:{1:S}.{1:L}", sw.elapsed().days() ? string::format("{d}.", sw.elapsed().days()) : "", sw.elapsed());
       return status == operation_status::success ? EXIT_SUCCESS : EXIT_FAILURE;
     }
-    
+
     static int clean(const list<string>& args) {
       auto show_help = false;
       string invalid_option;
@@ -580,7 +580,7 @@ namespace xtdc_command {
       }
       return status == operation_status::success ? EXIT_SUCCESS : EXIT_FAILURE;
     }
-    
+
     static int generate(const list<string>& args) {
       auto show_help = false;
       string invalid_option;
@@ -601,7 +601,7 @@ namespace xtdc_command {
       if (type.empty()) type = "gui";
       if (sdk.empty()) sdk = "xtd";
       if (name.empty()) name = get_project_name_from_path(path);
-      
+
       if (name.empty()) {
         console::write_line("The name is empty.");
         return EXIT_FAILURE;
@@ -614,19 +614,19 @@ namespace xtdc_command {
         console::write_line("The size of the name is invalid, the size must be less than or equal to 128.");
         return EXIT_FAILURE;
       }
-      
+
       xtdc_command::project_type project_type = std::map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
       xtdc_command::project_sdk project_sdk = std::map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtk+4", xtdc_command::project_sdk::gtk4}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"qt6", xtdc_command::project_sdk::qt6}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}, {"xtd_c", xtdc_command::project_sdk::xtd_c}} [sdk];
       xtdc_command::project_language project_language = std::map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtk+4", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"qt6", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"xtd_c", xtdc_command::project_language::c}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
       console::write_line(project_management(get_project_full_path_from_path(path)).generate(name, project_type, project_sdk, project_language));
       return EXIT_SUCCESS;
     }
-    
+
     static int help(const list<string>& args) {
       console::write_line(string::join("\n", get_help()));
       return EXIT_SUCCESS;
     }
-    
+
     static int install(const list<string>& args) {
       auto show_help = false;
       string invalid_option;
@@ -646,7 +646,7 @@ namespace xtdc_command {
         console::write_line(project_management(get_project_full_path_from_path(path)).install(release));
       return EXIT_SUCCESS;
     }
-    
+
     static int open(const list<string>& args) {
       auto show_help = false;
       string invalid_option;
@@ -666,7 +666,7 @@ namespace xtdc_command {
         console::write_line(project_management(get_project_full_path_from_path(path)).open(release));
       return EXIT_SUCCESS;
     }
-    
+
     static int update(const list<string>& args) {
       auto show_help = false;
       string invalid_option;
@@ -686,7 +686,7 @@ namespace xtdc_command {
         console::write_line(project_management(get_project_full_path_from_path(path)).update(target));
       return EXIT_SUCCESS;
     }
-    
+
     static int run(const list<string>& args) {
       auto show_help = false;
       string invalid_option;
@@ -710,7 +710,7 @@ namespace xtdc_command {
       }
       return EXIT_SUCCESS;
     }
-    
+
     static int targets(const list<string>& args) {
       auto show_help = false;
       string invalid_option;
@@ -732,7 +732,7 @@ namespace xtdc_command {
       }
       return EXIT_SUCCESS;
     }
-    
+
     static int test(const list<string>& args) {
       auto show_help = false;
       string invalid_option;
@@ -752,7 +752,7 @@ namespace xtdc_command {
         console::write_line(project_management(get_project_full_path_from_path(path)).test(release));
       return EXIT_SUCCESS;
     }
-    
+
     static int uninstall(const list<string>& args) {
       auto show_help = false;
       string invalid_option;
@@ -772,27 +772,27 @@ namespace xtdc_command {
         console::write_line(project_management(get_project_full_path_from_path(path)).uninstall(release));
       return EXIT_SUCCESS;
     }
-    
+
     static int documentation(const list<string>& args) {
       process::start(process_start_info {"https://gammasoft71.github.io/xtd/docs/documentation"}.use_shell_execute(true));
       return EXIT_SUCCESS;
     }
-    
+
     static int examples(const list<string>& args) {
       process::start(process_start_info {"https://github.com/gammasoft71/xtd/blob/master/examples/README.md"}.use_shell_execute(true));
       return EXIT_SUCCESS;
     }
-    
+
     static int guide(const list<string>& args) {
       process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/index.html"}.use_shell_execute(true));
       return EXIT_SUCCESS;
     }
-    
+
     static int web(const list<string>& args) {
       process::start(process_start_info {"https://gammasoft71.github.io/xtd"}.use_shell_execute(true));
       return EXIT_SUCCESS;
     }
-    
+
     static bool process_xtdc_arguments(const list<string>& args, bool& show_floppy, bool& show_help, bool& show_info, bool& show_version, list<string>& command_args, string& invalid_option) {
       for (size_t i = 0; i < args.size(); i += 1) {
         if (args[i] == "-f" || args[i] == "--floppy")
@@ -813,7 +813,7 @@ namespace xtdc_command {
       }
       return true;
     }
-    
+
     static bool process_add_arguments(const list<string>& args, bool& show_help, string& type, string& name, string& path, string& sdk, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -836,7 +836,7 @@ namespace xtdc_command {
       }
       return true;
     }
-    
+
     static bool process_build_arguments(const list<string>& args, bool& show_help, bool& clean_first, bool& release, string& target, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -858,7 +858,7 @@ namespace xtdc_command {
       }
       return true;
     }
-    
+
     static bool process_clean_arguments(const list<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -876,7 +876,7 @@ namespace xtdc_command {
       }
       return true;
     }
-    
+
     static bool process_generate_arguments(const list<string>& args, bool& show_help, string& type, string& name, string& path, string& sdk, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -899,7 +899,7 @@ namespace xtdc_command {
       }
       return true;
     }
-    
+
     static bool process_install_arguments(const list<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -917,7 +917,7 @@ namespace xtdc_command {
       }
       return true;
     }
-    
+
     static bool process_open_arguments(const list<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -935,7 +935,7 @@ namespace xtdc_command {
       }
       return true;
     }
-    
+
     static bool process_update_arguments(const list<string>& args, bool& show_help, string& target, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -951,7 +951,7 @@ namespace xtdc_command {
       }
       return true;
     }
-    
+
     static bool process_run_arguments(const list<string>& args, bool& show_help, bool& release, bool& no_wait, string& target, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -973,7 +973,7 @@ namespace xtdc_command {
       }
       return true;
     }
-    
+
     static bool process_targets_arguments(const list<string>& args, bool& show_help, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -987,7 +987,7 @@ namespace xtdc_command {
       }
       return true;
     }
-    
+
     static bool process_test_arguments(const list<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -1005,7 +1005,7 @@ namespace xtdc_command {
       }
       return true;
     }
-    
+
     static bool process_uninstall_arguments(const list<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
@@ -1023,13 +1023,13 @@ namespace xtdc_command {
       }
       return true;
     }
-    
+
     static int invalid_command(const list<string>& command_args) {
       console::write_line("Invalid command");
       console::write_line(string::join("\n", get_help()));
       return EXIT_FAILURE;
     }
-    
+
     static int run_commands(bool show_floppy, bool show_help, bool show_info, bool show_version, string invalid_option, const list<string>& command_args) {
       if (show_floppy || show_version || show_info || show_help) {
         console::write_line(get_version());
@@ -1044,13 +1044,13 @@ namespace xtdc_command {
       if (it == commands.end()) return invalid_command(command_args);
       return it->second(command_args);
     }
-  
+
     static void write_error(const string& message) {
       console::foreground_color(console_color::red);
       console::write(message);
       console::reset_color();
     }
-    
+
     static void write_line_error(const string& message) {
       console::foreground_color(console_color::red);
       console::write_line(message);
