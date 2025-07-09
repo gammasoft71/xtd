@@ -138,8 +138,7 @@ namespace xtdc_command {
       path_ = xtd::io::directory::get_parent(path_).full_name();
       xtd::io::file::write_all_lines(xtd::io::path::combine(path_, "CMakeLists.txt"), lines);
       generate_project(name);
-      if (last_exit_code() != EXIT_SUCCESS) return operation_status::error;
-      return operation_status::success;
+      return last_exit_code() == EXIT_SUCCESS ? operation_status::success : operation_status::error;
     }
     
     operation_status build(const xtd::string& target, bool clean_first, bool release, bool verbose = true) const {
@@ -165,13 +164,13 @@ namespace xtdc_command {
       return last_exit_code() == EXIT_SUCCESS ? operation_status::success : operation_status::error;
     }
     
-    xtd::string create(const xtd::string& name, project_type type, project_sdk sdk, project_language language) const {
+    operation_status create(const xtd::string& name, project_type type, project_sdk sdk, project_language language) const {
       auto sdks = get_valid_sdks(type);
-      if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return "The sdk param not valid with type param! Create project aborted.";
+      if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return operation_status::invalid_sdk;
       auto languages = get_valid_languages(sdk);
-      if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Create project aborted.";
-      if (is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} already exists and not empty! Create project aborted.", path_);
-      if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Create project aborted.";
+      if (std::find(languages.begin(), languages.end(), language) == languages.end()) return operation_status::invalid_language;
+      if (is_path_already_exist_and_not_empty(path_)) return operation_status::already_exist;
+      if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return operation_status::cmake_prefix_path_not_set;
       xtd::io::directory::create_directory(xtd::io::path::combine(path_, "build"));
       create_doxygen_txt(name);
       create_readme_md(name);
@@ -184,17 +183,16 @@ namespace xtdc_command {
         {project_type::unit_test_application, {*this, &project_management::create_unit_test_application}}
       } [type](name, sdk, language, true);
       generate_project(name);
-      if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Create project aborted.";
-      return xtd::string::format("{0}The project {1} was created successfully.{0}", xtd::environment::new_line(), path_);
+      return last_exit_code() == EXIT_SUCCESS ? operation_status::success : operation_status::error;
     }
     
-    xtd::string generate(const xtd::string& name, project_type type, project_sdk sdk, project_language language) const {
+    operation_status generate(const xtd::string& name, project_type type, project_sdk sdk, project_language language) const {
       auto sdks = get_valid_sdks(type);
-      if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return "The sdk param not valid with type param! Generate project aborted.";
+      if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return operation_status::invalid_sdk;
       auto languages = get_valid_languages(sdk);
-      if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Genertae project aborted.";
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} does not exists or is empty! Genertae project aborted.", path_);
-      if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Genertae project aborted.";
+      if (std::find(languages.begin(), languages.end(), language) == languages.end()) return operation_status::invalid_language;
+      if (!is_path_already_exist_and_not_empty(path_)) return operation_status::already_exist;
+      if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return operation_status::cmake_prefix_path_not_set;
       xtd::io::directory::create_directory(xtd::io::path::combine(path_, "build"));
       create_doxygen_txt(name);
       create_readme_md(name);
@@ -207,8 +205,7 @@ namespace xtdc_command {
         {project_type::unit_test_application, {*this, &project_management::generate_unit_test_application}}
       } [type](name, sdk, language);
       generate_project(name);
-      if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Create project aborted.";
-      return xtd::string::format("{0}The project {1} was created successfully.{0}", xtd::environment::new_line(), path_);
+      return last_exit_code() == EXIT_SUCCESS ? operation_status::success : operation_status::error;
     }
     
     xtd::string install(bool release) const {
