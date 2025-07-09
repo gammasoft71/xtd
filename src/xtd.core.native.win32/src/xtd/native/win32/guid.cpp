@@ -1,3 +1,4 @@
+#define NOMINMAX
 #define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/guid>
@@ -9,9 +10,6 @@
 #include <Lmcons.h>
 
 using namespace xtd::native;
-
-#undef min
-#undef max
 
 std::vector<uint8_t> guid::new_guid() {
   auto guid = UUID {};

@@ -1,3 +1,4 @@
+#define NOMINMAX
 #define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/file>
@@ -8,9 +9,6 @@
 #include <Windows.h>
 
 using namespace xtd::native;
-
-#undef max
-#undef min
 
 int32_t file::copy(const std::string& source_file, const std::string& target_file) {
   return CopyFile(win32::strings::to_wstring(source_file).c_str(), win32::strings::to_wstring(target_file).c_str(), TRUE) != FALSE ? 0 : -1;

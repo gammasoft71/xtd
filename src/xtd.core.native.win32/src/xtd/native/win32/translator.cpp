@@ -1,3 +1,4 @@
+#define NOMINMAX
 #define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/translator>
@@ -5,8 +6,6 @@
 #include "../../../../include/xtd/native/win32/strings.hpp"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 #include <Windows.h>
-#undef max
-#undef min
 
 using namespace xtd::native;
 

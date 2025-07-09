@@ -1,3 +1,5 @@
+#define NOMINMAX
+#define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/speech_synthesizer>
 #include <xtd/native/file_permission>

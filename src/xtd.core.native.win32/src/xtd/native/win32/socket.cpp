@@ -1,3 +1,4 @@
+#define NOMINMAX
 #define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/socket>
