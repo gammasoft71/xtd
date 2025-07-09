@@ -153,7 +153,7 @@ namespace xtdc_command {
       else if (xtd::environment::os_version().is_macos_platform())
         launch_and_wait_process("cmake", xtd::string::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? xtd::string::format(" --clean-first {}", target) : ""), false, verbose);
       else
-        launch_and_wait_process("cmake", xtd::string::format("--build {}{}", xtd::io::path::combine(build_path(), release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? " --clean-first {}" : ""), false, verbose);
+        launch_and_wait_process("cmake", xtd::string::format("--build {}{}{}", xtd::io::path::combine(build_path(), release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? xtd::string::format(" --clean-first {}", target) : "", xtd::string::format(" -- -j {}", xtd::environment::processor_count())), false, verbose);
       return last_exit_code() == EXIT_SUCCESS ? operation_status::success : operation_status::error;
     }
     
