@@ -3,32 +3,12 @@
 #include <xtd/random>
 #include <xtd/startup>
 
-#if defined(_WIN32)
-__declspec(dllimport) extern int __argc;
-__declspec(dllimport) extern char** __argv;
-int __tunit_argc = __argc;
-char** __tunit_argv = __argv;
-#else
-int __tunit_argc;
-char** __tunit_argv;
-
-namespace {
-  __attribute__((constructor)) void startup_program(int argc, char** argv) {
-    __tunit_argc = argc;
-    __tunit_argv = argv;
-  }
-}
-#endif
-
 using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::diagnostics;
 using namespace xtd::tunit;
 
-unit_test::unit_test(xtd::uptr<event_listener> event_listener) noexcept : unit_test(std::move(event_listener), __tunit_argc, __tunit_argv) {
-}
-
-unit_test::unit_test(xtd::uptr<event_listener> event_listener, int argc, char* argv[]) noexcept : arguments(argv == nullptr ? 0 : argv + 1, argv == nullptr ? 0 : argv + argc), name_(get_filename(argv[0])), event_listener_(std::move(event_listener)) {
+unit_test::unit_test(xtd::uptr<event_listener> event_listener) noexcept : arguments(environment::get_command_line_args()), name_(get_filename(environment::get_command_line_args()[0])), event_listener_(std::move(event_listener)) {
 }
 
 unit_test::~unit_test() {
