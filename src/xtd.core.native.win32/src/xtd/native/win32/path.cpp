@@ -1,3 +1,4 @@
+#define NOMINMAX
 #define UNICODE
 #define _CRT_SECURE_NO_WARNINGS
 #define __XTD_CORE_NATIVE_LIBRARY__
@@ -10,9 +11,6 @@
 
 using namespace std;
 using namespace xtd::native;
-
-#undef max
-#undef min
 
 char path::alt_directory_separator_char() {
   return '/';

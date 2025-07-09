@@ -1,5 +1,5 @@
-#define UNICODE
 #define NOMINMAX
+#define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/environment>
 #include <xtd/native/constant_special_item_id_list>

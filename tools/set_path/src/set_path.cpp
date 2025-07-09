@@ -6,8 +6,8 @@
 #include <xtd/string>
 #include <xtd/chrono>
 #if defined(_WIN32)
-#define UNICODE
 #define NOMINMAX
+#define UNICODE
 #include <Windows.h>
 #undef interface
 #endif

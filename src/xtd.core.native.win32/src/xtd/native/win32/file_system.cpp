@@ -1,3 +1,4 @@
+#define NOMINMAX
 #define UNICODE
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/file_system>
@@ -10,9 +11,6 @@
 
 using namespace std;
 using namespace xtd::native;
-
-#undef max
-#undef min
 
 namespace {
   static FILETIME time_t_to_file_time(time_t time) {

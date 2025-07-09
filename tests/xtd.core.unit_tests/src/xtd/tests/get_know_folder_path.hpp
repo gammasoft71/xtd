@@ -3,8 +3,8 @@
 #include <string>
 
 #if defined(_WIN32)
-#define UNICODE
 #define NOMINMAX
+#define UNICODE
 #include <shlobj.h>
 #include <Windows.h>
 #undef interface
