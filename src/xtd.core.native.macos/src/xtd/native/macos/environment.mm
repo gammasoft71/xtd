@@ -26,6 +26,8 @@ namespace {
     __environment_argc = argc;
     __environment_argv = argv;
   }
+#else
+#  warning "The compiler is unknown, please check how to get command line arguments from the compiler."
 #endif
   
   std::tuple<std::string, std::string, std::string> macos_information() {
