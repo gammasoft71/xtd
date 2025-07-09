@@ -50,6 +50,16 @@
 #include "xtd_unit_test_application_project.hpp"
 
 namespace xtdc_command {
+  enum class operation_status {
+    success,
+    error,
+    invalid_language,
+    invalid_sdk,
+    invalid_sdk_with_current_project,
+    already_exist,
+    cmake_prefix_path_not_set,
+    unknown_project,
+  };
   class project_management {
     class change_current_directory {
     public:
@@ -101,17 +111,17 @@ namespace xtdc_command {
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "sdk is not project_sdk valid value");
     }
     
-    xtd::string add(const xtd::string& name, project_type type, project_sdk sdk, project_language language) const {
+    operation_status add(const xtd::string& name, project_type type, project_sdk sdk, project_language language) const {
       auto sdks = get_valid_sdks(type);
-      if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return "The sdk param not valid with type param! Add project aborted.";
+      if (std::find(sdks.begin(), sdks.end(), sdk) == sdks.end()) return operation_status::invalid_sdk;
       auto languages = get_valid_languages(sdk);
-      if (std::find(languages.begin(), languages.end(), language) == languages.end()) return "The language param not valid with sdk param! Add project aborted.";
-      if (is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} already exists and not empty! Add project aborted.", path_);
-      if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return "Set your CMAKE_PREFIX_PATH environment variable to the Qt 5 installation prefix! Add project aborted.";
-      if (!xtd::io::file::exists(xtd::io::path::combine(xtd::io::directory::get_parent(path_).full_name(), "CMakeLists.txt"))) return xtd::string::format("Parent directory \"{}\", is not a known project! Add project aborted.", xtd::io::directory::get_parent(path_).full_name());
+      if (std::find(languages.begin(), languages.end(), language) == languages.end()) return operation_status::invalid_language;
+      if (is_path_already_exist_and_not_empty(path_)) return operation_status::already_exist;
+      if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return operation_status::cmake_prefix_path_not_set;
+      if (!xtd::io::file::exists(xtd::io::path::combine(xtd::io::directory::get_parent(path_).full_name(), "CMakeLists.txt"))) return operation_status::unknown_project;
       auto lines = xtd::io::file::read_all_lines(xtd::io::path::combine(xtd::io::directory::get_parent(path_).full_name(), "CMakeLists.txt"));
-      if (std::find_if(lines.begin(), lines.end(), [](const xtd::string & value) {return value.contains("find_package(xtd");}) != lines.end() && sdk != project_sdk::xtd) return "The sdk param not valid with current project sdk! Add project aborted.";
-      if (std::find_if(lines.begin(), lines.end(), [](const xtd::string & value) {return value.contains("find_package(xtd");}) == lines.end() && sdk == project_sdk::xtd) return "The sdk param not valid with current project sdk! Add project aborted.";
+      if (std::find_if(lines.begin(), lines.end(), [](const xtd::string & value) {return value.contains("find_package(xtd");}) != lines.end() && sdk != project_sdk::xtd) return operation_status::invalid_sdk_with_current_project;
+      if (std::find_if(lines.begin(), lines.end(), [](const xtd::string & value) {return value.contains("find_package(xtd");}) == lines.end() && sdk == project_sdk::xtd) return operation_status::invalid_sdk_with_current_project;
       
       lines.resize(lines.length(), xtd::string::format("{}({})", std::find_if(lines.begin(), lines.end(), [](const xtd::string & value) {return value.contains("find_package(xtd");}) != lines.end() ? "add_projects" : "add_subdirectory", xtd::io::path::get_file_name(path_)));
       std::map<project_type, xtd::action<const xtd::string&, project_sdk, project_language, bool>> {
@@ -125,8 +135,8 @@ namespace xtdc_command {
       path_ = xtd::io::directory::get_parent(path_).full_name();
       xtd::io::file::write_all_lines(xtd::io::path::combine(path_, "CMakeLists.txt"), lines);
       generate_project(name);
-      if (last_exit_code() != EXIT_SUCCESS) return "Generation error! Add project aborted.";
-      return xtd::string::format("{0}The project {1} was added successfully.{0}", xtd::environment::new_line(), path_);
+      if (last_exit_code() != EXIT_SUCCESS) return operation_status::error;
+      return operation_status::success;
     }
     
     xtd::string build(const xtd::string& target, bool clean_first, bool release, bool verbose = true) const {
@@ -393,11 +403,11 @@ namespace xtdc_command {
         case project_sdk::xtd: xtd_console_project(path_).create(name, create_solution); break;
         case project_sdk::xtd_c: xtd_c_console_project(path_).create(name, create_solution); break;
         default: std::map<project_language, xtd::action<const xtd::string&, bool>> {
-            {project_language::c, {c_console_project {path_}, &c_console_project::create}},
-            {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::create}},
-            {project_language::csharp, {csharp_console_project {path_}, &csharp_console_project::create}},
-            {project_language::objectivec, {objectivec_console_project {path_}, &objectivec_console_project::create}}
-          } [language](name, create_solution); break;
+          {project_language::c, {c_console_project {path_}, &c_console_project::create}},
+          {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::create}},
+          {project_language::csharp, {csharp_console_project {path_}, &csharp_console_project::create}},
+          {project_language::objectivec, {objectivec_console_project {path_}, &objectivec_console_project::create}}
+        } [language](name, create_solution); break;
       }
     }
     
@@ -425,11 +435,11 @@ namespace xtdc_command {
         case project_sdk::xtd: xtd_shared_library_project(path_).create(name, create_solution); break;
         case project_sdk::xtd_c: xtd_c_shared_library_project(path_).create(name, create_solution); break;
         default: std::map<project_language, xtd::action<const xtd::string&, bool>> {
-            {project_language::c, {c_shared_library_project {path_}, &c_shared_library_project::create}},
-            {project_language::cpp, {cpp_shared_library_project {path_}, &cpp_shared_library_project::create}},
-            {project_language::csharp, {csharp_shared_library_project {path_}, &csharp_shared_library_project::create}},
-            {project_language::objectivec, {objectivec_shared_library_project {path_}, &objectivec_shared_library_project::create}}
-          } [language](name, create_solution); break;
+          {project_language::c, {c_shared_library_project {path_}, &c_shared_library_project::create}},
+          {project_language::cpp, {cpp_shared_library_project {path_}, &cpp_shared_library_project::create}},
+          {project_language::csharp, {csharp_shared_library_project {path_}, &csharp_shared_library_project::create}},
+          {project_language::objectivec, {objectivec_shared_library_project {path_}, &objectivec_shared_library_project::create}}
+        } [language](name, create_solution); break;
       }
     }
     
@@ -438,11 +448,11 @@ namespace xtdc_command {
         case project_sdk::xtd: xtd_static_library_project(path_).create(name, create_solution); break;
         case project_sdk::xtd_c: xtd_c_static_library_project(path_).create(name, create_solution); break;
         default: std::map<project_language, xtd::action<const xtd::string&, bool>> {
-            {project_language::c, {c_static_library_project {path_}, &c_static_library_project::create}},
-            {project_language::cpp, {cpp_static_library_project {path_}, &cpp_static_library_project::create}},
-            {project_language::csharp, {csharp_static_library_project {path_}, &csharp_static_library_project::create}},
-            {project_language::objectivec, {objectivec_static_library_project {path_}, &objectivec_static_library_project::create}}
-          } [language](name, create_solution); break;
+          {project_language::c, {c_static_library_project {path_}, &c_static_library_project::create}},
+          {project_language::cpp, {cpp_static_library_project {path_}, &cpp_static_library_project::create}},
+          {project_language::csharp, {csharp_static_library_project {path_}, &csharp_static_library_project::create}},
+          {project_language::objectivec, {objectivec_static_library_project {path_}, &objectivec_static_library_project::create}}
+        } [language](name, create_solution); break;
       }
     }
     
@@ -479,11 +489,11 @@ namespace xtdc_command {
         case project_sdk::xtd: xtd_console_project(path_).generate(name); break;
         case project_sdk::xtd_c: xtd_c_console_project(path_).generate(name); break;
         default: std::map<project_language, xtd::action<const xtd::string&>> {
-            {project_language::c, {c_console_project {path_}, &c_console_project::generate}},
-            {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::generate}},
-            {project_language::csharp, {csharp_console_project {path_}, &csharp_console_project::generate}},
-            {project_language::objectivec, {objectivec_console_project {path_}, &objectivec_console_project::generate}}
-          } [language](name); break;
+          {project_language::c, {c_console_project {path_}, &c_console_project::generate}},
+          {project_language::cpp, {cpp_console_project {path_}, &cpp_console_project::generate}},
+          {project_language::csharp, {csharp_console_project {path_}, &csharp_console_project::generate}},
+          {project_language::objectivec, {objectivec_console_project {path_}, &objectivec_console_project::generate}}
+        } [language](name); break;
       }
     }
     
@@ -511,11 +521,11 @@ namespace xtdc_command {
         case project_sdk::xtd: xtd_shared_library_project(path_).generate(name); break;
         case project_sdk::xtd_c: xtd_c_shared_library_project(path_).generate(name); break;
         default: std::map<project_language, xtd::action<const xtd::string&>> {
-            {project_language::c, {c_shared_library_project {path_}, &c_shared_library_project::generate}},
-            {project_language::cpp, {cpp_shared_library_project {path_}, &cpp_shared_library_project::generate}},
-            {project_language::csharp, {csharp_shared_library_project {path_}, &csharp_shared_library_project::generate}},
-            {project_language::objectivec, {objectivec_shared_library_project {path_}, &objectivec_shared_library_project::generate}}
-          } [language](name); break;
+          {project_language::c, {c_shared_library_project {path_}, &c_shared_library_project::generate}},
+          {project_language::cpp, {cpp_shared_library_project {path_}, &cpp_shared_library_project::generate}},
+          {project_language::csharp, {csharp_shared_library_project {path_}, &csharp_shared_library_project::generate}},
+          {project_language::objectivec, {objectivec_shared_library_project {path_}, &objectivec_shared_library_project::generate}}
+        } [language](name); break;
       }
     }
     
@@ -524,11 +534,11 @@ namespace xtdc_command {
         case project_sdk::xtd: xtd_static_library_project(path_).generate(name); break;
         case project_sdk::xtd_c: xtd_c_static_library_project(path_).generate(name); break;
         default: std::map<project_language, xtd::action<const xtd::string&>> {
-            {project_language::c, {c_static_library_project {path_}, &c_static_library_project::generate}},
-            {project_language::cpp, {cpp_static_library_project {path_}, &cpp_static_library_project::generate}},
-            {project_language::csharp, {csharp_static_library_project {path_}, &csharp_static_library_project::generate}},
-            {project_language::objectivec, {objectivec_static_library_project {path_}, &objectivec_static_library_project::generate}}
-          } [language](name); break;
+          {project_language::c, {c_static_library_project {path_}, &c_static_library_project::generate}},
+          {project_language::cpp, {cpp_static_library_project {path_}, &cpp_static_library_project::generate}},
+          {project_language::csharp, {csharp_static_library_project {path_}, &csharp_static_library_project::generate}},
+          {project_language::objectivec, {objectivec_static_library_project {path_}, &objectivec_static_library_project::generate}}
+        } [language](name); break;
       }
     }
     
@@ -558,7 +568,7 @@ namespace xtdc_command {
           change_current_directory current_directory_debug {xtd::io::path::combine(build_path(), "Debug")};
           launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Debug")), false, verbose);
         }
-
+        
         if (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), "Release", "makefile"))) {
           xtd::io::directory::create_directory(xtd::io::path::combine(build_path(), "Release"));
           change_current_directory current_directory_release {xtd::io::path::combine(build_path(), "Release")};
