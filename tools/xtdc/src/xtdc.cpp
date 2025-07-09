@@ -535,7 +535,7 @@ namespace xtdc_command {
       if (!process_build_arguments(args, show_help, clean_first, release, target, path, invalid_option)) {
         if (!invalid_option.empty()) write_line_error(string::format("Unknown option: {0}", invalid_option));
         else write_line_error("Invalid parameters");
-        console::write_line(string::join("\n", get_add_help()));
+        console::write_line(string::join("\n", get_build_help()));
         return EXIT_FAILURE;
       }
       if (show_help) {
@@ -546,10 +546,10 @@ namespace xtdc_command {
       auto sw = stopwatch::start_new();
       auto status = project_management(get_project_full_path_from_path(path)).build(target, clean_first, release);
       switch (status) {
-        case operation_status::success: console::write(xtd::environment::os_version().is_macos_platform() ? "" : "\n** BUILD SUCCEEDED **\n"); break;
-        case operation_status::clean_error: write_error("\n** CLEAN FAILED **\n"); break;
-        case operation_status::not_exist: write_error(xtd::string::format("Path {} does not exists or is empty! Build project aborted.\n", path)); break;
-        default: write_error(xtd::environment::os_version().is_macos_platform() ? "" : "\n** BUILD FAILED **\n"); break;
+        case operation_status::success: console::write(xtd::environment::os_version().is_macos_platform() ? "" : "\n** BUILD SUCCEEDED **\n\n"); break;
+        case operation_status::clean_error: write_error("\n** CLEAN FAILED **\n\n"); break;
+        case operation_status::not_exist: write_error(xtd::string::format("Path {} does not exists or is empty! Build project aborted.\n\n", path)); break;
+        default: write_error(xtd::environment::os_version().is_macos_platform() ? "" : "\n** BUILD FAILED **\n\n"); break;
       }
       sw.stop();
       console::write_line("Time Elapsed {0}{1:H}:{1:M}:{1:S}.{1:L}", sw.elapsed().days() ? string::format("{d}.", sw.elapsed().days()) : "", sw.elapsed());
@@ -564,7 +564,7 @@ namespace xtdc_command {
       if (!process_clean_arguments(args, show_help, release, path, invalid_option)) {
         if (!invalid_option.empty()) write_line_error(string::format("Unknown option: {0}", invalid_option));
         else write_line_error("Invalid parameters");
-        console::write_line(string::join("\n", get_add_help()));
+        console::write_line(string::join("\n", get_clean_help()));
         return EXIT_FAILURE;
       }
       if (show_help) {
@@ -576,7 +576,7 @@ namespace xtdc_command {
       switch (status) {
         case operation_status::success: break;
         case operation_status::not_exist: write_error(xtd::string::format("Path {} does not exists or is empty! Build project aborted.\n", path)); break;
-        default: write_error("\n** CLEAN FAILED **\n"); break;
+        default: write_line_error("\n** CLEAN FAILED **\n"); break;
       }
       return status == operation_status::success ? EXIT_SUCCESS : EXIT_FAILURE;
     }
@@ -589,38 +589,36 @@ namespace xtdc_command {
       string name;
       string path;
       if (!process_generate_arguments(args, show_help, type, name, path, sdk, invalid_option)) {
-        if (!invalid_option.empty())
-          console::write_line("Unknown option: {0}", invalid_option);
-        else
-          console::write_line("Invalid parameters");
+        if (!invalid_option.empty()) write_line_error(string::format("Unknown option: {0}", invalid_option));
+        else write_line_error("Invalid parameters");
         console::write_line(string::join("\n", get_generate_help()));
         return EXIT_FAILURE;
       }
-      if (show_help)
+      if (show_help) {
         console::write_line(string::join("\n", get_generate_help()));
-      else {
-        if (type.empty()) type = "gui";
-        if (sdk.empty()) sdk = "xtd";
-        if (name.empty()) name = get_project_name_from_path(path);
-        
-        if (name.empty()) {
-          console::write_line("The name is empty.");
-          return EXIT_FAILURE;
-        }
-        if (std::find_if(name.begin(), name.end(), [](auto c) {return !(char_object::is_letter_or_digit(c) || c == '_');}) != name.end()) {
-          console::write_line("The name : \"{}\" contains invalid charaters.", name);
-          return EXIT_FAILURE;
-        }
-        if (name.size() > 128) {
-          console::write_line("The size of the name is invalid, the size must be less than or equal to 128.");
-          return EXIT_FAILURE;
-        }
-        
-        xtdc_command::project_type project_type = std::map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
-        xtdc_command::project_sdk project_sdk = std::map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtk+4", xtdc_command::project_sdk::gtk4}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"qt6", xtdc_command::project_sdk::qt6}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}, {"xtd_c", xtdc_command::project_sdk::xtd_c}} [sdk];
-        xtdc_command::project_language project_language = std::map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtk+4", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"qt6", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"xtd_c", xtdc_command::project_language::c}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
-        console::write_line(project_management(get_project_full_path_from_path(path)).generate(name, project_type, project_sdk, project_language));
+        return EXIT_SUCCESS;
       }
+      if (type.empty()) type = "gui";
+      if (sdk.empty()) sdk = "xtd";
+      if (name.empty()) name = get_project_name_from_path(path);
+      
+      if (name.empty()) {
+        console::write_line("The name is empty.");
+        return EXIT_FAILURE;
+      }
+      if (std::find_if(name.begin(), name.end(), [](auto c) {return !(char_object::is_letter_or_digit(c) || c == '_');}) != name.end()) {
+        console::write_line("The name : \"{}\" contains invalid charaters.", name);
+        return EXIT_FAILURE;
+      }
+      if (name.size() > 128) {
+        console::write_line("The size of the name is invalid, the size must be less than or equal to 128.");
+        return EXIT_FAILURE;
+      }
+      
+      xtdc_command::project_type project_type = std::map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
+      xtdc_command::project_sdk project_sdk = std::map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtk+4", xtdc_command::project_sdk::gtk4}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"qt6", xtdc_command::project_sdk::qt6}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}, {"xtd_c", xtdc_command::project_sdk::xtd_c}} [sdk];
+      xtdc_command::project_language project_language = std::map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtk+4", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"qt6", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"xtd_c", xtdc_command::project_language::c}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
+      console::write_line(project_management(get_project_full_path_from_path(path)).generate(name, project_type, project_sdk, project_language));
       return EXIT_SUCCESS;
     }
     
