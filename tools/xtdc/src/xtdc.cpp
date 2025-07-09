@@ -490,7 +490,7 @@ namespace xtdc_command {
         console::write_line(string::join("\n", get_add_help()));
         return EXIT_SUCCESS;
       }
-
+      
       if (type.empty()) type = "gui";
       if (sdk.empty()) sdk = "xtd";
       if (name.empty()) name = get_project_name_from_path(path);
@@ -542,7 +542,7 @@ namespace xtdc_command {
         console::write_line(string::join("\n", get_build_help()));
         return EXIT_SUCCESS;
       }
-
+      
       auto sw = stopwatch::start_new();
       auto status = project_management(get_project_full_path_from_path(path)).build(target, clean_first, release);
       switch (status) {
@@ -573,7 +573,7 @@ namespace xtdc_command {
         console::write_line(string::join("\n", get_clean_help()));
         return EXIT_SUCCESS;
       }
-
+      
       auto result = project_management(get_project_full_path_from_path(path)).clean(release);
       if (!result.empty()) console::write_line(result);
       return EXIT_SUCCESS;
@@ -1044,7 +1044,7 @@ namespace xtdc_command {
       if (it == commands.end()) return invalid_command(command_args);
       return it->second(command_args);
     }
-  
+    
     static void write_error(const string& message) {
       console::foreground_color(console_color::red);
       console::write(message);
