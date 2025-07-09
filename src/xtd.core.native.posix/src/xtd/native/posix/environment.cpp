@@ -17,7 +17,7 @@ using namespace xtd::native;
 
 extern char** environ;
 int32_t __environment_argc = 0;
-char** __environment_argv;
+char** __environment_argv = nullptr;
 
 namespace {
   static string create_process(const string& command) {
@@ -33,11 +33,13 @@ namespace {
     return result;
   }
   
+#if defined (__clang__) || defined(__GNUC__)
   __attribute__((constructor)) void startup_program(int32_t argc, char** argv) {
     __environment_argc = argc;
     __environment_argv = argv;
   }
-  
+#endif
+
   using distribution_dictionary = map<string, string>;
   
   const distribution_dictionary& get_distribution_key_values() {
@@ -60,7 +62,7 @@ int32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
 }
 
 vector<string> environment::get_command_line_args() {
-  if (__environment_argc == 0) return {"a.out"};
+  if (__environment_argv == nullptr || __environment_argc == 0) return {"a.out"};
   return {__environment_argv, __environment_argv + __environment_argc};
 }
 
