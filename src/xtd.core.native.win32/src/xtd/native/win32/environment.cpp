@@ -1,4 +1,5 @@
 #define UNICODE
+#define NOMINMAX
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/environment>
 #include <xtd/native/constant_special_item_id_list>
@@ -18,13 +19,6 @@
 using namespace std;
 using namespace xtd::native;
 
-#undef min
-#undef max
-
-__declspec(dllimport) extern int __argc;
-__declspec(dllimport) extern char** __argv;
-int __environment_argc = __argc;
-char** __environment_argv = __argv;
 auto __machine_envs__ = map<string, string> {};
 auto __none_envs__ = map<string, string> {};
 auto __process_envs__ = map<string, string> {};
@@ -112,8 +106,14 @@ int32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
 }
 
 vector<string> environment::get_command_line_args() {
-  if (__environment_argc == 0) return {"a.exe"};
-  return {__environment_argv, __environment_argv + __environment_argc};
+  auto argc = 0;
+  auto argv = CommandLineToArgvW(GetCommandLine(), &argc);
+  if (argv == nullptr || argc == 0) return {"a.exe"};
+  auto args = vector<string> {};
+  for (auto index = 0; index < argc; ++index)
+    args.push_back(win32::strings::to_string(argv[index]));
+  LocalFree(argv);
+  return args;
 }
 
 string environment::get_desktop_environment() {
