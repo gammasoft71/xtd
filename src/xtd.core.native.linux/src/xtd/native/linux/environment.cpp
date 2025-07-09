@@ -18,15 +18,14 @@ using namespace std;
 using namespace std::literals;
 using namespace xtd::native;
 
-extern char** environ;
-int32_t __environment_argc = 0;
-char** __environment_argv = nullptr;
-
 namespace {
+  int32_t environment_argc = 0;
+  char** environment_argv = nullptr;
+  
 #if defined (__clang__) || defined(__GNUC__)
   __attribute__((constructor)) void startup_program(int32_t argc, char** argv) {
-    __environment_argc = argc;
-    __environment_argv = argv;
+    environment_argc = argc;
+    environment_argv = argv;
   }
 #else
 #  warning "The compiler is unknown, please check how to get command line arguments from the compiler."
@@ -86,8 +85,8 @@ int32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
 }
 
 vector<string> environment::get_command_line_args() {
-  if (__environment_argv == nullptr || __environment_argc == 0) return {"a.out"};
-  return {__environment_argv, __environment_argv + __environment_argc};
+  if (environment_argv == nullptr || environment_argc == 0) return {"a.out"};
+  return {environment_argv, environment_argv + environment_argc};
 }
 
 string environment::get_desktop_environment() {
@@ -177,6 +176,8 @@ string environment::get_environment_variable(const string& variable, int32_t tar
   }
   return "";
 }
+
+extern char** environ;
 
 map<string, string>& environment::get_environment_variables(int32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
