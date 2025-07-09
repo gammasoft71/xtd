@@ -486,42 +486,43 @@ namespace xtdc_command {
         return EXIT_FAILURE;
       }
       
-      if (show_help)
+      if (show_help) {
         console::write_line(string::join("\n", get_add_help()));
-      else {
-        if (type.empty()) type = "gui";
-        if (sdk.empty()) sdk = "xtd";
-        if (name.empty()) name = get_project_name_from_path(path);
-        
-        if (name.empty()) {
-          write_line_error("The name is empty.");
-          return EXIT_FAILURE;
-        }
-        if (std::find_if(name.begin(), name.end(), [](auto c) {return !(char_object::is_letter_or_digit(c) || c == '_');}) != name.end()) {
-          write_line_error(string::format("The name : \"{}\" contains invalid charaters.", name));
-          return EXIT_FAILURE;
-        }
-        if (name.size() > 128) {
-          write_line_error("The size of the name is invalid, the size must be less than or equal to 128.");
-          return EXIT_FAILURE;
-        }
-        
-        xtdc_command::project_type project_type = std::map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
-        xtdc_command::project_sdk project_sdk = std::map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtk+4", xtdc_command::project_sdk::gtk4}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"qt6", xtdc_command::project_sdk::qt6}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}, {"xtd_c", xtdc_command::project_sdk::xtd_c}} [sdk];
-        xtdc_command::project_language project_language = std::map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtk+4", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"qt6", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"xtd_c", xtdc_command::project_language::c}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
-        switch (project_management(get_project_full_path_from_path(path)).add(name, project_type, project_sdk, project_language)) {
-          case operation_status::success: console::write_line("{0}The project {1} was added successfully.{0}", xtd::environment::new_line(), path); return EXIT_SUCCESS;
-          case operation_status::already_exist: write_line_error(xtd::string::format("Path {} already exists and not empty! Add project aborted.", path)); return EXIT_FAILURE;
-          case operation_status::cmake_prefix_path_not_set: write_line_error("Set your CMAKE_PREFIX_PATH environment variable to the Qt installation prefix! Add project aborted."); return EXIT_FAILURE;
-          case operation_status::invalid_language: write_line_error("The language param not valid with sdk param! Add project aborted."); return EXIT_FAILURE;
-          case operation_status::invalid_sdk: write_line_error("The sdk param not valid with type param! Add project aborted."); return EXIT_FAILURE;
-          case operation_status::invalid_sdk_with_current_project: write_line_error("The sdk param not valid with current project sdk! Add project aborted."); return EXIT_FAILURE;
-          case operation_status::unknown_project: write_line_error(xtd::string::format("Parent directory \"{}\", is not a known project! Add project aborted.", xtd::io::directory::get_parent(path).full_name())); return EXIT_FAILURE;
-          default:
-        }
+        return EXIT_SUCCESS;
       }
-      write_line_error("Generation error! Add project aborted.");
-      return EXIT_FAILURE;
+
+      if (type.empty()) type = "gui";
+      if (sdk.empty()) sdk = "xtd";
+      if (name.empty()) name = get_project_name_from_path(path);
+      
+      if (name.empty()) {
+        write_line_error("The name is empty.");
+        return EXIT_FAILURE;
+      }
+      if (std::find_if(name.begin(), name.end(), [](auto c) {return !(char_object::is_letter_or_digit(c) || c == '_');}) != name.end()) {
+        write_line_error(string::format("The name : \"{}\" contains invalid charaters.", name));
+        return EXIT_FAILURE;
+      }
+      if (name.size() > 128) {
+        write_line_error("The size of the name is invalid, the size must be less than or equal to 128.");
+        return EXIT_FAILURE;
+      }
+      
+      xtdc_command::project_type project_type = std::map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
+      xtdc_command::project_sdk project_sdk = std::map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtk+4", xtdc_command::project_sdk::gtk4}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"qt6", xtdc_command::project_sdk::qt6}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}, {"xtd_c", xtdc_command::project_sdk::xtd_c}} [sdk];
+      xtdc_command::project_language project_language = std::map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtk+4", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"qt6", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"xtd_c", xtdc_command::project_language::c}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
+      auto status = project_management(get_project_full_path_from_path(path)).add(name, project_type, project_sdk, project_language);
+      switch (status) {
+        case operation_status::success: console::write_line("{0}The project {1} was added successfully.{0}", xtd::environment::new_line(), path); break;
+        case operation_status::already_exist: write_line_error(xtd::string::format("Path {} already exists and not empty! Add project aborted.", path)); break;
+        case operation_status::cmake_prefix_path_not_set: write_line_error("Set your CMAKE_PREFIX_PATH environment variable to the Qt installation prefix! Add project aborted."); break;
+        case operation_status::invalid_language: write_line_error("The language param not valid with sdk param! Add project aborted."); break;
+        case operation_status::invalid_sdk: write_line_error("The sdk param not valid with type param! Add project aborted."); break;
+        case operation_status::invalid_sdk_with_current_project: write_line_error("The sdk param not valid with current project sdk! Add project aborted."); break;
+        case operation_status::unknown_project: write_line_error(xtd::string::format("Parent directory \"{}\", is not a known project! Add project aborted.", xtd::io::directory::get_parent(path).full_name())); break;
+        default: write_line_error("Generation error! Add project aborted."); break;
+      }
+      return status == operation_status::success ? EXIT_SUCCESS : EXIT_FAILURE;
     }
     
     static int build(const list<string>& args) {
@@ -532,23 +533,27 @@ namespace xtdc_command {
       string target;
       string path;
       if (!process_build_arguments(args, show_help, clean_first, release, target, path, invalid_option)) {
-        if (!invalid_option.empty())
-          console::write_line("Unknown option: {0}", invalid_option);
-        else
-          console::write_line("Invalid parameters");
-        console::write_line(string::join("\n", get_build_help()));
+        if (!invalid_option.empty()) write_line_error(string::format("Unknown option: {0}", invalid_option));
+        else write_line_error("Invalid parameters");
+        console::write_line(string::join("\n", get_add_help()));
         return EXIT_FAILURE;
       }
-      if (show_help)
+      if (show_help) {
         console::write_line(string::join("\n", get_build_help()));
-      else {
-        auto sw = stopwatch::start_new();
-        auto result = project_management(get_project_full_path_from_path(path)).build(target, clean_first, release);
-        if (!result.empty()) console::write_line(result);
-        sw.stop();
-        console::write_line("\nTime Elapsed {0}{1:H}:{1:M}:{1:S}.{1:L}", sw.elapsed().days() ? string::format("{d}.", sw.elapsed().days()) : "", sw.elapsed());
+        return EXIT_SUCCESS;
       }
-      return EXIT_SUCCESS;
+
+      auto sw = stopwatch::start_new();
+      auto status = project_management(get_project_full_path_from_path(path)).build(target, clean_first, release);
+      switch (status) {
+        case operation_status::success: console::write(xtd::environment::os_version().is_macos_platform() ? "" : "\n** BUILD SUCCEEDED **\n"); break;
+        case operation_status::clean_error: write_error("\n** CLEAN FAILED **\n"); break;
+        case operation_status::not_exist: write_error(xtd::string::format("Path {} does not exists or is empty! Build project aborted.\n", path)); break;
+        default: write_error(xtd::environment::os_version().is_macos_platform() ? "" : "\n** BUILD FAILED **\n"); break;
+      }
+      sw.stop();
+      console::write_line("Time Elapsed {0}{1:H}:{1:M}:{1:S}.{1:L}", sw.elapsed().days() ? string::format("{d}.", sw.elapsed().days()) : "", sw.elapsed());
+      return status == operation_status::success ? EXIT_SUCCESS : EXIT_FAILURE;
     }
     
     static int clean(const list<string>& args) {
@@ -564,12 +569,13 @@ namespace xtdc_command {
         console::write_line(string::join("\n", get_clean_help()));
         return EXIT_FAILURE;
       }
-      if (show_help)
+      if (show_help) {
         console::write_line(string::join("\n", get_clean_help()));
-      else {
-        auto result = project_management(get_project_full_path_from_path(path)).clean(release);
-        if (!result.empty()) console::write_line(result);
+        return EXIT_SUCCESS;
       }
+
+      auto result = project_management(get_project_full_path_from_path(path)).clean(release);
+      if (!result.empty()) console::write_line(result);
       return EXIT_SUCCESS;
     }
     
