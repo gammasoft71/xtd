@@ -562,11 +562,9 @@ namespace xtdc_command {
       auto release = false;
       string path;
       if (!process_clean_arguments(args, show_help, release, path, invalid_option)) {
-        if (!invalid_option.empty())
-          console::write_line("Unknown option: {0}", invalid_option);
-        else
-          console::write_line("Invalid parameters");
-        console::write_line(string::join("\n", get_clean_help()));
+        if (!invalid_option.empty()) write_line_error(string::format("Unknown option: {0}", invalid_option));
+        else write_line_error("Invalid parameters");
+        console::write_line(string::join("\n", get_add_help()));
         return EXIT_FAILURE;
       }
       if (show_help) {
@@ -574,9 +572,13 @@ namespace xtdc_command {
         return EXIT_SUCCESS;
       }
 
-      auto result = project_management(get_project_full_path_from_path(path)).clean(release);
-      if (!result.empty()) console::write_line(result);
-      return EXIT_SUCCESS;
+      auto status = project_management(get_project_full_path_from_path(path)).clean(release);
+      switch (status) {
+        case operation_status::success: break;
+        case operation_status::not_exist: write_error(xtd::string::format("Path {} does not exists or is empty! Build project aborted.\n", path)); break;
+        default: write_error("\n** CLEAN FAILED **\n"); break;
+      }
+      return status == operation_status::success ? EXIT_SUCCESS : EXIT_FAILURE;
     }
     
     static int generate(const list<string>& args) {

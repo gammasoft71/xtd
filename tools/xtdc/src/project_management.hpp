@@ -157,13 +157,12 @@ namespace xtdc_command {
       return last_exit_code() == EXIT_SUCCESS ? operation_status::success : operation_status::error;
     }
     
-    xtd::string clean(bool release, bool verbose = true) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} does not exists or is empty! Clean project aborted.", path_);
+    operation_status clean(bool release, bool verbose = true) const {
+      if (!is_path_already_exist_and_not_empty(path_)) return operation_status::not_exist;
       auto build_path = xtd::environment::os_version().is_unix_platform() && !xtd::environment::os_version().is_macos_platform() ? xtd::io::path::combine(this->build_path(), release ? "Release" : "Debug") : this->build_path();
       if (xtd::io::directory::exists(build_path)) xtd::io::directory::remove(build_path, true);
       generate_project(verbose);
-      if (last_exit_code() != EXIT_SUCCESS) return "\n** CLEAN FAILED **";
-      return "";
+      return last_exit_code() == EXIT_SUCCESS ? operation_status::success : operation_status::error;
     }
     
     xtd::string create(const xtd::string& name, project_type type, project_sdk sdk, project_language language) const {
