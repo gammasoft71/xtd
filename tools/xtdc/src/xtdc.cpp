@@ -15,9 +15,11 @@ namespace xtdc_command {
   public:
     static auto main(const argument_collection& args) {
       console::output_code_page(65001);
+      
       if (args.size() == 0) {
+        write_line_error("No parameters.");
         console::write_line(string::join("\n", get_help()));
-        return -1;
+        return EXIT_FAILURE;
       }
       
       auto show_floppy = false;
@@ -27,12 +29,10 @@ namespace xtdc_command {
       string invalid_option;
       list<string> command_args;
       if (process_xtdc_arguments(args, show_floppy, show_help, show_info, show_version, command_args, invalid_option) == false) {
-        if (!invalid_option.empty())
-          console::write_line("Unknown option: {0}", invalid_option);
-        else
-          console::write_line("Invalid parameters");
-        console::write_line("\n", get_help());
-        return -1;
+        if (!invalid_option.empty()) write_line_error(string::format("Unknown option: {0}", invalid_option));
+        else write_line_error("Invalid parameters.");
+        console::write_line(string::join("\n", get_help()));
+        return EXIT_FAILURE;
       }
       
       return run_commands(show_floppy, show_help, show_info, show_version, invalid_option, command_args);
@@ -480,12 +480,10 @@ namespace xtdc_command {
       string name;
       string path;
       if (!process_add_arguments(args, show_help, type, name, path, sdk, invalid_option)) {
-        if (!invalid_option.empty())
-          console::write_line("Unknown option: {0}", invalid_option);
-        else
-          console::write_line("Invalid parameters");
+        if (!invalid_option.empty()) write_line_error(string::format("Unknown option: {0}", invalid_option));
+        else write_line_error("Invalid parameters");
         console::write_line(string::join("\n", get_add_help()));
-        return -1;
+        return EXIT_FAILURE;
       }
       
       if (show_help)
@@ -496,24 +494,34 @@ namespace xtdc_command {
         if (name.empty()) name = get_project_name_from_path(path);
         
         if (name.empty()) {
-          console::write_line("The name is empty.");
-          return -1;
+          write_line_error("The name is empty.");
+          return EXIT_FAILURE;
         }
         if (std::find_if(name.begin(), name.end(), [](auto c) {return !(char_object::is_letter_or_digit(c) || c == '_');}) != name.end()) {
-          console::write_line("The name : \"{}\" contains invalid charaters.", name);
-          return -1;
+          write_line_error(string::format("The name : \"{}\" contains invalid charaters.", name));
+          return EXIT_FAILURE;
         }
         if (name.size() > 128) {
-          console::write_line("The size of the name is invalid, the size must be less than or equal to 128.");
-          return -1;
+          write_line_error("The size of the name is invalid, the size must be less than or equal to 128.");
+          return EXIT_FAILURE;
         }
         
         xtdc_command::project_type project_type = std::map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
         xtdc_command::project_sdk project_sdk = std::map<string, xtdc_command::project_sdk> {{"none", xtdc_command::project_sdk::none}, {"catch2", xtdc_command::project_sdk::catch2}, {"cocoa", xtdc_command::project_sdk::cocoa}, {"fltk", xtdc_command::project_sdk::fltk}, {"gtest", xtdc_command::project_sdk::gtest}, {"gtk+2", xtdc_command::project_sdk::gtk2}, {"gtk+3", xtdc_command::project_sdk::gtk3}, {"gtk+4", xtdc_command::project_sdk::gtk4}, {"gtkmm", xtdc_command::project_sdk::gtkmm}, {"qt5", xtdc_command::project_sdk::qt5}, {"qt6", xtdc_command::project_sdk::qt6}, {"win32", xtdc_command::project_sdk::win32}, {"winforms", xtdc_command::project_sdk::winforms}, {"wpf", xtdc_command::project_sdk::wpf}, {"wxwidgets", xtdc_command::project_sdk::wxwidgets}, {"xtd", xtdc_command::project_sdk::xtd}, {"xtd_c", xtdc_command::project_sdk::xtd_c}} [sdk];
         xtdc_command::project_language project_language = std::map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtk+4", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"qt6", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"xtd_c", xtdc_command::project_language::c}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
-        console::write_line(project_management(get_project_full_path_from_path(path)).add(name, project_type, project_sdk, project_language));
+        switch (project_management(get_project_full_path_from_path(path)).add(name, project_type, project_sdk, project_language)) {
+          case operation_status::success: console::write_line("{0}The project {1} was added successfully.{0}", xtd::environment::new_line(), path); return EXIT_SUCCESS;
+          case operation_status::already_exist: write_line_error(xtd::string::format("Path {} already exists and not empty! Add project aborted.", path)); return EXIT_FAILURE;
+          case operation_status::cmake_prefix_path_not_set: write_line_error("Set your CMAKE_PREFIX_PATH environment variable to the Qt installation prefix! Add project aborted."); return EXIT_FAILURE;
+          case operation_status::invalid_language: write_line_error("The language param not valid with sdk param! Add project aborted."); return EXIT_FAILURE;
+          case operation_status::invalid_sdk: write_line_error("The sdk param not valid with type param! Add project aborted."); return EXIT_FAILURE;
+          case operation_status::invalid_sdk_with_current_project: write_line_error("The sdk param not valid with current project sdk! Add project aborted."); return EXIT_FAILURE;
+          case operation_status::unknown_project: write_line_error(xtd::string::format("Parent directory \"{}\", is not a known project! Add project aborted.", xtd::io::directory::get_parent(path).full_name())); return EXIT_FAILURE;
+          default:
+        }
       }
-      return 0;
+      write_line_error("Generation error! Add project aborted.");
+      return EXIT_FAILURE;
     }
     
     static int build(const list<string>& args) {
@@ -529,7 +537,7 @@ namespace xtdc_command {
         else
           console::write_line("Invalid parameters");
         console::write_line(string::join("\n", get_build_help()));
-        return -1;
+        return EXIT_FAILURE;
       }
       if (show_help)
         console::write_line(string::join("\n", get_build_help()));
@@ -540,7 +548,7 @@ namespace xtdc_command {
         sw.stop();
         console::write_line("\nTime Elapsed {0}{1:H}:{1:M}:{1:S}.{1:L}", sw.elapsed().days() ? string::format("{d}.", sw.elapsed().days()) : "", sw.elapsed());
       }
-      return 0;
+      return EXIT_SUCCESS;
     }
     
     static int clean(const list<string>& args) {
@@ -554,7 +562,7 @@ namespace xtdc_command {
         else
           console::write_line("Invalid parameters");
         console::write_line(string::join("\n", get_clean_help()));
-        return -1;
+        return EXIT_FAILURE;
       }
       if (show_help)
         console::write_line(string::join("\n", get_clean_help()));
@@ -562,7 +570,7 @@ namespace xtdc_command {
         auto result = project_management(get_project_full_path_from_path(path)).clean(release);
         if (!result.empty()) console::write_line(result);
       }
-      return 0;
+      return EXIT_SUCCESS;
     }
     
     static int generate(const list<string>& args) {
@@ -578,7 +586,7 @@ namespace xtdc_command {
         else
           console::write_line("Invalid parameters");
         console::write_line(string::join("\n", get_generate_help()));
-        return -1;
+        return EXIT_FAILURE;
       }
       if (show_help)
         console::write_line(string::join("\n", get_generate_help()));
@@ -589,15 +597,15 @@ namespace xtdc_command {
         
         if (name.empty()) {
           console::write_line("The name is empty.");
-          return -1;
+          return EXIT_FAILURE;
         }
         if (std::find_if(name.begin(), name.end(), [](auto c) {return !(char_object::is_letter_or_digit(c) || c == '_');}) != name.end()) {
           console::write_line("The name : \"{}\" contains invalid charaters.", name);
-          return -1;
+          return EXIT_FAILURE;
         }
         if (name.size() > 128) {
           console::write_line("The size of the name is invalid, the size must be less than or equal to 128.");
-          return -1;
+          return EXIT_FAILURE;
         }
         
         xtdc_command::project_type project_type = std::map<string, xtdc_command::project_type> {{"sln", project_type::blank_solution}, {"gui", project_type::gui}, {"console", project_type::console}, {"sharedlib", project_type::shared_library}, {"staticlib", project_type::static_library}, {"test", project_type::unit_test_application}} [type];
@@ -605,12 +613,12 @@ namespace xtdc_command {
         xtdc_command::project_language project_language = std::map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtk+4", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"qt6", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"xtd_c", xtdc_command::project_language::c}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
         console::write_line(project_management(get_project_full_path_from_path(path)).generate(name, project_type, project_sdk, project_language));
       }
-      return 0;
+      return EXIT_SUCCESS;
     }
     
     static int help(const list<string>& args) {
       console::write_line(string::join("\n", get_help()));
-      return 0;
+      return EXIT_SUCCESS;
     }
     
     static int install(const list<string>& args) {
@@ -624,13 +632,13 @@ namespace xtdc_command {
         else
           console::write_line("Invalid parameters");
         console::write_line(string::join("\n", get_install_help()));
-        return -1;
+        return EXIT_FAILURE;
       }
       if (show_help)
         console::write_line(string::join("\n", get_install_help()));
       else
         console::write_line(project_management(get_project_full_path_from_path(path)).install(release));
-      return 0;
+      return EXIT_SUCCESS;
     }
     
     static int open(const list<string>& args) {
@@ -644,13 +652,13 @@ namespace xtdc_command {
         else
           console::write_line("Invalid parameters");
         console::write_line(string::join("\n", get_open_help()));
-        return -1;
+        return EXIT_FAILURE;
       }
       if (show_help)
         console::write_line(string::join("\n", get_open_help()));
       else
         console::write_line(project_management(get_project_full_path_from_path(path)).open(release));
-      return 0;
+      return EXIT_SUCCESS;
     }
     
     static int update(const list<string>& args) {
@@ -664,13 +672,13 @@ namespace xtdc_command {
         else
           console::write_line("Invalid parameters");
         console::write_line(string::join("\n", get_update_help()));
-        return -1;
+        return EXIT_FAILURE;
       }
       if (show_help)
         console::write_line(string::join("\n", get_update_help()));
       else
         console::write_line(project_management(get_project_full_path_from_path(path)).update(target));
-      return 0;
+      return EXIT_SUCCESS;
     }
     
     static int run(const list<string>& args) {
@@ -686,7 +694,7 @@ namespace xtdc_command {
         else
           console::write_line("Invalid parameters");
         console::write_line(string::join("\n", get_run_help()));
-        return -1;
+        return EXIT_FAILURE;
       }
       if (show_help)
         console::write_line(string::join("\n", get_run_help()));
@@ -694,7 +702,7 @@ namespace xtdc_command {
         auto result = project_management(get_project_full_path_from_path(path)).run(target, release, !no_wait);
         if (!result.empty()) console::write_line(result);
       }
-      return 0;
+      return EXIT_SUCCESS;
     }
     
     static int targets(const list<string>& args) {
@@ -707,7 +715,7 @@ namespace xtdc_command {
         else
           console::write_line("Invalid parameters");
         console::write_line(string::join("\n", get_targets_help()));
-        return -1;
+        return EXIT_FAILURE;
       }
       if (show_help)
         console::write_line(string::join("\n", get_targets_help()));
@@ -716,7 +724,7 @@ namespace xtdc_command {
         if (targets.empty()) targets = get_project_name_from_path(path);
         console::write_line(targets);
       }
-      return 0;
+      return EXIT_SUCCESS;
     }
     
     static int test(const list<string>& args) {
@@ -730,13 +738,13 @@ namespace xtdc_command {
         else
           console::write_line("Invalid parameters");
         console::write_line(string::join("\n", get_test_help()));
-        return -1;
+        return EXIT_FAILURE;
       }
       if (show_help)
         console::write_line(string::join("\n", get_test_help()));
       else
         console::write_line(project_management(get_project_full_path_from_path(path)).test(release));
-      return 0;
+      return EXIT_SUCCESS;
     }
     
     static int uninstall(const list<string>& args) {
@@ -750,33 +758,33 @@ namespace xtdc_command {
         else
           console::write_line("Invalid parameters");
         console::write_line(string::join("\n", get_uninstall_help()));
-        return -1;
+        return EXIT_FAILURE;
       }
       if (show_help)
         console::write_line(string::join("\n", get_uninstall_help()));
       else
         console::write_line(project_management(get_project_full_path_from_path(path)).uninstall(release));
-      return 0;
+      return EXIT_SUCCESS;
     }
     
     static int documentation(const list<string>& args) {
       process::start(process_start_info {"https://gammasoft71.github.io/xtd/docs/documentation"}.use_shell_execute(true));
-      return 0;
+      return EXIT_SUCCESS;
     }
     
     static int examples(const list<string>& args) {
       process::start(process_start_info {"https://github.com/gammasoft71/xtd/blob/master/examples/README.md"}.use_shell_execute(true));
-      return 0;
+      return EXIT_SUCCESS;
     }
     
     static int guide(const list<string>& args) {
       process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/index.html"}.use_shell_execute(true));
-      return 0;
+      return EXIT_SUCCESS;
     }
     
     static int web(const list<string>& args) {
       process::start(process_start_info {"https://gammasoft71.github.io/xtd"}.use_shell_execute(true));
-      return 0;
+      return EXIT_SUCCESS;
     }
     
     static bool process_xtdc_arguments(const list<string>& args, bool& show_floppy, bool& show_help, bool& show_info, bool& show_version, list<string>& command_args, string& invalid_option) {
@@ -1013,21 +1021,34 @@ namespace xtdc_command {
     static int invalid_command(const list<string>& command_args) {
       console::write_line("Invalid command");
       console::write_line(string::join("\n", get_help()));
-      return -1;
+      return EXIT_FAILURE;
     }
     
     static int run_commands(bool show_floppy, bool show_help, bool show_info, bool show_version, string invalid_option, const list<string>& command_args) {
       if (show_floppy || show_version || show_info || show_help) {
         console::write_line(get_version());
-        if (show_floppy) console::write_line(string::join("\n", get_floppy()));
-        if (show_info) console::write_line(string::join("\n", get_info()));
-        if (show_help) console::write_line(string::join("\n", get_help()));
-        return 0;
+        if (show_version) console::write("");
+        else if (show_floppy) console::write_line(string::join("\n", get_floppy()));
+        else if (show_info) console::write_line(string::join("\n", get_info()));
+        else if (show_help) console::write_line(string::join("\n", get_help()));
+        return EXIT_SUCCESS;
       }
       static std::map<string, std::function<int(const list<string>&) >> commands {{"add", add}, {"build", build}, {"clean", clean}, {"documentation", documentation}, {"examples", examples}, {"generate", generate}, {"guide", guide}, {"help", help}, {"install", install}, {"new", new_project::execute}, {"open", open}, {"update", update}, {"run", run}, {"targets", targets}, {"test", test}, {"uninstall", uninstall}, {"web", web}};
       auto it = commands.find(command_args[0]);
       if (it == commands.end()) return invalid_command(command_args);
       return it->second(command_args);
+    }
+  
+    static void write_error(const string& message) {
+      console::foreground_color(console_color::red);
+      console::write(message);
+      console::reset_color();
+    }
+    
+    static void write_line_error(const string& message) {
+      console::foreground_color(console_color::red);
+      console::write_line(message);
+      console::reset_color();
     }
   };
 }
