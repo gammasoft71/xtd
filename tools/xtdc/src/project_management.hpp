@@ -563,7 +563,7 @@ namespace xtdc_command {
         launch_and_wait_process("cmake", xtd::string::format("-S {} -B {}", path_, build_path()), false, verbose);
       else if (xtd::environment::os_version().is_macos_platform() && (first_generation || !xtd::io::directory::exists(xtd::io::path::combine(build_path(), xtd::string::format("{}.xcodeproj", name)))))
         launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"Xcode\"", path_, build_path()), false, verbose);
-      else {
+      else if (xtd::environment::os_version().is_unix_platform() && !xtd::environment::os_version().is_macos_platform()) {
         if (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), "Debug", "makefile"))) {
           xtd::io::directory::create_directory(xtd::io::path::combine(build_path(), "Debug"));
           change_current_directory current_directory_debug {xtd::io::path::combine(build_path(), "Debug")};
