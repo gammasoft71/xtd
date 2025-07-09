@@ -558,7 +558,7 @@ namespace xtdc_command {
           change_current_directory current_directory_debug {xtd::io::path::combine(build_path(), "Debug")};
           launch_and_wait_process("cmake", xtd::string::format("-S {} -B {} -G \"Unix Makefiles\"", path_, xtd::io::path::combine(build_path(), "Debug")), false, verbose);
         }
-
+        
         if (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), "Release", "makefile"))) {
           xtd::io::directory::create_directory(xtd::io::path::combine(build_path(), "Release"));
           change_current_directory current_directory_release {xtd::io::path::combine(build_path(), "Release")};
