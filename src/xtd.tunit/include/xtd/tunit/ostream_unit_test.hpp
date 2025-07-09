@@ -26,13 +26,8 @@ namespace xtd {
       /// @{
       /// @brief Create a new console unit test with ostream specified.
       /// @param os The ostream to write events.
+      /// @remarks The arguments of the unit test application are done with xtd::environment::get_command_line_args method.
       explicit ostream_unit_test(std::ostream& os) noexcept;
-      
-      /// @brief Create a new console unit test with ostream specified, argv specified and argc specified.
-      /// @param os The ostream to write events.
-      /// @param argc Argument count from main method.
-      /// @param argv Arguments array from main method.
-      ostream_unit_test(std::ostream& os, int argc, char* argv[]) noexcept;
       /// @}
       
       /// @name Public Properties

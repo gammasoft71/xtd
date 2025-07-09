@@ -7,6 +7,7 @@
 #include "registered_test_class.hpp"
 #include "settings.hpp"
 #include <xtd/collections/generic/list>
+#include <xtd/argument_collection>
 #include <xtd/date_time>
 #include <xtd/string>
 
@@ -33,14 +34,8 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of xtd::tunit::unit_test with specified xtd::tunit::event_listener.
       /// @param event_listener The event listener associate to the unit tests.
-      /// @remarks The arguments of the unit test application are detected automatically.
+      /// @remarks The arguments of the unit test application are done with xtd::environment::get_command_line_args method.
       explicit unit_test(xtd::uptr<xtd::tunit::event_listener> event_listener) noexcept;
-      
-      /// @brief Initializes a new instance of xtd::tunit::unit_test with specified xtd::tunit::event_listener, argument counts and arguments array.
-      /// @param event_listener The event listener associate to the unit tests.
-      /// @param argc Argument count from main method.
-      /// @param argv Arguments array from main method.
-      unit_test(xtd::uptr<xtd::tunit::event_listener> event_listener, int argc, char* argv[]) noexcept;
       /// @}
       
       /// @cond

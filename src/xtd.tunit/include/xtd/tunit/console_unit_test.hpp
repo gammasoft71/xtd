@@ -26,12 +26,8 @@ namespace xtd {
       
       /// @{
       /// @brief Create a new console unit test
+      /// @remarks The arguments of the unit test application are done with xtd::environment::get_command_line_args method.
       console_unit_test() noexcept;
-      
-      /// @brief Create a new console unit test with argv specified and argc specified.
-      /// @param argc Argument count from main method.
-      /// @param argv Arguments array from main method.
-      console_unit_test(int argc, char* argv[]) noexcept;
       /// @}
     };
   }
