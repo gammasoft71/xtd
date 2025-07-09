@@ -208,12 +208,11 @@ namespace xtdc_command {
       return last_exit_code() == EXIT_SUCCESS ? operation_status::success : operation_status::error;
     }
     
-    xtd::string install(bool release) const {
-      if (!is_path_already_exist_and_not_empty(path_)) return xtd::string::format("Path {} does not exists or is empty! Install project aborted.", path_);
+    operation_status install(bool release) const {
+      if (!is_path_already_exist_and_not_empty(path_)) return operation_status::not_exist;
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() && !xtd::environment::os_version().is_macos_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
       build("install", false, release);
-      if (last_exit_code() != EXIT_SUCCESS) return "Build error! Install project aborted.";
-      return xtd::string::format("{0}The project {1} was installed successfully.{0}", xtd::environment::new_line(), path_);
+      return last_exit_code() == EXIT_SUCCESS ? operation_status::success : operation_status::error;
     }
     
     xtd::string open(bool release) const {

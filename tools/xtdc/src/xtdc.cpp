@@ -513,14 +513,14 @@ namespace xtdc_command {
       xtdc_command::project_language project_language = std::map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtk+4", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"qt6", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"xtd_c", xtdc_command::project_language::c}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
       auto status = project_management(get_project_full_path_from_path(path)).add(name, project_type, project_sdk, project_language);
       switch (status) {
-        case operation_status::success: console::write_line("{0}The project {1} was added successfully.{0}", xtd::environment::new_line(), path); break;
+        case operation_status::success: console::write_line("\n** ADD SUCCEEDED **\n\n"); break;
         case operation_status::already_exist: write_line_error(xtd::string::format("Path {} already exists and not empty! Add project aborted.", path)); break;
         case operation_status::cmake_prefix_path_not_set: write_line_error("Set your CMAKE_PREFIX_PATH environment variable to the Qt installation prefix! Add project aborted."); break;
         case operation_status::invalid_language: write_line_error("The language param not valid with sdk param! Add project aborted."); break;
         case operation_status::invalid_sdk: write_line_error("The sdk param not valid with type param! Add project aborted."); break;
         case operation_status::invalid_sdk_with_current_project: write_line_error("The sdk param not valid with current project sdk! Add project aborted."); break;
         case operation_status::unknown_project: write_line_error(xtd::string::format("Parent directory \"{}\", is not a known project! Add project aborted.", xtd::io::directory::get_parent(path).full_name())); break;
-        default: write_line_error("Generation error! Add project aborted."); break;
+        default: write_line_error("\n** ADD FAILED **\n\n"); break;
       }
       return status == operation_status::success ? EXIT_SUCCESS : EXIT_FAILURE;
     }
@@ -620,14 +620,14 @@ namespace xtdc_command {
       xtdc_command::project_language project_language = std::map<string, xtdc_command::project_language> {{"cocoa", xtdc_command::project_language::objectivec}, {"fltk", xtdc_command::project_language::cpp}, {"gtk+2", xtdc_command::project_language::cpp}, {"gtk+3", xtdc_command::project_language::cpp}, {"gtk+4", xtdc_command::project_language::cpp}, {"gtkmm", xtdc_command::project_language::cpp}, {"qt5", xtdc_command::project_language::cpp}, {"qt6", xtdc_command::project_language::cpp}, {"win32", xtdc_command::project_language::cpp}, {"winforms", xtdc_command::project_language::csharp}, {"wpf", xtdc_command::project_language::csharp}, {"wxwidgets", xtdc_command::project_language::cpp}, {"xtd", xtdc_command::project_language::cpp}, {"xtd_c", xtdc_command::project_language::c}, {"c++", xtdc_command::project_language::cpp}, {"cpp", xtdc_command::project_language::cpp}, {"c", xtdc_command::project_language::c}, {"c#", xtdc_command::project_language::csharp}, {"csharp", xtdc_command::project_language::csharp}, {"objective-c", xtdc_command::project_language::objectivec}, {"objectivec", xtdc_command::project_language::objectivec}} [sdk];
       auto status = project_management(get_project_full_path_from_path(path)).generate(name, project_type, project_sdk, project_language);
       switch (status) {
-        case operation_status::success: console::write_line("{0}The project {1} was created successfully.{0}", xtd::environment::new_line(), path); break;
+        case operation_status::success: console::write_line("\n** GENERATE SUCCEEDED **\n"); break;
         case operation_status::already_exist: write_line_error(xtd::string::format("Path {} does not exists or is empty! Genertae project aborted.", path)); break;
         case operation_status::cmake_prefix_path_not_set: write_line_error("Set your CMAKE_PREFIX_PATH environment variable to the Qt installation prefix! Genertae project aborted."); break;
         case operation_status::invalid_language: write_line_error("The language param not valid with sdk param! Genertae project aborted."); break;
         case operation_status::invalid_sdk: write_line_error("The sdk param not valid with type param! Generate project aborted."); break;
         case operation_status::invalid_sdk_with_current_project: write_line_error("The sdk param not valid with current project sdk! Add project aborted."); break;
         case operation_status::unknown_project: write_line_error(xtd::string::format("Parent directory \"{}\", is not a known project! Add project aborted.", xtd::io::directory::get_parent(path).full_name())); break;
-        default: write_line_error("Generation error! Create project aborted."); break;
+        default: write_line_error("\n** GENERATE FAILED **\n"); break;
       }
       return status == operation_status::success ? EXIT_SUCCESS : EXIT_FAILURE;
     }
@@ -643,18 +643,22 @@ namespace xtdc_command {
       auto release = false;
       string path;
       if (!process_install_arguments(args, show_help, release, path, invalid_option)) {
-        if (!invalid_option.empty())
-          console::write_line("Unknown option: {0}", invalid_option);
-        else
-          console::write_line("Invalid parameters");
+        if (!invalid_option.empty()) write_line_error(string::format("Unknown option: {0}", invalid_option));
+        else write_line_error("Invalid parameters");
         console::write_line(string::join("\n", get_install_help()));
         return EXIT_FAILURE;
       }
-      if (show_help)
+      if (show_help) {
         console::write_line(string::join("\n", get_install_help()));
-      else
-        console::write_line(project_management(get_project_full_path_from_path(path)).install(release));
-      return EXIT_SUCCESS;
+        return EXIT_SUCCESS;
+      }
+      auto status = project_management(get_project_full_path_from_path(path)).install(release);
+      switch (status) {
+        case operation_status::success: console::write_line("\n** INSTALL SUCCEEDED **\n"); break;
+        case operation_status::not_exist: write_error(xtd::string::format("Path {} does not exists or is empty! Install project aborted.\n", path)); break;
+        default: write_line_error("\n** INSTALL FAILED **\n"); break;
+      }
+      return status == operation_status::success ? EXIT_SUCCESS : EXIT_FAILURE;
     }
     
     static int open(const list<string>& args) {
