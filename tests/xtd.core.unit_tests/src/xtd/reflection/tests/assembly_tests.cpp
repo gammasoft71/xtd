@@ -1,4 +1,5 @@
 #include <xtd/console>
+#include <xtd/environment>
 #include <xtd/io/file>
 #include <xtd/reflection/assembly>
 #include <xtd/tunit/assert>
@@ -60,7 +61,7 @@ namespace xtd::reflection::tests {
     }
     
     void test_method_(assembly_version) {
-      assert::is_empty(assembly::get_executing_assembly().version());
+      assert::are_equal(environment::version().to_string(), assembly::get_executing_assembly().version());
     }
   };
 }
