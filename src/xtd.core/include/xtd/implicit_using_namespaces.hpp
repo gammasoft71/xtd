@@ -5,6 +5,9 @@
 #include "target_id_definitions.hpp"
 
 /// @cond
+/// These implicit using directives are enabled by default to simplify code.
+/// To disable them, set -DXTD_ENABLE_IMPLICIT_NAMESPACES=OFF when configuring xtd.
+
 #if defined(__XTD_ENABLE_IMPLICIT_USING_NAMESPACES__)
 #define __using_namespace__(name_space) \
   namespace name_space {} \
