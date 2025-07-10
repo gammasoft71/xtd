@@ -2007,12 +2007,11 @@ template&lt;class enumerable_t, class source_t&gt; </div>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#ac03a53b77498111f8869505458df9915" title="Filters a sequence of values based on a predicate.">xtd::linq::enumerable::where</a> &lt;source_t&gt;(const ienumerable &lt;source_t&gt;&amp;, const std::function&lt;bool (const source_t&amp;)&gt;&amp;) to filter a sequence. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> fruits = {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;blueberry&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>, <span class="stringliteral">&quot;strawberry&quot;</span>};</div>
+<div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;blueberry&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>, <span class="stringliteral">&quot;strawberry&quot;</span>};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">ienumerable&lt;string&gt;</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = fruits.where([](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fruit) {<span class="keywordflow">return</span> fruit.length() &lt; 6;});</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = fruits.where([](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fruit) {<span class="keywordflow">return</span> fruit.length() &lt; 6;});</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; fruit : <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a>)</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(fruit);</div>
@@ -2023,7 +2022,6 @@ template&lt;class enumerable_t, class source_t&gt; </div>
 <div class="line"><span class="comment">// apple</span></div>
 <div class="line"><span class="comment">// mango</span></div>
 <div class="line"><span class="comment">// grape</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1ienumerable_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a></div><div class="ttdoc">Exposes the enumerator, which supports a simple iteration over a collection of a specified type.</div><div class="ttdef"><b>Definition</b> ienumerable.hpp:36</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2064,13 +2062,12 @@ template&lt;class enumerable_t, class source_t&gt; </div>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#ac03a53b77498111f8869505458df9915" title="Filters a sequence of values based on a predicate.">xtd::linq::enumerable::where</a> &lt;source_t&gt;(const ienumerable &lt;source_t&gt;&amp;, const std::function&lt;bool (const source_t&amp;, size_t)&gt;&amp;) to filter a sequence based on a predicate that involves the index of each element. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1array.html">array&lt;int&gt;</a> numbers = {0, 30, 20, 15, 90, 85, 40, 75};</div>
+<div class="line">  <span class="keyword">auto</span> numbers = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {0, 30, 20, 15, 90, 85, 40, 75};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">ienumerable&lt;int&gt;</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = numbers.where([](<span class="keywordtype">int</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686ab1bc248a7ff2b2e95569f56de68615df">number</a>, <span class="keywordtype">size_t</span> index) {</div>
-<div class="line">    <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686ab1bc248a7ff2b2e95569f56de68615df">number</a> &lt;= int(index * 10);</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = numbers.where([](<span class="keywordtype">int</span> <a class="code hl_enumvalue" href="group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686ab1bc248a7ff2b2e95569f56de68615df">number</a>, <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> index) {</div>
+<div class="line">    <span class="keywordflow">return</span> number &lt;= as&lt;int&gt;(index * 10);</div>
 <div class="line">  });</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686ab1bc248a7ff2b2e95569f56de68615df">number</a> : <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a>)</div>
@@ -2083,6 +2080,7 @@ template&lt;class enumerable_t, class source_t&gt; </div>
 <div class="line"><span class="comment">// 20</span></div>
 <div class="line"><span class="comment">// 15</span></div>
 <div class="line"><span class="comment">// 40</span></div>
+<div class="ttc" id="agroup__types_html_ga221e5b824352c9046d353e4659af5b87"><div class="ttname"><a href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gga176c15b86e21b78ec7a3dd6f0a92c686ab1bc248a7ff2b2e95569f56de68615df"><div class="ttname"><a href="group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686ab1bc248a7ff2b2e95569f56de68615df">xtd::number_styles::number</a></div><div class="ttdeci">@ number</div><div class="ttdoc">Indicates that the allow_leading_white, allow_trailing_white, allow_leading_sign, allow_trailing_sign...</div><div class="ttdef"><b>Definition</b> number_styles.hpp:46</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -2095,7 +2093,7 @@ template&lt;class enumerable_t, class source_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 10 2025 19:25:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jul 10 2025 22:45:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
