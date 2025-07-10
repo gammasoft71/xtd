@@ -84,7 +84,7 @@ namespace xtdc_command {
         "assembly_product(\"\")",
         xtd::string::format("assembly_copyright(\"Copyright © YourCompanyName {}\")", xtd::date_time::now().year()),
         "assembly_trademark(\"\")",
-        "assembly_version(\"1.0.0\")",
+        "assembly_version(\"*\")",
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "properties", "assembly_info.cmake"), lines);

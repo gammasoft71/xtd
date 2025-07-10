@@ -27,7 +27,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Solution",
-        xtd::string::format("project({})", name),
+        xtd::string::format("project({} VERSION 1.0.0)", name),
         "find_package(xtd REQUIRED)",
         "add_projects(",
         xtd::string::format("  {}", name),
@@ -57,7 +57,7 @@ namespace xtdc_command {
         "assembly_product(\"\")",
         xtd::string::format("assembly_copyright(\"Copyright © YourCompanyName {}\")", xtd::date_time::now().year()),
         "assembly_trademark(\"\")",
-        "assembly_version(\"1.0.0\")",
+        "assembly_version(\"*\")",
       };
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "properties", "assembly_info.cmake"), lines);
