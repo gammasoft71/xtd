@@ -33,6 +33,7 @@
 #include "project_sdk.hpp"
 #include "project_type.hpp"
 #include "win32_gui_project.hpp"
+#include "win32_c_gui_project.hpp"
 #include "winforms_gui_project.hpp"
 #include "wpf_gui_project.hpp"
 #include "wxwidgets_gui_project.hpp"
@@ -83,7 +84,7 @@ namespace xtdc_command {
         case project_type::unknown: return {project_sdk::none};
         case project_type::blank_solution: return {project_sdk::xtd, project_sdk::xtd_c};
         case project_type::console: return {project_sdk::none, project_sdk::xtd, project_sdk::xtd_c};
-        case project_type::gui: return {project_sdk::cocoa, project_sdk::fltk, project_sdk::gtk2, project_sdk::gtk3, project_sdk::gtk4, project_sdk::gtkmm, project_sdk::qt5, project_sdk::qt6, project_sdk::win32, project_sdk::winforms, project_sdk::wpf, project_sdk::wxwidgets, project_sdk::xtd, project_sdk::xtd_c};
+        case project_type::gui: return {project_sdk::cocoa, project_sdk::fltk, project_sdk::gtk2, project_sdk::gtk3, project_sdk::gtk4, project_sdk::gtkmm, project_sdk::qt5, project_sdk::qt6, project_sdk::win32, project_sdk::win32_c, project_sdk::winforms, project_sdk::wpf, project_sdk::wxwidgets, project_sdk::xtd, project_sdk::xtd_c};
         case project_type::shared_library: return {project_sdk::none, project_sdk::xtd, project_sdk::xtd_c};
         case project_type::static_library: return {project_sdk::none, project_sdk::xtd, project_sdk::xtd_c};
         case project_type::unit_test_application: return {project_sdk::catch2, project_sdk::gtest, project_sdk::xtd, project_sdk::xtd_c};
@@ -104,7 +105,8 @@ namespace xtdc_command {
         case project_sdk::gtkmm: return {project_language::cpp};
         case project_sdk::qt5: return {project_language::cpp};
         case project_sdk::qt6: return {project_language::cpp};
-        case project_sdk::win32: return {project_language::c, project_language::cpp};
+        case project_sdk::win32: return {project_language::cpp};
+        case project_sdk::win32_c: return {project_language::c};
         case project_sdk::winforms: return {project_language::csharp};
         case project_sdk::wpf: return {project_language::csharp};
         case project_sdk::wxwidgets: return {project_language::cpp};

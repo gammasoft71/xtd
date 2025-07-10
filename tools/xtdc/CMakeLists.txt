@@ -34,6 +34,7 @@ add_sources(
   "src/qt5_gui_project.hpp"
   "src/qt6_gui_project.hpp"
   "src/win32_gui_project.hpp"
+  "src/win32_c_gui_project.hpp"
   "src/winforms_gui_project.hpp"
   "src/wpf_gui_project.hpp"
   "src/wxwidgets_gui_project.hpp"
