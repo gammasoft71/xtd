@@ -1,8 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd::drawing;
-using namespace xtd::forms;
-
 namespace hello_world_label_example {
   class main_form : public form {
   public:
