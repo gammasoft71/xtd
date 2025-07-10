@@ -17,7 +17,7 @@
 using namespace xtd::native;
 
 namespace {
-  int32_t environment_argc = 0;
+  auto environment_argc = 0;
   char** environment_argv = nullptr;
   
   #if defined (__clang__) || defined(__GNUC__)
@@ -26,7 +26,7 @@ namespace {
     environment_argv = argv;
   }
   #else
-#  warning "The compiler is unknown, please check how to get command line arguments from the compiler."
+  #  warning "The compiler is unknown, please check how to get command line arguments from the compiler."
   #endif
   
   std::tuple<std::string, std::string, std::string> macos_information() {
