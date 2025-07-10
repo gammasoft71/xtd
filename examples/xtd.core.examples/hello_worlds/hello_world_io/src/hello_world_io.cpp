@@ -1,8 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-using namespace xtd::io;
-
 auto main(int argc, char* argv[]) -> int {
   auto file_name = path::combine(path::get_temp_path(), "hello_world.txt");
   
