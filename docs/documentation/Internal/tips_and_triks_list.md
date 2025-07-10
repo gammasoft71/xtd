@@ -62,3 +62,14 @@ auto main() -> int {
 }
 ```
 
+# Writing to debug output and console at once
+
+```cpp
+#include <xtd/xtd>
+
+auto main() -> int {
+  debug::write_line("This goes to console and debug output!");
+}
+```
+
+Write on console, debug_form, syslog, ... and any listener that you want.
