@@ -1,8 +1,4 @@
-#include <xtd/any_object>
-#include <xtd/console>
-#include <xtd/date_time>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 struct foo1 : public object, public icomparable<foo1>, public iequatable<foo1> {
   explicit foo1(int v) : value(v) {}
