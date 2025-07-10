@@ -1,5 +1,6 @@
 #pragma once
 #include <xtd/io/path>
+#include <xtd/console>
 #include <xtd/environment>
 #include <xtd/string>
 
@@ -23,6 +24,18 @@ namespace xtdc_command {
       auto directories = get_project_full_path_from_path(path).split(xtd::io::path::directory_separator_char());
       if (directories.size() == 0) return "";
       return directories[directories.size() - 1];
+    }
+    
+    static void write_error(const string& message) {
+      xtd::console::foreground_color(xtd::console_color::red);
+      xtd::console::write(message);
+      xtd::console::reset_color();
+    }
+    
+    static void write_line_error(const string& message) {
+      xtd::console::foreground_color(xtd::console_color::red);
+      xtd::console::write_line(message);
+      xtd::console::reset_color();
     }
   };
 }
