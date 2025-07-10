@@ -2,9 +2,9 @@
 #include "base_project.hpp"
 
 namespace xtdc_command {
-  class win32_gui_project : public base_project {
+  class win32_c_gui_project : public base_project {
   public:
-    explicit win32_gui_project(const xtd::string& path) : base_project(path) {}
+    explicit win32_c_gui_project(const xtd::string& path) : base_project(path) {}
     
     void create(const xtd::string& name, bool create_solution) const {
       xtd::io::directory::create_directory(create_solution ? xtd::io::path::combine(current_path(), name, "src") : xtd::io::path::combine(current_path(), "src"));
@@ -36,16 +36,15 @@ namespace xtdc_command {
         "# Project",
         xtd::string::format("project({} VERSION 1.0.0)", name),
         "set(SOURCES",
-        "  src/Program.cpp",
+        "  src/Program.c",
         ")",
         "source_group(src FILES ${SOURCES})",
         "",
         "# Options",
-        "set(CMAKE_CXX_STANDARD 17)",
-        "set(CMAKE_CXX_STANDARD_REQUIRED ON)",
+        "set(CMAKE_C_STANDARD 11)",
+        "set(CMAKE_C_STANDARD_REQUIRED ON)",
         "set(CMAKE_EXE_LINKER_FLAGS \"${CMAKE_EXE_LINKER_FLAGS} /ENTRY:wmainCRTStartup\")",
         "set_property(GLOBAL PROPERTY USE_FOLDERS ON)",
-        "add_definitions(-DNOMINMAX)",
         "add_definitions(-DUNICODE)",
         "",
         "# Application properties",
@@ -65,8 +64,9 @@ namespace xtdc_command {
         "  HWND handle;",
         "  WNDPROC defWndProc;",
         "};",
+        "typedef struct window window;",
         "",
-        "window window1 = {nullptr, nullptr};",
+        "window window1 = {NULL, NULL};",
         "",
         "LRESULT CALLBACK Window1WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {",
         "  switch (message) {",
@@ -76,20 +76,20 @@ namespace xtdc_command {
         "  return CallWindowProc(window1.defWndProc, hwnd, message, wParam, lParam);",
         "}",
         "",
-        "auto wmain(int argc, wchar_t* argv[]) -> int {",
-        "  window1.handle = CreateWindowEx(0, WC_DIALOG, L\"Window1\", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 800, 450, nullptr, nullptr, nullptr, nullptr);",
-        "  window1.defWndProc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(window1.handle, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(Window1WndProc)));",
+        "int wmain(int argc, wchar_t* argv[]) {",
+        "  window1.handle = CreateWindowEx(0, WC_DIALOG, L\"Window1\", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 800, 450, NULL, NULL, NULL, NULL);",
+        "  window1.defWndProc = (WNDPROC)SetWindowLongPtr(window1.handle, GWLP_WNDPROC, (LONG_PTR)Window1WndProc);",
         "",
         "  ShowWindow(window1.handle, SW_SHOW);",
         "",
-        "  auto message = MSG {};",
-        "  while (GetMessage(&message, nullptr, 0, 0))",
+        "  MSG message;",
+        "  while (GetMessage(&message, NULL, 0, 0))",
         "    DispatchMessage(&message);",
-        "  return reinterpret_cast<int>(message.wParam);",
+        "  return (int)message.wParam;",
         "}",
       };
       
-      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Program.cpp"), lines);
+      xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", "Program.c"), lines);
     }
     
     void generate_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
@@ -99,7 +99,7 @@ namespace xtdc_command {
       lines.add("# Project");
       lines.add(xtd::string::format("project({} VERSION 1.0.0)", name));
       lines.add("set(SOURCES");
-      auto [headers, sources] = get_cpp_sources(path, path);
+      auto [headers, sources] = get_c_sources(path, path);
       for (auto file : headers)
         lines.add(xtd::string::format("  {}", file));
       for (auto file : sources)
@@ -108,11 +108,10 @@ namespace xtdc_command {
       lines.add("source_group(src FILES ${SOURCES})");
       lines.add("");
       lines.add("# Options");
-      lines.add("set(CMAKE_CXX_STANDARD 17)");
-      lines.add("set(CMAKE_CXX_STANDARD_REQUIRED ON)");
+      lines.add("set(CMAKE_C_STANDARD 11)");
+      lines.add("set(CMAKE_C_STANDARD_REQUIRED ON)");
       lines.add("set(CMAKE_EXE_LINKER_FLAGS \"${CMAKE_EXE_LINKER_FLAGS} /ENTRY:wmainCRTStartup\")");
       lines.add("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
-      lines.add("add_definitions(-DNOMINMAX)");
       lines.add("add_definitions(-DUNICODE)");
       lines.add("");
       lines.add("# Application properties");

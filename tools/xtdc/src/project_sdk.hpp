@@ -13,6 +13,7 @@ namespace xtdc_command {
     qt5,
     qt6,
     win32,
+    win32_c,
     winforms,
     wpf,
     wxwidgets,
