@@ -7,7 +7,7 @@
 /// @cond
 /// Internal used only
 #if !defined(__XTD_ASSEMBLY_VERSION__)
-#  define __XTD_ASSEMBLY_VERSION__ "1.0.0"
+#  define __XTD_ASSEMBLY_VERSION__ "0.0.0"
 #endif
 /// @endcond
 
