@@ -1,10 +1,4 @@
-#include <xtd/array>
-#include <xtd/as>
-#include <xtd/console>
-#include <xtd/not_supported_exception>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
+#include <xtd/xtd>
 
 auto print_index_and_values(const array<string>& my_arr)  {
   for (auto i = 0_z; i < my_arr.length(); ++i)
