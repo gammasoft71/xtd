@@ -68,7 +68,7 @@ namespace xtdc_command {
         "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Project",
-        xtd::string::format("project({})", name),
+        xtd::string::format("project({} VERSION 1.0.0)", name),
         "find_package(xtd REQUIRED)",
         "add_sources(",
         "  src/program.hpp",
@@ -89,7 +89,7 @@ namespace xtdc_command {
         xtd::string::format("/// @brief Contains {}::program class.", name),
         xtd::string::format("/// @copyright Copyright (c) {} YourCompanyName. All rights reserved.", xtd::date_time::now().year()),
         "#pragma once",
-        "#include <xtd/argument_collection>",
+        "#include <xtd/xtd>",
         "",
         "/// @brief Represents the namespace that contains application objects.",
         xtd::string::format("namespace {} {{", name),
@@ -99,7 +99,7 @@ namespace xtdc_command {
         "  public:",
         "    /// @brief The main entry point for the application.",
         "    /// @param args The collection of arguments for the main entry point.",
-        "    static auto main(const xtd::argument_collection& args) -> void;",
+        "    static auto main(const argument_collection& args) -> void;",
         "  };",
         "}",
       };
@@ -110,12 +110,11 @@ namespace xtdc_command {
     void create_xtd_console_source(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
         "#include \"program.hpp\"",
-        "#include <xtd/println>",
         "",
         xtd::string::format("using namespace {};", name),
         "",
-        "auto program::main(const xtd::argument_collection& args) -> void {",
-        "  xtd::println(\"Hello, World!\");",
+        "auto program::main(const argument_collection& args) -> void {",
+        "  println(\"Hello, World!\");",
         "}",
       };
       
