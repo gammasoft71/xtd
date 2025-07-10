@@ -1,7 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-
 auto main() -> int {
   console::write_line("Hello, {}!", environment::user_name());
 }
