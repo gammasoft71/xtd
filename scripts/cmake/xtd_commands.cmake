@@ -431,8 +431,30 @@ macro(target_type TYPE)
   if (NOT ${VERSION} STREQUAL "*")
     set(PROJECT_VERSION "${VERSION}")
   endif ()
-  remove_definitions(-D__XTD_ASSEMBLY_VERSION__)
-  add_definitions(-D__XTD_ASSEMBLY_VERSION__="${CMAKE_PROJECT_VERSION}")
+ 
+  remove_definitions(-D__XTD_ASSEMBLY_VERSION__) 
+  if (CMAKE_PROJECT_VERSION_MAJOR)
+    set(INTERNAL_CMAKE_PROJECT_VERSION "${CMAKE_PROJECT_VERSION_MAJOR}")
+  else ()
+    set(INTERNAL_CMAKE_PROJECT_VERSION 0)
+  endif ()
+  
+  if (CMAKE_PROJECT_VERSION_MINOR)
+    string(APPEND INTERNAL_CMAKE_PROJECT_VERSION ".${CMAKE_PROJECT_VERSION_MINOR}")
+  else ()
+    string(APPEND INTERNAL_CMAKE_PROJECT_VERSION ".0")
+  endif ()
+    
+  if (CMAKE_PROJECT_VERSION_PATCH)
+    string(APPEND INTERNAL_CMAKE_PROJECT_VERSION ".${CMAKE_PROJECT_VERSION_PATCH}")
+  else ()
+    string(APPEND INTERNAL_CMAKE_PROJECT_VERSION ".0")
+  endif ()
+    
+  if (CMAKE_PROJECT_VERSION_TWEAK)
+    string(APPEND INTERNAL_CMAKE_PROJECT_VERSION ".${CMAKE_PROJECT_VERSION_TWEAK}")
+  endif ()
+  add_definitions(-D__XTD_ASSEMBLY_VERSION__="${INTERNAL_CMAKE_PROJECT_VERSION}")
   
   write_target_informations_file()
   write_assembly_informations()
@@ -2267,13 +2289,6 @@ set(CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE ON)
 set(CMAKE_DEBUG_POSTFIX d)
 
 enable_testing()
-
-# add ASSEMBLY_VERSION definition
-#if (NOT PROJECT_VERSION AND XTD_VERSION)
-#  set(PROJECT_VERSION ${XTD_VERSION})
-#  remove_definitions(-D__XTD_ASSEMBLY_VERSION__)
-#  add_definitions(-D__XTD_ASSEMBLY_VERSION__="${PROJECT_VERSION}")
-#endif ()
 
 # add compile and link flags
 if (XTD_SET_COMPILER_OPTION_WARNINGS_TO_ALL)
