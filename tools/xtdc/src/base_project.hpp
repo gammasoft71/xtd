@@ -2,6 +2,7 @@
 #include <map>
 #include <xtd/bit_converter>
 #include <xtd/environment>
+#include <xtd/guid>
 #include <xtd/object>
 #include <xtd/string>
 #include <xtd/io/directory>
