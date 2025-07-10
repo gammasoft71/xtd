@@ -432,7 +432,7 @@ macro(target_type TYPE)
     set(PROJECT_VERSION "${VERSION}")
   endif ()
   remove_definitions(-D__XTD_ASSEMBLY_VERSION__)
-  add_definitions(-D__XTD_ASSEMBLY_VERSION__="${PROJECT_VERSION}")
+  add_definitions(-D__XTD_ASSEMBLY_VERSION__="${CMAKE_PROJECT_VERSION}")
   
   write_target_informations_file()
   write_assembly_informations()
