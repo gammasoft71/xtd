@@ -316,8 +316,8 @@ macro(target_startup ...)
     "${INCLUDE_FILE}"
     "#include <xtd/startup>\n"
     "\n"
-    "auto main(int argc, char* argv[]) -> int {\n"
-    "  return xtd::startup::safe_run(${ARGV0}, argc, argv);\n"
+    "auto main() -> int {\n"
+    "  return xtd::startup::safe_run(${ARGV0});\n"
     "}\n"
     "#pragma endregion\n"
   )
