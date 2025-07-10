@@ -78,12 +78,19 @@ namespace xtdc_command {
     
     void create_assembly_info(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
+        "# Information about this assembly is defined by the following attributes.",
+        "# Change them to the values specific to your project.",
+        "",
         xtd::string::format("assembly_title(\"{}\")", name),
         "assembly_description(\"\")",
         "assembly_company(\"\")",
         "assembly_product(\"\")",
         xtd::string::format("assembly_copyright(\"Copyright © YourCompanyName {}\")", xtd::date_time::now().year()),
         "assembly_trademark(\"\")",
+        "",
+        "# The assembly version has the format \"{Major}.{Minor}.{Build}.{Revision}\".",
+        "# In not specify or empty or \"*\" the cmake project version is used.",
+        "",
         "assembly_version(\"*\")",
       };
       
