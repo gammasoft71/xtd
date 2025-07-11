@@ -71,17 +71,15 @@ namespace xtdc_command {
         "LRESULT CALLBACK Window1WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {",
         "  switch (message) {",
         "    case WM_CLOSE: PostQuitMessage(0); break;",
-        "    default: break;",
+        "    default: return CallWindowProc(window1.defWndProc, hwnd, message, wParam, lParam);",
         "  }",
-        "  return CallWindowProc(window1.defWndProc, hwnd, message, wParam, lParam);",
+        "  return 0",
         "}",
         "",
-        "int wmain(int argc, wchar_t* argv[]) {",
-        "  window1.handle = CreateWindowEx(0, WC_DIALOG, L\"Window1\", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 800, 450, NULL, NULL, NULL, NULL);",
+        "int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR, int nCmdShow) {",
+        "  window1.handle = CreateWindowEx(0, WC_DIALOG, L\"Window1\", WS_OVERLAPPEDWINDOW | WS_VISIBLE, CW_USEDEFAULT, CW_USEDEFAULT, 800, 450, NULL, NULL, hInstance, NULL);",
         "  window1.defWndProc = (WNDPROC)SetWindowLongPtr(window1.handle, GWLP_WNDPROC, (LONG_PTR)Window1WndProc);",
-        "",
-        "  ShowWindow(window1.handle, SW_SHOW);",
-        "",
+        "  ",
         "  MSG message;",
         "  while (GetMessage(&message, NULL, 0, 0))",
         "    DispatchMessage(&message);",
@@ -110,7 +108,6 @@ namespace xtdc_command {
       lines.add("# Options");
       lines.add("set(CMAKE_C_STANDARD 11)");
       lines.add("set(CMAKE_C_STANDARD_REQUIRED ON)");
-      lines.add("set(CMAKE_EXE_LINKER_FLAGS \"${CMAKE_EXE_LINKER_FLAGS} /ENTRY:wmainCRTStartup\")");
       lines.add("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
       lines.add("add_definitions(-DUNICODE)");
       lines.add("");
