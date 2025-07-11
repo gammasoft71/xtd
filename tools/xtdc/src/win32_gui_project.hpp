@@ -75,7 +75,7 @@ namespace xtdc_command {
         "  return 0;",
         "}",
         "",
-        "auto WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR, int nCmdShow) -> int {",
+        "auto WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine, int nCmdShow) -> int {",
         "  window1.hwnd = CreateWindowEx(0, WC_DIALOG, L\"Window1\", WS_OVERLAPPEDWINDOW | WS_VISIBLE, CW_USEDEFAULT, CW_USEDEFAULT, 800, 450, nullptr, nullptr, hInstance, nullptr);",
         "  window1.defWndProc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(window1.hwnd, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(Window1WndProc)));",
         "",
