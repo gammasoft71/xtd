@@ -84,7 +84,7 @@ namespace xtdc_command {
         xtd::string::format("assembly_title(\"{}\")", name),
         "assembly_description(\"\")",
         "assembly_company(\"\")",
-        "assembly_product(\"\")",
+        xtd::string::format("assembly_product(\"{}\")", name),
         xtd::string::format("assembly_copyright(\"Copyright © YourCompanyName {}\")", xtd::date_time::now().year()),
         "assembly_trademark(\"\")",
         "",
