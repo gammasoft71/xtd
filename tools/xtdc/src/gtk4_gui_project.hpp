@@ -71,7 +71,7 @@ namespace xtdc_command {
         "  g_signal_connect (window1, \"destroy\", G_CALLBACK(gtk_main_quit), NULL);",
         "  gtk_widget_show(window1);",
         "  gtk_main();",
-        "  return 0;"
+        "  return EXIT_SUCCESS;",
         "}",
       };
       
