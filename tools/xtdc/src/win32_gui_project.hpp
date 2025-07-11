@@ -68,24 +68,22 @@ namespace xtdc_command {
         "",
         "window window1 = {nullptr, nullptr};",
         "",
-        "LRESULT CALLBACK Window1WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) {",
+        "auto CALLBACK Window1WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam) -> LRESULT {",
         "  switch (message) {",
         "    case WM_CLOSE: PostQuitMessage(0); break;",
-        "    default: break;",
+        "    default: return CallWindowProc(window1.defWndProc, hwnd, message, wParam, lParam);",
         "  }",
-        "  return CallWindowProc(window1.defWndProc, hwnd, message, wParam, lParam);",
+        "  return 0;",
         "}",
         "",
-        "auto wmain(int argc, wchar_t* argv[]) -> int {",
-        "  window1.handle = CreateWindowEx(0, WC_DIALOG, L\"Window1\", WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT, 800, 450, nullptr, nullptr, nullptr, nullptr);",
+        "auto WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR, int nCmdShow) -> int {",
+        "  window1.handle = CreateWindowEx(0, WC_DIALOG, L\"Window1\", WS_OVERLAPPEDWINDOW | WS_VISIBLE, CW_USEDEFAULT, CW_USEDEFAULT, 800, 450, nullptr, nullptr, hInstance, nullptr);",
         "  window1.defWndProc = reinterpret_cast<WNDPROC>(SetWindowLongPtr(window1.handle, GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(Window1WndProc)));",
-        "",
-        "  ShowWindow(window1.handle, SW_SHOW);",
         "",
         "  auto message = MSG {};",
         "  while (GetMessage(&message, nullptr, 0, 0))",
         "    DispatchMessage(&message);",
-        "  return reinterpret_cast<int>(message.wParam);",
+        "  return static_cast<int>(message.wParam);",
         "}",
       };
       
@@ -110,7 +108,6 @@ namespace xtdc_command {
       lines.add("# Options");
       lines.add("set(CMAKE_CXX_STANDARD 17)");
       lines.add("set(CMAKE_CXX_STANDARD_REQUIRED ON)");
-      lines.add("set(CMAKE_EXE_LINKER_FLAGS \"${CMAKE_EXE_LINKER_FLAGS} /ENTRY:wmainCRTStartup\")");
       lines.add("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
       lines.add("add_definitions(-DNOMINMAX)");
       lines.add("add_definitions(-DUNICODE)");
