@@ -92,7 +92,7 @@ namespace xtdc_command {
     void create_header(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
         "#import \"Export.h\"",
-        "#import <Foundation/Foundation>",
+        "#import <Foundation/Foundation.h>",
         "",
         xtd::string::format("{0}_export_ @interface Class1 : NSObject", name.to_lower()),
         "",

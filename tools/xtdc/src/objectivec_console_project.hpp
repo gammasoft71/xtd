@@ -52,7 +52,7 @@ namespace xtdc_command {
     
     void create_source(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
-        "#import <Foundation/Foundation>",
+        "#import <Foundation/Foundation.h>",
         "",
         "// The main entry point for the application.",
         "int main(int argc, const char * argv[]) {",
