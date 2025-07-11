@@ -75,7 +75,7 @@ namespace xtdc_command {
     
     void create_header(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::array<xtd::string> {
-        "#import <Foundation/Foundation>",
+        "#import <Foundation/Foundation.h>",
         "",
         "@interface Class1 : NSObject",
         "",
