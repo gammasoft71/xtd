@@ -329,7 +329,7 @@ namespace xtdc_command {
         if (line.index_of("_BINARY_DIR:STATIC=") != xtd::string::npos) return make_platform_target_path(line.replace(xtd::string::format("{}_BINARY_DIR:STATIC=", line.substring(0, line.index_of("_BINARY_DIR:STATIC="))), xtd::string::empty_string), line.substring(0, line.index_of("_BINARY_DIR:STATIC=")), release);
       if (xtd::environment::os_version().is_windows_platform()) return xtd::io::path::combine(build_path(), xtd::io::path::get_file_name(path_), release ? "Release" : "Debug", xtd::io::path::get_file_name(path_));
       if (xtd::environment::os_version().is_macos_platform()) return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", xtd::io::path::get_file_name(path_), xtd::io::path::get_file_name(path_));
-      return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", xtd::io::path::get_file_name(path_));
+      return xtd::io::path::combine(build_path(), release ? "Release" : "Debug", xtd::io::path::get_file_name(path_), xtd::io::path::get_file_name(path_));
     }
     
     xtd::string make_platform_target_path(const xtd::string& path, const xtd::string& target, bool release) const {
