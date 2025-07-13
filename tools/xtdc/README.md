@@ -13,41 +13,42 @@ xtdc contains many project template. All project listed below are created with C
 ## GUI Application sdk :
 
 * xtd (C++)
-* xtd_c (c)
+* xtd_c (C)
 * cocoa (objective-c)
 * fltk (C++)
-* Gtk+ 2 (c)
-* Gtk+ 3 (c)
-* Gtk+ 4 (c)
+* Gtk+ 2 (C)
+* Gtk+ 3 (C)
+* Gtk+ 4 (C)
 * Gtkmm (C++)
 * wxWidgets (C++)
 * Qt 5 (C++)
-* Win32 (c)
+* Win32 (C++)
+* Win32_c (C)
 * Winforms (C#)
 * WPF (C#)
 
 ## Console Application SDK/language :
 
 * xtd (C++)
-* xtd_c (c)
+* xtd_c (C)
 * C++
-* c
+* C
 * C#
 * objective-c
 
 ## Shared or static library SDK/language :
 
 * xtd (C++)
-* xtd_c (c)
+* xtd_c (C)
 * C++
-* c
+* C
 * C#
 * objective-c
 
 ## Unit Test project SDK/language :
 
 * xtd (C++)
-* xtd_c (c)
+* xtd_c (C)
 * gtest (C++)
 * catch2 (C++)
 
@@ -144,145 +145,6 @@ For example to view help on open command :
 ```bash
 xtdc open --help
 ```
-
-# Projects    
-
-The following tables (organized by project) show the availability of SDKs and languages for creating a project.
-
-* Default SDK : **xtd**
-* Default language : **C++**
-
-## Console Application
-
-* short name : **console**
-
-| SDK      | C++ |  C  |  C# | Objective-C | Objective-C++ |
-|----------|-----|-----|-----|-------------|---------------|
-| **xtd**  |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| none     |  ✔️  |  ✔️  |  ✔️  |  ✔️          |  ✔️            |
-| catch2   |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| cocoa    |  ✔️  |  ❌  |  ❌  |  ✔️          |  ✔️            |
-| fltk     |  ✔️  |  ❌  |  ❌  |  ❌          |  ❌            |
-| gtest    |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| gtk+2    |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| gtk+3    |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| gtk+4    |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| gtkmm    |  ✔️  |  ❌  |  ❌  |  ❌          |  ❌            |
-| qt5      |  ✔️  |  ❌  |  ❌  |  ❌          |  ❌            |
-| qt6      |  ✔️  |  ❌  |  ❌  |  ❌          |  ❌            |
-| win32    |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| winforms |  ❌  |  ❌  |  ✔️  |  ❌          |  ❌            |
-| wpf      |  ❌  |  ❌  |  ✔️  |  ❌          |  ❌            |
-
-## GUI Application
-
-* short name : **gui**
-
-| SDK      | C++ |  C  |  C# | Objective-C | Objective-C++ |
-|----------|-----|-----|-----|-------------|---------------|
-| **xtd**  |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| none     |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| catch2   |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| cocoa    |  ✔️  |  ❌  |  ❌  |  ✔️          |  ✔️            |
-| fltk     |  ✔️  |  ❌  |  ❌  |  ❌          |  ❌            |
-| gtest    |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| gtk+2    |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| gtk+3    |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| gtk+4    |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| gtkmm    |  ✔️  |  ❌  |  ❌  |  ❌          |  ❌            |
-| qt5      |  ✔️  |  ❌  |  ❌  |  ❌          |  ❌            |
-| qt6      |  ✔️  |  ❌  |  ❌  |  ❌          |  ❌            |
-| win32    |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| winforms |  ✔️  |  ❌  |  ✔️  |  ❌          |  ❌            |
-| wpf      |  ❌  |  ❌  |  ✔️  |  ❌          |  ❌            |
-
-## Unit Test Project
-
-* short name : **test**
-
-| SDK      | C++ |  C  |  C# | Objective-C | Objective-C++ |
-|----------|-----|-----|-----|-------------|---------------|
-| **xtd**  |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| none     |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| catch2   |  ✔️  |  ❌  |  ❌  |  ❌          |  ❌            |
-| cocoa    |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| fltk     |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| gtest    |  ✔️  |  ❌  |  ❌  |  ❌          |  ❌            |
-| gtk+2    |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| gtk+3    |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| gtk+4    |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| gtkmm    |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| qt5      |  ✔️  |  ❌  |  ❌  |  ❌          |  ❌            |
-| qt6      |  ✔️  |  ❌  |  ❌  |  ❌          |  ❌            |
-| win32    |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| winforms |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| wpf      |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-
-## Shared library
-
-* short name : **sharelib**
-
-| SDK      | C++ |  C  |  C# | Objective-C | Objective-C++ |
-|----------|-----|-----|-----|-------------|---------------|
-| **xtd**  |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| none     |  ✔️  |  ✔️  |  ✔️  |  ✔️          |  ✔️            |
-| catch2   |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| cocoa    |  ✔️  |  ❌  |  ❌  |  ✔️          |  ✔️            |
-| fltk     |  ✔️  |  ❌  |  ❌  |  ❌          |  ❌            |
-| gtest    |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| gtk+2    |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| gtk+3    |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| gtk+4    |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| gtkmm    |  ✔️  |  ❌  |  ❌  |  ❌          |  ❌            |
-| qt5      |  ✔️  |  ❌  |  ❌  |  ❌          |  ❌            |
-| qt6      |  ✔️  |  ❌  |  ❌  |  ❌          |  ❌            |
-| win32    |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| winforms |  ✔️  |  ❌  |  ✔️  |  ❌          |  ❌            |
-| wpf      |  ❌  |  ❌  |  ✔️  |  ❌          |  ❌            |
-
-## Static library
-
-* short name : **staticlib**
-
-| SDK      | C++ |  C  |  C# | Objective-C | Objective-C++ |
-|----------|-----|-----|-----|-------------|---------------|
-| **xtd**  |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| none     |  ✔️  |  ✔️  |  ✔️  |  ✔️          |  ✔️            |
-| catch2   |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| cocoa    |  ✔️  |  ❌  |  ❌  |  ✔️          |  ✔️            |
-| fltk     |  ✔️  |  ❌  |  ❌  |  ❌          |  ❌            |
-| gtest    |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| gtk+2    |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| gtk+3    |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| gtk+4    |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| gtkmm    |  ✔️  |  ❌  |  ❌  |  ❌          |  ❌            |
-| qt5      |  ✔️  |  ❌  |  ❌  |  ❌          |  ❌            |
-| qt6      |  ✔️  |  ❌  |  ❌  |  ❌          |  ❌            |
-| win32    |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| winforms |  ✔️  |  ❌  |  ✔️  |  ❌          |  ❌            |
-| wpf      |  ❌  |  ❌  |  ✔️  |  ❌          |  ❌            |
-
-## Solution file
-
-* short name : **sln**
-
-| SDK      | C++ |  C  |  C# | Objective-C | Objective-C++ |
-|----------|-----|-----|-----|-------------|---------------|
-| **xtd**  |  ✔️  |  ✔️  |  ❌  |  ❌          |  ❌            |
-| none     |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| catch2   |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| cocoa    |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| fltk     |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| gtest    |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| gtk+2    |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| gtk+3    |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| gtk+4    |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| gtkmm    |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| qt5      |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| qt6      |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| win32    |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| winforms |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
-| wpf      |  ❌  |  ❌  |  ❌  |  ❌          |  ❌            |
 
 ______________________________________________________________________________________________
 
