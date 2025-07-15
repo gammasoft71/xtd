@@ -40,7 +40,7 @@ namespace form_background_image2 {
     }
 
   protected:
-    void on_system_colors_changed(const event_args &e) {
+    void on_system_colors_changed(const event_args &e) override {
       form::on_system_colors_changed(e);
       background_image(application::dark_mode() ? properties::resources::bliss_night() : properties::resources::bliss_day());
       bliss_url.back_color(color::from_argb(64, system_colors::control()));
