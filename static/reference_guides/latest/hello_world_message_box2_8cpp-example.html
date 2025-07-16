@@ -122,24 +122,17 @@ $(function(){ initResizable(false); });
 </dd></dl>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> main_form = <a class="code hl_function" href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">form::create</a>(<span class="stringliteral">&quot;Hello world (message_box)&quot;</span>);</div>
-<div class="line">  <span class="keyword">auto</span> message_button = <a class="code hl_function" href="classxtd_1_1forms_1_1button.html#a6a8437802231381f5f91dee9d8c3415e">button::create</a>(main_form, <span class="stringliteral">&quot;&amp;Click me&quot;</span>, {10, 10});</div>
-<div class="line">  message_button.click += [] {<a class="code hl_function" href="classxtd_1_1forms_1_1message__box.html#a265c0deaf6d4fef2014f9b27a2631eec">message_box::show</a>(<span class="stringliteral">&quot;Hello, World!&quot;</span>);};</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(main_form);</div>
+<div class="line">  <span class="keyword">auto</span> main_form = form::create(<span class="stringliteral">&quot;Hello world (message_box)&quot;</span>);</div>
+<div class="line">  <span class="keyword">auto</span> message_button = button::create(main_form, <span class="stringliteral">&quot;&amp;Click me&quot;</span>, {10, 10});</div>
+<div class="line">  message_button.click += [] {message_box::show(<span class="stringliteral">&quot;Hello, World!&quot;</span>);};</div>
+<div class="line">  application::run(main_form);</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1button_html_a6a8437802231381f5f91dee9d8c3415e"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html#a6a8437802231381f5f91dee9d8c3415e">xtd::forms::button::create</a></div><div class="ttdeci">static button create()</div><div class="ttdoc">A factory to create an xtd::forms::button.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1form_html_aea269af32d571c9c68d4e83400ab2d00"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">xtd::forms::form::create</a></div><div class="ttdeci">static form create()</div><div class="ttdoc">A factory to create an xtd::forms::form.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1message__box_html_a265c0deaf6d4fef2014f9b27a2631eec"><div class="ttname"><a href="classxtd_1_1forms_1_1message__box.html#a265c0deaf6d4fef2014f9b27a2631eec">xtd::forms::message_box::show</a></div><div class="ttdeci">static dialog_result show(const iwin32_window &amp;owner)</div><div class="ttdoc">Displays a message box in front of the specified window.</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 16 2025 10:41:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jul 16 2025 11:14:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
