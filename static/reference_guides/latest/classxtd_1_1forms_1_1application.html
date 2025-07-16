@@ -126,14 +126,13 @@ Inheritance diagram for xtd::forms::application:</div>
 </dd>
 <dd>
 You cannot create an instance of this class. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of application class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of application class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a>(<a class="code hl_class" href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a> {});</div>
+<div class="line">  <a class="code hl_function" href="#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(<a class="code hl_friend" href="#a062234ad322e5e57a08b72940341e971">form</a> {});</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a062234ad322e5e57a08b72940341e971"><div class="ttname"><a href="#a062234ad322e5e57a08b72940341e971">xtd::forms::application::form</a></div><div class="ttdeci">friend class form</div><div class="ttdoc">The form data allows you to specify the box of a form control.</div><div class="ttdef"><b>Definition</b> application.hpp:502</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>How to manage exception with application class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
@@ -202,7 +201,6 @@ You cannot create an instance of this class. </dd></dl>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(main_form::main);</div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a062234ad322e5e57a08b72940341e971"><div class="ttname"><a href="#a062234ad322e5e57a08b72940341e971">xtd::forms::application::form</a></div><div class="ttdeci">friend class form</div><div class="ttdoc">The form data allows you to specify the box of a form control.</div><div class="ttdef"><b>Definition</b> application.hpp:502</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a2ce7b0d4da48e314ed0e02a3629b2954"><div class="ttname"><a href="#a2ce7b0d4da48e314ed0e02a3629b2954">xtd::forms::application::main_form</a></div><div class="ttdeci">static std::optional&lt; form_ref &gt; main_form()</div><div class="ttdoc">Gets the optional main form owned by the application.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1message__box_html_a652dfeb393c4deaa7ee4dacfb641ca36"><div class="ttname"><a href="classxtd_1_1forms_1_1message__box.html#a652dfeb393c4deaa7ee4dacfb641ca36">xtd::forms::message_box::show</a></div><div class="ttdeci">static dialog_result show()</div><div class="ttdoc">Displays a message box.</div></div>
 <div class="ttc" id="agroup__events_html_ga154af19f81ec830b3d4c0cc8a477cf0d"><div class="ttname"><a href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a></div><div class="ttdeci">generic_event_handler&lt; const xtd::event_args &amp; &gt; event_handler</div><div class="ttdoc">Represents the method that will handle an event that has no event data.</div><div class="ttdef"><b>Definition</b> event_handler.hpp:24</div></div>
@@ -2418,7 +2416,7 @@ Most Windows Forms developers will not need to use this version of the method. Y
 <div class="line">  <a class="code hl_function" href="#a4ee49410f3156fd66b61c2567a59388e">application::run</a>();</div>
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_8cpp-example.html#a0">application.cpp</a>, <a class="el" href="application_add_message_filter_8cpp-example.html#a10">application_add_message_filter.cpp</a>, <a class="el" href="application_use_wait_cursor_8cpp-example.html#a2">application_use_wait_cursor.cpp</a>, <a class="el" href="busy_box_8cpp-example.html#a2">busy_box.cpp</a>, <a class="el" href="busy_dialog_8cpp-example.html#a4">busy_dialog.cpp</a>, <a class="el" href="button2_8cpp-example.html#a6">button2.cpp</a>, <a class="el" href="button3_8cpp-example.html#a4">button3.cpp</a>, <a class="el" href="button4_8cpp-example.html#a3">button4.cpp</a>, <a class="el" href="control_with_name_operator_8cpp-example.html#a3">control_with_name_operator.cpp</a>, <a class="el" href="emplace_8cpp-example.html#a9">emplace.cpp</a>, <a class="el" href="form2_8cpp-example.html#a3">form2.cpp</a>, <a class="el" href="hello_world_cmake_8cpp-example.html#a0">hello_world_cmake.cpp</a>, <a class="el" href="horizontal_layout_panel_8cpp-example.html#a2">horizontal_layout_panel.cpp</a>, <a class="el" href="process_form_8cpp-example.html#a8">process_form.cpp</a>, <a class="el" href="screen_informations_8cpp-example.html#a10">screen_informations.cpp</a>, <a class="el" href="trace_message_box_8cpp-example.html#a4">trace_message_box.cpp</a>, <a class="el" href="tutorial_application_icon_8cpp-example.html#a1">tutorial_application_icon.cpp</a>, <a class="el" href="tutorial_button_8cpp-example.html#a3">tutorial_button.cpp</a>, <a class="el" href="tutorial_communicate_8cpp-example.html#a5">tutorial_communicate.cpp</a>, <a class="el" href="tutorial_simple_application_8cpp-example.html#a1">tutorial_simple_application.cpp</a>, <a class="el" href="use_wait_cursor_8cpp-example.html#a3">use_wait_cursor.cpp</a>, and <a class="el" href="vertical_layout_panel_8cpp-example.html#a2">vertical_layout_panel.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_add_message_filter_8cpp-example.html#a10">application_add_message_filter.cpp</a>, <a class="el" href="application_use_wait_cursor_8cpp-example.html#a2">application_use_wait_cursor.cpp</a>, <a class="el" href="busy_box_8cpp-example.html#a2">busy_box.cpp</a>, <a class="el" href="busy_dialog_8cpp-example.html#a4">busy_dialog.cpp</a>, <a class="el" href="button2_8cpp-example.html#a6">button2.cpp</a>, <a class="el" href="button3_8cpp-example.html#a4">button3.cpp</a>, <a class="el" href="button4_8cpp-example.html#a3">button4.cpp</a>, <a class="el" href="control_with_name_operator_8cpp-example.html#a3">control_with_name_operator.cpp</a>, <a class="el" href="emplace_8cpp-example.html#a9">emplace.cpp</a>, <a class="el" href="form2_8cpp-example.html#a3">form2.cpp</a>, <a class="el" href="hello_world_cmake_8cpp-example.html#a0">hello_world_cmake.cpp</a>, <a class="el" href="horizontal_layout_panel_8cpp-example.html#a2">horizontal_layout_panel.cpp</a>, <a class="el" href="process_form_8cpp-example.html#a8">process_form.cpp</a>, <a class="el" href="screen_informations_8cpp-example.html#a10">screen_informations.cpp</a>, <a class="el" href="trace_message_box_8cpp-example.html#a4">trace_message_box.cpp</a>, <a class="el" href="tutorial_application_icon_8cpp-example.html#a1">tutorial_application_icon.cpp</a>, <a class="el" href="tutorial_button_8cpp-example.html#a3">tutorial_button.cpp</a>, <a class="el" href="tutorial_communicate_8cpp-example.html#a5">tutorial_communicate.cpp</a>, <a class="el" href="tutorial_simple_application_8cpp-example.html#a1">tutorial_simple_application.cpp</a>, <a class="el" href="use_wait_cursor_8cpp-example.html#a3">use_wait_cursor.cpp</a>, and <a class="el" href="vertical_layout_panel_8cpp-example.html#a2">vertical_layout_panel.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -2516,11 +2514,10 @@ Most Windows Forms developers will not need to use this version of the method. Y
 <dl class="section remark"><dt>Remarks</dt><dd>Typically, the main function of an application calls this method and passes to it the main window of the application. </dd>
 <dd>
 This method adds an event handler to the main_form parameter for the closed event. The event handler calls <a class="el" href="#a7cd6fe69c23173cb2dabae8f6c7a1690" title="Exits the message loop on the current thread and closes all windows on the thread.">xtd::forms::application::exit_thread</a> to clean up the application. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of application run method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of application run method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a>(<a class="code hl_class" href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a> {});</div>
+<div class="line">  <a class="code hl_function" href="#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(<a class="code hl_friend" href="#a062234ad322e5e57a08b72940341e971">form</a> {});</div>
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
 
@@ -2694,7 +2691,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jul 15 2025 08:30:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jul 16 2025 07:57:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
