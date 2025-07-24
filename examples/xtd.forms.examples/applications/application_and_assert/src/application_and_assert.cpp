@@ -1,19 +1,4 @@
-#include <xtd/diagnostics/assert>
-#include <xtd/diagnostics/debug>
-#include <xtd/diagnostics/default_trace_listener>
-#include <xtd/diagnostics/debug_break>
-#include <xtd/diagnostics/debugger>
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/check_box>
-#include <xtd/forms/form>
-#include <xtd/as>
-#include <xtd/is>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::diagnostics;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class main_form : public form {
 public:
