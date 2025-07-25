@@ -1,10 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/form>
-#include <xtd/threading/thread>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:
@@ -19,7 +13,7 @@ public:
       application::use_wait_cursor(true);
       for (auto count = 0; count < 500; ++count) {
         application::do_events();
-        threading::thread::sleep(10_ms); // Simulate work...
+        thread::sleep(10_ms); // Simulate work...
       }
       application::use_wait_cursor(false);
     };
