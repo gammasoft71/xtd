@@ -1,10 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/form>
-#include <xtd/environment>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto restart_count = environment::get_environment_variable("application_restart_count").empty() ? 0 : parse<int>(environment::get_environment_variable("application_restart_count"));
