@@ -1641,13 +1641,7 @@ A typical base path is "C:\Documents and Settings\username\Application Data". </
 <p>Gets whether the wait cursor is used for all open forms of the application. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> is the wait cursor is used for all open forms; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>When this property is set to <code>true</code>, the <a class="el" href="classxtd_1_1forms_1_1use__wait__cursor.html" title="Creates a use wait cursor class.">use_wait_cursor</a> property of all open forms in the application will be set to <code>true</code>. This call will not return until this property has been set on all forms. Use this property when you have a long-running operation, and want to indicate in all application forms that the operation is still processing. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of application use wait cursor property. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of application use wait cursor property. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_friend" href="#a062234ad322e5e57a08b72940341e971">form</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -1662,7 +1656,7 @@ A typical base path is "C:\Documents and Settings\username\Application Data". </
 <div class="line">      <a class="code hl_function" href="#a68359c26b0c2a29616edf441bb1b526c">application::use_wait_cursor</a>(<span class="keyword">true</span>);</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> count = 0; count &lt; 500; ++count) {</div>
 <div class="line">        <a class="code hl_function" href="#a1d4031fa24263d5b25e996ebd2ce9089">application::do_events</a>();</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">threading::thread::sleep</a>(10_ms); <span class="comment">// Simulate work...</span></div>
+<div class="line">        thread::sleep(10_ms); <span class="comment">// Simulate work...</span></div>
 <div class="line">      }</div>
 <div class="line">      <a class="code hl_function" href="#a68359c26b0c2a29616edf441bb1b526c">application::use_wait_cursor</a>(<span class="keyword">false</span>);</div>
 <div class="line">    };</div>
@@ -1677,10 +1671,7 @@ A typical base path is "C:\Documents and Settings\username\Application Data". </
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a1d4031fa24263d5b25e996ebd2ce9089"><div class="ttname"><a href="#a1d4031fa24263d5b25e996ebd2ce9089">xtd::forms::application::do_events</a></div><div class="ttdeci">static void do_events()</div><div class="ttdoc">Processes all Windows messages currently in the message queue.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a68359c26b0c2a29616edf441bb1b526c"><div class="ttname"><a href="#a68359c26b0c2a29616edf441bb1b526c">xtd::forms::application::use_wait_cursor</a></div><div class="ttdeci">static bool use_wait_cursor() noexcept</div><div class="ttdoc">Gets whether the wait cursor is used for all open forms of the application.</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a42bc6e2bb805f928e50ae73d243b95f2"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">xtd::threading::thread::sleep</a></div><div class="ttdeci">static void sleep(int32 milliseconds_timeout)</div><div class="ttdoc">Suspends the current thread for a specified time.</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9"><div class="ttname"><a href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">xtd::forms::message_dialog_default_button::button1</a></div><div class="ttdeci">@ button1</div><div class="ttdoc">The first button on the message box is the default button.</div><div class="ttdef"><b>Definition</b> message_dialog_default_button.hpp:24</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1716,13 +1707,7 @@ A typical base path is "C:\Documents and Settings\username\Application Data". </
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>When this property is set to <code>true</code>, the <a class="el" href="classxtd_1_1forms_1_1use__wait__cursor.html" title="Creates a use wait cursor class.">use_wait_cursor</a> property of all open forms in the application will be set to <code>true</code>. This call will not return until this property has been set on all forms. Use this property when you have a long-running operation, and want to indicate in all application forms that the operation is still processing. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of application use wait cursor property. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of application use wait cursor property. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_friend" href="#a062234ad322e5e57a08b72940341e971">form</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -1737,7 +1722,7 @@ A typical base path is "C:\Documents and Settings\username\Application Data". </
 <div class="line">      <a class="code hl_function" href="#a68359c26b0c2a29616edf441bb1b526c">application::use_wait_cursor</a>(<span class="keyword">true</span>);</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> count = 0; count &lt; 500; ++count) {</div>
 <div class="line">        <a class="code hl_function" href="#a1d4031fa24263d5b25e996ebd2ce9089">application::do_events</a>();</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">threading::thread::sleep</a>(10_ms); <span class="comment">// Simulate work...</span></div>
+<div class="line">        thread::sleep(10_ms); <span class="comment">// Simulate work...</span></div>
 <div class="line">      }</div>
 <div class="line">      <a class="code hl_function" href="#a68359c26b0c2a29616edf441bb1b526c">application::use_wait_cursor</a>(<span class="keyword">false</span>);</div>
 <div class="line">    };</div>
@@ -2400,8 +2385,9 @@ Most Windows Forms developers will not need to use this version of the method. Y
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="#a4ee49410f3156fd66b61c2567a59388e">application::run</a>();</div>
 <div class="line">}</div>
+<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_add_message_filter_8cpp-example.html#a10">application_add_message_filter.cpp</a>, <a class="el" href="application_use_wait_cursor_8cpp-example.html#a2">application_use_wait_cursor.cpp</a>, <a class="el" href="busy_box_8cpp-example.html#a2">busy_box.cpp</a>, <a class="el" href="busy_dialog_8cpp-example.html#a4">busy_dialog.cpp</a>, <a class="el" href="button2_8cpp-example.html#a6">button2.cpp</a>, <a class="el" href="button3_8cpp-example.html#a4">button3.cpp</a>, <a class="el" href="button4_8cpp-example.html#a3">button4.cpp</a>, <a class="el" href="control_with_name_operator_8cpp-example.html#a3">control_with_name_operator.cpp</a>, <a class="el" href="emplace_8cpp-example.html#a9">emplace.cpp</a>, <a class="el" href="form2_8cpp-example.html#a3">form2.cpp</a>, <a class="el" href="hello_world_cmake_8cpp-example.html#a0">hello_world_cmake.cpp</a>, <a class="el" href="horizontal_layout_panel_8cpp-example.html#a2">horizontal_layout_panel.cpp</a>, <a class="el" href="process_form_8cpp-example.html#a8">process_form.cpp</a>, <a class="el" href="screen_informations_8cpp-example.html#a10">screen_informations.cpp</a>, <a class="el" href="trace_message_box_8cpp-example.html#a4">trace_message_box.cpp</a>, <a class="el" href="tutorial_application_icon_8cpp-example.html#a1">tutorial_application_icon.cpp</a>, <a class="el" href="tutorial_button_8cpp-example.html#a3">tutorial_button.cpp</a>, <a class="el" href="tutorial_communicate_8cpp-example.html#a5">tutorial_communicate.cpp</a>, <a class="el" href="tutorial_simple_application_8cpp-example.html#a1">tutorial_simple_application.cpp</a>, <a class="el" href="use_wait_cursor_8cpp-example.html#a3">use_wait_cursor.cpp</a>, and <a class="el" href="vertical_layout_panel_8cpp-example.html#a2">vertical_layout_panel.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_add_message_filter_8cpp-example.html#a10">application_add_message_filter.cpp</a>, <a class="el" href="application_use_wait_cursor_8cpp-example.html#a0">application_use_wait_cursor.cpp</a>, <a class="el" href="busy_box_8cpp-example.html#a2">busy_box.cpp</a>, <a class="el" href="busy_dialog_8cpp-example.html#a4">busy_dialog.cpp</a>, <a class="el" href="button2_8cpp-example.html#a6">button2.cpp</a>, <a class="el" href="button3_8cpp-example.html#a4">button3.cpp</a>, <a class="el" href="button4_8cpp-example.html#a3">button4.cpp</a>, <a class="el" href="control_with_name_operator_8cpp-example.html#a3">control_with_name_operator.cpp</a>, <a class="el" href="emplace_8cpp-example.html#a9">emplace.cpp</a>, <a class="el" href="form2_8cpp-example.html#a3">form2.cpp</a>, <a class="el" href="hello_world_cmake_8cpp-example.html#a0">hello_world_cmake.cpp</a>, <a class="el" href="horizontal_layout_panel_8cpp-example.html#a2">horizontal_layout_panel.cpp</a>, <a class="el" href="process_form_8cpp-example.html#a8">process_form.cpp</a>, <a class="el" href="screen_informations_8cpp-example.html#a10">screen_informations.cpp</a>, <a class="el" href="trace_message_box_8cpp-example.html#a4">trace_message_box.cpp</a>, <a class="el" href="tutorial_application_icon_8cpp-example.html#a1">tutorial_application_icon.cpp</a>, <a class="el" href="tutorial_button_8cpp-example.html#a3">tutorial_button.cpp</a>, <a class="el" href="tutorial_communicate_8cpp-example.html#a5">tutorial_communicate.cpp</a>, <a class="el" href="tutorial_simple_application_8cpp-example.html#a1">tutorial_simple_application.cpp</a>, <a class="el" href="use_wait_cursor_8cpp-example.html#a3">use_wait_cursor.cpp</a>, and <a class="el" href="vertical_layout_panel_8cpp-example.html#a2">vertical_layout_panel.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -2609,6 +2595,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <div class="ttc" id="aclassxtd_1_1event__args_html"><div class="ttname"><a href="classxtd_1_1event__args.html">xtd::event_args</a></div><div class="ttdoc">Represents the base class for classes that contain event data, and provides a value to use for events...</div><div class="ttdef"><b>Definition</b> event_args.hpp:18</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a936f2c887b42e06ecb7e81d4d1bc33ba"><div class="ttname"><a href="#a936f2c887b42e06ecb7e81d4d1bc33ba">xtd::forms::application::idle</a></div><div class="ttdeci">static event&lt; application, delegate&lt; void(const event_args &amp;)&gt; &gt; idle</div><div class="ttdoc">Occurs when the application finishes processing and is about to enter the idle state.</div><div class="ttdef"><b>Definition</b> application.hpp:330</div></div>
 <div class="ttc" id="anamespacextd_1_1text_html"><div class="ttname"><a href="namespacextd_1_1text.html">xtd::text</a></div><div class="ttdoc">Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:17</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2672,7 +2659,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 25 2025 19:05:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jul 25 2025 19:23:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
