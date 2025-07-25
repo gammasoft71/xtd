@@ -2343,13 +2343,7 @@ For more information, see <a href="https://gammasoft71.github.io/xtd/docs/docume
 <dl class="section remark"><dt>Remarks</dt><dd>Applications are restarted in the context in which they were initially run. </dd>
 <dd>
 If your application was originally supplied command-line options when it first executed, restart will launch the application again with the same options. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of application restart method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of application restart method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> restart_count = <a class="code hl_function" href="classxtd_1_1environment.html#ad648ff7c477babf9f30a3058048c8e7d">environment::get_environment_variable</a>(<span class="stringliteral">&quot;application_restart_count&quot;</span>).empty() ? 0 : <a class="code hl_function" href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">parse&lt;int&gt;</a>(<a class="code hl_function" href="classxtd_1_1environment.html#ad648ff7c477babf9f30a3058048c8e7d">environment::get_environment_variable</a>(<span class="stringliteral">&quot;application_restart_count&quot;</span>));</div>
@@ -2359,7 +2353,7 @@ If your application was originally supplied command-line options when it first e
 <div class="line">  </div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1environment.html#a2e6d6f6cb00cca470af7640c776205ac">environment::set_environment_variable</a>(<span class="stringliteral">&quot;application_restart_count&quot;</span>, <a class="code hl_typedef" href="group__types.html#gac8e2f13523520227e0137c8f5ce7b86d">int32_object</a> {restart_count + 1}.to_string());</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(main_form);</div>
+<div class="line">  application::run(main_form);</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1environment_html_a2e6d6f6cb00cca470af7640c776205ac"><div class="ttname"><a href="classxtd_1_1environment.html#a2e6d6f6cb00cca470af7640c776205ac">xtd::environment::set_environment_variable</a></div><div class="ttdeci">static void set_environment_variable(const xtd::string &amp;variable, const xtd::string &amp;value)</div><div class="ttdoc">Creates, modifies, or deletes an environment variable stored in the current process.</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_ad648ff7c477babf9f30a3058048c8e7d"><div class="ttname"><a href="classxtd_1_1environment.html#ad648ff7c477babf9f30a3058048c8e7d">xtd::environment::get_environment_variable</a></div><div class="ttdeci">static xtd::string get_environment_variable(const xtd::string &amp;variable)</div><div class="ttdoc">Retrieves the value of an environment variable from the current process.</div></div>
@@ -2678,7 +2672,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 25 2025 18:34:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jul 25 2025 19:05:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
