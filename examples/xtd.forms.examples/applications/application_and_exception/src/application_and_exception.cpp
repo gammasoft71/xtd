@@ -1,13 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/form>
-#include <xtd/forms/message_box>
-#include <xtd/operation_canceled_exception>
-#include <xtd/startup>
-#include <stdexcept>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class main_form : public form {
 public:
