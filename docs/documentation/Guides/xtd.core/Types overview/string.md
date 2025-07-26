@@ -11,8 +11,8 @@ The value of the [xtd::string](https://gammasoft71.github.io/xtd/reference_guide
 
 [xtd::string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1string.html) is an immutable [std::string](https://en.cppreference.com/w/cpp/string/basic_string).
 
-* [std::string](https://en.cppreference.com/w/cpp/string/basic_string) is inherited from [std::basic_string\<char\>](https://en.cppreference.com/w/cpp/string/basic_string).
-* [xtd::string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1string.html) is inherited from [std::basic_string\<char\>](https://en.cppreference.com/w/cpp/string/basic_string) too and thus offers the immutable API of [std::string](https://en.cppreference.com/w/cpp/string/basic_string) with some functions missing from std::string.
+* [std::string](https://en.cppreference.com/w/cpp/string/basic_string) is inherited from [std::basic_string<char\>](https://en.cppreference.com/w/cpp/string/basic_string).
+* [xtd::string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1string.html) is inherited from [xtd::basic_string<char\>](https://en.cppreference.com/w/cpp/string/basic_string) too and thus offers the immutable API of [std::string](https://en.cppreference.com/w/cpp/string/basic_string) with some functions missing from std::string.
 
 ## Additional methods
 
@@ -43,9 +43,6 @@ The following code shows how to convert [xtd::string](https://gammasoft71.github
 ```cpp
 #include <xtd/xtd>
 
-using namespace std;
-using namespace xtd;
-
 auto main() -> int {
   string s1 = "UTF-8 (65001) string value";
   
@@ -73,9 +70,6 @@ The following code shows how to convert [std::u16string](https://en.cppreference
 ```cpp
 #include <xtd/xtd>
 
-using namespace std;
-using namespace xtd;
-
 auto main() -> int {
   u16string s1 = u"UTF-8 (65001) string value";
   
@@ -97,8 +91,6 @@ There are some literals operators for xtd::string:
 ```cpp
 #include <xtd/xtd>
 
-using namespace xtd;
-
 auto main() -> int {
   string s = "This is a "_s + "simple string"_s;
   console::write_line(s);
@@ -110,8 +102,6 @@ auto main() -> int {
 
 ```cpp
 #include <xtd/xtd>
-
-using namespace xtd;
 
 auto main() -> int {
   string s = 42_sb;
@@ -125,8 +115,6 @@ auto main() -> int {
 ```cpp
 #include <xtd/xtd>
 
-using namespace xtd;
-
 auto main() -> int {
   string s = 1_sb2;
   console::write_line("0b{}", s);
@@ -138,8 +126,6 @@ auto main() -> int {
 
 ```cpp
 #include <xtd/xtd>
-
-using namespace xtd;
 
 auto main() -> int {
   string s = 3_sb4;
@@ -153,8 +139,6 @@ auto main() -> int {
 ```cpp
 #include <xtd/xtd>
 
-using namespace xtd;
-
 auto main() -> int {
   string s = 42_sb8;
   console::write_line("0b{}", s);
@@ -166,8 +150,6 @@ auto main() -> int {
 
 ```cpp
 #include <xtd/xtd>
-
-using namespace xtd;
 
 auto main() -> int {
   string s = 42_sb16;
@@ -181,8 +163,6 @@ auto main() -> int {
 ```cpp
 #include <xtd/xtd>
 
-using namespace xtd;
-
 auto main() -> int {
   string s = 42_sb32;
   console::write_line("0b{}", s);
@@ -194,8 +174,6 @@ auto main() -> int {
 
 ```cpp
 #include <xtd/xtd>
-
-using namespace xtd;
 
 auto main() -> int {
   string s = 42_sb64;
@@ -209,8 +187,6 @@ auto main() -> int {
 ```cpp
 #include <xtd/xtd>
 
-using namespace xtd;
-
 auto main() -> int {
   string s = 42_sd;
   console::write_line(s);
@@ -222,8 +198,6 @@ auto main() -> int {
 
 ```cpp
 #include <xtd/xtd>
-
-using namespace xtd;
 
 auto main() -> int {
   string s = 4.2_sd;
@@ -237,8 +211,6 @@ auto main() -> int {
 ```cpp
 #include <xtd/xtd>
 
-using namespace xtd;
-
 auto main() -> int {
   string s = 42_sx;
   console::write_line("0x{}", s);
@@ -250,8 +222,6 @@ auto main() -> int {
 
 ```cpp
 #include <xtd/xtd>
-
-using namespace xtd;
 
 auto main() -> int {
   string s = 10_sx2;
@@ -265,8 +235,6 @@ auto main() -> int {
 ```cpp
 #include <xtd/xtd>
 
-using namespace xtd;
-
 auto main() -> int {
   string s = 42_sx4;
   console::write_line("0x{}", s);
@@ -278,8 +246,6 @@ auto main() -> int {
 
 ```cpp
 #include <xtd/xtd>
-
-using namespace xtd;
 
 auto main() -> int {
   string s = 42_sx8;
@@ -293,8 +259,6 @@ auto main() -> int {
 ```cpp
 #include <xtd/xtd>
 
-using namespace xtd;
-
 auto main() -> int {
   string s = 42_sX;
   console::write_line("0x{}", s);
@@ -306,8 +270,6 @@ auto main() -> int {
 
 ```cpp
 #include <xtd/xtd>
-
-using namespace xtd;
 
 auto main() -> int {
   string s = 10_sX2;
@@ -321,8 +283,6 @@ auto main() -> int {
 ```cpp
 #include <xtd/xtd>
 
-using namespace xtd;
-
 auto main() -> int {
   string s = 42_sX4;
   console::write_line("0x{}", s);
@@ -334,8 +294,6 @@ auto main() -> int {
 
 ```cpp
 #include <xtd/xtd>
-
-using namespace xtd;
 
 auto main() -> int {
   string s = 42_sX8;
