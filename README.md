@@ -205,8 +205,8 @@ auto main() -> int {
 auto main() -> int {
   auto main_form = form::create("Hello world (message_box)");
   auto button1 = button::create(main_form, "&Click me", {10, 10});
-  button1.click += [] {xtd::forms::message_box::show("Hello, World!");};
-  xtd::forms::application::run(main_form);
+  button1.click += [] {message_box::show("Hello, World!");};
+  application::run(main_form);
 }
 ```
 
