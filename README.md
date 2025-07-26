@@ -128,8 +128,6 @@ The classic first application 'Hello World'.
 ```cpp
 #include <xtd/xtd>
 
-using namespace xtd;
-
 auto main() -> int {
   console::background_color(console_color::blue);
   console::foreground_color(console_color::white);
@@ -141,8 +139,6 @@ auto main() -> int {
 
 ```cpp
 #include <xtd/xtd>
-
-using namespace xtd;
 
 auto main() -> int {
   console::out << background_color(console_color::blue) << foreground_color(console_color::white) << "Hello, World!" << environment::new_line;
@@ -179,8 +175,6 @@ xtdc run
 ```cpp
 #include <xtd/xtd>
 
-using namespace xtd::forms;
-
 class main_form : public form {
 public:
   main_form() {
@@ -209,8 +203,8 @@ auto main() -> int {
 #include <xtd/xtd>
 
 auto main() -> int {
-  auto main_form = xtd::forms::form::create("Hello world (message_box)");
-  auto button1 = xtd::forms::button::create(main_form, "&Click me", {10, 10});
+  auto main_form = form::create("Hello world (message_box)");
+  auto button1 = button::create(main_form, "&Click me", {10, 10});
   button1.click += [] {xtd::forms::message_box::show("Hello, World!");};
   xtd::forms::application::run(main_form);
 }
@@ -262,9 +256,6 @@ xtdc run
 ```cpp
 #include <xtd/xtd>
 
-using namespace xtd;
-using namespace xtd::tunit;
-
 namespace unit_tests {
   class test_class_(hello_world_test) {
     void test_method_(create_string_from_literal) {
@@ -291,9 +282,6 @@ auto main() -> int {
 
 ```cpp
 #include <xtd/xtd>
-
-using namespace xtd;
-using namespace xtd::tunit;
 
 namespace unit_tests {
   class hello_world_test;
