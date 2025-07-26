@@ -2,6 +2,7 @@
 
 auto main() -> int {
   auto settings = xtd::configuration::settings {};
+  
   auto main_form = form::create("Settings example", form_start_position::manual);
   
   auto back_color_picker = color_picker::create(main_form, main_form.back_color(), {10, 10}, {75, 25});
