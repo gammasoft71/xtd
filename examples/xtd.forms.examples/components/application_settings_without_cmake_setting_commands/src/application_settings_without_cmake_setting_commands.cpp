@@ -1,11 +1,4 @@
-#include <xtd/configuration/settings>
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/color_picker>
-#include <xtd/forms/form>
-
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto settings = xtd::configuration::settings {};
