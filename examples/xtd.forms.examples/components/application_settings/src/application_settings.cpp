@@ -1,11 +1,7 @@
 #include "../properties/settings.hpp"
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/color_picker>
-#include <xtd/forms/form>
+#include <xtd/xtd>
 
 using namespace application_settings::properties;
-using namespace xtd::forms;
 
 auto main() -> int {
   auto main_form = form::create(settings::default_settings().text(), form_start_position::manual);
