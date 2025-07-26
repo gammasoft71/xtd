@@ -22,7 +22,7 @@ auto main() -> int {
   reload_button.click += [&] {
     main_form.client_size(settings.read("size", drawing::size {335, 45}));
     main_form.location(settings.read("location", point {100, 50}));
-    main_form.back_color(settings.read("back_color", main_form.back_color()));
+    main_form.back_color(settings.read("back_color", system_colors::control()));
     back_color_picker.color(main_form.back_color());
   };
   
