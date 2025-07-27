@@ -57,12 +57,12 @@ const config = {
   ],
 
   themeConfig:
-    tableOfContents: {
-      minHeadingLevel: 0,
-      maxHeadingLevel: 0,
-    },
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      tableOfContents: {
+        minHeadingLevel: 0,
+        maxHeadingLevel: 0,
+      },
       // Replace with your project's social card
       //image: 'picture/xtd.jpg',
       navbar: {
