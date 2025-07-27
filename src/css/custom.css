@@ -34,3 +34,15 @@
   --ifm-hero-text-color: #fff;
   --ifm-font-color-base-inverse: #fff;
 }
+
+.table-of-contents {
+  display: none !important;
+}
+
+.theme-doc-toc-desktop {
+  display: none !important;
+}
+
+.theme-doc-toc-mobile {
+  display: none !important;
+}
