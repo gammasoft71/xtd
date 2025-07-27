@@ -42,10 +42,6 @@ const config = {
       ({
         docs: {
           sidebarPath: false,
-           toc: {
-            minHeadingLevel: 0,
-            maxHeadingLevel: 0,
-          },
           //routeBasePath: '/',
           //sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
@@ -61,6 +57,10 @@ const config = {
   ],
 
   themeConfig:
+    tableOfContents: {
+      minHeadingLevel: 0,
+      maxHeadingLevel: 0,
+    },
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
