@@ -42,6 +42,10 @@ const config = {
       ({
         docs: {
           sidebarPath: false,
+           toc: {
+            minHeadingLevel: 0,
+            maxHeadingLevel: 0,
+          },
           //routeBasePath: '/',
           //sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
