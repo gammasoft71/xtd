@@ -42,8 +42,8 @@ const config = {
       ({
         docs: {
           sidebarPath: false,
-          routeBasePath: '/',
-          // sidebarPath: require.resolve('./sidebars.js'),
+          //routeBasePath: '/',
+          //sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           //editUrl: 'https://github.com/gammasoft71/xtd/tree/docs',
