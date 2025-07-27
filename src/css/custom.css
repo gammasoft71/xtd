@@ -35,6 +35,7 @@
   --ifm-font-color-base-inverse: #fff;
 }
 
+/*
 .table-of-contents {
   display: none !important;
 }
@@ -45,4 +46,21 @@
 
 .theme-doc-toc-mobile {
   display: none !important;
+}
+*/
+
+/* Masquer les TOC */
+.theme-doc-toc-desktop, .theme-doc-toc-mobile, .table-of-contents {
+  display: none !important;
+}
+
+/* Prendre toute la largeur si TOC masqué */
+.theme-doc-markdown {
+  max-width: 100% !important;
+}
+
+/* Optionnel : centrer légèrement si ça te semble trop étalé */
+.theme-doc-markdown {
+  margin: 0 auto;
+  padding: 0 1rem;
 }
