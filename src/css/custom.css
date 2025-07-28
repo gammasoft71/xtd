@@ -35,20 +35,6 @@
   --ifm-font-color-base-inverse: #fff;
 }
 
-/*
-.table-of-contents {
-  display: none !important;
-}
-
-.theme-doc-toc-desktop {
-  display: none !important;
-}
-
-.theme-doc-toc-mobile {
-  display: none !important;
-}
-*/
-
 /* Masquer les TOC */
 .theme-doc-toc-desktop, .theme-doc-toc-mobile, .table-of-contents {
   display: none !important;
