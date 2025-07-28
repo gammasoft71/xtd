@@ -69,8 +69,7 @@
   box-sizing: border-box;
 }
 
-/*
-Force the content column to take the entire width, breaking the TOC grid */
+/* Force the content column to take the entire width, breaking the TOC grid */
 .theme-doc-page {
   display: block !important;
 }
