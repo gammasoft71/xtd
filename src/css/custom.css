@@ -68,3 +68,21 @@
   width: 100% !important;
   box-sizing: border-box;
 }
+
+/*
+Force the content column to take the entire width, breaking the TOC grid */
+.theme-doc-page {
+  display: block !important;
+}
+
+.theme-doc-main-container {
+  display: block !important;
+}
+
+.theme-doc-content {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  box-sizing: border-box;
+}
