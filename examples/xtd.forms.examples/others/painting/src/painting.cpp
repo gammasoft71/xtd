@@ -1,18 +1,4 @@
-#include <xtd/drawing/pens>
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/form>
-#include <xtd/forms/label>
-#include <xtd/forms/message_box>
-#include <xtd/forms/numeric_up_down>
-#include <xtd/forms/open_file_dialog>
-#include <xtd/forms/panel>
-#include <xtd/forms/track_bar>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace painting_example {
   class form1 : public form {
