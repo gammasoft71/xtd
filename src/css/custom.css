@@ -35,7 +35,7 @@
   --ifm-font-color-base-inverse: #fff;
 }
 
-/* 🔥 Cacher la TOC complètement */
+/* Hide the OCD completely */
 .theme-doc-toc-desktop,
 .theme-doc-toc-mobile,
 .table-of-contents {
