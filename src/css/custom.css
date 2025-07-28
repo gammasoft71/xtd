@@ -35,18 +35,51 @@
   --ifm-font-color-base-inverse: #fff;
 }
 
-/* Masquer les TOC */
+/*
 .theme-doc-toc-desktop, .theme-doc-toc-mobile, .table-of-contents {
   display: none !important;
 }
 
-/* Prendre toute la largeur si TOC masqué */
 .theme-doc-markdown {
   max-width: 100% !important;
 }
 
-/* Optionnel : centrer légèrement si ça te semble trop étalé */
 .theme-doc-markdown {
   margin: 0 auto;
   padding: 0 1rem;
+}
+*/
+
+/* 🔥 Cacher la TOC complètement */
+.theme-doc-toc-desktop,
+.theme-doc-toc-mobile,
+.table-of-contents {
+  display: none !important;
+}
+
+/* 🧱 Réinitialiser la largeur max du conteneur central */
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 100% !important;
+  padding: 0 !important;
+}
+
+/* 💥 Élargir le contenu Markdown */
+.theme-doc-markdown {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  box-sizing: border-box;
+}
+
+/* 🪄 Centrer proprement les titres, paragraphes, etc. */
+.markdown {
+  max-width: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box;
 }
