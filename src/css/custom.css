@@ -35,21 +35,6 @@
   --ifm-font-color-base-inverse: #fff;
 }
 
-/*
-.theme-doc-toc-desktop, .theme-doc-toc-mobile, .table-of-contents {
-  display: none !important;
-}
-
-.theme-doc-markdown {
-  max-width: 100% !important;
-}
-
-.theme-doc-markdown {
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-*/
-
 /* 🔥 Cacher la TOC complètement */
 .theme-doc-toc-desktop,
 .theme-doc-toc-mobile,
@@ -57,7 +42,7 @@
   display: none !important;
 }
 
-/* 🧱 Réinitialiser la largeur max du conteneur central */
+/* Reset the maximum width of the central container */
 .main-wrapper {
   display: flex;
   flex-direction: column;
@@ -68,7 +53,7 @@
   padding: 0 !important;
 }
 
-/* 💥 Élargir le contenu Markdown */
+/* Expand Markdown content */
 .theme-doc-markdown {
   max-width: 100% !important;
   width: 100% !important;
@@ -77,7 +62,7 @@
   box-sizing: border-box;
 }
 
-/* 🪄 Centrer proprement les titres, paragraphes, etc. */
+/* Cleanly center titles, paragraphs, etc. */
 .markdown {
   max-width: 100% !important;
   width: 100% !important;
