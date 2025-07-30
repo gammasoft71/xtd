@@ -1,7 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd::diagnostics;
-
 class main_form : public form {
 public:
   static auto main() {
@@ -36,8 +34,8 @@ public:
     generate_debugger_debug_break_button.click += event_handler(*this, &main_form::generate_debugger_debug_break);
     
     show_assert_dialog_check_box.auto_size(true);
-    for (auto listener : debug::listeners())
-      if (is<default_trace_listener>(listener) && as<default_trace_listener>(listener)->assert_ui_enabled())
+    for (auto listener : diagnostics::debug::listeners())
+      if (is<diagnostics::default_trace_listener>(listener) && as<diagnostics::default_trace_listener>(listener)->assert_ui_enabled())
         show_assert_dialog_check_box.checked(true);
     show_assert_dialog_check_box.location({10, 230});
     show_assert_dialog_check_box.parent(*this);
@@ -53,7 +51,7 @@ private:
   
   void generate_debug_cassert() {
     auto index = 0;
-    debug::cassert(index > 0, "Out of range", "Index must be greater than 0");
+    diagnostics::debug::cassert(index > 0, "Out of range", "Index must be greater than 0");
   }
   
   void generate_debug_break() {
@@ -61,13 +59,13 @@ private:
   }
   
   void generate_debugger_debug_break() {
-    debugger::debug_break();
+    diagnostics::debugger::debug_break();
   }
   
   void show_assert_dialog() {
-    for (auto listener : debug::listeners())
-      if (is<default_trace_listener>(listener))
-        as<default_trace_listener>(listener)->assert_ui_enabled(show_assert_dialog_check_box.checked());
+    for (auto listener : diagnostics::debug::listeners())
+      if (is<diagnostics::default_trace_listener>(listener))
+        as<diagnostics::default_trace_listener>(listener)->assert_ui_enabled(show_assert_dialog_check_box.checked());
   }
 
   button generate_assert_button;

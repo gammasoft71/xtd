@@ -1,12 +1,6 @@
-#include <xtd/diagnostics/debugger>
-#include <xtd/forms/application>
-#include <xtd/forms/assert_box>
-#include <xtd/forms/button>
-#include <xtd/forms/form>
+#include <xtd/xtd>
 
-using namespace xtd;
 using namespace xtd::diagnostics;
-using namespace xtd::forms;
 
 class form1 : public form {
 public:
