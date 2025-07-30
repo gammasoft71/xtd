@@ -1,11 +1,5 @@
 #include "../resources/gammasoft_64x64.xpm"
-#include <xtd/forms/about_dialog>
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/form>
-#include <xtd/forms/xtd_about_dialog>
-
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:
