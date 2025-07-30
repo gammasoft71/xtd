@@ -81,7 +81,7 @@ private:
   button start_stop;
   button pause_resume;
   button reset;
-  timer timer_chrono;
+  forms::timer timer_chrono;
 };
 
 auto main() -> int {

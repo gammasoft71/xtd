@@ -1,5 +1,7 @@
 #include <xtd/xtd>
 
+using namespace xtd::diagnostics;
+
 class main_form : public form {
 public:
   static auto main() {
