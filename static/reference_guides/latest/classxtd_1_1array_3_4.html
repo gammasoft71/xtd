@@ -640,13 +640,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 A collection that is read-only is simply a collection with a wrapper that prevents modifying the collection; therefore, if changes are made to the underlying collection, the read-only collection reflects those changes. </dd>
 <dd>
 This method is an O(n) operation. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example wraps an array in a read-only <a class="el" href="classxtd_1_1collections_1_1object__model_1_1read__only__collection.html" title="Provides the base class for a generic read-only collection.">xtd::collections::object_model::read_only_collection&lt;type_t&gt;</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/array&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/not_supported_exception&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example wraps an array in a read-only <a class="el" href="classxtd_1_1collections_1_1object__model_1_1read__only__collection.html" title="Provides the base class for a generic read-only collection.">xtd::collections::object_model::read_only_collection&lt;type_t&gt;</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> print_index_and_values(<span class="keyword">const</span> <a class="code hl_function" href="classxtd_1_1array.html#a4dbeb21711b15525741125c0b2249a26">array&lt;string&gt;</a>&amp; my_arr)  {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0_z; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; my_arr.<a class="code hl_function" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">length</a>(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
@@ -662,36 +656,36 @@ This method is an O(n) operation. </dd></dl>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Create and initialize a new string array.</span></div>
-<div class="line">  <span class="keyword">auto</span> my_arr = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;The&quot;</span>, <span class="stringliteral">&quot;quick&quot;</span>, <span class="stringliteral">&quot;brown&quot;</span>, <span class="stringliteral">&quot;fox&quot;</span>};</div>
+<div class="line">  <span class="keyword">auto</span> my_arr = array&lt;string&gt; {<span class="stringliteral">&quot;The&quot;</span>, <span class="stringliteral">&quot;quick&quot;</span>, <span class="stringliteral">&quot;brown&quot;</span>, <span class="stringliteral">&quot;fox&quot;</span>};</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Display the values of the array.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The string array initially contains the following values:&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;The string array initially contains the following values:&quot;</span>);</div>
 <div class="line">  print_index_and_values(my_arr);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Create a read-only ilist wrapper around the array.</span></div>
-<div class="line">  <span class="keyword">auto</span> my_list = <a class="code hl_function" href="#a5179d74132dcbcfbc401245b7763bb25">array&lt;&gt;::as_read_only</a>(my_arr);</div>
+<div class="line">  <span class="keyword">auto</span> my_list = array&lt;&gt;::as_read_only(my_arr);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Display the values of the read-only ilist.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The read-only ilist contains the following values:&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;The read-only ilist contains the following values:&quot;</span>);</div>
 <div class="line">  print_index_and_values(my_list);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Attempt to change a value through the wrapper.</span></div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
 <div class="line">    my_list[3] = <span class="stringliteral">&quot;CAT&quot;</span>;</div>
-<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1not__supported__exception.html">not_supported_exception</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{} - {}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.get_type(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.message());</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> not_supported_exception&amp; e) {</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;{} - {}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.get_type(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.message());</div>
+<div class="line">    console::write_line();</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Change a value in the original array.</span></div>
 <div class="line">  my_arr[2] = <span class="stringliteral">&quot;RED&quot;</span>;</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Display the values of the array.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After changing the third element, the string array contains the following values:&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;After changing the third element, the string array contains the following values:&quot;</span>);</div>
 <div class="line">  print_index_and_values( my_arr );</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Display the values of the read-only ilist.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;After changing the third element, the read-only ilist contains the following values:&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;After changing the third element, the read-only ilist contains the following values:&quot;</span>);</div>
 <div class="line">  print_index_and_values(my_list);</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -723,11 +717,8 @@ This method is an O(n) operation. </dd></dl>
 <div class="line"><span class="comment">//    [2] : RED</span></div>
 <div class="line"><span class="comment">//    [3] : fox</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="ttc" id="aclassxtd_1_1array_3_4_html_a5179d74132dcbcfbc401245b7763bb25"><div class="ttname"><a href="#a5179d74132dcbcfbc401245b7763bb25">xtd::array&lt;&gt;::as_read_only</a></div><div class="ttdeci">static xtd::collections::object_model::read_only_collection&lt; type_t &gt; as_read_only(const xtd::array&lt; type_t, 1, allocator_t &gt; &amp;array)</div><div class="ttdoc">Returns a read-only wrapper for the specified array.</div></div>
 <div class="ttc" id="aclassxtd_1_1basic__array_html_aaf70989e6cabeaccefd32e3b760753ef"><div class="ttname"><a href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">xtd::basic_array::length</a></div><div class="ttdeci">virtual size_type length() const noexcept</div><div class="ttdoc">Gets a size that represents the total number of elements in all the dimensions of the array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:209</div></div>
-<div class="ttc" id="aclassxtd_1_1not__supported__exception_html"><div class="ttname"><a href="classxtd_1_1not__supported__exception.html">xtd::not_supported_exception</a></div><div class="ttdoc">The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...</div><div class="ttdef"><b>Definition</b> not_supported_exception.hpp:18</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:16</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1271,7 +1262,7 @@ The sum of the `destination_index` and `length` is greater than `destination_arr
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jul 6 2025 21:07:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jul 30 2025 08:29:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
