@@ -1,11 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/busy_box>
-#include <xtd/forms/button>
-#include <xtd/forms/form>
-#include <xtd/threading/thread>
-
-using namespace xtd::forms;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:
