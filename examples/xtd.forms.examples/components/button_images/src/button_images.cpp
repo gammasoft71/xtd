@@ -6,7 +6,7 @@ namespace button_images_example {
     form1() {
       text("Button images example");
       client_size({310, 170});
-      controls().push_back_range({button_ok, button_apply, button_cancel, button_yes, button_no, button_add, button_remove, button_ previous, button_next, button_home});
+      controls().push_back_range({button_ok, button_apply, button_cancel, button_yes, button_no, button_add, button_remove, button_previous, button_next, button_go_home});
       
       button_ok.image(button_images::ok());
       button_ok.image_align(content_alignment::middle_left);
