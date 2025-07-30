@@ -52,6 +52,7 @@ five
 * xtd allows you to retrieve the arguments passed to the application without the need to go through `int argc, const char* argv[]`. 
   This greatly simplifies the structure of the hand.
 * The first argument returned is always the executable file with path.
+* See [main function and startup_ keyword](docs/documentation/Guides/xtd.core/Entry%20point/main_and_startup) to go further.
 
 ## See also
 
