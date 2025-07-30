@@ -1,18 +1,4 @@
-#include <xtd/drawing/drawing_2d/hatch_brush>
-#include <xtd/drawing/color_translator>
-#include <xtd/drawing/system_colors>
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/color_dialog>
-#include <xtd/forms/control_paint>
-#include <xtd/forms/form>
-#include <xtd/forms/label>
-#include <xtd/forms/panel>
-
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::drawing::drawing_2d;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:
@@ -33,7 +19,7 @@ public:
 
     test_zone.border_style(border_style::inset).double_buffered(true);
     test_zone.paint += [&](object& sender, paint_event_args& e) {
-      e.graphics().fill_rectangle(hatch_brush {hatch_style::wide_checker_board, color::from_argb(0x66, 0x66, 0x66), color::from_argb(0x99, 0x99, 0x99)}, e.clip_rectangle());
+      e.graphics().fill_rectangle(drawing_2d::hatch_brush {drawing_2d::hatch_style::wide_checker_board, color::from_argb(0x66, 0x66, 0x66), color::from_argb(0x99, 0x99, 0x99)}, e.clip_rectangle());
       e.graphics().fill_rectangle(solid_brush {selected_color}, e.clip_rectangle());
       control_paint::draw_border(test_zone, e.graphics(), test_zone.border_style(), test_zone.border_sides(), application::style_sheet().system_colors().control_text(), rectangle::add(e.clip_rectangle(), -1, -1));
     };

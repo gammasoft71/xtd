@@ -1,11 +1,5 @@
 #define DEBUG
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/debug_form>
-#include <xtd/forms/debug_message_dialog>
-#include <xtd/forms/form>
-
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:

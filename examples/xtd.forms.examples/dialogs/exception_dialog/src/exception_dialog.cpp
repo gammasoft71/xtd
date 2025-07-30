@@ -1,11 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/exception_dialog>
-#include <xtd/forms/form>
-#include <xtd/invalid_operation_exception>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:
