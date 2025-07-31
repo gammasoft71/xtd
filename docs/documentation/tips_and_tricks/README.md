@@ -4,12 +4,16 @@ sidebar_position: 5
 
 # Tips and Tricks
 
+This section gathers practical tips and simple xtd insights, with code examples that offer direct, real-world solutions to common issues in modern C++.
+Each subject is illustrated by simple and directly applicable code. 
+You will find concrete solutions to common problems encountered with xtd in modern C++.
+
 List of all tips and tricks, sorted by newest first.
 
-| Category | Subject                                                                                                           | Date              |
-| ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ----------------- |
-| [![threading](/pictures/xtd.threading.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__threading.html) | [Very simple threads synchronisation](/docs/documentation/tips_and_tricks/very_simple_threads_synchronisation) | Jully 31, 2025    |
-| [![core](/pictures/xtd.core.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)           | [Command line arguments](/docs/documentation/tips_and_tricks/command_line_arguments)                           | Jully 8, 2025     |
+| Category                                                                                                                     | Subject                                                                                                        | Date             | Level           |
+| ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ---------------- | --------------- |
+| [![threading](/pictures/xtd.threading.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__threading.html) | [Very simple threads synchronisation](/docs/documentation/tips_and_tricks/very_simple_threads_synchronisation) | July 31, 2025    | 🟡 Intermediate |
+| [![core](/pictures/xtd.core.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)           | [Command line arguments](/docs/documentation/tips_and_tricks/command_line_arguments)                           | July 8, 2025     | 🟢 Beginner     |
 
 ## Legends
 
@@ -43,3 +47,6 @@ List of all tips and tricks, sorted by newest first.
 ## See also
 
 * [Documentation](/docs/documentation)
+
+
+[//]: 🟢 Beginner - 🟡 Intermediate - 🔴 Advanced
