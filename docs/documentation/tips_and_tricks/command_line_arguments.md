@@ -1,5 +1,6 @@
 ---
-sidebar_position: 1
+sidebar_class_name: hidden
+sidebar_position: 999
 ---
 
 # Command line arguments
