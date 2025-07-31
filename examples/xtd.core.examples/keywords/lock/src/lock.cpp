@@ -1,11 +1,4 @@
-#include <xtd/threading/thread_pool>
-#include <xtd/console>
-#include <xtd/lock>
-#include <xtd/random>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 namespace examples {
   class account : public object {
