@@ -10,10 +10,10 @@ You will find concrete solutions to common problems encountered with xtd in mode
 
 List of all tips and tricks, sorted by newest first.
 
-| Category                                                                                                                     | Subject                                                                                                        | Date             | Level           |
-| ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ---------------- | --------------- |
-| [![threading](/pictures/xtd.threading.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__threading.html) | [Very simple threads synchronisation](/docs/documentation/tips_and_tricks/very_simple_threads_synchronisation) | July 31, 2025    | 🟡 Intermediate |
-| [![core](/pictures/xtd.core.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)           | [Command line arguments](/docs/documentation/tips_and_tricks/command_line_arguments)                           | July 8, 2025     | 🟢 Beginner     |
+| Category                                                                                                                     | Subject                                                                                                        | Date             | Level |
+| ---------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | ---------------- | ----- |
+| [![threading](/pictures/xtd.threading.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__threading.html) | [Very simple threads synchronisation](/docs/documentation/tips_and_tricks/very_simple_threads_synchronisation) | July 31, 2025    | 🟡    |
+| [![core](/pictures/xtd.core.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)           | [Command line arguments](/docs/documentation/tips_and_tricks/command_line_arguments)                           | July 8, 2025     | 🟢    |
 
 ## Legends
 
@@ -44,9 +44,12 @@ List of all tips and tricks, sorted by newest first.
 [![timers](/pictures/xtd.timers.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__timers.html)
 [timers](https://gammasoft71.github.io/xtd/reference_guides/latest/group__timers.html)
 
+🟢 Beginner level
+
+🟡 Intermediate level
+
+🔴 Advanced level
+
 ## See also
 
 * [Documentation](/docs/documentation)
-
-
-[//]: # 🟢 Beginner - 🟡 Intermediate - 🔴 Advanced
