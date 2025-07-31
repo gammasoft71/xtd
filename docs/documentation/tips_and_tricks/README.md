@@ -11,7 +11,7 @@ List of all tips and tricks, sorted by newest first.
 | [![threading](/pictures/xtd.threading.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__threading.html) | [Very simple threads synchronisation](/docs/documentation/tips_and_tricks/very_simple_threads_synchronisation) | Jully 31, 2025    |
 | [![core](/pictures/xtd.core.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)           | [Command line arguments](/docs/documentation/tips_and_tricks/command_line_arguments)                           | Jully 8, 2025     |
 
-## Categories
+## Legends
 
 [![core](/pictures/xtd.core.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html) 
 [core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)
