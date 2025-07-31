@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Tips and Triks
+# Tips and Tricks
 
 List of all tips and tricks, sorted by newest first.
 
