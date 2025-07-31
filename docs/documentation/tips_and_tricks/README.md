@@ -49,4 +49,4 @@ List of all tips and tricks, sorted by newest first.
 * [Documentation](/docs/documentation)
 
 
-[//]: 🟢 Beginner - 🟡 Intermediate - 🔴 Advanced
+[//]: # 🟢 Beginner - 🟡 Intermediate - 🔴 Advanced
