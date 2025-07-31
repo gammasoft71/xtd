@@ -17,6 +17,9 @@ You will find concrete solutions to common problems encountered with xtd in mode
 
 ## Legends
 
+[![cmake](/pictures/xtd.cmake.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html)
+[cmake](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html)
+
 [![core](/pictures/xtd.core.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html) 
 [core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)
 
