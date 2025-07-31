@@ -5,7 +5,7 @@ sidebar_position: 999
 
 # Threads synchronisation
 
-How to simple synchronize some threads.
+Simplify synchronization with [lock_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a) in xtd.
 
 ## Modern C++ code
 
@@ -15,36 +15,39 @@ How to simple synchronize some threads.
 #include <print>
 #include <thread>
 
-using namespace std;
-
 auto main() ->int {
   auto unsafe_value = 0;
   auto safe_value = 0;
 
-  auto threads = array<thread, 10> {};
+  auto threads = std::array<std::thread, 10> {};
   for (auto& t : threads)
-    t = thread([&]() {
-      static auto inc_mutex = mutex();
+    t = std::thread([&]() {
+      static auto inc_mutex = std::mutex {};
       for (auto index = 0; index < 1000; ++index) {
         ++unsafe_value;
         {
-          auto lock = lock_guard<mutex>(inc_mutex);
+          auto lock = std::lock_guard<std::mutex>(inc_mutex);
           ++safe_value;
         }
-        this_thread::yield();
+        std::this_thread::yield();
       }
     });
   
   for (auto& t : threads)
     t.join();
-  println("unsafe_value = {}", unsafe_value);
-  println("safe_value = {}", safe_value);
+  
+  std::println("unsafe_value = {}", unsafe_value);
+  std::println("safe_value = {}", safe_value);
 }
 ```
+
+•	Requires an external std::mutex
+•	Verbose and syntactically heavy with lock_guard
+•	Limited flexibility (can only lock on std::mutex)
 
 ## xtd code
 
-The following code lock on safe_value value reference : 
+### The following code lock on safe_value value reference : 
 
 ```cpp
 #include <xtd/xtd>
@@ -58,20 +61,26 @@ auto main() -> int {
     t = thread::start_new([&]() {
       for (auto index = 0; index < 1000; ++index) {
         ++unsafe_value;
-        lock_(safe_value)
+        lock_(safe_value) {
           ++safe_value;
+        }
         thread::yield();
       }
     });
 
   for (auto& t : threads)
     t.join();
+    
   println("unsafe_value = {}", unsafe_value);
   println("safe_value = {}", safe_value);
 }
 ```
 
-The following code lock on "increment lock" value reference : 
+•	No need for a std::mutex
+•	We focus on what we want to protect, not how to do it
+•	The code is closer to the developer's real intention
+
+### The following code lock on "increment lock" value reference : 
 
 ```cpp
 #include <xtd/xtd>
@@ -85,43 +94,49 @@ auto main() -> int {
     t = thread::start_new([&]() {
       for (auto index = 0; index < 1000; ++index) {
         ++unsafe_value;
-        lock_("increment lock")
+        lock_("increment lock") {
           ++safe_value;
+        }
         thread::yield();
       }
     });
 
   for (auto& t : threads)
     t.join();
+    
   println("unsafe_value = {}", unsafe_value);
   println("safe_value = {}", safe_value);
 }
 ```
 
-## Use
+•	Useful when you want a named critical area (for example shared between modules)
+•	A very difficult case to reproduce properly with std::mutex, or even impossible without a complex global map
+•	Immediately readable, which helps maintain and understand multi-threaded code
+* In xtd, [xtd::fixed_array](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1fixed__array.html) replaces std::array to stay consistent with the framework style.
 
-If we launch the application with the following arguments:
 
-```sh
-./my_app one two "three four" five
+With [lock_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a), you write what you want to do, not how the system should manage it. 
+The lock becomes a hidden implementation detail.
+
+## Conclusion
+
+In a single line, [lock_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a) encapsulates all the synchronization logic. 
+No need to manage mutex, no need to clutter your code. 
+And since it is based on [xtd::threading::monitor](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1threading_1_1monitor.html), it offers you a re-entrant, elegant, and easy-to-use synchronization.
+
+```cpp
+lock_("mylock") {
+  // first level
+  lock_("mylock") {
+    // second level (re-entrant)
+  }
+}
 ```
 
-The result will be:
+Multi-threading has never been so readable in C++.
 
-```
-/!---OMITTED---!/my_app
-one
-two
-three four
-five
-```
-
-## Remarks
-
-* xtd allows you to retrieve the arguments passed to the application without the need to go through `int argc, const char* argv[]`. 
-  This greatly simplifies the structure of the hand.
-* The first argument returned is always the executable file with path.
-* See [main function and startup_ keyword](docs/documentation/Guides/xtd.core/Entry%20point/main_and_startup) to go further.
+> **Pro tip**
+> [lock_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a) works with any referenceable object or string. You can synchronize on this, global variables, or even temporary objects — just be sure they live long enough to avoid undefined behavior.
 
 ## See also
 
