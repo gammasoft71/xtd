@@ -41,9 +41,9 @@ auto main() ->int {
 }
 ```
 
-•	Requires an external std::mutex
-•	Verbose and syntactically heavy with lock_guard
-•	Limited flexibility (can only lock on std::mutex)
+*	Requires an external std::mutex
+*	Verbose and syntactically heavy with lock_guard
+*	Limited flexibility (can only lock on std::mutex)
 
 ## xtd code
 
@@ -76,9 +76,9 @@ auto main() -> int {
 }
 ```
 
-•	No need for a std::mutex
-•	We focus on what we want to protect, not how to do it
-•	The code is closer to the developer's real intention
+*	No need for a std::mutex
+*	We focus on what we want to protect, not how to do it
+*	The code is closer to the developer's real intention
 
 ### The following code lock on "increment lock" value reference : 
 
@@ -109,9 +109,9 @@ auto main() -> int {
 }
 ```
 
-•	Useful when you want a named critical area (for example shared between modules)
-•	A very difficult case to reproduce properly with std::mutex, or even impossible without a complex global map
-•	Immediately readable, which helps maintain and understand multi-threaded code
+*	Useful when you want a named critical area (for example shared between modules)
+*	A very difficult case to reproduce properly with std::mutex, or even impossible without a complex global map
+*	Immediately readable, which helps maintain and understand multi-threaded code
 * In xtd, [xtd::fixed_array](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1fixed__array.html) replaces std::array to stay consistent with the framework style.
 
 
