@@ -13,7 +13,7 @@ You will find concrete solutions to common problems encountered with xtd in mode
 | Category                                                                                                                     | Subject                                                                             | Date             | Level |
 | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ---------------- | ----- |
 | [![threading](/pictures/xtd.threading.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__threading.html) | [Very simple threads synchronisation](/docs/documentation/tips_and_tricks/20250731) | July 31, 2025    | 🟡    |
-| [![core](/pictures/xtd.core.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)           | [Command line arguments](/docs/documentation/tips_and_tricks/202507008)             | July 8, 2025     | 🟢    |
+| [![core](/pictures/xtd.core.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)           | [Command line arguments](/docs/documentation/tips_and_tricks/20250708)              | July 8, 2025     | 🟢    |
 
 ## Legends
 
