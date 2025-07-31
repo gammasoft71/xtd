@@ -17,22 +17,22 @@ List of all tips and tricks, sorted by newest first.
 [core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)
 
 [![delegates](/pictures/xtd.delegates.png)](/docs/documentation/Guides/xtd.core/Types%20overview/delegates) 
-[delegate](/docs/documentation/Guides/xtd.core/Types%20overview/delegates) [delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html)
+[delegates](https://gammasoft71.github.io/xtd/reference_guides/latest/group__delegates.html)
 
 [![diagnostics](/pictures/xtd.diagnostics.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__diagnostics.html)
 [diagnostics](https://gammasoft71.github.io/xtd/reference_guides/latest/group__diagnostics.html)
 
-[![drawing](/pictures/xtd.drawing.png)](/docs/documentation/Guides/xtd.drawing/drawing)
-[drawing](/docs/documentation/Guides/xtd.drawing/drawing)
+[![drawing](/pictures/xtd.drawing.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__drawing.html)
+[drawing](https://gammasoft71.github.io/xtd/reference_guides/latest/group__drawing.html)
 
-[![io](/pictures/xtd.io.png)](/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks)
-[io](/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks)
+[![io](/pictures/xtd.io.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__io.html)
+[io](https://gammasoft71.github.io/xtd/reference_guides/latest/group__io.html)
 
 [![media](/pictures/xtd.media.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__media.html)
 [media](https://gammasoft71.github.io/xtd/reference_guides/latest/group__media.html)
 
-[![net](/pictures/xtd.net.png)](/docs/documentation/Guides/xtd.core/Networking/network_programming)
-[network](/docs/documentation/Guides/xtd.core/Networking/network_programming)
+[![network](/pictures/xtd.net.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__net.html)
+[network](https://gammasoft71.github.io/xtd/reference_guides/latest/group__net.html)
 
 [![threading](/pictures/xtd.threading.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__threading.html)
 [threading](https://gammasoft71.github.io/xtd/reference_guides/latest/group__threading.html)
