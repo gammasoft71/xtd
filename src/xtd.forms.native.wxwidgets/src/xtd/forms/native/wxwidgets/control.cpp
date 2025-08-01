@@ -57,6 +57,7 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/hdc_wrapper>
 #include <xtd/drawing/native/system_colors>
+#include <xtd/drawing_native_export.hpp>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/system_colors>
 #include <xtd/drawing/system_fonts>
