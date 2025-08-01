@@ -120,11 +120,11 @@ namespace xtd {
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of other.
     /// @param other Another polymorphic wrapper.
     /// @return This current instance.
-    any_object& operator =(const any_object& other) = default;
+    any_object& operator =(const any_object& other) noexcept = default;
     /// @brief Move assignment operator. Replaces the contents with a copy of the contents of other.
     /// @param other Another polymorphic wrapper.
     /// @return This current instance.
-    any_object& operator =(any_object&& other) {
+    any_object& operator =(any_object&& other) noexcept {
       value_ = std::move(other.value_);
       return *this;
     };
