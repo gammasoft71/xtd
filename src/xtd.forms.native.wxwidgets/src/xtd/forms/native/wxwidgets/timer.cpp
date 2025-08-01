@@ -1,10 +1,10 @@
+#include <wx/app.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_timer.hpp"
 #include <xtd/forms/native/application>
 #include <xtd/forms/native/timer>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception>
-#include <wx/app.h>
 
 using namespace xtd;
 using namespace xtd::forms::native;

@@ -1,7 +1,9 @@
-#define __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/drawing/native/hdc_wrapper>
-#include <xtd/drawing/native/system_colors>
-#undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <wx/dcbuffer.h>
+#include <wx/dcmemory.h>
+#include <wx/dcclient.h>
+#include <wx/dcscreen.h>
+#include <wx/font.h>
+#include <wx/frame.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #if defined(__WXMSW__)
 #define NOMINMAX
@@ -52,17 +54,15 @@
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_up_down_button.hpp"
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_user_control.hpp"
 #undef __XTD_FORMS_NATIVE_LIBRARY__
+#define __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/drawing/native/hdc_wrapper>
+#include <xtd/drawing/native/system_colors>
+#undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/system_colors>
 #include <xtd/drawing/system_fonts>
 #include <xtd/argument_exception>
 #include <xtd/convert_string>
 #include <xtd/environment>
-#include <wx/dcbuffer.h>
-#include <wx/dcmemory.h>
-#include <wx/dcclient.h>
-#include <wx/dcscreen.h>
-#include <wx/font.h>
-#include <wx/frame.h>
 #include <map>
 
 wxDEFINE_EVENT(wxEVT_ENTER_SIZEMOVE, wxCommandEvent);

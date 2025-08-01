@@ -1,3 +1,4 @@
+#include <wx/graphics.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.hpp"
 #include <xtd/drawing/native/matrix>
@@ -5,7 +6,6 @@
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/as>
 #include <xtd/math>
-#include <wx/graphics.h>
 #include <map>
 #include <vector>
 

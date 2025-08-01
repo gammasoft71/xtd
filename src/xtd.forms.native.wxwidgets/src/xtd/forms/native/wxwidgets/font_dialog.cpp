@@ -1,10 +1,10 @@
+#include <wx/fontdlg.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.hpp"
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.hpp"
 #include <xtd/forms/native/font_dialog>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/choose_font_flags>
-#include <wx/fontdlg.h>
 
 using namespace xtd;
 using namespace xtd::forms::native;

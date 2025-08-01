@@ -1,13 +1,13 @@
+#include <wx/app.h>
+#include <wx/colour.h>
+#include <wx/fontenum.h>
+#include <wx/dcscreen.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/font>
 #include <xtd/drawing/native/font_family>
 #include <xtd/drawing/native/toolkit>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/convert_string>
-#include <wx/app.h>
-#include <wx/colour.h>
-#include <wx/fontenum.h>
-#include <wx/dcscreen.h>
 #include <algorithm>
 #include <cmath>
 

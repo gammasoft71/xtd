@@ -1,3 +1,5 @@
+#include <wx/textdlg.h>
+#include <wx/windowptr.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.hpp"
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.hpp"
@@ -7,8 +9,6 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/drawing/system_colors>
 #include <xtd/convert_string>
-#include <wx/textdlg.h>
-#include <wx/windowptr.h>
 
 using namespace xtd;
 using namespace xtd::forms::native;

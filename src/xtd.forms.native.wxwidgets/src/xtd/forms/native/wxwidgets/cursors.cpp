@@ -1,3 +1,5 @@
+#include <wx/cursor.h>
+#include <wx/image.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/cursors>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
@@ -5,8 +7,6 @@
 #include <xtd/io/path>
 #include <xtd/environment>
 #include <xtd/string>
-#include <wx/cursor.h>
-#include <wx/image.h>
 
 using namespace xtd;
 using namespace xtd::forms::native;

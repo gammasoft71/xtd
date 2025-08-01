@@ -1,12 +1,12 @@
+#include <wx/app.h>
+#include <wx/notifmsg.h>
+#include <wx/icon.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.hpp"
 #include <xtd/forms/native/message_notifier>
 #include <xtd/forms/native/message_notifier_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/convert_string>
-#include <wx/app.h>
-#include <wx/notifmsg.h>
-#include <wx/icon.h>
 
 using namespace xtd;
 using namespace xtd::forms::native;

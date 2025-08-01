@@ -1,14 +1,14 @@
+#include <wx/bitmap.h>
+#include <wx/icon.h>
+#include <wx/iconbndl.h>
+#include <wx/image.h>
+#include <wx/stream.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/icon>
 #include <xtd/drawing/native/image_formats>
 #include <xtd/drawing/native/toolkit>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/convert_string>
-#include <wx/bitmap.h>
-#include <wx/icon.h>
-#include <wx/iconbndl.h>
-#include <wx/image.h>
-#include <wx/stream.h>
 
 using namespace xtd;
 using namespace xtd::drawing::native;

@@ -1,3 +1,5 @@
+#include <wx/progdlg.h>
+#include <wx/timer.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.hpp"
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.hpp"
@@ -7,8 +9,6 @@
 #include <xtd/forms/progress_dialog_flags>
 #include <xtd/as>
 #include <xtd/convert_string>
-#include <wx/progdlg.h>
-#include <wx/timer.h>
 
 using namespace xtd;
 using namespace xtd::drawing;

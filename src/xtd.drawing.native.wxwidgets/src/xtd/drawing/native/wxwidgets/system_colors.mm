@@ -1,6 +1,6 @@
 #if defined(__WXOSX__)
-#include <xtd/types>
 #include <AppKit/AppKit.h>
+#include <xtd/types>
 
 using namespace xtd;
 

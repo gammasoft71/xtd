@@ -7,7 +7,9 @@
 #include <shlobj.h>
 #undef interface
 #endif
-
+#include <wx/filefn.h>
+#include <wx/dirdlg.h>
+#include <wx/windowptr.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.hpp"
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.hpp"
@@ -15,9 +17,6 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/browser_info_flags>
 #include <xtd/convert_string>
-#include <wx/filefn.h>
-#include <wx/dirdlg.h>
-#include <wx/windowptr.h>
 
 using namespace xtd;
 using namespace xtd::forms::native;

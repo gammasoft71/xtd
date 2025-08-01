@@ -1,3 +1,8 @@
+#include <wx/app.h>
+#include <wx/dcgraph.h>
+#include <wx/dcmemory.h>
+#include <wx/dcscreen.h>
+#include <wx/region.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.hpp"
 #include "../../../../../include/xtd/drawing/native/wx_brush.hpp"
@@ -22,11 +27,6 @@
 #include <xtd/convert_string>
 #include <xtd/math>
 #include <xtd/string>
-#include <wx/app.h>
-#include <wx/dcgraph.h>
-#include <wx/dcmemory.h>
-#include <wx/dcscreen.h>
-#include <wx/region.h>
 #include <cmath>
 #include <vector>
 

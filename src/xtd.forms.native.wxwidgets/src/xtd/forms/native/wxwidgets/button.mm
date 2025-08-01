@@ -1,3 +1,5 @@
+#include <Quartz/Quartz.h>
+#include <Availability.h>
 #if defined(__WXOSX__)
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_button"
@@ -5,8 +7,6 @@
 #include <xtd/forms/native/button>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception>
-#include <Quartz/Quartz.h>
-#include <Availability.h>
 
 using namespace xtd;
 using namespace xtd::forms::native;
