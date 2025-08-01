@@ -1,10 +1,10 @@
+#include <wx/settings.h>
+#include <wx/frame.h>
 #if defined(__WXMSW__)
 #define NOMINMAX
 #include <Windows.h>
 #undef interface
 #endif
-#include <wx/settings.h>
-#include <wx/frame.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/arranged_direction_window>
 #include <xtd/forms/native/system_information>
