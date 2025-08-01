@@ -1,4 +1,9 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
+#include "../../../../../include/xtd/drawing/native/hdc_wrapper.hpp"
+#include "../../../../../include/xtd/drawing/native/wx_brush.hpp"
+#include "../../../../../include/xtd/drawing/native/wx_pen.hpp"
+#include "../../../../../include/xtd/drawing/native/wxConicalGradient.hpp"
+#include "../../../../../include/xtd/drawing/native/wxDrawString.hpp"
 #include <xtd/drawing/native/graphics>
 #include <xtd/drawing/native/compositing_modes>
 #include <xtd/drawing/native/compositing_qualities>
@@ -12,11 +17,6 @@
 #include <xtd/drawing/native/string_alignments>
 #include <xtd/drawing/native/string_trimmings>
 #include <xtd/drawing/native/text_rendering>
-#include "../../../../../include/xtd/drawing/native/hdc_wrapper.hpp"
-#include "../../../../../include/xtd/drawing/native/wx_brush.hpp"
-#include "../../../../../include/xtd/drawing/native/wx_pen.hpp"
-#include "../../../../../include/xtd/drawing/native/wxConicalGradient.hpp"
-#include "../../../../../include/xtd/drawing/native/wxDrawString.hpp"
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/as>
 #include <xtd/convert_string>
