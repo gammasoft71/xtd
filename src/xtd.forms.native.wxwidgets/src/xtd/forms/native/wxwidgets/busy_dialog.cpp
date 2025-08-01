@@ -1,12 +1,3 @@
-#define __XTD_FORMS_NATIVE_LIBRARY__
-#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.hpp"
-#include <xtd/forms/native/application>
-#include <xtd/forms/native/busy_dialog>
-#undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/drawing/bitmap>
-#include <xtd/convert_string>
-#include <wx/iconbndl.h>
-
 // Workaround : with wxWidgets version <= 3.1.4 wxBusyInfo does not shows hourglass cursor on macOS ==> set public m_InfoFrame...
 #if !defined(__WXOSX__)
 #include <wx/busyinfo.h>
@@ -18,6 +9,15 @@
 #undef private
 #pragma clang diagnostic pop
 #endif
+#include <wx/iconbndl.h>
+
+#define __XTD_FORMS_NATIVE_LIBRARY__
+#include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.hpp"
+#include <xtd/forms/native/application>
+#include <xtd/forms/native/busy_dialog>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/drawing/bitmap>
+#include <xtd/convert_string>
 
 using namespace xtd;
 using namespace xtd::forms::native;

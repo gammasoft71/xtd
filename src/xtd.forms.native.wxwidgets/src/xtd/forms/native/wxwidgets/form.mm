@@ -1,10 +1,10 @@
 #if defined(__WXOSX__)
+#include <AppKit/AppKit.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_form"
 #include <xtd/forms/native/form>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception>
-#include <AppKit/AppKit.h>
 
 using namespace xtd;
 using namespace xtd::forms::native;

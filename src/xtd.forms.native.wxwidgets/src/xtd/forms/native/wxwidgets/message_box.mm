@@ -1,4 +1,6 @@
 #if defined(__WXOSX__)
+#import <Cocoa/Cocoa.h>
+#import <Foundation/Foundation.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler"
 #include <xtd/forms/native/application>
@@ -6,8 +8,6 @@
 #include <xtd/forms/native/message_box>
 #include <xtd/forms/native/message_box_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#import <Cocoa/Cocoa.h>
-#import <Foundation/Foundation.h>
 
 using namespace xtd;
 using namespace xtd::forms::native;

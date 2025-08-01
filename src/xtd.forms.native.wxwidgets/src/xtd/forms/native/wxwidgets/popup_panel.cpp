@@ -1,10 +1,10 @@
+#include <wx/popupwin.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_popup_panel.hpp"
 #include <xtd/forms/native/popup_panel>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception>
 #include <xtd/convert_string>
-#include <wx/popupwin.h>
 
 using namespace xtd;
 using namespace xtd::diagnostics;

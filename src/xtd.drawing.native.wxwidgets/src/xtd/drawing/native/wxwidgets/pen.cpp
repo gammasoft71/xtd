@@ -1,3 +1,5 @@
+#include <wx/colour.h>
+#include <wx/pen.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/drawing/native/wx_pen.hpp"
 #include <xtd/drawing/native/pen>
@@ -5,8 +7,6 @@
 #include <xtd/drawing/native/line_joins>
 #include <xtd/drawing/native/toolkit>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
-#include <wx/colour.h>
-#include <wx/pen.h>
 #include <map>
 #include <vector>
 

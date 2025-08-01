@@ -1,3 +1,5 @@
+#include <wx/dcscreen.h>
+#include <wx/display.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/hdc_wrapper>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
@@ -8,8 +10,6 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/convert_string>
 #include <xtd/string>
-#include <wx/dcscreen.h>
-#include <wx/display.h>
 
 using namespace xtd;
 using namespace xtd::drawing;

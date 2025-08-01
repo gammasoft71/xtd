@@ -1,3 +1,6 @@
+#include <wx/app.h>
+#include <wx/menu.h>
+#include <wx/menuitem.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/menu_item>
 #include <xtd/forms/native/menu_item_kind>
@@ -5,9 +8,6 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception>
 #include <xtd/convert_string>
-#include <wx/app.h>
-#include <wx/menu.h>
-#include <wx/menuitem.h>
 #include <map>
 
 using namespace xtd;

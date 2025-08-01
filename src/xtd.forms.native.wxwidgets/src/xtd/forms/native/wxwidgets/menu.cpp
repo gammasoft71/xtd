@@ -1,10 +1,10 @@
+#include <wx/app.h>
+#include <wx/menu.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/menu>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception>
 #include <xtd/convert_string>
-#include <wx/app.h>
-#include <wx/menu.h>
 
 using namespace xtd;
 using namespace xtd::drawing;

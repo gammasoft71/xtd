@@ -1,3 +1,5 @@
+#include <wx/filedlg.h>
+#include <wx/windowptr.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.hpp"
 #include <xtd/forms/native/file_dialog>
@@ -5,8 +7,6 @@
 #include <xtd/forms/open_file_name_flags>
 #include <xtd/io/path>
 #include <xtd/convert_string>
-#include <wx/filedlg.h>
-#include <wx/windowptr.h>
 
 using namespace xtd;
 using namespace xtd::collections::generic;

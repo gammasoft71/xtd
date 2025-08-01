@@ -1,3 +1,5 @@
+#include <wx/colour.h>
+#include <wx/region.h>
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.hpp"
 #include <xtd/drawing/native/region>
@@ -7,8 +9,6 @@
 #include <xtd/as>
 #include <xtd/int32_object>
 #include <xtd/single_object>
-#include <wx/colour.h>
-#include <wx/region.h>
 #include <map>
 #include <vector>
 

@@ -1,6 +1,3 @@
-#define __XTD_FORMS_NATIVE_LIBRARY__
-#include <xtd/forms/native/cursor>
-#undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <wx/bitmap.h>
 #include <wx/cursor.h>
 #include <wx/window.h>
@@ -10,6 +7,9 @@
 #include <Windowsx.h>
 #undef interface
 #endif
+#define __XTD_FORMS_NATIVE_LIBRARY__
+#include <xtd/forms/native/cursor>
+#undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace xtd;
 using namespace xtd::drawing;

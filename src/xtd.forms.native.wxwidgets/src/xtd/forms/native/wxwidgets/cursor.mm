@@ -1,8 +1,8 @@
 #if defined(__WXOSX__)
+#include <Quartz/Quartz.h>
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/cursor>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
-#include <Quartz/Quartz.h>
 
 using namespace xtd::forms::native;
 
