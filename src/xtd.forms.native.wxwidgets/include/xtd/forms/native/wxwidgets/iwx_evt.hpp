@@ -6,6 +6,7 @@
 /// @endcond
 
 #include <wx/event.h>
+#undef interface
 
 namespace xtd {
   namespace forms {

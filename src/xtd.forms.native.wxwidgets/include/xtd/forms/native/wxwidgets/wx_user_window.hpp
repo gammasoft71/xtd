@@ -7,6 +7,7 @@
 
 #include <wx/panel.h>
 #include <wx/control.h>
+#undef interface
 
 namespace xtd {
   namespace forms {

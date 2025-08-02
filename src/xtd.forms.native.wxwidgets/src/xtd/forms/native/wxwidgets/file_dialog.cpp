@@ -1,5 +1,6 @@
 #include <wx/filedlg.h>
 #include <wx/windowptr.h>
+#undef interface
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.hpp"
 #include <xtd/forms/native/file_dialog>

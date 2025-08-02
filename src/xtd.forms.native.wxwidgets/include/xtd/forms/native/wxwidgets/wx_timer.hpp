@@ -5,10 +5,11 @@
 #endif
 /// @endcond
 
-#include <xtd/delegate>
-#include <xtd/event_args>
 #include <wx/app.h>
 #include <wx/timer.h>
+#undef interface
+#include <xtd/delegate>
+#include <xtd/event_args>
 
 namespace xtd {
   namespace forms {

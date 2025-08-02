@@ -5,6 +5,9 @@
 #endif
 /// @endcond
 
+#include <wx/calctrl.h>
+#include <wx/panel.h>
+#undef interface
 #include "control_handler.hpp"
 #include <xtd/drawing/system_colors>
 #include <xtd/forms/native/create_params>
@@ -12,8 +15,6 @@
 #include <xtd/argument_exception>
 #include <xtd/chrono>
 #include <xtd/date_time>
-#include <wx/calctrl.h>
-#include <wx/panel.h>
 #include <vector>
 
 namespace xtd {

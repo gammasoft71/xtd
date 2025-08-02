@@ -2,6 +2,7 @@
 // To prevent destroy control and drop down menu change the tool bar tool style to wxTOOL_STYLE_BUTTON et set drop down menu to null...
 
 #include <wx/toolbar.h>
+#undef interface
 #include <xtd/types>
 
 // We need to access the private members of the wxToolBarToolBase class.

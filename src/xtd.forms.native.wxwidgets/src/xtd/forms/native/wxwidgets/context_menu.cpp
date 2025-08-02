@@ -1,9 +1,10 @@
+#include <wx/menu.h>
+#undef interface
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/context_menu>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception>
 #include <xtd/convert_string>
-#include <wx/menu.h>
 
 using namespace xtd;
 using namespace xtd::drawing;

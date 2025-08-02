@@ -1,5 +1,6 @@
 #include <wx/dcscreen.h>
 #include <wx/display.h>
+#undef interface
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/hdc_wrapper>
 #define __XTD_DRAWING_NATIVE_LIBRARY__

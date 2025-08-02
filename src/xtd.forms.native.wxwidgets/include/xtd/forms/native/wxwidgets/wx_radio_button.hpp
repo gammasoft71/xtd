@@ -5,6 +5,10 @@
 #endif
 /// @endcond
 
+#include <wx/platform.h>
+#include <wx/radiobut.h>
+#include <wx/tglbtn.h>
+#undef interface
 #include "control_handler.hpp"
 #include "wx_user_window.hpp"
 #include <xtd/drawing/system_colors>
@@ -12,9 +16,6 @@
 #include <xtd/forms/native/button_styles>
 #include <xtd/argument_exception>
 #include <xtd/convert_string>
-#include <wx/platform.h>
-#include <wx/radiobut.h>
-#include <wx/tglbtn.h>
 
 namespace xtd {
   namespace forms {

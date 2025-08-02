@@ -5,14 +5,15 @@
 #endif
 /// @endcond
 
+#include <wx/datectrl.h>
+#include <wx/timectrl.h>
+#include <wx/dateevt.h>
+#undef interface
 #include "control_handler.hpp"
 #include <xtd/drawing/system_colors>
 #include <xtd/forms/native/create_params>
 #include <xtd/forms/native/date_time_picker_styles>
 #include <xtd/argument_exception>
-#include <wx/datectrl.h>
-#include <wx/timectrl.h>
-#include <wx/dateevt.h>
 
 namespace xtd {
   namespace forms {

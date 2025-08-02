@@ -1,5 +1,6 @@
 #include <wx/colour.h>
 #include <wx/region.h>
+#undef interface
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.hpp"
 #include <xtd/drawing/native/region>

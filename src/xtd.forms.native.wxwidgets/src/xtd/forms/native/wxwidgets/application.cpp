@@ -2,6 +2,7 @@
 #include <wx/evtloop.h>
 #include <wx/sysopt.h>
 #include <wx/stdpaths.h>
+#undef interface
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.hpp"
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.hpp"

@@ -1,6 +1,7 @@
 #include <wx/app.h>
 #include <wx/menu.h>
 #include <wx/menuitem.h>
+#undef interface
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/menu_item>
 #include <xtd/forms/native/menu_item_kind>

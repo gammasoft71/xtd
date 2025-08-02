@@ -5,6 +5,14 @@
 #endif
 /// @endcond
 
+#include <wx/app.h>
+#include <wx/dialog.h>
+#include <wx/event.h>
+#include <wx/frame.h>
+#include <wx/panel.h>
+#include <wx/scrolwin.h>
+#include <wx/settings.h>
+#undef interface
 #include "control_handler.hpp"
 #include <xtd/drawing/system_colors>
 #include <xtd/forms/native/create_params>
@@ -13,13 +21,6 @@
 #include <xtd/forms/native/window_styles>
 #include <xtd/cdebug>
 #include <xtd/convert_string>
-#include <wx/app.h>
-#include <wx/dialog.h>
-#include <wx/event.h>
-#include <wx/frame.h>
-#include <wx/panel.h>
-#include <wx/scrolwin.h>
-#include <wx/settings.h>
 
 bool __toggle_full_screen_frame__(wxTopLevelWindow* control);
 

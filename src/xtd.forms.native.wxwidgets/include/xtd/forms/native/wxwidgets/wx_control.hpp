@@ -5,11 +5,12 @@
 #endif
 /// @endcond
 
+#include <wx/panel.h>
+#undef interface
 #include "control_handler.hpp"
 #include <xtd/drawing/system_colors>
 #include <xtd/forms/native/create_params>
 #include <xtd/argument_exception>
-#include <wx/panel.h>
 
 namespace xtd {
   namespace forms {

@@ -10,7 +10,7 @@
 #pragma clang diagnostic pop
 #endif
 #include <wx/iconbndl.h>
-
+#undef interface
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.hpp"
 #include <xtd/forms/native/application>

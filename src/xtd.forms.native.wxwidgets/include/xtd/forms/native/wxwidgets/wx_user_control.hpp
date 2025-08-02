@@ -5,13 +5,14 @@
 #endif
 /// @endcond
 
+#include <wx/panel.h>
+#include <wx/scrolwin.h>
+#undef interface
 #include "control_handler.hpp"
 #include "wx_user_window.hpp"
 #include <xtd/drawing/system_colors>
 #include <xtd/forms/native/create_params>
 #include <xtd/argument_exception>
-#include <wx/panel.h>
-#include <wx/scrolwin.h>
 
 namespace xtd {
   namespace forms {

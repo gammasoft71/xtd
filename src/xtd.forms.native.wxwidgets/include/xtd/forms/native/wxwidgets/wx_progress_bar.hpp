@@ -5,13 +5,14 @@
 #endif
 /// @endcond
 
+#include <wx/gauge.h>
+#include <wx/timer.h>
+#undef interface
 #include "control_handler.hpp"
 #include <xtd/drawing/system_colors>
 #include <xtd/forms/native/create_params>
 #include <xtd/forms/native/progress_bar_styles>
 #include <xtd/argument_exception>
-#include <wx/gauge.h>
-#include <wx/timer.h>
 
 namespace xtd {
   namespace forms {

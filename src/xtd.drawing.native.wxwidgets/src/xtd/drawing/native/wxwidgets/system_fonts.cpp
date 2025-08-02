@@ -1,5 +1,6 @@
 #include <wx/font.h>
 #include <wx/settings.h>
+#undef interface
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/system_fonts>
 #include <xtd/drawing/native/toolkit>

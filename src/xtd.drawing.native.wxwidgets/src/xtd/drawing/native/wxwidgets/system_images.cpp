@@ -1,5 +1,6 @@
 #include <wx/image.h>
 #include <wx/bitmap.h>
+#undef interface
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/system_images>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__

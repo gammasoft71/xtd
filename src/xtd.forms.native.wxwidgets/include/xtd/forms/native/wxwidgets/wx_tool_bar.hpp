@@ -5,14 +5,15 @@
 #endif
 /// @endcond
 
+#include <wx/artprov.h>
+#include <wx/toolbar.h>
+#undef interface
 #include "control_handler.hpp"
 #include <xtd/drawing/system_colors>
 #include <xtd/forms/native/create_params>
 #include <xtd/forms/native/tool_bar_styles>
 #include <xtd/argument_exception>
 #include <xtd/convert_string>
-#include <wx/artprov.h>
-#include <wx/toolbar.h>
 
 void __reset_tool_bar_tools_styles__(wxToolBar* toolBar);
 

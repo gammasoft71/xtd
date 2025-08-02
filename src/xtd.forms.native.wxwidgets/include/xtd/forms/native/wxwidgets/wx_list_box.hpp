@@ -5,12 +5,13 @@
 #endif
 /// @endcond
 
+#include <wx/listbox.h>
+#undef interface
 #include "control_handler.hpp"
 #include <xtd/drawing/system_colors>
 #include <xtd/forms/native/create_params>
 #include <xtd/forms/native/list_box_styles>
 #include <xtd/argument_exception>
-#include <wx/listbox.h>
 
 namespace xtd {
   namespace forms {

@@ -1,5 +1,6 @@
 #include <wx/settings.h>
 #include <wx/frame.h>
+#undef interface
 #if defined(__WXMSW__)
 #define NOMINMAX
 #include <Windows.h>
