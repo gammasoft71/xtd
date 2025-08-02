@@ -1,5 +1,6 @@
 #include <wx/colour.h>
 #include <wx/pen.h>
+#undef interface
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/drawing/native/wx_pen.hpp"
 #include <xtd/drawing/native/pen>

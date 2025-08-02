@@ -5,6 +5,7 @@
 #include <wx/image.h>
 #include <wx/palette.h>
 #include <wx/stream.h>
+#undef interface
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/image>
 #include <xtd/drawing/native/compositing_modes>

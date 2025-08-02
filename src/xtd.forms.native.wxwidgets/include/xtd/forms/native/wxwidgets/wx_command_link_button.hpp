@@ -5,6 +5,9 @@
 #endif
 /// @endcond
 
+#include <wx/commandlinkbutton.h>
+#include <wx/platform.h>
+#undef interface
 #include "control_handler.hpp"
 #include "wx_user_window.hpp"
 #include <xtd/drawing/system_colors>
@@ -15,8 +18,6 @@
 #include <xtd/argument_exception>
 #include <xtd/convert_string>
 #include <xtd/environment>
-#include <wx/commandlinkbutton.h>
-#include <wx/platform.h>
 
 namespace xtd {
   namespace forms {

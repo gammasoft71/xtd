@@ -5,6 +5,9 @@
 #endif
 /// @endcond
 
+#include <wx/button.h>
+#include <wx/platform.h>
+#undef interface
 #include "control_handler.hpp"
 #include "wx_user_window.hpp"
 #include <xtd/drawing/system_colors>
@@ -12,8 +15,6 @@
 #include <xtd/forms/native/button_styles>
 #include <xtd/argument_exception>
 #include <xtd/convert_string>
-#include <wx/button.h>
-#include <wx/platform.h>
 
 #if defined(__WXOSX__)
 void __set_button_bezel_style__(wxAnyButton* control, xtd::int32 height);

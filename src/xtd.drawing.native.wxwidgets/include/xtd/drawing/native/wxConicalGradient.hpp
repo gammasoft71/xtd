@@ -8,6 +8,7 @@
 #include <wx/dcclient.h>
 #include <wx/dcmemory.h>
 #include <wx/graphics.h>
+#undef interface
 #include <cmath>
 
 class wxConicalGradient {

@@ -5,12 +5,13 @@
 #endif
 /// @endcond
 
+#include <wx/spinbutt.h>
+#undef interface
 #include "control_handler.hpp"
 #include <xtd/drawing/system_colors>
 #include <xtd/forms/native/create_params>
 #include <xtd/forms/native/up_down_styles>
 #include <xtd/argument_exception>
-#include <wx/spinbutt.h>
 
 namespace xtd {
   namespace forms {

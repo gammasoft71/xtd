@@ -5,13 +5,14 @@
 #endif
 /// @endcond
 
-#include <xtd/delegate>
-#include <xtd/event>
-#include <xtd/scope_exit>
 #include <wx/aboutdlg.h>
 #include <wx/app.h>
 #include <wx/menu.h>
 #include <wx/window.h>
+#undef interface
+#include <xtd/delegate>
+#include <xtd/event>
+#include <xtd/scope_exit>
 #include <cstdint>
 #include <exception>
 #include <stdexcept>

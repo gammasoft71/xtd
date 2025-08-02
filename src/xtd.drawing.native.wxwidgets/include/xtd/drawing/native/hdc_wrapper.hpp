@@ -5,12 +5,13 @@
 #endif
 /// @endcond
 
-#include <xtd/types>
 #include <wx/dc.h>
 #include <wx/dcbuffer.h>
 #include <wx/dcmemory.h>
 #include <wx/dcscreen.h>
 #include <wx/graphics.h>
+#undef interface
+#include <xtd/types>
 #include <cstdint>
 #include <memory>
 

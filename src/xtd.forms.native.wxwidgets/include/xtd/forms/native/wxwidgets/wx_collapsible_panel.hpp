@@ -5,13 +5,14 @@
 #endif
 /// @endcond
 
+#include <wx/collpane.h>
+#include <wx/scrolwin.h>
+#undef interface
 #include "control_handler.hpp"
 #include <xtd/drawing/system_colors>
 #include <xtd/forms/native/create_params>
 #include <xtd/argument_exception>
 #include <xtd/convert_string>
-#include <wx/collpane.h>
-#include <wx/scrolwin.h>
 
 namespace xtd {
   namespace forms {

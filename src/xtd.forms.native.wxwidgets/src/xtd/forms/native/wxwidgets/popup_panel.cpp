@@ -1,4 +1,5 @@
 #include <wx/popupwin.h>
+#undef interface
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/wx_popup_panel.hpp"
 #include <xtd/forms/native/popup_panel>

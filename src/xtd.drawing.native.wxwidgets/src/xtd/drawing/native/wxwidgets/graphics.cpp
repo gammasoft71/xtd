@@ -3,6 +3,7 @@
 #include <wx/dcmemory.h>
 #include <wx/dcscreen.h>
 #include <wx/region.h>
+#undef interface
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.hpp"
 #include "../../../../../include/xtd/drawing/native/wx_brush.hpp"

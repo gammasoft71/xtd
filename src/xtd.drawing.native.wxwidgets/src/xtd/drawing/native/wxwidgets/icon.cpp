@@ -3,6 +3,7 @@
 #include <wx/iconbndl.h>
 #include <wx/image.h>
 #include <wx/stream.h>
+#undef interface
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/icon>
 #include <xtd/drawing/native/image_formats>

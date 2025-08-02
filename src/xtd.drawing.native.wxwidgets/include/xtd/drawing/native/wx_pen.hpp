@@ -5,12 +5,13 @@
 #endif
 /// @endcond
 
-#include "wx_brush.hpp"
-#include <xtd/argument_exception>
-#include <xtd/as>
 #include <wx/pen.h>
 #include <wx/image.h>
 #include <wx/graphics.h>
+#undef interface
+#include "wx_brush.hpp"
+#include <xtd/argument_exception>
+#include <xtd/as>
 #include <cstdint>
 
 namespace xtd {

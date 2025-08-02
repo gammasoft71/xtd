@@ -1,4 +1,5 @@
 #include <wx/colordlg.h>
+#undef interface
 #if defined(__WXGTK__)
 #undef interface_
 #include <gtk/gtk.h>

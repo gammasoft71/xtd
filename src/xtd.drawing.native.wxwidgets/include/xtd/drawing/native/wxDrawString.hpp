@@ -5,6 +5,13 @@
 #endif
 /// @endcond
 
+#include <wx/control.h>
+#include <wx/dcclient.h>
+#include <wx/dcmemory.h>
+#include <wx/dcgraph.h>
+#include <wx/graphics.h>
+#include <wx/string.h>
+#undef interface
 #include "hdc_wrapper.hpp"
 #include "wx_brush.hpp"
 #include "wxConicalGradient.hpp"
@@ -14,12 +21,6 @@
 #include <xtd/io/path>
 #include <xtd/convert_string>
 #include <xtd/math>
-#include <wx/control.h>
-#include <wx/dcclient.h>
-#include <wx/dcmemory.h>
-#include <wx/dcgraph.h>
-#include <wx/graphics.h>
-#include <wx/string.h>
 
 namespace xtd {
   namespace drawing {

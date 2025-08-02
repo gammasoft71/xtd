@@ -5,15 +5,16 @@
 #endif
 /// @endcond
 
+#include <wx/event.h>
+#include <wx/panel.h>
+#include <wx/spinctrl.h>
+#include <wx/textctrl.h>
+#undef interface
 #include "control_handler.hpp"
 #include <xtd/drawing/system_colors>
 #include <xtd/forms/native/create_params>
 #include <xtd/forms/native/up_down_styles>
 #include <xtd/argument_exception>
-#include <wx/event.h>
-#include <wx/panel.h>
-#include <wx/spinctrl.h>
-#include <wx/textctrl.h>
 #include <limits>
 
 namespace xtd {

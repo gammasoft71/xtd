@@ -5,11 +5,11 @@
 #include <Windowsx.h>
 #include <Commctrl.h>
 #include <shlobj.h>
-#undef interface
 #endif
 #include <wx/filefn.h>
 #include <wx/dirdlg.h>
 #include <wx/windowptr.h>
+#undef interface
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/control_handler.hpp"
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.hpp"

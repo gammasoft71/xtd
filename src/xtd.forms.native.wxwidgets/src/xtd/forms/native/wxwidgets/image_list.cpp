@@ -1,6 +1,7 @@
 #include <wx/image.h>
 #include <wx/bitmap.h>
 #include <wx/imaglist.h>
+#undef interface
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/forms/native/image_list>
 #undef __XTD_FORMS_NATIVE_LIBRARY__

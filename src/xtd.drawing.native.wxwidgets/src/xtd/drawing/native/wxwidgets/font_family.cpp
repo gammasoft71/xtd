@@ -2,6 +2,7 @@
 #include <wx/colour.h>
 #include <wx/fontenum.h>
 #include <wx/dcscreen.h>
+#undef interface
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/font>
 #include <xtd/drawing/native/font_family>

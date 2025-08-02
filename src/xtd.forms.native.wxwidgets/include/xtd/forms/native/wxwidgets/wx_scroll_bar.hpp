@@ -5,12 +5,13 @@
 #endif
 /// @endcond
 
+#include <wx/scrolbar.h>
+#undef interface
 #include "control_handler.hpp"
 #include <xtd/drawing/system_colors>
 #include <xtd/forms/native/create_params>
 #include <xtd/forms/native/scroll_bar_styles>
 #include <xtd/argument_exception>
-#include <wx/scrolbar.h>
 
 namespace xtd {
   namespace forms {

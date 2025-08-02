@@ -5,14 +5,15 @@
 #endif
 /// @endcond
 
+#include <wx/generic/statbmpg.h>
+#include <wx/statbmp.h>
+#undef interface
 #include "control_handler.hpp"
 #include "wx_user_window.hpp"
 #include <xtd/drawing/system_colors>
 #include <xtd/forms/native/create_params>
 #include <xtd/forms/native/static_styles>
 #include <xtd/argument_exception>
-#include <wx/generic/statbmpg.h>
-#include <wx/statbmp.h>
 
 namespace xtd {
   namespace forms {
