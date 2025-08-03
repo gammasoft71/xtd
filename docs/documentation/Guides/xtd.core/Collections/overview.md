@@ -24,14 +24,14 @@ To complete the std, xtd implements some owner collections.
 
 Sequence collections implement data structures which can be accessed sequentially.
 
-| xtd container                                                                                                        | std container equivalent                                                      | Definition                                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| [xtd::array<type_t, rank=1\>](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1array.html)      | [std::vector<T\>](https://en.cppreference.com/w/cpp/container/vector.html)    | Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays. |
-| [xtd::fixed_array<type_t\>](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1fixed__array.html) | [std::array<T, N\>](https://en.cppreference.com/w/cpp/container/array)        | Represents a fixed array class.                                                                                               |
-| [std::vector](https://en.cppreference.com/w/cpp/container/vector)                                                    |                                                                               | Represents a dynamic contiguous array.                                                                                        |
-| [std::deque](https://en.cppreference.com/w/cpp/container/deque)                                                      |                                                                               | Represents a double-ended queue.                                                                                              |
-| [std::forward_list](https://en.cppreference.com/w/cpp/container/forward_list)                                        |                                                                               | Represents a singly-linked list.                                                                                              |
-| [std::list](https://en.cppreference.com/w/cpp/container/list)                                                        |                                                                               | Represents a doubly-linked list.                                                                                              |
+| xtd container                                                                                                         | std container equivalent                                                    | Definition                                                                                                                    |
+| --------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| [`xtd::array<type_t, rank=1>`](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1array.html)      | [`std::vector<T>`](https://en.cppreference.com/w/cpp/container/vector.html) | Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays. |
+| [`xtd::fixed_array<type_t>`](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1fixed__array.html) | [`std::array<T, N>`](https://en.cppreference.com/w/cpp/container/array)     | Represents a fixed array class.                                                                                               |
+| [std::vector](https://en.cppreference.com/w/cpp/container/vector)                                                     |                                                                             | Represents a dynamic contiguous array.                                                                                        |
+| [std::deque](https://en.cppreference.com/w/cpp/container/deque)                                                       |                                                                             | Represents a double-ended queue.                                                                                              |
+| [std::forward_list](https://en.cppreference.com/w/cpp/container/forward_list)                                         |                                                                             | Represents a singly-linked list.                                                                                              |
+| [std::list](https://en.cppreference.com/w/cpp/container/list)                                                         |                                                                             | Represents a doubly-linked list.                                                                                              |
 
 ### Associative collections
 
@@ -123,19 +123,19 @@ In general, you should use generic collections. The following table describes so
 
 Lors du choix d'une classe de collection, il convient de tenir compte des compromis possibles en termes de performances. Utilisez le tableau suivant pour comparer la complexité algorithmique de divers types de collection.
 
-| Operation                                                                                               | Amortized | Worst Case              |
-| ------------------------------------------------------------------------------------------------------- | --------- | ----------------------- |
-| [std::stack<type_t>::push](https://en.cppreference.com/w/cpp/container/stack/push)                      | O(1)      | O(n)                    |
-| [std::queue<type_t>::push](https://en.cppreference.com/w/cpp/container/queue/push)                      | O(1)      | O(n)                    |
-| [std::vector<type_t>::push_back](https://en.cppreference.com/w/cpp/container/vector/push_back)          | O(1)      | O(n)                    |
-| [std::vector<type_t>::operator[size_t]](https://en.cppreference.com/w/cpp/container/vector/operator_at) | O(1)      | O(1)                    |
-| [std::vector<type_t>::iterator](https://en.cppreference.com/w/cpp/container/vector)                     | O(n)      | O(n)                    |
-| [std::unordered_set<type_t>::insert](https://en.cppreference.com/w/cpp/container/unordered_set/insert)  | O(1)      | O(n)                    |
-| [std::unordered_set<type_t>::find](https://en.cppreference.com/w/cpp/container/unordered_set/find)      | O(1)      | O(n)                    |
-| [std::set<type_t>::insert](https://en.cppreference.com/w/cpp/container/set/insert)                      | O(log n)  | O(n)                    |
-| [std::unordered_map<type_t>::insert](https://en.cppreference.com/w/cpp/container/unordered_map/insert)  | O(1)      | O(n)                    |
-| [std::unordered_map<type_t>::find](https://en.cppreference.com/w/cpp/container/unordered_map/find)      | O(1)      | O(1) – or strictly O(n) |
-| [std::map<type_t>::insert](https://en.cppreference.com/w/cpp/container/map/insert)                      | O(log n)  | O(n log n)              |
+| Operation                                                                                                 | Amortized | Worst Case              |
+| --------------------------------------------------------------------------------------------------------- | --------- | ----------------------- |
+| [`std::stack<type_t>::push`](https://en.cppreference.com/w/cpp/container/stack/push)                      | O(1)      | O(n)                    |
+| [`std::queue<type_t>::push`](https://en.cppreference.com/w/cpp/container/queue/push)                      | O(1)      | O(n)                    |
+| [`std::vector<type_t>::push_back`](https://en.cppreference.com/w/cpp/container/vector/push_back)          | O(1)      | O(n)                    |
+| [`std::vector<type_t>::operator[size_t]`](https://en.cppreference.com/w/cpp/container/vector/operator_at) | O(1)      | O(1)                    |
+| [`std::vector<type_t>::iterator`](https://en.cppreference.com/w/cpp/container/vector)                     | O(n)      | O(n)                    |
+| [`std::unordered_set<type_t>::insert`](https://en.cppreference.com/w/cpp/container/unordered_set/insert)  | O(1)      | O(n)                    |
+| [`std::unordered_set<type_t>::find`](https://en.cppreference.com/w/cpp/container/unordered_set/find)      | O(1)      | O(n)                    |
+| [`std::set<type_t>::insert`](https://en.cppreference.com/w/cpp/container/set/insert)                      | O(log n)  | O(n)                    |
+| [`std::unordered_map<type_t>::insert`](https://en.cppreference.com/w/cpp/container/unordered_map/insert)  | O(1)      | O(n)                    |
+| [`std::unordered_map<type_t>::find`](https://en.cppreference.com/w/cpp/container/unordered_map/find)      | O(1)      | O(1) – or strictly O(n) |
+| [`std::map<type_t>::insert`](https://en.cppreference.com/w/cpp/container/map/insert)                      | O(log n)  | O(n log n)              |
 
 # See also
 ​

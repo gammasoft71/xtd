@@ -1,10 +1,10 @@
 # How to: Open and Append to a Log File
 
-[stream_writer](#) and [stream_reader](#) write characters to and read characters from streams. 
+[stream_writer](javascript:void(0)) and [stream_reader](javascript:void(0)) write characters to and read characters from streams. 
 The following code example opens the *log.txt* file for input, or creates it if it doesn't exist, and appends log information to the end of the file.
 The example then writes the contents of the file to standard output for display.
 
-As an alternative to this example, you could store the information as a single string or string array, and use the [file::write_all_text](#) or [file::write_all_lines](#) method to achieve the same functionality.
+As an alternative to this example, you could store the information as a single string or string array, and use the [file::write_all_text](javascript:void(0)) or [file::write_all_lines](javascript:void(0)) method to achieve the same functionality.
  
 ## Example
 

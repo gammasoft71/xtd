@@ -274,17 +274,17 @@ startup_(test_sample_class::main);
 The `[]()` operator creates a [lambda expression](https://en.cppreference.com/w/cpp/language/lambda) that can be converted to a [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) type:
 
 ```cpp
-xtd::func<int, int, int> sum([] (int a, int b) { return a + b; });
+`xtd::func<int, int, int>` sum([] (int a, int b) { return a + b; });
 xtd::console::write_line(sum(3, 4));  // output: 7
 ```
 
 When you use the `[]()` operator, you might omit the parameter list. If you do that, the created anonymous method can be converted to a delegate type with any list of parameters, as the following example shows:
 
 ```cpp
-xtd::action<> greet([] { xtd::console::write_line("Hello!"); });
+`xtd::action<>` greet([] { xtd::console::write_line("Hello!"); });
 greet();
 
-xtd::action<int, double> introduce([] { xtd::console::write_line("This is world!"); });
+`xtd::action<int, double>` introduce([] { xtd::console::write_line("This is world!"); });
 introduce(42, 2.7);
 
 // Output:
