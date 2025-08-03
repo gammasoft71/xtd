@@ -14,7 +14,7 @@ public:
     
     button1.location({10, 10});
     button1.text("About...");
-    button1.click += [&] {
+    button1.click += delegate_ {
       static about_dialog dialog;
       dialog.dialog_appearance(dialog_appearance::system);
       dialog.icon(xtd::drawing::image::from_xpm_data(gammasoft_64x64_xpm));

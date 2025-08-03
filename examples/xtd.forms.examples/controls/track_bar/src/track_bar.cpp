@@ -27,7 +27,7 @@ public:
     track_bar1.auto_size(false);
     track_bar1.orientation(forms::orientation::vertical);
     track_bar1.parent(*this);
-    track_bar1.value_changed += [&] {
+    track_bar1.value_changed += delegate_ {
       progress_bar1.value(track_bar1.value());
       label1.text(string::format("{}", track_bar1.value()));
     };

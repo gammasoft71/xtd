@@ -19,7 +19,7 @@ namespace command_link_button_example {
       //command_link_button1.text("Command link\nwidth supplementary text");
       command_link_button1.location({30, 30});
       command_link_button1.size({240, 60});
-      command_link_button1.click += [&] {
+      command_link_button1.click += delegate_ {
         label1.text(string::format("command link button 1 clicked {} times", ++command_link_button1_clicked));
       };
       

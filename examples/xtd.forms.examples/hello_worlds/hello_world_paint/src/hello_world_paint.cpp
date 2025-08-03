@@ -7,7 +7,7 @@ namespace hello_world_paint_example {
       text("Hello world (paint)");
       client_size({300, 300});
       
-      paint += [&](object& sender, paint_event_args& e) {
+      paint += delegate_(object& sender, paint_event_args& e) {
         e.graphics().clear(color::light_blue);
         e.graphics().draw_string("Hello, World!", {system_fonts::default_font(), 32, font_style::bold | font_style::italic}, solid_brush {color_converter::dark(color::light_blue)}, rectangle::offset(e.clip_rectangle(), {2, 2}), string_format().alignment(string_alignment::center).line_alignment(string_alignment::center));
         e.graphics().draw_string("Hello, World!", {system_fonts::default_font(), 32, font_style::bold | font_style::italic}, brushes::dark_blue(), rectangle::inflate(e.clip_rectangle(), {-2, -2}), string_format().alignment(string_alignment::center).line_alignment(string_alignment::center));

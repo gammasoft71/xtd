@@ -20,14 +20,14 @@ public:
     
     timer1.interval(300_ms);
     timer1.enabled(true);
-    timer1.tick += [&] {
+    timer1.tick += delegate_ {
       fourteen_segment_display1.segment_style(segment_styles[(counter / chase.size()) % segment_styles.size()]);
       fourteen_segment_display1.value(chase[counter++ % chase.size()]);
     };
     
     back_color(color_converter::average(color::black, fourteen_segment_display1.fore_color(), 0.20));
     text("Fourteen segment display example");
-    resize += [&] {
+    resize += delegate_ {
       fourteen_segment_display1.left((client_size().width - fourteen_segment_display1.width()) / 2);
     };
   }

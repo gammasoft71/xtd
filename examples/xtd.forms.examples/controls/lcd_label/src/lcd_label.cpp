@@ -22,7 +22,7 @@ public:
     numeric_up_down1.increment(0.01);
     numeric_up_down1.decimal_place(2);
     numeric_up_down1.width(180);
-    numeric_up_down1.value_changed += [&] {
+    numeric_up_down1.value_changed += delegate_ {
       lcd_label1.text(string::format("{,11:F2}", numeric_up_down1.value()));
     };
     numeric_up_down1.value(12345678.90);

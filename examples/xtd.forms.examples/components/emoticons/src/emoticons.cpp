@@ -18,7 +18,7 @@ auto main() -> int {
   emoticons_list_box.dock(dock_style::left).width(200);
   for (const auto& emoticon : emoticons::get_emoticons())
     emoticons_list_box.items().push_back({string::format("{} {}", emoticon, emoticon.name()), emoticon});
-  emoticons_list_box.selected_value_changed += [&] {
+  emoticons_list_box.selected_value_changed += delegate_ {
     emoticon_label.text(as<emoticon>(emoticons_list_box.selected_item().tag()).to_string());
   };
   emoticons_list_box.selected_index(0);

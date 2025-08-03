@@ -17,7 +17,7 @@ public:
     button1.location({10, 10});
     button1.parent(*this);
     button1.text("Do something...");
-    button1.click += [] {
+    button1.click += delegate_ {
       use_wait_cursor wait;
       for (auto count = 0; count < 500; ++count) {
         application::do_events();

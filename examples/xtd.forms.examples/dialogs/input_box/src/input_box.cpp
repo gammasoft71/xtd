@@ -9,7 +9,7 @@ namespace input_box_example {
       
       button1.location({10, 10});
       button1.text("Text...");
-      button1.click += [&] {
+      button1.click += delegate_ {
         auto value = label1.text();
         if (input_box::show(value, *this, "Message text", "Caption text") == dialog_result::ok)
           label1.text(value);

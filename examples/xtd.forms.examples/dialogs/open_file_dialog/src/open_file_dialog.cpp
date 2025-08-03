@@ -16,7 +16,7 @@ public:
     
     button1.location({10, 10});
     button1.text("Open...");
-    button1.click += [&] {
+    button1.click += delegate_ {
       auto dialog = open_file_dialog {};
       dialog.initial_directory(file_name.empty() ? environment::get_folder_path(environment::special_folder::desktop) : io::path::get_directory_name(file_name));
       dialog.file_name(io::path::get_file_name(file_name));

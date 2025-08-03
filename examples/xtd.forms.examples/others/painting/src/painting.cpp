@@ -27,7 +27,7 @@ namespace painting_example {
       button_clear.parent(*this);
       button_clear.text("Clear");
       button_clear.location({542, 13});
-      button_clear.click += [&] {
+      button_clear.click += delegate_ {
         picture = bitmap {picture.width(), picture.height()};
         panel_painting.invalidate();
       };
@@ -35,7 +35,7 @@ namespace painting_example {
       button_open.parent(*this);
       button_open.text("Open...");
       button_open.location({542, 47});
-      button_open.click += [&] {
+      button_open.click += delegate_ {
         open_file_dialog ofd;
         if (ofd.show_dialog() == forms::dialog_result::ok) {
           bitmap new_picture(ofd.file_name());
@@ -62,7 +62,7 @@ namespace painting_example {
       track_bar_zoom.set_range(1, 50);
       track_bar_zoom.tick_style(forms::tick_style::none);
       track_bar_zoom.value(zoom);
-      track_bar_zoom.value_changed += [&] {
+      track_bar_zoom.value_changed += delegate_ {
         zoom = track_bar_zoom.value();
         numeric_up_down_zoom.value(zoom);
         panel_painting.size({picture.width() * zoom, picture.height() * zoom});
@@ -74,7 +74,7 @@ namespace painting_example {
       numeric_up_down_zoom.location({470, 55});
       numeric_up_down_zoom.set_range(1, 50);
       numeric_up_down_zoom.value(zoom);
-      numeric_up_down_zoom.value_changed += [&] {
+      numeric_up_down_zoom.value_changed += delegate_ {
         zoom = as<int>(numeric_up_down_zoom.value());
         track_bar_zoom.value(zoom);
         panel_painting.size({picture.width() * zoom, picture.height() * zoom});
@@ -93,21 +93,21 @@ namespace painting_example {
       panel_painting.back_color(color::white_smoke);
       panel_painting.size({picture.width() * zoom, picture.height() * zoom});
       
-      panel_painting.mouse_down += [&](object & sender, const mouse_event_args & e) {
+      panel_painting.mouse_down += delegate_(object & sender, const mouse_event_args & e) {
         if (e.x() / zoom >= 0 && e.x() / zoom < picture.width() && e.y() / zoom >= 0 && e.y() / zoom < picture.height()) {
           picture.set_pixel(e.x() / zoom, e.y() / zoom, e.button() == mouse_buttons::left ? current_color : color::from_argb(0, 0, 0, 0));
           panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));
         }
       };
       
-      panel_painting.mouse_move += [&](object & sender, const mouse_event_args & e) {
+      panel_painting.mouse_move += delegate_(object & sender, const mouse_event_args & e) {
         if (e.button() == mouse_buttons::left && e.x() / zoom >= 0 && e.x() / zoom < picture.width() && e.y() / zoom >= 0 && e.y() / zoom < picture.height()) {
           picture.set_pixel(e.x() / zoom, e.y() / zoom, current_color);
           panel_painting.invalidate(rectangle(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));
         }
       };
       
-      panel_painting.paint += [&](object & sender, paint_event_args & e) {
+      panel_painting.paint += delegate_(object & sender, paint_event_args & e) {
         for (auto y = 0; y < panel_painting.client_size().height; y += zoom)
           for (auto x = 0; x < panel_painting.client_size().width; x += zoom)
             if (picture.get_pixel(x / zoom, y / zoom) != color::from_argb(0, 0, 0, 0))

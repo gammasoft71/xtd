@@ -60,12 +60,12 @@ public:
     
     button_dialog.location({10, 10});
     button_dialog.text("Dialog...");
-    button_dialog.click += [&] {
+    button_dialog.click += delegate_ {
       dialog.input_text(input_text.text());
       dialog.show_sheet(*this);
     };
     
-    dialog.form_closed += [&] {
+    dialog.form_closed += delegate_ {
       if (dialog.dialog_result() == forms::dialog_result::ok)
         input_text.text(dialog.input_text());
     };

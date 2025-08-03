@@ -18,7 +18,7 @@ public:
     button_show_message.location({10, 10});
     button_show_message.text("Message...");
     button_show_message.width(100);
-    button_show_message.click += [&] {
+    button_show_message.click += delegate_ {
       label_dialog_result.text("");
       dialog.show_sheet(*this);
     };
@@ -30,7 +30,7 @@ public:
     dialog.message("Hello, World!");
     dialog.buttons(xtd::forms::message_dialog_buttons::ok_cancel);
     dialog.icon(xtd::forms::message_dialog_icon::warning);
-    dialog.dialog_closed += [&](object & sender, const dialog_closed_event_args & e) {
+    dialog.dialog_closed += delegate_(object & sender, const dialog_closed_event_args & e) {
       label_dialog_result.text(string::format("dialog_result = {}", e.dialog_result()));
     };
   }

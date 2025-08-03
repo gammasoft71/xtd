@@ -18,7 +18,7 @@ public:
     track_bar1.bounds({40, 10, 200, 80});
     track_bar1.set_range(0, 100);
     track_bar1.tick_frequency(10);
-    track_bar1.value_changed += [&] {
+    track_bar1.value_changed += delegate_ {
       if (muted && track_bar1.value()) muted = false;
       if (!muted || track_bar1.value()) volume = track_bar1.value();
       
@@ -30,7 +30,7 @@ public:
     track_bar1.value(60);
     
     button1.bounds({280, 10, 80, 80});
-    button1.click += [&] {
+    button1.click += delegate_ {
       muted = !muted;
       track_bar1.value(muted ? 0 : volume);
     };

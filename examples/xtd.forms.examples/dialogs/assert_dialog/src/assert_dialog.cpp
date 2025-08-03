@@ -9,7 +9,7 @@ public:
     button1.location({10, 10});
     button1.auto_size(true);
     button1.text("assert...");
-    button1.click += [&] {
+    button1.click += delegate_ {
       auto dialog = assert_dialog {};
       dialog.message("Index must be > 0");
       switch(dialog.show_sheet_dialog(*this)) {

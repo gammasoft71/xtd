@@ -17,7 +17,7 @@ namespace control_with_name_operator_example {
       controls()["button1"].value().get().location({10, 10});
       controls()["button1"].value().get().text("Click me");
       as<button>(controls()["button1"].value().get()).auto_repeat(true);
-      controls()["button1"].value().get().click += [&] {
+      controls()["button1"].value().get().click += delegate_ {
         static int count = 0;
         controls()["label1"].value().get().text(string::format("button clicked {} times", ++count));
       };

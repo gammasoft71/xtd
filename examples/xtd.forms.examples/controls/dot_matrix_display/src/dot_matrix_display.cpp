@@ -20,14 +20,14 @@ public:
     
     timer1.interval(300_ms);
     timer1.enabled(true);
-    timer1.tick += [&] {
+    timer1.tick += delegate_ {
       dot_matrix_display1.dot_matrix_style(dot_matrix_styles[(counter / chase.size()) % dot_matrix_styles.size()]);
       dot_matrix_display1.set_dots(chase[counter++ % chase.size()]);
     };
     
     back_color(color_converter::average(color::black, dot_matrix_display1.fore_color(), 0.20));
     text("Dot matrix display example");
-    resize += [&] {
+    resize += delegate_ {
       dot_matrix_display1.left((client_size().width - dot_matrix_display1.width()) / 2);
     };
   }

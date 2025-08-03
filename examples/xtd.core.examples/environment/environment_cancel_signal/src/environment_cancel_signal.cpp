@@ -9,7 +9,7 @@ namespace environment_cancel_sgnal_example {
   public:
     // The main entry point for the application.
     static auto main() {
-      environment::cancel_signal += [](signal_cancel_event_args& e) {
+      environment::cancel_signal += delegate_(signal_cancel_event_args& e) {
         console::write_line("A {} signal occured!", e.signal());
         e.cancel(cancel);
       };

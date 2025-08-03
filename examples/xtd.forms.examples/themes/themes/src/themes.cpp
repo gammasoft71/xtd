@@ -218,7 +218,7 @@ public:
     track_bar1.maximum(100);
     track_bar1.tick_frequency(10);
     track_bar1.width(350);
-    track_bar1.value_changed += [&] {
+    track_bar1.value_changed += delegate_ {
       progress_bar1.value(track_bar1.value());
     };
     track_bar1.value(50);
@@ -265,7 +265,7 @@ public:
     auto names = application::style_sheet_names();
     names.sort();
     themes_choice.items().push_back_range(names);
-    themes_choice.selected_index_changed += [&] {
+    themes_choice.selected_index_changed += delegate_ {
       if (themes_choice.selected_index() == 0) application::style_sheet(application::system_style_sheet());
       else application::style_sheet(application::get_style_sheet_from_name(themes_choice.selected_item().value()));
     };

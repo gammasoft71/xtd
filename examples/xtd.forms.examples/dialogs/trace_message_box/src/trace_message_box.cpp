@@ -17,7 +17,7 @@ public:
     button_.parent(*this);
     button_.location({10, 10});
     button_.text("Error...");
-    button_.click += [&] {
+    button_.click += delegate_ {
       trace_message_box::show(*this, "An unknown process error occured.");
     };
   }

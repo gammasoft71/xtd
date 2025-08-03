@@ -116,7 +116,7 @@ namespace example {
       button_context_previous.image_align(content_alignment::middle_left);
       button_context_previous.text(texts::previous());
       button_context_previous.bounds({10, 750, 125, 40});
-      button_context_previous.click += [&] {
+      button_context_previous.click += delegate_ {
         current_context_index--;
         current_name_index = 0;
         update_form();
@@ -127,7 +127,7 @@ namespace example {
       button_context_next.image_align(content_alignment::middle_right);
       button_context_next.text(texts::next());
       button_context_next.bounds({165, 750, 125, 40});
-      button_context_next.click += [&] {
+      button_context_next.click += delegate_ {
         current_context_index++;
         current_name_index = 0;
         update_form();
@@ -139,7 +139,7 @@ namespace example {
       button_name_previous.image_align(content_alignment::middle_left);
       button_name_previous.text("P&revious");
       button_name_previous.bounds({300, 750, 125, 40});
-      button_name_previous.click += [&] {
+      button_name_previous.click += delegate_ {
         current_name_index--;
         update_form();
       };
@@ -149,7 +149,7 @@ namespace example {
       button_name_next.image_align(content_alignment::middle_right);
       button_name_next.text("N&ext");
       button_name_next.bounds({455, 750, 125, 40});
-      button_name_next.click += [&] {
+      button_name_next.click += delegate_ {
         current_name_index++;
         update_form();
       };
@@ -160,7 +160,7 @@ namespace example {
       button_decrease.image_align(content_alignment::middle_left);
       button_decrease.text("&Decrease");
       button_decrease.bounds({590, 750, 125, 40});
-      button_decrease.click += [&] {
+      button_decrease.click += delegate_ {
         current_size_index--;
         update_form();
       };
@@ -170,7 +170,7 @@ namespace example {
       button_increase.image_align(content_alignment::middle_right);
       button_increase.text("&Increase");
       button_increase.bounds({745, 750, 125, 40});
-      button_increase.click += [&] {
+      button_increase.click += delegate_ {
         current_size_index++;
         update_form();
       };

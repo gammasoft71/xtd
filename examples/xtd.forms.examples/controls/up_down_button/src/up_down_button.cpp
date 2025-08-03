@@ -14,7 +14,7 @@ namespace up_down_button_example {
       
       up_down_button1.parent(*this);
       up_down_button1.location({10, 10});
-      up_down_button1.value_changed += [&] {
+      up_down_button1.value_changed += delegate_ {
         label1.text(string::format("value = {}", up_down_button1.value()));
       };
       up_down_button1.minimum(10);

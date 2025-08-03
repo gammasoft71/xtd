@@ -30,7 +30,7 @@ namespace lcd_label_appearance_example {
       lcd_style_choice.location({120, 10});
       lcd_style_choice.width(180);
       lcd_style_choice.items().push_back_range({{"Seven segment display", lcd_style::seven_segment_display}, {"Nine segment display", lcd_style::nine_segment_display}, {"Fourteen segment display", lcd_style::fourteen_segment_display}, {"Sixteen segment display", lcd_style::sixteen_segment_display}, {"Dot matrix display", lcd_style::dot_matrix_display}});
-      lcd_style_choice.selected_value_changed += [&] {
+      lcd_style_choice.selected_value_changed += delegate_ {
         label_lcd_label.lcd_style(as<lcd_style>(lcd_style_choice.selected_item().tag()));
         segment_style_choice.items().clear();
         if (lcd_style_choice.selected_item().value() == "Dot matrix display") {
@@ -49,7 +49,7 @@ namespace lcd_label_appearance_example {
       
       segment_style_choice.location({120, 45});
       segment_style_choice.width(180);
-      segment_style_choice.selected_value_changed += [&] {
+      segment_style_choice.selected_value_changed += delegate_ {
         auto style = segment_style_choice.selected_item().tag();
         if (is<dot_matrix_style>(style)) label_lcd_label.dot_matrix_style(as<forms::dot_matrix_style>(segment_style_choice.selected_item().tag()));
         else label_lcd_label.segment_style(as<forms::segment_style>(segment_style_choice.selected_item().tag()));
@@ -63,7 +63,7 @@ namespace lcd_label_appearance_example {
       height_numeric_up_down.location({120, 80});
       height_numeric_up_down.width(180);
       height_numeric_up_down.set_range(1, 400);
-      height_numeric_up_down.value_changed += [&] {
+      height_numeric_up_down.value_changed += delegate_ {
         label_lcd_label.height(as<int>(height_numeric_up_down.value()));
       };
       height_numeric_up_down.value(50);
@@ -75,7 +75,7 @@ namespace lcd_label_appearance_example {
       fore_color_color_picker.location({120, 115});
       fore_color_color_picker.width(180);
       fore_color_color_picker.color(label_lcd_label.fore_color());
-      fore_color_color_picker.color_picker_changed += [&] {
+      fore_color_color_picker.color_picker_changed += delegate_ {
         label_lcd_label.fore_color(fore_color_color_picker.color());
       };
       
@@ -88,7 +88,7 @@ namespace lcd_label_appearance_example {
       show_digit_background_togle_button.auto_size(true);
       show_digit_background_togle_button.checked(true);
       show_digit_background_togle_button.text("true");
-      show_digit_background_togle_button.checked_changed += [&] {
+      show_digit_background_togle_button.checked_changed += delegate_ {
         show_digit_background_togle_button.text(show_digit_background_togle_button.checked() ? "True" : "False");
         label_lcd_label.show_back_digit(show_digit_background_togle_button.checked());
       };

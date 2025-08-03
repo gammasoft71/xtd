@@ -23,7 +23,7 @@ public:
     form_border_style_choice.width(300);
     form_border_style_choice.items().push_back_range({{"none", forms::form_border_style::none}, {"fixed_single", forms::form_border_style::fixed_single}, {"fixed_3d", forms::form_border_style::fixed_3d}, {"fixed_dialog", forms::form_border_style::fixed_dialog}, {"sizable", forms::form_border_style::sizable}, {"fixed_tool_window", forms::form_border_style::fixed_tool_window}, {"sizable_tool_window", forms::form_border_style::sizable_tool_window}});
     form_border_style_choice.selected_index(as<size_t>(form_border_style()));
-    form_border_style_choice.selected_index_changed += [&] {
+    form_border_style_choice.selected_index_changed += delegate_ {
       form_border_style(as<forms::form_border_style>(form_border_style_choice.selected_index()));
     };
     
@@ -34,7 +34,7 @@ public:
     caption_text_box.location({110, 60});
     caption_text_box.width(200);
     caption_text_box.text(text());
-    caption_text_box.text_changed += [&] {
+    caption_text_box.text_changed += delegate_ {
       text(caption_text_box.text());
     };
     
@@ -44,7 +44,7 @@ public:
     
     minimize_box_switch_button.location({260, 110});
     minimize_box_switch_button.checked(minimize_box());
-    minimize_box_switch_button.checked_changed += [&] {
+    minimize_box_switch_button.checked_changed += delegate_ {
       minimize_box(minimize_box_switch_button.checked());
     };
     
@@ -54,7 +54,7 @@ public:
     
     maximize_box_switch_button.location({260, 140});
     maximize_box_switch_button.checked(maximize_box());
-    maximize_box_switch_button.checked_changed += [&] {
+    maximize_box_switch_button.checked_changed += delegate_ {
       maximize_box(maximize_box_switch_button.checked());
     };
     
@@ -64,7 +64,7 @@ public:
     
     close_box_switch_button.location({260, 170});
     close_box_switch_button.checked(close_box());
-    close_box_switch_button.checked_changed += [&] {
+    close_box_switch_button.checked_changed += delegate_ {
       close_box(close_box_switch_button.checked());
     };
     
@@ -74,7 +74,7 @@ public:
     
     control_box_switch_button.location({260, 200});
     control_box_switch_button.checked(control_box());
-    control_box_switch_button.checked_changed += [&] {
+    control_box_switch_button.checked_changed += delegate_ {
       control_box(control_box_switch_button.checked());
     };
     
@@ -84,7 +84,7 @@ public:
     
     help_button_switch_button.location({260, 230});
     help_button_switch_button.checked(help_button());
-    help_button_switch_button.checked_changed += [&] {
+    help_button_switch_button.checked_changed += delegate_ {
       help_button(help_button_switch_button.checked());
     };
     
@@ -94,7 +94,7 @@ public:
     
     show_icon_switch_button.location({260, 260});
     show_icon_switch_button.checked(show_icon());
-    show_icon_switch_button.checked_changed += [&] {
+    show_icon_switch_button.checked_changed += delegate_ {
       show_icon(show_icon_switch_button.checked());
     };
     
@@ -104,7 +104,7 @@ public:
     
     show_in_taskbar_switch_button.location({260, 290});
     show_in_taskbar_switch_button.checked(show_in_taskbar());
-    show_in_taskbar_switch_button.checked_changed += [&] {
+    show_in_taskbar_switch_button.checked_changed += delegate_ {
       show_in_taskbar(show_in_taskbar_switch_button.checked());
     };
   }

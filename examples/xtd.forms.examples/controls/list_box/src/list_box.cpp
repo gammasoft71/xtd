@@ -20,7 +20,7 @@ namespace list_box_example {
       layout_panel.dock(dock_style::fill);
       layout_panel.padding(forms::padding(20));
       
-      list_box_left.double_click += [&] {
+      list_box_left.double_click += delegate_ {
         if (list_box_left.selected_index() != list_box_left.npos) {
           list_box_right.items().push_back(list_box_left.selected_item());
           list_box_right.selected_index(0);
@@ -29,7 +29,7 @@ namespace list_box_example {
       };
       
       list_box_right.sorted(true);
-      list_box_right.double_click += [&] {
+      list_box_right.double_click += delegate_ {
         if (list_box_right.selected_index() != list_box_right.npos) {
           list_box_left.items().push_back(list_box_right.selected_item());
           list_box_left.selected_index(0);

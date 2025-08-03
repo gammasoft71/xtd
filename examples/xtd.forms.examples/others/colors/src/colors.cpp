@@ -18,7 +18,7 @@ namespace colors_example {
       colors.location({10, 10});
       colors.size({300, 610});
       colors.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::bottom);
-      colors.selected_color_changed += [&] {
+      colors.selected_color_changed += delegate_ {
         editor.color(colors.selected_color());
       };
       

@@ -34,7 +34,7 @@ namespace example {
       choice_context.width(323);
       choice_context.items().push_back_range(images::contexts());
       choice_context.selected_index(0);
-      choice_context.selected_index_changed += [&] {
+      choice_context.selected_index_changed += delegate_ {
         current_image_index = 0;
         update_form();
       };
@@ -72,7 +72,7 @@ namespace example {
       button_previous.image_align(content_alignment::middle_left);
       button_previous.text(texts::previous());
       button_previous.bounds({10, 300, 125, 40});
-      button_previous.click += [&] {
+      button_previous.click += delegate_ {
         if (current_image_index > 0) --current_image_index;
         update_form();
       };
@@ -82,7 +82,7 @@ namespace example {
       button_next.image_align(content_alignment::middle_right);
       button_next.text(texts::next());
       button_next.bounds({165, 300, 125, 40});
-      button_next.click += [&] {
+      button_next.click += delegate_ {
         if (current_image_index < images::names(choice_context.selected_item().value()).size()) ++current_image_index;
         update_form();
       };

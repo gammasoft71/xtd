@@ -17,7 +17,7 @@ public:
     picker1.location({10, 10});
     picker1.color(label1.fore_color());
     picker1.font(label1.font());
-    picker1.font_picker_changed += [&] {
+    picker1.font_picker_changed += delegate_ {
       label1.fore_color(picker1.color());
       label1.font(picker1.font());
     };

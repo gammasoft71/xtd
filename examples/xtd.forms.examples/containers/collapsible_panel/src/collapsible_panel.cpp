@@ -20,7 +20,7 @@ public:
     collapsible_panel2.dock(dock_style::top);
     collapsible_panel2.location({10, 100});
     collapsible_panel2.text("collapsible_panel2");
-    collapsible_panel2.expanded_changed += [&] {
+    collapsible_panel2.expanded_changed += delegate_ {
       button_expand.text(collapsible_panel2.expanded() ? "Collapse" : "Expand");
     };
     
@@ -32,7 +32,7 @@ public:
     button_add.parent(collapsible_panel1);
     button_add.location({10, 0});
     button_add.text("Add");
-    button_add.click += [&] {
+    button_add.click += delegate_ {
       auto item = new_ptr<label>();
       item->parent(collapsible_panel2);
       item->text(string::format("item{}", ++count));
@@ -43,7 +43,7 @@ public:
     button_remove.parent(collapsible_panel1);
     button_remove.location({10, 30});
     button_remove.text("Remove");
-    button_remove.click += [&] {
+    button_remove.click += delegate_ {
       if (control_items.size()) {
         control_items.front()->parent(nullptr);
         control_items.pop_front();
@@ -54,7 +54,7 @@ public:
     button_expand.location({10, 60});
     button_expand.checked(false);
     button_expand.text("Expand");
-    button_expand.click += [&] {
+    button_expand.click += delegate_ {
       collapsible_panel2.expanded(!collapsible_panel2.expanded());
     };
   }

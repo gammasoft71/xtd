@@ -20,7 +20,7 @@ public:
     list_box1.dock(dock_style::fill);
     list_box1.items().push_back_range({{"clear", button_images::from_name("weather-clear")}, {"clear night", button_images::from_name("weather-clear-night")}, {"few clouds", button_images::from_name("weather-few-clouds")}, {"few clouds night", button_images::from_name("weather-few-clouds-night")}, {"fog", button_images::from_name("weather-fog")}, {"overcast", button_images::from_name("weather-overcast")}, {"severe alert", button_images::from_name("weather-severe-alert")}, {"showers", button_images::from_name("weather-showers")}, {"showers scattered", button_images::from_name("weather-showers-scattered")}, {"snow", button_images::from_name("weather-snow")}, {"storm", button_images::from_name("weather-storm")}});
     list_box1.selected_index(0);
-    list_box1.click += [&] {
+    list_box1.click += delegate_ {
       button1.text(list_box1.selected_item().value());
       button1.image(as<image>(list_box1.selected_item().tag()));
       popup_panel1.hide();
@@ -32,7 +32,7 @@ public:
     button1.text_align(content_alignment::bottom_center);
     button1.text(list_box1.selected_item().value());
     button1.image(as<image>(list_box1.selected_item().tag()));
-    button1.click += [&] {
+    button1.click += delegate_ {
       popup_panel1.show();
     };
     

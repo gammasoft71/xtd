@@ -11,13 +11,13 @@ public:
   form1() {
     text("Form show and hide example").client_size({320, 325});
     
-    close_button.click += [&] {form2.close();};
-    show_button.click += [&] {form2.show();};
-    hide_button.click += [&] {form2.hide();};
+    close_button.click += delegate_ {form2.close();};
+    show_button.click += delegate_ {form2.show();};
+    hide_button.click += delegate_ {form2.hide();};
     
     form2.client_size({300, 100});
-    form2.form_closing += [&](auto sender, auto& e) {e.cancel(cancel_close_check_box.checked());};
-    form2.form_closed += [&] {form2.text(string::format("Close count = {}", ++close_count));};
+    form2.form_closing += delegate_(auto sender, auto& e) {e.cancel(cancel_close_check_box.checked());};
+    form2.form_closed += delegate_ {form2.text(string::format("Close count = {}", ++close_count));};
   }
   
 private:

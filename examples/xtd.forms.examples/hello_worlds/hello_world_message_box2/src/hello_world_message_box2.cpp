@@ -3,6 +3,6 @@
 auto main() -> int {
   auto main_form = form::create("Hello world (message_box)");
   auto message_button = button::create(main_form, "&Click me", {10, 10});
-  message_button.click += [] {message_box::show("Hello, World!");};
+  message_button.click += delegate_{message_box::show("Hello, World!");};
   application::run(main_form);
 }

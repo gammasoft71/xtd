@@ -34,7 +34,7 @@ input_name_dialog::input_name_dialog() {
   ok_button_.location({57, 120});
   ok_button_.text(xtd::drawing::texts::ok());
   ok_button_.dialog_result(dialog_result::ok);
-  ok_button_.click += [&] {
+  ok_button_.click += delegate_ {
     gammer_name_ = name_text_box_.text();
   };
   accept_button(ok_button_);

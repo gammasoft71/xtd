@@ -31,12 +31,12 @@ auto main() -> int {
   label.back_color(color_converter::average(color::black, label.fore_color(), 0.05));
   label.text("  0.0");
   
-  timer.tick += [&] {
+  timer.tick += delegate_ {
     label.text(string::format("{,5:F1}", chrono.elapsed_milliseconds() / 1000.0));
     debug::write_line(string::format("{,5:F1}", chrono.elapsed_milliseconds() / 1000.0));
   };
   
-  label.mouse_down += [&] {
+  label.mouse_down += delegate_ {
     if (control::mouse_buttons() == mouse_buttons::left) {
       timer.enabled(!timer.enabled());
       if (timer.enabled()) chrono.start();

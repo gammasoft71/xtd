@@ -22,7 +22,7 @@ namespace checked_list_box_example {
         checked_list_box1.items().push_back({string::format("Item {}", index), index % 2 != 0});
       checked_list_box1.selected_index(0);
       
-      checked_list_box1.item_check += [](object & sender, item_check_event_args & e) {
+      checked_list_box1.item_check += delegate_(object & sender, item_check_event_args & e) {
         cdebug << string::format("item_check, index={}, new_value={}, current_value={}", e.index(), e.new_value(), e.current_value()) << environment::new_line;
       };
     }

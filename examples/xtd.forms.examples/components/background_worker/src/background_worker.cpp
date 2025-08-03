@@ -11,7 +11,7 @@ namespace background_worker_example {
       text("Background worker example");
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
-      form_closed += [&] {
+      form_closed += delegate_ {
         cancel_button.perform_click();
       };
       
@@ -27,7 +27,7 @@ namespace background_worker_example {
       
       run_button.location({10, 10});
       run_button.text("Run");
-      run_button.click += [&] {
+      run_button.click += delegate_ {
         progress_panel.visible(true);
         cancel_button.enabled(true);
         run_button.enabled(false);
@@ -39,7 +39,7 @@ namespace background_worker_example {
       cancel_button.location({215, 10});
       cancel_button.text("Cancel");
       cancel_button.enabled(false);
-      cancel_button.click += [&] {
+      cancel_button.click += delegate_ {
         cancel_button.enabled(false);
         worker.cancel_async();
       };
@@ -59,7 +59,7 @@ namespace background_worker_example {
       
       worker.worker_supports_cancellation(true);
       worker.worker_reports_progress(true);
-      worker.do_work += [&] {
+      worker.do_work += delegate_ {
         for (auto step = 1; step <= progress.maximum(); ++step) {
           if (worker.cancellation_pending()) break; // stop work...
           thread::sleep(100_ms); // simulate work...
@@ -67,12 +67,12 @@ namespace background_worker_example {
         }
       };
       
-      worker.progress_changed += [&](object & sender, const progress_changed_event_args & e) {
+      worker.progress_changed += delegate_(object & sender, const progress_changed_event_args & e) {
         progress.value(e.progress_percentage());
         progress_text.append_text(string::format("{}{}", as<string>(e.user_state()), environment::new_line()));
       };
       
-      worker.run_worker_completed += [&](object & sender, const run_worker_completed_event_args & e) {
+      worker.run_worker_completed += delegate_(object & sender, const run_worker_completed_event_args & e) {
         progress_panel.visible(false);
         run_button.enabled(true);
         cancel_button.enabled(false);

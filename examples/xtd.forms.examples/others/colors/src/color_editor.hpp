@@ -27,7 +27,7 @@ namespace colors_example {
       alpha_track_bar_.size({100, 25});
       alpha_track_bar_.tick_style(xtd::forms::tick_style::none);
       alpha_track_bar_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::right);
-      alpha_track_bar_.value_changed += [&] {
+      alpha_track_bar_.value_changed += delegate_ {
         if (color_.a() != xtd::as<byte>(alpha_track_bar_.value())) color(xtd::drawing::color::from_argb(xtd::as<byte>(alpha_track_bar_.value()), color_.r(), color_.g(), color_.b()));
       };
       
@@ -36,7 +36,7 @@ namespace colors_example {
       alpha_numeric_up_down_.minimum(0);
       alpha_numeric_up_down_.maximum(255);
       alpha_numeric_up_down_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
-      alpha_numeric_up_down_.value_changed += [&] {
+      alpha_numeric_up_down_.value_changed += delegate_ {
         if (color_.a() != xtd::as<byte>(alpha_numeric_up_down_.value())) color(xtd::drawing::color::from_argb(xtd::as<byte>(alpha_numeric_up_down_.value()), color_.r(), color_.g(), color_.b()));
       };
       
@@ -52,7 +52,7 @@ namespace colors_example {
       red_track_bar_.size({100, 25});
       red_track_bar_.tick_style(xtd::forms::tick_style::none);
       red_track_bar_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::right);
-      red_track_bar_.value_changed += [&] {
+      red_track_bar_.value_changed += delegate_ {
         if (color_.r() != xtd::as<byte>(red_track_bar_.value())) color(xtd::drawing::color::from_argb(color_.a(), xtd::as<byte>(red_track_bar_.value()), color_.g(), color_.b()));
       };
       
@@ -61,7 +61,7 @@ namespace colors_example {
       red_numeric_up_down_.minimum(0);
       red_numeric_up_down_.maximum(255);
       red_numeric_up_down_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
-      red_numeric_up_down_.value_changed += [&] {
+      red_numeric_up_down_.value_changed += delegate_ {
         if (color_.r() != xtd::as<byte>(red_numeric_up_down_.value())) color(xtd::drawing::color::from_argb(color_.a(), xtd::as<byte>(red_numeric_up_down_.value()), color_.g(), color_.b()));
       };
       
@@ -77,7 +77,7 @@ namespace colors_example {
       green_track_bar_.size({100, 25});
       green_track_bar_.tick_style(xtd::forms::tick_style::none);
       green_track_bar_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::right);
-      green_track_bar_.value_changed += [&] {
+      green_track_bar_.value_changed += delegate_ {
         if (color_.g() != xtd::as<byte>(green_track_bar_.value())) color(xtd::drawing::color::from_argb(color_.a(), color_.r(), xtd::as<byte>(green_track_bar_.value()), color_.b()));
       };
       
@@ -86,7 +86,7 @@ namespace colors_example {
       green_numeric_up_down_.minimum(0);
       green_numeric_up_down_.maximum(255);
       green_numeric_up_down_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
-      green_numeric_up_down_.value_changed += [&] {
+      green_numeric_up_down_.value_changed += delegate_ {
         if (color_.g() != xtd::as<byte>(green_numeric_up_down_.value())) color(xtd::drawing::color::from_argb(color_.a(), color_.r(), xtd::as<byte>(green_numeric_up_down_.value()), color_.b()));
       };
       
@@ -102,7 +102,7 @@ namespace colors_example {
       blue_track_bar_.size({100, 25});
       blue_track_bar_.tick_style(xtd::forms::tick_style::none);
       blue_track_bar_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::right);
-      blue_track_bar_.value_changed += [&] {
+      blue_track_bar_.value_changed += delegate_ {
         if (color_.b() != xtd::as<byte>(blue_track_bar_.value())) color(xtd::drawing::color::from_argb(color_.a(), color_.r(), color_.g(), xtd::as<byte>(blue_track_bar_.value())));
       };
       
@@ -111,7 +111,7 @@ namespace colors_example {
       blue_numeric_up_down_.minimum(0);
       blue_numeric_up_down_.maximum(255);
       blue_numeric_up_down_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
-      blue_numeric_up_down_.value_changed += [&] {
+      blue_numeric_up_down_.value_changed += delegate_ {
         if (color_.b() != xtd::as<byte>(blue_numeric_up_down_.value())) color(xtd::drawing::color::from_argb(color_.a(), color_.r(), color_.g(), xtd::as<byte>(blue_numeric_up_down_.value())));
       };
       
@@ -120,7 +120,7 @@ namespace colors_example {
       color_box_panel_.size({190, 190});
       color_box_panel_.double_buffered(true);
       color_box_panel_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right | xtd::forms::anchor_styles::bottom);
-      color_box_panel_.paint += [&](xtd::object& sender, xtd::forms::paint_event_args& e) {
+      color_box_panel_.paint += delegate_(xtd::object& sender, xtd::forms::paint_event_args& e) {
         e.graphics().fill_rectangle(xtd::drawing::drawing_2d::hatch_brush(xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x66, 0x66, 0x66), xtd::drawing::color::from_argb(0x99, 0x99, 0x99)), e.clip_rectangle());
         if (color_ != xtd::drawing::color::empty) e.graphics().fill_rectangle(xtd::drawing::solid_brush(color_), e.clip_rectangle());
         xtd::forms::control_paint::draw_border(color_box_panel_, e.graphics(), color_box_panel_.border_style(), color_box_panel_.border_sides(), xtd::forms::application::style_sheet().system_colors().control_text(), xtd::drawing::rectangle::add(e.clip_rectangle(), -1, -1));
@@ -166,7 +166,7 @@ namespace colors_example {
       hex_ltext_box_.location({110, 395});
       hex_ltext_box_.width(140);
       hex_ltext_box_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
-      hex_ltext_box_.key_down += [&](xtd::object& sender, xtd::forms::key_event_args& e){
+      hex_ltext_box_.key_down += delegate_(xtd::object& sender, xtd::forms::key_event_args& e){
         if (e.key_code() != xtd::forms::keys::enter) return;
         try {
           color(xtd::drawing::color_translator::from_hex(hex_ltext_box_.text()));
@@ -178,7 +178,7 @@ namespace colors_example {
       hsl_text_box_.location({110, 425});
       hsl_text_box_.width(140);
       hsl_text_box_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
-      hsl_text_box_.key_down += [&](xtd::object& sender, xtd::forms::key_event_args& e){
+      hsl_text_box_.key_down += delegate_(xtd::object& sender, xtd::forms::key_event_args& e){
         if (e.key_code() != xtd::forms::keys::enter) return;
         try {
           color(xtd::drawing::color_translator::from_hsl(hsl_text_box_.text()));
@@ -194,7 +194,7 @@ namespace colors_example {
       hsv_text_box_.location({110, 455});
       hsv_text_box_.width(140);
       hsv_text_box_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
-      hsv_text_box_.key_down += [&](xtd::object& sender, xtd::forms::key_event_args& e){
+      hsv_text_box_.key_down += delegate_(xtd::object& sender, xtd::forms::key_event_args& e){
         if (e.key_code() != xtd::forms::keys::enter) return;
         try {
           color(xtd::drawing::color_translator::from_hsv(hsv_text_box_.text()));
@@ -210,7 +210,7 @@ namespace colors_example {
       html_text_box_.location({110, 485});
       html_text_box_.width(140);
       html_text_box_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
-      html_text_box_.key_down += [&](xtd::object& sender, xtd::forms::key_event_args& e){
+      html_text_box_.key_down += delegate_(xtd::object& sender, xtd::forms::key_event_args& e){
         if (e.key_code() != xtd::forms::keys::enter) return;
         try {
           color(xtd::drawing::color_translator::from_html(html_text_box_.text()));
@@ -222,7 +222,7 @@ namespace colors_example {
       rgb_text_box_.location({110, 515});
       rgb_text_box_.width(140);
       rgb_text_box_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
-      rgb_text_box_.key_down += [&](xtd::object& sender, xtd::forms::key_event_args& e){
+      rgb_text_box_.key_down += delegate_(xtd::object& sender, xtd::forms::key_event_args& e){
         if (e.key_code() != xtd::forms::keys::enter) return;
         try {
           color(xtd::drawing::color_translator::from_rgb(rgb_text_box_.text()));
@@ -238,7 +238,7 @@ namespace colors_example {
       win32_text_box_.location({110, 545});
       win32_text_box_.width(140);
       win32_text_box_.anchor(xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
-      win32_text_box_.key_down += [&](xtd::object& sender, xtd::forms::key_event_args& e){
+      win32_text_box_.key_down += delegate_(xtd::object& sender, xtd::forms::key_event_args& e){
         if (e.key_code() != xtd::forms::keys::enter) return;
         try {
           color(xtd::drawing::color_translator::from_win32(xtd::int32_object::parse(win32_text_box_.text(), xtd::number_styles::hex_number)));

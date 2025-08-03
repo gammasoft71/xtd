@@ -17,7 +17,7 @@ public:
     .text("Download")
     .location({ 10, 10 })
     .size({ 150, 35 })
-    .click += [this] {
+    .click += delegate_ {
       progress_box::show(*this, "Downloading", "Please wait...", 0, 0, 100, progress_box_options::show_cancel_button | progress_box_options::show_skip_button);
       for (auto index = progress_box::minimum(); index <= progress_box::maximum(); ++index) {
         threading::thread::sleep(100_ms); // Do some work...

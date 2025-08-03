@@ -9,7 +9,7 @@ public:
     
     about_button.location({10, 10});
     about_button.text("About...");
-    about_button.click += [&] {
+    about_button.click += delegate_ {
       static auto dialog = about_dialog {};
       dialog.icon(xtd::drawing::image::from_xpm_data(gammasoft_64x64_xpm));
       dialog.name("About dialog");
@@ -38,7 +38,7 @@ public:
     xtd_about_button.location({100, 10});
     xtd_about_button.auto_size(true);
     xtd_about_button.text("xtd about...");
-    xtd_about_button.click += [&] {
+    xtd_about_button.click += delegate_ {
       static auto dialog = xtd_about_dialog {};
       dialog.show();
     };

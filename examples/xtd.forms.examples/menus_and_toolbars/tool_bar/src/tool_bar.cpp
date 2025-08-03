@@ -26,7 +26,7 @@ namespace tool_bar_example {
       
       choice1.items().push_back_range({"Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"});
       choice1.selected_index(0);
-      choice1.selected_value_changed += [&] {
+      choice1.selected_value_changed += delegate_ {
         list_box1.items().push_back(string::format("{} selected", choice1.selected_item()));
         list_box1.selected_index(list_box1.items().size() - 1);
       };
@@ -35,7 +35,7 @@ namespace tool_bar_example {
       
       progress_timer1.interval_milliseconds(50);
       progress_timer1.start();
-      progress_timer1.tick += [&] {
+      progress_timer1.tick += delegate_ {
         progress_bar1.value(progress_bar1.value() < progress_bar1.maximum() ? progress_bar1.value() + 1 : progress_bar1.minimum());
       };
       

@@ -8,8 +8,8 @@ using namespace xtd::diagnostics;
 using namespace xtd::forms;
 
 auto main() -> int {
-  environment::program_exit += [] {trace::write_line("The program is stopped");};
-  application::application_exit += [] {trace::write_line("The application is stopped");};
+  environment::program_exit += delegate_ {trace::write_line("The program is stopped");};
+  application::application_exit += delegate_ {trace::write_line("The application is stopped");};
   trace::write_line("Before application run");
   application::run(form {});
   trace::write_line("After application exit");

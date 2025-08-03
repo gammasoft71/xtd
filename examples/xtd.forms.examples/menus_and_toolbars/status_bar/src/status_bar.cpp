@@ -34,7 +34,7 @@ namespace status_bar_example {
       status_bar_panel4.border_style(xtd::forms::status_bar_panel_border_style::sunken);
       
       timer1.interval_milliseconds(50);
-      timer1.tick += [&] {
+      timer1.tick += delegate_ {
         progress_bar1.value(progress_bar1.value() < progress_bar1.maximum() ? progress_bar1.value() + 1 : progress_bar1.minimum());
       };
       timer1.enabled(true);
