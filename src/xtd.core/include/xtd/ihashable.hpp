@@ -18,7 +18,7 @@ namespace xtd {
   /// @par Examples
   /// The following example shows how to use xtd::ihashable interface.
   /// @include ihashable.cpp
-  class ihashable : public interface {
+  class ihashable interface_ {
   public:
     /// @name Public Methods
     
