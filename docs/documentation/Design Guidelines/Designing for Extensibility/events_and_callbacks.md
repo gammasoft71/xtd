@@ -12,9 +12,9 @@ Events are a special case of callbacks that supports convenient and consistent s
 
 **❌ AVOID** using callbacks in performance-sensitive APIs.
 
-**✔️ DO** use the new xtd::func<...>, or xtd::action<...> types instead of custom delegates, when defining APIs with callbacks.
+**✔️ DO** use the new `xtd::func<...>`, or `xtd::action<...>` types instead of custom delegates, when defining APIs with callbacks.
 
-xtd::func<...> and xtd::action<...> represent generic delegates.
+`xtd::func<...>` and `xtd::action<...>` represent generic delegates.
 
 **✔️ DO** understand that by calling a delegate, you are executing arbitrary code and that could have security, correctness, and compatibility repercussions.
 

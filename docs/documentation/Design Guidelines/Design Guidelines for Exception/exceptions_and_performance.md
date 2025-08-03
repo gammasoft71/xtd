@@ -8,7 +8,7 @@ To improve performance, it is possible to use either the *Tester-Doer* Pattern o
 
 # Tester-Doer Pattern
 
-Sometimes performance of an exception-throwing member can be improved by breaking the member into two. Let’s look at the at method of the std::vector<type_t> interface.
+Sometimes performance of an exception-throwing member can be improved by breaking the member into two. Let’s look at the at method of the std::vector\<type_t> interface.
 
 ```cpp
 std::vector<int> numbers = ...

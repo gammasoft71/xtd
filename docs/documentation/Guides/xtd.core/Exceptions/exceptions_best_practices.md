@@ -69,7 +69,7 @@ The approach to choose depends on how often you expect the event to occur.
 If the performance cost of exceptions is prohibitive, some xtd library methods provide alternative forms of error handling. 
 For example, [xtd::int32_object::parse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1box.html#ae719848b746e3df3c3e5755d87a24c6d) throws an [xtd::overflow_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1overflow__exception.html) if the value to be parsed is too large to be represented by [xtd::int32](https://gammasoft71.github.io/xtd/reference_guides/latest/group__types.html#ga205462e259a4eca1545511085c2c350e).
 However, [xtd::int32_object::try_parse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1box.html#a45ebbd8f1e23cadfa07d79b2282205ac) doesn't throw this exception. Instead, it returns a boolean and has an `out` parameter that contains the parsed valid integer upon success.
-[xd::collections::generic::dictionary<key_t,value_t>::try_get_value](https://gammasoft71.github.io/xtd/reference_guides/latest/group__generic__collections.html#gabc6e9eab3efe7d40c7dd9c3287b36960) has similar behavior for attempting to get a value from a dictionary.
+[xd::collections::generic::dictionary<key_t,value_t\>::try_get_value](https://gammasoft71.github.io/xtd/reference_guides/latest/group__generic__collections.html#gabc6e9eab3efe7d40c7dd9c3287b36960) has similar behavior for attempting to get a value from a dictionary.
 
 ### Catch cancellation and asynchronous exceptions
 
