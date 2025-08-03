@@ -8,7 +8,7 @@ An example of a post-event would be xtd::forms::form::closed, which is raised af
 
 **✔️ DO** use the term "raise" for events rather than "fire" or "trigger."
 
-**✔️ DO** use xtd:generic_event_handler <event_args_t> instead of manually creating new delegates to be used as event handlers.
+**✔️ DO** use `xtd:generic_event_handler <event_args_t>` instead of manually creating new delegates to be used as event handlers.
 
 **✔️ CONSIDER** using a subclass of xtd::event_args as the event argument, unless you are absolutely sure the event will never need to carry any data to the event handling method, in which case you can use the xtd::event_args type directly.
 

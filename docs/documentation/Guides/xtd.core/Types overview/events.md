@@ -98,7 +98,7 @@ using event_handler = xtd::generic_event_handler<>;
 ```
 
 Although events in classes that you define can be based on any valid delegate type, even delegates that return a value, it is generally recommended that you base your events on the xtd pattern by using [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b), as shown in the following example.
-The name event_handler can lead to a bit of confusion as it doesn't actually handle the event. The [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b), and generic [xtd::generic_event_handler<event_args_t>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) are delegate types. A method or lambda expression whose signature matches the delegate definition is the event handler and will be invoked when the event is raised.
+The name event_handler can lead to a bit of confusion as it doesn't actually handle the event. The [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b), and generic [xtd::generic_event_handler<event_args_t\>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) are delegate types. A method or lambda expression whose signature matches the delegate definition is the event handler and will be invoked when the event is raised.
 
 ### Publish events based on the event_handler pattern
 
@@ -113,7 +113,7 @@ struct custom_event_args : xtd::event_args {
 };
 ```
 
-2. (Skip this step if you are using the generic version generic_event_handler<event_args_t>.) Declare a delegate in your publishing class. Give it a name that ends with event_handler. The second parameter specifies your custom event_args type.
+2. (Skip this step if you are using the generic version generic_event_handler<event_args_t\>.) Declare a delegate in your publishing class. Give it a name that ends with event_handler. The second parameter specifies your custom event_args type.
 
 ```cpp
 using custom_event_handler = xtd::delegate<void(xtd::object& sender, custom_event_args& args)>;
@@ -147,7 +147,7 @@ using custom_event_handler = xtd::delegate<void(xtd::object& sender, custom_even
 
 ## Example
 
-The following example demonstrates the previous steps by using a custom event_args class and genric_event_handler<event_args_t> as the event type.
+The following example demonstrates the previous steps by using a custom event_args class and genric_event_handler<event_args_t\> as the event type.
 
 ```cpp
 #include <xtd/xtd>

@@ -1,7 +1,7 @@
 # Raise and consume events
 
 The examples in this topic show how to work with events. 
-They include examples of the [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate, the [xtd::generic_event_handler<event_args_t>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegate, and a custom delegate, to illustrate events with and without data.
+They include examples of the [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) delegate, the [xtd::generic_event_handler<event_args_t\>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegate, and a custom delegate, to illustrate events with and without data.
 
 The examples use concepts described in the [events](/docs/documentation/Guides/xtd.core/Events/overview) article.
 
@@ -64,7 +64,7 @@ startup_(console_application1::program::main);
 ## Example 2
 
 The next example shows how to raise and consume an event that provides data. 
-The [xtd::generic_event_handler<event_args_t>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegate is associated with the event, and an instance of a custom event data object is provided.
+The [xtd::generic_event_handler<event_args_t\>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegate is associated with the event, and an instance of a custom event data object is provided.
 
 ```cpp
 #include <xtd/xtd>
@@ -144,7 +144,7 @@ startup_(console_application1::program::main);
 
 The next example shows how to declare a delegate for an event. 
 The delegate is named `threshold_reached_event_handler`. 
-This is just an illustration. Typically, you do not have to declare a delegate for an event, because you can use either the [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) or the [xtd::generic_event_handler<event_args_t>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegate. 
+This is just an illustration. Typically, you do not have to declare a delegate for an event, because you can use either the [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) or the [xtd::generic_event_handler<event_args_t\>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegate. 
 You should declare a delegate only in rare scenarios, such as making your class available to legacy code that cannot use generics.
 
 ```cpp

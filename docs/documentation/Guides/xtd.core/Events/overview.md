@@ -49,9 +49,9 @@ In the context of events, a delegate is an intermediary (or pointer-like mechani
 You associate a delegate with an event by including the delegate type in the event declaration, as shown in the example in the previous section. 
 For more information on delegates, see the [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) class.
 
-xtd provides the [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) and [xtd::generic_event_handler<event_args_t>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegates to support most event scenarios. 
+xtd provides the [xtd::event_handler](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b) and [xtd::generic_event_handler<event_args_t\>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegates to support most event scenarios. 
 Use the xtd::event_handler delegate for all events that do not contain event data. 
-Use the [xtd::generic_event_handler<event_args_t>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegate for events that contain event data. 
+Use the [xtd::generic_event_handler<event_args_t\>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegate for events that contain event data. 
 These delegates have no return type value and take two parameters (one xtd::object for the event source, and one object for the event data).
 
 Delegates are multicast, which means that they can contain references to more than one event handling method. 
@@ -59,7 +59,7 @@ For more details, see the [xtd::delegate](https://gammasoft71.github.io/xtd/refe
 Delegates provide flexibility and fine-grained control in event processing. 
 A delegate acts as an event dispatcher for the class that raises the event by maintaining a list of registered event handlers for the event.
 
-For scenarios where the xtd::event_handler and [xtd::generic_event_handler<event_args_t>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegates do not work, you can define a delegate. Scenarios that require a delegate to be defined are very rare, such as when you have to work with code that does not recognize generics. 
+For scenarios where the xtd::event_handler and [xtd::generic_event_handler<event_args_t\>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__events.html#ga531b610b74cb14c6047fb0843ab686b4) delegates do not work, you can define a delegate. Scenarios that require a delegate to be defined are very rare, such as when you have to work with code that does not recognize generics. 
 You mark a delegate with the [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html) class in the declaration. 
 The following example shows how to declare a delegate named `threshold_reached_event_handler`.
 

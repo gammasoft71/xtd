@@ -88,7 +88,7 @@ string name = "Fred";
 xtd::string::format("Name = {0}, age = {1:D3}", name, 42);
 ```
 
-The fixed text is `name = ` and `, age = `. The format items are "{0}", whose index is 0, which corresponds to the object name, and "{1:D3}", whose index is 1, which corresponds to the integer 42.
+The fixed text is `name = ` and `, age = `. The format items are `"{0}"`, whose index is 0, which corresponds to the object name, and `"{1:D3}"`, whose index is 1, which corresponds to the integer 42.
 
 # See also
 ​
