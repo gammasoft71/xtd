@@ -156,7 +156,7 @@ $(function(){ initResizable(false); });
 <div class="line">      choice_context.width(323);</div>
 <div class="line">      choice_context.items().push_back_range(<a class="code hl_function" href="classxtd_1_1forms_1_1images.html#a92d316a2dc9136db7027e124ee1f80b9">images::contexts</a>());</div>
 <div class="line">      choice_context.selected_index(0);</div>
-<div class="line">      choice_context.selected_index_changed += [&amp;] {</div>
+<div class="line">      choice_context.selected_index_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        current_image_index = 0;</div>
 <div class="line">        update_form();</div>
 <div class="line">      };</div>
@@ -194,7 +194,7 @@ $(function(){ initResizable(false); });
 <div class="line">      button_previous.image_align(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a4d8a5580bcd972246c9910900a6efc09">content_alignment::middle_left</a>);</div>
 <div class="line">      button_previous.text(<a class="code hl_function" href="classxtd_1_1drawing_1_1texts.html#a1b0fa8d517f1c255ee040bf9c263dc8c">texts::previous</a>());</div>
 <div class="line">      button_previous.bounds({10, 300, 125, 40});</div>
-<div class="line">      button_previous.click += [&amp;] {</div>
+<div class="line">      button_previous.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="keywordflow">if</span> (current_image_index &gt; 0) --current_image_index;</div>
 <div class="line">        update_form();</div>
 <div class="line">      };</div>
@@ -204,7 +204,7 @@ $(function(){ initResizable(false); });
 <div class="line">      button_next.image_align(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0aff1bb2ef26708d2a4dc98bdda5c48071">content_alignment::middle_right</a>);</div>
 <div class="line">      button_next.text(<a class="code hl_function" href="classxtd_1_1drawing_1_1texts.html#a98e123327c504e57e2fcb1da2a327070">texts::next</a>());</div>
 <div class="line">      button_next.bounds({165, 300, 125, 40});</div>
-<div class="line">      button_next.click += [&amp;] {</div>
+<div class="line">      button_next.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="keywordflow">if</span> (current_image_index &lt; <a class="code hl_function" href="classxtd_1_1forms_1_1images.html#a792b36e27d837e9cffb44560cdf35d80">images::names</a>(choice_context.selected_item().value()).size()) ++current_image_index;</div>
 <div class="line">        update_form();</div>
 <div class="line">      };</div>
@@ -261,6 +261,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclassxtd_1_1forms_1_1images_html_aee43b1ee362c12a2dbf48b1691cbed95"><div class="ttname"><a href="classxtd_1_1forms_1_1images.html#aee43b1ee362c12a2dbf48b1691cbed95">xtd::forms::images::from_name</a></div><div class="ttdeci">static xtd::drawing::image from_name(const xtd::string &amp;name)</div><div class="ttdoc">Gets image object with specified name.</div><div class="ttdef"><b>Definition</b> images.hpp:1268</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1label_html"><div class="ttname"><a href="classxtd_1_1forms_1_1label.html">xtd::forms::label</a></div><div class="ttdoc">Represents a standard Windows label.</div><div class="ttdef"><b>Definition</b> label.hpp:38</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1picture__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1picture__box.html">xtd::forms::picture_box</a></div><div class="ttdoc">Represents a standard Windows picture box.</div><div class="ttdef"><b>Definition</b> picture_box.hpp:34</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga1bed745e8ce3f19294e1c4de1f3d97dea0fd0915dae681076399b75db0d5c4800"><div class="ttname"><a href="group__xtd__forms.html#gga1bed745e8ce3f19294e1c4de1f3d97dea0fd0915dae681076399b75db0d5c4800">xtd::forms::picture_box_size_mode::center_image</a></div><div class="ttdeci">@ center_image</div><div class="ttdoc">The image is displayed in the center if the picture_box is larger than the image. If the image is lar...</div><div class="ttdef"><b>Definition</b> picture_box_size_mode.hpp:30</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga663fa5bbff2ea7ea9ece8563a188a1c6a5660a203d49481b9b904b0dc5644b277"><div class="ttname"><a href="group__xtd__forms.html#gga663fa5bbff2ea7ea9ece8563a188a1c6a5660a203d49481b9b904b0dc5644b277">xtd::forms::border_style::fixed_3d</a></div><div class="ttdeci">@ fixed_3d</div><div class="ttdoc">A three-dimensional border. Same as xtd::forms::border_style::inset.</div><div class="ttdef"><b>Definition</b> border_style.hpp:58</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga663fa5bbff2ea7ea9ece8563a188a1c6af484570d7cf557020e11ace406901b10"><div class="ttname"><a href="group__xtd__forms.html#gga663fa5bbff2ea7ea9ece8563a188a1c6af484570d7cf557020e11ace406901b10">xtd::forms::border_style::theme</a></div><div class="ttdeci">@ theme</div><div class="ttdoc">Defines a 3D themed border. The effect depends on the border color value.</div><div class="ttdef"><b>Definition</b> border_style.hpp:38</div></div>
@@ -275,7 +276,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 3 2025 03:54:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 3 2025 05:39:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

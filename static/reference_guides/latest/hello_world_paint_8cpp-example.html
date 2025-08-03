@@ -129,7 +129,7 @@ $(function(){ initResizable(false); });
 <div class="line">      text(<span class="stringliteral">&quot;Hello world (paint)&quot;</span>);</div>
 <div class="line">      client_size({300, 300});</div>
 <div class="line">      </div>
-<div class="line">      paint += [&amp;](<span class="keywordtype">object</span>&amp; sender, paint_event_args&amp; e) {</div>
+<div class="line">      paint += <a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keywordtype">object</span>&amp; sender, paint_event_args&amp; e) {</div>
 <div class="line">        e.graphics().clear(color::light_blue);</div>
 <div class="line">        e.graphics().draw_string(<span class="stringliteral">&quot;Hello, World!&quot;</span>, {system_fonts::default_font(), 32, font_style::bold | font_style::italic}, solid_brush {color_converter::dark(color::light_blue)}, rectangle::offset(e.clip_rectangle(), {2, 2}), string_format().alignment(string_alignment::center).line_alignment(string_alignment::center));</div>
 <div class="line">        e.graphics().draw_string(<span class="stringliteral">&quot;Hello, World!&quot;</span>, {system_fonts::default_font(), 32, font_style::bold | font_style::italic}, brushes::dark_blue(), rectangle::inflate(e.clip_rectangle(), {-2, -2}), string_format().alignment(string_alignment::center).line_alignment(string_alignment::center));</div>
@@ -141,11 +141,12 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  application::run(hello_world_paint_example::main_form());</div>
 <div class="line">}</div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 3 2025 03:54:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 3 2025 05:39:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

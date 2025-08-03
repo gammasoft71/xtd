@@ -127,7 +127,7 @@ $(function(){ initResizable(false); });
 <div class="line">  form1() {</div>
 <div class="line">    text(<span class="stringliteral">&quot;Color dialog example&quot;</span>);</div>
 <div class="line">    </div>
-<div class="line">    button1.click += [&amp;] {</div>
+<div class="line">    button1.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      <span class="keyword">auto</span> dialog = color_dialog {};</div>
 <div class="line">      dialog.color(selected_color);</div>
 <div class="line">      dialog.custom_colors(custom_colors);</div>
@@ -140,7 +140,7 @@ $(function(){ initResizable(false); });
 <div class="line">    };</div>
 <div class="line"> </div>
 <div class="line">    test_zone.border_style(border_style::inset).double_buffered(<span class="keyword">true</span>);</div>
-<div class="line">    test_zone.paint += [&amp;](<span class="keywordtype">object</span>&amp; sender, paint_event_args&amp; e) {</div>
+<div class="line">    test_zone.paint += <a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keywordtype">object</span>&amp; sender, paint_event_args&amp; e) {</div>
 <div class="line">      e.graphics().fill_rectangle(drawing_2d::hatch_brush {drawing_2d::hatch_style::wide_checker_board, color::from_argb(0x66, 0x66, 0x66), color::from_argb(0x99, 0x99, 0x99)}, e.clip_rectangle());</div>
 <div class="line">      e.graphics().fill_rectangle(solid_brush {selected_color}, e.clip_rectangle());</div>
 <div class="line">      control_paint::draw_border(test_zone, e.graphics(), test_zone.border_style(), test_zone.border_sides(), application::style_sheet().system_colors().control_text(), rectangle::add(e.clip_rectangle(), -1, -1));</div>
@@ -160,11 +160,12 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 3 2025 03:54:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 3 2025 05:39:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -138,7 +138,7 @@ $(function(){ initResizable(false); });
 <div class="line">      names.sort();</div>
 <div class="line">      choice_theme.items().push_back_range(names);</div>
 <div class="line">      choice_theme.selected_index(0);</div>
-<div class="line">      choice_theme.selected_index_changed += [&amp;] {</div>
+<div class="line">      choice_theme.selected_index_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        application::style_sheet(choice_theme.selected_index() == 0 ? application::system_style_sheet() : application::get_style_sheet_from_name(choice_theme.selected_item().value()));</div>
 <div class="line">        color_picker_background.color(back_color());</div>
 <div class="line">        color_picker_foreground.color(fore_color());</div>
@@ -153,7 +153,7 @@ $(function(){ initResizable(false); });
 <div class="line">      color_picker_background.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      color_picker_background.location({180, 10});</div>
 <div class="line">      color_picker_background.color(back_color());</div>
-<div class="line">      color_picker_background.color_picker_changed += [&amp;] {</div>
+<div class="line">      color_picker_background.color_picker_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        bcolor = color_picker_background.color();</div>
 <div class="line">        button_system.back_color(bcolor.value());</div>
 <div class="line">        button_standard.back_color(bcolor.value());</div>
@@ -162,7 +162,7 @@ $(function(){ initResizable(false); });
 <div class="line">      color_picker_foreground.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      color_picker_foreground.location({290, 10});</div>
 <div class="line">      color_picker_foreground.color(fore_color());</div>
-<div class="line">      color_picker_foreground.color_picker_changed += [&amp;] {</div>
+<div class="line">      color_picker_foreground.color_picker_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        fcolor = color_picker_foreground.color();</div>
 <div class="line">        button_system.fore_color(fcolor.value());</div>
 <div class="line">        button_standard.fore_color(fcolor.value());</div>
@@ -209,6 +209,7 @@ $(function(){ initResizable(false); });
 <div class="line">  application::run(button_renderer_example::form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_a8e20e3dbd8c92fbfc5ea0adc27e2ae61"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#a8e20e3dbd8c92fbfc5ea0adc27e2ae61">xtd::drawing::image::empty</a></div><div class="ttdeci">static image empty</div><div class="ttdoc">Represent an empty xtd::drawing::image.</div><div class="ttdef"><b>Definition</b> image.hpp:65</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga12b406a1ff6df3c0af717121e6c37257a051e0f1740c3a9eee8b052a1263b976d"><div class="ttname"><a href="group__xtd__forms.html#gga12b406a1ff6df3c0af717121e6c37257a051e0f1740c3a9eee8b052a1263b976d">xtd::forms::text_format_flags::vertical_center</a></div><div class="ttdeci">@ vertical_center</div><div class="ttdoc">Centers the text vertically, within the bounding rectangle.</div><div class="ttdef"><b>Definition</b> text_format_flags.hpp:36</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga12b406a1ff6df3c0af717121e6c37257aee0758880fd9f61639216c9179aa2d87"><div class="ttname"><a href="group__xtd__forms.html#gga12b406a1ff6df3c0af717121e6c37257aee0758880fd9f61639216c9179aa2d87">xtd::forms::text_format_flags::horizontal_center</a></div><div class="ttdeci">@ horizontal_center</div><div class="ttdoc">Centers the text horizontally within the bounding rectangle.</div><div class="ttdef"><b>Definition</b> text_format_flags.hpp:32</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga4d2c9d254297fb77db586345bae2615aa075ae3d2fc31640504f814f60e5ef713"><div class="ttname"><a href="group__xtd__forms.html#gga4d2c9d254297fb77db586345bae2615aa075ae3d2fc31640504f814f60e5ef713">xtd::forms::visual_styles::push_button_state::disabled</a></div><div class="ttdeci">@ disabled</div><div class="ttdoc">The button is disabled.</div><div class="ttdef"><b>Definition</b> push_button_state.hpp:34</div></div>
@@ -221,7 +222,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 3 2025 03:54:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 3 2025 05:39:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

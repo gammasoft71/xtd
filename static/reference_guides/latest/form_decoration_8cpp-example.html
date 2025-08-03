@@ -145,7 +145,7 @@ $(function(){ initResizable(false); });
 <div class="line">    form_border_style_choice.width(300);</div>
 <div class="line">    form_border_style_choice.items().push_back_range({{<span class="stringliteral">&quot;none&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggae69a2e9fdce97075bf7642aed73e5907a334c4a4c42fdb79d7ebc3e73b517e6f8">forms::form_border_style::none</a>}, {<span class="stringliteral">&quot;fixed_single&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggae69a2e9fdce97075bf7642aed73e5907a8268520ea0c581e1a782fa9e102d3eb0">forms::form_border_style::fixed_single</a>}, {<span class="stringliteral">&quot;fixed_3d&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggae69a2e9fdce97075bf7642aed73e5907a5660a203d49481b9b904b0dc5644b277">forms::form_border_style::fixed_3d</a>}, {<span class="stringliteral">&quot;fixed_dialog&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggae69a2e9fdce97075bf7642aed73e5907a6fec4556b013bc10034cdae2e113734a">forms::form_border_style::fixed_dialog</a>}, {<span class="stringliteral">&quot;sizable&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggae69a2e9fdce97075bf7642aed73e5907af89a508fd2052aa551acc18c6c6c4e91">forms::form_border_style::sizable</a>}, {<span class="stringliteral">&quot;fixed_tool_window&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggae69a2e9fdce97075bf7642aed73e5907a3f1f7a18134960664437c6ddc7000c38">forms::form_border_style::fixed_tool_window</a>}, {<span class="stringliteral">&quot;sizable_tool_window&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggae69a2e9fdce97075bf7642aed73e5907a05a46eb1f18185023605c7fdc6c76c1f">forms::form_border_style::sizable_tool_window</a>}});</div>
 <div class="line">    form_border_style_choice.selected_index(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;size_t&gt;</a>(<a class="code hl_enumeration" href="group__xtd__forms.html#gae69a2e9fdce97075bf7642aed73e5907">form_border_style</a>()));</div>
-<div class="line">    form_border_style_choice.selected_index_changed += [&amp;] {</div>
+<div class="line">    form_border_style_choice.selected_index_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      <a class="code hl_enumeration" href="group__xtd__forms.html#gae69a2e9fdce97075bf7642aed73e5907">form_border_style</a>(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;forms::form_border_style&gt;</a>(form_border_style_choice.selected_index()));</div>
 <div class="line">    };</div>
 <div class="line">    </div>
@@ -156,7 +156,7 @@ $(function(){ initResizable(false); });
 <div class="line">    caption_text_box.location({110, 60});</div>
 <div class="line">    caption_text_box.width(200);</div>
 <div class="line">    caption_text_box.text(<a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>());</div>
-<div class="line">    caption_text_box.text_changed += [&amp;] {</div>
+<div class="line">    caption_text_box.text_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      <a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>(caption_text_box.text());</div>
 <div class="line">    };</div>
 <div class="line">    </div>
@@ -166,7 +166,7 @@ $(function(){ initResizable(false); });
 <div class="line">    </div>
 <div class="line">    minimize_box_switch_button.location({260, 110});</div>
 <div class="line">    minimize_box_switch_button.checked(minimize_box());</div>
-<div class="line">    minimize_box_switch_button.checked_changed += [&amp;] {</div>
+<div class="line">    minimize_box_switch_button.checked_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      minimize_box(minimize_box_switch_button.checked());</div>
 <div class="line">    };</div>
 <div class="line">    </div>
@@ -176,7 +176,7 @@ $(function(){ initResizable(false); });
 <div class="line">    </div>
 <div class="line">    maximize_box_switch_button.location({260, 140});</div>
 <div class="line">    maximize_box_switch_button.checked(maximize_box());</div>
-<div class="line">    maximize_box_switch_button.checked_changed += [&amp;] {</div>
+<div class="line">    maximize_box_switch_button.checked_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      maximize_box(maximize_box_switch_button.checked());</div>
 <div class="line">    };</div>
 <div class="line">    </div>
@@ -186,7 +186,7 @@ $(function(){ initResizable(false); });
 <div class="line">    </div>
 <div class="line">    close_box_switch_button.location({260, 170});</div>
 <div class="line">    close_box_switch_button.checked(close_box());</div>
-<div class="line">    close_box_switch_button.checked_changed += [&amp;] {</div>
+<div class="line">    close_box_switch_button.checked_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      close_box(close_box_switch_button.checked());</div>
 <div class="line">    };</div>
 <div class="line">    </div>
@@ -196,7 +196,7 @@ $(function(){ initResizable(false); });
 <div class="line">    </div>
 <div class="line">    control_box_switch_button.location({260, 200});</div>
 <div class="line">    control_box_switch_button.checked(control_box());</div>
-<div class="line">    control_box_switch_button.checked_changed += [&amp;] {</div>
+<div class="line">    control_box_switch_button.checked_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      control_box(control_box_switch_button.checked());</div>
 <div class="line">    };</div>
 <div class="line">    </div>
@@ -206,7 +206,7 @@ $(function(){ initResizable(false); });
 <div class="line">    </div>
 <div class="line">    help_button_switch_button.location({260, 230});</div>
 <div class="line">    help_button_switch_button.checked(help_button());</div>
-<div class="line">    help_button_switch_button.checked_changed += [&amp;] {</div>
+<div class="line">    help_button_switch_button.checked_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      help_button(help_button_switch_button.checked());</div>
 <div class="line">    };</div>
 <div class="line">    </div>
@@ -216,7 +216,7 @@ $(function(){ initResizable(false); });
 <div class="line">    </div>
 <div class="line">    show_icon_switch_button.location({260, 260});</div>
 <div class="line">    show_icon_switch_button.checked(show_icon());</div>
-<div class="line">    show_icon_switch_button.checked_changed += [&amp;] {</div>
+<div class="line">    show_icon_switch_button.checked_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      show_icon(show_icon_switch_button.checked());</div>
 <div class="line">    };</div>
 <div class="line">    </div>
@@ -226,7 +226,7 @@ $(function(){ initResizable(false); });
 <div class="line">    </div>
 <div class="line">    show_in_taskbar_switch_button.location({260, 290});</div>
 <div class="line">    show_in_taskbar_switch_button.checked(show_in_taskbar());</div>
-<div class="line">    show_in_taskbar_switch_button.checked_changed += [&amp;] {</div>
+<div class="line">    show_in_taskbar_switch_button.checked_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      show_in_taskbar(show_in_taskbar_switch_button.checked());</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
@@ -260,6 +260,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclassxtd_1_1forms_1_1label_html"><div class="ttname"><a href="classxtd_1_1forms_1_1label.html">xtd::forms::label</a></div><div class="ttdoc">Represents a standard Windows label.</div><div class="ttdef"><b>Definition</b> label.hpp:38</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1switch__button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1switch__button.html">xtd::forms::switch_button</a></div><div class="ttdoc">Represents a standard Windows switch button.</div><div class="ttdef"><b>Definition</b> switch_button.hpp:32</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1text__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1text__box.html">xtd::forms::text_box</a></div><div class="ttdoc">Represents a standard Windows text box.</div><div class="ttdef"><b>Definition</b> text_box.hpp:31</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gae69a2e9fdce97075bf7642aed73e5907"><div class="ttname"><a href="group__xtd__forms.html#gae69a2e9fdce97075bf7642aed73e5907">xtd::forms::form_border_style</a></div><div class="ttdeci">form_border_style</div><div class="ttdoc">Specifies the border styles for a form.</div><div class="ttdef"><b>Definition</b> form_border_style.hpp:22</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5"><div class="ttname"><a href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">xtd::forms::bounds_specified::location</a></div><div class="ttdeci">@ location</div><div class="ttdoc">Specifies that both the x and y coordinates of the control are defined.</div><div class="ttdef"><b>Definition</b> bounds_specified.hpp:30</div></div>
@@ -278,7 +279,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 3 2025 03:54:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 3 2025 05:39:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

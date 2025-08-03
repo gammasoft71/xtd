@@ -152,7 +152,7 @@ $(function(){ initResizable(false); });
 <div class="line">      lcd_style_choice.location({120, 10});</div>
 <div class="line">      lcd_style_choice.width(180);</div>
 <div class="line">      lcd_style_choice.items().push_back_range({{<span class="stringliteral">&quot;Seven segment display&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggaadd820dc6f2e0c2068f94749eb18725eae0c51d5072d75e830d9b93d8696be107">lcd_style::seven_segment_display</a>}, {<span class="stringliteral">&quot;Nine segment display&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggaadd820dc6f2e0c2068f94749eb18725ea0f205711e570afc5cfc86b04ade3ef56">lcd_style::nine_segment_display</a>}, {<span class="stringliteral">&quot;Fourteen segment display&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggaadd820dc6f2e0c2068f94749eb18725eaf83540763eec661984388546023ef8aa">lcd_style::fourteen_segment_display</a>}, {<span class="stringliteral">&quot;Sixteen segment display&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggaadd820dc6f2e0c2068f94749eb18725eaceecaef990747727b7d4fd1884f4b00a">lcd_style::sixteen_segment_display</a>}, {<span class="stringliteral">&quot;Dot matrix display&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggaadd820dc6f2e0c2068f94749eb18725ea30d54927d6f67b04c076a8a77985b950">lcd_style::dot_matrix_display</a>}});</div>
-<div class="line">      lcd_style_choice.selected_value_changed += [&amp;] {</div>
+<div class="line">      lcd_style_choice.selected_value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        label_lcd_label.lcd_style(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;lcd_style&gt;</a>(lcd_style_choice.selected_item().tag()));</div>
 <div class="line">        segment_style_choice.items().clear();</div>
 <div class="line">        <span class="keywordflow">if</span> (lcd_style_choice.selected_item().value() == <span class="stringliteral">&quot;Dot matrix display&quot;</span>) {</div>
@@ -171,7 +171,7 @@ $(function(){ initResizable(false); });
 <div class="line">      </div>
 <div class="line">      segment_style_choice.location({120, 45});</div>
 <div class="line">      segment_style_choice.width(180);</div>
-<div class="line">      segment_style_choice.selected_value_changed += [&amp;] {</div>
+<div class="line">      segment_style_choice.selected_value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="keyword">auto</span> style = segment_style_choice.selected_item().tag();</div>
 <div class="line">        <span class="keywordflow">if</span> (<a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is&lt;dot_matrix_style&gt;</a>(style)) label_lcd_label.dot_matrix_style(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;forms::dot_matrix_style&gt;</a>(segment_style_choice.selected_item().tag()));</div>
 <div class="line">        <span class="keywordflow">else</span> label_lcd_label.segment_style(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;forms::segment_style&gt;</a>(segment_style_choice.selected_item().tag()));</div>
@@ -185,7 +185,7 @@ $(function(){ initResizable(false); });
 <div class="line">      height_numeric_up_down.location({120, 80});</div>
 <div class="line">      height_numeric_up_down.width(180);</div>
 <div class="line">      height_numeric_up_down.set_range(1, 400);</div>
-<div class="line">      height_numeric_up_down.value_changed += [&amp;] {</div>
+<div class="line">      height_numeric_up_down.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        label_lcd_label.height(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int&gt;</a>(height_numeric_up_down.value()));</div>
 <div class="line">      };</div>
 <div class="line">      height_numeric_up_down.value(50);</div>
@@ -197,7 +197,7 @@ $(function(){ initResizable(false); });
 <div class="line">      fore_color_color_picker.location({120, 115});</div>
 <div class="line">      fore_color_color_picker.width(180);</div>
 <div class="line">      fore_color_color_picker.color(label_lcd_label.fore_color());</div>
-<div class="line">      fore_color_color_picker.color_picker_changed += [&amp;] {</div>
+<div class="line">      fore_color_color_picker.color_picker_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        label_lcd_label.fore_color(fore_color_color_picker.color());</div>
 <div class="line">      };</div>
 <div class="line">      </div>
@@ -210,7 +210,7 @@ $(function(){ initResizable(false); });
 <div class="line">      show_digit_background_togle_button.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">      show_digit_background_togle_button.checked(<span class="keyword">true</span>);</div>
 <div class="line">      show_digit_background_togle_button.text(<span class="stringliteral">&quot;true&quot;</span>);</div>
-<div class="line">      show_digit_background_togle_button.checked_changed += [&amp;] {</div>
+<div class="line">      show_digit_background_togle_button.checked_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        show_digit_background_togle_button.text(show_digit_background_togle_button.checked() ? <span class="stringliteral">&quot;True&quot;</span> : <span class="stringliteral">&quot;False&quot;</span>);</div>
 <div class="line">        label_lcd_label.show_back_digit(show_digit_background_togle_button.checked());</div>
 <div class="line">      };</div>
@@ -252,6 +252,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclassxtd_1_1forms_1_1numeric__up__down_html"><div class="ttname"><a href="classxtd_1_1forms_1_1numeric__up__down.html">xtd::forms::numeric_up_down</a></div><div class="ttdoc">Represents a standard Windows numeric up down.</div><div class="ttdef"><b>Definition</b> numeric_up_down.hpp:34</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1panel_html"><div class="ttname"><a href="classxtd_1_1forms_1_1panel.html">xtd::forms::panel</a></div><div class="ttdoc">Used to group collections of controls.</div><div class="ttdef"><b>Definition</b> panel.hpp:32</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1toggle__button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1toggle__button.html">xtd::forms::toggle_button</a></div><div class="ttdoc">Represents a Windows toggle_button.</div><div class="ttdef"><b>Definition</b> toggle_button.hpp:44</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga8419620dc289ac0d790372a1616e993f"><div class="ttname"><a href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">xtd::is</a></div><div class="ttdeci">bool is(xtd::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:485</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga8f1afbe5a615fe070461803db7af235ba1a6130a21d7d578d81a168ebcf0d9921"><div class="ttname"><a href="group__xtd__forms.html#gga8f1afbe5a615fe070461803db7af235ba1a6130a21d7d578d81a168ebcf0d9921">xtd::forms::segment_style::expanded</a></div><div class="ttdeci">@ expanded</div><div class="ttdoc">Expanded segment style.</div><div class="ttdef"><b>Definition</b> segment_style.hpp:29</div></div>
@@ -279,7 +280,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 3 2025 03:54:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 3 2025 05:39:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
