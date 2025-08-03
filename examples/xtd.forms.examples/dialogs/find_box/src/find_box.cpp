@@ -1,12 +1,4 @@
-#include <xtd/diagnostics/debug>
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/debug_form>
-#include <xtd/forms/find_box>
-#include <xtd/forms/form>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:
