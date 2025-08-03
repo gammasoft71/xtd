@@ -70,7 +70,7 @@ public:
     button1.location({10, 10});
     button1.parent(*this);
     button1.text("&Click me");
-    button1.click += [] {
+    button1.click += delegate_ {
       message_box::show("Hello, World!");
     };
   }
@@ -92,7 +92,7 @@ auto main() -> int {
 auto main() -> int {
   auto main_form = form::create("Hello world (message_box)");
   auto button1 = button::create(main_form, "&Click me", {10, 10});
-  button1.click += [] {message_box::show("Hello, World!");};
+  button1.click += delegate_ {message_box::show("Hello, World!");};
   application::run(main_form);
 }
 ```
