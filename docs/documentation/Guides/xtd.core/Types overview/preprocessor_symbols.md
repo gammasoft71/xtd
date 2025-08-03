@@ -412,23 +412,23 @@ The following table represents the different preprocessor symbols for the xtd pa
 
 | Symbols                          | Path                               | Value                                             |
 | -------------------------------- | ---------------------------------- | ------------------------------------------------- |
-| `__XTD_INSTALL_PATH__`           | The installation folder of xtd     | "${XTD_INSTALL_PATH}/include"                     |
-| `__XTD_LOCALE_PATH__`            | The xtd locale folder              | "${XTD_INSTALL_PATH}/include"                     |
-| `__XTD_REFERENCE_GUIDE_PATH__`   | The xtd reference guide folder     | "${XTD_INSTALL_PATH}/include"                     |
-| `__XTD_THEMES_PATH__`            | The xtd themes folder              | "${XTD_INSTALL_PATH}/include"                     |
-| `__XTD_INCLUDE_PATH__`           | The xtd inlude folder              | "${XTD_INSTALL_PATH}/include"                     |
-| `__XTD_LIB_PATH__`               | The xtd libraries folder           | "${XTD_INSTALL_PATH}/lib"                         |
-| `__XTD_REOURCES_PATH__`          | The xtd resources folder           | "${XTD_INSTALL_PATH}/lib"                         |
-| `__XTD_CONSOLE_INCLUDE_PATH__`   | The xtd::console inlude folder     | "${XTD_CONSOLE_INSTALL_PATH}/include"             |
-| `__XTD_CONSOLE_LIB_PATH__`       | The xtd::console libraries folder  | "${XTD_CONSOLE_INSTALL_PATH}/lib"                 |
-| `__XTD_DRAWING_INCLUDE_PATH__`   | The xtd::drawing inlude folder     | "${XTD_DRAWING_INSTALL_PATH}/include"             |
-| `__XTD_DRAWING_LIB_PATH__`       | The xtd::drawing libraries folder  | "${XTD_DRAWING_INSTALL_PATH}/lib"                 |
-| `__XTD_DRAWING_RESOURCES_PATH__` | The xtd::drawing resources folder  | "${XTD_DRAWING_INSTALL_PATH}/share/xtd/resources" |
-| `__XTD_FORMS_INCLUDE_PATH__`     | The xtd::forms inlude folder       | "${XTD_FORMS_INSTALL_PATH}/include"               |
-| `__XTD_FORMS_LIB_PATH__`         | The xtd::forms libraries folder    | "${XTD_FORMS_INSTALL_PATH}/lib"                   |
-| `__XTD_FORMS_RESOURCES_PATH__`   | The xtd::forms resources folder    | "${XTD_FORMS_INSTALL_PATH}/share/xtd/resources"   |
-| `__XTD_TUNIT_INCLUDE_PATH__`     | The xtd::tunit inlude folder       | "${XTD_TUNIT_INSTALL_PATH}/include"               |
-| `__XTD_TUNIT_LIB_PATH__`         | The xtd::tunit libraries folder    | "${XTD_TUNIT_INSTALL_PATH}/lib"                   |
+| `__XTD_INSTALL_PATH__`           | The installation folder of xtd     | `${XTD_INSTALL_PATH}/include`                     |
+| `__XTD_LOCALE_PATH__`            | The xtd locale folder              | `${XTD_INSTALL_PATH}/include`                     |
+| `__XTD_REFERENCE_GUIDE_PATH__`   | The xtd reference guide folder     | `${XTD_INSTALL_PATH}/include`                     |
+| `__XTD_THEMES_PATH__`            | The xtd themes folder              | `${XTD_INSTALL_PATH}/include`                     |
+| `__XTD_INCLUDE_PATH__`           | The xtd inlude folder              | `${XTD_INSTALL_PATH}/include`                     |
+| `__XTD_LIB_PATH__`               | The xtd libraries folder           | `${XTD_INSTALL_PATH}/lib`                         |
+| `__XTD_REOURCES_PATH__`          | The xtd resources folder           | `${XTD_INSTALL_PATH}/lib`                         |
+| `__XTD_CONSOLE_INCLUDE_PATH__`   | The xtd::console inlude folder     | `${XTD_CONSOLE_INSTALL_PATH}/include`             |
+| `__XTD_CONSOLE_LIB_PATH__`       | The xtd::console libraries folder  | `${XTD_CONSOLE_INSTALL_PATH}/lib`                 |
+| `__XTD_DRAWING_INCLUDE_PATH__`   | The xtd::drawing inlude folder     | `${XTD_DRAWING_INSTALL_PATH}/include`             |
+| `__XTD_DRAWING_LIB_PATH__`       | The xtd::drawing libraries folder  | `${XTD_DRAWING_INSTALL_PATH}/lib`                 |
+| `__XTD_DRAWING_RESOURCES_PATH__` | The xtd::drawing resources folder  | `${XTD_DRAWING_INSTALL_PATH}/share/xtd/resources` |
+| `__XTD_FORMS_INCLUDE_PATH__`     | The xtd::forms inlude folder       | `${XTD_FORMS_INSTALL_PATH}/include`               |
+| `__XTD_FORMS_LIB_PATH__`         | The xtd::forms libraries folder    | `${XTD_FORMS_INSTALL_PATH}/lib`                   |
+| `__XTD_FORMS_RESOURCES_PATH__`   | The xtd::forms resources folder    | `${XTD_FORMS_INSTALL_PATH}/share/xtd/resources`   |
+| `__XTD_TUNIT_INCLUDE_PATH__`     | The xtd::tunit inlude folder       | `${XTD_TUNIT_INSTALL_PATH}/include`               |
+| `__XTD_TUNIT_LIB_PATH__`         | The xtd::tunit libraries folder    | `${XTD_TUNIT_INSTALL_PATH}/lib`                   |
 
 If you are not using CMake to generate your project, you must define them. See the [xtd.cmake overview](/docs/documentation/Guides/xtd.cmake/Overview) section for more information.
 
