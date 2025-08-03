@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Tips and Tricks
 
-Here is a collection of practical tips and little xtd tips. 
+Here is a collection of practical tips and little xtd tricks. 
 Each subject is illustrated by simple and directly applicable code. 
 You will find concrete solutions to common problems encountered with xtd in modern C++.
 
