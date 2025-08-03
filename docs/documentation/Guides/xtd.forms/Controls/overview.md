@@ -23,7 +23,7 @@ For more information, see [Position and layout of controls](/docs/documentation/
 # Control events
 
 Controls provide a set of common events through the base class: [Control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html). Not every control responds to every event. 
-For example, the [label](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1label.html) control doesn't respond to keyboard input, so the [control::preview_key_down](#) event isn't raised. 
+For example, the [label](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1label.html) control doesn't respond to keyboard input, so the [control::preview_key_down](javascript:void(0)) event isn't raised. 
 Most shared events fall under these categories:
 
 * Mouse events

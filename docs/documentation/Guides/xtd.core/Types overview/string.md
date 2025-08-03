@@ -11,8 +11,8 @@ The value of the [xtd::string](https://gammasoft71.github.io/xtd/reference_guide
 
 [xtd::string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1string.html) is an immutable [std::string](https://en.cppreference.com/w/cpp/string/basic_string).
 
-* [std::string](https://en.cppreference.com/w/cpp/string/basic_string) is inherited from [std::basic_string<char\>](https://en.cppreference.com/w/cpp/string/basic_string).
-* [xtd::string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1string.html) is inherited from [xtd::basic_string<char\>](https://en.cppreference.com/w/cpp/string/basic_string) too and thus offers the immutable API of [std::string](https://en.cppreference.com/w/cpp/string/basic_string) with some functions missing from std::string.
+* [std::string](https://en.cppreference.com/w/cpp/string/basic_string) is inherited from [`std::basic_string<char>`](https://en.cppreference.com/w/cpp/string/basic_string).
+* [xtd::string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1string.html) is inherited from [`xtd::basic_string<char>`](https://en.cppreference.com/w/cpp/string/basic_string) too and thus offers the immutable API of [std::string](https://en.cppreference.com/w/cpp/string/basic_string) with some functions missing from std::string.
 
 ## Additional methods
 
@@ -57,7 +57,7 @@ See [type convertion](/docs/documentation/Guides/xtd.core/Types%20overview/Type%
 
 ### as operator
 
-The [xtd::as<...>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga09e01287b655c20807cdb73d993ba13d) operators cast a type into another type.
+The [`xtd::as<...>`](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga09e01287b655c20807cdb73d993ba13d) operators cast a type into another type.
 
 #### Remarks 
 
@@ -80,7 +80,7 @@ auto main() -> int {
 
 This example is one of N. You can convert any string container to any other string container.
 
-See [type convertion](/docs/documentation/Guides/xtd.core/Types%20overview/Type%20conversion/overview) for more information and [xtd::as<...>](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7) operators for a complete list of conversion operators.
+See [type convertion](/docs/documentation/Guides/xtd.core/Types%20overview/Type%20conversion/overview) for more information and [`xtd::as<...>`](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7) operators for a complete list of conversion operators.
 
 ## xtd::string literal operators
 
