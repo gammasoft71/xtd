@@ -885,5 +885,20 @@ namespace xtd {
   };
 }
 
+/// @brief The declaration of a delegate type is similar to a method signature. It has a return value and any number of parameters of any type
+/// @par Namespace
+/// xtd
+/// @par Library
+/// xtd.core
+/// @ingroup xtd_core keywords
+/// @par Examples
+/// @code
+/// button.click += delegate_(const object& sender, const event_args& e) {
+///   message_box::show("Button click!", "Message", message_box_buttons::ok);
+/// };
+/// @endcode
+#define delegate_ \
+  [&]
+
 // Required for begin_invoke and end_invoke methods implementation.
 #include "threading/thread_pool.hpp"
