@@ -146,13 +146,7 @@ Inheritance diagram for xtd::forms::debug_message_dialog:</div>
 </table>
 </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1debug__message__dialog.html" title="Displays a message window and write debug, which presents a debug message to the user.">debug_message_dialog</a> dialog. <div class="fragment"><div class="line"><span class="preprocessor">#define DEBUG</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/debug_form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/debug_message_dialog&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -173,20 +167,15 @@ Inheritance diagram for xtd::forms::debug_message_dialog:</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> df = <a class="code hl_class" href="classxtd_1_1forms_1_1debug__form.html">debug_form</a> {};</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(form1 {});</div>
+<div class="line">  <span class="keyword">auto</span> df = debug_form {};</div>
+<div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a53e5a75ad180a2efadc129e5a3c18cbd"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">xtd::forms::control::location</a></div><div class="ttdeci">virtual drawing::point location() const noexcept</div><div class="ttdoc">Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its...</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1debug__form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1debug__form.html">xtd::forms::debug_form</a></div><div class="ttdoc">Represents a form that displays debug form. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> debug_form.hpp:36</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1debug__message__dialog_html"><div class="ttname"><a href="classxtd_1_1forms_1_1debug__message__dialog.html">xtd::forms::debug_message_dialog</a></div><div class="ttdoc">Displays a message window and write debug, which presents a debug message to the user.</div><div class="ttdef"><b>Definition</b> debug_message_dialog.hpp:30</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1debug__message__dialog_html_a80e61508abd5612322284de5780880a3"><div class="ttname"><a href="#a80e61508abd5612322284de5780880a3">xtd::forms::debug_message_dialog::message</a></div><div class="ttdeci">xtd::string message() const noexcept</div><div class="ttdoc">Gets the text message.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga902d7ba89795f62756de856e06822883"><div class="ttname"><a href="group__style__sheets.html#ga902d7ba89795f62756de856e06822883">xtd::forms::style_sheets::button</a></div><div class="ttdeci">xtd::forms::style_sheets::control button</div><div class="ttdoc">The buttton data allows you to specify the box of a button control.</div><div class="ttdef"><b>Definition</b> button.hpp:25</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="debug_message_dialog_8cpp-example.html#_a2">debug_message_dialog.cpp</a>.</dd>
-</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Events</h2></td></tr>
 <tr class="memitem:a809fbd31e2305923f5085ff5b7fb070c" id="r_a809fbd31e2305923f5085ff5b7fb070c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1debug__message__dialog.html">debug_message_dialog</a>, <a class="el" href="group__events.html#ga918add7eeacec65a73147b022e3dc92d">dialog_closed_event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a809fbd31e2305923f5085ff5b7fb070c">dialog_closed</a></td></tr>
@@ -339,8 +328,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the text message. </p>
 <dl class="section return"><dt>Returns</dt><dd>The text message. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="debug_message_dialog_8cpp-example.html#a3">debug_message_dialog.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -530,7 +517,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jul 30 2025 08:29:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Aug 2 2025 08:44:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
