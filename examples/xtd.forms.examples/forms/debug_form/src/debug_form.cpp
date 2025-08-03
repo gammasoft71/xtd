@@ -17,7 +17,7 @@ public:
     button1.location({10, 10});
     button1.parent(*this);
     button1.text("Write line...");
-    button1.click += [&] {
+    button1.click += delegate_ {
       static auto counter = 0;
       xtd::diagnostics::debug::write_line("Write line {}...", ++counter);
     };

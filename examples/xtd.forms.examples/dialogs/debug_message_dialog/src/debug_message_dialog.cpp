@@ -8,7 +8,7 @@ public:
     button_show_debug_message.parent(*this);
     button_show_debug_message.text("Error...");
     button_show_debug_message.auto_size(true);
-    button_show_debug_message.click += [&] {
+    button_show_debug_message.click += delegate_ {
       auto dialog = debug_message_dialog {};
       dialog.message("An unknown process error occured.");
       dialog.show_sheet_dialog(*this);

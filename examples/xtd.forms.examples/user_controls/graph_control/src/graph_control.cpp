@@ -347,7 +347,7 @@ public:
     graph_control4_.signal_trace_color(color::dodger_blue);
     graph_control4_.size({321, 201});
 
-    form_closed += [&] {
+    form_closed += delegate_ {
       generator1_.stop();
       generator2_.stop();
       generator3_.stop();

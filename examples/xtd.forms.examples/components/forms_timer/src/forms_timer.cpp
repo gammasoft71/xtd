@@ -21,13 +21,13 @@ namespace timer_example {
       button1.parent(*this);
       button1.text("Start");
       button1.location({10, 90});
-      button1.click += [&](object & sender, const event_args & e) {
+      button1.click += delegate_(object & sender, const event_args & e) {
         timer1.enabled(!timer1.enabled());
         button1.text(timer1.enabled() ? "Stop" : "Start");
       };
       
       timer1.interval(100_ms);
-      timer1.tick += [&](object & sender, const event_args & e) {
+      timer1.tick += delegate_(object & sender, const event_args & e) {
         label1.text(string::format("{:F1}", ++counter / 10.0));
       };
       

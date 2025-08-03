@@ -25,7 +25,7 @@ namespace form_background_image2 {
       bliss_url.text_align(xtd::forms::content_alignment::middle_center);
       bliss_url.text("MACOS BLISS");
       bliss_url.links().push_back({0, bliss_url.text().size(), "https://basicappleguy.com/basicappleblog/macosbliss"});
-      bliss_url.link_clicked += [](object & sender, link_label_clicked_event_args & e) {
+      bliss_url.link_clicked += delegate_(object & sender, link_label_clicked_event_args & e) {
         e.visited(true);
         process::start(process_start_info {as<string>(e.link().link_data())}.use_shell_execute(true));
       };
@@ -33,7 +33,7 @@ namespace form_background_image2 {
       for (auto [value, name] : enum_object<>::get_entries<xtd::forms::image_layout>())
         image_layout_choice.items().push_back({name, value});
       image_layout_choice.location({10, 10});
-      image_layout_choice.selected_index_changed += [&] {
+      image_layout_choice.selected_index_changed += delegate_ {
         background_image_layout(as<xtd::forms::image_layout>(image_layout_choice.selected_item().tag()));
       };
       image_layout_choice.selected_index(0);

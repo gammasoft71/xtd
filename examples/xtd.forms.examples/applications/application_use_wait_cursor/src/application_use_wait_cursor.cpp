@@ -9,7 +9,7 @@ public:
     button1.location({10, 10});
     button1.parent(*this);
     button1.text("Do something...");
-    button1.click += [] {
+    button1.click += delegate_ {
       application::use_wait_cursor(true);
       for (auto count = 0; count < 500; ++count) {
         application::do_events();

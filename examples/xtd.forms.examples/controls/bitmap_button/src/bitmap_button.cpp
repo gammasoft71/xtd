@@ -18,7 +18,7 @@ public:
     button1.location({50, 50});
     button1.image(image::from_xpm_data(gammasoft_16x16_xpm));
     button1.image_align(content_alignment::middle_center);
-    button1.click += [&] {
+    button1.click += delegate_ {
       label1.text(string::format("Button 1 clicked {} times", ++button1_clicked));
     };
 
@@ -27,7 +27,7 @@ public:
     button2.size({200, 75});
     button2.image(image::from_xpm_data(gammasoft_64x64_xpm));
     button2.image_align(content_alignment::middle_center);
-    button2.click += [&] {
+    button2.click += delegate_ {
       label2.text(string::format("Button 2 clicked {} times", ++button2_clicked));
     };
 

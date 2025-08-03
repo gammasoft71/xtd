@@ -83,7 +83,7 @@ public:
     
     left_button.text("Move controls to left panel");
     left_button.enabled(false);
-    left_button.click += [&] {
+    left_button.click += delegate_ {
       left_button.enabled(false);
       right_button.enabled(true);
       
@@ -95,7 +95,7 @@ public:
     };
     
     right_button.text("Move controls to right panel");
-    right_button.click += [&] {
+    right_button.click += delegate_ {
       left_button.enabled(true);
       right_button.enabled(false);
       

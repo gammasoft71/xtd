@@ -15,7 +15,7 @@ namespace text_box_password2_example {
       
       text_box1.location({10, 10});
       text_box1.password_char('@');
-      text_box1.text_changed += [&] {
+      text_box1.text_changed += delegate_ {
         label1.text(text_box1.text());
       };
       text_box1.text("123456");

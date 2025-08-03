@@ -13,7 +13,7 @@ namespace light_button_example {
       controls().push_back_range({light_button1, light_button2, light_button3});
       
       light_button1.auto_check(false);
-      light_button1.click += [&] {
+      light_button1.click += delegate_ {
         //light_button1.checked(!light_button1.checked());
         light_button1.text(string::format("{}", light_button1.check_state()));
       };
@@ -21,7 +21,7 @@ namespace light_button_example {
       light_button1.text(string::format("{}", light_button1.check_state()));
       light_button1.width(130);
       
-      light_button2.check_state_changed += [&] {
+      light_button2.check_state_changed += delegate_ {
         light_button2.text(string::format("{}", light_button2.check_state()));
       };
       light_button2.checked(true);
@@ -29,7 +29,7 @@ namespace light_button_example {
       light_button2.width(130);
       
       light_button3.auto_size(true);
-      light_button3.check_state_changed += [&] {
+      light_button3.check_state_changed += delegate_ {
         light_button3.text(string::format("{}", light_button3.check_state()));
       };
       light_button3.check_state(forms::check_state::indeterminate);

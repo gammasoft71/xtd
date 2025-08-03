@@ -24,7 +24,7 @@ namespace example {
       picture.border_style(forms::border_style::fixed_3d);
       picture.bounds({75, 25, 150, 150});
       picture.size_mode(picture_box_size_mode::center_image);
-      picture.click += [&] {
+      picture.click += delegate_ {
         load_images();
       };
       
@@ -32,7 +32,7 @@ namespace example {
       button_previous.image(button_images::previous());
       button_previous.location({75, 200});
       button_previous.enabled(false);
-      button_previous.click += [&] {
+      button_previous.click += delegate_ {
         if (current_image_index > 0) picture.image(pictures.images()[--current_image_index]);
         button_previous.enabled(current_image_index > 0);
         button_next.enabled(current_image_index < pictures.images().size() - 1);
@@ -42,7 +42,7 @@ namespace example {
       button_next.image(button_images::next());
       button_next.location({150, 200});
       button_next.enabled(false);
-      button_next.click += [&] {
+      button_next.click += delegate_ {
         if (current_image_index < pictures.images().size()) picture.image(pictures.images()[++current_image_index]);
         button_previous.enabled(current_image_index > 0);
         button_next.enabled(current_image_index < pictures.images().size() - 1);

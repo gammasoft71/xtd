@@ -28,7 +28,7 @@ namespace tutorial {
       button_plus_.auto_repeat(true);
       button_plus_.location({30, 10});
       button_plus_.text("+");
-      button_plus_.click += [&] {
+      button_plus_.click += delegate_ {
         count++;
         control& form = parent().value().get();
         xtd::as<panel_right&>(form.controls()[0].get()).label_.text(xtd::string::format("{}", count));
@@ -37,7 +37,7 @@ namespace tutorial {
       button_minus_.auto_repeat(true);
       button_minus_.location({30, 60});
       button_minus_.text("-");
-      button_minus_.click += [&] {
+      button_minus_.click += delegate_ {
         count--;
         control& form = parent().value().get();
         xtd::as<panel_right&>(form.controls()[0].get()).label_.text(xtd::string::format("{}", count));

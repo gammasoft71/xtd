@@ -42,7 +42,7 @@ public:
     client_size({300, 300});
     controls().push_back_range({button_send, list_box_messages});
     
-    notifier.something_ready += [&] {
+    notifier.something_ready += delegate_ {
       static auto counter = 0;
       list_box_messages.items().push_back(string::format("Something ready notified {} times", ++counter));
       list_box_messages.selected_index(list_box_messages.items().size() - 1);
@@ -51,7 +51,7 @@ public:
     button_send.auto_size(true);
     button_send.location({10, 10});
     button_send.text("Send async notify something ready");
-    button_send.click += [&] {
+    button_send.click += delegate_ {
       thread_pool::queue_user_work_item([&] {
         thread::sleep(2_s);
         notifier.notify_something_ready();

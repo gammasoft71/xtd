@@ -9,7 +9,7 @@ public:
     button1.location({10, 10});
     button1.auto_size(true);
     button1.text("Exception...");
-    button1.click += [&] {
+    button1.click += delegate_ {
       try {
         throw invalid_operation_exception("Throws an invalid operation exception to show an exception dialog.");
       } catch (const xtd::system_exception& e) {

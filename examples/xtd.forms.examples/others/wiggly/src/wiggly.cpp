@@ -51,7 +51,7 @@ namespace wiggly_example {
       controls().push_back_range({wiggly, text_box});
       
       text_box.location({20, 90});
-      text_box.text_changed += [&] {
+      text_box.text_changed += delegate_ {
         wiggly.text(text_box.text());
       };
       text_box.text("Habemus papam");

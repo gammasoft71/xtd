@@ -8,7 +8,7 @@ public:
     
     button1.location({10, 10});
     button1.text("Color...");
-    button1.click += [&] {
+    button1.click += delegate_ {
       auto color = back_color();
       if (color_box::show(color, *this) == forms::dialog_result::ok)
         back_color(color);

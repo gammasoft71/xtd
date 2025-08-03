@@ -15,7 +15,7 @@ namespace input_dialog_example {
       
       button1.location({10, 10});
       button1.text("Text...");
-      button1.click += [&] {
+      button1.click += delegate_ {
         auto dialog = input_dialog {};
         dialog.text("Caption text");
         dialog.message("Message text");

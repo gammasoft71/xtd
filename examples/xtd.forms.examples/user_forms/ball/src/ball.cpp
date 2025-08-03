@@ -33,9 +33,9 @@ main_form::main_form() {
   main_panel_.context_menu(context_menu_);
   main_panel_.parent(*this);
   main_panel_.dock(xtd::forms::dock_style::fill);
-  main_panel_.mouse_down += [&](object& sender, const mouse_event_args& e) {on_mouse_down(e);};
-  main_panel_.mouse_up += [&](object& sender, const mouse_event_args& e) {on_mouse_up(e);};
-  main_panel_.mouse_move += [&](object& sender, const mouse_event_args& e) {on_mouse_move(e);};
+  main_panel_.mouse_down += delegate_(object& sender, const mouse_event_args& e) {on_mouse_down(e);};
+  main_panel_.mouse_up += delegate_(object& sender, const mouse_event_args& e) {on_mouse_up(e);};
+  main_panel_.mouse_move += delegate_(object& sender, const mouse_event_args& e) {on_mouse_move(e);};
 }
 
 void main_form::on_mouse_down(const xtd::forms::mouse_event_args& e) {

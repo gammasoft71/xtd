@@ -23,7 +23,7 @@ namespace game_of_life {
       text("John Conway's Game of Life");
       client_size({715, 485});
       
-      form_closed += [&] {
+      form_closed += delegate_ {
         closed_ = true;
         thread_run_.join();
       };
@@ -31,7 +31,7 @@ namespace game_of_life {
       button_run_.parent(*this);
       button_run_.text("Run");
       button_run_.location({10, 10});
-      button_run_.click += [&] {
+      button_run_.click += delegate_ {
         run_enabled_ = !run_enabled_;
         button_run_.text(run_enabled_ ? "Stop" : "Run");
         button_clear_.enabled(!run_enabled_);
@@ -53,7 +53,7 @@ namespace game_of_life {
       choice_figures_.location({280, 10});
       choice_figures_.selected_index(0);
       choice_figures_.width(220);
-      choice_figures_.selected_index_changed += [&] {
+      choice_figures_.selected_index_changed += delegate_ {
         suspend_layout();
         as<figure_delegate>(choice_figures_.items()[choice_figures_.selected_index()].tag())();
         resume_layout();
@@ -79,7 +79,7 @@ namespace game_of_life {
       track_bar_zoom_.maximum(50);
       track_bar_zoom_.tick_style(xtd::forms::tick_style::none);
       track_bar_zoom_.value(zoom_);
-      track_bar_zoom_.value_changed += [&] {
+      track_bar_zoom_.value_changed += delegate_ {
         if ((track_bar_zoom_.value() * grid::columns) < panel_grid_.client_size().width)
           track_bar_zoom_.value(panel_grid_.client_size().width / grid::columns + 1);
         if ((track_bar_zoom_.value() * grid::rows) < panel_grid_.client_size().height)
@@ -102,7 +102,7 @@ namespace game_of_life {
       track_bar_speed_.maximum(100);
       track_bar_speed_.tick_style(xtd::forms::tick_style::none);
       track_bar_speed_.value(speed_);
-      track_bar_speed_.value_changed += [&] {
+      track_bar_speed_.value_changed += delegate_ {
         speed_ = track_bar_speed_.value();
         interval_milliseconds_ = 1000 / speed_;
         label_speed_.text(xtd::string::format("Speed : {}", speed_));
@@ -118,20 +118,20 @@ namespace game_of_life {
       panel_grid_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::bottom | xtd::forms::anchor_styles::right);
       panel_grid_.double_buffered(true);
       
-      panel_grid_.mouse_down += [&](object & sender, const xtd::forms::mouse_event_args & e) {
+      panel_grid_.mouse_down += delegate_(object & sender, const xtd::forms::mouse_event_args & e) {
         current_state_ = grid_.cells()[offset_y_ + e.location().y / zoom_][offset_x_ + e.location().x / zoom_] == cell::populated ? cell::empty : cell::populated;
         grid_.cells()[offset_y_ + e.location().y / zoom_][offset_x_ + e.location().x / zoom_] = current_state_;
         panel_grid_.invalidate(xtd::drawing::rectangle(e.location().x / zoom_ * zoom_, e.location().y / zoom_ * zoom_, zoom_, zoom_), false);
       };
       
-      panel_grid_.mouse_move += [&](object & sender, const xtd::forms::mouse_event_args & e) {
+      panel_grid_.mouse_move += delegate_(object & sender, const xtd::forms::mouse_event_args & e) {
         if (e.button() == xtd::forms::mouse_buttons::left) {
           grid_.cells()[offset_y_ + e.location().y / zoom_][offset_x_ + e.location().x / zoom_] = current_state_;
           panel_grid_.invalidate(xtd::drawing::rectangle(e.location().x / zoom_ * zoom_, e.location().y / zoom_ * zoom_, zoom_, zoom_), false);
         }
       };
       
-      panel_grid_.paint += [&](object & sender, xtd::forms::paint_event_args & e) {
+      panel_grid_.paint += delegate_(object & sender, xtd::forms::paint_event_args & e) {
         e.graphics().clear(back_color());
         if ((track_bar_zoom_.value() * grid::columns) >= panel_grid_.client_size().width && (track_bar_zoom_.value() * grid::rows) >= panel_grid_.client_size().height)
           for (auto y = 0; y < panel_grid_.client_size().height; y += zoom_)
@@ -146,7 +146,7 @@ namespace game_of_life {
         }
       };
       
-      panel_grid_.resize += [&] {
+      panel_grid_.resize += delegate_ {
         if ((track_bar_zoom_.value() * grid::columns) < panel_grid_.client_size().width) {
           zoom_ = panel_grid_.client_size().width / grid::columns + 1;
           track_bar_zoom_.value(zoom_);
@@ -157,7 +157,7 @@ namespace game_of_life {
         }
       };
       
-      grid_.cells_updated += [&] {
+      grid_.cells_updated += delegate_ {
         panel_grid_.begin_invoke([&] {
           panel_grid_.invalidate();
           label_iterations_.text(xtd::string::format("Iterations : {}", iterations_));

@@ -25,7 +25,7 @@ auto main() -> int {
   timer timer;
   timer.interval(300_ms);
   timer.enabled(!timer.enabled());
-  timer.tick += [&] {
+  timer.tick += delegate_ {
     if (++index >= label.valid_characters().size()) index = 0;
     label.text(string::format("{}", label.valid_characters()[index]));
   };

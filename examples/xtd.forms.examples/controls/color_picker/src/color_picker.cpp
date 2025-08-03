@@ -21,7 +21,7 @@ namespace color_picker_example {
       color_picker.parent(*this);
       color_picker.alpha_color(true);
       color_picker.location({10, 10});
-      color_picker.color_picker_changed += [&](object& sender, const color_picker_event_args& e) {
+      color_picker.color_picker_changed += delegate_(object& sender, const color_picker_event_args& e) {
         test_zone.invalidate();
         color_label.text(color_translator::to_html(e.color()));
       };
@@ -31,7 +31,7 @@ namespace color_picker_example {
       test_zone.location({10, 50});
       test_zone.border_style(border_style::fixed_3d);
       test_zone.double_buffered(true);
-      test_zone.paint += [&](object& sender, paint_event_args& e) {
+      test_zone.paint += delegate_(object& sender, paint_event_args& e) {
         e.graphics().fill_rectangle(hatch_brush {hatch_style::wide_checker_board, color::from_argb(0x66, 0x66, 0x66), color::from_argb(0x99, 0x99, 0x99)}, e.clip_rectangle());
         e.graphics().fill_rectangle(solid_brush {color_picker.color()}, e.clip_rectangle());
         control_paint::draw_border(test_zone, e.graphics(), test_zone.border_style(), test_zone.border_sides(), application::style_sheet().system_colors().control_text(), rectangle::add(e.clip_rectangle(), -1, -1));

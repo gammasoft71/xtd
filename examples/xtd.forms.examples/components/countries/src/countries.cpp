@@ -31,7 +31,7 @@ namespace countries_example {
       for (auto country : countries::get_countries())
         countries_list_box.items().push_back({country.name(), country});
       countries_list_box.sorted(true);
-      countries_list_box.selected_value_changed += [&] {
+      countries_list_box.selected_value_changed += delegate_ {
         country_flag_picture_box.image(bitmap(as<forms::country>(countries_list_box.selected_item().tag()).flag(), {256, 192}));
         country_flag_squared_picture_box.image(bitmap(as<forms::country>(countries_list_box.selected_item().tag()).flag_squared(), {128, 128}));
         country_emoticon_label.text(as<forms::country>(countries_list_box.selected_item().tag()).emoticon());

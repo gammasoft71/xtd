@@ -50,7 +50,7 @@ namespace border_style_example {
       colors_chooser.items().push_back_range(colors::get_color_names());
       colors_chooser.items().push_back_range(system_colors::get_color_names());
       colors_chooser.bounds({120, 37, 220, colors_chooser.size().height});
-      colors_chooser.selected_index_changed += [&] {
+      colors_chooser.selected_index_changed += delegate_ {
         auto color = color::from_name(colors_chooser.selected_item().value());
         colored_panel.back_color(colors_chooser.selected_item() == "control" ? color : color.is_dark() ? color_converter::light(color, .1) :  color_converter::dark(color, .1));
         colored_panel.fore_color(color.is_dark() ? color_converter::light(color, 2.0 / 3) : color_converter::dark(color, 2.0 / 3));
@@ -71,7 +71,7 @@ namespace border_style_example {
       top_side.checked(true);
       top_side.location({495, 15});
       top_side.size({50, 10});
-      top_side.checked_changed += [&] {
+      top_side.checked_changed += delegate_ {
         if (top_side.checked()) border_sides |= forms::border_sides::top;
         else border_sides &= ~forms::border_sides::top;
         for (auto& bordered_label : bordered_labels)
@@ -85,7 +85,7 @@ namespace border_style_example {
         .mouse_over_back_color(application::style_sheet().system_colors().accent()));
       left_side.location({480, 25});
       left_side.size({10, 50});
-      left_side.checked_changed += [&] {
+      left_side.checked_changed += delegate_ {
         if (left_side.checked()) border_sides |= forms::border_sides::left;
         else border_sides &= ~forms::border_sides::left;
         for (auto& bordered_label : bordered_labels)
@@ -99,7 +99,7 @@ namespace border_style_example {
         .mouse_over_back_color(application::style_sheet().system_colors().accent()));
       right_side.location({550, 25});
       right_side.size({10, 50});
-      right_side.checked_changed += [&] {
+      right_side.checked_changed += delegate_ {
         if (right_side.checked()) border_sides |= forms::border_sides::right;
         else border_sides &= ~forms::border_sides::right;
         for (auto& bordered_label : bordered_labels)
@@ -113,7 +113,7 @@ namespace border_style_example {
         .mouse_over_back_color(application::style_sheet().system_colors().accent()));
       bottom_side.location({495, 75});
       bottom_side.size({50, 10});
-      bottom_side.checked_changed += [&] {
+      bottom_side.checked_changed += delegate_ {
         if (bottom_side.checked()) border_sides |= forms::border_sides::bottom;
         else border_sides &= ~forms::border_sides::bottom;
         for (auto& bordered_label : bordered_labels)

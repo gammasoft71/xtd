@@ -90,186 +90,186 @@ namespace image_effects_example {
       effect_choice.selected_value_changed += {*this, &form1::on_effect_choice_selected_value_changed};
       picture_choice.selected_value_changed += {*this, &form1::on_picture_choice_selected_value_changed};
 
-      bitonal_threshold_numeric_up_down.value_changed += [&] {bitonal_threshold_track_bar.value(as<int32>(bitonal_threshold_numeric_up_down.value()));};
-      bitonal_threshold_track_bar.value_changed += [&] {
+      bitonal_threshold_numeric_up_down.value_changed += delegate_ {bitonal_threshold_track_bar.value(as<int32>(bitonal_threshold_numeric_up_down.value()));};
+      bitonal_threshold_track_bar.value_changed += delegate_ {
         bitonal_threshold_numeric_up_down.value(bitonal_threshold_track_bar.value());
         update_pictures();
       };
-      bitonal_upper_color_color_picker.color_picker_changed += [&] {update_pictures();};
-      bitonal_lower_color_color_picker.color_picker_changed += [&] {update_pictures();};
+      bitonal_upper_color_color_picker.color_picker_changed += delegate_ {update_pictures();};
+      bitonal_lower_color_color_picker.color_picker_changed += delegate_ {update_pictures();};
 
-      blur_horizontal_radius_numeric_up_down.value_changed += [&] {blur_horizontal_radius_track_bar.value(as<int32>(blur_horizontal_radius_numeric_up_down.value()));};
-      blur_horizontal_radius_track_bar.value_changed += [&] {
+      blur_horizontal_radius_numeric_up_down.value_changed += delegate_ {blur_horizontal_radius_track_bar.value(as<int32>(blur_horizontal_radius_numeric_up_down.value()));};
+      blur_horizontal_radius_track_bar.value_changed += delegate_ {
         blur_horizontal_radius_numeric_up_down.value(blur_horizontal_radius_track_bar.value());
         if (blur_sync_horizontal_and_vertical_check_box.checked()) blur_vertical_radius_track_bar.value(blur_horizontal_radius_track_bar.value());
         update_pictures();
       };
-      blur_vertical_radius_numeric_up_down.value_changed += [&] {blur_vertical_radius_track_bar.value(as<int32>(blur_vertical_radius_numeric_up_down.value()));};
-      blur_vertical_radius_track_bar.value_changed += [&] {
+      blur_vertical_radius_numeric_up_down.value_changed += delegate_ {blur_vertical_radius_track_bar.value(as<int32>(blur_vertical_radius_numeric_up_down.value()));};
+      blur_vertical_radius_track_bar.value_changed += delegate_ {
         blur_vertical_radius_numeric_up_down.value(blur_vertical_radius_track_bar.value());
         if (blur_sync_horizontal_and_vertical_check_box.checked()) blur_horizontal_radius_track_bar.value(blur_vertical_radius_track_bar.value());
         update_pictures();
       };
-      blur_expand_edge_check_box.checked_changed += [&] {update_pictures();};
+      blur_expand_edge_check_box.checked_changed += delegate_ {update_pictures();};
       
-      brightness_percent_numeric_up_down.value_changed += [&] {brightness_percent_track_bar.value(as<int32>(brightness_percent_numeric_up_down.value()));};
-      brightness_percent_track_bar.value_changed += [&] {
+      brightness_percent_numeric_up_down.value_changed += delegate_ {brightness_percent_track_bar.value(as<int32>(brightness_percent_numeric_up_down.value()));};
+      brightness_percent_track_bar.value_changed += delegate_ {
         brightness_percent_numeric_up_down.value(brightness_percent_track_bar.value());
         update_pictures();
       };
       
-      color_percent_numeric_up_down.value_changed += [&] {color_percent_track_bar.value(as<int32>(color_percent_numeric_up_down.value()));};
-      color_percent_track_bar.value_changed += [&] {
+      color_percent_numeric_up_down.value_changed += delegate_ {color_percent_track_bar.value(as<int32>(color_percent_numeric_up_down.value()));};
+      color_percent_track_bar.value_changed += delegate_ {
         color_percent_numeric_up_down.value(color_percent_track_bar.value());
         update_pictures();
       };
-      color_color_color_picker.color_picker_changed += [&] {update_pictures();};
+      color_color_color_picker.color_picker_changed += delegate_ {update_pictures();};
 
-      color_extraction_threshold_numeric_up_down.value_changed += [&] {color_extraction_threshold_track_bar.value(as<int32>(color_extraction_threshold_numeric_up_down.value()));};
-      color_extraction_threshold_track_bar.value_changed += [&] {
+      color_extraction_threshold_numeric_up_down.value_changed += delegate_ {color_extraction_threshold_track_bar.value(as<int32>(color_extraction_threshold_numeric_up_down.value()));};
+      color_extraction_threshold_track_bar.value_changed += delegate_ {
         color_extraction_threshold_numeric_up_down.value(color_extraction_threshold_track_bar.value());
         update_pictures();
       };
-      color_extraction_extraction_color_color_picker.color_picker_changed += [&] {update_pictures();};
-      color_extraction_other_pixels_color_color_picker.color_picker_changed += [&] {update_pictures();};
+      color_extraction_extraction_color_color_picker.color_picker_changed += delegate_ {update_pictures();};
+      color_extraction_other_pixels_color_color_picker.color_picker_changed += delegate_ {update_pictures();};
       
-      posterize_levels_numeric_up_down.value_changed += [&] {posterize_levels_track_bar.value(as<int32>(posterize_levels_numeric_up_down.value()));};
-      posterize_levels_track_bar.value_changed += [&] {
+      posterize_levels_numeric_up_down.value_changed += delegate_ {posterize_levels_track_bar.value(as<int32>(posterize_levels_numeric_up_down.value()));};
+      posterize_levels_track_bar.value_changed += delegate_ {
         posterize_levels_numeric_up_down.value(posterize_levels_track_bar.value());
         update_pictures();
       };
 
-      color_substitution_threshold_numeric_up_down.value_changed += [&] {color_substitution_threshold_track_bar.value(as<int32>(color_substitution_threshold_numeric_up_down.value()));};
-      color_substitution_threshold_track_bar.value_changed += [&] {
+      color_substitution_threshold_numeric_up_down.value_changed += delegate_ {color_substitution_threshold_track_bar.value(as<int32>(color_substitution_threshold_numeric_up_down.value()));};
+      color_substitution_threshold_track_bar.value_changed += delegate_ {
         color_substitution_threshold_numeric_up_down.value(color_substitution_threshold_track_bar.value());
         update_pictures();
       };
-      color_substitution_source_color_color_picker.color_picker_changed += [&] {update_pictures();};
-      color_substitution_new_color_color_picker.color_picker_changed += [&] {update_pictures();};
+      color_substitution_source_color_color_picker.color_picker_changed += delegate_ {update_pictures();};
+      color_substitution_new_color_color_picker.color_picker_changed += delegate_ {update_pictures();};
       
-      contrast_percent_numeric_up_down.value_changed += [&] {contrast_percent_track_bar.value(as<int32>(contrast_percent_numeric_up_down.value()));};
-      contrast_percent_track_bar.value_changed += [&] {
+      contrast_percent_numeric_up_down.value_changed += delegate_ {contrast_percent_track_bar.value(as<int32>(contrast_percent_numeric_up_down.value()));};
+      contrast_percent_track_bar.value_changed += delegate_ {
         contrast_percent_numeric_up_down.value(contrast_percent_track_bar.value());
         update_pictures();
       };
       
-      crop_x_numeric_up_down.value_changed += [&] {
+      crop_x_numeric_up_down.value_changed += delegate_ {
         crop_x_track_bar.value(as<int32>(crop_x_numeric_up_down.value()));
       };
-      crop_x_track_bar.value_changed += [&] {
+      crop_x_track_bar.value_changed += delegate_ {
         crop_x_numeric_up_down.value(crop_x_track_bar.value());
         update_pictures();
       };
       
-      crop_y_numeric_up_down.value_changed += [&] {
+      crop_y_numeric_up_down.value_changed += delegate_ {
         crop_y_track_bar.value(as<int32>(crop_y_numeric_up_down.value()));
       };
-      crop_y_track_bar.value_changed += [&] {
+      crop_y_track_bar.value_changed += delegate_ {
         crop_y_numeric_up_down.value(crop_y_track_bar.value());
         update_pictures();
       };
       
-      crop_width_numeric_up_down.value_changed += [&] {
+      crop_width_numeric_up_down.value_changed += delegate_ {
         crop_width_track_bar.value(as<int32>(crop_width_numeric_up_down.value()));
       };
-      crop_width_track_bar.value_changed += [&] {
+      crop_width_track_bar.value_changed += delegate_ {
         crop_x_numeric_up_down.set_range(crop_width_track_bar.value() - original_image().width(), 0);
         crop_x_track_bar.set_range(crop_width_track_bar.value() - original_image().width(), 0);
         crop_width_numeric_up_down.value(crop_width_track_bar.value());
         update_pictures();
       };
       
-      crop_height_numeric_up_down.value_changed += [&] {
+      crop_height_numeric_up_down.value_changed += delegate_ {
         crop_height_track_bar.value(as<int32>(crop_height_numeric_up_down.value()));
       };
-      crop_height_track_bar.value_changed += [&] {
+      crop_height_track_bar.value_changed += delegate_ {
         crop_y_numeric_up_down.set_range(crop_height_track_bar.value() - original_image().height(), 0);
         crop_y_track_bar.set_range(crop_height_track_bar.value() - original_image().height(), 0);
         crop_height_numeric_up_down.value(crop_height_track_bar.value());
         update_pictures();
       };
 
-      disabled_switch_button.checked_changed += [&] {update_pictures();};
+      disabled_switch_button.checked_changed += delegate_ {update_pictures();};
       
-      drop_shadow_radius_numeric_up_down.value_changed += [&] {drop_shadow_radius_track_bar.value(as<int32>(drop_shadow_radius_numeric_up_down.value()));};
-      drop_shadow_radius_track_bar.value_changed += [&] {
+      drop_shadow_radius_numeric_up_down.value_changed += delegate_ {drop_shadow_radius_track_bar.value(as<int32>(drop_shadow_radius_numeric_up_down.value()));};
+      drop_shadow_radius_track_bar.value_changed += delegate_ {
         drop_shadow_radius_numeric_up_down.value(drop_shadow_radius_track_bar.value());
         update_pictures();
       };
-      drop_shadow_horizontal_numeric_up_down.value_changed += [&] {drop_shadow_horizontal_track_bar.value(as<int32>(drop_shadow_horizontal_numeric_up_down.value()));};
-      drop_shadow_horizontal_track_bar.value_changed += [&] {
+      drop_shadow_horizontal_numeric_up_down.value_changed += delegate_ {drop_shadow_horizontal_track_bar.value(as<int32>(drop_shadow_horizontal_numeric_up_down.value()));};
+      drop_shadow_horizontal_track_bar.value_changed += delegate_ {
         drop_shadow_horizontal_numeric_up_down.value(drop_shadow_horizontal_track_bar.value());
         update_pictures();
       };
-      drop_shadow_vertical_numeric_up_down.value_changed += [&] {drop_shadow_vertical_track_bar.value(as<int32>(drop_shadow_vertical_numeric_up_down.value()));};
-      drop_shadow_vertical_track_bar.value_changed += [&] {
+      drop_shadow_vertical_numeric_up_down.value_changed += delegate_ {drop_shadow_vertical_track_bar.value(as<int32>(drop_shadow_vertical_numeric_up_down.value()));};
+      drop_shadow_vertical_track_bar.value_changed += delegate_ {
         drop_shadow_vertical_numeric_up_down.value(drop_shadow_vertical_track_bar.value());
         update_pictures();
       };
-      drop_shadow_color_color_picker.color_picker_changed += [&] {update_pictures();};
+      drop_shadow_color_color_picker.color_picker_changed += delegate_ {update_pictures();};
 
-      gamma_correction_red_correction_numeric_up_down.value_changed += [&] {gamma_correction_red_correction_track_bar.value(as<int32>(gamma_correction_red_correction_numeric_up_down.value() * 10));};
-      gamma_correction_red_correction_track_bar.value_changed += [&] {
+      gamma_correction_red_correction_numeric_up_down.value_changed += delegate_ {gamma_correction_red_correction_track_bar.value(as<int32>(gamma_correction_red_correction_numeric_up_down.value() * 10));};
+      gamma_correction_red_correction_track_bar.value_changed += delegate_ {
         gamma_correction_red_correction_numeric_up_down.value(gamma_correction_red_correction_track_bar.value() / 10.0);
         update_pictures();
       };
 
-      gamma_correction_green_correction_numeric_up_down.value_changed += [&] {gamma_correction_green_correction_track_bar.value(as<int32>(gamma_correction_green_correction_numeric_up_down.value() * 10));};
-      gamma_correction_green_correction_track_bar.value_changed += [&] {
+      gamma_correction_green_correction_numeric_up_down.value_changed += delegate_ {gamma_correction_green_correction_track_bar.value(as<int32>(gamma_correction_green_correction_numeric_up_down.value() * 10));};
+      gamma_correction_green_correction_track_bar.value_changed += delegate_ {
         gamma_correction_green_correction_numeric_up_down.value(gamma_correction_green_correction_track_bar.value() / 10.0);
         update_pictures();
       };
 
-      gamma_correction_blue_correction_numeric_up_down.value_changed += [&] {gamma_correction_blue_correction_track_bar.value(as<int32>(gamma_correction_blue_correction_numeric_up_down.value() * 10));};
-      gamma_correction_blue_correction_track_bar.value_changed += [&] {
+      gamma_correction_blue_correction_numeric_up_down.value_changed += delegate_ {gamma_correction_blue_correction_track_bar.value(as<int32>(gamma_correction_blue_correction_numeric_up_down.value() * 10));};
+      gamma_correction_blue_correction_track_bar.value_changed += delegate_ {
         gamma_correction_blue_correction_numeric_up_down.value(gamma_correction_blue_correction_track_bar.value() / 10.0);
         update_pictures();
       };
 
-      grayscale_percent_numeric_up_down.value_changed += [&] {grayscale_percent_track_bar.value(as<int32>(grayscale_percent_numeric_up_down.value()));};
-      grayscale_percent_track_bar.value_changed += [&] {
+      grayscale_percent_numeric_up_down.value_changed += delegate_ {grayscale_percent_track_bar.value(as<int32>(grayscale_percent_numeric_up_down.value()));};
+      grayscale_percent_track_bar.value_changed += delegate_ {
         grayscale_percent_numeric_up_down.value(grayscale_percent_track_bar.value());
         update_pictures();
       };
 
-      hue_rotate_percent_numeric_up_down.value_changed += [&] {hue_rotate_percent_track_bar.value(as<int32>(hue_rotate_percent_numeric_up_down.value()));};
-      hue_rotate_percent_track_bar.value_changed += [&] {
+      hue_rotate_percent_numeric_up_down.value_changed += delegate_ {hue_rotate_percent_track_bar.value(as<int32>(hue_rotate_percent_numeric_up_down.value()));};
+      hue_rotate_percent_track_bar.value_changed += delegate_ {
         hue_rotate_percent_numeric_up_down.value(hue_rotate_percent_track_bar.value());
         update_pictures();
       };
       
-      invert_percent_numeric_up_down.value_changed += [&] {invert_percent_track_bar.value(as<int32>(invert_percent_numeric_up_down.value()));};
-      invert_percent_track_bar.value_changed += [&] {
+      invert_percent_numeric_up_down.value_changed += delegate_ {invert_percent_track_bar.value(as<int32>(invert_percent_numeric_up_down.value()));};
+      invert_percent_track_bar.value_changed += delegate_ {
         invert_percent_numeric_up_down.value(invert_percent_track_bar.value());
         update_pictures();
       };
       
-      opacity_percent_numeric_up_down.value_changed += [&] {opacity_percent_track_bar.value(as<int32>(opacity_percent_numeric_up_down.value()));};
-      opacity_percent_track_bar.value_changed += [&] {
+      opacity_percent_numeric_up_down.value_changed += delegate_ {opacity_percent_track_bar.value(as<int32>(opacity_percent_numeric_up_down.value()));};
+      opacity_percent_track_bar.value_changed += delegate_ {
         opacity_percent_numeric_up_down.value(opacity_percent_track_bar.value());
         update_pictures();
       };
 
-      resize_x_numeric_up_down.value_changed += [&] {
+      resize_x_numeric_up_down.value_changed += delegate_ {
         resize_x_track_bar.value(as<int32>(resize_x_numeric_up_down.value()));
       };
-      resize_x_track_bar.value_changed += [&] {
+      resize_x_track_bar.value_changed += delegate_ {
         resize_x_numeric_up_down.value(resize_x_track_bar.value());
         update_pictures();
       };
       
-      resize_y_numeric_up_down.value_changed += [&] {
+      resize_y_numeric_up_down.value_changed += delegate_ {
         resize_y_track_bar.value(as<int32>(resize_y_numeric_up_down.value()));
       };
-      resize_y_track_bar.value_changed += [&] {
+      resize_y_track_bar.value_changed += delegate_ {
         resize_y_numeric_up_down.value(resize_y_track_bar.value());
         update_pictures();
       };
       
-      resize_width_numeric_up_down.value_changed += [&] {
+      resize_width_numeric_up_down.value_changed += delegate_ {
         resize_width_track_bar.value(as<int32>(resize_width_numeric_up_down.value()));
       };
-      resize_width_track_bar.value_changed += [&] {
+      resize_width_track_bar.value_changed += delegate_ {
         if (resize_width_track_bar.value() < original_image().width()) {
           resize_x_numeric_up_down.set_range(resize_width_track_bar.value() - original_image().width(), 0);
           resize_x_track_bar.set_range(resize_width_track_bar.value() - original_image().width(), 0);
@@ -285,10 +285,10 @@ namespace image_effects_example {
         update_pictures();
       };
 
-      resize_height_numeric_up_down.value_changed += [&] {
+      resize_height_numeric_up_down.value_changed += delegate_ {
         resize_height_track_bar.value(as<int32>(resize_height_numeric_up_down.value()));
       };
-      resize_height_track_bar.value_changed += [&] {
+      resize_height_track_bar.value_changed += delegate_ {
         if (resize_height_track_bar.value() < original_image().height()) {
           resize_y_numeric_up_down.set_range(resize_height_track_bar.value() - original_image().height(), 0);
           resize_y_track_bar.set_range(resize_height_track_bar.value() - original_image().height(), 0);
@@ -303,48 +303,48 @@ namespace image_effects_example {
         if (resize_maintain_aspect_ratio_check_box.checked()) resize_width_numeric_up_down.value(as<int>(resize_height_track_bar.value() * resize_aspect_ratio));
         update_pictures();
       };
-      resize_fill_color_color_picker.color_picker_changed += [&] {update_pictures();};
-      resize_auto_determine_fill_color_ratio_check_box.checked_changed += [&] {
+      resize_fill_color_color_picker.color_picker_changed += delegate_ {update_pictures();};
+      resize_auto_determine_fill_color_ratio_check_box.checked_changed += delegate_ {
         resize_fill_color_color_picker.enabled(!resize_auto_determine_fill_color_ratio_check_box.checked());
         update_pictures();
       };
 
-      rotate_flip_choice.selected_index_changed += [&] {update_pictures();};
+      rotate_flip_choice.selected_index_changed += delegate_ {update_pictures();};
       
-      saturate_percent_numeric_up_down.value_changed += [&] {saturate_percent_track_bar.value(as<int32>(saturate_percent_numeric_up_down.value()));};
-      saturate_percent_track_bar.value_changed += [&] {
+      saturate_percent_numeric_up_down.value_changed += delegate_ {saturate_percent_track_bar.value(as<int32>(saturate_percent_numeric_up_down.value()));};
+      saturate_percent_track_bar.value_changed += delegate_ {
         saturate_percent_numeric_up_down.value(saturate_percent_track_bar.value());
         update_pictures();
       };
       
-      scale_width_numeric_up_down.value_changed += [&] {scale_width_track_bar.value(as<int32>(scale_width_numeric_up_down.value()));};
-      scale_width_track_bar.value_changed += [&] {
+      scale_width_numeric_up_down.value_changed += delegate_ {scale_width_track_bar.value(as<int32>(scale_width_numeric_up_down.value()));};
+      scale_width_track_bar.value_changed += delegate_ {
         scale_width_numeric_up_down.value(scale_width_track_bar.value());
         if (scale_maintain_aspect_ratio_check_box.checked()) scale_height_numeric_up_down.value(as<int>(scale_width_track_bar.value() / rescale_aspect_ratio));
         update_pictures();
       };
-      scale_height_numeric_up_down.value_changed += [&] {scale_height_track_bar.value(as<int32>(scale_height_numeric_up_down.value()));};
-      scale_height_track_bar.value_changed += [&] {
+      scale_height_numeric_up_down.value_changed += delegate_ {scale_height_track_bar.value(as<int32>(scale_height_numeric_up_down.value()));};
+      scale_height_track_bar.value_changed += delegate_ {
         scale_height_numeric_up_down.value(scale_height_track_bar.value());
         if (scale_maintain_aspect_ratio_check_box.checked()) scale_width_numeric_up_down.value(as<int>(scale_height_track_bar.value() * rescale_aspect_ratio));
         update_pictures();
       };
-      scale_interpolation_mode_choice.selected_index_changed += [&] {update_pictures();};
+      scale_interpolation_mode_choice.selected_index_changed += delegate_ {update_pictures();};
 
-      sepia_percent_numeric_up_down.value_changed += [&] {sepia_percent_track_bar.value(as<int32>(sepia_percent_numeric_up_down.value()));};
-      sepia_percent_track_bar.value_changed += [&] {
+      sepia_percent_numeric_up_down.value_changed += delegate_ {sepia_percent_track_bar.value(as<int32>(sepia_percent_numeric_up_down.value()));};
+      sepia_percent_track_bar.value_changed += delegate_ {
         sepia_percent_numeric_up_down.value(sepia_percent_track_bar.value());
         update_pictures();
       };
       
-      solarize_threshold_numeric_up_down.value_changed += [&] {solarize_threshold_track_bar.value(as<int32>(solarize_threshold_numeric_up_down.value()));};
-      solarize_threshold_track_bar.value_changed += [&] {
+      solarize_threshold_numeric_up_down.value_changed += delegate_ {solarize_threshold_track_bar.value(as<int32>(solarize_threshold_numeric_up_down.value()));};
+      solarize_threshold_track_bar.value_changed += delegate_ {
         solarize_threshold_numeric_up_down.value(solarize_threshold_track_bar.value());
         update_pictures();
       };
 
-      threshold_threshold_numeric_up_down.value_changed += [&] {threshold_threshold_track_bar.value(as<int32>(threshold_threshold_numeric_up_down.value()));};
-      threshold_threshold_track_bar.value_changed += [&] {
+      threshold_threshold_numeric_up_down.value_changed += delegate_ {threshold_threshold_track_bar.value(as<int32>(threshold_threshold_numeric_up_down.value()));};
+      threshold_threshold_track_bar.value_changed += delegate_ {
         threshold_threshold_numeric_up_down.value(threshold_threshold_track_bar.value());
         update_pictures();
       };
@@ -355,7 +355,7 @@ namespace image_effects_example {
       adjusted_picture_panel.double_buffered(true);
       adjusted_picture_panel.paint += {*this, &form1::on_panel_image_paint};
       
-      background_choice.selected_value_changed += [&] {
+      background_choice.selected_value_changed += delegate_ {
         if (background_choice.selected_item() == "checker-board") {
           original_picture_panel.back_color(colors::gray());
           adjusted_picture_panel.back_color(colors::gray());

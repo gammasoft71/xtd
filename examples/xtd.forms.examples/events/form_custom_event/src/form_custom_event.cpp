@@ -24,12 +24,12 @@ namespace custom_event_example {
     form1() {
       text("Form custom event example");
       
-      button1.click += [&] {
+      button1.click += delegate_ {
         static auto counter = 0;
         custom_event.invoke(*this, custom_event_args {++counter});
       };
       
-      custom_event += [&](object& sender, const custom_event_args& e) {
+      custom_event += delegate_(object& sender, const custom_event_args& e) {
         message_box::show(*this, string::format("Receive custom_event event ({})", as<int>(e.tag())), "Custom event");
       };
     }

@@ -13,7 +13,7 @@ namespace status_bar_without_panels_example {
       size({400, 250});
       text("Status bar without panels example");
       
-      mouse_click += [&](object& sender, const mouse_event_args& e) {
+      mouse_click += delegate_(object& sender, const mouse_event_args& e) {
         status_bar1.text(string::format("Mouse click at location : {}", e.location()));
       };
       

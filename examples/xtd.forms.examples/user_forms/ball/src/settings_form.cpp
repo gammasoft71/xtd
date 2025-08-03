@@ -47,7 +47,7 @@ settings_form::settings_form() {
 
   color_color_picker_.location({middle + 10, 30});
   color_color_picker_.color(properties::settings::default_settings().color());
-  color_color_picker_.color_picker_changed += [&] {
+  color_color_picker_.color_picker_changed += delegate_ {
     if (properties::settings::default_settings().color() == color_color_picker_.color()) return;
     properties::settings::default_settings().color(color_color_picker_.color());
     light_point_color_color_picker_.color(color_converter::light(color_color_picker_.color(), 0.66f));
@@ -56,7 +56,7 @@ settings_form::settings_form() {
 
   light_point_color_color_picker_.location({middle + 10, 60});
   light_point_color_color_picker_.color(properties::settings::default_settings().light_point_color());
-  light_point_color_color_picker_.color_picker_changed += [&] {
+  light_point_color_color_picker_.color_picker_changed += delegate_ {
     if (properties::settings::default_settings().light_point_color() == light_point_color_color_picker_.color()) return;
     properties::settings::default_settings().light_point_color(light_point_color_color_picker_.color());
     on_settings_changed(event_args::empty);
@@ -65,7 +65,7 @@ settings_form::settings_form() {
   opacity_numeric_up_down_.location({middle + 10, 90});
   opacity_numeric_up_down_.set_range(1, 100);
   opacity_numeric_up_down_.value(properties::settings::default_settings().opacity() * 100);
-  opacity_numeric_up_down_.value_changed += [&] {
+  opacity_numeric_up_down_.value_changed += delegate_ {
     if (properties::settings::default_settings().opacity() == opacity_numeric_up_down_.value() / 100) return;
     properties::settings::default_settings().opacity(opacity_numeric_up_down_.value() / 100);
     on_settings_changed(event_args::empty);
@@ -74,7 +74,7 @@ settings_form::settings_form() {
   size_numeric_up_down_.location({middle + 10, 120});
   size_numeric_up_down_.set_range(10, 600);
   size_numeric_up_down_.value(properties::settings::default_settings().size().width);
-  size_numeric_up_down_.value_changed += [&] {
+  size_numeric_up_down_.value_changed += delegate_ {
     if (properties::settings::default_settings().size().width == as<int>(size_numeric_up_down_.value()) && properties::settings::default_settings().size().height == as<int>(size_numeric_up_down_.value())) return;
     properties::settings::default_settings().size({as<int>(size_numeric_up_down_.value()), as<int>(size_numeric_up_down_.value())});
     on_settings_changed(event_args::empty);
@@ -82,7 +82,7 @@ settings_form::settings_form() {
 
   reset_button_.location({middle + 10, 180});
   reset_button_.text("Reset");
-  reset_button_.click += [&] {
+  reset_button_.click += delegate_ {
     properties::settings::default_settings().reset();
     auto default_settings = properties::settings::default_settings();
     color_color_picker_.color(default_settings.color());

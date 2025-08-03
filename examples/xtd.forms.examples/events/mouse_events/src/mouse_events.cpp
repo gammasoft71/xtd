@@ -12,47 +12,47 @@ public:
   form1() {
     text("Mouse events example");
     
-    click += [&] {
+    click += delegate_ {
       xtd::diagnostics::trace::write_line("click");
     };
     
-    double_click += [&] {
+    double_click += delegate_ {
       xtd::diagnostics::trace::write_line("double_click");
     };
     
-    mouse_click += [&](object & sender, const mouse_event_args & e) {
+    mouse_click += delegate_(object & sender, const mouse_event_args & e) {
       xtd::diagnostics::trace::write_line("mouse_click={{button={}, clicks={}, delta={}, location=[{}], modifier_keys=[{}]}}", e.button(), e.clicks(), e.delta(), e.location(), modifier_keys());
     };
     
-    mouse_double_click += [&](object & sender, const mouse_event_args & e) {
+    mouse_double_click += delegate_(object & sender, const mouse_event_args & e) {
       xtd::diagnostics::trace::write_line("mouse_double_click={{button={}, clicks={}, delta={}, location=[{}], modifier_keys=[{}]}}", e.button(), e.clicks(), e.delta(), e.location(), modifier_keys());
     };
     
-    mouse_down += [&](object & sender, const mouse_event_args & e) {
+    mouse_down += delegate_(object & sender, const mouse_event_args & e) {
       xtd::diagnostics::trace::write_line("mouse_down={{button={}, clicks={}, delta={}, location=[{}], modifier_keys=[{}]}}", e.button(), e.clicks(), e.delta(), e.location(), modifier_keys());
     };
     
-    mouse_enter += [&] {
+    mouse_enter += delegate_ {
       xtd::diagnostics::trace::write_line("mouse_enter");
     };
     
-    mouse_horizontal_wheel += [&](object & sender, const mouse_event_args & e) {
+    mouse_horizontal_wheel += delegate_(object & sender, const mouse_event_args & e) {
       xtd::diagnostics::trace::write_line("mouse_horizontal_wheel={{button={}, clicks={}, delta={}, location=[{}], modifier_keys=[{}]}}", e.button(), e.clicks(), e.delta(), e.location(), modifier_keys());
     };
     
-    mouse_leave += [&] {
+    mouse_leave += delegate_ {
       xtd::diagnostics::trace::write_line("mouse_leave");
     };
     
-    mouse_move += [&](object & sender, const mouse_event_args & e) {
+    mouse_move += delegate_(object & sender, const mouse_event_args & e) {
       xtd::diagnostics::trace::write_line("mouse_move={{button={}, clicks={}, delta={}, location=[{}], modifier_keys=[{}]}}", e.button(), e.clicks(), e.delta(), e.location(), modifier_keys());
     };
     
-    mouse_up += [&](object & sender, const mouse_event_args & e) {
+    mouse_up += delegate_(object & sender, const mouse_event_args & e) {
       xtd::diagnostics::trace::write_line("mouse_up={{button={}, clicks={}, delta={}, location=[{}], modifier_keys=[{}]}}", e.button(), e.clicks(), e.delta(), e.location(), modifier_keys());
     };
     
-    mouse_wheel += [&](object & sender, const mouse_event_args & e) {
+    mouse_wheel += delegate_(object & sender, const mouse_event_args & e) {
       xtd::diagnostics::trace::write_line("mouse_wheel={{button={}, clicks={}, delta={}, location=[{}], modifier_keys=[{}]}}", e.button(), e.clicks(), e.delta(), e.location(), modifier_keys());
     };
   }

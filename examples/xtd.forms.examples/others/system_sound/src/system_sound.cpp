@@ -31,7 +31,7 @@ namespace example {
       button_asterisk.image(button_images::from_name("dialog-information", drawing::size(64, 64)));
       button_asterisk.image_align(content_alignment::top_center);
       button_asterisk.text_align(content_alignment::bottom_center);
-      button_asterisk.click += [&] {
+      button_asterisk.click += delegate_ {
         system_sounds::asterisk().play();
       };
       
@@ -39,7 +39,7 @@ namespace example {
       button_beep.image(button_images::from_name("dialog-ok", drawing::size(64, 64)));
       button_beep.image_align(content_alignment::top_center);
       button_beep.text_align(content_alignment::bottom_center);
-      button_beep.click += [&] {
+      button_beep.click += delegate_ {
         system_sounds::beep().play();
       };
       
@@ -47,7 +47,7 @@ namespace example {
       button_exclamation.image(button_images::from_name("dialog-warning", drawing::size(64, 64)));
       button_exclamation.image_align(content_alignment::top_center);
       button_exclamation.text_align(content_alignment::bottom_center);
-      button_exclamation.click += [&] {
+      button_exclamation.click += delegate_ {
         system_sounds::exclamation().play();
       };
       
@@ -55,7 +55,7 @@ namespace example {
       button_hand.image(button_images::from_name("dialog-error", drawing::size(64, 64)));
       button_hand.image_align(content_alignment::top_center);
       button_hand.text_align(content_alignment::bottom_center);
-      button_hand.click += [&] {
+      button_hand.click += delegate_ {
         system_sounds::hand().play();
       };
       
@@ -63,7 +63,7 @@ namespace example {
       button_question.image(button_images::from_name("dialog-question", drawing::size(64, 64)));
       button_question.image_align(content_alignment::top_center);
       button_question.text_align(content_alignment::bottom_center);
-      button_question.click += [&] {
+      button_question.click += delegate_ {
         system_sounds::question().play();
       };
     }

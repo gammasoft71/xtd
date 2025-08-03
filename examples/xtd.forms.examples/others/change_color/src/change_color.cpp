@@ -17,7 +17,7 @@ public:
     change_color_button.auto_size(true);
     change_color_button.location({10, 10});
     change_color_button.text("Change color");
-    change_color_button.click += [&] {
+    change_color_button.click += delegate_ {
       back_color(color::from_argb(rand.next<byte>(), rand.next<byte>(), rand.next<byte>()));
       fore_color(color::from_argb(rand.next<byte>(), rand.next<byte>(), rand.next<byte>()));
       label1.text(string::format("back_color = {}\nfore_color = {}", label1.back_color(), label1.fore_color()));

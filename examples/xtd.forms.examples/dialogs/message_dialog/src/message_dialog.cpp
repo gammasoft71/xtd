@@ -19,7 +19,7 @@ public:
     button_show_message.location({10, 10});
     button_show_message.text("Message...");
     button_show_message.width(100);
-    button_show_message.click += [&] {
+    button_show_message.click += delegate_ {
       auto dialog = message_dialog {};
       dialog.buttons(message_dialog_buttons::ok_cancel);
       dialog.icon(message_dialog_icon::warning);

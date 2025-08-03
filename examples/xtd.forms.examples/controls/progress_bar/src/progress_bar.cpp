@@ -31,7 +31,7 @@ namespace progress_bar_example {
       progress_bar5.width(200);
       
       timer1.interval(50_ms);
-      timer1.tick += [&] {
+      timer1.tick += delegate_ {
         progress_bar4.value(progress_bar4.value() < progress_bar4.maximum() ? progress_bar4.value() + 1 : progress_bar4.minimum());
       };
       timer1.enabled(true);

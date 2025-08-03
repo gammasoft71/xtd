@@ -27,11 +27,11 @@ public:
 auto main() -> int {
   auto write = writer {};
   
-  write += [](const string & str)  {
+  write += delegate_(const string & str)  {
     console::out << str << environment::new_line;
   };
   
-  write += [](auto str)  {
+  write += delegate_(auto str)  {
     console::error << str << environment::new_line;
   };
   

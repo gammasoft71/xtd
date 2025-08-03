@@ -26,7 +26,7 @@ namespace radio_button_renderer_example {
       names.sort();
       choice_theme.items().push_back_range(names);
       choice_theme.selected_index(0);
-      choice_theme.selected_index_changed += [&] {
+      choice_theme.selected_index_changed += delegate_ {
         application::style_sheet(choice_theme.selected_index() == 0 ? application::system_style_sheet() : application::get_style_sheet_from_name(choice_theme.selected_item().value()));
         color_picker_background.color(back_color());
         color_picker_foreground.color(fore_color());
@@ -41,7 +41,7 @@ namespace radio_button_renderer_example {
       color_picker_background.parent(*this);
       color_picker_background.location({180, 10});
       color_picker_background.color(back_color());
-      color_picker_background.color_picker_changed += [&] {
+      color_picker_background.color_picker_changed += delegate_ {
         bcolor = color_picker_background.color();
         radio_button_system.back_color(bcolor.value());
         radio_button_standard.back_color(bcolor.value());
@@ -50,7 +50,7 @@ namespace radio_button_renderer_example {
       color_picker_foreground.parent(*this);
       color_picker_foreground.location({290, 10});
       color_picker_foreground.color(fore_color());
-      color_picker_foreground.color_picker_changed += [&] {
+      color_picker_foreground.color_picker_changed += delegate_ {
         fcolor = color_picker_foreground.color();
         radio_button_system.fore_color(fcolor.value());
         radio_button_standard.fore_color(fcolor.value());

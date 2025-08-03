@@ -54,7 +54,7 @@ public:
     button_try_it.text("Try it");
     button_try_it.location({10, 150});
     button_try_it.parent(*this);
-    button_try_it.click += [&] {
+    button_try_it.click += delegate_ {
       label_dialog_result.text("result = ");
       label_dialog_result.text(string::format("result = {}", message_box::show(*this, text_message.text(), text_caption.text(), as<message_box_buttons>(choice_buttons.selected_item().tag()), as<message_box_icon>(choice_icons.selected_item().tag()))));
     };

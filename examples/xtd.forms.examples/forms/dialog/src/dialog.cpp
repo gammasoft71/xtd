@@ -31,7 +31,7 @@ auto main() -> int {
   button.location({10, 10});
   button.parent(form);
   button.text("Dialog...");
-  button.click += [&] {
+  button.click += delegate_ {
     dialog().show_dialog(form);
   };
   

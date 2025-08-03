@@ -11,7 +11,7 @@ class form_thread : public form {
 public:
   form_thread() {
     text("Form and thread example");
-    form_closed += [&] {
+    form_closed += delegate_ {
       closed = true;
     };
     

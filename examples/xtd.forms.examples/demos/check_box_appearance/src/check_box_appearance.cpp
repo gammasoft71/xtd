@@ -26,7 +26,7 @@ public:
     label_text.location({10, 13});
     label_text.text("Text: ");
     
-    text_box_text.text_changed += [&] {
+    text_box_text.text_changed += delegate_ {
       check_box_demo.text(text_box_text.text());
     };
     text_box_text.location({100, 10});
@@ -38,7 +38,7 @@ public:
     label_text_align.location({10, 48});
     label_text_align.text("text_align: ");
     
-    choice_text_align.selected_value_changed += [&] {
+    choice_text_align.selected_value_changed += delegate_ {
       check_box_demo.text_align(as<content_alignment>(choice_text_align.selected_item().tag()));
     };
     choice_text_align.location({100, 45});
@@ -51,7 +51,7 @@ public:
     label_image.auto_size(true);
     label_image.location({10, 83});
     
-    choice_image.selected_value_changed += [&] {
+    choice_image.selected_value_changed += delegate_ {
       if (choice_image.selected_index() == 0) check_box_demo.image(xtd::drawing::image::empty);
       else check_box_demo.image(button_images::from_name(choice_image.selected_item().value()));
     };
@@ -66,7 +66,7 @@ public:
     label_image_align.auto_size(true);
     label_image_align.location({10, 118});
     
-    choice_image_align.selected_value_changed += [&] {
+    choice_image_align.selected_value_changed += delegate_ {
       check_box_demo.image_align(as<content_alignment>(choice_image_align.selected_item().tag()));
     };
     choice_image_align.items().push_back_range({{"top_left", content_alignment::top_left}, {"top_center", content_alignment::top_center}, {"top_right", content_alignment::top_right}, {"middle_left", content_alignment::middle_left}, {"middle_center", content_alignment::middle_center}, {"middle_right", content_alignment::middle_right}, {"bottom_left", content_alignment::bottom_left}, {"bottom_center", content_alignment::bottom_center}, {"bottom_right", content_alignment::bottom_right}});
@@ -79,7 +79,7 @@ public:
     label_appearance.auto_size(true);
     label_appearance.location({10, 153});
     
-    choice_appearance.selected_value_changed += [&] {
+    choice_appearance.selected_value_changed += delegate_ {
       check_box_demo.appearance(as<appearance>(choice_appearance.selected_item().tag()));
     };
     choice_appearance.items().push_back_range({{"normal", appearance::normal}, {"button", appearance::button}});
@@ -92,7 +92,7 @@ public:
     label_flat_style.auto_size(true);
     label_flat_style.location({10, 188});
     
-    choice_flat_style.selected_value_changed += [&] {
+    choice_flat_style.selected_value_changed += delegate_ {
       check_box_demo.flat_style(as<flat_style>(choice_flat_style.selected_item().tag()));
     };
     choice_flat_style.items().push_back_range({{"flat", flat_style::flat}, {"popup", flat_style::popup}, {"standard", flat_style::standard}, {"system", flat_style::system}});
@@ -107,7 +107,7 @@ public:
     
     color_picker_back_color.alpha_color(true);
     color_picker_back_color.color(check_box_demo.back_color());
-    color_picker_back_color.color_picker_changed += [&] {
+    color_picker_back_color.color_picker_changed += delegate_ {
       check_box_demo.back_color(color_picker_back_color.color());
     };
     color_picker_back_color.location({100, 220});
@@ -120,7 +120,7 @@ public:
     
     color_picker_fore_color.alpha_color(true);
     color_picker_fore_color.color(check_box_demo.fore_color());
-    color_picker_fore_color.color_picker_changed += [&] {
+    color_picker_fore_color.color_picker_changed += delegate_ {
       check_box_demo.fore_color(color_picker_fore_color.color());
     };
     color_picker_fore_color.location({100, 255});
@@ -131,7 +131,7 @@ public:
     label_width.auto_size(true);
     label_width.location({10, 293});
     
-    numeric_up_down_width.value_changed += [&] {
+    numeric_up_down_width.value_changed += delegate_ {
       check_box_demo.width(as<int>(numeric_up_down_width.value()));
     };
     numeric_up_down_width.value(check_box_demo.width());
@@ -144,7 +144,7 @@ public:
     label_height.auto_size(true);
     label_height.location({10, 328});
     
-    numeric_up_down_height.value_changed += [&] {
+    numeric_up_down_height.value_changed += delegate_ {
       check_box_demo.height(as<int>(numeric_up_down_height.value()));
     };
     numeric_up_down_height.value(check_box_demo.height());
@@ -157,7 +157,7 @@ public:
     label_auto_size.auto_size(true);
     label_auto_size.location({10, 363});
     
-    check_box_auto_size.checked_changed += [&] {
+    check_box_auto_size.checked_changed += delegate_ {
       check_box_demo.auto_size(check_box_auto_size.checked());
       numeric_up_down_width.enabled(!check_box_auto_size.checked());
       numeric_up_down_height.enabled(!check_box_auto_size.checked());
@@ -177,7 +177,7 @@ public:
     label_three_state.auto_size(true);
     label_three_state.location({10, 398});
     
-    check_box_three_state.checked_changed += [&] {
+    check_box_three_state.checked_changed += delegate_ {
       check_box_demo.three_state(check_box_three_state.checked());
       check_box_three_state.text(check_box_three_state.checked() ? "true" : "false");
     };
@@ -193,7 +193,7 @@ public:
     label_enebaled.auto_size(true);
     label_enebaled.location({10, 433});
     
-    check_box_enabled.checked_changed += [&] {
+    check_box_enabled.checked_changed += delegate_ {
       check_box_demo.enabled(check_box_enabled.checked());
       check_box_enabled.text(check_box_enabled.checked() ? "true" : "false");
     };
@@ -206,7 +206,7 @@ public:
     check_box_enabled.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
     
     check_box_demo.location({380, 30});
-    check_box_demo.click += [&] {
+    check_box_demo.click += delegate_ {
       //message_box::show(*this, "Button clicked", "Button appearance");
     };
   }

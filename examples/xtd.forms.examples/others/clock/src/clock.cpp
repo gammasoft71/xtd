@@ -33,13 +33,13 @@ auto main() -> int {
   label.show_back_digit(false);
   label.text(date_time::now().to_long_time_string());
   
-  clock_timer.tick += [&] {
+  clock_timer.tick += delegate_ {
     auto now = date_time::now();
     label.text(show_seconds ? now.to_long_time_string() : now.to_short_time_string().replace(':', now.second() % 2 ? ' ' : ':'));
     form_main.center_to_screen();
   };
   
-  label.click += [&] {show_seconds = !show_seconds;};
+  label.click += delegate_ {show_seconds = !show_seconds;};
 
   application::run(form_main);
 }

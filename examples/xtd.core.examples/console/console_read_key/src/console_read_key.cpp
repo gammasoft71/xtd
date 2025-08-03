@@ -4,7 +4,7 @@
 using namespace xtd;
 
 auto main() -> int {
-  console::cancel_key_press += [](xtd::console_cancel_event_args & e) {
+  console::cancel_key_press += delegate_(xtd::console_cancel_event_args & e) {
     console::write_line("Signal {0} intercepted !", e.special_key());
     e.cancel(true);
   };

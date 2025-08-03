@@ -17,7 +17,7 @@ namespace input_dialog_password_example {
       button1.location({10, 10});
       button1.auto_size(true);
       button1.text("Password...");
-      button1.click += [&] {
+      button1.click += delegate_ {
         input_dialog input_dialog;
         input_dialog.text("User password");
         input_dialog.message("user: admin");

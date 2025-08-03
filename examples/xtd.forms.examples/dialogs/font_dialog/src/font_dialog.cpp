@@ -10,7 +10,7 @@ public:
     
     button1.location({10, 10});
     button1.text("Font...");
-    button1.click += [&] {
+    button1.click += delegate_ {
       auto dialog = font_dialog {};
       dialog.color(label1.fore_color());
       dialog.font(label1.font());

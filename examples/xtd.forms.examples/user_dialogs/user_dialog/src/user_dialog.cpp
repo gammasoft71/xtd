@@ -60,7 +60,7 @@ public:
     
     button_dialog.location({10, 10});
     button_dialog.text("Dialog...");
-    button_dialog.click += [&] {
+    button_dialog.click += delegate_ {
       dialog.input_text(input_text.text());
       if (dialog.show_dialog(*this) == forms::dialog_result::ok)
         input_text.text(dialog.input_text());

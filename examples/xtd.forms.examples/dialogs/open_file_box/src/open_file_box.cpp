@@ -19,7 +19,7 @@ public:
     .location({10, 10})
     .size({150, 35})
     .text("Select single file")
-    .click += [this] {
+    .click += delegate_ {
       string file_name;
       auto res = open_file_box::show(file_name, *this, "Please select a file...", ".", "Text Files (*.txt)|*.txt|All Files (*.*)|*.*");
       if (res == dialog_result::ok)
@@ -30,7 +30,7 @@ public:
     .location({10, 45})
     .size({150, 35})
     .text("Select multiple files")
-    .click += [] {
+    .click += delegate_ {
       auto file_names = array<string> {};
       auto res = open_file_box::show(file_names, "Please select multiple files...", open_file_box_options::check_file_exists | open_file_box_options::show_hidden_files);
       if (res == dialog_result::ok)

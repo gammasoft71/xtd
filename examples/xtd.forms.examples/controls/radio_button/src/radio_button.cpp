@@ -17,7 +17,7 @@ namespace radio_button_example {
       radio_button1.location({30, 30});
       radio_button1.font(drawing::font(font(), drawing::font_style::italic));
       radio_button1.text("Radio 1");
-      radio_button1.click += [&] {
+      radio_button1.click += delegate_ {
         // Uncomments next line to check / uncheck radio button 1 (auto_check is false...)
         //radio_button1.checked(!radio_button1.checked());
       };
@@ -25,7 +25,7 @@ namespace radio_button_example {
       radio_button2.location({30, 60});
       radio_button2.text("Radio 2");
       
-      radio_button3.checked_changed += [&] {
+      radio_button3.checked_changed += delegate_ {
         label1.text(string::format("Radio 3 checked = {}", radio_button3.checked()));
       };
       radio_button3.checked(true);
@@ -41,7 +41,7 @@ namespace radio_button_example {
       radio_button5.font(drawing::font(font(), drawing::font_style::italic));
       radio_button5.location({30, 150});
       radio_button5.text("Radio 5");
-      radio_button5.click += [&] {
+      radio_button5.click += delegate_ {
         // Uncomments next line to check / uncheck radio button 5 (auto_check is false...)
         //radio_button5.checked(!radio_button5.checked());
       };

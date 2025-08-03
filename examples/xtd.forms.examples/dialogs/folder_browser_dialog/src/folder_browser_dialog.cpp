@@ -9,7 +9,7 @@ public:
     
     button1.location({10, 10});
     button1.text("Folder...");
-    button1.click += [&] {
+    button1.click += delegate_ {
       auto dialog = folder_browser_dialog {};
       dialog.selected_path(selected_path);
       if (dialog.show_sheet_dialog(*this) == forms::dialog_result::ok) {

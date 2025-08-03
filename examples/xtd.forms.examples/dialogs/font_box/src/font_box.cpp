@@ -11,7 +11,7 @@ public:
     .location({10, 10})
     .text("Select a font")
     .size({200, 45})
-    .click += [this] {
+    .click += delegate_ {
       auto font = system_fonts::default_font();
       auto res = font_box::show(font, *this);
       if (res == dialog_result::ok)
@@ -22,7 +22,7 @@ public:
     .location({10, 60})
     .text("Select a font and a font color")
     .size({200, 45})
-    .click += [] {
+    .click += delegate_ {
       drawing::font font(drawing::font_family::generic_sans_serif(), 16);
       drawing::color color = drawing::color::blue;
       auto res = font_box::show(font, color, font_box_options::show_color);

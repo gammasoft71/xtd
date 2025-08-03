@@ -5,7 +5,7 @@ public:
   form1() {
     text("Color dialog example");
     
-    button1.click += [&] {
+    button1.click += delegate_ {
       auto dialog = color_dialog {};
       dialog.color(selected_color);
       dialog.custom_colors(custom_colors);
@@ -18,7 +18,7 @@ public:
     };
 
     test_zone.border_style(border_style::inset).double_buffered(true);
-    test_zone.paint += [&](object& sender, paint_event_args& e) {
+    test_zone.paint += delegate_(object& sender, paint_event_args& e) {
       e.graphics().fill_rectangle(drawing_2d::hatch_brush {drawing_2d::hatch_style::wide_checker_board, color::from_argb(0x66, 0x66, 0x66), color::from_argb(0x99, 0x99, 0x99)}, e.clip_rectangle());
       e.graphics().fill_rectangle(solid_brush {selected_color}, e.clip_rectangle());
       control_paint::draw_border(test_zone, e.graphics(), test_zone.border_style(), test_zone.border_sides(), application::style_sheet().system_colors().control_text(), rectangle::add(e.clip_rectangle(), -1, -1));

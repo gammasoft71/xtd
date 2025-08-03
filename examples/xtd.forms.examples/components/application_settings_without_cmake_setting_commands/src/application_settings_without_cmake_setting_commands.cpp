@@ -6,12 +6,12 @@ auto main() -> int {
   auto main_form = form::create("Settings example", form_start_position::manual);
   
   auto back_color_picker = color_picker::create(main_form, main_form.back_color(), {10, 10}, {75, 25});
-  back_color_picker.color_picker_changed += [&] {
+  back_color_picker.color_picker_changed += delegate_ {
     main_form.back_color(back_color_picker.color());
   };
   
   auto save_button = button::create(main_form, "&Save", {90, 10});
-  save_button.click += [&] {
+  save_button.click += delegate_ {
     settings.write("size", main_form.client_size());
     settings.write("location", main_form.location());
     settings.write("back_color", main_form.back_color());
@@ -19,7 +19,7 @@ auto main() -> int {
   };
   
   auto reload_button = button::create(main_form, "&Reload", {170, 10});
-  reload_button.click += [&] {
+  reload_button.click += delegate_ {
     main_form.client_size(settings.read("size", drawing::size {335, 45}));
     main_form.location(settings.read("location", point {100, 50}));
     main_form.back_color(settings.read("back_color", system_colors::control()));
@@ -27,7 +27,7 @@ auto main() -> int {
   };
   
   auto reset_button = button::create(main_form, "R&eset", {250, 10});
-  reset_button.click += [&] {
+  reset_button.click += delegate_ {
     settings.reset();
     reload_button.perform_click();
   };

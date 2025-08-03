@@ -16,7 +16,7 @@ public:
     
     picker1.location({30, 30});
     picker1.format(date_time_picker_format::short_format);
-    picker1.value_changed += [&] {
+    picker1.value_changed += delegate_ {
       label1.text(picker1.value().to_short_date_string());
     };
     picker1.value(date_time::now());
@@ -28,7 +28,7 @@ public:
     
     picker2.location({30, 110});
     picker2.format(date_time_picker_format::time);
-    picker2.value_changed += [&] {
+    picker2.value_changed += delegate_ {
       label2.text(picker2.value().to_long_time_string());
     };
     picker2.value(date_time::now());

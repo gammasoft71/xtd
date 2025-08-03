@@ -8,7 +8,7 @@ public:
     
     button1.location({10, 10});
     button1.text("Folder...");
-    button1.click += [&] {
+    button1.click += delegate_ {
       if (folder_browser_box::show(selected_path, *this) == forms::dialog_result::ok)
         label1.text(string::format("Path = {}", selected_path));
     };

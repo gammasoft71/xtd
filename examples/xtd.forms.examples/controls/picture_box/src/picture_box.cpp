@@ -20,7 +20,7 @@ namespace picture_box {
       choice1.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
       choice1.items().push_back_range({{"normal", picture_box_size_mode::normal}, {"stretch_image", picture_box_size_mode::stretch_image}, {"auto_size", picture_box_size_mode::auto_size}, {"center_image", picture_box_size_mode::center_image}, {"zoom", picture_box_size_mode::zoom}});
       choice1.selected_index(0);
-      choice1.selected_value_changed += [&] {
+      choice1.selected_value_changed += delegate_ {
         picture_box1.size_mode(as<picture_box_size_mode>(choice1.selected_item().tag()));
       };
       

@@ -18,7 +18,7 @@ namespace input_dialog_multiline_example {
       button1.location({10, 10});
       button1.auto_size(true);
       button1.text("Lines...");
-      button1.click += [&] {
+      button1.click += delegate_ {
         input_dialog input_dialog;
         input_dialog.multiline(true);
         input_dialog.word_wrap(false);

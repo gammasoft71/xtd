@@ -30,28 +30,28 @@ public:
     xtd_web_button.image(button_images::from_name("text-html", drawing::size(64, 64)));
     xtd_web_button.image_align(content_alignment::middle_left);
     xtd_web_button.text("Open xtd website...");
-    xtd_web_button.click += [] {
+    xtd_web_button.click += delegate_ {
       process::start(process_start_info {"https://gammasoft71.github.io/xtd"}.use_shell_execute(true));
     };
     
     write_mail_button.image(button_images::from_name("document-send", drawing::size(64, 64)));
     write_mail_button.image_align(content_alignment::middle_left);
     write_mail_button.text("Write mail...");
-    write_mail_button.click += [] {
+    write_mail_button.click += delegate_ {
       process::start(process_start_info {"mailto:gammasoft71@gmail.com?subject=Hi%20Gammasoft71&body=xtd%20is%20a%20great%20project.%0D%0A%20"}.use_shell_execute(true));
     };
     
     open_home_folder_button.image(button_images::from_name("folder-home", drawing::size(64, 64)));
     open_home_folder_button.image_align(content_alignment::middle_left);
     open_home_folder_button.text("Open home folder...");
-    open_home_folder_button.click += [] {
+    open_home_folder_button.click += delegate_ {
       process::start(process_start_info {environment::get_folder_path(environment::special_folder::home)}.use_shell_execute(true));
     };
     
     open_readme_txt_file_button.image(button_images::from_name("text-x-generic", drawing::size(64, 64)));
     open_readme_txt_file_button.image_align(content_alignment::middle_left);
     open_readme_txt_file_button.text("Open \"readme.txt\" file...");
-    open_readme_txt_file_button.click += [] {
+    open_readme_txt_file_button.click += delegate_ {
       file::write_all_text(path::combine(path::get_temp_path(), "readme.txt"), "Tests open file \"readme.txt\" with xtd::diagnostics::process class.\n");
       process::start(process_start_info {path::combine(path::get_temp_path(), "readme.txt")}.use_shell_execute(true));
     };
@@ -59,7 +59,7 @@ public:
     open_gammasoft_png_file_button.image(button_images::from_name("image-x-generic", drawing::size(64, 64)));
     open_gammasoft_png_file_button.image_align(content_alignment::middle_left);
     open_gammasoft_png_file_button.text("Open \"gammasoft.png\" file...");
-    open_gammasoft_png_file_button.click += [] {
+    open_gammasoft_png_file_button.click += delegate_ {
       images::from_name("gammasoft", drawing::size(512, 512)).save(path::combine(path::get_temp_path(), "gammasoft.png"));
       process::start(process_start_info {"gammasoft.png"}.working_directory(path::get_temp_path()).use_shell_execute(true));
     };
@@ -67,7 +67,7 @@ public:
     open_calculator_button.image(button_images::from_name("accessories-calculator", drawing::size(64, 64)));
     open_calculator_button.image_align(content_alignment::middle_left);
     open_calculator_button.text("Launch Calculator...");
-    open_calculator_button.click += [] {
+    open_calculator_button.click += delegate_ {
       if (environment::os_version().is_windows()) process::start(process_start_info {"calc"});
       else if (environment::os_version().is_macos()) process::start(process_start_info {"Calculator"}.use_shell_execute(true));
       else if (environment::os_version().is_linux()) process::start(process_start_info {"gnome-calculator"});

@@ -17,7 +17,7 @@ public:
     button_process.location({10, 10});
     button_process.parent(*this);
     button_process.text("Process...");
-    button_process.click += [this] {
+    button_process.click += delegate_ {
       auto dialog = progress_dialog {};
       dialog.text("Process running");
       dialog.show_skip_button(true);
@@ -34,7 +34,7 @@ public:
     button_indeterminate_process.location({100, 10});
     button_indeterminate_process.parent(*this);
     button_indeterminate_process.text("Indeterminate process...");
-    button_indeterminate_process.click += [this] {
+    button_indeterminate_process.click += delegate_ {
       auto dialog = progress_dialog {};
       dialog.text("Indeterminate process running");
       dialog.message("Click \"Cancel\" to abort");
