@@ -23,7 +23,7 @@ Website : https://gammasoft71.github.io/xtd/
 - [Node.js](https://nodejs.org/en/) >= 16.14
 
 ```
-$ yarn
+$ npm
 ```
 
 This commands install all needed packages.
@@ -31,7 +31,7 @@ This commands install all needed packages.
 ### Local Development
 
 ```
-$ yarn start
+$ npm start
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
@@ -39,13 +39,13 @@ This command starts a local development server and opens up a browser window. Mo
 ### Build
 
 ```
-$ yarn build
+$ npm build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
 ```
-$ yarn serve
+$ npm serve
 ```
 
 This command starts a local server from `build` directory and opens up a browser window.
@@ -53,10 +53,10 @@ This command starts a local server from `build` directory and opens up a browser
 ### Deployment
 
 ```
-$ yarn deploy
+$ npm deploy
 ```
 
-This command use `yarn build` and deploy the `build` directory into the `gh-pages` branch.
+This command use `npm build` and deploy the `build` directory into the `gh-pages` branch.
 
 > **Warning**
 >
