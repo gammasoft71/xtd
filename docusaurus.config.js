@@ -44,10 +44,6 @@ const config = {
           sidebarPath: false,
           showLastUpdateAuthor: false,
           showLastUpdateTime: false,
-          toc: {
-            minHeadingLevel: 0,
-            maxHeadingLevel: 0,
-          },
         },
         blog: false,
         theme: {
