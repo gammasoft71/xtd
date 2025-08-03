@@ -1,16 +1,8 @@
 import React from 'react';
-import DocItemLayout from '@theme/DocItem/Layout';
-import DocItemContent from '@theme/DocItem/Content';
+import OriginalDocItem from '@theme-original/DocItem';
 import type { Props } from '@theme/DocItem';
 
 export default function DocItem(props: Props): JSX.Element {
-  return (
-    <DocItemLayout
-      {...props}
-      // La ligne suivante supprime la TOC à droite
-      toc={null}
-    >
-      <DocItemContent {...props} />
-    </DocItemLayout>
-  );
+  // Force TOC à null (donc désactive la colonne de droite)
+  return <OriginalDocItem {...props} toc={null} />;
 }
