@@ -42,11 +42,12 @@ const config = {
       ({
         docs: {
           sidebarPath: false,
-          //routeBasePath: '/',
-          //sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          //editUrl: 'https://github.com/gammasoft71/xtd/tree/docs',
+          showLastUpdateAuthor: false,
+          showLastUpdateTime: false,
+          toc: {
+            minHeadingLevel: 0,
+            maxHeadingLevel: 0,
+          },
         },
         blog: false,
         theme: {
@@ -59,8 +60,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      //image: 'picture/xtd.jpg',
       navbar: {
         title: 'xtd',
         logo: {

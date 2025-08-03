@@ -4,8 +4,7 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
-:root {
+ :root {
   --ifm-color-primary: #004080;
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
@@ -18,7 +17,6 @@
   --ifm-footer-link-hover-color: #52a9ff;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #52a9ff;
   --ifm-color-primary-dark: #21af90;
@@ -35,53 +33,26 @@
   --ifm-font-color-base-inverse: #fff;
 }
 
-/* Hide the OCD completely */
+
 .theme-doc-toc-desktop,
 .theme-doc-toc-mobile,
 .table-of-contents {
   display: none !important;
 }
 
-/* Reset the maximum width of the central container */
-.main-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  max-width: 100% !important;
-  padding: 0 !important;
-}
-
-/* Expand Markdown content */
-.theme-doc-markdown {
-  max-width: 100% !important;
-  width: 100% !important;
-  margin: 0 auto !important;
-  padding: 0 2rem !important;
-  box-sizing: border-box;
-}
-
-/* Cleanly center titles, paragraphs, etc. */
+main-wrapper,
+.container,
+.theme-doc-markdown,
 .markdown {
   max-width: 100% !important;
   width: 100% !important;
-  box-sizing: border-box;
-}
-
-/* Force the content column to take the entire width, breaking the TOC grid */
-.theme-doc-page {
-  display: block !important;
-}
-
-.theme-doc-main-container {
-  display: block !important;
-}
-
-.theme-doc-content {
-  width: 100% !important;
-  max-width: 100% !important;
   margin: 0 auto !important;
-  padding: 0 2rem !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
   box-sizing: border-box;
+}
+
+.row > .col {
+  flex: 0 0 100% !important;
+  max-width: 100% !important;
 }
