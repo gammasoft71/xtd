@@ -183,7 +183,7 @@ public:
     button1.location({10, 10});
     button1.parent(*this);
     button1.text("&Click me");
-    button1.click += [] {
+    button1.click += delegate_ {
       message_box::show("Hello, World!");
     };
   }
