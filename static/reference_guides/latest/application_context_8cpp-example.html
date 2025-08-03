@@ -126,25 +126,26 @@ $(function(){ initResizable(false); });
 <div class="line">  <span class="keyword">auto</span> context = application_context {};</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> form1 = form::create(<span class="stringliteral">&quot;Form 1 (Click the client area to set form as the main form)&quot;</span>);</div>
-<div class="line">  form1.click += [&amp;] {context.main_form(form1);};</div>
+<div class="line">  form1.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {context.main_form(form1);};</div>
 <div class="line">  form1.show();</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> form2 = form::create(<span class="stringliteral">&quot;Form 2 (Click the client area to set form as the main form)&quot;</span>);</div>
-<div class="line">  form2.click += [&amp;] {context.main_form(form2);};</div>
+<div class="line">  form2.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {context.main_form(form2);};</div>
 <div class="line">  form2.show();</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> form3 = form::create(<span class="stringliteral">&quot;Form 3 (Click the client area to set form as the main form)&quot;</span>);</div>
-<div class="line">  form3.click += [&amp;] {context.main_form(form3);};</div>
+<div class="line">  form3.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {context.main_form(form3);};</div>
 <div class="line">  form3.show();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// if no client area form clicked, the application will not exit when you close the forms.</span></div>
 <div class="line">  application::run(context);</div>
 <div class="line">}</div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 3 2025 03:54:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 3 2025 05:39:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

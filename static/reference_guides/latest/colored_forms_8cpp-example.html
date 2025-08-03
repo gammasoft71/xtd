@@ -135,7 +135,7 @@ $(function(){ initResizable(false); });
 <div class="line">  <span class="keyword">auto</span> form_main = <a class="code hl_function" href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">form::create</a>(<span class="stringliteral">&quot;Main Form&quot;</span>, <a id="_a1" name="_a1"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1point.html">point</a> {<a class="code hl_function" href="classxtd_1_1forms_1_1screen.html#aab4139ada0e9bb8f1ad765dd5a1c0c61">screen::primary_screen</a>().working_area().width - 340, 40});</div>
 <div class="line">  <span class="keyword">auto</span> create_button = <a class="code hl_function" href="classxtd_1_1forms_1_1button.html#a6a8437802231381f5f91dee9d8c3415e">button::create</a>(form_main, <span class="stringliteral">&quot;Create&quot;</span>, {10, 10});</div>
 <div class="line"> </div>
-<div class="line">  create_button.click += [&amp;] {</div>
+<div class="line">  create_button.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">    <span class="keyword">auto</span> colored_form = <a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;form&gt;</a>();</div>
 <div class="line">    colored_form-&gt;text(<a class="code hl_function" href="structxtd_1_1enum__object.html#a773dd7848c4fc85bc2270963f649e230">enum_object&lt;&gt;::to_string</a>(form_color)).back_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#a0c1755c633fc5e3a25ddf310b7645e8c">color::from_known_color</a>(form_color)).visible(<span class="keyword">true</span>);</div>
 <div class="line">    colored_forms.push_back(colored_form);</div>
@@ -152,6 +152,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclassxtd_1_1forms_1_1screen_html_aab4139ada0e9bb8f1ad765dd5a1c0c61"><div class="ttname"><a href="classxtd_1_1forms_1_1screen.html#aab4139ada0e9bb8f1ad765dd5a1c0c61">xtd::forms::screen::primary_screen</a></div><div class="ttdeci">static screen primary_screen()</div><div class="ttdoc">Gets the primary display.</div></div>
 <div class="ttc" id="agroup__colors_html_ggabb6249e3fb8a4388778157257e99049ba6d65173999078f89f8d4e01036aea8a4"><div class="ttname"><a href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba6d65173999078f89f8d4e01036aea8a4">xtd::drawing::known_color::alice_blue</a></div><div class="ttdeci">@ alice_blue</div><div class="ttdoc">A system-defined color.</div><div class="ttdef"><b>Definition</b> known_color.hpp:25</div></div>
 <div class="ttc" id="agroup__colors_html_ggabb6249e3fb8a4388778157257e99049baa889858bd19327fe8b643b9ff36a1782"><div class="ttname"><a href="group__colors.html#ggabb6249e3fb8a4388778157257e99049baa889858bd19327fe8b643b9ff36a1782">xtd::drawing::known_color::yellow_green</a></div><div class="ttdeci">@ yellow_green</div><div class="ttdoc">A system-defined color.</div><div class="ttdef"><b>Definition</b> known_color.hpp:305</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga2fd68f03198b2bf84b1e93149494b685"><div class="ttname"><a href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">xtd::new_ptr</a></div><div class="ttdeci">ptr&lt; type_t &gt; new_ptr(args_t &amp;&amp;... args)</div><div class="ttdoc">The xtd::new_ptr operator creates a xtd::ptr object.</div><div class="ttdef"><b>Definition</b> new_ptr.hpp:24</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:16</div></div>
@@ -164,7 +165,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 3 2025 03:54:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 3 2025 05:39:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

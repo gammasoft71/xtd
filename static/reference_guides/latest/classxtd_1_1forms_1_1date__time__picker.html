@@ -176,7 +176,7 @@ Inheritance diagram for xtd::forms::date_time_picker:</div>
 <div class="line">    </div>
 <div class="line">    picker1.location({30, 30});</div>
 <div class="line">    picker1.format(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga3aba202fc852006258f3a8da4f7bd0d1a9116c48b79eac2e1579de49bdb32aa02">date_time_picker_format::short_format</a>);</div>
-<div class="line">    picker1.value_changed += [&amp;] {</div>
+<div class="line">    picker1.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      label1.text(picker1.value().to_short_date_string());</div>
 <div class="line">    };</div>
 <div class="line">    picker1.value(<a class="code hl_function" href="classxtd_1_1date__time.html#ad94505e74efe9f353836901eda9230ed">date_time::now</a>());</div>
@@ -188,7 +188,7 @@ Inheritance diagram for xtd::forms::date_time_picker:</div>
 <div class="line">    </div>
 <div class="line">    picker2.location({30, 110});</div>
 <div class="line">    picker2.format(date_time_picker_format::time);</div>
-<div class="line">    picker2.value_changed += [&amp;] {</div>
+<div class="line">    picker2.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      label2.text(picker2.value().to_long_time_string());</div>
 <div class="line">    };</div>
 <div class="line">    picker2.value(date_time::now());</div>
@@ -215,6 +215,7 @@ Inheritance diagram for xtd::forms::date_time_picker:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a65896f051dab5b3050412ab63a0af079"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a65896f051dab5b3050412ab63a0af079">xtd::forms::control::controls</a></div><div class="ttdeci">virtual control_collection &amp; controls() noexcept</div><div class="ttdoc">Gets the collection of controls contained within the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1layout_1_1arranged__element__collection_html_a918fcde217e37dd46fa478b3052817f6"><div class="ttname"><a href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a918fcde217e37dd46fa478b3052817f6">xtd::forms::layout::arranged_element_collection::push_back_range</a></div><div class="ttdeci">virtual void push_back_range(const arranged_element_collection &amp;collection)</div><div class="ttdoc">Adds elements to the end.</div><div class="ttdef"><b>Definition</b> arranged_element_collection.hpp:393</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga41870a8a6c9bb6ef3b585c4ce3a98c58"><div class="ttname"><a href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">xtd::forms::style_sheets::label</a></div><div class="ttdeci">xtd::forms::style_sheets::control label</div><div class="ttdoc">The label data allows you to specify the box of a label control.</div><div class="ttdef"><b>Definition</b> label.hpp:25</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga3aba202fc852006258f3a8da4f7bd0d1a9116c48b79eac2e1579de49bdb32aa02"><div class="ttname"><a href="group__xtd__forms.html#gga3aba202fc852006258f3a8da4f7bd0d1a9116c48b79eac2e1579de49bdb32aa02">xtd::forms::date_time_picker_format::short_format</a></div><div class="ttdeci">@ short_format</div><div class="ttdoc">The date_time_picker control displays the date/time value in the short date format set by the user&#39;s ...</div><div class="ttdef"><b>Definition</b> date_time_picker_format.hpp:26</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div><div class="ttdef"><b>Definition</b> status_bar_panel_style.hpp:25</div></div>
@@ -3511,7 +3512,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 3 2025 03:54:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 3 2025 05:39:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

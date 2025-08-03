@@ -166,7 +166,7 @@ Inheritance diagram for xtd::forms::message_dialog:</div>
 <div class="line">    button_show_message.location({10, 10});</div>
 <div class="line">    button_show_message.text(<span class="stringliteral">&quot;Message...&quot;</span>);</div>
 <div class="line">    button_show_message.width(100);</div>
-<div class="line">    button_show_message.click += [&amp;] {</div>
+<div class="line">    button_show_message.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      <span class="keyword">auto</span> dialog = <a class="code hl_class" href="classxtd_1_1forms_1_1message__dialog.html">message_dialog</a> {};</div>
 <div class="line">      dialog.<a class="code hl_function" href="#a6223508aa83b08a91adf024ba3b7e440">buttons</a>(message_dialog_buttons::ok_cancel);</div>
 <div class="line">      dialog.icon(message_dialog_icon::warning);</div>
@@ -194,6 +194,7 @@ Inheritance diagram for xtd::forms::message_dialog:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1layout_1_1arranged__element__collection_html_a918fcde217e37dd46fa478b3052817f6"><div class="ttname"><a href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a918fcde217e37dd46fa478b3052817f6">xtd::forms::layout::arranged_element_collection::push_back_range</a></div><div class="ttdeci">virtual void push_back_range(const arranged_element_collection &amp;collection)</div><div class="ttdoc">Adds elements to the end.</div><div class="ttdef"><b>Definition</b> arranged_element_collection.hpp:393</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1message__dialog_html"><div class="ttname"><a href="classxtd_1_1forms_1_1message__dialog.html">xtd::forms::message_dialog</a></div><div class="ttdoc">Displays a message window, also known as a dialog box, which presents a message to the user....</div><div class="ttdef"><b>Definition</b> message_dialog.hpp:42</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1message__dialog_html_a6223508aa83b08a91adf024ba3b7e440"><div class="ttname"><a href="#a6223508aa83b08a91adf024ba3b7e440">xtd::forms::message_dialog::buttons</a></div><div class="ttdeci">xtd::forms::message_dialog_buttons buttons() const noexcept</div><div class="ttdoc">Gets buttons to display in the message dialog.</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga41870a8a6c9bb6ef3b585c4ce3a98c58"><div class="ttname"><a href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">xtd::forms::style_sheets::label</a></div><div class="ttdeci">xtd::forms::style_sheets::control label</div><div class="ttdoc">The label data allows you to specify the box of a label control.</div><div class="ttdef"><b>Definition</b> label.hpp:25</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga902d7ba89795f62756de856e06822883"><div class="ttname"><a href="group__style__sheets.html#ga902d7ba89795f62756de856e06822883">xtd::forms::style_sheets::button</a></div><div class="ttdeci">xtd::forms::style_sheets::control button</div><div class="ttdoc">The buttton data allows you to specify the box of a button control.</div><div class="ttdef"><b>Definition</b> button.hpp:25</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5"><div class="ttname"><a href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">xtd::forms::bounds_specified::location</a></div><div class="ttdeci">@ location</div><div class="ttdoc">Specifies that both the x and y coordinates of the control are defined.</div><div class="ttdef"><b>Definition</b> bounds_specified.hpp:30</div></div>
@@ -202,7 +203,7 @@ Inheritance diagram for xtd::forms::message_dialog:</div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="message_dialog_8cpp-example.html#_a1">message_dialog.cpp</a>, and <a class="el" href="message_dialog_show_sheet_8cpp-example.html#_a4">message_dialog_show_sheet.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="message_dialog_8cpp-example.html#_a1">message_dialog.cpp</a>, and <a class="el" href="message_dialog_show_sheet_8cpp-example.html#_a5">message_dialog_show_sheet.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Events</h2></td></tr>
@@ -947,7 +948,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 3 2025 03:54:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 3 2025 05:39:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

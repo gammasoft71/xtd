@@ -146,12 +146,12 @@ The company_name is defined by the <a class="el" href="classxtd_1_1reflection_1_
 <div class="line">  <span class="keyword">auto</span> main_form = form::create(settings::default_settings().<a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>(), form_start_position::manual);</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> back_color_picker = color_picker::create(main_form, main_form.back_color(), {10, 10}, {75, 25});</div>
-<div class="line">  back_color_picker.color_picker_changed += [&amp;] {</div>
+<div class="line">  back_color_picker.color_picker_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">    main_form.back_color(back_color_picker.color());</div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> save_button = button::create(main_form, <span class="stringliteral">&quot;&amp;Save&quot;</span>, {90, 10});</div>
-<div class="line">  save_button.click += [&amp;] {</div>
+<div class="line">  save_button.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">    settings::default_settings().size(main_form.client_size());</div>
 <div class="line">    settings::default_settings().location(main_form.location());</div>
 <div class="line">    settings::default_settings().back_color(main_form.back_color());</div>
@@ -159,7 +159,7 @@ The company_name is defined by the <a class="el" href="classxtd_1_1reflection_1_
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> reload_button = button::create(main_form, <span class="stringliteral">&quot;&amp;Reload&quot;</span>, {170, 10});</div>
-<div class="line">  reload_button.click += [&amp;] {</div>
+<div class="line">  reload_button.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">    main_form.client_size(settings::default_settings().<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>());</div>
 <div class="line">    main_form.location(settings::default_settings().<a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">location</a>());</div>
 <div class="line">    main_form.back_color(settings::default_settings().back_color());</div>
@@ -167,7 +167,7 @@ The company_name is defined by the <a class="el" href="classxtd_1_1reflection_1_
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> reset_button = button::create(main_form, <span class="stringliteral">&quot;R&amp;eset&quot;</span>, {250, 10});</div>
-<div class="line">  reset_button.click += [&amp;] {</div>
+<div class="line">  reset_button.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">    settings::default_settings().reset();</div>
 <div class="line">    reload_button.perform_click();</div>
 <div class="line">  };</div>
@@ -176,6 +176,7 @@ The company_name is defined by the <a class="el" href="classxtd_1_1reflection_1_
 <div class="line">  </div>
 <div class="line">  application::run(main_form);</div>
 <div class="line">}</div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="agroup__types_html_ga221e5b824352c9046d353e4659af5b87"><div class="ttname"><a href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5"><div class="ttname"><a href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">xtd::forms::bounds_specified::location</a></div><div class="ttdeci">@ location</div><div class="ttdoc">Specifies that both the x and y coordinates of the control are defined.</div><div class="ttdef"><b>Definition</b> bounds_specified.hpp:30</div></div>
 <div class="ttc" id="anamespacextd_1_1text_html"><div class="ttname"><a href="namespacextd_1_1text.html">xtd::text</a></div><div class="ttdoc">Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:17</div></div>
@@ -325,12 +326,12 @@ The company_name is defined by the <a class="el" href="classxtd_1_1reflection_1_
 <div class="line">  <span class="keyword">auto</span> main_form = form::create(<span class="stringliteral">&quot;Settings example&quot;</span>, form_start_position::manual);</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> back_color_picker = color_picker::create(main_form, main_form.back_color(), {10, 10}, {75, 25});</div>
-<div class="line">  back_color_picker.color_picker_changed += [&amp;] {</div>
+<div class="line">  back_color_picker.color_picker_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">    main_form.back_color(back_color_picker.color());</div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> save_button = button::create(main_form, <span class="stringliteral">&quot;&amp;Save&quot;</span>, {90, 10});</div>
-<div class="line">  save_button.click += [&amp;] {</div>
+<div class="line">  save_button.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">    settings.write(<span class="stringliteral">&quot;size&quot;</span>, main_form.client_size());</div>
 <div class="line">    settings.write(<span class="stringliteral">&quot;location&quot;</span>, main_form.location());</div>
 <div class="line">    settings.write(<span class="stringliteral">&quot;back_color&quot;</span>, main_form.back_color());</div>
@@ -338,7 +339,7 @@ The company_name is defined by the <a class="el" href="classxtd_1_1reflection_1_
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> reload_button = button::create(main_form, <span class="stringliteral">&quot;&amp;Reload&quot;</span>, {170, 10});</div>
-<div class="line">  reload_button.click += [&amp;] {</div>
+<div class="line">  reload_button.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">    main_form.client_size(settings.read(<span class="stringliteral">&quot;size&quot;</span>, drawing::size {335, 45}));</div>
 <div class="line">    main_form.location(settings.read(<span class="stringliteral">&quot;location&quot;</span>, point {100, 50}));</div>
 <div class="line">    main_form.back_color(settings.read(<span class="stringliteral">&quot;back_color&quot;</span>, system_colors::control()));</div>
@@ -346,7 +347,7 @@ The company_name is defined by the <a class="el" href="classxtd_1_1reflection_1_
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> reset_button = button::create(main_form, <span class="stringliteral">&quot;R&amp;eset&quot;</span>, {250, 10});</div>
-<div class="line">  reset_button.click += [&amp;] {</div>
+<div class="line">  reset_button.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">    settings.reset();</div>
 <div class="line">    reload_button.perform_click();</div>
 <div class="line">  };</div>
@@ -695,7 +696,7 @@ template&lt;class type_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 3 2025 03:54:22 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 3 2025 05:39:26 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

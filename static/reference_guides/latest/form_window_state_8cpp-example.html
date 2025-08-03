@@ -134,7 +134,7 @@ $(function(){ initResizable(false); });
 <div class="line">  form1() {</div>
 <div class="line">    *<span class="keyword">this</span> &lt;&lt; button_full_screen &lt;&lt; button_maximize &lt;&lt; button_minimize &lt;&lt; button_normal;</div>
 <div class="line">    <a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>(<span class="stringliteral">&quot;Window state example&quot;</span>);</div>
-<div class="line">    resize += [&amp;] {</div>
+<div class="line">    resize += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      button_full_screen.enabled(window_state() != <a class="code hl_enumvalue" href="group__xtd__forms.html#gga8722681a872adc2cf18788bb45c4bce4a4fd9a9adf52567d2df028c45cfe35d6e">form_window_state::full_screen</a>&amp;&amp; window_state() != <a class="code hl_enumvalue" href="group__xtd__forms.html#gga8722681a872adc2cf18788bb45c4bce4ae20f6c7671f61ce6bc3366c16514fb64">form_window_state::maximized</a>);</div>
 <div class="line">      button_maximize.enabled(window_state() != <a class="code hl_enumvalue" href="group__xtd__forms.html#gga8722681a872adc2cf18788bb45c4bce4ae20f6c7671f61ce6bc3366c16514fb64">form_window_state::maximized</a>&amp;&amp; window_state() != <a class="code hl_enumvalue" href="group__xtd__forms.html#gga8722681a872adc2cf18788bb45c4bce4a4fd9a9adf52567d2df028c45cfe35d6e">form_window_state::full_screen</a>);</div>
 <div class="line">      button_normal.enabled(window_state() != <a class="code hl_enumvalue" href="group__xtd__forms.html#gga8722681a872adc2cf18788bb45c4bce4afea087517c26fadd409bd4b9dc642555">form_window_state::normal</a>);</div>
@@ -148,28 +148,28 @@ $(function(){ initResizable(false); });
 <div class="line">    button_full_screen.location({10, 10});</div>
 <div class="line">    button_full_screen.text(<span class="stringliteral">&quot;Full screen&quot;</span>);</div>
 <div class="line">    button_full_screen.width(90);</div>
-<div class="line">    button_full_screen.click += [&amp;] {</div>
+<div class="line">    button_full_screen.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      window_state(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga8722681a872adc2cf18788bb45c4bce4a4fd9a9adf52567d2df028c45cfe35d6e">form_window_state::full_screen</a>);</div>
 <div class="line">    };</div>
 <div class="line">    </div>
 <div class="line">    button_maximize.location({110, 10});</div>
 <div class="line">    button_maximize.text(<span class="stringliteral">&quot;Maximize&quot;</span>);</div>
 <div class="line">    button_maximize.width(90);</div>
-<div class="line">    button_maximize.click += [&amp;] {</div>
+<div class="line">    button_maximize.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      window_state(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga8722681a872adc2cf18788bb45c4bce4ae20f6c7671f61ce6bc3366c16514fb64">form_window_state::maximized</a>);</div>
 <div class="line">    };</div>
 <div class="line">    </div>
 <div class="line">    button_normal.location({210, 10});</div>
 <div class="line">    button_normal.text(<span class="stringliteral">&quot;Normal&quot;</span>);</div>
 <div class="line">    button_normal.width(90);</div>
-<div class="line">    button_normal.click += [&amp;] {</div>
+<div class="line">    button_normal.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      window_state(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga8722681a872adc2cf18788bb45c4bce4afea087517c26fadd409bd4b9dc642555">form_window_state::normal</a>);</div>
 <div class="line">    };</div>
 <div class="line">    </div>
 <div class="line">    button_minimize.location({310, 10});</div>
 <div class="line">    button_minimize.text(<span class="stringliteral">&quot;Minimize&quot;</span>);</div>
 <div class="line">    button_minimize.width(90);</div>
-<div class="line">    button_minimize.click += [&amp;] {</div>
+<div class="line">    button_minimize.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      window_state(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga8722681a872adc2cf18788bb45c4bce4acba83766c000e8a727c03c2ed5b4941a">form_window_state::minimized</a>);</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
@@ -189,6 +189,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.hpp:49</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="agroup__debug_html_ga20a8c5c8813e84b0831d7b236d1f1459"><div class="ttname"><a href="group__debug.html#ga20a8c5c8813e84b0831d7b236d1f1459">xtd::ctrace</a></div><div class="ttdeci">std::ostream ctrace(nullptr)</div><div class="ttdoc">Provides an std::ostream for xtd::diagnostics::trace.</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="agroup__types_html_ga221e5b824352c9046d353e4659af5b87"><div class="ttname"><a href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga8722681a872adc2cf18788bb45c4bce4a4fd9a9adf52567d2df028c45cfe35d6e"><div class="ttname"><a href="group__xtd__forms.html#gga8722681a872adc2cf18788bb45c4bce4a4fd9a9adf52567d2df028c45cfe35d6e">xtd::forms::form_window_state::full_screen</a></div><div class="ttdeci">@ full_screen</div><div class="ttdoc">A full screen window.</div><div class="ttdef"><b>Definition</b> form_window_state.hpp:30</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga8722681a872adc2cf18788bb45c4bce4acba83766c000e8a727c03c2ed5b4941a"><div class="ttname"><a href="group__xtd__forms.html#gga8722681a872adc2cf18788bb45c4bce4acba83766c000e8a727c03c2ed5b4941a">xtd::forms::form_window_state::minimized</a></div><div class="ttdeci">@ minimized</div><div class="ttdoc">A minimized window.</div><div class="ttdef"><b>Definition</b> form_window_state.hpp:26</div></div>
@@ -201,7 +202,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 3 2025 03:54:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 3 2025 05:39:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

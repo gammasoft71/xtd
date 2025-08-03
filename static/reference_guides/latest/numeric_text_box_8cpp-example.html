@@ -172,7 +172,7 @@ $(function(){ initResizable(false); });
 <div class="line">      numeric_text_box1.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      numeric_text_box1.value(42);</div>
 <div class="line">      numeric_text_box1.location({10, 10});</div>
-<div class="line">      numeric_text_box1.value_changed += [&amp;] {</div>
+<div class="line">      numeric_text_box1.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <a class="code hl_function" href="group__debug.html#ga20a8c5c8813e84b0831d7b236d1f1459">ctrace</a> &lt;&lt; string::format(<span class="stringliteral">&quot;value_changed [value={}]&quot;</span>, numeric_text_box1.value()) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
 <div class="line">      };</div>
 <div class="line">    }</div>
@@ -196,6 +196,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclassxtd_1_1forms_1_1text__box_html_ad3bdcdfa8e1762b656e1a46eedacf6c5"><div class="ttname"><a href="classxtd_1_1forms_1_1text__box.html#ad3bdcdfa8e1762b656e1a46eedacf6c5">xtd::forms::text_box::text</a></div><div class="ttdeci">const xtd::string &amp; text() const noexcept override</div><div class="ttdoc">Gets the text associated with this control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1text__box_html_ad81da0ddd053078c7ba9656e7138ac09"><div class="ttname"><a href="classxtd_1_1forms_1_1text__box.html#ad81da0ddd053078c7ba9656e7138ac09">xtd::forms::text_box::on_text_changed</a></div><div class="ttdeci">void on_text_changed(const event_args &amp;e) override</div><div class="ttdoc">Raises the xtd::forms::control::text_changed event.</div></div>
 <div class="ttc" id="agroup__debug_html_ga20a8c5c8813e84b0831d7b236d1f1459"><div class="ttname"><a href="group__debug.html#ga20a8c5c8813e84b0831d7b236d1f1459">xtd::ctrace</a></div><div class="ttdeci">std::ostream ctrace(nullptr)</div><div class="ttdoc">Provides an std::ostream for xtd::diagnostics::trace.</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gafd4d41304c110da4b815801e502cc853"><div class="ttname"><a href="group__xtd__core.html#gafd4d41304c110da4b815801e502cc853">xtd::try_parse</a></div><div class="ttdeci">bool try_parse(const std::basic_string&lt; char &gt; &amp;str, value_t &amp;value) noexcept</div><div class="ttdoc">Convert a string into a type.</div><div class="ttdef"><b>Definition</b> parse.hpp:416</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
@@ -207,7 +208,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 3 2025 03:54:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 3 2025 05:39:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

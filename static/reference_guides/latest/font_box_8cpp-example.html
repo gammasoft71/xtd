@@ -133,7 +133,7 @@ $(function(){ initResizable(false); });
 <div class="line">    .location({10, 10})</div>
 <div class="line">    .text(<span class="stringliteral">&quot;Select a font&quot;</span>)</div>
 <div class="line">    .size({200, 45})</div>
-<div class="line">    .click += [<span class="keyword">this</span>] {</div>
+<div class="line">    .click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      <span class="keyword">auto</span> font = system_fonts::default_font();</div>
 <div class="line">      <span class="keyword">auto</span> res = font_box::show(font, *<span class="keyword">this</span>);</div>
 <div class="line">      <span class="keywordflow">if</span> (res == dialog_result::ok)</div>
@@ -144,7 +144,7 @@ $(function(){ initResizable(false); });
 <div class="line">    .location({10, 60})</div>
 <div class="line">    .text(<span class="stringliteral">&quot;Select a font and a font color&quot;</span>)</div>
 <div class="line">    .size({200, 45})</div>
-<div class="line">    .click += [] {</div>
+<div class="line">    .click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      drawing::font font(drawing::font_family::generic_sans_serif(), 16);</div>
 <div class="line">      drawing::color color = drawing::color::blue;</div>
 <div class="line">      <span class="keyword">auto</span> res = font_box::show(font, color, font_box_options::show_color);</div>
@@ -161,11 +161,12 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 3 2025 03:54:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 3 2025 05:39:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -148,7 +148,7 @@ $(function(){ initResizable(false); });
 <div class="line">    label_text.location({10, 13});</div>
 <div class="line">    label_text.text(<span class="stringliteral">&quot;Text: &quot;</span>);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba858aabad81d1dea3e500053615d32518">text_box_text</a>.text_changed += [&amp;] {</div>
+<div class="line">    <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba858aabad81d1dea3e500053615d32518">text_box_text</a>.text_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      button_demo.text(<a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba858aabad81d1dea3e500053615d32518">text_box_text</a>.text());</div>
 <div class="line">    };</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba858aabad81d1dea3e500053615d32518">text_box_text</a>.location({100, 10});</div>
@@ -160,7 +160,7 @@ $(function(){ initResizable(false); });
 <div class="line">    label_text_align.location({10, 48});</div>
 <div class="line">    label_text_align.text(<span class="stringliteral">&quot;text_align: &quot;</span>);</div>
 <div class="line">    </div>
-<div class="line">    choice_text_align.selected_value_changed += [&amp;] {</div>
+<div class="line">    choice_text_align.selected_value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      button_demo.text_align(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;content_alignment&gt;</a>(choice_text_align.selected_item().tag()));</div>
 <div class="line">    };</div>
 <div class="line">    choice_text_align.location({100, 45});</div>
@@ -173,7 +173,7 @@ $(function(){ initResizable(false); });
 <div class="line">    label_image.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    label_image.location({10, 83});</div>
 <div class="line">    </div>
-<div class="line">    choice_image.selected_value_changed += [&amp;] {</div>
+<div class="line">    choice_image.selected_value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      <span class="keywordflow">if</span> (choice_image.selected_index() == 0) button_demo.image(<a class="code hl_variable" href="classxtd_1_1drawing_1_1image.html#a8e20e3dbd8c92fbfc5ea0adc27e2ae61">xtd::drawing::image::empty</a>);</div>
 <div class="line">      <span class="keywordflow">else</span> button_demo.image(<a class="code hl_function" href="classxtd_1_1forms_1_1button__images.html#ae11d63ea653d89c98a9a6a814db8a1fb">button_images::from_name</a>(choice_image.selected_item().value()));</div>
 <div class="line">    };</div>
@@ -188,7 +188,7 @@ $(function(){ initResizable(false); });
 <div class="line">    label_image_align.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    label_image_align.location({10, 118});</div>
 <div class="line">    </div>
-<div class="line">    choice_image_align.selected_value_changed += [&amp;] {</div>
+<div class="line">    choice_image_align.selected_value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      button_demo.image_align(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;content_alignment&gt;</a>(choice_image_align.selected_item().tag()));</div>
 <div class="line">    };</div>
 <div class="line">    choice_image_align.items().push_back_range({{<span class="stringliteral">&quot;top_left&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a46d3836487c2110c695e52750c5d76e4">content_alignment::top_left</a>}, {<span class="stringliteral">&quot;top_center&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a153dda402a237b8b093c3c418b66df5d">content_alignment::top_center</a>}, {<span class="stringliteral">&quot;top_right&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0af12ea736b05cb6002f1ebf1b8c052676">content_alignment::top_right</a>}, {<span class="stringliteral">&quot;middle_left&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a4d8a5580bcd972246c9910900a6efc09">content_alignment::middle_left</a>}, {<span class="stringliteral">&quot;middle_center&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0aeff04a32daf451a273d55ca9d9245e92">content_alignment::middle_center</a>}, {<span class="stringliteral">&quot;middle_right&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0aff1bb2ef26708d2a4dc98bdda5c48071">content_alignment::middle_right</a>}, {<span class="stringliteral">&quot;bottom_left&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a369408ec984d94fb270ae125c6de1a5b">content_alignment::bottom_left</a>}, {<span class="stringliteral">&quot;bottom_center&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a1afb532afb8fb97068fa335cfdc02bb8">content_alignment::bottom_center</a>}, {<span class="stringliteral">&quot;bottom_right&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0ab88b8c9790136e01b8dfce869959cea3">content_alignment::bottom_right</a>}});</div>
@@ -201,7 +201,7 @@ $(function(){ initResizable(false); });
 <div class="line">    label_flat_style.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    label_flat_style.location({10, 153});</div>
 <div class="line">    </div>
-<div class="line">    choice_flat_style.selected_value_changed += [&amp;] {</div>
+<div class="line">    choice_flat_style.selected_value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      button_demo.flat_style(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;flat_style&gt;</a>(choice_flat_style.selected_item().tag()));</div>
 <div class="line">    };</div>
 <div class="line">    choice_flat_style.items().push_back_range({{<span class="stringliteral">&quot;flat&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">flat_style::flat</a>}, {<span class="stringliteral">&quot;popup&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a8eff3617002e9a854b9704717f35f7aa">flat_style::popup</a>}, {<span class="stringliteral">&quot;standard&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1ac00f0c4675b91fb8b918e4079a0b1bac">flat_style::standard</a>}, {<span class="stringliteral">&quot;system&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a54b53072540eeeb8f8e9343e71f28176">flat_style::system</a>}});</div>
@@ -216,7 +216,7 @@ $(function(){ initResizable(false); });
 <div class="line">    </div>
 <div class="line">    color_picker_back_color.alpha_color(<span class="keyword">true</span>);</div>
 <div class="line">    color_picker_back_color.color(button_demo.back_color());</div>
-<div class="line">    color_picker_back_color.color_picker_changed += [&amp;] {</div>
+<div class="line">    color_picker_back_color.color_picker_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      button_demo.back_color(color_picker_back_color.color());</div>
 <div class="line">    };</div>
 <div class="line">    color_picker_back_color.location({100, 185});</div>
@@ -229,7 +229,7 @@ $(function(){ initResizable(false); });
 <div class="line">    </div>
 <div class="line">    color_picker_fore_color.alpha_color(<span class="keyword">true</span>);</div>
 <div class="line">    color_picker_fore_color.color(button_demo.fore_color());</div>
-<div class="line">    color_picker_fore_color.color_picker_changed += [&amp;] {</div>
+<div class="line">    color_picker_fore_color.color_picker_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      button_demo.fore_color(color_picker_fore_color.color());</div>
 <div class="line">    };</div>
 <div class="line">    color_picker_fore_color.location({100, 220});</div>
@@ -240,7 +240,7 @@ $(function(){ initResizable(false); });
 <div class="line">    label_width.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    label_width.location({10, 258});</div>
 <div class="line">    </div>
-<div class="line">    numeric_up_down_width.value_changed += [&amp;] {</div>
+<div class="line">    numeric_up_down_width.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      button_demo.width(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int&gt;</a>(numeric_up_down_width.value()));</div>
 <div class="line">    };</div>
 <div class="line">    numeric_up_down_width.value(button_demo.width());</div>
@@ -253,7 +253,7 @@ $(function(){ initResizable(false); });
 <div class="line">    label_height.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    label_height.location({10, 293});</div>
 <div class="line">    </div>
-<div class="line">    numeric_up_down_height.value_changed += [&amp;] {</div>
+<div class="line">    numeric_up_down_height.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      button_demo.height(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int&gt;</a>(numeric_up_down_height.value()));</div>
 <div class="line">    };</div>
 <div class="line">    numeric_up_down_height.value(button_demo.height());</div>
@@ -266,7 +266,7 @@ $(function(){ initResizable(false); });
 <div class="line">    label_auto_size.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    label_auto_size.location({10, 328});</div>
 <div class="line">    </div>
-<div class="line">    check_box_auto_size.checked_changed += [&amp;] {</div>
+<div class="line">    check_box_auto_size.checked_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      button_demo.auto_size(check_box_auto_size.checked());</div>
 <div class="line">      numeric_up_down_width.value(button_demo.width());</div>
 <div class="line">      numeric_up_down_width.enabled(!check_box_auto_size.checked());</div>
@@ -286,7 +286,7 @@ $(function(){ initResizable(false); });
 <div class="line">    label_default_button.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    label_default_button.location({10, 363});</div>
 <div class="line">    </div>
-<div class="line">    check_box_default_buttton.checked_changed += [&amp;] {</div>
+<div class="line">    check_box_default_buttton.checked_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      <span class="keywordflow">if</span> (check_box_default_buttton.checked()) accept_button(button_demo);</div>
 <div class="line">      <span class="keywordflow">else</span> accept_button(<span class="keyword">nullptr</span>);</div>
 <div class="line">      check_box_default_buttton.text(check_box_default_buttton.checked() ? <span class="stringliteral">&quot;true&quot;</span> : <span class="stringliteral">&quot;false&quot;</span>);</div>
@@ -303,7 +303,7 @@ $(function(){ initResizable(false); });
 <div class="line">    label_enebaled.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    label_enebaled.location({10, 398});</div>
 <div class="line">    </div>
-<div class="line">    check_box_enabled.checked_changed += [&amp;] {</div>
+<div class="line">    check_box_enabled.checked_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      button_demo.enabled(check_box_enabled.checked());</div>
 <div class="line">      check_box_enabled.text(check_box_enabled.checked() ? <span class="stringliteral">&quot;true&quot;</span> : <span class="stringliteral">&quot;false&quot;</span>);</div>
 <div class="line">    };</div>
@@ -316,7 +316,7 @@ $(function(){ initResizable(false); });
 <div class="line">    check_box_enabled.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">anchor_styles::left</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">anchor_styles::right</a>);</div>
 <div class="line">    </div>
 <div class="line">    button_demo.location({380, 30});</div>
-<div class="line">    button_demo.click += [&amp;] {</div>
+<div class="line">    button_demo.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1forms_1_1message__box.html#a265c0deaf6d4fef2014f9b27a2631eec">message_box::show</a>(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Button clicked&quot;</span>, <span class="stringliteral">&quot;Button appearance&quot;</span>);</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
@@ -371,6 +371,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclassxtd_1_1forms_1_1panel_html"><div class="ttname"><a href="classxtd_1_1forms_1_1panel.html">xtd::forms::panel</a></div><div class="ttdoc">Used to group collections of controls.</div><div class="ttdef"><b>Definition</b> panel.hpp:32</div></div>
 <div class="ttc" id="agroup__colors_html_ggabb6249e3fb8a4388778157257e99049ba858aabad81d1dea3e500053615d32518"><div class="ttname"><a href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba858aabad81d1dea3e500053615d32518">xtd::drawing::known_color::text_box_text</a></div><div class="ttdeci">@ text_box_text</div><div class="ttdoc">The system-defined color of the accent text color (macos specific. On other platform is same as windo...</div><div class="ttdef"><b>Definition</b> known_color.hpp:503</div></div>
 <div class="ttc" id="agroup__colors_html_ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb"><div class="ttname"><a href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">xtd::drawing::known_color::text_box</a></div><div class="ttdeci">@ text_box</div><div class="ttdoc">The system-defined color of the accent color (macos specific. On other platform is same as window).</div><div class="ttdef"><b>Definition</b> known_color.hpp:501</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785"><div class="ttname"><a href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a></div><div class="ttdeci">@ flat</div><div class="ttdoc">The control appears flat.</div><div class="ttdef"><b>Definition</b> flat_style.hpp:26</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga7cc15a089c6b538cb469caa2e9aba1a1a54b53072540eeeb8f8e9343e71f28176"><div class="ttname"><a href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a54b53072540eeeb8f8e9343e71f28176">xtd::forms::flat_style::system</a></div><div class="ttdeci">@ system</div><div class="ttdoc">The appearance of the control is determined by the user&#39;s operating system.</div><div class="ttdef"><b>Definition</b> flat_style.hpp:32</div></div>
@@ -399,7 +400,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 3 2025 03:54:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 3 2025 05:39:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

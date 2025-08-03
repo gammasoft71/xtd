@@ -190,7 +190,7 @@ The three_state property determines whether the control supports two or three st
 <div class="line">      <a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a65896f051dab5b3050412ab63a0af079">controls</a>().push_back_range({check_box1, check_box2, check_box3, check_box4, check_box5});</div>
 <div class="line">      </div>
 <div class="line">      check_box1.auto_check(<span class="keyword">false</span>);</div>
-<div class="line">      check_box1.click += [&amp;] {</div>
+<div class="line">      check_box1.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 1 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box1.checked(!check_box1.checked());</span></div>
 <div class="line">        check_box1.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
@@ -198,14 +198,14 @@ The three_state property determines whether the control supports two or three st
 <div class="line">      check_box1.location({30, 30});</div>
 <div class="line">      check_box1.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      </div>
-<div class="line">      check_box2.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box2.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box2.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box2.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box2.checked(<span class="keyword">true</span>);</div>
 <div class="line">      check_box2.location({30, 60});</div>
 <div class="line">      </div>
 <div class="line">      check_box3.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">      check_box3.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box3.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box3.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box3.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box3.check_state(forms::check_state::indeterminate);</div>
@@ -213,7 +213,7 @@ The three_state property determines whether the control supports two or three st
 <div class="line">      check_box3.location({30, 90});</div>
 <div class="line">      </div>
 <div class="line">      check_box4.appearance(forms::appearance::button);</div>
-<div class="line">      check_box4.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box4.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box4.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box4.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box4.checked(<span class="keyword">true</span>);</div>
@@ -221,7 +221,7 @@ The three_state property determines whether the control supports two or three st
 <div class="line">      </div>
 <div class="line">      check_box5.appearance(forms::appearance::button);</div>
 <div class="line">      check_box5.auto_check(<span class="keyword">false</span>);</div>
-<div class="line">      check_box5.click += [&amp;] {</div>
+<div class="line">      check_box5.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 5 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box5.checked(!check_box5.checked());</span></div>
 <div class="line">        check_box5.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
@@ -248,10 +248,11 @@ The three_state property determines whether the control supports two or three st
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a65896f051dab5b3050412ab63a0af079"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a65896f051dab5b3050412ab63a0af079">xtd::forms::control::controls</a></div><div class="ttdeci">virtual control_collection &amp; controls() noexcept</div><div class="ttdoc">Gets the collection of controls contained within the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_ac12513e127a5cc7bb9ee8b238afa2fd5"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#ac12513e127a5cc7bb9ee8b238afa2fd5">xtd::forms::control::text</a></div><div class="ttdeci">virtual const xtd::string &amp; text() const noexcept</div><div class="ttdoc">Gets the text associated with this control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_add_message_filter_8cpp-example.html#_a9">application_add_message_filter.cpp</a>, <a class="el" href="application_enable_dark_mode_8cpp-example.html#_a14">application_enable_dark_mode.cpp</a>, <a class="el" href="application_enable_light_mode_8cpp-example.html#_a14">application_enable_light_mode.cpp</a>, <a class="el" href="button_appearance_8cpp-example.html#_a7">button_appearance.cpp</a>, <a class="el" href="change_parent_8cpp-example.html#_a9">change_parent.cpp</a>, <a class="el" href="check_box_8cpp-example.html#_a1">check_box.cpp</a>, <a class="el" href="check_box_appearance_8cpp-example.html#_a7">check_box_appearance.cpp</a>, <a class="el" href="check_box_renderer_8cpp-example.html#_a7">check_box_renderer.cpp</a>, <a class="el" href="demo_8cpp-example.html#_a48">demo.cpp</a>, <a class="el" href="form_show_hide_8cpp-example.html#_a2">form_show_hide.cpp</a>, <a class="el" href="group_box_and_check_box_8cpp-example.html#_a2">group_box_and_check_box.cpp</a>, <a class="el" href="screenshot_8cpp-example.html#_a11">screenshot.cpp</a>, <a class="el" href="some_controls_8cpp-example.html#_a14">some_controls.cpp</a>, <a class="el" href="some_system_controls_8cpp-example.html#_a14">some_system_controls.cpp</a>, and <a class="el" href="themes_8cpp-example.html#_a14">themes.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_add_message_filter_8cpp-example.html#_a9">application_add_message_filter.cpp</a>, <a class="el" href="application_enable_dark_mode_8cpp-example.html#_a14">application_enable_dark_mode.cpp</a>, <a class="el" href="application_enable_light_mode_8cpp-example.html#_a14">application_enable_light_mode.cpp</a>, <a class="el" href="button_appearance_8cpp-example.html#_a7">button_appearance.cpp</a>, <a class="el" href="change_parent_8cpp-example.html#_a9">change_parent.cpp</a>, <a class="el" href="check_box_8cpp-example.html#_a1">check_box.cpp</a>, <a class="el" href="check_box_appearance_8cpp-example.html#_a7">check_box_appearance.cpp</a>, <a class="el" href="check_box_renderer_8cpp-example.html#_a7">check_box_renderer.cpp</a>, <a class="el" href="demo_8cpp-example.html#_a48">demo.cpp</a>, <a class="el" href="form_show_hide_8cpp-example.html#_a3">form_show_hide.cpp</a>, <a class="el" href="group_box_and_check_box_8cpp-example.html#_a2">group_box_and_check_box.cpp</a>, <a class="el" href="screenshot_8cpp-example.html#_a11">screenshot.cpp</a>, <a class="el" href="some_controls_8cpp-example.html#_a14">some_controls.cpp</a>, <a class="el" href="some_system_controls_8cpp-example.html#_a14">some_system_controls.cpp</a>, and <a class="el" href="themes_8cpp-example.html#_a14">themes.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Events</h2></td></tr>
@@ -1482,7 +1483,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">      <a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a65896f051dab5b3050412ab63a0af079">controls</a>().push_back_range({check_box1, check_box2, check_box3, check_box4, check_box5});</div>
 <div class="line">      </div>
 <div class="line">      check_box1.auto_check(<span class="keyword">false</span>);</div>
-<div class="line">      check_box1.click += [&amp;] {</div>
+<div class="line">      check_box1.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 1 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box1.checked(!check_box1.checked());</span></div>
 <div class="line">        check_box1.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
@@ -1490,14 +1491,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">      check_box1.location({30, 30});</div>
 <div class="line">      check_box1.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      </div>
-<div class="line">      check_box2.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box2.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box2.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box2.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box2.checked(<span class="keyword">true</span>);</div>
 <div class="line">      check_box2.location({30, 60});</div>
 <div class="line">      </div>
 <div class="line">      check_box3.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">      check_box3.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box3.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box3.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box3.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box3.check_state(forms::check_state::indeterminate);</div>
@@ -1505,7 +1506,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">      check_box3.location({30, 90});</div>
 <div class="line">      </div>
 <div class="line">      check_box4.appearance(forms::appearance::button);</div>
-<div class="line">      check_box4.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box4.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box4.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box4.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box4.checked(<span class="keyword">true</span>);</div>
@@ -1513,7 +1514,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">      </div>
 <div class="line">      check_box5.appearance(forms::appearance::button);</div>
 <div class="line">      check_box5.auto_check(<span class="keyword">false</span>);</div>
-<div class="line">      check_box5.click += [&amp;] {</div>
+<div class="line">      check_box5.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 5 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box5.checked(!check_box5.checked());</span></div>
 <div class="line">        check_box5.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
@@ -1581,7 +1582,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">      <a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a65896f051dab5b3050412ab63a0af079">controls</a>().push_back_range({check_box1, check_box2, check_box3, check_box4, check_box5});</div>
 <div class="line">      </div>
 <div class="line">      check_box1.auto_check(<span class="keyword">false</span>);</div>
-<div class="line">      check_box1.click += [&amp;] {</div>
+<div class="line">      check_box1.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 1 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box1.checked(!check_box1.checked());</span></div>
 <div class="line">        check_box1.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
@@ -1589,14 +1590,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">      check_box1.location({30, 30});</div>
 <div class="line">      check_box1.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      </div>
-<div class="line">      check_box2.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box2.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box2.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box2.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box2.checked(<span class="keyword">true</span>);</div>
 <div class="line">      check_box2.location({30, 60});</div>
 <div class="line">      </div>
 <div class="line">      check_box3.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">      check_box3.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box3.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box3.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box3.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box3.check_state(forms::check_state::indeterminate);</div>
@@ -1604,7 +1605,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">      check_box3.location({30, 90});</div>
 <div class="line">      </div>
 <div class="line">      check_box4.appearance(forms::appearance::button);</div>
-<div class="line">      check_box4.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box4.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box4.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box4.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box4.checked(<span class="keyword">true</span>);</div>
@@ -1612,7 +1613,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">      </div>
 <div class="line">      check_box5.appearance(forms::appearance::button);</div>
 <div class="line">      check_box5.auto_check(<span class="keyword">false</span>);</div>
-<div class="line">      check_box5.click += [&amp;] {</div>
+<div class="line">      check_box5.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 5 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box5.checked(!check_box5.checked());</span></div>
 <div class="line">        check_box5.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
@@ -1715,7 +1716,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">      <a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a65896f051dab5b3050412ab63a0af079">controls</a>().push_back_range({check_box1, check_box2, check_box3, check_box4, check_box5});</div>
 <div class="line">      </div>
 <div class="line">      check_box1.auto_check(<span class="keyword">false</span>);</div>
-<div class="line">      check_box1.click += [&amp;] {</div>
+<div class="line">      check_box1.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 1 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box1.checked(!check_box1.checked());</span></div>
 <div class="line">        check_box1.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
@@ -1723,14 +1724,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">      check_box1.location({30, 30});</div>
 <div class="line">      check_box1.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      </div>
-<div class="line">      check_box2.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box2.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box2.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box2.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box2.checked(<span class="keyword">true</span>);</div>
 <div class="line">      check_box2.location({30, 60});</div>
 <div class="line">      </div>
 <div class="line">      check_box3.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">      check_box3.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box3.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box3.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box3.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box3.check_state(forms::check_state::indeterminate);</div>
@@ -1738,7 +1739,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">      check_box3.location({30, 90});</div>
 <div class="line">      </div>
 <div class="line">      check_box4.appearance(forms::appearance::button);</div>
-<div class="line">      check_box4.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box4.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box4.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box4.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box4.checked(<span class="keyword">true</span>);</div>
@@ -1746,7 +1747,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">      </div>
 <div class="line">      check_box5.appearance(forms::appearance::button);</div>
 <div class="line">      check_box5.auto_check(<span class="keyword">false</span>);</div>
-<div class="line">      check_box5.click += [&amp;] {</div>
+<div class="line">      check_box5.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 5 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box5.checked(!check_box5.checked());</span></div>
 <div class="line">        check_box5.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
@@ -1908,7 +1909,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">      <a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a65896f051dab5b3050412ab63a0af079">controls</a>().push_back_range({check_box1, check_box2, check_box3, check_box4, check_box5});</div>
 <div class="line">      </div>
 <div class="line">      check_box1.auto_check(<span class="keyword">false</span>);</div>
-<div class="line">      check_box1.click += [&amp;] {</div>
+<div class="line">      check_box1.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 1 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box1.checked(!check_box1.checked());</span></div>
 <div class="line">        check_box1.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
@@ -1916,14 +1917,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">      check_box1.location({30, 30});</div>
 <div class="line">      check_box1.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      </div>
-<div class="line">      check_box2.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box2.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box2.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box2.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box2.checked(<span class="keyword">true</span>);</div>
 <div class="line">      check_box2.location({30, 60});</div>
 <div class="line">      </div>
 <div class="line">      check_box3.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">      check_box3.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box3.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box3.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box3.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box3.check_state(forms::check_state::indeterminate);</div>
@@ -1931,7 +1932,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">      check_box3.location({30, 90});</div>
 <div class="line">      </div>
 <div class="line">      check_box4.appearance(forms::appearance::button);</div>
-<div class="line">      check_box4.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box4.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box4.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box4.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box4.checked(<span class="keyword">true</span>);</div>
@@ -1939,7 +1940,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <div class="line">      </div>
 <div class="line">      check_box5.appearance(forms::appearance::button);</div>
 <div class="line">      check_box5.auto_check(<span class="keyword">false</span>);</div>
-<div class="line">      check_box5.click += [&amp;] {</div>
+<div class="line">      check_box5.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 5 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box5.checked(!check_box5.checked());</span></div>
 <div class="line">        check_box5.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
@@ -2054,7 +2055,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <div class="line">      <a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a65896f051dab5b3050412ab63a0af079">controls</a>().push_back_range({check_box1, check_box2, check_box3, check_box4, check_box5});</div>
 <div class="line">      </div>
 <div class="line">      check_box1.auto_check(<span class="keyword">false</span>);</div>
-<div class="line">      check_box1.click += [&amp;] {</div>
+<div class="line">      check_box1.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 1 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box1.checked(!check_box1.checked());</span></div>
 <div class="line">        check_box1.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
@@ -2062,14 +2063,14 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <div class="line">      check_box1.location({30, 30});</div>
 <div class="line">      check_box1.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      </div>
-<div class="line">      check_box2.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box2.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box2.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box2.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box2.checked(<span class="keyword">true</span>);</div>
 <div class="line">      check_box2.location({30, 60});</div>
 <div class="line">      </div>
 <div class="line">      check_box3.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">      check_box3.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box3.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box3.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box3.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box3.check_state(forms::check_state::indeterminate);</div>
@@ -2077,7 +2078,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <div class="line">      check_box3.location({30, 90});</div>
 <div class="line">      </div>
 <div class="line">      check_box4.appearance(forms::appearance::button);</div>
-<div class="line">      check_box4.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box4.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box4.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box4.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box4.checked(<span class="keyword">true</span>);</div>
@@ -2085,7 +2086,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <div class="line">      </div>
 <div class="line">      check_box5.appearance(forms::appearance::button);</div>
 <div class="line">      check_box5.auto_check(<span class="keyword">false</span>);</div>
-<div class="line">      check_box5.click += [&amp;] {</div>
+<div class="line">      check_box5.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 5 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box5.checked(!check_box5.checked());</span></div>
 <div class="line">        check_box5.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
@@ -2169,7 +2170,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <div class="line">      <a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a65896f051dab5b3050412ab63a0af079">controls</a>().push_back_range({check_box1, check_box2, check_box3, check_box4, check_box5});</div>
 <div class="line">      </div>
 <div class="line">      check_box1.auto_check(<span class="keyword">false</span>);</div>
-<div class="line">      check_box1.click += [&amp;] {</div>
+<div class="line">      check_box1.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 1 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box1.checked(!check_box1.checked());</span></div>
 <div class="line">        check_box1.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
@@ -2177,14 +2178,14 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <div class="line">      check_box1.location({30, 30});</div>
 <div class="line">      check_box1.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      </div>
-<div class="line">      check_box2.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box2.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box2.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box2.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box2.checked(<span class="keyword">true</span>);</div>
 <div class="line">      check_box2.location({30, 60});</div>
 <div class="line">      </div>
 <div class="line">      check_box3.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">      check_box3.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box3.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box3.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box3.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box3.check_state(forms::check_state::indeterminate);</div>
@@ -2192,7 +2193,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <div class="line">      check_box3.location({30, 90});</div>
 <div class="line">      </div>
 <div class="line">      check_box4.appearance(forms::appearance::button);</div>
-<div class="line">      check_box4.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box4.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box4.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box4.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box4.checked(<span class="keyword">true</span>);</div>
@@ -2200,7 +2201,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <div class="line">      </div>
 <div class="line">      check_box5.appearance(forms::appearance::button);</div>
 <div class="line">      check_box5.auto_check(<span class="keyword">false</span>);</div>
-<div class="line">      check_box5.click += [&amp;] {</div>
+<div class="line">      check_box5.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 5 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box5.checked(!check_box5.checked());</span></div>
 <div class="line">        check_box5.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
@@ -2267,7 +2268,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <div class="line">      <a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a65896f051dab5b3050412ab63a0af079">controls</a>().push_back_range({check_box1, check_box2, check_box3, check_box4, check_box5});</div>
 <div class="line">      </div>
 <div class="line">      check_box1.auto_check(<span class="keyword">false</span>);</div>
-<div class="line">      check_box1.click += [&amp;] {</div>
+<div class="line">      check_box1.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 1 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box1.checked(!check_box1.checked());</span></div>
 <div class="line">        check_box1.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
@@ -2275,14 +2276,14 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <div class="line">      check_box1.location({30, 30});</div>
 <div class="line">      check_box1.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box1.check_state()));</div>
 <div class="line">      </div>
-<div class="line">      check_box2.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box2.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box2.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box2.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box2.checked(<span class="keyword">true</span>);</div>
 <div class="line">      check_box2.location({30, 60});</div>
 <div class="line">      </div>
 <div class="line">      check_box3.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">      check_box3.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box3.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box3.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box3.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box3.check_state(forms::check_state::indeterminate);</div>
@@ -2290,7 +2291,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <div class="line">      check_box3.location({30, 90});</div>
 <div class="line">      </div>
 <div class="line">      check_box4.appearance(forms::appearance::button);</div>
-<div class="line">      check_box4.check_state_changed += [&amp;] {</div>
+<div class="line">      check_box4.check_state_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        check_box4.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box4.check_state()));</div>
 <div class="line">      };</div>
 <div class="line">      check_box4.checked(<span class="keyword">true</span>);</div>
@@ -2298,7 +2299,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <div class="line">      </div>
 <div class="line">      check_box5.appearance(forms::appearance::button);</div>
 <div class="line">      check_box5.auto_check(<span class="keyword">false</span>);</div>
-<div class="line">      check_box5.click += [&amp;] {</div>
+<div class="line">      check_box5.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="comment">// Uncomments next line to check / uncheck check box 5 (auto_check is false...)</span></div>
 <div class="line">        <span class="comment">//check_box5.checked(!check_box5.checked());</span></div>
 <div class="line">        check_box5.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, check_box5.check_state()));</div>
@@ -4554,7 +4555,7 @@ The on_check_state_changed method also allows derived classes to handle the even
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 3 2025 03:54:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 3 2025 05:39:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

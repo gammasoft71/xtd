@@ -148,7 +148,7 @@ $(function(){ initResizable(false); });
 <div class="line">      names.sort();</div>
 <div class="line">      choice_theme.items().push_back_range(names);</div>
 <div class="line">      choice_theme.selected_index(0);</div>
-<div class="line">      choice_theme.selected_index_changed += [&amp;] {</div>
+<div class="line">      choice_theme.selected_index_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a1f6e9deecce51a698af2bab30d31f600">application::style_sheet</a>(choice_theme.selected_index() == 0 ? <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#ab6bc6bdfb9735dd07f6f0ac1623548ae">application::system_style_sheet</a>() : <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a6e881a89c96400c224c0e5e0853269bd">application::get_style_sheet_from_name</a>(choice_theme.selected_item().value()));</div>
 <div class="line">        color_picker_background.color(back_color());</div>
 <div class="line">        color_picker_foreground.color(fore_color());</div>
@@ -163,7 +163,7 @@ $(function(){ initResizable(false); });
 <div class="line">      color_picker_background.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      color_picker_background.location({180, 10});</div>
 <div class="line">      color_picker_background.color(back_color());</div>
-<div class="line">      color_picker_background.color_picker_changed += [&amp;] {</div>
+<div class="line">      color_picker_background.color_picker_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        bcolor = color_picker_background.color();</div>
 <div class="line">        check_box_system.back_color(bcolor.value());</div>
 <div class="line">        check_box_standard.back_color(bcolor.value());</div>
@@ -172,7 +172,7 @@ $(function(){ initResizable(false); });
 <div class="line">      color_picker_foreground.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      color_picker_foreground.location({290, 10});</div>
 <div class="line">      color_picker_foreground.color(fore_color());</div>
-<div class="line">      color_picker_foreground.color_picker_changed += [&amp;] {</div>
+<div class="line">      color_picker_foreground.color_picker_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        fcolor = color_picker_foreground.color();</div>
 <div class="line">        check_box_system.fore_color(fcolor.value());</div>
 <div class="line">        check_box_standard.fore_color(fcolor.value());</div>
@@ -244,6 +244,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html_aea85716c581175691cc6f4647c664591"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html#aea85716c581175691cc6f4647c664591">xtd::forms::form::on_paint</a></div><div class="ttdeci">void on_paint(paint_event_args &amp;e) override</div><div class="ttdoc">Raises the xtd::forms::control::paint event.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1paint__event__args_html"><div class="ttname"><a href="classxtd_1_1forms_1_1paint__event__args.html">xtd::forms::paint_event_args</a></div><div class="ttdoc">Provides data for the xtd::forms::control::paint event.</div><div class="ttdef"><b>Definition</b> paint_event_args.hpp:30</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga12b406a1ff6df3c0af717121e6c37257a051e0f1740c3a9eee8b052a1263b976d"><div class="ttname"><a href="group__xtd__forms.html#gga12b406a1ff6df3c0af717121e6c37257a051e0f1740c3a9eee8b052a1263b976d">xtd::forms::text_format_flags::vertical_center</a></div><div class="ttdeci">@ vertical_center</div><div class="ttdoc">Centers the text vertically, within the bounding rectangle.</div><div class="ttdef"><b>Definition</b> text_format_flags.hpp:36</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga12b406a1ff6df3c0af717121e6c37257a811882fecd5c7618d7099ebbd39ea254"><div class="ttname"><a href="group__xtd__forms.html#gga12b406a1ff6df3c0af717121e6c37257a811882fecd5c7618d7099ebbd39ea254">xtd::forms::text_format_flags::left</a></div><div class="ttdeci">@ left</div><div class="ttdoc">Aligns the text on the left side of the clipping area. This is the default.</div><div class="ttdef"><b>Definition</b> text_format_flags.hpp:28</div></div>
@@ -268,7 +269,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 3 2025 03:54:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 3 2025 05:39:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
