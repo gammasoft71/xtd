@@ -19,7 +19,7 @@ namespace xtd {
   /// @par Examples
   /// The following example shows how to use xtd::iequatable interface.
   /// @include iequatable.cpp
-  class iequatable : public interface, public extensions::equality_operators<type_t, iequatable<type_t>> {
+  class iequatable interface_, public extensions::equality_operators<type_t, iequatable<type_t>> {
   public:
     /// @name Public Methods
     

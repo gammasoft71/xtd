@@ -2,9 +2,9 @@
 /// @brief Contains xtd::icomparable interface.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+#include "extensions/comparison_operators.hpp"
 #include "interface.hpp"
 #include "int32.hpp"
-#include "extensions/comparison_operators.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -18,7 +18,7 @@ namespace xtd {
   /// The following example shows how to use xtd::icomparable interface.
   /// @include icomparable.cpp
   template<class type_t>
-  class icomparable : public interface, public extensions::comparison_operators<type_t, icomparable<type_t>> {
+  class icomparable interface_, public extensions::comparison_operators<type_t, icomparable<type_t>> {
   public:
     /// @name Public Methods
     

@@ -1,16 +1,28 @@
 #include <xtd/xtd>
 
+using namespace diagnostics;
+
+bool is_cppcheck_present() {
+  try {
+    return process::start(process_start_info {"cppcheck", "--version"}.redirect_standard_output(true).create_no_window(true)).wait_for_exit().exit_code() == 0;
+  } catch (...) {
+    return false;
+  }
+}
+
 auto main() -> int {
-  auto start_info = diagnostics::process_start_info {"cppcheck", "--help"};
-  start_info.redirect_standard_output(true);
-  auto process = diagnostics::process::start(start_info);
-  auto& standard_output = process.standard_output();
+  if (!is_cppcheck_present()) {
+    console::write_line("`cppcheck` command not found, please install `cppcheck` or add `cppcheck` in your path.");
+    environment::exit(exit_status::failure);
+  }
+  
+  auto cppcheck_process = process::start(process_start_info {"cppcheck", "--help"}.redirect_standard_output(true));
+  auto& standard_output = cppcheck_process.standard_output();
   auto process_output_reader = stream_reader {standard_output};
   while (!process_output_reader.end_of_stream())
     console::write_line(process_output_reader.read_line());
-  process.wait_for_exit();
-  console::write_line(process.exit_code());
-  
+  cppcheck_process.wait_for_exit();
+  console::write_line(cppcheck_process.exit_code());
   
   /*
   auto source_file = "/Users/yves/Projects/xtd/build/cppcheck_results.txt";
