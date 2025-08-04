@@ -6,7 +6,7 @@
   * [Show](#show)
   * [Start position](#start-position)
   * [Window state](#window-state)
-* [Form](#form)
+* [Form](#form-1)
 * [MDI and child](#mdi-and-child)
 * [dialog](#dialog)
 
