@@ -138,7 +138,7 @@ module.exports = {
                   type: 'category',
                   label: 'How to install',
                   items: [
-                    "documentation/guides/get_started/How to install/check_version"
+                    "documentation/guides/get_started/how_to_install/check_version"
                   ]
                 },
                 "documentation/guides/get_started/hello_world"

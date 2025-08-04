@@ -14,7 +14,7 @@ The xtd guides provide an explanation on how to use the important features of th
   * [Follow by looking at examples of xtd](https://github.com/gammasoft71/xtd/blob/master/examples/README.md)
   * How to install
     * [Read download, install and uninstall](/docs/downloads)
-    * [How to check xtd version](/docs/documentation/guides/get_started/How%20to%20install/check_version)
+    * [How to check xtd version](/docs/documentation/guides/get_started/how_to_install/check_version)
 * Overview
   * [Introduction to xtd](/docs/documentation/guides/Overview/introduction_to_xtd)
   * [About xtd](/docs/documentation/guides/Overview/xtd_explanations)
