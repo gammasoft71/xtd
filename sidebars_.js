@@ -265,8 +265,8 @@ module.exports = {
                       type: 'category',
                       label: 'How-tos',
                       items: [
-                        "documentation/guides/xtd.core/Exceptions/How-tos/create_user_defined_exceptions",
-                        "documentation/guides/xtd.core/Exceptions/How-tos/exceptions_try_catch"
+                        "documentation/guides/xtd.core/Exceptions/how_tos/create_user_defined_exceptions",
+                        "documentation/guides/xtd.core/Exceptions/how_tos/exceptions_try_catch"
                       ]
                     },
                     "documentation/guides/xtd.core/Exceptions/exception_class_and_properties",

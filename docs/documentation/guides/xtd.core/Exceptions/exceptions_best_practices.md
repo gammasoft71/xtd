@@ -320,7 +320,7 @@ Use at least the three common constructors when creating your own exception clas
   * [xtd::exception(const xtd::string &message, const xtd::diagnostics::stack_frame &information=xtd::diagnostics::stack_frame::empty())](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html#ad43693d8a3723ec0b995123b2d14a297), which accepts a string message and optional stack frame.
   * [xtd::exception(const xtd::string &message, const std::exception &inner_exception, const xtd::diagnostics::stack_frame &information=xtd::diagnostics::stack_frame::empty())](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html#a946c0dec93a72997929197b1699e7040), which accepts a string message, an inner exception and optional stack frame.
 
-For an example, see [How to: Create user-defined exceptions](/docs/documentation/guides/xtd.core/Exceptions/How-tos/create_user_defined_exceptions).
+For an example, see [How to: Create user-defined exceptions](/docs/documentation/guides/xtd.core/Exceptions/how_tos/create_user_defined_exceptions).
 
 ### Provide additional properties as needed
 
