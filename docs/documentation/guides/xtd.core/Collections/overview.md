@@ -2,12 +2,11 @@
 
 ## In this article
 
-* [Overview](#overview)
 * [Collections](#collections)
   * [Sequence collections](#sequence-collections)
   * [Associative collections](#associative-collections)
   * [Unordered associative collections](#unordered-associative-collections)
-  * [Collections adaptors](#collections-adaptors)
+  * [Collections adaptors](#container-adaptors)
   * [Collections with events](#collections-with-events)
   * [Specialized collections](#specialized-collections)
   * [Thread-safe collections](#thread-safe-collections)
