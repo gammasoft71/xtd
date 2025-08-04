@@ -4,9 +4,9 @@ Exception handling has many advantages over return-value-based error reporting. 
 
 ## In This Section
 
-* [Exception Throwing](/docs/documentation/design_guidelines/Design%20Guidelines%20for%20Exception/exception_throwing)
-* [Using Standard Exception Types](/docs/documentation/design_guidelines/Design%20Guidelines%20for%20Exception/using_standard_exception_types)
-* [Exceptions and Performance](/docs/documentation/design_guidelines/Design%20Guidelines%20for%20Exception/exceptions_and_performance)
+* [Exception Throwing](/docs/documentation/design_guidelines/design_guidelines_for_exception/exception_throwing)
+* [Using Standard Exception Types](/docs/documentation/design_guidelines/design_guidelines_for_exception/using_standard_exception_types)
+* [Exceptions and Performance](/docs/documentation/design_guidelines/design_guidelines_for_exception/exceptions_and_performance)
 
 ## See also
 

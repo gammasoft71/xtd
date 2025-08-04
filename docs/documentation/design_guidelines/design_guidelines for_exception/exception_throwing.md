@@ -16,7 +16,7 @@ Except for system failures and operations with potential race conditions, framew
 
 The member used to check preconditions of another member is often referred to as a tester, and the member that actually does the work is called a doer.
 
-There are cases when the *Tester-Doer* Pattern can have an unacceptable performance overhead. In such cases, the so-called *Try-Parse* Pattern should be considered (see [Exceptions and Performance](/docs/documentation/design_guidelines/Design%20Guidelines%20for%20Exception/exceptions_and_performance) for more information).
+There are cases when the *Tester-Doer* Pattern can have an unacceptable performance overhead. In such cases, the so-called *Try-Parse* Pattern should be considered (see [Exceptions and Performance](/docs/documentation/design_guidelines/design_guidelines_for_exception/exceptions_and_performance) for more information).
 
 **✔️ CONSIDER** the performance implications of throwing exceptions. Throw rates above 100 per second are likely to noticeably impact the performance of most applications.
 
@@ -40,6 +40,6 @@ Also, members that throw exceptions are not getting inlined. Moving the throw st
 
 # See also
 ​
-* [Design Guidelines for Exception](/docs/documentation/design_guidelines/Design%20Guidelines%20for%20Exception)
+* [Design Guidelines for Exception](/docs/documentation/design_guidelines/design_guidelines_for_exception)
 * [Design Guidelines](/docs/documentation/design_guidelines)
 * [Documentation](/docs/documentation)
