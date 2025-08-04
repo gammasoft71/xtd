@@ -216,7 +216,7 @@ module.exports = {
                   type: 'category',
                   label: 'Collections',
                   items: [
-                    "documentation/guides/xtd.core/Collections/Selecting a Collection Class",
+                    "documentation/guides/xtd.core/Collections/selecting_a_ollection_lass",
                     "documentation/guides/xtd.core/Collections/overview"
                   ]
                 },
