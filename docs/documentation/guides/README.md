@@ -183,12 +183,12 @@ The xtd guides provide an explanation on how to use the important features of th
       * [Print a form](/docs/documentation/guides/xtd.forms/Printing/Common%20tasks/print_a_form)
       * [Use print preview](/docs/documentation/guides/xtd.forms/Printing/Common%20tasks/use_print_preview)
   * Data binding
-    * [Overview](/docs/documentation/guides/xtd.forms/Data%20binding/overview)
-    * [Design great data sources](/docs/documentation/guides/xtd.forms/Data%20binding/design_great_data_sources)
-    * [Work with a data grid](/docs/documentation/guides/xtd.forms/Data%20binding/work_with_a_data_grid)
+    * [Overview](/docs/documentation/guides/xtd.forms/data_binding/overview)
+    * [Design great data sources](/docs/documentation/guides/xtd.forms/data_binding/design_great_data_sources)
+    * [Work with a data grid](/docs/documentation/guides/xtd.forms/data_binding/work_with_a_data_grid)
     * Common tasks
-      * [Create a control binding](/docs/documentation/guides/xtd.forms/Data%20binding/Common%20tasks/create_a_control_binding)    
-      * [Synchronize multiple controls](/docs/documentation/guides/xtd.forms/Data%20binding/Common%20tasks/synchronize_multiple_controls)
+      * [Create a control binding](/docs/documentation/guides/xtd.forms/data_binding/Common%20tasks/create_a_control_binding)    
+      * [Synchronize multiple controls](/docs/documentation/guides/xtd.forms/data_binding/Common%20tasks/synchronize_multiple_controls)
   * Style sheets
     * [Overview](/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview)
     * [Reference](/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_reference)
