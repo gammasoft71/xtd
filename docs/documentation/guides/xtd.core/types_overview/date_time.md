@@ -5,15 +5,15 @@
 This article includes several examples that use the date_time type:
 
 * Initialization Examples
-  * [Invoke a constructor](#invoke-constructor)
-  * [Invoke the implicit parameterless constructor](#invoke-constructor)
+  * [Invoke a constructor](#invoke-constructors)
+  * [Invoke the implicit parameterless constructor](#invoke-constructors)
   * [Assignment from return value](#assigning-a-computed-value)
   * [Parsing a string that represents a date and time](#parsing-a-string-that-represents-a-date_time)
 * Formatting date_time objects as strings
   * [Use the default date time format](#date_time-values-and-their-string-representations)
-  * [Format a date and time using a specific culture](##date_time-values-and-their-string-representations)
-  * [Format a date time using a standard or custom format string](##date_time-values-and-their-string-representations)
-  * [Specify both a format string and a specific culture](##date_time-values-and-their-string-representations)
+  * [Format a date and time using a specific culture](#date_time-values-and-their-string-representations)
+  * [Format a date time using a standard or custom format string](#date_time-values-and-their-string-representations)
+  * [Specify both a format string and a specific culture](#date_time-values-and-their-string-representations)
   * [Format a date time using the ISO 8601 standard for web services](#date_time-values-and-their-string-representations)
 * Parsing strings as date_time objects
   * [Use Parse or TryParse to convert a string to a date and time](#parse-date_time-values-from-strings)
@@ -27,15 +27,13 @@ This article includes several examples that use the date_time type:
 
 This section contains topics for many common uses of the date_time struct:
 
-* [Initializing a date_time object](#initializing-a-date-time-object)
+* [Initializing a date_time object](#initializing-a-date_time-object)
 * [date_time values and their string representations](#date_time-values-and-their-string-representations)
 * [Parsing date_time values from strings](#parse-date_time-values-from-strings)
 * [date_time values](#date_time-values)
 * [date_time operations](#date_time-operations)
-* [date_time resolution](#date_time-resolution)
-* [Persisting date_time values](#Persisting-date_time-values)
 * [date_time vs. time_span](#date_time-vs-time_span)
-* [Comparing for equality within tolerance](#comparing-for-equality-within-tolerance)
+* [Comparing for equality within tolerance](#compare-for-equality-within-tolerance)
 
 The [xtd::date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) value type represents dates and times with values ranging from 00:00:00 (midnight), January 1, 0001 Anno Domini (Common Era) through 11:59:59 P.M., December 31, 9999 A.D. (C.E.) in the Gregorian calendar.
 
