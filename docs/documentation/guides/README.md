@@ -45,8 +45,8 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Delegates](/docs/documentation/guides/xtd.core/types_overview/delegates)
     * [Events](/docs/documentation/guides/xtd.core/types_overview/events)
     * Type conversion
-      * [Overview](/docs/documentation/guides/xtd.core/types_overview/Type%20conversion/overview)
-      * [Type conversion tables](/docs/documentation/guides/xtd.core/types_overview/Type%20conversion/type_conversion_tables)
+      * [Overview](/docs/documentation/guides/xtd.core/types_overview/type_conversion/overview)
+      * [Type conversion tables](/docs/documentation/guides/xtd.core/types_overview/type_conversion/type_conversion_tables)
   * Collections
     * [Overview](/docs/documentation/guides/xtd.core/Collections/overview)
   * [Interfaces](/docs/documentation/guides/xtd.core/interfaces)

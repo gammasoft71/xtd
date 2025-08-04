@@ -53,7 +53,7 @@ auto main() -> int {
 
 This example is one of N. You can convert any string container to any other string container.
 
-See [type convertion](/docs/documentation/guides/xtd.core/types_overview/Type%20conversion/overview) for more information and [xtd::convert_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__string.html) class for a complete list of conversion methods.
+See [type convertion](/docs/documentation/guides/xtd.core/types_overview/type_conversion/overview) for more information and [xtd::convert_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__string.html) class for a complete list of conversion methods.
 
 ### as operator
 
@@ -80,7 +80,7 @@ auto main() -> int {
 
 This example is one of N. You can convert any string container to any other string container.
 
-See [type convertion](/docs/documentation/guides/xtd.core/types_overview/Type%20conversion/overview) for more information and [`xtd::as<...>`](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7) operators for a complete list of conversion operators.
+See [type convertion](/docs/documentation/guides/xtd.core/types_overview/type_conversion/overview) for more information and [`xtd::as<...>`](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7) operators for a complete list of conversion operators.
 
 ## xtd::string literal operators
 
