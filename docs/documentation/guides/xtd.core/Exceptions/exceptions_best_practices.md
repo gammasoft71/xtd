@@ -154,9 +154,9 @@ If you rethrow an exception by specifying the exception in the `throw` statement
 To keep the original stack trace information with the exception, there are two options that depend on where you're rethrowing the exception from:
 
 * If you rethrow the exception from within the handler (`catch` block) that's caught the exception instance, use the throw statement without specifying the exception.
-* If you're rethrowing the exception from somewhere other than the handler (`catch` block), use [xtd::runtime::exception_services::exception_dispatch_info::capture(const xtd:exception&)](.) to capture the exception in the handler and [xtd::runtime::exception_services::exception_dispatch_info::rerhrow()](.) when you want to rethrow it. You can use the [xtd::runtime::exception_services::exception_dispatch_info::source_exception](.) property to inspect the captured exception.
+* If you're rethrowing the exception from somewhere other than the handler (`catch` block), use [xtd::runtime::exception_services::exception_dispatch_info::capture(const xtd:exception&)](javascript:void(0)) to capture the exception in the handler and [xtd::runtime::exception_services::exception_dispatch_info::rerhrow()](javascript:void(0)) when you want to rethrow it. You can use the [xtd::runtime::exception_services::exception_dispatch_info::source_exception](javascript:void(0)) property to inspect the captured exception.
 
-The following example shows how the [xtd::runtime::exception_services::exception_dispatch_info](.) class can be used, and what the output might look like.
+The following example shows how the [xtd::runtime::exception_services::exception_dispatch_info](javascript:void(0)) class can be used, and what the output might look like.
 
 ```cpp
 auto edi = exception_dispatch_info {};
@@ -255,7 +255,7 @@ You should call these methods instead of constructing and throwing the correspon
 * [xtd::argument_out_of_range_exception::throw_if_less_than_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__out__of__range__exception.html#a120e488fa6378121a110404733282f98)
 * [xtd::argument_out_of_range_exception::throw_if_greater_than_or_equal](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1argument__out__of__range__exception.html#a665d7e453ad6aab6cc61f182a4906e3b)
 
-If you're implementing an asynchronous method, call [xtd::threading::cancellation_token::throw_if_cancellation_requested()](.) instead of checking if cancellation was requested and then constructing and throwing [operation_canceled_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1operation__canceled__exception.html).
+If you're implementing an asynchronous method, call [xtd::threading::cancellation_token::throw_if_cancellation_requested()](javascript:void(0)) instead of checking if cancellation was requested and then constructing and throwing [operation_canceled_exception](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1operation__canceled__exception.html).
 
 ### Include a localized string message
 
