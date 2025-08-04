@@ -15,6 +15,6 @@ In all other cases, you should define your types as classes.
 
 # See also
 ​
-* [Type Design Guidelines](/docs/documentation/design_guidelines/Type%20Design%20Guidelines)
+* [Type Design Guidelines](/docs/documentation/design_guidelines/type_design_guidelines)
 * [Design Guidelines](/docs/documentation/design_guidelines)
 * [Documentation](/docs/documentation)

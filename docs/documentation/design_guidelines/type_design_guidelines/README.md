@@ -18,13 +18,13 @@ Delegates, exceptions, attributes, arrays, and collections are all special cases
 
 # In This Section
 
-* [Choosing Between Class and Struct](/docs/documentation/design_guidelines/Type%20Design%20Guidelines/choosing_between_class_and_struct)
-* [Abstract Class Design](/docs/documentation/design_guidelines/Type%20Design%20Guidelines/abstract_class_design)
-* [Static Class Design](/docs/documentation/design_guidelines/Type%20Design%20Guidelines/static_class_design)
-* [Interface Design](/docs/documentation/design_guidelines/Type%20Design%20Guidelines/interface_design)
-* [Struct Design](/docs/documentation/design_guidelines/Type%20Design%20Guidelines/struct_design)
-* [Enum Design](/docs/documentation/design_guidelines/Type%20Design%20Guidelines/enum_design)
-* [Nested Types](/docs/documentation/design_guidelines/Type%20Design%20Guidelines/nested_types)
+* [Choosing Between Class and Struct](/docs/documentation/design_guidelines/type_design_guidelines/choosing_between_class_and_struct)
+* [Abstract Class Design](/docs/documentation/design_guidelines/type_design_guidelines/abstract_class_design)
+* [Static Class Design](/docs/documentation/design_guidelines/type_design_guidelines/static_class_design)
+* [Interface Design](/docs/documentation/design_guidelines/type_design_guidelines/interface_design)
+* [Struct Design](/docs/documentation/design_guidelines/type_design_guidelines/struct_design)
+* [Enum Design](/docs/documentation/design_guidelines/type_design_guidelines/enum_design)
+* [Nested Types](/docs/documentation/design_guidelines/type_design_guidelines/nested_types)
 
 # See also
 

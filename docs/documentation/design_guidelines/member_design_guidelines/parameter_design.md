@@ -28,7 +28,7 @@ This better communicates the relationship between the methods.
 
 **❌ DO NOT** use booleans unless you are absolutely sure there will never be a need for more than two values.
 
-Enums give you some room for future addition of values, but you should be aware of all the implications of adding values to enums, which are described in [Enum Design](/docs/documentation/design_guidelines/Type%20Design%20Guidelines/enum_design).
+Enums give you some room for future addition of values, but you should be aware of all the implications of adding values to enums, which are described in [Enum Design](/docs/documentation/design_guidelines/type_design_guidelines/enum_design).
 
 **✔️ CONSIDER** using booleans for constructor parameters that are truly two-state values and are simply used to initialize boolean properties.
 
