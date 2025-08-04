@@ -366,4 +366,4 @@ In this part of the xtd tutorial, we have covered menus and toolbars.
 
 ## See also
 
-* [eBook](/docs/documentation/eBook)
+* [eBook](/docs/documentation/e_book)

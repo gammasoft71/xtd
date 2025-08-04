@@ -58,4 +58,4 @@ Today, multiplatform programming is a buzzword. Most languages and libraries wan
 ​
 Other Resources
 
-* [eBook](/docs/documentation/eBook)
+* [eBook](/docs/documentation/e_book)

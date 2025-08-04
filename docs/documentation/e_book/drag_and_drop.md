@@ -1,4 +1,4 @@
-# Graphics
+# Drag & Drop
 
 ## In This Section
 
@@ -6,4 +6,4 @@
 
 ## See also
 
-* [eBook](/docs/documentation/eBook)
+* [eBook](/docs/documentation/e_book)

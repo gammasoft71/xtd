@@ -10,4 +10,4 @@ As mentioned in [introduction](introduction.md) [xtd.forms](https://gammasoft71.
 ​
 Other Resources
 
-* [eBook](/docs/documentation/eBook)
+* [eBook](/docs/documentation/e_book)
