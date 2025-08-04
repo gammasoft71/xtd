@@ -187,8 +187,8 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Design great data sources](/docs/documentation/guides/xtd.forms/data_binding/design_great_data_sources)
     * [Work with a data grid](/docs/documentation/guides/xtd.forms/data_binding/work_with_a_data_grid)
     * Common tasks
-      * [Create a control binding](/docs/documentation/guides/xtd.forms/data_binding/Common%20tasks/create_a_control_binding)    
-      * [Synchronize multiple controls](/docs/documentation/guides/xtd.forms/data_binding/Common%20tasks/synchronize_multiple_controls)
+      * [Create a control binding](/docs/documentation/guides/xtd.forms/data_binding/common_tasks/create_a_control_binding)    
+      * [Synchronize multiple controls](/docs/documentation/guides/xtd.forms/data_binding/common_tasks/synchronize_multiple_controls)
   * Style sheets
     * [Overview](/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview)
     * [Reference](/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_reference)
