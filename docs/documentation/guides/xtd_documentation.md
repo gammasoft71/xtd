@@ -27,12 +27,12 @@ sidebar_position: 1
 
 | Basics                                                                                     |
 | ------------------------------------------------------------------------------------------ |
-| [Types specifications](/docs/documentation/guides/xtd.core/Types%20overview/types)         |
-| [Enumerations management](/docs/documentation/guides/xtd.core/Types%20overview/enum_class) |
-| [String manipulations](/docs/documentation/guides/xtd.core/Types%20overview/string)        |
-| [Date and time usages](/docs/documentation/guides/xtd.core/Types%20overview/date_time)     |
-| [What is a delegate?](/docs/documentation/guides/xtd.core/Types%20overview/delegates)      |
-| [What is an event?](/docs/documentation/guides/xtd.core/Types%20overview/events)           |
+| [Types specifications](/docs/documentation/guides/xtd.core/types_overview/types)         |
+| [Enumerations management](/docs/documentation/guides/xtd.core/types_overview/enum_class) |
+| [String manipulations](/docs/documentation/guides/xtd.core/types_overview/string)        |
+| [Date and time usages](/docs/documentation/guides/xtd.core/types_overview/date_time)     |
+| [What is a delegate?](/docs/documentation/guides/xtd.core/types_overview/delegates)      |
+| [What is an event?](/docs/documentation/guides/xtd.core/types_overview/events)           |
 
 | Drawing something                                                   |
 | ------------------------------------------------------------------- |

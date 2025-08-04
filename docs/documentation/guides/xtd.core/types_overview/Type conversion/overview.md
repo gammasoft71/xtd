@@ -262,7 +262,7 @@ In some cases, particularly when converting to and from floating-point values, a
   //       42.72 converted to 43.
 ```
 
-For a table that lists both the widening and narrowing conversions supported by the [convert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html) class, see [Type conversion tables](/docs/documentation/Guides/xtd.core/Types%20overview/Type%20conversion/type_conversion_tables).
+For a table that lists both the widening and narrowing conversions supported by the [convert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html) class, see [Type conversion tables](/docs/documentation/guides/xtd.core/types_overview/Type%20conversion/type_conversion_tables).
 
 ## The convert_pointer class
 
@@ -397,7 +397,7 @@ try {
 
 ## The convert_string class
 
-In C++, there are several types of container managed by the std: [string](https://en.cppreference.com/w/cpp/string/basic_string), [wstring](https://en.cppreference.com/w/cpp/string/basic_string), [u8string](https://en.cppreference.com/w/cpp/string/basic_string), [u16string](https://en.cppreference.com/w/cpp/string/basic_string) and [u32string](https://en.cppreference.com/w/cpp/string/basic_string). xtd also adds a new container, [string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1string.html), which is exactly the same as [string](https://en.cppreference.com/w/cpp/string/basic_string), with the added feature of being immutable. See the [string page](/docs/documentation/Guides/xtd.core/Types%20overview/string) for more information.
+In C++, there are several types of container managed by the std: [string](https://en.cppreference.com/w/cpp/string/basic_string), [wstring](https://en.cppreference.com/w/cpp/string/basic_string), [u8string](https://en.cppreference.com/w/cpp/string/basic_string), [u16string](https://en.cppreference.com/w/cpp/string/basic_string) and [u32string](https://en.cppreference.com/w/cpp/string/basic_string). xtd also adds a new container, [string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1string.html), which is exactly the same as [string](https://en.cppreference.com/w/cpp/string/basic_string), with the added feature of being immutable. See the [string page](/docs/documentation/guides/xtd.core/types_overview/string) for more information.
 
 There are several encoding types that are not handled by std: ASCII (20127), UTF7 (65000), UTF-8 (65001), UTF-16 Unicode (1200), UTF-16 Big Endian (1201), UTF-32 (12000), UFT-32 Big Endian (12001), as well as other code pages.
 
@@ -548,7 +548,7 @@ if (is<date_time>(string_value)) {
 
 ## See also
 
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/standard/base-types/type-conversion)

@@ -318,17 +318,17 @@ module.exports = {
                       type: 'category',
                       label: 'Type conversion',
                       items: [
-                        "documentation/guides/xtd.core/Types overview/Type conversion/overview",
-                        "documentation/guides/xtd.core/Types overview/Type conversion/type_conversion_tables"
+                        "documentation/guides/xtd.core/types_overview/Type conversion/overview",
+                        "documentation/guides/xtd.core/types_overview/Type conversion/type_conversion_tables"
                       ]
                     },
-                    "documentation/guides/xtd.core/Types overview/date_time",
-                    "documentation/guides/xtd.core/Types overview/delegates",
-                    "documentation/guides/xtd.core/Types overview/enum_class",
-                    "documentation/guides/xtd.core/Types overview/events",
-                    "documentation/guides/xtd.core/Types overview/preprocessor_symbols",
-                    "documentation/guides/xtd.core/Types overview/string",
-                    "documentation/guides/xtd.core/Types overview/types"
+                    "documentation/guides/xtd.core/types_overview/date_time",
+                    "documentation/guides/xtd.core/types_overview/delegates",
+                    "documentation/guides/xtd.core/types_overview/enum_class",
+                    "documentation/guides/xtd.core/types_overview/events",
+                    "documentation/guides/xtd.core/types_overview/preprocessor_symbols",
+                    "documentation/guides/xtd.core/types_overview/string",
+                    "documentation/guides/xtd.core/types_overview/types"
                   ]
                 },
                 "documentation/guides/xtd.core/delegates_and_lambdas",
