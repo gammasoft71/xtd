@@ -18,7 +18,7 @@ The top-left position coordinate in the parent is (x0,y0). The size of the contr
 
 Besides manual positioning and sizing, various container controls are provided that help with automatic placement of controls.
 
-For more information, see [Position and layout of controls](/docs/documentation/guides/xtd.forms/Controls/position_and_layout_of_controls) and [How to dock and anchor controls](/docs/documentation/guides/xtd.forms/Controls/Common%20tasks/dock_and_anchor_controls).
+For more information, see [Position and layout of controls](/docs/documentation/guides/xtd.forms/Controls/position_and_layout_of_controls) and [How to dock and anchor controls](/docs/documentation/guides/xtd.forms/Controls/common_tasks/dock_and_anchor_controls).
 
 # Control events
 
@@ -31,7 +31,7 @@ Most shared events fall under these categories:
 * Property changed events
 * Other events
 
-For more information, see [Control events](/docs/documentation/guides/xtd.forms/Controls/Events) and [How to handle a control event](/docs/documentation/guides/xtd.forms/Controls/Common%20tasks/add_or_remove_event_handlers).
+For more information, see [Control events](/docs/documentation/guides/xtd.forms/Controls/Events) and [How to handle a control event](/docs/documentation/guides/xtd.forms/Controls/common_tasks/add_or_remove_event_handlers).
 
 # See also
 ​
