@@ -35,7 +35,7 @@ The xtd guides provide an explanation on how to use the important features of th
   * [Overview](/docs/documentation/guides/Tools)
 * xtd.core
   * Entry point
-    * [main and startup_](/docs/documentation/guides/xtd.core/Entry%20point/main_and_startup)
+    * [main and startup_](/docs/documentation/guides/xtd.core/entry_point/main_and_startup)
   * Types overview
     * [Preprocessor symbols](/docs/documentation/guides/xtd.core/Types%20overview/preprocessor_symbols)
     * [Native types, boxing and unboxing](/docs/documentation/guides/xtd.core/Types%20overview/types)

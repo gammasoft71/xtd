@@ -245,7 +245,7 @@ module.exports = {
                   type: 'category',
                   label: 'Entry point',
                   items: [
-                    "documentation/guides/xtd.core/Entry point/main_and_startup"
+                    "documentation/guides/xtd.core/entry_point/main_and_startup"
                   ]
                 },
                 {
