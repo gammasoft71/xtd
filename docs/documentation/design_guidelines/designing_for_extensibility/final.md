@@ -10,7 +10,7 @@ Marking a class "final" because you cannot think of an extensibility scenario is
 
 Good reasons for marking a class "final" include the following:
 
-* The class is a static class. See [Static Class Design](/docs/documentation/design_guidelines/Type%20Design%20Guidelines/static_class_design).
+* The class is a static class. See [Static Class Design](/docs/documentation/design_guidelines/type_design_guidelines/static_class_design).
 * The class stores security-sensitive secrets in inherited protected members.
 * The class inherits many virtual members and the cost of marking "final" them individually would outweigh the benefits of leaving the class non-final.
 * The class is an attribute that requires very fast runtime look-up. Attributes marked "final" have slightly higher performance levels than non-final ones.

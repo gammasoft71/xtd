@@ -98,14 +98,14 @@ module.exports = {
               type: 'category',
               label: 'Type Design Guidelines',
               items: [
-                "documentation/design_guidelines/Type Design Guidelines/README",
-                "documentation/design_guidelines/Type Design Guidelines/abstract_class_design",
-                "documentation/design_guidelines/Type Design Guidelines/choosing_between_class_and_struct",
-                "documentation/design_guidelines/Type Design Guidelines/enum_design",
-                "documentation/design_guidelines/Type Design Guidelines/interface_design",
-                "documentation/design_guidelines/Type Design Guidelines/nested_types",
-                "documentation/design_guidelines/Type Design Guidelines/static_class_design",
-                "documentation/design_guidelines/Type Design Guidelines/struct_design"
+                "documentation/design_guidelines/type_design_guidelines/README",
+                "documentation/design_guidelines/type_design_guidelines/abstract_class_design",
+                "documentation/design_guidelines/type_design_guidelines/choosing_between_class_and_struct",
+                "documentation/design_guidelines/type_design_guidelines/enum_design",
+                "documentation/design_guidelines/type_design_guidelines/interface_design",
+                "documentation/design_guidelines/type_design_guidelines/nested_types",
+                "documentation/design_guidelines/type_design_guidelines/static_class_design",
+                "documentation/design_guidelines/type_design_guidelines/struct_design"
               ]
             },
             "documentation/design_guidelines/coding_conventions_guidelines"

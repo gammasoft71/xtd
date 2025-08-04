@@ -22,6 +22,6 @@ In general, structs can be very useful but should only be used for small, single
 
 # See also
 ​
-* [Type Design Guidelines](/docs/documentation/design_guidelines/Type%20Design%20Guidelines)
+* [Type Design Guidelines](/docs/documentation/design_guidelines/type_design_guidelines)
 * [Design Guidelines](/docs/documentation/design_guidelines)
 * [Documentation](/docs/documentation)
