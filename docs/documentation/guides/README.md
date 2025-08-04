@@ -179,9 +179,9 @@ The xtd guides provide an explanation on how to use the important features of th
   * Printing
     * [Overview](/docs/documentation/guides/xtd.forms/Printing/overview)
     * Common tasks
-      * [Print a text document](/docs/documentation/guides/xtd.forms/Printing/Common%20tasks/print_a_text_document)
-      * [Print a form](/docs/documentation/guides/xtd.forms/Printing/Common%20tasks/print_a_form)
-      * [Use print preview](/docs/documentation/guides/xtd.forms/Printing/Common%20tasks/use_print_preview)
+      * [Print a text document](/docs/documentation/guides/xtd.forms/Printing/common_tasks/print_a_text_document)
+      * [Print a form](/docs/documentation/guides/xtd.forms/Printing/common_tasks/print_a_form)
+      * [Use print preview](/docs/documentation/guides/xtd.forms/Printing/common_tasks/use_print_preview)
   * Data binding
     * [Overview](/docs/documentation/guides/xtd.forms/data_binding/overview)
     * [Design great data sources](/docs/documentation/guides/xtd.forms/data_binding/design_great_data_sources)
