@@ -190,11 +190,11 @@ The xtd guides provide an explanation on how to use the important features of th
       * [Create a control binding](/docs/documentation/guides/xtd.forms/data_binding/common_tasks/create_a_control_binding)    
       * [Synchronize multiple controls](/docs/documentation/guides/xtd.forms/data_binding/common_tasks/synchronize_multiple_controls)
   * Style sheets
-    * [Overview](/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview)
-    * [Reference](/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_reference)
-    * [Box model](/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_box_model)
+    * [Overview](/docs/documentation/guides/xtd.forms/style_sheets/style_sheets_overview)
+    * [Reference](/docs/documentation/guides/xtd.forms/style_sheets/style_sheets_reference)
+    * [Box model](/docs/documentation/guides/xtd.forms/style_sheets/style_sheets_box_model)
     * Common tasks
-      * [Add style sheets to a control](/docs/documentation/guides/xtd.forms/Style%20sheets/Common%20tasks/add_style_sheets_to_a_control)
+      * [Add style sheets to a control](/docs/documentation/guides/xtd.forms/style_sheets/Common%20tasks/add_style_sheets_to_a_control)
 * xtd.tunit
   * Overview
     * [Overview](/docs/documentation/guides/xtd.tunit/Overview/tunit_overview)

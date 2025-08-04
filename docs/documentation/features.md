@@ -47,7 +47,7 @@ With xtd you can create differents targets :
 
 [![forms](/pictures/xtd.forms.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html)
 [gui](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) application to run your own application in a graphical mode with rich [controls](https://gammasoft71.github.io/xtd/reference_guides/latest/_controls_appearances_page.html), [containers](https://gammasoft71.github.io/xtd/reference_guides/latest/_conatiners_appearances_page.html), [dialogs](https://gammasoft71.github.io/xtd/reference_guides/latest/_dialogs_appearances_page.html), [menu and tools bars](https://gammasoft71.github.io/xtd/reference_guides/latest/_menus_and_toolbars_appearances_page.html).
-xtd is designed to manage GUI controls and dialogs in pure [native mode](/docs/documentation/guides/xtd.forms/Overview/control_appearance) or with [CSS styles](/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
+xtd is designed to manage GUI controls and dialogs in pure [native mode](/docs/documentation/guides/xtd.forms/Overview/control_appearance) or with [CSS styles](/docs/documentation/guides/xtd.forms/style_sheets/style_sheets_overview).
 
 [![tunit](/pictures/xtd.tunit.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html)
 [test](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html) application to run your own [unit tests](https://gammasoft71.github.io/xtd/reference_guides/latest/group__tunit.html).

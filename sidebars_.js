@@ -434,9 +434,9 @@ module.exports = {
 
                       ]
                     },
-                    "documentation/guides/xtd.forms/Style sheets/style_sheets_box_model",
-                    "documentation/guides/xtd.forms/Style sheets/style_sheets_overview",
-                    "documentation/guides/xtd.forms/Style sheets/style_sheets_reference"
+                    "documentation/guides/xtd.forms/style_sheets/style_sheets_box_model",
+                    "documentation/guides/xtd.forms/style_sheets/style_sheets_overview",
+                    "documentation/guides/xtd.forms/style_sheets/style_sheets_reference"
                   ]
                 },
                 {
