@@ -2,7 +2,7 @@
 
 Callbacks are extensibility points that allow a framework to call back into user code through a delegate. These delegates are usually passed to the framework through a parameter of a method.
 
-Events are a special case of callbacks that supports convenient and consistent syntax for supplying the delegate (an event handler). In addition, Visual Studio’s statement completion and designers provide help in using event-based APIs. (See [Event Design](/docs/documentation/design_guidelines/Member%20Design%20Guidelines/event_design).)
+Events are a special case of callbacks that supports convenient and consistent syntax for supplying the delegate (an event handler). In addition, Visual Studio’s statement completion and designers provide help in using event-based APIs. (See [Event Design](/docs/documentation/design_guidelines/Member_design_guidelines/event_design).)
 
 **✔️ CONSIDER** using callbacks to allow users to provide custom code to be executed by the framework.
 
