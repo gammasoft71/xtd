@@ -262,7 +262,7 @@ In some cases, particularly when converting to and from floating-point values, a
   //       42.72 converted to 43.
 ```
 
-For a table that lists both the widening and narrowing conversions supported by the [convert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html) class, see [Type conversion tables](/docs/documentation/guides/xtd.core/types_overview/Type%20conversion/type_conversion_tables).
+For a table that lists both the widening and narrowing conversions supported by the [convert](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert.html) class, see [Type conversion tables](/docs/documentation/guides/xtd.core/types_overview/type_conversion/type_conversion_tables).
 
 ## The convert_pointer class
 

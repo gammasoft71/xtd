@@ -318,8 +318,8 @@ module.exports = {
                       type: 'category',
                       label: 'Type conversion',
                       items: [
-                        "documentation/guides/xtd.core/types_overview/Type conversion/overview",
-                        "documentation/guides/xtd.core/types_overview/Type conversion/type_conversion_tables"
+                        "documentation/guides/xtd.core/types_overview/type_conversion/overview",
+                        "documentation/guides/xtd.core/types_overview/type_conversion/type_conversion_tables"
                       ]
                     },
                     "documentation/guides/xtd.core/types_overview/date_time",
