@@ -18,7 +18,7 @@ You can write `xtd` apps in modern **C++20** or above and **C** (For more info a
 ## Cross Platform
 
 Whether you're working in **C++20**, or **C**, your code will run natively on any compatible operating system. You can build many types of apps with `xtd`. 
-Some are cross-platform, and some target a specific set of operating systems and devices. (For mode information see [portability](/docs/documentation/Portability)).
+Some are cross-platform, and some target a specific set of operating systems and devices. (For mode information see [portability](/docs/documentation/portability)).
 
 ## One consistent API
 
@@ -44,7 +44,7 @@ Get quick [answer and support](/docs/Support).
 
 The `xtd` product family provides a great `xtd` development experience on **macOS**, **Windows**, and **Linux**.
 
-With CMake, `xtd` support many [Development Environment Tools](/docs/documentation/Portability).
+With CMake, `xtd` support many [Development Environment Tools](/docs/documentation/portability).
 
 `xtd` has some [tools](https://github.com/gammasoft71/xtd/blob/master/docs/tools.md) to help you in your development.
 

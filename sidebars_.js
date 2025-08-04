@@ -528,8 +528,8 @@ module.exports = {
           type: 'category',
           label: 'Portability',
           items: [
-            "documentation/Portability/README",
-            "documentation/Portability/cpp"
+            "documentation/portability/README",
+            "documentation/portability/cpp"
           ]
         },
         "documentation/README",
