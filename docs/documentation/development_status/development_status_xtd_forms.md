@@ -4,7 +4,7 @@
 
 * [Status information](#status-information)
 * [xtd::forms](#xtdforms)
-* [xtd::forms::layout](#xtdformslayouut)
+* [xtd::forms::layout](#xtdformslayout)
 * [xtd::forms::properties](#xtdformsproperties)
 * [xtd::forms::visual_styles](#xtdformsvisual_styles)
 
