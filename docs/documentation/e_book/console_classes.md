@@ -1,6 +1,6 @@
 # Console classes
 
-As mentioned in [introduction](/docs/documentation/eBook/introduction) [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) is a part of [xtd](https://github.com/gammasoft71/xtd).
+As mentioned in [introduction](/docs/documentation/e_book/introduction) [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) is a part of [xtd](https://github.com/gammasoft71/xtd).
 
 [xtd](https://github.com/gammasoft71/xtd) and [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) consist of a large group of helper classes that help programmers to do their job. These include classes for working with strings, files, streams, console, unit testing, or network. Here we will show only a tiny drop of the whole lake.
 
@@ -90,4 +90,4 @@ auto main(int argc, char* argv[]) -> int {
 ​
 Other Resources
 
-* [eBook](/docs/documentation/eBook)
+* [eBook](/docs/documentation/e_book)

@@ -301,6 +301,6 @@ In this part of the [xtd.forms](https://gammasoft71.github.io/xtd/reference_guid
 
 # See also
 ​
-* [eBook](/docs/documentation/eBook)
+* [eBook](/docs/documentation/e_book)
 
 *Figure: Controls communicate*
