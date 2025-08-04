@@ -27,5 +27,5 @@
 
 ## See also
 
-* [Development status](/docs/documentation/Development%20status)
+* [Development status](/docs/documentation/development_status)
 * [Documentation](/docs/documentation)
