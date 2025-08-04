@@ -51,7 +51,7 @@ publisher.raise_custom_event += custom_event_handler(*this, &my_class::handle_cu
 
 ### To subscribe to events by using a lambda expression
 
-If you don't have to unsubscribe from an event later, you can use the addition assignment operator *+=* to attach a [lambda expression](#lambda-expression) as an event handler. In the following example, assume that an object named *publisher* has an event named *raise_custom_event and that a *custom_event_args* class has also been defined to carry some kind of specialized event information. Note that the *subscriber* class needs a reference to *publisher* in order to subscribe to its events.
+If you don't have to unsubscribe from an event later, you can use the addition assignment operator *+=* to attach a [lambda expression](https://en.cppreference.com/w/cpp/language/lambda.html) as an event handler. In the following example, assume that an object named *publisher* has an event named *raise_custom_event and that a *custom_event_args* class has also been defined to carry some kind of specialized event information. Note that the *subscriber* class needs a reference to *publisher* in order to subscribe to its events.
 
 ```cpp
 publisher.raise_custom_event += [](object& sender, custom_event_args& e) {  
@@ -60,7 +60,7 @@ publisher.raise_custom_event += [](object& sender, custom_event_args& e) {
 };
 ```
 
-You cannot easily unsubscribe from an event if you used a [lambda expression](#lambda-expression) to subscribe to it. To unsubscribe in this scenario, go back to the code where you subscribe to the event, store the anonymous function in a delegate variable, and then add the delegate to the event. We recommend that you don't use [lambda expression](#lambda-expression) to subscribe to events if you have to unsubscribe from the event at some later point in your code. For more information about anonymous functions, see [lambda expression](#lambda-expression).
+You cannot easily unsubscribe from an event if you used a [lambda expression](https://en.cppreference.com/w/cpp/language/lambda.html) to subscribe to it. To unsubscribe in this scenario, go back to the code where you subscribe to the event, store the anonymous function in a delegate variable, and then add the delegate to the event. We recommend that you don't use [lambda expression](https://en.cppreference.com/w/cpp/language/lambda.html) to subscribe to events if you have to unsubscribe from the event at some later point in your code. For more information about anonymous functions, see [lambda expression](https://en.cppreference.com/w/cpp/language/lambda.html).
 
 ### Unsubscribing
 
