@@ -13,7 +13,7 @@
 * [xtd::microsoft::win32](#xtdmicrosoftwin32)
 * [xtd::net](#xtdnet)
 * [xtd::net::sockets](#xtdnetsockets)
-* [xtd::net::websockets](#xtdnetwebsockets)
+* [xtd::net::websockets](#xtdnetweb_sockets)
 * [xtd::reflection](#xtdreflection)
 * [xtd::security](#xtdsecurity)
 * [xtd::speech::synthesis](#xtdspeechsynthesis)
