@@ -14,101 +14,101 @@ module.exports = {
               type: 'category',
               label: 'Common Design Patterns',
               items: [
-                "documentation/Design Guidelines/Common Design Patterns/README",
-                "documentation/Design Guidelines/Common Design Patterns/abstract_factory",
-                "documentation/Design Guidelines/Common Design Patterns/adapter",
-                "documentation/Design Guidelines/Common Design Patterns/bridge",
-                "documentation/Design Guidelines/Common Design Patterns/builder",
-                "documentation/Design Guidelines/Common Design Patterns/chain_of_responsibility",
-                "documentation/Design Guidelines/Common Design Patterns/command",
-                "documentation/Design Guidelines/Common Design Patterns/composite",
-                "documentation/Design Guidelines/Common Design Patterns/decorator",
-                "documentation/Design Guidelines/Common Design Patterns/facade",
-                "documentation/Design Guidelines/Common Design Patterns/factory_method",
-                "documentation/Design Guidelines/Common Design Patterns/flyweight",
-                "documentation/Design Guidelines/Common Design Patterns/interpreter",
-                "documentation/Design Guidelines/Common Design Patterns/iterator",
-                "documentation/Design Guidelines/Common Design Patterns/mediator",
-                "documentation/Design Guidelines/Common Design Patterns/memento",
-                "documentation/Design Guidelines/Common Design Patterns/observer",
-                "documentation/Design Guidelines/Common Design Patterns/prototype",
-                "documentation/Design Guidelines/Common Design Patterns/proxy",
-                "documentation/Design Guidelines/Common Design Patterns/singleton",
-                "documentation/Design Guidelines/Common Design Patterns/state",
-                "documentation/Design Guidelines/Common Design Patterns/strategy",
-                "documentation/Design Guidelines/Common Design Patterns/template_method",
-                "documentation/Design Guidelines/Common Design Patterns/visitor"
+                "documentation/design_guidelines/Common Design Patterns/README",
+                "documentation/design_guidelines/Common Design Patterns/abstract_factory",
+                "documentation/design_guidelines/Common Design Patterns/adapter",
+                "documentation/design_guidelines/Common Design Patterns/bridge",
+                "documentation/design_guidelines/Common Design Patterns/builder",
+                "documentation/design_guidelines/Common Design Patterns/chain_of_responsibility",
+                "documentation/design_guidelines/Common Design Patterns/command",
+                "documentation/design_guidelines/Common Design Patterns/composite",
+                "documentation/design_guidelines/Common Design Patterns/decorator",
+                "documentation/design_guidelines/Common Design Patterns/facade",
+                "documentation/design_guidelines/Common Design Patterns/factory_method",
+                "documentation/design_guidelines/Common Design Patterns/flyweight",
+                "documentation/design_guidelines/Common Design Patterns/interpreter",
+                "documentation/design_guidelines/Common Design Patterns/iterator",
+                "documentation/design_guidelines/Common Design Patterns/mediator",
+                "documentation/design_guidelines/Common Design Patterns/memento",
+                "documentation/design_guidelines/Common Design Patterns/observer",
+                "documentation/design_guidelines/Common Design Patterns/prototype",
+                "documentation/design_guidelines/Common Design Patterns/proxy",
+                "documentation/design_guidelines/Common Design Patterns/singleton",
+                "documentation/design_guidelines/Common Design Patterns/state",
+                "documentation/design_guidelines/Common Design Patterns/strategy",
+                "documentation/design_guidelines/Common Design Patterns/template_method",
+                "documentation/design_guidelines/Common Design Patterns/visitor"
               ]
             },
             {
               type: 'category',
               label: 'Design Guidelines for Exception',
               items: [
-                "documentation/Design Guidelines/Design Guidelines for Exception/README",
-                "documentation/Design Guidelines/Design Guidelines for Exception/exception_throwing",
-                "documentation/Design Guidelines/Design Guidelines for Exception/exceptions_and_performance",
-                "documentation/Design Guidelines/Design Guidelines for Exception/using_standard_exception_types"
+                "documentation/design_guidelines/Design Guidelines for Exception/README",
+                "documentation/design_guidelines/Design Guidelines for Exception/exception_throwing",
+                "documentation/design_guidelines/Design Guidelines for Exception/exceptions_and_performance",
+                "documentation/design_guidelines/Design Guidelines for Exception/using_standard_exception_types"
               ]
             },
             {
               type: 'category',
               label: 'Designing for Extensibility',
               items: [
-                "documentation/Design Guidelines/Designing for Extensibility/README",
-                "documentation/Design Guidelines/Designing for Extensibility/abstractions_abstract_types_and_interfaces",
-                "documentation/Design Guidelines/Designing for Extensibility/base_classes_for_implementing_abstractions",
-                "documentation/Design Guidelines/Designing for Extensibility/events_and_callbacks",
-                "documentation/Design Guidelines/Designing for Extensibility/final",
-                "documentation/Design Guidelines/Designing for Extensibility/non-final_classes",
-                "documentation/Design Guidelines/Designing for Extensibility/protected_members",
-                "documentation/Design Guidelines/Designing for Extensibility/virtual_members"
+                "documentation/design_guidelines/Designing for Extensibility/README",
+                "documentation/design_guidelines/Designing for Extensibility/abstractions_abstract_types_and_interfaces",
+                "documentation/design_guidelines/Designing for Extensibility/base_classes_for_implementing_abstractions",
+                "documentation/design_guidelines/Designing for Extensibility/events_and_callbacks",
+                "documentation/design_guidelines/Designing for Extensibility/final",
+                "documentation/design_guidelines/Designing for Extensibility/non-final_classes",
+                "documentation/design_guidelines/Designing for Extensibility/protected_members",
+                "documentation/design_guidelines/Designing for Extensibility/virtual_members"
               ]
             },
             {
               type: 'category',
               label: 'Member Design Guidelines',
               items: [
-                "documentation/Design Guidelines/Member Design Guidelines/README",
-                "documentation/Design Guidelines/Member Design Guidelines/constructor_design",
-                "documentation/Design Guidelines/Member Design Guidelines/event_design",
-                "documentation/Design Guidelines/Member Design Guidelines/field_design",
-                "documentation/Design Guidelines/Member Design Guidelines/member_overloading",
-                "documentation/Design Guidelines/Member Design Guidelines/operator_overloads",
-                "documentation/Design Guidelines/Member Design Guidelines/parameter_design",
-                "documentation/Design Guidelines/Member Design Guidelines/property_design"
+                "documentation/design_guidelines/Member Design Guidelines/README",
+                "documentation/design_guidelines/Member Design Guidelines/constructor_design",
+                "documentation/design_guidelines/Member Design Guidelines/event_design",
+                "documentation/design_guidelines/Member Design Guidelines/field_design",
+                "documentation/design_guidelines/Member Design Guidelines/member_overloading",
+                "documentation/design_guidelines/Member Design Guidelines/operator_overloads",
+                "documentation/design_guidelines/Member Design Guidelines/parameter_design",
+                "documentation/design_guidelines/Member Design Guidelines/property_design"
               ]
             },
             {
               type: 'category',
               label: 'Naming Guidelines',
               items: [
-                "documentation/Design Guidelines/Naming Guidelines/README",
-                "documentation/Design Guidelines/Naming Guidelines/capitalisation_conventions",
-                "documentation/Design Guidelines/Naming Guidelines/general_naming_conventions",
-                "documentation/Design Guidelines/Naming Guidelines/names_of_classes_structs_and_interfaces",
-                "documentation/Design Guidelines/Naming Guidelines/names_of_libraries_and_dlls",
-                "documentation/Design Guidelines/Naming Guidelines/names_of_namespace",
-                "documentation/Design Guidelines/Naming Guidelines/names_of_type_members",
-                "documentation/Design Guidelines/Naming Guidelines/naming_parameters",
-                "documentation/Design Guidelines/Naming Guidelines/naming_resources"
+                "documentation/design_guidelines/Naming Guidelines/README",
+                "documentation/design_guidelines/Naming Guidelines/capitalisation_conventions",
+                "documentation/design_guidelines/Naming Guidelines/general_naming_conventions",
+                "documentation/design_guidelines/Naming Guidelines/names_of_classes_structs_and_interfaces",
+                "documentation/design_guidelines/Naming Guidelines/names_of_libraries_and_dlls",
+                "documentation/design_guidelines/Naming Guidelines/names_of_namespace",
+                "documentation/design_guidelines/Naming Guidelines/names_of_type_members",
+                "documentation/design_guidelines/Naming Guidelines/naming_parameters",
+                "documentation/design_guidelines/Naming Guidelines/naming_resources"
               ]
             },
-            "documentation/Design Guidelines/README",
+            "documentation/design_guidelines/README",
             {
               type: 'category',
               label: 'Type Design Guidelines',
               items: [
-                "documentation/Design Guidelines/Type Design Guidelines/README",
-                "documentation/Design Guidelines/Type Design Guidelines/abstract_class_design",
-                "documentation/Design Guidelines/Type Design Guidelines/choosing_between_class_and_struct",
-                "documentation/Design Guidelines/Type Design Guidelines/enum_design",
-                "documentation/Design Guidelines/Type Design Guidelines/interface_design",
-                "documentation/Design Guidelines/Type Design Guidelines/nested_types",
-                "documentation/Design Guidelines/Type Design Guidelines/static_class_design",
-                "documentation/Design Guidelines/Type Design Guidelines/struct_design"
+                "documentation/design_guidelines/Type Design Guidelines/README",
+                "documentation/design_guidelines/Type Design Guidelines/abstract_class_design",
+                "documentation/design_guidelines/Type Design Guidelines/choosing_between_class_and_struct",
+                "documentation/design_guidelines/Type Design Guidelines/enum_design",
+                "documentation/design_guidelines/Type Design Guidelines/interface_design",
+                "documentation/design_guidelines/Type Design Guidelines/nested_types",
+                "documentation/design_guidelines/Type Design Guidelines/static_class_design",
+                "documentation/design_guidelines/Type Design Guidelines/struct_design"
               ]
             },
-            "documentation/Design Guidelines/coding_conventions_guidelines"
+            "documentation/design_guidelines/coding_conventions_guidelines"
           ]
         },
         {
