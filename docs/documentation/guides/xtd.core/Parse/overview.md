@@ -5,7 +5,7 @@ For example, a parsing operation is used to convert a string to a floating-point
 The method most commonly used to perform a parsing operation is the `parse` method. 
 Because parsing is the reverse operation of formatting (which involves converting a base type into its string representation), many of the same rules and conventions apply. 
 Just as formatting uses an object that implements the IFormatProvider interface to provide culture-sensitive formatting information, parsing also uses an object that implements the IFormatProvider interface to determine how to interpret a string representation. 
-For more information, see [Format types](/docs/documentation/guides/xtd.core/Format%20number%20dates%20other%20types/overview).
+For more information, see [Format types](/docs/documentation/guides/xtd.core/format_number_dates_other_types/overview).
 
 ## In This Section
 
@@ -17,7 +17,7 @@ For more information, see [Format types](/docs/documentation/guides/xtd.core/For
 
 ## Related Sections
 
-[Formatting Types](/docs/documentation/guides/xtd.core/Format%20number%20dates%20other%20types/overview) Describes basic formatting concepts like format specifiers and format providers.
+[Formatting Types](/docs/documentation/guides/xtd.core/format_number_dates_other_types/overview) Describes basic formatting concepts like format specifiers and format providers.
 
 [Type Conversion in xtd](/docs/documentation/guides/xtd.core/types_overview/type_conversion/overview) Describes how to convert types.
 

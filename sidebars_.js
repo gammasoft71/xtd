@@ -285,8 +285,8 @@ module.exports = {
 
                       ]
                     },
-                    "documentation/guides/xtd.core/Format number dates other types/overview",
-                    "documentation/guides/xtd.core/Format number dates other types/standard_numeric_format_strings"
+                    "documentation/guides/xtd.core/format_number_dates_other_types/overview",
+                    "documentation/guides/xtd.core/format_number_dates_other_types/standard_numeric_format_strings"
                   ]
                 },
                 {
