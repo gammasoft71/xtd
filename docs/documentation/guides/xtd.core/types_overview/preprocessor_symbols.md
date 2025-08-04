@@ -2,7 +2,7 @@
 
 ## Table of content
 
-* [Operating Systems](#operating-ystems)
+* [Operating Systems](#operating-systems)
 * [Architectures](#architectures)
 * [Compilers](#compilers)
 * [Standards](#standards)
