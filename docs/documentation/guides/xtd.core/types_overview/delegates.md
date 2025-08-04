@@ -174,7 +174,7 @@ void doW_work(int k) { /* ... */ }
 del d = {obj, &objectt_class::do_work};
 ```
 
-This is called using a named method. Delegates constructed with a named method can encapsulate either a static method or an instance method. However, in a situation where creating a new method is unwanted overhead, C++ and xtd enable you to instantiate a delegate and immediately specify a code block that the delegate will process when it is called. The block can contain either a [lambda expression](#lambda-expression).
+This is called using a named method. Delegates constructed with a named method can encapsulate either a static method or an instance method. However, in a situation where creating a new method is unwanted overhead, C++ and xtd enable you to instantiate a delegate and immediately specify a code block that the delegate will process when it is called. The block can contain either a [lambda expression](#delegates-with-lambda-expressions).
 
 ### Remarks
 
