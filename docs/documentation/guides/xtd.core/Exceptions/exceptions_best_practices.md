@@ -14,12 +14,12 @@ This article describes best practices for handling and creating exceptions.
 
 The following best practices concern how you handle exceptions:
 
-* [Use try/catch/finally blocks to recover from errors or release resources](#use-try-catch-blocks-to-recover-from-errors-or-release-resources)
+* [Use try/catch/finally blocks to recover from errors or release resources](#use-trycatch-blocks-to-recover-from-errors-or-release-resources)
 * [Handle common conditions to avoid exceptions](#handle-common-conditions-to-avoid-exceptions)
 * [Call Try* methods to avoid exceptions](#call-try-methods-to-avoid-exceptions)
 * [Catch cancellation and asynchronous exceptions](#catch-cancellation-and-asynchronous-exceptions)
 * [Design classes so that exceptions can be avoided](#design-classes-so-that-exceptions-can-be-avoided)
-* [Restore state when methods don't complete due to exceptions](#restore-state-when-methods-don-t-complete-due-to-exceptions)
+* [Restore state when methods don't complete due to exceptions](#restore-state-when-methods-dont-complete-due-to-exceptions)
 * [Capture and rethrow exceptions properly](#capture-and-rethrow-exceptions-properly)
 
 ### Use try/catch blocks to recover from errors or release resources
@@ -197,7 +197,7 @@ The following best practices concern how you throw exceptions:
 * [Include a localized string message](#include-a-localized-string-message)
 * [Use proper grammar](#use-proper-grammar)
 * [Place throw statements well](#place-throw-statements-well)
-* [Don't raise exceptions in noexcept methods](#don-t-raise-exceptions-in-noexcept-methods)
+* [Don't raise exceptions in noexcept methods](#dont-raise-exceptions-in-noexcept-methods)
 * [Throw argument validation exceptions synchronously](#throw-argument-validation-exceptions-synchronously)
 
 ### Use predefined exception types
@@ -298,7 +298,7 @@ Exceptions that are thrown in the asynchronous part of the method are stored in 
 
 The following best practices concern custom exception types:
 
-* [End exception class names with `_exception`](#end-exception-class-names-with-exception)
+* [End exception class names with `_exception`](#end-exception-class-names-with-_exception)
 * [Include three constructors](#include-three-constructors)
 * [Provide additional properties as needed](#provide-additional-properties-as-needed)
 
