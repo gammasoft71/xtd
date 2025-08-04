@@ -213,10 +213,10 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Packages](/docs/documentation/guides/xtd.cmake/Commands/cmake_packages_commands)
     * [Project](/docs/documentation/guides/xtd.cmake/Commands/cmake_project_commands)
     * Common tasks
-      * [Create a project](/docs/documentation/guides/xtd.cmake/Commands/Common%20tasks/cmake_create_project)
-      * [Add resources](/docs/documentation/guides/xtd.cmake/Commands/Common%20tasks/cmake_add_resources)
-      * [Add settings](/docs/documentation/guides/xtd.cmake/Commands/Common%20tasks/cmake_add_settings)
-      * [Add assembly informations](/docs/documentation/guides/xtd.cmake/Commands/Common%20tasks/cmake_add_assembly_information)
+      * [Create a project](/docs/documentation/guides/xtd.cmake/Commands/common_tasks/cmake_create_project)
+      * [Add resources](/docs/documentation/guides/xtd.cmake/Commands/common_tasks/cmake_add_resources)
+      * [Add settings](/docs/documentation/guides/xtd.cmake/Commands/common_tasks/cmake_add_settings)
+      * [Add assembly informations](/docs/documentation/guides/xtd.cmake/Commands/common_tasks/cmake_add_assembly_information)
 
 ## See also
 
