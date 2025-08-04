@@ -60,10 +60,10 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Overview](/docs/documentation/guides/xtd.core/Exceptions/overview)
     * [exception class and properties](/docs/documentation/guides/xtd.core/Exceptions/exception_class_and_properties)
     * How-tos
-      * [Use the try-catch block to catch exceptions](/docs/documentation/guides/xtd.core/Exceptions/How-tos/exceptions_try_catch)
-      * [Use specific exceptions in a catch block](/docs/documentation/guides/xtd.core/Exceptions/How-tos/exceptions_use_specific_exceptions)
-      * [Explicitly throw exceptions](/docs/documentation/guides/xtd.core/Exceptions/How-tos/explicitly_throw_exception)
-      * [Create user-defined exceptions](/docs/documentation/guides/xtd.core/Exceptions/How-tos/create_user_defined_exceptions)
+      * [Use the try-catch block to catch exceptions](/docs/documentation/guides/xtd.core/Exceptions/how_tos/exceptions_try_catch)
+      * [Use specific exceptions in a catch block](/docs/documentation/guides/xtd.core/Exceptions/how_tos/exceptions_use_specific_exceptions)
+      * [Explicitly throw exceptions](/docs/documentation/guides/xtd.core/Exceptions/how_tos/explicitly_throw_exception)
+      * [Create user-defined exceptions](/docs/documentation/guides/xtd.core/Exceptions/how_tos/create_user_defined_exceptions)
     * [Best practices](/docs/documentation/guides/xtd.core/Exceptions/exceptions_best_practices)
   * Format number, dates other types
     * [Overview](/docs/documentation/guides/xtd.core/format_number_dates_other_types/overview)
