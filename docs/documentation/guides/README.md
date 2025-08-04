@@ -173,9 +173,9 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Use mouse events](/docs/documentation/guides/xtd.forms/user_input_mouse/use_mouse_events)
     * [Drag-and-drop functionality](/docs/documentation/guides/xtd.forms/user_input_mouse/drag_and_drop_functionality)
     * Common tasks
-      * [Distinguish between clicks and double-clicks](/docs/documentation/guides/xtd.forms/user_input_mouse/Common%20tasks/distinguish_between_clicks_and_double_clicks)
-      * [Control and modify the mouse pointer](/docs/documentation/guides/xtd.forms/user_input_mouse/Common%20tasks/control_and_modify_the_mouse_pointer)
-      * [Simulate mouse events](/docs/documentation/guides/xtd.forms/user_input_mouse/Common%20tasks/simulate_mouse_events)
+      * [Distinguish between clicks and double-clicks](/docs/documentation/guides/xtd.forms/user_input_mouse/common_tasks/distinguish_between_clicks_and_double_clicks)
+      * [Control and modify the mouse pointer](/docs/documentation/guides/xtd.forms/user_input_mouse/common_tasks/control_and_modify_the_mouse_pointer)
+      * [Simulate mouse events](/docs/documentation/guides/xtd.forms/user_input_mouse/common_tasks/simulate_mouse_events)
   * Printing
     * [Overview](/docs/documentation/guides/xtd.forms/Printing/overview)
     * Common tasks

@@ -21,7 +21,7 @@ The xtd tutorials provide an overview of the important features of the xtd Frame
 * [Ambient properties](/docs/documentation/guides/xtd.forms/Overview/ambient_properties) provides a tutorial on the ambient properties of the controls.
 * [Position and layout of controls](/docs/documentation/guides/xtd.forms/Controls/position_and_layout_of_controls) provides a tutorial on the position and layout of the controls.
 * [Form](/docs/documentation/guides/Overview/Tutorials/form) provides a tutorial for using xtd::forms::form.
-* [How to make thread-safe calls](/docs/documentation/guides/xtd.forms/Controls/Common%20tasks/thread_safe_control_call) provides a tutorial to show how to make thread-safe calls to controls.
+* [How to make thread-safe calls](/docs/documentation/guides/xtd.forms/Controls/common_tasks/thread_safe_control_call) provides a tutorial to show how to make thread-safe calls to controls.
 * [Controls management](/docs/documentation/guides/xtd.forms/Overview/controls_management) describes how to manage the controls.
 * [xtd.forms explanations](/docs/documentation/guides/xtd.forms/Overview/xtd_forms_overview) provides explanations on how xtd.forms works.
 
