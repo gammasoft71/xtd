@@ -9,7 +9,7 @@ Thanks to an automatically generated static class, you can access your settings 
 
 Using the `CMake` commands specific to `xtd`, simply describe the settings to be added to your application.
 
-Although you can add the [setting](#setting) and [setting_include](#setting-include) commands (which are the only two commands for adding settings) to your `CMakeLists.txt` file, the best thing to do is to create a `properties` folder next to the `src` folder and describe your resources in the `settings.cmake` file.
+Although you can add the [setting](#setting) and [setting_include](#setting_include) commands (which are the only two commands for adding settings) to your `CMakeLists.txt` file, the best thing to do is to create a `properties` folder next to the `src` folder and describe your resources in the `settings.cmake` file.
 When CMake generates your xtd project, the `properties/settings.cmake` file will be detected automatically.
 
 Here's an example of the `properties/settings.cmake` file with some specific CMake commands to describe your settings.
@@ -76,7 +76,7 @@ setting_include(SETTIING_INCLUDE_FILE)
 
 ### Remarks 
 
-The [setting_include](#setting-include) commands are optional, you can remove them but you must be sure that before including the `properties/settings.hpp` file all the types defined in the `properties/settings.cmake` file are already known.
+The [setting_include](#setting_include) commands are optional, you can remove them but you must be sure that before including the `properties/settings.hpp` file all the types defined in the `properties/settings.cmake` file are already known.
 
 ## Settings generation
 
@@ -275,7 +275,7 @@ xtd settings can handle different types of parameters:
 
 ## Remarks
 
-* If you don't add a [setting](#setting) and [setting_include](#setting-include) commands to your `CMakeLists.txt` and don't add a `properties/settings.cmake` file, then xtd won't generate anything.
+* If you don't add a [setting](#setting) and [setting_include](#setting_include) commands to your `CMakeLists.txt` and don't add a `properties/settings.cmake` file, then xtd won't generate anything.
 * The simplified use of xtd settings is totally optional. You can use your own method.
 
 ## Settings path
