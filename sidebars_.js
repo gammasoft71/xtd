@@ -537,12 +537,12 @@ module.exports = {
           type: 'category',
           label: 'eBook',
           items: [
-            "documentation/e_book/README",
-            "documentation/e_book/console_classes",
-            "documentation/e_book/first_programs",
-            "documentation/e_book/introduction",
-            "documentation/e_book/menus_and_toolbars",
-            "documentation/e_book/unit_testing_classes"
+            "documentation/ebook/README",
+            "documentation/ebook/console_classes",
+            "documentation/ebook/first_programs",
+            "documentation/ebook/introduction",
+            "documentation/ebook/menus_and_toolbars",
+            "documentation/ebook/unit_testing_classes"
           ]
         },
         "documentation/external_tools_libraries_and_toolkits",

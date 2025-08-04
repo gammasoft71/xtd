@@ -4,19 +4,19 @@ This is [xtd](https://github.com/gammasoft71/xtd) tutorial for the [C++](/docs/d
 
 ## Table of contents
 
-* [Introduction to xtd](/docs/documentation/e_book/introduction)
-* [console classes](/docs/documentation/e_book/console_classes)
-* [unit testing classes](/docs/documentation/e_book/unit_testing_classes)
-* [First programs](/docs/documentation/e_book/first_programs)
-* [Menus and toolbars](/docs/documentation/e_book/menus_and_toolbars)
-* [layout_management](/docs/documentation/e_book/layout_management)
-* [Events](/docs/documentation/e_book/events)
-* [Dialogs](/docs/documentation/e_book/dialogs)
-* [controls](/docs/documentation/e_book/controls)
-* [drag & drop](/docs/documentation/e_book/drag_and_drop)
-* [Graphics](/docs/documentation/e_book/graphics)
-* [custom_controls](/docs/documentation/e_book/custom_controls)
-* [tetris](/docs/documentation/e_book/tetris)
+* [Introduction to xtd](/docs/documentation/ebook/introduction)
+* [console classes](/docs/documentation/ebook/console_classes)
+* [unit testing classes](/docs/documentation/ebook/unit_testing_classes)
+* [First programs](/docs/documentation/ebook/first_programs)
+* [Menus and toolbars](/docs/documentation/ebook/menus_and_toolbars)
+* [layout_management](/docs/documentation/ebook/layout_management)
+* [Events](/docs/documentation/ebook/events)
+* [Dialogs](/docs/documentation/ebook/dialogs)
+* [controls](/docs/documentation/ebook/controls)
+* [drag & drop](/docs/documentation/ebook/drag_and_drop)
+* [Graphics](/docs/documentation/ebook/graphics)
+* [custom_controls](/docs/documentation/ebook/custom_controls)
+* [tetris](/docs/documentation/ebook/tetris)
 
 ## xtd
 
