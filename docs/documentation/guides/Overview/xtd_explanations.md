@@ -7,7 +7,7 @@ sidebar_position: 7
 ## Table of contents
 
 * [Motivations](#motivations)
-* [What is xtd Framework ?](#What-is-xtd-framework)
+* [What is xtd Framework ?](#what-is-xtd-framework-)
 * [xtd API](#xtd-api)
 * [xtd libraries](#xtd-libraries)
 * [xtd architecture](#xtd-architecture)
@@ -29,7 +29,7 @@ sidebar_position: 7
   * [Unit tests](#unit-tests)
   * [Manual tests](#manual-tests)
 * [xtd themes](#xtd-themes)
-  * [Current Operating System / Desktop Environment](#current-operating-system-desktop-environment)
+  * [Current Operating System / Desktop Environment](#current-operating-system--desktop-environment)
   * [Generic](#generic)
   * [Colors only](#colors-only)
   * [Owner themes](#owner-themes)
