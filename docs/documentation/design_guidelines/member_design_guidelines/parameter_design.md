@@ -1,6 +1,6 @@
 # Parameter Design
 
-This section provides broad guidelines on parameter design, including sections with guidelines for checking arguments. In addition, you should refer to the guidelines described in [Naming Parameters](/docs/documentation/design_guidelines/Naming%20Guidelines/naming_parameters).
+This section provides broad guidelines on parameter design, including sections with guidelines for checking arguments. In addition, you should refer to the guidelines described in [Naming Parameters](/docs/documentation/design_guidelines/naming_guidelines/naming_parameters).
 
 **✔️ DO** use the least derived parameter type that provides the functionality required by the member.
 
