@@ -125,25 +125,17 @@ const config = {
         style: 'dark',
         links: [
           {
-            html: '<a href="https://gammasoft71.github.io/xtd"><img src="https://gammasoft71.github.io/xtd/pictures/xtd32.png"></a>',
-          },
-          {
-            html: '<a href="https://github.com/gammasoft71/xtd"><img src="https://gammasoft71.github.io/xtd/pictures/github32.png"></a>',
-          },
-          {
-            html: '<a href="https://sourceforge.net/projects/xtdpro"><img src="https://gammasoft71.github.io/xtd/pictures/sourceforge32.png"></a>',
-          },
-          {
-            html: '<a href="https://www.facebook.com/gammasoft71"><img src="https://gammasoft71.github.io/xtd/pictures/facebook32.png"></a>',
-          },
-          {
-            html: '<a href="https://twitter.com/gammasoft71"><img src=https://gammasoft71.github.io/xtd/pictures/twitter32.png></a>',
-          },
-          {
-            html: '<a href="https://discordapp.com/users/gammasoft#9288"><img src="https://gammasoft71.github.io/xtd/pictures/discord32.png"></a>',
-          },
-          {
-            html: '<a href="mailto:gammasoft71@gmail.com"><img src="https://gammasoft71.github.io/xtd/pictures/mail32.png"></a>',
+            html: `
+              <div style="display: flex; justify-content: center; gap: 1rem; align-items: center;">
+                <a href="https://gammasoft71.github.io/xtd"><img src="https://gammasoft71.github.io/xtd/pictures/xtd32.png" alt="xtd" /></a>
+                <a href="https://github.com/gammasoft71/xtd"><img src="https://gammasoft71.github.io/xtd/pictures/github32.png" alt="GitHub" /></a>
+                <a href="https://sourceforge.net/projects/xtdpro"><img src="https://gammasoft71.github.io/xtd/pictures/sourceforge32.png" alt="SourceForge" /></a>
+                <a href="https://www.facebook.com/gammasoft71"><img src="https://gammasoft71.github.io/xtd/pictures/facebook32.png" alt="Facebook" /></a>
+                <a href="https://twitter.com/gammasoft71"><img src="https://gammasoft71.github.io/xtd/pictures/twitter32.png" alt="Twitter" /></a>
+                <a href="https://discordapp.com/users/gammasoft#9288"><img src="https://gammasoft71.github.io/xtd/pictures/discord32.png" alt="Discord" /></a>
+                <a href="mailto:gammasoft71@gmail.com"><img src="https://gammasoft71.github.io/xtd/pictures/mail32.png" alt="Mail" /></a>
+              </div>
+            `,
           },
         ],
         copyright: `© ${new Date().getFullYear()} Gammasoft.`,
