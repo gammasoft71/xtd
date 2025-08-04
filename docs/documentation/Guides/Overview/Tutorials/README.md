@@ -33,7 +33,7 @@ The xtd tutorials provide an overview of the important features of the xtd Frame
 
 ## Other
 
-* [eBook](/docs/documentation/e_book) provides a tutorial to program non trivial xtd applications.
+* [eBook](/docs/documentation/ebook) provides a tutorial to program non trivial xtd applications.
 
 ## See also
 

@@ -6,4 +6,4 @@
 
 ## See also
 
-* [eBook](/docs/documentation/e_book)
+* [eBook](/docs/documentation/ebook)
