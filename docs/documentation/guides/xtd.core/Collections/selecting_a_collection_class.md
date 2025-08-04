@@ -1,4 +1,4 @@
-# Selecting a Collection Class
+# selecting_a_collection_class
 
 Be sure to choose your collection class carefully. Using the wrong type can restrict your use of the collection.
 
