@@ -18,6 +18,6 @@ However, abstractions provide extremely powerful extensibility that the other ex
 
 # See also
 ​
-* [Design for Extensibility](/docs/documentation/design_guidelines/Designing%20for%20Extensibility)
+* [Design for Extensibility](/docs/documentation/design_guidelines/designing_for_extensibility)
 * [Design Guidelines](/docs/documentation/design_guidelines)
 * [Documentation](/docs/documentation)

@@ -54,14 +54,14 @@ module.exports = {
               type: 'category',
               label: 'Designing for Extensibility',
               items: [
-                "documentation/design_guidelines/Designing for Extensibility/README",
-                "documentation/design_guidelines/Designing for Extensibility/abstractions_abstract_types_and_interfaces",
-                "documentation/design_guidelines/Designing for Extensibility/base_classes_for_implementing_abstractions",
-                "documentation/design_guidelines/Designing for Extensibility/events_and_callbacks",
-                "documentation/design_guidelines/Designing for Extensibility/final",
-                "documentation/design_guidelines/Designing for Extensibility/non-final_classes",
-                "documentation/design_guidelines/Designing for Extensibility/protected_members",
-                "documentation/design_guidelines/Designing for Extensibility/virtual_members"
+                "documentation/design_guidelines/designing_for_extensibility/README",
+                "documentation/design_guidelines/designing_for_extensibility/abstractions_abstract_types_and_interfaces",
+                "documentation/design_guidelines/designing_for_extensibility/base_classes_for_implementing_abstractions",
+                "documentation/design_guidelines/designing_for_extensibility/events_and_callbacks",
+                "documentation/design_guidelines/designing_for_extensibility/final",
+                "documentation/design_guidelines/designing_for_extensibility/non-final_classes",
+                "documentation/design_guidelines/designing_for_extensibility/protected_members",
+                "documentation/design_guidelines/designing_for_extensibility/virtual_members"
               ]
             },
             {
