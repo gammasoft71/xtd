@@ -25,6 +25,6 @@ Property getters should be simple operations and should not have any preconditio
 
 # See also
 ​
-* [Member Design Guidelines](/docs/documentation/design_guidelines/Member%20Design%20Guidelines)
+* [Member Design Guidelines](/docs/documentation/design_guidelines/Member_design_guidelines)
 * [Design Guidelines](/docs/documentation/design_guidelines)
 * [Documentation](/docs/documentation)

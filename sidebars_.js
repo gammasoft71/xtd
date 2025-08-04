@@ -68,14 +68,14 @@ module.exports = {
               type: 'category',
               label: 'Member Design Guidelines',
               items: [
-                "documentation/design_guidelines/Member Design Guidelines/README",
-                "documentation/design_guidelines/Member Design Guidelines/constructor_design",
-                "documentation/design_guidelines/Member Design Guidelines/event_design",
-                "documentation/design_guidelines/Member Design Guidelines/field_design",
-                "documentation/design_guidelines/Member Design Guidelines/member_overloading",
-                "documentation/design_guidelines/Member Design Guidelines/operator_overloads",
-                "documentation/design_guidelines/Member Design Guidelines/parameter_design",
-                "documentation/design_guidelines/Member Design Guidelines/property_design"
+                "documentation/design_guidelines/Member_design_guidelines/README",
+                "documentation/design_guidelines/Member_design_guidelines/constructor_design",
+                "documentation/design_guidelines/Member_design_guidelines/event_design",
+                "documentation/design_guidelines/Member_design_guidelines/field_design",
+                "documentation/design_guidelines/Member_design_guidelines/member_overloading",
+                "documentation/design_guidelines/Member_design_guidelines/operator_overloads",
+                "documentation/design_guidelines/Member_design_guidelines/parameter_design",
+                "documentation/design_guidelines/Member_design_guidelines/property_design"
               ]
             },
             {
