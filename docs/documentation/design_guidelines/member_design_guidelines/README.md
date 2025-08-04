@@ -8,13 +8,13 @@ This chapter offers basic guidelines that should be followed when designing memb
 
 # In This Section
 
-* [Member Overloading](/docs/documentation/design_guidelines/Member_design_guidelines/member_overloading)
-* [Property Design](/docs/documentation/design_guidelines/Member_design_guidelines/property_design)
-* [Constructor Design](/docs/documentation/design_guidelines/Member_design_guidelines/constructor_design)
-* [Event Design](/docs/documentation/design_guidelines/Member_design_guidelines/event_design)
-* [Field Design](/docs/documentation/design_guidelines/Member_design_guidelines/field_design)
-* [Operator Overloads](/docs/documentation/design_guidelines/Member_design_guidelines/operator_overloads)
-* [Parameter Design](/docs/documentation/design_guidelines/Member_design_guidelines/parameter_design)
+* [Member Overloading](/docs/documentation/design_guidelines/member_design_guidelines/member_overloading)
+* [Property Design](/docs/documentation/design_guidelines/member_design_guidelines/property_design)
+* [Constructor Design](/docs/documentation/design_guidelines/member_design_guidelines/constructor_design)
+* [Event Design](/docs/documentation/design_guidelines/member_design_guidelines/event_design)
+* [Field Design](/docs/documentation/design_guidelines/member_design_guidelines/field_design)
+* [Operator Overloads](/docs/documentation/design_guidelines/member_design_guidelines/operator_overloads)
+* [Parameter Design](/docs/documentation/design_guidelines/member_design_guidelines/parameter_design)
 
 # See also
 

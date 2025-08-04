@@ -203,6 +203,6 @@ For the purposes of this tables, a, b, and c represent valid values (literals, v
 
 # See also
 ​
-* [Member Design Guidelines](/docs/documentation/design_guidelines/Member_design_guidelines)
+* [Member Design Guidelines](/docs/documentation/design_guidelines/member_design_guidelines)
 * [Design Guidelines](/docs/documentation/design_guidelines)
 * [Documentation](/docs/documentation)
