@@ -9,12 +9,12 @@ The xtd guides provide an explanation on how to use the important features of th
 
 * [xtd documentation](/docs/documentation/guides/xtd_documentation)
 * Get started
-  * [Hello World](/docs/documentation/guides/Get%20started/hello_world)
+  * [Hello World](/docs/documentation/guides/get_started/hello_world)
   * [Get started tutorials](/docs/documentation/guides/Overview/Tutorials)
   * [Follow by looking at examples of xtd](https://github.com/gammasoft71/xtd/blob/master/examples/README.md)
   * How to install
     * [Read download, install and uninstall](/docs/downloads)
-    * [How to check xtd version](/docs/documentation/guides/Get%20started/How%20to%20install/check_version)
+    * [How to check xtd version](/docs/documentation/guides/get_started/How%20to%20install/check_version)
 * Overview
   * [Introduction to xtd](/docs/documentation/guides/Overview/introduction_to_xtd)
   * [About xtd](/docs/documentation/guides/Overview/xtd_explanations)
