@@ -24,7 +24,7 @@ You can see the original source : [Framework Design Guidelines](https://docs.mic
 ## In this section
 
 * [Coding Conventions Guidelines](/docs/documentation/design_guidelines/coding_conventions_guidelines) provides guidelines for comments, documentation, indentations, new lines and spacing coding conventions.
-* [Naming Guidelines](/docs/documentation/design_guidelines/Naming%20Guidelines) Provides guidelines for naming libraries, namespaces, types, and members in class libraries.
+* [Naming Guidelines](/docs/documentation/design_guidelines/naming_guidelines) Provides guidelines for naming libraries, namespaces, types, and members in class libraries.
 * [Type Design Guidelines](/docs/documentation/design_guidelines/Type%20Design%20Guidelines) Provides guidelines for using static and abstract classes, interfaces, enumerations, structures, and other types.
 * [Member Design Guidelines](/docs/documentation/design_guidelines/Member_design_guidelines) Provides guidelines for designing and using properties, methods, constructors, fields, events, operators, and parameters.
 * [Designing for Extensibility](/docs/documentation/design_guidelines/designing_for_extensibility) Discusses extensibility mechanisms such as subclassing, using events, virtual members, and callbacks, and explains how to choose the mechanisms that best meet your framework's requirements.

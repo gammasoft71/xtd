@@ -82,15 +82,15 @@ module.exports = {
               type: 'category',
               label: 'Naming Guidelines',
               items: [
-                "documentation/design_guidelines/Naming Guidelines/README",
-                "documentation/design_guidelines/Naming Guidelines/capitalisation_conventions",
-                "documentation/design_guidelines/Naming Guidelines/general_naming_conventions",
-                "documentation/design_guidelines/Naming Guidelines/names_of_classes_structs_and_interfaces",
-                "documentation/design_guidelines/Naming Guidelines/names_of_libraries_and_dlls",
-                "documentation/design_guidelines/Naming Guidelines/names_of_namespace",
-                "documentation/design_guidelines/Naming Guidelines/names_of_type_members",
-                "documentation/design_guidelines/Naming Guidelines/naming_parameters",
-                "documentation/design_guidelines/Naming Guidelines/naming_resources"
+                "documentation/design_guidelines/naming_guidelines/README",
+                "documentation/design_guidelines/naming_guidelines/capitalisation_conventions",
+                "documentation/design_guidelines/naming_guidelines/general_naming_conventions",
+                "documentation/design_guidelines/naming_guidelines/names_of_classes_structs_and_interfaces",
+                "documentation/design_guidelines/naming_guidelines/names_of_libraries_and_dlls",
+                "documentation/design_guidelines/naming_guidelines/names_of_namespace",
+                "documentation/design_guidelines/naming_guidelines/names_of_type_members",
+                "documentation/design_guidelines/naming_guidelines/naming_parameters",
+                "documentation/design_guidelines/naming_guidelines/naming_resources"
               ]
             },
             "documentation/design_guidelines/README",

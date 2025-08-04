@@ -77,6 +77,6 @@ This will assist discovery when browsing documentation, or using Intellisense. T
 
 ## See also
 
-* [Naming Guidelines](/docs/documentation/design_guidelines/Naming%20Guidelines)
+* [Naming Guidelines](/docs/documentation/design_guidelines/naming_guidelines)
 * [Design Guidelines](/docs/documentation/design_guidelines)
 * [Documentation](/docs/documentation)

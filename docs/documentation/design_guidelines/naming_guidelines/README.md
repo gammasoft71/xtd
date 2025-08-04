@@ -8,14 +8,14 @@ Although adopting these naming conventions as general code development guideline
  
 ## In This Section
 
-* [Capitalisation Conventions](/docs/documentation/design_guidelines/Naming%20Guidelines/capitalisation_conventions)
-* [General Naming Conventions](/docs/documentation/design_guidelines/Naming%20Guidelines/general_naming_conventions)
-* [Names of Libraries and DLLs](/docs/documentation/design_guidelines/Naming%20Guidelines/names_of_libraries_and_dlls)
-* [Names of Namespace](/docs/documentation/design_guidelines/Naming%20Guidelines/names_of_namespace)
-* [Names of Classes, Structs, and Interfaces](/docs/documentation/design_guidelines/Naming%20Guidelines/names_of_classes_structs_and_interfaces)
-* [Names of Type Members](/docs/documentation/design_guidelines/Naming%20Guidelines/names_of_type_members)
-* [Naming Parameters](/docs/documentation/design_guidelines/Naming%20Guidelines/naming_parameters)
-* [Naming Resources](/docs/documentation/design_guidelines/Naming%20Guidelines/naming_resources)
+* [Capitalisation Conventions](/docs/documentation/design_guidelines/naming_guidelines/capitalisation_conventions)
+* [General Naming Conventions](/docs/documentation/design_guidelines/naming_guidelines/general_naming_conventions)
+* [Names of Libraries and DLLs](/docs/documentation/design_guidelines/naming_guidelines/names_of_libraries_and_dlls)
+* [Names of Namespace](/docs/documentation/design_guidelines/naming_guidelines/names_of_namespace)
+* [Names of Classes, Structs, and Interfaces](/docs/documentation/design_guidelines/naming_guidelines/names_of_classes_structs_and_interfaces)
+* [Names of Type Members](/docs/documentation/design_guidelines/naming_guidelines/names_of_type_members)
+* [Naming Parameters](/docs/documentation/design_guidelines/naming_guidelines/naming_parameters)
+* [Naming Resources](/docs/documentation/design_guidelines/naming_guidelines/naming_resources)
 ​
 ## See also
 
