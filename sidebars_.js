@@ -138,10 +138,10 @@ module.exports = {
                   type: 'category',
                   label: 'How to install',
                   items: [
-                    "documentation/guides/Get started/How to install/check_version"
+                    "documentation/guides/get_started/How to install/check_version"
                   ]
                 },
-                "documentation/guides/Get started/hello_world"
+                "documentation/guides/get_started/hello_world"
               ]
             },
             {

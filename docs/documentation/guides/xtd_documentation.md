@@ -17,7 +17,7 @@ sidebar_position: 1
 
 | Get started                                                                                               |
 | --------------------------------------------------------------------------------------------------------- |
-| [Hello World](/docs/documentation/guides/Get%20started/hello_world)                                       |
+| [Hello World](/docs/documentation/guides/get_started/hello_world)                                       |
 | [Get started tutorials](/docs/documentation/guides/Overview/Tutorials)                                    |
 | [Follow by looking at examples of xtd](https://github.com/gammasoft71/xtd/blob/master/examples/README.md) |
 
