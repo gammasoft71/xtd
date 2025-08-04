@@ -94,6 +94,6 @@ For example, do not use `g_` or `s_` to indicate static fields.
 
 ## See also
 ​
-* [Naming Guidelines](/docs/documentation/Design%20Guidelines/Naming%20Guidelines)
-* [Design Guidelines](/docs/documentation/Design%20Guidelines)
+* [Naming Guidelines](/docs/documentation/design_guidelines/Naming%20Guidelines)
+* [Design Guidelines](/docs/documentation/design_guidelines)
 * [Documentation](/docs/documentation)

@@ -23,13 +23,13 @@ You can see the original source : [Framework Design Guidelines](https://docs.mic
 
 ## In this section
 
-* [Coding Conventions Guidelines](/docs/documentation/Design%20Guidelines/coding_conventions_guidelines) provides guidelines for comments, documentation, indentations, new lines and spacing coding conventions.
-* [Naming Guidelines](/docs/documentation/Design%20Guidelines/Naming%20Guidelines) Provides guidelines for naming libraries, namespaces, types, and members in class libraries.
-* [Type Design Guidelines](/docs/documentation/Design%20Guidelines/Type%20Design%20Guidelines) Provides guidelines for using static and abstract classes, interfaces, enumerations, structures, and other types.
-* [Member Design Guidelines](/docs/documentation/Design%20Guidelines/Member%20Design%20Guidelines) Provides guidelines for designing and using properties, methods, constructors, fields, events, operators, and parameters.
-* [Designing for Extensibility](/docs/documentation/Design%20Guidelines/Designing%20for%20Extensibility) Discusses extensibility mechanisms such as subclassing, using events, virtual members, and callbacks, and explains how to choose the mechanisms that best meet your framework's requirements.
-* [Design Guidelines for Exception](/docs/documentation/Design%20Guidelines/Design%20Guidelines%20for%20Exception) Describes design guidelines for designing, throwing, and catching exceptions.
-* [Common Design Patterns](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns) are solutions to software design problems you find again and again in real-world application development. Patterns are about reusable designs and interactions of objects.
+* [Coding Conventions Guidelines](/docs/documentation/design_guidelines/coding_conventions_guidelines) provides guidelines for comments, documentation, indentations, new lines and spacing coding conventions.
+* [Naming Guidelines](/docs/documentation/design_guidelines/Naming%20Guidelines) Provides guidelines for naming libraries, namespaces, types, and members in class libraries.
+* [Type Design Guidelines](/docs/documentation/design_guidelines/Type%20Design%20Guidelines) Provides guidelines for using static and abstract classes, interfaces, enumerations, structures, and other types.
+* [Member Design Guidelines](/docs/documentation/design_guidelines/Member%20Design%20Guidelines) Provides guidelines for designing and using properties, methods, constructors, fields, events, operators, and parameters.
+* [Designing for Extensibility](/docs/documentation/design_guidelines/Designing%20for%20Extensibility) Discusses extensibility mechanisms such as subclassing, using events, virtual members, and callbacks, and explains how to choose the mechanisms that best meet your framework's requirements.
+* [Design Guidelines for Exception](/docs/documentation/design_guidelines/Design%20Guidelines%20for%20Exception) Describes design guidelines for designing, throwing, and catching exceptions.
+* [Common Design Patterns](/docs/documentation/design_guidelines/common_design_patterns) are solutions to software design problems you find again and again in real-world application development. Patterns are about reusable designs and interactions of objects.
 
 ## See also
 

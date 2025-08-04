@@ -30,6 +30,6 @@ Except for the situations described in these guidelines, you should, in general,
 
 # See also
 ​
-* [Type Design Guidelines](/docs/documentation/Design%20Guidelines/Type%20Design%20Guidelines)
-* [Design Guidelines](/docs/documentation/Design%20Guidelines)
+* [Type Design Guidelines](/docs/documentation/design_guidelines/Type%20Design%20Guidelines)
+* [Design Guidelines](/docs/documentation/design_guidelines)
 * [Documentation](/docs/documentation)

@@ -20,6 +20,6 @@ Beyond the obvious reason of readability, it is important to follow the guidelin
 
 ## See also
 ​
-* [Naming Guidelines](/docs/documentation/Design%20Guidelines/Naming%20Guidelines)
-* [Design Guidelines](/docs/documentation/Design%20Guidelines)
+* [Naming Guidelines](/docs/documentation/design_guidelines/Naming%20Guidelines)
+* [Design Guidelines](/docs/documentation/design_guidelines)
 * [Documentation](/docs/documentation)

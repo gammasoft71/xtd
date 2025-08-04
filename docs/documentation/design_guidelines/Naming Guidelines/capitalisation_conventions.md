@@ -166,6 +166,6 @@ C++ are case-sensitivity.
  
 ## See also
 ​
-* [Naming Guidelines](/docs/documentation/Design%20Guidelines/Naming%20Guidelines)
-* [Design Guidelines](/docs/documentation/Design%20Guidelines)
+* [Naming Guidelines](/docs/documentation/design_guidelines/Naming%20Guidelines)
+* [Design Guidelines](/docs/documentation/design_guidelines)
 * [Documentation](/docs/documentation)
