@@ -139,9 +139,9 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Event handlers](/docs/documentation/guides/xtd.forms/Forms/event_handlers)
     * [Automatic scalling](/docs/documentation/guides/xtd.forms/Forms/automatic_scalling)
     * Common tasks
-      * [Add a form](/docs/documentation/guides/xtd.forms/Forms/Common%20tasks/add_a_form)
-      * [Resize a form](/docs/documentation/guides/xtd.forms/Forms/Common%20tasks/resize_a_form)
-      * [Position a form](/docs/documentation/guides/xtd.forms/Forms/Common%20tasks/resize_a_form)
+      * [Add a form](/docs/documentation/guides/xtd.forms/Forms/common_tasks/add_a_form)
+      * [Resize a form](/docs/documentation/guides/xtd.forms/Forms/common_tasks/resize_a_form)
+      * [Position a form](/docs/documentation/guides/xtd.forms/Forms/common_tasks/resize_a_form)
   * Controls
     * [Overview](/docs/documentation/guides/xtd.forms/Controls/overview)
     * [Layout options](/docs/documentation/guides/xtd.forms/Controls/position_and_layout_of_controls)
