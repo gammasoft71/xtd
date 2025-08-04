@@ -17,7 +17,7 @@ The value of the [xtd::string](https://gammasoft71.github.io/xtd/reference_guide
 ## Additional methods
 
 * [xtd::string::concat](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1string.html#a9d492d6b9ce2f2e38661a5062009a32f) concatenates two, three or four specified instances of string or string array.
-* [xtd::string::format](https://gammasoft71.github.io/xtd/reference_guides/latest/group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd) writes the text representation of the specified arguments list, to string using the specified format information. See [format](/docs/documentation/guides/xtd.core/Format%20number%20dates%20other%20types/overview) for more information.
+* [xtd::string::format](https://gammasoft71.github.io/xtd/reference_guides/latest/group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd) writes the text representation of the specified arguments list, to string using the specified format information. See [format](/docs/documentation/guides/xtd.core/format_number_dates_other_types/overview) for more information.
 * [xtd::string::join](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1string.html#a95694998a854ba65dde682b879eec355) concatenates a specified separator string between each element of a specified object array, yielding a single concatenated string.
 * [xtd::string::parse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1string.html#a90aeac5b1761195838734b45d1268dd3) converts a string into a value_t type.
 * [xtd::string::split](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1string.html#a96a729c2b591760cb0971d43418b3804) splits this string into a maximum number of substrings based on the characters in an array.

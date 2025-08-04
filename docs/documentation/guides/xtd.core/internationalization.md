@@ -167,7 +167,7 @@ auto main() -> int {
 
 ### String format
 
-The locale impact the format string as currency and date time see [Format number, dates other types](/docs/documentation/guides/xtd.core/Format%20number%20dates%20other%20types/overview) for more information.
+The locale impact the format string as currency and date time see [Format number, dates other types](/docs/documentation/guides/xtd.core/format_number_dates_other_types/overview) for more information.
 
 ### Mark a string for translation
 

@@ -352,7 +352,7 @@ The [flags_attribute_](https://gammasoft71.github.io/xtd/reference_guides/latest
 
 You can use the [xtd::enum_object::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1enum__object.html#a7e0bc388bc8f4ec019e586fb2e5ad998) method to create a new string object that represents the numeric, hexadecimal, or string value of an enumeration member. This method takes one of the enumeration formatting strings to specify the value that you want returned.
 
-See [Enumeraton format strings](/docs/documentation/guides/xtd.core/Format%20number%20dates%20other%20types/enumeration_format_strings) for more information about enum class format.
+See [Enumeraton format strings](/docs/documentation/guides/xtd.core/format_number_dates_other_types/enumeration_format_strings) for more information about enum class format.
 
 The following code shows how to use `enum class` with format.
 
