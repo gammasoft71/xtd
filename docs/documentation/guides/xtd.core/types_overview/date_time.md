@@ -142,7 +142,7 @@ console::write_line(date1.to_string("F"));
 // Displays Sam  1 mar 07:00:00 2008
 ```
 
-For more information about formatting [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) values, see [Standard Date and Time Format Strings](/docs/documentation/Guides/xtd.core/Format%20number%20dates%20other%20types/standard_date_and_time_format_strings) and [Custom Date and Time Format Strings](/docs/documentation/Guides/xtd.core/Format%20number%20dates%20other%20types/custom_date_and_time_format_strings).
+For more information about formatting [date_time](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1date__time.html) values, see [Standard Date and Time Format Strings](/docs/documentation/guides/xtd.core/format_number_dates_other_types/standard_date_and_time_format_strings) and [Custom Date and Time Format Strings](/docs/documentation/guides/xtd.core/format_number_dates_other_types/custom_date_and_time_format_strings).
 
 ## Parse date_time values from strings
 
@@ -258,5 +258,5 @@ static void test_roughly_equals() {
 
 ## See also
 
-* [Tutorials](/docs/documentation/Guides/Overview/Tutorials)
+* [Tutorials](/docs/documentation/guides/Overview/Tutorials)
 * [Documentation](/docs/documentation)
