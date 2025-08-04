@@ -14,7 +14,7 @@ If more input to a member is needed in some future version, a new overload can b
 
 Pointers and multidimensional arrays are relatively difficult to use properly. In almost all cases, APIs can be redesigned to avoid taking these types as parameters.
 
-**✔️ DO** place all parameters following all of the by-value, const ref and ref parameters, even if it results in an inconsistency in parameter ordering between overloads (see [Member Overloading](/docs/documentation/design_guidelines/Member_design_guidelines/member_overloading)).
+**✔️ DO** place all parameters following all of the by-value, const ref and ref parameters, even if it results in an inconsistency in parameter ordering between overloads (see [Member Overloading](/docs/documentation/design_guidelines/member_design_guidelines/member_overloading)).
 
 The ref parameters can be seen as extra return values, and grouping them together makes the method signature easier to understand.
 
@@ -56,6 +56,6 @@ When an argument is passed through a ref parameter, the member receives a refere
 
 # See also
 ​
-* [Member Design Guidelines](/docs/documentation/design_guidelines/Member_design_guidelines)
+* [Member Design Guidelines](/docs/documentation/design_guidelines/member_design_guidelines)
 * [Design Guidelines](/docs/documentation/design_guidelines)
 * [Documentation](/docs/documentation)
