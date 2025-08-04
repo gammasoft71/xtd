@@ -7,7 +7,7 @@
   padding: 4rem 0;
   background: #338AFC;
   background-image: url("../../static/pictures/xtd_background.png");
-  background-size: 980px 244px;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   font-weight: bold;
@@ -20,6 +20,14 @@
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroBanner {
+    background-size: contain;
+    min-height: 180px;
+    padding: 2rem 0;
   }
 }
 
