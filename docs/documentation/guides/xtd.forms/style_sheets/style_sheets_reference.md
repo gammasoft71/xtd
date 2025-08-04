@@ -8,7 +8,7 @@
 * [List of stylable controls](#list-of-stylable-controls)
 * [List of properties](#list-of-properties)
 * [List of property type](#list-of-property-type)
-* [List of states](#List-of-states)
+* [List of states](#list-of-states)
 * [List of sub-controls](#list-of-sub-controls)
 * [List of images](#list-of-images)
 
@@ -127,7 +127,7 @@ The following table summarizes the syntax and meaning of the different property 
 | border_color | `color{1,4}`                                                                                                                                                                                                                                                           | Shorthand border property                                                                                                                                                                                                                                                                             |
 | color        | `rgb(r, g, b)`<br />`\| rgba(r, g, b, a)`<br />`\| hsv(h, s, vv)`<br />`\| hsva(h, s, v, a)`<br />`\| hsl(h, s, l)`<br />`\| hsla(h, s, l, a)`<br />`\| #rgb`<br />`\| #argb`<br />`\| #rrggbb`<br />`\| #aarrggbb`<br />`\| color name`<br />`\| system-color(color)` | Specifies a color as ARGB in hexadecimal (e.g. blue : #FF0000FF<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />Specifie a color by name (e.g. darkblue)<br />Specifie a system color (e.g. system-color(button-face))<br /><br />                                               |
 | string       | `""`                                                                                                                                                                                                                                                                   | Specifies a double-quited utf-8 string (e.g. "Text")                                                                                                                                                                                                                                                  |
-| url          | `url(urlname)`<br />`\| url(fillename)`<br /> <br /> <br />                                                                                                                                                                                                            | Specifies a url (e.g. url(https://gammasoft71.wixsite.com/gammasoft))<br />Speccifies a fillename with or without path (e.g. url(resources/image.png))<br />Remarks if the file name does not have a path and does not have an extension, consider it to be an internal [xtd image](#List-of-images). |
+| url          | `url(urlname)`<br />`\| url(fillename)`<br /> <br /> <br />                                                                                                                                                                                                            | Specifies a url (e.g. url(https://gammasoft71.wixsite.com/gammasoft))<br />Speccifies a fillename with or without path (e.g. url(resources/image.png))<br />Remarks if the file name does not have a path and does not have an extension, consider it to be an internal [xtd image](#list-of-images). |
 
 ## List of states
 
