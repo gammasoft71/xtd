@@ -33,19 +33,19 @@ sidebar_position: 8
 
 | Name                                                                                   | Status                                 |
 | -------------------------------------------------------------------------------------- | -------------------------------------- |
-| [xtd.core](/docs/documentation/Development%20status/development_status_xtd_core)       | ![progress](/pictures/progress75.png)  |
-| [xtd.drawing](/docs/documentation/Development%20status/development_status_xtd_drawing) | ![progress](/pictures/progress100.png) |
-| [xtd.forms](/docs/documentation/Development%20status/development_status_xtd_forms)     | ![progress](/pictures/progress75.png)  |
-| [xtd.tunit](/docs/documentation/Development%20status/development_status_xtd_tunit)     | ![progress](/pictures/progress100.png) |
+| [xtd.core](/docs/documentation/development_status/development_status_xtd_core)       | ![progress](/pictures/progress75.png)  |
+| [xtd.drawing](/docs/documentation/development_status/development_status_xtd_drawing) | ![progress](/pictures/progress100.png) |
+| [xtd.forms](/docs/documentation/development_status/development_status_xtd_forms)     | ![progress](/pictures/progress75.png)  |
+| [xtd.tunit](/docs/documentation/development_status/development_status_xtd_tunit)     | ![progress](/pictures/progress100.png) |
 
 ## Others
 
 | Name                                                                             | Status                                 |
 | -------------------------------------------------------------------------------- | -------------------------------------- |
-| [cmake](/docs/documentation/Development%20status/development_status_cmake)       | ![progress](/pictures/progress100.png) |
-| [themes](/docs/documentation/Development%20status/development_status_themes)     | ![progress](/pictures/progress25.png)  |
-| [toolkits](/docs/documentation/Development%20status/development_status_toolkits) | ![progress](/pictures/progress75.png)  |
-| [tools](/docs/documentation/Development%20status/development_status_tools)       | ![progress](/pictures/progress75.png)  |
+| [cmake](/docs/documentation/development_status/development_status_cmake)       | ![progress](/pictures/progress100.png) |
+| [themes](/docs/documentation/development_status/development_status_themes)     | ![progress](/pictures/progress25.png)  |
+| [toolkits](/docs/documentation/development_status/development_status_toolkits) | ![progress](/pictures/progress75.png)  |
+| [tools](/docs/documentation/development_status/development_status_tools)       | ![progress](/pictures/progress75.png)  |
 
 ## Contributing
 

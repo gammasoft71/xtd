@@ -147,5 +147,5 @@ Now you are ready to make your first contribution to xtd.
 
 ## See also
 
-* [Development status](/docs/documentation/Development%20status)
+* [Development status](/docs/documentation/development_status)
 * [Documentation](/docs/documentation)
