@@ -52,6 +52,6 @@ It is almost impossible to write code that remains consistent in the presence of
 
 # See also
 ​
-* [Design Guidelines for Exception](/docs/documentation/design_guidelines/Design%20Guidelines%20for%20Exception)
+* [Design Guidelines for Exception](/docs/documentation/design_guidelines/design_guidelines_for_exception)
 * [Design Guidelines](/docs/documentation/design_guidelines)
 * [Documentation](/docs/documentation)

@@ -44,10 +44,10 @@ module.exports = {
               type: 'category',
               label: 'Design Guidelines for Exception',
               items: [
-                "documentation/design_guidelines/Design Guidelines for Exception/README",
-                "documentation/design_guidelines/Design Guidelines for Exception/exception_throwing",
-                "documentation/design_guidelines/Design Guidelines for Exception/exceptions_and_performance",
-                "documentation/design_guidelines/Design Guidelines for Exception/using_standard_exception_types"
+                "documentation/design_guidelines/design_guidelines_for_exception/README",
+                "documentation/design_guidelines/design_guidelines_for_exception/exception_throwing",
+                "documentation/design_guidelines/design_guidelines_for_exception/exceptions_and_performance",
+                "documentation/design_guidelines/design_guidelines_for_exception/using_standard_exception_types"
               ]
             },
             {
