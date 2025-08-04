@@ -10,10 +10,10 @@ This article introduces the formatting mechanisms that xtd provides.
   A parsing operation creates an instance of a data type from its string representation. 
   For more information, see [Parsing Strings](/docs/documentation/guides/xtd.core/Parse/overview). 
 
-The basic mechanism for formatting is the default implementation of the [xtd::object::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1object.html#a5682215ee76ab97c48580ab162c49507) method, which is discussed in the [Default Formatting Using the to_string Method](#default-formatting-using-the-to-strin-method) section later in this topic. 
+The basic mechanism for formatting is the default implementation of the [xtd::object::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1object.html#a5682215ee76ab97c48580ab162c49507) method, which is discussed in the [Default Formatting Using the to_string Method](#default-formatting-using-the-to_string-method) section later in this topic. 
 However, xtd provides several ways to modify and extend its default formatting support. 
 These include the following:
-* Overriding the [xtd::object::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1object.html#a5682215ee76ab97c48580ab162c49507) method to define a custom string representation of an object's value. For more information, see the [Override the to_string Method](#override-the-to-string-method) section later in this topic.
+* Overriding the [xtd::object::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1object.html#a5682215ee76ab97c48580ab162c49507) method to define a custom string representation of an object's value. For more information, see the [Override the to_string Method](#override-the-to_string-method) section later in this topic.
 * Defining format specifiers that enable the string representation of an object's value to take multiple forms. For example, the "X" format specifier in the following statement converts an integer to the string representation of a hexadecimal value.
 
 ```cpp
@@ -21,7 +21,7 @@ int integer_value = 60312;
 xtd::console::write_line(xtd::to_string(integer_value, "X"));   // Displays EB98.
 ```
 
-For more information about format specifiers, see the [to_string Method and Format Strings](#to_string-method-and-format-strings) section.
+For more information about format specifiers, see the [to_string Method and Format Strings](#the-to_string-method-and-format-strings) section.
 
 * Using format providers to implement the formatting conventions of a specific culture. For example, the following statement displays a currency value by using the formatting conventions of the en-US culture.
 
@@ -40,6 +40,11 @@ xtd::console::write_line(xtd::to_string(cost, "C", std::locale("en_US.UTF-8")));
 
 The following sections examine these methods for converting an object to its string representation.
 
+## Default formatting using the to_string method
+
+## Override the to_string method
+
+## The to_string method and format strings
 
 # See also
 ​
