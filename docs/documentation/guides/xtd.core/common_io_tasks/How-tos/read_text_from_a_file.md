@@ -37,6 +37,6 @@ startup_(program::main);
  
 ## See also
 
-* [Common I/O Tasks](/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks)
+* [Common I/O Tasks](/docs/documentation/guides/xtd.core/common_io_tasks)
 * [Tutorials](/docs/documentation/guides/Overview/Tutorials)
 * [Documentation](/docs/documentation)

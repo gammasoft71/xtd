@@ -87,14 +87,14 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Parse date and time strings](/docs/documentation/guides/xtd.core/Parse/date_and_time_strings)
     * [Parse other strings](/docs/documentation/guides/xtd.core/Parse/other_strings)
   * Common I/O tasks
-    * [Common I/O tasks​](/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks)
+    * [Common I/O tasks​](/docs/documentation/guides/xtd.core/common_io_tasks)
     * How-tos
-      * [Copy Directories](/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks/How-tos/copy_directories)
-      * [Enumerate Directories and Files](/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks/How-tos/enumerate_directories_and_files)
-      * [Read and Write to a Newly Created Data File](/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks/How-tos/read_and_write_to_a_newly_created_data_file)
-      * [Open and Append to a Log File](/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks/How-tos/open_and_append_to_a_log_file)
-      * [Write Text to a File](/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks/How-tos/write_text_to_a_file)
-      * [Read Text from a File](/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks/How-tos/read_text_from_a_file)
+      * [Copy Directories](/docs/documentation/guides/xtd.core/common_io_tasks/How-tos/copy_directories)
+      * [Enumerate Directories and Files](/docs/documentation/guides/xtd.core/common_io_tasks/How-tos/enumerate_directories_and_files)
+      * [Read and Write to a Newly Created Data File](/docs/documentation/guides/xtd.core/common_io_tasks/How-tos/read_and_write_to_a_newly_created_data_file)
+      * [Open and Append to a Log File](/docs/documentation/guides/xtd.core/common_io_tasks/How-tos/open_and_append_to_a_log_file)
+      * [Write Text to a File](/docs/documentation/guides/xtd.core/common_io_tasks/How-tos/write_text_to_a_file)
+      * [Read Text from a File](/docs/documentation/guides/xtd.core/common_io_tasks/How-tos/read_text_from_a_file)
   * [console class](/docs/documentation/guides/xtd.core/console_class)
   * Networking
     * [Network programming](/docs/documentation/guides/xtd.core/Networking/network_programming)
