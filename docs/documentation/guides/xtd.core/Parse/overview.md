@@ -19,7 +19,7 @@ For more information, see [Format types](/docs/documentation/guides/xtd.core/For
 
 [Formatting Types](/docs/documentation/guides/xtd.core/Format%20number%20dates%20other%20types/overview) Describes basic formatting concepts like format specifiers and format providers.
 
-[Type Conversion in xtd](/docs/documentation/guides/xtd.core/Types%20overview/Type%20conversion/overview) Describes how to convert types.
+[Type Conversion in xtd](/docs/documentation/guides/xtd.core/types_overview/Type%20conversion/overview) Describes how to convert types.
 
 # See also
 ​

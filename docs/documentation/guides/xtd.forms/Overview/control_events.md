@@ -221,7 +221,7 @@ auto main() -> int {
 }
 ```
 
-See [delegates](/docs/documentation/guides/xtd.core/Types%20overview/delegates) and [events](/docs/documentation/guides/xtd.core/Types%20overview/events) for more information.
+See [delegates](/docs/documentation/guides/xtd.core/types_overview/delegates) and [events](/docs/documentation/guides/xtd.core/types_overview/events) for more information.
 
 ### Overriding the protected method associated with the event
 

@@ -37,16 +37,16 @@ The xtd guides provide an explanation on how to use the important features of th
   * Entry point
     * [main and startup_](/docs/documentation/guides/xtd.core/entry_point/main_and_startup)
   * Types overview
-    * [Preprocessor symbols](/docs/documentation/guides/xtd.core/Types%20overview/preprocessor_symbols)
-    * [Native types, boxing and unboxing](/docs/documentation/guides/xtd.core/Types%20overview/types)
-    * [enum, enum class and enum struct](/docs/documentation/guides/xtd.core/Types%20overview/enum_class)
-    * [string](/docs/documentation/guides/xtd.core/Types%20overview/string)
-    * [Dates, times, and time zones](/docs/documentation/guides/xtd.core/Types%20overview/date_time)
-    * [Delegates](/docs/documentation/guides/xtd.core/Types%20overview/delegates)
-    * [Events](/docs/documentation/guides/xtd.core/Types%20overview/events)
+    * [Preprocessor symbols](/docs/documentation/guides/xtd.core/types_overview/preprocessor_symbols)
+    * [Native types, boxing and unboxing](/docs/documentation/guides/xtd.core/types_overview/types)
+    * [enum, enum class and enum struct](/docs/documentation/guides/xtd.core/types_overview/enum_class)
+    * [string](/docs/documentation/guides/xtd.core/types_overview/string)
+    * [Dates, times, and time zones](/docs/documentation/guides/xtd.core/types_overview/date_time)
+    * [Delegates](/docs/documentation/guides/xtd.core/types_overview/delegates)
+    * [Events](/docs/documentation/guides/xtd.core/types_overview/events)
     * Type conversion
-      * [Overview](/docs/documentation/guides/xtd.core/Types%20overview/Type%20conversion/overview)
-      * [Type conversion tables](/docs/documentation/guides/xtd.core/Types%20overview/Type%20conversion/type_conversion_tables)
+      * [Overview](/docs/documentation/guides/xtd.core/types_overview/Type%20conversion/overview)
+      * [Type conversion tables](/docs/documentation/guides/xtd.core/types_overview/Type%20conversion/type_conversion_tables)
   * Collections
     * [Overview](/docs/documentation/guides/xtd.core/Collections/overview)
   * [Interfaces](/docs/documentation/guides/xtd.core/interfaces)
