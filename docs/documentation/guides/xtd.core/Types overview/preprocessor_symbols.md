@@ -352,7 +352,7 @@ The following table represents the different preprocessor symbols for the xtd ta
 | `__XTD_TARGET_ID_STATIC_LIBRARY__`      | The target is static library      | 7       |
 | `__XTD_TARGET_ID_CUSTOM_TARGET__`       | The target is custom target       | 8       |
 
-If you are not using CMake to generate your project, you must define them. See the [xtd.cmake overview](/docs/documentation/Guides/xtd.cmake/Overview) section for more information.
+If you are not using CMake to generate your project, you must define them. See the [xtd.cmake overview](/docs/documentation/guides/xtd.cmake/Overview) section for more information.
 
 ### Examples
 
@@ -430,7 +430,7 @@ The following table represents the different preprocessor symbols for the xtd pa
 | `__XTD_TUNIT_INCLUDE_PATH__`     | The xtd::tunit inlude folder       | `${XTD_TUNIT_INSTALL_PATH}/include`               |
 | `__XTD_TUNIT_LIB_PATH__`         | The xtd::tunit libraries folder    | `${XTD_TUNIT_INSTALL_PATH}/lib`                   |
 
-If you are not using CMake to generate your project, you must define them. See the [xtd.cmake overview](/docs/documentation/Guides/xtd.cmake/Overview) section for more information.
+If you are not using CMake to generate your project, you must define them. See the [xtd.cmake overview](/docs/documentation/guides/xtd.cmake/Overview) section for more information.
 
 ### Examples
 
@@ -460,5 +460,5 @@ It is better to use [xtd::environment::get_folder_path](https://codedocs.xyz/gam
 
 # See also
 ​
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)

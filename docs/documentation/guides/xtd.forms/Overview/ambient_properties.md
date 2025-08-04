@@ -74,5 +74,5 @@ auto main() -> int {
 
 ## See also
 
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)

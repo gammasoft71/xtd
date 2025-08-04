@@ -143,7 +143,7 @@ For example, to find the number of methods in a delegate's invocation list, you 
 size_t invocation_count = d1.size();
 ```
 
-Multicast delegates are used extensively in event handling. [xtd::event](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event.html) source objects send event notifications to recipient objects that have registered to receive that event. To register for an event, the recipient creates a method designed to handle the event, then creates a delegate for that method and passes the delegate to the event source. The source calls the delegate when the event occurs. The delegate then calls the event handling method on the recipient, delivering the event data. The delegate type for a given event is defined by the event source. For more, see [events](/docs/documentation/Guides/xtd.core/Types%20overview/events).
+Multicast delegates are used extensively in event handling. [xtd::event](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1event.html) source objects send event notifications to recipient objects that have registered to receive that event. To register for an event, the recipient creates a method designed to handle the event, then creates a delegate for that method and passes the delegate to the event source. The source calls the delegate when the event occurs. The delegate then calls the event handling method on the recipient, delivering the event data. The delegate type for a given event is defined by the event source. For more, see [events](/docs/documentation/guides/xtd.core/Types%20overview/events).
 
 Comparing delegates of two different types assigned at compile-time will result in a compilation error. If the delegate instances are statically of the type [xtd::delegate](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html), then the comparison is allowed, but will return false at run time. For example:
 
@@ -296,5 +296,5 @@ This functionality of lambda expression is supported by [xtd::delegate](https://
 
 ## See also
 
-* [Tutorials](/docs/documentation/Guides/Overview/Tutorials)
+* [Tutorials](/docs/documentation/guides/Overview/Tutorials)
 * [Documentation](/docs/documentation)

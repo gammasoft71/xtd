@@ -24,8 +24,8 @@ We recommend that you throw and catch only objects that derive from [xtd::except
 
 # See also
 ​
-* [Exceptions](/docs/documentation/Guides/xtd.core/Exceptions/overview)
-* [Guides](/docs/documentation/Guides)
+* [Exceptions](/docs/documentation/guides/xtd.core/Exceptions/overview)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/standard/exceptions/exception-class-and-properties)

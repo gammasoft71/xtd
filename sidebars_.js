@@ -138,10 +138,10 @@ module.exports = {
                   type: 'category',
                   label: 'How to install',
                   items: [
-                    "documentation/Guides/Get started/How to install/check_version"
+                    "documentation/guides/Get started/How to install/check_version"
                   ]
                 },
-                "documentation/Guides/Get started/hello_world"
+                "documentation/guides/Get started/hello_world"
               ]
             },
             {
@@ -152,34 +152,34 @@ module.exports = {
                   type: 'category',
                   label: 'Libraries',
                   items: [
-                    "documentation/Guides/Overview/Libraries/architecture",
-                    "documentation/Guides/Overview/Libraries/hierarchy"
+                    "documentation/guides/Overview/Libraries/architecture",
+                    "documentation/guides/Overview/Libraries/hierarchy"
                   ]
                 },
                 {
                   type: 'category',
                   label: 'Tutorials',
                   items: [
-                    "documentation/Guides/Overview/Tutorials/README",
-                    "documentation/Guides/Overview/Tutorials/form",
-                    "documentation/Guides/Overview/Tutorials/git",
-                    "documentation/Guides/Overview/Tutorials/test_class",
-                    "documentation/Guides/Overview/Tutorials/writing_applicaion_console",
-                    "documentation/Guides/Overview/Tutorials/writing_applicaion_gui"
+                    "documentation/guides/Overview/Tutorials/README",
+                    "documentation/guides/Overview/Tutorials/form",
+                    "documentation/guides/Overview/Tutorials/git",
+                    "documentation/guides/Overview/Tutorials/test_class",
+                    "documentation/guides/Overview/Tutorials/writing_applicaion_console",
+                    "documentation/guides/Overview/Tutorials/writing_applicaion_gui"
                   ]
                 },
-                "documentation/Guides/Overview/introduction_to_xtd",
-                "documentation/Guides/Overview/releases_patches_and_support",
-                "documentation/Guides/Overview/what_is_xtd",
-                "documentation/Guides/Overview/xtd_explanations"
+                "documentation/guides/Overview/introduction_to_xtd",
+                "documentation/guides/Overview/releases_patches_and_support",
+                "documentation/guides/Overview/what_is_xtd",
+                "documentation/guides/Overview/xtd_explanations"
               ]
             },
-            "documentation/Guides/README",
+            "documentation/guides/README",
             {
               type: 'category',
               label: 'Tools',
               items: [
-                "documentation/Guides/Tools/README"
+                "documentation/guides/Tools/README"
               ]
             },
             {
@@ -216,8 +216,8 @@ module.exports = {
                   type: 'category',
                   label: 'Collections',
                   items: [
-                    "documentation/Guides/xtd.core/Collections/Selecting a Collection Class",
-                    "documentation/Guides/xtd.core/Collections/overview"
+                    "documentation/guides/xtd.core/Collections/Selecting a Collection Class",
+                    "documentation/guides/xtd.core/Collections/overview"
                   ]
                 },
                 {
@@ -228,33 +228,33 @@ module.exports = {
                       type: 'category',
                       label: 'How-tos',
                       items: [
-                        "documentation/Guides/xtd.core/Common I:O tasks/How-tos/copy_directories",
-                        "documentation/Guides/xtd.core/Common I:O tasks/How-tos/enumerate_directories_and_files",
-                        "documentation/Guides/xtd.core/Common I:O tasks/How-tos/open_and_append_to_a_log_file",
-                        "documentation/Guides/xtd.core/Common I:O tasks/How-tos/read_and_write_to_a_newly_created_data_file",
-                        "documentation/Guides/xtd.core/Common I:O tasks/How-tos/read_text_from_a_file",
-                        "documentation/Guides/xtd.core/Common I:O tasks/How-tos/write_text_to_a_file"
+                        "documentation/guides/xtd.core/Common I:O tasks/How-tos/copy_directories",
+                        "documentation/guides/xtd.core/Common I:O tasks/How-tos/enumerate_directories_and_files",
+                        "documentation/guides/xtd.core/Common I:O tasks/How-tos/open_and_append_to_a_log_file",
+                        "documentation/guides/xtd.core/Common I:O tasks/How-tos/read_and_write_to_a_newly_created_data_file",
+                        "documentation/guides/xtd.core/Common I:O tasks/How-tos/read_text_from_a_file",
+                        "documentation/guides/xtd.core/Common I:O tasks/How-tos/write_text_to_a_file"
                       ]
                     },
-                    "documentation/Guides/xtd.core/Common I:O tasks/README",
-                    "documentation/Guides/xtd.core/Common I:O tasks/file_and_stream_io",
-                    "documentation/Guides/xtd.core/Common I:O tasks/write_a_text_file"
+                    "documentation/guides/xtd.core/Common I:O tasks/README",
+                    "documentation/guides/xtd.core/Common I:O tasks/file_and_stream_io",
+                    "documentation/guides/xtd.core/Common I:O tasks/write_a_text_file"
                   ]
                 },
                 {
                   type: 'category',
                   label: 'Entry point',
                   items: [
-                    "documentation/Guides/xtd.core/Entry point/main_and_startup"
+                    "documentation/guides/xtd.core/Entry point/main_and_startup"
                   ]
                 },
                 {
                   type: 'category',
                   label: 'Events',
                   items: [
-                    "documentation/Guides/xtd.core/Events/observer_design_pattern",
-                    "documentation/Guides/xtd.core/Events/overview",
-                    "documentation/Guides/xtd.core/Events/raise_and_consume_events"
+                    "documentation/guides/xtd.core/Events/observer_design_pattern",
+                    "documentation/guides/xtd.core/Events/overview",
+                    "documentation/guides/xtd.core/Events/raise_and_consume_events"
                   ]
                 },
                 {
@@ -265,13 +265,13 @@ module.exports = {
                       type: 'category',
                       label: 'How-tos',
                       items: [
-                        "documentation/Guides/xtd.core/Exceptions/How-tos/create_user_defined_exceptions",
-                        "documentation/Guides/xtd.core/Exceptions/How-tos/exceptions_try_catch"
+                        "documentation/guides/xtd.core/Exceptions/How-tos/create_user_defined_exceptions",
+                        "documentation/guides/xtd.core/Exceptions/How-tos/exceptions_try_catch"
                       ]
                     },
-                    "documentation/Guides/xtd.core/Exceptions/exception_class_and_properties",
-                    "documentation/Guides/xtd.core/Exceptions/exceptions_best_practices",
-                    "documentation/Guides/xtd.core/Exceptions/overview"
+                    "documentation/guides/xtd.core/Exceptions/exception_class_and_properties",
+                    "documentation/guides/xtd.core/Exceptions/exceptions_best_practices",
+                    "documentation/guides/xtd.core/Exceptions/overview"
                   ]
                 },
                 {
@@ -285,8 +285,8 @@ module.exports = {
 
                       ]
                     },
-                    "documentation/Guides/xtd.core/Format number dates other types/overview",
-                    "documentation/Guides/xtd.core/Format number dates other types/standard_numeric_format_strings"
+                    "documentation/guides/xtd.core/Format number dates other types/overview",
+                    "documentation/guides/xtd.core/Format number dates other types/standard_numeric_format_strings"
                   ]
                 },
                 {
@@ -297,17 +297,17 @@ module.exports = {
                       type: 'category',
                       label: 'Sockets',
                       items: [
-                        "documentation/Guides/xtd.core/Networking/Sockets/sockets_support"
+                        "documentation/guides/xtd.core/Networking/Sockets/sockets_support"
                       ]
                     },
-                    "documentation/Guides/xtd.core/Networking/network_programming"
+                    "documentation/guides/xtd.core/Networking/network_programming"
                   ]
                 },
                 {
                   type: 'category',
                   label: 'Parse',
                   items: [
-                    "documentation/Guides/xtd.core/Parse/overview"
+                    "documentation/guides/xtd.core/Parse/overview"
                   ]
                 },
                 {
@@ -318,25 +318,25 @@ module.exports = {
                       type: 'category',
                       label: 'Type conversion',
                       items: [
-                        "documentation/Guides/xtd.core/Types overview/Type conversion/overview",
-                        "documentation/Guides/xtd.core/Types overview/Type conversion/type_conversion_tables"
+                        "documentation/guides/xtd.core/Types overview/Type conversion/overview",
+                        "documentation/guides/xtd.core/Types overview/Type conversion/type_conversion_tables"
                       ]
                     },
-                    "documentation/Guides/xtd.core/Types overview/date_time",
-                    "documentation/Guides/xtd.core/Types overview/delegates",
-                    "documentation/Guides/xtd.core/Types overview/enum_class",
-                    "documentation/Guides/xtd.core/Types overview/events",
-                    "documentation/Guides/xtd.core/Types overview/preprocessor_symbols",
-                    "documentation/Guides/xtd.core/Types overview/string",
-                    "documentation/Guides/xtd.core/Types overview/types"
+                    "documentation/guides/xtd.core/Types overview/date_time",
+                    "documentation/guides/xtd.core/Types overview/delegates",
+                    "documentation/guides/xtd.core/Types overview/enum_class",
+                    "documentation/guides/xtd.core/Types overview/events",
+                    "documentation/guides/xtd.core/Types overview/preprocessor_symbols",
+                    "documentation/guides/xtd.core/Types overview/string",
+                    "documentation/guides/xtd.core/Types overview/types"
                   ]
                 },
-                "documentation/Guides/xtd.core/delegates_and_lambdas",
-                "documentation/Guides/xtd.core/interfaces",
-                "documentation/Guides/xtd.core/internationalization",
-                "documentation/Guides/xtd.core/literal_operators",
-                "documentation/Guides/xtd.core/resources",
-                "documentation/Guides/xtd.core/settings"
+                "documentation/guides/xtd.core/delegates_and_lambdas",
+                "documentation/guides/xtd.core/interfaces",
+                "documentation/guides/xtd.core/internationalization",
+                "documentation/guides/xtd.core/literal_operators",
+                "documentation/guides/xtd.core/resources",
+                "documentation/guides/xtd.core/settings"
               ]
             },
             {
@@ -364,11 +364,11 @@ module.exports = {
                       type: 'category',
                       label: 'Common tasks',
                       items: [
-                        "documentation/Guides/xtd.forms/Controls/Common tasks/thread_safe_control_call"
+                        "documentation/guides/xtd.forms/Controls/Common tasks/thread_safe_control_call"
                       ]
                     },
-                    "documentation/Guides/xtd.forms/Controls/overview",
-                    "documentation/Guides/xtd.forms/Controls/position_and_layout_of_controls"
+                    "documentation/guides/xtd.forms/Controls/overview",
+                    "documentation/guides/xtd.forms/Controls/position_and_layout_of_controls"
                   ]
                 },
                 {
@@ -401,13 +401,13 @@ module.exports = {
                   type: 'category',
                   label: 'Overview',
                   items: [
-                    "documentation/Guides/xtd.forms/Overview/ambient_properties",
-                    "documentation/Guides/xtd.forms/Overview/application_overview",
-                    "documentation/Guides/xtd.forms/Overview/control_appearance",
-                    "documentation/Guides/xtd.forms/Overview/control_events",
-                    "documentation/Guides/xtd.forms/Overview/controls_management",
-                    "documentation/Guides/xtd.forms/Overview/size_and_location_properties",
-                    "documentation/Guides/xtd.forms/Overview/xtd_forms_overview"
+                    "documentation/guides/xtd.forms/Overview/ambient_properties",
+                    "documentation/guides/xtd.forms/Overview/application_overview",
+                    "documentation/guides/xtd.forms/Overview/control_appearance",
+                    "documentation/guides/xtd.forms/Overview/control_events",
+                    "documentation/guides/xtd.forms/Overview/controls_management",
+                    "documentation/guides/xtd.forms/Overview/size_and_location_properties",
+                    "documentation/guides/xtd.forms/Overview/xtd_forms_overview"
                   ]
                 },
                 {
@@ -434,9 +434,9 @@ module.exports = {
 
                       ]
                     },
-                    "documentation/Guides/xtd.forms/Style sheets/style_sheets_box_model",
-                    "documentation/Guides/xtd.forms/Style sheets/style_sheets_overview",
-                    "documentation/Guides/xtd.forms/Style sheets/style_sheets_reference"
+                    "documentation/guides/xtd.forms/Style sheets/style_sheets_box_model",
+                    "documentation/guides/xtd.forms/Style sheets/style_sheets_overview",
+                    "documentation/guides/xtd.forms/Style sheets/style_sheets_reference"
                   ]
                 },
                 {
@@ -475,12 +475,12 @@ module.exports = {
                   type: 'category',
                   label: 'Overview',
                   items: [
-                    "documentation/Guides/xtd.tunit/Overview/tunit_overview"
+                    "documentation/guides/xtd.tunit/Overview/tunit_overview"
                   ]
                 }
               ]
             },
-            "documentation/Guides/xtd_documentation"
+            "documentation/guides/xtd_documentation"
           ]
         },
         {

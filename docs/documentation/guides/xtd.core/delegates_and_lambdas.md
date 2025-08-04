@@ -163,5 +163,5 @@ But instead of making it a separate definition, we introduced it ad hoc in the c
 
 # See also
 ​
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)

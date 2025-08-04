@@ -69,7 +69,7 @@
 
 ## Libraries and API
 
-Like the whole [xtd framework](/docs/documentation/Guides/xtd.forms/Overview/xtd_forms_overview), **xtd.forms** provides a high level API for the user and uses a low level API to communicate, in this case, with a graphical toolkit:
+Like the whole [xtd framework](/docs/documentation/guides/xtd.forms/Overview/xtd_forms_overview), **xtd.forms** provides a high level API for the user and uses a low level API to communicate, in this case, with a graphical toolkit:
  * **xtd.forms** : high level API.
  * **xtd.forms.native** : low level API.
 
@@ -222,7 +222,7 @@ Unlike a component, a control always has a graphic interface.
 
 ![image](/pictures/diagrams/uml/xtd_forms/control.png)
 
-The control class provides all properties, functions and [events](/docs/documentation/Guides/xtd.core/Types%20overview/events) common to the different controls. It also provides some static functions to manipulate the controls.
+The control class provides all properties, functions and [events](/docs/documentation/guides/xtd.core/Types%20overview/events) common to the different controls. It also provides some static functions to manipulate the controls.
 
 ### Control objects
 
@@ -252,7 +252,7 @@ You can retrieve or assign a parent to a control using the [xtd::forms::control:
 
 A collection of controls is a particular collection, it is an [xtd::froms::layout::arranged_element_collection](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html).
 
-This collection has the particularity to have [events](/docs/documentation/Guides/xtd.core/Types%20overview/events) on which we can connect:
+This collection has the particularity to have [events](/docs/documentation/guides/xtd.core/Types%20overview/events) on which we can connect:
 
 * item_added : occurs when an item is added to the collection.
 * item_updated : occurs when an item is updated in the collection.
@@ -272,7 +272,7 @@ Or
 my_form.controls().push_back(my_button);
 ```
 
-Globally behind the function **my_button.parent(my_form)**, we call the function : **my_form.controls().push_back(my_button)**. And an **item_added** [event](/docs/documentation/Guides/xtd.core/Types%20overview/events) will be generated.
+Globally behind the function **my_button.parent(my_form)**, we call the function : **my_form.controls().push_back(my_button)**. And an **item_added** [event](/docs/documentation/guides/xtd.core/Types%20overview/events) will be generated.
 
 #### Remove parent
 
@@ -288,7 +288,7 @@ or
 my_form.controls().erase(my_button);
 ```
 
-Globally behind the function **my_button.parent(nullptr)**, we call the function : **my_form.controls().erase(my_button)**. And an **item_removed** [event](/docs/documentation/Guides/xtd.core/Types%20overview/events) will be generated.
+Globally behind the function **my_button.parent(nullptr)**, we call the function : **my_form.controls().erase(my_button)**. And an **item_removed** [event](/docs/documentation/guides/xtd.core/Types%20overview/events) will be generated.
 
 #### Update parent
 
@@ -312,7 +312,7 @@ or this :
 my_dialog.controls().push_back(my_button)
 ```
 
-Globally behind the function **my_button.parent(my_dialog)**, we call the function : **my_form.controls().erase(my_button)**, and **my_dialog.controls().push_back(my_button)**. An **item_removed** [event](/docs/documentation/Guides/xtd.core/Types%20overview/events) will be generated for **my_form** and an **item_added** event for my_dialog.
+Globally behind the function **my_button.parent(my_dialog)**, we call the function : **my_form.controls().erase(my_button)**, and **my_dialog.controls().push_back(my_button)**. An **item_removed** [event](/docs/documentation/guides/xtd.core/Types%20overview/events) will be generated for **my_form** and an **item_added** event for my_dialog.
 
 ### Control operations
 
@@ -360,7 +360,7 @@ When the handle is created (when the native control is created), there will be a
 Then, it's the turn of the specialized control to send its specific properties via the specialized API to [xtd::forms::native](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms.native/include/xtd/forms/native).
 For example [xtd::forms::list_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1list__box.html) will send the list of strings contained in the control to the corresponding API [xtd::forms::native::list_box](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1list__box.html), etc.
 
-The **parent_changed** and **control_added** [events](/docs/documentation/Guides/xtd.core/Types%20overview/events) are only sent for a child control, in the case of a [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html), these [events](/docs/documentation/Guides/xtd.core/Types%20overview/events) are not sent.
+The **parent_changed** and **control_added** [events](/docs/documentation/guides/xtd.core/Types%20overview/events) are only sent for a child control, in the case of a [xtd::forms::form](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1form.html), these [events](/docs/documentation/guides/xtd.core/Types%20overview/events) are not sent.
 
 When a control is created, it will automatically create all its child controls.
 
@@ -672,7 +672,7 @@ Xtd.forms is an event library. Indeed, for each action performed an event is ass
 
 There are local events and system events.
 
-For more information about delegates and events see [delegates](/docs/documentation/Guides/xtd.core/Types%20overview/delegates) and [events](/docs/documentation/Guides/xtd.core/Types%20overview/events) tutorials.
+For more information about delegates and events see [delegates](/docs/documentation/guides/xtd.core/Types%20overview/delegates) and [events](/docs/documentation/guides/xtd.core/Types%20overview/events) tutorials.
 
 ### Local events
 
@@ -1380,5 +1380,5 @@ The following table shows the different types of resources supported:
 
 # See also
 ​
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)

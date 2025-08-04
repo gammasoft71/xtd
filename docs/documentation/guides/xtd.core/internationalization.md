@@ -167,7 +167,7 @@ auto main() -> int {
 
 ### String format
 
-The locale impact the format string as currency and date time see [Format number, dates other types](/docs/documentation/Guides/xtd.core/Format%20number%20dates%20other%20types/overview) for more information.
+The locale impact the format string as currency and date time see [Format number, dates other types](/docs/documentation/guides/xtd.core/Format%20number%20dates%20other%20types/overview) for more information.
 
 ### Mark a string for translation
 
@@ -271,7 +271,7 @@ French (Switzerland) : `fr_CH`
 
 # See also
 ​
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-timespan-format-strings)

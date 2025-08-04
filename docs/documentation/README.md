@@ -10,7 +10,7 @@ This section contains the xtd documentation. ​
 
 - [Getting started](/docs/documentation/getting_started) provides getting started documentation.
 - [Tips & Tricks](/docs/documentation/tips_and_tricks) provides xtd tips & tricks.
-- [Guides](/docs/documentation/Guides) provides xtd guides and tutorials.
+- [Guides](/docs/documentation/guides) provides xtd guides and tutorials.
 - [Reference Guides](/docs/documentation/reference_guides) provide online user reference guides for all versions of xtd.
 - [Design Guidelines](/docs/documentation/Design%20Guidelines) provides guidelines for designing libraries that extend and interact with the xtd.
 - [Release notes](/docs/documentation/release_notes) contains all release notes for xtd versions, including older versions.
@@ -20,7 +20,7 @@ This section contains the xtd documentation. ​
 - [Translation status](/docs/documentation/translation_status) provides information about translations status.
 - [Portability](/docs/documentation/portability) provides information about C++, libraries dependency, Operating System supported, Compilers and Development Environment tools.
 - [Themes](/docs/documentation/themes) lists the xtd themes.
-- [Tools](/docs/documentation/Guides/Tools) lists the xtd tools.
+- [Tools](/docs/documentation/guides/Tools) lists the xtd tools.
 - [External tools, libraries and toolkits](/docs/documentation/external_tools_libraries_and_toolkits) lists the external tools, libraries and toolkits used by xtd.
 - [License](/docs/documentation/license) provides license information.
 - [Links](/docs/documentation/links) lists the essential links.

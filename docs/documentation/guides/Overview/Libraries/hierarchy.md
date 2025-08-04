@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # xtd libraries hierarchy
 
-[![libraries_img](/pictures/hierarchy.png)](/docs/documentation/Guides/Overview/Libraries/architecture)
+[![libraries_img](/pictures/hierarchy.png)](/docs/documentation/guides/Overview/Libraries/architecture)
 
 xtd is composed of several libraries.
 
@@ -43,5 +43,5 @@ See the full [xtd roadmap](/docs/documentation/roadmap) for more details.
 
 ## See also
 
-* [xtd libraries architecture](/docs/documentation/Guides/Overview/Libraries/architecture)
+* [xtd libraries architecture](/docs/documentation/guides/Overview/Libraries/architecture)
 * [Documentation](/docs/documentation)

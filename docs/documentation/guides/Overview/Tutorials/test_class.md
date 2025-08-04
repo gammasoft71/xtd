@@ -100,6 +100,6 @@ auto main(int argc, char* argv[]) -> int {
 
 ## See also
 
-* [Writing test applications](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_test)
-* [Tutorials](/docs/documentation/Guides/Overview/Tutorials)
+* [Writing test applications](/docs/documentation/guides/Overview/Tutorials/writing_applicaion_test)
+* [Tutorials](/docs/documentation/guides/Overview/Tutorials)
 * [Documentation](/docs/documentation)

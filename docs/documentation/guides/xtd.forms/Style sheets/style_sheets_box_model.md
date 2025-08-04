@@ -61,6 +61,6 @@ Total element height = height + top padding + bottom padding + top border + bott
 
 # See also
 ​
-* [Style sheets reference](/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_reference)
-* [Guides](/docs/documentation/Guides)
+* [Style sheets reference](/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_reference)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)

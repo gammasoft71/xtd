@@ -46,7 +46,7 @@ The [exceptions](https://gammasoft71.github.io/xtd/reference_guides/latest/group
 
 # See also
 ​
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/standard/base-types/type-conversion)

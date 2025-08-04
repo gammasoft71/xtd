@@ -248,7 +248,7 @@ In this case the client_size of main_form will be :
 
 ## See also
 
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/desktop/winforms/controls/layout?view=netdesktop-6.0)

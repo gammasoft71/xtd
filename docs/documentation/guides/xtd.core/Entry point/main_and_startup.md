@@ -453,5 +453,5 @@ If you are not using CMake for your project creation, it is advisable to add thi
 
 # See also
 ​
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)

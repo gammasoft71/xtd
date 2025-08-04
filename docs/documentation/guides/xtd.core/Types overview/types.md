@@ -103,7 +103,7 @@ auto value_unboxed3 = xtd::unboxing(value_boxed);  // explict with auto is bool
 
 # See also
 ​
-* [Tutorials](/docs/documentation/Guides/Overview/Tutorials)
+* [Tutorials](/docs/documentation/guides/Overview/Tutorials)
 * [Documentation](/docs/documentation)
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/standard/base-types/type-conversion)

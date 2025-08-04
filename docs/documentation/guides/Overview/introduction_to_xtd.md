@@ -106,6 +106,6 @@ With CMake, `xtd` support many [Development Environment Tools](https://gammasoft
 
 ## Next step
 
-* [Choose a xtd tutorial](/docs/documentation/Guides/Overview/Tutorials)
+* [Choose a xtd tutorial](/docs/documentation/guides/Overview/Tutorials)
 
 [//]: # (https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet)
