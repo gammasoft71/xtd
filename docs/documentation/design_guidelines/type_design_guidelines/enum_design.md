@@ -14,7 +14,7 @@ Flag enums are designed to support bitwise operations on the enum values. A comm
 
 **❌ DO NOT** provide reserved enum values that are intended for future use.
 
-You can always simply add values to the existing enum at a later stage. See [Adding Values](#adding-values) to Enums for more details on adding values to enums. Reserved values just pollute the set of real values and tend to lead to user errors.
+You can always simply add values to the existing enum at a later stage. See [Adding Values](#adding-value-to-enums) to Enums for more details on adding values to enums. Reserved values just pollute the set of real values and tend to lead to user errors.
 
 **❌ AVOID** publicly exposing enums with only one value.
 
@@ -53,7 +53,7 @@ Bitwise operations are an advanced concept and should not be required for simple
 
 **✔️ DO** name the zero value of flag enums "none". For a flag enum, the value must always mean "all flags are cleared."
 
-# Adding Value to Enums
+## Adding Value to Enums
 
 It is very common to discover that you need to add values to an enum after you have already shipped it. There is a potential application compatibility problem when the newly added value is returned from an existing API, because poorly written applications might not handle the new value correctly.
 
