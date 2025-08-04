@@ -2,11 +2,11 @@
 
 ## In This Section
 
-* [C++20](#c++20)
+* [C++20](#c20-1)
 * [Operating System](#operating-system)
 * [Compilers](#compilers)
 
-## C++207
+## C++20
 
 xtd support C++20 or above.
 
