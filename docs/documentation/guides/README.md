@@ -160,14 +160,14 @@ The xtd guides provide an explanation on how to use the important features of th
       * [Add or remove event handlers](/docs/documentation/guides/xtd.forms/Controls/common_tasks/add_or_remove_event_handlers)
       * [Make thread-safe calls](/docs/documentation/guides/xtd.forms/Controls/common_tasks/thread_safe_control_call)
   * User input - keyboard
-    * [Overview](/docs/documentation/guides/xtd.forms/User%20input%20-%20keyboard/overview)
-    * [Use keyboard events](/docs/documentation/guides/xtd.forms/User%20input%20-%20keyboard/use_keyboard_events)
-    * [Validate input](/docs/documentation/guides/xtd.forms/User%20input%20-%20keyboard/validate_input)
+    * [Overview](/docs/documentation/guides/xtd.forms/user_input_keyboard/overview)
+    * [Use keyboard events](/docs/documentation/guides/xtd.forms/user_input_keyboard/use_keyboard_events)
+    * [Validate input](/docs/documentation/guides/xtd.forms/user_input_keyboard/validate_input)
     * Common tasks
-      * [Change the pressed key](/docs/documentation/guides/xtd.forms/User%20input%20-%20keyboard/Common%20tasks/change_the_pressed_key)
-      * [Determine wich modifier key is pressed](/docs/documentation/guides/xtd.forms/User%20input%20-%20keyboard/Common%20tasks/determine_wich_modifier_key_is_pressed)
-      * [Handle input at the form level](/docs/documentation/guides/xtd.forms/User%20input%20-%20keyboard/Common%20tasks/handle_input_at_the_form_level)
-      * [Simulate keyboard events](/docs/documentation/guides/xtd.forms/User%20input%20-%20keyboard/Common%20tasks/simulate_keyboard_events)
+      * [Change the pressed key](/docs/documentation/guides/xtd.forms/user_input_keyboard/Common%20tasks/change_the_pressed_key)
+      * [Determine wich modifier key is pressed](/docs/documentation/guides/xtd.forms/user_input_keyboard/Common%20tasks/determine_wich_modifier_key_is_pressed)
+      * [Handle input at the form level](/docs/documentation/guides/xtd.forms/user_input_keyboard/Common%20tasks/handle_input_at_the_form_level)
+      * [Simulate keyboard events](/docs/documentation/guides/xtd.forms/user_input_keyboard/Common%20tasks/simulate_keyboard_events)
   * User input - mouse
     * [Overview](/docs/documentation/guides/xtd.forms/User%20input%20-%20mouse/overview)
     * [Use mouse events](/docs/documentation/guides/xtd.forms/User%20input%20-%20mouse/use_mouse_events)
