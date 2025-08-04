@@ -26,6 +26,6 @@ This structural code demonstrates the Template Method which provides a skeleton 
 
 ## See also
 ​
-* [Common Design Patterns](/docs/documentation/Design%20Guidelines/Common%20Design%20Patterns)
-* [Design Guidelines](/docs/documentation/Design%20Guidelines)
+* [Common Design Patterns](/docs/documentation/design_guidelines/common_design_patterns)
+* [Design Guidelines](/docs/documentation/design_guidelines)
 * [Documentation](/docs/documentation)

@@ -67,10 +67,10 @@ const FeatureList = [
       <br/>• xtd is modular and scalable from embedded applications.
       <br/>• xtd provides consistent, comprehensive and comprehensible programming interfaces. 
       <br/>• xtd favors simplicity over complexity ("as simple as possible, but not simpler").
-      <br/>• xtd aims for consistency in <a href="docs/documentation">design</a>, <a href="docs/documentation/Design%20Guidelines/coding_conventions_guidelines">coding style</a> and <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/index.html">documentation</a>.
+      <br/>• xtd aims for consistency in <a href="docs/documentation">design</a>, <a href="docs/documentation/design_guidelines/coding_conventions_guidelines">coding style</a> and <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/index.html">documentation</a>.
       <br/>• xtd emphasizes source code quality, in terms of readability, comprehensiveness, consistency, style and testability.
       <br/>• xtd aims to make C++ programming fun again Guiding Principles
-      <br/>• Strong focus on code quality, style, consistency and code readability – all code must satisfy our <a href="docs/documentation/Design%20Guidelines">coding style guide</a>.
+      <br/>• Strong focus on code quality, style, consistency and code readability – all code must satisfy our <a href="docs/documentation/design_guidelines">coding style guide</a>.
       <br/>• Strong focus on tests (automated <a href="https://github.com/gammasoft71/xtd/tree/master/tests">unit tests</a> with high coverage).
       <br/>• Build on top of solid foundations – use existing proven C, C++ or Objective-C libraries (e.g. Win32 APi, Gtk4, AppKit,...) where it makes sense.
       </>

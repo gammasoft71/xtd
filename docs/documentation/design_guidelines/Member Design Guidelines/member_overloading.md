@@ -34,6 +34,6 @@ Default arguments are not authorized.
 
 # See also
 ​
-* [Member Design Guidelines](/docs/documentation/Design%20Guidelines/Member%20Design%20Guidelines)
-* [Design Guidelines](/docs/documentation/Design%20Guidelines)
+* [Member Design Guidelines](/docs/documentation/design_guidelines/Member%20Design%20Guidelines)
+* [Design Guidelines](/docs/documentation/design_guidelines)
 * [Documentation](/docs/documentation)

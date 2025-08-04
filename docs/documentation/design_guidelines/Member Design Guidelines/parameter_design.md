@@ -1,6 +1,6 @@
 # Parameter Design
 
-This section provides broad guidelines on parameter design, including sections with guidelines for checking arguments. In addition, you should refer to the guidelines described in [Naming Parameters](/docs/documentation/Design%20Guidelines/Naming%20Guidelines/naming_parameters).
+This section provides broad guidelines on parameter design, including sections with guidelines for checking arguments. In addition, you should refer to the guidelines described in [Naming Parameters](/docs/documentation/design_guidelines/Naming%20Guidelines/naming_parameters).
 
 **✔️ DO** use the least derived parameter type that provides the functionality required by the member.
 
@@ -14,7 +14,7 @@ If more input to a member is needed in some future version, a new overload can b
 
 Pointers and multidimensional arrays are relatively difficult to use properly. In almost all cases, APIs can be redesigned to avoid taking these types as parameters.
 
-**✔️ DO** place all parameters following all of the by-value, const ref and ref parameters, even if it results in an inconsistency in parameter ordering between overloads (see [Member Overloading](/docs/documentation/Design%20Guidelines/Member%20Design%20Guidelines/member_overloading)).
+**✔️ DO** place all parameters following all of the by-value, const ref and ref parameters, even if it results in an inconsistency in parameter ordering between overloads (see [Member Overloading](/docs/documentation/design_guidelines/Member%20Design%20Guidelines/member_overloading)).
 
 The ref parameters can be seen as extra return values, and grouping them together makes the method signature easier to understand.
 
@@ -28,7 +28,7 @@ This better communicates the relationship between the methods.
 
 **❌ DO NOT** use booleans unless you are absolutely sure there will never be a need for more than two values.
 
-Enums give you some room for future addition of values, but you should be aware of all the implications of adding values to enums, which are described in [Enum Design](/docs/documentation/Design%20Guidelines/Type%20Design%20Guidelines/enum_design).
+Enums give you some room for future addition of values, but you should be aware of all the implications of adding values to enums, which are described in [Enum Design](/docs/documentation/design_guidelines/Type%20Design%20Guidelines/enum_design).
 
 **✔️ CONSIDER** using booleans for constructor parameters that are truly two-state values and are simply used to initialize boolean properties.
 
@@ -56,6 +56,6 @@ When an argument is passed through a ref parameter, the member receives a refere
 
 # See also
 ​
-* [Member Design Guidelines](/docs/documentation/Design%20Guidelines/Member%20Design%20Guidelines)
-* [Design Guidelines](/docs/documentation/Design%20Guidelines)
+* [Member Design Guidelines](/docs/documentation/design_guidelines/Member%20Design%20Guidelines)
+* [Design Guidelines](/docs/documentation/design_guidelines)
 * [Documentation](/docs/documentation)

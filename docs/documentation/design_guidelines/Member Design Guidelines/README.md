@@ -8,15 +8,15 @@ This chapter offers basic guidelines that should be followed when designing memb
 
 # In This Section
 
-* [Member Overloading](/docs/documentation/Design%20Guidelines/Member%20Design%20Guidelines/member_overloading)
-* [Property Design](/docs/documentation/Design%20Guidelines/Member%20Design%20Guidelines/property_design)
-* [Constructor Design](/docs/documentation/Design%20Guidelines/Member%20Design%20Guidelines/constructor_design)
-* [Event Design](/docs/documentation/Design%20Guidelines/Member%20Design%20Guidelines/event_design)
-* [Field Design](/docs/documentation/Design%20Guidelines/Member%20Design%20Guidelines/field_design)
-* [Operator Overloads](/docs/documentation/Design%20Guidelines/Member%20Design%20Guidelines/operator_overloads)
-* [Parameter Design](/docs/documentation/Design%20Guidelines/Member%20Design%20Guidelines/parameter_design)
+* [Member Overloading](/docs/documentation/design_guidelines/Member%20Design%20Guidelines/member_overloading)
+* [Property Design](/docs/documentation/design_guidelines/Member%20Design%20Guidelines/property_design)
+* [Constructor Design](/docs/documentation/design_guidelines/Member%20Design%20Guidelines/constructor_design)
+* [Event Design](/docs/documentation/design_guidelines/Member%20Design%20Guidelines/event_design)
+* [Field Design](/docs/documentation/design_guidelines/Member%20Design%20Guidelines/field_design)
+* [Operator Overloads](/docs/documentation/design_guidelines/Member%20Design%20Guidelines/operator_overloads)
+* [Parameter Design](/docs/documentation/design_guidelines/Member%20Design%20Guidelines/parameter_design)
 
 # See also
 
-* [Design Guidelines](/docs/documentation/Design%20Guidelines)
+* [Design Guidelines](/docs/documentation/design_guidelines)
 * [Documentation](/docs/documentation)

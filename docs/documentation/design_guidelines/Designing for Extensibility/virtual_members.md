@@ -20,6 +20,6 @@ The public members of a class should provide the right set of functionality for 
 
 # See also
 ​
-* [Design for Extensibility](/docs/documentation/Design%20Guidelines/Designing%20for%20Extensibility)
-* [Design Guidelines](/docs/documentation/Design%20Guidelines)
+* [Design for Extensibility](/docs/documentation/design_guidelines/Designing%20for%20Extensibility)
+* [Design Guidelines](/docs/documentation/design_guidelines)
 * [Documentation](/docs/documentation)

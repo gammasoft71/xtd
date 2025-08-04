@@ -6,15 +6,15 @@ There are many ways to allow extensibility in frameworks. They range from less p
 
 ## In This Section
 
-* [Non-final Classes](/docs/documentation/Design%20Guidelines/Designing%20for%20Extensibility/non-final_classes)
-* [Protected Members](/docs/documentation/Design%20Guidelines/Designing%20for%20Extensibility/protected_members)
-* [Events and Callbacks](/docs/documentation/Design%20Guidelines/Designing%20for%20Extensibility/events_and_callbacks)
-* [Virtual Members](/docs/documentation/Design%20Guidelines/Designing%20for%20Extensibility/virtual_members)
-* [Abstractions (Abstract Types and Interfaces)](/docs/documentation/Design%20Guidelines/Designing%20for%20Extensibility/abstractions_abstract_types_and_interfaces)
-* [Base Classes for Implementing Abstractions](/docs/documentation/Design%20Guidelines/Designing%20for%20Extensibility/base_classes_for_implementing_abstractions)
-* [Final](/docs/documentation/Design%20Guidelines/Designing%20for%20Extensibility/final)
+* [Non-final Classes](/docs/documentation/design_guidelines/Designing%20for%20Extensibility/non-final_classes)
+* [Protected Members](/docs/documentation/design_guidelines/Designing%20for%20Extensibility/protected_members)
+* [Events and Callbacks](/docs/documentation/design_guidelines/Designing%20for%20Extensibility/events_and_callbacks)
+* [Virtual Members](/docs/documentation/design_guidelines/Designing%20for%20Extensibility/virtual_members)
+* [Abstractions (Abstract Types and Interfaces)](/docs/documentation/design_guidelines/Designing%20for%20Extensibility/abstractions_abstract_types_and_interfaces)
+* [Base Classes for Implementing Abstractions](/docs/documentation/design_guidelines/Designing%20for%20Extensibility/base_classes_for_implementing_abstractions)
+* [Final](/docs/documentation/design_guidelines/Designing%20for%20Extensibility/final)
 
 ## See also
 
-* [Design Guidelines](/docs/documentation/Design%20Guidelines)
+* [Design Guidelines](/docs/documentation/design_guidelines)
 * [Documentation](/docs/documentation)

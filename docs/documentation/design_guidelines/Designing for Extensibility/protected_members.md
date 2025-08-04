@@ -12,6 +12,6 @@ Anyone can inherit from a class and access the protected members.
 
 # See also
 ​
-* [Design for Extensibility](/docs/documentation/Design%20Guidelines/Designing%20for%20Extensibility)
-* [Design Guidelines](/docs/documentation/Design%20Guidelines)
+* [Design for Extensibility](/docs/documentation/design_guidelines/Designing%20for%20Extensibility)
+* [Design Guidelines](/docs/documentation/design_guidelines)
 * [Documentation](/docs/documentation)
