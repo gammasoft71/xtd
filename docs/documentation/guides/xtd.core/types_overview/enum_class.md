@@ -4,8 +4,8 @@
 
 * [Overview](#overview)
 * [External libraries](#external-libraries)
-* [xtd::enum_register](#xtd-enum-register)
-* [xtd::enum_set_attribute](#xtd-enum_set-attribute)
+* [xtd::enum_register](#xtdenum_register)
+* [xtd::enum_set_attribute](#xtdenum_set_attribute)
 * [Format](#format)
 * [Parse](#parse)
 * [Introspection](#introspection)
