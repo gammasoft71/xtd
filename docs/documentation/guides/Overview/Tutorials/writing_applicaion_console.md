@@ -159,5 +159,5 @@ target_type(CONSOLE_APPLICATION)
 
 ## See also
 
-* [tutorials](/docs/documentation/Guides/Overview/Tutorials)
+* [tutorials](/docs/documentation/guides/Overview/Tutorials)
 * [Documentation](/docs/documentation)

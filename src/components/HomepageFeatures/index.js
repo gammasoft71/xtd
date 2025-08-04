@@ -34,7 +34,7 @@ const FeatureList = [
       • Free and open-source (<a href="docs/documentation/license">MIT License</a>).
       <br/>• A collection of native C++ classes libraries, to complete std.
       <br/>• API close to the .net API with modern C++ approach and full integration with the std standard.
-      <br/>• xtd is designed to manage GUI controls and dialogs in pure <a href="docs/documentation/Guides/xtd.forms/Overview/control_appearance">native mode</a> or with <a href="docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview">CSS styles</a>.
+      <br/>• xtd is designed to manage GUI controls and dialogs in pure <a href="docs/documentation/guides/xtd.forms/Overview/control_appearance">native mode</a> or with <a href="docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview">CSS styles</a>.
       <br/>• Written in efficient, modern <a href="https://en.cppreference.com/w/">C++20</a> with <a href="https://en.cppreference.com/w/cpp/language/raii">RAII</a> programming idiom.
       <br/>• And <a href="docs/documentation/portability">highly portable</a> and available on <a href="docs/documentation/portability">many different platforms</a> (Windows, macOS, Linux, iOS and android).
       <br/>• See <a href="docs/documentation/features">features</a> for more informations.
@@ -45,7 +45,7 @@ const FeatureList = [
     title: 'xtd libraries architecture',
     description: (
       <>
-      <a href="docs/documentation/Guides/Overview/Libraries/hierarchy"><img src="pictures/block_diagram_onion.png"/></a>
+      <a href="docs/documentation/guides/Overview/Libraries/hierarchy"><img src="pictures/block_diagram_onion.png"/></a>
       <br/>xtd is composed of several libraries.
       <br/><br/><font size="+2">xtd.core</font>
       <br/><a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html"><img src="pictures/xtd.core.png"/></a> The <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html">xtd.core</a> library is modern C++20 library of classes, interfaces, and value types that provide access to system functionality. It is the foundation on which c++ applications, components, and controls are built.

@@ -17,7 +17,7 @@ The value of the [xtd::string](https://gammasoft71.github.io/xtd/reference_guide
 ## Additional methods
 
 * [xtd::string::concat](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1string.html#a9d492d6b9ce2f2e38661a5062009a32f) concatenates two, three or four specified instances of string or string array.
-* [xtd::string::format](https://gammasoft71.github.io/xtd/reference_guides/latest/group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd) writes the text representation of the specified arguments list, to string using the specified format information. See [format](/docs/documentation/Guides/xtd.core/Format%20number%20dates%20other%20types/overview) for more information.
+* [xtd::string::format](https://gammasoft71.github.io/xtd/reference_guides/latest/group__format__parse.html#ga3afd6d163bc6391a48a1f84f28a68ffd) writes the text representation of the specified arguments list, to string using the specified format information. See [format](/docs/documentation/guides/xtd.core/Format%20number%20dates%20other%20types/overview) for more information.
 * [xtd::string::join](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1string.html#a95694998a854ba65dde682b879eec355) concatenates a specified separator string between each element of a specified object array, yielding a single concatenated string.
 * [xtd::string::parse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1string.html#a90aeac5b1761195838734b45d1268dd3) converts a string into a value_t type.
 * [xtd::string::split](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1string.html#a96a729c2b591760cb0971d43418b3804) splits this string into a maximum number of substrings based on the characters in an array.
@@ -53,7 +53,7 @@ auto main() -> int {
 
 This example is one of N. You can convert any string container to any other string container.
 
-See [type convertion](/docs/documentation/Guides/xtd.core/Types%20overview/Type%20conversion/overview) for more information and [xtd::convert_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__string.html) class for a complete list of conversion methods.
+See [type convertion](/docs/documentation/guides/xtd.core/Types%20overview/Type%20conversion/overview) for more information and [xtd::convert_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__string.html) class for a complete list of conversion methods.
 
 ### as operator
 
@@ -80,7 +80,7 @@ auto main() -> int {
 
 This example is one of N. You can convert any string container to any other string container.
 
-See [type convertion](/docs/documentation/Guides/xtd.core/Types%20overview/Type%20conversion/overview) for more information and [`xtd::as<...>`](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7) operators for a complete list of conversion operators.
+See [type convertion](/docs/documentation/guides/xtd.core/Types%20overview/Type%20conversion/overview) for more information and [`xtd::as<...>`](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7) operators for a complete list of conversion operators.
 
 ## xtd::string literal operators
 
@@ -302,9 +302,9 @@ auto main() -> int {
 // output: 0x0000002A
 ```
 
-See [lietarl operators](/docs/documentation/Guides/xtd.core/literal_operators) for more information.
+See [lietarl operators](/docs/documentation/guides/xtd.core/literal_operators) for more information.
 
 # See also
 ​​
-* [Tutorials](/docs/documentation/Guides/Overview/Tutorials)
+* [Tutorials](/docs/documentation/guides/Overview/Tutorials)
 * [Documentation](/docs/documentation)

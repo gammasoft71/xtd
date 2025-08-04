@@ -60,11 +60,11 @@ With CMake, `xtd` support many [Development Environment Tools](/docs/documentati
 
 Learn `xtd` easily with our step-by-step tutorials.
 
-[Get started](/docs/documentation/Guides/xtd_documentation)
+[Get started](/docs/documentation/guides/xtd_documentation)
 
 # See also
 ​
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)
 
 [//]: # (https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet)

@@ -271,7 +271,7 @@ and more see [xtd.examples](https://github.com/gammasoft71/xtd/blob/master/examp
 
 # See also
 ​
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/desktop/winforms/forms/events?view=netdesktop-6.0)

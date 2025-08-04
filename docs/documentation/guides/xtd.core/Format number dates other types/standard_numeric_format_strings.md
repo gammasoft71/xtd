@@ -92,5 +92,5 @@ The fixed text is `name = ` and `, age = `. The format items are `"{0}"`, whose 
 
 # See also
 ​
-* [Tutorials](/docs/documentation/Guides/Overview/Tutorials)
+* [Tutorials](/docs/documentation/guides/Overview/Tutorials)
 * [Documentation](/docs/documentation)

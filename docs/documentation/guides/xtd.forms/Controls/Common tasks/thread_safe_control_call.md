@@ -103,5 +103,5 @@ void background_worker1_progress_changed(object& sender, const progress_changed_
 
 ## See also
 
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)

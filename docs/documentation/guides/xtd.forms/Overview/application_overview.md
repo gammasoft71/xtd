@@ -100,5 +100,5 @@ Note that you can change the main form at any time while the application is runn
 
 # See also
 ​
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)

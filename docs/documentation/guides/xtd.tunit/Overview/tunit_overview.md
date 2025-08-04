@@ -133,10 +133,10 @@ For example the [gtest-runner](https://github.com/nholthaus/gtest-runner) tool c
 
 ## Next step
 
-* Read [Writing test application tutorial](/docs/documentation/Guides/Overview/Tutorials/writing_applicaion_test)
+* Read [Writing test application tutorial](/docs/documentation/guides/Overview/Tutorials/writing_applicaion_test)
 * Read [xtd.tunit examples](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.tunit.examples/README.md).
 
 # See also
 ​
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)

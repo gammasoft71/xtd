@@ -3,7 +3,7 @@
 [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) controls are reusable components that encapsulate user interface functionality and are used in client-side, Windows-based applications. 
 Not only does [xtd::forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) provide many ready-to-use controls, it also provides the infrastructure for developing your own controls. 
 You can combine existing controls, extend existing controls, or author your own custom controls.
-For more information, see [Types of custom controls](/docs/documentation/Guides/xtd.forms/Controls/custom_controls).
+For more information, see [Types of custom controls](/docs/documentation/guides/xtd.forms/Controls/custom_controls).
 
 # Adding controls
 
@@ -18,7 +18,7 @@ The top-left position coordinate in the parent is (x0,y0). The size of the contr
 
 Besides manual positioning and sizing, various container controls are provided that help with automatic placement of controls.
 
-For more information, see [Position and layout of controls](/docs/documentation/Guides/xtd.forms/Controls/position_and_layout_of_controls) and [How to dock and anchor controls](/docs/documentation/Guides/xtd.forms/Controls/Common%20tasks/dock_and_anchor_controls).
+For more information, see [Position and layout of controls](/docs/documentation/guides/xtd.forms/Controls/position_and_layout_of_controls) and [How to dock and anchor controls](/docs/documentation/guides/xtd.forms/Controls/Common%20tasks/dock_and_anchor_controls).
 
 # Control events
 
@@ -31,11 +31,11 @@ Most shared events fall under these categories:
 * Property changed events
 * Other events
 
-For more information, see [Control events](/docs/documentation/Guides/xtd.forms/Controls/Events) and [How to handle a control event](/docs/documentation/Guides/xtd.forms/Controls/Common%20tasks/add_or_remove_event_handlers).
+For more information, see [Control events](/docs/documentation/guides/xtd.forms/Controls/Events) and [How to handle a control event](/docs/documentation/guides/xtd.forms/Controls/Common%20tasks/add_or_remove_event_handlers).
 
 # See also
 ​
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/desktop/winforms/controls/overview?view=netdesktop-6.0)

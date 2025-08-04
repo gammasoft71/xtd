@@ -266,7 +266,7 @@ For localized applications, you should provide a localized message string for ev
 You use `locale` files to provide localized error messages.
 For information on localizing applications and retrieving localized strings, see the following article:
 
-* [Internationalization](/docs/documentation/Guides/xtd.core/internationalization)
+* [Internationalization](/docs/documentation/guides/xtd.core/internationalization)
 
 ### Use proper grammar
 
@@ -320,7 +320,7 @@ Use at least the three common constructors when creating your own exception clas
   * [xtd::exception(const xtd::string &message, const xtd::diagnostics::stack_frame &information=xtd::diagnostics::stack_frame::empty())](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html#ad43693d8a3723ec0b995123b2d14a297), which accepts a string message and optional stack frame.
   * [xtd::exception(const xtd::string &message, const std::exception &inner_exception, const xtd::diagnostics::stack_frame &information=xtd::diagnostics::stack_frame::empty())](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1exception.html#a946c0dec93a72997929197b1699e7040), which accepts a string message, an inner exception and optional stack frame.
 
-For an example, see [How to: Create user-defined exceptions](/docs/documentation/Guides/xtd.core/Exceptions/How-tos/create_user_defined_exceptions).
+For an example, see [How to: Create user-defined exceptions](/docs/documentation/guides/xtd.core/Exceptions/How-tos/create_user_defined_exceptions).
 
 ### Provide additional properties as needed
 
@@ -329,8 +329,8 @@ For example, the [xtd::io::file_not_found_exception](https://gammasoft71.github.
 
 # See also
 ​
-* [Exceptions](/docs/documentation/Guides/xtd.core/Exceptions/overview)
-* [Guides](/docs/documentation/Guides)
+* [Exceptions](/docs/documentation/guides/xtd.core/Exceptions/overview)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/standard/exceptions/best-practices-for-exceptions)

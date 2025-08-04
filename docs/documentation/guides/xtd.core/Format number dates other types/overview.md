@@ -8,7 +8,7 @@ This article introduces the formatting mechanisms that xtd provides.
 
   Parsing is the inverse of formatting. 
   A parsing operation creates an instance of a data type from its string representation. 
-  For more information, see [Parsing Strings](/docs/documentation/Guides/xtd.core/Parse/overview). 
+  For more information, see [Parsing Strings](/docs/documentation/guides/xtd.core/Parse/overview). 
 
 The basic mechanism for formatting is the default implementation of the [xtd::object::to_string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1object.html#a5682215ee76ab97c48580ab162c49507) method, which is discussed in the [Default Formatting Using the to_string Method](#default-formatting-using-the-to-strin-method) section later in this topic. 
 However, xtd provides several ways to modify and extend its default formatting support. 
@@ -43,7 +43,7 @@ The following sections examine these methods for converting an object to its str
 
 # See also
 ​
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/standard/base-types/formatting-types)

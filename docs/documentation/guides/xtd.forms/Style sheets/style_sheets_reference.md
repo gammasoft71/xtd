@@ -761,7 +761,7 @@ Images used in xtd can be customized using the following properties:
 
 # See also
 ​
-* [Style sheets overview](/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview)
-* [Box model](/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_box_model)
-* [Guides](/docs/documentation/Guides)
+* [Style sheets overview](/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview)
+* [Box model](/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_box_model)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)

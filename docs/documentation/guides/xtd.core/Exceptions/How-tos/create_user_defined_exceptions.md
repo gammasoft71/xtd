@@ -28,12 +28,12 @@ public:
 
 > [!NOTE]
 > In situations where you're using remoting, you must ensure that the metadata for any user-defined exceptions is available at the server (callee) and to the client (the proxy object or caller). 
-> For more information, see [Best practices for exceptions](/docs/documentation/Guides/xtd.core/Exceptions/exceptions_best_practices).
+> For more information, see [Best practices for exceptions](/docs/documentation/guides/xtd.core/Exceptions/exceptions_best_practices).
 
 # See also
 ​
-* [Exceptions](/docs/documentation/Guides/xtd.core/Exceptions/overview)
-* [Guides](/docs/documentation/Guides)
+* [Exceptions](/docs/documentation/guides/xtd.core/Exceptions/overview)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)
 
 © 2024 Gammasoft.

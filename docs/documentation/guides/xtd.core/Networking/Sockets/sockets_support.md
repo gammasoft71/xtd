@@ -15,7 +15,7 @@ wait until the operation completes before returning control to the calling progr
 
 # See also
 ​
-* [Tutorials](/docs/documentation/Guides/Overview/Tutorials)
+* [Tutorials](/docs/documentation/guides/Overview/Tutorials)
 * [Documentation](/docs/documentation)
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/sockets/sockets-overview)

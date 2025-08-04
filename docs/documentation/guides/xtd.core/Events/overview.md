@@ -1,7 +1,7 @@
 # Handle and raise events
 
 The xtd Framework events are based on the delegate model. 
-The delegate model follows the [observer design pattern](/docs/documentation/Guides/xtd.core/Events/observer_design_pattern), which allows a subscriber to register with and receive notifications from a provider. 
+The delegate model follows the [observer design pattern](/docs/documentation/guides/xtd.core/Events/observer_design_pattern), which allows a subscriber to register with and receive notifications from a provider. 
 An event sender sends a notification that an event has occurred, and an event receiver receives that notification and defines a response to it.
 This article describes the main components of the delegate model, how to consume events in applications, and how to implement events in your code.
 
@@ -13,7 +13,7 @@ The object that triggers the event is called the event sender.
 The event sender does not know which object or method will receive (process) the events it raises. 
 The event is usually a member of the event sender; for example, the [click](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html) event is a member of the [xtd::forms::control](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html) class, and the [progress_changed event](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1background__worker.html) is a member of the class that implements the [xtd::forms::background_worker](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1background__worker.html) class.
 
-To define an event, you use the [xtd::event](/docs/documentation/Guides/xtd.core/Types%20overview/events) class in your [event](/docs/documentation/Guides/xtd.core/Types%20overview/events) class signature, and you specify the delegate type for the event. 
+To define an event, you use the [xtd::event](/docs/documentation/guides/xtd.core/Types%20overview/events) class in your [event](/docs/documentation/guides/xtd.core/Types%20overview/events) class signature, and you specify the delegate type for the event. 
 Delegates are described in the next section.
 
 In general, to trigger an event, you add a method marked as `protected` and `virtual`. Name this method `on_event_name`; for example, `on_data_received`. 
@@ -137,9 +137,9 @@ Static event handlers are in effect for the lifetime of the class whose events t
 Dynamic event handlers are explicitly turned on and off during program execution, usually in response to conditional program logic. 
 For example, they can be used if event notifications are only needed under certain conditions or if an application provides multiple event handlers and the runtime conditions define which one to use. 
 The example in the previous section shows how to dynamically add an event handler. 
-For more information, see [Events](/docs/documentation/Guides/xtd.core/Types%20overview/events).
+For more information, see [Events](/docs/documentation/guides/xtd.core/Types%20overview/events).
 
 # See also
 ​
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)

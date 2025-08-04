@@ -29,5 +29,5 @@ You'll also get other environmental related information, such as the operating s
 
 # See also
 ​
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)

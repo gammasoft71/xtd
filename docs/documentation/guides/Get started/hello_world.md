@@ -22,9 +22,9 @@ Congratulations! You've created a simple xtd application.
 
 # Next steps
 
-Get started developing xtd applications by following a step-by-step [tutorials](/docs/documentation/Guides/Overview/Tutorials).
+Get started developing xtd applications by following a step-by-step [tutorials](/docs/documentation/guides/Overview/Tutorials).
 
 # See also
 ​
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)

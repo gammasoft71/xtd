@@ -28,9 +28,9 @@ Here is the list of these different sizes and locations :
 * [top](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a833d52b067a87d6e611b8465a5fc7a8c) : defines the distance, in pixels, between the top edge of the control and the top edge of its container's client area.
 * [width](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#ad100040e54540c75a0d5c840e9fbd596) : defines the width of the control.
 
-For more oinformation see [Position and layout of controls](/docs/documentation/Guides/xtd.forms/Controls/position_and_layout_of_controls)
+For more oinformation see [Position and layout of controls](/docs/documentation/guides/xtd.forms/Controls/position_and_layout_of_controls)
 
 ## See also
 
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)

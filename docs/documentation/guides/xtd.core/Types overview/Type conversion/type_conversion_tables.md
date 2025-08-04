@@ -57,7 +57,7 @@ The following table lists conversions that throw an [overflow_exception](https:/
 
 ## See also
 ​
-* [Guides](/docs/documentation/Guides)
+* [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/standard/base-types/conversion-tables)

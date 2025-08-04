@@ -71,13 +71,13 @@ xtd.tunit uses custom helpers to identify test fixtures and test methods. It's t
 
 | helpers                                                                                              | Usage                                                                                                                                    |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [test_class_(class_name)](/docs/documentation/Guides/Overview/Tutorials/test_class)                  | Is used to define the class (test fixture) with class_name name.                                                                         |
-| [class_initialize_(initialize_name)](/docs/documentation/Guides/Overview/Tutorials/class_initialize) | Is used to define class initialize method with initialize_name name.                                                                     |
-| [class_cleanup_(cleanup_name)](/docs/documentation/Guides/Overview/Tutorials/class_cleanup)          | Is used to define class cleanup method with cleanup_name name.                                                                           |
-| [test_initialize_(initialize_name)](/docs/documentation/Guides/Overview/Tutorials/test_initialize)   | Is used to define test initialize method with initialize_name name.                                                                      |
-| [test_cleanup_(cleanup_name)](/docs/documentation/Guides/Overview/Tutorials/test_cleanup)            | Is used to define test cleanup method with cleanup_name name.                                                                            |
-| [test_method_(method_name)](/docs/documentation/Guides/Overview/Tutorials/test_method)               | Is used to define test method (test case) with method_name name.                                                                         |
-| [ignore_test_method_(method_name)](/docs/documentation/Guides/Overview/Tutorials/ingore_test_method) | Is used to define ignored test method (test case) with method_name name.                                                                 |
+| [test_class_(class_name)](/docs/documentation/guides/Overview/Tutorials/test_class)                  | Is used to define the class (test fixture) with class_name name.                                                                         |
+| [class_initialize_(initialize_name)](/docs/documentation/guides/Overview/Tutorials/class_initialize) | Is used to define class initialize method with initialize_name name.                                                                     |
+| [class_cleanup_(cleanup_name)](/docs/documentation/guides/Overview/Tutorials/class_cleanup)          | Is used to define class cleanup method with cleanup_name name.                                                                           |
+| [test_initialize_(initialize_name)](/docs/documentation/guides/Overview/Tutorials/test_initialize)   | Is used to define test initialize method with initialize_name name.                                                                      |
+| [test_cleanup_(cleanup_name)](/docs/documentation/guides/Overview/Tutorials/test_cleanup)            | Is used to define test cleanup method with cleanup_name name.                                                                            |
+| [test_method_(method_name)](/docs/documentation/guides/Overview/Tutorials/test_method)               | Is used to define test method (test case) with method_name name.                                                                         |
+| [ignore_test_method_(method_name)](/docs/documentation/guides/Overview/Tutorials/ingore_test_method) | Is used to define ignored test method (test case) with method_name name.                                                                 |
 
 ### Examples
 
@@ -284,5 +284,5 @@ Coming soon...
 
 ## See also
 
-* [tutorials](/docs/documentation/Guides/Overview/Tutorials)
+* [tutorials](/docs/documentation/guides/Overview/Tutorials)
 * [Documentation](/docs/documentation)
