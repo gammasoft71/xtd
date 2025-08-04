@@ -24,4 +24,4 @@ This section contains the xtd documentation. ​
 - [External tools, libraries and toolkits](/docs/documentation/external_tools_libraries_and_toolkits) lists the external tools, libraries and toolkits used by xtd.
 - [License](/docs/documentation/license) provides license information.
 - [Links](/docs/documentation/links) lists the essential links.
-- [*Internal*](/docs/documentation/Internal) *provides some information for xtd developers (* **Internal use only** *).*
+- [*Internal*](/docs/documentation/internal) *provides some information for xtd developers (* **Internal use only** *).*
