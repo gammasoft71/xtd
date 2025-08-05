@@ -63,6 +63,12 @@ int32 country::numeric_code() const noexcept {
   return data_->numeric_code;
 }
 
+int country::compare_to(const country& obj) const noexcept {
+  if (data_->numeric_code < obj.data_->numeric_code) return -1;
+  if (data_->numeric_code > obj.data_->numeric_code) return 1;
+  return 0;
+}
+
 bool country::equals(const object& obj) const noexcept {
   return is<country>(obj) && equals(static_cast<const country&>(obj));
 }
