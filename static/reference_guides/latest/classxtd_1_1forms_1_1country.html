@@ -108,10 +108,13 @@ Inheritance diagram for xtd::forms::country:</div>
  <div class="center">
   <img src="classxtd_1_1forms_1_1country.png" usemap="#xtd::forms::country_map" alt=""/>
   <map id="xtd::forms::country_map" name="xtd::forms::country_map">
-<area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,56,403,80"/>
-<area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; country &gt;" shape="rect" coords="413,56,816,80"/>
-<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="206,0,609,24"/>
-<area href="classxtd_1_1extensions_1_1equality__operators.html" alt="xtd::extensions::equality_operators&lt; country, iequatable&lt; country &gt; &gt;" shape="rect" coords="619,0,1022,24"/>
+<area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,56,437,80"/>
+<area href="classxtd_1_1icomparable.html" alt="xtd::icomparable&lt; country &gt;" shape="rect" coords="447,56,884,80"/>
+<area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; country &gt;" shape="rect" coords="1341,56,1778,80"/>
+<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="223,0,660,24"/>
+<area href="classxtd_1_1extensions_1_1comparison__operators.html" alt="xtd::extensions::comparison_operators&lt; country, icomparable&lt; country &gt; &gt;" shape="rect" coords="670,0,1107,24"/>
+<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="1117,0,1554,24"/>
+<area href="classxtd_1_1extensions_1_1equality__operators.html" alt="xtd::extensions::equality_operators&lt; country, iequatable&lt; country &gt; &gt;" shape="rect" coords="1564,0,2001,24"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
@@ -258,6 +261,9 @@ Inheritance diagram for xtd::forms::country:</div>
 <tr class="separator:ab605abb9350001d91b17a4424c2af589"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
+<tr class="memitem:a7347df22a5412f3a45019489015eba62" id="r_a7347df22a5412f3a45019489015eba62"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7347df22a5412f3a45019489015eba62">compare_to</a> (const <a class="el" href="classxtd_1_1forms_1_1country.html">country</a> &amp;obj) const noexcept override</td></tr>
+<tr class="memdesc:a7347df22a5412f3a45019489015eba62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
+<tr class="separator:a7347df22a5412f3a45019489015eba62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7441a1bc6e796d6cead4c775f963eefa" id="r_a7441a1bc6e796d6cead4c775f963eefa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7441a1bc6e796d6cead4c775f963eefa">equals</a> (const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;obj) const noexcept override</td></tr>
 <tr class="memdesc:a7441a1bc6e796d6cead4c775f963eefa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
 <tr class="separator:a7441a1bc6e796d6cead4c775f963eefa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -283,6 +289,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplItemLeft" align="right" valign="top">xtd::unique_ptr_object&lt; object_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a> () const</td></tr>
 <tr class="memdesc:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
 <tr class="separator:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e5ad6ed9d798584e8b9be5749d6faa5" id="r_a8e5ad6ed9d798584e8b9be5749d6faa5"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1icomparable.html#a8e5ad6ed9d798584e8b9be5749d6faa5">compare_to</a> (const country &amp;obj) const noexcept=0</td></tr>
+<tr class="memdesc:a8e5ad6ed9d798584e8b9be5749d6faa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
+<tr class="separator:a8e5ad6ed9d798584e8b9be5749d6faa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f8bbde943d2e5ecf565734c60e23903" id="r_a1f8bbde943d2e5ecf565734c60e23903"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903">equals</a> (const country &amp;) const noexcept=0</td></tr>
 <tr class="memdesc:a1f8bbde943d2e5ecf565734c60e23903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
 <tr class="separator:a1f8bbde943d2e5ecf565734c60e23903"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -519,6 +528,50 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the country numeric code. </p>
 <dl class="section return"><dt>Returns</dt><dd>A signed-integer that represent the numeric code. </dd></dl>
+
+</div>
+</div>
+<a id="a7347df22a5412f3a45019489015eba62" name="a7347df22a5412f3a45019489015eba62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7347df22a5412f3a45019489015eba62">&#9670;&#160;</a></span>compare_to()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int xtd::forms::country::compare_to </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1country.html">country</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Compares the current instance with another object of the same type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>An object to compare with this instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings:</dd></dl>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Value   </th><th class="markdownTableHeadNone">Condition    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Less than zero   </td><td class="markdownTableBodyNone">This instance is less than obj.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Zero   </td><td class="markdownTableBodyNone">This instance is equal to obj.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Greater than zero   </td><td class="markdownTableBodyNone">This instance is greater than obj.   </td></tr>
+</table>
 
 </div>
 </div>
@@ -771,7 +824,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 3 2025 05:39:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 09:57:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
