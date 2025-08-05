@@ -1,7 +1,3 @@
----
-sidebar_position: 16
----
-
 # Class organization
 
 ## Classic C++

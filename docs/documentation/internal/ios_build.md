@@ -1,7 +1,3 @@
----
-sidebar_position: 12
----
-
 # iOS build (**Internal use only**)
 
 To building a remote trget iOS, we need to use a toolchain CMake.

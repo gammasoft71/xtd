@@ -1,7 +1,3 @@
----
-sidebar_position: 5
----
-
 # Tips and Tricks
 
 Here is a collection of practical tips and little xtd tricks. 

@@ -1,7 +1,3 @@
----
-sidebar_position: 10
----
-
 # Theme (**Internal use only**)
 
 ## System classes

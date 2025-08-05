@@ -1,7 +1,3 @@
----
-sidebar_position: 4
----
-
 # Default size of controls on Macintosh (**Internal use only**)
 
 | Control                     | width  | height |

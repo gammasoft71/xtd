@@ -1,7 +1,3 @@
----
-sidebar_position: 14
----
-
 # wxWidgets Windows styles (**Internal use only**)
 
 ## Default styles

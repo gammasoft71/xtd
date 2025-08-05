@@ -1,7 +1,3 @@
----
-sidebar_position: 15
----
-
 # xtd in numbers (last update 2024-10-13)
 
 ## Key dates

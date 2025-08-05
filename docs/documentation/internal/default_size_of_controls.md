@@ -1,7 +1,3 @@
----
-sidebar_position: 6
----
-
 # Default size of controls of xtd (**Internal use only**)
 
 ## xtd::forms::animation
