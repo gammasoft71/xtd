@@ -96,7 +96,7 @@ namespace xtd {
       /// | Zero              | This instance is equal to obj.     |
       /// | Greater than zero | This instance is greater than obj. |
       int compare_to(const country& obj) const noexcept override;
-
+      
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
