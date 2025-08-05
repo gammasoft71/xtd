@@ -116,7 +116,7 @@ $(function(){ initResizable(false); });
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} = {1}: {2}&quot;</span>, value, int_value, value == int_value ? <span class="stringliteral">&quot;Round-trips&quot;</span> : <span class="stringliteral">&quot;Does not round-trip&quot;</span>);</div>
 <div class="line">      <span class="comment">// Convert bytes to unsigned int.</span></div>
 <div class="line">      <span class="keyword">auto</span> uint_value = <a class="code hl_function" href="classxtd_1_1bit__converter.html#a4a0bea442896493d342f94a2263ab690">bit_converter::to_uint32</a>(bytes, 0);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} = {1}: {2}&quot;</span>, value, uint_value, <span class="keyword">static_cast&lt;</span>uint<span class="keyword">&gt;</span>(value) == uint_value ? <span class="stringliteral">&quot;Round-trips&quot;</span> : <span class="stringliteral">&quot;Does not round-trip&quot;</span>);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} = {1}: {2}&quot;</span>, value, uint_value, <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a><span class="keyword">&gt;</span>(value) == uint_value ? <span class="stringliteral">&quot;Round-trips&quot;</span> : <span class="stringliteral">&quot;Does not round-trip&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -132,12 +132,13 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclassxtd_1_1bit__converter_html_af59ce06dc1a300b44d3df4a78fb10c08"><div class="ttname"><a href="classxtd_1_1bit__converter.html#af59ce06dc1a300b44d3df4a78fb10c08">xtd::bit_converter::get_bytes</a></div><div class="ttdeci">static xtd::array&lt; xtd::byte &gt; get_bytes(bool value) noexcept</div><div class="ttdoc">Returns the specified Boolean value as an xtd::array of bytes.</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
+<div class="ttc" id="agroup__types_html_gabcb8f2a01d025f4fd9ea205912f4735e"><div class="ttname"><a href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">xtd::uint32</a></div><div class="ttdeci">uint32_t uint32</div><div class="ttdoc">Represents a 32-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> uint32.hpp:23</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 5 2025 09:56:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 12:28:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
