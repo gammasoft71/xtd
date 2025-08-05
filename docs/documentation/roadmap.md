@@ -1,7 +1,3 @@
----
-sidebar_position: 6
----
-
 # Roadmap
 
 ## Table of contents

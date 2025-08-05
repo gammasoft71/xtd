@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # Documentation
 
 This section contains the xtd documentation. ​

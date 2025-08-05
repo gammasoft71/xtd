@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # News
 
 List of all news messages, sorted by newest first.

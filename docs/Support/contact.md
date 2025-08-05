@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # Contact
 
 [![Mail](/pictures/mail.png)](mailto:gammasoft71@gmail.com)

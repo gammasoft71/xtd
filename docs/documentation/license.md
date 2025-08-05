@@ -1,7 +1,3 @@
----
-sidebar_position: 14
----
-
 # License
 
 [![MIT Logo](/pictures/license.png)](https://opensource.org/licenses/MIT)

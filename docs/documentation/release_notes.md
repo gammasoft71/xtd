@@ -1,7 +1,3 @@
----
-sidebar_position: 5
----
-
 # Release Notes
 
 Contains all release notes for xtd versions, including older versions. 

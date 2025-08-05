@@ -1,7 +1,3 @@
----
-sidebar_position: 2
----
-
 # Getting Started
 
 This Section provides a getting started documentation.

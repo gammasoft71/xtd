@@ -1,7 +1,3 @@
----
-sidebar_position: 15
----
-
 # Links
 
 Follow these links for more information about C++ and Framework:
