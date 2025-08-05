@@ -1,7 +1,3 @@
----
-sidebar_position: 11
----
-
 # Tutorials
 
 The xtd tutorials provide an overview of the important features of the xtd Framework. Each tutorial includes one or more example programs. 

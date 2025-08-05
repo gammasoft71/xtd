@@ -1,7 +1,3 @@
----
-sidebar_position: 8
----
-
 # xtd libraries architecture
 
 [![libraries_img](/pictures/block_diagram_onion.png)](/docs/documentation/guides/Overview/Libraries/hierarchy)

@@ -1,7 +1,3 @@
----
-sidebar_position: 5
----
-
 # How to check that xtd is already installed
 
 This article teaches you how to check which version of the xtd Framework is installed on your computer.

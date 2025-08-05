@@ -1,7 +1,3 @@
----
-sidebar_position: 16
----
-
 # main function and startup_ keyword
 
 ## main function

@@ -1,7 +1,3 @@
----
-sidebar_position: 12
----
-
 # Writing console application
 
 ## In this section

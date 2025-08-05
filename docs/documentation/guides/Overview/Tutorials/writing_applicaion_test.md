@@ -1,7 +1,3 @@
----
-sidebar_position: 14
----
-
 # Writing test applications
 
 ## In This Section

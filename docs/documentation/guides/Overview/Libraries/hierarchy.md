@@ -1,7 +1,3 @@
----
-sidebar_position: 9
----
-
 # xtd libraries hierarchy
 
 [![libraries_img](/pictures/hierarchy.png)](/docs/documentation/guides/Overview/Libraries/architecture)

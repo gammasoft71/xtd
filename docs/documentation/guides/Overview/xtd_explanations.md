@@ -1,7 +1,3 @@
----
-sidebar_position: 7
----
-
 # About xtd
 
 ## Table of contents

@@ -1,7 +1,3 @@
----
-sidebar_position: 6
----
-
 # What is xtd? Introduction and overview
 
 `xtd` is a free, cross-platform, open source developer platform for building many kinds of applications.
