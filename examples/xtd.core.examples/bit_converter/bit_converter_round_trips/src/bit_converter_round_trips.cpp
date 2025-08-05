@@ -17,7 +17,7 @@ namespace bit_converter_round_trips_example {
       console::write_line("{0} = {1}: {2}", value, int_value, value == int_value ? "Round-trips" : "Does not round-trip");
       // Convert bytes to unsigned int.
       auto uint_value = bit_converter::to_uint32(bytes, 0);
-      console::write_line("{0} = {1}: {2}", value, uint_value, static_cast<uint>(value) == uint_value ? "Round-trips" : "Does not round-trip");
+      console::write_line("{0} = {1}: {2}", value, uint_value, static_cast<uint32>(value) == uint_value ? "Round-trips" : "Does not round-trip");
     }
   };
 }
