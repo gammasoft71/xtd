@@ -1,10 +1,4 @@
-#include <xtd/forms/Application>
-#include <xtd/forms/checked_list_box>
-#include <xtd/forms/form>
-#include <xtd/cdebug>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace checked_list_box_example {
   class form1 : public form {
