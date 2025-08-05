@@ -1,8 +1,3 @@
----
-sidebar_class_name: hidden
-sidebar_position: 999
----
-
 # Command line arguments (🟢 Beginner)
 
 Here is a new example illustrating a practical trick with xtd: how to retrieve command line arguments in a simple and elegant way.

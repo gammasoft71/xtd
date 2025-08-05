@@ -1,7 +1,3 @@
----
-sidebar_position: 8
----
-
 # Deprecated (**Internal use only**)
 
 Do not remove an old method immediately. but :

@@ -1,7 +1,3 @@
----
-sidebar_position: 5
----
-
 # Default size of controls on Windows (**Internal use only**)
 
 | Control                     | width  | height |

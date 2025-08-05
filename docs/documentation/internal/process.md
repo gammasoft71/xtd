@@ -1,7 +1,3 @@
----
-sidebar_position: 7
----
-
 # Process (**Internal use only**)
 
 ## verbs

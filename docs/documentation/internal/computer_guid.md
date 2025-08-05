@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # Computer guid (**Internal use only**)
 
 ## links 

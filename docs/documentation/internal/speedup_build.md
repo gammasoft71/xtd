@@ -1,7 +1,3 @@
----
-sidebar_position: 11
----
-
 # Investigations to speed up the build of xtd (**Internal use only**)
 
 ## Multiple process build flags

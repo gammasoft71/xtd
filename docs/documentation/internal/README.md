@@ -1,7 +1,3 @@
----
-sidebar_position: 16
----
-
 # Internal documentations (**Internal use only**)
 
 ## Warning

@@ -1,7 +1,3 @@
----
-sidebar_position: 3
----
-
 # Default size of controls on Unix (**Internal use only**)
 
 | Control                     | width  | height |

@@ -1,7 +1,3 @@
----
-sidebar_position: 9
----
-
 # Sounds (**Internal use only**)
 
 ## System Sounds

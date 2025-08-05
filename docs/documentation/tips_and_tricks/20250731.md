@@ -1,8 +1,3 @@
----
-sidebar_class_name: hidden
-sidebar_position: 999
----
-
 # Very simple threads synchronisation (🟡 Intermediate)
 
 Simplify synchronization with [lock_](https://gammasoft71.github.io/xtd/reference_guides/latest/group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a) in xtd.

@@ -1,7 +1,3 @@
----
-sidebar_position: 10
----
-
 # Portability
 
 The Portability section provides information about supported Operating Systems, compilers, and development environment tools.

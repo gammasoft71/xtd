@@ -1,7 +1,3 @@
----
-sidebar_position: 4
----
-
 # Design Guidelines
 
 This section provides guidelines for designing libraries that extend and interact with the xtd framework. 
