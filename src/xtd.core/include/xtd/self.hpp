@@ -14,5 +14,8 @@ namespace xtd {
 /// xtd.core
 /// @ingroup xtd_core keywords
 /// @remarks #self_ is equivalent to *this.
+/// @par Examples
+/// The following example shows how to use the #self_ keyword
+/// @include self.cpp
 #define self_\
   (*this)
