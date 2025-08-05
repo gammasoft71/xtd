@@ -166,13 +166,7 @@ You can use these properties to manage the currently selected item in the list, 
   </td></tr>
 </table>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a> control. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/Application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/checked_list_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/cdebug&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a> control. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>checked_list_box_example {</div>
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
@@ -184,7 +178,7 @@ You can use these properties to manage the currently selected item in the list, 
 <div class="line">      checked_list_box1.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      checked_list_box1.location({20, 20});</div>
 <div class="line">      checked_list_box1.size({160, 200});</div>
-<div class="line">      checked_list_box1.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">anchor_styles::left</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a71f262d796bed1ab30e8a2d5a8ddee6f">anchor_styles::bottom</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">anchor_styles::right</a>);</div>
+<div class="line">      checked_list_box1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);</div>
 <div class="line">      </div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 1; index &lt;= 10; ++index)</div>
 <div class="line">        checked_list_box1.items().push_back({string::format(<span class="stringliteral">&quot;Item {}&quot;</span>, index), index % 2 != 0});</div>
@@ -201,20 +195,13 @@ You can use these properties to manage the currently selected item in the list, 
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(checked_list_box_example::form1 {});</div>
+<div class="line">  application::run(checked_list_box_example::form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1choice_html_afc3c886220f47bcaa099c4a363414836"><div class="ttname"><a href="#afc3c886220f47bcaa099c4a363414836">xtd::forms::choice::text</a></div><div class="ttdeci">control &amp; text(const xtd::string &amp;text) override</div><div class="ttdoc">Sets the text associated with this control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a2a2a45ce0f1d7d2794c2cbc44cbbf352"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a2a2a45ce0f1d7d2794c2cbc44cbbf352">xtd::forms::control::client_size</a></div><div class="ttdeci">virtual const drawing::size &amp; client_size() const noexcept</div><div class="ttdoc">Gets the height and width of the client area of the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggabe04a3034508fe0527604e5c5c3104c3a71f262d796bed1ab30e8a2d5a8ddee6f"><div class="ttname"><a href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a71f262d796bed1ab30e8a2d5a8ddee6f">xtd::forms::anchor_styles::bottom</a></div><div class="ttdeci">@ bottom</div><div class="ttdoc">Bind control edges to the bottom of its container.</div><div class="ttdef"><b>Definition</b> anchor_styles.hpp:25</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d"><div class="ttname"><a href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">xtd::forms::anchor_styles::right</a></div><div class="ttdeci">@ right</div><div class="ttdoc">Bind control edges to the right of its container.</div><div class="ttdef"><b>Definition</b> anchor_styles.hpp:29</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254"><div class="ttname"><a href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">xtd::forms::anchor_styles::left</a></div><div class="ttdeci">@ left</div><div class="ttdoc">Bind control edges to the left of its container.</div><div class="ttdef"><b>Definition</b> anchor_styles.hpp:27</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f"><div class="ttname"><a href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">xtd::forms::anchor_styles::top</a></div><div class="ttdeci">@ top</div><div class="ttdoc">Bind control edges to the top of its container.</div><div class="ttdef"><b>Definition</b> anchor_styles.hpp:23</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of choice control. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/choice&gt;</span></div>
@@ -255,7 +242,10 @@ You can use these properties to manage the currently selected item in the list, 
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(choice_example::form1 {});</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="agroup__events_html_ga154af19f81ec830b3d4c0cc8a477cf0d"><div class="ttname"><a href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a></div><div class="ttdeci">generic_event_handler&lt; const xtd::event_args &amp; &gt; event_handler</div><div class="ttdoc">Represents the method that will handle an event that has no event data.</div><div class="ttdef"><b>Definition</b> event_handler.hpp:24</div></div>
+<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_enable_dark_mode_8cpp-example.html#_a29">application_enable_dark_mode.cpp</a>, <a class="el" href="application_enable_light_mode_8cpp-example.html#_a29">application_enable_light_mode.cpp</a>, <a class="el" href="border_style_8cpp-example.html#_a9">border_style.cpp</a>, <a class="el" href="button_appearance_8cpp-example.html#_a4">button_appearance.cpp</a>, <a class="el" href="check_box_appearance_8cpp-example.html#_a4">check_box_appearance.cpp</a>, <a class="el" href="check_box_renderer_8cpp-example.html#_a5">check_box_renderer.cpp</a>, <a class="el" href="choice_8cpp-example.html#_a2">choice.cpp</a>, <a class="el" href="form_background_image2_8cpp-example.html#_a8">form_background_image2.cpp</a>, <a class="el" href="form_decoration_8cpp-example.html#_a1">form_decoration.cpp</a>, <a class="el" href="images_8cpp-example.html#_a1">images.cpp</a>, <a class="el" href="images3_8cpp-example.html#_a2">images3.cpp</a>, <a class="el" href="lcd_label_appearance_8cpp-example.html#_a4">lcd_label_appearance.cpp</a>, <a class="el" href="message_box_appearance_8cpp-example.html#_a3">message_box_appearance.cpp</a>, <a class="el" href="picture_box_8cpp-example.html#_a2">picture_box.cpp</a>, <a class="el" href="radio_button_renderer_8cpp-example.html#_a5">radio_button_renderer.cpp</a>, <a class="el" href="some_controls_8cpp-example.html#_a29">some_controls.cpp</a>, <a class="el" href="some_system_controls_8cpp-example.html#_a29">some_system_controls.cpp</a>, <a class="el" href="themes_8cpp-example.html#_a29">themes.cpp</a>, and <a class="el" href="tool_bar_8cpp-example.html#_a6">tool_bar.cpp</a>.</dd>
 </dl>
@@ -3082,7 +3072,7 @@ Typically, you should not set the client_size of the control. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 5 2025 12:28:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 12:58:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
