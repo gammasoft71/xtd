@@ -92,7 +92,7 @@ public:
     }
     
     void reset() override {
-      sr_.base_stream()->get().seekg(0, std::ios_base::seekdir::beg);
+      sr_.base_stream()->get().seekg(0, std::ios_base::beg);
       current_.reset();
     }
   };
