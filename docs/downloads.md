@@ -1,7 +1,3 @@
----
-sidebar_position: 4
----
-
 # Download, install and uninstall
 
 ## Download the latest stable xtd version

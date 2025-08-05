@@ -1,7 +1,3 @@
----
-sidebar_position: 13
----
-
 # External tools libraries and toolkits
 
 ## External tools used

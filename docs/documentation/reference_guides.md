@@ -1,7 +1,3 @@
----
-sidebar_position: 3
----
-
 # Reference Guides
 
 All Reference Guides are available online, including older versions. 

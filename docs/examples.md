@@ -1,7 +1,3 @@
----
-sidebar_position: 3
----
-
 # Examples
 
 The classic first applications 'Hello World'.

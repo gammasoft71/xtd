@@ -1,7 +1,3 @@
----
-sidebar_position: 6
----
-
 # Support
 
 First of all, thank you for your attention to xtd.​ This project is an open source project. The developers who participate do so on their own time. But nevertheless we will try to answer your request as soon as possible.

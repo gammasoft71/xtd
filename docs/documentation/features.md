@@ -1,7 +1,3 @@
----
-sidebar_position: 13
----
-
 # Features
 
 [![features](/pictures/xtd_bento_dark.png)](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/xtd_bento_dark.png)
