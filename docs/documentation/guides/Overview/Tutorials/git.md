@@ -1,7 +1,3 @@
----
-sidebar_position: 15
----
-
 # Some useful git commands
 
 ## Clone

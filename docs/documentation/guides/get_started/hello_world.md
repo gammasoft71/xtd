@@ -1,7 +1,3 @@
----
-sidebar_position: 1
----
-
 # Hello World
 
 First, [download and install](/docs/downloads) the [xtd](/) on your computer.

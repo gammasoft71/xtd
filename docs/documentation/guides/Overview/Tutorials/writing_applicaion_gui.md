@@ -1,7 +1,3 @@
----
-sidebar_position: 13
----
-
 # Writing GUI application
 
 ## In this section

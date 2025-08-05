@@ -1,7 +1,3 @@
----
-sidebar_position: 15
----
-
 # Tools
 
 ## Command line tools

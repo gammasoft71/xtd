@@ -1,7 +1,3 @@
----
-sidebar_position: 10
----
-
 # Releases, patches and support
 
 ## Releases
