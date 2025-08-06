@@ -52,5 +52,5 @@ five
 
 ## See also
 
-* [Tips & Triks](/docs/documentation/tips_and_tricks)
+* [Tips & Tricks](/docs/documentation/tips_and_tricks)
 * [Documentation](/docs/documentation)
