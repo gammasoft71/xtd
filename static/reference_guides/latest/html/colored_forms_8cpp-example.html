@@ -121,9 +121,9 @@ $(function() {
 <div class="line">  <span class="keyword">auto</span> form_main = form::create(<span class="stringliteral">&quot;Main Form&quot;</span>, <a id="_a1" name="_a1"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1point.html">point</a> {screen::primary_screen().working_area().width - 340, 40});</div>
 <div class="line">  <span class="keyword">auto</span> create_button = button::create(form_main, <span class="stringliteral">&quot;Create&quot;</span>, {10, 10});</div>
 <div class="line"> </div>
-<div class="line">  create_button.click += [&amp;] {</div>
+<div class="line">  create_button.click += <a id="a2" name="a2"></a><a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">    <span class="keyword">auto</span> colored_form = new_ptr&lt;form&gt;();</div>
-<div class="line">    colored_form-&gt;text(<a id="_a2" name="_a2"></a><a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::to_string</a>(form_color)).back_color(color::from_known_color(form_color)).visible(<span class="keyword">true</span>);</div>
+<div class="line">    colored_form-&gt;text(<a id="_a3" name="_a3"></a><a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::to_string</a>(form_color)).back_color(color::from_known_color(form_color)).visible(<span class="keyword">true</span>);</div>
 <div class="line">    colored_forms.push_back(colored_form);</div>
 <div class="line">    form_color = form_color != known_color::yellow_green ? as&lt;known_color&gt;(as&lt;int&gt;(form_color) + 1) : known_color::alice_blue;</div>
 <div class="line">  };</div>
@@ -131,6 +131,7 @@ $(function() {
 <div class="line">  application::run(form_main);</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:79</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:16</div></div>
 <div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.hpp:10</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
@@ -141,7 +142,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -102,7 +102,7 @@ Inheritance diagram for xtd::bit_converter:</div>
 <div class="textblock"><p>Converts base data types to an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes, and an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to base data types. </p>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/bit_converter&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1bit__converter.html" title="Converts base data types to an xtd::array of bytes, and an xtd::array of bytes to base data types.">xtd::bit_converter</a> class helps manipulate value types in their fundamental form, as a series of bytes. A <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> is defined as an 8-bit unsigned integer. The <a class="el" href="classxtd_1_1bit__converter.html" title="Converts base data types to an xtd::array of bytes, and an xtd::array of bytes to base data types.">xtd::bit_converter</a> class includes static methods to convert each of the primitive types to and from an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes, as the following table illustrates. <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -110,7 +110,7 @@ Inheritance diagram for xtd::bit_converter:</div>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">bool   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1bit__converter.html#af59ce06dc1a300b44d3df4a78fb10c08" title="Returns the specified Boolean value as an xtd::array of bytes.">xtd::bit_converter::get_bytes(bool)</a>   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1bit__converter.html#a4a10409a152773df8eedf33f90f33505" title="Returns a Boolean value converted from one xtd::byte at a specified position in a xtd::byte xtd::arra...">xtd::bit_converter::to_boolean(const xtd::array&lt; xtd::byte &gt;&amp;, xtd::size)</a>    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">char32   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1bit__converter.html#a82c3a221ed0ae5b9b1c195179c111dd4" title="Returns the specified Char value as an xtd::array of bytes.">xtd::bit_converter::get_bytes(char32)</a>   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1bit__converter.html#a9a981adf85edaee4f90d6b7b50496c58" title="Returns a char32 converted from two bytes at a specified position in a xtd::byte xtd::array.">xtd::bit_converter::to_char(const xtd::array&lt; xtd::byte &gt;&amp;, xtd::size)</a>    </td></tr>
+<td class="markdownTableBodyNone">char32   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1bit__converter.html#a82c3a221ed0ae5b9b1c195179c111dd4" title="Returns the specified xtd::char32 value as an xtd::array of bytes.">xtd::bit_converter::get_bytes(char32)</a>   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1bit__converter.html#a9a981adf85edaee4f90d6b7b50496c58" title="Returns a char32 converted from two bytes at a specified position in a xtd::byte xtd::array.">xtd::bit_converter::to_char(const xtd::array&lt; xtd::byte &gt;&amp;, xtd::size)</a>    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">double   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1bit__converter.html#a80e9bc43bb5a125e91747b855407dc17" title="Returns the specified double value as an xtd::array of bytes.">xtd::bit_converter::get_bytes(double)</a> - or - <a class="el" href="classxtd_1_1bit__converter.html#a35202c1c711f7e9ff0c2d349de668208" title="Converts the specified double-precision floating point number to a 64-bit signed integer.">double_to_int64_bits(double)</a>   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1bit__converter.html#ab56a99b157b504b2d2b6a28b835cefff" title="Returns a double-precision floating point number converted from eight bytes at a specified position i...">xtd::bit_converter::to_double(const xtd::array&lt; xtd::byte &gt;&amp;, xtd::size)</a> - or - <a class="el" href="classxtd_1_1bit__converter.html#abd519e90934b9594fbd5dfa998752535" title="Converts the specified 64-bit signed integer to a double-precision floating point number.">int64_bits_to_double(int64)</a>    </td></tr>
 <tr class="markdownTableRowEven">
@@ -147,7 +147,7 @@ If you use <a class="el" href="classxtd_1_1bit__converter.html" title="Converts 
 <div class="line">      console::write_line(<span class="stringliteral">&quot;{0} = {1}: {2}&quot;</span>, value, int_value, value == int_value ? <span class="stringliteral">&quot;Round-trips&quot;</span> : <span class="stringliteral">&quot;Does not round-trip&quot;</span>);</div>
 <div class="line">      <span class="comment">// Convert bytes to unsigned int.</span></div>
 <div class="line">      <span class="keyword">auto</span> uint_value = bit_converter::to_uint32(bytes, 0);</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} = {1}: {2}&quot;</span>, value, uint_value, <span class="keyword">static_cast&lt;</span>uint<span class="keyword">&gt;</span>(value) == uint_value ? <span class="stringliteral">&quot;Round-trips&quot;</span> : <span class="stringliteral">&quot;Does not round-trip&quot;</span>);</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} = {1}: {2}&quot;</span>, value, uint_value, <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a><span class="keyword">&gt;</span>(value) == uint_value ? <span class="stringliteral">&quot;Round-trips&quot;</span> : <span class="stringliteral">&quot;Does not round-trip&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -158,7 +158,8 @@ If you use <a class="el" href="classxtd_1_1bit__converter.html" title="Converts 
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// -16 = -16: Round-trips</span></div>
 <div class="line"><span class="comment">// -16 = 4294967280: Round-trip</span></div>
-<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:167</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
+<div class="ttc" id="agroup__types_html_ga41c5d8b5d999ac5a2ff06fe57f38d5f5"><div class="ttname"><a href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">xtd::uint32</a></div><div class="ttdeci">uint32_t uint32</div><div class="ttdoc">Represents a 32-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> uint32.hpp:23</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
 </div><!-- fragment --> The order of bytes in the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> returned by the <a class="el" href="classxtd_1_1bit__converter.html#af59ce06dc1a300b44d3df4a78fb10c08" title="Returns the specified Boolean value as an xtd::array of bytes.">xtd::bit_converter::get_bytes</a> method overloads (as well as the order of bits in the integer returned by the <a class="el" href="classxtd_1_1bit__converter.html" title="Converts base data types to an xtd::array of bytes, and an xtd::array of bytes to base data types.">xtd::bit_converter</a>:double_to_int64_bits method and the order of hexadecimal strings returned by the to_string(xtd::byte[]) method) depends on whether the computer architecture is little-endian or big-endian. Similarly, the order of bytes in the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> and returned by the ToIntegerValue methods and the to_char method depends on whether the computer architecture is little-endian or big-endian. The endianness of an architecture is indicated by the is_little_endian property, which returns <code>true</code> on little-endian systems and <code>false</code> on big-endian systems. On little-endian systems, lower-order bytes precede higher-order bytes. On big-endian system, higher-order bytes precede lower-order bytes. The following table illustrates the difference in the <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays that result from passing the integer 1,234,567,890 (0x499602D2) to the <a class="el" href="classxtd_1_1bit__converter.html#a3ccdc52a1f0013e4cf06f6dfa8732653" title="Returns the specified int32 value as an xtd::array of bytes.">get_bytes(int32)</a> method. The bytes are listed in order from the <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> at index 0 to the <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> at index 3. <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -190,7 +191,7 @@ Because the return value of some methods depends on system architecture, be care
 <div class="line">  <span class="keyword">auto</span> a_char = <span class="charliteral">&#39;*&#39;</span>;</div>
 <div class="line">  <span class="keyword">auto</span> a_bool = <span class="keyword">true</span>;</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;This example of methods of the BitConverter class&quot;</span></div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;This example of methods of the bit_converter class&quot;</span></div>
 <div class="line">    <span class="stringliteral">&quot;\ngenerates the following output.\n&quot;</span>);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_struct" href="structxtd_1_1formatter.html">formatter</a>, <span class="stringliteral">&quot;argument&quot;</span>, <span class="stringliteral">&quot;byte array&quot;</span>);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_struct" href="structxtd_1_1formatter.html">formatter</a>, <span class="stringliteral">&quot;--------&quot;</span>, <span class="stringliteral">&quot;----------&quot;</span>);</div>
@@ -207,7 +208,7 @@ Because the return value of some methods depends on system architecture, be care
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// This example of methods of the BitConverter class</span></div>
+<div class="line"><span class="comment">// This example of methods of the bit_converter class</span></div>
 <div class="line"><span class="comment">// generates the following output.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">//                  argument                    byte array</span></div>
@@ -255,16 +256,19 @@ Public Types</h2></td></tr>
 <tr class="memdesc:af59ce06dc1a300b44d3df4a78fb10c08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified Boolean value as an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes.  <br /></td></tr>
 <tr class="separator:af59ce06dc1a300b44d3df4a78fb10c08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9aafb954e438595606b805548cd45368"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1bit__converter.html#a9aafb954e438595606b805548cd45368">get_bytes</a> (char value) noexcept</td></tr>
-<tr class="memdesc:a9aafb954e438595606b805548cd45368"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified Char value as an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes.  <br /></td></tr>
+<tr class="memdesc:a9aafb954e438595606b805548cd45368"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified char value as an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes.  <br /></td></tr>
 <tr class="separator:a9aafb954e438595606b805548cd45368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0dade8597ba8e3c628767d5900c7c56"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1bit__converter.html#aa0dade8597ba8e3c628767d5900c7c56">get_bytes</a> (<a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> value) noexcept</td></tr>
+<tr class="memdesc:aa0dade8597ba8e3c628767d5900c7c56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a" title="Represents a 8-bit unicode character.">xtd::char8</a> value as an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes.  <br /></td></tr>
+<tr class="separator:aa0dade8597ba8e3c628767d5900c7c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4dcc1de494fce2535b871b9630405d0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1bit__converter.html#af4dcc1de494fce2535b871b9630405d0">get_bytes</a> (<a class="el" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">char16</a> value) noexcept</td></tr>
-<tr class="memdesc:af4dcc1de494fce2535b871b9630405d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified Char value as an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes.  <br /></td></tr>
+<tr class="memdesc:af4dcc1de494fce2535b871b9630405d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified <a class="el" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570" title="Represents a 16-bit unicode character.">xtd::char16</a> value as an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes.  <br /></td></tr>
 <tr class="separator:af4dcc1de494fce2535b871b9630405d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82c3a221ed0ae5b9b1c195179c111dd4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1bit__converter.html#a82c3a221ed0ae5b9b1c195179c111dd4">get_bytes</a> (<a class="el" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">char32</a> value) noexcept</td></tr>
-<tr class="memdesc:a82c3a221ed0ae5b9b1c195179c111dd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified Char value as an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes.  <br /></td></tr>
+<tr class="memdesc:a82c3a221ed0ae5b9b1c195179c111dd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified <a class="el" href="group__types.html#ga989a1148b6ff15567dca430966b17c92" title="Represents a 32-bit unicode character.">xtd::char32</a> value as an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes.  <br /></td></tr>
 <tr class="separator:a82c3a221ed0ae5b9b1c195179c111dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f435f82f77c635d925b598a8f28375b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1bit__converter.html#a1f435f82f77c635d925b598a8f28375b">get_bytes</a> (<a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518">wchar</a> value) noexcept</td></tr>
-<tr class="memdesc:a1f435f82f77c635d925b598a8f28375b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified Char value as an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes.  <br /></td></tr>
+<tr class="memdesc:a1f435f82f77c635d925b598a8f28375b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified wchar value as an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes.  <br /></td></tr>
 <tr class="separator:a1f435f82f77c635d925b598a8f28375b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a80e9bc43bb5a125e91747b855407dc17"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1bit__converter.html#a80e9bc43bb5a125e91747b855407dc17">get_bytes</a> (double value) noexcept</td></tr>
 <tr class="memdesc:a80e9bc43bb5a125e91747b855407dc17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified double value as an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes.  <br /></td></tr>
@@ -461,7 +465,7 @@ Public Types</h2></td></tr>
 </div>
 </div>
 <a id="af59ce06dc1a300b44d3df4a78fb10c08" name="af59ce06dc1a300b44d3df4a78fb10c08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af59ce06dc1a300b44d3df4a78fb10c08">&#9670;&#160;</a></span>get_bytes() <span class="overload">[1/15]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af59ce06dc1a300b44d3df4a78fb10c08">&#9670;&#160;</a></span>get_bytes() <span class="overload">[1/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -497,7 +501,7 @@ Public Types</h2></td></tr>
 </div>
 </div>
 <a id="a9aafb954e438595606b805548cd45368" name="a9aafb954e438595606b805548cd45368"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9aafb954e438595606b805548cd45368">&#9670;&#160;</a></span>get_bytes() <span class="overload">[2/15]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aafb954e438595606b805548cd45368">&#9670;&#160;</a></span>get_bytes() <span class="overload">[2/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -520,20 +524,56 @@ Public Types</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the specified Char value as an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes. </p>
+<p>Returns the specified char value as an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>A Char value. </td></tr>
+    <tr><td class="paramname">value</td><td>A char value. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes with length 4. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example converts the bit patterns of Char values to <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays with the get_bytes method. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example converts the bit patterns of char values to <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays with the get_bytes method. <div class="fragment"></div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="aa0dade8597ba8e3c628767d5900c7c56" name="aa0dade8597ba8e3c628767d5900c7c56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0dade8597ba8e3c628767d5900c7c56">&#9670;&#160;</a></span>get_bytes() <span class="overload">[3/16]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; xtd::bit_converter::get_bytes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a>&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the specified <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a" title="Represents a 8-bit unicode character.">xtd::char8</a> value as an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>A <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a" title="Represents a 8-bit unicode character.">xtd::char8</a> value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes with length 4. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example converts the bit patterns of char values to <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays with the get_bytes method. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
 <a id="af4dcc1de494fce2535b871b9630405d0" name="af4dcc1de494fce2535b871b9630405d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af4dcc1de494fce2535b871b9630405d0">&#9670;&#160;</a></span>get_bytes() <span class="overload">[3/15]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af4dcc1de494fce2535b871b9630405d0">&#9670;&#160;</a></span>get_bytes() <span class="overload">[4/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -556,20 +596,20 @@ Public Types</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the specified Char value as an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes. </p>
+<p>Returns the specified <a class="el" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570" title="Represents a 16-bit unicode character.">xtd::char16</a> value as an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>A Char value. </td></tr>
+    <tr><td class="paramname">value</td><td>A <a class="el" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570" title="Represents a 16-bit unicode character.">xtd::char16</a> value. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes with length 4. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example converts the bit patterns of Char values to <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays with the get_bytes method. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example converts the bit patterns of <a class="el" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570" title="Represents a 16-bit unicode character.">xtd::char16</a> values to <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays with the get_bytes method. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
 <a id="a82c3a221ed0ae5b9b1c195179c111dd4" name="a82c3a221ed0ae5b9b1c195179c111dd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82c3a221ed0ae5b9b1c195179c111dd4">&#9670;&#160;</a></span>get_bytes() <span class="overload">[4/15]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a82c3a221ed0ae5b9b1c195179c111dd4">&#9670;&#160;</a></span>get_bytes() <span class="overload">[5/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -592,20 +632,20 @@ Public Types</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the specified Char value as an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes. </p>
+<p>Returns the specified <a class="el" href="group__types.html#ga989a1148b6ff15567dca430966b17c92" title="Represents a 32-bit unicode character.">xtd::char32</a> value as an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>A Char value. </td></tr>
+    <tr><td class="paramname">value</td><td>A <a class="el" href="group__types.html#ga989a1148b6ff15567dca430966b17c92" title="Represents a 32-bit unicode character.">xtd::char32</a> value. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes with length 4. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example converts the bit patterns of Char values to <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays with the get_bytes method. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example converts the bit patterns of <a class="el" href="group__types.html#ga989a1148b6ff15567dca430966b17c92" title="Represents a 32-bit unicode character.">xtd::char32</a> values to <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays with the get_bytes method. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
 <a id="a1f435f82f77c635d925b598a8f28375b" name="a1f435f82f77c635d925b598a8f28375b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f435f82f77c635d925b598a8f28375b">&#9670;&#160;</a></span>get_bytes() <span class="overload">[5/15]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f435f82f77c635d925b598a8f28375b">&#9670;&#160;</a></span>get_bytes() <span class="overload">[6/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -628,20 +668,20 @@ Public Types</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the specified Char value as an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes. </p>
+<p>Returns the specified wchar value as an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>A Char value. </td></tr>
+    <tr><td class="paramname">value</td><td>A wchar value. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes with length 4. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example converts the bit patterns of Char values to <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays with the get_bytes method. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example converts the bit patterns of wchar values to <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays with the get_bytes method. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
 <a id="a80e9bc43bb5a125e91747b855407dc17" name="a80e9bc43bb5a125e91747b855407dc17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80e9bc43bb5a125e91747b855407dc17">&#9670;&#160;</a></span>get_bytes() <span class="overload">[6/15]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a80e9bc43bb5a125e91747b855407dc17">&#9670;&#160;</a></span>get_bytes() <span class="overload">[7/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -677,7 +717,7 @@ Public Types</h2></td></tr>
 </div>
 </div>
 <a id="a5ccefb8f063d64389cd5ddefc8f02274" name="a5ccefb8f063d64389cd5ddefc8f02274"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ccefb8f063d64389cd5ddefc8f02274">&#9670;&#160;</a></span>get_bytes() <span class="overload">[7/15]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ccefb8f063d64389cd5ddefc8f02274">&#9670;&#160;</a></span>get_bytes() <span class="overload">[8/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -712,7 +752,7 @@ Public Types</h2></td></tr>
 </div>
 </div>
 <a id="a954957b73294e403a44abe0156133ef0" name="a954957b73294e403a44abe0156133ef0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a954957b73294e403a44abe0156133ef0">&#9670;&#160;</a></span>get_bytes() <span class="overload">[8/15]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a954957b73294e403a44abe0156133ef0">&#9670;&#160;</a></span>get_bytes() <span class="overload">[9/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -748,7 +788,7 @@ Public Types</h2></td></tr>
 </div>
 </div>
 <a id="a3ccdc52a1f0013e4cf06f6dfa8732653" name="a3ccdc52a1f0013e4cf06f6dfa8732653"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ccdc52a1f0013e4cf06f6dfa8732653">&#9670;&#160;</a></span>get_bytes() <span class="overload">[9/15]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ccdc52a1f0013e4cf06f6dfa8732653">&#9670;&#160;</a></span>get_bytes() <span class="overload">[10/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -784,7 +824,7 @@ Public Types</h2></td></tr>
 </div>
 </div>
 <a id="ad6fc204ccce5465ea23b023d33f76be0" name="ad6fc204ccce5465ea23b023d33f76be0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6fc204ccce5465ea23b023d33f76be0">&#9670;&#160;</a></span>get_bytes() <span class="overload">[10/15]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6fc204ccce5465ea23b023d33f76be0">&#9670;&#160;</a></span>get_bytes() <span class="overload">[11/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -820,7 +860,7 @@ Public Types</h2></td></tr>
 </div>
 </div>
 <a id="a5a3251d4755c153cc6cce64fc87595fc" name="a5a3251d4755c153cc6cce64fc87595fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a3251d4755c153cc6cce64fc87595fc">&#9670;&#160;</a></span>get_bytes() <span class="overload">[11/15]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a3251d4755c153cc6cce64fc87595fc">&#9670;&#160;</a></span>get_bytes() <span class="overload">[12/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -856,7 +896,7 @@ Public Types</h2></td></tr>
 </div>
 </div>
 <a id="a5f0efddd29fab139810e0e03f21537d5" name="a5f0efddd29fab139810e0e03f21537d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f0efddd29fab139810e0e03f21537d5">&#9670;&#160;</a></span>get_bytes() <span class="overload">[12/15]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f0efddd29fab139810e0e03f21537d5">&#9670;&#160;</a></span>get_bytes() <span class="overload">[13/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -891,7 +931,7 @@ Public Types</h2></td></tr>
 </div>
 </div>
 <a id="a33bdb804754ba3f700b8151c18828454" name="a33bdb804754ba3f700b8151c18828454"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33bdb804754ba3f700b8151c18828454">&#9670;&#160;</a></span>get_bytes() <span class="overload">[13/15]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a33bdb804754ba3f700b8151c18828454">&#9670;&#160;</a></span>get_bytes() <span class="overload">[14/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -927,7 +967,7 @@ Public Types</h2></td></tr>
 </div>
 </div>
 <a id="ad8a17a6b088a487f84d20ecf762c052e" name="ad8a17a6b088a487f84d20ecf762c052e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8a17a6b088a487f84d20ecf762c052e">&#9670;&#160;</a></span>get_bytes() <span class="overload">[14/15]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8a17a6b088a487f84d20ecf762c052e">&#9670;&#160;</a></span>get_bytes() <span class="overload">[15/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -963,7 +1003,7 @@ Public Types</h2></td></tr>
 </div>
 </div>
 <a id="a7a1ea5e131bf2b58a096db3a84f111a7" name="a7a1ea5e131bf2b58a096db3a84f111a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7a1ea5e131bf2b58a096db3a84f111a7">&#9670;&#160;</a></span>get_bytes() <span class="overload">[15/15]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a1ea5e131bf2b58a096db3a84f111a7">&#9670;&#160;</a></span>get_bytes() <span class="overload">[16/16]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2820,7 +2860,7 @@ The order of hexadecimal strings returned by the to_string method depends on whe
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

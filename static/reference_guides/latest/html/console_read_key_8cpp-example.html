@@ -89,7 +89,7 @@ $(function() {
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  console::cancel_key_press += [](<a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1console__cancel__event__args.html">xtd::console_cancel_event_args</a> &amp; e) {</div>
+<div class="line">  console::cancel_key_press += <a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1console__cancel__event__args.html">xtd::console_cancel_event_args</a> &amp; e) {</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;Signal {0} intercepted !&quot;</span>, e.special_key());</div>
 <div class="line">    e.cancel(<span class="keyword">true</span>);</div>
 <div class="line">  };</div>
@@ -114,12 +114,13 @@ $(function() {
 <div class="line"><span class="comment">// Signal control_c intercepted !</span></div>
 <div class="line"><span class="comment">// Key = escape (27), Char = &#39; (27), Modifiers = 0</span></div>
 <div class="ttc" id="aclassxtd_1_1console__cancel__event__args_html"><div class="ttname"><a href="classxtd_1_1console__cancel__event__args.html">xtd::console_cancel_event_args</a></div><div class="ttdoc">Provides data for the console::cancel_key_press event. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> console_cancel_event_args.hpp:22</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

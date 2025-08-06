@@ -150,7 +150,7 @@ Inheritance diagram for xtd::forms::message_box:</div>
 <div class="line">    button_show_message.location({10, 10});</div>
 <div class="line">    button_show_message.text(<span class="stringliteral">&quot;Message...&quot;</span>);</div>
 <div class="line">    button_show_message.width(100);</div>
-<div class="line">    button_show_message.click += [&amp;] {</div>
+<div class="line">    button_show_message.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      <span class="keyword">auto</span> result = message_box::show(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Hello, World!&quot;</span>, <span class="stringliteral">&quot;Message&quot;</span>, message_box_buttons::ok_cancel, message_box_icon::warning);</div>
 <div class="line">      label_dialog_result.text(string::format(<span class="stringliteral">&quot;dialog_result = {}&quot;</span>, result));</div>
 <div class="line">    };</div>
@@ -171,6 +171,7 @@ Inheritance diagram for xtd::forms::message_box:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.hpp:49</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1label_html"><div class="ttname"><a href="classxtd_1_1forms_1_1label.html">xtd::forms::label</a></div><div class="ttdoc">Represents a standard Windows label.</div><div class="ttdef"><b>Definition</b> label.hpp:38</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5"><div class="ttname"><a href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5">xtd::forms::bounds_specified::location</a></div><div class="ttdeci">@ location</div><div class="ttdoc">Specifies that both the x and y coordinates of the control are defined.</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
@@ -756,7 +757,7 @@ Inheritance diagram for xtd::forms::message_box:</div>
 
 <p>Displays a message box. </p>
 <dl class="section return"><dt>Returns</dt><dd>One of the <a class="el" href="group__xtd__forms.html#ga4f0cffaa8fcb3708782f28d60386c525" title="Specifies identifiers to indicate the return value of a dialog box.">xtd::forms::dialog_result</a> values. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="form2_8cpp-example.html#a1">form2.cpp</a>, and <a class="el" href="hello_world_message_box3_8cpp-example.html#a0">hello_world_message_box3.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="form2_8cpp-example.html#a2">form2.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1184,7 +1185,7 @@ Inheritance diagram for xtd::forms::message_box:</div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

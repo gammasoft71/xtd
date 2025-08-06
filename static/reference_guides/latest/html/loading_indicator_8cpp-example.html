@@ -129,7 +129,7 @@ $(function() {
 <div class="line">      list_box1.bounds({20, 20, 150, 200});</div>
 <div class="line">      list_box1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom);</div>
 <div class="line">      list_box1.items().push_back_range({{<span class="stringliteral">&quot;Standard&quot;</span>, loading_indicator_style::standard}, {<span class="stringliteral">&quot;System&quot;</span>, loading_indicator_style::system}, {<span class="stringliteral">&quot;Bar&quot;</span>, loading_indicator_style::bar}, {<span class="stringliteral">&quot;Circle bars&quot;</span>, loading_indicator_style::circle_bars}, {<span class="stringliteral">&quot;Circle blinks&quot;</span>, loading_indicator_style::circle_blinks}, {<span class="stringliteral">&quot;Five lines&quot;</span>, loading_indicator_style::five_lines}, {<span class="stringliteral">&quot;Five lines center&quot;</span>, loading_indicator_style::five_lines_center}, {<span class="stringliteral">&quot;Five lines chronological&quot;</span>, loading_indicator_style::five_lines_chronological}, {<span class="stringliteral">&quot;Five lines pulse&quot;</span>, loading_indicator_style::five_lines_pulse}, {<span class="stringliteral">&quot;Five lines wave&quot;</span>, loading_indicator_style::five_lines_wave}, {<span class="stringliteral">&quot;Pulse&quot;</span>, loading_indicator_style::pulse}, {<span class="stringliteral">&quot;Pulse outline&quot;</span>, loading_indicator_style::pulse_outline}, {<span class="stringliteral">&quot;Three balls&quot;</span>, loading_indicator_style::three_balls}, {<span class="stringliteral">&quot;Three balls bouncing&quot;</span>, loading_indicator_style::three_balls_bouncing}, {<span class="stringliteral">&quot;Three balls rotation&quot;</span>, loading_indicator_style::three_balls_rotation}});</div>
-<div class="line">      list_box1.selected_index_changed += [&amp;] {</div>
+<div class="line">      list_box1.selected_index_changed += <a id="a1" name="a1"></a><a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        loading_indicator1.loading_indicator_style(as&lt;forms::loading_indicator_style&gt;(list_box1.selected_item().tag()));</div>
 <div class="line">      };</div>
 <div class="line">      list_box1.selected_item(<span class="stringliteral">&quot;Standard&quot;</span>);</div>
@@ -139,7 +139,7 @@ $(function() {
 <div class="line">      panel1.back_color(drawing::system_colors::window());</div>
 <div class="line">      panel1.bounds({190, 20, 150, 200});</div>
 <div class="line">      panel1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);</div>
-<div class="line">      panel1.click += loading_indicator1.click += [&amp;] {</div>
+<div class="line">      panel1.click += loading_indicator1.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        loading_indicator1.running(!loading_indicator1.running());</div>
 <div class="line">      };</div>
 <div class="line">      </div>
@@ -151,9 +151,9 @@ $(function() {
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1forms_1_1list__box.html">list_box</a> list_box1;</div>
-<div class="line">    <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1forms_1_1panel.html">panel</a> panel1;</div>
-<div class="line">    <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1forms_1_1loading__indicator.html">loading_indicator</a> loading_indicator1;</div>
+<div class="line">    <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1forms_1_1list__box.html">list_box</a> list_box1;</div>
+<div class="line">    <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1forms_1_1panel.html">panel</a> panel1;</div>
+<div class="line">    <a id="_a4" name="_a4"></a><a class="code hl_class" href="classxtd_1_1forms_1_1loading__indicator.html">loading_indicator</a> loading_indicator1;</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -164,13 +164,14 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1forms_1_1list__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1list__box.html">xtd::forms::list_box</a></div><div class="ttdoc">Represents a standard Windows list box.</div><div class="ttdef"><b>Definition</b> list_box.hpp:33</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1loading__indicator_html"><div class="ttname"><a href="classxtd_1_1forms_1_1loading__indicator.html">xtd::forms::loading_indicator</a></div><div class="ttdoc">Represents a loading indicator control.</div><div class="ttdef"><b>Definition</b> loading_indicator.hpp:31</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1panel_html"><div class="ttname"><a href="classxtd_1_1forms_1_1panel.html">xtd::forms::panel</a></div><div class="ttdoc">Used to group collections of controls.</div><div class="ttdef"><b>Definition</b> panel.hpp:32</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

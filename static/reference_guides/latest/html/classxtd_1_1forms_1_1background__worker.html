@@ -111,20 +111,7 @@ To execute a time-consuming operation in the background, create a <a class="el" 
 To set up for a background operation, add an event handler for the <a class="el" href="classxtd_1_1forms_1_1background__worker.html#aa4047b732cf383aa932c806080d03216" title="Occurs when run_worker_async() is called.">xtd::forms::background_worker::do_work</a> event. Call your time-consuming operation in this event handler. To start the operation, call run_worker_async. To receive notifications of progress updates, handle the progress_changed event. To receive a notification when the operation is completed, handle the run_worker_completed event. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>You must be careful not to manipulate any user-interface objects in your <a class="el" href="classxtd_1_1forms_1_1background__worker.html#aa4047b732cf383aa932c806080d03216" title="Occurs when run_worker_async() is called.">xtd::forms::background_worker::do_work</a> event handler. Instead, communicate to the user interface through the progress_changed and run_worker_completed events. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If your background operation requires a parameter, call run_worker_async with your parameter. Inside the <a class="el" href="classxtd_1_1forms_1_1background__worker.html#aa4047b732cf383aa932c806080d03216" title="Occurs when run_worker_async() is called.">xtd::forms::background_worker::do_work</a> event handler, you can extract the parameter from the <a class="el" href="classxtd_1_1forms_1_1do__work__event__args.html#a39778c218248684139364f371ec5d9b0" title="Gets a value that represents the argument of an asynchronous operation.">do_work_event_args.argument</a> property. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> component. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/background_worker&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/panel&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/progress_bar&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/text_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> component. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>background_worker_example {</div>
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
@@ -135,9 +122,9 @@ To set up for a background operation, add an event handler for the <a class="el"
 <div class="line"> </div>
 <div class="line">    form1() {</div>
 <div class="line">      text(<span class="stringliteral">&quot;Background worker example&quot;</span>);</div>
-<div class="line">      <a class="code hl_enumeration" href="group__xtd__forms.html#ga988a6abd919c15254f45a0bf9c2dcb17">auto_size_mode</a>(forms::auto_size_mode::grow_and_shrink);</div>
+<div class="line">      auto_size_mode(forms::auto_size_mode::grow_and_shrink);</div>
 <div class="line">      auto_size(<span class="keyword">true</span>);</div>
-<div class="line">      form_closed += [&amp;] {</div>
+<div class="line">      form_closed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        cancel_button.perform_click();</div>
 <div class="line">      };</div>
 <div class="line">      </div>
@@ -153,7 +140,7 @@ To set up for a background operation, add an event handler for the <a class="el"
 <div class="line">      </div>
 <div class="line">      run_button.location({10, 10});</div>
 <div class="line">      run_button.text(<span class="stringliteral">&quot;Run&quot;</span>);</div>
-<div class="line">      run_button.click += [&amp;] {</div>
+<div class="line">      run_button.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        progress_panel.visible(<span class="keyword">true</span>);</div>
 <div class="line">        cancel_button.enabled(<span class="keyword">true</span>);</div>
 <div class="line">        run_button.enabled(<span class="keyword">false</span>);</div>
@@ -165,7 +152,7 @@ To set up for a background operation, add an event handler for the <a class="el"
 <div class="line">      cancel_button.location({215, 10});</div>
 <div class="line">      cancel_button.text(<span class="stringliteral">&quot;Cancel&quot;</span>);</div>
 <div class="line">      cancel_button.enabled(<span class="keyword">false</span>);</div>
-<div class="line">      cancel_button.click += [&amp;] {</div>
+<div class="line">      cancel_button.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        cancel_button.enabled(<span class="keyword">false</span>);</div>
 <div class="line">        worker.cancel_async();</div>
 <div class="line">      };</div>
@@ -185,7 +172,7 @@ To set up for a background operation, add an event handler for the <a class="el"
 <div class="line">      </div>
 <div class="line">      worker.worker_supports_cancellation(<span class="keyword">true</span>);</div>
 <div class="line">      worker.worker_reports_progress(<span class="keyword">true</span>);</div>
-<div class="line">      worker.do_work += [&amp;] {</div>
+<div class="line">      worker.do_work += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span> step = 1; step &lt;= progress.maximum(); ++step) {</div>
 <div class="line">          <span class="keywordflow">if</span> (worker.cancellation_pending()) <span class="keywordflow">break</span>; <span class="comment">// stop work...</span></div>
 <div class="line">          thread::sleep(100_ms); <span class="comment">// simulate work...</span></div>
@@ -193,12 +180,12 @@ To set up for a background operation, add an event handler for the <a class="el"
 <div class="line">        }</div>
 <div class="line">      };</div>
 <div class="line">      </div>
-<div class="line">      worker.progress_changed += [&amp;](<span class="keywordtype">object</span> &amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1forms_1_1progress__changed__event__args.html">progress_changed_event_args</a> &amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
+<div class="line">      worker.progress_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keywordtype">object</span> &amp; sender, <span class="keyword">const</span> progress_changed_event_args &amp; e) {</div>
 <div class="line">        progress.value(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.progress_percentage());</div>
-<div class="line">        progress_text.append_text(string::format(<span class="stringliteral">&quot;{}{}&quot;</span>, std::any_cast&lt;string&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.user_state()), environment::new_line()));</div>
+<div class="line">        progress_text.append_text(string::format(<span class="stringliteral">&quot;{}{}&quot;</span>, as&lt;string&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.user_state()), environment::new_line()));</div>
 <div class="line">      };</div>
 <div class="line">      </div>
-<div class="line">      worker.run_worker_completed += [&amp;](<span class="keywordtype">object</span> &amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1forms_1_1run__worker__completed__event__args.html">run_worker_completed_event_args</a> &amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
+<div class="line">      worker.run_worker_completed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keywordtype">object</span> &amp; sender, <span class="keyword">const</span> run_worker_completed_event_args &amp; e) {</div>
 <div class="line">        progress_panel.visible(<span class="keyword">false</span>);</div>
 <div class="line">        run_button.enabled(<span class="keyword">true</span>);</div>
 <div class="line">        cancel_button.enabled(<span class="keyword">false</span>);</div>
@@ -209,36 +196,27 @@ To set up for a background operation, add an event handler for the <a class="el"
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1panel.html">panel</a> command_panel;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1panel.html">panel</a> progress_panel;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> run_button;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> cancel_button;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> status;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1progress__bar.html">progress_bar</a> progress;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> progress_text;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1background__worker.html">background_worker</a> worker;</div>
+<div class="line">    <a class="code hl_typedef" href="group__style__sheets.html#gaae87e0a9c1c5ae2ac0e089e242234eca">panel</a> command_panel;</div>
+<div class="line">    <a class="code hl_typedef" href="group__style__sheets.html#gaae87e0a9c1c5ae2ac0e089e242234eca">panel</a> progress_panel;</div>
+<div class="line">    <a class="code hl_typedef" href="group__style__sheets.html#ga20f9c51904cab0da365efa6c57b84908">button</a> run_button;</div>
+<div class="line">    <a class="code hl_typedef" href="group__style__sheets.html#ga20f9c51904cab0da365efa6c57b84908">button</a> cancel_button;</div>
+<div class="line">    <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> status;</div>
+<div class="line">    progress_bar progress;</div>
+<div class="line">    <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> progress_text;</div>
+<div class="line">    background_worker worker;</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(background_worker_example::form1::main);</div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1background__worker_html"><div class="ttname"><a href="classxtd_1_1forms_1_1background__worker.html">xtd::forms::background_worker</a></div><div class="ttdoc">Executes an operation on a separate thread.</div><div class="ttdef"><b>Definition</b> background_worker.hpp:34</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.hpp:49</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1label_html"><div class="ttname"><a href="classxtd_1_1forms_1_1label.html">xtd::forms::label</a></div><div class="ttdoc">Represents a standard Windows label.</div><div class="ttdef"><b>Definition</b> label.hpp:38</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1panel_html"><div class="ttname"><a href="classxtd_1_1forms_1_1panel.html">xtd::forms::panel</a></div><div class="ttdoc">Used to group collections of controls.</div><div class="ttdef"><b>Definition</b> panel.hpp:32</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1progress__bar_html"><div class="ttname"><a href="classxtd_1_1forms_1_1progress__bar.html">xtd::forms::progress_bar</a></div><div class="ttdoc">Represents a Windows progress bar control.</div><div class="ttdef"><b>Definition</b> progress_bar.hpp:40</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1progress__changed__event__args_html"><div class="ttname"><a href="classxtd_1_1forms_1_1progress__changed__event__args.html">xtd::forms::progress_changed_event_args</a></div><div class="ttdoc">Provides data for the xtd::forms::background_worker::progress_changed event handler.</div><div class="ttdef"><b>Definition</b> progress_changed_event_args.hpp:23</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1run__worker__completed__event__args_html"><div class="ttname"><a href="classxtd_1_1forms_1_1run__worker__completed__event__args.html">xtd::forms::run_worker_completed_event_args</a></div><div class="ttdoc">Provides data for the xtd::forms::background_worker::run_worker_completed event handler.</div><div class="ttdef"><b>Definition</b> run_worker_completed_event_args.hpp:24</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1text__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1text__box.html">xtd::forms::text_box</a></div><div class="ttdoc">Represents a standard Windows text box.</div><div class="ttdef"><b>Definition</b> text_box.hpp:31</div></div>
-<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:167</div></div>
+<div class="ttc" id="agroup__colors_html_ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb"><div class="ttname"><a href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">xtd::drawing::known_color::text_box</a></div><div class="ttdeci">@ text_box</div><div class="ttdoc">The system-defined color of the accent color (macos specific. On other platform is same as window).</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
+<div class="ttc" id="agroup__style__sheets_html_ga0095c55e57882e69ada99760a885e216"><div class="ttname"><a href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">xtd::forms::style_sheets::label</a></div><div class="ttdeci">xtd::forms::style_sheets::control label</div><div class="ttdoc">The label data allows you to specify the box of a label control.</div><div class="ttdef"><b>Definition</b> label.hpp:25</div></div>
+<div class="ttc" id="agroup__style__sheets_html_ga20f9c51904cab0da365efa6c57b84908"><div class="ttname"><a href="group__style__sheets.html#ga20f9c51904cab0da365efa6c57b84908">xtd::forms::style_sheets::button</a></div><div class="ttdeci">xtd::forms::style_sheets::control button</div><div class="ttdoc">The buttton data allows you to specify the box of a button control.</div><div class="ttdef"><b>Definition</b> button.hpp:25</div></div>
+<div class="ttc" id="agroup__style__sheets_html_gaae87e0a9c1c5ae2ac0e089e242234eca"><div class="ttname"><a href="group__style__sheets.html#gaae87e0a9c1c5ae2ac0e089e242234eca">xtd::forms::style_sheets::panel</a></div><div class="ttdeci">xtd::forms::style_sheets::control panel</div><div class="ttdoc">The panel data allows you to specify the box of a panel control.</div><div class="ttdef"><b>Definition</b> panel.hpp:25</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ga988a6abd919c15254f45a0bf9c2dcb17"><div class="ttname"><a href="group__xtd__forms.html#ga988a6abd919c15254f45a0bf9c2dcb17">xtd::forms::auto_size_mode</a></div><div class="ttdeci">auto_size_mode</div><div class="ttdoc">Specifies how a control will behave when its auto_size property is enabled.</div><div class="ttdef"><b>Definition</b> auto_size_mode.hpp:22</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
-<div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="background_worker_8cpp-example.html#_a8">background_worker.cpp</a>.</dd>
-</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Events</h2></td></tr>
 <tr class="memitem:aa4047b732cf383aa932c806080d03216"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1background__worker.html">background_worker</a>, <a class="el" href="group__events.html#gaa747f854c033e2b808066256c5f9d80c">do_work_event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1background__worker.html#aa4047b732cf383aa932c806080d03216">do_work</a></td></tr>
@@ -856,7 +834,7 @@ template&lt;class argument_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

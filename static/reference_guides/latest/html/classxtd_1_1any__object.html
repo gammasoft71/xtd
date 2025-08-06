@@ -109,11 +109,7 @@ Inheritance diagram for xtd::any_object:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example illustrates the use of <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/any_object&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/date_time&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example illustrates the use of <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>foo1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1icomparable.html">icomparable</a>&lt;foo1&gt;, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">iequatable</a>&lt;foo1&gt; {</div>
 <div class="line">  <span class="keyword">explicit</span> foo1(<span class="keywordtype">int</span> v) : value(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9e3669d19b675bd57058fd4664205d2a">v</a>) {}</div>
@@ -142,10 +138,10 @@ Inheritance diagram for xtd::any_object:</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> = <a class="code hl_class" href="classxtd_1_1any__object.html">any_object</a> {};</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> = <a class="code hl_function" href="classxtd_1_1any__object.html#a7a574a2f1f7bf730d27765e441cbf14a">any_object</a> {};</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> = <span class="stringliteral">&quot;one&quot;</span>;</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;a = {} =&gt; {} ({})&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="code hl_function" href="group__xtd__core.html#ga3cd4acac75391fb1ef33ea63e65881e2">as&lt;string&gt;</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>), <a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(<a class="code hl_function" href="group__xtd__core.html#ga3cd4acac75391fb1ef33ea63e65881e2">as&lt;string&gt;</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>)));</div>
-<div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> = <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> {1971, 1, 5};</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> = <a class="code hl_enumvalue" href="group__diagnostics.html#gga897ca504c8b1ff350135bff87494c0dfad611c46f8e65d9e049afe165de18c264">date_time</a> {1971, 1, 5};</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;a = {} =&gt; {} ({})&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, as&lt;date_time&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>), <a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(as&lt;date_time&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>)));</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a> = 42;</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;a = {} =&gt; {} ({})&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="code hl_function" href="group__xtd__core.html#gaf63998e394ab7515941ad18afc0d3f6e">as&lt;int32&gt;</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>), <a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(<a class="code hl_function" href="group__xtd__core.html#gaf63998e394ab7515941ad18afc0d3f6e">as&lt;int32&gt;</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>)));</div>
@@ -168,16 +164,16 @@ Inheritance diagram for xtd::any_object:</div>
 <div class="line"><span class="comment">// a = 42 =&gt; 42 (foo1)</span></div>
 <div class="line"><span class="comment">// a = foo2 =&gt; NA (foo2)</span></div>
 <div class="line"><span class="comment">// a = wednesday =&gt; wednesday (xtd::day_of_week)</span></div>
-<div class="ttc" id="aclassxtd_1_1any__object_html"><div class="ttname"><a href="classxtd_1_1any__object.html">xtd::any_object</a></div><div class="ttdoc">Represent a polymorphic wrapper capable of holding any type.</div><div class="ttdef"><b>Definition</b> any_object.hpp:29</div></div>
+<div class="ttc" id="aclassxtd_1_1any__object_html_a7a574a2f1f7bf730d27765e441cbf14a"><div class="ttname"><a href="classxtd_1_1any__object.html#a7a574a2f1f7bf730d27765e441cbf14a">xtd::any_object::any_object</a></div><div class="ttdeci">any_object() noexcept=default</div><div class="ttdoc">Initializes a new instance of the xtd::any_object class.</div></div>
 <div class="ttc" id="aclassxtd_1_1any__object_html_aef3445700d50ea9699aec36b46299cac"><div class="ttname"><a href="classxtd_1_1any__object.html#aef3445700d50ea9699aec36b46299cac">xtd::any_object::value</a></div><div class="ttdeci">const object &amp; value() const</div><div class="ttdoc">Gets the value of the current xtd::any_object object if it has been assigned a valid underlying value...</div><div class="ttdef"><b>Definition</b> any_object.hpp:67</div></div>
 <div class="ttc" id="aclassxtd_1_1box__integer_html"><div class="ttname"><a href="classxtd_1_1box__integer.html">xtd::box_integer</a></div><div class="ttdoc">Represents a boxed integer object.</div><div class="ttdef"><b>Definition</b> box_integer.hpp:52</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1date__time_html"><div class="ttname"><a href="classxtd_1_1date__time.html">xtd::date_time</a></div><div class="ttdoc">Represents an instant in time, typically expressed as a date and time of day.</div><div class="ttdef"><b>Definition</b> date_time.hpp:85</div></div>
 <div class="ttc" id="aclassxtd_1_1hash__code_html_aeca6f45b8de9d6bf5359c3d2a02bc640"><div class="ttname"><a href="classxtd_1_1hash__code.html#aeca6f45b8de9d6bf5359c3d2a02bc640">xtd::hash_code::combine</a></div><div class="ttdeci">static xtd::size combine(args_t... values) noexcept</div><div class="ttdoc">Combines values into a hash code.</div><div class="ttdef"><b>Definition</b> hash_code.hpp:70</div></div>
 <div class="ttc" id="aclassxtd_1_1icomparable_html"><div class="ttname"><a href="classxtd_1_1icomparable.html">xtd::icomparable</a></div><div class="ttdoc">Defines a generalized comparison method that a value type or class implements to create a type-specif...</div><div class="ttdef"><b>Definition</b> icomparable.hpp:21</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:22</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:44</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html_af2d19ef177db62351b58a42f22138dbe"><div class="ttname"><a href="classxtd_1_1object.html#af2d19ef177db62351b58a42f22138dbe">xtd::object::to_string</a></div><div class="ttdeci">virtual xtd::string to_string() const noexcept</div><div class="ttdoc">Returns a xtd::string that represents the current object.</div></div>
+<div class="ttc" id="agroup__diagnostics_html_gga897ca504c8b1ff350135bff87494c0dfad611c46f8e65d9e049afe165de18c264"><div class="ttname"><a href="group__diagnostics.html#gga897ca504c8b1ff350135bff87494c0dfad611c46f8e65d9e049afe165de18c264">xtd::diagnostics::trace_options::date_time</a></div><div class="ttdeci">@ date_time</div><div class="ttdoc">Write the date and time.</div></div>
 <div class="ttc" id="agroup__keywords_html_gafa2ffd9b4a6568b57ab2731bec095d99"><div class="ttname"><a href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></div><div class="ttdeci">#define typeof_</div><div class="ttdoc">Used to obtain the type object of a specified type or object.</div><div class="ttdef"><b>Definition</b> typeof.hpp:45</div></div>
 <div class="ttc" id="agroup__types_html_ga205462e259a4eca1545511085c2c350e"><div class="ttname"><a href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a></div><div class="ttdeci">int32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> int32.hpp:23</div></div>
 <div class="ttc" id="agroup__types_html_ga92c4f59ae39104d31ce9c0c20810001d"><div class="ttname"><a href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
@@ -188,11 +184,10 @@ Inheritance diagram for xtd::any_object:</div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">xtd::console_key::f</a></div><div class="ttdeci">@ f</div><div class="ttdoc">The F key.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a9e3669d19b675bd57058fd4664205d2a"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9e3669d19b675bd57058fd4664205d2a">xtd::console_key::v</a></div><div class="ttdeci">@ v</div><div class="ttdoc">The V key.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggaf3aa09e1775eb8b85ca5974e8b926be2aaae446086f8e81194ed115b566bf2e3d"><div class="ttname"><a href="group__xtd__core.html#ggaf3aa09e1775eb8b85ca5974e8b926be2aaae446086f8e81194ed115b566bf2e3d">xtd::day_of_week::wednesday</a></div><div class="ttdeci">@ wednesday</div><div class="ttdoc">Indicates wednesday.</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
 <div class="ttc" id="anamespacextd_html_a513380c9aac7fdd5eefd7697e2cd3776"><div class="ttname"><a href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">xtd::to_string</a></div><div class="ttdeci">xtd::string to_string(int val)</div><div class="ttdoc">Converts a signed integer to xtd::string.</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>TTo add a class, structure or any other type unknown to xtd, you need to implement the <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> and xtd::icompoabale interfaces or overrride the == and &lt; operetors. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="any_8cpp-example.html#_a6">any.cpp</a>, <a class="el" href="any_info_8cpp-example.html#_a6">any_info.cpp</a>, <a class="el" href="ienumerable_8cpp-example.html#_a10">ienumerable.cpp</a>, <a class="el" href="ienumerator_8cpp-example.html#_a6">ienumerator.cpp</a>, and <a class="el" href="ilist_8cpp-example.html#_a4">ilist.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="form_custom_event_8cpp-example.html#_a1">form_custom_event.cpp</a>, <a class="el" href="ienumerable_8cpp-example.html#_a10">ienumerable.cpp</a>, <a class="el" href="ienumerator_8cpp-example.html#_a6">ienumerator.cpp</a>, and <a class="el" href="ilist_8cpp-example.html#_a4">ilist.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
@@ -241,12 +236,12 @@ Inheritance diagram for xtd::any_object:</div>
 <tr class="separator:a6a014861bcf453a936e4123fcddbdda0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Operators</h2></td></tr>
-<tr class="memitem:a7be6c97e961c0bb5e3b128a27f5f0545"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1any__object.html#a7be6c97e961c0bb5e3b128a27f5f0545">operator=</a> (const <a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>)=default</td></tr>
-<tr class="memdesc:a7be6c97e961c0bb5e3b128a27f5f0545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator. Replaces the contents with a copy of the contents of other.  <br /></td></tr>
-<tr class="separator:a7be6c97e961c0bb5e3b128a27f5f0545"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6c589bdfaba97efd6e675fa968ae023"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1any__object.html#af6c589bdfaba97efd6e675fa968ae023">operator=</a> (<a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;&amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>)</td></tr>
-<tr class="memdesc:af6c589bdfaba97efd6e675fa968ae023"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator. Replaces the contents with a copy of the contents of other.  <br /></td></tr>
-<tr class="separator:af6c589bdfaba97efd6e675fa968ae023"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43cd2623291ac9c95e69a09b755450b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1any__object.html#a43cd2623291ac9c95e69a09b755450b0">operator=</a> (const <a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept=default</td></tr>
+<tr class="memdesc:a43cd2623291ac9c95e69a09b755450b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator. Replaces the contents with a copy of the contents of other.  <br /></td></tr>
+<tr class="separator:a43cd2623291ac9c95e69a09b755450b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2a24d9e9f71bbe55d69e8a4d609fe59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1any__object.html#ae2a24d9e9f71bbe55d69e8a4d609fe59">operator=</a> (<a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;&amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept</td></tr>
+<tr class="memdesc:ae2a24d9e9f71bbe55d69e8a4d609fe59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator. Replaces the contents with a copy of the contents of other.  <br /></td></tr>
+<tr class="separator:ae2a24d9e9f71bbe55d69e8a4d609fe59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -682,8 +677,8 @@ template&lt;class type_t &gt; </div>
 
 </div>
 </div>
-<a id="a7be6c97e961c0bb5e3b128a27f5f0545" name="a7be6c97e961c0bb5e3b128a27f5f0545"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7be6c97e961c0bb5e3b128a27f5f0545">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+<a id="a43cd2623291ac9c95e69a09b755450b0" name="a43cd2623291ac9c95e69a09b755450b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43cd2623291ac9c95e69a09b755450b0">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -701,7 +696,7 @@ template&lt;class type_t &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+<span class="mlabels"><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -717,8 +712,8 @@ template&lt;class type_t &gt; </div>
 
 </div>
 </div>
-<a id="af6c589bdfaba97efd6e675fa968ae023" name="af6c589bdfaba97efd6e675fa968ae023"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6c589bdfaba97efd6e675fa968ae023">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+<a id="ae2a24d9e9f71bbe55d69e8a4d609fe59" name="ae2a24d9e9f71bbe55d69e8a4d609fe59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2a24d9e9f71bbe55d69e8a4d609fe59">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -736,7 +731,7 @@ template&lt;class type_t &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -759,7 +754,7 @@ template&lt;class type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

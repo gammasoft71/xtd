@@ -152,8 +152,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a key/value pair that can be set or retrieved.  <a href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair_3_4.html">key_value_pair&lt;&gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a key/value pair that can be set or retrieved.  <a href="structxtd_1_1collections_1_1generic_1_1key__value__pair_3_4.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair_3_01_4.html">key_value_pair&lt; &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a key/value pair that can be set or retrieved.  <a href="structxtd_1_1collections_1_1generic_1_1key__value__pair_3_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.  <a href="classxtd_1_1collections_1_1generic_1_1list.html#details">More...</a><br /></td></tr>
@@ -161,7 +161,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Alias</h2></td></tr>
-<tr class="memitem:gae5c86fd1f7e7f0a0b5de13af77c34d4c"><td class="memTemplParams" colspan="2">template&lt;class type_t , class hasher_t  = xtd::collections::generic::helpers::hasher&lt;type_t&gt;, class equator_t  = xtd::collections::generic::helpers::equator&lt;type_t&gt;, class allocator_t  = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </td></tr>
+<tr class="memitem:gae5c86fd1f7e7f0a0b5de13af77c34d4c"><td class="memTemplParams" colspan="2">template&lt;class type_t , class hasher_t  = xtd::collections::generic::helpers::hasher&lt;type_t&gt;, class equator_t  = xtd::collections::generic::helpers::equator&lt;type_t&gt;, class allocator_t  = xtd::collections::generic::helpers::allocator&lt;type_t &gt;&gt; </td></tr>
 <tr class="memitem:gae5c86fd1f7e7f0a0b5de13af77c34d4c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#gae5c86fd1f7e7f0a0b5de13af77c34d4c">hash_set</a> = std::unordered_set&lt; type_t, hasher_t, equator_t, allocator_t &gt;</td></tr>
 <tr class="memdesc:gae5c86fd1f7e7f0a0b5de13af77c34d4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a set of values.  <br /></td></tr>
 <tr class="separator:gae5c86fd1f7e7f0a0b5de13af77c34d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -173,15 +173,15 @@ Alias</h2></td></tr>
 <tr class="memitem:gafe25926b152d27ca34bd3c297b77beb6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#gafe25926b152d27ca34bd3c297b77beb6">queue</a> = std::stack&lt; type_t, container_t &gt;</td></tr>
 <tr class="memdesc:gafe25926b152d27ca34bd3c297b77beb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of objects that is maintained in sorted order.  <br /></td></tr>
 <tr class="separator:gafe25926b152d27ca34bd3c297b77beb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga64bb7a14ab354aad70b9c8a839aca3d9"><td class="memTemplParams" colspan="2">template&lt;class key_t , class value_t , class lesser_t  = helpers::lesser&lt;key_t&gt;, class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </td></tr>
-<tr class="memitem:ga64bb7a14ab354aad70b9c8a839aca3d9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a839aca3d9">sorted_dictionary</a> = <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>&lt; key_t, value_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html">helpers::hasher</a>&lt; key_t &gt;, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">helpers::equator</a>&lt; key_t &gt;, allocator_t &gt;</td></tr>
-<tr class="memdesc:ga64bb7a14ab354aad70b9c8a839aca3d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of key/value pairs that are sorted on the key.  <br /></td></tr>
-<tr class="separator:ga64bb7a14ab354aad70b9c8a839aca3d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga42271a61e65b2ba58cdbbe92352b4ea6"><td class="memTemplParams" colspan="2">template&lt;class key_t , class value_t , class lesser_t  = helpers::lesser&lt;key_t&gt;, class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t &gt;&gt;&gt; </td></tr>
+<tr class="memitem:ga42271a61e65b2ba58cdbbe92352b4ea6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga42271a61e65b2ba58cdbbe92352b4ea6">sorted_dictionary</a> = std::map&lt; key_t, value_t, lesser_t, allocator_t &gt;</td></tr>
+<tr class="memdesc:ga42271a61e65b2ba58cdbbe92352b4ea6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of key/value pairs that are sorted on the key.  <br /></td></tr>
+<tr class="separator:ga42271a61e65b2ba58cdbbe92352b4ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4e3f7a8627af93602241a666512a6ffa"><td class="memTemplParams" colspan="2">template&lt;class key_t , class value_t , class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </td></tr>
-<tr class="memitem:ga4e3f7a8627af93602241a666512a6ffa"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga4e3f7a8627af93602241a666512a6ffa">sorted_list</a> = <a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a839aca3d9">sorted_dictionary</a>&lt; key_t, value_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">helpers::lesser</a>&lt; key_t &gt;, allocator_t &gt;</td></tr>
+<tr class="memitem:ga4e3f7a8627af93602241a666512a6ffa"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga4e3f7a8627af93602241a666512a6ffa">sorted_list</a> = <a class="el" href="group__generic__collections.html#ga42271a61e65b2ba58cdbbe92352b4ea6">sorted_dictionary</a>&lt; key_t, value_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">helpers::lesser</a>&lt; key_t &gt;, allocator_t &gt;</td></tr>
 <tr class="memdesc:ga4e3f7a8627af93602241a666512a6ffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of key/value pairs that are sorted by the keys and are accessible by key and by index.  <br /></td></tr>
 <tr class="separator:ga4e3f7a8627af93602241a666512a6ffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga04c5dae2f5fbd4e27e72020315c50dfa"><td class="memTemplParams" colspan="2">template&lt;class type_t , class lesser_t  = xtd::collections::generic::helpers::lesser&lt;type_t&gt;, class allocator_t  = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </td></tr>
+<tr class="memitem:ga04c5dae2f5fbd4e27e72020315c50dfa"><td class="memTemplParams" colspan="2">template&lt;class type_t , class lesser_t  = xtd::collections::generic::helpers::lesser&lt;type_t&gt;, class allocator_t  = xtd::collections::generic::helpers::allocator&lt;type_t &gt;&gt; </td></tr>
 <tr class="memitem:ga04c5dae2f5fbd4e27e72020315c50dfa"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa">sorted_set</a> = std::set&lt; type_t, lesser_t, allocator_t &gt;</td></tr>
 <tr class="memdesc:ga04c5dae2f5fbd4e27e72020315c50dfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of objects that is maintained in sorted order.  <br /></td></tr>
 <tr class="separator:ga04c5dae2f5fbd4e27e72020315c50dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -198,7 +198,7 @@ Alias</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -125,13 +125,13 @@ $(function() {
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#a732df6afda3f82cafbe9bcfb7df49816">  187</a></span>    <a class="code hl_function" href="classxtd_1_1date__time.html#a732df6afda3f82cafbe9bcfb7df49816">date_time</a>(<a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> year, <a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> month, <a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> day, <a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> hour, <a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> minute, <a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> second, <a class="code hl_enumeration" href="group__xtd__core.html#ga03b78d9831d31a0a2ea100078219f2ea">date_time_kind</a> kind);</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#aae783ac4add6c161de1e11f926d39c9c">  198</a></span>    <a class="code hl_function" href="classxtd_1_1date__time.html#aae783ac4add6c161de1e11f926d39c9c">date_time</a>(<a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> year, <a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> month, <a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> day, <a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> hour, <a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> minute, <a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> second, <a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> millisecond);</div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#a0369194a9fc6564450a4e09f9083bec1">  210</a></span>    <a class="code hl_function" href="classxtd_1_1date__time.html#a0369194a9fc6564450a4e09f9083bec1">date_time</a>(<a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> year, <a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> month, <a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> day, <a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> hour, <a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> minute, <a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> second, <a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> millisecond, <a class="code hl_enumeration" href="group__xtd__core.html#ga03b78d9831d31a0a2ea100078219f2ea">date_time_kind</a> kind);</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    </div>
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> clock_t, <span class="keyword">class</span> duration_t = clock_t::duration&gt; <span class="comment">// Can&#39;t be explicit by design.</span></div>
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#ab2c74f1580df9837bc86cca709ad4981">  216</a></span>    <a class="code hl_function" href="classxtd_1_1date__time.html#ab2c74f1580df9837bc86cca709ad4981">date_time</a>(<span class="keyword">const</span> std::chrono::time_point&lt;clock_t, duration_t&gt;&amp; time_point) {</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>      <span class="keyword">using namespace </span>std::chrono;</div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>      *<span class="keyword">this</span> = from_time_t(system_clock::to_time_t(system_clock::now() + duration_cast&lt;system_clock::duration&gt;(time_point - clock_t::now())), date_time_kind::local);</div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    }</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    </div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> clock_t, <span class="keyword">class</span> duration_t = clock_t::duration&gt;</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#a63d78408e788e58570f1792cf7d0113f">  226</a></span>    <a class="code hl_function" href="classxtd_1_1date__time.html#a63d78408e788e58570f1792cf7d0113f">date_time</a>(<span class="keyword">const</span> std::chrono::time_point&lt;clock_t, duration_t&gt;&amp; time_point, <a class="code hl_enumeration" href="group__xtd__core.html#ga03b78d9831d31a0a2ea100078219f2ea">date_time_kind</a> kind) {</div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>      <span class="keyword">using namespace </span>std::chrono;</div>
@@ -163,11 +163,11 @@ $(function() {
 <div class="line"><a id="l00439" name="l00439"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#a800ef26e317f901a263d31e18319b4d7">  439</a></span>    <a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> month() const noexcept;</div>
 <div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>    </div>
 <div class="line"><a id="l00468" name="l00468"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#ae084c4d68a46500b8e64f4aec4869a15">  468</a></span>    <a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> second() const noexcept;</div>
-<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span> </div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>    </div>
 <div class="line"><a id="l00475" name="l00475"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#a1aba401d57acd3b150c6ac29609025be">  475</a></span>    <a class="code hl_typedef" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a> <a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a>() const noexcept;</div>
 <div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>    </div>
 <div class="line"><a id="l00482" name="l00482"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#a66cc71e8775a6f7a4d43c9ef6f0f1407">  482</a></span>    <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_typedef" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">ticks</a> ticks_duration() const noexcept;</div>
-<div class="line"><a id="l00483" name="l00483"></a><span class="lineno">  483</span> </div>
+<div class="line"><a id="l00483" name="l00483"></a><span class="lineno">  483</span>    </div>
 <div class="line"><a id="l00491" name="l00491"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#ab19867a4850ebd33ba52908050eb3df7">  491</a></span>    <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1time__span.html">time_span</a> time_of_day() const noexcept;</div>
 <div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>    </div>
 <div class="line"><a id="l00521" name="l00521"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#a9f66207e64a3cdc030e9a3d98fc0c416">  521</a></span>    <a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> year() const noexcept;</div>
@@ -195,9 +195,9 @@ $(function() {
 <div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>    </div>
 <div class="line"><a id="l00643" name="l00643"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#ae3ad2eb3f1137d4497ed010a412ae932">  643</a></span>    <span class="keywordtype">bool</span> equals(const <span class="keywordtype">object</span>&amp; obj) const noexcept override;</div>
 <div class="line"><a id="l00647" name="l00647"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#a4e47262ef9b4a23d0656d0a2ffac9eba">  647</a></span>    <span class="keywordtype">bool</span> equals(const <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a>&amp; other) const noexcept override;</div>
-<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span> </div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>    </div>
 <div class="line"><a id="l00651" name="l00651"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#ac3c6e61e74c17287dcc4bd8bd753c527">  651</a></span>    <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a> get_hash_code() const noexcept override;</div>
-<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span> </div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>    </div>
 <div class="line"><a id="l00655" name="l00655"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#afe3456cb33c27fdeadc94f6b7947cbf1">  655</a></span>    <a class="code hl_class" href="classxtd_1_1array.html">array</a>&lt;<span class="keywordtype">string</span>&gt; get_date_time_formats() const noexcept;</div>
 <div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>    </div>
 <div class="line"><a id="l00661" name="l00661"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#a9b7de2ae41f4ce6978a50d5253f0faca">  661</a></span>    <span class="keywordtype">bool</span> is_daylight_saving_time() const noexcept;</div>
@@ -208,7 +208,7 @@ $(function() {
 <div class="line"><a id="l00699" name="l00699"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#a6276ed849123dd222df49d7ad139dac3">  699</a></span>    <a class="code hl_typedef" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a> to_binary() const;</div>
 <div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>    </div>
 <div class="line"><a id="l00706" name="l00706"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#ab85147f0bd608e981eacc0c843b12d95">  706</a></span>    <a class="code hl_typedef" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a> to_file_time() const;</div>
-<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span> </div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>    </div>
 <div class="line"><a id="l00713" name="l00713"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#a516cc6f765178cad69020570fa75e736">  713</a></span>    <a class="code hl_typedef" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a> to_file_time_utc() const;</div>
 <div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>    </div>
 <div class="line"><a id="l00729" name="l00729"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#a9678ce3d1b6da7cf005a19728bfe6e2e">  729</a></span>    <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> to_local_time() const;</div>
@@ -224,13 +224,13 @@ $(function() {
 <div class="line"><a id="l00754" name="l00754"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#a0337274cf6d6900b883fc5551b19bba6">  754</a></span>    <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span> to_string() const noexcept override;</div>
 <div class="line"><a id="l00811" name="l00811"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#a76c3fe933b9540760eeb9b59094b5e17">  811</a></span>    <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span> to_string(const <span class="keywordtype">string</span>&amp; format) const;</div>
 <div class="line"><a id="l00869" name="l00869"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#a14ef41e325a14cbfa8c194c5a412fa33">  869</a></span>    <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span> to_string(const <span class="keywordtype">string</span>&amp; format, const std::locale&amp; loc) const override;</div>
-<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span> </div>
+<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>    </div>
 <div class="line"><a id="l00875" name="l00875"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#a37a28c97ecddc59c671fcf659ed44763">  875</a></span>    std::time_t to_time_t() const;</div>
 <div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>    </div>
 <div class="line"><a id="l00881" name="l00881"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#abcb08f381981e349a9b1d4db4014e1e9">  881</a></span>    std::tm to_tm() const;</div>
 <div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span>    </div>
 <div class="line"><a id="l00895" name="l00895"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#a60d4fa67380ada97048d0691c3143e81">  895</a></span>    <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> to_universal_time() const;</div>
-<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span> </div>
+<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span>    </div>
 <div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span>    </div>
 <div class="line"><a id="l00908" name="l00908"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#ad94505e74efe9f353836901eda9230ed">  908</a></span>    static <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> now() noexcept;</div>
 <div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span>    </div>
@@ -263,7 +263,7 @@ $(function() {
 <div class="line"><a id="l01065" name="l01065"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#adcb67f5e68f1830781c7d2b4e90f757c"> 1065</a></span>    static <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> specify_kind(const <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a>&amp; value, <a class="code hl_enumeration" href="group__xtd__core.html#ga03b78d9831d31a0a2ea100078219f2ea">date_time_kind</a> kind);</div>
 <div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span>    </div>
 <div class="line"><a id="l01134" name="l01134"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#a58209959ca12a3589fa44ea680eddd47"> 1134</a></span>    static <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span> sprintf(const <span class="keywordtype">string</span>&amp; format, const <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a>&amp; value);</div>
-<div class="line"><a id="l01135" name="l01135"></a><span class="lineno"> 1135</span> </div>
+<div class="line"><a id="l01135" name="l01135"></a><span class="lineno"> 1135</span>    </div>
 <div class="line"><a id="l01141" name="l01141"></a><span class="lineno"><a class="line" href="classxtd_1_1date__time.html#ab2e38ca4b0606e03e81fd27c377efbd1"> 1141</a></span>    static <span class="keywordtype">bool</span> try_parse(const <span class="keywordtype">string</span>&amp; s, <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a>&amp; result) noexcept;</div>
 <div class="line"><a id="l01143" name="l01143"></a><span class="lineno"> 1143</span>    </div>
 <div class="line"><a id="l01145" name="l01145"></a><span class="lineno"> 1145</span>    operator <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1time__span.html">time_span</a>() const;</div>
@@ -304,10 +304,10 @@ $(function() {
 <div class="line"><a id="l01184" name="l01184"></a><span class="lineno"> 1184</span><span class="comment">      format_value += *iterator;</span></div>
 <div class="line"><a id="l01185" name="l01185"></a><span class="lineno"> 1185</span><span class="comment">    return iterator;</span></div>
 <div class="line"><a id="l01186" name="l01186"></a><span class="lineno"> 1186</span><span class="comment">  }</span></div>
-<div class="line"><a id="l01187" name="l01187"></a><span class="lineno"> 1187</span><span class="comment">  </span></div>
+<div class="line"><a id="l01187" name="l01187"></a><span class="lineno"> 1187</span><span class="comment"></span> </div>
 <div class="line"><a id="l01188" name="l01188"></a><span class="lineno"> 1188</span><span class="comment">  template&lt;class object_t, class format_context_t&gt;</span></div>
 <div class="line"><a id="l01189" name="l01189"></a><span class="lineno"> 1189</span><span class="comment">  auto format(const object_t&amp; obj, format_context_t&amp; ctx) const {return std::format_to(ctx.out(), &quot;{}&quot;, std::string {obj.to_string(format_value)});}</span></div>
-<div class="line"><a id="l01190" name="l01190"></a><span class="lineno"> 1190</span><span class="comment">  </span></div>
+<div class="line"><a id="l01190" name="l01190"></a><span class="lineno"> 1190</span><span class="comment"></span> </div>
 <div class="line"><a id="l01191" name="l01191"></a><span class="lineno"> 1191</span><span class="comment">private:</span></div>
 <div class="line"><a id="l01192" name="l01192"></a><span class="lineno"> 1192</span><span class="comment">  std::string format_value;</span></div>
 <div class="line"><a id="l01193" name="l01193"></a><span class="lineno"> 1193</span><span class="comment">};</span></div>
@@ -361,7 +361,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

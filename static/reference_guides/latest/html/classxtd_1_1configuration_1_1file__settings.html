@@ -188,7 +188,7 @@ virtual <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliass</h2></td></tr>
 <tr class="memitem:aa03e95488da0ffb0f9152e8afad3d39f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#aa03e95488da0ffb0f9152e8afad3d39f">string_dictionary</a> = std::map&lt; <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91">xtd::string</a>, <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91">xtd::string</a> &gt;</td></tr>
-<tr class="memdesc:aa03e95488da0ffb0f9152e8afad3d39f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a <a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a839aca3d9" title="Represents a collection of key/value pairs that are sorted on the key.">xtd::collections::generic::sorted_dictionary</a> with the key and the value strongly typed to be strings.  <br /></td></tr>
+<tr class="memdesc:aa03e95488da0ffb0f9152e8afad3d39f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a <a class="el" href="group__generic__collections.html#ga42271a61e65b2ba58cdbbe92352b4ea6" title="Represents a collection of key/value pairs that are sorted on the key.">xtd::collections::generic::sorted_dictionary</a> with the key and the value strongly typed to be strings.  <br /></td></tr>
 <tr class="separator:aa03e95488da0ffb0f9152e8afad3d39f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad88cd0fcf72f291b3716eaa36fcb235"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1configuration_1_1file__settings.html#aad88cd0fcf72f291b3716eaa36fcb235">string_collection</a> = <a class="el" href="group__specialized__collections.html#ga2ef4a53fb8b9fd6c223dd185bff30b5f">xtd::collections::specialized::string_collection</a></td></tr>
 <tr class="memdesc:aad88cd0fcf72f291b3716eaa36fcb235"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of strings.  <br /></td></tr>
@@ -369,7 +369,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Represents a <a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a839aca3d9" title="Represents a collection of key/value pairs that are sorted on the key.">xtd::collections::generic::sorted_dictionary</a> with the key and the value strongly typed to be strings. </p>
+<p>Represents a <a class="el" href="group__generic__collections.html#ga42271a61e65b2ba58cdbbe92352b4ea6" title="Represents a collection of key/value pairs that are sorted on the key.">xtd::collections::generic::sorted_dictionary</a> with the key and the value strongly typed to be strings. </p>
 
 </div>
 </div>
@@ -2008,7 +2008,7 @@ template&lt;class type_t &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The key-value pairs of the section. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>Use this operator to read value from section like <a class="el" href="classxtd_1_1configuration_1_1file__settings.html#aa7dc7815cccea34878d9d3909235aa97" title="Reads a value for specified key in the global section. If not found default value is used.">xtd::configuration::file_settings::read</a> method. <div class="fragment"><div class="line"><span class="keyword">auto</span> fs = <a class="code hl_class" href="classxtd_1_1configuration_1_1file__settings.html">file_settings</a> {<span class="stringliteral">&quot;my_file.ini&quot;</span>};</div>
-<div class="line"><span class="keyword">auto</span> v1 = fs[<span class="stringliteral">&quot;section1&quot;</span>][<span class="stringliteral">&quot;key1&quot;</span>]; </div>
+<div class="line"><span class="keyword">auto</span> v1 = fs[<span class="stringliteral">&quot;section1&quot;</span>][<span class="stringliteral">&quot;key1&quot;</span>];</div>
 <div class="line"><span class="comment">// Is equivalent to call :</span></div>
 <div class="line"><span class="comment">// auto v1 = fs.read(&quot;section1&quot;, &quot;key1&quot;, string::empty_string);</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -2062,7 +2062,7 @@ template&lt;class type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

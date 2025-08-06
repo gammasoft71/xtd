@@ -325,7 +325,7 @@ $(function() {
 <div class="line">    track_bar1.maximum(100);</div>
 <div class="line">    track_bar1.tick_frequency(10);</div>
 <div class="line">    track_bar1.width(350);</div>
-<div class="line">    track_bar1.value_changed += [&amp;] {</div>
+<div class="line">    track_bar1.value_changed += <a id="a4" name="a4"></a><a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      progress_bar1.value(track_bar1.value());</div>
 <div class="line">    };</div>
 <div class="line">    track_bar1.value(50);</div>
@@ -347,9 +347,9 @@ $(function() {
 <div class="line">    loading_indicator1.location({10, 10});</div>
 <div class="line">    loading_indicator1.start();</div>
 <div class="line">    </div>
-<div class="line">    <a id="_a4" name="_a4"></a><a class="code hl_class" href="classxtd_1_1forms_1_1menu.html">menu</a>(main_menu1);</div>
+<div class="line">    <a id="_a5" name="_a5"></a><a class="code hl_class" href="classxtd_1_1forms_1_1menu.html">menu</a>(main_menu1);</div>
 <div class="line">    </div>
-<div class="line">    <a id="_a5" name="_a5"></a><a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar.html">tool_bar</a>(tool_bar1);</div>
+<div class="line">    <a id="_a6" name="_a6"></a><a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar.html">tool_bar</a>(tool_bar1);</div>
 <div class="line">    tool_bar1.parent(*<span class="keyword">this</span>);</div>
 <div class="line">    tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});</div>
 <div class="line">    tool_bar1.buttons().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, help_tool_bar_button});</div>
@@ -360,21 +360,21 @@ $(function() {
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">protected</span>:</div>
-<div class="line">  <span class="keywordtype">void</span> on_form_closing(<a id="_a6" name="_a6"></a><a class="code hl_class" href="classxtd_1_1forms_1_1form__closing__event__args.html">form_closing_event_args</a>&amp; e)<span class="keyword"> override </span>{</div>
+<div class="line">  <span class="keywordtype">void</span> on_form_closing(<a id="_a7" name="_a7"></a><a class="code hl_class" href="classxtd_1_1forms_1_1form__closing__event__args.html">form_closing_event_args</a>&amp; e)<span class="keyword"> override </span>{</div>
 <div class="line">    e.cancel(message_box::show(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Are you sure you want exit?&quot;</span>, <span class="stringliteral">&quot;Close Form&quot;</span>, message_box_buttons::yes_no, message_box_icon::question) == dialog_result::no);</div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <span class="keywordtype">void</span> on_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a7" name="_a7"></a><a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
+<div class="line">  <span class="keywordtype">void</span> on_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a8" name="_a8"></a><a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) {</div>
 <div class="line">    <span class="keywordtype">string</span> file_name;</div>
 <div class="line">    <span class="keywordflow">if</span> (main_menu1.menu_items()[0].get().menu_items()[1].get() == sender) open_file_box::show(file_name, *<span class="keyword">this</span>);</div>
 <div class="line">    <span class="keywordflow">if</span> (main_menu1.menu_items()[0].get().menu_items()[3].get() == sender) save_file_box::show(file_name, *<span class="keyword">this</span>);</div>
 <div class="line">    <span class="keywordflow">if</span> (main_menu1.menu_items()[0].get().menu_items()[4].get() == sender) save_file_box::show(file_name, *<span class="keyword">this</span>, <span class="stringliteral">&quot;Save as...&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">if</span> (main_menu1.menu_items()[0].get().menu_items()[9].get() == sender) application::exit();</div>
-<div class="line">    <span class="keywordflow">if</span> (main_menu1.menu_items()[3].get().menu_items()[4].get() == sender) about_box::show(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Shows some controls in dark mode&quot;</span>, <span class="stringliteral">&quot;Dark mode example&quot;</span>, <a id="a8" name="a8"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1system__icons.html#aab6b9eaa922ea2d3fb5428e658d44b23">xtd::drawing::system_icons::xtd_logo</a>(), environment::version().to_string(2), environment::version().to_string(), <span class="stringliteral">&quot;Copyright (c) 2024 Gammasoft.&quot;</span>, <span class="stringliteral">&quot;https://gammasoft71.github.io/xtd&quot;</span>, <span class="stringliteral">&quot;xtd&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (main_menu1.menu_items()[3].get().menu_items()[4].get() == sender) about_box::show(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Shows some controls in dark mode&quot;</span>, <span class="stringliteral">&quot;Dark mode example&quot;</span>, <a id="a9" name="a9"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1system__icons.html#aab6b9eaa922ea2d3fb5428e658d44b23">xtd::drawing::system_icons::xtd_logo</a>(), environment::version().to_string(2), environment::version().to_string(), <span class="stringliteral">&quot;Copyright (c) 2024 Gammasoft.&quot;</span>, <span class="stringliteral">&quot;https://gammasoft71.github.io/xtd&quot;</span>, <span class="stringliteral">&quot;xtd&quot;</span>);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">void</span> on_tool_bar_button_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a9" name="_a9"></a><a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button__click__event__args.html">tool_bar_button_click_event_args</a>&amp; e) {</div>
+<div class="line">  <span class="keywordtype">void</span> on_tool_bar_button_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a10" name="_a10"></a><a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button__click__event__args.html">tool_bar_button_click_event_args</a>&amp; e) {</div>
 <div class="line">    <span class="keywordtype">string</span> file_name;</div>
 <div class="line">    <span class="keywordflow">if</span> (e.button() == open_tool_bar_button) open_file_box::show(file_name, *<span class="keyword">this</span>);</div>
 <div class="line">    <span class="keywordflow">if</span> (e.button() == save_tool_bar_button) save_file_box::show(file_name, *<span class="keyword">this</span>);</div>
@@ -396,9 +396,9 @@ $(function() {
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <a id="_a10" name="_a10"></a><a class="code hl_class" href="classxtd_1_1forms_1_1panel.html">panel</a> main_panel;</div>
-<div class="line">  <a id="_a11" name="_a11"></a><a class="code hl_class" href="classxtd_1_1forms_1_1tab__control.html">tab_control</a> tab_control_controls;</div>
-<div class="line">  <a id="_a12" name="_a12"></a><a class="code hl_class" href="classxtd_1_1forms_1_1tab__page.html">tab_page</a> tab_page_buttons;</div>
+<div class="line">  <a id="_a11" name="_a11"></a><a class="code hl_class" href="classxtd_1_1forms_1_1panel.html">panel</a> main_panel;</div>
+<div class="line">  <a id="_a12" name="_a12"></a><a class="code hl_class" href="classxtd_1_1forms_1_1tab__control.html">tab_control</a> tab_control_controls;</div>
+<div class="line">  <a id="_a13" name="_a13"></a><a class="code hl_class" href="classxtd_1_1forms_1_1tab__page.html">tab_page</a> tab_page_buttons;</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tab__page.html">tab_page</a> tab_page_pickers;</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tab__page.html">tab_page</a> tab_page_texts;</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tab__page.html">tab_page</a> tab_page_lcds;</div>
@@ -408,71 +408,71 @@ $(function() {
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tab__page.html">tab_page</a> tab_page_scrolls;</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tab__page.html">tab_page</a> tab_page_animations;</div>
 <div class="line">  </div>
-<div class="line">  <a id="_a13" name="_a13"></a><a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button1;</div>
+<div class="line">  <a id="_a14" name="_a14"></a><a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button1;</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> flat_button1;</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> popup_button1;</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> image_button1;</div>
-<div class="line">  <a id="_a14" name="_a14"></a><a class="code hl_class" href="classxtd_1_1forms_1_1switch__button.html">switch_button</a> switch_button1;</div>
+<div class="line">  <a id="_a15" name="_a15"></a><a class="code hl_class" href="classxtd_1_1forms_1_1switch__button.html">switch_button</a> switch_button1;</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1switch__button.html">switch_button</a> switch_button2;</div>
-<div class="line">  <a id="_a15" name="_a15"></a><a class="code hl_class" href="classxtd_1_1forms_1_1toggle__button.html">toggle_button</a> toggle_button1;</div>
-<div class="line">  <a id="_a16" name="_a16"></a><a class="code hl_class" href="classxtd_1_1forms_1_1light__button.html">light_button</a> light_button1;</div>
-<div class="line">  <a id="_a17" name="_a17"></a><a class="code hl_class" href="classxtd_1_1forms_1_1radio__button.html">radio_button</a> radio_button1;</div>
+<div class="line">  <a id="_a16" name="_a16"></a><a class="code hl_class" href="classxtd_1_1forms_1_1toggle__button.html">toggle_button</a> toggle_button1;</div>
+<div class="line">  <a id="_a17" name="_a17"></a><a class="code hl_class" href="classxtd_1_1forms_1_1light__button.html">light_button</a> light_button1;</div>
+<div class="line">  <a id="_a18" name="_a18"></a><a class="code hl_class" href="classxtd_1_1forms_1_1radio__button.html">radio_button</a> radio_button1;</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1radio__button.html">radio_button</a> radio_button2;</div>
-<div class="line">  <a id="_a18" name="_a18"></a><a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box1;</div>
+<div class="line">  <a id="_a19" name="_a19"></a><a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box1;</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box2;</div>
-<div class="line">  <a id="_a19" name="_a19"></a><a class="code hl_class" href="classxtd_1_1forms_1_1command__link__button.html">command_link_button</a> command_link_button1;</div>
-<div class="line">  <a id="_a20" name="_a20"></a><a class="code hl_class" href="classxtd_1_1forms_1_1up__down__button.html">up_down_button</a> up_down_button1;</div>
+<div class="line">  <a id="_a20" name="_a20"></a><a class="code hl_class" href="classxtd_1_1forms_1_1command__link__button.html">command_link_button</a> command_link_button1;</div>
+<div class="line">  <a id="_a21" name="_a21"></a><a class="code hl_class" href="classxtd_1_1forms_1_1up__down__button.html">up_down_button</a> up_down_button1;</div>
 <div class="line">  </div>
-<div class="line">  <a id="_a21" name="_a21"></a><a class="code hl_class" href="classxtd_1_1forms_1_1color__picker.html">color_picker</a> color_picker1;</div>
-<div class="line">  <a id="_a22" name="_a22"></a><a class="code hl_class" href="classxtd_1_1forms_1_1font__picker.html">font_picker</a> font_picker1;</div>
-<div class="line">  <a id="_a23" name="_a23"></a><a class="code hl_class" href="classxtd_1_1forms_1_1date__time__picker.html">date_time_picker</a> date_time_picker1;</div>
+<div class="line">  <a id="_a22" name="_a22"></a><a class="code hl_class" href="classxtd_1_1forms_1_1color__picker.html">color_picker</a> color_picker1;</div>
+<div class="line">  <a id="_a23" name="_a23"></a><a class="code hl_class" href="classxtd_1_1forms_1_1font__picker.html">font_picker</a> font_picker1;</div>
+<div class="line">  <a id="_a24" name="_a24"></a><a class="code hl_class" href="classxtd_1_1forms_1_1date__time__picker.html">date_time_picker</a> date_time_picker1;</div>
 <div class="line">  </div>
-<div class="line">  <a id="_a24" name="_a24"></a><a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label1;</div>
-<div class="line">  <a id="_a25" name="_a25"></a><a class="code hl_class" href="classxtd_1_1forms_1_1link__label.html">link_label</a> link_label1;</div>
-<div class="line">  <a id="_a26" name="_a26"></a><a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> text_box1;</div>
+<div class="line">  <a id="_a25" name="_a25"></a><a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label1;</div>
+<div class="line">  <a id="_a26" name="_a26"></a><a class="code hl_class" href="classxtd_1_1forms_1_1link__label.html">link_label</a> link_label1;</div>
+<div class="line">  <a id="_a27" name="_a27"></a><a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> text_box1;</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> text_box2;</div>
 <div class="line">  </div>
-<div class="line">  <a id="_a27" name="_a27"></a><a class="code hl_class" href="classxtd_1_1forms_1_1lcd__label.html">lcd_label</a> lcd_label1;</div>
-<div class="line">  <a id="_a28" name="_a28"></a><a class="code hl_class" href="classxtd_1_1forms_1_1dot__matrix__display.html">dot_matrix_display</a> dot_matrix_display1;</div>
-<div class="line">  <a id="_a29" name="_a29"></a><a class="code hl_class" href="classxtd_1_1forms_1_1seven__segment__display.html">seven_segment_display</a> seven_segment_display1;</div>
-<div class="line">  <a id="_a30" name="_a30"></a><a class="code hl_class" href="classxtd_1_1forms_1_1nine__segment__display.html">nine_segment_display</a> nine_segment_display1;</div>
-<div class="line">  <a id="_a31" name="_a31"></a><a class="code hl_class" href="classxtd_1_1forms_1_1fourteen__segment__display.html">fourteen_segment_display</a> fourteen_segment_display1;</div>
-<div class="line">  <a id="_a32" name="_a32"></a><a class="code hl_class" href="classxtd_1_1forms_1_1sixteen__segment__display.html">sixteen_segment_display</a> sixteen_segment_display1;</div>
+<div class="line">  <a id="_a28" name="_a28"></a><a class="code hl_class" href="classxtd_1_1forms_1_1lcd__label.html">lcd_label</a> lcd_label1;</div>
+<div class="line">  <a id="_a29" name="_a29"></a><a class="code hl_class" href="classxtd_1_1forms_1_1dot__matrix__display.html">dot_matrix_display</a> dot_matrix_display1;</div>
+<div class="line">  <a id="_a30" name="_a30"></a><a class="code hl_class" href="classxtd_1_1forms_1_1seven__segment__display.html">seven_segment_display</a> seven_segment_display1;</div>
+<div class="line">  <a id="_a31" name="_a31"></a><a class="code hl_class" href="classxtd_1_1forms_1_1nine__segment__display.html">nine_segment_display</a> nine_segment_display1;</div>
+<div class="line">  <a id="_a32" name="_a32"></a><a class="code hl_class" href="classxtd_1_1forms_1_1fourteen__segment__display.html">fourteen_segment_display</a> fourteen_segment_display1;</div>
+<div class="line">  <a id="_a33" name="_a33"></a><a class="code hl_class" href="classxtd_1_1forms_1_1sixteen__segment__display.html">sixteen_segment_display</a> sixteen_segment_display1;</div>
 <div class="line">  </div>
-<div class="line">  <a id="_a33" name="_a33"></a><a class="code hl_class" href="classxtd_1_1forms_1_1choice.html">choice</a> choice1;</div>
-<div class="line">  <a id="_a34" name="_a34"></a><a class="code hl_class" href="classxtd_1_1forms_1_1combo__box.html">combo_box</a> combo_box1;</div>
-<div class="line">  <a id="_a35" name="_a35"></a><a class="code hl_class" href="classxtd_1_1forms_1_1domain__up__down.html">domain_up_down</a> domain_up_down1;</div>
-<div class="line">  <a id="_a36" name="_a36"></a><a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> numeric_up_down1;</div>
+<div class="line">  <a id="_a34" name="_a34"></a><a class="code hl_class" href="classxtd_1_1forms_1_1choice.html">choice</a> choice1;</div>
+<div class="line">  <a id="_a35" name="_a35"></a><a class="code hl_class" href="classxtd_1_1forms_1_1combo__box.html">combo_box</a> combo_box1;</div>
+<div class="line">  <a id="_a36" name="_a36"></a><a class="code hl_class" href="classxtd_1_1forms_1_1domain__up__down.html">domain_up_down</a> domain_up_down1;</div>
+<div class="line">  <a id="_a37" name="_a37"></a><a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> numeric_up_down1;</div>
 <div class="line">  </div>
-<div class="line">  <a id="_a37" name="_a37"></a><a class="code hl_class" href="classxtd_1_1forms_1_1list__box.html">list_box</a> list_box1;</div>
-<div class="line">  <a id="_a38" name="_a38"></a><a class="code hl_class" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> checked_list_box1;</div>
+<div class="line">  <a id="_a38" name="_a38"></a><a class="code hl_class" href="classxtd_1_1forms_1_1list__box.html">list_box</a> list_box1;</div>
+<div class="line">  <a id="_a39" name="_a39"></a><a class="code hl_class" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> checked_list_box1;</div>
 <div class="line">  </div>
-<div class="line">  <a id="_a39" name="_a39"></a><a class="code hl_class" href="classxtd_1_1forms_1_1progress__bar.html">progress_bar</a> progress_bar1;</div>
-<div class="line">  <a id="_a40" name="_a40"></a><a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> track_bar1;</div>
+<div class="line">  <a id="_a40" name="_a40"></a><a class="code hl_class" href="classxtd_1_1forms_1_1progress__bar.html">progress_bar</a> progress_bar1;</div>
+<div class="line">  <a id="_a41" name="_a41"></a><a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> track_bar1;</div>
 <div class="line">  </div>
-<div class="line">  <a id="_a41" name="_a41"></a><a class="code hl_class" href="classxtd_1_1forms_1_1h__scroll__bar.html">h_scroll_bar</a> h_scroll_bar1;</div>
-<div class="line">  <a id="_a42" name="_a42"></a><a class="code hl_class" href="classxtd_1_1forms_1_1v__scroll__bar.html">v_scroll_bar</a> v_scroll_bar1;</div>
+<div class="line">  <a id="_a42" name="_a42"></a><a class="code hl_class" href="classxtd_1_1forms_1_1h__scroll__bar.html">h_scroll_bar</a> h_scroll_bar1;</div>
+<div class="line">  <a id="_a43" name="_a43"></a><a class="code hl_class" href="classxtd_1_1forms_1_1v__scroll__bar.html">v_scroll_bar</a> v_scroll_bar1;</div>
 <div class="line">  </div>
-<div class="line">  <a id="_a43" name="_a43"></a><a class="code hl_class" href="classxtd_1_1forms_1_1loading__indicator.html">loading_indicator</a> loading_indicator1;</div>
+<div class="line">  <a id="_a44" name="_a44"></a><a class="code hl_class" href="classxtd_1_1forms_1_1loading__indicator.html">loading_indicator</a> loading_indicator1;</div>
 <div class="line">  </div>
-<div class="line">  <a id="_a44" name="_a44"></a><a class="code hl_class" href="classxtd_1_1forms_1_1main__menu.html">main_menu</a> main_menu1 = main_menu::create_standard_items({*<span class="keyword">this</span>, &amp;form1::on_menu_click});</div>
+<div class="line">  <a id="_a45" name="_a45"></a><a class="code hl_class" href="classxtd_1_1forms_1_1main__menu.html">main_menu</a> main_menu1 = main_menu::create_standard_items({*<span class="keyword">this</span>, &amp;form1::on_menu_click});</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar.html">xtd::forms::tool_bar</a> tool_bar1;</div>
-<div class="line">  <a id="_a45" name="_a45"></a><a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> new_tool_bar_button = tool_bar_button::create_push_button(<a id="a46" name="a46"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1texts.html#a0cd09bc138362cf872b3b0b01a940773">xtd::drawing::texts::new_</a>(), 0);</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> open_tool_bar_button = tool_bar_button::create_push_button(<a id="a47" name="a47"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1texts.html#ac0608ee1e9252e880453135997b539e7">xtd::drawing::texts::open</a>(), 1);</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> save_tool_bar_button = tool_bar_button::create_push_button(<a id="a48" name="a48"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1texts.html#a4359dc98e49ef2aeaaed5997e3775c72">xtd::drawing::texts::save</a>(), 2);</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> print_tool_bar_button = tool_bar_button::create_push_button(<a id="a49" name="a49"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1texts.html#a3d631747f08dddad4c9ae6713ba65969">xtd::drawing::texts::print</a>(), 3);</div>
+<div class="line">  <a id="_a46" name="_a46"></a><a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> new_tool_bar_button = tool_bar_button::create_push_button(<a id="a47" name="a47"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1texts.html#a0cd09bc138362cf872b3b0b01a940773">xtd::drawing::texts::new_</a>(), 0);</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> open_tool_bar_button = tool_bar_button::create_push_button(<a id="a48" name="a48"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1texts.html#ac0608ee1e9252e880453135997b539e7">xtd::drawing::texts::open</a>(), 1);</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> save_tool_bar_button = tool_bar_button::create_push_button(<a id="a49" name="a49"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1texts.html#a4359dc98e49ef2aeaaed5997e3775c72">xtd::drawing::texts::save</a>(), 2);</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> print_tool_bar_button = tool_bar_button::create_push_button(<a id="a50" name="a50"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1texts.html#a3d631747f08dddad4c9ae6713ba65969">xtd::drawing::texts::print</a>(), 3);</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> tool_bar1_separator1 = tool_bar_button::create_separator();</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> cut_tool_bar_button = tool_bar_button::create_push_button(<a id="a50" name="a50"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1texts.html#a4c29c919da04d47aae5c5d5795a927ba">xtd::drawing::texts::cut</a>(), 4);</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> copy_tool_bar_button = tool_bar_button::create_push_button(<a id="a51" name="a51"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1texts.html#a8fd5c975054ca7589198fa8d654892db">xtd::drawing::texts::copy</a>(), 5);</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> paste_tool_bar_button = tool_bar_button::create_push_button(<a id="a52" name="a52"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1texts.html#ac85b2ab3e6ece158ce545d9d7a981037">xtd::drawing::texts::paste</a>(), 6);</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> cut_tool_bar_button = tool_bar_button::create_push_button(<a id="a51" name="a51"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1texts.html#a4c29c919da04d47aae5c5d5795a927ba">xtd::drawing::texts::cut</a>(), 4);</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> copy_tool_bar_button = tool_bar_button::create_push_button(<a id="a52" name="a52"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1texts.html#a8fd5c975054ca7589198fa8d654892db">xtd::drawing::texts::copy</a>(), 5);</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> paste_tool_bar_button = tool_bar_button::create_push_button(<a id="a53" name="a53"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1texts.html#ac85b2ab3e6ece158ce545d9d7a981037">xtd::drawing::texts::paste</a>(), 6);</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> tool_bar1_separator2 = tool_bar_button::create_stretchable_separator();</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> help_tool_bar_button = tool_bar_button::create_push_button(<a id="a53" name="a53"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1texts.html#a02877f293a228b2ea4f0cfbde8b279ce">xtd::drawing::texts::help</a>(), 7);</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1tool__bar__button.html">tool_bar_button</a> help_tool_bar_button = tool_bar_button::create_push_button(<a id="a54" name="a54"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1texts.html#a02877f293a228b2ea4f0cfbde8b279ce">xtd::drawing::texts::help</a>(), 7);</div>
 <div class="line">  </div>
-<div class="line">  <a id="_a54" name="_a54"></a><a class="code hl_class" href="classxtd_1_1forms_1_1status__bar.html">forms::status_bar</a> status_bar1;</div>
+<div class="line">  <a id="_a55" name="_a55"></a><a class="code hl_class" href="classxtd_1_1forms_1_1status__bar.html">forms::status_bar</a> status_bar1;</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a id="a55" name="a55"></a><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
+<div class="line"><a id="a56" name="a56"></a><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1system__colors_html_a14fdf665a24633df3bcfe9523b0ad08c"><div class="ttname"><a href="classxtd_1_1drawing_1_1system__colors.html#a14fdf665a24633df3bcfe9523b0ad08c">xtd::drawing::system_colors::control_text</a></div><div class="ttdeci">static xtd::drawing::color control_text()</div><div class="ttdoc">Gets a xtd::drawing::color structure that is the color of text in a 3-D element.</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1system__icons_html_aab6b9eaa922ea2d3fb5428e658d44b23"><div class="ttname"><a href="classxtd_1_1drawing_1_1system__icons.html#aab6b9eaa922ea2d3fb5428e658d44b23">xtd::drawing::system_icons::xtd_logo</a></div><div class="ttdeci">static xtd::drawing::icon xtd_logo() noexcept</div><div class="ttdoc">Gets an xtd::drawing::icon object that contains the xtd logo icon.</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1texts_html_a02877f293a228b2ea4f0cfbde8b279ce"><div class="ttname"><a href="classxtd_1_1drawing_1_1texts.html#a02877f293a228b2ea4f0cfbde8b279ce">xtd::drawing::texts::help</a></div><div class="ttdeci">static xtd::string help()</div><div class="ttdoc">Gets a system-defined text that has a string value of &quot;&amp;Help&quot;. This field is constant.</div></div>
@@ -526,7 +526,8 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1forms_1_1track__bar_html"><div class="ttname"><a href="classxtd_1_1forms_1_1track__bar.html">xtd::forms::track_bar</a></div><div class="ttdoc">Represents a standard Windows track bar.</div><div class="ttdef"><b>Definition</b> track_bar.hpp:34</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1up__down__button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1up__down__button.html">xtd::forms::up_down_button</a></div><div class="ttdoc">Represents a standard Windows up down button.</div><div class="ttdef"><b>Definition</b> up_down_button.hpp:35</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1v__scroll__bar_html"><div class="ttname"><a href="classxtd_1_1forms_1_1v__scroll__bar.html">xtd::forms::v_scroll_bar</a></div><div class="ttdoc">Represents a standard Windows horizontal scroll bar.</div><div class="ttdef"><b>Definition</b> v_scroll_bar.hpp:29</div></div>
-<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:167</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785"><div class="ttname"><a href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a></div><div class="ttdeci">@ flat</div><div class="ttdoc">The control appears flat.</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga7cc15a089c6b538cb469caa2e9aba1a1a8eff3617002e9a854b9704717f35f7aa"><div class="ttname"><a href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a8eff3617002e9a854b9704717f35f7aa">xtd::forms::flat_style::popup</a></div><div class="ttdeci">@ popup</div><div class="ttdoc">A control appears flat until the mouse pointer moves over it, at which point it appears three-dimensi...</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
@@ -535,7 +536,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -81,7 +81,8 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#groups">Modules</a> &#124;
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">system</div></div>
 </div><!--header-->
 <div class="contents">
@@ -201,8 +202,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an instant in time, typically expressed as a date and time of day.  <a href="classxtd_1_1date__time.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html">xtd::delegate&lt; result_t(arguments_t...)&gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a delegate, which is a data structure that refers to a static method or to a class instance &amp;&amp; an instance method of that class.  <a href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_01_4.html">xtd::delegate&lt; result_t(arguments_t...) &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a delegate, which is a data structure that refers to a static method or to a class instance &amp;&amp; an instance method of that class.  <a href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object&lt; enum_t &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the base class for enumerations.  <a href="structxtd_1_1enum__object.html#details">More...</a><br /></td></tr>
@@ -282,6 +283,13 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1version.html">xtd::version</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the version number of an assembly, operating system, or the xtd. This class cannot be inherited.  <a href="classxtd_1_1version.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga690f99e87ad4402abed7510a5e18bc15"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
+<tr class="memitem:ga690f99e87ad4402abed7510a5e18bc15"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#ga690f99e87ad4402abed7510a5e18bc15">xtd::unregister_any_stringer</a> ()</td></tr>
+<tr class="memdesc:ga690f99e87ad4402abed7510a5e18bc15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregister an any stringer method for a specified type.  <br /></td></tr>
+<tr class="separator:ga690f99e87ad4402abed7510a5e18bc15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Aliases</h2></td></tr>
 <tr class="memitem:gaa4f1bcd93722aaf0d9cf00db4c68b75c"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
@@ -375,7 +383,7 @@ template&lt;class type_t &gt; </div>
 <p>Represent a boxed bool. </p>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/boolean_object&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to create and use <a class="el" href="group__system.html#ga020fbeceaf011505de3ac30168375664" title="Represent a boxed bool.">xtd::boolean_object</a>. <div class="fragment"><div class="line"><span class="keyword">auto</span> stringer = [](<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; value) {<span class="keywordflow">return</span> value.to_string();};</div>
 <div class="line"><span class="keywordtype">bool</span> unboxed_object = <span class="keyword">true</span>;</div>
@@ -576,7 +584,7 @@ template&lt;class type_t &gt; </div>
 <dl class="section remark"><dt>Remarks</dt><dd>The boxed object must implement operator == and operator &lt; because a <a class="el" href="structxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> implement <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> and <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> interfaces. </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/boxing&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>. </dd></dl>
 
@@ -621,7 +629,7 @@ template&lt;class type_t , class ... args_t&gt; </div>
 <dl class="section remark"><dt>Remarks</dt><dd>The boxed object must implement operator == and operator &lt; because a <a class="el" href="structxtd_1_1box.html" title="Represents a boxed object.">xtd::box</a> implement <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> and <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> interfaces. </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/boxing&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>. </dd></dl>
 
@@ -758,9 +766,91 @@ template&lt;class type_t &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Unboxed object. </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/unboxing&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ga690f99e87ad4402abed7510a5e18bc15" name="ga690f99e87ad4402abed7510a5e18bc15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga690f99e87ad4402abed7510a5e18bc15">&#9670;&#160;</a></span>unregister_any_stringer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xtd::unregister_any_stringer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="unregister__any__stringer_8hpp.html">xtd.core/include/xtd/unregister_any_stringer.hpp</a>&gt;</code></p>
+
+<p>Unregister an any stringer method for a specified type. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/any&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>Show how to register your own class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/register_any_stringer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/string&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/unregister_any_stringer&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>character {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  character(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; rank) noexcept : name_(name), rank_(rank) {}</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name() const noexcept {<span class="keywordflow">return</span> name_;}</div>
+<div class="line">  <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code hl_enumvalue" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dca65dc5d2a03aac87b199cba2986986d05">rank</a>() const noexcept {<span class="keywordflow">return</span> rank_;}</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">to_string</a>() const noexcept {<span class="keywordflow">return</span> name_ + <span class="stringliteral">&quot; (&quot;</span> + rank_ + <span class="stringliteral">&quot;)&quot;</span>;}</div>
+<div class="line">   </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">  <span class="keywordtype">string</span> name_;</div>
+<div class="line">  <span class="keywordtype">string</span> rank_;</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> value = std::make_any&lt;int&gt;(42);</div>
+<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
+<div class="line">  </div>
+<div class="line">  value = std::make_any&lt;string&gt;(<span class="stringliteral">&quot;Star Trek: The Next Generation&quot;</span>);</div>
+<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
+<div class="line">  </div>
+<div class="line">  value = std::make_any&lt;character&gt;(<span class="stringliteral">&quot;Jean-Luc Picard&quot;</span>, <span class="stringliteral">&quot;Captain&quot;</span>);</div>
+<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; <span class="stringliteral">&quot;Before register_any_stringer : &quot;</span> &lt;&lt; <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
+<div class="line">  </div>
+<div class="line">  register_any_stringer&lt;character&gt;([](<span class="keyword">auto</span> value) {<span class="keywordflow">return</span> value.to_string();});</div>
+<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; <span class="stringliteral">&quot;After register_any_stringer : &quot;</span> &lt;&lt; <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
+<div class="line">  </div>
+<div class="line">  unregister_any_stringer&lt;character&gt;();</div>
+<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; <span class="stringliteral">&quot;After unregister_any_stringer : &quot;</span> &lt;&lt; <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">string::format</a>(<span class="stringliteral">&quot;{}&quot;</span>, value) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// 42</span></div>
+<div class="line"><span class="comment">// Star Trek: The Next Generation</span></div>
+<div class="line"><span class="comment">// Before register_any_stringer : (unregistered)</span></div>
+<div class="line"><span class="comment">// After register_any_stringer : Jean-Luc Picard (Captain)</span></div>
+<div class="line"><span class="comment">// After unregister_any_stringer : (unregistered)</span></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -800,7 +890,7 @@ template&lt;class type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
