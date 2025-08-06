@@ -139,7 +139,7 @@ Inheritance diagram for xtd::forms::collapsible_panel:</div>
 <div class="line">    collapsible_panel2.dock(dock_style::top);</div>
 <div class="line">    collapsible_panel2.location({10, 100});</div>
 <div class="line">    collapsible_panel2.text(<span class="stringliteral">&quot;collapsible_panel2&quot;</span>);</div>
-<div class="line">    collapsible_panel2.expanded_changed += [&amp;] {</div>
+<div class="line">    collapsible_panel2.expanded_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      button_expand.text(collapsible_panel2.expanded() ? <span class="stringliteral">&quot;Collapse&quot;</span> : <span class="stringliteral">&quot;Expand&quot;</span>);</div>
 <div class="line">    };</div>
 <div class="line">    </div>
@@ -151,7 +151,7 @@ Inheritance diagram for xtd::forms::collapsible_panel:</div>
 <div class="line">    button_add.parent(collapsible_panel1);</div>
 <div class="line">    button_add.location({10, 0});</div>
 <div class="line">    button_add.text(<span class="stringliteral">&quot;Add&quot;</span>);</div>
-<div class="line">    button_add.click += [&amp;] {</div>
+<div class="line">    button_add.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      <span class="keyword">auto</span> item = new_ptr&lt;label&gt;();</div>
 <div class="line">      item-&gt;parent(collapsible_panel2);</div>
 <div class="line">      item-&gt;text(string::format(<span class="stringliteral">&quot;item{}&quot;</span>, ++count));</div>
@@ -162,7 +162,7 @@ Inheritance diagram for xtd::forms::collapsible_panel:</div>
 <div class="line">    button_remove.parent(collapsible_panel1);</div>
 <div class="line">    button_remove.location({10, 30});</div>
 <div class="line">    button_remove.text(<span class="stringliteral">&quot;Remove&quot;</span>);</div>
-<div class="line">    button_remove.click += [&amp;] {</div>
+<div class="line">    button_remove.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      <span class="keywordflow">if</span> (control_items.size()) {</div>
 <div class="line">        control_items.front()-&gt;parent(<span class="keyword">nullptr</span>);</div>
 <div class="line">        control_items.pop_front();</div>
@@ -173,7 +173,7 @@ Inheritance diagram for xtd::forms::collapsible_panel:</div>
 <div class="line">    button_expand.location({10, 60});</div>
 <div class="line">    button_expand.checked(<span class="keyword">false</span>);</div>
 <div class="line">    button_expand.text(<span class="stringliteral">&quot;Expand&quot;</span>);</div>
-<div class="line">    button_expand.click += [&amp;] {</div>
+<div class="line">    button_expand.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      collapsible_panel2.expanded(!collapsible_panel2.expanded());</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
@@ -196,11 +196,12 @@ Inheritance diagram for xtd::forms::collapsible_panel:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1collapsible__panel_html"><div class="ttname"><a href="classxtd_1_1forms_1_1collapsible__panel.html">xtd::forms::collapsible_panel</a></div><div class="ttdoc">Used to group collections of controls in a collapsible panel.</div><div class="ttdef"><b>Definition</b> collapsible_panel.hpp:26</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1toggle__button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1toggle__button.html">xtd::forms::toggle_button</a></div><div class="ttdoc">Represents a Windows toggle_button.</div><div class="ttdef"><b>Definition</b> toggle_button.hpp:44</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="collapsible_panel_8cpp-example.html#_a1">collapsible_panel.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="collapsible_panel_8cpp-example.html#_a2">collapsible_panel.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Events</h2></td></tr>
@@ -3156,7 +3157,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

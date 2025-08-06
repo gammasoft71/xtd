@@ -107,6 +107,9 @@ Macros</h2></td></tr>
 <tr class="memitem:gabc8f9c2aa36f6cee610a37f0e8227fd1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></td></tr>
 <tr class="memdesc:gabc8f9c2aa36f6cee610a37f0e8227fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define shared library export.  <br /></td></tr>
 <tr class="separator:gabc8f9c2aa36f6cee610a37f0e8227fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac0b0b1a17f583a897eb6b424f2475363"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></td></tr>
+<tr class="memdesc:gac0b0b1a17f583a897eb6b424f2475363"><td class="mdescLeft">&#160;</td><td class="mdescRight">The declaration of a delegate type is similar to a method signature. It has a return value and any number of parameters of any type.  <br /></td></tr>
+<tr class="separator:gac0b0b1a17f583a897eb6b424f2475363"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab2f79c6b0b3afc4eb78cb892fe72b373"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#gab2f79c6b0b3afc4eb78cb892fe72b373">enum_ut_</a>(namespace_name,  enum_t,  underlying_t, ...)</td></tr>
 <tr class="memdesc:gab2f79c6b0b3afc4eb78cb892fe72b373"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the registration struct for enum with specified underlying type.  <br /></td></tr>
 <tr class="separator:gab2f79c6b0b3afc4eb78cb892fe72b373"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -185,9 +188,9 @@ Macros</h2></td></tr>
 <tr class="memitem:ga05d1212dca8562cec36b4ebb03dd897f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a></td></tr>
 <tr class="memdesc:ga05d1212dca8562cec36b4ebb03dd897f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f" title="The self_ expression is a reference value expression whose value is the reference of the implicit obj...">self_</a> expression is a reference value expression whose value is the reference of the implicit object parameter (the object on which the non-static member function (up to C++23) implicit object member function (since C++23) is called).  <br /></td></tr>
 <tr class="separator:ga05d1212dca8562cec36b4ebb03dd897f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacff264255bb80f00c1447fda6524b0ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(...)</td></tr>
-<tr class="memdesc:gacff264255bb80f00c1447fda6524b0ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to obtain the size in bytes of the object representation of type or expression.  <br /></td></tr>
-<tr class="separator:gacff264255bb80f00c1447fda6524b0ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7e5173499dc845cf977362c967c8589e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#ga7e5173499dc845cf977362c967c8589e">sizeof_</a></td></tr>
+<tr class="memdesc:ga7e5173499dc845cf977362c967c8589e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to obtain the size in bytes of the object representation of type or expression.  <br /></td></tr>
+<tr class="separator:ga7e5173499dc845cf977362c967c8589e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga44bd440a34d147923e428eacd1c8eedd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(main_method)</td></tr>
 <tr class="memdesc:ga44bd440a34d147923e428eacd1c8eedd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the entry point to be called when the application loads. Generally this is set either to the main form in your application or to the main procedure that should run when the application starts.  <br /></td></tr>
 <tr class="separator:ga44bd440a34d147923e428eacd1c8eedd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -259,7 +262,7 @@ Macros</h2></td></tr>
 <p>This keyword is used to represents an abstract class. </p>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/abstract&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Library </dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This keyword has no other use than to tag a class to abstract. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">class </span>foo <a class="code hl_define" href="group__keywords.html#ga8bad3fd3f3b8afda1d635fa70ebaaa8e">abstract_</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -289,7 +292,7 @@ Macros</h2></td></tr>
 <p>This keyword is used to represents an abstract class. </p>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/abstract_object&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Library </dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This keyword has no other use than to tag a class to abstract. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">class </span>foo <a class="code hl_define" href="group__keywords.html#gac618f4bf4029759cf6ca31a94b89151a">abstract_object_</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -321,7 +324,7 @@ Macros</h2></td></tr>
 <p>The specified expression is cleared automatically when the scope is ended. </p>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/block_scope&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Namespace </dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="comment">// values is released automatically after the end closure }.</span></div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> values = {1, 2, 3, 4, 5}) {</div>
@@ -414,6 +417,33 @@ Macros</h2></td></tr>
 
 <p>Define shared library export. </p>
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only </dd></dl>
+
+</div>
+</div>
+<a id="gac0b0b1a17f583a897eb6b424f2475363" name="gac0b0b1a17f583a897eb6b424f2475363"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac0b0b1a17f583a897eb6b424f2475363">&#9670;&#160;</a></span>delegate_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define delegate_</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="delegate_8hpp.html">xtd.core/include/xtd/delegate.hpp</a>&gt;</code></p>
+
+<p>The declaration of a delegate type is similar to a method signature. It has a return value and any number of parameters of any type. </p>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">button.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) {</div>
+<div class="line">  message_box::show(<span class="stringliteral">&quot;Button click!&quot;</span>, <span class="stringliteral">&quot;Message&quot;</span>, message_box_buttons::ok);</div>
+<div class="line">};</div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_box_8cpp-example.html#a0">about_box.cpp</a>, <a class="el" href="about_dialog_8cpp-example.html#a0">about_dialog.cpp</a>, <a class="el" href="about_dialog_system_8cpp-example.html#a1">about_dialog_system.cpp</a>, <a class="el" href="about_dialog_with_user_pages_8cpp-example.html#a2">about_dialog_with_user_pages.cpp</a>, <a class="el" href="application_add_message_filter_8cpp-example.html#a3">application_add_message_filter.cpp</a>, <a class="el" href="application_application_exit_8cpp-example.html#a0">application_application_exit.cpp</a>, <a class="el" href="application_context_8cpp-example.html#a0">application_context.cpp</a>, <a class="el" href="application_enable_dark_mode_8cpp-example.html#a4">application_enable_dark_mode.cpp</a>, <a class="el" href="application_enable_light_mode_8cpp-example.html#a4">application_enable_light_mode.cpp</a>, <a class="el" href="application_events_8cpp-example.html#a3">application_events.cpp</a>, <a class="el" href="application_settings_8cpp-example.html#a0">application_settings.cpp</a>, <a class="el" href="application_settings_without_cmake_setting_commands_8cpp-example.html#a1">application_settings_without_cmake_setting_commands.cpp</a>, <a class="el" href="application_use_wait_cursor_8cpp-example.html#a0">application_use_wait_cursor.cpp</a>, <a class="el" href="assert_box_8cpp-example.html#a0">assert_box.cpp</a>, <a class="el" href="assert_dialog_8cpp-example.html#a0">assert_dialog.cpp</a>, <a class="el" href="background_worker_8cpp-example.html#a0">background_worker.cpp</a>, <a class="el" href="bitmap_button_8cpp-example.html#a1">bitmap_button.cpp</a>, <a class="el" href="border_style_8cpp-example.html#a2">border_style.cpp</a>, <a class="el" href="busy_box_8cpp-example.html#a0">busy_box.cpp</a>, <a class="el" href="busy_dialog_8cpp-example.html#a0">busy_dialog.cpp</a>, <a class="el" href="button_8cpp-example.html#a1">button.cpp</a>, <a class="el" href="button2_8cpp-example.html#a4">button2.cpp</a>, <a class="el" href="button3_8cpp-example.html#a4">button3.cpp</a>, <a class="el" href="button4_8cpp-example.html#a3">button4.cpp</a>, <a class="el" href="button_appearance_8cpp-example.html#a1">button_appearance.cpp</a>, <a class="el" href="button_renderer_8cpp-example.html#a0">button_renderer.cpp</a>, <a class="el" href="change_color_8cpp-example.html#a2">change_color.cpp</a>, <a class="el" href="change_parent_8cpp-example.html#a2">change_parent.cpp</a>, <a class="el" href="check_box_8cpp-example.html#a1">check_box.cpp</a>, <a class="el" href="check_box_appearance_8cpp-example.html#a1">check_box_appearance.cpp</a>, <a class="el" href="check_box_renderer_8cpp-example.html#a1">check_box_renderer.cpp</a>, <a class="el" href="checked_list_box_8cpp-example.html#a0">checked_list_box.cpp</a>, <a class="el" href="clock_8cpp-example.html#a11">clock.cpp</a>, <a class="el" href="collapsible_panel_8cpp-example.html#a1">collapsible_panel.cpp</a>, <a class="el" href="color_box_8cpp-example.html#a0">color_box.cpp</a>, <a class="el" href="color_dialog_8cpp-example.html#a0">color_dialog.cpp</a>, <a class="el" href="color_picker_8cpp-example.html#a6">color_picker.cpp</a>, <a class="el" href="colored_forms_8cpp-example.html#a2">colored_forms.cpp</a>, <a class="el" href="colors_8cpp-example.html#a2">colors.cpp</a>, <a class="el" href="command_link_button_8cpp-example.html#a1">command_link_button.cpp</a>, <a class="el" href="console_read_key_8cpp-example.html#a0">console_read_key.cpp</a>, <a class="el" href="control_8cpp-example.html#a1">control.cpp</a>, <a class="el" href="control_with_name_operator_8cpp-example.html#a1">control_with_name_operator.cpp</a>, <a class="el" href="countries_8cpp-example.html#a3">countries.cpp</a>, <a class="el" href="cursors_8cpp-example.html#a1">cursors.cpp</a>, <a class="el" href="date_time_picker_8cpp-example.html#a1">date_time_picker.cpp</a>, <a class="el" href="debug_form_8cpp-example.html#a1">debug_form.cpp</a>, <a class="el" href="debug_message_box_8cpp-example.html#a0">debug_message_box.cpp</a>, <a class="el" href="debug_message_dialog_8cpp-example.html#a0">debug_message_dialog.cpp</a>, <a class="el" href="delegate_multicast_8cpp-example.html#a0">delegate_multicast.cpp</a>, <a class="el" href="demo_8cpp-example.html#a17">demo.cpp</a>, <a class="el" href="dialog_8cpp-example.html#a7">dialog.cpp</a>, <a class="el" href="domain_up_down_8cpp-example.html#a1">domain_up_down.cpp</a>, <a class="el" href="dot_matrix_display_8cpp-example.html#a2">dot_matrix_display.cpp</a>, <a class="el" href="emoticons_8cpp-example.html#a5">emoticons.cpp</a>, <a class="el" href="emplace_8cpp-example.html#a3">emplace.cpp</a>, <a class="el" href="environment_cancel_signal_8cpp-example.html#a1">environment_cancel_signal.cpp</a>, <a class="el" href="environment_program_exit_8cpp-example.html#a2">environment_program_exit.cpp</a>, <a class="el" href="event_8cpp-example.html#a6">event.cpp</a>, <a class="el" href="exception_box_8cpp-example.html#a0">exception_box.cpp</a>, <a class="el" href="exception_dialog_8cpp-example.html#a0">exception_dialog.cpp</a>, <a class="el" href="find_box_8cpp-example.html#a0">find_box.cpp</a>, <a class="el" href="find_dialog_8cpp-example.html#a0">find_dialog.cpp</a>, <a class="el" href="folder_browser_box_8cpp-example.html#a0">folder_browser_box.cpp</a>, <a class="el" href="folder_browser_dialog_8cpp-example.html#a0">folder_browser_dialog.cpp</a>, <a class="el" href="font_box_8cpp-example.html#a0">font_box.cpp</a>, <a class="el" href="font_dialog_8cpp-example.html#a0">font_dialog.cpp</a>, <a class="el" href="font_picker_8cpp-example.html#a1">font_picker.cpp</a>, <a class="el" href="form2_8cpp-example.html#a1">form2.cpp</a>, <a class="el" href="form_and_main_8cpp-example.html#a1">form_and_main.cpp</a>, <a class="el" href="form_and_thread_8cpp-example.html#a1">form_and_thread.cpp</a>, <a class="el" href="form_background_image2_8cpp-example.html#a2">form_background_image2.cpp</a>, <a class="el" href="form_click_8cpp-example.html#a3">form_click.cpp</a>, <a class="el" href="form_custom_event_8cpp-example.html#a3">form_custom_event.cpp</a>, <a class="el" href="form_decoration_8cpp-example.html#a1">form_decoration.cpp</a>, <a class="el" href="form_paint_8cpp-example.html#a1">form_paint.cpp</a>, <a class="el" href="form_resize_8cpp-example.html#a2">form_resize.cpp</a>, <a class="el" href="form_show_8cpp-example.html#a2">form_show.cpp</a>, <a class="el" href="form_show_hide_8cpp-example.html#a1">form_show_hide.cpp</a>, <a class="el" href="form_window_state_8cpp-example.html#a1">form_window_state.cpp</a>, <a class="el" href="forms_timer_8cpp-example.html#a4">forms_timer.cpp</a>, <a class="el" href="fourteen_segment_display_8cpp-example.html#a2">fourteen_segment_display.cpp</a>, <a class="el" href="graph_control_8cpp-example.html#a23">graph_control.cpp</a>, <a class="el" href="h_scroll_bar_8cpp-example.html#a1">h_scroll_bar.cpp</a>, <a class="el" href="hello_world_message_box_8cpp-example.html#a0">hello_world_message_box.cpp</a>, <a class="el" href="hello_world_message_box2_8cpp-example.html#a0">hello_world_message_box2.cpp</a>, <a class="el" href="hello_world_paint_8cpp-example.html#a0">hello_world_paint.cpp</a>, <a class="el" href="hello_world_say_8cpp-example.html#a0">hello_world_say.cpp</a>, <a class="el" href="image_list_8cpp-example.html#a1">image_list.cpp</a>, <a class="el" href="images_8cpp-example.html#a1">images.cpp</a>, <a class="el" href="images2_8cpp-example.html#a2">images2.cpp</a>, <a class="el" href="images3_8cpp-example.html#a1">images3.cpp</a>, <a class="el" href="input_box_8cpp-example.html#a0">input_box.cpp</a>, <a class="el" href="input_dialog_8cpp-example.html#a1">input_dialog.cpp</a>, <a class="el" href="input_dialog_multiline_8cpp-example.html#a1">input_dialog_multiline.cpp</a>, <a class="el" href="input_dialog_password_8cpp-example.html#a1">input_dialog_password.cpp</a>, <a class="el" href="key_events_8cpp-example.html#a1">key_events.cpp</a>, <a class="el" href="lcd_label_8cpp-example.html#a1">lcd_label.cpp</a>, <a class="el" href="lcd_label2_8cpp-example.html#a16">lcd_label2.cpp</a>, <a class="el" href="lcd_label3_8cpp-example.html#a0">lcd_label3.cpp</a>, <a class="el" href="lcd_label_appearance_8cpp-example.html#a1">lcd_label_appearance.cpp</a>, <a class="el" href="lcd_label_with_dot_matrix_8cpp-example.html#a13">lcd_label_with_dot_matrix.cpp</a>, <a class="el" href="lcd_label_with_fourteen_segment_8cpp-example.html#a13">lcd_label_with_fourteen_segment.cpp</a>, <a class="el" href="lcd_label_with_nine_segment_8cpp-example.html#a13">lcd_label_with_nine_segment.cpp</a>, <a class="el" href="lcd_label_with_seven_segment_8cpp-example.html#a13">lcd_label_with_seven_segment.cpp</a>, <a class="el" href="lcd_label_with_sixteen_segment_8cpp-example.html#a13">lcd_label_with_sixteen_segment.cpp</a>, <a class="el" href="light_button_8cpp-example.html#a1">light_button.cpp</a>, <a class="el" href="link_label_8cpp-example.html#a1">link_label.cpp</a>, <a class="el" href="list_box_8cpp-example.html#a2">list_box.cpp</a>, <a class="el" href="loading_indicator_8cpp-example.html#a1">loading_indicator.cpp</a>, <a class="el" href="message_box_8cpp-example.html#a1">message_box.cpp</a>, <a class="el" href="message_box_appearance_8cpp-example.html#a1">message_box_appearance.cpp</a>, <a class="el" href="message_dialog_8cpp-example.html#a1">message_dialog.cpp</a>, <a class="el" href="message_dialog_show_sheet_8cpp-example.html#a1">message_dialog_show_sheet.cpp</a>, <a class="el" href="month_calendar_8cpp-example.html#a1">month_calendar.cpp</a>, <a class="el" href="mouse_events_8cpp-example.html#a1">mouse_events.cpp</a>, <a class="el" href="move_form_8cpp-example.html#a0">move_form.cpp</a>, <a class="el" href="nine_segment_display_8cpp-example.html#a2">nine_segment_display.cpp</a>, <a class="el" href="numeric_text_box_8cpp-example.html#a6">numeric_text_box.cpp</a>, <a class="el" href="numeric_up_down_8cpp-example.html#a1">numeric_up_down.cpp</a>, <a class="el" href="open_file_box_8cpp-example.html#a1">open_file_box.cpp</a>, <a class="el" href="open_file_dialog_8cpp-example.html#a1">open_file_dialog.cpp</a>, <a class="el" href="painting_8cpp-example.html#a0">painting.cpp</a>, <a class="el" href="picture_box_8cpp-example.html#a2">picture_box.cpp</a>, <a class="el" href="popup_form_8cpp-example.html#a1">popup_form.cpp</a>, <a class="el" href="popup_panel_8cpp-example.html#a1">popup_panel.cpp</a>, <a class="el" href="process_form_8cpp-example.html#a2">process_form.cpp</a>, <a class="el" href="progress_bar_8cpp-example.html#a0">progress_bar.cpp</a>, <a class="el" href="progress_box_8cpp-example.html#a1">progress_box.cpp</a>, <a class="el" href="progress_dialog_8cpp-example.html#a1">progress_dialog.cpp</a>, <a class="el" href="radio_button_8cpp-example.html#a2">radio_button.cpp</a>, <a class="el" href="radio_button_renderer_8cpp-example.html#a1">radio_button_renderer.cpp</a>, <a class="el" href="replace_box_8cpp-example.html#a1">replace_box.cpp</a>, <a class="el" href="replace_dialog_8cpp-example.html#a1">replace_dialog.cpp</a>, <a class="el" href="save_file_box_8cpp-example.html#a1">save_file_box.cpp</a>, <a class="el" href="save_file_dialog_8cpp-example.html#a1">save_file_dialog.cpp</a>, <a class="el" href="send_message_to_form_8cpp-example.html#a3">send_message_to_form.cpp</a>, <a class="el" href="seven_segment_display_8cpp-example.html#a2">seven_segment_display.cpp</a>, <a class="el" href="sixteen_segment_display_8cpp-example.html#a2">sixteen_segment_display.cpp</a>, <a class="el" href="some_controls_8cpp-example.html#a4">some_controls.cpp</a>, <a class="el" href="some_system_controls_8cpp-example.html#a4">some_system_controls.cpp</a>, <a class="el" href="status_bar_8cpp-example.html#a4">status_bar.cpp</a>, <a class="el" href="status_bar_without_panels_8cpp-example.html#a1">status_bar_without_panels.cpp</a>, <a class="el" href="switch_button_8cpp-example.html#a1">switch_button.cpp</a>, <a class="el" href="system_sound_8cpp-example.html#a3">system_sound.cpp</a>, <a class="el" href="text_box_8cpp-example.html#a1">text_box.cpp</a>, <a class="el" href="text_box_password_8cpp-example.html#a1">text_box_password.cpp</a>, <a class="el" href="text_box_password2_8cpp-example.html#a1">text_box_password2.cpp</a>, <a class="el" href="themes_8cpp-example.html#a4">themes.cpp</a>, <a class="el" href="toggle_button_8cpp-example.html#a1">toggle_button.cpp</a>, <a class="el" href="tool_bar_8cpp-example.html#a2">tool_bar.cpp</a>, <a class="el" href="trace_form_8cpp-example.html#a1">trace_form.cpp</a>, <a class="el" href="trace_message_box_8cpp-example.html#a3">trace_message_box.cpp</a>, <a class="el" href="trace_message_dialog_8cpp-example.html#a2">trace_message_dialog.cpp</a>, <a class="el" href="track_bar_8cpp-example.html#a1">track_bar.cpp</a>, <a class="el" href="track_bar2_8cpp-example.html#a1">track_bar2.cpp</a>, <a class="el" href="tutorial_communicate_8cpp-example.html#a5">tutorial_communicate.cpp</a>, <a class="el" href="up_down_button_8cpp-example.html#a1">up_down_button.cpp</a>, <a class="el" href="use_wait_cursor_8cpp-example.html#a1">use_wait_cursor.cpp</a>, <a class="el" href="user_dialog_8cpp-example.html#a3">user_dialog.cpp</a>, <a class="el" href="user_dialog_show_sheet_8cpp-example.html#a3">user_dialog_show_sheet.cpp</a>, <a class="el" href="v_scroll_bar_8cpp-example.html#a1">v_scroll_bar.cpp</a>, and <a class="el" href="wiggly_8cpp-example.html#a16">wiggly.cpp</a>.</dd>
+</dl>
 
 </div>
 </div>
@@ -1331,16 +1361,9 @@ You can't use the await_ keyword in the body of a lock_ statement. </dd></dl>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(thread_test::main)</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Output: run_me called</span></div>
-<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:167</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following sample uses threads and lock_. As long as the lock statement is present, the statement block is a critical section and balance will never become a negative number. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread_pool&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/lock&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/random&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following sample uses threads and lock_. As long as the lock statement is present, the statement block is a critical section and balance will never become a negative number. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>examples {</div>
 <div class="line">  <span class="keyword">class </span>account : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">object</a> {</div>
@@ -1462,7 +1485,7 @@ You can't use the await_ keyword in the body of a lock_ statement. </dd></dl>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">The exception that is thrown when a method call is invalid for the object's current state.</div><div class="ttdef"><b>Definition</b> system_exception.hpp:18</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lock_8cpp-example.html#a4">lock.cpp</a>, <a class="el" href="monitor_lock_8cpp-example.html#a1">monitor_lock.cpp</a>, <a class="el" href="monitor_pulse_8cpp-example.html#a0">monitor_pulse.cpp</a>, and <a class="el" href="monitor_pulse_all_8cpp-example.html#a0">monitor_pulse_all.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lock_8cpp-example.html#a0">lock.cpp</a>, <a class="el" href="monitor_lock_8cpp-example.html#a1">monitor_lock.cpp</a>, <a class="el" href="monitor_pulse_8cpp-example.html#a0">monitor_pulse.cpp</a>, and <a class="el" href="monitor_pulse_all_8cpp-example.html#a0">monitor_pulse_all.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1523,7 +1546,7 @@ You can't use the await_ keyword in the body of a lock_ statement. </dd></dl>
 Because the argument needs to be an expression syntactically, there are many things disallowed that are not useful to list. The following are worth mentioning that produce errors: predefined types (for example, int or void), nullable types (Point?), array types (Customer[,]), pointer types (Buffer*), qualified alias (A::B), and unbound generic types (Dictionary&lt;,&gt;), preprocessing symbols (DEBUG), and labels (loop:). </dd>
 <dd>
 If you need to get the fully-qualified name, you can use the typeof_ expression along with nameof. For example: <div class="fragment"><div class="line"><span class="keyword">class </span>c {</div>
-<div class="line"><span class="keyword">public</span>: </div>
+<div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keywordtype">void</span> f(<span class="keywordtype">int</span> i) {</div>
 <div class="line">    log(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(<span class="stringliteral">&quot;{0}::{1}&quot;</span>, typeof_&lt;c&gt;(), <a class="code hl_define" href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a>(f)), <span class="stringliteral">&quot;method entry&quot;</span>);</div>
 <div class="line">  }</div>
@@ -1564,15 +1587,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_company_attribute&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/text_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    application::run(form1 {});</div>
@@ -1580,7 +1597,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  </div>
 <div class="line">  form1() {</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form with manual assembly info&quot;</span>);</div>
-<div class="line">    controls().push_back_range({company, product, <a class="code hl_class" href="classxtd_1_1version.html">version</a>, company_name, product_name, product_version});</div>
+<div class="line">    controls().push_back_range({company, product, version, company_name, product_name, product_version});</div>
 <div class="line">    client_size({350, 105});</div>
 <div class="line">    </div>
 <div class="line">    company.auto_size(<span class="keyword">true</span>);</div>
@@ -1593,10 +1610,10 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">    product.location({10, 40});</div>
 <div class="line">    product.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.location({10, 70});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text_align(content_alignment::middle_left);</div>
+<div class="line">    version.auto_size(<span class="keyword">true</span>);</div>
+<div class="line">    version.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
+<div class="line">    version.location({10, 70});</div>
+<div class="line">    version.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
 <div class="line">    company_name.text(application::company_name());</div>
 <div class="line">    company_name.read_only(<span class="keyword">true</span>);</div>
@@ -1615,21 +1632,18 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> company;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> product;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a>;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> company;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> product;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> version;</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> company_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_version;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> company_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1label_html"><div class="ttname"><a href="classxtd_1_1forms_1_1label.html">xtd::forms::label</a></div><div class="ttdoc">Represents a standard Windows label.</div><div class="ttdef"><b>Definition</b> label.hpp:38</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1text__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1text__box.html">xtd::forms::text_box</a></div><div class="ttdoc">Represents a standard Windows text box.</div><div class="ttdef"><b>Definition</b> text_box.hpp:31</div></div>
-<div class="ttc" id="aclassxtd_1_1version_html"><div class="ttname"><a href="classxtd_1_1version.html">xtd::version</a></div><div class="ttdoc">Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...</div><div class="ttdef"><b>Definition</b> version.hpp:114</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
+<div class="ttc" id="agroup__colors_html_ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb"><div class="ttname"><a href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">xtd::drawing::known_color::text_box</a></div><div class="ttdeci">@ text_box</div><div class="ttdoc">The system-defined color of the accent color (macos specific. On other platform is same as window).</div></div>
+<div class="ttc" id="agroup__style__sheets_html_ga0095c55e57882e69ada99760a885e216"><div class="ttname"><a href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">xtd::forms::style_sheets::label</a></div><div class="ttdeci">xtd::forms::style_sheets::control label</div><div class="ttdoc">The label data allows you to specify the box of a label control.</div><div class="ttdef"><b>Definition</b> label.hpp:25</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line"><span class="preprocessor">#pragma region xtd generated code</span></div>
 <div class="line"><span class="comment">// This code was generated by CMake script.</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -1705,15 +1719,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_configuration_attribute&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/text_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    application::run(form1 {});</div>
@@ -1721,7 +1729,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  </div>
 <div class="line">  form1() {</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form with manual assembly info&quot;</span>);</div>
-<div class="line">    controls().push_back_range({company, product, <a class="code hl_class" href="classxtd_1_1version.html">version</a>, company_name, product_name, product_version});</div>
+<div class="line">    controls().push_back_range({company, product, version, company_name, product_name, product_version});</div>
 <div class="line">    client_size({350, 105});</div>
 <div class="line">    </div>
 <div class="line">    company.auto_size(<span class="keyword">true</span>);</div>
@@ -1734,10 +1742,10 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">    product.location({10, 40});</div>
 <div class="line">    product.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.location({10, 70});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text_align(content_alignment::middle_left);</div>
+<div class="line">    version.auto_size(<span class="keyword">true</span>);</div>
+<div class="line">    version.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
+<div class="line">    version.location({10, 70});</div>
+<div class="line">    version.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
 <div class="line">    company_name.text(application::company_name());</div>
 <div class="line">    company_name.read_only(<span class="keyword">true</span>);</div>
@@ -1756,13 +1764,13 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> company;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> product;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a>;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> company;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> product;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> version;</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> company_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_version;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> company_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
@@ -1831,15 +1839,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_copyright_attribute&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/text_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    application::run(form1 {});</div>
@@ -1847,7 +1849,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  </div>
 <div class="line">  form1() {</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form with manual assembly info&quot;</span>);</div>
-<div class="line">    controls().push_back_range({company, product, <a class="code hl_class" href="classxtd_1_1version.html">version</a>, company_name, product_name, product_version});</div>
+<div class="line">    controls().push_back_range({company, product, version, company_name, product_name, product_version});</div>
 <div class="line">    client_size({350, 105});</div>
 <div class="line">    </div>
 <div class="line">    company.auto_size(<span class="keyword">true</span>);</div>
@@ -1860,10 +1862,10 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">    product.location({10, 40});</div>
 <div class="line">    product.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.location({10, 70});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text_align(content_alignment::middle_left);</div>
+<div class="line">    version.auto_size(<span class="keyword">true</span>);</div>
+<div class="line">    version.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
+<div class="line">    version.location({10, 70});</div>
+<div class="line">    version.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
 <div class="line">    company_name.text(application::company_name());</div>
 <div class="line">    company_name.read_only(<span class="keyword">true</span>);</div>
@@ -1882,13 +1884,13 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> company;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> product;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a>;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> company;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> product;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> version;</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> company_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_version;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> company_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
@@ -1957,15 +1959,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_culture_attribute&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/text_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    application::run(form1 {});</div>
@@ -1973,7 +1969,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  </div>
 <div class="line">  form1() {</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form with manual assembly info&quot;</span>);</div>
-<div class="line">    controls().push_back_range({company, product, <a class="code hl_class" href="classxtd_1_1version.html">version</a>, company_name, product_name, product_version});</div>
+<div class="line">    controls().push_back_range({company, product, version, company_name, product_name, product_version});</div>
 <div class="line">    client_size({350, 105});</div>
 <div class="line">    </div>
 <div class="line">    company.auto_size(<span class="keyword">true</span>);</div>
@@ -1986,10 +1982,10 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">    product.location({10, 40});</div>
 <div class="line">    product.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.location({10, 70});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text_align(content_alignment::middle_left);</div>
+<div class="line">    version.auto_size(<span class="keyword">true</span>);</div>
+<div class="line">    version.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
+<div class="line">    version.location({10, 70});</div>
+<div class="line">    version.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
 <div class="line">    company_name.text(application::company_name());</div>
 <div class="line">    company_name.read_only(<span class="keyword">true</span>);</div>
@@ -2008,13 +2004,13 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> company;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> product;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a>;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> company;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> product;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> version;</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> company_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_version;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> company_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
@@ -2083,15 +2079,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_description_attribute&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/text_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    application::run(form1 {});</div>
@@ -2099,7 +2089,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  </div>
 <div class="line">  form1() {</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form with manual assembly info&quot;</span>);</div>
-<div class="line">    controls().push_back_range({company, product, <a class="code hl_class" href="classxtd_1_1version.html">version</a>, company_name, product_name, product_version});</div>
+<div class="line">    controls().push_back_range({company, product, version, company_name, product_name, product_version});</div>
 <div class="line">    client_size({350, 105});</div>
 <div class="line">    </div>
 <div class="line">    company.auto_size(<span class="keyword">true</span>);</div>
@@ -2112,10 +2102,10 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">    product.location({10, 40});</div>
 <div class="line">    product.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.location({10, 70});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text_align(content_alignment::middle_left);</div>
+<div class="line">    version.auto_size(<span class="keyword">true</span>);</div>
+<div class="line">    version.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
+<div class="line">    version.location({10, 70});</div>
+<div class="line">    version.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
 <div class="line">    company_name.text(application::company_name());</div>
 <div class="line">    company_name.read_only(<span class="keyword">true</span>);</div>
@@ -2134,13 +2124,13 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> company;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> product;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a>;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> company;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> product;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> version;</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> company_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_version;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> company_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
@@ -2209,15 +2199,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_file_version_attribute&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/text_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    application::run(form1 {});</div>
@@ -2225,7 +2209,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  </div>
 <div class="line">  form1() {</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form with manual assembly info&quot;</span>);</div>
-<div class="line">    controls().push_back_range({company, product, <a class="code hl_class" href="classxtd_1_1version.html">version</a>, company_name, product_name, product_version});</div>
+<div class="line">    controls().push_back_range({company, product, version, company_name, product_name, product_version});</div>
 <div class="line">    client_size({350, 105});</div>
 <div class="line">    </div>
 <div class="line">    company.auto_size(<span class="keyword">true</span>);</div>
@@ -2238,10 +2222,10 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">    product.location({10, 40});</div>
 <div class="line">    product.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.location({10, 70});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text_align(content_alignment::middle_left);</div>
+<div class="line">    version.auto_size(<span class="keyword">true</span>);</div>
+<div class="line">    version.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
+<div class="line">    version.location({10, 70});</div>
+<div class="line">    version.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
 <div class="line">    company_name.text(application::company_name());</div>
 <div class="line">    company_name.read_only(<span class="keyword">true</span>);</div>
@@ -2260,13 +2244,13 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> company;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> product;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a>;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> company;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> product;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> version;</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> company_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_version;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> company_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
@@ -2335,15 +2319,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_guid_attribute&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/text_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    application::run(form1 {});</div>
@@ -2351,7 +2329,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  </div>
 <div class="line">  form1() {</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form with manual assembly info&quot;</span>);</div>
-<div class="line">    controls().push_back_range({company, product, <a class="code hl_class" href="classxtd_1_1version.html">version</a>, company_name, product_name, product_version});</div>
+<div class="line">    controls().push_back_range({company, product, version, company_name, product_name, product_version});</div>
 <div class="line">    client_size({350, 105});</div>
 <div class="line">    </div>
 <div class="line">    company.auto_size(<span class="keyword">true</span>);</div>
@@ -2364,10 +2342,10 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">    product.location({10, 40});</div>
 <div class="line">    product.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.location({10, 70});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text_align(content_alignment::middle_left);</div>
+<div class="line">    version.auto_size(<span class="keyword">true</span>);</div>
+<div class="line">    version.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
+<div class="line">    version.location({10, 70});</div>
+<div class="line">    version.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
 <div class="line">    company_name.text(application::company_name());</div>
 <div class="line">    company_name.read_only(<span class="keyword">true</span>);</div>
@@ -2386,13 +2364,13 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> company;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> product;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a>;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> company;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> product;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> version;</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> company_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_version;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> company_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
@@ -2461,15 +2439,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_identifier_attribute&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/text_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    application::run(form1 {});</div>
@@ -2477,7 +2449,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  </div>
 <div class="line">  form1() {</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form with manual assembly info&quot;</span>);</div>
-<div class="line">    controls().push_back_range({company, product, <a class="code hl_class" href="classxtd_1_1version.html">version</a>, company_name, product_name, product_version});</div>
+<div class="line">    controls().push_back_range({company, product, version, company_name, product_name, product_version});</div>
 <div class="line">    client_size({350, 105});</div>
 <div class="line">    </div>
 <div class="line">    company.auto_size(<span class="keyword">true</span>);</div>
@@ -2490,10 +2462,10 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">    product.location({10, 40});</div>
 <div class="line">    product.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.location({10, 70});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text_align(content_alignment::middle_left);</div>
+<div class="line">    version.auto_size(<span class="keyword">true</span>);</div>
+<div class="line">    version.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
+<div class="line">    version.location({10, 70});</div>
+<div class="line">    version.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
 <div class="line">    company_name.text(application::company_name());</div>
 <div class="line">    company_name.read_only(<span class="keyword">true</span>);</div>
@@ -2512,13 +2484,13 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> company;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> product;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a>;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> company;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> product;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> version;</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> company_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_version;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> company_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
@@ -2587,15 +2559,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_name_attribute&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/text_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    application::run(form1 {});</div>
@@ -2603,7 +2569,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  </div>
 <div class="line">  form1() {</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form with manual assembly info&quot;</span>);</div>
-<div class="line">    controls().push_back_range({company, product, <a class="code hl_class" href="classxtd_1_1version.html">version</a>, company_name, product_name, product_version});</div>
+<div class="line">    controls().push_back_range({company, product, version, company_name, product_name, product_version});</div>
 <div class="line">    client_size({350, 105});</div>
 <div class="line">    </div>
 <div class="line">    company.auto_size(<span class="keyword">true</span>);</div>
@@ -2616,10 +2582,10 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">    product.location({10, 40});</div>
 <div class="line">    product.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.location({10, 70});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text_align(content_alignment::middle_left);</div>
+<div class="line">    version.auto_size(<span class="keyword">true</span>);</div>
+<div class="line">    version.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
+<div class="line">    version.location({10, 70});</div>
+<div class="line">    version.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
 <div class="line">    company_name.text(application::company_name());</div>
 <div class="line">    company_name.read_only(<span class="keyword">true</span>);</div>
@@ -2638,13 +2604,13 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> company;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> product;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a>;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> company;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> product;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> version;</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> company_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_version;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> company_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
@@ -2713,15 +2679,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_product_attribute&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/text_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    application::run(form1 {});</div>
@@ -2729,7 +2689,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  </div>
 <div class="line">  form1() {</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form with manual assembly info&quot;</span>);</div>
-<div class="line">    controls().push_back_range({company, product, <a class="code hl_class" href="classxtd_1_1version.html">version</a>, company_name, product_name, product_version});</div>
+<div class="line">    controls().push_back_range({company, product, version, company_name, product_name, product_version});</div>
 <div class="line">    client_size({350, 105});</div>
 <div class="line">    </div>
 <div class="line">    company.auto_size(<span class="keyword">true</span>);</div>
@@ -2742,10 +2702,10 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">    product.location({10, 40});</div>
 <div class="line">    product.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.location({10, 70});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text_align(content_alignment::middle_left);</div>
+<div class="line">    version.auto_size(<span class="keyword">true</span>);</div>
+<div class="line">    version.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
+<div class="line">    version.location({10, 70});</div>
+<div class="line">    version.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
 <div class="line">    company_name.text(application::company_name());</div>
 <div class="line">    company_name.read_only(<span class="keyword">true</span>);</div>
@@ -2764,13 +2724,13 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> company;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> product;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a>;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> company;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> product;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> version;</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> company_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_version;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> company_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
@@ -2839,15 +2799,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_title_attribute&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/text_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    application::run(form1 {});</div>
@@ -2855,7 +2809,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  </div>
 <div class="line">  form1() {</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form with manual assembly info&quot;</span>);</div>
-<div class="line">    controls().push_back_range({company, product, <a class="code hl_class" href="classxtd_1_1version.html">version</a>, company_name, product_name, product_version});</div>
+<div class="line">    controls().push_back_range({company, product, version, company_name, product_name, product_version});</div>
 <div class="line">    client_size({350, 105});</div>
 <div class="line">    </div>
 <div class="line">    company.auto_size(<span class="keyword">true</span>);</div>
@@ -2868,10 +2822,10 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">    product.location({10, 40});</div>
 <div class="line">    product.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.location({10, 70});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text_align(content_alignment::middle_left);</div>
+<div class="line">    version.auto_size(<span class="keyword">true</span>);</div>
+<div class="line">    version.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
+<div class="line">    version.location({10, 70});</div>
+<div class="line">    version.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
 <div class="line">    company_name.text(application::company_name());</div>
 <div class="line">    company_name.read_only(<span class="keyword">true</span>);</div>
@@ -2890,13 +2844,13 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> company;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> product;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a>;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> company;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> product;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> version;</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> company_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_version;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> company_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
@@ -2965,15 +2919,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_trademark_attribute&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/text_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    application::run(form1 {});</div>
@@ -2981,7 +2929,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  </div>
 <div class="line">  form1() {</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form with manual assembly info&quot;</span>);</div>
-<div class="line">    controls().push_back_range({company, product, <a class="code hl_class" href="classxtd_1_1version.html">version</a>, company_name, product_name, product_version});</div>
+<div class="line">    controls().push_back_range({company, product, version, company_name, product_name, product_version});</div>
 <div class="line">    client_size({350, 105});</div>
 <div class="line">    </div>
 <div class="line">    company.auto_size(<span class="keyword">true</span>);</div>
@@ -2994,10 +2942,10 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">    product.location({10, 40});</div>
 <div class="line">    product.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.location({10, 70});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text_align(content_alignment::middle_left);</div>
+<div class="line">    version.auto_size(<span class="keyword">true</span>);</div>
+<div class="line">    version.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
+<div class="line">    version.location({10, 70});</div>
+<div class="line">    version.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
 <div class="line">    company_name.text(application::company_name());</div>
 <div class="line">    company_name.read_only(<span class="keyword">true</span>);</div>
@@ -3016,13 +2964,13 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> company;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> product;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a>;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> company;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> product;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> version;</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> company_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_version;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> company_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
@@ -3091,15 +3039,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/reflection/assembly_version_attribute&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/text_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use assembly information manually. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    application::run(form1 {});</div>
@@ -3107,7 +3049,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  </div>
 <div class="line">  form1() {</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form with manual assembly info&quot;</span>);</div>
-<div class="line">    controls().push_back_range({company, product, <a class="code hl_class" href="classxtd_1_1version.html">version</a>, company_name, product_name, product_version});</div>
+<div class="line">    controls().push_back_range({company, product, version, company_name, product_name, product_version});</div>
 <div class="line">    client_size({350, 105});</div>
 <div class="line">    </div>
 <div class="line">    company.auto_size(<span class="keyword">true</span>);</div>
@@ -3120,10 +3062,10 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">    product.location({10, 40});</div>
 <div class="line">    product.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.location({10, 70});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1version.html">version</a>.text_align(content_alignment::middle_left);</div>
+<div class="line">    version.auto_size(<span class="keyword">true</span>);</div>
+<div class="line">    version.text(<span class="stringliteral">&quot;Product version&quot;</span>);</div>
+<div class="line">    version.location({10, 70});</div>
+<div class="line">    version.text_align(content_alignment::middle_left);</div>
 <div class="line">    </div>
 <div class="line">    company_name.text(application::company_name());</div>
 <div class="line">    company_name.read_only(<span class="keyword">true</span>);</div>
@@ -3142,13 +3084,13 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> company;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> product;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a>;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> company;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> product;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> version;</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> company_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_name;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1text__box.html">text_box</a> product_version;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> company_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_name;</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> product_version;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form1::main);</div>
@@ -3252,21 +3194,56 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f" title="The self_ expression is a reference value expression whose value is the reference of the implicit obj...">self_</a> is equivalent to *this. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use the <a class="el" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f" title="The self_ expression is a reference value expression whose value is the reference of the implicit obj...">self_</a> keyword <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>coordinate : <span class="keyword">public</span> istringable {</div>
+<div class="line">  <span class="keywordtype">int</span> x = 0;</div>
+<div class="line">  <span class="keywordtype">int</span> y = 0;</div>
+<div class="line">  </div>
+<div class="line">  coordinate() noexcept = default;</div>
+<div class="line">  coordinate(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) noexcept : x {x}, y {y} {}</div>
+<div class="line"> </div>
+<div class="line">  coordinate&amp; translate(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y) <span class="keyword">noexcept</span> {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>.x += <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>;</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>.y += <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>;</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code hl_define" href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a>;</div>
+<div class="line">  }</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">to_string</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{{x={}, y={}}}&quot;</span>, x, y);}</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main()-&gt;int {</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">c</a> = coordinate {200, 100};</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(<span class="stringliteral">&quot;c =&gt; {}&quot;</span>, c);</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(<span class="stringliteral">&quot;translate&quot;</span>);</div>
+<div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">c</a>.translate(50, 20);</div>
+<div class="line">  <a class="code hl_function" href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">println</a>(<span class="stringliteral">&quot;c =&gt; {}&quot;</span>, c);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code can produce the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// c =&gt; {x=200, y=100}</span></div>
+<div class="line"><span class="comment">// translate</span></div>
+<div class="line"><span class="comment">// c =&gt; {x=250, y=120}</span></div>
+<div class="ttc" id="agroup__keywords_html_ga05d1212dca8562cec36b4ebb03dd897f"><div class="ttname"><a href="group__keywords.html#ga05d1212dca8562cec36b4ebb03dd897f">self_</a></div><div class="ttdeci">#define self_</div><div class="ttdoc">The self_ expression is a reference value expression whose value is the reference of the implicit obj...</div><div class="ttdef"><b>Definition</b> self.hpp:20</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">xtd::console_key::y</a></div><div class="ttdeci">@ y</div><div class="ttdoc">The Y key.</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">xtd::console_key::c</a></div><div class="ttdeci">@ c</div><div class="ttdoc">The C key.</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">xtd::console_key::x</a></div><div class="ttdeci">@ x</div><div class="ttdoc">The X key.</div></div>
+<div class="ttc" id="anamespacextd_html_a2401d67caeff9e2d61d33b4b1e13a488"><div class="ttname"><a href="namespacextd.html#a2401d67caeff9e2d61d33b4b1e13a488">xtd::println</a></div><div class="ttdeci">void println(FILE *file)</div><div class="ttdoc">Writes the current line terminator to the file output stream using the specified format information.</div><div class="ttdef"><b>Definition</b> println.hpp:14</div></div>
+<div class="ttc" id="anamespacextd_html_a513380c9aac7fdd5eefd7697e2cd3776"><div class="ttname"><a href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">xtd::to_string</a></div><div class="ttdeci">xtd::string to_string(int val)</div><div class="ttdoc">Converts a signed integer to xtd::string.</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="gacff264255bb80f00c1447fda6524b0ec" name="gacff264255bb80f00c1447fda6524b0ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gacff264255bb80f00c1447fda6524b0ec">&#9670;&#160;</a></span>sizeof_</h2>
+<a id="ga7e5173499dc845cf977362c967c8589e" name="ga7e5173499dc845cf977362c967c8589e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7e5173499dc845cf977362c967c8589e">&#9670;&#160;</a></span>sizeof_</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">#define sizeof_</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em></td><td>)</td>
-          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -3276,91 +3253,16 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <p>Used to obtain the size in bytes of the object representation of type or expression. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>Some C++ examples: <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/sizeof&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="comment">// Get the size of a type :</span></div>
+<div class="line"><a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> size1 = sizeof_&lt;int32&gt;();</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;sizeof :&quot;</span>);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;┌───────────────────┬─────────────────────┬─────────────────────────┐&quot;</span>);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│  xtd              │  std                │ native                  │&quot;</span>);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;├───────────────────┼─────────────────────┼─────────────────────────┤&quot;</span>);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::boolean = {,2} │ ------------------- │ bool               = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#gab7230dbe491f8bcef5e5f8bdaba5e27f">xtd::boolean</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">bool</span>));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::char_   = {,2} │ ------------------- │ char               = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga025f760e2ae1e3355f64174f10671484">xtd::char_</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">char</span>));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::char8   = {,2} │ ------------------- │ char8_t            = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">char8_t</span>));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::char16  = {,2} │ ------------------- │ char16_t           = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">xtd::char16</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">char16_t</span>));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::char32  = {,2} │ ------------------- │ char32_t           = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">xtd::char32</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">char32_t</span>));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::wchar   = {,2} │ ------------------- │ wchar_t            = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga155357d92cf162b71b396e46accee518">xtd::wchar</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">wchar_t</span>));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::single  = {,2} │ std::float_t   = {,2} │ float              = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga4c9f72f7ab9ea9919c93a1a2b245ab71">xtd::single</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::float_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">float</span>));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::double_ = {,2} │ std::double_t  = {,2} │ double             = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#gac9b7afa2262ed23eae6787dea92d733e">xtd::double_</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::double_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">double</span>));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::decimal = {,2} │ ------------------- │ long double        = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga255b88769d29fe91661cacc7720f265a">xtd::decimal</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">long</span> <span class="keywordtype">double</span>));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::sbyte   = {,2} │ std::int8_t    = {,2} │ char               = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga37e983ceedf5a7f73bc4568eaeae0aa2">xtd::sbyte</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::int8_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">char</span>));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::int16   = {,2} │ std::int16_t   = {,2} │ short              = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga09d26135a9af4f7a5f4cae382627d6d1">xtd::int16</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::int16_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">short</span>));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::int32   = {,2} │ std::int32_t   = {,2} │ int                = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::int32_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">int</span>));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::int64   = {,2} │ std::int64_t   = {,2} │ long               = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">xtd::int64</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::int64_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">long</span>));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::intptr  = {,2} │ std::intptr_t  = {,2} │ long long          = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">xtd::intptr</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::intptr_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">long</span> <span class="keywordtype">long</span>));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::byte    = {,2} │ std::int8_t    = {,2} │ unsigned char      = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::uint8_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::uint16  = {,2} │ std::uint16_t  = {,2} │ unsigned short     = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#gad8523b51611f0fac793f78f16b155b21">xtd::uint16</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::uint16_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::uint32  = {,2} │ std::uint32_t  = {,2} │ unsigned int       = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">xtd::uint32</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::uint32_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::uint64  = {,2} │ std::uint64_t  = {,2} │ unsigned long      = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#gab5833228ed21371660af349c9b1fe797">xtd::uint64</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::uint64_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::uintptr = {,2} │ std::uintptr_t = {,2} │ unsigned long long = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga611186545311a64ce96c09d1e7be8d8c">xtd::uintptr</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(std::uintptr_t), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::size    = {,2} │ ------------------- │ size_t             = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<span class="keywordtype">size_t</span>));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;│ xtd::ptrdiff = {,2} │ ------------------- │ ptrdiff_t          = {,2} │&quot;</span>, <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(<a class="code hl_typedef" href="group__types.html#gac047942a62f03ba75e1b4f0bde7401ca">xtd::ptrdiff</a>), <a class="code hl_define" href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a>(ptrdiff_t));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;└───────────────────┴─────────────────────┴─────────────────────────┘&quot;</span>);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code can produce the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// sizeof :</span></div>
-<div class="line"><span class="comment">// ┌───────────────────┬─────────────────────┬─────────────────────────┐</span></div>
-<div class="line"><span class="comment">// │  xtd              │  std                │ native                  │</span></div>
-<div class="line"><span class="comment">// ├───────────────────┼─────────────────────┼─────────────────────────┤</span></div>
-<div class="line"><span class="comment">// │ xtd::boolean =  1 │ ------------------- │ bool               =  1 │</span></div>
-<div class="line"><span class="comment">// │ xtd::char_   =  1 │ ------------------- │ char               =  1 │</span></div>
-<div class="line"><span class="comment">// │ xtd::char8   =  1 │ ------------------- │ char8_t            =  1 │</span></div>
-<div class="line"><span class="comment">// │ xtd::char16  =  2 │ ------------------- │ char16_t           =  2 │</span></div>
-<div class="line"><span class="comment">// │ xtd::char32  =  4 │ ------------------- │ char32_t           =  4 │</span></div>
-<div class="line"><span class="comment">// │ xtd::wchar   =  4 │ ------------------- │ wchar_t            =  4 │</span></div>
-<div class="line"><span class="comment">// │ xtd::single  =  4 │ std::float_t   =  4 │ float              =  4 │</span></div>
-<div class="line"><span class="comment">// │ xtd::double_ =  8 │ std::double_t  =  8 │ double             =  8 │</span></div>
-<div class="line"><span class="comment">// │ xtd::decimal = 16 │ ------------------- │ long double        = 16 │</span></div>
-<div class="line"><span class="comment">// │ xtd::sbyte   =  1 │ std::int8_t    =  1 │ char               =  1 │</span></div>
-<div class="line"><span class="comment">// │ xtd::int16   =  2 │ std::int16_t   =  2 │ short              =  2 │</span></div>
-<div class="line"><span class="comment">// │ xtd::int32   =  4 │ std::int32_t   =  4 │ int                =  4 │</span></div>
-<div class="line"><span class="comment">// │ xtd::int64   =  8 │ std::int64_t   =  8 │ long               =  8 │</span></div>
-<div class="line"><span class="comment">// │ xtd::intptr  =  8 │ std::intptr_t  =  8 │ long long          =  8 │</span></div>
-<div class="line"><span class="comment">// │ xtd::byte    =  1 │ std::int8_t    =  1 │ unsigned char      =  1 │</span></div>
-<div class="line"><span class="comment">// │ xtd::uint16  =  2 │ std::uint16_t  =  2 │ unsigned short     =  2 │</span></div>
-<div class="line"><span class="comment">// │ xtd::uint32  =  4 │ std::uint32_t  =  4 │ unsigned int       =  4 │</span></div>
-<div class="line"><span class="comment">// │ xtd::uint64  =  8 │ std::uint64_t  =  8 │ unsigned long      =  8 │</span></div>
-<div class="line"><span class="comment">// │ xtd::uintptr =  8 │ std::uintptr_t =  8 │ unsigned long long =  8 │</span></div>
-<div class="line"><span class="comment">// │ xtd::size    =  8 │ ------------------- │ size_t             =  8 │</span></div>
-<div class="line"><span class="comment">// │ xtd::ptrdiff =  8 │ ------------------- │ ptrdiff_t          =  8 │</span></div>
-<div class="line"><span class="comment">// └───────────────────┴─────────────────────┴─────────────────────────┘</span></div>
-<div class="ttc" id="agroup__keywords_html_gacff264255bb80f00c1447fda6524b0ec"><div class="ttname"><a href="group__keywords.html#gacff264255bb80f00c1447fda6524b0ec">sizeof_</a></div><div class="ttdeci">#define sizeof_(...)</div><div class="ttdoc">Used to obtain the size in bytes of the object representation of type or expression.</div><div class="ttdef"><b>Definition</b> sizeof.hpp:16</div></div>
-<div class="ttc" id="agroup__types_html_ga025f760e2ae1e3355f64174f10671484"><div class="ttname"><a href="group__types.html#ga025f760e2ae1e3355f64174f10671484">xtd::char_</a></div><div class="ttdeci">char char_</div><div class="ttdoc">Represents a character.</div><div class="ttdef"><b>Definition</b> char.hpp:24</div></div>
-<div class="ttc" id="agroup__types_html_ga09d26135a9af4f7a5f4cae382627d6d1"><div class="ttname"><a href="group__types.html#ga09d26135a9af4f7a5f4cae382627d6d1">xtd::int16</a></div><div class="ttdeci">int16_t int16</div><div class="ttdoc">Represents a 16-bit signed integer.</div><div class="ttdef"><b>Definition</b> int16.hpp:23</div></div>
-<div class="ttc" id="agroup__types_html_ga1259090c8918e75847a8cb2a64b8912a"><div class="ttname"><a href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a></div><div class="ttdeci">char8_t char8</div><div class="ttdoc">Represents a 8-bit unicode character.</div><div class="ttdef"><b>Definition</b> char8.hpp:26</div></div>
-<div class="ttc" id="agroup__types_html_ga155357d92cf162b71b396e46accee518"><div class="ttname"><a href="group__types.html#ga155357d92cf162b71b396e46accee518">xtd::wchar</a></div><div class="ttdeci">wchar_t wchar</div><div class="ttdoc">Represents a wide character.</div><div class="ttdef"><b>Definition</b> wchar.hpp:24</div></div>
-<div class="ttc" id="agroup__types_html_ga205462e259a4eca1545511085c2c350e"><div class="ttname"><a href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a></div><div class="ttdeci">int32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> int32.hpp:23</div></div>
-<div class="ttc" id="agroup__types_html_ga2f2888f55e58cac4c07eb490db7868c4"><div class="ttname"><a href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">xtd::int64</a></div><div class="ttdeci">int64_t int64</div><div class="ttdoc">Represents a 64-bit signed integer.</div><div class="ttdef"><b>Definition</b> int64.hpp:23</div></div>
-<div class="ttc" id="agroup__types_html_ga37e983ceedf5a7f73bc4568eaeae0aa2"><div class="ttname"><a href="group__types.html#ga37e983ceedf5a7f73bc4568eaeae0aa2">xtd::sbyte</a></div><div class="ttdeci">int8_t sbyte</div><div class="ttdoc">Represents a 8-bit signed integer.</div><div class="ttdef"><b>Definition</b> sbyte.hpp:23</div></div>
-<div class="ttc" id="agroup__types_html_ga39d5c4947c807e5f78b8a9abe3692570"><div class="ttname"><a href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">xtd::char16</a></div><div class="ttdeci">char16_t char16</div><div class="ttdoc">Represents a 16-bit unicode character.</div><div class="ttdef"><b>Definition</b> char16.hpp:26</div></div>
-<div class="ttc" id="agroup__types_html_ga41c5d8b5d999ac5a2ff06fe57f38d5f5"><div class="ttname"><a href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">xtd::uint32</a></div><div class="ttdeci">uint32_t uint32</div><div class="ttdoc">Represents a 32-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> uint32.hpp:23</div></div>
-<div class="ttc" id="agroup__types_html_ga4c9f72f7ab9ea9919c93a1a2b245ab71"><div class="ttname"><a href="group__types.html#ga4c9f72f7ab9ea9919c93a1a2b245ab71">xtd::single</a></div><div class="ttdeci">float single</div><div class="ttdoc">Represents a single-precision floating-point number.</div><div class="ttdef"><b>Definition</b> single.hpp:23</div></div>
-<div class="ttc" id="agroup__types_html_ga611186545311a64ce96c09d1e7be8d8c"><div class="ttname"><a href="group__types.html#ga611186545311a64ce96c09d1e7be8d8c">xtd::uintptr</a></div><div class="ttdeci">uintmax_t uintptr</div><div class="ttdoc">Represent a pointer or a handle.</div><div class="ttdef"><b>Definition</b> uintptr.hpp:23</div></div>
+<div class="line">int32 i = 42;</div>
+<div class="line"><span class="comment">// Get the size of an object :</span></div>
+<div class="line"><a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> size2 = <a class="code hl_define" href="group__keywords.html#ga7e5173499dc845cf977362c967c8589e">sizeof_</a>(i);</div>
+<div class="ttc" id="agroup__keywords_html_ga7e5173499dc845cf977362c967c8589e"><div class="ttname"><a href="group__keywords.html#ga7e5173499dc845cf977362c967c8589e">sizeof_</a></div><div class="ttdeci">#define sizeof_</div><div class="ttdoc">Used to obtain the size in bytes of the object representation of type or expression.</div><div class="ttdef"><b>Definition</b> sizeof.hpp:43</div></div>
 <div class="ttc" id="agroup__types_html_ga92c4f59ae39104d31ce9c0c20810001d"><div class="ttname"><a href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
-<div class="ttc" id="agroup__types_html_ga989a1148b6ff15567dca430966b17c92"><div class="ttname"><a href="group__types.html#ga989a1148b6ff15567dca430966b17c92">xtd::char32</a></div><div class="ttdeci">char32_t char32</div><div class="ttdoc">Represents a 32-bit unicode character.</div><div class="ttdef"><b>Definition</b> char32.hpp:23</div></div>
-<div class="ttc" id="agroup__types_html_gaa7283e1dd31c385d954467f7ea324451"><div class="ttname"><a href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">xtd::intptr</a></div><div class="ttdeci">intmax_t intptr</div><div class="ttdoc">Represent a pointer or a handle.</div><div class="ttdef"><b>Definition</b> intptr.hpp:23</div></div>
-<div class="ttc" id="agroup__types_html_gab5833228ed21371660af349c9b1fe797"><div class="ttname"><a href="group__types.html#gab5833228ed21371660af349c9b1fe797">xtd::uint64</a></div><div class="ttdeci">uint64_t uint64</div><div class="ttdoc">Represents a 64-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> uint64.hpp:23</div></div>
-<div class="ttc" id="agroup__types_html_gab7230dbe491f8bcef5e5f8bdaba5e27f"><div class="ttname"><a href="group__types.html#gab7230dbe491f8bcef5e5f8bdaba5e27f">xtd::boolean</a></div><div class="ttdeci">bool boolean</div><div class="ttdoc">Represents a boolean.</div><div class="ttdef"><b>Definition</b> boolean.hpp:23</div></div>
-<div class="ttc" id="agroup__types_html_gabb9d3031d62e3725b4265c7e5d2a98e1"><div class="ttname"><a href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a></div><div class="ttdeci">uint8_t byte</div><div class="ttdoc">Represents a 8-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> byte.hpp:23</div></div>
-<div class="ttc" id="agroup__types_html_gac047942a62f03ba75e1b4f0bde7401ca"><div class="ttname"><a href="group__types.html#gac047942a62f03ba75e1b4f0bde7401ca">xtd::ptrdiff</a></div><div class="ttdeci">std::ptrdiff_t ptrdiff</div><div class="ttdoc">Represent the signed integer type of the result of subtracting two pointers.</div><div class="ttdef"><b>Definition</b> ptrdiff.hpp:23</div></div>
-<div class="ttc" id="agroup__types_html_gac9b7afa2262ed23eae6787dea92d733e"><div class="ttname"><a href="group__types.html#gac9b7afa2262ed23eae6787dea92d733e">xtd::double_</a></div><div class="ttdeci">double double_</div><div class="ttdoc">Represents a double-precision floating-point number.</div><div class="ttdef"><b>Definition</b> double.hpp:23</div></div>
-<div class="ttc" id="agroup__types_html_gad8523b51611f0fac793f78f16b155b21"><div class="ttname"><a href="group__types.html#gad8523b51611f0fac793f78f16b155b21">xtd::uint16</a></div><div class="ttdeci">uint16_t uint16</div><div class="ttdoc">Represents a 16-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> uint16.hpp:23</div></div>
 </div><!-- fragment --> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The typeof_ operator cannot be overloaded. </dd></dl>
 
 </div>
 </div>
@@ -3534,7 +3436,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// three four</span></div>
 <div class="line"><span class="comment">// five</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_and_assert_8cpp-example.html#a5">application_and_assert.cpp</a>, <a class="el" href="application_and_exception_8cpp-example.html#a5">application_and_exception.cpp</a>, <a class="el" href="application_enable_dark_mode_8cpp-example.html#a55">application_enable_dark_mode.cpp</a>, <a class="el" href="application_enable_light_mode_8cpp-example.html#a55">application_enable_light_mode.cpp</a>, <a class="el" href="application_with_cmake_assembly_info_8cpp-example.html#a4">application_with_cmake_assembly_info.cpp</a>, <a class="el" href="application_with_manual_assembly_info_8cpp-example.html#a4">application_with_manual_assembly_info.cpp</a>, <a class="el" href="auto_reset_event_8cpp-example.html#a2">auto_reset_event.cpp</a>, <a class="el" href="background_worker_8cpp-example.html#a9">background_worker.cpp</a>, <a class="el" href="barrier_8cpp-example.html#a8">barrier.cpp</a>, <a class="el" href="barrier_simple_8cpp-example.html#a2">barrier_simple.cpp</a>, <a class="el" href="binary_reader_8cpp-example.html#a5">binary_reader.cpp</a>, <a class="el" href="binary_reader2_8cpp-example.html#a3">binary_reader2.cpp</a>, <a class="el" href="binary_reader3_8cpp-example.html#a8">binary_reader3.cpp</a>, <a class="el" href="bit_converter_endianness_8cpp-example.html#a0">bit_converter_endianness.cpp</a>, <a class="el" href="bit_converter_is_big_endian_8cpp-example.html#a0">bit_converter_is_big_endian.cpp</a>, <a class="el" href="bit_converter_is_little_endian_8cpp-example.html#a0">bit_converter_is_little_endian.cpp</a>, <a class="el" href="bit_converter_round_trips_8cpp-example.html#a0">bit_converter_round_trips.cpp</a>, <a class="el" href="border_style_8cpp-example.html#a14">border_style.cpp</a>, <a class="el" href="calculator_8cpp-example.html#a11">calculator.cpp</a>, <a class="el" href="change_parent_8cpp-example.html#a12">change_parent.cpp</a>, <a class="el" href="console_clear_8cpp-example.html#a5">console_clear.cpp</a>, <a class="el" href="console_firework_8cpp-example.html#a5">console_firework.cpp</a>, <a class="el" href="countdown_event_8cpp-example.html#a3">countdown_event.cpp</a>, <a class="el" href="countries_8cpp-example.html#a9">countries.cpp</a>, <a class="el" href="date_time_8cpp-example.html#a1">date_time.cpp</a>, <a class="el" href="date_time_add_8cpp-example.html#a2">date_time_add.cpp</a>, <a class="el" href="date_time_add_days_8cpp-example.html#a2">date_time_add_days.cpp</a>, <a class="el" href="date_time_add_hours_8cpp-example.html#a2">date_time_add_hours.cpp</a>, <a class="el" href="date_time_add_milliseconds_8cpp-example.html#a1">date_time_add_milliseconds.cpp</a>, <a class="el" href="date_time_add_minutes_8cpp-example.html#a2">date_time_add_minutes.cpp</a>, <a class="el" href="date_time_add_months_8cpp-example.html#a1">date_time_add_months.cpp</a>, <a class="el" href="date_time_add_seconds_8cpp-example.html#a1">date_time_add_seconds.cpp</a>, <a class="el" href="date_time_add_years_8cpp-example.html#a1">date_time_add_years.cpp</a>, <a class="el" href="date_time_date_8cpp-example.html#a1">date_time_date.cpp</a>, <a class="el" href="date_time_day_of_week_8cpp-example.html#a1">date_time_day_of_week.cpp</a>, <a class="el" href="date_time_day_of_year_8cpp-example.html#a2">date_time_day_of_year.cpp</a>, <a class="el" href="date_time_days_in_month_8cpp-example.html#a4">date_time_days_in_month.cpp</a>, <a class="el" href="date_time_days_in_month2_8cpp-example.html#a0">date_time_days_in_month2.cpp</a>, <a class="el" href="date_time_max_value_8cpp-example.html#a1">date_time_max_value.cpp</a>, <a class="el" href="date_time_min_value_8cpp-example.html#a1">date_time_min_value.cpp</a>, <a class="el" href="date_time_now_8cpp-example.html#a1">date_time_now.cpp</a>, <a class="el" href="date_time_now2_8cpp-example.html#a1">date_time_now2.cpp</a>, <a class="el" href="date_time_specify_kind_8cpp-example.html#a5">date_time_specify_kind.cpp</a>, <a class="el" href="date_time_sprintf_8cpp-example.html#a1">date_time_sprintf.cpp</a>, <a class="el" href="date_time_subtract_8cpp-example.html#a2">date_time_subtract.cpp</a>, <a class="el" href="date_time_ticks_8cpp-example.html#a2">date_time_ticks.cpp</a>, <a class="el" href="date_time_ticks2_8cpp-example.html#a2">date_time_ticks2.cpp</a>, <a class="el" href="date_time_time_of_day_8cpp-example.html#a0">date_time_time_of_day.cpp</a>, <a class="el" href="date_time_to_string_format_8cpp-example.html#a1">date_time_to_string_format.cpp</a>, <a class="el" href="date_time_today_8cpp-example.html#a2">date_time_today.cpp</a>, <a class="el" href="debug_message_box_8cpp-example.html#a5">debug_message_box.cpp</a>, <a class="el" href="default_trace_listener_8cpp-example.html#a4">default_trace_listener.cpp</a>, <a class="el" href="drive_info_8cpp-example.html#a0">drive_info.cpp</a>, <a class="el" href="environment_cancel_signal_8cpp-example.html#a2">environment_cancel_signal.cpp</a>, <a class="el" href="environment_exit_8cpp-example.html#a3">environment_exit.cpp</a>, <a class="el" href="environment_exit_code_8cpp-example.html#a0">environment_exit_code.cpp</a>, <a class="el" href="environment_program_exit_8cpp-example.html#a4">environment_program_exit.cpp</a>, <a class="el" href="event_wait_handle_8cpp-example.html#a5">event_wait_handle.cpp</a>, <a class="el" href="file_info_8cpp-example.html#a8">file_info.cpp</a>, <a class="el" href="file_info_append_text_8cpp-example.html#a2">file_info_append_text.cpp</a>, <a class="el" href="file_info_move_to_8cpp-example.html#a18">file_info_move_to.cpp</a>, <a class="el" href="file_info_open_8cpp-example.html#a6">file_info_open.cpp</a>, <a class="el" href="file_info_open_read_8cpp-example.html#a6">file_info_open_read.cpp</a>, <a class="el" href="file_info_open_text_8cpp-example.html#a3">file_info_open_text.cpp</a>, <a class="el" href="file_info_open_write_8cpp-example.html#a6">file_info_open_write.cpp</a>, <a class="el" href="file_info_replace_8cpp-example.html#a3">file_info_replace.cpp</a>, <a class="el" href="form_and_main_8cpp-example.html#a7">form_and_main.cpp</a>, <a class="el" href="form_background_image_8cpp-example.html#a7">form_background_image.cpp</a>, <a class="el" href="form_show_8cpp-example.html#a8">form_show.cpp</a>, <a class="el" href="generic_icollection_8cpp-example.html#a14">generic_icollection.cpp</a>, <a class="el" href="generic_ienumerable_8cpp-example.html#a13">generic_ienumerable.cpp</a>, <a class="el" href="generic_ienumerable2_8cpp-example.html#a10">generic_ienumerable2.cpp</a>, <a class="el" href="generic_ilist_8cpp-example.html#a14">generic_ilist.cpp</a>, <a class="el" href="generic_list_8cpp-example.html#a4">generic_list.cpp</a>, <a class="el" href="generic_list2_8cpp-example.html#a1">generic_list2.cpp</a>, <a class="el" href="generic_list3_8cpp-example.html#a2">generic_list3.cpp</a>, <a class="el" href="generic_list4_8cpp-example.html#a4">generic_list4.cpp</a>, <a class="el" href="generic_list_as_read_only_8cpp-example.html#a1">generic_list_as_read_only.cpp</a>, <a class="el" href="graph_control_8cpp-example.html#a23">graph_control.cpp</a>, <a class="el" href="horizontal_layout_panel_8cpp-example.html#a5">horizontal_layout_panel.cpp</a>, <a class="el" href="ienumerable_8cpp-example.html#a13">ienumerable.cpp</a>, <a class="el" href="ienumerator_8cpp-example.html#a9">ienumerator.cpp</a>, <a class="el" href="ilist_8cpp-example.html#a7">ilist.cpp</a>, <a class="el" href="interlocked_8cpp-example.html#a4">interlocked.cpp</a>, <a class="el" href="interlocked_decrement_8cpp-example.html#a2">interlocked_decrement.cpp</a>, <a class="el" href="ip_address_8cpp-example.html#a4">ip_address.cpp</a>, <a class="el" href="lcd_label3_8cpp-example.html#a2">lcd_label3.cpp</a>, <a class="el" href="lock_8cpp-example.html#a5">lock.cpp</a>, <a class="el" href="lock_guard_8cpp-example.html#a7">lock_guard.cpp</a>, <a class="el" href="lock_guard_keyword_8cpp-example.html#a5">lock_guard_keyword.cpp</a>, <a class="el" href="main_8cpp-example.html#a2">main.cpp</a>, <a class="el" href="main1_8cpp-example.html#a0">main1.cpp</a>, <a class="el" href="main2_8cpp-example.html#a0">main2.cpp</a>, <a class="el" href="main3_8cpp-example.html#a1">main3.cpp</a>, <a class="el" href="main4_8cpp-example.html#a1">main4.cpp</a>, <a class="el" href="manual_reset_event_8cpp-example.html#a2">manual_reset_event.cpp</a>, <a class="el" href="math_8cpp-example.html#a0">math.cpp</a>, <a class="el" href="mixing_std_and_xtd_threads_8cpp-example.html#a6">mixing_std_and_xtd_threads.cpp</a>, <a class="el" href="monitor_8cpp-example.html#a5">monitor.cpp</a>, <a class="el" href="monitor_lock_8cpp-example.html#a4">monitor_lock.cpp</a>, <a class="el" href="monitor_pulse_8cpp-example.html#a1">monitor_pulse.cpp</a>, <a class="el" href="monitor_pulse_all_8cpp-example.html#a1">monitor_pulse_all.cpp</a>, <a class="el" href="mutex_8cpp-example.html#a2">mutex.cpp</a>, <a class="el" href="read_only_collection_8cpp-example.html#a3">read_only_collection.cpp</a>, <a class="el" href="semaphore_8cpp-example.html#a2">semaphore.cpp</a>, <a class="el" href="send_message_to_form_8cpp-example.html#a5">send_message_to_form.cpp</a>, <a class="el" href="some_controls_8cpp-example.html#a55">some_controls.cpp</a>, <a class="el" href="some_system_controls_8cpp-example.html#a55">some_system_controls.cpp</a>, <a class="el" href="stack_trace_8cpp-example.html#a1">stack_trace.cpp</a>, <a class="el" href="system_sound_8cpp-example.html#a5">system_sound.cpp</a>, <a class="el" href="system_sounds_8cpp-example.html#a0">system_sounds.cpp</a>, <a class="el" href="target_default_namespace_8cpp-example.html#a1">target_default_namespace.cpp</a>, <a class="el" href="test_console_8cpp-example.html#a0">test_console.cpp</a>, <a class="el" href="test_forms_8cpp-example.html#a48">test_forms.cpp</a>, <a class="el" href="themes_8cpp-example.html#a55">themes.cpp</a>, <a class="el" href="thread_8cpp-example.html#a1">thread.cpp</a>, <a class="el" href="thread_pool_8cpp-example.html#a0">thread_pool.cpp</a>, <a class="el" href="time_span_8cpp-example.html#a14">time_span.cpp</a>, <a class="el" href="timeout_8cpp-example.html#a3">timeout.cpp</a>, <a class="el" href="timer_8cpp-example.html#a3">timer.cpp</a>, <a class="el" href="timers_timer_8cpp-example.html#a2">timers_timer.cpp</a>, <a class="el" href="timers_timer_synchronizing_object_8cpp-example.html#a11">timers_timer_synchronizing_object.cpp</a>, <a class="el" href="trace_message_box_8cpp-example.html#a6">trace_message_box.cpp</a>, <a class="el" href="track_bar2_8cpp-example.html#a4">track_bar2.cpp</a>, <a class="el" href="tutorial_application_icon_8cpp-example.html#a4">tutorial_application_icon.cpp</a>, <a class="el" href="tutorial_button_8cpp-example.html#a9">tutorial_button.cpp</a>, <a class="el" href="tutorial_communicate_8cpp-example.html#a9">tutorial_communicate.cpp</a>, <a class="el" href="tutorial_simple_application_8cpp-example.html#a3">tutorial_simple_application.cpp</a>, <a class="el" href="uri_8cpp-example.html#a3">uri.cpp</a>, <a class="el" href="version_8cpp-example.html#a1">version.cpp</a>, <a class="el" href="version_os_8cpp-example.html#a0">version_os.cpp</a>, <a class="el" href="vertical_layout_panel_8cpp-example.html#a5">vertical_layout_panel.cpp</a>, and <a class="el" href="wait_handle_8cpp-example.html#a2">wait_handle.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_and_assert_8cpp-example.html#a2">application_and_assert.cpp</a>, <a class="el" href="application_and_exception_8cpp-example.html#a0">application_and_exception.cpp</a>, <a class="el" href="application_enable_dark_mode_8cpp-example.html#a56">application_enable_dark_mode.cpp</a>, <a class="el" href="application_enable_light_mode_8cpp-example.html#a56">application_enable_light_mode.cpp</a>, <a class="el" href="application_with_cmake_assembly_info_8cpp-example.html#a0">application_with_cmake_assembly_info.cpp</a>, <a class="el" href="application_with_manual_assembly_info_8cpp-example.html#a0">application_with_manual_assembly_info.cpp</a>, <a class="el" href="auto_reset_event_8cpp-example.html#a2">auto_reset_event.cpp</a>, <a class="el" href="background_worker_8cpp-example.html#a1">background_worker.cpp</a>, <a class="el" href="barrier_8cpp-example.html#a8">barrier.cpp</a>, <a class="el" href="barrier_simple_8cpp-example.html#a2">barrier_simple.cpp</a>, <a class="el" href="binary_reader_8cpp-example.html#a5">binary_reader.cpp</a>, <a class="el" href="binary_reader2_8cpp-example.html#a3">binary_reader2.cpp</a>, <a class="el" href="binary_reader3_8cpp-example.html#a8">binary_reader3.cpp</a>, <a class="el" href="bit_converter_endianness_8cpp-example.html#a0">bit_converter_endianness.cpp</a>, <a class="el" href="bit_converter_is_big_endian_8cpp-example.html#a0">bit_converter_is_big_endian.cpp</a>, <a class="el" href="bit_converter_is_little_endian_8cpp-example.html#a0">bit_converter_is_little_endian.cpp</a>, <a class="el" href="bit_converter_round_trips_8cpp-example.html#a0">bit_converter_round_trips.cpp</a>, <a class="el" href="border_style_8cpp-example.html#a15">border_style.cpp</a>, <a class="el" href="calculator_8cpp-example.html#a11">calculator.cpp</a>, <a class="el" href="change_parent_8cpp-example.html#a13">change_parent.cpp</a>, <a class="el" href="console_clear_8cpp-example.html#a5">console_clear.cpp</a>, <a class="el" href="console_firework_8cpp-example.html#a5">console_firework.cpp</a>, <a class="el" href="countdown_event_8cpp-example.html#a3">countdown_event.cpp</a>, <a class="el" href="countries_8cpp-example.html#a10">countries.cpp</a>, <a class="el" href="date_time_8cpp-example.html#a1">date_time.cpp</a>, <a class="el" href="date_time_add_8cpp-example.html#a2">date_time_add.cpp</a>, <a class="el" href="date_time_add_days_8cpp-example.html#a2">date_time_add_days.cpp</a>, <a class="el" href="date_time_add_hours_8cpp-example.html#a2">date_time_add_hours.cpp</a>, <a class="el" href="date_time_add_milliseconds_8cpp-example.html#a1">date_time_add_milliseconds.cpp</a>, <a class="el" href="date_time_add_minutes_8cpp-example.html#a2">date_time_add_minutes.cpp</a>, <a class="el" href="date_time_add_months_8cpp-example.html#a1">date_time_add_months.cpp</a>, <a class="el" href="date_time_add_seconds_8cpp-example.html#a1">date_time_add_seconds.cpp</a>, <a class="el" href="date_time_add_years_8cpp-example.html#a1">date_time_add_years.cpp</a>, <a class="el" href="date_time_date_8cpp-example.html#a1">date_time_date.cpp</a>, <a class="el" href="date_time_day_of_week_8cpp-example.html#a1">date_time_day_of_week.cpp</a>, <a class="el" href="date_time_day_of_year_8cpp-example.html#a2">date_time_day_of_year.cpp</a>, <a class="el" href="date_time_days_in_month_8cpp-example.html#a4">date_time_days_in_month.cpp</a>, <a class="el" href="date_time_days_in_month2_8cpp-example.html#a0">date_time_days_in_month2.cpp</a>, <a class="el" href="date_time_max_value_8cpp-example.html#a1">date_time_max_value.cpp</a>, <a class="el" href="date_time_min_value_8cpp-example.html#a1">date_time_min_value.cpp</a>, <a class="el" href="date_time_now_8cpp-example.html#a1">date_time_now.cpp</a>, <a class="el" href="date_time_now2_8cpp-example.html#a1">date_time_now2.cpp</a>, <a class="el" href="date_time_specify_kind_8cpp-example.html#a5">date_time_specify_kind.cpp</a>, <a class="el" href="date_time_sprintf_8cpp-example.html#a1">date_time_sprintf.cpp</a>, <a class="el" href="date_time_subtract_8cpp-example.html#a2">date_time_subtract.cpp</a>, <a class="el" href="date_time_ticks_8cpp-example.html#a2">date_time_ticks.cpp</a>, <a class="el" href="date_time_ticks2_8cpp-example.html#a2">date_time_ticks2.cpp</a>, <a class="el" href="date_time_time_of_day_8cpp-example.html#a0">date_time_time_of_day.cpp</a>, <a class="el" href="date_time_to_string_format_8cpp-example.html#a1">date_time_to_string_format.cpp</a>, <a class="el" href="date_time_today_8cpp-example.html#a2">date_time_today.cpp</a>, <a class="el" href="debug_message_box_8cpp-example.html#a1">debug_message_box.cpp</a>, <a class="el" href="default_trace_listener_8cpp-example.html#a4">default_trace_listener.cpp</a>, <a class="el" href="drive_info_8cpp-example.html#a0">drive_info.cpp</a>, <a class="el" href="environment_cancel_signal_8cpp-example.html#a3">environment_cancel_signal.cpp</a>, <a class="el" href="environment_exit_8cpp-example.html#a3">environment_exit.cpp</a>, <a class="el" href="environment_exit_code_8cpp-example.html#a0">environment_exit_code.cpp</a>, <a class="el" href="environment_program_exit_8cpp-example.html#a5">environment_program_exit.cpp</a>, <a class="el" href="event_wait_handle_8cpp-example.html#a5">event_wait_handle.cpp</a>, <a class="el" href="file_info_8cpp-example.html#a8">file_info.cpp</a>, <a class="el" href="file_info_append_text_8cpp-example.html#a2">file_info_append_text.cpp</a>, <a class="el" href="file_info_move_to_8cpp-example.html#a18">file_info_move_to.cpp</a>, <a class="el" href="file_info_open_8cpp-example.html#a6">file_info_open.cpp</a>, <a class="el" href="file_info_open_read_8cpp-example.html#a6">file_info_open_read.cpp</a>, <a class="el" href="file_info_open_text_8cpp-example.html#a3">file_info_open_text.cpp</a>, <a class="el" href="file_info_open_write_8cpp-example.html#a6">file_info_open_write.cpp</a>, <a class="el" href="file_info_replace_8cpp-example.html#a3">file_info_replace.cpp</a>, <a class="el" href="form_and_main_8cpp-example.html#a8">form_and_main.cpp</a>, <a class="el" href="form_background_image_8cpp-example.html#a7">form_background_image.cpp</a>, <a class="el" href="form_show_8cpp-example.html#a9">form_show.cpp</a>, <a class="el" href="generic_icollection_8cpp-example.html#a14">generic_icollection.cpp</a>, <a class="el" href="generic_ienumerable_8cpp-example.html#a13">generic_ienumerable.cpp</a>, <a class="el" href="generic_ienumerable2_8cpp-example.html#a10">generic_ienumerable2.cpp</a>, <a class="el" href="generic_ilist_8cpp-example.html#a14">generic_ilist.cpp</a>, <a class="el" href="generic_list_8cpp-example.html#a4">generic_list.cpp</a>, <a class="el" href="generic_list2_8cpp-example.html#a1">generic_list2.cpp</a>, <a class="el" href="generic_list3_8cpp-example.html#a2">generic_list3.cpp</a>, <a class="el" href="generic_list4_8cpp-example.html#a4">generic_list4.cpp</a>, <a class="el" href="generic_list_as_read_only_8cpp-example.html#a1">generic_list_as_read_only.cpp</a>, <a class="el" href="graph_control_8cpp-example.html#a24">graph_control.cpp</a>, <a class="el" href="horizontal_layout_panel_8cpp-example.html#a5">horizontal_layout_panel.cpp</a>, <a class="el" href="ienumerable_8cpp-example.html#a13">ienumerable.cpp</a>, <a class="el" href="ienumerator_8cpp-example.html#a9">ienumerator.cpp</a>, <a class="el" href="ilist_8cpp-example.html#a7">ilist.cpp</a>, <a class="el" href="interlocked_8cpp-example.html#a4">interlocked.cpp</a>, <a class="el" href="interlocked_decrement_8cpp-example.html#a2">interlocked_decrement.cpp</a>, <a class="el" href="ip_address_8cpp-example.html#a4">ip_address.cpp</a>, <a class="el" href="lcd_label3_8cpp-example.html#a3">lcd_label3.cpp</a>, <a class="el" href="lock_8cpp-example.html#a2">lock.cpp</a>, <a class="el" href="lock_guard_8cpp-example.html#a7">lock_guard.cpp</a>, <a class="el" href="lock_guard_keyword_8cpp-example.html#a5">lock_guard_keyword.cpp</a>, <a class="el" href="main_8cpp-example.html#a2">main.cpp</a>, <a class="el" href="main1_8cpp-example.html#a0">main1.cpp</a>, <a class="el" href="main2_8cpp-example.html#a0">main2.cpp</a>, <a class="el" href="main3_8cpp-example.html#a1">main3.cpp</a>, <a class="el" href="main4_8cpp-example.html#a1">main4.cpp</a>, <a class="el" href="manual_reset_event_8cpp-example.html#a2">manual_reset_event.cpp</a>, <a class="el" href="math_8cpp-example.html#a0">math.cpp</a>, <a class="el" href="mixing_std_and_xtd_threads_8cpp-example.html#a6">mixing_std_and_xtd_threads.cpp</a>, <a class="el" href="monitor_8cpp-example.html#a5">monitor.cpp</a>, <a class="el" href="monitor_lock_8cpp-example.html#a4">monitor_lock.cpp</a>, <a class="el" href="monitor_pulse_8cpp-example.html#a1">monitor_pulse.cpp</a>, <a class="el" href="monitor_pulse_all_8cpp-example.html#a1">monitor_pulse_all.cpp</a>, <a class="el" href="mutex_8cpp-example.html#a2">mutex.cpp</a>, <a class="el" href="read_only_collection_8cpp-example.html#a3">read_only_collection.cpp</a>, <a class="el" href="semaphore_8cpp-example.html#a2">semaphore.cpp</a>, <a class="el" href="send_message_to_form_8cpp-example.html#a6">send_message_to_form.cpp</a>, <a class="el" href="some_controls_8cpp-example.html#a56">some_controls.cpp</a>, <a class="el" href="some_system_controls_8cpp-example.html#a56">some_system_controls.cpp</a>, <a class="el" href="stack_trace_8cpp-example.html#a1">stack_trace.cpp</a>, <a class="el" href="system_sound_8cpp-example.html#a6">system_sound.cpp</a>, <a class="el" href="system_sounds_8cpp-example.html#a0">system_sounds.cpp</a>, <a class="el" href="target_default_namespace_8cpp-example.html#a1">target_default_namespace.cpp</a>, <a class="el" href="test_console_8cpp-example.html#a0">test_console.cpp</a>, <a class="el" href="test_forms_8cpp-example.html#a47">test_forms.cpp</a>, <a class="el" href="themes_8cpp-example.html#a56">themes.cpp</a>, <a class="el" href="thread_8cpp-example.html#a1">thread.cpp</a>, <a class="el" href="thread_pool_8cpp-example.html#a0">thread_pool.cpp</a>, <a class="el" href="time_span_8cpp-example.html#a14">time_span.cpp</a>, <a class="el" href="timeout_8cpp-example.html#a3">timeout.cpp</a>, <a class="el" href="timer_8cpp-example.html#a3">timer.cpp</a>, <a class="el" href="timers_timer_8cpp-example.html#a2">timers_timer.cpp</a>, <a class="el" href="timers_timer_synchronizing_object_8cpp-example.html#a11">timers_timer_synchronizing_object.cpp</a>, <a class="el" href="trace_message_box_8cpp-example.html#a7">trace_message_box.cpp</a>, <a class="el" href="track_bar2_8cpp-example.html#a5">track_bar2.cpp</a>, <a class="el" href="tutorial_application_icon_8cpp-example.html#a4">tutorial_application_icon.cpp</a>, <a class="el" href="tutorial_button_8cpp-example.html#a9">tutorial_button.cpp</a>, <a class="el" href="tutorial_communicate_8cpp-example.html#a10">tutorial_communicate.cpp</a>, <a class="el" href="tutorial_simple_application_8cpp-example.html#a3">tutorial_simple_application.cpp</a>, <a class="el" href="uri_8cpp-example.html#a3">uri.cpp</a>, <a class="el" href="version_8cpp-example.html#a1">version.cpp</a>, <a class="el" href="version_os_8cpp-example.html#a0">version_os.cpp</a>, <a class="el" href="vertical_layout_panel_8cpp-example.html#a5">vertical_layout_panel.cpp</a>, and <a class="el" href="wait_handle_8cpp-example.html#a2">wait_handle.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -3850,7 +3752,7 @@ You can't use the await_ keyword in the body of a lock_guard_ statement. </dd></
 <div class="ttc" id="agroup__keywords_html_gafa2ffd9b4a6568b57ab2731bec095d99"><div class="ttname"><a href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></div><div class="ttdeci">#define typeof_</div><div class="ttdoc">Used to obtain the type object of a specified type or object.</div><div class="ttdef"><b>Definition</b> typeof.hpp:45</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The typeof_ operator cannot be overloaded. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="any_8cpp-example.html#a7">any.cpp</a>, <a class="el" href="any_info_8cpp-example.html#a7">any_info.cpp</a>, <a class="el" href="array_list2_8cpp-example.html#a1">array_list2.cpp</a>, <a class="el" href="boxed_info_8cpp-example.html#a4">boxed_info.cpp</a>, <a class="el" href="file_info_move_to_8cpp-example.html#a15">file_info_move_to.cpp</a>, <a class="el" href="iclonable_8cpp-example.html#a2">iclonable.cpp</a>, and <a class="el" href="object_get_type_8cpp-example.html#a1">object_get_type.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="any_8cpp-example.html#a3">any.cpp</a>, <a class="el" href="any_info_8cpp-example.html#a3">any_info.cpp</a>, <a class="el" href="array_list2_8cpp-example.html#a1">array_list2.cpp</a>, <a class="el" href="boxed_info_8cpp-example.html#a4">boxed_info.cpp</a>, <a class="el" href="file_info_move_to_8cpp-example.html#a15">file_info_move_to.cpp</a>, <a class="el" href="iclonable_8cpp-example.html#a2">iclonable.cpp</a>, and <a class="el" href="object_get_type_8cpp-example.html#a1">object_get_type.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -3982,7 +3884,7 @@ You can't use the await_ keyword in the body of a lock_guard_ statement. </dd></
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

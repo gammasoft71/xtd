@@ -131,14 +131,7 @@ Inheritance diagram for xtd::forms::debug_message_box:</div>
 </table>
 </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1debug__message__box.html" title="Displays a dialog box and write debug.">debug_message_box</a> dialog. <div class="fragment"><div class="line"><span class="preprocessor">#define DEBUG</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/debug_form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/debug_message_box&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>form_main : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -146,28 +139,27 @@ Inheritance diagram for xtd::forms::debug_message_box:</div>
 <div class="line">    button_.<a class="code hl_function" href="classxtd_1_1forms_1_1form.html#adcfd59909cb9270334a3d176a30ce86f">parent</a>(*<span class="keyword">this</span>);</div>
 <div class="line">    button_.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>({10, 10});</div>
 <div class="line">    button_.text(<span class="stringliteral">&quot;Error...&quot;</span>);</div>
-<div class="line">    button_.click += [&amp;] {</div>
+<div class="line">    button_.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      debug_message_box::show(*<span class="keyword">this</span>, <span class="stringliteral">&quot;An unknown process error occured.&quot;</span>);</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> df = <a class="code hl_class" href="classxtd_1_1forms_1_1debug__form.html">debug_form</a> {};</div>
+<div class="line">    <span class="keyword">auto</span> df = debug_form {};</div>
 <div class="line">    application::run(form_main {});</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_;</div>
+<div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga20f9c51904cab0da365efa6c57b84908">button</a> button_;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(form_main::main);</div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.hpp:49</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a53e5a75ad180a2efadc129e5a3c18cbd"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">xtd::forms::control::location</a></div><div class="ttdeci">virtual drawing::point location() const noexcept</div><div class="ttdoc">Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its...</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1debug__form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1debug__form.html">xtd::forms::debug_form</a></div><div class="ttdoc">Represents a form that displays debug form. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> debug_form.hpp:36</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html_adcfd59909cb9270334a3d176a30ce86f"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html#adcfd59909cb9270334a3d176a30ce86f">xtd::forms::form::parent</a></div><div class="ttdeci">control &amp; parent(const control &amp;value) override</div><div class="ttdoc">Sets the parent container of the control.</div></div>
-<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:167</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
+<div class="ttc" id="agroup__style__sheets_html_ga20f9c51904cab0da365efa6c57b84908"><div class="ttname"><a href="group__style__sheets.html#ga20f9c51904cab0da365efa6c57b84908">xtd::forms::style_sheets::button</a></div><div class="ttdeci">xtd::forms::style_sheets::control button</div><div class="ttdoc">The buttton data allows you to specify the box of a button control.</div><div class="ttdef"><b>Definition</b> button.hpp:25</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
@@ -265,7 +257,7 @@ Inheritance diagram for xtd::forms::debug_message_box:</div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

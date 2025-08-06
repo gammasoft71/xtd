@@ -129,13 +129,13 @@ $(function() {
 <div class="line">      button1.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      button1.text(<span class="stringliteral">&quot;Start&quot;</span>);</div>
 <div class="line">      button1.location({10, 90});</div>
-<div class="line">      button1.click += [&amp;](<span class="keywordtype">object</span> &amp; sender, <span class="keyword">const</span> <a id="_a4" name="_a4"></a><a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a> &amp; e) {</div>
+<div class="line">      button1.click += <a id="a4" name="a4"></a><a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keywordtype">object</span> &amp; sender, <span class="keyword">const</span> <a id="_a5" name="_a5"></a><a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a> &amp; e) {</div>
 <div class="line">        timer1.enabled(!timer1.enabled());</div>
 <div class="line">        button1.text(timer1.enabled() ? <span class="stringliteral">&quot;Stop&quot;</span> : <span class="stringliteral">&quot;Start&quot;</span>);</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      timer1.interval(100_ms);</div>
-<div class="line">      timer1.tick += [&amp;](<span class="keywordtype">object</span> &amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a> &amp; e) {</div>
+<div class="line">      timer1.tick += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keywordtype">object</span> &amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a> &amp; e) {</div>
 <div class="line">        label1.text(string::format(<span class="stringliteral">&quot;{:F1}&quot;</span>, ++counter / 10.0));</div>
 <div class="line">      };</div>
 <div class="line">      </div>
@@ -144,9 +144,9 @@ $(function() {
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a id="_a5" name="_a5"></a><a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a> timer1;</div>
-<div class="line">    <a id="_a6" name="_a6"></a><a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label1;</div>
-<div class="line">    <a id="_a7" name="_a7"></a><a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button1;</div>
+<div class="line">    <a id="_a6" name="_a6"></a><a class="code hl_class" href="classxtd_1_1forms_1_1timer.html">timer</a> timer1;</div>
+<div class="line">    <a id="_a7" name="_a7"></a><a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label1;</div>
+<div class="line">    <a id="_a8" name="_a8"></a><a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button1;</div>
 <div class="line">    <span class="keywordtype">int</span> counter = 0;</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -162,6 +162,7 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html_adcfd59909cb9270334a3d176a30ce86f"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html#adcfd59909cb9270334a3d176a30ce86f">xtd::forms::form::parent</a></div><div class="ttdeci">control &amp; parent(const control &amp;value) override</div><div class="ttdoc">Sets the parent container of the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1label_html"><div class="ttname"><a href="classxtd_1_1forms_1_1label.html">xtd::forms::label</a></div><div class="ttdoc">Represents a standard Windows label.</div><div class="ttdef"><b>Definition</b> label.hpp:38</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1timer_html"><div class="ttname"><a href="classxtd_1_1forms_1_1timer.html">xtd::forms::timer</a></div><div class="ttdoc">Implements a timer that raises an event at user-defined intervals. This timer is optimized for use in...</div><div class="ttdef"><b>Definition</b> timer.hpp:38</div></div>
+<div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.hpp:10</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
@@ -169,7 +170,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

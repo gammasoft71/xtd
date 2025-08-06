@@ -110,7 +110,7 @@ $(function() {
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Convert any to byte :&quot;</span>);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;---------------------&quot;</span>);</div>
 <div class="line">  <span class="keyword">auto</span> any_value = std::make_any&lt;byte&gt;(42);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;any_cast&lt;byte&gt;(any_value)   = {}&quot;</span>, any_cast&lt;byte&gt;(any_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;any_cast&lt;byte&gt;(any_value)   = {}&quot;</span>, std::any_cast&lt;byte&gt;(any_value));</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;byte&gt;(any_value)         = {}&quot;</span>, as&lt;byte&gt;(any_value));</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_byte(any_value) = {}&quot;</span>, convert::to_byte(any_value));</div>
 <div class="line">  console::write_line();</div>
@@ -190,7 +190,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

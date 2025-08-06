@@ -123,7 +123,7 @@ $(function() {
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    </div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="classxtd_1_1guid.html#aa85515cc7065bd631bd75999f5e3187a">  157</a></span>    <a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> <a class="code hl_function" href="classxtd_1_1guid.html#aa85515cc7065bd631bd75999f5e3187a">get_hash_code</a>() const noexcept override;</div>
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="classxtd_1_1guid.html#a784c6fe343f7a0d3874f9badc328fb94">  161</a></span>    const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1array.html">array</a>&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">byte</span>&gt;&amp; to_byte_array() const noexcept;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="classxtd_1_1guid.html#a63b3f537d7873655142c1e88301b477d">  161</a></span>    <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1array.html">array</a>&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">byte</span>&gt; to_byte_array() const noexcept;</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    </div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno"><a class="line" href="classxtd_1_1guid.html#a64819d3be190117c1525b5aeb98cd1f3">  168</a></span>    <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">string</span> to_string() const noexcept override;</div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classxtd_1_1guid.html#a34721d391b28093d08a5decbe9ec203e">  186</a></span>    <span class="keywordtype">string</span> to_string(const <span class="keywordtype">string</span>&amp; format) const;</div>
@@ -133,7 +133,7 @@ $(function() {
 <div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="classxtd_1_1guid.html#a07f13762e0fdf7369b7cd2929ca78ca1">  215</a></span>    static <a class="code hl_class" href="classxtd_1_1guid.html">guid</a> new_guid() noexcept;</div>
 <div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    </div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  private:</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1array.html">array</a>&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">byte</span>&gt; data_ = <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_class" href="classxtd_1_1array.html">array</a>&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">byte</span>&gt;(16);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    std::vector&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">byte</span>&gt; data_ = std::vector&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<span class="keywordtype">byte</span>&gt;(16);</div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>  };</div>
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>}</div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
@@ -175,7 +175,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -441,7 +441,7 @@ $(function() {
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> minesweeper_form::on_help_content_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">xtd::event_args</a>&amp; e) {</div>
-<div class="line">  diagnostics::process::start(<span class="stringliteral">&quot;https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/minesweeper/resources/help.md&quot;</span>);</div>
+<div class="line">  diagnostics::process::start(<a id="_a22" name="_a22"></a><a class="code hl_class" href="classxtd_1_1diagnostics_1_1process__start__info.html">diagnostics::process_start_info</a> {<span class="stringliteral">&quot;https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/games/minesweeper/resources/help.md&quot;</span>}.<a id="a23" name="a23"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b">use_shell_execute</a>(<span class="keyword">true</span>));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> minesweeper_form::on_custom_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">xtd::event_args</a>&amp; e) {</div>
@@ -457,7 +457,7 @@ $(function() {
 <div class="line">  change_level(level::custom);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> minesweeper_form::on_game_panel_mouse_up(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a22" name="_a22"></a><a class="code hl_class" href="classxtd_1_1forms_1_1mouse__event__args.html">mouse_event_args</a>&amp; e) {</div>
+<div class="line"><span class="keywordtype">void</span> minesweeper_form::on_game_panel_mouse_up(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a24" name="_a24"></a><a class="code hl_class" href="classxtd_1_1forms_1_1mouse__event__args.html">mouse_event_args</a>&amp; e) {</div>
 <div class="line">  <span class="keywordflow">if</span> (game_over_) <span class="keywordflow">return</span>;</div>
 <div class="line">  stopwatch_timer_.enabled(<span class="keyword">true</span>);</div>
 <div class="line">  </div>
@@ -599,6 +599,8 @@ $(function() {
 <div class="line">    minesweeper::high_scores_dialog().show_sheet_dialog(*<span class="keyword">this</span>);</div>
 <div class="line">  }</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html">xtd::diagnostics::process_start_info</a></div><div class="ttdoc">Specifies a set of values that are used when you start a process.</div><div class="ttdef"><b>Definition</b> process_start_info.hpp:39</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1process__start__info_html_afbe7913a04289abf0dcf6b51f6c0186b"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b">xtd::diagnostics::process_start_info::use_shell_execute</a></div><div class="ttdeci">bool use_shell_execute() const noexcept</div><div class="ttdoc">Gets a value indicating whether to use the operating system shell to start the process.</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1bitmap_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a></div><div class="ttdoc">Encapsulates a GDI+ bitmap, which consists of the pixel data for a graphics image and its attributes....</div><div class="ttdef"><b>Definition</b> bitmap.hpp:26</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1color_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a></div><div class="ttdoc">Represents an ARGB (alpha, red, green, blue) color.</div><div class="ttdef"><b>Definition</b> color.hpp:46</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1font_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a></div><div class="ttdoc">Defines a particular format for text, including font face, size, and style attributes....</div><div class="ttdef"><b>Definition</b> font.hpp:45</div></div>
@@ -637,7 +639,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

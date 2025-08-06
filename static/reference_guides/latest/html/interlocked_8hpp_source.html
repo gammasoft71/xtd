@@ -98,7 +98,7 @@ $(function() {
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keyword">namespace </span>threading {</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1interlocked.html">   40</a></span>    <span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_class" href="classxtd_1_1threading_1_1interlocked.html">interlocked</a> <a class="code hl_define" href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a> {</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1interlocked.html#a35d4d7219315784e960dfc7667181f3d">   49</a></span>      <span class="keyword">static</span> <a class="code hl_typedef" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="code hl_function" href="classxtd_1_1threading_1_1interlocked.html#a35d4d7219315784e960dfc7667181f3d">add</a>(<a class="code hl_typedef" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&amp; location, <a class="code hl_typedef" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> value) <span class="keyword">noexcept</span>;</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1interlocked.html#a6e9c12719786c6734d7ddb0c3332e2d0">   54</a></span>      <span class="keyword">static</span> <a class="code hl_typedef" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a> <a class="code hl_function" href="classxtd_1_1threading_1_1interlocked.html#a6e9c12719786c6734d7ddb0c3332e2d0">add</a>(<a class="code hl_typedef" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a>&amp; location, <a class="code hl_typedef" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a> value) <span class="keyword">noexcept</span>;</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      </div>
@@ -132,7 +132,7 @@ $(function() {
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1interlocked.html#af651a4e7265de60e36605b2b2bc6fe02">  133</a></span>      <span class="keyword">static</span> type_t <a class="code hl_function" href="classxtd_1_1threading_1_1interlocked.html#af651a4e7265de60e36605b2b2bc6fe02">exchange</a>(type_t&amp; location, type_t value) {</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        type_t original = location;</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <a class="code hl_define" href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a>(location)</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>          location = value;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        location = value;</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        <span class="keywordflow">return</span> original;</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>      }</div>
 <div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1interlocked.html#a25d8dcbbea3a4c5545f8bd64e8b6c7a5">  143</a></span>      <span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code hl_function" href="classxtd_1_1threading_1_1interlocked.html#a25d8dcbbea3a4c5545f8bd64e8b6c7a5">exchange</a>(<span class="keywordtype">double</span>&amp; location, <span class="keywordtype">double</span> value) <span class="keyword">noexcept</span>;</div>
@@ -144,7 +144,7 @@ $(function() {
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1interlocked.html#a557caac3e8c6375a456a5e1723ed9b6c">  170</a></span>      <span class="keyword">static</span> type_t <a class="code hl_function" href="classxtd_1_1threading_1_1interlocked.html#a557caac3e8c6375a456a5e1723ed9b6c">exchange</a>(<span class="keywordtype">object</span>&amp; location, <span class="keyword">const</span> <span class="keywordtype">object</span>&amp; value) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        type_t original = location;</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        <a class="code hl_define" href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a>(location)</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>          location = value;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        location = value;</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        <span class="keywordflow">return</span> original;</div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>      }</div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1interlocked.html#abdbf57765932b8da6f9d177ee16408c1">  180</a></span>      <span class="keyword">static</span> <span class="keywordtype">float</span> <a class="code hl_function" href="classxtd_1_1threading_1_1interlocked.html#abdbf57765932b8da6f9d177ee16408c1">exchange</a>(<span class="keywordtype">float</span>&amp; location, <span class="keywordtype">float</span> value) <span class="keyword">noexcept</span>;</div>
@@ -191,7 +191,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

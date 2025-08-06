@@ -96,17 +96,17 @@ $(function() {
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>  <span class="keyword">namespace </span>threading {</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1lock__guard.html">   32</a></span>    <span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_class" href="classxtd_1_1threading_1_1lock__guard.html">lock_guard</a> final : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">object</a> {</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">object</span>_t&gt;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1lock__guard.html#af4f2657650e8d292ff5285b4a360d289">   41</a></span>      <span class="keyword">explicit</span> <a class="code hl_function" href="classxtd_1_1threading_1_1lock__guard.html#af4f2657650e8d292ff5285b4a360d289">lock_guard</a>(<span class="keyword">const</span> object_t&amp; obj) : obj_(<a class="code hl_class" href="classxtd_1_1threading_1_1monitor.html">monitor</a>::get_ptr(obj)) {monitor::enter_ptr(obj_);}</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      <a class="code hl_class" href="classxtd_1_1threading_1_1lock__guard.html">~lock_guard</a>();</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>      </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>      </div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1lock__guard.html#acc1e78b8f74b92ec8c9fd2a8b7f347fb">   58</a></span>      <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1threading_1_1lock__guard.html#acc1e78b8f74b92ec8c9fd2a8b7f347fb">pulse</a>();</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      </div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1lock__guard.html#a2aba512c9a75ac2321c5b766054a1068">   66</a></span>      <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1threading_1_1lock__guard.html#a2aba512c9a75ac2321c5b766054a1068">pulse_all</a>();</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      </div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1lock__guard.html#ab1dc768050a0e500b3e73116dd4a4ed7">   82</a></span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classxtd_1_1threading_1_1lock__guard.html#ab1dc768050a0e500b3e73116dd4a4ed7">wait</a>(<a class="code hl_typedef" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> milliseconds_timeout);</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      </div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1lock__guard.html#a7f30bcc5c13fcc88f8cf40d567943198">   97</a></span>      <span class="keywordtype">bool</span> <a class="code hl_function" href="classxtd_1_1threading_1_1lock__guard.html#a7f30bcc5c13fcc88f8cf40d567943198">wait</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1time__span.html">time_span</a>&amp; <a class="code hl_class" href="classxtd_1_1threading_1_1timeout.html">timeout</a>);</div>
@@ -141,7 +141,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 16 2025 12:18:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 5 2025 21:42:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
