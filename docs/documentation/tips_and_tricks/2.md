@@ -137,5 +137,5 @@ See [xtd::threading](https://gammasoft71.github.io/xtd/reference_guides/latest/g
 
 ## See also
 
-* [Tips & Triks](/docs/documentation/tips_and_tricks)
+* [Tips & Tricks](/docs/documentation/tips_and_tricks)
 * [Documentation](/docs/documentation)
