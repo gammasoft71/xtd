@@ -6,10 +6,10 @@ You will find concrete solutions to common problems encountered with xtd in mode
 
 ## List of all tips and tricks, sorted by newest first.
 
-| Category                                                                                                                     | Subject                                                                             | Date             | Level |
-| ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ---------------- | ----- |
-| [![threading](/pictures/xtd.threading.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__threading.html) | [Very simple threads synchronisation](/docs/documentation/tips_and_tricks/20250731) | July 31, 2025    | 🟡    |
-| [![core](/pictures/xtd.core.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)           | [Command line arguments](/docs/documentation/tips_and_tricks/20250708)              | July 8, 2025     | 🟢    |
+| Category                                                                                                                     | Subject                                                                           | Date             | Level |
+| ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ---------------- | ----- |
+| [![threading](/pictures/xtd.threading.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__threading.html) | [#2 - Very simple threads synchronisation](/docs/documentation/tips_and_tricks/2) | July 31, 2025    | 🟡    |
+| [![core](/pictures/xtd.core.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)           | [#1 - Command line arguments](/docs/documentation/tips_and_tricks/1)              | July 8, 2025     | 🟢    |
 
 ## Legends
 

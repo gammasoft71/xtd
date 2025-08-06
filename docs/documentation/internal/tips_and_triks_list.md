@@ -1,16 +1,17 @@
 # Tips & triks ist
 
-| Subject                                            | Comparison with               | Published    |
-|--------------------------------------------------- | ----------------------------- | ------------ |
-| Retrieving command-line arguments                  | C++ standard                  | July 8, 2025 |
-| Showing a message box in one line                  | Qt / wxWidgets                |              |
-| Getting special folders (desktop, app_data, etc.)  | Win32 API / Qt                |              |
-| Getting and formatting date/time easily            | std::chrono, Qt               |              |
-| Creating a simple form with a button               | Qt / WinForms                 |              |
-| Writing to debug output and console at once        | std::cout / OutputDebugString |              |
-| Adding color to console output (text + background) | ANSI escape codes             |              |
-| Using timers (interval, elapsed event)             | std::thread + sleep, Qt Timer |              |
-| Localizing strings with xtd::environment::culture  | .NET / Qt QTranslator         |              |
+| Subject                                            | Comparison with               | Published     |
+|--------------------------------------------------- | ----------------------------- | ------------- |
+| Retrieving command-line arguments                  | C++ standard                  | July 8, 2025  |
+| Very simple threads synchronisation                | C++ standard                  | July 31, 2025 |
+| Showing a message box in one line                  | Qt / wxWidgets                |               |
+| Getting special folders (desktop, app_data, etc.)  | Win32 API / Qt                |               |
+| Getting and formatting date/time easily            | std::chrono, Qt               |               |
+| Creating a simple form with a button               | Qt / WinForms                 |               |
+| Writing to debug output and console at once        | std::cout / OutputDebugString |               |
+| Adding color to console output (text + background) | ANSI escape codes             |               |
+| Using timers (interval, elapsed event)             | std::thread + sleep, Qt Timer |               |
+| Localizing strings with xtd::environment::culture  | .NET / Qt QTranslator         |               |
 
 
 # Showing a message box in one line
