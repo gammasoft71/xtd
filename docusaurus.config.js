@@ -9,7 +9,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/palenight');
 const config = {
   //title: 'xtd',
   title: ' ',
-  //tagline: 'xtd (pronounced "extend") is a modern C++17/20 framework to create console, GUI and unit test applications on Microsoft Windows, macOS, Linux, iOS and android (*).',
+  //tagline: 'xtd (pronounced "extend") is a modern C++20 framework to create console, GUI and unit test applications on Microsoft Windows, macOS, Linux, iOS and android (*).',
   favicon: 'pictures/xtd.ico',
 
   // Set the production url of your site here
