@@ -118,6 +118,8 @@ const config = {
             href: 'https://gammasoft71.wixsite.com/gammasoft/',
             label: 'Gammasoft',
             position: 'left',
+            target: '_self',
+            rel: null,
           },
         ],
       },
