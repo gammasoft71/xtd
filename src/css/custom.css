@@ -33,7 +33,6 @@
   --ifm-font-color-base-inverse: #fff;
 }
 
-
 .theme-doc-toc-desktop,
 .theme-doc-toc-mobile,
 .table-of-contents {
@@ -55,4 +54,9 @@ main-wrapper,
 .row > .col {
   flex: 0 0 100% !important;
   max-width: 100% !important;
+}
+
+.navbar__link > svg,
+.navbar__link > .iconExternalLink_node_modules-\@docusaurus-theme-classic-lib-next-theme-Navbar-Item-IconExternalLink-styles-module {
+  display: none !important;
 }
