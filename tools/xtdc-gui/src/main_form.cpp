@@ -854,7 +854,7 @@ void main_form::show_about_dialog() {
   dialog.long_version(environment::version().to_string(3));
   dialog.description("Project management.");
   dialog.copyright("Copyright (c) 2025 Gammasoft.\nAll rights reserved.");
-  dialog.website("https://gammasoft71.wixsite.com/gammasoft");
+  dialog.website("https://gammasoft71.github.io");
   dialog.website_label("gammasoft website");
   /// @todo Remove comment when about_dialog fixed authors
   //dialog.authors({"Gammasoft", "Bader", "Contributors"});

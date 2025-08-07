@@ -2,7 +2,7 @@
 
 # What is xtd
 
-`xtd` is an open source developer platform, created by [Gammasoft](https://gammasoft71.wixsite.com/gammasoft), for building many different types of applications.
+`xtd` is an open source developer platform, created by [Gammasoft](https://gammasoft71.github.io), for building many different types of applications.
 
 ## xtd
 

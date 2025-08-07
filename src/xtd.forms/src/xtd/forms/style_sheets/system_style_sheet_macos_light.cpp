@@ -107,7 +107,7 @@ namespace {
 
 style_sheet style_sheet::system_style_sheet_macos_light() noexcept {
   style_sheet ss;
-  ss.theme_ = style_sheets::theme("macOS (light)", "Contains macOS (light) theme.", "Gammasoft", uri("https://gammasoft71.wixsite.com/gammasoft"));
+  ss.theme_ = style_sheets::theme("macOS (light)", "Contains macOS (light) theme.", "Gammasoft", uri("https://gammasoft71.github.io"));
   ss.system_colors_ = get_system_colors();
   ss.buttons_ = get_buttons(ss.system_colors_);
   return ss;
