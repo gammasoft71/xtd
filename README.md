@@ -45,7 +45,7 @@ $ npm run build
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
 ```
-$ npm serve
+$ npm run serve
 ```
 
 This command starts a local server from `build` directory and opens up a browser window.
@@ -53,7 +53,7 @@ This command starts a local server from `build` directory and opens up a browser
 ### Deployment
 
 ```
-$ npm deploy
+$ yarn deploy
 ```
 
 This command use `npm build` and deploy the `build` directory into the `gh-pages` branch.
