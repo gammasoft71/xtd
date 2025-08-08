@@ -12,8 +12,8 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <h1 className="xtd">{siteConfig.title}</h1>
+        <p className="Free open-source modern C++20 framework to create console (CLI), forms (GUI like WinForms) and unit test (xUnit) applications and libraries on Windows, macOS, Linux, iOS, Android, FreeBSD, and Haiku.">{siteConfig.tagline}</p>
       </div>
     </header>
   );
@@ -23,8 +23,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Modern C++17/20 multiplatform framework`}
-      description="Description will go into a meta tag in <head />">
+      title={`xtd`}
+      description="Free open-source modern C++20 framework to create console (CLI), forms (GUI like WinForms) and unit test (xUnit) applications and libraries on Windows, macOS, Linux, iOS, Android, FreeBSD, and Haiku. <head />">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
