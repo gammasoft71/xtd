@@ -23,7 +23,7 @@ public:
       dialog.long_version("1.0.0");
       dialog.description("About dialog description.");
       dialog.copyright("Copyright (c) 2024 Gammasoft.\nAll rights reserved.");
-      dialog.website("https://gammasoft71.wixsite.com/gammasoft");
+      dialog.website("https://gammasoft71.github.io");
       dialog.website_label("gammasoft website");
       dialog.authors({"Gammasoft", "Contributors"});
       dialog.documenters({"Gammasoft"});
