@@ -115,7 +115,7 @@ const config = {
             position: 'left',
           },
           {
-            href: 'https://gammasoft71.wixsite.com/gammasoft/',
+            href: 'https://gammasoft71.github.io/',
             label: 'Gammasoft',
             position: 'left',
             target: '_self',

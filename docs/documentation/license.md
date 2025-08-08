@@ -4,7 +4,7 @@
 
 [MIT License](https://opensource.org/licenses/MIT)
 
-Copyright (c) 2024 [Gammasoft](https://gammasoft71.wixsite.com/gammasoft).
+Copyright (c) 2024 [Gammasoft](https://gammasoft71.github.io).
 
 ```
 Permission is hereby granted, free of charge, to any person obtaining
