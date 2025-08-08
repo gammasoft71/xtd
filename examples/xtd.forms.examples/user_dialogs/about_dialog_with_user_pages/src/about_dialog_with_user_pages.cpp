@@ -27,7 +27,7 @@ public:
     dialog.long_version("1.0.0");
     dialog.description("About dialog with user pages.");
     dialog.copyright("Copyright (c) 2024 Gammasoft.\nAll rights reserved.");
-    dialog.website("https://gammasoft71.wixsite.com/gammasoft");
+    dialog.website("https://gammasoft71.github.io");
     dialog.website_label("gammasoft website");
     dialog.user_tab_pages().push_back_range({user_tab_page1, user_tab_page2});
 
