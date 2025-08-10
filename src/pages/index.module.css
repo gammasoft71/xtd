@@ -6,7 +6,7 @@
 .heroBanner {
   padding: 4rem 0;
   background: #338AFC;
-  background-image: url("../../static/pictures/xtd_background.png");
+  /*background-image: url("../../static/pictures/xtd_background.png");*/
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
