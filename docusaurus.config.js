@@ -133,7 +133,7 @@ const config = {
                 <a href="https://github.com/gammasoft71/xtd"><img src="https://gammasoft71.github.io/xtd/pictures/github32.png" alt="GitHub" /></a>
                 <a href="https://sourceforge.net/projects/xtdpro"><img src="https://gammasoft71.github.io/xtd/pictures/sourceforge32.png" alt="SourceForge" /></a>
                 <a href="https://www.facebook.com/gammasoft71"><img src="https://gammasoft71.github.io/xtd/pictures/facebook32.png" alt="Facebook" /></a>
-                <a href="https://twitter.com/gammasoft71"><img src="https://gammasoft71.github.io/xtd/pictures/twitter32.png" alt="Twitter" /></a>
+                <a href="https://x.com/gammasoft71"><img src="https://gammasoft71.github.io/xtd/pictures/x32.png" alt="x" /></a>
                 <a href="https://discordapp.com/users/gammasoft#9288"><img src="https://gammasoft71.github.io/xtd/pictures/discord32.png" alt="Discord" /></a>
                 <a href="mailto:gammasoft71@gmail.com"><img src="https://gammasoft71.github.io/xtd/pictures/mail32.png" alt="Mail" /></a>
               </div>
