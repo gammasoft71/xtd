@@ -1,39 +1,23 @@
-#define DEBUG
-#include <xtd/diagnostics/debug>
-#include <xtd/diagnostics/stopwatch>
-#include <xtd/drawing/color_converter>
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/lcd_label>
-
-using namespace xtd;
-using namespace xtd::diagnostics;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 auto main() -> int {
-  timer timer;
-  timer.interval(100_ms);
-  stopwatch chrono;
+  auto timer = forms::timer::create(100_ms);
+  auto chrono = diagnostics::stopwatch {};
   
-  form form_main;
+  auto form_main = form::create("Lcd label example 2");
   form_main.double_buffered(true);
-  form_main.text("Lcd label example 2");
   form_main.start_position(form_start_position::center_screen);
-  form_main.auto_size_mode(forms::auto_size_mode::grow_and_shrink);
   form_main.client_size({1456, 503});
   
-  lcd_label label;
+  auto label = lcd_label::create(form_main, "  0.0");
   label.double_buffered(true);
-  label.parent(form_main);
   label.dock(dock_style::fill);
   label.fore_color(color::blue);
   label.back_color(color_converter::average(color::black, label.fore_color(), 0.05));
-  label.text("  0.0");
   
   timer.tick += delegate_ {
     label.text(string::format("{,5:F1}", chrono.elapsed_milliseconds() / 1000.0));
-    debug::write_line(string::format("{,5:F1}", chrono.elapsed_milliseconds() / 1000.0));
+    diagnostics::debug::write_line(label.text());
   };
   
   label.mouse_down += delegate_ {
