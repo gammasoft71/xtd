@@ -15,7 +15,6 @@ struct seven_segment_display::data {
 };
 
 seven_segment_display::seven_segment_display() : data_(xtd::new_sptr<data>()) {
-  back_color(application::style_sheet().system_colors().control());
   double_buffered(true);
 }
 
