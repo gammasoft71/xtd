@@ -1,13 +1,4 @@
-#include <xtd/drawing/texts>
-#include <xtd/forms/application>
-#include <xtd/forms/context_menu>
-#include <xtd/forms/form>
-#include <xtd/forms/lcd_label>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::windows::forms;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:
