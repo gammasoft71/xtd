@@ -88,7 +88,7 @@ inline xtd::basic_array<type_t, allocator_t>::basic_array(const array<size_type,
 
 template<class type_t, class allocator_t>
 inline xtd::basic_array<type_t, allocator_t>::basic_array(const array<size_type, 1>& lengths, const value_type& value) {
-  data_->items = base_type(lengths.aggregate([&](const size_type & accumulator, const size_type & value) {return accumulator * value;}));
+  data_->items = base_type(lengths.aggregate([&](const size_type & accumulator, const size_type & value) {return accumulator * value;}), value);
   data_->lower_bound.clear();
   data_->upper_bound.clear();
   for (auto length : lengths) {
