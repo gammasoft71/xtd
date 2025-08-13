@@ -11,7 +11,7 @@
   background-position: center;
   background-repeat: no-repeat;
   font-weight: bold;
-  min-height: 150px;
+  min-height: 148px;
   text-shadow: rgb(37, 44, 56) 2px 0 10px;
   text-align: center;
   vertical-align: text-top;
@@ -26,7 +26,7 @@
 @media (max-width: 600px) {
   .heroBanner {
     background-size: contain;
-    min-height: 180px;
+    min-height: 148px;
     padding: 2rem 0;
   }
 }
