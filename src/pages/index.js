@@ -13,7 +13,7 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <h1 className="xtd">{siteConfig.title}</h1>
-        <p className="Free open-source modern C++20 framework to create console (CLI), forms (GUI like WinForms) and unit test (xUnit) applications and libraries on Windows, macOS, Linux, iOS, Android, FreeBSD, and Haiku.">{siteConfig.tagline}</p>
+        <p className="Write Once, Run Everywhere!">{siteConfig.tagline}</p>
       </div>
     </header>
   );
@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <Layout
       title={`xtd`}
-      description="Free open-source modern C++20 framework to create console (CLI), forms (GUI like WinForms) and unit test (xUnit) applications and libraries on Windows, macOS, Linux, iOS, Android, FreeBSD, and Haiku. <head />">
+      description="Write Once, Run Everywhere! <head />">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
