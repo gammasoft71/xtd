@@ -38,13 +38,7 @@ namespace xtd {
     /// The following code example demonstrates the use of lcd_label control.
     /// @include lcd_label2.cpp
     class lcd_label : public control {
-      class idigit;
       struct data;
-      class dot_matrix_display_digit;
-      class fourteen_segment_display_digit;
-      class nine_segment_display_digit;
-      class seven_segment_display_digit;
-      class sixteen_segment_display_digit;
       
     public:
       /// @name Public Constructors
