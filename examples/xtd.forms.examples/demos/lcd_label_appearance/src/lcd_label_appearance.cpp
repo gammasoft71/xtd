@@ -28,6 +28,7 @@ namespace lcd_label_appearance_example {
       lcd_style_choice.items().push_back_range({{"Seven segment display", lcd_style::seven_segment_display}, {"Nine segment display", lcd_style::nine_segment_display}, {"Fourteen segment display", lcd_style::fourteen_segment_display}, {"Sixteen segment display", lcd_style::sixteen_segment_display}, {"Dot matrix display", lcd_style::dot_matrix_display}});
       lcd_style_choice.selected_value_changed += delegate_ {
         label_lcd_label.lcd_style(as<lcd_style>(lcd_style_choice.selected_item().tag()));
+        diagnostics::debug::write_line(string::format("{}::valid_characters = {}", label_lcd_label.lcd_style(), label_lcd_label.valid_characters()));
         segment_style_choice.items().clear();
         if (lcd_style_choice.selected_item().value() == "Dot matrix display") {
           segment_style_choice.items().push_back_range({{"Standard (or round)", dot_matrix_style::standard}, {"Square", dot_matrix_style::square}});
