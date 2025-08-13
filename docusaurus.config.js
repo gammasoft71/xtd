@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/palenight');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'xtd',
-  tagline: 'Write Once, Run Everywhere!',
+  // tagline: 'Write Once, Run Everywhere!',
   favicon: 'pictures/xtd.ico',
 
   // Set the production url of your site here

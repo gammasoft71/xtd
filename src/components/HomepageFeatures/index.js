@@ -6,11 +6,15 @@ const FeatureList = [
   {
     description: (
       <>
+      <font size="5">Write Once, Run Everywhere!</font>
+      <br/>
+      <br/>
       <br/>
       <a href="."><img src="pictures/xtd_256.png"/></a>
       <br/>
       <br/>
-       <br/><font size="5">xtd (pronounced "extend") is a modern C++20 framework for creating console (CLI), forms (GUI) and unit test (xUnit) multiplatform applications and libraries.</font>
+      <br/>
+      <font size="5">xtd (pronounced "extend") is a modern C++20 framework for creating console (CLI), forms (GUI) and unit test (xUnit) multiplatform applications and libraries.</font>
       </>
     ),
   },
