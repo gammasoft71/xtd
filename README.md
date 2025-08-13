@@ -4,6 +4,8 @@
 
 [![logo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/logo.png)](https://gammasoft71.github.io/xtd)
 
+<br/>
+
 **xtd (pronounced "extend") is a modern C++20 framework to create console (CLI), forms (GUI) and unit test (xUnit) multiplatform applications and libraries.**
 
 <br/>
@@ -16,8 +18,6 @@
   <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/FreeBSD_h100.png"/></a>
   <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/Haiku_h100.png"/></a>
 </div>
-<br/>
-<br/>
 <br/>
 <br/>
 
