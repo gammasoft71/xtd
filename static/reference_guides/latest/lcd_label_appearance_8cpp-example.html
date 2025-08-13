@@ -150,6 +150,7 @@ $(function(){ initResizable(false); });
 <div class="line">      lcd_style_choice.items().push_back_range({{<span class="stringliteral">&quot;Seven segment display&quot;</span>, lcd_style::seven_segment_display}, {<span class="stringliteral">&quot;Nine segment display&quot;</span>, lcd_style::nine_segment_display}, {<span class="stringliteral">&quot;Fourteen segment display&quot;</span>, lcd_style::fourteen_segment_display}, {<span class="stringliteral">&quot;Sixteen segment display&quot;</span>, lcd_style::sixteen_segment_display}, {<span class="stringliteral">&quot;Dot matrix display&quot;</span>, lcd_style::dot_matrix_display}});</div>
 <div class="line">      lcd_style_choice.selected_value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        label_lcd_label.lcd_style(as&lt;lcd_style&gt;(lcd_style_choice.selected_item().tag()));</div>
+<div class="line">        diagnostics::debug::write_line(string::format(<span class="stringliteral">&quot;{}::valid_characters = {}&quot;</span>, label_lcd_label.lcd_style(), label_lcd_label.valid_characters()));</div>
 <div class="line">        segment_style_choice.items().clear();</div>
 <div class="line">        <span class="keywordflow">if</span> (lcd_style_choice.selected_item().value() == <span class="stringliteral">&quot;Dot matrix display&quot;</span>) {</div>
 <div class="line">          segment_style_choice.items().push_back_range({{<span class="stringliteral">&quot;Standard (or round)&quot;</span>, dot_matrix_style::standard}, {<span class="stringliteral">&quot;Square&quot;</span>, dot_matrix_style::square}});</div>
@@ -244,7 +245,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 13 2025 15:03:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Aug 13 2025 15:18:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
