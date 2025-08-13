@@ -1,10 +1,25 @@
-# xtd website sources
+# xtd
 
-xtd (pronounced "extend") is a modern C++20 framework to create console, GUI (forms like WinForms) and unit test applications on Microsoft Windows, Apple macOS, Linux, iOS and android (*).
+**Write Once, Run Everywhere!**
 
 [![logo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/logo.png)](https://gammasoft71.github.io/xtd)
 
-(*) See [portability](https://gammasoft71.github.io/xtd/docs/documentation/portability#the-xtd-libraries-portability-list) for more information.
+<br/>
+**xtd (pronounced "extend") is a modern C++20 framework to create console (CLI), forms (GUI) and unit test (xUnit) multiplatform applications and libraries.**
+
+<br/>
+<div style={{ display: 'flex', justifyContent: 'left', flexWrap: 'wrap', gap: '30px', marginTop: '10px' }}>
+  <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/Windows_h100.png"/></a>
+  <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/macOS_h100.png"/></a>
+  <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/Linux_h100.png"/></a>
+  <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/iOS_h100.png"/></a>
+  <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/Android_h100.png"/></a>
+  <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/FreeBSD_h100.png"/></a>
+  <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/Haiku_h100.png"/></a>
+</div>
+<br/>
+<br/>
+<br/>
 
 ## Introduction
 
