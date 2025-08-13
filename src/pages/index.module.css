@@ -36,3 +36,19 @@
   align-items: center;
   justify-content: center;
 }
+
+/* Conteneur des icônes */
+.platform-icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;           /* espace horizontal et vertical entre les icônes */
+  margin-top: 6px;     /* espace au-dessus des icônes */
+}
+
+/* Styles pour chaque icône */
+.platform-icons img {
+  height: 48px;        /* hauteur uniforme */
+  width: auto;         /* largeur ajustée automatiquement */
+  display: block;
+}
