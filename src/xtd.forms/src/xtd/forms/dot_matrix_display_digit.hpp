@@ -30,7 +30,7 @@ public:
     vc.sort();
     return vc;
   }
-
+  
 private:
   xtd::char32 character_ = U' ';
   inline static xtd::collections::generic::dictionary<xtd::char32, points_collection> characters_ {
