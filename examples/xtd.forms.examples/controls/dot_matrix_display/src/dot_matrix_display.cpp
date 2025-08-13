@@ -1,13 +1,4 @@
-#include <xtd/drawing/color_converter>
-#include <xtd/forms/application>
-#include <xtd/forms/dot_matrix_display>
-#include <xtd/forms/form>
-#include <xtd/forms/timer>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:
@@ -46,7 +37,7 @@ private:
     dot_matrix_style::standard,
     dot_matrix_style::square
   };
-  timer timer1;
+  forms::timer timer1;
 };
 
 auto main() -> int {
