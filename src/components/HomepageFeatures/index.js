@@ -10,7 +10,7 @@ const FeatureList = [
       <a href="."><img src="pictures/xtd_256.png"/></a>
       <br/>
       <br/>
-       <br/><font size="5">xtd (pronounced "extend") is a modern C++20 framework for creating console (CLI), forms (GUI) and unit test (xUnit) multiplatform applications.</font>
+       <br/><font size="5">xtd (pronounced "extend") is a modern C++20 framework for creating console (CLI), forms (GUI) and unit test (xUnit) multiplatform applications and libraries.</font>
       </>
     ),
   },
