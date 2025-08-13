@@ -10,13 +10,13 @@
 
 <br/>
 <div style={{ display: 'flex', justifyContent: 'left', flexWrap: 'wrap', gap: '30px', marginTop: '10px' }}>
-  <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/Windows_h100.png"/></a>
-  <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/macOS_h100.png"/></a>
-  <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/Linux_h100.png"/></a>
-  <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/iOS_h100.png"/></a>
-  <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/Android_h100.png"/></a>
-  <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/FreeBSD_h100.png"/></a>
-  <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/Haiku_h100.png"/></a>
+  <a href="https://gammasoft71.github.io/xtd/docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/Windows_h100.png"/></a>
+  <a href="https://gammasoft71.github.io/xtd/docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/macOS_h100.png"/></a>
+  <a href="https://gammasoft71.github.io/xtd/docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/Linux_h100.png"/></a>
+  <a href="https://gammasoft71.github.io/xtd/docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/iOS_h100.png"/></a>
+  <a href="https://gammasoft71.github.io/xtd/docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/Android_h100.png"/></a>
+  <a href="https://gammasoft71.github.io/xtd/docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/FreeBSD_h100.png"/></a>
+  <a href="https://gammasoft71.github.io/xtd/docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/Haiku_h100.png"/></a>
 </div>
 <br/>
 <br/>
