@@ -7,10 +7,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/palenight');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  //title: 'xtd',
-  //title: ' ',
-  title: 'xtd (pronounced "extend") is a modern C++20 framework to create console (CLI), forms (GUI) and unit test (xUnit) applications on Windows, macOS, Linux, iOS, Android, FreeBSD, and Haiku(*).',
-  ///tagline: 'xtd (pronounced "extend") is a modern C++20 framework to create console (CLI), forms (GUI) and unit test (xUnit) applications on Windows, macOS, Linux, iOS, Android, FreeBSD, and Haiku (*).',
+  title: 'xtd',
+  tagline: 'Write Once, Run Everywhere!',
   favicon: 'pictures/xtd.ico',
 
   // Set the production url of your site here
