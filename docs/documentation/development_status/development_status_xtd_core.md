@@ -435,7 +435,7 @@
 
 | Name                                                                                                                                             | Type         | Status                                 |
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------ | -------------------------------------- |
-| [string_builder](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/text/string_builder.h)                                  | class        | ![progress](/pictures/progress0.png)   |
+| [string_builder](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/text/string_builder.h)                                  | class        | ![progress](/pictures/progress100.png) |
 
 ## xtd::threading
 
