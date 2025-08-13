@@ -23,8 +23,14 @@ public:
   void show_back_digit(bool value) override {xtd::forms::dot_matrix_display::show_back_dot(value);}
   xtd::int32 thickness_digit() const noexcept override {return xtd::forms::dot_matrix_display::thickness();}
   void thickness_digit(xtd::int32 value) override {xtd::forms::dot_matrix_display::thickness(value);}
-  xtd::array<xtd::char32> valid_characters() const noexcept override {return characters_.keys();}
-  
+  xtd::array<xtd::char32> valid_characters() const noexcept override {
+    static auto vc = xtd::collections::generic::list<xtd::char32> {};
+    if (vc.size()) return vc;
+    vc = characters_.keys();
+    vc.sort();
+    return vc;
+  }
+
 private:
   xtd::char32 character_ = U' ';
   inline static xtd::collections::generic::dictionary<xtd::char32, points_collection> characters_ {

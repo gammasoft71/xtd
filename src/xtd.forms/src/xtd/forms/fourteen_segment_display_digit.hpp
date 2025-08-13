@@ -23,8 +23,14 @@ public:
   void show_back_digit(bool value) override {xtd::forms::fourteen_segment_display::show_back_segment(value);}
   xtd::int32 thickness_digit() const noexcept override {return xtd::forms::fourteen_segment_display::thickness();}
   void thickness_digit(xtd::int32 value) override {xtd::forms::fourteen_segment_display::thickness(value);}
-  xtd::array<xtd::char32> valid_characters() const noexcept override {return characters_.keys();}
-  
+  xtd::array<xtd::char32> valid_characters() const noexcept override {
+    static auto vc = xtd::collections::generic::list<xtd::char32> {};
+    if (vc.size()) return vc;
+    vc = characters_.keys();
+    vc.sort();
+    return vc;
+  }
+
 private:
   xtd::char32 character_ = U' ';
   inline static xtd::collections::generic::dictionary<xtd::char32, xtd::forms::segments> characters_ {

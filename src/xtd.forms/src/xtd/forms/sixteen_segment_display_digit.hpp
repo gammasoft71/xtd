@@ -2,6 +2,7 @@
 #include "idigit.hpp"
 #include "../../../include/xtd/forms/sixteen_segment_display.hpp"
 #include <xtd/collections/generic/dictionary>
+#include <xtd/collections/generic/list>
 #include <xtd/helpers/throw_helper>
 #include <xtd/translator>
 
@@ -23,7 +24,13 @@ public:
   void show_back_digit(bool value) override {xtd::forms::sixteen_segment_display::show_back_segment(value);}
   xtd::int32 thickness_digit() const noexcept override {return xtd::forms::sixteen_segment_display::thickness();}
   void thickness_digit(xtd::int32 value) override {xtd::forms::sixteen_segment_display::thickness(value);}
-  xtd::array<xtd::char32> valid_characters() const noexcept override {return characters_.keys();}
+  xtd::array<xtd::char32> valid_characters() const noexcept override {
+    static auto vc = xtd::collections::generic::list<xtd::char32> {};
+    if (vc.size()) return vc;
+    vc = characters_.keys();
+    vc.sort();
+    return vc;
+  }
   
 private:
   xtd::char32 character_ = U' ';
