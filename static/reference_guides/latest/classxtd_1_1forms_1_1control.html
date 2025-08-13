@@ -2895,7 +2895,7 @@ Setting the <a class="el" href="#a75fa27c1abc0d06a0db366aff528b389" title="Gets 
 
 <p>Gets the height of the control. </p>
 <dl class="section return"><dt>Returns</dt><dd>The height of the control in pixels. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="clock_8cpp-example.html#a7">clock.cpp</a>, <a class="el" href="dot_matrix_display_8cpp-example.html#a1">dot_matrix_display.cpp</a>, <a class="el" href="fourteen_segment_display_8cpp-example.html#a1">fourteen_segment_display.cpp</a>, <a class="el" href="nine_segment_display_8cpp-example.html#a1">nine_segment_display.cpp</a>, <a class="el" href="seven_segment_display_8cpp-example.html#a1">seven_segment_display.cpp</a>, and <a class="el" href="sixteen_segment_display_8cpp-example.html#a1">sixteen_segment_display.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="clock_8cpp-example.html#a7">clock.cpp</a>, <a class="el" href="fourteen_segment_display_8cpp-example.html#a1">fourteen_segment_display.cpp</a>, <a class="el" href="nine_segment_display_8cpp-example.html#a1">nine_segment_display.cpp</a>, <a class="el" href="seven_segment_display_8cpp-example.html#a1">seven_segment_display.cpp</a>, and <a class="el" href="sixteen_segment_display_8cpp-example.html#a1">sixteen_segment_display.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -12316,16 +12316,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <dl class="section remark"><dt>Remarks</dt><dd>To determine the size of the resized control, you can cast the sender parameter of the registered <a class="el" href="group__events.html#ga700d1a009c17f8bd51e2cde04c689e5d" title="Represents the method that will handle the xtd::forms::control::control_added and xtd::forms::control...">control_event_handler</a> method to a control and get its size property (or height and width properties individually). </dd>
 <dd>
 To handle custom layouts, use the <a class="el" href="#a4c62d42e86be033a0aa9f897155d9672" title="Occurs when a xtd::forms::control should reposition its child controls.">xtd::forms::control::layout</a> event instead of the <a class="el" href="#aea1a435b7c3963a9e39af7aa218778a6" title="Occurs when the xtd::forms::control is resized.">xtd::forms::control::resize</a> event. The <a class="el" href="#a4c62d42e86be033a0aa9f897155d9672" title="Occurs when a xtd::forms::control should reposition its child controls.">xtd::forms::control::layout</a> event is raised in response to a <a class="el" href="#aea1a435b7c3963a9e39af7aa218778a6" title="Occurs when the xtd::forms::control is resized.">xtd::forms::control::resize</a> event, but also in response to other changes that affect the layout of the control. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of control <a class="el" href="#aea1a435b7c3963a9e39af7aa218778a6" title="Occurs when the xtd::forms::control is resized.">xtd::forms::control::resize</a> event. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/color_converter&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/dot_matrix_display&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/timer&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of control <a class="el" href="#aea1a435b7c3963a9e39af7aa218778a6" title="Occurs when the xtd::forms::control is resized.">xtd::forms::control::resize</a> event. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -12333,7 +12324,7 @@ To handle custom layouts, use the <a class="el" href="#a4c62d42e86be033a0aa9f897
 <div class="line">    dot_matrix_display1.<a class="code hl_function" href="#a57ee57fb17a58f873f39e14234a8815e">height</a>(250);</div>
 <div class="line">    dot_matrix_display1.location({(<a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>().<a class="code hl_variable" href="structxtd_1_1drawing_1_1size.html#af990d903c96a2013bec03e71c1288147">width</a> - dot_matrix_display1.width()) / 2, (<a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>().<a class="code hl_function" href="#a57ee57fb17a58f873f39e14234a8815e">height</a> - dot_matrix_display1.height()) / 2});</div>
 <div class="line">    dot_matrix_display1.parent(*<span class="keyword">this</span>);</div>
-<div class="line">    dot_matrix_display1.fore_color(<a class="code hl_variable" href="classxtd_1_1drawing_1_1color.html#a7a0b8f1210fbda4739c37fd61e1a1dab">color::red</a>);</div>
+<div class="line">    dot_matrix_display1.fore_color(color::red);</div>
 <div class="line">    dot_matrix_display1.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a71f262d796bed1ab30e8a2d5a8ddee6f">anchor_styles::bottom</a>);</div>
 <div class="line">    </div>
 <div class="line">    timer1.interval(300_ms);</div>
@@ -12343,10 +12334,10 @@ To handle custom layouts, use the <a class="el" href="#a4c62d42e86be033a0aa9f897
 <div class="line">      dot_matrix_display1.set_dots(chase[counter++ % chase.size()]);</div>
 <div class="line">    };</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="#ab4236dd32071d07bb8ec2452e041fbfa">back_color</a>(<a class="code hl_function" href="classxtd_1_1drawing_1_1color__converter.html#a67e579c4877e47a8a7bfde321e91e6c8">color_converter::average</a>(<a class="code hl_variable" href="classxtd_1_1drawing_1_1color.html#ad04928a6ddbfa799f6fdaca302cacf11">color::black</a>, dot_matrix_display1.fore_color(), 0.20));</div>
+<div class="line">    <a class="code hl_function" href="#ab4236dd32071d07bb8ec2452e041fbfa">back_color</a>(color_converter::average(color::black, dot_matrix_display1.fore_color(), 0.20));</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Dot matrix display example&quot;</span>);</div>
 <div class="line">    resize += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">      dot_matrix_display1.left((<a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>().<a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc">width</a> - dot_matrix_display1.width()) / 2);</div>
+<div class="line">      dot_matrix_display1.left((<a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>().width - dot_matrix_display1.<a class="code hl_variable" href="structxtd_1_1drawing_1_1size.html#af990d903c96a2013bec03e71c1288147">width</a>()) / 2);</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -12364,19 +12355,15 @@ To handle custom layouts, use the <a class="el" href="#a4c62d42e86be033a0aa9f897
 <div class="line">    dot_matrix_style::standard,</div>
 <div class="line">    dot_matrix_style::square</div>
 <div class="line">  };</div>
-<div class="line">  timer timer1;</div>
+<div class="line">  forms::timer timer1;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(form1 {});</div>
+<div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1color__converter_html_a67e579c4877e47a8a7bfde321e91e6c8"><div class="ttname"><a href="classxtd_1_1drawing_1_1color__converter.html#a67e579c4877e47a8a7bfde321e91e6c8">xtd::drawing::color_converter::average</a></div><div class="ttdeci">static xtd::drawing::color average(const xtd::drawing::color &amp;color1, const xtd::drawing::color &amp;color2, double weight) noexcept</div><div class="ttdoc">Returns the weighted average color between the two given colors.</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_a7a0b8f1210fbda4739c37fd61e1a1dab"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#a7a0b8f1210fbda4739c37fd61e1a1dab">xtd::drawing::color::red</a></div><div class="ttdeci">static const xtd::drawing::color red</div><div class="ttdoc">Gets a system-defined color that has an ARGB value of 0xFFFF0000. This field is constant.</div><div class="ttdef"><b>Definition</b> color.hpp:401</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_ad04928a6ddbfa799f6fdaca302cacf11"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#ad04928a6ddbfa799f6fdaca302cacf11">xtd::drawing::color::black</a></div><div class="ttdeci">static const xtd::drawing::color black</div><div class="ttdoc">Gets a system-defined color that has an ARGB value of 0xFF000000. This field is constant.</div><div class="ttdef"><b>Definition</b> color.hpp:80</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a57ee57fb17a58f873f39e14234a8815e"><div class="ttname"><a href="#a57ee57fb17a58f873f39e14234a8815e">xtd::forms::control::height</a></div><div class="ttdeci">virtual int32 height() const noexcept</div><div class="ttdoc">Gets the height of the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_ab4236dd32071d07bb8ec2452e041fbfa"><div class="ttname"><a href="#ab4236dd32071d07bb8ec2452e041fbfa">xtd::forms::control::back_color</a></div><div class="ttdeci">virtual drawing::color back_color() const noexcept</div><div class="ttdoc">Gets the background color for the control.</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ggaa76409da314505c52983287adca0c27aacd8e7918010a87cc619849e00265c9a6"><div class="ttname"><a href="group__style__sheets.html#ggaa76409da314505c52983287adca0c27aacd8e7918010a87cc619849e00265c9a6">xtd::forms::style_sheets::length_unit::chase</a></div><div class="ttdeci">@ chase</div><div class="ttdoc">Defines a chase unit. Relative to width of the &quot;0&quot; (zero).</div><div class="ttdef"><b>Definition</b> length_unit.hpp:84</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc"><div class="ttname"><a href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc">xtd::forms::bounds_specified::width</a></div><div class="ttdeci">@ width</div><div class="ttdoc">Specifies that the width of the control is defined.</div><div class="ttdef"><b>Definition</b> bounds_specified.hpp:32</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_ggaadd820dc6f2e0c2068f94749eb18725ea30d54927d6f67b04c076a8a77985b950"><div class="ttname"><a href="group__xtd__forms.html#ggaadd820dc6f2e0c2068f94749eb18725ea30d54927d6f67b04c076a8a77985b950">xtd::forms::lcd_style::dot_matrix_display</a></div><div class="ttdeci">@ dot_matrix_display</div><div class="ttdoc">Dot matrix display style.</div><div class="ttdef"><b>Definition</b> lcd_style.hpp:31</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_ggabe04a3034508fe0527604e5c5c3104c3a71f262d796bed1ab30e8a2d5a8ddee6f"><div class="ttname"><a href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a71f262d796bed1ab30e8a2d5a8ddee6f">xtd::forms::anchor_styles::bottom</a></div><div class="ttdeci">@ bottom</div><div class="ttdoc">Bind control edges to the bottom of its container.</div><div class="ttdef"><b>Definition</b> anchor_styles.hpp:25</div></div>
 <div class="ttc" id="astructxtd_1_1drawing_1_1size_html_af990d903c96a2013bec03e71c1288147"><div class="ttname"><a href="structxtd_1_1drawing_1_1size.html#af990d903c96a2013bec03e71c1288147">xtd::drawing::size::width</a></div><div class="ttdeci">int32 width</div><div class="ttdoc">Gets or sets the horizontal component of this xtd::drawing::size class.</div><div class="ttdef"><b>Definition</b> size.hpp:66</div></div>
@@ -12525,7 +12512,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 12 2025 19:24:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Aug 13 2025 12:31:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
