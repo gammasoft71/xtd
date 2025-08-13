@@ -7,6 +7,7 @@
 **xtd (pronounced "extend") is a modern C++20 framework to create console (CLI), forms (GUI) and unit test (xUnit) multiplatform applications and libraries.**
 
 <div style={{ display: 'flex', justifyContent: 'left', flexWrap: 'wrap', gap: '30px', marginTop: '10px' }}>
+  <br/>
   <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/Windows_h100.png"/></a>
   <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/macOS_h100.png"/></a>
   <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/Linux_h100.png"/></a>
@@ -14,6 +15,8 @@
   <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/Android_h100.png"/></a>
   <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/FreeBSD_h100.png"/></a>
   <a href="docs/documentation/portability"><img src="https://github.com/gammasoft71/xtd/blob/master/docs/pictures/os/Haiku_h100.png"/></a>
+  <br/>
+  <br/>
 </div>
 
 [![codecov](https://codecov.io/gh/gammasoft71/xtd/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd) [![web](https://img.shields.io/badge/website-xtd-004080.svg)](https://gammasoft71.github.io/xtd) [![Reference Guide](https://img.shields.io/badge/code-reference%20guide-004080.svg)](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html) [![wiki](https://img.shields.io/badge/wiki-xtd-004080.svg)](https://github.com/gammasoft71/xtd/wiki) [![discord](https://img.shields.io/badge/discord-gammasoft-7289DA.svg)](https://discordapp.com/users/gammasoft#9288) [![GitHub issue custom search in repo](https://img.shields.io/github/issues-search/gammasoft71/xtd?color=red&label=Open%20user%20issues&query=is%3Aopen%20is%3Aissue+-label%3Aenhancement)](https://github.com/gammasoft71/xtd/issues?q=is%3Aopen+is%3Aissue+-label%3Aenhancement) [![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download)
