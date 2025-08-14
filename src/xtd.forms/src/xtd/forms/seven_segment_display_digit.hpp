@@ -92,7 +92,8 @@ private:
     {U'\'', xtd::forms::segments::f},
     {U'[', xtd::forms::segments::a | xtd::forms::segments::d | xtd::forms::segments::e | xtd::forms::segments::f},
     {U']', xtd::forms::segments::a | xtd::forms::segments::b | xtd::forms::segments::c | xtd::forms::segments::d},
-    {U'|', xtd::forms::segments::b | xtd::forms::segments::c}, {' ', xtd::forms::segments::none},
+    {U'|', xtd::forms::segments::b | xtd::forms::segments::c},
+    {U' ', xtd::forms::segments::none},
     {U'.', xtd::forms::segments::dp},
     {U',', xtd::forms::segments::dp},
     {U':', xtd::forms::segments::pc}
