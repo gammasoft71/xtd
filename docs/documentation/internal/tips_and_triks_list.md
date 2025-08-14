@@ -1,4 +1,4 @@
-# Tips & triks ist
+# Tips & triks list
 
 🟢 Published | 🟡 Ready | 🔴 Not started
 
@@ -8,8 +8,8 @@
 | 🟢  | #2     | July 31, 2025      | Very simple threads synchronisation                            | C++ standard                  |
 | 🟢  | #3     | August 6, 2025     | Showing a message box in one line                              | Qt / wxWidgets                |
 | 🟡  | #4     | August 18, 2025    | array_list a heterogeneous container supporting multiple types | C++ standard / Boost / Qt     |
-| 🔴  |        | September 1, 2025  | Getting special folders (desktop, app_data, etc.)              | Win32 API / Qt                |
-| 🔴  |        | September 15, 2025 | Image effect                                                   | .NET / Qt QTranslator         |
+| 🟡  | #5     | September 1, 2025  | Getting special folders (desktop, app_data, etc.)              | Win32 API / Qt                |
+| 🔴  | #6     | September 15, 2025 | Image effect                                                   | .NET / Qt QTranslator         |
 | 🔴  |        | September 29, 2025 | Creating a simple form with a button                           | Qt / WinForms                 |
 | 🔴  |        | October 13, 2025   | Adding color to console output (text + background)             | ANSI escape codes             |
 | 🔴  |        |                    | Getting and formatting date/time easily                        | std::chrono, Qt               |
