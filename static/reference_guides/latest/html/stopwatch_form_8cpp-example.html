@@ -114,34 +114,35 @@ $(function() {
 <div class="line">  main_form() {</div>
 <div class="line">    text(<span class="stringliteral">&quot;Stopwatch&quot;</span>);</div>
 <div class="line">    start_position(form_start_position::center_screen);</div>
-<div class="line">    client_size({275, 120});</div>
+<div class="line">    client_size({425, 120});</div>
 <div class="line">    icon(stopwatch_form::properties::resources::stopwatch_ico());</div>
 <div class="line">    form_border_style(forms::form_border_style::fixed_single);</div>
 <div class="line">    maximize_box(<span class="keyword">false</span>);</div>
 <div class="line">    </div>
 <div class="line">    watch_panel.parent(*<span class="keyword">this</span>);</div>
-<div class="line">    watch_panel.border_style(forms::border_style::bevel_inset);</div>
-<div class="line">    watch_panel.bounds({20, 10, 235, 50});</div>
+<div class="line">    watch_panel.border_style(forms::border_style::inset);</div>
+<div class="line">    watch_panel.bounds({20, 10, 385, 50});</div>
 <div class="line">    watch_panel.back_color(color_converter::average(color::black, color::lime, 0.25));</div>
 <div class="line">    watch_panel.fore_color(color::lime);</div>
 <div class="line">    </div>
 <div class="line">    watch.parent(watch_panel);</div>
-<div class="line">    watch.bounds({10, 8, 214, 33});</div>
+<div class="line">    watch.lcd_style(lcd_style::dot_matrix_display);</div>
+<div class="line">    watch.bounds({10, 10, 367, 33});</div>
 <div class="line">    watch.text(<span class="stringliteral">&quot;00:00:00.000&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    start_stop.parent(*<span class="keyword">this</span>);</div>
-<div class="line">    start_stop.location({10, 80});</div>
+<div class="line">    start_stop.location({85, 80});</div>
 <div class="line">    start_stop.text(<span class="stringliteral">&quot;Start&quot;</span>);</div>
 <div class="line">    start_stop.click += event_handler(*<span class="keyword">this</span>, &amp;main_form::on_start_stop_click);</div>
 <div class="line">    </div>
 <div class="line">    pause_resume.parent(*<span class="keyword">this</span>);</div>
-<div class="line">    pause_resume.location({100, 80});</div>
+<div class="line">    pause_resume.location({175, 80});</div>
 <div class="line">    pause_resume.text(<span class="stringliteral">&quot;Pause&quot;</span>);</div>
 <div class="line">    pause_resume.enabled(<span class="keyword">false</span>);</div>
 <div class="line">    pause_resume.click += event_handler(*<span class="keyword">this</span>, &amp;main_form::on_pause_resume_click);</div>
 <div class="line">    </div>
 <div class="line">    reset.parent(*<span class="keyword">this</span>);</div>
-<div class="line">    reset.location({190, 80});</div>
+<div class="line">    reset.location({265, 80});</div>
 <div class="line">    reset.text(<span class="stringliteral">&quot;Reset&quot;</span>);</div>
 <div class="line">    reset.enabled(<span class="keyword">false</span>);</div>
 <div class="line">    reset.click += event_handler(*<span class="keyword">this</span>, &amp;main_form::on_reset_click);</div>
@@ -201,7 +202,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 5 2025 21:42:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Aug 13 2025 22:32:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
