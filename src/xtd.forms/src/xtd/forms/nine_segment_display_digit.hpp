@@ -5,7 +5,7 @@
 #include <xtd/helpers/throw_helper>
 #include <xtd/translator>
 
-class nine_segment_display_digit : public idigit, public xtd::forms::nine_segment_display {
+class nine_segment_display_digit : public xtd::forms::nine_segment_display, public idigit {
 public:
   nine_segment_display_digit() = default;
   
@@ -91,7 +91,8 @@ private:
     {U'\'', xtd::forms::segments::f},
     {U'[', xtd::forms::segments::a | xtd::forms::segments::d | xtd::forms::segments::e | xtd::forms::segments::f},
     {U']', xtd::forms::segments::a | xtd::forms::segments::b | xtd::forms::segments::c | xtd::forms::segments::d},
-    {U'|', xtd::forms::segments::b | xtd::forms::segments::c}, {' ', xtd::forms::segments::none},
+    {U'|', xtd::forms::segments::b | xtd::forms::segments::c},
+    {U' ', xtd::forms::segments::none},
     {U'.', xtd::forms::segments::dp},
     {U',', xtd::forms::segments::dp},
     {U':', xtd::forms::segments::pc}
