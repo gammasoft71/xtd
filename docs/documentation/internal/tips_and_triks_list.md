@@ -4,18 +4,18 @@
 
 | Sts | Number | Publish date       | Subject                                                        | Comparison with               |
 | --- | ------ | ------------------ |--------------------------------------------------------------- | ----------------------------- |
-| 🟢  | #1     | July 8, 2025       | Retrieving command-line arguments                              | C++ standard                  |
-| 🟢  | #2     | July 31, 2025      | Very simple threads synchronisation                            | C++ standard                  |
-| 🟢  | #3     | August 6, 2025     | Showing a message box in one line                              | Qt / wxWidgets                |
-| 🟡  | #4     | August 18, 2025    | array_list a heterogeneous container supporting multiple types | C++ standard / Boost / Qt     |
-| 🟡  | #5     | September 1, 2025  | Getting special folders (desktop, app_data, etc.)              | Win32 API / Qt                |
-| 🔴  | #6     | September 15, 2025 | Image effect                                                   | .NET / Qt QTranslator         |
-| 🔴  | #7     | September 29, 2025 | Creating a simple form with a button                           | Qt / WinForms                 |
-| 🔴  | #8     | October 13, 2025   | Adding color to console output (text + background)             | ANSI escape codes             |
-| 🔴  |        |                    | Getting and formatting date/time easily                        | std::chrono, Qt               |
-| 🔴  |        |                    | Writing to debug output and console at once                    | std::cout / OutputDebugString |
-| 🔴  |        |                    | Using timers (interval, elapsed event)                         | std::thread + sleep, Qt Timer |
 | 🔴  |        |                    | Localizing strings with xtd::environment::culture              | .NET / Qt QTranslator         |
+| 🔴  |        |                    | Using timers (interval, elapsed event)                         | std::thread + sleep, Qt Timer |
+| 🔴  |        |                    | Writing to debug output and console at once                    | std::cout / OutputDebugString |
+| 🔴  |        |                    | Getting and formatting date/time easily                        | std::chrono, Qt               |
+| 🔴  | #8     | October 13, 2025   | Adding color to console output (text + background)             | ANSI escape codes             |
+| 🔴  | #7     | September 29, 2025 | Creating a simple form with a button                           | Qt / WinForms                 |
+| 🔴  | #6     | September 15, 2025 | Image effect                                                   | .NET / Qt QTranslator         |
+| 🟡  | #5     | September 1, 2025  | Getting special folders (desktop, app_data, etc.)              | Win32 API / Qt                |
+| 🟡  | #4     | August 18, 2025    | array_list a heterogeneous container supporting multiple types | C++ standard / Boost / Qt     |
+| 🟢  | #3     | August 6, 2025     | Showing a message box in one line                              | Qt / wxWidgets                |
+| 🟢  | #2     | July 31, 2025      | Very simple threads synchronisation                            | C++ standard                  |
+| 🟢  | #1     | July 8, 2025       | Retrieving command-line arguments                              | C++ standard                  |
 
 # Getting special folders (desktop, app_data, etc.)
 
