@@ -12,25 +12,11 @@
 | 🟡  | #8     | October 13, 2025   | array_list a heterogeneous container supporting multiple types | C++ standard / Boost / Qt     |
 | 🔴  | #7     | September 29, 2025 | Creating a simple form with a button                           | Qt / WinForms                 |
 | 🟡  | #6     | September 15, 2025 | Getting special folders (desktop, app_data, etc.)              | Win32 API / Qt                |
-| 🟡  | #5     | September 1, 2025  | Applying image effects                                         | .NET / Qt QTranslator         |
+| 🟡  | #5     | September 1, 2025  | Applying image effects                                         | NA                            |
 | 🟡  | #4     | August 18, 2025    | Why xtd simplifies your code compared to Qt or WxWidgets       | Qt / wxWidgets                |
 | 🟢  | #3     | August 6, 2025     | Showing a message box in one line                              | Qt / wxWidgets                |
 | 🟢  | #2     | July 31, 2025      | Very simple threads synchronisation                            | C++ standard                  |
 | 🟢  | #1     | July 8, 2025       | Retrieving command-line arguments                              | C++ standard                  |
-
-# Getting special folders (desktop, app_data, etc.)
-
-```cpp
-#include <xtd/xtd>
-
-auto main() -> int {
-  auto my_file = path::combine(environment::get_folder_path(environment::special_folder::desktop), "my_file.txt");
-  
-  file::write_all_text(my_file, "Content:\n\nA simple text file\n");
-  console::write_line(file::read_all_text(my_file));
-  file::remove(my_file);
-}
-```
 
 # Getting and formatting date/time easily
 
