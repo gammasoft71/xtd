@@ -17,11 +17,8 @@ using namespace xtd;
 using namespace xtd::drawing::native;
 
 namespace {
-  //const auto max_value = 0xFFFFFF / 2;
-  //const auto min_value = -(0xFFFFFF / 4);
-  // Workaround for infinite region on Gtk
-  const auto max_value = 0xFFFFF / 2;
-  const auto min_value = -(0xFFFFF / 4);
+  const auto max_value = 0x800000;
+  const auto min_value = -(max_value / 2);
 
   static const wxColour mask_color = wxColour(255, 0, 255);
   static wxBitmap create_graphics_path_bitmap(wxGraphicsPath& path) noexcept {
