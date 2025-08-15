@@ -5,7 +5,7 @@ This section contains the xtd documentation. ​
 ## In this section
 
 - [Getting started](/docs/documentation/getting_started) provides getting started documentation.
-- [Tips & Tricks](/docs/documentation/tips_and_tricks) provides xtd tips & tricks.
+- [Tips & Tricks](/docs/documentation/tips_and_tricks) provides xtd tips & tricks - Practical C++ Examples.
 - [Guides](/docs/documentation/guides) provides xtd guides and tutorials.
 - [Reference Guides](/docs/documentation/reference_guides) provide online user reference guides for all versions of xtd.
 - [Design Guidelines](/docs/documentation/design_guidelines) provides guidelines for designing libraries that extend and interact with the xtd.
