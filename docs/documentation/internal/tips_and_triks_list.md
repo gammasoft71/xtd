@@ -1,6 +1,6 @@
 # Tips & tricks list
 
-🟢 Published | 🟡 Ready for review | 🔴 Not started
+🟢 Published | 🟡 Ready to publish | 🔴 Not started
 
 | Sts | Number | Publish date       | Subject                                                        | Comparison with               |
 | --- | ------ | ------------------ |--------------------------------------------------------------- | ----------------------------- |
@@ -12,7 +12,7 @@
 | 🟡  | #8     | October 13, 2025   | array_list a heterogeneous container supporting multiple types | C++ standard / Boost / Qt     |
 | 🔴  | #7     | September 29, 2025 | Creating a simple form with a button                           | Qt / WinForms                 |
 | 🟡  | #6     | September 15, 2025 | Getting special folders (desktop, app_data, etc.)              | Win32 API / Qt                |
-| 🔴  | #5     | September 1, 2025  | Image effect                                                   | .NET / Qt QTranslator         |
+| 🟡  | #5     | September 1, 2025  | Applying image effects                                         | .NET / Qt QTranslator         |
 | 🟡  | #4     | August 18, 2025    | Why xtd simplifies your code compared to Qt or WxWidgets       | Qt / wxWidgets                |
 | 🟢  | #3     | August 6, 2025     | Showing a message box in one line                              | Qt / wxWidgets                |
 | 🟢  | #2     | July 31, 2025      | Very simple threads synchronisation                            | C++ standard                  |
