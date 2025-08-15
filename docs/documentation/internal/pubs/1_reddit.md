@@ -37,5 +37,5 @@ auto main() -> int {
 [Documentation](https://gammasoft71.github.io/xtd)
 Feedback and contributions are welcome.
 
-[screenshot](https://imgur.com/a/1d0oNLI)
+[screenshot](https://imgur.com/a/xtd-forms-hello-world-macos-gnome-windows-1d0oNLI)
 
