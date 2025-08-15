@@ -40,5 +40,5 @@ Feedback and contributions are welcome.
 
 ![screenshot](https://imgur.com/a/xtd-forms-hello-world-macos-gnome-windows-1d0oNLI)
 
-![screenshot](/pictures/hello_world_message_box_wgm.png)
+![screenshot](https://github.com/gammasoft71/xtd/blob/docs/static/pictures/hello_world_message_box_wgm.png)
 
