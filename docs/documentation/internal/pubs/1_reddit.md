@@ -31,12 +31,12 @@ auto main() -> int {
 }
 ```
 
+![screenshot](https://github.com/gammasoft71/xtd/blob/docs/static/pictures/hello_world_message_box_wgm.png)
+
 ## Links
 
 - [GitHub](https://github.com/gammasoft71/xtd)
 - [Documentation](https://gammasoft71.github.io/xtd)
 
 Feedback and contributions are welcome.
-
-![screenshot](https://github.com/gammasoft71/xtd/blob/docs/static/pictures/hello_world_message_box_wgm.png)
 
