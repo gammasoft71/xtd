@@ -38,5 +38,7 @@ auto main() -> int {
 
 Feedback and contributions are welcome.
 
-[screenshot](/pictures/hello_world_message_box_wgm.png)
+![screenshot](https://imgur.com/a/xtd-forms-hello-world-macos-gnome-windows-1d0oNLI)
+
+![screenshot](/pictures/hello_world_message_box_wgm.png)
 
