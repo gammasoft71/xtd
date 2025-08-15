@@ -139,7 +139,7 @@ void rectangle_f::offset(float dx, float dy) noexcept {
 }
 
 xtd::string rectangle_f::to_string() const noexcept {
-  return string::format("{{x={}, y={}, width={}, heght={}}}", x, y, width, height);
+  return string::format("{{x={}, y={}, width={}, height={}}}", x, y, width, height);
 }
 
 rectangle_f rectangle_f::add(const rectangle_f& rect, float x, float y) noexcept {
