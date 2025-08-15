@@ -19,7 +19,7 @@ using namespace xtd::drawing::native;
 namespace {
   const auto max_value = 0x800000;
   const auto min_value = -(max_value / 2);
-
+  
   static const wxColour mask_color = wxColour(255, 0, 255);
   static wxBitmap create_graphics_path_bitmap(wxGraphicsPath& path) noexcept {
     double x = .0f, y = .0f, width = .0f, height = .0f;
