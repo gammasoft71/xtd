@@ -50,8 +50,3 @@
 
 * [Class organization](/docs/documentation/internal/class_organization) provides a proposal for class organization.
 
-## Pubs
-
-* [#1](/docs/documentation/internal/pubs/1_reddit) Post on Reddit r/ccpp (August 19, 2025).
-
-
