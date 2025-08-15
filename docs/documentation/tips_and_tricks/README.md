@@ -52,3 +52,4 @@ You will find concrete solutions to common problems encountered with xtd in mode
 ## See also
 
 * [Documentation](/docs/documentation)
+* [All examples in GitHub repository](https://github.com/gammasoft71/xtd/blob/master/examples/README.md)
