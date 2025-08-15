@@ -144,7 +144,7 @@ void rectangle::offset(int32 dx, int32 dy) noexcept {
 }
 
 xtd::string rectangle::to_string() const noexcept {
-  return string::format("{{x={}, y={}, width={}, heght={}}}", x, y, width, height);
+  return string::format("{{x={}, y={}, width={}, height={}}}", x, y, width, height);
 }
 
 rectangle rectangle::add(const rectangle& rect, int32 x, int32 y) noexcept {

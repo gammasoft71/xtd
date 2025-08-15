@@ -709,7 +709,7 @@ namespace xtd::drawing::tests {
       assert::throws<argument_exception>([] {auto bmp = bitmap {path::combine(environment::get_folder_path(environment::special_folder::application_resources), "bitmap_not_existent_file.any")};});
     }
     
-    void test_method_(create_with_with_and_heght) {
+    void test_method_(create_with_with_and_height) {
       auto bmp = bitmap {3, 2};
       
       assert::are_equal(2, bmp.flags());
@@ -737,15 +737,15 @@ namespace xtd::drawing::tests {
       assert::are_equal(color::transparent, bmp.get_pixel(2, 1));
     }
     
-    void test_method_(create_with_invalid_width_and_heght) {
+    void test_method_(create_with_invalid_width_and_height) {
       assert::throws<argument_exception>([] {auto bmp = bitmap {0, 200};});
     }
     
-    void test_method_(create_with_with_and_invalid_heght) {
+    void test_method_(create_with_with_and_invalid_height) {
       assert::throws<argument_exception>([] {auto bmp = bitmap {320, 0};});
     }
     
-    void test_method_(create_with_invalid_width_and_ivalid_heght) {
+    void test_method_(create_with_invalid_width_and_ivalid_height) {
       assert::throws<argument_exception>([] {auto bmp = bitmap {0, 0};});
     }
   };
