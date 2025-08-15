@@ -1,4 +1,4 @@
-# xtd Tips & Tricks — Practical C++ Examples
+# xtd Tips & Tricks - Practical C++ Examples
 
 This collection gathers practical and ready-to-use C++ code examples with xtd.
 Whether you’re building a console tool, a GUI, or working with threads, you’ll find here concise solutions to common programming needs.
