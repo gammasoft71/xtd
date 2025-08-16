@@ -10,7 +10,7 @@
 | 🔴  |        |                    | Getting and formatting date/time easily                        | std::chrono, Qt               |
 | 🔴  | #9     | October 27, 2025   | Adding color to console output (text + background)             | ANSI escape codes             |
 | 🟡  | #8     | October 13, 2025   | array_list a heterogeneous container supporting multiple types | C++ standard / Boost / Qt     |
-| 🔴  | #7     | September 29, 2025 | Creating a simple form with a button                           | Qt / WinForms                 |
+| 🟡  | #7     | September 29, 2025 | Creating a simple form with a button                           | Qt / WinForms                 |
 | 🟡  | #6     | September 15, 2025 | Getting special folders (desktop, app_data, etc.)              | Win32 API / Qt                |
 | 🟡  | #5     | September 1, 2025  | Applying image effects                                         | NA                            |
 | 🟡  | #4     | August 18, 2025    | Why xtd simplifies your code compared to Qt or WxWidgets       | Qt / wxWidgets                |
