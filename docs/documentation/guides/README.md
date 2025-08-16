@@ -32,12 +32,12 @@ The xtd guides provide an explanation on how to use the important features of th
   * [Overview](/docs/documentation/guides/Tools)
 * xtd.core
   * Entry point
-    * [main and startup_](/docs/documentation/guides/xtd.core/entry_point/main_and_startup)
+    * [Main and startup](/docs/documentation/guides/xtd.core/entry_point/main_and_startup)
   * Types overview
     * [Preprocessor symbols](/docs/documentation/guides/xtd.core/types_overview/preprocessor_symbols)
     * [Native types, boxing and unboxing](/docs/documentation/guides/xtd.core/types_overview/types)
-    * [enum, enum class and enum struct](/docs/documentation/guides/xtd.core/types_overview/enum_class)
-    * [string](/docs/documentation/guides/xtd.core/types_overview/string)
+    * [Enum, enum class and enum struct](/docs/documentation/guides/xtd.core/types_overview/enum_class)
+    * [String](/docs/documentation/guides/xtd.core/types_overview/string)
     * [Dates, times, and time zones](/docs/documentation/guides/xtd.core/types_overview/date_time)
     * [Delegates](/docs/documentation/guides/xtd.core/types_overview/delegates)
     * [Events](/docs/documentation/guides/xtd.core/types_overview/events)
@@ -55,7 +55,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Observer Design Pattern](/docs/documentation/guides/xtd.core/Events/observer_design_pattern)
   * Exceptions
     * [Overview](/docs/documentation/guides/xtd.core/Exceptions/overview)
-    * [exception class and properties](/docs/documentation/guides/xtd.core/Exceptions/exception_class_and_properties)
+    * [Exception class and properties](/docs/documentation/guides/xtd.core/Exceptions/exception_class_and_properties)
     * How-tos
       * [Use the try-catch block to catch exceptions](/docs/documentation/guides/xtd.core/Exceptions/how_tos/exceptions_try_catch)
       * [Use specific exceptions in a catch block](/docs/documentation/guides/xtd.core/Exceptions/how_tos/exceptions_use_specific_exceptions)
@@ -92,7 +92,7 @@ The xtd guides provide an explanation on how to use the important features of th
       * [Open and Append to a Log File](/docs/documentation/guides/xtd.core/common_io_tasks/How-tos/open_and_append_to_a_log_file)
       * [Write Text to a File](/docs/documentation/guides/xtd.core/common_io_tasks/How-tos/write_text_to_a_file)
       * [Read Text from a File](/docs/documentation/guides/xtd.core/common_io_tasks/How-tos/read_text_from_a_file)
-  * [console class](/docs/documentation/guides/xtd.core/console_class)
+  * [Console class](/docs/documentation/guides/xtd.core/console_class)
   * Networking
     * [Network programming](/docs/documentation/guides/xtd.core/Networking/network_programming)
     * [Network availability](/docs/documentation/guides/xtd.core/Networking/network_availability)
@@ -144,7 +144,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Layout options](/docs/documentation/guides/xtd.forms/Controls/position_and_layout_of_controls)
     * [Labels](/docs/documentation/guides/xtd.forms/Controls/labels)
     * [Events](/docs/documentation/guides/xtd.forms/Controls/Events)
-    * [custom_controls](/docs/documentation/guides/xtd.forms/Controls/custom_controls)
+    * [Custom controls](/docs/documentation/guides/xtd.forms/Controls/custom_controls)
     * [custom painting and drawing](/docs/documentation/guides/xtd.forms/Controls/custom_painting_and_drawing)
     * [Apply accessibility information](/docs/documentation/guides/xtd.forms/Controls/apply_accessibility_information)
     * Common tasks
