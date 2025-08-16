@@ -13,6 +13,7 @@ This section contains the xtd documentation. ​
 - [Roadmap](/docs/documentation/roadmap) provides xtd roadmap.
 - [kanban board](https://github.com/users/gammasoft71/projects/3) provides a Kanban view for all tasks (enhancements, pull requests, bugs, questions,...).
 - [Development status](/docs/documentation/development_status) provides information about classes and libraries development status.
+- [Guide status](/docs/documentation/guide_status) provides information about guide status.
 - [Translation status](/docs/documentation/translation_status) provides information about translations status.
 - [Portability](/docs/documentation/portability) provides information about C++, libraries dependency, Operating System supported, Compilers and Development Environment tools.
 - [Themes](/docs/documentation/themes) lists the xtd themes.
