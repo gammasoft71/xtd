@@ -1,4 +1,4 @@
-# xtd in numbers (last update 2024-10-13)
+# xtd in numbers (last update 2025-08-17)
 
 ## Key dates
 
@@ -20,41 +20,41 @@
 
 ### src
 
-* Files : 2185
-* Lines : 440459
-  * 203128 code lines (46%)
-  * 191335 comment lines (44%)
-  *  45996 blank lines (10%)
+* Files : 2933
+* Lines : 458542
+  * 213619 code lines (46%)
+  * 197065 comment lines (44%)
+  *  47858 blank lines (10%)
 
 ### tests
 
-* Files : 1008
-* Lines : 106032
-  * 89024 code lines (84%)
-  *  1399 comment lines (1%)
-  * 15609 blank lines (15%)
+* Files : 1105
+* Lines : 144509
+  * 121450 code lines (84%)
+  *   1857 comment lines (1%)
+  *  21202 blank lines (15%)
 
 ### examples
 
-* Examples : 814
-* Files : 2694
-* Lines : 85945
-  * 58998 code lines (69%)
-  *  8950 comment lines (10%)
-  * 17997 blank lines (21%)
+* Examples : 868
+* Files : 2878
+* Lines : 94458
+  * 63967 code lines (68%)
+  * 11317 comment lines (12%)
+  * 19174 blank lines (20%)
 
 ### tools
 
-* Files : 108
-* Lines : 11069
-  * 9512 code lines (86%)
-  *  347 comment lines (3%)
-  * 1210 blank lines (11%)
+* Files : 112
+* Lines : 11446
+  * 9841 code lines (86%)
+  *  364 comment lines (3%)
+  * 1241 blank lines (11%)
   
 ## Unit tests
 
-* Tests : 19445
-   * 15019 tests from 370 test cases (xtd.core.unit_test)
-   *  2020 tests from  46 test cases (xtd.drawing.unit_tests)
-   *  1348 tests from 115 test cases (xtd.forms.unit_tests)
+* Tests : 27606
+   * 22761 tests from 529 test cases (xtd.core.unit_test)
+   *  2422 tests from  64 test cases (xtd.drawing.unit_tests)
+   *  1365 tests from 117 test cases (xtd.forms.unit_tests)
    *  1058 tests from 529 test cases (xtd.forms.unit_tests)
