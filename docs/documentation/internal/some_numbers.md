@@ -8,7 +8,7 @@
 
 ## Team
 
-* Contributors : 13
+* Contributors : 13 (10 dev, 1 translator, 2 doc)
   * 10 developers
   *  1 translators (*)
   *  2 documenters (*)
@@ -57,4 +57,4 @@
    * 22761 tests from 529 test cases (xtd.core.unit_test)
    *  2422 tests from  64 test cases (xtd.drawing.unit_tests)
    *  1365 tests from 117 test cases (xtd.forms.unit_tests)
-   *  1058 tests from 529 test cases (xtd.forms.unit_tests)
+   *  1058 tests from 529 test cases (xtd.tunit.unit_tests)
