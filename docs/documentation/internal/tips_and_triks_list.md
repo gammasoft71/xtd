@@ -6,13 +6,19 @@
 | --- | ------ | ------------------ |--------------------------------------------------------------- | ------------------------------------------- |
 | 🔴  |        |                    | Localizing strings with xtd::environment::culture              | .NET / Qt QTranslator                       |
 | 🔴  |        |                    | Showing notifications (balloon tips / tray icons)              | Qt QSystemTrayIcon / Win32 Shell_NotifyIcon |
-| 🔴  | #22    | June 8, 2026       | Creating xtd::forms::button with style sheet                   | Qt                                          |
-| 🔴  | #21    | May 25, 2026       | Getting and formatting date/time easily                        | std::chrono, Qt                             |
-| 🔴  | #20    | May 11, 2026       | Writing to debug output and console at once                    | std::cout / OutputDebugString               |
-| 🔴  | #19    | April 27, 2026     | Creating owner control                                         | Qt                                          |
-| 🔴  | #18    | April 13, 2026     | LINQ-like queries with xtd::linq::enumerable                   | .NET LINQ / C++20 std::ranges               |
-| 🔴  | #17    | March 30, 2026     | Handling exceptions with xtd::diagnostics::stack_trace         | C++ modern                                  |
-| 🔴  | #16    | March 16, 2026     | Using xtd::forms::lcd_label                                    | Qt                                          |
+| 🔴  | #31    | August 31, 2026    | Using loading indicator                                        | wxWidets / Qt                               |
+| 🔴  | #30    | August 17, 2026    | Creating a simple animation with xtd::forms::animation         | NA                                          |
+| 🔴  | #29    | August 3, 2026     | Creating resources                                             | Qt                                          |
+| 🔴  | #28    | July 20, 2026      | Using a asynchonous delegates                                  | NA                                          |
+| 🔴  | #27    | July 6, 2026       | Using settings                                                 | wxWidgets / Qt                              |
+| 🔴  | #26    | June 22, 2026      | Creating a client server in high, medium and low levels        | NA                                          |
+| 🔴  | #25    | June 8, 2026       | Creating xtd::forms::button with style sheet                   | Qt                                          |
+| 🔴  | #24    | May 25, 2026       | Getting and formatting date/time easily                        | std::chrono, Qt                             |
+| 🔴  | #23    | May 11, 2026       | Writing to debug output and console at once                    | std::cout / OutputDebugString               |
+| 🔴  | #22    | April 27, 2026     | Creating owner control                                         | Qt                                          |
+| 🔴  | #21    | April 13, 2026     | LINQ-like queries with xtd::linq::enumerable                   | .NET LINQ / C++20 std::ranges               |
+| 🔴  | #20    | March 30, 2026     | Handling exceptions with xtd::diagnostics::stack_trace         | C++ modern                                  |
+| 🔴  | #19    | March 16, 2026     | Using xtd::forms::lcd_label                                    | Qt                                          |
 | 🔴  | #18    | March 2, 2026      | Measuring execution time with xtd::diagnostics::stopwatch      | std::chrono                                 |
 | 🔴  | #17    | February 16, 2026  | Easy environment variable access with xtd::environment         | Qt qEnvironmentVariable / C getenv          |
 | 🔴  | #16    | February 2, 2026   | Creating a spheric xtd::forms::form without caption            | wxWidgets / Qt                              |
