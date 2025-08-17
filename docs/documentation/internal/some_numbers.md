@@ -8,7 +8,7 @@
 
 ## Team
 
-* Contributors : 13 (10 dev, 1 translator, 2 doc)
+* Contributors : 13
   * 10 developers
   *  1 translators (*)
   *  2 documenters (*)
