@@ -757,6 +757,10 @@ add_sources(
   "include/xtd/forms/visual_styles/user_control_state"
   "include/xtd/literals/country.hpp"
   "include/xtd/literals/country"
+  "include/xtd/threading/thread_exception_event_args"
+  "include/xtd/threading/thread_exception_event_args.hpp"
+  "include/xtd/threading/thread_exception_event_handler"
+  "include/xtd/threading/thread_exception_event_handler.hpp"
 )
 add_sources(
   "src/xtd/system_report.cpp"
@@ -982,6 +986,7 @@ add_sources(
   "src/xtd/forms/style_sheets/system_style_sheet_windows_light.cpp"
   "src/xtd/forms/style_sheets/theme.cpp"
   "src/xtd/literals/country.cpp"
+  "src/xtd/threading/thread_exception_event_args.cpp"
 )
 target_type(${XTD_LIBRARY_TYPE})
 

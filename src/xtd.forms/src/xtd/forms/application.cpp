@@ -104,7 +104,7 @@ event<application, delegate<void(const event_args&)>> application::application_e
 event<application, delegate<void(const event_args&)>> application::enter_thread_modal;
 event<application, delegate<void(const event_args&)>> application::idle;
 event<application, delegate<void(const event_args&)>> application::leave_thread_modal;
-//event<threading::thread_exception_event_handler> application::thread_exception;
+event<application, threading::thread_exception_event_handler> application::thread_exception;
 event<application, delegate<void(const event_args&)>> application::thread_exit;
 
 bool application::allow_quit() noexcept {
@@ -466,10 +466,16 @@ bool application::on_app_thread_exception() {
   try {
     throw;
   } catch (const std::exception& e) {
-    return (main_form().has_value() ? exception_box::show(main_form().value().get(), e, product_name()) : exception_box::show(e, product_name())) == dialog_result::ok;
+    return on_thread_exception({e});
   } catch (...) {
-    return (main_form().has_value() ? exception_box::show(main_form().value().get(), product_name()) : exception_box::show(product_name())) == dialog_result::ok;
+    return on_thread_exception({invalid_operation_exception {}});
   }
+}
+
+bool application::on_thread_exception(const threading::thread_exception_event_args& e) {
+  if (thread_exception.is_empty()) return (main_form().has_value() ? exception_box::show(main_form().value().get(), e.exception(), product_name()) : exception_box::show(e.exception(), product_name())) == dialog_result::ok;
+  thread_exception(e);
+  return false;
 }
 
 void application::raise_enter_thread_modal(const event_args& e) {
