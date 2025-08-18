@@ -100,12 +100,12 @@ bool application::system_font_size_ = false;
 bool application::use_wait_cursor_ = false;
 bool application::visual_styles_ = false;
 
-event<application, delegate<void(const event_args&)>> application::application_exit;
-event<application, delegate<void(const event_args&)>> application::enter_thread_modal;
-event<application, delegate<void(const event_args&)>> application::idle;
-event<application, delegate<void(const event_args&)>> application::leave_thread_modal;
+event<application, event_handler> application::application_exit;
+event<application, event_handler> application::enter_thread_modal;
+event<application, event_handler> application::idle;
+event<application, event_handler> application::leave_thread_modal;
 event<application, threading::thread_exception_event_handler> application::thread_exception;
-event<application, delegate<void(const event_args&)>> application::thread_exit;
+event<application, event_handler> application::thread_exit;
 
 bool application::allow_quit() noexcept {
   try {
@@ -479,11 +479,13 @@ bool application::on_thread_exception(const threading::thread_exception_event_ar
 }
 
 void application::raise_enter_thread_modal(const event_args& e) {
-  application::enter_thread_modal(e);
+  auto obj = object {};
+  application::enter_thread_modal(obj, e);
 }
 
 void application::raise_leave_thread_modal(const event_args& e) {
-  application::leave_thread_modal(e);
+  auto obj = object {};
+  application::leave_thread_modal(obj, e);
 }
 
 intptr application::wnd_proc_(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle) {
@@ -508,9 +510,10 @@ void application::wm_activate_app(message& message) {
 
 void application::wm_app_idle(message& message) {
   static auto sw = stopwatch::start_new();
+  static auto obj = object {};
   if (raise_idle_ || sw.elapsed_milliseconds() >= 100) {
     sw = stopwatch::start_new();
-    idle(event_args::empty);
+    idle(obj, event_args::empty);
     raise_idle_ = false;
   }
   if (!idle.is_empty()) native::application::do_idle();
@@ -520,6 +523,7 @@ void application::wm_app_idle(message& message) {
 }
 
 void application::wm_quit(message& message) {
-  thread_exit(event_args::empty);
-  application_exit(event_args::empty);
+  auto obj = object {};
+  thread_exit(obj, event_args::empty);
+  application_exit(obj, event_args::empty);
 }
