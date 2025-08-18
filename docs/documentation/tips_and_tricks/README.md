@@ -9,7 +9,7 @@ Here is a collection of practical tips and little xtd tricks.
 Each subject is illustrated by simple and directly applicable code. 
 You will find concrete solutions to common problems encountered with xtd in modern C++.
 
-## List of all tips and tricks, sorted by newest first.
+## List of all `Tips & Tricks`, sorted by newest first.
 
 | Category                                                                                                                     | Subject                                                                                                | Date             | Level |
 | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ---------------- | ----- |
