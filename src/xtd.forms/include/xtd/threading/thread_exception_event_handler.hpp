@@ -24,6 +24,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms events
-    using thread_exception_event_handler = xtd::delegate<void(const thread_exception_event_args& e)>;
+    using thread_exception_event_handler = xtd::delegate<void(object& sender, const thread_exception_event_args& e)>;
   }
 }

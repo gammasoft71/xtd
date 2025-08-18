@@ -61,7 +61,7 @@ private:
   void generate_xtd_exception() {throw argument_out_of_range_exception {};}
   void generate_unknown_exception() {throw "Unknown exception occured";}
   
-  void on_thread_exception(const thread_exception_event_args& e) {
+  void on_thread_exception(object& sender, const thread_exception_event_args& e) {
     diagnostics::debug::write_line(e.exception());
     application::exit();
   };
