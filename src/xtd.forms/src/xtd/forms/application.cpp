@@ -266,7 +266,7 @@ xtd::string application::startup_path() noexcept {
   return assembly::get_executing_assembly().location_path();
 }
 
-const xtd::forms::style_sheets::style_sheet & application::style_sheet() noexcept {
+const xtd::forms::style_sheets::style_sheet& application::style_sheet() noexcept {
   return style_sheets::style_sheet::current_style_sheet();
 }
 
@@ -302,7 +302,7 @@ void application::system_font_size(bool value) {
   native::application::enable_system_font_size(value);
 }
 
-const xtd::forms::style_sheets::style_sheet & application::system_style_sheet() noexcept {
+const xtd::forms::style_sheets::style_sheet& application::system_style_sheet() noexcept {
   return xtd::forms::style_sheets::style_sheet::system_style_sheet();
 }
 
