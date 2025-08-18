@@ -12,7 +12,7 @@
 #include "message.hpp"
 #include "message_loop_callback.hpp"
 #include <xtd/delegate>
-#include <xtd/event_args>
+#include <xtd/event_handler>
 #include <xtd/static>
 #include <cstdint>
 #include <memory>
@@ -316,11 +316,11 @@ namespace xtd {
       /// @brief Occurs when the application is about to shut down.
       /// @remarks You must attach the event handlers to the application_exit event to perform unhandled, required tasks before the application stops running. You can close files opened by this application, or dispose of objects that garbage collection did not reclaim.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      static event<application, delegate<void(const event_args&)>> application_exit;
+      static event<application, event_handler> application_exit;
       
       /// @brief Occurs when the application is about to enter a modal state.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      static event<application, delegate<void(const event_args&)>> enter_thread_modal;
+      static event<application, event_handler> enter_thread_modal;
       
       /// @brief Occurs when the application finishes processing and is about to enter the idle state.
       /// @remarks If you have tasks that you must perform before the thread becomes idle, attach them to this event.
@@ -328,11 +328,11 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of application idle event.
       /// @include application_idle.cpp
-      static event<application, delegate<void(const event_args&)>> idle;
+      static event<application, event_handler> idle;
       
       /// @brief Occurs when the application is about to leave a modal state.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      static event<application, delegate<void(const event_args&)>> leave_thread_modal;
+      static event<application, event_handler> leave_thread_modal;
       
       /// @brief Occurs when an untrapped thread exception is thrown.
       /// @remarks This event allows your Windows Forms application to handle otherwise unhandled exceptions that occur in Windows Forms threads. Attach your event handlers to the thread_exception event to deal with these exceptions, which will leave your application in an unknown state. Where possible, exceptions should be handled by a structured exception handling block.
@@ -344,7 +344,7 @@ namespace xtd {
       /// @brief Occurs when a thread is about to shut down. When the main thread for an application is about to be shut down, this event is raised first, followed by an application_exit event.
       /// @remarks You must attach the event handlers to the thread_exit event to perform any unhandled, required tasks before the thread stops running. Close files opened by this thread, or dispose of objects that the garbage collector did not reclaim.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-      static event<application, delegate<void(const event_args&)>> thread_exit;
+      static event<application, event_handler> thread_exit;
       /// @}
       
       /// @name Public Static Methods
