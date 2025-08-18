@@ -31,7 +31,7 @@ var searchData=
   ['antique_5fwhite_28',['antique_white',['../classxtd_1_1drawing_1_1color.html#a2f96562af2a790f7f3d6932bcaea8bee',1,'xtd::drawing::color']]],
   ['any_29',['any',['../classxtd_1_1net_1_1ip__address.html#a630faff25d9f9bfffac869f7bf8906e5',1,'xtd::net::ip_address']]],
   ['appearance_5fchanged_30',['appearance_changed',['../classxtd_1_1forms_1_1check__box.html#a3c9fe7e9960e02b6cdc7a65a78597e54',1,'xtd::forms::check_box::appearance_changed'],['../classxtd_1_1forms_1_1radio__button.html#aa137d5cdae2a4d1382597f805557a984',1,'xtd::forms::radio_button::appearance_changed']]],
-  ['application_5fexit_31',['application_exit',['../classxtd_1_1forms_1_1application.html#af1adab6813016a8eea1ea6382abeeadc',1,'xtd::forms::application']]],
+  ['application_5fexit_31',['application_exit',['../classxtd_1_1forms_1_1application.html#a0a917812fdf147ec94768630f089aa3a',1,'xtd::forms::application']]],
   ['apply_32',['apply',['../classxtd_1_1forms_1_1font__dialog.html#a044a08a527a6a3422b868421eb5c0d4c',1,'xtd::forms::font_dialog']]],
   ['aqua_33',['aqua',['../classxtd_1_1drawing_1_1color.html#a5792acf0b8a2c4c149b6964d49547ece',1,'xtd::drawing::color']]],
   ['aquamarine_34',['aquamarine',['../classxtd_1_1drawing_1_1color.html#ad40af5e304bb52a604f189b44923ac63',1,'xtd::drawing::color']]],
