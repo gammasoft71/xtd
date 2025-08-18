@@ -65,7 +65,7 @@ var searchData=
   ['idictionary_62',['idictionary',['../classxtd_1_1collections_1_1generic_1_1idictionary.html',1,'xtd::collections::generic::idictionary&lt; key_t, value_t &gt;'],['../group__collections.html#gaffc4ba94991a84815813e1dc12913640',1,'xtd::collections::idictionary']]],
   ['idictionary_2ehpp_63',['idictionary.hpp',['../generic_2idictionary_8hpp.html',1,'(Global Namespace)'],['../idictionary_8hpp.html',1,'(Global Namespace)']]],
   ['idictionary_3c_20xtd_3a_3aany_5fobject_2c_20xtd_3a_3aany_5fobject_20_3e_64',['idictionary&lt; xtd::any_object, xtd::any_object &gt;',['../classxtd_1_1collections_1_1generic_1_1idictionary.html',1,'xtd::collections::generic']]],
-  ['idle_65',['idle',['../classxtd_1_1forms_1_1application.html#a936f2c887b42e06ecb7e81d4d1bc33ba',1,'xtd::forms::application::idle'],['../group__xtd__core.html#gga2b4b54d367f7b28f69bf7709c74d13c1aec2f993aec2c27fc750119ab17b16cdb',1,'xtd::diagnostics::idle']]],
+  ['idle_65',['idle',['../classxtd_1_1forms_1_1application.html#a7f2d96a631c393f782c84999e029c911',1,'xtd::forms::application::idle'],['../group__xtd__core.html#gga2b4b54d367f7b28f69bf7709c74d13c1aec2f993aec2c27fc750119ab17b16cdb',1,'xtd::diagnostics::idle']]],
   ['idn_5fhost_66',['idn_host',['../classxtd_1_1uri.html#a9981cb5c2de2321cde20fbb2b90884b7',1,'xtd::uri']]],
   ['idp_67',['idp',['../group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a5b41dd08733372bb8d68ab7fbe38b9ab',1,'xtd::net::sockets']]],
   ['ieee12844_68',['ieee12844',['../group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3a1ed9329b4ceda24c04c16227d0d79cca',1,'xtd::net::sockets::ieee12844'],['../group__xtd__core.html#gga33cbc7eb0a0fcda4d9f2a175b8062b23a1ed9329b4ceda24c04c16227d0d79cca',1,'xtd::net::sockets::ieee12844']]],

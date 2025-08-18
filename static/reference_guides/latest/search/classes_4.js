@@ -167,7 +167,7 @@ var searchData=
   ['event_3c_20xtd_3a_3aenvironment_2c_20program_5fexit_5fevent_5fhandler_20_3e_164',['event&lt; xtd::environment, program_exit_event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
   ['event_3c_20xtd_3a_3aenvironment_2c_20signal_5fcancel_5fevent_5fhandler_20_3e_165',['event&lt; xtd::environment, signal_cancel_event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
   ['event_3c_20xtd_3a_3aforms_3a_3aanimation_2c_20animation_5fupdated_5fevent_5fhandler_20_3e_166',['event&lt; xtd::forms::animation, animation_updated_event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
-  ['event_3c_20xtd_3a_3aforms_3a_3aapplication_2c_20delegate_3c_20void_28const_20xtd_3a_3aevent_5fargs_20_26_29_3e_20_3e_167',['event&lt; xtd::forms::application, delegate&lt; void(const xtd::event_args &amp;)&gt; &gt;',['../classxtd_1_1event.html',1,'xtd']]],
+  ['event_3c_20xtd_3a_3aforms_3a_3aapplication_2c_20event_5fhandler_20_3e_167',['event&lt; xtd::forms::application, event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
   ['event_3c_20xtd_3a_3aforms_3a_3aapplication_2c_20threading_3a_3athread_5fexception_5fevent_5fhandler_20_3e_168',['event&lt; xtd::forms::application, threading::thread_exception_event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
   ['event_3c_20xtd_3a_3aforms_3a_3aapplication_5fcontext_2c_20event_5fhandler_20_3e_169',['event&lt; xtd::forms::application_context, event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
   ['event_3c_20xtd_3a_3aforms_3a_3aassert_5fdialog_2c_20dialog_5fclosed_5fevent_5fhandler_20_3e_170',['event&lt; xtd::forms::assert_dialog, dialog_closed_event_handler &gt;',['../classxtd_1_1event.html',1,'xtd']]],
