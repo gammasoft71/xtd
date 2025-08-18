@@ -131,7 +131,7 @@ You cannot create an instance of this class. </dd></dl>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(<a class="code hl_friend" href="#a062234ad322e5e57a08b72940341e971">form</a> {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a062234ad322e5e57a08b72940341e971"><div class="ttname"><a href="#a062234ad322e5e57a08b72940341e971">xtd::forms::application::form</a></div><div class="ttdeci">friend class form</div><div class="ttdoc">The form data allows you to specify the box of a form control.</div><div class="ttdef"><b>Definition</b> application.hpp:502</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a062234ad322e5e57a08b72940341e971"><div class="ttname"><a href="#a062234ad322e5e57a08b72940341e971">xtd::forms::application::form</a></div><div class="ttdeci">friend class form</div><div class="ttdoc">The form data allows you to specify the box of a form control.</div><div class="ttdef"><b>Definition</b> application.hpp:501</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>How to manage exception with application class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
@@ -144,36 +144,48 @@ You cannot create an instance of this class. </dd></dl>
 <div class="line">  </div>
 <div class="line">  main_form() {</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;application and exception example&quot;</span>);</div>
+<div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc">width</a>(350);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Uncomment the following line to raise the exception in main entry point :</span></div>
 <div class="line">    <span class="comment">//throw system_exception {};</span></div>
-<div class="line">    </div>
+<div class="line"> </div>
 <div class="line">    generate_handled_exception_button.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    generate_handled_exception_button.location({10, 10});</div>
 <div class="line">    generate_handled_exception_button.parent(*<span class="keyword">this</span>);</div>
 <div class="line">    generate_handled_exception_button.text(<span class="stringliteral">&quot;Generate handled exception&quot;</span>);</div>
-<div class="line">    generate_handled_exception_button.click += <a class="code hl_typedef" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">event_handler</a>(*<span class="keyword">this</span>, &amp;main_form::generate_handled_exception);</div>
+<div class="line">    generate_handled_exception_button.click += <a class="code hl_typedef" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">event_handler</a> {*<span class="keyword">this</span>, &amp;main_form::generate_handled_exception};</div>
 <div class="line">    </div>
 <div class="line">    generate_std_exception_button.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    generate_std_exception_button.location({10, 50});</div>
 <div class="line">    generate_std_exception_button.parent(*<span class="keyword">this</span>);</div>
 <div class="line">    generate_std_exception_button.text(<span class="stringliteral">&quot;Generate std exception&quot;</span>);</div>
-<div class="line">    generate_std_exception_button.click += <a class="code hl_typedef" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">event_handler</a>(*<span class="keyword">this</span>, &amp;main_form::generate_std_exception);</div>
+<div class="line">    generate_std_exception_button.click += <a class="code hl_typedef" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">event_handler</a> {*<span class="keyword">this</span>, &amp;main_form::generate_std_exception};</div>
 <div class="line">    </div>
 <div class="line">    generate_xtd_exception_button.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    generate_xtd_exception_button.location({10, 90});</div>
 <div class="line">    generate_xtd_exception_button.parent(*<span class="keyword">this</span>);</div>
 <div class="line">    generate_xtd_exception_button.text(<span class="stringliteral">&quot;Generate xtd exception&quot;</span>);</div>
-<div class="line">    generate_xtd_exception_button.click += <a class="code hl_typedef" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">event_handler</a>(*<span class="keyword">this</span>, &amp;main_form::generate_xtd_exception);</div>
+<div class="line">    generate_xtd_exception_button.click += <a class="code hl_typedef" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">event_handler</a> {*<span class="keyword">this</span>, &amp;main_form::generate_xtd_exception};</div>
 <div class="line">    </div>
 <div class="line">    generate_unknown_exception_button.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    generate_unknown_exception_button.location({10, 130});</div>
 <div class="line">    generate_unknown_exception_button.parent(*<span class="keyword">this</span>);</div>
 <div class="line">    generate_unknown_exception_button.text(<span class="stringliteral">&quot;Generate unknown exception&quot;</span>);</div>
-<div class="line">    generate_unknown_exception_button.click += <a class="code hl_typedef" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">event_handler</a>(*<span class="keyword">this</span>, &amp;main_form::generate_unknown_exception);</div>
+<div class="line">    generate_unknown_exception_button.click += <a class="code hl_typedef" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">event_handler</a> {*<span class="keyword">this</span>, &amp;main_form::generate_unknown_exception};</div>
+<div class="line">    </div>
+<div class="line">    consume_thread_exception_event_check_box.auto_size(<span class="keyword">true</span>);</div>
+<div class="line">    consume_thread_exception_event_check_box.location({10, 170});</div>
+<div class="line">    consume_thread_exception_event_check_box.parent(*<span class="keyword">this</span>);</div>
+<div class="line">    consume_thread_exception_event_check_box.text(<span class="stringliteral">&quot;Consume xtd::application::thread_exception event&quot;</span>);</div>
+<div class="line">    consume_thread_exception_event_check_box.checked_changed += <a class="code hl_typedef" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">event_handler</a> {*<span class="keyword">this</span>, &amp;main_form::consume_thread_exception_event};</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
+<div class="line">  <span class="keywordtype">void</span> consume_thread_exception_event() {</div>
+<div class="line">    <span class="keywordflow">if</span> (consume_thread_exception_event_check_box.checked()) application::thread_exception += <a class="code hl_typedef" href="group__events.html#ga4cf6589d69fed8e0938d1c0fb9c46fb3">thread_exception_event_handler</a> {*<span class="keyword">this</span>, &amp;main_form::on_thread_exception};</div>
+<div class="line">    <span class="keywordflow">else</span> application::thread_exception -= <a class="code hl_typedef" href="group__events.html#ga4cf6589d69fed8e0938d1c0fb9c46fb3">thread_exception_event_handler</a> {*<span class="keyword">this</span>, &amp;main_form::on_thread_exception};</div>
+<div class="line">  }</div>
+<div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> generate_handled_exception() {</div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">      <span class="keywordflow">throw</span> operation_canceled_exception {};</div>
@@ -184,20 +196,30 @@ You cannot create an instance of this class. </dd></dl>
 <div class="line">  <span class="keywordtype">void</span> generate_std_exception() {<span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Invalid argument&quot;</span>);}</div>
 <div class="line">  <span class="keywordtype">void</span> generate_xtd_exception() {<span class="keywordflow">throw</span> argument_out_of_range_exception {};}</div>
 <div class="line">  <span class="keywordtype">void</span> generate_unknown_exception() {<span class="keywordflow">throw</span> <span class="stringliteral">&quot;Unknown exception occured&quot;</span>;}</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordtype">void</span> on_thread_exception(<span class="keyword">const</span> thread_exception_event_args&amp; e) {</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a2656cc128804128258ecad60ecf1cbd1">diagnostics::debug::write_line</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.exception());</div>
+<div class="line">    <a class="code hl_function" href="#a1f7d29b0aeda0c96f5acc4e38ad5902a">application::exit</a>();</div>
+<div class="line">  };</div>
 <div class="line"> </div>
 <div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga902d7ba89795f62756de856e06822883">button</a> generate_handled_exception_button;</div>
 <div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga902d7ba89795f62756de856e06822883">button</a> generate_std_exception_button;</div>
 <div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga902d7ba89795f62756de856e06822883">button</a> generate_xtd_exception_button;</div>
 <div class="line">  <a class="code hl_typedef" href="group__style__sheets.html#ga902d7ba89795f62756de856e06822883">button</a> generate_unknown_exception_button;</div>
+<div class="line">  check_box consume_thread_exception_event_check_box;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(main_form::main);</div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html_a2656cc128804128258ecad60ecf1cbd1"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debug.html#a2656cc128804128258ecad60ecf1cbd1">xtd::diagnostics::debug::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes a line terminator to the trace listeners in the listeners collection.</div><div class="ttdef"><b>Definition</b> debug.hpp:361</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a1f7d29b0aeda0c96f5acc4e38ad5902a"><div class="ttname"><a href="#a1f7d29b0aeda0c96f5acc4e38ad5902a">xtd::forms::application::exit</a></div><div class="ttdeci">static void exit()</div><div class="ttdoc">Informs all message pumps that they must terminate, and then closes all application windows after the...</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a2ce7b0d4da48e314ed0e02a3629b2954"><div class="ttname"><a href="#a2ce7b0d4da48e314ed0e02a3629b2954">xtd::forms::application::main_form</a></div><div class="ttdeci">static std::optional&lt; form_ref &gt; main_form()</div><div class="ttdoc">Gets the optional main form owned by the application.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1message__box_html_a652dfeb393c4deaa7ee4dacfb641ca36"><div class="ttname"><a href="classxtd_1_1forms_1_1message__box.html#a652dfeb393c4deaa7ee4dacfb641ca36">xtd::forms::message_box::show</a></div><div class="ttdeci">static dialog_result show()</div><div class="ttdoc">Displays a message box.</div></div>
 <div class="ttc" id="agroup__events_html_ga154af19f81ec830b3d4c0cc8a477cf0d"><div class="ttname"><a href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">xtd::event_handler</a></div><div class="ttdeci">generic_event_handler&lt; const xtd::event_args &amp; &gt; event_handler</div><div class="ttdoc">Represents the method that will handle an event that has no event data.</div><div class="ttdef"><b>Definition</b> event_handler.hpp:24</div></div>
+<div class="ttc" id="agroup__events_html_ga4cf6589d69fed8e0938d1c0fb9c46fb3"><div class="ttname"><a href="group__events.html#ga4cf6589d69fed8e0938d1c0fb9c46fb3">xtd::threading::thread_exception_event_handler</a></div><div class="ttdeci">xtd::delegate&lt; void(const thread_exception_event_args &amp;e)&gt; thread_exception_event_handler</div><div class="ttdoc">Represents the method that will handle the xtd::forms::application::thread_exception event of an xtd:...</div><div class="ttdef"><b>Definition</b> thread_exception_event_handler.hpp:27</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga902d7ba89795f62756de856e06822883"><div class="ttname"><a href="group__style__sheets.html#ga902d7ba89795f62756de856e06822883">xtd::forms::style_sheets::button</a></div><div class="ttdeci">xtd::forms::style_sheets::control button</div><div class="ttdoc">The buttton data allows you to specify the box of a button control.</div><div class="ttdef"><b>Definition</b> button.hpp:25</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
+<div class="ttc" id="agroup__xtd__forms_html_gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc"><div class="ttname"><a href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc">xtd::forms::bounds_specified::width</a></div><div class="ttdeci">@ width</div><div class="ttdoc">Specifies that the width of the control is defined.</div><div class="ttdef"><b>Definition</b> bounds_specified.hpp:32</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div><div class="ttdef"><b>Definition</b> status_bar_panel_style.hpp:25</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
@@ -214,6 +236,9 @@ You cannot create an instance of this class. </dd></dl>
 <tr class="memitem:a744cf0a6443d5f76309a70924adbb2d9" id="r_a744cf0a6443d5f76309a70924adbb2d9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1application.html">application</a>, delegate&lt; void(const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a744cf0a6443d5f76309a70924adbb2d9">leave_thread_modal</a></td></tr>
 <tr class="memdesc:a744cf0a6443d5f76309a70924adbb2d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the application is about to leave a modal state.  <br /></td></tr>
 <tr class="separator:a744cf0a6443d5f76309a70924adbb2d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a557675a7003dbb78378c86d2b3ae0a3e" id="r_a557675a7003dbb78378c86d2b3ae0a3e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1application.html">application</a>, <a class="el" href="group__events.html#ga4cf6589d69fed8e0938d1c0fb9c46fb3">threading::thread_exception_event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a557675a7003dbb78378c86d2b3ae0a3e">thread_exception</a></td></tr>
+<tr class="memdesc:a557675a7003dbb78378c86d2b3ae0a3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when an untrapped thread exception is thrown.  <br /></td></tr>
+<tr class="separator:a557675a7003dbb78378c86d2b3ae0a3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a355b63b219afce8767fb2891f43248" id="r_a5a355b63b219afce8767fb2891f43248"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1application.html">application</a>, delegate&lt; void(const <a class="el" href="classxtd_1_1event__args.html">event_args</a> &amp;)&gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a355b63b219afce8767fb2891f43248">thread_exit</a></td></tr>
 <tr class="memdesc:a5a355b63b219afce8767fb2891f43248"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when a thread is about to shut down. When the main thread for an application is about to be shut down, this event is raised first, followed by an application_exit event.  <br /></td></tr>
 <tr class="separator:a5a355b63b219afce8767fb2891f43248"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2594,7 +2619,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <div class="line">  <a class="code hl_function" href="#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(application_idle_example::form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1event__args_html"><div class="ttname"><a href="classxtd_1_1event__args.html">xtd::event_args</a></div><div class="ttdoc">Represents the base class for classes that contain event data, and provides a value to use for events...</div><div class="ttdef"><b>Definition</b> event_args.hpp:18</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a936f2c887b42e06ecb7e81d4d1bc33ba"><div class="ttname"><a href="#a936f2c887b42e06ecb7e81d4d1bc33ba">xtd::forms::application::idle</a></div><div class="ttdeci">static event&lt; application, delegate&lt; void(const event_args &amp;)&gt; &gt; idle</div><div class="ttdoc">Occurs when the application finishes processing and is about to enter the idle state.</div><div class="ttdef"><b>Definition</b> application.hpp:330</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a936f2c887b42e06ecb7e81d4d1bc33ba"><div class="ttname"><a href="#a936f2c887b42e06ecb7e81d4d1bc33ba">xtd::forms::application::idle</a></div><div class="ttdeci">static event&lt; application, delegate&lt; void(const event_args &amp;)&gt; &gt; idle</div><div class="ttdoc">Occurs when the application finishes processing and is about to enter the idle state.</div><div class="ttdef"><b>Definition</b> application.hpp:331</div></div>
 <div class="ttc" id="anamespacextd_1_1text_html"><div class="ttname"><a href="namespacextd_1_1text.html">xtd::text</a></div><div class="ttdoc">Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:17</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -2622,6 +2647,39 @@ For more information about handling events, see <a href="https://gammasoft71.git
 </div><div class="memdoc">
 
 <p>Occurs when the application is about to leave a modal state. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview">Handling and Raising Events</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a557675a7003dbb78378c86d2b3ae0a3e" name="a557675a7003dbb78378c86d2b3ae0a3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a557675a7003dbb78378c86d2b3ae0a3e">&#9670;&#160;</a></span>thread_exception</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1event.html">event</a>&lt;<a class="el" href="classxtd_1_1forms_1_1application.html">application</a>, <a class="el" href="group__events.html#ga4cf6589d69fed8e0938d1c0fb9c46fb3">threading::thread_exception_event_handler</a>&gt; xtd::forms::application::thread_exception</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Occurs when an untrapped thread exception is thrown. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This event allows your Windows Forms application to handle otherwise unhandled exceptions that occur in Windows Forms threads. Attach your event handlers to the thread_exception event to deal with these exceptions, which will leave your application in an unknown state. Where possible, exceptions should be handled by a structured exception handling block. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">You</td><td>can change whether this callback is used for unhandled Windows Forms thread exceptions by setting set_unhandled_exception_mode. To catch exceptions that occur in threads not created and owned by Windows Forms, use the unhandled_exception event handler. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>To guarantee that no activations of this event are missed, you must attach a handler before you call <a class="el" href="#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">application::run</a>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview">Handling and Raising Events</a>. </dd></dl>
 
 </div>
@@ -2660,7 +2718,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 15 2025 19:02:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Aug 18 2025 08:55:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
