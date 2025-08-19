@@ -336,7 +336,7 @@ namespace xtd {
       
       /// @brief Occurs when an untrapped thread exception is thrown.
       /// @remarks This event allows your Windows Forms application to handle otherwise unhandled exceptions that occur in Windows Forms threads. Attach your event handlers to the thread_exception event to deal with these exceptions, which will leave your application in an unknown state. Where possible, exceptions should be handled by a structured exception handling block.
-      /// @param You can change whether this callback is used for unhandled Windows Forms thread exceptions by setting set_unhandled_exception_mode. To catch exceptions that occur in threads not created and owned by Windows Forms, use the unhandled_exception event handler.
+      /// @remarks You can change whether this callback is used for unhandled Windows Forms thread exceptions by setting set_unhandled_exception_mode. To catch exceptions that occur in threads not created and owned by Windows Forms, use the unhandled_exception event handler.
       /// @note To guarantee that no activations of this event are missed, you must attach a handler before you call application::run.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       /// @par Examples
