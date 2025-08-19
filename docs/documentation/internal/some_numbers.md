@@ -16,6 +16,10 @@
 
 (*) without also being a developer
 
+## GitHub Commits
+
+* 26569 Commits
+
 ## Files and lines
 
 ### src
