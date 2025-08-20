@@ -2,7 +2,7 @@ var searchData=
 [
   ['tab_5fpage_5fref_0',['tab_page_ref',['../group__xtd__forms.html#gad98510bfbc458c7ba615945f2707277e',1,'xtd::forms']]],
   ['test_5fcollection_1',['test_collection',['../classxtd_1_1tunit_1_1test__class.html#afe0138abef2c595b5e5677ac5436f251',1,'xtd::tunit::test_class']]],
-  ['thread_5fexception_5fevent_5fhandler_2',['thread_exception_event_handler',['../group__events.html#ga4cf6589d69fed8e0938d1c0fb9c46fb3',1,'xtd::threading']]],
+  ['thread_5fexception_5fevent_5fhandler_2',['thread_exception_event_handler',['../group__events.html#gad78698b7eff7217bd7011375bd513301',1,'xtd::threading']]],
   ['thread_5fstart_3',['thread_start',['../group__delegates.html#gacea3e237aac11920ba29f784740cba69',1,'xtd::threading']]],
   ['tick_4',['tick',['../group__types.html#ga83ea8bd9e6c7738c52652aad1a40978b',1,'xtd']]],
   ['ticks_5',['ticks',['../group__types.html#gae9583bdae49d0f6becba7ce72906b56a',1,'xtd']]],
