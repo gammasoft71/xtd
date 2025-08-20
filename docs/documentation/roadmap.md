@@ -3,15 +3,15 @@
 ## Table of contents
 
 - [Remarks](#remarks)
-- [Release 0.2.0 (beta)](#release-020-beta)
-- [Release 0.3.0 (beta)](#release-030-beta)
-- [Release 0.4.0 (beta)](#release-040-beta)
-- [Release 0.5.0 (beta)](#release-050-beta)
-- [Release 1.0.0 (relase)](#release-100-release)
-- [Release 2.0.0 (relase)](#release-200-release)
-- [Release 3.0.0 (relase)](#release-300-release)
-- [Release 4.0.0 (relase)](#release-400-release)
-- [Release 5.0.0 (relase)](#release-500-release)
+- [Release 0.2.0v](#release-020)
+- [Release 0.3.0](#release-030)
+- [Release 0.4.0](#release-040)
+- [Release 0.5.0](#release-050)
+- [Release 1.0.0](#release-100)
+- [Release 2.0.0](#release-200)
+- [Release 3.0.0](#release-300)
+- [Release 4.0.0](#release-400)
+- [Release 5.0.0](#release-500)
 
 ## Remarks
 
@@ -20,7 +20,7 @@
 - You can follow the evolution of the development. We keep the status up to date.
 - [Kanban board](https://github.com/users/gammasoft71/projects/3) provides a Kanban view for all tasks (enhancements, pull requests, bugs, questions,...).
 
-## Release 0.2.0 (beta)
+## Release 0.2.0
 
 ### Bugs
 
@@ -84,7 +84,7 @@ see [Issues 0.2.0](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label
 | [#130](https://github.com/gammasoft71/xtd/issues/130) | xtd.forms                | tool_bar_renderer                       | Gammasoft | ![status](/pictures/releases/status/done.png)    |
 | [#100](https://github.com/gammasoft71/xtd/issues/100) | xtd.forms                | user_control_renderer                   | Gammasoft | ![status](/pictures/releases/status/done.png)    |
 
-## Release 0.3.0 (beta)
+## Release 0.3.0
 
 ### Bugs
 
@@ -109,7 +109,7 @@ see [Issues 0.3.0](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label
 | [#91](https://github.com/gammasoft71/xtd/issues/91)   | xtd.forms                | sixteen_segment_display_renderer        | Gammasoft |                                                  |
 | [#95](https://github.com/gammasoft71/xtd/issues/95)   | xtd.forms                | switch_button_renderer                  | Gammasoft |                                                  |
 
-## Release 0.4.0 (beta)
+## Release 0.4.0
 
 ### Bugs
 
@@ -166,7 +166,7 @@ see [Issues 0.4.0](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label
 | [#138](https://github.com/gammasoft71/xtd/issues/138) | xtd.forms                | v_scroll_bar_renderer                   | Gammasoft |                                                  |
 | [#180](https://github.com/gammasoft71/xtd/issues/180) | xtd.forms                | message_notifier                        | Bader     | ![status](/pictures/releases/status/started.png) |
 
-## Release 0.5.0 (beta)
+## Release 0.5.0
 
 ### Bugs
 
@@ -198,7 +198,7 @@ see [Issues 0.5.0](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label
 | [#157](https://github.com/gammasoft71/xtd/issues/157) | xtd.forms                | tool_strip                              | Gammasoft |                                                  |
 | [#158](https://github.com/gammasoft71/xtd/issues/158) | xtd.forms                | tool_strip_renderer                     | Gammasoft |                                                  |
 
-## Release 1.0.0 (release)
+## Release 1.0.0
 
 ### Bugs
 
@@ -221,7 +221,7 @@ see [Issues 1.0.0](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label
 | [#167](https://github.com/gammasoft71/xtd/issues/167) | xtd.forms                | web_browser                             | Gammasoft |                                                  |
 | [#168](https://github.com/gammasoft71/xtd/issues/168) | xtd.forms                | web_browser_renderer                    | Gammasoft |                                                  |
 
-## Release 2.0.0 (release)
+## Release 2.0.0
 
 see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A2.0.0+is%3Aopen)
 
@@ -233,7 +233,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 |                                                       | xtd.drawing.native.win32 | Implementation of the Win32 toolkit     | Gammasoft |                                                  |
 |                                                       | xtd.forms.native.win32   | Implementation of the Win32 toolkit     | Gammasoft |                                                  |
 
-## Release 3.0.0 (release)
+## Release 3.0.0
 
 see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A3.0.0+is%3Aopen)
 
@@ -244,7 +244,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 |                                                       | xtd.drawing.native.gtk4 | Implementation of the Gtk4 toolkit       | Gammasoft |                                                  |
 |                                                       | xtd.forms.native.gtk4   | Implementation of the Gtk4 toolkit       | Gammasoft |                                                  |
 
-## Release 4.0.0 (release)
+## Release 4.0.0
 
 see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A4.0.0+is%3Aopen)
 
@@ -255,7 +255,7 @@ see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenh
 |                                                       | xtd.drawing.native.cocoa | Implementation of the Cocoa toolkit      | Gammasoft |                                                  |
 |                                                       | xtd.forms.native.cocoa   | Implementation of the Cocoa toolkit      | Gammasoft |                                                  |
 
-## Release 5.0.0 (release)
+## Release 5.0.0
 
 see [Issues](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+-label%3Aenhancement+milestone%3A5.0.0+is%3Aopen)
 
