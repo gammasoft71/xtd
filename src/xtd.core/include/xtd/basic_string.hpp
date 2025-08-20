@@ -840,7 +840,11 @@ namespace xtd {
     
     /// @brief Returns a reference to the underlying base type.
     /// @return Reference to the underlying base type.
-    const base_type & chars() const noexcept {return chars_;}
+    const base_type& chars() const noexcept {return chars_;}
+    
+    /// @brief Returns a reference to the underlying base type.
+    /// @return Reference to the underlying base type.
+    base_type& chars() noexcept {return chars_;}
     
     /// @brief Returns an iterator to the character following the last character of the string. This character acts as a placeholder, attempting to access it results in undefined behavior.
     /// @return Iterator to the character following the last character.
