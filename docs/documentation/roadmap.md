@@ -3,7 +3,7 @@
 ## Table of contents
 
 - [Remarks](#remarks)
-- [Release 0.2.0v](#release-020)
+- [Release 0.2.0](#release-020)
 - [Release 0.3.0](#release-030)
 - [Release 0.4.0](#release-040)
 - [Release 0.5.0](#release-050)
