@@ -78,6 +78,9 @@ struct __opaque_xtd_linq_enumerable_collection__ : xtd::collections::generic::ie
   
   xtd::string to_string() const override;
   
+  operator const std::vector<type_t>& () const noexcept {return items;}
+  operator std::vector<type_t>& () noexcept {return items;}
+  
 private:
   friend class xtd::linq::enumerable;
   __opaque_xtd_linq_enumerable_collection__() = default;
