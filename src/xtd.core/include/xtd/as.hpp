@@ -33,7 +33,9 @@
 #include "internal/__as_uint64.hpp"
 #include "internal/__as_ulong.hpp"
 #include "internal/__as_wchar.hpp"
+#include "internal/__enumerable_collection.hpp"
 #undef __XTD_CORE_INTERNAL__
+#include "linq/enumerable.hpp"
 #include "convert_pointer.hpp"
 #define __XTD_CORE_INTERNAL__
 #include "internal/__as_pointer.hpp"
@@ -46,10 +48,6 @@
 #include "enum_object.hpp"
 #define __XTD_CORE_INTERNAL__
 #include "internal/__as_any_object.hpp"
-#undef __XTD_CORE_INTERNAL__
-#include "linq/enumerable.hpp"
-#define __XTD_CORE_INTERNAL__
-#include "internal/__enumerable_collection.hpp"
 #undef __XTD_CORE_INTERNAL__
 
 /// @cond
@@ -115,6 +113,18 @@ inline void xtd::array<>::copy(const array<source_type_t, source_rank, source_al
   if (destination_index + length > destination_array.data_->items.size()) helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
   for (auto i = xtd::size {}; i < length; ++i)
     destination_array.data_->items[destination_index + i] = as<destination_type_t>(source_array.data_->items[source_index + i]);
+}
+
+template<class new_type_t, class source_t>
+new_type_t& as(xtd::collections::generic::ienumerable<source_t>& value) {
+  thread_local static auto result = new_type_t {};
+  result = xtd::linq::enumerable::cast<typename new_type_t::value_type>(value);
+  return result;
+}
+
+template<class new_type_t, class source_t>
+const new_type_t& as(const xtd::collections::generic::ienumerable<source_t>& value) {
+  return new_type_t(xtd::linq::enumerable::cast<typename new_type_t::value_type>(value));
 }
 
 namespace std {
