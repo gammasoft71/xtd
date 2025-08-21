@@ -37,6 +37,10 @@ auto main() -> int {
 
 - [GitHub](https://github.com/gammasoft71/xtd)
 - [Documentation](https://gammasoft71.github.io/xtd)
+- [Reference guide](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html)
 
 Feedback and contributions are welcome.
 
+## Published
+
+Published on Reddit r/cpp on August 19, 2025.
