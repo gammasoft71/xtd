@@ -115,18 +115,6 @@ inline void xtd::array<>::copy(const array<source_type_t, source_rank, source_al
     destination_array.data_->items[destination_index + i] = as<destination_type_t>(source_array.data_->items[source_index + i]);
 }
 
-template<class new_type_t, class source_t>
-new_type_t& as(xtd::collections::generic::ienumerable<source_t>& value) {
-  thread_local static auto result = new_type_t {};
-  result = xtd::linq::enumerable::cast<typename new_type_t::value_type>(value);
-  return result;
-}
-
-template<class new_type_t, class source_t>
-const new_type_t& as(const xtd::collections::generic::ienumerable<source_t>& value) {
-  return new_type_t(xtd::linq::enumerable::cast<typename new_type_t::value_type>(value));
-}
-
 namespace std {
   template<class type_t>
   type_t any_cast(const xtd::any_object& value) {return xtd::as<type_t>(value);}
