@@ -5,13 +5,16 @@
 #include "extensions/enumerable.hpp"
 #include "extensions/enumerable_iterators.hpp"
 #include "../../interface.hpp"
+#define __XTD_IENUMERABLE_INTERNAL__
+#include "ienumerable_abstract.hpp"
+#undef __XTD_IENUMERABLE_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::collections namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries.
   namespace collections {
     /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
-    namespace generic {
+    namespace generic {      
       /// @brief Exposes the enumerator, which supports a simple iteration over a collection of a specified type.
       /// @par Definition
       /// ```cpp
@@ -34,7 +37,7 @@ namespace xtd {
       /// @remarks For the non-generic version of this interface, see xtd::collections::ienumerable.
       /// @remarks xtd::collections::generic::ienumerable <type_t> contains a single method that you must implement when implementing this interface; xtd::collections::generic::ienumerable::get_enumerator, which returns an xtd::collections::generic::enumerator <type_t> object. The returned xtd::collections::generic::enumerator <type_t> provides the ability to iterate through the collection by exposing a xtd::collections::generic::enumerator::current property.
       template <class type_t>
-      class ienumerable interface_, public xtd::collections::generic::extensions::enumerable_iterators<type_t, xtd::collections::generic::ienumerable<type_t>>, public xtd::collections::generic::extensions::enumerable<ienumerable<type_t>, type_t > {
+      class ienumerable interface_, public ienumerable_abstract, public xtd::collections::generic::extensions::enumerable_iterators<type_t, xtd::collections::generic::ienumerable<type_t>>, public xtd::collections::generic::extensions::enumerable<ienumerable<type_t>, type_t > {
       public:
         /// @name Public Aliases
         
