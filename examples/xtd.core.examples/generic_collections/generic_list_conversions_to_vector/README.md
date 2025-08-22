@@ -19,4 +19,19 @@ xtdc run
 ## Output
 
 ```
+l  = [one, two, three, four, five]
+v  = [one, two, three, four, five]
+
+v1 = [one, two, three, four, five]
+v2 = [one, two, three, four, five]
+v3 = [one, two, three, four, five]
+v4 = [one, two, three, four, five]
+
+l1 = [one, two, three, four, five]
+l2 = [one, two, three, four, five]
+l3 = [one, two, three, four, five]
+l4 = [one, two, three, four, five]
+
+l  = []
+v  = []
 ```
