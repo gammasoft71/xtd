@@ -108,9 +108,10 @@ Inheritance diagram for xtd::collections::generic::ienumerable&lt; type_t &gt;:<
  <div class="center">
   <img src="classxtd_1_1collections_1_1generic_1_1ienumerable.png" usemap="#xtd::collections::generic::ienumerable_3C_20type_5Ft_20_3E_map" alt=""/>
   <map id="xtd::collections::generic::ienumerable_3C_20type_5Ft_20_3E_map" name="xtd::collections::generic::ienumerable_3C_20type_5Ft_20_3E_map">
-<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="674,0,1338,24"/>
-<area href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html" alt="xtd::collections::generic::extensions::enumerable_iterators&lt; type_t, xtd::collections::generic::ienumerable&lt; type_t &gt; &gt;" shape="rect" coords="1348,0,2012,24"/>
-<area href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html" alt="xtd::collections::generic::extensions::enumerable&lt; ienumerable&lt; type_t &gt;, type_t &gt;" shape="rect" coords="2022,0,2686,24"/>
+<area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="337,0,1001,24"/>
+<area href="classxtd_1_1collections_1_1generic_1_1ienumerable__abstract.html" title="Abstract object that represent ienumerable." alt="xtd::collections::generic::ienumerable_abstract" shape="rect" coords="1011,0,1675,24"/>
+<area href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html" alt="xtd::collections::generic::extensions::enumerable_iterators&lt; type_t, xtd::collections::generic::ienumerable&lt; type_t &gt; &gt;" shape="rect" coords="1685,0,2349,24"/>
+<area href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html" alt="xtd::collections::generic::extensions::enumerable&lt; ienumerable&lt; type_t &gt;, type_t &gt;" shape="rect" coords="2359,0,3023,24"/>
 <area href="classxtd_1_1basic__string.html" alt="xtd::basic_string&lt; char &gt;" shape="rect" coords="0,112,664,136"/>
 <area href="classxtd_1_1basic__string.html" alt="xtd::basic_string&lt; xtd::char16 &gt;" shape="rect" coords="674,112,1338,136"/>
 <area href="classxtd_1_1basic__string.html" alt="xtd::basic_string&lt; xtd::char32 &gt;" shape="rect" coords="1348,112,2012,136"/>
@@ -122,8 +123,8 @@ Inheritance diagram for xtd::collections::generic::ienumerable&lt; type_t &gt;:<
 <div class="textblock"><div class="compoundTemplParams">template&lt;class type_t&gt;<br />
 class xtd::collections::generic::ienumerable&lt; type_t &gt;</div><p>Exposes the enumerator, which supports a simple iteration over a collection of a specified type. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
-<div class="line"><span class="keyword">class </span><a class="code hl_typedef" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aec4cd2ae6b5b4fde97fef8e2f160336f">ienumerable</a> <a class="code hl_define" href="group__keywords.html#ga64c32b24bd922fc8189a487213592ccf">interface_</a></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html_aec4cd2ae6b5b4fde97fef8e2f160336f"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aec4cd2ae6b5b4fde97fef8e2f160336f">xtd::collections::generic::extensions::enumerable&lt; ienumerable&lt; type_t &gt;, type_t &gt;::ienumerable</a></div><div class="ttdeci">typename xtd::linq::enumerable::ienumerable&lt; type_t &gt; ienumerable</div><div class="ttdef"><b>Definition</b> enumerable.hpp:43</div></div>
+<div class="line"><span class="keyword">class </span><a class="code hl_friend" href="classxtd_1_1collections_1_1generic_1_1ienumerable__abstract.html#a000b42822a702c7d09314cd6f4430f6e">ienumerable</a> <a class="code hl_define" href="group__keywords.html#ga64c32b24bd922fc8189a487213592ccf">interface_</a></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1ienumerable__abstract_html_a000b42822a702c7d09314cd6f4430f6e"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1ienumerable__abstract.html#a000b42822a702c7d09314cd6f4430f6e">xtd::collections::generic::ienumerable_abstract::ienumerable</a></div><div class="ttdeci">friend class ienumerable</div><div class="ttdoc">Exposes an enumerator, which supports a simple iteration over a non-generic collection.</div><div class="ttdef"><b>Definition</b> ienumerable_abstract.hpp:38</div></div>
 <div class="ttc" id="agroup__keywords_html_ga64c32b24bd922fc8189a487213592ccf"><div class="ttname"><a href="group__keywords.html#ga64c32b24bd922fc8189a487213592ccf">interface_</a></div><div class="ttdeci">#define interface_</div><div class="ttdoc">This keyword is use to represent an interface.</div><div class="ttdef"><b>Definition</b> interface.hpp:58</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/ienumerable&gt;</span></div>
@@ -536,7 +537,7 @@ template&lt;class type_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 20 2025 11:06:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Aug 22 2025 12:46:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
