@@ -14,7 +14,7 @@ namespace xtd {
   /// @brief The xtd::collections namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries.
   namespace collections {
     /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
-    namespace generic {      
+    namespace generic {
       /// @brief Exposes the enumerator, which supports a simple iteration over a collection of a specified type.
       /// @par Definition
       /// ```cpp
