@@ -11,6 +11,5 @@ var searchData=
   ['linked_5flist_8',['linked_list',['../group__generic__collections.html#ga36d5acde97ed7e5d15b584a81bcf759d',1,'xtd::collections::generic']]],
   ['list_9',['list',['../classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a417e4adb1792949e9a54516bee2ca3d2',1,'xtd::collections::generic::extensions::enumerable::list'],['../classxtd_1_1linq_1_1enumerable.html#a4ff59be55b7be66d275f28741e2f1f0a',1,'xtd::linq::enumerable::list']]],
   ['listener_5fcollection_10',['listener_collection',['../classxtd_1_1diagnostics_1_1debug.html#a5f2023248b2a37b78e2b4f364c29909a',1,'xtd::diagnostics::debug::listener_collection'],['../classxtd_1_1diagnostics_1_1trace.html#a951774bf53b93b1c0a428bb3773953e2',1,'xtd::diagnostics::trace::listener_collection']]],
-  ['local_5fiterator_11',['local_iterator',['../classxtd_1_1collections_1_1generic_1_1dictionary.html#adc966a9b4269ce145604c61eace7f57c',1,'xtd::collections::generic::dictionary']]],
-  ['lock_12',['lock',['../group__threading.html#ga69b2e366d61bebf3fd9e94f83d51eb77',1,'xtd']]]
+  ['local_5fiterator_11',['local_iterator',['../classxtd_1_1collections_1_1generic_1_1dictionary.html#adc966a9b4269ce145604c61eace7f57c',1,'xtd::collections::generic::dictionary']]]
 ];
