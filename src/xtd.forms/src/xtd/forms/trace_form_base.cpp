@@ -1,9 +1,10 @@
 #include "../../../include/xtd/forms/trace_form_base.hpp"
-#include <xtd/lock>
+#include <xtd/lock_guard>
 
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
+using namespace xtd::threading;
 
 string& __xtd_forms_trace_form_base_default_form_name__() noexcept {
   static auto value = string {"9f5767d6-7a21-4ebe-adfe-2427b2024a55"};
@@ -100,7 +101,7 @@ void trace_form_base::on_fore_color_changed(const event_args& e) {
 
 void trace_form_base::write(const string& trace) {
   auto writer = [self = this, trace = trace] {
-    auto lck = lock {*self};
+    auto lck = lock_guard {*self};
     if (self->need_header()) self->write_header();
     self->data_->text.append_text(trace);
   };
@@ -109,7 +110,7 @@ void trace_form_base::write(const string& trace) {
 }
 
 void trace_form_base::write_line(const string& trace) {
-  auto lck = lock {*this};
+  auto lck = lock_guard {*this};
   write(trace);
   write(environment::new_line());
   need_header(true);
