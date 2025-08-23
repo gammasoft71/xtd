@@ -19,7 +19,7 @@ namespace xtd {
   /// @brief The xtd::threading namespace provides classes and interfaces that enable multithreaded programming. In addition to classes for synchronizing thread activities and access to data ( xtd::threading::mutex, xtd::threading::monitor, xtd::threading::interlocked, xtd::threading::auto_reset_event, and so on), this namespace includes a xtd::threading::thread_pool class that allows you to use a pool of system-supplied threads, and a xtd::threading::timer class that executes callback methods on thread pool threads.
   namespace threading {
     /// @cond
-    class lock_guard;
+    class lock;
     /// @endcond
     
     /// @brief Provides a mechanism that synchronizes access to objects.
@@ -68,8 +68,8 @@ namespace xtd {
     /// * A reference to a waiting queue, which contains the threads that are waiting for notification of a change in the state of the locked object.
     /// @par The critical section
     /// Use the xtd::threading::monitor::enter and xtd::threading::monitor::exit methods to mark the beginning and end of a critical section.
-    /// @note The functionality provided by the xtd::threading::monitor::enter and xtd::threading::monitor::exit methods is identical to that provided by the xtd::threading::lock_guard object and the #lock_ keyword, except that with the xtd class: :threading::lock_guard class and the #lock_ keyword, the xtd::threading::monitor::enter method and the xtd::threading::monitor::exit method are always called, even if an exception has occurred.
-    /// @note It is therefore advisable to use the xtd::threading::lock_guard class or the #lock_ keyword instead of calling the xtd::threading::monitor::enter and xtd::threading::monitor::exit methods, to ensure that no critical sections remain in the xtd::threading::monitor class.
+    /// @note The functionality provided by the xtd::threading::monitor::enter and xtd::threading::monitor::exit methods is identical to that provided by the xtd::threading::lock object and the #lock_ keyword, except that with the xtd class: :threading::lock class and the #lock_ keyword, the xtd::threading::monitor::enter method and the xtd::threading::monitor::exit method are always called, even if an exception has occurred.
+    /// @note It is therefore advisable to use the xtd::threading::lock class or the #lock_ keyword instead of calling the xtd::threading::monitor::enter and xtd::threading::monitor::exit methods, to ensure that no critical sections remain in the xtd::threading::monitor class.
     /// @par
     /// The folowing code shows the use use of xtd:threading::monitor::enter and xtd:threading::monitor::exit when an exception occured :
     /// ```cpp
@@ -89,14 +89,14 @@ namespace xtd {
     ///   monitor::exit(obj);
     /// }
     /// ```
-    /// <br>The same code with the xtd::threading::lock_guard class :
+    /// <br>The same code with the xtd::threading::lock class :
     /// ```cpp
     /// // Define the lock object.
     /// auto obj = object {};
     ///
     /// try {
     ///   // Define the critical section.
-    ///   lock_guard lock {obj};
+    ///   lock lock {obj};
     ///
     ///   // Code to execute one thread at a time.
     ///
@@ -184,7 +184,7 @@ namespace xtd {
       /// @brief Determines whether the current thread holds the lock on the specified object.
       /// @param obj The object to test.
       /// @return `true` if the current thread holds the lock on obj; otherwise, `false`.
-      /// @remarks This method works only for locks that are acquired by using the methods of the xtd::threading::monitor class, or the xtd::threading::lock_guard class, or by using the #lock_ keyword, which are implemented with xtd::threading::monitor.
+      /// @remarks This method works only for locks that are acquired by using the methods of the xtd::threading::monitor class, or the xtd::threading::lock class, or by using the #lock_ keyword, which are implemented with xtd::threading::monitor.
       /// @remarks Use this method with diagnostic tools, such as the xtd::diagnostics::debug::assert method, to debug locking issues that involve the xtd::threading::monitor class.
       template<class object_t>
       static bool is_entered(const object_t& obj) {
@@ -423,7 +423,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      friend class xtd::threading::lock_guard;
+      friend class xtd::threading::lock;
       
       static static_data& get_static_data();
       

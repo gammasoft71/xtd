@@ -7,7 +7,7 @@
 #include "../../../include/xtd/invalid_operation_exception.hpp"
 #include "../../../include/xtd/object_closed_exception.hpp"
 #include "../../../include/xtd/operation_canceled_exception.hpp"
-#include "../../../include/xtd/lock_guard.hpp"
+#include "../../../include/xtd/lock.hpp"
 #include <atomic>
 
 using namespace xtd;
@@ -70,7 +70,7 @@ int32 barrier::add_participant() {
 
 int32 barrier::add_participants(int32 participant_count) {
   if (!data_) throw_helper::throws(exception_case::object_closed);
-  auto lock = lock_guard {*data_};
+  auto lock = threading::lock {*data_};
   if (participant_count < 0 || data_->participant_count + participant_count > int16_object::max_value) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->run_post_phase_action) throw_helper::throws(exception_case::invalid_operation);
   data_->participant_count += participant_count;
@@ -88,7 +88,7 @@ int32 barrier::remove_participant() {
 
 int32 barrier::remove_participants(int32 participant_count) {
   if (!data_) throw_helper::throws(exception_case::object_closed);
-  auto lock = lock_guard {*data_};
+  auto lock = threading::lock {*data_};
   if (participant_count < 0) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->participant_count == 0 || data_->run_post_phase_action || data_->participants_remaining < data_->participant_count - participant_count) throw_helper::throws(exception_case::invalid_operation);
   if (data_->participant_count < participant_count) throw_helper::throws(exception_case::argument_out_of_range);
@@ -104,7 +104,7 @@ void barrier::signal_and_wait() {
 bool barrier::signal_and_wait(int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw_helper::throws(exception_case::argument_out_of_range);
   if (!data_) throw_helper::throws(exception_case::object_closed);
-  lock_guard_(*data_) {
+  lock_(*data_) {
     data_->participants_remaining--;
     
     if (data_->participants_remaining == 0) {

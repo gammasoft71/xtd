@@ -1,4 +1,4 @@
-#include <xtd/threading/lock_guard>
+#include <xtd/threading/lock>
 #include <xtd/threading/thread>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
@@ -9,11 +9,11 @@ using namespace xtd::threading;
 using namespace xtd::tunit;
 
 namespace xtd::threading::tests {
-  class test_class_(lock_guard_tests) {
+  class test_class_(lock_tests) {
     void test_method_(lock_object) {
       object lock_object;
       assert::is_false(monitor::is_entered(lock_object));
-      block_scope_(lock_guard lock {lock_object}) {
+      block_scope_(lock lock {lock_object}) {
         assert::is_true(monitor::is_entered(lock_object));
       }
       assert::is_false(monitor::is_entered(lock_object));
@@ -21,7 +21,7 @@ namespace xtd::threading::tests {
     
     void test_method_(lock_string) {
       assert::is_false(monitor::is_entered("lock_string"));
-      block_scope_(lock_guard lock {"lock_string"}) {
+      block_scope_(lock lock {"lock_string"}) {
         assert::is_true(monitor::is_entered("lock_string"));
       }
       assert::is_false(monitor::is_entered("lock_string"));
@@ -30,18 +30,18 @@ namespace xtd::threading::tests {
     void test_method_(lock_int) {
       int lock_int = 0;
       assert::is_false(monitor::is_entered(lock_int));
-      block_scope_(lock_guard lock {lock_int}) {
+      block_scope_(lock lock {lock_int}) {
         assert::is_true(monitor::is_entered(lock_int));
       }
       assert::is_false(monitor::is_entered(lock_int));
     }
     
-    void test_method_(double_lock_guard) {
+    void test_method_(double_lock) {
       object lock_object;
       assert::is_false(monitor::is_entered(lock_object));
-      block_scope_(lock_guard lock1 {lock_object}) {
+      block_scope_(lock lock1 {lock_object}) {
         assert::is_true(monitor::is_entered(lock_object));
-        block_scope_(lock_guard lock2 {lock_object}) {
+        block_scope_(lock lock2 {lock_object}) {
           assert::is_true(monitor::is_entered(lock_object));
         }
       }

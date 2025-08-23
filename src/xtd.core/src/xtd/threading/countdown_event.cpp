@@ -5,7 +5,7 @@
 #include "../../../include/xtd/argument_out_of_range_exception.hpp"
 #include "../../../include/xtd/invalid_operation_exception.hpp"
 #include "../../../include/xtd/object_closed_exception.hpp"
-#include "../../../include/xtd/lock_guard.hpp"
+#include "../../../include/xtd/lock.hpp"
 
 using namespace xtd;
 using namespace xtd::diagnostics;
@@ -77,7 +77,7 @@ void countdown_event::add_count(int32 count) {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   if (count < 0) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->current_count == 0) throw_helper::throws(exception_case::invalid_operation);
-  lock_guard_(*data_) data_->current_count += count;
+  lock_(*data_) data_->current_count += count;
 }
 
 void countdown_event::reset() {
@@ -88,7 +88,7 @@ void countdown_event::reset() {
 void countdown_event::reset(int32 count) {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   if (count < 0) throw_helper::throws(exception_case::argument_out_of_range);
-  lock_guard_(*data_) {
+  lock_(*data_) {
     data_->event.reset();
     data_->initial_count = count;
     data_->current_count = count;
@@ -103,7 +103,7 @@ bool countdown_event::signal(int32 signal_count) {
   if (!data_) throw_helper::throws(exception_case::object_closed);
   if (data_->current_count == 0) throw_helper::throws(exception_case::invalid_operation);
   if (signal_count < 0 || signal_count > data_->current_count) throw_helper::throws(exception_case::argument_out_of_range);
-  auto lock = lock_guard {*data_};
+  auto lock = threading::lock {*data_};
   data_->current_count -= signal_count;
   if (data_->current_count == 0) data_->event.set();
   return data_->current_count == 0;
@@ -115,7 +115,7 @@ bool countdown_event::try_add_count() noexcept {
 
 bool countdown_event::try_add_count(int32 count) noexcept {
   if (!data_ || count < 0 || data_->current_count == 0) return false;
-  lock_guard_(*data_) data_->current_count += count;
+  lock_(*data_) data_->current_count += count;
   return true;
 }
 
