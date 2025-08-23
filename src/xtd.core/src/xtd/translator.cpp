@@ -7,7 +7,7 @@
 #include "../../include/xtd/io/directory.hpp"
 #include "../../include/xtd/io/file.hpp"
 #include "../../include/xtd/io/path.hpp"
-#include "../../include/xtd/threading/lock_guard.hpp"
+#include "../../include/xtd/threading/lock.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/translator>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -128,7 +128,7 @@ const char* translator::translate(const string& language, const char* value) noe
 void translator::initialize() {
   try {
     static object sync_root;
-    auto lock = threading::lock_guard {sync_root};
+    auto lock = threading::lock {sync_root};
   } catch (...) {
   }
   

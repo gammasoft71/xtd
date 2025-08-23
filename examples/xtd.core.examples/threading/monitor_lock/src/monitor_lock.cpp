@@ -3,7 +3,7 @@
 #include <xtd/threading/thread>
 #include <xtd/threading/thread_pool>
 #include <xtd/console>
-#include <xtd/lock_guard>
+#include <xtd/lock>
 #include <xtd/startup>
 
 using namespace xtd;
@@ -14,7 +14,7 @@ namespace monitor_lock_example {
   public:
     // Use a monitor to enforce synchronization.
     void access() {
-      lock_guard_(*this) {
+      lock_(*this) {
         console::write_line("Starting synchronized resource access on thread #{0}",
                             thread::current_thread().managed_thread_id());
         if (thread::current_thread().managed_thread_id() % 2 == 0)
