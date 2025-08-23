@@ -27,27 +27,27 @@ lock::lock(xtd::intptr ptr) : data_ {new_ptr<lock::data>()} {
 }
 
 lock::lock(const std::string& str) : lock {xtd::string {str}} {
-  
+
 }
 
 lock::lock(const char* str) : lock {xtd::string {str}} {
-  
+
 }
 
 lock::lock(const xtd::char16* str) : lock {xtd::string {str}} {
-  
+
 }
 
 lock::lock(const xtd::char32* str) : lock {xtd::string {str}} {
-  
+
 }
 
 lock::lock(const xtd::char8* str) : lock {xtd::string {str}} {
-  
+
 }
 
 lock::lock(const xtd::wchar* str) : lock {xtd::string {str}} {
-  
+
 }
 
 lock::~lock() {
