@@ -5,40 +5,48 @@ auto main() -> int {
   println("l  = {}", l);
   
   auto v = std::vector<std::string> {"one", "two", "three", "four", "five"};
-  println("v  = {}", l);
+  println("v  = {}", v);
   
   println();
   
-  auto v1 = std::vector<string>(l);
+  // xtd::collections::generic::list<xtd::string> -> std::vector<xtd::string>
+  auto v1 = std::vector<string>(l); // direct construction
   println("v1 = {}", v1);
   
-  auto v2 = std::vector<std::string>(l.cast<std::string>());
+  // xtd::collections::generic::list<xtd::string> -> std::vector<std::string>
+  auto v2 = std::vector<std::string>(l.cast<std::string>()); // explicit cast
   println("v2 = {}", v2);
   
+  // xtd::collections::generic::list<xtd::string> -> std::vector<std::string>
   auto v3 = std::vector<std::string>(l.size());
-  std::transform(l.begin(), l.end(), v3.begin(), [](const auto& s) {return s;});
+  std::transform(l.begin(), l.end(), v3.begin(), [](const auto& s) {return s;}); // manual transform
   println("v3 = {}", v3);
   
-  auto v4 = std::vector<string>(std::move(l.items()));
+  // Move xtd::collections::generic::list<xtd::string> -> std::vector<xtd::string>
+  auto v4 = std::vector<string>(std::move(l.items())); // using underlying collection
   println("v4 = {}", v4);
   
   println();
   
-  auto l1 = list<std::string>(v);
+  // std::vector<std::string> -> xtd::collections::generic::list<std::string>
+  auto l1 = list<std::string>(v); // direct construction
   println("l1 = {}", l1);
   
-  auto l2 = list<string>(from(v).cast<string>());
+  // std::vector<std::string> -> xtd::collections::generic::list<xtd::string>
+  auto l2 = list<string>(from(v).cast<string>()); // explicit cast
   println("l2 = {}", l2);
   
+  // std::vector<std::string> -> xtd::collections::generic::list<xtd::string>
   auto l3 = list<string>(v.size());
-  std::transform(v.begin(), v.end(), l3.begin(), [](const auto& s) {return s;});
+  std::transform(v.begin(), v.end(), l3.begin(), [](const auto& s) {return s;}); // manual transform
   println("l3 = {}", l3);
   
+  // Move std::vector<std::string> -> xtd::collections::generic::list<std::string>
   auto l4 = list<std::string>(std::move(v));
   println("l4 = {}", l4);
   
   println();
-
+  
   println("l  = {}", l);
   println("v  = {}", v);
 }
