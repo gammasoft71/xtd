@@ -1,7 +1,7 @@
 #include <xtd/threading/monitor>
 #include <xtd/threading/thread>
 #include <xtd/console>
-#include <xtd/lock>
+#include <xtd/lock_guard>
 #include <xtd/startup>
 
 using namespace xtd;
@@ -16,13 +16,13 @@ namespace monitor_lock_example {
       
       thread::sleep(1000);
       
-      lock_("lock") {
+      lock_guard_("lock") {
         monitor::pulse("lock");
       }
       
       thread::sleep(1000);
 
-      lock_("lock") {
+      lock_guard_("lock") {
         monitor::pulse("lock");
       }
 
@@ -31,7 +31,7 @@ namespace monitor_lock_example {
 
   private:
     static void worker() {
-      lock_("lock") {
+      lock_guard_("lock") {
         console::write_line("    Thread {} wait...", thread::current_thread().managed_thread_id());
         monitor::wait("lock");
         console::write_line("    Thread {} ...continue.", thread::current_thread().managed_thread_id());
