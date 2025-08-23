@@ -40,9 +40,6 @@
 /// ```cpp
 /// #include <xtd/xtd>
 ///
-/// using namespace xtd;
-/// using namespace xtd::rhreading;
-///
 /// class thread_test {
 /// public:
 ///   void run_me() {

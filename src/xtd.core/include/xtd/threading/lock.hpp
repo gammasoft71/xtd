@@ -64,7 +64,6 @@ namespace xtd {
       
       /// @{
       /// @brief Enters the lock, waiting if necessary until the lock can be entered.
-      /// @exception xtd::threading::lock_recursion_exception The lock has reached the limit of repeated entries by the current thread. The limit is implementation-defined and is intended to be high enough that it would not be reached in normal situations.
       /// @remarks When the method returns, the current thread is the only thread that holds the lock. If the lock can't be entered immediately, the method waits until the lock can be entered. If the lock is already held by the current thread, the lock is entered again. To fully exit the lock and allow other threads to enter the lock, the current thread should exit the lock as many times as it has entered the lock.
       void enter();
 
