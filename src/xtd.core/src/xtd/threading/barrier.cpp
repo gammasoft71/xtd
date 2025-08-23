@@ -7,7 +7,7 @@
 #include "../../../include/xtd/invalid_operation_exception.hpp"
 #include "../../../include/xtd/object_closed_exception.hpp"
 #include "../../../include/xtd/operation_canceled_exception.hpp"
-#include "../../../include/xtd/lock.hpp"
+#include "../../../include/xtd/lock_guard.hpp"
 #include <atomic>
 
 using namespace xtd;
@@ -104,7 +104,7 @@ void barrier::signal_and_wait() {
 bool barrier::signal_and_wait(int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw_helper::throws(exception_case::argument_out_of_range);
   if (!data_) throw_helper::throws(exception_case::object_closed);
-  lock_(*data_) {
+  lock_guard_(*data_) {
     data_->participants_remaining--;
     
     if (data_->participants_remaining == 0) {

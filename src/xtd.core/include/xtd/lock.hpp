@@ -2,25 +2,7 @@
 /// @brief Contains #lock_ keyword.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include "threading/lock_guard.hpp"
-
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief Provides a mechanism that synchronizes access to objects with xtd::threading::monitor.
-  /// ```cpp
-  /// using lock = xtd::threading::lock_guard
-  /// ```
-  /// @par Namespace
-  /// xtd
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core threading
-  /// @par Examples
-  /// The following example uses the xtd::lock class to synchronize access to a single instance of a random number generator represented by the xtd::random class. The example creates ten threads, each of which executes asynchronously on a thread pool thread. Each thread generates 10,000 random numbers, calculates their average, and updates two procedure-level variables that maintain a running total of the number of random numbers generated and their sum. After all threads have executed, these two values are then used to calculate the overall mean.
-  /// @include lock.cpp
-  /// @remarks See xtd::threading::monitor for more information.
-  using lock = xtd::threading::lock_guard;
-}
+#include "threading/lock.hpp"
 
 /// @brief The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion lock for a given object, executing a statement, and then releasing the lock. The following example includes a lock statement.
 /// ```cpp
@@ -80,7 +62,7 @@ namespace xtd {
 /// ```
 /// @par Examples
 /// The following sample uses threads and lock_. As long as the lock statement is present, the statement block is a critical section and balance will never become a negative number.
-/// @include lock.cpp
+/// @include lock_keyword.cpp
 /// @ingroup Keywords
 #define lock_(object)\
-  lock_guard_(object)
+  block_scope_(xtd::threading::lock __xtd_lock__(object))
