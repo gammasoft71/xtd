@@ -33,7 +33,7 @@ namespace xtd {
     class core_export_ lock final : public object {
     public:
       struct data;
-
+      
       /// @name Public Constructors
       
       /// @{
@@ -42,7 +42,7 @@ namespace xtd {
       /// @remarks When the xtd::threading::lock destroyed it releases the exclusive lock specified in the constructor.
       template<class object_t>
       explicit lock(const object_t& obj) : lock {reinterpret_cast<xtd::intptr>(&obj)} {}
-
+      
       /// @brief Create a xtd::threading::lock object and acquires an exclusive lock on the specified string.
       /// @param str The string on which to acquire the mutex lock.
       /// @remarks When the xtd::threading::lock destroyed it releases the exclusive lock specified in the constructor.
@@ -66,7 +66,7 @@ namespace xtd {
       /// @brief Enters the lock, waiting if necessary until the lock can be entered.
       /// @remarks When the method returns, the current thread is the only thread that holds the lock. If the lock can't be entered immediately, the method waits until the lock can be entered. If the lock is already held by the current thread, the lock is entered again. To fully exit the lock and allow other threads to enter the lock, the current thread should exit the lock as many times as it has entered the lock.
       void enter();
-
+      
       /// @brief Exits the lock.
       /// @exception xtd::object_closed_exception the handle is invalid
       /// @remarks If the current thread holds the lock multiple times, such as recursively, the lock is exited only once. The current thread should ensure that each enter is matched with an exit.
