@@ -62,10 +62,10 @@ void lock::enter() {
   }
   ++data_->used_count;
   data::mutexes_access.release_mutex();
-
+  
   try {
     data_->mutex.wait_one();
-  } catch(...) {
+  } catch (...) {
     data::mutexes_access.wait_one();
     if (data_->used_count) --data_->used_count;
     if (data_->ptr && !data_->used_count && data::mutexes.contains(data_->ptr)) data::mutexes.remove(data_->ptr);
@@ -77,7 +77,7 @@ void lock::enter() {
 
 void lock::exit() {
   data_->mutex.release_mutex();
-
+  
   data::mutexes_access.wait_one();
   if (data_->used_count) --data_->used_count;
   if (data_->ptr && !data_->used_count && data::mutexes.contains(data_->ptr)) data::mutexes.remove(data_->ptr);
