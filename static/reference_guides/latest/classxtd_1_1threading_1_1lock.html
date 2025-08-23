@@ -112,17 +112,17 @@ Inheritance diagram for xtd::threading::lock:</div>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><p>Provides a mechanism that synchronizes access to objects with <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a>. </p>
+<div class="textblock"><p>Provides a mechanism that synchronizes access to objects with <a class="el" href="classxtd_1_1threading_1_1monitor.html" title="Provides a mechanism that synchronizes access to objects.">xtd::threading::monitor</a>. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_function" href="#aa08652a62b9d79bd961bcb9998ea4b8b">lock</a> final : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:44</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1lock_html_aa08652a62b9d79bd961bcb9998ea4b8b"><div class="ttname"><a href="#aa08652a62b9d79bd961bcb9998ea4b8b">xtd::threading::lock::lock</a></div><div class="ttdeci">lock(const object_t &amp;obj)</div><div class="ttdoc">Create a xtd::threading::lock object and acquires an exclusive lock on the specified obj.</div><div class="ttdef"><b>Definition</b> lock.hpp:44</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1lock_html_aa08652a62b9d79bd961bcb9998ea4b8b"><div class="ttname"><a href="#aa08652a62b9d79bd961bcb9998ea4b8b">xtd::threading::lock::lock</a></div><div class="ttdeci">lock(const object_t &amp;obj)</div><div class="ttdoc">Create a xtd::threading::lock object and acquires an exclusive lock on the specified obj.</div><div class="ttdef"><b>Definition</b> lock.hpp:41</div></div>
 <div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.hpp:13</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → xtd::lock </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/lock&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example uses the <a class="el" href="classxtd_1_1threading_1_1lock.html" title="Provides a mechanism that synchronizes access to objects with xtd::threading::mutex.">xtd::threading::lock</a> class to synchronize access to a single instance of a random number generator represented by the <a class="el" href="classxtd_1_1random.html" title="Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet c...">xtd::random</a> class. The example creates ten threads, each of which executes asynchronously on a thread pool thread. Each thread generates 10,000 random numbers, calculates their average, and updates two procedure-level variables that maintain a running total of the number of random numbers generated and their sum. After all threads have executed, these two values are then used to calculate the overall mean. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example uses the <a class="el" href="classxtd_1_1threading_1_1lock.html" title="Provides a mechanism that synchronizes access to objects with xtd::threading::monitor.">xtd::threading::lock</a> class to synchronize access to a single instance of a random number generator represented by the <a class="el" href="classxtd_1_1random.html" title="Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet c...">xtd::random</a> class. The example creates ten threads, each of which executes asynchronously on a thread pool thread. Each thread generates 10,000 random numbers, calculates their average, and updates two procedure-level variables that maintain a running total of the number of random numbers generated and their sum. After all threads have executed, these two values are then used to calculate the overall mean. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>examples {</div>
 <div class="line">  <span class="keyword">class </span>account : <span class="keyword">public</span> <a class="code hl_function" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> {</div>
@@ -243,29 +243,35 @@ Inheritance diagram for xtd::threading::lock:</div>
 <div class="ttc" id="aclassxtd_1_1random_html_a629a30d5ddd8035f45afe7d982fda712"><div class="ttname"><a href="classxtd_1_1random.html#a629a30d5ddd8035f45afe7d982fda712">xtd::random::next</a></div><div class="ttdeci">virtual int32 next() const</div><div class="ttdoc">Returns a nonnegative random number.</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">The exception that is thrown when a method call is invalid for the object&#39;s current state.</div><div class="ttdef"><b>Definition</b> system_exception.hpp:18</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
-<div class="ttc" id="agroup__keywords_html_gacd9906b29d877eb1eb0a8c7bc4ab774a"><div class="ttname"><a href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a></div><div class="ttdeci">#define lock_(object)</div><div class="ttdoc">The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion loc...</div><div class="ttdef"><b>Definition</b> lock.hpp:64</div></div>
+<div class="ttc" id="agroup__keywords_html_gacd9906b29d877eb1eb0a8c7bc4ab774a"><div class="ttname"><a href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a></div><div class="ttdeci">#define lock_(object)</div><div class="ttdoc">The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion loc...</div><div class="ttdef"><b>Definition</b> lock.hpp:67</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>See <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> for more information. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>See <a class="el" href="classxtd_1_1threading_1_1monitor.html" title="Provides a mechanism that synchronizes access to objects.">xtd::threading::monitor</a> for more information. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lock_guard_8cpp-example.html#_a3">lock_guard.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:aa08652a62b9d79bd961bcb9998ea4b8b" id="r_aa08652a62b9d79bd961bcb9998ea4b8b"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
 <tr class="memitem:aa08652a62b9d79bd961bcb9998ea4b8b"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa08652a62b9d79bd961bcb9998ea4b8b">lock</a> (const object_t &amp;obj)</td></tr>
-<tr class="memdesc:aa08652a62b9d79bd961bcb9998ea4b8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classxtd_1_1threading_1_1lock.html" title="Provides a mechanism that synchronizes access to objects with xtd::threading::mutex.">xtd::threading::lock</a> object and acquires an exclusive lock on the specified obj.  <br /></td></tr>
+<tr class="memdesc:aa08652a62b9d79bd961bcb9998ea4b8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classxtd_1_1threading_1_1lock.html" title="Provides a mechanism that synchronizes access to objects with xtd::threading::monitor.">xtd::threading::lock</a> object and acquires an exclusive lock on the specified obj.  <br /></td></tr>
 <tr class="separator:aa08652a62b9d79bd961bcb9998ea4b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ebddfeccc9d20eeedc477562cfd7d4f" id="r_a9ebddfeccc9d20eeedc477562cfd7d4f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ebddfeccc9d20eeedc477562cfd7d4f">lock</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;str)</td></tr>
-<tr class="memdesc:a9ebddfeccc9d20eeedc477562cfd7d4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classxtd_1_1threading_1_1lock.html" title="Provides a mechanism that synchronizes access to objects with xtd::threading::mutex.">xtd::threading::lock</a> object and acquires an exclusive lock on the specified string.  <br /></td></tr>
-<tr class="separator:a9ebddfeccc9d20eeedc477562cfd7d4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:ac54e39afb8c3302933588c28ce75cd64" id="r_ac54e39afb8c3302933588c28ce75cd64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac54e39afb8c3302933588c28ce75cd64">enter</a> ()</td></tr>
-<tr class="memdesc:ac54e39afb8c3302933588c28ce75cd64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enters the lock, waiting if necessary until the lock can be entered.  <br /></td></tr>
-<tr class="separator:ac54e39afb8c3302933588c28ce75cd64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05c3b64f9309a32a25b1cf85e614a390" id="r_a05c3b64f9309a32a25b1cf85e614a390"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05c3b64f9309a32a25b1cf85e614a390">exit</a> ()</td></tr>
-<tr class="memdesc:a05c3b64f9309a32a25b1cf85e614a390"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exits the lock.  <br /></td></tr>
-<tr class="separator:a05c3b64f9309a32a25b1cf85e614a390"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a830ce5455ae09643f3d85c7063bbd86d" id="r_a830ce5455ae09643f3d85c7063bbd86d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a830ce5455ae09643f3d85c7063bbd86d">pulse</a> ()</td></tr>
+<tr class="memdesc:a830ce5455ae09643f3d85c7063bbd86d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies a thread in the waiting queue of a change in the locked object's state.  <br /></td></tr>
+<tr class="separator:a830ce5455ae09643f3d85c7063bbd86d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2e0ca04c2aaba831b0dc99df23eaa57" id="r_aa2e0ca04c2aaba831b0dc99df23eaa57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2e0ca04c2aaba831b0dc99df23eaa57">pulse_all</a> ()</td></tr>
+<tr class="memdesc:aa2e0ca04c2aaba831b0dc99df23eaa57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies all waiting threads of a change in the object's state.  <br /></td></tr>
+<tr class="separator:aa2e0ca04c2aaba831b0dc99df23eaa57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a815dcc8e9b36f64c518f56170a6feb41" id="r_a815dcc8e9b36f64c518f56170a6feb41"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a815dcc8e9b36f64c518f56170a6feb41">wait</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> milliseconds_timeout)</td></tr>
+<tr class="memdesc:a815dcc8e9b36f64c518f56170a6feb41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the lock on an object and blocks the current thread until it reacquires the lock. If the specified time-out interval elapses, the thread enters the ready queue.  <br /></td></tr>
+<tr class="separator:a815dcc8e9b36f64c518f56170a6feb41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a947cbc0eae2c7b35938d342fd3915b6d" id="r_a947cbc0eae2c7b35938d342fd3915b6d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a947cbc0eae2c7b35938d342fd3915b6d">wait</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
+<tr class="memdesc:a947cbc0eae2c7b35938d342fd3915b6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the lock on an object and blocks the current thread until it reacquires the lock. If the specified time-out interval elapses, the thread enters the ready queue.  <br /></td></tr>
+<tr class="separator:a947cbc0eae2c7b35938d342fd3915b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab676bb9c5b09a88e772333ce4ca00afa" id="r_ab676bb9c5b09a88e772333ce4ca00afa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab676bb9c5b09a88e772333ce4ca00afa">wait</a> ()</td></tr>
+<tr class="memdesc:ab676bb9c5b09a88e772333ce4ca00afa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the lock on an object and blocks the current thread until it reacquires the lock.  <br /></td></tr>
+<tr class="separator:ab676bb9c5b09a88e772333ce4ca00afa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -299,7 +305,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa08652a62b9d79bd961bcb9998ea4b8b" name="aa08652a62b9d79bd961bcb9998ea4b8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa08652a62b9d79bd961bcb9998ea4b8b">&#9670;&#160;</a></span>lock() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa08652a62b9d79bd961bcb9998ea4b8b">&#9670;&#160;</a></span>lock()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -323,60 +329,26 @@ template&lt;class object_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Create a <a class="el" href="classxtd_1_1threading_1_1lock.html" title="Provides a mechanism that synchronizes access to objects with xtd::threading::mutex.">xtd::threading::lock</a> object and acquires an exclusive lock on the specified obj. </p>
+<p>Create a <a class="el" href="classxtd_1_1threading_1_1lock.html" title="Provides a mechanism that synchronizes access to objects with xtd::threading::monitor.">xtd::threading::lock</a> object and acquires an exclusive lock on the specified obj. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">obj</td><td>The object on which to acquire the mutex lock. </td></tr>
+    <tr><td class="paramname">obj</td><td>The object on which to acquire the monitor lock. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>When the <a class="el" href="classxtd_1_1threading_1_1lock.html" title="Provides a mechanism that synchronizes access to objects with xtd::threading::mutex.">xtd::threading::lock</a> destroyed it releases the exclusive lock specified in the constructor. </dd></dl>
-
-</div>
-</div>
-<a id="a9ebddfeccc9d20eeedc477562cfd7d4f" name="a9ebddfeccc9d20eeedc477562cfd7d4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ebddfeccc9d20eeedc477562cfd7d4f">&#9670;&#160;</a></span>lock() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">xtd::threading::lock::lock </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel explicit">explicit</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Create a <a class="el" href="classxtd_1_1threading_1_1lock.html" title="Provides a mechanism that synchronizes access to objects with xtd::threading::mutex.">xtd::threading::lock</a> object and acquires an exclusive lock on the specified string. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">str</td><td>The string on which to acquire the mutex lock. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section remark"><dt>Remarks</dt><dd>When the <a class="el" href="classxtd_1_1threading_1_1lock.html" title="Provides a mechanism that synchronizes access to objects with xtd::threading::mutex.">xtd::threading::lock</a> destroyed it releases the exclusive lock specified in the constructor. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>When the <a class="el" href="classxtd_1_1threading_1_1lock.html" title="Provides a mechanism that synchronizes access to objects with xtd::threading::monitor.">xtd::threading::lock</a> destroyed it releases the exclusive lock specified in the constructor. </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac54e39afb8c3302933588c28ce75cd64" name="ac54e39afb8c3302933588c28ce75cd64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac54e39afb8c3302933588c28ce75cd64">&#9670;&#160;</a></span>enter()</h2>
+<a id="a830ce5455ae09643f3d85c7063bbd86d" name="a830ce5455ae09643f3d85c7063bbd86d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a830ce5455ae09643f3d85c7063bbd86d">&#9670;&#160;</a></span>pulse()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::lock::enter </td>
+          <td class="memname">void xtd::threading::lock::pulse </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -384,19 +356,27 @@ template&lt;class object_t&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Enters the lock, waiting if necessary until the lock can be entered. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>When the method returns, the current thread is the only thread that holds the lock. If the lock can't be entered immediately, the method waits until the lock can be entered. If the lock is already held by the current thread, the lock is entered again. To fully exit the lock and allow other threads to enter the lock, the current thread should exit the lock as many times as it has entered the lock. </dd></dl>
+<p>Notifies a thread in the waiting queue of a change in the locked object's state. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Only the current owner of the lock can signal a waiting object using <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a>. </dd>
+<dd>
+The thread that currently owns the lock on the specified object invokes this method to signal the next thread in line for the lock. Upon receiving the pulse, the waiting thread is moved to the ready queue. When the thread that invoked <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> releases the lock, the next thread in the ready queue (which is not necessarily the thread that was pulsed) acquires the lock. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The <a class="el" href="classxtd_1_1threading_1_1monitor.html" title="Provides a mechanism that synchronizes access to objects.">xtd::threading::monitor</a> class does not maintain state indicating that the <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> method has been called. Thus, if you call <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> when no threads are waiting, the next thread that calls <a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> blocks as if <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> had never been called. If two threads are using <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> and <a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> to interact, this could result in a deadlock. Contrast this with the behavior of the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> class: If you signal an <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> by calling its <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html#a3254163aa012cb3dc8f99ff16c0c7d6c" title="Sets the state of the event to signaled, allowing one or more waiting threads to proceed.">xtd::threading::event_wait_handle::set</a> method, and there are no threads waiting, the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> remains in a signaled state until a thread calls <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87" title="Blocks the current thread until the current xtd::threading::wait_handle receives a signal.">xtd::threading::wait_handle::wait_one</a>, <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aee2a73d9052723690ff0e15a338cce35" title="Waits for any of the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_any</a>, or <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a217129669f17b6f14201dccd0405450c" title="Waits for all the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_all</a>. The <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> releases that thread and returns to the unsignaled state. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Note that a synchronized object holds several references, including a reference to the thread that currently holds the lock, a reference to the ready queue, which contains the threads that are ready to obtain the lock, and a reference to the waiting queue, which contains the threads that are waiting for notification of a change in the object's state. </dd>
+<dd>
+The <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a>, <a class="el" href="classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb" title="Notifies all waiting threads of a change in the object&#39;s state.">xtd::threading::monitor::pulse_all</a>, and <a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> methods must be invoked from within a synchronized block of code. </dd>
+<dd>
+To signal multiple threads, use the <a class="el" href="classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb" title="Notifies all waiting threads of a change in the object&#39;s state.">xtd::threading::monitor::pulse_all</a> method. </dd></dl>
 
 </div>
 </div>
-<a id="a05c3b64f9309a32a25b1cf85e614a390" name="a05c3b64f9309a32a25b1cf85e614a390"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05c3b64f9309a32a25b1cf85e614a390">&#9670;&#160;</a></span>exit()</h2>
+<a id="aa2e0ca04c2aaba831b0dc99df23eaa57" name="aa2e0ca04c2aaba831b0dc99df23eaa57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2e0ca04c2aaba831b0dc99df23eaa57">&#9670;&#160;</a></span>pulse_all()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void xtd::threading::lock::exit </td>
+          <td class="memname">void xtd::threading::lock::pulse_all </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -404,14 +384,146 @@ template&lt;class object_t&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Exits the lock. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>the handle is invalid </td></tr>
+<p>Notifies all waiting threads of a change in the object's state. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>The thread that currently owns the lock on the specified object invokes this method to signal all threads waiting to acquire the lock on the object. After the signal is sent, the waiting threads are moved to the ready queue. When the thread that invoked xtd::threading::monitor::xtd::threading::monitor::pulse_all releases the lock, the next thread in the ready queue acquires the lock. </dd>
+<dd>
+Note that a synchronized object holds several references, including a reference to the thread that currently holds the lock, a reference to the ready queue, which contains the threads that are ready to obtain the lock, and a reference to the waiting queue, which contains the threads that are waiting for notification of a change in the object's state. </dd>
+<dd>
+The <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a>, xtd::threading::monitor::xtd::threading::monitor::pulse_all, and Wait methods must be invoked from within a synchronized block of code. </dd>
+<dd>
+The remarks for the <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> method explain what happens if <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> is called when no threads are waiting. </dd>
+<dd>
+To signal a single thread, use the <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> method. </dd></dl>
+
+</div>
+</div>
+<a id="a815dcc8e9b36f64c518f56170a6feb41" name="a815dcc8e9b36f64c518f56170a6feb41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a815dcc8e9b36f64c518f56170a6feb41">&#9670;&#160;</a></span>wait() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool xtd::threading::lock::wait </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Releases the lock on an object and blocks the current thread until it reacquires the lock. If the specified time-out interval elapses, the thread enters the ready queue. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The object on which to wait. </td></tr>
+    <tr><td class="paramname">milliseconds_timeout</td><td>The number of milliseconds to wait before the thread enters the ready queue. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If the current thread holds the lock multiple times, such as recursively, the lock is exited only once. The current thread should ensure that each enter is matched with an exit. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the lock was reacquired before the specified time elapsed; <code>false</code> if the lock was reacquired after the specified time elapsed. The method does not return until the lock is reacquired. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1synchronization__lock__exception.html" title="The exception that is thrown when a method requires the caller to own the lock on a given Monitor,...">xtd::threading::synchronization_lock_exception</a></td><td><a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> is not invoked from within a synchronized block of code. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method does not return until it reacquires an exclusive lock on the obj parameter. </dd>
+<dd>
+The thread that currently owns the lock on the specified object invokes this method in order to release the object so that another thread can access it. The caller is blocked while waiting to reacquire the lock. This method is called when the caller needs to wait for a state change that will occur as a result of another thread's operations. </dd>
+<dd>
+The time-out ensures that the current thread does not block indefinitely if another thread releases the lock without first calling the <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> or <a class="el" href="classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb" title="Notifies all waiting threads of a change in the object&#39;s state.">xtd::threading::monitor::pulse_all</a> method. It also moves the thread to the ready queue, bypassing other threads ahead of it in the wait queue, so that it can reacquire the lock sooner. The thread can test the return value of the <a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> method to determine whether it reacquired the lock prior to the time-out. The thread can evaluate the conditions that caused it to enter the wait, and if necessary call the <a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> method again. </dd>
+<dd>
+When a thread calls <a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a>, it releases the lock and enters the waiting queue. At this point, the next thread in the ready queue (if there is one) is allowed to take control of the lock. The thread that invoked Wait remains in the waiting queue until either a thread that holds the lock invokes <a class="el" href="classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb" title="Notifies all waiting threads of a change in the object&#39;s state.">xtd::threading::monitor::pulse_all</a>, or it is the next in the queue and a thread that holds the lock invokes <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a>. However, if milliseconds_timeout elapses before another thread invokes this object's <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> or <a class="el" href="classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb" title="Notifies all waiting threads of a change in the object&#39;s state.">xtd::threading::monitor::pulse_all</a> method, the original thread is moved to the ready queue in order to regain the lock. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If <a class="el" href="classxtd_1_1threading_1_1timeout.html#af4059e4ae0d201f7382742e6a7dfd1b2" title="A constant used to specify an infinite waiting period. This field is constant.">xtd::threading::timeout::infinite</a> is specified for the milliseconds_timeout parameter, this method blocks indefinitely unless the holder of the lock calls <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> or <a class="el" href="classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb" title="Notifies all waiting threads of a change in the object&#39;s state.">xtd::threading::monitor::pulse_all</a>. If milliseconds_timeout equals 0, the thread that calls Wait releases the lock and then immediately enters the ready queue in order to regain the lock. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The caller executes <a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> once, regardless of the number of times <a class="el" href="classxtd_1_1threading_1_1monitor.html#afabaf5361f6d4dd04701dd1973d0a0f9" title="Acquires an exclusive lock on the specified obj.">xtd::threading::monitor::enter</a> has been invoked for the specified object. Conceptually, the Wait method stores the number of times the caller invoked <a class="el" href="classxtd_1_1threading_1_1monitor.html#afabaf5361f6d4dd04701dd1973d0a0f9" title="Acquires an exclusive lock on the specified obj.">xtd::threading::monitor::enter</a> on the object and invokes <a class="el" href="classxtd_1_1threading_1_1monitor.html#a511fd1ffb8c451222fe4071f7a19f243" title="Releases an exclusive lock on the specified obj.">xtd::threading::monitor::exit</a> as many times as necessary to fully release the locked object. The caller then blocks while waiting to reacquire the object. When the caller reacquires the lock, the system calls <a class="el" href="classxtd_1_1threading_1_1monitor.html#afabaf5361f6d4dd04701dd1973d0a0f9" title="Acquires an exclusive lock on the specified obj.">xtd::threading::monitor::enter</a> as many times as necessary to restore the saved <a class="el" href="classxtd_1_1threading_1_1monitor.html#afabaf5361f6d4dd04701dd1973d0a0f9" title="Acquires an exclusive lock on the specified obj.">xtd::threading::monitor::enter</a> count for the caller. Calling <a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> releases the lock for the specified object only; if the caller is the owner of locks on other objects, these locks are not released. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>A synchronized object holds several references, including a reference to the thread that currently holds the lock, a reference to the ready queue, which contains the threads that are ready to obtain the lock, and a reference to the waiting queue, which contains the threads that are waiting for notification of a change in the object's state. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a>, <a class="el" href="classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb" title="Notifies all waiting threads of a change in the object&#39;s state.">xtd::threading::monitor::pulse_all</a>, and Wait methods must be invoked from within a synchronized block of code. </dd>
+<dd>
+The remarks for the <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> method explain what happens if <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> is called when no threads are waiting. </dd></dl>
+
+</div>
+</div>
+<a id="a947cbc0eae2c7b35938d342fd3915b6d" name="a947cbc0eae2c7b35938d342fd3915b6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a947cbc0eae2c7b35938d342fd3915b6d">&#9670;&#160;</a></span>wait() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool xtd::threading::lock::wait </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Releases the lock on an object and blocks the current thread until it reacquires the lock. If the specified time-out interval elapses, the thread enters the ready queue. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeout</td><td>A <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> representing the amount of time to wait before the thread enters the ready queue. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the lock was reacquired before the specified time elapsed; <code>false</code> if the lock was reacquired after the specified time elapsed. The method does not return until the lock is reacquired. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1synchronization__lock__exception.html" title="The exception that is thrown when a method requires the caller to own the lock on a given Monitor,...">xtd::threading::synchronization_lock_exception</a></td><td><a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> is not invoked from within a synchronized block of code. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method does not return until it reacquires an exclusive lock on the obj parameter. </dd>
+<dd>
+The thread that currently owns the lock on the specified object invokes this method in order to release the object so that another thread can access it. The caller is blocked while waiting to reacquire the lock. This method is called when the caller needs to wait for a state change that will occur as a result of another thread's operations. </dd>
+<dd>
+The time-out ensures that the current thread does not block indefinitely if another thread releases the lock without first calling the <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> or <a class="el" href="classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb" title="Notifies all waiting threads of a change in the object&#39;s state.">xtd::threading::monitor::pulse_all</a> method. It also moves the thread to the ready queue, bypassing other threads ahead of it in the wait queue, so that it can reacquire the lock sooner. The thread can test the return value of the <a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> method to determine whether it reacquired the lock prior to the time-out. The thread can evaluate the conditions that caused it to enter the wait, and if necessary call the <a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> method again. </dd>
+<dd>
+When a thread calls <a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a>, it releases the lock and enters the waiting queue. At this point, the next thread in the ready queue (if there is one) is allowed to take control of the lock. The thread that invoked Wait remains in the waiting queue until either a thread that holds the lock invokes <a class="el" href="classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb" title="Notifies all waiting threads of a change in the object&#39;s state.">xtd::threading::monitor::pulse_all</a>, or it is the next in the queue and a thread that holds the lock invokes <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a>. However, if milliseconds_timeout elapses before another thread invokes this object's <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> or <a class="el" href="classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb" title="Notifies all waiting threads of a change in the object&#39;s state.">xtd::threading::monitor::pulse_all</a> method, the original thread is moved to the ready queue in order to regain the lock. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If <a class="el" href="classxtd_1_1threading_1_1timeout.html#af4059e4ae0d201f7382742e6a7dfd1b2" title="A constant used to specify an infinite waiting period. This field is constant.">xtd::threading::timeout::infinite</a> is specified for the milliseconds_timeout parameter, this method blocks indefinitely unless the holder of the lock calls <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> or <a class="el" href="classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb" title="Notifies all waiting threads of a change in the object&#39;s state.">xtd::threading::monitor::pulse_all</a>. If milliseconds_timeout equals 0, the thread that calls Wait releases the lock and then immediately enters the ready queue in order to regain the lock. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The caller executes <a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> once, regardless of the number of times <a class="el" href="classxtd_1_1threading_1_1monitor.html#afabaf5361f6d4dd04701dd1973d0a0f9" title="Acquires an exclusive lock on the specified obj.">xtd::threading::monitor::enter</a> has been invoked for the specified object. Conceptually, the Wait method stores the number of times the caller invoked <a class="el" href="classxtd_1_1threading_1_1monitor.html#afabaf5361f6d4dd04701dd1973d0a0f9" title="Acquires an exclusive lock on the specified obj.">xtd::threading::monitor::enter</a> on the object and invokes <a class="el" href="classxtd_1_1threading_1_1monitor.html#a511fd1ffb8c451222fe4071f7a19f243" title="Releases an exclusive lock on the specified obj.">xtd::threading::monitor::exit</a> as many times as necessary to fully release the locked object. The caller then blocks while waiting to reacquire the object. When the caller reacquires the lock, the system calls <a class="el" href="classxtd_1_1threading_1_1monitor.html#afabaf5361f6d4dd04701dd1973d0a0f9" title="Acquires an exclusive lock on the specified obj.">xtd::threading::monitor::enter</a> as many times as necessary to restore the saved <a class="el" href="classxtd_1_1threading_1_1monitor.html#afabaf5361f6d4dd04701dd1973d0a0f9" title="Acquires an exclusive lock on the specified obj.">xtd::threading::monitor::enter</a> count for the caller. Calling <a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> releases the lock for the specified object only; if the caller is the owner of locks on other objects, these locks are not released. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>A synchronized object holds several references, including a reference to the thread that currently holds the lock, a reference to the ready queue, which contains the threads that are ready to obtain the lock, and a reference to the waiting queue, which contains the threads that are waiting for notification of a change in the object's state. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a>, <a class="el" href="classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb" title="Notifies all waiting threads of a change in the object&#39;s state.">xtd::threading::monitor::pulse_all</a>, and Wait methods must be invoked from within a synchronized block of code. </dd>
+<dd>
+The remarks for the <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> method explain what happens if <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> is called when no threads are waiting. </dd></dl>
+
+</div>
+</div>
+<a id="ab676bb9c5b09a88e772333ce4ca00afa" name="ab676bb9c5b09a88e772333ce4ca00afa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab676bb9c5b09a88e772333ce4ca00afa">&#9670;&#160;</a></span>wait() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool xtd::threading::lock::wait </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Releases the lock on an object and blocks the current thread until it reacquires the lock. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the call returned because the caller reacquired the lock for the specified object. This method does not return if the lock is not reacquired. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1synchronization__lock__exception.html" title="The exception that is thrown when a method requires the caller to own the lock on a given Monitor,...">xtd::threading::synchronization_lock_exception</a></td><td><a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> is not invoked from within a synchronized block of code. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method does not return until it reacquires an exclusive lock on the obj parameter. </dd>
+<dd>
+The thread that currently owns the lock on the specified object invokes this method in order to release the object so that another thread can access it. The caller is blocked while waiting to reacquire the lock. This method is called when the caller needs to wait for a state change that will occur as a result of another thread's operations. </dd>
+<dd>
+The time-out ensures that the current thread does not block indefinitely if another thread releases the lock without first calling the <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> or <a class="el" href="classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb" title="Notifies all waiting threads of a change in the object&#39;s state.">xtd::threading::monitor::pulse_all</a> method. It also moves the thread to the ready queue, bypassing other threads ahead of it in the wait queue, so that it can reacquire the lock sooner. The thread can test the return value of the <a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> method to determine whether it reacquired the lock prior to the time-out. The thread can evaluate the conditions that caused it to enter the wait, and if necessary call the <a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> method again. </dd>
+<dd>
+When a thread calls <a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a>, it releases the lock and enters the waiting queue. At this point, the next thread in the ready queue (if there is one) is allowed to take control of the lock. The thread that invoked Wait remains in the waiting queue until either a thread that holds the lock invokes <a class="el" href="classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb" title="Notifies all waiting threads of a change in the object&#39;s state.">xtd::threading::monitor::pulse_all</a>, or it is the next in the queue and a thread that holds the lock invokes <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a>. However, if milliseconds_timeout elapses before another thread invokes this object's <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> or <a class="el" href="classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb" title="Notifies all waiting threads of a change in the object&#39;s state.">xtd::threading::monitor::pulse_all</a> method, the original thread is moved to the ready queue in order to regain the lock. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If <a class="el" href="classxtd_1_1threading_1_1timeout.html#af4059e4ae0d201f7382742e6a7dfd1b2" title="A constant used to specify an infinite waiting period. This field is constant.">xtd::threading::timeout::infinite</a> is specified for the milliseconds_timeout parameter, this method blocks indefinitely unless the holder of the lock calls <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> or <a class="el" href="classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb" title="Notifies all waiting threads of a change in the object&#39;s state.">xtd::threading::monitor::pulse_all</a>. If milliseconds_timeout equals 0, the thread that calls Wait releases the lock and then immediately enters the ready queue in order to regain the lock. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The caller executes <a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> once, regardless of the number of times <a class="el" href="classxtd_1_1threading_1_1monitor.html#afabaf5361f6d4dd04701dd1973d0a0f9" title="Acquires an exclusive lock on the specified obj.">xtd::threading::monitor::enter</a> has been invoked for the specified object. Conceptually, the Wait method stores the number of times the caller invoked <a class="el" href="classxtd_1_1threading_1_1monitor.html#afabaf5361f6d4dd04701dd1973d0a0f9" title="Acquires an exclusive lock on the specified obj.">xtd::threading::monitor::enter</a> on the object and invokes <a class="el" href="classxtd_1_1threading_1_1monitor.html#a511fd1ffb8c451222fe4071f7a19f243" title="Releases an exclusive lock on the specified obj.">xtd::threading::monitor::exit</a> as many times as necessary to fully release the locked object. The caller then blocks while waiting to reacquire the object. When the caller reacquires the lock, the system calls <a class="el" href="classxtd_1_1threading_1_1monitor.html#afabaf5361f6d4dd04701dd1973d0a0f9" title="Acquires an exclusive lock on the specified obj.">xtd::threading::monitor::enter</a> as many times as necessary to restore the saved <a class="el" href="classxtd_1_1threading_1_1monitor.html#afabaf5361f6d4dd04701dd1973d0a0f9" title="Acquires an exclusive lock on the specified obj.">xtd::threading::monitor::enter</a> count for the caller. Calling <a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> releases the lock for the specified object only; if the caller is the owner of locks on other objects, these locks are not released. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>A synchronized object holds several references, including a reference to the thread that currently holds the lock, a reference to the ready queue, which contains the threads that are ready to obtain the lock, and a reference to the waiting queue, which contains the threads that are waiting for notification of a change in the object's state. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a>, <a class="el" href="classxtd_1_1threading_1_1monitor.html#a362df17ae1c2d6e99ae2d272805c2dcb" title="Notifies all waiting threads of a change in the object&#39;s state.">xtd::threading::monitor::pulse_all</a>, and Wait methods must be invoked from within a synchronized block of code. </dd>
+<dd>
+The remarks for the <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> method explain what happens if <a class="el" href="classxtd_1_1threading_1_1monitor.html#a02075512c6dc3fb73840910466cca815" title="Notifies a thread in the waiting queue of a change in the locked object&#39;s state.">xtd::threading::monitor::pulse</a> is called when no threads are waiting. </dd></dl>
 
 </div>
 </div>
@@ -422,7 +534,7 @@ template&lt;class object_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 23 2025 21:39:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Aug 23 2025 23:47:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
