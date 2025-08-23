@@ -113,11 +113,11 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1lock.html">   33</a></span>    <span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_function" href="classxtd_1_1threading_1_1lock.html#aa08652a62b9d79bd961bcb9998ea4b8b">lock</a> final : <span class="keyword">public</span> <a class="code hl_function" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      <span class="keyword">struct </span><a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">object</span>_t&gt;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1lock.html#aa08652a62b9d79bd961bcb9998ea4b8b">   44</a></span>      <span class="keyword">explicit</span> <a class="code hl_function" href="classxtd_1_1threading_1_1lock.html#aa08652a62b9d79bd961bcb9998ea4b8b">lock</a>(<span class="keyword">const</span> object_t&amp; obj) : <a class="code hl_function" href="classxtd_1_1threading_1_1lock.html#aa08652a62b9d79bd961bcb9998ea4b8b">lock</a> {reinterpret_cast&lt;<a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_typedef" href="group__types.html#ga6d54527a3ec7b15afb917a6ba73a4ece">intptr</a>&gt;(&amp;obj)} {}</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1lock.html#a9ebddfeccc9d20eeedc477562cfd7d4f">   49</a></span>      <span class="keyword">explicit</span> <a class="code hl_function" href="classxtd_1_1threading_1_1lock.html#a9ebddfeccc9d20eeedc477562cfd7d4f">lock</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; str);</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>      </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      <span class="keyword">explicit</span> <a class="code hl_function" href="classxtd_1_1threading_1_1lock.html#aa08652a62b9d79bd961bcb9998ea4b8b">lock</a>(<a class="code hl_typedef" href="group__types.html#ga6d54527a3ec7b15afb917a6ba73a4ece">xtd::intptr</a> <a class="code hl_typedef" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">ptr</a>);</div>
@@ -130,19 +130,19 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      <a class="code hl_function" href="classxtd_1_1threading_1_1lock.html#aa08652a62b9d79bd961bcb9998ea4b8b">~lock</a>();</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      </div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1lock.html#ac54e39afb8c3302933588c28ce75cd64">   69</a></span>      <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1threading_1_1lock.html#ac54e39afb8c3302933588c28ce75cd64">enter</a>();</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1lock.html#a05c3b64f9309a32a25b1cf85e614a390">   74</a></span>      <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1threading_1_1lock.html#a05c3b64f9309a32a25b1cf85e614a390">exit</a>();</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      <a class="code hl_function" href="classxtd_1_1threading_1_1lock.html#aa08652a62b9d79bd961bcb9998ea4b8b">lock</a>() = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      <a class="code hl_typedef" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">xtd::ptr&lt;data&gt;</a> data_;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    };</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1lock.html#ac54e39afb8c3302933588c28ce75cd64">   68</a></span>      <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1threading_1_1lock.html#ac54e39afb8c3302933588c28ce75cd64">enter</a>();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1lock.html#a05c3b64f9309a32a25b1cf85e614a390">   73</a></span>      <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1threading_1_1lock.html#a05c3b64f9309a32a25b1cf85e614a390">exit</a>();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      <a class="code hl_function" href="classxtd_1_1threading_1_1lock.html#aa08652a62b9d79bd961bcb9998ea4b8b">lock</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      <a class="code hl_typedef" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">xtd::ptr&lt;data&gt;</a> data_;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    };</div>
 </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  }</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#include &quot;<a class="code" href="lock_8hpp.html">../lock.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#include &quot;<a class="code" href="lock_8hpp.html">../lock.hpp</a>&quot;</span></div>
 <div class="ttc" id="ablock__scope_8hpp_html"><div class="ttname"><a href="block__scope_8hpp.html">block_scope.hpp</a></div><div class="ttdoc">Contains block_scope_ keyword.</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html_ad2cab851376bb6ca085b567bf5da0f5f"><div class="ttname"><a href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">xtd::object::object</a></div><div class="ttdeci">object()=default</div><div class="ttdoc">Create a new instance of the ultimate base class object.</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1lock_html_a05c3b64f9309a32a25b1cf85e614a390"><div class="ttname"><a href="classxtd_1_1threading_1_1lock.html#a05c3b64f9309a32a25b1cf85e614a390">xtd::threading::lock::exit</a></div><div class="ttdeci">void exit()</div><div class="ttdoc">Exits the lock.</div></div>
@@ -168,7 +168,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 23 2025 19:23:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Aug 23 2025 21:39:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

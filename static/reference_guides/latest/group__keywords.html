@@ -1237,7 +1237,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <a class="code hl_typedef" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a> balance;</div>
 <div class="line">};</div>
-<div class="ttc" id="agroup__keywords_html_gacd9906b29d877eb1eb0a8c7bc4ab774a"><div class="ttname"><a href="#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a></div><div class="ttdeci">#define lock_(object)</div><div class="ttdoc">The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion loc...</div><div class="ttdef"><b>Definition</b> lock.hpp:67</div></div>
+<div class="ttc" id="agroup__keywords_html_gacd9906b29d877eb1eb0a8c7bc4ab774a"><div class="ttname"><a href="#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a></div><div class="ttdeci">#define lock_(object)</div><div class="ttdoc">The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion loc...</div><div class="ttdef"><b>Definition</b> lock.hpp:64</div></div>
 <div class="ttc" id="agroup__types_html_ga7d41c91f9bcab8feb762da96973525fd"><div class="ttname"><a href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">xtd::decimal</a></div><div class="ttdeci">long double decimal</div><div class="ttdoc">Represents a decimal-precision floating-point number.</div><div class="ttdef"><b>Definition</b> decimal.hpp:23</div></div>
 </div><!-- fragment --><p> For more information, see Thread Synchronization. </p><dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
@@ -1259,19 +1259,16 @@ Best practice is to define a private object to lock on, or a private static obje
 You can't use the await_ keyword in the body of a lock_ statement. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following sample shows a simple use of threads without locking in C++. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span>xtd::rhreading;</div>
-<div class="line"> </div>
 <div class="line"><span class="keyword">class </span>thread_test {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keywordtype">void</span> run_me() {</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;run_me called&quot;</span>);</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;run_me called&quot;</span>);</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
-<div class="line">    thread_test <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>;</div>
-<div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">t</a> = thread {thread_start {<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>, &amp;thread_test::run_me));</div>
-<div class="line">    <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">t</a>.start();</div>
+<div class="line">    thread_test b;</div>
+<div class="line">    <span class="keyword">auto</span> t = thread {thread_start {b, &amp;thread_test::run_me));</div>
+<div class="line">    t.start();</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -1279,8 +1276,6 @@ You can't use the await_ keyword in the body of a lock_ statement. </dd></dl>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Output: run_me called</span></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">xtd::console_key::b</a></div><div class="ttdeci">@ b</div><div class="ttdoc">The B key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:90</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">xtd::console_key::t</a></div><div class="ttdeci">@ t</div><div class="ttdoc">The T key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:126</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following sample uses threads and lock_. As long as the lock statement is present, the statement block is a critical section and balance will never become a negative number. <div class="fragment"></div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lock_8cpp-example.html#a0">lock.cpp</a>.</dd>
@@ -1359,6 +1354,8 @@ You can't use the await_ keyword in the body of a lock_guard_ statement. </dd></
 <div class="line"><a class="code hl_define" href="#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(thread_test::main)</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Output: run_me called</span></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">xtd::console_key::b</a></div><div class="ttdeci">@ b</div><div class="ttdoc">The B key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:90</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae358efa489f58062f10dd7316b65649e">xtd::console_key::t</a></div><div class="ttdeci">@ t</div><div class="ttdoc">The T key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:126</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following sample uses threads and lock_guard_. As long as the lock statement is present, the statement block is a critical section and balance will never become a negative number. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/lock_guard&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread_pool&gt;</span></div>
@@ -3637,7 +3634,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 23 2025 19:23:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Aug 23 2025 21:39:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
