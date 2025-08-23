@@ -1,7 +1,6 @@
 #include "../../../include/xtd/threading/lock.hpp"
 #include "../../../include/xtd/threading/mutex.hpp"
 #include "../../../include/xtd/collections/generic/dictionary.hpp"
-#include "../../../include/xtd/diagnostics/debug.hpp"
 
 using namespace xtd;
 using namespace xtd::threading;
@@ -27,27 +26,21 @@ lock::lock(xtd::intptr ptr) : data_ {new_ptr<lock::data>()} {
 }
 
 lock::lock(const std::string& str) : lock {xtd::string {str}} {
-  
 }
 
 lock::lock(const char* str) : lock {xtd::string {str}} {
-  
 }
 
 lock::lock(const xtd::char16* str) : lock {xtd::string {str}} {
-  
 }
 
 lock::lock(const xtd::char32* str) : lock {xtd::string {str}} {
-  
 }
 
 lock::lock(const xtd::char8* str) : lock {xtd::string {str}} {
-  
 }
 
 lock::lock(const xtd::wchar* str) : lock {xtd::string {str}} {
-  
 }
 
 lock::~lock() {
