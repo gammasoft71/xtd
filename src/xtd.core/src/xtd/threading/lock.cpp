@@ -1,8 +1,10 @@
 #include "../../../include/xtd/threading/lock.hpp"
 #include "../../../include/xtd/threading/mutex.hpp"
 #include "../../../include/xtd/collections/generic/dictionary.hpp"
+#include "../../../include/xtd/helpers/throw_helper.hpp"
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::threading;
 
 struct lock::data {
@@ -16,7 +18,9 @@ struct lock::data {
 };
 
 lock::lock(const xtd::string& str) : data_ {new_ptr<lock::data>()} {
+  if (str.empty()) throw_helper::throws(exception_case::argument);
   data_->str = str;
+  data_->mutex = threading::mutex {str};
   enter();
 }
 
@@ -58,16 +62,25 @@ void lock::enter() {
   }
   ++data_->used_count;
   data::mutexes_access.release_mutex();
-  
-  data_->mutex.wait_one();
+
+  try {
+    data_->mutex.wait_one();
+  } catch(...) {
+    data::mutexes_access.wait_one();
+    if (data_->used_count) --data_->used_count;
+    if (data_->ptr && !data_->used_count && data::mutexes.contains(data_->ptr)) data::mutexes.remove(data_->ptr);
+    else if (!data_->used_count && data::named_mutexes.contains(data_->str)) data::named_mutexes.remove(data_->str);
+    data::mutexes_access.release_mutex();
+    throw;
+  }
 }
 
 void lock::exit() {
+  data_->mutex.release_mutex();
+
   data::mutexes_access.wait_one();
   if (data_->used_count) --data_->used_count;
   if (data_->ptr && !data_->used_count && data::mutexes.contains(data_->ptr)) data::mutexes.remove(data_->ptr);
   else if (!data_->used_count && data::named_mutexes.contains(data_->str)) data::named_mutexes.remove(data_->str);
   data::mutexes_access.release_mutex();
-  
-  data_->mutex.release_mutex();
 }
