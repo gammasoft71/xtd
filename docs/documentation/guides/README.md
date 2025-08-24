@@ -101,6 +101,8 @@ The xtd guides provide an explanation on how to use the important features of th
       * [Sockets support](/docs/documentation/guides/xtd.core/Networking/Sockets/sockets_support)
       * [Use sockets to send and receive data over TCP](/docs/documentation/guides/xtd.core/Networking/Sockets/sockets_tcp)
       * [Use tcp_client_and_tcp_listener](/docs/documentation/guides/xtd.core/Networking/Sockets/tcp_client_and_tcp_listener)
+  * Threading
+    * [Compare threading features with other libraries](/docs/documentation/guides/xtd.core/threading/threading_functionalities)
   * [Internationalization](/docs/documentation/guides/xtd.core/internationalization)
   * [Resources](/docs/documentation/guides/xtd.core/resources)
   * [Settings](/docs/documentation/guides/xtd.core/settings)
