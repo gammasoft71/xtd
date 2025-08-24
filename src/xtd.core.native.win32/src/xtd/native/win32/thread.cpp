@@ -67,17 +67,17 @@ bool thread::set_priority(intmax_t handle, int32_t priority) {
 
 bool thread::set_processor_affinity(intmax_t handle, const std::vector<size_t>& processor_affinity) {
   if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return false;
-
+  
   auto mask = static_cast<DWORD_PTR>(0);
   
   if (processor_affinity.empty()) {
     auto system_mask = static_cast<DWORD_PTR>(0);
     if (GetProcessAffinityMask(GetCurrentProcess(), &mask, &system_mask) == 0) return false;
   }
-
+  
   for (auto cpu_index : processor_affinity)
     mask |= static_cast<DWORD_PTR>(1) << cpu_index;
-
+    
   return SetThreadAffinityMask(reinterpret_cast<HANDLE>(handle), mask) != 0;
 }
 
