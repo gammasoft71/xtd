@@ -2,17 +2,8 @@
 
 ## In this article
 
-* [Collections](#collections)
-  * [Sequence collections](#sequence-collections)
-  * [Associative collections](#associative-collections)
-  * [Unordered associative collections](#unordered-associative-collections)
-  * [Collections adaptors](#container-adaptors)
-  * [Collections with events](#collections-with-events)
-  * [Specialized collections](#specialized-collections)
-  * [Thread-safe collections](#thread-safe-collections)
-* [Choose a collection](#choose-a-collection)
-* [Algorithmic complexity of collections](#algorithmic-complexity-of-collections)
-
+* [Example](#example)
+* [Conversion strategies](#conversion-strategies)
 
 In many cases, you may want to exchange data between xtd::collections::generic containers and their standard C++ (std) equivalents.
 While both libraries provide similar abstractions, their types are distinct and sometimes require explicit conversion.
@@ -98,7 +89,7 @@ v  = []
 
 ## Conversion strategies
 
-### 1.	Direct construction
+### 1. Direct construction
 
 If the element type is compatible (xtd::string to xtd::string, or std::string to std::string), you can directly construct a std::vector from a xtd::list (or the other way around).
 
