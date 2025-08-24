@@ -271,6 +271,12 @@ Inheritance diagram for xtd::threading::thread:</div>
 <tr class="memitem:a93f0434156fb0f1d24763a645b9af70c" id="r_a93f0434156fb0f1d24763a645b9af70c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1threading_1_1thread.html">thread</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93f0434156fb0f1d24763a645b9af70c">priority</a> (<a class="el" href="group__threading.html#gaeee08cba07c5c4d4d10ada96a70bf28d">xtd::threading::thread_priority</a> value)</td></tr>
 <tr class="memdesc:a93f0434156fb0f1d24763a645b9af70c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating the scheduling priority of a thread.  <br /></td></tr>
 <tr class="separator:a93f0434156fb0f1d24763a645b9af70c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43262e94f7f115380c9546e253d29f2f" id="r_a43262e94f7f115380c9546e253d29f2f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43262e94f7f115380c9546e253d29f2f">processor_affinity</a> () const noexcept</td></tr>
+<tr class="memdesc:a43262e94f7f115380c9546e253d29f2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the processors on which the associated thread can run.  <br /></td></tr>
+<tr class="separator:a43262e94f7f115380c9546e253d29f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a048f7ad1168e16001be404f16dbaf254" id="r_a048f7ad1168e16001be404f16dbaf254"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1threading_1_1thread.html">thread</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a048f7ad1168e16001be404f16dbaf254">processor_affinity</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> &gt; &amp;value)</td></tr>
+<tr class="memdesc:a048f7ad1168e16001be404f16dbaf254"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the processors on which the associated thread can run.  <br /></td></tr>
+<tr class="separator:a048f7ad1168e16001be404f16dbaf254"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b7d950d7fb12c145e136c71e7b58609" id="r_a1b7d950d7fb12c145e136c71e7b58609"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga6d54527a3ec7b15afb917a6ba73a4ece">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b7d950d7fb12c145e136c71e7b58609">thread_id</a> () const noexcept</td></tr>
 <tr class="memdesc:a1b7d950d7fb12c145e136c71e7b58609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the native operating system thread id.  <br /></td></tr>
 <tr class="separator:a1b7d950d7fb12c145e136c71e7b58609"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1015,6 +1021,77 @@ The value of the <a class="el" href="#a5a65a2da3e743b8d710749633e10eacc" title="
 
 </div>
 </div>
+<a id="a43262e94f7f115380c9546e253d29f2f" name="a43262e94f7f115380c9546e253d29f2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43262e94f7f115380c9546e253d29f2f">&#9670;&#160;</a></span>processor_affinity() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> &gt; &amp; xtd::threading::thread::processor_affinity </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the processors on which the associated thread can run. </p>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1array.html">xtd::array&lt;xtd::size&gt;</a> that represents an array of processor numbers on which the thread can run. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1thread__state__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::thread_state_exception</a></td><td>The thread has reached a final state, such as Aborted. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the array is empty, no affinity is defined. </dd>
+<dd>
+Works only on Windows and Linux operating syetms, no effect on others. </dd></dl>
+
+</div>
+</div>
+<a id="a048f7ad1168e16001be404f16dbaf254" name="a048f7ad1168e16001be404f16dbaf254"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a048f7ad1168e16001be404f16dbaf254">&#9670;&#160;</a></span>processor_affinity() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1threading_1_1thread.html">thread</a> &amp; xtd::threading::thread::processor_affinity </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the processors on which the associated thread can run. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>An <a class="el" href="classxtd_1_1array.html">xtd::array&lt;xtd::size&gt;</a> that represents an array of processor numbers on which the thread can run. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1thread__state__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::thread_state_exception</a></td><td>The thread has reached a final state, such as Aborted. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the array is empty, no affinity is defined. </dd>
+<dd>
+Works only on Windows and Linux operating syetms, no effect on others. </dd></dl>
+
+</div>
+</div>
 <a id="a1b7d950d7fb12c145e136c71e7b58609" name="a1b7d950d7fb12c145e136c71e7b58609"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1b7d950d7fb12c145e136c71e7b58609">&#9670;&#160;</a></span>thread_id()</h2>
 
@@ -1434,7 +1511,7 @@ The value of the <a class="el" href="#a5a65a2da3e743b8d710749633e10eacc" title="
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Works only on Windows operating syetm. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Works only on Windows operating syetm, no effect on others. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Do not use the <a class="el" href="#a2416048e9a9f8adffc8cb8a969bb2760" title="Either suspends the thread, or if the thread is already suspended, has no effect (Should not be used)...">xtd::threading::thread::suspend</a> and <a class="el" href="#aa0e94d71691111ef5efb7d3c01086f51" title="Resumes a thread that has been suspended (Should not be used).">xtd::threading::thread::resume</a> methods to synchronize the activities of threads. You have no way of knowing what code a thread is executing when you suspend it. If you suspend a thread while it holds locks during a security permission evaluation, other threads in the application might be blocked. If you suspend a thread while it is executing a class constructor, other threads in the application that attempt to use that class are blocked. Deadlocks can occur very easily. </dd></dl>
 
 </div>
@@ -1983,7 +2060,7 @@ This method is equivalent to using platform invoke to call the native Win32 swit
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 23 2025 23:47:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 24 2025 10:32:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
