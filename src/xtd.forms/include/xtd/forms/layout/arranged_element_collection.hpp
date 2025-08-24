@@ -422,9 +422,10 @@ namespace xtd {
         }
         
         /// @brief Sorts the content.
-        virtual void sort() {
+        virtual arranged_element_collection& sort() {
           sorter_t sorter;
           sorter(begin(), end());
+          return self_;
         }
         
         /// @brief Gets an array with the elements of the container.
