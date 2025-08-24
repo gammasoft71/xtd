@@ -195,6 +195,19 @@ namespace xtd {
       /// * lowest
       thread& priority(xtd::threading::thread_priority value);
       
+      /// @brief Gets the processors on which the associated thread can run.
+      /// @return An xtd::array<xtd::size> that represents an array of processor numbers on which the thread can run.
+      /// @exception xtd::threading::thread_state_exception The thread has reached a final state, such as Aborted.
+      /// @remarks If the array is empty, no affinity is defined.
+      /// @remarks Works only on Windows and Linux operating syetms, no effect on others.
+      const xtd::array<xtd::size>& processor_affinity() const noexcept;
+      /// @brief Sets the processors on which the associated thread can run.
+      /// @param value An xtd::array<xtd::size> that represents an array of processor numbers on which the thread can run.
+      /// @exception xtd::threading::thread_state_exception The thread has reached a final state, such as Aborted.
+      /// @remarks If the array is empty, no affinity is defined.
+      /// @remarks Works only on Windows and Linux operating syetms, no effect on others.
+      thread& processor_affinity(const xtd::array<xtd::size>& value);
+
       /// @brief Gets the native operating system thread id.
       /// @return An intptr representing the native operating thread id.
       /// @remarks if the thread is not started this method return xtd::threading::thread::invalid_thread_id.
@@ -275,7 +288,7 @@ namespace xtd {
       
       /// @brief Either suspends the thread, or if the thread is already suspended, has no effect (Should not be used).
       /// @exception xtd::threading::thread_state_exception The thread has not been started or is dead.
-      /// @remarks Works only on Windows operating syetm.
+      /// @remarks Works only on Windows operating syetm, no effect on others.
       /// @warning Do not use the xtd::threading::thread::suspend and xtd::threading::thread::resume methods to synchronize the activities of threads. You have no way of knowing what code a thread is executing when you suspend it. If you suspend a thread while it holds locks during a security permission evaluation, other threads in the application might be blocked. If you suspend a thread while it is executing a class constructor, other threads in the application that attempt to use that class are blocked. Deadlocks can occur very easily.
       void suspend();
       /// @}

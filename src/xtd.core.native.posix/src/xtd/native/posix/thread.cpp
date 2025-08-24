@@ -68,6 +68,10 @@ bool thread::set_priority(intmax_t handle, int32_t priority) {
   return pthread_setschedparam(reinterpret_cast<pthread_t>(handle), policy, &schedParam) == 0;
 }
 
+bool thread::set_processor_affinity(intmax_t handle, const std::vector<size_t>& processor_affinity) {
+  return false;
+}
+
 void thread::sleep(int32_t milliseconds_timeout) {
   auto infinite_sleep = [] {while (true) std::this_thread::sleep_for(std::chrono::hours::max());};
 if (milliseconds_timeout == -1) infinite_sleep();

@@ -65,6 +65,10 @@ bool thread::set_priority(intmax_t handle, int32_t priority) {
   return SetThreadPriority((HANDLE)handle, priority - 2) != FALSE;
 }
 
+bool thread::set_processor_affinity(intmax_t handle, const std::vector<size_t>& processor_affinity) {
+  return false;
+}
+
 void thread::sleep(int32_t milliseconds_timeout) {
   Sleep(milliseconds_timeout);
 }

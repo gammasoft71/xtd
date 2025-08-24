@@ -44,6 +44,7 @@ struct thread::data {
   any_object parameter;
   threading::parameterized_thread_start parameterized_thread_start;
   thread_priority priority {thread_priority::normal};
+  xtd::array<xtd::size> processor_affinity;
   threading::thread_state state {threading::thread_state::unstarted};
   intptr thread_id {invalid_thread_id};
   threading::thread_start thread_start;
@@ -98,7 +99,7 @@ thread::thread(const parameterized_thread_start& start, int32 max_stack_size) : 
 thread& thread::operator=(const thread& value) {
   if (data_.use_count() == 1) close();
   data_ = value.data_;
-  return *this;
+  return self_;
 }
 
 thread::~thread() {
@@ -113,7 +114,7 @@ bool thread::auto_join() const noexcept {
 thread& thread::auto_join(bool value) {
   if (is_aborted() || is_stopped()) throw_helper::throws(exception_case::thread_state);
   data_->auto_join = value;
-  return *this;
+  return self_;
 }
 
 intptr thread::handle() const noexcept {
@@ -129,10 +130,10 @@ bool thread::is_background() const noexcept {
 }
 
 thread& thread::is_background(bool value) {
-  if (!data_) return *this;
+  if (!data_) return self_;
   if (value) data_->state |= threading::thread_state::background;
   else data_->state &= ~threading::thread_state::background;
-  return *this;
+  return self_;
 }
 
 bool thread::is_main_thread() const noexcept {
@@ -170,10 +171,10 @@ string thread::name() const noexcept {
 }
 
 thread& thread::name(const string& value) {
-  if (value == data_->name) return *this;
+  if (value == data_->name) return self_;
   data_->name = value;
   if (get_current_thread_id() == data_->thread_id) native::thread::set_current_thread_name(value);
-  return *this;
+  return self_;
 }
 
 thread_priority thread::priority() const noexcept {
@@ -184,10 +185,23 @@ thread& thread::priority(thread_priority value) {
   if (!enum_object<>::is_defined(value)) throw_helper::throws(exception_case::argument);
   if (is_aborted() || is_stopped()) throw_helper::throws(exception_case::thread_state);
   
-  if (data_->priority == value) return *this;
+  if (data_->priority == value) return self_;
   data_->priority = value;
   if (data_->handle != native::types::invalid_handle()) native::thread::set_priority(data_->handle, as<int32>(value));
-  return *this;
+  return self_;
+}
+
+const xtd::array<xtd::size>& thread::processor_affinity() const noexcept {
+  return data_->processor_affinity;
+}
+
+thread& thread::processor_affinity(const xtd::array<xtd::size>& value) {
+  if (is_aborted() || is_stopped()) throw_helper::throws(exception_case::thread_state);
+
+  if (data_->processor_affinity == value) return self_;
+  data_->processor_affinity = value;
+  if (data_->handle != native::types::invalid_handle()) native::thread::set_processor_affinity(data_->handle, value.items());
+  return self_;
 }
 
 intptr thread::thread_id() const noexcept {
@@ -548,7 +562,8 @@ void thread::thread_proc() {
   if (data_->handle == invalid_handle) data_->handle = get_current_thread_handle();
   if (!data_->name.empty()) native::thread::set_current_thread_name(data_->name);
   if (data_->priority != thread_priority::normal) native::thread::set_priority(data_->handle, as<int32>(data_->priority));
-  
+  if (data_->processor_affinity.size() != 0) native::thread::set_processor_affinity(data_->handle, data_->processor_affinity.items());
+
   if (!data_->thread_start.is_empty()) data_->thread_start();
   else if (!data_->parameterized_thread_start.is_empty()) data_->parameterized_thread_start(data_->parameter);
   else throw_helper::throws(exception_case::invalid_operation);
