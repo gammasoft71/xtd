@@ -571,6 +571,31 @@ namespace xtd {
         result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         if (!any(source)) result.items.push_back(default_value);
         else for (const auto& item : source)
+          result.items.push_back(item);
+        return result;
+      }
+      
+      /// @brief Returns distinct elements from a sequence by using the default equality comparer to compare values.
+      /// @param source The sequence to remove duplicate elements from.
+      /// @return An enumerable distinct elements from the source sequence.
+      template<class source_t>
+      static auto distinct(const ienumerable<source_t>& source) noexcept {
+        auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
+        for (const auto& item : source)
+          if (!contains(result, item))
+            result.items.push_back(item);
+        return result;
+      }
+      
+      /// @brief Returns distinct elements from a sequence by using a specified xtd::collections::generic::iequality_comparer <type_t> to compare values.
+      /// @param source The sequence to remove duplicate elements from.
+      /// @param comparer An xtd::collections::generic::iequality_comparer <type_t> to compare values.
+      /// @return An enumerable distinct elements from the source sequence.
+      template<class source_t>
+      static auto distinct(const ienumerable<source_t>& source, const xtd::collections::generic::iequality_comparer<source_t>& comparer) noexcept {
+        auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
+        for (const auto& item : source)
+          if (!contains(result, item, comparer))
             result.items.push_back(item);
         return result;
       }
