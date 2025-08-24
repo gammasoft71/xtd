@@ -278,7 +278,7 @@ namespace xtd {
           auto distinct(const xtd::collections::generic::iequality_comparer<source_t>& comparer) const noexcept {
             return xtd::linq::enumerable::distinct(base(), comparer);
           }
-
+          
           /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
           /// @param predicate A function to test each element for a condition.
           /// @param default_value The default value to return if the sequence is empty.

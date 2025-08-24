@@ -571,7 +571,7 @@ namespace xtd {
         result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         if (!any(source)) result.items.push_back(default_value);
         else for (const auto& item : source)
-          result.items.push_back(item);
+            result.items.push_back(item);
         return result;
       }
       
