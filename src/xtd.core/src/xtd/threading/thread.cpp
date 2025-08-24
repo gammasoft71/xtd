@@ -197,7 +197,7 @@ const xtd::array<xtd::size>& thread::processor_affinity() const noexcept {
 
 thread& thread::processor_affinity(const xtd::array<xtd::size>& value) {
   if (is_aborted() || is_stopped()) throw_helper::throws(exception_case::thread_state);
-
+  
   if (data_->processor_affinity == value) return self_;
   data_->processor_affinity = value;
   if (data_->handle != native::types::invalid_handle()) native::thread::set_processor_affinity(data_->handle, value.items());
@@ -563,7 +563,7 @@ void thread::thread_proc() {
   if (!data_->name.empty()) native::thread::set_current_thread_name(data_->name);
   if (data_->priority != thread_priority::normal) native::thread::set_priority(data_->handle, as<int32>(data_->priority));
   if (data_->processor_affinity.size() != 0) native::thread::set_processor_affinity(data_->handle, data_->processor_affinity.items());
-
+  
   if (!data_->thread_start.is_empty()) data_->thread_start();
   else if (!data_->parameterized_thread_start.is_empty()) data_->parameterized_thread_start(data_->parameter);
   else throw_helper::throws(exception_case::invalid_operation);

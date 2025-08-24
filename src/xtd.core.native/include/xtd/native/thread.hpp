@@ -106,7 +106,7 @@ namespace xtd {
       /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
       static bool set_processor_affinity(intmax_t handle, const std::vector<size_t>& processor_affinity);
-
+      
       /// @brief Suspends the current thread for a specified time.
       /// @param milliseconds_timeout The number of milliseconds for which the thread is blocked. Specify zero (0) to indicate that this thread should be suspended to allow other waiting threads to execute. Specify -1 to block the thread indefinitely.
       /// @return `true` if succeed; otherwise `false`.
