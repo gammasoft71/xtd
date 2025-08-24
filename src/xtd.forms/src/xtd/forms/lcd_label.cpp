@@ -172,7 +172,6 @@ array<char32> lcd_label::valid_characters() {
     case lcd_style::dot_matrix_display: return dot_matrix_display_digit {}.valid_characters();
     default: throw_helper::throws(exception_case::argument, "lcd_style invalid"_t);
   }
-  return {};
 }
 
 lcd_label lcd_label::create() {
