@@ -200,7 +200,7 @@ thread& thread::processor_affinity(const xtd::array<xtd::size>& value) {
   if (is_aborted() || is_stopped()) throw_helper::throws(exception_case::thread_state);
   
   if (data_->processor_affinity == value) return self_;
-  data_->processor_affinity = value;
+  data_->processor_affinity = value.distinct();
   if (data_->handle != native::types::invalid_handle()) native::thread::set_processor_affinity(data_->handle, value.items());
   return self_;
 }
