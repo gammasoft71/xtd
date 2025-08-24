@@ -284,6 +284,14 @@ Inheritance diagram for xtd::linq::enumerable:</div>
 <tr class="memitem:a92747965c96b64bcaf7246ac0907f6a3"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a92747965c96b64bcaf7246ac0907f6a3">default_if_empty</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const source_t &amp;default_value) noexcept</td></tr>
 <tr class="memdesc:a92747965c96b64bcaf7246ac0907f6a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the elements of the specified sequence or the specified value in a singleton collection if the sequence is empty.  <br /></td></tr>
 <tr class="separator:a92747965c96b64bcaf7246ac0907f6a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadd13075c29205d18a320e2cf44c83cc" id="r_aadd13075c29205d18a320e2cf44c83cc"><td class="memTemplParams" colspan="2">template&lt;class source_t&gt; </td></tr>
+<tr class="memitem:aadd13075c29205d18a320e2cf44c83cc"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aadd13075c29205d18a320e2cf44c83cc">distinct</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source) noexcept</td></tr>
+<tr class="memdesc:aadd13075c29205d18a320e2cf44c83cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns distinct elements from a sequence by using the default equality comparer to compare values.  <br /></td></tr>
+<tr class="separator:aadd13075c29205d18a320e2cf44c83cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cc700fbc3281508f048620b36aad840" id="r_a4cc700fbc3281508f048620b36aad840"><td class="memTemplParams" colspan="2">template&lt;class source_t&gt; </td></tr>
+<tr class="memitem:a4cc700fbc3281508f048620b36aad840"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a4cc700fbc3281508f048620b36aad840">distinct</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; source_t &gt; &amp;comparer) noexcept</td></tr>
+<tr class="memdesc:a4cc700fbc3281508f048620b36aad840"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns distinct elements from a sequence by using a specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; to compare values.  <br /></td></tr>
+<tr class="separator:a4cc700fbc3281508f048620b36aad840"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84b247a0e769fe8eed5a37b3ab4e44fd" id="r_a84b247a0e769fe8eed5a37b3ab4e44fd"><td class="memTemplParams" colspan="2">template&lt;class source_t&gt; </td></tr>
 <tr class="memitem:a84b247a0e769fe8eed5a37b3ab4e44fd"><td class="memTemplItemLeft" align="right" valign="top">static source_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a84b247a0e769fe8eed5a37b3ab4e44fd">first_or_default</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const std::function&lt; bool(const source_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate</a>, const source_t &amp;default_value) noexcept</td></tr>
 <tr class="memdesc:a84b247a0e769fe8eed5a37b3ab4e44fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.  <br /></td></tr>
@@ -2553,6 +2561,83 @@ template&lt;class source_t&gt; </div>
 
 </div>
 </div>
+<a id="aadd13075c29205d18a320e2cf44c83cc" name="aadd13075c29205d18a320e2cf44c83cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadd13075c29205d18a320e2cf44c83cc">&#9670;&#160;</a></span>distinct() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class source_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static auto xtd::linq::enumerable::distinct </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns distinct elements from a sequence by using the default equality comparer to compare values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>The sequence to remove duplicate elements from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An enumerable distinct elements from the source sequence. </dd></dl>
+
+</div>
+</div>
+<a id="a4cc700fbc3281508f048620b36aad840" name="a4cc700fbc3281508f048620b36aad840"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cc700fbc3281508f048620b36aad840">&#9670;&#160;</a></span>distinct() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class source_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static auto xtd::linq::enumerable::distinct </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; source_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>comparer</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns distinct elements from a sequence by using a specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; to compare values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>The sequence to remove duplicate elements from. </td></tr>
+    <tr><td class="paramname">comparer</td><td>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; to compare values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An enumerable distinct elements from the source sequence. </dd></dl>
+
+</div>
+</div>
 <a id="a84b247a0e769fe8eed5a37b3ab4e44fd" name="a84b247a0e769fe8eed5a37b3ab4e44fd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a84b247a0e769fe8eed5a37b3ab4e44fd">&#9670;&#160;</a></span>first_or_default() <span class="overload">[1/4]</span></h2>
 
@@ -2806,7 +2891,7 @@ template&lt;class type_t&gt; </div>
 <div class="line"><span class="comment">// 64</span></div>
 <div class="line"><span class="comment">// 81</span></div>
 <div class="line"><span class="comment">// 100</span></div>
-<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_ad3f2b197a8f9e4e52710edcdd59870e9"><div class="ttname"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">xtd::linq::enumerable::range</a></div><div class="ttdeci">static auto range(type_t count)</div><div class="ttdoc">Generates a sequence of integral numbers within a specified range.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:624</div></div>
+<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_ad3f2b197a8f9e4e52710edcdd59870e9"><div class="ttname"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">xtd::linq::enumerable::range</a></div><div class="ttdeci">static auto range(type_t count)</div><div class="ttdoc">Generates a sequence of integral numbers within a specified range.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:649</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">xtd::console_key::x</a></div><div class="ttdeci">@ x</div><div class="ttdoc">The X key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:134</div></div>
 <div class="ttc" id="anamespacextd_1_1linq_html"><div class="ttname"><a href="namespacextd_1_1linq.html">xtd::linq</a></div><div class="ttdoc">Provides classes and interfaces that support queries that use Language-Integrated Query (LINQ).</div><div class="ttdef"><b>Definition</b> enumerable.hpp:41</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -3855,7 +3940,7 @@ template&lt;class source_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 10:32:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 24 2025 13:10:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
