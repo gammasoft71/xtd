@@ -69,7 +69,7 @@ bool thread::set_priority(intmax_t handle, int32_t priority) {
 }
 
 bool thread::set_processor_affinity(intmax_t handle, const std::vector<size_t>& processor_affinity) {
-  if (thread_cast_<pthread_t>(handle) == PTHREAD_FAILED) return false;
+  if (reinterpret_cast<pthread_t>(handle) == PTHREAD_FAILED) return false;
   
   auto mask = cpu_set_t {};
   CPU_ZERO(&mask);
