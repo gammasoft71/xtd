@@ -91,7 +91,7 @@ bool thread::set_processor_affinity(intmax_t handle, const std::vector<size_t>& 
   for (auto cpu : processor_affinity)
     CPU_SET(cpu, &mask);
     
-  return pthread_setaffinity_np(reinterpret_cast<pthread_t>(handle), sizeof(mask), &mask) == 0;
+  return pthread_setaffinity_np(thread_cast_<pthread_t>(handle), sizeof(mask), &mask) == 0;
 }
 
 void thread::sleep(int32_t milliseconds_timeout) {
