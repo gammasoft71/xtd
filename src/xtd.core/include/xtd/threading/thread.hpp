@@ -207,7 +207,7 @@ namespace xtd {
       /// @remarks If the array is empty, no affinity is defined.
       /// @remarks Works only on Windows and Linux operating syetms, no effect on others.
       thread& processor_affinity(const xtd::array<xtd::size>& value);
-
+      
       /// @brief Gets the native operating system thread id.
       /// @return An intptr representing the native operating thread id.
       /// @remarks if the thread is not started this method return xtd::threading::thread::invalid_thread_id.
