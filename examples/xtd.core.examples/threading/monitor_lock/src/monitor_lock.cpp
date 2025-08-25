@@ -1,13 +1,4 @@
-#include <xtd/threading/auto_reset_event>
-#include <xtd/threading/interlocked>
-#include <xtd/threading/thread>
-#include <xtd/threading/thread_pool>
-#include <xtd/console>
-#include <xtd/lock>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 namespace monitor_lock_example {
   class sync_resource : public object {

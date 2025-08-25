@@ -1,10 +1,5 @@
-#include <xtd/threading/thread>
-#include <xtd/console>
-#include <xtd/startup>
+#include <xtd/xtd>
 #include <thread>
-
-using namespace xtd;
-using namespace xtd::threading;
 
 namespace mixing_std_and_xtd_threads_example {
   class mixing_std_and_xtd_threads_class {

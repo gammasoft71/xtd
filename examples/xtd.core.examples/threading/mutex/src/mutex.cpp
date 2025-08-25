@@ -1,12 +1,4 @@
-#include <xtd/collections/generic/list>
-#include <xtd/threading/mutex>
-#include <xtd/threading/thread>
-#include <xtd/console>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 namespace mutex_example {
   class program {

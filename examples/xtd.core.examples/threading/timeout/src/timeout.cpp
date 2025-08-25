@@ -1,11 +1,4 @@
-#include <xtd/threading/interlocked>
-#include <xtd/threading/thread>
-#include <xtd/threading/thread_interrupted_exception>
-#include <xtd/console>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 namespace timeout_example {
   class stay_awake {

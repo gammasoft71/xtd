@@ -1,11 +1,4 @@
-#include <xtd/threading/interlocked>
-#include <xtd/threading/thread>
-#include <xtd/console>
-#include <xtd/random>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 namespace interlocked_example {
   struct my_thread {
@@ -39,7 +32,7 @@ namespace interlocked_example {
         my_threads[index].thread.join();
     }
     
-    static void my_thread_proc(std::any name) {
+    static void my_thread_proc(any_object name) {
       for (auto index = 0; index < num_thread_iterations; ++index) {
         use_resource(as<string>(name));
         

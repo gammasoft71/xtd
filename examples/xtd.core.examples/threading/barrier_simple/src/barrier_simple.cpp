@@ -1,10 +1,4 @@
-#include <xtd/threading/barrier>
-#include <xtd/threading/thread_pool>
-#include <xtd/console>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 namespace barrier_example {
   class program {

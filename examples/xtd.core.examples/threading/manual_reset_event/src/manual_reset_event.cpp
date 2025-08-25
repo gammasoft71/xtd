@@ -1,12 +1,4 @@
-#include <xtd/collections/generic/list>
-#include <xtd/threading/manual_reset_event>
-#include <xtd/threading/thread>
-#include <xtd/console>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 namespace manual_reset_event_example {
   class program {
