@@ -1,10 +1,6 @@
-#include <xtd/collections/bit_array>
-#include <xtd/console>
-#include <xtd/startup>
+#include <xtd/xtd>
 
-using namespace xtd;
 using namespace xtd::collections;
-using namespace xtd::collections::generic;
 
 class program {
 public:
@@ -56,7 +52,7 @@ public:
   }
     
   template<class object_t>
-  static void print_values(const ienumerable<object_t>& my_list, int my_width )  {
+  static void print_values(const generic::ienumerable<object_t>& my_list, int my_width )  {
     auto i = my_width;
     for (auto obj : my_list) {
       if (i <= 0)  {

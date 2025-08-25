@@ -1,8 +1,4 @@
-#include <xtd/bit_converter>
-#include <xtd/console>
-#include <xtd/startup>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 namespace bit_converter_is_litte_endian_example {
   class program {

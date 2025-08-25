@@ -1,10 +1,4 @@
-#include <xtd/boxing>
-#include <xtd/console>
-#include <xtd/date_time>
-#include <xtd/day_of_week>
-#include <xtd/typeof>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 // To box a structure or class, it must inherit the xtd::icomparable, xtd::iequatable and xtd::ihashable interfaces.
 struct foo : icomparable<foo>, iequatable<foo>, ihashable, istringable {

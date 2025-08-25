@@ -1,7 +1,4 @@
-#include <xtd/bit_converter>
-#include <xtd/console>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   const auto formatter = "{0,25}{1,30}";
