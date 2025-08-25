@@ -150,11 +150,7 @@ Some methods, such as xtd::array::create_instance, xtd::array::copy, xtd::array:
 <dd>
 The <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> is not guaranteed to be sorted. You must sort the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> prior to performing operations (such as xtd::array::binary_search) that require the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> to be sorted. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates different methods to create an array. <div class="fragment"></div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example creates and initializes an Array and displays its properties and its elements. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/any_object&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/array&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example creates and initializes an Array and displays its properties and its elements. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> print_values(<span class="keyword">const</span> <a class="code hl_function" href="#a217de0e26deb393ff94aae8db3b1890f">array&lt;int&gt;</a>&amp; my_arr) {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> : my_arr)</div>
@@ -170,34 +166,34 @@ The <a class="el" href="classxtd_1_1array.html" title="Provides methods for crea
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Creates and initializes a new integer array and a new Object array.</span></div>
-<div class="line">  <span class="keyword">auto</span> my_int_array = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;int&gt;</a> {1, 2, 3, 4, 5};</div>
-<div class="line">  <span class="keyword">auto</span> my_obj_array = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;any_object&gt;</a> {26, 27, 28, 29, 30};</div>
+<div class="line">  <span class="keyword">auto</span> my_int_array = array&lt;int&gt; {1, 2, 3, 4, 5};</div>
+<div class="line">  <span class="keyword">auto</span> my_obj_array = array&lt;any_object&gt; {26, 27, 28, 29, 30};</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Prints the initial values of both arrays.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Initially,&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;integer array:&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Initially,&quot;</span>);</div>
+<div class="line">  console::write(<span class="stringliteral">&quot;integer array:&quot;</span>);</div>
 <div class="line">  print_values(my_int_array);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;Object array: &quot;</span>);</div>
+<div class="line">  console::write(<span class="stringliteral">&quot;Object array: &quot;</span>);</div>
 <div class="line">  print_values(my_obj_array);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Copies the first two elements from the integer array to the Object array.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1array_3_4.html#a20986936607a9075a3c3f01b81002f47">array&lt;&gt;::copy</a>(my_int_array, my_obj_array, 2);</div>
+<div class="line">  array&lt;&gt;::copy(my_int_array, my_obj_array, 2);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Prints the values of the modified arrays.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nAfter copying the first two elements of the integer array to the Object array,&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;integer array:&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;\nAfter copying the first two elements of the integer array to the Object array,&quot;</span>);</div>
+<div class="line">  console::write(<span class="stringliteral">&quot;integer array:&quot;</span>);</div>
 <div class="line">  print_values(my_int_array);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;Object array: &quot;</span>);</div>
+<div class="line">  console::write(<span class="stringliteral">&quot;Object array: &quot;</span>);</div>
 <div class="line">  print_values(my_obj_array);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Copies the last two elements from the object array to the integer array.</span></div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1array_3_4.html#a20986936607a9075a3c3f01b81002f47">xtd::array&lt;&gt;::copy</a>(my_obj_array, my_obj_array.get_upper_bound(0) - 1, my_int_array, my_int_array.get_upper_bound(0) - 1, 2);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Prints the values of the modified arrays.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nAfter copying the last two elements of the Object array to the integer array,&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;integer array:&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;\nAfter copying the last two elements of the Object array to the integer array,&quot;</span>);</div>
+<div class="line">  console::write(<span class="stringliteral">&quot;integer array:&quot;</span>);</div>
 <div class="line">  print_values(my_int_array);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;Object array: &quot;</span>);</div>
+<div class="line">  console::write(<span class="stringliteral">&quot;Object array: &quot;</span>);</div>
 <div class="line">  print_values(my_obj_array);</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -220,7 +216,6 @@ The <a class="el" href="classxtd_1_1array.html" title="Provides methods for crea
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">xtd::console_key::o</a></div><div class="ttdeci">@ o</div><div class="ttdoc">The O key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:116</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
@@ -1269,7 +1264,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 25 2025 17:49:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Aug 25 2025 21:59:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
