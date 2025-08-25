@@ -1,6 +1,4 @@
-#include <xtd/xtd.tunit>
-
-using namespace xtd::tunit;
+#include <xtd/xtd>
 
 class test_class_(test_application) {
 public:

@@ -1,11 +1,5 @@
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/color_picker>
-#include <xtd/forms/form>
-#include <xtd/forms/panel>
+#include <xtd/xtd>
 #include "properties/settings.hpp"
-
-using namespace xtd::forms;
 
 auto main() -> int {
   auto main_form = form::create("Settings example");

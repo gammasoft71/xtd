@@ -1,7 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 auto main() -> int {
   application::run(form::create("Application registered"));

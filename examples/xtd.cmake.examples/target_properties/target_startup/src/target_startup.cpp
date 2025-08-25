@@ -1,8 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/startup>
-
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace target_startup {
   class program : public form {
