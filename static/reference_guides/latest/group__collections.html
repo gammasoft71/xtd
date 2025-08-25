@@ -195,10 +195,8 @@ Typedefs</h2></td></tr>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections.html" title="The xtd::collections namespace contains interfaces and classes that define various collections of obj...">xtd::collections</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows hows to use <a class="el" href="#ga83a0a06ecb97330626993339079ebbf6" title="Represents a collection of xtd::any_object.">xtd::collections::array_list</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/array_list&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows hows to use <a class="el" href="#ga83a0a06ecb97330626993339079ebbf6" title="Represents a collection of xtd::any_object.">xtd::collections::array_list</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections.html">xtd::collections</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> collection_t&gt;</div>
@@ -232,7 +230,6 @@ Typedefs</h2></td></tr>
 <div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:462</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_html"><div class="ttname"><a href="namespacextd_1_1collections.html">xtd::collections</a></div><div class="ttdoc">The xtd::collections namespace contains interfaces and classes that define various collections of obj...</div><div class="ttdef"><b>Definition</b> any_pair.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>TTo add a class, structure or any other type unknown to xtd, you need to implement the <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> and xtd::icompoabale interfaces or overrride the == and &lt; operetors. </dd></dl>
 
@@ -363,10 +360,8 @@ The foreach statement is a wrapper around the enumerator, which only allows read
 <dd>
 Because serializing and deserializing an enumerator for a <a class="el" href="#ga5a1cbe0162263e2c6626f996ca032078" title="Represents a collection of key/value pairs that are organized based on the hash code of the key.">xtd::collections::hashtable</a> can cause the elements to become reordered, it is not possible to continue enumeration without calling the Reset method. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Because keys can be inherited and their behavior changed, their absolute uniqueness cannot be guaranteed by comparisons using the Equals method. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to create, initialize and perform various functions to a <a class="el" href="#ga5a1cbe0162263e2c6626f996ca032078" title="Represents a collection of key/value pairs that are organized based on the hash code of the key.">xtd::collections::hashtable</a> and how to print out its keys and values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/hashtable&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to create, initialize and perform various functions to a <a class="el" href="#ga5a1cbe0162263e2c6626f996ca032078" title="Represents a collection of key/value pairs that are organized based on the hash code of the key.">xtd::collections::hashtable</a> and how to print out its keys and values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections.html">xtd::collections</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -642,6 +637,7 @@ For the generic version of this interface, see xtd::collections::generic::icolle
 <div class="ttc" id="agroup__xtd__core_html_gga7a589c8f2da82ae9a6f693b968cb7afca43b5c9175984c071f30b873fdce0a000"><div class="ttname"><a href="group__xtd__core.html#gga7a589c8f2da82ae9a6f693b968cb7afca43b5c9175984c071f30b873fdce0a000">xtd::io::seek_origin::current</a></div><div class="ttdeci">@ current</div><div class="ttdoc">Specifies the current position within a stream.</div><div class="ttdef"><b>Definition</b> seek_origin.hpp:20</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">xtd::console_key::o</a></div><div class="ttdeci">@ o</div><div class="ttdoc">The O key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:116</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 <div class="ttc" id="anamespacextd_html_a2ed47ae86e395ccbe84ab1857c78c4e0"><div class="ttname"><a href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">xtd::to_string</a></div><div class="ttdeci">string to_string() const noexcept override</div><div class="ttdoc">Returns the string representation of this xtd::read_only_span &lt;type_t&gt; object.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:375</div></div>
 <div class="ttc" id="anamespacextd_html_a9d02f9ee8b045cc4b36d45c12aec4e3d"><div class="ttname"><a href="namespacextd.html#a9d02f9ee8b045cc4b36d45c12aec4e3d">xtd::equals</a></div><div class="ttdeci">bool equals(const object &amp;obj) const noexcept override</div><div class="ttdoc">Determines whether the specified object is equal to the current object.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:272</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -1105,7 +1101,7 @@ For the generic version of this interface, see xtd::collections::generic::ilist 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 25 2025 17:49:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Aug 25 2025 21:59:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
