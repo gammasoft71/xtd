@@ -196,11 +196,11 @@ const xtd::array<xtd::size>& thread::processor_affinity() const noexcept {
 }
 
 thread& thread::processor_affinity(const xtd::array<xtd::size>& value) {
-  if (!value.all([](size value) {return value < as<size>(environment::processor_count());})) throw_helper::throws(exception_case::argument);
   if (is_aborted() || is_stopped()) throw_helper::throws(exception_case::thread_state);
   
   if (data_->processor_affinity == value) return self_;
-  data_->processor_affinity = value.distinct();
+  if (!value.all([](size value) {return value < as<size>(environment::processor_count());})) throw_helper::throws(exception_case::argument);
+  data_->processor_affinity = list<xtd::size> {value}.sort().distinct();
   if (data_->handle != native::types::invalid_handle()) native::thread::set_processor_affinity(data_->handle, value.items());
   return self_;
 }
