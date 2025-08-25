@@ -76,9 +76,9 @@ thread::thread(const thread_start& start, int32 max_stack_size) : data_(new_sptr
   data_->managed_thread_id = generate_managed_thread_id();
   data_->thread_start = start;
   data_->max_stack_size = max_stack_size;
-  auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
   auto safe_thread = new_sptr<thread>(*this);
   data_->safe_thread = safe_thread.get();
+  auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
   get_static_data().threads.add(safe_thread);
 }
 
@@ -90,9 +90,9 @@ thread::thread(const parameterized_thread_start& start, int32 max_stack_size) : 
   data_->managed_thread_id = generate_managed_thread_id();
   data_->parameterized_thread_start = start;
   data_->max_stack_size = max_stack_size;
-  auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
   auto safe_thread = new_sptr<thread>(*this);
   data_->safe_thread = safe_thread.get();
+  auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
   get_static_data().threads.add(safe_thread);
 }
 
@@ -150,7 +150,6 @@ bool thread::joinable() const noexcept {
 
 thread& thread::main_thread() {
   static auto main_thread = threading::thread {};
-  auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
   if (main_thread.data_->managed_thread_id != main_managed_thread_id) {
     main_thread.data_->end_thread_event.set();
     main_thread.data_->handle = get_current_thread_handle();
@@ -287,12 +286,17 @@ bool thread::join_all(int32 milliseconds_timeout) {
   auto sw = stopwatch::start_new();
   if (!thread_pool::join_all(milliseconds_timeout)) return false;
   
-  auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
   auto thread_pointers = list<thread*> {};
-  for (auto& thread : get_static_data().threads)
-    thread_pointers.add(thread.get());
-    
-  if (sw.elapsed_milliseconds() > milliseconds_timeout || join_all_ptr(thread_pointers, milliseconds_timeout - as<int32>(sw.elapsed_milliseconds())) == false) return false;
+  {
+    auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
+    for (auto& thread : get_static_data().threads)
+      thread_pointers.add(thread.get());
+  }
+  
+  if (milliseconds_timeout != timeout::infinite && sw.elapsed_milliseconds() > milliseconds_timeout) milliseconds_timeout = 0;
+  else if (milliseconds_timeout != timeout::infinite && sw.elapsed_milliseconds() < milliseconds_timeout) milliseconds_timeout -= sw.elapsed_milliseconds();
+  if (join_all_ptr(thread_pointers, milliseconds_timeout) == false) return false;
+  auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
   get_static_data().threads.clear();
   return true;
 }
