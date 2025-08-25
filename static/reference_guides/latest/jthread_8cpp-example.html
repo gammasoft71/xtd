@@ -97,23 +97,18 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1threading_1_1jthread.html" title="Creates and controls an automatically rejoins on destruction thread, sets its priority,...">xtd::threading::jthread</a> class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/jthread&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/block_scope&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> thread_proc = [] {</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a278b3fabeade100cbc012968115792fd">thread::current_thread</a>().name(<span class="stringliteral">&quot;thread_proc&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0; index &lt; 10; ++index, <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">thread::sleep</a>(100_ms))</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;  ({}) index = {}&quot;</span>, <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a278b3fabeade100cbc012968115792fd">thread::current_thread</a>().name(), index);</div>
+<div class="line">    thread::current_thread().name(<span class="stringliteral">&quot;thread_proc&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0; index &lt; 10; ++index, thread::sleep(100_ms))</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;  ({}) index = {}&quot;</span>, thread::current_thread().name(), index);</div>
 <div class="line">  };</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a278b3fabeade100cbc012968115792fd">thread::current_thread</a>().name(<span class="stringliteral">&quot;main&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;({}) begin&quot;</span>, <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a278b3fabeade100cbc012968115792fd">thread::current_thread</a>().name());</div>
-<div class="line">  <a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> thread1 = <a class="code hl_function" href="classxtd_1_1threading_1_1jthread.html#a18169e8b51d911936bb7de04faf74e4e">jthread::start_new</a>(thread_proc)) {</div>
+<div class="line">  thread::current_thread().name(<span class="stringliteral">&quot;main&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;({}) begin&quot;</span>, thread::current_thread().name());</div>
+<div class="line">  <a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<span class="keyword">auto</span> thread1 = jthread::start_new(thread_proc)) {</div>
 <div class="line">    <span class="comment">// Remarks :</span></div>
 <div class="line">    <span class="comment">// * The `thread1` will be joined when the scope of the current block is closed.</span></div>
 <div class="line">    <span class="comment">// * If you create `thread1` with xtd::threading::thread, `thread1` will be joined when the end of main.</span></div>
@@ -121,7 +116,7 @@ $(function(){ initResizable(false); });
 <div class="line">    <span class="comment">// * If you create `thread1` with std::thread, there will be a runtime error.</span></div>
 <div class="line">    <span class="comment">// You can try it yourself to see the different scenarios.</span></div>
 <div class="line">  }</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;({}) end&quot;</span>, <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a278b3fabeade100cbc012968115792fd">thread::current_thread</a>().name());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;({}) end&quot;</span>, thread::current_thread().name());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produce the following output if `thread1` is created with xtd::threading::jthread :</span></div>
@@ -173,18 +168,12 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// (main) begin</span></div>
 <div class="line"><span class="comment">// libc++abi: terminating</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1jthread_html_a18169e8b51d911936bb7de04faf74e4e"><div class="ttname"><a href="classxtd_1_1threading_1_1jthread.html#a18169e8b51d911936bb7de04faf74e4e">xtd::threading::jthread::start_new</a></div><div class="ttdeci">static jthread start_new(const xtd::threading::thread_start &amp;start)</div><div class="ttdoc">Create and immedialtely start a xtd::threading::jthread with specified method.</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a278b3fabeade100cbc012968115792fd"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a278b3fabeade100cbc012968115792fd">xtd::threading::thread::current_thread</a></div><div class="ttdeci">static thread &amp; current_thread() noexcept</div><div class="ttdoc">Gets the currently running thread.</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a42bc6e2bb805f928e50ae73d243b95f2"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">xtd::threading::thread::sleep</a></div><div class="ttdeci">static void sleep(int32 milliseconds_timeout)</div><div class="ttdoc">Suspends the current thread for a specified time.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga9ba81b3bf268ec1eb95752f516f563e9"><div class="ttname"><a href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a></div><div class="ttdeci">#define block_scope_(...)</div><div class="ttdoc">The specified expression is cleared automatically when the scope is ended.</div><div class="ttdef"><b>Definition</b> block_scope.hpp:25</div></div>
-<div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 25 2025 10:42:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Aug 25 2025 17:48:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
