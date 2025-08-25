@@ -144,16 +144,7 @@ The <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits t
 Semaphores are of two types: local semaphores and named system semaphores. If you create a <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> object using a constructor that accepts a name, it is associated with an operating-system semaphore of that name. Named system semaphores are visible throughout the operating system, and can be used to synchronize the activities of processes. You can create multiple <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> objects that represent the same named system semaphore, and you can use the <a class="el" href="#adecddb2165236cfdd2a94298ba6e6c9e" title="Opens the specified named semaphore, if it already exists.">xtd::threading::semaphore::open_existing</a> method to open an existing named system semaphore. </dd>
 <dd>
 A local semaphore exists only within your process. It can be used by any thread in your process that has a reference to the local <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> object. Each <a class="el" href="classxtd_1_1threading_1_1semaphore.html" title="Limits the number of threads that can access a resource or pool of resources concurrently.">xtd::threading::semaphore</a> object is a separate local semaphore. </dd></dl>
-<dl class="section user"><dt>Example</dt><dd>The following code example creates a semaphore with a maximum count of three and an initial count of zero. The example starts five threads, which block waiting for the semaphore. The main thread uses the <a class="el" href="#aef9176db04539a533a40b9d7983c182d" title="Exits the semaphore a specified number of times and returns the previous count.">xtd::threading::semaphore::release(int32)</a> method overload to increase the semaphore count to its maximum, allowing three threads to enter the semaphore. Each thread uses the <a class="el" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2" title="Suspends the current thread for a specified time.">xtd::threading::thread::sleep</a> method to wait for one second, to simulate work, and then calls the <a class="el" href="#ae91d68be55143e6563e3a6462b567195" title="Exits the semaphore and returns the previous count.">xtd::threading::semaphore::release()</a> method overload to release the semaphore. Each time the semaphore is released, the previous semaphore count is displayed. Console messages track semaphore use. The simulated work interval is increased slightly for each thread, to make the output easier to read. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/list&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/threading/interlocked&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/threading/semaphore&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
+<dl class="section user"><dt>Example</dt><dd>The following code example creates a semaphore with a maximum count of three and an initial count of zero. The example starts five threads, which block waiting for the semaphore. The main thread uses the <a class="el" href="#aef9176db04539a533a40b9d7983c182d" title="Exits the semaphore a specified number of times and returns the previous count.">xtd::threading::semaphore::release(int32)</a> method overload to increase the semaphore count to its maximum, allowing three threads to enter the semaphore. Each thread uses the <a class="el" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2" title="Suspends the current thread for a specified time.">xtd::threading::thread::sleep</a> method to wait for one second, to simulate work, and then calls the <a class="el" href="#ae91d68be55143e6563e3a6462b567195" title="Exits the semaphore and returns the previous count.">xtd::threading::semaphore::release()</a> method overload to release the semaphore. Each time the semaphore is released, the previous semaphore count is displayed. Console messages track semaphore use. The simulated work interval is increased slightly for each thread, to make the output easier to read. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>mutex_example {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
@@ -179,7 +170,7 @@ A local semaphore exists only within your process. It can be used by any thread 
 <div class="line">      <span class="comment">// Wait for half a second, to allow all the</span></div>
 <div class="line">      <span class="comment">// threads to start and to block on the semaphore.</span></div>
 <div class="line">      <span class="comment">//</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">thread::sleep</a>(500);</div>
+<div class="line">      thread::sleep(500);</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// The main thread starts out holding the entire</span></div>
 <div class="line">      <span class="comment">// semaphore count. Calling Release(3) brings the</span></div>
@@ -190,34 +181,34 @@ A local semaphore exists only within your process. It can be used by any thread 
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Main thread calls Release(3).&quot;</span>);</div>
 <div class="line">      pool.release(3);</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">thread::sleep</a>(100);</div>
+<div class="line">      thread::sleep(100);</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Main thread exits.&quot;</span>);</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Join all threads with timeout because the pool</span></div>
 <div class="line">      <span class="comment">// semaphore released only for 3 threads.</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a6998fa3ca4218452ae93143d120174ba">thread::join_all</a>(threads, 100);</div>
+<div class="line">      thread::join_all(threads, 100);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> worker(std::any num) {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> worker(any_object num) {</div>
 <div class="line">      <span class="comment">// Each worker thread begins by requesting the</span></div>
 <div class="line">      <span class="comment">// semaphore.</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;thread {0} begins &quot;</span></div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;thread {0} begins &quot;</span></div>
 <div class="line">                          <span class="stringliteral">&quot;and waits for the semaphore.&quot;</span>, num);</div>
 <div class="line">      pool.wait_one();</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// A padding interval to make the output more orderly.</span></div>
-<div class="line">      <span class="keywordtype">int</span> padding = <a class="code hl_function" href="classxtd_1_1threading_1_1interlocked.html#a35d4d7219315784e960dfc7667181f3d">interlocked::add</a>(padding, 100);</div>
+<div class="line">      <span class="keywordtype">int</span> padding = interlocked::add(padding, 100);</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;thread {0} enters the semaphore.&quot;</span>, num);</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;thread {0} enters the semaphore.&quot;</span>, num);</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// The thread&#39;s &quot;work&quot; consists of sleeping for</span></div>
 <div class="line">      <span class="comment">// about a second. Each thread &quot;works&quot; a little</span></div>
 <div class="line">      <span class="comment">// longer, just to make the output more orderly.</span></div>
 <div class="line">      <span class="comment">//</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">thread::sleep</a>(1000 + padding);</div>
+<div class="line">      thread::sleep(1000 + padding);</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;thread {0} releases the semaphore.&quot;</span>, num);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;thread {0} previous semaphore count: {1}&quot;</span>,</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;thread {0} releases the semaphore.&quot;</span>, num);</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;thread {0} previous semaphore count: {1}&quot;</span>,</div>
 <div class="line">                          num, pool.release());</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -261,18 +252,10 @@ A local semaphore exists only within your process. It can be used by any thread 
 <div class="line"><span class="comment">// thread 3 previous semaphore count: 2</span></div>
 <div class="line"><span class="comment">// Main thread exits.</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1interlocked_html_a35d4d7219315784e960dfc7667181f3d"><div class="ttname"><a href="classxtd_1_1threading_1_1interlocked.html#a35d4d7219315784e960dfc7667181f3d">xtd::threading::interlocked::add</a></div><div class="ttdeci">static int32 add(int32 &amp;location, int32 value) noexcept</div><div class="ttdoc">Adds two 32-bit integers and replaces the first integer with the sum, as an atomic operation.</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a42bc6e2bb805f928e50ae73d243b95f2"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">xtd::threading::thread::sleep</a></div><div class="ttdeci">static void sleep(int32 milliseconds_timeout)</div><div class="ttdoc">Suspends the current thread for a specified time.</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a6998fa3ca4218452ae93143d120174ba"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a6998fa3ca4218452ae93143d120174ba">xtd::threading::thread::join_all</a></div><div class="ttdeci">static void join_all()</div><div class="ttdoc">Blocks the calling thread until all joinable threads terminate.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga37b2c945d3e9d06799c3d739f558350a"><div class="ttname"><a href="group__style__sheets.html#ga37b2c945d3e9d06799c3d739f558350a">xtd::forms::style_sheets::padding</a></div><div class="ttdeci">xtd::forms::style_sheets::lengths padding</div><div class="ttdoc">Padding is used to create space around an element&#39;s content, inside of any defined borders.</div><div class="ttdef"><b>Definition</b> padding.hpp:26</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:16</div></div>
-<div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="semaphore_8cpp-example.html#_a0">semaphore.cpp</a>.</dd>
-</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a5ec7de2efc2a961161ef198b50735923" id="r_a5ec7de2efc2a961161ef198b50735923"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ec7de2efc2a961161ef198b50735923">semaphore</a> ()</td></tr>
@@ -1280,7 +1263,7 @@ Override this function for all derived object </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 25 2025 10:43:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Aug 25 2025 17:49:22 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -123,12 +123,7 @@ Inheritance diagram for xtd::threading::jthread:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="classxtd_1_1threading_1_1jthread.html" title="Creates and controls an automatically rejoins on destruction thread, sets its priority,...">xtd::threading::jthread</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/jthread&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/block_scope&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="classxtd_1_1threading_1_1jthread.html" title="Creates and controls an automatically rejoins on destruction thread, sets its priority,...">xtd::threading::jthread</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> thread_proc = [] {</div>
@@ -147,7 +142,7 @@ Inheritance diagram for xtd::threading::jthread:</div>
 <div class="line">    <span class="comment">// * If you create `thread1` with std::thread, there will be a runtime error.</span></div>
 <div class="line">    <span class="comment">// You can try it yourself to see the different scenarios.</span></div>
 <div class="line">  }</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;({}) end&quot;</span>, <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a278b3fabeade100cbc012968115792fd">thread::current_thread</a>().name());</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;({}) end&quot;</span>, thread::current_thread().name());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produce the following output if `thread1` is created with xtd::threading::jthread :</span></div>
@@ -205,8 +200,6 @@ Inheritance diagram for xtd::threading::jthread:</div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a42bc6e2bb805f928e50ae73d243b95f2"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">xtd::threading::thread::sleep</a></div><div class="ttdeci">static void sleep(int32 milliseconds_timeout)</div><div class="ttdoc">Suspends the current thread for a specified time.</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a49144c9d57db3cb0eb4dd76abd5d3bff"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a49144c9d57db3cb0eb4dd76abd5d3bff">xtd::threading::thread::name</a></div><div class="ttdeci">string name() const noexcept</div><div class="ttdoc">Gets the name of the thread.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga9ba81b3bf268ec1eb95752f516f563e9"><div class="ttname"><a href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a></div><div class="ttdeci">#define block_scope_(...)</div><div class="ttdoc">The specified expression is cleared automatically when the scope is ended.</div><div class="ttdef"><b>Definition</b> block_scope.hpp:25</div></div>
-<div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>When a process starts, the system automatically creates a single foreground thread to execute application code. Along with this main foreground thread, a process can create one or more threads to execute a portion of the program code associated with the process. These threads can execute either in the foreground or in the background. In addition, you can use the <a class="el" href="classxtd_1_1threading_1_1thread__pool.html" title="Provides a pool of threads that can be used to execute tasks, post work items, process asynchronous I...">xtd::threading::thread_pool</a> class to execute code on worker threads that are managed by the framework xrd. </dd>
 <dd>
@@ -661,7 +654,7 @@ Important For partially trusted code, max_stack_size is ignored if it is greater
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 25 2025 10:43:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Aug 25 2025 17:49:22 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

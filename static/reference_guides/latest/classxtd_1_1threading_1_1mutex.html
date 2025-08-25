@@ -157,15 +157,7 @@ Named system mutexes are visible throughout the operating system, and can be use
 If you use other synchronization objects for your threads and you use <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> you are interested in using <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a>. You will also benefit from <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a217129669f17b6f14201dccd0405450c" title="Waits for all the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_all</a> and <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aee2a73d9052723690ff0e15a338cce35" title="Waits for any of the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_any</a> among others to synchronize all your objects. </dd>
 <dd>
 On the other hand, if you only use mutexes and you use <a href="https://en.cppreference.com/w/cpp/thread/thread">std::thread</a> then you are interested in using <a href="https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex">std::recursive_timed_mutex</a>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>This example shows how a local <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> object is used to synchronize access to a protected resource. Because each calling thread is blocked until it acquires ownership of the mutex, it must call the <a class="el" href="#a02f2e273ef08cdf7008087b9966de53d" title="Releases the Mutex once.">xtd::threading::mutex::release_mutex</a> method to release ownership of the mutex. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/list&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/threading/mutex&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>This example shows how a local <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> object is used to synchronize access to a protected resource. Because each calling thread is blocked until it acquires ownership of the mutex, it must call the <a class="el" href="#a02f2e273ef08cdf7008087b9966de53d" title="Releases the Mutex once.">xtd::threading::mutex::release_mutex</a> method to release ownership of the mutex. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>mutex_example {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
@@ -191,25 +183,25 @@ On the other hand, if you only use mutexes and you use <a href="https://en.cppre
 <div class="line">    <span class="comment">// so that only one thread at a time can enter.</span></div>
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> Use_resource() {</div>
 <div class="line">      <span class="comment">// Wait until it is safe to enter.</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} is requesting the mutex&quot;</span>,</div>
-<div class="line">                        <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a278b3fabeade100cbc012968115792fd">thread::current_thread</a>().name());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} is requesting the mutex&quot;</span>,</div>
+<div class="line">                        thread::current_thread().name());</div>
 <div class="line">      mut.wait_one();</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} has entered the protected area&quot;</span>,</div>
-<div class="line">                          <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a278b3fabeade100cbc012968115792fd">thread::current_thread</a>().name());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} has entered the protected area&quot;</span>,</div>
+<div class="line">                          thread::current_thread().name());</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Place code to access non-reentrant resources here.</span></div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Simulate some work.</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">thread::sleep</a>(500);</div>
+<div class="line">      thread::sleep(500);</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} is leaving the protected area&quot;</span>,</div>
-<div class="line">                          <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a278b3fabeade100cbc012968115792fd">thread::current_thread</a>().name());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} is leaving the protected area&quot;</span>,</div>
+<div class="line">                          thread::current_thread().name());</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Release the mutex.</span></div>
 <div class="line">      mut.release_mutex();</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} has released the mutex&quot;</span>,</div>
-<div class="line">                          <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a278b3fabeade100cbc012968115792fd">thread::current_thread</a>().name());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} has released the mutex&quot;</span>,</div>
+<div class="line">                          thread::current_thread().name());</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> list&lt;thread&gt; threads;</div>
@@ -236,18 +228,10 @@ On the other hand, if you only use mutexes and you use <a href="https://en.cppre
 <div class="line"><span class="comment">// thread_3 has entered the protected area</span></div>
 <div class="line"><span class="comment">// thread_3 is leaving the protected area</span></div>
 <div class="line"><span class="comment">// thread_3 has released the mutex</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a278b3fabeade100cbc012968115792fd"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a278b3fabeade100cbc012968115792fd">xtd::threading::thread::current_thread</a></div><div class="ttdeci">static thread &amp; current_thread() noexcept</div><div class="ttdoc">Gets the currently running thread.</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a42bc6e2bb805f928e50ae73d243b95f2"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">xtd::threading::thread::sleep</a></div><div class="ttdeci">static void sleep(int32 milliseconds_timeout)</div><div class="ttdoc">Suspends the current thread for a specified time.</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a6998fa3ca4218452ae93143d120174ba"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a6998fa3ca4218452ae93143d120174ba">xtd::threading::thread::join_all</a></div><div class="ttdeci">static void join_all()</div><div class="ttdoc">Blocks the calling thread until all joinable threads terminate.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:16</div></div>
-<div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="mutex_8cpp-example.html#_a1">mutex.cpp</a>.</dd>
-</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
 <tr class="memitem:a76d46795a5139906244351664dce7cc6" id="r_a76d46795a5139906244351664dce7cc6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76d46795a5139906244351664dce7cc6">native_handle_type</a></td></tr>
@@ -831,7 +815,9 @@ There was some other error. The HResult property may provide more information. <
 <div class="line"><span class="comment">// false</span></div>
 <div class="line"><span class="comment">// true</span></div>
 <div class="line"><span class="comment">// true</span></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga2fd68f03198b2bf84b1e93149494b685"><div class="ttname"><a href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">xtd::new_ptr</a></div><div class="ttdeci">ptr&lt; type_t &gt; new_ptr(args_t &amp;&amp;... args)</div><div class="ttdoc">The xtd::new_ptr operator creates a xtd::ptr object.</div><div class="ttdef"><b>Definition</b> new_ptr.hpp:24</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object</a>.</p>
@@ -1199,7 +1185,7 @@ Override this function for all derived object </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 25 2025 10:43:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Aug 25 2025 17:49:22 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
