@@ -1,14 +1,4 @@
-#include <xtd/collections/generic/list>
-#include <xtd/threading/interlocked>
-#include <xtd/threading/lock_guard>
-#include <xtd/threading/thread>
-#include <xtd/console>
-#include <xtd/random>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 namespace lock_guard_example {
   class program {

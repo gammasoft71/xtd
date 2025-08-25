@@ -1,12 +1,4 @@
-#include <xtd/collections/generic/list>
-#include <xtd/threading/auto_reset_event>
-#include <xtd/threading/thread>
-#include <xtd/console>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 namespace auto_reset_event_example {
   class program {
@@ -40,6 +32,8 @@ namespace auto_reset_event_example {
         event_2.set();
         thread::sleep(250_ms);
       }
+      
+      thread::join_all(threads);
     }
     
     static void thread_proc() {

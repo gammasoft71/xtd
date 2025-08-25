@@ -1,11 +1,4 @@
-#include <xtd/threading/event_wait_handle>
-#include <xtd/threading/interlocked>
-#include <xtd/threading/thread>
-#include <xtd/console>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 class example {
 private:
@@ -36,8 +29,8 @@ public:
     // number can be passed as an argument to the Start
     // method.
     for (auto i = 0; i <= 4; i++) {
-      threads_[i] = thread {thread_proc};
-      threads_[i].start(i);
+      threads[i] = thread {thread_proc};
+      threads[i].start(i);
     }
     
     // Wait until all the threads have started and blocked.
@@ -74,8 +67,8 @@ public:
     // Create and start five more numbered threads.
     //
     for(auto i = 0; i <= 4; i++) {
-      threads_[i] = thread {thread_proc};
-      threads_[i].start(i);
+      threads[i] = thread {thread_proc};
+      threads[i].start(i);
     }
     
     // Wait until all the threads have started and blocked.
@@ -94,7 +87,7 @@ public:
   }
   
 private:
-  static void thread_proc(std::any data) {
+  static void thread_proc(any_object data) {
     console::write_line("Thread {0} blocks.", as<int>(data));
     // Increment the count of blocked threads.
     interlocked::increment(thread_count);
@@ -113,7 +106,7 @@ private:
     clear_count.set();
   }
   
-  inline static std::array<thread, 5> threads_;
+  inline static std::array<thread, 5> threads;
 };
 
 startup_(example::main);

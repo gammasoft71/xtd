@@ -1,12 +1,4 @@
-#include <xtd/threading/auto_reset_event>
-#include <xtd/threading/thread_pool>
-#include <xtd/console>
-#include <xtd/date_time>
-#include <xtd/random>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 namespace wait_handle_example {
   class program {
@@ -36,7 +28,7 @@ namespace wait_handle_example {
                           index + 1, date_time::now() - dt);
     }
     
-    static void do_task(std::any state) {
+    static void do_task(any_object state) {
       auto are = as<auto_reset_event>(state);
       auto time = 1000 * r.next(2, 10);
       console::write_line("Performing a task for {0} milliseconds.", time);

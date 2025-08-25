@@ -1,11 +1,4 @@
-#include <xtd/threading/auto_reset_event>
-#include <xtd/threading/timer>
-#include <xtd/console>
-#include <xtd/date_time>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 namespace timer_example {
   class status_checker {
@@ -20,7 +13,7 @@ namespace timer_example {
     }
     
     // This method is called by the timer delegate.
-    void check_status(std::any state_info) {
+    void check_status(any_object state_info) {
       auto auto_event = as<auto_reset_event>(state_info);
       auto now = date_time::now();
       console::write_line("{:t}.{:D3} Checking status {,2}.",

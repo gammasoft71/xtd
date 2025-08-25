@@ -1,9 +1,4 @@
-#include <xtd/threading/jthread>
-#include <xtd/block_scope>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto thread_proc = [] {

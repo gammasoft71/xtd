@@ -1,10 +1,4 @@
-#include <xtd/threading/interlocked>
-#include <xtd/threading/thread>
-#include <xtd/console>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 namespace interlocked_decrement_example {
   class my_interlocked_decrement_class {

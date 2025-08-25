@@ -1,13 +1,4 @@
-#include <xtd/collections/generic/list>
-#include <xtd/threading/interlocked>
-#include <xtd/threading/semaphore>
-#include <xtd/threading/thread>
-#include <xtd/console>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 namespace mutex_example {
   class program {
@@ -52,7 +43,7 @@ namespace mutex_example {
       thread::join_all(threads, 100);
     }
     
-    static void worker(std::any num) {
+    static void worker(any_object num) {
       // Each worker thread begins by requesting the
       // semaphore.
       console::write_line("thread {0} begins "

@@ -1,12 +1,4 @@
-#include <xtd/threading/auto_reset_event>
-#include <xtd/threading/thread_pool>
-#include <xtd/console>
-#include <xtd/date_time>
-#include <xtd/random>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 namespace wait_handle_example {
   class program {
@@ -22,7 +14,7 @@ namespace wait_handle_example {
    
   private:
     // This thread procedure performs the task.
-    static void thread_proc(std::any state_info) {
+    static void thread_proc(any_object state_info) {
       // No state object was passed to queue_user_work_item, so state_info has no value.
       console::write_line("Hello from the thread pool.");
     }
