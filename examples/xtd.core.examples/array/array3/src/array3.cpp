@@ -1,7 +1,4 @@
-#include <xtd/array>
-#include <xtd/console>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 template<size rank>
 auto print_values(const array<int, rank>& my_arr) {

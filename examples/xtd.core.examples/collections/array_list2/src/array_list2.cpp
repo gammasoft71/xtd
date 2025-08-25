@@ -1,9 +1,5 @@
-#include <xtd/collections/array_list>
-#include <xtd/console>
-#include <xtd/platform_id>
-#include <xtd/time_span>
+#include <xtd/xtd>
 
-using namespace xtd;
 using namespace xtd::collections;
 
 auto main() -> int {

@@ -1,7 +1,5 @@
-#include <xtd/collections/hashtable>
-#include <xtd/console>
+#include <xtd/xtd>
 
-using namespace xtd;
 using namespace xtd::collections;
 
 auto main() -> int {

@@ -1,8 +1,4 @@
-#include <xtd/any_object>
-#include <xtd/array>
-#include <xtd/console>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto print_values(const array<int>& my_arr) {
   for (auto i : my_arr)

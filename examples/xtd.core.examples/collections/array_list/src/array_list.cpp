@@ -1,7 +1,5 @@
-#include <xtd/collections/array_list>
-#include <xtd/console>
+#include <xtd/xtd>
 
-using namespace xtd;
 using namespace xtd::collections;
 
 template<typename collection_t>

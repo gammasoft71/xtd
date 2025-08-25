@@ -1,8 +1,4 @@
-#include <xtd/bit_converter>
-#include <xtd/console>
-#include <xtd/startup>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 namespace bit_converter_round_trips_example {
   class program {
