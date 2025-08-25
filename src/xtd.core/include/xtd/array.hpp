@@ -6,6 +6,7 @@
 #include "internal/__array_definition.hpp"
 #undef __XTD_CORE_INTERNAL__
 #include "collections/generic/helpers/equator.hpp"
+#include "collections/generic/comparer.hpp"
 #include "collections/generic/enumerator.hpp"
 #include "collections/generic/icomparer.hpp"
 #include "collections/generic/ilist.hpp"
@@ -18,6 +19,7 @@
 #include "new_ptr.hpp"
 #include "null.hpp"
 #include "object.hpp"
+#include "self.hpp"
 #include "static.hpp"
 #include <algorithm>
 #include <vector>
