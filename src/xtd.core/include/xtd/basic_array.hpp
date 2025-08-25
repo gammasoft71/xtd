@@ -496,14 +496,14 @@ protected:
     /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
     /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
     /// @remarks The following code example demonstrates the xtd::collections::generic::list::sort method overload and the xtd::collections::generic::list::binary_search method overload. A xtd::collections::generic::list <type_t> of strings is created and populated with four strings, in no particular order. The list is displayed, sorted, and displayed again.
-    basic_array<type_t>& sort() {return sort(xtd::collections::generic::comparer<type_t>::default_comparer);}
+    basic_array < type_t > & sort() {return sort(xtd::collections::generic::comparer < type_t >::default_comparer);}
     
     /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified xtd::comparison <type_t>.
     /// @exception xtd::argument_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
     /// @remarks If comparison is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the method represented by the delegate.
     /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
     /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
-    basic_array<type_t>& sort(comparison_comparer comparison) {
+    basic_array < type_t > & sort(comparison_comparer comparison) {
       ++data_->version;
       std::sort(data_->items.begin(), data_->items.end(), comparison_comparer {comparison});
       return self_;
@@ -515,7 +515,7 @@ protected:
     /// @remarks If comparer is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.
     /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
     /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
-    basic_array<type_t>& sort(const xtd::collections::generic::icomparer<type_t>& comparer) {
+    basic_array < type_t > & sort(const xtd::collections::generic::icomparer < type_t > & comparer) {
       return sort(0, count(), comparer);
     }
     
@@ -527,7 +527,7 @@ protected:
     /// @remarks If comparer is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.
     /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
     /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
-    basic_array<type_t>& sort(xtd::size index, xtd::size count, const xtd::collections::generic::icomparer<type_t>& comparer) {
+    basic_array < type_t > & sort(xtd::size index, xtd::size count, const xtd::collections::generic::icomparer < type_t > & comparer) {
       if (index + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
       auto first = data_->items.begin();
       auto last = data_->items.begin();
