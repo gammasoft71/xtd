@@ -222,16 +222,18 @@ namespace xtd {
     /// @brief Performs an in-place shuffle of a span.
     /// @param values The span to shuffle.
     template<class value_t>
-    void shuffle(xtd::span<value_t>& values) const {
+    xtd::span<value_t>& shuffle(xtd::span<value_t>& values) const {
       for (auto index = 0_z; index < values.length() - 1; ++index)
         std::swap(values[index], values[next(index, values.length())]);
+      return values;
     }
     /// @brief Performs an in-place shuffle of an array.
     /// @param values The array to shuffle.
     template<class collection_t>
-    void shuffle(collection_t& values) const {
+    collection_t& shuffle(collection_t& values) const {
       auto span_values = span<typename collection_t::value_type> {values};
       shuffle(span_values);
+      return values;
     }
     /// @}
     
