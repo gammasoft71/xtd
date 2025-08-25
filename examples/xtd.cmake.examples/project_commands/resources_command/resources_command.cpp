@@ -1,12 +1,5 @@
 #include "properties/resources.hpp"
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/label>
-#include <xtd/forms/picture_box>
-#include <xtd/forms/tab_control>
-#include <xtd/forms/tab_page>
-
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto main_form = form::create("Resources example", xtd::drawing::size {800, 450});
