@@ -62,7 +62,7 @@ bool thread::set_current_thread_name(const std::string& name) {
 
 bool thread::set_priority(intmax_t handle, int32_t priority) {
   if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return false;
-  return SetThreadPriority((HANDLE)handle, priority - 2) != FALSE;
+  return SetThreadPriority(reinterpret_cast<HANDLE>(handle), priority - 2) != FALSE;
 }
 
 bool thread::set_processor_affinity(intmax_t handle, const std::vector<size_t>& processor_affinity) {
