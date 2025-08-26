@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/parse>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   std::locale::global(std::locale {"en_US.UTF-8"}); // change to us for currency

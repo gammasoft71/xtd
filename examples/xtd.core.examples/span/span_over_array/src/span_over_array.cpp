@@ -1,8 +1,4 @@
-#include <xtd/array>
-#include <xtd/console>
-#include <xtd/span>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   // Create a span over an array.

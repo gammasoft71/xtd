@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/random>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   // Instantiate random number generator using system-supplied value as seed.

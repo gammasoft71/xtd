@@ -1,8 +1,4 @@
-#include <xtd/console>
-#include <xtd/enum_struct>
-#include <xtd/parse>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 enum_struct_(, week_day,
   monday,

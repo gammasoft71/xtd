@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/parse>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto b1 = xtd::parse<bool>("true");
