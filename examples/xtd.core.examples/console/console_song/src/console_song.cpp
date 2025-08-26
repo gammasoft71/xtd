@@ -1,10 +1,4 @@
-#include <xtd/collections/generic/list>
-#include <xtd/threading/thread>
-#include <xtd/as>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
+#include <xtd/xtd>
 
 // Define the frequencies of notes in an octave, as well as
 // silence (rest).

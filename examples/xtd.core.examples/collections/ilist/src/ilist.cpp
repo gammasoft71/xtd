@@ -1,10 +1,4 @@
-#include <xtd/collections/array_list>
-#include <xtd/array>
-#include <xtd/console>
-#include <xtd/not_implemented_exception>
-#include <xtd/startup>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 class program {
 public:

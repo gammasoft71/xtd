@@ -1,8 +1,4 @@
-#include <xtd/char_object>
-#include <xtd/console>
-#include <xtd/convert>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto m1 = "\nType a string of text then press Enter. "

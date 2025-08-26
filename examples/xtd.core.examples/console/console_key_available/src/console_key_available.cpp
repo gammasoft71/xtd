@@ -1,11 +1,7 @@
-#include <xtd/threading/thread>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 auto main() -> int {
-  auto cki = console_key_info {};
+  auto key_info = console_key_info {};
   
   do {
     console::write_line("\nPress a key to display; press the 'x' key to quit.");
@@ -16,9 +12,9 @@ auto main() -> int {
     while (console::key_available() == false)
       thread::sleep(250_ms); // Loop until input is entered.
     
-    cki = console::read_key(true);
-    console::write_line("You pressed the '{0}' key.", cki.key());
-  } while (cki.key() != console_key::x);
+    key_info = console::read_key(true);
+    console::write_line("You pressed the '{0}' key.", key_info.key());
+  } while (key_info.key() != console_key::x);
 }
 
 // This example produces results if user stroke 'h', 'e', pagge_up, down_arrow, and 'x' keys

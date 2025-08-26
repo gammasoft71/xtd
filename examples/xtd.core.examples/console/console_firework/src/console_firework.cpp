@@ -1,12 +1,4 @@
-#include <xtd/threading/thread>
-#include <xtd/console>
-#include <xtd/is>
-#include <xtd/random>
-#include <xtd/startup>
-#include <memory>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
+#include <xtd/xtd>
 
 namespace console_firework_example {
   class firework abstract_ {
@@ -140,7 +132,7 @@ namespace console_firework_example {
       console::clear();
       
       auto rand = xtd::random {};
-      auto fireworks = std::list<ptr<firework>> {};
+      auto fireworks = list<ptr<firework>> {};
       auto colors = list {console_color::blue, console_color::green, console_color::cyan, console_color::red, console_color::magenta, console_color::yellow, console_color::white};
       
       while (!console::key_available()) {

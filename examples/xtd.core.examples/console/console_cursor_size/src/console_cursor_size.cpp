@@ -1,6 +1,4 @@
-#include <xtd/console>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto m0 = "This example increments the cursor size from 1% to 100%:\n";

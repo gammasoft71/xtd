@@ -1,10 +1,4 @@
-#include <xtd/collections/generic/list>
-#include <xtd/char32_object>
-#include <xtd/console>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
+#include <xtd/xtd>
 
 namespace console_clear_example {
   class program {

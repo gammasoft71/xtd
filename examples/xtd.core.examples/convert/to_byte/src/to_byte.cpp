@@ -1,9 +1,5 @@
-#include <xtd/as>
-#include <xtd/console>
-#include <xtd/convert>
+#include <xtd/xtd>
 #include <any>
-
-using namespace xtd;
 
 auto main() -> int {
   console::write_line("Convert int to byte :");

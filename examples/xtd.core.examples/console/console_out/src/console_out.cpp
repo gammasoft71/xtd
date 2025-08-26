@@ -1,8 +1,4 @@
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/int32_object>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   console::out << "Hello, " << "World!" << environment::new_line;

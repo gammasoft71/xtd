@@ -1,10 +1,4 @@
-#include <xtd/as>
-#include <xtd/console>
-#include <xtd/convert>
-#include <xtd/convert_pointer>
-#include <xtd/random>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   double d = 41.6;
@@ -17,7 +11,7 @@ auto main() -> int {
   string s2 = as<string>(i);
   console::write_line("i = {0}, convert::to_string(i) = {1}, as<string>(i) = {2}", i, s1, s2);
   
-  std::any a = "string";
+  any_object a = "string";
   s1 = convert::to_string(a);
   s2 = as<string>(a);
   console::write_line("a = {0}, convert::to_string(a) = {1}, as<string>(a) = {2}", a, s1, s2);

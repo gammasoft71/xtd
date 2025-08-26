@@ -1,6 +1,4 @@
-#include <xtd/console>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto m1 = "\nThe cursor is {0}.\nType any text then press Enter. "

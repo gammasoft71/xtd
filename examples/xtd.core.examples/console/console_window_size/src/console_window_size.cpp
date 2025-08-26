@@ -1,6 +1,4 @@
-#include <xtd/console>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto orig_width = 0, width = 0;

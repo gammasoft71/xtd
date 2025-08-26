@@ -1,6 +1,4 @@
-#include <xtd/console>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   // Get an array with the values of console_color enumeration members.
