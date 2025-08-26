@@ -1,8 +1,4 @@
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/string>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   console::out << string::format("{}", std::unordered_set<int> {1, 2, 3, 4}) << environment::new_line;

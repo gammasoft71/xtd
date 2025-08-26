@@ -1,8 +1,4 @@
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/format>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   console::out << format("{}", null) << environment::new_line;

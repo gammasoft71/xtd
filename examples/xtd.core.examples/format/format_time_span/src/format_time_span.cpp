@@ -1,8 +1,4 @@
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/string>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 enum class cap {title, middle, end};
 

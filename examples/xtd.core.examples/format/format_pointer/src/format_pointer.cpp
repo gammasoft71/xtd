@@ -1,8 +1,4 @@
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/string>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto ptr = static_cast<int*>(nullptr);

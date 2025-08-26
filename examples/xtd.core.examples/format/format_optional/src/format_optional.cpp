@@ -1,10 +1,4 @@
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/format>
-#include <xtd/null_opt>
-#include <xtd/optional>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   console::out << format("{}", optional<string> {"string value"}) << environment::new_line;
