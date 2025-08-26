@@ -1,17 +1,11 @@
-#include <xtd/collections/generic/list>
-#include <xtd/console>
-#include <xtd/date_time>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
+#include <xtd/xtd>
 
 class program {
 public:
   static auto main() {
     auto local_date = date_time::now();
     auto utc_date = date_time::utc_now();
-    auto locale_names = list {"en_US", "en_GB", "fr_FR", "de_DE", "ru_RU"};
+    auto locale_names = array {"en_US", "en_GB", "fr_FR", "de_DE", "ru_RU"};
     
     for (auto locale_name : locale_names) {
       try {

@@ -1,15 +1,11 @@
-#include <xtd/console>
-#include <xtd/date_time>
-#include <xtd/startup>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 class program {
 public:
   static auto main() {
-    auto dat = date_time {2015, 12, 31};
+    auto date = date_time {2015, 12, 31};
     for (auto ctr = 0; ctr <= 15; ctr++)
-      console::write_line(dat.add_months(ctr).to_string("d"));
+      console::write_line(date.add_months(ctr).to_string("d"));
   }
 };
 

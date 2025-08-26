@@ -1,9 +1,4 @@
-#include <xtd/console>
-#include <xtd/date_time>
-#include <xtd/startup>
-
-using namespace std::chrono;
-using namespace xtd;
+#include <xtd/xtd>
 
 class program {
 public:
