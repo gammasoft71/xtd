@@ -150,8 +150,6 @@ When you are finished sending and receiving data, use the <a class="el" href="#a
 <dd>
 The <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> class allows you to configure your <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> using the <a class="el" href="#a4f94083971affc7f08ffc1288d048c52" title="Sets the specified xtd::net::sockets::socket option to the specified integer value.">xtd::net::sockets::socket::set_socket_option</a> method. Retrieve these settings using the <a class="el" href="#a3639e123ad3ed8b3a759e090ae1bd69e" title="Returns the value of a specified xtd::net::sockets::socket option, represented as integer.">xtd::net::sockets::socket::get_socket_option</a> method. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If you are writing a relatively simple application and do not require maximum performance, consider using <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__client.html" title="Provides client connections for TCP network services.">xtd::net::sockets::tcp_client</a>, <a class="el" href="classxtd_1_1net_1_1sockets_1_1tcp__listener.html" title="Listens for connections from TCP network clients.">xtd::net::sockets::tcp_listener</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a>. These classes provide a simpler and more user-friendly interface to <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> communications. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="network_stream_8cpp-example.html#_a1">network_stream.cpp</a>, <a class="el" href="socket_tcp_ip_v4_8cpp-example.html#_a1">socket_tcp_ip_v4.cpp</a>, <a class="el" href="socket_tcp_ip_v4_without_thread_8cpp-example.html#_a0">socket_tcp_ip_v4_without_thread.cpp</a>, <a class="el" href="socket_tcp_ip_v6_8cpp-example.html#_a1">socket_tcp_ip_v6.cpp</a>, <a class="el" href="socket_udp_ip_v4_8cpp-example.html#_a1">socket_udp_ip_v4.cpp</a>, and <a class="el" href="socket_udp_ip_v6_8cpp-example.html#_a1">socket_udp_ip_v6.cpp</a>.</dd>
-</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:ac48927243d1569fdc755b77aceed6dbb" id="r_ac48927243d1569fdc755b77aceed6dbb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac48927243d1569fdc755b77aceed6dbb">socket</a> ()</td></tr>
@@ -1172,8 +1170,6 @@ This property must be set before <a class="el" href="#a0440f747b3ca6415815e92b70
 
 <p>Gets the operating system handle for the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>An intptr that represents the operating system handle for the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="socket_tcp_ip_v4_without_thread_8cpp-example.html#a4">socket_tcp_ip_v4_without_thread.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -2169,8 +2165,6 @@ To cancel a pending call to the <a class="el" href="#a718e4c97d4fc60901f7afc5725
 <dl class="section note"><dt>Note</dt><dd>If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a> exception, use the <a class="el" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba" title="Gets error associate to the exception.">xtd::net::sockets::socket_exception::error_code</a> property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error. </dd>
 <dd>
 If this socket has previously been disconnected, then <a class="el" href="#a718e4c97d4fc60901f7afc5725dc78bf" title="Begins an asynchronous request for a remote host connection.">xtd::net::sockets::socket::begin_connect</a> must be called on a thread that will not exit until the operation is complete. This is a limitation of the underlying provider. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="socket_tcp_ip_v4_without_thread_8cpp-example.html#a9">socket_tcp_ip_v4_without_thread.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -3008,8 +3002,6 @@ If a UDP socket wants to receive interface information on received packets, the 
 You must call the <a class="el" href="#a0440f747b3ca6415815e92b700f0b559" title="Associates a xtd::net::sockets::socket with a local endpoint.">xtd::net::sockets::socket::bind</a> method if you intend to receive connectionless datagrams using the <a class="el" href="#aa6866a5753cfbb7fec0e819561d09e7d" title="Receives data from a bound xtd::net::sockets::socket into a receive buffer.">xtd::net::sockets::socket::receive_from</a> method. </dd>
 <dd>
 If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a>, use the <a class="el" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba" title="Gets error associate to the exception.">xtd::net::sockets::socket_exception::error_code</a> property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="network_stream_8cpp-example.html#a2">network_stream.cpp</a>, <a class="el" href="socket_tcp_ip_v4_8cpp-example.html#a2">socket_tcp_ip_v4.cpp</a>, <a class="el" href="socket_tcp_ip_v4_without_thread_8cpp-example.html#a6">socket_tcp_ip_v4_without_thread.cpp</a>, <a class="el" href="socket_tcp_ip_v6_8cpp-example.html#a2">socket_tcp_ip_v6.cpp</a>, <a class="el" href="socket_udp_ip_v4_8cpp-example.html#a2">socket_udp_ip_v4.cpp</a>, and <a class="el" href="socket_udp_ip_v6_8cpp-example.html#a2">socket_udp_ip_v6.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -3129,8 +3121,6 @@ The <a class="el" href="#a9be292d3fe3c501d212641d4428a2293" title="Establishes a
 <dl class="section note"><dt>Note</dt><dd>If you are using a connection-oriented protocol and did not call <a class="el" href="#a0440f747b3ca6415815e92b700f0b559" title="Associates a xtd::net::sockets::socket with a local endpoint.">xtd::net::sockets::socket::bind</a> before calling <a class="el" href="#a9be292d3fe3c501d212641d4428a2293" title="Establishes a connection to a remote host.">xtd::net::sockets::socket::connect</a>, the underlying service provider will assign the local network address and port number. If you are using a connectionless protocol, the service provider will not assign a local network address and port number until you complete a send or receive operation. If you want to change the default remote host, call <a class="el" href="#a9be292d3fe3c501d212641d4428a2293" title="Establishes a connection to a remote host.">xtd::net::sockets::socket::connect</a> again with the desired endpoint. </dd>
 <dd>
 If the socket has been previously disconnected, then you cannot use this method to restore the connection. Use one of the asynchronous <a class="el" href="#a718e4c97d4fc60901f7afc5725dc78bf" title="Begins an asynchronous request for a remote host connection.">xtd::net::sockets::socket::begin_connect</a> methods to reconnect. This is a limitation of the underlying provider. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="socket_tcp_ip_v4_8cpp-example.html#a5">socket_tcp_ip_v4.cpp</a>, and <a class="el" href="socket_tcp_ip_v6_8cpp-example.html#a5">socket_tcp_ip_v6.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -3384,8 +3374,6 @@ Before calling <a class="el" href="#a718e4c97d4fc60901f7afc5725dc78bf" title="Be
 <dd>
 Within the callback method, call the <a class="el" href="classxtd_1_1iasync__result.html#a1723de28865cc254e3186ee12e794105" title="Gets a user-defined object that qualifies or contains information about an asynchronous operation.">xtd::iasync_result::async_state</a> method of the <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> parameter to obtain the <a class="el" href="#ac48927243d1569fdc755b77aceed6dbb" title="Initializes a new instance of the xtd::net::sockets::socket class.">xtd::net::sockets::socket::socket</a> on which the connection attempt is being made. After obtaining the <a class="el" href="#ac48927243d1569fdc755b77aceed6dbb" title="Initializes a new instance of the xtd::net::sockets::socket class.">xtd::net::sockets::socket::socket</a>, you can call the <a class="el" href="#a47000392e0c063c3796f40a7c099dbfc" title="Ends a pending asynchronous connection request.">xtd::net::sockets::socket::end_connect</a> method to successfully complete the connection attempt. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a>, use the <a class="el" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba" title="Gets error associate to the exception.">xtd::net::sockets::socket_exception::error_code</a> property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="socket_tcp_ip_v4_without_thread_8cpp-example.html#a3">socket_tcp_ip_v4_without_thread.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -4282,8 +4270,6 @@ If you are using a connection-oriented <a class="el" href="classxtd_1_1net_1_1so
 <dd>
 If you are using a connectionless <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a>, <a class="el" href="#ab56e43e51d047a79329cc5c22613f302" title="Receives data from a bound xtd::net::sockets::socket into a receive buffer.">xtd::net::sockets::socket::receive</a> will read the first queued datagram from the destination address you specify in the <a class="el" href="#a9be292d3fe3c501d212641d4428a2293" title="Establishes a connection to a remote host.">xtd::net::sockets::socket::connect</a> method. If the datagram you receive is larger than the size of the buffer parameter, buffer gets filled with the first part of the message, the excess data is lost and a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket::socket_exception</a> is thrown. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a>, use the <a class="el" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba" title="Gets error associate to the exception.">xtd::net::sockets::socket_exception::error_code</a> property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="socket_tcp_ip_v4_without_thread_8cpp-example.html#a2">socket_tcp_ip_v4_without_thread.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -4807,8 +4793,6 @@ If you are using a connection-oriented protocol, <a class="el" href="#a3a2414646
 <dl class="section note"><dt>Note</dt><dd>The successful completion of a send does not indicate that the data was successfully delivered. If no buffer space is available within the transport system to hold the data to be transmitted, send will block unless the socket has been placed in nonblocking mode. </dd>
 <dd>
 If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a> exception, use the <a class="el" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba" title="Gets error associate to the exception.">xtd::net::sockets::socket_exception::error_code</a> property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="socket_tcp_ip_v4_without_thread_8cpp-example.html#a5">socket_tcp_ip_v4_without_thread.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -5093,8 +5077,6 @@ Blocking sockets will block until the all of the bytes in the buffer are sent. S
 <dd>
 If you are using a connectionless protocol in blocking mode, <a class="el" href="#af1c48987b4aef874081ef2f14f97a3a3" title="Sends data to the specified endpoint.">xtd::net::sockets::socket::send_to</a> will block until the datagram is sent. If you want to send data to a broadcast address, you must first call the <a class="el" href="#a4f94083971affc7f08ffc1288d048c52" title="Sets the specified xtd::net::sockets::socket option to the specified integer value.">xtd::net::sockets::socket::set_socket_option</a> method and set the socket option to <a class="el" href="group__xtd__core.html#ggaac9f71cf2a0b71c1b99cab47f8abc4cbab605ea609b9dfcf295cfd5a7803dcd37" title="Permit sending broadcast messages on the socket.">xtd::net::sockets::socket_option_name::broadcast</a>. You must also be sure that the number of bytes sent does not exceed the maximum packet size of the underlying service provider. If it does, the datagram will not be sent and <a class="el" href="#af1c48987b4aef874081ef2f14f97a3a3" title="Sends data to the specified endpoint.">xtd::net::sockets::socket::send_to</a> will throw a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a>. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a> exception, use the <a class="el" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba" title="Gets error associate to the exception.">xtd::net::sockets::socket_exception::error_code</a> property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="socket_udp_ip_v4_8cpp-example.html#a5">socket_udp_ip_v4.cpp</a>, and <a class="el" href="socket_udp_ip_v6_8cpp-example.html#a5">socket_udp_ip_v6.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -5795,7 +5777,7 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 26 2025 18:39:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 26 2025 19:42:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

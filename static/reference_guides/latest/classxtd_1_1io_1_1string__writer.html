@@ -459,8 +459,6 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A string that represents the current object. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates what to_string returns. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>examples {</div>
 <div class="line">  <span class="keyword">namespace </span>object_test {</div>
 <div class="line">    <span class="keyword">class </span>object1 : <span class="keyword">public</span> <a class="code hl_function" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> {</div>
@@ -469,14 +467,14 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">ptr&lt;object&gt;</a> obj1 = <a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;examples::object_test::object1&gt;</a>();</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(obj1-&gt;to_string());</div>
+<div class="line">  ptr&lt;object&gt; obj1 = new_ptr&lt;examples::object_test::object1&gt;();</div>
+<div class="line">  console::write_line(obj1-&gt;to_string());</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">ptr&lt;object&gt;</a> obj2 = <a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;date_time&gt;</a>(1971, 1, 5, 23, 5, 0);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(obj2-&gt;to_string());</div>
+<div class="line">  ptr&lt;object&gt; obj2 = new_ptr&lt;date_time&gt;(1971, 1, 5, 23, 5, 0);</div>
+<div class="line">  console::write_line(obj2-&gt;to_string());</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">ptr&lt;object&gt;</a> obj3 = <a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;boolean_object&gt;</a>();</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(obj3-&gt;to_string());</div>
+<div class="line">  ptr&lt;object&gt; obj3 = new_ptr&lt;boolean_object&gt;();</div>
+<div class="line">  console::write_line(obj3-&gt;to_string());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -484,11 +482,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="comment">// examples::object_test::object1</span></div>
 <div class="line"><span class="comment">// Tue Jan  5 23:05:00 1971</span></div>
 <div class="line"><span class="comment">// false</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html_ad2cab851376bb6ca085b567bf5da0f5f"><div class="ttname"><a href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">xtd::object::object</a></div><div class="ttdeci">object()=default</div><div class="ttdoc">Create a new instance of the ultimate base class object.</div></div>
-<div class="ttc" id="agroup__types_html_gabe4e3c1a0746e729140994ae7098d6e9"><div class="ttname"><a href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">xtd::ptr</a></div><div class="ttdeci">xtd::sptr&lt; type_t &gt; ptr</div><div class="ttdoc">The xtd::ptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> ptr.hpp:27</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga2fd68f03198b2bf84b1e93149494b685"><div class="ttname"><a href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">xtd::new_ptr</a></div><div class="ttdeci">ptr&lt; type_t &gt; new_ptr(args_t &amp;&amp;... args)</div><div class="ttdoc">The xtd::new_ptr operator creates a xtd::ptr object.</div><div class="ttdef"><b>Definition</b> new_ptr.hpp:24</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#af2d19ef177db62351b58a42f22138dbe">xtd::object</a>.</p>
@@ -543,7 +537,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 26 2025 18:39:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 26 2025 19:42:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

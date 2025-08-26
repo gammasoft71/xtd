@@ -122,15 +122,7 @@ Inheritance diagram for xtd::io::binary_writer:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1io.html" title="The xtd::io namespace contains types that allow reading and writing to files and data streams,...">xtd::io</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to store and retrieve application settings in a file. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/binary_reader&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/io/binary_writer&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/io/file&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/block_scope&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to store and retrieve application settings in a file. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line">  <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> file_name = <span class="stringliteral">&quot;app_settings.dat&quot;</span>;</div>
@@ -188,18 +180,8 @@ Inheritance diagram for xtd::io::binary_writer:</div>
 <div class="ttc" id="aclassxtd_1_1io_1_1file_html_af72de0f8dd56fc2f3bbd419128f2046d"><div class="ttname"><a href="classxtd_1_1io_1_1file.html#af72de0f8dd56fc2f3bbd419128f2046d">xtd::io::file::open</a></div><div class="ttdeci">static std::fstream open(const xtd::string &amp;path, std::ios::openmode mode)</div><div class="ttdoc">Opens a FileStream on the specified path.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 <div class="ttc" id="agroup__keywords_html_ga9ba81b3bf268ec1eb95752f516f563e9"><div class="ttname"><a href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a></div><div class="ttdeci">#define block_scope_(...)</div><div class="ttdoc">The specified expression is cleared automatically when the scope is ended.</div><div class="ttdef"><b>Definition</b> block_scope.hpp:25</div></div>
-<div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition</b> binary_reader.hpp:17</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The same example with stream operators. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/binary_reader&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/io/binary_writer&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/io/file&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/block_scope&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The same example with stream operators. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line">  <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">string</span> file_name = <span class="stringliteral">&quot;app_settings.dat&quot;</span>;</div>
@@ -255,7 +237,7 @@ Inheritance diagram for xtd::io::binary_writer:</div>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1io_1_1binary__writer.html" title="Writes primitive types in binary to a stream and supports writing strings.">xtd::io::binary_writer</a> class provides methods that simplify writing primitive data types to a stream. For example, you can use the Write method to write a Boolean value to the stream as a one-byte value. The class includes write methods that support different data types. </dd>
 <dd>
 When you create a new instance of the <a class="el" href="classxtd_1_1io_1_1binary__writer.html" title="Writes primitive types in binary to a stream and supports writing strings.">xtd::io::binary_writer</a> class, you provide the stream to write to. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="binary_reader_8cpp-example.html#_a1">binary_reader.cpp</a>, <a class="el" href="binary_reader2_8cpp-example.html#_a1">binary_reader2.cpp</a>, and <a class="el" href="binary_reader3_8cpp-example.html#_a1">binary_reader3.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="binary_reader3_8cpp-example.html#_a1">binary_reader3.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
@@ -607,8 +589,6 @@ The system could not retrieve the absolute path. </td></tr>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="binary_reader_8cpp-example.html#a2">binary_reader.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1367,7 +1347,7 @@ template&lt;size_t size&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 26 2025 18:39:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 26 2025 19:42:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
