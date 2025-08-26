@@ -1,9 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-using namespace xtd::io;
-using namespace xtd::collections::generic;
-
 class program {
 public:
   static auto main() -> void {

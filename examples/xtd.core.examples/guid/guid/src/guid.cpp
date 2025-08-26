@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/guid>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   for (auto counter = 0; counter < 10; ++counter)

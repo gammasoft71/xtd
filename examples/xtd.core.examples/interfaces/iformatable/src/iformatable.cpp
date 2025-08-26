@@ -1,8 +1,4 @@
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/iformatable>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 class foo : public object, public iformatable {
 public:

@@ -1,8 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-using namespace xtd::collections::generic;
-
 struct order_order_line : public object, public iequatable<order_order_line> {
 public:
   order_order_line(int order_id, int order_line_id) : order_id_ {order_id}, order_line_id_ {order_line_id} {}

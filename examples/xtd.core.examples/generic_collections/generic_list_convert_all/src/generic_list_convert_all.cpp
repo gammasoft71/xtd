@@ -1,31 +1,27 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::drawing;
-
 class example {
 public:
   static auto main() -> void {
-    auto lpf = list<point_f> {};
+    auto lpf = list<drawing::point_f> {};
     
-    lpf.add(point_f {27.8f, 32.62f});
-    lpf.add(point_f {99.3f, 147.273f});
-    lpf.add(point_f {7.5f, 1412.2f});
+    lpf.add(drawing::point_f {27.8f, 32.62f});
+    lpf.add(drawing::point_f {99.3f, 147.273f});
+    lpf.add(drawing::point_f {7.5f, 1412.2f});
     
     console::write_line();
     for (const auto& p : lpf)
       console::write_line(p);
     
-    list<point> lp = lpf.convert_all(converter<point, const point_f&> {point_f_to_point});
+    list<drawing::point> lp = lpf.convert_all(converter<drawing::point, const drawing::point_f&> {point_f_to_point});
     
     console::write_line();
     for (const auto& p : lp)
       console::write_line(p);
   }
 
-  static point point_f_to_point(const point_f& pf) {
-    return point {as<int>(pf.x), as<int>(pf.y)};
+  static drawing::point point_f_to_point(const drawing::point_f& pf) {
+    return {as<int>(pf.x), as<int>(pf.y)};
   }
 };
 

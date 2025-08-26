@@ -1,9 +1,4 @@
-#include <xtd/console>
-#include <xtd/iasync_result>
-#include <xtd/threading/thread>
-
-using namespace xtd;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 class async_demo {
 public:

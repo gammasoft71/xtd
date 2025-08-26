@@ -1,8 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-using namespace xtd::collections::generic;
-
 // Simple business object. A part_id is used to identify the type of part
 // but the part name can change.
 class part : public object, public iequatable<part> {

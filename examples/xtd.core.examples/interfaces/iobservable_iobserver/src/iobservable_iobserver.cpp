@@ -1,12 +1,4 @@
-#include <xtd/collections/generic/list>
-#include <xtd/console>
-#include <xtd/iobservable>
-#include <xtd/iobserver>
-#include <xtd/system_exception>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
-
+#include <xtd/xtd>
 
 struct location {
 public:

@@ -1,9 +1,4 @@
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/foreground_color>
-#include <xtd/iformatable>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 // The following simple class throws an `xtd::format_exception`exception with the `xtd::console::write_line` method,
 // and generates the invalid result "(unregistered)" with output stream.

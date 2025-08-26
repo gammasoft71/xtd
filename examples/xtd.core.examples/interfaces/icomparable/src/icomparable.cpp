@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/icomparable>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 class foo : public icomparable<foo> {
 public:
