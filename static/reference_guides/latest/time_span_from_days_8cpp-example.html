@@ -97,17 +97,12 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <p>Demonstrates the <a class="el" href="classxtd_1_1time__span.html#a130173b3c3e8483b0a7b2fd162edf8a4" title="Returns a xtd::time_span that represents a specified number of days, where the specification is accur...">xtd::time_span::from_days</a> method.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/time_span&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/int64_object&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/string&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> gen_time_span_from_days (<span class="keywordtype">double</span> days) {</div>
 <div class="line">  <span class="comment">// Crée un objet TimeSpan et une chaîne TimeSpan à partir</span></div>
 <div class="line">  <span class="comment">// d&#39;un nombre de jours.</span></div>
-<div class="line">  <span class="keyword">auto</span> interval = <a class="code hl_function" href="classxtd_1_1time__span.html#a130173b3c3e8483b0a7b2fd162edf8a4">time_span::from_days</a>(days);</div>
+<div class="line">  <span class="keyword">auto</span> interval = time_span::from_days(days);</div>
 <div class="line">  <span class="keyword">auto</span> time_interval = interval.to_string();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Remplit la fin de la chaîne TimeSpan avec des espaces si elle</span></div>
@@ -116,15 +111,15 @@ $(function(){ initResizable(false); });
 <div class="line">  index = time_interval.index_of( <span class="charliteral">&#39;.&#39;</span>, index );</div>
 <div class="line">  <span class="keywordflow">if</span> (index == string::npos) time_interval += <span class="stringliteral">&quot;        &quot;</span>;</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0,21}{1,26}&quot;</span>, days, time_interval);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;{0,21}{1,26}&quot;</span>, days, time_interval);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main() {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;This example of time_span::from_days(double)\n&quot;</span></div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;This example of time_span::from_days(double)\n&quot;</span></div>
 <div class="line">                      <span class="stringliteral">&quot;generates the following output.\n&quot;</span> );</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0,21}{1,19}&quot;</span>,</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;{0,21}{1,19}&quot;</span>,</div>
 <div class="line">                      <span class="stringliteral">&quot;from_days&quot;</span>, <span class="stringliteral">&quot;time_span&quot;</span> );</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0,21}{1,19}&quot;</span>,</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;{0,21}{1,19}&quot;</span>,</div>
 <div class="line">                      <span class="stringliteral">&quot;---------&quot;</span>, <span class="stringliteral">&quot;---------&quot;</span> );</div>
 <div class="line">  </div>
 <div class="line">  gen_time_span_from_days(0.000000006);</div>
@@ -154,14 +149,11 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="comment">//           0.041666666          01:00:00</span></div>
 <div class="line"><span class="comment">//                     1        1.00:00:00</span></div>
 <div class="line"><span class="comment">//           20.84745602       20.20:20:20.2000000</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1time__span_html_a130173b3c3e8483b0a7b2fd162edf8a4"><div class="ttname"><a href="classxtd_1_1time__span.html#a130173b3c3e8483b0a7b2fd162edf8a4">xtd::time_span::from_days</a></div><div class="ttdeci">static time_span from_days(double value)</div><div class="ttdoc">Returns a xtd::time_span that represents a specified number of days, where the specification is accur...</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 26 2025 19:41:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 26 2025 20:38:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

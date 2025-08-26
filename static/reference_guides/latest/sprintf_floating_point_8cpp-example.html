@@ -97,26 +97,21 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use xtd::string::sprintf method.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/double_object&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/string&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%f&quot;</span>, 12.345) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%F&quot;</span>, 12.345) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%e&quot;</span>, 12.345) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%E&quot;</span>, 12.345) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%g&quot;</span>, 12.345) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%G&quot;</span>, 12.345) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::sprintf(<span class="stringliteral">&quot;0x%a&quot;</span>, 12.345) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::sprintf(<span class="stringliteral">&quot;0x%A&quot;</span>, 12.345) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%G&quot;</span>, <a class="code hl_variable" href="classxtd_1_1box__floating__point.html#a0c3f86bfb01071c75facec7b01b69177">double_object::epsilon</a>) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%f&quot;</span>, <a class="code hl_variable" href="classxtd_1_1box__floating__point.html#a3e658f6e798b8f0f972fef8bfd8ff086">double_object::NaN</a>) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%f&quot;</span>, <a class="code hl_variable" href="classxtd_1_1box__floating__point.html#a97a1688011f651b30b6c4ed223d8e540">double_object::positive_infinity</a>) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%f&quot;</span>, <a class="code hl_variable" href="classxtd_1_1box__floating__point.html#af0e356626d4d7a6198806cbc2cca4f97">double_object::negative_infinity</a>) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%f&quot;</span>, 12.345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%F&quot;</span>, 12.345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%e&quot;</span>, 12.345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%E&quot;</span>, 12.345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%g&quot;</span>, 12.345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%G&quot;</span>, 12.345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;0x%a&quot;</span>, 12.345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;0x%A&quot;</span>, 12.345) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%G&quot;</span>, double_object::epsilon) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%f&quot;</span>, double_object::NaN) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%f&quot;</span>, double_object::positive_infinity) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%f&quot;</span>, double_object::negative_infinity) &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -133,18 +128,11 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="comment">// nan</span></div>
 <div class="line"><span class="comment">// inf</span></div>
 <div class="line"><span class="comment">// -inf</span></div>
-<div class="ttc" id="aclassxtd_1_1box__floating__point_html_a0c3f86bfb01071c75facec7b01b69177"><div class="ttname"><a href="classxtd_1_1box__floating__point.html#a0c3f86bfb01071c75facec7b01b69177">xtd::box_floating_point&lt; double &gt;::epsilon</a></div><div class="ttdeci">static constexpr double epsilon</div><div class="ttdef"><b>Definition</b> box_floating_point.hpp:56</div></div>
-<div class="ttc" id="aclassxtd_1_1box__floating__point_html_a3e658f6e798b8f0f972fef8bfd8ff086"><div class="ttname"><a href="classxtd_1_1box__floating__point.html#a3e658f6e798b8f0f972fef8bfd8ff086">xtd::box_floating_point&lt; double &gt;::NaN</a></div><div class="ttdeci">static constexpr double NaN</div><div class="ttdef"><b>Definition</b> box_floating_point.hpp:59</div></div>
-<div class="ttc" id="aclassxtd_1_1box__floating__point_html_a97a1688011f651b30b6c4ed223d8e540"><div class="ttname"><a href="classxtd_1_1box__floating__point.html#a97a1688011f651b30b6c4ed223d8e540">xtd::box_floating_point&lt; double &gt;::positive_infinity</a></div><div class="ttdeci">static constexpr double positive_infinity</div><div class="ttdef"><b>Definition</b> box_floating_point.hpp:65</div></div>
-<div class="ttc" id="aclassxtd_1_1box__floating__point_html_af0e356626d4d7a6198806cbc2cca4f97"><div class="ttname"><a href="classxtd_1_1box__floating__point.html#af0e356626d4d7a6198806cbc2cca4f97">xtd::box_floating_point&lt; double &gt;::negative_infinity</a></div><div class="ttdeci">static constexpr double negative_infinity</div><div class="ttdef"><b>Definition</b> box_floating_point.hpp:62</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a923837ac84baf01726703e0474ca4888"><div class="ttname"><a href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">xtd::console::out</a></div><div class="ttdeci">static std::ostream out</div><div class="ttdoc">Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...</div><div class="ttdef"><b>Definition</b> console.hpp:52</div></div>
-<div class="ttc" id="aclassxtd_1_1environment_html_a19a9aa87ee20eb3789058621ed161c4e"><div class="ttname"><a href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">xtd::environment::new_line</a></div><div class="ttdeci">static xtd::string new_line() noexcept</div><div class="ttdoc">Gets the newline string defined for this environment.</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 26 2025 19:41:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 26 2025 20:38:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
