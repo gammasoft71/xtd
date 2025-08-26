@@ -1,13 +1,8 @@
-#include <xtd/diagnostics/process>
-#include <xtd/block_scope>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::diagnostics;
+#include <xtd/xtd>
 
 auto main() -> int {
   try {
-    block_scope_(auto my_process = process {}) {
+    block_scope_(auto my_process = diagnostics::process {}) {
       // You can start any process other guidgen.
       my_process.start_info().file_name("guidgen");
       my_process.start_info().create_no_window(true);

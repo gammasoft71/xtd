@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/random>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto bytes1 = array<byte>(100);

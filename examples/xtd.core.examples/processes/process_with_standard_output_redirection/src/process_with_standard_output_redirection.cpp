@@ -1,16 +1,10 @@
-#include <xtd/diagnostics/process>
-#include <xtd/io/stream_reader>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::diagnostics;
-using namespace xtd::io;
+#include <xtd/xtd>
 
 auto main() -> int {
-  auto start_info = process_start_info {"xtdc", "--help"};
+  auto start_info = diagnostics::process_start_info {"xtdc", "--help"};
   start_info.redirect_standard_output(true);
   
-  auto& standard_output = process::start(start_info).standard_output();
+  auto& standard_output = diagnostics::process::start(start_info).standard_output();
   
   auto reader = stream_reader {standard_output};
   console::write(reader.read_to_end());
