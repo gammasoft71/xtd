@@ -197,8 +197,6 @@ Typedefs</h2></td></tr>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows hows to use <a class="el" href="#ga83a0a06ecb97330626993339079ebbf6" title="Represents a collection of xtd::any_object.">xtd::collections::array_list</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections.html">xtd::collections</a>;</div>
-<div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> collection_t&gt;</div>
 <div class="line"><span class="keywordtype">void</span> print_values(<span class="keyword">const</span> collection_t&amp; my_list) {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> obj : my_list)</div>
@@ -208,16 +206,16 @@ Typedefs</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Creates and initializes a new vector_list.</span></div>
-<div class="line">  <span class="keyword">auto</span> my_vl = <a class="code hl_typedef" href="#ga83a0a06ecb97330626993339079ebbf6">array_list</a> {};</div>
+<div class="line">  <span class="keyword">auto</span> my_vl = <a class="code hl_typedef" href="#ga83a0a06ecb97330626993339079ebbf6">collections::array_list</a> {};</div>
 <div class="line">  my_vl.emplace_back(<span class="stringliteral">&quot;Hello&quot;</span>);</div>
 <div class="line">  my_vl.emplace_back(<span class="stringliteral">&quot;World&quot;</span>);</div>
 <div class="line">  my_vl.emplace_back(<span class="stringliteral">&quot;!&quot;</span>);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Displays the properties and values of the vector_list.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;my_vl&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;    size:    {0}&quot;</span>, my_vl.size());</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;    Capacity: {0}&quot;</span>, my_vl.capacity());</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;    Values:&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;my_vl&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;    size:    {0}&quot;</span>, my_vl.size());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;    Capacity: {0}&quot;</span>, my_vl.capacity());</div>
+<div class="line">  console::write(<span class="stringliteral">&quot;    Values:&quot;</span>);</div>
 <div class="line">  print_values(my_vl);</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -229,7 +227,6 @@ Typedefs</h2></td></tr>
 <div class="line"><span class="comment">//     Values:   Hello   World   !</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:462</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_html"><div class="ttname"><a href="namespacextd_1_1collections.html">xtd::collections</a></div><div class="ttdoc">The xtd::collections namespace contains interfaces and classes that define various collections of obj...</div><div class="ttdef"><b>Definition</b> any_pair.hpp:10</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>TTo add a class, structure or any other type unknown to xtd, you need to implement the <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> and xtd::icompoabale interfaces or overrride the == and &lt; operetors. </dd></dl>
 
@@ -362,12 +359,10 @@ Because serializing and deserializing an enumerator for a <a class="el" href="#g
 <dl class="section note"><dt>Note</dt><dd>Because keys can be inherited and their behavior changed, their absolute uniqueness cannot be guaranteed by comparisons using the Equals method. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to create, initialize and perform various functions to a <a class="el" href="#ga5a1cbe0162263e2c6626f996ca032078" title="Represents a collection of key/value pairs that are organized based on the hash code of the key.">xtd::collections::hashtable</a> and how to print out its keys and values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections.html">xtd::collections</a>;</div>
-<div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Create a new hash table.</span></div>
 <div class="line">  <span class="comment">//</span></div>
-<div class="line">  <a class="code hl_typedef" href="#ga5a1cbe0162263e2c6626f996ca032078">hashtable</a> open_with;</div>
+<div class="line">  <span class="keyword">auto</span> open_with = <a class="code hl_typedef" href="#ga5a1cbe0162263e2c6626f996ca032078">collections::hashtable</a> {};</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Add some elements to the hash table. There are no</span></div>
 <div class="line">  <span class="comment">// duplicate keys, but some of the values are duplicates.</span></div>
@@ -391,23 +386,23 @@ Because serializing and deserializing an enumerator for a <a class="el" href="#g
 <div class="line">  </div>
 <div class="line">  <span class="comment">// contains can be used to test keys before inserting</span></div>
 <div class="line">  <span class="comment">// them.</span></div>
-<div class="line">  <span class="keywordflow">if</span> (!open_with.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a7db129cddf553ee484a09e6d39bb87a0">contains</a>(<span class="stringliteral">&quot;ht&quot;</span>)) {</div>
+<div class="line">  <span class="keywordflow">if</span> (!open_with.contains(<span class="stringliteral">&quot;ht&quot;</span>)) {</div>
 <div class="line">    open_with[<span class="stringliteral">&quot;ht&quot;</span>] = <span class="stringliteral">&quot;hypertrm.exe&quot;</span>;</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Value added for key = \&quot;ht\&quot;: {0}&quot;</span>, open_with[<span class="stringliteral">&quot;ht&quot;</span>]);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// When you use foreach to enumerate hash table elements,</span></div>
 <div class="line">  <span class="comment">// the elements are retrieved as xtd::collections::generic::key_value_pair objects.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">  console::write_line();</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> de : open_with)</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Key = {0}, Value = {1}&quot;</span>, de.first, de.second);</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Key = {0}, Value = {1}&quot;</span>, de.first, de.second);</div>
 <div class="line">    </div>
 <div class="line">  <span class="comment">// Use the Remove method to remove a key/value pair.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nerase(\&quot;doc\&quot;)&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;\nerase(\&quot;doc\&quot;)&quot;</span>);</div>
 <div class="line">  open_with.erase(<span class="stringliteral">&quot;doc&quot;</span>);</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">if</span> (!open_with.contains(<span class="stringliteral">&quot;doc&quot;</span>))</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Key \&quot;doc\&quot; is not found.&quot;</span>);</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Key \&quot;doc\&quot; is not found.&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -425,7 +420,6 @@ Because serializing and deserializing an enumerator for a <a class="el" href="#g
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// erase(&quot;doc&quot;)</span></div>
 <div class="line"><span class="comment">// Key &quot;doc&quot; is not found.</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1dictionary_html_a7db129cddf553ee484a09e6d39bb87a0"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a7db129cddf553ee484a09e6d39bb87a0">xtd::collections::generic::dictionary::contains</a></div><div class="ttdeci">bool contains(const key_t &amp;key) const noexcept</div><div class="ttdoc">Checks if the container contains element with specific key.</div><div class="ttdef"><b>Definition</b> dictionary.hpp:807</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -535,11 +529,7 @@ For the generic version of this interface, see xtd::collections::generic::icolle
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections.html" title="The xtd::collections namespace contains interfaces and classes that define various collections of obj...">xtd::collections</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the best practice for iterating a custom collection by implementing the <a class="el" href="#gaf8650b6defaa46086307019cf98a5248" title="Exposes an enumerator, which supports a simple iteration over a non-generic collection.">xtd::collections::ienumerable</a> and <a class="el" href="#ga7e82abf077905e1a534f62d8beb0e0a2" title="Supports a simple iteration over a non-generic collection.">xtd::collections::ienumerator</a> interfaces. In this example, members of these interfaces are not explicitly called, but they are implemented to support the use of <code>for each</code> to iterate through the collection. This example is a complete Console app. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/array_list&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the best practice for iterating a custom collection by implementing the <a class="el" href="#gaf8650b6defaa46086307019cf98a5248" title="Exposes an enumerator, which supports a simple iteration over a non-generic collection.">xtd::collections::ienumerable</a> and <a class="el" href="#ga7e82abf077905e1a534f62d8beb0e0a2" title="Supports a simple iteration over a non-generic collection.">xtd::collections::ienumerator</a> interfaces. In this example, members of these interfaces are not explicitly called, but they are implemented to support the use of <code>for each</code> to iterate through the collection. This example is a complete Console app. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -557,7 +547,7 @@ For the generic version of this interface, see xtd::collections::generic::icolle
 <div class="line">      <span class="keywordflow">if</span> (first_name &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.first_name || (first_name == <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.first_name &amp;&amp; last_name &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.last_name)) <span class="keywordflow">return</span> 1;</div>
 <div class="line">      <span class="keywordflow">return</span> -1;</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespacextd.html#a9d02f9ee8b045cc4b36d45c12aec4e3d">equals</a>(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is&lt;person&gt;</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>) &amp;&amp; <a class="code hl_function" href="namespacextd.html#a9d02f9ee8b045cc4b36d45c12aec4e3d">equals</a>(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;person&gt;</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>));}</div>
+<div class="line">    <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> is&lt;person&gt;(o) &amp;&amp; equals(as&lt;person&gt;(o));}</div>
 <div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespacextd.html#a9d02f9ee8b045cc4b36d45c12aec4e3d">equals</a>(<span class="keyword">const</span> person&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> compare_to(o) == 0;}</div>
 <div class="line">    <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{} {}&quot;</span>, first_name, last_name);}</div>
 <div class="line">  };</div>
@@ -569,9 +559,9 @@ For the generic version of this interface, see xtd::collections::generic::icolle
 <div class="line">    </div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    people(<span class="keyword">const</span> array&lt;person&gt;&amp; p_array) {</div>
-<div class="line">      people_ = collections::array_list(p_array.<a class="code hl_function" href="classxtd_1_1basic__array.html#af2ad3488e28e4140835dece83723e7eb">size</a>());</div>
+<div class="line">      people_ = collections::array_list(p_array.size());</div>
 <div class="line">      </div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0_z; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; p_array.<a class="code hl_function" href="classxtd_1_1basic__array.html#af2ad3488e28e4140835dece83723e7eb">size</a>(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0_z; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; p_array.size(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
 <div class="line">        people_[i] = p_array[i];</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -592,12 +582,12 @@ For the generic version of this interface, see xtd::collections::generic::icolle
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    people_enumerator(<span class="keyword">const</span> collections::array_list&amp; list) : people_(list) {}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">bool</span> move_next()<span class="keyword"> override </span>{<span class="keywordflow">return</span> ++position &lt; people_.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438">count</a>();}</div>
+<div class="line">    <span class="keywordtype">bool</span> move_next()<span class="keyword"> override </span>{<span class="keywordflow">return</span> ++position &lt; people_.count();}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> reset()<span class="keyword"> override </span>{position = collections::array_list::npos;}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">const</span> any_object&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga7a589c8f2da82ae9a6f693b968cb7afca43b5c9175984c071f30b873fdce0a000">current</a>()<span class="keyword"> const override </span>{</div>
-<div class="line">      <span class="keywordflow">if</span> (position &gt;= people_.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#ac58e0941ae647494403850c828049614">size</a>()) <span class="keywordflow">throw</span> invalid_operation_exception {};</div>
+<div class="line">      <span class="keywordflow">if</span> (position &gt;= people_.size()) <span class="keywordflow">throw</span> invalid_operation_exception {};</div>
 <div class="line">      <span class="keywordflow">return</span> people_[position];</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
@@ -623,21 +613,15 @@ For the generic version of this interface, see xtd::collections::generic::icolle
 <div class="line"><span class="comment">// John Smith</span></div>
 <div class="line"><span class="comment">// Jim Johnson</span></div>
 <div class="line"><span class="comment">// Sue Rabon</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_af2ad3488e28e4140835dece83723e7eb"><div class="ttname"><a href="classxtd_1_1basic__array.html#af2ad3488e28e4140835dece83723e7eb">xtd::basic_array::size</a></div><div class="ttdeci">virtual size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container, i.e. std::distance(xtd::array::begin(),...</div><div class="ttdef"><b>Definition</b> basic_array.hpp:246</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a9fc65d3d8c22e9fafb4b35265be9c438"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438">xtd::collections::generic::list::count</a></div><div class="ttdeci">size_type count() const noexcept override</div><div class="ttdoc">Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> list.hpp:339</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_ac58e0941ae647494403850c828049614"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#ac58e0941ae647494403850c828049614">xtd::collections::generic::list::size</a></div><div class="ttdeci">virtual size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container, i.e. std::distance(xtd::collections::generic::list::...</div><div class="ttdef"><b>Definition</b> list.hpp:437</div></div>
 <div class="ttc" id="aclassxtd_1_1icomparable_html"><div class="ttname"><a href="classxtd_1_1icomparable.html">xtd::icomparable</a></div><div class="ttdoc">Defines a generalized comparison method that a value type or class implements to create a type-specif...</div><div class="ttdef"><b>Definition</b> icomparable.hpp:21</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:22</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:44</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 <div class="ttc" id="agroup__types_html_ga221e5b824352c9046d353e4659af5b87"><div class="ttname"><a href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
 <div class="ttc" id="agroup__types_html_ga60803bd100102370b937ec089f136260"><div class="ttname"><a href="group__types.html#ga60803bd100102370b937ec089f136260">xtd::int32</a></div><div class="ttdeci">int32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> int32.hpp:23</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga8419620dc289ac0d790372a1616e993f"><div class="ttname"><a href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">xtd::is</a></div><div class="ttdeci">bool is(xtd::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:485</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gga7a589c8f2da82ae9a6f693b968cb7afca43b5c9175984c071f30b873fdce0a000"><div class="ttname"><a href="group__xtd__core.html#gga7a589c8f2da82ae9a6f693b968cb7afca43b5c9175984c071f30b873fdce0a000">xtd::io::seek_origin::current</a></div><div class="ttdeci">@ current</div><div class="ttdoc">Specifies the current position within a stream.</div><div class="ttdef"><b>Definition</b> seek_origin.hpp:20</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">xtd::console_key::o</a></div><div class="ttdeci">@ o</div><div class="ttdoc">The O key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:116</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 <div class="ttc" id="anamespacextd_html_a2ed47ae86e395ccbe84ab1857c78c4e0"><div class="ttname"><a href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">xtd::to_string</a></div><div class="ttdeci">string to_string() const noexcept override</div><div class="ttdoc">Returns the string representation of this xtd::read_only_span &lt;type_t&gt; object.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:375</div></div>
 <div class="ttc" id="anamespacextd_html_a9d02f9ee8b045cc4b36d45c12aec4e3d"><div class="ttname"><a href="namespacextd.html#a9d02f9ee8b045cc4b36d45c12aec4e3d">xtd::equals</a></div><div class="ttdeci">bool equals(const object &amp;obj) const noexcept override</div><div class="ttdoc">Determines whether the specified object is equal to the current object.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:272</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -669,11 +653,7 @@ It is a best practice to implement <a class="el" href="#gaf8650b6defaa4608630701
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections.html" title="The xtd::collections namespace contains interfaces and classes that define various collections of obj...">xtd::collections</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<p>The following code example demonstrates the best practice for iterating a custom collection by implementing the <a class="el" href="#gaf8650b6defaa46086307019cf98a5248" title="Exposes an enumerator, which supports a simple iteration over a non-generic collection.">xtd::collections::ienumerable</a> and <a class="el" href="#ga7e82abf077905e1a534f62d8beb0e0a2" title="Supports a simple iteration over a non-generic collection.">xtd::collections::ienumerator</a> interfaces. In this example, members of these interfaces are not explicitly called, but they are implemented to support the use of <code>for each</code> to iterate through the collection. This example is a complete Console app. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/array_list&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<p>The following code example demonstrates the best practice for iterating a custom collection by implementing the <a class="el" href="#gaf8650b6defaa46086307019cf98a5248" title="Exposes an enumerator, which supports a simple iteration over a non-generic collection.">xtd::collections::ienumerable</a> and <a class="el" href="#ga7e82abf077905e1a534f62d8beb0e0a2" title="Supports a simple iteration over a non-generic collection.">xtd::collections::ienumerator</a> interfaces. In this example, members of these interfaces are not explicitly called, but they are implemented to support the use of <code>for each</code> to iterate through the collection. This example is a complete Console app. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -691,7 +671,7 @@ It is a best practice to implement <a class="el" href="#gaf8650b6defaa4608630701
 <div class="line">      <span class="keywordflow">if</span> (first_name &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.first_name || (first_name == <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.first_name &amp;&amp; last_name &gt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>.last_name)) <span class="keywordflow">return</span> 1;</div>
 <div class="line">      <span class="keywordflow">return</span> -1;</div>
 <div class="line">    }</div>
-<div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespacextd.html#a9d02f9ee8b045cc4b36d45c12aec4e3d">equals</a>(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is&lt;person&gt;</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>) &amp;&amp; <a class="code hl_function" href="namespacextd.html#a9d02f9ee8b045cc4b36d45c12aec4e3d">equals</a>(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;person&gt;</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>));}</div>
+<div class="line">    <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> is&lt;person&gt;(o) &amp;&amp; equals(as&lt;person&gt;(o));}</div>
 <div class="line">    <span class="keywordtype">bool</span> <a class="code hl_function" href="namespacextd.html#a9d02f9ee8b045cc4b36d45c12aec4e3d">equals</a>(<span class="keyword">const</span> person&amp; o) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> compare_to(o) == 0;}</div>
 <div class="line">    <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{} {}&quot;</span>, first_name, last_name);}</div>
 <div class="line">  };</div>
@@ -703,9 +683,9 @@ It is a best practice to implement <a class="el" href="#gaf8650b6defaa4608630701
 <div class="line">    </div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    people(<span class="keyword">const</span> array&lt;person&gt;&amp; p_array) {</div>
-<div class="line">      people_ = collections::array_list(p_array.<a class="code hl_function" href="classxtd_1_1basic__array.html#af2ad3488e28e4140835dece83723e7eb">size</a>());</div>
+<div class="line">      people_ = collections::array_list(p_array.size());</div>
 <div class="line">      </div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0_z; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; p_array.<a class="code hl_function" href="classxtd_1_1basic__array.html#af2ad3488e28e4140835dece83723e7eb">size</a>(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0_z; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; p_array.size(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
 <div class="line">        people_[i] = p_array[i];</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -726,12 +706,12 @@ It is a best practice to implement <a class="el" href="#gaf8650b6defaa4608630701
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    people_enumerator(<span class="keyword">const</span> collections::array_list&amp; list) : people_(list) {}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">bool</span> move_next()<span class="keyword"> override </span>{<span class="keywordflow">return</span> ++position &lt; people_.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438">count</a>();}</div>
+<div class="line">    <span class="keywordtype">bool</span> move_next()<span class="keyword"> override </span>{<span class="keywordflow">return</span> ++position &lt; people_.count();}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> reset()<span class="keyword"> override </span>{position = collections::array_list::npos;}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">const</span> any_object&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga7a589c8f2da82ae9a6f693b968cb7afca43b5c9175984c071f30b873fdce0a000">current</a>()<span class="keyword"> const override </span>{</div>
-<div class="line">      <span class="keywordflow">if</span> (position &gt;= people_.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#ac58e0941ae647494403850c828049614">size</a>()) <span class="keywordflow">throw</span> invalid_operation_exception {};</div>
+<div class="line">      <span class="keywordflow">if</span> (position &gt;= people_.size()) <span class="keywordflow">throw</span> invalid_operation_exception {};</div>
 <div class="line">      <span class="keywordflow">return</span> people_[position];</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
@@ -830,13 +810,7 @@ The <a class="el" href="#gaf08e1c4c9551b36c55a00283f6431e5d" title="Defines meth
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections.html" title="The xtd::collections namespace contains interfaces and classes that define various collections of obj...">xtd::collections</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<p>par Examples The following example demonstrates the implementation of the <a class="el" href="#ga564fa21e6bb9787ccd4b37201081cf6b" title="Represents a non-generic collection of objects that can be individually accessed by index.">xtd::collections::ilist</a> interface to create a simple, fixed-size list. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/array_list&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/array&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/not_implemented_exception&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<p>par Examples The following example demonstrates the implementation of the <a class="el" href="#ga564fa21e6bb9787ccd4b37201081cf6b" title="Represents a non-generic collection of objects that can be individually accessed by index.">xtd::collections::ilist</a> interface to create a simple, fixed-size list. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -892,11 +866,11 @@ The <a class="el" href="#gaf08e1c4c9551b36c55a00283f6431e5d" title="Defines meth
 <div class="line">    simple_list() {count_ = 0;}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> print_contents() const noexcept {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;List has a capacity of {} and currently has {} elements.&quot;</span>, contents_.<a class="code hl_function" href="classxtd_1_1basic__array.html#af2ad3488e28e4140835dece83723e7eb">size</a>(), count_);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;List contents:&quot;</span>);</div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0_z; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; count(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot; {}&quot;</span>, contents_[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>]);</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;List has a capacity of {} and currently has {} elements.&quot;</span>, contents_.<a class="code hl_function" href="classxtd_1_1basic__array.html#af2ad3488e28e4140835dece83723e7eb">size</a>(), count_);</div>
+<div class="line">      console::write(<span class="stringliteral">&quot;List contents:&quot;</span>);</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0_z; i &lt; count(); ++i)</div>
+<div class="line">        console::write(<span class="stringliteral">&quot; {}&quot;</span>, contents_[i]);</div>
+<div class="line">      console::write_line();</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// xtd::collections::iist Members</span></div>
@@ -1010,6 +984,7 @@ The <a class="el" href="#gaf08e1c4c9551b36c55a00283f6431e5d" title="Defines meth
 <div class="line"><span class="comment">// List contains &quot;three&quot;: true</span></div>
 <div class="line"><span class="comment">// List contains &quot;ten&quot;: false</span></div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:63</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__array_html_af2ad3488e28e4140835dece83723e7eb"><div class="ttname"><a href="classxtd_1_1basic__array.html#af2ad3488e28e4140835dece83723e7eb">xtd::basic_array::size</a></div><div class="ttdeci">virtual size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container, i.e. std::distance(xtd::array::begin(),...</div><div class="ttdef"><b>Definition</b> basic_array.hpp:246</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a01bc6f8efa4202821e95f4fdf6298b30"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a01bc6f8efa4202821e95f4fdf6298b30">xtd::console_key::clear</a></div><div class="ttdeci">@ clear</div><div class="ttdoc">The CLEAR key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:26</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a34ec78fcc91ffb1e54cd85e4a0924332"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a34ec78fcc91ffb1e54cd85e4a0924332">xtd::console_key::add</a></div><div class="ttdeci">@ add</div><div class="ttdoc">The Add key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:170</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae0df5f3dfd2650ae5be9993434e2b2c0"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae0df5f3dfd2650ae5be9993434e2b2c0">xtd::console_key::insert</a></div><div class="ttdeci">@ insert</div><div class="ttdoc">The INS (INSERT) key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:62</div></div>
@@ -1101,7 +1076,7 @@ For the generic version of this interface, see xtd::collections::generic::ilist 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Aug 25 2025 21:59:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 26 2025 09:55:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
