@@ -1,7 +1,4 @@
-#include <xtd/diagnostics/assert>
-#include <xtd/console>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   // Uncomment following lines to remove assert dialog

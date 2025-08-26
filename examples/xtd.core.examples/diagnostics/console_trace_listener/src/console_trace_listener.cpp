@@ -1,23 +1,17 @@
 #define DEBUG // Force debug mode even if example is builded in release.
-#include <xtd/diagnostics/debug>
-#include <xtd/diagnostics/console_trace_listener>
-#include <xtd/threading/thread>
-#include <memory>
-
-using namespace xtd;
-using namespace xtd::diagnostics;
+#include <xtd/xtd>
 
 auto main() -> int {
-  debug::listeners({new_ptr<console_trace_listener>()});
-  debug::write_line("Begin");
-  debug::indent();
+  diagnostics::debug::listeners({new_ptr<diagnostics::console_trace_listener>()});
+  diagnostics::debug::write_line("Begin");
+  diagnostics::debug::indent();
   /// Simulate work...
   for (auto step = 1; step <= 10; step++) {
-    debug::write_line("working step {}...", step);
-    threading::thread::sleep(300_ms);
+    diagnostics::debug::write_line("working step {}...", step);
+    thread::sleep(300_ms);
   }
-  debug::unindent();
-  debug::write_line("End");
+  diagnostics::debug::unindent();
+  diagnostics::debug::write_line("End");
 }
 
 // This code produces the following output :

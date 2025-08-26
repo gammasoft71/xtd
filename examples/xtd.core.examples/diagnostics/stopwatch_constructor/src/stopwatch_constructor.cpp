@@ -1,14 +1,7 @@
-#include <xtd/diagnostics/stopwatch>
-#include <xtd/threading/thread>
-#include <xtd/console>
-#include <chrono>
-
-using namespace std::chrono;
-using namespace xtd;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 auto main() -> int {
-  auto stopwatch = xtd::diagnostics::stopwatch {};
+  auto stopwatch = diagnostics::stopwatch {};
   stopwatch.start();
   thread::sleep(10000_ms);
   stopwatch.stop();

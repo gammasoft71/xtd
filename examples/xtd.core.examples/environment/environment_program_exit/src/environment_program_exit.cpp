@@ -1,10 +1,4 @@
-#include <xtd/threading/thread>
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 namespace environment_program_exit_example {
   class program static_ {

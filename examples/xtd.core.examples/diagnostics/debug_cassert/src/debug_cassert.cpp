@@ -1,18 +1,14 @@
-#include <xtd/diagnostics/debug>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::diagnostics;
+#include <xtd/xtd>
 
 auto main() -> int {
   // Uncomment following lines to remove assert dialog
-  //for (auto listener : debug::listeners())
-  //  if (is<default_trace_listener>(listener))
-  //    as<default_trace_listener>(listener)->assert_ui_enabled(false);
+  //for (auto listener : diagnostics::debug::listeners())
+  //  if (is<diagnostics::default_trace_listener>(listener))
+  //    as<diagnostics::default_trace_listener>(listener)->assert_ui_enabled(false);
 
   auto index = 0;
   console::write_line("Start application");
-  debug::cassert(index > 0);
+  diagnostics::debug::cassert(index > 0);
   console::write_line("End application");
 }
 

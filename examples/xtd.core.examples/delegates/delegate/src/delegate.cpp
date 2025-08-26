@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/delegate>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 void goodbye(const string& s) {
   console::write_line("Goodbye {}", s);

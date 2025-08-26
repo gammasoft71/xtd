@@ -1,15 +1,9 @@
-#include <xtd/action>
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/forms/message_box>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 using display_message = action<const string&>;
 
 void show_windows_message(const string& message) {
-  message_box::show(message);
+  forms::message_box::show(message);
 }
 
 void write_line(const string& message) {

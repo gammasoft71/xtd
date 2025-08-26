@@ -1,8 +1,4 @@
-#include <xtd/as>
-#include <xtd/console>
-#include <xtd/enum_class>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 constexpr int NORMAL = 0b0;
 constexpr int BOLD = 0b1;

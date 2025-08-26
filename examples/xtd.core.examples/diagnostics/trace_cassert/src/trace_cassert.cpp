@@ -1,19 +1,15 @@
 #define TRACE
-#include <xtd/diagnostics/trace>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::diagnostics;
+#include <xtd/xtd>
 
 auto main() -> int {
   // Uncomment following lines to remove assert dialog
-  //for (auto listener : trace::listeners())
-  //  if (is<default_trace_listener>(listener))
-  //    as<default_trace_listener>(listener)->assert_ui_enabled(false);
+  //for (auto listener : diagnostics::trace::listeners())
+  //  if (is<diagnostics::default_trace_listener>(listener))
+  //    as<diagnostics::default_trace_listener>(listener)->assert_ui_enabled(false);
 
   auto index = 0;
   console::write_line("Start application");
-  trace::cassert(index > 0, "index must be greater than 0");
+  diagnostics::trace::cassert(index > 0, "index must be greater than 0");
   console::write_line("End application");
 }
 

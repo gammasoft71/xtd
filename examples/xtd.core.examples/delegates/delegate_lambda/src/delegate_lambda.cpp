@@ -1,8 +1,4 @@
-#include <xtd/console>
-#include <xtd/delegate>
-#include <xtd/environment>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   // use delegate as std::function

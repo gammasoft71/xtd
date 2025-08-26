@@ -1,10 +1,4 @@
-#include <xtd/collections/generic/list>
-#include <xtd/action>
-#include <xtd/console>
-#include <algorithm>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto names = list {"Bruce", "Alfred", "Tim", "Richard"};

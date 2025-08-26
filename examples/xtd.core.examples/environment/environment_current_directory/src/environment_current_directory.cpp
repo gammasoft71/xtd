@@ -1,9 +1,4 @@
-#include <xtd/io/path>
-#include <xtd/console>
-#include <xtd/environment>
-
-using namespace xtd;
-using namespace xtd::io;
+#include <xtd/xtd>
 
 auto main() -> int {
   environment::current_directory(environment::get_folder_path(environment::special_folder::desktop));

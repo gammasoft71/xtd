@@ -1,8 +1,4 @@
-#include <xtd/as>
-#include <xtd/console>
-#include <xtd/enum_class>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 enum class text_attribute {
   normal = 0b0,

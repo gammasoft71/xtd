@@ -1,15 +1,9 @@
-#include <xtd/console>
-#include <xtd/delegate>
-#include <xtd/environment>
-#include <xtd/forms/message_box>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 using display_message = delegate<void(const string&)>;
 
 void show_windows_message(const string& message) {
-  message_box::show(message);
+  forms::message_box::show(message);
 }
 
 void write_line(const string& message) {

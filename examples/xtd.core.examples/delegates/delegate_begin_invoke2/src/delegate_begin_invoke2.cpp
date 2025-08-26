@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/delegate>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   console::write_line("(main) thread id = {}", thread::current_thread().managed_thread_id());

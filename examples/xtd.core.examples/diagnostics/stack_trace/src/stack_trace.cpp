@@ -1,15 +1,10 @@
-#include <xtd/diagnostics/stack_trace>
-#include <xtd/console>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::diagnostics;
+#include <xtd/xtd>
 
 namespace stack_trace_example {
   class main_class {
     static void method3() {
       console::write_line("stack_trace :");
-      console::write_line(stack_trace {});
+      console::write_line(diagnostics::stack_trace {});
     }
     
     static void method2() {

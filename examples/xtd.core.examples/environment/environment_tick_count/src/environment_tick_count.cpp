@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/environment>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto time_since_boot = environment::tick_count();

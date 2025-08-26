@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/environment>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto str = string::empty_string;
