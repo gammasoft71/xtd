@@ -1,7 +1,5 @@
 #define TRACE
-#include <xtd/ctrace>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   ctrace << "Hello, World!" << environment::new_line;

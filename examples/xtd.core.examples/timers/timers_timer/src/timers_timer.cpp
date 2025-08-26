@@ -1,10 +1,4 @@
-#include <xtd/timers/timer>
-#include <xtd/console>
-#include <xtd/date_time>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::timers;
+#include <xtd/xtd>
 
 namespace timer_example {
   class program {
@@ -28,14 +22,14 @@ namespace timer_example {
       a_timer.enabled(true);
     }
     
-    static void on_timed_event(object& source, const elapsed_event_args& e) {
+    static void on_timed_event(object& source, const timers::elapsed_event_args& e) {
       console::write_line("The elapsed event was raised at {:t}.{:d3}",
                           e.signal_time(), e.signal_time().millisecond());
     }
     
   private:
     // Create a timer with a two second interval.
-    inline static timer a_timer {2'000};
+    inline static timers::timer a_timer {2'000};
   };
 }
 

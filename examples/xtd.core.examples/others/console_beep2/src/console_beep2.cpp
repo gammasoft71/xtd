@@ -1,10 +1,4 @@
-#include <xtd/threading/thread>
-#include <xtd/beep>
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/int32_object>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main(int argc, char* argv[]) -> int {
   int x = 0;

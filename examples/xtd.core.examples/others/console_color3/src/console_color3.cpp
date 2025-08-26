@@ -1,15 +1,7 @@
-#include <xtd/collections/generic/list>
-#include <xtd/background_color>
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/foreground_color>
-#include <xtd/reset_color>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
+#include <xtd/xtd>
 
 auto main() -> int {
-  const auto logo = list {
+  const auto logo = array {
     u8"████████████████████████████████████████████████████████████",
     u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████",
     u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████",

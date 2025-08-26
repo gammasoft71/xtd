@@ -1,11 +1,7 @@
-#include <xtd/collections/generic/list>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
+#include <xtd/xtd>
 
 auto main() -> int {
-  const auto logo = list {
+  const auto logo = array {
     u8"████████████████████████████████████████████████████████████",
     u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████",
     u8"██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████",

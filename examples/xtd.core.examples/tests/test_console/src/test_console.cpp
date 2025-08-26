@@ -1,8 +1,4 @@
-#include <xtd/forms/message_box>
-#include <xtd/console>
-#include <xtd/startup>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 class console_main {
 public:

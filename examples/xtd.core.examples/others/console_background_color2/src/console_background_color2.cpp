@@ -1,8 +1,4 @@
-#include <xtd/background_color>
-#include <xtd/environment>
-#include <xtd/reset_color>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   console::out << background_color(console_color::dark_blue) << "                    " << reset_color() << environment::new_line;
