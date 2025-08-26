@@ -1,11 +1,4 @@
-#include <xtd/collections/generic/list>
-#include <xtd/format_exception>
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/string>
-
-using namespace xtd;
-using namespace xtd::collections;
+#include <xtd/xtd>
 
 class character : iformatable {
 public:
@@ -28,7 +21,7 @@ private:
   string rank_;
 };
 
-using characters = generic::list<character>;
+using characters = list<character>;
 
 auto main() -> int {
   character c("Jean-Luc Picard", "Captain");

@@ -1,7 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-
 int main() {
   console::out << string::sprintf("%s", (26_h + 3_min + 32_s + 24_ms + 500_ns).to_string("")) << environment::new_line;
   console::out << string::sprintf("%s", (26_h + 3_min + 32_s + 24_ms + 500_ns).to_string("G")) << environment::new_line;

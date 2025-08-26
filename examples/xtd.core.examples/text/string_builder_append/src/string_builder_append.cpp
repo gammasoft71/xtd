@@ -1,8 +1,4 @@
-#include <xtd/text/string_builder>
-#include <xtd/console>
-#include <xtd/istringable>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 class dog : public istringable {
 private:

@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/string>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto result_str = string::join(", ", {"One", "Two", "Three", "Four", "Five"});

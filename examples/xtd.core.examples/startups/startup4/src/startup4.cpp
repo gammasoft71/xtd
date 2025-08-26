@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/startup>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 namespace startup4_example {
   class program {

@@ -1,9 +1,4 @@
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/double_object>
-#include <xtd/string>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   console::out << string::sprintf("%f", 12.345) << environment::new_line;

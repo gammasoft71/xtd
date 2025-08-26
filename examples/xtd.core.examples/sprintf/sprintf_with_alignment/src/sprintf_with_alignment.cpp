@@ -1,7 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-
 int main() {
   console::out << string::sprintf("[%10d]", 42) << environment::new_line;
   console::out << string::sprintf("[%-10d]", 42) << environment::new_line;

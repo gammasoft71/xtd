@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/string>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto strings = string("One Two Three\tFour\nFive").split();

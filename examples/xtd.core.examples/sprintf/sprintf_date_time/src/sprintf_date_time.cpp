@@ -1,9 +1,4 @@
-#include <xtd/console>
-#include <xtd/date_time>
-#include <xtd/environment>
-#include <xtd/string>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto now = xtd::date_time::now();
