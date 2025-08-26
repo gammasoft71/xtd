@@ -1,11 +1,4 @@
-#include <xtd/collections/generic/list>
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/format_exception>
-#include <xtd/string>
-
-using namespace xtd;
-using namespace xtd::collections;
+#include <xtd/xtd>
 
 class character {
 public:
@@ -31,7 +24,7 @@ private:
 template<>
 std::string xtd::to_string(const character& value, const std::string& fmt, const std::locale& loc) {return value.to_string(fmt, loc);}
 
-using characters = generic::list<character>;
+using characters = list<character>;
 
 auto main() -> int {
   character c("Jean-Luc Picard", "Captain");

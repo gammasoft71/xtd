@@ -1,7 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-
 enum class week_day {
   monday,
   tuesday,

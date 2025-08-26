@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/string>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   console::write_line(string::concat("Hello", ", ", "World", "!"));
