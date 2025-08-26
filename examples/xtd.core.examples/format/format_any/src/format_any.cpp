@@ -1,10 +1,4 @@
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/register_any_stringer>
-#include <xtd/string>
-#include <xtd/unregister_any_stringer>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 class character {
 public:

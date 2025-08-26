@@ -1,8 +1,4 @@
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/format>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 class character : public iformatable {
 public:
