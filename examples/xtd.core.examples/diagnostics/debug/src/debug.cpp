@@ -1,20 +1,15 @@
 // Specify -DDEBUG when compiling or add #define DEBUG in the source file.
 
-#include <xtd/diagnostics/debug>
-#include <xtd/diagnostics/ostream_trace_listener>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::diagnostics;
+#include <xtd/xtd>
 
 auto main() -> int {
-  debug::listeners().push_back(new_ptr<ostream_trace_listener>(console::out));
-  debug::auto_flush(true);
-  debug::indent();
-  debug::write_line("Entering Main");
+  diagnostics::debug::listeners().push_back(new_ptr<diagnostics::ostream_trace_listener>(console::out));
+  diagnostics::debug::auto_flush(true);
+  diagnostics::debug::indent();
+  diagnostics::debug::write_line("Entering Main");
   console::write_line("Hello World.");
-  debug::write_line("Exiting Main");
-  debug::unindent();
+  diagnostics::debug::write_line("Exiting Main");
+  diagnostics::debug::unindent();
 }
 
 // This code produces the following output :

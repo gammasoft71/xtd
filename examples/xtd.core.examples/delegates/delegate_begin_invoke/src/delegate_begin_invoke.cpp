@@ -1,9 +1,4 @@
-#include <xtd/threading/thread>
-#include <xtd/console>
-#include <xtd/delegate>
-
-using namespace xtd;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto d1 = delegate<int(const string&)> {[](const string& name) -> int {

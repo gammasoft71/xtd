@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/delegate>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 class test_delegate {
 public:

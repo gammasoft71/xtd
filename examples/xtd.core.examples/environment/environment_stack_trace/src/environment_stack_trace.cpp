@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/environment>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 void test3() {
   console::write_line("environment::stack_trace:");

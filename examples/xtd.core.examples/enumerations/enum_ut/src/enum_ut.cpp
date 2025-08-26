@@ -1,8 +1,4 @@
-#include <xtd/as>
-#include <xtd/console>
-#include <xtd/enum>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 enum_ut_(, enum_test, byte,
   value_one,

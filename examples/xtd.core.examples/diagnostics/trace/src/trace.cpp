@@ -1,21 +1,16 @@
 // Specify -DTRACE when compiling or add #define TRACE in the source file.
 #define DEBUG
 
-#include <xtd/diagnostics/trace>
-#include <xtd/diagnostics/ostream_trace_listener>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::diagnostics;
+#include <xtd/xtd>
 
 auto main() -> int {
-  trace::listeners().push_back(new_ptr<ostream_trace_listener>(console::out));
-  trace::auto_flush(true);
-  trace::indent();
-  trace::write_line("Entering Main");
+  diagnostics::trace::listeners().push_back(new_ptr<diagnostics::ostream_trace_listener>(console::out));
+  diagnostics::trace::auto_flush(true);
+  diagnostics::trace::indent();
+  diagnostics::trace::write_line("Entering Main");
   console::write_line("Hello World.");
-  trace::write_line("Exiting Main");
-  trace::unindent();
+  diagnostics::trace::write_line("Exiting Main");
+  diagnostics::trace::unindent();
 }
 
 // This code produces the following output :

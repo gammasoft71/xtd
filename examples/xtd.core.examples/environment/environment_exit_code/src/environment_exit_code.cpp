@@ -1,8 +1,4 @@
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/startup>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 namespace environment_exit_code_example {
   class program {
@@ -13,9 +9,9 @@ namespace environment_exit_code_example {
       if (args.size() == 1)
         environment::exit_code(ECANCELED);
       else {
-        auto value = 0l;
+        auto value = 0;
         if (try_parse(args[1], value))
-          if (value <= std::numeric_limits<int>::min() || value >= std::numeric_limits<int>::max())
+          if (value <= int32_object::min_value || value >= int32_object::max_value)
             environment::exit_code(ERANGE);
           else
             console::write_line("Result: {0}", value * 2);

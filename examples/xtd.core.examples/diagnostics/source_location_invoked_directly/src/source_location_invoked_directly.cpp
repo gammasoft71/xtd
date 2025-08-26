@@ -1,13 +1,7 @@
-#include <xtd/io/path>
-#include <xtd/console>
-#include <xtd/diagnostics/source_location>
-
-using namespace xtd;
-using namespace xtd::diagnostics;
-using namespace xtd::io;
+#include <xtd/xtd>
 
 void print_this_file_name() {
-  auto location = source_location::current();
+  auto location = diagnostics::source_location::current();
   console::write_line("File: {}", path::get_file_name(location.file_name()));
 }
 

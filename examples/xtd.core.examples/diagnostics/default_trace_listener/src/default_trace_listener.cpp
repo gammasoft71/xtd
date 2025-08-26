@@ -1,11 +1,4 @@
-#include <xtd/diagnostics/trace>
-#include <xtd/diagnostics/default_trace_listener>
-#include <xtd/console>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::diagnostics;
+#include <xtd/xtd>
 
 class binomial {
 public:
@@ -16,11 +9,11 @@ public:
     auto iter = .0l;
     
     // Remove the original default trace listener.
-    trace::listeners().erase(trace::listeners().begin());
+    diagnostics::trace::listeners().erase(diagnostics::trace::listeners().begin());
     
     // Create and add a new default trace listener.
-    auto default_listener = new_ptr<default_trace_listener>();
-    trace::listeners().push_back(default_listener);
+    auto default_listener = new_ptr<diagnostics::default_trace_listener>();
+    diagnostics::trace::listeners().push_back(default_listener);
     
     // Assign the log file specification from the command line, if entered.
     if (args.size() >= 2)
@@ -73,7 +66,7 @@ public:
     }
   }
   
-  static decimal calc_binomial(xtd::decimal possibilities, decimal outcomes) {
+  static decimal calc_binomial(decimal possibilities, decimal outcomes) {
     // Calculate a binomial coefficient, and minimize the chance of overflow.
     auto result = 1.0l;
     auto iter = .0l;

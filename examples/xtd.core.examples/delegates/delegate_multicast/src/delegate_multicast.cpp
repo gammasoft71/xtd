@@ -1,11 +1,5 @@
 #define TRACE
-#include <xtd/console>
-#include <xtd/cdebug>
-#include <xtd/ctrace>
-#include <xtd/delegate>
-#include <xtd/environment>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 using writer = delegate<void(const string& str)>;
 
