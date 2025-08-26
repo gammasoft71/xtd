@@ -1,8 +1,4 @@
-#include <xtd/io/directory_info>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::io;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto di = directory_info {"."};

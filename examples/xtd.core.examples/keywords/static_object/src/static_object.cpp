@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/static>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 namespace static_object_example {
   class program static_object_ {

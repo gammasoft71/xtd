@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/nameof>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 template<typename value_t>
 void print_names(value_t value) {

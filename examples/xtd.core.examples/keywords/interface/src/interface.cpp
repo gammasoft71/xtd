@@ -1,8 +1,4 @@
-#include <xtd/as>
-#include <xtd/interface>
-#include <xtd/console>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 namespace interface_example {
   class istringable interface_ {

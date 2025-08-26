@@ -1,10 +1,4 @@
-#include <xtd/io/file>
-#include <xtd/io/file_info>
-#include <xtd/console>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::io;
+#include <xtd/xtd>
 
 class program {
 public:

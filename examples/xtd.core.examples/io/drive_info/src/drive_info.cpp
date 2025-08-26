@@ -1,9 +1,4 @@
-#include <xtd/io/drive_info>
-#include <xtd/console>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::io;
+#include <xtd/xtd>
 
 class program {
 public:

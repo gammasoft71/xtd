@@ -1,9 +1,4 @@
-#include <xtd/as>
-#include <xtd/console>
-#include <xtd/iprogress>
-#include <xtd/math>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 class generic_progress {
 public:

@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/string>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto sentence = "the quick brown fox jumps over the lazy dog"_s;
