@@ -1,9 +1,4 @@
-#include <xtd/console>
-#include <xtd/enum_class>
-#include <xtd/environment>
-#include <xtd/format>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 enum class week_day {
   monday,

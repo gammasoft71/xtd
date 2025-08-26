@@ -1,9 +1,5 @@
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/string>
+#include <xtd/xtd>
 #include <tuple>
-
-using namespace xtd;
 
 auto main() -> int {
   console::out << string::format("{}", std::make_tuple(1, "one", .42)) << environment::new_line;

@@ -1,9 +1,6 @@
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/format>
+#include <xtd/xtd>
 #include <chrono>
 
-using namespace xtd;
 using namespace std::literals;
 
 enum class cap {title, middle, end};

@@ -1,10 +1,4 @@
-#include <xtd/console>
-#include <xtd/double_object>
-#include <xtd/environment>
-#include <xtd/single_object>
-#include <xtd/format>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 enum class cap {title, middle, end};
 

@@ -1,9 +1,6 @@
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/string>
+#include <xtd/xtd>
 
 using namespace std::literals;
-using namespace xtd;
 
 auto main() -> int {
   console::out << string::format("{}", "string") << environment::new_line;

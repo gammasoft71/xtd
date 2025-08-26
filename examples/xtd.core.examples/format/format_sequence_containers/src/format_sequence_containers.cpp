@@ -1,18 +1,10 @@
-#include <xtd/collections/array_list>
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/fixed_array>
-#include <xtd/string>
-
-using namespace xtd;
-using namespace xtd::collections;
-using namespace xtd::collections::generic;
+#include <xtd/xtd>
 
 auto main() -> int {
   console::out << string::format("{}", array<int> {1, 2, 3, 4}) << environment::new_line;
   console::out << string::format("{}", fixed_array<int, 4> {1, 2, 3, 4}) << environment::new_line;
   console::out << string::format("{}", list<int> {1, 2, 3, 4}) << environment::new_line;
-  console::out << string::format("{}", array_list {1, 2, 3, 4}) << environment::new_line;
+  console::out << string::format("{}", collections::array_list {1, 2, 3, 4}) << environment::new_line;
   console::out << environment::new_line;
   console::out << string::format("{}", std::initializer_list<int> {1, 2, 3, 4}) << environment::new_line;
   console::out << string::format("{}", std::array<int, 4> {1, 2, 3, 4}) << environment::new_line;
