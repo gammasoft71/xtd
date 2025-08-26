@@ -1,8 +1,4 @@
-#include <xtd/console>
-#include <xtd/startup>
-#include <xtd/version>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 namespace version_example {
   class program {

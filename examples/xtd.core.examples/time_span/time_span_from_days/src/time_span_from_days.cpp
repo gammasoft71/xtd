@@ -1,9 +1,4 @@
-#include <xtd/console>
-#include <xtd/time_span>
-#include <xtd/int64_object>
-#include <xtd/string>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 void gen_time_span_from_days (double days) {
   // Crée un objet TimeSpan et une chaîne TimeSpan à partir

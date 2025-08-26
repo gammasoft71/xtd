@@ -1,19 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/form>
-#include <xtd/forms/message_box>
-#include <xtd/forms/save_file_dialog>
-#include <xtd/forms/text_box>
-#include <xtd/io/stream_writer>
-#include <xtd/timers/timer>
-#include <xtd/date_time>
-#include <xtd/startup>
-#include <memory>
-
-using namespace xtd;
-using namespace xtd::forms;
-using namespace xtd::io;
-using namespace xtd::timers;
+#include <xtd/xtd>
 
 namespace timer_example {
   class form1 : public form {
@@ -54,7 +39,7 @@ namespace timer_example {
       text_box1.text_changed += {*this, &form1::text_box1__text_changed};
     }
 
-    void prompt_for_save(object& source, const elapsed_event_args& e) {
+    void prompt_for_save(object& source, const timers::elapsed_event_args& e) {
       if (has_changed && !dialog_is_open) {
         elapsed_minutes++;
         dialog_is_open = true;

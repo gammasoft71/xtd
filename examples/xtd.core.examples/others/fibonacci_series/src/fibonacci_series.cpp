@@ -1,14 +1,10 @@
-#include <xtd/collections/generic/list>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
+#include <xtd/xtd>
 
 auto fibonacci_series(int n) noexcept {
   auto numbers = list {0};
   auto a = 1, b = 1;
   while (a < n) {
-    numbers.emplace_back(a);
+    numbers.add(a);
     std::swap(a, b);
     b += a;
   }

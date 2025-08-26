@@ -1,9 +1,4 @@
-#include <xtd/console>
-#include <xtd/startup>
-#include <xtd/date_time>
-#include <xtd/time_span>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 namespace uri_example {
   class program {
