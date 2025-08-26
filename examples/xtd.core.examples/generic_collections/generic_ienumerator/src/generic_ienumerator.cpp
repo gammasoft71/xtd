@@ -1,9 +1,4 @@
-#include <xtd/collections/generic/ienumerator>
-#include <xtd/collections/generic/list>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
+#include <xtd/xtd>
 
 struct box : public iequatable<::box>, public icomparable<::box> {
   box() = default;

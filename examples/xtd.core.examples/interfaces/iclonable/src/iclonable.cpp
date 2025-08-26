@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/iclonable>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 class foo : public object, public iclonable {
 public:

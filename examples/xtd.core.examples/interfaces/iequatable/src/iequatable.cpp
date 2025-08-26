@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/iequatable>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 class foo : public iequatable<foo> {
 public:

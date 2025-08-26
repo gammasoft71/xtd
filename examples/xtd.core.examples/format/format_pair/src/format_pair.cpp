@@ -1,8 +1,6 @@
 #include <xtd/xtd>
 #include <utility>
 
-using namespace xtd;
-
 auto main() -> int {
   console::out << string::format("{}", std::make_pair(1, "one")) << environment::new_line;
 }
