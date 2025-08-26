@@ -1,7 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-
 struct pet {
   string name;
   int age = 0;

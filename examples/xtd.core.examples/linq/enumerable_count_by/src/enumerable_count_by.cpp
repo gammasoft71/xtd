@@ -1,7 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-
 struct student : iequatable<student> {
   student() = default;
   student(const string& name, const string& score) : name {name}, score {score} {}

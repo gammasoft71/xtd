@@ -1,7 +1,4 @@
-#include <xtd/array>
-#include <xtd/console>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   struct pet : public object {

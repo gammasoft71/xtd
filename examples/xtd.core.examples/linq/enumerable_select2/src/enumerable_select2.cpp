@@ -1,9 +1,4 @@
-#include <xtd/collections/generic/list>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::linq;
-using namespace xtd::collections::generic;
+#include <xtd/xtd>
 
 struct contact_info : istringable {
   contact_info() = default;

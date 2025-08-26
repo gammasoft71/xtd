@@ -1,8 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-using namespace xtd::linq;
-
 auto main() -> int {
   auto items = std::vector {"One", "Two", "Three", "Four", "Five"};
   const auto& enumerable = from(items.begin(), 5);
