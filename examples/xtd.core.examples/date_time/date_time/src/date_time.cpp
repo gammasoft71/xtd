@@ -1,10 +1,4 @@
-#include <xtd/console>
-#include <xtd/convert>
-#include <xtd/date_time>
-#include <xtd/math>
-#include <xtd/startup>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 class program {
 public:

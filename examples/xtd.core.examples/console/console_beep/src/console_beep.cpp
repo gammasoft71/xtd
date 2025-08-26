@@ -1,9 +1,4 @@
-#include <xtd/threading/thread>
-#include <xtd/console>
-#include <xtd/int32_object>
-
-using namespace xtd;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 auto main(int argc, char* argv[]) -> int {
   auto x = 0;

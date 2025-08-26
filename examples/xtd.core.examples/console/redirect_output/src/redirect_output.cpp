@@ -1,10 +1,4 @@
-#include <xtd/io/path>
-#include <xtd/io/file>
-#include <xtd/console>
-#include <xtd/environment>
-
-using namespace xtd;
-using namespace xtd::io;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto output_file_path = path::combine(path::get_temp_path(), "xtd_example_write.txt");

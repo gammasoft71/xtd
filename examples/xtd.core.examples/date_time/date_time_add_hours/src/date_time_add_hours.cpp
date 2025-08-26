@@ -1,10 +1,4 @@
-#include <xtd/collections/generic/list>
-#include <xtd/console>
-#include <xtd/date_time>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
+#include <xtd/xtd>
 
 class program {
 public:

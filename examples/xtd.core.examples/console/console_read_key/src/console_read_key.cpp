@@ -1,7 +1,4 @@
-#include <xtd/as>
-#include <xtd/console>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   console::cancel_key_press += delegate_(xtd::console_cancel_event_args & e) {
