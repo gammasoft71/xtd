@@ -1,8 +1,4 @@
-#include <xtd/block_scope>
-#include <xtd/console>
-#include <xtd/environment>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   block_scope_(auto values = {1, 2, 3, 4, 5})

@@ -1,12 +1,4 @@
-#include <xtd/io/binary_reader>
-#include <xtd/io/binary_writer>
-#include <xtd/io/file>
-#include <xtd/block_scope>
-#include <xtd/console>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::io;
+#include <xtd/xtd>
 
 class program {
   inline static const string file_name = "app_settings.dat";

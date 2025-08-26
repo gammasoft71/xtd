@@ -1,8 +1,4 @@
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/using>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   using_(auto values = {1, 2, 3, 4, 5})

@@ -1,13 +1,4 @@
-#include <xtd/io/file_info>
-#include <xtd/io/directory_info>
-#include <xtd/io/path>
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::io;
+#include <xtd/xtd>
 
 class program {
 private:

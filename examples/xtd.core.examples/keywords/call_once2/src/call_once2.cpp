@@ -1,8 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-using namespace xtd::threading;
-
 auto main() -> int {
   console::write_line("(main) begin");
   
