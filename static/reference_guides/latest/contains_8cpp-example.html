@@ -97,29 +97,23 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1basic__string.html#a850cd349d2e010f36c975a32b150a981">xtd::string::contains</a> method.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/string&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <span class="stringliteral">&quot;This is a literal string&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The string: \&quot;&quot;</span>_s + <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> + <span class="stringliteral">&quot;\&quot;&quot;</span>_s + (<span class="keywordtype">string</span> {<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>}.contains(<span class="stringliteral">&quot;is&quot;</span>) ? <span class="stringliteral">&quot; contains &quot;</span> : <span class="stringliteral">&quot; does not contain &quot;</span>) + <span class="stringliteral">&quot;\&quot;is\&quot; substring.&quot;</span>_s);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The string: \&quot;&quot;</span>_s + <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> + <span class="stringliteral">&quot;\&quot;&quot;</span>_s + (<span class="keywordtype">string</span> {<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>}.contains(<span class="stringliteral">&quot;z&quot;</span>) ? <span class="stringliteral">&quot; contains &quot;</span> : <span class="stringliteral">&quot; does not contain &quot;</span>) + <span class="stringliteral">&quot;\&quot;z\&quot; character.&quot;</span>_s);</div>
+<div class="line">  <span class="keyword">auto</span> s = <span class="stringliteral">&quot;This is a literal string&quot;</span>;</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;The string: \&quot;&quot;</span>_s + s + <span class="stringliteral">&quot;\&quot;&quot;</span>_s + (<span class="keywordtype">string</span> {s}.contains(<span class="stringliteral">&quot;is&quot;</span>) ? <span class="stringliteral">&quot; contains &quot;</span> : <span class="stringliteral">&quot; does not contain &quot;</span>) + <span class="stringliteral">&quot;\&quot;is\&quot; substring.&quot;</span>_s);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;The string: \&quot;&quot;</span>_s + s + <span class="stringliteral">&quot;\&quot;&quot;</span>_s + (<span class="keywordtype">string</span> {s}.contains(<span class="stringliteral">&quot;z&quot;</span>) ? <span class="stringliteral">&quot; contains &quot;</span> : <span class="stringliteral">&quot; does not contain &quot;</span>) + <span class="stringliteral">&quot;\&quot;z\&quot; character.&quot;</span>_s);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The string: &quot;This is a literal string&quot; contains &quot;is&quot; substring.</span></div>
 <div class="line"><span class="comment">// The string: &quot;This is a literal string&quot; does not contain &quot;z&quot; character.</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">xtd::console_key::s</a></div><div class="ttdeci">@ s</div><div class="ttdoc">The S key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:124</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 26 2025 19:41:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 26 2025 20:38:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
