@@ -1,11 +1,7 @@
-#include <xtd/net/dns>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::net;
+#include <xtd/xtd>
 
 auto main() -> int {
-  auto host_entry = dns::get_host_entry("www.github.com");
+  auto host_entry = net::dns::get_host_entry("www.github.com");
   console::write_line("ip host entry for : www.github.com");
   console::write_line("  - host_name : {}", host_entry.host_name());
   console::write_line("  - address list :");

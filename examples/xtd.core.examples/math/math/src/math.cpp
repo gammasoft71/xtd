@@ -1,8 +1,4 @@
-#include <xtd/console>
-#include <xtd/math>
-#include <xtd/startup>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 namespace math_example {
   // The following class represents simple functionality of the trapezoid.

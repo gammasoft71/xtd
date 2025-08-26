@@ -1,8 +1,4 @@
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/startup>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 namespace main1_example {
   class program {

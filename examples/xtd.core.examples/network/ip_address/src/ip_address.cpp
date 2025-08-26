@@ -1,21 +1,10 @@
-#include <xtd/net/sockets/socket>
-#include <xtd/net/dns>
-#include <xtd/net/ip_address>
-#include <xtd/text/string_builder>
-#include <xtd/console>
-#include <xtd/startup>
+#include <xtd/xtd>
 #include <regex>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::net;
-using namespace xtd::net::sockets;
-using namespace xtd::text;
 
 class test_ip_address {
 public:
   static auto main(const argument_collection& args) {
-    auto server = string_builder {};
+    auto server = text::string_builder {};
     
     // Define a regular expression to parse user's input.
     // This is a security check. It allows only
@@ -25,7 +14,7 @@ public:
     if (args.size() < 1) {
       // If no server name is passed as an argument to this program, use the current
       // server name as default.
-      server = dns::get_host_name();
+      server = net::dns::get_host_name();
       console::write_line("Using current host: {}", server);
     } else {
       server = args[0];
@@ -51,7 +40,7 @@ private:
   static void ip_addresses(const string& server) {
     try {
       // Get server related information.
-      auto heserver = dns::get_host_entry(server);
+      auto heserver = net::dns::get_host_entry(server);
       
       // Loop on the AddressList
       for (auto cur_add : heserver.address_list()) {
@@ -61,7 +50,7 @@ private:
         console::write_line("address_family: {}", cur_add.address_family());
         
         // Display the ScopeId property in case of IPV6 addresses.
-        if (cur_add.address_family() == address_family::inter_network_v6)
+        if (cur_add.address_family() == net::sockets::address_family::inter_network_v6)
           console::write_line("scope id: {}", cur_add.scope_id());
           
           
@@ -88,23 +77,23 @@ private:
     try {
       // Display the flags that show if the server supports IPv4 or IPv6
       // address schemas.
-      console::write_line("\r\nos_supports_ip_v4: {}", socket::os_supports_ip_v4());
-      console::write_line("os_supports_ip_v6: {}", socket::os_supports_ip_v6());
+      console::write_line("\r\nos_supports_ip_v4: {}", net::sockets::socket::os_supports_ip_v4());
+      console::write_line("os_supports_ip_v6: {}", net::sockets::socket::os_supports_ip_v6());
       
-      if (socket::os_supports_ip_v6()) {
+      if (net::sockets::socket::os_supports_ip_v6()) {
         // Display the server Any address. This IP address indicates that the server
         // should listen for client activity on all network interfaces.
-        console::write_line("\r\nip_v6_any: {}", ip_address::ip_v6_any);
+        console::write_line("\r\nip_v6_any: {}", net::ip_address::ip_v6_any);
         
         // Display the server loopback address.
-        console::write_line("ip_v6_loopback: {}", ip_address::ip_v6_loopback);
+        console::write_line("ip_v6_loopback: {}", net::ip_address::ip_v6_loopback);
         
         // Used during autoconfiguration first phase.
-        console::write_line("ip_v6_none: {}", ip_address::ip_v6_none);
+        console::write_line("ip_v6_none: {}", net::ip_address::ip_v6_none);
         
-        console::write_line("is_loopback(ip_v6_loopback): {}", ip_address::is_loopback(ip_address::ip_v6_loopback));
+        console::write_line("is_loopback(ip_v6_loopback): {}", net::ip_address::is_loopback(net::ip_address::ip_v6_loopback));
       }
-      console::write_line("is_loopback(loopback):{}", ip_address::is_loopback(ip_address::loopback));
+      console::write_line("is_loopback(loopback):{}", net::ip_address::is_loopback(net::ip_address::loopback));
     } catch (const system_exception& e) {
       console::write_line("[ip_addresses] exception: {}", e);
     }

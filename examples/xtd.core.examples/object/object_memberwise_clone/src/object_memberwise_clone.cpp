@@ -1,6 +1,4 @@
-#include <xtd/console>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 class id_info : public object {
 public:

@@ -1,19 +1,11 @@
-#include <xtd/net/sockets/socket>
-#include <xtd/net/ip_end_point>
-#include <xtd/threading/thread>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::net;
-using namespace xtd::net::sockets;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto terminate_app = false;
   
   auto server = thread {[&] {
-    auto server_socket = socket {address_family::inter_network, socket_type::stream, protocol_type::tcp};
-    server_socket.bind(ip_end_point {ip_address::any, 9400});
+    auto server_socket = net::sockets::socket {net::sockets::address_family::inter_network, net::sockets::socket_type::stream, net::sockets::protocol_type::tcp};
+    server_socket.bind(net::ip_end_point {net::ip_address::any, 9400});
     server_socket.listen();
     auto new_socket = server_socket.accept();
     
@@ -25,8 +17,8 @@ auto main() -> int {
   }};
   
   auto client = thread {[&] {
-    auto client_socket = socket {address_family::inter_network, socket_type::stream, protocol_type::tcp};
-    client_socket.connect(ip_address::loopback, 9400);
+    auto client_socket = net::sockets::socket {net::sockets::address_family::inter_network, net::sockets::socket_type::stream, net::sockets::protocol_type::tcp};
+    client_socket.connect(net::ip_address::loopback, 9400);
     
     auto counter = 0;
     while (!terminate_app) {

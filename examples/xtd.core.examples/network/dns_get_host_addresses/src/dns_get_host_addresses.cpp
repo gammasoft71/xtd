@@ -1,11 +1,7 @@
-#include <xtd/net/dns>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::net;
+#include <xtd/xtd>
 
 auto main() -> int {
-  auto addresses = dns::get_host_addresses("www.google.com");
+  auto addresses = net::dns::get_host_addresses("www.google.com");
   console::write_line("www.google.com addresses:");
   for (auto address : addresses)
     console::write_line("  * {}", address);
