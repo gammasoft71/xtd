@@ -97,31 +97,27 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <p>Show how to use format <a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14" title="Writes the text representation of the specified arguments list, to string using the specified format ...">xtd::format</a> class with memory addresses (pointers).</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/string&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_typedef" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">ptr</a> = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span>*<span class="keyword">&gt;</span>(<span class="keyword">nullptr</span>);</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, <a class="code hl_typedef" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">ptr</a>) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">ptr</a> = <span class="keyword">new</span> int(42);</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::format(<span class="stringliteral">&quot;0x{:x}&quot;</span>, <a class="code hl_typedef" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">ptr</a>) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, *<a class="code hl_typedef" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">ptr</a>) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
-<div class="line">  <span class="keyword">delete</span> <a class="code hl_typedef" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">ptr</a>;</div>
+<div class="line">  <span class="keyword">auto</span> ptr = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span>*<span class="keyword">&gt;</span>(<span class="keyword">nullptr</span>);</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, ptr) &lt;&lt; environment::new_line;</div>
+<div class="line">  ptr = <span class="keyword">new</span> int(42);</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;0x{:x}&quot;</span>, ptr) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, *ptr) &lt;&lt; environment::new_line;</div>
+<div class="line">  <span class="keyword">delete</span> ptr;</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">sptr</a> = <a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;int&gt;</a> {};</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, <a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">sptr</a>) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">sptr</a> = <a class="code hl_function" href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e">new_sptr&lt;int&gt;</a>(42);</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::format(<span class="stringliteral">&quot;0x{:x}&quot;</span>, <a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">sptr</a>) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, *<a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">sptr</a>) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
+<div class="line">  <span class="keyword">auto</span> sptr = <a class="code hl_typedef" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr&lt;int&gt;</a> {};</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, sptr) &lt;&lt; environment::new_line;</div>
+<div class="line">  sptr = new_sptr&lt;int&gt;(42);</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;0x{:x}&quot;</span>, sptr) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, *sptr) &lt;&lt; environment::new_line;</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">uptr</a> = <a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr&lt;int&gt;</a> {};</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, <a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">uptr</a>) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">uptr</a> = <a class="code hl_function" href="group__xtd__core.html#ga6380fbc5438993d147b093cfa5718caf">new_uptr&lt;int&gt;</a>(42);</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::format(<span class="stringliteral">&quot;0x{:x}&quot;</span>, <a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">uptr</a>) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, *<a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">uptr</a>) &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
+<div class="line">  <span class="keyword">auto</span> uptr = <a class="code hl_typedef" href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr&lt;int&gt;</a> {};</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, uptr) &lt;&lt; environment::new_line;</div>
+<div class="line">  uptr = new_uptr&lt;int&gt;(42);</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;0x{:x}&quot;</span>, uptr) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;{}&quot;</span>, *uptr) &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produce the following output :</span></div>
@@ -135,19 +131,13 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="comment">// (null)</span></div>
 <div class="line"><span class="comment">// 0x1052191a0</span></div>
 <div class="line"><span class="comment">// 42</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a923837ac84baf01726703e0474ca4888"><div class="ttname"><a href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">xtd::console::out</a></div><div class="ttdeci">static std::ostream out</div><div class="ttdoc">Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...</div><div class="ttdef"><b>Definition</b> console.hpp:52</div></div>
-<div class="ttc" id="aclassxtd_1_1environment_html_a19a9aa87ee20eb3789058621ed161c4e"><div class="ttname"><a href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">xtd::environment::new_line</a></div><div class="ttdeci">static xtd::string new_line() noexcept</div><div class="ttdoc">Gets the newline string defined for this environment.</div></div>
 <div class="ttc" id="agroup__types_html_ga25ad7ded61d1d55ea98a57f5316b786b"><div class="ttname"><a href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a></div><div class="ttdeci">xtd::shared_ptr_object&lt; type_t &gt; sptr</div><div class="ttdoc">The xtd::sptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> sptr.hpp:25</div></div>
 <div class="ttc" id="agroup__types_html_ga6c0a708a117d3b2967d6767f96b82baf"><div class="ttname"><a href="group__types.html#ga6c0a708a117d3b2967d6767f96b82baf">xtd::uptr</a></div><div class="ttdeci">xtd::unique_ptr_object&lt; type_t &gt; uptr</div><div class="ttdoc">The xtd::uptr object is a unique pointer.</div><div class="ttdef"><b>Definition</b> uptr.hpp:25</div></div>
-<div class="ttc" id="agroup__types_html_gabe4e3c1a0746e729140994ae7098d6e9"><div class="ttname"><a href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">xtd::ptr</a></div><div class="ttdeci">xtd::sptr&lt; type_t &gt; ptr</div><div class="ttdoc">The xtd::ptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> ptr.hpp:27</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga6380fbc5438993d147b093cfa5718caf"><div class="ttname"><a href="group__xtd__core.html#ga6380fbc5438993d147b093cfa5718caf">xtd::new_uptr</a></div><div class="ttdeci">uptr&lt; type_t &gt; new_uptr(args_t &amp;&amp;... args)</div><div class="ttdoc">xtd::new_uptr operator. This operator creates a xtd::uptr object.</div><div class="ttdef"><b>Definition</b> new_uptr.hpp:24</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga7cc491fa6479b6976a467c83b82a902e"><div class="ttname"><a href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e">xtd::new_sptr</a></div><div class="ttdeci">sptr&lt; type_t &gt; new_sptr(args_t &amp;&amp;... args)</div><div class="ttdoc">xtd::new_sptr operator creates a xtd::sptr object.</div><div class="ttdef"><b>Definition</b> new_sptr.hpp:24</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 26 2025 18:38:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 26 2025 19:41:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

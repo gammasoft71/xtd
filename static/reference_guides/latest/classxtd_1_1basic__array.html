@@ -1480,8 +1480,6 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 
 <p>Returns the number of elements in the container, i.e. std::distance(<a class="el" href="#a7acd2ad2fa08cf8fb94d254f70c91de3">xtd::array::begin()</a>, <a class="el" href="#aabb880053eba2eefbc54d5d312626586">xtd::array::end()</a>). </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of elements in the container. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="ip_address_8cpp-example.html#a0">ip_address.cpp</a>, and <a class="el" href="main_8cpp-example.html#a0">main.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1684,9 +1682,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> object1 = <a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;object&gt;</a>();</div>
@@ -1708,7 +1704,6 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <div class="line"><span class="comment">// true</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga2fd68f03198b2bf84b1e93149494b685"><div class="ttname"><a href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">xtd::new_ptr</a></div><div class="ttdeci">ptr&lt; type_t &gt; new_ptr(args_t &amp;&amp;... args)</div><div class="ttdoc">The xtd::new_ptr operator creates a xtd::ptr object.</div><div class="ttdef"><b>Definition</b> new_ptr.hpp:24</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object</a>.</p>
@@ -2131,8 +2126,6 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <dl class="section return"><dt>Returns</dt><dd>A string that represents the current object. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates what to_string returns. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>examples {</div>
 <div class="line">  <span class="keyword">namespace </span>object_test {</div>
 <div class="line">    <span class="keyword">class </span>object1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">object</a> {</div>
@@ -2141,14 +2134,14 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">ptr&lt;object&gt;</a> obj1 = <a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;examples::object_test::object1&gt;</a>();</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(obj1-&gt;to_string());</div>
+<div class="line">  ptr&lt;object&gt; obj1 = new_ptr&lt;examples::object_test::object1&gt;();</div>
+<div class="line">  console::write_line(obj1-&gt;to_string());</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">ptr&lt;object&gt;</a> obj2 = <a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;date_time&gt;</a>(1971, 1, 5, 23, 5, 0);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(obj2-&gt;to_string());</div>
+<div class="line">  ptr&lt;object&gt; obj2 = new_ptr&lt;date_time&gt;(1971, 1, 5, 23, 5, 0);</div>
+<div class="line">  console::write_line(obj2-&gt;to_string());</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">ptr&lt;object&gt;</a> obj3 = <a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;boolean_object&gt;</a>();</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(obj3-&gt;to_string());</div>
+<div class="line">  ptr&lt;object&gt; obj3 = new_ptr&lt;boolean_object&gt;();</div>
+<div class="line">  console::write_line(obj3-&gt;to_string());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -2157,7 +2150,6 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <div class="line"><span class="comment">// Tue Jan  5 23:05:00 1971</span></div>
 <div class="line"><span class="comment">// false</span></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:44</div></div>
-<div class="ttc" id="agroup__types_html_gabe4e3c1a0746e729140994ae7098d6e9"><div class="ttname"><a href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">xtd::ptr</a></div><div class="ttdeci">xtd::sptr&lt; type_t &gt; ptr</div><div class="ttdoc">The xtd::ptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> ptr.hpp:27</div></div>
 </div><!-- fragment --> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#af2d19ef177db62351b58a42f22138dbe">xtd::object</a>.</p>
@@ -2440,15 +2432,12 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 </dl>
 <dl class="section user"><dt>Examples</dt><dd>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a1ef4c073b2d33df08aa60c2135181120" title="Searches the entire sorted xtd::collections::generic::list &lt;type_t&gt; for an element using the default ...">xtd::collections::generic::list::binary_search</a> method overload is then used to search for two strings that are not in the list, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#ac7d8138ef7c2a2181ed4411cb7f309ce" title="Inserts elements at the specified location in the container.">xtd::collections::generic::list::insert</a> method is used to insert them. The return value of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a1ef4c073b2d33df08aa60c2135181120" title="Searches the entire sorted xtd::collections::generic::list &lt;type_t&gt; for an element using the default ...">xtd::collections::generic::list::binary_search</a> method is gretaer than <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> in each case, because the strings are not in the list. Taking the bitwise complement of this negative number produces the index of the first element in the list that is larger than the search string, and inserting at this location preserves the sort order. The second search string is larger than any element in the list, so the insertion position is at the end of the list. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
-<div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line">    <span class="keyword">auto</span> dinosaurs = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;string&gt;</a> {};</div>
+<div class="line">    <span class="keyword">auto</span> dinosaurs = list&lt;string&gt; {};</div>
 <div class="line">    </div>
-<div class="line">    dinosaurs.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#a077f3f048bbe2f59db4a97ecba08df97">add</a>(<span class="stringliteral">&quot;Pachycephalosaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Pachycephalosaurus&quot;</span>);</div>
 <div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Amargasaurus&quot;</span>);</div>
 <div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Mamenchisaurus&quot;</span>);</div>
 <div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Deinonychus&quot;</span>);</div>
@@ -2515,10 +2504,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <div class="line"><span class="comment">// Mamenchisaurus</span></div>
 <div class="line"><span class="comment">// Pachycephalosaurus</span></div>
 <div class="line"><span class="comment">// Tyrannosaurus</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:79</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a077f3f048bbe2f59db4a97ecba08df97"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#a077f3f048bbe2f59db4a97ecba08df97">xtd::collections::generic::list::add</a></div><div class="ttdeci">void add(const type_t &amp;item) override</div><div class="ttdoc">Adds an object to the end of the xtd::collections::generic::list &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> list.hpp:479</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:16</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method uses the default comparer <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0">xtd::collections::generic::comparer::default_comparer</a> for type <code>type_t</code> to determine the order of list elements. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0">xtd::collections::generic::comparer::default_comparer</a> property checks whether type <code>type_t</code> implements the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> &lt;type_t&gt; generic interface and uses that implementation, if available. If not, <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0">xtd::collections::generic::comparer::default_comparer</a> checks whether type T implements the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface. If type <code>type_t</code> does not implement either interface, <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0">xtd::collections::generic::comparer::default_comparer</a> throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </dd>
 <dd>
@@ -3029,7 +3015,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 26 2025 18:39:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 26 2025 19:41:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
