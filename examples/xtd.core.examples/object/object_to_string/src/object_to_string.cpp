@@ -1,7 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-
 namespace examples {
   namespace object_test {
     class object1 : public object {

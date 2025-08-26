@@ -1,10 +1,4 @@
-#include <xtd/media/system_sounds>
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::media;
+#include <xtd/xtd>
 
 namespace system_sound_example {
   class program {
@@ -24,11 +18,11 @@ namespace system_sound_example {
       while (true) {
         auto key_info = console::read_key(true);
         switch (key_info.key()) {
-          case console_key::a: system_sounds::asterisk().play(); break;
-          case console_key::b: system_sounds::beep().play(); break;
-          case console_key::e: system_sounds::exclamation().play(); break;
-          case console_key::h: system_sounds::hand().play(); break;
-          case console_key::q: system_sounds::question().play(); break;
+          case console_key::a: media::system_sounds::asterisk().play(); break;
+          case console_key::b: media::system_sounds::beep().play(); break;
+          case console_key::e: media::system_sounds::exclamation().play(); break;
+          case console_key::h: media::system_sounds::hand().play(); break;
+          case console_key::q: media::system_sounds::question().play(); break;
           case console_key::escape: environment::exit(0); break;
           default: break;
         }

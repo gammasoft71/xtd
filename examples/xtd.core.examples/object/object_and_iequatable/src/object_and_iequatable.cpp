@@ -1,7 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-
 class user : public object, public iequatable<user> {
 public:
   explicit user(int id, const string& name) : id_ {id}, name_ {name} {}

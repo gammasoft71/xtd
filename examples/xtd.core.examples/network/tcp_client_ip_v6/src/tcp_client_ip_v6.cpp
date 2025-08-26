@@ -1,20 +1,10 @@
-#include <xtd/io/stream_reader>
-#include <xtd/net/sockets/tcp_client>
-#include <xtd/net/sockets/tcp_listener>
-#include <xtd/threading/thread>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::io;
-using namespace xtd::net;
-using namespace xtd::net::sockets;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto terminate_app = false;
   
   auto server = thread {[&] {
-    auto listener = tcp_listener {ip_end_point(ip_address::ip_v6_any, 9400)};
+    auto listener = net::sockets::tcp_listener {net::ip_end_point(net::ip_address::ip_v6_any, 9400)};
     listener.start();
     auto stream = listener.accept_tcp_client().get_stream();
     auto reader = stream_reader {stream};
@@ -24,8 +14,8 @@ auto main() -> int {
   }};
   
   auto client = thread {[&] {
-    auto client = tcp_client {address_family::inter_network_v6};
-    client.connect(ip_address::ip_v6_loopback, 9400);
+    auto client = net::sockets::tcp_client {net::sockets::address_family::inter_network_v6};
+    client.connect(net::ip_address::ip_v6_loopback, 9400);
     auto stream = client.get_stream();
     auto writer = stream_writer {stream};
     

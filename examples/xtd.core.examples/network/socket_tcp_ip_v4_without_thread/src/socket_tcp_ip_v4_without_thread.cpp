@@ -1,13 +1,4 @@
-#include <xtd/net/sockets/socket>
-#include <xtd/net/ip_end_point>
-#include <xtd/threading/thread>
-#include <xtd/as>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::net;
-using namespace xtd::net::sockets;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto terminate_app = false;
@@ -36,15 +27,15 @@ auto main() -> int {
   
   const size_t client_count = 10;
   
-  auto server_socket = socket {address_family::inter_network, socket_type::stream, protocol_type::tcp};
-  server_socket.bind(ip_end_point {ip_address::any, 9400});
+  auto server_socket = net::sockets::socket {net::sockets::address_family::inter_network, net::sockets::socket_type::stream, net::sockets::protocol_type::tcp};
+  server_socket.bind(net::ip_end_point {net::ip_address::any, 9400});
   server_socket.listen();
   for (auto index = 0_z; index < client_count; ++index)
     server_socket.begin_accept(async_callback(on_server_accept), server_socket);
     
   for (auto index = 0_z; index < client_count; ++index) {
-    auto socket = xtd::net::sockets::socket(address_family::inter_network, socket_type::stream, protocol_type::tcp);
-    socket.begin_connect(ip_address::loopback, 9400, async_callback(on_client_connect), socket);
+    auto socket = xtd::net::sockets::socket(net::sockets::address_family::inter_network, net::sockets::socket_type::stream, net::sockets::protocol_type::tcp);
+    socket.begin_connect(net::ip_address::loopback, 9400, async_callback(on_client_connect), socket);
   }
   
   console::read_key();

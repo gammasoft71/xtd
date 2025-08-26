@@ -1,25 +1,13 @@
-#include <xtd/io/stream_reader>
-#include <xtd/io/stream_writer>
-#include <xtd/net/sockets/socket>
-#include <xtd/net/sockets/network_stream>
-#include <xtd/net/ip_end_point>
-#include <xtd/threading/thread>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::io;
-using namespace xtd::net;
-using namespace xtd::net::sockets;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto terminate_app = false;
   
   auto server = thread {[&] {
-    auto server_socket = socket {address_family::inter_network, socket_type::stream, protocol_type::tcp};
-    server_socket.bind(ip_end_point {ip_address::any, 9400});
+    auto server_socket = net::sockets::socket {net::sockets::address_family::inter_network, net::sockets::socket_type::stream, net::sockets::protocol_type::tcp};
+    server_socket.bind(net::ip_end_point {net::ip_address::any, 9400});
     server_socket.listen();
-    auto stream = network_stream {server_socket.accept(), file_access::read};
+    auto stream = net::sockets::network_stream {server_socket.accept(), file_access::read};
     auto reader = stream_reader {stream};
     
     while (!terminate_app)
@@ -28,8 +16,8 @@ auto main() -> int {
   server.start();
   
   auto client = thread {[&] {
-    auto stream = network_stream {socket {address_family::inter_network, socket_type::stream, protocol_type::tcp}, file_access::write};
-    stream.socket().connect(ip_address::loopback, 9400);
+    auto stream = net::sockets::network_stream {net::sockets::socket {net::sockets::address_family::inter_network, net::sockets::socket_type::stream, net::sockets::protocol_type::tcp}, file_access::write};
+    stream.socket().connect(net::ip_address::loopback, 9400);
     auto writer = stream_writer {stream};
     
     auto counter = 0;

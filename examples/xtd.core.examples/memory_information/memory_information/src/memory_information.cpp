@@ -1,7 +1,4 @@
-#include <xtd/console>
-#include <xtd/memory_information>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   console::write_line("Physical memory");

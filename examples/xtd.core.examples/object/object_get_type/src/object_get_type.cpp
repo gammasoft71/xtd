@@ -1,7 +1,4 @@
-#include <xtd/as>
-#include <xtd/console>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 class my_base_class : public object {
 };
