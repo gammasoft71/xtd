@@ -97,22 +97,17 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use xtd::delegate::begin_invoke, xtd::delegate::end_invoke and xtd::delegate::invoke methods.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/delegate&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = delegate&lt;int(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp;)&gt; {[](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name) -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;(Thread {}) Hello {}!&quot;</span>, <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a278b3fabeade100cbc012968115792fd">thread::current_thread</a>().managed_thread_id(), name);</div>
+<div class="line">  <span class="keyword">auto</span> d1 = delegate&lt;int(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp;)&gt; {[](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;(Thread {}) Hello {}!&quot;</span>, thread::current_thread().managed_thread_id(), name);</div>
 <div class="line">    <span class="keywordflow">return</span> name == <span class="stringliteral">&quot;xtd&quot;</span> ? 42 : 24;</div>
 <div class="line">  }};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> result = <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>.begin_invoke(<span class="stringliteral">&quot;Gammasoft&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;return = {}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>.invoke(<span class="stringliteral">&quot;xtd&quot;</span>));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;return = {}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a>.end_invoke(result));</div>
+<div class="line">  <span class="keyword">auto</span> result = d1.begin_invoke(<span class="stringliteral">&quot;Gammasoft&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;return = {}&quot;</span>, d1.invoke(<span class="stringliteral">&quot;xtd&quot;</span>));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;return = {}&quot;</span>, d1.end_invoke(result));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -121,16 +116,11 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="comment">// return = 42</span></div>
 <div class="line"><span class="comment">// (Thread 4) Hello Gammasoft!</span></div>
 <div class="line"><span class="comment">// return = 24</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a278b3fabeade100cbc012968115792fd"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a278b3fabeade100cbc012968115792fd">xtd::threading::thread::current_thread</a></div><div class="ttdeci">static thread &amp; current_thread() noexcept</div><div class="ttdoc">Gets the currently running thread.</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">xtd::console_key::d1</a></div><div class="ttdeci">@ d1</div><div class="ttdoc">The 1 key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:70</div></div>
-<div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 26 2025 10:29:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 26 2025 18:38:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

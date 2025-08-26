@@ -136,11 +136,7 @@ struct xtd::enum_object&lt; enum_t &gt;</div><p>Provides the base class for enum
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>For more information about enumeration, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/enum_class">enum class</a> guide. </dd>
 <dd>
-For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>. The following code show how to use <a class="el" href="structxtd_1_1enum__object.html" title="Provides the base class for enumerations.">xtd::enum_object</a> class for an enum. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/enum_class&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>. The following code show how to use <a class="el" href="structxtd_1_1enum__object.html" title="Provides the base class for enumerations.">xtd::enum_object</a> class for an enum. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3cf593875eebd764cb406fa27ded6d93">enum_class_</a>(, enum_test,</div>
 <div class="line">  value_one,</div>
@@ -169,13 +165,8 @@ For more information about types, see <a href="https://gammasoft71.github.io/xtd
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="agroup__keywords_html_ga3cf593875eebd764cb406fa27ded6d93"><div class="ttname"><a href="group__keywords.html#ga3cf593875eebd764cb406fa27ded6d93">enum_class_</a></div><div class="ttdeci">#define enum_class_(namespace_name, enum_class_t,...)</div><div class="ttdoc">Provides the registration struct for enum class.</div><div class="ttdef"><b>Definition</b> enum_class.hpp:52</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 <div class="ttc" id="astructxtd_1_1enum__object_html_ad7d06564133d899d9194509afc1d185e"><div class="ttname"><a href="#ad7d06564133d899d9194509afc1d185e">xtd::enum_object::to_int32</a></div><div class="ttdeci">int32 to_int32() const noexcept</div><div class="ttdoc">Converts this instance to int32.</div><div class="ttdef"><b>Definition</b> enum_object.hpp:148</div></div>
-</div><!-- fragment --> The following code show how to use <a class="el" href="structxtd_1_1enum__object.html" title="Provides the base class for enumerations.">xtd::enum_object</a> class for an enum flags. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/enum_class&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+</div><!-- fragment --> The following code show how to use <a class="el" href="structxtd_1_1enum__object.html" title="Provides the base class for enumerations.">xtd::enum_object</a> class for an enum flags. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3cf593875eebd764cb406fa27ded6d93">enum_class_</a>(, text_attribute,</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggae9ba1696ebc733013c909c04118ae81aafea087517c26fadd409bd4b9dc642555">normal</a> = 0b0,</div>
@@ -207,7 +198,7 @@ For more information about types, see <a href="https://gammasoft71.github.io/xtd
 <div class="ttc" id="agroup__keywords_html_gaea49fae71107df8769685efb159c181a"><div class="ttname"><a href="group__keywords.html#gaea49fae71107df8769685efb159c181a">flags_attribute_</a></div><div class="ttdeci">#define flags_attribute_(namespace_name, enum_type)</div><div class="ttdoc">Provides the set attribute struct for enumerations helper.</div><div class="ttdef"><b>Definition</b> flags_attribute.hpp:34</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggae9ba1696ebc733013c909c04118ae81aafea087517c26fadd409bd4b9dc642555"><div class="ttname"><a href="group__xtd__core.html#ggae9ba1696ebc733013c909c04118ae81aafea087517c26fadd409bd4b9dc642555">xtd::exit_mode::normal</a></div><div class="ttdeci">@ normal</div><div class="ttdoc">Represent the exit mode when the terminates normally (via xtd::environment::exit or returning from th...</div><div class="ttdef"><b>Definition</b> exit_mode.hpp:20</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_8cpp-example.html#_a1">enum.cpp</a>, <a class="el" href="enum_class_8cpp-example.html#_a1">enum_class.cpp</a>, <a class="el" href="enum_class_flags_8cpp-example.html#_a2">enum_class_flags.cpp</a>, <a class="el" href="enum_class_flags_introspection_8cpp-example.html#_a2">enum_class_flags_introspection.cpp</a>, <a class="el" href="enum_class_flags_without_helpers_8cpp-example.html#_a4">enum_class_flags_without_helpers.cpp</a>, <a class="el" href="enum_class_ut_8cpp-example.html#_a1">enum_class_ut.cpp</a>, <a class="el" href="enum_class_without_helper_8cpp-example.html#_a1">enum_class_without_helper.cpp</a>, <a class="el" href="enum_struct_8cpp-example.html#_a1">enum_struct.cpp</a>, <a class="el" href="enum_struct_ut_8cpp-example.html#_a1">enum_struct_ut.cpp</a>, <a class="el" href="enum_ut_8cpp-example.html#_a1">enum_ut.cpp</a>, <a class="el" href="form_background_image2_8cpp-example.html#_a5">form_background_image2.cpp</a>, <a class="el" href="sprintf_enum_8cpp-example.html#_a1">sprintf_enum.cpp</a>, and <a class="el" href="sprintf_enum_class_8cpp-example.html#_a1">sprintf_enum_class.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="form_background_image2_8cpp-example.html#_a5">form_background_image2.cpp</a>, <a class="el" href="sprintf_enum_8cpp-example.html#_a1">sprintf_enum.cpp</a>, and <a class="el" href="sprintf_enum_class_8cpp-example.html#_a1">sprintf_enum_class.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
@@ -1405,7 +1396,7 @@ template&lt;class enum_t = std::nullptr_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 26 2025 10:29:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Aug 26 2025 18:39:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
