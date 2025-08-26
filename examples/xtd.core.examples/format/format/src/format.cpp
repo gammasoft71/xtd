@@ -1,8 +1,4 @@
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/string>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 auto main() -> int {
   console::out << string::format("{} {} {} {}", "string"_s, "literal", 42, 'a') << environment::new_line;

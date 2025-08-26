@@ -1,10 +1,4 @@
-#include <xtd/collections/generic/list>
-#include <xtd/console>
-#include <xtd/environment>
-#include <xtd/format>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
+#include <xtd/xtd>
 
 class character : public istringable {
 public:

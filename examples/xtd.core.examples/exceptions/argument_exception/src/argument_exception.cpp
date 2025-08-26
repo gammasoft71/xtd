@@ -1,7 +1,4 @@
-#include <xtd/argument_exception>
-#include <xtd/console>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 int divide_by_two(int num) {
   // If num is an odd number, throw an argument_exception.

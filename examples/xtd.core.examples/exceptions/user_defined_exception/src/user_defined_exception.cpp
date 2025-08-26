@@ -1,18 +1,16 @@
 #include <xtd/xtd>
 
-using namespace xtd::diagnostics;
-
 namespace user_defined_exception {
   class employee_list_not_found_exception : public exception {
   public:
-    employee_list_not_found_exception(const stack_frame& frame = stack_frame::current()) : exception {"The employee list does not exist."_t, frame} {
+    employee_list_not_found_exception(const diagnostics::stack_frame& frame = diagnostics::stack_frame::current()) : exception {"The employee list does not exist."_t, frame} {
     }
     
-    employee_list_not_found_exception(const string& message, const stack_frame& frame = stack_frame::current()) : exception {message, frame} {
+    employee_list_not_found_exception(const string& message, const diagnostics::stack_frame& frame = diagnostics::stack_frame::current()) : exception {message, frame} {
     }
     
     template<typename exception_t>
-    employee_list_not_found_exception(const string& message, const exception_t& inner, const stack_frame& frame = stack_frame::current()) : exception {message, inner, frame} {
+    employee_list_not_found_exception(const string& message, const exception_t& inner, const diagnostics::stack_frame& frame = diagnostics::stack_frame::current()) : exception {message, inner, frame} {
     }
   };
 }

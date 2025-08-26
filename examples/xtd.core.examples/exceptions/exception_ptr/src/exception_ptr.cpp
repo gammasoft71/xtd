@@ -1,9 +1,4 @@
-#include <xtd/threading/thread>
-#include <xtd/console>
-#include <xtd/invalid_operation_exception>
-
-using namespace xtd;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto exception_pointer = std::exception_ptr {};

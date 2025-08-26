@@ -1,8 +1,4 @@
-#include <xtd/as>
-#include <xtd/console>
-#include <xtd/enum_struct>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 enum_struct_(, enum_test,
   value_one,
