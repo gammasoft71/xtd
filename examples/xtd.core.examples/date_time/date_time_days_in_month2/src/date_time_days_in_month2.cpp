@@ -1,15 +1,9 @@
-#include <xtd/as>
-#include <xtd/console>
-#include <xtd/date_time>
-#include <xtd/startup>
-#include <array>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 class program {
 public:
   static auto main() {
-    auto years = std::array<unsigned int, 2> {2012, 2014};
+    auto years = array<uint32> {2012, 2014};
     console::write_line("Days in the Month for the Gregorian calendar\n");
     console::write_line("{0,-10}{1,-15}{2,4}\n", "Year", "Month", "Days");
     

@@ -1,9 +1,4 @@
-#include <xtd/console>
-#include <xtd/date_time>
-#include <xtd/startup>
-#include <xtd/string>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 class program {
 public:
