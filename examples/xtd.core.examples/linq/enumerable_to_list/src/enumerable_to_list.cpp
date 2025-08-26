@@ -1,8 +1,4 @@
-#include <xtd/collections/generic/list>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
+#include <xtd/xtd>
 
 auto main() -> int {
   array<string> fruits = {"apple", "passionfruit", "banana", "mango", "orange", "blueberry", "grape", "strawberry"};

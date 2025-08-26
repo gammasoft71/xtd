@@ -1,8 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-using namespace xtd::linq;
-
 auto main() -> int {
   const char* items[] = {"One", "Two", "Three", "Four", "Five"};
   const auto& enumerable = from(items);

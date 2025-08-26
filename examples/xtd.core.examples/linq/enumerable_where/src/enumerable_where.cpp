@@ -1,7 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-
 auto main() -> int {
   auto fruits = array {"apple", "passionfruit", "banana", "mango", "orange", "blueberry", "grape", "strawberry"};
   

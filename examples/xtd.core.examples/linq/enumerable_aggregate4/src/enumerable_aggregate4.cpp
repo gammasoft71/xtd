@@ -1,8 +1,4 @@
-#include <xtd/linq/enumerable>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::linq;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto sentence = "the quick brown fox jumps over the lazy dog"_s;

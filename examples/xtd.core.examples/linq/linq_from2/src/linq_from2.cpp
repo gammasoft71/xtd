@@ -1,8 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-using namespace xtd::linq;
-
 auto main() -> int {
   auto items = std::initializer_list<string> {"One", "Two", "Three", "Four", "Five"};
   const auto& enumerable = from(items);

@@ -1,8 +1,4 @@
-#include <xtd/collections/generic/list>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto numbers = list {1, 2};

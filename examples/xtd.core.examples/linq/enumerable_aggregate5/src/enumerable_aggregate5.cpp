@@ -1,9 +1,4 @@
-#include <xtd/linq/enumerable>
-#include <xtd/array>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::linq;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto ints = array {4, 8, 8, 3, 9, 0, 7, 8, 2}.items();
