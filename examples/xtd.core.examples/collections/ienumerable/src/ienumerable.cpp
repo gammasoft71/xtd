@@ -1,8 +1,4 @@
-#include <xtd/collections/array_list>
-#include <xtd/console>
-#include <xtd/startup>
-
-using namespace xtd;
+#include <xtd/xtd>
 
 class program {
 public:

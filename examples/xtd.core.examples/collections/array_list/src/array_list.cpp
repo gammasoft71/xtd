@@ -1,7 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd::collections;
-
 template<typename collection_t>
 void print_values(const collection_t& my_list) {
   for (auto obj : my_list)
@@ -11,7 +9,7 @@ void print_values(const collection_t& my_list) {
 
 auto main() -> int {
   // Creates and initializes a new vector_list.
-  auto my_vl = array_list {};
+  auto my_vl = collections::array_list {};
   my_vl.emplace_back("Hello");
   my_vl.emplace_back("World");
   my_vl.emplace_back("!");

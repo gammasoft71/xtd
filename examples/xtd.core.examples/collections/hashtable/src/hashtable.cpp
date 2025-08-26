@@ -1,11 +1,9 @@
 #include <xtd/xtd>
 
-using namespace xtd::collections;
-
 auto main() -> int {
   // Create a new hash table.
   //
-  hashtable open_with;
+  auto open_with = collections::hashtable {};
   
   // Add some elements to the hash table. There are no
   // duplicate keys, but some of the values are duplicates.

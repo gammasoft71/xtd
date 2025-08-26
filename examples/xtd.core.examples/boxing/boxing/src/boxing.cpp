@@ -1,11 +1,9 @@
 #include <xtd/xtd>
 
-using namespace xtd::collections::specialized;
-
 // This class is not realistic, it is just to illustrate the example.
 class setup_serializer : public object {
 public:
-  using pair_collection = list<string_key_value_pair>;
+  using pair_collection = list<collections::specialized::string_key_value_pair>;
   
   setup_serializer() = default;
   

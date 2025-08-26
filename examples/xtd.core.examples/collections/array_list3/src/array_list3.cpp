@@ -1,7 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd::collections;
-
 auto main() -> int {
   for (auto item : collections::array_list {"42", 42, 12_h + 24_m + 42_s, .42}) {
     console::write("{,-8} --> ", item);
