@@ -1,13 +1,7 @@
-#include <xtd/collections/hashtable>
-#include <xtd/console>
-#include <xtd/day_of_week>
-#include <xtd/time_span>
-
-using namespace xtd;
-using namespace xtd::collections;
+#include <xtd/xtd>
 
 auto main() -> int {
-  auto items = hashtable {{"string", "42"}, {"int", 42}, {"time_span"_s, 12_h + 24_m + 42_s}, {"double", .42}, {"42", "string"}, {42, "int"}, {12_h + 24_m + 42_s, "time_span"}, {.42, "double"}};
+  auto items = collections::hashtable {{"string", "42"}, {"int", 42}, {"time_span"_s, 12_h + 24_m + 42_s}, {"double", .42}, {"42", "string"}, {42, "int"}, {12_h + 24_m + 42_s, "time_span"}, {.42, "double"}};
   
   for (auto [key, value] : items) {
     console::write("{,-9} -> ", key);
