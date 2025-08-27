@@ -1,8 +1,5 @@
 #include <xtd/xtd.tunit>
 
-using namespace xtd::collections::generic;
-using namespace xtd::tunit;
-
 namespace unit_tests {
   class test_class_(test) {
     void test_method_(test_case_succeed) {
