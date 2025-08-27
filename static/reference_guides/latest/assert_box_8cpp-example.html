@@ -122,21 +122,19 @@ $(function(){ initResizable(false); });
 </dd></dl>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
-<div class="line"> </div>
 <div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  form1() {</div>
-<div class="line">    <a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>(<span class="stringliteral">&quot;Assert box example&quot;</span>);</div>
+<div class="line">    text(<span class="stringliteral">&quot;Assert box example&quot;</span>);</div>
 <div class="line">    controls().push_back(button1);</div>
 <div class="line">    </div>
 <div class="line">    button1.location({10, 10});</div>
 <div class="line">    button1.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    button1.text(<span class="stringliteral">&quot;assert...&quot;</span>);</div>
 <div class="line">    button1.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">      <span class="keywordflow">switch</span>(assert_box::show(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Index must be &gt; 0&quot;</span>, <a class="code hl_function" href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29">stack_frame::current</a>())) {</div>
-<div class="line">        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga4f0cffaa8fcb3708782f28d60386c525a5bb94a1c12413a2e5d14deabab29f2aa">forms::dialog_result::abort</a>: application::exit(); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga4f0cffaa8fcb3708782f28d60386c525a165e6d21e0a2cc9ebb32ca05f90e0fa7">forms::dialog_result::retry</a>: <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debugger.html#a2794378a9d23425b0ce41201e9bb0be5">debugger::debug_break</a>(); <span class="keywordflow">break</span>;</div>
+<div class="line">      <span class="keywordflow">switch</span>(assert_box::show(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Index must be &gt; 0&quot;</span>, diagnostics::stack_frame::current())) {</div>
+<div class="line">        <span class="keywordflow">case</span> forms::dialog_result::abort: application::exit(); <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> forms::dialog_result::retry: diagnostics::debugger::debug_break(); <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
 <div class="line">      }</div>
 <div class="line">    };</div>
@@ -149,18 +147,12 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1debugger_html_a2794378a9d23425b0ce41201e9bb0be5"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debugger.html#a2794378a9d23425b0ce41201e9bb0be5">xtd::diagnostics::debugger::debug_break</a></div><div class="ttdeci">static void debug_break()</div><div class="ttdoc">Signals a breakpoint to an attached debugger.</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a70707f29089ae94fa25b21466f7ebd29"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29">xtd::diagnostics::stack_frame::current</a></div><div class="ttdeci">static stack_frame current(const xtd::diagnostics::source_location &amp;value=xtd::diagnostics::source_location::current()) noexcept</div><div class="ttdoc">Crates a new xtd::diagnostics::stack_frame object corresponding to the location of the call site.</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_gga4f0cffaa8fcb3708782f28d60386c525a165e6d21e0a2cc9ebb32ca05f90e0fa7"><div class="ttname"><a href="group__xtd__forms.html#gga4f0cffaa8fcb3708782f28d60386c525a165e6d21e0a2cc9ebb32ca05f90e0fa7">xtd::forms::dialog_result::retry</a></div><div class="ttdeci">@ retry</div><div class="ttdoc">The dialog box return value is Retry (usually sent from a button labeled Retry).</div><div class="ttdef"><b>Definition</b> dialog_result.hpp:53</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_gga4f0cffaa8fcb3708782f28d60386c525a5bb94a1c12413a2e5d14deabab29f2aa"><div class="ttname"><a href="group__xtd__forms.html#gga4f0cffaa8fcb3708782f28d60386c525a5bb94a1c12413a2e5d14deabab29f2aa">xtd::forms::dialog_result::abort</a></div><div class="ttdeci">@ abort</div><div class="ttdoc">The dialog box return value is Abort (usually sent from a button labeled Abort).</div><div class="ttdef"><b>Definition</b> dialog_result.hpp:51</div></div>
-<div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_1_1text_html"><div class="ttname"><a href="namespacextd_1_1text.html">xtd::text</a></div><div class="ttdoc">Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:17</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 27 2025 08:05:22 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Aug 27 2025 13:42:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
