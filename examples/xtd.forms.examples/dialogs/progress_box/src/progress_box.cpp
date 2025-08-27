@@ -1,11 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/form>
-#include <xtd/forms/progress_box>
-#include <xtd/threading/thread>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:

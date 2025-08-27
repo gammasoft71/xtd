@@ -1,7 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd::speech::synthesis;
-
 class form1 : public form {
 public:
   form1() {
@@ -17,7 +15,7 @@ public:
   
 private:
   button button1;
-  speech_synthesizer speech_synthesizer1;
+  speech::synthesis::speech_synthesizer speech_synthesizer1;
 };
 
 auto main() -> int {
