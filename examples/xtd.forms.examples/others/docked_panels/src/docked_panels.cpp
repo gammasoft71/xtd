@@ -1,9 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/panel>
-
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto form_main = form::create("Docked panels example");

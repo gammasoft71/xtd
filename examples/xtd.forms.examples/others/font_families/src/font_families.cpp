@@ -1,12 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/label>
-#include <xtd/forms/list_box>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace font_family_example {
   class form1 : public form {
@@ -25,10 +17,10 @@ namespace font_family_example {
       list_box_font_families.bounds({20, 60, 360, 420});
       list_box_font_families.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
       
-      list<drawing::font_family> font_families = drawing::font_family::families();
-      label_font_famlies_count.text(string::format("There are {0} font families :", font_families.size()));
-      for (drawing::font_family fontFamily : font_families)
-        list_box_font_families.items().push_back(fontFamily.name());
+      auto font_families = drawing::font_family::families();
+      label_font_famlies_count.text(string::format("There are {0} font families :", font_families.count()));
+      for (auto font_family : font_families)
+        list_box_font_families.items().push_back(font_family.name());
     }
     
   private:

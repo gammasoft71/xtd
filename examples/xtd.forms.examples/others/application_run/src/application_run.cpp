@@ -1,6 +1,4 @@
-#include <xtd/forms/application>
-
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 auto main() -> int {
   application::run();

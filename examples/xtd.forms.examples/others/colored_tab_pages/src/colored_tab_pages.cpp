@@ -1,15 +1,4 @@
-#include <xtd/drawing/colors>
-#include <xtd/drawing/pens>
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/tab_control>
-#include <xtd/forms/tab_page>
-#include <xtd/cdebug>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:
