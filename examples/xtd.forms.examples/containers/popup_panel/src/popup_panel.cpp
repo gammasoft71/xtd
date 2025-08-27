@@ -1,13 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/button_images>
-#include <xtd/forms/form>
-#include <xtd/forms/list_box>
-#include <xtd/forms/popup_panel>
-
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:

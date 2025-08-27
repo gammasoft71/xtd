@@ -1,9 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/split_container>
-
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:

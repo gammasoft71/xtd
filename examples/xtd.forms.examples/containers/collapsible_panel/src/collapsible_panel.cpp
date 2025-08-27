@@ -1,14 +1,6 @@
 #define TRACE
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/collapsible_panel>
-#include <xtd/forms/form>
-#include <xtd/forms/label>
-#include <xtd/forms/toggle_button>
+#include <xtd/xtd>
 #include <list>
-
-using namespace xtd;
-using namespace xtd::forms;
 
 class form1 : public form {
 public:
