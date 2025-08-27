@@ -238,6 +238,7 @@
 #include "forms/list_control.hpp"
 #include "forms/loading_indicator.hpp"
 #include "forms/loading_indicator_style.hpp"
+#include "forms/loading_indicators.hpp"
 #include "forms/main_menu.hpp"
 #include "forms/menu.hpp"
 #include "forms/menu_images.hpp"
