@@ -1,12 +1,8 @@
-#include <xtd/drawing/bitmap>
-#include <xtd/console>
+#include <xtd/xtd>
 #include "logo.xpm"
 
-using namespace xtd;
-using namespace xtd::drawing;
-
 auto main() -> int {
-  auto bmp = image::from_xpm_data(logo_xpm);
+  auto bmp = drawing::image::from_xpm_data(logo_xpm);
   
   console::write_line("handle = 0x{:X}", bmp.handle());
   console::write_line("horizontal resolution = {}", bmp.horizontal_resolution());

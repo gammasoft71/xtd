@@ -1,14 +1,8 @@
-#include <xtd/diagnostics/process>
-#include <xtd/drawing/bitmap>
-#include <xtd/io/path>
+#include <xtd/xtd>
 #include "../properties/resources.hpp"
-
-using namespace xtd::diagnostics;
-using namespace xtd::drawing;
-using namespace xtd::io;
 
 auto main() -> int {
   auto bmp = image_jpeg::properties::resources::gammasoft_jpeg();
   bmp.save(path::combine(path::get_temp_path(), "image_jpeg.png"));
-  process::start(process_start_info {path::combine(path::get_temp_path(), "image_jpeg.png")}.use_shell_execute(true));
+  diagnostics::process::start(diagnostics::process_start_info {path::combine(path::get_temp_path(), "image_jpeg.png")}.use_shell_execute(true));
 }
