@@ -1,12 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/form>
-#include <xtd/forms/use_wait_cursor>
-#include <xtd/threading/thread>
-
-using namespace xtd;
-using namespace xtd::forms;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:
@@ -31,5 +23,5 @@ private:
 };
 
 auto main() -> int {
-  xtd::forms::application::run(form1 {});
+  application::run(form1 {});
 }

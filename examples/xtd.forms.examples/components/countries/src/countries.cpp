@@ -1,16 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/countries>
-#include <xtd/forms/form>
-#include <xtd/forms/label>
-#include <xtd/forms/list_box>
-#include <xtd/forms/picture_box>
-#include <xtd/diagnostics/debug>
-#include <xtd/drawing/system_colors>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace countries_example {
   class main_form : public form {

@@ -1,16 +1,4 @@
-#include <xtd/drawing/texts>
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/button_images>
-#include <xtd/forms/choice>
-#include <xtd/forms/form>
-#include <xtd/forms/label>
-#include <xtd/forms/picture_box>
-#include <xtd/drawing/system_colors>
-
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace example {
   class form1 : public form {

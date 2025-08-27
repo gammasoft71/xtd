@@ -1,13 +1,4 @@
-#include <xtd/drawing/color_converter>
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/sixteen_segment_display>
-#include <xtd/forms/timer>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:
@@ -34,7 +25,7 @@ public:
   
 private:
   int counter = 0;
-  list<segments> chase = {
+  array<segments> chase = {
     segments::none,
     segments::a1,
     segments::a1 | segments::a2,
@@ -55,7 +46,7 @@ private:
     segments::dp,
     segments::pc
   };
-  list<segment_style> segment_styles = {
+  array<segment_style> segment_styles = {
     segment_style::standard,
     segment_style::modern,
     segment_style::mixed,
@@ -64,7 +55,7 @@ private:
     segment_style::stick
   };
   sixteen_segment_display sixteen_segment_display1;
-  timer timer1;
+  forms::timer timer1;
 };
 
 auto main() -> int {

@@ -1,14 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/choice>
-#include <xtd/forms/color_picker>
-#include <xtd/forms/form>
-#include <xtd/forms/radio_button>
-#include <xtd/forms/radio_button_renderer>
-#include <xtd/cdebug>
-
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace radio_button_renderer_example {
   class form1 : public form {
