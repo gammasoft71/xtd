@@ -1,11 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/list_box>
-#include <xtd/threading/thread>
-
-using namespace xtd;
-using namespace xtd::forms;
-using namespace xtd::threading;
+#include <xtd/xtd>
 
 class form_thread : public form {
 public:

@@ -1,14 +1,5 @@
-#include <xtd/diagnostics/process>
-#include <xtd/forms/application>
-#include <xtd/forms/choice>
-#include <xtd/forms/form>
-#include <xtd/forms/link_label>
 #include "../properties/resources.hpp"
-
-using namespace xtd;
-using namespace xtd::diagnostics;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace form_background_image2 {
   class form1 : public form {
@@ -27,7 +18,7 @@ namespace form_background_image2 {
       bliss_url.links().push_back({0, bliss_url.text().size(), "https://basicappleguy.com/basicappleblog/macosbliss"});
       bliss_url.link_clicked += delegate_(object & sender, link_label_clicked_event_args & e) {
         e.visited(true);
-        process::start(process_start_info {as<string>(e.link().link_data())}.use_shell_execute(true));
+        diagnostics::process::start(diagnostics::process_start_info {as<string>(e.link().link_data())}.use_shell_execute(true));
       };
 
       for (auto [value, name] : enum_object<>::get_entries<xtd::forms::image_layout>())

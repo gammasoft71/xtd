@@ -1,8 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/text_box>
-
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace text_box_multiline_example {
   class form1 : public form {

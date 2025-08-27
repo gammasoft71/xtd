@@ -1,13 +1,4 @@
-#include <xtd/drawing/colors>
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/label>
-#include <xtd/collections/generic/key_value_pair>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:

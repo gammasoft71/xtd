@@ -1,11 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/button_images>
-#include <xtd/forms/form>
-#include <xtd/forms/track_bar>
-#include <xtd/startup>
-
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:

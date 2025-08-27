@@ -1,12 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/form>
-#include <xtd/forms/vertical_layout_panel>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace example {
   class form1 : public form {

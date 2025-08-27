@@ -1,14 +1,4 @@
-#include <xtd/drawing/system_colors>
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/text_box>
-#include <xtd/forms/timer>
-#include <xtd/forms/user_control>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace wiggly_example {
   class wiggly : public user_control {
@@ -23,7 +13,7 @@ namespace wiggly_example {
     
   protected:
     void on_paint(paint_event_args& e) override {
-      static const auto sins = list {0, 38, 71, 92, 100, 92, 71, 38, 0, -38, -71, -92, -100, -92, -71, -38};
+      static const auto sins = array {0, 38, 71, 92, 100, 92, 71, 38, 0, -38, -71, -92, -100, -92, -71, -38};
       auto pos = point {(e.clip_rectangle().size().width - as<int>(e.graphics().measure_string(text(), font()).width)) / 2, (e.clip_rectangle().size().height - as<int>(e.graphics().measure_string(text(), font()).height)) / 2};
       auto wiggly_text = text().to_u32string();
       for (auto i = 0_z; i < wiggly_text.length(); i++) {
