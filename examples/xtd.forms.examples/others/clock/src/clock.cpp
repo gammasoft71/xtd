@@ -1,17 +1,9 @@
-#include <xtd/drawing/color_converter>
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/lcd_label>
-#include <xtd/forms/timer>
-
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto show_seconds = true;
   
-  auto clock_timer = timer {};
+  auto clock_timer = forms::timer {};
   clock_timer.interval(100_ms);
   clock_timer.enabled(true);
   

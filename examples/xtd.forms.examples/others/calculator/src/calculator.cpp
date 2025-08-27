@@ -1,13 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/form>
-#include <xtd/forms/label>
-#include <xtd/startup>
-#include <array>
-
-using namespace xtd;
-using namespace xtd::collections;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace calculator {
   class form_main : public form {
@@ -29,7 +20,7 @@ namespace calculator {
       text("Calculator");
       back_color(drawing::color::from_argb(44, 44, 47));
       fore_color(drawing::color::white);
-      font(xtd::drawing::font(xtd::drawing::font_family::generic_sans_serif(), 15));
+      font(drawing::font(font_family::generic_sans_serif(), 15));
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       auto_size(true);
       maximize_box(false);
@@ -37,7 +28,7 @@ namespace calculator {
       key_press += key_press_event_handler(*this, &form_main::form_main_key_press);
       
       result.bounds({0, 0, 240, 60});
-      result.font(xtd::drawing::font(font(), font().size() * 2));
+      result.font(drawing::font(font(), font().size() * 2));
       result.parent(*this);
       result.text_align(content_alignment::middle_right);
       result.text("0");
@@ -49,7 +40,7 @@ namespace calculator {
         .border_color(drawing::color::from_argb(44, 44, 47))
         .border_radius(0)
         .border_size(0));
-      button_clear.flat_style(xtd::forms::flat_style::flat);
+      button_clear.flat_style(forms::flat_style::flat);
       button_clear.location({0, 60});
       button_clear.text("C");
       button_clear.size({60, 50});
@@ -62,7 +53,7 @@ namespace calculator {
         .border_color(drawing::color::from_argb(44, 44, 47))
         .border_radius(0)
         .border_size(0));
-      button_plus_minus.flat_style(xtd::forms::flat_style::flat);
+      button_plus_minus.flat_style(forms::flat_style::flat);
       button_plus_minus.location({61, 60});
       button_plus_minus.text("+/-");
       button_plus_minus.size({60, 50});
@@ -75,7 +66,7 @@ namespace calculator {
         .border_color(drawing::color::from_argb(44, 44, 47))
         .border_radius(0)
         .border_size(0));
-      button_percent.flat_style(xtd::forms::flat_style::flat);
+      button_percent.flat_style(forms::flat_style::flat);
       button_percent.location({122, 60});
       button_percent.text("%");
       button_percent.size({60, 50});
@@ -88,13 +79,13 @@ namespace calculator {
         .border_color(drawing::color::from_argb(44, 44, 47))
         .border_radius(0)
         .border_size(0));
-      button_decimal.flat_style(xtd::forms::flat_style::flat);
+      button_decimal.flat_style(forms::flat_style::flat);
       button_decimal.location({122, 264});
       button_decimal.text(".");
       button_decimal.size({60, 50});
       button_decimal.click += event_handler(*this, &form_main::button_number_click);
       
-      generic::list<xtd::drawing::point> button_number_locations = {{0, 264}, {0, 213}, {61, 213}, {122, 213}, {0, 162}, {61, 162}, {122, 162}, {0, 111}, {61, 111}, {122, 111}};
+      list<point> button_number_locations = {{0, 264}, {0, 213}, {61, 213}, {122, 213}, {0, 162}, {61, 162}, {122, 162}, {0, 111}, {61, 111}, {122, 111}};
       for (int i = 0; i < 10; i++) {
         button_numbers[i].parent(*this);
         button_numbers[i].back_color(drawing::color::from_argb(102, 102, 102));
@@ -103,7 +94,7 @@ namespace calculator {
           .border_color(drawing::color::from_argb(44, 44, 47))
           .border_radius(0)
           .border_size(0));
-        button_numbers[i].flat_style(xtd::forms::flat_style::flat);
+        button_numbers[i].flat_style(forms::flat_style::flat);
         button_numbers[i].text(string::format("{}", i));
         button_numbers[i].location(button_number_locations[i]);
         button_numbers[i].size({60, 50});
@@ -111,8 +102,8 @@ namespace calculator {
       }
       button_numbers[0].width(121);
       
-      generic::list button_operator_texts = {"÷", "x", "-", "+", "="};
-      generic::list<xtd::drawing::point> button_operator_locations = {{183, 60}, {183, 111}, {183, 162}, {183, 213}, {183, 264}};
+      list button_operator_texts = {"÷", "x", "-", "+", "="};
+      list<point> button_operator_locations = {{183, 60}, {183, 111}, {183, 162}, {183, 213}, {183, 264}};
       for (int i = 0; i < 5; i++) {
         button_operators[i].parent(*this);
         button_operators[i].back_color(drawing::color::from_argb(255, 159, 11));
@@ -121,7 +112,7 @@ namespace calculator {
           .border_color(drawing::color::from_argb(44, 44, 47))
           .border_radius(0)
           .border_size(0));
-        button_operators[i].flat_style(xtd::forms::flat_style::flat);
+        button_operators[i].flat_style(forms::flat_style::flat);
         button_operators[i].text(button_operator_texts[i]);
         button_operators[i].location(button_operator_locations[i]);
         button_operators[i].size({60, 50});
@@ -192,7 +183,7 @@ namespace calculator {
         }
         first_operand = parse<double>(result.text());
       }
-      operation = std::map<string, operators> {{"÷", operators::divide}, {"x", operators::multiply}, {"-", operators::subtract}, {"+", operators::add}, {"=", operation}} [as<control>(sender).text()];
+      operation = dictionary<string, operators> {{"÷", operators::divide}, {"x", operators::multiply}, {"-", operators::subtract}, {"+", operators::add}, {"=", operation}} [as<control>(sender).text()];
       if (as<control>(sender).text() != "=") {
         if (second_operand.has_value()) first_operand.reset();
         second_operand.reset();
@@ -205,10 +196,10 @@ namespace calculator {
     button button_plus_minus;
     button button_percent;
     button button_decimal;
-    std::array<button, 10> button_numbers;
-    std::array<button, 5> button_operators;
-    std::optional<double> first_operand;
-    std::optional<double> second_operand;
+    fixed_array<button, 10> button_numbers;
+    fixed_array<button, 5> button_operators;
+    optional<double> first_operand;
+    optional<double> second_operand;
     operators operation = operators::none;
   };
 }
