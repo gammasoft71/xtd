@@ -1,12 +1,7 @@
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/label>
-#include <xtd/forms/month_calendar>
+#include <xtd/xtd>
 #include <chrono>
 
 using namespace std::chrono;
-using namespace xtd;
-using namespace xtd::forms;
 
 class form1 : public form {
 public:

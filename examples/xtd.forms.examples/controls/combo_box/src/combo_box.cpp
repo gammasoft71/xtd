@@ -1,10 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/combo_box>
-#include <xtd/forms/form>
-
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace combo_box_example {
   class form1 : public form {

@@ -1,13 +1,6 @@
+#include <xtd/xtd>
 #include "../resources/gammasoft_16x16.xpm"
 #include "../resources/gammasoft_64x64.xpm"
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/form>
-#include <xtd/forms/label>
-
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms;
 
 class form1 : public form {
 public:

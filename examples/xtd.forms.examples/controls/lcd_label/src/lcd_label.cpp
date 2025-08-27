@@ -1,10 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/lcd_label>
-#include <xtd/forms/numeric_up_down>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:

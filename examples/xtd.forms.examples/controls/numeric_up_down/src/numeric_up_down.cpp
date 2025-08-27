@@ -1,11 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/label>
-#include <xtd/forms/numeric_up_down>
-#include <xtd/cdebug>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace numeric_up_down_example {
   class form1 : public form {

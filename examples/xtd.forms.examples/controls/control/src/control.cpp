@@ -1,11 +1,4 @@
-#include <xtd/drawing/colors>
-#include <xtd/forms/application>
-#include <xtd/forms/control>
-#include <xtd/forms/form>
-
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace control_example {
   class form1 : public form {

@@ -1,8 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/buttons>
-#include <xtd/forms/form>
-
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto main_form = form::create("Buttons example", xtd::drawing::point {100, 200}, {450, 200});

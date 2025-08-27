@@ -1,12 +1,4 @@
-#include <xtd/diagnostics/process>
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/link_label>
-
-using namespace xtd;
-using namespace xtd::diagnostics;
-using namespace xtd::forms;
-using namespace xtd::io;
+#include <xtd/xtd>
 
 namespace link_label_example {
   class form1 : public form {
@@ -21,7 +13,7 @@ namespace link_label_example {
       link_label1.text("xtd Reference Guide");
       link_label1.link_clicked += delegate_(object & sender, link_label_clicked_event_args & e) {
         e.visited(true);
-        process::start(process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/index.html"}.use_shell_execute(true));
+        diagnostics::process::start(diagnostics::process_start_info {"https://gammasoft71.github.io/xtd/reference_guides/latest/index.html"}.use_shell_execute(true));
       };
       
       link_label2.location({10, 40});
@@ -32,7 +24,7 @@ namespace link_label_example {
       link_label2.links().push_back({19, 3, "https://gammasoft71.github.io/xtd"});
       link_label2.link_clicked += delegate_(object & sender, link_label_clicked_event_args & e) {
         e.visited(true);
-        process::start(process_start_info {as<string>(e.link().link_data())}.use_shell_execute(true));
+        diagnostics::process::start(diagnostics::process_start_info {as<string>(e.link().link_data())}.use_shell_execute(true));
       };
       
       link_label3.location({10, 70});
@@ -41,7 +33,7 @@ namespace link_label_example {
       link_label3.text("Put your temporary files in the temp directory");
       link_label3.links().push_back({32, 4, io::path::get_temp_path()});
       link_label3.link_clicked += delegate_(object & sender, link_label_clicked_event_args & e) {
-        process::start(process_start_info {as<string>(e.link().link_data())}.use_shell_execute(true));
+        diagnostics::process::start(diagnostics::process_start_info {as<string>(e.link().link_data())}.use_shell_execute(true));
       };
     }
     

@@ -1,9 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/choice>
-#include <xtd/forms/form>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace choice_example {
   class form1 : public form {

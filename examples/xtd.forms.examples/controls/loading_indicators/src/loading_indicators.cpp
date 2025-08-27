@@ -1,8 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/loading_indicators>
-
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace loading_indicators_example {
   class form1 : public form {

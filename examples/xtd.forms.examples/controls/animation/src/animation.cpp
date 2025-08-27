@@ -1,13 +1,4 @@
-#include <xtd/drawing/basic_colors>
-#include <xtd/forms/animation>
-#include <xtd/forms/application>
-#include <xtd/forms/debug_form>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::drawing;
-using namespace xtd::diagnostics;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace animation_example {
   class form1 : public form {
@@ -46,7 +37,7 @@ namespace animation_example {
     }
     
     void on_fish_animation_updated(object& sender, const animation_updated_event_args& e) {
-      debug::write_line(string::format("frame_counter={}, elapsed={}", e.frame_counter(), e.elapsed()));
+      diagnostics::debug::write_line(string::format("frame_counter={}, elapsed={}", e.frame_counter(), e.elapsed()));
     }
     
     animation fish_animation;

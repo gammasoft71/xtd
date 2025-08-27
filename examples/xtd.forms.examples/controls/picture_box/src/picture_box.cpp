@@ -1,11 +1,5 @@
-#include <xtd/forms/application>
-#include <xtd/forms/choice>
-#include <xtd/forms/form>
-#include <xtd/forms/picture_box>
 #include "../properties/resources.hpp"
-
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace picture_box {
   class form1 : public form {
