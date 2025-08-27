@@ -1,10 +1,4 @@
-#include <xtd/drawing/texts>
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/group_box>
-#include <xtd/forms/radio_buttons>
-
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto form_main = form::create("Radio buttons example");

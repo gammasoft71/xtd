@@ -1,12 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/cursors>
-#include <xtd/forms/form>
-#include <xtd/forms/list_box>
-#include <xtd/forms/panel>
-#include <xtd/drawing/system_colors>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:

@@ -1,10 +1,4 @@
-#include <xtd/diagnostics/debug>
-#include <xtd/forms/application>
-#include <xtd/forms/debug_form>
-#include <xtd/forms/form>
-#include <xtd/forms/v_scroll_bar>
-
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace v_scroll_bar_example {
   class form1 : public form {
@@ -23,7 +17,7 @@ namespace v_scroll_bar_example {
       v_scroll_bar2.maximum(20);
       v_scroll_bar2.value(10);
       v_scroll_bar2.scroll += delegate_ {
-        xtd::diagnostics::debug::write_line(xtd::string::format("v_scrolbar2 value = {}", v_scroll_bar2.value()));
+        diagnostics::debug::write_line(xtd::string::format("v_scrolbar2 value = {}", v_scroll_bar2.value()));
       };
     }
     

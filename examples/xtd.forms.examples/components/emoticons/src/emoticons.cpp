@@ -1,11 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/emoticons>
-#include <xtd/forms/form>
-#include <xtd/forms/label>
-#include <xtd/forms/list_box>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto main_form = form::create("Emoticons example");
