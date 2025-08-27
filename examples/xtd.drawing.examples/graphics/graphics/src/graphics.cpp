@@ -1,18 +1,7 @@
-#include <xtd/diagnostics/process>
-#include <xtd/drawing/drawing_2d/linear_gradient_brush>
-#include <xtd/drawing/drawing_2d/radial_gradient_brush>
-#include <xtd/drawing/bitmap>
-#include <xtd/drawing/brushes>
-#include <xtd/drawing/graphics>
-#include <xtd/drawing/system_fonts>
-#include <xtd/io/path>
+#include <xtd/xtd>
 
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::diagnostics;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
-using namespace xtd::io;
 
 auto main() -> int {
   auto drawing_bitmap = bitmap {640, 480};
@@ -28,5 +17,5 @@ auto main() -> int {
   graphics.fill_rectangle(brushes::white(), drawing_bitmap.width() / 2 + 50, drawing_bitmap.height() - 140, 70, 60);
   graphics.fill_polygon(linear_gradient_brush {rectangle {drawing_bitmap.width() / 2 - 160, drawing_bitmap.height() - 300, 320, 120}, color::brown, color::sandy_brown, linear_gradient_mode::backward_diagonal}, list<point> {{drawing_bitmap.width() / 2, drawing_bitmap.height() - 300}, {drawing_bitmap.width() / 2 + 160, drawing_bitmap.height() - 180}, {drawing_bitmap.width() / 2 - 160, drawing_bitmap.height() - 180},});
   drawing_bitmap.save(path::combine(path::get_temp_path(), "graphics.png"));
-  process::start(process_start_info {path::combine(path::get_temp_path(), "graphics.png")}.use_shell_execute(true));
+  diagnostics::process::start(diagnostics::process_start_info {path::combine(path::get_temp_path(), "graphics.png")}.use_shell_execute(true));
 }

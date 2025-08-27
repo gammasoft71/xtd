@@ -1,7 +1,5 @@
-#include <xtd/drawing/font>
-#include <xtd/console>
+#include <xtd/xtd>
 
-using namespace xtd;
 using namespace xtd::drawing;
 
 auto main() -> int {

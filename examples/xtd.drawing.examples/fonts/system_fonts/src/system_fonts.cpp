@@ -1,18 +1,14 @@
-#include <xtd/drawing/system_fonts>
-#include <xtd/console>
-
-using namespace xtd;
-using namespace xtd::drawing;
+#include <xtd/xtd>
 
 auto main() -> int {
-  console::write_line("caption_font       : {}", system_fonts::caption_font());
-  console::write_line("default_font       : {}", system_fonts::default_font());
-  console::write_line("dialog_font        : {}", system_fonts::dialog_font());
-  console::write_line("icon_title_font    : {}", system_fonts::icon_title_font());
-  console::write_line("menu_font          : {}", system_fonts::menu_font());
-  console::write_line("message_box_font   : {}", system_fonts::message_box_font());
-  console::write_line("small_caption_font : {}", system_fonts::small_caption_font());
-  console::write_line("status_font        : {}", system_fonts::status_font());
+  console::write_line("caption_font       : {}", drawing::system_fonts::caption_font());
+  console::write_line("default_font       : {}", drawing::system_fonts::default_font());
+  console::write_line("dialog_font        : {}", drawing::system_fonts::dialog_font());
+  console::write_line("icon_title_font    : {}", drawing::system_fonts::icon_title_font());
+  console::write_line("menu_font          : {}", drawing::system_fonts::menu_font());
+  console::write_line("message_box_font   : {}", drawing::system_fonts::message_box_font());
+  console::write_line("small_caption_font : {}", drawing::system_fonts::small_caption_font());
+  console::write_line("status_font        : {}", drawing::system_fonts::status_font());
 }
 
 // This code can produce the following output :
