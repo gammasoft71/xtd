@@ -1,11 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/form>
-#include <xtd/forms/label>
-#include <xtd/forms/text_box>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class user_input_dialog : public form {
 public:

@@ -1,11 +1,4 @@
-#include <xtd/drawing/system_brushes>
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/window_messages>
-
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace wnd_proc_example {
   class form1 : public form {

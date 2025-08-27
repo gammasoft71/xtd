@@ -1,11 +1,5 @@
 #define TRACE
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/trace_form>
-#include <xtd/ctrace>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:

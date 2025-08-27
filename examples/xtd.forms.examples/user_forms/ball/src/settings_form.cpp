@@ -1,12 +1,7 @@
 #include "settings_form.hpp"
-#include <xtd/drawing/colors>
-#include <xtd/drawing/color_converter>
-#include <xtd/drawing/system_colors>
-#include <xtd/forms/application>
+#include <xtd/xtd>
 
 using namespace ball;
-using namespace xtd;
-using namespace xtd::forms;
 
 settings_form::settings_form() {
   text(environment::os_version().is_macos() && environment::os_version().version().major() < 13 ? "Preferences" :  "Settings...");

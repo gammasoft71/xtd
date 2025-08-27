@@ -1,8 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/form>
-
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace button_with_style_sheet_example {
   class form1 : public form {

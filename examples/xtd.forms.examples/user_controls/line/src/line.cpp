@@ -1,10 +1,4 @@
-#include <xtd/drawing/system_colors>
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/user_control>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace line_example {
   class colored_line : public user_control {

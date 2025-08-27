@@ -1,12 +1,4 @@
-#include <xtd/drawing/drawing_2d/linear_gradient_brush>
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/control_paint>
-#include <xtd/forms/form>
-
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace owner_button_example {
   class owner_button : public button {

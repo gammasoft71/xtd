@@ -1,13 +1,4 @@
-#include <xtd/drawing/color_converter>
-#include <xtd/forms/application>
-#include <xtd/forms/user_control>
-#include <xtd/random>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class signal_generated_event_args : public event_args {
 public:
