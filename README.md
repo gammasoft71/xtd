@@ -402,7 +402,7 @@ The [authors file](https://github.com/gammasoft71/xtd/blob/master/AUTHORS.md) li
 
 **Your contributions are welcome.**
 
-* First read [Code of conduct](https://github.com/gammasoft71/xtd/blob/master/CODE_OF_CONDUCT.md) and the [design guidelines](https://gammasoft71.github.io/xtd/docs/documentation/Design%20Guidelines) to make sure your contribution follows the rules.
+* First read [Code of conduct](https://github.com/gammasoft71/xtd/blob/master/CODE_OF_CONDUCT.md) and the [design guidelines](https://gammasoft71.github.io/xtd/docs/documentation/design_guidelines) to make sure your contribution follows the rules.
 * [Fork](https://github.com/gammasoft71/xtd/fork) the project and use a pull request for adding your contribution.
 * If you face any problems feel free to open an issue at the [issues tracker](https://github.com/gammasoft71/xtd/issues), If you feel like there is a missing feature, please raise a ticket on Github. Pull request are also welcome.
 
