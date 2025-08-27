@@ -1,12 +1,4 @@
-#include <xtd/drawing/basic_colors>
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/random>
-
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace draw_point_example {
   class form1 : public form {
@@ -46,7 +38,7 @@ namespace draw_point_example {
     }
     
     list<colored_point> colored_points;
-    timer generate_colored_points_timer;
+    forms::timer generate_colored_points_timer;
   };
 }
 

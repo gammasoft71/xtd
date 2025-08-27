@@ -1,9 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms;
-
 namespace screenshot_example {
   class form1 : public form {
   public:

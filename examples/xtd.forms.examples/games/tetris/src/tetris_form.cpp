@@ -1,8 +1,6 @@
 #include "tetris_form.hpp"
 
 using namespace tetris;
-using namespace xtd;
-using namespace xtd::forms;
 
 tetris_form::tetris_form() {
   auto_size_mode(forms::auto_size_mode::grow_and_shrink);

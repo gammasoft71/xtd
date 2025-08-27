@@ -1,22 +1,21 @@
 #include "shape.hpp"
+#include <xtd/math>
 #include <algorithm>
 
 using namespace tetris;
-using namespace xtd;
-using namespace xtd::collections::generic;
 
 shape::shape(tetris::tetrominoes tetrominoes) {
-  static const auto coords_map = std::map<tetris::tetrominoes, std::array<key_value_pair<int, int>, 4>> {
-    {tetris::tetrominoes::no_shape, {std::make_pair(0, 0), std::make_pair(0, 0), std::make_pair(0, 0), std::make_pair(0, 0)}},
-    {tetris::tetrominoes::z_shape, {std::make_pair(0, -1), std::make_pair(0, 0), std::make_pair(-1, 0), std::make_pair(-1, 1)}},
-    {tetris::tetrominoes::s_shape, {std::make_pair(0, -1), std::make_pair(0, 0), std::make_pair(1, 0), std::make_pair(1, 1)}},
-    {tetris::tetrominoes::line_shape, {std::make_pair(0, -1), std::make_pair(0, 0), std::make_pair(0, 1), std::make_pair(0, 2)}},
-    {tetris::tetrominoes::t_shape, {std::make_pair(-1, 0), std::make_pair(0, 0), std::make_pair(1, 0), std::make_pair(0, 1)}},
-    {tetris::tetrominoes::square_shape, {std::make_pair(0, 0), std::make_pair(1, 0), std::make_pair(0, 1), std::make_pair(1, 1)}},
-    {tetris::tetrominoes::l_shape, {std::make_pair(-1, -1), std::make_pair(0, -1), std::make_pair(0, 0), std::make_pair(0, 1)}},
-    {tetris::tetrominoes::mirrored_l_shape, {std::make_pair(1, -1), std::make_pair(0, -1), std::make_pair(0, 0), std::make_pair(0, 1)}},
+  static const auto coords_values = dictionary<tetris::tetrominoes, fixed_array<key_value_pair<int, int>, 4>> {
+    {tetris::tetrominoes::no_shape, {key_value_pair<>::create(0, 0), key_value_pair<>::create(0, 0), key_value_pair<>::create(0, 0), key_value_pair<>::create(0, 0)}},
+    {tetris::tetrominoes::z_shape, {key_value_pair<>::create(0, -1), key_value_pair<>::create(0, 0), key_value_pair<>::create(-1, 0), key_value_pair<>::create(-1, 1)}},
+    {tetris::tetrominoes::s_shape, {key_value_pair<>::create(0, -1), key_value_pair<>::create(0, 0), key_value_pair<>::create(1, 0), key_value_pair<>::create(1, 1)}},
+    {tetris::tetrominoes::line_shape, {key_value_pair<>::create(0, -1), key_value_pair<>::create(0, 0), key_value_pair<>::create(0, 1), key_value_pair<>::create(0, 2)}},
+    {tetris::tetrominoes::t_shape, {key_value_pair<>::create(-1, 0), key_value_pair<>::create(0, 0), key_value_pair<>::create(1, 0), key_value_pair<>::create(0, 1)}},
+    {tetris::tetrominoes::square_shape, {key_value_pair<>::create(0, 0), key_value_pair<>::create(1, 0), key_value_pair<>::create(0, 1), key_value_pair<>::create(1, 1)}},
+    {tetris::tetrominoes::l_shape, {key_value_pair<>::create(-1, -1), key_value_pair<>::create(0, -1), key_value_pair<>::create(0, 0), key_value_pair<>::create(0, 1)}},
+    {tetris::tetrominoes::mirrored_l_shape, {key_value_pair<>::create(1, -1), key_value_pair<>::create(0, -1), key_value_pair<>::create(0, 0), key_value_pair<>::create(0, 1)}},
   };
-  coords_ = coords_map.at(tetrominoes);
+  coords_ = coords_values[tetrominoes];
   tetrominoes_ = tetrominoes;
 }
 
@@ -27,39 +26,39 @@ tetris::tetrominoes shape::tetrominoes() const noexcept {
 int shape::max_x() const noexcept {
   auto result = coords_[0].first;
   for (auto i = 0; i < 4; ++i)
-    result = std::max(result, coords_.at(i).first);
+    result = math::max(result, coords_.at(i).first);
   return result;
 }
 
 int shape::max_y() const noexcept {
   auto result = coords_[0].second;
   for (auto i = 0; i < 4; ++i)
-    result = std::max(result, coords_.at(i).second);
+    result = math::max(result, coords_.at(i).second);
   return result;
 }
 
 int shape::min_x() const noexcept {
   auto result = coords_[0].first;
   for (auto i = 0; i < 4; ++i)
-    result = std::min(result, coords_.at(i).first);
+    result = math::min(result, coords_.at(i).first);
   return result;
 }
 
 int shape::min_y() const noexcept {
   auto result = coords_[0].second;
   for (auto i = 0; i < 4; ++i)
-    result = std::min(result, coords_.at(i).second);
+    result = math::min(result, coords_.at(i).second);
   return result;
 }
 
 int shape::x(int index) const {
   if (index < 0 || index >= coords_size) throw argument_out_of_range_exception {};
-  return coords_.at(index).first;
+  return coords_[index].first;
 }
 
 int shape::y(int index) const {
   if (index < 0 || index >= coords_size) throw argument_out_of_range_exception {};
-  return coords_.at(index).second;
+  return coords_[index].second;
 }
 
 shape shape::generate() noexcept {
@@ -89,9 +88,9 @@ shape shape::rotate_right() const noexcept {
 }
 
 void shape::x(int index, int x) {
-  coords_.at(index) = std::make_pair(x, coords_.at(index).second);
+  coords_.at(index) = key_value_pair<>::create(x, coords_.at(index).second);
 }
 
 void shape::y(int index, int y) {
-      coords_.at(index) = std::make_pair(coords_.at(index).first, y);
+      coords_.at(index) = key_value_pair<>::create(coords_.at(index).first, y);
 }

@@ -9,7 +9,7 @@ namespace minesweeper {
   /// @remarks the game contains 81 (9 x 9) cells and 10 mines for beginner level.
   /// @remarks the game contains 256 (16 x 16) cells and 40 mines for intermediate level.
   /// @remarks the game contains 480 (30 x 16 cells and 99 mines for expert and custom level.
-  class cell final : public xtd::iequatable<cell> {
+  class cell final : public iequatable<cell> {
   public:
     /// @name Public Properties
     
@@ -43,7 +43,7 @@ namespace minesweeper {
     /// @brief Gets the size of cell in pixels.
     /// @return The size of cell.
     /// @remarks The values is 30 x 30.
-    static xtd::drawing::size size() noexcept;
+    static drawing::size size() noexcept;
     
     /// @brief Gets the cell state.
     /// @return One of minesweeper::cell_state value.
@@ -77,6 +77,6 @@ namespace minesweeper {
     bool has_mine_ = false;
     int number_of_neighboring_mines_ = 0;
     cell_state state_ = cell_state::unchecked;
-    inline static xtd::drawing::size size_ {30, 30};
+    inline static drawing::size size_ {30, 30};
   };
 }

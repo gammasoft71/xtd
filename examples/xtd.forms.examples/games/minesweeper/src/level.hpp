@@ -21,6 +21,6 @@ namespace minesweeper {
 
 /// @cond
 template<> struct xtd::enum_register<minesweeper::level> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<minesweeper::level> {{minesweeper::level::beginner, "beginner"}, {minesweeper::level::intermediate, "intermediate"}, {minesweeper::level::expert, "expert"}, {minesweeper::level::custom, "custom"}};}
+  explicit operator auto() const noexcept {return enum_collection<minesweeper::level> {{minesweeper::level::beginner, "beginner"}, {minesweeper::level::intermediate, "intermediate"}, {minesweeper::level::expert, "expert"}, {minesweeper::level::custom, "custom"}};}
 };
 /// @endcond

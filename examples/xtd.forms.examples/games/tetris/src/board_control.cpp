@@ -1,11 +1,6 @@
 #include "board_control.hpp"
 
 using namespace tetris;
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::drawing;
-using namespace xtd::drawing::drawing_2d;
-using namespace xtd::forms;
 
 board_control::board_control(status_bar& status_bar) : status_bar_ {status_bar} {
   static constexpr int block_size = 30;
@@ -56,15 +51,15 @@ void board_control::draw_square(graphics& graphics, int x, int y, tetris::tetrom
   static const auto darks = list<color> {color::from_argb(0, 0, 0), color::from_argb(128, 59, 59), color::from_argb(59, 128, 59), color::from_argb(59, 59, 128), color::from_argb(128, 128, 59), color::from_argb(128, 59, 128), color::from_argb(59, 128, 128), color::from_argb(128, 98, 0)};
   
   auto pen = drawing::pen {lights[as<int>(tetrominoes)]};
-  pen.start_cap(line_cap::square);
-  pen.end_cap(line_cap::square);
+  pen.start_cap(drawing_2d::line_cap::square);
+  pen.end_cap(drawing_2d::line_cap::square);
   
   graphics.draw_line(pen, x, y + square_height() - 1, x, y);
   graphics.draw_line(pen, x, y, x + square_width() - 1, y);
   
   pen = drawing::pen {darks[as<int>(tetrominoes)]};
-  pen.start_cap(line_cap::square);
-  pen.end_cap(line_cap::square);
+  pen.start_cap(drawing_2d::line_cap::square);
+  pen.end_cap(drawing_2d::line_cap::square);
   
   graphics.draw_line(pen, x + 1, y + square_height() - 1, x + square_width() - 1, y + square_height() - 1);
   graphics.draw_line(pen, x + square_width() - 1, y + square_height() - 1, x + square_width() - 1, y + 1);

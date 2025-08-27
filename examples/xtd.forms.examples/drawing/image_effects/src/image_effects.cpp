@@ -1,12 +1,9 @@
 #include "../properties/resources.hpp"
 #include <xtd/xtd>
 
-using namespace xtd;
-using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
 using namespace xtd::drawing::imaging;
 using namespace xtd::drawing::imaging::effects;
-using namespace xtd::forms;
 
 namespace image_effects_example {
   class form1 : public form {

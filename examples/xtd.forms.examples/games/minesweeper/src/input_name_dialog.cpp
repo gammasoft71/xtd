@@ -3,9 +3,6 @@
 #include <xtd/drawing/texts>
 
 using namespace minesweeper;
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms;
 
 input_name_dialog::input_name_dialog() {
   client_size({200, 160});

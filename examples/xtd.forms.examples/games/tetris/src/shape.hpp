@@ -4,7 +4,7 @@
 #include <array>
 
 namespace tetris {
-  class shape final : public xtd::object {
+  class shape final : public object {
   public:
     shape() = default;
     explicit shape(tetris::tetrominoes tetrominoes);
@@ -26,7 +26,7 @@ namespace tetris {
     void y(int index, int y);
 
     inline static constexpr int coords_size = 4;
-    std::array<xtd::collections::generic::key_value_pair<int, int>, coords_size> coords_;
+    fixed_array<key_value_pair<int, int>, coords_size> coords_;
     tetris::tetrominoes tetrominoes_ = tetris::tetrominoes::no_shape;
   };
 }
