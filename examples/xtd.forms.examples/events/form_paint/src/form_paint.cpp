@@ -1,14 +1,6 @@
-#include <xtd/drawing/drawing_2d/linear_gradient_brush>
-#include <xtd/drawing/drawing_2d/radial_gradient_brush>
-#include <xtd/drawing/brushes>
-#include <xtd/forms/application>
-#include <xtd/forms/form>
+#include <xtd/xtd>
 
-using namespace xtd;
-using namespace xtd::collections::generic;
-using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
-using namespace xtd::forms;
 
 namespace form_paint_example {
   class form1 : public form {
@@ -20,7 +12,7 @@ namespace form_paint_example {
       
       paint += delegate_(object & sender, paint_event_args & e) {
         e.graphics().clear(color::cyan);
-        e.graphics().draw_string("Drawing with graphics", drawing::font("Arial", 34, font_style::regular), drawing_2d::linear_gradient_brush(rectangle_f {20.0f, 20.0f, e.clip_rectangle().width - 180.0f, e.clip_rectangle().height - 40.0f}, color::navy, color::light_blue), {20.0f, 20.0f, e.clip_rectangle().width - 180.0f, e.clip_rectangle().height - 40.0f});
+        e.graphics().draw_string("Drawing with graphics", drawing::font("Arial", 34, font_style::regular), linear_gradient_brush(rectangle_f {20.0f, 20.0f, e.clip_rectangle().width - 180.0f, e.clip_rectangle().height - 40.0f}, color::navy, color::light_blue), {20.0f, 20.0f, e.clip_rectangle().width - 180.0f, e.clip_rectangle().height - 40.0f});
         e.graphics().fill_ellipse(radial_gradient_brush(point {e.clip_rectangle().width - 100, 100}, color::white, color::yellow, 75), e.clip_rectangle().width - 150, 50, 100, 100);
         e.graphics().draw_ellipse(pen(color::yellow_green, 2), e.clip_rectangle().width - 150, 50, 100, 100);
         e.graphics().fill_rectangle(brushes::spring_green(), 0, e.clip_rectangle().height - 100, e.clip_rectangle().width, 100);

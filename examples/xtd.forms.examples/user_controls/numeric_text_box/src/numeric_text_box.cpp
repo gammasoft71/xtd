@@ -1,12 +1,5 @@
 #define TRACE
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/text_box>
-#include <xtd/ctrace>
-#include <xtd/environment>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace numeric_tex_box_example {
   class numeric_text_box : public text_box {

@@ -1,11 +1,4 @@
-#include <xtd/drawing//system_brushes>
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/user_control>
-
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace toggle_light_example {
   class toggle_light : public user_control {

@@ -2,9 +2,6 @@
 #include <xtd/drawing/drawing_2d/radial_gradient_brush>
 
 using namespace ball;
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::drawing::drawing_2d;
 
 ball_form::ball_form() {
   back_color(color::transparent);
@@ -43,7 +40,7 @@ control& ball_form::size(const drawing::size& value) {
   client_size(value);
   
   // Create a circular region
-  auto path = graphics_path {};
+  auto path = drawing_2d::graphics_path {};
   path.add_ellipse(client_rectangle());
   region(drawing::region(path));
   return *this;
@@ -56,6 +53,6 @@ void ball_form::on_paint(paint_event_args& e) {
   auto left = e.clip_rectangle().width * 2 / 5;
   auto top = e.clip_rectangle().height * 35 /100;
   auto radius = e.clip_rectangle().width * 55_f / 100;
-  auto brush = radial_gradient_brush {point {left, top}, light_point_color_, color_, radius};
+  auto brush = drawing_2d::radial_gradient_brush {point {left, top}, light_point_color_, color_, radius};
   e.graphics().fill_rectangle(brush, e.clip_rectangle());
 }

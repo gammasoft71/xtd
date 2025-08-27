@@ -1,19 +1,13 @@
 #define TRACE
-#include <xtd/diagnostics/trace>
-#include <xtd/forms/application>
-#include <xtd/environment>
-
-using namespace xtd;
-using namespace xtd::diagnostics;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 auto main() -> int {
-  environment::program_exit += delegate_ {trace::write_line("The program is stopped");};
-  application::application_exit += delegate_ {trace::write_line("The application is stopped");};
-  trace::write_line("Before application run");
+  environment::program_exit += delegate_ {diagnostics::trace::write_line("The program is stopped");};
+  application::application_exit += delegate_ {diagnostics::trace::write_line("The application is stopped");};
+  diagnostics::trace::write_line("Before application run");
   application::run(form {});
-  trace::write_line("After application exit");
-  trace::write_line("Before program exit");
+  diagnostics::trace::write_line("After application exit");
+  diagnostics::trace::write_line("Before program exit");
 }
 
 // Trace

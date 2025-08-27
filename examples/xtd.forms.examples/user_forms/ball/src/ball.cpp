@@ -1,14 +1,7 @@
 #include "ball.hpp"
 #include "../properties/resources.hpp"
-#include <xtd/drawing/texts>
-#include <xtd/forms/application>
-#include <xtd/math>
 
 using namespace ball;
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::drawing::drawing_2d;
-using namespace xtd::forms;
 
 void main_form::main() {
   application::run(main_form());
