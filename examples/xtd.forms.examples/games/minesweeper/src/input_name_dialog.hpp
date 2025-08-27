@@ -9,7 +9,7 @@
 /// @brief The namespace minesweeper contains all classes and enums needed for the game.
 namespace minesweeper {
   /// @brief Represent input name dialog that display input name dialog.
-  class input_name_dialog final : public xtd::forms::form {
+  class input_name_dialog final : public form {
   public:
     /// @name Public Constructors
     
@@ -30,19 +30,19 @@ namespace minesweeper {
     
     /// @brief Gets the gammer name.
     /// @return The gammer name.
-    xtd::string gammer_name() const noexcept;
+    string gammer_name() const noexcept;
     /// @brief Sets the gammer name.
     /// @param gammer_name The gammer name.
-    void gammer_name(const xtd::string& gammer_name) noexcept;
+    void gammer_name(const string& gammer_name) noexcept;
     /// @}
     
   private:
-    xtd::string level_to_string() noexcept;
+    string level_to_string() noexcept;
     
-    xtd::forms::label message_label_;
-    xtd::forms::text_box name_text_box_;
-    xtd::forms::button ok_button_;
+    label message_label_;
+    text_box name_text_box_;
+    button ok_button_;
     minesweeper::level level_ = level::beginner;
-    xtd::string gammer_name_ = xtd::translator::translate("Anonymous");
+    string gammer_name_ = "Anonymous"_t;
   };
 }

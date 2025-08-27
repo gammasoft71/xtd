@@ -9,9 +9,6 @@
 #include "input_name_dialog.hpp"
 
 using namespace minesweeper;
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms;
 
 void minesweeper_form::main() {
   application::run(minesweeper_form());

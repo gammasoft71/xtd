@@ -9,7 +9,7 @@
 namespace minesweeper {
   /// @brief Represent custom field dialog that display custom field dialog.
   /// @remarks minesweeper::custom_field_dialog is used when user choose Custom from the Game menu.
-  class custom_field_dialog final : public xtd::forms::form {
+  class custom_field_dialog final : public form {
   public:
     /// @name Public Constructors
     
@@ -50,7 +50,7 @@ namespace minesweeper {
     /// @}
     
   private:
-    void on_text_box_key_press(object& sender, xtd::forms::key_press_event_args& e);
+    void on_text_box_key_press(object& sender, key_press_event_args& e);
 
     static constexpr const int minimum_height_ = 8;
     static constexpr const int maximum_height_ = 24;
@@ -59,14 +59,14 @@ namespace minesweeper {
     static constexpr const int minimum_mines_ = 10;
     static constexpr const int maximum_mines_ = 667;
 
-    xtd::forms::label message_label_;
-    xtd::forms::label custom_height_label_;
-    xtd::forms::label custom_width_label_;
-    xtd::forms::label custom_mines_label_;
-    xtd::forms::text_box custom_height_text_box_;
-    xtd::forms::text_box custom_width_text_box_;
-    xtd::forms::text_box custom_mines_text_box_;
-    xtd::forms::button ok_button_;
+    label message_label_;
+    label custom_height_label_;
+    label custom_width_label_;
+    label custom_mines_label_;
+    text_box custom_height_text_box_;
+    text_box custom_width_text_box_;
+    text_box custom_mines_text_box_;
+    button ok_button_;
     int custom_height_ = minimum_height_;
     int custom_width_ = minimum_width_;
     int custom_mines_ = minimum_mines_;

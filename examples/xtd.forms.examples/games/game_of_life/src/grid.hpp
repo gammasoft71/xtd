@@ -1,12 +1,13 @@
 #pragma once
+#include <xtd/collections/generic/list>
 #include <xtd/event>
 #include "cell.hpp"
 
 namespace game_of_life {
-  using cell_row_collection = xtd::collections::generic::list<cell>;
-  using cell_collection = xtd::collections::generic::list<cell_row_collection>;
+  using cell_row_collection = list<cell>;
+  using cell_collection = list<cell_row_collection>;
   
-  class grid : public xtd::object {
+  class grid : public object {
   public:
     static constexpr int columns = 1000; //5200;
     static constexpr int rows = 800; //4100;
@@ -25,7 +26,7 @@ namespace game_of_life {
         cell state = cell::empty;
         bool operator ==(const updated_cell& rhs) const noexcept {return x == rhs.x && y == rhs.y && state == rhs.state;}
       };
-      xtd::collections::generic::list<updated_cell> updated_cells;
+      list<updated_cell> updated_cells;
       
       for (auto y = 0; y < columns; y++) {
         for (auto x = 0; x < rows; x++) {
@@ -74,7 +75,7 @@ namespace game_of_life {
     xtd::event<grid, xtd::event_handler> cells_updated;
     
   private:
-    void on_cells_updated(const xtd::event_args& e) {cells_updated(*this, e);}
+    void on_cells_updated(const event_args& e) {cells_updated(*this, e);}
     
     cell_collection cells_{columns, cell_row_collection {rows}};
   };

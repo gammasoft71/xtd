@@ -5,9 +5,6 @@
 #include "../properties/settings.hpp"
 
 using namespace minesweeper;
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms;
 
 high_scores_dialog::high_scores_dialog() {
   accept_button(ok_button_);

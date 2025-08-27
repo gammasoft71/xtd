@@ -4,9 +4,6 @@
 #include "../properties/settings.hpp"
 
 using namespace minesweeper;
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms;
 
 custom_field_dialog::custom_field_dialog() {
   accept_button(ok_button_);
@@ -109,6 +106,6 @@ void custom_field_dialog::custom_mines(int value) noexcept {
   custom_mines_text_box_.text(string::format("{}", custom_mines_));
 }
 
-void custom_field_dialog::on_text_box_key_press(object& sender, xtd::forms::key_press_event_args& e) {
+void custom_field_dialog::on_text_box_key_press(object& sender, key_press_event_args& e) {
   e.handled(!isdigit(e.key_char()));
 }

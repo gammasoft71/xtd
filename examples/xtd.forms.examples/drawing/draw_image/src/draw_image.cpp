@@ -1,11 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/images>
-#include <xtd/math>
-
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class form_main : public form {
 public:

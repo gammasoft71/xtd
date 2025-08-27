@@ -26,7 +26,7 @@ void cell::neighbors(int value) noexcept {
   number_of_neighboring_mines_ = value;
 }
 
-xtd::drawing::size cell::size() noexcept {
+drawing::size cell::size() noexcept {
   return size_;
 }
 
