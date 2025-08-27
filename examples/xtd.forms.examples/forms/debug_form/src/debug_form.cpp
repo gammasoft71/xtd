@@ -1,11 +1,5 @@
 #define DEBUG // Force debug mode even if example is builded in release.
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/debug_form>
-#include <xtd/forms/form>
-#include <xtd/diagnostics/debug>
-
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:
@@ -19,7 +13,7 @@ public:
     button1.text("Write line...");
     button1.click += delegate_ {
       static auto counter = 0;
-      xtd::diagnostics::debug::write_line("Write line {}...", ++counter);
+      diagnostics::debug::write_line("Write line {}...", ++counter);
     };
   }
   

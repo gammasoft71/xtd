@@ -1,11 +1,5 @@
 #include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/form>
-#include <xtd/forms/message_box>
-#include <xtd/overload>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 class form1 : public form {
 public:

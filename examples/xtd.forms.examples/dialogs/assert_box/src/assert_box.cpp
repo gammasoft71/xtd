@@ -1,7 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd::diagnostics;
-
 class form1 : public form {
 public:
   form1() {
@@ -12,9 +10,9 @@ public:
     button1.auto_size(true);
     button1.text("assert...");
     button1.click += delegate_ {
-      switch(assert_box::show(*this, "Index must be > 0", stack_frame::current())) {
+      switch(assert_box::show(*this, "Index must be > 0", diagnostics::stack_frame::current())) {
         case forms::dialog_result::abort: application::exit(); break;
-        case forms::dialog_result::retry: debugger::debug_break(); break;
+        case forms::dialog_result::retry: diagnostics::debugger::debug_break(); break;
         default: break;
       }
     };
