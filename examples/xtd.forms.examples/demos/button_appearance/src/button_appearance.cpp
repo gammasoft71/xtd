@@ -1,9 +1,4 @@
-#include <limits>
 #include <xtd/xtd>
-
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms;
 
 class form1 : public form {
 public:
@@ -122,7 +117,7 @@ public:
       button_demo.width(as<int>(numeric_up_down_width.value()));
     };
     numeric_up_down_width.value(button_demo.width());
-    numeric_up_down_width.set_range(0, std::numeric_limits<int>::max());
+    numeric_up_down_width.set_range(0, int32_object::max_value);
     numeric_up_down_width.location({100, 255});
     numeric_up_down_width.width(200);
     numeric_up_down_width.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
@@ -135,7 +130,7 @@ public:
       button_demo.height(as<int>(numeric_up_down_height.value()));
     };
     numeric_up_down_height.value(button_demo.height());
-    numeric_up_down_height.set_range(0, std::numeric_limits<int>::max());
+    numeric_up_down_height.set_range(0, int32_object::max_value);
     numeric_up_down_height.location({100, 290});
     numeric_up_down_height.width(200);
     numeric_up_down_height.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);

@@ -1,8 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-using namespace xtd::forms;
-
 class form1 : public form {
 public:
   form1() {

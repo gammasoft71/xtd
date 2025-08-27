@@ -105,9 +105,6 @@ private:
   xtd::argument_collection commands;
 };
 
-using namespace xtd;
-using namespace xtd::windows::forms;
-
 class form_main : public form {
 public:
   static auto main() {

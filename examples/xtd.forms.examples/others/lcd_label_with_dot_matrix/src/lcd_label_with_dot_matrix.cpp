@@ -1,12 +1,4 @@
-#include <xtd/drawing/color_converter>
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/lcd_label>
-#include <xtd/forms/timer>
-
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto index = 0_z;
@@ -23,7 +15,7 @@ auto main() -> int {
   label.lcd_style(forms::lcd_style::dot_matrix_display);
   label.text(string::format("{}", label.valid_characters()[index]));
   
-  timer timer;
+  forms::timer timer;
   timer.interval(300_ms);
   timer.enabled(!timer.enabled());
   timer.tick += delegate_ {

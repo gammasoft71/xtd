@@ -5,8 +5,6 @@ First we create the very basic [xtd::forms](https://gammasoft71.github.io/xtd/re
 ```cpp
 #include <xtd/xtd.forms>
 
-using namespace xtd::forms;
-
 namespace tutorial {
   class simple : public form {
   public:

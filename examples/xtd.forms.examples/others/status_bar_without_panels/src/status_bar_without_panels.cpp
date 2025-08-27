@@ -1,10 +1,4 @@
-#include <xtd/drawing/system_colors>
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/status_bar>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace status_bar_without_panels_example {
   class form1 : public form {

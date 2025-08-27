@@ -1,8 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-using namespace xtd::forms;
-
 class form1 : public form {
 public:
   static auto main() {
@@ -348,7 +345,7 @@ private:
   
   main_menu main_menu1 = main_menu::create_standard_items({*this, &form1::on_menu_click});
   
-  xtd::forms::tool_bar tool_bar1;
+  forms::tool_bar tool_bar1;
   tool_bar_button new_tool_bar_button = tool_bar_button::create_push_button(xtd::drawing::texts::new_(), 0);
   tool_bar_button open_tool_bar_button = tool_bar_button::create_push_button(xtd::drawing::texts::open(), 1);
   tool_bar_button save_tool_bar_button = tool_bar_button::create_push_button(xtd::drawing::texts::save(), 2);

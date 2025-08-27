@@ -1,14 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/button_images>
-#include <xtd/forms/form>
-#include <xtd/forms/horizontal_layout_panel>
-#include <xtd/media/system_sounds>
-#include <xtd/startup>
-
-using namespace xtd;
-using namespace xtd::forms;
-using namespace xtd::media;
+#include <xtd/xtd>
 
 namespace example {
   class form1 : public form {
@@ -32,7 +22,7 @@ namespace example {
       button_asterisk.image_align(content_alignment::top_center);
       button_asterisk.text_align(content_alignment::bottom_center);
       button_asterisk.click += delegate_ {
-        system_sounds::asterisk().play();
+        media::system_sounds::asterisk().play();
       };
       
       button_beep.text("beep");
@@ -40,7 +30,7 @@ namespace example {
       button_beep.image_align(content_alignment::top_center);
       button_beep.text_align(content_alignment::bottom_center);
       button_beep.click += delegate_ {
-        system_sounds::beep().play();
+        media::system_sounds::beep().play();
       };
       
       button_exclamation.text("exclamation");
@@ -48,7 +38,7 @@ namespace example {
       button_exclamation.image_align(content_alignment::top_center);
       button_exclamation.text_align(content_alignment::bottom_center);
       button_exclamation.click += delegate_ {
-        system_sounds::exclamation().play();
+        media::system_sounds::exclamation().play();
       };
       
       button_hand.text("hand");
@@ -56,7 +46,7 @@ namespace example {
       button_hand.image_align(content_alignment::top_center);
       button_hand.text_align(content_alignment::bottom_center);
       button_hand.click += delegate_ {
-        system_sounds::hand().play();
+        media::system_sounds::hand().play();
       };
       
       button_question.text("question");
@@ -64,7 +54,7 @@ namespace example {
       button_question.image_align(content_alignment::top_center);
       button_question.text_align(content_alignment::bottom_center);
       button_question.click += delegate_ {
-        system_sounds::question().play();
+        media::system_sounds::question().play();
       };
     }
     

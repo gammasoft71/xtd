@@ -1,10 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/list_box>
-#include <xtd/forms/main_menu>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace main_menu_create_standard_items_example {
   class form1 : public form {
