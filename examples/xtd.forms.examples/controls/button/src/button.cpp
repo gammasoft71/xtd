@@ -1,10 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/button>
-#include <xtd/forms/form>
-#include <xtd/forms/label>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace button_example {
   class form1 : public form {

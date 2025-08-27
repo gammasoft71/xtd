@@ -1,10 +1,4 @@
-#include <xtd/drawing/texts>
-#include <xtd/forms/application>
-#include <xtd/forms/check_boxes>
-#include <xtd/forms/group_box>
-#include <xtd/forms/form>
-
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 auto main() -> int {
   auto main_form = form::create("Check boxes example");

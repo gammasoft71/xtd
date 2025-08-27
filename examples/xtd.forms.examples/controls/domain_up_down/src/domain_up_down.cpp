@@ -1,10 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/domain_up_down>
-#include <xtd/forms/form>
-#include <xtd/forms/label>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace domain_up_down_example {
   class form1 : public form {

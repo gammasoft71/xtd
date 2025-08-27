@@ -1,8 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/label>
-
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace label_example {
   class form1 : public form {

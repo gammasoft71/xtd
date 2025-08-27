@@ -1,10 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/horizontal_layout_panel>
-#include <xtd/forms/list_box>
-
-using namespace xtd;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace list_box_example {
   class form1 : public form {
