@@ -1,13 +1,4 @@
-#include <xtd/forms/application>
-#include <xtd/forms/form>
-#include <xtd/forms/progress_bar>
-#include <xtd/forms/status_bar>
-#include <xtd/forms/timer>
-#include <xtd/drawing/pens>
-
-using namespace xtd;
-using namespace xtd::drawing;
-using namespace xtd::forms;
+#include <xtd/xtd>
 
 namespace status_bar_example {
   class form1 : public form {
@@ -53,7 +44,7 @@ namespace status_bar_example {
     status_bar_panel status_bar_panel1 = status_bar_panel::create_panel("Status one", image_from_color(color::light_green));
     status_bar_panel status_bar_panel2 = status_bar_panel::create_panel("Status two");
     status_bar_panel status_bar_panel3 = status_bar_panel::create_panel("Status three");
-    timer timer1;
+    forms::timer timer1;
     progress_bar progress_bar1;
     status_bar_panel status_bar_panel4 = status_bar_panel::create_control(progress_bar1);
   };
