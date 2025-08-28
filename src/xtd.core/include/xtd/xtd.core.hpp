@@ -180,6 +180,8 @@
 #include "net/sockets/tcp_listener.hpp"
 #include "net/sockets/transmit_file_options.hpp"
 #include "net/sockets/udp_client.hpp"
+#include "ranges/views/distinct.hpp"
+#include "ranges/views/distinct_view.hpp"
 #include "reflection/assembly.hpp"
 #include "reflection/assembly_company_attribute.hpp"
 #include "reflection/assembly_configuration_attribute.hpp"
