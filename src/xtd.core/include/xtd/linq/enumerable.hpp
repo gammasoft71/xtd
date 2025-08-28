@@ -6,6 +6,9 @@
 //#include "../collections/generic/iequality_comparer.hpp"
 #include "../collections/generic/equality_comparer.hpp"
 #include "../collections/generic/enumerator.hpp"
+#define __XTD_STD_INTERNAL__
+#include "../internal/__xtd_std_version.hpp"
+#undef __XTD_STD_INTERNAL__
 #define __XTD_CORE_INTERNAL__
 #include "../internal/__array_definition.hpp"
 #include "../internal/__key_value_pair_definition.hpp"
@@ -304,10 +307,14 @@ namespace xtd {
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable.cpp
       template<class collection_t>
-      static auto as_enumerable(const collection_t& source) noexcept {
+      static auto as_enumerable(collection_t&& source) noexcept {
+#if defined(__xtd__cpp_lib_ranges)
+        using source_t = std::ranges::range_value_t<collection_t>;
+#else
         using source_t = typename collection_t::value_type;
+#endif
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        for (const auto& item : source)
+        for (auto&& item : source)
           result.items.push_back(item);
         return result;
       }
@@ -720,7 +727,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::from to create a sequence of values.
       /// @include linq_from3.cpp
       template<class collection_t>
-      static auto from(const collection_t& source) noexcept {
+      static auto from(collection_t&& source) noexcept {
         return as_enumerable(source);
       }
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.

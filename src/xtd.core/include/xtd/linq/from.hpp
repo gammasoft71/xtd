@@ -25,7 +25,7 @@ namespace xtd {
     /// @include linq_from3.cpp
     /// @see xtd::linq::enumerable::from methods for all overloads of xtd::linq::from.
     template<class collection_t>
-    auto from(const collection_t& source) noexcept {
+    auto from(collection_t&& source) noexcept {
       return enumerable::as_enumerable(source);
     }
     /// @cond
