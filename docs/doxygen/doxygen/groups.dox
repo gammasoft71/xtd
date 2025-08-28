@@ -185,6 +185,10 @@
     |   |     /// @brief Contains network definitions.
     |   |     /// @ingroup system
     |   |     /// @defgroup net network
+    |   |- range
+    |   |     /// @brief Contains ranges definitions.
+    |   |     /// @ingroup system
+    |   |     /// @defgroup ranges ranges
     |   |- security
     |   |     /// @brief Contains the underlying structure of the security system, including base classes for permissions.
     |   |     /// @ingroup system
