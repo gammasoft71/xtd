@@ -1,0 +1,2 @@
+#pragma once
+#include "range_view_adapter.hpp"
