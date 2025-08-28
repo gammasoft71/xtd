@@ -16,7 +16,7 @@
 #include "null.hpp"
 #include "object.hpp"
 #include "ptrdiff.hpp"
-#include "ranges.hpp"
+#include "views/views.hpp"
 #include "span.hpp"
 #include "typeof.hpp"
 #include <type_traits>
@@ -119,7 +119,7 @@ namespace xtd {
     /// @brief Creates an xtd::read_only_span with specified range.
     /// @param range The range to construct a view for.
     template<class range_t>
-    constexpr read_only_span(range_t&& range) noexcept : data_ {xtd::ranges::data(range)}, length_ {extent != dynamic_extent ? extent : xtd::ranges::size(range)} {}
+    constexpr read_only_span(range_t&& range) noexcept : data_ {std::ranges::data(range)}, length_ {extent != dynamic_extent ? extent : std::ranges::size(range)} {}
     #else
     /// @brief Creates an xtd::read_only_span with specified range.
     /// @param range The range to construct a view for.
@@ -422,7 +422,7 @@ namespace xtd {
   
   #if defined(__xtd__cpp_lib_ranges)
   template<class range_t>
-  read_only_span(range_t&& items) -> read_only_span<typename std::remove_reference_t<xtd::ranges::range_reference_t<range_t>>>;
+  read_only_span(range_t&& items) -> read_only_span<typename std::remove_reference_t<std::ranges::range_reference_t<range_t>>>;
   #else
   template<class range_t>
   read_only_span(range_t&& items) -> read_only_span<typename range_t::value_type>;
