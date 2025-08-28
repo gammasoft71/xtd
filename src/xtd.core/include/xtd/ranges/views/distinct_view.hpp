@@ -42,7 +42,7 @@ namespace xtd {
           const comparer_t& comparer;
           
           template <std::ranges::range range_t>
-          auto operator()(range_t&& source) const {return xtd::linq::enumerable::as_enumerable(std::forward<range_t>(source)).distinct(comparer);}
+          auto operator()(range_t&& source) const {return xtd::linq::enumerable::from(std::forward<range_t>(source)).distinct(comparer);}
           
           template <std::ranges::range range_t>
           friend auto operator |(range_t&& source, const with_comparer& self) {return self(std::forward<range_t>(source));}
