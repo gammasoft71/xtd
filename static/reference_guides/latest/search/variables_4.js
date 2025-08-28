@@ -47,7 +47,7 @@ var searchData=
   ['disp_5fe_5foverflow_44',['DISP_E_OVERFLOW',['../classxtd_1_1h__result.html#a5834c92a478c400ebdecd57c4eaff4fa',1,'xtd::h_result']]],
   ['disp_5fe_5fparamnotfound_45',['DISP_E_PARAMNOTFOUND',['../classxtd_1_1h__result.html#ade972e4e6a61dafe68f94c914f8c168d',1,'xtd::h_result']]],
   ['disp_5fe_5ftypemismatch_46',['DISP_E_TYPEMISMATCH',['../classxtd_1_1h__result.html#ad65cb8633ca4da67aa85ee42112406c5',1,'xtd::h_result']]],
-  ['distinct_47',['distinct',['../namespacextd_1_1ranges_1_1views.html#abc93573a9d807bd1f69040b8c743d401',1,'xtd::ranges::views']]],
+  ['distinct_47',['distinct',['../group__ranges.html#gabc93573a9d807bd1f69040b8c743d401',1,'xtd::ranges::views']]],
   ['diya_5flamp_48',['diya_lamp',['../classxtd_1_1forms_1_1emoticons.html#a59994849a08a4fb720e676154455c7b5',1,'xtd::forms::emoticons']]],
   ['dizzy_5fface_49',['dizzy_face',['../classxtd_1_1forms_1_1emoticons.html#ada0b2581474553e5b48558d1308bdb95',1,'xtd::forms::emoticons']]],
   ['dizzy_5fsymbol_50',['dizzy_symbol',['../classxtd_1_1forms_1_1emoticons.html#aa9b28dff1f57300e9773c8a17108e1f6',1,'xtd::forms::emoticons']]],
