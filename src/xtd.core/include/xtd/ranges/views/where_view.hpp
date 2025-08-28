@@ -57,7 +57,7 @@ namespace xtd {
         /// @param source A sequence of values to filter.
         /// @param predicate A function to test each element for a condition.
         template <std::ranges::range range_t, typename predicate_t>
-        auto operator()(range_t&& source, const predicate_t& predicate) const {return xtd::linq::enumerable::as_enumerable(std::forward<range_t>(source)).where(predicate);}
+        auto operator()(range_t&& source, const predicate_t& predicate) const {return xtd::linq::enumerable::from(std::forward<range_t>(source)).where(predicate);}
         /// @brief Filters a sequence of values based on a predicate.
         /// @tparam range_t The type of the elements of source.
         /// @param predicate A function to test each element for a condition.
