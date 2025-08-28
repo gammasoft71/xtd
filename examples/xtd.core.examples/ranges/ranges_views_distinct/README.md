@@ -1,6 +1,6 @@
 # ranges_views_distinct
 
-Shows how to use [xtd::ranges::views::distinct_view](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a4cc700fbc3281508f048620b36aad840) method.
+Shows how to use [xtd::ranges::views::distinct_view](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1distinct__view.html) class.
 
 ## Sources
 
