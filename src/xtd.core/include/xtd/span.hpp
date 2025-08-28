@@ -16,7 +16,7 @@
 #include "null.hpp"
 #include "object.hpp"
 #include "ptrdiff.hpp"
-#include "ranges.hpp"
+#include "views/views.hpp"
 #include "typeof.hpp"
 #include <type_traits>
 #include <vector>
@@ -129,7 +129,7 @@ namespace xtd {
     /// @brief Creates an xtd::span with specified range.
     /// @param range The range to construct a view for.
     template<class range_t>
-    constexpr span(range_t&& range) noexcept : data_ {xtd::ranges::data(range)}, length_ {extent != dynamic_extent ? extent : xtd::ranges::size(range)} {}
+    constexpr span(range_t&& range) noexcept : data_ {std::ranges::data(range)}, length_ {extent != dynamic_extent ? extent : std::ranges::size(range)} {}
     #else
     /// @brief Creates an xtd::span with specified range.
     /// @param range The range to construct a view for.
@@ -482,7 +482,7 @@ namespace xtd {
   
   #if defined(__xtd__cpp_lib_ranges)
   template<class range_t>
-  span(range_t&&) noexcept -> span<std::remove_reference_t<xtd::ranges::range_reference_t<range_t>>>;
+  span(range_t&&) noexcept -> span<std::remove_reference_t<std::ranges::range_reference_t<range_t>>>;
   #else
   template<class range_t>
   span(range_t&&) noexcept -> span<std::remove_reference_t<typename range_t::value_type>>;
