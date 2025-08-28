@@ -23,6 +23,19 @@ namespace xtd {
     /// @brief The view namesapce contains range views, lightweight objects that indirectly represent iterable sequences (ranges).
     namespace views {
       /// @brief The xtd::ranges::views::distinct_view class is used to distinct elements from a sequence.
+      /// @par Definition
+      /// ```cpp
+      /// class distinct_view;
+      /// ```
+      /// @par Header
+      /// ```cpp
+      /// #include <xtd/ranges/views/distinct_view>
+      /// ```
+      /// @par Namespace
+      /// xtd::ranges::views
+      /// @par Library
+      /// xtd.core
+      /// @ingroup xtd_core ranges
       class distinct_view {
         template <typename comparer_t>
         struct with_comparer {

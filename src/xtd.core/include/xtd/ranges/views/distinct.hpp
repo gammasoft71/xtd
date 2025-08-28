@@ -19,6 +19,19 @@ namespace xtd {
     /// @brief The view namesapce contains range views, lightweight objects that indirectly represent iterable sequences (ranges).
     namespace views {
       /// @brief The xtd::ranges::views::distinct_view instance.
+      /// @par Definition
+      /// ```cpp
+      /// inline constexpr auto distinct = distinct_view {};
+      /// ```
+      /// @par Header
+      /// ```cpp
+      /// #include <xtd/ranges/views/distinct>
+      /// ```
+      /// @par Namespace
+      /// xtd::ranges::views
+      /// @par Library
+      /// xtd.core
+      /// @ingroup xtd_core ranges
       inline constexpr auto distinct = distinct_view {};
     }
   }
