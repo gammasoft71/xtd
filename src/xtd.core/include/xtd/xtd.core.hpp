@@ -182,6 +182,8 @@
 #include "net/sockets/udp_client.hpp"
 #include "ranges/views/distinct.hpp"
 #include "ranges/views/distinct_view.hpp"
+#include "ranges/views/order_by.hpp"
+#include "ranges/views/order_by_view.hpp"
 #include "ranges/views/select.hpp"
 #include "ranges/views/select_view.hpp"
 #include "ranges/views/where.hpp"
