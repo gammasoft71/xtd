@@ -120,54 +120,49 @@ $(function(){ initResizable(false); });
 <img src="check_box_appearance_gd.png" alt=""/>
 </div>
 </dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;limits&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  form1() {</div>
-<div class="line">    <a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>(<span class="stringliteral">&quot;Check box appearance&quot;</span>);</div>
+<div class="line">    text(<span class="stringliteral">&quot;Check box appearance&quot;</span>);</div>
 <div class="line">    client_size({800, 450});</div>
 <div class="line">    controls().push_back_range({group_box_properties, check_box_demo});</div>
 <div class="line">    </div>
 <div class="line">    group_box_properties.controls().push_back(panel_properties);</div>
 <div class="line">    group_box_properties.location({10, 10});</div>
 <div class="line">    group_box_properties.size({340, 430});</div>
-<div class="line">    group_box_properties.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">anchor_styles::left</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a71f262d796bed1ab30e8a2d5a8ddee6f">anchor_styles::bottom</a>);</div>
+<div class="line">    group_box_properties.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::bottom);</div>
 <div class="line">    group_box_properties.text(<span class="stringliteral">&quot;properties&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    panel_properties.auto_scroll(<span class="keyword">true</span>);</div>
-<div class="line">    panel_properties.controls().push_back_range({label_text, <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba858aabad81d1dea3e500053615d32518">text_box_text</a>, label_text_align, choice_text_align, label_image, choice_image, label_image_align, choice_image_align, label_appearance, choice_appearance, label_flat_style, choice_flat_style, label_back_color, color_picker_back_color, label_fore_color, color_picker_fore_color, label_width, numeric_up_down_width, label_height, numeric_up_down_height, label_auto_size, check_box_auto_size, label_three_state, check_box_three_state, label_enebaled, check_box_enabled});</div>
-<div class="line">    panel_properties.dock(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619aa552c74784b3a82177bca6c8adde0efb">dock_style::fill</a>);</div>
+<div class="line">    panel_properties.controls().push_back_range({label_text, text_box_text, label_text_align, choice_text_align, label_image, choice_image, label_image_align, choice_image_align, label_appearance, choice_appearance, label_flat_style, choice_flat_style, label_back_color, color_picker_back_color, label_fore_color, color_picker_fore_color, label_width, numeric_up_down_width, label_height, numeric_up_down_height, label_auto_size, check_box_auto_size, label_three_state, check_box_three_state, label_enebaled, check_box_enabled});</div>
+<div class="line">    panel_properties.dock(dock_style::fill);</div>
 <div class="line">    </div>
 <div class="line">    label_text.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    label_text.location({10, 13});</div>
 <div class="line">    label_text.text(<span class="stringliteral">&quot;Text: &quot;</span>);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba858aabad81d1dea3e500053615d32518">text_box_text</a>.text_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">      check_box_demo.text(<a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba858aabad81d1dea3e500053615d32518">text_box_text</a>.text());</div>
+<div class="line">    text_box_text.text_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
+<div class="line">      check_box_demo.text(text_box_text.text());</div>
 <div class="line">    };</div>
-<div class="line">    <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba858aabad81d1dea3e500053615d32518">text_box_text</a>.location({100, 10});</div>
-<div class="line">    <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba858aabad81d1dea3e500053615d32518">text_box_text</a>.text(<span class="stringliteral">&quot;&amp;Check me!&quot;</span>);</div>
-<div class="line">    <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba858aabad81d1dea3e500053615d32518">text_box_text</a>.width(200);</div>
-<div class="line">    <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba858aabad81d1dea3e500053615d32518">text_box_text</a>.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">anchor_styles::left</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">anchor_styles::right</a>);</div>
+<div class="line">    text_box_text.location({100, 10});</div>
+<div class="line">    text_box_text.text(<span class="stringliteral">&quot;&amp;Check me!&quot;</span>);</div>
+<div class="line">    text_box_text.width(200);</div>
+<div class="line">    text_box_text.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);</div>
 <div class="line">    </div>
 <div class="line">    label_text_align.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    label_text_align.location({10, 48});</div>
 <div class="line">    label_text_align.text(<span class="stringliteral">&quot;text_align: &quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    choice_text_align.selected_value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">      check_box_demo.text_align(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;content_alignment&gt;</a>(choice_text_align.selected_item().tag()));</div>
+<div class="line">      check_box_demo.text_align(as&lt;content_alignment&gt;(choice_text_align.selected_item().tag()));</div>
 <div class="line">    };</div>
 <div class="line">    choice_text_align.location({100, 45});</div>
-<div class="line">    choice_text_align.items().push_back_range({{<span class="stringliteral">&quot;top_left&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a46d3836487c2110c695e52750c5d76e4">content_alignment::top_left</a>}, {<span class="stringliteral">&quot;top_center&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a153dda402a237b8b093c3c418b66df5d">content_alignment::top_center</a>}, {<span class="stringliteral">&quot;top_right&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0af12ea736b05cb6002f1ebf1b8c052676">content_alignment::top_right</a>}, {<span class="stringliteral">&quot;middle_left&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a4d8a5580bcd972246c9910900a6efc09">content_alignment::middle_left</a>}, {<span class="stringliteral">&quot;middle_center&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0aeff04a32daf451a273d55ca9d9245e92">content_alignment::middle_center</a>}, {<span class="stringliteral">&quot;middle_right&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0aff1bb2ef26708d2a4dc98bdda5c48071">content_alignment::middle_right</a>}, {<span class="stringliteral">&quot;bottom_left&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a369408ec984d94fb270ae125c6de1a5b">content_alignment::bottom_left</a>}, {<span class="stringliteral">&quot;bottom_center&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a1afb532afb8fb97068fa335cfdc02bb8">content_alignment::bottom_center</a>}, {<span class="stringliteral">&quot;bottom_right&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0ab88b8c9790136e01b8dfce869959cea3">content_alignment::bottom_right</a>}});</div>
+<div class="line">    choice_text_align.items().push_back_range({{<span class="stringliteral">&quot;top_left&quot;</span>, content_alignment::top_left}, {<span class="stringliteral">&quot;top_center&quot;</span>, content_alignment::top_center}, {<span class="stringliteral">&quot;top_right&quot;</span>, content_alignment::top_right}, {<span class="stringliteral">&quot;middle_left&quot;</span>, content_alignment::middle_left}, {<span class="stringliteral">&quot;middle_center&quot;</span>, content_alignment::middle_center}, {<span class="stringliteral">&quot;middle_right&quot;</span>, content_alignment::middle_right}, {<span class="stringliteral">&quot;bottom_left&quot;</span>, content_alignment::bottom_left}, {<span class="stringliteral">&quot;bottom_center&quot;</span>, content_alignment::bottom_center}, {<span class="stringliteral">&quot;bottom_right&quot;</span>, content_alignment::bottom_right}});</div>
 <div class="line">    choice_text_align.selected_index(3);</div>
 <div class="line">    choice_text_align.width(200);</div>
-<div class="line">    choice_text_align.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">anchor_styles::left</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">anchor_styles::right</a>);</div>
+<div class="line">    choice_text_align.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);</div>
 <div class="line">    </div>
 <div class="line">    label_image.text(<span class="stringliteral">&quot;image: &quot;</span>);</div>
 <div class="line">    label_image.auto_size(<span class="keyword">true</span>);</div>
@@ -175,53 +170,53 @@ $(function(){ initResizable(false); });
 <div class="line">    </div>
 <div class="line">    choice_image.selected_value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">      <span class="keywordflow">if</span> (choice_image.selected_index() == 0) check_box_demo.image(<a class="code hl_variable" href="classxtd_1_1drawing_1_1image.html#a8e20e3dbd8c92fbfc5ea0adc27e2ae61">xtd::drawing::image::empty</a>);</div>
-<div class="line">      <span class="keywordflow">else</span> check_box_demo.image(<a class="code hl_function" href="classxtd_1_1forms_1_1button__images.html#ae11d63ea653d89c98a9a6a814db8a1fb">button_images::from_name</a>(choice_image.selected_item().value()));</div>
+<div class="line">      <span class="keywordflow">else</span> check_box_demo.image(button_images::from_name(choice_image.selected_item().value()));</div>
 <div class="line">    };</div>
 <div class="line">    choice_image.items().push_back(<span class="stringliteral">&quot;none&quot;</span>);</div>
-<div class="line">    choice_image.items().push_back_range(<a class="code hl_function" href="classxtd_1_1forms_1_1images.html#a792b36e27d837e9cffb44560cdf35d80">images::names</a>());</div>
+<div class="line">    choice_image.items().push_back_range(images::names());</div>
 <div class="line">    choice_image.selected_index(0);</div>
 <div class="line">    choice_image.location({100, 80});</div>
 <div class="line">    choice_image.width(200);</div>
-<div class="line">    choice_image.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">anchor_styles::left</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">anchor_styles::right</a>);</div>
+<div class="line">    choice_image.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);</div>
 <div class="line">    </div>
 <div class="line">    label_image_align.text(<span class="stringliteral">&quot;image_align: &quot;</span>);</div>
 <div class="line">    label_image_align.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    label_image_align.location({10, 118});</div>
 <div class="line">    </div>
 <div class="line">    choice_image_align.selected_value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">      check_box_demo.image_align(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;content_alignment&gt;</a>(choice_image_align.selected_item().tag()));</div>
+<div class="line">      check_box_demo.image_align(as&lt;content_alignment&gt;(choice_image_align.selected_item().tag()));</div>
 <div class="line">    };</div>
-<div class="line">    choice_image_align.items().push_back_range({{<span class="stringliteral">&quot;top_left&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a46d3836487c2110c695e52750c5d76e4">content_alignment::top_left</a>}, {<span class="stringliteral">&quot;top_center&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a153dda402a237b8b093c3c418b66df5d">content_alignment::top_center</a>}, {<span class="stringliteral">&quot;top_right&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0af12ea736b05cb6002f1ebf1b8c052676">content_alignment::top_right</a>}, {<span class="stringliteral">&quot;middle_left&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a4d8a5580bcd972246c9910900a6efc09">content_alignment::middle_left</a>}, {<span class="stringliteral">&quot;middle_center&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0aeff04a32daf451a273d55ca9d9245e92">content_alignment::middle_center</a>}, {<span class="stringliteral">&quot;middle_right&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0aff1bb2ef26708d2a4dc98bdda5c48071">content_alignment::middle_right</a>}, {<span class="stringliteral">&quot;bottom_left&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a369408ec984d94fb270ae125c6de1a5b">content_alignment::bottom_left</a>}, {<span class="stringliteral">&quot;bottom_center&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a1afb532afb8fb97068fa335cfdc02bb8">content_alignment::bottom_center</a>}, {<span class="stringliteral">&quot;bottom_right&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0ab88b8c9790136e01b8dfce869959cea3">content_alignment::bottom_right</a>}});</div>
+<div class="line">    choice_image_align.items().push_back_range({{<span class="stringliteral">&quot;top_left&quot;</span>, content_alignment::top_left}, {<span class="stringliteral">&quot;top_center&quot;</span>, content_alignment::top_center}, {<span class="stringliteral">&quot;top_right&quot;</span>, content_alignment::top_right}, {<span class="stringliteral">&quot;middle_left&quot;</span>, content_alignment::middle_left}, {<span class="stringliteral">&quot;middle_center&quot;</span>, content_alignment::middle_center}, {<span class="stringliteral">&quot;middle_right&quot;</span>, content_alignment::middle_right}, {<span class="stringliteral">&quot;bottom_left&quot;</span>, content_alignment::bottom_left}, {<span class="stringliteral">&quot;bottom_center&quot;</span>, content_alignment::bottom_center}, {<span class="stringliteral">&quot;bottom_right&quot;</span>, content_alignment::bottom_right}});</div>
 <div class="line">    choice_image_align.selected_index(4);</div>
 <div class="line">    choice_image_align.location({100, 115});</div>
 <div class="line">    choice_image_align.width(200);</div>
-<div class="line">    choice_image_align.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">anchor_styles::left</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">anchor_styles::right</a>);</div>
+<div class="line">    choice_image_align.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);</div>
 <div class="line">    </div>
 <div class="line">    label_appearance.text(<span class="stringliteral">&quot;appearance: &quot;</span>);</div>
 <div class="line">    label_appearance.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    label_appearance.location({10, 153});</div>
 <div class="line">    </div>
 <div class="line">    choice_appearance.selected_value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">      check_box_demo.appearance(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;appearance&gt;</a>(choice_appearance.selected_item().tag()));</div>
+<div class="line">      check_box_demo.appearance(as&lt;appearance&gt;(choice_appearance.selected_item().tag()));</div>
 <div class="line">    };</div>
-<div class="line">    choice_appearance.items().push_back_range({{<span class="stringliteral">&quot;normal&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggaf920635f1980a82e3a8f9117bd068238afea087517c26fadd409bd4b9dc642555">appearance::normal</a>}, {<span class="stringliteral">&quot;button&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#ggaf920635f1980a82e3a8f9117bd068238ace50a09343724eb82df11390e2c1de18">appearance::button</a>}});</div>
+<div class="line">    choice_appearance.items().push_back_range({{<span class="stringliteral">&quot;normal&quot;</span>, appearance::normal}, {<span class="stringliteral">&quot;button&quot;</span>, appearance::button}});</div>
 <div class="line">    choice_appearance.selected_index(0);</div>
 <div class="line">    choice_appearance.location({100, 150});</div>
 <div class="line">    choice_appearance.width(200);</div>
-<div class="line">    choice_appearance.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">anchor_styles::left</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">anchor_styles::right</a>);</div>
+<div class="line">    choice_appearance.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);</div>
 <div class="line">    </div>
 <div class="line">    label_flat_style.text(<span class="stringliteral">&quot;flat_style: &quot;</span>);</div>
 <div class="line">    label_flat_style.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    label_flat_style.location({10, 188});</div>
 <div class="line">    </div>
 <div class="line">    choice_flat_style.selected_value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">      check_box_demo.flat_style(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;flat_style&gt;</a>(choice_flat_style.selected_item().tag()));</div>
+<div class="line">      check_box_demo.flat_style(as&lt;flat_style&gt;(choice_flat_style.selected_item().tag()));</div>
 <div class="line">    };</div>
-<div class="line">    choice_flat_style.items().push_back_range({{<span class="stringliteral">&quot;flat&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">flat_style::flat</a>}, {<span class="stringliteral">&quot;popup&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a8eff3617002e9a854b9704717f35f7aa">flat_style::popup</a>}, {<span class="stringliteral">&quot;standard&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1ac00f0c4675b91fb8b918e4079a0b1bac">flat_style::standard</a>}, {<span class="stringliteral">&quot;system&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a54b53072540eeeb8f8e9343e71f28176">flat_style::system</a>}});</div>
+<div class="line">    choice_flat_style.items().push_back_range({{<span class="stringliteral">&quot;flat&quot;</span>, flat_style::flat}, {<span class="stringliteral">&quot;popup&quot;</span>, flat_style::popup}, {<span class="stringliteral">&quot;standard&quot;</span>, flat_style::standard}, {<span class="stringliteral">&quot;system&quot;</span>, flat_style::system}});</div>
 <div class="line">    choice_flat_style.selected_index(2);</div>
 <div class="line">    choice_flat_style.location({100, 185});</div>
 <div class="line">    choice_flat_style.width(200);</div>
-<div class="line">    choice_flat_style.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">anchor_styles::left</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">anchor_styles::right</a>);</div>
+<div class="line">    choice_flat_style.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);</div>
 <div class="line">    </div>
 <div class="line">    label_back_color.text(<span class="stringliteral">&quot;back_color: &quot;</span>);</div>
 <div class="line">    label_back_color.auto_size(<span class="keyword">true</span>);</div>
@@ -234,7 +229,7 @@ $(function(){ initResizable(false); });
 <div class="line">    };</div>
 <div class="line">    color_picker_back_color.location({100, 220});</div>
 <div class="line">    color_picker_back_color.width(200);</div>
-<div class="line">    color_picker_back_color.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">anchor_styles::left</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">anchor_styles::right</a>);</div>
+<div class="line">    color_picker_back_color.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);</div>
 <div class="line">    </div>
 <div class="line">    label_fore_color.text(<span class="stringliteral">&quot;fore_color: &quot;</span>);</div>
 <div class="line">    label_fore_color.auto_size(<span class="keyword">true</span>);</div>
@@ -247,33 +242,33 @@ $(function(){ initResizable(false); });
 <div class="line">    };</div>
 <div class="line">    color_picker_fore_color.location({100, 255});</div>
 <div class="line">    color_picker_fore_color.width(200);</div>
-<div class="line">    color_picker_fore_color.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">anchor_styles::left</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">anchor_styles::right</a>);</div>
+<div class="line">    color_picker_fore_color.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);</div>
 <div class="line">    </div>
 <div class="line">    label_width.text(<span class="stringliteral">&quot;width: &quot;</span>);</div>
 <div class="line">    label_width.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    label_width.location({10, 293});</div>
 <div class="line">    </div>
 <div class="line">    numeric_up_down_width.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">      check_box_demo.width(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int&gt;</a>(numeric_up_down_width.value()));</div>
+<div class="line">      check_box_demo.width(as&lt;int&gt;(numeric_up_down_width.value()));</div>
 <div class="line">    };</div>
 <div class="line">    numeric_up_down_width.value(check_box_demo.width());</div>
-<div class="line">    numeric_up_down_width.set_range(0, std::numeric_limits&lt;int&gt;::max());</div>
+<div class="line">    numeric_up_down_width.set_range(0, int32_object::max_value);</div>
 <div class="line">    numeric_up_down_width.location({100, 290});</div>
 <div class="line">    numeric_up_down_width.width(200);</div>
-<div class="line">    numeric_up_down_width.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">anchor_styles::left</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">anchor_styles::right</a>);</div>
+<div class="line">    numeric_up_down_width.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);</div>
 <div class="line">    </div>
 <div class="line">    label_height.text(<span class="stringliteral">&quot;height: &quot;</span>);</div>
 <div class="line">    label_height.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">    label_height.location({10, 328});</div>
 <div class="line">    </div>
 <div class="line">    numeric_up_down_height.value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">      check_box_demo.height(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int&gt;</a>(numeric_up_down_height.value()));</div>
+<div class="line">      check_box_demo.height(as&lt;int&gt;(numeric_up_down_height.value()));</div>
 <div class="line">    };</div>
 <div class="line">    numeric_up_down_height.value(check_box_demo.height());</div>
-<div class="line">    numeric_up_down_height.set_range(0, std::numeric_limits&lt;int&gt;::max());</div>
+<div class="line">    numeric_up_down_height.set_range(0, int32_object::max_value);</div>
 <div class="line">    numeric_up_down_height.location({100, 325});</div>
 <div class="line">    numeric_up_down_height.width(200);</div>
-<div class="line">    numeric_up_down_height.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">anchor_styles::left</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">anchor_styles::right</a>);</div>
+<div class="line">    numeric_up_down_height.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);</div>
 <div class="line">    </div>
 <div class="line">    label_auto_size.text(<span class="stringliteral">&quot;auto_size: &quot;</span>);</div>
 <div class="line">    label_auto_size.auto_size(<span class="keyword">true</span>);</div>
@@ -287,13 +282,13 @@ $(function(){ initResizable(false); });
 <div class="line">      numeric_up_down_height.value(check_box_demo.height());</div>
 <div class="line">      check_box_auto_size.text(check_box_auto_size.checked() ? <span class="stringliteral">&quot;true&quot;</span> : <span class="stringliteral">&quot;false&quot;</span>);</div>
 <div class="line">    };</div>
-<div class="line">    check_box_auto_size.appearance(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggaf920635f1980a82e3a8f9117bd068238ace50a09343724eb82df11390e2c1de18">forms::appearance::button</a>);</div>
+<div class="line">    check_box_auto_size.appearance(forms::appearance::button);</div>
 <div class="line">    check_box_auto_size.checked(check_box_demo.auto_size());</div>
 <div class="line">    check_box_auto_size.location({100, 360});</div>
 <div class="line">    check_box_auto_size.width(200);</div>
 <div class="line">    check_box_auto_size.text(<span class="stringliteral">&quot;false&quot;</span>);</div>
-<div class="line">    check_box_auto_size.text_align(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0aeff04a32daf451a273d55ca9d9245e92">content_alignment::middle_center</a>);</div>
-<div class="line">    check_box_auto_size.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">anchor_styles::left</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">anchor_styles::right</a>);</div>
+<div class="line">    check_box_auto_size.text_align(content_alignment::middle_center);</div>
+<div class="line">    check_box_auto_size.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);</div>
 <div class="line">    </div>
 <div class="line">    label_three_state.text(<span class="stringliteral">&quot;three_state: &quot;</span>);</div>
 <div class="line">    label_three_state.auto_size(<span class="keyword">true</span>);</div>
@@ -303,13 +298,13 @@ $(function(){ initResizable(false); });
 <div class="line">      check_box_demo.three_state(check_box_three_state.checked());</div>
 <div class="line">      check_box_three_state.text(check_box_three_state.checked() ? <span class="stringliteral">&quot;true&quot;</span> : <span class="stringliteral">&quot;false&quot;</span>);</div>
 <div class="line">    };</div>
-<div class="line">    check_box_three_state.appearance(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggaf920635f1980a82e3a8f9117bd068238ace50a09343724eb82df11390e2c1de18">forms::appearance::button</a>);</div>
+<div class="line">    check_box_three_state.appearance(forms::appearance::button);</div>
 <div class="line">    check_box_three_state.checked(accept_button().has_value());</div>
 <div class="line">    check_box_three_state.location({100, 395});</div>
 <div class="line">    check_box_three_state.width(200);</div>
 <div class="line">    check_box_three_state.text(<span class="stringliteral">&quot;false&quot;</span>);</div>
-<div class="line">    check_box_three_state.text_align(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0aeff04a32daf451a273d55ca9d9245e92">content_alignment::middle_center</a>);</div>
-<div class="line">    check_box_three_state.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">anchor_styles::left</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">anchor_styles::right</a>);</div>
+<div class="line">    check_box_three_state.text_align(content_alignment::middle_center);</div>
+<div class="line">    check_box_three_state.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);</div>
 <div class="line">    </div>
 <div class="line">    label_enebaled.text(<span class="stringliteral">&quot;enabled: &quot;</span>);</div>
 <div class="line">    label_enebaled.auto_size(<span class="keyword">true</span>);</div>
@@ -319,13 +314,13 @@ $(function(){ initResizable(false); });
 <div class="line">      check_box_demo.enabled(check_box_enabled.checked());</div>
 <div class="line">      check_box_enabled.text(check_box_enabled.checked() ? <span class="stringliteral">&quot;true&quot;</span> : <span class="stringliteral">&quot;false&quot;</span>);</div>
 <div class="line">    };</div>
-<div class="line">    check_box_enabled.appearance(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggaf920635f1980a82e3a8f9117bd068238ace50a09343724eb82df11390e2c1de18">forms::appearance::button</a>);</div>
+<div class="line">    check_box_enabled.appearance(forms::appearance::button);</div>
 <div class="line">    check_box_enabled.checked(check_box_demo.enabled());</div>
 <div class="line">    check_box_enabled.location({100, 430});</div>
 <div class="line">    check_box_enabled.width(200);</div>
 <div class="line">    check_box_enabled.text(<span class="stringliteral">&quot;true&quot;</span>);</div>
-<div class="line">    check_box_enabled.text_align(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0aeff04a32daf451a273d55ca9d9245e92">content_alignment::middle_center</a>);</div>
-<div class="line">    check_box_enabled.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">anchor_styles::left</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">anchor_styles::right</a>);</div>
+<div class="line">    check_box_enabled.text_align(content_alignment::middle_center);</div>
+<div class="line">    check_box_enabled.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);</div>
 <div class="line">    </div>
 <div class="line">    check_box_demo.location({380, 30});</div>
 <div class="line">    check_box_demo.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
@@ -334,86 +329,48 @@ $(function(){ initResizable(false); });
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1forms_1_1group__box.html">group_box</a> group_box_properties;</div>
-<div class="line">  <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1forms_1_1panel.html">panel</a> panel_properties;</div>
-<div class="line">  <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label_text;</div>
-<div class="line">  <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">text_box</a> <a class="code hl_enumvalue" href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba858aabad81d1dea3e500053615d32518">text_box_text</a>;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label_text_align;</div>
-<div class="line">  <a id="_a4" name="_a4"></a><a class="code hl_class" href="classxtd_1_1forms_1_1choice.html">choice</a> choice_text_align;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label_image;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1choice.html">choice</a> choice_image;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label_image_align;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1choice.html">choice</a> choice_image_align;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label_appearance;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1choice.html">choice</a> choice_appearance;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label_flat_style;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1choice.html">choice</a> choice_flat_style;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label_back_color;</div>
-<div class="line">  <a id="_a5" name="_a5"></a><a class="code hl_class" href="classxtd_1_1forms_1_1color__picker.html">color_picker</a> color_picker_back_color;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label_fore_color;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1color__picker.html">color_picker</a> color_picker_fore_color;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label_width;</div>
-<div class="line">  <a id="_a6" name="_a6"></a><a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> numeric_up_down_width;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label_height;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> numeric_up_down_height;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label_auto_size;</div>
-<div class="line">  <a id="_a7" name="_a7"></a><a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box_auto_size;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label_three_state;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box_three_state;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label_enebaled;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box_enabled;</div>
+<div class="line">  group_box group_box_properties;</div>
+<div class="line">  panel panel_properties;</div>
+<div class="line">  label label_text;</div>
+<div class="line">  text_box text_box_text;</div>
+<div class="line">  label label_text_align;</div>
+<div class="line">  choice choice_text_align;</div>
+<div class="line">  label label_image;</div>
+<div class="line">  choice choice_image;</div>
+<div class="line">  label label_image_align;</div>
+<div class="line">  choice choice_image_align;</div>
+<div class="line">  label label_appearance;</div>
+<div class="line">  choice choice_appearance;</div>
+<div class="line">  label label_flat_style;</div>
+<div class="line">  choice choice_flat_style;</div>
+<div class="line">  label label_back_color;</div>
+<div class="line">  color_picker color_picker_back_color;</div>
+<div class="line">  label label_fore_color;</div>
+<div class="line">  color_picker color_picker_fore_color;</div>
+<div class="line">  label label_width;</div>
+<div class="line">  numeric_up_down numeric_up_down_width;</div>
+<div class="line">  label label_height;</div>
+<div class="line">  numeric_up_down numeric_up_down_height;</div>
+<div class="line">  label label_auto_size;</div>
+<div class="line">  check_box check_box_auto_size;</div>
+<div class="line">  label label_three_state;</div>
+<div class="line">  check_box check_box_three_state;</div>
+<div class="line">  label label_enebaled;</div>
+<div class="line">  check_box check_box_enabled;</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> check_box_demo;</div>
+<div class="line">  check_box check_box_demo;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(form1 {});</div>
+<div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_a8e20e3dbd8c92fbfc5ea0adc27e2ae61"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#a8e20e3dbd8c92fbfc5ea0adc27e2ae61">xtd::drawing::image::empty</a></div><div class="ttdeci">static image empty</div><div class="ttdoc">Represent an empty xtd::drawing::image.</div><div class="ttdef"><b>Definition</b> image.hpp:65</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1button__images_html_ae11d63ea653d89c98a9a6a814db8a1fb"><div class="ttname"><a href="classxtd_1_1forms_1_1button__images.html#ae11d63ea653d89c98a9a6a814db8a1fb">xtd::forms::button_images::from_name</a></div><div class="ttdeci">static xtd::drawing::image from_name(const xtd::string &amp;name)</div><div class="ttdoc">Gets image object with specified name.</div><div class="ttdef"><b>Definition</b> button_images.hpp:193</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1check__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1check__box.html">xtd::forms::check_box</a></div><div class="ttdoc">Represents a Windows check_box.</div><div class="ttdef"><b>Definition</b> check_box.hpp:45</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1choice_html"><div class="ttname"><a href="classxtd_1_1forms_1_1choice.html">xtd::forms::choice</a></div><div class="ttdoc">Represents a choice control.</div><div class="ttdef"><b>Definition</b> choice.hpp:37</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1color__picker_html"><div class="ttname"><a href="classxtd_1_1forms_1_1color__picker.html">xtd::forms::color_picker</a></div><div class="ttdoc">Represents a picker control that displays available colors along with controls that enable the user t...</div><div class="ttdef"><b>Definition</b> color_picker.hpp:32</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1group__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1group__box.html">xtd::forms::group_box</a></div><div class="ttdoc">Represents a Windows control that displays a frame around a group of controls with an optional captio...</div><div class="ttdef"><b>Definition</b> group_box.hpp:37</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1images_html_a792b36e27d837e9cffb44560cdf35d80"><div class="ttname"><a href="classxtd_1_1forms_1_1images.html#a792b36e27d837e9cffb44560cdf35d80">xtd::forms::images::names</a></div><div class="ttdeci">static xtd::array&lt; xtd::string &gt; names() noexcept</div><div class="ttdoc">Gets the image names.</div><div class="ttdef"><b>Definition</b> images.hpp:856</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1label_html"><div class="ttname"><a href="classxtd_1_1forms_1_1label.html">xtd::forms::label</a></div><div class="ttdoc">Represents a standard Windows label.</div><div class="ttdef"><b>Definition</b> label.hpp:38</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1numeric__up__down_html"><div class="ttname"><a href="classxtd_1_1forms_1_1numeric__up__down.html">xtd::forms::numeric_up_down</a></div><div class="ttdoc">Represents a standard Windows numeric up down.</div><div class="ttdef"><b>Definition</b> numeric_up_down.hpp:34</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1panel_html"><div class="ttname"><a href="classxtd_1_1forms_1_1panel.html">xtd::forms::panel</a></div><div class="ttdoc">Used to group collections of controls.</div><div class="ttdef"><b>Definition</b> panel.hpp:32</div></div>
-<div class="ttc" id="agroup__colors_html_ggabb6249e3fb8a4388778157257e99049ba858aabad81d1dea3e500053615d32518"><div class="ttname"><a href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba858aabad81d1dea3e500053615d32518">xtd::drawing::known_color::text_box_text</a></div><div class="ttdeci">@ text_box_text</div><div class="ttdoc">The system-defined color of the accent text color (macos specific. On other platform is same as windo...</div><div class="ttdef"><b>Definition</b> known_color.hpp:503</div></div>
-<div class="ttc" id="agroup__colors_html_ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb"><div class="ttname"><a href="group__colors.html#ggabb6249e3fb8a4388778157257e99049ba89a625dcf4d8165ffe633fa540009acb">xtd::drawing::known_color::text_box</a></div><div class="ttdeci">@ text_box</div><div class="ttdoc">The system-defined color of the accent color (macos specific. On other platform is same as window).</div><div class="ttdef"><b>Definition</b> known_color.hpp:501</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785"><div class="ttname"><a href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a></div><div class="ttdeci">@ flat</div><div class="ttdoc">The control appears flat.</div><div class="ttdef"><b>Definition</b> flat_style.hpp:26</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_gga7cc15a089c6b538cb469caa2e9aba1a1a54b53072540eeeb8f8e9343e71f28176"><div class="ttname"><a href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a54b53072540eeeb8f8e9343e71f28176">xtd::forms::flat_style::system</a></div><div class="ttdeci">@ system</div><div class="ttdoc">The appearance of the control is determined by the user&#39;s operating system.</div><div class="ttdef"><b>Definition</b> flat_style.hpp:32</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_gga7cc15a089c6b538cb469caa2e9aba1a1a8eff3617002e9a854b9704717f35f7aa"><div class="ttname"><a href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a8eff3617002e9a854b9704717f35f7aa">xtd::forms::flat_style::popup</a></div><div class="ttdeci">@ popup</div><div class="ttdoc">A control appears flat until the mouse pointer moves over it, at which point it appears three-dimensi...</div><div class="ttdef"><b>Definition</b> flat_style.hpp:28</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_gga7cc15a089c6b538cb469caa2e9aba1a1ac00f0c4675b91fb8b918e4079a0b1bac"><div class="ttname"><a href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1ac00f0c4675b91fb8b918e4079a0b1bac">xtd::forms::flat_style::standard</a></div><div class="ttdeci">@ standard</div><div class="ttdoc">The control appears three-dimensional.</div><div class="ttdef"><b>Definition</b> flat_style.hpp:30</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggaac8e45c70fc114a556d8f717b7ee7619aa552c74784b3a82177bca6c8adde0efb"><div class="ttname"><a href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619aa552c74784b3a82177bca6c8adde0efb">xtd::forms::dock_style::fill</a></div><div class="ttdeci">@ fill</div><div class="ttdoc">All the control&#39;s edges are docked to the all edges of its containing control and sized appropriately...</div><div class="ttdef"><b>Definition</b> dock_style.hpp:35</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggabe04a3034508fe0527604e5c5c3104c3a71f262d796bed1ab30e8a2d5a8ddee6f"><div class="ttname"><a href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a71f262d796bed1ab30e8a2d5a8ddee6f">xtd::forms::anchor_styles::bottom</a></div><div class="ttdeci">@ bottom</div><div class="ttdoc">Bind control edges to the bottom of its container.</div><div class="ttdef"><b>Definition</b> anchor_styles.hpp:25</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d"><div class="ttname"><a href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">xtd::forms::anchor_styles::right</a></div><div class="ttdeci">@ right</div><div class="ttdoc">Bind control edges to the right of its container.</div><div class="ttdef"><b>Definition</b> anchor_styles.hpp:29</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254"><div class="ttname"><a href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">xtd::forms::anchor_styles::left</a></div><div class="ttdeci">@ left</div><div class="ttdoc">Bind control edges to the left of its container.</div><div class="ttdef"><b>Definition</b> anchor_styles.hpp:27</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f"><div class="ttname"><a href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">xtd::forms::anchor_styles::top</a></div><div class="ttdeci">@ top</div><div class="ttdoc">Bind control edges to the top of its container.</div><div class="ttdef"><b>Definition</b> anchor_styles.hpp:23</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggad8fe8984e9f4652c13654b2c4d7288f0a153dda402a237b8b093c3c418b66df5d"><div class="ttname"><a href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a153dda402a237b8b093c3c418b66df5d">xtd::forms::content_alignment::top_center</a></div><div class="ttdeci">@ top_center</div><div class="ttdoc">Content is vertically aligned at the top, and horizontally aligned at the center.</div><div class="ttdef"><b>Definition</b> content_alignment.hpp:25</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggad8fe8984e9f4652c13654b2c4d7288f0a1afb532afb8fb97068fa335cfdc02bb8"><div class="ttname"><a href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a1afb532afb8fb97068fa335cfdc02bb8">xtd::forms::content_alignment::bottom_center</a></div><div class="ttdeci">@ bottom_center</div><div class="ttdoc">Content is vertically aligned at the bottom, and horizontally aligned at the center.</div><div class="ttdef"><b>Definition</b> content_alignment.hpp:37</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggad8fe8984e9f4652c13654b2c4d7288f0a369408ec984d94fb270ae125c6de1a5b"><div class="ttname"><a href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a369408ec984d94fb270ae125c6de1a5b">xtd::forms::content_alignment::bottom_left</a></div><div class="ttdeci">@ bottom_left</div><div class="ttdoc">Content is vertically aligned in the bottom, and horizontally aligned on the left.</div><div class="ttdef"><b>Definition</b> content_alignment.hpp:35</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggad8fe8984e9f4652c13654b2c4d7288f0a46d3836487c2110c695e52750c5d76e4"><div class="ttname"><a href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a46d3836487c2110c695e52750c5d76e4">xtd::forms::content_alignment::top_left</a></div><div class="ttdeci">@ top_left</div><div class="ttdoc">Content is vertically aligned at the top, and horizontally aligned on the left.</div><div class="ttdef"><b>Definition</b> content_alignment.hpp:23</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggad8fe8984e9f4652c13654b2c4d7288f0a4d8a5580bcd972246c9910900a6efc09"><div class="ttname"><a href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a4d8a5580bcd972246c9910900a6efc09">xtd::forms::content_alignment::middle_left</a></div><div class="ttdeci">@ middle_left</div><div class="ttdoc">Content is vertically aligned in the middle, and horizontally aligned on the left.</div><div class="ttdef"><b>Definition</b> content_alignment.hpp:29</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggad8fe8984e9f4652c13654b2c4d7288f0ab88b8c9790136e01b8dfce869959cea3"><div class="ttname"><a href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0ab88b8c9790136e01b8dfce869959cea3">xtd::forms::content_alignment::bottom_right</a></div><div class="ttdeci">@ bottom_right</div><div class="ttdoc">Content is vertically aligned at the bottom, and horizontally aligned on the right.</div><div class="ttdef"><b>Definition</b> content_alignment.hpp:39</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggad8fe8984e9f4652c13654b2c4d7288f0aeff04a32daf451a273d55ca9d9245e92"><div class="ttname"><a href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0aeff04a32daf451a273d55ca9d9245e92">xtd::forms::content_alignment::middle_center</a></div><div class="ttdeci">@ middle_center</div><div class="ttdoc">Content is vertically aligned at the middle, and horizontally aligned at the center.</div><div class="ttdef"><b>Definition</b> content_alignment.hpp:31</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggad8fe8984e9f4652c13654b2c4d7288f0af12ea736b05cb6002f1ebf1b8c052676"><div class="ttname"><a href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0af12ea736b05cb6002f1ebf1b8c052676">xtd::forms::content_alignment::top_right</a></div><div class="ttdeci">@ top_right</div><div class="ttdoc">Content is vertically aligned at the top, and horizontally aligned on the right.</div><div class="ttdef"><b>Definition</b> content_alignment.hpp:27</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggad8fe8984e9f4652c13654b2c4d7288f0aff1bb2ef26708d2a4dc98bdda5c48071"><div class="ttname"><a href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0aff1bb2ef26708d2a4dc98bdda5c48071">xtd::forms::content_alignment::middle_right</a></div><div class="ttdeci">@ middle_right</div><div class="ttdoc">Content is vertically aligned at the middle, and horizontally aligned on the right.</div><div class="ttdef"><b>Definition</b> content_alignment.hpp:33</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggaf920635f1980a82e3a8f9117bd068238ace50a09343724eb82df11390e2c1de18"><div class="ttname"><a href="group__xtd__forms.html#ggaf920635f1980a82e3a8f9117bd068238ace50a09343724eb82df11390e2c1de18">xtd::forms::appearance::button</a></div><div class="ttdeci">@ button</div><div class="ttdoc">The appearance of a button.</div><div class="ttdef"><b>Definition</b> appearance.hpp:26</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggaf920635f1980a82e3a8f9117bd068238afea087517c26fadd409bd4b9dc642555"><div class="ttname"><a href="group__xtd__forms.html#ggaf920635f1980a82e3a8f9117bd068238afea087517c26fadd409bd4b9dc642555">xtd::forms::appearance::normal</a></div><div class="ttdeci">@ normal</div><div class="ttdoc">The default appearance defined by the control class.</div><div class="ttdef"><b>Definition</b> appearance.hpp:24</div></div>
-<div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
-<div class="ttc" id="anamespacextd_1_1text_html"><div class="ttname"><a href="namespacextd_1_1text.html">xtd::text</a></div><div class="ttdoc">Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:17</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 27 2025 13:42:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 28 2025 13:01:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
