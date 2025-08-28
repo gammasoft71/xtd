@@ -126,7 +126,7 @@ Several aliases for common character types are provided: </dd>
 <td class="markdownTableBodyNone"><a class="el" href="group__strings.html#ga516498bf5a31bcaeee8b68db8b27166d" title="Represents a mutable string of characters of UTF-16 code unit on Windows or UTF-32 code units....">xtd::text::wstring_builder</a>   </td><td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> &lt;<a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518" title="Represents a wide character.">xtd::wchar</a>&gt;   </td></tr>
 </table>
 </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="ip_address_8cpp-example.html#_a1">ip_address.cpp</a>, <a class="el" href="ostream_unit_test_8cpp-example.html#_a3">ostream_unit_test.cpp</a>, and <a class="el" href="string_builder_append_8cpp-example.html#_a1">string_builder_append.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="ostream_unit_test_8cpp-example.html#_a3">ostream_unit_test.cpp</a>, and <a class="el" href="string_builder_append_8cpp-example.html#_a0">string_builder_append.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
@@ -3384,7 +3384,7 @@ If <code>value</code> is <code>empty</code>, no changes are made. </dd>
 <dd>
 The capacity of this instance is adjusted as needed. </dd></dl>
 <dl class="section user"><dt>Notes to Callers</dt><dd>When you instantiate the <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object by calling the <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a3c8c9b34721a5dce3830f0e76d94d517" title="Initializes a new instance of the xtd::text::basic_string_builder class that starts with a specified ...">xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size)</a> constructor, both the length and the capacity of the <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> instance can grow beyond the value of its <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a82a9b0e909ef5975e6ac07821b8b100e" title="Returns the number of characters that the string has currently allocated space for.">xtd::text::basic_string_builder::max_capacity</a> property. This can occur particularly when you call the <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a74b530fbbad4b6b67da525a5b401219d" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> and <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#afdea991b3a89ae01e8c998481fa987d3" title="Appends the string returned by processing a composite format string, which contains zero or more form...">xtd::text::basic_string_builder::append_format</a> methods to append small strings. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="string_builder_append_8cpp-example.html#a2">string_builder_append.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="string_builder_append_8cpp-example.html#a1">string_builder_append.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -3580,7 +3580,7 @@ template&lt;class char_t , class traits_t  = std::char_traits&lt;char_t&gt;, cla
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The byte array: 16 132 27 253</span></div>
-<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:61</div></div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:63</div></div>
 </div><!-- fragment --> </dd>
 <dd>
 The capacity of this instance is adjusted as needed. </dd></dl>
@@ -4312,11 +4312,7 @@ template&lt;class object_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a74b530fbbad4b6b67da525a5b401219d" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> (object_t) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object, as the following example illustrates. It defines a <code>dog</code> class, creates a <code>dog</code> object, and makes three calls to the <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a74b530fbbad4b6b67da525a5b401219d" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> method to create a string that contains the dog's name and breed. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/text/string_builder&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/istringable&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a74b530fbbad4b6b67da525a5b401219d" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> (object_t) method modifies the existing instance of this class; it does not return a new class instance. Because of this, you can call a method or property on the existing reference and you do not have to assign the return value to a <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object, as the following example illustrates. It defines a <code>dog</code> class, creates a <code>dog</code> object, and makes three calls to the <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a74b530fbbad4b6b67da525a5b401219d" title="Appends a copy of the specified string to this instance.">xtd::text::basic_string_builder::append</a> method to create a string that contains the dog's name and breed. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>dog : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1istringable.html">istringable</a> {</div>
 <div class="line"><span class="keyword">private</span>:</div>
@@ -4343,7 +4339,6 @@ template&lt;class object_t &gt; </div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Mocka, breed: American Shepherd</span></div>
 <div class="ttc" id="aclassxtd_1_1istringable_html"><div class="ttname"><a href="classxtd_1_1istringable.html">xtd::istringable</a></div><div class="ttdoc">Provides a way to represent the current object as a string.</div><div class="ttdef"><b>Definition</b> istringable.hpp:22</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
 </div><!-- fragment --> </dd>
 <dd>
 The capacity of this instance is adjusted as needed. </dd></dl>
@@ -12034,7 +12029,7 @@ template&lt;class char_t , class traits_t  = std::char_traits&lt;char_t&gt;, cla
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 19 2025 12:06:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 28 2025 19:34:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

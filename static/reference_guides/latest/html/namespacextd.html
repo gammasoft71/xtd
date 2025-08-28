@@ -141,6 +141,9 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespacextd_1_1net"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacextd_1_1net.html">net</a></td></tr>
 <tr class="memdesc:namespacextd_1_1net"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="namespacextd_1_1net.html" title="The xtd::net namespace provides a simple programming interface for many of the protocols used on netw...">xtd::net</a> namespace provides a simple programming interface for many of the protocols used on networks today. The xtd::net::web_request and xtd::net::web_response classes form the basis of what are called pluggable protocols, an implementation of network services that enables you to develop applications that use Internet resources without worrying about the specific details of the individual protocols. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacextd_1_1ranges"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacextd_1_1ranges.html">ranges</a></td></tr>
+<tr class="memdesc:namespacextd_1_1ranges"><td class="mdescLeft">&#160;</td><td class="mdescRight">The ranges namespace is an extension and generalization of the <a class="el" href="namespacextd_1_1linq.html" title="Provides classes and interfaces that support queries that use Language-Integrated Query (LINQ).">xtd::linq</a> that makes them more powerful by making them composable and less error-prone. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacextd_1_1reflection"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacextd_1_1reflection.html">reflection</a></td></tr>
 <tr class="memdesc:namespacextd_1_1reflection"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="namespacextd_1_1reflection.html" title="The xtd::reflection namespace contains types that retrieve information about assemblies,...">xtd::reflection</a> namespace contains types that retrieve information about assemblies, modules, members, parameters, and other entities in managed code by examining their metadata. These types also can be used to manipulate instances of loaded types, for example to hook up events or to invoke methods. To dynamically create types, use the System.Reflection.Emit namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -594,9 +597,6 @@ Alias</h2></td></tr>
 <tr class="memitem:ga0852e1ddc5f45ee30560e3f95d6915b0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__strings.html#ga0852e1ddc5f45ee30560e3f95d6915b0">wstring</a> = <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; <a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518">xtd::wchar</a> &gt;</td></tr>
 <tr class="memdesc:ga0852e1ddc5f45ee30560e3f95d6915b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents text as a sequence of UTF-16 code unit on Windows or UTF-32 code unit on non-Windows systems.  <br /></td></tr>
 <tr class="separator:ga0852e1ddc5f45ee30560e3f95d6915b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga90b16e4ed2e4bde4276f0c807e5a7112"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__threading.html#ga90b16e4ed2e4bde4276f0c807e5a7112">lock</a> = <a class="el" href="classxtd_1_1threading_1_1lock__guard.html">xtd::threading::lock_guard</a></td></tr>
-<tr class="memdesc:ga90b16e4ed2e4bde4276f0c807e5a7112"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a mechanism that synchronizes access to objects with <a class="el" href="classxtd_1_1threading_1_1monitor.html" title="Provides a mechanism that synchronizes access to objects.">xtd::threading::monitor</a>.  <br /></td></tr>
-<tr class="separator:ga90b16e4ed2e4bde4276f0c807e5a7112"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7c21e81155886d77db3bcf8d0785afe8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#ga7c21e81155886d77db3bcf8d0785afe8">null_opt</a> = std::nullopt_t</td></tr>
 <tr class="memdesc:ga7c21e81155886d77db3bcf8d0785afe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the null_opt alias on <a href="https://en.cppreference.com/w/cpp/utility/optional/nullopt_t">std::nullopt_t</a>.  <br /></td></tr>
 <tr class="separator:ga7c21e81155886d77db3bcf8d0785afe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -9654,7 +9654,7 @@ you can use std::basic_string or std::wstring with format param %s. </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A string holding the converted value. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="any_8cpp-example.html#a0">any.cpp</a>, <a class="el" href="any_info_8cpp-example.html#a0">any_info.cpp</a>, <a class="el" href="format_class_with_specified_formating_with_to_string_8cpp-example.html#a1">format_class_with_specified_formating_with_to_string.cpp</a>, <a class="el" href="iformatable_vs_to_string_8cpp-example.html#a0">iformatable_vs_to_string.cpp</a>, <a class="el" href="numeric_text_box_8cpp-example.html#a1">numeric_text_box.cpp</a>, and <a class="el" href="sprintf_class_with_specified_formating_with_to_string_8cpp-example.html#a1">sprintf_class_with_specified_formating_with_to_string.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="any_8cpp-example.html#a0">any.cpp</a>, <a class="el" href="any_info_8cpp-example.html#a0">any_info.cpp</a>, <a class="el" href="format_class_with_specified_formating_with_to_string_8cpp-example.html#a0">format_class_with_specified_formating_with_to_string.cpp</a>, <a class="el" href="iformatable_vs_to_string_8cpp-example.html#a0">iformatable_vs_to_string.cpp</a>, <a class="el" href="numeric_text_box_8cpp-example.html#a0">numeric_text_box.cpp</a>, and <a class="el" href="sprintf_class_with_specified_formating_with_to_string_8cpp-example.html#a1">sprintf_class_with_specified_formating_with_to_string.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -9937,7 +9937,7 @@ template&lt;class type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 19 2025 12:06:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 28 2025 19:34:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

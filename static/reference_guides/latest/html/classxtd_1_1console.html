@@ -103,9 +103,7 @@ Inheritance diagram for xtd::console:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to read data from, and write data to, the standard input and output streams. Note that these streams can be redirected by using the set_in and set_out methods. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to read data from, and write data to, the standard input and output streams. Note that these streams can be redirected by using the set_in and set_out methods. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;Hello &quot;</span>);</div>
@@ -125,11 +123,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="ttc" id="aclassxtd_1_1console_html_a01a96244846df28bb0178e3728434243"><div class="ttname"><a href="classxtd_1_1console.html#a01a96244846df28bb0178e3728434243">xtd::console::read_line</a></div><div class="ttdeci">static xtd::string read_line()</div><div class="ttdoc">Reads the next line of characters from the standard input stream.</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:462</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
-</div><!-- fragment --> <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+</div><!-- fragment --> <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span>&amp; <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> = <a class="code hl_variable" href="classxtd_1_1console.html#a7c103233b3e74cb63538b48616b7fd02">console::in</a>;</div>
@@ -154,8 +148,6 @@ Inheritance diagram for xtd::console:</div>
 <div class="ttc" id="aclassxtd_1_1environment_html_a19a9aa87ee20eb3789058621ed161c4e"><div class="ttname"><a href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">xtd::environment::new_line</a></div><div class="ttdeci">static xtd::string new_line() noexcept</div><div class="ttdoc">Gets the newline string defined for this environment.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga8419620dc289ac0d790372a1616e993f"><div class="ttname"><a href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">xtd::is</a></div><div class="ttdeci">bool is(xtd::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:485</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="generic_list_8cpp-example.html#_a3">generic_list.cpp</a>, and <a class="el" href="generic_list4_8cpp-example.html#_a3">generic_list4.cpp</a>.</dd>
-</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Fields</h2></td></tr>
 <tr class="memitem:a07c2c9e615422f0ab7321b3331e83c73"><td class="memItemLeft" align="right" valign="top">static std::ostream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1console.html#a07c2c9e615422f0ab7321b3331e83c73">error</a></td></tr>
@@ -468,14 +460,10 @@ Inheritance diagram for xtd::console:</div>
 <p>Gets the background color of the console. </p>
 <dl class="section return"><dt>Returns</dt><dd>the background <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A get operation for a Windows-based application, in which a console does not exist, returns <a class="el" href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a1ffd9e753c8054cc61456ac7fac1ac89" title="The color black.">xtd::console_color::black</a>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example saves the values of the <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a> enumeration to an array and stores the current values of the <a class="el" href="classxtd_1_1console.html#a7015d166663fd50f1983ec1e375a6cdf" title="Gets the background color of the console.">xtd::console::background_color</a> and <a class="el" href="classxtd_1_1console.html#a7828d85c021b5515a2eb94105ca6c149" title="Gets the foreground color of the console.">xtd::console::foreground_color</a> properties to variables. It then changes the foreground color to each color in the <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a> enumeration except to the color that matches the current background, and it changes the background color to each color in the <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a> enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the <a class="el" href="classxtd_1_1console.html#aa238558f28b619a37668f9129b098600" title="Sets the foreground and background console colors to their defaults.">xtd::console::reset_color</a> method to restore the original console colors. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/list&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example saves the values of the <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a> enumeration to an array and stores the current values of the <a class="el" href="classxtd_1_1console.html#a7015d166663fd50f1983ec1e375a6cdf" title="Gets the background color of the console.">xtd::console::background_color</a> and <a class="el" href="classxtd_1_1console.html#a7828d85c021b5515a2eb94105ca6c149" title="Gets the foreground color of the console.">xtd::console::foreground_color</a> properties to variables. It then changes the foreground color to each color in the <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a> enumeration except to the color that matches the current background, and it changes the background color to each color in the <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a> enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the <a class="el" href="classxtd_1_1console.html#aa238558f28b619a37668f9129b098600" title="Sets the foreground and background console colors to their defaults.">xtd::console::reset_color</a> method to restore the original console colors. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> logo = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a> {</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> logo = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {</div>
 <div class="line">    u8<span class="stringliteral">&quot;████████████████████████████████████████████████████████████&quot;</span>,</div>
 <div class="line">    u8<span class="stringliteral">&quot;██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████&quot;</span>,</div>
 <div class="line">    u8<span class="stringliteral">&quot;██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████&quot;</span>,</div>
@@ -566,7 +554,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"><span class="comment">//                                    Gammasoft</span></div>
 <div class="line"><span class="comment">// More than thirty years of passion for high technology especially in development</span></div>
 <div class="line"><span class="comment">// (c++, c#, objective-c, ...).</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:79</div></div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:63</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a7015d166663fd50f1983ec1e375a6cdf"><div class="ttname"><a href="classxtd_1_1console.html#a7015d166663fd50f1983ec1e375a6cdf">xtd::console::background_color</a></div><div class="ttdeci">static console_color background_color()</div><div class="ttdoc">Gets the background color of the console.</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a70caf80623c8b653dc6b15d10ea52454"><div class="ttname"><a href="classxtd_1_1console.html#a70caf80623c8b653dc6b15d10ea52454">xtd::console::output_code_page</a></div><div class="ttdeci">static int32 output_code_page()</div><div class="ttdoc">Gets the code page the console uses to write output.</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a7828d85c021b5515a2eb94105ca6c149"><div class="ttname"><a href="classxtd_1_1console.html#a7828d85c021b5515a2eb94105ca6c149">xtd::console::foreground_color</a></div><div class="ttdeci">static console_color foreground_color()</div><div class="ttdoc">Gets the foreground color of the console.</div></div>
@@ -574,7 +562,6 @@ Inheritance diagram for xtd::console:</div>
 <div class="ttc" id="agroup__xtd__core_html_ggab60a2a64b74b91771b667e4a079681f2a27e3a57f752eac25c69739545fccef73"><div class="ttname"><a href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a27e3a57f752eac25c69739545fccef73">xtd::console_color::dark_blue</a></div><div class="ttdeci">@ dark_blue</div><div class="ttdoc">The color dark blue.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggab60a2a64b74b91771b667e4a079681f2a49dba686026a18435dd23b5e83eb5cfd"><div class="ttname"><a href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a49dba686026a18435dd23b5e83eb5cfd">xtd::console_color::dark_gray</a></div><div class="ttdeci">@ dark_gray</div><div class="ttdoc">The color dark gray.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggab60a2a64b74b91771b667e4a079681f2ad508fe45cecaf653904a0e774084bb5c"><div class="ttname"><a href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2ad508fe45cecaf653904a0e774084bb5c">xtd::console_color::white</a></div><div class="ttdeci">@ white</div><div class="ttdoc">The color white.</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:16</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -617,14 +604,10 @@ Inheritance diagram for xtd::console:</div>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A change to the <a class="el" href="classxtd_1_1background__color.html" title="Represent background color output manipulator class.">background_color</a> method affects only output that is written to individual character cells after the background color is changed. To change the background color of the console window as a whole, set the BackgroundColor property and call the Clear method. The following example provides an illustration. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example saves the values of the <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a> enumeration to an array and stores the current values of the <a class="el" href="classxtd_1_1console.html#a7015d166663fd50f1983ec1e375a6cdf" title="Gets the background color of the console.">xtd::console::background_color</a> and <a class="el" href="classxtd_1_1console.html#a7828d85c021b5515a2eb94105ca6c149" title="Gets the foreground color of the console.">xtd::console::foreground_color</a> properties to variables. It then changes the foreground color to each color in the <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a> enumeration except to the color that matches the current background, and it changes the background color to each color in the <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a> enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the <a class="el" href="classxtd_1_1console.html#aa238558f28b619a37668f9129b098600" title="Sets the foreground and background console colors to their defaults.">xtd::console::reset_color</a> method to restore the original console colors. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/list&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example saves the values of the <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a> enumeration to an array and stores the current values of the <a class="el" href="classxtd_1_1console.html#a7015d166663fd50f1983ec1e375a6cdf" title="Gets the background color of the console.">xtd::console::background_color</a> and <a class="el" href="classxtd_1_1console.html#a7828d85c021b5515a2eb94105ca6c149" title="Gets the foreground color of the console.">xtd::console::foreground_color</a> properties to variables. It then changes the foreground color to each color in the <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a> enumeration except to the color that matches the current background, and it changes the background color to each color in the <a class="el" href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2" title="Specifies constants that define foreground and background colors for the console.">xtd::console_color</a> enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the <a class="el" href="classxtd_1_1console.html#aa238558f28b619a37668f9129b098600" title="Sets the foreground and background console colors to their defaults.">xtd::console::reset_color</a> method to restore the original console colors. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> logo = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a> {</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> logo = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {</div>
 <div class="line">    u8<span class="stringliteral">&quot;████████████████████████████████████████████████████████████&quot;</span>,</div>
 <div class="line">    u8<span class="stringliteral">&quot;██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████&quot;</span>,</div>
 <div class="line">    u8<span class="stringliteral">&quot;██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████&quot;</span>,</div>
@@ -744,9 +727,7 @@ Inheritance diagram for xtd::console:</div>
 
 <p>Gets the height of the buffer area. </p>
 <dl class="section return"><dt>Returns</dt><dd>The current height, in rows, of the buffer area. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the buffer_height and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the buffer_height and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The current buffer height is {} rows.&quot;</span>, <a class="code hl_function" href="classxtd_1_1console.html#a178dd87e25a2264d1d86f2e6864273c6">console::buffer_height</a>());</div>
@@ -802,9 +783,7 @@ Inheritance diagram for xtd::console:</div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the buffer_height and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the buffer_height and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The current buffer height is {} rows.&quot;</span>, <a class="code hl_function" href="classxtd_1_1console.html#a178dd87e25a2264d1d86f2e6864273c6">console::buffer_height</a>());</div>
@@ -844,9 +823,7 @@ Inheritance diagram for xtd::console:</div>
 
 <p>Gets the width of the buffer area. </p>
 <dl class="section return"><dt>Returns</dt><dd>The current width, in columns, of the buffer area. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the BufferHeight and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the BufferHeight and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The current buffer height is {} rows.&quot;</span>, <a class="code hl_function" href="classxtd_1_1console.html#a178dd87e25a2264d1d86f2e6864273c6">console::buffer_height</a>());</div>
@@ -900,9 +877,7 @@ Inheritance diagram for xtd::console:</div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the BufferHeight and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the BufferHeight and buffer_width properties. The example reports the dimensions of an operating system window set to a buffer size of 300 rows and 85 columns. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The current buffer height is {} rows.&quot;</span>, <a class="code hl_function" href="classxtd_1_1console.html#a178dd87e25a2264d1d86f2e6864273c6">console::buffer_height</a>());</div>
@@ -970,9 +945,7 @@ Inheritance diagram for xtd::console:</div>
 
 <p>Gets the column position of the cursor within the buffer area. </p>
 <dl class="section return"><dt>Returns</dt><dd>The current position, in columns, of the cursor. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> orig_row = 0;</div>
 <div class="line"><span class="keyword">auto</span> orig_col = 0;</div>
@@ -1075,9 +1048,7 @@ Inheritance diagram for xtd::console:</div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> orig_row = 0;</div>
 <div class="line"><span class="keyword">auto</span> orig_col = 0;</div>
@@ -1159,9 +1130,7 @@ Inheritance diagram for xtd::console:</div>
 
 <p>Gets or sets the height of the cursor within a character cell. </p>
 <dl class="section return"><dt>Returns</dt><dd>The size of the cursor expressed as a percentage of the height of a character cell. The property value ranges from 1 to 100. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_size property. The example increases the size of the cursor each time any console key is pressed, then restores the cursor to its original size before terminating. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_size property. The example increases the size of the cursor each time any console key is pressed, then restores the cursor to its original size before terminating. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> m0 = <span class="stringliteral">&quot;This example increments the cursor size from 1% to 100%:\n&quot;</span>;</div>
@@ -1237,9 +1206,7 @@ Inheritance diagram for xtd::console:</div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_size property. The example increases the size of the cursor each time any console key is pressed, then restores the cursor to its original size before terminating. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_size property. The example increases the size of the cursor each time any console key is pressed, then restores the cursor to its original size before terminating. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> m0 = <span class="stringliteral">&quot;This example increments the cursor size from 1% to 100%:\n&quot;</span>;</div>
@@ -1300,9 +1267,7 @@ Inheritance diagram for xtd::console:</div>
 
 <p>Gets the row position of the cursor within the buffer area. </p>
 <dl class="section return"><dt>Returns</dt><dd>The current position, in rows, of the cursor. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> orig_row = 0;</div>
 <div class="line"><span class="keyword">auto</span> orig_col = 0;</div>
@@ -1399,9 +1364,7 @@ Inheritance diagram for xtd::console:</div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> orig_row = 0;</div>
 <div class="line"><span class="keyword">auto</span> orig_col = 0;</div>
@@ -1483,9 +1446,7 @@ Inheritance diagram for xtd::console:</div>
 
 <p>Gets a value indicating whether the cursor is visible. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the cursor is visible; otherwise, <code>false</code>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_visible property. The example makes the cursor visible if the first column of input is a '+' character or invisible if the input is a '-' character. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_visible property. The example makes the cursor visible if the first column of input is a '+' character or invisible if the input is a '-' character. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> m1 = <span class="stringliteral">&quot;\nThe cursor is {0}.\nType any text then press Enter. &quot;</span></div>
@@ -1548,7 +1509,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"><span class="comment">// Type any text then press Enter. Type &#39;+&#39; in the first column to show</span></div>
 <div class="line"><span class="comment">// the cursor, &#39;-&#39; to hide the cursor, or lowercase &#39;x&#39; to quit:</span></div>
 <div class="line"><span class="comment">// x</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__string_html_a6c9caea8081698b588cb6af9b6da8542"><div class="ttname"><a href="classxtd_1_1basic__string.html#a6c9caea8081698b588cb6af9b6da8542">xtd::basic_string::is_empty</a></div><div class="ttdeci">bool is_empty() const noexcept</div><div class="ttdoc">Indicates whether this basic_string is an empty basic_string (&quot;&quot;).</div><div class="ttdef"><b>Definition</b> basic_string.hpp:1471</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html_a6c9caea8081698b588cb6af9b6da8542"><div class="ttname"><a href="classxtd_1_1basic__string.html#a6c9caea8081698b588cb6af9b6da8542">xtd::basic_string::is_empty</a></div><div class="ttdeci">bool is_empty() const noexcept</div><div class="ttdoc">Indicates whether this basic_string is an empty basic_string (&quot;&quot;).</div><div class="ttdef"><b>Definition</b> basic_string.hpp:1475</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae45a442bc3942b2270998ae8c574abe9"><div class="ttname"><a href="classxtd_1_1console.html#ae45a442bc3942b2270998ae8c574abe9">xtd::console::cursor_visible</a></div><div class="ttdeci">static bool cursor_visible()</div><div class="ttdoc">Gets a value indicating whether the cursor is visible.</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1585,9 +1546,7 @@ Inheritance diagram for xtd::console:</div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_visible property. The example makes the cursor visible if the first column of input is a '+' character or invisible if the input is a '-' character. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_visible property. The example makes the cursor visible if the first column of input is a '+' character or invisible if the input is a '-' character. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> m1 = <span class="stringliteral">&quot;\nThe cursor is {0}.\nType any text then press Enter. &quot;</span></div>
@@ -1679,16 +1638,10 @@ Inheritance diagram for xtd::console:</div>
 
 <p>Gets the foreground color of the console. </p>
 <dl class="section return"><dt>Returns</dt><dd>A console_color that specifies the foreground color of the console; that is, the color of each character that is displayed. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example saves the values of the console_color enumeration to an array and stores the current values of the <a class="el" href="classxtd_1_1background__color.html" title="Represent background color output manipulator class.">background_color</a> and <a class="el" href="classxtd_1_1foreground__color.html" title="Represent foreground color output manipulator class.">foreground_color</a> properties to variables. It then changes the foreground color to each color in the ConsoleColor enumeration except to the color that matches the current background, and it changes the background color to each color in the console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the <a class="el" href="classxtd_1_1reset__color.html" title="Represent reset color output manipulator class.">reset_color</a> method to restore the original console colors. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/list&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/background_color&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/foreground_color&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/reset_color&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections.html">xtd::collections</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example saves the values of the console_color enumeration to an array and stores the current values of the <a class="el" href="classxtd_1_1background__color.html" title="Represent background color output manipulator class.">background_color</a> and <a class="el" href="classxtd_1_1foreground__color.html" title="Represent foreground color output manipulator class.">foreground_color</a> properties to variables. It then changes the foreground color to each color in the ConsoleColor enumeration except to the color that matches the current background, and it changes the background color to each color in the console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the <a class="el" href="classxtd_1_1reset__color.html" title="Represent reset color output manipulator class.">reset_color</a> method to restore the original console colors. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> logo = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">generic::list</a> {</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> logo = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {</div>
 <div class="line">    u8<span class="stringliteral">&quot;████████████████████████████████████████████████████████████&quot;</span>,</div>
 <div class="line">    u8<span class="stringliteral">&quot;██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████&quot;</span>,</div>
 <div class="line">    u8<span class="stringliteral">&quot;██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████&quot;</span>,</div>
@@ -1774,7 +1727,6 @@ Inheritance diagram for xtd::console:</div>
 <div class="ttc" id="aclassxtd_1_1foreground__color_html"><div class="ttname"><a href="classxtd_1_1foreground__color.html">xtd::foreground_color</a></div><div class="ttdoc">Represent foreground color output manipulator class.</div><div class="ttdef"><b>Definition</b> foreground_color.hpp:20</div></div>
 <div class="ttc" id="aclassxtd_1_1reset__color_html"><div class="ttname"><a href="classxtd_1_1reset__color.html">xtd::reset_color</a></div><div class="ttdoc">Represent reset color output manipulator class.</div><div class="ttdef"><b>Definition</b> reset_color.hpp:20</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gab60a2a64b74b91771b667e4a079681f2"><div class="ttname"><a href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2">xtd::console_color</a></div><div class="ttdeci">console_color</div><div class="ttdoc">Specifies constants that define foreground and background colors for the console.</div><div class="ttdef"><b>Definition</b> console_color.hpp:20</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_html"><div class="ttname"><a href="namespacextd_1_1collections.html">xtd::collections</a></div><div class="ttdoc">The xtd::collections namespace contains interfaces and classes that define various collections of obj...</div><div class="ttdef"><b>Definition</b> any_pair.hpp:10</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1816,16 +1768,10 @@ Inheritance diagram for xtd::console:</div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example saves the values of the console_color enumeration to an array and stores the current values of the <a class="el" href="classxtd_1_1background__color.html" title="Represent background color output manipulator class.">background_color</a> and <a class="el" href="classxtd_1_1foreground__color.html" title="Represent foreground color output manipulator class.">foreground_color</a> properties to variables. It then changes the foreground color to each color in the ConsoleColor enumeration except to the color that matches the current background, and it changes the background color to each color in the console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the <a class="el" href="classxtd_1_1reset__color.html" title="Represent reset color output manipulator class.">reset_color</a> method to restore the original console colors. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/list&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/background_color&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/foreground_color&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/reset_color&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections.html">xtd::collections</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example saves the values of the console_color enumeration to an array and stores the current values of the <a class="el" href="classxtd_1_1background__color.html" title="Represent background color output manipulator class.">background_color</a> and <a class="el" href="classxtd_1_1foreground__color.html" title="Represent foreground color output manipulator class.">foreground_color</a> properties to variables. It then changes the foreground color to each color in the ConsoleColor enumeration except to the color that matches the current background, and it changes the background color to each color in the console_color enumeration except to the color that matches the current foreground. (If the foreground color is the same as the background color, the text isn't visible.) Finally, it calls the <a class="el" href="classxtd_1_1reset__color.html" title="Represent reset color output manipulator class.">reset_color</a> method to restore the original console colors. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> logo = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">generic::list</a> {</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> logo = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {</div>
 <div class="line">    u8<span class="stringliteral">&quot;████████████████████████████████████████████████████████████&quot;</span>,</div>
 <div class="line">    u8<span class="stringliteral">&quot;██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░██████&quot;</span>,</div>
 <div class="line">    u8<span class="stringliteral">&quot;██████████████████████████████░░░░░░░░░░░░░░░░░░░░░░████░░████████&quot;</span>,</div>
@@ -2751,12 +2697,7 @@ Use the key_available method in conjunction with only the read_key method, not t
 
 <p>Plays the sound of a beep through the console speaker. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>By default, the beep plays at a frequency of 800 hertz for a duration of 200 milliseconds </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the beep method. The example accepts a number from 1 through 9 as a command line argument, and plays the beep that number of times. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/int32_object&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the beep method. The example accepts a number from 1 through 9 as a command line argument, and plays the beep that number of times. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> = 0;</div>
@@ -2779,7 +2720,6 @@ Use the key_available method in conjunction with only the read_key method, not t
 <div class="line"> </div>
 <div class="ttc" id="aclassxtd_1_1console_html_aab2e161c3a72cb14f808ed40e2b59ef2"><div class="ttname"><a href="classxtd_1_1console.html#aab2e161c3a72cb14f808ed40e2b59ef2">xtd::console::beep</a></div><div class="ttdeci">static void beep()</div><div class="ttdoc">Plays the sound of a beep through the console speaker.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div></div>
-<div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.hpp:10</div></div>
 <div class="ttc" id="astructxtd_1_1box_html_a5e274cc04e1882aca9dc519e8f7235ba"><div class="ttname"><a href="structxtd_1_1box.html#a5e274cc04e1882aca9dc519e8f7235ba">xtd::box::try_parse</a></div><div class="ttdeci">static bool try_parse(const xtd::string &amp;value, reference result) noexcept</div><div class="ttdoc">Converts the string to its value_type equivalent. A return value indicates whether the conversion suc...</div><div class="ttdef"><b>Definition</b> box.hpp:172</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -2827,13 +2767,7 @@ Use the key_available method in conjunction with only the read_key method, not t
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the beep method by playing the first few notes of a song through the console speaker. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/list&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the beep method by playing the first few notes of a song through the console speaker. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Define the frequencies of notes in an octave, as well as</span></div>
 <div class="line"><span class="comment">// silence (rest).</span></div>
@@ -2886,7 +2820,7 @@ Use the key_available method in conjunction with only the read_key method, not t
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Play the notes in a song.</span></div>
-<div class="line"><span class="keywordtype">void</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;note&gt;</a>&amp; tune) {</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(<span class="keyword">const</span> list&lt;note&gt;&amp; tune) {</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a> : tune) {</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_tone() == tone::rest)</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">threading::thread::sleep</a>(as&lt;int&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration()));</div>
@@ -2897,7 +2831,7 @@ Use the key_available method in conjunction with only the read_key method, not t
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Declare the first few notes of the song, &quot;Mary Had A Little Lamb&quot;.</span></div>
-<div class="line">  <span class="keyword">auto</span> mary = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a> {</div>
+<div class="line">  <span class="keyword">auto</span> mary = list {</div>
 <div class="line">    note(tone::b, duration::quarter),</div>
 <div class="line">    note(tone::a, duration::quarter),</div>
 <div class="line">    note(tone::g_below_c, duration::quarter),</div>
@@ -2957,13 +2891,7 @@ Use the key_available method in conjunction with only the read_key method, not t
 <dl class="section remark"><dt>Remarks</dt><dd>Using the clear method is equivalent invoking the MS-DOS cls command in the command prompt window. </dd>
 <dd>
 When the Clear method is called, the cursor automatically scrolls to the top-left corner of the window and the contents of the screen buffer are set to blanks using the current foreground background colors. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example uses the clear method to clear the console before it executes a loop, prompts the user to select a foreground and background color and to enter a string to display. If the user chooses not to exit the program, the console's original foreground and background colors are restored and the Clear method is called again before re-executing the loop. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/list&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/char32_object&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example uses the clear method to clear the console before it executes a loop, prompts the user to select a foreground and background color and to enter a string to display. If the user chooses not to exit the program, the console's original foreground and background colors are restored and the Clear method is called again before re-executing the loop. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>console_clear_example {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
@@ -2980,7 +2908,7 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <div class="line">        <span class="keyword">auto</span> new_fore_color = console_color::white;</div>
 <div class="line">        <span class="keyword">auto</span> new_back_color = console_color::black;</div>
 <div class="line">        </div>
-<div class="line">        <span class="keyword">auto</span> fore_color_selection = get_key_press(<span class="stringliteral">&quot;Select Text Color (B for Blue, R for Red, Y for Yellow): &quot;</span>, <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;char32_t&gt;</a> { <span class="charliteral">&#39;B&#39;</span>, <span class="charliteral">&#39;R&#39;</span>, <span class="charliteral">&#39;Y&#39;</span> });</div>
+<div class="line">        <span class="keyword">auto</span> fore_color_selection = get_key_press(<span class="stringliteral">&quot;Select Text Color (B for Blue, R for Red, Y for Yellow): &quot;</span>, list&lt;char32_t&gt; { <span class="charliteral">&#39;B&#39;</span>, <span class="charliteral">&#39;R&#39;</span>, <span class="charliteral">&#39;Y&#39;</span> });</div>
 <div class="line">        <span class="keywordflow">switch</span> (fore_color_selection) {</div>
 <div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;B&#39;</span>:</div>
 <div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;b&#39;</span>: new_fore_color = console_color::dark_blue; <span class="keywordflow">break</span>;</div>
@@ -2990,7 +2918,7 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;y&#39;</span>: new_fore_color = console_color::dark_yellow; <span class="keywordflow">break</span>;</div>
 <div class="line">        }</div>
 <div class="line">        </div>
-<div class="line">        <span class="keyword">auto</span> back_color_selection = get_key_press(<span class="stringliteral">&quot;Select Background Color (W for White, G for Green, M for Magenta): &quot;</span>, <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;char32_t&gt;</a> { <span class="charliteral">&#39;W&#39;</span>, <span class="charliteral">&#39;G&#39;</span>, <span class="charliteral">&#39;M&#39;</span> });</div>
+<div class="line">        <span class="keyword">auto</span> back_color_selection = get_key_press(<span class="stringliteral">&quot;Select Background Color (W for White, G for Green, M for Magenta): &quot;</span>, list&lt;char32_t&gt; { <span class="charliteral">&#39;W&#39;</span>, <span class="charliteral">&#39;G&#39;</span>, <span class="charliteral">&#39;M&#39;</span> });</div>
 <div class="line">        <span class="keywordflow">switch</span> (back_color_selection) {</div>
 <div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;W&#39;</span>:</div>
 <div class="line">          <span class="keywordflow">case</span> <span class="charliteral">&#39;w&#39;</span>: new_back_color = console_color::white; <span class="keywordflow">break</span>;</div>
@@ -3008,7 +2936,7 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <div class="line">        console::background_color(new_back_color);</div>
 <div class="line">        console::write_line(text_to_display);</div>
 <div class="line">        console::write_line();</div>
-<div class="line">        <span class="keywordflow">if</span> (char32_object::to_upper(get_key_press(<span class="stringliteral">&quot;Display another message (Y/N): &quot;</span>, <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;char32_t&gt;</a> { <span class="charliteral">&#39;Y&#39;</span>, <span class="charliteral">&#39;N&#39;</span> })) == <span class="charliteral">&#39;N&#39;</span>)</div>
+<div class="line">        <span class="keywordflow">if</span> (char32_object::to_upper(get_key_press(<span class="stringliteral">&quot;Display another message (Y/N): &quot;</span>, list&lt;char32_t&gt; { <span class="charliteral">&#39;Y&#39;</span>, <span class="charliteral">&#39;N&#39;</span> })) == <span class="charliteral">&#39;N&#39;</span>)</div>
 <div class="line">          continue_flag = <span class="keyword">false</span>;</div>
 <div class="line">          </div>
 <div class="line">        <span class="comment">// Restore the default settings and clear the screen.</span></div>
@@ -3019,8 +2947,8 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">char32_t</span> get_key_press(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; msg, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;char32_t&gt;</a>&amp; valid_chars) {</div>
-<div class="line">      <span class="keyword">auto</span> key_pressed = <a class="code hl_class" href="classxtd_1_1console__key__info.html">console_key_info</a> {};</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">char32_t</span> get_key_press(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; msg, <span class="keyword">const</span> list&lt;char32_t&gt;&amp; valid_chars) {</div>
+<div class="line">      <span class="keyword">auto</span> key_pressed = console_key_info {};</div>
 <div class="line">      <span class="keyword">auto</span> valid = <span class="keyword">false</span>;</div>
 <div class="line">      </div>
 <div class="line">      console::write_line();</div>
@@ -3028,7 +2956,7 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <div class="line">        console::write(msg);</div>
 <div class="line">        key_pressed = console::read_key();</div>
 <div class="line">        console::write_line();</div>
-<div class="line">        <span class="keywordflow">if</span> (std::find(valid_chars.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#a17d9001d0282c327e7cfcffa8ada02a8">begin</a>(), valid_chars.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#a3854f8170419af3c496d0bdda60bb2c9">end</a>(), char32_object::to_upper(key_pressed.key_char())) != valid_chars.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#a3854f8170419af3c496d0bdda60bb2c9">end</a>())</div>
+<div class="line">        <span class="keywordflow">if</span> (std::find(valid_chars.begin(), valid_chars.end(), char32_object::to_upper(key_pressed.key_char())) != valid_chars.end())</div>
 <div class="line">          valid = <span class="keyword">true</span>;</div>
 <div class="line">          </div>
 <div class="line">      } <span class="keywordflow">while</span> (!valid);</div>
@@ -3038,15 +2966,9 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(console_clear_example::program::main);</div>
-<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array&lt; xtd::string &gt;</a></div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a17d9001d0282c327e7cfcffa8ada02a8"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#a17d9001d0282c327e7cfcffa8ada02a8">xtd::collections::generic::list::begin</a></div><div class="ttdeci">const_iterator begin() const noexcept override</div><div class="ttdoc">Returns an iterator to the first element of the enumerable.</div><div class="ttdef"><b>Definition</b> list.hpp:253</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a3854f8170419af3c496d0bdda60bb2c9"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#a3854f8170419af3c496d0bdda60bb2c9">xtd::collections::generic::list::end</a></div><div class="ttdeci">const_iterator end() const noexcept override</div><div class="ttdoc">Returns an iterator to the element following the last element of the enumerable.</div><div class="ttdef"><b>Definition</b> list.hpp:366</div></div>
-<div class="ttc" id="aclassxtd_1_1console__key__info_html"><div class="ttname"><a href="classxtd_1_1console__key__info.html">xtd::console_key_info</a></div><div class="ttdoc">Specifies the standard keys on a console.</div><div class="ttdef"><b>Definition</b> console_key_info.hpp:24</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 </div><!-- fragment --> The example relies on a get_key_press method to validate the user's selection of a foreground and background color. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> orig_row = 0;</div>
 <div class="line"><span class="keyword">auto</span> orig_col = 0;</div>
@@ -3255,11 +3177,7 @@ Note that you will not get a property value of -1 unless you perform one of the 
 which signals the end-of-file condition; press an equivalent key that signals the end-of-file condition, such as the F6 function key in Windows; or redirect the input stream to a source, </dd>
 <dd>
 such as a text file, that has an actual end-of-file character. </dd></dl>
-<dl class="section user"><dt>Example</dt><dd>The following example demonstrates the Read method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/char_object&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/convert&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Example</dt><dd>The following example demonstrates the Read method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> m1 = <span class="stringliteral">&quot;\nType a string of text then press Enter. &quot;</span></div>
@@ -3279,7 +3197,7 @@ such as a text file, that has an actual end-of-file character. </dd></dl>
 <div class="line">          <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(m1);</div>
 <div class="line">      } <span class="keywordflow">else</span></div>
 <div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(m2, ch, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>);</div>
-<div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1overflow__exception.html">overflow_exception</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
+<div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> overflow_exception&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} Value read = {1}.&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.message(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>);</div>
 <div class="line">      ch = <a class="code hl_variable" href="classxtd_1_1box__integer.html#abacf9950b09d5d214dcfa6205559785d">char_object::min_value</a>;</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(m1);</div>
@@ -3328,7 +3246,6 @@ such as a text file, that has an actual end-of-file character. </dd></dl>
 <div class="ttc" id="aclassxtd_1_1box__integer_html_abacf9950b09d5d214dcfa6205559785d"><div class="ttname"><a href="classxtd_1_1box__integer.html#abacf9950b09d5d214dcfa6205559785d">xtd::box_integer::min_value</a></div><div class="ttdeci">static constexpr type_t min_value</div><div class="ttdoc">Represents the smallest possible value of type_t. This field is constant.</div><div class="ttdef"><b>Definition</b> box_integer.hpp:70</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ab89501d1732741a45d43b62ed28ef7b9"><div class="ttname"><a href="classxtd_1_1console.html#ab89501d1732741a45d43b62ed28ef7b9">xtd::console::read</a></div><div class="ttdeci">static int32 read()</div><div class="ttdoc">Reads the next character from the standard input stream.</div></div>
 <div class="ttc" id="aclassxtd_1_1convert_html_a4ef8aa91ca84732b9526c238323d1206"><div class="ttname"><a href="classxtd_1_1convert.html#a4ef8aa91ca84732b9526c238323d1206">xtd::convert::to_char32</a></div><div class="ttdeci">static char32 to_char32(xtd::any value)</div><div class="ttdoc">Convert xtd::any to char32.</div></div>
-<div class="ttc" id="aclassxtd_1_1overflow__exception_html"><div class="ttname"><a href="classxtd_1_1overflow__exception.html">xtd::overflow_exception</a></div><div class="ttdoc">The exception that is thrown when an arithmetic, casting, or conversion operation in a checked contex...</div><div class="ttdef"><b>Definition</b> overflow_exception.hpp:18</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -3767,9 +3684,7 @@ width or height is greater than the largest possible window width or height for 
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the SetWindowSize method, and the WindowWidth and WindowHeight properties. You must run the example to see the full effect of changing the console window size. The example reports the dimensions of a console window set to 85 columns and 43 rows, then waits for a key press. When any key is pressed, the dimensions of the console window are halved, the new dimensions are reported, and the example waits for another key press. Finally, when any key is pressed the console window is restored to its original dimensions and the example terminates. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the SetWindowSize method, and the WindowWidth and WindowHeight properties. You must run the example to see the full effect of changing the console window size. The example reports the dimensions of a console window set to 85 columns and 43 rows, then waits for a key press. When any key is pressed, the dimensions of the console window are halved, the new dimensions are reported, and the example waits for another key press. Finally, when any key is pressed the console window is restored to its original dimensions and the example terminates. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> orig_width = 0, width = 0;</div>
@@ -4079,10 +3994,7 @@ template&lt;class ... args_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Gets the standard input stream. A std::basic_istream&lt;char_t&gt; that represents the standard input stream. </p>
-<dl class="section user"><dt>Examples</dt><dd>The following sample illustrates the use of the in property. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following sample illustrates the use of the in property. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span>&amp; <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> = <a class="code hl_variable" href="classxtd_1_1console.html#a7c103233b3e74cb63538b48616b7fd02">console::in</a>;</div>
@@ -4126,10 +4038,7 @@ template&lt;class ... args_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output stream. </p>
-<dl class="section user"><dt>Examples</dt><dd>The following sample illustrates the use of the out property. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following sample illustrates the use of the out property. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span>&amp; <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> = <a class="code hl_variable" href="classxtd_1_1console.html#a7c103233b3e74cb63538b48616b7fd02">console::in</a>;</div>
@@ -4198,7 +4107,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 19 2025 12:06:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 28 2025 19:34:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

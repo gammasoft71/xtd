@@ -84,21 +84,17 @@ $(function() {
 <div class="contents">
 <p>Shows how to use trace::cassert_ method.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#define TRACE</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/trace&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Uncomment following lines to remove assert dialog</span></div>
-<div class="line">  <span class="comment">//for (auto listener : trace::listeners())</span></div>
-<div class="line">  <span class="comment">//  if (is&lt;default_trace_listener&gt;(listener))</span></div>
-<div class="line">  <span class="comment">//    as&lt;default_trace_listener&gt;(listener)-&gt;assert_ui_enabled(false);</span></div>
+<div class="line">  <span class="comment">//for (auto listener : diagnostics::trace::listeners())</span></div>
+<div class="line">  <span class="comment">//  if (is&lt;diagnostics::default_trace_listener&gt;(listener))</span></div>
+<div class="line">  <span class="comment">//    as&lt;diagnostics::default_trace_listener&gt;(listener)-&gt;assert_ui_enabled(false);</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">auto</span> index = 0;</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Start application&quot;</span>);</div>
-<div class="line">  trace::cassert(index &gt; 0, <span class="stringliteral">&quot;index must be greater than 0&quot;</span>);</div>
+<div class="line">  diagnostics::trace::cassert(index &gt; 0, <span class="stringliteral">&quot;index must be greater than 0&quot;</span>);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;End application&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -116,13 +112,11 @@ $(function() {
 <div class="line"><span class="comment">// &gt; If user clicks assert dialog &#39;Ignore&#39; button:</span></div>
 <div class="line"><span class="comment">// Start application</span></div>
 <div class="line"><span class="comment">// End application</span></div>
-<div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 19 2025 12:06:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 28 2025 19:34:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

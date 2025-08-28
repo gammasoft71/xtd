@@ -130,21 +130,16 @@ To activate your code if TRACE is defined, you must enclose calls to the methods
 <dl class="section user"><dt>Examples</dt><dd>The following example uses debug to indicate the beginning and the end of a program's execution. The example also uses the <a class="el" href="classxtd_1_1diagnostics_1_1debug.html#a1e85e29f94c54388d35a9b24d16a52c1" title="Increases the current indent_level by one.">debug::indent</a> and <a class="el" href="classxtd_1_1diagnostics_1_1debug.html#adb62c53bf313739efafec28bc0739b65" title="Decreases the current indent_level by one.">debug::unindent</a> methods to distinguish the tracing output. <div class="fragment"><div class="line"><span class="comment">// Specify -DTRACE when compiling or add #define TRACE in the source file.</span></div>
 <div class="line"><span class="preprocessor">#define DEBUG</span></div>
 <div class="line"> </div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/trace&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/ostream_trace_listener&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace.html#a8e4635956642fba7833b8bbdff59a0c9">trace::listeners</a>().<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#adf868f38f4e81d03746e453bab03f4c5">push_back</a>(new_ptr&lt;ostream_trace_listener&gt;(<a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a>));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace.html#a315726e6dae274cc31aa0e37dd45196b">trace::auto_flush</a>(<span class="keyword">true</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace.html#adcd7c63e63e1ba262d5c338df2f62a29">trace::indent</a>();</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace.html#a0cf0960a97a2e45829917c931e1cf9bb">trace::write_line</a>(<span class="stringliteral">&quot;Entering Main&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace.html#a8e4635956642fba7833b8bbdff59a0c9">diagnostics::trace::listeners</a>().<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#adf868f38f4e81d03746e453bab03f4c5">push_back</a>(new_ptr&lt;diagnostics::ostream_trace_listener&gt;(<a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a>));</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace.html#a315726e6dae274cc31aa0e37dd45196b">diagnostics::trace::auto_flush</a>(<span class="keyword">true</span>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace.html#adcd7c63e63e1ba262d5c338df2f62a29">diagnostics::trace::indent</a>();</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace.html#a0cf0960a97a2e45829917c931e1cf9bb">diagnostics::trace::write_line</a>(<span class="stringliteral">&quot;Entering Main&quot;</span>);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Hello World.&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace.html#a0cf0960a97a2e45829917c931e1cf9bb">trace::write_line</a>(<span class="stringliteral">&quot;Exiting Main&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace.html#ad98f4b992d8440e6e8e9e852c90f3183">trace::unindent</a>();</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace.html#a0cf0960a97a2e45829917c931e1cf9bb">diagnostics::trace::write_line</a>(<span class="stringliteral">&quot;Exiting Main&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace.html#ad98f4b992d8440e6e8e9e852c90f3183">diagnostics::trace::unindent</a>();</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -160,8 +155,6 @@ To activate your code if TRACE is defined, you must enclose calls to the methods
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1trace_html_a8e4635956642fba7833b8bbdff59a0c9"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1trace.html#a8e4635956642fba7833b8bbdff59a0c9">xtd::diagnostics::trace::listeners</a></div><div class="ttdeci">static listener_collection &amp; listeners() noexcept</div><div class="ttdoc">Gets the collection of listeners that is monitoring the trace output.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1trace_html_ad98f4b992d8440e6e8e9e852c90f3183"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1trace.html#ad98f4b992d8440e6e8e9e852c90f3183">xtd::diagnostics::trace::unindent</a></div><div class="ttdeci">static void unindent() noexcept</div><div class="ttdoc">Decreases the current indent_level by one.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1trace_html_adcd7c63e63e1ba262d5c338df2f62a29"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1trace.html#adcd7c63e63e1ba262d5c338df2f62a29">xtd::diagnostics::trace::indent</a></div><div class="ttdeci">static void indent() noexcept</div><div class="ttdoc">Increases the current indent_level by one.</div></div>
-<div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
@@ -1748,7 +1741,7 @@ This method calls the write method of the trace listener. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>By default, the output is written to an instance of <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">default_trace_listener</a>. </dd>
 <dd>
 This method calls the write method of the trace listener. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="mouse_events_8cpp-example.html#a2">mouse_events.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="mouse_events_8cpp-example.html#a1">mouse_events.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -2098,7 +2091,7 @@ This method calls the write method of the trace listener. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 19 2025 12:06:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 28 2025 19:34:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

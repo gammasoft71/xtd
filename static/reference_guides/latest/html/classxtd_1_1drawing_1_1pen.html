@@ -109,7 +109,7 @@ Inheritance diagram for xtd::drawing::pen:</div>
 </div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → <a class="el" href="classxtd_1_1drawing_1_1pen.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::pen</a> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1drawing.html" title="The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...">xtd::drawing</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing.html" title="The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...">xtd.drawing</a> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="animation_8cpp-example.html#_a9">animation.cpp</a>, <a class="el" href="draw_ellipse_8cpp-example.html#_a2">draw_ellipse.cpp</a>, <a class="el" href="draw_line_8cpp-example.html#_a2">draw_line.cpp</a>, <a class="el" href="draw_point_8cpp-example.html#_a4">draw_point.cpp</a>, <a class="el" href="draw_rectangle_8cpp-example.html#_a2">draw_rectangle.cpp</a>, <a class="el" href="draw_rounded_rectangle_8cpp-example.html#_a2">draw_rounded_rectangle.cpp</a>, <a class="el" href="fill_ellipse_8cpp-example.html#_a4">fill_ellipse.cpp</a>, <a class="el" href="fill_rectangle_8cpp-example.html#_a4">fill_rectangle.cpp</a>, <a class="el" href="fill_rounded_rectangle_8cpp-example.html#_a4">fill_rounded_rectangle.cpp</a>, <a class="el" href="form_paint_8cpp-example.html#_a8">form_paint.cpp</a>, <a class="el" href="graph_control_8cpp-example.html#_a11">graph_control.cpp</a>, <a class="el" href="graphics_8cpp-example.html#_a12">graphics.cpp</a>, <a class="el" href="minesweeper_8cpp-example.html#_a17">minesweeper.cpp</a>, <a class="el" href="owner_button_8cpp-example.html#_a8">owner_button.cpp</a>, and <a class="el" href="user_control_8cpp-example.html#_a7">user_control.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="form_paint_8cpp-example.html#_a6">form_paint.cpp</a>, and <a class="el" href="graphics_8cpp-example.html#_a12">graphics.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
@@ -691,8 +691,6 @@ The length of each dash and space in the dash pattern is the product of the elem
 <p>Gets the style used for dashed lines drawn with this <a class="el" href="classxtd_1_1drawing_1_1pen.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::pen</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="group__xtd__drawing.html#gaf3c876b96fe581fd839e9586377f02b8" title="Specifies the style of dashed lines drawn with a xtd::drawing::pen object.">xtd::drawing::drawing_2d::dash_style</a> that represents the style used for dashed lines drawn with this <a class="el" href="classxtd_1_1drawing_1_1pen.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::pen</a>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A value of <a class="el" href="group__xtd__drawing.html#ggaf3c876b96fe581fd839e9586377f02b8a8b9035807842a4e4dbe009f3f1478127" title="Specifies a user-defined custom dash style.">xtd::drawing::drawing_2d::dash_style::custom</a> for this property specifies that a custom pattern of dashes and spaces, defined by the xtd::drawing::pendash_pattern property, makes up lines drawn with this <a class="el" href="classxtd_1_1drawing_1_1pen.html" title="Defines an object used to draw lines and curves. This class cannot be inherited.">xtd::drawing::pen</a>. If the value of this property is <a class="el" href="group__xtd__drawing.html#ggaf3c876b96fe581fd839e9586377f02b8a8b9035807842a4e4dbe009f3f1478127" title="Specifies a user-defined custom dash style.">xtd::drawing::drawing_2d::dash_style::custom</a> and the value of the <a class="el" href="classxtd_1_1drawing_1_1pen.html#ae81308bd19d78fd842226db10470182b" title="Gets an array of custom dashes and spaces.">xtd::drawing::pen::dash_pattern</a> property is empty, the pen draws solid lines. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="draw_ellipse_8cpp-example.html#a3">draw_ellipse.cpp</a>, <a class="el" href="draw_line_8cpp-example.html#a3">draw_line.cpp</a>, <a class="el" href="draw_rectangle_8cpp-example.html#a3">draw_rectangle.cpp</a>, and <a class="el" href="draw_rounded_rectangle_8cpp-example.html#a3">draw_rounded_rectangle.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1203,8 +1201,6 @@ If the miter length of the join of the intersection exceeds the limit of the joi
 <dl class="section return"><dt>Returns</dt><dd>A string that represents the current object. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates what to_string returns. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>examples {</div>
 <div class="line">  <span class="keyword">namespace </span>object_test {</div>
 <div class="line">    <span class="keyword">class </span>object1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">object</a> {</div>
@@ -1213,13 +1209,13 @@ If the miter length of the join of the intersection exceeds the limit of the joi
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr&lt;object&gt;</a> obj1 = new_ptr&lt;examples::object_test::object1&gt;();</div>
+<div class="line">  ptr&lt;object&gt; obj1 = new_ptr&lt;examples::object_test::object1&gt;();</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(obj1-&gt;to_string());</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr&lt;object&gt;</a> obj2 = new_ptr&lt;date_time&gt;(1971, 1, 5, 23, 5, 0);</div>
+<div class="line">  ptr&lt;object&gt; obj2 = new_ptr&lt;date_time&gt;(1971, 1, 5, 23, 5, 0);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(obj2-&gt;to_string());</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr&lt;object&gt;</a> obj3 = new_ptr&lt;boolean_object&gt;();</div>
+<div class="line">  ptr&lt;object&gt; obj3 = new_ptr&lt;boolean_object&gt;();</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(obj3-&gt;to_string());</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -1229,8 +1225,6 @@ If the miter length of the join of the intersection exceeds the limit of the joi
 <div class="line"><span class="comment">// Tue Jan  5 23:05:00 1971</span></div>
 <div class="line"><span class="comment">// false</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="agroup__types_html_ga14f390dd1d27bfab4cc2f26c1502c8ec"><div class="ttname"><a href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">xtd::ptr</a></div><div class="ttdeci">xtd::sptr&lt; type_t &gt; ptr</div><div class="ttdoc">The xtd::ptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> ptr.hpp:27</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#af2d19ef177db62351b58a42f22138dbe">xtd::object</a>.</p>
@@ -1244,7 +1238,7 @@ If the miter length of the join of the intersection exceeds the limit of the joi
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 19 2025 12:06:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 28 2025 19:34:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

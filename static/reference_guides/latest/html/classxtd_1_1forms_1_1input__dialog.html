@@ -132,13 +132,7 @@ Inheritance diagram for xtd::forms::input_dialog:</div>
   </td></tr>
 </table>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1input__dialog.html" title="Represents a common dialog box that displays input dialog.">input_dialog</a> dialog. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/input_dialog&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1input__dialog.html" title="Represents a common dialog box that displays input dialog.">input_dialog</a> dialog. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>input_dialog_example {</div>
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
@@ -150,8 +144,8 @@ Inheritance diagram for xtd::forms::input_dialog:</div>
 <div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.location({10, 10});</div>
 <div class="line">      button1.text(<span class="stringliteral">&quot;Text...&quot;</span>);</div>
 <div class="line">      button1.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        <span class="keyword">auto</span> dialog = <a class="code hl_class" href="classxtd_1_1forms_1_1input__dialog.html">input_dialog</a> {};</div>
-<div class="line">        dialog.<a class="code hl_function" href="classxtd_1_1forms_1_1input__dialog.html#abec1d19bb38175a2ffd0b3bb7f82fefb">text</a>(<span class="stringliteral">&quot;Caption text&quot;</span>);</div>
+<div class="line">        <span class="keyword">auto</span> dialog = input_dialog {};</div>
+<div class="line">        dialog.text(<span class="stringliteral">&quot;Caption text&quot;</span>);</div>
 <div class="line">        dialog.message(<span class="stringliteral">&quot;Message text&quot;</span>);</div>
 <div class="line">        dialog.value(label1.text());</div>
 <div class="line">        <span class="keywordflow">if</span> (dialog.show_sheet_dialog(*<span class="keyword">this</span>) == dialog_result::ok)</div>
@@ -164,8 +158,8 @@ Inheritance diagram for xtd::forms::input_dialog:</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label1;</div>
+<div class="line">    <a class="code hl_typedef" href="group__style__sheets.html#ga20f9c51904cab0da365efa6c57b84908">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>;</div>
+<div class="line">    <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> label1;</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -173,24 +167,14 @@ Inheritance diagram for xtd::forms::input_dialog:</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(input_dialog_example::form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.hpp:49</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1input__dialog_html"><div class="ttname"><a href="classxtd_1_1forms_1_1input__dialog.html">xtd::forms::input_dialog</a></div><div class="ttdoc">Represents a common dialog box that displays input dialog.</div><div class="ttdef"><b>Definition</b> input_dialog.hpp:38</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1input__dialog_html_abec1d19bb38175a2ffd0b3bb7f82fefb"><div class="ttname"><a href="classxtd_1_1forms_1_1input__dialog.html#abec1d19bb38175a2ffd0b3bb7f82fefb">xtd::forms::input_dialog::text</a></div><div class="ttdeci">xtd::string text() const noexcept</div><div class="ttdoc">Gets the dialog caption text.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1label_html"><div class="ttname"><a href="classxtd_1_1forms_1_1label.html">xtd::forms::label</a></div><div class="ttdoc">Represents a standard Windows label.</div><div class="ttdef"><b>Definition</b> label.hpp:38</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
+<div class="ttc" id="agroup__style__sheets_html_ga0095c55e57882e69ada99760a885e216"><div class="ttname"><a href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">xtd::forms::style_sheets::label</a></div><div class="ttdeci">xtd::forms::style_sheets::control label</div><div class="ttdoc">The label data allows you to specify the box of a label control.</div><div class="ttdef"><b>Definition</b> label.hpp:25</div></div>
+<div class="ttc" id="agroup__style__sheets_html_ga20f9c51904cab0da365efa6c57b84908"><div class="ttname"><a href="group__style__sheets.html#ga20f9c51904cab0da365efa6c57b84908">xtd::forms::style_sheets::button</a></div><div class="ttdeci">xtd::forms::style_sheets::control button</div><div class="ttdoc">The buttton data allows you to specify the box of a button control.</div><div class="ttdef"><b>Definition</b> button.hpp:25</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9"><div class="ttname"><a href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">xtd::forms::message_dialog_default_button::button1</a></div><div class="ttdeci">@ button1</div><div class="ttdoc">The first button on the message box is the default button.</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1input__dialog.html" title="Represents a common dialog box that displays input dialog.">input_dialog</a> dialog with multiline. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/input_dialog&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1input__dialog.html" title="Represents a common dialog box that displays input dialog.">input_dialog</a> dialog with multiline. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>input_dialog_multiline_example {</div>
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
@@ -204,13 +188,13 @@ Inheritance diagram for xtd::forms::input_dialog:</div>
 <div class="line">      button1.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">      button1.text(<span class="stringliteral">&quot;Lines...&quot;</span>);</div>
 <div class="line">      button1.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1forms_1_1input__dialog.html">input_dialog</a> <a class="code hl_class" href="classxtd_1_1forms_1_1input__dialog.html">input_dialog</a>;</div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1forms_1_1input__dialog.html">input_dialog</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1input__dialog.html#a288d302970bd4dd9aecef7b41b8df15f">multiline</a>(<span class="keyword">true</span>);</div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1forms_1_1input__dialog.html">input_dialog</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1input__dialog.html#a76d7807ed178a1c92c6352797cdbedae">word_wrap</a>(<span class="keyword">false</span>);</div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1forms_1_1input__dialog.html">input_dialog</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1input__dialog.html#abec1d19bb38175a2ffd0b3bb7f82fefb">text</a>(<span class="stringliteral">&quot;Enter lines&quot;</span>);</div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1forms_1_1input__dialog.html">input_dialog</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1input__dialog.html#a6aed625797541e065e681c01a1c25c62">value</a>(label1.text());</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code hl_class" href="classxtd_1_1forms_1_1input__dialog.html">input_dialog</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1common__dialog.html#a2ebbe192a374a0f84ecbb4b96e60b8ed">show_dialog</a>(*<span class="keyword">this</span>) == dialog_result::ok)</div>
-<div class="line">          label1.text(<a class="code hl_class" href="classxtd_1_1forms_1_1input__dialog.html">input_dialog</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1input__dialog.html#a6aed625797541e065e681c01a1c25c62">value</a>());</div>
+<div class="line">        input_dialog input_dialog;</div>
+<div class="line">        input_dialog.multiline(<span class="keyword">true</span>);</div>
+<div class="line">        input_dialog.word_wrap(<span class="keyword">false</span>);</div>
+<div class="line">        input_dialog.text(<span class="stringliteral">&quot;Enter lines&quot;</span>);</div>
+<div class="line">        input_dialog.value(label1.text());</div>
+<div class="line">        <span class="keywordflow">if</span> (input_dialog.show_dialog(*<span class="keyword">this</span>) == dialog_result::ok)</div>
+<div class="line">          label1.text(input_dialog.value());</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      label1.location({10, 50});</div>
@@ -219,28 +203,16 @@ Inheritance diagram for xtd::forms::input_dialog:</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label1;</div>
+<div class="line">    <a class="code hl_typedef" href="group__style__sheets.html#ga20f9c51904cab0da365efa6c57b84908">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>;</div>
+<div class="line">    <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> label1;</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(input_dialog_multiline_example::form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1common__dialog_html_a2ebbe192a374a0f84ecbb4b96e60b8ed"><div class="ttname"><a href="classxtd_1_1forms_1_1common__dialog.html#a2ebbe192a374a0f84ecbb4b96e60b8ed">xtd::forms::common_dialog::show_dialog</a></div><div class="ttdeci">xtd::forms::dialog_result show_dialog()</div><div class="ttdoc">Runs a common dialog box with a default owner.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1input__dialog_html_a288d302970bd4dd9aecef7b41b8df15f"><div class="ttname"><a href="classxtd_1_1forms_1_1input__dialog.html#a288d302970bd4dd9aecef7b41b8df15f">xtd::forms::input_dialog::multiline</a></div><div class="ttdeci">bool multiline() const noexcept</div><div class="ttdoc">Gets multiline status.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1input__dialog_html_a6aed625797541e065e681c01a1c25c62"><div class="ttname"><a href="classxtd_1_1forms_1_1input__dialog.html#a6aed625797541e065e681c01a1c25c62">xtd::forms::input_dialog::value</a></div><div class="ttdeci">xtd::string value() const noexcept</div><div class="ttdoc">Gets the value.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1input__dialog_html_a76d7807ed178a1c92c6352797cdbedae"><div class="ttname"><a href="classxtd_1_1forms_1_1input__dialog.html#a76d7807ed178a1c92c6352797cdbedae">xtd::forms::input_dialog::word_wrap</a></div><div class="ttdeci">bool word_wrap() const noexcept</div><div class="ttdoc">Gets word wrap status.</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1input__dialog.html" title="Represents a common dialog box that displays input dialog.">input_dialog</a> dialog with password. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/input_dialog&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1input__dialog.html" title="Represents a common dialog box that displays input dialog.">input_dialog</a> dialog with password. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>input_dialog_password_example {</div>
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
@@ -253,13 +225,13 @@ Inheritance diagram for xtd::forms::input_dialog:</div>
 <div class="line">      button1.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">      button1.text(<span class="stringliteral">&quot;Password...&quot;</span>);</div>
 <div class="line">      button1.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1forms_1_1input__dialog.html">input_dialog</a> <a class="code hl_class" href="classxtd_1_1forms_1_1input__dialog.html">input_dialog</a>;</div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1forms_1_1input__dialog.html">input_dialog</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1input__dialog.html#abec1d19bb38175a2ffd0b3bb7f82fefb">text</a>(<span class="stringliteral">&quot;User password&quot;</span>);</div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1forms_1_1input__dialog.html">input_dialog</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1input__dialog.html#a2c5dcebd425d9f4b4e9e6580b1e5f7d9">message</a>(<span class="stringliteral">&quot;user: admin&quot;</span>);</div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1forms_1_1input__dialog.html">input_dialog</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1input__dialog.html#a9ca6dce05277bff2c4d67c9e30648433">use_system_password_char</a>(<span class="keyword">true</span>);</div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1forms_1_1input__dialog.html">input_dialog</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1input__dialog.html#a6aed625797541e065e681c01a1c25c62">value</a>(label1.text());</div>
-<div class="line">        <span class="keywordflow">if</span> (<a class="code hl_class" href="classxtd_1_1forms_1_1input__dialog.html">input_dialog</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1common__dialog.html#a8ec3635d127a89afd9a9140e272db76e">show_sheet_dialog</a>(*<span class="keyword">this</span>) == dialog_result::ok)</div>
-<div class="line">          label1.text(<a class="code hl_class" href="classxtd_1_1forms_1_1input__dialog.html">input_dialog</a>.<a class="code hl_function" href="classxtd_1_1forms_1_1input__dialog.html#a6aed625797541e065e681c01a1c25c62">value</a>());</div>
+<div class="line">        input_dialog input_dialog;</div>
+<div class="line">        input_dialog.text(<span class="stringliteral">&quot;User password&quot;</span>);</div>
+<div class="line">        input_dialog.message(<span class="stringliteral">&quot;user: admin&quot;</span>);</div>
+<div class="line">        input_dialog.use_system_password_char(<span class="keyword">true</span>);</div>
+<div class="line">        input_dialog.value(label1.text());</div>
+<div class="line">        <span class="keywordflow">if</span> (input_dialog.show_sheet_dialog(*<span class="keyword">this</span>) == dialog_result::ok)</div>
+<div class="line">          label1.text(input_dialog.value());</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      label1.location({10, 50});</div>
@@ -268,20 +240,15 @@ Inheritance diagram for xtd::forms::input_dialog:</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> label1;</div>
+<div class="line">    <a class="code hl_typedef" href="group__style__sheets.html#ga20f9c51904cab0da365efa6c57b84908">button</a> <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>;</div>
+<div class="line">    <a class="code hl_typedef" href="group__style__sheets.html#ga0095c55e57882e69ada99760a885e216">label</a> label1;</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(input_dialog_password_example::form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1common__dialog_html_a8ec3635d127a89afd9a9140e272db76e"><div class="ttname"><a href="classxtd_1_1forms_1_1common__dialog.html#a8ec3635d127a89afd9a9140e272db76e">xtd::forms::common_dialog::show_sheet_dialog</a></div><div class="ttdeci">xtd::forms::dialog_result show_sheet_dialog(const iwin32_window &amp;owner)</div><div class="ttdoc">Runs a common dialog box with the specified owner.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1input__dialog_html_a2c5dcebd425d9f4b4e9e6580b1e5f7d9"><div class="ttname"><a href="classxtd_1_1forms_1_1input__dialog.html#a2c5dcebd425d9f4b4e9e6580b1e5f7d9">xtd::forms::input_dialog::message</a></div><div class="ttdeci">xtd::string message() const noexcept</div><div class="ttdoc">Gets the text message.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1input__dialog_html_a9ca6dce05277bff2c4d67c9e30648433"><div class="ttname"><a href="classxtd_1_1forms_1_1input__dialog.html#a9ca6dce05277bff2c4d67c9e30648433">xtd::forms::input_dialog::use_system_password_char</a></div><div class="ttdeci">bool use_system_password_char() const noexcept</div><div class="ttdoc">Gets use system password char status.</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="input_dialog_8cpp-example.html#_a2">input_dialog.cpp</a>, <a class="el" href="input_dialog_multiline_8cpp-example.html#_a2">input_dialog_multiline.cpp</a>, and <a class="el" href="input_dialog_password_8cpp-example.html#_a2">input_dialog_password.cpp</a>.</dd>
-</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a0c9f2d5095d6c4485bbf0040ff36f48a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1input__dialog.html#a0c9f2d5095d6c4485bbf0040ff36f48a">input_dialog</a> ()</td></tr>
@@ -592,8 +559,6 @@ Additional Inherited Members</h2></td></tr>
 <p>Gets multiline status. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if dialog text box is multiline; otherwise <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The default value is <code>false</code>. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="input_dialog_multiline_8cpp-example.html#a3">input_dialog_multiline.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -650,8 +615,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the text message. </p>
 <dl class="section return"><dt>Returns</dt><dd>The text message. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="input_dialog_password_8cpp-example.html#a4">input_dialog_password.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -707,8 +670,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the dialog caption text. </p>
 <dl class="section return"><dt>Returns</dt><dd>The current dialog caption text. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="input_dialog_8cpp-example.html#a3">input_dialog.cpp</a>, <a class="el" href="input_dialog_multiline_8cpp-example.html#a5">input_dialog_multiline.cpp</a>, and <a class="el" href="input_dialog_password_8cpp-example.html#a3">input_dialog_password.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -765,8 +726,6 @@ Additional Inherited Members</h2></td></tr>
 <p>Gets use system password char status. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if dialog text box use system password char status; otherwise <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The default value is <code>false</code>. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="input_dialog_password_8cpp-example.html#a5">input_dialog_password.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -823,8 +782,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the value. </p>
 <dl class="section return"><dt>Returns</dt><dd>The value. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="input_dialog_multiline_8cpp-example.html#a6">input_dialog_multiline.cpp</a>, and <a class="el" href="input_dialog_password_8cpp-example.html#a6">input_dialog_password.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -881,8 +838,6 @@ Additional Inherited Members</h2></td></tr>
 <p>Gets word wrap status. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if dialog text box is word wrap; otherwise <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The default value is <code>true</code>. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="input_dialog_multiline_8cpp-example.html#a4">input_dialog_multiline.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1025,7 +980,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 19 2025 12:06:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 28 2025 19:34:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

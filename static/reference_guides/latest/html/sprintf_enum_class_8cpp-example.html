@@ -85,8 +85,6 @@ $(function() {
 <p>Shows how to use <a class="el" href="group__format__parse.html#ga06d4b243f60f84e512a0fb001f40f066" title="Writes the text representation of the specified arguments list, to basic_string using the specified f...">xtd::ustring::sprintf</a> method.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"> </div>
 <div class="line"><span class="keyword">enum class</span> week_day {</div>
 <div class="line">  monday,</div>
 <div class="line">  tuesday,</div>
@@ -102,17 +100,17 @@ $(function() {
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main() {</div>
-<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%s&quot;</span>, <a id="_a1" name="_a1"></a><a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a> {week_day::saturday}.<a id="a2" name="a2"></a><a class="code hl_function" href="structxtd_1_1enum__object.html#a773dd7848c4fc85bc2270963f649e230">to_string</a>(<span class="stringliteral">&quot;&quot;</span>)) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;0b%s&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a> {week_day::saturday}.<a class="code hl_function" href="structxtd_1_1enum__object.html#a773dd7848c4fc85bc2270963f649e230">to_string</a>(<span class="stringliteral">&quot;b&quot;</span>)) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;0b%s&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a> {week_day::saturday}.<a class="code hl_function" href="structxtd_1_1enum__object.html#a773dd7848c4fc85bc2270963f649e230">to_string</a>(<span class="stringliteral">&quot;B&quot;</span>)) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;0b%s&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a> {week_day::saturday}.<a class="code hl_function" href="structxtd_1_1enum__object.html#a773dd7848c4fc85bc2270963f649e230">to_string</a>(<span class="stringliteral">&quot;d&quot;</span>)) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%s&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a> {week_day::saturday}.<a class="code hl_function" href="structxtd_1_1enum__object.html#a773dd7848c4fc85bc2270963f649e230">to_string</a>(<span class="stringliteral">&quot;D&quot;</span>)) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%s&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a> {week_day::saturday}.<a class="code hl_function" href="structxtd_1_1enum__object.html#a773dd7848c4fc85bc2270963f649e230">to_string</a>(<span class="stringliteral">&quot;g&quot;</span>)) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%s&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a> {week_day::saturday}.<a class="code hl_function" href="structxtd_1_1enum__object.html#a773dd7848c4fc85bc2270963f649e230">to_string</a>(<span class="stringliteral">&quot;G&quot;</span>)) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;0%s&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a> {week_day::saturday}.<a class="code hl_function" href="structxtd_1_1enum__object.html#a773dd7848c4fc85bc2270963f649e230">to_string</a>(<span class="stringliteral">&quot;o&quot;</span>)) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;0%s&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a> {week_day::saturday}.<a class="code hl_function" href="structxtd_1_1enum__object.html#a773dd7848c4fc85bc2270963f649e230">to_string</a>(<span class="stringliteral">&quot;O&quot;</span>)) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;0x%s&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a> {week_day::saturday}.<a class="code hl_function" href="structxtd_1_1enum__object.html#a773dd7848c4fc85bc2270963f649e230">to_string</a>(<span class="stringliteral">&quot;x&quot;</span>)) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;0x%s&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a> {week_day::saturday}.<a class="code hl_function" href="structxtd_1_1enum__object.html#a773dd7848c4fc85bc2270963f649e230">to_string</a>(<span class="stringliteral">&quot;X&quot;</span>)) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%s&quot;</span>, enum_object {week_day::saturday}.to_string(<span class="stringliteral">&quot;&quot;</span>)) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;0b%s&quot;</span>, enum_object {week_day::saturday}.to_string(<span class="stringliteral">&quot;b&quot;</span>)) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;0b%s&quot;</span>, enum_object {week_day::saturday}.to_string(<span class="stringliteral">&quot;B&quot;</span>)) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;0b%s&quot;</span>, enum_object {week_day::saturday}.to_string(<span class="stringliteral">&quot;d&quot;</span>)) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%s&quot;</span>, enum_object {week_day::saturday}.to_string(<span class="stringliteral">&quot;D&quot;</span>)) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%s&quot;</span>, enum_object {week_day::saturday}.to_string(<span class="stringliteral">&quot;g&quot;</span>)) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;%s&quot;</span>, enum_object {week_day::saturday}.to_string(<span class="stringliteral">&quot;G&quot;</span>)) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;0%s&quot;</span>, enum_object {week_day::saturday}.to_string(<span class="stringliteral">&quot;o&quot;</span>)) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;0%s&quot;</span>, enum_object {week_day::saturday}.to_string(<span class="stringliteral">&quot;O&quot;</span>)) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;0x%s&quot;</span>, enum_object {week_day::saturday}.to_string(<span class="stringliteral">&quot;x&quot;</span>)) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; string::sprintf(<span class="stringliteral">&quot;0x%s&quot;</span>, enum_object {week_day::saturday}.to_string(<span class="stringliteral">&quot;X&quot;</span>)) &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -129,15 +127,12 @@ $(function() {
 <div class="line"><span class="comment">// 0x5</span></div>
 <div class="line"><span class="comment">// 0x5</span></div>
 <div class="ttc" id="agroup__xtd__core_html_ga2be4d2f270243268ff197700fa3ae42f"><div class="ttname"><a href="group__xtd__core.html#ga2be4d2f270243268ff197700fa3ae42f">xtd::enum_collection</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; enum_t, xtd::string &gt; &gt; enum_collection</div><div class="ttdoc">Represents a pair of an enum_t value and a string of an enum of type enum_t.</div><div class="ttdef"><b>Definition</b> enum_collection.hpp:24</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
-<div class="ttc" id="astructxtd_1_1enum__object_html"><div class="ttname"><a href="structxtd_1_1enum__object.html">xtd::enum_object</a></div><div class="ttdoc">Provides the base class for enumerations.</div><div class="ttdef"><b>Definition</b> enum_object.hpp:48</div></div>
-<div class="ttc" id="astructxtd_1_1enum__object_html_a773dd7848c4fc85bc2270963f649e230"><div class="ttname"><a href="structxtd_1_1enum__object.html#a773dd7848c4fc85bc2270963f649e230">xtd::enum_object::to_string</a></div><div class="ttdeci">xtd::string to_string() const noexcept override</div><div class="ttdoc">Returns a xtd::string that represents the current object.</div><div class="ttdef"><b>Definition</b> enum_object.hpp:172</div></div>
 <div class="ttc" id="astructxtd_1_1enum__register_html"><div class="ttname"><a href="structxtd_1_1enum__register.html">xtd::enum_register</a></div><div class="ttdoc">Provides the registration struct for enumerations.</div><div class="ttdef"><b>Definition</b> enum_register.hpp:38</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 19 2025 12:06:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 28 2025 19:34:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

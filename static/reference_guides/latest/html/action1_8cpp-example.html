@@ -83,22 +83,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>This example simplifies this code by instantiating the <a class="el" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31" title="Represents a xtd::delegate that has variable parameters and does not return a value.">xtd::action</a> delegate instead of explicitly defining a new delegate and assigning a named method to it.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/delegate&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/message_box&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using </span>display_message = delegate&lt;void(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp;)&gt;;</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> show_windows_message(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a id="_a0" name="_a0"></a><a class="code hl_struct" href="structxtd_1_1forms_1_1message.html">message</a>) {</div>
-<div class="line">  message_box::show(<a class="code hl_struct" href="structxtd_1_1forms_1_1message.html">message</a>);</div>
+<div class="line"><span class="keywordtype">void</span> show_windows_message(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; message) {</div>
+<div class="line">  forms::message_box::show(message);</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> write_line(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; <a class="code hl_struct" href="structxtd_1_1forms_1_1message.html">message</a>) {</div>
-<div class="line">  console::write_line(<a class="code hl_struct" href="structxtd_1_1forms_1_1message.html">message</a>);</div>
+<div class="line"><span class="keywordtype">void</span> write_line(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; message) {</div>
+<div class="line">  console::write_line(message);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -112,14 +106,11 @@ $(function() {
 <div class="line">  message_target(<span class="stringliteral">&quot;Hello, World!&quot;</span>);</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__types_html_ga92c4f59ae39104d31ce9c0c20810001d"><div class="ttname"><a href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
-<div class="ttc" id="astructxtd_1_1forms_1_1message_html"><div class="ttname"><a href="structxtd_1_1forms_1_1message.html">xtd::forms::message</a></div><div class="ttdoc">Implements a Windows message.</div><div class="ttdef"><b>Definition</b> message.hpp:33</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 19 2025 12:06:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 28 2025 19:34:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -32,6 +32,7 @@ var searchData=
   ['list_5fcontrol_29',['list_control',['../classxtd_1_1forms_1_1list__control.html',1,'xtd::forms']]],
   ['loading_5findicator_30',['loading_indicator',['../classxtd_1_1forms_1_1loading__indicator.html',1,'xtd::forms']]],
   ['loading_5findicators_31',['loading_indicators',['../classxtd_1_1forms_1_1loading__indicators.html',1,'xtd::forms']]],
-  ['lock_5fguard_32',['lock_guard',['../classxtd_1_1threading_1_1lock__guard.html',1,'xtd::threading']]],
-  ['lock_5frecursion_5fexception_33',['lock_recursion_exception',['../classxtd_1_1threading_1_1lock__recursion__exception.html',1,'xtd::threading']]]
+  ['lock_32',['lock',['../classxtd_1_1threading_1_1lock.html',1,'xtd::threading']]],
+  ['lock_5fguard_33',['lock_guard',['../classxtd_1_1threading_1_1lock__guard.html',1,'xtd::threading']]],
+  ['lock_5frecursion_5fexception_34',['lock_recursion_exception',['../classxtd_1_1threading_1_1lock__recursion__exception.html',1,'xtd::threading']]]
 ];
