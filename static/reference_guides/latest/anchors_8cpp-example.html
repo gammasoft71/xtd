@@ -120,19 +120,15 @@ $(function(){ initResizable(false); });
 <img src="anchors_gd.png" alt=""/>
 </div>
 </dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>main_form : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><span class="keyword">class </span>main_form : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  main_form() {</div>
 <div class="line">    controls().push_back_range({top_left_button, top_button, top_right_button, left_button, all_button, right_button, bottom_left_button, bottom_button, bottom_right_button});</div>
 <div class="line">    client_size({360, 130});</div>
 <div class="line">    minimum_client_size(client_size());</div>
-<div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;form&quot;</span>);</div>
+<div class="line">    text(<span class="stringliteral">&quot;form&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    top_left_button.location({10, 10});</div>
 <div class="line">    top_left_button.text(<span class="stringliteral">&quot;top-left&quot;</span>);</div>
@@ -141,73 +137,64 @@ $(function(){ initResizable(false); });
 <div class="line">    top_button.location({130, 10});</div>
 <div class="line">    top_button.text(<span class="stringliteral">&quot;top&quot;</span>);</div>
 <div class="line">    top_button.size({100, 30});</div>
-<div class="line">    top_button.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a>);</div>
+<div class="line">    top_button.anchor(anchor_styles::top);</div>
 <div class="line">    </div>
 <div class="line">    top_right_button.location({250, 10});</div>
 <div class="line">    top_right_button.text(<span class="stringliteral">&quot;top-right&quot;</span>);</div>
 <div class="line">    top_right_button.size({100, 30});</div>
-<div class="line">    top_right_button.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">anchor_styles::right</a>);</div>
+<div class="line">    top_right_button.anchor(anchor_styles::top | anchor_styles::right);</div>
 <div class="line">    </div>
 <div class="line">    left_button.location({10, 50});</div>
 <div class="line">    left_button.text(<span class="stringliteral">&quot;left&quot;</span>);</div>
 <div class="line">    left_button.size({100, 30});</div>
-<div class="line">    left_button.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">anchor_styles::left</a>);</div>
+<div class="line">    left_button.anchor(anchor_styles::left);</div>
 <div class="line">    </div>
 <div class="line">    all_button.location({130, 50});</div>
 <div class="line">    all_button.text(<span class="stringliteral">&quot;all&quot;</span>);</div>
 <div class="line">    all_button.size({100, 30});</div>
-<div class="line">    all_button.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">anchor_styles::top</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">anchor_styles::left</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a71f262d796bed1ab30e8a2d5a8ddee6f">anchor_styles::bottom</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">anchor_styles::right</a>);</div>
+<div class="line">    all_button.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);</div>
 <div class="line">    </div>
 <div class="line">    right_button.location({250, 50});</div>
 <div class="line">    right_button.text(<span class="stringliteral">&quot;right&quot;</span>);</div>
 <div class="line">    right_button.size({100, 30});</div>
-<div class="line">    right_button.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">anchor_styles::right</a>);</div>
+<div class="line">    right_button.anchor(anchor_styles::right);</div>
 <div class="line">    </div>
 <div class="line">    bottom_left_button.location({10, 90});</div>
 <div class="line">    bottom_left_button.text(<span class="stringliteral">&quot;bottom-left&quot;</span>);</div>
 <div class="line">    bottom_left_button.size({100, 30});</div>
-<div class="line">    bottom_left_button.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a71f262d796bed1ab30e8a2d5a8ddee6f">anchor_styles::bottom</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">anchor_styles::left</a>);</div>
+<div class="line">    bottom_left_button.anchor(anchor_styles::bottom | anchor_styles::left);</div>
 <div class="line">    </div>
 <div class="line">    bottom_button.location({130, 90});</div>
 <div class="line">    bottom_button.text(<span class="stringliteral">&quot;bottom&quot;</span>);</div>
 <div class="line">    bottom_button.size({100, 30});</div>
-<div class="line">    bottom_button.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a71f262d796bed1ab30e8a2d5a8ddee6f">anchor_styles::bottom</a>);</div>
+<div class="line">    bottom_button.anchor(anchor_styles::bottom);</div>
 <div class="line">    </div>
 <div class="line">    bottom_right_button.location({250, 90});</div>
 <div class="line">    bottom_right_button.text(<span class="stringliteral">&quot;bottom-right&quot;</span>);</div>
 <div class="line">    bottom_right_button.size({100, 30});</div>
-<div class="line">    bottom_right_button.anchor(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a71f262d796bed1ab30e8a2d5a8ddee6f">anchor_styles::bottom</a> | <a class="code hl_enumvalue" href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">anchor_styles::right</a>);</div>
+<div class="line">    bottom_right_button.anchor(anchor_styles::bottom | anchor_styles::right);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> top_left_button;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> top_button;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> top_right_button;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> left_button;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> all_button;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> right_button;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> bottom_left_button;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> bottom_button;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> bottom_right_button;</div>
+<div class="line">  button top_left_button;</div>
+<div class="line">  button top_button;</div>
+<div class="line">  button top_right_button;</div>
+<div class="line">  button left_button;</div>
+<div class="line">  button all_button;</div>
+<div class="line">  button right_button;</div>
+<div class="line">  button bottom_left_button;</div>
+<div class="line">  button bottom_button;</div>
+<div class="line">  button bottom_right_button;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(main_form());</div>
+<div class="line">  application::run(main_form());</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.hpp:49</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div><div class="ttdef"><b>Definition</b> status_bar_panel_style.hpp:25</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggabe04a3034508fe0527604e5c5c3104c3a71f262d796bed1ab30e8a2d5a8ddee6f"><div class="ttname"><a href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a71f262d796bed1ab30e8a2d5a8ddee6f">xtd::forms::anchor_styles::bottom</a></div><div class="ttdeci">@ bottom</div><div class="ttdoc">Bind control edges to the bottom of its container.</div><div class="ttdef"><b>Definition</b> anchor_styles.hpp:25</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d"><div class="ttname"><a href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a7c4f29407893c334a6cb7a87bf045c0d">xtd::forms::anchor_styles::right</a></div><div class="ttdeci">@ right</div><div class="ttdoc">Bind control edges to the right of its container.</div><div class="ttdef"><b>Definition</b> anchor_styles.hpp:29</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254"><div class="ttname"><a href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3a811882fecd5c7618d7099ebbd39ea254">xtd::forms::anchor_styles::left</a></div><div class="ttdeci">@ left</div><div class="ttdoc">Bind control edges to the left of its container.</div><div class="ttdef"><b>Definition</b> anchor_styles.hpp:27</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f"><div class="ttname"><a href="group__xtd__forms.html#ggabe04a3034508fe0527604e5c5c3104c3ab28354b543375bfa94dabaeda722927f">xtd::forms::anchor_styles::top</a></div><div class="ttdeci">@ top</div><div class="ttdoc">Bind control edges to the top of its container.</div><div class="ttdef"><b>Definition</b> anchor_styles.hpp:23</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 27 2025 13:42:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 28 2025 13:01:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
