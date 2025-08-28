@@ -8,11 +8,12 @@ var searchData=
   ['operating_5fsystem_5',['operating_system',['../classxtd_1_1operating__system.html',1,'xtd']]],
   ['operation_5fcanceled_5fexception_6',['operation_canceled_exception',['../classxtd_1_1operation__canceled__exception.html',1,'xtd']]],
   ['orange_5fcolors_7',['orange_colors',['../classxtd_1_1drawing_1_1orange__colors.html',1,'xtd::drawing']]],
-  ['ostream_5fevent_5flistener_8',['ostream_event_listener',['../classxtd_1_1tunit_1_1ostream__event__listener.html',1,'xtd::tunit']]],
-  ['ostream_5ftrace_5flistener_9',['ostream_trace_listener',['../classxtd_1_1diagnostics_1_1ostream__trace__listener.html',1,'xtd::diagnostics']]],
-  ['ostream_5funit_5ftest_10',['ostream_unit_test',['../classxtd_1_1tunit_1_1ostream__unit__test.html',1,'xtd::tunit']]],
-  ['out_5fof_5fmemory_5fexception_11',['out_of_memory_exception',['../classxtd_1_1out__of__memory__exception.html',1,'xtd']]],
-  ['output_5fdata_5freceived_5fevent_12',['output_data_received_event',['../classxtd_1_1diagnostics_1_1process_1_1output__data__received__event.html',1,'xtd::diagnostics::process']]],
-  ['overflow_5fexception_13',['overflow_exception',['../classxtd_1_1overflow__exception.html',1,'xtd']]],
-  ['overload_14',['overload',['../structxtd_1_1overload.html',1,'xtd']]]
+  ['order_5fby_5fview_8',['order_by_view',['../classxtd_1_1ranges_1_1views_1_1order__by__view.html',1,'xtd::ranges::views']]],
+  ['ostream_5fevent_5flistener_9',['ostream_event_listener',['../classxtd_1_1tunit_1_1ostream__event__listener.html',1,'xtd::tunit']]],
+  ['ostream_5ftrace_5flistener_10',['ostream_trace_listener',['../classxtd_1_1diagnostics_1_1ostream__trace__listener.html',1,'xtd::diagnostics']]],
+  ['ostream_5funit_5ftest_11',['ostream_unit_test',['../classxtd_1_1tunit_1_1ostream__unit__test.html',1,'xtd::tunit']]],
+  ['out_5fof_5fmemory_5fexception_12',['out_of_memory_exception',['../classxtd_1_1out__of__memory__exception.html',1,'xtd']]],
+  ['output_5fdata_5freceived_5fevent_13',['output_data_received_event',['../classxtd_1_1diagnostics_1_1process_1_1output__data__received__event.html',1,'xtd::diagnostics::process']]],
+  ['overflow_5fexception_14',['overflow_exception',['../classxtd_1_1overflow__exception.html',1,'xtd']]],
+  ['overload_15',['overload',['../structxtd_1_1overload.html',1,'xtd']]]
 ];
