@@ -106,17 +106,9 @@ $(function() {
 <img src="replace_dialog_gd.png" alt=""/>
 </div>
 </dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/debug_form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/replace_dialog&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/debug&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  form1() {</div>
 <div class="line">    text(<span class="stringliteral">&quot;Replace dialog example&quot;</span>);</div>
@@ -124,54 +116,40 @@ $(function() {
 <div class="line">    replace_button.parent(*<span class="keyword">this</span>);</div>
 <div class="line">    replace_button.text(<span class="stringliteral">&quot;replace...&quot;</span>);</div>
 <div class="line">    replace_button.location({10, 10});</div>
-<div class="line">    replace_button.click += <a id="a1" name="a1"></a><a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">      <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1forms_1_1replace__dialog.html">replace_dialog</a>.<a id="a3" name="a3"></a><a class="code hl_function" href="classxtd_1_1forms_1_1replace__dialog.html#a14d6748e4ba1d4fc70791aa1b223be6b">show</a>(*<span class="keyword">this</span>);</div>
+<div class="line">    replace_button.click += <a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
+<div class="line">      replace_dialog.show(*<span class="keyword">this</span>);</div>
 <div class="line">    };</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1replace__dialog.html">replace_dialog</a>.<a id="a4" name="a4"></a><a class="code hl_function" href="classxtd_1_1forms_1_1replace__dialog.html#a8f7d71833af5c0f37044b53b7a613779">title</a>(<span class="stringliteral">&quot;Replace&quot;</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1replace__dialog.html">replace_dialog</a>.<a id="a5" name="a5"></a><a class="code hl_function" href="classxtd_1_1forms_1_1replace__dialog.html#a523f40ce317fe1f71b1eeb368bc6a4b6">find_string</a>(<span class="stringliteral">&quot;Gammasoft&quot;</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1replace__dialog.html">replace_dialog</a>.<a id="a6" name="a6"></a><a class="code hl_function" href="classxtd_1_1forms_1_1replace__dialog.html#aff817768aaa00952724ff30d7d4c2584">replace_string</a>(<span class="stringliteral">&quot;xtd&quot;</span>);</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1replace__dialog.html">replace_dialog</a>.<a id="a7" name="a7"></a><a class="code hl_variable" href="classxtd_1_1forms_1_1replace__dialog.html#ae1f317b3de096f9a7a4f6baf9674b182">find_next</a> += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a8" name="_a8"></a><a class="code hl_class" href="classxtd_1_1forms_1_1find__event__args.html">find_event_args</a>&amp; e) {</div>
+<div class="line">    replace_dialog.title(<span class="stringliteral">&quot;Replace&quot;</span>);</div>
+<div class="line">    replace_dialog.find_string(<span class="stringliteral">&quot;Gammasoft&quot;</span>);</div>
+<div class="line">    replace_dialog.replace_string(<span class="stringliteral">&quot;xtd&quot;</span>);</div>
+<div class="line">    replace_dialog.find_next += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> find_event_args&amp; e) {</div>
 <div class="line">      diagnostics::debug::write_line(string::format(<span class="stringliteral">&quot;Find next : find string [{}], match case [{}], search direction [{}], whole word [{}]&quot;</span>, e.find_string(), e.match_case(), e.search_direction(), e.whole_word()));</div>
 <div class="line">    };</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1replace__dialog.html">replace_dialog</a>.<a id="a9" name="a9"></a><a class="code hl_variable" href="classxtd_1_1forms_1_1replace__dialog.html#a816f2865e3cc36dae81ef98c0af6eefe">replace</a> += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a10" name="_a10"></a><a class="code hl_class" href="classxtd_1_1forms_1_1replace__event__args.html">replace_event_args</a>&amp; e) {</div>
+<div class="line">    replace_dialog.replace += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> replace_event_args&amp; e) {</div>
 <div class="line">      diagnostics::debug::write_line(string::format(<span class="stringliteral">&quot;Replace : find string [{}], replace string [{}], match case [{}], whole word [{}]&quot;</span>, e.find_string(), e.replace_string(), e.match_case(), e.whole_word()));</div>
 <div class="line">    };</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1replace__dialog.html">replace_dialog</a>.<a id="a11" name="a11"></a><a class="code hl_variable" href="classxtd_1_1forms_1_1replace__dialog.html#aa9c1d6cb1170e0521f1d21f88ab30085">replace_all</a> += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1forms_1_1replace__event__args.html">replace_event_args</a>&amp; e) {</div>
+<div class="line">    replace_dialog.replace_all += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> replace_event_args&amp; e) {</div>
 <div class="line">      diagnostics::debug::write_line(string::format(<span class="stringliteral">&quot;Replace all : find string [{}], replace string [{}], match case [{}], whole word [{}]&quot;</span>, e.find_string(), e.replace_string(), e.match_case(), e.whole_word()));</div>
 <div class="line">    };</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a id="_a12" name="_a12"></a><a class="code hl_class" href="classxtd_1_1forms_1_1debug__form.html">debug_form</a> df;</div>
-<div class="line">  <a id="_a13" name="_a13"></a><a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> replace_button;</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1replace__dialog.html">xtd::forms::replace_dialog</a> <a class="code hl_class" href="classxtd_1_1forms_1_1replace__dialog.html">replace_dialog</a>;</div>
+<div class="line">  debug_form df;</div>
+<div class="line">  button replace_button;</div>
+<div class="line">  <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1forms_1_1replace__dialog.html">xtd::forms::replace_dialog</a> replace_dialog;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.hpp:49</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1debug__form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1debug__form.html">xtd::forms::debug_form</a></div><div class="ttdoc">Represents a form that displays debug form. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> debug_form.hpp:36</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1find__event__args_html"><div class="ttname"><a href="classxtd_1_1forms_1_1find__event__args.html">xtd::forms::find_event_args</a></div><div class="ttdoc">Provides data for the xtd::forms::find_dialog::find_next and xtd::forms::replace_dialog::find_next ev...</div><div class="ttdef"><b>Definition</b> find_event_args.hpp:25</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1replace__dialog_html"><div class="ttname"><a href="classxtd_1_1forms_1_1replace__dialog.html">xtd::forms::replace_dialog</a></div><div class="ttdoc">Represents a dialog box that displays find dialog.</div><div class="ttdef"><b>Definition</b> replace_dialog.hpp:38</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1replace__dialog_html_a14d6748e4ba1d4fc70791aa1b223be6b"><div class="ttname"><a href="classxtd_1_1forms_1_1replace__dialog.html#a14d6748e4ba1d4fc70791aa1b223be6b">xtd::forms::replace_dialog::show</a></div><div class="ttdeci">void show(const iwin32_window &amp;owner)</div><div class="ttdoc">Runs find dialog box.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1replace__dialog_html_a523f40ce317fe1f71b1eeb368bc6a4b6"><div class="ttname"><a href="classxtd_1_1forms_1_1replace__dialog.html#a523f40ce317fe1f71b1eeb368bc6a4b6">xtd::forms::replace_dialog::find_string</a></div><div class="ttdeci">const xtd::string &amp; find_string() const noexcept</div><div class="ttdoc">Gets the string to find.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1replace__dialog_html_a816f2865e3cc36dae81ef98c0af6eefe"><div class="ttname"><a href="classxtd_1_1forms_1_1replace__dialog.html#a816f2865e3cc36dae81ef98c0af6eefe">xtd::forms::replace_dialog::replace</a></div><div class="ttdeci">xtd::event&lt; replace_dialog, xtd::forms::replace_event_handler &gt; replace</div><div class="ttdoc">Occurs when the user click the replace button.</div><div class="ttdef"><b>Definition</b> replace_dialog.hpp:130</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1replace__dialog_html_a8f7d71833af5c0f37044b53b7a613779"><div class="ttname"><a href="classxtd_1_1forms_1_1replace__dialog.html#a8f7d71833af5c0f37044b53b7a613779">xtd::forms::replace_dialog::title</a></div><div class="ttdeci">const xtd::string &amp; title() const noexcept</div><div class="ttdoc">Gets the find dialog title.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1replace__dialog_html_aa9c1d6cb1170e0521f1d21f88ab30085"><div class="ttname"><a href="classxtd_1_1forms_1_1replace__dialog.html#aa9c1d6cb1170e0521f1d21f88ab30085">xtd::forms::replace_dialog::replace_all</a></div><div class="ttdeci">xtd::event&lt; replace_dialog, xtd::forms::replace_event_handler &gt; replace_all</div><div class="ttdoc">Occurs when the user click the replace all button.</div><div class="ttdef"><b>Definition</b> replace_dialog.hpp:134</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1replace__dialog_html_ae1f317b3de096f9a7a4f6baf9674b182"><div class="ttname"><a href="classxtd_1_1forms_1_1replace__dialog.html#ae1f317b3de096f9a7a4f6baf9674b182">xtd::forms::replace_dialog::find_next</a></div><div class="ttdeci">xtd::event&lt; replace_dialog, xtd::forms::find_event_handler &gt; find_next</div><div class="ttdoc">Occurs when the user click the find button.</div><div class="ttdef"><b>Definition</b> replace_dialog.hpp:126</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1replace__dialog_html_aff817768aaa00952724ff30d7d4c2584"><div class="ttname"><a href="classxtd_1_1forms_1_1replace__dialog.html#aff817768aaa00952724ff30d7d4c2584">xtd::forms::replace_dialog::replace_string</a></div><div class="ttdeci">const xtd::string &amp; replace_string() const noexcept</div><div class="ttdoc">Gets the replaced string.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1replace__event__args_html"><div class="ttname"><a href="classxtd_1_1forms_1_1replace__event__args.html">xtd::forms::replace_event_args</a></div><div class="ttdoc">Provides data for the xtd::forms::replace_dialog::replace and xtd::forms::replace_dialog::replace_all...</div><div class="ttdef"><b>Definition</b> replace_event_args.hpp:23</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 19 2025 12:06:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 28 2025 19:34:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

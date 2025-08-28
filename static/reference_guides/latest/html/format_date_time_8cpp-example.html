@@ -83,23 +83,18 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <p>Show how to use format <a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14" title="Writes the text representation of the specified arguments list, to string using the specified format ...">xtd::format</a> class with std::chrono utilities.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/date_time&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/format&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">enum class</span> cap {title, middle, end};</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> print_date_time(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; text, <span class="keyword">const</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a>&amp; value, cap c) {</div>
+<div class="line"><span class="keyword">auto</span> print_date_time(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; text, <span class="keyword">const</span> date_time&amp; value, cap c) {</div>
 <div class="line">  <span class="keywordflow">if</span> (c == cap::title)</div>
 <div class="line">    console::out</div>
 <div class="line">    &lt;&lt; <span class="stringliteral">&quot;┌───────────────────────────────────────┬────────────┬──────────────────────────────────────────┐&quot;</span> &lt;&lt; environment::new_line</div>
 <div class="line">    &lt;&lt; <span class="stringliteral">&quot;│  date_time                            │   format   │      representation                      │&quot;</span> &lt;&lt; environment::new_line</div>
 <div class="line">    &lt;&lt; <span class="stringliteral">&quot;├───────────────────────────────────────┼────────────┼──────────────────────────────────────────┤&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  </div>
-<div class="line">  console::out &lt;&lt;  <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(37) &lt;&lt; <span class="stringliteral">&quot; │ {}         │ &quot;</span> &lt;&lt; format(<span class="stringliteral">&quot;{}&quot;</span>, value).<a id="a1" name="a1"></a><a class="code hl_function" href="classxtd_1_1basic__string.html#abe37d71513cd7f2585290402bd45afb2">pad_right</a>(40) &lt;&lt; <span class="stringliteral">&quot; │&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt;  <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(37) &lt;&lt; <span class="stringliteral">&quot; │ {}         │ &quot;</span> &lt;&lt; format(<span class="stringliteral">&quot;{}&quot;</span>, value).<a id="a0" name="a0"></a><a class="code hl_function" href="classxtd_1_1basic__string.html#abe37d71513cd7f2585290402bd45afb2">pad_right</a>(40) &lt;&lt; <span class="stringliteral">&quot; │&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt;  <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(37) &lt;&lt; <span class="stringliteral">&quot; │ {:a}       │ &quot;</span> &lt;&lt; format(<span class="stringliteral">&quot;{:a}&quot;</span>, value).<a class="code hl_function" href="classxtd_1_1basic__string.html#abe37d71513cd7f2585290402bd45afb2">pad_right</a>(40) &lt;&lt; <span class="stringliteral">&quot; │&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt;  <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(37) &lt;&lt; <span class="stringliteral">&quot; │ {:b}       │ &quot;</span> &lt;&lt; format(<span class="stringliteral">&quot;{:b}&quot;</span>, value).<a class="code hl_function" href="classxtd_1_1basic__string.html#abe37d71513cd7f2585290402bd45afb2">pad_right</a>(40) &lt;&lt; <span class="stringliteral">&quot; │&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt;  <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(37) &lt;&lt; <span class="stringliteral">&quot; │ {:B}       │ &quot;</span> &lt;&lt; format(<span class="stringliteral">&quot;{:B}&quot;</span>, value).<a class="code hl_function" href="classxtd_1_1basic__string.html#abe37d71513cd7f2585290402bd45afb2">pad_right</a>(40) &lt;&lt; <span class="stringliteral">&quot; │&quot;</span> &lt;&lt; environment::new_line;</div>
@@ -155,11 +150,11 @@ $(function() {
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  print_date_time(<span class="stringliteral">&quot;date_time {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> {}, cap::title);</div>
-<div class="line">  print_date_time(<span class="stringliteral">&quot;date_time {123456789123456789}&quot;</span>, <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> {123456789123456789}, cap::middle);</div>
-<div class="line">  print_date_time(<span class="stringliteral">&quot;date_time {1971, 1, 5}&quot;</span>, <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> {1971, 1, 5}, cap::middle);</div>
-<div class="line">  print_date_time(<span class="stringliteral">&quot;date_time {1971, 1, 5, 21, 30, 3}&quot;</span>, <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> {1971, 1, 5, 21, 30, 3}, cap::middle);</div>
-<div class="line">  print_date_time(<span class="stringliteral">&quot;date_time {1971, 1, 5, 21, 30, 3, 42}&quot;</span>, <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> {1971, 1, 5, 21, 30, 3, 42}, cap::middle);</div>
+<div class="line">  print_date_time(<span class="stringliteral">&quot;date_time {}&quot;</span>, date_time {}, cap::title);</div>
+<div class="line">  print_date_time(<span class="stringliteral">&quot;date_time {123456789123456789}&quot;</span>, date_time {123456789123456789}, cap::middle);</div>
+<div class="line">  print_date_time(<span class="stringliteral">&quot;date_time {1971, 1, 5}&quot;</span>, date_time {1971, 1, 5}, cap::middle);</div>
+<div class="line">  print_date_time(<span class="stringliteral">&quot;date_time {1971, 1, 5, 21, 30, 3}&quot;</span>, date_time {1971, 1, 5, 21, 30, 3}, cap::middle);</div>
+<div class="line">  print_date_time(<span class="stringliteral">&quot;date_time {1971, 1, 5, 21, 30, 3, 42}&quot;</span>, date_time {1971, 1, 5, 21, 30, 3, 42}, cap::middle);</div>
 <div class="line">  print_date_time(<span class="stringliteral">&quot;date_time::now()&quot;</span>, date_time::now(), cap::middle);</div>
 <div class="line">  print_date_time(<span class="stringliteral">&quot;date_time::utc_now()&quot;</span>, date_time::utc_now(), cap::middle);</div>
 <div class="line">  print_date_time(<span class="stringliteral">&quot;date_time::min_value&quot;</span>, date_time::min_value, cap::middle);</div>
@@ -612,14 +607,12 @@ $(function() {
 <div class="line"><span class="comment">// │ date_time::max_value                  │ {:z}       │ UTC                                      │</span></div>
 <div class="line"><span class="comment">// │ date_time::max_value                  │ {:Z}       │ UTC                                      │</span></div>
 <div class="line"><span class="comment">// └───────────────────────────────────────┴────────────┴──────────────────────────────────────────┘</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__string_html_abe37d71513cd7f2585290402bd45afb2"><div class="ttname"><a href="classxtd_1_1basic__string.html#abe37d71513cd7f2585290402bd45afb2">xtd::basic_string::pad_right</a></div><div class="ttdeci">basic_string pad_right(xtd::size total_width) const noexcept</div><div class="ttdoc">Left-aligns the characters in this basic_string, padding with spaces on the right for a specified tot...</div><div class="ttdef"><b>Definition</b> basic_string.hpp:1557</div></div>
-<div class="ttc" id="aclassxtd_1_1date__time_html"><div class="ttname"><a href="classxtd_1_1date__time.html">xtd::date_time</a></div><div class="ttdoc">Represents an instant in time, typically expressed as a date and time of day.</div><div class="ttdef"><b>Definition</b> date_time.hpp:85</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html_abe37d71513cd7f2585290402bd45afb2"><div class="ttname"><a href="classxtd_1_1basic__string.html#abe37d71513cd7f2585290402bd45afb2">xtd::basic_string::pad_right</a></div><div class="ttdeci">basic_string pad_right(xtd::size total_width) const noexcept</div><div class="ttdoc">Left-aligns the characters in this basic_string, padding with spaces on the right for a specified tot...</div><div class="ttdef"><b>Definition</b> basic_string.hpp:1561</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 19 2025 12:06:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 28 2025 19:34:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

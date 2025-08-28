@@ -108,14 +108,7 @@ Inheritance diagram for xtd::threading::timer:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example defines a status_checker class that includes a check_status method whose signature is the same as the <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d" title="Represents the method that handles calls from a xtd::threading::timer.">xtd::threading::timer_callback</a> delegate. The state argument of the check_status method is an <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object that is used to synchronize the application thread and the thread pool thread that executes the callback delegate. The status_checker class also includes two state variables: invoke_count Indicates the number of times the callback method has been invoked. max_count Determines the maximum number of times the callback method should be invoked. The application thread creates the timer, which waits one second and then executes the check_status callback method every 250 milliseconds. The application thread then blocks until the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object is signaled. When the check_status callback method executes max_count times, it calls the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html#a3254163aa012cb3dc8f99ff16c0c7d6c" title="Sets the state of the event to signaled, allowing one or more waiting threads to proceed.">auto_reset_event::set</a> method to set the state of the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object to signaled. The first time this happens, the application thread calls the <a class="el" href="classxtd_1_1threading_1_1timer.html#a40a6be3e9255cbd751f859efe127923e" title="changes the start time and the interval between method invocations for a timer, using 32-bit signed i...">xtd::threading::timer::change(int32, int32)</a> method so that the callback method now executes every half second. It once again blocks until the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object is signaled. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/auto_reset_event&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/threading/timer&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/date_time&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example defines a status_checker class that includes a check_status method whose signature is the same as the <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d" title="Represents the method that handles calls from a xtd::threading::timer.">xtd::threading::timer_callback</a> delegate. The state argument of the check_status method is an <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object that is used to synchronize the application thread and the thread pool thread that executes the callback delegate. The status_checker class also includes two state variables: invoke_count Indicates the number of times the callback method has been invoked. max_count Determines the maximum number of times the callback method should be invoked. The application thread creates the timer, which waits one second and then executes the check_status callback method every 250 milliseconds. The application thread then blocks until the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object is signaled. When the check_status callback method executes max_count times, it calls the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html#a3254163aa012cb3dc8f99ff16c0c7d6c" title="Sets the state of the event to signaled, allowing one or more waiting threads to proceed.">auto_reset_event::set</a> method to set the state of the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object to signaled. The first time this happens, the application thread calls the <a class="el" href="classxtd_1_1threading_1_1timer.html#a40a6be3e9255cbd751f859efe127923e" title="changes the start time and the interval between method invocations for a timer, using 32-bit signed i...">xtd::threading::timer::change(int32, int32)</a> method so that the callback method now executes every half second. It once again blocks until the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object is signaled. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>timer_example {</div>
 <div class="line">  <span class="keyword">class </span>status_checker {</div>
@@ -130,7 +123,7 @@ Inheritance diagram for xtd::threading::timer:</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// This method is called by the timer delegate.</span></div>
-<div class="line">    <span class="keywordtype">void</span> check_status(std::any state_info) {</div>
+<div class="line">    <span class="keywordtype">void</span> check_status(<a class="code hl_class" href="classxtd_1_1any__object.html">any_object</a> state_info) {</div>
 <div class="line">      <span class="keyword">auto</span> auto_event = as&lt;auto_reset_event&gt;(state_info);</div>
 <div class="line">      <span class="keyword">auto</span> now = date_time::now();</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;{:t}.{:D3} Checking status {,2}.&quot;</span>,</div>
@@ -150,7 +143,7 @@ Inheritance diagram for xtd::threading::timer:</div>
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
 <div class="line">      <span class="comment">// Create an auto_reset_event to signal the timeout threshold in the</span></div>
 <div class="line">      <span class="comment">// timer callback has been reached.</span></div>
-<div class="line">      <span class="keyword">auto</span> auto_event = <a class="code hl_class" href="classxtd_1_1threading_1_1auto__reset__event.html">auto_reset_event</a> {<span class="keyword">false</span>};</div>
+<div class="line">      <span class="keyword">auto</span> auto_event = auto_reset_event {<span class="keyword">false</span>};</div>
 <div class="line">      </div>
 <div class="line">      <span class="keyword">auto</span> status_checker = timer_example::status_checker {10};</div>
 <div class="line">      </div>
@@ -159,12 +152,12 @@ Inheritance diagram for xtd::threading::timer:</div>
 <div class="line">      <span class="keyword">auto</span> now = date_time::now();</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;{:t}.{:D3} Creating timer.\n&quot;</span>,</div>
 <div class="line">                          now, now.millisecond());</div>
-<div class="line">      <span class="keyword">auto</span> state_timer = <a class="code hl_class" href="classxtd_1_1threading_1_1timer.html">timer</a> {{status_checker, &amp;timer_example::status_checker::check_status},</div>
+<div class="line">      <span class="keyword">auto</span> state_timer = timer {{status_checker, &amp;timer_example::status_checker::check_status},</div>
 <div class="line">                                auto_event, 1000, 250};</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// When auto_event signals, change the period to every half second.</span></div>
 <div class="line">      auto_event.wait_one();</div>
-<div class="line">      state_timer.<a class="code hl_function" href="classxtd_1_1threading_1_1timer.html#a40a6be3e9255cbd751f859efe127923e">change</a>(0, 500);</div>
+<div class="line">      state_timer.change(0, 500);</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;\nChanging period to .5 seconds.\n&quot;</span>);</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// When auto_event signals the second time, dispose of the timer.</span></div>
@@ -206,11 +199,8 @@ Inheritance diagram for xtd::threading::timer:</div>
 <div class="line"><span class="comment">// 10:37:45.249 Checking status 10.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Destroying timer.</span></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1auto__reset__event_html"><div class="ttname"><a href="classxtd_1_1threading_1_1auto__reset__event.html">xtd::threading::auto_reset_event</a></div><div class="ttdoc">Represents a thread synchronization event that, when signaled, resets automatically after releasing a...</div><div class="ttdef"><b>Definition</b> auto_reset_event.hpp:36</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1timer_html_a40a6be3e9255cbd751f859efe127923e"><div class="ttname"><a href="classxtd_1_1threading_1_1timer.html#a40a6be3e9255cbd751f859efe127923e">xtd::threading::timer::change</a></div><div class="ttdeci">void change(int32 due_time, int32 period)</div><div class="ttdoc">changes the start time and the interval between method invocations for a timer, using 32-bit signed i...</div></div>
+<div class="ttc" id="aclassxtd_1_1any__object_html"><div class="ttname"><a href="classxtd_1_1any__object.html">xtd::any_object</a></div><div class="ttdoc">Represent a polymorphic wrapper capable of holding any type.</div><div class="ttdef"><b>Definition</b> any_object.hpp:29</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
-<div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Use a <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d" title="Represents the method that handles calls from a xtd::threading::timer.">xtd::threading::timer_callback</a> delegate to specify the method you want the <a class="el" href="classxtd_1_1threading_1_1timer.html" title="Provides a mechanism for executing a method on a thread pool thread at specified intervals....">xtd::threading::timer</a> to execute. The signature of the <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d" title="Represents the method that handles calls from a xtd::threading::timer.">xtd::threading::timer_callback</a> delegate is: <pre class="fragment">using timer_callback = action&lt;const xtd::any_object&amp;&gt; </pre>. </dd>
 <dd>
@@ -227,8 +217,6 @@ The timer delegate is specified when the timer is constructed, and cannot be cha
 The system clock that is used is the same clock used by GetTickCount, which is not affected by changes made with timeBeginPeriod and timeEndPeriod. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The callback method executed by the timer should be reentrant, because it is called onxtd::threading::thread-pool threads. The callback can be executed simultaneously on two thread pool threads if the timer interval is less than the time required to execute the callback, or if all thread pool threads are in use and the callback is queued multiple times. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd><a class="el" href="classxtd_1_1threading_1_1timer.html" title="Provides a mechanism for executing a method on a thread pool thread at specified intervals....">xtd::threading::timer</a> is a simple, lightweight timer that uses callback methods and is served by thread pool threads. It is not recommended for use with Windows Forms, because its callbacks do not occur on the user interface thread. <a class="el" href="classxtd_1_1forms_1_1timer.html" title="Implements a timer that raises an event at user-defined intervals. This timer is optimized for use in...">xtd::forms::timer</a> is a better choice for use with Windows Forms. For server-based timer functionality, you might consider using <a class="el" href="classxtd_1_1timers_1_1timer.html" title="Generates an event after a set interval, with an option to generate recurring events.">xtd::timers::timer</a>, which raises events and has additional features. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="timer_8cpp-example.html#_a1">timer.cpp</a>.</dd>
-</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:af3af2404bbeb759912c79a62e2903e9b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1timer.html#af3af2404bbeb759912c79a62e2903e9b">timer</a> (const <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d">timer_callback</a> &amp;callback)</td></tr>
@@ -837,8 +825,6 @@ This constructor specifies an infinite due time before the first callback and an
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="timer_8cpp-example.html#a2">timer.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -998,7 +984,7 @@ This constructor specifies an infinite due time before the first callback and an
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 19 2025 12:06:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 28 2025 19:34:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

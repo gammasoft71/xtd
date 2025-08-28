@@ -140,6 +140,9 @@ Macros</h2></td></tr>
 <tr class="memitem:gacd9906b29d877eb1eb0a8c7bc4ab774a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a>(object)</td></tr>
 <tr class="memdesc:gacd9906b29d877eb1eb0a8c7bc4ab774a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion lock for a given object, executing a statement, and then releasing the lock. The following example includes a lock statement.  <br /></td></tr>
 <tr class="separator:gacd9906b29d877eb1eb0a8c7bc4ab774a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafe36bf782d472e00dc82d91679d4a58b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#gafe36bf782d472e00dc82d91679d4a58b">lock_guard_</a>(object)</td></tr>
+<tr class="memdesc:gafe36bf782d472e00dc82d91679d4a58b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The lock_guard_ keyword marks a statement block_guard as a critical section by obtaining the mutual-exclusion lock_guard for a given object, executing a statement, and then releasing the lock_guard. The following example includes a lock_guard statement.  <br /></td></tr>
+<tr class="separator:gafe36bf782d472e00dc82d91679d4a58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabe3976c5f529fab9b255e38ced18b281"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a>(...)</td></tr>
 <tr class="memdesc:gabe3976c5f529fab9b255e38ced18b281"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to obtain the simple (unqualified) string name of a variable, type, or member.  <br /></td></tr>
 <tr class="separator:gabe3976c5f529fab9b255e38ced18b281"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -203,9 +206,6 @@ Macros</h2></td></tr>
 <tr class="memitem:gadf2fc01c525cce1b8255c8308b2fb004"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#gadf2fc01c525cce1b8255c8308b2fb004">static_object_</a></td></tr>
 <tr class="memdesc:gadf2fc01c525cce1b8255c8308b2fb004"><td class="mdescLeft">&#160;</td><td class="mdescRight">This keyword is use to represent a static object. A static object can't be instantiated (constructors are deleted).  <br /></td></tr>
 <tr class="separator:gadf2fc01c525cce1b8255c8308b2fb004"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafe36bf782d472e00dc82d91679d4a58b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#gafe36bf782d472e00dc82d91679d4a58b">lock_guard_</a>(object)</td></tr>
-<tr class="memdesc:gafe36bf782d472e00dc82d91679d4a58b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The lock_guard_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion lock for a given object, executing a statement, and then releasing the lock. The following example includes a lock statement.  <br /></td></tr>
-<tr class="separator:gafe36bf782d472e00dc82d91679d4a58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafa2ffd9b4a6568b57ab2731bec095d99"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></td></tr>
 <tr class="memdesc:gafa2ffd9b4a6568b57ab2731bec095d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to obtain the type object of a specified type or object.  <br /></td></tr>
 <tr class="separator:gafa2ffd9b4a6568b57ab2731bec095d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -270,7 +270,7 @@ Macros</h2></td></tr>
 <div class="line">};</div>
 <div class="ttc" id="agroup__keywords_html_ga8bad3fd3f3b8afda1d635fa70ebaaa8e"><div class="ttname"><a href="group__keywords.html#ga8bad3fd3f3b8afda1d635fa70ebaaa8e">abstract_</a></div><div class="ttdeci">#define abstract_</div><div class="ttdoc">This keyword is used to represents an abstract class.</div><div class="ttdef"><b>Definition</b> abstract.hpp:25</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="console_firework_8cpp-example.html#a0">console_firework.cpp</a>, and <a class="el" href="graph_control_8cpp-example.html#a2">graph_control.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="console_firework_8cpp-example.html#a0">console_firework.cpp</a>, and <a class="el" href="graph_control_8cpp-example.html#a0">graph_control.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -333,7 +333,7 @@ Macros</h2></td></tr>
 <div class="ttc" id="agroup__keywords_html_ga9ba81b3bf268ec1eb95752f516f563e9"><div class="ttname"><a href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a></div><div class="ttdeci">#define block_scope_(...)</div><div class="ttdoc">The specified expression is cleared automatically when the scope is ended.</div><div class="ttdef"><b>Definition</b> block_scope.hpp:25</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>same as <a class="el" href="group__keywords.html#ga73249a3d4ad48e36724bccf5f3e48f2f" title="The specified expression is cleared automatically when the scope is ended.">using_</a> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="binary_reader_8cpp-example.html#a0">binary_reader.cpp</a>, <a class="el" href="binary_reader2_8cpp-example.html#a0">binary_reader2.cpp</a>, <a class="el" href="block_scope_8cpp-example.html#a0">block_scope.cpp</a>, <a class="el" href="file_info_8cpp-example.html#a2">file_info.cpp</a>, <a class="el" href="file_info_append_text_8cpp-example.html#a1">file_info_append_text.cpp</a>, <a class="el" href="file_info_open_8cpp-example.html#a2">file_info_open.cpp</a>, <a class="el" href="file_info_open_read_8cpp-example.html#a2">file_info_open_read.cpp</a>, <a class="el" href="file_info_open_text_8cpp-example.html#a2">file_info_open_text.cpp</a>, <a class="el" href="file_info_open_write_8cpp-example.html#a2">file_info_open_write.cpp</a>, <a class="el" href="jthread_8cpp-example.html#a0">jthread.cpp</a>, <a class="el" href="lock_guard_8cpp-example.html#a2">lock_guard.cpp</a>, and <a class="el" href="process_8cpp-example.html#a0">process.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="binary_reader_8cpp-example.html#a0">binary_reader.cpp</a>, <a class="el" href="binary_reader2_8cpp-example.html#a0">binary_reader2.cpp</a>, <a class="el" href="block_scope_8cpp-example.html#a0">block_scope.cpp</a>, <a class="el" href="file_info_8cpp-example.html#a0">file_info.cpp</a>, <a class="el" href="file_info_append_text_8cpp-example.html#a0">file_info_append_text.cpp</a>, <a class="el" href="file_info_open_8cpp-example.html#a0">file_info_open.cpp</a>, <a class="el" href="file_info_open_read_8cpp-example.html#a0">file_info_open_read.cpp</a>, <a class="el" href="file_info_open_text_8cpp-example.html#a0">file_info_open_text.cpp</a>, <a class="el" href="file_info_open_write_8cpp-example.html#a0">file_info_open_write.cpp</a>, <a class="el" href="jthread_8cpp-example.html#a0">jthread.cpp</a>, <a class="el" href="lock_guard_8cpp-example.html#a1">lock_guard.cpp</a>, and <a class="el" href="process_8cpp-example.html#a0">process.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -358,13 +358,10 @@ Macros</h2></td></tr>
 <dl class="section remark"><dt>Remarks</dt><dd>See also <a class="el" href="structxtd_1_1call__once.html" title="The xtd::call_once struct can be used to execute a routine exactly once. This can be used to initiali...">xtd::call_once</a> struct. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="group__keywords.html#gaf3084b419b4cc718142c35ab8ac5ac85" title="The xtd keyword call_once_ can be used to execute a routine exactly once. This can be used to initial...">call_once_</a> keyword. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
-<div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;(main) begin&quot;</span>);</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> mre = <a class="code hl_class" href="classxtd_1_1threading_1_1manual__reset__event.html">manual_reset_event</a> {};</div>
+<div class="line">  <span class="keyword">auto</span> mre = manual_reset_event {};</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> thread_proc = [&amp;] {</div>
 <div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> cpt = 0;</div>
@@ -391,12 +388,9 @@ Macros</h2></td></tr>
 <div class="line"><span class="comment">//   (thread_proc) running 2 times</span></div>
 <div class="line"><span class="comment">//   (thread_proc) running 3 times</span></div>
 <div class="line"><span class="comment">// (main) end</span></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1manual__reset__event_html"><div class="ttname"><a href="classxtd_1_1threading_1_1manual__reset__event.html">xtd::threading::manual_reset_event</a></div><div class="ttdoc">Represents a thread synchronization event that, when signaled, must be reset manually....</div><div class="ttdef"><b>Definition</b> manual_reset_event.hpp:35</div></div>
 <div class="ttc" id="agroup__keywords_html_gaf3084b419b4cc718142c35ab8ac5ac85"><div class="ttname"><a href="group__keywords.html#gaf3084b419b4cc718142c35ab8ac5ac85">call_once_</a></div><div class="ttdeci">#define call_once_</div><div class="ttdoc">The xtd keyword call_once_ can be used to execute a routine exactly once. This can be used to initial...</div><div class="ttdef"><b>Definition</b> call_once.hpp:50</div></div>
-<div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="call_once_8cpp-example.html#a1">call_once.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="call_once_8cpp-example.html#a0">call_once.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -442,7 +436,7 @@ Macros</h2></td></tr>
 <div class="line">};</div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_box_8cpp-example.html#a0">about_box.cpp</a>, <a class="el" href="about_dialog_8cpp-example.html#a0">about_dialog.cpp</a>, <a class="el" href="about_dialog_system_8cpp-example.html#a1">about_dialog_system.cpp</a>, <a class="el" href="about_dialog_with_user_pages_8cpp-example.html#a2">about_dialog_with_user_pages.cpp</a>, <a class="el" href="application_add_message_filter_8cpp-example.html#a3">application_add_message_filter.cpp</a>, <a class="el" href="application_application_exit_8cpp-example.html#a0">application_application_exit.cpp</a>, <a class="el" href="application_context_8cpp-example.html#a0">application_context.cpp</a>, <a class="el" href="application_enable_dark_mode_8cpp-example.html#a4">application_enable_dark_mode.cpp</a>, <a class="el" href="application_enable_light_mode_8cpp-example.html#a4">application_enable_light_mode.cpp</a>, <a class="el" href="application_events_8cpp-example.html#a3">application_events.cpp</a>, <a class="el" href="application_settings_8cpp-example.html#a0">application_settings.cpp</a>, <a class="el" href="application_settings_without_cmake_setting_commands_8cpp-example.html#a1">application_settings_without_cmake_setting_commands.cpp</a>, <a class="el" href="application_use_wait_cursor_8cpp-example.html#a0">application_use_wait_cursor.cpp</a>, <a class="el" href="assert_box_8cpp-example.html#a0">assert_box.cpp</a>, <a class="el" href="assert_dialog_8cpp-example.html#a0">assert_dialog.cpp</a>, <a class="el" href="background_worker_8cpp-example.html#a0">background_worker.cpp</a>, <a class="el" href="bitmap_button_8cpp-example.html#a1">bitmap_button.cpp</a>, <a class="el" href="border_style_8cpp-example.html#a2">border_style.cpp</a>, <a class="el" href="busy_box_8cpp-example.html#a0">busy_box.cpp</a>, <a class="el" href="busy_dialog_8cpp-example.html#a0">busy_dialog.cpp</a>, <a class="el" href="button_8cpp-example.html#a1">button.cpp</a>, <a class="el" href="button2_8cpp-example.html#a4">button2.cpp</a>, <a class="el" href="button3_8cpp-example.html#a4">button3.cpp</a>, <a class="el" href="button4_8cpp-example.html#a3">button4.cpp</a>, <a class="el" href="button_appearance_8cpp-example.html#a1">button_appearance.cpp</a>, <a class="el" href="button_renderer_8cpp-example.html#a0">button_renderer.cpp</a>, <a class="el" href="change_color_8cpp-example.html#a2">change_color.cpp</a>, <a class="el" href="change_parent_8cpp-example.html#a2">change_parent.cpp</a>, <a class="el" href="check_box_8cpp-example.html#a1">check_box.cpp</a>, <a class="el" href="check_box_appearance_8cpp-example.html#a1">check_box_appearance.cpp</a>, <a class="el" href="check_box_renderer_8cpp-example.html#a1">check_box_renderer.cpp</a>, <a class="el" href="checked_list_box_8cpp-example.html#a0">checked_list_box.cpp</a>, <a class="el" href="clock_8cpp-example.html#a11">clock.cpp</a>, <a class="el" href="collapsible_panel_8cpp-example.html#a1">collapsible_panel.cpp</a>, <a class="el" href="color_box_8cpp-example.html#a0">color_box.cpp</a>, <a class="el" href="color_dialog_8cpp-example.html#a0">color_dialog.cpp</a>, <a class="el" href="color_picker_8cpp-example.html#a6">color_picker.cpp</a>, <a class="el" href="colored_forms_8cpp-example.html#a2">colored_forms.cpp</a>, <a class="el" href="colors_8cpp-example.html#a2">colors.cpp</a>, <a class="el" href="command_link_button_8cpp-example.html#a1">command_link_button.cpp</a>, <a class="el" href="console_read_key_8cpp-example.html#a0">console_read_key.cpp</a>, <a class="el" href="control_8cpp-example.html#a1">control.cpp</a>, <a class="el" href="control_with_name_operator_8cpp-example.html#a1">control_with_name_operator.cpp</a>, <a class="el" href="countries_8cpp-example.html#a3">countries.cpp</a>, <a class="el" href="cursors_8cpp-example.html#a1">cursors.cpp</a>, <a class="el" href="date_time_picker_8cpp-example.html#a1">date_time_picker.cpp</a>, <a class="el" href="debug_form_8cpp-example.html#a1">debug_form.cpp</a>, <a class="el" href="debug_message_box_8cpp-example.html#a0">debug_message_box.cpp</a>, <a class="el" href="debug_message_dialog_8cpp-example.html#a0">debug_message_dialog.cpp</a>, <a class="el" href="delegate_multicast_8cpp-example.html#a0">delegate_multicast.cpp</a>, <a class="el" href="demo_8cpp-example.html#a17">demo.cpp</a>, <a class="el" href="dialog_8cpp-example.html#a7">dialog.cpp</a>, <a class="el" href="domain_up_down_8cpp-example.html#a1">domain_up_down.cpp</a>, <a class="el" href="dot_matrix_display_8cpp-example.html#a1">dot_matrix_display.cpp</a>, <a class="el" href="emoticons_8cpp-example.html#a5">emoticons.cpp</a>, <a class="el" href="emplace_8cpp-example.html#a3">emplace.cpp</a>, <a class="el" href="environment_cancel_signal_8cpp-example.html#a1">environment_cancel_signal.cpp</a>, <a class="el" href="environment_program_exit_8cpp-example.html#a2">environment_program_exit.cpp</a>, <a class="el" href="event_8cpp-example.html#a6">event.cpp</a>, <a class="el" href="exception_box_8cpp-example.html#a0">exception_box.cpp</a>, <a class="el" href="exception_dialog_8cpp-example.html#a0">exception_dialog.cpp</a>, <a class="el" href="find_box_8cpp-example.html#a0">find_box.cpp</a>, <a class="el" href="find_dialog_8cpp-example.html#a0">find_dialog.cpp</a>, <a class="el" href="folder_browser_box_8cpp-example.html#a0">folder_browser_box.cpp</a>, <a class="el" href="folder_browser_dialog_8cpp-example.html#a0">folder_browser_dialog.cpp</a>, <a class="el" href="font_box_8cpp-example.html#a0">font_box.cpp</a>, <a class="el" href="font_dialog_8cpp-example.html#a0">font_dialog.cpp</a>, <a class="el" href="font_picker_8cpp-example.html#a1">font_picker.cpp</a>, <a class="el" href="form2_8cpp-example.html#a1">form2.cpp</a>, <a class="el" href="form_and_main_8cpp-example.html#a1">form_and_main.cpp</a>, <a class="el" href="form_and_thread_8cpp-example.html#a1">form_and_thread.cpp</a>, <a class="el" href="form_background_image2_8cpp-example.html#a2">form_background_image2.cpp</a>, <a class="el" href="form_click_8cpp-example.html#a3">form_click.cpp</a>, <a class="el" href="form_custom_event_8cpp-example.html#a3">form_custom_event.cpp</a>, <a class="el" href="form_decoration_8cpp-example.html#a1">form_decoration.cpp</a>, <a class="el" href="form_paint_8cpp-example.html#a1">form_paint.cpp</a>, <a class="el" href="form_resize_8cpp-example.html#a2">form_resize.cpp</a>, <a class="el" href="form_show_8cpp-example.html#a2">form_show.cpp</a>, <a class="el" href="form_show_hide_8cpp-example.html#a1">form_show_hide.cpp</a>, <a class="el" href="form_window_state_8cpp-example.html#a1">form_window_state.cpp</a>, <a class="el" href="forms_timer_8cpp-example.html#a4">forms_timer.cpp</a>, <a class="el" href="fourteen_segment_display_8cpp-example.html#a2">fourteen_segment_display.cpp</a>, <a class="el" href="graph_control_8cpp-example.html#a23">graph_control.cpp</a>, <a class="el" href="h_scroll_bar_8cpp-example.html#a1">h_scroll_bar.cpp</a>, <a class="el" href="hello_world_message_box_8cpp-example.html#a0">hello_world_message_box.cpp</a>, <a class="el" href="hello_world_message_box2_8cpp-example.html#a0">hello_world_message_box2.cpp</a>, <a class="el" href="hello_world_paint_8cpp-example.html#a0">hello_world_paint.cpp</a>, <a class="el" href="hello_world_say_8cpp-example.html#a0">hello_world_say.cpp</a>, <a class="el" href="image_list_8cpp-example.html#a1">image_list.cpp</a>, <a class="el" href="images_8cpp-example.html#a1">images.cpp</a>, <a class="el" href="images2_8cpp-example.html#a2">images2.cpp</a>, <a class="el" href="images3_8cpp-example.html#a1">images3.cpp</a>, <a class="el" href="input_box_8cpp-example.html#a0">input_box.cpp</a>, <a class="el" href="input_dialog_8cpp-example.html#a1">input_dialog.cpp</a>, <a class="el" href="input_dialog_multiline_8cpp-example.html#a1">input_dialog_multiline.cpp</a>, <a class="el" href="input_dialog_password_8cpp-example.html#a1">input_dialog_password.cpp</a>, <a class="el" href="key_events_8cpp-example.html#a1">key_events.cpp</a>, <a class="el" href="lcd_label_8cpp-example.html#a1">lcd_label.cpp</a>, <a class="el" href="lcd_label2_8cpp-example.html#a0">lcd_label2.cpp</a>, <a class="el" href="lcd_label3_8cpp-example.html#a0">lcd_label3.cpp</a>, <a class="el" href="lcd_label_appearance_8cpp-example.html#a0">lcd_label_appearance.cpp</a>, <a class="el" href="lcd_label_with_dot_matrix_8cpp-example.html#a13">lcd_label_with_dot_matrix.cpp</a>, <a class="el" href="lcd_label_with_fourteen_segment_8cpp-example.html#a13">lcd_label_with_fourteen_segment.cpp</a>, <a class="el" href="lcd_label_with_nine_segment_8cpp-example.html#a13">lcd_label_with_nine_segment.cpp</a>, <a class="el" href="lcd_label_with_seven_segment_8cpp-example.html#a13">lcd_label_with_seven_segment.cpp</a>, <a class="el" href="lcd_label_with_sixteen_segment_8cpp-example.html#a13">lcd_label_with_sixteen_segment.cpp</a>, <a class="el" href="light_button_8cpp-example.html#a1">light_button.cpp</a>, <a class="el" href="link_label_8cpp-example.html#a1">link_label.cpp</a>, <a class="el" href="list_box_8cpp-example.html#a2">list_box.cpp</a>, <a class="el" href="loading_indicator_8cpp-example.html#a1">loading_indicator.cpp</a>, <a class="el" href="message_box_8cpp-example.html#a1">message_box.cpp</a>, <a class="el" href="message_box_appearance_8cpp-example.html#a1">message_box_appearance.cpp</a>, <a class="el" href="message_dialog_8cpp-example.html#a1">message_dialog.cpp</a>, <a class="el" href="message_dialog_show_sheet_8cpp-example.html#a1">message_dialog_show_sheet.cpp</a>, <a class="el" href="month_calendar_8cpp-example.html#a1">month_calendar.cpp</a>, <a class="el" href="mouse_events_8cpp-example.html#a1">mouse_events.cpp</a>, <a class="el" href="move_form_8cpp-example.html#a0">move_form.cpp</a>, <a class="el" href="nine_segment_display_8cpp-example.html#a2">nine_segment_display.cpp</a>, <a class="el" href="numeric_text_box_8cpp-example.html#a6">numeric_text_box.cpp</a>, <a class="el" href="numeric_up_down_8cpp-example.html#a1">numeric_up_down.cpp</a>, <a class="el" href="open_file_box_8cpp-example.html#a1">open_file_box.cpp</a>, <a class="el" href="open_file_dialog_8cpp-example.html#a1">open_file_dialog.cpp</a>, <a class="el" href="painting_8cpp-example.html#a0">painting.cpp</a>, <a class="el" href="picture_box_8cpp-example.html#a2">picture_box.cpp</a>, <a class="el" href="popup_form_8cpp-example.html#a1">popup_form.cpp</a>, <a class="el" href="popup_panel_8cpp-example.html#a1">popup_panel.cpp</a>, <a class="el" href="process_form_8cpp-example.html#a2">process_form.cpp</a>, <a class="el" href="progress_bar_8cpp-example.html#a0">progress_bar.cpp</a>, <a class="el" href="progress_box_8cpp-example.html#a1">progress_box.cpp</a>, <a class="el" href="progress_dialog_8cpp-example.html#a1">progress_dialog.cpp</a>, <a class="el" href="radio_button_8cpp-example.html#a2">radio_button.cpp</a>, <a class="el" href="radio_button_renderer_8cpp-example.html#a1">radio_button_renderer.cpp</a>, <a class="el" href="replace_box_8cpp-example.html#a1">replace_box.cpp</a>, <a class="el" href="replace_dialog_8cpp-example.html#a1">replace_dialog.cpp</a>, <a class="el" href="save_file_box_8cpp-example.html#a1">save_file_box.cpp</a>, <a class="el" href="save_file_dialog_8cpp-example.html#a1">save_file_dialog.cpp</a>, <a class="el" href="send_message_to_form_8cpp-example.html#a3">send_message_to_form.cpp</a>, <a class="el" href="seven_segment_display_8cpp-example.html#a2">seven_segment_display.cpp</a>, <a class="el" href="sixteen_segment_display_8cpp-example.html#a2">sixteen_segment_display.cpp</a>, <a class="el" href="some_controls_8cpp-example.html#a4">some_controls.cpp</a>, <a class="el" href="some_system_controls_8cpp-example.html#a4">some_system_controls.cpp</a>, <a class="el" href="status_bar_8cpp-example.html#a4">status_bar.cpp</a>, <a class="el" href="status_bar_without_panels_8cpp-example.html#a1">status_bar_without_panels.cpp</a>, <a class="el" href="switch_button_8cpp-example.html#a1">switch_button.cpp</a>, <a class="el" href="system_sound_8cpp-example.html#a3">system_sound.cpp</a>, <a class="el" href="text_box_8cpp-example.html#a1">text_box.cpp</a>, <a class="el" href="text_box_password_8cpp-example.html#a1">text_box_password.cpp</a>, <a class="el" href="text_box_password2_8cpp-example.html#a1">text_box_password2.cpp</a>, <a class="el" href="themes_8cpp-example.html#a4">themes.cpp</a>, <a class="el" href="toggle_button_8cpp-example.html#a1">toggle_button.cpp</a>, <a class="el" href="tool_bar_8cpp-example.html#a2">tool_bar.cpp</a>, <a class="el" href="trace_form_8cpp-example.html#a1">trace_form.cpp</a>, <a class="el" href="trace_message_box_8cpp-example.html#a3">trace_message_box.cpp</a>, <a class="el" href="trace_message_dialog_8cpp-example.html#a2">trace_message_dialog.cpp</a>, <a class="el" href="track_bar_8cpp-example.html#a1">track_bar.cpp</a>, <a class="el" href="track_bar2_8cpp-example.html#a1">track_bar2.cpp</a>, <a class="el" href="tutorial_communicate_8cpp-example.html#a5">tutorial_communicate.cpp</a>, <a class="el" href="up_down_button_8cpp-example.html#a1">up_down_button.cpp</a>, <a class="el" href="use_wait_cursor_8cpp-example.html#a1">use_wait_cursor.cpp</a>, <a class="el" href="user_dialog_8cpp-example.html#a3">user_dialog.cpp</a>, <a class="el" href="user_dialog_show_sheet_8cpp-example.html#a3">user_dialog_show_sheet.cpp</a>, <a class="el" href="v_scroll_bar_8cpp-example.html#a1">v_scroll_bar.cpp</a>, and <a class="el" href="wiggly_8cpp-example.html#a16">wiggly.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="about_box_8cpp-example.html#a0">about_box.cpp</a>, <a class="el" href="about_dialog_8cpp-example.html#a0">about_dialog.cpp</a>, <a class="el" href="about_dialog_system_8cpp-example.html#a0">about_dialog_system.cpp</a>, <a class="el" href="about_dialog_with_user_pages_8cpp-example.html#a1">about_dialog_with_user_pages.cpp</a>, <a class="el" href="application_add_message_filter_8cpp-example.html#a1">application_add_message_filter.cpp</a>, <a class="el" href="application_application_exit_8cpp-example.html#a0">application_application_exit.cpp</a>, <a class="el" href="application_context_8cpp-example.html#a0">application_context.cpp</a>, <a class="el" href="application_enable_dark_mode_8cpp-example.html#a3">application_enable_dark_mode.cpp</a>, <a class="el" href="application_enable_light_mode_8cpp-example.html#a3">application_enable_light_mode.cpp</a>, <a class="el" href="application_events_8cpp-example.html#a0">application_events.cpp</a>, <a class="el" href="application_settings_8cpp-example.html#a0">application_settings.cpp</a>, <a class="el" href="application_settings_without_cmake_setting_commands_8cpp-example.html#a1">application_settings_without_cmake_setting_commands.cpp</a>, <a class="el" href="application_use_wait_cursor_8cpp-example.html#a0">application_use_wait_cursor.cpp</a>, <a class="el" href="assert_box_8cpp-example.html#a0">assert_box.cpp</a>, <a class="el" href="assert_dialog_8cpp-example.html#a0">assert_dialog.cpp</a>, <a class="el" href="background_worker_8cpp-example.html#a0">background_worker.cpp</a>, <a class="el" href="bitmap_button_8cpp-example.html#a0">bitmap_button.cpp</a>, <a class="el" href="border_style_8cpp-example.html#a0">border_style.cpp</a>, <a class="el" href="busy_box_8cpp-example.html#a0">busy_box.cpp</a>, <a class="el" href="busy_dialog_8cpp-example.html#a0">busy_dialog.cpp</a>, <a class="el" href="button_8cpp-example.html#a0">button.cpp</a>, <a class="el" href="button2_8cpp-example.html#a4">button2.cpp</a>, <a class="el" href="button3_8cpp-example.html#a4">button3.cpp</a>, <a class="el" href="button4_8cpp-example.html#a3">button4.cpp</a>, <a class="el" href="button_appearance_8cpp-example.html#a0">button_appearance.cpp</a>, <a class="el" href="button_renderer_8cpp-example.html#a0">button_renderer.cpp</a>, <a class="el" href="change_color_8cpp-example.html#a0">change_color.cpp</a>, <a class="el" href="change_parent_8cpp-example.html#a1">change_parent.cpp</a>, <a class="el" href="check_box_8cpp-example.html#a0">check_box.cpp</a>, <a class="el" href="check_box_appearance_8cpp-example.html#a0">check_box_appearance.cpp</a>, <a class="el" href="check_box_renderer_8cpp-example.html#a0">check_box_renderer.cpp</a>, <a class="el" href="checked_list_box_8cpp-example.html#a0">checked_list_box.cpp</a>, <a class="el" href="clock_8cpp-example.html#a3">clock.cpp</a>, <a class="el" href="collapsible_panel_8cpp-example.html#a0">collapsible_panel.cpp</a>, <a class="el" href="color_box_8cpp-example.html#a0">color_box.cpp</a>, <a class="el" href="color_dialog_8cpp-example.html#a0">color_dialog.cpp</a>, <a class="el" href="color_picker_8cpp-example.html#a0">color_picker.cpp</a>, <a class="el" href="colored_forms_8cpp-example.html#a0">colored_forms.cpp</a>, <a class="el" href="colors_8cpp-example.html#a0">colors.cpp</a>, <a class="el" href="command_link_button_8cpp-example.html#a0">command_link_button.cpp</a>, <a class="el" href="console_read_key_8cpp-example.html#a0">console_read_key.cpp</a>, <a class="el" href="control_8cpp-example.html#a0">control.cpp</a>, <a class="el" href="control_with_name_operator_8cpp-example.html#a0">control_with_name_operator.cpp</a>, <a class="el" href="countries_8cpp-example.html#a0">countries.cpp</a>, <a class="el" href="cursors_8cpp-example.html#a0">cursors.cpp</a>, <a class="el" href="date_time_picker_8cpp-example.html#a0">date_time_picker.cpp</a>, <a class="el" href="debug_form_8cpp-example.html#a0">debug_form.cpp</a>, <a class="el" href="debug_message_box_8cpp-example.html#a0">debug_message_box.cpp</a>, <a class="el" href="debug_message_dialog_8cpp-example.html#a0">debug_message_dialog.cpp</a>, <a class="el" href="delegate_multicast_8cpp-example.html#a0">delegate_multicast.cpp</a>, <a class="el" href="demo_8cpp-example.html#a0">demo.cpp</a>, <a class="el" href="dialog_8cpp-example.html#a1">dialog.cpp</a>, <a class="el" href="domain_up_down_8cpp-example.html#a0">domain_up_down.cpp</a>, <a class="el" href="dot_matrix_display_8cpp-example.html#a1">dot_matrix_display.cpp</a>, <a class="el" href="emoticons_8cpp-example.html#a1">emoticons.cpp</a>, <a class="el" href="emplace_8cpp-example.html#a0">emplace.cpp</a>, <a class="el" href="environment_cancel_signal_8cpp-example.html#a1">environment_cancel_signal.cpp</a>, <a class="el" href="environment_program_exit_8cpp-example.html#a1">environment_program_exit.cpp</a>, <a class="el" href="event_8cpp-example.html#a6">event.cpp</a>, <a class="el" href="exception_box_8cpp-example.html#a0">exception_box.cpp</a>, <a class="el" href="exception_dialog_8cpp-example.html#a0">exception_dialog.cpp</a>, <a class="el" href="find_box_8cpp-example.html#a0">find_box.cpp</a>, <a class="el" href="find_dialog_8cpp-example.html#a0">find_dialog.cpp</a>, <a class="el" href="folder_browser_box_8cpp-example.html#a0">folder_browser_box.cpp</a>, <a class="el" href="folder_browser_dialog_8cpp-example.html#a0">folder_browser_dialog.cpp</a>, <a class="el" href="font_box_8cpp-example.html#a0">font_box.cpp</a>, <a class="el" href="font_dialog_8cpp-example.html#a0">font_dialog.cpp</a>, <a class="el" href="font_picker_8cpp-example.html#a0">font_picker.cpp</a>, <a class="el" href="form2_8cpp-example.html#a1">form2.cpp</a>, <a class="el" href="form_and_main_8cpp-example.html#a0">form_and_main.cpp</a>, <a class="el" href="form_and_thread_8cpp-example.html#a0">form_and_thread.cpp</a>, <a class="el" href="form_background_image2_8cpp-example.html#a1">form_background_image2.cpp</a>, <a class="el" href="form_click_8cpp-example.html#a0">form_click.cpp</a>, <a class="el" href="form_custom_event_8cpp-example.html#a0">form_custom_event.cpp</a>, <a class="el" href="form_decoration_8cpp-example.html#a0">form_decoration.cpp</a>, <a class="el" href="form_paint_8cpp-example.html#a0">form_paint.cpp</a>, <a class="el" href="form_resize_8cpp-example.html#a0">form_resize.cpp</a>, <a class="el" href="form_show_8cpp-example.html#a0">form_show.cpp</a>, <a class="el" href="form_show_hide_8cpp-example.html#a0">form_show_hide.cpp</a>, <a class="el" href="form_window_state_8cpp-example.html#a0">form_window_state.cpp</a>, <a class="el" href="forms_timer_8cpp-example.html#a1">forms_timer.cpp</a>, <a class="el" href="fourteen_segment_display_8cpp-example.html#a1">fourteen_segment_display.cpp</a>, <a class="el" href="graph_control_8cpp-example.html#a2">graph_control.cpp</a>, <a class="el" href="h_scroll_bar_8cpp-example.html#a0">h_scroll_bar.cpp</a>, <a class="el" href="hello_world_message_box_8cpp-example.html#a0">hello_world_message_box.cpp</a>, <a class="el" href="hello_world_message_box2_8cpp-example.html#a0">hello_world_message_box2.cpp</a>, <a class="el" href="hello_world_paint_8cpp-example.html#a0">hello_world_paint.cpp</a>, <a class="el" href="hello_world_say_8cpp-example.html#a0">hello_world_say.cpp</a>, <a class="el" href="image_list_8cpp-example.html#a0">image_list.cpp</a>, <a class="el" href="images_8cpp-example.html#a0">images.cpp</a>, <a class="el" href="images2_8cpp-example.html#a0">images2.cpp</a>, <a class="el" href="images3_8cpp-example.html#a0">images3.cpp</a>, <a class="el" href="input_box_8cpp-example.html#a0">input_box.cpp</a>, <a class="el" href="input_dialog_8cpp-example.html#a0">input_dialog.cpp</a>, <a class="el" href="input_dialog_multiline_8cpp-example.html#a0">input_dialog_multiline.cpp</a>, <a class="el" href="input_dialog_password_8cpp-example.html#a0">input_dialog_password.cpp</a>, <a class="el" href="key_events_8cpp-example.html#a0">key_events.cpp</a>, <a class="el" href="lcd_label_8cpp-example.html#a0">lcd_label.cpp</a>, <a class="el" href="lcd_label2_8cpp-example.html#a0">lcd_label2.cpp</a>, <a class="el" href="lcd_label3_8cpp-example.html#a0">lcd_label3.cpp</a>, <a class="el" href="lcd_label_appearance_8cpp-example.html#a0">lcd_label_appearance.cpp</a>, <a class="el" href="lcd_label_with_dot_matrix_8cpp-example.html#a4">lcd_label_with_dot_matrix.cpp</a>, <a class="el" href="lcd_label_with_fourteen_segment_8cpp-example.html#a4">lcd_label_with_fourteen_segment.cpp</a>, <a class="el" href="lcd_label_with_nine_segment_8cpp-example.html#a4">lcd_label_with_nine_segment.cpp</a>, <a class="el" href="lcd_label_with_seven_segment_8cpp-example.html#a4">lcd_label_with_seven_segment.cpp</a>, <a class="el" href="lcd_label_with_sixteen_segment_8cpp-example.html#a4">lcd_label_with_sixteen_segment.cpp</a>, <a class="el" href="light_button_8cpp-example.html#a0">light_button.cpp</a>, <a class="el" href="link_label_8cpp-example.html#a0">link_label.cpp</a>, <a class="el" href="list_box_8cpp-example.html#a1">list_box.cpp</a>, <a class="el" href="loading_indicator_8cpp-example.html#a0">loading_indicator.cpp</a>, <a class="el" href="message_box_8cpp-example.html#a0">message_box.cpp</a>, <a class="el" href="message_box_appearance_8cpp-example.html#a0">message_box_appearance.cpp</a>, <a class="el" href="message_dialog_8cpp-example.html#a0">message_dialog.cpp</a>, <a class="el" href="message_dialog_show_sheet_8cpp-example.html#a0">message_dialog_show_sheet.cpp</a>, <a class="el" href="month_calendar_8cpp-example.html#a0">month_calendar.cpp</a>, <a class="el" href="mouse_events_8cpp-example.html#a0">mouse_events.cpp</a>, <a class="el" href="move_form_8cpp-example.html#a0">move_form.cpp</a>, <a class="el" href="nine_segment_display_8cpp-example.html#a1">nine_segment_display.cpp</a>, <a class="el" href="numeric_text_box_8cpp-example.html#a1">numeric_text_box.cpp</a>, <a class="el" href="numeric_up_down_8cpp-example.html#a0">numeric_up_down.cpp</a>, <a class="el" href="open_file_box_8cpp-example.html#a0">open_file_box.cpp</a>, <a class="el" href="open_file_dialog_8cpp-example.html#a0">open_file_dialog.cpp</a>, <a class="el" href="painting_8cpp-example.html#a0">painting.cpp</a>, <a class="el" href="picture_box_8cpp-example.html#a0">picture_box.cpp</a>, <a class="el" href="popup_form_8cpp-example.html#a0">popup_form.cpp</a>, <a class="el" href="popup_panel_8cpp-example.html#a0">popup_panel.cpp</a>, <a class="el" href="process_form_8cpp-example.html#a0">process_form.cpp</a>, <a class="el" href="progress_bar_8cpp-example.html#a0">progress_bar.cpp</a>, <a class="el" href="progress_box_8cpp-example.html#a0">progress_box.cpp</a>, <a class="el" href="progress_dialog_8cpp-example.html#a0">progress_dialog.cpp</a>, <a class="el" href="radio_button_8cpp-example.html#a0">radio_button.cpp</a>, <a class="el" href="radio_button_renderer_8cpp-example.html#a0">radio_button_renderer.cpp</a>, <a class="el" href="replace_box_8cpp-example.html#a0">replace_box.cpp</a>, <a class="el" href="replace_dialog_8cpp-example.html#a0">replace_dialog.cpp</a>, <a class="el" href="save_file_box_8cpp-example.html#a0">save_file_box.cpp</a>, <a class="el" href="save_file_dialog_8cpp-example.html#a0">save_file_dialog.cpp</a>, <a class="el" href="send_message_to_form_8cpp-example.html#a0">send_message_to_form.cpp</a>, <a class="el" href="seven_segment_display_8cpp-example.html#a1">seven_segment_display.cpp</a>, <a class="el" href="sixteen_segment_display_8cpp-example.html#a1">sixteen_segment_display.cpp</a>, <a class="el" href="some_controls_8cpp-example.html#a3">some_controls.cpp</a>, <a class="el" href="some_system_controls_8cpp-example.html#a3">some_system_controls.cpp</a>, <a class="el" href="status_bar_8cpp-example.html#a3">status_bar.cpp</a>, <a class="el" href="status_bar_without_panels_8cpp-example.html#a0">status_bar_without_panels.cpp</a>, <a class="el" href="switch_button_8cpp-example.html#a0">switch_button.cpp</a>, <a class="el" href="system_sound_8cpp-example.html#a0">system_sound.cpp</a>, <a class="el" href="text_box_8cpp-example.html#a0">text_box.cpp</a>, <a class="el" href="text_box_password_8cpp-example.html#a0">text_box_password.cpp</a>, <a class="el" href="text_box_password2_8cpp-example.html#a0">text_box_password2.cpp</a>, <a class="el" href="themes_8cpp-example.html#a3">themes.cpp</a>, <a class="el" href="toggle_button_8cpp-example.html#a0">toggle_button.cpp</a>, <a class="el" href="tool_bar_8cpp-example.html#a0">tool_bar.cpp</a>, <a class="el" href="trace_form_8cpp-example.html#a0">trace_form.cpp</a>, <a class="el" href="trace_message_box_8cpp-example.html#a0">trace_message_box.cpp</a>, <a class="el" href="trace_message_dialog_8cpp-example.html#a0">trace_message_dialog.cpp</a>, <a class="el" href="track_bar_8cpp-example.html#a0">track_bar.cpp</a>, <a class="el" href="track_bar2_8cpp-example.html#a0">track_bar2.cpp</a>, <a class="el" href="tutorial_communicate_8cpp-example.html#a5">tutorial_communicate.cpp</a>, <a class="el" href="up_down_button_8cpp-example.html#a0">up_down_button.cpp</a>, <a class="el" href="use_wait_cursor_8cpp-example.html#a0">use_wait_cursor.cpp</a>, <a class="el" href="user_dialog_8cpp-example.html#a0">user_dialog.cpp</a>, <a class="el" href="user_dialog_show_sheet_8cpp-example.html#a0">user_dialog_show_sheet.cpp</a>, <a class="el" href="v_scroll_bar_8cpp-example.html#a0">v_scroll_bar.cpp</a>, and <a class="el" href="wiggly_8cpp-example.html#a1">wiggly.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -505,11 +499,7 @@ Macros</h2></td></tr>
 <li>The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use <a class="el" href="structxtd_1_1enum__register.html" title="Provides the registration struct for enumerations.">xtd::enum_register</a> to register the enumeration identifiers. </li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#gab2f79c6b0b3afc4eb78cb892fe72b373" title="Provides the registration struct for enum with specified underlying type.">enum_ut_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/enum&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#gab2f79c6b0b3afc4eb78cb892fe72b373" title="Provides the registration struct for enum with specified underlying type.">enum_ut_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#gab2f79c6b0b3afc4eb78cb892fe72b373">enum_ut_</a>(, enum_test, <span class="keywordtype">byte</span>,</div>
 <div class="line">  value_one,</div>
@@ -520,11 +510,11 @@ Macros</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;name = {}&quot;</span>, enum_test::value_four);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a>(enum_test::value_four).to_byte());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, enum_object(enum_test::value_four).to_byte());</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;byte&gt; = {}&quot;</span>, as&lt;byte&gt;(enum_test::value_four));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_names&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, enum_object&lt;&gt;::get_names&lt;enum_test&gt;());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -536,7 +526,6 @@ Macros</h2></td></tr>
 <div class="line"><span class="comment">// names = [value_one, value_two, value_three, value_four]</span></div>
 <div class="line"><span class="comment">// entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]</span></div>
 <div class="ttc" id="agroup__keywords_html_gab2f79c6b0b3afc4eb78cb892fe72b373"><div class="ttname"><a href="group__keywords.html#gab2f79c6b0b3afc4eb78cb892fe72b373">enum_ut_</a></div><div class="ttdeci">#define enum_ut_(namespace_name, enum_t, underlying_t,...)</div><div class="ttdoc">Provides the registration struct for enum with specified underlying type.</div><div class="ttdef"><b>Definition</b> enum.hpp:30</div></div>
-<div class="ttc" id="astructxtd_1_1enum__object_html"><div class="ttname"><a href="structxtd_1_1enum__object.html">xtd::enum_object</a></div><div class="ttdoc">Provides the base class for enumerations.</div><div class="ttdef"><b>Definition</b> enum_object.hpp:48</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_ut_8cpp-example.html#a0">enum_ut.cpp</a>.</dd>
 </dl>
@@ -594,11 +583,7 @@ Macros</h2></td></tr>
 <li>The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use <a class="el" href="structxtd_1_1enum__register.html" title="Provides the registration struct for enumerations.">xtd::enum_register</a> to register the enumeration identifiers. </li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#ga5f48a70a2aa3ba1ba74bd8a4cfc44691" title="Provides the registration struct for enum.">enum_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/enum&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#ga5f48a70a2aa3ba1ba74bd8a4cfc44691" title="Provides the registration struct for enum.">enum_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga5f48a70a2aa3ba1ba74bd8a4cfc44691">enum_</a>(, enum_test,</div>
 <div class="line">  value_one,</div>
@@ -609,11 +594,11 @@ Macros</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;name = {}&quot;</span>, enum_test::value_four);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a>(enum_test::value_four).to_int32());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, enum_object(enum_test::value_four).to_int32());</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;int&gt; = {}&quot;</span>, as&lt;int&gt;(enum_test::value_four));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_names&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, enum_object&lt;&gt;::get_names&lt;enum_test&gt;());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -689,11 +674,7 @@ Macros</h2></td></tr>
 <li>The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use <a class="el" href="structxtd_1_1enum__register.html" title="Provides the registration struct for enumerations.">xtd::enum_register</a> to register the enumeration identifiers. </li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#ga23f683a98eff4df0bec973131eca5704" title="Provides the registration struct for enum class with specified underlying type.">enum_class_ut_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/enum_class&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#ga23f683a98eff4df0bec973131eca5704" title="Provides the registration struct for enum class with specified underlying type.">enum_class_ut_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga23f683a98eff4df0bec973131eca5704">enum_class_ut_</a>(, enum_test, <span class="keywordtype">byte</span>,</div>
 <div class="line">  value_one,</div>
@@ -704,11 +685,11 @@ Macros</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;name = {}&quot;</span>, enum_test::value_four);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a>(enum_test::value_four).to_int32());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, enum_object(enum_test::value_four).to_int32());</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;int&gt; = {}&quot;</span>, as&lt;int&gt;(enum_test::value_four));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_names&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, enum_object&lt;&gt;::get_names&lt;enum_test&gt;());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -777,11 +758,7 @@ Macros</h2></td></tr>
 <li>The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use <a class="el" href="structxtd_1_1enum__register.html" title="Provides the registration struct for enumerations.">xtd::enum_register</a> to register the enumeration identifiers. </li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#ga5f48a70a2aa3ba1ba74bd8a4cfc44691" title="Provides the registration struct for enum.">enum_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/enum_class&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#ga5f48a70a2aa3ba1ba74bd8a4cfc44691" title="Provides the registration struct for enum.">enum_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3cf593875eebd764cb406fa27ded6d93">enum_class_</a>(, enum_test,</div>
 <div class="line">  value_one,</div>
@@ -792,11 +769,11 @@ Macros</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;name = {}&quot;</span>, enum_test::value_four);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a>(enum_test::value_four).to_int32());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, enum_object(enum_test::value_four).to_int32());</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;int&gt; = {}&quot;</span>, as&lt;int&gt;(enum_test::value_four));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_names&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, enum_object&lt;&gt;::get_names&lt;enum_test&gt;());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -872,11 +849,7 @@ Macros</h2></td></tr>
 <li>The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use <a class="el" href="structxtd_1_1enum__register.html" title="Provides the registration struct for enumerations.">xtd::enum_register</a> to register the enumeration identifiers. </li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#ga3844e63da56dbd2107788b5396857216" title="Provides the registration struct for enum with specified underlying type.">enum_struct_ut_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/enum_struct&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#ga3844e63da56dbd2107788b5396857216" title="Provides the registration struct for enum with specified underlying type.">enum_struct_ut_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga3844e63da56dbd2107788b5396857216">enum_struct_ut_</a>(, enum_test, <span class="keywordtype">byte</span>,</div>
 <div class="line">  value_one,</div>
@@ -887,11 +860,11 @@ Macros</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;name = {}&quot;</span>, enum_test::value_four);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a>(enum_test::value_four).to_int32());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, enum_object(enum_test::value_four).to_int32());</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;int&gt; = {}&quot;</span>, as&lt;int&gt;(enum_test::value_four));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_names&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, enum_object&lt;&gt;::get_names&lt;enum_test&gt;());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -961,11 +934,7 @@ Macros</h2></td></tr>
 <li>The enumeration's cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enumeration is in a class or struct, add operators manually and use <a class="el" href="structxtd_1_1enum__register.html" title="Provides the registration struct for enumerations.">xtd::enum_register</a> to register the enumeration identifiers. </li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#ga5f48a70a2aa3ba1ba74bd8a4cfc44691" title="Provides the registration struct for enum.">enum_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/enum_struct&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#ga5f48a70a2aa3ba1ba74bd8a4cfc44691" title="Provides the registration struct for enum.">enum_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga59ea5f69803bcfb367107f1cf66e5fff">enum_struct_</a>(, enum_test,</div>
 <div class="line">  value_one,</div>
@@ -976,11 +945,11 @@ Macros</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;name = {}&quot;</span>, enum_test::value_four);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a>(enum_test::value_four).to_int32());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, enum_object(enum_test::value_four).to_int32());</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;int&gt; = {}&quot;</span>, as&lt;int&gt;(enum_test::value_four));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_names&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, enum_object&lt;&gt;::get_names&lt;enum_test&gt;());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -1067,12 +1036,7 @@ Macros</h2></td></tr>
 <li>The enum's flags cannot be in a class or struct. The enum must be in the global namespace or in a namespace hierarchy. If the enum flags is in a class or struct, add operators manually and use <a class="el" href="structxtd_1_1enum__set__attribute.html" title="Provides the set attribute struct for enumerations.">xtd::enum_set_attribute</a> to register the <a class="el" href="group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf" title="Enum flags attribute.">xtd::enum_attribute::flags</a> attribute. </li>
 </ul>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#gaea49fae71107df8769685efb159c181a" title="Provides the set attribute struct for enumerations helper.">flags_attribute_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/enum_class&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/format&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code show how to use <a class="el" href="group__keywords.html#gaea49fae71107df8769685efb159c181a" title="Provides the set attribute struct for enumerations helper.">flags_attribute_</a> helper. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">enum class</span> text_styles {</div>
 <div class="line">  normal =    0b0,</div>
@@ -1196,7 +1160,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="comment">// │ text_styles::strikeout                        │ {:X}       │ 8                                │</span></div>
 <div class="line"><span class="comment">// │ text_styles::strikeout                        │ {:X2}      │ 08                               │</span></div>
 <div class="line"><span class="comment">// └───────────────────────────────────────────────┴────────────┴──────────────────────────────────┘</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__string_html_abe37d71513cd7f2585290402bd45afb2"><div class="ttname"><a href="classxtd_1_1basic__string.html#abe37d71513cd7f2585290402bd45afb2">xtd::basic_string::pad_right</a></div><div class="ttdeci">basic_string pad_right(xtd::size total_width) const noexcept</div><div class="ttdoc">Left-aligns the characters in this basic_string, padding with spaces on the right for a specified tot...</div><div class="ttdef"><b>Definition</b> basic_string.hpp:1557</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html_abe37d71513cd7f2585290402bd45afb2"><div class="ttname"><a href="classxtd_1_1basic__string.html#abe37d71513cd7f2585290402bd45afb2">xtd::basic_string::pad_right</a></div><div class="ttdeci">basic_string pad_right(xtd::size total_width) const noexcept</div><div class="ttdoc">Left-aligns the characters in this basic_string, padding with spaces on the right for a specified tot...</div><div class="ttdef"><b>Definition</b> basic_string.hpp:1561</div></div>
 <div class="ttc" id="agroup__format__parse_html_ga73705cb16c7db5a2b7567456ff4e7e14"><div class="ttname"><a href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">xtd::format</a></div><div class="ttdeci">xtd::string format(const xtd::string &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> format.hpp:20</div></div>
 <div class="ttc" id="agroup__keywords_html_gaea49fae71107df8769685efb159c181a"><div class="ttname"><a href="group__keywords.html#gaea49fae71107df8769685efb159c181a">flags_attribute_</a></div><div class="ttdeci">#define flags_attribute_(namespace_name, enum_type)</div><div class="ttdoc">Provides the set attribute struct for enumerations helper.</div><div class="ttdef"><b>Definition</b> flags_attribute.hpp:34</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga2be4d2f270243268ff197700fa3ae42f"><div class="ttname"><a href="group__xtd__core.html#ga2be4d2f270243268ff197700fa3ae42f">xtd::enum_collection</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; enum_t, xtd::string &gt; &gt; enum_collection</div><div class="ttdoc">Represents a pair of an enum_t value and a string of an enum of type enum_t.</div><div class="ttdef"><b>Definition</b> enum_collection.hpp:24</div></div>
@@ -1240,8 +1204,9 @@ Macros</h2></td></tr>
 <div class="line">  std:::string to_string()<span class="keyword"> const override </span>{<span class="keywordflow">return</span> <span class="stringliteral">&quot;foo&quot;</span>;}</div>
 <div class="line">};</div>
 <div class="ttc" id="agroup__keywords_html_ga64c32b24bd922fc8189a487213592ccf"><div class="ttname"><a href="group__keywords.html#ga64c32b24bd922fc8189a487213592ccf">interface_</a></div><div class="ttdeci">#define interface_</div><div class="ttdoc">This keyword is use to represent an interface.</div><div class="ttdef"><b>Definition</b> interface.hpp:58</div></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="interface_8cpp-example.html#a1">interface.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="interface_8cpp-example.html#a0">interface.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1320,7 +1285,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <a class="code hl_typedef" href="group__types.html#ga255b88769d29fe91661cacc7720f265a">decimal</a> balance;</div>
 <div class="line">};</div>
-<div class="ttc" id="agroup__keywords_html_gacd9906b29d877eb1eb0a8c7bc4ab774a"><div class="ttname"><a href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a></div><div class="ttdeci">#define lock_(object)</div><div class="ttdoc">The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion loc...</div><div class="ttdef"><b>Definition</b> lock.hpp:85</div></div>
+<div class="ttc" id="agroup__keywords_html_gacd9906b29d877eb1eb0a8c7bc4ab774a"><div class="ttname"><a href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a></div><div class="ttdeci">#define lock_(object)</div><div class="ttdoc">The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion loc...</div><div class="ttdef"><b>Definition</b> lock.hpp:67</div></div>
 <div class="ttc" id="agroup__types_html_ga255b88769d29fe91661cacc7720f265a"><div class="ttname"><a href="group__types.html#ga255b88769d29fe91661cacc7720f265a">xtd::decimal</a></div><div class="ttdeci">long double decimal</div><div class="ttdoc">Represents a decimal-precision floating-point number.</div><div class="ttdef"><b>Definition</b> decimal.hpp:23</div></div>
 </div><!-- fragment --><p> For more information, see Thread Synchronization. </p><dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
@@ -1363,25 +1328,101 @@ You can't use the await_ keyword in the body of a lock_ statement. </dd></dl>
 <div class="line"><span class="comment">// Output: run_me called</span></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following sample uses threads and lock_. As long as the lock statement is present, the statement block is a critical section and balance will never become a negative number. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following sample uses threads and lock_. As long as the lock statement is present, the statement block is a critical section and balance will never become a negative number. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lock_8cpp-example.html#a0">lock.cpp</a>, <a class="el" href="monitor_lock_8cpp-example.html#a0">monitor_lock.cpp</a>, <a class="el" href="monitor_pulse_8cpp-example.html#a0">monitor_pulse.cpp</a>, and <a class="el" href="monitor_pulse_all_8cpp-example.html#a0">monitor_pulse_all.cpp</a>.</dd>
+</dl>
+
+</div>
+</div>
+<a id="gafe36bf782d472e00dc82d91679d4a58b" name="gafe36bf782d472e00dc82d91679d4a58b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafe36bf782d472e00dc82d91679d4a58b">&#9670;&#160;</a></span>lock_guard_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define lock_guard_</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">object</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="lock__guard_8hpp.html">xtd.core/include/xtd/lock_guard.hpp</a>&gt;</code></p>
+
+<p>The lock_guard_ keyword marks a statement block_guard as a critical section by obtaining the mutual-exclusion lock_guard for a given object, executing a statement, and then releasing the lock_guard. The following example includes a lock_guard statement. </p>
+<div class="fragment"><div class="line"><span class="keyword">class </span>account : <span class="keyword">public</span> object {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keywordtype">void</span> withdraw(decimal amount) {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#gafe36bf782d472e00dc82d91679d4a58b">lock_guard_</a> (balance) {</div>
+<div class="line">      <span class="keywordflow">if</span> (amount &gt; balance)</div>
+<div class="line">        <span class="keywordflow">throw</span> exception(<span class="stringliteral">&quot;Insufficient funds&quot;</span>);</div>
+<div class="line">      balance -= amount;</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">  <a class="code hl_typedef" href="group__types.html#ga255b88769d29fe91661cacc7720f265a">decimal</a> balance;</div>
+<div class="line">};</div>
+<div class="ttc" id="agroup__keywords_html_gafe36bf782d472e00dc82d91679d4a58b"><div class="ttname"><a href="group__keywords.html#gafe36bf782d472e00dc82d91679d4a58b">lock_guard_</a></div><div class="ttdeci">#define lock_guard_(object)</div><div class="ttdoc">The lock_guard_ keyword marks a statement block_guard as a critical section by obtaining the mutual-e...</div><div class="ttdef"><b>Definition</b> lock_guard.hpp:64</div></div>
+</div><!-- fragment --><p> For more information, see Thread Synchronization. </p><dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The lock_guard_ keyword ensures that one thread does not enter a critical section of code while another thread is in the critical section. If another thread tries to enter a lock_guarded code, it will wait, block_guard, until the object is released. </dd>
+<dd>
+The section Threading discusses threading. </dd>
+<dd>
+The lock_guard_ keyword calls Enter at the start of the block_guard and Exit at the end of the block_guard. A <a class="el" href="classxtd_1_1threading_1_1thread__interrupted__exception.html" title="The exception that is thrown when a Thread is interrupted while it is in a waiting state.">xtd::threading::thread_interrupted_exception</a> is thrown if <a class="el" href="classxtd_1_1threading_1_1thread.html#a23a6354206f5d065d706198b3afac452" title="Interrupts a thread that is in the xtd::threading::thread_state::wait_sleep_join thread state.">xtd::threading::thread::interrupt</a> interrupts a thread that is waiting to enter a lock_guard statement. </dd>
+<dd>
+In general, avoid lock_guarding on a public type, or instances beyond your code's control. The common constructs lock_guard_ (*this), lock_guard_ (<a class="el" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99" title="Used to obtain the type object of a specified type or object.">typeof_&lt;my_type&gt;()</a>), and lock_guard_ ("myLock") violate this guideline:<ul>
+<li>lock_guard_ (*this) is a problem if the instance can be accessed publicly.</li>
+<li>lock_guard_ (<a class="el" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99" title="Used to obtain the type object of a specified type or object.">typeof_&lt;my_type&gt;()</a>) is a problem if my_type is publicly accessible.</li>
+<li>lock_guard_ ("my_lock_guard") is a problem because any other code in the process using the same string, will share the same lock_guard. </li>
+</ul>
+</dd>
+<dd>
+Best practice is to define a private object to lock_guard on, or a private static object variable to protect data common to all instances. </dd>
+<dd>
+You can't use the await_ keyword in the body of a lock_guard_ statement. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following sample shows a simple use of threads without lock_guarding in C++. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>thread_test {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keywordtype">void</span> run_me() {</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;run_me called&quot;</span>);</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
+<div class="line">    thread_test b;</div>
+<div class="line">    <span class="keyword">auto</span> t = thread {thread_start {b, &amp;thread_test::run_me));</div>
+<div class="line">    t.start();</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(thread_test::main)</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Output: run_me called</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following sample uses threads and lock_guard_. As long as the lock_guard statement is present, the statement block_guard is a critical section and balance will never become a negative number. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>examples {</div>
-<div class="line">  <span class="keyword">class </span>account : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">object</a> {</div>
+<div class="line">  <span class="keyword">class </span>account : <span class="keyword">public</span> object {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keyword">explicit</span> account(<span class="keywordtype">int</span> initial) : balance(initial) {}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> do_transactions() {</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt; 100; ++i)</div>
-<div class="line">        withdraw(<a class="code hl_class" href="classxtd_1_1random.html">random</a>.<a class="code hl_function" href="classxtd_1_1random.html#a629a30d5ddd8035f45afe7d982fda712">next</a>(1, 100));</div>
+<div class="line">        withdraw(random.next(1, 100));</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
 <div class="line">    <span class="keywordtype">int</span> withdraw(<span class="keywordtype">int</span> amount) {</div>
 <div class="line">      <span class="comment">// This condition never is true unless the lock statement is commented out.</span></div>
-<div class="line">      <span class="keywordflow">if</span> (balance &lt; 0) <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a> {<span class="stringliteral">&quot;Negative Balance&quot;</span>};</div>
+<div class="line">      <span class="keywordflow">if</span> (balance &lt; 0) <span class="keywordflow">throw</span> system_exception {<span class="stringliteral">&quot;Negative Balance&quot;</span>};</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Comment out the next line to see the effect of leaving out the lock keyword.</span></div>
-<div class="line">      <a class="code hl_define" href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a>(balance) {</div>
+<div class="line">      <a class="code hl_define" href="group__keywords.html#gafe36bf782d472e00dc82d91679d4a58b">lock_guard_</a>(balance) {</div>
 <div class="line">        <span class="keywordflow">if</span> (balance &lt; amount) <span class="keywordflow">return</span> 0;</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;Balance before Withdrawal :  {0}&quot;</span>, balance);</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;Amount to Withdraw        : -{0}&quot;</span>, amount);</div>
@@ -1391,9 +1432,9 @@ You can't use the await_ keyword in the body of a lock_ statement. </dd></dl>
 <div class="line">      }</div>
 <div class="line">      <span class="keywordflow">return</span> 0;</div>
 <div class="line">    }</div>
-<div class="line"> </div>
+<div class="line">    </div>
 <div class="line">    <span class="keywordtype">int</span> balance = 0;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1random.html">xtd::random</a> <a class="code hl_class" href="classxtd_1_1random.html">random</a>;</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1random.html">xtd::random</a> random;</div>
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">class </span>program {</div>
@@ -1479,13 +1520,10 @@ You can't use the await_ keyword in the body of a lock_ statement. </dd></dl>
 <div class="line"><span class="comment">// Balance before Withdrawal :  2</span></div>
 <div class="line"><span class="comment">// Amount to Withdraw        : -2</span></div>
 <div class="line"><span class="comment">// Balance after Withdrawal  :  0</span></div>
-<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:44</div></div>
 <div class="ttc" id="aclassxtd_1_1random_html"><div class="ttname"><a href="classxtd_1_1random.html">xtd::random</a></div><div class="ttdoc">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet c...</div><div class="ttdef"><b>Definition</b> random.hpp:44</div></div>
-<div class="ttc" id="aclassxtd_1_1random_html_a629a30d5ddd8035f45afe7d982fda712"><div class="ttname"><a href="classxtd_1_1random.html#a629a30d5ddd8035f45afe7d982fda712">xtd::random::next</a></div><div class="ttdeci">virtual int32 next() const</div><div class="ttdoc">Returns a nonnegative random number.</div></div>
-<div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">The exception that is thrown when a method call is invalid for the object's current state.</div><div class="ttdef"><b>Definition</b> system_exception.hpp:18</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lock_8cpp-example.html#a0">lock.cpp</a>, <a class="el" href="monitor_lock_8cpp-example.html#a1">monitor_lock.cpp</a>, <a class="el" href="monitor_pulse_8cpp-example.html#a0">monitor_pulse.cpp</a>, and <a class="el" href="monitor_pulse_all_8cpp-example.html#a0">monitor_pulse_all.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lock_guard_keyword_8cpp-example.html#a0">lock_guard_keyword.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -1515,10 +1553,7 @@ You can't use the await_ keyword in the body of a lock_ statement. </dd></dl>
 <p>A nameof expression has this form: </p><div class="fragment"><div class="line"><span class="keywordflow">if</span> (x == null) <span class="keywordflow">throw</span>  std::argument_error(<a class="code hl_define" href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a>(x));</div>
 <div class="line">write_line(<a class="code hl_define" href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a>(person.address().zip_code())); <span class="comment">// prints &quot;person.address().zip_code()&quot;</span></div>
 <div class="ttc" id="agroup__keywords_html_gabe3976c5f529fab9b255e38ced18b281"><div class="ttname"><a href="group__keywords.html#gabe3976c5f529fab9b255e38ced18b281">nameof_</a></div><div class="ttdeci">#define nameof_(...)</div><div class="ttdoc">Used to obtain the simple (unqualified) string name of a variable, type, or member.</div><div class="ttdef"><b>Definition</b> nameof.hpp:34</div></div>
-</div><!-- fragment --> <dl class="section user"><dt>Examples</dt><dd>Some C++ examples: <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/nameof&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+</div><!-- fragment --> <dl class="section user"><dt>Examples</dt><dd>Some C++ examples: <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
 <div class="line"><span class="keywordtype">void</span> print_names(value_t value) {</div>
@@ -3293,19 +3328,15 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>This example show a main method without arguments and without return code <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>This example show a main method without arguments and without return code <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>main1_example {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
 <div class="line">      <span class="comment">// Write arguments to the console output</span></div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> arg : <a class="code hl_class" href="classxtd_1_1environment.html">environment</a>::get_command_line_args())</div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1console.html">console</a>::write_line(arg);</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> arg : environment::get_command_line_args())</div>
+<div class="line">        console::write_line(arg);</div>
 <div class="line">        </div>
 <div class="line">      <span class="comment">// return 42</span></div>
 <div class="line">      environment::exit_code(42);</div>
@@ -3328,22 +3359,16 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// two</span></div>
 <div class="line"><span class="comment">// three four</span></div>
 <div class="line"><span class="comment">// five</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition</b> console.hpp:36</div></div>
-<div class="ttc" id="aclassxtd_1_1environment_html"><div class="ttname"><a href="classxtd_1_1environment.html">xtd::environment</a></div><div class="ttdoc">The environment class.</div><div class="ttdef"><b>Definition</b> environment.hpp:69</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt></dt><dd>This example show a main method with a return code and without arguments <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt></dt><dd>This example show a main method with a return code and without arguments <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>main2_example {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">int</span> main() {</div>
 <div class="line">      <span class="comment">// Write arguments to the console output</span></div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> arg : <a class="code hl_class" href="classxtd_1_1environment.html">environment</a>::get_command_line_args())</div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1console.html">console</a>::write_line(arg);</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> arg : environment::get_command_line_args())</div>
+<div class="line">        console::write_line(arg);</div>
 <div class="line">        </div>
 <div class="line">      <span class="keywordflow">return</span> 42;</div>
 <div class="line">    }</div>
@@ -3366,19 +3391,15 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// three four</span></div>
 <div class="line"><span class="comment">// five</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt></dt><dd>This example show a main method with argument and without return code <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt></dt><dd>This example show a main method with argument and without return code <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>main3_example {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1array.html">argument_collection</a>&amp; args) {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main(<span class="keyword">const</span> argument_collection&amp; args) {</div>
 <div class="line">      <span class="comment">// Write arguments to the console output</span></div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> arg : args)</div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1console.html">console</a>::write_line(arg);</div>
+<div class="line">        console::write_line(arg);</div>
 <div class="line">        </div>
 <div class="line">      <span class="comment">// return 42</span></div>
 <div class="line">      environment::exit_code(42);</div>
@@ -3400,21 +3421,16 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// two</span></div>
 <div class="line"><span class="comment">// three four</span></div>
 <div class="line"><span class="comment">// five</span></div>
-<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array&lt; xtd::string &gt;</a></div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt></dt><dd>This example show a main method with argument and return code <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt></dt><dd>This example show a main method with argument and return code <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>main4_example {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">int</span> main(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1array.html">argument_collection</a>&amp; args) {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keywordtype">int</span> main(<span class="keyword">const</span> argument_collection&amp; args) {</div>
 <div class="line">      <span class="comment">// Write arguments to the console output</span></div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> arg : args)</div>
-<div class="line">        <a class="code hl_class" href="classxtd_1_1console.html">console</a>::write_line(arg);</div>
+<div class="line">        console::write_line(arg);</div>
 <div class="line">        </div>
 <div class="line">      <span class="keywordflow">return</span> 42;</div>
 <div class="line">    }</div>
@@ -3436,7 +3452,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// three four</span></div>
 <div class="line"><span class="comment">// five</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_and_assert_8cpp-example.html#a2">application_and_assert.cpp</a>, <a class="el" href="application_and_exception_8cpp-example.html#a0">application_and_exception.cpp</a>, <a class="el" href="application_enable_dark_mode_8cpp-example.html#a56">application_enable_dark_mode.cpp</a>, <a class="el" href="application_enable_light_mode_8cpp-example.html#a56">application_enable_light_mode.cpp</a>, <a class="el" href="application_with_cmake_assembly_info_8cpp-example.html#a0">application_with_cmake_assembly_info.cpp</a>, <a class="el" href="application_with_manual_assembly_info_8cpp-example.html#a0">application_with_manual_assembly_info.cpp</a>, <a class="el" href="auto_reset_event_8cpp-example.html#a2">auto_reset_event.cpp</a>, <a class="el" href="background_worker_8cpp-example.html#a1">background_worker.cpp</a>, <a class="el" href="barrier_8cpp-example.html#a8">barrier.cpp</a>, <a class="el" href="barrier_simple_8cpp-example.html#a2">barrier_simple.cpp</a>, <a class="el" href="binary_reader_8cpp-example.html#a5">binary_reader.cpp</a>, <a class="el" href="binary_reader2_8cpp-example.html#a3">binary_reader2.cpp</a>, <a class="el" href="binary_reader3_8cpp-example.html#a8">binary_reader3.cpp</a>, <a class="el" href="bit_converter_endianness_8cpp-example.html#a0">bit_converter_endianness.cpp</a>, <a class="el" href="bit_converter_is_big_endian_8cpp-example.html#a0">bit_converter_is_big_endian.cpp</a>, <a class="el" href="bit_converter_is_little_endian_8cpp-example.html#a0">bit_converter_is_little_endian.cpp</a>, <a class="el" href="bit_converter_round_trips_8cpp-example.html#a0">bit_converter_round_trips.cpp</a>, <a class="el" href="border_style_8cpp-example.html#a15">border_style.cpp</a>, <a class="el" href="calculator_8cpp-example.html#a11">calculator.cpp</a>, <a class="el" href="change_parent_8cpp-example.html#a13">change_parent.cpp</a>, <a class="el" href="console_clear_8cpp-example.html#a5">console_clear.cpp</a>, <a class="el" href="console_firework_8cpp-example.html#a5">console_firework.cpp</a>, <a class="el" href="countdown_event_8cpp-example.html#a3">countdown_event.cpp</a>, <a class="el" href="countries_8cpp-example.html#a10">countries.cpp</a>, <a class="el" href="date_time_8cpp-example.html#a1">date_time.cpp</a>, <a class="el" href="date_time_add_8cpp-example.html#a2">date_time_add.cpp</a>, <a class="el" href="date_time_add_days_8cpp-example.html#a2">date_time_add_days.cpp</a>, <a class="el" href="date_time_add_hours_8cpp-example.html#a2">date_time_add_hours.cpp</a>, <a class="el" href="date_time_add_milliseconds_8cpp-example.html#a1">date_time_add_milliseconds.cpp</a>, <a class="el" href="date_time_add_minutes_8cpp-example.html#a2">date_time_add_minutes.cpp</a>, <a class="el" href="date_time_add_months_8cpp-example.html#a1">date_time_add_months.cpp</a>, <a class="el" href="date_time_add_seconds_8cpp-example.html#a1">date_time_add_seconds.cpp</a>, <a class="el" href="date_time_add_years_8cpp-example.html#a1">date_time_add_years.cpp</a>, <a class="el" href="date_time_date_8cpp-example.html#a1">date_time_date.cpp</a>, <a class="el" href="date_time_day_of_week_8cpp-example.html#a1">date_time_day_of_week.cpp</a>, <a class="el" href="date_time_day_of_year_8cpp-example.html#a2">date_time_day_of_year.cpp</a>, <a class="el" href="date_time_days_in_month_8cpp-example.html#a4">date_time_days_in_month.cpp</a>, <a class="el" href="date_time_days_in_month2_8cpp-example.html#a0">date_time_days_in_month2.cpp</a>, <a class="el" href="date_time_max_value_8cpp-example.html#a1">date_time_max_value.cpp</a>, <a class="el" href="date_time_min_value_8cpp-example.html#a1">date_time_min_value.cpp</a>, <a class="el" href="date_time_now_8cpp-example.html#a1">date_time_now.cpp</a>, <a class="el" href="date_time_now2_8cpp-example.html#a1">date_time_now2.cpp</a>, <a class="el" href="date_time_specify_kind_8cpp-example.html#a5">date_time_specify_kind.cpp</a>, <a class="el" href="date_time_sprintf_8cpp-example.html#a1">date_time_sprintf.cpp</a>, <a class="el" href="date_time_subtract_8cpp-example.html#a2">date_time_subtract.cpp</a>, <a class="el" href="date_time_ticks_8cpp-example.html#a2">date_time_ticks.cpp</a>, <a class="el" href="date_time_ticks2_8cpp-example.html#a2">date_time_ticks2.cpp</a>, <a class="el" href="date_time_time_of_day_8cpp-example.html#a0">date_time_time_of_day.cpp</a>, <a class="el" href="date_time_to_string_format_8cpp-example.html#a1">date_time_to_string_format.cpp</a>, <a class="el" href="date_time_today_8cpp-example.html#a2">date_time_today.cpp</a>, <a class="el" href="debug_message_box_8cpp-example.html#a1">debug_message_box.cpp</a>, <a class="el" href="default_trace_listener_8cpp-example.html#a4">default_trace_listener.cpp</a>, <a class="el" href="drive_info_8cpp-example.html#a0">drive_info.cpp</a>, <a class="el" href="environment_cancel_signal_8cpp-example.html#a3">environment_cancel_signal.cpp</a>, <a class="el" href="environment_exit_8cpp-example.html#a3">environment_exit.cpp</a>, <a class="el" href="environment_exit_code_8cpp-example.html#a0">environment_exit_code.cpp</a>, <a class="el" href="environment_program_exit_8cpp-example.html#a5">environment_program_exit.cpp</a>, <a class="el" href="event_wait_handle_8cpp-example.html#a5">event_wait_handle.cpp</a>, <a class="el" href="file_info_8cpp-example.html#a8">file_info.cpp</a>, <a class="el" href="file_info_append_text_8cpp-example.html#a2">file_info_append_text.cpp</a>, <a class="el" href="file_info_move_to_8cpp-example.html#a18">file_info_move_to.cpp</a>, <a class="el" href="file_info_open_8cpp-example.html#a6">file_info_open.cpp</a>, <a class="el" href="file_info_open_read_8cpp-example.html#a6">file_info_open_read.cpp</a>, <a class="el" href="file_info_open_text_8cpp-example.html#a3">file_info_open_text.cpp</a>, <a class="el" href="file_info_open_write_8cpp-example.html#a6">file_info_open_write.cpp</a>, <a class="el" href="file_info_replace_8cpp-example.html#a3">file_info_replace.cpp</a>, <a class="el" href="form_and_main_8cpp-example.html#a8">form_and_main.cpp</a>, <a class="el" href="form_background_image_8cpp-example.html#a7">form_background_image.cpp</a>, <a class="el" href="form_show_8cpp-example.html#a9">form_show.cpp</a>, <a class="el" href="generic_icollection_8cpp-example.html#a14">generic_icollection.cpp</a>, <a class="el" href="generic_ienumerable_8cpp-example.html#a13">generic_ienumerable.cpp</a>, <a class="el" href="generic_ienumerable2_8cpp-example.html#a10">generic_ienumerable2.cpp</a>, <a class="el" href="generic_ilist_8cpp-example.html#a14">generic_ilist.cpp</a>, <a class="el" href="generic_list_8cpp-example.html#a4">generic_list.cpp</a>, <a class="el" href="generic_list2_8cpp-example.html#a1">generic_list2.cpp</a>, <a class="el" href="generic_list3_8cpp-example.html#a2">generic_list3.cpp</a>, <a class="el" href="generic_list4_8cpp-example.html#a4">generic_list4.cpp</a>, <a class="el" href="generic_list_as_read_only_8cpp-example.html#a1">generic_list_as_read_only.cpp</a>, <a class="el" href="graph_control_8cpp-example.html#a24">graph_control.cpp</a>, <a class="el" href="horizontal_layout_panel_8cpp-example.html#a5">horizontal_layout_panel.cpp</a>, <a class="el" href="ienumerable_8cpp-example.html#a13">ienumerable.cpp</a>, <a class="el" href="ienumerator_8cpp-example.html#a9">ienumerator.cpp</a>, <a class="el" href="ilist_8cpp-example.html#a7">ilist.cpp</a>, <a class="el" href="interlocked_8cpp-example.html#a4">interlocked.cpp</a>, <a class="el" href="interlocked_decrement_8cpp-example.html#a2">interlocked_decrement.cpp</a>, <a class="el" href="ip_address_8cpp-example.html#a4">ip_address.cpp</a>, <a class="el" href="lcd_label3_8cpp-example.html#a2">lcd_label3.cpp</a>, <a class="el" href="lock_8cpp-example.html#a2">lock.cpp</a>, <a class="el" href="lock_guard_8cpp-example.html#a7">lock_guard.cpp</a>, <a class="el" href="lock_guard_keyword_8cpp-example.html#a5">lock_guard_keyword.cpp</a>, <a class="el" href="main_8cpp-example.html#a2">main.cpp</a>, <a class="el" href="main1_8cpp-example.html#a0">main1.cpp</a>, <a class="el" href="main2_8cpp-example.html#a0">main2.cpp</a>, <a class="el" href="main3_8cpp-example.html#a1">main3.cpp</a>, <a class="el" href="main4_8cpp-example.html#a1">main4.cpp</a>, <a class="el" href="manual_reset_event_8cpp-example.html#a2">manual_reset_event.cpp</a>, <a class="el" href="math_8cpp-example.html#a0">math.cpp</a>, <a class="el" href="mixing_std_and_xtd_threads_8cpp-example.html#a6">mixing_std_and_xtd_threads.cpp</a>, <a class="el" href="monitor_8cpp-example.html#a5">monitor.cpp</a>, <a class="el" href="monitor_lock_8cpp-example.html#a4">monitor_lock.cpp</a>, <a class="el" href="monitor_pulse_8cpp-example.html#a1">monitor_pulse.cpp</a>, <a class="el" href="monitor_pulse_all_8cpp-example.html#a1">monitor_pulse_all.cpp</a>, <a class="el" href="mutex_8cpp-example.html#a2">mutex.cpp</a>, <a class="el" href="read_only_collection_8cpp-example.html#a3">read_only_collection.cpp</a>, <a class="el" href="semaphore_8cpp-example.html#a2">semaphore.cpp</a>, <a class="el" href="send_message_to_form_8cpp-example.html#a6">send_message_to_form.cpp</a>, <a class="el" href="some_controls_8cpp-example.html#a56">some_controls.cpp</a>, <a class="el" href="some_system_controls_8cpp-example.html#a56">some_system_controls.cpp</a>, <a class="el" href="stack_trace_8cpp-example.html#a1">stack_trace.cpp</a>, <a class="el" href="system_sound_8cpp-example.html#a6">system_sound.cpp</a>, <a class="el" href="system_sounds_8cpp-example.html#a0">system_sounds.cpp</a>, <a class="el" href="target_default_namespace_8cpp-example.html#a1">target_default_namespace.cpp</a>, <a class="el" href="test_console_8cpp-example.html#a0">test_console.cpp</a>, <a class="el" href="test_forms_8cpp-example.html#a47">test_forms.cpp</a>, <a class="el" href="themes_8cpp-example.html#a56">themes.cpp</a>, <a class="el" href="thread_8cpp-example.html#a1">thread.cpp</a>, <a class="el" href="thread_pool_8cpp-example.html#a0">thread_pool.cpp</a>, <a class="el" href="time_span_8cpp-example.html#a14">time_span.cpp</a>, <a class="el" href="timeout_8cpp-example.html#a3">timeout.cpp</a>, <a class="el" href="timer_8cpp-example.html#a3">timer.cpp</a>, <a class="el" href="timers_timer_8cpp-example.html#a2">timers_timer.cpp</a>, <a class="el" href="timers_timer_synchronizing_object_8cpp-example.html#a11">timers_timer_synchronizing_object.cpp</a>, <a class="el" href="trace_message_box_8cpp-example.html#a7">trace_message_box.cpp</a>, <a class="el" href="track_bar2_8cpp-example.html#a5">track_bar2.cpp</a>, <a class="el" href="tutorial_application_icon_8cpp-example.html#a4">tutorial_application_icon.cpp</a>, <a class="el" href="tutorial_button_8cpp-example.html#a9">tutorial_button.cpp</a>, <a class="el" href="tutorial_communicate_8cpp-example.html#a10">tutorial_communicate.cpp</a>, <a class="el" href="tutorial_simple_application_8cpp-example.html#a3">tutorial_simple_application.cpp</a>, <a class="el" href="uri_8cpp-example.html#a3">uri.cpp</a>, <a class="el" href="version_8cpp-example.html#a1">version.cpp</a>, <a class="el" href="version_os_8cpp-example.html#a0">version_os.cpp</a>, <a class="el" href="vertical_layout_panel_8cpp-example.html#a5">vertical_layout_panel.cpp</a>, and <a class="el" href="wait_handle_8cpp-example.html#a2">wait_handle.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_and_assert_8cpp-example.html#a2">application_and_assert.cpp</a>, <a class="el" href="application_and_exception_8cpp-example.html#a0">application_and_exception.cpp</a>, <a class="el" href="application_enable_dark_mode_8cpp-example.html#a15">application_enable_dark_mode.cpp</a>, <a class="el" href="application_enable_light_mode_8cpp-example.html#a15">application_enable_light_mode.cpp</a>, <a class="el" href="application_with_cmake_assembly_info_8cpp-example.html#a0">application_with_cmake_assembly_info.cpp</a>, <a class="el" href="application_with_manual_assembly_info_8cpp-example.html#a0">application_with_manual_assembly_info.cpp</a>, <a class="el" href="auto_reset_event_8cpp-example.html#a0">auto_reset_event.cpp</a>, <a class="el" href="background_worker_8cpp-example.html#a1">background_worker.cpp</a>, <a class="el" href="barrier_8cpp-example.html#a0">barrier.cpp</a>, <a class="el" href="barrier_simple_8cpp-example.html#a0">barrier_simple.cpp</a>, <a class="el" href="binary_reader_8cpp-example.html#a1">binary_reader.cpp</a>, <a class="el" href="binary_reader2_8cpp-example.html#a1">binary_reader2.cpp</a>, <a class="el" href="binary_reader3_8cpp-example.html#a8">binary_reader3.cpp</a>, <a class="el" href="bit_converter_endianness_8cpp-example.html#a0">bit_converter_endianness.cpp</a>, <a class="el" href="bit_converter_is_big_endian_8cpp-example.html#a0">bit_converter_is_big_endian.cpp</a>, <a class="el" href="bit_converter_is_little_endian_8cpp-example.html#a0">bit_converter_is_little_endian.cpp</a>, <a class="el" href="bit_converter_round_trips_8cpp-example.html#a0">bit_converter_round_trips.cpp</a>, <a class="el" href="border_style_8cpp-example.html#a2">border_style.cpp</a>, <a class="el" href="calculator_8cpp-example.html#a0">calculator.cpp</a>, <a class="el" href="change_parent_8cpp-example.html#a2">change_parent.cpp</a>, <a class="el" href="console_clear_8cpp-example.html#a0">console_clear.cpp</a>, <a class="el" href="console_firework_8cpp-example.html#a3">console_firework.cpp</a>, <a class="el" href="countdown_event_8cpp-example.html#a0">countdown_event.cpp</a>, <a class="el" href="countries_8cpp-example.html#a2">countries.cpp</a>, <a class="el" href="date_time_8cpp-example.html#a0">date_time.cpp</a>, <a class="el" href="date_time_add_8cpp-example.html#a2">date_time_add.cpp</a>, <a class="el" href="date_time_add_days_8cpp-example.html#a2">date_time_add_days.cpp</a>, <a class="el" href="date_time_add_hours_8cpp-example.html#a0">date_time_add_hours.cpp</a>, <a class="el" href="date_time_add_milliseconds_8cpp-example.html#a0">date_time_add_milliseconds.cpp</a>, <a class="el" href="date_time_add_minutes_8cpp-example.html#a0">date_time_add_minutes.cpp</a>, <a class="el" href="date_time_add_months_8cpp-example.html#a0">date_time_add_months.cpp</a>, <a class="el" href="date_time_add_seconds_8cpp-example.html#a0">date_time_add_seconds.cpp</a>, <a class="el" href="date_time_add_years_8cpp-example.html#a0">date_time_add_years.cpp</a>, <a class="el" href="date_time_date_8cpp-example.html#a0">date_time_date.cpp</a>, <a class="el" href="date_time_day_of_week_8cpp-example.html#a0">date_time_day_of_week.cpp</a>, <a class="el" href="date_time_day_of_year_8cpp-example.html#a0">date_time_day_of_year.cpp</a>, <a class="el" href="date_time_days_in_month_8cpp-example.html#a4">date_time_days_in_month.cpp</a>, <a class="el" href="date_time_days_in_month2_8cpp-example.html#a0">date_time_days_in_month2.cpp</a>, <a class="el" href="date_time_max_value_8cpp-example.html#a0">date_time_max_value.cpp</a>, <a class="el" href="date_time_min_value_8cpp-example.html#a0">date_time_min_value.cpp</a>, <a class="el" href="date_time_now_8cpp-example.html#a0">date_time_now.cpp</a>, <a class="el" href="date_time_now2_8cpp-example.html#a0">date_time_now2.cpp</a>, <a class="el" href="date_time_specify_kind_8cpp-example.html#a0">date_time_specify_kind.cpp</a>, <a class="el" href="date_time_sprintf_8cpp-example.html#a0">date_time_sprintf.cpp</a>, <a class="el" href="date_time_subtract_8cpp-example.html#a2">date_time_subtract.cpp</a>, <a class="el" href="date_time_ticks_8cpp-example.html#a0">date_time_ticks.cpp</a>, <a class="el" href="date_time_ticks2_8cpp-example.html#a0">date_time_ticks2.cpp</a>, <a class="el" href="date_time_time_of_day_8cpp-example.html#a0">date_time_time_of_day.cpp</a>, <a class="el" href="date_time_to_string_format_8cpp-example.html#a0">date_time_to_string_format.cpp</a>, <a class="el" href="date_time_today_8cpp-example.html#a0">date_time_today.cpp</a>, <a class="el" href="debug_message_box_8cpp-example.html#a1">debug_message_box.cpp</a>, <a class="el" href="default_trace_listener_8cpp-example.html#a0">default_trace_listener.cpp</a>, <a class="el" href="drive_info_8cpp-example.html#a0">drive_info.cpp</a>, <a class="el" href="environment_cancel_signal_8cpp-example.html#a2">environment_cancel_signal.cpp</a>, <a class="el" href="environment_exit_8cpp-example.html#a1">environment_exit.cpp</a>, <a class="el" href="environment_exit_code_8cpp-example.html#a0">environment_exit_code.cpp</a>, <a class="el" href="environment_program_exit_8cpp-example.html#a2">environment_program_exit.cpp</a>, <a class="el" href="event_wait_handle_8cpp-example.html#a0">event_wait_handle.cpp</a>, <a class="el" href="file_info_8cpp-example.html#a1">file_info.cpp</a>, <a class="el" href="file_info_append_text_8cpp-example.html#a1">file_info_append_text.cpp</a>, <a class="el" href="file_info_move_to_8cpp-example.html#a1">file_info_move_to.cpp</a>, <a class="el" href="file_info_open_8cpp-example.html#a1">file_info_open.cpp</a>, <a class="el" href="file_info_open_read_8cpp-example.html#a1">file_info_open_read.cpp</a>, <a class="el" href="file_info_open_text_8cpp-example.html#a1">file_info_open_text.cpp</a>, <a class="el" href="file_info_open_write_8cpp-example.html#a1">file_info_open_write.cpp</a>, <a class="el" href="file_info_replace_8cpp-example.html#a0">file_info_replace.cpp</a>, <a class="el" href="form_and_main_8cpp-example.html#a2">form_and_main.cpp</a>, <a class="el" href="form_background_image_8cpp-example.html#a1">form_background_image.cpp</a>, <a class="el" href="form_show_8cpp-example.html#a1">form_show.cpp</a>, <a class="el" href="generic_icollection_8cpp-example.html#a0">generic_icollection.cpp</a>, <a class="el" href="generic_ienumerable_8cpp-example.html#a0">generic_ienumerable.cpp</a>, <a class="el" href="generic_ienumerable2_8cpp-example.html#a0">generic_ienumerable2.cpp</a>, <a class="el" href="generic_ilist_8cpp-example.html#a0">generic_ilist.cpp</a>, <a class="el" href="generic_list_8cpp-example.html#a0">generic_list.cpp</a>, <a class="el" href="generic_list2_8cpp-example.html#a0">generic_list2.cpp</a>, <a class="el" href="generic_list3_8cpp-example.html#a0">generic_list3.cpp</a>, <a class="el" href="generic_list4_8cpp-example.html#a0">generic_list4.cpp</a>, <a class="el" href="generic_list_as_read_only_8cpp-example.html#a0">generic_list_as_read_only.cpp</a>, <a class="el" href="graph_control_8cpp-example.html#a3">graph_control.cpp</a>, <a class="el" href="horizontal_layout_panel_8cpp-example.html#a2">horizontal_layout_panel.cpp</a>, <a class="el" href="ienumerable_8cpp-example.html#a1">ienumerable.cpp</a>, <a class="el" href="ienumerator_8cpp-example.html#a0">ienumerator.cpp</a>, <a class="el" href="ilist_8cpp-example.html#a1">ilist.cpp</a>, <a class="el" href="interlocked_8cpp-example.html#a1">interlocked.cpp</a>, <a class="el" href="interlocked_decrement_8cpp-example.html#a0">interlocked_decrement.cpp</a>, <a class="el" href="ip_address_8cpp-example.html#a0">ip_address.cpp</a>, <a class="el" href="lcd_label3_8cpp-example.html#a2">lcd_label3.cpp</a>, <a class="el" href="lock_8cpp-example.html#a2">lock.cpp</a>, <a class="el" href="lock_guard_8cpp-example.html#a2">lock_guard.cpp</a>, <a class="el" href="lock_guard_keyword_8cpp-example.html#a2">lock_guard_keyword.cpp</a>, <a class="el" href="main_8cpp-example.html#a0">main.cpp</a>, <a class="el" href="main1_8cpp-example.html#a0">main1.cpp</a>, <a class="el" href="main2_8cpp-example.html#a0">main2.cpp</a>, <a class="el" href="main3_8cpp-example.html#a0">main3.cpp</a>, <a class="el" href="main4_8cpp-example.html#a0">main4.cpp</a>, <a class="el" href="manual_reset_event_8cpp-example.html#a0">manual_reset_event.cpp</a>, <a class="el" href="math_8cpp-example.html#a0">math.cpp</a>, <a class="el" href="mixing_std_and_xtd_threads_8cpp-example.html#a0">mixing_std_and_xtd_threads.cpp</a>, <a class="el" href="monitor_8cpp-example.html#a1">monitor.cpp</a>, <a class="el" href="monitor_lock_8cpp-example.html#a1">monitor_lock.cpp</a>, <a class="el" href="monitor_pulse_8cpp-example.html#a1">monitor_pulse.cpp</a>, <a class="el" href="monitor_pulse_all_8cpp-example.html#a1">monitor_pulse_all.cpp</a>, <a class="el" href="mutex_8cpp-example.html#a0">mutex.cpp</a>, <a class="el" href="read_only_collection_8cpp-example.html#a0">read_only_collection.cpp</a>, <a class="el" href="semaphore_8cpp-example.html#a0">semaphore.cpp</a>, <a class="el" href="send_message_to_form_8cpp-example.html#a1">send_message_to_form.cpp</a>, <a class="el" href="some_controls_8cpp-example.html#a15">some_controls.cpp</a>, <a class="el" href="some_system_controls_8cpp-example.html#a15">some_system_controls.cpp</a>, <a class="el" href="stack_trace_8cpp-example.html#a0">stack_trace.cpp</a>, <a class="el" href="system_sound_8cpp-example.html#a1">system_sound.cpp</a>, <a class="el" href="system_sounds_8cpp-example.html#a0">system_sounds.cpp</a>, <a class="el" href="target_default_namespace_8cpp-example.html#a0">target_default_namespace.cpp</a>, <a class="el" href="test_console_8cpp-example.html#a0">test_console.cpp</a>, <a class="el" href="test_forms_8cpp-example.html#a47">test_forms.cpp</a>, <a class="el" href="themes_8cpp-example.html#a15">themes.cpp</a>, <a class="el" href="thread_8cpp-example.html#a0">thread.cpp</a>, <a class="el" href="thread_pool_8cpp-example.html#a0">thread_pool.cpp</a>, <a class="el" href="time_span_8cpp-example.html#a0">time_span.cpp</a>, <a class="el" href="timeout_8cpp-example.html#a0">timeout.cpp</a>, <a class="el" href="timer_8cpp-example.html#a0">timer.cpp</a>, <a class="el" href="timers_timer_8cpp-example.html#a0">timers_timer.cpp</a>, <a class="el" href="timers_timer_synchronizing_object_8cpp-example.html#a0">timers_timer_synchronizing_object.cpp</a>, <a class="el" href="trace_message_box_8cpp-example.html#a2">trace_message_box.cpp</a>, <a class="el" href="track_bar2_8cpp-example.html#a2">track_bar2.cpp</a>, <a class="el" href="tutorial_application_icon_8cpp-example.html#a4">tutorial_application_icon.cpp</a>, <a class="el" href="tutorial_button_8cpp-example.html#a9">tutorial_button.cpp</a>, <a class="el" href="tutorial_communicate_8cpp-example.html#a10">tutorial_communicate.cpp</a>, <a class="el" href="tutorial_simple_application_8cpp-example.html#a3">tutorial_simple_application.cpp</a>, <a class="el" href="uri_8cpp-example.html#a3">uri.cpp</a>, <a class="el" href="version_8cpp-example.html#a0">version.cpp</a>, <a class="el" href="version_os_8cpp-example.html#a0">version_os.cpp</a>, <a class="el" href="vertical_layout_panel_8cpp-example.html#a2">vertical_layout_panel.cpp</a>, and <a class="el" href="wait_handle_8cpp-example.html#a1">wait_handle.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -3522,208 +3538,6 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 
 </div>
 </div>
-<a id="gafe36bf782d472e00dc82d91679d4a58b" name="gafe36bf782d472e00dc82d91679d4a58b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gafe36bf782d472e00dc82d91679d4a58b">&#9670;&#160;</a></span>lock_guard_</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define lock_guard_</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">object</td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><code>#include &lt;<a class="el" href="lock__guard_8hpp.html">xtd.core/include/xtd/threading/lock_guard.hpp</a>&gt;</code></p>
-
-<p>The lock_guard_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion lock for a given object, executing a statement, and then releasing the lock. The following example includes a lock statement. </p>
-<div class="fragment"><div class="line"><span class="keyword">class </span>account : <span class="keyword">public</span> object {</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keywordtype">void</span> withdraw(decimal amount) {</div>
-<div class="line">    <a class="code hl_define" href="group__keywords.html#gafe36bf782d472e00dc82d91679d4a58b">lock_guard_</a> (balance) {</div>
-<div class="line">      <span class="keywordflow">if</span> (amount &gt; balance)</div>
-<div class="line">        <span class="keywordflow">throw</span> exception(<span class="stringliteral">&quot;Insufficient funds&quot;</span>);</div>
-<div class="line">      balance -= amount;</div>
-<div class="line">    }</div>
-<div class="line">  }</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#ga255b88769d29fe91661cacc7720f265a">decimal</a> balance;</div>
-<div class="line">};</div>
-<div class="ttc" id="agroup__keywords_html_gafe36bf782d472e00dc82d91679d4a58b"><div class="ttname"><a href="group__keywords.html#gafe36bf782d472e00dc82d91679d4a58b">lock_guard_</a></div><div class="ttdeci">#define lock_guard_(object)</div><div class="ttdoc">The lock_guard_ keyword marks a statement block as a critical section by obtaining the mutual-exclusi...</div><div class="ttdef"><b>Definition</b> lock_guard.hpp:181</div></div>
-</div><!-- fragment --><p> For more information, see Thread Synchronization. </p><dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The lock_guard_ keyword ensures that one thread does not enter a critical section of code while another thread is in the critical section. If another thread tries to enter a locked code, it will wait, block, until the object is released. </dd>
-<dd>
-The section Threading discusses threading. </dd>
-<dd>
-The lock_guard_ keyword calls Enter at the start of the block and Exit at the end of the block. A <a class="el" href="classxtd_1_1threading_1_1thread__interrupted__exception.html" title="The exception that is thrown when a Thread is interrupted while it is in a waiting state.">xtd::threading::thread_interrupted_exception</a> is thrown if <a class="el" href="classxtd_1_1threading_1_1thread.html#a23a6354206f5d065d706198b3afac452" title="Interrupts a thread that is in the xtd::threading::thread_state::wait_sleep_join thread state.">xtd::threading::thread::interrupt</a> interrupts a thread that is waiting to enter a lock statement. </dd>
-<dd>
-In general, avoid locking on a public type, or instances beyond your code's control. The common constructs lock_guard_ (*this), lock_guard_ (<a class="el" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99" title="Used to obtain the type object of a specified type or object.">typeof_&lt;my_type&gt;()</a>), and lock_guard_ ("myLock") violate this guideline:<ul>
-<li>lock_guard_ (*this) is a problem if the instance can be accessed publicly.</li>
-<li>lock_guard_ (<a class="el" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99" title="Used to obtain the type object of a specified type or object.">typeof_&lt;my_type&gt;()</a>) is a problem if my_type is publicly accessible.</li>
-<li>lock_guard_ ("my_lock") is a problem because any other code in the process using the same string, will share the same lock. </li>
-</ul>
-</dd>
-<dd>
-Best practice is to define a private object to lock on, or a private static object variable to protect data common to all instances. </dd>
-<dd>
-You can't use the await_ keyword in the body of a lock_guard_ statement. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following sample shows a simple use of threads without locking in C++. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span>xtd::rhreading;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>thread_test {</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keywordtype">void</span> run_me() {</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;run_me called&quot;</span>);</div>
-<div class="line">  }</div>
-<div class="line"> </div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
-<div class="line">    thread_test b;</div>
-<div class="line">    <span class="keyword">auto</span> t = thread {thread_start {b, &amp;thread_test::run_me));</div>
-<div class="line">    t.start();</div>
-<div class="line">  }</div>
-<div class="line">};</div>
-<div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(thread_test::main)</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Output: run_me called</span></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following sample uses threads and lock_guard_. As long as the lock statement is present, the statement block is a critical section and balance will never become a negative number. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/lock_guard&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread_pool&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/random&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>examples {</div>
-<div class="line">  <span class="keyword">class </span>account : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">object</a> {</div>
-<div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="keyword">explicit</span> account(<span class="keywordtype">int</span> initial) : balance(initial) {}</div>
-<div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> do_transactions() {</div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt; 100; ++i)</div>
-<div class="line">        withdraw(<a class="code hl_class" href="classxtd_1_1random.html">random</a>.<a class="code hl_function" href="classxtd_1_1random.html#a629a30d5ddd8035f45afe7d982fda712">next</a>(1, 100));</div>
-<div class="line">    }</div>
-<div class="line">    </div>
-<div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keywordtype">int</span> withdraw(<span class="keywordtype">int</span> amount) {</div>
-<div class="line">      <span class="comment">// This condition never is true unless the lock statement is commented out.</span></div>
-<div class="line">      <span class="keywordflow">if</span> (balance &lt; 0) <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a> {<span class="stringliteral">&quot;Negative Balance&quot;</span>};</div>
-<div class="line">      </div>
-<div class="line">      <span class="comment">// Comment out the next line to see the effect of leaving out the lock keyword.</span></div>
-<div class="line">      <a class="code hl_define" href="group__keywords.html#gafe36bf782d472e00dc82d91679d4a58b">lock_guard_</a>(balance) {</div>
-<div class="line">        <span class="keywordflow">if</span> (balance &lt; amount) <span class="keywordflow">return</span> 0;</div>
-<div class="line">        console::write_line(<span class="stringliteral">&quot;Balance before Withdrawal :  {0}&quot;</span>, balance);</div>
-<div class="line">        console::write_line(<span class="stringliteral">&quot;Amount to Withdraw        : -{0}&quot;</span>, amount);</div>
-<div class="line">        balance = balance - amount;</div>
-<div class="line">        console::write_line(<span class="stringliteral">&quot;Balance after Withdrawal  :  {0}&quot;</span>, balance);</div>
-<div class="line">        <span class="keywordflow">return</span> amount;</div>
-<div class="line">      }</div>
-<div class="line">      <span class="keywordflow">return</span> 0;</div>
-<div class="line">    }</div>
-<div class="line">    </div>
-<div class="line">    <span class="keywordtype">int</span> balance = 0;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1random.html">xtd::random</a> <a class="code hl_class" href="classxtd_1_1random.html">random</a>;</div>
-<div class="line">  };</div>
-<div class="line">  </div>
-<div class="line">  <span class="keyword">class </span>program {</div>
-<div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> main() {</div>
-<div class="line">      <span class="keyword">auto</span> account = examples::account {1000};</div>
-<div class="line">      </div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; 10; ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
-<div class="line">        thread_pool::queue_user_work_item({account, &amp;account::do_transactions});</div>
-<div class="line">      </div>
-<div class="line">      thread_pool::close();</div>
-<div class="line">    }</div>
-<div class="line">  };</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(examples::program::main);</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code can produce the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  1000</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -75</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  925</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  925</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -84</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  841</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  841</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -69</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  772</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  772</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -71</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  701</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  701</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -84</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  617</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  617</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -81</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  536</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  536</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -15</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  521</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  521</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -93</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  428</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  428</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -6</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  422</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  422</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -54</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  368</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  368</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -52</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  316</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  316</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -67</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  249</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  249</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -93</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  156</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  156</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -60</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  96</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  96</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -7</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  89</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  89</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -42</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  47</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  47</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -1</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  46</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  46</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -22</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  24</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  24</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -18</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  6</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  6</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -2</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  4</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  4</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -2</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  2</span></div>
-<div class="line"><span class="comment">// Balance before Withdrawal :  2</span></div>
-<div class="line"><span class="comment">// Amount to Withdraw        : -2</span></div>
-<div class="line"><span class="comment">// Balance after Withdrawal  :  0</span></div>
-</div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lock_guard_keyword_8cpp-example.html#a4">lock_guard_keyword.cpp</a>.</dd>
-</dl>
-
-</div>
-</div>
 <a id="gafa2ffd9b4a6568b57ab2731bec095d99" name="gafa2ffd9b4a6568b57ab2731bec095d99"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gafa2ffd9b4a6568b57ab2731bec095d99">&#9670;&#160;</a></span>typeof_</h2>
 
@@ -3752,7 +3566,7 @@ You can't use the await_ keyword in the body of a lock_guard_ statement. </dd></
 <div class="ttc" id="agroup__keywords_html_gafa2ffd9b4a6568b57ab2731bec095d99"><div class="ttname"><a href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></div><div class="ttdeci">#define typeof_</div><div class="ttdoc">Used to obtain the type object of a specified type or object.</div><div class="ttdef"><b>Definition</b> typeof.hpp:45</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The typeof_ operator cannot be overloaded. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="any_8cpp-example.html#a3">any.cpp</a>, <a class="el" href="any_info_8cpp-example.html#a3">any_info.cpp</a>, <a class="el" href="array_list2_8cpp-example.html#a1">array_list2.cpp</a>, <a class="el" href="boxed_info_8cpp-example.html#a4">boxed_info.cpp</a>, <a class="el" href="file_info_move_to_8cpp-example.html#a15">file_info_move_to.cpp</a>, <a class="el" href="iclonable_8cpp-example.html#a2">iclonable.cpp</a>, and <a class="el" href="object_get_type_8cpp-example.html#a1">object_get_type.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="any_8cpp-example.html#a3">any.cpp</a>, <a class="el" href="any_info_8cpp-example.html#a3">any_info.cpp</a>, <a class="el" href="array_list2_8cpp-example.html#a0">array_list2.cpp</a>, <a class="el" href="boxed_info_8cpp-example.html#a0">boxed_info.cpp</a>, <a class="el" href="file_info_move_to_8cpp-example.html#a0">file_info_move_to.cpp</a>, <a class="el" href="iclonable_8cpp-example.html#a0">iclonable.cpp</a>, and <a class="el" href="object_get_type_8cpp-example.html#a0">object_get_type.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -3884,7 +3698,7 @@ You can't use the await_ keyword in the body of a lock_guard_ statement. </dd></
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 19 2025 12:06:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 28 2025 19:34:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

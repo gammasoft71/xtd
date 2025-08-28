@@ -1867,7 +1867,7 @@ This method has an effect only on Windows. </dd></dl>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Use a message filter to prevent specific events from being raised or to perform special operations for an event before it is passed to an event handler. Message filters are unique to a specific thread. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_add_message_filter_8cpp-example.html#a2">application_add_message_filter.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_add_message_filter_8cpp-example.html#a0">application_add_message_filter.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -2369,7 +2369,7 @@ If your application was originally supplied command-line options when it first e
 <div class="line">  </div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(<a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">main_form</a>);</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1basic__string_html_adf2d306e379dd0b505b8c40e37c9439e"><div class="ttname"><a href="classxtd_1_1basic__string.html#adf2d306e379dd0b505b8c40e37c9439e">xtd::basic_string::empty</a></div><div class="ttdeci">bool empty() const noexcept</div><div class="ttdoc">Checks if the string has no characters, i.e. whether begin() == end().</div><div class="ttdef"><b>Definition</b> basic_string.hpp:864</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html_adf2d306e379dd0b505b8c40e37c9439e"><div class="ttname"><a href="classxtd_1_1basic__string.html#adf2d306e379dd0b505b8c40e37c9439e">xtd::basic_string::empty</a></div><div class="ttdeci">bool empty() const noexcept</div><div class="ttdoc">Checks if the string has no characters, i.e. whether begin() == end().</div><div class="ttdef"><b>Definition</b> basic_string.hpp:868</div></div>
 <div class="ttc" id="aclassxtd_1_1box__integer_html"><div class="ttname"><a href="classxtd_1_1box__integer.html">xtd::box_integer</a></div><div class="ttdoc">Represents a boxed integer object.</div><div class="ttdef"><b>Definition</b> box_integer.hpp:52</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_a2e6d6f6cb00cca470af7640c776205ac"><div class="ttname"><a href="classxtd_1_1environment.html#a2e6d6f6cb00cca470af7640c776205ac">xtd::environment::set_environment_variable</a></div><div class="ttdeci">static void set_environment_variable(const xtd::string &amp;variable, const xtd::string &amp;value)</div><div class="ttdoc">Creates, modifies, or deletes an environment variable stored in the current process.</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_ad648ff7c477babf9f30a3058048c8e7d"><div class="ttname"><a href="classxtd_1_1environment.html#ad648ff7c477babf9f30a3058048c8e7d">xtd::environment::get_environment_variable</a></div><div class="ttdeci">static xtd::string get_environment_variable(const xtd::string &amp;variable)</div><div class="ttdoc">Retrieves the value of an environment variable from the current process.</div></div>
@@ -2410,16 +2410,13 @@ If your application was originally supplied command-line options when it first e
 <dl class="section remark"><dt>Remarks</dt><dd>In a Win32-based or Windows Forms application, a message loop is a routine in code that processes user events, such as mouse clicks and keyboard strokes. Every running Windows-based application requires an active message loop, called the main message loop. When the main message loop is closed, the application exits. In Windows Forms, this loop is closed when the exit method is called, or when the exit_thread method is called on the thread that is running the main message loop. </dd>
 <dd>
 Most Windows Forms developers will not need to use this version of the method. You should use the <a class="el" href="classxtd_1_1forms_1_1application.html#ad9f33fc4a9bfe8735d80ebabdeb7f3f2" title="Begins running a standard application message loop on the current thread, and makes the specified for...">run(const form&amp;)</a> overload to start an application with a main form, so that the application terminates when the main form is closed. For all other situations, use the <a class="el" href="classxtd_1_1forms_1_1application.html#a48e895005934fb08392f4486b84af699" title="Begins running a standard application message loop on the current thread, with an application_context...">run(application_context&amp;)</a> overload, which supports supplying an <a class="el" href="classxtd_1_1forms_1_1application__context.html" title="Specifies the contextual information about an application thread.">application_context</a> object for better control over the lifetime of the application. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of application run method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of application run method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>();</div>
 <div class="line">}</div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_add_message_filter_8cpp-example.html#a11">application_add_message_filter.cpp</a>, <a class="el" href="application_use_wait_cursor_8cpp-example.html#a1">application_use_wait_cursor.cpp</a>, <a class="el" href="busy_box_8cpp-example.html#a1">busy_box.cpp</a>, <a class="el" href="busy_dialog_8cpp-example.html#a4">busy_dialog.cpp</a>, <a class="el" href="button2_8cpp-example.html#a8">button2.cpp</a>, <a class="el" href="button3_8cpp-example.html#a6">button3.cpp</a>, <a class="el" href="button4_8cpp-example.html#a5">button4.cpp</a>, <a class="el" href="control_with_name_operator_8cpp-example.html#a4">control_with_name_operator.cpp</a>, <a class="el" href="emplace_8cpp-example.html#a10">emplace.cpp</a>, <a class="el" href="form2_8cpp-example.html#a9">form2.cpp</a>, <a class="el" href="hello_world_cmake_8cpp-example.html#a0">hello_world_cmake.cpp</a>, <a class="el" href="horizontal_layout_panel_8cpp-example.html#a2">horizontal_layout_panel.cpp</a>, <a class="el" href="process_form_8cpp-example.html#a9">process_form.cpp</a>, <a class="el" href="screen_informations_8cpp-example.html#a11">screen_informations.cpp</a>, <a class="el" href="trace_message_box_8cpp-example.html#a5">trace_message_box.cpp</a>, <a class="el" href="tutorial_application_icon_8cpp-example.html#a3">tutorial_application_icon.cpp</a>, <a class="el" href="tutorial_button_8cpp-example.html#a6">tutorial_button.cpp</a>, <a class="el" href="tutorial_communicate_8cpp-example.html#a9">tutorial_communicate.cpp</a>, <a class="el" href="tutorial_simple_application_8cpp-example.html#a2">tutorial_simple_application.cpp</a>, <a class="el" href="use_wait_cursor_8cpp-example.html#a4">use_wait_cursor.cpp</a>, and <a class="el" href="vertical_layout_panel_8cpp-example.html#a2">vertical_layout_panel.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_use_wait_cursor_8cpp-example.html#a1">application_use_wait_cursor.cpp</a>, <a class="el" href="busy_box_8cpp-example.html#a1">busy_box.cpp</a>, <a class="el" href="busy_dialog_8cpp-example.html#a4">busy_dialog.cpp</a>, <a class="el" href="button2_8cpp-example.html#a8">button2.cpp</a>, <a class="el" href="button3_8cpp-example.html#a6">button3.cpp</a>, <a class="el" href="button4_8cpp-example.html#a5">button4.cpp</a>, <a class="el" href="control_with_name_operator_8cpp-example.html#a1">control_with_name_operator.cpp</a>, <a class="el" href="form2_8cpp-example.html#a9">form2.cpp</a>, <a class="el" href="horizontal_layout_panel_8cpp-example.html#a1">horizontal_layout_panel.cpp</a>, <a class="el" href="process_form_8cpp-example.html#a1">process_form.cpp</a>, <a class="el" href="screen_informations_8cpp-example.html#a0">screen_informations.cpp</a>, <a class="el" href="trace_message_box_8cpp-example.html#a1">trace_message_box.cpp</a>, <a class="el" href="tutorial_application_icon_8cpp-example.html#a3">tutorial_application_icon.cpp</a>, <a class="el" href="tutorial_button_8cpp-example.html#a6">tutorial_button.cpp</a>, <a class="el" href="tutorial_communicate_8cpp-example.html#a9">tutorial_communicate.cpp</a>, <a class="el" href="tutorial_simple_application_8cpp-example.html#a2">tutorial_simple_application.cpp</a>, and <a class="el" href="vertical_layout_panel_8cpp-example.html#a1">vertical_layout_panel.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -2601,11 +2598,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <dl class="section remark"><dt>Remarks</dt><dd>If you have tasks that you must perform before the thread becomes idle, attach them to this event. </dd>
 <dd>
 For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview">Handling and Raising Events</a>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of application idle event. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of application idle event. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>application_idle_example {</div>
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
@@ -2627,7 +2620,6 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(application_idle_example::form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1event__args_html"><div class="ttname"><a href="classxtd_1_1event__args.html">xtd::event_args</a></div><div class="ttdoc">Represents the base class for classes that contain event data, and provides a value to use for events...</div><div class="ttdef"><b>Definition</b> event_args.hpp:18</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2678,13 +2670,9 @@ For more information about handling events, see <a href="https://gammasoft71.git
 </div><div class="memdoc">
 
 <p>Occurs when an untrapped thread exception is thrown. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>This event allows your Windows Forms application to handle otherwise unhandled exceptions that occur in Windows Forms threads. Attach your event handlers to the thread_exception event to deal with these exceptions, which will leave your application in an unknown state. Where possible, exceptions should be handled by a structured exception handling block. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">You</td><td>can change whether this callback is used for unhandled Windows Forms thread exceptions by setting set_unhandled_exception_mode. To catch exceptions that occur in threads not created and owned by Windows Forms, use the unhandled_exception event handler. </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This event allows your Windows Forms application to handle otherwise unhandled exceptions that occur in Windows Forms threads. Attach your event handlers to the thread_exception event to deal with these exceptions, which will leave your application in an unknown state. Where possible, exceptions should be handled by a structured exception handling block. </dd>
+<dd>
+You can change whether this callback is used for unhandled Windows Forms thread exceptions by setting set_unhandled_exception_mode. To catch exceptions that occur in threads not created and owned by Windows Forms, use the unhandled_exception event handler. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>To guarantee that no activations of this event are missed, you must attach a handler before you call <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">application::run</a>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview">Handling and Raising Events</a>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following exemple shows how to use xtd::application::thread_exception event. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
@@ -2764,7 +2752,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 19 2025 12:06:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 28 2025 19:34:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

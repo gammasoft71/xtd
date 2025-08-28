@@ -7,5 +7,6 @@ var searchData=
   ['vertical_5fcontrol_5flayout_5fstyle_2ehpp_4',['vertical_control_layout_style.hpp',['../vertical__control__layout__style_8hpp.html',1,'']]],
   ['vertical_5fcontrol_5flayout_5fstyle_5fcollection_2ehpp_5',['vertical_control_layout_style_collection.hpp',['../vertical__control__layout__style__collection_8hpp.html',1,'']]],
   ['vertical_5flayout_5fpanel_2ehpp_6',['vertical_layout_panel.hpp',['../vertical__layout__panel_8hpp.html',1,'']]],
-  ['violet_5fcolors_2ehpp_7',['violet_colors.hpp',['../violet__colors_8hpp.html',1,'']]]
+  ['views_2ehpp_7',['views.hpp',['../views_8hpp.html',1,'']]],
+  ['violet_5fcolors_2ehpp_8',['violet_colors.hpp',['../violet__colors_8hpp.html',1,'']]]
 ];

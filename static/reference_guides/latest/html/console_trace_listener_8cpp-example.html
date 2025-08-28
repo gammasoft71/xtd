@@ -84,24 +84,18 @@ $(function() {
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1diagnostics_1_1console__trace__listener.html" title="Directs tracing or debugging output to either the standard output or the standard error stream.">xtd::diagnostics::console_trace_listener</a> class.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#define DEBUG </span><span class="comment">// Force debug mode even if example is builded in release.</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/debug&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/console_trace_listener&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  debug::listeners({new_ptr&lt;console_trace_listener&gt;()});</div>
-<div class="line">  debug::write_line(<span class="stringliteral">&quot;Begin&quot;</span>);</div>
-<div class="line">  debug::indent();</div>
+<div class="line">  diagnostics::debug::listeners({new_ptr&lt;diagnostics::console_trace_listener&gt;()});</div>
+<div class="line">  diagnostics::debug::write_line(<span class="stringliteral">&quot;Begin&quot;</span>);</div>
+<div class="line">  diagnostics::debug::indent();</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> step = 1; step &lt;= 10; step++) {</div>
-<div class="line">    debug::write_line(<span class="stringliteral">&quot;working step {}...&quot;</span>, step);</div>
-<div class="line">    threading::thread::sleep(300_ms);</div>
+<div class="line">    diagnostics::debug::write_line(<span class="stringliteral">&quot;working step {}...&quot;</span>, step);</div>
+<div class="line">    thread::sleep(300_ms);</div>
 <div class="line">  }</div>
-<div class="line">  debug::unindent();</div>
-<div class="line">  debug::write_line(<span class="stringliteral">&quot;End&quot;</span>);</div>
+<div class="line">  diagnostics::debug::unindent();</div>
+<div class="line">  diagnostics::debug::write_line(<span class="stringliteral">&quot;End&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -118,13 +112,11 @@ $(function() {
 <div class="line"><span class="comment">//     working step 9...</span></div>
 <div class="line"><span class="comment">//     working step 10...</span></div>
 <div class="line"><span class="comment">// End</span></div>
-<div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 19 2025 12:06:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 28 2025 19:34:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
