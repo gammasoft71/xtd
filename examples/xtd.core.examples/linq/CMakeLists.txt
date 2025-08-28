@@ -23,6 +23,7 @@ add_projects(
   enumerable_count_by
   enumerable_default_if_empty
   enumerable_default_if_empty2
+  enumerable_distinct
   enumerable_range
   enumerable_select
   enumerable_select2
