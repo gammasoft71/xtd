@@ -49,6 +49,9 @@ namespace xtd {
         };
         
       public:
+        /// @name Public Operators
+        
+        /// @{
         /// @brief Returns distinct elements from a sequence by using the default equality comparer to compare values.
         /// @param source The sequence to remove duplicate elements from.
         /// @return An iterable distinct elements from the source sequence.
@@ -66,8 +69,20 @@ namespace xtd {
         template <typename comparer_t>
         auto operator()(const comparer_t& comparer) const {return with_comparer {comparer};}
         
+        /// @brief Applies a distinct projection on the given range using the pipe operator.
+        /// @tparam range_type The type of the input range.
+        /// @param source The input range to which the distinct view will be applied.
+        /// @param view The distinct_view instance that removes duplicate elements.
+        /// @return A range containing distinct elements from the input range.
+        /// @par Examples
+        /// @code
+        /// auto numbers = std::vector {1, 2, 2, 3, 3, 3, 4};
+        /// auto result = numbers | distinct_view();
+        /// // result = {1, 2, 3, 4}
+        /// @endcode
         template <std::ranges::range range_type>
         friend auto operator |(range_type&& source, const distinct_view& view) {return view(std::forward<range_type>(source));}
+        /// @}
       };
     }
   }
