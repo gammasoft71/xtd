@@ -308,11 +308,11 @@ namespace xtd {
       /// @include enumerable_as_enumerable.cpp
       template<class collection_t>
       static auto as_enumerable(collection_t&& source) noexcept {
-#if defined(__xtd__cpp_lib_ranges)
+        #if defined(__xtd__cpp_lib_ranges)
         using source_t = std::ranges::range_value_t<collection_t>;
-#else
+        #else
         using source_t = typename collection_t::value_type;
-#endif
+        #endif
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         for (auto&& item : source)
           result.items.push_back(item);
@@ -799,7 +799,7 @@ namespace xtd {
         std::sort(result.items.begin(), result.items.end(), [key_selector](const source_t& a, const source_t& b) {return key_selector(a) < key_selector(b);});
         return result;
       }
-
+      
       /// @brief Projects each element of a sequence into a new form.
       /// @tparam result_t The type of the resulting value.
       /// @tparam source_t The type of the elements of source.
