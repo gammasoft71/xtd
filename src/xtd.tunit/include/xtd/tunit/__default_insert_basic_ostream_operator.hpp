@@ -223,7 +223,7 @@ struct __tunit_value_printer<char_t, char_traits_t, const xtd::char8*> {
   }
   
   static void print(std::basic_ostream<char_t, char_traits_t>& os, xtd::char8 value) {
-    if (value <= char(0xFF))
+    if (static_cast<int>(value) <= 0xFF)
       os << static_cast<char>(value);
     else
       os << "\\x" << std::hex << static_cast<int>(value);
