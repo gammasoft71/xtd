@@ -37,6 +37,7 @@ add_projects(
   parse
   processes
   random
+  ranges
   span
   sprintf
   startups
