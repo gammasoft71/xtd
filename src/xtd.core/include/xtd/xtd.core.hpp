@@ -182,6 +182,8 @@
 #include "net/sockets/udp_client.hpp"
 #include "ranges/views/distinct.hpp"
 #include "ranges/views/distinct_view.hpp"
+#include "ranges/views/select.hpp"
+#include "ranges/views/select_view.hpp"
 #include "reflection/assembly.hpp"
 #include "reflection/assembly_company_attribute.hpp"
 #include "reflection/assembly_configuration_attribute.hpp"
