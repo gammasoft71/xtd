@@ -233,6 +233,13 @@ class xtd::collections::generic::extensions::enumerable&lt; enumerable_t, source
 <tr class="memitem:a964948d137047014d18a7cc5db15f46f" id="r_a964948d137047014d18a7cc5db15f46f"><td class="memItemLeft" align="right" valign="top">source_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a964948d137047014d18a7cc5db15f46f">first_or_default</a> () const noexcept</td></tr>
 <tr class="memdesc:a964948d137047014d18a7cc5db15f46f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
 <tr class="separator:a964948d137047014d18a7cc5db15f46f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd9472d2fb32abc451658a9a49b1850a" id="r_abd9472d2fb32abc451658a9a49b1850a"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd9472d2fb32abc451658a9a49b1850a">order_by</a> (const std::function&lt; source_t(const source_t &amp;)&gt; &amp;key_selector) const</td></tr>
+<tr class="memdesc:abd9472d2fb32abc451658a9a49b1850a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements of a sequence in ascending order according to a key.  <br /></td></tr>
+<tr class="separator:abd9472d2fb32abc451658a9a49b1850a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22dd17c4172c503636ef8c0b1954415f" id="r_a22dd17c4172c503636ef8c0b1954415f"><td class="memTemplParams" colspan="2">template&lt;class key_t&gt; </td></tr>
+<tr class="memitem:a22dd17c4172c503636ef8c0b1954415f"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a22dd17c4172c503636ef8c0b1954415f">order_by</a> (const std::function&lt; key_t(const source_t &amp;)&gt; &amp;key_selector) const</td></tr>
+<tr class="memdesc:a22dd17c4172c503636ef8c0b1954415f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements of a sequence in ascending order according to a key.  <br /></td></tr>
+<tr class="separator:a22dd17c4172c503636ef8c0b1954415f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf27a2adb67c1144bc20c98151c45639" id="r_adf27a2adb67c1144bc20c98151c45639"><td class="memTemplParams" colspan="2">template&lt;class result_t&gt; </td></tr>
 <tr class="memitem:adf27a2adb67c1144bc20c98151c45639"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#adf27a2adb67c1144bc20c98151c45639">select</a> (const std::function&lt; result_t(const source_t &amp;)&gt; &amp;selector) const</td></tr>
 <tr class="memdesc:adf27a2adb67c1144bc20c98151c45639"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form.  <br /></td></tr>
@@ -1732,6 +1739,80 @@ template&lt;class enumerable_t, class source_t&gt; </div>
 
 </div>
 </div>
+<a id="abd9472d2fb32abc451658a9a49b1850a" name="abd9472d2fb32abc451658a9a49b1850a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd9472d2fb32abc451658a9a49b1850a">&#9670;&#160;</a></span>order_by() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class enumerable_t, class source_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::order_by </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; source_t(const source_t &amp;)&gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>key_selector</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sorts the elements of a sequence in ascending order according to a key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key_selector</td><td>A function to extract a key from an element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use order_by&lt;key_t, source_t&gt;(ienumerable &lt;source_t&gt;, std::function&lt;key_t(const source_t&amp;)&gt;) to sort the elements of a sequence. <div class="fragment"></div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a22dd17c4172c503636ef8c0b1954415f" name="a22dd17c4172c503636ef8c0b1954415f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22dd17c4172c503636ef8c0b1954415f">&#9670;&#160;</a></span>order_by() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class enumerable_t, class source_t&gt; </div>
+<div class="memtemplate">
+template&lt;class key_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::order_by </td>
+          <td>(</td>
+          <td class="paramtype">const std::function&lt; key_t(const source_t &amp;)&gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>key_selector</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sorts the elements of a sequence in ascending order according to a key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key_selector</td><td>A function to extract a key from an element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use order_by&lt;key_t, source_t&gt;(ienumerable &lt;source_t&gt;, std::function&lt;key_t(const source_t&amp;)&gt;) to sort the elements of a sequence. <div class="fragment"></div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="adf27a2adb67c1144bc20c98151c45639" name="adf27a2adb67c1144bc20c98151c45639"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adf27a2adb67c1144bc20c98151c45639">&#9670;&#160;</a></span>select() <span class="overload">[1/4]</span></h2>
 
@@ -2114,7 +2195,7 @@ template&lt;class enumerable_t, class source_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 28 2025 19:15:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Aug 28 2025 23:36:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
