@@ -18,7 +18,7 @@ namespace xtd {
     namespace views {
     }
   }
-
+  
   /// @brief The namespace alias xtd::views is provided as a shorthand for xtd::ranges::views.
   namespace views = xtd::ranges::views;
 }
