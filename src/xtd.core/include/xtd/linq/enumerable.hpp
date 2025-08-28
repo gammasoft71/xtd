@@ -224,7 +224,6 @@ namespace xtd {
       template<class source_t>
       static auto append(const ienumerable<source_t>& source, const source_t& element) noexcept {
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         for (const auto& item : source)
           result.items.push_back(item);
         result.items.push_back(element);
@@ -293,7 +292,6 @@ namespace xtd {
       template<class source_t>
       static auto as_enumerable(std::initializer_list<source_t> source) noexcept {
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         for (const auto& item : source)
           result.items.push_back(item);
         return result;
@@ -309,7 +307,6 @@ namespace xtd {
       static auto as_enumerable(const collection_t& source) noexcept {
         using source_t = typename collection_t::value_type;
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         for (const auto& item : source)
           result.items.push_back(item);
         return result;
@@ -326,7 +323,6 @@ namespace xtd {
       static auto as_enumerable(input_iterator_t first, input_iterator_t last) noexcept {
         using source_t = typename std::decay<decltype(*first)>::type;
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         for (auto iterator = first; iterator != last; ++iterator)
           result.items.push_back(*iterator);
         return result;
@@ -430,7 +426,6 @@ namespace xtd {
       template<class source_t>
       static auto concat(const ienumerable<source_t>& first, const ienumerable<source_t>& second) noexcept {
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         for (const auto& item : first)
           result.items.push_back(item);
         for (const auto& item : second)
@@ -528,7 +523,6 @@ namespace xtd {
       template<class key_t, class source_t>
       static auto count_by(const ienumerable<source_t>& source, const std::function<key_t(const source_t&)>& key_selector, const iequality_comparer<key_t>& key_comparer) noexcept {
         auto result = __opaque_xtd_linq_enumerable_collection__<key_value_pair<key_t, xtd::size>> {};
-        result = __opaque_xtd_linq_enumerable_collection__<key_value_pair<key_t, xtd::size>> {};
         auto keys = list<key_t> {};
         auto enumerator = source.get_enumerator();
         while (enumerator.move_next()) {
@@ -568,7 +562,6 @@ namespace xtd {
       template<class source_t>
       static auto default_if_empty(const ienumerable<source_t>& source, const source_t& default_value) noexcept {
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         if (!any(source)) result.items.push_back(default_value);
         else for (const auto& item : source)
             result.items.push_back(item);
@@ -772,6 +765,34 @@ namespace xtd {
         return as_enumerable(array, array + length);
       }
       
+      /// @brief Sorts the elements of a sequence in ascending order according to a key.
+      /// @param source A sequence of values to order.
+      /// @param key_selector A function to extract a key from an element.
+      /// @par Examples
+      /// The following code example demonstrates how to use order_by<key_t, source_t>(ienumerable <source_t>, std::function<key_t(const source_t&)>) to sort the elements of a sequence.
+      /// @include linq_order_by.cpp
+      template<class key_t, class source_t>
+      static auto order_by(const ienumerable<source_t>& source, const std::function<key_t(const source_t&)>& key_selector) {
+        auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
+        result.items = std::vector<source_t> {source.begin(), source.end()};
+        std::sort(result.items.begin(), result.items.end(), [key_selector](const source_t& a, const source_t& b) {return key_selector(a) < key_selector(b);});
+        return result;
+      }
+      
+      /// @brief Sorts the elements of a sequence in ascending order according to a key.
+      /// @param source A sequence of values to order.
+      /// @param key_selector A function to extract a key from an element.
+      /// @par Examples
+      /// The following code example demonstrates how to use order_by<source_t, source_t>(ienumerable <source_t>, std::function<source_t(const source_t&)>) to sort the elements of a sequence.
+      /// @include linq_order_by.cpp
+      template<class source_t>
+      static auto order_by(const ienumerable<source_t>& source, const std::function<source_t(const source_t&)>& key_selector) {
+        auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
+        result.items = std::vector<source_t> {source.begin(), source.end()};
+        std::sort(result.items.begin(), result.items.end(), [key_selector](const source_t& a, const source_t& b) {return key_selector(a) < key_selector(b);});
+        return result;
+      }
+
       /// @brief Projects each element of a sequence into a new form.
       /// @tparam result_t The type of the resulting value.
       /// @tparam source_t The type of the elements of source.
@@ -784,7 +805,6 @@ namespace xtd {
       template<class result_t, class source_t>
       static auto select(const ienumerable<source_t>& source, const std::function<result_t(const source_t&)>& selector) {
         auto result = __opaque_xtd_linq_enumerable_collection__<result_t> {};
-        result = __opaque_xtd_linq_enumerable_collection__<result_t> {};
         for (const auto& item : source)
           result.items.push_back(selector(item));
         return result;
@@ -800,7 +820,6 @@ namespace xtd {
       template<class source_t>
       static auto select(const ienumerable<source_t>& source, const std::function<source_t(const source_t&)>& selector) {
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         for (const auto& item : source)
           result.items.push_back(selector(item));
         return result;
@@ -817,7 +836,6 @@ namespace xtd {
       template<class result_t, class source_t>
       static auto select(const ienumerable<source_t>& source, const std::function<result_t(const source_t&, xtd::size)>& selector) {
         auto result = __opaque_xtd_linq_enumerable_collection__<result_t> {};
-        result = __opaque_xtd_linq_enumerable_collection__<result_t> {};
         auto index = xtd::size {0};
         for (const auto& item : source)
           result.items.push_back(selector(item, index++));
@@ -834,7 +852,6 @@ namespace xtd {
       template<class source_t>
       static auto select(const ienumerable<source_t>& source, const std::function<source_t(const source_t&, xtd::size)>& selector) {
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         auto index = xtd::size {0};
         for (const auto& item : source)
           result.items.push_back(selector(item, index++));
@@ -863,7 +880,6 @@ namespace xtd {
       template<class source_t>
       static auto where(const ienumerable<source_t>& source, const std::function<bool(const source_t&)>& predicate) {
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         for (const auto& item : source)
           if (predicate(item)) result.items.push_back(item);
         return result;
@@ -879,19 +895,12 @@ namespace xtd {
       template<class source_t>
       static auto where(const ienumerable<source_t>& source, const std::function<bool(const source_t&, xtd::size)>& predicate) {
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         auto index = xtd::size {0};
         for (const auto& item : source)
           if (predicate(item, index++)) result.items.push_back(item);
         return result;
       }
       /// @}
-      
-    private:
-      template<class source_t, class collection_t>
-      static const list<source_t>& collection_to_list(const collection_t& source) noexcept;
-      template<class source_t, class input_iterator_t>
-      static const list<source_t>& input_iterator_to_list(input_iterator_t first, input_iterator_t last) noexcept;
     };
   }
 }
