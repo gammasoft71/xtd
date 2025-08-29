@@ -984,7 +984,7 @@ namespace xtd {
         /// @return The iterator pointing to the inserted `value`.
         /// @remarks Inserts `value` before pos.
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
-        virtual iterator insert(const_iterator pos, const type_t&& value) {
+        virtual iterator insert(const_iterator pos, type_t&& value) {
           ++data_->version;
           return to_type_iterator(data_->items.insert(to_const_base_type_iterator(pos), std::move(value)));
         }
