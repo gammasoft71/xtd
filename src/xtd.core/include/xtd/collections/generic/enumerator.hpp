@@ -103,20 +103,20 @@ namespace xtd {
         /// @{
         /// @brief Create an enumerator from specified collection and version.
         /// @tparam collection_t The collection type.
-        /// @tparam vertion_t The collection version type.
+        /// @tparam version_t The collection version type.
         /// @param items The collection to create an enumerator on.
         /// @param current_version A pointer on the collection current version.
         /// @return The enumerator created.
         /// @par Examples
         /// The following code shows how to use enumerator<>::create method to create a simple enumerator on any std or xtd collections.
         /// @include generic_ienumerable3.cpp
-        template <class collection_t, class vertion_t = std::nullptr_t>
-        static auto create(const collection_t& items, const vertion_t* current_version = nullptr) noexcept {
+        template <class collection_t, class version_t = std::nullptr_t>
+        static auto create(const collection_t& items, const version_t* current_version = nullptr) noexcept {
           using value_type = typename collection_t::value_type;
           using const_iterator = typename collection_t::const_iterator;
           struct internal_enumerator : public ienumerator<value_type> {
           public:
-            explicit internal_enumerator(const collection_t& items, const vertion_t* current_version) : items_(items), version_(current_version ? * current_version : vertion_t {}), current_version_(current_version) {}
+            explicit internal_enumerator(const collection_t& items, const version_t* current_version) : items_(items), version_(current_version ? * current_version : version_t {}), current_version_(current_version) {}
             
             const value_type& current() const override {
               if (current_version_ && version_ != *current_version_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
@@ -135,7 +135,7 @@ namespace xtd {
             
             void reset() override {
               reset_ = true;
-              version_ = current_version_ ? *current_version_ : vertion_t {};
+              version_ = current_version_ ? *current_version_ : version_t {};
               iterator_ = items_.cend();
             }
             
@@ -143,8 +143,8 @@ namespace xtd {
             bool reset_ = true;
             const collection_t& items_;
             const_iterator iterator_ = items_.cend();
-            vertion_t version_ = vertion_t {};
-            const vertion_t* current_version_ = nullptr;
+            version_t version_ = version_t {};
+            const version_t* current_version_ = nullptr;
           };
           return enumerator<value_type> {new_ptr<internal_enumerator>(items, current_version)};
         }
