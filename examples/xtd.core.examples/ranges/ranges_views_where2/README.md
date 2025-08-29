@@ -1,10 +1,10 @@
-# ranges_views_distinct2
+# ranges_views_where2
 
-Shows how to use [xtd::ranges::views::distinct_view](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1distinct__view.html) class.
+Shows how to use [xtd::ranges::views::where_view](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1where__view.html) class.
 
 ## Sources
 
-[src/ranges_views_distinct2.cpp](src/ranges_views_distinct.cpp)
+[src/ranges_views_where2.cpp](src/ranges_views_where2.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 

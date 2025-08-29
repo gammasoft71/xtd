@@ -393,7 +393,9 @@
 * [ranges_views_distinct](ranges/ranges_views_distinct/README.md) shows how to use [xtd::ranges::views::distinct_view](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1distinct__view.html) class.
 * [ranges_views_distinct2](ranges/ranges_views_distinct2/README.md) shows how to use [xtd::ranges::views::distinct_view](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1distinct__view.html) class.
 * [ranges_views_select](ranges/ranges_views_select/README.md) shows how to use [xtd::ranges::views::ranges_views_select](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1select__view.html) class.
-* [ranges_views_select](ranges/ranges_views_select2/README.md) shows how to use [xtd::ranges::views::ranges_views_select](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1select__view.html) class.
+* [ranges_views_select2](ranges/ranges_views_select2/README.md) shows how to use [xtd::ranges::views::ranges_views_select](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1select__view.html) class.
+* [ranges_views_where](ranges/ranges_views_where/README.md) shows how to use [xtd::ranges::views::where_view](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1where__view.html) class.
+* [ranges_views_where2](ranges/ranges_views_where2/README.md) shows how to use [xtd::ranges::views::where_view](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1where__view.html) class.
 
 ## [Span](span/README.md)
 

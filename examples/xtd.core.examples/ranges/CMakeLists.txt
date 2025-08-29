@@ -8,4 +8,6 @@ add_projects(
   ranges_views_distinct2
   ranges_views_select
   ranges_views_select2
+  ranges_views_where
+  ranges_views_where2
 )
