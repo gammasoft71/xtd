@@ -307,11 +307,11 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> collection_t&gt;</div>
 <div class="foldopen" id="foldopen00310" data-start="{" data-end="}">
 <div class="line"><a id="l00310" name="l00310"></a><span class="lineno"><a class="line" href="classxtd_1_1linq_1_1enumerable.html#af76de508f19e5b67c38103a528c024be">  310</a></span>      <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="classxtd_1_1linq_1_1enumerable.html#af76de508f19e5b67c38103a528c024be">as_enumerable</a>(collection_t&amp;&amp; source) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span><span class="preprocessor">#if defined(__xtd__cpp_lib_ranges)</span></div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span><span class="preprocessor">        #if defined(__xtd__cpp_lib_ranges)</span></div>
 <div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>        <span class="keyword">using </span>source_t = std::ranges::range_value_t&lt;collection_t&gt;;</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span><span class="preprocessor">        #else</span></div>
 <div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        <span class="keyword">using </span>source_t = <span class="keyword">typename</span> collection_t::value_type;</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span><span class="preprocessor">        #endif</span></div>
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>        <span class="keyword">auto</span> result = __opaque_xtd_linq_enumerable_collection__&lt;source_t&gt; {};</div>
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp;&amp; item : source)</div>
 <div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>          result.items.push_back(item);</div>
@@ -617,7 +617,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>        <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>      }</div>
 </div>
-<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span></div>
+<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>      </div>
 <div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> result_t, <span class="keyword">class</span> source_t&gt;</div>
 <div class="foldopen" id="foldopen00813" data-start="{" data-end="}">
 <div class="line"><a id="l00813" name="l00813"></a><span class="lineno"><a class="line" href="classxtd_1_1linq_1_1enumerable.html#a0d5849798f7b5ae566dd5e7c175dfe3d">  813</a></span>      <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="classxtd_1_1linq_1_1enumerable.html#a0d5849798f7b5ae566dd5e7c175dfe3d">select</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="classxtd_1_1linq_1_1enumerable.html#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable&lt;source_t&gt;</a>&amp; source, <span class="keyword">const</span> std::function&lt;result_t(<span class="keyword">const</span> source_t&amp;)&gt;&amp; selector) {</div>
@@ -806,7 +806,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 28 2025 23:35:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Aug 29 2025 15:23:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
