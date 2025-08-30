@@ -78,19 +78,19 @@ namespace xtd::internal::tests {
     }
     
     void test_method_(iterator) {
-      assert::are_equal(typeof_<__xtd_vector__<int>::base_type::iterator>(), typeof_<__xtd_vector__<int>::iterator::base_type>());
+      assert::are_equal(typeof_<__xtd_vector__<int>::base_type::iterator>(), typeof_<__xtd_vector__<int>::iterator::iterator_base_type>());
     }
     
     void test_method_(iterator_with_bool) {
-      assert::are_equal(typeof_<__xtd_vector__<bool>::base_type::iterator>(), typeof_<__xtd_vector__<bool>::iterator::base_type>());
+      assert::are_equal(typeof_<__xtd_vector__<bool>::base_type::iterator>(), typeof_<__xtd_vector__<bool>::iterator::iterator_base_type>());
     }
     
     void test_method_(const_iterator) {
-      assert::are_equal(typeof_<__xtd_vector__<int>::base_type::const_iterator>(), typeof_<__xtd_vector__<int>::const_iterator::base_type>());
+      assert::are_equal(typeof_<__xtd_vector__<int>::base_type::const_iterator>(), typeof_<__xtd_vector__<int>::const_iterator::iterator_base_type>());
     }
     
     void test_method_(const_iterator_with_bool) {
-      assert::are_equal(typeof_<__xtd_vector__<bool>::base_type::const_iterator>(), typeof_<__xtd_vector__<bool>::const_iterator::base_type>());
+      assert::are_equal(typeof_<__xtd_vector__<bool>::base_type::const_iterator>(), typeof_<__xtd_vector__<bool>::const_iterator::iterator_base_type>());
     }
     
     void test_method_(reverse_iterator) {
