@@ -30,7 +30,9 @@ template<class type_t, class allocator_t = std::allocator<type_t>>
 class __xtd_vector__ {
 public:
   using value_type = type_t;
-  using base_type = std::vector<typename std::conditional<std::is_same<bool, value_type>::value, std::uint8_t, value_type>::type, allocator_t>;
+  using storage_value_type = std::conditional_t<std::is_same_v<value_type, bool>, std::uint8_t, value_type>;
+  using storage_allocator_type = typename std::allocator_traits<allocator_t>::template rebind_alloc<storage_value_type>;
+  using base_type = std::vector<storage_value_type, storage_allocator_type>;
   using const_base_type = const base_type;
   using allocator_type = typename base_type::allocator_type;
   using size_type = size_t;
@@ -39,8 +41,86 @@ public:
   using const_reference = const value_type&;
   using pointer = value_type*;
   using const_pointer = const value_type*;
-  using iterator = typename base_type::iterator;
-  using const_iterator = typename base_type::const_iterator;
+  //using iterator = typename base_type::iterator;
+  class iterator {
+  public:
+    using iterator_category = std::random_access_iterator_tag;
+    using value_type        = type_t;
+    using difference_type   = std::ptrdiff_t;
+    using pointer           = type_t*;
+    using reference         = type_t&;
+    
+    iterator() = default;
+    explicit iterator(typename base_type::iterator it) : it_(it) {}
+    
+    reference operator*()  const { return reinterpret_cast<reference>(*it_); }
+    pointer   operator->() const { return reinterpret_cast<pointer>(std::addressof(*it_)); }
+    
+    iterator& operator++()    { ++it_; return *this; }
+    iterator  operator++(int) { iterator tmp(*this); ++(*this); return tmp; }
+    iterator& operator--()    { --it_; return *this; }
+    iterator  operator--(int) { iterator tmp(*this); --(*this); return tmp; }
+    
+    iterator& operator+=(difference_type n) { it_ += n; return *this; }
+    iterator  operator+(difference_type n) const { return iterator(it_ + n); }
+    iterator& operator-=(difference_type n) { it_ -= n; return *this; }
+    iterator  operator-(difference_type n) const { return iterator(it_ - n); }
+    difference_type operator-(const iterator& other) const { return it_ - other.it_; }
+    
+    reference operator[](difference_type n) const { return reinterpret_cast<reference>(it_[n]); }
+    
+    bool operator==(const iterator& other) const { return it_ == other.it_; }
+    bool operator!=(const iterator& other) const { return it_ != other.it_; }
+    bool operator< (const iterator& other) const { return it_ <  other.it_; }
+    bool operator<=(const iterator& other) const { return it_ <= other.it_; }
+    bool operator> (const iterator& other) const { return it_ >  other.it_; }
+    bool operator>=(const iterator& other) const { return it_ >= other.it_; }
+    
+  private:
+    friend class __xtd_vector__;
+    typename base_type::iterator it_;
+  };
+  //using const_iterator = typename base_type::const_iterator;
+  class const_iterator {
+  public:
+    using iterator_category = std::random_access_iterator_tag;
+    using value_type        = const type_t;
+    using difference_type   = std::ptrdiff_t;
+    using pointer           = const type_t*;
+    using reference         = const type_t&;
+    
+    const_iterator() = default;
+    explicit const_iterator(typename base_type::const_iterator it) : it_(it) {}
+    // conversion depuis iterator
+    const_iterator(const iterator& it) : it_(it.it_) {}
+    
+    reference operator*()  const { return reinterpret_cast<reference>(*it_); }
+    pointer   operator->() const { return reinterpret_cast<pointer>(std::addressof(*it_)); }
+    
+    const_iterator& operator++()    { ++it_; return *this; }
+    const_iterator  operator++(int) { const_iterator tmp(*this); ++(*this); return tmp; }
+    const_iterator& operator--()    { --it_; return *this; }
+    const_iterator  operator--(int) { const_iterator tmp(*this); --(*this); return tmp; }
+    
+    const_iterator& operator+=(difference_type n) { it_ += n; return *this; }
+    const_iterator  operator+(difference_type n) const { return const_iterator(it_ + n); }
+    const_iterator& operator-=(difference_type n) { it_ -= n; return *this; }
+    const_iterator  operator-(difference_type n) const { return const_iterator(it_ - n); }
+    difference_type operator-(const const_iterator& other) const { return it_ - other.it_; }
+    
+    reference operator[](difference_type n) const { return reinterpret_cast<reference>(it_[n]); }
+    
+    bool operator==(const const_iterator& other) const { return it_ == other.it_; }
+    bool operator!=(const const_iterator& other) const { return it_ != other.it_; }
+    bool operator< (const const_iterator& other) const { return it_ <  other.it_; }
+    bool operator<=(const const_iterator& other) const { return it_ <= other.it_; }
+    bool operator> (const const_iterator& other) const { return it_ >  other.it_; }
+    bool operator>=(const const_iterator& other) const { return it_ >= other.it_; }
+    
+  private:
+    friend class __xtd_vector__;
+    typename base_type::const_iterator it_;
+  };
   using reverse_iterator = typename base_type::reverse_iterator;
   using const_reverse_iterator = typename base_type::const_reverse_iterator;
   
@@ -56,7 +136,12 @@ public:
   __xtd_vector__(const base_type& vector) : items_(vector) {}
   __xtd_vector__(const __xtd_vector__& vector, const allocator_type& alloc) : items_(vector.items_, alloc) {}
   __xtd_vector__(const base_type& vector, const allocator_type& alloc) : items_(vector, alloc) {}
-  __xtd_vector__(std::initializer_list<type_t> items, const allocator_type& alloc = allocator_type()) : items_(items, alloc) {}
+  __xtd_vector__(std::initializer_list<type_t> items, const allocator_type& alloc = allocator_type()) requires (!std::is_same_v<type_t, bool>) : items_(items, alloc) {}
+  __xtd_vector__(std::initializer_list<bool> items, const allocator_type& alloc = allocator_type()) requires (std::is_same_v<type_t, bool>)  : items_(alloc) {
+    items_.reserve(items.size());
+    for (auto b : items)
+      items_.push_back(b ? 1 : 0);
+  }
   __xtd_vector__(__xtd_vector__&& other) : items_(std::move(other.items_)) {}
   __xtd_vector__(base_type&& other) : items_(std::move(other)) {}
   __xtd_vector__(__xtd_vector__&& other, const allocator_type& alloc) : items_(std::move(other.items_), alloc) {}
@@ -65,14 +150,14 @@ public:
   reference back() {return at(size() - 1);}
   const_reference back() const {return at(size() - 1);}
   
-  const_iterator begin() const noexcept {return items_.begin();}
-  iterator begin() noexcept {return items_.begin();}
-  
+  iterator begin() noexcept { return to_type_iterator(items_.begin()); }
+  const_iterator begin() const noexcept { return to_type_iterator(items_.cbegin()); }
+
   size_type capacity() const noexcept {return items_.capacity();}
   
-  const_iterator cbegin() const noexcept {return items_.cbegin();}
-  const_iterator cend() const noexcept {return items_.cend();}
-  
+  const_iterator cbegin() const noexcept { return to_type_iterator(items_.cbegin()); }
+  const_iterator cend() const noexcept { return to_type_iterator(items_.cend()); }
+
   const_reverse_iterator crbegin() const noexcept {return items_.crbegin();}
   const_reverse_iterator crend() const noexcept {return items_.crend();}
   
@@ -81,9 +166,9 @@ public:
   
   bool empty() const noexcept {return items_.empty();}
   
-  const_iterator end() const noexcept {return items_.end();}
-  iterator end() noexcept {return items_.end();}
-  
+  iterator end() noexcept { return to_type_iterator(items_.end()); }
+  const_iterator end() const noexcept { return to_type_iterator(items_.cend()); }
+
   reference front() {return at(0);}
   const_reference front() const {return at(0);}
   
@@ -160,6 +245,9 @@ public:
   operator base_type& () noexcept {return items_;}
   
 private:
+  iterator to_type_iterator(typename base_type::iterator it) { return iterator(it); }
+  const_iterator to_type_iterator(typename base_type::const_iterator it) const { return const_iterator(it); }
+
   base_type items_;
 };
 
