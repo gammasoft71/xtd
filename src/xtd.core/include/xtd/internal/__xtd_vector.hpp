@@ -127,8 +127,8 @@ public:
     friend class __xtd_vector__;
     base_type it_;
   };
-  using reverse_iterator = typename base_type::reverse_iterator;
-  using const_reverse_iterator = typename base_type::const_reverse_iterator;
+  using reverse_iterator = std::reverse_iterator<iterator>;
+  using const_reverse_iterator = std::reverse_iterator<const_iterator>;
   
   inline static constexpr size_type npos = std::numeric_limits<size_type>::max();
   
@@ -156,24 +156,24 @@ public:
   reference back() {return at(size() - 1);}
   const_reference back() const {return at(size() - 1);}
   
-  iterator begin() noexcept { return to_type_iterator(items_.begin()); }
-  const_iterator begin() const noexcept { return to_type_iterator(items_.cbegin()); }
+  iterator begin() noexcept {return to_type_iterator(items_.begin());}
+  const_iterator begin() const noexcept {return to_type_iterator(items_.cbegin());}
 
   size_type capacity() const noexcept {return items_.capacity();}
   
-  const_iterator cbegin() const noexcept { return to_type_iterator(items_.cbegin()); }
-  const_iterator cend() const noexcept { return to_type_iterator(items_.cend()); }
+  const_iterator cbegin() const noexcept {return to_type_iterator(items_.cbegin());}
+  const_iterator cend() const noexcept {return to_type_iterator(items_.cend()); }
 
-  const_reverse_iterator crbegin() const noexcept {return items_.crbegin();}
-  const_reverse_iterator crend() const noexcept {return items_.crend();}
+  const_reverse_iterator crbegin() const noexcept {return const_reverse_iterator(end());}
+  const_reverse_iterator crend() const noexcept {return const_reverse_iterator(begin());}
   
   pointer data() noexcept {return reinterpret_cast<pointer>(items_.data());}
   const_pointer data() const noexcept {return reinterpret_cast<const_pointer>(items_.data());}
   
   bool empty() const noexcept {return items_.empty();}
   
-  iterator end() noexcept { return to_type_iterator(items_.end()); }
-  const_iterator end() const noexcept { return to_type_iterator(items_.cend()); }
+  iterator end() noexcept {return to_type_iterator(items_.end());}
+  const_iterator end() const noexcept {return to_type_iterator(items_.cend());}
 
   reference front() {return at(0);}
   const_reference front() const {return at(0);}
@@ -183,11 +183,11 @@ public:
   
   size_type max_size() const noexcept {return items_.max_size();}
   
-  reverse_iterator rbegin() noexcept {return items_.rbegin();}
-  const_reverse_iterator rbegin() const noexcept {return items_.rbegin();}
+  reverse_iterator rbegin() noexcept {return reverse_iterator(end());}
+  const_reverse_iterator rbegin() const noexcept {return const_reverse_iterator(end());}
   
-  reverse_iterator rend() noexcept {return items_.rend();}
-  const_reverse_iterator rend() const noexcept {return items_.rend();}
+  reverse_iterator rend() noexcept {return reverse_iterator(begin());}
+  const_reverse_iterator rend() const noexcept {return const_reverse_iterator(begin());}
   
   size_type size() const noexcept {return items_.size();}
   
