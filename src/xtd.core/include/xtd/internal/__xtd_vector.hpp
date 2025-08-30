@@ -44,6 +44,7 @@ public:
   //using iterator = typename base_type::iterator;
   class iterator {
   public:
+    using base_type = typename base_type::iterator;
     using iterator_category = std::random_access_iterator_tag;
     using value_type        = type_t;
     using difference_type   = std::ptrdiff_t;
@@ -51,7 +52,7 @@ public:
     using reference         = type_t&;
     
     iterator() = default;
-    explicit iterator(typename base_type::iterator it) : it_(it) {}
+    explicit iterator(base_type it) : it_(it) {}
     
     reference operator*()  const { return reinterpret_cast<reference>(*it_); }
     pointer   operator->() const { return reinterpret_cast<pointer>(std::addressof(*it_)); }
@@ -76,13 +77,16 @@ public:
     bool operator> (const iterator& other) const { return it_ >  other.it_; }
     bool operator>=(const iterator& other) const { return it_ >= other.it_; }
     
+    base_type to_base_type() const {return it_;}
+    
   private:
     friend class __xtd_vector__;
-    typename base_type::iterator it_;
+    base_type it_;
   };
   //using const_iterator = typename base_type::const_iterator;
   class const_iterator {
   public:
+    using base_type = typename base_type::const_iterator;
     using iterator_category = std::random_access_iterator_tag;
     using value_type        = const type_t;
     using difference_type   = std::ptrdiff_t;
@@ -90,7 +94,7 @@ public:
     using reference         = const type_t&;
     
     const_iterator() = default;
-    explicit const_iterator(typename base_type::const_iterator it) : it_(it) {}
+    explicit const_iterator(base_type it) : it_(it) {}
     // conversion depuis iterator
     const_iterator(const iterator& it) : it_(it.it_) {}
     
@@ -117,9 +121,11 @@ public:
     bool operator> (const const_iterator& other) const { return it_ >  other.it_; }
     bool operator>=(const const_iterator& other) const { return it_ >= other.it_; }
     
+    base_type to_base_type() const {return it_;}
+
   private:
     friend class __xtd_vector__;
-    typename base_type::const_iterator it_;
+    base_type it_;
   };
   using reverse_iterator = typename base_type::reverse_iterator;
   using const_reverse_iterator = typename base_type::const_reverse_iterator;
@@ -196,27 +202,25 @@ public:
   void clear() {items_.clear();}
   
   template<class ...args_t>
-  iterator emplace(const_iterator pos, args_t&&... args) {return to_type_iterator(items_.emplace(to_const_base_type_iterator(pos), std::forward<args_t>(args)...));}
+  iterator emplace(const_iterator pos, args_t&&... args) {return to_type_iterator(items_.emplace(pos.to_base_type(), std::forward<args_t>(args)...));}
   template<class ...args_t>
-  reference emplace_back(args_t&&... args) {return items_.emplace_back(std::forward<args_t>(args)...);}
+  reference emplace_back(args_t&&... args) {return reinterpret_cast<reference>(items_.emplace_back(std::forward<args_t>(args)...));}
   
-  iterator erase(const_iterator pos) {return items_.erase(pos);}
-  iterator erase(const_iterator first, const_iterator last) {return items_.erase(first, last);}
+  iterator erase(const_iterator pos) {return to_type_iterator(items_.erase(pos.to_base_type()));}
+  iterator erase(const_iterator first, const_iterator last) {return to_type_iterator(items_.erase(first.to_base_type(), last.to_base_type()));}
   
   allocator_type get_allocator() const {return items_.get_allocator();}
   
   base_type& get_base_type() noexcept {return items_;}
   const base_type& get_base_type() const noexcept {return items_;}
   
-  iterator insert(const_iterator pos, const type_t& value) {return items_.insert(pos, value);}
-  iterator insert(const_iterator pos, type_t&& value) {return items_.insert(pos, std::move(value));}
-  iterator insert(const_iterator pos, size_type count, const type_t& value) {return items_.insert(pos, count, value);}
-  iterator insert(const_iterator pos, size_type count, type_t&& value) {return items_.insert(pos, count, std::move(value));}
+  iterator insert(const_iterator pos, const type_t& value) {return to_type_iterator(items_.insert(pos.to_base_type(), value));}
+  iterator insert(const_iterator pos, type_t&& value) {return to_type_iterator(items_.insert(pos.to_base_type(), std::move(value)));}
+  iterator insert(const_iterator pos, size_type count, const type_t& value) {return to_type_iterator(items_.insert(pos.to_base_type(), count, value));}
+  iterator insert(const_iterator pos, size_type count, type_t&& value) {return to_type_iterator(items_.insert(pos.to_base_type(), count, std::move(value)));}
   template<class input_iterator_t>
-  iterator insert(const_iterator pos, input_iterator_t first, input_iterator_t last) {return items_.insert(pos, first, last);}
-  iterator insert(const_iterator pos, const std::initializer_list<type_t>& items) {return items_.insert(pos, items.begin(), items.end());}
-  void insert(size_type index, const type_t& value) {insert(begin() + index, value);}
-  void insert(size_type index, type_t&& value) {insert(begin() + index, std::move(value));}
+  iterator insert(const_iterator pos, input_iterator_t first, input_iterator_t last) {return to_type_iterator(items_.insert(pos.to_base_type(), first, last));}
+  iterator insert(const_iterator pos, const std::initializer_list<type_t>& items) {return to_type_iterator(items_.insert(pos.to_base_type(), items.begin(), items.end()));}
   
   void pop_back() {items_.pop_back();}
   void push_back(const type_t& value) {items_.push_back(value);}
@@ -233,11 +237,18 @@ public:
   
   __xtd_vector__& operator =(const __xtd_vector__& other) = default;
   __xtd_vector__& operator =(__xtd_vector__&& other) noexcept  = default;
-  __xtd_vector__& operator =(std::initializer_list<type_t>& items) {
+  __xtd_vector__& operator =(std::initializer_list<type_t>& items) requires (!std::is_same_v<type_t, bool>) {
     items_ = items;
     return *this;
   }
-  
+  __xtd_vector__& operator =(std::initializer_list<bool>& items) requires (std::is_same_v<type_t, bool>) {
+    items_.clear();
+    items_.reserve(items.size());
+    for (auto b : items)
+      items_.push_back(b ? 1 : 0);
+    return *this;
+  }
+
   const_reference operator [](size_type index) const {return at(index);}
   reference operator [](size_type index) {return at(index);}
   
