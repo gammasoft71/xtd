@@ -8,23 +8,6 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @name Aliases
-  
-  /// @{
-  /// @brief Represents the type to array type.
-  /// @par Header
-  /// ```cpp
-  /// #include <xtd/array>
-  /// ```
-  /// @par Namespace
-  /// xtd::collections::generic
-  /// @par Library
-  /// xtd.core
-  /// @ingroup xtd_core system
-  template<class type_t>
-  using type_to_array_t = typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type;
-  /// @}
-  
   /// @brief Base object that represent array.
   /// @par Definition
   /// ```cpp
@@ -40,7 +23,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_to_array_t<type_t>>>
+  template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
   class basic_array : public xtd::array_abstract_object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<basic_array<type_t, allocator_t >> {
     class __comparer__ {
     public:
@@ -80,9 +63,9 @@ namespace xtd {
     /// @brief Represents the array value type.
     using value_type = type_t;
     /// @brief Represents the array allocator type.
-    using allocator_type = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, value_type>::value, xtd::byte, value_type>::type>;
+    using allocator_type = xtd::collections::generic::helpers::allocator<value_type>;
     /// @brief Represents the array base type.
-    using base_type = std::vector<typename std::conditional<std::is_same<bool, value_type>::value, xtd::byte, value_type>::type, allocator_type>;
+    using base_type = typename __xtd_vector__<value_type, allocator_type>::base_type;
     /// @brief Represents the array size type (usually xtd::size).
     using size_type = xtd::size;
     /// @brief Represents the array difference type (usually xtd::ptrdiff).
@@ -100,9 +83,9 @@ namespace xtd {
     /// @brief Represents the const iterator of array value type.
     using const_iterator = typename xtd::collections::generic::ienumerable<type_t>::const_iterator;
     /// @brief Represents the reverse iterator of array value type.
-    using reverse_iterator = typename base_type::reverse_iterator;
+    using reverse_iterator = typename __xtd_vector__<value_type>::reverse_iterator;
     /// @brief Represents the const reverse iterator of array value type.
-    using const_reverse_iterator = typename base_type::const_reverse_iterator;
+    using const_reverse_iterator = typename __xtd_vector__<value_type>::const_reverse_iterator;
     /// @}
     
     /// @name Public Fields
@@ -668,13 +651,13 @@ protected:
     bool remove(const type_t& item) override {return false;}
     void remove_at(size_type index) override {}
     
-    typename base_type::iterator to_base_type_iterator(iterator value) noexcept {
+    typename __xtd_vector__<value_type>::iterator to_base_type_iterator(iterator value) noexcept {
       if (value == begin()) return data_->items.begin();
       if (value == end()) return data_->items.end();
       return data_->items.begin() + (value - begin());
     }
     
-    iterator to_iterator(typename base_type::iterator value) noexcept {
+    iterator to_iterator(typename __xtd_vector__<value_type>::iterator value) noexcept {
       if (value == data_->items.begin()) return begin();
       if (value == data_->items.end()) return end();
       return begin() + (value - data_->items.begin());
@@ -682,9 +665,9 @@ protected:
     
     struct array_data {
       size_type version = 0;
-      base_type items;
-      std::vector < size_type > lower_bound {0};
-      std::vector < size_type > upper_bound {std::numeric_limits < size_type >::max()};
+      __xtd_vector__<value_type> items;
+      std::vector<size_type> lower_bound {0};
+      std::vector<size_type> upper_bound {std::numeric_limits<size_type>::max()};
       object sync_root;
     };
     

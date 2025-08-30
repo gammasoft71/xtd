@@ -4,6 +4,7 @@
 #pragma once
 #define __XTD_CORE_INTERNAL__
 #include "internal/__array_definition.hpp"
+#include "internal/__xtd_vector.hpp"
 #undef __XTD_CORE_INTERNAL__
 #include "collections/generic/helpers/equator.hpp"
 #include "collections/generic/comparer.hpp"
@@ -22,7 +23,6 @@
 #include "self.hpp"
 #include "static.hpp"
 #include <algorithm>
-#include <vector>
 
 #define __XTD_ARRAY_INTERNAL__
 #include "array_abstract_object.hpp"
