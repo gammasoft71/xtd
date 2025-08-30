@@ -127,10 +127,10 @@ Inheritance diagram for xtd::collections::generic::enumerator&lt;&gt;:</div>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html" title="Supports a simple iteration over a generic collection.">xtd::collections::generic::enumerator</a> &lt;type_t&gt; class is used to encapsulate an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html" title="Supports a simple iteration over a generic collection.">xtd::collections::generic::ienumerator</a> &lt;type_t&gt;. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
-<tr class="memitem:ae4806bafd85b5cbcfdaa6cbc8d5d7831" id="r_ae4806bafd85b5cbcfdaa6cbc8d5d7831"><td class="memTemplParams" colspan="2">template&lt;class collection_t, class vertion_t = std::nullptr_t&gt; </td></tr>
-<tr class="memitem:ae4806bafd85b5cbcfdaa6cbc8d5d7831"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae4806bafd85b5cbcfdaa6cbc8d5d7831">create</a> (const collection_t &amp;items, const vertion_t *current_version=nullptr) noexcept</td></tr>
-<tr class="memdesc:ae4806bafd85b5cbcfdaa6cbc8d5d7831"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an enumerator from specified collection and version.  <br /></td></tr>
-<tr class="separator:ae4806bafd85b5cbcfdaa6cbc8d5d7831"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa99c82357c4397301584c99c28085535" id="r_aa99c82357c4397301584c99c28085535"><td class="memTemplParams" colspan="2">template&lt;class collection_t, class version_t = std::nullptr_t&gt; </td></tr>
+<tr class="memitem:aa99c82357c4397301584c99c28085535"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa99c82357c4397301584c99c28085535">create</a> (const collection_t &amp;items, const version_t *current_version=nullptr) noexcept</td></tr>
+<tr class="memdesc:aa99c82357c4397301584c99c28085535"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an enumerator from specified collection and version.  <br /></td></tr>
+<tr class="separator:aa99c82357c4397301584c99c28085535"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:acba4550321d197cbfbb1f26ddf25ea3c" id="r_acba4550321d197cbfbb1f26ddf25ea3c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#acba4550321d197cbfbb1f26ddf25ea3c">enumerator</a> ()=default</td></tr>
@@ -218,13 +218,13 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae4806bafd85b5cbcfdaa6cbc8d5d7831" name="ae4806bafd85b5cbcfdaa6cbc8d5d7831"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4806bafd85b5cbcfdaa6cbc8d5d7831">&#9670;&#160;</a></span>create()</h2>
+<a id="aa99c82357c4397301584c99c28085535" name="aa99c82357c4397301584c99c28085535"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa99c82357c4397301584c99c28085535">&#9670;&#160;</a></span>create()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class collection_t, class vertion_t = std::nullptr_t&gt; </div>
+template&lt;class collection_t, class version_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -237,7 +237,7 @@ template&lt;class collection_t, class vertion_t = std::nullptr_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const vertion_t *</td>          <td class="paramname"><span class="paramname"><em>current_version</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+          <td class="paramtype">const version_t *</td>          <td class="paramname"><span class="paramname"><em>current_version</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -251,7 +251,7 @@ template&lt;class collection_t, class vertion_t = std::nullptr_t&gt; </div>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">collection_t</td><td>The collection type. </td></tr>
-    <tr><td class="paramname">vertion_t</td><td>The collection version type. </td></tr>
+    <tr><td class="paramname">version_t</td><td>The collection version type. </td></tr>
   </table>
   </dd>
 </dl>
@@ -263,7 +263,7 @@ template&lt;class collection_t, class vertion_t = std::nullptr_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The enumerator created. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="#ae4806bafd85b5cbcfdaa6cbc8d5d7831" title="Create an enumerator from specified collection and version.">enumerator&lt;&gt;::create</a> method to create a simple enumerator on any std or xtd collections. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="#aa99c82357c4397301584c99c28085535" title="Create an enumerator from specified collection and version.">enumerator&lt;&gt;::create</a> method to create a simple enumerator on any std or xtd collections. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -450,7 +450,7 @@ template&lt;class collection_t, class vertion_t = std::nullptr_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 29 2025 15:23:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Aug 30 2025 15:49:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

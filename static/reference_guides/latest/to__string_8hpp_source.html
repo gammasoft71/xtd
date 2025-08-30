@@ -346,15 +346,15 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> key_t, <span class="keyword">class</span> compare_t, <span class="keyword">class</span> allocator_t&gt;</div>
 <div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>  <span class="keyword">inline</span> std::string <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>(<span class="keyword">const</span> std::unordered_set&lt;key_t, compare_t, allocator_t&gt;&amp; values, <span class="keyword">const</span> std::string&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc) {<span class="keywordflow">return</span> __xtd_associative_container_to_string(values.begin(), values.end(), fmt, loc);}</div>
 <div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>  </div>
-<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span><span class="preprocessor">#if defined(__xtd__cpp_lib_ranges)</span></div>
-<div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>  <span class="keyword">template</span> &lt;std::ranges::range range_t&gt;</div>
-<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>  <span class="keyword">inline</span> std::string <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>(<span class="keyword">const</span> range_t&amp; values, <span class="keyword">const</span> std::string&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc) {<span class="keywordflow">return</span> __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}</div>
+<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span><span class="preprocessor">  #if defined(__xtd__cpp_lib_ranges)</span></div>
+<div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>  <span class="comment">//template &lt;std::ranges::range range_t&gt;</span></div>
+<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>  <span class="comment">//inline std::string to_string(const range_t&amp; values, const std::string&amp; fmt, const std::locale&amp; loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}</span></div>
 <div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>  <span class="comment">/*</span></div>
 <div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span><span class="comment">  template &lt;std::ranges::range range_t&gt;</span></div>
 <div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span><span class="comment">  inline std::string to_string(const range_t&amp; values, const std::string&amp; fmt, const std::locale&amp; loc) {</span></div>
 <div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span><span class="comment">    std::ostringstream oss;</span></div>
 <div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span><span class="comment">    oss.imbue(loc);</span></div>
-<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span><span class="comment">    </span></div>
+<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span><span class="comment">  </span></div>
 <div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span><span class="comment">    oss &lt;&lt; &quot;[&quot;;</span></div>
 <div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span><span class="comment">    bool first = true;</span></div>
 <div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span><span class="comment">    for (auto&amp;&amp; v : values) {</span></div>
@@ -365,8 +365,8 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span><span class="comment">    oss &lt;&lt; &quot;]&quot;;</span></div>
 <div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span><span class="comment">    return oss.str();</span></div>
 <div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span><span class="comment">  }</span></div>
-<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span><span class="comment">*/</span></div>
-<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span><span class="comment">  */</span></div>
+<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span><span class="preprocessor">  #endif</span></div>
 <div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>  </div>
 <div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
 <div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>  <span class="keyword">inline</span> std::string <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>(<span class="keyword">const</span> xtd::collections::generic::ienumerable&lt;type_t&gt;&amp; values, <span class="keyword">const</span> std::string&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc) {<span class="keywordflow">return</span> __xtd_sequence_container_to_string(values.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a436d1607f6b62c831e84221b6c196b37">begin</a>(), values.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a6170ebbcc1ed30723db0d8f695a88477">end</a>(), fmt, loc);}</div>
@@ -491,7 +491,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Aug 29 2025 15:23:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Aug 30 2025 15:49:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
