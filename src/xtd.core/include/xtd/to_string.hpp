@@ -492,8 +492,8 @@ namespace xtd {
   inline std::string to_string(const std::unordered_set<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_associative_container_to_string(values.begin(), values.end(), fmt, loc);}
   
   #if defined(__xtd__cpp_lib_ranges)
-  template <std::ranges::range range_t>
-  inline std::string to_string(const range_t& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
+  //template <std::ranges::range range_t>
+  //inline std::string to_string(const range_t& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
   /*
   template <std::ranges::range range_t>
   inline std::string to_string(const range_t& values, const std::string& fmt, const std::locale& loc) {
