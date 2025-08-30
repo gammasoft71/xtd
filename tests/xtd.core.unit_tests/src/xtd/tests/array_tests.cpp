@@ -86,19 +86,19 @@ namespace xtd::tests {
     }
     
     void test_method_(reverse_iterator) {
-      assert::are_equal(typeof_<array<int>::base_type::reverse_iterator>(), typeof_<array<int>::reverse_iterator>());
+      assert::are_equal(typeof_<__xtd_vector__<int>::reverse_iterator>(), typeof_<array<int>::reverse_iterator>());
     }
     
     void test_method_(reverse_iterator_of_boolean) {
-      assert::are_equal(typeof_<array<bool>::base_type::reverse_iterator>(), typeof_<array<bool>::reverse_iterator>());
+      assert::are_equal(typeof_<__xtd_vector__<bool>::reverse_iterator>(), typeof_<array<bool>::reverse_iterator>());
     }
     
     void test_method_(const_reverse_iterator) {
-      assert::are_equal(typeof_<array<int>::base_type::const_reverse_iterator>(), typeof_<array<int>::const_reverse_iterator>());
+      assert::are_equal(typeof_<__xtd_vector__<int>::const_reverse_iterator>(), typeof_<array<int>::const_reverse_iterator>());
     }
     
     void test_method_(const_reverse_iterator_of_boolean) {
-      assert::are_equal(typeof_<array<bool>::base_type::const_reverse_iterator>(), typeof_<array<bool>::const_reverse_iterator>());
+      assert::are_equal(typeof_<__xtd_vector__<bool>::const_reverse_iterator>(), typeof_<array<bool>::const_reverse_iterator>());
     }
     
     void test_method_(default_constructor) {
