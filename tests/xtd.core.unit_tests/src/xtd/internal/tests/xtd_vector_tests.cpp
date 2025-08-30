@@ -52,15 +52,15 @@ namespace xtd::internal::tests {
     void test_method_(reference_with_bool) {
       assert::are_equal(typeof_<bool&>(), typeof_<__xtd_vector__<bool>::reference>());
     }
-
+    
     void test_method_(const_reference) {
       assert::are_equal(typeof_<const int&>(), typeof_<__xtd_vector__<int>::const_reference>());
     }
-
+    
     void test_method_(const_reference_with_bool) {
       assert::are_equal(typeof_<const bool&>(), typeof_<__xtd_vector__<bool>::const_reference>());
     }
-
+    
     void test_method_(pointer) {
       assert::are_equal(typeof_<int*>(), typeof_<__xtd_vector__<int>::pointer>());
     }
@@ -92,23 +92,23 @@ namespace xtd::internal::tests {
     void test_method_(const_iterator_with_bool) {
       assert::are_equal(typeof_<__xtd_vector__<bool>::base_type::const_iterator>(), typeof_<__xtd_vector__<bool>::const_iterator::base_type>());
     }
-
+    
     void test_method_(reverse_iterator) {
-      assert::are_equal(typeof_<std::reverse_iterator<__xtd_vector__<int>::iterator>>(), typeof_<__xtd_vector__<int>::reverse_iterator>());
+      assert::are_equal(typeof_<std::reverse_iterator<__xtd_vector__<int>::iterator>>(), typeof_<__xtd_vector__<int>::reverse_iterator > ());
     }
-
+    
     void test_method_(reverse_iterator_with_bool) {
-      assert::are_equal(typeof_<std::reverse_iterator<__xtd_vector__<bool>::iterator>>(), typeof_<__xtd_vector__<bool>::reverse_iterator>());
+      assert::are_equal(typeof_<std::reverse_iterator<__xtd_vector__<bool>::iterator>>(), typeof_<__xtd_vector__<bool>::reverse_iterator > ());
     }
-
+    
     void test_method_(const_reverse_iterator) {
-      assert::are_equal(typeof_<std::reverse_iterator<__xtd_vector__<int>::const_iterator>>(), typeof_<__xtd_vector__<int>::const_reverse_iterator>());
+      assert::are_equal(typeof_<std::reverse_iterator<__xtd_vector__<int>::const_iterator>>(), typeof_<__xtd_vector__<int>::const_reverse_iterator > ());
     }
-
+    
     void test_method_(const_reverse_iterator_with_bool) {
-      assert::are_equal(typeof_<std::reverse_iterator<__xtd_vector__<bool>::const_iterator>>(), typeof_<__xtd_vector__<bool>::const_reverse_iterator>());
+      assert::are_equal(typeof_<std::reverse_iterator<__xtd_vector__<bool>::const_iterator>>(), typeof_<__xtd_vector__<bool>::const_reverse_iterator > ());
     }
-
+    
     void test_method_(default_constructor) {
       auto items = __xtd_vector__<int> {};
       assert::is_zero(items.capacity());
@@ -134,47 +134,47 @@ namespace xtd::internal::tests {
       assert::are_equal(3_z, items.size());
       collection_assert::are_equal({false, false, false}, items);
     }
-
+    
     void test_method_(constructor_with_count_and_type) {
       auto items = __xtd_vector__<int>(3, 42);
       assert::are_equal(3_z, items.size());
       collection_assert::are_equal({42, 42, 42}, items);
     }
-
+    
     void test_method_(constructor_with_bool_count_and_type) {
       auto items = __xtd_vector__<bool>(3, true);
       assert::are_equal(3_z, items.size());
       collection_assert::are_equal({true, true, true}, items);
     }
-
+    
     void test_method_(constructor_with_iterators) {
       auto v = std::vector {84, 42, 21};
       auto items = __xtd_vector__<int>(v.begin(), v.end());
       assert::are_equal(3_z, items.size());
       collection_assert::are_equal({84, 42, 21}, items);
     }
-
+    
     void test_method_(constructor_with_bool_and_iterators) {
       auto v = std::vector {true, false, true};
       auto items = __xtd_vector__<bool>(v.begin(), v.end());
       assert::are_equal(3_z, items.size());
       collection_assert::are_equal({true, false, true}, items);
     }
-
+    
     void test_method_(constructor_with_base_type) {
       auto bt = __xtd_vector__<int>::base_type {84, 42, 21};
       auto items = __xtd_vector__<int>(bt);
       assert::are_equal(3_z, items.size());
       collection_assert::are_equal({84, 42, 21}, items);
     }
-
+    
     void test_method_(constructor_with_base_type_of_bool) {
       auto bt = __xtd_vector__<bool>::base_type {true, false, true};
       auto items = __xtd_vector__<bool>(bt);
       assert::are_equal(3_z, items.size());
       collection_assert::are_equal({true, false, true}, items);
     }
-
+    
     void test_method_(constructor_with_xtd_vector) {
       auto v = __xtd_vector__ {84, 42, 21};
       auto items = __xtd_vector__(v);
@@ -182,7 +182,7 @@ namespace xtd::internal::tests {
       assert::are_equal(3_z, items.size());
       collection_assert::are_equal({84, 42, 21}, items);
     }
-
+    
     void test_method_(constructor_with_xtd_vector_of_bool) {
       auto v = __xtd_vector__ {true, false, true};
       auto items = __xtd_vector__(v);
@@ -190,7 +190,7 @@ namespace xtd::internal::tests {
       assert::are_equal(3_z, items.size());
       collection_assert::are_equal({true, false, true}, items);
     }
-
+    
     void test_method_(constructor_with_move_xtd_vector) {
       auto v = __xtd_vector__ {84, 42, 21};
       auto items = __xtd_vector__(std::move(v));
@@ -198,7 +198,7 @@ namespace xtd::internal::tests {
       collection_assert::are_equal({84, 42, 21}, items);
       collection_assert::is_empty(v);
     }
-
+    
     void test_method_(constructor_with_move_xtd_vector_of_bool) {
       auto v = __xtd_vector__ {true, false, true};
       auto items = __xtd_vector__(std::move(v));
@@ -206,7 +206,7 @@ namespace xtd::internal::tests {
       collection_assert::are_equal({true, false, true}, items);
       collection_assert::is_empty(v);
     }
-
+    
     void test_method_(constructor_with_move_base_type) {
       auto bt = __xtd_vector__<int>::base_type {84, 42, 21};
       auto items = __xtd_vector__<int>(std::move(bt));
@@ -214,7 +214,7 @@ namespace xtd::internal::tests {
       collection_assert::are_equal({84, 42, 21}, items);
       collection_assert::is_empty(bt);
     }
-
+    
     void test_method_(constructor_with_move_base_type_of_bool) {
       auto bt = __xtd_vector__<int>::base_type {true, false, true};
       auto items = __xtd_vector__<int>(std::move(bt));
@@ -222,17 +222,17 @@ namespace xtd::internal::tests {
       collection_assert::are_equal({true, false, true}, items);
       collection_assert::is_empty(bt);
     }
-
+    
     void test_method_(const_back) {
       assert::are_equal(21, __xtd_vector__ {84, 42, 21}.back());
       assert::throws<std::out_of_range>([] {__xtd_vector__<int> {}.back();});
     }
-
+    
     void test_method_(const_back_with_bool) {
       assert::are_equal(true, __xtd_vector__ {true, false, true}.back());
       assert::throws<std::out_of_range>([] {__xtd_vector__<bool> {}.back();});
     }
-
+    
     void test_method_(back) {
       auto items = __xtd_vector__ {84, 42, 21};
       items.back() = 5;
@@ -240,7 +240,7 @@ namespace xtd::internal::tests {
       auto empty_items = __xtd_vector__<int> {};
       assert::throws<std::out_of_range>([&] {empty_items.back() = 5;});
     }
-
+    
     void test_method_(back_with_bool) {
       auto items = __xtd_vector__ {true, false, true};
       items.back() = false;
@@ -248,19 +248,19 @@ namespace xtd::internal::tests {
       auto empty_items = __xtd_vector__<bool> {};
       assert::throws<std::out_of_range>([&] {empty_items.back() = false;});
     }
-
+    
     void test_method_(begin) {
       auto items = __xtd_vector__ {84, 42, 21};
       assert::are_equal(typeof_<int>(), typeof_(*items.begin()));
       assert::are_equal(84, *items.begin());
     }
-
+    
     void test_method_(begin_with_bool) {
       auto items = __xtd_vector__ {true, false, true, false};
       assert::are_equal(typeof_<bool>(), typeof_(*items.begin()));
       assert::are_equal(true, *items.begin());
     }
-
+    
     void test_method_(capaciy) {
       auto items = __xtd_vector__ {84, 42, 21};
       assert::are_equal(3_z, items.size());
@@ -269,7 +269,7 @@ namespace xtd::internal::tests {
       assert::is_greater_or_equal(items.capacity(), 42_z);
       assert::are_equal(3_z, items.size());
     }
-
+    
     void test_method_(capaciy_with_bool) {
       auto items = __xtd_vector__ {true, false, true};
       assert::are_equal(3_z, items.size());
@@ -278,7 +278,7 @@ namespace xtd::internal::tests {
       assert::is_greater_or_equal(items.capacity(), 42_z);
       assert::are_equal(3_z, items.size());
     }
-
+    
     void test_method_(cbegin) {
       auto items = __xtd_vector__ {84, 42, 21};
       assert::are_equal(84, *items.cbegin());
@@ -316,7 +316,7 @@ namespace xtd::internal::tests {
       assert::are_equal(typeof_<bool>(), typeof_(*items.crbegin()));
       assert::are_equal(false, *items.crbegin());
     }
-
+    
     void test_method_(crend) {
       auto items = __xtd_vector__ {84, 42, 21};
       assert::are_equal(typeof_<int>(), typeof_(*items.crend()));
@@ -325,7 +325,7 @@ namespace xtd::internal::tests {
       //assert::throws<std::out_of_range>([&] {*items.crend();});
       assert::is_true(items.crend() == items.crbegin() + items.size());
     }
-
+    
     void test_method_(crend_with_bool) {
       auto items = __xtd_vector__ {true, false, true, false};
       assert::are_equal(typeof_<bool>(), typeof_(*items.crend()));
@@ -334,7 +334,7 @@ namespace xtd::internal::tests {
       //assert::throws<std::out_of_range>([&] {*items.crend();});
       assert::is_true(items.crend() == items.crbegin() + items.size());
     }
-
+    
     void test_method_(data) {
       auto items = __xtd_vector__ {84, 42, 21};
       
@@ -355,7 +355,7 @@ namespace xtd::internal::tests {
       
       collection_assert::are_equal({63, 31, 10}, items);
     }
-
+    
     void test_method_(data_with_bool) {
       auto items = __xtd_vector__ {true, false, true};
       
@@ -376,7 +376,7 @@ namespace xtd::internal::tests {
       
       collection_assert::are_equal({false, true, false}, items);
     }
-
+    
     void test_method_(empty) {
       assert::is_true(__xtd_vector__<int> {}.empty());
       assert::is_false(__xtd_vector__<int> {42}.empty());
@@ -606,7 +606,7 @@ namespace xtd::internal::tests {
       items.assign({false, true, true, false});
       collection_assert::are_equal({false, true, true, false}, items);
     }
-
+    
     void test_method_(at) {
       auto items = __xtd_vector__ {84, 42, 21};
       
@@ -740,7 +740,7 @@ namespace xtd::internal::tests {
     void test_method_(insert_with_move) {
       auto items = __xtd_vector__ {84, 42, 21};
       auto v = 63;
-      items.insert(items.begin() + 2, std::move(v ));
+      items.insert(items.begin() + 2, std::move(v));
       collection_assert::are_equal({84, 42, 63, 21}, items);
     }
     
@@ -766,7 +766,7 @@ namespace xtd::internal::tests {
     void test_method_(insert_with_count_and_move) {
       auto items = __xtd_vector__ {84, 42, 21};
       auto v = 63;
-      items.insert(items.begin() + 2, 3, std::move(v ));
+      items.insert(items.begin() + 2, 3, std::move(v));
       collection_assert::are_equal({84, 42, 63, 63, 63, 21}, items);
     }
     
@@ -840,13 +840,13 @@ namespace xtd::internal::tests {
       items.push_back(std::move(v));
       collection_assert::are_equal({true, false, true, false}, items);
     }
-
+    
     void test_method_(reserve) {
       auto items = __xtd_vector__ {84, 42, 21};
       items.reserve(42);
       assert::is_greater_or_equal(items.capacity(), 42_z);
     }
-
+    
     void test_method_(reserve_with_bool) {
       auto items = __xtd_vector__ {true, false, true};
       items.reserve(42);
@@ -868,14 +868,14 @@ namespace xtd::internal::tests {
       items.resize(2);
       collection_assert::are_equal({true, false}, items);
     }
-
+    
     void test_method_(shrink_to_fit) {
       auto items = __xtd_vector__ {84, 42, 21};
       items.reserve(42);
       items.shrink_to_fit();
       assert::is_less(items.capacity(), 42_z);
     }
-
+    
     void test_method_(shrink_to_fit_with_bool) {
       auto items = __xtd_vector__ {true, false, true};
       items.reserve(42);
@@ -940,7 +940,7 @@ namespace xtd::internal::tests {
       items1 = items2;
       collection_assert::are_equal({false, true, false}, items1);
     }
-
+    
     void test_method_(operator_index) {
       auto items = __xtd_vector__ {84, 42, 21};
       
