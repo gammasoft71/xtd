@@ -651,13 +651,13 @@ protected:
     bool remove(const type_t& item) override {return false;}
     void remove_at(size_type index) override {}
     
-    typename __xtd_vector__<value_type>::iterator to_base_type_iterator(iterator value) noexcept {
+    typename __xtd_vector__ < value_type >::iterator to_base_type_iterator(iterator value) noexcept {
       if (value == begin()) return data_->items.begin();
       if (value == end()) return data_->items.end();
       return data_->items.begin() + (value - begin());
     }
     
-    iterator to_iterator(typename __xtd_vector__<value_type>::iterator value) noexcept {
+    iterator to_iterator(typename __xtd_vector__ < value_type >::iterator value) noexcept {
       if (value == data_->items.begin()) return begin();
       if (value == data_->items.end()) return end();
       return begin() + (value - data_->items.begin());
@@ -665,9 +665,9 @@ protected:
     
     struct array_data {
       size_type version = 0;
-      __xtd_vector__<value_type> items;
-      std::vector<size_type> lower_bound {0};
-      std::vector<size_type> upper_bound {std::numeric_limits<size_type>::max()};
+      __xtd_vector__ < value_type > items;
+      std::vector < size_type > lower_bound {0};
+      std::vector < size_type > upper_bound {std::numeric_limits < size_type >::max()};
       object sync_root;
     };
     
