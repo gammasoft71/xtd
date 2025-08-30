@@ -493,13 +493,13 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>    <span class="keywordtype">bool</span> remove(<span class="keyword">const</span> type_t&amp; item)<span class="keyword"> override </span>{<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
 <div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>    <span class="keywordtype">void</span> remove_at(<a class="code hl_typedef" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> index)<span class="keyword"> override </span>{}</div>
 <div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>    </div>
-<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>    <span class="keyword">typename</span> __xtd_vector__&lt;value_type&gt;::iterator to_base_type_iterator(<a class="code hl_typedef" href="classxtd_1_1basic__array.html#ac5a69b60fa4687e14ec5c1180f7d7553">iterator</a> value) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>    <span class="keyword">typename</span> __xtd_vector__ &lt; value_type &gt;::iterator to_base_type_iterator(<a class="code hl_typedef" href="classxtd_1_1basic__array.html#ac5a69b60fa4687e14ec5c1180f7d7553">iterator</a> value) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>      <span class="keywordflow">if</span> (value == <a class="code hl_function" href="classxtd_1_1basic__array.html#a7cb48e8ab13f64c2bbc8579286cdc33c">begin</a>()) <span class="keywordflow">return</span> data_-&gt;items.begin();</div>
 <div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>      <span class="keywordflow">if</span> (value == <a class="code hl_function" href="classxtd_1_1basic__array.html#a69c2af41aeaa2af9847c1d6567df83c6">end</a>()) <span class="keywordflow">return</span> data_-&gt;items.end();</div>
 <div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>      <span class="keywordflow">return</span> data_-&gt;items.begin() + (value - <a class="code hl_function" href="classxtd_1_1basic__array.html#a7cb48e8ab13f64c2bbc8579286cdc33c">begin</a>());</div>
 <div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>    }</div>
 <div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>    </div>
-<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>    <a class="code hl_typedef" href="classxtd_1_1basic__array.html#ac5a69b60fa4687e14ec5c1180f7d7553">iterator</a> to_iterator(<span class="keyword">typename</span> __xtd_vector__&lt;value_type&gt;::iterator value) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>    <a class="code hl_typedef" href="classxtd_1_1basic__array.html#ac5a69b60fa4687e14ec5c1180f7d7553">iterator</a> to_iterator(<span class="keyword">typename</span> __xtd_vector__ &lt; value_type &gt;::iterator value) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>      <span class="keywordflow">if</span> (value == data_-&gt;items.begin()) <span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1basic__array.html#a7cb48e8ab13f64c2bbc8579286cdc33c">begin</a>();</div>
 <div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>      <span class="keywordflow">if</span> (value == data_-&gt;items.end()) <span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1basic__array.html#a69c2af41aeaa2af9847c1d6567df83c6">end</a>();</div>
 <div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>      <span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1basic__array.html#a7cb48e8ab13f64c2bbc8579286cdc33c">begin</a>() + (value - data_-&gt;items.begin());</div>
@@ -507,9 +507,9 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>    </div>
 <div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>    <span class="keyword">struct </span>array_data {</div>
 <div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>      <a class="code hl_typedef" href="classxtd_1_1basic__array.html#af9b44083298196790c9d898bf520828a">size_type</a> version = 0;</div>
-<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>      __xtd_vector__&lt;value_type&gt; items;</div>
-<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>      std::vector&lt;size_type&gt; lower_bound {0};</div>
-<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>      std::vector&lt;size_type&gt; upper_bound {std::numeric_limits&lt;size_type&gt;::max()};</div>
+<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>      __xtd_vector__ &lt; value_type &gt; items;</div>
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>      std::vector &lt; size_type &gt; lower_bound {0};</div>
+<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>      std::vector &lt; size_type &gt; upper_bound {std::numeric_limits &lt; size_type &gt;::max()};</div>
 <div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>      <span class="keywordtype">object</span> sync_root;</div>
 <div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>    };</div>
 <div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>    </div>
@@ -642,7 +642,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 30 2025 20:26:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Aug 30 2025 21:47:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
