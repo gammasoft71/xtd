@@ -66,11 +66,11 @@ namespace xtd::collections::generic::tests {
     }
     
     void test_method_(reverse_iterator) {
-      assert::are_equal(typeof_<list<int>::base_type::reverse_iterator>(), typeof_<list<int>::reverse_iterator>());
+      assert::are_equal(typeof_<__xtd_vector__<int>::reverse_iterator>(), typeof_<list<int>::reverse_iterator>());
     }
     
     void test_method_(const_reverse_iterator) {
-      assert::are_equal(typeof_<list<int>::base_type::const_reverse_iterator>(), typeof_<list<int>::const_reverse_iterator>());
+      assert::are_equal(typeof_<__xtd_vector__<int>::const_reverse_iterator>(), typeof_<list<int>::const_reverse_iterator>());
     }
     
     void test_method_(default_constructor) {
