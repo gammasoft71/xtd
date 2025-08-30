@@ -130,8 +130,6 @@ public:
   using reverse_iterator = std::reverse_iterator<iterator>;
   using const_reverse_iterator = std::reverse_iterator<const_iterator>;
   
-  inline static constexpr size_type npos = std::numeric_limits<size_type>::max();
-  
   __xtd_vector__() noexcept = default;
   explicit __xtd_vector__(const allocator_type & alloc) noexcept : items_(alloc) {}
   __xtd_vector__(size_type count, const type_t& value, const allocator_type& alloc = allocator_type()) : items_(count, value, alloc) {}
