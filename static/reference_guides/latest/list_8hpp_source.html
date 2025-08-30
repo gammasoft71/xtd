@@ -819,22 +819,22 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l01506" name="l01506"></a><span class="lineno"> 1506</span>      <span class="comment">// C++17 deduction guides for xtd::collections::generic::list</span></div>
 <div class="line"><a id="l01507" name="l01507"></a><span class="lineno"> 1507</span>      <span class="comment">// {</span></div>
 <div class="line"><a id="l01508" name="l01508"></a><span class="lineno"> 1508</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
-<div class="line"><a id="l01509" name="l01509"></a><span class="lineno"> 1509</span>      list(std::initializer_list&lt;type_t&gt;) -&gt; list&lt;type_t, helpers::allocator&lt;type_t&gt;&gt;;</div>
+<div class="line"><a id="l01509" name="l01509"></a><span class="lineno"> 1509</span>      list(std::initializer_list&lt;type_t&gt;) -&gt; list&lt;type_t, helpers::allocator&lt;type_t &gt;&gt;;</div>
 <div class="line"><a id="l01510" name="l01510"></a><span class="lineno"> 1510</span>      </div>
 <div class="line"><a id="l01511" name="l01511"></a><span class="lineno"> 1511</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
-<div class="line"><a id="l01512" name="l01512"></a><span class="lineno"> 1512</span>      list(<span class="keyword">const</span> <a class="code hl_typedef" href="group__collections.html#gaf8650b6defaa46086307019cf98a5248">ienumerable&lt;type_t&gt;</a>&amp;) -&gt; list&lt;type_t, helpers::allocator&lt;type_t&gt;&gt;;</div>
+<div class="line"><a id="l01512" name="l01512"></a><span class="lineno"> 1512</span>      list(<span class="keyword">const</span> <a class="code hl_typedef" href="group__collections.html#gaf8650b6defaa46086307019cf98a5248">ienumerable&lt;type_t&gt;</a>&amp;) -&gt; list&lt;type_t, helpers::allocator&lt;type_t &gt;&gt;;</div>
 <div class="line"><a id="l01513" name="l01513"></a><span class="lineno"> 1513</span>      </div>
 <div class="line"><a id="l01514" name="l01514"></a><span class="lineno"> 1514</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
-<div class="line"><a id="l01515" name="l01515"></a><span class="lineno"> 1515</span>      list(<span class="keyword">const</span> <a class="code hl_typedef" href="group__collections.html#ga564fa21e6bb9787ccd4b37201081cf6b">ilist&lt;type_t&gt;</a>&amp;) -&gt; list&lt;type_t, helpers::allocator&lt;type_t&gt;&gt;;</div>
+<div class="line"><a id="l01515" name="l01515"></a><span class="lineno"> 1515</span>      list(<span class="keyword">const</span> <a class="code hl_typedef" href="group__collections.html#ga564fa21e6bb9787ccd4b37201081cf6b">ilist&lt;type_t&gt;</a>&amp;) -&gt; list&lt;type_t, helpers::allocator&lt;type_t &gt;&gt;;</div>
 <div class="line"><a id="l01516" name="l01516"></a><span class="lineno"> 1516</span>      </div>
 <div class="line"><a id="l01517" name="l01517"></a><span class="lineno"> 1517</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
-<div class="line"><a id="l01518" name="l01518"></a><span class="lineno"> 1518</span>      list(<span class="keyword">const</span> std::vector&lt;type_t&gt;&amp;) -&gt; list&lt;type_t, helpers::allocator&lt;type_t&gt;&gt;;</div>
+<div class="line"><a id="l01518" name="l01518"></a><span class="lineno"> 1518</span>      list(<span class="keyword">const</span> std::vector&lt;type_t&gt;&amp;) -&gt; list&lt;type_t, helpers::allocator&lt;type_t &gt;&gt;;</div>
 <div class="line"><a id="l01519" name="l01519"></a><span class="lineno"> 1519</span>      </div>
 <div class="line"><a id="l01520" name="l01520"></a><span class="lineno"> 1520</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> allocator_t = helpers::allocator&lt;type_t&gt;&gt;</div>
 <div class="line"><a id="l01521" name="l01521"></a><span class="lineno"> 1521</span>      list(<span class="keyword">const</span> list&lt;type_t, allocator_t&gt;&amp;) -&gt; list&lt;type_t, allocator_t&gt;;</div>
 <div class="line"><a id="l01522" name="l01522"></a><span class="lineno"> 1522</span>      </div>
 <div class="line"><a id="l01523" name="l01523"></a><span class="lineno"> 1523</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
-<div class="line"><a id="l01524" name="l01524"></a><span class="lineno"> 1524</span>      list(std::vector&lt;type_t&gt;&amp;&amp;) -&gt; list&lt;type_t, helpers::allocator&lt;type_t&gt;&gt;;</div>
+<div class="line"><a id="l01524" name="l01524"></a><span class="lineno"> 1524</span>      list(std::vector&lt;type_t&gt;&amp;&amp;) -&gt; list&lt;type_t, helpers::allocator&lt;type_t &gt;&gt;;</div>
 <div class="line"><a id="l01525" name="l01525"></a><span class="lineno"> 1525</span>      </div>
 <div class="line"><a id="l01526" name="l01526"></a><span class="lineno"> 1526</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> allocator_t = helpers::allocator&lt;type_t&gt;&gt;</div>
 <div class="line"><a id="l01527" name="l01527"></a><span class="lineno"> 1527</span>      list(list&lt;type_t, allocator_t&gt;&amp;&amp;) -&gt; list&lt;type_t, allocator_t&gt;;</div>
@@ -867,7 +867,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aargument__out__of__range__exception_8hpp_html"><div class="ttname"><a href="argument__out__of__range__exception_8hpp.html">argument_out_of_range_exception.hpp</a></div><div class="ttdoc">Contains xtd::argument_out_of_range_exception exception.</div></div>
 <div class="ttc" id="abox__integer_8hpp_html"><div class="ttname"><a href="box__integer_8hpp.html">box_integer.hpp</a></div><div class="ttdoc">Contains xtd::box_integer class.</div></div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:63</div></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_af2ad3488e28e4140835dece83723e7eb"><div class="ttname"><a href="classxtd_1_1basic__array.html#af2ad3488e28e4140835dece83723e7eb">xtd::basic_array::size</a></div><div class="ttdeci">virtual size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container, i.e. std::distance(xtd::array::begin(),...</div><div class="ttdef"><b>Definition</b> basic_array.hpp:246</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__array_html_af2ad3488e28e4140835dece83723e7eb"><div class="ttname"><a href="classxtd_1_1basic__array.html#af2ad3488e28e4140835dece83723e7eb">xtd::basic_array::size</a></div><div class="ttdeci">virtual size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container, i.e. std::distance(xtd::array::begin(),...</div><div class="ttdef"><b>Definition</b> basic_array.hpp:229</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1comparer_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1comparer.html">xtd::collections::generic::comparer</a></div><div class="ttdoc">Provides a base class for implementations of the xtd::collections::generic::icomparer &lt;type_t&gt; generi...</div><div class="ttdef"><b>Definition</b> comparer.hpp:33</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1comparer_html_a41575047a977c8ddac2388e7ab1806c6"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1comparer.html#a41575047a977c8ddac2388e7ab1806c6">xtd::collections::generic::comparer::compare</a></div><div class="ttdeci">result_type compare(const first_argument_type &amp;x, const second_argument_type &amp;y) const noexcept override</div><div class="ttdoc">Compares two entities and returns a value indicating whether one is less than, equal to,...</div><div class="ttdef"><b>Definition</b> comparer.hpp:66</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1comparer_html_a9a8d918ad60fc9ba6aff540a7ef2b4b0"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0">xtd::collections::generic::comparer&lt; xtd::any_object &gt;::default_comparer</a></div><div class="ttdeci">static const comparer&lt; xtd::any_object &gt; default_comparer</div><div class="ttdef"><b>Definition</b> comparer.hpp:50</div></div>
@@ -1045,7 +1045,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Aug 30 2025 17:40:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Aug 30 2025 20:26:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
