@@ -44,7 +44,7 @@ public:
   //using iterator = typename base_type::iterator;
   class iterator {
   public:
-    using base_type = typename base_type::iterator;
+    using iterator_base_type = typename base_type::iterator;
     using iterator_category = std::random_access_iterator_tag;
     using value_type        = type_t;
     using difference_type   = std::ptrdiff_t;
@@ -52,7 +52,7 @@ public:
     using reference         = type_t&;
     
     iterator() = default;
-    explicit iterator(base_type it) : it_(it) {}
+    explicit iterator(iterator_base_type it) : it_(it) {}
     
     reference operator*()  const { return reinterpret_cast<reference>(*it_); }
     pointer   operator->() const { return reinterpret_cast<pointer>(std::addressof(*it_)); }
@@ -77,16 +77,16 @@ public:
     bool operator> (const iterator & other) const { return it_ >  other.it_; }
     bool operator>=(const iterator & other) const { return it_ >= other.it_; }
     
-    base_type to_base_type() const {return it_;}
+    iterator_base_type to_base_type() const {return it_;}
     
   private:
     friend class __xtd_vector__;
-    base_type it_;
+    iterator_base_type it_;
   };
   //using const_iterator = typename base_type::const_iterator;
   class const_iterator {
   public:
-    using base_type = typename base_type::const_iterator;
+    using iterator_base_type = typename base_type::const_iterator;
     using iterator_category = std::random_access_iterator_tag;
     using value_type        = const type_t;
     using difference_type   = std::ptrdiff_t;
@@ -94,7 +94,7 @@ public:
     using reference         = const type_t&;
     
     const_iterator() = default;
-    explicit const_iterator(base_type it) : it_(it) {}
+    explicit const_iterator(iterator_base_type it) : it_(it) {}
     // conversion depuis iterator
     const_iterator(const iterator & it) : it_(it.it_) {}
     
@@ -121,11 +121,11 @@ public:
     bool operator> (const const_iterator & other) const { return it_ >  other.it_; }
     bool operator>=(const const_iterator & other) const { return it_ >= other.it_; }
     
-    base_type to_base_type() const {return it_;}
+    iterator_base_type to_base_type() const {return it_;}
     
   private:
     friend class __xtd_vector__;
-    base_type it_;
+    iterator_base_type it_;
   };
   using reverse_iterator = std::reverse_iterator<iterator>;
   using const_reverse_iterator = std::reverse_iterator<const_iterator>;
