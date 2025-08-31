@@ -41,7 +41,7 @@ namespace {
     }
     
     // The SIGINT signal catcher conflicts with with xtd::environment::cancel_interrupt signal...
-    inline static std::map<int32_t, int32_t> signal_keys_ {{SIGQUIT, CONSOLE_SPECIAL_KEY_CTRL_BS}, {SIGTSTP, CONSOLE_SPECIAL_KEY_CTRL_Z}/*, {SIGINT, CONSOLE_SPECIAL_KEY_CTRL_C}*/};
+    inline static std::map<int32_t, std::int32_t> signal_keys_ {{SIGQUIT, CONSOLE_SPECIAL_KEY_CTRL_BS}, {SIGTSTP, CONSOLE_SPECIAL_KEY_CTRL_Z}/*, {SIGINT, CONSOLE_SPECIAL_KEY_CTRL_C}*/};
     static console_intercept_signals console_intercept_signals_;
   };
   
@@ -67,7 +67,7 @@ namespace {
       return tcsetattr(0, TCSANOW, &status) == 0;
     }
     
-    int32_t getch() {
+    std::int32_t getch() {
       if (peek_character != -1) {
         auto character = peek_character;
         peek_character = -1;
@@ -147,7 +147,7 @@ namespace {
       return status;
     }
     
-    int8_t peek_character {-1};
+    std::int8_t peek_character {-1};
     std::vector<termios> statuses;
   };
   
@@ -183,8 +183,8 @@ namespace {
       void add(int32_t c) {chars.push_back(c);}
       void add_front(int32_t c) {chars.push_front(c);}
       void remove(int32_t c) {chars.remove(c);}
-      int32_t count() const {return static_cast<int32_t>(chars.size());}
-      int32_t pop() { int32_t c = chars.front();  chars.erase(chars.begin()); return c;}
+      std::int32_t count() const {return static_cast<int32_t>(chars.size());}
+      std::int32_t pop() { std::int32_t c = chars.front();  chars.erase(chars.begin()); return c;}
       void clear() {chars.clear();}
       
       bool is_empty() const {return chars.empty();}
@@ -276,12 +276,12 @@ namespace {
     
   private:
     key_info() : key_(U'0'), key_char_(U'0'), has_alt_modifier_(false), has_control_modifier_(false), has_shift_modifier_(false) {}
-    key_info(int32_t key, int32_t key_char) : key_(key), key_char_(key_char), has_alt_modifier_(false), has_control_modifier_(false), has_shift_modifier_(false) {}
-    key_info(int32_t key, int32_t key_char, bool has_alt_modifier, bool has_control_modifier, bool has_shift_modifier) : key_(key), key_char_(key_char), has_alt_modifier_(has_alt_modifier), has_control_modifier_(has_control_modifier), has_shift_modifier_(has_shift_modifier) {}
+    key_info(int32_t key, std::int32_t key_char) : key_(key), key_char_(key_char), has_alt_modifier_(false), has_control_modifier_(false), has_shift_modifier_(false) {}
+    key_info(int32_t key, std::int32_t key_char, bool has_alt_modifier, bool has_control_modifier, bool has_shift_modifier) : key_(key), key_char_(key_char), has_alt_modifier_(has_alt_modifier), has_control_modifier_(has_control_modifier), has_shift_modifier_(has_shift_modifier) {}
     
     static std::string to_string(bool b) {return b ? "true" : "false";}
     
-    static int32_t to_key(input_list& inputs) {
+    static std::int32_t to_key(input_list& inputs) {
       auto result = 0;
       auto index = 1;
       for (auto c : inputs)
@@ -626,7 +626,7 @@ namespace {
       //if (AudioUnitUninitialize(audio_unit) != noErr) return;
     }
     
-    static bool beep(uint32_t frequency, uint32_t duration) {
+    static bool beep(uint32_t frequency, std::uint32_t duration) {
       if (!initialized || frequency < 37 || frequency > 32767) return false;
       
       dispatch_semaphore_wait(idle_semaphore, DISPATCH_TIME_FOREVER);
@@ -641,7 +641,7 @@ namespace {
     }
     
   private:
-    static OSStatus au_renderer_proc(void* in_ref_con, AudioUnitRenderActionFlags* io_action_flags, const AudioTimeStamp* in_time_stamp, uint32_t in_bus_number, uint32_t in_number_frames, AudioBufferList* io_data) {
+    static OSStatus au_renderer_proc(void* in_ref_con, AudioUnitRenderActionFlags* io_action_flags, const AudioTimeStamp* in_time_stamp, std::uint32_t in_bus_number, std::uint32_t in_number_frames, AudioBufferList* io_data) {
       static auto counter = 0;
       while (counter == 0) {
         dispatch_semaphore_wait(start_playing_semaphore, DISPATCH_TIME_FOREVER);
@@ -662,19 +662,19 @@ namespace {
       return 0;
     }
     
-    inline static constexpr int32_t simple_rate = 8000;
-    inline static constexpr int32_t bits_per_channel = 8;
+    inline static constexpr std::int32_t simple_rate = 8000;
+    inline static constexpr std::int32_t bits_per_channel = 8;
     inline static dispatch_semaphore_t idle_semaphore = dispatch_semaphore_create(1);
     inline static dispatch_semaphore_t start_playing_semaphore = dispatch_semaphore_create(0);
     inline static dispatch_semaphore_t end_playing_semaphore = dispatch_semaphore_create(0);
     inline static AudioUnit audio_unit;
     inline static unsigned int beep_freq = 0;
-    inline static int32_t beep_samples = 0;
+    inline static std::int32_t beep_samples = 0;
     inline static bool initialized = false;
   } __audio__;
 }
 
-bool console::beep(uint32_t frequency, uint32_t duration) {
+bool console::beep(uint32_t frequency, std::uint32_t duration) {
   return audio::beep(frequency, duration);
 }
 
@@ -842,7 +842,7 @@ bool console::reset_console() {
   return console::background_color(CONSOLE_COLOR_DEFAULT) && console::foreground_color(CONSOLE_COLOR_DEFAULT);
 }
 
-bool console::set_cursor_position(int32_t left, int32_t top) {
+bool console::set_cursor_position(int32_t left, std::int32_t top) {
   ::cursor_left = left;
   ::cursor_top = top;
   if (terminal::is_ansi_supported()) std::cout << "\x1b[" << top + 1 << ";" << left + 1 << "f" << std::flush;

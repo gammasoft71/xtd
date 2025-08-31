@@ -14,9 +14,9 @@
 
 using namespace xtd::native;
 
-int32_t file_system::get_attributes(const std::string& path, int32_t& attributes) {
+int32_t file_system::get_attributes(const std::string& path, std::int32_t& attributes) {
   struct system_attribute_to_file_attribute_converter {
-    int32_t operator()(int32_t attribute) {
+    std::int32_t operator()(int32_t attribute) {
       auto file_attributes = 0;
       if ((attribute & S_IRUSR) == S_IRUSR && (attribute & S_IWUSR) != S_IWUSR) file_attributes |= FILE_ATTRIBUTE_READONLY;
       if ((attribute & S_IFSOCK) == S_IFSOCK || (attribute & S_IFIFO) == S_IFIFO) file_attributes |= FILE_ATTRIBUTE_SYSTEM;
@@ -67,9 +67,9 @@ std::string file_system::get_full_path(const std::string& relative_path) {
   return full_path;
 }
 
-int32_t file_system::get_permissions(const std::string& path, int32_t& permissions) {
+int32_t file_system::get_permissions(const std::string& path, std::int32_t& permissions) {
   struct system_permission_to_file_permission_converter {
-    int32_t operator()(mode_t permission) {
+    std::int32_t operator()(mode_t permission) {
       auto file_permissions = 0;
       if ((permission & S_IRUSR) == S_IRUSR) file_permissions |= FILE_PERMISSIONS_OWNER_READ;
       if ((permission & S_IWUSR) == S_IWUSR) file_permissions |= FILE_PERMISSIONS_OWNER_WRITE;
@@ -107,7 +107,7 @@ bool file_system::is_path_too_long(const std::string& path) {
   return file_name.size() > NAME_MAX;
 }
 
-int32_t file_system::set_attributes(const std::string& path, int32_t attributes) {
+int32_t file_system::set_attributes(const std::string& path, std::int32_t attributes) {
   struct stat s;
   if (stat(path.c_str(), &s) != 0) return -1;
   
@@ -149,7 +149,7 @@ int32_t file_system::set_last_write_time(const std::string& path, time_t last_wr
   return utime(path.c_str(), &times);
 }
 
-int32_t file_system::set_permissions(const std::string& path, int32_t permissions) {
+int32_t file_system::set_permissions(const std::string& path, std::int32_t permissions) {
   struct file_permission_to_system_permission_converter {
     mode_t operator()(int32_t permission) {
       auto system_permissions = 0;

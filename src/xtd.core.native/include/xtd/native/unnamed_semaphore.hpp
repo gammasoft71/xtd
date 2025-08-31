@@ -42,7 +42,7 @@ namespace xtd {
       /// @brief Create named semaphore with specified initial count and maxixum count.
       /// @return The handle of the created semaphore.
       /// @warning Internal use only
-      static intmax_t create(int32_t initial_count, int32_t max_count);
+      static intmax_t create(int32_t initial_count, std::int32_t max_count);
       
       /// @brief Destroy named semaphore with specified semaphore handle.
       /// @param name The name of the semaphore.
@@ -54,7 +54,7 @@ namespace xtd {
       /// @param handle The semaphore handle to signal.
       /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
-      static bool signal(intmax_t handle, int32_t release_count, int32_t& previous_count, bool& io_error);
+      static bool signal(intmax_t handle, std::int32_t release_count, std::int32_t& previous_count, bool& io_error);
       
       /// @brief Wait named semaphore with specified semaphore handle and timeout.
       /// @param handle The semaphore handle to wait.
@@ -65,7 +65,7 @@ namespace xtd {
       ///  * 0x00000102 : Timeout
       ///  * 0xFFFFFFFF : Failed
       /// @warning Internal use only
-      static uint32_t wait(intmax_t handle, int32_t milliseconds_timeout);
+      static std::uint32_t wait(intmax_t handle, std::int32_t milliseconds_timeout);
       /// @}
     };
   }

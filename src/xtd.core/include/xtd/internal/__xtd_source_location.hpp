@@ -33,11 +33,11 @@ using __xtd_source_location__ = std::source_location;
 class __xtd_source_location__ {
 public:
   const char* file_name() const noexcept {return data_->file;}
-  uint32_t line() const noexcept {return data_->line;}
+  std::uint32_t line() const noexcept {return data_->line;}
   const char* function_name() const noexcept {return data_->func;}
-  uint32_t column() const noexcept {return data_->column;}
+  std::uint32_t column() const noexcept {return data_->column;}
   
-  static __xtd_source_location__ current(const char* file = __builtin_FILE(), uint32_t line = __builtin_LINE(), const char* func = __builtin_FUNCTION(), uint32_t column = __builtin_COLUMN()) noexcept {
+  static __xtd_source_location__ current(const char* file = __builtin_FILE(), std::uint32_t line = __builtin_LINE(), const char* func = __builtin_FUNCTION(), std::uint32_t column = __builtin_COLUMN()) noexcept {
     auto csl = __xtd_source_location__ {};
     *csl.data_ = {file, line, func, column};
     return csl;
@@ -46,9 +46,9 @@ public:
 private:
   struct data {
     const char* file;
-    uint32_t line;
+    std::uint32_t line;
     const char* func;
-    uint32_t column;
+    std::uint32_t column;
   };
   std::shared_ptr<data> data_ = std::make_shared<data>();
 };

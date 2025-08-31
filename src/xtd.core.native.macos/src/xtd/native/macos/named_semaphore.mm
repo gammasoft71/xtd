@@ -9,7 +9,7 @@
 
 using namespace xtd::native;
 
-intmax_t named_semaphore::create(int32_t initial_count, int32_t max_count, const std::string& name) {
+intmax_t named_semaphore::create(int32_t initial_count, std::int32_t max_count, const std::string& name) {
   auto semaphore = sem_open(name.c_str(), O_CREAT | O_EXCL, S_IRUSR | S_IWUSR, std::min(initial_count, max_count));
   return reinterpret_cast<intmax_t>(semaphore);
 }
@@ -28,7 +28,7 @@ intmax_t named_semaphore::open(const std::string& name) {
   return reinterpret_cast<intmax_t>(semaphore);
 }
 
-bool named_semaphore::signal(intmax_t handle, int32_t release_count, int32_t& previous_count, bool& io_error) {
+bool named_semaphore::signal(intmax_t handle, std::int32_t release_count, std::int32_t& previous_count, bool& io_error) {
   io_error = false;
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) {
     io_error = true;
@@ -41,7 +41,7 @@ bool named_semaphore::signal(intmax_t handle, int32_t release_count, int32_t& pr
   return !io_error;
 }
 
-uint32_t named_semaphore::wait(intmax_t handle, int32_t milliseconds_timeout) {
+uint32_t named_semaphore::wait(intmax_t handle, std::int32_t milliseconds_timeout) {
   if (reinterpret_cast<sem_t*>(handle) == SEM_FAILED) return 0xFFFFFFFF;
   auto result = milliseconds_timeout == -1 ? sem_wait(reinterpret_cast<sem_t*>(handle)) : sem_milliseconds_timedwait(reinterpret_cast<sem_t*>(handle), milliseconds_timeout);
   if (result && errno == EAGAIN) return 0xFFFFFFFF;

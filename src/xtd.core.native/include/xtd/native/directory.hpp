@@ -171,7 +171,7 @@ namespace xtd {
       /// @param directory_name The directory to create.
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
-      static int32_t create(const std::string& directory_name);
+      static std::int32_t create(const std::string& directory_name);
       /// @brief Returns an enumerable collection of directory full names that match a search pattern in a specified path.
       /// @param path The relative or absolute path to the directory to search.
       /// @param pattern The search string to match against the names of directories in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
@@ -204,12 +204,12 @@ namespace xtd {
       /// @param directory_name The name of the empty directory to remove. This directory must be writable and empty.
       /// @return 0 if success; otherwise failed.
       /// @warning Internal use only
-      static int32_t remove(const std::string& directory_name);
+      static std::int32_t remove(const std::string& directory_name);
       /// @brief Sets the current directory.
       /// @param dirrectory_name The currrent directory.
       /// @return 0 if success; -1 operation is not supported; otherwise failed.
       /// @warning Internal use only
-      static int32_t set_current_directory(const std::string& directory_name);
+      static std::int32_t set_current_directory(const std::string& directory_name);
       /// @}
     };
   }

@@ -66,7 +66,7 @@ namespace xtd {
       mouse_buttons button() const noexcept {return button_;}
       
       /// @brief Gets the number of times the mouse button was pressed and released.
-      /// @return An Int32_t that contains the number of times the mouse button was pressed and released.
+      /// @return An std::int32_t that contains the number of times the mouse button was pressed and released.
       int32 clicks() const noexcept {return clicks_;}
       
       /// @brief Gets a signed count of the number of detents the mouse wheel has rotated, multiplied by the WHEEL_DELTA constant. A detent is one notch of the mouse wheel.

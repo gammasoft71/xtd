@@ -13,7 +13,7 @@
 using namespace xtd::native;
 
 namespace {
-  static const int64_t ticks_per_second = 10000000;
+  static const std::int64_t ticks_per_second = 10000000;
   
   /* Generate by this c# code source :
   

@@ -23,9 +23,9 @@ void dns::destroy(intmax_t host) {
   delete reinterpret_cast<hostent*>(host);
 }
 
-intmax_t dns::get_host_by_address(const std::string& host_address, int32_t host_address_type) {
+intmax_t dns::get_host_by_address(const std::string& host_address, std::int32_t host_address_type) {
   auto lock = std::lock_guard<std::mutex> {dns_mutex};
-  auto internet_address = int64_t {0};
+  auto internet_address = std::int64_t {0};
   inet_pton(host_address_type, host_address.c_str(), &internet_address);
   auto host = gethostbyaddr(reinterpret_cast<char*>(&internet_address), host_address_type == ADDRESS_FAMILY_INTER_NETWORK ? 4 : 16, host_address_type);
   if (host == nullptr) return 0;
@@ -51,7 +51,7 @@ std::vector<std::vector<uint8_t>> dns::get_addresses(intmax_t host) {
   auto addresses = std::vector<std::vector<uint8_t>> {};
   auto index = size_t {0};
   while (reinterpret_cast<hostent*>(host)->h_addr_list[index] != nullptr) {
-    addresses.emplace_back(reinterpret_cast<const uint8_t*>(reinterpret_cast<hostent*>(host)->h_addr_list[index]), reinterpret_cast<const uint8_t*>(reinterpret_cast<hostent*>(host)->h_addr_list[index]) + (reinterpret_cast<hostent*>(host)->h_addrtype == ADDRESS_FAMILY_INTER_NETWORK ? 4 : 16));
+    addresses.emplace_back(reinterpret_cast<const std::uint8_t*>(reinterpret_cast<hostent*>(host)->h_addr_list[index]), reinterpret_cast<const std::uint8_t*>(reinterpret_cast<hostent*>(host)->h_addr_list[index]) + (reinterpret_cast<hostent*>(host)->h_addrtype == ADDRESS_FAMILY_INTER_NETWORK ? 4 : 16));
     index++;
   }
   return addresses;
