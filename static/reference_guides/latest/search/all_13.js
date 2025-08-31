@@ -43,7 +43,7 @@ var searchData=
   ['save_5ffile_5fdialog_2ehpp_40',['save_file_dialog.hpp',['../save__file__dialog_8hpp.html',1,'']]],
   ['save_5fflag_41',['save_flag',['../classxtd_1_1drawing_1_1imaging_1_1encoder.html#ac5c63c735e6b9a763513eef38663406b',1,'xtd::drawing::imaging::encoder']]],
   ['saxophone_42',['saxophone',['../classxtd_1_1forms_1_1emoticons.html#a4309a1b93a23c51c5a4a3b6b0e4eeec6',1,'xtd::forms::emoticons']]],
-  ['sbyte_43',['sbyte',['../group__types.html#ga41d04b2d8de5008019577dd15c518ddd',1,'xtd']]],
+  ['sbyte_43',['sbyte',['../group__types.html#ga3ea63fa31f524e9831574f4308f85a92',1,'xtd']]],
   ['sbyte_2ehpp_44',['sbyte.hpp',['../literals_2sbyte_8hpp.html',1,'(Global Namespace)'],['../sbyte_8hpp.html',1,'(Global Namespace)']]],
   ['sbyte_5fobject_45',['sbyte_object',['../group__types.html#ga1303ac20d13525d8cfdd8b5de0941d26',1,'xtd']]],
   ['sbyte_5fobject_2ehpp_46',['sbyte_object.hpp',['../sbyte__object_8hpp.html',1,'']]],

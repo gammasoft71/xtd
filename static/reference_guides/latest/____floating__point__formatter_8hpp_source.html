@@ -121,7 +121,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">inline</span> std::basic_string&lt;char_t&gt; __floating_point_to_binary(floating_point_t value, <span class="keywordtype">int</span> precision) {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keyword">union </span>{</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">double</span> input;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    int64_t output;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    std::int64_t output;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  } <a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>.input = value;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordflow">return</span> __binary_formatter&lt;char_t&gt;(<a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>.output, precision);</div>
@@ -131,7 +131,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">inline</span> std::basic_string&lt;char&gt; __floating_point_to_binary&lt;char, long double&gt;(<span class="keywordtype">long</span> <span class="keywordtype">double</span> value, <span class="keywordtype">int</span> precision) {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keyword">union </span>{</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">long</span> <span class="keywordtype">double</span> input;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    int64_t output;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    std::int64_t output;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  } <a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>.input = value;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordflow">return</span> __binary_formatter&lt;char&gt;(<a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>.output, precision);</div>
@@ -141,7 +141,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">inline</span> std::basic_string&lt;wchar_t&gt; __floating_point_to_binary&lt;wchar_t, long double&gt;(<span class="keywordtype">long</span> <span class="keywordtype">double</span> value, <span class="keywordtype">int</span> precision) {</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">union </span>{</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">long</span> <span class="keywordtype">double</span> input;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    int64_t output;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    std::int64_t output;</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  } <a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>.input = value;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordflow">return</span> __binary_formatter&lt;wchar_t&gt;(<a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>.output, precision);</div>
@@ -151,7 +151,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">inline</span> std::basic_string&lt;char&gt; __floating_point_to_binary&lt;char, double&gt;(<span class="keywordtype">double</span> value, <span class="keywordtype">int</span> precision) {</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keyword">union </span>{</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">double</span> input;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    int64_t output;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    std::int64_t output;</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  } <a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>.input = value;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keywordflow">return</span> __binary_formatter&lt;char&gt;(<a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>.output, precision);</div>
@@ -161,7 +161,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword">inline</span> std::basic_string&lt;wchar_t&gt; __floating_point_to_binary&lt;wchar_t, double&gt;(<span class="keywordtype">double</span> value, <span class="keywordtype">int</span> precision) {</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keyword">union </span>{</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">double</span> input;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    int64_t output;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    std::int64_t output;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  } <a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>;</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>.input = value;</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keywordflow">return</span> __binary_formatter&lt;wchar_t&gt;(<a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>.output, precision);</div>
@@ -171,7 +171,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword">inline</span> std::basic_string&lt;char&gt; __floating_point_to_binary&lt;char, float&gt;(<span class="keywordtype">float</span> value, <span class="keywordtype">int</span> precision) {</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keyword">union </span>{</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">float</span> input;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    int32_t output;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    std::int32_t output;</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  } <a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>;</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>.input = value;</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordflow">return</span> __binary_formatter&lt;char&gt;(<a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>.output, precision);</div>
@@ -181,7 +181,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">inline</span> std::basic_string&lt;wchar_t&gt; __floating_point_to_binary&lt;wchar_t, float&gt;(<span class="keywordtype">float</span> value, <span class="keywordtype">int</span> precision) {</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keyword">union </span>{</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">float</span> input;</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    int32_t output;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    std::int32_t output;</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  } <a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>;</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>.input = value;</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keywordflow">return</span> __binary_formatter&lt;wchar_t&gt;(<a class="code hl_function" href="namespacextd.html#acd7288af9047a92bf84bb58f1893bb51">data</a>.output, precision);</div>
@@ -242,7 +242,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2025 09:20:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 31 2025 17:35:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

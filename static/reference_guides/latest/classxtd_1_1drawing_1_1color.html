@@ -129,10 +129,10 @@ The color of each pixel is represented as a 32-bit number: 8 bits each for alpha
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the <a class="el" href="#adf44e69216277fc02f79320855036bd3" title="Gets the alpha component value of this xtd::drawing::color class.">xtd::drawing::color::a</a>, <a class="el" href="#a2c502f2c82f55d9cb421419ba2d46f03" title="Gets the red component value of this xtd::drawing::color class.">xtd::drawing::color::r</a>, <a class="el" href="#a8fc88a0d6d188e8ec35543b7cdb79e16" title="Gets the green component value of this xtd::drawing::color class.">xtd::drawing::color::g</a>, and B properties of a <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a>, and the Implicit(size to size_f) member.<br  />
  This example is designed to be used with a Windows Form (<a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd::forms</a>). Paste the code into the form and call the show_properties_of_slate_blue method from the form's <a class="el" href="classxtd_1_1forms_1_1control.html#a9807bd96bb4688bf38e796a165c734c1" title="Occurs when the xtd::forms::control is redrawn.">xtd::forms::control::paint</a> event-handling method, passing e as <a class="el" href="classxtd_1_1forms_1_1paint__event__args.html" title="Provides data for the xtd::forms::control::paint event.">xtd::forms::paint_event_args</a>. <div class="fragment"><div class="line"><span class="keywordtype">void</span> show_properties_of_slate_blue(<a class="code hl_class" href="classxtd_1_1forms_1_1paint__event__args.html">xtd::forms::paint_event_args</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
 <div class="line">  <a class="code hl_function" href="#a0c189d088fc2611f0e3b1026384438ce">color</a> <a class="code hl_variable" href="#a3135dad77b8a1748245b047dea91d1f8">slate_blue</a> = <a class="code hl_function" href="#a468c6e1e43beaab5ad6db68bab63dee2">xtd::drawing::color::from_name</a>(<span class="stringliteral">&quot;slate blue&quot;</span>);</div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> <a class="code hl_function" href="#adf44e69216277fc02f79320855036bd3">a</a> = <a class="code hl_variable" href="#a3135dad77b8a1748245b047dea91d1f8">slate_blue</a>.a();</div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> <a class="code hl_function" href="#a2c502f2c82f55d9cb421419ba2d46f03">r</a> = <a class="code hl_variable" href="#a3135dad77b8a1748245b047dea91d1f8">slate_blue</a>.r();</div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> <a class="code hl_function" href="#a8fc88a0d6d188e8ec35543b7cdb79e16">g</a> = <a class="code hl_variable" href="#a3135dad77b8a1748245b047dea91d1f8">slate_blue</a>.g();</div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> <a class="code hl_function" href="#aeeeff879a1c944c8c4c48d5bebe43e91">b</a> = <a class="code hl_variable" href="#a3135dad77b8a1748245b047dea91d1f8">slate_blue</a>.b();</div>
+<div class="line">  <a class="code hl_typedef" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> <a class="code hl_function" href="#adf44e69216277fc02f79320855036bd3">a</a> = <a class="code hl_variable" href="#a3135dad77b8a1748245b047dea91d1f8">slate_blue</a>.a();</div>
+<div class="line">  <a class="code hl_typedef" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> <a class="code hl_function" href="#a2c502f2c82f55d9cb421419ba2d46f03">r</a> = <a class="code hl_variable" href="#a3135dad77b8a1748245b047dea91d1f8">slate_blue</a>.r();</div>
+<div class="line">  <a class="code hl_typedef" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> <a class="code hl_function" href="#a8fc88a0d6d188e8ec35543b7cdb79e16">g</a> = <a class="code hl_variable" href="#a3135dad77b8a1748245b047dea91d1f8">slate_blue</a>.g();</div>
+<div class="line">  <a class="code hl_typedef" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> <a class="code hl_function" href="#aeeeff879a1c944c8c4c48d5bebe43e91">b</a> = <a class="code hl_variable" href="#a3135dad77b8a1748245b047dea91d1f8">slate_blue</a>.b();</div>
 <div class="line">  <span class="keywordtype">string</span> <a class="code hl_namespace" href="namespacextd_1_1drawing_1_1text.html">text</a> = xtd::string::format(<span class="stringliteral">&quot;Slate blue has these ARGB values: alpha:{0}, red:{1}, green:{2}, blue:{3}&quot;</span>, <a class="code hl_function" href="#adf44e69216277fc02f79320855036bd3">a</a>, <a class="code hl_function" href="#a2c502f2c82f55d9cb421419ba2d46f03">r</a>, <a class="code hl_function" href="#a8fc88a0d6d188e8ec35543b7cdb79e16">g</a>, <a class="code hl_function" href="#aeeeff879a1c944c8c4c48d5bebe43e91">b</a>);</div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_string(<a class="code hl_namespace" href="namespacextd_1_1drawing_1_1text.html">text</a>, <a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a>(<a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">font</a>(), <a class="code hl_enumvalue" href="group__fonts.html#gga5622feb39a9d16672cef53957d224571a030c5b6d1e5715105943ac111d9671bf">xtd::drawing::font_style::italic</a>), <a class="code hl_class" href="classxtd_1_1drawing_1_1solid__brush.html">xtd::drawing::solid_brush</a>(<a class="code hl_variable" href="#a3135dad77b8a1748245b047dea91d1f8">slate_blue</a>), <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle__f.html">xtd::drawing::rectangle_f</a>(<a class="code hl_struct" href="structxtd_1_1drawing_1_1point__f.html">xtd::drawing::point_f</a>(0.0f, 0.0f), <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>()));</div>
 <div class="line">}</div>
@@ -147,7 +147,7 @@ The color of each pixel is represented as a 32-bit number: 8 bits each for alpha
 <div class="ttc" id="aclassxtd_1_1forms_1_1paint__event__args_html"><div class="ttname"><a href="classxtd_1_1forms_1_1paint__event__args.html">xtd::forms::paint_event_args</a></div><div class="ttdoc">Provides data for the xtd::forms::control::paint event.</div><div class="ttdef"><b>Definition</b> paint_event_args.hpp:30</div></div>
 <div class="ttc" id="agroup__fonts_html_gga5622feb39a9d16672cef53957d224571a030c5b6d1e5715105943ac111d9671bf"><div class="ttname"><a href="group__fonts.html#gga5622feb39a9d16672cef53957d224571a030c5b6d1e5715105943ac111d9671bf">xtd::drawing::font_style::italic</a></div><div class="ttdeci">@ italic</div><div class="ttdoc">Italic text.</div><div class="ttdef"><b>Definition</b> font_style.hpp:23</div></div>
 <div class="ttc" id="agroup__types_html_ga221e5b824352c9046d353e4659af5b87"><div class="ttname"><a href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
-<div class="ttc" id="agroup__types_html_ga8eaeca343fe44fd32900e07de728ebd9"><div class="ttname"><a href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a></div><div class="ttdeci">uint8_t byte</div><div class="ttdoc">Represents a 8-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> byte.hpp:23</div></div>
+<div class="ttc" id="agroup__types_html_gaf2fe06df5401bdc7f8d62c5c55aa0ef4"><div class="ttname"><a href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></div><div class="ttdeci">std::uint8_t byte</div><div class="ttdoc">Represents a 8-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> byte.hpp:23</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
 <div class="ttc" id="anamespacextd_1_1drawing_1_1text_html"><div class="ttname"><a href="namespacextd_1_1drawing_1_1text.html">xtd::drawing::text</a></div><div class="ttdoc">The xtd::drawing::text namespace provides advanced GDI+ typography functionality.</div><div class="ttdef"><b>Definition</b> font_collection.hpp:14</div></div>
 <div class="ttc" id="astructxtd_1_1drawing_1_1point__f_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1point__f.html">xtd::drawing::point_f</a></div><div class="ttdoc">Represents an ordered pair of floating-point x- and y-coordinates that defines a point in a two-dimen...</div><div class="ttdef"><b>Definition</b> point_f.hpp:35</div></div>
@@ -596,13 +596,13 @@ The color of each pixel is represented as a 32-bit number: 8 bits each for alpha
 <tr class="separator:a0c189d088fc2611f0e3b1026384438ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:adf44e69216277fc02f79320855036bd3" id="r_adf44e69216277fc02f79320855036bd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf44e69216277fc02f79320855036bd3">a</a> () const noexcept</td></tr>
+<tr class="memitem:adf44e69216277fc02f79320855036bd3" id="r_adf44e69216277fc02f79320855036bd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf44e69216277fc02f79320855036bd3">a</a> () const noexcept</td></tr>
 <tr class="memdesc:adf44e69216277fc02f79320855036bd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the alpha component value of this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> class.  <br /></td></tr>
 <tr class="separator:adf44e69216277fc02f79320855036bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeeeff879a1c944c8c4c48d5bebe43e91" id="r_aeeeff879a1c944c8c4c48d5bebe43e91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeeeff879a1c944c8c4c48d5bebe43e91">b</a> () const noexcept</td></tr>
+<tr class="memitem:aeeeff879a1c944c8c4c48d5bebe43e91" id="r_aeeeff879a1c944c8c4c48d5bebe43e91"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeeeff879a1c944c8c4c48d5bebe43e91">b</a> () const noexcept</td></tr>
 <tr class="memdesc:aeeeff879a1c944c8c4c48d5bebe43e91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the blue component value of this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> class.  <br /></td></tr>
 <tr class="separator:aeeeff879a1c944c8c4c48d5bebe43e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fc88a0d6d188e8ec35543b7cdb79e16" id="r_a8fc88a0d6d188e8ec35543b7cdb79e16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fc88a0d6d188e8ec35543b7cdb79e16">g</a> () const noexcept</td></tr>
+<tr class="memitem:a8fc88a0d6d188e8ec35543b7cdb79e16" id="r_a8fc88a0d6d188e8ec35543b7cdb79e16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fc88a0d6d188e8ec35543b7cdb79e16">g</a> () const noexcept</td></tr>
 <tr class="memdesc:a8fc88a0d6d188e8ec35543b7cdb79e16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the green component value of this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> class.  <br /></td></tr>
 <tr class="separator:a8fc88a0d6d188e8ec35543b7cdb79e16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5dfa4b7fb139512768c65090861398c" id="r_ae5dfa4b7fb139512768c65090861398c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga6d54527a3ec7b15afb917a6ba73a4ece">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5dfa4b7fb139512768c65090861398c">handle</a> () const noexcept</td></tr>
@@ -629,7 +629,7 @@ The color of each pixel is represented as a 32-bit number: 8 bits each for alpha
 <tr class="memitem:ae53d5f6c0f61e3f7c156729ab3035620" id="r_ae53d5f6c0f61e3f7c156729ab3035620"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae53d5f6c0f61e3f7c156729ab3035620">name</a> () const noexcept</td></tr>
 <tr class="memdesc:ae53d5f6c0f61e3f7c156729ab3035620"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a>.  <br /></td></tr>
 <tr class="separator:ae53d5f6c0f61e3f7c156729ab3035620"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c502f2c82f55d9cb421419ba2d46f03" id="r_a2c502f2c82f55d9cb421419ba2d46f03"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c502f2c82f55d9cb421419ba2d46f03">r</a> () const noexcept</td></tr>
+<tr class="memitem:a2c502f2c82f55d9cb421419ba2d46f03" id="r_a2c502f2c82f55d9cb421419ba2d46f03"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c502f2c82f55d9cb421419ba2d46f03">r</a> () const noexcept</td></tr>
 <tr class="memdesc:a2c502f2c82f55d9cb421419ba2d46f03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the red component value of this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> class.  <br /></td></tr>
 <tr class="separator:a2c502f2c82f55d9cb421419ba2d46f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -664,7 +664,7 @@ The color of each pixel is represented as a 32-bit number: 8 bits each for alpha
 <tr class="memitem:a854d45c41cddcc9869835d9c9ae1057f" id="r_a854d45c41cddcc9869835d9c9ae1057f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a854d45c41cddcc9869835d9c9ae1057f">get_y</a> () const noexcept</td></tr>
 <tr class="memdesc:a854d45c41cddcc9869835d9c9ae1057f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Y'UV color model <code>Y</code> (luma) value for this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure.  <br /></td></tr>
 <tr class="separator:a854d45c41cddcc9869835d9c9ae1057f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1842c31fd793563740ed1a6c7e09e775" id="r_a1842c31fd793563740ed1a6c7e09e775"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1842c31fd793563740ed1a6c7e09e775">to_argb</a> () const noexcept</td></tr>
+<tr class="memitem:a1842c31fd793563740ed1a6c7e09e775" id="r_a1842c31fd793563740ed1a6c7e09e775"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1842c31fd793563740ed1a6c7e09e775">to_argb</a> () const noexcept</td></tr>
 <tr class="memdesc:a1842c31fd793563740ed1a6c7e09e775"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the 32-bit ARGB value of this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> class.  <br /></td></tr>
 <tr class="separator:a1842c31fd793563740ed1a6c7e09e775"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac84de282d2b99c7523ab31aa41627f9" id="r_aac84de282d2b99c7523ab31aa41627f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__colors.html#gabb6249e3fb8a4388778157257e99049b">xtd::drawing::known_color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac84de282d2b99c7523ab31aa41627f9">to_known_color</a> () const noexcept</td></tr>
@@ -687,16 +687,16 @@ The color of each pixel is represented as a 32-bit number: 8 bits each for alpha
 <tr class="memitem:a40449eec4e25b7d2a6ca441abdbdb14a" id="r_a40449eec4e25b7d2a6ca441abdbdb14a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40449eec4e25b7d2a6ca441abdbdb14a">dark</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;<a class="el" href="classxtd_1_1drawing_1_1color.html">color</a>, double percent) noexcept</td></tr>
 <tr class="memdesc:a40449eec4e25b7d2a6ca441abdbdb14a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new darker color of the specified color with specified percent factor.  <br /></td></tr>
 <tr class="separator:a40449eec4e25b7d2a6ca441abdbdb14a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4a75a743036c1bfbb948db2d481736b" id="r_ac4a75a743036c1bfbb948db2d481736b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4a75a743036c1bfbb948db2d481736b">from_argb</a> (<a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a> argb) noexcept</td></tr>
+<tr class="memitem:ac4a75a743036c1bfbb948db2d481736b" id="r_ac4a75a743036c1bfbb948db2d481736b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4a75a743036c1bfbb948db2d481736b">from_argb</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> argb) noexcept</td></tr>
 <tr class="memdesc:ac4a75a743036c1bfbb948db2d481736b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> class from a 32-bit ARGB value.  <br /></td></tr>
 <tr class="separator:ac4a75a743036c1bfbb948db2d481736b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabbb27e34fef3b1363a001b5ff9ec8a2" id="r_aabbb27e34fef3b1363a001b5ff9ec8a2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aabbb27e34fef3b1363a001b5ff9ec8a2">from_argb</a> (<a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> alpha, const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;base_color) noexcept</td></tr>
+<tr class="memitem:aabbb27e34fef3b1363a001b5ff9ec8a2" id="r_aabbb27e34fef3b1363a001b5ff9ec8a2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aabbb27e34fef3b1363a001b5ff9ec8a2">from_argb</a> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> alpha, const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;base_color) noexcept</td></tr>
 <tr class="memdesc:aabbb27e34fef3b1363a001b5ff9ec8a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> class from the specified <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure, but with the new specified alpha value. Although this method allows a 32-bit value to be passed for the alpha value, the value is limited to 8 bits.  <br /></td></tr>
 <tr class="separator:aabbb27e34fef3b1363a001b5ff9ec8a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b38fc484a3b9eb901050fc3def7a28e" id="r_a9b38fc484a3b9eb901050fc3def7a28e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b38fc484a3b9eb901050fc3def7a28e">from_argb</a> (<a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> alpha, <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> <a class="el" href="#a7a0b8f1210fbda4739c37fd61e1a1dab">red</a>, <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> <a class="el" href="#a5e7a5c8aa1ffb9dc3f1129770da07cba">green</a>, <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> <a class="el" href="#a97aa7902fcba41ef645b027cdc4432d7">blue</a>) noexcept</td></tr>
+<tr class="memitem:a9b38fc484a3b9eb901050fc3def7a28e" id="r_a9b38fc484a3b9eb901050fc3def7a28e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b38fc484a3b9eb901050fc3def7a28e">from_argb</a> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> alpha, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> <a class="el" href="#a7a0b8f1210fbda4739c37fd61e1a1dab">red</a>, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> <a class="el" href="#a5e7a5c8aa1ffb9dc3f1129770da07cba">green</a>, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> <a class="el" href="#a97aa7902fcba41ef645b027cdc4432d7">blue</a>) noexcept</td></tr>
 <tr class="memdesc:a9b38fc484a3b9eb901050fc3def7a28e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> class from the four ARGB component (alpha, red, green, and blue) values. Although this method allows a 32-bit value to be passed for each component, the value of each component is limited to 8 bits.  <br /></td></tr>
 <tr class="separator:a9b38fc484a3b9eb901050fc3def7a28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0211e51c9154550cf67fa694c932a78" id="r_ab0211e51c9154550cf67fa694c932a78"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0211e51c9154550cf67fa694c932a78">from_argb</a> (<a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> <a class="el" href="#a7a0b8f1210fbda4739c37fd61e1a1dab">red</a>, <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> <a class="el" href="#a5e7a5c8aa1ffb9dc3f1129770da07cba">green</a>, <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> <a class="el" href="#a97aa7902fcba41ef645b027cdc4432d7">blue</a>) noexcept</td></tr>
+<tr class="memitem:ab0211e51c9154550cf67fa694c932a78" id="r_ab0211e51c9154550cf67fa694c932a78"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0211e51c9154550cf67fa694c932a78">from_argb</a> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> <a class="el" href="#a7a0b8f1210fbda4739c37fd61e1a1dab">red</a>, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> <a class="el" href="#a5e7a5c8aa1ffb9dc3f1129770da07cba">green</a>, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> <a class="el" href="#a97aa7902fcba41ef645b027cdc4432d7">blue</a>) noexcept</td></tr>
 <tr class="memdesc:ab0211e51c9154550cf67fa694c932a78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure from the specified 8-bit color values (red, green, and blue). The alpha value is implicitly 255 (fully opaque). Although this method allows a 32-bit value to be passed for each color component, the value of each component is limited to 8 bits.  <br /></td></tr>
 <tr class="separator:ab0211e51c9154550cf67fa694c932a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c33777be8ca8acbf2f18aa053ea5eee" id="r_a1c33777be8ca8acbf2f18aa053ea5eee"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c33777be8ca8acbf2f18aa053ea5eee">from_handle</a> (<a class="el" href="group__types.html#ga6d54527a3ec7b15afb917a6ba73a4ece">intptr</a> <a class="el" href="#ae5dfa4b7fb139512768c65090861398c">handle</a>) noexcept</td></tr>
@@ -792,7 +792,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> xtd::drawing::color::a </td>
+          <td class="memname"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> xtd::drawing::color::a </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -832,7 +832,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> xtd::drawing::color::b </td>
+          <td class="memname"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> xtd::drawing::color::b </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -872,7 +872,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> xtd::drawing::color::g </td>
+          <td class="memname"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> xtd::drawing::color::g </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -1137,7 +1137,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> xtd::drawing::color::r </td>
+          <td class="memname"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> xtd::drawing::color::r </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -1622,7 +1622,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a> xtd::drawing::color::to_argb </td>
+          <td class="memname"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> xtd::drawing::color::to_argb </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -1987,7 +1987,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
         <tr>
           <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> xtd::drawing::color::from_argb </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a></td>          <td class="paramname"><span class="paramname"><em>argb</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a></td>          <td class="paramname"><span class="paramname"><em>argb</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -2049,7 +2049,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
         <tr>
           <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> xtd::drawing::color::from_argb </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>alpha</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>alpha</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -2150,22 +2150,22 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
         <tr>
           <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> xtd::drawing::color::from_argb </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>alpha</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>alpha</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>red</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>red</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>green</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>green</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>blue</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>blue</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -2228,17 +2228,17 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
         <tr>
           <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> xtd::drawing::color::from_argb </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>red</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>red</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>green</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>green</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>blue</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>blue</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -6198,7 +6198,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2025 09:20:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 31 2025 17:35:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
