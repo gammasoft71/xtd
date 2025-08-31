@@ -8,6 +8,7 @@
 #endif
 /// @endcond
 
+#include <cstdint>
 #include <vector>
 
 /// @cond
