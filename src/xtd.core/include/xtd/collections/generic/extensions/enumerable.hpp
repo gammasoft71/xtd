@@ -343,7 +343,7 @@ namespace xtd {
           auto order_by(const std::function<key_t(const source_t&)>& key_selector) const {
             return xtd::linq::enumerable::order_by<key_t, source_t>(base(), key_selector);
           }
-
+          
           /// @brief Projects each element of a sequence into a new form.
           /// @tparam result_t The type of the resulting value.
           /// @param source A sequence of values to invoke a transform function on.
