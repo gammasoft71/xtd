@@ -828,7 +828,7 @@ namespace xtd {
         };
         return numbers;
       }
-
+      
       /// @brief Projects each element of a sequence into a new form.
       /// @tparam result_t The type of the resulting value.
       /// @tparam source_t The type of the elements of source.
