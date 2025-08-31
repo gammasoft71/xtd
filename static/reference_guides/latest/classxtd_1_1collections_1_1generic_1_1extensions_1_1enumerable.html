@@ -1936,7 +1936,28 @@ template&lt;class result_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; whose elements are the result of invoking the transform function on each element of source. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a0d5849798f7b5ae566dd5e7c175dfe3d" title="Projects each element of a sequence into a new form.">xtd::linq::enumerable::select</a> &lt;source_t, result_t&gt;(const ienumerable &lt;source_t&gt;&amp;, const std::function &lt;result_t(const source_t&amp;)&gt;&amp;) to project over a sequence of values. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a0d5849798f7b5ae566dd5e7c175dfe3d" title="Projects each element of a sequence into a new form.">xtd::linq::enumerable::select</a> &lt;source_t, result_t&gt;(const ienumerable &lt;source_t&gt;&amp;, const std::function &lt;result_t(const source_t&amp;)&gt;&amp;) to project over a sequence of values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = fruits.select&lt;std::tuple&lt;size_t, string&gt;&gt;([](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fruit, <span class="keywordtype">size_t</span> index) {</div>
+<div class="line">    <span class="keywordflow">return</span> std::make_tuple(index, fruit.substring(0, index));</div>
+<div class="line">  });</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [index, str] : <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a>)</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{{ index = {}, str = {} }}&quot;</span>, index, str);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// { index = 0, str =  }</span></div>
+<div class="line"><span class="comment">// { index = 1, str = b }</span></div>
+<div class="line"><span class="comment">// { index = 2, str = ma }</span></div>
+<div class="line"><span class="comment">// { index = 3, str = ora }</span></div>
+<div class="line"><span class="comment">// { index = 4, str = pass }</span></div>
+<div class="line"><span class="comment">// { index = 5, str = grape }</span></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -1974,7 +1995,28 @@ template&lt;class enumerable_t, class source_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; whose elements are the result of invoking the transform function on each element of source. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a0d5849798f7b5ae566dd5e7c175dfe3d" title="Projects each element of a sequence into a new form.">xtd::linq::enumerable::select</a> &lt;source_t, result_t&gt;(const ienumerable &lt;source_t&gt;&amp;, const std::function &lt;result_t(const source_t&amp;)&gt;&amp;) to project over a sequence of values. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a0d5849798f7b5ae566dd5e7c175dfe3d" title="Projects each element of a sequence into a new form.">xtd::linq::enumerable::select</a> &lt;source_t, result_t&gt;(const ienumerable &lt;source_t&gt;&amp;, const std::function &lt;result_t(const source_t&amp;)&gt;&amp;) to project over a sequence of values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = fruits.select&lt;std::tuple&lt;size_t, string&gt;&gt;([](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fruit, <span class="keywordtype">size_t</span> index) {</div>
+<div class="line">    <span class="keywordflow">return</span> std::make_tuple(index, fruit.substring(0, index));</div>
+<div class="line">  });</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [index, str] : <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a>)</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{{ index = {}, str = {} }}&quot;</span>, index, str);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// { index = 0, str =  }</span></div>
+<div class="line"><span class="comment">// { index = 1, str = b }</span></div>
+<div class="line"><span class="comment">// { index = 2, str = ma }</span></div>
+<div class="line"><span class="comment">// { index = 3, str = ora }</span></div>
+<div class="line"><span class="comment">// { index = 4, str = pass }</span></div>
+<div class="line"><span class="comment">// { index = 5, str = grape }</span></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -2276,7 +2318,7 @@ template&lt;class enumerable_t, class source_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2025 19:55:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 31 2025 20:45:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
