@@ -801,6 +801,34 @@ namespace xtd {
         return result;
       }
       
+      /// @brief Sorts the elements of a sequence in descending order according to a key.
+      /// @param source A sequence of values to order.
+      /// @param key_selector A function to extract a key from an element.
+      /// @par Examples
+      /// The following code example demonstrates how to use order_by<key_t, source_t>(ienumerable <source_t>, std::function<key_t(const source_t&)>) to sort the elements of a sequence.
+      /// @include linq_order_by_descending.cpp
+      template<class key_t, class source_t>
+      static auto order_by_descending(const ienumerable<source_t>& source, const std::function<key_t(const source_t&)>& key_selector) {
+        auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
+        result.items = std::vector<source_t> {source.begin(), source.end()};
+        std::sort(result.items.begin(), result.items.end(), [key_selector](const source_t& a, const source_t& b) {return key_selector(a) > key_selector(b);});
+        return result;
+      }
+      
+      /// @brief Sorts the elements of a sequence in descending order according to a key.
+      /// @param source A sequence of values to order.
+      /// @param key_selector A function to extract a key from an element.
+      /// @par Examples
+      /// The following code example demonstrates how to use order_by<source_t, source_t>(ienumerable <source_t>, std::function<source_t(const source_t&)>) to sort the elements of a sequence.
+      /// @include linq_order_by_descending.cpp
+      template<class source_t>
+      static auto order_by_descending(const ienumerable<source_t>& source, const std::function<source_t(const source_t&)>& key_selector) {
+        auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
+        result.items = std::vector<source_t> {source.begin(), source.end()};
+        std::sort(result.items.begin(), result.items.end(), [key_selector](const source_t& a, const source_t& b) {return key_selector(a) > key_selector(b);});
+        return result;
+      }
+
       /// @brief Projects each element of a sequence into a new form.
       /// @tparam result_t The type of the resulting value.
       /// @tparam source_t The type of the elements of source.
