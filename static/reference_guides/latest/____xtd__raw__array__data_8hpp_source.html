@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=9"/>
-		<title>xtd: xtd.core/include/xtd/internal/__xtd_vector.hpp Source File</title>
+		<title>xtd: xtd.core/include/xtd/internal/__xtd_raw_array_data.hpp Source File</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png"/>
 		<link href="tabs.css" rel="stylesheet" type="text/css"/>
 		<script type="text/javascript" src="jquery.js"></script>
@@ -97,10 +97,10 @@ $(function(){ initResizable(false); });
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">__xtd_vector.hpp</div></div>
+  <div class="headertitle"><div class="title">__xtd_raw_array_data.hpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="____xtd__vector_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<a href="____xtd__raw__array__data_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#if !defined(__XTD_CORE_INTERNAL__)</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#error &quot;Do not include this file: Internal use only&quot;</span></div>
@@ -110,7 +110,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> allocator_t = std::allocator&lt;type_t&gt;&gt;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">class </span>__xtd_vector__ {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">class </span>__xtd_raw_array_data__ {</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keyword">using </span>value_type = type_t;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keyword">using </span>storage_value_type = std::conditional_t&lt;std::is_same_v&lt;value_type, bool&gt;, std::uint8_t, value_type &gt;;</div>
@@ -163,7 +163,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    iterator_base_type to_base_type()<span class="keyword"> const </span>{<span class="keywordflow">return</span> it_;}</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    </div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keyword">friend</span> <span class="keyword">class </span>__xtd_vector__;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keyword">friend</span> <span class="keyword">class </span>__xtd_raw_array_data__;</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    iterator_base_type it_;</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  };</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="comment">//using const_iterator = typename base_type::const_iterator;</span></div>
@@ -207,32 +207,32 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    iterator_base_type to_base_type()<span class="keyword"> const </span>{<span class="keywordflow">return</span> it_;}</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    </div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keyword">friend</span> <span class="keyword">class </span>__xtd_vector__;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keyword">friend</span> <span class="keyword">class </span>__xtd_raw_array_data__;</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    iterator_base_type it_;</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  };</div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>  <span class="keyword">using </span>reverse_iterator = std::reverse_iterator&lt;iterator&gt;;</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  <span class="keyword">using </span>const_reverse_iterator = std::reverse_iterator&lt;const_iterator&gt;;</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  __xtd_vector__() noexcept = default;</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  explicit __xtd_vector__(const allocator_type &amp; alloc) noexcept : items_(alloc) {}</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  __xtd_vector__(size_type count, <span class="keyword">const</span> type_t&amp; value, <span class="keyword">const</span> allocator_type&amp; alloc = allocator_type()) : items_(count, value, alloc) {}</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="keyword">explicit</span> __xtd_vector__(size_type count, <span class="keyword">const</span> allocator_type&amp; alloc = allocator_type()) : items_(count, alloc) {}</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  __xtd_raw_array_data__() noexcept = default;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  explicit __xtd_raw_array_data__(const allocator_type &amp; alloc) noexcept : items_(alloc) {}</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  __xtd_raw_array_data__(size_type count, <span class="keyword">const</span> type_t&amp; value, <span class="keyword">const</span> allocator_type&amp; alloc = allocator_type()) : items_(count, value, alloc) {}</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="keyword">explicit</span> __xtd_raw_array_data__(size_type count, <span class="keyword">const</span> allocator_type&amp; alloc = allocator_type()) : items_(count, alloc) {}</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> input_iterator_t&gt;</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  __xtd_vector__(input_iterator_t first, input_iterator_t last, <span class="keyword">const</span> allocator_type&amp; alloc = allocator_type()) : items_(<a class="code hl_function" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">first</a>, <a class="code hl_function" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d">last</a>, alloc) {}</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  __xtd_vector__(<span class="keyword">const</span> __xtd_vector__ &amp; vector) : items_(vector.items_) {}</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  __xtd_vector__(<span class="keyword">const</span> base_type &amp; vector) : items_(vector) {}</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  __xtd_vector__(<span class="keyword">const</span> __xtd_vector__ &amp; vector, <span class="keyword">const</span> allocator_type &amp; alloc) : items_(vector.items_, alloc) {}</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  __xtd_vector__(<span class="keyword">const</span> base_type &amp; vector, <span class="keyword">const</span> allocator_type &amp; alloc) : items_(vector, alloc) {}</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  __xtd_vector__(std::initializer_list&lt;type_t&gt; items, <span class="keyword">const</span> allocator_type&amp; alloc = allocator_type()) <span class="keyword">requires</span>(!std::is_same_v&lt;type_t, bool&gt;) : items_(items, alloc) {}</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  __xtd_vector__(std::initializer_list&lt;bool&gt; items, <span class="keyword">const</span> allocator_type&amp; alloc = allocator_type()) <span class="keyword">requires</span>(std::is_same_v&lt;type_t, bool&gt;)  : items_(alloc) {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  __xtd_raw_array_data__(input_iterator_t first, input_iterator_t last, <span class="keyword">const</span> allocator_type&amp; alloc = allocator_type()) : items_(<a class="code hl_function" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">first</a>, <a class="code hl_function" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d">last</a>, alloc) {}</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  __xtd_raw_array_data__(<span class="keyword">const</span> __xtd_raw_array_data__ &amp; vector) : items_(vector.items_) {}</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  __xtd_raw_array_data__(<span class="keyword">const</span> base_type &amp; vector) : items_(vector) {}</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  __xtd_raw_array_data__(<span class="keyword">const</span> __xtd_raw_array_data__ &amp; vector, <span class="keyword">const</span> allocator_type &amp; alloc) : items_(vector.items_, alloc) {}</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  __xtd_raw_array_data__(<span class="keyword">const</span> base_type &amp; vector, <span class="keyword">const</span> allocator_type &amp; alloc) : items_(vector, alloc) {}</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  __xtd_raw_array_data__(std::initializer_list&lt;type_t&gt; items, <span class="keyword">const</span> allocator_type&amp; alloc = allocator_type()) <span class="keyword">requires</span>(!std::is_same_v&lt;type_t, bool&gt;) : items_(items, alloc) {}</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  __xtd_raw_array_data__(std::initializer_list&lt;bool&gt; items, <span class="keyword">const</span> allocator_type&amp; alloc = allocator_type()) <span class="keyword">requires</span>(std::is_same_v&lt;type_t, bool&gt;)  : items_(alloc) {</div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    items_.reserve(items.size());</div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    for (<span class="keyword">auto</span> b : items)</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>      items_.push_back(b ? 1 : 0);</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  }</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  __xtd_vector__(__xtd_vector__&amp;&amp; other) : items_(std::move(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.items_)) {}</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  __xtd_vector__(base_type&amp;&amp; other) : items_(std::move(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>)) {}</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  __xtd_vector__(__xtd_vector__&amp;&amp; other, <span class="keyword">const</span> allocator_type &amp; alloc) : items_(std::move(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.items_), alloc) {}</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  __xtd_vector__(base_type&amp;&amp; other, <span class="keyword">const</span> allocator_type &amp; alloc) : items_(std::move(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>), alloc) {}</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  __xtd_raw_array_data__(__xtd_raw_array_data__&amp;&amp; other) : items_(std::move(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.items_)) {}</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  __xtd_raw_array_data__(base_type&amp;&amp; other) : items_(std::move(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>)) {}</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  __xtd_raw_array_data__(__xtd_raw_array_data__&amp;&amp; other, <span class="keyword">const</span> allocator_type &amp; alloc) : items_(std::move(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.items_), alloc) {}</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  __xtd_raw_array_data__(base_type&amp;&amp; other, <span class="keyword">const</span> allocator_type &amp; alloc) : items_(std::move(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>), alloc) {}</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  </div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  reference <a class="code hl_function" href="namespacextd.html#ac85228371d5db134ddb3fa11dd9d0f04">back</a>() {<span class="keywordflow">return</span> <a class="code hl_function" href="namespacextd.html#a856ad36e5aacc976277ccc570b035695">at</a>(<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>() - 1);}</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  const_reference <a class="code hl_function" href="namespacextd.html#ac85228371d5db134ddb3fa11dd9d0f04">back</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> <a class="code hl_function" href="namespacextd.html#a856ad36e5aacc976277ccc570b035695">at</a>(<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>() - 1);}</div>
@@ -314,15 +314,15 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>  </div>
 <div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>  <span class="keywordtype">void</span> shrink_to_fit() {items_.shrink_to_fit();}</div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  </div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  <span class="keywordtype">void</span> swap(__xtd_vector__ &amp; other) <span class="keyword">noexcept</span> {items_.swap(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.items_);}</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  <span class="keywordtype">void</span> swap(__xtd_raw_array_data__ &amp; other) <span class="keyword">noexcept</span> {items_.swap(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.items_);}</div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  </div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>  __xtd_vector__&amp; operator =(<span class="keyword">const</span> __xtd_vector__ &amp; other) = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>  __xtd_vector__&amp; operator =(__xtd_vector__&amp;&amp; other) <span class="keyword">noexcept</span>  = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  __xtd_vector__&amp; operator =(std::initializer_list&lt;type_t&gt;&amp; items) <span class="keyword">requires</span>(!std::is_same_v&lt;type_t, bool&gt;) {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>  __xtd_raw_array_data__&amp; operator =(<span class="keyword">const</span> __xtd_raw_array_data__ &amp; other) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>  __xtd_raw_array_data__&amp; operator =(__xtd_raw_array_data__&amp;&amp; other) <span class="keyword">noexcept</span>  = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  __xtd_raw_array_data__&amp; operator =(std::initializer_list&lt;type_t&gt;&amp; items) <span class="keyword">requires</span>(!std::is_same_v&lt;type_t, bool&gt;) {</div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    items_ = items;</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  }</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  __xtd_vector__&amp; operator =(std::initializer_list&lt;bool&gt;&amp; items) <span class="keyword">requires</span>(std::is_same_v&lt;type_t, bool&gt;) {</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  __xtd_raw_array_data__&amp; operator =(std::initializer_list&lt;bool&gt;&amp; items) <span class="keyword">requires</span>(std::is_same_v&lt;type_t, bool&gt;) {</div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    items_.clear();</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    items_.reserve(items.size());</div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> b : items)</div>
@@ -344,19 +344,19 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>};</div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>__xtd_vector__(std::initializer_list&lt;type_t&gt;) -&gt; __xtd_vector__&lt;type_t, std::allocator&lt;type_t &gt;&gt;;</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>__xtd_raw_array_data__(std::initializer_list&lt;type_t&gt;) -&gt; __xtd_raw_array_data__&lt;type_t, std::allocator&lt;type_t &gt;&gt;;</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>__xtd_vector__(<span class="keyword">const</span> std::vector&lt;type_t&gt;&amp;) -&gt; __xtd_vector__&lt;type_t, std::allocator&lt;type_t &gt;&gt;;</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>__xtd_raw_array_data__(<span class="keyword">const</span> std::vector&lt;type_t&gt;&amp;) -&gt; __xtd_raw_array_data__&lt;type_t, std::allocator&lt;type_t &gt;&gt;;</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> allocator_t = std::allocator&lt;type_t&gt;&gt;</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>__xtd_vector__(<span class="keyword">const</span> __xtd_vector__&lt;type_t, allocator_t&gt;&amp;) -&gt; __xtd_vector__&lt;type_t, allocator_t&gt;;</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>__xtd_raw_array_data__(<span class="keyword">const</span> __xtd_raw_array_data__&lt;type_t, allocator_t&gt;&amp;) -&gt; __xtd_raw_array_data__&lt;type_t, allocator_t&gt;;</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>__xtd_vector__(std::vector&lt;type_t&gt;&amp;&amp;) -&gt; __xtd_vector__&lt;type_t, std::allocator&lt;type_t &gt;&gt;;</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>__xtd_raw_array_data__(std::vector&lt;type_t&gt;&amp;&amp;) -&gt; __xtd_raw_array_data__&lt;type_t, std::allocator&lt;type_t &gt;&gt;;</div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> allocator_t = std::allocator&lt;type_t&gt;&gt;</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>__xtd_vector__(__xtd_vector__&lt;type_t, allocator_t&gt;&amp;&amp;) -&gt; __xtd_vector__&lt;type_t, allocator_t&gt;;</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>__xtd_raw_array_data__(__xtd_raw_array_data__&lt;type_t, allocator_t&gt;&amp;&amp;) -&gt; __xtd_raw_array_data__&lt;type_t, allocator_t&gt;;</div>
 <div class="ttc" id="agroup__types_html_ga221e5b824352c9046d353e4659af5b87"><div class="ttname"><a href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf"><div class="ttname"><a href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">xtd::platform_id::other</a></div><div class="ttdeci">@ other</div><div class="ttdoc">The operating system is other.</div><div class="ttdef"><b>Definition</b> platform_id.hpp:58</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a01bc6f8efa4202821e95f4fdf6298b30"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a01bc6f8efa4202821e95f4fdf6298b30">xtd::console_key::clear</a></div><div class="ttdeci">@ clear</div><div class="ttdoc">The CLEAR key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:26</div></div>
@@ -382,7 +382,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2025 09:20:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 31 2025 17:35:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

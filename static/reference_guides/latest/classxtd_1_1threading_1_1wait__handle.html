@@ -245,7 +245,7 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <tr class="memitem:ab53dcefc6844ecf0d6d9967ac489ac87" id="r_ab53dcefc6844ecf0d6d9967ac489ac87"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab53dcefc6844ecf0d6d9967ac489ac87">wait_one</a> ()</td></tr>
 <tr class="memdesc:ab53dcefc6844ecf0d6d9967ac489ac87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the current thread until the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> receives a signal.  <br /></td></tr>
 <tr class="separator:ab53dcefc6844ecf0d6d9967ac489ac87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65749b3c963772bef5440b1c8faca6ea" id="r_a65749b3c963772bef5440b1c8faca6ea"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65749b3c963772bef5440b1c8faca6ea">wait_one</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> milliseconds_timeout)</td></tr>
+<tr class="memitem:a65749b3c963772bef5440b1c8faca6ea" id="r_a65749b3c963772bef5440b1c8faca6ea"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65749b3c963772bef5440b1c8faca6ea">wait_one</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout)</td></tr>
 <tr class="memdesc:a65749b3c963772bef5440b1c8faca6ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the current thread until the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> receives a signal, using 32-bit signed integer to measure the time interval.  <br /></td></tr>
 <tr class="separator:a65749b3c963772bef5440b1c8faca6ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ffdfd0f2f35f6768cb78bded574aa01" id="r_a6ffdfd0f2f35f6768cb78bded574aa01"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ffdfd0f2f35f6768cb78bded574aa01">wait_one</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
@@ -256,7 +256,7 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <tr class="memitem:a01c82b06ca8a5d14aba5f1fb396c16f7" id="r_a01c82b06ca8a5d14aba5f1fb396c16f7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01c82b06ca8a5d14aba5f1fb396c16f7">signal_and_wait</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_signal, <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_wait)</td></tr>
 <tr class="memdesc:a01c82b06ca8a5d14aba5f1fb396c16f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> and waits on another.  <br /></td></tr>
 <tr class="separator:a01c82b06ca8a5d14aba5f1fb396c16f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83aebea15b640d53b04a97306515768d" id="r_a83aebea15b640d53b04a97306515768d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83aebea15b640d53b04a97306515768d">signal_and_wait</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_signal, <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_wait, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> milliseconds_timeout)</td></tr>
+<tr class="memitem:a83aebea15b640d53b04a97306515768d" id="r_a83aebea15b640d53b04a97306515768d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83aebea15b640d53b04a97306515768d">signal_and_wait</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_signal, <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_wait, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout)</td></tr>
 <tr class="memdesc:a83aebea15b640d53b04a97306515768d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> and waits on another, specifying a time-out interval as a 32-bit signed integer.  <br /></td></tr>
 <tr class="separator:a83aebea15b640d53b04a97306515768d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2056ee81b21f23f6b0a7bd7f3bc232e8" id="r_a2056ee81b21f23f6b0a7bd7f3bc232e8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2056ee81b21f23f6b0a7bd7f3bc232e8">signal_and_wait</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_signal, <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_wait, const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
@@ -267,8 +267,8 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <tr class="memdesc:a217129669f17b6f14201dccd0405450c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for all the elements in the specified collection to receive a signal.  <br /></td></tr>
 <tr class="separator:a217129669f17b6f14201dccd0405450c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8aa977d4e62fe9fd5cc7c57cd4eb58f2" id="r_a8aa977d4e62fe9fd5cc7c57cd4eb58f2"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
-<tr class="memitem:a8aa977d4e62fe9fd5cc7c57cd4eb58f2"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a8aa977d4e62fe9fd5cc7c57cd4eb58f2">wait_all</a> (const collection_t &amp;wait_handles, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> milliseconds_timeout)</td></tr>
-<tr class="memdesc:a8aa977d4e62fe9fd5cc7c57cd4eb58f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for all the elements in the specified collection to receive a signal, using an <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260" title="Represents a 32-bit signed integer.">int32</a> value to measure the time interval.  <br /></td></tr>
+<tr class="memitem:a8aa977d4e62fe9fd5cc7c57cd4eb58f2"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a8aa977d4e62fe9fd5cc7c57cd4eb58f2">wait_all</a> (const collection_t &amp;wait_handles, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout)</td></tr>
+<tr class="memdesc:a8aa977d4e62fe9fd5cc7c57cd4eb58f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for all the elements in the specified collection to receive a signal, using an <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a> value to measure the time interval.  <br /></td></tr>
 <tr class="separator:a8aa977d4e62fe9fd5cc7c57cd4eb58f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeda61f20a00dfc9a8b0f125edc9e8aa6" id="r_aeda61f20a00dfc9a8b0f125edc9e8aa6"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
 <tr class="memitem:aeda61f20a00dfc9a8b0f125edc9e8aa6"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aeda61f20a00dfc9a8b0f125edc9e8aa6">wait_all</a> (const collection_t &amp;wait_handles, const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
@@ -279,7 +279,7 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <tr class="memdesc:aee2a73d9052723690ff0e15a338cce35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for any of the elements in the specified collection to receive a signal.  <br /></td></tr>
 <tr class="separator:aee2a73d9052723690ff0e15a338cce35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b1275f297e0dbddbf302edf0cd2a37d" id="r_a5b1275f297e0dbddbf302edf0cd2a37d"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
-<tr class="memitem:a5b1275f297e0dbddbf302edf0cd2a37d"><td class="memTemplItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5b1275f297e0dbddbf302edf0cd2a37d">wait_any</a> (const collection_t &amp;wait_handles, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> milliseconds_timeout)</td></tr>
+<tr class="memitem:a5b1275f297e0dbddbf302edf0cd2a37d"><td class="memTemplItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5b1275f297e0dbddbf302edf0cd2a37d">wait_any</a> (const collection_t &amp;wait_handles, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout)</td></tr>
 <tr class="memdesc:a5b1275f297e0dbddbf302edf0cd2a37d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for any of the elements in the specified collection to receive a signal, using a 32-bit signed integer to measure the time interval.  <br /></td></tr>
 <tr class="separator:a5b1275f297e0dbddbf302edf0cd2a37d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa704be64592eed6531ec3953bb9897e" id="r_afa704be64592eed6531ec3953bb9897e"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
@@ -291,7 +291,7 @@ The overloads of these methods provide timeout intervals for abandoning the wait
 <tr class="memitem:ae3323e1eb8bc5686e88c8eb54d93e2c8" id="r_ae3323e1eb8bc5686e88c8eb54d93e2c8"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3323e1eb8bc5686e88c8eb54d93e2c8">signal</a> ()=0</td></tr>
 <tr class="memdesc:ae3323e1eb8bc5686e88c8eb54d93e2c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases ownership of the specified <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> object.  <br /></td></tr>
 <tr class="separator:ae3323e1eb8bc5686e88c8eb54d93e2c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9bb413f1c6bf14c9a514896f972dd35b" id="r_a9bb413f1c6bf14c9a514896f972dd35b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bb413f1c6bf14c9a514896f972dd35b">wait</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> milliseconds_timeout)=0</td></tr>
+<tr class="memitem:a9bb413f1c6bf14c9a514896f972dd35b" id="r_a9bb413f1c6bf14c9a514896f972dd35b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bb413f1c6bf14c9a514896f972dd35b">wait</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout)=0</td></tr>
 <tr class="memdesc:a9bb413f1c6bf14c9a514896f972dd35b"><td class="mdescLeft">&#160;</td><td class="mdescRight">wait ownership of the specified mutex object.  <br /></td></tr>
 <tr class="separator:a9bb413f1c6bf14c9a514896f972dd35b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -499,7 +499,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">virtual bool xtd::threading::wait_handle::wait_one </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -640,7 +640,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -787,7 +787,7 @@ template&lt;class collection_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -797,7 +797,7 @@ template&lt;class collection_t&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Waits for all the elements in the specified collection to receive a signal, using an <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260" title="Represents a 32-bit signed integer.">int32</a> value to measure the time interval. </p>
+<p>Waits for all the elements in the specified collection to receive a signal, using an <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a> value to measure the time interval. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">wait_handles</td><td>A <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> collection containing the objects for which the current instance will wait. This array cannot contain multiple references to the same object. </td></tr>
@@ -938,7 +938,7 @@ template&lt;class collection_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1066,7 +1066,7 @@ The number of objects in wait_handles is greater than the system permits. </td><
         <tr>
           <td class="memname">virtual bool xtd::threading::wait_handle::wait </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1153,7 +1153,7 @@ Override this function for all derived object </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2025 09:21:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 31 2025 17:35:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
