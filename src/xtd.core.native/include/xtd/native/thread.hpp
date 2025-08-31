@@ -51,7 +51,7 @@ namespace xtd {
       /// @param max_stack_size The maximum stack size, in bytes, to be used by the thread, or 0 to use the default maximum stack size specified in the header for the executable.
       /// @return The thread handle.
       /// @warning Internal use only
-      static intmax_t create(std::function<void(intmax_t)> start, intmax_t obj, int32_t max_stack_size, bool suspended, intmax_t& id);
+      static intmax_t create(std::function<void(intmax_t)> start, intmax_t obj, std::int32_t max_stack_size, bool suspended, intmax_t& id);
       
       /// @brief Detach thread with specified handle.
       /// @param handle The thread handle.
@@ -99,7 +99,7 @@ namespace xtd {
       /// * 2 : normal
       /// * 3 : above_normal
       /// * 4 : highest
-      static bool set_priority(intmax_t handle, int32_t priority);
+      static bool set_priority(intmax_t handle, std::int32_t priority);
       
       /// @brief Sets the processors on which the associated thread can run.
       /// @param value An std::vector<size_> that represents an array of processor numbers on which the thread can run.

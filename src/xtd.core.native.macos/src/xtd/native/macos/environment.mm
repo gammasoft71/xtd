@@ -167,7 +167,7 @@ std::string environment::get_distribution_name() {
   return name_it->second;
 }
 
-void environment::get_distribution_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) {
+void environment::get_distribution_version(int32_t& major, std::int32_t& minor, std::int32_t& build, std::int32_t& revision) {
   auto name_it = get_distribution_key_values().find("VERSION_ID");
   if (name_it == get_distribution_key_values().end()) return;
   auto versions = xtd::native::macos::strings::split(name_it->second, {'.'});
@@ -181,7 +181,7 @@ std::string environment::get_distribution_version_string() {
   return iterator->second;
 }
 
-std::string environment::get_environment_variable(const std::string& variable, int32_t target) {
+std::string environment::get_environment_variable(const std::string& variable, std::int32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS) {
     auto value = getenv(variable.c_str());
     return value ? value : "";
@@ -242,7 +242,7 @@ int32_t environment::get_os_platform_id() {
   #endif
 }
 
-void environment::get_os_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) {
+void environment::get_os_version(int32_t& major, std::int32_t& minor, std::int32_t& build, std::int32_t& revision) {
   auto numbers = macos::strings::split(macos::shell_execute::run("sw_vers", "-productVersion"), {'.', '\n'});
   if (numbers.size() < 1 || !macos::strings::try_parse(numbers[0], major)) major = 0;
   if (numbers.size() < 2 || !macos::strings::try_parse(numbers[1], minor)) minor = 0;
@@ -273,7 +273,7 @@ uint32_t environment::get_tick_count() {
   auto boottime = timeval {};
   auto nowtime = timeval {};
   auto len = sizeof(boottime);
-  int32_t mib[2] = {CTL_KERN, KERN_BOOTTIME};
+  std::int32_t mib[2] = {CTL_KERN, KERN_BOOTTIME};
   sysctl(mib, 2, &boottime, &len, nullptr, 0);
   gettimeofday(&nowtime, nullptr);
   return static_cast<uint32_t>((nowtime.tv_sec - boottime.tv_sec) * 1000) + static_cast<uint32_t>((nowtime.tv_usec - boottime.tv_usec) / 1000);
@@ -320,7 +320,7 @@ void environment::quick_exit(int32_t exit_code) noexcept {
   std::_Exit(exit_code);
 }
 
-void environment::set_environment_variable(const std::string& name, const std::string& value, int32_t target) {
+void environment::set_environment_variable(const std::string& name, const std::string& value, std::int32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
     setenv(name.c_str(), value.c_str(), 1);
   else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {
@@ -330,7 +330,7 @@ void environment::set_environment_variable(const std::string& name, const std::s
   }
 }
 
-void environment::unset_environment_variable(const std::string& name, int32_t target) {
+void environment::unset_environment_variable(const std::string& name, std::int32_t target) {
   if (target == ENVIRONMENT_VARIABLE_TARGET_PROCESS)
     unsetenv(name.c_str());
   else if (target == ENVIRONMENT_VARIABLE_TARGET_USER) {

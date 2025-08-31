@@ -883,10 +883,10 @@ namespace xtd {
       intptr toolkit_handle() const noexcept;
       
       /// @brief Gets the distance, in pixels, between the top edge of the control and the top edge of its container's client area.
-      /// @return An Int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
+      /// @return An std::int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
       virtual int32 top() const noexcept;
       /// @brief Sets the distance, in pixels, between the top edge of the control and the top edge of its container's client area.
-      /// @param top An Int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
+      /// @param top An std::int32_t representing the distance, in pixels, between the bottom edge of the control and the top edge of its container's client area.
       /// @return Current control.
       virtual control& top(int32 top);
       

@@ -56,7 +56,7 @@ namespace xtd {
       /// @param host_address_type The  address family (see address_family_constants.h) to resolve.
       /// @return The host handle.
       /// @warning Internal use only
-      static intmax_t get_host_by_address(const std::string& host_address, int32_t host_address_type);
+      static intmax_t get_host_by_address(const std::string& host_address, std::int32_t host_address_type);
       /// @brief Gets host by host name.
       /// @param host_name The name to resolve.
       /// @return The host handle.
@@ -81,7 +81,7 @@ namespace xtd {
       /// @param host_name The string that will contain the host name.
       /// @return 0 if succeed; otherwise error.
       /// @warning Internal use only
-      static int32_t get_host_name(std::string& host_name);
+      static std::int32_t get_host_name(std::string& host_name);
       /// @brief Opens the file /etc/hosts.
       /// @warning Internal use only
       static void startup();

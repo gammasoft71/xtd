@@ -23,7 +23,7 @@ template<class char_t, class floating_point_t>
 inline std::basic_string<char_t> __floating_point_to_binary(floating_point_t value, int precision) {
   union {
     double input;
-    int64_t output;
+    std::int64_t output;
   } data;
   data.input = value;
   return __binary_formatter<char_t>(data.output, precision);
@@ -33,7 +33,7 @@ template <>
 inline std::basic_string<char> __floating_point_to_binary<char, long double>(long double value, int precision) {
   union {
     long double input;
-    int64_t output;
+    std::int64_t output;
   } data;
   data.input = value;
   return __binary_formatter<char>(data.output, precision);
@@ -43,7 +43,7 @@ template <>
 inline std::basic_string<wchar_t> __floating_point_to_binary<wchar_t, long double>(long double value, int precision) {
   union {
     long double input;
-    int64_t output;
+    std::int64_t output;
   } data;
   data.input = value;
   return __binary_formatter<wchar_t>(data.output, precision);
@@ -53,7 +53,7 @@ template <>
 inline std::basic_string<char> __floating_point_to_binary<char, double>(double value, int precision) {
   union {
     double input;
-    int64_t output;
+    std::int64_t output;
   } data;
   data.input = value;
   return __binary_formatter<char>(data.output, precision);
@@ -63,7 +63,7 @@ template <>
 inline std::basic_string<wchar_t> __floating_point_to_binary<wchar_t, double>(double value, int precision) {
   union {
     double input;
-    int64_t output;
+    std::int64_t output;
   } data;
   data.input = value;
   return __binary_formatter<wchar_t>(data.output, precision);
@@ -73,7 +73,7 @@ template <>
 inline std::basic_string<char> __floating_point_to_binary<char, float>(float value, int precision) {
   union {
     float input;
-    int32_t output;
+    std::int32_t output;
   } data;
   data.input = value;
   return __binary_formatter<char>(data.output, precision);
@@ -83,7 +83,7 @@ template <>
 inline std::basic_string<wchar_t> __floating_point_to_binary<wchar_t, float>(float value, int precision) {
   union {
     float input;
-    int32_t output;
+    std::int32_t output;
   } data;
   data.input = value;
   return __binary_formatter<wchar_t>(data.output, precision);
