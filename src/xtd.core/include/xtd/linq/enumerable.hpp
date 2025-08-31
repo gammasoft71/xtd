@@ -639,62 +639,6 @@ namespace xtd {
         return first_or_default(source, source_t {});
       }
       
-      /// @brief Generates a sequence of integral numbers within a specified range.
-      /// @param count The number of sequential integers to generate.
-      /// @return An xtd::collections::generic::ienumerable <xtd::int32> that contains a range of sequential integral numbers.
-      /// @exception xtd::argument_out_of_range_exception `count` is less than 0.
-      /// @par Examples
-      /// The following code example demonstrates how to use xtd::linq::enumerable::range to generate a sequence of values.
-      /// @include enumerable_range.cpp
-      template<class type_t>
-      static auto range(type_t count) {
-        auto step = type_t {};
-        return range(type_t {}, count, ++step);
-      }
-      /// @brief Generates a sequence of integral numbers within a specified range.
-      /// @param start The value of the first integer in the sequence.
-      /// @param count The number of sequential integers to generate.
-      /// @return An xtd::collections::generic::ienumerable <xtd::int32> that contains a range of sequential integral numbers.
-      /// @exception xtd::argument_out_of_range_exception `count` is less than 0.
-      /// @par Examples
-      /// The following code example demonstrates how to use xtd::linq::enumerable::range to generate a sequence of values.
-      /// @include enumerable_range.cpp
-      template<class type_t>
-      static auto range(type_t start, type_t count) {
-        auto step = type_t {};
-        return range(start, count, ++step);
-      }
-      /// @brief Generates a sequence of integral numbers within a specified range and step.
-      /// @param start The value of the first integer in the sequence.
-      /// @param count The number of sequential integers to generate.
-      /// @param step The integer number specifying the incrementation.
-      /// @return An xtd::collections::generic::ienumerable that contains a range of sequential integral numbers.
-      /// @exception xtd::argument_out_of_range_exception `count` is less than 0.
-      template<class type_t>
-      static auto range(type_t start, type_t count, type_t step) {
-        using param_type = std::tuple<type_t, type_t, type_t, type_t>;
-        auto numbers = __opaque_xtd_linq_lazy_enumerable__<type_t, param_type> {};
-        
-        if (step == type_t {}) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-        if (count < type_t {}) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        
-        numbers = __opaque_xtd_linq_lazy_enumerable__<type_t, param_type> {
-          std::make_tuple(start, count, step, type_t {}),
-          [](param_type & params) {
-            auto& result = std::get<0>(params);
-            auto& count = std::get<1>(params);
-            auto& step = std::get<2>(params);
-            auto& index = std::get<3>(params);
-            if (index != 0) result += step;
-            return index++ < count;
-          },
-          [start, count, step](param_type & params) {
-            params = std::make_tuple(start, count, step, type_t {});
-          }
-        };
-        return numbers;
-      }
-      
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values.
@@ -828,6 +772,62 @@ namespace xtd {
         std::sort(result.items.begin(), result.items.end(), [key_selector](const source_t& a, const source_t& b) {return key_selector(a) > key_selector(b);});
         return result;
       }
+      
+      /// @brief Generates a sequence of integral numbers within a specified range.
+      /// @param count The number of sequential integers to generate.
+      /// @return An xtd::collections::generic::ienumerable <xtd::int32> that contains a range of sequential integral numbers.
+      /// @exception xtd::argument_out_of_range_exception `count` is less than 0.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::range to generate a sequence of values.
+      /// @include enumerable_range.cpp
+      template<class type_t>
+      static auto range(type_t count) {
+        auto step = type_t {};
+        return range(type_t {}, count, ++step);
+      }
+      /// @brief Generates a sequence of integral numbers within a specified range.
+      /// @param start The value of the first integer in the sequence.
+      /// @param count The number of sequential integers to generate.
+      /// @return An xtd::collections::generic::ienumerable <xtd::int32> that contains a range of sequential integral numbers.
+      /// @exception xtd::argument_out_of_range_exception `count` is less than 0.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::range to generate a sequence of values.
+      /// @include enumerable_range.cpp
+      template<class type_t>
+      static auto range(type_t start, type_t count) {
+        auto step = type_t {};
+        return range(start, count, ++step);
+      }
+      /// @brief Generates a sequence of integral numbers within a specified range and step.
+      /// @param start The value of the first integer in the sequence.
+      /// @param count The number of sequential integers to generate.
+      /// @param step The integer number specifying the incrementation.
+      /// @return An xtd::collections::generic::ienumerable that contains a range of sequential integral numbers.
+      /// @exception xtd::argument_out_of_range_exception `count` is less than 0.
+      template<class type_t>
+      static auto range(type_t start, type_t count, type_t step) {
+        using param_type = std::tuple<type_t, type_t, type_t, type_t>;
+        auto numbers = __opaque_xtd_linq_lazy_enumerable__<type_t, param_type> {};
+        
+        if (step == type_t {}) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+        if (count < type_t {}) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        
+        numbers = __opaque_xtd_linq_lazy_enumerable__<type_t, param_type> {
+          std::make_tuple(start, count, step, type_t {}),
+          [](param_type & params) {
+            auto& result = std::get<0>(params);
+            auto& count = std::get<1>(params);
+            auto& step = std::get<2>(params);
+            auto& index = std::get<3>(params);
+            if (index != 0) result += step;
+            return index++ < count;
+          },
+          [start, count, step](param_type & params) {
+            params = std::make_tuple(start, count, step, type_t {});
+          }
+        };
+        return numbers;
+      }
 
       /// @brief Projects each element of a sequence into a new form.
       /// @tparam result_t The type of the resulting value.
@@ -837,7 +837,7 @@ namespace xtd {
       /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
-      /// @include enumerable_range.cpp
+      /// @include enumerable_select.cpp
       template<class result_t, class source_t>
       static auto select(const ienumerable<source_t>& source, const std::function<result_t(const source_t&)>& selector) {
         auto result = __opaque_xtd_linq_enumerable_collection__<result_t> {};
@@ -852,7 +852,7 @@ namespace xtd {
       /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
-      /// @include enumerable_range.cpp
+      /// @include enumerable_select.cpp
       template<class source_t>
       static auto select(const ienumerable<source_t>& source, const std::function<source_t(const source_t&)>& selector) {
         auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
