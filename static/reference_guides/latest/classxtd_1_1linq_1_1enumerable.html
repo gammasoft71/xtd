@@ -308,18 +308,6 @@ Inheritance diagram for xtd::linq::enumerable:</div>
 <tr class="memitem:af14ce27216bdbb95d8c1bd14dfee5e40"><td class="memTemplItemLeft" align="right" valign="top">static source_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af14ce27216bdbb95d8c1bd14dfee5e40">first_or_default</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source) noexcept</td></tr>
 <tr class="memdesc:af14ce27216bdbb95d8c1bd14dfee5e40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
 <tr class="separator:af14ce27216bdbb95d8c1bd14dfee5e40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3f2b197a8f9e4e52710edcdd59870e9" id="r_ad3f2b197a8f9e4e52710edcdd59870e9"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
-<tr class="memitem:ad3f2b197a8f9e4e52710edcdd59870e9"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad3f2b197a8f9e4e52710edcdd59870e9">range</a> (type_t <a class="el" href="#ae8deab4a1605619cb40cd56504a5b54c">count</a>)</td></tr>
-<tr class="memdesc:ad3f2b197a8f9e4e52710edcdd59870e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a sequence of integral numbers within a specified range.  <br /></td></tr>
-<tr class="separator:ad3f2b197a8f9e4e52710edcdd59870e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cfbc30cd929383ef82cb28ebd4cb7da" id="r_a4cfbc30cd929383ef82cb28ebd4cb7da"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
-<tr class="memitem:a4cfbc30cd929383ef82cb28ebd4cb7da"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a4cfbc30cd929383ef82cb28ebd4cb7da">range</a> (type_t start, type_t <a class="el" href="#ae8deab4a1605619cb40cd56504a5b54c">count</a>)</td></tr>
-<tr class="memdesc:a4cfbc30cd929383ef82cb28ebd4cb7da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a sequence of integral numbers within a specified range.  <br /></td></tr>
-<tr class="separator:a4cfbc30cd929383ef82cb28ebd4cb7da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2c9248a6f7a6114a7afd708f159de3b" id="r_aa2c9248a6f7a6114a7afd708f159de3b"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
-<tr class="memitem:aa2c9248a6f7a6114a7afd708f159de3b"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa2c9248a6f7a6114a7afd708f159de3b">range</a> (type_t start, type_t <a class="el" href="#ae8deab4a1605619cb40cd56504a5b54c">count</a>, type_t step)</td></tr>
-<tr class="memdesc:aa2c9248a6f7a6114a7afd708f159de3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a sequence of integral numbers within a specified range and step.  <br /></td></tr>
-<tr class="separator:aa2c9248a6f7a6114a7afd708f159de3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaa2c9615978fa0495b6a69a71a72508" id="r_aeaa2c9615978fa0495b6a69a71a72508"><td class="memTemplParams" colspan="2">template&lt;class source_t&gt; </td></tr>
 <tr class="memitem:aeaa2c9615978fa0495b6a69a71a72508"><td class="memTemplItemLeft" align="right" valign="top">static const auto &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aeaa2c9615978fa0495b6a69a71a72508">from</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source) noexcept</td></tr>
 <tr class="memdesc:aeaa2c9615978fa0495b6a69a71a72508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the input typed as <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt;.  <br /></td></tr>
@@ -360,6 +348,18 @@ Inheritance diagram for xtd::linq::enumerable:</div>
 <tr class="memitem:a1cc47eb4c8b139d56357fbe95926f0a1"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a1cc47eb4c8b139d56357fbe95926f0a1">order_by_descending</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const std::function&lt; source_t(const source_t &amp;)&gt; &amp;key_selector)</td></tr>
 <tr class="memdesc:a1cc47eb4c8b139d56357fbe95926f0a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements of a sequence in descending order according to a key.  <br /></td></tr>
 <tr class="separator:a1cc47eb4c8b139d56357fbe95926f0a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3f2b197a8f9e4e52710edcdd59870e9" id="r_ad3f2b197a8f9e4e52710edcdd59870e9"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
+<tr class="memitem:ad3f2b197a8f9e4e52710edcdd59870e9"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad3f2b197a8f9e4e52710edcdd59870e9">range</a> (type_t <a class="el" href="#ae8deab4a1605619cb40cd56504a5b54c">count</a>)</td></tr>
+<tr class="memdesc:ad3f2b197a8f9e4e52710edcdd59870e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a sequence of integral numbers within a specified range.  <br /></td></tr>
+<tr class="separator:ad3f2b197a8f9e4e52710edcdd59870e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cfbc30cd929383ef82cb28ebd4cb7da" id="r_a4cfbc30cd929383ef82cb28ebd4cb7da"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
+<tr class="memitem:a4cfbc30cd929383ef82cb28ebd4cb7da"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a4cfbc30cd929383ef82cb28ebd4cb7da">range</a> (type_t start, type_t <a class="el" href="#ae8deab4a1605619cb40cd56504a5b54c">count</a>)</td></tr>
+<tr class="memdesc:a4cfbc30cd929383ef82cb28ebd4cb7da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a sequence of integral numbers within a specified range.  <br /></td></tr>
+<tr class="separator:a4cfbc30cd929383ef82cb28ebd4cb7da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2c9248a6f7a6114a7afd708f159de3b" id="r_aa2c9248a6f7a6114a7afd708f159de3b"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
+<tr class="memitem:aa2c9248a6f7a6114a7afd708f159de3b"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa2c9248a6f7a6114a7afd708f159de3b">range</a> (type_t start, type_t <a class="el" href="#ae8deab4a1605619cb40cd56504a5b54c">count</a>, type_t step)</td></tr>
+<tr class="memdesc:aa2c9248a6f7a6114a7afd708f159de3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a sequence of integral numbers within a specified range and step.  <br /></td></tr>
+<tr class="separator:aa2c9248a6f7a6114a7afd708f159de3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d5849798f7b5ae566dd5e7c175dfe3d" id="r_a0d5849798f7b5ae566dd5e7c175dfe3d"><td class="memTemplParams" colspan="2">template&lt;class result_t, class source_t&gt; </td></tr>
 <tr class="memitem:a0d5849798f7b5ae566dd5e7c175dfe3d"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0d5849798f7b5ae566dd5e7c175dfe3d">select</a> (const <a class="el" href="#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable</a>&lt; source_t &gt; &amp;source, const std::function&lt; result_t(const source_t &amp;)&gt; &amp;selector)</td></tr>
 <tr class="memdesc:a0d5849798f7b5ae566dd5e7c175dfe3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form.  <br /></td></tr>
@@ -2800,194 +2800,6 @@ template&lt;class source_t&gt; </div>
 
 </div>
 </div>
-<a id="ad3f2b197a8f9e4e52710edcdd59870e9" name="ad3f2b197a8f9e4e52710edcdd59870e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">&#9670;&#160;</a></span>range() <span class="overload">[1/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static auto xtd::linq::enumerable::range </td>
-          <td>(</td>
-          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Generates a sequence of integral numbers within a specified range. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">count</td><td>The number of sequential integers to generate. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">xtd::int32</a>&gt; that contains a range of sequential integral numbers. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>`count` is less than 0. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#ad3f2b197a8f9e4e52710edcdd59870e9" title="Generates a sequence of integral numbers within a specified range.">xtd::linq::enumerable::range</a> to generate a sequence of values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; squares = <a class="code hl_function" href="#ad3f2b197a8f9e4e52710edcdd59870e9">enumerable::range</a>(1, 10).select([](<span class="keywordtype">int</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> * <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>;});</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> num : squares)</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(num);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// 1</span></div>
-<div class="line"><span class="comment">// 4</span></div>
-<div class="line"><span class="comment">// 9</span></div>
-<div class="line"><span class="comment">// 16</span></div>
-<div class="line"><span class="comment">// 25</span></div>
-<div class="line"><span class="comment">// 36</span></div>
-<div class="line"><span class="comment">// 49</span></div>
-<div class="line"><span class="comment">// 64</span></div>
-<div class="line"><span class="comment">// 81</span></div>
-<div class="line"><span class="comment">// 100</span></div>
-<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_ad3f2b197a8f9e4e52710edcdd59870e9"><div class="ttname"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">xtd::linq::enumerable::range</a></div><div class="ttdeci">static auto range(type_t count)</div><div class="ttdoc">Generates a sequence of integral numbers within a specified range.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:650</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">xtd::console_key::x</a></div><div class="ttdeci">@ x</div><div class="ttdoc">The X key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:134</div></div>
-</div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
-<a id="a4cfbc30cd929383ef82cb28ebd4cb7da" name="a4cfbc30cd929383ef82cb28ebd4cb7da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4cfbc30cd929383ef82cb28ebd4cb7da">&#9670;&#160;</a></span>range() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static auto xtd::linq::enumerable::range </td>
-          <td>(</td>
-          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Generates a sequence of integral numbers within a specified range. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">start</td><td>The value of the first integer in the sequence. </td></tr>
-    <tr><td class="paramname">count</td><td>The number of sequential integers to generate. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">xtd::int32</a>&gt; that contains a range of sequential integral numbers. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>`count` is less than 0. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#ad3f2b197a8f9e4e52710edcdd59870e9" title="Generates a sequence of integral numbers within a specified range.">xtd::linq::enumerable::range</a> to generate a sequence of values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; squares = <a class="code hl_function" href="#ad3f2b197a8f9e4e52710edcdd59870e9">enumerable::range</a>(1, 10).select([](<span class="keywordtype">int</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> * <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>;});</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> num : squares)</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(num);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// 1</span></div>
-<div class="line"><span class="comment">// 4</span></div>
-<div class="line"><span class="comment">// 9</span></div>
-<div class="line"><span class="comment">// 16</span></div>
-<div class="line"><span class="comment">// 25</span></div>
-<div class="line"><span class="comment">// 36</span></div>
-<div class="line"><span class="comment">// 49</span></div>
-<div class="line"><span class="comment">// 64</span></div>
-<div class="line"><span class="comment">// 81</span></div>
-<div class="line"><span class="comment">// 100</span></div>
-</div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
-<a id="aa2c9248a6f7a6114a7afd708f159de3b" name="aa2c9248a6f7a6114a7afd708f159de3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2c9248a6f7a6114a7afd708f159de3b">&#9670;&#160;</a></span>range() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static auto xtd::linq::enumerable::range </td>
-          <td>(</td>
-          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>step</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Generates a sequence of integral numbers within a specified range and step. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">start</td><td>The value of the first integer in the sequence. </td></tr>
-    <tr><td class="paramname">count</td><td>The number of sequential integers to generate. </td></tr>
-    <tr><td class="paramname">step</td><td>The integer number specifying the incrementation. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> that contains a range of sequential integral numbers. </dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>`count` is less than 0. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="aeaa2c9615978fa0495b6a69a71a72508" name="aeaa2c9615978fa0495b6a69a71a72508"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeaa2c9615978fa0495b6a69a71a72508">&#9670;&#160;</a></span>from() <span class="overload">[1/6]</span></h2>
 
@@ -3545,6 +3357,194 @@ template&lt;class source_t&gt; </div>
 
 </div>
 </div>
+<a id="ad3f2b197a8f9e4e52710edcdd59870e9" name="ad3f2b197a8f9e4e52710edcdd59870e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">&#9670;&#160;</a></span>range() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static auto xtd::linq::enumerable::range </td>
+          <td>(</td>
+          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generates a sequence of integral numbers within a specified range. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>The number of sequential integers to generate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">xtd::int32</a>&gt; that contains a range of sequential integral numbers. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>`count` is less than 0. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#ad3f2b197a8f9e4e52710edcdd59870e9" title="Generates a sequence of integral numbers within a specified range.">xtd::linq::enumerable::range</a> to generate a sequence of values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; squares = <a class="code hl_function" href="#ad3f2b197a8f9e4e52710edcdd59870e9">enumerable::range</a>(1, 10).select([](<span class="keywordtype">int</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> * <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>;});</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> num : squares)</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(num);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// 1</span></div>
+<div class="line"><span class="comment">// 4</span></div>
+<div class="line"><span class="comment">// 9</span></div>
+<div class="line"><span class="comment">// 16</span></div>
+<div class="line"><span class="comment">// 25</span></div>
+<div class="line"><span class="comment">// 36</span></div>
+<div class="line"><span class="comment">// 49</span></div>
+<div class="line"><span class="comment">// 64</span></div>
+<div class="line"><span class="comment">// 81</span></div>
+<div class="line"><span class="comment">// 100</span></div>
+<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_ad3f2b197a8f9e4e52710edcdd59870e9"><div class="ttname"><a href="#ad3f2b197a8f9e4e52710edcdd59870e9">xtd::linq::enumerable::range</a></div><div class="ttdeci">static auto range(type_t count)</div><div class="ttdoc">Generates a sequence of integral numbers within a specified range.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:784</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">xtd::console_key::x</a></div><div class="ttdeci">@ x</div><div class="ttdoc">The X key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:134</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a4cfbc30cd929383ef82cb28ebd4cb7da" name="a4cfbc30cd929383ef82cb28ebd4cb7da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cfbc30cd929383ef82cb28ebd4cb7da">&#9670;&#160;</a></span>range() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static auto xtd::linq::enumerable::range </td>
+          <td>(</td>
+          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generates a sequence of integral numbers within a specified range. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>The value of the first integer in the sequence. </td></tr>
+    <tr><td class="paramname">count</td><td>The number of sequential integers to generate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">xtd::int32</a>&gt; that contains a range of sequential integral numbers. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>`count` is less than 0. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#ad3f2b197a8f9e4e52710edcdd59870e9" title="Generates a sequence of integral numbers within a specified range.">xtd::linq::enumerable::range</a> to generate a sequence of values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; squares = <a class="code hl_function" href="#ad3f2b197a8f9e4e52710edcdd59870e9">enumerable::range</a>(1, 10).select([](<span class="keywordtype">int</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> * <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>;});</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> num : squares)</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(num);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// 1</span></div>
+<div class="line"><span class="comment">// 4</span></div>
+<div class="line"><span class="comment">// 9</span></div>
+<div class="line"><span class="comment">// 16</span></div>
+<div class="line"><span class="comment">// 25</span></div>
+<div class="line"><span class="comment">// 36</span></div>
+<div class="line"><span class="comment">// 49</span></div>
+<div class="line"><span class="comment">// 64</span></div>
+<div class="line"><span class="comment">// 81</span></div>
+<div class="line"><span class="comment">// 100</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="aa2c9248a6f7a6114a7afd708f159de3b" name="aa2c9248a6f7a6114a7afd708f159de3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2c9248a6f7a6114a7afd708f159de3b">&#9670;&#160;</a></span>range() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static auto xtd::linq::enumerable::range </td>
+          <td>(</td>
+          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">type_t</td>          <td class="paramname"><span class="paramname"><em>step</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generates a sequence of integral numbers within a specified range and step. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>The value of the first integer in the sequence. </td></tr>
+    <tr><td class="paramname">count</td><td>The number of sequential integers to generate. </td></tr>
+    <tr><td class="paramname">step</td><td>The integer number specifying the incrementation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> that contains a range of sequential integral numbers. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>`count` is less than 0. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a0d5849798f7b5ae566dd5e7c175dfe3d" name="a0d5849798f7b5ae566dd5e7c175dfe3d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0d5849798f7b5ae566dd5e7c175dfe3d">&#9670;&#160;</a></span>select() <span class="overload">[1/4]</span></h2>
 
@@ -3593,24 +3593,24 @@ template&lt;class result_t, class source_t&gt; </div>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#a0d5849798f7b5ae566dd5e7c175dfe3d" title="Projects each element of a sequence into a new form.">xtd::linq::enumerable::select</a> &lt;source_t, result_t&gt;(const ienumerable &lt;source_t&gt;&amp;, const std::function &lt;result_t(const source_t&amp;)&gt;&amp;) to project over a sequence of values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; squares = <a class="code hl_function" href="#ad3f2b197a8f9e4e52710edcdd59870e9">enumerable::range</a>(1, 10).select([](<span class="keywordtype">int</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> * <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>;});</div>
+<div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> num : squares)</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(num);</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = fruits.select&lt;std::tuple&lt;size_t, string&gt;&gt;([](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fruit, <span class="keywordtype">size_t</span> index) {</div>
+<div class="line">    <span class="keywordflow">return</span> std::make_tuple(index, fruit.substring(0, index));</div>
+<div class="line">  });</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [index, str] : <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a>)</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{{ index = {}, str = {} }}&quot;</span>, index, str);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// 1</span></div>
-<div class="line"><span class="comment">// 4</span></div>
-<div class="line"><span class="comment">// 9</span></div>
-<div class="line"><span class="comment">// 16</span></div>
-<div class="line"><span class="comment">// 25</span></div>
-<div class="line"><span class="comment">// 36</span></div>
-<div class="line"><span class="comment">// 49</span></div>
-<div class="line"><span class="comment">// 64</span></div>
-<div class="line"><span class="comment">// 81</span></div>
-<div class="line"><span class="comment">// 100</span></div>
+<div class="line"><span class="comment">// { index = 0, str =  }</span></div>
+<div class="line"><span class="comment">// { index = 1, str = b }</span></div>
+<div class="line"><span class="comment">// { index = 2, str = ma }</span></div>
+<div class="line"><span class="comment">// { index = 3, str = ora }</span></div>
+<div class="line"><span class="comment">// { index = 4, str = pass }</span></div>
+<div class="line"><span class="comment">// { index = 5, str = grape }</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -3662,24 +3662,24 @@ template&lt;class source_t&gt; </div>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="#a0d5849798f7b5ae566dd5e7c175dfe3d" title="Projects each element of a sequence into a new form.">xtd::linq::enumerable::select</a> &lt;source_t, result_t&gt;(const ienumerable &lt;source_t&gt;&amp;, const std::function &lt;result_t(const source_t&amp;)&gt;&amp;) to project over a sequence of values. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; squares = <a class="code hl_function" href="#ad3f2b197a8f9e4e52710edcdd59870e9">enumerable::range</a>(1, 10).select([](<span class="keywordtype">int</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> * <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>;});</div>
+<div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> num : squares)</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(num);</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a> = fruits.select&lt;std::tuple&lt;size_t, string&gt;&gt;([](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fruit, <span class="keywordtype">size_t</span> index) {</div>
+<div class="line">    <span class="keywordflow">return</span> std::make_tuple(index, fruit.substring(0, index));</div>
+<div class="line">  });</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [index, str] : <a class="code hl_enumvalue" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba1b1cc7f086b3f074da452bc3129981eb">query</a>)</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{{ index = {}, str = {} }}&quot;</span>, index, str);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// 1</span></div>
-<div class="line"><span class="comment">// 4</span></div>
-<div class="line"><span class="comment">// 9</span></div>
-<div class="line"><span class="comment">// 16</span></div>
-<div class="line"><span class="comment">// 25</span></div>
-<div class="line"><span class="comment">// 36</span></div>
-<div class="line"><span class="comment">// 49</span></div>
-<div class="line"><span class="comment">// 64</span></div>
-<div class="line"><span class="comment">// 81</span></div>
-<div class="line"><span class="comment">// 100</span></div>
+<div class="line"><span class="comment">// { index = 0, str =  }</span></div>
+<div class="line"><span class="comment">// { index = 1, str = b }</span></div>
+<div class="line"><span class="comment">// { index = 2, str = ma }</span></div>
+<div class="line"><span class="comment">// { index = 3, str = ora }</span></div>
+<div class="line"><span class="comment">// { index = 4, str = pass }</span></div>
+<div class="line"><span class="comment">// { index = 5, str = grape }</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -4029,7 +4029,7 @@ template&lt;class source_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2025 19:55:22 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Aug 31 2025 20:45:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
