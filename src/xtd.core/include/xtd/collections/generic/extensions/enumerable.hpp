@@ -315,6 +315,25 @@ namespace xtd {
             return xtd::linq::enumerable::order_by(base(), key_selector);
           }
           
+          /// @brief Sorts the elements of a sequence in descending order according to a key.
+          /// @param key_selector A function to extract a key from an element.
+          /// @par Examples
+          /// The following code example demonstrates how to use order_by<key_t, source_t>(ienumerable <source_t>, std::function<key_t(const source_t&)>) to sort the elements of a sequence.
+          /// @include linq_order_by.cpp
+          template<class key_t>
+          auto order_by_descending(const std::function<key_t(const source_t&)>& key_selector) const {
+            return xtd::linq::enumerable::order_by_descending<key_t, source_t>(base(), key_selector);
+          }
+          
+          /// @brief Sorts the elements of a sequence in descending order according to a key.
+          /// @param key_selector A function to extract a key from an element.
+          /// @par Examples
+          /// The following code example demonstrates how to use order_by<key_t, source_t>(ienumerable <source_t>, std::function<key_t(const source_t&)>) to sort the elements of a sequence.
+          /// @include linq_order_by.cpp
+          auto order_by_descending(const std::function<source_t(const source_t&)>& key_selector) const {
+            return xtd::linq::enumerable::order_by_descending(base(), key_selector);
+          }
+          
           /// @brief Sorts the elements of a sequence in ascending order according to a key.
           /// @param key_selector A function to extract a key from an element.
           /// @par Examples
@@ -324,7 +343,7 @@ namespace xtd {
           auto order_by(const std::function<key_t(const source_t&)>& key_selector) const {
             return xtd::linq::enumerable::order_by<key_t, source_t>(base(), key_selector);
           }
-          
+
           /// @brief Projects each element of a sequence into a new form.
           /// @tparam result_t The type of the resulting value.
           /// @param source A sequence of values to invoke a transform function on.
