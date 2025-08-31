@@ -65,7 +65,7 @@ namespace xtd {
     /// @brief Represents the array allocator type.
     using allocator_type = xtd::collections::generic::helpers::allocator<value_type>;
     /// @brief Represents the array base type.
-    using base_type = typename __xtd_vector__<value_type, allocator_type>::base_type;
+    using base_type = typename __xtd_raw_array_data__<value_type, allocator_type>::base_type;
     /// @brief Represents the array size type (usually xtd::size).
     using size_type = xtd::size;
     /// @brief Represents the array difference type (usually xtd::ptrdiff).
@@ -83,9 +83,9 @@ namespace xtd {
     /// @brief Represents the const iterator of array value type.
     using const_iterator = typename xtd::collections::generic::ienumerable<type_t>::const_iterator;
     /// @brief Represents the reverse iterator of array value type.
-    using reverse_iterator = typename __xtd_vector__<value_type>::reverse_iterator;
+    using reverse_iterator = typename __xtd_raw_array_data__<value_type>::reverse_iterator;
     /// @brief Represents the const reverse iterator of array value type.
-    using const_reverse_iterator = typename __xtd_vector__<value_type>::const_reverse_iterator;
+    using const_reverse_iterator = typename __xtd_raw_array_data__<value_type>::const_reverse_iterator;
     /// @}
     
     /// @name Public Fields
@@ -651,13 +651,13 @@ protected:
     bool remove(const type_t& item) override {return false;}
     void remove_at(size_type index) override {}
     
-    typename __xtd_vector__ < value_type >::iterator to_base_type_iterator(iterator value) noexcept {
+    typename __xtd_raw_array_data__ < value_type >::iterator to_base_type_iterator(iterator value) noexcept {
       if (value == begin()) return data_->items.begin();
       if (value == end()) return data_->items.end();
       return data_->items.begin() + (value - begin());
     }
     
-    iterator to_iterator(typename __xtd_vector__ < value_type >::iterator value) noexcept {
+    iterator to_iterator(typename __xtd_raw_array_data__ < value_type >::iterator value) noexcept {
       if (value == data_->items.begin()) return begin();
       if (value == data_->items.end()) return end();
       return begin() + (value - data_->items.begin());
@@ -665,7 +665,7 @@ protected:
     
     struct array_data {
       size_type version = 0;
-      __xtd_vector__ < value_type > items;
+      __xtd_raw_array_data__ < value_type > items;
       std::vector < size_type > lower_bound {0};
       std::vector < size_type > upper_bound {std::numeric_limits < size_type >::max()};
       object sync_root;
