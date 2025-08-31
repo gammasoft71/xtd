@@ -828,7 +828,7 @@ namespace xtd {
         std::sort(result.items.begin(), result.items.end(), [key_selector](const source_t& a, const source_t& b) {return key_selector(a) > key_selector(b);});
         return result;
       }
-
+      
       /// @brief Projects each element of a sequence into a new form.
       /// @tparam result_t The type of the resulting value.
       /// @tparam source_t The type of the elements of source.
