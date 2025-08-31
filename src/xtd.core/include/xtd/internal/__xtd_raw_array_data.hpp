@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains __xtd_vector__ class.
+/// @brief Contains __xtd_raw_array_data__ class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
@@ -22,13 +22,13 @@
 ///
 /// Notes:
 /// - This type is *not* intended to be part of the public xtd API.
-/// - Do not expose `__xtd_vector__` directly in public headers.
+/// - Do not expose `__xtd_raw_array_data__` directly in public headers.
 /// - Safe to use without moderation inside `xtd::internal` namespace.
 ///
 /// @tparam type_t The element type stored in the container.
 /// @remarks Semantics are intentionally aligned with `std::vector` where possible for familiarity.
 template<class type_t, class allocator_t = std::allocator<type_t>>
-class __xtd_vector__ {
+class __xtd_raw_array_data__ {
 public:
   using value_type = type_t;
   using storage_value_type = std::conditional_t<std::is_same_v<value_type, bool>, std::uint8_t, value_type >;
@@ -81,7 +81,7 @@ public:
     iterator_base_type to_base_type() const {return it_;}
     
   private:
-    friend class __xtd_vector__;
+    friend class __xtd_raw_array_data__;
     iterator_base_type it_;
   };
   //using const_iterator = typename base_type::const_iterator;
@@ -125,32 +125,32 @@ public:
     iterator_base_type to_base_type() const {return it_;}
     
   private:
-    friend class __xtd_vector__;
+    friend class __xtd_raw_array_data__;
     iterator_base_type it_;
   };
   using reverse_iterator = std::reverse_iterator<iterator>;
   using const_reverse_iterator = std::reverse_iterator<const_iterator>;
   
-  __xtd_vector__() noexcept = default;
-  explicit __xtd_vector__(const allocator_type & alloc) noexcept : items_(alloc) {}
-  __xtd_vector__(size_type count, const type_t& value, const allocator_type& alloc = allocator_type()) : items_(count, value, alloc) {}
-  explicit __xtd_vector__(size_type count, const allocator_type& alloc = allocator_type()) : items_(count, alloc) {}
+  __xtd_raw_array_data__() noexcept = default;
+  explicit __xtd_raw_array_data__(const allocator_type & alloc) noexcept : items_(alloc) {}
+  __xtd_raw_array_data__(size_type count, const type_t& value, const allocator_type& alloc = allocator_type()) : items_(count, value, alloc) {}
+  explicit __xtd_raw_array_data__(size_type count, const allocator_type& alloc = allocator_type()) : items_(count, alloc) {}
   template<class input_iterator_t>
-  __xtd_vector__(input_iterator_t first, input_iterator_t last, const allocator_type& alloc = allocator_type()) : items_(first, last, alloc) {}
-  __xtd_vector__(const __xtd_vector__ & vector) : items_(vector.items_) {}
-  __xtd_vector__(const base_type & vector) : items_(vector) {}
-  __xtd_vector__(const __xtd_vector__ & vector, const allocator_type & alloc) : items_(vector.items_, alloc) {}
-  __xtd_vector__(const base_type & vector, const allocator_type & alloc) : items_(vector, alloc) {}
-  __xtd_vector__(std::initializer_list<type_t> items, const allocator_type& alloc = allocator_type()) requires(!std::is_same_v<type_t, bool>) : items_(items, alloc) {}
-  __xtd_vector__(std::initializer_list<bool> items, const allocator_type& alloc = allocator_type()) requires(std::is_same_v<type_t, bool>)  : items_(alloc) {
+  __xtd_raw_array_data__(input_iterator_t first, input_iterator_t last, const allocator_type& alloc = allocator_type()) : items_(first, last, alloc) {}
+  __xtd_raw_array_data__(const __xtd_raw_array_data__ & vector) : items_(vector.items_) {}
+  __xtd_raw_array_data__(const base_type & vector) : items_(vector) {}
+  __xtd_raw_array_data__(const __xtd_raw_array_data__ & vector, const allocator_type & alloc) : items_(vector.items_, alloc) {}
+  __xtd_raw_array_data__(const base_type & vector, const allocator_type & alloc) : items_(vector, alloc) {}
+  __xtd_raw_array_data__(std::initializer_list<type_t> items, const allocator_type& alloc = allocator_type()) requires(!std::is_same_v<type_t, bool>) : items_(items, alloc) {}
+  __xtd_raw_array_data__(std::initializer_list<bool> items, const allocator_type& alloc = allocator_type()) requires(std::is_same_v<type_t, bool>)  : items_(alloc) {
     items_.reserve(items.size());
     for (auto b : items)
       items_.push_back(b ? 1 : 0);
   }
-  __xtd_vector__(__xtd_vector__&& other) : items_(std::move(other.items_)) {}
-  __xtd_vector__(base_type&& other) : items_(std::move(other)) {}
-  __xtd_vector__(__xtd_vector__&& other, const allocator_type & alloc) : items_(std::move(other.items_), alloc) {}
-  __xtd_vector__(base_type&& other, const allocator_type & alloc) : items_(std::move(other), alloc) {}
+  __xtd_raw_array_data__(__xtd_raw_array_data__&& other) : items_(std::move(other.items_)) {}
+  __xtd_raw_array_data__(base_type&& other) : items_(std::move(other)) {}
+  __xtd_raw_array_data__(__xtd_raw_array_data__&& other, const allocator_type & alloc) : items_(std::move(other.items_), alloc) {}
+  __xtd_raw_array_data__(base_type&& other, const allocator_type & alloc) : items_(std::move(other), alloc) {}
   
   reference back() {return at(size() - 1);}
   const_reference back() const {return at(size() - 1);}
@@ -232,15 +232,15 @@ public:
   
   void shrink_to_fit() {items_.shrink_to_fit();}
   
-  void swap(__xtd_vector__ & other) noexcept {items_.swap(other.items_);}
+  void swap(__xtd_raw_array_data__ & other) noexcept {items_.swap(other.items_);}
   
-  __xtd_vector__& operator =(const __xtd_vector__ & other) = default;
-  __xtd_vector__& operator =(__xtd_vector__&& other) noexcept  = default;
-  __xtd_vector__& operator =(std::initializer_list<type_t>& items) requires(!std::is_same_v<type_t, bool>) {
+  __xtd_raw_array_data__& operator =(const __xtd_raw_array_data__ & other) = default;
+  __xtd_raw_array_data__& operator =(__xtd_raw_array_data__&& other) noexcept  = default;
+  __xtd_raw_array_data__& operator =(std::initializer_list<type_t>& items) requires(!std::is_same_v<type_t, bool>) {
     items_ = items;
     return *this;
   }
-  __xtd_vector__& operator =(std::initializer_list<bool>& items) requires(std::is_same_v<type_t, bool>) {
+  __xtd_raw_array_data__& operator =(std::initializer_list<bool>& items) requires(std::is_same_v<type_t, bool>) {
     items_.clear();
     items_.reserve(items.size());
     for (auto b : items)
@@ -262,17 +262,17 @@ private:
 };
 
 template<class type_t>
-__xtd_vector__(std::initializer_list<type_t>) -> __xtd_vector__<type_t, std::allocator<type_t >>;
+__xtd_raw_array_data__(std::initializer_list<type_t>) -> __xtd_raw_array_data__<type_t, std::allocator<type_t >>;
 
 template<class type_t>
-__xtd_vector__(const std::vector<type_t>&) -> __xtd_vector__<type_t, std::allocator<type_t >>;
+__xtd_raw_array_data__(const std::vector<type_t>&) -> __xtd_raw_array_data__<type_t, std::allocator<type_t >>;
 
 template<class type_t, class allocator_t = std::allocator<type_t>>
-__xtd_vector__(const __xtd_vector__<type_t, allocator_t>&) -> __xtd_vector__<type_t, allocator_t>;
+__xtd_raw_array_data__(const __xtd_raw_array_data__<type_t, allocator_t>&) -> __xtd_raw_array_data__<type_t, allocator_t>;
 
 template<class type_t>
-__xtd_vector__(std::vector<type_t>&&) -> __xtd_vector__<type_t, std::allocator<type_t >>;
+__xtd_raw_array_data__(std::vector<type_t>&&) -> __xtd_raw_array_data__<type_t, std::allocator<type_t >>;
 
 template<class type_t, class allocator_t = std::allocator<type_t>>
-__xtd_vector__(__xtd_vector__<type_t, allocator_t>&&) -> __xtd_vector__<type_t, allocator_t>;
+__xtd_raw_array_data__(__xtd_raw_array_data__<type_t, allocator_t>&&) -> __xtd_raw_array_data__<type_t, allocator_t>;
 /// @endcond

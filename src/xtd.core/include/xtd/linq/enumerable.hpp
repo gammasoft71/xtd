@@ -13,7 +13,7 @@
 #include "../internal/__array_definition.hpp"
 #include "../internal/__key_value_pair_definition.hpp"
 #include "../internal/__list_definition.hpp"
-#include "../internal/__xtd_vector.hpp"
+#include "../internal/__xtd_raw_array_data.hpp"
 #undef  __XTD_CORE_INTERNAL__
 #include "../decimal.hpp"
 #include "../iequatable.hpp"

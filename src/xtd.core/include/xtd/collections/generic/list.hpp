@@ -8,7 +8,7 @@
 #include "ilist.hpp"
 #define __XTD_CORE_INTERNAL__
 #include "../../internal/__list_definition.hpp"
-#include "../../internal/__xtd_vector.hpp"
+#include "../../internal/__xtd_raw_array_data.hpp"
 #undef  __XTD_CORE_INTERNAL__
 #include "../object_model/read_only_collection.hpp"
 #include "../../action.hpp"
@@ -126,7 +126,7 @@ namespace xtd {
         /// @brief Represents the list allocator type.
         using allocator_type = typename xtd::collections::generic::helpers::allocator<value_type>;
         /// @brief Represents the list base type.
-        using base_type = typename __xtd_vector__<value_type>::base_type;
+        using base_type = typename __xtd_raw_array_data__<value_type>::base_type;
         /// @brief Represents the list base type.
         using const_base_type = const base_type;
         /// @brief Represents the list size type (usually xtd::size).
@@ -146,9 +146,9 @@ namespace xtd {
         /// @brief Represents the const iterator of list value type.
         using const_iterator = typename xtd::collections::generic::ienumerable<type_t>::const_iterator;
         /// @brief Represents the reverse iterator of list value type.
-        using reverse_iterator = typename __xtd_vector__<value_type>::reverse_iterator;
+        using reverse_iterator = typename __xtd_raw_array_data__<value_type>::reverse_iterator;
         /// @brief Represents the const reverse iterator of list value type.
-        using const_reverse_iterator = typename __xtd_vector__<value_type>::const_reverse_iterator;
+        using const_reverse_iterator = typename __xtd_raw_array_data__<value_type>::const_reverse_iterator;
         /// @brief Represents the read only collection of of list.
         using read_only_collection = xtd::collections::object_model::read_only_collection<value_type>;
         /// @}
@@ -1449,27 +1449,27 @@ namespace xtd {
         /// @}
         
       private:
-        typename __xtd_vector__<value_type>::const_iterator to_const_base_type_iterator(const_iterator value) const noexcept {
+        typename __xtd_raw_array_data__<value_type>::const_iterator to_const_base_type_iterator(const_iterator value) const noexcept {
           return ilist<type_t>::to_const_iterator(value, *this, data_->items);
         }
         
-        const_iterator to_const_type_iterator(typename __xtd_vector__<value_type>::const_iterator value) const noexcept {
+        const_iterator to_const_type_iterator(typename __xtd_raw_array_data__<value_type>::const_iterator value) const noexcept {
           return ilist<type_t>::to_const_iterator(value, data_->items, *this);
         }
         
-        typename __xtd_vector__<value_type>::const_iterator to_base_type_iterator(const_iterator value) const noexcept {
+        typename __xtd_raw_array_data__<value_type>::const_iterator to_base_type_iterator(const_iterator value) const noexcept {
           return ilist<type_t>::to_iterator(value, *this, data_->items);
         }
         
-        typename __xtd_vector__<value_type>::iterator to_base_type_iterator(iterator value) noexcept {
+        typename __xtd_raw_array_data__<value_type>::iterator to_base_type_iterator(iterator value) noexcept {
           return ilist<type_t>::to_iterator(value, *this, data_->items);
         }
         
-        const_iterator to_type_iterator(typename __xtd_vector__<value_type>::const_iterator value) const noexcept {
+        const_iterator to_type_iterator(typename __xtd_raw_array_data__<value_type>::const_iterator value) const noexcept {
           return ilist<type_t>::to_iterator(value, data_->items, *this);
         }
         
-        iterator to_type_iterator(typename __xtd_vector__<value_type>::iterator value) noexcept {
+        iterator to_type_iterator(typename __xtd_raw_array_data__<value_type>::iterator value) noexcept {
           return ilist<type_t>::to_iterator(value, data_->items, *this);
         }
         
@@ -1494,7 +1494,7 @@ namespace xtd {
           list_data(const list_data&) = default;
           list_data& operator =(const list_data&) = default;
           
-          __xtd_vector__<value_type> items;
+          __xtd_raw_array_data__<value_type> items;
           size_type version = 0;
           xtd::object sync_root;
         };

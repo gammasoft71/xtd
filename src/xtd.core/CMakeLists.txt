@@ -861,7 +861,7 @@ add_sources(
   "include/xtd/internal/__xtd_debugbreak.hpp"
   "include/xtd/internal/__xtd_source_location.hpp"
   "include/xtd/internal/__xtd_std_version.hpp"
-  "include/xtd/internal/__xtd_vector.hpp"
+  "include/xtd/internal/__xtd_raw_array_data.hpp"
   "include/xtd/io/binary_reader.hpp"
   "include/xtd/io/binary_reader"
   "include/xtd/io/binary_writer.hpp"
