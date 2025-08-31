@@ -150,7 +150,9 @@ namespace xtd {
   #endif
   template<class type_t>
   inline std::string to_string(const xtd::collections::generic::ienumerable<type_t>& values, const std::string& fmt, const std::locale& loc);
-  
+  template<class type_t>
+  inline std::string to_string(const __xtd_raw_array_data__<type_t>& values, const std::string& fmt, const std::locale& loc);
+
   template<class value_t>
   inline std::wstring to_string(const value_t& value, const std::wstring& fmt, const std::locale& loc);
   template<>
