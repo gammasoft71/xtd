@@ -105,12 +105,36 @@ $(function(){ initResizable(false); });
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>The <a class="el" href="classxtd_1_1ranges_1_1views_1_1distinct__view.html" title="The xtd::ranges::views::distinct_view class is used to distinct elements from a sequence.">xtd::ranges::views::distinct_view</a> class is used to distinct elements from a sequence. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1ranges_1_1views_1_1distinct__view.html">distinct_view</a>;</div>
-<div class="ttc" id="aclassxtd_1_1ranges_1_1views_1_1distinct__view_html"><div class="ttname"><a href="classxtd_1_1ranges_1_1views_1_1distinct__view.html">xtd::ranges::views::distinct_view</a></div><div class="ttdoc">The xtd::ranges::views::distinct_view class is used to distinct elements from a sequence.</div><div class="ttdef"><b>Definition</b> distinct_view.hpp:39</div></div>
+<div class="ttc" id="aclassxtd_1_1ranges_1_1views_1_1distinct__view_html"><div class="ttname"><a href="classxtd_1_1ranges_1_1views_1_1distinct__view.html">xtd::ranges::views::distinct_view</a></div><div class="ttdoc">The xtd::ranges::views::distinct_view class is used to distinct elements from a sequence.</div><div class="ttdef"><b>Definition</b> distinct_view.hpp:44</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/ranges/views/distinct_view&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1ranges_1_1views.html" title="The view namesapce contains range views, lightweight objects that indirectly represent iterable seque...">xtd::ranges::views</a> </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="group__ranges.html#gabc93573a9d807bd1f69040b8c743d401" title="The xtd::ranges::views::distinct_view instance.">xtd::ranges::views::distinct</a> instance : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> numbers = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {2, 7, 3, 1, 1, 4, 10, 5, 3, 3, 3, 6, 6, 2, 8, 9, 8, 9};</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;numbers = {}&quot;</span>, numbers | <a class="code hl_variable" href="group__ranges.html#gabc93573a9d807bd1f69040b8c743d401">distinct</a>);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// numbers = [2, 7, 3, 1, 4, 10, 5, 6, 8, 9]</span></div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:63</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="agroup__ranges_html_gabc93573a9d807bd1f69040b8c743d401"><div class="ttname"><a href="group__ranges.html#gabc93573a9d807bd1f69040b8c743d401">xtd::ranges::views::distinct</a></div><div class="ttdeci">constexpr auto distinct</div><div class="ttdoc">The xtd::ranges::views::distinct_view instance.</div><div class="ttdef"><b>Definition</b> distinct.hpp:40</div></div>
+</div><!-- fragment --> The following example shows how to use <a class="el" href="classxtd_1_1ranges_1_1views_1_1distinct__view.html" title="The xtd::ranges::views::distinct_view class is used to distinct elements from a sequence.">xtd::ranges::views::distinct_view</a> class : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> numbers = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {2, 7, 3, 1, 1, 4, 10, 5, 3, 3, 3, 6, 6, 2, 8, 9, 8, 9};</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;numbers = {}&quot;</span>, <a class="code hl_variable" href="group__ranges.html#gabc93573a9d807bd1f69040b8c743d401">distinct</a>(numbers));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// numbers = [2, 7, 3, 1, 4, 10, 5, 6, 8, 9]</span></div>
+</div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Operators</h2></td></tr>
 <tr class="memitem:a248f45169dee68e5bc39d4896856766c" id="r_a248f45169dee68e5bc39d4896856766c"><td class="memTemplParams" colspan="2">template&lt;std::ranges::range range_t&gt; </td></tr>
@@ -247,7 +271,7 @@ template&lt;typename comparer_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2025 20:45:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 08:37:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
