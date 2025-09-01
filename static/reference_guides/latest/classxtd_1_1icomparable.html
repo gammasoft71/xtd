@@ -124,10 +124,7 @@ Inheritance diagram for xtd::icomparable&lt; type_t &gt;:</div>
 class xtd::icomparable&lt; type_t &gt;</div><p>Defines a generalized comparison method that a value type or class implements to create a type-specific comparison method. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/icomparable&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>foo : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1icomparable.html">icomparable</a>&lt;foo&gt; {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -144,34 +141,34 @@ class xtd::icomparable&lt; type_t &gt;</div><p>Defines a generalized comparison 
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}}.compare_to(foo {{42}}) = {}&quot;</span>, foo {42}.compare_to(foo {42}));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}}.compare_to(foo {{41}}) = {}&quot;</span>, foo {42}.compare_to(foo {41}));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}}.compare_to(foo {{43}}) = {}&quot;</span>, foo {42}.compare_to(foo {43}));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;foo {{42}}.compare_to(foo {{42}}) = {}&quot;</span>, foo {42}.compare_to(foo {42}));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;foo {{42}}.compare_to(foo {{41}}) = {}&quot;</span>, foo {42}.compare_to(foo {41}));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;foo {{42}}.compare_to(foo {{43}}) = {}&quot;</span>, foo {42}.compare_to(foo {43}));</div>
+<div class="line">  console::write_line();</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &lt;=&gt; foo {{42}} = {}&quot;</span>, foo {42} &lt;=&gt; foo {42});</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &lt;=&gt; foo {{41}} = {}&quot;</span>, foo {42} &lt;=&gt; foo {41});</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &lt;=&gt; foo {{43}} = {}&quot;</span>, foo {42} &lt;=&gt; foo {43});</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;foo {{42}} &lt;=&gt; foo {{42}} = {}&quot;</span>, foo {42} &lt;=&gt; foo {42});</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;foo {{42}} &lt;=&gt; foo {{41}} = {}&quot;</span>, foo {42} &lt;=&gt; foo {41});</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;foo {{42}} &lt;=&gt; foo {{43}} = {}&quot;</span>, foo {42} &lt;=&gt; foo {43});</div>
+<div class="line">  console::write_line();</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &lt;= foo {{42}} = {}&quot;</span>, foo {42} &lt;= foo {42});</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &lt;= foo {{41}} = {}&quot;</span>, foo {42} &lt;= foo {41});</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &lt;= foo {{43}} = {}&quot;</span>, foo {42} &lt;= foo {43});</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;foo {{42}} &lt;= foo {{42}} = {}&quot;</span>, foo {42} &lt;= foo {42});</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;foo {{42}} &lt;= foo {{41}} = {}&quot;</span>, foo {42} &lt;= foo {41});</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;foo {{42}} &lt;= foo {{43}} = {}&quot;</span>, foo {42} &lt;= foo {43});</div>
+<div class="line">  console::write_line();</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &lt; foo {{42}} = {}&quot;</span>, foo {42} &lt; foo {42});</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &lt; foo {{41}} = {}&quot;</span>, foo {42} &lt; foo {41});</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &lt; foo {{43}} = {}&quot;</span>, foo {42} &lt; foo {43});</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;foo {{42}} &lt; foo {{42}} = {}&quot;</span>, foo {42} &lt; foo {42});</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;foo {{42}} &lt; foo {{41}} = {}&quot;</span>, foo {42} &lt; foo {41});</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;foo {{42}} &lt; foo {{43}} = {}&quot;</span>, foo {42} &lt; foo {43});</div>
+<div class="line">  console::write_line();</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &gt;= foo {{42}} = {}&quot;</span>, foo {42} &gt;= foo {42});</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &gt;= foo {{41}} = {}&quot;</span>, foo {42} &gt;= foo {41});</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &gt;= foo {{43}} = {}&quot;</span>, foo {42} &gt;= foo {43});</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;foo {{42}} &gt;= foo {{42}} = {}&quot;</span>, foo {42} &gt;= foo {42});</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;foo {{42}} &gt;= foo {{41}} = {}&quot;</span>, foo {42} &gt;= foo {41});</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;foo {{42}} &gt;= foo {{43}} = {}&quot;</span>, foo {42} &gt;= foo {43});</div>
+<div class="line">  console::write_line();</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &gt; foo {{42}} = {}&quot;</span>, foo {42} &gt; foo {42});</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &gt; foo {{41}} = {}&quot;</span>, foo {42} &gt; foo {41});</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;foo {{42}} &gt; foo {{43}} = {}&quot;</span>, foo {42} &gt; foo {43});</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;foo {{42}} &gt; foo {{42}} = {}&quot;</span>, foo {42} &gt; foo {42});</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;foo {{42}} &gt; foo {{41}} = {}&quot;</span>, foo {42} &gt; foo {41});</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;foo {{42}} &gt; foo {{43}} = {}&quot;</span>, foo {42} &gt; foo {43});</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -199,16 +196,12 @@ class xtd::icomparable&lt; type_t &gt;</div><p>Defines a generalized comparison 
 <div class="line"><span class="comment">// foo {42} &gt; foo {42} = false</span></div>
 <div class="line"><span class="comment">// foo {42} &gt; foo {41} = true</span></div>
 <div class="line"><span class="comment">// foo {42} &gt; foo {43} = false</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1icomparable_html"><div class="ttname"><a href="classxtd_1_1icomparable.html">xtd::icomparable</a></div><div class="ttdoc">Defines a generalized comparison method that a value type or class implements to create a type-specif...</div><div class="ttdef"><b>Definition</b> icomparable.hpp:21</div></div>
 <div class="ttc" id="aclassxtd_1_1icomparable_html_a8e5ad6ed9d798584e8b9be5749d6faa5"><div class="ttname"><a href="#a8e5ad6ed9d798584e8b9be5749d6faa5">xtd::icomparable::compare_to</a></div><div class="ttdeci">virtual int32 compare_to(const type_t &amp;obj) const noexcept=0</div><div class="ttdoc">Compares the current instance with another object of the same type.</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="boxed_info_8cpp-example.html#_a0">boxed_info.cpp</a>, <a class="el" href="generic_ienumerator_8cpp-example.html#_a2">generic_ienumerator.cpp</a>, <a class="el" href="icomparable_8cpp-example.html#_a0">icomparable.cpp</a>, <a class="el" href="ienumerable_8cpp-example.html#_a2">ienumerable.cpp</a>, <a class="el" href="ienumerator_8cpp-example.html#_a2">ienumerator.cpp</a>, and <a class="el" href="sprintf_class_8cpp-example.html#_a1">sprintf_class.cpp</a>.</dd>
-</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a8e5ad6ed9d798584e8b9be5749d6faa5" id="r_a8e5ad6ed9d798584e8b9be5749d6faa5"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e5ad6ed9d798584e8b9be5749d6faa5">compare_to</a> (const type_t &amp;obj) const noexcept=0</td></tr>
+<tr class="memitem:a8e5ad6ed9d798584e8b9be5749d6faa5" id="r_a8e5ad6ed9d798584e8b9be5749d6faa5"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e5ad6ed9d798584e8b9be5749d6faa5">compare_to</a> (const type_t &amp;obj) const noexcept=0</td></tr>
 <tr class="memdesc:a8e5ad6ed9d798584e8b9be5749d6faa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
 <tr class="separator:a8e5ad6ed9d798584e8b9be5749d6faa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -225,7 +218,7 @@ template&lt;class type_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="classxtd_1_1icomparable.html">xtd::icomparable</a>&lt; type_t &gt;::compare_to </td>
+          <td class="memname">virtual <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="classxtd_1_1icomparable.html">xtd::icomparable</a>&lt; type_t &gt;::compare_to </td>
           <td>(</td>
           <td class="paramtype">const type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
           <td> const</td>
@@ -268,7 +261,7 @@ template&lt;class type_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

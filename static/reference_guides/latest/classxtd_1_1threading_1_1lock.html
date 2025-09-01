@@ -247,8 +247,6 @@ Inheritance diagram for xtd::threading::lock:</div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>See <a class="el" href="classxtd_1_1threading_1_1monitor.html" title="Provides a mechanism that synchronizes access to objects.">xtd::threading::monitor</a> for more information. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lock_guard_8cpp-example.html#_a3">lock_guard.cpp</a>.</dd>
-</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:aa08652a62b9d79bd961bcb9998ea4b8b" id="r_aa08652a62b9d79bd961bcb9998ea4b8b"><td class="memTemplParams" colspan="2">template&lt;class object_t&gt; </td></tr>
@@ -263,7 +261,7 @@ Inheritance diagram for xtd::threading::lock:</div>
 <tr class="memitem:aa2e0ca04c2aaba831b0dc99df23eaa57" id="r_aa2e0ca04c2aaba831b0dc99df23eaa57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa2e0ca04c2aaba831b0dc99df23eaa57">pulse_all</a> ()</td></tr>
 <tr class="memdesc:aa2e0ca04c2aaba831b0dc99df23eaa57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies all waiting threads of a change in the object's state.  <br /></td></tr>
 <tr class="separator:aa2e0ca04c2aaba831b0dc99df23eaa57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a815dcc8e9b36f64c518f56170a6feb41" id="r_a815dcc8e9b36f64c518f56170a6feb41"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a815dcc8e9b36f64c518f56170a6feb41">wait</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> milliseconds_timeout)</td></tr>
+<tr class="memitem:a815dcc8e9b36f64c518f56170a6feb41" id="r_a815dcc8e9b36f64c518f56170a6feb41"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a815dcc8e9b36f64c518f56170a6feb41">wait</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout)</td></tr>
 <tr class="memdesc:a815dcc8e9b36f64c518f56170a6feb41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the lock on an object and blocks the current thread until it reacquires the lock. If the specified time-out interval elapses, the thread enters the ready queue.  <br /></td></tr>
 <tr class="separator:a815dcc8e9b36f64c518f56170a6feb41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a947cbc0eae2c7b35938d342fd3915b6d" id="r_a947cbc0eae2c7b35938d342fd3915b6d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a947cbc0eae2c7b35938d342fd3915b6d">wait</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
@@ -406,7 +404,7 @@ To signal a single thread, use the <a class="el" href="classxtd_1_1threading_1_1
         <tr>
           <td class="memname">bool xtd::threading::lock::wait </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -534,7 +532,7 @@ The remarks for the <a class="el" href="classxtd_1_1threading_1_1monitor.html#a0
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -123,7 +123,7 @@ Inheritance diagram for xtd::io::stream_reader:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1io.html" title="The xtd::io namespace contains types that allow reading and writing to files and data streams,...">xtd::io</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="file_info_move_to_8cpp-example.html#_a9">file_info_move_to.cpp</a>, <a class="el" href="file_info_open_8cpp-example.html#_a5">file_info_open.cpp</a>, <a class="el" href="file_info_open_read_8cpp-example.html#_a4">file_info_open_read.cpp</a>, <a class="el" href="file_info_open_write_8cpp-example.html#_a5">file_info_open_write.cpp</a>, <a class="el" href="generic_ienumerable_8cpp-example.html#_a2">generic_ienumerable.cpp</a>, <a class="el" href="network_stream_8cpp-example.html#_a6">network_stream.cpp</a>, <a class="el" href="process_with_standard_output_redirection_8cpp-example.html#_a2">process_with_standard_output_redirection.cpp</a>, <a class="el" href="tcp_client_ip_v4_8cpp-example.html#_a2">tcp_client_ip_v4.cpp</a>, <a class="el" href="tcp_client_ip_v6_8cpp-example.html#_a5">tcp_client_ip_v6.cpp</a>, and <a class="el" href="test_forms_8cpp-example.html#_a26">test_forms.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="test_forms_8cpp-example.html#_a26">test_forms.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
@@ -146,10 +146,10 @@ Inheritance diagram for xtd::io::stream_reader:</div>
 <tr class="memitem:af0f498a017dadaef3d4d50b7a2ceed6f" id="r_af0f498a017dadaef3d4d50b7a2ceed6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0f498a017dadaef3d4d50b7a2ceed6f">close</a> () override</td></tr>
 <tr class="memdesc:af0f498a017dadaef3d4d50b7a2ceed6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the <a class="el" href="classxtd_1_1io_1_1stream__reader.html" title="Implements a xtd::io::text_reader that reads characters from a byte stream.">stream_reader</a> object and the underlying stream, and releases any system resources associated with the reader.  <br /></td></tr>
 <tr class="separator:af0f498a017dadaef3d4d50b7a2ceed6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b69963b21f25270e9e3be37b2d0e026" id="r_a5b69963b21f25270e9e3be37b2d0e026"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b69963b21f25270e9e3be37b2d0e026">peek</a> () const override</td></tr>
+<tr class="memitem:a5b69963b21f25270e9e3be37b2d0e026" id="r_a5b69963b21f25270e9e3be37b2d0e026"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b69963b21f25270e9e3be37b2d0e026">peek</a> () const override</td></tr>
 <tr class="memdesc:a5b69963b21f25270e9e3be37b2d0e026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the next character without changing the state of the reader or the character source. Returns the next available character without actually reading it from the input stream.  <br /></td></tr>
 <tr class="separator:a5b69963b21f25270e9e3be37b2d0e026"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01290d6db05d857260e8b72c811bed0d" id="r_a01290d6db05d857260e8b72c811bed0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01290d6db05d857260e8b72c811bed0d">read</a> () override</td></tr>
+<tr class="memitem:a01290d6db05d857260e8b72c811bed0d" id="r_a01290d6db05d857260e8b72c811bed0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01290d6db05d857260e8b72c811bed0d">read</a> () override</td></tr>
 <tr class="memdesc:a01290d6db05d857260e8b72c811bed0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the next character from the input stream and advances the character position by one character.  <br /></td></tr>
 <tr class="separator:a01290d6db05d857260e8b72c811bed0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -301,8 +301,6 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Returns the underlying stream. </p>
 <dl class="section return"><dt>Returns</dt><dd>The underlying stream. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="generic_ienumerable_8cpp-example.html#a11">generic_ienumerable.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -323,7 +321,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets a value that indicates whether the current stream position is at the end of the stream. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current stream position is at the end of the stream; otherwise <code>false</code>. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="file_info_move_to_8cpp-example.html#a10">file_info_move_to.cpp</a>, <a class="el" href="generic_ienumerable_8cpp-example.html#a9">generic_ienumerable.cpp</a>, and <a class="el" href="test_forms_8cpp-example.html#a27">test_forms.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="test_forms_8cpp-example.html#a27">test_forms.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -354,8 +352,6 @@ Additional Inherited Members</h2></td></tr>
 <p>Closes the <a class="el" href="classxtd_1_1io_1_1stream__reader.html" title="Implements a xtd::io::text_reader that reads characters from a byte stream.">stream_reader</a> object and the underlying stream, and releases any system resources associated with the reader. </p>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1io_1_1text__reader.html#a5f38984ac30075d56b3c1f15475e8ff2">xtd::io::text_reader</a>.</p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="generic_ienumerable_8cpp-example.html#a3">generic_ienumerable.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -369,7 +365,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::io::stream_reader::peek </td>
+          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::io::stream_reader::peek </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -399,7 +395,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::io::stream_reader::read </td>
+          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::io::stream_reader::read </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -426,7 +422,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

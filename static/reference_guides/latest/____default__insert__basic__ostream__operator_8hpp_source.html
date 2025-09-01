@@ -320,7 +320,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  }</div>
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>  </div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacextd.html#aa7ce9a70ea867f52d614f508f8911d27">print</a>(std::basic_ostream&lt;char_t, char_traits_t&gt;&amp; os, <a class="code hl_typedef" href="group__types.html#ga222bc4d0543ff9a28877597b0bdc3b98">xtd::char8</a> value) {</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="keywordflow">if</span> (value &lt;= <span class="keywordtype">char</span>(0xFF))</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="keywordflow">if</span> (<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(value) &lt;= 0xFF)</div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>      os &lt;&lt; static_cast&lt;char&gt;(value);</div>
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>      os &lt;&lt; <span class="stringliteral">&quot;\\x&quot;</span> &lt;&lt; std::hex &lt;&lt; static_cast&lt;int&gt;(value);</div>
@@ -839,7 +839,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

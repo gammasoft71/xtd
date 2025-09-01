@@ -154,10 +154,7 @@ Inheritance diagram for xtd::system_exception:</div>
 <div class="textblock"><p>The exception that is thrown when a method call is invalid for the object's current state. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to throw and catch an <a class="el" href="classxtd_1_1system__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">system_exception</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/guid&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to throw and catch an <a class="el" href="classxtd_1_1system__exception.html" title="The exception that is thrown when a method call is invalid for the object&#39;s current state.">system_exception</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">long</span> create_handle() {</div>
 <div class="line">  <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">long</span><span class="keyword">&gt;</span>(<span class="keyword">new</span> <a class="code hl_class" href="classxtd_1_1guid.html">guid</a>());</div>
@@ -170,15 +167,15 @@ Inheritance diagram for xtd::system_exception:</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    <span class="keyword">auto</span> handle = 0<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a2db95e8e1a9267b7a1188556b2013b33">l</a>;</div>
+<div class="line">    <span class="keyword">auto</span> handle = 0l;</div>
 <div class="line">    <span class="comment">// The following line is commented out so that the exception is generated.</span></div>
 <div class="line">    <span class="comment">//handle = create_handle();</span></div>
 <div class="line">    </div>
 <div class="line">    destroy_handle(handle);</div>
-<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Exception occured :&quot;</span>);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;-------------------&quot;</span>);</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>);</div>
+<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> system_exception&amp; e) {</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Exception occured :&quot;</span>);</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;-------------------&quot;</span>);</div>
+<div class="line">    console::write_line(e);</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -189,14 +186,10 @@ Inheritance diagram for xtd::system_exception:</div>
 <div class="line"><span class="comment">// xtd::system_exception : The handle is null</span></div>
 <div class="line"><span class="comment">//    at destroy_handle(long) [0x00004B20] in /|---OMITTED---|/system_exception/src/system_exception.cpp:line 10</span></div>
 <div class="line"><span class="comment">//    at main [0x00004DD0] in /|---OMITTED---|/system_exception/Debug/system_exception:line 0</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1guid_html"><div class="ttname"><a href="classxtd_1_1guid.html">xtd::guid</a></div><div class="ttdoc">Represents a globally unique identifier (GUID). A GUID is a 128-bit integer (16 bytes) that can be us...</div><div class="ttdef"><b>Definition</b> guid.hpp:24</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">The exception that is thrown when a method call is invalid for the object&#39;s current state.</div><div class="ttdef"><b>Definition</b> system_exception.hpp:18</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a2db95e8e1a9267b7a1188556b2013b33"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a2db95e8e1a9267b7a1188556b2013b33">xtd::console_key::l</a></div><div class="ttdeci">@ l</div><div class="ttdoc">The L key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:110</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="barrier_8cpp-example.html#_a1">barrier.cpp</a>, <a class="el" href="default_trace_listener_8cpp-example.html#_a1">default_trace_listener.cpp</a>, <a class="el" href="enum_class_parse_8cpp-example.html#_a1">enum_class_parse.cpp</a>, <a class="el" href="exception_box_8cpp-example.html#_a0">exception_box.cpp</a>, <a class="el" href="exception_dialog_8cpp-example.html#_a0">exception_dialog.cpp</a>, <a class="el" href="exception_ptr_8cpp-example.html#_a3">exception_ptr.cpp</a>, <a class="el" href="file_info_8cpp-example.html#_a6">file_info.cpp</a>, <a class="el" href="file_info_move_to_8cpp-example.html#_a2">file_info_move_to.cpp</a>, <a class="el" href="file_info_replace_8cpp-example.html#_a0">file_info_replace.cpp</a>, <a class="el" href="iobservable_iobserver_8cpp-example.html#_a0">iobservable_iobserver.cpp</a>, <a class="el" href="ip_address_8cpp-example.html#_a1">ip_address.cpp</a>, <a class="el" href="lock_guard_8cpp-example.html#_a6">lock_guard.cpp</a>, <a class="el" href="lock_guard_keyword_8cpp-example.html#_a3">lock_guard_keyword.cpp</a>, <a class="el" href="monitor_8cpp-example.html#_a4">monitor.cpp</a>, <a class="el" href="parse_boolean_8cpp-example.html#_a1">parse_boolean.cpp</a>, <a class="el" href="parse_enum_8cpp-example.html#_a1">parse_enum.cpp</a>, <a class="el" href="parse_enum_class_8cpp-example.html#_a1">parse_enum_class.cpp</a>, <a class="el" href="parse_enum_struct_8cpp-example.html#_a1">parse_enum_struct.cpp</a>, <a class="el" href="parse_floating_point_8cpp-example.html#_a1">parse_floating_point.cpp</a>, <a class="el" href="parse_numeric_8cpp-example.html#_a1">parse_numeric.cpp</a>, <a class="el" href="stack_frame_8cpp-example.html#_a1">stack_frame.cpp</a>, <a class="el" href="stack_trace_simple_8cpp-example.html#_a0">stack_trace_simple.cpp</a>, <a class="el" href="stopwatch_8cpp-example.html#_a2">stopwatch.cpp</a>, and <a class="el" href="system_exception_8cpp-example.html#_a1">system_exception.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_class_parse_8cpp-example.html#_a1">enum_class_parse.cpp</a>, <a class="el" href="exception_box_8cpp-example.html#_a0">exception_box.cpp</a>, and <a class="el" href="exception_dialog_8cpp-example.html#_a0">exception_dialog.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
@@ -270,10 +263,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a36214a1d0af9632b80980c42f9996555" id="r_a36214a1d0af9632b80980c42f9996555"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1exception.html#a36214a1d0af9632b80980c42f9996555">help_link</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value) noexcept</td></tr>
 <tr class="memdesc:a36214a1d0af9632b80980c42f9996555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a link to the help file associated with this exception.  <br /></td></tr>
 <tr class="separator:a36214a1d0af9632b80980c42f9996555"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac345631145d5940bb8df20835ec8e28d" id="r_ac345631145d5940bb8df20835ec8e28d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1exception.html#ac345631145d5940bb8df20835ec8e28d">h_result</a> () const noexcept</td></tr>
+<tr class="memitem:ac345631145d5940bb8df20835ec8e28d" id="r_ac345631145d5940bb8df20835ec8e28d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1exception.html#ac345631145d5940bb8df20835ec8e28d">h_result</a> () const noexcept</td></tr>
 <tr class="memdesc:ac345631145d5940bb8df20835ec8e28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets HRESULT, a coded numerical value that is assigned to a specific exception.  <br /></td></tr>
 <tr class="separator:ac345631145d5940bb8df20835ec8e28d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae537a3f74e7b237261db29e327bb81dd" id="r_ae537a3f74e7b237261db29e327bb81dd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1exception.html#ae537a3f74e7b237261db29e327bb81dd">h_result</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> value) noexcept</td></tr>
+<tr class="memitem:ae537a3f74e7b237261db29e327bb81dd" id="r_ae537a3f74e7b237261db29e327bb81dd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1exception.html#ae537a3f74e7b237261db29e327bb81dd">h_result</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value) noexcept</td></tr>
 <tr class="memdesc:ae537a3f74e7b237261db29e327bb81dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets HRESULT, a coded numerical value that is assigned to a specific exception.  <br /></td></tr>
 <tr class="separator:ae537a3f74e7b237261db29e327bb81dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11f5e213c10c0f27bbc40c3a7f71b7ba" id="r_a11f5e213c10c0f27bbc40c3a7f71b7ba"><td class="memItemLeft" align="right" valign="top">virtual const std::error_code &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba">error_code</a> () const noexcept</td></tr>
@@ -965,7 +958,7 @@ template&lt;class exception_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

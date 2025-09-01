@@ -97,25 +97,19 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="group__collections.html#ga83a0a06ecb97330626993339079ebbf6" title="Represents a collection of xtd::any_object.">xtd::collections::array_list</a> alias.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/array_list&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/platform_id&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/time_span&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections.html">xtd::collections</a>;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> items = <a class="code hl_typedef" href="group__collections.html#ga83a0a06ecb97330626993339079ebbf6">array_list</a> {<span class="keyword">true</span>, 42, <span class="stringliteral">&quot;This is a string&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a2c5a2c228ae2058d02c3c768ff64cbcd">platform_id::win32s</a>, u8<span class="stringliteral">&quot;Another string&quot;</span>, 4.2f, 2_h + 25_min + 43_s};</div>
+<div class="line">  <span class="keyword">auto</span> items = collections::array_list {<span class="keyword">true</span>, 42, <span class="stringliteral">&quot;This is a string&quot;</span>, platform_id::win32s, u8<span class="stringliteral">&quot;Another string&quot;</span>, 4.2f, 2_h + 25_min + 43_s};</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;items = [{}]&quot;</span>, string::join(<span class="stringliteral">&quot;, &quot;</span>, items));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;items = {}&quot;</span>, items);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;items = [{}]&quot;</span>, string::join(<span class="stringliteral">&quot;, &quot;</span>, items));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;items = {}&quot;</span>, items);</div>
+<div class="line">  console::write_line();</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> item : items) {</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is&lt;string&gt;</a>(item)) <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{}&quot;</span>, <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;string&gt;</a>(item).to_upper().quoted());</div>
-<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is&lt;platform_id&gt;</a>(item)) <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{}::{}&quot;</span>, <a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;platform_id&gt;</a>(item)).name(), item);</div>
-<div class="line">    <span class="keywordflow">else</span> <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{}&quot;</span>, item);</div>
+<div class="line">    <span class="keywordflow">if</span> (is&lt;string&gt;(item)) console::write_line(<span class="stringliteral">&quot;{}&quot;</span>, as&lt;string&gt;(item).to_upper().quoted());</div>
+<div class="line">    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (is&lt;platform_id&gt;(item)) console::write_line(<span class="stringliteral">&quot;{}::{}&quot;</span>, <a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(as&lt;platform_id&gt;(item)).name(), item);</div>
+<div class="line">    <span class="keywordflow">else</span> console::write_line(<span class="stringliteral">&quot;{}&quot;</span>, item);</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -131,19 +125,12 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="comment">// &quot;ANOTHER STRING&quot;</span></div>
 <div class="line"><span class="comment">// 4.2</span></div>
 <div class="line"><span class="comment">// 02:25:43</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="agroup__collections_html_ga83a0a06ecb97330626993339079ebbf6"><div class="ttname"><a href="group__collections.html#ga83a0a06ecb97330626993339079ebbf6">xtd::collections::array_list</a></div><div class="ttdeci">generic::list&lt; xtd::any_object &gt; array_list</div><div class="ttdoc">Represents a collection of xtd::any_object.</div><div class="ttdef"><b>Definition</b> array_list.hpp:31</div></div>
 <div class="ttc" id="agroup__keywords_html_gafa2ffd9b4a6568b57ab2731bec095d99"><div class="ttname"><a href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></div><div class="ttdeci">#define typeof_</div><div class="ttdoc">Used to obtain the type object of a specified type or object.</div><div class="ttdef"><b>Definition</b> typeof.hpp:45</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga8419620dc289ac0d790372a1616e993f"><div class="ttname"><a href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">xtd::is</a></div><div class="ttdeci">bool is(xtd::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:485</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a2c5a2c228ae2058d02c3c768ff64cbcd"><div class="ttname"><a href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a2c5a2c228ae2058d02c3c768ff64cbcd">xtd::platform_id::win32s</a></div><div class="ttdeci">@ win32s</div><div class="ttdoc">The operating system is Win32s. Win32s is a layer that runs on 16-bit versions of Windows to provide ...</div><div class="ttdef"><b>Definition</b> platform_id.hpp:22</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_html"><div class="ttname"><a href="namespacextd_1_1collections.html">xtd::collections</a></div><div class="ttdoc">The xtd::collections namespace contains interfaces and classes that define various collections of obj...</div><div class="ttdef"><b>Definition</b> any_pair.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -97,17 +97,11 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1diagnostics_1_1source__location.html" title="The xtd::diagnostics::source_location class represents certain information about the source code,...">xtd::diagnostics::source_location</a> class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/path&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/source_location&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1io.html">xtd::io</a>;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> print_this_file_name() {</div>
-<div class="line">  <span class="keyword">auto</span> location = <a class="code hl_function" href="classxtd_1_1diagnostics_1_1source__location.html#ade1d783d02558852ceacdb0e90fa3580">source_location::current</a>();</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;File: {}&quot;</span>, <a class="code hl_function" href="classxtd_1_1io_1_1path.html#a6ddab77d737d830c81582cb358ed8e97">path::get_file_name</a>(location.file_name()));</div>
+<div class="line">  <span class="keyword">auto</span> location = diagnostics::source_location::current();</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;File: {}&quot;</span>, path::get_file_name(location.file_name()));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -117,17 +111,11 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="comment">// This code can produce the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// File: source_location_invoked_directly.cpp</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1source__location_html_ade1d783d02558852ceacdb0e90fa3580"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1source__location.html#ade1d783d02558852ceacdb0e90fa3580">xtd::diagnostics::source_location::current</a></div><div class="ttdeci">static source_location current(const __xtd_source_location__ &amp;value=__xtd_source_location__::current()) noexcept</div><div class="ttdoc">Crates a new xtd::diagnostics::source_location object corresponding to the location of the call site.</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1path_html_a6ddab77d737d830c81582cb358ed8e97"><div class="ttname"><a href="classxtd_1_1io_1_1path.html#a6ddab77d737d830c81582cb358ed8e97">xtd::io::path::get_file_name</a></div><div class="ttdeci">static xtd::string get_file_name(const xtd::string &amp;path)</div><div class="ttdoc">Returns the file name and extension of the specified path string.</div></div>
-<div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_1_1io_html"><div class="ttname"><a href="namespacextd_1_1io.html">xtd::io</a></div><div class="ttdoc">The xtd::io namespace contains types that allow reading and writing to files and data streams,...</div><div class="ttdef"><b>Definition</b> binary_reader.hpp:17</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

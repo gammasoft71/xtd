@@ -120,8 +120,6 @@ Inheritance diagram for xtd::invalid_operation_exception:</div>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to throw and catch an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">invalid_operation_exception</a>. <div class="fragment"></div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="exception_ptr_8cpp-example.html#_a1">exception_ptr.cpp</a>, <a class="el" href="generic_ienumerable_8cpp-example.html#_a8">generic_ienumerable.cpp</a>, <a class="el" href="ienumerable_8cpp-example.html#_a8">ienumerable.cpp</a>, <a class="el" href="ienumerator_8cpp-example.html#_a6">ienumerator.cpp</a>, and <a class="el" href="process_form_8cpp-example.html#_a5">process_form.cpp</a>.</dd>
-</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:ac8c269be4338500572feec7a7a8bd906" id="r_ac8c269be4338500572feec7a7a8bd906"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8c269be4338500572feec7a7a8bd906">invalid_operation_exception</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29">xtd::diagnostics::stack_frame::current</a>())</td></tr>
@@ -226,10 +224,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a36214a1d0af9632b80980c42f9996555" id="r_a36214a1d0af9632b80980c42f9996555"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1exception.html#a36214a1d0af9632b80980c42f9996555">help_link</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value) noexcept</td></tr>
 <tr class="memdesc:a36214a1d0af9632b80980c42f9996555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a link to the help file associated with this exception.  <br /></td></tr>
 <tr class="separator:a36214a1d0af9632b80980c42f9996555"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac345631145d5940bb8df20835ec8e28d" id="r_ac345631145d5940bb8df20835ec8e28d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1exception.html#ac345631145d5940bb8df20835ec8e28d">h_result</a> () const noexcept</td></tr>
+<tr class="memitem:ac345631145d5940bb8df20835ec8e28d" id="r_ac345631145d5940bb8df20835ec8e28d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1exception.html#ac345631145d5940bb8df20835ec8e28d">h_result</a> () const noexcept</td></tr>
 <tr class="memdesc:ac345631145d5940bb8df20835ec8e28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets HRESULT, a coded numerical value that is assigned to a specific exception.  <br /></td></tr>
 <tr class="separator:ac345631145d5940bb8df20835ec8e28d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae537a3f74e7b237261db29e327bb81dd" id="r_ae537a3f74e7b237261db29e327bb81dd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1exception.html#ae537a3f74e7b237261db29e327bb81dd">h_result</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> value) noexcept</td></tr>
+<tr class="memitem:ae537a3f74e7b237261db29e327bb81dd" id="r_ae537a3f74e7b237261db29e327bb81dd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1exception.html#ae537a3f74e7b237261db29e327bb81dd">h_result</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value) noexcept</td></tr>
 <tr class="memdesc:ae537a3f74e7b237261db29e327bb81dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets HRESULT, a coded numerical value that is assigned to a specific exception.  <br /></td></tr>
 <tr class="separator:ae537a3f74e7b237261db29e327bb81dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11f5e213c10c0f27bbc40c3a7f71b7ba" id="r_a11f5e213c10c0f27bbc40c3a7f71b7ba"><td class="memItemLeft" align="right" valign="top">virtual const std::error_code &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba">error_code</a> () const noexcept</td></tr>
@@ -740,7 +738,7 @@ template&lt;class exception_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

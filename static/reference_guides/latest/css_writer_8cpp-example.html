@@ -97,32 +97,28 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use xtd::web::css:css_writer class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/web/css/css_writer&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;strstream&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span>xtd::web::css;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> stream = std::stringstream {};</div>
-<div class="line">  <span class="keyword">auto</span>  writer = <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1web_1_1css_1_1css__writer.html">css_writer</a> {stream};</div>
+<div class="line">  <span class="keyword">auto</span> stream = memory_stream {};</div>
+<div class="line">  <span class="keyword">auto</span>  writer = web::css::css_writer {stream};</div>
 <div class="line">  </div>
-<div class="line">  writer.<a id="a1" name="a1"></a>selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;display&quot;</span>] = property::from(<span class="stringliteral">&quot;none&quot;</span>);</div>
-<div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;position&quot;</span>] = property::from(<span class="stringliteral">&quot;fixed&quot;</span>);</div>
-<div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;z-index&quot;</span>] = property::from(100);</div>
-<div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;width&quot;</span>] = property::from(<span class="stringliteral">&quot;100%&quot;</span>);</div>
-<div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;height&quot;</span>] = property::from(<span class="stringliteral">&quot;100%&quot;</span>);</div>
-<div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;left&quot;</span>] = property::from(300);</div>
-<div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;top&quot;</span>] = property::from(200);</div>
-<div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;background&quot;</span>] = property::from(<span class="stringliteral">&quot;#4080FA&quot;</span>);</div>
-<div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;filter&quot;</span>] = property::from(<span class="stringliteral">&quot;alpha(opacity=40)&quot;</span>);</div>
-<div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;opacity&quot;</span>] = property::from(0.4);</div>
+<div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;display&quot;</span>] = web::css::property::from(<span class="stringliteral">&quot;none&quot;</span>);</div>
+<div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;position&quot;</span>] = web::css::property::from(<span class="stringliteral">&quot;fixed&quot;</span>);</div>
+<div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;z-index&quot;</span>] = web::css::property::from(100);</div>
+<div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;width&quot;</span>] = web::css::property::from(<span class="stringliteral">&quot;100%&quot;</span>);</div>
+<div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;height&quot;</span>] = web::css::property::from(<span class="stringliteral">&quot;100%&quot;</span>);</div>
+<div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;left&quot;</span>] = web::css::property::from(300);</div>
+<div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;top&quot;</span>] = web::css::property::from(200);</div>
+<div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;background&quot;</span>] = web::css::property::from(<span class="stringliteral">&quot;#4080FA&quot;</span>);</div>
+<div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;filter&quot;</span>] = web::css::property::from(<span class="stringliteral">&quot;alpha(opacity=40)&quot;</span>);</div>
+<div class="line">  writer.selectors()[<span class="stringliteral">&quot;.user_box&quot;</span>].properties()[<span class="stringliteral">&quot;opacity&quot;</span>] = web::css::property::from(0.4);</div>
 <div class="line">  writer.write();</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;String stream :&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;---------------&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(stream.str());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;String stream :&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;---------------&quot;</span>);</div>
+<div class="line">  stream.position(0);</div>
+<div class="line">  console::write_line(stream_reader(stream).read_to_end());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -141,14 +137,11 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="comment">//   width: 100%;</span></div>
 <div class="line"><span class="comment">//   z-index: 100;</span></div>
 <div class="line"><span class="comment">// }</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1web_1_1css_1_1css__writer_html"><div class="ttname"><a href="classxtd_1_1web_1_1css_1_1css__writer.html">xtd::web::css::css_writer</a></div><div class="ttdef"><b>Definition</b> css_writer.hpp:15</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

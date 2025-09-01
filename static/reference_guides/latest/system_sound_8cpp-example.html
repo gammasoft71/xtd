@@ -120,118 +120,88 @@ $(function(){ initResizable(false); });
 <img src="system_sound_gd.png" alt=""/>
 </div>
 </dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button_images&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/horizontal_layout_panel&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/media/system_sounds&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1media.html">xtd::media</a>;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>example {</div>
-<div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
 <div class="line">      client_size({485, 100});</div>
 <div class="line">      controls().push_back(layout_panel);</div>
-<div class="line">      <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1forms_1_1padding.html">padding</a>(5);</div>
-<div class="line">      <a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>(<span class="stringliteral">&quot;System sound example&quot;</span>);</div>
+<div class="line">      padding(5);</div>
+<div class="line">      text(<span class="stringliteral">&quot;System sound example&quot;</span>);</div>
 <div class="line">      </div>
-<div class="line">      layout_panel.dock(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619aa552c74784b3a82177bca6c8adde0efb">dock_style::fill</a>);</div>
+<div class="line">      layout_panel.dock(dock_style::fill);</div>
 <div class="line">      layout_panel.controls().push_back_range({button_asterisk, button_beep, button_exclamation, button_hand, button_question});</div>
-<div class="line">      layout_panel.control_layout_style(button_asterisk, {<a class="code hl_enumvalue" href="group__xtd__forms.html#ggab29b04bbaf914660d81ba98475d8a100ac74b6cc0033c255d1b2a0e6f9660b1a5">size_type::auto_size</a>, <span class="keyword">true</span>});</div>
-<div class="line">      layout_panel.control_layout_style(button_beep, {<a class="code hl_enumvalue" href="group__xtd__forms.html#ggab29b04bbaf914660d81ba98475d8a100ac74b6cc0033c255d1b2a0e6f9660b1a5">size_type::auto_size</a>, <span class="keyword">true</span>});</div>
-<div class="line">      layout_panel.control_layout_style(button_exclamation, {<a class="code hl_enumvalue" href="group__xtd__forms.html#ggab29b04bbaf914660d81ba98475d8a100ac74b6cc0033c255d1b2a0e6f9660b1a5">size_type::auto_size</a>, <span class="keyword">true</span>});</div>
-<div class="line">      layout_panel.control_layout_style(button_hand, {<a class="code hl_enumvalue" href="group__xtd__forms.html#ggab29b04bbaf914660d81ba98475d8a100ac74b6cc0033c255d1b2a0e6f9660b1a5">size_type::auto_size</a>, <span class="keyword">true</span>});</div>
-<div class="line">      layout_panel.control_layout_style(button_question, {<a class="code hl_enumvalue" href="group__xtd__forms.html#ggab29b04bbaf914660d81ba98475d8a100ac74b6cc0033c255d1b2a0e6f9660b1a5">size_type::auto_size</a>, <span class="keyword">true</span>});</div>
+<div class="line">      layout_panel.control_layout_style(button_asterisk, {size_type::auto_size, <span class="keyword">true</span>});</div>
+<div class="line">      layout_panel.control_layout_style(button_beep, {size_type::auto_size, <span class="keyword">true</span>});</div>
+<div class="line">      layout_panel.control_layout_style(button_exclamation, {size_type::auto_size, <span class="keyword">true</span>});</div>
+<div class="line">      layout_panel.control_layout_style(button_hand, {size_type::auto_size, <span class="keyword">true</span>});</div>
+<div class="line">      layout_panel.control_layout_style(button_question, {size_type::auto_size, <span class="keyword">true</span>});</div>
 <div class="line">      </div>
 <div class="line">      button_asterisk.text(<span class="stringliteral">&quot;asterisk&quot;</span>);</div>
-<div class="line">      button_asterisk.image(<a class="code hl_function" href="classxtd_1_1forms_1_1button__images.html#ae11d63ea653d89c98a9a6a814db8a1fb">button_images::from_name</a>(<span class="stringliteral">&quot;dialog-information&quot;</span>, <a id="_a2" name="_a2"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a>(64, 64)));</div>
-<div class="line">      button_asterisk.image_align(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a153dda402a237b8b093c3c418b66df5d">content_alignment::top_center</a>);</div>
-<div class="line">      button_asterisk.text_align(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a1afb532afb8fb97068fa335cfdc02bb8">content_alignment::bottom_center</a>);</div>
+<div class="line">      button_asterisk.image(button_images::from_name(<span class="stringliteral">&quot;dialog-information&quot;</span>, drawing::size(64, 64)));</div>
+<div class="line">      button_asterisk.image_align(content_alignment::top_center);</div>
+<div class="line">      button_asterisk.text_align(content_alignment::bottom_center);</div>
 <div class="line">      button_asterisk.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1media_1_1system__sounds.html#ae51d401ab290bc2debbff6a49aa21fa6">system_sounds::asterisk</a>().play();</div>
+<div class="line">        media::system_sounds::asterisk().play();</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      button_beep.text(<span class="stringliteral">&quot;beep&quot;</span>);</div>
-<div class="line">      button_beep.image(<a class="code hl_function" href="classxtd_1_1forms_1_1button__images.html#ae11d63ea653d89c98a9a6a814db8a1fb">button_images::from_name</a>(<span class="stringliteral">&quot;dialog-ok&quot;</span>, <a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a>(64, 64)));</div>
-<div class="line">      button_beep.image_align(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a153dda402a237b8b093c3c418b66df5d">content_alignment::top_center</a>);</div>
-<div class="line">      button_beep.text_align(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a1afb532afb8fb97068fa335cfdc02bb8">content_alignment::bottom_center</a>);</div>
+<div class="line">      button_beep.image(button_images::from_name(<span class="stringliteral">&quot;dialog-ok&quot;</span>, drawing::size(64, 64)));</div>
+<div class="line">      button_beep.image_align(content_alignment::top_center);</div>
+<div class="line">      button_beep.text_align(content_alignment::bottom_center);</div>
 <div class="line">      button_beep.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1media_1_1system__sounds.html#a378319dad6138367c776f7341ce23164">system_sounds::beep</a>().play();</div>
+<div class="line">        media::system_sounds::beep().play();</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      button_exclamation.text(<span class="stringliteral">&quot;exclamation&quot;</span>);</div>
-<div class="line">      button_exclamation.image(<a class="code hl_function" href="classxtd_1_1forms_1_1button__images.html#ae11d63ea653d89c98a9a6a814db8a1fb">button_images::from_name</a>(<span class="stringliteral">&quot;dialog-warning&quot;</span>, <a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a>(64, 64)));</div>
-<div class="line">      button_exclamation.image_align(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a153dda402a237b8b093c3c418b66df5d">content_alignment::top_center</a>);</div>
-<div class="line">      button_exclamation.text_align(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a1afb532afb8fb97068fa335cfdc02bb8">content_alignment::bottom_center</a>);</div>
+<div class="line">      button_exclamation.image(button_images::from_name(<span class="stringliteral">&quot;dialog-warning&quot;</span>, drawing::size(64, 64)));</div>
+<div class="line">      button_exclamation.image_align(content_alignment::top_center);</div>
+<div class="line">      button_exclamation.text_align(content_alignment::bottom_center);</div>
 <div class="line">      button_exclamation.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1media_1_1system__sounds.html#a02f763e97e8dd1bcbe15e04a3e058259">system_sounds::exclamation</a>().play();</div>
+<div class="line">        media::system_sounds::exclamation().play();</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      button_hand.text(<span class="stringliteral">&quot;hand&quot;</span>);</div>
-<div class="line">      button_hand.image(<a class="code hl_function" href="classxtd_1_1forms_1_1button__images.html#ae11d63ea653d89c98a9a6a814db8a1fb">button_images::from_name</a>(<span class="stringliteral">&quot;dialog-error&quot;</span>, <a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a>(64, 64)));</div>
-<div class="line">      button_hand.image_align(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a153dda402a237b8b093c3c418b66df5d">content_alignment::top_center</a>);</div>
-<div class="line">      button_hand.text_align(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a1afb532afb8fb97068fa335cfdc02bb8">content_alignment::bottom_center</a>);</div>
+<div class="line">      button_hand.image(button_images::from_name(<span class="stringliteral">&quot;dialog-error&quot;</span>, drawing::size(64, 64)));</div>
+<div class="line">      button_hand.image_align(content_alignment::top_center);</div>
+<div class="line">      button_hand.text_align(content_alignment::bottom_center);</div>
 <div class="line">      button_hand.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1media_1_1system__sounds.html#acee9e1893f3a18cc2b45cfcee9c2940b">system_sounds::hand</a>().play();</div>
+<div class="line">        media::system_sounds::hand().play();</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      button_question.text(<span class="stringliteral">&quot;question&quot;</span>);</div>
-<div class="line">      button_question.image(<a class="code hl_function" href="classxtd_1_1forms_1_1button__images.html#ae11d63ea653d89c98a9a6a814db8a1fb">button_images::from_name</a>(<span class="stringliteral">&quot;dialog-question&quot;</span>, <a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a>(64, 64)));</div>
-<div class="line">      button_question.image_align(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a153dda402a237b8b093c3c418b66df5d">content_alignment::top_center</a>);</div>
-<div class="line">      button_question.text_align(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a1afb532afb8fb97068fa335cfdc02bb8">content_alignment::bottom_center</a>);</div>
+<div class="line">      button_question.image(button_images::from_name(<span class="stringliteral">&quot;dialog-question&quot;</span>, drawing::size(64, 64)));</div>
+<div class="line">      button_question.image_align(content_alignment::top_center);</div>
+<div class="line">      button_question.text_align(content_alignment::bottom_center);</div>
 <div class="line">      button_question.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1media_1_1system__sounds.html#ad56b362e4a9e5ac7825e3e7e6a135333">system_sounds::question</a>().play();</div>
+<div class="line">        media::system_sounds::question().play();</div>
 <div class="line">      };</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(form1 {});</div>
+<div class="line">      application::run(form1 {});</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1forms_1_1horizontal__layout__panel.html">horizontal_layout_panel</a> layout_panel;</div>
-<div class="line">    <a id="_a4" name="_a4"></a><a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_asterisk;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_beep;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_exclamation;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_hand;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_question;</div>
+<div class="line">    horizontal_layout_panel layout_panel;</div>
+<div class="line">    button button_asterisk;</div>
+<div class="line">    button button_beep;</div>
+<div class="line">    button button_exclamation;</div>
+<div class="line">    button button_hand;</div>
+<div class="line">    button button_question;</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a id="a5" name="a5"></a><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(example::form1::main);</div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1button__images_html_ae11d63ea653d89c98a9a6a814db8a1fb"><div class="ttname"><a href="classxtd_1_1forms_1_1button__images.html#ae11d63ea653d89c98a9a6a814db8a1fb">xtd::forms::button_images::from_name</a></div><div class="ttdeci">static xtd::drawing::image from_name(const xtd::string &amp;name)</div><div class="ttdoc">Gets image object with specified name.</div><div class="ttdef"><b>Definition</b> button_images.hpp:193</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.hpp:49</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1horizontal__layout__panel_html"><div class="ttname"><a href="classxtd_1_1forms_1_1horizontal__layout__panel.html">xtd::forms::horizontal_layout_panel</a></div><div class="ttdoc">Used to group collections of horizontally aligned controls.</div><div class="ttdef"><b>Definition</b> horizontal_layout_panel.hpp:31</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1padding_html"><div class="ttname"><a href="classxtd_1_1forms_1_1padding.html">xtd::forms::padding</a></div><div class="ttdoc">Represents a display device or multiple display devices on a single system.</div><div class="ttdef"><b>Definition</b> padding.hpp:25</div></div>
-<div class="ttc" id="aclassxtd_1_1media_1_1system__sounds_html_a02f763e97e8dd1bcbe15e04a3e058259"><div class="ttname"><a href="classxtd_1_1media_1_1system__sounds.html#a02f763e97e8dd1bcbe15e04a3e058259">xtd::media::system_sounds::exclamation</a></div><div class="ttdeci">static system_sound exclamation()</div><div class="ttdoc">Gets the sound associated with the Exclamation program event in the current Windows sound scheme.</div></div>
-<div class="ttc" id="aclassxtd_1_1media_1_1system__sounds_html_a378319dad6138367c776f7341ce23164"><div class="ttname"><a href="classxtd_1_1media_1_1system__sounds.html#a378319dad6138367c776f7341ce23164">xtd::media::system_sounds::beep</a></div><div class="ttdeci">static system_sound beep()</div><div class="ttdoc">Gets the sound associated with the Beep program event in the current Windows sound scheme.</div></div>
-<div class="ttc" id="aclassxtd_1_1media_1_1system__sounds_html_acee9e1893f3a18cc2b45cfcee9c2940b"><div class="ttname"><a href="classxtd_1_1media_1_1system__sounds.html#acee9e1893f3a18cc2b45cfcee9c2940b">xtd::media::system_sounds::hand</a></div><div class="ttdeci">static system_sound hand()</div><div class="ttdoc">Gets the sound associated with the Hand program event in the current Windows sound scheme.</div></div>
-<div class="ttc" id="aclassxtd_1_1media_1_1system__sounds_html_ad56b362e4a9e5ac7825e3e7e6a135333"><div class="ttname"><a href="classxtd_1_1media_1_1system__sounds.html#ad56b362e4a9e5ac7825e3e7e6a135333">xtd::media::system_sounds::question</a></div><div class="ttdeci">static system_sound question()</div><div class="ttdoc">Gets the sound associated with the Question program event in the current Windows sound scheme.</div></div>
-<div class="ttc" id="aclassxtd_1_1media_1_1system__sounds_html_ae51d401ab290bc2debbff6a49aa21fa6"><div class="ttname"><a href="classxtd_1_1media_1_1system__sounds.html#ae51d401ab290bc2debbff6a49aa21fa6">xtd::media::system_sounds::asterisk</a></div><div class="ttdeci">static system_sound asterisk()</div><div class="ttdoc">Gets the sound associated with the Asterisk program event in the current Windows sound scheme.</div></div>
+<div class="line"><a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(example::form1::main);</div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggaac8e45c70fc114a556d8f717b7ee7619aa552c74784b3a82177bca6c8adde0efb"><div class="ttname"><a href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619aa552c74784b3a82177bca6c8adde0efb">xtd::forms::dock_style::fill</a></div><div class="ttdeci">@ fill</div><div class="ttdoc">All the control&#39;s edges are docked to the all edges of its containing control and sized appropriately...</div><div class="ttdef"><b>Definition</b> dock_style.hpp:35</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggab29b04bbaf914660d81ba98475d8a100ac74b6cc0033c255d1b2a0e6f9660b1a5"><div class="ttname"><a href="group__xtd__forms.html#ggab29b04bbaf914660d81ba98475d8a100ac74b6cc0033c255d1b2a0e6f9660b1a5">xtd::forms::size_type::auto_size</a></div><div class="ttdeci">@ auto_size</div><div class="ttdoc">The control should be automatically sized to share space with its peers.</div><div class="ttdef"><b>Definition</b> size_type.hpp:24</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggad8fe8984e9f4652c13654b2c4d7288f0a153dda402a237b8b093c3c418b66df5d"><div class="ttname"><a href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a153dda402a237b8b093c3c418b66df5d">xtd::forms::content_alignment::top_center</a></div><div class="ttdeci">@ top_center</div><div class="ttdoc">Content is vertically aligned at the top, and horizontally aligned at the center.</div><div class="ttdef"><b>Definition</b> content_alignment.hpp:25</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggad8fe8984e9f4652c13654b2c4d7288f0a1afb532afb8fb97068fa335cfdc02bb8"><div class="ttname"><a href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a1afb532afb8fb97068fa335cfdc02bb8">xtd::forms::content_alignment::bottom_center</a></div><div class="ttdeci">@ bottom_center</div><div class="ttdoc">Content is vertically aligned at the bottom, and horizontally aligned at the center.</div><div class="ttdef"><b>Definition</b> content_alignment.hpp:37</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
-<div class="ttc" id="anamespacextd_1_1media_html"><div class="ttname"><a href="namespacextd_1_1media.html">xtd::media</a></div><div class="ttdoc">The xtd::media namespace contains classes for playing sound files and accessing sounds provided by th...</div><div class="ttdef"><b>Definition</b> system_sound.hpp:12</div></div>
-<div class="ttc" id="anamespacextd_1_1text_html"><div class="ttname"><a href="namespacextd_1_1text.html">xtd::text</a></div><div class="ttdoc">Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:17</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
-<div class="ttc" id="astructxtd_1_1drawing_1_1size_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a></div><div class="ttdoc">Stores an ordered pair of integers, which specify a height and width.</div><div class="ttdef"><b>Definition</b> size.hpp:32</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

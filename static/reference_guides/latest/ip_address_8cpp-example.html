@@ -97,39 +97,28 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1net_1_1dns.html" title="Provides simple domain name resolution functionality.">xtd::net::dns</a> class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/net/sockets/socket&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/net/dns&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/net/ip_address&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/text/string_builder&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;regex&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1net.html">xtd::net</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1net_1_1sockets.html">xtd::net::sockets</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1text.html">xtd::text</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>test_ip_address {</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main(<span class="keyword">const</span> <a class="code hl_typedef" href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">argument_collection</a>&amp; args) {</div>
-<div class="line">    <span class="keyword">auto</span> server = <a class="code hl_typedef" href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">string_builder</a> {};</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main(<span class="keyword">const</span> argument_collection&amp; args) {</div>
+<div class="line">    <span class="keyword">auto</span> server = text::string_builder {};</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Define a regular expression to parse user&#39;s input.</span></div>
 <div class="line">    <span class="comment">// This is a security check. It allows only</span></div>
 <div class="line">    <span class="comment">// alphanumeric input string between 2 to 40 character long.</span></div>
 <div class="line">    <span class="keyword">auto</span> rex = std::regex {R<span class="stringliteral">&quot;(^[a-zA-Z]\w{1,39}$)&quot;};</span></div>
 <div class="line"><span class="stringliteral">    </span></div>
-<div class="line"><span class="stringliteral">    </span><span class="keywordflow">if</span> (args.<a id="a0" name="a0"></a><a class="code hl_function" href="classxtd_1_1basic__array.html#af2ad3488e28e4140835dece83723e7eb">size</a>() &lt; 1) {</div>
+<div class="line"><span class="stringliteral">    </span><span class="keywordflow">if</span> (args.size() &lt; 1) {</div>
 <div class="line">      <span class="comment">// If no server name is passed as an argument to this program, use the current</span></div>
 <div class="line">      <span class="comment">// server name as default.</span></div>
-<div class="line">      server = <a class="code hl_function" href="classxtd_1_1net_1_1dns.html#a0de06bf85b84f7c75dc98083fc522c02">dns::get_host_name</a>();</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Using current host: {}&quot;</span>, server);</div>
+<div class="line">      server = net::dns::get_host_name();</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;Using current host: {}&quot;</span>, server);</div>
 <div class="line">    } <span class="keywordflow">else</span> {</div>
 <div class="line">      server = args[0];</div>
 <div class="line">      <span class="keywordflow">if</span> (!regex_match(server.chars(), rex)) {</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Input string format not allowed.&quot;</span>);</div>
+<div class="line">        console::write_line(<span class="stringliteral">&quot;Input string format not allowed.&quot;</span>);</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
@@ -145,35 +134,35 @@ $(function(){ initResizable(false); });
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> ip_addresses(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; server) {</div>
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">      <span class="comment">// Get server related information.</span></div>
-<div class="line">      <span class="keyword">auto</span> heserver = <a class="code hl_function" href="classxtd_1_1net_1_1dns.html#a2309500bdfa09889fe198850cb1ad9f0">dns::get_host_entry</a>(server);</div>
+<div class="line">      <span class="keyword">auto</span> heserver = net::dns::get_host_entry(server);</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Loop on the AddressList</span></div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> cur_add : heserver.address_list()) {</div>
 <div class="line">        <span class="comment">// Display the type of address family supported by the server. If the</span></div>
 <div class="line">        <span class="comment">// server is IPv6-enabled this value is: InterNetworkV6. If the server</span></div>
 <div class="line">        <span class="comment">// is also IPv4-enabled there will be an additional value of InterNetwork.</span></div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;address_family: {}&quot;</span>, cur_add.address_family());</div>
+<div class="line">        console::write_line(<span class="stringliteral">&quot;address_family: {}&quot;</span>, cur_add.address_family());</div>
 <div class="line">        </div>
 <div class="line">        <span class="comment">// Display the ScopeId property in case of IPV6 addresses.</span></div>
-<div class="line">        <span class="keywordflow">if</span> (cur_add.address_family() == <a class="code hl_enumvalue" href="group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3a927e80579d412742c19c0a31fe89369a">address_family::inter_network_v6</a>)</div>
-<div class="line">          <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;scope id: {}&quot;</span>, cur_add.scope_id());</div>
+<div class="line">        <span class="keywordflow">if</span> (cur_add.address_family() == net::sockets::address_family::inter_network_v6)</div>
+<div class="line">          console::write_line(<span class="stringliteral">&quot;scope id: {}&quot;</span>, cur_add.scope_id());</div>
 <div class="line">          </div>
 <div class="line">          </div>
 <div class="line">        <span class="comment">// Display the server IP address in the standard format. In</span></div>
 <div class="line">        <span class="comment">// IPv4 the format will be dotted-quad notation, in IPv6 it will be</span></div>
 <div class="line">        <span class="comment">// in in colon-hexadecimal notation.</span></div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;address: {}&quot;</span>, cur_add);</div>
+<div class="line">        console::write_line(<span class="stringliteral">&quot;address: {}&quot;</span>, cur_add);</div>
 <div class="line">        </div>
 <div class="line">        <span class="comment">// Display the server IP address in byte format.</span></div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;address_bytes: &quot;</span>);</div>
+<div class="line">        console::write(<span class="stringliteral">&quot;address_bytes: &quot;</span>);</div>
 <div class="line">        </div>
 <div class="line">        <span class="keyword">auto</span> bytes = cur_add.get_address_bytes();</div>
-<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; bytes.size(); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>++)</div>
-<div class="line">          <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(bytes[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>]);</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\r\n&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; bytes.size(); i++)</div>
+<div class="line">          console::write(bytes[i]);</div>
+<div class="line">        console::write_line(<span class="stringliteral">&quot;\r\n&quot;</span>);</div>
 <div class="line">      }</div>
-<div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;[do_resolve] exception: {}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>);</div>
+<div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> system_exception&amp; e) {</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;[do_resolve] exception: {}&quot;</span>, e);</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -182,30 +171,30 @@ $(function(){ initResizable(false); });
 <div class="line">    <span class="keywordflow">try</span> {</div>
 <div class="line">      <span class="comment">// Display the flags that show if the server supports IPv4 or IPv6</span></div>
 <div class="line">      <span class="comment">// address schemas.</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\r\nos_supports_ip_v4: {}&quot;</span>, <a class="code hl_function" href="classxtd_1_1net_1_1sockets_1_1socket.html#aae47db06aa06e1799fa45d729ab9afdf">socket::os_supports_ip_v4</a>());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;os_supports_ip_v6: {}&quot;</span>, <a class="code hl_function" href="classxtd_1_1net_1_1sockets_1_1socket.html#a462f3fd6d38c01d9af3c18f7f83509af">socket::os_supports_ip_v6</a>());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;\r\nos_supports_ip_v4: {}&quot;</span>, net::sockets::socket::os_supports_ip_v4());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;os_supports_ip_v6: {}&quot;</span>, net::sockets::socket::os_supports_ip_v6());</div>
 <div class="line">      </div>
-<div class="line">      <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1net_1_1sockets_1_1socket.html#a462f3fd6d38c01d9af3c18f7f83509af">socket::os_supports_ip_v6</a>()) {</div>
+<div class="line">      <span class="keywordflow">if</span> (net::sockets::socket::os_supports_ip_v6()) {</div>
 <div class="line">        <span class="comment">// Display the server Any address. This IP address indicates that the server</span></div>
 <div class="line">        <span class="comment">// should listen for client activity on all network interfaces.</span></div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\r\nip_v6_any: {}&quot;</span>, <a class="code hl_variable" href="classxtd_1_1net_1_1ip__address.html#acf923e55451be6452fa679a24983ef2f">ip_address::ip_v6_any</a>);</div>
+<div class="line">        console::write_line(<span class="stringliteral">&quot;\r\nip_v6_any: {}&quot;</span>, net::ip_address::ip_v6_any);</div>
 <div class="line">        </div>
 <div class="line">        <span class="comment">// Display the server loopback address.</span></div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;ip_v6_loopback: {}&quot;</span>, <a class="code hl_variable" href="classxtd_1_1net_1_1ip__address.html#ac3d404b041972f5dd9565cf04330a346">ip_address::ip_v6_loopback</a>);</div>
+<div class="line">        console::write_line(<span class="stringliteral">&quot;ip_v6_loopback: {}&quot;</span>, net::ip_address::ip_v6_loopback);</div>
 <div class="line">        </div>
 <div class="line">        <span class="comment">// Used during autoconfiguration first phase.</span></div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;ip_v6_none: {}&quot;</span>, <a class="code hl_variable" href="classxtd_1_1net_1_1ip__address.html#a470e4a32d7ceedb7c04ddf3bd884f549">ip_address::ip_v6_none</a>);</div>
+<div class="line">        console::write_line(<span class="stringliteral">&quot;ip_v6_none: {}&quot;</span>, net::ip_address::ip_v6_none);</div>
 <div class="line">        </div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;is_loopback(ip_v6_loopback): {}&quot;</span>, <a class="code hl_function" href="classxtd_1_1net_1_1ip__address.html#ad5835797f1567c87a180992a02421cf7">ip_address::is_loopback</a>(<a class="code hl_variable" href="classxtd_1_1net_1_1ip__address.html#ac3d404b041972f5dd9565cf04330a346">ip_address::ip_v6_loopback</a>));</div>
+<div class="line">        console::write_line(<span class="stringliteral">&quot;is_loopback(ip_v6_loopback): {}&quot;</span>, net::ip_address::is_loopback(net::ip_address::ip_v6_loopback));</div>
 <div class="line">      }</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;is_loopback(loopback):{}&quot;</span>, <a class="code hl_function" href="classxtd_1_1net_1_1ip__address.html#ad5835797f1567c87a180992a02421cf7">ip_address::is_loopback</a>(<a class="code hl_variable" href="classxtd_1_1net_1_1ip__address.html#a72481d0e644736c7302bb7ad0feb4d70">ip_address::loopback</a>));</div>
-<div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">system_exception</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;[ip_addresses] exception: {}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>);</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;is_loopback(loopback):{}&quot;</span>, net::ip_address::is_loopback(net::ip_address::loopback));</div>
+<div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> system_exception&amp; e) {</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;[ip_addresses] exception: {}&quot;</span>, e);</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
-<div class="line"><a id="a2" name="a2"></a><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(test_ip_address::main);</div>
+<div class="line"><a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(test_ip_address::main);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output if no args:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -223,35 +212,12 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="comment">// ip_v6_none: ::</span></div>
 <div class="line"><span class="comment">// is_loopback(ip_v6_loopback): true</span></div>
 <div class="line"><span class="comment">// is_loopback(loopback):true</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_af2ad3488e28e4140835dece83723e7eb"><div class="ttname"><a href="classxtd_1_1basic__array.html#af2ad3488e28e4140835dece83723e7eb">xtd::basic_array::size</a></div><div class="ttdeci">virtual size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container, i.e. std::distance(xtd::array::begin(),...</div><div class="ttdef"><b>Definition</b> basic_array.hpp:246</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:462</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1dns_html_a0de06bf85b84f7c75dc98083fc522c02"><div class="ttname"><a href="classxtd_1_1net_1_1dns.html#a0de06bf85b84f7c75dc98083fc522c02">xtd::net::dns::get_host_name</a></div><div class="ttdeci">static xtd::string get_host_name()</div><div class="ttdoc">Gets the host name of the local computer.</div></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1dns_html_a2309500bdfa09889fe198850cb1ad9f0"><div class="ttname"><a href="classxtd_1_1net_1_1dns.html#a2309500bdfa09889fe198850cb1ad9f0">xtd::net::dns::get_host_entry</a></div><div class="ttdeci">static xtd::net::ip_host_entry get_host_entry(const ip_address &amp;address)</div><div class="ttdoc">Resolves an IP address to an xtd::net::ip_host_entry instance.</div></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1ip__address_html_a470e4a32d7ceedb7c04ddf3bd884f549"><div class="ttname"><a href="classxtd_1_1net_1_1ip__address.html#a470e4a32d7ceedb7c04ddf3bd884f549">xtd::net::ip_address::ip_v6_none</a></div><div class="ttdeci">static const ip_address ip_v6_none</div><div class="ttdoc">Provides an IP address that indicates that no network interface should be used. This field is constan...</div><div class="ttdef"><b>Definition</b> ip_address.hpp:62</div></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1ip__address_html_a72481d0e644736c7302bb7ad0feb4d70"><div class="ttname"><a href="classxtd_1_1net_1_1ip__address.html#a72481d0e644736c7302bb7ad0feb4d70">xtd::net::ip_address::loopback</a></div><div class="ttdeci">static const ip_address loopback</div><div class="ttdoc">Provides the IP loopback address. This field is constant.</div><div class="ttdef"><b>Definition</b> ip_address.hpp:65</div></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1ip__address_html_ac3d404b041972f5dd9565cf04330a346"><div class="ttname"><a href="classxtd_1_1net_1_1ip__address.html#ac3d404b041972f5dd9565cf04330a346">xtd::net::ip_address::ip_v6_loopback</a></div><div class="ttdeci">static const ip_address ip_v6_loopback</div><div class="ttdoc">Provides the IP loopback address. This field is constant.</div><div class="ttdef"><b>Definition</b> ip_address.hpp:58</div></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1ip__address_html_acf923e55451be6452fa679a24983ef2f"><div class="ttname"><a href="classxtd_1_1net_1_1ip__address.html#acf923e55451be6452fa679a24983ef2f">xtd::net::ip_address::ip_v6_any</a></div><div class="ttdeci">static const ip_address ip_v6_any</div><div class="ttdoc">The Socket::Bind method uses the cIPv6Any field to indicate that a Socket must listen for client acti...</div><div class="ttdef"><b>Definition</b> ip_address.hpp:55</div></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1ip__address_html_ad5835797f1567c87a180992a02421cf7"><div class="ttname"><a href="classxtd_1_1net_1_1ip__address.html#ad5835797f1567c87a180992a02421cf7">xtd::net::ip_address::is_loopback</a></div><div class="ttdeci">static bool is_loopback(const ip_address &amp;address)</div><div class="ttdoc">Indicates whether the specified IP address is the loopback address.</div></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1socket_html_a462f3fd6d38c01d9af3c18f7f83509af"><div class="ttname"><a href="classxtd_1_1net_1_1sockets_1_1socket.html#a462f3fd6d38c01d9af3c18f7f83509af">xtd::net::sockets::socket::os_supports_ip_v6</a></div><div class="ttdeci">static bool os_supports_ip_v6() noexcept</div><div class="ttdoc">Indicates whether the underlying operating system and network adaptors support Internet Protocol vers...</div></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1socket_html_aae47db06aa06e1799fa45d729ab9afdf"><div class="ttname"><a href="classxtd_1_1net_1_1sockets_1_1socket.html#aae47db06aa06e1799fa45d729ab9afdf">xtd::net::sockets::socket::os_supports_ip_v4</a></div><div class="ttdeci">static bool os_supports_ip_v4() noexcept</div><div class="ttdoc">Indicates whether the underlying operating system and network adaptors support Internet Protocol vers...</div></div>
-<div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">The exception that is thrown when a method call is invalid for the object&#39;s current state.</div><div class="ttdef"><b>Definition</b> system_exception.hpp:18</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
-<div class="ttc" id="agroup__strings_html_ga80050d927e8b925c2668c1faebf0b941"><div class="ttname"><a href="group__strings.html#ga80050d927e8b925c2668c1faebf0b941">xtd::text::string_builder</a></div><div class="ttdeci">xtd::text::basic_string_builder&lt; char &gt; string_builder</div><div class="ttdoc">Represents a mutable string of characters of UTF-8 code units. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> string_builder.hpp:19</div></div>
-<div class="ttc" id="agroup__xtd__core_html_gabf5d378737c3b0846431d6b51496ebfa"><div class="ttname"><a href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">xtd::argument_collection</a></div><div class="ttdeci">xtd::array&lt; xtd::string &gt; argument_collection</div><div class="ttdoc">Represents the collection of arguments passed to the main entry point method.</div><div class="ttdef"><b>Definition</b> argument_collection.hpp:19</div></div>
-<div class="ttc" id="agroup__xtd__core_html_gga5c7a488efbbc9c766286c1485399aef3a927e80579d412742c19c0a31fe89369a"><div class="ttname"><a href="group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3a927e80579d412742c19c0a31fe89369a">xtd::net::sockets::address_family::inter_network_v6</a></div><div class="ttdeci">@ inter_network_v6</div><div class="ttdoc">Address for IP version 6.</div><div class="ttdef"><b>Definition</b> address_family.hpp:82</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:16</div></div>
-<div class="ttc" id="anamespacextd_1_1net_1_1sockets_html"><div class="ttname"><a href="namespacextd_1_1net_1_1sockets.html">xtd::net::sockets</a></div><div class="ttdoc">The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface f...</div><div class="ttdef"><b>Definition</b> address_family.hpp:16</div></div>
-<div class="ttc" id="anamespacextd_1_1net_html"><div class="ttname"><a href="namespacextd_1_1net.html">xtd::net</a></div><div class="ttdoc">The xtd::net namespace provides a simple programming interface for many of the protocols used on netw...</div><div class="ttdef"><b>Definition</b> cookie_exception.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_1_1text_html"><div class="ttname"><a href="namespacextd_1_1text.html">xtd::text</a></div><div class="ttdoc">Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:17</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

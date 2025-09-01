@@ -157,15 +157,7 @@ Named system mutexes are visible throughout the operating system, and can be use
 If you use other synchronization objects for your threads and you use <a class="el" href="classxtd_1_1threading_1_1thread.html" title="Creates and controls a thread, sets its priority, and gets its status.">xtd::threading::thread</a> you are interested in using <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a>. You will also benefit from <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a217129669f17b6f14201dccd0405450c" title="Waits for all the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_all</a> and <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aee2a73d9052723690ff0e15a338cce35" title="Waits for any of the elements in the specified collection to receive a signal.">xtd::threading::wait_handle::wait_any</a> among others to synchronize all your objects. </dd>
 <dd>
 On the other hand, if you only use mutexes and you use <a href="https://en.cppreference.com/w/cpp/thread/thread">std::thread</a> then you are interested in using <a href="https://en.cppreference.com/w/cpp/thread/recursive_timed_mutex">std::recursive_timed_mutex</a>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>This example shows how a local <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> object is used to synchronize access to a protected resource. Because each calling thread is blocked until it acquires ownership of the mutex, it must call the <a class="el" href="#a02f2e273ef08cdf7008087b9966de53d" title="Releases the Mutex once.">xtd::threading::mutex::release_mutex</a> method to release ownership of the mutex. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/list&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/threading/mutex&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>This example shows how a local <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> object is used to synchronize access to a protected resource. Because each calling thread is blocked until it acquires ownership of the mutex, it must call the <a class="el" href="#a02f2e273ef08cdf7008087b9966de53d" title="Releases the Mutex once.">xtd::threading::mutex::release_mutex</a> method to release ownership of the mutex. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>mutex_example {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
@@ -191,25 +183,25 @@ On the other hand, if you only use mutexes and you use <a href="https://en.cppre
 <div class="line">    <span class="comment">// so that only one thread at a time can enter.</span></div>
 <div class="line">    <span class="keyword">static</span> <span class="keywordtype">void</span> Use_resource() {</div>
 <div class="line">      <span class="comment">// Wait until it is safe to enter.</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} is requesting the mutex&quot;</span>,</div>
-<div class="line">                        <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a278b3fabeade100cbc012968115792fd">thread::current_thread</a>().name());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} is requesting the mutex&quot;</span>,</div>
+<div class="line">                        thread::current_thread().name());</div>
 <div class="line">      mut.wait_one();</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} has entered the protected area&quot;</span>,</div>
-<div class="line">                          <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a278b3fabeade100cbc012968115792fd">thread::current_thread</a>().name());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} has entered the protected area&quot;</span>,</div>
+<div class="line">                          thread::current_thread().name());</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Place code to access non-reentrant resources here.</span></div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Simulate some work.</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">thread::sleep</a>(500);</div>
+<div class="line">      thread::sleep(500);</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} is leaving the protected area&quot;</span>,</div>
-<div class="line">                          <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a278b3fabeade100cbc012968115792fd">thread::current_thread</a>().name());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} is leaving the protected area&quot;</span>,</div>
+<div class="line">                          thread::current_thread().name());</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Release the mutex.</span></div>
 <div class="line">      mut.release_mutex();</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} has released the mutex&quot;</span>,</div>
-<div class="line">                          <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a278b3fabeade100cbc012968115792fd">thread::current_thread</a>().name());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} has released the mutex&quot;</span>,</div>
+<div class="line">                          thread::current_thread().name());</div>
 <div class="line">    }</div>
 <div class="line"> </div>
 <div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> list&lt;thread&gt; threads;</div>
@@ -236,18 +228,10 @@ On the other hand, if you only use mutexes and you use <a href="https://en.cppre
 <div class="line"><span class="comment">// thread_3 has entered the protected area</span></div>
 <div class="line"><span class="comment">// thread_3 is leaving the protected area</span></div>
 <div class="line"><span class="comment">// thread_3 has released the mutex</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a278b3fabeade100cbc012968115792fd"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a278b3fabeade100cbc012968115792fd">xtd::threading::thread::current_thread</a></div><div class="ttdeci">static thread &amp; current_thread() noexcept</div><div class="ttdoc">Gets the currently running thread.</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a42bc6e2bb805f928e50ae73d243b95f2"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">xtd::threading::thread::sleep</a></div><div class="ttdeci">static void sleep(int32 milliseconds_timeout)</div><div class="ttdoc">Suspends the current thread for a specified time.</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a6998fa3ca4218452ae93143d120174ba"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a6998fa3ca4218452ae93143d120174ba">xtd::threading::thread::join_all</a></div><div class="ttdeci">static void join_all()</div><div class="ttdoc">Blocks the calling thread until all joinable threads terminate.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:16</div></div>
-<div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="mutex_8cpp-example.html#_a1">mutex.cpp</a>.</dd>
-</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
 <tr class="memitem:a76d46795a5139906244351664dce7cc6" id="r_a76d46795a5139906244351664dce7cc6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76d46795a5139906244351664dce7cc6">native_handle_type</a></td></tr>
@@ -290,7 +274,7 @@ On the other hand, if you only use mutexes and you use <a href="https://en.cppre
 <tr class="memdesc:aad7c66ee04153877e8933cdcfa375043"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases all resources held by the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>.  <br /></td></tr>
 <tr class="separator:aad7c66ee04153877e8933cdcfa375043"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a7bf412a6af20f33768a77951ad602b" id="r_a7a7bf412a6af20f33768a77951ad602b"><td class="memItemLeft" align="right" valign="top"><a id="a7a7bf412a6af20f33768a77951ad602b" name="a7a7bf412a6af20f33768a77951ad602b"></a>
-<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><b>compare_to</b> (const <a class="el" href="classxtd_1_1threading_1_1mutex.html">mutex</a> &amp;value) const noexcept override</td></tr>
+<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><b>compare_to</b> (const <a class="el" href="classxtd_1_1threading_1_1mutex.html">mutex</a> &amp;value) const noexcept override</td></tr>
 <tr class="separator:a7a7bf412a6af20f33768a77951ad602b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3096315309ba2ef8be4cb2db94f70f78" id="r_a3096315309ba2ef8be4cb2db94f70f78"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3096315309ba2ef8be4cb2db94f70f78">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept override</td></tr>
 <tr class="memdesc:a3096315309ba2ef8be4cb2db94f70f78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
@@ -329,7 +313,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memitem:a9fdaa8f872d88a427616d3a309b8bdb9" id="r_a9fdaa8f872d88a427616d3a309b8bdb9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9fdaa8f872d88a427616d3a309b8bdb9">signal</a> () override</td></tr>
 <tr class="memdesc:a9fdaa8f872d88a427616d3a309b8bdb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases ownership of the specified <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> object.  <br /></td></tr>
 <tr class="separator:a9fdaa8f872d88a427616d3a309b8bdb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9bb2824e6fda49dc1a7d843b269fcd4" id="r_ae9bb2824e6fda49dc1a7d843b269fcd4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9bb2824e6fda49dc1a7d843b269fcd4">wait</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> milliseconds_timeout) override</td></tr>
+<tr class="memitem:ae9bb2824e6fda49dc1a7d843b269fcd4" id="r_ae9bb2824e6fda49dc1a7d843b269fcd4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9bb2824e6fda49dc1a7d843b269fcd4">wait</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout) override</td></tr>
 <tr class="memdesc:ae9bb2824e6fda49dc1a7d843b269fcd4"><td class="mdescLeft">&#160;</td><td class="mdescRight">wait ownership of the specified mutex object.  <br /></td></tr>
 <tr class="separator:ae9bb2824e6fda49dc1a7d843b269fcd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -347,7 +331,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ab53dcefc6844ecf0d6d9967ac489ac87" id="r_ab53dcefc6844ecf0d6d9967ac489ac87"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87">wait_one</a> ()</td></tr>
 <tr class="memdesc:ab53dcefc6844ecf0d6d9967ac489ac87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the current thread until the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> receives a signal.  <br /></td></tr>
 <tr class="separator:ab53dcefc6844ecf0d6d9967ac489ac87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65749b3c963772bef5440b1c8faca6ea" id="r_a65749b3c963772bef5440b1c8faca6ea"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a65749b3c963772bef5440b1c8faca6ea">wait_one</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> milliseconds_timeout)</td></tr>
+<tr class="memitem:a65749b3c963772bef5440b1c8faca6ea" id="r_a65749b3c963772bef5440b1c8faca6ea"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a65749b3c963772bef5440b1c8faca6ea">wait_one</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout)</td></tr>
 <tr class="memdesc:a65749b3c963772bef5440b1c8faca6ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the current thread until the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> receives a signal, using 32-bit signed integer to measure the time interval.  <br /></td></tr>
 <tr class="separator:a65749b3c963772bef5440b1c8faca6ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ffdfd0f2f35f6768cb78bded574aa01" id="r_a6ffdfd0f2f35f6768cb78bded574aa01"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a6ffdfd0f2f35f6768cb78bded574aa01">wait_one</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
@@ -369,7 +353,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:af2d19ef177db62351b58a42f22138dbe" id="r_af2d19ef177db62351b58a42f22138dbe"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#af2d19ef177db62351b58a42f22138dbe">to_string</a> () const noexcept</td></tr>
 <tr class="memdesc:af2d19ef177db62351b58a42f22138dbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
 <tr class="separator:af2d19ef177db62351b58a42f22138dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e5ad6ed9d798584e8b9be5749d6faa5" id="r_a8e5ad6ed9d798584e8b9be5749d6faa5"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1icomparable.html#a8e5ad6ed9d798584e8b9be5749d6faa5">compare_to</a> (const mutex &amp;obj) const noexcept=0</td></tr>
+<tr class="memitem:a8e5ad6ed9d798584e8b9be5749d6faa5" id="r_a8e5ad6ed9d798584e8b9be5749d6faa5"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1icomparable.html#a8e5ad6ed9d798584e8b9be5749d6faa5">compare_to</a> (const mutex &amp;obj) const noexcept=0</td></tr>
 <tr class="memdesc:a8e5ad6ed9d798584e8b9be5749d6faa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
 <tr class="separator:a8e5ad6ed9d798584e8b9be5749d6faa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f8bbde943d2e5ecf565734c60e23903" id="r_a1f8bbde943d2e5ecf565734c60e23903"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903">equals</a> (const mutex &amp;) const noexcept=0</td></tr>
@@ -378,7 +362,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a01c82b06ca8a5d14aba5f1fb396c16f7" id="r_a01c82b06ca8a5d14aba5f1fb396c16f7"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a01c82b06ca8a5d14aba5f1fb396c16f7">signal_and_wait</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_signal, <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_wait)</td></tr>
 <tr class="memdesc:a01c82b06ca8a5d14aba5f1fb396c16f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> and waits on another.  <br /></td></tr>
 <tr class="separator:a01c82b06ca8a5d14aba5f1fb396c16f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83aebea15b640d53b04a97306515768d" id="r_a83aebea15b640d53b04a97306515768d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a83aebea15b640d53b04a97306515768d">signal_and_wait</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_signal, <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_wait, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> milliseconds_timeout)</td></tr>
+<tr class="memitem:a83aebea15b640d53b04a97306515768d" id="r_a83aebea15b640d53b04a97306515768d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a83aebea15b640d53b04a97306515768d">signal_and_wait</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_signal, <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_wait, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout)</td></tr>
 <tr class="memdesc:a83aebea15b640d53b04a97306515768d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signals one <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> and waits on another, specifying a time-out interval as a 32-bit signed integer.  <br /></td></tr>
 <tr class="separator:a83aebea15b640d53b04a97306515768d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2056ee81b21f23f6b0a7bd7f3bc232e8" id="r_a2056ee81b21f23f6b0a7bd7f3bc232e8"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a2056ee81b21f23f6b0a7bd7f3bc232e8">signal_and_wait</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_signal, <a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;to_wait, const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
@@ -389,8 +373,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a217129669f17b6f14201dccd0405450c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for all the elements in the specified collection to receive a signal.  <br /></td></tr>
 <tr class="separator:a217129669f17b6f14201dccd0405450c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8aa977d4e62fe9fd5cc7c57cd4eb58f2" id="r_a8aa977d4e62fe9fd5cc7c57cd4eb58f2"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
-<tr class="memitem:a8aa977d4e62fe9fd5cc7c57cd4eb58f2"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a8aa977d4e62fe9fd5cc7c57cd4eb58f2">wait_all</a> (const collection_t &amp;wait_handles, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> milliseconds_timeout)</td></tr>
-<tr class="memdesc:a8aa977d4e62fe9fd5cc7c57cd4eb58f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for all the elements in the specified collection to receive a signal, using an <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260" title="Represents a 32-bit signed integer.">int32</a> value to measure the time interval.  <br /></td></tr>
+<tr class="memitem:a8aa977d4e62fe9fd5cc7c57cd4eb58f2"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a8aa977d4e62fe9fd5cc7c57cd4eb58f2">wait_all</a> (const collection_t &amp;wait_handles, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout)</td></tr>
+<tr class="memdesc:a8aa977d4e62fe9fd5cc7c57cd4eb58f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for all the elements in the specified collection to receive a signal, using an <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a> value to measure the time interval.  <br /></td></tr>
 <tr class="separator:a8aa977d4e62fe9fd5cc7c57cd4eb58f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeda61f20a00dfc9a8b0f125edc9e8aa6" id="r_aeda61f20a00dfc9a8b0f125edc9e8aa6"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
 <tr class="memitem:aeda61f20a00dfc9a8b0f125edc9e8aa6"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#aeda61f20a00dfc9a8b0f125edc9e8aa6">wait_all</a> (const collection_t &amp;wait_handles, const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
@@ -401,7 +385,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:aee2a73d9052723690ff0e15a338cce35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for any of the elements in the specified collection to receive a signal.  <br /></td></tr>
 <tr class="separator:aee2a73d9052723690ff0e15a338cce35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b1275f297e0dbddbf302edf0cd2a37d" id="r_a5b1275f297e0dbddbf302edf0cd2a37d"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
-<tr class="memitem:a5b1275f297e0dbddbf302edf0cd2a37d"><td class="memTemplItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a5b1275f297e0dbddbf302edf0cd2a37d">wait_any</a> (const collection_t &amp;wait_handles, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> milliseconds_timeout)</td></tr>
+<tr class="memitem:a5b1275f297e0dbddbf302edf0cd2a37d"><td class="memTemplItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a5b1275f297e0dbddbf302edf0cd2a37d">wait_any</a> (const collection_t &amp;wait_handles, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> milliseconds_timeout)</td></tr>
 <tr class="memdesc:a5b1275f297e0dbddbf302edf0cd2a37d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for any of the elements in the specified collection to receive a signal, using a 32-bit signed integer to measure the time interval.  <br /></td></tr>
 <tr class="separator:a5b1275f297e0dbddbf302edf0cd2a37d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa704be64592eed6531ec3953bb9897e" id="r_afa704be64592eed6531ec3953bb9897e"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
@@ -809,9 +793,7 @@ There was some other error. The HResult property may provide more information. <
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> object1 = <a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;object&gt;</a>();</div>
@@ -831,6 +813,7 @@ There was some other error. The HResult property may provide more information. <
 <div class="line"><span class="comment">// false</span></div>
 <div class="line"><span class="comment">// true</span></div>
 <div class="line"><span class="comment">// true</span></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga2fd68f03198b2bf84b1e93149494b685"><div class="ttname"><a href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">xtd::new_ptr</a></div><div class="ttdeci">ptr&lt; type_t &gt; new_ptr(args_t &amp;&amp;... args)</div><div class="ttdoc">The xtd::new_ptr operator creates a xtd::ptr object.</div><div class="ttdef"><b>Definition</b> new_ptr.hpp:24</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1164,7 +1147,7 @@ This operation synchronizes-with (as defined in std::memory_order) any subsequen
         <tr>
           <td class="memname">bool xtd::threading::mutex::wait </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds_timeout</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1199,7 +1182,7 @@ Override this function for all derived object </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:52:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

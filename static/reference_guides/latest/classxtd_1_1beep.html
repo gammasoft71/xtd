@@ -118,14 +118,12 @@ Inheritance diagram for xtd::beep:</div>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classxtd_1_1console.html#aab2e161c3a72cb14f808ed40e2b59ef2" title="Plays the sound of a beep through the console speaker.">xtd::console::beep</a> method. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="console_beep2_8cpp-example.html#_a0">console_beep2.cpp</a>, and <a class="el" href="console_beep3_8cpp-example.html#_a0">console_beep3.cpp</a>.</dd>
-</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a47f89731085173fb437b77eb0a2be439" id="r_a47f89731085173fb437b77eb0a2be439"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47f89731085173fb437b77eb0a2be439">beep</a> ()=default</td></tr>
 <tr class="memdesc:a47f89731085173fb437b77eb0a2be439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays the sound of a beep through the console speaker.  <br /></td></tr>
 <tr class="separator:a47f89731085173fb437b77eb0a2be439"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7abedc670e1e4830b1e53a427fa0fee8" id="r_a7abedc670e1e4830b1e53a427fa0fee8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7abedc670e1e4830b1e53a427fa0fee8">beep</a> (<a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a> frequency, <a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a> duration)</td></tr>
+<tr class="memitem:a7abedc670e1e4830b1e53a427fa0fee8" id="r_a7abedc670e1e4830b1e53a427fa0fee8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7abedc670e1e4830b1e53a427fa0fee8">beep</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> frequency, <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> duration)</td></tr>
 <tr class="memdesc:a7abedc670e1e4830b1e53a427fa0fee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plays the sound of a beep of a specified frequency and duration through the console speaker.  <br /></td></tr>
 <tr class="separator:a7abedc670e1e4830b1e53a427fa0fee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -185,13 +183,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Plays the sound of a beep through the console speaker. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>By default, the beep plays at a frequency of 800 hertz for a duration of 200 milliseconds </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the beep method. The example accepts a number from 1 through 9 as a command line argument, and plays the beep that number of times. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/beep&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/int32_object&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the beep method. The example accepts a number from 1 through 9 as a command line argument, and plays the beep that number of times. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keywordtype">int</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> = 0;</div>
@@ -202,7 +194,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">threading::thread::sleep</a>(100_ms);</div>
 <div class="line">    }</div>
 <div class="line">  } <span class="keywordflow">else</span></div>
-<div class="line">    <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; <span class="stringliteral">&quot;Usage: Enter the number of times (between 1 and 9) to beep.&quot;</span> &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
+<div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;Usage: Enter the number of times (between 1 and 9) to beep.&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1beep_html_a47f89731085173fb437b77eb0a2be439"><div class="ttname"><a href="#a47f89731085173fb437b77eb0a2be439">xtd::beep::beep</a></div><div class="ttdeci">beep()=default</div><div class="ttdoc">Plays the sound of a beep through the console speaker.</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a923837ac84baf01726703e0474ca4888"><div class="ttname"><a href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">xtd::console::out</a></div><div class="ttdeci">static std::ostream out</div><div class="ttdoc">Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...</div><div class="ttdef"><b>Definition</b> console.hpp:52</div></div>
@@ -210,7 +202,6 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a42bc6e2bb805f928e50ae73d243b95f2"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">xtd::threading::thread::sleep</a></div><div class="ttdeci">static void sleep(int32 milliseconds_timeout)</div><div class="ttdoc">Suspends the current thread for a specified time.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">xtd::console_key::x</a></div><div class="ttdeci">@ x</div><div class="ttdoc">The X key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:134</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 <div class="ttc" id="astructxtd_1_1box_html_a5e274cc04e1882aca9dc519e8f7235ba"><div class="ttname"><a href="structxtd_1_1box.html#a5e274cc04e1882aca9dc519e8f7235ba">xtd::box::try_parse</a></div><div class="ttdeci">static bool try_parse(const xtd::string &amp;value, reference result) noexcept</div><div class="ttdoc">Converts the string to its value_type equivalent. A return value indicates whether the conversion suc...</div><div class="ttdef"><b>Definition</b> box.hpp:172</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -228,12 +219,12 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">xtd::beep::beep </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a></td>          <td class="paramname"><span class="paramname"><em>frequency</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a></td>          <td class="paramname"><span class="paramname"><em>frequency</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a></td>          <td class="paramname"><span class="paramname"><em>duration</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a></td>          <td class="paramname"><span class="paramname"><em>duration</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -251,14 +242,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the beep method by playing the first few notes of a song through the console speaker. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/list&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/beep&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>This example demonstrates the beep method by playing the first few notes of a song through the console speaker. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Define the frequencies of notes in an octave, as well as</span></div>
 <div class="line"><span class="comment">// silence (rest).</span></div>
@@ -311,18 +295,18 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Play the notes in a song.</span></div>
-<div class="line"><span class="keywordtype">void</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;note&gt;</a>&amp; tune) {</div>
-<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a> : tune) {</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(<span class="keyword">const</span> ienumerable&lt;note&gt;&amp; tune) {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> n : tune) {</div>
 <div class="line">    <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_tone() == tone::rest)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">threading::thread::sleep</a>(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int&gt;</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration()));</div>
+<div class="line">      threading::thread::sleep(as&lt;int&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration()));</div>
 <div class="line">    <span class="keywordflow">else</span></div>
-<div class="line">      console::out &lt;&lt; beep(as&lt;unsigned int&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_tone()), <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;unsigned int&gt;</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration()));</div>
+<div class="line">      console::out &lt;&lt; beep(as&lt;unsigned int&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_tone()), as&lt;unsigned int&gt;(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>.note_duration()));</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Declare the first few notes of the song, &quot;Mary Had A Little Lamb&quot;.</span></div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a> mary = {</div>
+<div class="line">  <span class="keyword">auto</span> mary = array {</div>
 <div class="line">    note(tone::b, duration::quarter),</div>
 <div class="line">    note(tone::a, duration::quarter),</div>
 <div class="line">    note(tone::g_below_c, duration::quarter),</div>
@@ -340,8 +324,6 @@ Additional Inherited Members</h2></td></tr>
 <div class="line">  <span class="comment">// Play the song</span></div>
 <div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">play</a>(mary);</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:79</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggacc628237bd3e274afe3d5d836e2db786a334c4a4c42fdb79d7ebc3e73b517e6f8"><div class="ttname"><a href="group__xtd__core.html#ggacc628237bd3e274afe3d5d836e2db786a334c4a4c42fdb79d7ebc3e73b517e6f8">xtd::console_modifiers::none</a></div><div class="ttdeci">@ none</div><div class="ttdoc">No modifier key.</div><div class="ttdef"><b>Definition</b> console_modifiers.hpp:22</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">xtd::console_key::a</a></div><div class="ttdeci">@ a</div><div class="ttdoc">The A key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:88</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">xtd::console_key::c</a></div><div class="ttdeci">@ c</div><div class="ttdoc">The C key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:92</div></div>
@@ -352,7 +334,6 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa3b34c0871dc2fd51eec5559b68f709d">xtd::console_key::play</a></div><div class="ttdeci">@ play</div><div class="ttdoc">The Play key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:302</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ab2f5ff47436671b6e533d8dc3614845d"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab2f5ff47436671b6e533d8dc3614845d">xtd::console_key::g</a></div><div class="ttdeci">@ g</div><div class="ttdoc">The G key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:100</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:16</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -364,7 +345,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

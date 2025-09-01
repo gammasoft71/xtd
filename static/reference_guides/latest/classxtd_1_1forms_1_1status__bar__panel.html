@@ -123,16 +123,7 @@ Inheritance diagram for xtd::forms::status_bar_panel:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd::forms</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a></dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1status__bar__panel.html" title="Represents a xtd::forms::status_bar panel.">xtd::forms::status_bar_panel</a> control. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/progress_bar&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/status_bar&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/timer&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/drawing/pens&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1status__bar__panel.html" title="Represents a xtd::forms::status_bar panel.">xtd::forms::status_bar_panel</a> control. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>status_bar_example {</div>
 <div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
@@ -178,16 +169,15 @@ Inheritance diagram for xtd::forms::status_bar_panel:</div>
 <div class="line">    <a class="code hl_typedef" href="group__style__sheets.html#ga2134402f5f26f92579e2f58466fa4167">status_bar_panel</a> status_bar_panel1 = status_bar_panel::create_panel(<span class="stringliteral">&quot;Status one&quot;</span>, image_from_color(color::light_green));</div>
 <div class="line">    <a class="code hl_typedef" href="group__style__sheets.html#ga2134402f5f26f92579e2f58466fa4167">status_bar_panel</a> status_bar_panel2 = status_bar_panel::create_panel(<span class="stringliteral">&quot;Status two&quot;</span>);</div>
 <div class="line">    <a class="code hl_typedef" href="group__style__sheets.html#ga2134402f5f26f92579e2f58466fa4167">status_bar_panel</a> status_bar_panel3 = status_bar_panel::create_panel(<span class="stringliteral">&quot;Status three&quot;</span>);</div>
-<div class="line">    timer timer1;</div>
+<div class="line">    forms::timer timer1;</div>
 <div class="line">    progress_bar progress_bar1;</div>
 <div class="line">    <a class="code hl_typedef" href="group__style__sheets.html#ga2134402f5f26f92579e2f58466fa4167">status_bar_panel</a> status_bar_panel4 = status_bar_panel::create_control(progress_bar1);</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(status_bar_example::form1 {});</div>
+<div class="line">  application::run(status_bar_example::form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1status__bar__panel_html_a070d8bd3900348c6ade4a7ab280708bf"><div class="ttname"><a href="#a070d8bd3900348c6ade4a7ab280708bf">xtd::forms::status_bar_panel::text</a></div><div class="ttdeci">const xtd::string &amp; text() const noexcept</div><div class="ttdoc">Gets the text of the status bar panel.</div></div>
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
@@ -196,9 +186,6 @@ Inheritance diagram for xtd::forms::status_bar_panel:</div>
 <div class="ttc" id="agroup__xtd__forms_html_gga37ab2b016bef74fa42812b6dc69b4c9aa5405fd17e6a3bcb9d6bab991f731d640"><div class="ttname"><a href="group__xtd__forms.html#gga37ab2b016bef74fa42812b6dc69b4c9aa5405fd17e6a3bcb9d6bab991f731d640">xtd::forms::status_bar_panel_border_style::sunken</a></div><div class="ttdeci">@ sunken</div><div class="ttdoc">Defines a sunken border. Same as xtd::forms::status_bar_panel_border_style::inset.</div><div class="ttdef"><b>Definition</b> status_bar_panel_border_style.hpp:32</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_ggae0566fb9fcc2f1df08ed5dd0dde01ad6a2a2d595e6ed9a0b24f027f2b63b134d6"><div class="ttname"><a href="group__xtd__forms.html#ggae0566fb9fcc2f1df08ed5dd0dde01ad6a2a2d595e6ed9a0b24f027f2b63b134d6">xtd::forms::status_bar_panel_auto_size::spring</a></div><div class="ttdeci">@ spring</div><div class="ttdoc">The xtd::forms::status_bar_panel shares the available space on the xtd::forms::status_bar (the space ...</div><div class="ttdef"><b>Definition</b> status_bar_panel_auto_size.hpp:26</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_ggae0566fb9fcc2f1df08ed5dd0dde01ad6a98bf7d8c15784f0a3d63204441e1e2aa"><div class="ttname"><a href="group__xtd__forms.html#ggae0566fb9fcc2f1df08ed5dd0dde01ad6a98bf7d8c15784f0a3d63204441e1e2aa">xtd::forms::status_bar_panel_auto_size::contents</a></div><div class="ttdeci">@ contents</div><div class="ttdoc">The width of the xtd::forms::status_bar_panel is determined by its contents.</div><div class="ttdef"><b>Definition</b> status_bar_panel_auto_size.hpp:28</div></div>
-<div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A <a class="el" href="classxtd_1_1forms_1_1status__bar__panel.html" title="Represents a xtd::forms::status_bar panel.">xtd::forms::status_bar_panel</a> represents an individual panel in the <a class="el" href="classxtd_1_1forms_1_1status__bar.html#ae81f1618bf51b25a4ddecffba289c122" title="Represents the collection of panels in a xtd::forms::status_bar control.">xtd::forms::status_bar::status_bar_panel_collection</a> of a <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Represents a Windows status bar control.">xtd::forms::status_bar</a> control. A <a class="el" href="classxtd_1_1forms_1_1status__bar__panel.html" title="Represents a xtd::forms::status_bar panel.">xtd::forms::status_bar_panel</a> can contain text and/or an image that can be used to reflect the status of an application. Use the <a class="el" href="classxtd_1_1forms_1_1status__bar.html#ae81f1618bf51b25a4ddecffba289c122" title="Represents the collection of panels in a xtd::forms::status_bar control.">xtd::forms::status_bar::status_bar_panel_collection</a>, accessible through the <a class="el" href="classxtd_1_1forms_1_1status__bar.html#ab78bde4291308927eb9f2bb36c2a437c" title="Gets the collection of xtd::forms::status_bar panels contained within the control.">xtd::forms::status_bar::panels</a> property of a <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Represents a Windows status bar control.">xtd::forms::status_bar</a> control, to retrieve, add, or remove an individual <a class="el" href="classxtd_1_1forms_1_1status__bar__panel.html" title="Represents a xtd::forms::status_bar panel.">xtd::forms::status_bar_panel</a>. </dd>
 <dd>
@@ -209,8 +196,6 @@ The <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Represents
 Although the <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Represents a Windows status bar control.">xtd::forms::status_bar</a> control is typically used to display textual information, you can also provide your own type of display to a <a class="el" href="classxtd_1_1forms_1_1status__bar__panel.html" title="Represents a xtd::forms::status_bar panel.">xtd::forms::status_bar_panel</a>. The <a class="el" href="#ab8a85bba67640212df346fe939fddbca" title="Gets the style of the status bar panel.">xtd::forms::status_bar_panel::style</a> property enables you to specify how the <a class="el" href="classxtd_1_1forms_1_1status__bar__panel.html" title="Represents a xtd::forms::status_bar panel.">xtd::forms::status_bar_panel</a> will be drawn. By default, the <a class="el" href="#ab8a85bba67640212df346fe939fddbca" title="Gets the style of the status bar panel.">xtd::forms::status_bar_panel::style</a> property is used to display the value of the <a class="el" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1" title="The xtd::forms::status_bar_panel displays text in the standard font.">xtd::forms::status_bar_panel_style::text</a> property (and an image, if specified in the <a class="el" href="#a6296e2ce2b104d92a01bc1a8c372450b" title="Gets the image to display within the status bar panel.">xtd::forms::status_bar_panel::image</a> property). If the property is set to <a class="el" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02ccaaf6283d5bd545faad64aad281d4c47f9" title="The xtd::forms::status_bar_panel is drawn by the owner.">xtd::forms::status_bar_panel_style::owner_draw</a>, you can draw your own information into the panel. You can use this feature to draw a progress bar or an animated image in the panel. </dd>
 <dd>
 When you create an instance of the <a class="el" href="classxtd_1_1forms_1_1status__bar__panel.html" title="Represents a xtd::forms::status_bar panel.">xtd::forms::status_bar_panel</a> class, the read/write properties are set to initial values. For a list of these values, see the <a class="el" href="#a90219210bacfc66370e25f858afcec78" title="Initialises a new instance of xtd::forms::status_bar_panel class.">xtd::forms::status_bar_panel::status_bar_panel</a> constructor. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="status_bar_8cpp-example.html#_a5">status_bar.cpp</a>.</dd>
-</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a90219210bacfc66370e25f858afcec78" id="r_a90219210bacfc66370e25f858afcec78"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90219210bacfc66370e25f858afcec78">status_bar_panel</a> ()</td></tr>
@@ -251,10 +236,10 @@ When you create an instance of the <a class="el" href="classxtd_1_1forms_1_1stat
 <tr class="memitem:aa5ef95ed5bb75691fc16ea2e8ec77732" id="r_aa5ef95ed5bb75691fc16ea2e8ec77732"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1status__bar__panel.html">status_bar_panel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5ef95ed5bb75691fc16ea2e8ec77732">image</a> (const <a class="el" href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a> &amp;value)</td></tr>
 <tr class="memdesc:aa5ef95ed5bb75691fc16ea2e8ec77732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the image to display within the status bar panel.  <br /></td></tr>
 <tr class="separator:aa5ef95ed5bb75691fc16ea2e8ec77732"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c0cb98c621ba9ecf50e7fb33d2aad3b" id="r_a7c0cb98c621ba9ecf50e7fb33d2aad3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c0cb98c621ba9ecf50e7fb33d2aad3b">min_width</a> () const noexcept</td></tr>
+<tr class="memitem:a7c0cb98c621ba9ecf50e7fb33d2aad3b" id="r_a7c0cb98c621ba9ecf50e7fb33d2aad3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c0cb98c621ba9ecf50e7fb33d2aad3b">min_width</a> () const noexcept</td></tr>
 <tr class="memdesc:a7c0cb98c621ba9ecf50e7fb33d2aad3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the minimum allowed width of the status bar panel within the <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Represents a Windows status bar control.">xtd::forms::status_bar</a> control.  <br /></td></tr>
 <tr class="separator:a7c0cb98c621ba9ecf50e7fb33d2aad3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36f163c3e3f01b3dda2b828cf3b6325e" id="r_a36f163c3e3f01b3dda2b828cf3b6325e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1status__bar__panel.html">status_bar_panel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36f163c3e3f01b3dda2b828cf3b6325e">min_width</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> value)</td></tr>
+<tr class="memitem:a36f163c3e3f01b3dda2b828cf3b6325e" id="r_a36f163c3e3f01b3dda2b828cf3b6325e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1status__bar__panel.html">status_bar_panel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36f163c3e3f01b3dda2b828cf3b6325e">min_width</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value)</td></tr>
 <tr class="memdesc:a36f163c3e3f01b3dda2b828cf3b6325e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the minimum allowed width of the status bar panel within the <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Represents a Windows status bar control.">xtd::forms::status_bar</a> control.  <br /></td></tr>
 <tr class="separator:a36f163c3e3f01b3dda2b828cf3b6325e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26b9fce09f709c983f0b3ed14d69045d" id="r_a26b9fce09f709c983f0b3ed14d69045d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26b9fce09f709c983f0b3ed14d69045d">name</a> () const noexcept</td></tr>
@@ -290,10 +275,10 @@ When you create an instance of the <a class="el" href="classxtd_1_1forms_1_1stat
 <tr class="memitem:aa1a4a311d5ea458fb377569a134411f4" id="r_aa1a4a311d5ea458fb377569a134411f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1status__bar__panel.html">status_bar_panel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1a4a311d5ea458fb377569a134411f4">tool_tip_text</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value)</td></tr>
 <tr class="memdesc:aa1a4a311d5ea458fb377569a134411f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets ToolTip text associated with the status bar panel.  <br /></td></tr>
 <tr class="separator:aa1a4a311d5ea458fb377569a134411f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed0d3d55a52a3f3b3747334ce1a746f2" id="r_aed0d3d55a52a3f3b3747334ce1a746f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed0d3d55a52a3f3b3747334ce1a746f2">width</a> () const noexcept</td></tr>
+<tr class="memitem:aed0d3d55a52a3f3b3747334ce1a746f2" id="r_aed0d3d55a52a3f3b3747334ce1a746f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed0d3d55a52a3f3b3747334ce1a746f2">width</a> () const noexcept</td></tr>
 <tr class="memdesc:aed0d3d55a52a3f3b3747334ce1a746f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the width of the status bar panel within the <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Represents a Windows status bar control.">xtd::forms::status_bar</a> control.  <br /></td></tr>
 <tr class="separator:aed0d3d55a52a3f3b3747334ce1a746f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2610bf2ec428a15608326527256c25ab" id="r_a2610bf2ec428a15608326527256c25ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1status__bar__panel.html">status_bar_panel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2610bf2ec428a15608326527256c25ab">width</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> value)</td></tr>
+<tr class="memitem:a2610bf2ec428a15608326527256c25ab" id="r_a2610bf2ec428a15608326527256c25ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1status__bar__panel.html">status_bar_panel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2610bf2ec428a15608326527256c25ab">width</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value)</td></tr>
 <tr class="memdesc:a2610bf2ec428a15608326527256c25ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the width of the status bar panel within the <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Represents a Windows status bar control.">xtd::forms::status_bar</a> control.  <br /></td></tr>
 <tr class="separator:a2610bf2ec428a15608326527256c25ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -739,7 +724,7 @@ You can use <a class="el" href="#a8cca4c6982c8ff85a8c4a11cda8327eb" title="Gets 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::forms::status_bar_panel::min_width </td>
+          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::forms::status_bar_panel::min_width </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -767,7 +752,7 @@ You can use <a class="el" href="#a8cca4c6982c8ff85a8c4a11cda8327eb" title="Gets 
         <tr>
           <td class="memname"><a class="el" href="classxtd_1_1forms_1_1status__bar__panel.html">status_bar_panel</a> &amp; xtd::forms::status_bar_panel::min_width </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1112,7 +1097,7 @@ To display ToolTips for other controls in your application, use the xtd::forms::
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::forms::status_bar_panel::width </td>
+          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::forms::status_bar_panel::width </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -1140,7 +1125,7 @@ To display ToolTips for other controls in your application, use the xtd::forms::
         <tr>
           <td class="memname"><a class="el" href="classxtd_1_1forms_1_1status__bar__panel.html">status_bar_panel</a> &amp; xtd::forms::status_bar_panel::width </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1547,7 +1532,7 @@ To display ToolTips for other controls in your application, use the xtd::forms::
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

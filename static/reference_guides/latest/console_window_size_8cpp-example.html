@@ -97,9 +97,7 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1console.html#a390011ad7e02c84804983afe83e40ad5" title="Sets the height and width of the console window to the specified values.">xtd::console::set_window_size</a> method.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> orig_width = 0, width = 0;</div>
@@ -110,25 +108,25 @@ $(function(){ initResizable(false); });
 <div class="line">  <span class="comment">//</span></div>
 <div class="line">  <span class="comment">// Step 1: Get the current window dimensions.</span></div>
 <div class="line">  <span class="comment">//</span></div>
-<div class="line">  orig_width  = <a class="code hl_function" href="classxtd_1_1console.html#ae25244024152a9b981366b6f2e63c0d1">console::window_width</a>();</div>
-<div class="line">  orig_height = <a class="code hl_function" href="classxtd_1_1console.html#a25efe6a382a44b8ecccc23bbac00f096">console::window_height</a>();</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(m1, <a class="code hl_function" href="classxtd_1_1console.html#ae25244024152a9b981366b6f2e63c0d1">console::window_width</a>(), <a class="code hl_function" href="classxtd_1_1console.html#a25efe6a382a44b8ecccc23bbac00f096">console::window_height</a>());</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(m4);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ac0ebb643e4d3b01faa8380bd90d22aa0">console::read_key</a>(<span class="keyword">true</span>);</div>
+<div class="line">  orig_width  = console::window_width();</div>
+<div class="line">  orig_height = console::window_height();</div>
+<div class="line">  console::write_line(m1, console::window_width(), console::window_height());</div>
+<div class="line">  console::write_line(m4);</div>
+<div class="line">  console::read_key(<span class="keyword">true</span>);</div>
 <div class="line">  <span class="comment">//</span></div>
 <div class="line">  <span class="comment">// Step 2: Cut the window to 1/4 its original size.</span></div>
 <div class="line">  <span class="comment">//</span></div>
 <div class="line">  width  = orig_width / 2;</div>
 <div class="line">  height = orig_height / 2;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a390011ad7e02c84804983afe83e40ad5">console::set_window_size</a>(width, height);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(m2, <a class="code hl_function" href="classxtd_1_1console.html#ae25244024152a9b981366b6f2e63c0d1">console::window_width</a>(), <a class="code hl_function" href="classxtd_1_1console.html#a25efe6a382a44b8ecccc23bbac00f096">console::window_height</a>());</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(m4);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ac0ebb643e4d3b01faa8380bd90d22aa0">console::read_key</a>(<span class="keyword">true</span>);</div>
+<div class="line">  console::set_window_size(width, height);</div>
+<div class="line">  console::write_line(m2, console::window_width(), console::window_height());</div>
+<div class="line">  console::write_line(m4);</div>
+<div class="line">  console::read_key(<span class="keyword">true</span>);</div>
 <div class="line">  <span class="comment">//</span></div>
 <div class="line">  <span class="comment">// Step 3: Restore the window to its original size.</span></div>
 <div class="line">  <span class="comment">//</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a390011ad7e02c84804983afe83e40ad5">console::set_window_size</a>(orig_width, orig_height);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(m1, <a class="code hl_function" href="classxtd_1_1console.html#ae25244024152a9b981366b6f2e63c0d1">console::window_width</a>(), <a class="code hl_function" href="classxtd_1_1console.html#a25efe6a382a44b8ecccc23bbac00f096">console::window_height</a>());}</div>
+<div class="line">  console::set_window_size(orig_width, orig_height);</div>
+<div class="line">  console::write_line(m1, console::window_width(), console::window_height());}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -137,17 +135,11 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="comment">// The new window width is 50, and the new window height is 30.</span></div>
 <div class="line"><span class="comment">//   (Press any key to continue...)</span></div>
 <div class="line"><span class="comment">// The current window width is 100, and the current window height is 60.</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a25efe6a382a44b8ecccc23bbac00f096"><div class="ttname"><a href="classxtd_1_1console.html#a25efe6a382a44b8ecccc23bbac00f096">xtd::console::window_height</a></div><div class="ttdeci">static int32 window_height()</div><div class="ttdoc">Gets the height of the console window area.</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a390011ad7e02c84804983afe83e40ad5"><div class="ttname"><a href="classxtd_1_1console.html#a390011ad7e02c84804983afe83e40ad5">xtd::console::set_window_size</a></div><div class="ttdeci">static void set_window_size(int32 width, int32 height)</div><div class="ttdoc">Sets the height and width of the console window to the specified values.</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ac0ebb643e4d3b01faa8380bd90d22aa0"><div class="ttname"><a href="classxtd_1_1console.html#ac0ebb643e4d3b01faa8380bd90d22aa0">xtd::console::read_key</a></div><div class="ttdeci">static console_key_info read_key()</div><div class="ttdoc">Obtains the next character or function key pressed by the user. The pressed key is displayed in the c...</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae25244024152a9b981366b6f2e63c0d1"><div class="ttname"><a href="classxtd_1_1console.html#ae25244024152a9b981366b6f2e63c0d1">xtd::console::window_width</a></div><div class="ttdeci">static int32 window_width()</div><div class="ttdoc">Gets the width of the console window area.</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

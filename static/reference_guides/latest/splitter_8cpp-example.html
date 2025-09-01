@@ -120,80 +120,57 @@ $(function(){ initResizable(false); });
 <img src="splitter_gd.png" alt=""/>
 </div>
 </dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/panel&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/splitter&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>splitter_example {</div>
-<div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line">  <span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
-<div class="line">      <a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>(<span class="stringliteral">&quot;Splitter example&quot;</span>);</div>
+<div class="line">      text(<span class="stringliteral">&quot;Splitter example&quot;</span>);</div>
 <div class="line">      client_size({300, 300});</div>
 <div class="line">      controls().push_back_range({panel_fill, splitter_top, panel_top, splitter_right, panel_right, splitter_left, panel_left});</div>
 <div class="line">      </div>
-<div class="line">      panel_left.dock(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619a811882fecd5c7618d7099ebbd39ea254">dock_style::left</a>);</div>
-<div class="line">      panel_left.back_color(<a class="code hl_variable" href="classxtd_1_1drawing_1_1color.html#a33d78a5b89a965ba5e9075b4032c9cf3">drawing::color::light_blue</a>);</div>
+<div class="line">      panel_left.dock(dock_style::left);</div>
+<div class="line">      panel_left.back_color(drawing::color::light_blue);</div>
 <div class="line">      panel_left.width(70);</div>
 <div class="line">      </div>
-<div class="line">      splitter_left.dock(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619a811882fecd5c7618d7099ebbd39ea254">dock_style::left</a>);</div>
+<div class="line">      splitter_left.dock(dock_style::left);</div>
 <div class="line">      </div>
-<div class="line">      panel_right.dock(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619a7c4f29407893c334a6cb7a87bf045c0d">dock_style::right</a>);</div>
-<div class="line">      panel_right.back_color(<a class="code hl_variable" href="classxtd_1_1drawing_1_1color.html#a3243962cdc326a1ae3edca048c00b6a9">drawing::color::light_yellow</a>);</div>
+<div class="line">      panel_right.dock(dock_style::right);</div>
+<div class="line">      panel_right.back_color(drawing::color::light_yellow);</div>
 <div class="line">      panel_right.width(70);</div>
 <div class="line">      </div>
-<div class="line">      splitter_right.dock(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619a7c4f29407893c334a6cb7a87bf045c0d">dock_style::right</a>);</div>
+<div class="line">      splitter_right.dock(dock_style::right);</div>
 <div class="line">      </div>
-<div class="line">      panel_top.dock(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619ab28354b543375bfa94dabaeda722927f">dock_style::top</a>);</div>
-<div class="line">      panel_top.back_color(<a class="code hl_variable" href="classxtd_1_1drawing_1_1color.html#ae0749093d6f8a74eabd5a98a8cd93d0e">drawing::color::light_pink</a>);</div>
+<div class="line">      panel_top.dock(dock_style::top);</div>
+<div class="line">      panel_top.back_color(drawing::color::light_pink);</div>
 <div class="line">      panel_top.height(150);</div>
 <div class="line">      </div>
-<div class="line">      splitter_top.dock(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619ab28354b543375bfa94dabaeda722927f">dock_style::top</a>);</div>
+<div class="line">      splitter_top.dock(dock_style::top);</div>
 <div class="line">      </div>
-<div class="line">      panel_fill.dock(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619aa552c74784b3a82177bca6c8adde0efb">dock_style::fill</a>);</div>
-<div class="line">      panel_fill.back_color(<a class="code hl_variable" href="classxtd_1_1drawing_1_1color.html#a74d4307c420f93f7645b54f52bc24370">drawing::color::light_green</a>);</div>
+<div class="line">      panel_fill.dock(dock_style::fill);</div>
+<div class="line">      panel_fill.back_color(drawing::color::light_green);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1forms_1_1panel.html">panel</a> panel_left;</div>
-<div class="line">    <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1forms_1_1splitter.html">splitter</a> splitter_left;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1panel.html">panel</a> panel_right;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1splitter.html">splitter</a> splitter_right;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1panel.html">panel</a> panel_top;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1splitter.html">splitter</a> splitter_top;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1panel.html">panel</a> panel_fill;</div>
+<div class="line">    panel panel_left;</div>
+<div class="line">    splitter splitter_left;</div>
+<div class="line">    panel panel_right;</div>
+<div class="line">    splitter splitter_right;</div>
+<div class="line">    panel panel_top;</div>
+<div class="line">    splitter splitter_top;</div>
+<div class="line">    panel panel_fill;</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(splitter_example::form1 {});</div>
+<div class="line">  application::run(splitter_example::form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_a3243962cdc326a1ae3edca048c00b6a9"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#a3243962cdc326a1ae3edca048c00b6a9">xtd::drawing::color::light_yellow</a></div><div class="ttdeci">static const xtd::drawing::color light_yellow</div><div class="ttdoc">Gets a system-defined color that has an ARGB value of 0xFFFFFFE0. This field is constant.</div><div class="ttdef"><b>Definition</b> color.hpp:284</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_a33d78a5b89a965ba5e9075b4032c9cf3"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#a33d78a5b89a965ba5e9075b4032c9cf3">xtd::drawing::color::light_blue</a></div><div class="ttdeci">static const xtd::drawing::color light_blue</div><div class="ttdoc">Gets a system-defined color that has an ARGB value of 0xFFADD8E6. This field is constant.</div><div class="ttdef"><b>Definition</b> color.hpp:248</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_a74d4307c420f93f7645b54f52bc24370"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#a74d4307c420f93f7645b54f52bc24370">xtd::drawing::color::light_green</a></div><div class="ttdeci">static const xtd::drawing::color light_green</div><div class="ttdoc">Gets a system-defined color that has an ARGB value of 0xFF90EE90. This field is constant.</div><div class="ttdef"><b>Definition</b> color.hpp:263</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_ae0749093d6f8a74eabd5a98a8cd93d0e"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#ae0749093d6f8a74eabd5a98a8cd93d0e">xtd::drawing::color::light_pink</a></div><div class="ttdeci">static const xtd::drawing::color light_pink</div><div class="ttdoc">Gets a system-defined color that has an ARGB value of 0xFFFFB6C1. This field is constant.</div><div class="ttdef"><b>Definition</b> color.hpp:266</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1panel_html"><div class="ttname"><a href="classxtd_1_1forms_1_1panel.html">xtd::forms::panel</a></div><div class="ttdoc">Used to group collections of controls.</div><div class="ttdef"><b>Definition</b> panel.hpp:32</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1splitter_html"><div class="ttname"><a href="classxtd_1_1forms_1_1splitter.html">xtd::forms::splitter</a></div><div class="ttdoc">Represents a splitter control that enables the user to resize docked controls.</div><div class="ttdef"><b>Definition</b> splitter.hpp:26</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggaac8e45c70fc114a556d8f717b7ee7619a7c4f29407893c334a6cb7a87bf045c0d"><div class="ttname"><a href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619a7c4f29407893c334a6cb7a87bf045c0d">xtd::forms::dock_style::right</a></div><div class="ttdeci">@ right</div><div class="ttdoc">The control&#39;s right edge is docked to the right edge of its containing control.</div><div class="ttdef"><b>Definition</b> dock_style.hpp:33</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggaac8e45c70fc114a556d8f717b7ee7619a811882fecd5c7618d7099ebbd39ea254"><div class="ttname"><a href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619a811882fecd5c7618d7099ebbd39ea254">xtd::forms::dock_style::left</a></div><div class="ttdeci">@ left</div><div class="ttdoc">The control&#39;s left edge is docked to the left edge of its containing control.</div><div class="ttdef"><b>Definition</b> dock_style.hpp:31</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggaac8e45c70fc114a556d8f717b7ee7619aa552c74784b3a82177bca6c8adde0efb"><div class="ttname"><a href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619aa552c74784b3a82177bca6c8adde0efb">xtd::forms::dock_style::fill</a></div><div class="ttdeci">@ fill</div><div class="ttdoc">All the control&#39;s edges are docked to the all edges of its containing control and sized appropriately...</div><div class="ttdef"><b>Definition</b> dock_style.hpp:35</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggaac8e45c70fc114a556d8f717b7ee7619ab28354b543375bfa94dabaeda722927f"><div class="ttname"><a href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619ab28354b543375bfa94dabaeda722927f">xtd::forms::dock_style::top</a></div><div class="ttdeci">@ top</div><div class="ttdoc">The control&#39;s top edge is docked to the top of its containing control.</div><div class="ttdef"><b>Definition</b> dock_style.hpp:27</div></div>
-<div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
-<div class="ttc" id="anamespacextd_1_1text_html"><div class="ttname"><a href="namespacextd_1_1text.html">xtd::text</a></div><div class="ttdoc">Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:17</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

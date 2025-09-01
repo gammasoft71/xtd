@@ -120,190 +120,181 @@ $(function(){ initResizable(false); });
 <img src="calculator_gd.png" alt=""/>
 </div>
 </dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/label&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;array&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections.html">xtd::collections</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>calculator {</div>
-<div class="line">  <span class="keyword">class </span>form_main : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line">  <span class="keyword">class </span>form_main : <span class="keyword">public</span> form {</div>
 <div class="line">    <span class="keyword">enum class</span> operators {</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggacc628237bd3e274afe3d5d836e2db786a334c4a4c42fdb79d7ebc3e73b517e6f8">none</a> = -1,</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a95bd4d656164278daf3f83b7099a8529">divide</a>,</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0fbe41b549bb236aabadebd7924379fd">multiply</a>,</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a97f415c180230ce76bafa74bc058ef5f">subtract</a>,</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a34ec78fcc91ffb1e54cd85e4a0924332">add</a>,</div>
+<div class="line">      none = -1,</div>
+<div class="line">      divide,</div>
+<div class="line">      multiply,</div>
+<div class="line">      subtract,</div>
+<div class="line">      add,</div>
 <div class="line">      equal</div>
 <div class="line">    };</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(form_main());</div>
+<div class="line">      application::run(form_main());</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    form_main() {</div>
-<div class="line">      <a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>(<span class="stringliteral">&quot;Calculator&quot;</span>);</div>
-<div class="line">      back_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(44, 44, 47));</div>
-<div class="line">      fore_color(<a class="code hl_variable" href="classxtd_1_1drawing_1_1color.html#a3204045ef270f9856b5018b2b8408d9c">drawing::color::white</a>);</div>
-<div class="line">      font(<a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a>(<a class="code hl_function" href="classxtd_1_1drawing_1_1font__family.html#a8bee18d4466485c306c17adf9e2565ca">xtd::drawing::font_family::generic_sans_serif</a>(), 15));</div>
-<div class="line">      <a class="code hl_enumeration" href="group__xtd__forms.html#ga988a6abd919c15254f45a0bf9c2dcb17">auto_size_mode</a>(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga988a6abd919c15254f45a0bf9c2dcb17a7553d32e6fa9da02fbc9c28923ccd9be">forms::auto_size_mode::grow_and_shrink</a>);</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga1bed745e8ce3f19294e1c4de1f3d97deac74b6cc0033c255d1b2a0e6f9660b1a5">auto_size</a>(<span class="keyword">true</span>);</div>
+<div class="line">      text(<span class="stringliteral">&quot;Calculator&quot;</span>);</div>
+<div class="line">      back_color(drawing::color::from_argb(44, 44, 47));</div>
+<div class="line">      fore_color(drawing::color::white);</div>
+<div class="line">      font(drawing::font(font_family::generic_sans_serif(), 15));</div>
+<div class="line">      auto_size_mode(forms::auto_size_mode::grow_and_shrink);</div>
+<div class="line">      auto_size(<span class="keyword">true</span>);</div>
 <div class="line">      maximize_box(<span class="keyword">false</span>);</div>
-<div class="line">      <a class="code hl_enumeration" href="group__xtd__forms.html#gae69a2e9fdce97075bf7642aed73e5907">form_border_style</a>(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggae69a2e9fdce97075bf7642aed73e5907a5660a203d49481b9b904b0dc5644b277">forms::form_border_style::fixed_3d</a>);</div>
+<div class="line">      form_border_style(forms::form_border_style::fixed_3d);</div>
 <div class="line">      key_press += key_press_event_handler(*<span class="keyword">this</span>, &amp;form_main::form_main_key_press);</div>
 <div class="line">      </div>
 <div class="line">      result.bounds({0, 0, 240, 60});</div>
-<div class="line">      result.font(<a class="code hl_class" href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a>(font(), font().<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>() * 2));</div>
+<div class="line">      result.font(drawing::font(font(), font().size() * 2));</div>
 <div class="line">      result.parent(*<span class="keyword">this</span>);</div>
-<div class="line">      result.text_align(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0aff1bb2ef26708d2a4dc98bdda5c48071">content_alignment::middle_right</a>);</div>
+<div class="line">      result.text_align(content_alignment::middle_right);</div>
 <div class="line">      result.text(<span class="stringliteral">&quot;0&quot;</span>);</div>
 <div class="line">      </div>
 <div class="line">      button_clear.parent(*<span class="keyword">this</span>);</div>
-<div class="line">      button_clear.back_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(64, 64, 64));</div>
-<div class="line">      button_clear.flat_appearance(<a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1forms_1_1flat__button__appearance.html">flat_button_appearance</a>().mouse_down_back_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(102, 102, 102))</div>
-<div class="line">        .mouse_over_back_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(64, 64, 64))</div>
-<div class="line">        .border_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(44, 44, 47))</div>
+<div class="line">      button_clear.back_color(drawing::color::from_argb(64, 64, 64));</div>
+<div class="line">      button_clear.flat_appearance(flat_button_appearance().mouse_down_back_color(drawing::color::from_argb(102, 102, 102))</div>
+<div class="line">        .mouse_over_back_color(drawing::color::from_argb(64, 64, 64))</div>
+<div class="line">        .border_color(drawing::color::from_argb(44, 44, 47))</div>
 <div class="line">        .border_radius(0)</div>
 <div class="line">        .border_size(0));</div>
-<div class="line">      button_clear.flat_style(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
+<div class="line">      button_clear.flat_style(forms::flat_style::flat);</div>
 <div class="line">      button_clear.location({0, 60});</div>
 <div class="line">      button_clear.text(<span class="stringliteral">&quot;C&quot;</span>);</div>
 <div class="line">      button_clear.size({60, 50});</div>
 <div class="line">      button_clear.click += event_handler(*<span class="keyword">this</span>, &amp;form_main::button_clear_click);</div>
 <div class="line">      </div>
 <div class="line">      button_plus_minus.parent(*<span class="keyword">this</span>);</div>
-<div class="line">      button_plus_minus.back_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(64, 64, 64));</div>
-<div class="line">      button_plus_minus.flat_appearance(<a class="code hl_class" href="classxtd_1_1forms_1_1flat__button__appearance.html">flat_button_appearance</a>().mouse_down_back_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(102, 102, 102))</div>
-<div class="line">        .mouse_over_back_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(64, 64, 64))</div>
-<div class="line">        .border_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(44, 44, 47))</div>
+<div class="line">      button_plus_minus.back_color(drawing::color::from_argb(64, 64, 64));</div>
+<div class="line">      button_plus_minus.flat_appearance(flat_button_appearance().mouse_down_back_color(drawing::color::from_argb(102, 102, 102))</div>
+<div class="line">        .mouse_over_back_color(drawing::color::from_argb(64, 64, 64))</div>
+<div class="line">        .border_color(drawing::color::from_argb(44, 44, 47))</div>
 <div class="line">        .border_radius(0)</div>
 <div class="line">        .border_size(0));</div>
-<div class="line">      button_plus_minus.flat_style(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
+<div class="line">      button_plus_minus.flat_style(forms::flat_style::flat);</div>
 <div class="line">      button_plus_minus.location({61, 60});</div>
 <div class="line">      button_plus_minus.text(<span class="stringliteral">&quot;+/-&quot;</span>);</div>
 <div class="line">      button_plus_minus.size({60, 50});</div>
 <div class="line">      button_plus_minus.click += event_handler(*<span class="keyword">this</span>, &amp;form_main::button_plus_minus_click);</div>
 <div class="line">      </div>
 <div class="line">      button_percent.parent(*<span class="keyword">this</span>);</div>
-<div class="line">      button_percent.back_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(64, 64, 64));</div>
-<div class="line">      button_percent.flat_appearance(<a class="code hl_class" href="classxtd_1_1forms_1_1flat__button__appearance.html">flat_button_appearance</a>().mouse_down_back_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(102, 102, 102))</div>
-<div class="line">        .mouse_over_back_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(64, 64, 64))</div>
-<div class="line">        .border_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(44, 44, 47))</div>
+<div class="line">      button_percent.back_color(drawing::color::from_argb(64, 64, 64));</div>
+<div class="line">      button_percent.flat_appearance(flat_button_appearance().mouse_down_back_color(drawing::color::from_argb(102, 102, 102))</div>
+<div class="line">        .mouse_over_back_color(drawing::color::from_argb(64, 64, 64))</div>
+<div class="line">        .border_color(drawing::color::from_argb(44, 44, 47))</div>
 <div class="line">        .border_radius(0)</div>
 <div class="line">        .border_size(0));</div>
-<div class="line">      button_percent.flat_style(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
+<div class="line">      button_percent.flat_style(forms::flat_style::flat);</div>
 <div class="line">      button_percent.location({122, 60});</div>
 <div class="line">      button_percent.text(<span class="stringliteral">&quot;%&quot;</span>);</div>
 <div class="line">      button_percent.size({60, 50});</div>
 <div class="line">      button_percent.click += event_handler(*<span class="keyword">this</span>, &amp;form_main::button_percent_click);</div>
 <div class="line">      </div>
 <div class="line">      button_decimal.parent(*<span class="keyword">this</span>);</div>
-<div class="line">      button_decimal.back_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(102, 102, 102));</div>
-<div class="line">      button_decimal.flat_appearance(<a class="code hl_class" href="classxtd_1_1forms_1_1flat__button__appearance.html">flat_button_appearance</a>().mouse_down_back_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(144, 144, 144))</div>
-<div class="line">        .mouse_over_back_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(102, 102, 102))</div>
-<div class="line">        .border_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(44, 44, 47))</div>
+<div class="line">      button_decimal.back_color(drawing::color::from_argb(102, 102, 102));</div>
+<div class="line">      button_decimal.flat_appearance(flat_button_appearance().mouse_down_back_color(drawing::color::from_argb(144, 144, 144))</div>
+<div class="line">        .mouse_over_back_color(drawing::color::from_argb(102, 102, 102))</div>
+<div class="line">        .border_color(drawing::color::from_argb(44, 44, 47))</div>
 <div class="line">        .border_radius(0)</div>
 <div class="line">        .border_size(0));</div>
-<div class="line">      button_decimal.flat_style(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
+<div class="line">      button_decimal.flat_style(forms::flat_style::flat);</div>
 <div class="line">      button_decimal.location({122, 264});</div>
 <div class="line">      button_decimal.text(<span class="stringliteral">&quot;.&quot;</span>);</div>
 <div class="line">      button_decimal.size({60, 50});</div>
 <div class="line">      button_decimal.click += event_handler(*<span class="keyword">this</span>, &amp;form_main::button_number_click);</div>
 <div class="line">      </div>
-<div class="line">      <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">generic::list&lt;xtd::drawing::point&gt;</a> button_number_locations = {{0, 264}, {0, 213}, {61, 213}, {122, 213}, {0, 162}, {61, 162}, {122, 162}, {0, 111}, {61, 111}, {122, 111}};</div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; 10; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>++) {</div>
-<div class="line">        button_numbers[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>].parent(*<span class="keyword">this</span>);</div>
-<div class="line">        button_numbers[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>].back_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(102, 102, 102));</div>
-<div class="line">        button_numbers[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>].flat_appearance(<a class="code hl_class" href="classxtd_1_1forms_1_1flat__button__appearance.html">flat_button_appearance</a>().mouse_down_back_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(144, 144, 144))</div>
-<div class="line">          .mouse_over_back_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(102, 102, 102))</div>
-<div class="line">          .border_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(44, 44, 47))</div>
+<div class="line">      list&lt;point&gt; button_number_locations = {{0, 264}, {0, 213}, {61, 213}, {122, 213}, {0, 162}, {61, 162}, {122, 162}, {0, 111}, {61, 111}, {122, 111}};</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; i++) {</div>
+<div class="line">        button_numbers[i].parent(*<span class="keyword">this</span>);</div>
+<div class="line">        button_numbers[i].back_color(drawing::color::from_argb(102, 102, 102));</div>
+<div class="line">        button_numbers[i].flat_appearance(flat_button_appearance().mouse_down_back_color(drawing::color::from_argb(144, 144, 144))</div>
+<div class="line">          .mouse_over_back_color(drawing::color::from_argb(102, 102, 102))</div>
+<div class="line">          .border_color(drawing::color::from_argb(44, 44, 47))</div>
 <div class="line">          .border_radius(0)</div>
 <div class="line">          .border_size(0));</div>
-<div class="line">        button_numbers[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>].flat_style(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
-<div class="line">        button_numbers[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>].text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>));</div>
-<div class="line">        button_numbers[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>].location(button_number_locations[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>]);</div>
-<div class="line">        button_numbers[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>].size({60, 50});</div>
-<div class="line">        button_numbers[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>].click += event_handler(*<span class="keyword">this</span>, &amp;form_main::button_number_click);</div>
+<div class="line">        button_numbers[i].flat_style(forms::flat_style::flat);</div>
+<div class="line">        button_numbers[i].text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, i));</div>
+<div class="line">        button_numbers[i].location(button_number_locations[i]);</div>
+<div class="line">        button_numbers[i].size({60, 50});</div>
+<div class="line">        button_numbers[i].click += event_handler(*<span class="keyword">this</span>, &amp;form_main::button_number_click);</div>
 <div class="line">      }</div>
 <div class="line">      button_numbers[0].width(121);</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">generic::list</a> button_operator_texts = {<span class="stringliteral">&quot;÷&quot;</span>, <span class="stringliteral">&quot;x&quot;</span>, <span class="stringliteral">&quot;-&quot;</span>, <span class="stringliteral">&quot;+&quot;</span>, <span class="stringliteral">&quot;=&quot;</span>};</div>
-<div class="line">      <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">generic::list&lt;xtd::drawing::point&gt;</a> button_operator_locations = {{183, 60}, {183, 111}, {183, 162}, {183, 213}, {183, 264}};</div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; 5; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>++) {</div>
-<div class="line">        button_operators[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>].parent(*<span class="keyword">this</span>);</div>
-<div class="line">        button_operators[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>].back_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(255, 159, 11));</div>
-<div class="line">        button_operators[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>].flat_appearance(<a class="code hl_class" href="classxtd_1_1forms_1_1flat__button__appearance.html">flat_button_appearance</a>().mouse_down_back_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(234, 138, 0))</div>
-<div class="line">          .mouse_over_back_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(255, 159, 11))</div>
-<div class="line">          .border_color(<a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">drawing::color::from_argb</a>(44, 44, 47))</div>
+<div class="line">      list button_operator_texts = {<span class="stringliteral">&quot;÷&quot;</span>, <span class="stringliteral">&quot;x&quot;</span>, <span class="stringliteral">&quot;-&quot;</span>, <span class="stringliteral">&quot;+&quot;</span>, <span class="stringliteral">&quot;=&quot;</span>};</div>
+<div class="line">      list&lt;point&gt; button_operator_locations = {{183, 60}, {183, 111}, {183, 162}, {183, 213}, {183, 264}};</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5; i++) {</div>
+<div class="line">        button_operators[i].parent(*<span class="keyword">this</span>);</div>
+<div class="line">        button_operators[i].back_color(drawing::color::from_argb(255, 159, 11));</div>
+<div class="line">        button_operators[i].flat_appearance(flat_button_appearance().mouse_down_back_color(drawing::color::from_argb(234, 138, 0))</div>
+<div class="line">          .mouse_over_back_color(drawing::color::from_argb(255, 159, 11))</div>
+<div class="line">          .border_color(drawing::color::from_argb(44, 44, 47))</div>
 <div class="line">          .border_radius(0)</div>
 <div class="line">          .border_size(0));</div>
-<div class="line">        button_operators[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>].flat_style(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
-<div class="line">        button_operators[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>].text(button_operator_texts[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>]);</div>
-<div class="line">        button_operators[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>].location(button_operator_locations[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>]);</div>
-<div class="line">        button_operators[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>].size({60, 50});</div>
-<div class="line">        button_operators[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>].click += event_handler(*<span class="keyword">this</span>, &amp;form_main::button_operator_click);</div>
+<div class="line">        button_operators[i].flat_style(forms::flat_style::flat);</div>
+<div class="line">        button_operators[i].text(button_operator_texts[i]);</div>
+<div class="line">        button_operators[i].location(button_operator_locations[i]);</div>
+<div class="line">        button_operators[i].size({60, 50});</div>
+<div class="line">        button_operators[i].click += event_handler(*<span class="keyword">this</span>, &amp;form_main::button_operator_click);</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> form_main_key_press(<span class="keywordtype">object</span>&amp; sender, <a id="_a4" name="_a4"></a><a class="code hl_class" href="classxtd_1_1forms_1_1key__press__event__args.html">key_press_event_args</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
-<div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.key_char() &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.key_char() &lt;= <span class="charliteral">&#39;9&#39;</span>) {</div>
-<div class="line">        button_numbers[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.key_char() - <span class="charliteral">&#39;0&#39;</span>].perform_click();</div>
-<div class="line">        <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.handled(<span class="keyword">true</span>);</div>
+<div class="line">    <span class="keywordtype">void</span> form_main_key_press(<span class="keywordtype">object</span>&amp; sender, key_press_event_args&amp; e) {</div>
+<div class="line">      <span class="keywordflow">if</span> (e.key_char() &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; e.key_char() &lt;= <span class="charliteral">&#39;9&#39;</span>) {</div>
+<div class="line">        button_numbers[e.key_char() - <span class="charliteral">&#39;0&#39;</span>].perform_click();</div>
+<div class="line">        e.handled(<span class="keyword">true</span>);</div>
 <div class="line">        <span class="keywordflow">return</span>;</div>
 <div class="line">      }</div>
-<div class="line">      <span class="keywordflow">switch</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.key_char()) {</div>
-<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;c&#39;</span> : button_clear.perform_click(); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;C&#39;</span> : button_clear.perform_click(); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;%&#39;</span> : button_percent.perform_click(); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;,&#39;</span> : button_decimal.perform_click(); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;.&#39;</span> : button_decimal.perform_click(); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;/&#39;</span> : button_operators[<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int&gt;</a>(operators::divide)].perform_click(); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;*&#39;</span> : button_operators[<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int&gt;</a>(operators::multiply)].perform_click(); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;-&#39;</span> : button_operators[<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int&gt;</a>(operators::subtract)].perform_click(); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;+&#39;</span> : button_operators[<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int&gt;</a>(operators::add)].perform_click(); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;=&#39;</span> : button_operators[<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int&gt;</a>(operators::equal)].perform_click(); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> 13 : button_operators[<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int&gt;</a>(operators::equal)].perform_click(); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> 127 : back_space_key_press(sender, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line">      <span class="keywordflow">switch</span> (e.key_char()) {</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;c&#39;</span> : button_clear.perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;C&#39;</span> : button_clear.perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;%&#39;</span> : button_percent.perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;,&#39;</span> : button_decimal.perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;.&#39;</span> : button_decimal.perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;/&#39;</span> : button_operators[as&lt;int&gt;(operators::divide)].perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;*&#39;</span> : button_operators[as&lt;int&gt;(operators::multiply)].perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;-&#39;</span> : button_operators[as&lt;int&gt;(operators::subtract)].perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;+&#39;</span> : button_operators[as&lt;int&gt;(operators::add)].perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> <span class="charliteral">&#39;=&#39;</span> : button_operators[as&lt;int&gt;(operators::equal)].perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> 13 : button_operators[as&lt;int&gt;(operators::equal)].perform_click(); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> 127 : back_space_key_press(sender, e); e.handled(<span class="keyword">true</span>); <span class="keywordflow">break</span>;</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> back_space_key_press(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a5" name="_a5"></a><a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
-<div class="line">      <span class="keywordflow">if</span> (result.text().length() &gt; 0) result.text(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;string&gt;</a>(result.text()).remove(result.text().length() - 1));</div>
-<div class="line">      <span class="keywordflow">if</span> (result.text().length() == 0 || result.text() == <span class="stringliteral">&quot;-&quot;</span>) button_clear_click(sender, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>);</div>
+<div class="line">    <span class="keywordtype">void</span> back_space_key_press(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) {</div>
+<div class="line">      <span class="keywordflow">if</span> (result.text().length() &gt; 0) result.text(as&lt;string&gt;(result.text()).remove(result.text().length() - 1));</div>
+<div class="line">      <span class="keywordflow">if</span> (result.text().length() == 0 || result.text() == <span class="stringliteral">&quot;-&quot;</span>) button_clear_click(sender, e);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> button_clear_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
+<div class="line">    <span class="keywordtype">void</span> button_clear_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) {</div>
 <div class="line">      result.text(<span class="stringliteral">&quot;0&quot;</span>);</div>
 <div class="line">      first_operand.reset();</div>
 <div class="line">      second_operand.reset();</div>
 <div class="line">      operation = operators::none;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> button_percent_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
-<div class="line">      result.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, <a class="code hl_function" href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">parse&lt;double&gt;</a>(result.text()) / 100));</div>
+<div class="line">    <span class="keywordtype">void</span> button_percent_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) {</div>
+<div class="line">      result.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, parse&lt;double&gt;(result.text()) / 100));</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> button_plus_minus_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
-<div class="line">      <span class="keywordflow">if</span> (result.text() != <span class="stringliteral">&quot;0&quot;</span> &amp;&amp; result.text() != <span class="stringliteral">&quot;0.&quot;</span>) result.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, -<a class="code hl_function" href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">parse&lt;double&gt;</a>(result.text())));</div>
+<div class="line">    <span class="keywordtype">void</span> button_plus_minus_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) {</div>
+<div class="line">      <span class="keywordflow">if</span> (result.text() != <span class="stringliteral">&quot;0&quot;</span> &amp;&amp; result.text() != <span class="stringliteral">&quot;0.&quot;</span>) result.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, -parse&lt;double&gt;(result.text())));</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> button_number_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
-<div class="line">      <span class="keywordflow">if</span> ((<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;control&gt;</a>(sender).handle() == button_decimal.handle() &amp;&amp; <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;string&gt;</a>(result.text()).contains(<span class="stringliteral">&quot;.&quot;</span>)) || (result.text() == <span class="stringliteral">&quot;0&quot;</span> &amp;&amp; <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;control&gt;</a>(sender).handle() == button_numbers[0].handle())) <span class="keywordflow">return</span>;</div>
-<div class="line">      <span class="keywordflow">if</span> ((first_operand.has_value() &amp;&amp; first_operand == <a class="code hl_function" href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">parse&lt;double&gt;</a>(result.text())) || (result.text() == <span class="stringliteral">&quot;0&quot;</span> &amp;&amp; <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;control&gt;</a>(sender).handle() != button_decimal.handle())) result.text(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line">    <span class="keywordtype">void</span> button_number_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) {</div>
+<div class="line">      <span class="keywordflow">if</span> ((as&lt;control&gt;(sender).handle() == button_decimal.handle() &amp;&amp; as&lt;string&gt;(result.text()).contains(<span class="stringliteral">&quot;.&quot;</span>)) || (result.text() == <span class="stringliteral">&quot;0&quot;</span> &amp;&amp; as&lt;control&gt;(sender).handle() == button_numbers[0].handle())) <span class="keywordflow">return</span>;</div>
+<div class="line">      <span class="keywordflow">if</span> ((first_operand.has_value() &amp;&amp; first_operand == parse&lt;double&gt;(result.text())) || (result.text() == <span class="stringliteral">&quot;0&quot;</span> &amp;&amp; as&lt;control&gt;(sender).handle() != button_decimal.handle())) result.text(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line">      <span class="keywordflow">if</span> (second_operand.has_value()) second_operand.reset();</div>
-<div class="line">      result.text(result.text() + <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;control&gt;</a>(sender).text());</div>
+<div class="line">      result.text(result.text() + as&lt;control&gt;(sender).text());</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> button_operator_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
-<div class="line">      <span class="keywordflow">if</span> (!first_operand.has_value()) first_operand = <a class="code hl_function" href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">parse&lt;double&gt;</a>(result.text());</div>
+<div class="line">    <span class="keywordtype">void</span> button_operator_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) {</div>
+<div class="line">      <span class="keywordflow">if</span> (!first_operand.has_value()) first_operand = parse&lt;double&gt;(result.text());</div>
 <div class="line">      <span class="keywordflow">else</span> {</div>
-<div class="line">        <span class="keywordflow">if</span> (!second_operand.has_value()) second_operand = <a class="code hl_function" href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">parse&lt;double&gt;</a>(result.text());</div>
+<div class="line">        <span class="keywordflow">if</span> (!second_operand.has_value()) second_operand = parse&lt;double&gt;(result.text());</div>
 <div class="line">        <span class="keywordflow">switch</span> (operation) {</div>
 <div class="line">          <span class="keywordflow">case</span> operators::none: <span class="keywordflow">break</span>;</div>
 <div class="line">          <span class="keywordflow">case</span> operators::divide: result.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, first_operand.value() / second_operand.value())); <span class="keywordflow">break</span>;</div>
@@ -312,69 +303,36 @@ $(function(){ initResizable(false); });
 <div class="line">          <span class="keywordflow">case</span> operators::add: result.text(string::format(<span class="stringliteral">&quot;{}&quot;</span>, first_operand.value() + second_operand.value())); <span class="keywordflow">break</span>;</div>
 <div class="line">          <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
 <div class="line">        }</div>
-<div class="line">        first_operand = <a class="code hl_function" href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">parse&lt;double&gt;</a>(result.text());</div>
+<div class="line">        first_operand = parse&lt;double&gt;(result.text());</div>
 <div class="line">      }</div>
-<div class="line">      operation = std::map&lt;string, operators&gt; {{<span class="stringliteral">&quot;÷&quot;</span>, operators::divide}, {<span class="stringliteral">&quot;x&quot;</span>, operators::multiply}, {<span class="stringliteral">&quot;-&quot;</span>, operators::subtract}, {<span class="stringliteral">&quot;+&quot;</span>, operators::add}, {<span class="stringliteral">&quot;=&quot;</span>, operation}} [<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;control&gt;</a>(sender).text()];</div>
-<div class="line">      <span class="keywordflow">if</span> (<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;control&gt;</a>(sender).<a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>() != <span class="stringliteral">&quot;=&quot;</span>) {</div>
+<div class="line">      operation = dictionary&lt;string, operators&gt; {{<span class="stringliteral">&quot;÷&quot;</span>, operators::divide}, {<span class="stringliteral">&quot;x&quot;</span>, operators::multiply}, {<span class="stringliteral">&quot;-&quot;</span>, operators::subtract}, {<span class="stringliteral">&quot;+&quot;</span>, operators::add}, {<span class="stringliteral">&quot;=&quot;</span>, operation}} [as&lt;control&gt;(sender).text()];</div>
+<div class="line">      <span class="keywordflow">if</span> (as&lt;control&gt;(sender).text() != <span class="stringliteral">&quot;=&quot;</span>) {</div>
 <div class="line">        <span class="keywordflow">if</span> (second_operand.has_value()) first_operand.reset();</div>
 <div class="line">        second_operand.reset();</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <a id="_a6" name="_a6"></a><a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> result;</div>
-<div class="line">    <a id="_a7" name="_a7"></a><a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_clear;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_plus_minus;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_percent;</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a> button_decimal;</div>
-<div class="line">    std::array&lt;button, 10&gt; button_numbers;</div>
-<div class="line">    std::array&lt;button, 5&gt; button_operators;</div>
-<div class="line">    std::optional&lt;double&gt; first_operand;</div>
-<div class="line">    std::optional&lt;double&gt; second_operand;</div>
+<div class="line">    label result;</div>
+<div class="line">    button button_clear;</div>
+<div class="line">    button button_plus_minus;</div>
+<div class="line">    button button_percent;</div>
+<div class="line">    button button_decimal;</div>
+<div class="line">    fixed_array&lt;button, 10&gt; button_numbers;</div>
+<div class="line">    fixed_array&lt;button, 5&gt; button_operators;</div>
+<div class="line">    optional&lt;double&gt; first_operand;</div>
+<div class="line">    optional&lt;double&gt; second_operand;</div>
 <div class="line">    operators operation = operators::none;</div>
 <div class="line">  };</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><a id="a8" name="a8"></a><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(calculator::form_main::main);</div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:79</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_a3204045ef270f9856b5018b2b8408d9c"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#a3204045ef270f9856b5018b2b8408d9c">xtd::drawing::color::white</a></div><div class="ttdeci">static const xtd::drawing::color white</div><div class="ttdoc">Gets a system-defined color that has an ARGB value of 0xFFFFFFFF. This field is constant.</div><div class="ttdef"><b>Definition</b> color.hpp:470</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_ac4a75a743036c1bfbb948db2d481736b"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b">xtd::drawing::color::from_argb</a></div><div class="ttdeci">static xtd::drawing::color from_argb(uint32 argb) noexcept</div><div class="ttdoc">Creates a xtd::drawing::color class from a 32-bit ARGB value.</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1font__family_html_a8bee18d4466485c306c17adf9e2565ca"><div class="ttname"><a href="classxtd_1_1drawing_1_1font__family.html#a8bee18d4466485c306c17adf9e2565ca">xtd::drawing::font_family::generic_sans_serif</a></div><div class="ttdeci">static font_family generic_sans_serif() noexcept</div><div class="ttdoc">Gets a generic sans serif font_family.</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1font_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a></div><div class="ttdoc">Defines a particular format for text, including font face, size, and style attributes....</div><div class="ttdef"><b>Definition</b> font.hpp:45</div></div>
-<div class="ttc" id="aclassxtd_1_1event__args_html"><div class="ttname"><a href="classxtd_1_1event__args.html">xtd::event_args</a></div><div class="ttdoc">Represents the base class for classes that contain event data, and provides a value to use for events...</div><div class="ttdef"><b>Definition</b> event_args.hpp:18</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.hpp:49</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1flat__button__appearance_html"><div class="ttname"><a href="classxtd_1_1forms_1_1flat__button__appearance.html">xtd::forms::flat_button_appearance</a></div><div class="ttdoc">Provides properties that specify the appearance of xtd::forms::button controls whose xtd::forms::flat...</div><div class="ttdef"><b>Definition</b> flat_button_appearance.hpp:24</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1key__press__event__args_html"><div class="ttname"><a href="classxtd_1_1forms_1_1key__press__event__args.html">xtd::forms::key_press_event_args</a></div><div class="ttdoc">Provides data for the xtd::forms::control::key_press event.</div><div class="ttdef"><b>Definition</b> key_press_event_args.hpp:26</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1label_html"><div class="ttname"><a href="classxtd_1_1forms_1_1label.html">xtd::forms::label</a></div><div class="ttdoc">Represents a standard Windows label.</div><div class="ttdef"><b>Definition</b> label.hpp:38</div></div>
+<div class="line"><a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(calculator::form_main::main);</div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
-<div class="ttc" id="agroup__types_html_ga221e5b824352c9046d353e4659af5b87"><div class="ttname"><a href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
-<div class="ttc" id="agroup__xtd__core_html_gaf38b51b1a3c788f678bb6e89f7694ee4"><div class="ttname"><a href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">xtd::parse</a></div><div class="ttdeci">value_t parse(const std::string &amp;str)</div><div class="ttdoc">Convert a string into a type.</div><div class="ttdef"><b>Definition</b> parse.hpp:34</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggacc628237bd3e274afe3d5d836e2db786a334c4a4c42fdb79d7ebc3e73b517e6f8"><div class="ttname"><a href="group__xtd__core.html#ggacc628237bd3e274afe3d5d836e2db786a334c4a4c42fdb79d7ebc3e73b517e6f8">xtd::console_modifiers::none</a></div><div class="ttdeci">@ none</div><div class="ttdoc">No modifier key.</div><div class="ttdef"><b>Definition</b> console_modifiers.hpp:22</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a0fbe41b549bb236aabadebd7924379fd"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0fbe41b549bb236aabadebd7924379fd">xtd::console_key::multiply</a></div><div class="ttdeci">@ multiply</div><div class="ttdoc">The Multiply key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:168</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a34ec78fcc91ffb1e54cd85e4a0924332"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a34ec78fcc91ffb1e54cd85e4a0924332">xtd::console_key::add</a></div><div class="ttdeci">@ add</div><div class="ttdoc">The Add key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:170</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a95bd4d656164278daf3f83b7099a8529"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a95bd4d656164278daf3f83b7099a8529">xtd::console_key::divide</a></div><div class="ttdeci">@ divide</div><div class="ttdoc">The Divide key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:178</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a97f415c180230ce76bafa74bc058ef5f"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a97f415c180230ce76bafa74bc058ef5f">xtd::console_key::subtract</a></div><div class="ttdeci">@ subtract</div><div class="ttdoc">The Subtract key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:174</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ga988a6abd919c15254f45a0bf9c2dcb17"><div class="ttname"><a href="group__xtd__forms.html#ga988a6abd919c15254f45a0bf9c2dcb17">xtd::forms::auto_size_mode</a></div><div class="ttdeci">auto_size_mode</div><div class="ttdoc">Specifies how a control will behave when its auto_size property is enabled.</div><div class="ttdef"><b>Definition</b> auto_size_mode.hpp:22</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_gae69a2e9fdce97075bf7642aed73e5907"><div class="ttname"><a href="group__xtd__forms.html#gae69a2e9fdce97075bf7642aed73e5907">xtd::forms::form_border_style</a></div><div class="ttdeci">form_border_style</div><div class="ttdoc">Specifies the border styles for a form.</div><div class="ttdef"><b>Definition</b> form_border_style.hpp:22</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_gga1bed745e8ce3f19294e1c4de1f3d97deac74b6cc0033c255d1b2a0e6f9660b1a5"><div class="ttname"><a href="group__xtd__forms.html#gga1bed745e8ce3f19294e1c4de1f3d97deac74b6cc0033c255d1b2a0e6f9660b1a5">xtd::forms::picture_box_size_mode::auto_size</a></div><div class="ttdeci">@ auto_size</div><div class="ttdoc">The picture_box is sized equal to the size of the image that it contains.</div><div class="ttdef"><b>Definition</b> picture_box_size_mode.hpp:28</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785"><div class="ttname"><a href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a></div><div class="ttdeci">@ flat</div><div class="ttdoc">The control appears flat.</div><div class="ttdef"><b>Definition</b> flat_style.hpp:26</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_gga988a6abd919c15254f45a0bf9c2dcb17a7553d32e6fa9da02fbc9c28923ccd9be"><div class="ttname"><a href="group__xtd__forms.html#gga988a6abd919c15254f45a0bf9c2dcb17a7553d32e6fa9da02fbc9c28923ccd9be">xtd::forms::auto_size_mode::grow_and_shrink</a></div><div class="ttdeci">@ grow_and_shrink</div><div class="ttdoc">The control grows or shrinks to fit its contents. The control cannot be resized manually.</div><div class="ttdef"><b>Definition</b> auto_size_mode.hpp:24</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggad8fe8984e9f4652c13654b2c4d7288f0aff1bb2ef26708d2a4dc98bdda5c48071"><div class="ttname"><a href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0aff1bb2ef26708d2a4dc98bdda5c48071">xtd::forms::content_alignment::middle_right</a></div><div class="ttdeci">@ middle_right</div><div class="ttdoc">Content is vertically aligned at the middle, and horizontally aligned on the right.</div><div class="ttdef"><b>Definition</b> content_alignment.hpp:33</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggae69a2e9fdce97075bf7642aed73e5907a5660a203d49481b9b904b0dc5644b277"><div class="ttname"><a href="group__xtd__forms.html#ggae69a2e9fdce97075bf7642aed73e5907a5660a203d49481b9b904b0dc5644b277">xtd::forms::form_border_style::fixed_3d</a></div><div class="ttdeci">@ fixed_3d</div><div class="ttdoc">A fixed, three-dimensional border.</div><div class="ttdef"><b>Definition</b> form_border_style.hpp:28</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_html"><div class="ttname"><a href="namespacextd_1_1collections.html">xtd::collections</a></div><div class="ttdoc">The xtd::collections namespace contains interfaces and classes that define various collections of obj...</div><div class="ttdef"><b>Definition</b> any_pair.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
-<div class="ttc" id="anamespacextd_1_1text_html"><div class="ttname"><a href="namespacextd_1_1text.html">xtd::text</a></div><div class="ttdoc">Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:17</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -99,21 +99,16 @@ $(function(){ initResizable(false); });
 <p>Shows how to use debug class.</p>
 <div class="fragment"><div class="line"><span class="comment">// Specify -DDEBUG when compiling or add #define DEBUG in the source file.</span></div>
 <div class="line"> </div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/debug&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/ostream_trace_listener&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a483a067a6c0bb8f9bf92c18d65adffda">debug::listeners</a>().push_back(<a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;ostream_trace_listener&gt;</a>(<a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a>));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a60740400c74b23c28654d16583abd892">debug::auto_flush</a>(<span class="keyword">true</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a1e85e29f94c54388d35a9b24d16a52c1">debug::indent</a>();</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a2656cc128804128258ecad60ecf1cbd1">debug::write_line</a>(<span class="stringliteral">&quot;Entering Main&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Hello World.&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a2656cc128804128258ecad60ecf1cbd1">debug::write_line</a>(<span class="stringliteral">&quot;Exiting Main&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#adb62c53bf313739efafec28bc0739b65">debug::unindent</a>();</div>
+<div class="line">  diagnostics::debug::listeners().push_back(new_ptr&lt;diagnostics::ostream_trace_listener&gt;(console::out));</div>
+<div class="line">  diagnostics::debug::auto_flush(<span class="keyword">true</span>);</div>
+<div class="line">  diagnostics::debug::indent();</div>
+<div class="line">  diagnostics::debug::write_line(<span class="stringliteral">&quot;Entering Main&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Hello World.&quot;</span>);</div>
+<div class="line">  diagnostics::debug::write_line(<span class="stringliteral">&quot;Exiting Main&quot;</span>);</div>
+<div class="line">  diagnostics::debug::unindent();</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -121,21 +116,11 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="comment">//     Entering Main</span></div>
 <div class="line"><span class="comment">// Hello World.</span></div>
 <div class="line"><span class="comment">//     Exiting Main</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a923837ac84baf01726703e0474ca4888"><div class="ttname"><a href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">xtd::console::out</a></div><div class="ttdeci">static std::ostream out</div><div class="ttdoc">Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...</div><div class="ttdef"><b>Definition</b> console.hpp:52</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html_a1e85e29f94c54388d35a9b24d16a52c1"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debug.html#a1e85e29f94c54388d35a9b24d16a52c1">xtd::diagnostics::debug::indent</a></div><div class="ttdeci">static void indent() noexcept</div><div class="ttdoc">Increases the current indent_level by one.</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html_a2656cc128804128258ecad60ecf1cbd1"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debug.html#a2656cc128804128258ecad60ecf1cbd1">xtd::diagnostics::debug::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes a line terminator to the trace listeners in the listeners collection.</div><div class="ttdef"><b>Definition</b> debug.hpp:361</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html_a483a067a6c0bb8f9bf92c18d65adffda"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debug.html#a483a067a6c0bb8f9bf92c18d65adffda">xtd::diagnostics::debug::listeners</a></div><div class="ttdeci">static listener_collection &amp; listeners() noexcept</div><div class="ttdoc">Gets the collection of listeners that is monitoring the trace output.</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html_a60740400c74b23c28654d16583abd892"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debug.html#a60740400c74b23c28654d16583abd892">xtd::diagnostics::debug::auto_flush</a></div><div class="ttdeci">static bool auto_flush() noexcept</div><div class="ttdoc">Gets whether xtd::diagnostics::debug::flush should be called on the xtd::diagnostics::debug::Listener...</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html_adb62c53bf313739efafec28bc0739b65"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debug.html#adb62c53bf313739efafec28bc0739b65">xtd::diagnostics::debug::unindent</a></div><div class="ttdeci">static void unindent() noexcept</div><div class="ttdoc">Decreases the current indent_level by one.</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga2fd68f03198b2bf84b1e93149494b685"><div class="ttname"><a href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">xtd::new_ptr</a></div><div class="ttdeci">ptr&lt; type_t &gt; new_ptr(args_t &amp;&amp;... args)</div><div class="ttdoc">The xtd::new_ptr operator creates a xtd::ptr object.</div><div class="ttdef"><b>Definition</b> new_ptr.hpp:24</div></div>
-<div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

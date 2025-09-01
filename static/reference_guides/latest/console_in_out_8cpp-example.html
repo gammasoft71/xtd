@@ -97,21 +97,18 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1console.html#a7c103233b3e74cb63538b48616b7fd02" title="Gets the standard input stream. A std::basic_istream&lt;char_t&gt; that represents the standard input strea...">xtd::console::in</a> and <a class="el" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888" title="Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...">xtd::console::out</a> streams.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span>&amp; <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> = <a class="code hl_variable" href="classxtd_1_1console.html#a7c103233b3e74cb63538b48616b7fd02">console::in</a>;</div>
-<div class="line">  <span class="keyword">auto</span>&amp; os = <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a>;</div>
+<div class="line">  <span class="keyword">auto</span>&amp; is = console::in;</div>
+<div class="line">  <span class="keyword">auto</span>&amp; os = console::out;</div>
 <div class="line">  </div>
-<div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Ola Mundo!&quot;</span> &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
+<div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Ola Mundo!&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  os &lt;&lt; <span class="stringliteral">&quot;What is your name: &quot;</span>;</div>
 <div class="line">  <span class="keyword">auto</span> name = string::empty_string;</div>
-<div class="line">  <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is</a> &gt;&gt; name;</div>
+<div class="line">  is &gt;&gt; name;</div>
 <div class="line">  </div>
-<div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Buenos Dias, &quot;</span> &lt;&lt; name &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
+<div class="line">  os &lt;&lt; <span class="stringliteral">&quot;Buenos Dias, &quot;</span> &lt;&lt; name &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -119,16 +116,11 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="comment">// Ola Mundo!</span></div>
 <div class="line"><span class="comment">// What is your name: James</span></div>
 <div class="line"><span class="comment">// Buenos Dias, James!</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a7c103233b3e74cb63538b48616b7fd02"><div class="ttname"><a href="classxtd_1_1console.html#a7c103233b3e74cb63538b48616b7fd02">xtd::console::in</a></div><div class="ttdeci">static std::istream in</div><div class="ttdoc">Gets the standard input stream. A std::basic_istream&lt;char_t&gt; that represents the standard input strea...</div><div class="ttdef"><b>Definition</b> console.hpp:47</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a923837ac84baf01726703e0474ca4888"><div class="ttname"><a href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">xtd::console::out</a></div><div class="ttdeci">static std::ostream out</div><div class="ttdoc">Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...</div><div class="ttdef"><b>Definition</b> console.hpp:52</div></div>
-<div class="ttc" id="aclassxtd_1_1environment_html_a19a9aa87ee20eb3789058621ed161c4e"><div class="ttname"><a href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">xtd::environment::new_line</a></div><div class="ttdeci">static xtd::string new_line() noexcept</div><div class="ttdoc">Gets the newline string defined for this environment.</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga8419620dc289ac0d790372a1616e993f"><div class="ttname"><a href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">xtd::is</a></div><div class="ttdeci">bool is(xtd::any value)</div><div class="ttdoc">Checks if the result of an expression is compatible with a given type.</div><div class="ttdef"><b>Definition</b> is.hpp:485</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

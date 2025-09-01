@@ -142,21 +142,16 @@ You must enable debug mode to use a trace listener. The syntax is compiler speci
 To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if defined(DEBUG) ... #endif block, and add the /DDEBUG option to the compiler command line or add #define DEBUG to the file. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example uses debug to indicate the beginning and the end of a program's execution. The example also uses the <a class="el" href="#a1e85e29f94c54388d35a9b24d16a52c1" title="Increases the current indent_level by one.">debug::indent</a> and <a class="el" href="#adb62c53bf313739efafec28bc0739b65" title="Decreases the current indent_level by one.">debug::unindent</a> methods to distinguish the tracing output. <div class="fragment"><div class="line"><span class="comment">// Specify -DDEBUG when compiling or add #define DEBUG in the source file.</span></div>
 <div class="line"> </div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/debug&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/ostream_trace_listener&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="#a483a067a6c0bb8f9bf92c18d65adffda">debug::listeners</a>().push_back(<a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;ostream_trace_listener&gt;</a>(<a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a>));</div>
-<div class="line">  <a class="code hl_function" href="#a60740400c74b23c28654d16583abd892">debug::auto_flush</a>(<span class="keyword">true</span>);</div>
-<div class="line">  <a class="code hl_function" href="#a1e85e29f94c54388d35a9b24d16a52c1">debug::indent</a>();</div>
-<div class="line">  <a class="code hl_function" href="#a2656cc128804128258ecad60ecf1cbd1">debug::write_line</a>(<span class="stringliteral">&quot;Entering Main&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="#a483a067a6c0bb8f9bf92c18d65adffda">diagnostics::debug::listeners</a>().push_back(<a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;diagnostics::ostream_trace_listener&gt;</a>(<a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a>));</div>
+<div class="line">  <a class="code hl_function" href="#a60740400c74b23c28654d16583abd892">diagnostics::debug::auto_flush</a>(<span class="keyword">true</span>);</div>
+<div class="line">  <a class="code hl_function" href="#a1e85e29f94c54388d35a9b24d16a52c1">diagnostics::debug::indent</a>();</div>
+<div class="line">  <a class="code hl_function" href="#a2656cc128804128258ecad60ecf1cbd1">diagnostics::debug::write_line</a>(<span class="stringliteral">&quot;Entering Main&quot;</span>);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Hello World.&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="#a2656cc128804128258ecad60ecf1cbd1">debug::write_line</a>(<span class="stringliteral">&quot;Exiting Main&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="#adb62c53bf313739efafec28bc0739b65">debug::unindent</a>();</div>
+<div class="line">  <a class="code hl_function" href="#a2656cc128804128258ecad60ecf1cbd1">diagnostics::debug::write_line</a>(<span class="stringliteral">&quot;Exiting Main&quot;</span>);</div>
+<div class="line">  <a class="code hl_function" href="#adb62c53bf313739efafec28bc0739b65">diagnostics::debug::unindent</a>();</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -172,8 +167,6 @@ To activate your code if DEBUG is defined, you must enclose calls to the methods
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html_a60740400c74b23c28654d16583abd892"><div class="ttname"><a href="#a60740400c74b23c28654d16583abd892">xtd::diagnostics::debug::auto_flush</a></div><div class="ttdeci">static bool auto_flush() noexcept</div><div class="ttdoc">Gets whether xtd::diagnostics::debug::flush should be called on the xtd::diagnostics::debug::Listener...</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html_adb62c53bf313739efafec28bc0739b65"><div class="ttname"><a href="#adb62c53bf313739efafec28bc0739b65">xtd::diagnostics::debug::unindent</a></div><div class="ttdeci">static void unindent() noexcept</div><div class="ttdoc">Decreases the current indent_level by one.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga2fd68f03198b2bf84b1e93149494b685"><div class="ttname"><a href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">xtd::new_ptr</a></div><div class="ttdeci">ptr&lt; type_t &gt; new_ptr(args_t &amp;&amp;... args)</div><div class="ttdoc">The xtd::new_ptr operator creates a xtd::ptr object.</div><div class="ttdef"><b>Definition</b> new_ptr.hpp:24</div></div>
-<div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
@@ -188,16 +181,16 @@ To activate your code if DEBUG is defined, you must enclose calls to the methods
 <tr class="memitem:a9784fd30376d7d83818ed00867caa9fd" id="r_a9784fd30376d7d83818ed00867caa9fd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9784fd30376d7d83818ed00867caa9fd">auto_flush</a> (bool auto_flush) noexcept</td></tr>
 <tr class="memdesc:a9784fd30376d7d83818ed00867caa9fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets whether <a class="el" href="#ad3f6c7821b46bb6e54c42c2c8a3fff78" title="Flushes the output buffer and causes buffered data to write to the listeners collection.">xtd::diagnostics::debug::flush</a> should be called on the xtd::diagnostics::debug::Listeners after every write.  <br /></td></tr>
 <tr class="separator:a9784fd30376d7d83818ed00867caa9fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63c31ba9f426dc1aa7df53d6e8919421" id="r_a63c31ba9f426dc1aa7df53d6e8919421"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63c31ba9f426dc1aa7df53d6e8919421">indent_level</a> () noexcept</td></tr>
+<tr class="memitem:a63c31ba9f426dc1aa7df53d6e8919421" id="r_a63c31ba9f426dc1aa7df53d6e8919421"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63c31ba9f426dc1aa7df53d6e8919421">indent_level</a> () noexcept</td></tr>
 <tr class="memdesc:a63c31ba9f426dc1aa7df53d6e8919421"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the indent level.  <br /></td></tr>
 <tr class="separator:a63c31ba9f426dc1aa7df53d6e8919421"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf82c78ef704982f36eb5f38c963d585" id="r_acf82c78ef704982f36eb5f38c963d585"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf82c78ef704982f36eb5f38c963d585">indent_level</a> (<a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a> indent_level) noexcept</td></tr>
+<tr class="memitem:acf82c78ef704982f36eb5f38c963d585" id="r_acf82c78ef704982f36eb5f38c963d585"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf82c78ef704982f36eb5f38c963d585">indent_level</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> indent_level) noexcept</td></tr>
 <tr class="memdesc:acf82c78ef704982f36eb5f38c963d585"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the indent level.  <br /></td></tr>
 <tr class="separator:acf82c78ef704982f36eb5f38c963d585"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4ea1dd9fb6c0082d2da46782a91699e" id="r_ad4ea1dd9fb6c0082d2da46782a91699e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4ea1dd9fb6c0082d2da46782a91699e">indent_size</a> () noexcept</td></tr>
+<tr class="memitem:ad4ea1dd9fb6c0082d2da46782a91699e" id="r_ad4ea1dd9fb6c0082d2da46782a91699e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad4ea1dd9fb6c0082d2da46782a91699e">indent_size</a> () noexcept</td></tr>
 <tr class="memdesc:ad4ea1dd9fb6c0082d2da46782a91699e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of spaces in an indent.  <br /></td></tr>
 <tr class="separator:ad4ea1dd9fb6c0082d2da46782a91699e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab139d49f84dbd332be7b6fd30df4eb5d" id="r_ab139d49f84dbd332be7b6fd30df4eb5d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab139d49f84dbd332be7b6fd30df4eb5d">indent_size</a> (<a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a> indent_size) noexcept</td></tr>
+<tr class="memitem:ab139d49f84dbd332be7b6fd30df4eb5d" id="r_ab139d49f84dbd332be7b6fd30df4eb5d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab139d49f84dbd332be7b6fd30df4eb5d">indent_size</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> indent_size) noexcept</td></tr>
 <tr class="memdesc:ab139d49f84dbd332be7b6fd30df4eb5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of spaces in an indent.  <br /></td></tr>
 <tr class="separator:ab139d49f84dbd332be7b6fd30df4eb5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a483a067a6c0bb8f9bf92c18d65adffda" id="r_a483a067a6c0bb8f9bf92c18d65adffda"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="#a5f2023248b2a37b78e2b4f364c29909a">listener_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a483a067a6c0bb8f9bf92c18d65adffda">listeners</a> () noexcept</td></tr>
@@ -423,7 +416,7 @@ Flushing the stream will not flush its underlying encoder unless you explicitly 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a> xtd::diagnostics::debug::indent_level </td>
+          <td class="memname">static <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> xtd::diagnostics::debug::indent_level </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -454,7 +447,7 @@ Flushing the stream will not flush its underlying encoder unless you explicitly 
         <tr>
           <td class="memname">static void xtd::diagnostics::debug::indent_level </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a></td>          <td class="paramname"><span class="paramname"><em>indent_level</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a></td>          <td class="paramname"><span class="paramname"><em>indent_level</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -486,7 +479,7 @@ Flushing the stream will not flush its underlying encoder unless you explicitly 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a> xtd::diagnostics::debug::indent_size </td>
+          <td class="memname">static <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> xtd::diagnostics::debug::indent_size </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -517,7 +510,7 @@ Flushing the stream will not flush its underlying encoder unless you explicitly 
         <tr>
           <td class="memname">static void xtd::diagnostics::debug::indent_size </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a></td>          <td class="paramname"><span class="paramname"><em>indent_size</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a></td>          <td class="paramname"><span class="paramname"><em>indent_size</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1651,8 +1644,6 @@ This method calls the write method of the trace listener. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>By default, the output is written to an instance of <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">default_trace_listener</a>. </dd>
 <dd>
 This method calls the write method of the trace listener. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="debug_form_8cpp-example.html#a1">debug_form.cpp</a>, <a class="el" href="h_scroll_bar_8cpp-example.html#a1">h_scroll_bar.cpp</a>, and <a class="el" href="v_scroll_bar_8cpp-example.html#a1">v_scroll_bar.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1963,7 +1954,7 @@ This method calls the write method of the trace listener. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -97,67 +97,63 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1convert.html#ace5fb06cf6eb9fd603b753dedd1dadae" title="Convert xtd::any to byte.">xtd::convert::to_byte</a> method.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/convert&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;any&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Convert int to byte :&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;---------------------&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Convert int to byte :&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;---------------------&quot;</span>);</div>
 <div class="line">  <span class="keyword">auto</span> value = 42;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;static_cast&lt;byte&gt;(value) = {}&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">byte</span><span class="keyword">&gt;</span>(value));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;as&lt;byte&gt;(value)          = {}&quot;</span>, <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;byte&gt;</a>(value));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;convert::to_byte(value)  = {}&quot;</span>, <a class="code hl_function" href="classxtd_1_1convert.html#ace5fb06cf6eb9fd603b753dedd1dadae">convert::to_byte</a>(value));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;static_cast&lt;byte&gt;(value) = {}&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">byte</span><span class="keyword">&gt;</span>(value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;byte&gt;(value)          = {}&quot;</span>, as&lt;byte&gt;(value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_byte(value)  = {}&quot;</span>, convert::to_byte(value));</div>
+<div class="line">  console::write_line();</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Convert float to byte :&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;-----------------------&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Convert float to byte :&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;-----------------------&quot;</span>);</div>
 <div class="line">  <span class="keyword">auto</span> float_value = 42.5f;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;static_cast&lt;byte&gt;(float_value) = {}&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">byte</span><span class="keyword">&gt;</span>(float_value));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;as&lt;byte&gt;(float_value)          = {}&quot;</span>, <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;byte&gt;</a>(float_value));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;convert::to_byte(float_value)  = {}&quot;</span>, <a class="code hl_function" href="classxtd_1_1convert.html#ace5fb06cf6eb9fd603b753dedd1dadae">convert::to_byte</a>(float_value));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;static_cast&lt;byte&gt;(float_value) = {}&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">byte</span><span class="keyword">&gt;</span>(float_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;byte&gt;(float_value)          = {}&quot;</span>, as&lt;byte&gt;(float_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_byte(float_value)  = {}&quot;</span>, convert::to_byte(float_value));</div>
+<div class="line">  console::write_line();</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Convert any to byte :&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;---------------------&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Convert any to byte :&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;---------------------&quot;</span>);</div>
 <div class="line">  <span class="keyword">auto</span> any_value = std::make_any&lt;byte&gt;(42);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;any_cast&lt;byte&gt;(any_value)   = {}&quot;</span>, std::any_cast&lt;byte&gt;(any_value));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;as&lt;byte&gt;(any_value)         = {}&quot;</span>, <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;byte&gt;</a>(any_value));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;convert::to_byte(any_value) = {}&quot;</span>, <a class="code hl_function" href="classxtd_1_1convert.html#ace5fb06cf6eb9fd603b753dedd1dadae">convert::to_byte</a>(any_value));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;any_cast&lt;byte&gt;(any_value)   = {}&quot;</span>, std::any_cast&lt;byte&gt;(any_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;byte&gt;(any_value)         = {}&quot;</span>, as&lt;byte&gt;(any_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_byte(any_value) = {}&quot;</span>, convert::to_byte(any_value));</div>
+<div class="line">  console::write_line();</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Convert string to byte :&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;------------------------&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Convert string to byte :&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;------------------------&quot;</span>);</div>
 <div class="line">  <span class="keyword">auto</span> string_value = <span class="stringliteral">&quot;42&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;parse&lt;byte&gt;(string_value))     = {}&quot;</span>, <a class="code hl_function" href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">parse&lt;byte&gt;</a>(string_value));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;as&lt;byte&gt;(string_value)         = {}&quot;</span>, <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;byte&gt;</a>(string_value));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;convert::to_byte(string_value) = {}&quot;</span>, <a class="code hl_function" href="classxtd_1_1convert.html#ace5fb06cf6eb9fd603b753dedd1dadae">convert::to_byte</a>(string_value));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;parse&lt;byte&gt;(string_value))     = {}&quot;</span>, parse&lt;byte&gt;(string_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;byte&gt;(string_value)         = {}&quot;</span>, as&lt;byte&gt;(string_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_byte(string_value) = {}&quot;</span>, convert::to_byte(string_value));</div>
+<div class="line">  console::write_line();</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Convert hexa string to byte :&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;-----------------------------&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Convert hexa string to byte :&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;-----------------------------&quot;</span>);</div>
 <div class="line">  <span class="keyword">auto</span> string_hex_value = <span class="stringliteral">&quot;0x2A&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;parse&lt;byte&gt;(string_hex_value, number_styles::hex_number) = {}&quot;</span>, <a class="code hl_function" href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">parse&lt;byte&gt;</a>(string_hex_value, <a class="code hl_enumvalue" href="group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686aee9962efae09908eb001d66634bef241">number_styles::hex_number</a>));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;as&lt;byte&gt;(string_hex_value, 16)                           = {}&quot;</span>, <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;byte&gt;</a>(string_hex_value, 16));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;convert::to_byte(string_hex_value, 16))                  = {}&quot;</span>, <a class="code hl_function" href="classxtd_1_1convert.html#ace5fb06cf6eb9fd603b753dedd1dadae">convert::to_byte</a>(string_hex_value, 16));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;parse&lt;byte&gt;(string_hex_value, number_styles::hex_number) = {}&quot;</span>, parse&lt;byte&gt;(string_hex_value, number_styles::hex_number));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;byte&gt;(string_hex_value, 16)                           = {}&quot;</span>, as&lt;byte&gt;(string_hex_value, 16));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_byte(string_hex_value, 16))                  = {}&quot;</span>, convert::to_byte(string_hex_value, 16));</div>
+<div class="line">  console::write_line();</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Convert int to byte with overflow :&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;-----------------------------------&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;Convert int to byte with overflow :&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;-----------------------------------&quot;</span>);</div>
 <div class="line">  <span class="keyword">auto</span> overflow_value = 257;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;static_cast&lt;byte&gt;(overflow_value) = {}&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">byte</span><span class="keyword">&gt;</span>(overflow_value)); <span class="comment">// Overflow not detected</span></div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;static_cast&lt;byte&gt;(overflow_value) = {}&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">byte</span><span class="keyword">&gt;</span>(overflow_value)); <span class="comment">// Overflow not detected</span></div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;as&lt;byte&gt;(overflow_value)          = {}&quot;</span>, <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;byte&gt;</a>(overflow_value));</div>
-<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1overflow__exception.html">overflow_exception</a>&amp;) {</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;(ERROR) as : Overflow exception&quot;</span>);</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;as&lt;byte&gt;(overflow_value)          = {}&quot;</span>, as&lt;byte&gt;(overflow_value));</div>
+<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> overflow_exception&amp;) {</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;(ERROR) as : Overflow exception&quot;</span>);</div>
 <div class="line">  }</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;convert::to_byte(overflow_value)  = {}&quot;</span>, <a class="code hl_function" href="classxtd_1_1convert.html#ace5fb06cf6eb9fd603b753dedd1dadae">convert::to_byte</a>(overflow_value));</div>
-<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1overflow__exception.html">overflow_exception</a>&amp;) {</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;(ERROR) convert::to_byte : Overflow exception&quot;</span>);</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;convert::to_byte(overflow_value)  = {}&quot;</span>, convert::to_byte(overflow_value));</div>
+<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> overflow_exception&amp;) {</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;(ERROR) convert::to_byte : Overflow exception&quot;</span>);</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -198,18 +194,11 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="comment">// static_cast&lt;byte&gt;(overflow_value) = 1</span></div>
 <div class="line"><span class="comment">// (ERROR) as : Overflow exception</span></div>
 <div class="line"><span class="comment">// (ERROR) convert::to_byte : Overflow exception</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1convert_html_ace5fb06cf6eb9fd603b753dedd1dadae"><div class="ttname"><a href="classxtd_1_1convert.html#ace5fb06cf6eb9fd603b753dedd1dadae">xtd::convert::to_byte</a></div><div class="ttdeci">static xtd::byte to_byte(xtd::any value)</div><div class="ttdoc">Convert xtd::any to byte.</div></div>
-<div class="ttc" id="aclassxtd_1_1overflow__exception_html"><div class="ttname"><a href="classxtd_1_1overflow__exception.html">xtd::overflow_exception</a></div><div class="ttdoc">The exception that is thrown when an arithmetic, casting, or conversion operation in a checked contex...</div><div class="ttdef"><b>Definition</b> overflow_exception.hpp:18</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
-<div class="ttc" id="agroup__xtd__core_html_gaf38b51b1a3c788f678bb6e89f7694ee4"><div class="ttname"><a href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">xtd::parse</a></div><div class="ttdeci">value_t parse(const std::string &amp;str)</div><div class="ttdoc">Convert a string into a type.</div><div class="ttdef"><b>Definition</b> parse.hpp:34</div></div>
-<div class="ttc" id="agroup__xtd__core_html_gga176c15b86e21b78ec7a3dd6f0a92c686aee9962efae09908eb001d66634bef241"><div class="ttname"><a href="group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686aee9962efae09908eb001d66634bef241">xtd::number_styles::hex_number</a></div><div class="ttdeci">@ hex_number</div><div class="ttdoc">Indicates that the allow_leading_white, allow_trailing_white, and allow_hex_specifier styles are used...</div><div class="ttdef"><b>Definition</b> number_styles.hpp:54</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
