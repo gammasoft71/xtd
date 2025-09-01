@@ -364,7 +364,7 @@ namespace xtd::collections::generic::tests {
       items.add(4);
       collection_assert::are_equal({1, 2, 3, 4}, items);
     }
-      
+    
     void test_method_(add_with_move) {
       auto items = list<int> {};
       
@@ -410,7 +410,7 @@ namespace xtd::collections::generic::tests {
       assert::is_true(as<icollection<int>>(roc).is_read_only());
       collection_assert::are_equal({84, 42, 21}, roc);
     }
-
+    
     void test_method_(assign_with_count_and_value) {
       auto items = list {84, 42, 21};
       items.assign(4, 63);
@@ -445,13 +445,13 @@ namespace xtd::collections::generic::tests {
       
       collection_assert::are_equal({63, 31, 10}, items);
     }
-
+    
     void test_method_(clear) {
       auto items = list {84, 42, 21};
       items.clear();
       assert::are_equal(0_z, items.size());
     }
-
+    
     void test_method_(contains) {
       auto items = list {84, 42, 21};
       assert::is_true(items.contains(84));
