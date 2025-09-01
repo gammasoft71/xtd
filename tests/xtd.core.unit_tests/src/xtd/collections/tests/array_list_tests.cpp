@@ -65,17 +65,10 @@ namespace xtd::collections::tests {
       collection_assert::is_empty(items);
     }
     
-    void test_method_(constructor_with_count) {
+    void test_method_(constructor_with_capacity) {
       auto items = array_list(3_z);
-      assert::are_equal(3_z, items.count());
       assert::is_greater_or_equal(items.capacity(), 3_z);
-      collection_assert::are_equal({any_object {}, any_object {}, any_object {}}, items);
-    }
-    
-    void test_method_(constructor_with_count_and_type) {
-      auto items = array_list(3, "Tyrannosaurus");
-      assert::are_equal(3_z, items.count());
-      collection_assert::are_equal({"Tyrannosaurus", "Tyrannosaurus", "Tyrannosaurus"}, items);
+      assert::is_zero(items.count());
     }
     
     void test_method_(constructor_with_iterators) {

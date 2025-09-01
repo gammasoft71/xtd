@@ -81,16 +81,10 @@ namespace xtd::collections::generic::tests {
       collection_assert::is_empty(items);
     }
     
-    void test_method_(constructor_with_count) {
+    void test_method_(constructor_with_capacity) {
       auto items = list<boolean>(3);
-      assert::are_equal(3_z, items.count());
-      collection_assert::are_equal({false, false, false}, items);
-    }
-    
-    void test_method_(constructor_with_count_and_type) {
-      auto items = list<int>(3, 42);
-      assert::are_equal(3_z, items.count());
-      collection_assert::are_equal({42, 42, 42}, items);
+      assert::is_greater_or_equal(items.capacity(), 3_z);
+      assert::is_zero(items.count());
     }
     
     void test_method_(constructor_with_iterators) {

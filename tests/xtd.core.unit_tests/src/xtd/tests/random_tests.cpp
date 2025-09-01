@@ -98,8 +98,8 @@ namespace xtd::tests {
     }
     
     void test_method_(get_items_int_with_choices_read_only_span_and_destination) {
-      auto items_list = list<int>(16);
-      auto items = span<int>(items_list);
+      auto items_array = array<int>(16);
+      auto items = span<int>(items_array);
       xtd::random {1}.get_items<int>(read_only_span<int> {0, 1, 2, 3}, items);
       collection_assert::does_not_contain({4, 5, 6, 7, 8, 9}, items);
       if (environment::os_version().is_linux()) collection_assert::are_equal({1, 3, 1, 1, 3, 0, 0, 0, 0, 0, 1, 3, 0, 1, 1, 2}, items);
@@ -108,8 +108,8 @@ namespace xtd::tests {
     }
     
     void test_method_(get_items_boolean_with_choices_read_only_span_and_destination) {
-      auto items_list = list<boolean>(16);
-      auto items = span<boolean>(items_list);
+      auto items_array = array<boolean>(16);
+      auto items = span<boolean>(items_array);
       xtd::random {1}.get_items<boolean>(read_only_span<boolean> {false, true}, items);
       if (environment::os_version().is_linux()) collection_assert::are_equal({false, true, false, false, true, false, false, false, false, false, false, true, false, false, false, true}, items);
       else if (environment::os_version().is_macos()) collection_assert::are_equal({false, true, false, true, false, false, true, false, true, true, true, false, true, true, true, true}, items);
@@ -117,8 +117,8 @@ namespace xtd::tests {
     }
     
     void test_method_(get_items_double_with_choices_read_only_span_and_destination) {
-      auto items_list = list<double>(16);
-      auto items = span<double>(items_list);
+      auto items_array = array<double>(16);
+      auto items = span<double>(items_array);
       xtd::random {1}.get_items<double>(read_only_span<double> {0.3, 0.5, 0.8}, items);
       collection_assert::does_not_contain({0.1, 0.2, 0.4, 0.6, 0.7, 0.9}, items);
       if (environment::os_version().is_linux()) collection_assert::are_equal({0.5, 0.8, 0.5, 0.5, 0.8, 0.3, 0.3, 0.3, 0.3, 0.3, 0.5, 0.8, 0.3, 0.5, 0.5, 0.5}, items);
@@ -341,7 +341,7 @@ namespace xtd::tests {
     
     void test_method_(next_bytes_with_span) {
       auto rnd = xtd::random {1};
-      auto bytes = list<byte>(16_z);
+      auto bytes = array<byte>(16_z);
       auto span_byes = span<byte> {bytes};
       rnd.next_bytes(span_byes);
       if (environment::os_version().is_linux()) collection_assert::are_equal({67, 233, 111, 91, 221, 10, 18, 15, 4, 34, 95, 219, 14, 78, 102, 133}, span_byes);
