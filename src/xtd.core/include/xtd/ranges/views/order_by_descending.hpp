@@ -32,6 +32,11 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core ranges
+      /// @par Examples
+      /// The following example shows how to use xtd::ranges::views::order_by_descending instance :
+      /// @include ranges_views_order_by_descending.cpp
+      /// The following example shows how to use xtd::ranges::views::order_by_descending_view class :
+      /// @include ranges_views_order_by_descending2.cpp
       inline constexpr auto order_by_descending = order_by_descending_view {};
     }
   }
