@@ -2,6 +2,7 @@
 
 [This folder](.) contains guid examples used by [Reference Guide](https://gammasoft71.github.io/xtd/reference_guides/latest/) and more.
 
+* [ranges_views](ranges_views/README.md) shows how to use [xtd::ranges::views](https://gammasoft71.github.io/xtd/reference_guides/latest/namespacextd_1_1ranges_1_1views.html) views.
 * [ranges_views_distinct](ranges_views_distinct/README.md) shows how to use [xtd::ranges::views::distinct_view](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1distinct__view.html) class.
 * [ranges_views_distinct2](ranges_views_distinct2/README.md) shows how to use [xtd::ranges::views::distinct_view](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1distinct__view.html) class.
 * [ranges_views_order_by](ranges_views_order_by/README.md) shows how to use [xtd::ranges::views::order_by_view](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ranges_1_1views_1_1order__by__view.html) class.

@@ -4,6 +4,7 @@ project(ranges)
 find_package(xtd REQUIRED)
 
 add_projects(
+  ranges_views
   ranges_views_distinct
   ranges_views_distinct2
   ranges_views_order_by
