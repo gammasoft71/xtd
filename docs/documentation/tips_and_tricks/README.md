@@ -11,12 +11,13 @@ You will find concrete solutions to common problems encountered with xtd in mode
 
 ## List of all `Tips & Tricks`, sorted by newest first.
 
-| Category                                                                                                                     | Subject                                                                                                | Date             | Level |
-| ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ---------------- | ----- |
-| [![xxtd](/pictures/xtd32.png)](https://gammasoft71.github.io/xtd/reference_guides/latest)                                    | [#4 - Why xtd simplifies your code compared to Qt or wxWidgets](/docs/documentation/tips_and_tricks/4) | August 18, 2025  | 🟢    |
-| [![forms](/pictures/xtd.forms.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html)        | [#3 - Showing a message box in one line](/docs/documentation/tips_and_tricks/3)                        | August 6, 2025   | 🟢    |
-| [![threading](/pictures/xtd.threading.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__threading.html) | [#2 - Very simple threads synchronisation](/docs/documentation/tips_and_tricks/2)                      | July 31, 2025    | 🟡    |
-| [![core](/pictures/xtd.core.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)           | [#1 - Command line arguments](/docs/documentation/tips_and_tricks/1)                                   | July 8, 2025     | 🟢    |
+| Category                                                                                                                     | Subject                                                                                                | Date                | Level |
+| ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------------- | ----- |
+| [![drawing](/pictures/xtd.drawing.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__drawing.html)       | [#5 - Applying image effects](/docs/documentation/tips_and_tricks/5)                                   | September 1, 2025   | 🟢    |
+| [![xxtd](/pictures/xtd32.png)](https://gammasoft71.github.io/xtd/reference_guides/latest)                                    | [#4 - Why xtd simplifies your code compared to Qt or wxWidgets](/docs/documentation/tips_and_tricks/4) | August 18, 2025     | 🟢    |
+| [![forms](/pictures/xtd.forms.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html)        | [#3 - Showing a message box in one line](/docs/documentation/tips_and_tricks/3)                        | August 6, 2025      | 🟢    |
+| [![threading](/pictures/xtd.threading.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__threading.html) | [#2 - Very simple threads synchronisation](/docs/documentation/tips_and_tricks/2)                      | July 31, 2025       | 🟡    |
+| [![core](/pictures/xtd.core.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)           | [#1 - Command line arguments](/docs/documentation/tips_and_tricks/1)                                   | July 8, 2025        | 🟢    |
 
 <details>
   <summary>Legend</summary>
