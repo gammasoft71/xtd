@@ -259,7 +259,7 @@ namespace xtd {
         
       private:
         bool is_fixed_size() const noexcept override {return false;}
-        bool is_read_only() const noexcept override {return false;}
+        bool is_read_only() const noexcept override {return true;}
         bool is_synchronized() const noexcept override {return false;}
         void add(const value_type& item) override {}
         void clear() override {}
