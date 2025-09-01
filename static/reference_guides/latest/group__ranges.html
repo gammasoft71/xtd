@@ -163,13 +163,36 @@ Variables</h2></td></tr>
 
 <p>The <a class="el" href="classxtd_1_1ranges_1_1views_1_1distinct__view.html" title="The xtd::ranges::views::distinct_view class is used to distinct elements from a sequence.">xtd::ranges::views::distinct_view</a> instance. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="#gabc93573a9d807bd1f69040b8c743d401">distinct</a> = <a class="code hl_class" href="classxtd_1_1ranges_1_1views_1_1distinct__view.html">distinct_view</a> {};</div>
-<div class="ttc" id="aclassxtd_1_1ranges_1_1views_1_1distinct__view_html"><div class="ttname"><a href="classxtd_1_1ranges_1_1views_1_1distinct__view.html">xtd::ranges::views::distinct_view</a></div><div class="ttdoc">The xtd::ranges::views::distinct_view class is used to distinct elements from a sequence.</div><div class="ttdef"><b>Definition</b> distinct_view.hpp:39</div></div>
-<div class="ttc" id="agroup__ranges_html_gabc93573a9d807bd1f69040b8c743d401"><div class="ttname"><a href="#gabc93573a9d807bd1f69040b8c743d401">xtd::ranges::views::distinct</a></div><div class="ttdeci">constexpr auto distinct</div><div class="ttdoc">The xtd::ranges::views::distinct_view instance.</div><div class="ttdef"><b>Definition</b> distinct.hpp:35</div></div>
+<div class="ttc" id="aclassxtd_1_1ranges_1_1views_1_1distinct__view_html"><div class="ttname"><a href="classxtd_1_1ranges_1_1views_1_1distinct__view.html">xtd::ranges::views::distinct_view</a></div><div class="ttdoc">The xtd::ranges::views::distinct_view class is used to distinct elements from a sequence.</div><div class="ttdef"><b>Definition</b> distinct_view.hpp:44</div></div>
+<div class="ttc" id="agroup__ranges_html_gabc93573a9d807bd1f69040b8c743d401"><div class="ttname"><a href="#gabc93573a9d807bd1f69040b8c743d401">xtd::ranges::views::distinct</a></div><div class="ttdeci">constexpr auto distinct</div><div class="ttdoc">The xtd::ranges::views::distinct_view instance.</div><div class="ttdef"><b>Definition</b> distinct.hpp:40</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/ranges/views/distinct&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1ranges_1_1views.html" title="The view namesapce contains range views, lightweight objects that indirectly represent iterable seque...">xtd::ranges::views</a> </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#gabc93573a9d807bd1f69040b8c743d401" title="The xtd::ranges::views::distinct_view instance.">xtd::ranges::views::distinct</a> instance : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> numbers = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {2, 7, 3, 1, 1, 4, 10, 5, 3, 3, 3, 6, 6, 2, 8, 9, 8, 9};</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;numbers = {}&quot;</span>, numbers | distinct);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// numbers = [2, 7, 3, 1, 4, 10, 5, 6, 8, 9]</span></div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:63</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+</div><!-- fragment --> The following example shows how to use <a class="el" href="classxtd_1_1ranges_1_1views_1_1distinct__view.html" title="The xtd::ranges::views::distinct_view class is used to distinct elements from a sequence.">xtd::ranges::views::distinct_view</a> class : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> numbers = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {2, 7, 3, 1, 1, 4, 10, 5, 3, 3, 3, 6, 6, 2, 8, 9, 8, 9};</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;numbers = {}&quot;</span>, distinct(numbers));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// numbers = [2, 7, 3, 1, 4, 10, 5, 6, 8, 9]</span></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -197,13 +220,35 @@ Variables</h2></td></tr>
 
 <p>The <a class="el" href="#ga7afb21b332d0583925f7568616d4f5c4" title="The xtd::ranges::views::order_by instance.">xtd::ranges::views::order_by</a> instance. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="#ga7afb21b332d0583925f7568616d4f5c4">order_by</a> = <a class="code hl_class" href="classxtd_1_1ranges_1_1views_1_1order__by__view.html">order_by_view</a> {};</div>
-<div class="ttc" id="aclassxtd_1_1ranges_1_1views_1_1order__by__view_html"><div class="ttname"><a href="classxtd_1_1ranges_1_1views_1_1order__by__view.html">xtd::ranges::views::order_by_view</a></div><div class="ttdoc">The xtd::ranges::views::order_by_view class is used to sort the elements of a sequence in ascending o...</div><div class="ttdef"><b>Definition</b> order_by_view.hpp:39</div></div>
-<div class="ttc" id="agroup__ranges_html_ga7afb21b332d0583925f7568616d4f5c4"><div class="ttname"><a href="#ga7afb21b332d0583925f7568616d4f5c4">xtd::ranges::views::order_by</a></div><div class="ttdeci">constexpr auto order_by</div><div class="ttdoc">The xtd::ranges::views::order_by instance.</div><div class="ttdef"><b>Definition</b> order_by.hpp:35</div></div>
+<div class="ttc" id="aclassxtd_1_1ranges_1_1views_1_1order__by__view_html"><div class="ttname"><a href="classxtd_1_1ranges_1_1views_1_1order__by__view.html">xtd::ranges::views::order_by_view</a></div><div class="ttdoc">The xtd::ranges::views::order_by_view class is used to sort the elements of a sequence in ascending o...</div><div class="ttdef"><b>Definition</b> order_by_view.hpp:44</div></div>
+<div class="ttc" id="agroup__ranges_html_ga7afb21b332d0583925f7568616d4f5c4"><div class="ttname"><a href="#ga7afb21b332d0583925f7568616d4f5c4">xtd::ranges::views::order_by</a></div><div class="ttdeci">constexpr auto order_by</div><div class="ttdoc">The xtd::ranges::views::order_by instance.</div><div class="ttdef"><b>Definition</b> order_by.hpp:40</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/ranges/views/order_by&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1ranges_1_1views.html" title="The view namesapce contains range views, lightweight objects that indirectly represent iterable seque...">xtd::ranges::views</a> </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#ga7afb21b332d0583925f7568616d4f5c4" title="The xtd::ranges::views::order_by instance.">xtd::ranges::views::order_by</a> instance : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> numbers = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {2, 7, 3, 1, 4, 10, 5, 6, 8, 9};</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;numbers = {}&quot;</span>, numbers | order_by([](<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>;}));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">xtd::console_key::n</a></div><div class="ttdeci">@ n</div><div class="ttdoc">The N key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:114</div></div>
+</div><!-- fragment --> The following example shows how to use <a class="el" href="classxtd_1_1ranges_1_1views_1_1order__by__view.html" title="The xtd::ranges::views::order_by_view class is used to sort the elements of a sequence in ascending o...">xtd::ranges::views::order_by_view</a> class : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> numbers = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {2, 7, 3, 1, 4, 10, 5, 6, 8, 9};</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;numbers = {}&quot;</span>, order_by(numbers, [](<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>;}));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -231,13 +276,34 @@ Variables</h2></td></tr>
 
 <p>The <a class="el" href="#ga2a2f31c607d9b61b9ef9270d8644f6f8" title="The xtd::ranges::views::order_by_descending instance.">xtd::ranges::views::order_by_descending</a> instance. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="#ga2a2f31c607d9b61b9ef9270d8644f6f8">order_by_descending</a> = <a class="code hl_class" href="classxtd_1_1ranges_1_1views_1_1order__by__descending__view.html">order_by_descending_view</a> {};</div>
-<div class="ttc" id="aclassxtd_1_1ranges_1_1views_1_1order__by__descending__view_html"><div class="ttname"><a href="classxtd_1_1ranges_1_1views_1_1order__by__descending__view.html">xtd::ranges::views::order_by_descending_view</a></div><div class="ttdoc">The xtd::ranges::views::order_by_descending_view class is used to sort the elements of a sequence in ...</div><div class="ttdef"><b>Definition</b> order_by_descending_view.hpp:39</div></div>
-<div class="ttc" id="agroup__ranges_html_ga2a2f31c607d9b61b9ef9270d8644f6f8"><div class="ttname"><a href="#ga2a2f31c607d9b61b9ef9270d8644f6f8">xtd::ranges::views::order_by_descending</a></div><div class="ttdeci">constexpr auto order_by_descending</div><div class="ttdoc">The xtd::ranges::views::order_by_descending instance.</div><div class="ttdef"><b>Definition</b> order_by_descending.hpp:35</div></div>
+<div class="ttc" id="aclassxtd_1_1ranges_1_1views_1_1order__by__descending__view_html"><div class="ttname"><a href="classxtd_1_1ranges_1_1views_1_1order__by__descending__view.html">xtd::ranges::views::order_by_descending_view</a></div><div class="ttdoc">The xtd::ranges::views::order_by_descending_view class is used to sort the elements of a sequence in ...</div><div class="ttdef"><b>Definition</b> order_by_descending_view.hpp:44</div></div>
+<div class="ttc" id="agroup__ranges_html_ga2a2f31c607d9b61b9ef9270d8644f6f8"><div class="ttname"><a href="#ga2a2f31c607d9b61b9ef9270d8644f6f8">xtd::ranges::views::order_by_descending</a></div><div class="ttdeci">constexpr auto order_by_descending</div><div class="ttdoc">The xtd::ranges::views::order_by_descending instance.</div><div class="ttdef"><b>Definition</b> order_by_descending.hpp:40</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/ranges/views/order_by_descending&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1ranges_1_1views.html" title="The view namesapce contains range views, lightweight objects that indirectly represent iterable seque...">xtd::ranges::views</a> </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#ga2a2f31c607d9b61b9ef9270d8644f6f8" title="The xtd::ranges::views::order_by_descending instance.">xtd::ranges::views::order_by_descending</a> instance : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> numbers = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {2, 7, 3, 1, 4, 10, 5, 6, 8, 9};</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;numbers = {}&quot;</span>, numbers | order_by_descending([](<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>;}));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// numbers = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</span></div>
+</div><!-- fragment --> The following example shows how to use <a class="el" href="classxtd_1_1ranges_1_1views_1_1order__by__descending__view.html" title="The xtd::ranges::views::order_by_descending_view class is used to sort the elements of a sequence in ...">xtd::ranges::views::order_by_descending_view</a> class : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> numbers = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {2, 7, 3, 1, 4, 10, 5, 6, 8, 9};</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;numbers = {}&quot;</span>, order_by_descending(numbers, [](<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>;}));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// numbers = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]</span></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -265,13 +331,35 @@ Variables</h2></td></tr>
 
 <p>The <a class="el" href="#ga093ba4055ef4d95934c8a014fb7f2683" title="The xtd::ranges::views::select instance.">xtd::ranges::views::select</a> instance. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="#ga093ba4055ef4d95934c8a014fb7f2683">select</a> = <a class="code hl_class" href="classxtd_1_1ranges_1_1views_1_1select__view.html">select_view</a> {};</div>
-<div class="ttc" id="aclassxtd_1_1ranges_1_1views_1_1select__view_html"><div class="ttname"><a href="classxtd_1_1ranges_1_1views_1_1select__view.html">xtd::ranges::views::select_view</a></div><div class="ttdoc">The xtd::ranges::views::select_view class is used to select elements from a sequence.</div><div class="ttdef"><b>Definition</b> select_view.hpp:39</div></div>
-<div class="ttc" id="agroup__ranges_html_ga093ba4055ef4d95934c8a014fb7f2683"><div class="ttname"><a href="#ga093ba4055ef4d95934c8a014fb7f2683">xtd::ranges::views::select</a></div><div class="ttdeci">constexpr auto select</div><div class="ttdoc">The xtd::ranges::views::select instance.</div><div class="ttdef"><b>Definition</b> select.hpp:35</div></div>
+<div class="ttc" id="aclassxtd_1_1ranges_1_1views_1_1select__view_html"><div class="ttname"><a href="classxtd_1_1ranges_1_1views_1_1select__view.html">xtd::ranges::views::select_view</a></div><div class="ttdoc">The xtd::ranges::views::select_view class is used to select elements from a sequence.</div><div class="ttdef"><b>Definition</b> select_view.hpp:44</div></div>
+<div class="ttc" id="agroup__ranges_html_ga093ba4055ef4d95934c8a014fb7f2683"><div class="ttname"><a href="#ga093ba4055ef4d95934c8a014fb7f2683">xtd::ranges::views::select</a></div><div class="ttdeci">constexpr auto select</div><div class="ttdoc">The xtd::ranges::views::select instance.</div><div class="ttdef"><b>Definition</b> select.hpp:40</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/ranges/views/select&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1ranges_1_1views.html" title="The view namesapce contains range views, lightweight objects that indirectly represent iterable seque...">xtd::ranges::views</a> </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#ga093ba4055ef4d95934c8a014fb7f2683" title="The xtd::ranges::views::select instance.">xtd::ranges::views::select</a> instance : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> numbers = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;numbers = {}&quot;</span>, numbers | <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a99938282f04071859941e18f16efcf42">select</a>([](<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a> * <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>;}));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// numbers = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</span></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a99938282f04071859941e18f16efcf42"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a99938282f04071859941e18f16efcf42">xtd::console_key::select</a></div><div class="ttdeci">@ select</div><div class="ttdoc">The SELECT key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:54</div></div>
+</div><!-- fragment --> The following example shows how to use <a class="el" href="classxtd_1_1ranges_1_1views_1_1select__view.html" title="The xtd::ranges::views::select_view class is used to select elements from a sequence.">xtd::ranges::views::select_view</a> class : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> numbers = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;numbers = {}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a99938282f04071859941e18f16efcf42">select</a>(numbers, [](<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a> * <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>;}));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// numbers = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]</span></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -299,13 +387,34 @@ Variables</h2></td></tr>
 
 <p>The <a class="el" href="#ga37f720d43f944b1e51feba9ec592202d" title="The xtd::ranges::views::where instance.">xtd::ranges::views::where</a> instance. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">inline</span> <span class="keyword">constexpr</span> <span class="keyword">auto</span> <a class="code hl_variable" href="#ga37f720d43f944b1e51feba9ec592202d">where</a> = <a class="code hl_class" href="classxtd_1_1ranges_1_1views_1_1where__view.html">where_view</a> {};</div>
-<div class="ttc" id="aclassxtd_1_1ranges_1_1views_1_1where__view_html"><div class="ttname"><a href="classxtd_1_1ranges_1_1views_1_1where__view.html">xtd::ranges::views::where_view</a></div><div class="ttdoc">The xtd::ranges::views::where_view class is used to filter elements from a sequence.</div><div class="ttdef"><b>Definition</b> where_view.hpp:39</div></div>
-<div class="ttc" id="agroup__ranges_html_ga37f720d43f944b1e51feba9ec592202d"><div class="ttname"><a href="#ga37f720d43f944b1e51feba9ec592202d">xtd::ranges::views::where</a></div><div class="ttdeci">constexpr auto where</div><div class="ttdoc">The xtd::ranges::views::where instance.</div><div class="ttdef"><b>Definition</b> where.hpp:35</div></div>
+<div class="ttc" id="aclassxtd_1_1ranges_1_1views_1_1where__view_html"><div class="ttname"><a href="classxtd_1_1ranges_1_1views_1_1where__view.html">xtd::ranges::views::where_view</a></div><div class="ttdoc">The xtd::ranges::views::where_view class is used to filter elements from a sequence.</div><div class="ttdef"><b>Definition</b> where_view.hpp:44</div></div>
+<div class="ttc" id="agroup__ranges_html_ga37f720d43f944b1e51feba9ec592202d"><div class="ttname"><a href="#ga37f720d43f944b1e51feba9ec592202d">xtd::ranges::views::where</a></div><div class="ttdeci">constexpr auto where</div><div class="ttdoc">The xtd::ranges::views::where instance.</div><div class="ttdef"><b>Definition</b> where.hpp:40</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/ranges/views/where&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1ranges_1_1views.html" title="The view namesapce contains range views, lightweight objects that indirectly represent iterable seque...">xtd::ranges::views</a> </dd></dl>
-<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#ga37f720d43f944b1e51feba9ec592202d" title="The xtd::ranges::views::where instance.">xtd::ranges::views::where</a> instance : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> numbers = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;numbers = {}&quot;</span>, numbers | where([](<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a> &lt;= 5;}));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// numbers = [1, 2, 3, 4, 5]</span></div>
+</div><!-- fragment --> The following example shows how to use <a class="el" href="classxtd_1_1ranges_1_1views_1_1where__view.html" title="The xtd::ranges::views::where_view class is used to filter elements from a sequence.">xtd::ranges::views::where_view</a> class : <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> numbers = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;numbers = {}&quot;</span>, where(numbers, [](<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a> &lt;= 5;}));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// numbers = [1, 2, 3, 4, 5]</span></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -313,7 +422,7 @@ Variables</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 31 2025 20:45:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 08:37:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
