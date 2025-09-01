@@ -164,7 +164,10 @@ namespace xtd::collections::generic::tests {
     
     void test_method_(cend) {
       auto items = list {84, 42, 21};
-      assert::are_equal(0, *items.cend());
+      // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
+      // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
+      //assert::throws<argument_out_of_range_exception>([&] {*items.cend();});
+      assert::is_true(items.cend() == items.cbegin() + items.size());
     }
     
     void test_method_(count) {
@@ -188,6 +191,7 @@ namespace xtd::collections::generic::tests {
       // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
       // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
       //assert::throws<argument_out_of_range_exception>([&] {*items.crend();});
+      assert::is_true(items.crend() == items.crbegin() + items.size());
     }
     
     void test_method_(data) {
@@ -229,7 +233,10 @@ namespace xtd::collections::generic::tests {
     
     void test_method_(end) {
       auto items = list {84, 42, 21};
-      assert::are_equal(0, *items.end());
+      // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
+      // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
+      //assert::throws<argument_out_of_range_exception>([&] {*items.end();});
+      assert::is_true(items.end() == items.begin() + items.size());
     }
     
     void test_method_(front_const) {
@@ -302,6 +309,7 @@ namespace xtd::collections::generic::tests {
       // the rend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
       // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
       //assert::throws<argument_out_of_range_exception>([&] {*items.rend();});
+      assert::is_true(items.rend() == items.rbegin() + items.size());
     }
     
     void test_method_(size) {
@@ -349,6 +357,76 @@ namespace xtd::collections::generic::tests {
       threading::thread_pool::join_all();
     }
     
+    void test_method_(add) {
+      auto items = list<int> {};
+      
+      items.add(1);
+      collection_assert::are_equal({1}, items);
+      items.add(2);
+      collection_assert::are_equal({1, 2}, items);
+      items.add(3);
+      collection_assert::are_equal({1, 2, 3}, items);
+      items.add(4);
+      collection_assert::are_equal({1, 2, 3, 4}, items);
+    }
+      
+    void test_method_(add_with_move) {
+      auto items = list<int> {};
+      
+      auto i = 1;
+      items.add(std::move(i));
+      collection_assert::are_equal({1}, items);
+    }
+    
+    void test_method_(add_range_with_ienumerable) {
+      auto items = list<int> {};
+      
+      items.add_range(as<ienumerable<int>>(list {1, 2, 3, 4}));
+      collection_assert::are_equal({1, 2, 3, 4}, items);
+      
+      items.add_range(as<ienumerable<int>>(list {5, 6, 7, 8}));
+      collection_assert::are_equal({1, 2, 3, 4, 5, 6, 7, 8}, items);
+    }
+    
+    void test_method_(add_range_with_initializer_list) {
+      auto items = list<int> {};
+      
+      items.add_range({1, 2, 3, 4});
+      collection_assert::are_equal({1, 2, 3, 4}, items);
+      
+      items.add_range({5, 6, 7, 8});
+      collection_assert::are_equal({1, 2, 3, 4, 5, 6, 7, 8}, items);
+    }
+    
+    void test_method_(add_range_with_list) {
+      auto items = list<int> {};
+      
+      items.add_range(list {1, 2, 3, 4});
+      collection_assert::are_equal({1, 2, 3, 4}, items);
+      
+      items.add_range(list {5, 6, 7, 8});
+      collection_assert::are_equal({1, 2, 3, 4, 5, 6, 7, 8}, items);
+    }
+
+    void test_method_(assign_with_count_and_value) {
+      auto items = list {84, 42, 21};
+      items.assign(4, 63);
+      collection_assert::are_equal({63, 63, 63, 63}, items);
+    }
+    
+    void test_method_(assign_with_iterators) {
+      auto items = list {84, 42, 21};
+      auto items2 = std::vector {10, 20, 30, 40};
+      items.assign(items2.begin(), items2.end());
+      collection_assert::are_equal({10, 20, 30, 40}, items);
+    }
+    
+    void test_method_(assign_with_initializer_list) {
+      auto items = list {84, 42, 21};
+      items.assign({10, 20, 30, 40});
+      collection_assert::are_equal({10, 20, 30, 40}, items);
+    }
+    
     void test_method_(at) {
       auto items = list {84, 42, 21};
       
@@ -364,33 +442,13 @@ namespace xtd::collections::generic::tests {
       
       collection_assert::are_equal({63, 31, 10}, items);
     }
-    
-    void test_method_(add) {
-      auto items = list<int> {};
-      
-      items.add(1);
-      collection_assert::are_equal({1}, items);
-      items.add(2);
-      collection_assert::are_equal({1, 2}, items);
-      items.add(3);
-      collection_assert::are_equal({1, 2, 3}, items);
-      items.add(4);
-      collection_assert::are_equal({1, 2, 3, 4}, items);
+
+    void test_method_(clear) {
+      auto items = list {84, 42, 21};
+      items.clear();
+      assert::are_equal(0_z, items.size());
     }
-    
-    void test_method_(add_range) {
-      auto items = list<int> {};
-      
-      items.add_range({1, 2, 3, 4});
-      collection_assert::are_equal({1, 2, 3, 4}, items);
-      
-      items.add_range(list {5, 6, 7, 8});
-      collection_assert::are_equal({1, 2, 3, 4, 5, 6, 7, 8}, items);
-      
-      items.add_range(as<ienumerable<int>>(list {9, 10, 11, 12}));
-      collection_assert::are_equal({1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}, items);
-    }
-    
+
     void test_method_(contains) {
       auto items = list {84, 42, 21};
       assert::is_true(items.contains(84));
