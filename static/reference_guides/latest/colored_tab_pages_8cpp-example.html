@@ -120,88 +120,51 @@ $(function(){ initResizable(false); });
 <img src="colored_tab_pages_gd.png" alt=""/>
 </div>
 </dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/colors&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/drawing/pens&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/tab_control&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/forms/tab_page&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/cdebug&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {</div>
+<div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  form1() {</div>
-<div class="line">    <a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>(<span class="stringliteral">&quot;Colored Tab pages example&quot;</span>);</div>
+<div class="line">    text(<span class="stringliteral">&quot;Colored Tab pages example&quot;</span>);</div>
 <div class="line">    controls().push_back(colored_tab_control);</div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>({600, 450});</div>
+<div class="line">    size({600, 450});</div>
 <div class="line">    </div>
 <div class="line">    color_image_list.image_size({16, 16});</div>
-<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">auto</span> <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a> : {<a class="code hl_function" href="classxtd_1_1drawing_1_1colors.html#ad93e1cec24ff2b5efb9f48955fa38af4">colors::light_pink</a>(), <a class="code hl_function" href="classxtd_1_1drawing_1_1colors.html#a111290c90b1517d568ff09a194339ebe">colors::light_green</a>(), <a class="code hl_function" href="classxtd_1_1drawing_1_1colors.html#a1fb0b7761798ef496aa39a6a142a99bd">colors::light_blue</a>(), <a class="code hl_function" href="classxtd_1_1drawing_1_1colors.html#afb2e939d391a586ff895188bdf0907c2">colors::light_yellow</a>()}) {</div>
-<div class="line">      color_image_list.images().push_back(image_from_color(color_image_list.image_size(), <a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>));</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">auto</span> color : {colors::light_pink(), colors::light_green(), colors::light_blue(), colors::light_yellow()}) {</div>
+<div class="line">      color_image_list.images().push_back(image_from_color(color_image_list.image_size(), color));</div>
 <div class="line">      </div>
-<div class="line">      <span class="keyword">auto</span> colored_tab_page = <a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;forms::tab_page&gt;</a>();</div>
-<div class="line">      colored_tab_page-&gt;image_index(colored_tab_pages.size()).parent(colored_tab_control).text(<a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>.<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1drawing_1_1color.html#ae53d5f6c0f61e3f7c156729ab3035620">name</a>()).back_color(<a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>);</div>
+<div class="line">      <span class="keyword">auto</span> colored_tab_page = new_ptr&lt;forms::tab_page&gt;();</div>
+<div class="line">      colored_tab_page-&gt;image_index(colored_tab_pages.size()).parent(colored_tab_control).text(color.name()).back_color(color);</div>
 <div class="line">      colored_tab_pages.push_back(colored_tab_page);</div>
 <div class="line">    };</div>
 <div class="line">    </div>
 <div class="line">    colored_tab_control.image_list(color_image_list);</div>
-<div class="line">    colored_tab_control.dock(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619aa552c74784b3a82177bca6c8adde0efb">dock_style::fill</a>);</div>
-<div class="line">    colored_tab_control.alignment(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga625f9d3da3b0351b0fc4753e53705896a71f262d796bed1ab30e8a2d5a8ddee6f">tab_alignment::bottom</a>);</div>
+<div class="line">    colored_tab_control.dock(dock_style::fill);</div>
+<div class="line">    colored_tab_control.alignment(tab_alignment::bottom);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <span class="keyword">auto</span> image_from_color(<span class="keyword">const</span> <a id="_a3" name="_a3"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a>&amp; <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>&amp; <a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>)-&gt;image {</div>
-<div class="line">    <span class="keyword">auto</span> colored_bitmap = <a id="_a4" name="_a4"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1bitmap.html">bitmap</a> {<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a>};</div>
-<div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab2f5ff47436671b6e533d8dc3614845d">g</a> = <a class="code hl_function" href="classxtd_1_1drawing_1_1graphics.html#ae541e58d1bb9ef8ecbdf3311db36a4ee">graphics::from_image</a>(colored_bitmap);</div>
-<div class="line">    <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab2f5ff47436671b6e533d8dc3614845d">g</a>.fill_ellipse(<a id="_a5" name="_a5"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1solid__brush.html">solid_brush</a> {<a class="code hl_class" href="classxtd_1_1drawing_1_1color.html">color</a>}, 0, 0, colored_bitmap.width(), colored_bitmap.height());</div>
-<div class="line">    <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab2f5ff47436671b6e533d8dc3614845d">g</a>.draw_ellipse(<a class="code hl_function" href="classxtd_1_1drawing_1_1pens.html#abd8e4aee57ad9ee2ac80313fb4862f47">pens::black</a>(), 0, 0, colored_bitmap.width() - 1, colored_bitmap.height() - 1);</div>
+<div class="line">  <span class="keyword">auto</span> image_from_color(<span class="keyword">const</span> drawing::size&amp; size, <span class="keyword">const</span> color&amp; color)-&gt;image {</div>
+<div class="line">    <span class="keyword">auto</span> colored_bitmap = bitmap {size};</div>
+<div class="line">    <span class="keyword">auto</span> g = graphics::from_image(colored_bitmap);</div>
+<div class="line">    g.fill_ellipse(solid_brush {color}, 0, 0, colored_bitmap.width(), colored_bitmap.height());</div>
+<div class="line">    g.draw_ellipse(pens::black(), 0, 0, colored_bitmap.width() - 1, colored_bitmap.height() - 1);</div>
 <div class="line">    <span class="keywordflow">return</span> colored_bitmap;</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  <a id="_a6" name="_a6"></a><a class="code hl_class" href="classxtd_1_1forms_1_1image__list.html">image_list</a> color_image_list;</div>
-<div class="line">  <a id="_a7" name="_a7"></a><a class="code hl_class" href="classxtd_1_1forms_1_1tab__control.html">tab_control</a> colored_tab_control;</div>
-<div class="line">  <a id="_a8" name="_a8"></a><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;ptr&lt;tab_page&gt;</a>&gt; colored_tab_pages;</div>
+<div class="line">  image_list color_image_list;</div>
+<div class="line">  tab_control colored_tab_control;</div>
+<div class="line">  list&lt;ptr&lt;tab_page&gt;&gt; colored_tab_pages;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(form1 {});</div>
+<div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:79</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1bitmap_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a></div><div class="ttdoc">Encapsulates a GDI+ bitmap, which consists of the pixel data for a graphics image and its attributes....</div><div class="ttdef"><b>Definition</b> bitmap.hpp:26</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a></div><div class="ttdoc">Represents an ARGB (alpha, red, green, blue) color.</div><div class="ttdef"><b>Definition</b> color.hpp:46</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_ae53d5f6c0f61e3f7c156729ab3035620"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#ae53d5f6c0f61e3f7c156729ab3035620">xtd::drawing::color::name</a></div><div class="ttdeci">xtd::string name() const noexcept</div><div class="ttdoc">Gets the name of this xtd::drawing::color.</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1colors_html_a111290c90b1517d568ff09a194339ebe"><div class="ttname"><a href="classxtd_1_1drawing_1_1colors.html#a111290c90b1517d568ff09a194339ebe">xtd::drawing::colors::light_green</a></div><div class="ttdeci">static xtd::drawing::color light_green() noexcept</div><div class="ttdoc">A system-defined color object.</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1colors_html_a1fb0b7761798ef496aa39a6a142a99bd"><div class="ttname"><a href="classxtd_1_1drawing_1_1colors.html#a1fb0b7761798ef496aa39a6a142a99bd">xtd::drawing::colors::light_blue</a></div><div class="ttdeci">static xtd::drawing::color light_blue() noexcept</div><div class="ttdoc">A system-defined color object.</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1colors_html_ad93e1cec24ff2b5efb9f48955fa38af4"><div class="ttname"><a href="classxtd_1_1drawing_1_1colors.html#ad93e1cec24ff2b5efb9f48955fa38af4">xtd::drawing::colors::light_pink</a></div><div class="ttdeci">static xtd::drawing::color light_pink() noexcept</div><div class="ttdoc">A system-defined color object.</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1colors_html_afb2e939d391a586ff895188bdf0907c2"><div class="ttname"><a href="classxtd_1_1drawing_1_1colors.html#afb2e939d391a586ff895188bdf0907c2">xtd::drawing::colors::light_yellow</a></div><div class="ttdeci">static xtd::drawing::color light_yellow() noexcept</div><div class="ttdoc">A system-defined color object.</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1graphics_html_ae541e58d1bb9ef8ecbdf3311db36a4ee"><div class="ttname"><a href="classxtd_1_1drawing_1_1graphics.html#ae541e58d1bb9ef8ecbdf3311db36a4ee">xtd::drawing::graphics::from_image</a></div><div class="ttdeci">static graphics from_image(const xtd::drawing::image &amp;image)</div><div class="ttdoc">Creates a new xtd::drawing::graphics from the specified xtd::drawing::image.</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1pens_html_abd8e4aee57ad9ee2ac80313fb4862f47"><div class="ttname"><a href="classxtd_1_1drawing_1_1pens.html#abd8e4aee57ad9ee2ac80313fb4862f47">xtd::drawing::pens::black</a></div><div class="ttdeci">static xtd::drawing::pen black()</div><div class="ttdoc">A system-defined pen object with a width of 1.</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1solid__brush_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1solid__brush.html">xtd::drawing::solid_brush</a></div><div class="ttdoc">Defines a xtd::drawing::brush of a single color. Brushes are used to fill graphics shapes,...</div><div class="ttdef"><b>Definition</b> solid_brush.hpp:29</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application&#39;s user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1image__list_html"><div class="ttname"><a href="classxtd_1_1forms_1_1image__list.html">xtd::forms::image_list</a></div><div class="ttdoc">Provides methods to manage a collection of xtd::drawing::image objects. This class cannot be inherite...</div><div class="ttdef"><b>Definition</b> image_list.hpp:30</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1tab__control_html"><div class="ttname"><a href="classxtd_1_1forms_1_1tab__control.html">xtd::forms::tab_control</a></div><div class="ttdoc">Manages a related set of tab pages.</div><div class="ttdef"><b>Definition</b> tab_control.hpp:39</div></div>
-<div class="ttc" id="agroup__types_html_ga221e5b824352c9046d353e4659af5b87"><div class="ttname"><a href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga2fd68f03198b2bf84b1e93149494b685"><div class="ttname"><a href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">xtd::new_ptr</a></div><div class="ttdeci">ptr&lt; type_t &gt; new_ptr(args_t &amp;&amp;... args)</div><div class="ttdoc">The xtd::new_ptr operator creates a xtd::ptr object.</div><div class="ttdef"><b>Definition</b> new_ptr.hpp:24</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ab2f5ff47436671b6e533d8dc3614845d"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab2f5ff47436671b6e533d8dc3614845d">xtd::console_key::g</a></div><div class="ttdeci">@ g</div><div class="ttdoc">The G key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:100</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_gga625f9d3da3b0351b0fc4753e53705896a71f262d796bed1ab30e8a2d5a8ddee6f"><div class="ttname"><a href="group__xtd__forms.html#gga625f9d3da3b0351b0fc4753e53705896a71f262d796bed1ab30e8a2d5a8ddee6f">xtd::forms::tab_alignment::bottom</a></div><div class="ttdeci">@ bottom</div><div class="ttdoc">The tabs are located across the bottom of the control.</div><div class="ttdef"><b>Definition</b> tab_alignment.hpp:26</div></div>
-<div class="ttc" id="agroup__xtd__forms_html_ggaac8e45c70fc114a556d8f717b7ee7619aa552c74784b3a82177bca6c8adde0efb"><div class="ttname"><a href="group__xtd__forms.html#ggaac8e45c70fc114a556d8f717b7ee7619aa552c74784b3a82177bca6c8adde0efb">xtd::forms::dock_style::fill</a></div><div class="ttdeci">@ fill</div><div class="ttdoc">All the control&#39;s edges are docked to the all edges of its containing control and sized appropriately...</div><div class="ttdef"><b>Definition</b> dock_style.hpp:35</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:16</div></div>
-<div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> texts.hpp:219</div></div>
-<div class="ttc" id="anamespacextd_1_1text_html"><div class="ttname"><a href="namespacextd_1_1text.html">xtd::text</a></div><div class="ttdoc">Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:17</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
-<div class="ttc" id="astructxtd_1_1drawing_1_1size_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a></div><div class="ttdoc">Stores an ordered pair of integers, which specify a height and width.</div><div class="ttdef"><b>Definition</b> size.hpp:32</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

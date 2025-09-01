@@ -116,11 +116,7 @@ Inheritance diagram for xtd::math:</div>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This class cannot be inherited. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example uses several mathematical and trigonometric functions from the <a class="el" href="classxtd_1_1math.html" title="Provides constants and static methods for trigonometric, logarithmic, and other common mathematical f...">xtd::math</a> class to calculate the inner angles of a trapezoid. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/math&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example uses several mathematical and trigonometric functions from the <a class="el" href="classxtd_1_1math.html" title="Provides constants and static methods for trigonometric, logarithmic, and other common mathematical f...">xtd::math</a> class to calculate the inner angles of a trapezoid. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>math_example {</div>
 <div class="line">  <span class="comment">// The following class represents simple functionality of the trapezoid.</span></div>
@@ -143,10 +139,10 @@ Inheritance diagram for xtd::math:</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    math_trapezoid_sample(<span class="keywordtype">double</span> long_base, <span class="keywordtype">double</span> short_base, <span class="keywordtype">double</span> left_leg, <span class="keywordtype">double</span> right_leg) {</div>
-<div class="line">      long_base_ = <a class="code hl_function" href="#a2d05200926a60c8309120b7b288e22e5">math::abs</a>(long_base);</div>
-<div class="line">      short_base_ = <a class="code hl_function" href="#a2d05200926a60c8309120b7b288e22e5">math::abs</a>(short_base);</div>
-<div class="line">      left_leg_ = <a class="code hl_function" href="#a2d05200926a60c8309120b7b288e22e5">math::abs</a>(left_leg);</div>
-<div class="line">      right_leg_ = <a class="code hl_function" href="#a2d05200926a60c8309120b7b288e22e5">math::abs</a>(right_leg);</div>
+<div class="line">      long_base_ = math::abs(long_base);</div>
+<div class="line">      short_base_ = math::abs(short_base);</div>
+<div class="line">      left_leg_ = math::abs(left_leg);</div>
+<div class="line">      right_leg_ = math::abs(right_leg);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> get_height()-&gt;double {</div>
@@ -202,11 +198,9 @@ Inheritance diagram for xtd::math:</div>
 <div class="line"><span class="comment">// trapezoid left base angle is: 36.67 Degrees</span></div>
 <div class="line"><span class="comment">// trapezoid left base angle is: 53.29 Degrees</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1math_html_a2d05200926a60c8309120b7b288e22e5"><div class="ttname"><a href="#a2d05200926a60c8309120b7b288e22e5">xtd::math::abs</a></div><div class="ttdeci">static decimal abs(decimal value)</div><div class="ttdoc">Returns the absolute value of a decimal number.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a2510c39011c5be704182423e3a695e91"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a2510c39011c5be704182423e3a695e91">xtd::console_key::h</a></div><div class="ttdeci">@ h</div><div class="ttdoc">The H key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:102</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">xtd::console_key::x</a></div><div class="ttdeci">@ x</div><div class="ttdoc">The X key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:134</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Fields</h2></td></tr>
@@ -251,16 +245,16 @@ Inheritance diagram for xtd::math:</div>
 <tr class="memitem:a8df2bbcfc30c6dfd38152eeea8e224d9" id="r_a8df2bbcfc30c6dfd38152eeea8e224d9"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8df2bbcfc30c6dfd38152eeea8e224d9">abs</a> (float value)</td></tr>
 <tr class="memdesc:a8df2bbcfc30c6dfd38152eeea8e224d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the absolute value of a single-precision floating-point number.  <br /></td></tr>
 <tr class="separator:a8df2bbcfc30c6dfd38152eeea8e224d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1699a4f8da56e072015aef933d0e4f82" id="r_a1699a4f8da56e072015aef933d0e4f82"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1699a4f8da56e072015aef933d0e4f82">abs</a> (<a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a> value)</td></tr>
+<tr class="memitem:a1699a4f8da56e072015aef933d0e4f82" id="r_a1699a4f8da56e072015aef933d0e4f82"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1699a4f8da56e072015aef933d0e4f82">abs</a> (<a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a> value)</td></tr>
 <tr class="memdesc:a1699a4f8da56e072015aef933d0e4f82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the absolute value of a 16-bit signed integer.  <br /></td></tr>
 <tr class="separator:a1699a4f8da56e072015aef933d0e4f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a849cb7d113b6473ef0b3dc4454da2157" id="r_a849cb7d113b6473ef0b3dc4454da2157"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a849cb7d113b6473ef0b3dc4454da2157">abs</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> value)</td></tr>
+<tr class="memitem:a849cb7d113b6473ef0b3dc4454da2157" id="r_a849cb7d113b6473ef0b3dc4454da2157"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a849cb7d113b6473ef0b3dc4454da2157">abs</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value)</td></tr>
 <tr class="memdesc:a849cb7d113b6473ef0b3dc4454da2157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the absolute value of a 32-bit signed integer.  <br /></td></tr>
 <tr class="separator:a849cb7d113b6473ef0b3dc4454da2157"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95781eda0be43f2ccc52c5b0f85862dd" id="r_a95781eda0be43f2ccc52c5b0f85862dd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95781eda0be43f2ccc52c5b0f85862dd">abs</a> (<a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> value)</td></tr>
+<tr class="memitem:a95781eda0be43f2ccc52c5b0f85862dd" id="r_a95781eda0be43f2ccc52c5b0f85862dd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95781eda0be43f2ccc52c5b0f85862dd">abs</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> value)</td></tr>
 <tr class="memdesc:a95781eda0be43f2ccc52c5b0f85862dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the absolute value of a 64-bit signed integer.  <br /></td></tr>
 <tr class="separator:a95781eda0be43f2ccc52c5b0f85862dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1dfa4bbb4318996fca9d2f3cb4528c2" id="r_aa1dfa4bbb4318996fca9d2f3cb4528c2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1dfa4bbb4318996fca9d2f3cb4528c2">abs</a> (<a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a> value)</td></tr>
+<tr class="memitem:aa1dfa4bbb4318996fca9d2f3cb4528c2" id="r_aa1dfa4bbb4318996fca9d2f3cb4528c2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1dfa4bbb4318996fca9d2f3cb4528c2">abs</a> (<a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a> value)</td></tr>
 <tr class="memdesc:aa1dfa4bbb4318996fca9d2f3cb4528c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the absolute value of a 8-bit signed integer.  <br /></td></tr>
 <tr class="separator:aa1dfa4bbb4318996fca9d2f3cb4528c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed9ce060717338a67baf46465cde255f" id="r_aed9ce060717338a67baf46465cde255f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga26b3a6fe30c790701060d5cf8de8d241">slong</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed9ce060717338a67baf46465cde255f">abs</a> (<a class="el" href="group__types.html#ga26b3a6fe30c790701060d5cf8de8d241">slong</a> value)</td></tr>
@@ -278,7 +272,7 @@ Inheritance diagram for xtd::math:</div>
 <tr class="memitem:a319687d23de78efeb71f1e38f436e72e" id="r_a319687d23de78efeb71f1e38f436e72e"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a319687d23de78efeb71f1e38f436e72e">atan2</a> (double <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>, double <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>)</td></tr>
 <tr class="memdesc:a319687d23de78efeb71f1e38f436e72e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the angle whose tangent is the specified number.  <br /></td></tr>
 <tr class="separator:a319687d23de78efeb71f1e38f436e72e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25e33cdad376133bbc4eebb6d4b7b7db" id="r_a25e33cdad376133bbc4eebb6d4b7b7db"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25e33cdad376133bbc4eebb6d4b7b7db">big_mul</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>)</td></tr>
+<tr class="memitem:a25e33cdad376133bbc4eebb6d4b7b7db" id="r_a25e33cdad376133bbc4eebb6d4b7b7db"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25e33cdad376133bbc4eebb6d4b7b7db">big_mul</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>)</td></tr>
 <tr class="memdesc:a25e33cdad376133bbc4eebb6d4b7b7db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Produces the full product of two 32-bit numbers.  <br /></td></tr>
 <tr class="separator:a25e33cdad376133bbc4eebb6d4b7b7db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd0247120772e3fad51cafcdabddcc23" id="r_acd0247120772e3fad51cafcdabddcc23"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd0247120772e3fad51cafcdabddcc23">ceiling</a> (<a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a> value)</td></tr>
@@ -287,7 +281,7 @@ Inheritance diagram for xtd::math:</div>
 <tr class="memitem:a9184bacca599bd585cd78ea346af7756" id="r_a9184bacca599bd585cd78ea346af7756"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9184bacca599bd585cd78ea346af7756">ceiling</a> (double value)</td></tr>
 <tr class="memdesc:a9184bacca599bd585cd78ea346af7756"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the smallest integer greater than or equal to the specified double-precision floating-point number.  <br /></td></tr>
 <tr class="separator:a9184bacca599bd585cd78ea346af7756"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b5b5fce159c6fc5e2c31a56275b4541" id="r_a5b5b5fce159c6fc5e2c31a56275b4541"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b5b5fce159c6fc5e2c31a56275b4541">clamp</a> (<a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> value, <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
+<tr class="memitem:a5b5b5fce159c6fc5e2c31a56275b4541" id="r_a5b5b5fce159c6fc5e2c31a56275b4541"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b5b5fce159c6fc5e2c31a56275b4541">clamp</a> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> value, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
 <tr class="memdesc:a5b5b5fce159c6fc5e2c31a56275b4541"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value clamped to the inclusive range of min and max.  <br /></td></tr>
 <tr class="separator:a5b5b5fce159c6fc5e2c31a56275b4541"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ba3872b74f3b003b82ff65dbf25e919" id="r_a8ba3872b74f3b003b82ff65dbf25e919"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ba3872b74f3b003b82ff65dbf25e919">clamp</a> (<a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a> value, <a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a> <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, <a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a> <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
@@ -296,31 +290,31 @@ Inheritance diagram for xtd::math:</div>
 <tr class="memitem:a9056616534fb50f4ecc4d9a28f8b69bc" id="r_a9056616534fb50f4ecc4d9a28f8b69bc"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9056616534fb50f4ecc4d9a28f8b69bc">clamp</a> (double value, double <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, double <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
 <tr class="memdesc:a9056616534fb50f4ecc4d9a28f8b69bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value clamped to the inclusive range of min and max.  <br /></td></tr>
 <tr class="separator:a9056616534fb50f4ecc4d9a28f8b69bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30a7c4528dc7146332a5b5b7db8dbd67" id="r_a30a7c4528dc7146332a5b5b7db8dbd67"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30a7c4528dc7146332a5b5b7db8dbd67">clamp</a> (<a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a> value, <a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a> <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, <a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a> <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
+<tr class="memitem:a30a7c4528dc7146332a5b5b7db8dbd67" id="r_a30a7c4528dc7146332a5b5b7db8dbd67"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30a7c4528dc7146332a5b5b7db8dbd67">clamp</a> (<a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a> value, <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a> <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a> <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
 <tr class="memdesc:a30a7c4528dc7146332a5b5b7db8dbd67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value clamped to the inclusive range of min and max.  <br /></td></tr>
 <tr class="separator:a30a7c4528dc7146332a5b5b7db8dbd67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a07d56608089b6838677d404f1423174f" id="r_a07d56608089b6838677d404f1423174f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07d56608089b6838677d404f1423174f">clamp</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> value, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
+<tr class="memitem:a07d56608089b6838677d404f1423174f" id="r_a07d56608089b6838677d404f1423174f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07d56608089b6838677d404f1423174f">clamp</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
 <tr class="memdesc:a07d56608089b6838677d404f1423174f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value clamped to the inclusive range of min and max.  <br /></td></tr>
 <tr class="separator:a07d56608089b6838677d404f1423174f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af84aa84b53163ce998285ea7da75e4b5" id="r_af84aa84b53163ce998285ea7da75e4b5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af84aa84b53163ce998285ea7da75e4b5">clamp</a> (<a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> value, <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
+<tr class="memitem:af84aa84b53163ce998285ea7da75e4b5" id="r_af84aa84b53163ce998285ea7da75e4b5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af84aa84b53163ce998285ea7da75e4b5">clamp</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> value, <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
 <tr class="memdesc:af84aa84b53163ce998285ea7da75e4b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value clamped to the inclusive range of min and max.  <br /></td></tr>
 <tr class="separator:af84aa84b53163ce998285ea7da75e4b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad78b462b62292edeb2ea670507003e89" id="r_ad78b462b62292edeb2ea670507003e89"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga26b3a6fe30c790701060d5cf8de8d241">slong</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad78b462b62292edeb2ea670507003e89">clamp</a> (<a class="el" href="group__types.html#ga26b3a6fe30c790701060d5cf8de8d241">slong</a> value, <a class="el" href="group__types.html#ga26b3a6fe30c790701060d5cf8de8d241">slong</a> <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, <a class="el" href="group__types.html#ga26b3a6fe30c790701060d5cf8de8d241">slong</a> <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
 <tr class="memdesc:ad78b462b62292edeb2ea670507003e89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value clamped to the inclusive range of min and max.  <br /></td></tr>
 <tr class="separator:ad78b462b62292edeb2ea670507003e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4d50405a30e5bbd7856efd2ae490e8b" id="r_ab4d50405a30e5bbd7856efd2ae490e8b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4d50405a30e5bbd7856efd2ae490e8b">clamp</a> (<a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a> value, <a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a> <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, <a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a> <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
+<tr class="memitem:ab4d50405a30e5bbd7856efd2ae490e8b" id="r_ab4d50405a30e5bbd7856efd2ae490e8b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4d50405a30e5bbd7856efd2ae490e8b">clamp</a> (<a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a> value, <a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a> <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, <a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a> <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
 <tr class="memdesc:ab4d50405a30e5bbd7856efd2ae490e8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value clamped to the inclusive range of min and max.  <br /></td></tr>
 <tr class="separator:ab4d50405a30e5bbd7856efd2ae490e8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52e8c3bc40d1e895fc64d3dddf5190e5" id="r_a52e8c3bc40d1e895fc64d3dddf5190e5"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52e8c3bc40d1e895fc64d3dddf5190e5">clamp</a> (float value, float <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, float <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
 <tr class="memdesc:a52e8c3bc40d1e895fc64d3dddf5190e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value clamped to the inclusive range of min and max.  <br /></td></tr>
 <tr class="separator:a52e8c3bc40d1e895fc64d3dddf5190e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae9992c4af627cc1f183867d3077345b" id="r_aae9992c4af627cc1f183867d3077345b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae9992c4af627cc1f183867d3077345b">clamp</a> (<a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a> value, <a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a> <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, <a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a> <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
+<tr class="memitem:aae9992c4af627cc1f183867d3077345b" id="r_aae9992c4af627cc1f183867d3077345b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae9992c4af627cc1f183867d3077345b">clamp</a> (<a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> value, <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
 <tr class="memdesc:aae9992c4af627cc1f183867d3077345b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value clamped to the inclusive range of min and max.  <br /></td></tr>
 <tr class="separator:aae9992c4af627cc1f183867d3077345b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa291bc2657834921ae136f5e6580529c" id="r_aa291bc2657834921ae136f5e6580529c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa291bc2657834921ae136f5e6580529c">clamp</a> (<a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a> value, <a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a> <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, <a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a> <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
+<tr class="memitem:aa291bc2657834921ae136f5e6580529c" id="r_aa291bc2657834921ae136f5e6580529c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa291bc2657834921ae136f5e6580529c">clamp</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> value, <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
 <tr class="memdesc:aa291bc2657834921ae136f5e6580529c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value clamped to the inclusive range of min and max.  <br /></td></tr>
 <tr class="separator:aa291bc2657834921ae136f5e6580529c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a460c1bdc256a280ed3c3b2d858206f85" id="r_a460c1bdc256a280ed3c3b2d858206f85"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">uint64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a460c1bdc256a280ed3c3b2d858206f85">clamp</a> (<a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">uint64</a> value, <a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">uint64</a> <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, <a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">uint64</a> <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
+<tr class="memitem:a460c1bdc256a280ed3c3b2d858206f85" id="r_a460c1bdc256a280ed3c3b2d858206f85"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a460c1bdc256a280ed3c3b2d858206f85">clamp</a> (<a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a> value, <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a> <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a> <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
 <tr class="memdesc:a460c1bdc256a280ed3c3b2d858206f85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns value clamped to the inclusive range of min and max.  <br /></td></tr>
 <tr class="separator:a460c1bdc256a280ed3c3b2d858206f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fe3364023cde91f27a772e6a086364c" id="r_a6fe3364023cde91f27a772e6a086364c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga6bd6691230250b4c7acb225d81ceaedf">xtd::ulong</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6fe3364023cde91f27a772e6a086364c">clamp</a> (<a class="el" href="group__types.html#ga6bd6691230250b4c7acb225d81ceaedf">xtd::ulong</a> value, <a class="el" href="group__types.html#ga6bd6691230250b4c7acb225d81ceaedf">xtd::ulong</a> <a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a>, <a class="el" href="group__types.html#ga6bd6691230250b4c7acb225d81ceaedf">xtd::ulong</a> <a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a>) noexcept</td></tr>
@@ -335,10 +329,10 @@ Inheritance diagram for xtd::math:</div>
 <tr class="memitem:a12ba4fc067bd3a76badc43761834f12d" id="r_a12ba4fc067bd3a76badc43761834f12d"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12ba4fc067bd3a76badc43761834f12d">degrees_to_radians</a> (double degrees) noexcept</td></tr>
 <tr class="memdesc:a12ba4fc067bd3a76badc43761834f12d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert degrees to radians.  <br /></td></tr>
 <tr class="separator:a12ba4fc067bd3a76badc43761834f12d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6e8f8c445f87f3ef99102be46589d42" id="r_aa6e8f8c445f87f3ef99102be46589d42"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6e8f8c445f87f3ef99102be46589d42">div_rem</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> dividend, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> divisor, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> &amp;remainder)</td></tr>
+<tr class="memitem:aa6e8f8c445f87f3ef99102be46589d42" id="r_aa6e8f8c445f87f3ef99102be46589d42"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6e8f8c445f87f3ef99102be46589d42">div_rem</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> dividend, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> divisor, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> &amp;remainder)</td></tr>
 <tr class="memdesc:aa6e8f8c445f87f3ef99102be46589d42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the quotient of two 32-bit signed integers and also returns the remainder in an output parameter.  <br /></td></tr>
 <tr class="separator:aa6e8f8c445f87f3ef99102be46589d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad31d9589c7d4ec153aa54ac99e3676f2" id="r_ad31d9589c7d4ec153aa54ac99e3676f2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad31d9589c7d4ec153aa54ac99e3676f2">div_rem</a> (<a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> dividend, <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> divisor, <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> &amp;remainder)</td></tr>
+<tr class="memitem:ad31d9589c7d4ec153aa54ac99e3676f2" id="r_ad31d9589c7d4ec153aa54ac99e3676f2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad31d9589c7d4ec153aa54ac99e3676f2">div_rem</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> dividend, <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> divisor, <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> &amp;remainder)</td></tr>
 <tr class="memdesc:ad31d9589c7d4ec153aa54ac99e3676f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the quotient of two 64-bit signed integers and also returns the remainder in an output parameter.  <br /></td></tr>
 <tr class="separator:ad31d9589c7d4ec153aa54ac99e3676f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a94ad66eb41d4b45b6a620e27874e99" id="r_a5a94ad66eb41d4b45b6a620e27874e99"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a94ad66eb41d4b45b6a620e27874e99">exp</a> (double value)</td></tr>
@@ -374,7 +368,7 @@ Inheritance diagram for xtd::math:</div>
 <tr class="memitem:ae0ad33d3c6248e4aee1343f38d5c28de" id="r_ae0ad33d3c6248e4aee1343f38d5c28de"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0ad33d3c6248e4aee1343f38d5c28de">log10</a> (double value)</td></tr>
 <tr class="memdesc:ae0ad33d3c6248e4aee1343f38d5c28de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the base 10 logarithm of a specified number.  <br /></td></tr>
 <tr class="separator:ae0ad33d3c6248e4aee1343f38d5c28de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafdaac98206d8573f794250e03098c00" id="r_aafdaac98206d8573f794250e03098c00"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a> (<a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
+<tr class="memitem:aafdaac98206d8573f794250e03098c00" id="r_aafdaac98206d8573f794250e03098c00"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafdaac98206d8573f794250e03098c00">max</a> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:aafdaac98206d8573f794250e03098c00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the larger of two 8-bit unsigned integers.  <br /></td></tr>
 <tr class="separator:aafdaac98206d8573f794250e03098c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec61ce4e8cb2868634afb20338b3fa88" id="r_aec61ce4e8cb2868634afb20338b3fa88"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec61ce4e8cb2868634afb20338b3fa88">max</a> (<a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
@@ -383,37 +377,37 @@ Inheritance diagram for xtd::math:</div>
 <tr class="memitem:aa64e3ae390458628ae8d50670b154c5d" id="r_aa64e3ae390458628ae8d50670b154c5d"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa64e3ae390458628ae8d50670b154c5d">max</a> (double <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, double <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:aa64e3ae390458628ae8d50670b154c5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the larger of two double single.  <br /></td></tr>
 <tr class="separator:aa64e3ae390458628ae8d50670b154c5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a783efedd0859c0c7970e5c751cbffc28" id="r_a783efedd0859c0c7970e5c751cbffc28"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a783efedd0859c0c7970e5c751cbffc28">max</a> (<a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
+<tr class="memitem:a783efedd0859c0c7970e5c751cbffc28" id="r_a783efedd0859c0c7970e5c751cbffc28"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a783efedd0859c0c7970e5c751cbffc28">max</a> (<a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:a783efedd0859c0c7970e5c751cbffc28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the larger of two 16-bit signed integers.  <br /></td></tr>
 <tr class="separator:a783efedd0859c0c7970e5c751cbffc28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a3190335c636c35df8501e61dfdb86f" id="r_a4a3190335c636c35df8501e61dfdb86f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a3190335c636c35df8501e61dfdb86f">max</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
+<tr class="memitem:a4a3190335c636c35df8501e61dfdb86f" id="r_a4a3190335c636c35df8501e61dfdb86f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4a3190335c636c35df8501e61dfdb86f">max</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:a4a3190335c636c35df8501e61dfdb86f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the larger of two 32-bit signed integers.  <br /></td></tr>
 <tr class="separator:a4a3190335c636c35df8501e61dfdb86f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8281fad4011a3412f3f6822fc6b2c499" id="r_a8281fad4011a3412f3f6822fc6b2c499"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8281fad4011a3412f3f6822fc6b2c499">max</a> (<a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
+<tr class="memitem:a8281fad4011a3412f3f6822fc6b2c499" id="r_a8281fad4011a3412f3f6822fc6b2c499"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8281fad4011a3412f3f6822fc6b2c499">max</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:a8281fad4011a3412f3f6822fc6b2c499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the larger of two 64-bit signed integers.  <br /></td></tr>
 <tr class="separator:a8281fad4011a3412f3f6822fc6b2c499"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add676cb11a6074a6cfe18f153d500cf1" id="r_add676cb11a6074a6cfe18f153d500cf1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga26b3a6fe30c790701060d5cf8de8d241">slong</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add676cb11a6074a6cfe18f153d500cf1">max</a> (<a class="el" href="group__types.html#ga26b3a6fe30c790701060d5cf8de8d241">slong</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#ga26b3a6fe30c790701060d5cf8de8d241">slong</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:add676cb11a6074a6cfe18f153d500cf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the larger of two 64-bit signed integers.  <br /></td></tr>
 <tr class="separator:add676cb11a6074a6cfe18f153d500cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ab0d058acab58f2aa0d1f2154017072" id="r_a4ab0d058acab58f2aa0d1f2154017072"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ab0d058acab58f2aa0d1f2154017072">max</a> (<a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
+<tr class="memitem:a4ab0d058acab58f2aa0d1f2154017072" id="r_a4ab0d058acab58f2aa0d1f2154017072"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ab0d058acab58f2aa0d1f2154017072">max</a> (<a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:a4ab0d058acab58f2aa0d1f2154017072"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the larger of two 8-bit signed integers.  <br /></td></tr>
 <tr class="separator:a4ab0d058acab58f2aa0d1f2154017072"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb5ceea57090a9680bf350b9c18a4d83" id="r_adb5ceea57090a9680bf350b9c18a4d83"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb5ceea57090a9680bf350b9c18a4d83">max</a> (float <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, float <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:adb5ceea57090a9680bf350b9c18a4d83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the larger of two single single.  <br /></td></tr>
 <tr class="separator:adb5ceea57090a9680bf350b9c18a4d83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e609c67c046d74091b5b53c68634110" id="r_a5e609c67c046d74091b5b53c68634110"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e609c67c046d74091b5b53c68634110">max</a> (<a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
+<tr class="memitem:a5e609c67c046d74091b5b53c68634110" id="r_a5e609c67c046d74091b5b53c68634110"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5e609c67c046d74091b5b53c68634110">max</a> (<a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:a5e609c67c046d74091b5b53c68634110"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the larger of two 16-bit unsigned integers.  <br /></td></tr>
 <tr class="separator:a5e609c67c046d74091b5b53c68634110"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b4e8b012f91626bdde7e71530285070" id="r_a9b4e8b012f91626bdde7e71530285070"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b4e8b012f91626bdde7e71530285070">max</a> (<a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
+<tr class="memitem:a9b4e8b012f91626bdde7e71530285070" id="r_a9b4e8b012f91626bdde7e71530285070"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b4e8b012f91626bdde7e71530285070">max</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:a9b4e8b012f91626bdde7e71530285070"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the larger of two 32-bit unsigned integers.  <br /></td></tr>
 <tr class="separator:a9b4e8b012f91626bdde7e71530285070"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55c39b5e79de86a64d0cbfec17419524" id="r_a55c39b5e79de86a64d0cbfec17419524"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">uint64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55c39b5e79de86a64d0cbfec17419524">max</a> (<a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">uint64</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">uint64</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
+<tr class="memitem:a55c39b5e79de86a64d0cbfec17419524" id="r_a55c39b5e79de86a64d0cbfec17419524"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55c39b5e79de86a64d0cbfec17419524">max</a> (<a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:a55c39b5e79de86a64d0cbfec17419524"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the larger of two 64-bit unsigned integers.  <br /></td></tr>
 <tr class="separator:a55c39b5e79de86a64d0cbfec17419524"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65f3b9fd89bbb371ca372ba04742bd1c" id="r_a65f3b9fd89bbb371ca372ba04742bd1c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga6bd6691230250b4c7acb225d81ceaedf">xtd::ulong</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65f3b9fd89bbb371ca372ba04742bd1c">max</a> (<a class="el" href="group__types.html#ga6bd6691230250b4c7acb225d81ceaedf">xtd::ulong</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#ga6bd6691230250b4c7acb225d81ceaedf">xtd::ulong</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:a65f3b9fd89bbb371ca372ba04742bd1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the larger of two 64-bit unsigned integers.  <br /></td></tr>
 <tr class="separator:a65f3b9fd89bbb371ca372ba04742bd1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42ffb88ddec0bb59a656d407fb8fe494" id="r_a42ffb88ddec0bb59a656d407fb8fe494"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a> (<a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
+<tr class="memitem:a42ffb88ddec0bb59a656d407fb8fe494" id="r_a42ffb88ddec0bb59a656d407fb8fe494"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42ffb88ddec0bb59a656d407fb8fe494">min</a> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:a42ffb88ddec0bb59a656d407fb8fe494"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the smaller of two 8-bit unsigned integers.  <br /></td></tr>
 <tr class="separator:a42ffb88ddec0bb59a656d407fb8fe494"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e643b73407673be0c8f9ae8e29c1dbc" id="r_a9e643b73407673be0c8f9ae8e29c1dbc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e643b73407673be0c8f9ae8e29c1dbc">min</a> (<a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
@@ -422,31 +416,31 @@ Inheritance diagram for xtd::math:</div>
 <tr class="memitem:a65776dd79a0882f8c1355c7feb63cbe9" id="r_a65776dd79a0882f8c1355c7feb63cbe9"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65776dd79a0882f8c1355c7feb63cbe9">min</a> (double <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, double <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:a65776dd79a0882f8c1355c7feb63cbe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the smaller of two double single.  <br /></td></tr>
 <tr class="separator:a65776dd79a0882f8c1355c7feb63cbe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51b46eb8462e3bf071ec1a3252088c8d" id="r_a51b46eb8462e3bf071ec1a3252088c8d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51b46eb8462e3bf071ec1a3252088c8d">min</a> (<a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
+<tr class="memitem:a51b46eb8462e3bf071ec1a3252088c8d" id="r_a51b46eb8462e3bf071ec1a3252088c8d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51b46eb8462e3bf071ec1a3252088c8d">min</a> (<a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:a51b46eb8462e3bf071ec1a3252088c8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the smaller of two 16-bit signed integers.  <br /></td></tr>
 <tr class="separator:a51b46eb8462e3bf071ec1a3252088c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf4ef053d8420f962c20057012463ef1" id="r_abf4ef053d8420f962c20057012463ef1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf4ef053d8420f962c20057012463ef1">min</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
+<tr class="memitem:abf4ef053d8420f962c20057012463ef1" id="r_abf4ef053d8420f962c20057012463ef1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf4ef053d8420f962c20057012463ef1">min</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:abf4ef053d8420f962c20057012463ef1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the smaller of two 32-bit signed integers.  <br /></td></tr>
 <tr class="separator:abf4ef053d8420f962c20057012463ef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f0edd1608caf2ad00d783a8b81d1b87" id="r_a7f0edd1608caf2ad00d783a8b81d1b87"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f0edd1608caf2ad00d783a8b81d1b87">min</a> (<a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
+<tr class="memitem:a7f0edd1608caf2ad00d783a8b81d1b87" id="r_a7f0edd1608caf2ad00d783a8b81d1b87"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f0edd1608caf2ad00d783a8b81d1b87">min</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:a7f0edd1608caf2ad00d783a8b81d1b87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the smaller of two 64-bit signed integers.  <br /></td></tr>
 <tr class="separator:a7f0edd1608caf2ad00d783a8b81d1b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a040e152e78df458f608e17437b5d7922" id="r_a040e152e78df458f608e17437b5d7922"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga26b3a6fe30c790701060d5cf8de8d241">slong</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a040e152e78df458f608e17437b5d7922">min</a> (<a class="el" href="group__types.html#ga26b3a6fe30c790701060d5cf8de8d241">slong</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#ga26b3a6fe30c790701060d5cf8de8d241">slong</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:a040e152e78df458f608e17437b5d7922"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the smaller of two 64-bit signed integers.  <br /></td></tr>
 <tr class="separator:a040e152e78df458f608e17437b5d7922"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cffbd9149927b10a485a2448739275f" id="r_a7cffbd9149927b10a485a2448739275f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7cffbd9149927b10a485a2448739275f">min</a> (<a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
+<tr class="memitem:a7cffbd9149927b10a485a2448739275f" id="r_a7cffbd9149927b10a485a2448739275f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7cffbd9149927b10a485a2448739275f">min</a> (<a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:a7cffbd9149927b10a485a2448739275f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the smaller of two 8-bit signed integers.  <br /></td></tr>
 <tr class="separator:a7cffbd9149927b10a485a2448739275f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0fdfd607778e6cb20a087f4aaad5699" id="r_ad0fdfd607778e6cb20a087f4aaad5699"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0fdfd607778e6cb20a087f4aaad5699">min</a> (float <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, float <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:ad0fdfd607778e6cb20a087f4aaad5699"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the smaller of two single single.  <br /></td></tr>
 <tr class="separator:ad0fdfd607778e6cb20a087f4aaad5699"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2bf6acc5163f26c0edfe302283ce9d97" id="r_a2bf6acc5163f26c0edfe302283ce9d97"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bf6acc5163f26c0edfe302283ce9d97">min</a> (<a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
+<tr class="memitem:a2bf6acc5163f26c0edfe302283ce9d97" id="r_a2bf6acc5163f26c0edfe302283ce9d97"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bf6acc5163f26c0edfe302283ce9d97">min</a> (<a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:a2bf6acc5163f26c0edfe302283ce9d97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the smaller of two 16-bit unsigned integers.  <br /></td></tr>
 <tr class="separator:a2bf6acc5163f26c0edfe302283ce9d97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70165cd7ca878d3426a7fdcf2bf8c295" id="r_a70165cd7ca878d3426a7fdcf2bf8c295"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70165cd7ca878d3426a7fdcf2bf8c295">min</a> (<a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
+<tr class="memitem:a70165cd7ca878d3426a7fdcf2bf8c295" id="r_a70165cd7ca878d3426a7fdcf2bf8c295"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70165cd7ca878d3426a7fdcf2bf8c295">min</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:a70165cd7ca878d3426a7fdcf2bf8c295"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the smaller of two 32-bit unsigned integers.  <br /></td></tr>
 <tr class="separator:a70165cd7ca878d3426a7fdcf2bf8c295"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16c9cdada8993571721ff57b3664a7f8" id="r_a16c9cdada8993571721ff57b3664a7f8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">uint64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16c9cdada8993571721ff57b3664a7f8">min</a> (<a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">uint64</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">uint64</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
+<tr class="memitem:a16c9cdada8993571721ff57b3664a7f8" id="r_a16c9cdada8993571721ff57b3664a7f8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16c9cdada8993571721ff57b3664a7f8">min</a> (<a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:a16c9cdada8993571721ff57b3664a7f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the smaller of two 64-bit unsigned integers.  <br /></td></tr>
 <tr class="separator:a16c9cdada8993571721ff57b3664a7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbb85cccd2a71dbddb82b5fc027925c2" id="r_afbb85cccd2a71dbddb82b5fc027925c2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga6bd6691230250b4c7acb225d81ceaedf">xtd::ulong</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afbb85cccd2a71dbddb82b5fc027925c2">min</a> (<a class="el" href="group__types.html#ga6bd6691230250b4c7acb225d81ceaedf">xtd::ulong</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, <a class="el" href="group__types.html#ga6bd6691230250b4c7acb225d81ceaedf">xtd::ulong</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
@@ -461,37 +455,37 @@ Inheritance diagram for xtd::math:</div>
 <tr class="memitem:ab82bb1239630e6a51ee30c0b86aafae7" id="r_ab82bb1239630e6a51ee30c0b86aafae7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab82bb1239630e6a51ee30c0b86aafae7">round</a> (<a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a> value)</td></tr>
 <tr class="memdesc:ab82bb1239630e6a51ee30c0b86aafae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rounds a double-precision floating-point value to the nearest integral value.  <br /></td></tr>
 <tr class="separator:ab82bb1239630e6a51ee30c0b86aafae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89f768a0adb68e7e194a7c6de790073d" id="r_a89f768a0adb68e7e194a7c6de790073d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89f768a0adb68e7e194a7c6de790073d">round</a> (<a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a> value, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> decimals)</td></tr>
+<tr class="memitem:a89f768a0adb68e7e194a7c6de790073d" id="r_a89f768a0adb68e7e194a7c6de790073d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89f768a0adb68e7e194a7c6de790073d">round</a> (<a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a> value, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> decimals)</td></tr>
 <tr class="memdesc:a89f768a0adb68e7e194a7c6de790073d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rounds a decimal value to a specified number of fractional digits.  <br /></td></tr>
 <tr class="separator:a89f768a0adb68e7e194a7c6de790073d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a245c24c33eb8cedd4973fde3d096c01a" id="r_a245c24c33eb8cedd4973fde3d096c01a"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a245c24c33eb8cedd4973fde3d096c01a">round</a> (double value)</td></tr>
 <tr class="memdesc:a245c24c33eb8cedd4973fde3d096c01a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rounds a double-precision floating-point value to the nearest integral value.  <br /></td></tr>
 <tr class="separator:a245c24c33eb8cedd4973fde3d096c01a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48c73155247e99b8f4c2983faa912acd" id="r_a48c73155247e99b8f4c2983faa912acd"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48c73155247e99b8f4c2983faa912acd">round</a> (double value, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> decimals)</td></tr>
+<tr class="memitem:a48c73155247e99b8f4c2983faa912acd" id="r_a48c73155247e99b8f4c2983faa912acd"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48c73155247e99b8f4c2983faa912acd">round</a> (double value, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> decimals)</td></tr>
 <tr class="memdesc:a48c73155247e99b8f4c2983faa912acd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rounds a decimal value to a specified number of fractional digits.  <br /></td></tr>
 <tr class="separator:a48c73155247e99b8f4c2983faa912acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dd0fee0e0109b190adafb08feff1988" id="r_a1dd0fee0e0109b190adafb08feff1988"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1dd0fee0e0109b190adafb08feff1988">sign</a> (<a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a> value)</td></tr>
+<tr class="memitem:a1dd0fee0e0109b190adafb08feff1988" id="r_a1dd0fee0e0109b190adafb08feff1988"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1dd0fee0e0109b190adafb08feff1988">sign</a> (<a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a> value)</td></tr>
 <tr class="memdesc:a1dd0fee0e0109b190adafb08feff1988"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating the sign of a double-precision floating-point number.  <br /></td></tr>
 <tr class="separator:a1dd0fee0e0109b190adafb08feff1988"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ff403fc4fae10845817ccbd9e3b06ba" id="r_a8ff403fc4fae10845817ccbd9e3b06ba"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ff403fc4fae10845817ccbd9e3b06ba">sign</a> (double value)</td></tr>
+<tr class="memitem:a8ff403fc4fae10845817ccbd9e3b06ba" id="r_a8ff403fc4fae10845817ccbd9e3b06ba"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ff403fc4fae10845817ccbd9e3b06ba">sign</a> (double value)</td></tr>
 <tr class="memdesc:a8ff403fc4fae10845817ccbd9e3b06ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating the sign of a double-precision floating-point number.  <br /></td></tr>
 <tr class="separator:a8ff403fc4fae10845817ccbd9e3b06ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acee58e056e7b89fd502dbe9c91dbf863" id="r_acee58e056e7b89fd502dbe9c91dbf863"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acee58e056e7b89fd502dbe9c91dbf863">sign</a> (<a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a> value)</td></tr>
+<tr class="memitem:acee58e056e7b89fd502dbe9c91dbf863" id="r_acee58e056e7b89fd502dbe9c91dbf863"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acee58e056e7b89fd502dbe9c91dbf863">sign</a> (<a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a> value)</td></tr>
 <tr class="memdesc:acee58e056e7b89fd502dbe9c91dbf863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating the sign of a 16-bit signed integer.  <br /></td></tr>
 <tr class="separator:acee58e056e7b89fd502dbe9c91dbf863"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad78528bcdfd4c42da5804f4fbea71486" id="r_ad78528bcdfd4c42da5804f4fbea71486"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad78528bcdfd4c42da5804f4fbea71486">sign</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> value)</td></tr>
+<tr class="memitem:ad78528bcdfd4c42da5804f4fbea71486" id="r_ad78528bcdfd4c42da5804f4fbea71486"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad78528bcdfd4c42da5804f4fbea71486">sign</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value)</td></tr>
 <tr class="memdesc:ad78528bcdfd4c42da5804f4fbea71486"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating the sign of a 32-bit signed integer.  <br /></td></tr>
 <tr class="separator:ad78528bcdfd4c42da5804f4fbea71486"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae99b58bdad8c60cd29d1f2d124a2128e" id="r_ae99b58bdad8c60cd29d1f2d124a2128e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae99b58bdad8c60cd29d1f2d124a2128e">sign</a> (<a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> value)</td></tr>
+<tr class="memitem:ae99b58bdad8c60cd29d1f2d124a2128e" id="r_ae99b58bdad8c60cd29d1f2d124a2128e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae99b58bdad8c60cd29d1f2d124a2128e">sign</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> value)</td></tr>
 <tr class="memdesc:ae99b58bdad8c60cd29d1f2d124a2128e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating the sign of a 64-bit signed integer.  <br /></td></tr>
 <tr class="separator:ae99b58bdad8c60cd29d1f2d124a2128e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bd120b09581d93ba4442defe9c6b29c" id="r_a1bd120b09581d93ba4442defe9c6b29c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bd120b09581d93ba4442defe9c6b29c">sign</a> (<a class="el" href="group__types.html#ga26b3a6fe30c790701060d5cf8de8d241">slong</a> value)</td></tr>
+<tr class="memitem:a1bd120b09581d93ba4442defe9c6b29c" id="r_a1bd120b09581d93ba4442defe9c6b29c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1bd120b09581d93ba4442defe9c6b29c">sign</a> (<a class="el" href="group__types.html#ga26b3a6fe30c790701060d5cf8de8d241">slong</a> value)</td></tr>
 <tr class="memdesc:a1bd120b09581d93ba4442defe9c6b29c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating the sign of a 64-bit signed integer.  <br /></td></tr>
 <tr class="separator:a1bd120b09581d93ba4442defe9c6b29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a330de097b00b540caf8d430ef0952bc8" id="r_a330de097b00b540caf8d430ef0952bc8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a330de097b00b540caf8d430ef0952bc8">sign</a> (<a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a> value)</td></tr>
+<tr class="memitem:a330de097b00b540caf8d430ef0952bc8" id="r_a330de097b00b540caf8d430ef0952bc8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a330de097b00b540caf8d430ef0952bc8">sign</a> (<a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a> value)</td></tr>
 <tr class="memdesc:a330de097b00b540caf8d430ef0952bc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating the sign of an 8-bit signed integer.  <br /></td></tr>
 <tr class="separator:a330de097b00b540caf8d430ef0952bc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0783bc9f4478762cadadfe0544848c5" id="r_aa0783bc9f4478762cadadfe0544848c5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0783bc9f4478762cadadfe0544848c5">sign</a> (float value)</td></tr>
+<tr class="memitem:aa0783bc9f4478762cadadfe0544848c5" id="r_aa0783bc9f4478762cadadfe0544848c5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0783bc9f4478762cadadfe0544848c5">sign</a> (float value)</td></tr>
 <tr class="memdesc:aa0783bc9f4478762cadadfe0544848c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a value indicating the sign of a single-precision floating-point number.  <br /></td></tr>
 <tr class="separator:aa0783bc9f4478762cadadfe0544848c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a4285e5c81dd09375d7149c36401563" id="r_a9a4285e5c81dd09375d7149c36401563"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a4285e5c81dd09375d7149c36401563">sin</a> (double value)</td></tr>
@@ -629,9 +623,9 @@ Inheritance diagram for xtd::math:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a> xtd::math::abs </td>
+          <td class="memname">static <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a> xtd::math::abs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -669,9 +663,9 @@ Inheritance diagram for xtd::math:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::math::abs </td>
+          <td class="memname">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::math::abs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -709,9 +703,9 @@ Inheritance diagram for xtd::math:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> xtd::math::abs </td>
+          <td class="memname">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::math::abs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -749,9 +743,9 @@ Inheritance diagram for xtd::math:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a> xtd::math::abs </td>
+          <td class="memname">static <a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a> xtd::math::abs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -988,14 +982,14 @@ Inheritance diagram for xtd::math:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> xtd::math::big_mul </td>
+          <td class="memname">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::math::big_mul </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1008,12 +1002,12 @@ Inheritance diagram for xtd::math:</div>
 <p>Produces the full product of two 32-bit numbers. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The first <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260" title="Represents a 32-bit signed integer.">int32</a> to multiply. </td></tr>
-    <tr><td class="paramname">b</td><td>The second <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260" title="Represents a 32-bit signed integer.">int32</a> to multiply. </td></tr>
+    <tr><td class="paramname">a</td><td>The first <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a> to multiply. </td></tr>
+    <tr><td class="paramname">b</td><td>The second <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a> to multiply. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f" title="Represents a 64-bit signed integer.">int64</a> containing the product of the specified numbers. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9" title="Represents a 64-bit signed integer.">int64</a> containing the product of the specified numbers. </dd></dl>
 
 </div>
 </div>
@@ -1095,19 +1089,19 @@ Inheritance diagram for xtd::math:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> xtd::math::clamp </td>
+          <td class="memname">static <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> xtd::math::clamp </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1242,19 +1236,19 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a> xtd::math::clamp </td>
+          <td class="memname">static <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a> xtd::math::clamp </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a></td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a></td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a></td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a></td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1291,19 +1285,19 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::math::clamp </td>
+          <td class="memname">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::math::clamp </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1340,19 +1334,19 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> xtd::math::clamp </td>
+          <td class="memname">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::math::clamp </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a></td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a></td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1438,19 +1432,19 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a> xtd::math::clamp </td>
+          <td class="memname">static <a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a> xtd::math::clamp </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a></td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a></td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a></td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a></td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1536,19 +1530,19 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a> xtd::math::clamp </td>
+          <td class="memname">static <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> xtd::math::clamp </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a></td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a></td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a></td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a></td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1585,19 +1579,19 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a> xtd::math::clamp </td>
+          <td class="memname">static <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> xtd::math::clamp </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a></td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a></td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a></td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a></td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1634,19 +1628,19 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">uint64</a> xtd::math::clamp </td>
+          <td class="memname">static <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a> xtd::math::clamp </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">uint64</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">uint64</a></td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a></td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">uint64</a></td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a></td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1834,19 +1828,19 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::math::div_rem </td>
+          <td class="memname">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::math::div_rem </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>dividend</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>dividend</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>divisor</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>divisor</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>remainder</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>remainder</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1879,19 +1873,19 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> xtd::math::div_rem </td>
+          <td class="memname">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::math::div_rem </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a></td>          <td class="paramname"><span class="paramname"><em>dividend</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>dividend</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a></td>          <td class="paramname"><span class="paramname"><em>divisor</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>divisor</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>remainder</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>remainder</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -2380,14 +2374,14 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> xtd::math::max </td>
+          <td class="memname">static <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> xtd::math::max </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -2497,14 +2491,14 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a> xtd::math::max </td>
+          <td class="memname">static <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a> xtd::math::max </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -2536,14 +2530,14 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::math::max </td>
+          <td class="memname">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::math::max </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -2575,14 +2569,14 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> xtd::math::max </td>
+          <td class="memname">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::math::max </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -2653,14 +2647,14 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a> xtd::math::max </td>
+          <td class="memname">static <a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a> xtd::math::max </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -2731,14 +2725,14 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a> xtd::math::max </td>
+          <td class="memname">static <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> xtd::math::max </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -2770,14 +2764,14 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a> xtd::math::max </td>
+          <td class="memname">static <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> xtd::math::max </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -2809,14 +2803,14 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">uint64</a> xtd::math::max </td>
+          <td class="memname">static <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a> xtd::math::max </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">uint64</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">uint64</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -2887,14 +2881,14 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> xtd::math::min </td>
+          <td class="memname">static <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> xtd::math::min </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -3004,14 +2998,14 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a> xtd::math::min </td>
+          <td class="memname">static <a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a> xtd::math::min </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -3043,14 +3037,14 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::math::min </td>
+          <td class="memname">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::math::min </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -3082,14 +3076,14 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> xtd::math::min </td>
+          <td class="memname">static <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::math::min </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -3160,14 +3154,14 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a> xtd::math::min </td>
+          <td class="memname">static <a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a> xtd::math::min </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -3238,14 +3232,14 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a> xtd::math::min </td>
+          <td class="memname">static <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> xtd::math::min </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -3277,14 +3271,14 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a> xtd::math::min </td>
+          <td class="memname">static <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> xtd::math::min </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -3316,14 +3310,14 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">uint64</a> xtd::math::min </td>
+          <td class="memname">static <a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a> xtd::math::min </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">uint64</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">uint64</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gad5876c4f86556683ac2eb238b509f73e">uint64</a></td>          <td class="paramname"><span class="paramname"><em>b</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -3545,7 +3539,7 @@ max if max &lt; value. </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>decimals</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>decimals</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -3618,7 +3612,7 @@ max if max &lt; value. </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>decimals</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>decimals</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -3650,7 +3644,7 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::math::sign </td>
+          <td class="memname">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::math::sign </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
@@ -3670,7 +3664,7 @@ max if max &lt; value. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260" title="Represents a 32-bit signed integer.">int32</a> A number that indicates the sign of value, as shown in the following table.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a> A number that indicates the sign of value, as shown in the following table.</dd></dl>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Return value   </th><th class="markdownTableHeadNone">Meaning    </th></tr>
@@ -3700,7 +3694,7 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::math::sign </td>
+          <td class="memname">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::math::sign </td>
           <td>(</td>
           <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
@@ -3720,7 +3714,7 @@ max if max &lt; value. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260" title="Represents a 32-bit signed integer.">int32</a> A number that indicates the sign of value, as shown in the following table.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a> A number that indicates the sign of value, as shown in the following table.</dd></dl>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Return value   </th><th class="markdownTableHeadNone">Meaning    </th></tr>
@@ -3750,9 +3744,9 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::math::sign </td>
+          <td class="memname">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::math::sign </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaabbe5a5cfe907c1810dbbf3a4a23a241">int16</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gac1b58c138d196c1ee8710d40e7d28751">int16</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -3770,7 +3764,7 @@ max if max &lt; value. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260" title="Represents a 32-bit signed integer.">int32</a> A number that indicates the sign of value, as shown in the following table.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a> A number that indicates the sign of value, as shown in the following table.</dd></dl>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Return value   </th><th class="markdownTableHeadNone">Meaning    </th></tr>
@@ -3794,9 +3788,9 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::math::sign </td>
+          <td class="memname">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::math::sign </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -3814,7 +3808,7 @@ max if max &lt; value. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260" title="Represents a 32-bit signed integer.">int32</a> A number that indicates the sign of value, as shown in the following table.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a> A number that indicates the sign of value, as shown in the following table.</dd></dl>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Return value   </th><th class="markdownTableHeadNone">Meaning    </th></tr>
@@ -3838,9 +3832,9 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::math::sign </td>
+          <td class="memname">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::math::sign </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -3858,7 +3852,7 @@ max if max &lt; value. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260" title="Represents a 32-bit signed integer.">int32</a> A number that indicates the sign of value, as shown in the following table.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a> A number that indicates the sign of value, as shown in the following table.</dd></dl>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Return value   </th><th class="markdownTableHeadNone">Meaning    </th></tr>
@@ -3882,7 +3876,7 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::math::sign </td>
+          <td class="memname">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::math::sign </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga26b3a6fe30c790701060d5cf8de8d241">slong</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
@@ -3902,7 +3896,7 @@ max if max &lt; value. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260" title="Represents a 32-bit signed integer.">int32</a> A number that indicates the sign of value, as shown in the following table.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a> A number that indicates the sign of value, as shown in the following table.</dd></dl>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Return value   </th><th class="markdownTableHeadNone">Meaning    </th></tr>
@@ -3926,9 +3920,9 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::math::sign </td>
+          <td class="memname">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::math::sign </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga41d04b2d8de5008019577dd15c518ddd">sbyte</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga3ea63fa31f524e9831574f4308f85a92">sbyte</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -3946,7 +3940,7 @@ max if max &lt; value. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260" title="Represents a 32-bit signed integer.">int32</a> A number that indicates the sign of value, as shown in the following table.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a> A number that indicates the sign of value, as shown in the following table.</dd></dl>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Return value   </th><th class="markdownTableHeadNone">Meaning    </th></tr>
@@ -3970,7 +3964,7 @@ max if max &lt; value. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::math::sign </td>
+          <td class="memname">static <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::math::sign </td>
           <td>(</td>
           <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
@@ -3990,7 +3984,7 @@ max if max &lt; value. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260" title="Represents a 32-bit signed integer.">int32</a> A number that indicates the sign of value, as shown in the following table.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5" title="Represents a 32-bit signed integer.">int32</a> A number that indicates the sign of value, as shown in the following table.</dd></dl>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Return value   </th><th class="markdownTableHeadNone">Meaning    </th></tr>
@@ -4545,7 +4539,7 @@ max if max &lt; value. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

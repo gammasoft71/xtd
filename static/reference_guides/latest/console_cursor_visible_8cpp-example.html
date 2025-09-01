@@ -97,36 +97,34 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1console.html#ae45a442bc3942b2270998ae8c574abe9" title="Gets a value indicating whether the cursor is visible.">xtd::console::cursor_visible</a> property.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> m1 = <span class="stringliteral">&quot;\nThe cursor is {0}.\nType any text then press Enter. &quot;</span></div>
 <div class="line">  <span class="stringliteral">&quot;Type &#39;+&#39; in the first column to show \n&quot;</span></div>
 <div class="line">  <span class="stringliteral">&quot;the cursor, &#39;-&#39; to hide the cursor, &quot;</span></div>
 <div class="line">  <span class="stringliteral">&quot;or lowercase &#39;x&#39; to quit:&quot;</span>_s;</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = string::empty_string;</div>
+<div class="line">  <span class="keyword">auto</span> s = string::empty_string;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">auto</span> save_cursor_visibile = <a class="code hl_function" href="classxtd_1_1console.html#ae45a442bc3942b2270998ae8c574abe9">console::cursor_visible</a>();</div>
-<div class="line">  <span class="keyword">auto</span> save_cursor_size = <a class="code hl_function" href="classxtd_1_1console.html#a8e1659ecf422f01fd2c88de0c38c3668">console::cursor_size</a>();</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae45a442bc3942b2270998ae8c574abe9">console::cursor_visible</a>(<span class="keyword">true</span>); <span class="comment">// Initialize the cursor to visible.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a8e1659ecf422f01fd2c88de0c38c3668">console::cursor_size</a>(100);     <span class="comment">// Emphasize the cursor.</span></div>
+<div class="line">  <span class="keyword">auto</span> save_cursor_visibile = console::cursor_visible();</div>
+<div class="line">  <span class="keyword">auto</span> save_cursor_size = console::cursor_size();</div>
+<div class="line">  console::cursor_visible(<span class="keyword">true</span>); <span class="comment">// Initialize the cursor to visible.</span></div>
+<div class="line">  console::cursor_size(100);     <span class="comment">// Emphasize the cursor.</span></div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(m1, ((<a class="code hl_function" href="classxtd_1_1console.html#ae45a442bc3942b2270998ae8c574abe9">console::cursor_visible</a>() == <span class="keyword">true</span>) ? <span class="stringliteral">&quot;VISIBLE&quot;</span> : <span class="stringliteral">&quot;HIDDEN&quot;</span>));</div>
-<div class="line">    <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a> = <a class="code hl_function" href="classxtd_1_1console.html#a01a96244846df28bb0178e3728434243">console::read_line</a>();</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1basic__string.html#a6c9caea8081698b588cb6af9b6da8542">string::is_empty</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>) == <span class="keyword">false</span>) {</div>
-<div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>[0] == <span class="charliteral">&#39;+&#39;</span>)</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae45a442bc3942b2270998ae8c574abe9">console::cursor_visible</a>(<span class="keyword">true</span>);</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>[0] == <span class="charliteral">&#39;-&#39;</span>)</div>
-<div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae45a442bc3942b2270998ae8c574abe9">console::cursor_visible</a>(<span class="keyword">false</span>);</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>[0] == <span class="charliteral">&#39;x&#39;</span>)</div>
+<div class="line">    console::write_line(m1, ((console::cursor_visible() == <span class="keyword">true</span>) ? <span class="stringliteral">&quot;VISIBLE&quot;</span> : <span class="stringliteral">&quot;HIDDEN&quot;</span>));</div>
+<div class="line">    s = console::read_line();</div>
+<div class="line">    <span class="keywordflow">if</span> (string::is_empty(s) == <span class="keyword">false</span>) {</div>
+<div class="line">      <span class="keywordflow">if</span> (s[0] == <span class="charliteral">&#39;+&#39;</span>)</div>
+<div class="line">        console::cursor_visible(<span class="keyword">true</span>);</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (s[0] == <span class="charliteral">&#39;-&#39;</span>)</div>
+<div class="line">        console::cursor_visible(<span class="keyword">false</span>);</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (s[0] == <span class="charliteral">&#39;x&#39;</span>)</div>
 <div class="line">        <span class="keywordflow">break</span>;</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae45a442bc3942b2270998ae8c574abe9">console::cursor_visible</a>(save_cursor_visibile);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a8e1659ecf422f01fd2c88de0c38c3668">console::cursor_size</a>(save_cursor_size);</div>
+<div class="line">  console::cursor_visible(save_cursor_visibile);</div>
+<div class="line">  console::cursor_size(save_cursor_size);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output. Note that these results</span></div>
@@ -162,18 +160,11 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="comment">// Type any text then press Enter. Type &#39;+&#39; in the first column to show</span></div>
 <div class="line"><span class="comment">// the cursor, &#39;-&#39; to hide the cursor, or lowercase &#39;x&#39; to quit:</span></div>
 <div class="line"><span class="comment">// x</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__string_html_a6c9caea8081698b588cb6af9b6da8542"><div class="ttname"><a href="classxtd_1_1basic__string.html#a6c9caea8081698b588cb6af9b6da8542">xtd::basic_string&lt; char &gt;::is_empty</a></div><div class="ttdeci">bool is_empty() const noexcept</div><div class="ttdef"><b>Definition</b> basic_string.hpp:1475</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a01a96244846df28bb0178e3728434243"><div class="ttname"><a href="classxtd_1_1console.html#a01a96244846df28bb0178e3728434243">xtd::console::read_line</a></div><div class="ttdeci">static xtd::string read_line()</div><div class="ttdoc">Reads the next line of characters from the standard input stream.</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a8e1659ecf422f01fd2c88de0c38c3668"><div class="ttname"><a href="classxtd_1_1console.html#a8e1659ecf422f01fd2c88de0c38c3668">xtd::console::cursor_size</a></div><div class="ttdeci">static int32 cursor_size()</div><div class="ttdoc">Gets or sets the height of the cursor within a character cell.</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae45a442bc3942b2270998ae8c574abe9"><div class="ttname"><a href="classxtd_1_1console.html#ae45a442bc3942b2270998ae8c574abe9">xtd::console::cursor_visible</a></div><div class="ttdeci">static bool cursor_visible()</div><div class="ttdoc">Gets a value indicating whether the cursor is visible.</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">xtd::console_key::s</a></div><div class="ttdeci">@ s</div><div class="ttdoc">The S key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:124</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -97,34 +97,20 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <p>The classic first application "Hello, World!" with <a class="el" href="classxtd_1_1console.html" title="Represents the standard input, output, and error streams for console applications.">xtd::console</a> class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/background_color&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/foreground_color&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/reset_color&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a> &lt;&lt; <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1background__color.html">background_color</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a48d6215903dff56238e52e8891380c8f">console_color::blue</a>) &lt;&lt; <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1foreground__color.html">foreground_color</a>(<a class="code hl_enumvalue" href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2ad508fe45cecaf653904a0e774084bb5c">console_color::white</a>) &lt;&lt; <span class="stringliteral">&quot;Hello, World!&quot;</span> &lt;&lt; <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1reset__color.html">reset_color</a>() &lt;&lt; <a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">environment::new_line</a>;</div>
+<div class="line">  console::out &lt;&lt; background_color(console_color::blue) &lt;&lt; foreground_color(console_color::white) &lt;&lt; <span class="stringliteral">&quot;Hello, World!&quot;</span> &lt;&lt; reset_color() &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output with colors :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Hello, World!</span></div>
-<div class="ttc" id="aclassxtd_1_1background__color_html"><div class="ttname"><a href="classxtd_1_1background__color.html">xtd::background_color</a></div><div class="ttdoc">Represent background color output manipulator class.</div><div class="ttdef"><b>Definition</b> background_color.hpp:24</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_a923837ac84baf01726703e0474ca4888"><div class="ttname"><a href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">xtd::console::out</a></div><div class="ttdeci">static std::ostream out</div><div class="ttdoc">Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...</div><div class="ttdef"><b>Definition</b> console.hpp:52</div></div>
-<div class="ttc" id="aclassxtd_1_1environment_html_a19a9aa87ee20eb3789058621ed161c4e"><div class="ttname"><a href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">xtd::environment::new_line</a></div><div class="ttdeci">static xtd::string new_line() noexcept</div><div class="ttdoc">Gets the newline string defined for this environment.</div></div>
-<div class="ttc" id="aclassxtd_1_1foreground__color_html"><div class="ttname"><a href="classxtd_1_1foreground__color.html">xtd::foreground_color</a></div><div class="ttdoc">Represent foreground color output manipulator class.</div><div class="ttdef"><b>Definition</b> foreground_color.hpp:20</div></div>
-<div class="ttc" id="aclassxtd_1_1reset__color_html"><div class="ttname"><a href="classxtd_1_1reset__color.html">xtd::reset_color</a></div><div class="ttdoc">Represent reset color output manipulator class.</div><div class="ttdef"><b>Definition</b> reset_color.hpp:20</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggab60a2a64b74b91771b667e4a079681f2a48d6215903dff56238e52e8891380c8f"><div class="ttname"><a href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a48d6215903dff56238e52e8891380c8f">xtd::console_color::blue</a></div><div class="ttdeci">@ blue</div><div class="ttdoc">The color blue.</div><div class="ttdef"><b>Definition</b> console_color.hpp:42</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggab60a2a64b74b91771b667e4a079681f2ad508fe45cecaf653904a0e774084bb5c"><div class="ttname"><a href="group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2ad508fe45cecaf653904a0e774084bb5c">xtd::console_color::white</a></div><div class="ttdeci">@ white</div><div class="ttdoc">The color white.</div><div class="ttdef"><b>Definition</b> console_color.hpp:54</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

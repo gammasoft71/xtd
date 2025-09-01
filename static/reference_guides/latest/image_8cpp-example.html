@@ -97,23 +97,19 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <p>Shows how to use <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a> class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/bitmap&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;logo.xpm&quot;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
-<div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> bmp = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#abff93f364bc6640e711d21f423b1a0ad">image::from_xpm_data</a>(logo_xpm);</div>
+<div class="line">  <span class="keyword">auto</span> bmp = drawing::image::from_xpm_data(logo_xpm);</div>
 <div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;handle = 0x{:X}&quot;</span>, bmp.handle());</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;horizontal resolution = {}&quot;</span>, bmp.horizontal_resolution());</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;physical dimension = {}&quot;</span>, bmp.physical_dimension());</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;raw format = {}&quot;</span>, bmp.raw_format());</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;vertcal resolution = {}&quot;</span>, bmp.vertical_resolution());</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;size = {}&quot;</span>, bmp.size());</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;pixel[50][100] = {}&quot;</span>, bmp.get_pixel(50, 100));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;handle = 0x{:X}&quot;</span>, bmp.handle());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;horizontal resolution = {}&quot;</span>, bmp.horizontal_resolution());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;physical dimension = {}&quot;</span>, bmp.physical_dimension());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;raw format = {}&quot;</span>, bmp.raw_format());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;vertcal resolution = {}&quot;</span>, bmp.vertical_resolution());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;size = {}&quot;</span>, bmp.size());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;pixel[50][100] = {}&quot;</span>, bmp.get_pixel(50, 100));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -125,15 +121,11 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="comment">// vertcal resolution = 96</span></div>
 <div class="line"><span class="comment">// size = {width=256, height=256}</span></div>
 <div class="line"><span class="comment">// pixel[50][100] = color [a=255, r=0, g=64, b=128]</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_abff93f364bc6640e711d21f423b1a0ad"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#abff93f364bc6640e711d21f423b1a0ad">xtd::drawing::image::from_xpm_data</a></div><div class="ttdeci">static bitmap from_xpm_data(const char *const *bits)</div><div class="ttdoc">Creates an xtd::drawing::image from the specified data pointer.</div></div>
-<div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

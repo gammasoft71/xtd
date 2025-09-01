@@ -123,12 +123,7 @@ Inheritance diagram for xtd::time_span:</div>
 <div class="textblock"><p>Represents a time interval. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example instantiates a The following example instantiates a <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object that represents the difference between two dates. It then displays the <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object's properties. object that represents the difference between two dates. It then displays the <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object's properties. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/startup&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/date_time&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/time_span&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example instantiates a The following example instantiates a <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object that represents the difference between two dates. It then displays the <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object's properties. object that represents the difference between two dates. It then displays the <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object's properties. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>uri_example {</div>
 <div class="line">  <span class="keyword">class </span>program {</div>
@@ -140,21 +135,21 @@ Inheritance diagram for xtd::time_span:</div>
 <div class="line">      <span class="keyword">auto</span> date2 = <a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> {2010, 8, 18, 13, 30, 30};</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Calculate the interval between the two dates.</span></div>
-<div class="line">      <a class="code hl_class" href="classxtd_1_1time__span.html">time_span</a> interval = date2 - date1;</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{0} - {1} = {2}&quot;</span>, date2, date1, interval.<a class="code hl_function" href="#a469645d99afaf3ce16f24c40eafd7f4d">to_string</a>());</div>
+<div class="line">      time_span interval = date2 - date1;</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{0} - {1} = {2}&quot;</span>, date2, date1, interval.to_string());</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Display individual properties of the resulting TimeSpan object.</span></div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   {0,-35} {1,20}&quot;</span>, <span class="stringliteral">&quot;Value of Days Component:&quot;</span>, interval.<a class="code hl_function" href="#a6b24499e20a90d258ee86c7e3f94f795">days</a>());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   {0,-35} {1,20}&quot;</span>, <span class="stringliteral">&quot;Total Number of Days:&quot;</span>, interval.<a class="code hl_function" href="#a2e68eff8bb869c8167c4cb9c6380f66f">total_days</a>());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   {0,-35} {1,20}&quot;</span>, <span class="stringliteral">&quot;Value of Hours Component:&quot;</span>, interval.<a class="code hl_function" href="#adfa825159a709add812d5243492ff86a">hours</a>());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   {0,-35} {1,20}&quot;</span>, <span class="stringliteral">&quot;Total Number of Hours:&quot;</span>, interval.<a class="code hl_function" href="#ac53dad5e98527daa1130d03e7505eb17">total_hours</a>());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   {0,-35} {1,20}&quot;</span>, <span class="stringliteral">&quot;Value of Minutes Component:&quot;</span>, interval.<a class="code hl_function" href="#a8de0f018c401120f9ecf4a38cfeae01f">minutes</a>());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   {0,-35} {1,20}&quot;</span>, <span class="stringliteral">&quot;Total Number of Minutes:&quot;</span>, interval.<a class="code hl_function" href="#ac6196e54d7b3185160b5402382f6f214">total_minutes</a>());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   {0,-35} {1,20:N0}&quot;</span>, <span class="stringliteral">&quot;Value of Seconds Component:&quot;</span>, interval.<a class="code hl_function" href="#a73a0ff548c875f9414ddf52a2075a857">seconds</a>());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   {0,-35} {1,20:N0}&quot;</span>, <span class="stringliteral">&quot;Total Number of Seconds:&quot;</span>, interval.<a class="code hl_function" href="#a1f96d66d714791537eef58d01dcd3167">total_seconds</a>());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   {0,-35} {1,20:N0}&quot;</span>, <span class="stringliteral">&quot;Value of Milliseconds Component:&quot;</span>, interval.<a class="code hl_function" href="#a16f2f87e8d3bd1e672e4e761541f39d1">milliseconds</a>());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   {0,-35} {1,20:N0}&quot;</span>, <span class="stringliteral">&quot;Total Number of Milliseconds:&quot;</span>, interval.<a class="code hl_function" href="#a015c0edaefa53a450746c07995933f83">total_milliseconds</a>());</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   {0,-35} {1,20:N0}&quot;</span>, <span class="stringliteral">&quot;Ticks:&quot;</span>, interval.<a class="code hl_function" href="#aae80a2b64ae5b89a857a33466ebc7ffc">ticks</a>());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;   {0,-35} {1,20}&quot;</span>, <span class="stringliteral">&quot;Value of Days Component:&quot;</span>, interval.days());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;   {0,-35} {1,20}&quot;</span>, <span class="stringliteral">&quot;Total Number of Days:&quot;</span>, interval.total_days());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;   {0,-35} {1,20}&quot;</span>, <span class="stringliteral">&quot;Value of Hours Component:&quot;</span>, interval.hours());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;   {0,-35} {1,20}&quot;</span>, <span class="stringliteral">&quot;Total Number of Hours:&quot;</span>, interval.total_hours());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;   {0,-35} {1,20}&quot;</span>, <span class="stringliteral">&quot;Value of Minutes Component:&quot;</span>, interval.minutes());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;   {0,-35} {1,20}&quot;</span>, <span class="stringliteral">&quot;Total Number of Minutes:&quot;</span>, interval.total_minutes());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;   {0,-35} {1,20:N0}&quot;</span>, <span class="stringliteral">&quot;Value of Seconds Component:&quot;</span>, interval.seconds());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;   {0,-35} {1,20:N0}&quot;</span>, <span class="stringliteral">&quot;Total Number of Seconds:&quot;</span>, interval.total_seconds());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;   {0,-35} {1,20:N0}&quot;</span>, <span class="stringliteral">&quot;Value of Milliseconds Component:&quot;</span>, interval.milliseconds());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;   {0,-35} {1,20:N0}&quot;</span>, <span class="stringliteral">&quot;Total Number of Milliseconds:&quot;</span>, interval.total_milliseconds());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;   {0,-35} {1,20:N0}&quot;</span>, <span class="stringliteral">&quot;Ticks:&quot;</span>, interval.ticks());</div>
 <div class="line">    }</div>
 <div class="line">  };</div>
 <div class="line">}</div>
@@ -175,26 +170,9 @@ Inheritance diagram for xtd::time_span:</div>
 <div class="line"><span class="comment">//    Value of Milliseconds Component:                       0</span></div>
 <div class="line"><span class="comment">//    Total Number of Milliseconds:             19,805,415,000</span></div>
 <div class="line"><span class="comment">//    Ticks:                               198,054,150,000,000</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html"><div class="ttname"><a href="classxtd_1_1date__time.html">xtd::date_time</a></div><div class="ttdoc">Represents an instant in time, typically expressed as a date and time of day.</div><div class="ttdef"><b>Definition</b> date_time.hpp:85</div></div>
-<div class="ttc" id="aclassxtd_1_1time__span_html"><div class="ttname"><a href="classxtd_1_1time__span.html">xtd::time_span</a></div><div class="ttdoc">Represents a time interval.</div><div class="ttdef"><b>Definition</b> time_span.hpp:29</div></div>
-<div class="ttc" id="aclassxtd_1_1time__span_html_a015c0edaefa53a450746c07995933f83"><div class="ttname"><a href="#a015c0edaefa53a450746c07995933f83">xtd::time_span::total_milliseconds</a></div><div class="ttdeci">double total_milliseconds() const noexcept</div><div class="ttdoc">Gets the value of the current xtd::time_span structure expressed in whole and fractional milliseconds...</div></div>
-<div class="ttc" id="aclassxtd_1_1time__span_html_a16f2f87e8d3bd1e672e4e761541f39d1"><div class="ttname"><a href="#a16f2f87e8d3bd1e672e4e761541f39d1">xtd::time_span::milliseconds</a></div><div class="ttdeci">int32 milliseconds() const noexcept</div><div class="ttdoc">Gets the milliseconds component of the time interval represented by the current xtd::time_span struct...</div></div>
-<div class="ttc" id="aclassxtd_1_1time__span_html_a1f96d66d714791537eef58d01dcd3167"><div class="ttname"><a href="#a1f96d66d714791537eef58d01dcd3167">xtd::time_span::total_seconds</a></div><div class="ttdeci">double total_seconds() const noexcept</div><div class="ttdoc">Gets the value of the current xtd::time_span structure expressed in whole and fractional seconds.</div></div>
-<div class="ttc" id="aclassxtd_1_1time__span_html_a2e68eff8bb869c8167c4cb9c6380f66f"><div class="ttname"><a href="#a2e68eff8bb869c8167c4cb9c6380f66f">xtd::time_span::total_days</a></div><div class="ttdeci">double total_days() const noexcept</div><div class="ttdoc">Gets the value of the current xtd::time_span structure expressed in whole and fractional days.</div></div>
-<div class="ttc" id="aclassxtd_1_1time__span_html_a469645d99afaf3ce16f24c40eafd7f4d"><div class="ttname"><a href="#a469645d99afaf3ce16f24c40eafd7f4d">xtd::time_span::to_string</a></div><div class="ttdeci">xtd::string to_string() const noexcept override</div><div class="ttdoc">Returns a xtd::string that represents the current object.</div></div>
-<div class="ttc" id="aclassxtd_1_1time__span_html_a6b24499e20a90d258ee86c7e3f94f795"><div class="ttname"><a href="#a6b24499e20a90d258ee86c7e3f94f795">xtd::time_span::days</a></div><div class="ttdeci">int32 days() const noexcept</div><div class="ttdoc">Gets the days component of the time interval represented by the current xtd::time_span structure.</div></div>
-<div class="ttc" id="aclassxtd_1_1time__span_html_a73a0ff548c875f9414ddf52a2075a857"><div class="ttname"><a href="#a73a0ff548c875f9414ddf52a2075a857">xtd::time_span::seconds</a></div><div class="ttdeci">int32 seconds() const noexcept</div><div class="ttdoc">Gets the seconds component of the time interval represented by the current xtd::time_span structure.</div></div>
-<div class="ttc" id="aclassxtd_1_1time__span_html_a8de0f018c401120f9ecf4a38cfeae01f"><div class="ttname"><a href="#a8de0f018c401120f9ecf4a38cfeae01f">xtd::time_span::minutes</a></div><div class="ttdeci">int32 minutes() const noexcept</div><div class="ttdoc">Gets the minutes component of the time interval represented by the current xtd::time_span structure.</div></div>
-<div class="ttc" id="aclassxtd_1_1time__span_html_aae80a2b64ae5b89a857a33466ebc7ffc"><div class="ttname"><a href="#aae80a2b64ae5b89a857a33466ebc7ffc">xtd::time_span::ticks</a></div><div class="ttdeci">int64 ticks() const noexcept</div><div class="ttdoc">Gets the number of ticks that represent the value of the current xtd::time_span structure.</div></div>
-<div class="ttc" id="aclassxtd_1_1time__span_html_ac53dad5e98527daa1130d03e7505eb17"><div class="ttname"><a href="#ac53dad5e98527daa1130d03e7505eb17">xtd::time_span::total_hours</a></div><div class="ttdeci">double total_hours() const noexcept</div><div class="ttdoc">Gets the value of the current xtd::time_span structure expressed in whole and fractional hours.</div></div>
-<div class="ttc" id="aclassxtd_1_1time__span_html_ac6196e54d7b3185160b5402382f6f214"><div class="ttname"><a href="#ac6196e54d7b3185160b5402382f6f214">xtd::time_span::total_minutes</a></div><div class="ttdeci">double total_minutes() const noexcept</div><div class="ttdoc">Gets the value of the current xtd::time_span structure expressed in whole and fractional minutes.</div></div>
-<div class="ttc" id="aclassxtd_1_1time__span_html_adfa825159a709add812d5243492ff86a"><div class="ttname"><a href="#adfa825159a709add812d5243492ff86a">xtd::time_span::hours</a></div><div class="ttdeci">int32 hours() const noexcept</div><div class="ttdoc">Gets the hours component of the time interval represented by the current xtd::time_span structure.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="date_time_ticks2_8cpp-example.html#_a1">date_time_ticks2.cpp</a>, <a class="el" href="time_span_8cpp-example.html#_a1">time_span.cpp</a>, and <a class="el" href="time_span_from_hours_8cpp-example.html#_a0">time_span_from_hours.cpp</a>.</dd>
-</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Fields</h2></td></tr>
 <tr class="memitem:abf78fd51401a5c8677ab85f1da4e1c24" id="r_abf78fd51401a5c8677ab85f1da4e1c24"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classxtd_1_1time__span.html">time_span</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abf78fd51401a5c8677ab85f1da4e1c24">max_value</a></td></tr>
@@ -203,25 +181,25 @@ Inheritance diagram for xtd::time_span:</div>
 <tr class="memitem:a5f1a850aa1ab87dc3453a04a72b649a9" id="r_a5f1a850aa1ab87dc3453a04a72b649a9"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classxtd_1_1time__span.html">time_span</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f1a850aa1ab87dc3453a04a72b649a9">min_value</a></td></tr>
 <tr class="memdesc:a5f1a850aa1ab87dc3453a04a72b649a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the minimum <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> value. This field is read-only.  <br /></td></tr>
 <tr class="separator:a5f1a850aa1ab87dc3453a04a72b649a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae13f43f495c9736631a953d35abd25c" id="r_aae13f43f495c9736631a953d35abd25c"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae13f43f495c9736631a953d35abd25c">nanoseconds_per_tick</a></td></tr>
+<tr class="memitem:aae13f43f495c9736631a953d35abd25c" id="r_aae13f43f495c9736631a953d35abd25c"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae13f43f495c9736631a953d35abd25c">nanoseconds_per_tick</a></td></tr>
 <tr class="memdesc:aae13f43f495c9736631a953d35abd25c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the number of nanoseconds per tick. This field is constant.  <br /></td></tr>
 <tr class="separator:aae13f43f495c9736631a953d35abd25c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d7ec607a607e24bc33dc530820957e3" id="r_a4d7ec607a607e24bc33dc530820957e3"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d7ec607a607e24bc33dc530820957e3">ticks_per_microsecond</a></td></tr>
+<tr class="memitem:a4d7ec607a607e24bc33dc530820957e3" id="r_a4d7ec607a607e24bc33dc530820957e3"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d7ec607a607e24bc33dc530820957e3">ticks_per_microsecond</a></td></tr>
 <tr class="memdesc:a4d7ec607a607e24bc33dc530820957e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the number of ticks in 1 microsecond. This field is constant.  <br /></td></tr>
 <tr class="separator:a4d7ec607a607e24bc33dc530820957e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad29c8b8563609bdf0d15badbf0ca707a" id="r_ad29c8b8563609bdf0d15badbf0ca707a"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad29c8b8563609bdf0d15badbf0ca707a">ticks_per_millisecond</a></td></tr>
+<tr class="memitem:ad29c8b8563609bdf0d15badbf0ca707a" id="r_ad29c8b8563609bdf0d15badbf0ca707a"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad29c8b8563609bdf0d15badbf0ca707a">ticks_per_millisecond</a></td></tr>
 <tr class="memdesc:ad29c8b8563609bdf0d15badbf0ca707a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the number of ticks in 1 millisecond. This field is constant.  <br /></td></tr>
 <tr class="separator:ad29c8b8563609bdf0d15badbf0ca707a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cdccee1108abbaf4edc6a4bed5b6072" id="r_a0cdccee1108abbaf4edc6a4bed5b6072"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0cdccee1108abbaf4edc6a4bed5b6072">ticks_per_second</a></td></tr>
+<tr class="memitem:a0cdccee1108abbaf4edc6a4bed5b6072" id="r_a0cdccee1108abbaf4edc6a4bed5b6072"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0cdccee1108abbaf4edc6a4bed5b6072">ticks_per_second</a></td></tr>
 <tr class="memdesc:a0cdccee1108abbaf4edc6a4bed5b6072"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the number of ticks in 1 second.  <br /></td></tr>
 <tr class="separator:a0cdccee1108abbaf4edc6a4bed5b6072"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab31aadb6b90479ea0b1b405e1c34f3dd" id="r_ab31aadb6b90479ea0b1b405e1c34f3dd"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab31aadb6b90479ea0b1b405e1c34f3dd">ticks_per_minute</a></td></tr>
+<tr class="memitem:ab31aadb6b90479ea0b1b405e1c34f3dd" id="r_ab31aadb6b90479ea0b1b405e1c34f3dd"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab31aadb6b90479ea0b1b405e1c34f3dd">ticks_per_minute</a></td></tr>
 <tr class="memdesc:ab31aadb6b90479ea0b1b405e1c34f3dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the number of ticks in 1 minute. This field is constant.  <br /></td></tr>
 <tr class="separator:ab31aadb6b90479ea0b1b405e1c34f3dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87871472d7a6e0cb621df7dfc7b48f59" id="r_a87871472d7a6e0cb621df7dfc7b48f59"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87871472d7a6e0cb621df7dfc7b48f59">ticks_per_hour</a></td></tr>
+<tr class="memitem:a87871472d7a6e0cb621df7dfc7b48f59" id="r_a87871472d7a6e0cb621df7dfc7b48f59"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87871472d7a6e0cb621df7dfc7b48f59">ticks_per_hour</a></td></tr>
 <tr class="memdesc:a87871472d7a6e0cb621df7dfc7b48f59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the number of ticks in 1 hour. This field is constant.  <br /></td></tr>
 <tr class="separator:a87871472d7a6e0cb621df7dfc7b48f59"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f60382ee3e9d245638ee2cdb14eca60" id="r_a5f60382ee3e9d245638ee2cdb14eca60"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f60382ee3e9d245638ee2cdb14eca60">ticks_per_day</a></td></tr>
+<tr class="memitem:a5f60382ee3e9d245638ee2cdb14eca60" id="r_a5f60382ee3e9d245638ee2cdb14eca60"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5f60382ee3e9d245638ee2cdb14eca60">ticks_per_day</a></td></tr>
 <tr class="memdesc:a5f60382ee3e9d245638ee2cdb14eca60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the number of ticks in 1 day. This field is constant.  <br /></td></tr>
 <tr class="separator:a5f60382ee3e9d245638ee2cdb14eca60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6bcea103b09628f89d2f4b6735b8114" id="r_ad6bcea103b09628f89d2f4b6735b8114"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classxtd_1_1time__span.html">time_span</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6bcea103b09628f89d2f4b6735b8114">zero</a></td></tr>
@@ -229,7 +207,7 @@ Inheritance diagram for xtd::time_span:</div>
 <tr class="separator:ad6bcea103b09628f89d2f4b6735b8114"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
-<tr class="memitem:a2be85b2ca7d7bd66cc2ee38b3a042e2b" id="r_a2be85b2ca7d7bd66cc2ee38b3a042e2b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2be85b2ca7d7bd66cc2ee38b3a042e2b">time_span</a> (<a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> <a class="el" href="group__types.html#gae9583bdae49d0f6becba7ce72906b56a">ticks</a>)</td></tr>
+<tr class="memitem:a2be85b2ca7d7bd66cc2ee38b3a042e2b" id="r_a2be85b2ca7d7bd66cc2ee38b3a042e2b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2be85b2ca7d7bd66cc2ee38b3a042e2b">time_span</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> <a class="el" href="group__types.html#gae9583bdae49d0f6becba7ce72906b56a">ticks</a>)</td></tr>
 <tr class="memdesc:a2be85b2ca7d7bd66cc2ee38b3a042e2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure to the specified number of ticks.  <br /></td></tr>
 <tr class="separator:a2be85b2ca7d7bd66cc2ee38b3a042e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7dba282fc378c0db245842398febb897" id="r_a7dba282fc378c0db245842398febb897"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7dba282fc378c0db245842398febb897">time_span</a> (<a class="el" href="group__types.html#gae9583bdae49d0f6becba7ce72906b56a">xtd::ticks</a> <a class="el" href="group__types.html#gae9583bdae49d0f6becba7ce72906b56a">ticks</a>)</td></tr>
@@ -239,45 +217,45 @@ Inheritance diagram for xtd::time_span:</div>
 <tr class="memitem:a59a350d2a670d8bfa58f45f0186dd723"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a59a350d2a670d8bfa58f45f0186dd723">time_span</a> (const std::chrono::duration&lt; duration_t, period_t &gt; &amp;value)</td></tr>
 <tr class="memdesc:a59a350d2a670d8bfa58f45f0186dd723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure to the specified number of ticks.  <br /></td></tr>
 <tr class="separator:a59a350d2a670d8bfa58f45f0186dd723"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb627d5681bb155efc093fc424adc1d9" id="r_adb627d5681bb155efc093fc424adc1d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb627d5681bb155efc093fc424adc1d9">time_span</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#adfa825159a709add812d5243492ff86a">hours</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a8de0f018c401120f9ecf4a38cfeae01f">minutes</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a73a0ff548c875f9414ddf52a2075a857">seconds</a>)</td></tr>
+<tr class="memitem:adb627d5681bb155efc093fc424adc1d9" id="r_adb627d5681bb155efc093fc424adc1d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb627d5681bb155efc093fc424adc1d9">time_span</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#adfa825159a709add812d5243492ff86a">hours</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a8de0f018c401120f9ecf4a38cfeae01f">minutes</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a73a0ff548c875f9414ddf52a2075a857">seconds</a>)</td></tr>
 <tr class="memdesc:adb627d5681bb155efc093fc424adc1d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure to a specified number of hours, minutes, and seconds.  <br /></td></tr>
 <tr class="separator:adb627d5681bb155efc093fc424adc1d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a506f29c882e7d92afae7ea9cc918e157" id="r_a506f29c882e7d92afae7ea9cc918e157"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a506f29c882e7d92afae7ea9cc918e157">time_span</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a6b24499e20a90d258ee86c7e3f94f795">days</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#adfa825159a709add812d5243492ff86a">hours</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a8de0f018c401120f9ecf4a38cfeae01f">minutes</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a73a0ff548c875f9414ddf52a2075a857">seconds</a>)</td></tr>
+<tr class="memitem:a506f29c882e7d92afae7ea9cc918e157" id="r_a506f29c882e7d92afae7ea9cc918e157"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a506f29c882e7d92afae7ea9cc918e157">time_span</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a6b24499e20a90d258ee86c7e3f94f795">days</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#adfa825159a709add812d5243492ff86a">hours</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a8de0f018c401120f9ecf4a38cfeae01f">minutes</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a73a0ff548c875f9414ddf52a2075a857">seconds</a>)</td></tr>
 <tr class="memdesc:a506f29c882e7d92afae7ea9cc918e157"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure to a specified number of days, hours, minutes, and seconds.  <br /></td></tr>
 <tr class="separator:a506f29c882e7d92afae7ea9cc918e157"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b216a78432b3a42491d692f11bdf1cd" id="r_a3b216a78432b3a42491d692f11bdf1cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b216a78432b3a42491d692f11bdf1cd">time_span</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a6b24499e20a90d258ee86c7e3f94f795">days</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#adfa825159a709add812d5243492ff86a">hours</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a8de0f018c401120f9ecf4a38cfeae01f">minutes</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a73a0ff548c875f9414ddf52a2075a857">seconds</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a16f2f87e8d3bd1e672e4e761541f39d1">milliseconds</a>)</td></tr>
+<tr class="memitem:a3b216a78432b3a42491d692f11bdf1cd" id="r_a3b216a78432b3a42491d692f11bdf1cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b216a78432b3a42491d692f11bdf1cd">time_span</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a6b24499e20a90d258ee86c7e3f94f795">days</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#adfa825159a709add812d5243492ff86a">hours</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a8de0f018c401120f9ecf4a38cfeae01f">minutes</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a73a0ff548c875f9414ddf52a2075a857">seconds</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a16f2f87e8d3bd1e672e4e761541f39d1">milliseconds</a>)</td></tr>
 <tr class="memdesc:a3b216a78432b3a42491d692f11bdf1cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure to a specified number of days, hours, minutes, seconds, and millisonds.  <br /></td></tr>
 <tr class="separator:a3b216a78432b3a42491d692f11bdf1cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad261c027a921ab9897f1dfaa2516c615" id="r_ad261c027a921ab9897f1dfaa2516c615"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad261c027a921ab9897f1dfaa2516c615">time_span</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a6b24499e20a90d258ee86c7e3f94f795">days</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#adfa825159a709add812d5243492ff86a">hours</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a8de0f018c401120f9ecf4a38cfeae01f">minutes</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a73a0ff548c875f9414ddf52a2075a857">seconds</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a16f2f87e8d3bd1e672e4e761541f39d1">milliseconds</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a81a7a60f72dc7bf1e4d5a4487ad228bf">microseconds</a>)</td></tr>
+<tr class="memitem:ad261c027a921ab9897f1dfaa2516c615" id="r_ad261c027a921ab9897f1dfaa2516c615"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad261c027a921ab9897f1dfaa2516c615">time_span</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a6b24499e20a90d258ee86c7e3f94f795">days</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#adfa825159a709add812d5243492ff86a">hours</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a8de0f018c401120f9ecf4a38cfeae01f">minutes</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a73a0ff548c875f9414ddf52a2075a857">seconds</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a16f2f87e8d3bd1e672e4e761541f39d1">milliseconds</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a81a7a60f72dc7bf1e4d5a4487ad228bf">microseconds</a>)</td></tr>
 <tr class="memdesc:ad261c027a921ab9897f1dfaa2516c615"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure to a specified number of days, hours, minutes, seconds, millisonds, and microseconds.  <br /></td></tr>
 <tr class="separator:ad261c027a921ab9897f1dfaa2516c615"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b23a7a261240511e99f50ebece080bf" id="r_a7b23a7a261240511e99f50ebece080bf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b23a7a261240511e99f50ebece080bf">time_span</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a6b24499e20a90d258ee86c7e3f94f795">days</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#adfa825159a709add812d5243492ff86a">hours</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a8de0f018c401120f9ecf4a38cfeae01f">minutes</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a73a0ff548c875f9414ddf52a2075a857">seconds</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a16f2f87e8d3bd1e672e4e761541f39d1">milliseconds</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a81a7a60f72dc7bf1e4d5a4487ad228bf">microseconds</a>, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> <a class="el" href="#a34f89e54d751d707e00530cbcc112d6a">nanoseconds</a>)</td></tr>
+<tr class="memitem:a7b23a7a261240511e99f50ebece080bf" id="r_a7b23a7a261240511e99f50ebece080bf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b23a7a261240511e99f50ebece080bf">time_span</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a6b24499e20a90d258ee86c7e3f94f795">days</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#adfa825159a709add812d5243492ff86a">hours</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a8de0f018c401120f9ecf4a38cfeae01f">minutes</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a73a0ff548c875f9414ddf52a2075a857">seconds</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a16f2f87e8d3bd1e672e4e761541f39d1">milliseconds</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a81a7a60f72dc7bf1e4d5a4487ad228bf">microseconds</a>, <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> <a class="el" href="#a34f89e54d751d707e00530cbcc112d6a">nanoseconds</a>)</td></tr>
 <tr class="memdesc:a7b23a7a261240511e99f50ebece080bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure to a specified number of days, hours, minutes, seconds, millisonds, and microseconds.  <br /></td></tr>
 <tr class="separator:a7b23a7a261240511e99f50ebece080bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:a6b24499e20a90d258ee86c7e3f94f795" id="r_a6b24499e20a90d258ee86c7e3f94f795"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b24499e20a90d258ee86c7e3f94f795">days</a> () const noexcept</td></tr>
+<tr class="memitem:a6b24499e20a90d258ee86c7e3f94f795" id="r_a6b24499e20a90d258ee86c7e3f94f795"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b24499e20a90d258ee86c7e3f94f795">days</a> () const noexcept</td></tr>
 <tr class="memdesc:a6b24499e20a90d258ee86c7e3f94f795"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the days component of the time interval represented by the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure.  <br /></td></tr>
 <tr class="separator:a6b24499e20a90d258ee86c7e3f94f795"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfa825159a709add812d5243492ff86a" id="r_adfa825159a709add812d5243492ff86a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfa825159a709add812d5243492ff86a">hours</a> () const noexcept</td></tr>
+<tr class="memitem:adfa825159a709add812d5243492ff86a" id="r_adfa825159a709add812d5243492ff86a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfa825159a709add812d5243492ff86a">hours</a> () const noexcept</td></tr>
 <tr class="memdesc:adfa825159a709add812d5243492ff86a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the hours component of the time interval represented by the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure.  <br /></td></tr>
 <tr class="separator:adfa825159a709add812d5243492ff86a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81a7a60f72dc7bf1e4d5a4487ad228bf" id="r_a81a7a60f72dc7bf1e4d5a4487ad228bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81a7a60f72dc7bf1e4d5a4487ad228bf">microseconds</a> () const noexcept</td></tr>
+<tr class="memitem:a81a7a60f72dc7bf1e4d5a4487ad228bf" id="r_a81a7a60f72dc7bf1e4d5a4487ad228bf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81a7a60f72dc7bf1e4d5a4487ad228bf">microseconds</a> () const noexcept</td></tr>
 <tr class="memdesc:a81a7a60f72dc7bf1e4d5a4487ad228bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the microseconds component of the time interval represented by the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure.  <br /></td></tr>
 <tr class="separator:a81a7a60f72dc7bf1e4d5a4487ad228bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16f2f87e8d3bd1e672e4e761541f39d1" id="r_a16f2f87e8d3bd1e672e4e761541f39d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16f2f87e8d3bd1e672e4e761541f39d1">milliseconds</a> () const noexcept</td></tr>
+<tr class="memitem:a16f2f87e8d3bd1e672e4e761541f39d1" id="r_a16f2f87e8d3bd1e672e4e761541f39d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16f2f87e8d3bd1e672e4e761541f39d1">milliseconds</a> () const noexcept</td></tr>
 <tr class="memdesc:a16f2f87e8d3bd1e672e4e761541f39d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the milliseconds component of the time interval represented by the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure.  <br /></td></tr>
 <tr class="separator:a16f2f87e8d3bd1e672e4e761541f39d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8de0f018c401120f9ecf4a38cfeae01f" id="r_a8de0f018c401120f9ecf4a38cfeae01f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8de0f018c401120f9ecf4a38cfeae01f">minutes</a> () const noexcept</td></tr>
+<tr class="memitem:a8de0f018c401120f9ecf4a38cfeae01f" id="r_a8de0f018c401120f9ecf4a38cfeae01f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8de0f018c401120f9ecf4a38cfeae01f">minutes</a> () const noexcept</td></tr>
 <tr class="memdesc:a8de0f018c401120f9ecf4a38cfeae01f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the minutes component of the time interval represented by the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure.  <br /></td></tr>
 <tr class="separator:a8de0f018c401120f9ecf4a38cfeae01f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34f89e54d751d707e00530cbcc112d6a" id="r_a34f89e54d751d707e00530cbcc112d6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34f89e54d751d707e00530cbcc112d6a">nanoseconds</a> () const noexcept</td></tr>
+<tr class="memitem:a34f89e54d751d707e00530cbcc112d6a" id="r_a34f89e54d751d707e00530cbcc112d6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34f89e54d751d707e00530cbcc112d6a">nanoseconds</a> () const noexcept</td></tr>
 <tr class="memdesc:a34f89e54d751d707e00530cbcc112d6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the nanoseconds component of the time interval represented by the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure.  <br /></td></tr>
 <tr class="separator:a34f89e54d751d707e00530cbcc112d6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a73a0ff548c875f9414ddf52a2075a857" id="r_a73a0ff548c875f9414ddf52a2075a857"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73a0ff548c875f9414ddf52a2075a857">seconds</a> () const noexcept</td></tr>
+<tr class="memitem:a73a0ff548c875f9414ddf52a2075a857" id="r_a73a0ff548c875f9414ddf52a2075a857"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73a0ff548c875f9414ddf52a2075a857">seconds</a> () const noexcept</td></tr>
 <tr class="memdesc:a73a0ff548c875f9414ddf52a2075a857"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the seconds component of the time interval represented by the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure.  <br /></td></tr>
 <tr class="separator:a73a0ff548c875f9414ddf52a2075a857"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae80a2b64ae5b89a857a33466ebc7ffc" id="r_aae80a2b64ae5b89a857a33466ebc7ffc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae80a2b64ae5b89a857a33466ebc7ffc">ticks</a> () const noexcept</td></tr>
+<tr class="memitem:aae80a2b64ae5b89a857a33466ebc7ffc" id="r_aae80a2b64ae5b89a857a33466ebc7ffc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae80a2b64ae5b89a857a33466ebc7ffc">ticks</a> () const noexcept</td></tr>
 <tr class="memdesc:aae80a2b64ae5b89a857a33466ebc7ffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of ticks that represent the value of the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure.  <br /></td></tr>
 <tr class="separator:aae80a2b64ae5b89a857a33466ebc7ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbb84de0b44394a1cb715fd3e6e564b3" id="r_acbb84de0b44394a1cb715fd3e6e564b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gae9583bdae49d0f6becba7ce72906b56a">xtd::ticks</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbb84de0b44394a1cb715fd3e6e564b3">ticks_duration</a> () const noexcept</td></tr>
@@ -330,7 +308,7 @@ Inheritance diagram for xtd::time_span:</div>
 <tr class="memitem:afceee3cff16e32fff3776b2a0b04230f" id="r_afceee3cff16e32fff3776b2a0b04230f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1time__span.html">time_span</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afceee3cff16e32fff3776b2a0b04230f">add</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;ts) const noexcept</td></tr>
 <tr class="memdesc:afceee3cff16e32fff3776b2a0b04230f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object whose value is the sum of the specified <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object and this instance.  <br /></td></tr>
 <tr class="separator:afceee3cff16e32fff3776b2a0b04230f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78ddb85e57655fe47521aa681afd2fd5" id="r_a78ddb85e57655fe47521aa681afd2fd5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78ddb85e57655fe47521aa681afd2fd5">compare_to</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;value) const noexcept override</td></tr>
+<tr class="memitem:a78ddb85e57655fe47521aa681afd2fd5" id="r_a78ddb85e57655fe47521aa681afd2fd5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78ddb85e57655fe47521aa681afd2fd5">compare_to</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;value) const noexcept override</td></tr>
 <tr class="memdesc:a78ddb85e57655fe47521aa681afd2fd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the current instance with another object of the same type.  <br /></td></tr>
 <tr class="separator:a78ddb85e57655fe47521aa681afd2fd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a212736d3f24871b9465af0f18bf3ba00" id="r_a212736d3f24871b9465af0f18bf3ba00"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a212736d3f24871b9465af0f18bf3ba00">divide</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;ts) const</td></tr>
@@ -422,7 +400,7 @@ Inheritance diagram for xtd::time_span:</div>
 <tr class="memitem:a25d71cd305b1ac8b97e9472deaf67420" id="r_a25d71cd305b1ac8b97e9472deaf67420"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1time__span.html">time_span</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25d71cd305b1ac8b97e9472deaf67420">from_seconds</a> (std::chrono::seconds value)</td></tr>
 <tr class="memdesc:a25d71cd305b1ac8b97e9472deaf67420"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> that represents a specified number of seconds.  <br /></td></tr>
 <tr class="separator:a25d71cd305b1ac8b97e9472deaf67420"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8ca8018dd60e176575788b048b253e3" id="r_ab8ca8018dd60e176575788b048b253e3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1time__span.html">time_span</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8ca8018dd60e176575788b048b253e3">from_ticks</a> (<a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> value)</td></tr>
+<tr class="memitem:ab8ca8018dd60e176575788b048b253e3" id="r_ab8ca8018dd60e176575788b048b253e3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1time__span.html">time_span</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8ca8018dd60e176575788b048b253e3">from_ticks</a> (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> value)</td></tr>
 <tr class="memdesc:ab8ca8018dd60e176575788b048b253e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a xtd::time_spam that represents a specified time, where the specification is in units of ticks.  <br /></td></tr>
 <tr class="separator:ab8ca8018dd60e176575788b048b253e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe7e8b41553358ab7445eda632bf1c71" id="r_abe7e8b41553358ab7445eda632bf1c71"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1time__span.html">time_span</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe7e8b41553358ab7445eda632bf1c71">from_ticks</a> (<a class="el" href="group__types.html#gae9583bdae49d0f6becba7ce72906b56a">xtd::ticks</a> value)</td></tr>
@@ -466,7 +444,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">xtd::time_span::time_span </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a></td>          <td class="paramname"><span class="paramname"><em>ticks</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>ticks</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -569,17 +547,17 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
         <tr>
           <td class="memname">xtd::time_span::time_span </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>hours</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>hours</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>minutes</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>minutes</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>seconds</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>seconds</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -612,22 +590,22 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
         <tr>
           <td class="memname">xtd::time_span::time_span </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>days</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>days</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>hours</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>hours</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>minutes</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>minutes</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>seconds</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>seconds</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -661,27 +639,27 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
         <tr>
           <td class="memname">xtd::time_span::time_span </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>days</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>days</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>hours</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>hours</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>minutes</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>minutes</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>seconds</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>seconds</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -716,32 +694,32 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
         <tr>
           <td class="memname">xtd::time_span::time_span </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>days</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>days</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>hours</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>hours</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>minutes</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>minutes</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>seconds</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>seconds</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>microseconds</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>microseconds</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -777,37 +755,37 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
         <tr>
           <td class="memname">xtd::time_span::time_span </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>days</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>days</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>hours</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>hours</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>minutes</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>minutes</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>seconds</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>seconds</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>milliseconds</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>microseconds</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>microseconds</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a></td>          <td class="paramname"><span class="paramname"><em>nanoseconds</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a></td>          <td class="paramname"><span class="paramname"><em>nanoseconds</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -846,7 +824,7 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::time_span::days </td>
+          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::time_span::days </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -862,8 +840,6 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
 <p>Gets the days component of the time interval represented by the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure. </p>
 <dl class="section return"><dt>Returns</dt><dd>The day component of this instance. The return value can be positive or negative. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a6b24499e20a90d258ee86c7e3f94f795" title="Gets the days component of the time interval represented by the current xtd::time_span structure.">xtd::time_span::days</a> property represents whole days, whereas the <a class="el" href="#a2e68eff8bb869c8167c4cb9c6380f66f" title="Gets the value of the current xtd::time_span structure expressed in whole and fractional days.">xtd::time_span::total_days</a> property represents whole and fractional days. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="time_span_8cpp-example.html#a3">time_span.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -877,7 +853,7 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::time_span::hours </td>
+          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::time_span::hours </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -893,8 +869,6 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
 <p>Gets the hours component of the time interval represented by the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure. </p>
 <dl class="section return"><dt>Returns</dt><dd>The hour component of the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure. The return value ranges from -23 through 23. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#adfa825159a709add812d5243492ff86a" title="Gets the hours component of the time interval represented by the current xtd::time_span structure.">xtd::time_span::hours</a> property represents whole hours, whereas the <a class="el" href="#ac53dad5e98527daa1130d03e7505eb17" title="Gets the value of the current xtd::time_span structure expressed in whole and fractional hours.">xtd::time_span::total_hours</a> property represents whole and fractional hours. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="time_span_8cpp-example.html#a5">time_span.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -908,7 +882,7 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::time_span::microseconds </td>
+          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::time_span::microseconds </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -937,7 +911,7 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::time_span::milliseconds </td>
+          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::time_span::milliseconds </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -953,8 +927,6 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
 <p>Gets the milliseconds component of the time interval represented by the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure. </p>
 <dl class="section return"><dt>Returns</dt><dd>The millisecond component of the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure. The return value ranges from -999 through 999. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a16f2f87e8d3bd1e672e4e761541f39d1" title="Gets the milliseconds component of the time interval represented by the current xtd::time_span struct...">xtd::time_span::milliseconds</a> property represents whole milliseconds, whereas the <a class="el" href="#a015c0edaefa53a450746c07995933f83" title="Gets the value of the current xtd::time_span structure expressed in whole and fractional milliseconds...">xtd::time_span::total_milliseconds</a> property represents whole and fractional milliseconds. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="time_span_8cpp-example.html#a11">time_span.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -968,7 +940,7 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::time_span::minutes </td>
+          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::time_span::minutes </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -984,8 +956,6 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
 <p>Gets the minutes component of the time interval represented by the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure. </p>
 <dl class="section return"><dt>Returns</dt><dd>The minute component of the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure. The return value ranges from -59 through 59. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a8de0f018c401120f9ecf4a38cfeae01f" title="Gets the minutes component of the time interval represented by the current xtd::time_span structure.">xtd::time_span::minutes</a> property represents whole minutes, whereas the <a class="el" href="#ac6196e54d7b3185160b5402382f6f214" title="Gets the value of the current xtd::time_span structure expressed in whole and fractional minutes.">xtd::time_span::total_minutes</a> property represents whole and fractional minutes. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="time_span_8cpp-example.html#a7">time_span.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -999,7 +969,7 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::time_span::nanoseconds </td>
+          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::time_span::nanoseconds </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -1028,7 +998,7 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::time_span::seconds </td>
+          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::time_span::seconds </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -1044,8 +1014,6 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
 <p>Gets the seconds component of the time interval represented by the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure. </p>
 <dl class="section return"><dt>Returns</dt><dd>The second component of the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure. The return value ranges from -59 through 59. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a73a0ff548c875f9414ddf52a2075a857" title="Gets the seconds component of the time interval represented by the current xtd::time_span structure.">xtd::time_span::seconds</a> property represents whole seconds, whereas the <a class="el" href="#a1f96d66d714791537eef58d01dcd3167" title="Gets the value of the current xtd::time_span structure expressed in whole and fractional seconds.">xtd::time_span::total_seconds</a> property represents whole and fractional seconds. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="time_span_8cpp-example.html#a9">time_span.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1059,7 +1027,7 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> xtd::time_span::ticks </td>
+          <td class="memname"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::time_span::ticks </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -1075,8 +1043,6 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
 <p>Gets the number of ticks that represent the value of the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure. </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of ticks contained in this instance. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The smallest unit of time is the tick, which is equal to 100 nanoseconds or one ten-millionth of a second. There are 10,000 ticks in a millisecond. The value of the <a class="el" href="#aae80a2b64ae5b89a857a33466ebc7ffc" title="Gets the number of ticks that represent the value of the current xtd::time_span structure.">xtd::time_span::ticks</a> property can be negative or positive to represent a negative or positive time interval. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="time_span_8cpp-example.html#a13">time_span.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1135,8 +1101,6 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
 <p>Gets the value of the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure expressed in whole and fractional days. </p>
 <dl class="section return"><dt>Returns</dt><dd>The total number of days represented by this instance. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a2e68eff8bb869c8167c4cb9c6380f66f" title="Gets the value of the current xtd::time_span structure expressed in whole and fractional days.">xtd::time_span::total_days</a> property represents whole and fractional days, whereas the <a class="el" href="#a6b24499e20a90d258ee86c7e3f94f795" title="Gets the days component of the time interval represented by the current xtd::time_span structure.">xtd::time_span::days</a> property represents whole days. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="time_span_8cpp-example.html#a4">time_span.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1195,8 +1159,6 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
 <p>Gets the value of the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure expressed in whole and fractional hours. </p>
 <dl class="section return"><dt>Returns</dt><dd>The total number of hours represented by this instance. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#ac53dad5e98527daa1130d03e7505eb17" title="Gets the value of the current xtd::time_span structure expressed in whole and fractional hours.">xtd::time_span::total_hours</a> property represents whole and fractional hours, whereas the <a class="el" href="#adfa825159a709add812d5243492ff86a" title="Gets the hours component of the time interval represented by the current xtd::time_span structure.">xtd::time_span::hours</a> property represents whole hours. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="time_span_8cpp-example.html#a6">time_span.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1313,8 +1275,6 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
 <p>Gets the value of the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure expressed in whole and fractional milliseconds. </p>
 <dl class="section return"><dt>Returns</dt><dd>The total number of milliseconds represented by this instance. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a015c0edaefa53a450746c07995933f83" title="Gets the value of the current xtd::time_span structure expressed in whole and fractional milliseconds...">xtd::time_span::total_milliseconds</a> property represents whole and fractional milliseconds, whereas the <a class="el" href="#a16f2f87e8d3bd1e672e4e761541f39d1" title="Gets the milliseconds component of the time interval represented by the current xtd::time_span struct...">xtd::time_span::milliseconds</a> property represents whole milliseconds. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="time_span_8cpp-example.html#a12">time_span.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1373,8 +1333,6 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
 <p>Gets the value of the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure expressed in whole and fractional minutes. </p>
 <dl class="section return"><dt>Returns</dt><dd>The total number of minutes represented by this instance. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#ac6196e54d7b3185160b5402382f6f214" title="Gets the value of the current xtd::time_span structure expressed in whole and fractional minutes.">xtd::time_span::total_minutes</a> property represents whole and fractional minutes, whereas the <a class="el" href="#a8de0f018c401120f9ecf4a38cfeae01f" title="Gets the minutes component of the time interval represented by the current xtd::time_span structure.">xtd::time_span::minutes</a> property represents whole minutes. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="time_span_8cpp-example.html#a8">time_span.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1491,8 +1449,6 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
 <p>Gets the value of the current <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> structure expressed in whole and fractional seconds. </p>
 <dl class="section return"><dt>Returns</dt><dd>The total number of seconds represented by this instance. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#a1f96d66d714791537eef58d01dcd3167" title="Gets the value of the current xtd::time_span structure expressed in whole and fractional seconds.">xtd::time_span::total_seconds</a> property represents whole and fractional seconds, whereas the <a class="el" href="#a73a0ff548c875f9414ddf52a2075a857" title="Gets the seconds component of the time interval represented by the current xtd::time_span structure.">xtd::time_span::seconds</a> property represents whole seconds. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="time_span_8cpp-example.html#a10">time_span.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -1570,7 +1526,7 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> xtd::time_span::compare_to </td>
+          <td class="memname"><a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> xtd::time_span::compare_to </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>obj</em></span></td><td>)</td>
           <td> const</td>
@@ -1987,8 +1943,6 @@ At least one of the days, hours, minutes, or seconds components is outside its v
 <dl class="section return"><dt>Returns</dt><dd>A string that represents the current object. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates what to_string returns. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>examples {</div>
 <div class="line">  <span class="keyword">namespace </span>object_test {</div>
 <div class="line">    <span class="keyword">class </span>object1 : <span class="keyword">public</span> <a class="code hl_function" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> {</div>
@@ -1997,14 +1951,14 @@ At least one of the days, hours, minutes, or seconds components is outside its v
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">ptr&lt;object&gt;</a> obj1 = <a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;examples::object_test::object1&gt;</a>();</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(obj1-&gt;to_string());</div>
+<div class="line">  ptr&lt;object&gt; obj1 = new_ptr&lt;examples::object_test::object1&gt;();</div>
+<div class="line">  console::write_line(obj1-&gt;to_string());</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">ptr&lt;object&gt;</a> obj2 = <a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;date_time&gt;</a>(1971, 1, 5, 23, 5, 0);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(obj2-&gt;to_string());</div>
+<div class="line">  ptr&lt;object&gt; obj2 = new_ptr&lt;date_time&gt;(1971, 1, 5, 23, 5, 0);</div>
+<div class="line">  console::write_line(obj2-&gt;to_string());</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">ptr&lt;object&gt;</a> obj3 = <a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;boolean_object&gt;</a>();</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(obj3-&gt;to_string());</div>
+<div class="line">  ptr&lt;object&gt; obj3 = new_ptr&lt;boolean_object&gt;();</div>
+<div class="line">  console::write_line(obj3-&gt;to_string());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -2013,13 +1967,9 @@ At least one of the days, hours, minutes, or seconds components is outside its v
 <div class="line"><span class="comment">// Tue Jan  5 23:05:00 1971</span></div>
 <div class="line"><span class="comment">// false</span></div>
 <div class="ttc" id="aclassxtd_1_1object_html_ad2cab851376bb6ca085b567bf5da0f5f"><div class="ttname"><a href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">xtd::object::object</a></div><div class="ttdeci">object()=default</div><div class="ttdoc">Create a new instance of the ultimate base class object.</div></div>
-<div class="ttc" id="agroup__types_html_gabe4e3c1a0746e729140994ae7098d6e9"><div class="ttname"><a href="group__types.html#gabe4e3c1a0746e729140994ae7098d6e9">xtd::ptr</a></div><div class="ttdeci">xtd::sptr&lt; type_t &gt; ptr</div><div class="ttdoc">The xtd::ptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> ptr.hpp:27</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga2fd68f03198b2bf84b1e93149494b685"><div class="ttname"><a href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">xtd::new_ptr</a></div><div class="ttdeci">ptr&lt; type_t &gt; new_ptr(args_t &amp;&amp;... args)</div><div class="ttdoc">The xtd::new_ptr operator creates a xtd::ptr object.</div><div class="ttdef"><b>Definition</b> new_ptr.hpp:24</div></div>
 </div><!-- fragment --> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#af2d19ef177db62351b58a42f22138dbe">xtd::object</a>.</p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="time_span_8cpp-example.html#a2">time_span.cpp</a>, and <a class="el" href="time_span_from_hours_8cpp-example.html#a1">time_span_from_hours.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -2273,12 +2223,7 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example creates several <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> objects using the <a class="el" href="#a130173b3c3e8483b0a7b2fd162edf8a4" title="Returns a xtd::time_span that represents a specified number of days, where the specification is accur...">xtd::time_span::from_days</a> method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/time_span&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/int64_object&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/string&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example creates several <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> objects using the <a class="el" href="#a130173b3c3e8483b0a7b2fd162edf8a4" title="Returns a xtd::time_span that represents a specified number of days, where the specification is accur...">xtd::time_span::from_days</a> method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> gen_time_span_from_days (<span class="keywordtype">double</span> <a class="code hl_function" href="#a6b24499e20a90d258ee86c7e3f94f795">days</a>) {</div>
 <div class="line">  <span class="comment">// Crée un objet TimeSpan et une chaîne TimeSpan à partir</span></div>
@@ -2330,10 +2275,13 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
 <div class="line"><span class="comment">//           0.041666666          01:00:00</span></div>
 <div class="line"><span class="comment">//                     1        1.00:00:00</span></div>
 <div class="line"><span class="comment">//           20.84745602       20.20:20:20.2000000</span></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1time__span_html_a130173b3c3e8483b0a7b2fd162edf8a4"><div class="ttname"><a href="#a130173b3c3e8483b0a7b2fd162edf8a4">xtd::time_span::from_days</a></div><div class="ttdeci">static time_span from_days(double value)</div><div class="ttdoc">Returns a xtd::time_span that represents a specified number of days, where the specification is accur...</div></div>
+<div class="ttc" id="aclassxtd_1_1time__span_html_a6b24499e20a90d258ee86c7e3f94f795"><div class="ttname"><a href="#a6b24499e20a90d258ee86c7e3f94f795">xtd::time_span::days</a></div><div class="ttdeci">int32 days() const noexcept</div><div class="ttdoc">Gets the days component of the time interval represented by the current xtd::time_span structure.</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The value parameter is converted to milliseconds, which is converted to ticks, and that number of ticks is used to initialize the new xd::time_span. Therefore, value will only be considered accurate to the nearest millisecond. Note that, because of the loss of precision of the Double data type, this conversion can cause an <a class="el" href="classxtd_1_1overflow__exception.html" title="The exception that is thrown when an arithmetic, casting, or conversion operation in a checked contex...">xtd::overflow_exception</a> for values that are near to but still in the range of either xd::time_span::min_value or xd::time_span::max_value. For example, this causes an xtd:<a class="el" href="classxtd_1_1overflow__exception.html" title="The exception that is thrown when an arithmetic, casting, or conversion operation in a checked contex...">overflow_exception</a> in the following attempt to instantiate a xd::time_span object. <div class="fragment"><div class="line"><span class="comment">// The following throws an overflow_exception at runtime</span></div>
 <div class="line"><span class="keyword">auto</span> max_span = <a class="code hl_function" href="#a130173b3c3e8483b0a7b2fd162edf8a4">time_span::from_days</a>(<a class="code hl_variable" href="#abf78fd51401a5c8677ab85f1da4e1c24">time_span::max_value</a>.<a class="code hl_function" href="#a2e68eff8bb869c8167c4cb9c6380f66f">total_days</a>());</div>
+<div class="ttc" id="aclassxtd_1_1time__span_html_a2e68eff8bb869c8167c4cb9c6380f66f"><div class="ttname"><a href="#a2e68eff8bb869c8167c4cb9c6380f66f">xtd::time_span::total_days</a></div><div class="ttdeci">double total_days() const noexcept</div><div class="ttdoc">Gets the value of the current xtd::time_span structure expressed in whole and fractional days.</div></div>
 <div class="ttc" id="aclassxtd_1_1time__span_html_abf78fd51401a5c8677ab85f1da4e1c24"><div class="ttname"><a href="#abf78fd51401a5c8677ab85f1da4e1c24">xtd::time_span::max_value</a></div><div class="ttdeci">static const time_span max_value</div><div class="ttdoc">Represents the maximum xtd::time_span value. This field is read-only.</div><div class="ttdef"><b>Definition</b> time_span.hpp:36</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -2419,12 +2367,7 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
 <div class="line"><span class="keyword">auto</span> max_span = <a class="code hl_function" href="#a136df55d4d41f5cccda618cf10c9793b">time_span::from_hours</a>(time_span::max_value::total_hours());</div>
 <div class="ttc" id="aclassxtd_1_1time__span_html_a136df55d4d41f5cccda618cf10c9793b"><div class="ttname"><a href="#a136df55d4d41f5cccda618cf10c9793b">xtd::time_span::from_hours</a></div><div class="ttdeci">static time_span from_hours(double value)</div><div class="ttdoc">Returns a xtd::time_span that represents a specified number of hours, where the specification is accu...</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example creates several <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> objects using the <a class="el" href="#a136df55d4d41f5cccda618cf10c9793b" title="Returns a xtd::time_span that represents a specified number of hours, where the specification is accu...">xtd::time_span::from_hours</a> method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/time_span&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/int64_object&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/string&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example creates several <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> objects using the <a class="el" href="#a136df55d4d41f5cccda618cf10c9793b" title="Returns a xtd::time_span that represents a specified number of hours, where the specification is accu...">xtd::time_span::from_hours</a> method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> gen_time_span_from_hours(<span class="keywordtype">double</span> <a class="code hl_function" href="#adfa825159a709add812d5243492ff86a">hours</a>) {</div>
 <div class="line">  <span class="comment">// Crée un objet time_span et une chaîne string à partir</span></div>
@@ -2478,6 +2421,7 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
 <div class="line"><span class="comment">//           500.3389445       20.20:20:20.2002000</span></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_aa2e2b0b18ffae65666bfe665f10c8eee"><div class="ttname"><a href="classxtd_1_1basic__string.html#aa2e2b0b18ffae65666bfe665f10c8eee">xtd::basic_string::index_of</a></div><div class="ttdeci">xtd::size index_of(const basic_string &amp;value) const noexcept</div><div class="ttdoc">Reports the index of the first occurrence of the specified basic_string in this basic_string.</div><div class="ttdef"><b>Definition</b> basic_string.hpp:1397</div></div>
 <div class="ttc" id="aclassxtd_1_1time__span_html_a2be85b2ca7d7bd66cc2ee38b3a042e2b"><div class="ttname"><a href="#a2be85b2ca7d7bd66cc2ee38b3a042e2b">xtd::time_span::time_span</a></div><div class="ttdeci">time_span(int64 ticks)</div><div class="ttdoc">Initializes a new instance of the xtd::time_span structure to the specified number of ticks.</div></div>
+<div class="ttc" id="aclassxtd_1_1time__span_html_adfa825159a709add812d5243492ff86a"><div class="ttname"><a href="#adfa825159a709add812d5243492ff86a">xtd::time_span::hours</a></div><div class="ttdeci">int32 hours() const noexcept</div><div class="ttdoc">Gets the hours component of the time interval represented by the current xtd::time_span structure.</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2924,7 +2868,7 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
         <tr>
           <td class="memname">static <a class="el" href="classxtd_1_1time__span.html">time_span</a> xtd::time_span::from_ticks </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -2977,7 +2921,7 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An object that represents value. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This is a convenience method with the same behavior as the xtd::time_spam.xtd::time_spam (<a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f" title="Represents a 64-bit signed integer.">int64</a>) constructor. A single tick represents one hundred nanoseconds or one ten-millionth of a second. There are 10,000 ticks in a millisecond. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This is a convenience method with the same behavior as the xtd::time_spam.xtd::time_spam (<a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9" title="Represents a 64-bit signed integer.">int64</a>) constructor. A single tick represents one hundred nanoseconds or one ten-millionth of a second. There are 10,000 ticks in a millisecond. </dd></dl>
 
 </div>
 </div>
@@ -3081,7 +3025,7 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> xtd::time_span::nanoseconds_per_tick</td>
+          <td class="memname"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::time_span::nanoseconds_per_tick</td>
         </tr>
       </table>
   </td>
@@ -3106,7 +3050,7 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> xtd::time_span::ticks_per_microsecond</td>
+          <td class="memname"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::time_span::ticks_per_microsecond</td>
         </tr>
       </table>
   </td>
@@ -3131,7 +3075,7 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> xtd::time_span::ticks_per_millisecond</td>
+          <td class="memname"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::time_span::ticks_per_millisecond</td>
         </tr>
       </table>
   </td>
@@ -3156,7 +3100,7 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> xtd::time_span::ticks_per_second</td>
+          <td class="memname"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::time_span::ticks_per_second</td>
         </tr>
       </table>
   </td>
@@ -3181,7 +3125,7 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> xtd::time_span::ticks_per_minute</td>
+          <td class="memname"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::time_span::ticks_per_minute</td>
         </tr>
       </table>
   </td>
@@ -3206,7 +3150,7 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> xtd::time_span::ticks_per_hour</td>
+          <td class="memname"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::time_span::ticks_per_hour</td>
         </tr>
       </table>
   </td>
@@ -3231,7 +3175,7 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#gaa9e309a49cfcc1ad3179d90fb5b2e60f">int64</a> xtd::time_span::ticks_per_day</td>
+          <td class="memname"><a class="el" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">int64</a> xtd::time_span::ticks_per_day</td>
         </tr>
       </table>
   </td>
@@ -3278,7 +3222,7 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

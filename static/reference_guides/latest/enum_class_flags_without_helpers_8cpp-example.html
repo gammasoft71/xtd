@@ -99,14 +99,10 @@ $(function(){ initResizable(false); });
 <ul>
 <li>Shows how to use <a class="el" href="structxtd_1_1enum__object.html" title="Provides the base class for enumerations.">xtd::enum_object</a> an <a class="el" href="structxtd_1_1enum__register.html" title="Provides the registration struct for enumerations.">xtd::enum_register</a> classes.</li>
 </ul>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/as&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/enum_class&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">enum class</span> text_attribute {</div>
-<div class="line">  <a class="code hl_enumvalue" href="group__xtd__core.html#ggae9ba1696ebc733013c909c04118ae81aafea087517c26fadd409bd4b9dc642555">normal</a> = 0b0,</div>
+<div class="line">  normal = 0b0,</div>
 <div class="line">  bold = 0b1,</div>
 <div class="line">  italic = 0b10,</div>
 <div class="line">  underline = 0b100,</div>
@@ -124,27 +120,22 @@ $(function(){ initResizable(false); });
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;name = {}&quot;</span>, text_attribute::bold | text_attribute::italic);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;value = {}&quot;</span>, <a id="_a4" name="_a4"></a><a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a>(text_attribute::bold | text_attribute::italic).to_int32());</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;as&lt;int&gt; = {}&quot;</span>, <a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;int&gt;</a>(text_attribute::bold | text_attribute::italic));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_values_as_int32&lt;text_attribute&gt;</a>());</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_names&lt;text_attribute&gt;</a>());</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;entries = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_entries_as_int32&lt;text_attribute&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;name = {}&quot;</span>, text_attribute::bold | text_attribute::italic);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, enum_object(text_attribute::bold | text_attribute::italic).to_int32());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;int&gt; = {}&quot;</span>, as&lt;int&gt;(text_attribute::bold | text_attribute::italic));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, enum_object&lt;&gt;::get_values_as_int32&lt;text_attribute&gt;());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, enum_object&lt;&gt;::get_names&lt;text_attribute&gt;());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, enum_object&lt;&gt;::get_entries_as_int32&lt;text_attribute&gt;());</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga292bc25e10c2a6b7d9439b94d566d346"><div class="ttname"><a href="group__xtd__core.html#ga292bc25e10c2a6b7d9439b94d566d346">xtd::enum_collection</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; enum_t, xtd::string &gt; &gt; enum_collection</div><div class="ttdoc">Represents a pair of an enum_t value and a string of an enum of type enum_t.</div><div class="ttdef"><b>Definition</b> enum_collection.hpp:24</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf"><div class="ttname"><a href="group__xtd__core.html#gga21077f4832fc4718f7095d1a560a89cda4e5868d676cb634aa75b125a0f741abf">xtd::enum_attribute::flags</a></div><div class="ttdeci">@ flags</div><div class="ttdoc">Enum flags attribute.</div><div class="ttdef"><b>Definition</b> enum_attribute.hpp:26</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggae9ba1696ebc733013c909c04118ae81aafea087517c26fadd409bd4b9dc642555"><div class="ttname"><a href="group__xtd__core.html#ggae9ba1696ebc733013c909c04118ae81aafea087517c26fadd409bd4b9dc642555">xtd::exit_mode::normal</a></div><div class="ttdeci">@ normal</div><div class="ttdoc">Represent the exit mode when the terminates normally (via xtd::environment::exit or returning from th...</div><div class="ttdef"><b>Definition</b> exit_mode.hpp:20</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
-<div class="ttc" id="astructxtd_1_1enum__object_html"><div class="ttname"><a href="structxtd_1_1enum__object.html">xtd::enum_object</a></div><div class="ttdoc">Provides the base class for enumerations.</div><div class="ttdef"><b>Definition</b> enum_object.hpp:48</div></div>
 <div class="ttc" id="astructxtd_1_1enum__register_html"><div class="ttname"><a href="structxtd_1_1enum__register.html">xtd::enum_register</a></div><div class="ttdoc">Provides the registration struct for enumerations.</div><div class="ttdef"><b>Definition</b> enum_register.hpp:38</div></div>
 <div class="ttc" id="astructxtd_1_1enum__set__attribute_html"><div class="ttname"><a href="structxtd_1_1enum__set__attribute.html">xtd::enum_set_attribute</a></div><div class="ttdoc">Provides the set attribute struct for enumerations.</div><div class="ttdef"><b>Definition</b> enum_set_attribute.hpp:31</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

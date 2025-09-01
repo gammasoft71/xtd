@@ -220,17 +220,13 @@ Alias</h2></td></tr>
 
 <p>Represents a collection of <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a>. </p>
 <div class="fragment"><div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="group__collections.html#ga83a0a06ecb97330626993339079ebbf6">array_list</a> = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list&lt;xtd::any_object&gt;</a></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:79</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:80</div></div>
 <div class="ttc" id="agroup__collections_html_ga83a0a06ecb97330626993339079ebbf6"><div class="ttname"><a href="group__collections.html#ga83a0a06ecb97330626993339079ebbf6">xtd::collections::array_list</a></div><div class="ttdeci">generic::list&lt; xtd::any_object &gt; array_list</div><div class="ttdoc">Represents a collection of xtd::any_object.</div><div class="ttdef"><b>Definition</b> array_list.hpp:31</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/array_list&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections.html" title="The xtd::collections namespace contains interfaces and classes that define various collections of obj...">xtd::collections</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows hows to use <a class="el" href="group__collections.html#ga83a0a06ecb97330626993339079ebbf6" title="Represents a collection of xtd::any_object.">xtd::collections::array_list</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/array_list&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections.html">xtd::collections</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows hows to use <a class="el" href="group__collections.html#ga83a0a06ecb97330626993339079ebbf6" title="Represents a collection of xtd::any_object.">xtd::collections::array_list</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> collection_t&gt;</div>
 <div class="line"><span class="keywordtype">void</span> print_values(<span class="keyword">const</span> collection_t&amp; my_list) {</div>
@@ -241,16 +237,16 @@ Alias</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Creates and initializes a new vector_list.</span></div>
-<div class="line">  <span class="keyword">auto</span> my_vl = <a class="code hl_typedef" href="group__collections.html#ga83a0a06ecb97330626993339079ebbf6">array_list</a> {};</div>
+<div class="line">  <span class="keyword">auto</span> my_vl = <a class="code hl_typedef" href="group__collections.html#ga83a0a06ecb97330626993339079ebbf6">collections::array_list</a> {};</div>
 <div class="line">  my_vl.emplace_back(<span class="stringliteral">&quot;Hello&quot;</span>);</div>
 <div class="line">  my_vl.emplace_back(<span class="stringliteral">&quot;World&quot;</span>);</div>
 <div class="line">  my_vl.emplace_back(<span class="stringliteral">&quot;!&quot;</span>);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Displays the properties and values of the vector_list.</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;my_vl&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;    size:    {0}&quot;</span>, my_vl.size());</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;    Capacity: {0}&quot;</span>, my_vl.capacity());</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">console::write</a>(<span class="stringliteral">&quot;    Values:&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;my_vl&quot;</span>);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;    size:    {0}&quot;</span>, my_vl.size());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;    Capacity: {0}&quot;</span>, my_vl.capacity());</div>
+<div class="line">  console::write(<span class="stringliteral">&quot;    Values:&quot;</span>);</div>
 <div class="line">  print_values(my_vl);</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -262,8 +258,6 @@ Alias</h2></td></tr>
 <div class="line"><span class="comment">//     Values:   Hello   World   !</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:462</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_html"><div class="ttname"><a href="namespacextd_1_1collections.html">xtd::collections</a></div><div class="ttdoc">The xtd::collections namespace contains interfaces and classes that define various collections of obj...</div><div class="ttdef"><b>Definition</b> any_pair.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>TTo add a class, structure or any other type unknown to xtd, you need to implement the <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> and xtd::icompoabale interfaces or overrride the == and &lt; operetors. </dd></dl>
 
@@ -273,7 +267,7 @@ Alias</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

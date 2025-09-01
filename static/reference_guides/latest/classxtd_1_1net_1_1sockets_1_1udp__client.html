@@ -133,45 +133,36 @@ Inheritance diagram for xtd::net::sockets::udp_client:</div>
 You can use any of the send methods provided in the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> to send data to a remote device. Use the <a class="el" href="#a5118f865f1545c96df0e81fd3801862f" title="Returns a UDP datagram that was sent by a remote host.">xtd::net::sockets::udp_client::receive</a> method to receive data from remote hosts. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Do not call <a class="el" href="#a66d13f267d920a8fb3084a8385db1dd2" title="xtd::net::sockets::udp_client::sends a UDP datagram to a specified port on a specified remote host.">xtd::net::sockets::udp_client::send</a> using a host name or <a class="el" href="classxtd_1_1net_1_1ip__end__point.html" title="Represents a network endpoint as an IP address and a port number.">xtd::net::ip_end_point</a> if you have already specified a default remote host. If you do, <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> will throw an exception. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> methods also allow you to send and receive multicast datagrams. Use the <a class="el" href="#ae0b155f05083abc2b00b2f19d2c36834" title="Adds a xtd::net::sockets::udp_client to a multicast group.">xtd::net::sockets::udp_client::join_multicast_group</a> method to subscribe a <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> to a multicast group. Use the <a class="el" href="#ac1387d4b901f7d71492edbeeeb556a55" title="Leaves a multicast group.">xtd::net::sockets::udp_client::drop_multicast_group</a> method to unsubscribe a <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> from a multicast group. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use IPv4 <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/stream_reader&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/net/sockets/udp_client&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/net/ip_end_point&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1net.html">xtd::net</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1net_1_1sockets.html">xtd::net::sockets</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use IPv4 <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> terminate_app = <span class="keyword">false</span>;</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> server = <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {[&amp;] {</div>
-<div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a> = <a class="code hl_function" href="#ae09339406542e06eac5697f0d8064d60">udp_client</a> {<a class="code hl_class" href="classxtd_1_1net_1_1ip__end__point.html">ip_end_point</a> {<a class="code hl_variable" href="classxtd_1_1net_1_1ip__address.html#a630faff25d9f9bfffac869f7bf8906e5">ip_address::any</a>, 9400}};</div>
+<div class="line">  <span class="keyword">auto</span> server = thread {[&amp;] {</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a> = <a class="code hl_class" href="classxtd_1_1net_1_1sockets_1_1udp__client.html">net::sockets::udp_client</a> {<a class="code hl_class" href="classxtd_1_1net_1_1ip__end__point.html">net::ip_end_point</a> {<a class="code hl_variable" href="classxtd_1_1net_1_1ip__address.html#a630faff25d9f9bfffac869f7bf8906e5">net::ip_address::any</a>, 9400}};</div>
 <div class="line">    <span class="keywordflow">while</span> (!terminate_app) {</div>
-<div class="line">      <a class="code hl_class" href="classxtd_1_1net_1_1ip__end__point.html">ip_end_point</a> incoming_end_point;</div>
-<div class="line">      <span class="keyword">auto</span> buffer = <a class="code hl_enumvalue" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a>.receive(incoming_end_point);</div>
+<div class="line">      <span class="keyword">auto</span> incoming_end_point = <a class="code hl_class" href="classxtd_1_1net_1_1ip__end__point.html">net::ip_end_point</a> {};</div>
+<div class="line">      <span class="keyword">auto</span> buffer = udp.receive(incoming_end_point);</div>
 <div class="line">      <span class="keywordflow">if</span> (buffer.size() &amp;&amp; buffer[0] != 0xFF)</div>
 <div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="keywordtype">string</span>(buffer.begin(), buffer.end()));</div>
 <div class="line">    }</div>
 <div class="line">  }};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> client = <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {[&amp;] {</div>
-<div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a> = <a class="code hl_class" href="classxtd_1_1net_1_1sockets_1_1udp__client.html">udp_client</a> {};</div>
+<div class="line">  <span class="keyword">auto</span> client = thread {[&amp;] {</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a> = net::sockets::udp_client {};</div>
 <div class="line">    <span class="keyword">auto</span> counter = 0;</div>
 <div class="line">    <span class="keywordflow">while</span> (!terminate_app) {</div>
 <div class="line">      <span class="keyword">auto</span> str = string::format(<span class="stringliteral">&quot;counter={}&quot;</span>, ++counter);</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a>.send(<a class="code hl_class" href="classxtd_1_1array.html">array&lt;byte&gt;</a>(str.begin(), str.end()), str.<a class="code hl_function" href="classxtd_1_1basic__array.html#af2ad3488e28e4140835dece83723e7eb">size</a>(), <a class="code hl_class" href="classxtd_1_1net_1_1ip__end__point.html">ip_end_point</a>(<a class="code hl_variable" href="classxtd_1_1net_1_1ip__address.html#a72481d0e644736c7302bb7ad0feb4d70">ip_address::loopback</a>, 9400));</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">thread::sleep</a>(50_ms);</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a>.send(array&lt;byte&gt;(str.begin(), str.end()), str.size(), net::ip_end_point(net::ip_address::loopback, 9400));</div>
+<div class="line">      thread::sleep(50_ms);</div>
 <div class="line">    }</div>
-<div class="line">    <a class="code hl_enumvalue" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a>.send(<a class="code hl_class" href="classxtd_1_1array.html">array&lt;byte&gt;</a> {0xFF}, 1, <a class="code hl_class" href="classxtd_1_1net_1_1ip__end__point.html">ip_end_point</a>(<a class="code hl_variable" href="classxtd_1_1net_1_1ip__address.html#a72481d0e644736c7302bb7ad0feb4d70">ip_address::loopback</a>, 9400));</div>
+<div class="line">    <a class="code hl_enumvalue" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a>.send(array&lt;byte&gt; {0xFF}, 1, net::ip_end_point(net::ip_address::loopback, 9400));</div>
 <div class="line">  }};</div>
 <div class="line"> </div>
-<div class="line">  server.<a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a573cca51d21d56dcf79eaace281b74b0">start</a>();</div>
+<div class="line">  server.start();</div>
 <div class="line">  client.start();</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ac0ebb643e4d3b01faa8380bd90d22aa0">console::read_key</a>();</div>
+<div class="line">  console::read_key();</div>
 <div class="line">  terminate_app = <span class="keyword">true</span>;</div>
 <div class="line">  server.join();</div>
 <div class="line">  client.join();</div>
@@ -185,64 +176,43 @@ You can use any of the send methods provided in the <a class="el" href="classxtd
 <div class="line"><span class="comment">// counter=4</span></div>
 <div class="line"><span class="comment">// counter=5</span></div>
 <div class="line"><span class="comment">// ...</span></div>
-<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:61</div></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_af2ad3488e28e4140835dece83723e7eb"><div class="ttname"><a href="classxtd_1_1basic__array.html#af2ad3488e28e4140835dece83723e7eb">xtd::basic_array::size</a></div><div class="ttdeci">virtual size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container, i.e. std::distance(xtd::array::begin(),...</div><div class="ttdef"><b>Definition</b> basic_array.hpp:246</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ac0ebb643e4d3b01faa8380bd90d22aa0"><div class="ttname"><a href="classxtd_1_1console.html#ac0ebb643e4d3b01faa8380bd90d22aa0">xtd::console::read_key</a></div><div class="ttdeci">static console_key_info read_key()</div><div class="ttdoc">Obtains the next character or function key pressed by the user. The pressed key is displayed in the c...</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1ip__address_html_a630faff25d9f9bfffac869f7bf8906e5"><div class="ttname"><a href="classxtd_1_1net_1_1ip__address.html#a630faff25d9f9bfffac869f7bf8906e5">xtd::net::ip_address::any</a></div><div class="ttdeci">static const ip_address any</div><div class="ttdoc">Provides an IP address that indicates that the server must listen for client activity on all network ...</div><div class="ttdef"><b>Definition</b> ip_address.hpp:49</div></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1ip__address_html_a72481d0e644736c7302bb7ad0feb4d70"><div class="ttname"><a href="classxtd_1_1net_1_1ip__address.html#a72481d0e644736c7302bb7ad0feb4d70">xtd::net::ip_address::loopback</a></div><div class="ttdeci">static const ip_address loopback</div><div class="ttdoc">Provides the IP loopback address. This field is constant.</div><div class="ttdef"><b>Definition</b> ip_address.hpp:65</div></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1ip__end__point_html"><div class="ttname"><a href="classxtd_1_1net_1_1ip__end__point.html">xtd::net::ip_end_point</a></div><div class="ttdoc">Represents a network endpoint as an IP address and a port number.</div><div class="ttdef"><b>Definition</b> ip_end_point.hpp:28</div></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1udp__client_html"><div class="ttname"><a href="classxtd_1_1net_1_1sockets_1_1udp__client.html">xtd::net::sockets::udp_client</a></div><div class="ttdoc">Provides User Datagram Protocol (UDP) network services.</div><div class="ttdef"><b>Definition</b> udp_client.hpp:45</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html">xtd::threading::thread</a></div><div class="ttdoc">Creates and controls a thread, sets its priority, and gets its status.</div><div class="ttdef"><b>Definition</b> thread.hpp:45</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a42bc6e2bb805f928e50ae73d243b95f2"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">xtd::threading::thread::sleep</a></div><div class="ttdeci">static void sleep(int32 milliseconds_timeout)</div><div class="ttdoc">Suspends the current thread for a specified time.</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1thread_html_a573cca51d21d56dcf79eaace281b74b0"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html#a573cca51d21d56dcf79eaace281b74b0">xtd::threading::thread::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Causes the operating system to change the state of the current instance to xtd::threading::thread_sta...</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781"><div class="ttname"><a href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">xtd::net::sockets::protocol_type::udp</a></div><div class="ttdeci">@ udp</div><div class="ttdoc">User Datagram Protocol.</div><div class="ttdef"><b>Definition</b> protocol_type.hpp:52</div></div>
-<div class="ttc" id="anamespacextd_1_1net_1_1sockets_html"><div class="ttname"><a href="namespacextd_1_1net_1_1sockets.html">xtd::net::sockets</a></div><div class="ttdoc">The xtd::net::sockets namespace provides a managed implementation of the Berkeley Sockets interface f...</div><div class="ttdef"><b>Definition</b> address_family.hpp:16</div></div>
-<div class="ttc" id="anamespacextd_1_1net_html"><div class="ttname"><a href="namespacextd_1_1net.html">xtd::net</a></div><div class="ttdoc">The xtd::net namespace provides a simple programming interface for many of the protocols used on netw...</div><div class="ttdef"><b>Definition</b> cookie_exception.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use IPv6 <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/stream_reader&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/net/sockets/udp_client&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/net/ip_end_point&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/threading/thread&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1net.html">xtd::net</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1net_1_1sockets.html">xtd::net::sockets</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use IPv6 <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> class. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> terminate_app = <span class="keyword">false</span>;</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> server = <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {[&amp;] {</div>
-<div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a> = <a class="code hl_function" href="#ae09339406542e06eac5697f0d8064d60">udp_client</a> {<a class="code hl_class" href="classxtd_1_1net_1_1ip__end__point.html">ip_end_point</a> {<a class="code hl_variable" href="classxtd_1_1net_1_1ip__address.html#acf923e55451be6452fa679a24983ef2f">ip_address::ip_v6_any</a>, 9400}};</div>
+<div class="line">  <span class="keyword">auto</span> server = thread {[&amp;] {</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a> = <a class="code hl_class" href="classxtd_1_1net_1_1sockets_1_1udp__client.html">net::sockets::udp_client</a> {<a class="code hl_class" href="classxtd_1_1net_1_1ip__end__point.html">net::ip_end_point</a> {<a class="code hl_variable" href="classxtd_1_1net_1_1ip__address.html#acf923e55451be6452fa679a24983ef2f">net::ip_address::ip_v6_any</a>, 9400}};</div>
 <div class="line">    <span class="keywordflow">while</span> (!terminate_app) {</div>
-<div class="line">      <span class="keyword">auto</span> incoming_end_point = <a class="code hl_class" href="classxtd_1_1net_1_1ip__end__point.html">ip_end_point</a> {};</div>
-<div class="line">      <span class="keyword">auto</span> buffer = <a class="code hl_enumvalue" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a>.receive(incoming_end_point);</div>
+<div class="line">      <span class="keyword">auto</span> incoming_end_point = <a class="code hl_class" href="classxtd_1_1net_1_1ip__end__point.html">net::ip_end_point</a> {};</div>
+<div class="line">      <span class="keyword">auto</span> buffer = udp.receive(incoming_end_point);</div>
 <div class="line">      <span class="keywordflow">if</span> (buffer.size() &amp;&amp; buffer[0] != 0xFF)</div>
 <div class="line">        <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="keywordtype">string</span>(buffer.begin(), buffer.end()));</div>
 <div class="line">    }</div>
 <div class="line">  }};</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> client = <a class="code hl_class" href="classxtd_1_1threading_1_1thread.html">thread</a> {[&amp;] {</div>
-<div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a> = <a class="code hl_class" href="classxtd_1_1net_1_1sockets_1_1udp__client.html">udp_client</a> {<a class="code hl_enumvalue" href="group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3a927e80579d412742c19c0a31fe89369a">address_family::inter_network_v6</a>};</div>
+<div class="line">  <span class="keyword">auto</span> client = thread {[&amp;] {</div>
+<div class="line">    <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a> = net::sockets::udp_client {net::sockets::address_family::inter_network_v6};</div>
 <div class="line">    <span class="keyword">auto</span> counter = 0;</div>
 <div class="line">    <span class="keywordflow">while</span> (!terminate_app) {</div>
 <div class="line">      <span class="keyword">auto</span> str = string::format(<span class="stringliteral">&quot;counter={}&quot;</span>, ++counter);</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a>.send(<a class="code hl_class" href="classxtd_1_1array.html">array&lt;byte&gt;</a>(str.begin(), str.end()), str.<a class="code hl_function" href="classxtd_1_1basic__array.html#af2ad3488e28e4140835dece83723e7eb">size</a>(), <a class="code hl_class" href="classxtd_1_1net_1_1ip__end__point.html">ip_end_point</a>(<a class="code hl_variable" href="classxtd_1_1net_1_1ip__address.html#ac3d404b041972f5dd9565cf04330a346">ip_address::ip_v6_loopback</a>, 9400));</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a42bc6e2bb805f928e50ae73d243b95f2">thread::sleep</a>(50_ms);</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a>.send(array&lt;byte&gt;(str.begin(), str.end()), str.size(), net::ip_end_point(net::ip_address::ip_v6_loopback, 9400));</div>
+<div class="line">      thread::sleep(50_ms);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_enumvalue" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a>.send(<a class="code hl_class" href="classxtd_1_1array.html">array&lt;byte&gt;</a> {0xFF}, 1, <a class="code hl_class" href="classxtd_1_1net_1_1ip__end__point.html">ip_end_point</a>(<a class="code hl_variable" href="classxtd_1_1net_1_1ip__address.html#ac3d404b041972f5dd9565cf04330a346">ip_address::ip_v6_loopback</a>, 9400));</div>
+<div class="line">    <a class="code hl_enumvalue" href="group__xtd__core.html#ggac4690c745045463d3c96d043878cc1e3a84864c1fe095359bc9c5ac068e24e781">udp</a>.send(array&lt;byte&gt; {0xFF}, 1, net::ip_end_point(net::ip_address::ip_v6_loopback, 9400));</div>
 <div class="line">  }};</div>
 <div class="line"> </div>
-<div class="line">  server.<a class="code hl_function" href="classxtd_1_1threading_1_1thread.html#a573cca51d21d56dcf79eaace281b74b0">start</a>();</div>
+<div class="line">  server.start();</div>
 <div class="line">  client.start();</div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ac0ebb643e4d3b01faa8380bd90d22aa0">console::read_key</a>();</div>
+<div class="line">  console::read_key();</div>
 <div class="line">  terminate_app = <span class="keyword">true</span>;</div>
 <div class="line">  server.join();</div>
 <div class="line">  client.join();</div>
@@ -256,19 +226,14 @@ You can use any of the send methods provided in the <a class="el" href="classxtd
 <div class="line"><span class="comment">// counter=4</span></div>
 <div class="line"><span class="comment">// counter=5</span></div>
 <div class="line"><span class="comment">// ...</span></div>
-<div class="ttc" id="aclassxtd_1_1net_1_1ip__address_html_ac3d404b041972f5dd9565cf04330a346"><div class="ttname"><a href="classxtd_1_1net_1_1ip__address.html#ac3d404b041972f5dd9565cf04330a346">xtd::net::ip_address::ip_v6_loopback</a></div><div class="ttdeci">static const ip_address ip_v6_loopback</div><div class="ttdoc">Provides the IP loopback address. This field is constant.</div><div class="ttdef"><b>Definition</b> ip_address.hpp:58</div></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1ip__address_html_acf923e55451be6452fa679a24983ef2f"><div class="ttname"><a href="classxtd_1_1net_1_1ip__address.html#acf923e55451be6452fa679a24983ef2f">xtd::net::ip_address::ip_v6_any</a></div><div class="ttdeci">static const ip_address ip_v6_any</div><div class="ttdoc">The Socket::Bind method uses the cIPv6Any field to indicate that a Socket must listen for client acti...</div><div class="ttdef"><b>Definition</b> ip_address.hpp:55</div></div>
-<div class="ttc" id="agroup__xtd__core_html_gga5c7a488efbbc9c766286c1485399aef3a927e80579d412742c19c0a31fe89369a"><div class="ttname"><a href="group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3a927e80579d412742c19c0a31fe89369a">xtd::net::sockets::address_family::inter_network_v6</a></div><div class="ttdeci">@ inter_network_v6</div><div class="ttdoc">Address for IP version 6.</div><div class="ttdef"><b>Definition</b> address_family.hpp:82</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:16</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="udp_client_ip_v4_8cpp-example.html#_a1">udp_client_ip_v4.cpp</a>, and <a class="el" href="udp_client_ip_v6_8cpp-example.html#_a1">udp_client_ip_v6.cpp</a>.</dd>
-</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:ae09339406542e06eac5697f0d8064d60" id="r_ae09339406542e06eac5697f0d8064d60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae09339406542e06eac5697f0d8064d60">udp_client</a> ()</td></tr>
 <tr class="memdesc:ae09339406542e06eac5697f0d8064d60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> class.  <br /></td></tr>
 <tr class="separator:ae09339406542e06eac5697f0d8064d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78bf1188f1ec91749b34f4bd06107dda" id="r_a78bf1188f1ec91749b34f4bd06107dda"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78bf1188f1ec91749b34f4bd06107dda">udp_client</a> (<a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba901555fb06e346cb065ceb9808dcfc25">port</a>)</td></tr>
+<tr class="memitem:a78bf1188f1ec91749b34f4bd06107dda" id="r_a78bf1188f1ec91749b34f4bd06107dda"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78bf1188f1ec91749b34f4bd06107dda">udp_client</a> (<a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba901555fb06e346cb065ceb9808dcfc25">port</a>)</td></tr>
 <tr class="memdesc:a78bf1188f1ec91749b34f4bd06107dda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> class and binds it to the local port number provided.  <br /></td></tr>
 <tr class="separator:a78bf1188f1ec91749b34f4bd06107dda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85f2aaa1504e17772537948ec30fb261" id="r_a85f2aaa1504e17772537948ec30fb261"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a85f2aaa1504e17772537948ec30fb261">udp_client</a> (const <a class="el" href="classxtd_1_1net_1_1ip__end__point.html">xtd::net::ip_end_point</a> &amp;local_end_point)</td></tr>
@@ -277,10 +242,10 @@ You can use any of the send methods provided in the <a class="el" href="classxtd
 <tr class="memitem:afb4db27db05152f006a5fca3832b1cb0" id="r_afb4db27db05152f006a5fca3832b1cb0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb4db27db05152f006a5fca3832b1cb0">udp_client</a> (<a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">xtd::net::sockets::address_family</a> address_Family)</td></tr>
 <tr class="memdesc:afb4db27db05152f006a5fca3832b1cb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> class.  <br /></td></tr>
 <tr class="separator:afb4db27db05152f006a5fca3832b1cb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0efc35e391d5d7dbe65b8b1e2025be4e" id="r_a0efc35e391d5d7dbe65b8b1e2025be4e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0efc35e391d5d7dbe65b8b1e2025be4e">udp_client</a> (<a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba901555fb06e346cb065ceb9808dcfc25">port</a>, <a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">xtd::net::sockets::address_family</a> addressFamily)</td></tr>
+<tr class="memitem:a0efc35e391d5d7dbe65b8b1e2025be4e" id="r_a0efc35e391d5d7dbe65b8b1e2025be4e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0efc35e391d5d7dbe65b8b1e2025be4e">udp_client</a> (<a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba901555fb06e346cb065ceb9808dcfc25">port</a>, <a class="el" href="group__xtd__core.html#ga5c7a488efbbc9c766286c1485399aef3">xtd::net::sockets::address_family</a> addressFamily)</td></tr>
 <tr class="memdesc:a0efc35e391d5d7dbe65b8b1e2025be4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> class and binds it to the local port number provided.  <br /></td></tr>
 <tr class="separator:a0efc35e391d5d7dbe65b8b1e2025be4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac216cb8c4114b5d1ee4a049e4fea1d9c" id="r_ac216cb8c4114b5d1ee4a049e4fea1d9c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac216cb8c4114b5d1ee4a049e4fea1d9c">udp_client</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;hostname, <a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba901555fb06e346cb065ceb9808dcfc25">port</a>)</td></tr>
+<tr class="memitem:ac216cb8c4114b5d1ee4a049e4fea1d9c" id="r_ac216cb8c4114b5d1ee4a049e4fea1d9c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac216cb8c4114b5d1ee4a049e4fea1d9c">udp_client</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;hostname, <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba901555fb06e346cb065ceb9808dcfc25">port</a>)</td></tr>
 <tr class="memdesc:ac216cb8c4114b5d1ee4a049e4fea1d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> class and establishes a default remote host.  <br /></td></tr>
 <tr class="separator:ac216cb8c4114b5d1ee4a049e4fea1d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -318,10 +283,10 @@ You can use any of the send methods provided in the <a class="el" href="classxtd
 <tr class="memitem:aef212ee4801e5cf2dd92be3ee03527e9" id="r_aef212ee4801e5cf2dd92be3ee03527e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html">udp_client</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef212ee4801e5cf2dd92be3ee03527e9">multicast_loopback</a> (bool value)</td></tr>
 <tr class="memdesc:aef212ee4801e5cf2dd92be3ee03527e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a boolean value that specifies whether outgoing multicast packets are delivered to the sending application.  <br /></td></tr>
 <tr class="separator:aef212ee4801e5cf2dd92be3ee03527e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a36ea0d225e52819414bb1c58ec023e" id="r_a5a36ea0d225e52819414bb1c58ec023e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a36ea0d225e52819414bb1c58ec023e">ttl</a> () const</td></tr>
+<tr class="memitem:a5a36ea0d225e52819414bb1c58ec023e" id="r_a5a36ea0d225e52819414bb1c58ec023e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a36ea0d225e52819414bb1c58ec023e">ttl</a> () const</td></tr>
 <tr class="memdesc:a5a36ea0d225e52819414bb1c58ec023e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that specifies the Time to Live (TTL) value of Internet Protocol (IP) packets sent by the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a>.  <br /></td></tr>
 <tr class="separator:a5a36ea0d225e52819414bb1c58ec023e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa033c6bbbbb85896c06a6a2b35a3cb9f" id="r_aa033c6bbbbb85896c06a6a2b35a3cb9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html">udp_client</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa033c6bbbbb85896c06a6a2b35a3cb9f">ttl</a> (<a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> value)</td></tr>
+<tr class="memitem:aa033c6bbbbb85896c06a6a2b35a3cb9f" id="r_aa033c6bbbbb85896c06a6a2b35a3cb9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html">udp_client</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa033c6bbbbb85896c06a6a2b35a3cb9f">ttl</a> (<a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> value)</td></tr>
 <tr class="memdesc:aa033c6bbbbb85896c06a6a2b35a3cb9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that specifies the Time to Live (TTL) value of Internet Protocol (IP) packets sent by the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a>.  <br /></td></tr>
 <tr class="separator:aa033c6bbbbb85896c06a6a2b35a3cb9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -332,13 +297,13 @@ You can use any of the send methods provided in the <a class="el" href="classxtd
 <tr class="memitem:ae517a82acc70422bfcb0371847220a29" id="r_ae517a82acc70422bfcb0371847220a29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae517a82acc70422bfcb0371847220a29">begin_receive</a> (<a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a> callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state)</td></tr>
 <tr class="memdesc:ae517a82acc70422bfcb0371847220a29"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::net::sockets::udp_client::receives a datagram from a remote host asynchronously.  <br /></td></tr>
 <tr class="separator:ae517a82acc70422bfcb0371847220a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a278745b99e2123a77242e487964deecd" id="r_a278745b99e2123a77242e487964deecd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a278745b99e2123a77242e487964deecd">begin_send</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> &gt; &amp;<a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598afbf7c787e5a1bb8634a7639a596aa786">dgram</a>, size_t bytes, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;hostname, <a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba901555fb06e346cb065ceb9808dcfc25">port</a>, <a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a> callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state)</td></tr>
+<tr class="memitem:a278745b99e2123a77242e487964deecd" id="r_a278745b99e2123a77242e487964deecd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a278745b99e2123a77242e487964deecd">begin_send</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;<a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598afbf7c787e5a1bb8634a7639a596aa786">dgram</a>, size_t bytes, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;hostname, <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba901555fb06e346cb065ceb9808dcfc25">port</a>, <a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a> callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state)</td></tr>
 <tr class="memdesc:a278745b99e2123a77242e487964deecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is specified by the host name and port number.  <br /></td></tr>
 <tr class="separator:a278745b99e2123a77242e487964deecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af81fb5ea73fb065b8f4e8011225c82fd" id="r_af81fb5ea73fb065b8f4e8011225c82fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af81fb5ea73fb065b8f4e8011225c82fd">begin_send</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> &gt; &amp;<a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598afbf7c787e5a1bb8634a7639a596aa786">dgram</a>, size_t bytes, const <a class="el" href="classxtd_1_1net_1_1ip__end__point.html">xtd::net::ip_end_point</a> &amp;<a class="el" href="classxtd_1_1net_1_1end__point.html">end_point</a>, <a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a> callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state)</td></tr>
+<tr class="memitem:af81fb5ea73fb065b8f4e8011225c82fd" id="r_af81fb5ea73fb065b8f4e8011225c82fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af81fb5ea73fb065b8f4e8011225c82fd">begin_send</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;<a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598afbf7c787e5a1bb8634a7639a596aa786">dgram</a>, size_t bytes, const <a class="el" href="classxtd_1_1net_1_1ip__end__point.html">xtd::net::ip_end_point</a> &amp;<a class="el" href="classxtd_1_1net_1_1end__point.html">end_point</a>, <a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a> callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state)</td></tr>
 <tr class="memdesc:af81fb5ea73fb065b8f4e8011225c82fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is specified by a EndPoint.  <br /></td></tr>
 <tr class="separator:af81fb5ea73fb065b8f4e8011225c82fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad61921667144668b7128085509784246" id="r_ad61921667144668b7128085509784246"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad61921667144668b7128085509784246">begin_send</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> &gt; &amp;<a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598afbf7c787e5a1bb8634a7639a596aa786">dgram</a>, size_t bytes, <a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a> callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state)</td></tr>
+<tr class="memitem:ad61921667144668b7128085509784246" id="r_ad61921667144668b7128085509784246"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad61921667144668b7128085509784246">begin_send</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;<a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598afbf7c787e5a1bb8634a7639a596aa786">dgram</a>, size_t bytes, <a class="el" href="group__delegates.html#gac1b0c46b56f76e46835af785a4165b0a">xtd::async_callback</a> callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state)</td></tr>
 <tr class="memdesc:ad61921667144668b7128085509784246"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::net::sockets::udp_client::sends a datagram to a remote host asynchronously. The destination was specified previously by a call to <a class="el" href="#a038e83af92c9d492aac9151a9b1c8f1d" title="Establishes a default remote host using the specified network endpoint.">xtd::net::sockets::udp_client::connect</a>.  <br /></td></tr>
 <tr class="separator:ad61921667144668b7128085509784246"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d4681a3698c643b8105d632666be17f" id="r_a8d4681a3698c643b8105d632666be17f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d4681a3698c643b8105d632666be17f">close</a> ()</td></tr>
@@ -347,19 +312,19 @@ You can use any of the send methods provided in the <a class="el" href="classxtd
 <tr class="memitem:a038e83af92c9d492aac9151a9b1c8f1d" id="r_a038e83af92c9d492aac9151a9b1c8f1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a038e83af92c9d492aac9151a9b1c8f1d">connect</a> (const <a class="el" href="classxtd_1_1net_1_1ip__end__point.html">xtd::net::ip_end_point</a> &amp;<a class="el" href="classxtd_1_1net_1_1end__point.html">end_point</a>)</td></tr>
 <tr class="memdesc:a038e83af92c9d492aac9151a9b1c8f1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establishes a default remote host using the specified network endpoint.  <br /></td></tr>
 <tr class="separator:a038e83af92c9d492aac9151a9b1c8f1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a707beff8793c9695ae29a6c956b9bdf1" id="r_a707beff8793c9695ae29a6c956b9bdf1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a707beff8793c9695ae29a6c956b9bdf1">connect</a> (const <a class="el" href="classxtd_1_1net_1_1ip__address.html">xtd::net::ip_address</a> &amp;<a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a>, <a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba901555fb06e346cb065ceb9808dcfc25">port</a>)</td></tr>
+<tr class="memitem:a707beff8793c9695ae29a6c956b9bdf1" id="r_a707beff8793c9695ae29a6c956b9bdf1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a707beff8793c9695ae29a6c956b9bdf1">connect</a> (const <a class="el" href="classxtd_1_1net_1_1ip__address.html">xtd::net::ip_address</a> &amp;<a class="el" href="classxtd_1_1net_1_1ip__address.html">ip_address</a>, <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba901555fb06e346cb065ceb9808dcfc25">port</a>)</td></tr>
 <tr class="memdesc:a707beff8793c9695ae29a6c956b9bdf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establishes a default remote host using the specified IP address and port number.  <br /></td></tr>
 <tr class="separator:a707beff8793c9695ae29a6c956b9bdf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e5cb65e30190829abe7e5db88acfadf" id="r_a1e5cb65e30190829abe7e5db88acfadf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e5cb65e30190829abe7e5db88acfadf">connect</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;hostname, <a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba901555fb06e346cb065ceb9808dcfc25">port</a>)</td></tr>
+<tr class="memitem:a1e5cb65e30190829abe7e5db88acfadf" id="r_a1e5cb65e30190829abe7e5db88acfadf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e5cb65e30190829abe7e5db88acfadf">connect</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;hostname, <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba901555fb06e346cb065ceb9808dcfc25">port</a>)</td></tr>
 <tr class="memdesc:a1e5cb65e30190829abe7e5db88acfadf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Establishes a default remote host using the specified hostname and port number.  <br /></td></tr>
 <tr class="separator:a1e5cb65e30190829abe7e5db88acfadf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1387d4b901f7d71492edbeeeb556a55" id="r_ac1387d4b901f7d71492edbeeeb556a55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1387d4b901f7d71492edbeeeb556a55">drop_multicast_group</a> (const <a class="el" href="classxtd_1_1net_1_1ip__address.html">xtd::net::ip_address</a> &amp;multicast_address)</td></tr>
 <tr class="memdesc:ac1387d4b901f7d71492edbeeeb556a55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leaves a multicast group.  <br /></td></tr>
 <tr class="separator:ac1387d4b901f7d71492edbeeeb556a55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa70eedb3f6679e7fe9cea0ef33c3df9" id="r_aaa70eedb3f6679e7fe9cea0ef33c3df9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa70eedb3f6679e7fe9cea0ef33c3df9">drop_multicast_group</a> (const <a class="el" href="classxtd_1_1net_1_1ip__address.html">xtd::net::ip_address</a> &amp;multicast_address, <a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a> if_index)</td></tr>
+<tr class="memitem:aaa70eedb3f6679e7fe9cea0ef33c3df9" id="r_aaa70eedb3f6679e7fe9cea0ef33c3df9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa70eedb3f6679e7fe9cea0ef33c3df9">drop_multicast_group</a> (const <a class="el" href="classxtd_1_1net_1_1ip__address.html">xtd::net::ip_address</a> &amp;multicast_address, <a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> if_index)</td></tr>
 <tr class="memdesc:aaa70eedb3f6679e7fe9cea0ef33c3df9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Leaves a multicast group.  <br /></td></tr>
 <tr class="separator:aaa70eedb3f6679e7fe9cea0ef33c3df9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6eaed1d06128dd9b281467a221ef19ac" id="r_a6eaed1d06128dd9b281467a221ef19ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6eaed1d06128dd9b281467a221ef19ac">end_receive</a> (<a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt; <a class="el" href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d">async_result</a>, <a class="el" href="classxtd_1_1net_1_1ip__end__point.html">xtd::net::ip_end_point</a> &amp;remote_end_point)</td></tr>
+<tr class="memitem:a6eaed1d06128dd9b281467a221ef19ac" id="r_a6eaed1d06128dd9b281467a221ef19ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6eaed1d06128dd9b281467a221ef19ac">end_receive</a> (<a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt; <a class="el" href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d">async_result</a>, <a class="el" href="classxtd_1_1net_1_1ip__end__point.html">xtd::net::ip_end_point</a> &amp;remote_end_point)</td></tr>
 <tr class="memdesc:a6eaed1d06128dd9b281467a221ef19ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ends a pending asynchronous receive.  <br /></td></tr>
 <tr class="separator:a6eaed1d06128dd9b281467a221ef19ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa939e4c4a6cb15ac3e03b8b2e686fe5d" id="r_aa939e4c4a6cb15ac3e03b8b2e686fe5d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa939e4c4a6cb15ac3e03b8b2e686fe5d">end_send</a> (<a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt; <a class="el" href="group__xtd__core.html#ga080226bd5ac480da97fe5cb486e6971d">async_result</a>)</td></tr>
@@ -374,25 +339,25 @@ You can use any of the send methods provided in the <a class="el" href="classxtd
 <tr class="memitem:ae0b155f05083abc2b00b2f19d2c36834" id="r_ae0b155f05083abc2b00b2f19d2c36834"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0b155f05083abc2b00b2f19d2c36834">join_multicast_group</a> (const <a class="el" href="classxtd_1_1net_1_1ip__address.html">xtd::net::ip_address</a> &amp;multicast_address)</td></tr>
 <tr class="memdesc:ae0b155f05083abc2b00b2f19d2c36834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> to a multicast group.  <br /></td></tr>
 <tr class="separator:ae0b155f05083abc2b00b2f19d2c36834"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d426829fe67a956d7569d12038a0e32" id="r_a2d426829fe67a956d7569d12038a0e32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d426829fe67a956d7569d12038a0e32">join_multicast_group</a> (<a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a> if_index, const <a class="el" href="classxtd_1_1net_1_1ip__address.html">xtd::net::ip_address</a> &amp;multicast_address)</td></tr>
+<tr class="memitem:a2d426829fe67a956d7569d12038a0e32" id="r_a2d426829fe67a956d7569d12038a0e32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d426829fe67a956d7569d12038a0e32">join_multicast_group</a> (<a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> if_index, const <a class="el" href="classxtd_1_1net_1_1ip__address.html">xtd::net::ip_address</a> &amp;multicast_address)</td></tr>
 <tr class="memdesc:a2d426829fe67a956d7569d12038a0e32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> to a multicast group.  <br /></td></tr>
 <tr class="separator:a2d426829fe67a956d7569d12038a0e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5482490c8985d89d5ff3d6cd231aad88" id="r_a5482490c8985d89d5ff3d6cd231aad88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5482490c8985d89d5ff3d6cd231aad88">join_multicast_group</a> (const <a class="el" href="classxtd_1_1net_1_1ip__address.html">xtd::net::ip_address</a> &amp;multicast_address, <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> <a class="el" href="#a5a36ea0d225e52819414bb1c58ec023e">ttl</a>)</td></tr>
+<tr class="memitem:a5482490c8985d89d5ff3d6cd231aad88" id="r_a5482490c8985d89d5ff3d6cd231aad88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5482490c8985d89d5ff3d6cd231aad88">join_multicast_group</a> (const <a class="el" href="classxtd_1_1net_1_1ip__address.html">xtd::net::ip_address</a> &amp;multicast_address, <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> <a class="el" href="#a5a36ea0d225e52819414bb1c58ec023e">ttl</a>)</td></tr>
 <tr class="memdesc:a5482490c8985d89d5ff3d6cd231aad88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> to a multicast group with the specified Time to Live (TTL).  <br /></td></tr>
 <tr class="separator:a5482490c8985d89d5ff3d6cd231aad88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4988864489039e2a0427740ba909a962" id="r_a4988864489039e2a0427740ba909a962"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4988864489039e2a0427740ba909a962">join_multicast_group</a> (const <a class="el" href="classxtd_1_1net_1_1ip__address.html">xtd::net::ip_address</a> &amp;multicast_address, const <a class="el" href="classxtd_1_1net_1_1ip__address.html">xtd::net::ip_address</a> &amp;local_address)</td></tr>
 <tr class="memdesc:a4988864489039e2a0427740ba909a962"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> to a multicast group.  <br /></td></tr>
 <tr class="separator:a4988864489039e2a0427740ba909a962"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5118f865f1545c96df0e81fd3801862f" id="r_a5118f865f1545c96df0e81fd3801862f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5118f865f1545c96df0e81fd3801862f">receive</a> (<a class="el" href="classxtd_1_1net_1_1ip__end__point.html">xtd::net::ip_end_point</a> &amp;remote_end_point)</td></tr>
+<tr class="memitem:a5118f865f1545c96df0e81fd3801862f" id="r_a5118f865f1545c96df0e81fd3801862f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5118f865f1545c96df0e81fd3801862f">receive</a> (<a class="el" href="classxtd_1_1net_1_1ip__end__point.html">xtd::net::ip_end_point</a> &amp;remote_end_point)</td></tr>
 <tr class="memdesc:a5118f865f1545c96df0e81fd3801862f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a UDP datagram that was sent by a remote host.  <br /></td></tr>
 <tr class="separator:a5118f865f1545c96df0e81fd3801862f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66d13f267d920a8fb3084a8385db1dd2" id="r_a66d13f267d920a8fb3084a8385db1dd2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66d13f267d920a8fb3084a8385db1dd2">send</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> &gt; &amp;<a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598afbf7c787e5a1bb8634a7639a596aa786">dgram</a>, size_t bytes, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;hostname, <a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba901555fb06e346cb065ceb9808dcfc25">port</a>)</td></tr>
+<tr class="memitem:a66d13f267d920a8fb3084a8385db1dd2" id="r_a66d13f267d920a8fb3084a8385db1dd2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a66d13f267d920a8fb3084a8385db1dd2">send</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;<a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598afbf7c787e5a1bb8634a7639a596aa786">dgram</a>, size_t bytes, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;hostname, <a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba901555fb06e346cb065ceb9808dcfc25">port</a>)</td></tr>
 <tr class="memdesc:a66d13f267d920a8fb3084a8385db1dd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::net::sockets::udp_client::sends a UDP datagram to a specified port on a specified remote host.  <br /></td></tr>
 <tr class="separator:a66d13f267d920a8fb3084a8385db1dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa0cf277e2383f468b8af467bc17b5d95" id="r_aa0cf277e2383f468b8af467bc17b5d95"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0cf277e2383f468b8af467bc17b5d95">send</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> &gt; &amp;<a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598afbf7c787e5a1bb8634a7639a596aa786">dgram</a>, size_t bytes, const <a class="el" href="classxtd_1_1net_1_1ip__end__point.html">xtd::net::ip_end_point</a> &amp;<a class="el" href="classxtd_1_1net_1_1end__point.html">end_point</a>)</td></tr>
+<tr class="memitem:aa0cf277e2383f468b8af467bc17b5d95" id="r_aa0cf277e2383f468b8af467bc17b5d95"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0cf277e2383f468b8af467bc17b5d95">send</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;<a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598afbf7c787e5a1bb8634a7639a596aa786">dgram</a>, size_t bytes, const <a class="el" href="classxtd_1_1net_1_1ip__end__point.html">xtd::net::ip_end_point</a> &amp;<a class="el" href="classxtd_1_1net_1_1end__point.html">end_point</a>)</td></tr>
 <tr class="memdesc:aa0cf277e2383f468b8af467bc17b5d95"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::net::sockets::udp_client::sends a UDP datagram to the host at the specified remote endpoint.  <br /></td></tr>
 <tr class="separator:aa0cf277e2383f468b8af467bc17b5d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a137cde9e40f6edda9a28bd0f3c8fdcd2" id="r_a137cde9e40f6edda9a28bd0f3c8fdcd2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a137cde9e40f6edda9a28bd0f3c8fdcd2">send</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> &gt; &amp;<a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598afbf7c787e5a1bb8634a7639a596aa786">dgram</a>, size_t bytes)</td></tr>
+<tr class="memitem:a137cde9e40f6edda9a28bd0f3c8fdcd2" id="r_a137cde9e40f6edda9a28bd0f3c8fdcd2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a137cde9e40f6edda9a28bd0f3c8fdcd2">send</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;<a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598afbf7c787e5a1bb8634a7639a596aa786">dgram</a>, size_t bytes)</td></tr>
 <tr class="memdesc:a137cde9e40f6edda9a28bd0f3c8fdcd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::net::sockets::udp_client::sends a UDP datagram to a remote host.  <br /></td></tr>
 <tr class="separator:a137cde9e40f6edda9a28bd0f3c8fdcd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -476,7 +441,7 @@ This constructor is not suitable for joining a multicast group because it does n
         <tr>
           <td class="memname">xtd::net::sockets::udp_client::udp_client </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -604,7 +569,7 @@ If this constructor is used, the <a class="el" href="classxtd_1_1net_1_1sockets_
         <tr>
           <td class="memname">xtd::net::sockets::udp_client::udp_client </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -652,7 +617,7 @@ If this constructor is used, the <a class="el" href="classxtd_1_1net_1_1sockets_
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1039,7 +1004,7 @@ This property must be set before the underlying socket is bound to a client port
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> xtd::net::sockets::udp_client::ttl </td>
+          <td class="memname"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> xtd::net::sockets::udp_client::ttl </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -1070,7 +1035,7 @@ This property must be set before the underlying socket is bound to a client port
         <tr>
           <td class="memname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html">udp_client</a> &amp; xtd::net::sockets::udp_client::ttl </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1178,7 +1143,7 @@ This method does not block until the operation is complete. To block until the o
         <tr>
           <td class="memname"><a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt; xtd::net::sockets::udp_client::begin_send </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>dgram</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>dgram</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1193,7 +1158,7 @@ This method does not block until the operation is complete. To block until the o
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1236,7 +1201,7 @@ This method does not block until the operation is complete. To block until the o
         <tr>
           <td class="memname"><a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt; xtd::net::sockets::udp_client::begin_send </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>dgram</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>dgram</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1288,7 +1253,7 @@ This method does not block until the operation is complete. To block until the o
         <tr>
           <td class="memname"><a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt; xtd::net::sockets::udp_client::begin_send </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>dgram</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>dgram</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1408,7 +1373,7 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1455,7 +1420,7 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1536,7 +1501,7 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a></td>          <td class="paramname"><span class="paramname"><em>if_index</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a></td>          <td class="paramname"><span class="paramname"><em>if_index</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1568,7 +1533,7 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> &gt; xtd::net::sockets::udp_client::end_receive </td>
+          <td class="memname"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; xtd::net::sockets::udp_client::end_receive </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#ga25ad7ded61d1d55ea98a57f5316b786b">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>async_result</em></span>, </td>
         </tr>
@@ -1764,7 +1729,7 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
         <tr>
           <td class="memname">void xtd::net::sockets::udp_client::join_multicast_group </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__types.html#gabcb8f2a01d025f4fd9ea205912f4735e">uint32</a></td>          <td class="paramname"><span class="paramname"><em>if_index</em></span>, </td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a></td>          <td class="paramname"><span class="paramname"><em>if_index</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1817,7 +1782,7 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>ttl</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a></td>          <td class="paramname"><span class="paramname"><em>ttl</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1899,7 +1864,7 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> &gt; xtd::net::sockets::udp_client::receive </td>
+          <td class="memname"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; xtd::net::sockets::udp_client::receive </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1net_1_1ip__end__point.html">xtd::net::ip_end_point</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>remote_end_point</em></span></td><td>)</td>
           <td></td>
@@ -1942,7 +1907,7 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
         <tr>
           <td class="memname">size_t xtd::net::sockets::udp_client::send </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>dgram</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>dgram</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1957,7 +1922,7 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#gaad002927004fb7689a9ca18ed578f7b7">uint16</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#gaa6e134492079ab1537641b0af29655f4">uint16</a></td>          <td class="paramname"><span class="paramname"><em>port</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1998,7 +1963,7 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
         <tr>
           <td class="memname">size_t xtd::net::sockets::udp_client::send </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>dgram</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>dgram</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -2048,7 +2013,7 @@ Do not provide an endPoint parameter to this method if you have already establis
         <tr>
           <td class="memname">size_t xtd::net::sockets::udp_client::send </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga8eaeca343fe44fd32900e07de728ebd9">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>dgram</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4">xtd::byte</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>dgram</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -2152,7 +2117,7 @@ If you want to send datagrams to a different remote host, you must call the <a c
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -127,10 +127,10 @@ Inheritance diagram for xtd::collections::generic::enumerator&lt;&gt;:</div>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html" title="Supports a simple iteration over a generic collection.">xtd::collections::generic::enumerator</a> &lt;type_t&gt; class is used to encapsulate an <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html" title="Supports a simple iteration over a generic collection.">xtd::collections::generic::ienumerator</a> &lt;type_t&gt;. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
-<tr class="memitem:ae4806bafd85b5cbcfdaa6cbc8d5d7831" id="r_ae4806bafd85b5cbcfdaa6cbc8d5d7831"><td class="memTemplParams" colspan="2">template&lt;class collection_t, class vertion_t = std::nullptr_t&gt; </td></tr>
-<tr class="memitem:ae4806bafd85b5cbcfdaa6cbc8d5d7831"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae4806bafd85b5cbcfdaa6cbc8d5d7831">create</a> (const collection_t &amp;items, const vertion_t *current_version=nullptr) noexcept</td></tr>
-<tr class="memdesc:ae4806bafd85b5cbcfdaa6cbc8d5d7831"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an enumerator from specified collection and version.  <br /></td></tr>
-<tr class="separator:ae4806bafd85b5cbcfdaa6cbc8d5d7831"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa99c82357c4397301584c99c28085535" id="r_aa99c82357c4397301584c99c28085535"><td class="memTemplParams" colspan="2">template&lt;class collection_t, class version_t = std::nullptr_t&gt; </td></tr>
+<tr class="memitem:aa99c82357c4397301584c99c28085535"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa99c82357c4397301584c99c28085535">create</a> (const collection_t &amp;items, const version_t *current_version=nullptr) noexcept</td></tr>
+<tr class="memdesc:aa99c82357c4397301584c99c28085535"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an enumerator from specified collection and version.  <br /></td></tr>
+<tr class="separator:aa99c82357c4397301584c99c28085535"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:acba4550321d197cbfbb1f26ddf25ea3c" id="r_acba4550321d197cbfbb1f26ddf25ea3c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#acba4550321d197cbfbb1f26ddf25ea3c">enumerator</a> ()=default</td></tr>
@@ -218,13 +218,13 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae4806bafd85b5cbcfdaa6cbc8d5d7831" name="ae4806bafd85b5cbcfdaa6cbc8d5d7831"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4806bafd85b5cbcfdaa6cbc8d5d7831">&#9670;&#160;</a></span>create()</h2>
+<a id="aa99c82357c4397301584c99c28085535" name="aa99c82357c4397301584c99c28085535"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa99c82357c4397301584c99c28085535">&#9670;&#160;</a></span>create()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class collection_t, class vertion_t = std::nullptr_t&gt; </div>
+template&lt;class collection_t, class version_t = std::nullptr_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -237,7 +237,7 @@ template&lt;class collection_t, class vertion_t = std::nullptr_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const vertion_t *</td>          <td class="paramname"><span class="paramname"><em>current_version</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
+          <td class="paramtype">const version_t *</td>          <td class="paramname"><span class="paramname"><em>current_version</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -251,7 +251,7 @@ template&lt;class collection_t, class vertion_t = std::nullptr_t&gt; </div>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">collection_t</td><td>The collection type. </td></tr>
-    <tr><td class="paramname">vertion_t</td><td>The collection version type. </td></tr>
+    <tr><td class="paramname">version_t</td><td>The collection version type. </td></tr>
   </table>
   </dd>
 </dl>
@@ -263,27 +263,24 @@ template&lt;class collection_t, class vertion_t = std::nullptr_t&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The enumerator created. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="#ae4806bafd85b5cbcfdaa6cbc8d5d7831" title="Create an enumerator from specified collection and version.">enumerator&lt;&gt;::create</a> method to create a simple enumerator on any std or xtd collections. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="#aa99c82357c4397301584c99c28085535" title="Create an enumerator from specified collection and version.">enumerator&lt;&gt;::create</a> method to create a simple enumerator on any std or xtd collections. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
 <div class="line">    <span class="keyword">auto</span> boxes = box_collection {{10, 20, 30}, {20, 5, 10}, {12, 3, 7}};</div>
 <div class="line">    </div>
-<div class="line">    <span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a> = boxes.get_enumerator();</div>
-<div class="line">    <span class="keywordflow">while</span> (<a class="code hl_struct" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a>.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">move_next</a>())</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_struct" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a>.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">current</a>().to_string());</div>
+<div class="line">    <span class="keyword">auto</span> enumerator = boxes.get_enumerator();</div>
+<div class="line">    <span class="keywordflow">while</span> (enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">move_next</a>())</div>
+<div class="line">      console::write_line(enumerator.<a class="code hl_function" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">current</a>().<a class="code hl_function" href="classxtd_1_1any__object.html#a18d9fee9685c5c890f11d1af3c6c9cc0">to_string</a>());</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_struct" href="structxtd_1_1box.html">box</a> : boxes)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_struct" href="structxtd_1_1box.html">box</a>.<a class="code hl_function" href="structxtd_1_1box.html#a47284e5c71e959a04a4bbd6b246393cd">to_string</a>());</div>
+<div class="line">    console::write_line();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> box : boxes)</div>
+<div class="line">      console::write_line(box.to_string());</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    console::write_line();</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> iterator = boxes.begin(); iterator != boxes.end(); ++iterator)</div>
-<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(iterator-&gt;to_string());</div>
+<div class="line">      console::write_line(iterator-&gt;to_string());</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">struct </span>box : <span class="keyword">public</span> iequatable&lt;program::box&gt; {</div>
@@ -326,7 +323,7 @@ template&lt;class collection_t, class vertion_t = std::nullptr_t&gt; </div>
 <div class="line"><span class="comment">// box [length=10, width=20, height=30]</span></div>
 <div class="line"><span class="comment">// box [length=20, width=5, height=10]</span></div>
 <div class="line"><span class="comment">// box [length=12, width=3, height=7]</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1any__object_html_a18d9fee9685c5c890f11d1af3c6c9cc0"><div class="ttname"><a href="classxtd_1_1any__object.html#a18d9fee9685c5c890f11d1af3c6c9cc0">xtd::any_object::to_string</a></div><div class="ttdeci">string to_string() const noexcept override</div><div class="ttdoc">Returns a xtd::string that represents the current object.</div><div class="ttdef"><b>Definition</b> any_object.hpp:110</div></div>
 <div class="ttc" id="agroup__collections_html_gaf8650b6defaa46086307019cf98a5248"><div class="ttname"><a href="group__collections.html#gaf8650b6defaa46086307019cf98a5248">xtd::collections::ienumerable</a></div><div class="ttdeci">generic::ienumerable&lt; xtd::any_object &gt; ienumerable</div><div class="ttdoc">Exposes an enumerator, which supports a simple iteration over a non-generic collection.</div><div class="ttdef"><b>Definition</b> ienumerable.hpp:32</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a2510c39011c5be704182423e3a695e91"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a2510c39011c5be704182423e3a695e91">xtd::console_key::h</a></div><div class="ttdeci">@ h</div><div class="ttdoc">The H key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:102</div></div>
@@ -335,14 +332,9 @@ template&lt;class collection_t, class vertion_t = std::nullptr_t&gt; </div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2af1290186a5d0b1ceab27f4e77c0c5d68"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2af1290186a5d0b1ceab27f4e77c0c5d68">xtd::console_key::w</a></div><div class="ttdeci">@ w</div><div class="ttdoc">The W key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:132</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga475781e3c7baa300a81ab16d22b16962ab435e227d5dd201e1768b2bcb2e0aa81"><div class="ttname"><a href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ab435e227d5dd201e1768b2bcb2e0aa81">xtd::forms::bounds_specified::height</a></div><div class="ttdeci">@ height</div><div class="ttdoc">Specifies that the height of the control is defined.</div><div class="ttdef"><b>Definition</b> bounds_specified.hpp:34</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc"><div class="ttname"><a href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc">xtd::forms::bounds_specified::width</a></div><div class="ttdeci">@ width</div><div class="ttdoc">Specifies that the width of the control is defined.</div><div class="ttdef"><b>Definition</b> bounds_specified.hpp:32</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:16</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 <div class="ttc" id="anamespacextd_html_a2ed47ae86e395ccbe84ab1857c78c4e0"><div class="ttname"><a href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">xtd::to_string</a></div><div class="ttdeci">string to_string() const noexcept override</div><div class="ttdoc">Returns the string representation of this xtd::read_only_span &lt;type_t&gt; object.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:375</div></div>
 <div class="ttc" id="anamespacextd_html_a9d02f9ee8b045cc4b36d45c12aec4e3d"><div class="ttname"><a href="namespacextd.html#a9d02f9ee8b045cc4b36d45c12aec4e3d">xtd::equals</a></div><div class="ttdeci">bool equals(const object &amp;obj) const noexcept override</div><div class="ttdoc">Determines whether the specified object is equal to the current object.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:272</div></div>
 <div class="ttc" id="anamespacextd_html_aa9cc6219bcf151f5a94b26a70ba8654b"><div class="ttname"><a href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">xtd::length</a></div><div class="ttdeci">constexpr size_type length() const noexcept</div><div class="ttdoc">Returns the length of the current read_only_span.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:229</div></div>
-<div class="ttc" id="astructxtd_1_1box_html"><div class="ttname"><a href="structxtd_1_1box.html">xtd::box</a></div><div class="ttdoc">Represents a boxed object.</div><div class="ttdef"><b>Definition</b> box.hpp:57</div></div>
-<div class="ttc" id="astructxtd_1_1box_html_a47284e5c71e959a04a4bbd6b246393cd"><div class="ttname"><a href="structxtd_1_1box.html#a47284e5c71e959a04a4bbd6b246393cd">xtd::box::to_string</a></div><div class="ttdeci">xtd::string to_string() const noexcept override</div><div class="ttdoc">Returns a xtd::string that represents the current object.</div><div class="ttdef"><b>Definition</b> box.hpp:148</div></div>
-<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a></div><div class="ttdoc">Supports a simple iteration over a generic collection.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:38</div></div>
 <div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html_a56ef2e4d105ed3260d33bd1989b43f3b"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">xtd::collections::generic::enumerator::current</a></div><div class="ttdeci">const type_t &amp; current() const override</div><div class="ttdoc">Gets the element in the collection at the current position of the enumerator.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:62</div></div>
 <div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html_ad461ec52e959712ab699f6ca3aa5ec3d"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">xtd::collections::generic::enumerator::move_next</a></div><div class="ttdeci">bool move_next() override</div><div class="ttdoc">Advances the enumerator to the next element of the collection.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:71</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -458,7 +450,7 @@ template&lt;class collection_t, class vertion_t = std::nullptr_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

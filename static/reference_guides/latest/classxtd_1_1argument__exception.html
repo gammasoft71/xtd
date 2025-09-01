@@ -121,10 +121,7 @@ Inheritance diagram for xtd::argument_exception:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to throw and catch an <a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">argument_exception</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/argument_exception&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to throw and catch an <a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">argument_exception</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> divide_by_two(<span class="keywordtype">int</span> num) {</div>
 <div class="line">  <span class="comment">// If num is an odd number, throw an argument_exception.</span></div>
@@ -140,9 +137,9 @@ Inheritance diagram for xtd::argument_exception:</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
 <div class="line">    <span class="comment">// argument_exception is thrown because 7 is not an even number.</span></div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;7 divided by 2 is {0}&quot;</span>, divide_by_two(7));</div>
-<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1argument__exception.html">argument_exception</a>&amp;) {</div>
+<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> argument_exception&amp;) {</div>
 <div class="line">    <span class="comment">// Show the user that 7 cannot be divided by 2.</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;7 is not divided by 2 integrally.&quot;</span>);</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;7 is not divided by 2 integrally.&quot;</span>);</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -152,14 +149,10 @@ Inheritance diagram for xtd::argument_exception:</div>
 <div class="line"><span class="comment">// -------------------</span></div>
 <div class="line"><span class="comment">// 10 divided by 2 is 5</span></div>
 <div class="line"><span class="comment">// 7 is not divided by 2 integrally.</span></div>
-<div class="ttc" id="aclassxtd_1_1argument__exception_html"><div class="ttname"><a href="classxtd_1_1argument__exception.html">xtd::argument_exception</a></div><div class="ttdoc">The exception that is thrown when one of the arguments provided to a method is not valid.</div><div class="ttdef"><b>Definition</b> argument_exception.hpp:23</div></div>
 <div class="ttc" id="aclassxtd_1_1argument__exception_html_a4c0a0845499b84135edb625d794b0799"><div class="ttname"><a href="#a4c0a0845499b84135edb625d794b0799">xtd::argument_exception::argument_exception</a></div><div class="ttdeci">argument_exception(const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Create a new instance of class argument_exception.</div><div class="ttdef"><b>Definition</b> argument_exception.hpp:31</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo</a></b></dt><dd>add param_name property and constructors param (param_name is the parameter that cause the exception). </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="argument_exception_8cpp-example.html#_a0">argument_exception.cpp</a>, and <a class="el" href="stack_frame_8cpp-example.html#_a0">stack_frame.cpp</a>.</dd>
-</dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a4c0a0845499b84135edb625d794b0799" id="r_a4c0a0845499b84135edb625d794b0799"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c0a0845499b84135edb625d794b0799">argument_exception</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29">xtd::diagnostics::stack_frame::current</a>())</td></tr>
@@ -268,10 +261,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a36214a1d0af9632b80980c42f9996555" id="r_a36214a1d0af9632b80980c42f9996555"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1exception.html#a36214a1d0af9632b80980c42f9996555">help_link</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value) noexcept</td></tr>
 <tr class="memdesc:a36214a1d0af9632b80980c42f9996555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a link to the help file associated with this exception.  <br /></td></tr>
 <tr class="separator:a36214a1d0af9632b80980c42f9996555"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac345631145d5940bb8df20835ec8e28d" id="r_ac345631145d5940bb8df20835ec8e28d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1exception.html#ac345631145d5940bb8df20835ec8e28d">h_result</a> () const noexcept</td></tr>
+<tr class="memitem:ac345631145d5940bb8df20835ec8e28d" id="r_ac345631145d5940bb8df20835ec8e28d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1exception.html#ac345631145d5940bb8df20835ec8e28d">h_result</a> () const noexcept</td></tr>
 <tr class="memdesc:ac345631145d5940bb8df20835ec8e28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets HRESULT, a coded numerical value that is assigned to a specific exception.  <br /></td></tr>
 <tr class="separator:ac345631145d5940bb8df20835ec8e28d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae537a3f74e7b237261db29e327bb81dd" id="r_ae537a3f74e7b237261db29e327bb81dd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1exception.html#ae537a3f74e7b237261db29e327bb81dd">h_result</a> (<a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> value) noexcept</td></tr>
+<tr class="memitem:ae537a3f74e7b237261db29e327bb81dd" id="r_ae537a3f74e7b237261db29e327bb81dd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1exception.html#ae537a3f74e7b237261db29e327bb81dd">h_result</a> (<a class="el" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a> value) noexcept</td></tr>
 <tr class="memdesc:ae537a3f74e7b237261db29e327bb81dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets HRESULT, a coded numerical value that is assigned to a specific exception.  <br /></td></tr>
 <tr class="separator:ae537a3f74e7b237261db29e327bb81dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11f5e213c10c0f27bbc40c3a7f71b7ba" id="r_a11f5e213c10c0f27bbc40c3a7f71b7ba"><td class="memItemLeft" align="right" valign="top">virtual const std::error_code &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1exception.html#a11f5e213c10c0f27bbc40c3a7f71b7ba">error_code</a> () const noexcept</td></tr>
@@ -892,7 +885,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 24 2025 17:36:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 1 2025 10:51:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
