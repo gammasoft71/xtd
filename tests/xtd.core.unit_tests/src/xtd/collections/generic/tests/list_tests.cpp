@@ -10,6 +10,7 @@
 #include <xtd/tunit/test_method_attribute>
 
 using namespace xtd;
+using namespace xtd::collections::object_model;
 using namespace xtd::collections::generic;
 using namespace xtd::tunit;
 
@@ -406,6 +407,14 @@ namespace xtd::collections::generic::tests {
       
       items.add_range(list {5, 6, 7, 8});
       collection_assert::are_equal({1, 2, 3, 4, 5, 6, 7, 8}, items);
+    }
+    
+    void test_method_(as_read_only) {
+      auto items = list<int> {84, 42, 21};
+      auto roc = items.as_read_only();
+      assert::is_instance_of<read_only_collection<int>>(roc);
+      assert::is_true(as<icollection<int>>(roc).is_read_only());
+      collection_assert::are_equal({84, 42, 21}, roc);
     }
 
     void test_method_(assign_with_count_and_value) {
