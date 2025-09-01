@@ -36,6 +36,11 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core ranges
+      /// @par Examples
+      /// The following example shows how to use xtd::ranges::views::order_by_descending instance :
+      /// @include ranges_views_order_by_descending.cpp
+      /// The following example shows how to use xtd::ranges::views::order_by_descending_view class :
+      /// @include ranges_views_order_by_descending2.cpp
       class order_by_descending_view {
         template <typename key_selector_t>
         struct with_key_selector {

@@ -32,6 +32,11 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core ranges
+      /// @par Examples
+      /// The following example shows how to use xtd::ranges::views::order_by instance :
+      /// @include ranges_views_order_by.cpp
+      /// The following example shows how to use xtd::ranges::views::order_by_view class :
+      /// @include ranges_views_order_by2.cpp
       inline constexpr auto order_by = order_by_view {};
     }
   }

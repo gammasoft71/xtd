@@ -36,6 +36,11 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core ranges
+      /// @par Examples
+      /// The following example shows how to use xtd::ranges::views::order_by instance :
+      /// @include ranges_views_order_by.cpp
+      /// The following example shows how to use xtd::ranges::views::order_by_view class :
+      /// @include ranges_views_order_by2.cpp
       class order_by_view {
         template <typename key_selector_t>
         struct with_key_selector {

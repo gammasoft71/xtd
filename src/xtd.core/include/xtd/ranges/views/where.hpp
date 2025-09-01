@@ -32,6 +32,11 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core ranges
+      /// @par Examples
+      /// The following example shows how to use xtd::ranges::views::where instance :
+      /// @include ranges_views_where.cpp
+      /// The following example shows how to use xtd::ranges::views::where_view class :
+      /// @include ranges_views_where2.cpp
       inline constexpr auto where = where_view {};
     }
   }

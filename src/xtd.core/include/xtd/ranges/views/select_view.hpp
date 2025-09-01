@@ -36,6 +36,11 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core ranges
+      /// @par Examples
+      /// The following example shows how to use xtd::ranges::views::select instance :
+      /// @include ranges_views_select.cpp
+      /// The following example shows how to use xtd::ranges::views::select_view class :
+      /// @include ranges_views_select2.cpp
       class select_view {
         template <typename selector_t>
         struct with_selector {
