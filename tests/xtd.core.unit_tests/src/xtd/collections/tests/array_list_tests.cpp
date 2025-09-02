@@ -1,4 +1,5 @@
 #include <xtd/collections/array_list>
+#include <xtd/collections/comparer>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/collection_assert>
 #include <xtd/tunit/test_class_attribute>
@@ -214,6 +215,35 @@ namespace xtd::collections::tests {
       collection_assert::are_equal({"Tyrannosaurus", "Compsognathus", "Amargasaurus", "Mamenchisaurus", "Deinonychus", "Compsognathus"}, items);
     }
     
+    /*
+    void test_method_(binary_search) {
+      auto items = array_list {5, 10, 15, 20, 25, 30, 35, 40};
+      assert::are_equal(~3_z, items.binary_search(16));
+      assert::are_equal(3_z, items.binary_search(20));
+      assert::are_equal(~6_z, items.binary_search(33));
+      assert::are_equal(6_z, items.binary_search(35));
+      assert::are_equal(~8_z, items.binary_search(50));
+    }
+    
+    void test_method_(binary_search_with_comparer) {
+      auto items = array_list {5, 10, 15, 20, 25, 30, 35, 40};
+      assert::are_equal(~3_z, items.binary_search(16, collections::comparer::default_comparer));
+      assert::are_equal(3_z, items.binary_search(20, collections::comparer::default_comparer));
+      assert::are_equal(~6_z, items.binary_search(33, collections::comparer::default_comparer));
+      assert::are_equal(6_z, items.binary_search(35, collections::comparer::default_comparer));
+      assert::are_equal(~8_z, items.binary_search(50, collections::comparer::default_comparer));
+    }
+    
+    void test_method_(binary_search_with_index_count_and_comparer) {
+      auto items = array_list {5, 10, 15, 20, 25, 30, 35, 40};
+      assert::are_equal(~3_z, items.binary_search(2, 3, 16, collections::comparer::default_comparer));
+      assert::are_equal(3_z, items.binary_search(2, 3, 20, collections::comparer::default_comparer));
+      assert::are_equal(~5_z, items.binary_search(2, 3, 33, collections::comparer::default_comparer));
+      assert::are_equal(~5_z, items.binary_search(2, 3, 35, collections::comparer::default_comparer));
+      assert::are_equal(~5_z, items.binary_search(2, 3, 50, collections::comparer::default_comparer));
+    }
+     */
+
     void test_method_(contains) {
       auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       assert::is_true(items.contains("Tyrannosaurus"));
