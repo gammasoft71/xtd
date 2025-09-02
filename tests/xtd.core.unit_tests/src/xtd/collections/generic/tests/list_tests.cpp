@@ -272,41 +272,33 @@ namespace xtd::collections::generic::tests {
       collection_assert::are_equal({84, 42, 21}, roc);
     }
     
-    void test_method_(assign_with_count_and_value) {
-      auto items = list {84, 42, 21};
-      items.assign(4, 63);
-      collection_assert::are_equal({63, 63, 63, 63}, items);
+    void test_method_(binary_search) {
+      auto items = list {5, 10, 15, 20, 25, 30, 35, 40};
+      assert::are_equal(~3_z, items.binary_search(16));
+      assert::are_equal(3_z, items.binary_search(20));
+      assert::are_equal(~6_z, items.binary_search(33));
+      assert::are_equal(6_z, items.binary_search(35));
+      assert::are_equal(~8_z, items.binary_search(50));
     }
     
-    void test_method_(assign_with_iterators) {
-      auto items = list {84, 42, 21};
-      auto items2 = std::vector {10, 20, 30, 40};
-      items.assign(items2.begin(), items2.end());
-      collection_assert::are_equal({10, 20, 30, 40}, items);
+    void test_method_(binary_search_with_comparer) {
+      auto items = list {5, 10, 15, 20, 25, 30, 35, 40};
+      assert::are_equal(~3_z, items.binary_search(16, comparer<int>::default_comparer));
+      assert::are_equal(3_z, items.binary_search(20, comparer<int>::default_comparer));
+      assert::are_equal(~6_z, items.binary_search(33, comparer<int>::default_comparer));
+      assert::are_equal(6_z, items.binary_search(35, comparer<int>::default_comparer));
+      assert::are_equal(~8_z, items.binary_search(50, comparer<int>::default_comparer));
     }
     
-    void test_method_(assign_with_initializer_list) {
-      auto items = list {84, 42, 21};
-      items.assign({10, 20, 30, 40});
-      collection_assert::are_equal({10, 20, 30, 40}, items);
+    void test_method_(binary_search_with_index_count_and_comparer) {
+      auto items = list {5, 10, 15, 20, 25, 30, 35, 40};
+      assert::are_equal(~3_z, items.binary_search(2, 3, 16, comparer<int>::default_comparer));
+      assert::are_equal(3_z, items.binary_search(2, 3, 20, comparer<int>::default_comparer));
+      assert::are_equal(~5_z, items.binary_search(2, 3, 33, comparer<int>::default_comparer));
+      assert::are_equal(~5_z, items.binary_search(2, 3, 35, comparer<int>::default_comparer));
+      assert::are_equal(~5_z, items.binary_search(2, 3, 50, comparer<int>::default_comparer));
     }
-    
-    void test_method_(at) {
-      auto items = list {84, 42, 21};
-      
-      assert::are_equal(84, items.at(0));
-      assert::are_equal(42, items.at(1));
-      assert::are_equal(21, items.at(2));
-      assert::throws<index_out_of_range_exception>([&] {[[maybe_unused]] auto i = items[3];});
-      
-      items.at(0) = 63;
-      items.at(1) = 31;
-      items.at(2) = 10;
-      assert::throws<index_out_of_range_exception>([&] {items[3] = 5;});
-      
-      collection_assert::are_equal({63, 31, 10}, items);
-    }
-    
+
     void test_method_(clear) {
       auto items = list {84, 42, 21};
       items.clear();
