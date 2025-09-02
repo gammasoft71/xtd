@@ -315,6 +315,11 @@ namespace xtd::collections::generic::tests {
       assert::is_false(items.contains(-1));
     }
     
+    void test_method_(convert_all) {
+      auto items = list {84, 42, 21};
+      collection_assert::are_equal({"84", "42", "21"}, items.convert_all<string>([](auto n) {return string::format("{}", n);}));
+    }
+    
     void test_method_(copy_to) {
       auto items = list {84, 42, 21};
       auto dest = array<int>(3);
