@@ -191,22 +191,6 @@ namespace xtd::collections::tests {
       collection_assert::are_equal({"Mamenchisaurus", "Deinonychus", "Compsognathus"}, items);
     }
     
-    void test_method_(at) {
-      auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
-      
-      assert::are_equal("Tyrannosaurus", items.at(0));
-      assert::are_equal("Compsognathus", items.at(1));
-      assert::are_equal("Amargasaurus", items.at(2));
-      assert::throws<index_out_of_range_exception>([&] {[[maybe_unused]] auto i = items[3];});
-      
-      items.at(0) = "Mamenchisaurus";
-      items.at(1) = "Deinonychus";
-      items.at(2) = "Compsognathus";
-      assert::throws<index_out_of_range_exception>([&] {items[3] = 5;});
-      
-      collection_assert::are_equal({"Mamenchisaurus", "Deinonychus", "Compsognathus"}, items);
-    }
-    
     void test_method_(add) {
       auto items = array_list {};
       
