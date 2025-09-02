@@ -254,6 +254,11 @@ namespace xtd::collections::tests {
       assert::is_false(items.contains(""));
     }
     
+    void test_method_(convert_all) {
+      auto items = array_list {84, 42, 21};
+      collection_assert::are_equal({"84", "42", "21"}, items.convert_all<string>([](auto n) {return string::format("{}", n);}));
+    }
+
     void test_method_(copy_to) {
       auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       auto dest = array<any_object>(3_z);
@@ -271,7 +276,7 @@ namespace xtd::collections::tests {
       dest = array<any_object>(3);
       assert::throws<argument_exception>([&] {items.copy_to(dest, 1);});
     }
-    
+
     void test_method_(equals_object) {
       auto items1 = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       auto items2 = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
