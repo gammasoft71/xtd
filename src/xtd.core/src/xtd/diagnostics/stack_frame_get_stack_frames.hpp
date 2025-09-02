@@ -41,7 +41,7 @@ inline auto xtd::diagnostics::stack_frame::get_stack_frames(const xtd::string& s
     for (auto starting_str : frames_to_skip)
       if (string {method}.starts_with(starting_str)) skip = true;
     if (skip) continue;
-    stack_frames.emplace_back(stack_frame(need_file_info ? file : "", need_file_info ? line : 0, method, need_file_info ? column : 0, offset));
+    stack_frames.add(stack_frame(need_file_info ? file : "", need_file_info ? line : 0, method, need_file_info ? column : 0, offset));
   }
   return stack_frames;
 }

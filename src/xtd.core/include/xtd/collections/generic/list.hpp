@@ -514,28 +514,6 @@ namespace xtd {
           }
         }
         
-        /// @brief Inserts a new element into the container directly before `pos`.
-        /// @param pos The iterator before which the new element will be constructed.
-        /// @param args arguments to forward to the constructor of the element.
-        /// @remarks The element is constructed through [std::allocator_traits::construct](https://en.cppreference.com/w/cpp/memory/allocator_traits/construct), which typically uses placement-new to construct the element in-place at a location provided by the container. However, if the required location has been occupied by an existing element, the inserted element is constructed at another location at first, and then move assigned into the required location.
-        /// @remarks The arguments `args...` are forwarded to the constructor as `std::forward<args_t>(args)....` `args...` may directly or indirectly refer to a value in the container.
-        /// @remarks If after the operation the new xtd::collections::generic::list::count() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
-        template<class ...args_t>
-        iterator emplace(const_iterator pos, args_t&&... args) {
-          ++data_->version;
-          return to_type_iterator(data_->items.emplace(to_const_base_type_iterator(pos), std::forward<args_t>(args)...));
-        }
-        
-        /// @brief Appends a new element to the end of the container. The element is constructed through [std::allocator_traits::construct](https://en.cppreference.com/w/cpp/memory/allocator_traits/construct), which typically uses placement-new to construct the element in-place at the location provided by the container. The arguments `args...` are forwarded to the constructor as `std::forward<Args>(args)...`.
-        /// @param args The arguments to forward to the constructor of the element.
-        /// @return A reference to the inserted element.
-        /// @remarks If after the operation the new xtd::collections::generic::list::count() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise only the xtd::collections::generic::list::end() iterator is invalidated.
-        template<class ...args_t>
-        reference emplace_back(args_t&&... args) {
-          ++data_->version;
-          return data_->items.emplace_back(std::forward<args_t>(args)...);
-        }
-        
         /// @brief Ensures that the capacity of this list is at least the specified `capacity`. If the current capacity is less than `capacity`, it is increased to at least the specified `capacity`.
         /// @param capacity The minimum capacity to ensure.
         /// @return The new capacity of this list.
@@ -551,31 +529,7 @@ namespace xtd {
             if (!helpers::equator<type_t> {}(self_[i], rhs[i])) return false;
           return data_->version == rhs.data_->version;
         }
-        
-        /// @brief Erases the specified elements from the container.
-        /// @param pos The iterator to the element to remove.
-        /// @return Iterator following the last removed element.
-        /// @remarks Removes the element at `pos`.
-        /// @remarks Iterators (including the xtd::collections::generic::list::end() iterator) and references to the elements at or after the point of the erase are invalidated.
-        /// @remarks The iterator `pos` must be valid and dereferenceable. Thus the xtd::collections::generic::list::end() iterator (which is valid, but is not dereferenceable) cannot be used as a value for `pos.
-        /// @remarks If `pos` refers to the last element, then thextd::collections::generic::list:: end() iterator is returned.
-        virtual iterator erase(const_iterator pos) {
-          ++data_->version;
-          return to_type_iterator(data_->items.erase(to_const_base_type_iterator(pos)));
-        }
-        /// @brief Erases the specified elements from the container.
-        /// @param pos The iterator to the element to remove.
-        /// @return Iterator following the last removed element.
-        /// @remarks Removes the elements in the range [`first`, `last`).
-        /// @remarks Iterators (including the xtd::collections::generic::list::end() iterator) and references to the elements at or after the point of the erase are invalidated.
-        /// @remarks The iterator `first` does not need to be dereferenceable if `first == last`: erasing an empty range is a no-op.
-        /// @remarks If `last == end()` prior to removal, then the updated xtd::collections::generic::list::end() iterator is returned.
-        /// @remarks If [`first`, `last`) is an empty range, then `last` is returned.
-        virtual iterator erase(const_iterator first, const_iterator last) {
-          ++data_->version;
-          return to_type_iterator(data_->items.erase(to_const_base_type_iterator(first), to_const_base_type_iterator(last)));
-        }
-        
+                
         /// @brief Determines whether the xtd::collections::generic::list <type_t> contains elements that match the conditions defined by the specified predicate.
         /// @param match The xtd::predicate <type_t> delegate that defines the conditions of the elements to search for.
         /// @return `true` if the xtd::collections::generic::list <type_t> contains one or more elements that match the conditions defined by the specified `predicate`; otherwise, `false`.

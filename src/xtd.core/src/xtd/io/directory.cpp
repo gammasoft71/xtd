@@ -281,7 +281,7 @@ date_time directory::get_last_write_time(const string& path) {
 xtd::array<string> directory::get_logical_drives() {
   auto logical_drives = list<string> {};
   auto drives = drive_info::get_drives();
-  std::for_each(drives.begin(), drives.end(), [&](auto drive) {logical_drives.emplace_back(drive.name());});
+  std::for_each(drives.begin(), drives.end(), [&](auto drive) {logical_drives.add(drive.name());});
   return logical_drives.to_array();
 }
 

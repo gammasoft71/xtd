@@ -83,7 +83,7 @@ bool thread_pool::queue_user_work_item(const wait_callback& callback, const any_
     if (static_data_.threads.count() == 0) initialize_min_threads();
     if (static_data_.thread_pool_items.count() == max_threads_) return false;
     if (static_data_.thread_pool_items.count() + 1 > static_data_.threads.count()) create_thread();
-    static_data_.thread_pool_items.emplace(static_data_.thread_pool_items.begin(), callback, state);
+    static_data_.thread_pool_items.insert(0, thread_pool_item {callback, state});
   }
   static_data_.semaphore.release();
   return true;
@@ -95,7 +95,7 @@ registered_wait_handle thread_pool::register_wait_for_single_object(wait_handle&
     if (static_data_.asynchronous_io_threads.count() == 0) initialize_min_asynchronous_io_threads();
     if (static_data_.thread_pool_asynchronous_io_items.count() == max_asynchronous_io_threads_) return result;
     if (static_data_.thread_pool_items.count() + 1 > static_data_.threads.count()) create_thread();
-    static_data_.thread_pool_asynchronous_io_items.emplace(static_data_.thread_pool_asynchronous_io_items.begin(), callback, state, wait_object, milliseconds_timeout_interval, execute_only_once);
+    static_data_.thread_pool_asynchronous_io_items.insert(0, thread_pool_asynchronous_io_item {callback, state, wait_object, milliseconds_timeout_interval, execute_only_once});
     result.item_ = reinterpret_cast<intptr>(&static_data_.thread_pool_asynchronous_io_items[static_data_.thread_pool_asynchronous_io_items.count() - 1]);
   }
   static_data_.asynchronous_io_semaphore.release();
@@ -159,7 +159,7 @@ void thread_pool::asynchronous_io_run() {
 }
 
 void thread_pool::create_thread() {
-  static_data_.threads.emplace_back(&thread_pool::run);
+  static_data_.threads.add(thread {&thread_pool::run});
   static_data_.threads[static_data_.threads.count() - 1].name("Thread Pool");
   static_data_.threads[static_data_.threads.count() - 1].is_background(true);
   static_data_.threads[static_data_.threads.count() - 1].is_thread_pool_thread(true);
@@ -167,7 +167,7 @@ void thread_pool::create_thread() {
 }
 
 void thread_pool::create_asynchronous_io_thread() {
-  static_data_.asynchronous_io_threads.emplace_back(&thread_pool::asynchronous_io_run);
+  static_data_.asynchronous_io_threads.add(thread {&thread_pool::asynchronous_io_run});
   static_data_.asynchronous_io_threads[static_data_.threads.count() - 1].name("Thread Pool");
   static_data_.asynchronous_io_threads[static_data_.threads.count() - 1].is_background(true);
   static_data_.asynchronous_io_threads[static_data_.threads.count() - 1].is_thread_pool_thread(true);

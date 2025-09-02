@@ -287,7 +287,7 @@ void graphics::draw_beziers(const pen& pen, const array<xtd::drawing::point>& po
 
 void graphics::draw_beziers(const pen& pen, const array<xtd::drawing::point_f>& points) {
   auto beziers_points = list<key_value_pair<float, float>> {};
-  std::for_each(points.begin(), points.end(), [&](auto pt) {beziers_points.emplace_back(to_pixels(pt.x), to_pixels(pt.y));});
+  std::for_each(points.begin(), points.end(), [&](auto pt) {beziers_points.add({to_pixels(pt.x), to_pixels(pt.y)});});
   native::graphics::draw_beziers(handle(), pen.handle(), beziers_points.to_array());
 }
 
@@ -307,7 +307,7 @@ void graphics::draw_closed_curve(const pen& pen, const array<xtd::drawing::point
 
 void graphics::draw_closed_curve(const pen& pen, const array<xtd::drawing::point_f>& points, float tension) {
   auto closed_curve_points = list<key_value_pair<float, float>> {};
-  std::for_each(points.begin(), points.end(), [&](auto pt) {closed_curve_points.emplace_back(to_pixels(pt.x), to_pixels(pt.y));});
+  std::for_each(points.begin(), points.end(), [&](auto pt) {closed_curve_points.add({to_pixels(pt.x), to_pixels(pt.y)});});
   native::graphics::draw_closed_curve(handle(), pen.handle(), closed_curve_points.to_array(), tension);
 }
 
@@ -345,7 +345,7 @@ void graphics::draw_curve(const pen& pen, const array<xtd::drawing::point_f>& po
   if (offset + number_of_segments > points.size() || number_of_segments == 0) throw_helper::throws(exception_case::argument);
   auto curve_points = list<key_value_pair<float, float>> {};
   for (auto index = 0_z; index < number_of_segments; ++index)
-    curve_points.emplace_back(to_pixels(points[offset + index].x), to_pixels(points[offset + index].y));
+    curve_points.add({to_pixels(points[offset + index].x), to_pixels(points[offset + index].y)});
   native::graphics::draw_curve(handle(), pen.handle(), curve_points.to_array(), tension);
 }
 
@@ -522,7 +522,7 @@ void graphics::draw_lines(const xtd::drawing::pen& pen, const array<xtd::drawing
 
 void graphics::draw_lines(const xtd::drawing::pen& pen, const array<xtd::drawing::point_f>& points) {
   auto line_points = list<key_value_pair<float, float>> {};
-  std::for_each(points.begin(), points.end(), [&](auto pt) {line_points.emplace_back(to_pixels(pt.x), to_pixels(pt.y));});
+  std::for_each(points.begin(), points.end(), [&](auto pt) {line_points.add({to_pixels(pt.x), to_pixels(pt.y)});});
   native::graphics::draw_lines(handle(), pen.handle(), line_points.to_array());
 }
 
@@ -557,7 +557,7 @@ void graphics::draw_polygon(const xtd::drawing::pen& pen, const array<xtd::drawi
 
 void graphics::draw_polygon(const xtd::drawing::pen& pen, const array<xtd::drawing::point_f>& points) {
   auto line_points = list<key_value_pair<float, float>> {};
-  std::for_each(points.begin(), points.end(), [&](auto pt) {line_points.emplace_back(to_pixels(pt.x), to_pixels(pt.y));});
+  std::for_each(points.begin(), points.end(), [&](auto pt) {line_points.add({to_pixels(pt.x), to_pixels(pt.y)});});
   native::graphics::draw_polygon(handle(), pen.handle(), line_points.to_array());
 }
 
@@ -602,7 +602,7 @@ void graphics::draw_rectangles(const xtd::drawing::pen& pen, const array<xtd::dr
 
 void graphics::draw_rectangles(const xtd::drawing::pen& pen, const array<xtd::drawing::rectangle_f>& rects) {
   auto rectangles = list<std::tuple<float, float, float, float>> {};
-  std::for_each(rects.begin(), rects.end(), [&](auto rect) {rectangles.emplace_back(to_pixels(rect.x), to_pixels(rect.y), to_pixels(rect.width), to_pixels(rect.height));});
+  std::for_each(rects.begin(), rects.end(), [&](auto rect) {rectangles.add({to_pixels(rect.x), to_pixels(rect.y), to_pixels(rect.width), to_pixels(rect.height)});});
   native::graphics::draw_rectangles(handle(), pen.handle(), rectangles.to_array());
 }
 
@@ -692,7 +692,7 @@ void graphics::fill_closed_curve(const xtd::drawing::brush& brush, const array<x
 
 void graphics::fill_closed_curve(const xtd::drawing::brush& brush, const array<xtd::drawing::point_f>& points, xtd::drawing::drawing_2d::fill_mode fill_mode, float tension) {
   auto closed_curve_points = list<key_value_pair<float, float>> {};
-  std::for_each(points.begin(), points.end(), [&](auto pt) {closed_curve_points.emplace_back(to_pixels(pt.x), to_pixels(pt.y));});
+  std::for_each(points.begin(), points.end(), [&](auto pt) {closed_curve_points.add({to_pixels(pt.x), to_pixels(pt.y)});});
   native::graphics::fill_closed_curve(handle(), brush.handle(), closed_curve_points.to_array(), static_cast<int32>(fill_mode), tension);
 }
 
@@ -752,7 +752,7 @@ void graphics::fill_polygon(const xtd::drawing::brush& brush, const array<xtd::d
 
 void graphics::fill_polygon(const xtd::drawing::brush& brush, const array<xtd::drawing::point_f>& points, xtd::drawing::drawing_2d::fill_mode fill_mode) {
   auto line_points = list<key_value_pair<float, float>> {};
-  std::for_each(points.begin(), points.end(), [&](auto pt) {line_points.emplace_back(to_pixels(pt.x), to_pixels(pt.y));});
+  std::for_each(points.begin(), points.end(), [&](auto pt) {line_points.add({to_pixels(pt.x), to_pixels(pt.y)});});
   native::graphics::fill_polygon(handle(), brush.handle(), line_points.to_array(), static_cast<int32>(fill_mode));
 }
 
@@ -781,7 +781,7 @@ void graphics::fill_rectangles(const xtd::drawing::brush& brush, const array<xtd
 
 void graphics::fill_rectangles(const xtd::drawing::brush& brush, const array<xtd::drawing::rectangle_f>& rects) {
   auto rectangles = list<std::tuple<float, float, float, float>> {};
-  std::for_each(rects.begin(), rects.end(), [&](auto rect) {rectangles.emplace_back(to_pixels(rect.x), to_pixels(rect.y), to_pixels(rect.width), to_pixels(rect.height));});
+  std::for_each(rects.begin(), rects.end(), [&](auto rect) {rectangles.add({to_pixels(rect.x), to_pixels(rect.y), to_pixels(rect.width), to_pixels(rect.height)});});
   native::graphics::fill_rectangles(handle(), brush.handle(), rectangles.to_array());
 }
 

@@ -102,7 +102,7 @@ void main_form::on_message_key_down(const xtd::forms::key_event_args& e) {
   key_control->key_data(string::format("{}", e.key_data()));
   key_control->key_value(string::format("{0} (0x{0:X4})", e.key_value()));
   key_control->key_modfiers(string::format("{}", e.modifiers()));
-  key_controls_.emplace_back(key_control);
+  key_controls_.add(key_control);
   handled_key_press_ = false; // Prevents receive more than one WM_CHAR event.
   main_panel_.resume_layout();
 }
@@ -114,7 +114,7 @@ void main_form::on_message_key_press(const xtd::forms::key_press_event_args& e) 
   key_press_control->parent(main_panel_);
   key_press_control->dock(xtd::forms::dock_style::top);
   key_press_control->key_char(string::format("{} (0x{:X2})", e.key_char(), static_cast<int>(e.key_char())));
-  key_controls_.emplace_back(key_press_control);
+  key_controls_.add(key_press_control);
   handled_key_press_ = true; // Prevents receive more than one WM_CHAR event.
   main_panel_.resume_layout();
 }
@@ -130,7 +130,7 @@ void main_form::on_message_key_up(const xtd::forms::key_event_args& e) {
   key_control->key_value(string::format("{0} (0x{0:X4})", e.key_value()));
   key_control->key_modfiers(string::format("{}", e.modifiers()));
   key_control->line_visible(e.modifiers() == keys::none);
-  key_controls_.emplace_back(key_control);
+  key_controls_.add(key_control);
   main_panel_.resume_layout();
 }
 

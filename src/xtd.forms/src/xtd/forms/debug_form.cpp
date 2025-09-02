@@ -6,7 +6,7 @@ using namespace xtd::forms;
 using namespace xtd::helpers;
 
 debug_form::~debug_form() {
-  debug::listeners().erase(std::find(debug::listeners().begin(), debug::listeners().end(), listener_));
+  debug::listeners().remove(listener_);
 }
 
 const trace_listener& debug_form::trace_listener() const noexcept {
