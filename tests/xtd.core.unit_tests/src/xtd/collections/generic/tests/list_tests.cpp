@@ -325,8 +325,11 @@ namespace xtd::collections::generic::tests {
       auto dest = array<int>(3);
       items.copy_to(dest, 0);
       collection_assert::are_equal({84, 42, 21}, dest);
-      
-      dest = array<int>(5);
+    }
+    
+    void test_method_(copy_to_with_index) {
+      auto items = list {84, 42, 21};
+      auto dest = array<int>(5);
       items.copy_to(dest, 2);
       collection_assert::are_equal({0, 0, 84, 42, 21}, dest);
       
@@ -336,6 +339,18 @@ namespace xtd::collections::generic::tests {
       
       dest = array<int>(3);
       assert::throws<argument_exception>([&] {items.copy_to(dest, 1);});
+    }
+    
+    void test_method_(copy_to_with_index_and_count) {
+      auto items = list {84, 42, 21, 33};
+      auto dest = array<int>(5);
+      items.copy_to(3, dest, 2, 1);
+      collection_assert::are_equal({0, 0, 33, 0, 0}, dest);
+
+      dest = array<int>(3);
+      assert::throws<argument_exception>([&] {items.copy_to(0, dest, 0, 4);});
+      assert::throws<argument_exception>([&] {items.copy_to(1, dest, 0, 4);});
+      assert::throws<argument_exception>([&] {items.copy_to(1, dest, 1, 3);});
     }
     
     void test_method_(equals_object) {

@@ -264,17 +264,32 @@ namespace xtd::collections::tests {
       auto dest = array<any_object>(3_z);
       items.copy_to(dest, 0);
       collection_assert::are_equal({"Tyrannosaurus", "Compsognathus", "Amargasaurus"}, dest);
-      
-      dest = array<any_object>(5);
+    }
+    
+    void test_method_(copy_to_with_index) {
+      auto items = array_list {84, 42, 21};
+      auto dest = array<any_object>(5);
       items.copy_to(dest, 2);
-      collection_assert::are_equal(array<any_object> {any_object {}, any_object {}, "Tyrannosaurus", "Compsognathus", "Amargasaurus"}, dest);
+      collection_assert::are_equal(array<any_object> {any_object {}, any_object {}, 84, 42, 21}, dest);
       
       dest = array<any_object>(7);
       items.copy_to(dest, 2);
-      collection_assert::are_equal(array<any_object> {any_object {}, any_object {}, "Tyrannosaurus", "Compsognathus", "Amargasaurus", any_object {}, any_object {}}, dest);
+      collection_assert::are_equal(array<any_object> {any_object {}, any_object {}, 84, 42, 21, any_object {}, any_object {}}, dest);
       
       dest = array<any_object>(3);
       assert::throws<argument_exception>([&] {items.copy_to(dest, 1);});
+    }
+    
+    void test_method_(copy_to_with_index_and_count) {
+      auto items = array_list {84, 42, 21, 33};
+      auto dest = array<any_object>(5);
+      items.copy_to(3, dest, 2, 1);
+      collection_assert::are_equal(array<any_object> {any_object {}, any_object {}, 33, any_object {}, any_object {}}, dest);
+      
+      dest = array<any_object>(3);
+      assert::throws<argument_exception>([&] {items.copy_to(0, dest, 0, 4);});
+      assert::throws<argument_exception>([&] {items.copy_to(1, dest, 0, 4);});
+      assert::throws<argument_exception>([&] {items.copy_to(1, dest, 1, 3);});
     }
 
     void test_method_(equals_object) {
