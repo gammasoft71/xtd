@@ -676,8 +676,7 @@ namespace xtd {
         xtd::size find_last_index(xtd::size start_index, xtd::size count, predicate_t match) const {
           if (count > self_.count() || start_index - count + 1 > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           auto predicate = xtd::predicate<const type_t&> {match};
-          auto end_index = start_index - count;
-          for (auto index = start_index; index > end_index; --index)
+          for (auto index = start_index; index > start_index - count; --index)
             if (predicate(self_[index])) return index;
           return npos;
         }
@@ -696,10 +695,6 @@ namespace xtd {
           for (const auto& item : self_)
             apply_action(item);
         }
-        
-        /// @brief Returns the allocator associated with the container.
-        /// @return The associated allocator.
-        virtual allocator_type get_allocator() const {return data_->items.get_allocator();}
         
         /// @brief Returns the underlying base type.
         /// @return The underlying base type.
@@ -729,7 +724,6 @@ namespace xtd {
         /// @remarks This method is an O(n) operation, where n is count.
         list get_range(size_type index, size_type count) {
           if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
-          
           return list<type_t> {data_->items.begin() + index, data_->items.begin() + index + count};
         }
         
@@ -761,71 +755,6 @@ namespace xtd {
           for (auto i = index; i < index + count; ++i)
             if (helpers::equator<type_t> {}(self_[i], value)) return i;
           return npos;
-        }
-        
-        /// @brief Inserts elements at the specified location in the container.
-        /// @param pos the iterator before which the content will be inserted (pos may be the end() iterator).
-        /// @param value The element value to insert.
-        /// @return The iterator pointing to the inserted `value`.
-        /// @remarks Inserts `value` before pos.
-        /// @remarks If after the operation the new xtd::collections::generic::list::count() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
-        virtual iterator insert(const_iterator pos, const type_t& value) {
-          ++data_->version;
-          return to_type_iterator(data_->items.insert(to_const_base_type_iterator(pos), value));
-        }
-        /// @brief Inserts elements at the specified location in the container.
-        /// @param pos the iterator before which the content will be inserted (pos may be the end() iterator).
-        /// @param value The element value to insert.
-        /// @return The iterator pointing to the inserted `value`.
-        /// @remarks Inserts `value` before pos.
-        /// @remarks If after the operation the new xtd::collections::generic::list::count() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
-        virtual iterator insert(const_iterator pos, type_t&& value) {
-          ++data_->version;
-          return to_type_iterator(data_->items.insert(to_const_base_type_iterator(pos), std::move(value)));
-        }
-        /// @brief Inserts elements at the specified location in the container.
-        /// @param pos the iterator before which the content will be inserted (pos may be the end() iterator).
-        /// @param count The number of elements to insert.
-        /// @param value The element value to insert.
-        /// @return The iterator pointing to the first element inserted, or `pos` if `count == 0`.
-        /// @remarks Iterator pointing to the first element inserted, or `pos` if `count == 0`.
-        /// @remarks If after the operation the new xtd::collections::generic::list::count() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
-        virtual iterator insert(const_iterator pos, size_type count, const type_t& value) {
-          ++data_->version;
-          return to_type_iterator(data_->items.insert(to_const_base_type_iterator(pos), count, value));
-        }
-        /// @brief Inserts elements at the specified location in the container.
-        /// @param pos the iterator before which the content will be inserted (pos may be the end() iterator).
-        /// @param count The number of elements to insert.
-        /// @param value The element value to insert.
-        /// @return The iterator pointing to the first element inserted, or `pos` if `count == 0`.
-        /// @remarks Iterator pointing to the first element inserted, or `pos` if `count == 0`.
-        /// @remarks If after the operation the new xtd::collections::generic::list::count() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
-        virtual iterator insert(const_iterator pos, size_type count, type_t&& value) {
-          ++data_->version;
-          return to_type_iterator(data_->items.insert(to_const_base_type_iterator(pos), count, std::move(value)));
-        }
-        /// @brief Inserts elements at the specified location in the container.
-        /// @param first The first range of elements to insert, cannot be iterators into container for which insert is called
-        /// @param last The last range of elements to insert, cannot be iterators into container for which insert is called
-        /// @return The iterator pointing to the first element inserted, or `pos` if `first == last`.
-        /// @remarks Inserts elements from range [`first`, `last`) before `pos`.
-        /// @remarks If `first` and `last` are iterators into `*this`, the behavior is undefined.
-        /// @remarks If after the operation the new xtd::collections::generic::list::count() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
-        template<class input_iterator_t>
-        iterator insert(const_iterator pos, input_iterator_t first, input_iterator_t last) {
-          ++data_->version;
-          return to_type_iterator(data_->items.insert(to_const_base_type_iterator(pos), first, last));
-        }
-        /// @brief Inserts elements at the specified location in the container.
-        /// @param pos the iterator before which the content will be inserted (pos may be the end() iterator).
-        /// @param items The initializer list to insert the values from.
-        /// @return The iterator pointing to the first element inserted, or `pos` if `items` is empty.
-        /// @remarks Inserts `value` before pos.
-        /// @remarks Inserts elements from initializer list `items` before `pos`.
-        virtual iterator insert(const_iterator pos, const std::initializer_list<type_t>& items) {
-          ++data_->version;
-          return to_type_iterator(data_->items.insert(to_const_base_type_iterator(pos), items.begin(), items.end()));
         }
         
         /// @brief Inserts an element into the xtd::collections::generic::list <type_t> at the specified index.

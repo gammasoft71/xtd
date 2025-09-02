@@ -247,12 +247,12 @@ ip_address ip_address::parse(const string& str) {
   };
   
   block_scope_(list<string> address_parts = work_ip_string.split(':')) {
-    for (auto it = address_parts.begin(); it != address_parts.end(); ++it) {
+    for (auto it = address_parts.items().begin(); it != address_parts.items().end(); ++it) {
       if (it->empty()) {
         *it = "0";
-        auto fill_count = 8 - address_parts.count();
+        auto fill_count = 8 - address_parts.items().size();
         for (auto fc = 0_z; fc < fill_count; ++fc)
-          it = address_parts.insert(it, "0");
+          it = address_parts.items().insert(it, "0");
       }
     }
     

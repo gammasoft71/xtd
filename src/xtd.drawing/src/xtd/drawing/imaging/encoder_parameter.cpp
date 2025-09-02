@@ -13,7 +13,7 @@ namespace {
   template<class type_t>
   void add_bytes(list<byte>& bytes, type_t value) {
     auto value_bytes = bit_converter::get_bytes(value);
-    bytes.insert(bytes.end(), value_bytes.begin(), value_bytes.end());
+    bytes.insert_range(bytes.count(), value_bytes);
   }
 }
 
