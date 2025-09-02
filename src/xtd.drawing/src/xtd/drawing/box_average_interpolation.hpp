@@ -12,7 +12,7 @@ namespace {
   };
   
   inline void resample_box_precalculates(xtd::collections::generic::list<box_precalculate>& precalculates, xtd::int32 old_size) {
-    const auto new_size = static_cast<xtd::int32>(precalculates.size());
+    const auto new_size = static_cast<xtd::int32>(precalculates.count());
     if (old_size <= 0 || new_size == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
     
     auto value = 0;

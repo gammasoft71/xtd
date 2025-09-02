@@ -217,27 +217,6 @@ namespace xtd::tests {
       if (!environment::os_version().is_windows()) assert::does_not_throw([&] {[[maybe_unused]] auto v = *items.crend();});
     }
     
-    void test_method_(data) {
-      auto items = array {84, 42, 21};
-      
-      auto ptr = items.data();
-      assert::are_equal(84, *ptr);
-      assert::are_equal(42, *(ptr + 1));
-      assert::are_equal(21, *(ptr + 2));
-      
-      // Attempting to access a pointer that exceeds size() results in undefined behaviour.
-      //assert::throws<index_out_of_range_exception>([&]{[[maybe_unused]] auto i = *(ptr + 3);});
-      
-      *(ptr) = 63;
-      *(ptr + 1) = 31;
-      *(ptr + 2) = 10;
-      
-      // Attempting to access a pointer that exceeds size() results in undefined behaviour.
-      //assert::throws<index_out_of_range_exception>([&]{*(ptr + 3) = 5;});
-      
-      collection_assert::are_equal({63, 31, 10}, items);
-    }
-    
     void test_method_(empty) {
       assert::is_true(array<int> {}.empty());
       assert::is_false(array<int> {42}.empty());
@@ -255,33 +234,19 @@ namespace xtd::tests {
       assert::are_equal(0, *items.end());
     }
     
-    void test_method_(front_const) {
-      auto items = array {84, 42, 21};
-      assert::are_equal(84, items.front());
-      assert::throws<index_out_of_range_exception>([&] {list<int> {}.front();});
-    }
-    
-    void test_method_(front) {
-      auto items = array {84, 42, 21};
-      items.front() = 10;
-      assert::are_equal(10, items.front());
-      auto empty_items = array<int> {};
-      assert::throws<index_out_of_range_exception>([&] {empty_items.front() = 10;});
-    }
-    
     void test_method_(is_fixed_size) {
       // Is always true;
-      assert::is_true(array<int> {}.is_fixed_size());
+      assert::is_true(as<ilist<int>>(array<int> {}).is_fixed_size());
     }
     
     void test_method_(is_read_only) {
       // Is always false;
-      assert::is_false(array<int> {}.is_read_only());
+      assert::is_false(as<icollection<int>>(array<int> {}).is_read_only());
     }
     
     void test_method_(is_synchronized) {
       // Is always false;
-      assert::is_false(array<int> {}.is_synchronized());
+      assert::is_false(as<icollection<int>>(array<int> {}).is_synchronized());
     }
     
     void test_method_(items_const) {
@@ -329,10 +294,6 @@ namespace xtd::tests {
       assert::are_equal(50l, items.long_length());
     }
     
-    void test_method_(max_size) {
-      assert::are_equal(environment::os_version().is_linux() ? size_object::max_value / 8 : size_object::max_value / 4, array<int> {}.max_size());
-    }
-    
     void test_method_(rank) {
       assert::are_equal(1_z, array<int> {}.rank());
     }
@@ -359,12 +320,6 @@ namespace xtd::tests {
       assert::are_equal(3_z, items.size());
       items.resize(50);
       assert::are_equal(50_z, items.size());
-    }
-    
-    void test_method_(sync_root) {
-      auto a = array<int> {};
-      auto b = array<int> {};
-      assert::are_not_equal(a.sync_root(), b.sync_root());
     }
     
     void test_method_(at) {

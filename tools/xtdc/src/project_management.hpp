@@ -125,8 +125,8 @@ namespace xtdc_command {
       if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return operation_status::cmake_prefix_path_not_set;
       if (!xtd::io::file::exists(xtd::io::path::combine(xtd::io::directory::get_parent(path_).full_name(), "CMakeLists.txt"))) return operation_status::unknown_project;
       auto lines = xtd::io::file::read_all_lines(xtd::io::path::combine(xtd::io::directory::get_parent(path_).full_name(), "CMakeLists.txt"));
-      if (std::find_if(lines.begin(), lines.end(), [](const xtd::string & value) {return value.contains("find_package(xtd");}) != lines.end() && sdk != project_sdk::xtd) return operation_status::invalid_sdk_with_current_project;
-      if (std::find_if(lines.begin(), lines.end(), [](const xtd::string & value) {return value.contains("find_package(xtd");}) == lines.end() && sdk == project_sdk::xtd) return operation_status::invalid_sdk_with_current_project;
+      //if (std::find_if(lines.begin(), lines.end(), [](const xtd::string & value) {return value.contains("find_package(xtd");}) != lines.end() && sdk != project_sdk::xtd) return operation_status::invalid_sdk_with_current_project;
+      //if (std::find_if(lines.begin(), lines.end(), [](const xtd::string & value) {return value.contains("find_package(xtd");}) == lines.end() && sdk == project_sdk::xtd) return operation_status::invalid_sdk_with_current_project;
       
       lines.resize(lines.length(), xtd::string::format("{}({})", std::find_if(lines.begin(), lines.end(), [](const xtd::string & value) {return value.contains("find_package(xtd");}) != lines.end() ? "add_projects" : "add_subdirectory", xtd::io::path::get_file_name(path_)));
       std::map<project_type, xtd::action<const xtd::string&, project_sdk, project_language, bool>> {
@@ -268,7 +268,7 @@ namespace xtdc_command {
     
     xtd::array<xtd::string> targets() const {
       static xtd::collections::generic::list<xtd::string> targets;
-      if (targets.size() == 0)
+      if (targets.count() == 0)
         for (const auto& line : get_system_information())
           if (line.index_of("_BINARY_DIR:STATIC=") != xtd::string::npos)
             targets.push_back(line.substring(0, line.index_of("_BINARY_DIR:STATIC=")));
@@ -371,7 +371,7 @@ namespace xtdc_command {
     xtd::array<xtd::string> get_system_information() const {
       static xtd::collections::generic::list<xtd::string> system_information;
       static bool exception_throwed = false;
-      if (!exception_throwed && system_information.size() == 0) {
+      if (!exception_throwed && system_information.count() == 0) {
         if (!xtd::io::file::exists(xtd::io::path::combine(build_path(), "xtd_si.txt"))) {
           change_current_directory current_directory {build_path()};
           try {

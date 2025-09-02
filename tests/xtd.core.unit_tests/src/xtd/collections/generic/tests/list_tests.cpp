@@ -125,19 +125,6 @@ namespace xtd::collections::generic::tests {
       collection_assert::is_empty(bt);
     }
     
-    void test_method_(const_back) {
-      assert::are_equal(21, list {84, 42, 21}.back());
-      assert::throws<index_out_of_range_exception>([] {list<int> {}.back();});
-    }
-    
-    void test_method_(back) {
-      auto items = list {84, 42, 21};
-      items.back() = 5;
-      assert::are_equal(5, items.back());
-      auto empty_items = list<int> {};
-      assert::throws<index_out_of_range_exception>([&] {empty_items.back() = 5;});
-    }
-    
     void test_method_(begin) {
       auto items = list {84, 42, 21};
       assert::are_equal(84, *items.begin());
@@ -162,7 +149,7 @@ namespace xtd::collections::generic::tests {
       // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
       // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
       //assert::throws<argument_out_of_range_exception>([&] {*items.cend();});
-      assert::is_true(items.cend() == items.cbegin() + items.size());
+      assert::is_true(items.cend() == items.cbegin() + items.count());
     }
     
     void test_method_(count) {
@@ -176,91 +163,27 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(50_z, items.count());
     }
     
-    void test_method_(crbegin) {
-      auto items = list {84, 42, 21};
-      assert::are_equal(21, *items.crbegin());
-    }
-    
-    void test_method_(crend) {
-      auto items = list {84, 42, 21};
-      // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
-      // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
-      //assert::throws<argument_out_of_range_exception>([&] {*items.crend();});
-      assert::is_true(items.crend() == items.crbegin() + items.size());
-    }
-    
-    void test_method_(data) {
-      auto items = list {84, 42, 21};
-      
-      auto ptr = items.data();
-      assert::are_equal(84, *ptr);
-      assert::are_equal(42, *(ptr + 1));
-      assert::are_equal(21, *(ptr + 2));
-      
-      // Attempting to access a pointer that exceeds size() results in undefined behaviour.
-      //assert::are_equal(0, *(ptr + 3));
-      
-      *(ptr) = 63;
-      *(ptr + 1) = 31;
-      *(ptr + 2) = 10;
-      
-      // Attempting to access a pointer that exceeds size() results in undefined behaviour.
-      //*(ptr + 3) = 6;
-      
-      collection_assert::are_equal({63, 31, 10}, items);
-    }
-    
-    void test_method_(empty) {
-      assert::is_true(list<int> {}.empty());
-      assert::is_false(list<int> {42}.empty());
-      
-      auto items = list<int> {};
-      assert::is_true(items.empty());
-      items.capacity(42);
-      assert::is_true(items.empty());
-      items.resize(1);
-      assert::is_false(items.empty());
-      items.resize(0);
-      assert::is_true(items.empty());
-      items.push_back(42);
-      assert::is_false(items.empty());
-    }
-    
     void test_method_(end) {
       auto items = list {84, 42, 21};
       // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
       // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
       //assert::throws<argument_out_of_range_exception>([&] {*items.end();});
-      assert::is_true(items.end() == items.begin() + items.size());
-    }
-    
-    void test_method_(front_const) {
-      auto items = list {84, 42, 21};
-      assert::are_equal(84, items.front());
-      assert::throws<index_out_of_range_exception>([&] {list<int> {}.front();});
-    }
-    
-    void test_method_(front) {
-      auto items = list {84, 42, 21};
-      items.front() = 10;
-      assert::are_equal(10, items.front());
-      auto empty_items = list<int> {};
-      assert::throws<index_out_of_range_exception>([&] {empty_items.front() = 10;});
+      assert::is_true(items.end() == items.begin() + items.count());
     }
     
     void test_method_(is_fixed_size) {
       // Is always false;
-      assert::is_false(list<int> {}.is_fixed_size());
+      assert::is_false(as<ilist<int>>(list<int> {}).is_fixed_size());
     }
     
     void test_method_(is_read_only) {
       // Is always false;
-      assert::is_false(list<int> {}.is_read_only());
+      assert::is_false(as<icollection<int>>(list<int> {}).is_read_only());
     }
     
     void test_method_(is_synchronized) {
       // Is always false;
-      assert::is_false(list<int> {}.is_synchronized());
+      assert::is_false(as<icollection<int>>(list<int> {}).is_synchronized());
     }
     
     void test_method_(items_const) {
@@ -288,68 +211,6 @@ namespace xtd::collections::generic::tests {
       //inners[3] = 6;
       
       collection_assert::are_equal({63, 31, 10}, items);
-    }
-    
-    void test_method_(max_size) {
-      assert::is_not_zero(list<int> {}.max_size());
-    }
-    
-    void test_method_(rbegin) {
-      auto items = list {84, 42, 21};
-      assert::are_equal(21, *items.rbegin());
-    }
-    
-    void test_method_(rend) {
-      auto items = list {84, 42, 21};
-      // the rend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
-      // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
-      //assert::throws<argument_out_of_range_exception>([&] {*items.rend();});
-      assert::is_true(items.rend() == items.rbegin() + items.size());
-    }
-    
-    void test_method_(size) {
-      auto items = list<int> {};
-      assert::is_zero(items.size());
-      items.push_back(84);
-      items.push_back(42);
-      items.push_back(21);
-      assert::are_equal(3_z, items.size());
-      items.resize(50);
-      assert::are_equal(50_z, items.size());
-    }
-    
-    void test_method_(sync_root) {
-      if (environment::os_version().is_windows()) return;
-      auto a = list<int> {};
-      auto b = list<int> {};
-      assert::are_not_equal(a.sync_root(), b.sync_root());
-      
-      auto synchronized_items = list<int> {};
-      
-      delegate<void()> {[&] {
-          lock_(synchronized_items.sync_root()) {
-            synchronized_items.add(1);
-            synchronized_items.add(2);
-            synchronized_items.add(3);
-          }
-        }
-      }.begin_invoke();
-      threading::thread::sleep(5);
-      
-      delegate<void()> {[&] {
-          lock_(synchronized_items.sync_root()) {
-            synchronized_items.add(4);
-            synchronized_items.add(5);
-            synchronized_items.add(6);
-          }
-        }
-      }.begin_invoke();
-      threading::thread::sleep(15);
-      
-      lock_(synchronized_items.sync_root()) {
-        collection_assert::are_equal({1, 2, 3, 4, 5, 6}, synchronized_items);
-      }
-      threading::thread_pool::join_all();
     }
     
     void test_method_(add) {
@@ -449,7 +310,7 @@ namespace xtd::collections::generic::tests {
     void test_method_(clear) {
       auto items = list {84, 42, 21};
       items.clear();
-      assert::are_equal(0_z, items.size());
+      assert::are_equal(0_z, items.count());
     }
     
     void test_method_(contains) {

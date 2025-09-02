@@ -204,7 +204,7 @@ array<xtd::forms::screen> system_report::screens() noexcept {
 const system_report::special_folder_collection& system_report::special_folders() noexcept {
   static auto special_folders = enum_object<>::get_values<environment::special_folder>();
   static special_folder_collection folders;
-  if (!folders.empty()) return folders;
+  if (folders.count() != 0) return folders;
   std::for_each(special_folders.begin(), special_folders.end(), [&](auto value) {folders.emplace_back(enum_object<environment::special_folder>(value).to_string().replace("_", " ").to_title_case(), environment::get_folder_path(value));});
   return folders;
 }
@@ -219,7 +219,7 @@ xtd::diagnostics::stack_trace system_report::stack_trace(size_t skip_frames) noe
 
 const system_report::system_color_collection& system_report::system_colors() noexcept {
   static system_color_collection colors;
-  if (!colors.empty()) return colors;
+  if (colors.count() != 0) return colors;
   std::for_each(system_colors::get_colors().begin(), system_colors::get_colors().end(), [&](auto color) {colors.emplace_back(color.name().replace("_", " ").to_title_case(), drawing::color::from_argb(color.to_argb()));});
   return colors;
 }

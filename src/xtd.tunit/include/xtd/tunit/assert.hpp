@@ -363,7 +363,7 @@ namespace xtd {
       /// ```
       template<class value_t>
       static void is_empty(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (std::empty(value)) succeed(message, stack_frame);
+        if (empty(value)) succeed(message, stack_frame);
         else fail("collection <empty>", join_items(value), message, stack_frame);
       }
       
@@ -372,7 +372,7 @@ namespace xtd {
       static void is_empty(const std::initializer_list<value_t>& values, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_empty(values, xtd::string::empty_string, stack_frame);}
       template<class value_t>
       static void is_empty(const std::initializer_list<value_t>& values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (std::empty(values)) succeed(message, stack_frame);
+        if (empty(values)) succeed(message, stack_frame);
         else fail("collection <empty>", join_items(values), message, stack_frame);
       }
       static void is_empty(const char* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
@@ -724,7 +724,7 @@ namespace xtd {
       /// ```
       template<class value_t>
       static void is_not_empty(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (!std::empty(value)) succeed(message, stack_frame);
+        if (!empty(value)) succeed(message, stack_frame);
         else fail("collection not <empty>", "<empty>", message, stack_frame);
       }
       
@@ -733,7 +733,7 @@ namespace xtd {
       static void is_not_empty(const std::initializer_list<value_t>& values, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_empty(values, xtd::string::empty_string, stack_frame);}
       template<class value_t>
       static void is_not_empty(const std::initializer_list<value_t>& values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (!std::empty(values)) succeed(message, stack_frame);
+        if (!empty(values)) succeed(message, stack_frame);
         else fail("collection not <empty>", "<empty>", message, stack_frame);
       }
       static void is_not_empty(const char* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
@@ -1308,7 +1308,9 @@ namespace xtd {
       static void throws_any(const std::function<void()>& statement, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @}
       
-    private:
+    private:      
+      template<class collection_t>
+      static bool empty(const collection_t collection) {return collection.begin() == collection.end();}
     };
   }
 }

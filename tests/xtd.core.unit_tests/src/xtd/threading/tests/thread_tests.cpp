@@ -562,18 +562,18 @@ namespace xtd::threading::tests {
     void test_method_(join_all_with_vector) {
       list<thread> threads;
       threads.emplace_back(thread_start {[&] {thread::sleep(10);}});
-      threads.back().start();
+      threads[threads.count() - 1].start();
       threads.emplace_back(thread_start {[&] {thread::sleep(10);}});
-      threads.back().start();
+      threads[threads.count() - 1].start();
       assert::does_not_throw([&] {threading::thread::join_all(threads);});
     }
     
     void test_method_(join_all_with_vector_and_milliseconds_timeout) {
       list<thread> threads;
       threads.emplace_back(thread_start {[&] {thread::sleep(20);}});
-      threads.back().start();
+      threads[threads.count() - 1].start();
       threads.emplace_back(thread_start {[&] {thread::sleep(20);}});
-      threads.back().start();
+      threads[threads.count() - 1].start();
       assert::is_false(threading::thread::join_all(threads, 5));
       threading::thread::join_all(threads);
     }
@@ -581,9 +581,9 @@ namespace xtd::threading::tests {
     void test_method_(join_all_with_vector_and_timeout) {
       list<thread> threads;
       threads.emplace_back(thread_start {[&] {thread::sleep(10);}});
-      threads.back().start();
+      threads[threads.count() - 1].start();
       threads.emplace_back(thread_start {[&] {thread::sleep(10);}});
-      threads.back().start();
+      threads[threads.count() - 1].start();
       assert::is_false(threading::thread::join_all(threads, time_span::from_milliseconds(5.0)));
       threading::thread::join_all(threads);
     }

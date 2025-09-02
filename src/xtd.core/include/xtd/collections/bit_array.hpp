@@ -201,50 +201,6 @@ namespace xtd {
       /// @param value The number of elements contained in the xtd::collections::bit_array.
       /// @remarks xtd::collections::bit_array::length and xtd::collections::bit_array::count return the same value. xtd::collections::bit_array::length can be set to a specific value.
       void length(xtd::size value);
-      
-      /// @brief Gets a value indicating whether the xtd::collections::bit_array is read-only.
-      /// @return `true` if the xtd::collections::bit_array is read-only; otherwise, `false`.
-      /// @remarks A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the xtd::collections::generic::icollection <type_t> interface only supports addition and removal operations. For example, the xtd::collections::generic::icollection::is_read_only property of an array that is cast or converted to an xtd::collections::generic::icollection <type_t> object returns `true`, even though individual array elements can be modified.
-      bool is_read_only() const noexcept override;
-      
-      /// @brief Gets a value indicating whether access to the xtd::collections::generic::icollection <type_t> is synchronized (thread safe).
-      /// @return `true` if access to the xtd::collections::generic::icollection <type_t> is synchronized (thread safe); otherwise, `false`.
-      /// @remarks xtd::collections::generic::icollection::sync_root returns an object, which can be used to synchronize access to the xtd::collections::generic::icollection <type_t>.
-      /// @remarks Most collection classes in the xtd::collections namespace also implement a `synchronized` method, which provides a synchronized wrapper around the underlying collection.
-      /// @remarks Enumerating through a collection is intrinsically not a thread-safe procedure. Even when a collection is synchronized, other threads can still modify the collection, which causes the enumerator to throw an exception. To guarantee thread safety during enumeration, you can either lock the collection during the entire enumeration or catch the exceptions resulting from changes made by other threads.
-      /// @remarks The following code example shows how to lock the collection using the xtd::collections::generic::icollection::sync_root property during the entire enumeration.
-      /// @code
-      /// icollection& my_collection = some_collection;
-      /// lock_(my_collection.sync_root()) {
-      ///   for (auto item : my_collection) {
-      ///     // Insert your code here.
-      ///   }
-      /// }
-      /// @endcode
-      bool is_synchronized() const noexcept override;
-      
-      /// @brief Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollection <type_t>.
-      /// @return An object that can be used to synchronize access to the the xtd::collections::generic::icollection <type_t>.
-      /// @remarks For collections whose underlying store is not publicly available, the expected implementation is to return the current instance. Note that the pointer to the current instance might not be sufficient for collections that wrap other collections; those should return the underlying collection's `sync_root` property.
-      /// @remarks Most collection classes in the xts::.collections namespace also implement a `synchronized` method, which provides a synchronized wrapper around the underlying collection. However, derived classes can provide their own synchronized version of the collection using the xtd::collections::generic::icollection::sync_root property. The synchronizing code must perform operations on the xtd::collections::generic::icollection::sync_root property of the collection, not directly on the collection. This ensures proper operation of collections that are derived from other objects. Specifically, it maintains proper synchronization with other threads that might be simultaneously modifying the collection instance.
-      /// @remarks In the absence of a `synchronized` method on a collection, the expected usage for the xtd::collections::generic::icollection::sync_root looks as follows:
-      /// @code
-      /// icollection& my_collection = some_collection;
-      /// lock_(my_collection.sync_root()) {
-      ///   // Some operation on the collection, which is now thread safe.
-      /// }
-      /// @encode
-      /// @remarks Enumerating through a collection is intrinsically not a thread-safe procedure. Even when a collection is synchronized, other threads can still modify the collection, which causes the enumerator to throw an exception. To guarantee thread safety during enumeration, you can either lock the collection during the entire enumeration or catch the exceptions resulting from changes made by other threads.
-      /// @remarks The following code example shows how to lock the collection using the xtd::collections::generic::icollection::sync_root property during the entire enumeration.
-      /// @code
-      /// icollection& my_collection = some_collection;
-      /// lock_(my_collection.sync_root()) {
-      ///   for (auto item : my_collection) {
-      ///     // Insert your code here.
-      ///   }
-      /// }
-      /// @endcode
-      const object& sync_root() const noexcept override;
       /// @}
       
       /// @name Public Methods
@@ -410,7 +366,11 @@ namespace xtd {
       bit_array& operator <<=(xtd::size count) noexcept;
       /// @}
       
-    private:
+    private:      
+      bool is_read_only() const noexcept override;
+      bool is_synchronized() const noexcept override;
+      const object& sync_root() const noexcept override;
+
       void add(const bool&) override;
       void clear() override;
       bool contains(const bool&) const noexcept override;

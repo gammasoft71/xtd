@@ -116,7 +116,7 @@ lcd_label& lcd_label::dot_matrix_style(forms::dot_matrix_style value) {
 }
 
 int32 lcd_label::thickness() const noexcept {
-  return data_->thickness.value_or(data_->digits.size() ? data_->digits[0]->thickness_digit() : 1);
+  return data_->thickness.value_or(data_->digits.count() ? data_->digits[0]->thickness_digit() : 1);
 }
 
 lcd_label& lcd_label::thickness(int32 value) {
@@ -130,16 +130,16 @@ control& lcd_label::text(const xtd::string& value) {
   if (text() == value) return *this;
   if (is_handle_created()) suspend_layout();
   auto str = convert_string::to_wstring(value);
-  if (str.size() < data_->digits.size()) {
-    for (auto index = data_->digits.size(); index < str.size(); ++index) {
+  if (str.size() < data_->digits.count()) {
+    for (auto index = data_->digits.count(); index < str.size(); ++index) {
       dynamic_cast<control*>(data_->digits[index].get())->mouse_down -= {*this, &lcd_label::on_digit_mouse_down};
       dynamic_cast<control*>(data_->digits[index].get())->mouse_move -= {*this, &lcd_label::on_digit_mouse_move};
       dynamic_cast<control*>(data_->digits[index].get())->mouse_up -= {*this, &lcd_label::on_digit_mouse_up};
     }
     data_->digits.erase(data_->digits.begin() + str.size(), data_->digits.end());
   }
-  if (str.size() > data_->digits.size())
-    for (auto index = data_->digits.size(); index < str.size(); ++index) {
+  if (str.size() > data_->digits.count())
+    for (auto index = data_->digits.count(); index < str.size(); ++index) {
       switch (data_->lcd_style) {
         case lcd_style::seven_segment_display: data_->digits.push_back(xtd::new_sptr<seven_segment_display_digit>()); break;
         case lcd_style::nine_segment_display: data_->digits.push_back(xtd::new_sptr<nine_segment_display_digit>()); break;
@@ -148,12 +148,12 @@ control& lcd_label::text(const xtd::string& value) {
         case lcd_style::dot_matrix_display: data_->digits.push_back(xtd::new_sptr<dot_matrix_display_digit>()); break;
         default: throw_helper::throws(exception_case::argument, "lcd_style invalid"_t);
       }
-      dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->parent(*this);
-      dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->double_buffered(double_buffered());
-      dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->click += {*this, &lcd_label::on_digit_click};
-      dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->mouse_down += {*this, &lcd_label::on_digit_mouse_down};
-      dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->mouse_move += {*this, &lcd_label::on_digit_mouse_move};
-      dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->mouse_up += {*this, &lcd_label::on_digit_mouse_up};
+      dynamic_cast<control*>(data_->digits[data_->digits.count() - 1].get())->parent(*this);
+      dynamic_cast<control*>(data_->digits[data_->digits.count() - 1].get())->double_buffered(double_buffered());
+      dynamic_cast<control*>(data_->digits[data_->digits.count() - 1].get())->click += {*this, &lcd_label::on_digit_click};
+      dynamic_cast<control*>(data_->digits[data_->digits.count() - 1].get())->mouse_down += {*this, &lcd_label::on_digit_mouse_down};
+      dynamic_cast<control*>(data_->digits[data_->digits.count() - 1].get())->mouse_move += {*this, &lcd_label::on_digit_mouse_move};
+      dynamic_cast<control*>(data_->digits[data_->digits.count() - 1].get())->mouse_up += {*this, &lcd_label::on_digit_mouse_up};
     }
   for (auto index = 0_z; index < str.size(); ++index)
     data_->digits[index]->character(str[index]);
@@ -304,8 +304,8 @@ xtd::uptr<xtd::object> lcd_label::clone() const {
 }
 
 drawing::size lcd_label::measure_control() const noexcept {
-  if (data_->digits.size() == 0) return {0, size().height};
-  return drawing::size((dynamic_cast<control*>(data_->digits[0].get())->width() - 2 + digit_spacing()) * static_cast<int32>(data_->digits.size()) - digit_spacing() + 2, size().height);
+  if (data_->digits.count() == 0) return {0, size().height};
+  return drawing::size((dynamic_cast<control*>(data_->digits[0].get())->width() - 2 + digit_spacing()) * static_cast<int32>(data_->digits.count()) - digit_spacing() + 2, size().height);
 }
 
 void lcd_label::on_back_color_changed(const event_args& e) {

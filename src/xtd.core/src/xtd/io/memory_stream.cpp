@@ -41,7 +41,7 @@ void memory_stream::capacity(size value) {
 
 size memory_stream::length() const {
   if (data_->static_buffer) return data_->static_buffer->size();
-  return data_->dynamic_buffer.size();
+  return data_->dynamic_buffer.count();
 }
 
 size memory_stream::position() const {
@@ -121,7 +121,7 @@ xtd::byte memory_stream::abstract_read_byte_unchecked() {
 
 void memory_stream::abstract_write_byte_unchecked(xtd::byte b) {
   if (data_->static_buffer)(*data_->static_buffer)[data_->position] = b;
-  else if (data_->position < data_->dynamic_buffer.size()) data_->dynamic_buffer[data_->position] = b;
+  else if (data_->position < data_->dynamic_buffer.count()) data_->dynamic_buffer[data_->position] = b;
   else data_->dynamic_buffer.add(b);
   data_->position += 1;
 }

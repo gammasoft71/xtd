@@ -50,8 +50,8 @@ namespace {
     credits_item_panel& names(const list<string>& names) {
       if (names_ == names) return *this;
       names_ = names;
-      names_label_.text(names_.size() ? names_[0] : "");
-      for (auto index = 1_z; index < names_.size(); ++index)
+      names_label_.text(names_.count() ? names_[0] : "");
+      for (auto index = 1_z; index < names_.count(); ++index)
         names_label_.text(string::format("{}{}{}", names_label_.text(), environment::new_line(), names_[index]));
       height(names_label_.height());
       return *this;

@@ -325,7 +325,7 @@ const style_sheet::style_sheets_t& style_sheet::style_sheets() noexcept {
 }
 
 const style_sheet::style_sheet_names_t& style_sheet::style_sheet_names() noexcept {
-  if (!style_sheet_names_.empty()) return style_sheet_names_;
+  if (style_sheet_names_.count() != 0) return style_sheet_names_;
   
   for (auto theme_dir : directory::enumerate_directories(environment::get_folder_path(environment::special_folder::xtd_themes))) {
     if (!file::exists(path::combine(theme_dir, "theme.css"))) continue;
@@ -1171,7 +1171,7 @@ bool style_sheet::try_parse_linear_gradient(const string& text, background_image
     } else if (try_parse_color(argument, gradient_color))
       colors.push_back(gradient_color);
   }
-  if (colors.size() < 2) return false;
+  if (colors.count() < 2) return false;
   result = background_image(style_sheets::image_type::linear_gradient, colors, angle == -1 ? 180 : angle);
   return true;
 }

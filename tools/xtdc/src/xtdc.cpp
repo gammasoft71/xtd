@@ -520,7 +520,7 @@ namespace xtdc_command {
         case operation_status::cmake_prefix_path_not_set: write_line_error("Set your CMAKE_PREFIX_PATH environment variable to the Qt installation prefix! Add project aborted."); break;
         case operation_status::invalid_language: write_line_error("The language param not valid with sdk param! Add project aborted."); break;
         case operation_status::invalid_sdk: write_line_error("The sdk param not valid with type param! Add project aborted."); break;
-        case operation_status::invalid_sdk_with_current_project: write_line_error("The sdk param not valid with current project sdk! Add project aborted."); break;
+        //case operation_status::invalid_sdk_with_current_project: write_line_error("The sdk param not valid with current project sdk! Add project aborted."); break;
         case operation_status::unknown_project: write_line_error(xtd::string::format("Parent directory \"{}\", is not a known project! Add project aborted.", xtd::io::directory::get_parent(path).full_name())); break;
         default: write_line_error("\n** ADD FAILED **\n\n"); break;
       }
@@ -832,14 +832,14 @@ namespace xtdc_command {
     }
     
     static bool process_add_arguments(const list<string>& args, bool& show_help, string& type, string& name, string& path, string& sdk, string& invalid_option) {
-      for (auto i = 1_z; i < args.size(); i += 1) {
+      for (auto i = 1_z; i < args.count(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
         else if (args[i] == "-n" || args[i] == "--name") {
-          if (i + 1 >= args.size()) return false;
+          if (i + 1 >= args.count()) return false;
           name = args[++i];
         } else if (args[i] == "-s" || args[i] == "--sdk") {
-          if (i + 1 >= args.size()) return false;
+          if (i + 1 >= args.count()) return false;
           sdk = args[++i];
         } else if (args[i].starts_with('-')) {
           invalid_option = args[i];
@@ -855,7 +855,7 @@ namespace xtdc_command {
     }
     
     static bool process_build_arguments(const list<string>& args, bool& show_help, bool& clean_first, bool& release, string& target, string& path, string& invalid_option) {
-      for (auto i = 1_z; i < args.size(); i += 1) {
+      for (auto i = 1_z; i < args.count(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
         else if (args[i] == "-c" || args[i] == "--clean-first")
@@ -877,7 +877,7 @@ namespace xtdc_command {
     }
     
     static bool process_clean_arguments(const list<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
-      for (auto i = 1_z; i < args.size(); i += 1) {
+      for (auto i = 1_z; i < args.count(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
         else if (args[i] == "-d" || args[i] == "--debug")
@@ -895,14 +895,14 @@ namespace xtdc_command {
     }
     
     static bool process_generate_arguments(const list<string>& args, bool& show_help, string& type, string& name, string& path, string& sdk, string& invalid_option) {
-      for (auto i = 1_z; i < args.size(); i += 1) {
+      for (auto i = 1_z; i < args.count(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
         else if (args[i] == "-n" || args[i] == "--name") {
-          if (i + 1 >= args.size()) return false;
+          if (i + 1 >= args.count()) return false;
           name = args[++i];
         } else if (args[i] == "-s" || args[i] == "--sdk") {
-          if (i + 1 >= args.size()) return false;
+          if (i + 1 >= args.count()) return false;
           sdk = args[++i];
         } else if (args[i].starts_with('-')) {
           invalid_option = args[i];
@@ -918,7 +918,7 @@ namespace xtdc_command {
     }
     
     static bool process_install_arguments(const list<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
-      for (auto i = 1_z; i < args.size(); i += 1) {
+      for (auto i = 1_z; i < args.count(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
         else if (args[i] == "-d" || args[i] == "--debug")
@@ -936,7 +936,7 @@ namespace xtdc_command {
     }
     
     static bool process_open_arguments(const list<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
-      for (auto i = 1_z; i < args.size(); i += 1) {
+      for (auto i = 1_z; i < args.count(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
         else if (args[i] == "-d" || args[i] == "--debug")
@@ -954,7 +954,7 @@ namespace xtdc_command {
     }
     
     static bool process_update_arguments(const list<string>& args, bool& show_help, string& target, string& path, string& invalid_option) {
-      for (auto i = 1_z; i < args.size(); i += 1) {
+      for (auto i = 1_z; i < args.count(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
         else if (args[i] == "-t" || args[i] == "--target")
@@ -970,7 +970,7 @@ namespace xtdc_command {
     }
     
     static bool process_run_arguments(const list<string>& args, bool& show_help, bool& release, bool& no_wait, string& target, string& path, string& invalid_option) {
-      for (auto i = 1_z; i < args.size(); i += 1) {
+      for (auto i = 1_z; i < args.count(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
         else if (args[i] == "-d" || args[i] == "--debug")
@@ -992,7 +992,7 @@ namespace xtdc_command {
     }
     
     static bool process_targets_arguments(const list<string>& args, bool& show_help, string& path, string& invalid_option) {
-      for (auto i = 1_z; i < args.size(); i += 1) {
+      for (auto i = 1_z; i < args.count(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
         else if (path.empty())
@@ -1006,7 +1006,7 @@ namespace xtdc_command {
     }
     
     static bool process_test_arguments(const list<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
-      for (auto i = 1_z; i < args.size(); i += 1) {
+      for (auto i = 1_z; i < args.count(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
         else if (args[i] == "-d" || args[i] == "--debug")
@@ -1024,7 +1024,7 @@ namespace xtdc_command {
     }
     
     static bool process_uninstall_arguments(const list<string>& args, bool& show_help, bool& release, string& path, string& invalid_option) {
-      for (auto i = 1_z; i < args.size(); i += 1) {
+      for (auto i = 1_z; i < args.count(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
         else if (args[i] == "-d" || args[i] == "--debug")
