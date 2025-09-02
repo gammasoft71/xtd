@@ -657,14 +657,14 @@ void tool_bar::wnd_proc(message& message) {
 }
 
 void tool_bar::resize_stretchable_separtors() {
-  if (data_->stretchable_separators.size()) {
+  if (data_->stretchable_separators.count()) {
     auto remaining_size = is_horizontal() ? size().width - padding().left() - padding().right() : size().height - padding().top() - padding().bottom();
     for (auto tool_bar_button : data_->tool_bar_buttons) {
       if (tool_bar_button->style() != tool_bar_button_style::stretchable_separator && tool_bar_button->visible())
         remaining_size -= is_horizontal() ? tool_bar_button->size().width : tool_bar_button->size().height;
     }
     
-    auto stretchable_size = remaining_size / as<int32>(data_->stretchable_separators.size());
+    auto stretchable_size = remaining_size / as<int32>(data_->stretchable_separators.count());
     for (auto stretchable_separator : data_->stretchable_separators) {
       auto default_stretchable_size = (is_horizontal() ? image_size().width : image_size().height) / 2;
       if (stretchable_size > default_stretchable_size) {
@@ -696,8 +696,8 @@ void tool_bar::update_toolbar_button_control(intptr handle, const xtd::string& t
 
 void tool_bar::wm_click(const message& message) {
   auto found_button_or_menu = false;
-  for (auto index = 0_z; !found_button_or_menu && index < data_->system_tool_bar_button_handles.size(); ++index) {
-    if (index < data_->system_tool_bar_button_handles.size() && message.wparam == data_->system_tool_bar_button_handles[index]) {
+  for (auto index = 0_z; !found_button_or_menu && index < data_->system_tool_bar_button_handles.count(); ++index) {
+    if (index < data_->system_tool_bar_button_handles.count() && message.wparam == data_->system_tool_bar_button_handles[index]) {
       if (data_->buttons[index].get().style() == tool_bar_button_style::toggle_button)
         data_->buttons[index].get().pushed(!data_->buttons[index].get().pushed());
       on_button_click(xtd::forms::tool_bar_button_click_event_args(data_->buttons[index].get()));
@@ -705,7 +705,7 @@ void tool_bar::wm_click(const message& message) {
     }
   }
   
-  for (auto index = 0_z; !found_button_or_menu && index < data_->system_tool_bar_button_handles.size(); ++index) {
+  for (auto index = 0_z; !found_button_or_menu && index < data_->system_tool_bar_button_handles.count(); ++index) {
     if (data_->buttons[index].get().style() == tool_bar_button_style::drop_down_button && data_->buttons[index].get().drop_down_menu().has_value())
       found_button_or_menu = on_context_menu_item_click(data_->buttons[index].get().drop_down_menu().value(), message.wparam);
   }

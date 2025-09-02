@@ -573,7 +573,7 @@ namespace xtd {
       /// ```
       template<class value_t>
       static void is_empty(const value_t& value, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (std::empty(value)) succeed(message, stack_frame);
+        if (empty(value)) succeed(message, stack_frame);
         else fail("<empty>", join_items(value), message, stack_frame);
       }
       
@@ -582,7 +582,7 @@ namespace xtd {
       static void is_empty(const std::initializer_list<value_t>& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_empty(value, xtd::string::empty_string, stack_frame);}
       template<class value_t>
       static void is_empty(const std::initializer_list<value_t>& value, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (std::empty(value)) succeed(message, stack_frame);
+        if (empty(value)) succeed(message, stack_frame);
         else fail("<empty>", join_items(value), message, stack_frame);
       }
       /// @endcond
@@ -614,7 +614,7 @@ namespace xtd {
       /// ```
       template<class value_t>
       static void is_not_empty(const value_t& value, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (!std::empty(value)) succeed(message, stack_frame);
+        if (!empty(value)) succeed(message, stack_frame);
         else fail("not <empty>", "<empty>", message, stack_frame);
       }
       
@@ -623,7 +623,7 @@ namespace xtd {
       static void is_not_empty(const std::initializer_list<value_t>& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_empty(value, xtd::string::empty_string, stack_frame);}
       template<class value_t>
       static void is_not_empty(const std::initializer_list<value_t>& value, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (!std::empty(value)) succeed(message, stack_frame);
+        if (!empty(value)) succeed(message, stack_frame);
         else fail("not <empty>", "<empty>", message, stack_frame);
       }
       /// @endcond
@@ -683,6 +683,9 @@ namespace xtd {
           if (std::find_if(actual_begin, actual_end, [&](const auto & value) {return base_assert::equals(value, *iterator);}) == actual_end) return false;
         return true;
       }
+      
+      template<class collection_t>
+      static bool empty(const collection_t collection) {return collection.begin() == collection.end();}
     };
   }
 }

@@ -109,19 +109,6 @@ namespace xtd::collections::tests {
       collection_assert::is_empty(bt);
     }
     
-    void test_method_(const_back) {
-      assert::are_equal("Amargasaurus", array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"}.back());
-      assert::throws<index_out_of_range_exception>([] {array_list {}.back();});
-    }
-    
-    void test_method_(back) {
-      auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
-      items.back() = "Mamenchisaurus";
-      assert::are_equal("Mamenchisaurus", items.back());
-      auto empty_items = array_list {};
-      assert::throws<index_out_of_range_exception>([&] {empty_items.back() = "Mamenchisaurus";});
-    }
-    
     void test_method_(begin) {
       auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       assert::are_equal("Tyrannosaurus", *items.begin());
@@ -157,87 +144,24 @@ namespace xtd::collections::tests {
       assert::are_equal(50_z, items.count());
     }
     
-    void test_method_(crbegin) {
-      auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
-      assert::are_equal("Amargasaurus", *items.crbegin());
-    }
-    
-    void test_method_(crend) {
-      auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
-      // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
-      // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
-      //assert::throws<argument_out_of_range_exception>([&] {*items.crend();});
-    }
-    
-    void test_method_(data) {
-      auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
-      
-      auto ptr = items.data();
-      assert::are_equal("Tyrannosaurus", *ptr);
-      assert::are_equal("Compsognathus", *(ptr + 1));
-      assert::are_equal("Amargasaurus", *(ptr + 2));
-      
-      // Attempting to access a pointer that exceeds size() results in undefined behaviour.
-      //assert::are_equal(0, *(ptr + 3));
-      
-      *(ptr) = "Mamenchisaurus";
-      *(ptr + 1) = "Deinonychus";
-      *(ptr + 2) = "Compsognathus";
-      
-      // Attempting to access a pointer that exceeds size() results in undefined behaviour.
-      //*(ptr + 3) = "Tyrannosaurus";
-      
-      collection_assert::are_equal({"Mamenchisaurus", "Deinonychus", "Compsognathus"}, items);
-    }
-    
-    void test_method_(empty) {
-      assert::is_true(array_list {}.empty());
-      assert::is_false(array_list {"Tyrannosaurus"}.empty());
-      
-      auto items = array_list {};
-      assert::is_true(items.empty());
-      items.capacity(42);
-      assert::is_true(items.empty());
-      items.resize(1);
-      assert::is_false(items.empty());
-      items.resize(0);
-      assert::is_true(items.empty());
-      items.push_back("Tyrannosaurus");
-      assert::is_false(items.empty());
-    }
-    
     void test_method_(end) {
       auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
       assert::are_equal(any_object {}, *items.end());
     }
     
-    void test_method_(front_const) {
-      auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
-      assert::are_equal("Tyrannosaurus", items.front());
-      assert::throws<index_out_of_range_exception>([&] {array_list {}.front();});
-    }
-    
-    void test_method_(front) {
-      auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
-      items.front() = "Mamenchisaurus";
-      assert::are_equal("Mamenchisaurus", items.front());
-      auto empty_items = array_list {};
-      assert::throws<index_out_of_range_exception>([&] {empty_items.front() = "Mamenchisaurus";});
-    }
-    
     void test_method_(is_fixed_size) {
       // Is always false;
-      assert::is_false(array_list {}.is_fixed_size());
+      assert::is_false(as<ilist>(array_list {}).is_fixed_size());
     }
     
     void test_method_(is_read_only) {
       // Is always false;
-      assert::is_false(array_list {}.is_read_only());
+      assert::is_false(as<icollection>(array_list {}).is_read_only());
     }
     
     void test_method_(is_synchronized) {
       // Is always false;
-      assert::is_false(array_list {}.is_synchronized());
+      assert::is_false(as<icollection>(array_list {}).is_synchronized());
     }
     
     void test_method_(items_const) {
@@ -265,33 +189,6 @@ namespace xtd::collections::tests {
       //inners[3] = "Tyrannosaurus";
       
       collection_assert::are_equal({"Mamenchisaurus", "Deinonychus", "Compsognathus"}, items);
-    }
-    
-    void test_method_(max_size) {
-      assert::is_not_zero(array_list {}.max_size());
-    }
-    
-    void test_method_(rbegin) {
-      auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
-      assert::are_equal("Amargasaurus", *items.rbegin());
-    }
-    
-    void test_method_(rend) {
-      auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
-      // the rend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
-      // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
-      //assert::throws<argument_out_of_range_exception>([&] {*items.rend();});
-    }
-    
-    void test_method_(size) {
-      auto items = array_list {};
-      assert::is_zero(items.size());
-      items.push_back("Tyrannosaurus");
-      items.push_back("Compsognathus");
-      items.push_back("Amargasaurus");
-      assert::are_equal(3_z, items.size());
-      items.resize(50);
-      assert::are_equal(50_z, items.size());
     }
     
     void test_method_(at) {

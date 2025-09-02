@@ -131,7 +131,7 @@ namespace xtd {
     /// @brief Gets the number of elements contained in the xtd::array <type_t>.
     /// @return The number of elements contained in the xtd::array <type_t>.
     /// @remarks Retrieving the value of this property is an O(1) operation; setting the property is an O(n) operation, where n is the new capacity.
-    size_type count() const noexcept override {return size();}
+    size_type count() const noexcept override {return data_->items.size();}
     
     /// @brief Returns a reverse iterator to the first element of the reversed vector. It corresponds to the last element of the non-reversed vector. If the vector is empty, the returned iterator is equal to xtd::array::rend().
     /// @return Reverse iterator to the first element.
@@ -189,11 +189,11 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates methods to get the length of an array.
     /// @include array_length.cpp
-    virtual size_type length() const noexcept {return size();}
+    virtual size_type length() const noexcept {return data_->items.size();}
     /// @brief Gets a 64-bit integer that represents the total number of elements in all the dimensions of the array.
     /// @return int64 A 64-bit integer that represents the total number of elements in all the dimensions of the array; zero if there are no elements in the array.
     /// @remarks Retrieving the value of this property is an O(1) operation.
-    virtual xtd::int64 long_length() {return static_cast<xtd::int64>(size());}
+    virtual xtd::int64 long_length() {return static_cast<xtd::int64>(length());}
     
     /// @brief Returns the maximum number of elements the container is able to hold due to system or library implementation limitations, i.e. std::distance(xtd::array::begin(), xtd::array::end()) for the largest container.
     /// @return Maximum number of elements.
@@ -226,7 +226,7 @@ namespace xtd {
     
     /// @brief Returns the number of elements in the container, i.e. std::distance(xtd::array::begin(), xtd::array::end()).
     /// @return The number of elements in the container.
-    virtual size_type size() const noexcept {return data_->items.size();}
+    virtual size_type size() const noexcept {return length();}
     
     const xtd::object & sync_root() const noexcept override {return data_->sync_root;}
     /// @}
@@ -372,14 +372,14 @@ protected:
     /// @return The index of value if found in the array; otherwise, xtd::collections::generic::ilist::npos.
     size_type index_of(const type_t& value) const noexcept override {return index_of(*this, value, 0, count());}
     
-    /// @brief Resizes the container to contain `count` elements, does nothing if `count == size().
+    /// @brief Resizes the container to contain `count` elements, does nothing if `count == length().
     /// @param new_size The new size of the container.
     /// @exception xtd::argument_out_of_range_exception If `new_size` is outside greather than xtd::array::max_size.
     /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
     /// @remarks If the current size is less than `count`, additional default-inserted elements are appended.
     void resize(size_type new_size) {resize(new_size, value_type {});}
     
-    /// @brief Resizes the container to contain `count` elements, does nothing if `count == size().
+    /// @brief Resizes the container to contain `count` elements, does nothing if `count == length().
     /// @param new_size The new size of the container.
     /// @param value The value to initialize the new elements with.
     /// @exception xtd::argument_out_of_range_exception If `new_size` is outside greather than xtd::array::max_size.
@@ -511,7 +511,7 @@ protected:
     /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
     /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
     basic_array < type_t > & sort(xtd::size index, xtd::size count, const xtd::collections::generic::icomparer < type_t > & comparer) {
-      if (index + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+      if (index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
       auto first = data_->items.begin();
       auto last = data_->items.begin();
       std::advance(first, index);

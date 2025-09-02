@@ -829,7 +829,7 @@ size_t socket::select(ilist<socket>& check_read, ilist<socket>& check_write, ili
   if (status < 0) throw_helper::throws(exception_case::socket, get_last_error_());
   
   auto update_check_sockets = [](auto & sockets, auto & handles) {
-    for (auto i = 0_z, j = 0_z; i < handles.size() && j < sockets.count(); ++i, ++j)
+    for (auto i = 0_z, j = 0_z; i < handles.count() && j < sockets.count(); ++i, ++j)
       if (handles[i] == 0)
         sockets.remove_at(j--);
   };

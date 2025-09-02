@@ -13,8 +13,8 @@ namespace xtdc_command {
       if (path.empty() || path == ".") return xtd::environment::current_directory();
       else if (path == "..") {
         auto directories = xtd::collections::generic::list<xtd::string> {xtd::environment::current_directory().split(xtd::io::path::directory_separator_char())};
-        if (directories.size() < 2) return "";
-        directories.remove_at(directories.size() - 2);
+        if (directories.count() < 2) return "";
+        directories.remove_at(directories.count() - 2);
         return xtd::io::path::combine(directories);
       }
       return xtd::io::path::get_full_path(path);

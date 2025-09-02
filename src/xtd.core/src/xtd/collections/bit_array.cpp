@@ -35,7 +35,7 @@ bit_array::bit_array(size length, bool default_value) noexcept {
     bit_array_.add(default_value ? 0xFFFFFFFFL : 0);
   if (!default_value) return;
   auto extra_bits = length & (32 - 1); // equivalent to length % 32, since 32 is a power of 2
-  if (extra_bits > 0) bit_array_[bit_array_.size() - 1] = static_cast<int32>(1 << extra_bits) - 1;
+  if (extra_bits > 0) bit_array_[bit_array_.count() - 1] = static_cast<int32>(1 << extra_bits) - 1;
 }
 
 bit_array::bit_array(std::initializer_list<bool> il) noexcept {
@@ -94,21 +94,6 @@ void bit_array::length(xtd::size value) {
   flush(); // Must be call first
   length_ = value;
   bit_array_.resize(bits_per_int32 / bits_per_int32 + (bits_per_int32 % bits_per_int32 ? 1 : 0), 0);
-}
-
-bool bit_array::is_read_only() const noexcept {
-  flush(); // Must be call first
-  return bit_array_.is_read_only();
-}
-
-bool bit_array::is_synchronized() const noexcept {
-  flush(); // Must be call first
-  return bit_array_.is_synchronized();
-}
-
-const object& bit_array::sync_root() const noexcept {
-  flush(); // Must be call first
-  return bit_array_.sync_root();
 }
 
 const bit_array& bit_array::and_(const bit_array& value) {
@@ -298,6 +283,21 @@ bit_array bit_array::operator <<(xtd::size pos) const noexcept {
 bit_array& bit_array::operator <<=(xtd::size pos) noexcept {
   *this = as_const(*this) << pos;
   return *this;
+}
+
+bool bit_array::is_read_only() const noexcept {
+  flush(); // Must be call first
+  return as<icollection<int32>>(bit_array_).is_read_only();
+}
+
+bool bit_array::is_synchronized() const noexcept {
+  flush(); // Must be call first
+  return as<icollection<int32>>(bit_array_).is_synchronized();
+}
+
+const object& bit_array::sync_root() const noexcept {
+  flush(); // Must be call first
+  return as<icollection<int32>>(bit_array_).sync_root();
 }
 
 void bit_array::add(const bool& value) {

@@ -121,7 +121,7 @@ version version::parse(const xtd::string& input) {
   for (auto it = std::sregex_token_iterator {input.chars().begin(), input.chars().end(), rgx, -1}, end = std::sregex_token_iterator {}; it != end; ++it)
     versions.push_back(it->str());
     
-  switch (versions.size()) {
+  switch (versions.count()) {
     case 2: return version {string::parse<int32>(versions[0]), string::parse<int32>(versions[1])};
     case 3: return version {string::parse<int32>(versions[0]), string::parse<int32>(versions[1]), string::parse<int32>(versions[2])};
     case 4: return version {string::parse<int32>(versions[0]), string::parse<int32>(versions[1]), string::parse<int32>(versions[2]), string::parse<int32>(versions[3])};

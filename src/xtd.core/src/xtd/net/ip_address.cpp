@@ -250,14 +250,14 @@ ip_address ip_address::parse(const string& str) {
     for (auto it = address_parts.begin(); it != address_parts.end(); ++it) {
       if (it->empty()) {
         *it = "0";
-        auto fill_count = 8 - address_parts.size();
+        auto fill_count = 8 - address_parts.count();
         for (auto fc = 0_z; fc < fill_count; ++fc)
           it = address_parts.insert(it, "0");
       }
     }
     
-    if (address_parts.size() == 8) {
-      for (auto index = 0_z; index < address_parts.size(); index++)
+    if (address_parts.count() == 8) {
+      for (auto index = 0_z; index < address_parts.count(); index++)
         value.numbers_[index] = xtd::parse<uint16>(string::is_empty(address_parts[index]) ? "0" : address_parts[index], number_styles::hex_number);
       return value;
     }

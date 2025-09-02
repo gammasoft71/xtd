@@ -142,8 +142,8 @@ namespace {
   ptr<char*[]> get_data_from_xpm(const string& filename) {
     static thread_local list<string> lines;
     lines = file::read_all_lines(filename);
-    auto data = new char*[lines.size()];
-    for (auto index = 0_z; index < lines.size() - 2; ++index) {
+    auto data = new char*[lines.count()];
+    for (auto index = 0_z; index < lines.count() - 2; ++index) {
       lines[index + 1] = lines[index + 1].trim().replace("\"", "").replace(",", "");
       data[index] = const_cast<char*>(lines[index + 1].c_str());
     }

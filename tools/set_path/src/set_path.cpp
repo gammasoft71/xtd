@@ -101,7 +101,7 @@ namespace set_path {
     }
     
     static bool process_arguments(const list<string>& args, string& folder, bool& add, bool& remove, bool& system_path, bool& show_version, bool& show_help) {
-      for (size_t index = 0; index < args.size(); index += 1) {
+      for (size_t index = 0; index < args.count(); index += 1) {
         if (args[index] == "-a" || args[index] == "--add") add = true;
         else if (args[index] == "-r" || args[index] == "--remove") remove = true;
         else if (args[index] == "-s" || args[index] == "--system") system_path = true;

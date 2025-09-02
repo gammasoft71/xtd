@@ -99,7 +99,7 @@ radial_gradient_brush& radial_gradient_brush::focal_point(const point& value) no
 
 radial_gradient_brush& radial_gradient_brush::radial_colors(const gradient_stop_collection& value) {
   if (data_->radial_colors != value) {
-    if (value.size() < 2) throw_helper::throws(exception_case::argument);
+    if (value.count() < 2) throw_helper::throws(exception_case::argument);
     data_->radial_colors = value;
     recreate_handle();
   }

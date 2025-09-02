@@ -77,7 +77,7 @@ conical_gradient_brush& conical_gradient_brush::angle(float value) noexcept {
 
 conical_gradient_brush& conical_gradient_brush::conical_colors(const gradient_stop_collection& value) {
   if (data_->conical_colors != value) {
-    if (value.size() < 2) throw_helper::throws(exception_case::argument);
+    if (value.count() < 2) throw_helper::throws(exception_case::argument);
     data_->conical_colors = value;
     recreate_handle();
   }

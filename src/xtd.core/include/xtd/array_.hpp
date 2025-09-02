@@ -64,7 +64,7 @@ inline type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::arra
       multiplicand *= get_length(index2);
     position += indexes[index1] * multiplicand;
   }
-  if (position >= size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+  if (position >= length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
   return data_->items[position];
 }
 
@@ -78,7 +78,7 @@ inline const type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd
       multiplicand *= get_length(index2);
     position += indexes[index1] * multiplicand;
   }
-  if (position >= size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+  if (position >= length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
   return data_->items[position];
 }
 

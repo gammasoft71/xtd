@@ -59,7 +59,7 @@ namespace sleepfor {
     }
     
     static bool process_arguments(const list<string>& args, int32& duration, period_type& type, bool& indefinitely, bool& show_version, bool& show_help) {
-      for (size_t index = 0; index < args.size(); index += 1) {
+      for (size_t index = 0; index < args.count(); index += 1) {
         if (args[index] == "-ns" || args[index] == "--nanoseconds") type = period_type::nanoseconds;
         else if (args[index] == "-ms" || args[index] == "--milliseconds") type = period_type::milliseconds;
         else if (args[index] == "-s" || args[index] == "--seconds") type = period_type::seconds;

@@ -80,10 +80,10 @@ namespace xtdc_gui {
         auto item_control = xtd::new_sptr<project_type_item_control>(item);
         item_control->parent(*this);
         item_control->dock(xtd::forms::dock_style::top);
-        item_control->tag(project_type_item_controls_.size());
+        item_control->tag(project_type_item_controls_.count());
         project_type_item_controls_.push_back(item_control);
         item_control->click += [&](object & sender, const xtd::event_args & e) {
-          selected_index(project_type_item_controls_.size() - 1 - xtd::as<size_t>(xtd::as<control>(sender).tag()));
+          selected_index(project_type_item_controls_.count() - 1 - xtd::as<size_t>(xtd::as<control>(sender).tag()));
         };
       }
       
@@ -123,7 +123,7 @@ namespace xtdc_gui {
     
     xtd::array<project_type_item> project_type_items() const {
       xtd::collections::generic::list<project_type_item> items;
-      for (auto it = project_type_item_controls_.rbegin(); it != project_type_item_controls_.rend(); ++it)
+      for (auto it = project_type_item_controls_.items().rbegin(); it != project_type_item_controls_.items().rend(); ++it)
         items.push_back((*it)->project_type_item());
       return items.to_array();
     }
@@ -141,13 +141,13 @@ namespace xtdc_gui {
   private:
     void on_selected_index_changed(const xtd::event_args& e) {
       if (previous_selected_index_ != npos) {
-        project_type_item_controls_[project_type_item_controls_.size() - 1 - previous_selected_index_]->back_color(back_color());
-        project_type_item_controls_[project_type_item_controls_.size() - 1 - previous_selected_index_]->fore_color(fore_color());
+        project_type_item_controls_[project_type_item_controls_.count() - 1 - previous_selected_index_]->back_color(back_color());
+        project_type_item_controls_[project_type_item_controls_.count() - 1 - previous_selected_index_]->fore_color(fore_color());
       }
       if (selected_index_ != npos) {
-        project_type_item_controls_[project_type_item_controls_.size() - 1 - selected_index_]->back_color(xtd::forms::application::style_sheet().system_colors().accent());
-        project_type_item_controls_[project_type_item_controls_.size() - 1 - selected_index_]->fore_color(xtd::forms::application::style_sheet().system_colors().accent_text());
-        selected_project_type_item(project_type_item_controls_[project_type_item_controls_.size() - 1 - selected_index_]->project_type_item());
+        project_type_item_controls_[project_type_item_controls_.count() - 1 - selected_index_]->back_color(xtd::forms::application::style_sheet().system_colors().accent());
+        project_type_item_controls_[project_type_item_controls_.count() - 1 - selected_index_]->fore_color(xtd::forms::application::style_sheet().system_colors().accent_text());
+        selected_project_type_item(project_type_item_controls_[project_type_item_controls_.count() - 1 - selected_index_]->project_type_item());
       }
       previous_selected_index_ = selected_index_;
       selected_index_changed(*this, e);
@@ -156,7 +156,7 @@ namespace xtdc_gui {
     void on_selected_project_type_item_changed(const xtd::event_args& e) {
       for (auto item : project_type_item_controls_)
         if (item->project_type_item() == selected_project_type_item_) {
-          selected_index(project_type_item_controls_.size() - 1 - xtd::as<size_t>(item->tag()));
+          selected_index(project_type_item_controls_.count() - 1 - xtd::as<size_t>(item->tag()));
           break;
         }
       selected_project_type_item_changed(*this, e);

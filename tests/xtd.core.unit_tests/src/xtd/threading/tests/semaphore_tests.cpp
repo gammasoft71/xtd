@@ -248,7 +248,7 @@ namespace xtd::threading::tests {
           assert::is_true(s.wait_one(0));
           ++thread_ran;
         });
-        threads.back().start();
+        threads[threads.count() - 1].start();
       }
       thread::join_all(threads);
       assert::are_equal(5, thread_ran);

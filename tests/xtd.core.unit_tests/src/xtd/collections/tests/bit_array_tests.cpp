@@ -197,12 +197,12 @@ namespace xtd::collections::tests {
     
     void test_method_(is_read_only) {
       auto bits = bit_array {};
-      assert::is_false(bits.is_read_only());
+      assert::is_false(as<icollection<bool>>(bits).is_read_only());
     }
     
     void test_method_(is_synchronized) {
       auto bits = bit_array {};
-      assert::is_false(bits.is_synchronized());
+      assert::is_false(as<icollection<bool>>(bits).is_synchronized());
     }
     
     void test_method_(and_) {

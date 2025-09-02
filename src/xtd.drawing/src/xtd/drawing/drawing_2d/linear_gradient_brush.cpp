@@ -110,7 +110,7 @@ const gradient_stop_collection& linear_gradient_brush::linear_colors() const noe
 
 linear_gradient_brush& linear_gradient_brush::linear_colors(const gradient_stop_collection& value) {
   if (data_->linear_colors != value) {
-    if (value.size() < 2) throw_helper::throws(exception_case::argument);
+    if (value.count() < 2) throw_helper::throws(exception_case::argument);
     data_->linear_colors = value;
     recreate_handle();
   }

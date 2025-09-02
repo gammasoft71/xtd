@@ -27,7 +27,7 @@ struct stack_frame::data {
 
 stack_frame::stack_frame() : data_{new_ptr<data>()} {
   auto frames = get_stack_frames("", 0, false);
-  if (frames.size()) {
+  if (frames.count()) {
     data_->file_name = frames[0].data_->file_name;
     data_->file_line_number = frames[0].data_->file_line_number;
     data_->file_column_number = frames[0].data_->file_column_number;
@@ -38,7 +38,7 @@ stack_frame::stack_frame() : data_{new_ptr<data>()} {
 
 stack_frame::stack_frame(xtd::size skip_frame) : data_{new_ptr<data>()} {
   auto frames = get_stack_frames("", skip_frame, false);
-  if (frames.size()) {
+  if (frames.count()) {
     data_->file_name = frames[0].data_->file_name;
     data_->file_line_number = frames[0].data_->file_line_number;
     data_->file_column_number = frames[0].data_->file_column_number;
@@ -49,7 +49,7 @@ stack_frame::stack_frame(xtd::size skip_frame) : data_{new_ptr<data>()} {
 
 stack_frame::stack_frame(bool need_file_info) : data_{new_ptr<data>()} {
   auto frames = get_stack_frames("", 0, need_file_info);
-  if (frames.size()) {
+  if (frames.count()) {
     data_->file_name = frames[0].data_->file_name;
     data_->file_line_number = frames[0].data_->file_line_number;
     data_->file_column_number = frames[0].data_->file_column_number;
@@ -60,7 +60,7 @@ stack_frame::stack_frame(bool need_file_info) : data_{new_ptr<data>()} {
 
 stack_frame::stack_frame(xtd::size skip_frame, bool need_file_info) : data_{new_ptr<data>()} {
   auto frames = get_stack_frames("", skip_frame, need_file_info);
-  if (frames.size()) {
+  if (frames.count()) {
     data_->file_name = frames[0].data_->file_name;
     data_->file_line_number = frames[0].data_->file_line_number;
     data_->file_column_number = frames[0].data_->file_column_number;

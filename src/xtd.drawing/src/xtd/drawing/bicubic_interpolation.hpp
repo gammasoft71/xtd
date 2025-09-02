@@ -28,7 +28,7 @@ namespace {
   }
   
   inline void resample_bicubic_precalculates(xtd::collections::generic::list<bicubic_precalculate>& precalculates, xtd::int32 old_size) {
-    const auto new_size = static_cast<xtd::int32>(precalculates.size());
+    const auto new_size = static_cast<xtd::int32>(precalculates.count());
     if (old_size <= 0 || new_size == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
     
     if (new_size > 1) {

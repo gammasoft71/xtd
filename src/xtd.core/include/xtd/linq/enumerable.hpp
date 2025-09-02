@@ -536,9 +536,9 @@ namespace xtd {
         while (enumerator.move_next()) {
           auto key = key_selector(enumerator.current());
           auto index = size_t {0};
-          for (; index < keys.size(); ++index)
+          for (; index < keys.count(); ++index)
             if (key_comparer.equals(keys[index], key)) break;
-          if (index < keys.size()) result.items[index] = {key, result.items[index].value() + 1};
+          if (index < keys.count()) result.items[index] = {key, result.items[index].value() + 1};
           else {
             keys.push_back(key);
             result.items.push_back({key, 1});
