@@ -1308,7 +1308,7 @@ namespace xtd {
       static void throws_any(const std::function<void()>& statement, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @}
       
-    private:      
+    private:
       template<class collection_t>
       static bool empty(const collection_t collection) {return collection.begin() == collection.end();}
     };
