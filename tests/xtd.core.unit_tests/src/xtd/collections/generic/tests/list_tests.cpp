@@ -353,6 +353,11 @@ namespace xtd::collections::generic::tests {
       assert::throws<argument_exception>([&] {items.copy_to(1, dest, 1, 3);});
     }
     
+    void test_method_(ensure_capacity) {
+      auto items = list<int> {};
+      assert::is_greater_or_equal(items.ensure_capacity(42), 42_z);
+    }
+    
     void test_method_(equals_object) {
       auto items1 = list {84, 42, 21};
       auto items2 = list {84, 42, 21};
@@ -369,6 +374,12 @@ namespace xtd::collections::generic::tests {
       assert::is_true(items1.equals(items2));
       auto items3 = list {84, 42, 33};
       assert::is_false(items1.equals(items3));
+    }
+    
+    void test_method_(exist) {
+      auto items = list {84, 42, 21, 33};
+      assert::is_true(items.exists([](auto n) {return n == 42;}));
+      assert::is_false(items.exists([](auto n) {return n == 24;}));
     }
     
     void test_method_(for_each) {
