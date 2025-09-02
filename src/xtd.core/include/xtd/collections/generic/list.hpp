@@ -461,6 +461,13 @@ namespace xtd {
           return result;
         }
         
+        /// @cond
+        template<class output_t, class converter_t>
+        list<output_t> convert_all(converter_t converter) const {
+          return convert_all(xtd::converter<output_t, const type_t&> {converter});
+        }
+        /// @endcond
+
         /// @brief Copies the entire xtd::collections::generic::list <type_t> to a compatible one-dimensional array.
         /// @param array The one-dimensional xtd::array that is the destination of the elements copied from ICollection. The xtd::array must have zero-based indexing.
         /// @exception ArgumentNullException array is null.
