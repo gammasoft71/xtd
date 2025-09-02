@@ -136,7 +136,7 @@ control& lcd_label::text(const xtd::string& value) {
       dynamic_cast<control*>(data_->digits[index].get())->mouse_move -= {*this, &lcd_label::on_digit_mouse_move};
       dynamic_cast<control*>(data_->digits[index].get())->mouse_up -= {*this, &lcd_label::on_digit_mouse_up};
     }
-    data_->digits.erase(data_->digits.begin() + str.size(), data_->digits.end());
+    data_->digits.remove_range(str.size(), data_->digits.count() - str.size());
   }
   if (str.size() > data_->digits.count())
     for (auto index = data_->digits.count(); index < str.size(); ++index) {

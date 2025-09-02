@@ -666,14 +666,14 @@ main_form::main_form() {
 
 void main_form::delete_from_create_recent_projects(size_t create_project_items_index) {
   auto create_recent_projects = list<string> {properties::settings::default_settings().create_recent_propjects().split(';')};
-  create_recent_projects.erase(find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
+  create_recent_projects.remove(std::to_string(create_project_items_index));
   properties::settings::default_settings().create_recent_propjects(string::join(";", create_recent_projects)).save();
   init_create_create_recent_projects_list_box();
 }
 
 void main_form::delete_from_open_recent_projects(const string& project_path) {
   auto open_recent_projects = list<string> {properties::settings::default_settings().open_recent_propjects().split(';')};
-  open_recent_projects.erase(find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
+  open_recent_projects.remove(project_path);
   properties::settings::default_settings().open_recent_propjects(string::join(";", open_recent_projects)).save();
   init_startup_open_recent_projects_list_box();
 }

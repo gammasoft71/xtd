@@ -585,18 +585,15 @@ void month_calendar::remove_all_monthly_bolded_dates() {
 }
 
 void month_calendar::remove_annually_bolded_dates(const xtd::date_time& date) {
-  auto it = std::find(data_->annually_bolded_dates.begin(), data_->annually_bolded_dates.end(), date);
-  if (it != data_->annually_bolded_dates.end()) data_->annually_bolded_dates.erase(it);
+  data_->annually_bolded_dates.remove(date);
 }
 
 void month_calendar::remove_bolded_dates(const xtd::date_time& date) {
-  auto it = std::find(data_->bolded_dates.begin(), data_->bolded_dates.end(), date);
-  if (it != data_->bolded_dates.end()) data_->bolded_dates.erase(it);
+  data_->bolded_dates.remove(date);
 }
 
 void month_calendar::remove_monthly_bolded_dates(const xtd::date_time& date) {
-  auto it = std::find(data_->monthly_bolded_dates.begin(), data_->monthly_bolded_dates.end(), date);
-  if (it != data_->monthly_bolded_dates.end()) data_->monthly_bolded_dates.erase(it);
+  data_->monthly_bolded_dates.remove(date);
 }
 
 void month_calendar::set_calendar_dimensions(int32 x, int32 y) {

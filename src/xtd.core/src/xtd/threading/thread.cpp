@@ -266,10 +266,10 @@ bool thread::join(int32 milliseconds_timeout) {
     }
     data_->joinable = false;
     auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
-    auto iterator = std::find_if(get_static_data().threads.begin(), get_static_data().threads.end(), [&](const auto & value) {return value->data_ ? value->data_->managed_thread_id == data_->managed_thread_id : false;});
-    if (iterator == get_static_data().threads.end()) return result;
-    (*iterator)->data_.reset();
-    get_static_data().threads.erase(iterator);
+    auto index = get_static_data().threads.find_index(xtd::predicate<const sptr<thread>&> {[&](const auto & value) {return value->data_ ? value->data_->managed_thread_id == data_->managed_thread_id : false;}});
+    if (index == get_static_data().threads.npos) return result;
+    get_static_data().threads[index]->data_.reset();
+    get_static_data().threads.remove_at(index);
   }
   return result;
 }
@@ -581,10 +581,10 @@ void thread::thread_proc() {
   
   if (!is_background()) return;
   auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
-  auto iterator = std::find_if(get_static_data().threads.begin(), get_static_data().threads.end(), [&](const auto & value) {return value->data_ ? value->data_->managed_thread_id == data_->managed_thread_id : false;});
-  if (iterator == get_static_data().threads.end()) return;
-  (*iterator)->data_.reset();
-  get_static_data().threads.erase(iterator);
+  auto index = get_static_data().threads.find_index(xtd::predicate<const sptr<thread>&> {[&](const auto & value) {return value->data_ ? value->data_->managed_thread_id == data_->managed_thread_id : false;}});
+  if (index == get_static_data().threads.npos) return;
+  get_static_data().threads[index]->data_.reset();
+  get_static_data().threads.remove_at(index);
 }
 
 thread & thread::unmanaged_thread() {

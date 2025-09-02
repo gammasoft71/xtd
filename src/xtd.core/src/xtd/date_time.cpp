@@ -360,11 +360,11 @@ array<string> date_time::get_date_time_formats() const noexcept {
   //for (auto format : formats)
   for (auto format = 'a'; format <= 'z'; ++format) {
     try {
-      date_time_formats.emplace_back(self_.to_string(string::format("{}", format)));
+      date_time_formats.add(self_.to_string(string::format("{}", format)));
     } catch (...) {
     }
     try {
-      date_time_formats.emplace_back(self_.to_string(string::format("{}", char_object::to_upper(format))));
+      date_time_formats.add(self_.to_string(string::format("{}", char_object::to_upper(format))));
     } catch (...) {
     }
   }

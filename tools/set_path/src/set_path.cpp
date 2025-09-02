@@ -43,25 +43,25 @@ namespace set_path {
         else if (environment::os_version().is_macos()) current_path = macos_read_system_path(system_path);
         else if (environment::os_version().is_linux()) current_path = linux_read_system_path(system_path);
         auto paths = list<string> {current_path.split(io::path::path_separator())};
-        auto it_folder = paths.end();
-        for (auto it = paths.begin(); it != paths.end(); ++it) {
-          if (*it == folder) {
-            it_folder = it;
+        auto index_folder = paths.npos;
+        for (auto index = 0_z; index < paths.count(); ++index) {
+          if (paths[index] == folder) {
+            index_folder = index;
             break;
           }
         }
         
-        if (add && it_folder != paths.end()) {
+        if (add && index_folder != paths.npos) {
           console::write_line("The path already contains folder \"{}\". Do nothing.", folder);
           return 0;
         }
         
-        if (remove && it_folder == paths.end()) {
+        if (remove && index_folder == paths.npos) {
           console::write_line("The path does not contain folder \"{}\". Do nothing.", folder);
           return 0;
         }
         
-        if (remove) paths.erase(it_folder);
+        if (remove) paths.remove_at(index_folder);
         else paths.insert(paths.begin(), folder);
         
         auto new_path = string::join(string::format("{}", io::path::path_separator()), paths);
