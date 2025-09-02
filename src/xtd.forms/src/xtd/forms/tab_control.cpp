@@ -281,7 +281,7 @@ void tab_control::on_tab_pages_text_added(size_t index, const string& text, cons
     data_->text_tab_pages.push_back(item);
   } else {
     tab_pages().insert_at(index, *item);
-    data_->text_tab_pages.insert(data_->text_tab_pages.begin() + index, item);
+    data_->text_tab_pages.insert(index, item);
   }
 }
 
@@ -292,7 +292,7 @@ tab_control::tab_page_collection::iterator tab_control::on_tab_pages_text_insert
   tab_page_collection::iterator it = tab_pages().end();
   it = tab_pages().insert(pos, *item);
   if (pos == tab_pages().end()) data_->text_tab_pages.push_back(item);
-  else data_->text_tab_pages.insert(data_->text_tab_pages.begin() + (pos - tab_pages().begin()), item);
+  else data_->text_tab_pages.insert(pos - tab_pages().begin(), item);
   return it;
 }
 

@@ -62,7 +62,7 @@ namespace set_path {
         }
         
         if (remove) paths.remove_at(index_folder);
-        else paths.insert(paths.begin(), folder);
+        else paths.insert(0, folder);
         
         auto new_path = string::join(string::format("{}", io::path::path_separator()), paths);
         environment::set_environment_variable("PATH", new_path);
