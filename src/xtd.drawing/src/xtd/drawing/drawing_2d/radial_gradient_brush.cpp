@@ -53,7 +53,7 @@ radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point_f& center
   auto pos = .0f;
   auto increment = 1.0f / (radial_colors.size() - 1);
   for (auto color : radial_colors) {
-    data_->radial_colors.push_back({color, pos});
+    data_->radial_colors.add({color, pos});
     pos += increment;
   }
   recreate_handle();

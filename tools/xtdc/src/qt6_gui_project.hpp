@@ -143,42 +143,42 @@ namespace xtdc_command {
     
     void generate_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::collections::generic::list<xtd::string> {};
-      lines.push_back("cmake_minimum_required(VERSION 3.20)");
-      lines.push_back("");
-      lines.push_back("# Project");
-      lines.push_back(xtd::string::format("project({} VERSION 1.0.0)", name));
-      lines.push_back("set(SOURCES");
+      lines.add("cmake_minimum_required(VERSION 3.20)");
+      lines.add("");
+      lines.add("# Project");
+      lines.add(xtd::string::format("project({} VERSION 1.0.0)", name));
+      lines.add("set(SOURCES");
       auto [headers, sources] = get_cpp_sources(path, path);
       for (auto file : headers)
-        lines.push_back(xtd::string::format("  {}", file));
+        lines.add(xtd::string::format("  {}", file));
       for (auto file : sources)
-        lines.push_back(xtd::string::format("  {}", file));
-      lines.push_back(")");
-      lines.push_back("source_group(src FILES ${SOURCES})");
-      lines.push_back("find_package(Qt6 COMPONENTS Widgets REQUIRED)");
-      lines.push_back("");
-      lines.push_back("# Options");
-      lines.push_back("set(CMAKE_AUTOMOC ON)");
-      lines.push_back("set(CMAKE_AUTORCC ON)");
-      lines.push_back("set(CMAKE_AUTOUIC ON)");
-      lines.push_back("set(CMAKE_CXX_STANDARD 17)");
-      lines.push_back("set(CMAKE_CXX_STANDARD_REQUIRED ON)");
-      lines.push_back("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
-      lines.push_back("");
-      lines.push_back("# Application properties");
-      lines.push_back("add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})");
-      lines.push_back("target_link_libraries(${PROJECT_NAME} Qt6::Widgets)");
+        lines.add(xtd::string::format("  {}", file));
+      lines.add(")");
+      lines.add("source_group(src FILES ${SOURCES})");
+      lines.add("find_package(Qt6 COMPONENTS Widgets REQUIRED)");
+      lines.add("");
+      lines.add("# Options");
+      lines.add("set(CMAKE_AUTOMOC ON)");
+      lines.add("set(CMAKE_AUTORCC ON)");
+      lines.add("set(CMAKE_AUTOUIC ON)");
+      lines.add("set(CMAKE_CXX_STANDARD 17)");
+      lines.add("set(CMAKE_CXX_STANDARD_REQUIRED ON)");
+      lines.add("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
+      lines.add("");
+      lines.add("# Application properties");
+      lines.add("add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})");
+      lines.add("target_link_libraries(${PROJECT_NAME} Qt6::Widgets)");
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }
     
     void generate_qmake_pro(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::collections::generic::list<xtd::string> {};
-      lines.push_back("CONFIG += c++17");
-      lines.push_back("QT = widgets");
+      lines.add("CONFIG += c++17");
+      lines.add("QT = widgets");
       auto [headers, sources] = get_cpp_sources(path, path);
-      lines.push_back(xtd::string::format("HEADERS = {}", xtd::string::join(" ", headers)));
-      lines.push_back(xtd::string::format("SOURCES = {}", xtd::string::join(" ", sources)));
+      lines.add(xtd::string::format("HEADERS = {}", xtd::string::join(" ", headers)));
+      lines.add(xtd::string::format("SOURCES = {}", xtd::string::join(" ", sources)));
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "src", xtd::string::format("{}.pro", name)), lines);
     }

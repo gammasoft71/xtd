@@ -333,7 +333,7 @@ const style_sheet::style_sheet_names_t& style_sheet::style_sheet_names() noexcep
     auto selectors_iterator = reader.selectors().find("theme");
     if (selectors_iterator == reader.selectors().end()) continue;
     auto properties_iterator = selectors_iterator->second.properties().find("name");
-    if (properties_iterator != selectors_iterator->second.properties().end()) style_sheet_names_.push_back(properties_iterator->second.to_string().trim().trim('\"'));
+    if (properties_iterator != selectors_iterator->second.properties().end()) style_sheet_names_.add(properties_iterator->second.to_string().trim().trim('\"'));
   }
   return style_sheet_names_;
 }
@@ -784,14 +784,14 @@ array<string> style_sheet::split_values_from_text(const string& text) const noex
   while (!value.empty()) {
     auto color_keyword = string_starts_with_any(value, color_keywords);
     if (color_keyword != "") {
-      result.push_back(value.substring(0, value.find(')') + 1).trim());
+      result.add(value.substring(0, value.find(')') + 1).trim());
       value = value.remove(0, value.find(')') + 1).trim();
       if (value.size() && value[0] == ',') value = value.remove(0, 1).trim();
     } else if (value.find(',') == string::npos) {
-      result.push_back(value.trim());
+      result.add(value.trim());
       value = "";
     } else if (value.find(',') != string::npos) {
-      result.push_back(value.substring(0, value.find(',')).trim());
+      result.add(value.substring(0, value.find(',')).trim());
       value = value.remove(0, value.find(',') + 1).trim();
     }
   }
@@ -1169,7 +1169,7 @@ bool style_sheet::try_parse_linear_gradient(const string& text, background_image
       argument = argument.replace("deg", string::empty_string);
       if (angle != -1 || string::try_parse<int32>(argument, angle) == false) return false;
     } else if (try_parse_color(argument, gradient_color))
-      colors.push_back(gradient_color);
+      colors.add(gradient_color);
   }
   if (colors.count() < 2) return false;
   result = background_image(style_sheets::image_type::linear_gradient, colors, angle == -1 ? 180 : angle);

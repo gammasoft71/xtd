@@ -81,7 +81,7 @@ void graphics_path::add_bezier(float x1, float y1, float x2, float y2, float x3,
 
 void graphics_path::add_beziers(const array<xtd::drawing::point>& points) {
   auto points_f = list<point_f> {};
-  std::for_each(points.begin(), points.end(), [&](auto point) {points_f.push_back(point_f(point));});
+  std::for_each(points.begin(), points.end(), [&](auto point) {points_f.add(point_f(point));});
   add_beziers(points_f.to_array());
 }
 
@@ -101,7 +101,7 @@ void graphics_path::add_closed_curve(const array<xtd::drawing::point_f>& points)
 
 void graphics_path::add_closed_curve(const array<xtd::drawing::point>& points, float tension) {
   auto points_f = list<point_f> {};
-  std::for_each(points.begin(), points.end(), [&](auto point) {points_f.push_back(point_f(point));});
+  std::for_each(points.begin(), points.end(), [&](auto point) {points_f.add(point_f(point));});
   add_closed_curve(points_f.to_array(), tension);
 }
 
@@ -129,7 +129,7 @@ void graphics_path::add_curve(const array<xtd::drawing::point_f>& points, float 
 
 void graphics_path::add_curve(const array<xtd::drawing::point>& points, size_t offset, size_t number_of_segments, float tension) {
   auto points_f = list<point_f> {};
-  std::for_each(points.begin(), points.end(), [&](auto point) {points_f.push_back(point_f(point));});
+  std::for_each(points.begin(), points.end(), [&](auto point) {points_f.add(point_f(point));});
   add_curve(points_f.to_array(), offset, number_of_segments, tension);
 }
 

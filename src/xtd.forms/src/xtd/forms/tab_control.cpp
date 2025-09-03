@@ -278,7 +278,7 @@ void tab_control::on_tab_pages_text_added(size_t index, const string& text, cons
   item->name(name);
   if (index == tab_pages().npos) {
     tab_pages().push_back(*item);
-    data_->text_tab_pages.push_back(item);
+    data_->text_tab_pages.add(item);
   } else {
     tab_pages().insert_at(index, *item);
     data_->text_tab_pages.insert(index, item);
@@ -291,7 +291,7 @@ tab_control::tab_page_collection::iterator tab_control::on_tab_pages_text_insert
   item->name(name);
   tab_page_collection::iterator it = tab_pages().end();
   it = tab_pages().insert(pos, *item);
-  if (pos == tab_pages().end()) data_->text_tab_pages.push_back(item);
+  if (pos == tab_pages().end()) data_->text_tab_pages.add(item);
   else data_->text_tab_pages.insert(pos - tab_pages().begin(), item);
   return it;
 }

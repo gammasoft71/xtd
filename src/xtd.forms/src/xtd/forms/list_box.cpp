@@ -134,7 +134,7 @@ const list_box::item& list_box::selected_item() const noexcept {
 array<list_box::item> list_box::selected_items() const noexcept {
   auto itms = list<item> {};
   auto indices = selected_indices();
-  std::for_each(indices.begin(), indices.end(), [&](size_t index) {itms.push_back(data_->items[index]);});
+  std::for_each(indices.begin(), indices.end(), [&](size_t index) {itms.add(data_->items[index]);});
   return itms.to_array();
 }
 

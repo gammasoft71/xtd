@@ -69,7 +69,7 @@ namespace xtdc_gui {
       for (auto group_item : xtd::io::directory::enumerate_directories(examples_path)) {
         for (auto item : xtd::io::directory::enumerate_directories(group_item)) {
           if (xtd::io::path::get_file_name(item) != "src") {
-            examples.push_back({xtd::string::format("{} - {}", xtd::io::path::get_file_name(group_item), xtd::io::path::get_file_name(item)), get_description(xtd::io::path::combine(item, "README.md")), item, get_picture(xtd::io::path::get_file_name(item)), get_output(xtd::io::path::combine(item, "README.md")) });
+            examples.add({xtd::string::format("{} - {}", xtd::io::path::get_file_name(group_item), xtd::io::path::get_file_name(item)), get_description(xtd::io::path::combine(item, "README.md")), item, get_picture(xtd::io::path::get_file_name(item)), get_output(xtd::io::path::combine(item, "README.md")) });
           }
         }
       }

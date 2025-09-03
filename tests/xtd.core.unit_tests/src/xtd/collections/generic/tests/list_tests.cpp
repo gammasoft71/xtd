@@ -155,9 +155,9 @@ namespace xtd::collections::generic::tests {
     void test_method_(count) {
       auto items = list<int> {};
       assert::is_zero(items.count());
-      items.push_back(84);
-      items.push_back(42);
-      items.push_back(21);
+      items.add(84);
+      items.add(42);
+      items.add(21);
       assert::are_equal(3_z, items.count());
       items.resize(50);
       assert::are_equal(50_z, items.count());

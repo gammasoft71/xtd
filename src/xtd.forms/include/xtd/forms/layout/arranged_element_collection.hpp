@@ -230,21 +230,60 @@ namespace xtd {
         /// @return The number of elements that can be held in currently allocated storage.
         size_type capacity() const noexcept {return collection_.capacity();}
         
-        /// @brief Reduces memory usage by freeing unused memory.
-        void shrink_to_fit() {collection_.shrink_to_fit();}
-        
-        /// @brief Checks whether the container is sorted.
-        /// @return `true` if container is sorted; otherwise `false`.
-        virtual bool sorted() const noexcept {return sorted_;}
-        /// @brief Sets the container is sorted.
-        /// @param value `true` if container is sorted; otherwise `false`.
-        virtual void sorted(bool value) {
-          if (sorted_ != value) {
-            sorted_ = value;
-            if (sorted_) sort();
-          }
+        /// @brief Adds an element to the end.
+        /// @param item The element to add.
+        virtual void add(const value_type& item) {
+          collection_.push_back(item);
+          size_t index = collection_.size() - 1;
+          (*this)[index].owner = this;
+          (*this)[index].pos = index;
+          on_item_added(index, collection_[index]);
+          if (sorted_) sort();
+        }
+        /// @brief Adds an element to the end.
+        /// @param item The element to add.
+        virtual void add(value_type&& item) {
+          collection_.push_back(item);
+          size_t index = collection_.size() - 1;
+          (*this)[index].owner = this;
+          (*this)[index].pos = index;
+          on_item_added(index, collection_[index]);
+          if (sorted_) sort();
         }
         
+        /// @brief Adds elements to the end.
+        /// @param collection The elements to add.
+        virtual void add_range(const arranged_element_collection& collection) {
+          for (value_type item : collection)
+            push_back(item);
+        }
+        /// @brief Adds elements to the end.
+        /// @param collection The elements to add.
+        virtual void add_range(const std::vector<value_type>& collection) {
+          for (value_type item : collection)
+            push_back(item);
+        }
+        /// @brief Adds elements to the end.
+        /// @param collection The elements to add.
+        virtual void add_range(const std::initializer_list<value_type>& collection) {
+          for (value_type item : collection)
+            push_back(item);
+        }
+        /// @brief Adds elements to the end.
+        /// @param collection The elements to add.
+        template<class collection_t>
+        void add_range(collection_t&& collection) {
+          for (auto& item : collection)
+            push_back(value_type(item));
+        }
+        /// @brief Adds elements to the end.
+        /// @param collection The elements to add.
+        template<class iterator_t>
+        void add_range(iterator_t begin, iterator_t end) {
+          for (auto it = begin; it != end; ++it)
+            push_back(value_type(*it));
+        }
+
         /// @brief clears the contents.
         virtual void clear() noexcept {
           iterator it = begin();
@@ -370,55 +409,12 @@ namespace xtd {
         /// @brief Adds an element to the end.
         /// @param item The element to add.
         virtual void push_back(const value_type& item) {
-          collection_.push_back(item);
-          size_t index = collection_.size() - 1;
-          (*this)[index].owner = this;
-          (*this)[index].pos = index;
-          on_item_added(index, collection_[index]);
-          if (sorted_) sort();
+          add(item);
         }
         /// @brief Adds an element to the end.
         /// @param item The element to add.
         virtual void push_back(value_type&& item) {
-          collection_.push_back(item);
-          size_t index = collection_.size() - 1;
-          (*this)[index].owner = this;
-          (*this)[index].pos = index;
-          on_item_added(index, collection_[index]);
-          if (sorted_) sort();
-        }
-        
-        /// @brief Adds elements to the end.
-        /// @param collection The elements to add.
-        virtual void push_back_range(const arranged_element_collection& collection) {
-          for (value_type item : collection)
-            push_back(item);
-        }
-        /// @brief Adds elements to the end.
-        /// @param collection The elements to add.
-        virtual void push_back_range(const std::vector<value_type>& collection) {
-          for (value_type item : collection)
-            push_back(item);
-        }
-        /// @brief Adds elements to the end.
-        /// @param collection The elements to add.
-        virtual void push_back_range(const std::initializer_list<value_type>& collection) {
-          for (value_type item : collection)
-            push_back(item);
-        }
-        /// @brief Adds elements to the end.
-        /// @param collection The elements to add.
-        template<class collection_t>
-        void push_back_range(collection_t&& collection) {
-          for (auto& item : collection)
-            push_back(value_type(item));
-        }
-        /// @brief Adds elements to the end.
-        /// @param collection The elements to add.
-        template<class iterator_t>
-        void push_back_range(iterator_t begin, iterator_t end) {
-          for (auto it = begin; it != end; ++it)
-            push_back(value_type(*it));
+          add(std::move(item));
         }
         
         /// @brief Sorts the content.
@@ -428,6 +424,49 @@ namespace xtd {
           return self_;
         }
         
+        /// @brief Adds elements to the end.
+        /// @param collection The elements to add.
+        virtual void push_back_range(const arranged_element_collection& collection) {
+          add_range(collection);
+        }
+        /// @brief Adds elements to the end.
+        /// @param collection The elements to add.
+        virtual void push_back_range(const std::vector<value_type>& collection) {
+          add_range(collection);
+        }
+        /// @brief Adds elements to the end.
+        /// @param collection The elements to add.
+        virtual void push_back_range(const std::initializer_list<value_type>& collection) {
+          add_range(collection);
+        }
+        /// @brief Adds elements to the end.
+        /// @param collection The elements to add.
+        template<class collection_t>
+        void push_back_range(collection_t&& collection) {
+          add_range(collection);
+        }
+        /// @brief Adds elements to the end.
+        /// @param collection The elements to add.
+        template<class iterator_t>
+        void push_back_range(iterator_t begin, iterator_t end) {
+          add_range(begin, end);
+        }
+
+        /// @brief Reduces memory usage by freeing unused memory.
+        void shrink_to_fit() {collection_.shrink_to_fit();}
+        
+        /// @brief Checks whether the container is sorted.
+        /// @return `true` if container is sorted; otherwise `false`.
+        virtual bool sorted() const noexcept {return sorted_;}
+        /// @brief Sets the container is sorted.
+        /// @param value `true` if container is sorted; otherwise `false`.
+        virtual void sorted(bool value) {
+          if (sorted_ != value) {
+            sorted_ = value;
+            if (sorted_) sort();
+          }
+        }
+
         /// @brief Gets an array with the elements of the container.
         /// @return The array that contains elements of the container.
         xtd::array<type_t> to_array() const noexcept {

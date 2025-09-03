@@ -74,7 +74,7 @@ linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& re
   auto pos = .0f;
   auto increment = 1.0f / (linear_colors.size() - 1);
   for (auto color : linear_colors) {
-    data_->linear_colors.push_back({color, pos});
+    data_->linear_colors.add({color, pos});
     pos += increment;
   }
   recreate_handle();

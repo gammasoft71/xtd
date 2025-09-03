@@ -217,7 +217,7 @@ array<string> file::read_all_lines(const string& path) {
   auto contents = list<string> {};
   stream_reader sr(path);
   while (!sr.end_of_stream())
-    contents.push_back(sr.read_line());
+    contents.add(sr.read_line());
   return contents.to_array();
 }
 

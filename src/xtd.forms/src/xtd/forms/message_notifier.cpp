@@ -73,7 +73,7 @@ namespace {
       h_layout_container_.control_layout_style(v_layout_title_message_, {0.75f, size_type::percent, true});
       h_layout_container_.control_layout_style(v_layout_buttons_, {80, size_type::absolute});
       
-      v_layout_icon_.controls().push_back(picture_box_icon_);
+      v_layout_icon_.controls().add(picture_box_icon_);
       v_layout_icon_.dock(dock_style::top);
       
       picture_box_icon_.image(xtd::drawing::system_icons::question().to_bitmap());
@@ -116,7 +116,7 @@ namespace {
           // TODO
           //mn.on_notifier_closed(notifier_closed_event_args(std::nullopt));
         };
-        buttons_.push_back(std::move(btn));
+        buttons_.add(std::move(btn));
       }
       
       // Buttons
@@ -132,7 +132,7 @@ namespace {
           // mn.on_button_click(notifier_button_click_event_args(_btn));
           form::close();
         };
-        buttons_.push_back(std::move(btn));
+        buttons_.add(std::move(btn));
       }
       
       // Auto close timeout if enabled

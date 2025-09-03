@@ -162,7 +162,7 @@ array<string> uri::segments() const {
   auto length = 1_z;
   
   if (path[start_index] == '/') {
-    segments.push_back(path.substring(start_index, length));
+    segments.add(path.substring(start_index, length));
     start_index += length;
   }
   
@@ -170,7 +170,7 @@ array<string> uri::segments() const {
     length = path.index_of('/', start_index);
     if (length == string::npos) length = path.size() - start_index;
     
-    segments.push_back(path.substring(start_index, length));
+    segments.add(path.substring(start_index, length));
     start_index += length;
   }
   return segments;

@@ -32,24 +32,24 @@ namespace xtdc_command {
     
     void generate_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::collections::generic::list<xtd::string> {};
-      lines.push_back("cmake_minimum_required(VERSION 3.20)");
-      lines.push_back("");
-      lines.push_back("# Project");
-      lines.push_back(xtd::string::format("project({})", name));
-      lines.push_back("find_package(xtd REQUIRED)");
-      lines.push_back("add_sources(");
+      lines.add("cmake_minimum_required(VERSION 3.20)");
+      lines.add("");
+      lines.add("# Project");
+      lines.add(xtd::string::format("project({})", name));
+      lines.add("find_package(xtd REQUIRED)");
+      lines.add("add_sources(");
       auto [headers, sources] = get_c_sources(path, path);
       for (auto file : headers)
-        lines.push_back(xtd::string::format("  {}", file));
+        lines.add(xtd::string::format("  {}", file));
       for (auto file : sources)
-        lines.push_back(xtd::string::format("  {}", file));
-      lines.push_back(")");
-      lines.push_back("target_type(TEST_APPLICATION)");
-      lines.push_back("");
-      lines.push_back("# Install");
-      lines.push_back("install_package()");
-      lines.push_back("");
-      lines.push_back("# Projects");
+        lines.add(xtd::string::format("  {}", file));
+      lines.add(")");
+      lines.add("target_type(TEST_APPLICATION)");
+      lines.add("");
+      lines.add("# Install");
+      lines.add("install_package()");
+      lines.add("");
+      lines.add("# Projects");
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(current_path(), "CMakeLists.txt"), lines);
     }

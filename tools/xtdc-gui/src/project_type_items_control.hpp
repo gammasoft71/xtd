@@ -81,7 +81,7 @@ namespace xtdc_gui {
         item_control->parent(*this);
         item_control->dock(xtd::forms::dock_style::top);
         item_control->tag(project_type_item_controls_.count());
-        project_type_item_controls_.push_back(item_control);
+        project_type_item_controls_.add(item_control);
         item_control->click += [&](object & sender, const xtd::event_args & e) {
           selected_index(project_type_item_controls_.count() - 1 - xtd::as<size_t>(xtd::as<control>(sender).tag()));
         };
@@ -124,7 +124,7 @@ namespace xtdc_gui {
     xtd::array<project_type_item> project_type_items() const {
       xtd::collections::generic::list<project_type_item> items;
       for (auto it = project_type_item_controls_.items().rbegin(); it != project_type_item_controls_.items().rend(); ++it)
-        items.push_back((*it)->project_type_item());
+        items.add((*it)->project_type_item());
       return items.to_array();
     }
     

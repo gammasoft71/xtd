@@ -474,7 +474,7 @@ void link_label::on_text_align_changed(const event_args& e) {
 }
 
 void link_label::on_text_changed(const event_args& e) {
-  if (data_->links.empty()) data_->links.push_back({0, text().length()});
+  if (data_->links.empty()) data_->links.add({0, text().length()});
   label::on_text_changed(e);
   invalidate();
 }
@@ -526,7 +526,7 @@ array<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text_rects
       if (index < link.start()) {
         text = line.substring(line_index, link.start() - line_index);
         size_text = drawing::size::ceiling(screen::create_graphics().measure_string(text, font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
-        text_rects.push_back({{text_location, size_text}, false});
+        text_rects.add({{text_location, size_text}, false});
         text_location.x = text_location.x + size_text.width;
         line_index += text.length();
       }
@@ -534,7 +534,7 @@ array<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text_rects
       if (index <= link.start() && line.length() + index > link.start()) {
         text = line.substring(link.start() - index, link.length() - link.start() - index);
         size_text = drawing::size::ceiling(screen::create_graphics().measure_string(text, link_font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
-        text_rects.push_back({{text_location, size_text}, true});
+        text_rects.add({{text_location, size_text}, true});
         text_location.x = text_location.x + size_text.width;
         line_index = link.start() - index + text.length();
       }
@@ -543,7 +543,7 @@ array<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text_rects
     if (line_index < line.length()) {
       text = line.substring(line_index, line.length() - line_index);
       size_text = drawing::size::ceiling(screen::create_graphics().measure_string(text, font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
-      text_rects.push_back({{text_location, size_text}, false});
+      text_rects.add({{text_location, size_text}, false});
       line_index = line.length();
     }
     index += line_index + 1;

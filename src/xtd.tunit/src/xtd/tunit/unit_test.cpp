@@ -53,7 +53,7 @@ array<string> unit_test::aborted_test_names() const noexcept {
   auto names = list<string> {};
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
-      if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.aborted()) names.push_back(test_class.test()->name() + "." + test.name());
+      if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.aborted()) names.add(test_class.test()->name() + "." + test.name());
   return names;
 }
 
@@ -74,7 +74,7 @@ array<string> unit_test::ignored_test_names() const noexcept {
   auto names = list<string> {};
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
-      if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.ignored()) names.push_back(test_class.test()->name() + "." + test.name());
+      if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.ignored()) names.add(test_class.test()->name() + "." + test.name());
   return names;
 }
 
@@ -90,7 +90,7 @@ array<string> unit_test::failed_test_names() const noexcept {
   auto names = list<string> {};
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
-      if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.failed()) names.push_back(test_class.test()->name() + "." + test.name());
+      if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.failed()) names.add(test_class.test()->name() + "." + test.name());
   return names;
 }
 
@@ -106,7 +106,7 @@ array<string> unit_test::succeed_test_names() const noexcept {
   auto names = list<string> {};
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
-      if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.succeed()) names.push_back(test_class.test()->name() + "." + test.name());
+      if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.succeed()) names.add(test_class.test()->name() + "." + test.name());
   return names;
 }
 
@@ -128,7 +128,7 @@ int32 unit_test::run() noexcept {
       auto tests = list<string> {};
       for (auto test_class : test_classes())
         for (auto test : test_class.test()->tests())
-          tests.push_back(test_class.test()->name() + '.' + test.name());
+          tests.add(test_class.test()->name() + '.' + test.name());
           
       if (settings::default_settings().output_json()) write_list_tests_json();
       if (settings::default_settings().output_xml()) write_list_tests_xml();
@@ -246,7 +246,7 @@ bool unit_test::parse_arguments(const array<string>& args) {
 }
 
 void unit_test::add(const registered_test_class& test_class) {
-  test_classes().push_back(test_class);
+  test_classes().add(test_class);
 }
 
 list<registered_test_class>& unit_test::test_classes() {

@@ -327,7 +327,10 @@ namespace xtd {
         /// @remarks xtd::collections::generic::list <type_t>  allows duplicate elements.
         /// @remarks If xtd::collections::generic::list::count already equals xtd::collections::generic::list::capacity, the capacity of the xtd::collections::generic::list <type_t> is increased by automatically reallocating the internal array, and the existing elements are copied to the new array before the new element is added.
         /// @remarks If xtd::collections::generic::list::count is less than xtd::collections::generic::list::capacity, this method is an O(1) operation. If the capacity needs to be increased to accommodate the new element, this method becomes an O(n) operation, where n is xtd::collections::generic::list::count.
-        void add(const type_t& item) override {push_back(item);}
+        void add(const type_t& item) override {
+          ++data_->version;
+          data_->items.push_back(item);
+        }
         /// @brief Adds an object to the end of the xtd::collections::generic::list <type_t>.
         /// @param item The object to be added to the end of the xtd::collections::generic::list <type_t>.
         /// @)ar Examples
@@ -341,7 +344,10 @@ namespace xtd {
         /// @remarks xtd::collections::generic::list <type_t>  allows duplicate elements.
         /// @remarks If xtd::collections::generic::list::count already equals xtd::collections::generic::list::capacity, the capacity of the xtd::collections::generic::list <type_t> is increased by automatically reallocating the internal array, and the existing elements are copied to the new array before the new element is added.
         /// @remarks If xtd::collections::generic::list::count is less than xtd::collections::generic::list::capacity, this method is an O(1) operation. If the capacity needs to be increased to accommodate the new element, this method becomes an O(n) operation, where n is xtd::collections::generic::list::count.
-        void add(type_t&& item) {push_back(std::move(item));}
+        void add(type_t&& item) {
+          ++data_->version;
+          data_->items.push_back(std::move(item));
+        }
         
         /// @brief Adds copy of elements from the specified collection to the end of the xtd::collections::generic::list <type_t>.
         /// @param collection The collection whose elements should be added to the end of the xtd::collections::generic::list <type_t>.
@@ -865,31 +871,6 @@ namespace xtd {
           return npos;
         }
         
-        /// @brief Removes the last element of the container.
-        /// @remarks Calling pop_back on an empty container results in undefined behavior.
-        /// @remarks Iterators (including the xtd::collections::generic::list::end() iterator) and references to the last element are invalidated.
-        virtual void pop_back() {
-          ++data_->version;
-          data_->items.pop_back();
-        }
-        
-        /// @brief Appends the given element value to the end of the container.
-        /// @param value The value of the element to append.
-        /// @remarks If after the operation the new xtd::collections::generic::list::count() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise only the xtd::collections::generic::list::end() iterator is invalidated.
-        /// @remarks The new element is initialized as a copy of `value`.
-        virtual void push_back(const type_t& value) {
-          ++data_->version;
-          data_->items.push_back(value);
-        }
-        /// @brief Appends the given element value to the end of the container.
-        /// @param value The value of the element to append.
-        /// @remarks If after the operation the new xtd::collections::generic::list::count() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise only the xtd::collections::generic::list::end() iterator is invalidated.
-        /// @remarks `value` is moved into the new element.
-        virtual void push_back(type_t&& value) {
-          ++data_->version;
-          data_->items.push_back(std::move(value));
-        }
-        
         /// @brief Removes the first occurrence of a specific object from the xtd::collections::generic::list <type_t>.
         /// @param item The object to remove from the xtd::collections::generic::list <type_t>.
         /// @return `true` if item is successfully removed; otherwise, `false`. This method also returns `false` if item was not found in the xtd::collections::generic::list <type_t>.
@@ -938,7 +919,7 @@ namespace xtd {
         void remove_at(size_type index) override {
           if (index >= count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
           
-          if (index == count() - 1) pop_back();
+          if (index == count() - 1) data_->items.pop_back();
           else data_->items.erase(data_->items.begin() + index);
         }
         

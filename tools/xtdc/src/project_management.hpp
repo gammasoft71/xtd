@@ -271,7 +271,7 @@ namespace xtdc_command {
       if (targets.count() == 0)
         for (const auto& line : get_system_information())
           if (line.index_of("_BINARY_DIR:STATIC=") != xtd::string::npos)
-            targets.push_back(line.substring(0, line.index_of("_BINARY_DIR:STATIC=")));
+            targets.add(line.substring(0, line.index_of("_BINARY_DIR:STATIC=")));
       return targets.to_array();
     }
     

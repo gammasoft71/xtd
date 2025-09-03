@@ -36,7 +36,7 @@ namespace {
     }
     
     static void new_figure(wxGraphicsPath* path) noexcept {
-      figures_[path].push_back(false);
+      figures_[path].add(false);
     }
     
     static void start(wxGraphicsPath* path, double current_point_x, double current_point_y) {

@@ -81,13 +81,15 @@ checked_list_box::checked_list_box(checked_list_box&& rhs) : list_box(std::move(
 checked_list_box::checked_index_collection checked_list_box::checked_indices() const noexcept {
   auto indices = checked_index_collection {};
   for (auto index = 0_z; index < data_->items.size(); ++index)
-    if (data_->items[index].checked()) indices.push_back(index);
+    if (data_->items[index].checked()) indices.add(index);
   return indices;
 }
 
 checked_list_box::checked_item_collection checked_list_box::checked_items() const noexcept {
+  //return data_->items.find_all([](auto item) {return item.checked();});
   auto items = checked_item_collection {};
-  copy_if(data_->items.begin(), data_->items.end(), back_inserter(items), [&](auto item) {return item.checked();});
+  for (const auto& item : data_->items)
+    if (item.checked()) items.add(item);
   return items;
 }
 
@@ -145,7 +147,7 @@ checked_list_box& checked_list_box::selected_item(const item& selected_item) {
 checked_list_box::selected_object_collection checked_list_box::selected_items() const noexcept {
   auto itms = selected_object_collection {};
   auto indices = selected_indices();
-  std::for_each(indices.begin(), indices.end(), [&](size_t index) {itms.push_back(data_->items[index]);});
+  std::for_each(indices.begin(), indices.end(), [&](size_t index) {itms.add(data_->items[index]);});
   return itms;
 }
 

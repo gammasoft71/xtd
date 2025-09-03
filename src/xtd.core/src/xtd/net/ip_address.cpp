@@ -111,16 +111,16 @@ bool ip_address::equals(const ip_address& other) const noexcept {
 array<byte> ip_address::get_address_bytes() const {
   auto bytes = list<byte> {};
   if (address_family_ == sockets::address_family::inter_network) {
-    bytes.push_back(static_cast<byte>(address_or_scope_id_));
-    bytes.push_back(static_cast<byte>(address_or_scope_id_ >> 8));
-    bytes.push_back(static_cast<byte>(address_or_scope_id_ >> 16));
-    bytes.push_back(static_cast<byte>(address_or_scope_id_ >> 24));
+    bytes.add(static_cast<byte>(address_or_scope_id_));
+    bytes.add(static_cast<byte>(address_or_scope_id_ >> 8));
+    bytes.add(static_cast<byte>(address_or_scope_id_ >> 16));
+    bytes.add(static_cast<byte>(address_or_scope_id_ >> 24));
     return bytes.to_array();
   }
   
   for (auto number : numbers_) {
-    bytes.push_back((number >> 8) & 0xFF);
-    bytes.push_back(number & 0xFF);
+    bytes.add((number >> 8) & 0xFF);
+    bytes.add(number & 0xFF);
   }
   return bytes;
 }
