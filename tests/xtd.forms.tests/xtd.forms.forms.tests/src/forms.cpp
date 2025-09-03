@@ -152,7 +152,7 @@ namespace xtd::forms::tests {
         dialog->text("dialog show normal");
         dialog->size({250, 100});
         dialog->show();
-        dialogs.push_back(std::move(dialog));
+        dialogs.add(std::move(dialog));
       };
       
       show_modeless_button.location({10, 50});
@@ -163,7 +163,7 @@ namespace xtd::forms::tests {
         dialog->text("dialog show modeless");
         dialog->size({250, 100});
         dialog->owner(*this).show();
-        dialogs.push_back(std::move(dialog));
+        dialogs.add(std::move(dialog));
       };
       
       show_top_most_button.location({10, 90});
@@ -174,7 +174,7 @@ namespace xtd::forms::tests {
         dialog->text("dialog top most");
         dialog->size({250, 100});
         dialog->top_most(true).show();
-        dialogs.push_back(std::move(dialog));
+        dialogs.add(std::move(dialog));
       };
       
       show_modal_button.location({10, 130});
@@ -198,7 +198,7 @@ namespace xtd::forms::tests {
           if (e.key_code() == keys::escape) as<form&>(control).close();
         };
         dialog->show_sheet(*this);
-        dialogs.push_back(std::move(dialog));
+        dialogs.add(std::move(dialog));
       };
       
       show_sheet_modal_button.location({10, 210});

@@ -573,7 +573,7 @@ void tool_bar::fill() {
         control_handle = native::tool_bar::add_tool_bar_control(handle(), button_item.control().has_value() ? button_item.control().value().get().handle() : 0, button_item.text(), button_item.tool_tip_text());
       }
       reversed_buttons[index].get().data_->handle = control_handle;
-      data_->system_tool_bar_button_handles.push_back(control_handle);
+      data_->system_tool_bar_button_handles.add(control_handle);
       button_item.data_->rectangle = drawing::rectangle(native::tool_bar::tool_bar_item_rectangle(handle(), control_handle));
     } else {
       auto button_control = xtd::new_sptr<tool_bar_button_control>();
@@ -600,7 +600,7 @@ void tool_bar::fill() {
         button_control->width(image_size().width / 2);
       }
       if (button_item.style() == tool_bar_button_style::stretchable_separator)
-        data_->stretchable_separators.push_back(button_control);
+        data_->stretchable_separators.add(button_control);
       if (button_item.style() == tool_bar_button_style::control && button_item.control().has_value()) {
         button_control->control(&button_item.control().value().get());
         button_item.control().value().get().parent(*button_control);
@@ -622,7 +622,7 @@ void tool_bar::fill() {
       
       button_item.data_->rectangle = drawing::rectangle(button_control->location(), button_control->size());
       
-      data_->tool_bar_buttons.push_back(button_control);
+      data_->tool_bar_buttons.add(button_control);
     }
   }
   

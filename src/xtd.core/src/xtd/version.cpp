@@ -119,7 +119,7 @@ version version::parse(const xtd::string& input) {
   auto rgx = std::regex {"\\."};
   auto versions = xtd::collections::specialized::string_collection {};
   for (auto it = std::sregex_token_iterator {input.chars().begin(), input.chars().end(), rgx, -1}, end = std::sregex_token_iterator {}; it != end; ++it)
-    versions.push_back(it->str());
+    versions.add(it->str());
     
   switch (versions.count()) {
     case 2: return version {string::parse<int32>(versions[0]), string::parse<int32>(versions[1])};

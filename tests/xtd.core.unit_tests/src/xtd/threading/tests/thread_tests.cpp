@@ -646,7 +646,7 @@ namespace xtd::threading::tests {
       auto threads = list<thread> {};
       
       for (auto index = 0_z; index < max_count_thread; ++index)
-        threads.push_back(thread::start_new(thread_proc));
+        threads.add(thread::start_new(thread_proc));
         
       thread::join_all(threads);
       

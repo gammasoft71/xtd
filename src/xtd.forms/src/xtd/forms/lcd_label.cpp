@@ -141,11 +141,11 @@ control& lcd_label::text(const xtd::string& value) {
   if (str.size() > data_->digits.count())
     for (auto index = data_->digits.count(); index < str.size(); ++index) {
       switch (data_->lcd_style) {
-        case lcd_style::seven_segment_display: data_->digits.push_back(xtd::new_sptr<seven_segment_display_digit>()); break;
-        case lcd_style::nine_segment_display: data_->digits.push_back(xtd::new_sptr<nine_segment_display_digit>()); break;
-        case lcd_style::fourteen_segment_display: data_->digits.push_back(xtd::new_sptr<fourteen_segment_display_digit>()); break;
-        case lcd_style::sixteen_segment_display: data_->digits.push_back(xtd::new_sptr<sixteen_segment_display_digit>()); break;
-        case lcd_style::dot_matrix_display: data_->digits.push_back(xtd::new_sptr<dot_matrix_display_digit>()); break;
+        case lcd_style::seven_segment_display: data_->digits.add(xtd::new_sptr<seven_segment_display_digit>()); break;
+        case lcd_style::nine_segment_display: data_->digits.add(xtd::new_sptr<nine_segment_display_digit>()); break;
+        case lcd_style::fourteen_segment_display: data_->digits.add(xtd::new_sptr<fourteen_segment_display_digit>()); break;
+        case lcd_style::sixteen_segment_display: data_->digits.add(xtd::new_sptr<sixteen_segment_display_digit>()); break;
+        case lcd_style::dot_matrix_display: data_->digits.add(xtd::new_sptr<dot_matrix_display_digit>()); break;
         default: throw_helper::throws(exception_case::argument, "lcd_style invalid"_t);
       }
       dynamic_cast<control*>(data_->digits[data_->digits.count() - 1].get())->parent(*this);

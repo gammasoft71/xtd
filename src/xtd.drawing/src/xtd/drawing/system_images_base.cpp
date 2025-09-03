@@ -54,7 +54,7 @@ xtd::drawing::size system_images_base::default_size() noexcept {
 array<string> system_images_base::contexts() noexcept {
   auto result = list<string> {};
   for (const auto& context_name : context_names())
-    result.push_back(context_name.first);
+    result.add(context_name.first);
   return result.to_array();
 }
 
@@ -80,7 +80,7 @@ array<string> system_images_base::names() noexcept {
   auto result = list<string> {};
   for (const auto& context_name : context_names())
     for (const auto& name : context_name.second)
-      result.push_back(name);
+      result.add(name);
   return result.to_array();
 }
 

@@ -51,7 +51,7 @@ conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point_f& cent
   auto pos = .0f;
   auto increment = 1.0f / (conical_colors.size() - 1);
   for (auto color : conical_colors) {
-    data_->conical_colors.push_back({color, pos});
+    data_->conical_colors.add({color, pos});
     pos += increment;
   }
   recreate_handle();

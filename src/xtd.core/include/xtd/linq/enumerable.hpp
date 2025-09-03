@@ -540,7 +540,7 @@ namespace xtd {
             if (key_comparer.equals(keys[index], key)) break;
           if (index < keys.count()) result.items[index] = {key, result.items[index].value() + 1};
           else {
-            keys.push_back(key);
+            keys.add(key);
             result.items.push_back({key, 1});
           }
         }

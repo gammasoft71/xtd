@@ -132,7 +132,7 @@ void control::control_collection::insert_at(size_t index, const value_type& valu
   base::insert_at(index, value);
 }
 
-void control::control_collection::push_back(const value_type& value) {
+void control::control_collection::add(const value_type& value) {
   for (auto it = begin(); it != end(); ++it)
     if (it->get() == value.get()) return;
   base::push_back(value);

@@ -25,7 +25,7 @@ const xtd::array<int32>& h_result::get_h_results() noexcept {
   call_once_ {
     static auto tmp_h_results = list<int32> {};
     for (auto item : get_names())
-      tmp_h_results.push_back(item.first);
+      tmp_h_results.add(item.first);
     h_results = tmp_h_results;
   };
   return h_results;

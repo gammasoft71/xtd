@@ -68,14 +68,14 @@ file_settings::string_collection file_settings::keys(const string& section) cons
   if (section_key_values_.find(section) == section_key_values_.end()) return {};
   auto keys = string_collection {};
   for (auto [key, value] : section_key_values_.at(section))
-    keys.push_back(key);
+    keys.add(key);
   return keys;
 }
 
 file_settings::string_collection file_settings::sections() const noexcept {
   auto sections = string_collection {};
   for (auto [section, key_value] : section_key_values_)
-    sections.push_back(section);
+    sections.add(section);
   return sections;
 }
 

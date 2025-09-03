@@ -281,15 +281,15 @@ month_calendar& month_calendar::trailing_fore_color(const xtd::drawing::color& v
 }
 
 void month_calendar::add_annually_bolded_date(const xtd::date_time& date) {
-  data_->annually_bolded_dates.push_back(date);
+  data_->annually_bolded_dates.add(date);
 }
 
 void month_calendar::add_bolded_date(const xtd::date_time& date) {
-  data_->bolded_dates.push_back(date);
+  data_->bolded_dates.add(date);
 }
 
 void month_calendar::add_monthly_bolded_date(const xtd::date_time& date) {
-  data_->monthly_bolded_dates.push_back(date);
+  data_->monthly_bolded_dates.add(date);
 }
 
 month_calendar month_calendar::create() {

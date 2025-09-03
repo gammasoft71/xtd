@@ -49,21 +49,21 @@ namespace xtd::forms::tests {
       tool_bar_button_ptr_t tool_bar_button_ptr;
       
       tool_bar_ptr = xtd::new_sptr<forms::tool_bar>();
-      tool_bars.push_back(tool_bar_ptr);
+      tool_bars.add(tool_bar_ptr);
       tool_bar_ptr->dock(style).parent(parent_control);
       
       tool_bar_ptr = xtd::new_sptr<forms::tool_bar>();
-      tool_bars.push_back(tool_bar_ptr);
+      tool_bars.add(tool_bar_ptr);
       tool_bar_ptr->dock(style).parent(parent_control);
       tool_bar_ptr->image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help_about()});
       
       tool_bar_button_ptr = xtd::new_sptr<tool_bar_button>(tool_bar_button::create_push_button(texts::new_(), 0));
       tool_bar_ptr->buttons().push_back(*tool_bar_button_ptr);
-      tool_bar_items.push_back(tool_bar_button_ptr);
+      tool_bar_items.add(tool_bar_button_ptr);
       
       tool_bar_button_ptr = xtd::new_sptr<tool_bar_button>(tool_bar_button::create_push_button(texts::open(), 1));
       tool_bar_ptr->buttons().push_back(*tool_bar_button_ptr);
-      tool_bar_items.push_back(tool_bar_button_ptr);
+      tool_bar_items.add(tool_bar_button_ptr);
       
     }
     

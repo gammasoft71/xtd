@@ -75,7 +75,7 @@ void test_class::add_test_initialize(const test& test_initialize) noexcept {
 }
 
 void test_class::add_test_method(const test& test) noexcept {
-  tests_.push_back(test);
+  tests_.add(test);
 }
 
 const test& test_class::class_cleanup() const noexcept {

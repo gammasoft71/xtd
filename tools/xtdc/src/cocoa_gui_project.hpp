@@ -116,29 +116,29 @@ namespace xtdc_command {
     
     void generate_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::collections::generic::list<xtd::string> {};
-      lines.push_back("cmake_minimum_required(VERSION 3.20)");
-      lines.push_back("");
-      lines.push_back("# Project");
-      lines.push_back(xtd::string::format("project({} VERSION 1.0.0)", name));
-      lines.push_back("set(SOURCES");
+      lines.add("cmake_minimum_required(VERSION 3.20)");
+      lines.add("");
+      lines.add("# Project");
+      lines.add(xtd::string::format("project({} VERSION 1.0.0)", name));
+      lines.add("set(SOURCES");
       auto [headers, sources] = get_objectivec_sources(path, path);
       for (auto file : headers)
-        lines.push_back(xtd::string::format("  {}", file));
+        lines.add(xtd::string::format("  {}", file));
       for (auto file : sources)
-        lines.push_back(xtd::string::format("  {}", file));
-      lines.push_back(")");
-      lines.push_back("source_group(src FILES ${SOURCES})");
-      lines.push_back("");
-      lines.push_back("# Options");
-      lines.push_back("set(CMAKE_EXE_LINKER_FLAGS \"${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa\")");
-      lines.push_back("set(MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION})");
-      lines.push_back(xtd::string::format("set(MACOSX_BUNDLE_COPYRIGHT \"Copyright © {:L}\")", xtd::date_time::now()));
-      lines.push_back(xtd::string::format("set(MACOSX_BUNDLE_INFO_STRING \"{} application\")", name));
-      lines.push_back(xtd::string::format("set(MACOSX_BUNDLE_GUI_IDENTIFIER \"org.Company.{}\")", name));
-      lines.push_back("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
-      lines.push_back("");
-      lines.push_back("# Application properties");
-      lines.push_back("add_executable(${PROJECT_NAME} MACOSX_BUNDLE ${SOURCES})");
+        lines.add(xtd::string::format("  {}", file));
+      lines.add(")");
+      lines.add("source_group(src FILES ${SOURCES})");
+      lines.add("");
+      lines.add("# Options");
+      lines.add("set(CMAKE_EXE_LINKER_FLAGS \"${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa\")");
+      lines.add("set(MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION})");
+      lines.add(xtd::string::format("set(MACOSX_BUNDLE_COPYRIGHT \"Copyright © {:L}\")", xtd::date_time::now()));
+      lines.add(xtd::string::format("set(MACOSX_BUNDLE_INFO_STRING \"{} application\")", name));
+      lines.add(xtd::string::format("set(MACOSX_BUNDLE_GUI_IDENTIFIER \"org.Company.{}\")", name));
+      lines.add("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
+      lines.add("");
+      lines.add("# Application properties");
+      lines.add("add_executable(${PROJECT_NAME} MACOSX_BUNDLE ${SOURCES})");
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }

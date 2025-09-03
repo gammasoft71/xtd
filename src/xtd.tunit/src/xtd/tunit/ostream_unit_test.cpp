@@ -29,7 +29,7 @@ int ostream_unit_test::list_tests(const array<string>& tests) {
       auto key_value = string(name).split('.');
       if (key_value.size() == 2) {
         if (lists.find(key_value[0]) == lists.end()) lists.insert({key_value[0], {}});
-        lists.at(key_value[0]).push_back(key_value[1]);
+        lists.at(key_value[0]).add(key_value[1]);
       }
     }
     for (auto key_value : lists) {

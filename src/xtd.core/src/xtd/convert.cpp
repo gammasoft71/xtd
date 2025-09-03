@@ -35,7 +35,7 @@ array<byte> convert::from_base64_string(const string& s) {
       char_array_3[2] = ((char_array_4[2] & 0x3) << 6) + char_array_4[3];
       
       for (i = 0; (i < 3); i++)
-        ret.push_back(char_array_3[i]);
+        ret.add(char_array_3[i]);
       i = 0;
     }
   }
@@ -51,7 +51,7 @@ array<byte> convert::from_base64_string(const string& s) {
     char_array_3[1] = ((char_array_4[1] & 0xf) << 4) + ((char_array_4[2] & 0x3c) >> 2);
     char_array_3[2] = ((char_array_4[2] & 0x3) << 6) + char_array_4[3];
     
-    for (j = 0; (j < i - 1); j++) ret.push_back(char_array_3[j]);
+    for (j = 0; (j < i - 1); j++) ret.add(char_array_3[j]);
   }
   
   return ret.to_array();

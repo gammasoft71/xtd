@@ -146,7 +146,7 @@ void thread_pool::asynchronous_io_run() {
     thread_pool_asynchronous_io_item item;
     lock_(static_data_.thread_pool_asynchronous_io_items_sync_root) {
       item = static_data_.thread_pool_asynchronous_io_items[static_data_.thread_pool_asynchronous_io_items.count() - 1];
-      static_data_.thread_pool_asynchronous_io_items.pop_back();
+      static_data_.thread_pool_asynchronous_io_items.remove_at(static_data_.thread_pool_asynchronous_io_items.count() - 1);
     }
     
     do {
@@ -224,7 +224,7 @@ void thread_pool::run() {
     auto item = thread_pool_item {};
     lock_(static_data_.thread_pool_items_sync_root) {
       item = static_data_.thread_pool_items[static_data_.thread_pool_items.count() - 1];
-      static_data_.thread_pool_items.pop_back();
+      static_data_.thread_pool_items.remove_at(static_data_.thread_pool_items.count() - 1);
     }
     item.run();
   }

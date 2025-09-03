@@ -120,34 +120,34 @@ namespace xtdc_command {
     
     void generate_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::collections::generic::list<xtd::string> {};
-      lines.push_back("cmake_minimum_required(VERSION 3.20)");
-      lines.push_back("");
-      lines.push_back("# Project");
-      lines.push_back(xtd::string::format("project({} VERSION 1.0.0)", name));
-      lines.push_back("set(SOURCES");
+      lines.add("cmake_minimum_required(VERSION 3.20)");
+      lines.add("");
+      lines.add("# Project");
+      lines.add(xtd::string::format("project({} VERSION 1.0.0)", name));
+      lines.add("set(SOURCES");
       auto [headers, sources] = get_cpp_sources(path, path);
       for (auto file : headers)
-        lines.push_back(xtd::string::format("  {}", file));
+        lines.add(xtd::string::format("  {}", file));
       for (auto file : sources)
-        lines.push_back(xtd::string::format("  {}", file));
-      lines.push_back(")");
-      lines.push_back("source_group(src FILES ${SOURCES})");
-      lines.push_back("find_package(FLTK REQUIRED)");
-      lines.push_back("");
-      lines.push_back("# Options");
-      lines.push_back("set(CMAKE_CXX_STANDARD 17)");
-      lines.push_back("set(CMAKE_CXX_STANDARD_REQUIRED ON)");
-      lines.push_back("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
-      lines.push_back("");
-      lines.push_back("# Application properties");
-      lines.push_back("add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})");
-      lines.push_back("target_include_directories(${PROJECT_NAME} PRIVATE ${FLTK_INCLUDE_DIR})");
-      lines.push_back("if (APPLE)");
-      lines.push_back("  # Workaround: fltk.framework does not exist, so we have to replace it by libfltk.dylib");
-      lines.push_back("  string(REPLACE \"libfltk_images\" \"libfltk\" FLTK_LIBRARY_NAME \"${FLTK_IMAGES_LIBRARY_RELEASE}\")");
-      lines.push_back("  string(REPLACE \"/usr/local/fltk.framework\" \"${FLTK_LIBRARY_NAME}\" FLTK_LIBRARIES \"${FLTK_LIBRARIES}\")");
-      lines.push_back("  endif()");
-      lines.push_back("target_link_libraries(${PROJECT_NAME} ${FLTK_LIBRARIES})");
+        lines.add(xtd::string::format("  {}", file));
+      lines.add(")");
+      lines.add("source_group(src FILES ${SOURCES})");
+      lines.add("find_package(FLTK REQUIRED)");
+      lines.add("");
+      lines.add("# Options");
+      lines.add("set(CMAKE_CXX_STANDARD 17)");
+      lines.add("set(CMAKE_CXX_STANDARD_REQUIRED ON)");
+      lines.add("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
+      lines.add("");
+      lines.add("# Application properties");
+      lines.add("add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE ${SOURCES})");
+      lines.add("target_include_directories(${PROJECT_NAME} PRIVATE ${FLTK_INCLUDE_DIR})");
+      lines.add("if (APPLE)");
+      lines.add("  # Workaround: fltk.framework does not exist, so we have to replace it by libfltk.dylib");
+      lines.add("  string(REPLACE \"libfltk_images\" \"libfltk\" FLTK_LIBRARY_NAME \"${FLTK_IMAGES_LIBRARY_RELEASE}\")");
+      lines.add("  string(REPLACE \"/usr/local/fltk.framework\" \"${FLTK_LIBRARY_NAME}\" FLTK_LIBRARIES \"${FLTK_LIBRARIES}\")");
+      lines.add("  endif()");
+      lines.add("target_link_libraries(${PROJECT_NAME} ${FLTK_LIBRARIES})");
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }

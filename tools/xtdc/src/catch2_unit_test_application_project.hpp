@@ -74,30 +74,30 @@ namespace xtdc_command {
     
     void generate_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
       auto lines = xtd::collections::generic::list<xtd::string> {};
-      lines.push_back("cmake_minimum_required(VERSION 3.20)");
-      lines.push_back("");
-      lines.push_back("# Project");
-      lines.push_back(xtd::string::format("project({} VERSION 1.0.0)", name));
-      lines.push_back("find_package(Catch2 REQUIRED)");
-      lines.push_back("set(SOURCES");
+      lines.add("cmake_minimum_required(VERSION 3.20)");
+      lines.add("");
+      lines.add("# Project");
+      lines.add(xtd::string::format("project({} VERSION 1.0.0)", name));
+      lines.add("find_package(Catch2 REQUIRED)");
+      lines.add("set(SOURCES");
       auto [headers, sources] = get_cpp_sources(path, path);
       for (auto file : headers)
-        lines.push_back(xtd::string::format("  {}", file));
+        lines.add(xtd::string::format("  {}", file));
       for (auto file : sources)
-        lines.push_back(xtd::string::format("  {}", file));
-      lines.push_back(")");
-      lines.push_back("source_group(src FILES ${SOURCES})");
-      lines.push_back("");
-      lines.push_back("# Options");
-      lines.push_back("set(CMAKE_CXX_STANDARD 17)");
-      lines.push_back("set(CMAKE_CXX_STANDARD_REQUIRED ON)");
-      lines.push_back("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
-      lines.push_back("");
-      lines.push_back("# Application properties");
-      lines.push_back("add_executable(${PROJECT_NAME} ${SOURCES})");
-      lines.push_back("target_link_libraries(${PROJECT_NAME} Catch2::Catch2WithMain)");
-      lines.push_back("");
-      lines.push_back("add_test(NAME ${PROJECT_NAME} COMMAND $<TARGET_FILE_NAME:${PROJECT_NAME}> WORKING_DIRECTORY $<TARGET_FILE_DIR:${PROJECT_NAME}>)");
+        lines.add(xtd::string::format("  {}", file));
+      lines.add(")");
+      lines.add("source_group(src FILES ${SOURCES})");
+      lines.add("");
+      lines.add("# Options");
+      lines.add("set(CMAKE_CXX_STANDARD 17)");
+      lines.add("set(CMAKE_CXX_STANDARD_REQUIRED ON)");
+      lines.add("set_property(GLOBAL PROPERTY USE_FOLDERS ON)");
+      lines.add("");
+      lines.add("# Application properties");
+      lines.add("add_executable(${PROJECT_NAME} ${SOURCES})");
+      lines.add("target_link_libraries(${PROJECT_NAME} Catch2::Catch2WithMain)");
+      lines.add("");
+      lines.add("add_test(NAME ${PROJECT_NAME} COMMAND $<TARGET_FILE_NAME:${PROJECT_NAME}> WORKING_DIRECTORY $<TARGET_FILE_DIR:${PROJECT_NAME}>)");
       
       xtd::io::file::write_all_lines(xtd::io::path::combine(path, "CMakeLists.txt"), lines);
     }

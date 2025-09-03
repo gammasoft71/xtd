@@ -280,7 +280,7 @@ int32 image::flags() const noexcept {
 
 array<guid> image::frame_dimentions_list() const noexcept {
   auto result = list<guid> {};
-  std::for_each(data_->frame_dimensions.begin(), data_->frame_dimensions.end(), [&](auto frame) {result.push_back(frame.first);});
+  std::for_each(data_->frame_dimensions.begin(), data_->frame_dimensions.end(), [&](auto frame) {result.add(frame.first);});
   return result.to_array();
 }
 
@@ -635,7 +635,7 @@ void image::update_properties() {
   auto palette_entries = array<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>> {};
   native::image::color_palette(data_->handle, palette_entries, data_->palette.flags_);
   for (auto [a, r, g, b] : palette_entries)
-    data_->palette.entries_.push_back(color::from_argb(a, r, g, b));
+    data_->palette.entries_.add(color::from_argb(a, r, g, b));
     
   data_->pixel_format = static_cast<imaging::pixel_format>(native::image::pixel_format(data_->handle));
   

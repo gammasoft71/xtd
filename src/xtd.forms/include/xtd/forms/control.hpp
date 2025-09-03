@@ -212,7 +212,7 @@ namespace xtd {
         control_t& emplace(const_iterator pos, args_t&& ...args) {
           auto control_ptr = xtd::new_uptr<control_t>(control_t::create(std::forward<args_t>(args)...));
           auto& control_ref = *control_ptr;
-          controls_.push_back(std::move(control_ptr));
+          controls_.add(std::move(control_ptr));
           base::insert(pos, control_ref);
           return control_ref;
         }
@@ -230,7 +230,7 @@ namespace xtd {
         control_t& emplace_at(size_t index, args_t&& ...args) {
           auto control_ptr = xtd::new_uptr<control_t>(control_t::create(std::forward<args_t>(args)...));
           auto& control_ref = *control_ptr;
-          controls_.push_back(std::move(control_ptr));
+          controls_.add(std::move(control_ptr));
           base::insert_at(index, control_ref);
           return control_ref;
         }
@@ -247,8 +247,8 @@ namespace xtd {
         control_t& emplace_back(args_t&& ...args) {
           auto control_ptr = xtd::new_uptr<control_t>(control_t::create(std::forward<args_t>(args)...));
           auto& control_ref = *control_ptr;
-          controls_.push_back(std::move(control_ptr));
-          base::push_back(control_ref);
+          controls_.add(std::move(control_ptr));
+          base::add(control_ref);
           return control_ref;
         }
         
@@ -256,7 +256,7 @@ namespace xtd {
         
         void insert_at(size_t index, const value_type& value) override;
         
-        void push_back(const value_type& value) override;
+        void add(const value_type& value) override;
         
         template<class control_t>
         iterator insert(const_iterator pos, control_t& value) {
@@ -265,7 +265,7 @@ namespace xtd {
           if (!keep_cloned_controls_) return base::insert(pos, value);
           auto control_ptr = as<control>(as<iclonable>(value).clone());
           auto& control_ref = *control_ptr;
-          controls_.push_back(std::move(control_ptr));
+          controls_.add(std::move(control_ptr));
           return base::insert(pos, control_ref);
         }
         
@@ -277,23 +277,26 @@ namespace xtd {
           else {
             auto control_ptr = as<control>(as<iclonable>(value).clone());
             auto& control_ref = *control_ptr;
-            controls_.push_back(std::move(control_ptr));
+            controls_.add(std::move(control_ptr));
             base::insert_at(index, control_ref);
           }
         }
         
         template<class control_t>
-        void push_back(control_t& value) {
+        void add(control_t& value) {
           for (auto it = begin(); it != end(); ++it)
             if (it->get() == value) return;
-          if (!keep_cloned_controls_) base::push_back(value);
+          if (!keep_cloned_controls_) base::add(value);
           else {
             auto control_ptr = as<control>(as<iclonable>(value).clone());
             auto& control_ref = *control_ptr;
-            controls_.push_back(std::move(control_ptr));
-            base::push_back(control_ref);
+            controls_.add(std::move(control_ptr));
+            base::add(control_ref);
           }
         }
+        
+        template<class control_t>
+        void push_back(control_t& value) {add(value);}
         
         /// @}
         
@@ -313,7 +316,7 @@ namespace xtd {
         
       private:
         using xtd::forms::layout::arranged_element_collection<control_ref>::insert;
-        using xtd::forms::layout::arranged_element_collection<control_ref>::push_back;
+        using xtd::forms::layout::arranged_element_collection<control_ref>::add;
         
         bool keep_cloned_controls_ = false;
         static xtd::collections::generic::list<xtd::sptr<xtd::forms::control>> controls_;

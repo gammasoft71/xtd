@@ -40,7 +40,7 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the debug_form class.
       debug_form() : trace_form_base("Debug") {
-        xtd::diagnostics::debug::listeners().push_back(listener_);
+        xtd::diagnostics::debug::listeners().add(listener_);
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         visible(true);
         defined = true;

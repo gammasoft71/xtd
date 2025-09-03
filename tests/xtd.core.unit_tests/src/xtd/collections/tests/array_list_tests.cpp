@@ -137,9 +137,9 @@ namespace xtd::collections::tests {
     void test_method_(count) {
       auto items = array_list {};
       assert::is_zero(items.count());
-      items.push_back("Tyrannosaurus");
-      items.push_back("Compsognathus");
-      items.push_back("Amargasaurus");
+      items.add("Tyrannosaurus");
+      items.add("Compsognathus");
+      items.add("Amargasaurus");
       assert::are_equal(3_z, items.count());
       items.resize(50_z);
       assert::are_equal(50_z, items.count());

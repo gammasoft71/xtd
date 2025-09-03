@@ -17,7 +17,7 @@ namespace {
     auto offset = 0_z;
     for (auto index = 0_z; index < str.size(); index++) {
       if (str[index] == '&' && str[index + 1] != '&')
-        locations.push_back(index + offset);
+        locations.add(index + offset);
       else if (str[index] == '&' && str[index + 1] == '&') {
         offset -= 2;
         ++index;
