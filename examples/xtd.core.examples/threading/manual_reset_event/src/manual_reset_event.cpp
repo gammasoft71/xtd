@@ -7,9 +7,9 @@ namespace manual_reset_event_example {
       console::write_line("\nStart 3 named threads that block on a ManualresetEvent:\n");
       
       for(auto i = 0; i <= 2; ++i) {
-        threads.emplace_back(thread_proc);
-        threads.back().name(string::format("Thread_{}", i));
-        threads.back().start();
+        threads.add(thread {thread_proc});
+        threads[threads.count() - 1].name(string::format("Thread_{}", i));
+        threads[threads.count() - 1].start();
       }
       
       thread::sleep(500);
@@ -25,9 +25,9 @@ namespace manual_reset_event_example {
       console::read_line();
       
       for(auto i = 3; i <= 4; ++i) {
-        threads.emplace_back(thread_proc);
-        threads.back().name(string::format("Thread_{}", i));
-        threads.back().start();
+        threads.add(thread {thread_proc});
+        threads[threads.count() - 1].name(string::format("Thread_{}", i));
+        threads[threads.count() - 1].start();
       }
       
       thread::sleep(500);
@@ -38,9 +38,9 @@ namespace manual_reset_event_example {
       mre.reset();
       
       // Start a thread that waits on the ManualresetEvent.
-      threads.emplace_back(thread_proc);
-      threads.back().name("Thread_5");
-      threads.back().start();
+      threads.add(thread {thread_proc});
+      threads[threads.count() - 1].name("Thread_5");
+      threads[threads.count() - 1].start();
 
       thread::sleep(500);
       console::write_line("\nPress Enter to call set() and conclude the demo.");

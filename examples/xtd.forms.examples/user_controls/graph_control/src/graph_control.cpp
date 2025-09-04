@@ -67,7 +67,7 @@ class sine_wave_signal_generator : public signal_generator_base {
 protected:
   float next_signal() noexcept override {
     auto result = sinuses_[index_++];
-    if (index_ == sinuses_.size()) index_ = 0;
+    if (index_ == sinuses_.count()) index_ = 0;
     return result;
   }
   
@@ -80,7 +80,7 @@ class max_min_signal_generator : public signal_generator_base {
 protected:
   float next_signal() noexcept override {
     auto result = sinuses_[index_++];
-    if (index_ == sinuses_.size()) index_ = 0;
+    if (index_ == sinuses_.count()) index_ = 0;
     return result;
   }
   
@@ -210,14 +210,14 @@ public:
   size_t signals_max_size() const noexcept {return signals_max_size_;}
   graph_control& signals_max_size(size_t value) {
     signals_max_size_ = value;
-    while (values_.size() > signals_max_size_)
-      values_.erase(values_.begin());
+    while (values_.count() > signals_max_size_)
+      values_.remove_at(0);
     return *this;
   }
 
   void add_value(float value) {
-    values_.push_back(value);
-    if (values_.size() > signals_max_size_) values_.erase(values_.begin());
+    values_.add(value);
+    if (values_.count() > signals_max_size_) values_.remove_at(0);
     begin_invoke([self=this] {self->invalidate();});
   }
   
@@ -234,10 +234,10 @@ protected:
     auto step = as<float>(e.clip_rectangle().width) / (signals_max_size_ -1);
     auto points = list<point_f> {};
     for (auto value : values_) {
-      points.emplace_back(x, y - value * height);
+      points.add(point_f(x, y - value * height));
       x += step;
     }
-    if (points.size() >= 2) e.graphics().draw_curve(pen {signal_trace_color_, signal_trace_width_}, points);
+    if (points.count() >= 2) e.graphics().draw_curve(pen {signal_trace_color_, signal_trace_width_}, points);
   }
   
 private:

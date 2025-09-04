@@ -14,11 +14,11 @@ namespace mutex_example {
       // Create and start five numbered threads.
       //
       for(auto i = 1; i <= 5; ++i) {
-        threads.emplace_back(worker);
+        threads.add(thread {worker});
         
         // Start the thread, passing the number.
         //
-        threads.back().start(i);
+        threads[threads.count() - 1].start(i);
       }
       
       // Wait for half a second, to allow all the

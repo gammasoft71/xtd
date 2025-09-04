@@ -56,7 +56,7 @@ public:
     void reset() override {position = collections::array_list::npos;}
     
     const any_object& current() const override {
-      if (position >= people_.size()) throw invalid_operation_exception {};
+      if (position >= people_.count()) throw invalid_operation_exception {};
       return people_[position];
     }
   };
