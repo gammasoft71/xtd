@@ -13,7 +13,7 @@ void write_line(const string& message) {
 auto main() -> int {
   auto message_target = display_message {};
   
-  if (environment::get_command_line_args().size() > 1)
+  if (environment::get_command_line_args().length() > 1)
     message_target = show_windows_message;
   else
     message_target = write_line;

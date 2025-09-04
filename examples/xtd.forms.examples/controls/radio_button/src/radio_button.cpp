@@ -5,7 +5,7 @@ namespace radio_button_example {
   public:
     form1() {
       text("Radio button example");
-      controls().push_back_range({radio_button1, radio_button2, radio_button3, radio_button4, radio_button5, label1});
+      controls().add_range({radio_button1, radio_button2, radio_button3, radio_button4, radio_button5, label1});
       
       radio_button1.auto_check(false);
       radio_button1.location({30, 30});

@@ -6,7 +6,7 @@ class form1 : public form {
 public:
   form1() {
     text("Bitmap button example");
-    controls().push_back_range({button1, button2, label1, label2});
+    controls().add_range({button1, button2, label1, label2});
     
     button1.location({50, 50});
     button1.image(image::from_xpm_data(gammasoft_16x16_xpm));

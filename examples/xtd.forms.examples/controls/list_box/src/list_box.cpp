@@ -8,7 +8,7 @@ namespace list_box_example {
       client_size({360, 240});
       
       layout_panel.parent(*this);
-      layout_panel.controls().push_back_range({list_box_left, list_box_right});
+      layout_panel.controls().add_range({list_box_left, list_box_right});
       layout_panel.control_layout_style(list_box_left, {size_type::auto_size, true});
       layout_panel.control_layout_style(list_box_right, {size_type::auto_size, true});
       layout_panel.dock(dock_style::fill);
@@ -16,7 +16,7 @@ namespace list_box_example {
       
       list_box_left.double_click += delegate_ {
         if (list_box_left.selected_index() != list_box_left.npos) {
-          list_box_right.items().push_back(list_box_left.selected_item());
+          list_box_right.items().add(list_box_left.selected_item());
           list_box_right.selected_index(0);
           list_box_left.items().erase_at(list_box_left.selected_index());
         }
@@ -25,13 +25,13 @@ namespace list_box_example {
       list_box_right.sorted(true);
       list_box_right.double_click += delegate_ {
         if (list_box_right.selected_index() != list_box_right.npos) {
-          list_box_left.items().push_back(list_box_right.selected_item());
+          list_box_left.items().add(list_box_right.selected_item());
           list_box_left.selected_index(0);
           list_box_right.items().erase_at(list_box_right.selected_index());
         }
       };
       
-      list_box_left.items().push_back_range({"draw", "cut", "paste", "delete", "open", "close", "remove", "edit", "find", "increment", "decrement", "write", "read", "post", "build", "make", "release", "create", "choose", "erase"});
+      list_box_left.items().add_range({"draw", "cut", "paste", "delete", "open", "close", "remove", "edit", "find", "increment", "decrement", "write", "read", "post", "build", "make", "release", "create", "choose", "erase"});
       list_box_left.selected_index(0);
     }
     

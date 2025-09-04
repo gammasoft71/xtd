@@ -5,7 +5,7 @@ public:
   form1() {
     text("Translator example"_t);
     client_size({500, 300});
-    controls().push_back_range({open_button, close_button, text_label});
+    controls().add_range({open_button, close_button, text_label});
     
     open_button.location({10, 10});
     open_button.text("Open"_t);

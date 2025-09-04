@@ -3,7 +3,7 @@
 class main_form : public form {
 public:
   main_form() {
-    controls().push_back_range({top_left_button, top_button, top_right_button, left_button, all_button, right_button, bottom_left_button, bottom_button, bottom_right_button});
+    controls().add_range({top_left_button, top_button, top_right_button, left_button, all_button, right_button, bottom_left_button, bottom_button, bottom_right_button});
     client_size({360, 130});
     minimum_client_size(client_size());
     text("form");

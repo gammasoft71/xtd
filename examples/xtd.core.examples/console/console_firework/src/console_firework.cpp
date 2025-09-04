@@ -136,11 +136,11 @@ namespace console_firework_example {
       auto colors = list {console_color::blue, console_color::green, console_color::cyan, console_color::red, console_color::magenta, console_color::yellow, console_color::white};
       
       while (!console::key_available()) {
-        fireworks.push_back(new_ptr<firework_start>(rand.next(2, console_width - 2), rand.next(2, console_height - 2), colors[rand.next(colors.size())], rand.next(1, 5)));
+        fireworks.add(new_ptr<firework_start>(rand.next(2, console_width - 2), rand.next(2, console_height - 2), colors[rand.next(colors.count())], rand.next(1, 5)));
         
         auto fireworks_to_removed = list<ptr<firework>> {};
         for (auto& firework : fireworks) {
-          if (is<firework_end>(firework)) fireworks_to_removed.push_back(firework);
+          if (is<firework_end>(firework)) fireworks_to_removed.add(firework);
           explode(firework);
         }
         

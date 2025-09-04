@@ -5,16 +5,16 @@ public:
   form1() {
     text("Button appearance");
     client_size({800, 450});
-    controls().push_back_range({group_box_properties, button_demo});
+    controls().add_range({group_box_properties, button_demo});
     
-    group_box_properties.controls().push_back(panel_properties);
+    group_box_properties.controls().add(panel_properties);
     group_box_properties.location({10, 10});
     group_box_properties.size({340, 430});
     group_box_properties.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::bottom);
     group_box_properties.text("properties");
     
     panel_properties.auto_scroll(true);
-    panel_properties.controls().push_back_range({label_text, text_box_text, label_text_align, choice_text_align, label_image, choice_image, label_image_align, choice_image_align, label_flat_style, choice_flat_style, label_back_color, color_picker_back_color, label_fore_color, color_picker_fore_color, label_width, numeric_up_down_width, label_height, numeric_up_down_height, label_auto_size, check_box_auto_size, label_default_button, check_box_default_buttton, label_enebaled, check_box_enabled});
+    panel_properties.controls().add_range({label_text, text_box_text, label_text_align, choice_text_align, label_image, choice_image, label_image_align, choice_image_align, label_flat_style, choice_flat_style, label_back_color, color_picker_back_color, label_fore_color, color_picker_fore_color, label_width, numeric_up_down_width, label_height, numeric_up_down_height, label_auto_size, check_box_auto_size, label_default_button, check_box_default_buttton, label_enebaled, check_box_enabled});
     panel_properties.dock(dock_style::fill);
     
     label_text.auto_size(true);
@@ -37,7 +37,7 @@ public:
       button_demo.text_align(as<content_alignment>(choice_text_align.selected_item().tag()));
     };
     choice_text_align.location({100, 45});
-    choice_text_align.items().push_back_range({{"top_left", content_alignment::top_left}, {"top_center", content_alignment::top_center}, {"top_right", content_alignment::top_right}, {"middle_left", content_alignment::middle_left}, {"middle_center", content_alignment::middle_center}, {"middle_right", content_alignment::middle_right}, {"bottom_left", content_alignment::bottom_left}, {"bottom_center", content_alignment::bottom_center}, {"bottom_right", content_alignment::bottom_right}});
+    choice_text_align.items().add_range({{"top_left", content_alignment::top_left}, {"top_center", content_alignment::top_center}, {"top_right", content_alignment::top_right}, {"middle_left", content_alignment::middle_left}, {"middle_center", content_alignment::middle_center}, {"middle_right", content_alignment::middle_right}, {"bottom_left", content_alignment::bottom_left}, {"bottom_center", content_alignment::bottom_center}, {"bottom_right", content_alignment::bottom_right}});
     choice_text_align.selected_index(4);
     choice_text_align.width(200);
     choice_text_align.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);
@@ -50,8 +50,8 @@ public:
       if (choice_image.selected_index() == 0) button_demo.image(xtd::drawing::image::empty);
       else button_demo.image(button_images::from_name(choice_image.selected_item().value()));
     };
-    choice_image.items().push_back("none");
-    choice_image.items().push_back_range(images::names());
+    choice_image.items().add("none");
+    choice_image.items().add_range(images::names());
     choice_image.selected_index(0);
     choice_image.location({100, 80});
     choice_image.width(200);
@@ -64,7 +64,7 @@ public:
     choice_image_align.selected_value_changed += delegate_ {
       button_demo.image_align(as<content_alignment>(choice_image_align.selected_item().tag()));
     };
-    choice_image_align.items().push_back_range({{"top_left", content_alignment::top_left}, {"top_center", content_alignment::top_center}, {"top_right", content_alignment::top_right}, {"middle_left", content_alignment::middle_left}, {"middle_center", content_alignment::middle_center}, {"middle_right", content_alignment::middle_right}, {"bottom_left", content_alignment::bottom_left}, {"bottom_center", content_alignment::bottom_center}, {"bottom_right", content_alignment::bottom_right}});
+    choice_image_align.items().add_range({{"top_left", content_alignment::top_left}, {"top_center", content_alignment::top_center}, {"top_right", content_alignment::top_right}, {"middle_left", content_alignment::middle_left}, {"middle_center", content_alignment::middle_center}, {"middle_right", content_alignment::middle_right}, {"bottom_left", content_alignment::bottom_left}, {"bottom_center", content_alignment::bottom_center}, {"bottom_right", content_alignment::bottom_right}});
     choice_image_align.selected_index(4);
     choice_image_align.location({100, 115});
     choice_image_align.width(200);
@@ -77,7 +77,7 @@ public:
     choice_flat_style.selected_value_changed += delegate_ {
       button_demo.flat_style(as<flat_style>(choice_flat_style.selected_item().tag()));
     };
-    choice_flat_style.items().push_back_range({{"flat", flat_style::flat}, {"popup", flat_style::popup}, {"standard", flat_style::standard}, {"system", flat_style::system}});
+    choice_flat_style.items().add_range({{"flat", flat_style::flat}, {"popup", flat_style::popup}, {"standard", flat_style::standard}, {"system", flat_style::system}});
     choice_flat_style.selected_index(2);
     choice_flat_style.location({100, 150});
     choice_flat_style.width(200);

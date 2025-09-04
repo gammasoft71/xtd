@@ -7,7 +7,7 @@ namespace example {
       text("Images example");
       client_size({430, 530});
       minimum_client_size(client_size());
-      controls().push_back_range({choice_theme, choice_context, choice_size, picture, label_picture_name, button_previous, button_next});
+      controls().add_range({choice_theme, choice_context, choice_size, picture, label_picture_name, button_previous, button_next});
       
       picture.back_color(system_colors::window());
       picture.border_style(forms::border_style::fixed_3d);
@@ -17,16 +17,16 @@ namespace example {
       
       choice_theme.bounds({75, 25, 280, 25});
       choice_theme.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
-      choice_theme.items().push_back("current theme");
+      choice_theme.items().add("current theme");
       auto names = application::style_sheet_names();
       names.sort();
-      choice_theme.items().push_back_range(names);
+      choice_theme.items().add_range(names);
       choice_theme.selected_index(0);
       choice_theme.selected_index_changed += event_handler(*this, &form1::update_form);
       
       choice_context.bounds({75, 55, 280, 25});
       choice_context.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
-      choice_context.items().push_back_range(images::contexts());
+      choice_context.items().add(images::contexts());
       choice_context.selected_index(0);
       choice_context.selected_index_changed += delegate_ {
         current_image_index = 0;
@@ -36,7 +36,7 @@ namespace example {
       choice_size.bounds({75, 85, 280, 25});
       choice_size.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
       for (auto size : images::sizes())
-        choice_size.items().push_back({string::format("{}x{} pixels", size.width, size.height), size});
+        choice_size.items().add({string::format("{}x{} pixels", size.width, size.height), size});
       choice_size.selected_index(7);
       choice_size.selected_index_changed += event_handler(*this, &form1::update_form);
       

@@ -38,8 +38,8 @@ auto main() -> int {
   
   console::output_code_page(65001);
   
-  for (auto index = 0ul; index < logo.size(); ++index)
-    std::cout << (index == 0 || index == logo.size() - 1 ? "       " : "     ") << background_color(console_color::white) << foreground_color(console_color::dark_blue) << logo[index] << reset_color() << std::endl;
+  for (auto index = 0ul; index < logo.length(); ++index)
+    std::cout << (index == 0 || index == logo.length() - 1 ? "       " : "     ") << background_color(console_color::white) << foreground_color(console_color::dark_blue) << logo[index] << reset_color() << std::endl;
     
   std::cout << foreground_color(console_color::dark_blue) << "                                    Gammasoft                                   " << std::endl;
   std::cout << foreground_color(console_color::dark_gray) << " More than thirty years of passion for high technology especially in development" << std::endl;

@@ -38,7 +38,7 @@ namespace wiggly_example {
     form1() {
       text("Wiggly");
       client_size({330, 130});
-      controls().push_back_range({wiggly, text_box});
+      controls().add_range({wiggly, text_box});
       
       text_box.location({20, 90});
       text_box.text_changed += delegate_ {

@@ -5,7 +5,7 @@ namespace environment_exit_code_example {
   public:
     // The main entry point for the application.
     static auto main(const argument_collection& args) {
-      auto exit_status = args.size() ? xtd::exit_status::failure : exit_status::success;
+      auto exit_status = args.length() ? xtd::exit_status::failure : exit_status::success;
       console::write_line("Before environment::exit(exit_status::{})", exit_status);
       environment::exit(exit_status);
       console::write_line("After environment::exit(exit_status::{})", exit_status);

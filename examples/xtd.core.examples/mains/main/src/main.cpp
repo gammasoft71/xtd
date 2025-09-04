@@ -5,7 +5,7 @@ namespace main_example {
   public:
     static auto main(const argument_collection& args) {
       auto number = 0;
-      if (args.size() != 1 || try_parse(args[0], number) == false || number < 0 || number > 20) {
+      if (args.length() != 1 || try_parse(args[0], number) == false || number < 0 || number > 20) {
         console::write_line("Please enter an integer argument betwween 0 and 20.");
         console::write_line("Usage: factorial <integer>");
         return -1;

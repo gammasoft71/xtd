@@ -5,7 +5,7 @@ namespace auto_scroll_example {
   public:
     form1() {
       auto_scroll(true);
-      controls().push_back_range({panel5, panel4, panel3, panel2, panel1});
+      controls().add_range({panel5, panel4, panel3, panel2, panel1});
       size({400, 250});
       text("Auto scroll example");
       

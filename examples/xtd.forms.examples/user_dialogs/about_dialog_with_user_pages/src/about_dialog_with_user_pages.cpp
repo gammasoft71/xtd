@@ -19,7 +19,7 @@ public:
     dialog.copyright("Copyright (c) 2024 Gammasoft.\nAll rights reserved.");
     dialog.website("https://gammasoft71.github.io");
     dialog.website_label("gammasoft website");
-    dialog.user_tab_pages().push_back_range({user_tab_page1, user_tab_page2});
+    dialog.user_tab_pages().add_range({user_tab_page1, user_tab_page2});
 
     button1.click += delegate_ {
       dialog.show(*this);

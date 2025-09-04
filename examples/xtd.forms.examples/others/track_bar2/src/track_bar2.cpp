@@ -4,7 +4,7 @@ class form1 : public form {
 public:
   form1() {
     client_size({400, 100});
-    controls().push_back_range({track_bar1, button1});
+    controls().add_range({track_bar1, button1});
     text("Track bar 2 example");
     
     track_bar1.auto_size(false);

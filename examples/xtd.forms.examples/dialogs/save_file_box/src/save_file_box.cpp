@@ -5,7 +5,7 @@ public:
   form1() {
     text("Save file box example");
     client_size({400, 200});
-    controls().push_back(button_save_file);
+    controls().add(button_save_file);
     
     button_save_file.parent(*this)
     .location({10, 10})

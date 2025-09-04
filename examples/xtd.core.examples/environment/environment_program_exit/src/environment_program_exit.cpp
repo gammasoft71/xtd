@@ -22,11 +22,11 @@ namespace environment_program_exit_example {
       do_something_thread.join();
       console::write_line("End");
       
-      if (args.size() == 1 && args[0] == "exit") {
+      if (args.length() == 1 && args[0] == "exit") {
         console::write_line("Before environment::exit");
         environment::exit(exit_status::success);
         console::write_line("After environment::exit");
-      } else if (args.size() == 1 && args[0] == "quick_exit") {
+      } else if (args.length() == 1 && args[0] == "quick_exit") {
         console::write_line("Before environment::quick_exit");
         environment::quick_exit(exit_status::success);
         console::write_line("After environment::quick_exit");

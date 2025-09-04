@@ -5,7 +5,7 @@ namespace light_button_example {
   public:
     form1() {
       text("Light button example");
-      controls().push_back_range({light_button1, light_button2, light_button3});
+      controls().add_range({light_button1, light_button2, light_button3});
       
       light_button1.auto_check(false);
       light_button1.click += delegate_ {

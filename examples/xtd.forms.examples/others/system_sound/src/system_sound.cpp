@@ -5,12 +5,12 @@ namespace example {
   public:
     form1() {
       client_size({485, 100});
-      controls().push_back(layout_panel);
+      controls().add(layout_panel);
       padding(5);
       text("System sound example");
       
       layout_panel.dock(dock_style::fill);
-      layout_panel.controls().push_back_range({button_asterisk, button_beep, button_exclamation, button_hand, button_question});
+      layout_panel.controls().add_range({button_asterisk, button_beep, button_exclamation, button_hand, button_question});
       layout_panel.control_layout_style(button_asterisk, {size_type::auto_size, true});
       layout_panel.control_layout_style(button_beep, {size_type::auto_size, true});
       layout_panel.control_layout_style(button_exclamation, {size_type::auto_size, true});

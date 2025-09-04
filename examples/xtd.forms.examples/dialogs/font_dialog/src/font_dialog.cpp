@@ -5,7 +5,7 @@ public:
   form1() {
     text("Font dialog example");
     client_size({400, 400});
-    controls().push_back_range({button1, label1});
+    controls().add_range({button1, label1});
     auto_scroll(true);
     
     button1.location({10, 10});

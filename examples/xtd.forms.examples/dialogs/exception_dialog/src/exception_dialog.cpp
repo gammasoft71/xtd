@@ -4,7 +4,7 @@ class form1 : public form {
 public:
   form1() {
     text("Exception dialog example");
-    controls().push_back(button1);
+    controls().add(button1);
     
     button1.location({10, 10});
     button1.auto_size(true);

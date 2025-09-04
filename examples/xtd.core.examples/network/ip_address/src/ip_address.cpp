@@ -11,7 +11,7 @@ public:
     // alphanumeric input string between 2 to 40 character long.
     auto rex = std::regex {R"(^[a-zA-Z]\w{1,39}$)"};
     
-    if (args.size() < 1) {
+    if (args.length() < 1) {
       // If no server name is passed as an argument to this program, use the current
       // server name as default.
       server = net::dns::get_host_name();
@@ -63,7 +63,7 @@ private:
         console::write("address_bytes: ");
         
         auto bytes = cur_add.get_address_bytes();
-        for (size_t i = 0; i < bytes.size(); i++)
+        for (size_t i = 0; i < bytes.length(); i++)
           console::write(bytes[i]);
         console::write_line("\r\n");
       }

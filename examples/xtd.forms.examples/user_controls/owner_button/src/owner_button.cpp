@@ -53,7 +53,7 @@ namespace owner_button_example {
       
       text("Owner button example");
       client_size({370, 270});
-      controls().push_back_range({owner_button1, owner_button2, owner_button3});
+      controls().add_range({owner_button1, owner_button2, owner_button3});
     }
     
   private:

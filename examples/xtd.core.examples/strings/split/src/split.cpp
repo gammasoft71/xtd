@@ -3,7 +3,7 @@
 auto main() -> int {
   auto strings = string("One Two Three\tFour\nFive").split();
   
-  console::write_line("strings.size = {}", strings.size());
+  console::write_line("strings.size = {}", strings.length());
   for (auto string : strings)
     console::write_line(string);
 }

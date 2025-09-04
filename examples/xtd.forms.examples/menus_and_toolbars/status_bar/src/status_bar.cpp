@@ -8,7 +8,7 @@ namespace status_bar_example {
       client_size({820, 500});
       
       status_bar1.parent(*this);
-      status_bar1.panels().push_back_range({status_bar_panel1, status_bar_panel2, status_bar_panel3, status_bar_panel4});
+      status_bar1.panels().add_range({status_bar_panel1, status_bar_panel2, status_bar_panel3, status_bar_panel4});
       status_bar1.show_panels(true);
       
       status_bar_panel1.auto_size(xtd::forms::status_bar_panel_auto_size::contents);

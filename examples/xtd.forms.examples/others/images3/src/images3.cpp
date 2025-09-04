@@ -6,20 +6,20 @@ namespace example {
     form1() {
       text("Images 3 example");
       client_size({676, 350});
-      controls().push_back_range({choice_theme, choice_context, picture_16, picture_32, picture_64, picture_128, picture_256, label_picture_name, button_previous, button_next});
+      controls().add_range({choice_theme, choice_context, picture_16, picture_32, picture_64, picture_128, picture_256, label_picture_name, button_previous, button_next});
       
       choice_theme.location({10, 10});
       choice_theme.width(323);
-      choice_theme.items().push_back("current theme");
+      choice_theme.items().add("current theme");
       auto names = application::style_sheet_names();
       names.sort();
-      choice_theme.items().push_back_range(names);
+      choice_theme.items().add_range(names);
       choice_theme.selected_index(0);
       choice_theme.selected_index_changed += event_handler(*this, &form1::update_form);
       
       choice_context.location({343, 10});
       choice_context.width(323);
-      choice_context.items().push_back_range(images::contexts());
+      choice_context.items().add_range(images::contexts());
       choice_context.selected_index(0);
       choice_context.selected_index_changed += delegate_ {
         current_image_index = 0;

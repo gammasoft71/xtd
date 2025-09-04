@@ -5,7 +5,7 @@ namespace hello_world_label_example {
   public:
     main_form() {
       text("Hello world (label)");
-      controls().push_back(label1);
+      controls().add(label1);
       
       label1.dock(dock_style::fill);
       label1.font({label1.font(), 32, font_style::bold | font_style::italic});

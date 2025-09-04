@@ -7,16 +7,16 @@ namespace lcd_label_appearance_example {
       auto_scroll(true);
       client_size({870, 240});
       text("LCD label example");
-      controls().push_back_range({group_box_properties, label_lcd_label});
+      controls().add_range({group_box_properties, label_lcd_label});
       
-      group_box_properties.controls().push_back(panel_properties);
+      group_box_properties.controls().add(panel_properties);
       group_box_properties.location({10, 10});
       group_box_properties.size({340, 220});
       group_box_properties.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::bottom);
       group_box_properties.text("properties");
       
       panel_properties.auto_scroll(true);
-      panel_properties.controls().push_back_range({lcd_style_label, lcd_style_choice, segment_style_label, segment_style_choice, height_label, height_numeric_up_down, fore_color_label, fore_color_color_picker, show_digit_background_label, show_digit_background_togle_button});
+      panel_properties.controls().add_range({lcd_style_label, lcd_style_choice, segment_style_label, segment_style_choice, height_label, height_numeric_up_down, fore_color_label, fore_color_color_picker, show_digit_background_label, show_digit_background_togle_button});
       panel_properties.dock(dock_style::fill);
       
       lcd_style_label.auto_size(true);
@@ -25,16 +25,16 @@ namespace lcd_label_appearance_example {
       
       lcd_style_choice.location({120, 10});
       lcd_style_choice.width(180);
-      lcd_style_choice.items().push_back_range({{"Seven segment display", lcd_style::seven_segment_display}, {"Nine segment display", lcd_style::nine_segment_display}, {"Fourteen segment display", lcd_style::fourteen_segment_display}, {"Sixteen segment display", lcd_style::sixteen_segment_display}, {"Dot matrix display", lcd_style::dot_matrix_display}});
+      lcd_style_choice.items().add_range({{"Seven segment display", lcd_style::seven_segment_display}, {"Nine segment display", lcd_style::nine_segment_display}, {"Fourteen segment display", lcd_style::fourteen_segment_display}, {"Sixteen segment display", lcd_style::sixteen_segment_display}, {"Dot matrix display", lcd_style::dot_matrix_display}});
       lcd_style_choice.selected_value_changed += delegate_ {
         label_lcd_label.lcd_style(as<lcd_style>(lcd_style_choice.selected_item().tag()));
         diagnostics::debug::write_line(string::format("{}::valid_characters = {}", label_lcd_label.lcd_style(), label_lcd_label.valid_characters()));
         segment_style_choice.items().clear();
         if (lcd_style_choice.selected_item().value() == "Dot matrix display") {
-          segment_style_choice.items().push_back_range({{"Standard (or round)", dot_matrix_style::standard}, {"Square", dot_matrix_style::square}});
+          segment_style_choice.items().add_range({{"Standard (or round)", dot_matrix_style::standard}, {"Square", dot_matrix_style::square}});
           segment_style_choice.selected_index(as<int>(label_lcd_label.dot_matrix_style()));
         } else {
-          segment_style_choice.items().push_back_range({{"Standard", segment_style::standard}, {"Modern", segment_style::modern}, {"Mixed", segment_style::mixed}, {"expanded", segment_style::expanded}, {"Design", segment_style::design}, {"Stick", segment_style::stick}});
+          segment_style_choice.items().add_range({{"Standard", segment_style::standard}, {"Modern", segment_style::modern}, {"Mixed", segment_style::mixed}, {"expanded", segment_style::expanded}, {"Design", segment_style::design}, {"Stick", segment_style::stick}});
           segment_style_choice.selected_index(as<int>(label_lcd_label.segment_style()));
         }
       };

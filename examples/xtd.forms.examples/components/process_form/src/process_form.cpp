@@ -4,10 +4,10 @@ class main_form : public form {
 public:
   main_form() {
     text("Process form example");
-    controls().push_back(layout_panel);
+    controls().add(layout_panel);
     client_size({350, 540});
     
-    layout_panel.controls().push_back_range({xtd_web_button, write_mail_button, open_home_folder_button, open_readme_txt_file_button, open_gammasoft_png_file_button, open_calculator_button});
+    layout_panel.controls().add_range({xtd_web_button, write_mail_button, open_home_folder_button, open_readme_txt_file_button, open_gammasoft_png_file_button, open_calculator_button});
     layout_panel.dock(dock_style::fill);
     layout_panel.control_layout_style(xtd_web_button, {size_type::auto_size, true});
     layout_panel.control_layout_style(write_mail_button, {size_type::auto_size, true});

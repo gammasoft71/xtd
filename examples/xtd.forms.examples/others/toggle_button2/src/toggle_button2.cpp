@@ -4,7 +4,7 @@ class form1 : public form {
 public:
   form1() {
     client_size({280, 180});
-    controls().push_back_range({button_red, button_green, button_blue, panel_color});
+    controls().add_range({button_red, button_green, button_blue, panel_color});
     text("Toggle button example");
     
     button_red.location({20, 20});

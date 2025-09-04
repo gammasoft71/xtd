@@ -27,7 +27,7 @@ namespace line_example {
       
       text("Lines example");
       client_size({300, 300});
-      controls().push_back_range({line_separator, line_red, line_green, line_blue, line_separator2});
+      controls().add_range({line_separator, line_red, line_green, line_blue, line_separator2});
     }
     
   private:

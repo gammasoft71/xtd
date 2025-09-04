@@ -12,8 +12,8 @@ public:
     timer1.interval(300_ms);
     timer1.enabled(true);
     timer1.tick += delegate_ {
-      nine_segment_display1.segment_style(segment_styles[(counter / chase.size()) % segment_styles.size()]);
-      nine_segment_display1.value(chase[counter++ % chase.size()]);
+      nine_segment_display1.segment_style(segment_styles[(counter / chase.count()) % segment_styles.count()]);
+      nine_segment_display1.value(chase[counter++ % chase.count()]);
     };
     
     back_color(color_converter::average(color::black, nine_segment_display1.fore_color(), 0.20));

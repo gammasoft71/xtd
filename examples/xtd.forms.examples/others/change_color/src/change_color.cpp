@@ -3,7 +3,7 @@
 class form1 : public form {
 public:
   form1() {
-    controls().push_back_range({change_color_button, label1, label2});
+    controls().add_range({change_color_button, label1, label2});
     client_size({400, 200});
     
     change_color_button.auto_size(true);

@@ -28,9 +28,9 @@ public:
     
   public:
     people(const array<person>& p_array) {
-      people_ = collections::array_list(p_array.size());
+      people_ = collections::array_list(p_array.length());
       
-      for (auto i = 0_z; i < p_array.size(); ++i)
+      for (auto i = 0_z; i < p_array.length(); ++i)
         people_[i] = p_array[i];
     }
     

@@ -16,7 +16,7 @@ auto main() -> int {
   
   // Displays the properties and values of the vector_list.
   console::write_line("my_vl");
-  console::write_line("    size:    {0}", my_vl.size());
+  console::write_line("    size:    {0}", my_vl.count());
   console::write_line("    Capacity: {0}", my_vl.capacity());
   console::write("    Values:");
   print_values(my_vl);

@@ -6,7 +6,7 @@ namespace environment_exit_code_example {
     // The main entry point for the application.
     static auto main() {
       auto args = environment::get_command_line_args();
-      if (args.size() == 1)
+      if (args.length() == 1)
         environment::exit_code(ECANCELED);
       else {
         auto value = 0;

@@ -16,7 +16,7 @@ auto main() -> int {
   button1.click += delegate_ {label1.text(xtd::string::format("Button 1 clicked {} times", ++button1_clicked));};
   button2.click += delegate_ {label2.text(xtd::string::format("Button 2 clicked {} times", ++button2_clicked));};
   form1.text("Button 2 example");
-  form1.controls().push_back_range({button1, button2, label1, label2});
+  form1.controls().add_range({button1, button2, label1, label2});
   
   xtd::forms::application::run(form1);
 }

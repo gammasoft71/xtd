@@ -11,10 +11,10 @@ namespace button_renderer_example {
       
       choice_theme.parent(*this);
       choice_theme.location({10, 10});
-      choice_theme.items().push_back("default theme");
+      choice_theme.items().add("default theme");
       auto names = application::style_sheet_names();
       names.sort();
-      choice_theme.items().push_back_range(names);
+      choice_theme.items().add_range(names);
       choice_theme.selected_index(0);
       choice_theme.selected_index_changed += delegate_ {
         application::style_sheet(choice_theme.selected_index() == 0 ? application::system_style_sheet() : application::get_style_sheet_from_name(choice_theme.selected_item().value()));

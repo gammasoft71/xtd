@@ -17,7 +17,7 @@ namespace font_changed_event_example {
       radio_button2.checked_changed += event_handler(*this, &form1::radio_button2_checked_changed);
       
       client_size({292, 273});
-      controls().push_back_range({radio_button1, radio_button2});
+      controls().add_range({radio_button1, radio_button2});
       name("Form1");
     }
     

@@ -17,12 +17,12 @@ namespace background_worker_example {
       
       command_panel.parent(*this);
       command_panel.size({300, 80});
-      command_panel.controls().push_back_range({run_button, cancel_button, status});
+      command_panel.controls().add_range({run_button, cancel_button, status});
       
       progress_panel.parent(*this);
       progress_panel.top(80);
       progress_panel.size({300, 155});
-      progress_panel.controls().push_back_range({progress, progress_text});
+      progress_panel.controls().add_range({progress, progress_text});
       progress_panel.visible(false);
       
       run_button.location({10, 10});

@@ -314,7 +314,7 @@ void minesweeper_form::on_about_menu_click(object& sender, const xtd::event_args
   dialog.long_version("1.0.0");
   dialog.description("The goal of the game is to uncover all the squares\nthat do not contain mines."_t);
   dialog.copyright("Copyright (c) 2024 Gammasoft.\nAll rights reserved."_t);
-  dialog.user_tab_pages().push_back(information_page);
+  dialog.user_tab_pages().add(information_page);
   dialog.website("https://gammasoft71.github.io"_t);
   dialog.website_label("gammasoft website"_t);
   dialog.license("MIT License\n"

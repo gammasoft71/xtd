@@ -10,7 +10,7 @@ public:
   // The add_key_value method has an xtd::object as the second parameter to force
   // the application to use the boxing method for native and non-native setup parameters.
   void add_key_value(const string& key, const object& value) {
-    key_values_.push_back({key, value.to_string()});
+    key_values_.add({key, value.to_string()});
   }
   
   void title(const string& title) {title_ = title;}

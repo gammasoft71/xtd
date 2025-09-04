@@ -30,7 +30,7 @@ namespace timer_example {
   private:
     void initialize_component() {
       form_closing += {*this, &form1::form1_form_closing};
-      controls().push_back_range({text_box1, button1});
+      controls().add_range({text_box1, button1});
 
       button1.dock(dock_style::bottom);
       button1.click += {*this, &form1::button1_click};

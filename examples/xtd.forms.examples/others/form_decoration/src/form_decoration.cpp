@@ -5,7 +5,7 @@ class form1 : public form {
 public:
   form1() {
     client_size({320, 325});
-    controls().push_back_range({form_border_style_choice, caption_label, caption_text_box, minimize_box_label, minimize_box_switch_button, maximize_box_label, maximize_box_switch_button, close_box_label, close_box_switch_button, control_box_label, control_box_switch_button, help_button_label, help_button_switch_button, show_icon_label, show_icon_switch_button, show_in_taskbar_label, show_in_taskbar_switch_button});
+    controls().add_range({form_border_style_choice, caption_label, caption_text_box, minimize_box_label, minimize_box_switch_button, maximize_box_label, maximize_box_switch_button, close_box_label, close_box_switch_button, control_box_label, control_box_switch_button, help_button_label, help_button_switch_button, show_icon_label, show_icon_switch_button, show_in_taskbar_label, show_in_taskbar_switch_button});
     location({400, 200});
     minimum_client_size({client_size()});
     start_position(form_start_position::manual);
@@ -13,7 +13,7 @@ public:
     
     form_border_style_choice.location({10, 10});
     form_border_style_choice.width(300);
-    form_border_style_choice.items().push_back_range({{"none", forms::form_border_style::none}, {"fixed_single", forms::form_border_style::fixed_single}, {"fixed_3d", forms::form_border_style::fixed_3d}, {"fixed_dialog", forms::form_border_style::fixed_dialog}, {"sizable", forms::form_border_style::sizable}, {"fixed_tool_window", forms::form_border_style::fixed_tool_window}, {"sizable_tool_window", forms::form_border_style::sizable_tool_window}});
+    form_border_style_choice.items().add_range({{"none", forms::form_border_style::none}, {"fixed_single", forms::form_border_style::fixed_single}, {"fixed_3d", forms::form_border_style::fixed_3d}, {"fixed_dialog", forms::form_border_style::fixed_dialog}, {"sizable", forms::form_border_style::sizable}, {"fixed_tool_window", forms::form_border_style::fixed_tool_window}, {"sizable_tool_window", forms::form_border_style::sizable_tool_window}});
     form_border_style_choice.selected_index(as<size_t>(form_border_style()));
     form_border_style_choice.selected_index_changed += delegate_ {
       form_border_style(as<forms::form_border_style>(form_border_style_choice.selected_index()));

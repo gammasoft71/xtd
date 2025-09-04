@@ -6,8 +6,8 @@ auto main() -> int {
   auto female_pet_names = array {"Maggie", "Penny", "Saya", "Princess", "Abby", "Laila", "Sadie", "Olivia", "Starlight", "Talla"};
   
   // Generate random indexes for pet names.
-  auto male_index = rnd.next(male_pet_names.size());
-  auto female_index = rnd.next(female_pet_names.size());
+  auto male_index = rnd.next(male_pet_names.length());
+  auto female_index = rnd.next(female_pet_names.length());
   
   // Display the result.
   console::write_line("Suggested pet name of the day: ");

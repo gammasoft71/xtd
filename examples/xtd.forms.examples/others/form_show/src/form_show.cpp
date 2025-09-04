@@ -5,12 +5,12 @@ namespace example {
   public:
     form1() {
       client_size({320, 610});
-      controls().push_back(layout_panel);
+      controls().add(layout_panel);
       padding(5);
       text("Form show example");
       
       layout_panel.dock(dock_style::fill);
-      layout_panel.controls().push_back_range({button_normal, button_modeless, button_top_most, button_modal, button_sheet, button_sheet_modal});
+      layout_panel.controls().add_range({button_normal, button_modeless, button_top_most, button_modal, button_sheet, button_sheet_modal});
       layout_panel.control_layout_style(button_normal, {size_type::auto_size, true});
       layout_panel.control_layout_style(button_modeless, {size_type::auto_size, true});
       layout_panel.control_layout_style(button_top_most, {size_type::auto_size, true});
@@ -24,7 +24,7 @@ namespace example {
         dialog->text("dialog show normal");
         dialog->size({250, 100});
         dialog->show();
-        dialogs.push_back(dialog);
+        dialogs.add(dialog);
       };
       
       button_modeless.text("Show modeless");
@@ -33,7 +33,7 @@ namespace example {
         dialog->text("dialog show modeless");
         dialog->size({250, 100});
         dialog->owner(*this).show();
-        dialogs.push_back(dialog);
+        dialogs.add(dialog);
       };
       
       button_top_most.text("Show top most");
@@ -42,7 +42,7 @@ namespace example {
         dialog->text("dialog top most");
         dialog->size({250, 100});
         dialog->top_most(true).show();
-        dialogs.push_back(dialog);
+        dialogs.add(dialog);
       };
       
       button_modal.text("Show modal");
@@ -60,7 +60,7 @@ namespace example {
           if (e.key_code() == keys::escape) as<form&>(control).close();
         };
         dialog->show_sheet(*this);
-        dialogs.push_back(dialog);
+        dialogs.add(dialog);
       };
       
       button_sheet_modal.text("Show sheet modal");

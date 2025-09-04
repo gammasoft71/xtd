@@ -6,7 +6,7 @@ namespace input_dialog_multiline_example {
     form1() {
       auto_scroll(true);
       text("Input dialog multiline example");
-      controls().push_back_range({button1, label1});
+      controls().add_range({button1, label1});
       
       button1.location({10, 10});
       button1.auto_size(true);

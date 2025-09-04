@@ -16,10 +16,10 @@ namespace interlocked_example {
   public:
     // The main entry point for the application.
     static auto main() {
-      auto my_threads = std::array<my_thread, 10> {};
+      auto my_threads = fixed_array<my_thread, 10> {};
       auto rnd = xtd::random {};
       
-      for (auto index = 0ul; index < my_threads.size(); ++index) {
+      for (auto index = 0ul; index < my_threads.length(); ++index) {
         my_threads[index].name = string::format("Thread{}", index + 1);
         
         //Wait a random amount of time before starting next thread.
@@ -28,7 +28,7 @@ namespace interlocked_example {
         my_threads[index].thread.start(my_threads[index].name);
       }
       
-      for (auto index = 0ul; index < my_threads.size(); ++index)
+      for (auto index = 0ul; index < my_threads.length(); ++index)
         my_threads[index].thread.join();
     }
     

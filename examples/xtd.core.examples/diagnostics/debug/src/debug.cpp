@@ -3,7 +3,7 @@
 #include <xtd/xtd>
 
 auto main() -> int {
-  diagnostics::debug::listeners().push_back(new_ptr<diagnostics::ostream_trace_listener>(console::out));
+  diagnostics::debug::listeners().add(new_ptr<diagnostics::ostream_trace_listener>(console::out));
   diagnostics::debug::auto_flush(true);
   diagnostics::debug::indent();
   diagnostics::debug::write_line("Entering Main");
