@@ -78,7 +78,7 @@ size memory_stream::seek(std::streamoff offset, seek_origin loc) {
 
 void memory_stream::set_length(size value) {
   if (data_->static_buffer) throw_helper::throws(exception_case::not_supported);
-  data_->dynamic_buffer.resize(value);
+  data_->dynamic_buffer.items().resize(value);
 }
 
 array<byte> memory_stream::to_array() const {

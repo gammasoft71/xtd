@@ -23,10 +23,6 @@ namespace xtd::collections::tests {
       assert::are_equal(typeof_<xtd::size>(), typeof_<array_list::size_type>());
     }
     
-    void test_method_(difference_type) {
-      assert::are_equal(typeof_<xtd::ptrdiff>(), typeof_<array_list::difference_type>());
-    }
-    
     void test_method_(reference) {
       assert::are_equal(typeof_<any_object&>(), typeof_<array_list::reference>());
     }
@@ -41,22 +37,6 @@ namespace xtd::collections::tests {
     
     void test_method_(const_pointer) {
       assert::are_equal(typeof_<const any_object*>(), typeof_<array_list::const_pointer>());
-    }
-    
-    void test_method_(iterator) {
-      assert::are_equal(typeof_<generic::ilist<any_object>::iterator>(), typeof_<array_list::iterator>());
-    }
-    
-    void test_method_(const_iterator) {
-      assert::are_equal(typeof_<generic::ilist<any_object>::const_iterator>(), typeof_<array_list::const_iterator>());
-    }
-    
-    void test_method_(reverse_iterator) {
-      assert::are_equal(typeof_<__xtd_raw_array_data__<any_object>::reverse_iterator>(), typeof_<array_list::reverse_iterator>());
-    }
-    
-    void test_method_(const_reverse_iterator) {
-      assert::are_equal(typeof_<__xtd_raw_array_data__<any_object>::const_reverse_iterator>(), typeof_<array_list::const_reverse_iterator>());
     }
     
     void test_method_(constructor) {
@@ -141,8 +121,6 @@ namespace xtd::collections::tests {
       items.add("Compsognathus");
       items.add("Amargasaurus");
       assert::are_equal(3_z, items.count());
-      items.resize(50_z);
-      assert::are_equal(50_z, items.count());
     }
     
     void test_method_(end) {
