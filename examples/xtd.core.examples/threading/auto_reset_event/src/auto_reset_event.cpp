@@ -12,9 +12,9 @@ namespace auto_reset_event_example {
       console::read_line();
       
       for (auto index = 1; index < 4; ++index) {
-        threads.emplace_back(thread_proc);
-        threads.back().name(string::format("Thread_{}", index));
-        threads.back().start();
+        threads.add(thread {thread_proc});
+        threads[threads.count() - 1].name(string::format("Thread_{}", index));
+        threads[threads.count() - 1].start();
       }
       thread::sleep(250_ms);
       

@@ -28,7 +28,7 @@ auto main() -> int {
 //   SUCCEED unit_tests::test.test_case_succeed (0 ms total)
 //   FAILED  unit_tests::test.test_case_failed (0 ms total)
 //     Expected: No Exception to be thrown
-//     But was:  <std::out_of_range>
+//     But was:  <index_out_of_range_exception>
 //     Stack Trace: in |---OMITTED---|/valid_does_not_throw.cpp:15
 //
 // Test results:
