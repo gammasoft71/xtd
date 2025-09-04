@@ -10,9 +10,9 @@ void print_values(const collection_t& my_list) {
 auto main() -> int {
   // Creates and initializes a new vector_list.
   auto my_vl = collections::array_list {};
-  my_vl.emplace_back("Hello");
-  my_vl.emplace_back("World");
-  my_vl.emplace_back("!");
+  my_vl.add("Hello");
+  my_vl.add("World");
+  my_vl.add("!");
   
   // Displays the properties and values of the vector_list.
   console::write_line("my_vl");

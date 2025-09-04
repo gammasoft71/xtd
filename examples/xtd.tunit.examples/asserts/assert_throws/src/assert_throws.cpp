@@ -7,12 +7,12 @@ namespace unit_tests {
   class test_class_(test) {
     void test_method_(test_case_succeed) {
       auto l = list {1, 2, 3, 4};
-      assert::throws<std::out_of_range>([&] {l.at(5);});
+      assert::throws<index_out_of_range_exception>([&] {l[5];});
     }
     
     void test_method_(test_case_failed) {
       auto l = list {1, 2, 3, 4};
-      assert::throws<std::out_of_range>([&] {l.at(2);});
+      assert::throws<index_out_of_range_exception>([&] {l[2];});
     }
   };
 }
@@ -27,7 +27,7 @@ auto main() -> int {
 // Run tests:
 //   SUCCEED unit_tests::test.test_case_succeed (0 ms total)
 //   FAILED  unit_tests::test.test_case_failed (0 ms total)
-//     Expected: <std::out_of_range>
+//     Expected: <index_out_of_range_exception>
 //     But was:  <nothing>
 //     Stack Trace: in |---OMITTED---|/assert_throws.cpp:15
 //

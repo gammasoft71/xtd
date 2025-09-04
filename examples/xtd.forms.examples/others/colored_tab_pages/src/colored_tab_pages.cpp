@@ -12,7 +12,7 @@ public:
       color_image_list.images().add(image_from_color(color_image_list.image_size(), color));
       
       auto colored_tab_page = new_ptr<forms::tab_page>();
-      colored_tab_page->image_index(colored_tab_pages.size()).parent(colored_tab_control).text(color.name()).back_color(color);
+      colored_tab_page->image_index(colored_tab_pages.count()).parent(colored_tab_control).text(color.name()).back_color(color);
       colored_tab_pages.add(colored_tab_page);
     };
     

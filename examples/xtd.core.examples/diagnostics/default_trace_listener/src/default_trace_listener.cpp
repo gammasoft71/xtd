@@ -9,7 +9,7 @@ public:
     auto iter = .0l;
     
     // Remove the original default trace listener.
-    diagnostics::trace::listeners().erase(diagnostics::trace::listeners().begin());
+    diagnostics::trace::listeners().remove_at(0);
     
     // Create and add a new default trace listener.
     auto default_listener = new_ptr<diagnostics::default_trace_listener>();

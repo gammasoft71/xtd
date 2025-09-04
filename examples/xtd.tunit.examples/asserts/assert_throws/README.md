@@ -23,7 +23,7 @@ Start 2 tests from 1 test case
 Run tests:
   SUCCEED unit_tests::test.test_case_succeed (0 ms total)
   FAILED  unit_tests::test.test_case_failed (0 ms total)
-    Expected: <std::out_of_range>
+    Expected: <index_out_of_range_exception>
     But was:  <nothing>
     Stack Trace: in |---OMITTED---|/assert_throws.cpp:15
 

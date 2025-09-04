@@ -7,12 +7,12 @@ namespace unit_tests {
   class test_class_(test) {
     void test_method_(test_case_succeed) {
       auto l = list {1, 2, 3, 4};
-      assume::throws_any([&] {l.at(5);});
+      assume::throws_any([&] {l[5];});
     }
     
     void test_method_(test_case_aborted) {
       auto l = list {1, 2, 3, 4};
-      assume::throws_any([&] {l.at(2);});
+      assume::throws_any([&] {l[2];});
     }
   };
 }
