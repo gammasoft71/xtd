@@ -121,11 +121,11 @@ $(function(){ initResizable(false); });
 <div class="line">      do_something_thread.join();</div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;End&quot;</span>);</div>
 <div class="line">      </div>
-<div class="line">      <span class="keywordflow">if</span> (args.size() == 1 &amp;&amp; args[0] == <span class="stringliteral">&quot;exit&quot;</span>) {</div>
+<div class="line">      <span class="keywordflow">if</span> (args.length() == 1 &amp;&amp; args[0] == <span class="stringliteral">&quot;exit&quot;</span>) {</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;Before environment::exit&quot;</span>);</div>
 <div class="line">        environment::exit(exit_status::success);</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;After environment::exit&quot;</span>);</div>
-<div class="line">      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (args.size() == 1 &amp;&amp; args[0] == <span class="stringliteral">&quot;quick_exit&quot;</span>) {</div>
+<div class="line">      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (args.length() == 1 &amp;&amp; args[0] == <span class="stringliteral">&quot;quick_exit&quot;</span>) {</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;Before environment::quick_exit&quot;</span>);</div>
 <div class="line">        environment::quick_exit(exit_status::success);</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;After environment::quick_exit&quot;</span>);</div>
@@ -150,7 +150,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

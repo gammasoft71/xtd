@@ -181,7 +181,7 @@ You can use these properties to manage the currently selected item in the list, 
 <div class="line">      checked_list_box1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);</div>
 <div class="line">      </div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 1; index &lt;= 10; ++index)</div>
-<div class="line">        checked_list_box1.items().push_back({string::format(<span class="stringliteral">&quot;Item {}&quot;</span>, index), index % 2 != 0});</div>
+<div class="line">        checked_list_box1.items().add({string::format(<span class="stringliteral">&quot;Item {}&quot;</span>, index), index % 2 != 0});</div>
 <div class="line">      checked_list_box1.selected_index(0);</div>
 <div class="line">      </div>
 <div class="line">      checked_list_box1.item_check += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keywordtype">object</span> &amp; sender, item_check_event_args &amp; e) {</div>
@@ -213,13 +213,13 @@ You can use these properties to manage the currently selected item in the list, 
 <div class="line">      </div>
 <div class="line">      choice1.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      choice1.location({10, 10});</div>
-<div class="line">      choice1.items().push_back_range({<span class="stringliteral">&quot;Item1&quot;</span>, <span class="stringliteral">&quot;Item2&quot;</span>, <span class="stringliteral">&quot;Item3&quot;</span>, <span class="stringliteral">&quot;Item4&quot;</span>, <span class="stringliteral">&quot;Item5&quot;</span>, <span class="stringliteral">&quot;Item6&quot;</span>, <span class="stringliteral">&quot;Item7&quot;</span>, <span class="stringliteral">&quot;Item8&quot;</span>, <span class="stringliteral">&quot;Item9&quot;</span>, <span class="stringliteral">&quot;Item10&quot;</span>});</div>
+<div class="line">      choice1.items().add_range({<span class="stringliteral">&quot;Item1&quot;</span>, <span class="stringliteral">&quot;Item2&quot;</span>, <span class="stringliteral">&quot;Item3&quot;</span>, <span class="stringliteral">&quot;Item4&quot;</span>, <span class="stringliteral">&quot;Item5&quot;</span>, <span class="stringliteral">&quot;Item6&quot;</span>, <span class="stringliteral">&quot;Item7&quot;</span>, <span class="stringliteral">&quot;Item8&quot;</span>, <span class="stringliteral">&quot;Item9&quot;</span>, <span class="stringliteral">&quot;Item10&quot;</span>});</div>
 <div class="line">      choice1.selected_index(0);</div>
 <div class="line">      choice1.selected_index_changed += <a class="code hl_typedef" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">event_handler</a>(*<span class="keyword">this</span>, &amp;form1::on_choice_click);</div>
 <div class="line">      </div>
 <div class="line">      choice2.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      choice2.location({10, 50});</div>
-<div class="line">      choice2.items().push_back_range({<span class="stringliteral">&quot;Item1&quot;</span>, <span class="stringliteral">&quot;Item2&quot;</span>, <span class="stringliteral">&quot;Item3&quot;</span>, <span class="stringliteral">&quot;Item4&quot;</span>, <span class="stringliteral">&quot;Item5&quot;</span>, <span class="stringliteral">&quot;Item6&quot;</span>, <span class="stringliteral">&quot;Item7&quot;</span>, <span class="stringliteral">&quot;Item8&quot;</span>, <span class="stringliteral">&quot;Item9&quot;</span>, <span class="stringliteral">&quot;Item10&quot;</span>});</div>
+<div class="line">      choice2.items().add_range({<span class="stringliteral">&quot;Item1&quot;</span>, <span class="stringliteral">&quot;Item2&quot;</span>, <span class="stringliteral">&quot;Item3&quot;</span>, <span class="stringliteral">&quot;Item4&quot;</span>, <span class="stringliteral">&quot;Item5&quot;</span>, <span class="stringliteral">&quot;Item6&quot;</span>, <span class="stringliteral">&quot;Item7&quot;</span>, <span class="stringliteral">&quot;Item8&quot;</span>, <span class="stringliteral">&quot;Item9&quot;</span>, <span class="stringliteral">&quot;Item10&quot;</span>});</div>
 <div class="line">      choice2.selected_index(0);</div>
 <div class="line">      choice2.selected_index_changed += <a class="code hl_typedef" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">event_handler</a>(*<span class="keyword">this</span>, &amp;form1::on_choice_click);</div>
 <div class="line">    }</div>
@@ -3062,7 +3062,7 @@ Typically, you should not set the client_size of the control. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

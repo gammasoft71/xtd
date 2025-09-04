@@ -107,7 +107,7 @@ $(function(){ initResizable(false); });
 <div class="line">    <span class="keywordflow">while</span> (!terminate_app) {</div>
 <div class="line">      <span class="keyword">auto</span> incoming_end_point = net::ip_end_point {};</div>
 <div class="line">      <span class="keyword">auto</span> buffer = udp.receive(incoming_end_point);</div>
-<div class="line">      <span class="keywordflow">if</span> (buffer.size() &amp;&amp; buffer[0] != 0xFF)</div>
+<div class="line">      <span class="keywordflow">if</span> (buffer.length() &amp;&amp; buffer[0] != 0xFF)</div>
 <div class="line">        console::write_line(<span class="keywordtype">string</span>(buffer.begin(), buffer.end()));</div>
 <div class="line">    }</div>
 <div class="line">  }};</div>
@@ -117,7 +117,7 @@ $(function(){ initResizable(false); });
 <div class="line">    <span class="keyword">auto</span> counter = 0;</div>
 <div class="line">    <span class="keywordflow">while</span> (!terminate_app) {</div>
 <div class="line">      <span class="keyword">auto</span> str = string::format(<span class="stringliteral">&quot;counter={}&quot;</span>, ++counter);</div>
-<div class="line">      udp.send(array&lt;byte&gt;(str.begin(), str.end()), str.size(), net::ip_end_point(net::ip_address::ip_v6_loopback, 9400));</div>
+<div class="line">      udp.send(array&lt;byte&gt;(str.begin(), str.end()), str.length(), net::ip_end_point(net::ip_address::ip_v6_loopback, 9400));</div>
 <div class="line">      thread::sleep(50_ms);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -145,7 +145,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

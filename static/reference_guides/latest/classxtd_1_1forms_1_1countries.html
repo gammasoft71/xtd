@@ -136,7 +136,7 @@ Inheritance diagram for xtd::forms::countries:</div>
 <div class="line">      countries_list_box.size({200, 480});</div>
 <div class="line">      countries_list_box.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::bottom);</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> country : countries::get_countries())</div>
-<div class="line">        countries_list_box.items().push_back({country.name(), country});</div>
+<div class="line">        countries_list_box.items().add({country.name(), country});</div>
 <div class="line">      countries_list_box.sorted(<span class="keyword">true</span>);</div>
 <div class="line">      countries_list_box.selected_value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        country_flag_picture_box.image(bitmap(as&lt;forms::country&gt;(countries_list_box.selected_item().tag()).flag(), {256, 192}));</div>
@@ -8455,7 +8455,7 @@ Inheritance diagram for xtd::forms::countries:</div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

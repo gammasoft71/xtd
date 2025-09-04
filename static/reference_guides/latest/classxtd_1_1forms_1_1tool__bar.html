@@ -172,17 +172,17 @@ Inheritance diagram for xtd::forms::tool_bar:</div>
 <div class="line">    form1() {</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ac12513e127a5cc7bb9ee8b238afa2fd5">text</a>(<span class="stringliteral">&quot;Toolbar example&quot;</span>);</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>({820, 500});</div>
-<div class="line">      controls().push_back_range({list_box1, tool_bar2, tool_bar1});</div>
+<div class="line">      controls().add_range({list_box1, tool_bar2, tool_bar1});</div>
 <div class="line">      tool_bar(tool_bar1);</div>
 <div class="line">      active_control(list_box1);</div>
 <div class="line">      </div>
 <div class="line">      list_box1.dock(dock_style::fill);</div>
 <div class="line">      </div>
-<div class="line">      choice1.items().push_back_range({<span class="stringliteral">&quot;Item1&quot;</span>, <span class="stringliteral">&quot;Item2&quot;</span>, <span class="stringliteral">&quot;Item3&quot;</span>, <span class="stringliteral">&quot;Item4&quot;</span>, <span class="stringliteral">&quot;Item5&quot;</span>, <span class="stringliteral">&quot;Item6&quot;</span>, <span class="stringliteral">&quot;Item7&quot;</span>, <span class="stringliteral">&quot;Item8&quot;</span>, <span class="stringliteral">&quot;Item9&quot;</span>, <span class="stringliteral">&quot;Item10&quot;</span>});</div>
+<div class="line">      choice1.items().add_range({<span class="stringliteral">&quot;Item1&quot;</span>, <span class="stringliteral">&quot;Item2&quot;</span>, <span class="stringliteral">&quot;Item3&quot;</span>, <span class="stringliteral">&quot;Item4&quot;</span>, <span class="stringliteral">&quot;Item5&quot;</span>, <span class="stringliteral">&quot;Item6&quot;</span>, <span class="stringliteral">&quot;Item7&quot;</span>, <span class="stringliteral">&quot;Item8&quot;</span>, <span class="stringliteral">&quot;Item9&quot;</span>, <span class="stringliteral">&quot;Item10&quot;</span>});</div>
 <div class="line">      choice1.selected_index(0);</div>
 <div class="line">      choice1.selected_value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        list_box1.items().push_back(string::format(<span class="stringliteral">&quot;{} selected&quot;</span>, choice1.selected_item()));</div>
-<div class="line">        list_box1.selected_index(list_box1.items().size() - 1);</div>
+<div class="line">        list_box1.items().add(string::format(<span class="stringliteral">&quot;{} selected&quot;</span>, choice1.selected_item()));</div>
+<div class="line">        list_box1.selected_index(list_box1.items().count() - 1);</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      progress_bar1.width(150);</div>
@@ -193,16 +193,16 @@ Inheritance diagram for xtd::forms::tool_bar:</div>
 <div class="line">        progress_bar1.value(progress_bar1.value() &lt; progress_bar1.maximum() ? progress_bar1.value() + 1 : progress_bar1.minimum());</div>
 <div class="line">      };</div>
 <div class="line">      </div>
-<div class="line">      tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});</div>
-<div class="line">      tool_bar1.buttons().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, choice_tool_bar_button, tool_bar1_separator3, help_tool_bar_button});</div>
+<div class="line">      tool_bar1.image_list().images().add_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});</div>
+<div class="line">      tool_bar1.buttons().add_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, choice_tool_bar_button, tool_bar1_separator3, help_tool_bar_button});</div>
 <div class="line">      tool_bar1.button_click += {*<span class="keyword">this</span>, &amp;form1::on_tool_bar_button_click};</div>
 <div class="line">      </div>
 <div class="line">      tool_bar2.dock(dock_style::bottom);</div>
 <div class="line">      tool_bar2.show_text(<span class="keyword">true</span>);</div>
 <div class="line">      tool_bar2.text_align(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga31ef740f2c3370ff9e055409ec86e822a7c4f29407893c334a6cb7a87bf045c0d">xtd::forms::tool_bar_text_align::right</a>);</div>
 <div class="line">      tool_bar2.image_list().image_size({24, 24});</div>
-<div class="line">      tool_bar2.image_list().images().push_back_range({tool_bar_images::from_name(<span class="stringliteral">&quot;media-playback-start&quot;</span>), tool_bar_images::from_name(<span class="stringliteral">&quot;media-skip-backward&quot;</span>), tool_bar_images::from_name(<span class="stringliteral">&quot;media-playback-stop&quot;</span>), tool_bar_images::from_name(<span class="stringliteral">&quot;media-skip-forward&quot;</span>), tool_bar_images::from_name(<span class="stringliteral">&quot;media-record&quot;</span>), tool_bar_images::from_name(<span class="stringliteral">&quot;media-eject&quot;</span>)});</div>
-<div class="line">      tool_bar2.buttons().push_back_range({play_tool_bar_button, tool_bar2_separator1, skip_backward_tool_bar_button, stop_tool_bar_button, skip_forward_tool_bar_button, tool_bar2_separator2, record_tool_bar_button, tool_bar2_separator3, progress_tool_bar_button, tool_bar2_separator4, eject_tool_bar_button});</div>
+<div class="line">      tool_bar2.image_list().images().add_range({tool_bar_images::from_name(<span class="stringliteral">&quot;media-playback-start&quot;</span>), tool_bar_images::from_name(<span class="stringliteral">&quot;media-skip-backward&quot;</span>), tool_bar_images::from_name(<span class="stringliteral">&quot;media-playback-stop&quot;</span>), tool_bar_images::from_name(<span class="stringliteral">&quot;media-skip-forward&quot;</span>), tool_bar_images::from_name(<span class="stringliteral">&quot;media-record&quot;</span>), tool_bar_images::from_name(<span class="stringliteral">&quot;media-eject&quot;</span>)});</div>
+<div class="line">      tool_bar2.buttons().add_range({play_tool_bar_button, tool_bar2_separator1, skip_backward_tool_bar_button, stop_tool_bar_button, skip_forward_tool_bar_button, tool_bar2_separator2, record_tool_bar_button, tool_bar2_separator3, progress_tool_bar_button, tool_bar2_separator4, eject_tool_bar_button});</div>
 <div class="line">      tool_bar2.button_click += {*<span class="keyword">this</span>, &amp;form1::on_tool_bar_button_click};</div>
 <div class="line">      </div>
 <div class="line">      record_tool_bar_button.enabled(<span class="keyword">false</span>);</div>
@@ -211,15 +211,15 @@ Inheritance diagram for xtd::forms::tool_bar:</div>
 <div class="line">  <span class="keyword">private</span>:</div>
 <div class="line">    <span class="keywordtype">void</span> on_tool_bar_button_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> tool_bar_button_click_event_args&amp; e) {</div>
 <div class="line">      <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.button().style() == tool_bar_button_style::toggle_button)</div>
-<div class="line">        list_box1.items().push_back(string::format(<span class="stringliteral">&quot;Button {} clicked, pushed = {}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.button().text(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.button().pushed()));</div>
+<div class="line">        list_box1.items().add(string::format(<span class="stringliteral">&quot;Button {} clicked, pushed = {}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.button().text(), <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.button().pushed()));</div>
 <div class="line">      <span class="keywordflow">else</span></div>
-<div class="line">        list_box1.items().push_back(string::format(<span class="stringliteral">&quot;Button {} clicked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.button().text()));</div>
-<div class="line">      list_box1.selected_index(list_box1.items().size() - 1);</div>
+<div class="line">        list_box1.items().add(string::format(<span class="stringliteral">&quot;Button {} clicked&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.button().text()));</div>
+<div class="line">      list_box1.selected_index(list_box1.items().count() - 1);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> on_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) {</div>
-<div class="line">      list_box1.items().push_back(string::format(<span class="stringliteral">&quot;Menu item {} clicked&quot;</span>, as&lt;menu_item&gt;(sender).<a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>()));</div>
-<div class="line">      list_box1.selected_index(list_box1.items().size() - 1);</div>
+<div class="line">      list_box1.items().add(string::format(<span class="stringliteral">&quot;Menu item {} clicked&quot;</span>, as&lt;menu_item&gt;(sender).<a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>()));</div>
+<div class="line">      list_box1.selected_index(list_box1.items().count() - 1);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    list_box list_box1;</div>
@@ -3922,7 +3922,7 @@ The <a class="el" href="#a413c840156136e2329b91ca18bb0dde9" title="Raises the xt
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

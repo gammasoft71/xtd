@@ -129,16 +129,16 @@ $(function(){ initResizable(false); });
 <div class="line">      auto_scroll(<span class="keyword">true</span>);</div>
 <div class="line">      client_size({870, 240});</div>
 <div class="line">      text(<span class="stringliteral">&quot;LCD label example&quot;</span>);</div>
-<div class="line">      controls().push_back_range({group_box_properties, label_lcd_label});</div>
+<div class="line">      controls().add_range({group_box_properties, label_lcd_label});</div>
 <div class="line">      </div>
-<div class="line">      group_box_properties.controls().push_back(panel_properties);</div>
+<div class="line">      group_box_properties.controls().add(panel_properties);</div>
 <div class="line">      group_box_properties.location({10, 10});</div>
 <div class="line">      group_box_properties.size({340, 220});</div>
 <div class="line">      group_box_properties.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::bottom);</div>
 <div class="line">      group_box_properties.text(<span class="stringliteral">&quot;properties&quot;</span>);</div>
 <div class="line">      </div>
 <div class="line">      panel_properties.auto_scroll(<span class="keyword">true</span>);</div>
-<div class="line">      panel_properties.controls().push_back_range({lcd_style_label, lcd_style_choice, segment_style_label, segment_style_choice, height_label, height_numeric_up_down, fore_color_label, fore_color_color_picker, show_digit_background_label, show_digit_background_togle_button});</div>
+<div class="line">      panel_properties.controls().add_range({lcd_style_label, lcd_style_choice, segment_style_label, segment_style_choice, height_label, height_numeric_up_down, fore_color_label, fore_color_color_picker, show_digit_background_label, show_digit_background_togle_button});</div>
 <div class="line">      panel_properties.dock(dock_style::fill);</div>
 <div class="line">      </div>
 <div class="line">      lcd_style_label.auto_size(<span class="keyword">true</span>);</div>
@@ -147,16 +147,16 @@ $(function(){ initResizable(false); });
 <div class="line">      </div>
 <div class="line">      lcd_style_choice.location({120, 10});</div>
 <div class="line">      lcd_style_choice.width(180);</div>
-<div class="line">      lcd_style_choice.items().push_back_range({{<span class="stringliteral">&quot;Seven segment display&quot;</span>, lcd_style::seven_segment_display}, {<span class="stringliteral">&quot;Nine segment display&quot;</span>, lcd_style::nine_segment_display}, {<span class="stringliteral">&quot;Fourteen segment display&quot;</span>, lcd_style::fourteen_segment_display}, {<span class="stringliteral">&quot;Sixteen segment display&quot;</span>, lcd_style::sixteen_segment_display}, {<span class="stringliteral">&quot;Dot matrix display&quot;</span>, lcd_style::dot_matrix_display}});</div>
+<div class="line">      lcd_style_choice.items().add_range({{<span class="stringliteral">&quot;Seven segment display&quot;</span>, lcd_style::seven_segment_display}, {<span class="stringliteral">&quot;Nine segment display&quot;</span>, lcd_style::nine_segment_display}, {<span class="stringliteral">&quot;Fourteen segment display&quot;</span>, lcd_style::fourteen_segment_display}, {<span class="stringliteral">&quot;Sixteen segment display&quot;</span>, lcd_style::sixteen_segment_display}, {<span class="stringliteral">&quot;Dot matrix display&quot;</span>, lcd_style::dot_matrix_display}});</div>
 <div class="line">      lcd_style_choice.selected_value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        label_lcd_label.lcd_style(as&lt;lcd_style&gt;(lcd_style_choice.selected_item().tag()));</div>
 <div class="line">        diagnostics::debug::write_line(string::format(<span class="stringliteral">&quot;{}::valid_characters = {}&quot;</span>, label_lcd_label.lcd_style(), label_lcd_label.valid_characters()));</div>
 <div class="line">        segment_style_choice.items().clear();</div>
 <div class="line">        <span class="keywordflow">if</span> (lcd_style_choice.selected_item().value() == <span class="stringliteral">&quot;Dot matrix display&quot;</span>) {</div>
-<div class="line">          segment_style_choice.items().push_back_range({{<span class="stringliteral">&quot;Standard (or round)&quot;</span>, dot_matrix_style::standard}, {<span class="stringliteral">&quot;Square&quot;</span>, dot_matrix_style::square}});</div>
+<div class="line">          segment_style_choice.items().add_range({{<span class="stringliteral">&quot;Standard (or round)&quot;</span>, dot_matrix_style::standard}, {<span class="stringliteral">&quot;Square&quot;</span>, dot_matrix_style::square}});</div>
 <div class="line">          segment_style_choice.selected_index(as&lt;int&gt;(label_lcd_label.dot_matrix_style()));</div>
 <div class="line">        } <span class="keywordflow">else</span> {</div>
-<div class="line">          segment_style_choice.items().push_back_range({{<span class="stringliteral">&quot;Standard&quot;</span>, segment_style::standard}, {<span class="stringliteral">&quot;Modern&quot;</span>, segment_style::modern}, {<span class="stringliteral">&quot;Mixed&quot;</span>, segment_style::mixed}, {<span class="stringliteral">&quot;expanded&quot;</span>, segment_style::expanded}, {<span class="stringliteral">&quot;Design&quot;</span>, segment_style::design}, {<span class="stringliteral">&quot;Stick&quot;</span>, segment_style::stick}});</div>
+<div class="line">          segment_style_choice.items().add_range({{<span class="stringliteral">&quot;Standard&quot;</span>, segment_style::standard}, {<span class="stringliteral">&quot;Modern&quot;</span>, segment_style::modern}, {<span class="stringliteral">&quot;Mixed&quot;</span>, segment_style::mixed}, {<span class="stringliteral">&quot;expanded&quot;</span>, segment_style::expanded}, {<span class="stringliteral">&quot;Design&quot;</span>, segment_style::design}, {<span class="stringliteral">&quot;Stick&quot;</span>, segment_style::stick}});</div>
 <div class="line">          segment_style_choice.selected_index(as&lt;int&gt;(label_lcd_label.segment_style()));</div>
 <div class="line">        }</div>
 <div class="line">      };</div>
@@ -245,7 +245,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

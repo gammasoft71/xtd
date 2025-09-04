@@ -147,7 +147,7 @@ To activate your code if TRACE is defined, you must enclose calls to the methods
 <div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="#a8e4635956642fba7833b8bbdff59a0c9">diagnostics::trace::listeners</a>().push_back(<a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;diagnostics::ostream_trace_listener&gt;</a>(<a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a>));</div>
+<div class="line">  <a class="code hl_function" href="#a8e4635956642fba7833b8bbdff59a0c9">diagnostics::trace::listeners</a>().add(<a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr&lt;diagnostics::ostream_trace_listener&gt;</a>(<a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a>));</div>
 <div class="line">  <a class="code hl_function" href="#a315726e6dae274cc31aa0e37dd45196b">diagnostics::trace::auto_flush</a>(<span class="keyword">true</span>);</div>
 <div class="line">  <a class="code hl_function" href="#adcd7c63e63e1ba262d5c338df2f62a29">diagnostics::trace::indent</a>();</div>
 <div class="line">  <a class="code hl_function" href="#a0cf0960a97a2e45829917c931e1cf9bb">diagnostics::trace::write_line</a>(<span class="stringliteral">&quot;Entering Main&quot;</span>);</div>
@@ -1959,7 +1959,7 @@ This method calls the write method of the trace listener. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

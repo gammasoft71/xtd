@@ -131,15 +131,15 @@ $(function(){ initResizable(false); });
 <div class="line">    </div>
 <div class="line">    form1() {</div>
 <div class="line">      text(<span class="stringliteral">&quot;Border style example&quot;</span>);</div>
-<div class="line">      client_size({700, 170 + as&lt;int&gt;(20 + bordered_labels.size() / 4 * 70)});</div>
-<div class="line">      controls().push_back_range({colored_panel, control_panel});</div>
+<div class="line">      client_size({700, 170 + as&lt;int&gt;(20 + bordered_labels.length() / 4 * 70)});</div>
+<div class="line">      controls().add_range({colored_panel, control_panel});</div>
 <div class="line">      form_border_style(forms::form_border_style::fixed_dialog);</div>
 <div class="line">      maximize_box(<span class="keyword">false</span>);</div>
 <div class="line">      </div>
-<div class="line">      colored_panel.controls().push_back_range(bordered_labels);</div>
+<div class="line">      colored_panel.controls().add_range(bordered_labels);</div>
 <div class="line">      colored_panel.dock(dock_style::fill);</div>
 <div class="line">      </div>
-<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0ul; index &lt; bordered_labels.size(); ++index) {</div>
+<div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0_z; index &lt; bordered_labels.length(); ++index) {</div>
 <div class="line">        bordered_labels[index].border_style(border_styles[index]);</div>
 <div class="line">        bordered_labels[index].bounds(rectangle(as&lt;int&gt;(20 + index % 4 * 170), as&lt;int&gt;(20 + index / 4 * 70), 150, 50));</div>
 <div class="line">        bordered_labels[index].text(convert::to_string(border_styles[index]));</div>
@@ -148,15 +148,15 @@ $(function(){ initResizable(false); });
 <div class="line">      </div>
 <div class="line">      control_panel.border_sides(border_sides::top);</div>
 <div class="line">      control_panel.border_style(border_style::solid);</div>
-<div class="line">      control_panel.controls().push_back_range({choose_color_label, colors_chooser, select_sides_label, top_side, left_side, bottom_side, right_side});</div>
+<div class="line">      control_panel.controls().add_range({choose_color_label, colors_chooser, select_sides_label, top_side, left_side, bottom_side, right_side});</div>
 <div class="line">      control_panel.dock(dock_style::bottom);</div>
 <div class="line">      </div>
 <div class="line">      choose_color_label.auto_size(<span class="keyword">true</span>);</div>
 <div class="line">      choose_color_label.location({20, 40});</div>
 <div class="line">      choose_color_label.text(<span class="stringliteral">&quot;Choose color&quot;</span>);</div>
 <div class="line">      </div>
-<div class="line">      colors_chooser.items().push_back_range(colors::get_color_names());</div>
-<div class="line">      colors_chooser.items().push_back_range(system_colors::get_color_names());</div>
+<div class="line">      colors_chooser.items().add_range(colors::get_color_names());</div>
+<div class="line">      colors_chooser.items().add_range(system_colors::get_color_names());</div>
 <div class="line">      colors_chooser.bounds({120, 37, 220, colors_chooser.size().height});</div>
 <div class="line">      colors_chooser.selected_index_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="keyword">auto</span> color = color::from_name(colors_chooser.selected_item().value());</div>
@@ -174,8 +174,8 @@ $(function(){ initResizable(false); });
 <div class="line">      top_side.checked(<span class="keyword">true</span>);</div>
 <div class="line">      top_side.flat_style(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
 <div class="line">      top_side.flat_appearance(flat_button_appearance().checked_back_color(application::style_sheet().system_colors().accent())</div>
-<div class="line">        .mouse_down_back_color(application::style_sheet().system_colors().accent())</div>
-<div class="line">        .mouse_over_back_color(application::style_sheet().system_colors().accent()));</div>
+<div class="line">                               .mouse_down_back_color(application::style_sheet().system_colors().accent())</div>
+<div class="line">                               .mouse_over_back_color(application::style_sheet().system_colors().accent()));</div>
 <div class="line">      top_side.checked(<span class="keyword">true</span>);</div>
 <div class="line">      top_side.location({495, 15});</div>
 <div class="line">      top_side.size({50, 10});</div>
@@ -189,8 +189,8 @@ $(function(){ initResizable(false); });
 <div class="line">      left_side.checked(<span class="keyword">true</span>);</div>
 <div class="line">      left_side.flat_style(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
 <div class="line">      left_side.flat_appearance(flat_button_appearance().checked_back_color(application::style_sheet().system_colors().accent())</div>
-<div class="line">        .mouse_down_back_color(application::style_sheet().system_colors().accent())</div>
-<div class="line">        .mouse_over_back_color(application::style_sheet().system_colors().accent()));</div>
+<div class="line">                                .mouse_down_back_color(application::style_sheet().system_colors().accent())</div>
+<div class="line">                                .mouse_over_back_color(application::style_sheet().system_colors().accent()));</div>
 <div class="line">      left_side.location({480, 25});</div>
 <div class="line">      left_side.size({10, 50});</div>
 <div class="line">      left_side.checked_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
@@ -203,8 +203,8 @@ $(function(){ initResizable(false); });
 <div class="line">      right_side.checked(<span class="keyword">true</span>);</div>
 <div class="line">      right_side.flat_style(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
 <div class="line">      right_side.flat_appearance(flat_button_appearance().checked_back_color(application::style_sheet().system_colors().accent())</div>
-<div class="line">        .mouse_down_back_color(application::style_sheet().system_colors().accent())</div>
-<div class="line">        .mouse_over_back_color(application::style_sheet().system_colors().accent()));</div>
+<div class="line">                                 .mouse_down_back_color(application::style_sheet().system_colors().accent())</div>
+<div class="line">                                 .mouse_over_back_color(application::style_sheet().system_colors().accent()));</div>
 <div class="line">      right_side.location({550, 25});</div>
 <div class="line">      right_side.size({10, 50});</div>
 <div class="line">      right_side.checked_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
@@ -217,8 +217,8 @@ $(function(){ initResizable(false); });
 <div class="line">      bottom_side.checked(<span class="keyword">true</span>);</div>
 <div class="line">      bottom_side.flat_style(<a class="code hl_enumvalue" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a37fc7edee25a177474eaebe7f7b09785">xtd::forms::flat_style::flat</a>);</div>
 <div class="line">      bottom_side.flat_appearance(flat_button_appearance().checked_back_color(application::style_sheet().system_colors().accent())</div>
-<div class="line">        .mouse_down_back_color(application::style_sheet().system_colors().accent())</div>
-<div class="line">        .mouse_over_back_color(application::style_sheet().system_colors().accent()));</div>
+<div class="line">                                  .mouse_down_back_color(application::style_sheet().system_colors().accent())</div>
+<div class="line">                                  .mouse_over_back_color(application::style_sheet().system_colors().accent()));</div>
 <div class="line">      bottom_side.location({495, 75});</div>
 <div class="line">      bottom_side.size({50, 10});</div>
 <div class="line">      bottom_side.checked_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
@@ -230,9 +230,9 @@ $(function(){ initResizable(false); });
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> list&lt;border_style&gt; border_styles {border_style::none, border_style::solid, border_style::inset, border_style::outset, border_style::groove, border_style::ridge, border_style::theme, border_style::dashed, border_style::dot_dash, border_style::dot_dot_dash, border_style::dotted, border_style::double_border, border_style::bevel_inset, border_style::bevel_outset, border_style::rounded};</div>
+<div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">const</span> array&lt;border_style&gt; border_styles {border_style::none, border_style::solid, border_style::inset, border_style::outset, border_style::groove, border_style::ridge, border_style::theme, border_style::dashed, border_style::dot_dash, border_style::dot_dot_dash, border_style::dotted, border_style::double_border, border_style::bevel_inset, border_style::bevel_outset, border_style::rounded};</div>
 <div class="line">    panel colored_panel;</div>
-<div class="line">    list&lt;label&gt; bordered_labels {border_styles.size()};</div>
+<div class="line">    array&lt;label&gt; bordered_labels {border_styles.length()};</div>
 <div class="line">    forms::border_sides border_sides = forms::border_sides::all;</div>
 <div class="line">    panel control_panel;</div>
 <div class="line">    label choose_color_label;</div>
@@ -253,7 +253,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

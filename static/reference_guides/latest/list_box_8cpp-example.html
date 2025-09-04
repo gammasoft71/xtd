@@ -130,7 +130,7 @@ $(function(){ initResizable(false); });
 <div class="line">      client_size({360, 240});</div>
 <div class="line">      </div>
 <div class="line">      layout_panel.parent(*<span class="keyword">this</span>);</div>
-<div class="line">      layout_panel.controls().push_back_range({list_box_left, list_box_right});</div>
+<div class="line">      layout_panel.controls().add_range({list_box_left, list_box_right});</div>
 <div class="line">      layout_panel.control_layout_style(list_box_left, {size_type::auto_size, <span class="keyword">true</span>});</div>
 <div class="line">      layout_panel.control_layout_style(list_box_right, {size_type::auto_size, <span class="keyword">true</span>});</div>
 <div class="line">      layout_panel.dock(dock_style::fill);</div>
@@ -138,22 +138,22 @@ $(function(){ initResizable(false); });
 <div class="line">      </div>
 <div class="line">      list_box_left.double_click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="keywordflow">if</span> (list_box_left.selected_index() != list_box_left.npos) {</div>
-<div class="line">          list_box_right.items().push_back(list_box_left.selected_item());</div>
+<div class="line">          list_box_right.items().add(list_box_left.selected_item());</div>
 <div class="line">          list_box_right.selected_index(0);</div>
-<div class="line">          list_box_left.items().erase_at(list_box_left.selected_index());</div>
+<div class="line">          list_box_left.items().remove_at(list_box_left.selected_index());</div>
 <div class="line">        }</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      list_box_right.sorted(<span class="keyword">true</span>);</div>
 <div class="line">      list_box_right.double_click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="keywordflow">if</span> (list_box_right.selected_index() != list_box_right.npos) {</div>
-<div class="line">          list_box_left.items().push_back(list_box_right.selected_item());</div>
+<div class="line">          list_box_left.items().add(list_box_right.selected_item());</div>
 <div class="line">          list_box_left.selected_index(0);</div>
-<div class="line">          list_box_right.items().erase_at(list_box_right.selected_index());</div>
+<div class="line">          list_box_right.items().remove_at(list_box_right.selected_index());</div>
 <div class="line">        }</div>
 <div class="line">      };</div>
 <div class="line">      </div>
-<div class="line">      list_box_left.items().push_back_range({<span class="stringliteral">&quot;draw&quot;</span>, <span class="stringliteral">&quot;cut&quot;</span>, <span class="stringliteral">&quot;paste&quot;</span>, <span class="stringliteral">&quot;delete&quot;</span>, <span class="stringliteral">&quot;open&quot;</span>, <span class="stringliteral">&quot;close&quot;</span>, <span class="stringliteral">&quot;remove&quot;</span>, <span class="stringliteral">&quot;edit&quot;</span>, <span class="stringliteral">&quot;find&quot;</span>, <span class="stringliteral">&quot;increment&quot;</span>, <span class="stringliteral">&quot;decrement&quot;</span>, <span class="stringliteral">&quot;write&quot;</span>, <span class="stringliteral">&quot;read&quot;</span>, <span class="stringliteral">&quot;post&quot;</span>, <span class="stringliteral">&quot;build&quot;</span>, <span class="stringliteral">&quot;make&quot;</span>, <span class="stringliteral">&quot;release&quot;</span>, <span class="stringliteral">&quot;create&quot;</span>, <span class="stringliteral">&quot;choose&quot;</span>, <span class="stringliteral">&quot;erase&quot;</span>});</div>
+<div class="line">      list_box_left.items().add_range({<span class="stringliteral">&quot;draw&quot;</span>, <span class="stringliteral">&quot;cut&quot;</span>, <span class="stringliteral">&quot;paste&quot;</span>, <span class="stringliteral">&quot;delete&quot;</span>, <span class="stringliteral">&quot;open&quot;</span>, <span class="stringliteral">&quot;close&quot;</span>, <span class="stringliteral">&quot;remove&quot;</span>, <span class="stringliteral">&quot;edit&quot;</span>, <span class="stringliteral">&quot;find&quot;</span>, <span class="stringliteral">&quot;increment&quot;</span>, <span class="stringliteral">&quot;decrement&quot;</span>, <span class="stringliteral">&quot;write&quot;</span>, <span class="stringliteral">&quot;read&quot;</span>, <span class="stringliteral">&quot;post&quot;</span>, <span class="stringliteral">&quot;build&quot;</span>, <span class="stringliteral">&quot;make&quot;</span>, <span class="stringliteral">&quot;release&quot;</span>, <span class="stringliteral">&quot;create&quot;</span>, <span class="stringliteral">&quot;choose&quot;</span>, <span class="stringliteral">&quot;erase&quot;</span>});</div>
 <div class="line">      list_box_left.selected_index(0);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -172,7 +172,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

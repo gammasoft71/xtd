@@ -130,7 +130,7 @@ $(function(){ initResizable(false); });
 <div class="line">    back_color(colors::dark_cyan());</div>
 <div class="line">    fore_color(colors::black());</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0_z; index &lt; languages.size(); ++index) {</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0_z; index &lt; languages.count(); ++index) {</div>
 <div class="line">      items[index].first.location(point(10, as&lt;int&gt;(10 + index * 30))).parent(*this).text(languages[index].first).width(150);</div>
 <div class="line">      items[index].second.location(point(160, as&lt;int&gt;(10 + index * 30))).parent(*this).text(languages[index].second).width(220).font({items[index].second.font(), font_style::bold});</div>
 <div class="line">    }</div>
@@ -149,7 +149,7 @@ $(function(){ initResizable(false); });
 <div class="line">    {<span class="stringliteral">&quot;Japanese&quot;</span>, u8<span class="stringliteral">&quot;\u65E5\u672C\u8A9E\u306E\u3072\u3089\u304C\u306A, \u6F22\u5B57\u3068\u30AB\u30BF\u30AB\u30CA&quot;</span>},</div>
 <div class="line">    {<span class="stringliteral">&quot;Korean&quot;</span>, u8<span class="stringliteral">&quot;\uB300\uD55C\uBBFC\uAD6D\uC758 \uD55C\uAE00&quot;</span>},</div>
 <div class="line">    {<span class="stringliteral">&quot;Russian&quot;</span>, u8<span class="stringliteral">&quot;\u0420\u0443\u0441\u0441\u043A\u0438\u0439 \u044F\u0437\u044B\u043A&quot;</span>}};</div>
-<div class="line">  list&lt;key_value_pair&lt;label, label&gt;&gt; items {languages.size()};</div>
+<div class="line">  list&lt;key_value_pair&lt;label, label&gt;&gt; items {languages.count()};</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -159,7 +159,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

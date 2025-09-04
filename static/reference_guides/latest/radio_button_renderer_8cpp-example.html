@@ -133,10 +133,10 @@ $(function(){ initResizable(false); });
 <div class="line">      </div>
 <div class="line">      choice_theme.parent(*<span class="keyword">this</span>);</div>
 <div class="line">      choice_theme.location({10, 10});</div>
-<div class="line">      choice_theme.items().push_back(<span class="stringliteral">&quot;default theme&quot;</span>);</div>
+<div class="line">      choice_theme.items().add(<span class="stringliteral">&quot;default theme&quot;</span>);</div>
 <div class="line">      <span class="keyword">auto</span> names = application::style_sheet_names();</div>
 <div class="line">      names.sort();</div>
-<div class="line">      choice_theme.items().push_back_range(names);</div>
+<div class="line">      choice_theme.items().add_range(names);</div>
 <div class="line">      choice_theme.selected_index(0);</div>
 <div class="line">      choice_theme.selected_index_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        application::style_sheet(choice_theme.selected_index() == 0 ? application::system_style_sheet() : application::get_style_sheet_from_name(choice_theme.selected_item().value()));</div>
@@ -229,7 +229,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

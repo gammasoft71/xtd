@@ -129,7 +129,7 @@ $(function(){ initResizable(false); });
 <div class="line">    form1() {</div>
 <div class="line">      background_image(application::dark_mode() ? properties::resources::bliss_night() : properties::resources::bliss_day());</div>
 <div class="line">      client_size({600, 450});</div>
-<div class="line">      controls().push_back_range({bliss_url, image_layout_choice});</div>
+<div class="line">      controls().add_range({bliss_url, image_layout_choice});</div>
 <div class="line">      double_buffered(<span class="keyword">true</span>);</div>
 <div class="line">      text(<span class="stringliteral">&quot;form with background image example 2&quot;</span>);</div>
 <div class="line"> </div>
@@ -137,14 +137,14 @@ $(function(){ initResizable(false); });
 <div class="line">      bliss_url.dock(dock_style::bottom);</div>
 <div class="line">      bliss_url.text_align(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0aeff04a32daf451a273d55ca9d9245e92">xtd::forms::content_alignment::middle_center</a>);</div>
 <div class="line">      bliss_url.text(<span class="stringliteral">&quot;MACOS BLISS&quot;</span>);</div>
-<div class="line">      bliss_url.links().push_back({0, bliss_url.text().size(), <span class="stringliteral">&quot;https://basicappleguy.com/basicappleblog/macosbliss&quot;</span>});</div>
+<div class="line">      bliss_url.links().add({0, bliss_url.text().length(), <span class="stringliteral">&quot;https://basicappleguy.com/basicappleblog/macosbliss&quot;</span>});</div>
 <div class="line">      bliss_url.link_clicked += <a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keywordtype">object</span> &amp; sender, link_label_clicked_event_args &amp; e) {</div>
 <div class="line">        e.visited(<span class="keyword">true</span>);</div>
 <div class="line">        diagnostics::process::start(diagnostics::process_start_info {as&lt;string&gt;(e.link().link_data())}.use_shell_execute(<span class="keyword">true</span>));</div>
 <div class="line">      };</div>
 <div class="line"> </div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> [value, name] : enum_object&lt;&gt;::get_entries&lt;xtd::forms::image_layout&gt;())</div>
-<div class="line">        image_layout_choice.items().push_back({name, value});</div>
+<div class="line">        image_layout_choice.items().add({name, value});</div>
 <div class="line">      image_layout_choice.location({10, 10});</div>
 <div class="line">      image_layout_choice.selected_index_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        background_image_layout(as&lt;xtd::forms::image_layout&gt;(image_layout_choice.selected_item().tag()));</div>
@@ -174,7 +174,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

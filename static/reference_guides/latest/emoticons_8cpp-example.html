@@ -132,7 +132,7 @@ $(function(){ initResizable(false); });
 <div class="line">  <span class="keyword">auto</span> emoticons_list_box = list_box::create(main_form, list_box::object_collection {});</div>
 <div class="line">  emoticons_list_box.dock(dock_style::left).width(200);</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; emoticon : emoticons::get_emoticons())</div>
-<div class="line">    emoticons_list_box.items().push_back({string::format(<span class="stringliteral">&quot;{} {}&quot;</span>, emoticon, emoticon.name()), emoticon});</div>
+<div class="line">    emoticons_list_box.items().add({string::format(<span class="stringliteral">&quot;{} {}&quot;</span>, emoticon, emoticon.name()), emoticon});</div>
 <div class="line">  emoticons_list_box.selected_value_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">    emoticon_label.text(as&lt;emoticon&gt;(emoticons_list_box.selected_item().tag()).to_string());</div>
 <div class="line">  };</div>
@@ -146,7 +146,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -235,11 +235,11 @@ $(function(){ initResizable(false); });
 <div class="line">      <span class="keyword">auto</span> colors = list {console_color::blue, console_color::green, console_color::cyan, console_color::red, console_color::magenta, console_color::yellow, console_color::white};</div>
 <div class="line">      </div>
 <div class="line">      <span class="keywordflow">while</span> (!console::key_available()) {</div>
-<div class="line">        fireworks.push_back(new_ptr&lt;firework_start&gt;(rand.next(2, console_width - 2), rand.next(2, console_height - 2), colors[rand.next(colors.size())], rand.next(1, 5)));</div>
+<div class="line">        fireworks.add(new_ptr&lt;firework_start&gt;(rand.next(2, console_width - 2), rand.next(2, console_height - 2), colors[rand.next(colors.count())], rand.next(1, 5)));</div>
 <div class="line">        </div>
 <div class="line">        <span class="keyword">auto</span> fireworks_to_removed = list&lt;ptr&lt;firework&gt;&gt; {};</div>
 <div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; firework : fireworks) {</div>
-<div class="line">          <span class="keywordflow">if</span> (is&lt;firework_end&gt;(firework)) fireworks_to_removed.push_back(firework);</div>
+<div class="line">          <span class="keywordflow">if</span> (is&lt;firework_end&gt;(firework)) fireworks_to_removed.add(firework);</div>
 <div class="line">          explode(firework);</div>
 <div class="line">        }</div>
 <div class="line">        </div>
@@ -303,7 +303,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

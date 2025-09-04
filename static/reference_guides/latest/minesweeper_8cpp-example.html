@@ -192,7 +192,7 @@ $(function(){ initResizable(false); });
 <div class="line">  properties::settings::default_settings().save();</div>
 <div class="line">  </div>
 <div class="line">  level_ = <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a2db95e8e1a9267b7a1188556b2013b33">l</a>;</div>
-<div class="line">  cells_.clear();</div>
+<div class="line">  cells_ = row_cell {};</div>
 <div class="line">  grid_size_ = std::map&lt;minesweeper::level, grid_size&gt; {{minesweeper::level::beginner, {9, 9}}, {minesweeper::level::intermediate, {16, 16}}, {minesweeper::level::expert, {30, 16}}, {minesweeper::level::custom, {properties::settings::default_settings().custom_width(), properties::settings::default_settings().custom_height()}}} [level_];</div>
 <div class="line">  mine_count_ = std::map&lt;minesweeper::level, int&gt; {{minesweeper::level::beginner, 10}, {minesweeper::level::intermediate, 40}, {minesweeper::level::expert, 99}, {minesweeper::level::custom, properties::settings::default_settings().custom_mines()}} [level_];</div>
 <div class="line">  </div>
@@ -436,7 +436,7 @@ $(function(){ initResizable(false); });
 <div class="line">  dialog.long_version(<span class="stringliteral">&quot;1.0.0&quot;</span>);</div>
 <div class="line">  dialog.description(<span class="stringliteral">&quot;The goal of the game is to uncover all the squares\nthat do not contain mines.&quot;</span>_t);</div>
 <div class="line">  dialog.copyright(<span class="stringliteral">&quot;Copyright (c) 2024 Gammasoft.\nAll rights reserved.&quot;</span>_t);</div>
-<div class="line">  dialog.user_tab_pages().push_back(information_page);</div>
+<div class="line">  dialog.user_tab_pages().add(information_page);</div>
 <div class="line">  dialog.website(<span class="stringliteral">&quot;https://gammasoft71.github.io&quot;</span>_t);</div>
 <div class="line">  dialog.website_label(<span class="stringliteral">&quot;gammasoft website&quot;</span>_t);</div>
 <div class="line">  dialog.license(<span class="stringliteral">&quot;MIT License\n&quot;</span></div>
@@ -624,7 +624,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

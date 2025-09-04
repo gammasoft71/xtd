@@ -132,7 +132,7 @@ Inheritance diagram for xtd::forms::image_list:</div>
 <div class="line">    form1() {</div>
 <div class="line">      <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Image list example&quot;</span>);</div>
 <div class="line">      client_size({300, 250});</div>
-<div class="line">      controls().push_back_range({picture, button_previous, button_next});</div>
+<div class="line">      controls().add_range({picture, button_previous, button_next});</div>
 <div class="line">      </div>
 <div class="line">      pictures.image_size({128, 128});</div>
 <div class="line">      </div>
@@ -176,7 +176,7 @@ Inheritance diagram for xtd::forms::image_list:</div>
 <div class="line">      <span class="keywordflow">if</span> (dialog.show_dialog() == dialog_result::ok) {</div>
 <div class="line">        pictures.images().clear();</div>
 <div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span> file : dialog.file_names())</div>
-<div class="line">          pictures.images().push_back(drawing::image::from_file(file));</div>
+<div class="line">          pictures.images().add(drawing::image::from_file(file));</div>
 <div class="line">        current_image_index = 0;</div>
 <div class="line">        picture.image(pictures.images()[current_image_index]);</div>
 <div class="line">        button_previous.enabled(current_image_index &gt; 0);</div>
@@ -680,7 +680,7 @@ Because setting the image_size property causes the handle to be recreated, you s
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

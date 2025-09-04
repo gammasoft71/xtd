@@ -181,9 +181,9 @@ $(function(){ initResizable(false); });
 <div class="line">  <span class="comment">//</span></div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> write_file_content(<span class="keywordtype">int</span> total_element) {</div>
 <div class="line">    <span class="keyword">auto</span> lines = list&lt;string&gt; {};</div>
-<div class="line">    lines.push_back(<span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; standalone=\&quot;yes\&quot;?&gt;&quot;</span>);</div>
+<div class="line">    lines.add(<span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; standalone=\&quot;yes\&quot;?&gt;&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> index  = 0; index &lt; total_element; ++index)</div>
-<div class="line">      lines.push_back(string::format(<span class="stringliteral">&quot;&lt;MyElement Index=\&quot;{0}\&quot;&gt;\nMyElement at position {0}.&quot;</span>, index));</div>
+<div class="line">      lines.add(string::format(<span class="stringliteral">&quot;&lt;MyElement Index=\&quot;{0}\&quot;&gt;\nMyElement at position {0}.&quot;</span>, index));</div>
 <div class="line">    file::write_all_lines(source_path, lines);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -327,7 +327,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

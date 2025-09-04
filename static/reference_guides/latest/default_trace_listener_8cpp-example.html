@@ -108,18 +108,18 @@ $(function(){ initResizable(false); });
 <div class="line">    <span class="keyword">auto</span> iter = .0l;</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Remove the original default trace listener.</span></div>
-<div class="line">    diagnostics::trace::listeners().erase(diagnostics::trace::listeners().begin());</div>
+<div class="line">    diagnostics::trace::listeners().remove_at(0);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Create and add a new default trace listener.</span></div>
 <div class="line">    <span class="keyword">auto</span> default_listener = new_ptr&lt;diagnostics::default_trace_listener&gt;();</div>
-<div class="line">    diagnostics::trace::listeners().push_back(default_listener);</div>
+<div class="line">    diagnostics::trace::listeners().add(default_listener);</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// Assign the log file specification from the command line, if entered.</span></div>
-<div class="line">    <span class="keywordflow">if</span> (args.size() &gt;= 2)</div>
+<div class="line">    <span class="keywordflow">if</span> (args.length() &gt;= 2)</div>
 <div class="line">      default_listener-&gt;log_file_name(args[1]);</div>
 <div class="line">       </div>
 <div class="line">    <span class="comment">// Validate the number of possibilities argument.</span></div>
-<div class="line">    <span class="keywordflow">if</span> (args.size() &gt;= 1) {</div>
+<div class="line">    <span class="keywordflow">if</span> (args.length() &gt;= 1) {</div>
 <div class="line">      <span class="comment">// Verify that the argument is a number within the correct range.</span></div>
 <div class="line">      <span class="keywordflow">try</span> {</div>
 <div class="line">        <span class="keyword">const</span> <span class="keyword">auto</span> MAX_POSSIBILITIES = 99.0l;</div>
@@ -207,7 +207,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
