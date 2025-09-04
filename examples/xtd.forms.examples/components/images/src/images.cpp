@@ -26,7 +26,7 @@ namespace example {
       
       choice_context.bounds({75, 55, 280, 25});
       choice_context.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
-      choice_context.items().add(images::contexts());
+      choice_context.items().add_range(images::contexts());
       choice_context.selected_index(0);
       choice_context.selected_index_changed += delegate_ {
         current_image_index = 0;

@@ -29,14 +29,14 @@ public:
       item->parent(collapsible_panel2);
       item->text(string::format("item{}", ++count));
       item->dock(dock_style::top);
-      control_items.add(item);
+      control_items.push_back(item);
     };
     
     button_remove.parent(collapsible_panel1);
     button_remove.location({10, 30});
     button_remove.text("Remove");
     button_remove.click += delegate_ {
-      if (control_items.count()) {
+      if (control_items.size()) {
         control_items.front()->parent(nullptr);
         control_items.pop_front();
       }
