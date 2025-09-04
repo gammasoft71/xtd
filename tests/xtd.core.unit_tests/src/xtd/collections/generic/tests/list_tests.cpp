@@ -275,7 +275,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(~5_z, items.binary_search(2, 3, 35, comparer<int>::default_comparer));
       assert::are_equal(~5_z, items.binary_search(2, 3, 50, comparer<int>::default_comparer));
     }
-
+    
     void test_method_(clear) {
       auto items = list {84, 42, 21};
       items.clear();
@@ -323,7 +323,7 @@ namespace xtd::collections::generic::tests {
       auto dest = array<int>(5);
       items.copy_to(3, dest, 2, 1);
       collection_assert::are_equal({0, 0, 33, 0, 0}, dest);
-
+      
       dest = array<int>(3);
       assert::throws<argument_exception>([&] {items.copy_to(0, dest, 0, 4);});
       assert::throws<argument_exception>([&] {items.copy_to(1, dest, 0, 4);});
