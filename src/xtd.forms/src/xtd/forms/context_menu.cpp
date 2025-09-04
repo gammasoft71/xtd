@@ -21,12 +21,12 @@ context_menu::context_menu() {
 context_menu::context_menu(const std::initializer_list<const_menu_item_ref>& menu_items) {
   create_menu();
   for (auto& item : menu_items)
-    data_->menu_items.push_back(menu_item_ref(const_cast<menu_item&>(item.get())));
+    data_->menu_items.add(menu_item_ref(const_cast<menu_item&>(item.get())));
 }
 
 context_menu::context_menu(const menu_item_collection& menu_items) {
   create_menu();
-  data_->menu_items.push_back_range(menu_items);
+  data_->menu_items.add_range(menu_items);
 }
 
 context_menu::~context_menu() {

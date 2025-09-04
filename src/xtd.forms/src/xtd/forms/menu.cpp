@@ -27,21 +27,21 @@ menu::menu(const menu_item_collection& items) : data_(xtd::new_sptr<data>()) {
   //data_->mdi_list_item = xtd::new_uptr<menu_item>();
   data_->menu_items.item_added += {*this, &menu::on_item_added};
   data_->menu_items.item_removed += {*this, &menu::on_item_removed};
-  data_->menu_items.push_back_range(items);
+  data_->menu_items.add_range(items);
 }
 
 menu::menu(const std::initializer_list<menu_item_ref>& items) : data_(xtd::new_sptr<data>()) {
   //data_->mdi_list_item = xtd::new_uptr<menu_item>();
   data_->menu_items.item_added += {*this, &menu::on_item_added};
   data_->menu_items.item_removed += {*this, &menu::on_item_removed};
-  data_->menu_items.push_back_range(items);
+  data_->menu_items.add_range(items);
 }
 
 menu::menu(const std::vector<menu_item_ref>& items) : data_(xtd::new_sptr<data>()) {
   //data_->mdi_list_item = xtd::new_uptr<menu_item>();
   data_->menu_items.item_added += {*this, &menu::on_item_added};
   data_->menu_items.item_removed += {*this, &menu::on_item_removed};
-  data_->menu_items.push_back_range(items);
+  data_->menu_items.add_range(items);
 }
 
 menu::menu(menu&& rhs) : component(std::move(rhs)), data_ {std::move(rhs.data_)} {
@@ -62,7 +62,7 @@ intptr menu::handle() const noexcept {
 }
 
 bool menu::is_parent() const noexcept {
-  return data_->menu_items.size() != 0;
+  return data_->menu_items.count() != 0;
 }
 
 const menu_item & menu::mdi_list_item() const noexcept {
@@ -88,14 +88,14 @@ menu & menu::menu_items(const menu_item_collection& value) {
 menu & menu::menu_items(const std::initializer_list<menu_item_ref>& value) {
   data_->menu_items.clear();
   for (const auto& item : value)
-    data_->menu_items.push_back(item);
+    data_->menu_items.add(item);
   return *this;
 }
 
 menu & menu::menu_items(const std::vector<menu_item_ref>& value) {
   data_->menu_items.clear();
   for (const auto& item : value)
-    data_->menu_items.push_back(item);
+    data_->menu_items.add(item);
   return *this;
 }
 
@@ -150,7 +150,7 @@ std::optional<std::reference_wrapper<main_menu>> menu::get_main_menu() const noe
 }
 
 string menu::to_string() const noexcept {
-  return string::format("{}, items.size: {}", get_type().full_name(), data_->menu_items.size());
+  return string::format("{}, items.size: {}", get_type().full_name(), data_->menu_items.count());
 }
 
 void menu::clone_menu(const menu& menu_src) {
@@ -162,7 +162,7 @@ void menu::clone_menu(const menu& menu_src) {
 
 void menu::merge_menu(const menu& menu_src) {
   if (data_.get() == menu_src.data_.get()) throw_helper::throws(exception_case::argument, "It was attempted to merge the menu with itself"_t);
-  data_->menu_items.push_back_range(menu_src.data_->menu_items);
+  data_->menu_items.add_range(menu_src.data_->menu_items);
 }
 
 void menu::destroy_menu_handle(intptr handle) {

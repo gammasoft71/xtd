@@ -30,7 +30,7 @@ namespace {
   public:
     credits_item_panel() {
       padding(forms::padding {5});
-      controls().push_back_range({title_label_, names_label_});
+      controls().add_range({title_label_, names_label_});
       title_label_.text_align(content_alignment::top_right);
       title_label_.font({title_label_.font(), font_style::bold});
       names_label_.text_align(content_alignment::top_left);
@@ -104,13 +104,13 @@ namespace {
       tab_page_credits_.auto_scroll(true);
       
       tab_page_license_.text("License"_t);
-      tab_page_license_.controls().push_back(text_box_license_);
+      tab_page_license_.controls().add(text_box_license_);
       
       tab_control_about_.padding(5);
       tab_control_about_.dock(dock_style::fill);
       
       panel_about_.padding(5);
-      panel_about_.controls().push_back_range({label_copyright_, link_label_website_, label_description_, label_version_});
+      panel_about_.controls().add_range({label_copyright_, link_label_website_, label_description_, label_version_});
       panel_about_.dock(dock_style::fill);
       
       label_version_.text_align(content_alignment::middle_center);
@@ -152,17 +152,17 @@ namespace {
         picture_box_icon_.image(system_images::from_name("xtd-forms", drawing::size {64, 64}));
       label_name_.height(static_cast<int32>(30 * name.split('\n').size()));
       label_name_.text(name);
-      if (has_credit || has_license || user_pages.size()) {
-        controls().push_back_range({tab_control_about_, label_name_, picture_box_icon_});
-        tab_control_about_.tab_pages().push_back(tab_page_about_);
-        tab_page_about_.controls().push_back(panel_about_);
+      if (has_credit || has_license || user_pages.count()) {
+        controls().add_range({tab_control_about_, label_name_, picture_box_icon_});
+        tab_control_about_.tab_pages().add(tab_page_about_);
+        tab_page_about_.controls().add(panel_about_);
       } else {
         maximum_size({0, 0});
         minimum_size({0, 0});
         client_size({476, 250});
         maximum_size(size());
         minimum_size(size());
-        controls().push_back_range({panel_about_, label_name_, picture_box_icon_});
+        controls().add_range({panel_about_, label_name_, picture_box_icon_});
       }
       
       if (!version.empty() && !long_version.empty())
@@ -186,7 +186,7 @@ namespace {
       label_copyright_.text(string::format("{}", string(copyright).replace(u8"(c)"_s, u8"\u00A9"_s)));
       
       if (has_credit) {
-        tab_control_about_.tab_pages().push_back(tab_page_credits_);
+        tab_control_about_.tab_pages().add(tab_page_credits_);
         tab_page_credits_.auto_scroll(true);
         
         if (!artists.empty()) {
@@ -219,12 +219,12 @@ namespace {
       }
       
       if (has_license) {
-        tab_control_about_.tab_pages().push_back(tab_page_license_);
+        tab_control_about_.tab_pages().add(tab_page_license_);
         text_box_license_.text(license);
       }
       
       for (const auto& user_page : user_pages)
-        tab_control_about_.tab_pages().push_back(user_page);
+        tab_control_about_.tab_pages().add(user_page);
         
       /** @todo Activate the following commment if about dialog must be modal on Windows.
       if (show_modal_) {

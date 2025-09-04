@@ -16,7 +16,7 @@ namespace xtd::forms::tests {
     }
     
     forms_form() {
-      controls().push_back_range({form_styles_tab_control});
+      controls().add_range({form_styles_tab_control});
       start_position(form_start_position::manual);
       location({400, 200});
       size({600, 480});
@@ -24,20 +24,20 @@ namespace xtd::forms::tests {
       padding(10);
       
       form_styles_tab_control.dock(dock_style::fill);
-      form_styles_tab_control.tab_pages().push_back_range({decorations_tab_page, window_state_tab_page, show_tab_page});
+      form_styles_tab_control.tab_pages().add_range({decorations_tab_page, window_state_tab_page, show_tab_page});
       
       decorations_tab_page.text("decorations");
-      decorations_tab_page.controls().push_back_range({form_border_style_choice, caption_label, caption_text_box, minimize_box_label, minimize_box_switch_button, maximize_box_label, maximize_box_switch_button, close_box_label, close_box_switch_button, control_box_label, control_box_switch_button, help_button_label, help_button_switch_button, show_icon_label, show_icon_switch_button, show_in_taskbar_label, show_in_taskbar_switch_button});
+      decorations_tab_page.controls().add_range({form_border_style_choice, caption_label, caption_text_box, minimize_box_label, minimize_box_switch_button, maximize_box_label, maximize_box_switch_button, close_box_label, close_box_switch_button, control_box_label, control_box_switch_button, help_button_label, help_button_switch_button, show_icon_label, show_icon_switch_button, show_in_taskbar_label, show_in_taskbar_switch_button});
       
       window_state_tab_page.text("state");
-      window_state_tab_page.controls().push_back_range({state_full_screen_button, state_maximize_button, state_normal_button, state_minimize_button});
+      window_state_tab_page.controls().add_range({state_full_screen_button, state_maximize_button, state_normal_button, state_minimize_button});
       
       show_tab_page.text("show");
-      show_tab_page.controls().push_back_range({show_normal_button, show_modeless_button, show_top_most_button, show_modal_button, show_sheet_button, show_sheet_modal_button});
+      show_tab_page.controls().add_range({show_normal_button, show_modeless_button, show_top_most_button, show_modal_button, show_sheet_button, show_sheet_modal_button});
       
       form_border_style_choice.location({10, 10});
       form_border_style_choice.width(200);
-      form_border_style_choice.items().push_back_range({{"none", forms::form_border_style::none}, {"fixed_single", forms::form_border_style::fixed_single}, {"fixed_3d", forms::form_border_style::fixed_3d}, {"fixed_dialog", forms::form_border_style::fixed_dialog}, {"sizable", forms::form_border_style::sizable}, {"fixed_tool_window", forms::form_border_style::fixed_tool_window}, {"sizable_tool_window", forms::form_border_style::sizable_tool_window}});
+      form_border_style_choice.items().add_range({{"none", forms::form_border_style::none}, {"fixed_single", forms::form_border_style::fixed_single}, {"fixed_3d", forms::form_border_style::fixed_3d}, {"fixed_dialog", forms::form_border_style::fixed_dialog}, {"sizable", forms::form_border_style::sizable}, {"fixed_tool_window", forms::form_border_style::fixed_tool_window}, {"sizable_tool_window", forms::form_border_style::sizable_tool_window}});
       form_border_style_choice.selected_index(static_cast<size_t>(form_border_style()));
       form_border_style_choice.selected_index_changed += [&] {
         form_border_style(static_cast<forms::form_border_style>(form_border_style_choice.selected_index()));

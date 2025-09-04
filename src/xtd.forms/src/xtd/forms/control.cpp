@@ -120,22 +120,16 @@ std::optional<control::control_collection::value_type> control::control_collecti
   return std::nullopt;
 }
 
-control::control_collection::iterator control::control_collection::insert(const_iterator pos, const value_type& value) {
-  for (auto it = begin(); it != end(); ++it)
-    if (it->get() == value.get()) return it;
-  return base::insert(pos, value);
-}
-
-void control::control_collection::insert_at(size_t index, const value_type& value) {
+void control::control_collection::insert(size_t index, const value_type& value) {
   for (auto it = begin(); it != end(); ++it)
     if (it->get() == value.get()) return;
-  base::insert_at(index, value);
+  base::insert(index, value);
 }
 
 void control::control_collection::add(const value_type& value) {
   for (auto it = begin(); it != end(); ++it)
     if (it->get() == value.get()) return;
-  base::push_back(value);
+  base::add(value);
 }
 
 struct control::data {
@@ -700,20 +694,20 @@ control & control::parent(const control& value) {
   if (value.handle() != data_->parent) {
     if (parent().has_value()) parent(nullptr);
     else on_parent_changed(event_args::empty);
-    if (value.is_handle_created()) const_cast < control& > (value).data_->controls.push_back(*this);
+    if (value.is_handle_created()) const_cast < control& > (value).data_->controls.add(*this);
   } else if (!value.is_handle_created())
-    const_cast < control& > (value).data_->controls.push_back(*this);
+    const_cast < control& > (value).data_->controls.add(*this);
   return *this;
 }
 
 control & control::parent(std::nullptr_t) {
   if (!is_handle_created() || data_->parent == 0) return *this;
   auto current_parent = from_handle(data_->parent);
-  for (auto it = current_parent.value().get().data_->controls.begin(); it != current_parent.value().get().data_->controls.end(); ++it) {
-    if (it->get().handle() != handle()) continue;
+  for (auto index = 0_z; index < current_parent.value().get().data_->controls.count(); ++index) {
+    if (current_parent.value().get().data_->controls[index].get().handle() != handle()) continue;
     auto prev_parent = parent();
     on_parent_changed(event_args::empty);
-    parent().value().get().data_->controls.erase(it);
+    parent().value().get().data_->controls.remove_at(index);
     if (!get_state(state::destroying) && !prev_parent.value().get().get_state(state::destroying)) prev_parent.value().get().refresh();
     break;
   }
@@ -976,9 +970,9 @@ void control::destroy_control() {
     parent(nullptr);
     parent_prev.value().get().resume_layout(false);
   } else {
-    for (size_t index = 0; index < top_level_controls_.size(); index++) {
+    for (auto index = 0_z; index < top_level_controls_.count(); ++index) {
       if (top_level_controls_[index].get().handle() == handle()) {
-        top_level_controls_.erase_at(index);
+        top_level_controls_.remove_at(index);
         break;
       }
     }
@@ -1049,7 +1043,7 @@ std::optional < xtd::drawing::color > control::get_fore_color() const noexcept {
 
 size_t control::get_child_index(intptr child) const {
   if (child == 0) return control_collection::npos;
-  for (size_t index = 0; index < controls().size(); ++index)
+  for (size_t index = 0; index < controls().count(); ++index)
     if (controls()[index].get().handle() == child) return index;
   throw_helper::throws(exception_case::argument);;
 }
@@ -1201,7 +1195,7 @@ void control::on_control_appearance_changed(const event_args& e) {
 
 void control::on_create_control() {
   if (!parent().has_value())
-    top_level_controls_.push_back(*this);
+    top_level_controls_.add(*this);
   for (auto control : data_->controls) {
     control.get().data_->parent = handle();
     control.get().create_control();

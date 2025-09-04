@@ -39,7 +39,7 @@ xtd_about_dialog::xtd_about_dialog() : data_(xtd::new_sptr<data>()) {
                         "The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n"
                         "\n"
                         "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n");
-  data_->dialog.user_tab_pages().push_back(data_->informations_tag_page);
+  data_->dialog.user_tab_pages().add(data_->informations_tag_page);
   
   data_->text_reports_text_box.dock(dock_style::fill);
   data_->text_reports_text_box.font({drawing::font_family::generic_monospace(), data_->text_reports_text_box.font().size()});

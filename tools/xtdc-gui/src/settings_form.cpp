@@ -8,7 +8,7 @@ using namespace xtd::forms;
 using namespace xtdc_gui;
 
 settings_form::settings_form() {
-  controls().push_back_range({auto_close_label_, auto_close_check_box_, use_default_ide_label_, use_default_ide_check_box_, ide_path_label_, ide_path_text_box_, ide_path_button_});
+  controls().add_range({auto_close_label_, auto_close_check_box_, use_default_ide_label_, use_default_ide_check_box_, ide_path_label_, ide_path_text_box_, ide_path_button_});
   text(environment::os_version().is_macos() && environment::os_version().version().major() < 13 ? "Preferences" :  "Settings...");
   maximize_box(false);
   minimize_box(false);

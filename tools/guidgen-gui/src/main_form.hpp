@@ -19,7 +19,7 @@ namespace guidgen_gui {
       
       client_size({645, 350});
       minimum_client_size(client_size());
-      controls().push_back_range({count_label_, count_numeric_up_down_, format_label_, format_choice_, generate_button_, result_text_box_});
+      controls().add_range({count_label_, count_numeric_up_down_, format_label_, format_choice_, generate_button_, result_text_box_});
       text("Guid generator"_t);
       
       count_label_.auto_size(true);
@@ -39,7 +39,7 @@ namespace guidgen_gui {
       format_choice_.location({260, 11});
       format_choice_.width(290);
       format_choice_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);
-      format_choice_.items().push_back_range({{"N : digits"_t, "N"_s}, {"D : with hyphens"_t, "D"_s}, {"B : with hyphens and braces"_t, "B"_s}, {"P : with hyphens and parentheses"_t, "P"_s}, {"X : hexadecimal with braces"_t, "X"_s}});
+      format_choice_.items().add_range({{"N : digits"_t, "N"_s}, {"D : with hyphens"_t, "D"_s}, {"B : with hyphens and braces"_t, "B"_s}, {"P : with hyphens and parentheses"_t, "P"_s}, {"X : hexadecimal with braces"_t, "X"_s}});
       format_choice_.selected_index(1);
       
       generate_button_.location({560, 10});
