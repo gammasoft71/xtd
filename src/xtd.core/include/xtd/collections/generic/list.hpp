@@ -1088,7 +1088,7 @@ namespace xtd {
         bool is_read_only() const noexcept override {return false;}
         bool is_synchronized() const noexcept override {return false;}
         const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
-
+        
         struct list_data {
           __xtd_raw_array_data__<value_type> items;
           xtd::object sync_root;
