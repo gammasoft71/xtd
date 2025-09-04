@@ -9,7 +9,7 @@ namespace unit_tests {
     void test_method_(test_case1) {
       auto s = string {"Hello, World!"};
       
-      valid::are_equal(13, s.size());
+      valid::are_equal(13, s.length());
       string_valid::starts_with("¡Hola,", s);
       string_valid::ends_with(" mundo!", s);
       assert::contains('a', s);

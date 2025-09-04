@@ -13,7 +13,7 @@ public:
     screen_informations_text_box.parent(*this);
     screen_informations_text_box.read_only(true);
     screen_informations_text_box.word_wrap(false);
-    screen_informations_text_box.append_text(string::format("Number of screens: {}{}", screen::all_screens().size(), environment::new_line()));
+    screen_informations_text_box.append_text(string::format("Number of screens: {}{}", screen::all_screens().length(), environment::new_line()));
     screen_informations_text_box.append_text(string::format("Standard pixels per inch: {}{}", screen::get_standard_pixels_per_inch(), environment::new_line()));
     auto index = 0;
     for (auto screen : screen::all_screens()) {

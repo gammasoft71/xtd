@@ -15,7 +15,7 @@ namespace form_background_image2 {
       bliss_url.dock(dock_style::bottom);
       bliss_url.text_align(xtd::forms::content_alignment::middle_center);
       bliss_url.text("MACOS BLISS");
-      bliss_url.links().add({0, bliss_url.text().size(), "https://basicappleguy.com/basicappleblog/macosbliss"});
+      bliss_url.links().add({0, bliss_url.text().length(), "https://basicappleguy.com/basicappleblog/macosbliss"});
       bliss_url.link_clicked += delegate_(object & sender, link_label_clicked_event_args & e) {
         e.visited(true);
         diagnostics::process::start(diagnostics::process_start_info {as<string>(e.link().link_data())}.use_shell_execute(true));

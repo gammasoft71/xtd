@@ -23,7 +23,7 @@ public:
           /// call invoke method to update UI in the main thread.
           messages.begin_invoke([&, counter, thread_name] {
             messages.items().add(string::format("{}: counter: {}", thread_name, counter));
-            messages.selected_index(messages.items().size() - 1);
+            messages.selected_index(messages.items().count() - 1);
           });
         }
       });

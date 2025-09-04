@@ -18,7 +18,7 @@ namespace list_box_example {
         if (list_box_left.selected_index() != list_box_left.npos) {
           list_box_right.items().add(list_box_left.selected_item());
           list_box_right.selected_index(0);
-          list_box_left.items().erase_at(list_box_left.selected_index());
+          list_box_left.items().remove_at(list_box_left.selected_index());
         }
       };
       
@@ -27,7 +27,7 @@ namespace list_box_example {
         if (list_box_right.selected_index() != list_box_right.npos) {
           list_box_left.items().add(list_box_right.selected_item());
           list_box_left.selected_index(0);
-          list_box_right.items().erase_at(list_box_right.selected_index());
+          list_box_right.items().remove_at(list_box_right.selected_index());
         }
       };
       

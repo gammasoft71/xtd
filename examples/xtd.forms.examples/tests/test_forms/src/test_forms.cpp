@@ -16,7 +16,7 @@ public:
     font(default_font());
     fore_color(default_fore_color());
     text(prompt);
-    select(text().size() - 1, 0);
+    select(text().length() - 1, 0);
   }
   
 protected:
@@ -39,7 +39,7 @@ private:
   xtd::string get_command() const {
     auto pos = text().last_index_of(prompt);
     if (pos != xtd::string::npos) {
-      pos += prompt.size();
+      pos += prompt.length();
       return text().substring(pos);
     }
     return "";
@@ -58,7 +58,7 @@ private:
       try {
         auto args = command_line.split(' ');
         start_info.file_name(args[0]);
-        if (args.size() > 1)
+        if (args.length() > 1)
           start_info.arguments(xtd::string::join(" ", xtd::argument_collection(args.begin() + 1, args.end())));
           
         append_text(xtd::environment::new_line());
