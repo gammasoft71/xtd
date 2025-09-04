@@ -211,7 +211,7 @@ namespace game_of_life {
     }
     
     void fill_figure(const list<string>& figure) {
-      auto height = as<int>(figure.size());
+      auto height = as<int>(figure.count());
       auto width = 0u;
       for (auto line : figure)
         if (line.length() > width) width = as<int>(line.length());

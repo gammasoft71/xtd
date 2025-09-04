@@ -10,7 +10,7 @@ namespace lock_guard_example {
       auto n = 0;
       
       for (auto thread_ctr = 0; thread_ctr < 10; ++thread_ctr)
-        threads.push_back(thread::start_new([&] {
+        threads.add(thread::start_new([&] {
           auto values = std::array<int, 10000> {};
           auto thread_total = 0;
           auto thread_n = 0;

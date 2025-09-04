@@ -7,12 +7,12 @@ namespace unit_tests {
   class test_class_(test) {
     void test_method_(test_case_succeed) {
       auto l = list {1, 2, 3, 4};
-      valid::does_not_throw([&] {l.at(2);});
+      valid::does_not_throw([&] {l[2];});
     }
     
     void test_method_(test_case_failed) {
       auto l = list {1, 2, 3, 4};
-      valid::does_not_throw([&] {l.at(5);});
+      valid::does_not_throw([&] {l[5];});
     }
   };
 }

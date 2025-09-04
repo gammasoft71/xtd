@@ -4,7 +4,7 @@
 #include <xtd/xtd>
 
 auto main() -> int {
-  diagnostics::trace::listeners().push_back(new_ptr<diagnostics::ostream_trace_listener>(console::out));
+  diagnostics::trace::listeners().add(new_ptr<diagnostics::ostream_trace_listener>(console::out));
   diagnostics::trace::auto_flush(true);
   diagnostics::trace::indent();
   diagnostics::trace::write_line("Entering Main");

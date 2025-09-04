@@ -8,7 +8,7 @@ public:
     back_color(colors::dark_cyan());
     fore_color(colors::black());
     
-    for (auto index = 0_z; index < languages.size(); ++index) {
+    for (auto index = 0_z; index < languages.count(); ++index) {
       items[index].first.location(point(10, as<int>(10 + index * 30))).parent(*this).text(languages[index].first).width(150);
       items[index].second.location(point(160, as<int>(10 + index * 30))).parent(*this).text(languages[index].second).width(220).font({items[index].second.font(), font_style::bold});
     }
@@ -27,7 +27,7 @@ private:
     {"Japanese", u8"\u65E5\u672C\u8A9E\u306E\u3072\u3089\u304C\u306A, \u6F22\u5B57\u3068\u30AB\u30BF\u30AB\u30CA"},
     {"Korean", u8"\uB300\uD55C\uBBFC\uAD6D\uC758 \uD55C\uAE00"},
     {"Russian", u8"\u0420\u0443\u0441\u0441\u043A\u0438\u0439 \u044F\u0437\u044B\u043A"}};
-  list<key_value_pair<label, label>> items {languages.size()};
+  list<key_value_pair<label, label>> items {languages.count()};
 };
 
 auto main() -> int {

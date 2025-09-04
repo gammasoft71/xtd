@@ -22,14 +22,13 @@ public:
   location_tracker() = default;
   
   void subscribe(iobserver<location>& observer) noexcept override {
-    if (std::find(observers_.begin(), observers_.end(), &observer) == observers_.end())
-      observers_.push_back(&observer);
+    if (!observers_.exists([&](auto item) {return item == &observer;}))
+      observers_.add(&observer);
   }
   
   void unsubscribe(iobserver<location>& observer) noexcept override {
-    auto iterator = std::find(observers_.begin(), observers_.end(), &observer);
-    if (iterator != observers_.end())
-      observers_.erase(iterator);
+    if (observers_.exists([&](auto item) {return item == &observer;}))
+      observers_.remove(&observer);
   }
   
   void track_location(std::optional<location> loc) {

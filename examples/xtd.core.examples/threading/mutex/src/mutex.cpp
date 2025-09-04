@@ -6,9 +6,9 @@ namespace mutex_example {
     static void main() {
       // Create the threads that will use the protected resource.
       for (auto i = 0; i < num_threads; ++i) {
-        threads.emplace_back(thread_proc);
-        threads.back().name(string::format("thread_{0}", i + 1));
-        threads.back().start();
+        threads.add(thread {thread_proc});
+        threads[threads.count() - 1].name(string::format("thread_{0}", i + 1));
+        threads[threads.count() - 1].start();
       }
       
       thread::join_all(threads);

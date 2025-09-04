@@ -86,14 +86,14 @@ public:
     
     void insert(size index, const program::box& item) override {
       if (index >= count()) throw argument_out_of_range_exception {};
-      boxes_.insert(boxes_.begin() + index, item);
+      boxes_.insert(index, item);
     }
     
     bool remove(const program::box& item) override {return boxes_.remove(item);}
     
     void remove_at(size index) override {
       if (index >= count()) throw argument_out_of_range_exception {};
-      boxes_.erase(boxes_.begin() + index);
+      boxes_.remove_at(index);
     }
     
     // Public Operators :
@@ -121,7 +121,7 @@ public:
     const program::box& current() const override {return items_[index_];}
     
     // Public Methods :
-    bool move_next() override {return ++index_ < items_.size();}
+    bool move_next() override {return ++index_ < items_.count();}
     void reset() override {index_ = box_integer<size>::max_value;}
     
   protected:

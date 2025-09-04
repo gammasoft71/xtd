@@ -19,10 +19,10 @@ namespace painting_example {
         panel_color->back_color(color);
         panel_color->dock(dock_style::left);
         panel_color->click += event_handler {*this, &form1::choose_current_color};
-        panel_colors.push_back(panel_color);
+        panel_colors.add(panel_color);
       }
-      current_color = panel_colors[panel_colors.size() - 1]->back_color();
-      panel_colors[panel_colors.size() - 1]->border_style(forms::border_style::fixed_single);
+      current_color = panel_colors[panel_colors.count() - 1]->back_color();
+      panel_colors[panel_colors.count() - 1]->border_style(forms::border_style::fixed_single);
       
       button_clear.parent(*this);
       button_clear.text("Clear");

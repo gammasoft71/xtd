@@ -20,7 +20,7 @@ public:
   explicit box_enumerator(const box_collection& boxes) : boxes {boxes} {}
   
   const ::box& current() const override {return boxes[cur_index];}
-  bool move_next() override {return ++cur_index < boxes.size();}
+  bool move_next() override {return ++cur_index < boxes.count();}
   void reset() override {cur_index = box_integer<size>::max_value;}
   
 private:

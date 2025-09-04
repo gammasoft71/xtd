@@ -18,14 +18,14 @@ public:
     for (const auto& dinosaur : dinosaurs)
       console::write_line(dinosaur);
     
-    console::write_line("\ntrue_for_all(ends_with_saurus): {0}", dinosaurs.true_for_all(predicate<const string&> {ends_with_saurus}));
+    console::write_line("\ntrue_for_all(ends_with_saurus): {0}", dinosaurs.true_for_all(ends_with_saurus));
     
-    console::write_line("\nfind(ends_with_saurus): {0}", dinosaurs.find(predicate<const string&> {ends_with_saurus}));
+    console::write_line("\nfind(ends_with_saurus): {0}", dinosaurs.find(ends_with_saurus).value_or("(none)"));
     
-    console::write_line("\nfindLast(ends_with_saurus): {0}", dinosaurs.find_last(predicate<const string&> {ends_with_saurus}));
+    console::write_line("\nfindLast(ends_with_saurus): {0}", dinosaurs.find_last(ends_with_saurus).value_or("(none)"));
     
     console::write_line("\nfind_all(ends_with_saurus):");
-    auto sublist = dinosaurs.find_all(predicate<const string&> {ends_with_saurus});
+    auto sublist = dinosaurs.find_all(ends_with_saurus);
     
     for (const auto& dinosaur : sublist)
       console::write_line(dinosaur);

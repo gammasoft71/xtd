@@ -4,8 +4,8 @@
 #include "cell.hpp"
 
 namespace game_of_life {
-  using cell_row_collection = list<cell>;
-  using cell_collection = list<cell_row_collection>;
+  using cell_row_collection = array<cell>;
+  using cell_collection = array<cell_row_collection>;
   
   class grid : public object {
   public:
@@ -32,16 +32,16 @@ namespace game_of_life {
         for (auto x = 0; x < rows; x++) {
           int neighbors = get_neighbors(x, y);
           if (cells_[y][x] == cell::populated && (neighbors <= 1 || neighbors >= 4)) {
-            updated_cells.push_back({x, y, cell::empty});
+            updated_cells.add({x, y, cell::empty});
           } else if (cells_[y][x] == cell::empty && neighbors == 3) {
-            updated_cells.push_back({x, y, cell::populated});
+            updated_cells.add({x, y, cell::populated});
           }
         }
       }
       
       for (auto cell : updated_cells)
         cells_[cell.y][cell.x] = cell.state;
-      if (!updated_cells.empty())  on_cells_updated(xtd::event_args::empty);
+      if (updated_cells.count() != 0)  on_cells_updated(xtd::event_args::empty);
     }
     
     int get_neighbors(int x, int y) const {
