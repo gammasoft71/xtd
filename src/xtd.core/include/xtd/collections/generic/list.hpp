@@ -648,7 +648,7 @@ namespace xtd {
         /// @remarks The xtd::predicate <type_t> is a delegate to a method that returns true if the object passed to it matches the conditions defined in the delegate. The elements of the current xtd::collections::generic::list <type_t> are individually passed to the xtd::predicate <type_t> delegate, and the elements that match the conditions are removed from the xtd::collections::generic::list <type_t>.
         /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
         template<class predicate_t>
-        optional<type_t> find_last(xtd::predicate<const type_t&> match) const {
+        optional<type_t> find_last(predicate_t match) const {
           auto index = find_last_index(match);
           if (index == npos) return nullopt;
           return self_[index];
@@ -682,7 +682,7 @@ namespace xtd {
         xtd::size find_last_index(xtd::size start_index, xtd::size count, predicate_t match) const {
           if (count > self_.count() || start_index - count + 1 > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           auto predicate = xtd::predicate<const type_t&> {match};
-          for (auto index = start_index; index > start_index - count; --index)
+          for (auto index = start_index; index >= start_index - count + 1; --index)
             if (predicate(self_[index])) return index;
           return npos;
         }
