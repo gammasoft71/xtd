@@ -90,7 +90,7 @@ const list_box& list_box::items(const object_collection& items) {
 }
 
 list_control& list_box::selected_index(size_t selected_index) {
-  if (selected_index != npos && selected_index >= data_->items.size()) throw_helper::throws(exception_case::argument_out_of_range, "Selected index greater than items size"_t);
+  if (selected_index != npos && selected_index >= data_->items.count()) throw_helper::throws(exception_case::argument_out_of_range, "Selected index greater than items size"_t);
   if (this->selected_index() == selected_index) return *this;
   set_selected_index(selected_index);
   if (is_handle_created()) native::list_box::selected_index(handle(), this->selected_index());
@@ -113,9 +113,9 @@ list_box& list_box::selected_item(const item& selected_item) {
   if (data_->selected_item == selected_item) return *this;
   auto it = std::find(data_->items.begin(), data_->items.end(), selected_item);
   if (it == data_->items.end()) {
-    if (selected_index() == npos || items().size() == 0) data_->selected_item = "";
+    if (selected_index() == npos || items().count() == 0) data_->selected_item = "";
     else {
-      if (selected_index() >= items().size()) data_->selected_item = items()[items().size() - 1];
+      if (selected_index() >= items().count()) data_->selected_item = items()[items().count() - 1];
       else data_->selected_item = items()[selected_index()];
     }
   } else {
@@ -409,7 +409,7 @@ xtd::uptr<xtd::object> list_box::clone() const {
 void list_box::on_handle_created(const event_args& e) {
   list_control::on_handle_created(e);
   data_->items.sorted(data_->sorted);
-  for (auto index = 0_z; index < data_->items.size(); ++index)
+  for (auto index = 0_z; index < data_->items.count(); ++index)
     native::list_box::insert_item(handle(), index, data_->items[index].value());
   if (data_->selection_mode == forms::selection_mode::none) selected_index(npos);
   native::list_box::selected_index(handle(), selected_index());
@@ -435,7 +435,7 @@ void list_box::wnd_proc(message& message) {
 void list_box::on_items_item_added(size_t pos, const item& item) {
   if (is_handle_created()) native::list_box::insert_item(handle(), pos, item.value());
   auto selected = list_box::item {};
-  if (selected_index() != npos && selected_index() < data_->items.size()) selected = data_->items[selected_index()];
+  if (selected_index() != npos && selected_index() < data_->items.count()) selected = data_->items[selected_index()];
   this->selected_item(selected);
 }
 
@@ -447,7 +447,7 @@ void list_box::on_items_item_removed(size_t pos, const item& item)   {
 void list_box::on_items_item_updated(size_t pos, const item& item)   {
   if (is_handle_created()) native::list_box::update_item(handle(), pos, item.value());
   auto selected = list_box::item {};
-  if (selected_index() != npos && selected_index() < data_->items.size()) selected = data_->items[selected_index()];
+  if (selected_index() != npos && selected_index() < data_->items.count()) selected = data_->items[selected_index()];
   this->selected_item(selected);
 }
 

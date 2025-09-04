@@ -235,7 +235,7 @@ xtd::uptr<xtd::object> command_link_button::clone() const {
 void command_link_button::on_handle_created(const event_args& e) {
   button_base::on_handle_created(e);
   native::command_link_button::texts(handle(), data_->texts);
-  if (image() != image::empty || (image_list().images().size() && image_index() > -1)) {
+  if (image() != image::empty || (image_list().images().count() && image_index() > -1)) {
     if (flat_style() == flat_style::system) {
       native::command_link_button::image(handle(), image() != image::empty ? image() : image_list().images()[image_index()]);
       native::command_link_button::image_align(handle(), static_cast<uint32>(image_align()));

@@ -24,12 +24,12 @@ namespace {
     exception_dialog_standard(const std::exception* exception, const string& text, delegate<void(const dialog_closed_event_args& e)>* on_dialog_closed) : exception_(exception) {
       panel_top_.location({0, 0});
       panel_top_.size({480, 150});
-      panel_top_.controls().push_back_range({picture_box_error_, label_exception_, button_details_, button_continue_, button_quit_});
+      panel_top_.controls().add_range({picture_box_error_, label_exception_, button_details_, button_continue_, button_quit_});
       
       panel_bottom_.location({0, 150});
       panel_bottom_.size({480, 200});
       panel_bottom_.hide();
-      panel_bottom_.controls().push_back(text_box_details_);
+      panel_bottom_.controls().add(text_box_details_);
       
       picture_box_error_.location({10, 10});
       picture_box_error_.size({64, 64});
@@ -69,7 +69,7 @@ namespace {
       auto_size_mode(forms::auto_size_mode::grow_and_shrink);
       accept_button(button_continue_);
       cancel_button(button_quit_);
-      controls().push_back_range({panel_top_, panel_bottom_});
+      controls().add_range({panel_top_, panel_bottom_});
       maximize_box(false);
       minimize_box(false);
       show_icon(false);

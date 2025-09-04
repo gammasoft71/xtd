@@ -93,7 +93,7 @@ size_t domain_up_down::selected_index() const noexcept {
 }
 
 domain_up_down& domain_up_down::selected_index(size_t selected_index) {
-  if (selected_index != npos && selected_index >= data_->items.size()) argument_out_of_range_exception("Selected index greater than items size");
+  if (selected_index != npos && selected_index >= data_->items.count()) argument_out_of_range_exception("Selected index greater than items size");
   if (data_->selected_index == selected_index) return *this;
   data_->selected_index = selected_index;
   if (is_handle_created()) native::domain_up_down::selected_index(handle(), data_->selected_index);
@@ -353,7 +353,7 @@ xtd::uptr<xtd::object> domain_up_down::clone() const {
 
 void domain_up_down::on_handle_created(const event_args& e) {
   scrollable_control::on_handle_created(e);
-  for (auto index = 0_z; index < data_->items.size(); ++index)
+  for (auto index = 0_z; index < data_->items.count(); ++index)
     native::domain_up_down::insert_item(handle(), index, data_->items[index].value());
   native::domain_up_down::selected_index(handle(), data_->selected_index);
   if (data_->selected_index != npos) data_->selected_item = data_->items[data_->selected_index];
@@ -402,7 +402,7 @@ void domain_up_down::wm_scroll_control(message& message) {
 void domain_up_down::on_items_item_added(size_t pos, const item& item) {
   if (is_handle_created()) native::domain_up_down::insert_item(handle(), pos, item.value());
   auto selected = domain_up_down::item {};
-  if (data_->selected_index != npos && data_->selected_index < data_->items.size()) selected = data_->items[data_->selected_index];
+  if (data_->selected_index != npos && data_->selected_index < data_->items.count()) selected = data_->items[data_->selected_index];
   this->selected_item(selected);
 }
 
@@ -416,6 +416,6 @@ void domain_up_down::on_items_item_updated(size_t pos, const item& item) {
   if (update_disabled) return;
   if (is_handle_created()) native::domain_up_down::update_item(handle(), pos, item.value());
   auto selected = domain_up_down::item {};
-  if (data_->selected_index != npos && data_->selected_index < data_->items.size()) selected = data_->items[data_->selected_index];
+  if (data_->selected_index != npos && data_->selected_index < data_->items.count()) selected = data_->items[data_->selected_index];
   this->selected_item(selected);
 }

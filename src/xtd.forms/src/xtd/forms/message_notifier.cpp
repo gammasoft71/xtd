@@ -67,7 +67,7 @@ namespace {
       
       h_layout_container_.parent(*this);
       h_layout_container_.padding(forms::padding(5));
-      h_layout_container_.controls().push_back_range({v_layout_icon_, v_layout_title_message_, v_layout_buttons_});
+      h_layout_container_.controls().add_range({v_layout_icon_, v_layout_title_message_, v_layout_buttons_});
       h_layout_container_.dock(dock_style::fill);
       h_layout_container_.control_layout_style(v_layout_icon_, {0.25f, size_type::percent, true});
       h_layout_container_.control_layout_style(v_layout_title_message_, {0.75f, size_type::percent, true});
@@ -83,7 +83,7 @@ namespace {
       picture_box_icon_.padding(forms::padding(5));
       
       v_layout_title_message_.padding(forms::padding(5));
-      v_layout_title_message_.controls().push_back_range({label_title_, label_message_});
+      v_layout_title_message_.controls().add_range({label_title_, label_message_});
       v_layout_title_message_.control_layout_style(label_title_, {0.20f, size_type::percent, true, content_alignment::top_left});
       v_layout_title_message_.control_layout_style(label_message_, {0.80f, size_type::percent, true, content_alignment::top_left});
       v_layout_title_message_.dock(dock_style::fill);

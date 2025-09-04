@@ -69,7 +69,7 @@ combo_box& combo_box::drop_down_style(combo_box_style drop_down_style) {
 
 list_control& combo_box::selected_index(size_t selected_index) {
   if (this->selected_index() == selected_index) return *this;
-  if (selected_index != npos && selected_index >= data_->items.size()) throw_helper::throws(exception_case::argument_out_of_range, "Selected index greater than items size"_t);
+  if (selected_index != npos && selected_index >= data_->items.count()) throw_helper::throws(exception_case::argument_out_of_range, "Selected index greater than items size"_t);
   set_selected_index(selected_index);
   if (is_handle_created()) native::combo_box::selected_index(handle(), this->selected_index());
   
@@ -376,7 +376,7 @@ void combo_box::on_handle_created(const event_args& e) {
     size({size().width, data_->drop_down_height});
     
   data_->items.sorted(data_->sorted);
-  for (size_t index = 0; index < data_->items.size(); ++index)
+  for (size_t index = 0; index < data_->items.count(); ++index)
     native::combo_box::insert_item(handle(), index, data_->items[index].value());
   native::combo_box::selected_index(handle(), selected_index());
   if (selected_index() != npos) data_->selected_item = data_->items[selected_index()];
@@ -389,21 +389,21 @@ void combo_box::on_selected_value_changed(const event_args& e) {
 void combo_box::on_items_item_added(size_t pos, const item& item) {
   if (is_handle_created()) native::combo_box::insert_item(handle(), pos, item.value());
   auto selected_item = combo_box::item {};
-  if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
+  if (selected_index() != npos && selected_index() < data_->items.count()) selected_item = data_->items[selected_index()];
   this->selected_item(selected_item);
 }
 
 void combo_box::on_items_item_removed(size_t pos, const item& item)  {
   if (is_handle_created()) native::combo_box::delete_item(handle(), pos);
   auto selected_item = combo_box::item {};
-  if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
+  if (selected_index() != npos && selected_index() < data_->items.count()) selected_item = data_->items[selected_index()];
   if (selected_index() == pos) selected_index(npos);
 }
 
 void combo_box::on_items_item_updated(size_t pos, const item& item) {
   if (is_handle_created()) native::combo_box::update_item(handle(), pos, item.value());
   auto selected_item = combo_box::item {};
-  if (selected_index() != npos && selected_index() < data_->items.size()) selected_item = data_->items[selected_index()];
+  if (selected_index() != npos && selected_index() < data_->items.count()) selected_item = data_->items[selected_index()];
   this->selected_item(selected_item);
 }
 

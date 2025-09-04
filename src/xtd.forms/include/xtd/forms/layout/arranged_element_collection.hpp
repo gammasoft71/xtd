@@ -4,6 +4,7 @@
 #pragma once
 
 #include "sorter_none.hpp"
+#include <xtd/collections/generic/helpers/equator>
 #include <xtd/array>
 #include <xtd/argument_out_of_range_exception>
 #include <xtd/event_args>
@@ -110,19 +111,19 @@ namespace xtd {
         /// @param il The initializer list that contains items to fill the collection.
         arranged_element_collection(const std::initializer_list<type_t>& il) {
           for (auto item : il)
-            push_back(item);
+            add(item);
         }
         /// @}
         
         /// @cond
         explicit arranged_element_collection(const std::vector<type_t>& collection) {
           for (auto item : collection)
-            push_back(item);
+            add(item);
         }
-        arranged_element_collection(const arranged_element_collection& collection) {push_back_range(collection);}
+        arranged_element_collection(const arranged_element_collection& collection) {add_range(collection);}
         arranged_element_collection& operator =(const arranged_element_collection& collection) {
           clear();
-          push_back_range(collection);
+          add_range(collection);
           return *this;
         }
         arranged_element_collection(arranged_element_collection&&) = default;
@@ -164,6 +165,10 @@ namespace xtd {
         /// @return The last element.
         const_reference back() const {return collection_.back();}
         
+        /// @brief Returns the number of elements.
+        /// @return The number of elements.
+        size_type count() const noexcept {return collection_.size();}
+
         /// @brief Direct access to the underlying array.
         /// @return The underlying array.
         pointer data() {return collection_.data();}
@@ -217,7 +222,9 @@ namespace xtd {
         
         /// @brief Returns the number of elements.
         /// @return The number of elements.
-        size_type size() const noexcept {return collection_.size();}
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::count - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::count - Will be removed in version 0.4.0.")]]
+        size_type size() const noexcept {return count();}
         
         /// @brief Returns the maximum possible number of elements.
         /// @return The maximum possible number of elements.
@@ -255,45 +262,46 @@ namespace xtd {
         /// @param collection The elements to add.
         virtual void add_range(const arranged_element_collection& collection) {
           for (value_type item : collection)
-            push_back(item);
+            add(item);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
         virtual void add_range(const std::vector<value_type>& collection) {
           for (value_type item : collection)
-            push_back(item);
+            add(item);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
         virtual void add_range(const std::initializer_list<value_type>& collection) {
           for (value_type item : collection)
-            push_back(item);
+            add(item);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
         template<class collection_t>
         void add_range(collection_t&& collection) {
           for (auto& item : collection)
-            push_back(value_type(item));
+            add(value_type(item));
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
-        template<class iterator_t>
-        void add_range(iterator_t begin, iterator_t end) {
-          for (auto it = begin; it != end; ++it)
-            push_back(value_type(*it));
+        template<class collection_t>
+        void add_range(const collection_t& collection) {
+          for (const auto& item : collection)
+            add(item);
         }
-
+        
         /// @brief clears the contents.
         virtual void clear() noexcept {
-          iterator it = begin();
-          while (it != end())
-            it = erase(it);
+          while(count())
+            remove_at(0);
         }
         
         /// @brief Inserts specified element at specified position.
         /// @param pos The iterator before which the content will be inserted. pos may be the arranged_element_collection::end iterator.
         /// @param value The element to insert.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.")]]
         virtual iterator insert(const_iterator pos, const value_type& value) {
           size_t index = pos - begin();
           inserting_ = true;
@@ -308,6 +316,8 @@ namespace xtd {
         /// @brief Inserts specified element at specified position.
         /// @param pos The iterator before which the content will be inserted. pos may be the arranged_element_collection::end iterator.
         /// @param value The element to insert.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.")]]
         virtual iterator insert(const_iterator pos, value_type&& value) {
           size_t index = pos - begin();
           inserting_ = true;
@@ -323,15 +333,31 @@ namespace xtd {
         /// @brief Inserts specified element at specified index.
         /// @param index The index before which the content will be inserted.
         /// @param value The element to insert.
+        virtual void insert(xtd::size index, const value_type& value) {
+          inserting_ = true;
+          collection_.insert(collection_.begin() + index, value);
+          inserting_ = false;
+          (*this)[index].owner = this;
+          (*this)[index].pos = index;
+          on_item_added(index, collection_[index]);
+          if (sorted_) sort();
+        }
+        
+        /// @brief Inserts specified element at specified index.
+        /// @param index The index before which the content will be inserted.
+        /// @param value The element to insert.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.")]]
         virtual void insert_at(size_t index, const value_type& value) {
-          if (index > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-          insert(begin() + index, value);
+          insert(index, value);
         }
         
         /// @brief Inserts specified element at specified position.
         /// @param pos The iterator before which the content will be inserted. pos may be the arranged_element_collection::end iterator.
         /// @param args The arguments to forward to the constructor of the element
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.
         template<class ...args_t>
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.")]]
         void emplace(const_iterator pos, args_t&& ... args) {
           size_t index = pos - begin();
           inserting_ = true;
@@ -346,9 +372,11 @@ namespace xtd {
         
         /// @brief Adds an element to the end.
         /// @param args The arguments to forward to the constructor of the element
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.
         template<class ...args_t>
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.")]]
         void emplace_back(args_t&& ... args) {
-          collection_.push_back(args...);
+          collection_.emplace_back(args...);
           size_t index = collection_.size() - 1;
           (*this)[index].owner = this;
           (*this)[index].pos = index;
@@ -358,6 +386,8 @@ namespace xtd {
         
         /// @brief Erases element at specified position.
         /// @param pos The iterator which the content will be erased.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.")]]
         virtual iterator erase(iterator pos) {
           on_item_removed(pos - begin(), *pos);
           erasing_ = true;
@@ -367,6 +397,8 @@ namespace xtd {
         }
         /// @brief Erases element at specified position.
         /// @param pos The iterator which the content will be erased.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.")]]
         virtual iterator erase(const_iterator pos) {
           on_item_removed(pos - begin(), const_cast<value_type&>(*pos));
           erasing_ = true;
@@ -378,6 +410,8 @@ namespace xtd {
         /// @brief Erases elements at specified range.
         /// @param first The first iterator range which the content will be erased.
         /// @param first The last iterator range which the content will be erased.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.")]]
         virtual iterator erase(iterator first, iterator last) {
           iterator result = end();
           for (iterator it = first; it <= last; ++it)
@@ -387,6 +421,8 @@ namespace xtd {
         /// @brief Erases elements at specified range.
         /// @param first The first iterator range which the content will be erased.
         /// @param first The last iterator range which the content will be erased.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.")]]
         virtual iterator erase(const_iterator first, const_iterator last) {
           iterator result = end();
           for (const_iterator it = first; it <= last; ++it)
@@ -396,23 +432,30 @@ namespace xtd {
         
         /// @brief Erases element at specified index.
         /// @param pos The index which the content will be erased.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.")]]
         virtual void erase_at(size_t index) {
-          if (index > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-          erase(begin() + index);
+          remove_at(index);
         }
         
         /// @brief Removes the last element of the container.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove(count() - 1) - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove(count() - 1) - Will be removed in version 0.4.0.")]]
         virtual void pop_back() {
-          if (size() != 0) erase_at(size() - 1);
+          if (count() != 0) erase_at(size() - 1);
         }
         
         /// @brief Adds an element to the end.
         /// @param item The element to add.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.")]]
         virtual void push_back(const value_type& item) {
           add(item);
         }
         /// @brief Adds an element to the end.
         /// @param item The element to add.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.")]]
         virtual void push_back(value_type&& item) {
           add(std::move(item));
         }
@@ -426,30 +469,62 @@ namespace xtd {
         
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.")]]
         virtual void push_back_range(const arranged_element_collection& collection) {
           add_range(collection);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.")]]
         virtual void push_back_range(const std::vector<value_type>& collection) {
           add_range(collection);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.")]]
         virtual void push_back_range(const std::initializer_list<value_type>& collection) {
           add_range(collection);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.
         template<class collection_t>
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.")]]
         void push_back_range(collection_t&& collection) {
           add_range(collection);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.
         template<class iterator_t>
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.")]]
         void push_back_range(iterator_t begin, iterator_t end) {
           add_range(begin, end);
+        }
+        
+        /// @brief Removes an element.
+        /// @param item The element to remove.
+        virtual bool remove(const value_type& item) {
+          if (count() == 0)  return false;
+          for (auto index = size_type {0}; index < count(); ++index) {
+            if (!xtd::collections::generic::helpers::equator<type_t> {}(self_[index], item)) continue;
+            remove_at(index);
+            return true;
+          }
+          return false;
+        }
+
+        /// @brief Erases element at specified index.
+        /// @param pos The index which the content will be erased.
+        virtual void remove_at(size_t index) {
+          if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+          on_item_removed(index, const_cast<value_type&>(collection_[index]));
+          erasing_ = true;
+          collection_.erase(collection_.begin() + index);
+          erasing_ = false;
         }
 
         /// @brief Reduces memory usage by freeing unused memory.
@@ -475,6 +550,8 @@ namespace xtd {
         
         /// @brief Gets an array with the elements of the container.
         /// @return The array that contains elements of the container.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::to_array - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::to_array - Will be removed in version 0.4.0.")]]
         std::vector<type_t> to_vector() const noexcept {return to_array();}
         /// @}
         

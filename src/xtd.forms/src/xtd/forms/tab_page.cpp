@@ -48,14 +48,17 @@ tab_page& tab_page::image_index(size_t value) {
 
 control& tab_page::parent(const control& parent) {
   if (!is<tab_control>(parent)) throw_helper::throws(exception_case::argument, string::format("tab_page cannot be added to a '{}'.  tab_page can only be added to tab_control", parent.get_type().full_name()).c_str());
-  as<tab_control>(const_cast<control&>(parent)).tab_pages().push_back(*this);
+  as<tab_control>(const_cast<control&>(parent)).tab_pages().add(*this);
   return *this;
 }
 
 control& tab_page::parent(std::nullptr_t) {
   if (!parent()) return *this;
-  auto it = find(as<tab_control>(parent().value().get()).tab_pages().begin(), as<tab_control>(parent().value().get()).tab_pages().end(), *this);
-  if (it != as<tab_control>(parent().value().get()).tab_pages().end()) as<tab_control>(const_cast<control&>(parent().value().get())).tab_pages().erase(it);
+  auto index_result = as<tab_control>(parent().value().get()).tab_pages().npos;
+  for (auto index = 0_z; index_result == as<tab_control>(parent().value().get()).tab_pages().npos && index < as<tab_control>(parent().value().get()).tab_pages().count(); ++index)
+    if (as<tab_control>(parent().value().get()).tab_pages()[index] == self_)
+      index_result = index;
+  if (index_result != as<tab_control>(parent().value().get()).tab_pages().npos) as<tab_control>(const_cast<control&>(parent().value().get())).tab_pages().remove_at(index_result);
   return *this;
 }
 

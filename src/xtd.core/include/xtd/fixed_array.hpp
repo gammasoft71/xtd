@@ -137,11 +137,11 @@ namespace xtd {
     /// @brief Gets a size that represents the total number of elements in all the dimensions of the array.
     /// @return A size that represents the total number of elements in all the dimensions of the array; zero if there are no elements in the array.
     /// @remarks Retrieving the value of this property is an O(1) operation.
-    virtual size_type length() const noexcept {return size();}
+    virtual size_type length() const noexcept {return len;}
     
     /// @brief Returns the number of elements in the container, i.e. std::distance(xtd::array::begin(), xtd::array::end()).
     /// @return The number of elements in the container.
-    xtd::size size() const noexcept {return len;}
+    xtd::size size() const noexcept {return length();}
     /// @}
     
     /// @name Public Constructors

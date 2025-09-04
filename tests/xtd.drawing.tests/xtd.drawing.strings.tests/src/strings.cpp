@@ -54,14 +54,14 @@ namespace xtd::drawing::tests {
       string_format_tab_page.text("String format");
       string_format_tab_page.paint += {*this, &strings_form::draw_strings_with_string_format};
       
-      string_format_tab_page.controls().push_back_range({alignmentLabel, alignmentComboBox, lineAlignmentLabel, lineAlignmentComboBox, trimmingLabel, trimmingComboBox, hotKeyPrefixLabel, hotKeyPrefixComboBox, formatFlagsGroupBox});
+      string_format_tab_page.controls().add_range({alignmentLabel, alignmentComboBox, lineAlignmentLabel, lineAlignmentComboBox, trimmingLabel, trimmingComboBox, hotKeyPrefixLabel, hotKeyPrefixComboBox, formatFlagsGroupBox});
       
       alignmentLabel.auto_size(true);
       alignmentLabel.location({10, 12});
       alignmentLabel.text("Alignment");
       
       alignmentComboBox.drop_down_style(combo_box_style::drop_down_list);
-      alignmentComboBox.items().push_back_range({{"near", string_alignment::near}, {"center", string_alignment::center}, {"far", string_alignment::far}});
+      alignmentComboBox.items().add_range({{"near", string_alignment::near}, {"center", string_alignment::center}, {"far", string_alignment::far}});
       alignmentComboBox.location({120, 10});
       alignmentComboBox.selected_index(0);
       alignmentComboBox.selected_index_changed += [&] {string_format_tab_page.invalidate(false);};
@@ -71,7 +71,7 @@ namespace xtd::drawing::tests {
       lineAlignmentLabel.text("Line alignment");
       
       lineAlignmentComboBox.drop_down_style(combo_box_style::drop_down_list);
-      lineAlignmentComboBox.items().push_back_range({{"near", string_alignment::near}, {"center", string_alignment::center}, {"far", string_alignment::far}});
+      lineAlignmentComboBox.items().add_range({{"near", string_alignment::near}, {"center", string_alignment::center}, {"far", string_alignment::far}});
       lineAlignmentComboBox.location({390, 10});
       lineAlignmentComboBox.selected_index(0);
       lineAlignmentComboBox.selected_index_changed += [&] {string_format_tab_page.invalidate(false);};
@@ -81,7 +81,7 @@ namespace xtd::drawing::tests {
       trimmingLabel.text("Trimming");
       
       trimmingComboBox.drop_down_style(combo_box_style::drop_down_list);
-      trimmingComboBox.items().push_back_range({{"none", string_trimming::none}, {"character", string_trimming::character}, {"word", string_trimming::word}, {"ellipsis_character", string_trimming::ellipsis_character}, {"ellipsis_word", string_trimming::ellipsis_word}, {"ellipsis_path", string_trimming::ellipsis_path}});
+      trimmingComboBox.items().add_range({{"none", string_trimming::none}, {"character", string_trimming::character}, {"word", string_trimming::word}, {"ellipsis_character", string_trimming::ellipsis_character}, {"ellipsis_word", string_trimming::ellipsis_word}, {"ellipsis_path", string_trimming::ellipsis_path}});
       trimmingComboBox.location({120, 50});
       trimmingComboBox.selected_index(0);
       trimmingComboBox.selected_index_changed += [&] {string_format_tab_page.invalidate(false);};
@@ -91,12 +91,12 @@ namespace xtd::drawing::tests {
       hotKeyPrefixLabel.text("Hotkey prefix");
       
       hotKeyPrefixComboBox.drop_down_style(combo_box_style::drop_down_list);
-      hotKeyPrefixComboBox.items().push_back_range({{"none", hotkey_prefix::none}, {"show", hotkey_prefix::show}, {"hide", hotkey_prefix::hide}});
+      hotKeyPrefixComboBox.items().add_range({{"none", hotkey_prefix::none}, {"show", hotkey_prefix::show}, {"hide", hotkey_prefix::hide}});
       hotKeyPrefixComboBox.location({390, 50});
       hotKeyPrefixComboBox.selected_index(0);
       hotKeyPrefixComboBox.selected_index_changed += [&] {string_format_tab_page.invalidate(false);};
       
-      formatFlagsGroupBox.controls().push_back_range({directionRightToLeftCheckBox, directionVerticalCheckBox, FitBlackBoxCheckBox, DisplayFormatControlCheckBox, NoFontFallbackCheckBox, MeasureTrailingSpacesCheckBox, NoWrapCheckBox, LineLimitCheckBox, NoClipCheckBox});
+      formatFlagsGroupBox.controls().add_range({directionRightToLeftCheckBox, directionVerticalCheckBox, FitBlackBoxCheckBox, DisplayFormatControlCheckBox, NoFontFallbackCheckBox, MeasureTrailingSpacesCheckBox, NoWrapCheckBox, LineLimitCheckBox, NoClipCheckBox});
       formatFlagsGroupBox.location({10, 90});
       formatFlagsGroupBox.size({500, 185});
       formatFlagsGroupBox.text("Fromat flags");

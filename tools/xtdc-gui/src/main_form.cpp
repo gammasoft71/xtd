@@ -322,7 +322,7 @@ main_form::main_form() {
   open_xtd_example_core_list_box_.size(open_xtd_example_core_tab_page_.size() - drawing::size {60, 140});
   open_xtd_example_core_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   for (auto item : xtd_example_item::get_core_examples())
-    open_xtd_example_core_list_box_.items().push_back({item.name(), item});
+    open_xtd_example_core_list_box_.items().add({item.name(), item});
   open_xtd_example_core_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_core_list_box_.selected_index() != open_xtd_example_core_list_box_.npos) {
       current_open_xtd_example_core_list_box_index_ = open_xtd_example_core_list_box_.selected_index();
@@ -338,7 +338,7 @@ main_form::main_form() {
   open_xtd_example_drawing_list_box_.size(open_xtd_example_forms_tab_page_.size() - drawing::size {60, 140});
   open_xtd_example_drawing_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   for (auto item : xtd_example_item::get_drawing_examples())
-    open_xtd_example_drawing_list_box_.items().push_back({item.name(), item});
+    open_xtd_example_drawing_list_box_.items().add({item.name(), item});
   open_xtd_example_drawing_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_drawing_list_box_.selected_index() != open_xtd_example_drawing_list_box_.npos) {
       current_open_xtd_example_drawing_list_box_index_ = open_xtd_example_drawing_list_box_.selected_index();
@@ -354,7 +354,7 @@ main_form::main_form() {
   open_xtd_example_forms_list_box_.size(open_xtd_example_forms_tab_page_.size() - drawing::size {60, 140});
   open_xtd_example_forms_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   for (auto item : xtd_example_item::get_forms_examples())
-    open_xtd_example_forms_list_box_.items().push_back({item.name(), item});
+    open_xtd_example_forms_list_box_.items().add({item.name(), item});
   open_xtd_example_forms_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_forms_list_box_.selected_index() != open_xtd_example_forms_list_box_.npos) {
       current_open_xtd_example_forms_list_box_index_ = open_xtd_example_forms_list_box_.selected_index();
@@ -370,7 +370,7 @@ main_form::main_form() {
   open_xtd_example_tunit_list_box_.size(open_xtd_example_tunit_tab_page_.size() - drawing::size {60, 140});
   open_xtd_example_tunit_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   for (auto item : xtd_example_item::get_tunit_examples())
-    open_xtd_example_tunit_list_box_.items().push_back({item.name(), item});
+    open_xtd_example_tunit_list_box_.items().add({item.name(), item});
   open_xtd_example_tunit_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_tunit_list_box_.selected_index() != open_xtd_example_tunit_list_box_.npos) {
       current_open_xtd_example_tunit_list_box_index_ = open_xtd_example_tunit_list_box_.selected_index();
@@ -386,7 +386,7 @@ main_form::main_form() {
   open_xtd_example_cmake_list_box_.size(open_xtd_example_core_tab_page_.size() - drawing::size {60, 140});
   open_xtd_example_cmake_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   for (auto item : xtd_example_item::get_cmake_examples())
-    open_xtd_example_cmake_list_box_.items().push_back({item.name(), item});
+    open_xtd_example_cmake_list_box_.items().add({item.name(), item});
   open_xtd_example_cmake_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_cmake_list_box_.selected_index() != open_xtd_example_cmake_list_box_.npos) {
       current_open_xtd_example_cmake_list_box_index_ = open_xtd_example_cmake_list_box_.selected_index();
@@ -439,7 +439,7 @@ main_form::main_form() {
   create_language_choice_.width(140);
   create_language_choice_.location({create_panel_.size().width - create_type_choice_.width() - 400, 50});
   create_language_choice_.anchor(anchor_styles::top | anchor_styles::right);
-  create_language_choice_.items().push_back_range({{"All languages", project_language::all}, {"xtd (c++)", project_language::xtd}, {"xtd_c (c)", project_language::xtd_c}, {"c++", project_language::cpp}, {"c", project_language::c}, {"c#", project_language::csharp}, {"objective-c", project_language::objectivec}});
+  create_language_choice_.items().add_range({{"All languages", project_language::all}, {"xtd (c++)", project_language::xtd}, {"xtd_c (c)", project_language::xtd_c}, {"c++", project_language::cpp}, {"c", project_language::c}, {"c#", project_language::csharp}, {"objective-c", project_language::objectivec}});
   create_language_choice_.selected_value_changed += [&] {
     properties::settings::default_settings().language_index(create_language_choice_.selected_index()).save();
     create_project_type_items_control_.filter_items(create_language_choice_.selected_item().tag().has_value() ? as<project_language>(create_language_choice_.selected_item().tag()) : project_language::all, create_platform_choice_.selected_item().tag().has_value() ? as<project_platform>(create_platform_choice_.selected_item().tag()) : project_platform::all, create_type_choice_.selected_item().tag().has_value() ? as<project_type>(create_type_choice_.selected_item().tag()) : project_type::all);
@@ -450,7 +450,7 @@ main_form::main_form() {
   create_platform_choice_.width(140);
   create_platform_choice_.location({create_panel_.size().width - create_type_choice_.width() - 230, 50});
   create_platform_choice_.anchor(anchor_styles::top | anchor_styles::right);
-  create_platform_choice_.items().push_back_range({{"All platforms", project_platform::all}, {"Windows", project_platform::windows}, {"Linux", project_platform::linux}, {"macOS", project_platform::macos}});
+  create_platform_choice_.items().add_range({{"All platforms", project_platform::all}, {"Windows", project_platform::windows}, {"Linux", project_platform::linux}, {"macOS", project_platform::macos}});
   create_platform_choice_.selected_value_changed += [&] {
     properties::settings::default_settings().platform_index(create_platform_choice_.selected_index()).save();
     create_project_type_items_control_.filter_items(create_language_choice_.selected_item().tag().has_value() ? as<project_language>(create_language_choice_.selected_item().tag()) : project_language::all, create_platform_choice_.selected_item().tag().has_value() ? as<project_platform>(create_platform_choice_.selected_item().tag()) : project_platform::all, create_type_choice_.selected_item().tag().has_value() ? as<project_type>(create_type_choice_.selected_item().tag()) : project_type::all);
@@ -461,7 +461,7 @@ main_form::main_form() {
   create_type_choice_.width(140);
   create_type_choice_.location({create_panel_.size().width - create_type_choice_.width() - 50, 50});
   create_type_choice_.anchor(anchor_styles::top | anchor_styles::right);
-  create_type_choice_.items().push_back_range({{"All project types", project_type::all}, {"Gui", project_type::gui}, {"Console", project_type::console}, {"Shared library", project_type::shared_library}, {"Static library", project_type::static_library}, {"UnitTest Project", project_type::unit_tests_project}, {"Solution File", project_type::solution_file}});
+  create_type_choice_.items().add_range({{"All project types", project_type::all}, {"Gui", project_type::gui}, {"Console", project_type::console}, {"Shared library", project_type::shared_library}, {"Static library", project_type::static_library}, {"UnitTest Project", project_type::unit_tests_project}, {"Solution File", project_type::solution_file}});
   create_type_choice_.selected_value_changed += [&] {
     properties::settings::default_settings().type_index(create_type_choice_.selected_index()).save();
     create_project_type_items_control_.filter_items(create_language_choice_.selected_item().tag().has_value() ? as<project_language>(create_language_choice_.selected_item().tag()) : project_language::all, create_platform_choice_.selected_item().tag().has_value() ? as<project_platform>(create_platform_choice_.selected_item().tag()) : project_platform::all, create_type_choice_.selected_item().tag().has_value() ? as<project_type>(create_type_choice_.selected_item().tag()) : project_type::all);
@@ -688,15 +688,15 @@ void main_form::init_create_create_recent_projects_list_box() {
   auto project_type_items = create_project_type_items_control_.project_type_items();
   create_create_recent_projects_list_box_.items().clear();
   for (auto item : properties::settings::default_settings().create_recent_propjects().split(';'))
-    create_create_recent_projects_list_box_.items().push_back(project_type_items[parse<size_t>(item)].name());
-  create_create_recent_projects_list_box_.selected_index(create_create_recent_projects_list_box_.items().size() == 0 ? -1 : 0);
+    create_create_recent_projects_list_box_.items().add(project_type_items[parse<size_t>(item)].name());
+  create_create_recent_projects_list_box_.selected_index(create_create_recent_projects_list_box_.items().count() == 0 ? -1 : 0);
 }
 
 void main_form::init_startup_open_recent_projects_list_box() {
   startup_open_recent_projects_list_box_.items().clear();
   for (auto item : properties::settings::default_settings().open_recent_propjects().split(';'))
-    startup_open_recent_projects_list_box_.items().push_back(string::format("{} ({})", path::get_file_name(item), item));
-  startup_open_recent_projects_list_box_.selected_index(startup_open_recent_projects_list_box_.items().size() == 0 ? -1 : 0);
+    startup_open_recent_projects_list_box_.items().add(string::format("{} ({})", path::get_file_name(item), item));
+  startup_open_recent_projects_list_box_.selected_index(startup_open_recent_projects_list_box_.items().count() == 0 ? -1 : 0);
 }
 
 void main_form::add_to_create_recent_projects(size_t create_project_items_index) {
@@ -902,7 +902,7 @@ void main_form::update_open_xtd_examples_description(const xtd::string& descript
         link = xtd::string::format("https://www.google.com/search?q={}+site:https://gammasoft71.github.io/xtd/reference_guides/latest", title);
       // Replace all markdown links [title](url) with title
       text = text.replace(whole, title);
-      //open_xtd_examples_information_link_label_.links().push_back(xtd::forms::link(it->position(), title.length(), link));
+      //open_xtd_examples_information_link_label_.links().add(xtd::forms::link(it->position(), title.length(), link));
     }
   }
   

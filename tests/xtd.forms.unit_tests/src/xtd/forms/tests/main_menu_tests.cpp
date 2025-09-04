@@ -12,7 +12,7 @@ namespace xtd::forms::tests {
     void test_method_(new_main_menu) {
       main_menu menu;
       assert::is_not_zero(menu.handle());
-      assert::is_zero(menu.menu_items().size());
+      assert::is_zero(menu.menu_items().count());
     }
   };
 }

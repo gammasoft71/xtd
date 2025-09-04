@@ -100,7 +100,7 @@ void vertical_layout_panel::on_control_removed(const xtd::forms::control_event_a
 
 void vertical_layout_panel::on_layout(const event_args& e) {
   panel::on_layout(e);
-  if (!parent() && controls().size() == 0) return;
+  if (!parent() && controls().count() == 0) return;
   
   auto auto_size_control_count = count_if(control_layout_styles_.begin(), control_layout_styles_.end(), [](auto layout_style)->bool {return layout_style.first.get().visible() && layout_style.second.size_type() == size_type::auto_size;});
   auto auto_size_height = client_size().height - static_cast<int32>(control_layout_styles().size() * padding().top()) - static_cast<int32>(control_layout_styles().size() * padding().bottom());

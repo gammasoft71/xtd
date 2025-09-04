@@ -24,7 +24,7 @@ namespace {
       accept_button(ok_button_);
       cancel_button(cancel_button_);
       client_size({330, 115 + offset_multiline});
-      controls().push_back_range({input_panel_, cancel_button_, ok_button_});
+      controls().add_range({input_panel_, cancel_button_, ok_button_});
       maximize_box(false);
       minimize_box(false);
       show_icon(false);
@@ -36,7 +36,7 @@ namespace {
       }
       input_panel_.bounds({0, 0, 330, 115 - 42 + offset_multiline});
       input_panel_.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right | anchor_styles::bottom);
-      input_panel_.controls().push_back_range({message_label_, input_text_box_});
+      input_panel_.controls().add_range({message_label_, input_text_box_});
       
       message_label_.bounds({10, 10, 310, 23});
       message_label_.anchor(anchor_styles::left | anchor_styles::top | anchor_styles::right);

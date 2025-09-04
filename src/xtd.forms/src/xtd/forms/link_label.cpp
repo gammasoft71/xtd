@@ -558,8 +558,8 @@ xtd::drawing::font link_label::link_font() const noexcept {
 }
 
 void link_label::on_links_link_added(size_t pos, const link& link) {
-  if (data_->links.size() == 2 && data_->links[0].start() == 0 && data_->links[0].length() == text().length())
-    data_->links.erase_at(0);
+  if (data_->links.count() == 2 && data_->links[0].start() == 0 && data_->links[0].length() == text().length())
+    data_->links.remove_at(0);
   //tab_stop(true);
   invalidate();
 }
@@ -571,4 +571,3 @@ void link_label::on_links_link_removed(size_t pos, const link& item) {
 void link_label::on_links_link_updated(size_t pos, const link& link) {
   invalidate();
 }
-

@@ -56,7 +56,7 @@ bool tool_bar_button::enabled() const noexcept {
 tool_bar_button & tool_bar_button::enabled(bool value) {
   if (data_->enabled == value) return *this;
   data_->enabled = value;
-  if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().size() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
+  if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().count() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
   return *this;
 }
 
@@ -67,7 +67,7 @@ size_t tool_bar_button::image_index() const noexcept {
 tool_bar_button & tool_bar_button::image_index(size_t value) {
   if (data_->image_index == value) return *this;
   data_->image_index = value;
-  if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().size() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
+  if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().count() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
   return *this;
 }
 
@@ -91,7 +91,7 @@ bool tool_bar_button::pushed() const noexcept {
 tool_bar_button & tool_bar_button::pushed(bool value) {
   if (data_->pushed == value) return *this;
   data_->pushed = value;
-  if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().size() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
+  if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().count() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
   return *this;
 }
 
@@ -102,7 +102,7 @@ xtd::forms::tool_bar_button_style tool_bar_button::style() const noexcept {
 tool_bar_button & tool_bar_button::style(xtd::forms::tool_bar_button_style value) {
   if (data_->style == value) return *this;
   data_->style = value;
-  if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().size() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
+  if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().count() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
   return *this;
 }
 
@@ -126,7 +126,7 @@ const string & tool_bar_button::text() const noexcept {
 tool_bar_button & tool_bar_button::text(const xtd::string& value) {
   if (data_->text == value) return *this;
   data_->text = value;
-  if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().size() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
+  if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().count() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
   return *this;
 }
 
@@ -137,7 +137,7 @@ const string & tool_bar_button::tool_tip_text() const noexcept {
 tool_bar_button & tool_bar_button::tool_tip_text(const xtd::string& value) {
   if (data_->tool_tip_text == value) return *this;
   data_->tool_tip_text = value;
-  if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().size() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
+  if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().count() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
   return *this;
 }
 
@@ -148,7 +148,7 @@ bool tool_bar_button::visible() const noexcept {
 tool_bar_button & tool_bar_button::visible(bool value) {
   if (data_->visible == value) return *this;
   data_->visible = value;
-  if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().size() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
+  if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().count() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
   return *this;
 }
 

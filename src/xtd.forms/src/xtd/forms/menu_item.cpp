@@ -184,7 +184,7 @@ menu_item::menu_item(const xtd::string& text, const std::vector<menu_item_ref>& 
   data_->is_parent = true;
   data_->text = text;
   create_menu();
-  menu::data_->menu_items.push_back_range(items);
+  menu::data_->menu_items.add_range(items);
 }
 
 menu_item::menu_item(const xtd::string& text, const std::initializer_list<const_menu_item_ref>& items) : data_(xtd::new_sptr<data>()) {
@@ -192,7 +192,7 @@ menu_item::menu_item(const xtd::string& text, const std::initializer_list<const_
   data_->text = text;
   create_menu();
   for (auto& item : items)
-    menu::data_->menu_items.push_back(menu_item_ref(const_cast<menu_item&>(item.get())));
+    menu::data_->menu_items.add(menu_item_ref(const_cast<menu_item&>(item.get())));
 }
 
 bool menu_item::checked() const noexcept {

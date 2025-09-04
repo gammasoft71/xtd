@@ -231,7 +231,7 @@ namespace xtd {
           auto control_ptr = xtd::new_uptr<control_t>(control_t::create(std::forward<args_t>(args)...));
           auto& control_ref = *control_ptr;
           controls_.add(std::move(control_ptr));
-          base::insert_at(index, control_ref);
+          base::insert(index, control_ref);
           return control_ref;
         }
         
@@ -252,33 +252,20 @@ namespace xtd {
           return control_ref;
         }
         
-        iterator insert(const_iterator pos, const value_type& value) override;
-        
-        void insert_at(size_t index, const value_type& value) override;
+        void insert(size_t index, const value_type& value) override;
         
         void add(const value_type& value) override;
         
         template<class control_t>
-        iterator insert(const_iterator pos, control_t& value) {
-          for (auto it = begin(); it != end(); ++it)
-            if (it->get() == value) return it;
-          if (!keep_cloned_controls_) return base::insert(pos, value);
-          auto control_ptr = as<control>(as<iclonable>(value).clone());
-          auto& control_ref = *control_ptr;
-          controls_.add(std::move(control_ptr));
-          return base::insert(pos, control_ref);
-        }
-        
-        template<class control_t>
-        void insert_at(size_t index, control_t& value) {
+        void insert(size_t index, control_t& value) {
           for (auto it = begin(); it != end(); ++it)
             if (it->get() == value) return;
-          if (!keep_cloned_controls_) base::insert_at(index, value);
+          if (!keep_cloned_controls_) base::insert(index, value);
           else {
             auto control_ptr = as<control>(as<iclonable>(value).clone());
             auto& control_ref = *control_ptr;
             controls_.add(std::move(control_ptr));
-            base::insert_at(index, control_ref);
+            base::insert(index, control_ref);
           }
         }
         
@@ -296,6 +283,7 @@ namespace xtd {
         }
         
         template<class control_t>
+        [[deprecated("Replaced by xtd::forms::control::control_collection::add - Will be removed in version 0.4.0.")]]
         void push_back(control_t& value) {add(value);}
         
         /// @}

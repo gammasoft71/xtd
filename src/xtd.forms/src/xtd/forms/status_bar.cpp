@@ -400,13 +400,13 @@ void status_bar::fill() {
     intptr control_handle = 0;
     if (is_system_status_bar()) {
       if (reversed_panels[index].get().style() == status_bar_panel_style::push_button || (!data_->drop_down_arrows && button_item.style() == status_bar_panel_style::drop_down_button))
-        control_handle = native::status_bar::add_status_bar_panel(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled(), button_item.visible());
+        control_handle = native::status_bar::add_status_bar_panel(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().count() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled(), button_item.visible());
       else if (reversed_panels[index].get().style() == status_bar_panel_style::toggle_button)
-        control_handle = native::status_bar::add_status_bar_toggle_button(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, reversed_panels[index].get().pushed(), button_item.enabled(), button_item.visible());
+        control_handle = native::status_bar::add_status_bar_toggle_button(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().count() ? data_->image_list.images()[button_item.image_index()] : image::empty, reversed_panels[index].get().pushed(), button_item.enabled(), button_item.visible());
       else if (reversed_panels[index].get().style() == status_bar_panel_style::separator)
         control_handle = native::status_bar::add_status_bar_separator(handle());
       else if (reversed_panels[index].get().style() == status_bar_panel_style::drop_down_button)
-        control_handle = native::status_bar::add_status_bar_drop_down_button(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().size() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled(), button_item.visible(), button_item.drop_down_menu().has_value() ? button_item.drop_down_menu().value().get().handle() : 0);
+        control_handle = native::status_bar::add_status_bar_drop_down_button(handle(), button_item.text(), button_item.tool_tip_text(), button_item.image_index() < data_->image_list.images().count() ? data_->image_list.images()[button_item.image_index()] : image::empty, button_item.enabled(), button_item.visible(), button_item.drop_down_menu().has_value() ? button_item.drop_down_menu().value().get().handle() : 0);
       else if (reversed_panels[index].get().style() == status_bar_panel_style::stretchable_separator)
         control_handle = native::status_bar::add_status_bar_stretchable_separator(handle());
       else if (reversed_panels[index].get().style() == status_bar_panel_style::control) {
@@ -451,7 +451,7 @@ void status_bar::fill() {
   
       /// @todo Add xtd::forms::tool_tip when implemented.
   
-      if ((data_->show_icon || !data_->show_text) && button_item.image_index() < data_->image_list.images().size()) button_control->image(data_->image_list.images()[button_item.image_index()]);
+      if ((data_->show_icon || !data_->show_text) && button_item.image_index() < data_->image_list.images().count()) button_control->image(data_->image_list.images()[button_item.image_index()]);
       if (data_->show_text) button_control->text(button_item.text());
   
       if (auto_size()) {

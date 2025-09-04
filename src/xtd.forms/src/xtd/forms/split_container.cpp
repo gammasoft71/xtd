@@ -18,7 +18,7 @@ split_container::split_container() : data_(xtd::new_sptr<data>()) {
   set_can_focus(false);
   set_style(control_styles::supports_transparent_back_color, true);
   set_style(control_styles::optimized_double_buffer, true);
-  controls().push_back_range({data_->panel2, data_->splitter, data_->panel1});
+  controls().add_range({data_->panel2, data_->splitter, data_->panel1});
   arrange_children();
 }
 

@@ -69,6 +69,15 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
+        using xtd::forms::layout::arranged_element_collection<tab_page_ref>::add;
+        /// @brief Adds an element to the end.
+        /// @param text The text of element to add.
+        void add(const xtd::string& text);
+        /// @brief Adds an element to the end.
+        /// @param text The text of element to add.
+        /// @param name The name of element to add.
+        void add(const xtd::string& text, const string& name);
+
         using xtd::forms::layout::arranged_element_collection<tab_page_ref>::insert;
         /// @brief Inserts specified element at specified position.
         /// @param pos The iterator before which the content will be inserted. pos may be the arranged_element_collection::end iterator.
@@ -94,19 +103,34 @@ namespace xtd {
         using xtd::forms::layout::arranged_element_collection<tab_page_ref>::push_back;
         /// @brief Adds an element to the end.
         /// @param text The text of element to add.
+        /// @deprecated Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
         void push_back(const xtd::string& text);
         /// @brief Adds an element to the end.
         /// @param text The text of element to add.
         /// @param name The name of element to add.
+        /// @deprecated Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
         void push_back(const xtd::string& text, const string& name);
-        
+
         /// @}
         
         /// @cond
+        void add(const char* text);
+        void add(const char8* text);
+        void add(const char16* text);
+        void add(const char32* text);
+        void add(const wchar* text);
+
+        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
         void push_back(const char* text);
+        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
         void push_back(const char8* text);
+        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
         void push_back(const char16* text);
+        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
         void push_back(const char32* text);
+        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
         void push_back(const wchar* text);
         /// @endcond
         
@@ -288,10 +312,10 @@ namespace xtd {
       friend class xtd::forms::form;
       using control::controls;
       
-      void on_tab_pages_item_added(size_t, tab_page_ref& item);
-      void on_tab_pages_item_removed(size_t, tab_page_ref& item);
-      void on_tab_pages_text_added(size_t index, const string& text, const string& name);
-      tab_page_collection::iterator on_tab_pages_text_inserted(tab_page_collection::const_iterator pos, const string& text, const string& name);
+      void on_tab_pages_item_added(xtd::size, tab_page_ref& item);
+      void on_tab_pages_item_removed(xtd::size, tab_page_ref& item);
+      void on_tab_pages_text_added(xtd::size index, const string& text, const string& name);
+      void on_tab_pages_text_inserted(xtd::size pos, const string& text, const string& name);
       
       void wm_command_control(message& message);
       

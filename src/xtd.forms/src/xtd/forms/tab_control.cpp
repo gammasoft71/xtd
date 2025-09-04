@@ -27,6 +27,34 @@ tab_control::tab_page_collection& tab_control::tab_page_collection::operator =(c
   return *this;
 }
 
+void tab_control::tab_page_collection::add(const xtd::string& text) {
+  add(text, string::empty_string);
+}
+
+void tab_control::tab_page_collection::add(const xtd::string& text, const string& name) {
+  text_added(npos, text, name);
+}
+
+void tab_control::tab_page_collection::add(const char* text) {
+  add(text, string::empty_string);
+}
+
+void tab_control::tab_page_collection::add(const char8* text) {
+  add(text, string::empty_string);
+}
+
+void tab_control::tab_page_collection::add(const char16* text) {
+  add(text, string::empty_string);
+}
+
+void tab_control::tab_page_collection::add(const char32* text) {
+  add(text, string::empty_string);
+}
+
+void tab_control::tab_page_collection::add(const wchar* text) {
+  add(text, string::empty_string);
+}
+
 tab_control::tab_page_collection::iterator tab_control::tab_page_collection::insert(const_iterator pos, const xtd::string& text) {
   return insert(pos, text, string::empty_string);
 }
@@ -44,7 +72,7 @@ void tab_control::tab_page_collection::insert_at(size_t index, const xtd::string
 }
 
 void tab_control::tab_page_collection::push_back(const xtd::string& text) {
-  push_back(text, string::empty_string);
+  add(text, string::empty_string);
 }
 
 void tab_control::tab_page_collection::push_back(const xtd::string& text, const string& name) {
@@ -52,23 +80,23 @@ void tab_control::tab_page_collection::push_back(const xtd::string& text, const 
 }
 
 void tab_control::tab_page_collection::push_back(const char* text) {
-  push_back(text, string::empty_string);
+  add(text, string::empty_string);
 }
 
 void tab_control::tab_page_collection::push_back(const char8* text) {
-  push_back(text, string::empty_string);
+  add(text, string::empty_string);
 }
 
 void tab_control::tab_page_collection::push_back(const char16* text) {
-  push_back(text, string::empty_string);
+  add(text, string::empty_string);
 }
 
 void tab_control::tab_page_collection::push_back(const char32* text) {
-  push_back(text, string::empty_string);
+  add(text, string::empty_string);
 }
 
 void tab_control::tab_page_collection::push_back(const wchar* text) {
-  push_back(text, string::empty_string);
+  add(text, string::empty_string);
 }
 
 std::optional<tab_control::tab_page_collection::value_type> tab_control::tab_page_collection::operator [](const string& name) const {
@@ -130,7 +158,7 @@ size_t tab_control::selected_index() const noexcept {
 
 tab_control& tab_control::selected_index(size_t selected_index) {
   if (data_->selected_index == selected_index) return *this;
-  if (selected_index >= tab_pages().size()) throw_helper::throws(exception_case::argument_out_of_range);
+  if (selected_index >= tab_pages().count()) throw_helper::throws(exception_case::argument_out_of_range);
   data_->selected_index = selected_index;
   if (is_handle_created()) native::tab_control::selected_index(handle(), data_->selected_index);
   on_selected_index_changed(event_args::empty);
@@ -236,7 +264,7 @@ void tab_control::on_control_added(const control_event_args& e) {
 
 void tab_control::on_control_removed(const control_event_args& e) {
   control::on_control_removed(e);
-  if (controls().size() == 0) data_->selected_index = npos;
+  if (controls().count() == 0) data_->selected_index = npos;
 }
 
 void tab_control::on_handle_created(const event_args& e) {
@@ -259,17 +287,17 @@ void tab_control::wnd_proc(message& message) {
 }
 
 size_t tab_control::get_child_index(intptr page) {
-  for (auto index = 0_z; index < controls().size(); ++index)
+  for (auto index = 0_z; index < controls().count(); ++index)
     if (controls()[index].get().handle() == page) return index;
   return npos;
 }
 
 void tab_control::on_tab_pages_item_added(size_t index, tab_page_ref& item) {
-  controls().insert_at(index, item.get());
+  controls().insert(index, item.get());
 }
 
 void tab_control::on_tab_pages_item_removed(size_t index, tab_page_ref& item) {
-  controls().erase_at(index);
+  controls().remove_at(index);
 }
 
 void tab_control::on_tab_pages_text_added(size_t index, const string& text, const string& name) {
@@ -277,23 +305,21 @@ void tab_control::on_tab_pages_text_added(size_t index, const string& text, cons
   item->text(text);
   item->name(name);
   if (index == tab_pages().npos) {
-    tab_pages().push_back(*item);
+    tab_pages().add(*item);
     data_->text_tab_pages.add(item);
   } else {
-    tab_pages().insert_at(index, *item);
+    tab_pages().insert(index, *item);
     data_->text_tab_pages.insert(index, item);
   }
 }
 
-tab_control::tab_page_collection::iterator tab_control::on_tab_pages_text_inserted(tab_page_collection::const_iterator pos, const string& text, const string& name) {
+void tab_control::on_tab_pages_text_inserted(xtd::size pos, const string& text, const string& name) {
   auto item = xtd::new_sptr<tab_page>();
   item->text(text);
   item->name(name);
-  tab_page_collection::iterator it = tab_pages().end();
-  it = tab_pages().insert(pos, *item);
-  if (pos == tab_pages().end()) data_->text_tab_pages.add(item);
-  else data_->text_tab_pages.insert(pos - tab_pages().begin(), item);
-  return it;
+  tab_pages().insert(pos, *item);
+  if (pos == tab_pages().npos) data_->text_tab_pages.add(item);
+  else data_->text_tab_pages.insert(pos, item);
 }
 
 void tab_control::wm_command_control(message& message) {
