@@ -77,8 +77,8 @@ struct __opaque_xtd_linq_enumerable_collection__ : xtd::collections::generic::ie
   
   xtd::string to_string() const override;
   
-  operator const __xtd_raw_array_data__<type_t>& () const noexcept {return items;}
-  operator __xtd_raw_array_data__<type_t>& () noexcept {return items;}
+  operator const typename __xtd_raw_array_data__<type_t>::base_type& () const noexcept {return items;}
+  operator typename __xtd_raw_array_data__<type_t>::base_type& () noexcept {return items;}
   
 private:
   friend class xtd::linq::enumerable;
