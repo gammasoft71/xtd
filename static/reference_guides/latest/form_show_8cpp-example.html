@@ -127,12 +127,12 @@ $(function(){ initResizable(false); });
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    form1() {</div>
 <div class="line">      client_size({320, 610});</div>
-<div class="line">      controls().push_back(layout_panel);</div>
+<div class="line">      controls().add(layout_panel);</div>
 <div class="line">      padding(5);</div>
 <div class="line">      text(<span class="stringliteral">&quot;Form show example&quot;</span>);</div>
 <div class="line">      </div>
 <div class="line">      layout_panel.dock(dock_style::fill);</div>
-<div class="line">      layout_panel.controls().push_back_range({button_normal, button_modeless, button_top_most, button_modal, button_sheet, button_sheet_modal});</div>
+<div class="line">      layout_panel.controls().add_range({button_normal, button_modeless, button_top_most, button_modal, button_sheet, button_sheet_modal});</div>
 <div class="line">      layout_panel.control_layout_style(button_normal, {size_type::auto_size, <span class="keyword">true</span>});</div>
 <div class="line">      layout_panel.control_layout_style(button_modeless, {size_type::auto_size, <span class="keyword">true</span>});</div>
 <div class="line">      layout_panel.control_layout_style(button_top_most, {size_type::auto_size, <span class="keyword">true</span>});</div>
@@ -146,7 +146,7 @@ $(function(){ initResizable(false); });
 <div class="line">        dialog-&gt;text(<span class="stringliteral">&quot;dialog show normal&quot;</span>);</div>
 <div class="line">        dialog-&gt;size({250, 100});</div>
 <div class="line">        dialog-&gt;show();</div>
-<div class="line">        dialogs.push_back(dialog);</div>
+<div class="line">        dialogs.add(dialog);</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      button_modeless.text(<span class="stringliteral">&quot;Show modeless&quot;</span>);</div>
@@ -155,7 +155,7 @@ $(function(){ initResizable(false); });
 <div class="line">        dialog-&gt;text(<span class="stringliteral">&quot;dialog show modeless&quot;</span>);</div>
 <div class="line">        dialog-&gt;size({250, 100});</div>
 <div class="line">        dialog-&gt;owner(*this).show();</div>
-<div class="line">        dialogs.push_back(dialog);</div>
+<div class="line">        dialogs.add(dialog);</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      button_top_most.text(<span class="stringliteral">&quot;Show top most&quot;</span>);</div>
@@ -164,7 +164,7 @@ $(function(){ initResizable(false); });
 <div class="line">        dialog-&gt;text(<span class="stringliteral">&quot;dialog top most&quot;</span>);</div>
 <div class="line">        dialog-&gt;size({250, 100});</div>
 <div class="line">        dialog-&gt;top_most(<span class="keyword">true</span>).show();</div>
-<div class="line">        dialogs.push_back(dialog);</div>
+<div class="line">        dialogs.add(dialog);</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      button_modal.text(<span class="stringliteral">&quot;Show modal&quot;</span>);</div>
@@ -182,7 +182,7 @@ $(function(){ initResizable(false); });
 <div class="line">          <span class="keywordflow">if</span> (e.key_code() == keys::escape) as&lt;form&amp;&gt;(control).close();</div>
 <div class="line">        };</div>
 <div class="line">        dialog-&gt;show_sheet(*<span class="keyword">this</span>);</div>
-<div class="line">        dialogs.push_back(dialog);</div>
+<div class="line">        dialogs.add(dialog);</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      button_sheet_modal.text(<span class="stringliteral">&quot;Show sheet modal&quot;</span>);</div>
@@ -219,7 +219,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

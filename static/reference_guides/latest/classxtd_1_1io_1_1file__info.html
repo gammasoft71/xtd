@@ -911,7 +911,7 @@ The <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" ti
 <div class="line"><span class="comment">// fileinfoname.exe</span></div>
 <div class="line"><span class="comment">// fileinfoname.pdb</span></div>
 <div class="line"><span class="comment">// newTemp.txt</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:82</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:74</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_ae25575bcef6ad4fe46723839788ff9bd"><div class="ttname"><a href="classxtd_1_1environment.html#ae25575bcef6ad4fe46723839788ff9bd">xtd::environment::current_directory</a></div><div class="ttdeci">static xtd::string current_directory()</div><div class="ttdoc">Gets the fully qualified path of the current working directory.</div></div>
 </div><!-- fragment --> <dl class="section remark"><dt>Remarks</dt><dd>When first called, <a class="el" href="classxtd_1_1io_1_1file__info.html" title="Provides static methods for the creation, copying, deletion, moving, and opening of files,...">xtd::io::file_info</a> calls Refresh and caches information about the file. On subsequent calls, you must call Refresh to get the latest copy of the information. </dd>
 <dd>
@@ -1567,9 +1567,9 @@ This method is a wrapper for the functionality provided by <a class="el" href="c
 <div class="line">  <span class="comment">//</span></div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> write_file_content(<span class="keywordtype">int</span> total_element) {</div>
 <div class="line">    <span class="keyword">auto</span> lines = list&lt;string&gt; {};</div>
-<div class="line">    lines.push_back(<span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; standalone=\&quot;yes\&quot;?&gt;&quot;</span>);</div>
+<div class="line">    lines.add(<span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; standalone=\&quot;yes\&quot;?&gt;&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> index  = 0; index &lt; total_element; ++index)</div>
-<div class="line">      lines.push_back(string::format(<span class="stringliteral">&quot;&lt;MyElement Index=\&quot;{0}\&quot;&gt;\nMyElement at position {0}.&quot;</span>, index));</div>
+<div class="line">      lines.add(string::format(<span class="stringliteral">&quot;&lt;MyElement Index=\&quot;{0}\&quot;&gt;\nMyElement at position {0}.&quot;</span>, index));</div>
 <div class="line">    file::write_all_lines(source_path, lines);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -1848,9 +1848,9 @@ This method does not overwrite the destination file if it already exists. For th
 <div class="line">  <span class="comment">//</span></div>
 <div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> write_file_content(<span class="keywordtype">int</span> total_element) {</div>
 <div class="line">    <span class="keyword">auto</span> lines = list&lt;string&gt; {};</div>
-<div class="line">    lines.push_back(<span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; standalone=\&quot;yes\&quot;?&gt;&quot;</span>);</div>
+<div class="line">    lines.add(<span class="stringliteral">&quot;&lt;?xml version=\&quot;1.0\&quot; standalone=\&quot;yes\&quot;?&gt;&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> index  = 0; index &lt; total_element; ++index)</div>
-<div class="line">      lines.push_back(string::format(<span class="stringliteral">&quot;&lt;MyElement Index=\&quot;{0}\&quot;&gt;\nMyElement at position {0}.&quot;</span>, index));</div>
+<div class="line">      lines.add(string::format(<span class="stringliteral">&quot;&lt;MyElement Index=\&quot;{0}\&quot;&gt;\nMyElement at position {0}.&quot;</span>, index));</div>
 <div class="line">    file::write_all_lines(source_path, lines);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
@@ -2469,7 +2469,7 @@ Pass an empty string ("") to the dest_backup_file_name parameter if you do not w
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

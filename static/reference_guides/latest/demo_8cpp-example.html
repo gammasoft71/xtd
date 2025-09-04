@@ -245,8 +245,8 @@ $(function(){ initResizable(false); });
 <div class="line">  multiline_link_label.location({580, 130});</div>
 <div class="line">  multiline_link_label.parent(tab_page_labels);</div>
 <div class="line">  multiline_link_label.text(<span class="stringliteral">&quot;Multi link label&quot;</span>);</div>
-<div class="line">  multiline_link_label.links().push_back({0, 5});</div>
-<div class="line">  multiline_link_label.links().push_back({11, 5});</div>
+<div class="line">  multiline_link_label.links().add({0, 5});</div>
+<div class="line">  multiline_link_label.links().add({11, 5});</div>
 <div class="line">  </div>
 <div class="line">  link_label lcd_label_label;</div>
 <div class="line">  lcd_label_label.auto_size(<span class="keyword">true</span>);</div>
@@ -698,7 +698,7 @@ $(function(){ initResizable(false); });
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  list_box list_box_items;</div>
-<div class="line">  list_box_items.items().push_back_range({<span class="stringliteral">&quot;Item 1&quot;</span>, <span class="stringliteral">&quot;Item 2&quot;</span>, <span class="stringliteral">&quot;Item 3&quot;</span>, <span class="stringliteral">&quot;Item 4&quot;</span>, <span class="stringliteral">&quot;Item 5&quot;</span>, <span class="stringliteral">&quot;Item 6&quot;</span>, <span class="stringliteral">&quot;Item 7&quot;</span>, <span class="stringliteral">&quot;Item 8&quot;</span>, <span class="stringliteral">&quot;Item 9&quot;</span>, <span class="stringliteral">&quot;Item 10&quot;</span>});</div>
+<div class="line">  list_box_items.items().add_range({<span class="stringliteral">&quot;Item 1&quot;</span>, <span class="stringliteral">&quot;Item 2&quot;</span>, <span class="stringliteral">&quot;Item 3&quot;</span>, <span class="stringliteral">&quot;Item 4&quot;</span>, <span class="stringliteral">&quot;Item 5&quot;</span>, <span class="stringliteral">&quot;Item 6&quot;</span>, <span class="stringliteral">&quot;Item 7&quot;</span>, <span class="stringliteral">&quot;Item 8&quot;</span>, <span class="stringliteral">&quot;Item 9&quot;</span>, <span class="stringliteral">&quot;Item 10&quot;</span>});</div>
 <div class="line">  list_box_items.location({30, 40});</div>
 <div class="line">  list_box_items.parent(tab_page_lists);</div>
 <div class="line">  list_box_items.selected_index(1);</div>
@@ -707,7 +707,7 @@ $(function(){ initResizable(false); });
 <div class="line">  list_box colored_list_box;</div>
 <div class="line">  colored_list_box.back_color(color::blue);</div>
 <div class="line">  colored_list_box.fore_color(color::yellow);</div>
-<div class="line">  colored_list_box.items().push_back_range({<span class="stringliteral">&quot;Item 1&quot;</span>, <span class="stringliteral">&quot;Item 2&quot;</span>, <span class="stringliteral">&quot;Item 3&quot;</span>, <span class="stringliteral">&quot;Item 4&quot;</span>, <span class="stringliteral">&quot;Item 5&quot;</span>, <span class="stringliteral">&quot;Item 6&quot;</span>, <span class="stringliteral">&quot;Item 7&quot;</span>, <span class="stringliteral">&quot;Item 8&quot;</span>, <span class="stringliteral">&quot;Item 9&quot;</span>, <span class="stringliteral">&quot;Item 10&quot;</span>});</div>
+<div class="line">  colored_list_box.items().add_range({<span class="stringliteral">&quot;Item 1&quot;</span>, <span class="stringliteral">&quot;Item 2&quot;</span>, <span class="stringliteral">&quot;Item 3&quot;</span>, <span class="stringliteral">&quot;Item 4&quot;</span>, <span class="stringliteral">&quot;Item 5&quot;</span>, <span class="stringliteral">&quot;Item 6&quot;</span>, <span class="stringliteral">&quot;Item 7&quot;</span>, <span class="stringliteral">&quot;Item 8&quot;</span>, <span class="stringliteral">&quot;Item 9&quot;</span>, <span class="stringliteral">&quot;Item 10&quot;</span>});</div>
 <div class="line">  colored_list_box.location({240, 40});</div>
 <div class="line">  colored_list_box.parent(tab_page_lists);</div>
 <div class="line">  colored_list_box.selected_index(1);</div>
@@ -715,7 +715,7 @@ $(function(){ initResizable(false); });
 <div class="line">  </div>
 <div class="line">  list_box disabled_list_box;</div>
 <div class="line">  disabled_list_box.enabled(<span class="keyword">false</span>);</div>
-<div class="line">  disabled_list_box.items().push_back_range({<span class="stringliteral">&quot;Item 1&quot;</span>, <span class="stringliteral">&quot;Item 2&quot;</span>, <span class="stringliteral">&quot;Item 3&quot;</span>, <span class="stringliteral">&quot;Item 4&quot;</span>, <span class="stringliteral">&quot;Item 5&quot;</span>, <span class="stringliteral">&quot;Item 6&quot;</span>, <span class="stringliteral">&quot;Item 7&quot;</span>, <span class="stringliteral">&quot;Item 8&quot;</span>, <span class="stringliteral">&quot;Item 9&quot;</span>, <span class="stringliteral">&quot;Item 10&quot;</span>});</div>
+<div class="line">  disabled_list_box.items().add_range({<span class="stringliteral">&quot;Item 1&quot;</span>, <span class="stringliteral">&quot;Item 2&quot;</span>, <span class="stringliteral">&quot;Item 3&quot;</span>, <span class="stringliteral">&quot;Item 4&quot;</span>, <span class="stringliteral">&quot;Item 5&quot;</span>, <span class="stringliteral">&quot;Item 6&quot;</span>, <span class="stringliteral">&quot;Item 7&quot;</span>, <span class="stringliteral">&quot;Item 8&quot;</span>, <span class="stringliteral">&quot;Item 9&quot;</span>, <span class="stringliteral">&quot;Item 10&quot;</span>});</div>
 <div class="line">  disabled_list_box.location({450, 40});</div>
 <div class="line">  disabled_list_box.parent(tab_page_lists);</div>
 <div class="line">  disabled_list_box.selected_index(1);</div>
@@ -731,7 +731,7 @@ $(function(){ initResizable(false); });
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  checked_list_box default_checked_list_box;</div>
-<div class="line">  default_checked_list_box.items().push_back_range({{<span class="stringliteral">&quot;Item 1&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 2&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 3&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 4&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 5&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 6&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 7&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 8&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 9&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 10&quot;</span>, <span class="keyword">true</span>}});</div>
+<div class="line">  default_checked_list_box.items().add_range({{<span class="stringliteral">&quot;Item 1&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 2&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 3&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 4&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 5&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 6&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 7&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 8&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 9&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 10&quot;</span>, <span class="keyword">true</span>}});</div>
 <div class="line">  default_checked_list_box.location({30, 380});</div>
 <div class="line">  default_checked_list_box.parent(tab_page_lists);</div>
 <div class="line">  default_checked_list_box.selected_index(2);</div>
@@ -740,7 +740,7 @@ $(function(){ initResizable(false); });
 <div class="line">  checked_list_box colored_checked_list_box;</div>
 <div class="line">  colored_checked_list_box.back_color(color::blue);</div>
 <div class="line">  colored_checked_list_box.fore_color(color::yellow);</div>
-<div class="line">  colored_checked_list_box.items().push_back_range({{<span class="stringliteral">&quot;Item 1&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 2&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 3&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 4&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 5&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 6&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 7&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 8&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 9&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 10&quot;</span>, <span class="keyword">true</span>}});</div>
+<div class="line">  colored_checked_list_box.items().add_range({{<span class="stringliteral">&quot;Item 1&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 2&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 3&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 4&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 5&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 6&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 7&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 8&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 9&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 10&quot;</span>, <span class="keyword">true</span>}});</div>
 <div class="line">  colored_checked_list_box.location({240, 380});</div>
 <div class="line">  colored_checked_list_box.parent(tab_page_lists);</div>
 <div class="line">  colored_checked_list_box.selected_index(2);</div>
@@ -748,7 +748,7 @@ $(function(){ initResizable(false); });
 <div class="line">  </div>
 <div class="line">  checked_list_box disabled_checked_list_box;</div>
 <div class="line">  disabled_checked_list_box.enabled(<span class="keyword">false</span>);</div>
-<div class="line">  disabled_checked_list_box.items().push_back_range({{<span class="stringliteral">&quot;Item 1&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 2&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 3&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 4&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 5&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 6&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 7&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 8&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 9&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 10&quot;</span>, <span class="keyword">true</span>}});</div>
+<div class="line">  disabled_checked_list_box.items().add_range({{<span class="stringliteral">&quot;Item 1&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 2&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 3&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 4&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 5&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 6&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 7&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 8&quot;</span>, <span class="keyword">false</span>}, {<span class="stringliteral">&quot;Item 9&quot;</span>, <span class="keyword">true</span>}, {<span class="stringliteral">&quot;Item 10&quot;</span>, <span class="keyword">true</span>}});</div>
 <div class="line">  disabled_checked_list_box.location({450, 380});</div>
 <div class="line">  disabled_checked_list_box.parent(tab_page_lists);</div>
 <div class="line">  disabled_checked_list_box.selected_index(2);</div>
@@ -764,7 +764,7 @@ $(function(){ initResizable(false); });
 <div class="line">  };</div>
 <div class="line">  </div>
 <div class="line">  combo_box combo_box_drop_down;</div>
-<div class="line">  combo_box_drop_down.items().push_back_range({<span class="stringliteral">&quot;Item 1&quot;</span>, <span class="stringliteral">&quot;Item 2&quot;</span>, <span class="stringliteral">&quot;Item 3&quot;</span>, <span class="stringliteral">&quot;Item 4&quot;</span>, <span class="stringliteral">&quot;Item 5&quot;</span>, <span class="stringliteral">&quot;Item 6&quot;</span>, <span class="stringliteral">&quot;Item 7&quot;</span>, <span class="stringliteral">&quot;Item 8&quot;</span>, <span class="stringliteral">&quot;Item 9&quot;</span>, <span class="stringliteral">&quot;Item 10&quot;</span>});</div>
+<div class="line">  combo_box_drop_down.items().add_range({<span class="stringliteral">&quot;Item 1&quot;</span>, <span class="stringliteral">&quot;Item 2&quot;</span>, <span class="stringliteral">&quot;Item 3&quot;</span>, <span class="stringliteral">&quot;Item 4&quot;</span>, <span class="stringliteral">&quot;Item 5&quot;</span>, <span class="stringliteral">&quot;Item 6&quot;</span>, <span class="stringliteral">&quot;Item 7&quot;</span>, <span class="stringliteral">&quot;Item 8&quot;</span>, <span class="stringliteral">&quot;Item 9&quot;</span>, <span class="stringliteral">&quot;Item 10&quot;</span>});</div>
 <div class="line">  combo_box_drop_down.location({30, 720});</div>
 <div class="line">  combo_box_drop_down.parent(tab_page_lists);</div>
 <div class="line">  combo_box_drop_down.selected_index(2);</div>
@@ -772,7 +772,7 @@ $(function(){ initResizable(false); });
 <div class="line">  </div>
 <div class="line">  combo_box combo_box_drop_down_list;</div>
 <div class="line">  combo_box_drop_down_list.drop_down_style(combo_box_style::drop_down_list);</div>
-<div class="line">  combo_box_drop_down_list.items().push_back_range({<span class="stringliteral">&quot;Item 1&quot;</span>, <span class="stringliteral">&quot;Item 2&quot;</span>, <span class="stringliteral">&quot;Item 3&quot;</span>, <span class="stringliteral">&quot;Item 4&quot;</span>, <span class="stringliteral">&quot;Item 5&quot;</span>, <span class="stringliteral">&quot;Item 6&quot;</span>, <span class="stringliteral">&quot;Item 7&quot;</span>, <span class="stringliteral">&quot;Item 8&quot;</span>, <span class="stringliteral">&quot;Item 9&quot;</span>, <span class="stringliteral">&quot;Item 10&quot;</span>});</div>
+<div class="line">  combo_box_drop_down_list.items().add_range({<span class="stringliteral">&quot;Item 1&quot;</span>, <span class="stringliteral">&quot;Item 2&quot;</span>, <span class="stringliteral">&quot;Item 3&quot;</span>, <span class="stringliteral">&quot;Item 4&quot;</span>, <span class="stringliteral">&quot;Item 5&quot;</span>, <span class="stringliteral">&quot;Item 6&quot;</span>, <span class="stringliteral">&quot;Item 7&quot;</span>, <span class="stringliteral">&quot;Item 8&quot;</span>, <span class="stringliteral">&quot;Item 9&quot;</span>, <span class="stringliteral">&quot;Item 10&quot;</span>});</div>
 <div class="line">  combo_box_drop_down_list.location({240, 720});</div>
 <div class="line">  combo_box_drop_down_list.parent(tab_page_lists);</div>
 <div class="line">  combo_box_drop_down_list.selected_index(2);</div>
@@ -780,7 +780,7 @@ $(function(){ initResizable(false); });
 <div class="line">  </div>
 <div class="line">  combo_box combo_box_simple;</div>
 <div class="line">  combo_box_simple.drop_down_style(combo_box_style::simple);</div>
-<div class="line">  combo_box_simple.items().push_back_range({<span class="stringliteral">&quot;Item 1&quot;</span>, <span class="stringliteral">&quot;Item 2&quot;</span>, <span class="stringliteral">&quot;Item 3&quot;</span>, <span class="stringliteral">&quot;Item 4&quot;</span>, <span class="stringliteral">&quot;Item 5&quot;</span>, <span class="stringliteral">&quot;Item 6&quot;</span>, <span class="stringliteral">&quot;Item 7&quot;</span>, <span class="stringliteral">&quot;Item 8&quot;</span>, <span class="stringliteral">&quot;Item 9&quot;</span>, <span class="stringliteral">&quot;Item 10&quot;</span>});</div>
+<div class="line">  combo_box_simple.items().add_range({<span class="stringliteral">&quot;Item 1&quot;</span>, <span class="stringliteral">&quot;Item 2&quot;</span>, <span class="stringliteral">&quot;Item 3&quot;</span>, <span class="stringliteral">&quot;Item 4&quot;</span>, <span class="stringliteral">&quot;Item 5&quot;</span>, <span class="stringliteral">&quot;Item 6&quot;</span>, <span class="stringliteral">&quot;Item 7&quot;</span>, <span class="stringliteral">&quot;Item 8&quot;</span>, <span class="stringliteral">&quot;Item 9&quot;</span>, <span class="stringliteral">&quot;Item 10&quot;</span>});</div>
 <div class="line">  combo_box_simple.location({450, 720});</div>
 <div class="line">  combo_box_simple.parent(tab_page_lists);</div>
 <div class="line">  combo_box_simple.selected_index(2);</div>
@@ -941,7 +941,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

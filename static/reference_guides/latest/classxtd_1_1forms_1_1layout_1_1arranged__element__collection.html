@@ -208,6 +208,9 @@ Classes</h2></td></tr>
 <tr class="memitem:aaf012e6e18d5ae1a26aba5cf68b8bec6" id="r_aaf012e6e18d5ae1a26aba5cf68b8bec6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5e2a5b80a9156ffaebe4e74ecff45f5a">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf012e6e18d5ae1a26aba5cf68b8bec6">back</a> () const</td></tr>
 <tr class="memdesc:aaf012e6e18d5ae1a26aba5cf68b8bec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access the last element.  <br /></td></tr>
 <tr class="separator:aaf012e6e18d5ae1a26aba5cf68b8bec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afca176420585fe30f00992deb9e6d046" id="r_afca176420585fe30f00992deb9e6d046"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4b706c92845fbea3a3aa03db85e2f1e0">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afca176420585fe30f00992deb9e6d046">count</a> () const noexcept</td></tr>
+<tr class="memdesc:afca176420585fe30f00992deb9e6d046"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements.  <br /></td></tr>
+<tr class="separator:afca176420585fe30f00992deb9e6d046"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a803b014ac7f063898262784302401df2" id="r_a803b014ac7f063898262784302401df2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ac583e335292983f536a0f34b45052e59">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a803b014ac7f063898262784302401df2">data</a> ()</td></tr>
 <tr class="memdesc:a803b014ac7f063898262784302401df2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Direct access to the underlying array.  <br /></td></tr>
 <tr class="separator:a803b014ac7f063898262784302401df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -265,15 +268,29 @@ Classes</h2></td></tr>
 <tr class="memitem:a2d628678f8c5b3c2259abd9cb274a846" id="r_a2d628678f8c5b3c2259abd9cb274a846"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a4b706c92845fbea3a3aa03db85e2f1e0">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d628678f8c5b3c2259abd9cb274a846">capacity</a> () const noexcept</td></tr>
 <tr class="memdesc:a2d628678f8c5b3c2259abd9cb274a846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements that can be held in currently allocated storage.  <br /></td></tr>
 <tr class="separator:a2d628678f8c5b3c2259abd9cb274a846"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81e50efa9036f4e133dace88c059db37" id="r_a81e50efa9036f4e133dace88c059db37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81e50efa9036f4e133dace88c059db37">shrink_to_fit</a> ()</td></tr>
-<tr class="memdesc:a81e50efa9036f4e133dace88c059db37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduces memory usage by freeing unused memory.  <br /></td></tr>
-<tr class="separator:a81e50efa9036f4e133dace88c059db37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa9b28779bd257c68f765189b4d3261f" id="r_afa9b28779bd257c68f765189b4d3261f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa9b28779bd257c68f765189b4d3261f">sorted</a> () const noexcept</td></tr>
-<tr class="memdesc:afa9b28779bd257c68f765189b4d3261f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the container is sorted.  <br /></td></tr>
-<tr class="separator:afa9b28779bd257c68f765189b4d3261f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ac52047bbc9f33fb7de77ed086a63b8" id="r_a3ac52047bbc9f33fb7de77ed086a63b8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ac52047bbc9f33fb7de77ed086a63b8">sorted</a> (bool value)</td></tr>
-<tr class="memdesc:a3ac52047bbc9f33fb7de77ed086a63b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the container is sorted.  <br /></td></tr>
-<tr class="separator:a3ac52047bbc9f33fb7de77ed086a63b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cfc177c3556a486b1895e9f27667e1b" id="r_a9cfc177c3556a486b1895e9f27667e1b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cfc177c3556a486b1895e9f27667e1b">add</a> (const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;item)</td></tr>
+<tr class="memdesc:a9cfc177c3556a486b1895e9f27667e1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an element to the end.  <br /></td></tr>
+<tr class="separator:a9cfc177c3556a486b1895e9f27667e1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0d741c2a09b6f1fb749808e338aa1d5" id="r_aa0d741c2a09b6f1fb749808e338aa1d5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0d741c2a09b6f1fb749808e338aa1d5">add</a> (<a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;&amp;item)</td></tr>
+<tr class="memdesc:aa0d741c2a09b6f1fb749808e338aa1d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an element to the end.  <br /></td></tr>
+<tr class="separator:aa0d741c2a09b6f1fb749808e338aa1d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae9ba3688cf3121452e607ccab7eba0d" id="r_aae9ba3688cf3121452e607ccab7eba0d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae9ba3688cf3121452e607ccab7eba0d">add_range</a> (const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a> &amp;collection)</td></tr>
+<tr class="memdesc:aae9ba3688cf3121452e607ccab7eba0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds elements to the end.  <br /></td></tr>
+<tr class="separator:aae9ba3688cf3121452e607ccab7eba0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a398b8bdeaf053e31158404362089835e" id="r_a398b8bdeaf053e31158404362089835e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a398b8bdeaf053e31158404362089835e">add_range</a> (const std::vector&lt; <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &gt; &amp;collection)</td></tr>
+<tr class="memdesc:a398b8bdeaf053e31158404362089835e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds elements to the end.  <br /></td></tr>
+<tr class="separator:a398b8bdeaf053e31158404362089835e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32c873560340b73ce76e8109afca26d0" id="r_a32c873560340b73ce76e8109afca26d0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32c873560340b73ce76e8109afca26d0">add_range</a> (const std::initializer_list&lt; <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &gt; &amp;collection)</td></tr>
+<tr class="memdesc:a32c873560340b73ce76e8109afca26d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds elements to the end.  <br /></td></tr>
+<tr class="separator:a32c873560340b73ce76e8109afca26d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47fcc1c4b63e58c45ef50f8d0d30f371" id="r_a47fcc1c4b63e58c45ef50f8d0d30f371"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
+<tr class="memitem:a47fcc1c4b63e58c45ef50f8d0d30f371"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a47fcc1c4b63e58c45ef50f8d0d30f371">add_range</a> (collection_t &amp;&amp;collection)</td></tr>
+<tr class="memdesc:a47fcc1c4b63e58c45ef50f8d0d30f371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds elements to the end.  <br /></td></tr>
+<tr class="separator:a47fcc1c4b63e58c45ef50f8d0d30f371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0e64a4bdecaf7f851bb67f5d54eca6e" id="r_af0e64a4bdecaf7f851bb67f5d54eca6e"><td class="memTemplParams" colspan="2">template&lt;class collection_t&gt; </td></tr>
+<tr class="memitem:af0e64a4bdecaf7f851bb67f5d54eca6e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af0e64a4bdecaf7f851bb67f5d54eca6e">add_range</a> (const collection_t &amp;collection)</td></tr>
+<tr class="memdesc:af0e64a4bdecaf7f851bb67f5d54eca6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds elements to the end.  <br /></td></tr>
+<tr class="separator:af0e64a4bdecaf7f851bb67f5d54eca6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcb7abbec27570e8a2258f7dfc9156ed" id="r_adcb7abbec27570e8a2258f7dfc9156ed"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcb7abbec27570e8a2258f7dfc9156ed">clear</a> () noexcept</td></tr>
 <tr class="memdesc:adcb7abbec27570e8a2258f7dfc9156ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">clears the contents.  <br /></td></tr>
 <tr class="separator:adcb7abbec27570e8a2258f7dfc9156ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -283,6 +300,9 @@ Classes</h2></td></tr>
 <tr class="memitem:a00c8b152c273c67b626d99f9f7df3e04" id="r_a00c8b152c273c67b626d99f9f7df3e04"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a54a7c85a5ebca902f6d7d390089c4894">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00c8b152c273c67b626d99f9f7df3e04">insert</a> (<a class="el" href="#a9c5c1afad003c5dea3a03dc7ff425cc4">const_iterator</a> pos, <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;&amp;value)</td></tr>
 <tr class="memdesc:a00c8b152c273c67b626d99f9f7df3e04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts specified element at specified position.  <br /></td></tr>
 <tr class="separator:a00c8b152c273c67b626d99f9f7df3e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ea6b12fbe2184db4f3698731c7acc56" id="r_a9ea6b12fbe2184db4f3698731c7acc56"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ea6b12fbe2184db4f3698731c7acc56">insert</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index, const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;value)</td></tr>
+<tr class="memdesc:a9ea6b12fbe2184db4f3698731c7acc56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts specified element at specified index.  <br /></td></tr>
+<tr class="separator:a9ea6b12fbe2184db4f3698731c7acc56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6bb2c1b046656f595eec01f724f5d425" id="r_a6bb2c1b046656f595eec01f724f5d425"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bb2c1b046656f595eec01f724f5d425">insert_at</a> (size_t index, const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;value)</td></tr>
 <tr class="memdesc:a6bb2c1b046656f595eec01f724f5d425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts specified element at specified index.  <br /></td></tr>
 <tr class="separator:a6bb2c1b046656f595eec01f724f5d425"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -318,6 +338,9 @@ Classes</h2></td></tr>
 <tr class="memitem:ab672be2665b8219a8ffc4a56e4a6a8e0" id="r_ab672be2665b8219a8ffc4a56e4a6a8e0"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab672be2665b8219a8ffc4a56e4a6a8e0">push_back</a> (<a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;&amp;item)</td></tr>
 <tr class="memdesc:ab672be2665b8219a8ffc4a56e4a6a8e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an element to the end.  <br /></td></tr>
 <tr class="separator:ab672be2665b8219a8ffc4a56e4a6a8e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28988f5aa89b6530817cca24fb08db19" id="r_a28988f5aa89b6530817cca24fb08db19"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28988f5aa89b6530817cca24fb08db19">sort</a> ()</td></tr>
+<tr class="memdesc:a28988f5aa89b6530817cca24fb08db19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the content.  <br /></td></tr>
+<tr class="separator:a28988f5aa89b6530817cca24fb08db19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a918fcde217e37dd46fa478b3052817f6" id="r_a918fcde217e37dd46fa478b3052817f6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a918fcde217e37dd46fa478b3052817f6">push_back_range</a> (const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a> &amp;collection)</td></tr>
 <tr class="memdesc:a918fcde217e37dd46fa478b3052817f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds elements to the end.  <br /></td></tr>
 <tr class="separator:a918fcde217e37dd46fa478b3052817f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -335,9 +358,21 @@ Classes</h2></td></tr>
 <tr class="memitem:ad5d89b984a7196d272984539cbe4db58"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad5d89b984a7196d272984539cbe4db58">push_back_range</a> (iterator_t <a class="el" href="#a0d2436f425b5b04106bc6e06239e37c1">begin</a>, iterator_t <a class="el" href="#a11f7972b7e39be350711e87311408e5a">end</a>)</td></tr>
 <tr class="memdesc:ad5d89b984a7196d272984539cbe4db58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds elements to the end.  <br /></td></tr>
 <tr class="separator:ad5d89b984a7196d272984539cbe4db58"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28988f5aa89b6530817cca24fb08db19" id="r_a28988f5aa89b6530817cca24fb08db19"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28988f5aa89b6530817cca24fb08db19">sort</a> ()</td></tr>
-<tr class="memdesc:a28988f5aa89b6530817cca24fb08db19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the content.  <br /></td></tr>
-<tr class="separator:a28988f5aa89b6530817cca24fb08db19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ab4073effb7370203ef84039510a174" id="r_a2ab4073effb7370203ef84039510a174"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ab4073effb7370203ef84039510a174">remove</a> (const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;item)</td></tr>
+<tr class="memdesc:a2ab4073effb7370203ef84039510a174"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an element.  <br /></td></tr>
+<tr class="separator:a2ab4073effb7370203ef84039510a174"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cd0bf57cdb4896d06865a71c647fcb6" id="r_a7cd0bf57cdb4896d06865a71c647fcb6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7cd0bf57cdb4896d06865a71c647fcb6">remove_at</a> (size_t index)</td></tr>
+<tr class="memdesc:a7cd0bf57cdb4896d06865a71c647fcb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases element at specified index.  <br /></td></tr>
+<tr class="separator:a7cd0bf57cdb4896d06865a71c647fcb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81e50efa9036f4e133dace88c059db37" id="r_a81e50efa9036f4e133dace88c059db37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81e50efa9036f4e133dace88c059db37">shrink_to_fit</a> ()</td></tr>
+<tr class="memdesc:a81e50efa9036f4e133dace88c059db37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduces memory usage by freeing unused memory.  <br /></td></tr>
+<tr class="separator:a81e50efa9036f4e133dace88c059db37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa9b28779bd257c68f765189b4d3261f" id="r_afa9b28779bd257c68f765189b4d3261f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa9b28779bd257c68f765189b4d3261f">sorted</a> () const noexcept</td></tr>
+<tr class="memdesc:afa9b28779bd257c68f765189b4d3261f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the container is sorted.  <br /></td></tr>
+<tr class="separator:afa9b28779bd257c68f765189b4d3261f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ac52047bbc9f33fb7de77ed086a63b8" id="r_a3ac52047bbc9f33fb7de77ed086a63b8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ac52047bbc9f33fb7de77ed086a63b8">sorted</a> (bool value)</td></tr>
+<tr class="memdesc:a3ac52047bbc9f33fb7de77ed086a63b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the container is sorted.  <br /></td></tr>
+<tr class="separator:a3ac52047bbc9f33fb7de77ed086a63b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d7e3cde1a97b03e109a4851b770b19a" id="r_a8d7e3cde1a97b03e109a4851b770b19a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d7e3cde1a97b03e109a4851b770b19a">to_array</a> () const noexcept</td></tr>
 <tr class="memdesc:a8d7e3cde1a97b03e109a4851b770b19a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an array with the elements of the container.  <br /></td></tr>
 <tr class="separator:a8d7e3cde1a97b03e109a4851b770b19a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -898,6 +933,36 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 
 </div>
 </div>
+<a id="afca176420585fe30f00992deb9e6d046" name="afca176420585fe30f00992deb9e6d046"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afca176420585fe30f00992deb9e6d046">&#9670;&#160;</a></span>count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a4b706c92845fbea3a3aa03db85e2f1e0">size_type</a> <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::count </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of elements. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of elements. </dd></dl>
+
+</div>
+</div>
 <a id="a803b014ac7f063898262784302401df2" name="a803b014ac7f063898262784302401df2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a803b014ac7f063898262784302401df2">&#9670;&#160;</a></span>data() <span class="overload">[1/2]</span></h2>
 
@@ -1375,6 +1440,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 
 <p>Returns the number of elements. </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of elements. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000203">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#afca176420585fe30f00992deb9e6d046" title="Returns the number of elements.">xtd::forms::layout::arranged_element_collection::count</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -1464,6 +1530,1111 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 
 <p>Returns the number of elements that can be held in currently allocated storage. </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of elements that can be held in currently allocated storage. </dd></dl>
+
+</div>
+</div>
+<a id="a9cfc177c3556a486b1895e9f27667e1b" name="a9cfc177c3556a486b1895e9f27667e1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cfc177c3556a486b1895e9f27667e1b">&#9670;&#160;</a></span>add() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::add </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds an element to the end. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>The element to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html#a9e6ab309a51790fdd82d1e509996a8e4">xtd::forms::control::control_collection</a>.</p>
+
+</div>
+</div>
+<a id="aa0d741c2a09b6f1fb749808e338aa1d5" name="aa0d741c2a09b6f1fb749808e338aa1d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0d741c2a09b6f1fb749808e338aa1d5">&#9670;&#160;</a></span>add() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::add </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds an element to the end. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>The element to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aae9ba3688cf3121452e607ccab7eba0d" name="aae9ba3688cf3121452e607ccab7eba0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae9ba3688cf3121452e607ccab7eba0d">&#9670;&#160;</a></span>add_range() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::add_range </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a>&lt; type_t, sorter_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds elements to the end. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>The elements to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a398b8bdeaf053e31158404362089835e" name="a398b8bdeaf053e31158404362089835e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a398b8bdeaf053e31158404362089835e">&#9670;&#160;</a></span>add_range() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::add_range </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds elements to the end. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>The elements to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a32c873560340b73ce76e8109afca26d0" name="a32c873560340b73ce76e8109afca26d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32c873560340b73ce76e8109afca26d0">&#9670;&#160;</a></span>add_range() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::add_range </td>
+          <td>(</td>
+          <td class="paramtype">const std::initializer_list&lt; <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds elements to the end. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>The elements to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a47fcc1c4b63e58c45ef50f8d0d30f371" name="a47fcc1c4b63e58c45ef50f8d0d30f371"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47fcc1c4b63e58c45ef50f8d0d30f371">&#9670;&#160;</a></span>add_range() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<div class="memtemplate">
+template&lt;class collection_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::add_range </td>
+          <td>(</td>
+          <td class="paramtype">collection_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds elements to the end. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>The elements to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af0e64a4bdecaf7f851bb67f5d54eca6e" name="af0e64a4bdecaf7f851bb67f5d54eca6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0e64a4bdecaf7f851bb67f5d54eca6e">&#9670;&#160;</a></span>add_range() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<div class="memtemplate">
+template&lt;class collection_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::add_range </td>
+          <td>(</td>
+          <td class="paramtype">const collection_t &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds elements to the end. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>The elements to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="adcb7abbec27570e8a2258f7dfc9156ed" name="adcb7abbec27570e8a2258f7dfc9156ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcb7abbec27570e8a2258f7dfc9156ed">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::clear </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>clears the contents. </p>
+
+</div>
+</div>
+<a id="a5810bcb809d23450f8b8f3b5f9c5326b" name="a5810bcb809d23450f8b8f3b5f9c5326b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5810bcb809d23450f8b8f3b5f9c5326b">&#9670;&#160;</a></span>insert() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="#a54a7c85a5ebca902f6d7d390089c4894">iterator</a> <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a9c5c1afad003c5dea3a03dc7ff425cc4">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inserts specified element at specified position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>The iterator before which the content will be inserted. pos may be the <a class="el" href="#a11f7972b7e39be350711e87311408e5a" title="Returns an iterator to the end.">arranged_element_collection::end</a> iterator. </td></tr>
+    <tr><td class="paramname">value</td><td>The element to insert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000204">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a5810bcb809d23450f8b8f3b5f9c5326b" title="Inserts specified element at specified position.">xtd::forms::layout::arranged_element_collection::insert</a> - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="a00c8b152c273c67b626d99f9f7df3e04" name="a00c8b152c273c67b626d99f9f7df3e04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00c8b152c273c67b626d99f9f7df3e04">&#9670;&#160;</a></span>insert() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="#a54a7c85a5ebca902f6d7d390089c4894">iterator</a> <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a9c5c1afad003c5dea3a03dc7ff425cc4">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inserts specified element at specified position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>The iterator before which the content will be inserted. pos may be the <a class="el" href="#a11f7972b7e39be350711e87311408e5a" title="Returns an iterator to the end.">arranged_element_collection::end</a> iterator. </td></tr>
+    <tr><td class="paramname">value</td><td>The element to insert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000205">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a5810bcb809d23450f8b8f3b5f9c5326b" title="Inserts specified element at specified position.">xtd::forms::layout::arranged_element_collection::insert</a> - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="a9ea6b12fbe2184db4f3698731c7acc56" name="a9ea6b12fbe2184db4f3698731c7acc56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ea6b12fbe2184db4f3698731c7acc56">&#9670;&#160;</a></span>insert() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inserts specified element at specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index before which the content will be inserted. </td></tr>
+    <tr><td class="paramname">value</td><td>The element to insert. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html#a69d2747286bf4e240f81de0d44de1e71">xtd::forms::control::control_collection</a>.</p>
+
+</div>
+</div>
+<a id="a6bb2c1b046656f595eec01f724f5d425" name="a6bb2c1b046656f595eec01f724f5d425"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bb2c1b046656f595eec01f724f5d425">&#9670;&#160;</a></span>insert_at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::insert_at </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inserts specified element at specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The index before which the content will be inserted. </td></tr>
+    <tr><td class="paramname">value</td><td>The element to insert. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000206">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a5810bcb809d23450f8b8f3b5f9c5326b" title="Inserts specified element at specified position.">xtd::forms::layout::arranged_element_collection::insert</a> - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="abc858aed340e979de8a397cf1a8bd654" name="abc858aed340e979de8a397cf1a8bd654"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc858aed340e979de8a397cf1a8bd654">&#9670;&#160;</a></span>emplace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<div class="memtemplate">
+template&lt;class ... args_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::emplace </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a9c5c1afad003c5dea3a03dc7ff425cc4">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">args_t &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inserts specified element at specified position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>The iterator before which the content will be inserted. pos may be the <a class="el" href="#a11f7972b7e39be350711e87311408e5a" title="Returns an iterator to the end.">arranged_element_collection::end</a> iterator. </td></tr>
+    <tr><td class="paramname">args</td><td>The arguments to forward to the constructor of the element </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000207">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a5810bcb809d23450f8b8f3b5f9c5326b" title="Inserts specified element at specified position.">xtd::forms::layout::arranged_element_collection::insert</a> - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="a1223925eaa6f21ed5a4c0d356979af34" name="a1223925eaa6f21ed5a4c0d356979af34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1223925eaa6f21ed5a4c0d356979af34">&#9670;&#160;</a></span>emplace_back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<div class="memtemplate">
+template&lt;class ... args_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::emplace_back </td>
+          <td>(</td>
+          <td class="paramtype">args_t &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds an element to the end. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">args</td><td>The arguments to forward to the constructor of the element </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000208">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a9cfc177c3556a486b1895e9f27667e1b" title="Adds an element to the end.">xtd::forms::layout::arranged_element_collection::add</a> - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="a82c7468b5d63e29a21e0b3a626710039" name="a82c7468b5d63e29a21e0b3a626710039"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82c7468b5d63e29a21e0b3a626710039">&#9670;&#160;</a></span>erase() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="#a54a7c85a5ebca902f6d7d390089c4894">iterator</a> <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::erase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a54a7c85a5ebca902f6d7d390089c4894">iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Erases element at specified position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>The iterator which the content will be erased. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000209">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7cd0bf57cdb4896d06865a71c647fcb6" title="Erases element at specified index.">xtd::forms::layout::arranged_element_collection::remove_at</a> - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="a5d2abfd75b5a0d6ada2ed764551fd1b3" name="a5d2abfd75b5a0d6ada2ed764551fd1b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d2abfd75b5a0d6ada2ed764551fd1b3">&#9670;&#160;</a></span>erase() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="#a54a7c85a5ebca902f6d7d390089c4894">iterator</a> <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::erase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a9c5c1afad003c5dea3a03dc7ff425cc4">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Erases element at specified position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>The iterator which the content will be erased. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000210">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7cd0bf57cdb4896d06865a71c647fcb6" title="Erases element at specified index.">xtd::forms::layout::arranged_element_collection::remove_at</a> - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="ae205ea4327ed62e00c7bf7b25064e44a" name="ae205ea4327ed62e00c7bf7b25064e44a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae205ea4327ed62e00c7bf7b25064e44a">&#9670;&#160;</a></span>erase() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="#a54a7c85a5ebca902f6d7d390089c4894">iterator</a> <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::erase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a54a7c85a5ebca902f6d7d390089c4894">iterator</a></td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a54a7c85a5ebca902f6d7d390089c4894">iterator</a></td>          <td class="paramname"><span class="paramname"><em>last</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Erases elements at specified range. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>The first iterator range which the content will be erased. </td></tr>
+    <tr><td class="paramname">first</td><td>The last iterator range which the content will be erased. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000211">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7cd0bf57cdb4896d06865a71c647fcb6" title="Erases element at specified index.">xtd::forms::layout::arranged_element_collection::remove_at</a> - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="ab81deca719fdf8ba30b5d0270254e252" name="ab81deca719fdf8ba30b5d0270254e252"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab81deca719fdf8ba30b5d0270254e252">&#9670;&#160;</a></span>erase() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="#a54a7c85a5ebca902f6d7d390089c4894">iterator</a> <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::erase </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a9c5c1afad003c5dea3a03dc7ff425cc4">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a9c5c1afad003c5dea3a03dc7ff425cc4">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>last</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Erases elements at specified range. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>The first iterator range which the content will be erased. </td></tr>
+    <tr><td class="paramname">first</td><td>The last iterator range which the content will be erased. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000212">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7cd0bf57cdb4896d06865a71c647fcb6" title="Erases element at specified index.">xtd::forms::layout::arranged_element_collection::remove_at</a> - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="a0021e72e220f79b97178d3f18ba5f5cc" name="a0021e72e220f79b97178d3f18ba5f5cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0021e72e220f79b97178d3f18ba5f5cc">&#9670;&#160;</a></span>erase_at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::erase_at </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Erases element at specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>The index which the content will be erased. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000213">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7cd0bf57cdb4896d06865a71c647fcb6" title="Erases element at specified index.">xtd::forms::layout::arranged_element_collection::remove_at</a> - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="a2e332a862334ddc845bd1c08ed290bb2" name="a2e332a862334ddc845bd1c08ed290bb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e332a862334ddc845bd1c08ed290bb2">&#9670;&#160;</a></span>pop_back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::pop_back </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes the last element of the container. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000214">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a2ab4073effb7370203ef84039510a174" title="Removes an element.">xtd::forms::layout::arranged_element_collection::remove</a>(<a class="el" href="#afca176420585fe30f00992deb9e6d046" title="Returns the number of elements.">count()</a> - 1) - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="a8c7d97b53051103f818d43f62a8a6bed" name="a8c7d97b53051103f818d43f62a8a6bed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c7d97b53051103f818d43f62a8a6bed">&#9670;&#160;</a></span>push_back() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::push_back </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds an element to the end. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>The element to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000215">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a9cfc177c3556a486b1895e9f27667e1b" title="Adds an element to the end.">xtd::forms::layout::arranged_element_collection::add</a> - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="ab672be2665b8219a8ffc4a56e4a6a8e0" name="ab672be2665b8219a8ffc4a56e4a6a8e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab672be2665b8219a8ffc4a56e4a6a8e0">&#9670;&#160;</a></span>push_back() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::push_back </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds an element to the end. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>The element to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000216">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a9cfc177c3556a486b1895e9f27667e1b" title="Adds an element to the end.">xtd::forms::layout::arranged_element_collection::add</a> - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="a28988f5aa89b6530817cca24fb08db19" name="a28988f5aa89b6530817cca24fb08db19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28988f5aa89b6530817cca24fb08db19">&#9670;&#160;</a></span>sort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a> &amp; <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::sort </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sorts the content. </p>
+
+</div>
+</div>
+<a id="a918fcde217e37dd46fa478b3052817f6" name="a918fcde217e37dd46fa478b3052817f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a918fcde217e37dd46fa478b3052817f6">&#9670;&#160;</a></span>push_back_range() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::push_back_range </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a>&lt; type_t, sorter_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds elements to the end. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>The elements to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000217">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#aae9ba3688cf3121452e607ccab7eba0d" title="Adds elements to the end.">xtd::forms::layout::arranged_element_collection::add_range</a> - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="a786514bc2918174e6c8da12825b29b31" name="a786514bc2918174e6c8da12825b29b31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a786514bc2918174e6c8da12825b29b31">&#9670;&#160;</a></span>push_back_range() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::push_back_range </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds elements to the end. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>The elements to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000218">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#aae9ba3688cf3121452e607ccab7eba0d" title="Adds elements to the end.">xtd::forms::layout::arranged_element_collection::add_range</a> - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="ad6e3047e40e16e4b953b96e48d05b2e7" name="ad6e3047e40e16e4b953b96e48d05b2e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6e3047e40e16e4b953b96e48d05b2e7">&#9670;&#160;</a></span>push_back_range() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::push_back_range </td>
+          <td>(</td>
+          <td class="paramtype">const std::initializer_list&lt; <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds elements to the end. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>The elements to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000219">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#aae9ba3688cf3121452e607ccab7eba0d" title="Adds elements to the end.">xtd::forms::layout::arranged_element_collection::add_range</a> - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="a630840911d14800cb1bf5791ae4ced21" name="a630840911d14800cb1bf5791ae4ced21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a630840911d14800cb1bf5791ae4ced21">&#9670;&#160;</a></span>push_back_range() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<div class="memtemplate">
+template&lt;class collection_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::push_back_range </td>
+          <td>(</td>
+          <td class="paramtype">collection_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds elements to the end. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>The elements to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000220">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#aae9ba3688cf3121452e607ccab7eba0d" title="Adds elements to the end.">xtd::forms::layout::arranged_element_collection::add_range</a> - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="ad5d89b984a7196d272984539cbe4db58" name="ad5d89b984a7196d272984539cbe4db58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5d89b984a7196d272984539cbe4db58">&#9670;&#160;</a></span>push_back_range() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<div class="memtemplate">
+template&lt;class iterator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::push_back_range </td>
+          <td>(</td>
+          <td class="paramtype">iterator_t</td>          <td class="paramname"><span class="paramname"><em>begin</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">iterator_t</td>          <td class="paramname"><span class="paramname"><em>end</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds elements to the end. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>The elements to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000221">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#aae9ba3688cf3121452e607ccab7eba0d" title="Adds elements to the end.">xtd::forms::layout::arranged_element_collection::add_range</a> - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="a2ab4073effb7370203ef84039510a174" name="a2ab4073effb7370203ef84039510a174"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ab4073effb7370203ef84039510a174">&#9670;&#160;</a></span>remove()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::remove </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes an element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>The element to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7cd0bf57cdb4896d06865a71c647fcb6" name="a7cd0bf57cdb4896d06865a71c647fcb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cd0bf57cdb4896d06865a71c647fcb6">&#9670;&#160;</a></span>remove_at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::remove_at </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Erases element at specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pos</td><td>The index which the content will be erased. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1561,736 +2732,6 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 
 </div>
 </div>
-<a id="adcb7abbec27570e8a2258f7dfc9156ed" name="adcb7abbec27570e8a2258f7dfc9156ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adcb7abbec27570e8a2258f7dfc9156ed">&#9670;&#160;</a></span>clear()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::clear </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>clears the contents. </p>
-
-</div>
-</div>
-<a id="a5810bcb809d23450f8b8f3b5f9c5326b" name="a5810bcb809d23450f8b8f3b5f9c5326b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5810bcb809d23450f8b8f3b5f9c5326b">&#9670;&#160;</a></span>insert() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="#a54a7c85a5ebca902f6d7d390089c4894">iterator</a> <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::insert </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a9c5c1afad003c5dea3a03dc7ff425cc4">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Inserts specified element at specified position. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pos</td><td>The iterator before which the content will be inserted. pos may be the <a class="el" href="#a11f7972b7e39be350711e87311408e5a" title="Returns an iterator to the end.">arranged_element_collection::end</a> iterator. </td></tr>
-    <tr><td class="paramname">value</td><td>The element to insert. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented in <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html#a7f238cbf434dcdd8ca7183f466709e87">xtd::forms::control::control_collection</a>.</p>
-
-</div>
-</div>
-<a id="a00c8b152c273c67b626d99f9f7df3e04" name="a00c8b152c273c67b626d99f9f7df3e04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00c8b152c273c67b626d99f9f7df3e04">&#9670;&#160;</a></span>insert() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="#a54a7c85a5ebca902f6d7d390089c4894">iterator</a> <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::insert </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a9c5c1afad003c5dea3a03dc7ff425cc4">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Inserts specified element at specified position. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pos</td><td>The iterator before which the content will be inserted. pos may be the <a class="el" href="#a11f7972b7e39be350711e87311408e5a" title="Returns an iterator to the end.">arranged_element_collection::end</a> iterator. </td></tr>
-    <tr><td class="paramname">value</td><td>The element to insert. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a6bb2c1b046656f595eec01f724f5d425" name="a6bb2c1b046656f595eec01f724f5d425"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bb2c1b046656f595eec01f724f5d425">&#9670;&#160;</a></span>insert_at()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::insert_at </td>
-          <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Inserts specified element at specified index. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">index</td><td>The index before which the content will be inserted. </td></tr>
-    <tr><td class="paramname">value</td><td>The element to insert. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented in <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html#ae6dd83fd974b8408ec599c087a008661">xtd::forms::control::control_collection</a>.</p>
-
-</div>
-</div>
-<a id="abc858aed340e979de8a397cf1a8bd654" name="abc858aed340e979de8a397cf1a8bd654"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc858aed340e979de8a397cf1a8bd654">&#9670;&#160;</a></span>emplace()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<div class="memtemplate">
-template&lt;class ... args_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::emplace </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a9c5c1afad003c5dea3a03dc7ff425cc4">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">args_t &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Inserts specified element at specified position. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pos</td><td>The iterator before which the content will be inserted. pos may be the <a class="el" href="#a11f7972b7e39be350711e87311408e5a" title="Returns an iterator to the end.">arranged_element_collection::end</a> iterator. </td></tr>
-    <tr><td class="paramname">args</td><td>The arguments to forward to the constructor of the element </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a1223925eaa6f21ed5a4c0d356979af34" name="a1223925eaa6f21ed5a4c0d356979af34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1223925eaa6f21ed5a4c0d356979af34">&#9670;&#160;</a></span>emplace_back()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<div class="memtemplate">
-template&lt;class ... args_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::emplace_back </td>
-          <td>(</td>
-          <td class="paramtype">args_t &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Adds an element to the end. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">args</td><td>The arguments to forward to the constructor of the element </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a82c7468b5d63e29a21e0b3a626710039" name="a82c7468b5d63e29a21e0b3a626710039"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82c7468b5d63e29a21e0b3a626710039">&#9670;&#160;</a></span>erase() <span class="overload">[1/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="#a54a7c85a5ebca902f6d7d390089c4894">iterator</a> <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::erase </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a54a7c85a5ebca902f6d7d390089c4894">iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Erases element at specified position. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pos</td><td>The iterator which the content will be erased. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a5d2abfd75b5a0d6ada2ed764551fd1b3" name="a5d2abfd75b5a0d6ada2ed764551fd1b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d2abfd75b5a0d6ada2ed764551fd1b3">&#9670;&#160;</a></span>erase() <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="#a54a7c85a5ebca902f6d7d390089c4894">iterator</a> <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::erase </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a9c5c1afad003c5dea3a03dc7ff425cc4">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Erases element at specified position. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pos</td><td>The iterator which the content will be erased. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ae205ea4327ed62e00c7bf7b25064e44a" name="ae205ea4327ed62e00c7bf7b25064e44a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae205ea4327ed62e00c7bf7b25064e44a">&#9670;&#160;</a></span>erase() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="#a54a7c85a5ebca902f6d7d390089c4894">iterator</a> <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::erase </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a54a7c85a5ebca902f6d7d390089c4894">iterator</a></td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#a54a7c85a5ebca902f6d7d390089c4894">iterator</a></td>          <td class="paramname"><span class="paramname"><em>last</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Erases elements at specified range. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">first</td><td>The first iterator range which the content will be erased. </td></tr>
-    <tr><td class="paramname">first</td><td>The last iterator range which the content will be erased. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ab81deca719fdf8ba30b5d0270254e252" name="ab81deca719fdf8ba30b5d0270254e252"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab81deca719fdf8ba30b5d0270254e252">&#9670;&#160;</a></span>erase() <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="#a54a7c85a5ebca902f6d7d390089c4894">iterator</a> <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::erase </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a9c5c1afad003c5dea3a03dc7ff425cc4">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#a9c5c1afad003c5dea3a03dc7ff425cc4">const_iterator</a></td>          <td class="paramname"><span class="paramname"><em>last</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Erases elements at specified range. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">first</td><td>The first iterator range which the content will be erased. </td></tr>
-    <tr><td class="paramname">first</td><td>The last iterator range which the content will be erased. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a0021e72e220f79b97178d3f18ba5f5cc" name="a0021e72e220f79b97178d3f18ba5f5cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0021e72e220f79b97178d3f18ba5f5cc">&#9670;&#160;</a></span>erase_at()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::erase_at </td>
-          <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Erases element at specified index. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pos</td><td>The index which the content will be erased. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a2e332a862334ddc845bd1c08ed290bb2" name="a2e332a862334ddc845bd1c08ed290bb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e332a862334ddc845bd1c08ed290bb2">&#9670;&#160;</a></span>pop_back()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::pop_back </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Removes the last element of the container. </p>
-
-</div>
-</div>
-<a id="a8c7d97b53051103f818d43f62a8a6bed" name="a8c7d97b53051103f818d43f62a8a6bed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c7d97b53051103f818d43f62a8a6bed">&#9670;&#160;</a></span>push_back() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::push_back </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Adds an element to the end. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">item</td><td>The element to add. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented in <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html#a8e6927aebf5d20e1794a32153687eb40">xtd::forms::control::control_collection</a>.</p>
-
-</div>
-</div>
-<a id="ab672be2665b8219a8ffc4a56e4a6a8e0" name="ab672be2665b8219a8ffc4a56e4a6a8e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab672be2665b8219a8ffc4a56e4a6a8e0">&#9670;&#160;</a></span>push_back() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::push_back </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>item</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Adds an element to the end. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">item</td><td>The element to add. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a918fcde217e37dd46fa478b3052817f6" name="a918fcde217e37dd46fa478b3052817f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a918fcde217e37dd46fa478b3052817f6">&#9670;&#160;</a></span>push_back_range() <span class="overload">[1/5]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::push_back_range </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a>&lt; type_t, sorter_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Adds elements to the end. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">collection</td><td>The elements to add. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a786514bc2918174e6c8da12825b29b31" name="a786514bc2918174e6c8da12825b29b31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a786514bc2918174e6c8da12825b29b31">&#9670;&#160;</a></span>push_back_range() <span class="overload">[2/5]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::push_back_range </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Adds elements to the end. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">collection</td><td>The elements to add. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ad6e3047e40e16e4b953b96e48d05b2e7" name="ad6e3047e40e16e4b953b96e48d05b2e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6e3047e40e16e4b953b96e48d05b2e7">&#9670;&#160;</a></span>push_back_range() <span class="overload">[3/5]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::push_back_range </td>
-          <td>(</td>
-          <td class="paramtype">const std::initializer_list&lt; <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Adds elements to the end. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">collection</td><td>The elements to add. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a630840911d14800cb1bf5791ae4ced21" name="a630840911d14800cb1bf5791ae4ced21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a630840911d14800cb1bf5791ae4ced21">&#9670;&#160;</a></span>push_back_range() <span class="overload">[4/5]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<div class="memtemplate">
-template&lt;class collection_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::push_back_range </td>
-          <td>(</td>
-          <td class="paramtype">collection_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Adds elements to the end. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">collection</td><td>The elements to add. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ad5d89b984a7196d272984539cbe4db58" name="ad5d89b984a7196d272984539cbe4db58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5d89b984a7196d272984539cbe4db58">&#9670;&#160;</a></span>push_back_range() <span class="overload">[5/5]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<div class="memtemplate">
-template&lt;class iterator_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::push_back_range </td>
-          <td>(</td>
-          <td class="paramtype">iterator_t</td>          <td class="paramname"><span class="paramname"><em>begin</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">iterator_t</td>          <td class="paramname"><span class="paramname"><em>end</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Adds elements to the end. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">collection</td><td>The elements to add. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a28988f5aa89b6530817cca24fb08db19" name="a28988f5aa89b6530817cca24fb08db19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a28988f5aa89b6530817cca24fb08db19">&#9670;&#160;</a></span>sort()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a> &amp; <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::sort </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sorts the content. </p>
-
-</div>
-</div>
 <a id="a8d7e3cde1a97b03e109a4851b770b19a" name="a8d7e3cde1a97b03e109a4851b770b19a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8d7e3cde1a97b03e109a4851b770b19a">&#9670;&#160;</a></span>to_array()</h2>
 
@@ -2348,6 +2789,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 
 <p>Gets an array with the elements of the container. </p>
 <dl class="section return"><dt>Returns</dt><dd>The array that contains elements of the container. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000222">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a8d7e3cde1a97b03e109a4851b770b19a" title="Gets an array with the elements of the container.">xtd::forms::layout::arranged_element_collection::to_array</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2624,7 +3066,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

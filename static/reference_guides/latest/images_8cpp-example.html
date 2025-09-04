@@ -129,7 +129,7 @@ $(function(){ initResizable(false); });
 <div class="line">      text(<span class="stringliteral">&quot;Images example&quot;</span>);</div>
 <div class="line">      client_size({430, 530});</div>
 <div class="line">      minimum_client_size(client_size());</div>
-<div class="line">      controls().push_back_range({choice_theme, choice_context, choice_size, picture, label_picture_name, button_previous, button_next});</div>
+<div class="line">      controls().add_range({choice_theme, choice_context, choice_size, picture, label_picture_name, button_previous, button_next});</div>
 <div class="line">      </div>
 <div class="line">      picture.back_color(system_colors::window());</div>
 <div class="line">      picture.border_style(forms::border_style::fixed_3d);</div>
@@ -139,16 +139,16 @@ $(function(){ initResizable(false); });
 <div class="line">      </div>
 <div class="line">      choice_theme.bounds({75, 25, 280, 25});</div>
 <div class="line">      choice_theme.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);</div>
-<div class="line">      choice_theme.items().push_back(<span class="stringliteral">&quot;current theme&quot;</span>);</div>
+<div class="line">      choice_theme.items().add(<span class="stringliteral">&quot;current theme&quot;</span>);</div>
 <div class="line">      <span class="keyword">auto</span> names = application::style_sheet_names();</div>
 <div class="line">      names.sort();</div>
-<div class="line">      choice_theme.items().push_back_range(names);</div>
+<div class="line">      choice_theme.items().add_range(names);</div>
 <div class="line">      choice_theme.selected_index(0);</div>
 <div class="line">      choice_theme.selected_index_changed += event_handler(*<span class="keyword">this</span>, &amp;form1::update_form);</div>
 <div class="line">      </div>
 <div class="line">      choice_context.bounds({75, 55, 280, 25});</div>
 <div class="line">      choice_context.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);</div>
-<div class="line">      choice_context.items().push_back_range(images::contexts());</div>
+<div class="line">      choice_context.items().add_range(images::contexts());</div>
 <div class="line">      choice_context.selected_index(0);</div>
 <div class="line">      choice_context.selected_index_changed += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        current_image_index = 0;</div>
@@ -158,7 +158,7 @@ $(function(){ initResizable(false); });
 <div class="line">      choice_size.bounds({75, 85, 280, 25});</div>
 <div class="line">      choice_size.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::right);</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> size : images::sizes())</div>
-<div class="line">        choice_size.items().push_back({string::format(<span class="stringliteral">&quot;{}x{} pixels&quot;</span>, size.width, size.height), size});</div>
+<div class="line">        choice_size.items().add({string::format(<span class="stringliteral">&quot;{}x{} pixels&quot;</span>, size.width, size.height), size});</div>
 <div class="line">      choice_size.selected_index(7);</div>
 <div class="line">      choice_size.selected_index_changed += event_handler(*<span class="keyword">this</span>, &amp;form1::update_form);</div>
 <div class="line">      </div>
@@ -219,7 +219,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

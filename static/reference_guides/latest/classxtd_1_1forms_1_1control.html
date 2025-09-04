@@ -3185,7 +3185,7 @@ Setting the <a class="el" href="#a75fa27c1abc0d06a0db366aff528b389" title="Gets 
 <div class="line">    <a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>({220, 115});</div>
 <div class="line">    <a class="code hl_function" href="#ab1059981893eed02f645153c8727016f">maximum_client_size</a>(<a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>() + <a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> {300, 300});</div>
 <div class="line">    <a class="code hl_function" href="#ae71fc4f39f3973bd7d55a247008972ac">minimum_client_size</a>(<a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>());</div>
-<div class="line">    <a class="code hl_function" href="#a65896f051dab5b3050412ab63a0af079">controls</a>().<a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a918fcde217e37dd46fa478b3052817f6">push_back_range</a>({up_button, left_button, right_button, down_button, shrink_button, grow_button});</div>
+<div class="line">    <a class="code hl_function" href="#a65896f051dab5b3050412ab63a0af079">controls</a>().<a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#aae9ba3688cf3121452e607ccab7eba0d">add_range</a>({up_button, left_button, right_button, down_button, shrink_button, grow_button});</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form resize example&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    key_down += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keyword">auto</span> sender, <span class="keyword">auto</span> e) {</div>
@@ -3259,7 +3259,7 @@ Setting the <a class="el" href="#a75fa27c1abc0d06a0db366aff528b389" title="Gets 
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a65896f051dab5b3050412ab63a0af079"><div class="ttname"><a href="#a65896f051dab5b3050412ab63a0af079">xtd::forms::control::controls</a></div><div class="ttdeci">virtual control_collection &amp; controls() noexcept</div><div class="ttdoc">Gets the collection of controls contained within the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_ab1059981893eed02f645153c8727016f"><div class="ttname"><a href="#ab1059981893eed02f645153c8727016f">xtd::forms::control::maximum_client_size</a></div><div class="ttdeci">virtual const drawing::size &amp; maximum_client_size() const noexcept</div><div class="ttdoc">Gets the client size that is the upper limit that xtd::forms::control::get_preferred_size can specify...</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_ae71fc4f39f3973bd7d55a247008972ac"><div class="ttname"><a href="#ae71fc4f39f3973bd7d55a247008972ac">xtd::forms::control::minimum_client_size</a></div><div class="ttdeci">virtual const drawing::size &amp; minimum_client_size() const noexcept</div><div class="ttdoc">Gets the client size that is the lower limit that xtd::forms::control::get_preferred_size can specify...</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1layout_1_1arranged__element__collection_html_a918fcde217e37dd46fa478b3052817f6"><div class="ttname"><a href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a918fcde217e37dd46fa478b3052817f6">xtd::forms::layout::arranged_element_collection::push_back_range</a></div><div class="ttdeci">virtual void push_back_range(const arranged_element_collection &amp;collection)</div><div class="ttdoc">Adds elements to the end.</div><div class="ttdef"><b>Definition</b> arranged_element_collection.hpp:393</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1layout_1_1arranged__element__collection_html_aae9ba3688cf3121452e607ccab7eba0d"><div class="ttname"><a href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#aae9ba3688cf3121452e607ccab7eba0d">xtd::forms::layout::arranged_element_collection::add_range</a></div><div class="ttdeci">virtual void add_range(const arranged_element_collection &amp;collection)</div><div class="ttdoc">Adds elements to the end.</div><div class="ttdef"><b>Definition</b> arranged_element_collection.hpp:263</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga902d7ba89795f62756de856e06822883"><div class="ttname"><a href="group__style__sheets.html#ga902d7ba89795f62756de856e06822883">xtd::forms::style_sheets::button</a></div><div class="ttdeci">xtd::forms::style_sheets::control button</div><div class="ttdoc">The buttton data allows you to specify the box of a button control.</div><div class="ttdef"><b>Definition</b> button.hpp:25</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga475781e3c7baa300a81ab16d22b16962af7bd60b75b29d79b660a2859395c1a24"><div class="ttname"><a href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962af7bd60b75b29d79b660a2859395c1a24">xtd::forms::bounds_specified::size</a></div><div class="ttdeci">@ size</div><div class="ttdoc">Specifies that both the width and height property values of the control are defined.</div><div class="ttdef"><b>Definition</b> bounds_specified.hpp:36</div></div>
@@ -3309,7 +3309,7 @@ Setting the <a class="el" href="#a75fa27c1abc0d06a0db366aff528b389" title="Gets 
 <div class="line">    <a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>({220, 115});</div>
 <div class="line">    <a class="code hl_function" href="#ab1059981893eed02f645153c8727016f">maximum_client_size</a>(<a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>() + <a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> {300, 300});</div>
 <div class="line">    <a class="code hl_function" href="#ae71fc4f39f3973bd7d55a247008972ac">minimum_client_size</a>(<a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>());</div>
-<div class="line">    <a class="code hl_function" href="#a65896f051dab5b3050412ab63a0af079">controls</a>().<a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a918fcde217e37dd46fa478b3052817f6">push_back_range</a>({up_button, left_button, right_button, down_button, shrink_button, grow_button});</div>
+<div class="line">    <a class="code hl_function" href="#a65896f051dab5b3050412ab63a0af079">controls</a>().<a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#aae9ba3688cf3121452e607ccab7eba0d">add_range</a>({up_button, left_button, right_button, down_button, shrink_button, grow_button});</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form resize example&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    key_down += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keyword">auto</span> sender, <span class="keyword">auto</span> e) {</div>
@@ -3416,7 +3416,7 @@ Setting the <a class="el" href="#a75fa27c1abc0d06a0db366aff528b389" title="Gets 
 <div class="line">    <a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>({220, 115});</div>
 <div class="line">    <a class="code hl_function" href="#ab1059981893eed02f645153c8727016f">maximum_client_size</a>(<a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>() + <a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> {300, 300});</div>
 <div class="line">    <a class="code hl_function" href="#ae71fc4f39f3973bd7d55a247008972ac">minimum_client_size</a>(<a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>());</div>
-<div class="line">    <a class="code hl_function" href="#a65896f051dab5b3050412ab63a0af079">controls</a>().<a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a918fcde217e37dd46fa478b3052817f6">push_back_range</a>({up_button, left_button, right_button, down_button, shrink_button, grow_button});</div>
+<div class="line">    <a class="code hl_function" href="#a65896f051dab5b3050412ab63a0af079">controls</a>().<a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#aae9ba3688cf3121452e607ccab7eba0d">add_range</a>({up_button, left_button, right_button, down_button, shrink_button, grow_button});</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form resize example&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    key_down += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keyword">auto</span> sender, <span class="keyword">auto</span> e) {</div>
@@ -3528,7 +3528,7 @@ Setting the <a class="el" href="#a75fa27c1abc0d06a0db366aff528b389" title="Gets 
 <div class="line">    <a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>({220, 115});</div>
 <div class="line">    <a class="code hl_function" href="#ab1059981893eed02f645153c8727016f">maximum_client_size</a>(<a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>() + <a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> {300, 300});</div>
 <div class="line">    <a class="code hl_function" href="#ae71fc4f39f3973bd7d55a247008972ac">minimum_client_size</a>(<a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>());</div>
-<div class="line">    <a class="code hl_function" href="#a65896f051dab5b3050412ab63a0af079">controls</a>().<a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a918fcde217e37dd46fa478b3052817f6">push_back_range</a>({up_button, left_button, right_button, down_button, shrink_button, grow_button});</div>
+<div class="line">    <a class="code hl_function" href="#a65896f051dab5b3050412ab63a0af079">controls</a>().<a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#aae9ba3688cf3121452e607ccab7eba0d">add_range</a>({up_button, left_button, right_button, down_button, shrink_button, grow_button});</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form resize example&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    key_down += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keyword">auto</span> sender, <span class="keyword">auto</span> e) {</div>
@@ -3635,7 +3635,7 @@ Setting the <a class="el" href="#a75fa27c1abc0d06a0db366aff528b389" title="Gets 
 <div class="line">    <a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>({220, 115});</div>
 <div class="line">    <a class="code hl_function" href="#ab1059981893eed02f645153c8727016f">maximum_client_size</a>(<a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>() + <a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> {300, 300});</div>
 <div class="line">    <a class="code hl_function" href="#ae71fc4f39f3973bd7d55a247008972ac">minimum_client_size</a>(<a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>());</div>
-<div class="line">    <a class="code hl_function" href="#a65896f051dab5b3050412ab63a0af079">controls</a>().<a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a918fcde217e37dd46fa478b3052817f6">push_back_range</a>({up_button, left_button, right_button, down_button, shrink_button, grow_button});</div>
+<div class="line">    <a class="code hl_function" href="#a65896f051dab5b3050412ab63a0af079">controls</a>().<a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#aae9ba3688cf3121452e607ccab7eba0d">add_range</a>({up_button, left_button, right_button, down_button, shrink_button, grow_button});</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form resize example&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    key_down += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keyword">auto</span> sender, <span class="keyword">auto</span> e) {</div>
@@ -3747,7 +3747,7 @@ Setting the <a class="el" href="#a75fa27c1abc0d06a0db366aff528b389" title="Gets 
 <div class="line">    <a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>({220, 115});</div>
 <div class="line">    <a class="code hl_function" href="#ab1059981893eed02f645153c8727016f">maximum_client_size</a>(<a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>() + <a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> {300, 300});</div>
 <div class="line">    <a class="code hl_function" href="#ae71fc4f39f3973bd7d55a247008972ac">minimum_client_size</a>(<a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>());</div>
-<div class="line">    <a class="code hl_function" href="#a65896f051dab5b3050412ab63a0af079">controls</a>().<a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a918fcde217e37dd46fa478b3052817f6">push_back_range</a>({up_button, left_button, right_button, down_button, shrink_button, grow_button});</div>
+<div class="line">    <a class="code hl_function" href="#a65896f051dab5b3050412ab63a0af079">controls</a>().<a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#aae9ba3688cf3121452e607ccab7eba0d">add_range</a>({up_button, left_button, right_button, down_button, shrink_button, grow_button});</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form resize example&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    key_down += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keyword">auto</span> sender, <span class="keyword">auto</span> e) {</div>
@@ -3854,7 +3854,7 @@ Setting the <a class="el" href="#a75fa27c1abc0d06a0db366aff528b389" title="Gets 
 <div class="line">    <a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>({220, 115});</div>
 <div class="line">    <a class="code hl_function" href="#ab1059981893eed02f645153c8727016f">maximum_client_size</a>(<a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>() + <a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> {300, 300});</div>
 <div class="line">    <a class="code hl_function" href="#ae71fc4f39f3973bd7d55a247008972ac">minimum_client_size</a>(<a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>());</div>
-<div class="line">    <a class="code hl_function" href="#a65896f051dab5b3050412ab63a0af079">controls</a>().<a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a918fcde217e37dd46fa478b3052817f6">push_back_range</a>({up_button, left_button, right_button, down_button, shrink_button, grow_button});</div>
+<div class="line">    <a class="code hl_function" href="#a65896f051dab5b3050412ab63a0af079">controls</a>().<a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#aae9ba3688cf3121452e607ccab7eba0d">add_range</a>({up_button, left_button, right_button, down_button, shrink_button, grow_button});</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form resize example&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    key_down += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keyword">auto</span> sender, <span class="keyword">auto</span> e) {</div>
@@ -3966,7 +3966,7 @@ Setting the <a class="el" href="#a75fa27c1abc0d06a0db366aff528b389" title="Gets 
 <div class="line">    <a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>({220, 115});</div>
 <div class="line">    <a class="code hl_function" href="#ab1059981893eed02f645153c8727016f">maximum_client_size</a>(<a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>() + <a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> {300, 300});</div>
 <div class="line">    <a class="code hl_function" href="#ae71fc4f39f3973bd7d55a247008972ac">minimum_client_size</a>(<a class="code hl_function" href="#a2a2a45ce0f1d7d2794c2cbc44cbbf352">client_size</a>());</div>
-<div class="line">    <a class="code hl_function" href="#a65896f051dab5b3050412ab63a0af079">controls</a>().<a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a918fcde217e37dd46fa478b3052817f6">push_back_range</a>({up_button, left_button, right_button, down_button, shrink_button, grow_button});</div>
+<div class="line">    <a class="code hl_function" href="#a65896f051dab5b3050412ab63a0af079">controls</a>().<a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#aae9ba3688cf3121452e607ccab7eba0d">add_range</a>({up_button, left_button, right_button, down_button, shrink_button, grow_button});</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">text</a>(<span class="stringliteral">&quot;Form resize example&quot;</span>);</div>
 <div class="line">    </div>
 <div class="line">    key_down += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a>(<span class="keyword">auto</span> sender, <span class="keyword">auto</span> e) {</div>
@@ -4562,8 +4562,6 @@ The <a class="el" href="#aacdf46e9818911676ef45cb7520cc483" title="Gets a value 
 
 <p>Gets the height and width of the control. </p>
 <dl class="section return"><dt>Returns</dt><dd>The size that represents the height and width of the control in pixels. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="test_forms_8cpp-example.html#a11">test_forms.cpp</a>.</dd>
-</dl>
 
 </div>
 </div>
@@ -10578,7 +10576,7 @@ You must set the standard_click value of <a class="el" href="group__xtd__forms.h
 <div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1trace_html_a0cf0960a97a2e45829917c931e1cf9bb"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1trace.html#a0cf0960a97a2e45829917c931e1cf9bb">xtd::diagnostics::trace::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes a line terminator to the trace listeners in the listeners collection.</div><div class="ttdef"><b>Definition</b> trace.hpp:343</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a651752ad0a3ec381983aa0b367291a68"><div class="ttname"><a href="#a651752ad0a3ec381983aa0b367291a68">xtd::forms::control::click</a></div><div class="ttdeci">event&lt; control, event_handler &gt; click</div><div class="ttdoc">Occurs when the xtd::forms::control is clicked.</div><div class="ttdef"><b>Definition</b> control.hpp:1495</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a651752ad0a3ec381983aa0b367291a68"><div class="ttname"><a href="#a651752ad0a3ec381983aa0b367291a68">xtd::forms::control::click</a></div><div class="ttdeci">event&lt; control, event_handler &gt; click</div><div class="ttdoc">Occurs when the xtd::forms::control is clicked.</div><div class="ttdef"><b>Definition</b> control.hpp:1486</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview">Handling and Raising Events</a>. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="form2_8cpp-example.html#a3">form2.cpp</a>.</dd>
@@ -12138,8 +12136,8 @@ To handle custom layouts, use the <a class="el" href="#a4c62d42e86be033a0aa9f897
 <div class="line">    timer1.interval(300_ms);</div>
 <div class="line">    timer1.enabled(<span class="keyword">true</span>);</div>
 <div class="line">    timer1.tick += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">      dot_matrix_display1.dot_matrix_style(dot_matrix_styles[(counter / chase.size()) % dot_matrix_styles.size()]);</div>
-<div class="line">      dot_matrix_display1.set_dots(chase[counter++ % chase.size()]);</div>
+<div class="line">      dot_matrix_display1.dot_matrix_style(dot_matrix_styles[(counter / chase.count()) % dot_matrix_styles.count()]);</div>
+<div class="line">      dot_matrix_display1.set_dots(chase[counter++ % chase.count()]);</div>
 <div class="line">    };</div>
 <div class="line">    </div>
 <div class="line">    <a class="code hl_function" href="#ab4236dd32071d07bb8ec2452e041fbfa">back_color</a>(color_converter::average(color::black, dot_matrix_display1.fore_color(), 0.20));</div>
@@ -12320,7 +12318,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

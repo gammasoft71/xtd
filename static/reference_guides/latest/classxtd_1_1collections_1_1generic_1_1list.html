@@ -308,7 +308,7 @@ class xtd::collections::generic::list&lt; type_t, allocator_t &gt;</div><p>Repre
 <div class="line"><span class="comment">// capacity: 5</span></div>
 <div class="line"><span class="comment">// count: 0</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-</div><!-- fragment --> <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; class instanciate as <a class="el" href="#abe3e06096043ea253edc101f7992b5a6" title="Represents the list base type.">xtd::collections::generic::list::base_type</a> a <a href="https://en.cppreference.com/w/cpp/container/vector">std::vector</a> with <a class="el" href="group__helpers__generic__collections.html#gab599dabbf34e1e5238de4589ab6614b9" title="Represent an allocator alias.">xtd::collections::generic::helpers::allocator</a> instead <a href="https://en.cppreference.com/w/cpp/memory/allocator">std::allocator</a>. Use <a class="el" href="#a6e60bef59fec10b698236cae8ef11620" title="Returns the underlying base type.">xtd::collections::generic::list::get_base_type()</a> to access the underlying <a href="https://en.cppreference.com/w/cpp/container/vector">std::vector</a>. </dd>
+</div><!-- fragment --> <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; class instanciate as <a class="el" href="#abe3e06096043ea253edc101f7992b5a6" title="Represents the list base type.">xtd::collections::generic::list::base_type</a> a <a href="https://en.cppreference.com/w/cpp/container/vector">std::vector</a> with <a class="el" href="group__helpers__generic__collections.html#gab599dabbf34e1e5238de4589ab6614b9" title="Represent an allocator alias.">xtd::collections::generic::helpers::allocator</a> instead <a href="https://en.cppreference.com/w/cpp/memory/allocator">std::allocator</a>. Use xtd::collections::generic::list::get_base_type() to access the underlying <a href="https://en.cppreference.com/w/cpp/container/vector">std::vector</a>. </dd>
 <dd>
 The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; class can also be used to manage a dynamic array of <code>bool</code> exactly as other types unlike <a href="https://en.cppreference.com/w/cpp/container/vector">std::vector</a> with <a class="el" href="group__helpers__generic__collections.html#gab599dabbf34e1e5238de4589ab6614b9" title="Represent an allocator alias.">xtd::collections::generic::helpers::allocator</a> instead <a href="https://en.cppreference.com/w/cpp/memory/allocator">std::allocator</a>. When the <code>type_t</code>is <code>bool</code> The underlying <a href="https://en.cppreference.com/w/cpp/container/vector">std::vector</a> uses <a class="el" href="group__types.html#gaf2fe06df5401bdc7f8d62c5c55aa0ef4" title="Represents a 8-bit unsigned integer.">xtd::byte</a>. </dd>
 <dd>
@@ -332,12 +332,9 @@ For an immutable version of the <a class="el" href="classxtd_1_1collections_1_1g
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
-<tr class="memitem:aee91fe5bbf243bdafcee990bbb05a517" id="r_aee91fe5bbf243bdafcee990bbb05a517"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee91fe5bbf243bdafcee990bbb05a517">value_type</a></td></tr>
-<tr class="memdesc:aee91fe5bbf243bdafcee990bbb05a517"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the list value type.  <br /></td></tr>
-<tr class="separator:aee91fe5bbf243bdafcee990bbb05a517"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6640dc0a5afea230769872e4b8be2928" id="r_a6640dc0a5afea230769872e4b8be2928"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6640dc0a5afea230769872e4b8be2928">allocator_type</a></td></tr>
-<tr class="memdesc:a6640dc0a5afea230769872e4b8be2928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the list allocator type.  <br /></td></tr>
-<tr class="separator:a6640dc0a5afea230769872e4b8be2928"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4f264509aae28c22fdd76e6c9d79e7e" id="r_aa4f264509aae28c22fdd76e6c9d79e7e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4f264509aae28c22fdd76e6c9d79e7e">value_type</a></td></tr>
+<tr class="memdesc:aa4f264509aae28c22fdd76e6c9d79e7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the list value type.  <br /></td></tr>
+<tr class="separator:aa4f264509aae28c22fdd76e6c9d79e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe3e06096043ea253edc101f7992b5a6" id="r_abe3e06096043ea253edc101f7992b5a6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe3e06096043ea253edc101f7992b5a6">base_type</a></td></tr>
 <tr class="memdesc:abe3e06096043ea253edc101f7992b5a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the list base type.  <br /></td></tr>
 <tr class="separator:abe3e06096043ea253edc101f7992b5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -347,9 +344,6 @@ For an immutable version of the <a class="el" href="classxtd_1_1collections_1_1g
 <tr class="memitem:a8cce3f868fe90a8a29735f032fb89d3a" id="r_a8cce3f868fe90a8a29735f032fb89d3a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a></td></tr>
 <tr class="memdesc:a8cce3f868fe90a8a29735f032fb89d3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the list size type (usually <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">xtd::size</a>).  <br /></td></tr>
 <tr class="separator:a8cce3f868fe90a8a29735f032fb89d3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fd0f27304e8ac7982826bf172434727" id="r_a7fd0f27304e8ac7982826bf172434727"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fd0f27304e8ac7982826bf172434727">difference_type</a></td></tr>
-<tr class="memdesc:a7fd0f27304e8ac7982826bf172434727"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the list difference type (usually <a class="el" href="group__types.html#gae3c4f13b0aabf2474d7c5b2e36aad317" title="Represent the signed integer type of the result of subtracting two pointers.">xtd::ptrdiff</a>).  <br /></td></tr>
-<tr class="separator:a7fd0f27304e8ac7982826bf172434727"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac7c62a32fa0361f8b969d031d874109" id="r_aac7c62a32fa0361f8b969d031d874109"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac7c62a32fa0361f8b969d031d874109">reference</a></td></tr>
 <tr class="memdesc:aac7c62a32fa0361f8b969d031d874109"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the reference of list value type.  <br /></td></tr>
 <tr class="separator:aac7c62a32fa0361f8b969d031d874109"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -362,18 +356,6 @@ For an immutable version of the <a class="el" href="classxtd_1_1collections_1_1g
 <tr class="memitem:a2c82ed8cef8662d15b11cf4f64317aa0" id="r_a2c82ed8cef8662d15b11cf4f64317aa0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c82ed8cef8662d15b11cf4f64317aa0">const_pointer</a></td></tr>
 <tr class="memdesc:a2c82ed8cef8662d15b11cf4f64317aa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the const pointer of list value type.  <br /></td></tr>
 <tr class="separator:a2c82ed8cef8662d15b11cf4f64317aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a274fd98d54c220fc795243e7f94b706a" id="r_a274fd98d54c220fc795243e7f94b706a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a274fd98d54c220fc795243e7f94b706a">iterator</a></td></tr>
-<tr class="memdesc:a274fd98d54c220fc795243e7f94b706a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the iterator of list value type.  <br /></td></tr>
-<tr class="separator:a274fd98d54c220fc795243e7f94b706a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5939bfb12a7754254b3fe1c97f4a45e1" id="r_a5939bfb12a7754254b3fe1c97f4a45e1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a></td></tr>
-<tr class="memdesc:a5939bfb12a7754254b3fe1c97f4a45e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the const iterator of list value type.  <br /></td></tr>
-<tr class="separator:a5939bfb12a7754254b3fe1c97f4a45e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c1c08fcdff2a7d59a766bad647a2991" id="r_a9c1c08fcdff2a7d59a766bad647a2991"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c1c08fcdff2a7d59a766bad647a2991">reverse_iterator</a></td></tr>
-<tr class="memdesc:a9c1c08fcdff2a7d59a766bad647a2991"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the reverse iterator of list value type.  <br /></td></tr>
-<tr class="separator:a9c1c08fcdff2a7d59a766bad647a2991"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1d2a4f380a9d94aa569a5bddb7e26f0" id="r_ac1d2a4f380a9d94aa569a5bddb7e26f0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1d2a4f380a9d94aa569a5bddb7e26f0">const_reverse_iterator</a></td></tr>
-<tr class="memdesc:ac1d2a4f380a9d94aa569a5bddb7e26f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the const reverse iterator of list value type.  <br /></td></tr>
-<tr class="separator:ac1d2a4f380a9d94aa569a5bddb7e26f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae972471ee3a5ee221127efb60f126ea4" id="r_ae972471ee3a5ee221127efb60f126ea4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae972471ee3a5ee221127efb60f126ea4">read_only_collection</a></td></tr>
 <tr class="memdesc:ae972471ee3a5ee221127efb60f126ea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the read only collection of of list.  <br /></td></tr>
 <tr class="separator:ae972471ee3a5ee221127efb60f126ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -513,10 +495,10 @@ For an immutable version of the <a class="el" href="classxtd_1_1collections_1_1g
 <tr class="memitem:ac45eca7466e70c4667fd970d455c7399"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac45eca7466e70c4667fd970d455c7399">find_index</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> start_index, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438">count</a>, predicate_t match) const</td></tr>
 <tr class="memdesc:ac45eca7466e70c4667fd970d455c7399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the range of elements in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; that starts at the specified index and contains the specified number of elements.  <br /></td></tr>
 <tr class="separator:ac45eca7466e70c4667fd970d455c7399"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabefdc6f1ceb9b41f18a0b6c52e444b7" id="r_aabefdc6f1ceb9b41f18a0b6c52e444b7"><td class="memTemplParams" colspan="2">template&lt;class predicate_t&gt; </td></tr>
-<tr class="memitem:aabefdc6f1ceb9b41f18a0b6c52e444b7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">optional</a>&lt; type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aabefdc6f1ceb9b41f18a0b6c52e444b7">find_last</a> (<a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">xtd::predicate</a>&lt; const type_t &amp; &gt; match) const</td></tr>
-<tr class="memdesc:aabefdc6f1ceb9b41f18a0b6c52e444b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for an element that matches the conditions defined by the specified predicate, and returns the last occurrence within the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:aabefdc6f1ceb9b41f18a0b6c52e444b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae325c2d29a0c3816520a004a399e97b0" id="r_ae325c2d29a0c3816520a004a399e97b0"><td class="memTemplParams" colspan="2">template&lt;class predicate_t&gt; </td></tr>
+<tr class="memitem:ae325c2d29a0c3816520a004a399e97b0"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">optional</a>&lt; type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ae325c2d29a0c3816520a004a399e97b0">find_last</a> (predicate_t match) const</td></tr>
+<tr class="memdesc:ae325c2d29a0c3816520a004a399e97b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for an element that matches the conditions defined by the specified predicate, and returns the last occurrence within the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:ae325c2d29a0c3816520a004a399e97b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a321160e3f5293102a1dd2b6c423c099d" id="r_a321160e3f5293102a1dd2b6c423c099d"><td class="memTemplParams" colspan="2">template&lt;class predicate_t&gt; </td></tr>
 <tr class="memitem:a321160e3f5293102a1dd2b6c423c099d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a321160e3f5293102a1dd2b6c423c099d">find_last_index</a> (predicate_t match) const</td></tr>
 <tr class="memdesc:a321160e3f5293102a1dd2b6c423c099d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the last occurrence within the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
@@ -533,13 +515,7 @@ For an immutable version of the <a class="el" href="classxtd_1_1collections_1_1g
 <tr class="memitem:a20fc2f07435ebd7f0a854d804e9ec001"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a20fc2f07435ebd7f0a854d804e9ec001">for_each</a> (action_t <a class="el" href="group__xtd__core.html#ga79b9e415252e85714d5549936d31439a">action</a>)</td></tr>
 <tr class="memdesc:a20fc2f07435ebd7f0a854d804e9ec001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Performs the specified action on each element of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:a20fc2f07435ebd7f0a854d804e9ec001"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e60bef59fec10b698236cae8ef11620" id="r_a6e60bef59fec10b698236cae8ef11620"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#abe3e06096043ea253edc101f7992b5a6">base_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e60bef59fec10b698236cae8ef11620">get_base_type</a> () noexcept</td></tr>
-<tr class="memdesc:a6e60bef59fec10b698236cae8ef11620"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type.  <br /></td></tr>
-<tr class="separator:a6e60bef59fec10b698236cae8ef11620"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5cb67722b4a226e230e6dd9dfca5adc" id="r_ae5cb67722b4a226e230e6dd9dfca5adc"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="#abe3e06096043ea253edc101f7992b5a6">base_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5cb67722b4a226e230e6dd9dfca5adc">get_base_type</a> () const noexcept</td></tr>
-<tr class="memdesc:ae5cb67722b4a226e230e6dd9dfca5adc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type.  <br /></td></tr>
-<tr class="separator:ae5cb67722b4a226e230e6dd9dfca5adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0e759973f7728389fde69b1bc862d70" id="r_ab0e759973f7728389fde69b1bc862d70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a>&lt; <a class="el" href="#aee91fe5bbf243bdafcee990bbb05a517">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0e759973f7728389fde69b1bc862d70">get_enumerator</a> () const noexcept override</td></tr>
+<tr class="memitem:ab0e759973f7728389fde69b1bc862d70" id="r_ab0e759973f7728389fde69b1bc862d70"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a>&lt; <a class="el" href="#aa4f264509aae28c22fdd76e6c9d79e7e">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0e759973f7728389fde69b1bc862d70">get_enumerator</a> () const noexcept override</td></tr>
 <tr class="memdesc:ab0e759973f7728389fde69b1bc862d70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:ab0e759973f7728389fde69b1bc862d70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12ffde3b0562d230d0f408893ff12b71" id="r_a12ffde3b0562d230d0f408893ff12b71"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12ffde3b0562d230d0f408893ff12b71">get_range</a> (<a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> index, <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438">count</a>)</td></tr>
@@ -557,15 +533,6 @@ For an immutable version of the <a class="el" href="classxtd_1_1collections_1_1g
 <tr class="memitem:a5625c0a301c03124e9e8ef3e4280b563" id="r_a5625c0a301c03124e9e8ef3e4280b563"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5625c0a301c03124e9e8ef3e4280b563">last_index_of</a> (const type_t &amp;value, <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> index, <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438">count</a>) const</td></tr>
 <tr class="memdesc:a5625c0a301c03124e9e8ef3e4280b563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the last index of a specific item in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:a5625c0a301c03124e9e8ef3e4280b563"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d1750491c4a59457742edee88a9897e" id="r_a4d1750491c4a59457742edee88a9897e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d1750491c4a59457742edee88a9897e">pop_back</a> ()</td></tr>
-<tr class="memdesc:a4d1750491c4a59457742edee88a9897e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the last element of the container.  <br /></td></tr>
-<tr class="separator:a4d1750491c4a59457742edee88a9897e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf868f38f4e81d03746e453bab03f4c5" id="r_adf868f38f4e81d03746e453bab03f4c5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf868f38f4e81d03746e453bab03f4c5">push_back</a> (const type_t &amp;value)</td></tr>
-<tr class="memdesc:adf868f38f4e81d03746e453bab03f4c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends the given element value to the end of the container.  <br /></td></tr>
-<tr class="separator:adf868f38f4e81d03746e453bab03f4c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ea2d8cd654a08e93c59f835a6fe3e24" id="r_a0ea2d8cd654a08e93c59f835a6fe3e24"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ea2d8cd654a08e93c59f835a6fe3e24">push_back</a> (type_t &amp;&amp;value)</td></tr>
-<tr class="memdesc:a0ea2d8cd654a08e93c59f835a6fe3e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends the given element value to the end of the container.  <br /></td></tr>
-<tr class="separator:a0ea2d8cd654a08e93c59f835a6fe3e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af25282b05c76b050d5e5c1cd030c291e" id="r_af25282b05c76b050d5e5c1cd030c291e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af25282b05c76b050d5e5c1cd030c291e">remove</a> (const type_t &amp;item) override</td></tr>
 <tr class="memdesc:af25282b05c76b050d5e5c1cd030c291e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the first occurrence of a specific object from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:af25282b05c76b050d5e5c1cd030c291e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -579,21 +546,12 @@ For an immutable version of the <a class="el" href="classxtd_1_1collections_1_1g
 <tr class="memitem:a9e311d90b50c271ff2175c7212fbeb79" id="r_a9e311d90b50c271ff2175c7212fbeb79"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e311d90b50c271ff2175c7212fbeb79">remove_range</a> (<a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> index, <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438">count</a>)</td></tr>
 <tr class="memdesc:a9e311d90b50c271ff2175c7212fbeb79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a range of elements from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:a9e311d90b50c271ff2175c7212fbeb79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1721a04cc90d92fbe111d1c6f59cde2" id="r_aa1721a04cc90d92fbe111d1c6f59cde2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1721a04cc90d92fbe111d1c6f59cde2">reserve</a> (<a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> new_cap)</td></tr>
-<tr class="memdesc:aa1721a04cc90d92fbe111d1c6f59cde2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increase the capacity of the vector (the total number of elements that the vector can hold without requiring reallocation) to a value that's greater or equal to <code>new_cap</code>. If new_cap is greater than the current <a class="el" href="#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">capacity()</a>, new storage is allocated, otherwise the function does nothing.  <br /></td></tr>
-<tr class="separator:aa1721a04cc90d92fbe111d1c6f59cde2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6226af93d8769bc1d2f0185542be4b2" id="r_ab6226af93d8769bc1d2f0185542be4b2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6226af93d8769bc1d2f0185542be4b2">resize</a> (<a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438">count</a>, const <a class="el" href="#aee91fe5bbf243bdafcee990bbb05a517">value_type</a> &amp;value)</td></tr>
-<tr class="memdesc:ab6226af93d8769bc1d2f0185542be4b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the container to contain <code>count</code> elements, does nothing if <code>count == <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count()</a>. / @param count The new size of the container. / @remarks If the current size is greater than</code>count<code>, the container is reduced to its first</code>count<code>elements. / @remarks If the current size is less than</code>count<code>, additional default-inserted elements are appended. virtual void resize(size_type count) {resize(count, <a class="el" href="#aee91fe5bbf243bdafcee990bbb05a517" title="Represents the list value type.">value_type</a> {});} / @brief Resizes the container to contain</code>count<code>elements, does nothing if</code>count == <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count()</a>.  <br /></td></tr>
-<tr class="separator:ab6226af93d8769bc1d2f0185542be4b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d383c7bea397d7d8180ec805a794b6b" id="r_a3d383c7bea397d7d8180ec805a794b6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d383c7bea397d7d8180ec805a794b6b">reverse</a> ()</td></tr>
 <tr class="memdesc:a3d383c7bea397d7d8180ec805a794b6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses the order of the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:a3d383c7bea397d7d8180ec805a794b6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a564d6d62187eb2fd8308bc1d09ccbc" id="r_a9a564d6d62187eb2fd8308bc1d09ccbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a564d6d62187eb2fd8308bc1d09ccbc">reverse</a> (<a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> index, <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438">count</a>)</td></tr>
 <tr class="memdesc:a9a564d6d62187eb2fd8308bc1d09ccbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses the order of the elements in the specified range.  <br /></td></tr>
 <tr class="separator:a9a564d6d62187eb2fd8308bc1d09ccbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88ef0388a54942cfee9f9be5a9227c67" id="r_a88ef0388a54942cfee9f9be5a9227c67"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a88ef0388a54942cfee9f9be5a9227c67">shrink_to_fit</a> ()</td></tr>
-<tr class="memdesc:a88ef0388a54942cfee9f9be5a9227c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests the removal of unused capacity.  <br /></td></tr>
-<tr class="separator:a88ef0388a54942cfee9f9be5a9227c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18d622262df247c188069829b7841533" id="r_a18d622262df247c188069829b7841533"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a>&lt; type_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a18d622262df247c188069829b7841533">slice</a> (<a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> start, <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> <a class="el" href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">length</a>) const</td></tr>
 <tr class="memdesc:a18d622262df247c188069829b7841533"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of a range of elements in the source <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:a18d622262df247c188069829b7841533"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -609,10 +567,7 @@ For an immutable version of the <a class="el" href="classxtd_1_1collections_1_1g
 <tr class="memitem:a1b77a1b32b7d98528041a52aee84f752" id="r_a1b77a1b32b7d98528041a52aee84f752"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a>&lt; type_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b77a1b32b7d98528041a52aee84f752">sort</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438">count</a>, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>)</td></tr>
 <tr class="memdesc:a1b77a1b32b7d98528041a52aee84f752"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in a range of elements in <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified comparer.  <br /></td></tr>
 <tr class="separator:a1b77a1b32b7d98528041a52aee84f752"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a073a9ad7aba5a50e2a3ce8b10f5696fe" id="r_a073a9ad7aba5a50e2a3ce8b10f5696fe"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a073a9ad7aba5a50e2a3ce8b10f5696fe">swap</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept</td></tr>
-<tr class="memdesc:a073a9ad7aba5a50e2a3ce8b10f5696fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.  <br /></td></tr>
-<tr class="separator:a073a9ad7aba5a50e2a3ce8b10f5696fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a354cc4be14bec632b8046b389dfa7b57" id="r_a354cc4be14bec632b8046b389dfa7b57"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#aee91fe5bbf243bdafcee990bbb05a517">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a354cc4be14bec632b8046b389dfa7b57">to_array</a> () const noexcept</td></tr>
+<tr class="memitem:a354cc4be14bec632b8046b389dfa7b57" id="r_a354cc4be14bec632b8046b389dfa7b57"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#aa4f264509aae28c22fdd76e6c9d79e7e">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a354cc4be14bec632b8046b389dfa7b57">to_array</a> () const noexcept</td></tr>
 <tr class="memdesc:a354cc4be14bec632b8046b389dfa7b57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; to a new array.  <br /></td></tr>
 <tr class="separator:a354cc4be14bec632b8046b389dfa7b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67f93ff6f12e771b2b2f7a17b0a2730e" id="r_a67f93ff6f12e771b2b2f7a17b0a2730e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67f93ff6f12e771b2b2f7a17b0a2730e">to_string</a> () const noexcept override</td></tr>
@@ -677,8 +632,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:a772d50f4da23b418b7e3a523f52564b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="aee91fe5bbf243bdafcee990bbb05a517" name="aee91fe5bbf243bdafcee990bbb05a517"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee91fe5bbf243bdafcee990bbb05a517">&#9670;&#160;</a></span>value_type</h2>
+<a id="aa4f264509aae28c22fdd76e6c9d79e7e" name="aa4f264509aae28c22fdd76e6c9d79e7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4f264509aae28c22fdd76e6c9d79e7e">&#9670;&#160;</a></span>value_type</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -692,24 +647,6 @@ template&lt;class type_t, class allocator_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Represents the list value type. </p>
-
-</div>
-</div>
-<a id="a6640dc0a5afea230769872e4b8be2928" name="a6640dc0a5afea230769872e4b8be2928"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6640dc0a5afea230769872e4b8be2928">&#9670;&#160;</a></span>allocator_type</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::allocator_type</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Represents the list allocator type. </p>
 
 </div>
 </div>
@@ -764,24 +701,6 @@ template&lt;class type_t, class allocator_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Represents the list size type (usually <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">xtd::size</a>). </p>
-
-</div>
-</div>
-<a id="a7fd0f27304e8ac7982826bf172434727" name="a7fd0f27304e8ac7982826bf172434727"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fd0f27304e8ac7982826bf172434727">&#9670;&#160;</a></span>difference_type</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::difference_type</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Represents the list difference type (usually <a class="el" href="group__types.html#gae3c4f13b0aabf2474d7c5b2e36aad317" title="Represent the signed integer type of the result of subtracting two pointers.">xtd::ptrdiff</a>). </p>
 
 </div>
 </div>
@@ -854,78 +773,6 @@ template&lt;class type_t, class allocator_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Represents the const pointer of list value type. </p>
-
-</div>
-</div>
-<a id="a274fd98d54c220fc795243e7f94b706a" name="a274fd98d54c220fc795243e7f94b706a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a274fd98d54c220fc795243e7f94b706a">&#9670;&#160;</a></span>iterator</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::iterator</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Represents the iterator of list value type. </p>
-
-</div>
-</div>
-<a id="a5939bfb12a7754254b3fe1c97f4a45e1" name="a5939bfb12a7754254b3fe1c97f4a45e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5939bfb12a7754254b3fe1c97f4a45e1">&#9670;&#160;</a></span>const_iterator</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::const_iterator</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Represents the const iterator of list value type. </p>
-
-</div>
-</div>
-<a id="a9c1c08fcdff2a7d59a766bad647a2991" name="a9c1c08fcdff2a7d59a766bad647a2991"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c1c08fcdff2a7d59a766bad647a2991">&#9670;&#160;</a></span>reverse_iterator</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::reverse_iterator</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Represents the reverse iterator of list value type. </p>
-
-</div>
-</div>
-<a id="ac1d2a4f380a9d94aa569a5bddb7e26f0" name="ac1d2a4f380a9d94aa569a5bddb7e26f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1d2a4f380a9d94aa569a5bddb7e26f0">&#9670;&#160;</a></span>const_reverse_iterator</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::const_reverse_iterator</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Represents the const reverse iterator of list value type. </p>
 
 </div>
 </div>
@@ -1217,7 +1064,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="line"><span class="comment">// Tyrannosaurus</span></div>
 <div class="line"><span class="comment">// Deinonychus</span></div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:63</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:82</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:74</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The elements are copied onto the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; in the same order they are read by the enumerator of the collection. </dd>
 <dd>
@@ -3732,7 +3579,7 @@ template&lt;class predicate_t&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; contains one or more elements that match the conditions defined by the specified <code>predicate</code>; otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Determines whether the xtd::collections::generic::list &lt;type_t&gt; contains elements that match the cond...">xtd::collections::generic::list::exists</a> method and several other methods that use the <a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab" title="Represents a delegate that defines a set of criteria and determines whether the specified object meet...">xtd::predicate</a> &lt;type_t&gt; generic delegate. <br  />
 A <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of strings is created, containing 8 dinosaur names, two of which (at positions 1 and 5) end with "saurus". The example also defines a search predicate method named <code>ends_with_saurus</code>, which accepts a string parameter and returns a boolean value indicating whether the input string ends in "saurus". <br  />
-The <a class="el" href="#af514ef74ddbab91477354fe37a3b9c55" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find</a>, <a class="el" href="#aabefdc6f1ceb9b41f18a0b6c52e444b7" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find_last</a>, and xtd::collections::generic::list::findA_all methods are used to search the list with the search predicate method, and then the <a class="el" href="#ac42cee6b4ab1231d03cad0304ba93c7b" title="Removes all the elements that match the conditions defined by the specified predicate.">xtd::collections::generic::list::remove_all</a> method is used to remove all entries ending with "saurus". <br  />
+The <a class="el" href="#af514ef74ddbab91477354fe37a3b9c55" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find</a>, <a class="el" href="#ae325c2d29a0c3816520a004a399e97b0" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find_last</a>, and xtd::collections::generic::list::findA_all methods are used to search the list with the search predicate method, and then the <a class="el" href="#ac42cee6b4ab1231d03cad0304ba93c7b" title="Removes all the elements that match the conditions defined by the specified predicate.">xtd::collections::generic::list::remove_all</a> method is used to remove all entries ending with "saurus". <br  />
 Finally, the <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Determines whether the xtd::collections::generic::list &lt;type_t&gt; contains elements that match the cond...">xtd::collections::generic::list::exists</a> method is called. It traverses the list from the beginning, passing each element in turn to the <code>ends_with_saurus</code> method. The search stops and the method returns <code>true</code> if the <code>ends_with_saurus</code> method returns <code>true</code> for any element. The <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Determines whether the xtd::collections::generic::list &lt;type_t&gt; contains elements that match the cond...">xtd::collections::generic::list::exists</a> method returns <code>false</code> because all such elements have been removed. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
@@ -3753,14 +3600,14 @@ Finally, the <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Dete
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; dinosaur : dinosaurs)</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ntrue_for_all(ends_with_saurus): {0}&quot;</span>, dinosaurs.true_for_all(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus}));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ntrue_for_all(ends_with_saurus): {0}&quot;</span>, dinosaurs.true_for_all(ends_with_saurus));</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfind(ends_with_saurus): {0}&quot;</span>, dinosaurs.find(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus}));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfind(ends_with_saurus): {0}&quot;</span>, dinosaurs.find(ends_with_saurus).value_or(<span class="stringliteral">&quot;(none)&quot;</span>));</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfindLast(ends_with_saurus): {0}&quot;</span>, dinosaurs.find_last(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus}));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfindLast(ends_with_saurus): {0}&quot;</span>, dinosaurs.find_last(ends_with_saurus).value_or(<span class="stringliteral">&quot;(none)&quot;</span>));</div>
 <div class="line">    </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfind_all(ends_with_saurus):&quot;</span>);</div>
-<div class="line">    <span class="keyword">auto</span> sublist = dinosaurs.find_all(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus});</div>
+<div class="line">    <span class="keyword">auto</span> sublist = dinosaurs.find_all(ends_with_saurus);</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; dinosaur : sublist)</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
@@ -3862,7 +3709,7 @@ template&lt;class predicate_t&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The first element that matches the conditions defined by the specified <code>predicate</code>, if found; otherwise, the default value for type <code>type_t</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Determines whether the xtd::collections::generic::list &lt;type_t&gt; contains elements that match the cond...">xtd::collections::generic::list::exists</a> method and several other methods that use the <a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab" title="Represents a delegate that defines a set of criteria and determines whether the specified object meet...">xtd::predicate</a> &lt;type_t&gt; generic delegate. <br  />
 A <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of strings is created, containing 8 dinosaur names, two of which (at positions 1 and 5) end with "saurus". The example also defines a search predicate method named <code>ends_with_saurus</code>, which accepts a string parameter and returns a boolean value indicating whether the input string ends in "saurus". <br  />
-The <a class="el" href="#af514ef74ddbab91477354fe37a3b9c55" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find</a>, <a class="el" href="#aabefdc6f1ceb9b41f18a0b6c52e444b7" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find_last</a>, and xtd::collections::generic::list::findA_all methods are used to search the list with the search predicate method, and then the <a class="el" href="#ac42cee6b4ab1231d03cad0304ba93c7b" title="Removes all the elements that match the conditions defined by the specified predicate.">xtd::collections::generic::list::remove_all</a> method is used to remove all entries ending with "saurus". <br  />
+The <a class="el" href="#af514ef74ddbab91477354fe37a3b9c55" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find</a>, <a class="el" href="#ae325c2d29a0c3816520a004a399e97b0" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find_last</a>, and xtd::collections::generic::list::findA_all methods are used to search the list with the search predicate method, and then the <a class="el" href="#ac42cee6b4ab1231d03cad0304ba93c7b" title="Removes all the elements that match the conditions defined by the specified predicate.">xtd::collections::generic::list::remove_all</a> method is used to remove all entries ending with "saurus". <br  />
 Finally, the <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Determines whether the xtd::collections::generic::list &lt;type_t&gt; contains elements that match the cond...">xtd::collections::generic::list::exists</a> method is called. It traverses the list from the beginning, passing each element in turn to the <code>ends_with_saurus</code> method. The search stops and the method returns <code>true</code> if the <code>ends_with_saurus</code> method returns <code>true</code> for any element. The <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Determines whether the xtd::collections::generic::list &lt;type_t&gt; contains elements that match the cond...">xtd::collections::generic::list::exists</a> method returns <code>false</code> because all such elements have been removed. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
@@ -3883,14 +3730,14 @@ Finally, the <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Dete
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; dinosaur : dinosaurs)</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ntrue_for_all(ends_with_saurus): {0}&quot;</span>, dinosaurs.true_for_all(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus}));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ntrue_for_all(ends_with_saurus): {0}&quot;</span>, dinosaurs.true_for_all(ends_with_saurus));</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfind(ends_with_saurus): {0}&quot;</span>, dinosaurs.find(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus}));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfind(ends_with_saurus): {0}&quot;</span>, dinosaurs.find(ends_with_saurus).value_or(<span class="stringliteral">&quot;(none)&quot;</span>));</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfindLast(ends_with_saurus): {0}&quot;</span>, dinosaurs.find_last(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus}));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfindLast(ends_with_saurus): {0}&quot;</span>, dinosaurs.find_last(ends_with_saurus).value_or(<span class="stringliteral">&quot;(none)&quot;</span>));</div>
 <div class="line">    </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfind_all(ends_with_saurus):&quot;</span>);</div>
-<div class="line">    <span class="keyword">auto</span> sublist = dinosaurs.find_all(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus});</div>
+<div class="line">    <span class="keyword">auto</span> sublist = dinosaurs.find_all(ends_with_saurus);</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; dinosaur : sublist)</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
@@ -3990,7 +3837,7 @@ template&lt;class predicate_t&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; containing all the elements that match the conditions defined by the specified <code>predicate</code>, if found; otherwise, an empty <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Determines whether the xtd::collections::generic::list &lt;type_t&gt; contains elements that match the cond...">xtd::collections::generic::list::exists</a> method and several other methods that use the <a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab" title="Represents a delegate that defines a set of criteria and determines whether the specified object meet...">xtd::predicate</a> &lt;type_t&gt; generic delegate. <br  />
 A <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of strings is created, containing 8 dinosaur names, two of which (at positions 1 and 5) end with "saurus". The example also defines a search predicate method named <code>ends_with_saurus</code>, which accepts a string parameter and returns a boolean value indicating whether the input string ends in "saurus". <br  />
-The <a class="el" href="#af514ef74ddbab91477354fe37a3b9c55" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find</a>, <a class="el" href="#aabefdc6f1ceb9b41f18a0b6c52e444b7" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find_last</a>, and xtd::collections::generic::list::findA_all methods are used to search the list with the search predicate method, and then the <a class="el" href="#ac42cee6b4ab1231d03cad0304ba93c7b" title="Removes all the elements that match the conditions defined by the specified predicate.">xtd::collections::generic::list::remove_all</a> method is used to remove all entries ending with "saurus". <br  />
+The <a class="el" href="#af514ef74ddbab91477354fe37a3b9c55" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find</a>, <a class="el" href="#ae325c2d29a0c3816520a004a399e97b0" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find_last</a>, and xtd::collections::generic::list::findA_all methods are used to search the list with the search predicate method, and then the <a class="el" href="#ac42cee6b4ab1231d03cad0304ba93c7b" title="Removes all the elements that match the conditions defined by the specified predicate.">xtd::collections::generic::list::remove_all</a> method is used to remove all entries ending with "saurus". <br  />
 Finally, the <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Determines whether the xtd::collections::generic::list &lt;type_t&gt; contains elements that match the cond...">xtd::collections::generic::list::exists</a> method is called. It traverses the list from the beginning, passing each element in turn to the <code>ends_with_saurus</code> method. The search stops and the method returns <code>true</code> if the <code>ends_with_saurus</code> method returns <code>true</code> for any element. The <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Determines whether the xtd::collections::generic::list &lt;type_t&gt; contains elements that match the cond...">xtd::collections::generic::list::exists</a> method returns <code>false</code> because all such elements have been removed. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
@@ -4011,14 +3858,14 @@ Finally, the <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Dete
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; dinosaur : dinosaurs)</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ntrue_for_all(ends_with_saurus): {0}&quot;</span>, dinosaurs.true_for_all(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus}));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ntrue_for_all(ends_with_saurus): {0}&quot;</span>, dinosaurs.true_for_all(ends_with_saurus));</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfind(ends_with_saurus): {0}&quot;</span>, dinosaurs.find(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus}));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfind(ends_with_saurus): {0}&quot;</span>, dinosaurs.find(ends_with_saurus).value_or(<span class="stringliteral">&quot;(none)&quot;</span>));</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfindLast(ends_with_saurus): {0}&quot;</span>, dinosaurs.find_last(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus}));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfindLast(ends_with_saurus): {0}&quot;</span>, dinosaurs.find_last(ends_with_saurus).value_or(<span class="stringliteral">&quot;(none)&quot;</span>));</div>
 <div class="line">    </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfind_all(ends_with_saurus):&quot;</span>);</div>
-<div class="line">    <span class="keyword">auto</span> sublist = dinosaurs.find_all(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus});</div>
+<div class="line">    <span class="keyword">auto</span> sublist = dinosaurs.find_all(ends_with_saurus);</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; dinosaur : sublist)</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
@@ -4234,8 +4081,8 @@ This method performs a linear search; therefore, this method is an O(n) operatio
 
 </div>
 </div>
-<a id="aabefdc6f1ceb9b41f18a0b6c52e444b7" name="aabefdc6f1ceb9b41f18a0b6c52e444b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aabefdc6f1ceb9b41f18a0b6c52e444b7">&#9670;&#160;</a></span>find_last()</h2>
+<a id="ae325c2d29a0c3816520a004a399e97b0" name="ae325c2d29a0c3816520a004a399e97b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae325c2d29a0c3816520a004a399e97b0">&#9670;&#160;</a></span>find_last()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4250,7 +4097,7 @@ template&lt;class predicate_t&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="group__types.html#gac3e508084ce85854c55799f802c7e7ce">optional</a>&lt; type_t &gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::find_last </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">xtd::predicate</a>&lt; const type_t &amp; &gt;</td>          <td class="paramname"><span class="paramname"><em>match</em></span></td><td>)</td>
+          <td class="paramtype">predicate_t</td>          <td class="paramname"><span class="paramname"><em>match</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -4271,7 +4118,7 @@ template&lt;class predicate_t&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The last element that matches the conditions defined by the specified predicate, if found; otherwise, the default value for type <code>type_t</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Determines whether the xtd::collections::generic::list &lt;type_t&gt; contains elements that match the cond...">xtd::collections::generic::list::exists</a> method and several other methods that use the <a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab" title="Represents a delegate that defines a set of criteria and determines whether the specified object meet...">xtd::predicate</a> &lt;type_t&gt; generic delegate. <br  />
 A <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of strings is created, containing 8 dinosaur names, two of which (at positions 1 and 5) end with "saurus". The example also defines a search predicate method named <code>ends_with_saurus</code>, which accepts a string parameter and returns a boolean value indicating whether the input string ends in "saurus". <br  />
-The <a class="el" href="#af514ef74ddbab91477354fe37a3b9c55" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find</a>, <a class="el" href="#aabefdc6f1ceb9b41f18a0b6c52e444b7" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find_last</a>, and xtd::collections::generic::list::findA_all methods are used to search the list with the search predicate method, and then the <a class="el" href="#ac42cee6b4ab1231d03cad0304ba93c7b" title="Removes all the elements that match the conditions defined by the specified predicate.">xtd::collections::generic::list::remove_all</a> method is used to remove all entries ending with "saurus". <br  />
+The <a class="el" href="#af514ef74ddbab91477354fe37a3b9c55" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find</a>, <a class="el" href="#ae325c2d29a0c3816520a004a399e97b0" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find_last</a>, and xtd::collections::generic::list::findA_all methods are used to search the list with the search predicate method, and then the <a class="el" href="#ac42cee6b4ab1231d03cad0304ba93c7b" title="Removes all the elements that match the conditions defined by the specified predicate.">xtd::collections::generic::list::remove_all</a> method is used to remove all entries ending with "saurus". <br  />
 Finally, the <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Determines whether the xtd::collections::generic::list &lt;type_t&gt; contains elements that match the cond...">xtd::collections::generic::list::exists</a> method is called. It traverses the list from the beginning, passing each element in turn to the <code>ends_with_saurus</code> method. The search stops and the method returns <code>true</code> if the <code>ends_with_saurus</code> method returns <code>true</code> for any element. The <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Determines whether the xtd::collections::generic::list &lt;type_t&gt; contains elements that match the cond...">xtd::collections::generic::list::exists</a> method returns <code>false</code> because all such elements have been removed. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
@@ -4292,14 +4139,14 @@ Finally, the <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Dete
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; dinosaur : dinosaurs)</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ntrue_for_all(ends_with_saurus): {0}&quot;</span>, dinosaurs.true_for_all(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus}));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ntrue_for_all(ends_with_saurus): {0}&quot;</span>, dinosaurs.true_for_all(ends_with_saurus));</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfind(ends_with_saurus): {0}&quot;</span>, dinosaurs.find(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus}));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfind(ends_with_saurus): {0}&quot;</span>, dinosaurs.find(ends_with_saurus).value_or(<span class="stringliteral">&quot;(none)&quot;</span>));</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfindLast(ends_with_saurus): {0}&quot;</span>, dinosaurs.find_last(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus}));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfindLast(ends_with_saurus): {0}&quot;</span>, dinosaurs.find_last(ends_with_saurus).value_or(<span class="stringliteral">&quot;(none)&quot;</span>));</div>
 <div class="line">    </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfind_all(ends_with_saurus):&quot;</span>);</div>
-<div class="line">    <span class="keyword">auto</span> sublist = dinosaurs.find_all(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus});</div>
+<div class="line">    <span class="keyword">auto</span> sublist = dinosaurs.find_all(ends_with_saurus);</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; dinosaur : sublist)</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
@@ -4596,67 +4443,6 @@ Modifying the underlying collection in the body of the Action&lt;T&gt; delegate 
 
 </div>
 </div>
-<a id="a6e60bef59fec10b698236cae8ef11620" name="a6e60bef59fec10b698236cae8ef11620"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e60bef59fec10b698236cae8ef11620">&#9670;&#160;</a></span>get_base_type() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="#abe3e06096043ea253edc101f7992b5a6">base_type</a> &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::get_base_type </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the underlying base type. </p>
-<dl class="section return"><dt>Returns</dt><dd>The underlying base type. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Don't manipulate the <a class="el" href="#abe3e06096043ea253edc101f7992b5a6" title="Represents the list base type.">xtd::collections::generic::list::base_type</a> yourself, otherwise the expected result may be undefined. </dd></dl>
-
-</div>
-</div>
-<a id="ae5cb67722b4a226e230e6dd9dfca5adc" name="ae5cb67722b4a226e230e6dd9dfca5adc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5cb67722b4a226e230e6dd9dfca5adc">&#9670;&#160;</a></span>get_base_type() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual const <a class="el" href="#abe3e06096043ea253edc101f7992b5a6">base_type</a> &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::get_base_type </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the underlying base type. </p>
-<dl class="section return"><dt>Returns</dt><dd>The underlying base type. </dd></dl>
-
-</div>
-</div>
 <a id="ab0e759973f7728389fde69b1bc862d70" name="ab0e759973f7728389fde69b1bc862d70"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab0e759973f7728389fde69b1bc862d70">&#9670;&#160;</a></span>get_enumerator()</h2>
 
@@ -4669,7 +4455,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a>&lt; <a class="el" href="#aee91fe5bbf243bdafcee990bbb05a517">value_type</a> &gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::get_enumerator </td>
+          <td class="memname"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a>&lt; <a class="el" href="#aa4f264509aae28c22fdd76e6c9d79e7e">value_type</a> &gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::get_enumerator </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -5005,8 +4791,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <dd>
 The order of the elements in the collection is preserved in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. virtual void insert_range(size_type index, const xtd::collections::generic::ienumerable&lt;type_t&gt;&amp; enumerable) { if (index &gt; <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count()</a>) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;</dd></dl>
 <p>If the collection is this instance, it must be copied to avoid an infinite loop. if (reinterpret_cast&lt;xtd::intptr&gt;(&amp;enumerable) == reinterpret_cast&lt;xtd::intptr&gt;(this)) { insert_range(index, list(enumerable)); return; }</p>
-<p>auto pos = <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">xtd::size</a> {}; for (const auto&amp; item : enumerable) insert(index + pos++, item); }</p>
-<p>/ Inserts copy of elements from a collection into the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; at the specified index. /</p><dl class="params"><dt>Parameters</dt><dd>
+<p>auto pos = <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">xtd::size</a> {}; for (const auto&amp; item : enumerable) insert(index + pos++, item); } / Inserts copy of elements from a collection into the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; at the specified index. /</p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>The zero-based index at which the new elements should be inserted. /</td></tr>
     <tr><td class="paramname">collection</td><td>The collection whose elements should be inserted into the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. / </td></tr>
@@ -5119,8 +4904,8 @@ The order of the elements in the collection is preserved in the <a class="el" hr
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Int32 The last index of value if found in the list; otherwise, <a class="el" href="#a2e4d8d2839c656d4bf456a02346b52fa" title="This is a special value equal to the maximum value representable by the type size_type.">xtd::collections::generic::list::npos</a>. <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a" title="Represents the list size type (usually xtd::size).">size_type</a> last_index_of(const type_t&amp; value) const { if (<a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count()</a> == 0) return npos; return last_index_of(value, <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count()</a> - 1, <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count()</a>); }</dd></dl>
-<p>/ Determines the last index of a specific item in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. /</p><dl class="params"><dt>Parameters</dt><dd>
+<dl class="section return"><dt>Returns</dt><dd>Int32 The last index of value if found in the list; otherwise, <a class="el" href="#a2e4d8d2839c656d4bf456a02346b52fa" title="This is a special value equal to the maximum value representable by the type size_type.">xtd::collections::generic::list::npos</a>. <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a" title="Represents the list size type (usually xtd::size).">size_type</a> last_index_of(const type_t&amp; value) const { if (<a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count()</a> == 0) return npos; return last_index_of(value, <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count()</a> - 1, <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count()</a>); } / Determines the last index of a specific item in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. /</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>The object to locate in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. /</td></tr>
     <tr><td class="paramname">index</td><td>The zero-based starting index of the search. / </td></tr>
@@ -5187,114 +4972,6 @@ template&lt;class type_t, class allocator_t&gt; </div>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a4d1750491c4a59457742edee88a9897e" name="a4d1750491c4a59457742edee88a9897e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d1750491c4a59457742edee88a9897e">&#9670;&#160;</a></span>pop_back()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::pop_back </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Removes the last element of the container. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Calling pop_back on an empty container results in undefined behavior. </dd>
-<dd>
-Iterators (including the <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7f021a1415b86f2d013b2618fb31ae53" title="The END key.">xtd::collections::generic::list::end()</a> iterator) and references to the last element are invalidated. </dd></dl>
-
-</div>
-</div>
-<a id="adf868f38f4e81d03746e453bab03f4c5" name="adf868f38f4e81d03746e453bab03f4c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf868f38f4e81d03746e453bab03f4c5">&#9670;&#160;</a></span>push_back() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::push_back </td>
-          <td>(</td>
-          <td class="paramtype">const type_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Appends the given element value to the end of the container. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The value of the element to append. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If after the operation the new <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count()</a> is greater than old <a class="el" href="#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity()</a> a reallocation takes place, in which case all iterators (including the <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7f021a1415b86f2d013b2618fb31ae53" title="The END key.">xtd::collections::generic::list::end()</a> iterator) and all references to the elements are invalidated. Otherwise only the <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7f021a1415b86f2d013b2618fb31ae53" title="The END key.">xtd::collections::generic::list::end()</a> iterator is invalidated. </dd>
-<dd>
-The new element is initialized as a copy of <code>value</code>. </dd></dl>
-
-</div>
-</div>
-<a id="a0ea2d8cd654a08e93c59f835a6fe3e24" name="a0ea2d8cd654a08e93c59f835a6fe3e24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ea2d8cd654a08e93c59f835a6fe3e24">&#9670;&#160;</a></span>push_back() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::push_back </td>
-          <td>(</td>
-          <td class="paramtype">type_t &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Appends the given element value to the end of the container. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The value of the element to append. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If after the operation the new <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count()</a> is greater than old <a class="el" href="#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity()</a> a reallocation takes place, in which case all iterators (including the <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7f021a1415b86f2d013b2618fb31ae53" title="The END key.">xtd::collections::generic::list::end()</a> iterator) and all references to the elements are invalidated. Otherwise only the <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7f021a1415b86f2d013b2618fb31ae53" title="The END key.">xtd::collections::generic::list::end()</a> iterator is invalidated. </dd>
-<dd>
-<code>value</code> is moved into the new element. </dd></dl>
 
 </div>
 </div>
@@ -5374,7 +5051,7 @@ template&lt;class predicate_t&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>The number of elements removed from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Determines whether the xtd::collections::generic::list &lt;type_t&gt; contains elements that match the cond...">xtd::collections::generic::list::exists</a> method and several other methods that use the <a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab" title="Represents a delegate that defines a set of criteria and determines whether the specified object meet...">xtd::predicate</a> &lt;type_t&gt; generic delegate. <br  />
 A <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of strings is created, containing 8 dinosaur names, two of which (at positions 1 and 5) end with "saurus". The example also defines a search predicate method named <code>ends_with_saurus</code>, which accepts a string parameter and returns a boolean value indicating whether the input string ends in "saurus". <br  />
-The <a class="el" href="#af514ef74ddbab91477354fe37a3b9c55" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find</a>, <a class="el" href="#aabefdc6f1ceb9b41f18a0b6c52e444b7" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find_last</a>, and xtd::collections::generic::list::findA_all methods are used to search the list with the search predicate method, and then the <a class="el" href="#ac42cee6b4ab1231d03cad0304ba93c7b" title="Removes all the elements that match the conditions defined by the specified predicate.">xtd::collections::generic::list::remove_all</a> method is used to remove all entries ending with "saurus". <br  />
+The <a class="el" href="#af514ef74ddbab91477354fe37a3b9c55" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find</a>, <a class="el" href="#ae325c2d29a0c3816520a004a399e97b0" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find_last</a>, and xtd::collections::generic::list::findA_all methods are used to search the list with the search predicate method, and then the <a class="el" href="#ac42cee6b4ab1231d03cad0304ba93c7b" title="Removes all the elements that match the conditions defined by the specified predicate.">xtd::collections::generic::list::remove_all</a> method is used to remove all entries ending with "saurus". <br  />
 Finally, the <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Determines whether the xtd::collections::generic::list &lt;type_t&gt; contains elements that match the cond...">xtd::collections::generic::list::exists</a> method is called. It traverses the list from the beginning, passing each element in turn to the <code>ends_with_saurus</code> method. The search stops and the method returns <code>true</code> if the <code>ends_with_saurus</code> method returns <code>true</code> for any element. The <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Determines whether the xtd::collections::generic::list &lt;type_t&gt; contains elements that match the cond...">xtd::collections::generic::list::exists</a> method returns <code>false</code> because all such elements have been removed. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
@@ -5395,14 +5072,14 @@ Finally, the <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Dete
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; dinosaur : dinosaurs)</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ntrue_for_all(ends_with_saurus): {0}&quot;</span>, dinosaurs.true_for_all(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus}));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ntrue_for_all(ends_with_saurus): {0}&quot;</span>, dinosaurs.true_for_all(ends_with_saurus));</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfind(ends_with_saurus): {0}&quot;</span>, dinosaurs.find(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus}));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfind(ends_with_saurus): {0}&quot;</span>, dinosaurs.find(ends_with_saurus).value_or(<span class="stringliteral">&quot;(none)&quot;</span>));</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfindLast(ends_with_saurus): {0}&quot;</span>, dinosaurs.find_last(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus}));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfindLast(ends_with_saurus): {0}&quot;</span>, dinosaurs.find_last(ends_with_saurus).value_or(<span class="stringliteral">&quot;(none)&quot;</span>));</div>
 <div class="line">    </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfind_all(ends_with_saurus):&quot;</span>);</div>
-<div class="line">    <span class="keyword">auto</span> sublist = dinosaurs.find_all(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus});</div>
+<div class="line">    <span class="keyword">auto</span> sublist = dinosaurs.find_all(ends_with_saurus);</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; dinosaur : sublist)</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
@@ -5642,89 +5319,6 @@ template&lt;class type_t, class allocator_t&gt; </div>
 
 </div>
 </div>
-<a id="aa1721a04cc90d92fbe111d1c6f59cde2" name="aa1721a04cc90d92fbe111d1c6f59cde2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1721a04cc90d92fbe111d1c6f59cde2">&#9670;&#160;</a></span>reserve()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::reserve </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a></td>          <td class="paramname"><span class="paramname"><em>new_cap</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Increase the capacity of the vector (the total number of elements that the vector can hold without requiring reallocation) to a value that's greater or equal to <code>new_cap</code>. If new_cap is greater than the current <a class="el" href="#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">capacity()</a>, new storage is allocated, otherwise the function does nothing. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">new_cap</td><td>The new capacity of the vector, in number of elements. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#aa1721a04cc90d92fbe111d1c6f59cde2" title="Increase the capacity of the vector (the total number of elements that the vector can hold without re...">xtd::collections::generic::list::reserve</a> does not change the size of the vector. </dd>
-<dd>
-If <code>new_cap</code> is greater than <a class="el" href="#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> property, all iterators, including the <a class="el" href="namespacextd.html#a3a39828bd6261156752c2d0eda4c625a" title="Returns an iterator to the end.">xtd::collections::generic::list::end</a> iterator, and all references to the elements are invalidated; otherwise, no iterators or references are invalidated. </dd>
-<dd>
-After a call to <a class="el" href="#aa1721a04cc90d92fbe111d1c6f59cde2" title="Increase the capacity of the vector (the total number of elements that the vector can hold without re...">xtd::collections::generic::list::reserve</a>, insertions will not trigger reallocation unless the insertion would make the size of the vector greater than the value of <a class="el" href="#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a>. </dd></dl>
-
-</div>
-</div>
-<a id="ab6226af93d8769bc1d2f0185542be4b2" name="ab6226af93d8769bc1d2f0185542be4b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6226af93d8769bc1d2f0185542be4b2">&#9670;&#160;</a></span>resize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::resize </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="#aee91fe5bbf243bdafcee990bbb05a517">value_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Resizes the container to contain <code>count</code> elements, does nothing if <code>count == <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count()</a>. / @param count The new size of the container. / @remarks If the current size is greater than</code>count<code>, the container is reduced to its first</code>count<code>elements. / @remarks If the current size is less than</code>count<code>, additional default-inserted elements are appended. virtual void resize(size_type count) {resize(count, <a class="el" href="#aee91fe5bbf243bdafcee990bbb05a517" title="Represents the list value type.">value_type</a> {});} / @brief Resizes the container to contain</code>count<code>elements, does nothing if</code>count == <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count()</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">count</td><td>The new size of the container. </td></tr>
-    <tr><td class="paramname">value</td><td>The value to initialize the new elements with. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If the current size is greater than <code>count</code>, the container is reduced to its first <code>count</code> elements. </dd>
-<dd>
-If the current size is less than <code>count</code>, additional copies of <code>value</code> are appended. </dd></dl>
-
-</div>
-</div>
 <a id="a3d383c7bea397d7d8180ec805a794b6b" name="a3d383c7bea397d7d8180ec805a794b6b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3d383c7bea397d7d8180ec805a794b6b">&#9670;&#160;</a></span>reverse() <span class="overload">[1/2]</span></h2>
 
@@ -5919,38 +5513,6 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <dl class="section remark"><dt>Remarks</dt><dd>This method uses <a class="el" href="classxtd_1_1basic__array.html#ad1bc2546d5b6d814fdebcd0318d76e91">xtd::array::reverse</a> to reverse the order of the elements. </dd>
 <dd>
 This method is an O(n) operation, where n is <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. </dd></dl>
-
-</div>
-</div>
-<a id="a88ef0388a54942cfee9f9be5a9227c67" name="a88ef0388a54942cfee9f9be5a9227c67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88ef0388a54942cfee9f9be5a9227c67">&#9670;&#160;</a></span>shrink_to_fit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::shrink_to_fit </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Requests the removal of unused capacity. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>It is a non-binding request to reduce <a class="el" href="#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity()</a> to <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count()</a>. It depends on the implementation whether the request is fulfilled. </dd>
-<dd>
-If reallocation occurs, all iterators (including the <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7f021a1415b86f2d013b2618fb31ae53" title="The END key.">xtd::collections::generic::list::end()</a> iterator) and all references to the elements are invalidated. If no reallocation occurs, no iterators or references are invalidated. </dd></dl>
 
 </div>
 </div>
@@ -6261,36 +5823,6 @@ On average, this method is an O(n log n) operation, where n is <a class="el" hre
 
 </div>
 </div>
-<a id="a073a9ad7aba5a50e2a3ce8b10f5696fe" name="a073a9ad7aba5a50e2a3ce8b10f5696fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a073a9ad7aba5a50e2a3ce8b10f5696fe">&#9670;&#160;</a></span>swap()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::swap </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a>&lt; type_t, allocator_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>All iterators and references remain valid. The <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7f021a1415b86f2d013b2618fb31ae53" title="The END key.">xtd::collections::generic::list::end()</a> iterator is invalidated. </dd></dl>
-
-</div>
-</div>
 <a id="a354cc4be14bec632b8046b389dfa7b57" name="a354cc4be14bec632b8046b389dfa7b57"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a354cc4be14bec632b8046b389dfa7b57">&#9670;&#160;</a></span>to_array()</h2>
 
@@ -6303,7 +5835,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#aee91fe5bbf243bdafcee990bbb05a517">value_type</a> &gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::to_array </td>
+          <td class="memname">virtual <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#aa4f264509aae28c22fdd76e6c9d79e7e">value_type</a> &gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::to_array </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -6692,7 +6224,7 @@ template&lt;class prediacate_t&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if every element in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; matches the conditions defined by the specified <code>predicate</code>; otherwise, <code>false</code>. If the list has no elements, the return value is <code>true</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example demonstrates the <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Determines whether the xtd::collections::generic::list &lt;type_t&gt; contains elements that match the cond...">xtd::collections::generic::list::exists</a> method and several other methods that use the <a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab" title="Represents a delegate that defines a set of criteria and determines whether the specified object meet...">xtd::predicate</a> &lt;type_t&gt; generic delegate. <br  />
 A <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of strings is created, containing 8 dinosaur names, two of which (at positions 1 and 5) end with "saurus". The example also defines a search predicate method named <code>ends_with_saurus</code>, which accepts a string parameter and returns a boolean value indicating whether the input string ends in "saurus". <br  />
-The <a class="el" href="#af514ef74ddbab91477354fe37a3b9c55" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find</a>, <a class="el" href="#aabefdc6f1ceb9b41f18a0b6c52e444b7" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find_last</a>, and xtd::collections::generic::list::findA_all methods are used to search the list with the search predicate method, and then the <a class="el" href="#ac42cee6b4ab1231d03cad0304ba93c7b" title="Removes all the elements that match the conditions defined by the specified predicate.">xtd::collections::generic::list::remove_all</a> method is used to remove all entries ending with "saurus". <br  />
+The <a class="el" href="#af514ef74ddbab91477354fe37a3b9c55" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find</a>, <a class="el" href="#ae325c2d29a0c3816520a004a399e97b0" title="Searches for an element that matches the conditions defined by the specified predicate,...">xtd::collections::generic::list::find_last</a>, and xtd::collections::generic::list::findA_all methods are used to search the list with the search predicate method, and then the <a class="el" href="#ac42cee6b4ab1231d03cad0304ba93c7b" title="Removes all the elements that match the conditions defined by the specified predicate.">xtd::collections::generic::list::remove_all</a> method is used to remove all entries ending with "saurus". <br  />
 Finally, the <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Determines whether the xtd::collections::generic::list &lt;type_t&gt; contains elements that match the cond...">xtd::collections::generic::list::exists</a> method is called. It traverses the list from the beginning, passing each element in turn to the <code>ends_with_saurus</code> method. The search stops and the method returns <code>true</code> if the <code>ends_with_saurus</code> method returns <code>true</code> for any element. The <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Determines whether the xtd::collections::generic::list &lt;type_t&gt; contains elements that match the cond...">xtd::collections::generic::list::exists</a> method returns <code>false</code> because all such elements have been removed. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
@@ -6713,14 +6245,14 @@ Finally, the <a class="el" href="#ad301f481215c3d762a36df0612f1c066" title="Dete
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; dinosaur : dinosaurs)</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ntrue_for_all(ends_with_saurus): {0}&quot;</span>, dinosaurs.true_for_all(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus}));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ntrue_for_all(ends_with_saurus): {0}&quot;</span>, dinosaurs.true_for_all(ends_with_saurus));</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfind(ends_with_saurus): {0}&quot;</span>, dinosaurs.find(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus}));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfind(ends_with_saurus): {0}&quot;</span>, dinosaurs.find(ends_with_saurus).value_or(<span class="stringliteral">&quot;(none)&quot;</span>));</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfindLast(ends_with_saurus): {0}&quot;</span>, dinosaurs.find_last(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus}));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfindLast(ends_with_saurus): {0}&quot;</span>, dinosaurs.find_last(ends_with_saurus).value_or(<span class="stringliteral">&quot;(none)&quot;</span>));</div>
 <div class="line">    </div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nfind_all(ends_with_saurus):&quot;</span>);</div>
-<div class="line">    <span class="keyword">auto</span> sublist = dinosaurs.find_all(<a class="code hl_typedef" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab">predicate&lt;const string&amp;&gt;</a> {ends_with_saurus});</div>
+<div class="line">    <span class="keyword">auto</span> sublist = dinosaurs.find_all(ends_with_saurus);</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; dinosaur : sublist)</div>
 <div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
@@ -7069,7 +6601,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

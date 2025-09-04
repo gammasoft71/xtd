@@ -135,7 +135,7 @@ $(function(){ initResizable(false); });
 <div class="line">    screen_informations_text_box.parent(*<span class="keyword">this</span>);</div>
 <div class="line">    screen_informations_text_box.read_only(<span class="keyword">true</span>);</div>
 <div class="line">    screen_informations_text_box.word_wrap(<span class="keyword">false</span>);</div>
-<div class="line">    screen_informations_text_box.append_text(string::format(<span class="stringliteral">&quot;Number of screens: {}{}&quot;</span>, screen::all_screens().size(), environment::new_line()));</div>
+<div class="line">    screen_informations_text_box.append_text(string::format(<span class="stringliteral">&quot;Number of screens: {}{}&quot;</span>, screen::all_screens().length(), environment::new_line()));</div>
 <div class="line">    screen_informations_text_box.append_text(string::format(<span class="stringliteral">&quot;Standard pixels per inch: {}{}&quot;</span>, screen::get_standard_pixels_per_inch(), environment::new_line()));</div>
 <div class="line">    <span class="keyword">auto</span> index = 0;</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> screen : screen::all_screens()) {</div>
@@ -164,7 +164,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

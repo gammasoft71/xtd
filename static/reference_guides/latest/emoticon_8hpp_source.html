@@ -139,7 +139,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        create_data();</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        name_(<a class="code hl_function" href="classxtd_1_1forms_1_1emoticon.html#a3d3d945136ea3d7928e2cc0dfd005308">name</a>);</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> codepoint : <a class="code hl_function" href="classxtd_1_1forms_1_1emoticon.html#a809865f7bcdca2e527c9458725442731">codepoints</a>)</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>          codepoints_().push_back(<span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__types.html#gafab2aed44c397da401a7bc0b6ba53ca9">char32</a><span class="keyword">&gt;</span>(codepoint));</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>          codepoints_().add(<span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__types.html#gafab2aed44c397da401a7bc0b6ba53ca9">char32</a><span class="keyword">&gt;</span>(codepoint));</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      }</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      </div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
@@ -147,7 +147,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        create_data();</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        name_(name);</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> codepoint : codepoints)</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>          codepoints_().push_back(<span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__types.html#gafab2aed44c397da401a7bc0b6ba53ca9">char32</a><span class="keyword">&gt;</span>(codepoint));</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>          codepoints_().add(<span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__types.html#gafab2aed44c397da401a7bc0b6ba53ca9">char32</a><span class="keyword">&gt;</span>(codepoint));</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>      }</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      </div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
@@ -161,14 +161,14 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      <span class="keyword">explicit</span> emoticon(std::initializer_list&lt;type_t&gt; codepoints) {</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        create_data();</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> codepoint : codepoints)</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>          codepoints_().push_back(<span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__types.html#gafab2aed44c397da401a7bc0b6ba53ca9">char32</a><span class="keyword">&gt;</span>(codepoint));</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>          codepoints_().add(<span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__types.html#gafab2aed44c397da401a7bc0b6ba53ca9">char32</a><span class="keyword">&gt;</span>(codepoint));</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>      }</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      </div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>      <span class="keyword">explicit</span> emoticon(<span class="keyword">const</span> xtd::array&lt;type_t&gt;&amp; codepoints) {</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        create_data();</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> codepoint : codepoints)</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>          codepoints_().push_back(<span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__types.html#gafab2aed44c397da401a7bc0b6ba53ca9">char32</a><span class="keyword">&gt;</span>(codepoint));</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>          codepoints_().add(<span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="group__types.html#gafab2aed44c397da401a7bc0b6ba53ca9">char32</a><span class="keyword">&gt;</span>(codepoint));</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      }</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      </div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
@@ -261,7 +261,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

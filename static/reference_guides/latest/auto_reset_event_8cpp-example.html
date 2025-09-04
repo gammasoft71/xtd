@@ -111,9 +111,9 @@ $(function(){ initResizable(false); });
 <div class="line">      console::read_line();</div>
 <div class="line">      </div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 1; index &lt; 4; ++index) {</div>
-<div class="line">        threads.emplace_back(thread_proc);</div>
-<div class="line">        threads.back().name(string::format(<span class="stringliteral">&quot;Thread_{}&quot;</span>, index));</div>
-<div class="line">        threads.back().start();</div>
+<div class="line">        threads.add(thread {thread_proc});</div>
+<div class="line">        threads[threads.count() - 1].name(string::format(<span class="stringliteral">&quot;Thread_{}&quot;</span>, index));</div>
+<div class="line">        threads[threads.count() - 1].start();</div>
 <div class="line">      }</div>
 <div class="line">      thread::sleep(250_ms);</div>
 <div class="line">      </div>
@@ -197,7 +197,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

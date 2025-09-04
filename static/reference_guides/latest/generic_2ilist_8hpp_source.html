@@ -113,29 +113,25 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      <span class="keyword">class </span>ilist : <span class="keyword">public</span> icollection&lt;type_t&gt; {</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keyword">using </span>iterator = <span class="keyword">typename</span> icollection&lt;type_t&gt;::iterator;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keyword">using </span>const_iterator = <span class="keyword">typename</span> icollection&lt;type_t&gt;::const_iterator;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> npos = std::numeric_limits&lt;xtd::size&gt;::max();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> npos = std::numeric_limits&lt;xtd::size&gt;::max();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> is_fixed_size() const noexcept = 0;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> is_fixed_size() const noexcept = 0;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        virtual xtd::<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> index_of(const type_t&amp; item) const noexcept = 0;</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        virtual xtd::<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> index_of(const type_t&amp; item) const noexcept = 0;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        virtual <span class="keywordtype">void</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae0df5f3dfd2650ae5be9993434e2b2c0">insert</a>(xtd::<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> index, const type_t&amp; item) = 0;</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        virtual <span class="keywordtype">void</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae0df5f3dfd2650ae5be9993434e2b2c0">insert</a>(xtd::<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> index, const type_t&amp; item) = 0;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        virtual <span class="keywordtype">void</span> remove_at(xtd::<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> index) = 0;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        virtual const type_t&amp; operator [](xtd::<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> index) const = 0;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        virtual type_t&amp; operator [](xtd::<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> index) = 0;</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      };</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    }</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  }</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>}</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        virtual <span class="keywordtype">void</span> remove_at(xtd::<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> index) = 0;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        virtual const type_t&amp; operator [](xtd::<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> index) const = 0;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        virtual type_t&amp; operator [](xtd::<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> index) = 0;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>      };</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    }</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
 <div class="ttc" id="ageneric_2icollection_8hpp_html"><div class="ttname"><a href="generic_2icollection_8hpp.html">icollection.hpp</a></div><div class="ttdoc">Contains xtd::collections::generic::icollection &lt;type_t&gt; interface.</div></div>
 <div class="ttc" id="agroup__types_html_ga221e5b824352c9046d353e4659af5b87"><div class="ttname"><a href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae0df5f3dfd2650ae5be9993434e2b2c0"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae0df5f3dfd2650ae5be9993434e2b2c0">xtd::console_key::insert</a></div><div class="ttdeci">@ insert</div><div class="ttdoc">The INS (INSERT) key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:62</div></div>
@@ -147,7 +143,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

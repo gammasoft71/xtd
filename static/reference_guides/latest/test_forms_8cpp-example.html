@@ -138,7 +138,7 @@ $(function(){ initResizable(false); });
 <div class="line">    <a id="a5" name="a5"></a><a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a5a4bc61bebeea8b848b4371ca82db09e">font</a>(<a id="a6" name="a6"></a><a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a3f6491b9cb25850c60a2bd9049ca1df4">default_font</a>());</div>
 <div class="line">    <a id="a7" name="a7"></a><a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a265fde2d4a85f8abae67e2223c20e1f5">fore_color</a>(<a id="a8" name="a8"></a><a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#a28af010a8c7e9a899e4343ea137014ad">default_fore_color</a>());</div>
 <div class="line">    <a id="a9" name="a9"></a><a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ad3bdcdfa8e1762b656e1a46eedacf6c5">text</a>(prompt);</div>
-<div class="line">    <a id="a10" name="a10"></a><a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea99938282f04071859941e18f16efcf42">select</a>(<a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ad3bdcdfa8e1762b656e1a46eedacf6c5">text</a>().<a id="a11" name="a11"></a><a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ad6b15530ad92e3df1996d4fd3c0c862e">size</a>() - 1, 0);</div>
+<div class="line">    <a id="a10" name="a10"></a><a class="code hl_enumvalue" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea99938282f04071859941e18f16efcf42">select</a>(<a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ad3bdcdfa8e1762b656e1a46eedacf6c5">text</a>().<a id="a11" name="a11"></a><a class="code hl_function" href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">length</a>() - 1, 0);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">protected</span>:</div>
@@ -161,7 +161,7 @@ $(function(){ initResizable(false); });
 <div class="line">  <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> get_command()<span class="keyword"> const </span>{</div>
 <div class="line">    <span class="keyword">auto</span> pos = <a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ad3bdcdfa8e1762b656e1a46eedacf6c5">text</a>().<a id="a18" name="a18"></a><a class="code hl_function" href="classxtd_1_1basic__string.html#acc799a8cc31af232470d65cd88a1ca6a">last_index_of</a>(prompt);</div>
 <div class="line">    <span class="keywordflow">if</span> (pos != xtd::string::npos) {</div>
-<div class="line">      pos += prompt.size();</div>
+<div class="line">      pos += prompt.length();</div>
 <div class="line">      <span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ad3bdcdfa8e1762b656e1a46eedacf6c5">text</a>().substring(pos);</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>;</div>
@@ -180,7 +180,7 @@ $(function(){ initResizable(false); });
 <div class="line">      <span class="keywordflow">try</span> {</div>
 <div class="line">        <span class="keyword">auto</span> args = command_line.split(<span class="charliteral">&#39; &#39;</span>);</div>
 <div class="line">        start_info.<a id="a20" name="a20"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#aed8979db3732fe5545547ee34a5bfce9">file_name</a>(args[0]);</div>
-<div class="line">        <span class="keywordflow">if</span> (args.size() &gt; 1)</div>
+<div class="line">        <span class="keywordflow">if</span> (args.length() &gt; 1)</div>
 <div class="line">          start_info.<a id="a21" name="a21"></a><a class="code hl_function" href="classxtd_1_1diagnostics_1_1process__start__info.html#ab767d7821cbc9cc3443be5f0b39d4b08">arguments</a>(xtd::string::join(<span class="stringliteral">&quot; &quot;</span>, <a class="code hl_typedef" href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">xtd::argument_collection</a>(args.begin() + 1, args.end())));</div>
 <div class="line">          </div>
 <div class="line">        <a id="a22" name="a22"></a><a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#a9e1e2a9b733778bc8563c364530c72f2">append_text</a>(<a class="code hl_function" href="classxtd_1_1environment.html#a19a9aa87ee20eb3789058621ed161c4e">xtd::environment::new_line</a>());</div>
@@ -268,7 +268,6 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a5a4bc61bebeea8b848b4371ca82db09e"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a5a4bc61bebeea8b848b4371ca82db09e">xtd::forms::control::font</a></div><div class="ttdeci">virtual drawing::font font() const noexcept</div><div class="ttdoc">Gets the font of the text displayed by the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_ab4236dd32071d07bb8ec2452e041fbfa"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa">xtd::forms::control::back_color</a></div><div class="ttdeci">virtual drawing::color back_color() const noexcept</div><div class="ttdoc">Gets the background color for the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_ac49090fd2de49771a00b4835895c6bd8"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#ac49090fd2de49771a00b4835895c6bd8">xtd::forms::control::default_size</a></div><div class="ttdeci">virtual drawing::size default_size() const noexcept</div><div class="ttdoc">Gets the default size of the control.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1control_html_ad6b15530ad92e3df1996d4fd3c0c862e"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#ad6b15530ad92e3df1996d4fd3c0c862e">xtd::forms::control::size</a></div><div class="ttdeci">virtual drawing::size size() const noexcept</div><div class="ttdoc">Gets the height and width of the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1key__event__args_html"><div class="ttname"><a href="classxtd_1_1forms_1_1key__event__args.html">xtd::forms::key_event_args</a></div><div class="ttdoc">Provides data for the xtd::forms::control::key_down or xtd::forms::control::key_up event.</div><div class="ttdef"><b>Definition</b> key_event_args.hpp:25</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1text__box__base_html_aab82289e82f2768b84c982fd3e00451c"><div class="ttname"><a href="classxtd_1_1forms_1_1text__box__base.html#aab82289e82f2768b84c982fd3e00451c">xtd::forms::text_box_base::multiline</a></div><div class="ttdeci">virtual bool multiline() const noexcept</div><div class="ttdoc">Gets a value indicating whether this is a multiline text box control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1text__box_html"><div class="ttname"><a href="classxtd_1_1forms_1_1text__box.html">xtd::forms::text_box</a></div><div class="ttdoc">Represents a standard Windows text box.</div><div class="ttdef"><b>Definition</b> text_box.hpp:31</div></div>
@@ -288,12 +287,13 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="agroup__xtd__forms_html_gga2f00c1ad108efaddc951106e768970dea99938282f04071859941e18f16efcf42"><div class="ttname"><a href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea99938282f04071859941e18f16efcf42">xtd::forms::keys::select</a></div><div class="ttdeci">@ select</div><div class="ttdoc">The SELECT key.</div><div class="ttdef"><b>Definition</b> keys.hpp:163</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga2f00c1ad108efaddc951106e768970deae2a7106f1cc8bb1e1318df70aa0a3540"><div class="ttname"><a href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deae2a7106f1cc8bb1e1318df70aa0a3540">xtd::forms::keys::enter</a></div><div class="ttdeci">@ enter</div><div class="ttdoc">The ENTER key.</div><div class="ttdef"><b>Definition</b> keys.hpp:101</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div><div class="ttdef"><b>Definition</b> status_bar_panel_style.hpp:25</div></div>
+<div class="ttc" id="anamespacextd_html_aa9cc6219bcf151f5a94b26a70ba8654b"><div class="ttname"><a href="namespacextd.html#aa9cc6219bcf151f5a94b26a70ba8654b">xtd::length</a></div><div class="ttdeci">constexpr size_type length() const noexcept</div><div class="ttdoc">Returns the length of the current read_only_span.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:229</div></div>
 <div class="ttc" id="astructxtd_1_1drawing_1_1size_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a></div><div class="ttdoc">Stores an ordered pair of integers, which specify a height and width.</div><div class="ttdef"><b>Definition</b> size.hpp:32</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 2 2025 20:56:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 4 2025 19:42:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
