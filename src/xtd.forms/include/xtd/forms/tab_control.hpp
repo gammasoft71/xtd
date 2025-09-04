@@ -77,7 +77,7 @@ namespace xtd {
         /// @param text The text of element to add.
         /// @param name The name of element to add.
         void add(const xtd::string& text, const string& name);
-
+        
         using xtd::forms::layout::arranged_element_collection<tab_page_ref>::insert;
         /// @brief Inserts specified element at specified position.
         /// @param pos The iterator before which the content will be inserted. pos may be the arranged_element_collection::end iterator.
@@ -112,7 +112,7 @@ namespace xtd {
         /// @deprecated Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
         void push_back(const xtd::string& text, const string& name);
-
+        
         /// @}
         
         /// @cond
@@ -121,7 +121,7 @@ namespace xtd {
         void add(const char16* text);
         void add(const char32* text);
         void add(const wchar* text);
-
+        
         [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
         void push_back(const char* text);
         [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
