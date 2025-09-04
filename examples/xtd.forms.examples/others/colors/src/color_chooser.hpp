@@ -91,7 +91,7 @@ namespace colors_example {
       auto color_panel = new_ptr<color_chooser::color_panel>();
       color_panel->dock(dock_style::top);
       color_panel->color(color);
-      color_panel->tag(colors_.size());
+      color_panel->tag(colors_.count());
       colors_.add(color_panel);
       main_panel_.controls().add(*color_panel);
       color_panel->click += {*this, &color_chooser::on_color_panel_click};
@@ -105,25 +105,25 @@ namespace colors_example {
       auto colors = as<const array<drawing::color>&(*)() noexcept>(colors_choice_.selected_item().tag());
       for (auto iterator = colors().rbegin(); iterator != colors().rend(); ++iterator)
         add_color_panel(*iterator);
-      if (index == npos || colors_.size() == 0) return;
-      if (index < colors_.size()) selected_index(index);
-      else selected_index(colors_.size() - 1);
+      if (index == npos || colors_.count() == 0) return;
+      if (index < colors_.count()) selected_index(index);
+      else selected_index(colors_.count() - 1);
       resume_layout();
     }
     
     void on_color_panel_click(object & sender, const event_args & e) {
       selected_index(npos);
-      selected_index(colors_.size() - 1 - as<size_t>(as<control>(sender).tag()));
+      selected_index(colors_.count() - 1 - as<size_t>(as<control>(sender).tag()));
     }
     
     void on_selected_index_changed(const event_args& e) {
-      if (previous_selected_index_ != npos) colors_[colors_.size() - 1 - previous_selected_index_]->back_color(main_panel_.back_color());
-      if (previous_selected_index_ != npos) colors_[colors_.size() - 1 - previous_selected_index_]->fore_color(main_panel_.fore_color());
+      if (previous_selected_index_ != npos) colors_[colors_.count() - 1 - previous_selected_index_]->back_color(main_panel_.back_color());
+      if (previous_selected_index_ != npos) colors_[colors_.count() - 1 - previous_selected_index_]->fore_color(main_panel_.fore_color());
       if (selected_index_ == npos) selected_color(drawing::color::empty);
       else {
-        colors_[colors_.size() - 1 - selected_index_]->back_color(drawing::system_colors::accent());
-        colors_[colors_.size() - 1 - selected_index_]->fore_color(drawing::system_colors::accent_text());
-        selected_color(colors_[colors_.size() - 1 - selected_index_]->color());
+        colors_[colors_.count() - 1 - selected_index_]->back_color(drawing::system_colors::accent());
+        colors_[colors_.count() - 1 - selected_index_]->fore_color(drawing::system_colors::accent_text());
+        selected_color(colors_[colors_.count() - 1 - selected_index_]->color());
       }
       previous_selected_index_ = selected_index_;
       selected_index_changed(*this, e);
@@ -132,7 +132,7 @@ namespace colors_example {
     void on_selected_color_changed(const event_args& e) {
       for (auto color : colors_)
         if (color->color() == selected_color_) {
-          selected_index(colors_.size() - 1 - as<size_t>(color->tag()));
+          selected_index(colors_.count() - 1 - as<size_t>(color->tag()));
           break;
         }
       selected_color_changed(*this, e);

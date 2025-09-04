@@ -52,8 +52,8 @@ namespace border_style_example {
       top_side.checked(true);
       top_side.flat_style(xtd::forms::flat_style::flat);
       top_side.flat_appearance(flat_button_appearance().checked_back_color(application::style_sheet().system_colors().accent())
-        .mouse_down_back_color(application::style_sheet().system_colors().accent())
-        .mouse_over_back_color(application::style_sheet().system_colors().accent()));
+                               .mouse_down_back_color(application::style_sheet().system_colors().accent())
+                               .mouse_over_back_color(application::style_sheet().system_colors().accent()));
       top_side.checked(true);
       top_side.location({495, 15});
       top_side.size({50, 10});
@@ -67,8 +67,8 @@ namespace border_style_example {
       left_side.checked(true);
       left_side.flat_style(xtd::forms::flat_style::flat);
       left_side.flat_appearance(flat_button_appearance().checked_back_color(application::style_sheet().system_colors().accent())
-        .mouse_down_back_color(application::style_sheet().system_colors().accent())
-        .mouse_over_back_color(application::style_sheet().system_colors().accent()));
+                                .mouse_down_back_color(application::style_sheet().system_colors().accent())
+                                .mouse_over_back_color(application::style_sheet().system_colors().accent()));
       left_side.location({480, 25});
       left_side.size({10, 50});
       left_side.checked_changed += delegate_ {
@@ -81,8 +81,8 @@ namespace border_style_example {
       right_side.checked(true);
       right_side.flat_style(xtd::forms::flat_style::flat);
       right_side.flat_appearance(flat_button_appearance().checked_back_color(application::style_sheet().system_colors().accent())
-        .mouse_down_back_color(application::style_sheet().system_colors().accent())
-        .mouse_over_back_color(application::style_sheet().system_colors().accent()));
+                                 .mouse_down_back_color(application::style_sheet().system_colors().accent())
+                                 .mouse_over_back_color(application::style_sheet().system_colors().accent()));
       right_side.location({550, 25});
       right_side.size({10, 50});
       right_side.checked_changed += delegate_ {
@@ -95,8 +95,8 @@ namespace border_style_example {
       bottom_side.checked(true);
       bottom_side.flat_style(xtd::forms::flat_style::flat);
       bottom_side.flat_appearance(flat_button_appearance().checked_back_color(application::style_sheet().system_colors().accent())
-        .mouse_down_back_color(application::style_sheet().system_colors().accent())
-        .mouse_over_back_color(application::style_sheet().system_colors().accent()));
+                                  .mouse_down_back_color(application::style_sheet().system_colors().accent())
+                                  .mouse_over_back_color(application::style_sheet().system_colors().accent()));
       bottom_side.location({495, 75});
       bottom_side.size({50, 10});
       bottom_side.checked_changed += delegate_ {
