@@ -37,11 +37,6 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(typeof_<list<bool>::base_type::size_type>(), typeof_<list<int>::size_type>());
     }
     
-    void test_method_(difference_type) {
-      assert::are_equal(typeof_<xtd::ptrdiff>(), typeof_<list<int>::difference_type>());
-      assert::are_equal(typeof_<list<bool>::base_type::difference_type>(), typeof_<list<int>::difference_type>());
-    }
-    
     void test_method_(reference) {
       assert::are_equal(typeof_<int&>(), typeof_<list<int>::reference>());
     }
@@ -56,22 +51,6 @@ namespace xtd::collections::generic::tests {
     
     void test_method_(const_pointer) {
       assert::are_equal(typeof_<const int*>(), typeof_<list<int>::const_pointer>());
-    }
-    
-    void test_method_(iterator) {
-      assert::are_equal(typeof_<ilist<int>::iterator>(), typeof_<list<int>::iterator>());
-    }
-    
-    void test_method_(const_iterator) {
-      assert::are_equal(typeof_<ilist<int>::const_iterator>(), typeof_<list<int>::const_iterator>());
-    }
-    
-    void test_method_(reverse_iterator) {
-      assert::are_equal(typeof_<__xtd_raw_array_data__<int>::reverse_iterator>(), typeof_<list<int>::reverse_iterator>());
-    }
-    
-    void test_method_(const_reverse_iterator) {
-      assert::are_equal(typeof_<__xtd_raw_array_data__<int>::const_reverse_iterator>(), typeof_<list<int>::const_reverse_iterator>());
     }
     
     void test_method_(default_constructor) {
@@ -159,8 +138,6 @@ namespace xtd::collections::generic::tests {
       items.add(42);
       items.add(21);
       assert::are_equal(3_z, items.count());
-      items.resize(50);
-      assert::are_equal(50_z, items.count());
     }
     
     void test_method_(end) {

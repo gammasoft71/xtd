@@ -56,8 +56,6 @@ namespace xtd {
       /// @{
       /// @brief Represents the list value type.
       using value_type = bool;
-      /// @brief Represents the list allocator type.
-      using allocator_type = typename xtd::collections::generic::list<int32>::allocator_type;
       /// @brief Represents the list base type.
       using base_type =  typename xtd::collections::generic::list<int32>;
       /// @brief Represents the list size type (usually xtd::size).

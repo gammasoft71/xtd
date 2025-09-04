@@ -16,10 +16,6 @@ namespace xtd::collections::tests {
       assert::are_equal(typeof_<bool>(), typeof_<bit_array::value_type>());
     }
     
-    void test_method_(allocator_type) {
-      assert::are_equal(typeof_<list<int32>::allocator_type>(), typeof_<bit_array::allocator_type>());
-    }
-    
     void test_method_(base_type) {
       assert::are_equal(typeof_<list<int32>>(), typeof_<bit_array::base_type>());
     }

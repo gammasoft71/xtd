@@ -93,7 +93,7 @@ size bit_array::length() const noexcept {
 void bit_array::length(xtd::size value) {
   flush(); // Must be call first
   length_ = value;
-  bit_array_.resize(bits_per_int32 / bits_per_int32 + (bits_per_int32 % bits_per_int32 ? 1 : 0), 0);
+  bit_array_.items().resize(bits_per_int32 / bits_per_int32 + (bits_per_int32 % bits_per_int32 ? 1 : 0), 0);
 }
 
 const bit_array& bit_array::and_(const bit_array& value) {

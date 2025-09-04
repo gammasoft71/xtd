@@ -40,15 +40,6 @@ namespace xtd {
       template<class type_t>
       class ilist : public icollection<type_t> {
       public:
-        /// @name Public Aliases
-        
-        /// @{
-        /// @brief Represents the iterator of xtd::collections::generic::ienumerable value type.
-        using iterator = typename icollection<type_t>::iterator;
-        /// @brief Represents the const iterator of xtd::collections::generic::ienumerable value type.
-        using const_iterator = typename icollection<type_t>::const_iterator;
-        /// @}
-        
         /// @name Public Fields
         
         /// @{

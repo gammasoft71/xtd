@@ -711,20 +711,6 @@ namespace xtd::internal::tests {
       assert::are_equal(typeof_<__xtd_raw_array_data__<bool>::allocator_type>(), typeof_(allocator));
     }
     
-    void test_method_(get_base_type) {
-      auto items = __xtd_raw_array_data__ {84, 42, 21};
-      auto bt = items.get_base_type();
-      assert::are_equal(typeof_<__xtd_raw_array_data__<int>::base_type>(), typeof_(bt));
-      collection_assert::are_equal({84, 42, 21}, bt);
-    }
-    
-    void test_method_(get_base_type_with_bool) {
-      auto items = __xtd_raw_array_data__ {true, false, true};
-      auto bt = items.get_base_type();
-      assert::are_equal(typeof_<__xtd_raw_array_data__<bool>::base_type>(), typeof_(bt));
-      collection_assert::are_equal({true, false, true}, bt);
-    }
-    
     void test_method_(insert) {
       auto items = __xtd_raw_array_data__ {84, 42, 21};
       items.insert(items.begin() + 2, 63);
