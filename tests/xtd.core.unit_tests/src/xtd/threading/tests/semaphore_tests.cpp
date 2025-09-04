@@ -245,9 +245,9 @@ namespace xtd::threading::tests {
       auto threads = list<thread> {};
       for (auto index = 0; index < 5; ++index) {
         threads.add(thread {[&] {
-          assert::is_true(s.wait_one(0));
-          ++thread_ran;
-        }});
+            assert::is_true(s.wait_one(0));
+            ++thread_ran;
+          }});
         threads[threads.count() - 1].start();
       }
       thread::join_all(threads);

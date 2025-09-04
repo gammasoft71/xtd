@@ -364,11 +364,11 @@ namespace xtd {
       bit_array& operator <<=(xtd::size count) noexcept;
       /// @}
       
-    private:      
+    private:
       bool is_read_only() const noexcept override;
       bool is_synchronized() const noexcept override;
       const object& sync_root() const noexcept override;
-
+      
       void add(const bool&) override;
       void clear() override;
       bool contains(const bool&) const noexcept override;

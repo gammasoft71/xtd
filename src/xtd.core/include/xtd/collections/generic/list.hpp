@@ -166,7 +166,7 @@ namespace xtd {
         /// @remarks The elements are copied onto the xtd::collections::generic::list <type_t> in the same order they are read by the enumerator of the collection.
         /// @remarks This constructor is an O(n) operation, where n is the number of elements in collection.
         list(const xtd::collections::generic::ienumerable<type_t>& collection) {add_range(collection);}
-
+        
         /// @brief Default copy constructor with specified list.
         /// @param list The xtd::collections::generic::list which elements will be inserted from.
         list(const list& list) {*data_ = *list.data_;}
@@ -443,7 +443,7 @@ namespace xtd {
           return convert_all(xtd::converter<output_t, const type_t&> {converter});
         }
         /// @endcond
-
+        
         /// @brief Copies the entire xtd::collections::generic::list <type_t> to a compatible one-dimensional array.
         /// @param array The one-dimensional xtd::array that is the destination of the elements copied from ICollection. The xtd::array must have zero-based indexing.
         /// @exception ArgumentNullException array is null.
@@ -514,7 +514,7 @@ namespace xtd {
             if (!helpers::equator<type_t> {}(self_[i], obj[i])) return false;
           return data_->items.version() == obj.data_->items.version();
         }
-                
+        
         /// @brief Determines whether the xtd::collections::generic::list <type_t> contains elements that match the conditions defined by the specified predicate.
         /// @param match The xtd::predicate <type_t> delegate that defines the conditions of the elements to search for.
         /// @return `true` if the xtd::collections::generic::list <type_t> contains one or more elements that match the conditions defined by the specified `predicate`; otherwise, `false`.
@@ -774,7 +774,7 @@ namespace xtd {
         /// @remarks The order of the elements in the collection is preserved in the xtd::collections::generic::list <type_t>.
         virtual void insert_range(size_type index, const std::initializer_list<type_t>& items) {
           if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
-
+          
           auto pos = xtd::size {};
           for (const auto& item : items)
             insert(index + pos++, item);

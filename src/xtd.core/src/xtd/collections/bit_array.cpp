@@ -295,7 +295,7 @@ bool bit_array::is_synchronized() const noexcept {
   return as<icollection<int32>>(bit_array_).is_synchronized();
 }
 
-const object& bit_array::sync_root() const noexcept {
+const object & bit_array::sync_root() const noexcept {
   flush(); // Must be call first
   return as<icollection<int32>>(bit_array_).sync_root();
 }

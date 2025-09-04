@@ -3,7 +3,7 @@
 auto main() -> int {
   /*
   auto numbers = array {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-
+  
   // Gets distinct numbers with xtd::collections::extensions::enumerable extension.
   auto query1 = numbers | select<bool>([](auto n)->bool {return n % 2 == 0;});
   console::write_line("query1 = {}", query1);
