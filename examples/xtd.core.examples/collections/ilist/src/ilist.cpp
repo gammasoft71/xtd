@@ -54,7 +54,7 @@ public:
     simple_list() {count_ = 0;}
     
     void print_contents() const noexcept {
-      console::write_line("List has a capacity of {} and currently has {} elements.", contents_.size(), count_);
+      console::write_line("List has a capacity of {} and currently has {} elements.", contents_.length(), count_);
       console::write("List contents:");
       for (auto i = 0_z; i < count(); ++i)
         console::write(" {}", contents_[i]);
@@ -68,7 +68,7 @@ public:
     bool is_read_only() const noexcept override {return false;}
 
     void add(const any_object& value) override {
-      if (count_ < contents_.size()) {
+      if (count_ < contents_.length()) {
         contents_[count_] = value;
         count_++;
       }
@@ -91,7 +91,7 @@ public:
     }
     
     void insert(size index, const any_object& value) override {
-      if (count_ + 1 <= contents_.size() && index < count()) {
+      if (count_ + 1 <= contents_.length() && index < count()) {
         ++count_;
         
         for (size i = count() - 1; i > index; --i)

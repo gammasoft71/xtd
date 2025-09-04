@@ -5,7 +5,7 @@ public:
   form1() {
     text("Open file box example");
     client_size({400, 200});
-    controls().push_back_range({button_open_single_file, button_open_multiple_files});
+    controls().add_range({button_open_single_file, button_open_multiple_files});
     
     button_open_single_file.parent(*this)
     .location({10, 10})

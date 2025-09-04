@@ -20,7 +20,7 @@ namespace font_family_example {
       auto font_families = drawing::font_family::families();
       label_font_famlies_count.text(string::format("There are {0} font families :", font_families.count()));
       for (auto font_family : font_families)
-        list_box_font_families.items().push_back(font_family.name());
+        list_box_font_families.items().add(font_family.name());
     }
     
   private:

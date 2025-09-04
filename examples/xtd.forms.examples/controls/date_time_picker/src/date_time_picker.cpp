@@ -6,7 +6,7 @@ class form1 : public form {
 public:
   form1() {
     text("Date time picker example");
-    controls().push_back_range({picker1, label1, picker2, label2});
+    controls().add_range({picker1, label1, picker2, label2});
     
     picker1.location({30, 30});
     picker1.format(date_time_picker_format::short_format);

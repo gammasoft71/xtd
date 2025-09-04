@@ -82,9 +82,9 @@ private:
   //
   static void write_file_content(int total_element) {
     auto lines = list<string> {};
-    lines.push_back("<?xml version=\"1.0\" standalone=\"yes\"?>");
+    lines.add("<?xml version=\"1.0\" standalone=\"yes\"?>");
     for (auto index  = 0; index < total_element; ++index)
-      lines.push_back(string::format("<MyElement Index=\"{0}\">\nMyElement at position {0}.", index));
+      lines.add(string::format("<MyElement Index=\"{0}\">\nMyElement at position {0}.", index));
     file::write_all_lines(source_path, lines);
   }
   

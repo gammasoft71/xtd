@@ -31,12 +31,12 @@ public:
     text("Send messages to form");
     location({100, 100});
     client_size({300, 300});
-    controls().push_back_range({button_send, list_box_messages});
+    controls().add_range({button_send, list_box_messages});
     
     notifier.something_ready += delegate_ {
       static auto counter = 0;
-      list_box_messages.items().push_back(string::format("Something ready notified {} times", ++counter));
-      list_box_messages.selected_index(list_box_messages.items().size() - 1);
+      list_box_messages.items().add(string::format("Something ready notified {} times", ++counter));
+      list_box_messages.selected_index(list_box_messages.items().count() - 1);
     };
     
     button_send.auto_size(true);

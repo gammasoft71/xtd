@@ -6,7 +6,7 @@ public:
     client_size({220, 115});
     maximum_client_size(client_size() + drawing::size {300, 300});
     minimum_client_size(client_size());
-    controls().push_back_range({up_button, left_button, right_button, down_button, shrink_button, grow_button});
+    controls().add_range({up_button, left_button, right_button, down_button, shrink_button, grow_button});
     text("Form resize example");
     
     key_down += delegate_(auto sender, auto e) {

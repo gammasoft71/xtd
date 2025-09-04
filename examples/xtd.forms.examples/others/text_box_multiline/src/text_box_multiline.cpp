@@ -6,7 +6,7 @@ namespace text_box_multiline_example {
     form1() {
       text("Text box multiline example");
       client_size({480, 320});
-      controls().push_back(text_box1);
+      controls().add(text_box1);
       
       text_box1.dock(dock_style::fill);
       text_box1.multiline(true);

@@ -7,7 +7,7 @@ namespace form_background_image2 {
     form1() {
       background_image(application::dark_mode() ? properties::resources::bliss_night() : properties::resources::bliss_day());
       client_size({600, 450});
-      controls().push_back_range({bliss_url, image_layout_choice});
+      controls().add_range({bliss_url, image_layout_choice});
       double_buffered(true);
       text("form with background image example 2");
 
@@ -15,14 +15,14 @@ namespace form_background_image2 {
       bliss_url.dock(dock_style::bottom);
       bliss_url.text_align(xtd::forms::content_alignment::middle_center);
       bliss_url.text("MACOS BLISS");
-      bliss_url.links().push_back({0, bliss_url.text().size(), "https://basicappleguy.com/basicappleblog/macosbliss"});
+      bliss_url.links().add({0, bliss_url.text().size(), "https://basicappleguy.com/basicappleblog/macosbliss"});
       bliss_url.link_clicked += delegate_(object & sender, link_label_clicked_event_args & e) {
         e.visited(true);
         diagnostics::process::start(diagnostics::process_start_info {as<string>(e.link().link_data())}.use_shell_execute(true));
       };
 
       for (auto [value, name] : enum_object<>::get_entries<xtd::forms::image_layout>())
-        image_layout_choice.items().push_back({name, value});
+        image_layout_choice.items().add({name, value});
       image_layout_choice.location({10, 10});
       image_layout_choice.selected_index_changed += delegate_ {
         background_image_layout(as<xtd::forms::image_layout>(image_layout_choice.selected_item().tag()));

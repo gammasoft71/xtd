@@ -10,7 +10,7 @@ auto main() -> int {
   rnd2.next_bytes(bytes2);
   
   console::write_line("First Series:");
-  for (auto i = 0ul; i < bytes1.size(); i++) {
+  for (auto i = 0ul; i < bytes1.length(); i++) {
     console::write("{, 5}", bytes1[i]);
     if ((i + 1) % 10 == 0)
       console::write_line();
@@ -18,7 +18,7 @@ auto main() -> int {
   
   console::write_line();
   console::write_line("Second Series:");
-  for (auto i = 0ul; i < bytes2.size(); i++) {
+  for (auto i = 0ul; i < bytes2.length(); i++) {
     console::write("{, 5}", bytes2[i]);
     if ((i + 1) % 10 == 0)
       console::write_line();

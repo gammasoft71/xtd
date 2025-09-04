@@ -5,7 +5,7 @@ namespace check_box_example {
   public:
     form1() {
       text("Check box example");
-      controls().push_back_range({check_box1, check_box2, check_box3, check_box4, check_box5});
+      controls().add_range({check_box1, check_box2, check_box3, check_box4, check_box5});
       
       check_box1.auto_check(false);
       check_box1.click += delegate_ {

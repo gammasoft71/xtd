@@ -8,7 +8,7 @@ auto main() -> int {
     while (!terminate_app) {
       auto incoming_end_point = net::ip_end_point {};
       auto buffer = udp.receive(incoming_end_point);
-      if (buffer.size() && buffer[0] != 0xFF)
+      if (buffer.length() && buffer[0] != 0xFF)
         console::write_line(string(buffer.begin(), buffer.end()));
     }
   }};
@@ -18,7 +18,7 @@ auto main() -> int {
     auto counter = 0;
     while (!terminate_app) {
       auto str = string::format("counter={}", ++counter);
-      udp.send(array<byte>(str.begin(), str.end()), str.size(), net::ip_end_point(net::ip_address::loopback, 9400));
+      udp.send(array<byte>(str.begin(), str.end()), str.length(), net::ip_end_point(net::ip_address::loopback, 9400));
       thread::sleep(50_ms);
     }
     udp.send(array<byte> {0xFF}, 1, net::ip_end_point(net::ip_address::loopback, 9400));

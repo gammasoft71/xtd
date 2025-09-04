@@ -12,7 +12,7 @@ settings_form::settings_form() {
   client_size({500, 250});
   start_position(form_start_position::manual);
   location(properties::settings::default_settings().settings_form_location());
-  controls().push_back_range({color_label_, light_point_color_label_, size_label_, default_settings_label_, color_color_picker_, light_point_color_color_picker_, opcacity_label_, opacity_numeric_up_down_, size_numeric_up_down_, reset_button_});
+  controls().add_range({color_label_, light_point_color_label_, size_label_, default_settings_label_, color_color_picker_, light_point_color_color_picker_, opcacity_label_, opacity_numeric_up_down_, size_numeric_up_down_, reset_button_});
   
   auto middle = width() / 2;
   color_label_.text("Color");

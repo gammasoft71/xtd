@@ -6,7 +6,7 @@ namespace example {
     form1() {
       text("Images 2 example");
       client_size({880, 820});
-      controls().push_back_range({label_picture_kde_theme, label_picture_gnome_theme, label_picture_macos_theme, label_picture_symbolic_theme, label_picture_windows_theme, label_picture_xtd_theme, picture_kde_theme, picture_gnome_theme, picture_macos_theme, picture_symbolic_theme, picture_windows_theme, picture_xtd_theme, panel_separator_line, label_picture_context, label_picture_name, label_picture_size, button_context_previous, button_context_next, button_name_previous, button_name_next, button_decrease, button_increase});
+      controls().add_range({label_picture_kde_theme, label_picture_gnome_theme, label_picture_macos_theme, label_picture_symbolic_theme, label_picture_windows_theme, label_picture_xtd_theme, picture_kde_theme, picture_gnome_theme, picture_macos_theme, picture_symbolic_theme, picture_windows_theme, picture_xtd_theme, panel_separator_line, label_picture_context, label_picture_name, label_picture_size, button_context_previous, button_context_next, button_name_previous, button_name_next, button_decrease, button_increase});
       
       label_picture_kde_theme.text_align(content_alignment::middle_center);
       label_picture_kde_theme.bounds({10, 25, 280, label_picture_name.height()});

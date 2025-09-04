@@ -20,8 +20,8 @@ namespace link_label_example {
       link_label2.auto_size(true);
       link_label2.parent(*this);
       link_label2.text("Gammasoft presents xtd framework");
-      link_label2.links().push_back({0, 9, "https://gammasoft71.github.io"});
-      link_label2.links().push_back({19, 3, "https://gammasoft71.github.io/xtd"});
+      link_label2.links().add({0, 9, "https://gammasoft71.github.io"});
+      link_label2.links().add({19, 3, "https://gammasoft71.github.io/xtd"});
       link_label2.link_clicked += delegate_(object & sender, link_label_clicked_event_args & e) {
         e.visited(true);
         diagnostics::process::start(diagnostics::process_start_info {as<string>(e.link().link_data())}.use_shell_execute(true));
@@ -31,7 +31,7 @@ namespace link_label_example {
       link_label3.auto_size(true);
       link_label3.parent(*this);
       link_label3.text("Put your temporary files in the temp directory");
-      link_label3.links().push_back({32, 4, io::path::get_temp_path()});
+      link_label3.links().add({32, 4, io::path::get_temp_path()});
       link_label3.link_clicked += delegate_(object & sender, link_label_clicked_event_args & e) {
         diagnostics::process::start(diagnostics::process_start_info {as<string>(e.link().link_data())}.use_shell_execute(true));
       };

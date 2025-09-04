@@ -5,7 +5,7 @@ namespace toggle_button_example {
   public:
     form1() {
       text("Toggle button example");
-      controls().push_back_range({toggle_button1, toggle_button2, toggle_button3});
+      controls().add_range({toggle_button1, toggle_button2, toggle_button3});
       
       toggle_button1.auto_check(false);
       toggle_button1.click += delegate_ {

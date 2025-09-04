@@ -180,17 +180,17 @@ public:
     
     choice1.parent(tab_page_choices);
     choice1.location({10, 10});
-    choice1.items().push_back_range({"Light red", "Light green", "Light blue", "Yellow", "White", "Dark gray", "Light cyan", "Light magenta", "Red", "Green", "Blue", "Brown", "Light gray", "Black", "Cyan", "Magenta"});
+    choice1.items().add_range({"Light red", "Light green", "Light blue", "Yellow", "White", "Dark gray", "Light cyan", "Light magenta", "Red", "Green", "Blue", "Brown", "Light gray", "Black", "Cyan", "Magenta"});
     choice1.selected_item("Light red");
     
     combo_box1.parent(tab_page_choices);
     combo_box1.location({10, 50});
-    combo_box1.items().push_back_range({"Light red", "Light green", "Light blue", "Yellow", "White", "Dark gray", "Light cyan", "Light magenta", "Red", "Green", "Blue", "Brown", "Light gray", "Black", "Cyan", "Magenta"});
+    combo_box1.items().add_range({"Light red", "Light green", "Light blue", "Yellow", "White", "Dark gray", "Light cyan", "Light magenta", "Red", "Green", "Blue", "Brown", "Light gray", "Black", "Cyan", "Magenta"});
     combo_box1.selected_item("Light green");
     
     domain_up_down1.parent(tab_page_choices);
     domain_up_down1.location({10, 90});
-    domain_up_down1.items().push_back_range({"Light red", "Light green", "Light blue", "Yellow", "White", "Dark gray", "Light cyan", "Light magenta", "Red", "Green", "Blue", "Brown", "Light gray", "Black", "Cyan", "Magenta"});
+    domain_up_down1.items().add_range({"Light red", "Light green", "Light blue", "Yellow", "White", "Dark gray", "Light cyan", "Light magenta", "Red", "Green", "Blue", "Brown", "Light gray", "Black", "Cyan", "Magenta"});
     domain_up_down1.selected_item("Light blue");
     
     numeric_up_down1.parent(tab_page_choices);
@@ -200,13 +200,13 @@ public:
     list_box1.parent(tab_page_lists);
     list_box1.location({10, 10});
     list_box1.size({250, 150});
-    list_box1.items().push_back_range({"Light red", "Light green", "Light blue", "Yellow", "White", "Dark gray", "Light cyan", "Light magenta", "Red", "Green", "Blue", "Brown", "Light gray", "Black", "Cyan", "Magenta"});
+    list_box1.items().add_range({"Light red", "Light green", "Light blue", "Yellow", "White", "Dark gray", "Light cyan", "Light magenta", "Red", "Green", "Blue", "Brown", "Light gray", "Black", "Cyan", "Magenta"});
     list_box1.selected_item("Light red");
     
     checked_list_box1.parent(tab_page_lists);
     checked_list_box1.location({10, 180});
     checked_list_box1.size({250, 150});
-    checked_list_box1.items().push_back_range({{"Light red", true}, "Light green", "Light blue", {"Yellow", true}, "White", "Dark gray", "Light cyan", "Light magenta", "Red", "Green", "Blue", "Brown", "Light gray", "Black", "Cyan", "Magenta"});
+    checked_list_box1.items().add_range({{"Light red", true}, "Light green", "Light blue", {"Yellow", true}, "White", "Dark gray", "Light cyan", "Light magenta", "Red", "Green", "Blue", "Brown", "Light gray", "Black", "Cyan", "Magenta"});
     checked_list_box1.selected_item("Light green");
     
     track_bar1.parent(tab_page_progress_and_track_bars);
@@ -240,8 +240,8 @@ public:
     
     tool_bar(tool_bar1);
     tool_bar1.parent(*this);
-    tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});
-    tool_bar1.buttons().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, help_tool_bar_button});
+    tool_bar1.image_list().images().add_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});
+    tool_bar1.buttons().add_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, help_tool_bar_button});
     tool_bar1.button_click += {*this, &form1::on_tool_bar_button_click};
     
     status_bar1.parent(*this);

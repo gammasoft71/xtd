@@ -13,7 +13,7 @@ namespace checked_list_box_example {
       checked_list_box1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
       
       for (auto index = 1; index <= 10; ++index)
-        checked_list_box1.items().push_back({string::format("Item {}", index), index % 2 != 0});
+        checked_list_box1.items().add({string::format("Item {}", index), index % 2 != 0});
       checked_list_box1.selected_index(0);
       
       checked_list_box1.item_check += delegate_(object & sender, item_check_event_args & e) {

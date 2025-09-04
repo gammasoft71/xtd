@@ -8,7 +8,7 @@ auto main() -> int {
   constexpr auto nchars = 0x044F - 0x0410 + 1;
   auto chars = list<char32_t> {nchars};
   auto code_point = U'\U00000410';
-  for (auto ctr = 0_z; ctr < chars.size(); ctr++) {
+  for (auto ctr = 0_z; ctr < chars.count(); ctr++) {
     chars[ctr] = code_point;
     code_point++;
   }

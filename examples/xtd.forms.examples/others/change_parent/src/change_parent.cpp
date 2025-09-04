@@ -13,7 +13,7 @@ public:
     
     top_panel.parent(*this);
     top_panel.dock(dock_style::fill);
-    top_panel.controls().push_back_range({left_panel, right_panel});
+    top_panel.controls().add_range({left_panel, right_panel});
     top_panel.control_layout_style(left_panel, {size_type::auto_size, true});
     top_panel.control_layout_style(right_panel, {size_type::auto_size, true});
     top_panel.padding(forms::padding(5, 5, 5, 0));
@@ -38,7 +38,7 @@ public:
     list_box1.parent(left_panel);
     list_box1.location({10, 50});
     list_box1.size({260, 100});
-    list_box1.items().push_back_range({"Apple", "Orange", "Banana", "Strawberry"});
+    list_box1.items().add_range({"Apple", "Orange", "Banana", "Strawberry"});
     list_box1.selected_index(0);
     
     toggle_button1.parent(left_panel);
@@ -63,7 +63,7 @@ public:
     bottom_panel.parent(*this);
     bottom_panel.height(50);
     bottom_panel.dock(dock_style::bottom);
-    bottom_panel.controls().push_back_range({left_button, right_button});
+    bottom_panel.controls().add_range({left_button, right_button});
     bottom_panel.control_layout_style(left_button, {size_type::auto_size, content_alignment::middle_center});
     bottom_panel.control_layout_style(right_button, {size_type::auto_size, content_alignment::middle_center});
     bottom_panel.padding(forms::padding(5));

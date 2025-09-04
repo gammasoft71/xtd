@@ -9,7 +9,7 @@ using namespace minesweeper;
 high_scores_dialog::high_scores_dialog() {
   accept_button(ok_button_);
   client_size({360, 200});
-  controls().push_back_range({title_, beginner_level_label_, intermediate_level_label_, expert_level_label_, beginner_score_label_, intermediate_score_label_, expert_score_label_, beginner_name_label_, intermediate_name_label_, expert_name_label_, reset_scores_button_, ok_button_});
+  controls().add_range({title_, beginner_level_label_, intermediate_level_label_, expert_level_label_, beginner_score_label_, intermediate_score_label_, expert_score_label_, beginner_name_label_, intermediate_name_label_, expert_name_label_, reset_scores_button_, ok_button_});
   form_border_style(forms::form_border_style::none);
   
   if (properties::settings::default_settings().original_color()) {

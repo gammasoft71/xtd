@@ -8,7 +8,7 @@ public:
   
   form1() {
     text("Form with CMake assembly info");
-    controls().push_back_range({company, product, version, company_name, product_name, product_version});
+    controls().add_range({company, product, version, company_name, product_name, product_version});
     client_size({350, 105});
     
     company.auto_size(true);

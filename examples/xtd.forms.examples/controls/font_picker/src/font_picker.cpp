@@ -5,7 +5,7 @@ public:
   form1() {
     text("Font picker example");
     client_size({400, 400});
-    controls().push_back_range({picker1, label1});
+    controls().add_range({picker1, label1});
     auto_scroll(true);
     
     picker1.location({10, 10});

@@ -76,7 +76,7 @@ namespace button_with_style_sheet_example {
       
       text("Button with style sheet example");
       client_size({370, 270});
-      controls().push_back_range({button1, button2, button3});
+      controls().add_range({button1, button2, button3});
     }
     
   private:

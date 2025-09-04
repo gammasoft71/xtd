@@ -5,7 +5,7 @@ public:
   form1() {
     text("Font box example");
     client_size({220, 160});
-    controls().push_back_range({button_font, button_font_and_color});
+    controls().add_range({button_font, button_font_and_color});
     
     button_font.parent(*this)
     .location({10, 10})

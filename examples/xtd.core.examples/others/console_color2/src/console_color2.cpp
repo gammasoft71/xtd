@@ -38,8 +38,8 @@ auto main() -> int {
   
   console::output_code_page(65001);
   
-  for (auto index = 0ul; index < logo.size(); ++index) {
-    console::write(index == 0 || index == logo.size() - 1 ? "       " : "     ");
+  for (auto index = 0ul; index < logo.length(); ++index) {
+    console::write(index == 0 || index == logo.length() - 1 ? "       " : "     ");
     console::background_color(console_color::white);
     console::foreground_color(console_color::dark_blue);
     console::write(logo[index]);

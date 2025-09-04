@@ -3,7 +3,7 @@
 class form1 : public form {
 public:
   form1() {
-    controls().push_back_range({button_show_message, label_dialog_result});
+    controls().add_range({button_show_message, label_dialog_result});
     location({400, 200});
     start_position(form_start_position::manual);
     text("Message box exemple");

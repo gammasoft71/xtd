@@ -9,7 +9,7 @@ auto main() -> int {
   create_button.click += delegate_ {
     auto colored_form = new_ptr<form>();
     colored_form->text(enum_object<>::to_string(form_color)).back_color(color::from_known_color(form_color)).visible(true);
-    colored_forms.push_back(colored_form);
+    colored_forms.add(colored_form);
     form_color = form_color != known_color::yellow_green ? as<known_color>(as<int>(form_color) + 1) : known_color::alice_blue;
   };
   

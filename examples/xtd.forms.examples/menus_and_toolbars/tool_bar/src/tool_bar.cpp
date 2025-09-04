@@ -6,17 +6,17 @@ namespace tool_bar_example {
     form1() {
       text("Toolbar example");
       client_size({820, 500});
-      controls().push_back_range({list_box1, tool_bar2, tool_bar1});
+      controls().add_range({list_box1, tool_bar2, tool_bar1});
       tool_bar(tool_bar1);
       active_control(list_box1);
       
       list_box1.dock(dock_style::fill);
       
-      choice1.items().push_back_range({"Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"});
+      choice1.items().add_range({"Item1", "Item2", "Item3", "Item4", "Item5", "Item6", "Item7", "Item8", "Item9", "Item10"});
       choice1.selected_index(0);
       choice1.selected_value_changed += delegate_ {
-        list_box1.items().push_back(string::format("{} selected", choice1.selected_item()));
-        list_box1.selected_index(list_box1.items().size() - 1);
+        list_box1.items().add(string::format("{} selected", choice1.selected_item()));
+        list_box1.selected_index(list_box1.items().count() - 1);
       };
       
       progress_bar1.width(150);
@@ -27,16 +27,16 @@ namespace tool_bar_example {
         progress_bar1.value(progress_bar1.value() < progress_bar1.maximum() ? progress_bar1.value() + 1 : progress_bar1.minimum());
       };
       
-      tool_bar1.image_list().images().push_back_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});
-      tool_bar1.buttons().push_back_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, choice_tool_bar_button, tool_bar1_separator3, help_tool_bar_button});
+      tool_bar1.image_list().images().add_range({tool_bar_images::file_new(), tool_bar_images::file_open(), tool_bar_images::file_save(), tool_bar_images::file_print(), tool_bar_images::edit_cut(), tool_bar_images::edit_copy(), tool_bar_images::edit_paste(), tool_bar_images::help()});
+      tool_bar1.buttons().add_range({new_tool_bar_button, open_tool_bar_button, save_tool_bar_button, print_tool_bar_button, tool_bar1_separator1, cut_tool_bar_button, copy_tool_bar_button, paste_tool_bar_button, tool_bar1_separator2, choice_tool_bar_button, tool_bar1_separator3, help_tool_bar_button});
       tool_bar1.button_click += {*this, &form1::on_tool_bar_button_click};
       
       tool_bar2.dock(dock_style::bottom);
       tool_bar2.show_text(true);
       tool_bar2.text_align(xtd::forms::tool_bar_text_align::right);
       tool_bar2.image_list().image_size({24, 24});
-      tool_bar2.image_list().images().push_back_range({tool_bar_images::from_name("media-playback-start"), tool_bar_images::from_name("media-skip-backward"), tool_bar_images::from_name("media-playback-stop"), tool_bar_images::from_name("media-skip-forward"), tool_bar_images::from_name("media-record"), tool_bar_images::from_name("media-eject")});
-      tool_bar2.buttons().push_back_range({play_tool_bar_button, tool_bar2_separator1, skip_backward_tool_bar_button, stop_tool_bar_button, skip_forward_tool_bar_button, tool_bar2_separator2, record_tool_bar_button, tool_bar2_separator3, progress_tool_bar_button, tool_bar2_separator4, eject_tool_bar_button});
+      tool_bar2.image_list().images().add_range({tool_bar_images::from_name("media-playback-start"), tool_bar_images::from_name("media-skip-backward"), tool_bar_images::from_name("media-playback-stop"), tool_bar_images::from_name("media-skip-forward"), tool_bar_images::from_name("media-record"), tool_bar_images::from_name("media-eject")});
+      tool_bar2.buttons().add_range({play_tool_bar_button, tool_bar2_separator1, skip_backward_tool_bar_button, stop_tool_bar_button, skip_forward_tool_bar_button, tool_bar2_separator2, record_tool_bar_button, tool_bar2_separator3, progress_tool_bar_button, tool_bar2_separator4, eject_tool_bar_button});
       tool_bar2.button_click += {*this, &form1::on_tool_bar_button_click};
       
       record_tool_bar_button.enabled(false);
@@ -45,15 +45,15 @@ namespace tool_bar_example {
   private:
     void on_tool_bar_button_click(object& sender, const tool_bar_button_click_event_args& e) {
       if (e.button().style() == tool_bar_button_style::toggle_button)
-        list_box1.items().push_back(string::format("Button {} clicked, pushed = {}", e.button().text(), e.button().pushed()));
+        list_box1.items().add(string::format("Button {} clicked, pushed = {}", e.button().text(), e.button().pushed()));
       else
-        list_box1.items().push_back(string::format("Button {} clicked", e.button().text()));
-      list_box1.selected_index(list_box1.items().size() - 1);
+        list_box1.items().add(string::format("Button {} clicked", e.button().text()));
+      list_box1.selected_index(list_box1.items().count() - 1);
     }
     
     void on_menu_click(object& sender, const event_args& e) {
-      list_box1.items().push_back(string::format("Menu item {} clicked", as<menu_item>(sender).text()));
-      list_box1.selected_index(list_box1.items().size() - 1);
+      list_box1.items().add(string::format("Menu item {} clicked", as<menu_item>(sender).text()));
+      list_box1.selected_index(list_box1.items().count() - 1);
     }
     
     list_box list_box1;

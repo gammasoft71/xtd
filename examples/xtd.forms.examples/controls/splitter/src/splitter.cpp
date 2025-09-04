@@ -6,7 +6,7 @@ namespace splitter_example {
     form1() {
       text("Splitter example");
       client_size({300, 300});
-      controls().push_back_range({panel_fill, splitter_top, panel_top, splitter_right, panel_right, splitter_left, panel_left});
+      controls().add_range({panel_fill, splitter_top, panel_top, splitter_right, panel_right, splitter_left, panel_left});
       
       panel_left.dock(dock_style::left);
       panel_left.back_color(drawing::color::light_blue);

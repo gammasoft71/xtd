@@ -34,7 +34,7 @@ public:
     auto dino_array = array<string>(read_only_dinosaurs.count() + 2);
     read_only_dinosaurs.copy_to(dino_array, 1);
     
-    console::write_line("\nCopied array has {0} elements:", dino_array.size());
+    console::write_line("\nCopied array has {0} elements:", dino_array.length());
     for (auto dinosaur : dino_array )
       console::write_line("\"{0}\"", dinosaur);
   }

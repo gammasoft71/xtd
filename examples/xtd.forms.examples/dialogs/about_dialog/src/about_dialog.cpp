@@ -5,7 +5,7 @@ class form1 : public form {
 public:
   form1() {
     text("About dialog example");
-    controls().push_back_range({about_button, xtd_about_button});
+    controls().add_range({about_button, xtd_about_button});
     
     about_button.location({10, 10});
     about_button.text("About...");

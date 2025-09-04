@@ -32,11 +32,11 @@ namespace colors_example {
   public:
     color_chooser() {
       size({300, 250});
-      controls().push_back_range({main_panel_, colors_choice_});
+      controls().add_range({main_panel_, colors_choice_});
 
       colors_choice_.location({10, 10});
       colors_choice_.width(280);
-      colors_choice_.items().push_back_range({
+      colors_choice_.items().add_range({
         {"Apple - xtd::drawing::apple_colors", &apple_colors::get_colors},
         {"Basic - xtd::drawing::basic_colors", &basic_colors::get_colors},
         {"Blue - xtd::drawing::blue_colors", &blue_colors::get_colors},
@@ -92,8 +92,8 @@ namespace colors_example {
       color_panel->dock(dock_style::top);
       color_panel->color(color);
       color_panel->tag(colors_.size());
-      colors_.push_back(color_panel);
-      main_panel_.controls().push_back(*color_panel);
+      colors_.add(color_panel);
+      main_panel_.controls().add(*color_panel);
       color_panel->click += {*this, &color_chooser::on_color_panel_click};
     }
     

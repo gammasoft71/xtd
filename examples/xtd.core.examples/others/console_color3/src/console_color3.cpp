@@ -38,8 +38,8 @@ auto main() -> int {
   
   console::output_code_page(65001);
   
-  for (auto index = 0ul; index < logo.size(); ++index)
-    console::out << (index == 0 || index == logo.size() - 1 ? "       " : "     ") << background_color(console_color::white) << foreground_color(console_color::dark_blue) << logo[index] << reset_color() << environment::new_line;
+  for (auto index = 0ul; index < logo.length(); ++index)
+    console::out << (index == 0 || index == logo.length() - 1 ? "       " : "     ") << background_color(console_color::white) << foreground_color(console_color::dark_blue) << logo[index] << reset_color() << environment::new_line;
     
   console::out << foreground_color(console_color::dark_blue) << u8"                                    Gammasoft                                   " << environment::new_line;
   console::out << foreground_color(console_color::dark_gray) << u8" More than thirty years of passion for high technology especially in development" << environment::new_line;

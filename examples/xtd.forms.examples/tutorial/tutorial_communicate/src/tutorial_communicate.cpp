@@ -5,7 +5,7 @@ namespace tutorial {
   public:
     panel_right() {
       border_style(xtd::forms::border_style::fixed_3d);
-      controls().push_back(label_);
+      controls().add(label_);
       dock(xtd::forms::dock_style::fill);
       size({150, 100});
       
@@ -21,7 +21,7 @@ namespace tutorial {
   public:
     panel_left() {
       border_style(xtd::forms::border_style::fixed_3d);
-      controls().push_back_range({button_plus_, button_minus_});
+      controls().add_range({button_plus_, button_minus_});
       dock(xtd::forms::dock_style::left);
       size({150, 100});
       
@@ -53,7 +53,7 @@ namespace tutorial {
   public:
     communicate() {
       client_size({300, 100});
-      controls().push_back_range({panel_right_, panel_left_});
+      controls().add_range({panel_right_, panel_left_});
       text("communicate");
     }
     

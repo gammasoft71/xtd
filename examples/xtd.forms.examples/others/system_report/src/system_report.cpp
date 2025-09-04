@@ -9,7 +9,7 @@ public:
     
     report_tab_control.dock(dock_style::fill);
     report_tab_control.parent(*this);
-    report_tab_control.tab_pages().push_back_range({text_report_tab_page, json_report_tab_page, xml_report_tab_page});
+    report_tab_control.tab_pages().add_range({text_report_tab_page, json_report_tab_page, xml_report_tab_page});
     
     text_report_tab_page.text("text");
     json_report_tab_page.text("json");

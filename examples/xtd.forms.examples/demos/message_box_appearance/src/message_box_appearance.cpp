@@ -31,7 +31,7 @@ public:
     label_buttons.location({10, 83});
     label_buttons.parent(*this);
     
-    choice_buttons.items().push_back_range({{"ok", message_box_buttons::ok}, {"ok_cancel", message_box_buttons::ok_cancel}, {"abort_retry_ignore", message_box_buttons::abort_retry_ignore}, {"yes_no_cancel", message_box_buttons::yes_no_cancel}, {"yes_no", message_box_buttons::yes_no}, {"retry_cancel", message_box_buttons::retry_cancel}});
+    choice_buttons.items().add_range({{"ok", message_box_buttons::ok}, {"ok_cancel", message_box_buttons::ok_cancel}, {"abort_retry_ignore", message_box_buttons::abort_retry_ignore}, {"yes_no_cancel", message_box_buttons::yes_no_cancel}, {"yes_no", message_box_buttons::yes_no}, {"retry_cancel", message_box_buttons::retry_cancel}});
     choice_buttons.selected_index(0);
     choice_buttons.location({90, 80});
     choice_buttons.parent(*this);
@@ -42,7 +42,7 @@ public:
     label_icons.location({10, 118});
     label_icons.parent(*this);
     
-    choice_icons.items().push_back_range({{"none", message_box_icon::none}, {"hand", message_box_icon::hand}, {"stop", message_box_icon::stop}, {"error", message_box_icon::error}, {"question", message_box_icon::question}, {"exclamation", message_box_icon::exclamation}, {"warning", message_box_icon::warning}, {"asterisk", message_box_icon::asterisk}, {"information", message_box_icon::information}});
+    choice_icons.items().add_range({{"none", message_box_icon::none}, {"hand", message_box_icon::hand}, {"stop", message_box_icon::stop}, {"error", message_box_icon::error}, {"question", message_box_icon::question}, {"exclamation", message_box_icon::exclamation}, {"warning", message_box_icon::warning}, {"asterisk", message_box_icon::asterisk}, {"information", message_box_icon::information}});
     choice_icons.selected_index(0);
     choice_icons.location({90, 115});
     choice_icons.parent(*this);

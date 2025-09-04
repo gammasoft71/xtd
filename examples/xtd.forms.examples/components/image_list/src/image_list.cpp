@@ -6,7 +6,7 @@ namespace example {
     form1() {
       text("Image list example");
       client_size({300, 250});
-      controls().push_back_range({picture, button_previous, button_next});
+      controls().add_range({picture, button_previous, button_next});
       
       pictures.image_size({128, 128});
       
@@ -50,7 +50,7 @@ namespace example {
       if (dialog.show_dialog() == dialog_result::ok) {
         pictures.images().clear();
         for (auto file : dialog.file_names())
-          pictures.images().push_back(drawing::image::from_file(file));
+          pictures.images().add(drawing::image::from_file(file));
         current_image_index = 0;
         picture.image(pictures.images()[current_image_index]);
         button_previous.enabled(current_image_index > 0);

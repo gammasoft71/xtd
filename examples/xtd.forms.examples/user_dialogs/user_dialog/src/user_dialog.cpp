@@ -10,7 +10,7 @@ public:
     control_box(false);
     start_position(form_start_position::center_parent);
     text("User input dialog");
-    controls().push_back_range({input, button_ok, button_cancel});
+    controls().add_range({input, button_ok, button_cancel});
     
     input.location({10, 10});
     input.width(180);
@@ -43,7 +43,7 @@ private:
 class form1 : public form {
 public:
   form1() {
-    controls().push_back_range({button_dialog, input_text});
+    controls().add_range({button_dialog, input_text});
     size({800, 450});
     text("User dialog exemple");
     

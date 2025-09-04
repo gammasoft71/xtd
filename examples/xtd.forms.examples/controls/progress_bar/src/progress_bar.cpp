@@ -6,7 +6,7 @@ namespace progress_bar_example {
     form1() {
       text("Progress bar example");
       client_size({300, 300});
-      controls().push_back_range({progress_bar1, progress_bar2, progress_bar3, progress_bar4, progress_bar5});
+      controls().add_range({progress_bar1, progress_bar2, progress_bar3, progress_bar4, progress_bar5});
       
       progress_bar1.location({50, 50});
       progress_bar1.width(200);

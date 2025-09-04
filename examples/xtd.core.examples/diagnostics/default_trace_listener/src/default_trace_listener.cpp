@@ -13,14 +13,14 @@ public:
     
     // Create and add a new default trace listener.
     auto default_listener = new_ptr<diagnostics::default_trace_listener>();
-    diagnostics::trace::listeners().push_back(default_listener);
+    diagnostics::trace::listeners().add(default_listener);
     
     // Assign the log file specification from the command line, if entered.
-    if (args.size() >= 2)
+    if (args.length() >= 2)
       default_listener->log_file_name(args[1]);
        
     // Validate the number of possibilities argument.
-    if (args.size() >= 1) {
+    if (args.length() >= 1) {
       // Verify that the argument is a number within the correct range.
       try {
         const auto MAX_POSSIBILITIES = 99.0l;

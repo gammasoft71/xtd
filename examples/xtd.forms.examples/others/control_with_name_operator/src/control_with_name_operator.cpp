@@ -4,7 +4,7 @@ namespace control_with_name_operator_example {
   class main_form : public form {
   public:
     main_form() {
-      controls().push_back_range({button1, label1});
+      controls().add_range({button1, label1});
       button1.name("button1");
       label1.name("label1");
       
