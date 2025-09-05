@@ -45,7 +45,7 @@ public:
   using pointer = value_type*;
   using const_pointer = const value_type*;
   /// }
-
+  
   /// Public Iterators
   /// {
   //using iterator = typename base_type::iterator;
@@ -251,7 +251,7 @@ public:
   allocator_type get_allocator() const {return items_.get_allocator();}
   
   size_type increment_version() noexcept {return ++version_;}
-
+  
   iterator insert(const_iterator pos, const type_t& value) {
     ++version_;
     return to_type_iterator(items_.insert(pos.to_base_type(), value));

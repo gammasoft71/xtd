@@ -256,7 +256,7 @@ namespace xtd::forms::layout::tests {
       assert::are_equal("z", items[1]);
       assert::are_equal(3_z, added_control_check);
     }
- 
+    
     
     void test_method_(insert_item_width_bad_index) {
       arranged_element_collection<std::string> items;

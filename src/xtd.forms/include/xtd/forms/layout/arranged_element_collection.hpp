@@ -168,7 +168,7 @@ namespace xtd {
         /// @brief Returns the number of elements.
         /// @return The number of elements.
         size_type count() const noexcept {return collection_.size();}
-
+        
         /// @brief Direct access to the underlying array.
         /// @return The underlying array.
         pointer data() {return collection_.data();}
@@ -293,7 +293,7 @@ namespace xtd {
         
         /// @brief clears the contents.
         virtual void clear() noexcept {
-          while(count())
+          while (count())
             remove_at(0);
         }
         
@@ -516,7 +516,7 @@ namespace xtd {
           }
           return false;
         }
-
+        
         /// @brief Erases element at specified index.
         /// @param pos The index which the content will be erased.
         virtual void remove_at(size_t index) {
@@ -526,7 +526,7 @@ namespace xtd {
           collection_.erase(collection_.begin() + index);
           erasing_ = false;
         }
-
+        
         /// @brief Reduces memory usage by freeing unused memory.
         void shrink_to_fit() {collection_.shrink_to_fit();}
         
@@ -541,7 +541,7 @@ namespace xtd {
             if (sorted_) sort();
           }
         }
-
+        
         /// @brief Gets an array with the elements of the container.
         /// @return The array that contains elements of the container.
         xtd::array<type_t> to_array() const noexcept {
