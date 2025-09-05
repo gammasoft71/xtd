@@ -790,7 +790,7 @@ namespace xtd {
             insert_range(index, list(items));
             return;
           }
-
+          
           data_->items.insert(data_->items.begin() + index, items.begin(), items.end());
         }
         /// @endcond
@@ -907,7 +907,7 @@ namespace xtd {
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         void reverse(size_type index, size_type count) {
           if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
-
+          
           data_->items.increment_version();
           std::reverse(data_->items.begin(), data_->items.end());
         }
