@@ -9,18 +9,21 @@ auto main() -> int {
   //auto names = list {"Burke"_s, "Connor"_s, "Frank"_s, "Everett"_s, "Albert"_s, "George"_s, "Harris"_s, "David"_s};
   auto names = {"Burke"_s, "Connor"_s, "Frank"_s, "Everett"_s, "Albert"_s, "George"_s, "Harris"_s, "David"_s};
   
+  // xtd::linq query
   auto query1 = from(names)
     .where(delegate_(auto s) {return s.length() == 5;})
     .order_by(delegate_(auto s) {return s;})
     .select(delegate_(auto s) {return s.to_upper();});
   println(query1);
   
+  // xtd::ranges query
   auto query2 = names
     | where(delegate_(auto s) {return s.length() == 5;})
     | order_by(delegate_(auto s) {return s;})
     | select(delegate_(auto s) {return s.to_upper();});
   println(query2);
   
+  // std::ranges combined with xtd::ranges query
   auto query3 = names
     | std::views::filter(delegate_(auto s) {return s.length() == 5;})
     | order_by(delegate_(auto s) {return s;})
