@@ -376,7 +376,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(42, items.find_last([](auto n) {return n == 42;}).value_or(-1));
       assert::are_equal(-1, items.find_last([](auto n) {return n == 24;}).value_or(-1));
     }
-
+    
     void test_method_(for_each) {
       auto items = list {1, 2, 3, 4, 5};
       auto accumulator = 0;
