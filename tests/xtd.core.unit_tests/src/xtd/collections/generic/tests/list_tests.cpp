@@ -359,6 +359,24 @@ namespace xtd::collections::generic::tests {
       assert::is_false(items.exists([](auto n) {return n == 24;}));
     }
     
+    void test_method_(find) {
+      auto items = list {84, 42, 21, 33};
+      assert::are_equal(42, items.find([](auto n) {return n == 42;}).value_or(-1));
+      assert::are_equal(-1, items.find([](auto n) {return n == 24;}).value_or(-1));
+    }
+    
+    void test_method_(find_all) {
+      auto items = list {84, 42, 21, 33};
+      collection_assert::are_equal({84, 42}, items.find_all([](auto n) {return n % 2 == 0;}));
+      collection_assert::is_empty(items.find_all([](auto n) {return n % 5 == 0;}));
+    }
+    
+    void test_method_(find_last) {
+      auto items = list {84, 42, 21, 33};
+      assert::are_equal(42, items.find_last([](auto n) {return n == 42;}).value_or(-1));
+      assert::are_equal(-1, items.find_last([](auto n) {return n == 24;}).value_or(-1));
+    }
+
     void test_method_(for_each) {
       auto items = list {1, 2, 3, 4, 5};
       auto accumulator = 0;
