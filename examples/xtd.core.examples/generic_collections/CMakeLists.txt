@@ -22,5 +22,6 @@ add_projects(
   generic_list_convert_all
   generic_list_exists
   generic_list_for_each
+  generic_list_iterator_vs_vector_iterator
   generic_list_reverse
 )

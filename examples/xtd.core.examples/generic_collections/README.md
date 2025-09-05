@@ -19,6 +19,7 @@
 * [generic_list_convert_all](generic_list_convert_all/README.md) shows how to use [xtd::collections::generic::list::convert_all](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) method.
 * [generic_list_exists](generic_list_exists/README.md) shows how to use [xtd::collections::generic::list::exists](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) method.
 * [generic_list_for_each](generic_list_for_each/README.md) shows how to use [xtd::collections::generic::list::for_each](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) method.
+* [generic_list_iterator_vs_vector_iterator](generic_list_iterator_vs_vector_iterator/README.md) highlights the difference between [xtd::collections::generic::list](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) and std::vector when modifying a collection during iteration.
 * [generic_list_reverse](generic_list_reverse/README.md) shows how to use [xtd::collections::generic::list::reverse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) method.
 
 ## Build and run any project
