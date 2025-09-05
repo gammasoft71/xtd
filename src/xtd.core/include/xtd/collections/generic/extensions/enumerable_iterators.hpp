@@ -78,11 +78,11 @@ namespace xtd {
             reference operator *() const {return const_cast<value_type&>(enumerator_.current());}
             pointer operator ->() const {return &operator*();}
             
-            enumerable_iterator& operator ++() noexcept {
+            enumerable_iterator& operator ++() {
               if (pos_ != npos()) pos_ = enumerator_.move_next() ? pos_ + 1 : npos();
               return const_cast<enumerable_iterator&>(*this);
             }
-            enumerable_iterator operator ++(int) noexcept {
+            enumerable_iterator operator ++(int) {
               auto current = *this;
               operator ++();
               return current;
