@@ -68,6 +68,11 @@ namespace xtd {
       /// @remarks The xtd::collections::generic::list <type_t> is not guaranteed to be sorted. You must sort the xtd::collections::generic::list <type_t> before performing operations (such as xtd::collections::binary_search) that require the xtd::collections::generic::list <type_t> to be sorted.
       /// @remarks Elements in this collection can be accessed using an integer index. Indexes in this collection are zero-based.
       /// @remarks For an immutable version of the xtd::collections::generic::list <type_t> class, see xtd::collections::immutale::immutable_list <type_t>.
+      /// @par Linq extension
+      /// * As xtd::collections::generic::list <type_t> inherits the xtd::collections::generic::ienumerable <type_t> interface, it automatically inherits the xtd::collections::generic::extensions::enumerable <type_t> interface and at the same time all the methods of xtd::linq::enumerable.
+      /// * Thanks to xtd::linq, xtd::collections::generic::list <type_t> can be manipulated by the classes of xtd::ranges::views and can be combined with [std::ranges](https://en.cppreference.com/w/cpp/ranges.html).
+      /// <br>The following example shows the xtd::ranges::views and [std::ranges](https://en.cppreference.com/w/cpp/ranges.html) usage :
+      /// @include ranges_views.cpp
       /// @par Performance considerations
       /// As xtd::collections::generic::list <type_t> instantiates and uses only the methods of [std::vector](https://en.cppreference.com/w/cpp/container/vector), the performance of xtd::collections::generic::list <type_t> is practically identical to that of [std::vector](https://en.cppreference.com/w/cpp/container/vector).
       template<class type_t, class allocator_t>
@@ -651,7 +656,7 @@ namespace xtd {
         xtd::size find_last_index(xtd::size start_index, xtd::size count, predicate_t match) const {
           if (count > self_.count() || start_index - count + 1 > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           auto predicate = xtd::predicate<const type_t&> {match};
-          for (auto index = start_index; index >= start_index - count + 1; --index)
+          for (auto index = start_index; index > start_index - count + 1; --index)
             if (predicate(self_[index])) return index;
           return npos;
         }
@@ -759,9 +764,7 @@ namespace xtd {
             return;
           }
           
-          auto pos = xtd::size {};
-          for (const auto& item : enumerable)
-            insert(index + pos++, item);
+          data_->items.insert(data_->items.begin() + index, enumerable.begin(), enumerable.end());
         }
         /// @brief Inserts copy of elements from a collection into the xtd::collections::generic::list <type_t> at the specified index.
         /// @param index The zero-based index at which the new elements should be inserted.
@@ -774,26 +777,21 @@ namespace xtd {
         /// @remarks The order of the elements in the collection is preserved in the xtd::collections::generic::list <type_t>.
         virtual void insert_range(size_type index, const std::initializer_list<type_t>& items) {
           if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
-          
-          auto pos = xtd::size {};
-          for (const auto& item : items)
-            insert(index + pos++, item);
+          data_->items.insert(data_->items.begin() + index, items.begin(), items.end());
         }
         
         /// @cond
-        template<class ienumerable_t>
-        void insert_range(size_type index, const ienumerable_t& enumerable) {
+        template<class collection_t>
+        void insert_range(size_type index, const collection_t& items) {
           if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
           
           // If the collection is this instance, it must be copied to avoid an infinite loop.
-          if (reinterpret_cast<xtd::intptr>(&enumerable) == reinterpret_cast<xtd::intptr>(this)) {
-            insert_range(index, list(enumerable));
+          if (reinterpret_cast<xtd::intptr>(&items) == reinterpret_cast<xtd::intptr>(this)) {
+            insert_range(index, list(items));
             return;
           }
-          
-          auto pos = xtd::size {};
-          for (const auto& item : enumerable)
-            insert(index + pos++, item);
+
+          data_->items.insert(data_->items.begin() + index, items.begin(), items.end());
         }
         /// @endcond
         
@@ -819,7 +817,7 @@ namespace xtd {
         /// @return Int32 The last index of value if found in the list; otherwise, xtd::collections::generic::list::npos.
         /// @exception xd::argument_exception `index` and `count` do not specify a valid section in the xtd::collections::generic::list <type_t>.
         size_type last_index_of(const type_t& value, size_type index, size_type count) const {
-          if (count < self_.count() || index >= self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
+          if (count > self_.count() || index >= self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
           if (index - count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
           
           for (auto i = index; i >= index - (count - 1); --i)
@@ -909,15 +907,9 @@ namespace xtd {
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         void reverse(size_type index, size_type count) {
           if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
-          
+
           data_->items.increment_version();
-          auto poitions1 = index;
-          auto position2 = (index + count) - 1;
-          auto iterator1 = data_->items.begin() + poitions1;
-          auto iterator2 = data_->items.begin() + position2;
-          
-          while (poitions1++ < position2--)
-            std::iter_swap(iterator1++, iterator2--);
+          std::reverse(data_->items.begin(), data_->items.end());
         }
         
         /// @brief Creates a shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.
@@ -1064,7 +1056,7 @@ namespace xtd {
         /// @exception std::out_of_range If `index` is not within the range of the container.
         const_reference operator [](size_type index) const override {
           if (index >= count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-          return reinterpret_cast<const_reference>(data_->items.at(index));
+          return data_->items.at(index);
         }
         /// @brief Returns a reference to the element at specified location index.
         /// @param index The position of the element to return.
@@ -1072,7 +1064,7 @@ namespace xtd {
         /// @exception std::out_of_range If `index` is not within the range of the container.
         reference operator [](size_type index) override {
           if (index >= count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-          return reinterpret_cast<reference>(data_->items.at(index));
+          return data_->items.at(index);
         }
         
         /// @brief Returns a reference to the underlying base type.
