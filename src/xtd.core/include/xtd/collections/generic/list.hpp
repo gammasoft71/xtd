@@ -483,7 +483,7 @@ namespace xtd {
         /// @remarks The elements are copied to the xtd::array in the same order in which the enumerator iterates through the xtd::collections::generic::list <type_t>.
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         virtual void copy_to(size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const {
-          if (index + count > self_.count() || array_index + count > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+          if (index + count > self_.count() || array_index + count > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           auto i = size_type {0}, c = size_type {0};
           for (const type_t& item : self_) {
             if (i >= index + count) return;
@@ -654,7 +654,7 @@ namespace xtd {
         /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
         template<class predicate_t>
         xtd::size find_last_index(xtd::size start_index, xtd::size count, predicate_t match) const {
-          if (count > self_.count() || start_index - count + 1 > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+          if (count > self_.count() || start_index - count + 1 > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           auto predicate = xtd::predicate<const type_t&> {match};
           for (auto index = start_index; index > start_index - count + 1; --index)
             if (predicate(self_[index])) return index;
@@ -695,7 +695,7 @@ namespace xtd {
         /// @remarks In contrast, a deep copy of a collection copies the elements and everything directly or indirectly referenced by the elements.
         /// @remarks This method is an O(n) operation, where n is count.
         list get_range(size_type index, size_type count) {
-          if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+          if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           return list<type_t> {data_->items.begin() + index, data_->items.begin() + index + count};
         }
         
@@ -719,8 +719,8 @@ namespace xtd {
         /// @return The index of value if found in the xtd::collections::generic::list; otherwise, xtd::collections::generic::ilist::npos.
         /// @exception xtd::argument_out_of_range_exception `index` and `countù  do not specify a valid section in the xtd::collections::generic::list <type_t>.
         virtual size_type index_of(const type_t& value, size_type index, size_type count) const {
-          if (index >= self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
-          if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
+          if (index >= self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+          if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           
           for (auto i = index; i < index + count; ++i)
             if (helpers::equator<type_t> {}(self_[i], value)) return i;
@@ -733,7 +733,7 @@ namespace xtd {
         /// @exception xtd::argument_out_of_range_exception index is is greater than xtd::collections::generic::list::count.
         /// @remarks xtd::collections::generic::list <type_t> allows duplicate elements.
         void insert(size_type index, const type_t& value) override {
-          if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
+          if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           data_->items.insert(data_->items.begin() + index, value);
         }
         /// @brief Inserts an element into the xtd::collections::generic::list <type_t> at the specified index.
@@ -742,7 +742,7 @@ namespace xtd {
         /// @exception xtd::argument_out_of_range_exception index is is greater than xtd::collections::generic::list::count.
         /// @remarks xtd::collections::generic::list <type_t> allows duplicate elements.
         void insert(size_type index, type_t&& value) {
-          if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
+          if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           data_->items.insert(data_->items.begin() + index, std::move(value));
         }
         
@@ -756,10 +756,10 @@ namespace xtd {
         /// @remarks xtd::collections::generic::list <type_t> allows duplicate elements.
         /// @remarks The order of the elements in the collection is preserved in the xtd::collections::generic::list <type_t>.
         virtual void insert_range(size_type index, const xtd::collections::generic::ienumerable<type_t>& enumerable) {
-          if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
+          if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           
           // If the collection is this instance, it must be copied to avoid an infinite loop.
-          if (reinterpret_cast<xtd::intptr>(&enumerable) == reinterpret_cast<xtd::intptr>(this)) {
+          if (static_cast<const void*>(&enumerable) == static_cast<const void*>(this)) {
             insert_range(index, list(enumerable));
             return;
           }
@@ -776,17 +776,17 @@ namespace xtd {
         /// @remarks xtd::collections::generic::list <type_t> allows duplicate elements.
         /// @remarks The order of the elements in the collection is preserved in the xtd::collections::generic::list <type_t>.
         virtual void insert_range(size_type index, const std::initializer_list<type_t>& items) {
-          if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
+          if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           data_->items.insert(data_->items.begin() + index, items.begin(), items.end());
         }
         
         /// @cond
         template<class collection_t>
         void insert_range(size_type index, const collection_t& items) {
-          if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
+          if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           
           // If the collection is this instance, it must be copied to avoid an infinite loop.
-          if (reinterpret_cast<xtd::intptr>(&items) == reinterpret_cast<xtd::intptr>(this)) {
+          if (static_cast<const void*>(&items) == static_cast<const void*>(this)) {
             insert_range(index, list(items));
             return;
           }
@@ -817,8 +817,8 @@ namespace xtd {
         /// @return Int32 The last index of value if found in the list; otherwise, xtd::collections::generic::list::npos.
         /// @exception xd::argument_exception `index` and `count` do not specify a valid section in the xtd::collections::generic::list <type_t>.
         size_type last_index_of(const type_t& value, size_type index, size_type count) const {
-          if (count > self_.count() || index >= self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
-          if (index - count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+          if (count > self_.count() || index >= self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+          if (index - count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           
           for (auto i = index; i >= index - (count - 1); --i)
             if (value == data_->items[i])  return i;
@@ -870,7 +870,7 @@ namespace xtd {
         /// @param index The zero-based index of the item to remove
         /// @exception ArgumentOutOfRangeException index is less than 0 or index is greater than xtd::collections::generic::list::count.
         void remove_at(size_type index) override {
-          if (index >= count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
+          if (index >= count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           
           if (index == count() - 1) data_->items.pop_back();
           else data_->items.erase(data_->items.begin() + index);
@@ -885,7 +885,7 @@ namespace xtd {
         /// @include generic_list3.cpp
         /// @remarks The items are removed and all the elements following them in the xtd::collections::generic::list <type_t> have their indexes reduced by count.
         virtual void remove_range(size_type index, size_type count) {
-          if (index + count >= self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
+          if (index + count >= self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           data_->items.erase(data_->items.begin() + index, data_->items.begin() + index + count);
         }
         
@@ -906,7 +906,7 @@ namespace xtd {
         /// @remarks This method uses xtd::array::reverse to reverse the order of the elements.
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         void reverse(size_type index, size_type count) {
-          if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+          if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           
           data_->items.increment_version();
           std::reverse(data_->items.begin(), data_->items.end());
@@ -918,7 +918,7 @@ namespace xtd {
         /// @return A shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.
         /// @exception xt::argument_exception `start` and `length` do not denote a valid range of elements in the xtd::collections::generic::list <type_t>.
         list<type_t> slice(size_type start, size_type length) const {
-          if (start + length > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+          if (start + length > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           return list<type_t> {data_->items.begin() + start, data_->items.begin() + start + length};
         }
         
