@@ -586,7 +586,7 @@ namespace xtd::collections::generic::tests {
       items.insert_range(items.count(), list {10, 11});
       collection_assert::are_equal({6, 7, 1, 2, 8, 9, 3, 4, 5, 10, 11}, items);
     }
-
+    
     void test_method_(insert_range_with_initializer_list) {
       auto items = list<int> {1, 2, 3, 4, 5};
       items.insert_range(0, {6, 7});
@@ -596,14 +596,14 @@ namespace xtd::collections::generic::tests {
       items.insert_range(items.count(), {10, 11});
       collection_assert::are_equal({6, 7, 1, 2, 8, 9, 3, 4, 5, 10, 11}, items);
     }
-
+    
     void test_method_(insert_range_with_same_list) {
       auto items = list<int> {1, 2, 3, 4, 5};
       
       assert::does_not_throw([&] {items.insert_range(2, items);});
       collection_assert::are_equal({1, 2, 1, 2, 3, 4, 5, 3, 4, 5}, items);
     }
-
+    
     void test_method_(insert_range_with_same_list_as_ienumerable) {
       auto items = list<int> {1, 2, 3, 4, 5};
       
