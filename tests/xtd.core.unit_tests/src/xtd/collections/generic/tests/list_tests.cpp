@@ -364,13 +364,46 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(42, items.find([](auto n) {return n == 42;}).value_or(-1));
       assert::are_equal(-1, items.find([](auto n) {return n == 24;}).value_or(-1));
     }
-    
+
     void test_method_(find_all) {
       auto items = list {84, 42, 21, 33};
       collection_assert::are_equal({84, 42}, items.find_all([](auto n) {return n % 2 == 0;}));
       collection_assert::is_empty(items.find_all([](auto n) {return n % 5 == 0;}));
     }
+
+    void test_method_(find_index) {
+      auto items = list {84, 42, 21, 33};
+      assert::are_equal(1_z, items.find_index([](auto n) {return n == 42;}));
+      assert::are_equal(2_z, items.find_index([](auto n) {return n % 2 != 0;}));
+      assert::are_equal(items.npos, items.find_index([](auto n) {return n == 65;}));
+    }
     
+    void test_method_(find_index_with_start_index) {
+      auto items = list {84, 42, 21, 33};
+      assert::are_equal(1_z, items.find_index(0, [](auto n) {return n == 42;}));
+      assert::are_equal(1_z, items.find_index(1, [](auto n) {return n == 42;}));
+      assert::are_equal(items.npos, items.find_index(2, [](auto n) {return n == 42;}));
+      assert::are_equal(2_z, items.find_index(0, [](auto n) {return n % 2 != 0;}));
+      assert::are_equal(2_z, items.find_index(2, [](auto n) {return n % 2 != 0;}));
+      assert::are_equal(items.npos, items.find_index(4, [](auto n) {return n % 2 != 0;}));
+      assert::are_equal(items.npos, items.find_index(0, [](auto n) {return n == 65;}));
+      assert::throws<argument_out_of_range_exception>([&] {items.find_index(5, [](auto n) {return n % 2 != 0;});});
+    }
+    
+    void test_method_(find_index_with_start_index_and_count) {
+      auto items = list {84, 42, 21, 33};
+      assert::are_equal(1_z, items.find_index(0, 2, [](auto n) {return n == 42;}));
+      assert::are_equal(items.npos, items.find_index(0, 1, [](auto n) {return n == 42;}));
+      assert::are_equal(1_z, items.find_index(1, 1, [](auto n) {return n == 42;}));
+      assert::are_equal(items.npos, items.find_index(2, 2, [](auto n) {return n == 42;}));
+      assert::are_equal(items.npos, items.find_index(0, 2, [](auto n) {return n % 2 != 0;}));
+      assert::are_equal(3_z, items.find_index(3, 1, [](auto n) {return n % 2 != 0;}));
+      assert::throws<argument_out_of_range_exception>([&] {items.find_index(3, 2, [](auto n) {return n % 2 != 0;});});
+      assert::are_equal(items.npos, items.find_index(4, 0, [](auto n) {return n % 2 != 0;}));
+      assert::are_equal(items.npos, items.find_index(0, 4, [](auto n) {return n == 65;}));
+      assert::throws<argument_out_of_range_exception>([&] {items.find_index(5, 1, [](auto n) {return n % 2 != 0;});});
+    }
+
     void test_method_(find_last) {
       auto items = list {84, 42, 21, 33};
       assert::are_equal(42, items.find_last([](auto n) {return n == 42;}).value_or(-1));
