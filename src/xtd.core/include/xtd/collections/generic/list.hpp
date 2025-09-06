@@ -650,7 +650,7 @@ namespace xtd {
         template<class predicate_t>
         xtd::size find_last_index(xtd::size start_index, xtd::size count, predicate_t match) const {
           if (start_index >= self_.count() || count > start_index + 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-          auto predicate = xtd::predicate<const type_t&>{match};
+          auto predicate = xtd::predicate<const type_t&> {match};
           auto end_index = start_index + 1 - count;
           for (auto index = start_index; ; --index) {
             if (predicate(self_[index])) return index;
