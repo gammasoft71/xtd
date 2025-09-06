@@ -654,10 +654,13 @@ namespace xtd {
         /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
         template<class predicate_t>
         xtd::size find_last_index(xtd::size start_index, xtd::size count, predicate_t match) const {
-          if (count > self_.count() || start_index - count + 1 > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-          auto predicate = xtd::predicate<const type_t&> {match};
-          for (auto index = start_index; index > start_index - count + 1; --index)
+          if (start_index >= self_.count() || count > start_index + 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+          auto predicate = xtd::predicate<const type_t&>{match};
+          auto end_index = start_index + 1 - count;
+          for (auto index = start_index; ; --index) {
             if (predicate(self_[index])) return index;
+            if (index == end_index) break;
+          }
           return npos;
         }
         
