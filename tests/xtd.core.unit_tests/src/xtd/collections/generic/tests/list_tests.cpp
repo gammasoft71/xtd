@@ -53,6 +53,10 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(typeof_<const int*>(), typeof_<list<int>::const_pointer>());
     }
     
+    void test_method_(npos) {
+      assert::are_equal(size_object::max_value, list<int>::npos);
+    }
+
     void test_method_(default_constructor) {
       auto items = list<string> {};
       assert::is_zero(items.capacity());
@@ -507,9 +511,31 @@ namespace xtd::collections::generic::tests {
       assert::throws<argument_out_of_range_exception>([&] {items.get_range(6, 0);});
     }
     
+    void test_method_(index_of) {
+      assert::are_equal(list<int>::npos, list<int> {}.index_of(0));
+      auto items = list<int> {1, 2, 3, 4, 5};
+      assert::are_equal(0_z, items.index_of(1));
+      assert::are_equal(2_z, items.index_of(3));
+      assert::are_equal(4_z, items.index_of(5));
+      assert::are_equal(items.npos, items.index_of(6));
+    }
+    
+    void test_method_(index_of_with_index) {
+      assert::are_equal(list<int>::npos, list<int> {}.index_of(0));
+      auto items = list<int> {1, 2, 3, 4, 5};
+      assert::are_equal(0_z, items.index_of(1, 0_z));
+      assert::are_equal(items.npos, items.index_of(1, 1_z));
+      assert::are_equal(2_z, items.index_of(3, 2_z));
+      assert::are_equal(items.npos, items.index_of(3, 3_z));
+      assert::are_equal(4_z, items.index_of(5, 4_z));
+      assert::are_equal(items.npos, items.index_of(6, 0));
+      assert::are_equal(items.npos, items.index_of(6, 4));
+      assert::throws<argument_out_of_range_exception>([&] {items.index_of(1, 5_z);});
+    }
+    
     void test_method_(insert_range_with_same_list) {
       auto items = list<int> {1, 2, 3, 4, 5};
-      
+
       assert::does_not_throw([&] {items.insert_range(2, items);});
       collection_assert::are_equal({1, 2, 1, 2, 3, 4, 5, 3, 4, 5}, items);
     }
