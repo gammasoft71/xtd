@@ -1045,7 +1045,7 @@ size_t control::get_child_index(intptr child) const {
   if (child == 0) return control_collection::npos;
   for (size_t index = 0; index < controls().count(); ++index)
     if (controls()[index].get().handle() == child) return index;
-  throw_helper::throws(exception_case::argument);;
+  throw_helper::throws(exception_case::argument);
 }
 
 size_t control::get_child_index(intptr child, bool& throw_exception) const {

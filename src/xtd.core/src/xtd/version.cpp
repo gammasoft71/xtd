@@ -127,7 +127,7 @@ version version::parse(const xtd::string& input) {
     case 4: return version {string::parse<int32>(versions[0]), string::parse<int32>(versions[1]), string::parse<int32>(versions[2]), string::parse<int32>(versions[3])};
   }
   
-  throw_helper::throws(exception_case::argument);;
+  throw_helper::throws(exception_case::argument);
 }
 
 bool version::try_parse(const xtd::string& input, version& result) noexcept {

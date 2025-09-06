@@ -461,7 +461,7 @@ private:
         /// ```
         explicit dictionary(std::initializer_list < base_value_type > init, size_type bucket_count = 0, const hasher_t& hash = hasher_t {}, const equator_t& equal = equator_t {}, const allocator_type& alloc = allocator_type {}) : data_(xtd::new_ptr < data > (bucket_count)) {
           for (const auto& [key, value] : init) {
-            if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+            if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
             (*this)[key] = value;
           }
         }
@@ -477,7 +477,7 @@ private:
         /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
         dictionary(std::initializer_list < base_value_type > init, size_type bucket_count, const allocator_type & alloc) : data_(xtd::new_ptr < data > (bucket_count)) {
           for (const auto& [key, value] : init) {
-            if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+            if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
             (*this)[key] = value;
           }
         }
@@ -494,7 +494,7 @@ private:
         /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
         dictionary(std::initializer_list < base_value_type > init, size_type bucket_count, const hasher_t& hash, const allocator_type & alloc) : data_(xtd::new_ptr < data > (bucket_count)) {
           for (const auto& [key, value] : init) {
-            if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+            if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
             (*this)[key] = value;
           }
         }
@@ -513,7 +513,7 @@ private:
         template < class init_key_t, class init_value_t >
         explicit dictionary(std::initializer_list < key_value_pair < init_key_t, init_value_t>> init, size_type bucket_count = 0, const hasher_t& hash = hasher_t {}, const equator_t& equal = equator_t {}, const allocator_type& alloc = allocator_type {}) : data_(xtd::new_ptr < data > (bucket_count)) {
           for (const auto& [key, value] : init) {
-            if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+            if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
             (*this)[key] = value;
           }
         }
@@ -530,7 +530,7 @@ private:
         template < class init_key_t, class init_value_t >
         dictionary(std::initializer_list < key_value_pair < init_key_t, init_value_t>> init, size_type bucket_count, const allocator_type & alloc) : data_(xtd::new_ptr < data > (bucket_count)) {
           for (const auto& [key, value] : init) {
-            if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+            if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
             (*this)[key] = value;
           }
         }
@@ -548,7 +548,7 @@ private:
         template < class init_key_t, class init_value_t >
         dictionary(std::initializer_list < key_value_pair < init_key_t, init_value_t>> init, size_type bucket_count, const hasher_t& hash, const allocator_type & alloc) : data_(xtd::new_ptr < data > (bucket_count)) {
           for (const auto& [key, value] : init) {
-            if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+            if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
             (*this)[key] = value;
           }
         }
@@ -720,7 +720,7 @@ private:
         /// @exception xtd::not_supported_exception The xtd::collections::generic::dictionary <key_t, value_t> is read-only.
         /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `operator []` overwrites the old value. In contrast, the xtd::collections::generic::dictionary::add method does not modify existing elements.
         void add(const key_t & key, const value_t value) override {
-          if (!try_add(key, value)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+          if (!try_add(key, value)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
         }
         
         /// @brief Adds an item to the xtd::collections::generic::icollection <type_t>.
@@ -843,7 +843,7 @@ private:
         /// @param array_index The zero-based index in `array` at which copying begins.
         /// @exception xtd::argument_exception The number of elements in the source xtd::collections::generic::icollection <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
         void copy_to(xtd::array < value_type > & array, xtd::size array_index) const override {
-          if (array_index + count() > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+          if (array_index + count() > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           auto index = size_type {0};
           for (const auto& item : *this)
             array[array_index + index++] = item;
@@ -1390,7 +1390,7 @@ protected:
         /// @exception xtd::argument_out_of_range_exception `capacity` is less than xtd::collections::generic::dictionary::count.
         /// @remarks This method can be used to minimize the memory overhead once it is known that no new elements will be added.
         void trim_excess(size_type capacity) {
-          if (capacity < count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
+          if (capacity < count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           rehash(capacity);
         }
         
