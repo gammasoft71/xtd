@@ -56,7 +56,7 @@ namespace xtd::collections::generic::tests {
     void test_method_(npos) {
       assert::are_equal(size_object::max_value, list<int>::npos);
     }
-
+    
     void test_method_(default_constructor) {
       auto items = list<string> {};
       assert::is_zero(items.capacity());
@@ -258,7 +258,7 @@ namespace xtd::collections::generic::tests {
       assert::does_not_throw([&] {items.add_range(as<ienumerable<int>>(items));});
       collection_assert::are_equal({1, 2, 3, 4, 5, 1, 2, 3, 4, 5}, items);
     }
-
+    
     void test_method_(as_read_only) {
       auto items = list<int> {84, 42, 21};
       auto roc = items.as_read_only();
@@ -382,13 +382,13 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(42, items.find([](auto n) {return n == 42;}).value_or(-1));
       assert::are_equal(-1, items.find([](auto n) {return n == 24;}).value_or(-1));
     }
-
+    
     void test_method_(find_all) {
       auto items = list {84, 42, 21, 33};
       collection_assert::are_equal({84, 42}, items.find_all([](auto n) {return n % 2 == 0;}));
       collection_assert::is_empty(items.find_all([](auto n) {return n % 5 == 0;}));
     }
-
+    
     void test_method_(find_index) {
       auto items = list {84, 42, 21, 33};
       assert::are_equal(1_z, items.find_index([](auto n) {return n == 42;}));
@@ -421,7 +421,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(items.npos, items.find_index(0, 4, [](auto n) {return n == 65;}));
       assert::throws<argument_out_of_range_exception>([&] {items.find_index(5, 1, [](auto n) {return n % 2 != 0;});});
     }
-
+    
     void test_method_(find_last) {
       auto items = list {84, 42, 21, 33};
       assert::are_equal(42, items.find_last([](auto n) {return n == 42;}).value_or(-1));
@@ -462,7 +462,7 @@ namespace xtd::collections::generic::tests {
       assert::throws<argument_out_of_range_exception>([&] {items.find_last_index(5, 1, [](auto n) {return n % 2 != 0;});});
        */
     }
-
+    
     void test_method_(for_each) {
       auto items = list {1, 2, 3, 4, 5};
       auto accumulator = 0;
@@ -535,7 +535,7 @@ namespace xtd::collections::generic::tests {
     
     void test_method_(insert_range_with_same_list) {
       auto items = list<int> {1, 2, 3, 4, 5};
-
+      
       assert::does_not_throw([&] {items.insert_range(2, items);});
       collection_assert::are_equal({1, 2, 1, 2, 3, 4, 5, 3, 4, 5}, items);
     }
@@ -546,7 +546,7 @@ namespace xtd::collections::generic::tests {
       assert::does_not_throw([&] {items.insert_range(2, as<ienumerable<int>>(items));});
       collection_assert::are_equal({1, 2, 1, 2, 3, 4, 5, 3, 4, 5}, items);
     }
-
+    
     void test_method_(index_operator) {
       auto items = list {84, 42, 21};
       
