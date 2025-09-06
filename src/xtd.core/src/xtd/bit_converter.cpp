@@ -214,7 +214,7 @@ string bit_converter::to_string(const array<byte>& value, size start_index, size
 
 string bit_converter::to_string(const read_only_span<byte>& value, size start_index, size length) {
   if (value.size() == 0 && start_index == 0 && length == 0) return "";
-  if (start_index >= value.size()) throw_helper::throws(exception_case::argument_out_of_range);;
+  if (start_index >= value.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (start_index + length > value.size()) throw_helper::throws(exception_case::argument_out_of_range);
   
   string str;

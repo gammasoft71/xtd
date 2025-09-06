@@ -265,7 +265,7 @@ namespace xtd {
       try {
         return xtd::any(value);
       } catch (...) {
-        xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);;
+        xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
       }
     }
     
