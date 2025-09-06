@@ -241,6 +241,20 @@ namespace xtd::collections::generic::tests {
       collection_assert::are_equal({1, 2, 3, 4, 5, 6, 7, 8}, items);
     }
     
+    void test_method_(add_range_with_same_list) {
+      auto items = list<int> {1, 2, 3, 4, 5};
+      
+      assert::does_not_throw([&] {items.add_range(items);});
+      collection_assert::are_equal({1, 2, 3, 4, 5, 1, 2, 3, 4, 5}, items);
+    }
+    
+    void test_method_(add_range_with_same_list_as_ienumerable) {
+      auto items = list<int> {1, 2, 3, 4, 5};
+      
+      assert::does_not_throw([&] {items.add_range(as<ienumerable<int>>(items));});
+      collection_assert::are_equal({1, 2, 3, 4, 5, 1, 2, 3, 4, 5}, items);
+    }
+
     void test_method_(as_read_only) {
       auto items = list<int> {84, 42, 21};
       auto roc = items.as_read_only();
@@ -410,11 +424,45 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(-1, items.find_last([](auto n) {return n == 24;}).value_or(-1));
     }
     
+    void test_method_(find_last_index) {
+      auto items = list {84, 42, 21, 33};
+      assert::are_equal(1_z, items.find_last_index([](auto n) {return n == 42;}));
+      assert::are_equal(3_z, items.find_last_index([](auto n) {return n % 2 != 0;}));
+      assert::are_equal(items.npos, items.find_last_index([](auto n) {return n == 65;}));
+    }
+    
+    void test_method_(find_last_index_with_start_index) {
+      auto items = list {84, 42, 21, 33};
+      assert::are_equal(1_z, items.find_last_index(3, [](auto n) {return n == 42;}));
+      assert::are_equal(1_z, items.find_last_index(1, [](auto n) {return n == 42;}));
+      assert::are_equal(items.npos, items.find_last_index(0, [](auto n) {return n == 42;}));
+      assert::are_equal(2_z, items.find_last_index(2, [](auto n) {return n % 2 != 0;}));
+      assert::are_equal(3_z, items.find_last_index(3, [](auto n) {return n % 2 != 0;}));
+      assert::throws<argument_out_of_range_exception>([&] {items.find_last_index(4, [](auto n) {return n % 2 != 0;});});
+      assert::are_equal(items.npos, items.find_last_index(3, [](auto n) {return n == 65;}));
+      assert::throws<argument_out_of_range_exception>([&] {items.find_last_index(5, [](auto n) {return n % 2 != 0;});});
+    }
+    
+    void test_method_(find_last_index_with_start_index_and_count) {
+      auto items = list {84, 42, 21, 33};
+      /*
+      assert::are_equal(1_z, items.find_last_index(2, 2, [](auto n) {return n == 42;}));
+      assert::are_equal(items.npos, items.find_last_index(0, 1, [](auto n) {return n == 42;}));
+      assert::are_equal(1_z, items.find_last_index(1, 1, [](auto n) {return n == 42;}));
+      assert::are_equal(items.npos, items.find_last_index(2, 2, [](auto n) {return n == 42;}));
+      assert::are_equal(items.npos, items.find_last_index(0, 2, [](auto n) {return n % 2 != 0;}));
+      assert::are_equal(3_z, items.find_last_index(3, 2, [](auto n) {return n % 2 != 0;}));
+      assert::throws<argument_out_of_range_exception>([&] {items.find_last_index(3, 2, [](auto n) {return n % 2 != 0;});});
+      assert::are_equal(items.npos, items.find_last_index(4, 0, [](auto n) {return n % 2 != 0;}));
+      assert::are_equal(items.npos, items.find_last_index(0, 4, [](auto n) {return n == 65;}));
+      assert::throws<argument_out_of_range_exception>([&] {items.find_last_index(5, 1, [](auto n) {return n % 2 != 0;});});
+       */
+    }
+
     void test_method_(for_each) {
       auto items = list {1, 2, 3, 4, 5};
       auto accumulator = 0;
-      for (auto item : items)
-        accumulator += item;
+      items.for_each([&](auto n) {accumulator += n;});
       assert::are_equal(15, accumulator);
     }
     
@@ -427,6 +475,52 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(15, accumulator);
     }
     
+    void test_method_(range_based_for_loop) {
+      auto items = list {1, 2, 3, 4, 5};
+      auto accumulator = 0;
+      for (auto item : items)
+        accumulator += item;
+      assert::are_equal(15, accumulator);
+    }
+    
+    void test_method_(modifying_list_during_iteration) {
+      auto items = list {1, 2, 3, 4, 5};
+      auto accumulator = 0;
+      auto caught = false;
+      try {
+        for (auto item : items) {
+          accumulator += item;
+          if (item == 3) items.remove(item);
+        }
+      } catch (const invalid_operation_exception& e) {
+        caught = true;
+      }
+      assert::is_true(caught);
+      assert::are_equal(6, accumulator);
+    }
+    
+    void test_method_(get_range) {
+      auto items = list {1, 2, 3, 4, 5};
+      collection_assert::are_equal({1, 2, 3, 4, 5}, items.get_range(0, 5));
+      collection_assert::are_equal({2, 3, 4}, items.get_range(1, 3));
+      assert::throws<argument_out_of_range_exception>([&] {items.get_range(0, 6);});
+      assert::throws<argument_out_of_range_exception>([&] {items.get_range(6, 0);});
+    }
+    
+    void test_method_(insert_range_with_same_list) {
+      auto items = list<int> {1, 2, 3, 4, 5};
+      
+      assert::does_not_throw([&] {items.insert_range(2, items);});
+      collection_assert::are_equal({1, 2, 1, 2, 3, 4, 5, 3, 4, 5}, items);
+    }
+    
+    void test_method_(insert_range_with_same_list_as_ienumerable) {
+      auto items = list<int> {1, 2, 3, 4, 5};
+      
+      assert::does_not_throw([&] {items.insert_range(2, as<ienumerable<int>>(items));});
+      collection_assert::are_equal({1, 2, 1, 2, 3, 4, 5, 3, 4, 5}, items);
+    }
+
     void test_method_(index_operator) {
       auto items = list {84, 42, 21};
       
