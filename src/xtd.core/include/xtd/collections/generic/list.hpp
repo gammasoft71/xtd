@@ -422,9 +422,7 @@ namespace xtd {
         /// @param value The object to locate in the xtd::colllections::generic::list <type_t>. The value can be null for reference types.
         /// @return `true` if item is found in the xtd::colllections::generic::list <type_t>; otherwise, `false`.
         bool contains(const type_t& value) const noexcept override {
-          for (const auto& item : data_->items)
-            if (helpers::equator<type_t> {}(reinterpret_cast<const type_t&>(item), value)) return true;
-          return false;
+          return index_of(value) != npos;
         }
         
         /// @brief Converts the elements in the current xtd::colllections::generic::list <type_t> to another type, and returns a list containing the converted elements.
@@ -533,10 +531,7 @@ namespace xtd {
         /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
         template<class predicate_t>
         bool exists(predicate_t match) const {
-          auto predicate = xtd::predicate<const type_t&> {match};
-          for (const auto& item : self_)
-            if (predicate(item)) return true;
-          return false;
+          return find_index(match) != npos;
         }
         
         /// @brief Searches for an element that matches the conditions defined by the specified predicate, and returns the first occurrence within the entire xtd::collections::generic::list <type_t>.
@@ -722,12 +717,7 @@ namespace xtd {
         /// @return The index of value if found in the xtd::collections::generic::list; otherwise, xtd::collections::generic::ilist::npos.
         /// @exception xtd::argument_out_of_range_exception `index` and `countù  do not specify a valid section in the xtd::collections::generic::list <type_t>.
         virtual size_type index_of(const type_t& value, size_type index, size_type count) const {
-          if (index >= self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-          if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-          
-          for (auto i = index; i < index + count; ++i)
-            if (helpers::equator<type_t> {}(self_[i], value)) return i;
-          return npos;
+          return find_index(index, count, delegate_(auto n) {return helpers::equator<type_t> {}(n, value);});
         }
         
         /// @brief Inserts an element into the xtd::collections::generic::list <type_t> at the specified index.
@@ -820,13 +810,7 @@ namespace xtd {
         /// @return Int32 The last index of value if found in the list; otherwise, xtd::collections::generic::list::npos.
         /// @exception xd::argument_exception `index` and `count` do not specify a valid section in the xtd::collections::generic::list <type_t>.
         size_type last_index_of(const type_t& value, size_type index, size_type count) const {
-          if (count > self_.count() || index >= self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-          if (index - count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-          
-          for (auto i = index; i >= index - (count - 1); --i)
-            if (value == data_->items[i])  return i;
-            
-          return npos;
+          return find_last_index(index, count, delegate_(auto n) {return helpers::equator<type_t> {}(n, value);});
         }
         
         /// @brief Removes the first occurrence of a specific object from the xtd::collections::generic::list <type_t>.
@@ -835,13 +819,10 @@ namespace xtd {
         /// @remarks If type `typ_t` implements the xtd::iequatable <type_t> generic interface, the equality comparer is the xtd::iequatable::equals method of that interface; otherwise, the default equality comparer is xtd::object::equals.
         /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
         bool remove(const type_t& item) override {
-          if (count() == 0)  return false;
-          for (auto index = size_type {0}; index < count(); ++index) {
-            if (!helpers::equator<type_t> {}(self_[index], item)) continue;
-            remove_at(index);
-            return true;
-          }
-          return false;
+          auto index = index_of(item);
+          if (index == npos) return false;
+          remove_at(index);
+          return true;
         }
         
         /// @brief Removes all the elements that match the conditions defined by the specified predicate.
@@ -874,9 +855,7 @@ namespace xtd {
         /// @exception ArgumentOutOfRangeException index is less than 0 or index is greater than xtd::collections::generic::list::count.
         void remove_at(size_type index) override {
           if (index >= count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-          
-          if (index == count() - 1) data_->items.pop_back();
-          else data_->items.erase(data_->items.begin() + index);
+          data_->items.erase(data_->items.begin() + index);
         }
         
         /// @brief Removes a range of elements from the xtd::collections::generic::list <type_t>.
