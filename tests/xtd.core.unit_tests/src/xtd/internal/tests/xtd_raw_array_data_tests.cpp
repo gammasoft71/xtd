@@ -462,7 +462,7 @@ namespace xtd::internal::tests {
     
     void test_method_(items_const_with_bool) {
       assert::are_equal(typeof_<__xtd_raw_array_data__<bool>::base_type>(), typeof_(__xtd_raw_array_data__ {true, false, true, false}.items()));
-      collection_assert::are_equal({true, false, true, false}, __xtd_raw_array_data__ {true, false, true, false}.items());
+      collection_assert::are_equal({1u, 0u, 1u, 0u}, __xtd_raw_array_data__ {true, false, true, false}.items());
     }
     
     void test_method_(items) {
@@ -972,7 +972,7 @@ namespace xtd::internal::tests {
       auto bt = __xtd_raw_array_data__<bool>::base_type {};
       bt = items;
       assert::are_equal(typeof_<__xtd_raw_array_data__<bool>::base_type>(), typeof_(bt));
-      collection_assert::are_equal({true, false, true}, bt);
+      collection_assert::are_equal({1u, 0u, 1u}, bt);
     }
   };
 }
