@@ -81,6 +81,8 @@ namespace xtd {
       operation_canceled,
       /// @brief Arithmetic overflow.
       overflow,
+      /// @brief Out of memory
+      out_of_memory,
       /// @brief The path is too long.
       path_too_long,
       /// @brief The platform is not supported.

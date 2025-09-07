@@ -33,6 +33,7 @@
 #include "../../../include/xtd/object_closed_exception.hpp"
 #include "../../../include/xtd/operation_canceled_exception.hpp"
 #include "../../../include/xtd/overflow_exception.hpp"
+#include "../../../include/xtd/out_of_memory_exception.hpp"
 #include "../../../include/xtd/platform_not_supported_exception.hpp"
 #include "../../../include/xtd/rank_exception.hpp"
 #include "../../../include/xtd/software_termination_exception.hpp"
@@ -86,6 +87,7 @@ void throw_helper::throws(enum exception_case exception_case, const source_locat
     case exception_case::object_closed: throw object_closed_exception {to_stack_frame(location)};
     case exception_case::operation_canceled: throw operation_canceled_exception {to_stack_frame(location)};
     case exception_case::overflow: throw overflow_exception {to_stack_frame(location)};
+    case exception_case::out_of_memory: throw out_of_memory_exception {to_stack_frame(location)};
     case exception_case::path_too_long: throw path_too_long_exception {to_stack_frame(location)};
     case exception_case::platform_not_supported: throw platform_not_supported_exception {to_stack_frame(location)};
     case exception_case::rank: throw rank_exception {to_stack_frame(location)};
@@ -106,49 +108,50 @@ void throw_helper::throws(enum exception_case exception_case, const source_locat
 void throw_helper::throws(enum exception_case exception_case, const char* message, const source_location& location) {
   if (!message) throws(exception_case, location);
   else switch (exception_case) {
-      case exception_case::abandoned_mutex: throw abandoned_mutex_exception {message, to_stack_frame(location)};
-      case exception_case::access_violation: throw access_violation_exception {message, to_stack_frame(location)};
-      case exception_case::argument: throw argument_exception {message, to_stack_frame(location)};
-      case exception_case::argument_null: throw argument_null_exception {message, to_stack_frame(location)};
-      case exception_case::argument_out_of_range: throw argument_out_of_range_exception {message, to_stack_frame(location)};
-      case exception_case::arithmetic: throw arithmetic_exception {message, to_stack_frame(location)};
-      case exception_case::barrier_post_phase: throw barrier_post_phase_exception {message, to_stack_frame(location)};
-      case exception_case::directory_not_found: throw directory_not_found_exception {message, to_stack_frame(location)};
-      case exception_case::divided_by_zero: throw divided_by_zero_exception {message, to_stack_frame(location)};
-      case exception_case::end_of_stream: throw end_of_stream_exception {message, to_stack_frame(location)};
-      case exception_case::file_not_found: throw file_not_found_exception {message, to_stack_frame(location)};
-      case exception_case::format: throw format_exception {message, to_stack_frame(location)};
-      case exception_case::format_closing_bracket_without_open_bracket: throw format_exception {message, to_stack_frame(location)};
-      case exception_case::format_opened_bracket_without_end_bracket: throw format_exception {message, to_stack_frame(location)};
-      case exception_case::format_no_start_colon: throw format_exception {message, to_stack_frame(location)};
-      case exception_case::format_not_iformatable: throw format_exception {message, to_stack_frame(location)};
-      case exception_case::index_out_of_range: throw index_out_of_range_exception {message, to_stack_frame(location)};
-      case exception_case::invalid_cast: throw invalid_cast_exception {message, to_stack_frame(location)};
-      case exception_case::invalid_operation: throw invalid_operation_exception {message, to_stack_frame(location)};
-      case exception_case::interrupt: throw interrupt_exception {message, to_stack_frame(location)};
-      case exception_case::io: throw io_exception {message, to_stack_frame(location)};
-      case exception_case::key_not_found: throw key_not_found_exception {message, to_stack_frame(location)};
-      case exception_case::lock_recursion: throw lock_recursion_exception {message, to_stack_frame(location)};
-      case exception_case::not_implemented: throw not_implemented_exception {message, to_stack_frame(location)};
-      case exception_case::not_supported: throw not_supported_exception {message, to_stack_frame(location)};
-      case exception_case::null_pointer: throw null_pointer_exception {message, to_stack_frame(location)};
-      case exception_case::object_closed: throw object_closed_exception {message, to_stack_frame(location)};
-      case exception_case::operation_canceled: throw operation_canceled_exception {message, to_stack_frame(location)};
-      case exception_case::overflow: throw overflow_exception {message, to_stack_frame(location)};
-      case exception_case::path_too_long: throw path_too_long_exception {message, to_stack_frame(location)};
-      case exception_case::platform_not_supported: throw platform_not_supported_exception {message, to_stack_frame(location)};
-      case exception_case::rank: throw rank_exception {message, to_stack_frame(location)};
-      case exception_case::semaphore_full: throw semaphore_full_exception {message, to_stack_frame(location)};
-      case exception_case::software_termination: throw software_termination_exception {message, to_stack_frame(location)};
-      case exception_case::synchronization_lock: throw synchronization_lock_exception {message, to_stack_frame(location)};
-      case exception_case::thread_abort: throw thread_abort_exception {message, to_stack_frame(location)};
-      case exception_case::thread_interrupted: throw thread_interrupted_exception {message, to_stack_frame(location)};
-      case exception_case::thread_state: throw thread_state_exception {message, to_stack_frame(location)};
-      case exception_case::time_zone_not_found: throw time_zone_not_found_exception {message, to_stack_frame(location)};
-      case exception_case::unauthorized_access: throw unauthorized_access_exception {message, to_stack_frame(location)};
-      case exception_case::uri_format: throw uri_format_exception {message, to_stack_frame(location)};
-      default: throw argument_exception {"Invalid xtd::helpers::exception_case value"};
-    }
+    case exception_case::abandoned_mutex: throw abandoned_mutex_exception {message, to_stack_frame(location)};
+    case exception_case::access_violation: throw access_violation_exception {message, to_stack_frame(location)};
+    case exception_case::argument: throw argument_exception {message, to_stack_frame(location)};
+    case exception_case::argument_null: throw argument_null_exception {message, to_stack_frame(location)};
+    case exception_case::argument_out_of_range: throw argument_out_of_range_exception {message, to_stack_frame(location)};
+    case exception_case::arithmetic: throw arithmetic_exception {message, to_stack_frame(location)};
+    case exception_case::barrier_post_phase: throw barrier_post_phase_exception {message, to_stack_frame(location)};
+    case exception_case::directory_not_found: throw directory_not_found_exception {message, to_stack_frame(location)};
+    case exception_case::divided_by_zero: throw divided_by_zero_exception {message, to_stack_frame(location)};
+    case exception_case::end_of_stream: throw end_of_stream_exception {message, to_stack_frame(location)};
+    case exception_case::file_not_found: throw file_not_found_exception {message, to_stack_frame(location)};
+    case exception_case::format: throw format_exception {message, to_stack_frame(location)};
+    case exception_case::format_closing_bracket_without_open_bracket: throw format_exception {message, to_stack_frame(location)};
+    case exception_case::format_opened_bracket_without_end_bracket: throw format_exception {message, to_stack_frame(location)};
+    case exception_case::format_no_start_colon: throw format_exception {message, to_stack_frame(location)};
+    case exception_case::format_not_iformatable: throw format_exception {message, to_stack_frame(location)};
+    case exception_case::index_out_of_range: throw index_out_of_range_exception {message, to_stack_frame(location)};
+    case exception_case::invalid_cast: throw invalid_cast_exception {message, to_stack_frame(location)};
+    case exception_case::invalid_operation: throw invalid_operation_exception {message, to_stack_frame(location)};
+    case exception_case::interrupt: throw interrupt_exception {message, to_stack_frame(location)};
+    case exception_case::io: throw io_exception {message, to_stack_frame(location)};
+    case exception_case::key_not_found: throw key_not_found_exception {message, to_stack_frame(location)};
+    case exception_case::lock_recursion: throw lock_recursion_exception {message, to_stack_frame(location)};
+    case exception_case::not_implemented: throw not_implemented_exception {message, to_stack_frame(location)};
+    case exception_case::not_supported: throw not_supported_exception {message, to_stack_frame(location)};
+    case exception_case::null_pointer: throw null_pointer_exception {message, to_stack_frame(location)};
+    case exception_case::object_closed: throw object_closed_exception {message, to_stack_frame(location)};
+    case exception_case::operation_canceled: throw operation_canceled_exception {message, to_stack_frame(location)};
+    case exception_case::overflow: throw overflow_exception {message, to_stack_frame(location)};
+    case exception_case::out_of_memory: throw out_of_memory_exception {message, to_stack_frame(location)};
+    case exception_case::path_too_long: throw path_too_long_exception {message, to_stack_frame(location)};
+    case exception_case::platform_not_supported: throw platform_not_supported_exception {message, to_stack_frame(location)};
+    case exception_case::rank: throw rank_exception {message, to_stack_frame(location)};
+    case exception_case::semaphore_full: throw semaphore_full_exception {message, to_stack_frame(location)};
+    case exception_case::software_termination: throw software_termination_exception {message, to_stack_frame(location)};
+    case exception_case::synchronization_lock: throw synchronization_lock_exception {message, to_stack_frame(location)};
+    case exception_case::thread_abort: throw thread_abort_exception {message, to_stack_frame(location)};
+    case exception_case::thread_interrupted: throw thread_interrupted_exception {message, to_stack_frame(location)};
+    case exception_case::thread_state: throw thread_state_exception {message, to_stack_frame(location)};
+    case exception_case::time_zone_not_found: throw time_zone_not_found_exception {message, to_stack_frame(location)};
+    case exception_case::unauthorized_access: throw unauthorized_access_exception {message, to_stack_frame(location)};
+    case exception_case::uri_format: throw uri_format_exception {message, to_stack_frame(location)};
+    default: throw argument_exception {"Invalid xtd::helpers::exception_case value"};
+  }
 }
 
 void throw_helper::throws(enum exception_case exception_case, const xtd::type& type, const source_location& location) {
