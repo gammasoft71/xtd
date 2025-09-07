@@ -294,9 +294,9 @@ namespace xtd {
         /// @{
         void on_item_removed(size_t index, control_ref& item) override {
           xtd::forms::layout::arranged_element_collection<control_ref>::on_item_removed(index, item);
-          for (auto index = xtd::size {0}; index < controls_.count(); ++index) {
-            if (controls_[index].get() != &item.get()) continue;
-            controls_.remove_at(index);
+          for (auto i = xtd::size {0}; i < controls_.count(); ++i) {
+            if (controls_[i].get() != &item.get()) continue;
+            controls_.remove_at(i);
             break;
           }
         }
