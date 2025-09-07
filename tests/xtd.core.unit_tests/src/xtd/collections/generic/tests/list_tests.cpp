@@ -131,7 +131,7 @@ namespace xtd::collections::generic::tests {
       auto items = list {84, 42, 21};
       // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
       // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
-      //assert::throws<argument_out_of_range_exception>([&] {*items.cend();});
+      //assert::throws<argument_out_of_range_exception>(delegate_ {*items.cend();});
       assert::is_true(items.cend() == items.cbegin() + items.count());
     }
     
@@ -148,7 +148,7 @@ namespace xtd::collections::generic::tests {
       auto items = list {84, 42, 21};
       // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
       // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
-      //assert::throws<argument_out_of_range_exception>([&] {*items.end();});
+      //assert::throws<argument_out_of_range_exception>(delegate_ {*items.end();});
       assert::is_true(items.end() == items.begin() + items.count());
     }
     
@@ -246,21 +246,21 @@ namespace xtd::collections::generic::tests {
     }
     
     void test_method_(add_range_with_same_list) {
-      auto items = list<int> {1, 2, 3, 4, 5};
+      auto items = list {1, 2, 3, 4, 5};
       
-      assert::does_not_throw([&] {items.add_range(items);});
+      assert::does_not_throw(delegate_ {items.add_range(items);});
       collection_assert::are_equal({1, 2, 3, 4, 5, 1, 2, 3, 4, 5}, items);
     }
     
     void test_method_(add_range_with_same_list_as_ienumerable) {
-      auto items = list<int> {1, 2, 3, 4, 5};
+      auto items = list {1, 2, 3, 4, 5};
       
-      assert::does_not_throw([&] {items.add_range(as<ienumerable<int>>(items));});
+      assert::does_not_throw(delegate_ {items.add_range(as<ienumerable<int>>(items));});
       collection_assert::are_equal({1, 2, 3, 4, 5, 1, 2, 3, 4, 5}, items);
     }
     
     void test_method_(as_read_only) {
-      auto items = list<int> {84, 42, 21};
+      auto items = list {84, 42, 21};
       auto roc = items.as_read_only();
       assert::is_instance_of<read_only_collection<int>>(roc);
       assert::is_true(as<icollection<int>>(roc).is_read_only());
@@ -333,7 +333,7 @@ namespace xtd::collections::generic::tests {
       collection_assert::are_equal({0, 0, 84, 42, 21, 0, 0}, dest);
       
       dest = array<int>(3);
-      assert::throws<argument_exception>([&] {items.copy_to(dest, 1);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.copy_to(dest, 1);});
     }
     
     void test_method_(copy_to_with_index_and_count) {
@@ -343,9 +343,9 @@ namespace xtd::collections::generic::tests {
       collection_assert::are_equal({0, 0, 33, 0, 0}, dest);
       
       dest = array<int>(3);
-      assert::throws<argument_exception>([&] {items.copy_to(0, dest, 0, 4);});
-      assert::throws<argument_exception>([&] {items.copy_to(1, dest, 0, 4);});
-      assert::throws<argument_exception>([&] {items.copy_to(1, dest, 1, 3);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.copy_to(0, dest, 0, 4);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.copy_to(1, dest, 0, 4);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.copy_to(1, dest, 1, 3);});
     }
     
     void test_method_(ensure_capacity) {
@@ -405,7 +405,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(2_z, items.find_index(2, [](auto n) {return n % 2 != 0;}));
       assert::are_equal(items.npos, items.find_index(4, [](auto n) {return n % 2 != 0;}));
       assert::are_equal(items.npos, items.find_index(0, [](auto n) {return n == 65;}));
-      assert::throws<argument_out_of_range_exception>([&] {items.find_index(5, [](auto n) {return n % 2 != 0;});});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.find_index(5, [](auto n) {return n % 2 != 0;});});
     }
     
     void test_method_(find_index_with_start_index_and_count) {
@@ -416,10 +416,10 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(items.npos, items.find_index(2, 2, [](auto n) {return n == 42;}));
       assert::are_equal(items.npos, items.find_index(0, 2, [](auto n) {return n % 2 != 0;}));
       assert::are_equal(3_z, items.find_index(3, 1, [](auto n) {return n % 2 != 0;}));
-      assert::throws<argument_out_of_range_exception>([&] {items.find_index(3, 2, [](auto n) {return n % 2 != 0;});});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.find_index(3, 2, [](auto n) {return n % 2 != 0;});});
       assert::are_equal(items.npos, items.find_index(4, 0, [](auto n) {return n % 2 != 0;}));
       assert::are_equal(items.npos, items.find_index(0, 4, [](auto n) {return n == 65;}));
-      assert::throws<argument_out_of_range_exception>([&] {items.find_index(5, 1, [](auto n) {return n % 2 != 0;});});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.find_index(5, 1, [](auto n) {return n % 2 != 0;});});
     }
     
     void test_method_(find_last) {
@@ -442,9 +442,9 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(items.npos, items.find_last_index(0, [](auto n) {return n == 42;}));
       assert::are_equal(2_z, items.find_last_index(2, [](auto n) {return n % 2 != 0;}));
       assert::are_equal(3_z, items.find_last_index(3, [](auto n) {return n % 2 != 0;}));
-      assert::throws<argument_out_of_range_exception>([&] {items.find_last_index(4, [](auto n) {return n % 2 != 0;});});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.find_last_index(4, [](auto n) {return n % 2 != 0;});});
       assert::are_equal(items.npos, items.find_last_index(3, [](auto n) {return n == 65;}));
-      assert::throws<argument_out_of_range_exception>([&] {items.find_last_index(5, [](auto n) {return n % 2 != 0;});});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.find_last_index(5, [](auto n) {return n % 2 != 0;});});
     }
     
     void test_method_(find_last_index_with_start_index_and_count) {
@@ -455,18 +455,18 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(items.npos, items.find_last_index(0, 1, [](auto n) {return n == 42;}));
       assert::are_equal(2_z, items.find_last_index(2, 2, [](auto n) {return n % 2 != 0;}));
       assert::are_equal(3_z, items.find_last_index(3, 2, [](auto n) {return n % 2 != 0;}));
-      assert::throws<argument_out_of_range_exception>([&] {items.find_last_index(0, 2, [](auto n) {return n % 2 != 0;});});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.find_last_index(0, 2, [](auto n) {return n % 2 != 0;});});
       assert::are_equal(3_z, items.find_last_index(3, 0, [](auto n) {return n % 2 != 0;}));
       assert::are_equal(items.npos, items.find_last_index(3, 4, [](auto n) {return n == 65;}));
-      assert::throws<argument_out_of_range_exception>([&] {items.find_last_index(4, 0, [](auto n) {return n % 2 != 0;});});
-      assert::throws<argument_out_of_range_exception>([&] {items.find_last_index(0, 4, [](auto n) {return n % 2 != 0;});});
-      assert::throws<argument_out_of_range_exception>([&] {items.find_last_index(5, 1, [](auto n) {return n % 2 != 0;});});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.find_last_index(4, 0, [](auto n) {return n % 2 != 0;});});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.find_last_index(0, 4, [](auto n) {return n % 2 != 0;});});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.find_last_index(5, 1, [](auto n) {return n % 2 != 0;});});
     }
     
     void test_method_(for_each) {
       auto items = list {1, 2, 3, 4, 5};
       auto accumulator = 0;
-      items.for_each([&](auto n) {accumulator += n;});
+      items.for_each(delegate_(auto n) {accumulator += n;});
       assert::are_equal(15, accumulator);
     }
     
@@ -507,13 +507,13 @@ namespace xtd::collections::generic::tests {
       auto items = list {1, 2, 3, 4, 5};
       collection_assert::are_equal({1, 2, 3, 4, 5}, items.get_range(0, 5));
       collection_assert::are_equal({2, 3, 4}, items.get_range(1, 3));
-      assert::throws<argument_out_of_range_exception>([&] {items.get_range(0, 6);});
-      assert::throws<argument_out_of_range_exception>([&] {items.get_range(6, 0);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.get_range(0, 6);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.get_range(6, 0);});
     }
     
     void test_method_(index_of) {
       assert::are_equal(list<int>::npos, list<int> {}.index_of(0));
-      auto items = list<int> {1, 2, 3, 4, 5};
+      auto items = list {1, 2, 3, 4, 5};
       assert::are_equal(0_z, items.index_of(1));
       assert::are_equal(2_z, items.index_of(3));
       assert::are_equal(4_z, items.index_of(5));
@@ -521,7 +521,7 @@ namespace xtd::collections::generic::tests {
     }
     
     void test_method_(index_of_with_index) {
-      auto items = list<int> {1, 2, 3, 4, 5};
+      auto items = list {1, 2, 3, 4, 5};
       assert::are_equal(0_z, items.index_of(1, 0));
       assert::are_equal(items.npos, items.index_of(1, 1));
       assert::are_equal(2_z, items.index_of(3, 2));
@@ -529,23 +529,23 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(4_z, items.index_of(5, 4));
       assert::are_equal(items.npos, items.index_of(6, 0));
       assert::are_equal(items.npos, items.index_of(6, 4));
-      assert::throws<argument_out_of_range_exception>([&] {items.index_of(1, 6);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.index_of(1, 6);});
     }
     
     void test_method_(index_of_with_index_and_count) {
-      auto items = list<int> {1, 2, 3, 4, 5};
+      auto items = list {1, 2, 3, 4, 5};
       assert::are_equal(0_z, items.index_of(1, 0, 4));
       assert::are_equal(items.npos, items.index_of(1, 1, 3));
       assert::are_equal(1_z, items.index_of(2, 1, 3));
       assert::are_equal(items.npos, items.index_of(2, 2, 2));
-      assert::throws<argument_out_of_range_exception>([&] {items.index_of(1, 1, 5);});
-      assert::throws<argument_out_of_range_exception>([&] {items.index_of(1, 5, 1);});
-      assert::throws<argument_out_of_range_exception>([&] {items.index_of(1, 0, 6);});
-      assert::throws<argument_out_of_range_exception>([&] {items.index_of(1, 6, 0);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.index_of(1, 1, 5);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.index_of(1, 5, 1);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.index_of(1, 0, 6);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.index_of(1, 6, 0);});
     }
     
     void test_method_(insert) {
-      auto items = list<int> {1, 2, 3, 4, 5};
+      auto items = list {1, 2, 3, 4, 5};
       items.insert(0, 6);
       collection_assert::are_equal({6, 1, 2, 3, 4, 5}, items);
       items.insert(3, 7);
@@ -555,7 +555,7 @@ namespace xtd::collections::generic::tests {
     }
     
     void test_method_(insert_with_move) {
-      auto items = list<int> {1, 2, 3, 4, 5};
+      auto items = list {1, 2, 3, 4, 5};
       auto i = 6;
       items.insert(0, std::move(i));
       collection_assert::are_equal({6, 1, 2, 3, 4, 5}, items);
@@ -568,7 +568,7 @@ namespace xtd::collections::generic::tests {
     }
     
     void test_method_(insert_range_with_ienumerable) {
-      auto items = list<int> {1, 2, 3, 4, 5};
+      auto items = list {1, 2, 3, 4, 5};
       items.insert_range(0, as<ienumerable<int>>(list {6, 7}));
       collection_assert::are_equal({6, 7, 1, 2, 3, 4, 5}, items);
       items.insert_range(4, as<ienumerable<int>>(list {8, 9}));
@@ -578,7 +578,7 @@ namespace xtd::collections::generic::tests {
     }
     
     void test_method_(insert_range_with_list) {
-      auto items = list<int> {1, 2, 3, 4, 5};
+      auto items = list {1, 2, 3, 4, 5};
       items.insert_range(0, list {6, 7});
       collection_assert::are_equal({6, 7, 1, 2, 3, 4, 5}, items);
       items.insert_range(4, list {8, 9});
@@ -588,7 +588,7 @@ namespace xtd::collections::generic::tests {
     }
 
     void test_method_(insert_range_with_initializer_list) {
-      auto items = list<int> {1, 2, 3, 4, 5};
+      auto items = list {1, 2, 3, 4, 5};
       items.insert_range(0, {6, 7});
       collection_assert::are_equal({6, 7, 1, 2, 3, 4, 5}, items);
       items.insert_range(4, {8, 9});
@@ -598,33 +598,237 @@ namespace xtd::collections::generic::tests {
     }
 
     void test_method_(insert_range_with_same_list) {
-      auto items = list<int> {1, 2, 3, 4, 5};
+      auto items = list {1, 2, 3, 4, 5};
       
-      assert::does_not_throw([&] {items.insert_range(2, items);});
+      assert::does_not_throw(delegate_ {items.insert_range(2, items);});
       collection_assert::are_equal({1, 2, 1, 2, 3, 4, 5, 3, 4, 5}, items);
     }
 
     void test_method_(insert_range_with_same_list_as_ienumerable) {
-      auto items = list<int> {1, 2, 3, 4, 5};
+      auto items = list {1, 2, 3, 4, 5};
       
-      assert::does_not_throw([&] {items.insert_range(2, as<ienumerable<int>>(items));});
+      assert::does_not_throw(delegate_ {items.insert_range(2, as<ienumerable<int>>(items));});
       collection_assert::are_equal({1, 2, 1, 2, 3, 4, 5, 3, 4, 5}, items);
     }
     
-    void test_method_(index_operator) {
+    void test_method_(last_index_of) {
+      assert::are_equal(list<int>::npos, list<int> {}.index_of(0));
+      auto items = list {1, 2, 3, 4, 5};
+      assert::are_equal(0_z, items.last_index_of(1));
+      assert::are_equal(2_z, items.last_index_of(3));
+      assert::are_equal(4_z, items.last_index_of(5));
+      assert::are_equal(items.npos, items.last_index_of(6));
+    }
+    
+    void test_method_(last_index_of_with_index) {
+      auto items = list {1, 2, 3, 4, 5};
+      assert::are_equal(0_z, items.last_index_of(1, 4));
+      assert::are_equal(2_z, items.last_index_of(3, 4));
+      assert::are_equal(items.npos, items.last_index_of(3, 0));
+      assert::are_equal(4_z, items.last_index_of(5, 4));
+      assert::are_equal(items.npos, items.last_index_of(5, 3));
+      assert::are_equal(items.npos, items.last_index_of(6, 0));
+      assert::are_equal(items.npos, items.last_index_of(6, 4));
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.last_index_of(1, 6);});
+    }
+    
+    void test_method_(last_index_of_with_index_and_count) {
+      auto items = list {1, 2, 3, 4, 5};
+      assert::are_equal(0_z, items.last_index_of(1, 4, 5));
+      assert::are_equal(items.npos, items.last_index_of(1, 4, 4));
+      assert::are_equal(1_z, items.last_index_of(2, 4, 4));
+      assert::are_equal(items.npos, items.last_index_of(2, 4, 3));
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.last_index_of(1, 5, 1);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.last_index_of(1, 1, 5);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.last_index_of(1, 6, 0);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.last_index_of(1, 0, 6);});
+    }
+    
+    void test_method_(remove) {
+      auto items = list {1, 2, 3};
+      assert::is_false(items.remove(4));
+      collection_assert::are_equal({1, 2, 3}, items);
+      assert::is_true(items.remove(2));
+      collection_assert::are_equal({1, 3}, items);
+      assert::is_true(items.remove(3));
+      collection_assert::are_equal({1}, items);
+      assert::is_true(items.remove(1));
+      collection_assert::is_empty(items);
+      assert::is_false(items.remove(1));
+      collection_assert::is_empty(items);
+    }
+    
+    void test_method_(remove_all) {
+      auto items = list {1, 2, 3, 4, 5};
+      assert::are_equal(0_z, items.remove_all(delegate_(auto n) {return n > 5;}));
+      collection_assert::are_equal({1, 2, 3, 4, 5}, items);
+      assert::are_equal(2_z, items.remove_all(delegate_(auto n) {return n % 2 == 0;}));
+      collection_assert::are_equal({1, 3, 5}, items);
+      assert::are_equal(3_z, items.remove_all(delegate_(auto n) {return n % 2 != 0;}));
+      collection_assert::is_empty(items);
+      assert::are_equal(0_z, items.remove_all(delegate_(auto n) {return n % 2 != 0;}));
+      collection_assert::is_empty(items);
+    }
+    
+    void test_method_(remove_at) {
+      auto items = list {1, 2, 3, 4, 5};
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.remove_at(5);});
+      items.remove_at(0);
+      collection_assert::are_equal({2, 3, 4, 5}, items);
+      items.remove_at(3);
+      collection_assert::are_equal({2, 3, 4}, items);
+      items.remove_at(1);
+      collection_assert::are_equal({2, 4}, items);
+      items.remove_at(1);
+      collection_assert::are_equal({2}, items);
+      items.remove_at(0);
+      collection_assert::is_empty(items);
+    }
+    
+    void test_method_(remove_range) {
+      auto items = list {1, 2, 3, 4, 5};
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.remove_range(6, 0);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.remove_range(0, 6);});
+      items.remove_range(0, items.count());
+      collection_assert::is_empty(items);
+      items = {1, 2, 3, 4, 5};
+      items.remove_range(1, 3);
+      collection_assert::are_equal({1, 5}, items);
+      items.remove_range(0, 2);
+      collection_assert::is_empty(items);
+    }
+    
+    void test_method_(reverse) {
+      auto items = list {1, 2, 3, 4, 5};
+      items.reverse();
+      collection_assert::are_equal({5, 4, 3, 2, 1}, items);
+    }
+    
+    void test_method_(reverse_with_index_and_count) {
+      auto items = list {1, 2, 3, 4, 5};
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.reverse(6, 0);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.reverse(0, 6);});
+      items.reverse(0, items.count());
+      collection_assert::are_equal({5, 4, 3, 2, 1}, items);
+      items.reverse(1, 3);
+      collection_assert::are_equal({5, 2, 3, 4, 1}, items);
+      items.reverse(3, 1);
+      collection_assert::are_equal({5, 2, 3, 4, 1}, items);
+    }
+    
+    void test_method_(slice) {
+      auto items = list {1, 2, 3, 4, 5};
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.slice(6, 0);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.slice(0, 6);});
+      collection_assert::are_equal({1, 2, 3, 4, 5}, items.slice(0, items.count()));
+      collection_assert::are_equal({2, 3, 4}, items.slice(1, 3));
+      collection_assert::are_equal({3}, items.slice(2, 1));
+      collection_assert::is_empty(items.slice(1, 0));
+    }
+    
+    void test_method_(sort) {
+      auto items = list {1, 5, 3, 4, 2};
+      collection_assert::are_equal({1, 2, 3, 4, 5}, items.sort());
+      collection_assert::are_equal({1, 2, 3, 4, 5}, items);
+      collection_assert::are_equal({1, 2, 3, 4, 5}, items.sort());
+      collection_assert::are_equal({1, 2, 3, 4, 5}, items);
+    }
+    
+    void test_method_(sort_with_comparison) {
+      auto items = list {1, 5, 3, 4, 2};
+      collection_assert::are_equal({1, 2, 3, 4, 5}, items.sort(comparison<const int&> {delegate_(auto a, auto b) {return a < b ? -1 : a > b ? 1 : 0;}}));
+      collection_assert::are_equal({1, 2, 3, 4, 5}, items);
+      collection_assert::are_equal({5, 4, 3, 2, 1}, items.sort(comparison<const int&> {delegate_(auto a, auto b) {return a < b ? 1 : a > b ? -1 : 0;}}));
+      collection_assert::are_equal({5, 4, 3, 2, 1}, items);
+    }
+    
+    void test_method_(sort_with_icomparer) {
+      auto items = list {1, 5, 3, 4, 2};
+      collection_assert::are_equal({1, 2, 3, 4, 5}, items.sort(comparer<int>::default_comparer));
+      collection_assert::are_equal({1, 2, 3, 4, 5}, items);
+    }
+    
+    void test_method_(sort_with_index_count_and_icomparer) {
+      auto items = list {1, 5, 3, 4, 2};
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.sort(6, 0, comparer<int>::default_comparer);});
+      assert::throws<argument_out_of_range_exception>(delegate_ {items.sort(0, 6, comparer<int>::default_comparer);});
+      collection_assert::are_equal({1, 2, 3, 4, 5}, items.sort(0, items.count(), comparer<int>::default_comparer));
+      collection_assert::are_equal({1, 2, 3, 4, 5}, items);
+      items = {1, 5, 3, 4, 2};
+      collection_assert::are_equal({1, 3, 4, 5, 2}, items.sort(1, 3, comparer<int>::default_comparer));
+      collection_assert::are_equal({1, 3, 4, 5, 2}, items);
+      items = {1, 5, 3, 4, 2};
+      collection_assert::are_equal({1, 5, 3, 4, 2}, items.sort(2, 1, comparer<int>::default_comparer));
+      collection_assert::are_equal({1, 5, 3, 4, 2}, items);
+    }
+    
+    void test_method_(to_array) {
+      auto items = list {1, 2, 3, 4, 5};
+      auto result = items.to_array();
+      assert::are_equal(typeof_<array<int>>(), typeof_(result));
+      collection_assert::are_equal({1, 2, 3, 4, 5}, result);
+    }
+    
+    void test_method_(to_String) {
+      assert::are_equal("[]", list<int> {}.to_string());
+      assert::are_equal("[1, 2, 3, 4, 5]", list {1, 2, 3, 4, 5}.to_string());
+      assert::are_equal("[one, two, three, four, five]", list {"one", "two", "three", "four", "five"}.to_string());
+    }
+    
+    void test_method_(trim_excess) {
+      auto items = list<int> {};
+      items.capacity(256);
+      assert::is_greater_or_equal(items.capacity(), 256_z);
+      items.add_range({1, 2, 3, 4, 5});
+      items.trim_excess();
+      assert::are_equal(5_z, items.capacity());
+    }
+    
+    void test_method_(true_for_all) {
+      auto items = list {1, 2, 3, 4, 5};
+      assert::is_false(items.true_for_all(delegate_(auto n) {return n % 2 == 0;}));
+      assert::is_true(items.true_for_all(delegate_(auto n) {return n < 6;}));
+    }
+    
+    void test_method_(equal_operator_with_list) {
+      auto items = list {1, 2, 3, 4, 5};
+      auto result = list<int> {};
+      collection_assert::is_empty(result);
+      result = items;
+      collection_assert::are_equal({1, 2, 3, 4, 5}, result);
+    }
+    
+    void test_method_(equal_operator_with_move_list) {
+      auto items = list {1, 2, 3, 4, 5};
+      auto result = list<int> {};
+      collection_assert::is_empty(result);
+      result = std::move(items);
+      collection_assert::are_equal({1, 2, 3, 4, 5}, result);
+      collection_assert::is_empty(items);
+    }
+
+    void test_method_(index_operators) {
       auto items = list {84, 42, 21};
       
       assert::are_equal(84, items[0]);
       assert::are_equal(42, items[1]);
       assert::are_equal(21, items[2]);
-      assert::throws<index_out_of_range_exception>([&] {[[maybe_unused]] auto i = items[3];});
+      assert::throws<index_out_of_range_exception>(delegate_ {[[maybe_unused]] auto i = items[3];});
       
       items[0] = 63;
       items[1] = 31;
       items[2] = 10;
-      assert::throws<index_out_of_range_exception>([&] {items[3] = 5;});
+      assert::throws<index_out_of_range_exception>(delegate_ {items[3] = 5;});
       
       collection_assert::are_equal({63, 31, 10}, items);
+    }
+    
+    void test_method_(cast_opertor_to_std_vector) {
+      auto items = list {1, 2, 3, 4, 5};
+      auto result = std::vector<int> {};
+      collection_assert::is_empty(result);
+      result = items;
+      collection_assert::are_equal({1, 2, 3, 4, 5}, result);
     }
   };
 }
