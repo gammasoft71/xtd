@@ -83,13 +83,14 @@ var searchData=
   ['others_5fwrite_80',['others_write',['../group__xtd__core.html#ggac1ad31e82b8a9af93776488ad7c14843af9d2b2426ee261e7ab294f317c5115bf',1,'xtd::io']]],
   ['out_5fof_5fband_81',['out_of_band',['../group__xtd__core.html#ggacff43f3cb6c04f3be61be0a43cdbda16adeae37c649159bf7e5f67dd8c6c9682b',1,'xtd::net::sockets']]],
   ['out_5fof_5fband_5finline_82',['out_of_band_inline',['../group__xtd__core.html#ggaac9f71cf2a0b71c1b99cab47f8abc4cbabcb38c56f674ce217c23c4944a5082b9',1,'xtd::net::sockets']]],
-  ['outlined_5fdiamond_83',['outlined_diamond',['../group__xtd__drawing.html#ggae7711973ea9941238900716fbd331fccaece4f3488da39fdbcb8ac4e98c56e297',1,'xtd::drawing::drawing_2d']]],
-  ['outset_84',['outset',['../group__xtd__drawing.html#gga1fa23df0cbf09589187247035b61b504a7e9a8014e9a9073a06e9602c54bb2173',1,'xtd::drawing::drawing_2d::outset'],['../group__xtd__forms.html#gga663fa5bbff2ea7ea9ece8563a188a1c6a7e9a8014e9a9073a06e9602c54bb2173',1,'xtd::forms::outset'],['../group__xtd__forms.html#gga37ab2b016bef74fa42812b6dc69b4c9aa7e9a8014e9a9073a06e9602c54bb2173',1,'xtd::forms::outset'],['../group__style__sheets.html#ggaf113fb84f70cd93a23dd95e91bbebdd4a7e9a8014e9a9073a06e9602c54bb2173',1,'xtd::forms::style_sheets::outset']]],
-  ['overflow_85',['overflow',['../group__helpers.html#gga9449ffb8e13ad8c25c987085078568dca0bd9f6dd716003f3818d15d2e211ee73',1,'xtd::helpers']]],
-  ['overline_86',['overline',['../group__style__sheets.html#gga54167367c919f2f359cf55d34ee71c44a1e1ba9e565c8eaad8141c31ec521d762',1,'xtd::forms::style_sheets']]],
-  ['owner_5fall_87',['owner_all',['../group__xtd__core.html#ggac1ad31e82b8a9af93776488ad7c14843a3e6083e076d1f7125c0bbf7070df5440',1,'xtd::io']]],
-  ['owner_5fdraw_88',['owner_draw',['../group__xtd__forms.html#gga57070ef804d401fead746fcd411d02ccaaf6283d5bd545faad64aad281d4c47f9',1,'xtd::forms']]],
-  ['owner_5fexecute_89',['owner_execute',['../group__xtd__core.html#ggac1ad31e82b8a9af93776488ad7c14843a873db9455356e7092827b83f9321bde6',1,'xtd::io']]],
-  ['owner_5fread_90',['owner_read',['../group__xtd__core.html#ggac1ad31e82b8a9af93776488ad7c14843a13804bd89bd86850b7c1b3cf17148c8b',1,'xtd::io']]],
-  ['owner_5fwrite_91',['owner_write',['../group__xtd__core.html#ggac1ad31e82b8a9af93776488ad7c14843a0d521a25ebf962a812b43c32fe36500e',1,'xtd::io']]]
+  ['out_5fof_5fmemory_83',['out_of_memory',['../group__helpers.html#gga9449ffb8e13ad8c25c987085078568dca5ea42cc8dbd653d9afd96c1d2fd147e2',1,'xtd::helpers']]],
+  ['outlined_5fdiamond_84',['outlined_diamond',['../group__xtd__drawing.html#ggae7711973ea9941238900716fbd331fccaece4f3488da39fdbcb8ac4e98c56e297',1,'xtd::drawing::drawing_2d']]],
+  ['outset_85',['outset',['../group__xtd__drawing.html#gga1fa23df0cbf09589187247035b61b504a7e9a8014e9a9073a06e9602c54bb2173',1,'xtd::drawing::drawing_2d::outset'],['../group__xtd__forms.html#gga663fa5bbff2ea7ea9ece8563a188a1c6a7e9a8014e9a9073a06e9602c54bb2173',1,'xtd::forms::outset'],['../group__xtd__forms.html#gga37ab2b016bef74fa42812b6dc69b4c9aa7e9a8014e9a9073a06e9602c54bb2173',1,'xtd::forms::outset'],['../group__style__sheets.html#ggaf113fb84f70cd93a23dd95e91bbebdd4a7e9a8014e9a9073a06e9602c54bb2173',1,'xtd::forms::style_sheets::outset']]],
+  ['overflow_86',['overflow',['../group__helpers.html#gga9449ffb8e13ad8c25c987085078568dca0bd9f6dd716003f3818d15d2e211ee73',1,'xtd::helpers']]],
+  ['overline_87',['overline',['../group__style__sheets.html#gga54167367c919f2f359cf55d34ee71c44a1e1ba9e565c8eaad8141c31ec521d762',1,'xtd::forms::style_sheets']]],
+  ['owner_5fall_88',['owner_all',['../group__xtd__core.html#ggac1ad31e82b8a9af93776488ad7c14843a3e6083e076d1f7125c0bbf7070df5440',1,'xtd::io']]],
+  ['owner_5fdraw_89',['owner_draw',['../group__xtd__forms.html#gga57070ef804d401fead746fcd411d02ccaaf6283d5bd545faad64aad281d4c47f9',1,'xtd::forms']]],
+  ['owner_5fexecute_90',['owner_execute',['../group__xtd__core.html#ggac1ad31e82b8a9af93776488ad7c14843a873db9455356e7092827b83f9321bde6',1,'xtd::io']]],
+  ['owner_5fread_91',['owner_read',['../group__xtd__core.html#ggac1ad31e82b8a9af93776488ad7c14843a13804bd89bd86850b7c1b3cf17148c8b',1,'xtd::io']]],
+  ['owner_5fwrite_92',['owner_write',['../group__xtd__core.html#ggac1ad31e82b8a9af93776488ad7c14843a0d521a25ebf962a812b43c32fe36500e',1,'xtd::io']]]
 ];
