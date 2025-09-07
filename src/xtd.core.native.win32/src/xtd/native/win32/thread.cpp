@@ -8,10 +8,15 @@
 
 using namespace xtd::native;
 
+#pragma warning(push)
+#pragma warning(disable:6258) // TerminateThread dangereux, usage interne seulement
 bool thread::cancel(intmax_t handle) {
+  // NOTE: This forcibly terminates a thread.Only for internal extreme cases.
+  // Using this outside xtd::threading::thread::abort() can corrupt memory or leave resources locked.
   if (reinterpret_cast<HANDLE>(handle) == INVALID_HANDLE_VALUE) return false;
   return TerminateThread(reinterpret_cast<HANDLE>(handle), static_cast<DWORD>(- 1)) != FALSE;
 }
+#pragma warning(pop)
 
 intmax_t thread::create(std::function<void(intmax_t)> start, intmax_t obj, int32_t max_stack_size, bool suspended, intmax_t& id) {
   auto sa = SECURITY_ATTRIBUTES {};
