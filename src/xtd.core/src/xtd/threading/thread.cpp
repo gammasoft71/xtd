@@ -10,6 +10,7 @@
 #include "../../../include/xtd/io/io_exception.hpp"
 #include "../../../include/xtd/diagnostics/stopwatch.hpp"
 #include "../../../include/xtd/argument_exception.hpp"
+#include "../../../include/xtd/as.hpp"
 #include "../../../include/xtd/environment.hpp"
 #include "../../../include/xtd/int32_object.hpp"
 #include "../../../include/xtd/invalid_handle.hpp"
@@ -294,7 +295,7 @@ bool thread::join_all(int32 milliseconds_timeout) {
   }
   
   if (milliseconds_timeout != timeout::infinite && sw.elapsed_milliseconds() > milliseconds_timeout) milliseconds_timeout = 0;
-  else if (milliseconds_timeout != timeout::infinite && sw.elapsed_milliseconds() < milliseconds_timeout) milliseconds_timeout -= sw.elapsed_milliseconds();
+  else if (milliseconds_timeout != timeout::infinite && sw.elapsed_milliseconds() < milliseconds_timeout) milliseconds_timeout -= as<int32>(sw.elapsed_milliseconds());
   if (join_all_ptr(thread_pointers, milliseconds_timeout) == false) return false;
   auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
   get_static_data().threads.clear();
