@@ -126,7 +126,7 @@ namespace xtd::internal::tests {
     void test_method_(constructor_with_count) {
       auto items = __xtd_raw_array_data__<int>(3);
       assert::are_equal(3_z, items.size());
-      collection_assert::are_equal({false, false, false}, items);
+      collection_assert::are_equal({0, 0, 0}, items);
     }
     
     void test_method_(constructor_with_bool_and_count) {
@@ -216,8 +216,8 @@ namespace xtd::internal::tests {
     }
     
     void test_method_(constructor_with_move_base_type_of_bool) {
-      auto bt = __xtd_raw_array_data__<int>::base_type {true, false, true};
-      auto items = __xtd_raw_array_data__<int>(std::move(bt));
+      auto bt = __xtd_raw_array_data__<bool>::base_type {true, false, true};
+      auto items = __xtd_raw_array_data__<bool>(std::move(bt));
       assert::are_equal(3_z, items.size());
       collection_assert::are_equal({true, false, true}, items);
       collection_assert::is_empty(bt);
