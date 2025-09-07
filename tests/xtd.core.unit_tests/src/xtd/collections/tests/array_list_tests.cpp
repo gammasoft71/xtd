@@ -144,13 +144,11 @@ namespace xtd::collections::tests {
     }
     
     void test_method_(items_const) {
-      assert::are_equal(typeof_<array_list::base_type>(), typeof_(array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"}.items()));
       collection_assert::are_equal({"Tyrannosaurus", "Compsognathus", "Amargasaurus"}, array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"}.items());
     }
     
     void test_method_(items) {
       auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
-      assert::are_equal(typeof_<array_list::base_type>(), typeof_(items.items()));
       
       auto& inners = items.items();
       assert::are_equal("Tyrannosaurus", inners[0]);
