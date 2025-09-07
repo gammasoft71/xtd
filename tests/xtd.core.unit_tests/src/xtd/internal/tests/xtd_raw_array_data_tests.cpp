@@ -492,9 +492,9 @@ namespace xtd::internal::tests {
       assert::are_equal(typeof_<__xtd_raw_array_data__<bool>::base_type>(), typeof_(items.items()));
       
       auto& inners = items.items();
-      assert::are_equal(true, inners[0]);
-      assert::are_equal(false, inners[1]);
-      assert::are_equal(true, inners[2]);
+      assert::are_equal(1u, inners[0]);
+      assert::are_equal(0u, inners[1]);
+      assert::are_equal(1u, inners[2]);
       
       // Attempting to access index that exceeds size() results in undefined behaviour.
       //assert::are_equal(false, inners[3]);
