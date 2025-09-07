@@ -319,7 +319,6 @@ namespace xtd::internal::tests {
     
     void test_method_(crend) {
       auto items = __xtd_raw_array_data__ {84, 42, 21};
-      //assert::are_equal(typeof_<int>(), typeof_(*items.crend()));
       // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
       // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
       //assert::throws<std::out_of_range>([&] {*items.crend();});
@@ -328,7 +327,6 @@ namespace xtd::internal::tests {
     
     void test_method_(crend_with_bool) {
       auto items = __xtd_raw_array_data__ {true, false, true, false};
-      //assert::are_equal(typeof_<bool>(), typeof_(*items.crend()));
       // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
       // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
       //assert::throws<std::out_of_range>([&] {*items.crend();});
@@ -411,7 +409,6 @@ namespace xtd::internal::tests {
     
     void test_method_(end) {
       auto items = __xtd_raw_array_data__ {84, 42, 21};
-      //assert::are_equal(typeof_<int>(), typeof_(*items.end()));
       // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
       // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
       //assert::throws<std::out_of_range>([&] {*items.end();});
@@ -420,7 +417,6 @@ namespace xtd::internal::tests {
     
     void test_method_(end_with_bool) {
       auto items = __xtd_raw_array_data__ {true, false, true};
-      //assert::are_equal(typeof_<bool>(), typeof_(*items.end()));
       // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
       // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
       //assert::throws<std::out_of_range>([&] {*items.end();});
@@ -531,7 +527,6 @@ namespace xtd::internal::tests {
     
     void test_method_(rend) {
       auto items = __xtd_raw_array_data__ {84, 42, 21};
-      //assert::are_equal(typeof_<int>(), typeof_(*items.rend()));
       // the rend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
       // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
       //assert::throws<std::out_of_range>([&] {*items.rend();});
@@ -540,7 +535,6 @@ namespace xtd::internal::tests {
     
     void test_method_(rend_with_bool) {
       auto items = __xtd_raw_array_data__ {true, false, true};
-      //assert::are_equal(typeof_<bool>(), typeof_(*items.rend()));
       // the rend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
       // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
       //assert::throws<std::out_of_range>([&] {*items.rend();});
