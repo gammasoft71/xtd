@@ -162,6 +162,7 @@ namespace xtd {
         list() noexcept = default;
         /// @brief Constructs the container with specified count default-inserted instances of type_t. No copies are made.
         /// @param capacity The number of elements that the new list can initially store.
+        /// @exception xtd::out_of_memory There is not enough memory available on the system.
         explicit list(size_type capacity) {self_.capacity(capacity);}
         /// @brief Initializes a new instance of the xtd::collections::generic::list <type_t> class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
         /// @param collection The collection whose elements are copied to the new list.
@@ -206,7 +207,7 @@ namespace xtd {
         /// @{
         /// @brief Gets the total number of elements the internal data structure can hold without resizing.
         /// @return Capacity of the currently allocated storage.
-        /// @exceptions xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
+        /// @exception xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
         /// @par Examples
         /// The following example demonstrates how to add, remove, and insert a simple business object in a xtd::collections::generic::list <type_t>.
         /// @include generic_list.cpp
@@ -229,7 +230,8 @@ namespace xtd {
         virtual size_type capacity() const noexcept {return data_->items.capacity();}
         /// @brief Sets the total number of elements the internal data structure can hold without resizing.
         /// @return Capacity of the currently allocated storage.
-        /// @exceptions xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
+        /// @exception xtd::out_of_memory There is not enough memory available on the system.
+        /// @exception xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
         /// @par Examples
         /// The following example demonstrates how to add, remove, and insert a simple business object in a xtd::collections::generic::list <type_t>.
         /// @include generic_list.cpp
@@ -250,6 +252,7 @@ namespace xtd {
         /// @remarks If the capacity is significantly larger than the count and you want to reduce the memory used by the xtd::collections::generic::list <type_t>, you can decrease capacity by calling the xtd::collections::generic::list::trim_excess method or by setting the xtd::collections::generic::list::capacity property explicitly to a lower value. When the value of xtd::collections::generic::list::capacity is set explicitly, the internal array is also reallocated to accommodate the specified capacity, and all the elements are copied.
         /// @remarks Retrieving the value of this property is an O(1) operation; setting the property is an O(n) operation, where n is the new capacity.
         virtual void capacity(size_type value) {
+          if (value > data_->items.max_size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::out_of_memory);
           if (value < count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           if (value == capacity()) return;
           if (value < capacity()) data_->items.shrink_to_fit();
@@ -372,7 +375,7 @@ namespace xtd {
         /// @remarks If the xtd::collections::generic::list <type_t> does not contain the specified value, the method returns an integer greater than xtd::collections::generic::list::count. You can apply the bitwise complement operation (~) to this integer to get the index of the first element that is larger than the search value. When inserting the value into the xtd::collections::generic::list <type_t>, this index should be used as the insertion point to maintain the sort order.
         /// @remarks This method is an O(log n) operation, where n is the number of elements in the range.
         /// @remarks The following code example demonstrates the xtd::collections::generic::list::sort() method overload and the xtd::collections::generic::list::binary_search method overload. A xtd::collections::generic::list <type_t> of strings is created and populated with four strings, in no particular order. The list is displayed, sorted, and displayed again.
-        xtd::size binary_search(const type_t& item) const {return binary_search(0, count(), item, xtd::collections::generic::comparer<type_t>::default_comparer);}
+        xtd::size binary_search(const type_t& item) const noexcept {return binary_search(0, count(), item, xtd::collections::generic::comparer<type_t>::default_comparer);}
         /// @brief Searches the entire sorted xtd::collections::generic::list <type_t> for an element using the specified comparer and returns the zero-based index of the element.
         /// @param item The object to locate.
         /// @param comparer The xtd::collections::generic::icomparer <type_t> implementation to use when comparing elements.
@@ -384,14 +387,14 @@ namespace xtd {
         /// @remarks If the xtd::collections::generic::list <type_t> contains more than one element with the same value, the method returns only one of the occurrences, and it might return any one of the occurrences, not necessarily the first one.
         /// @remarks If the xtd::collections::generic::list <type_t> does not contain the specified value, the method returns an integer greater than xtd::collections::generic::list::count. You can apply the bitwise complement operation (~) to this integer to get the index of the first element that is larger than the search value. When inserting the value into the xtd::collections::generic::list <type_t>, this index should be used as the insertion point to maintain the sort order.
         /// @remarks This method is an O(log n) operation, where n is the number of elements in the range.
-        xtd::size binary_search(const type_t& item, const xtd::collections::generic::icomparer<type_t>& comparer) const {return binary_search(0, count(), item, comparer);}
+        xtd::size binary_search(const type_t& item, const xtd::collections::generic::icomparer<type_t>& comparer) const noexcept {return binary_search(0, count(), item, comparer);}
         /// @brief Searches a range of elements in the sorted xtd::collections::generic::list <type_t> for an element using the specified comparer and returns the zero-based index of the element.
         /// @param index The zero-based starting index of the range to search.
         /// @param count The length of the range to search.
         /// @param item The object to locate.
         /// @param comparer The xtd::collections::generic::icomparer <type_t> implementation to use when comparing elements, or null to use the default comparer xtd::collections::generic::comparer<type_t>::default_comparer.
         /// @return The zero-based index of item in the sorted xtd::collections::generic::list <type_t>, if item is found; otherwise, a number greater than xtd::collections::genric::list::count that is the bitwise complement of the index of the next element that is larger than item or, if there is no larger element, the bitwise complement of xtd::collections::genric::list::count.
-        /// @exception xtd::argument_exception `index` and `count` do not denote a valid range in the xtd::collections::generic::list <type_t>.
+        /// @exception xtd::argument_out_of_range_exception `index` and `count` do not denote a valid range in the xtd::collections::generic::list <type_t>.
         /// @exception xtd::invalid_operation_exception The default comparer xtd::collections::generic::comparer::default_comparer cannot find an implementation of the xtd::icomparable <type_t> generic interface.
         /// @remarks The comparer customizes how the elements are compared. For example, you can use a xtd::case_insensitive_comparer instance as the comparer to perform case-insensitive string searches.
         /// @remarks If comparer is provided, the elements of the xtd::collections::generic::list <type_t> are compared to the specified value using the specified xtd::collections::generic::icomparer <type_t> implementation.
@@ -400,7 +403,7 @@ namespace xtd {
         /// @remarks If the xtd::collections::generic::list <type_t> does not contain the specified value, the method returns an integer greater than xtd::collections::generic::list::count. You can apply the bitwise complement operation (~) to this integer to get the index of the first element that is larger than the search value. When inserting the value into the xtd::collections::generic::list <type_t>, this index should be used as the insertion point to maintain the sort order.
         /// @remarks This method is an O(log n) operation, where n is the number of elements in the range.
         xtd::size binary_search(xtd::size index, xtd::size count, const type_t& item, const xtd::collections::generic::icomparer<type_t>& comparer) const {
-          if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+          if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           auto first = data_->items.begin();
           auto last = data_->items.begin();
           std::advance(first, index);
@@ -432,20 +435,14 @@ namespace xtd {
         /// @par Examples
         /// The following example defines a method named `point_f_to_point` that converts a xtd::drawing::point_f structure to a xtd::drawing::point structure. The example then creates a xtd::collections::generic::list <type_t> of xtd::drawing::point_f structures, creates a xtd::converter <point_f, point> delegate to represent the `point_f_to_point` method, and passes the delegate to the xtd::collections::generic::list::convert_all method. The xtd::collections::generic::list::convert_all method passes each element of the input list to the `point_f_to_point` method and puts the converted elements into a new list of Point structures. Both lists are displayed.
         /// @include generic_list_convert_all.cpp
-        template<class output_t>
-        list<output_t> convert_all(xtd::converter<output_t, const type_t&> converter) const {
-          auto result = list<output_t> {};
-          for (const auto& item : self_)
-            result.add(converter(item));
-          return result;
-        }
-        
-        /// @cond
         template<class output_t, class converter_t>
         list<output_t> convert_all(converter_t converter) const {
-          return convert_all(xtd::converter<output_t, const type_t&> {converter});
+          auto result = list<output_t> {};
+          auto apply_converter = xtd::converter<output_t, const type_t&> {converter};
+          for (const auto& item : self_)
+            result.add(apply_converter(item));
+          return result;
         }
-        /// @endcond
         
         /// @brief Copies the entire xtd::collections::generic::list <type_t> to a compatible one-dimensional array.
         /// @param array The one-dimensional xtd::array that is the destination of the elements copied from ICollection. The xtd::array must have zero-based indexing.
@@ -461,7 +458,7 @@ namespace xtd {
         /// @brief Copies the entire xtd::colllections::generic::list <type_t> to a compatible one-dimensional array, starting at the specified index of the target array.
         /// @param array The one-dimensional Array that is the destination of the elements copied from xtd::colllections::generic::list <type_t>. The Array must have zero-based indexing.
         /// @param array_index The zero-based index in array at which copying begins.
-        /// @exception xtd::argument_exception The number of elements in the source xtd::colllections::generic::list <type_t> is greater than the available space from arrayIndex to the end of the destination array.
+        /// @exception xtd::argument_out_of_range_exception The number of elements in the source xtd::colllections::generic::list <type_t> is greater than the available space from arrayIndex to the end of the destination array.
         /// @remarks This method uses xtd::array::copy to copy the elements.
         /// @remarks The elements are copied to the xtd::array in the same order in which the enumerator iterates through the xtd::colllections::generic::list <type_t>.
         /// @remarks This method is an O(n) operation, where n is xtd::colllections::generic::list::count.
@@ -481,7 +478,7 @@ namespace xtd {
         /// @remarks The elements are copied to the xtd::array in the same order in which the enumerator iterates through the xtd::collections::generic::list <type_t>.
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         virtual void copy_to(size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const {
-          if (index + count > self_.count() || array_index + count > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+          if (index + count > self_.count() || array_index + count > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           auto i = size_type {0}, c = size_type {0};
           for (const type_t& item : self_) {
             if (i >= index + count) return;
@@ -496,6 +493,7 @@ namespace xtd {
         /// @brief Ensures that the capacity of this list is at least the specified `capacity`. If the current capacity is less than `capacity`, it is increased to at least the specified `capacity`.
         /// @param capacity The minimum capacity to ensure.
         /// @return The new capacity of this list.
+        /// @exception xtd::out_of_memory There is not enough memory available on the system.
         xtd::size ensure_capacity(xtd::size capacity) {
           data_->items.reserve(capacity);
           return self_.capacity();
@@ -684,7 +682,7 @@ namespace xtd {
         /// @param index The zero-based xtd::collections::generic::list <type_t> index at which the range starts.
         /// @param count The number of elements in the range.
         /// @return A shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.
-        /// @exception xtd::argument_exception index and count do ! denote a valid range of elements in the xtd::collections::generic::list <type_t>.
+        /// @exception xtd::argument_out_of_range_exception index and count do ! denote a valid range of elements in the xtd::collections::generic::list <type_t>.
         /// @par Examples
         /// The following code example demonstrates the xtd::collections::generic::list::get_range method and other methods of the xtd::collections::generic::list <type_t> class that act on ranges. At the end of the code example, the xtd::collections::generic::list::get_range method is used to get three items from the list, beginning with index location 2. The xtd::collections::generic::ist::to_array method is called on the resulting xtd::collections::generic::list <type_t>, creating an array of three elements. The elements of the array are displayed.
         /// @include List3.cpp
@@ -790,16 +788,16 @@ namespace xtd {
         
         /// @brief Determines the last index of a specific item in the xtd::collections::generic::list <type_t>.
         /// @param value The object to locate in the xtd::collections::generic::list <type_t>.
-        /// @return Int32 The last index of value if found in the list; otherwise, xtd::collections::generic::list::npos.
-        size_type last_index_of(const type_t& value) const {
+        /// @return The last index of value if found in the list; otherwise, xtd::collections::generic::list::npos.
+        size_type last_index_of(const type_t& value) const noexcept {
           if (count() == 0) return npos;
           return last_index_of(value, count() - 1, count());
         }
         /// @brief Determines the last index of a specific item in the xtd::collections::generic::list <type_t>.
         /// @param value The object to locate in the xtd::collections::generic::list <type_t>.
         /// @param index The zero-based starting index of the search.
-        /// @return Int32 The last index of value if found in the list; otherwise, xtd::collections::generic::list::npos.
-        /// @exception xd::argument_exception The parameters `indexù  is greater than xtd::collections::generic::list::count().
+        /// @return The last index of value if found in the list; otherwise, xtd::collections::generic::list::npos.
+        /// @exception xd::argument_out_of_range_exception The parameters `indexù  is greater than xtd::collections::generic::list::count().
         size_type last_index_of(const type_t& value, size_type index) const {
           return last_index_of(value, index, index + 1);
         }
@@ -807,8 +805,8 @@ namespace xtd {
         /// @param value The object to locate in the xtd::collections::generic::list <type_t>.
         /// @param index The zero-based starting index of the search.
         /// @param count The number of elements in the section to search
-        /// @return Int32 The last index of value if found in the list; otherwise, xtd::collections::generic::list::npos.
-        /// @exception xd::argument_exception `index` and `count` do not specify a valid section in the xtd::collections::generic::list <type_t>.
+        /// @return The last index of value if found in the list; otherwise, xtd::collections::generic::list::npos.
+        /// @exception xd::argument_out_of_range_exception `index` and `count` do not specify a valid section in the xtd::collections::generic::list <type_t>.
         size_type last_index_of(const type_t& value, size_type index, size_type count) const {
           return find_last_index(index, count, delegate_(auto n) {return helpers::equator<type_t> {}(n, value);});
         }
@@ -818,7 +816,7 @@ namespace xtd {
         /// @return `true` if item is successfully removed; otherwise, `false`. This method also returns `false` if item was not found in the xtd::collections::generic::list <type_t>.
         /// @remarks If type `typ_t` implements the xtd::iequatable <type_t> generic interface, the equality comparer is the xtd::iequatable::equals method of that interface; otherwise, the default equality comparer is xtd::object::equals.
         /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
-        bool remove(const type_t& item) override {
+        bool remove(const type_t& item) noexcept override {
           auto index = index_of(item);
           if (index == npos) return false;
           remove_at(index);
@@ -867,7 +865,7 @@ namespace xtd {
         /// @include generic_list3.cpp
         /// @remarks The items are removed and all the elements following them in the xtd::collections::generic::list <type_t> have their indexes reduced by count.
         virtual void remove_range(size_type index, size_type count) {
-          if (index + count >= self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+          if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           data_->items.erase(data_->items.begin() + index, data_->items.begin() + index + count);
         }
         
@@ -881,26 +879,25 @@ namespace xtd {
         /// @brief Reverses the order of the elements in the specified range.
         /// @param index The zero-based starting index of the range to reverse.
         /// @param count The number of elements in the range to reverse.
-        /// @exception xtd::argument_exception `index` and `count` do not denote a valid range of elements in the xtd::collections::generic::list <type_t>.
+        /// @exception xtd::argument_out_of_range_exception `index` and `count` do not denote a valid range of elements in the xtd::collections::generic::list <type_t>.
         /// @par Examples
         /// The following example demonstrates both overloads of the xtd::collections::generic::list::reverse method. The example creates a xtd::collections::generic::list <type_t> of strings and adds six strings. The xtd::collections::generic::list::reverse () method overload is used to reverse the list, and then the xtd::collections::generic::list::reverse (xtd::size, xtd::size) method overload is used to reverse the middle of the list, beginning with element 1 and encompassing four elements.
         /// @include generic_list_reverse.cpp
         /// @remarks This method uses xtd::array::reverse to reverse the order of the elements.
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         void reverse(size_type index, size_type count) {
-          if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-          
+          if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           data_->items.increment_version();
-          std::reverse(data_->items.begin(), data_->items.end());
+          std::reverse(data_->items.begin() + index, data_->items.begin() + index + count);
         }
         
         /// @brief Creates a shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.
         /// @param start The zero-based xtd::collections::generic::list <type_t> index at which the range starts.
         /// @param length The length of the range.
         /// @return A shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.
-        /// @exception xt::argument_exception `start` and `length` do not denote a valid range of elements in the xtd::collections::generic::list <type_t>.
+        /// @exception xt::argument_out_of_range_exception `start` and `length` do not denote a valid range of elements in the xtd::collections::generic::list <type_t>.
         list<type_t> slice(size_type start, size_type length) const {
-          if (start + length > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+          if (start + length > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           return list<type_t> {data_->items.begin() + start, data_->items.begin() + start + length};
         }
         
@@ -916,7 +913,7 @@ namespace xtd {
         list<type_t>& sort() {return sort(xtd::collections::generic::comparer<type_t>::default_comparer);}
         
         /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified xtd::comparison <type_t>.
-        /// @exception xtd::argument_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
+        /// @exception xtd::argument_out_of_range_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
         /// @remarks If comparison is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the method represented by the delegate.
         /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
@@ -928,7 +925,6 @@ namespace xtd {
         
         /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified comparer.
         /// @param comparer The xtd::collections::generic::icomparer <type_t> implementation to use when comparing elements, or null to use the default comparer xtd::collections::generic::comparer::default_comparer.
-        /// @exception xtd::argument_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
         /// @remarks If comparer is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.
         /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
@@ -940,18 +936,14 @@ namespace xtd {
         /// @param index The zero-based starting index of the range to sort.
         /// @param count The length of the range to sort.
         /// @param comparer The xtd::collections::generic::icomparer <type_t> implementation to use when comparing elements, or null to use the default comparer xtd::collections::generic::comparer::default_comparer.
-        /// @exception xtd::argument_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
+        /// @exception xtd::argument_out_of_range_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
         /// @remarks If comparer is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.
         /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
         list<type_t>& sort(xtd::size index, xtd::size count, const xtd::collections::generic::icomparer<type_t>& comparer) {
-          if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-          auto first = data_->items.begin();
-          auto last = data_->items.begin();
-          std::advance(first, index);
-          std::advance(last, index + count);
+          if (index + count > self_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           data_->items.increment_version();
-          std::sort(first, last, __comparer__ {comparer});
+          std::sort(data_->items.begin() + index, data_->items.begin() + index + count, __comparer__ {comparer});
           return self_;
         }
         
@@ -1038,7 +1030,7 @@ namespace xtd {
         /// @exception std::out_of_range If `index` is not within the range of the container.
         const_reference operator [](size_type index) const override {
           if (index >= count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-          return data_->items.at(index);
+          return data_->items[index];
         }
         /// @brief Returns a reference to the element at specified location index.
         /// @param index The position of the element to return.
@@ -1046,7 +1038,7 @@ namespace xtd {
         /// @exception std::out_of_range If `index` is not within the range of the container.
         reference operator [](size_type index) override {
           if (index >= count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-          return data_->items.at(index);
+          return data_->items[index];
         }
         
         /// @brief Returns a reference to the underlying base type.
