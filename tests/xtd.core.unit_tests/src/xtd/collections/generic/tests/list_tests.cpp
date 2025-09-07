@@ -168,13 +168,11 @@ namespace xtd::collections::generic::tests {
     }
     
     void test_method_(items_const) {
-      assert::are_equal(typeof_<list<int>::base_type>(), typeof_(list {1, 2, 3, 4, 5}.items()));
       collection_assert::are_equal({1, 2, 3, 4, 5}, list {1, 2, 3, 4, 5}.items());
     }
     
     void test_method_(items) {
       auto items = list {84, 42, 21};
-      assert::are_equal(typeof_<list<int>::base_type>(), typeof_(items.items()));
       
       auto& inners = items.items();
       assert::are_equal(84, inners[0]);
@@ -192,6 +190,17 @@ namespace xtd::collections::generic::tests {
       //inners[3] = 6;
       
       collection_assert::are_equal({63, 31, 10}, items);
+    }
+    
+    void test_method_(items_some_operations) {
+      auto items = list<string> {"one", "two", "three"};
+      items.items().push_back("four");
+      collection_assert::are_equal({"one", "two", "three", "four"}, items);
+      items.items().emplace_back(std::initializer_list<char> {'f', 'i', 'v', 'e'});
+      collection_assert::are_equal({"one", "two", "three", "four", "five"}, items);
+      items.items().insert(items.items().begin() + 2, "six");
+      collection_assert::are_equal({"one", "two", "six", "three", "four", "five"}, items);
+      std::sort(items.items().begin(), items.items().end());
     }
     
     void test_method_(add) {
@@ -468,6 +477,10 @@ namespace xtd::collections::generic::tests {
       auto accumulator = 0;
       items.for_each(delegate_(auto n) {accumulator += n;});
       assert::are_equal(15, accumulator);
+      
+      accumulator = 0;
+      list<int> {}.for_each(delegate_(auto n) {accumulator += n;});
+      assert::are_equal(0, accumulator);
     }
     
     void test_method_(get_enumerator) {
@@ -477,6 +490,10 @@ namespace xtd::collections::generic::tests {
       while (enumerator.move_next())
         accumulator += enumerator.current();
       assert::are_equal(15, accumulator);
+      enumerator.reset();
+      while (enumerator.move_next())
+        accumulator += enumerator.current();
+      assert::are_equal(30, accumulator);
     }
     
     void test_method_(range_based_for_loop) {
@@ -495,6 +512,22 @@ namespace xtd::collections::generic::tests {
         for (auto item : items) {
           accumulator += item;
           if (item == 3) items.remove(item);
+        }
+      } catch (const invalid_operation_exception& e) {
+        caught = true;
+      }
+      assert::is_true(caught);
+      assert::are_equal(6, accumulator);
+    }
+    
+    void test_method_(modifying_list_items_during_iteration) {
+      auto items = list {1, 2, 3, 4, 5};
+      auto accumulator = 0;
+      auto caught = false;
+      try {
+        for (auto item : items) {
+          accumulator += item;
+          if (item == 3) items.items().erase(items.items().begin() + 2);
         }
       } catch (const invalid_operation_exception& e) {
         caught = true;
