@@ -1,3 +1,10 @@
+#if defined(_WIN32)
+#define NOMINMAX
+#include <Windows.h>
+#undef interface
+#elif defined(__linux__) || defined(__APPLE__)
+#include <semaphore.h>
+#endif
 #include <xtd/threading/wait_handle>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
@@ -7,13 +14,6 @@
 #include <xtd/object_closed_exception>
 #include <mutex>
 #include <utility>
-#if defined(_WIN32)
-#define NOMINMAX
-#include <Windows.h>
-#undef interface
-#elif defined(__linux__) || defined(__APPLE__)
-#include <semaphore.h>
-#endif
 
 using namespace xtd::helpers;
 using namespace xtd::threading;
