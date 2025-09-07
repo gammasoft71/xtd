@@ -327,7 +327,27 @@ public:
       items_.push_back(b ? 1 : 0);
     return *this;
   }
-  
+
+  friend bool operator ==(const __xtd_raw_array_data__<type_t> & a, const __xtd_raw_array_data__<type_t> & b) {
+    return a.items() == b.items();
+  }
+  friend bool operator ==(const __xtd_raw_array_data__<type_t> & a, const std::vector<type_t> & b) {
+    return a.items() == b;
+  }
+  friend bool operator ==(const std::vector<type_t> & a, const __xtd_raw_array_data__<type_t> & b) {
+    return a == b.items();
+  }
+
+  friend bool operator !=(const __xtd_raw_array_data__<type_t> & a, const __xtd_raw_array_data__<type_t> & b) {
+    return a.items() != b.items();
+  }
+  friend bool operator !=(const __xtd_raw_array_data__<type_t> & a, const std::vector<type_t> & b) {
+    return a.items() != b;
+  }
+  friend bool operator !=(const std::vector<type_t> & a, const __xtd_raw_array_data__<type_t> & b) {
+    return a != b.items();
+  }
+
   const_reference operator [](size_type index) const {return at(index);}
   reference operator [](size_type index) {return at(index);}
   
