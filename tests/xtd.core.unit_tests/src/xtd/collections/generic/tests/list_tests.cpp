@@ -839,7 +839,7 @@ namespace xtd::collections::generic::tests {
       collection_assert::are_equal({1, 2, 3, 4, 5}, result);
       collection_assert::is_empty(items);
     }
-
+    
     void test_method_(index_operators) {
       auto items = list {84, 42, 21};
       
