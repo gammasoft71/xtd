@@ -33,6 +33,7 @@ namespace {
     for (const auto& address : addresses) {
       auto [method, offset] = get_method_and_offset(address);
       frames.emplace_back("", size_t {}, size_t {}, method, offset);
+      if (std::get<3>(frames.back()) == "main") break;
     }
     return frames;
   }
@@ -65,6 +66,7 @@ namespace {
       }
       auto [dummy, offset] = get_method_and_offset(addresses[index]);
       frames.emplace_back(file_name, line, size_t {}, method, offset);
+      if (std::get<3>(frames.back()) == "main") break;
     }
     return frames;
   }
@@ -80,10 +82,5 @@ stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool n
   if (skip_frames + get_native_offset() > addresses.size() || skip_frames > numeric_limits<size_t>::max() - get_native_offset()) return {};
   addresses.erase(addresses.begin(), addresses.begin() + skip_frames + get_native_offset());
   
-  auto frames = frame_collection {};
-  for (const auto& frame : need_file_info ? ::get_frames(addresses) : get_frames_without_file_info(addresses)) {
-    if (get<3>(frame) == "start") break;
-    frames.push_back(frame);
-  }
-  return frames;
+  return need_file_info ? ::get_frames(addresses) : get_frames_without_file_info(addresses);
 }
