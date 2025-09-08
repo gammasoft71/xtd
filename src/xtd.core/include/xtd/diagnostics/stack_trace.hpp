@@ -124,20 +124,6 @@ namespace xtd {
       /// @remarks The xtd::diagnostics::stack_trace is created with the caller's current thread.
       explicit stack_trace(bool need_file_info, const xtd::diagnostics::stack_frame& current_frame = xtd::diagnostics::stack_frame::current());
       
-      /*
-      /// @brief Initializes a new instance of the xtd::diagnostics::stack_trace class that contains a single frame.
-      /// @param frame The frame that the xtd::diagnostics::stack_trace object should contain.
-      /// @par Examples
-      /// The following code example writes stack trace information to an event log entry.
-      /// ```cpp
-      /// stack_frame fr(1, true);
-      /// stack_trace st(fr);
-      /// debug::write_line(string::format("{}\n{}", fr.get_method(), st.to_string());
-      /// ```
-      /// @remarks Use this constructor when you do not want the overhead of a full stack trace.
-      explicit stack_trace(const xtd::diagnostics::stack_frame& frame);
-       */
-      
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_trace class using the provided exception object.
       /// @param exception The exception object from which to construct the stack trace.
       /// @remarks The xtd::diagnostics::stack_trace is created with the caller's current thread, and does not contain file name, line number, or column information.
