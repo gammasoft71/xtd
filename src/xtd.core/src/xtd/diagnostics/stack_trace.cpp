@@ -14,15 +14,13 @@ struct stack_trace::data {
 
 stack_trace::stack_trace(const stack_frame& current_frame) : data_{new_ptr<data>()} {
   data_->frames = stack_frame::get_stack_frames(string::empty_string, METHODS_TO_SKIP + 1, false);
-  if (data_->frames.length()) data_->frames[0] = current_frame;
-  else data_->frames = data_->frames.append(current_frame);
+  if (!data_->frames.length()) data_->frames = {current_frame};
 }
 
 stack_trace::stack_trace(bool need_file_info, const stack_frame& current_frame) : data_{new_ptr<data>()} {
   data_->frames = stack_frame::get_stack_frames(string::empty_string, METHODS_TO_SKIP + 1, need_file_info);
   data_->need_file_info = need_file_info;
-  if (data_->frames.length()) data_->frames[0] = current_frame;
-  else data_->frames = data_->frames.append(current_frame);
+  if (!data_->frames.length()) data_->frames = {current_frame};
 }
 
 /*
