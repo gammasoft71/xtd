@@ -341,8 +341,8 @@ namespace xtd {
       /// debug::write_line(string::format("{}\n{}", fr.get_method(), st.to_string());
       /// ```
       /// @remarks Use this constructor when you do not want the overhead of a full stack trace.
-     static stack_trace from_stack_frame(const xtd::diagnostics::stack_frame& frame);
-
+      static stack_trace from_stack_frame(const xtd::diagnostics::stack_frame& frame);
+      
       
     private:
       friend class xtd::exception;
