@@ -19,14 +19,14 @@ namespace {
   using file_info = std::tuple<std::string, size_t, size_t>;
   using frame = std::tuple<std::string, size_t, size_t, std::string, size_t>;
   using frame_collection = std::vector<frame>;
-
+  
   address_collection backtrace(size_t skip = 0, size_t maxFrames = 64) {
     auto stack = address_collection(maxFrames);
     auto frames = CaptureStackBackTrace(static_cast<DWORD>(skip), static_cast<DWORD>(maxFrames), stack.data(), nullptr);
     stack.resize(frames);
     return stack;
   }
-
+  
   std::string addr_to_symbol(void* addr) {
     auto process = GetCurrentProcess();
     static auto initialized = false;
@@ -35,16 +35,16 @@ namespace {
       SymSetOptions(SYMOPT_DEFERRED_LOADS | SYMOPT_LOAD_LINES);
       initialized = true;
     }
-
+    
     char buffer[sizeof(SYMBOL_INFO) + MAX_SYM_NAME];
     auto symbol = reinterpret_cast<PSYMBOL_INFO>(buffer);
     symbol->SizeOfStruct = sizeof(SYMBOL_INFO);
     symbol->MaxNameLen = MAX_SYM_NAME;
-
+    
     auto displacement = DWORD64 {0};
-    return SymFromAddr(process, reinterpret_cast<DWORD64>(addr), &displacement, symbol) ? std::string(symbol->Name) :"???";
+    return SymFromAddr(process, reinterpret_cast<DWORD64>(addr), &displacement, symbol) ? std::string(symbol->Name) : "???";
   }
-
+  
   frame_collection get_frames_without_file_info(const address_collection& addresses) {
     auto frames = frame_collection {};
     for (auto address : addresses) {
@@ -53,17 +53,17 @@ namespace {
     }
     return frames;
   }
-
+  
   file_info addresse_to_file_line(address addr) {
     auto line = IMAGEHLP_LINE64 {};
     auto displacement = DWORD {0};
     memset(&line, 0, sizeof(line));
     line.SizeOfStruct = sizeof(line);
-
+    
     if (!SymGetLineFromAddr64(GetCurrentProcess(), reinterpret_cast<DWORD64>(addr), &displacement, &line)) return {};
     return {line.FileName ? line.FileName : "", static_cast<size_t>(line.LineNumber), size_t {0}};
   }
-
+  
   frame_collection get_frames(const address_collection& addresses) {
     auto frames = frame_collection {};
     for (auto address : addresses) {
