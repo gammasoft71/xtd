@@ -1,6 +1,5 @@
 #include "stack_frame_get_stack_frames.hpp"
 #include "../../../include/xtd/diagnostics/stack_frame.hpp"
-#include "../../../include/xtd/io/path.hpp"
 #include "../../../include/xtd/environment.hpp"
 #include "../../../include/xtd/string.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
@@ -10,7 +9,6 @@
 using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::diagnostics;
-using namespace xtd::io;
 
 struct stack_frame::data {
   data() = default;
@@ -89,10 +87,10 @@ stack_frame::stack_frame(const string& file_name, xtd::size line_number, const s
 stack_frame::stack_frame(xtd::null_ptr frame) : stack_frame{string::empty_string, 0, string::empty_string, 0, OFFSET_UNKNOWN} {
 }
 
-stack_frame::stack_frame(const xtd::diagnostics::source_location& source_location) : data_{new_ptr<data>(path::get_file_name(source_location.file_name()), source_location.line(), source_location.function_name(), source_location.column())} {
+stack_frame::stack_frame(const xtd::diagnostics::source_location& source_location) : data_{new_ptr<data>(source_location.file_name(), source_location.line(), source_location.function_name(), source_location.column())} {
 }
 
-stack_frame::stack_frame(const xtd::diagnostics::source_location& source_location, xtd::size offset) : data_{new_ptr<data>(path::get_file_name(source_location.file_name()), source_location.line(), source_location.function_name(), source_location.column(), offset)} {
+stack_frame::stack_frame(const xtd::diagnostics::source_location& source_location, xtd::size offset) : data_{new_ptr<data>(source_location.file_name(), source_location.line(), source_location.function_name(), source_location.column(), offset)} {
 }
 
 stack_frame stack_frame::empty() noexcept {
