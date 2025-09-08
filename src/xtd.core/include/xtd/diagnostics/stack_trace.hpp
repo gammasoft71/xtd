@@ -85,7 +85,7 @@ namespace xtd {
       /// ```
       /// @remarks The xtd::diagnostics::stack_trace is created with the caller's current thread, and does not contain file name, line number, or column information.
       /// @remarks Use this parameterless constructor when you want a complete trace with only summary method information about the call stack.
-      stack_trace();
+      stack_trace(const xtd::diagnostics::stack_frame& current_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_trace class from the caller's frame, optionally capturing source information.
       /// @param need_file_info `true` to capture the file name, line number, and column number; otherwise, `false`.
       /// @par Examples
@@ -122,7 +122,9 @@ namespace xtd {
       /// }
       /// ```
       /// @remarks The xtd::diagnostics::stack_trace is created with the caller's current thread.
-      explicit stack_trace(bool need_file_info);
+      explicit stack_trace(bool need_file_info, const xtd::diagnostics::stack_frame& current_frame = xtd::diagnostics::stack_frame::current());
+      
+      /*
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_trace class that contains a single frame.
       /// @param frame The frame that the xtd::diagnostics::stack_trace object should contain.
       /// @par Examples
@@ -134,6 +136,8 @@ namespace xtd {
       /// ```
       /// @remarks Use this constructor when you do not want the overhead of a full stack trace.
       explicit stack_trace(const xtd::diagnostics::stack_frame& frame);
+       */
+      
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_trace class using the provided exception object.
       /// @param exception The exception object from which to construct the stack trace.
       /// @remarks The xtd::diagnostics::stack_trace is created with the caller's current thread, and does not contain file name, line number, or column information.
@@ -327,10 +331,24 @@ namespace xtd {
       xtd::string to_string() const noexcept override;
       /// @}
       
+      /// @brief Create a new instance of the xtd::diagnostics::stack_trace class that contains a single frame.
+      /// @param frame The frame that the xtd::diagnostics::stack_trace object should contain.
+      /// @par Examples
+      /// The following code example writes stack trace information to an event log entry.
+      /// ```cpp
+      /// stack_frame fr(1, true);
+      /// stack_trace st = stack_frame::from_stack_frame(fr);
+      /// debug::write_line(string::format("{}\n{}", fr.get_method(), st.to_string());
+      /// ```
+      /// @remarks Use this constructor when you do not want the overhead of a full stack trace.
+     static stack_trace from_stack_frame(const xtd::diagnostics::stack_frame& frame);
+
+      
     private:
       friend class xtd::exception;
+      stack_trace(const xtd::diagnostics::stack_frame& frame, bool empty);
       stack_trace(const xtd::string& str, size_t skip_frames, bool need_file_info);
-      xtd::string to_string(size_t skip_frames, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) const noexcept;
+      xtd::string to_string(size_t skip_frames) const noexcept;
       
       struct data;
       ptr<data> data_;

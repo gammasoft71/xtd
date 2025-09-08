@@ -33,7 +33,7 @@ exception::exception(const std::optional<xtd::string>& message, const xtd::diagn
 }
 
 exception::exception(const std::optional<xtd::string>& message, uptr<xtd::exception>&& inner_exception, const xtd::diagnostics::stack_frame& stack_frame, bool) : data_ {new_ptr<data>(message, std::move(inner_exception), stack_frame)} {
-  if (enable_stack_trace_) data_->stack_trace = xtd::new_sptr<xtd::diagnostics::stack_trace>(0, true);
+  if (enable_stack_trace_) data_->stack_trace = xtd::new_sptr<xtd::diagnostics::stack_trace>(true, stack_frame);
 }
 
 const xtd::string& exception::help_link() const noexcept {
@@ -117,7 +117,7 @@ string exception::stack_trace_to_string() const noexcept {
   for (auto index = 0_z; index < data_->stack_trace->frame_count(); ++index)
     if (data_->stack_trace->get_frame(index).get_method().starts_with(get_name()))
       skip_frames = index;
-  auto stack_trace_string = data_->stack_trace->to_string(skip_frames + 1, data_->stack_frame);
+  auto stack_trace_string = data_->stack_trace->to_string(skip_frames);
   if (stack_trace_string[stack_trace_string.size() - 1] == '\n') stack_trace_string = stack_trace_string.remove(stack_trace_string.size() - 1);
   return stack_trace_string;
 }
