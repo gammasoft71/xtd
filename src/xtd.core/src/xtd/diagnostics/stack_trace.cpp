@@ -23,12 +23,6 @@ stack_trace::stack_trace(bool need_file_info, const stack_frame& current_frame) 
   if (!data_->frames.length()) data_->frames = {current_frame};
 }
 
-/*
-stack_trace::stack_trace(const stack_frame& frame) : data_{new_ptr<data>()} {
-  data_->frames = stack_frame_collection {frame};
-}
- */
-
 stack_trace::stack_trace(const string& str, size_t skip_frames, bool need_file_info) : data_{new_ptr<data>()} {
   data_->frames = stack_frame::get_stack_frames(str, skip_frames + METHODS_TO_SKIP + 1, need_file_info);
   data_->need_file_info = need_file_info;
