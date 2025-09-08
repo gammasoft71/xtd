@@ -10,7 +10,6 @@ include("../scripts/cmake/xtd_version.cmake")
 
 # Projects
 add_projects(
-  ${XTD_CORE_NATIVE_3RDPARTY_LIBRARIES} 
   xtd.core.native 
   ${XTD_CORE_NATIVE_LIBRARY} 
   xtd.core
