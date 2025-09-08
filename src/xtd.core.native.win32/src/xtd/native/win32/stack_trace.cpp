@@ -82,7 +82,7 @@ size_t stack_trace::get_native_offset() {
 stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool need_file_info) {
   if (!need_file_info) return get_frames_without_file_info(backtrace(skip_frames + get_native_offset()));
   
-  // The `get_native_offset() - 1` is the warkaround to avoid to have no file information on the first frame.
+  // Workaround: first native frame never has file info. Skip one more and drop the first to keep alignment.
   auto frames = ::get_frames(backtrace(skip_frames + get_native_offset() - 1));
-  return {frames.begin() + 1, frames.end()};
+  return frames.size() > 1 ? frame_collection {frames.begin() + 1, frames.end()} : frame_collection {};
 }
