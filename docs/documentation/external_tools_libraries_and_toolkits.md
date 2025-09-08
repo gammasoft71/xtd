@@ -9,12 +9,6 @@
 | [Doxygen](http://www.doxygen.org)                                  | Dimitri van Heesch  | Documentation generator                                 | 1.8.20  |
 | [Doxygen Awesome](https://jothepro.github.io/doxygen-awesome-css/) | jothepro            | Modern Doxygen theme                                    | 2.0.3   |
 
-## External libraries used
-
-| Product                                                      | Copyright       | Description                               | Release    |
-| ------------------------------------------------------------ | --------------- | ----------------------------------------- | ---------- |
-| [StackWalker](https://github.com/JochenKalmbach/StackWalker) | Jochen Kalmbach | Walking the callstack                     | 2023-06-24 |
-
 ## External toolkits used
 
 At this time only wxWidgets toolkit is supported.
