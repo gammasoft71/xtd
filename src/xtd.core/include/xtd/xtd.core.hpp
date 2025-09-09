@@ -453,6 +453,8 @@
 #include "sbyte.hpp"
 #include "sbyte_object.hpp"
 #include "scope_exit.hpp"
+#include "scope_fail.hpp"
+#include "scope_success.hpp"
 #include "self.hpp"
 #include "signal.hpp"
 #include "signal_cancel_event_args.hpp"

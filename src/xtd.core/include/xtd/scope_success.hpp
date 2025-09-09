@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains #scope_exit_ keyword.
+/// @brief Contains #scope_success_ keyword.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include <utility>
@@ -9,13 +9,13 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization ([RAII](https://en.cppreference.com/w/cpp/language/raii)) technique. It binds resource acquisition and release to initialization and destruction of a variable that holds the resource. There are times when writing a special class for such a variable is not worth the effort. This is when xtd xtd::scope_exit comes into play. xtd::scope_exit is always executed at the end of the scope.
+  /// @brief Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization ([RAII](https://en.cppreference.com/w/cpp/language/raii)) technique. It binds resource acquisition and release to initialization and destruction of a variable that holds the resource. There are times when writing a special class for such a variable is not worth the effort. This is when xtd xtd::scope_success comes into play. xtd::scope_success is executed only if no exception
   /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  /// @remarks See also #scope_exit_ keyword helper.
+  /// @remarks See also #scope_success_ keyword helper.
   ///
   /// ```cpp
   /// #include <xtd/xtd>
@@ -60,23 +60,23 @@ namespace xtd {
   /// // always (scope_exit)
   /// // caught exception!
   /// ```
-  struct scope_exit {};
-
+  struct scope_success { };
+  
   /// @cond
-  template<class function_t>
-  auto operator +(scope_exit, function_t&& function) {
-    return __xtd_scope_exit_object__<function_t> {std::forward<function_t>(function)};
+  template<typename function_t>
+  auto operator+(scope_success, function_t&& function) {
+    return __xtd_scope_success_object__<function_t>{std::forward<function_t>(function)};
   }
   /// @endcond
 }
 
-/// @brief Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization ([RAII](https://en.cppreference.com/w/cpp/language/raii)) technique. It binds resource acquisition and release to initialization and destruction of a variable that holds the resource. There are times when writing a special class for such a variable is not worth the effort. This is when xtd #scope_exit_ comes into play. #scope_exit_ is always executed at the end of the scope.
+/// @brief Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization ([RAII](https://en.cppreference.com/w/cpp/language/raii)) technique. It binds resource acquisition and release to initialization and destruction of a variable that holds the resource. There are times when writing a special class for such a variable is not worth the effort. This is when xtd #scope_success_ comes into play. #scope_success_ is executed only if no exception
 /// @par Namespace
 /// xtd
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core keywords
-/// @remarks See also xtd::scope_exit struct.
+/// @remarks See also xtd::scope_success struct.
 ///
 /// ```cpp
 /// #include <xtd/xtd>
@@ -121,4 +121,4 @@ namespace xtd {
 /// // always (scope_exit)
 /// // caught exception!
 /// ```
-#define scope_exit_ [[maybe_unused]] auto __xtd_scope_id__(__xtd__scope_exit__, __LINE__) = xtd::scope_exit {} + [&]
+#define scope_success_ [[maybe_unused]] auto __xtd_scope_id__(__xtd__scope_success__, __LINE__) = xtd::scope_success{} + [&]
