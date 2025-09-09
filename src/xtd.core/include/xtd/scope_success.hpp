@@ -67,7 +67,7 @@ namespace xtd {
   /// @cond
   template<typename function_t>
   auto operator+(scope_success, function_t&& function) {
-    return __xtd_scope_success_object__<function_t>{std::forward<function_t>(function)};
+    return __xtd_scope_success_object__<function_t> {std::forward<function_t>(function)};
   }
   /// @endcond
 }
