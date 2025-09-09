@@ -282,6 +282,7 @@ namespace xtd {
           }
         }
         
+        using arranged_element_collection::push_back;
         template<class control_t>
         [[deprecated("Replaced by xtd::forms::control::control_collection::add - Will be removed in version 0.4.0.")]]
         void push_back(control_t& value) {add(value);}
