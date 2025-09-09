@@ -3056,7 +3056,11 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <p>Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (<a href="https://en.cppreference.com/w/cpp/language/raii">RAII</a>) technique. It binds resource acquisition and release to initialization and destruction of a variable that holds the resource. There are times when writing a special class for such a variable is not worth the effort. This is when xtd <a class="el" href="#ga523a9defb7ea3de88cc956948015ef98" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_exit_</a> comes into play. <a class="el" href="#ga523a9defb7ea3de88cc956948015ef98" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_exit_</a> is always executed at the end of the scope. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>See also <a class="el" href="structxtd_1_1scope__exit.html" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">xtd::scope_exit</a> struct.</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="structxtd_1_1scope__exit.html" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">xtd::scope_exit</a>, xtd::scope_success_ and <a class="el" href="structxtd_1_1scope__fail.html" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">xtd::scope_fail</a> are themselves RAII utilities. </dd>
+<dd>
+They are designed to make scope-based cleanup and control flow more concise and expressive. </dd>
+<dd>
+See also <a class="el" href="structxtd_1_1scope__exit.html" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">xtd::scope_exit</a> struct.</dd></dl>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -3098,9 +3102,9 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"><span class="comment">// only on failure (scope_fail)</span></div>
 <div class="line"><span class="comment">// always (scope_exit)</span></div>
 <div class="line"><span class="comment">// caught exception!</span></div>
-<div class="ttc" id="agroup__keywords_html_ga523a9defb7ea3de88cc956948015ef98"><div class="ttname"><a href="#ga523a9defb7ea3de88cc956948015ef98">scope_exit_</a></div><div class="ttdeci">#define scope_exit_</div><div class="ttdoc">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...</div><div class="ttdef"><b>Definition</b> scope_exit.hpp:124</div></div>
-<div class="ttc" id="agroup__keywords_html_gab71821f492432825aca0b3eaa727b8db"><div class="ttname"><a href="#gab71821f492432825aca0b3eaa727b8db">scope_success_</a></div><div class="ttdeci">#define scope_success_</div><div class="ttdoc">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...</div><div class="ttdef"><b>Definition</b> scope_success.hpp:124</div></div>
-<div class="ttc" id="agroup__keywords_html_gad88ef78f285d2dba9ac21c05ac5b568a"><div class="ttname"><a href="#gad88ef78f285d2dba9ac21c05ac5b568a">scope_fail_</a></div><div class="ttdeci">#define scope_fail_</div><div class="ttdoc">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...</div><div class="ttdef"><b>Definition</b> scope_fail.hpp:124</div></div>
+<div class="ttc" id="agroup__keywords_html_ga523a9defb7ea3de88cc956948015ef98"><div class="ttname"><a href="#ga523a9defb7ea3de88cc956948015ef98">scope_exit_</a></div><div class="ttdeci">#define scope_exit_</div><div class="ttdoc">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...</div><div class="ttdef"><b>Definition</b> scope_exit.hpp:128</div></div>
+<div class="ttc" id="agroup__keywords_html_gab71821f492432825aca0b3eaa727b8db"><div class="ttname"><a href="#gab71821f492432825aca0b3eaa727b8db">scope_success_</a></div><div class="ttdeci">#define scope_success_</div><div class="ttdoc">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...</div><div class="ttdef"><b>Definition</b> scope_success.hpp:128</div></div>
+<div class="ttc" id="agroup__keywords_html_gad88ef78f285d2dba9ac21c05ac5b568a"><div class="ttname"><a href="#gad88ef78f285d2dba9ac21c05ac5b568a">scope_fail_</a></div><div class="ttdeci">#define scope_fail_</div><div class="ttdoc">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...</div><div class="ttdef"><b>Definition</b> scope_fail.hpp:128</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -3121,7 +3125,11 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <p>Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (<a href="https://en.cppreference.com/w/cpp/language/raii">RAII</a>) technique. It binds resource acquisition and release to initialization and destruction of a variable that holds the resource. There are times when writing a special class for such a variable is not worth the effort. This is when xtd <a class="el" href="#gad88ef78f285d2dba9ac21c05ac5b568a" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_fail_</a> comes into play. <a class="el" href="#gad88ef78f285d2dba9ac21c05ac5b568a" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_fail_</a> is executed only if an exception is in progress. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>See also <a class="el" href="structxtd_1_1scope__fail.html" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">xtd::scope_fail</a> struct.</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#ga523a9defb7ea3de88cc956948015ef98" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_exit_</a>, <a class="el" href="#gab71821f492432825aca0b3eaa727b8db" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_success_</a> and <a class="el" href="#gad88ef78f285d2dba9ac21c05ac5b568a" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_fail_</a> are themselves RAII utilities. </dd>
+<dd>
+They are designed to make scope-based cleanup and control flow more concise and expressive. </dd>
+<dd>
+See also <a class="el" href="structxtd_1_1scope__fail.html" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">xtd::scope_fail</a> struct.</dd></dl>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -3183,7 +3191,11 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <p>Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (<a href="https://en.cppreference.com/w/cpp/language/raii">RAII</a>) technique. It binds resource acquisition and release to initialization and destruction of a variable that holds the resource. There are times when writing a special class for such a variable is not worth the effort. This is when xtd <a class="el" href="#gab71821f492432825aca0b3eaa727b8db" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_success_</a> comes into play. <a class="el" href="#gab71821f492432825aca0b3eaa727b8db" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_success_</a> is executed only if no exception. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>See also <a class="el" href="structxtd_1_1scope__success.html" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">xtd::scope_success</a> struct.</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="#ga523a9defb7ea3de88cc956948015ef98" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_exit_</a>, <a class="el" href="#gab71821f492432825aca0b3eaa727b8db" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_success_</a> and <a class="el" href="#gad88ef78f285d2dba9ac21c05ac5b568a" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_fail_</a> are themselves RAII utilities. </dd>
+<dd>
+They are designed to make scope-based cleanup and control flow more concise and expressive. </dd>
+<dd>
+See also <a class="el" href="structxtd_1_1scope__success.html" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">xtd::scope_success</a> struct.</dd></dl>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -3707,7 +3719,7 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 9 2025 18:09:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Sep 9 2025 18:19:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

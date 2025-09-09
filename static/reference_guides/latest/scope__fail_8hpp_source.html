@@ -108,23 +108,23 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#undef __XTD_CORE_INTERNAL__</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="structxtd_1_1scope__fail.html">   63</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1scope__fail.html">scope_fail</a> {};</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> function_t&gt;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keyword">auto</span> operator+(<a class="code hl_struct" href="structxtd_1_1scope__fail.html">scope_fail</a>, function_t&amp;&amp; function) {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">return</span> __xtd_scope_fail_object__&lt;function_t&gt;{std::forward&lt;function_t&gt;(function)};</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  }</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span></div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="group__keywords.html#gad88ef78f285d2dba9ac21c05ac5b568a">  124</a></span><span class="preprocessor">#define scope_fail_ [[maybe_unused]] auto __xtd_scope_id__(__xtd__scope_fail__, __LINE__) = xtd::scope_fail{} + [&amp;]</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="structxtd_1_1scope__fail.html">   65</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1scope__fail.html">scope_fail</a> {};</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> function_t&gt;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keyword">auto</span> operator+(<a class="code hl_struct" href="structxtd_1_1scope__fail.html">scope_fail</a>, function_t&amp;&amp; function) {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">return</span> __xtd_scope_fail_object__&lt;function_t&gt; {std::forward&lt;function_t&gt;(function)};</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="group__keywords.html#gad88ef78f285d2dba9ac21c05ac5b568a">  128</a></span><span class="preprocessor">#define scope_fail_ [[maybe_unused]] auto __xtd_scope_id__(__xtd__scope_fail__, __LINE__) = xtd::scope_fail{} + [&amp;]</span></div>
 <div class="ttc" id="a____xtd__scope_8hpp_html"><div class="ttname"><a href="____xtd__scope_8hpp.html">__xtd_scope.hpp</a></div><div class="ttdoc">Contains xtd_scope_cat and xtd_scope_id helpers.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
-<div class="ttc" id="astructxtd_1_1scope__fail_html"><div class="ttname"><a href="structxtd_1_1scope__fail.html">xtd::scope_fail</a></div><div class="ttdoc">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...</div><div class="ttdef"><b>Definition</b> scope_fail.hpp:63</div></div>
+<div class="ttc" id="astructxtd_1_1scope__fail_html"><div class="ttname"><a href="structxtd_1_1scope__fail.html">xtd::scope_fail</a></div><div class="ttdoc">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...</div><div class="ttdef"><b>Definition</b> scope_fail.hpp:65</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 9 2025 18:09:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Sep 9 2025 18:18:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
