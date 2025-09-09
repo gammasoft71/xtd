@@ -15,7 +15,7 @@ size_t stack_trace::get_native_offset() {
 stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool need_file_info) {
   auto frames = frame_collection {};
   for (auto& entry : std::stacktrace::current(skip_frames + get_native_offset())) {
-    frames.push_back({need_file_info ? entry.source_file() : "", need_file_info ? static_cast<size_t>(entry.source_line()) : 0, 0, entry.description(), 0});
+    frames.push_back({need_file_info ? entry.source_file() : "", need_file_info ? static_cast<size_t>(entry.source_line()) : size_t {}, size_t {}, entry.description(), size_t {}});
     if (std::get<3>(frames.back()) == "main") break;
   }
   return frames;
