@@ -45,6 +45,8 @@ namespace {
     
     auto vertical_precalculates = xtd::collections::generic::list<box_precalculate>(result_height);
     auto horizontal_precalculates = xtd::collections::generic::list<box_precalculate>(result_width);
+    vertical_precalculates.resize(result_height);
+    horizontal_precalculates.resize(result_width);
     
     resample_box_precalculates(vertical_precalculates, source_height);
     resample_box_precalculates(horizontal_precalculates, source_width);
