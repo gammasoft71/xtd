@@ -10,7 +10,7 @@
 * [hello_world_diagnostics](hello_worlds/hello_world_diagnostics/README.md) The classic first application "Hello, World!" with [xtd::diagnostics::trace](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1diagnostics_1_1trace.html) class.
 * [hello_world_environment](hello_worlds/hello_world_environment/README.md) The classic first application "Hello, World!" with [xtd::environment](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html) class.
 * [hello_world_io](hello_worlds/hello_world_io/README.md) The classic first application "Hello, World!" with [xtd::io::file](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1file.html) and [xtd::io::path](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1path.html) classes.
-* [hello_world_strings](hello_worlds/hello_world_ustring/README.md) The classic first application "Hello, World!" with [xtd::ustring](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html) class.
+* [hello_world_string](hello_worlds/hello_world_string/README.md) The classic first application "Hello, World!" with [xtd::string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1string.html) class.
 
 ## [any](any/README.md)
 
