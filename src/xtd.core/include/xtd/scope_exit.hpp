@@ -61,7 +61,7 @@ namespace xtd {
   /// // caught exception!
   /// ```
   struct scope_exit {};
-
+  
   /// @cond
   template<class function_t>
   auto operator +(scope_exit, function_t&& function) {
