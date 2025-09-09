@@ -677,6 +677,22 @@ namespace xtd::collections::generic::tests {
       assert::throws<argument_out_of_range_exception>(delegate_ {items.last_index_of(1, 0, 6);});
     }
     
+    void test_method_(resize) {
+      auto items = list {84, 42, 21};
+      items.resize(4);
+      collection_assert::are_equal({84, 42, 21, 0}, items);
+      items.resize(2);
+      collection_assert::are_equal({84, 42}, items);
+    }
+    
+    void test_method_(resize_with_value) {
+      auto items = list {84, 42, 21};
+      items.resize(4, -1);
+      collection_assert::are_equal({84, 42, 21, -1}, items);
+      items.resize(2, -1);
+      collection_assert::are_equal({84, 42}, items);
+    }
+
     void test_method_(remove) {
       auto items = list {1, 2, 3};
       assert::is_false(items.remove(4));
