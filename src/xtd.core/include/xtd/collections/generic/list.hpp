@@ -869,6 +869,24 @@ namespace xtd {
           data_->items.erase(data_->items.begin() + index, data_->items.begin() + index + count);
         }
         
+        /// @brief Resizes the container to contain `count` elements, does nothing if `count == size().
+        /// @param count The new size of the container.
+        /// @exception xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
+        /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
+        /// @remarks If the current size is less than `count`, additional default-inserted elements are appended.
+        virtual void resize(size_type count)  {resize(count, value_type {});}
+        /// @brief Resizes the container to contain `count` elements, does nothing if `count == size().
+        /// @param count The new size of the container.
+        /// @param value The value to initialize the new elements with.
+        /// @exception xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
+        /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
+        /// @remarks If the current size is less than `count`, additional copies of `value` are appended.
+        virtual void resize(size_type count, const value_type& value) {
+          if (count > data_->items.max_size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::out_of_memory);;
+          if (count == self_.count()) return;
+          data_->items.resize(count, value);
+        }
+
         /// @brief Reverses the order of the elements in the entire xtd::collections::generic::list <type_t>.
         /// @par Examples
         /// The following example demonstrates both overloads of the xtd::collections::generic::list::reverse method. The example creates a xtd::collections::generic::list <type_t> of strings and adds six strings. The xtd::collections::generic::list::reverse () method overload is used to reverse the list, and then the xtd::collections::generic::list::reverse (xtd::size, xtd::size) method overload is used to reverse the middle of the list, beginning with element 1 and encompassing four elements.
