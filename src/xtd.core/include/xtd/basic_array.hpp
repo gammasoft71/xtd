@@ -374,7 +374,7 @@ protected:
     
     /// @brief Resizes the container to contain `count` elements, does nothing if `count == length().
     /// @param new_size The new size of the container.
-    /// @exception xtd::argument_out_of_range_exception If `new_size` is outside greather than xtd::array::max_size.
+    /// @exception xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
     /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
     /// @remarks If the current size is less than `count`, additional default-inserted elements are appended.
     void resize(size_type new_size) {resize(new_size, value_type {});}
@@ -382,12 +382,12 @@ protected:
     /// @brief Resizes the container to contain `count` elements, does nothing if `count == length().
     /// @param new_size The new size of the container.
     /// @param value The value to initialize the new elements with.
-    /// @exception xtd::argument_out_of_range_exception If `new_size` is outside greather than xtd::array::max_size.
+    /// @exception xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
     /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
     /// @remarks If the current size is less than `count`, additional default-inserted elements are appended.
     void resize(size_type new_size, value_type value) {
       if (new_size == length()) return;
-      if (new_size > max_size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+      if (new_size > max_size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::out_of_memory);
       ++data_->version;
       data_->items.resize(new_size, value);
       data_->upper_bound[0] = new_size - 1;
