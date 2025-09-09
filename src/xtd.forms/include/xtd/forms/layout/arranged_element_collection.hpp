@@ -414,8 +414,9 @@ namespace xtd {
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.")]]
         virtual iterator erase(iterator first, iterator last) {
           iterator result = end();
+          auto index = first - begin();
           for (iterator it = first; it <= last; ++it)
-            result = erase(it);
+            remove_at(index++);
           return result;
         }
         /// @brief Erases elements at specified range.
@@ -425,8 +426,9 @@ namespace xtd {
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.")]]
         virtual iterator erase(const_iterator first, const_iterator last) {
           iterator result = end();
+          auto index = first - begin();
           for (const_iterator it = first; it <= last; ++it)
-            result = erase(it);
+            remove_at(index++);
           return result;
         }
         
@@ -442,7 +444,7 @@ namespace xtd {
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove(count() - 1) - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove(count() - 1) - Will be removed in version 0.4.0.")]]
         virtual void pop_back() {
-          if (count() != 0) erase_at(size() - 1);
+          if (count() != 0) remove_at(count() - 1);
         }
         
         /// @brief Adds an element to the end.
