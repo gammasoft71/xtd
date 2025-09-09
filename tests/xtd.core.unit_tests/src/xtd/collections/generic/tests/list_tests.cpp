@@ -692,7 +692,7 @@ namespace xtd::collections::generic::tests {
       items.resize(2, -1);
       collection_assert::are_equal({84, 42}, items);
     }
-
+    
     void test_method_(remove) {
       auto items = list {1, 2, 3};
       assert::is_false(items.remove(4));
