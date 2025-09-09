@@ -886,7 +886,7 @@ namespace xtd {
           if (count == self_.count()) return;
           data_->items.resize(count, value);
         }
-
+        
         /// @brief Reverses the order of the elements in the entire xtd::collections::generic::list <type_t>.
         /// @par Examples
         /// The following example demonstrates both overloads of the xtd::collections::generic::list::reverse method. The example creates a xtd::collections::generic::list <type_t> of strings and adds six strings. The xtd::collections::generic::list::reverse () method overload is used to reverse the list, and then the xtd::collections::generic::list::reverse (xtd::size, xtd::size) method overload is used to reverse the middle of the list, beginning with element 1 and encompassing four elements.
