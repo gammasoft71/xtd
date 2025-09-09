@@ -15,6 +15,8 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
+  /// @remarks #scope_exit_, #scope_success_ and #scope_fail_ are themselves RAII utilities.
+  /// @remarks They are designed to make scope-based cleanup and control flow more concise and expressive.
   /// @remarks See also #scope_fail_ keyword helper.
   ///
   /// ```cpp
@@ -76,6 +78,8 @@ namespace xtd {
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core keywords
+/// @remarks #scope_exit_, #scope_success_ and #scope_fail_ are themselves RAII utilities.
+/// @remarks They are designed to make scope-based cleanup and control flow more concise and expressive.
 /// @remarks See also xtd::scope_fail struct.
 ///
 /// ```cpp
