@@ -128,9 +128,15 @@ namespace xtdc_gui {
       return items.to_array();
     }
     
-    /// @brief This is a special value equal to the maximum value representable by the type size_t.
-    static constexpr xtd::size npos = xtd::size_object::max_value;
+    /// @brief Represents a value that is not a valid position in a collection.
+    /// @remarks This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of xtd::size.
+    inline static constexpr xtd::size npos = xtd::collections::generic::list<xtd::sptr<project_type_item_control>>::npos;
     
+    /// @brief Represents the index of the last valid element in a collection.
+    /// @remarks Unlike xtd::npos (which means "no position"), xtd::epos points to the last accessible element of a collection. It is equivalent to `items.count() - 1`.
+    /// @note This constant is provided for readability and convenience. For example, `items[xtd::epos]` directly accesses the last element without manually subtracting one from the collection count.
+    static inline constexpr xtd::size epos = xtd::collections::generic::list<xtd::sptr<project_type_item_control>>::epos;
+
   protected:
     xtd::uptr<xtd::object> clone() const override {
       auto result = xtd::new_uptr<project_type_items_control>(*this);

@@ -155,13 +155,6 @@ namespace xtd {
         event<tab_page_collection, delegate<iterator(const_iterator pos, const string& text, const string& name)>> text_inserted;
       };
       
-      /// @name Public Fields
-      
-      /// @{
-      /// @brief This is a special value equal to the maximum value representable by the type size_t.
-      static constexpr xtd::size npos = size_object::max_value;
-      /// @}
-      
       /// @name Public Constructors
       
       /// @{

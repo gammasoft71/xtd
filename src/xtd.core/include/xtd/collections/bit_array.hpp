@@ -10,6 +10,7 @@
 #include "../byte.hpp"
 #include "../int32.hpp"
 #include "../math.hpp"
+#include "../npos.hpp"
 #include "../object.hpp"
 #include "../size.hpp"
 #include "../types.hpp"
@@ -45,7 +46,8 @@ namespace xtd {
         const bool& get_boolean_ref(bool value, xtd::size index) const noexcept;
         void from_boolean(bit_array& parent) noexcept;
         
-        static constexpr xtd::size npos = std::numeric_limits<xtd::size>::max();
+        inline static constexpr xtd::size epos = xtd::epos;
+        inline static constexpr xtd::size npos = xtd::npos;
         mutable xtd::size index = npos;
         mutable bool value = false;
       };

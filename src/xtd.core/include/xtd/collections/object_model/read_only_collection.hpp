@@ -42,8 +42,6 @@ namespace xtd {
           using iterator = typename generic::ilist<list_type_t>::iterator;
           using const_iterator = typename generic::ilist<list_type_t>::const_iterator;
           
-          inline static constexpr xtd::size npos = std::numeric_limits<xtd::size>::max();
-          
           bool contains(const list_type_t& item) const noexcept override {return false;}
           void copy_to(xtd::array<list_type_t>& array, xtd::size array_index) const override {}
           generic::enumerator<list_type_t> get_enumerator() const noexcept {
@@ -94,13 +92,6 @@ namespace xtd {
         using iterator = typename generic::icollection<type_t>::iterator;
         /// @brief Represents the const iterator of list value type.
         using const_iterator = typename generic::icollection<type_t>::const_iterator;
-        /// @}
-        
-        /// @name Public Fields
-        
-        /// @{
-        /// @brief This is a special value equal to the maximum value representable by the type xtd::size.
-        inline static constexpr xtd::size npos = std::numeric_limits<xtd::size>::max();
         /// @}
         
         /// @name Public Constructors

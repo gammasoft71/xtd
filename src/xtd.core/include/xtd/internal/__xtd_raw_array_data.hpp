@@ -9,6 +9,7 @@
 /// @endcond
 
 #include <cstdint>
+#include <limits>
 #include <vector>
 
 /// @cond
@@ -137,6 +138,12 @@ public:
   using const_reverse_iterator = std::reverse_iterator<const_iterator>;
   /// }
   
+  /// Public Fields
+  /// {
+  inline static constexpr size_type npos = std::numeric_limits<size_type>::max();
+  static inline constexpr size_type epos = npos - 1;
+  /// }
+
   /// Public Constructors
   /// {
   __xtd_raw_array_data__() noexcept = default;
@@ -220,8 +227,8 @@ public:
     items_.assign(items.begin(), items.end());
   }
   
-  reference at(size_type index) {return reinterpret_cast<reference>(items_.at(index));}
-  const_reference at(size_type index) const {return reinterpret_cast<const_reference>(items_.at(index));}
+  reference at(size_type index) {return reinterpret_cast<reference>(items_.at(index == epos ? size() - 1 : index));}
+  const_reference at(size_type index) const {return reinterpret_cast<const_reference>(items_.at(index == epos ? size() - 1 : index));}
   
   void clear() {
     ++version_;

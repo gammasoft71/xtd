@@ -140,13 +140,6 @@ namespace xtd {
         using read_only_collection = xtd::collections::object_model::read_only_collection<value_type>;
         /// @}
         
-        /// @name Public Fields
-        
-        /// @{
-        /// @brief This is a special value equal to the maximum value representable by the type size_type.
-        inline static constexpr size_type npos = xtd::collections::generic::ilist<type_t>::npos;
-        /// @}
-        
         /// @name Public Constructors
         
         /// @{
@@ -1047,7 +1040,7 @@ namespace xtd {
         /// @return Reference to the requested element.
         /// @exception std::out_of_range If `index` is not within the range of the container.
         const_reference operator [](size_type index) const override {
-          if (index >= count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+          if (index >= count() && index != epos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
           return data_->items[index];
         }
         /// @brief Returns a reference to the element at specified location index.
@@ -1055,7 +1048,7 @@ namespace xtd {
         /// @return Reference to the requested element.
         /// @exception std::out_of_range If `index` is not within the range of the container.
         reference operator [](size_type index) override {
-          if (index >= count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+          if (index >= count() && index != epos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
           return data_->items[index];
         }
         

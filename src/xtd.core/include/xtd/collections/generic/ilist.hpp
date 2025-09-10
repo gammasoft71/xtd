@@ -3,8 +3,9 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "icollection.hpp"
+#include "../../epos.hpp"
+#include "../../npos.hpp"
 #include "../../size.hpp"
-#include <limits>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -43,8 +44,25 @@ namespace xtd {
         /// @name Public Fields
         
         /// @{
-        /// @brief This is a special value equal to the maximum value representable by the type xtd::size.
-        inline static constexpr xtd::size npos = std::numeric_limits<xtd::size>::max();
+        /// @brief Represents a value that is not a valid position in a collection.
+        /// @remarks This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of xtd::size.
+        /// @par Examples
+        /// ```cpp
+        /// auto items = list {1, 2, 3};
+        /// if (items.index_of(42) == items.npos)
+        ///   console::write_line("Value not found");
+        /// ```
+        inline static constexpr xtd::size npos = xtd::npos;
+
+        /// @brief Represents the index of the last valid element in a collection.
+        /// @remarks Unlike xtd::npos (which means "no position"), xtd::epos points to the last accessible element of a collection. It is equivalent to `items.count() - 1`.
+        /// @note This constant is provided for readability and convenience. For example, `items[xtd::epos]` directly accesses the last element without manually subtracting one from the collection count.
+        /// @par Examples
+        /// ```cpp
+        /// auto items = list {10, 20, 30, 40};
+        /// console::write_line(items[epos]); // Prints 40
+        /// ```
+        static inline constexpr xtd::size epos = npos - 1;
         /// @}
         
         /// @name Public Properties

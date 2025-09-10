@@ -96,8 +96,25 @@ namespace xtd {
         /// @name Public Fields
         
         /// @{
-        /// @brief This is a special value equal to the maximum value representable by the type size_t.
-        inline static constexpr xtd::size npos = xtd::size_object::max_value;
+        /// @brief Represents a value that is not a valid position in a collection.
+        /// @remarks This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of xtd::size.
+        /// @par Examples
+        /// ```cpp
+        /// auto controls = control_collection {label1, button1, choice1};
+        /// if (items.index_of(label1) == items.npos)
+        ///   console::write_line("Value not found");
+        /// ```
+        inline static constexpr xtd::size npos = xtd::npos;
+        
+        /// @brief Represents the index of the last valid element in a collection.
+        /// @remarks Unlike xtd::npos (which means "no position"), xtd::epos points to the last accessible element of a collection. It is equivalent to `items.count() - 1`.
+        /// @note This constant is provided for readability and convenience. For example, `items[xtd::epos]` directly accesses the last element without manually subtracting one from the collection count.
+        /// @par Examples
+        /// ```cpp
+        /// auto controls = control_collection {label1, button1, choice1};
+        /// controls[epos].width(240); // change the with of choice1 to 240
+        /// ```
+        static inline constexpr xtd::size epos = npos - 1;
         /// @}
         
         /// @name Public Constructors
