@@ -132,9 +132,14 @@ namespace xtdc_gui {
     /// @remarks This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of xtd::size.
     inline static constexpr xtd::size npos = xtd::collections::generic::list<xtd::sptr<project_type_item_control>>::npos;
     
+    /// @brief Represents the index of the first valid element in a collection.
+    /// @remarks Unlike xtd::npos (which means "no position"), xtd::bpos points to the first accessible element of a collection. It is equivalent to `0`.
+    static inline constexpr xtd::size bpos = xtd::collections::generic::list<xtd::sptr<project_type_item_control>>::bpos;
+    
     /// @brief Represents the index of the last valid element in a collection.
     /// @remarks Unlike xtd::npos (which means "no position"), xtd::epos points to the last accessible element of a collection. It is equivalent to `items.count() - 1`.
     /// @note This constant is provided for readability and convenience. For example, `items[xtd::epos]` directly accesses the last element without manually subtracting one from the collection count.
+    /// @remarks The epos is equivalent to `~1_z`. With bitwise operator the code is more concise.
     static inline constexpr xtd::size epos = xtd::collections::generic::list<xtd::sptr<project_type_item_control>>::epos;
 
   protected:

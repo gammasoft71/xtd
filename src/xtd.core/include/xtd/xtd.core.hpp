@@ -302,6 +302,7 @@
 #include "box_floating_point.hpp"
 #include "box_integer.hpp"
 #include "boxing.hpp"
+#include "bpos.hpp"
 #include "build_type.hpp"
 #include "byte.hpp"
 #include "byte_object.hpp"

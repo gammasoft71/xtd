@@ -46,8 +46,9 @@ namespace xtd {
         const bool& get_boolean_ref(bool value, xtd::size index) const noexcept;
         void from_boolean(bit_array& parent) noexcept;
         
-        inline static constexpr xtd::size epos = xtd::epos;
         inline static constexpr xtd::size npos = xtd::npos;
+        inline static constexpr xtd::size bpos = xtd::bpos;
+        inline static constexpr xtd::size epos = xtd::epos;
         mutable xtd::size index = npos;
         mutable bool value = false;
       };

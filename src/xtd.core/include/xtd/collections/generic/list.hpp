@@ -1040,7 +1040,7 @@ namespace xtd {
         /// @return Reference to the requested element.
         /// @exception std::out_of_range If `index` is not within the range of the container.
         const_reference operator [](size_type index) const override {
-          if (index >= count() && index != epos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+          if ((index >= count() && index <= ~count() - 1) || index == npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
           return data_->items[index];
         }
         /// @brief Returns a reference to the element at specified location index.
@@ -1048,7 +1048,7 @@ namespace xtd {
         /// @return Reference to the requested element.
         /// @exception std::out_of_range If `index` is not within the range of the container.
         reference operator [](size_type index) override {
-          if (index >= count() && index != epos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+          if ((index >= count() && index <= ~count() - 1) || index == npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
           return data_->items[index];
         }
         

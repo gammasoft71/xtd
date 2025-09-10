@@ -84,13 +84,31 @@ namespace xtd {
       /// ```
       inline static constexpr size_type npos = base_type::npos;
       
+      /// @brief Represents the index of the first valid element in a collection.
+      /// @remarks Unlike xtd::npos (which means "no position"), xtd::bpos points to the first accessible element of a collection. It is equivalent to `0`.
+      /// @par Examples
+      /// ```cpp
+      /// auto str = string_builder {"hello"};
+      /// console::write_line(str[bpos]); // Prints 'h'
+      /// console::write_line(str[bpos + 1]); // Prints 'e'
+      /// ```
+      static inline constexpr xtd::size bpos = 0;
+      
       /// @brief Represents the index of the last valid element in a collection.
       /// @remarks Unlike xtd::npos (which means "no position"), xtd::epos points to the last accessible element of a collection. It is equivalent to `items.count() - 1`.
       /// @note This constant is provided for readability and convenience. For example, `items[xtd::epos]` directly accesses the last element without manually subtracting one from the collection count.
+      /// @remarks The epos is equivalent to `~1_z`. With bitwise operator the code is more concise.
       /// @par Examples
       /// ```cpp
       /// auto str = string_builder {"hello"};
       /// console::write_line(str[epos]); // Prints 'o'
+      /// console::write_line(str[epos - 1]); // Prints 'l'
+      /// ```
+      /// The wollowing exemple shows the same example with bitwise operator as index.
+      /// ```cpp
+      /// auto str = string {"hello"};
+      /// console::write_line(str[~1_z]); // Prints 'o'
+      /// console::write_line(str[~2_z]); // Prints 'l'
       /// ```
       static inline constexpr xtd::size epos = npos - 1;
       /// @}
