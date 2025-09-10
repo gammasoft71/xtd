@@ -145,7 +145,7 @@ public:
   static inline constexpr size_type bpos = 0;
   static inline constexpr size_type epos = npos - 1;
   /// }
-
+  
   /// Public Constructors
   /// {
   __xtd_raw_array_data__() noexcept = default;

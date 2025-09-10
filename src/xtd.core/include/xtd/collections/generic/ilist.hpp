@@ -54,7 +54,7 @@ namespace xtd {
         ///   console::write_line("Value not found");
         /// ```
         inline static constexpr xtd::size npos = xtd::npos;
-
+        
         /// @brief Represents the index of the first valid element in a collection.
         /// @remarks Unlike xtd::npos (which means "no position"), xtd::bpos points to the first accessible element of a collection. It is equivalent to `0`.
         /// @par Examples

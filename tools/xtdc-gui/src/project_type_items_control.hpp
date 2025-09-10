@@ -141,7 +141,7 @@ namespace xtdc_gui {
     /// @note This constant is provided for readability and convenience. For example, `items[xtd::epos]` directly accesses the last element without manually subtracting one from the collection count.
     /// @remarks The epos is equivalent to `~1_z`. With bitwise operator the code is more concise.
     static inline constexpr xtd::size epos = xtd::collections::generic::list<xtd::sptr<project_type_item_control>>::epos;
-
+    
   protected:
     xtd::uptr<xtd::object> clone() const override {
       auto result = xtd::new_uptr<project_type_items_control>(*this);
