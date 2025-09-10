@@ -279,7 +279,7 @@ namespace xtd {
       if (count() != rhs.count()) return false;
       for (size_type i = 0; i < count(); i++)
         if (!xtd::collections::generic::helpers::equator<type_t> {}(data_->items.at(i), rhs.data_->items.at(i))) return false;
-      return data_->version == rhs.data_->version && data_->lower_bound == rhs.data_->lower_bound && data_->upper_bound == rhs.data_->upper_bound;
+      return data_->lower_bound == rhs.data_->lower_bound && data_->upper_bound == rhs.data_->upper_bound;
     }
     
     /// @brief Assigns the value to all elements in the container.
@@ -295,19 +295,19 @@ namespace xtd {
         explicit basic_array_enumerator(const basic_array & items, size_type version) : items_(items), version_(version) {}
         
         const value_type & current() const override {
-          if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
+          if (version_ != items_.data_->items.version()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
           if (index_ < items_.count()) return items_[index_];
           static thread_local auto default_value = value_type {};
           return default_value;
         }
         
         bool move_next() override {
-          if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
+          if (version_ != items_.data_->items.version()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
           return ++index_ < items_.count();
         }
         
         void reset() override {
-          version_ = items_.data_->version;
+          version_ = items_.data_->items.version();
           index_ = basic_array::npos;
         }
         
@@ -316,7 +316,7 @@ protected:
         size_type index_ = basic_array::npos;
         size_type version_ = 0;
       };
-      return {new_ptr < basic_array_enumerator > (*this, data_->version)};
+      return {new_ptr < basic_array_enumerator > (*this, data_->items.version())};
     }
     
     /// @brief Gets the total number of elements in all the dimensions of the array.
@@ -388,7 +388,6 @@ protected:
     void resize(size_type new_size, value_type value) {
       if (new_size == length()) return;
       if (new_size > max_size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::out_of_memory);
-      ++data_->version;
       data_->items.resize(new_size, value);
       data_->upper_bound[0] = new_size - 1;
     }
@@ -402,7 +401,6 @@ protected:
     /// @brief Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
     /// @remarks All iterators and references remain valid. The xtd::array::end() iterator is invalidated.
     virtual void swap(basic_array & other) noexcept {
-      ++data_->version;
       data_->items.swap(other.data_->items);
     }
     
@@ -466,7 +464,7 @@ protected:
     static void reverse(basic_array & array, size_type index, size_type count) {
       if (index > array.size() || index + count > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if (count == 0) return;
-      ++array.data_->version;
+      array.data_->items.increment_version();
       std::reverse(array.data_->items.begin() + index, array.data_->items.begin() + index + count);
     }
     
@@ -487,7 +485,7 @@ protected:
     /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
     /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
     basic_array < type_t > & sort(comparison_comparer comparison) {
-      ++data_->version;
+      data_->items.increment_version();
       std::sort(data_->items.begin(), data_->items.end(), comparison_comparer {comparison});
       return self_;
     }
@@ -512,12 +510,8 @@ protected:
     /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
     basic_array < type_t > & sort(xtd::size index, xtd::size count, const xtd::collections::generic::icomparer < type_t > & comparer) {
       if (index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-      auto first = data_->items.begin();
-      auto last = data_->items.begin();
-      std::advance(first, index);
-      std::advance(last, index + count);
-      ++data_->version;
-      std::sort(first, last, __comparer__ {&comparer});
+      data_->items.increment_version();
+      std::sort(data_->items.begin(), data_->items.end(), __comparer__ {comparer});
       return self_;
     }
     /// @}
@@ -540,7 +534,6 @@ protected:
     /// @param items Initializer list to use as data source
     /// @return This current instance.
     basic_array& operator =(std::initializer_list < type_t > & items) {
-      data_->version = 0;
       data_->items = items;
       data_->upper_bound[0] = data_->items.size() - 1;
       return *this;
@@ -664,7 +657,6 @@ protected:
     }
     
     struct array_data {
-      size_type version = 0;
       __xtd_raw_array_data__ < value_type > items;
       std::vector < size_type > lower_bound {0};
       std::vector < size_type > upper_bound {std::numeric_limits < size_type >::max()};
