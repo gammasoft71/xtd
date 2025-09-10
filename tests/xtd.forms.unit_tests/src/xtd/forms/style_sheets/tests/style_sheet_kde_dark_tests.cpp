@@ -17,7 +17,7 @@ namespace xtd::forms::style_sheets::tests {
       assert::are_equal("KDE (dark)", style.theme().name());
       assert::are_equal("Contains KDE (dark) theme.", style.theme().description());
       assert::are_equal("Gammasoft", style.theme().authors());
-      assert::are_equal("https://gammasoft71.github.io", style.theme().website().to_string());
+      assert::are_equal("https://gammasoft71.github.io/", style.theme().website().to_string());
     }
   };
 }
