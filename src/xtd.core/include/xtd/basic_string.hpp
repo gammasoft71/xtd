@@ -114,7 +114,7 @@ namespace xtd {
     /// @brief Represents the empty basic_string.
     /// @remarks The value of this method is the zero-length basic_string, "".
     static const basic_string empty_string;
-
+    
     /// @brief Represents a value that is not a valid position in a collection.
     /// @remarks This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of xtd::size.
     /// @par Examples
@@ -134,7 +134,7 @@ namespace xtd {
     /// console::write_line(str[bpos + 1]); // Prints 'e'
     /// ```
     static inline constexpr xtd::size bpos = 0;
-
+    
     /// @brief Represents the index of the last valid element in a collection.
     /// @remarks Unlike xtd::npos (which means "no position"), xtd::epos points to the last accessible element of a collection. It is equivalent to `items.count() - 1`.
     /// @note This constant is provided for readability and convenience. For example, `items[xtd::epos]` directly accesses the last element without manually subtracting one from the collection count.
@@ -2430,7 +2430,7 @@ namespace xtd {
     /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
     const_reference operator [](xtd::size index) const {
       if (index >= length() && index != epos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-      return chars_[index == epos ? length() -1 : index];
+      return chars_[index == epos ? length() - 1 : index];
     }
     
     /// @brief Returns a reference to the underlying base type.

@@ -116,7 +116,7 @@ namespace xtd::internal::tests {
     void test_method_(npos) {
       assert::are_equal(size_object::max_value, __xtd_raw_array_data__<int>::npos);
     }
-
+    
     void test_method_(default_constructor) {
       auto items = __xtd_raw_array_data__<int> {};
       assert::is_zero(items.capacity());
@@ -962,7 +962,7 @@ namespace xtd::internal::tests {
       assert::are_equal(7, items[items.epos]);
       assert::are_equal(7, items[xtd::epos]);
     }
-
+    
     void test_method_(operator_index_with_bool) {
       auto items = __xtd_raw_array_data__ {true, false, true};
       

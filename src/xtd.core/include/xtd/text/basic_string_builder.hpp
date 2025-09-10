@@ -2066,7 +2066,7 @@ namespace xtd {
       /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
       const_reference operator [](xtd::size index) const {
         if (index >= length() && index != epos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-        return chars_[index == epos ? length() -1 : index];
+        return chars_[index == epos ? length() - 1 : index];
       }
       /// @brief Returns a reference to the character at specified location index.
       /// @param index The position of the character to return.

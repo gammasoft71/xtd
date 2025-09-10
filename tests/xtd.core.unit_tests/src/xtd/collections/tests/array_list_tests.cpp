@@ -46,7 +46,7 @@ namespace xtd::collections::tests {
     void test_method_(npos) {
       assert::are_equal(size_object::max_value, array_list::npos);
     }
-
+    
     void test_method_(constructor) {
       auto items = array_list {};
       assert::is_zero(items.capacity());

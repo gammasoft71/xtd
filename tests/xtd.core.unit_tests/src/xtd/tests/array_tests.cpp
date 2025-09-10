@@ -116,7 +116,7 @@ namespace xtd::tests {
     void test_method_(npos) {
       assert::are_equal(size_object::max_value, array<int>::npos);
     }
-
+    
     void test_method_(constructor_with_initializer_lit) {
       collection_assert::are_equal({1, 2, 3, 4, 5}, array {1, 2, 3, 4, 5});
     }
@@ -657,7 +657,7 @@ namespace xtd::tests {
       assert::are_equal(7, items[items.epos]);
       assert::are_equal(7, items[xtd::epos]);
     }
-
+    
     void test_method_(index_functor) {
       auto items = array {84, 42, 21};
       
@@ -691,7 +691,7 @@ namespace xtd::tests {
       assert::are_equal(7, items(items.epos));
       assert::are_equal(7, items(xtd::epos));
     }
-
+    
     void test_method_(indexes_array_functor) {
       auto items = array {84, 42, 21};
       
