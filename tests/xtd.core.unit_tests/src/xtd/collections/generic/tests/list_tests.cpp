@@ -53,10 +53,14 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(typeof_<const int*>(), typeof_<list<int>::const_pointer>());
     }
     
+    void test_method_(epos) {
+      assert::are_equal(size_object::max_value - 1, list<int>::epos);
+    }
+    
     void test_method_(npos) {
       assert::are_equal(size_object::max_value, list<int>::npos);
     }
-    
+
     void test_method_(default_constructor) {
       auto items = list<string> {};
       assert::is_zero(items.capacity());
@@ -872,6 +876,24 @@ namespace xtd::collections::generic::tests {
       collection_assert::are_equal({63, 31, 10}, items);
     }
     
+    void test_method_(index_operators_with_epos) {
+      auto items = list {1, 2, 3, 4, 5};
+      
+      assert::are_equal(5, items[items.count() - 1]);
+      assert::are_equal(5, items[items.epos]);
+      assert::are_equal(5, items[xtd::epos]);
+      
+      items[items.epos] = 6;
+      assert::are_equal(6, items[items.count() - 1]);
+      assert::are_equal(6, items[items.epos]);
+      assert::are_equal(6, items[xtd::epos]);
+
+      items[xtd::epos] = 7;
+      assert::are_equal(7, items[items.count() - 1]);
+      assert::are_equal(7, items[items.epos]);
+      assert::are_equal(7, items[xtd::epos]);
+    }
+
     void test_method_(cast_opertor_to_std_vector) {
       auto items = list {1, 2, 3, 4, 5};
       auto result = std::vector<int> {};

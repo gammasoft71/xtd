@@ -109,6 +109,14 @@ namespace xtd::tests {
       collection_assert::is_empty(array<bool> {});
     }
     
+    void test_method_(epos) {
+      assert::are_equal(size_object::max_value - 1, array<int>::epos);
+    }
+    
+    void test_method_(npos) {
+      assert::are_equal(size_object::max_value, array<int>::npos);
+    }
+
     void test_method_(constructor_with_initializer_lit) {
       collection_assert::are_equal({1, 2, 3, 4, 5}, array {1, 2, 3, 4, 5});
     }
@@ -632,6 +640,24 @@ namespace xtd::tests {
       collection_assert::are_equal({63, 31, 10}, items);
     }
     
+    void test_method_(index_operators_with_epos) {
+      auto items = array {1, 2, 3, 4, 5};
+      
+      assert::are_equal(5, items[items.count() - 1]);
+      assert::are_equal(5, items[items.epos]);
+      assert::are_equal(5, items[xtd::epos]);
+      
+      items[items.epos] = 6;
+      assert::are_equal(6, items[items.count() - 1]);
+      assert::are_equal(6, items[items.epos]);
+      assert::are_equal(6, items[xtd::epos]);
+      
+      items[xtd::epos] = 7;
+      assert::are_equal(7, items[items.count() - 1]);
+      assert::are_equal(7, items[items.epos]);
+      assert::are_equal(7, items[xtd::epos]);
+    }
+
     void test_method_(index_functor) {
       auto items = array {84, 42, 21};
       
@@ -648,6 +674,24 @@ namespace xtd::tests {
       collection_assert::are_equal({63, 31, 10}, items);
     }
     
+    void test_method_(index_functor_with_epos) {
+      auto items = array {1, 2, 3, 4, 5};
+      
+      assert::are_equal(5, items(items.count() - 1));
+      assert::are_equal(5, items(items.epos));
+      assert::are_equal(5, items(xtd::epos));
+      
+      items(items.epos) = 6;
+      assert::are_equal(6, items(items.count() - 1));
+      assert::are_equal(6, items(items.epos));
+      assert::are_equal(6, items(xtd::epos));
+      
+      items(xtd::epos) = 7;
+      assert::are_equal(7, items(items.count() - 1));
+      assert::are_equal(7, items(items.epos));
+      assert::are_equal(7, items(xtd::epos));
+    }
+
     void test_method_(indexes_array_functor) {
       auto items = array {84, 42, 21};
       

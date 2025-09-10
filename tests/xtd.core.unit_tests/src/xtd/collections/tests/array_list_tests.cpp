@@ -39,6 +39,14 @@ namespace xtd::collections::tests {
       assert::are_equal(typeof_<const any_object*>(), typeof_<array_list::const_pointer>());
     }
     
+    void test_method_(epos) {
+      assert::are_equal(size_object::max_value - 1, array_list::epos);
+    }
+    
+    void test_method_(npos) {
+      assert::are_equal(size_object::max_value, array_list::npos);
+    }
+
     void test_method_(constructor) {
       auto items = array_list {};
       assert::is_zero(items.capacity());
@@ -317,6 +325,24 @@ namespace xtd::collections::tests {
       assert::throws<index_out_of_range_exception>([&] {items[3] = "Tyrannosaurus";});
       
       collection_assert::are_equal(array_list {24, "Deinonychus", "Compsognathus"}, items);
+    }
+    
+    void test_method_(index_operators_with_epos) {
+      auto items = array_list {1, 2, 3, 4, 5};
+      
+      assert::are_equal(5, items[items.count() - 1]);
+      assert::are_equal(5, items[items.epos]);
+      assert::are_equal(5, items[xtd::epos]);
+      
+      items[items.epos] = 6;
+      assert::are_equal(6, items[items.count() - 1]);
+      assert::are_equal(6, items[items.epos]);
+      assert::are_equal(6, items[xtd::epos]);
+      
+      items[xtd::epos] = 7;
+      assert::are_equal(7, items[items.count() - 1]);
+      assert::are_equal(7, items[items.epos]);
+      assert::are_equal(7, items[xtd::epos]);
     }
   };
 }
