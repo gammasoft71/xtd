@@ -5,6 +5,7 @@
 
 #include "sorter_none.hpp"
 #include <xtd/collections/generic/helpers/equator>
+#include <xtd/helpers/throw_helper.hpp>
 #include <xtd/array>
 #include <xtd/argument_out_of_range_exception>
 #include <xtd/event_args>
@@ -351,6 +352,7 @@ namespace xtd {
         /// @param index The index before which the content will be inserted.
         /// @param value The element to insert.
         virtual void insert(xtd::size index, const value_type& value) {
+          if (index > count()) helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           inserting_ = true;
           collection_.insert(collection_.begin() + index, value);
           inserting_ = false;
