@@ -109,6 +109,14 @@ namespace xtd::internal::tests {
       assert::are_equal(typeof_<std::reverse_iterator<__xtd_raw_array_data__<bool>::const_iterator>>(), typeof_<__xtd_raw_array_data__<bool>::const_reverse_iterator > ());
     }
     
+    void test_method_(epos) {
+      assert::are_equal(size_object::max_value - 1, __xtd_raw_array_data__<int>::epos);
+    }
+    
+    void test_method_(npos) {
+      assert::are_equal(size_object::max_value, __xtd_raw_array_data__<int>::npos);
+    }
+
     void test_method_(default_constructor) {
       auto items = __xtd_raw_array_data__<int> {};
       assert::is_zero(items.capacity());
@@ -937,6 +945,24 @@ namespace xtd::internal::tests {
       collection_assert::are_equal({63, 31, 10}, items);
     }
     
+    void test_method_(operator_index_with_epos) {
+      auto items = __xtd_raw_array_data__ {1, 2, 3, 4, 5};
+      
+      assert::are_equal(5, items[items.size() - 1]);
+      assert::are_equal(5, items[items.epos]);
+      assert::are_equal(5, items[xtd::epos]);
+      
+      items[items.epos] = 6;
+      assert::are_equal(6, items[items.size() - 1]);
+      assert::are_equal(6, items[items.epos]);
+      assert::are_equal(6, items[xtd::epos]);
+      
+      items[xtd::epos] = 7;
+      assert::are_equal(7, items[items.size() - 1]);
+      assert::are_equal(7, items[items.epos]);
+      assert::are_equal(7, items[xtd::epos]);
+    }
+
     void test_method_(operator_index_with_bool) {
       auto items = __xtd_raw_array_data__ {true, false, true};
       
