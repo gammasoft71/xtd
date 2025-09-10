@@ -8,6 +8,7 @@
 #endif
 /// @endcond
 
+#include <algorithm>
 #include <cstdint>
 #include <limits>
 #include <vector>
@@ -141,6 +142,7 @@ public:
   /// Public Fields
   /// {
   inline static constexpr size_type npos = std::numeric_limits<size_type>::max();
+  static inline constexpr size_type bpos = 0;
   static inline constexpr size_type epos = npos - 1;
   /// }
 
@@ -198,7 +200,7 @@ public:
   const_base_type & items() const noexcept {return items_;}
   base_type & items() noexcept {return items_;}
   
-  size_type max_size() const noexcept {return items_.max_size();}
+  size_type max_size() const noexcept {return std::min(items_.max_size(), npos / 2);}
   
   reverse_iterator rbegin() noexcept {return reverse_iterator(end());}
   const_reverse_iterator rbegin() const noexcept {return const_reverse_iterator(end());}
@@ -227,8 +229,8 @@ public:
     items_.assign(items.begin(), items.end());
   }
   
-  reference at(size_type index) {return reinterpret_cast<reference>(items_.at(index == epos ? size() - 1 : index));}
-  const_reference at(size_type index) const {return reinterpret_cast<const_reference>(items_.at(index == epos ? size() - 1 : index));}
+  reference at(size_type index) {return reinterpret_cast<reference>(items_.at(index > npos / 2 ? size() - (npos - index) : index));}
+  const_reference at(size_type index) const {return reinterpret_cast<const_reference>(items_.at(index > npos / 2 ? size() - (npos - index) : index));}
   
   void clear() {
     ++version_;

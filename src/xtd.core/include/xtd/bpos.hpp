@@ -6,12 +6,17 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @name Static Fields
+  
+  /// @{
   /// @brief Represents the index of the firsy valid element in a collection.
   /// @remarks Unlike xtd::npos (which means "no position"), xtd::bpos points to the first accessible element of a collection. It is equivalent to `0`.
   /// @par Examples
   /// ```cpp
   /// auto items = array {10, 20, 30, 40};
   /// console::write_line(items[bpos]); // Prints 10
+  /// console::write_line(items[bpos + 1]); // Prints 20
   /// ```
   static inline constexpr xtd::size bpos = 0;
+  /// @}
 }

@@ -234,7 +234,7 @@ namespace xtd {
     /// @return Reference to the requested element.
     /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the container.
     virtual reference at(size_type index) {
-      if (index >= count() && index != epos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+      if ((index >= count() && index <= ~count() - 1) || index == npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       return (reference)data_->items.at(index);
     }
     /// @brief Returns a reference to the element at specified location pos, with bounds checking.
@@ -242,7 +242,7 @@ namespace xtd {
     /// @return Reference to the requested element.
     /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the container.
     virtual const_reference at(size_type index) const {
-      if (index >= count() && index != epos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+      if ((index >= count() && index <= ~count() - 1) || index == npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       return (reference)data_->items.at(index);
     }
     
