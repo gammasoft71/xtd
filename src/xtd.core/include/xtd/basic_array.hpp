@@ -588,7 +588,6 @@ protected:
     basic_array(const xtd::collections::generic::ienumerable < type_t > & enumerable) {
       for (const auto& value : enumerable)
         data_->items.push_back(value);
-      data_->lower_bound.push_back(0);
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
@@ -629,7 +628,6 @@ protected:
     template < class input_iterator_t >
     basic_array(input_iterator_t first, input_iterator_t last) {
       data_->items.assign(first, last);
-      data_->lower_bound.push_back(0);
       data_->upper_bound.push_back(data_->items.size() - 1);
     }
     
