@@ -159,7 +159,7 @@ generic::enumerator<bool> bit_array::get_enumerator() const {
     }
     
   private:
-    size npos = std::numeric_limits<size>::max();
+    size npos = xtd::npos;
     size pos_ = npos;
     bit_array* bit_array_ = null;
   };
@@ -247,14 +247,16 @@ const bit_array& bit_array::xor_(const bit_array& value) {
 
 const bool& bit_array::operator [](size index) const {
   flush(); // Must be call first
-  if (index >= length_) throw_helper::throws(exception_case::argument_out_of_range);
-  return value_ref_.get_boolean_ref(get_bit_value(index), index);
+  if (index >= length() && index != epos) throw_helper::throws(exception_case::argument_out_of_range);
+  auto idx = index == epos ? length() - 1 : index;
+  return value_ref_.get_boolean_ref(get_bit_value(idx), idx);
 }
 
 bool& bit_array::operator [](size index) {
   flush(); // Must be call first
-  if (index >= length()) throw_helper::throws(exception_case::argument_out_of_range);
-  return value_ref_.get_boolean_ref(get_bit_value(index), index);
+  if (index >= length() && index != epos) throw_helper::throws(exception_case::argument_out_of_range);
+  auto idx = index == epos ? length() - 1 : index;
+  return value_ref_.get_boolean_ref(get_bit_value(idx), idx);
 }
 
 bit_array bit_array::operator >>(xtd::size pos) const noexcept {

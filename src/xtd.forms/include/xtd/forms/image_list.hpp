@@ -44,7 +44,14 @@ namespace xtd {
       /// @brief Represents an image_list empty.
       static image_list empty;
       
+      /// @brief Represents a value that is not a valid position in a collection.
+      /// @remarks This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of xtd::size.
       inline static constexpr xtd::size npos = image_collection::npos;
+      
+      /// @brief Represents the index of the last valid element in a collection.
+      /// @remarks Unlike xtd::npos (which means "no position"), xtd::epos points to the last accessible element of a collection. It is equivalent to `items.count() - 1`.
+      /// @note This constant is provided for readability and convenience. For example, `items[xtd::epos]` directly accesses the last element without manually subtracting one from the collection count.
+      static inline constexpr xtd::size epos = image_collection::epos;
       /// @}
       
       /// @name Public Constructors
