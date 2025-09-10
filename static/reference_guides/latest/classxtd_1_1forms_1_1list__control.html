@@ -153,8 +153,14 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Fields</h2></td></tr>
 <tr class="memitem:aa638bb1aab8da4e3ab54cad7960da58c" id="r_aa638bb1aab8da4e3ab54cad7960da58c"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa638bb1aab8da4e3ab54cad7960da58c">npos</a></td></tr>
-<tr class="memdesc:aa638bb1aab8da4e3ab54cad7960da58c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a special value equal to the maximum value representable by the type size_t.  <br /></td></tr>
+<tr class="memdesc:aa638bb1aab8da4e3ab54cad7960da58c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a value that is not a valid position in a collection.  <br /></td></tr>
 <tr class="separator:aa638bb1aab8da4e3ab54cad7960da58c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2fba8e325f7b736eaa3564ee10e59c8" id="r_ad2fba8e325f7b736eaa3564ee10e59c8"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2fba8e325f7b736eaa3564ee10e59c8">bpos</a></td></tr>
+<tr class="memdesc:ad2fba8e325f7b736eaa3564ee10e59c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the index of the first valid element in a collection.  <br /></td></tr>
+<tr class="separator:ad2fba8e325f7b736eaa3564ee10e59c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98b61b2afa7808def8cf0fa0deb7d2e4" id="r_a98b61b2afa7808def8cf0fa0deb7d2e4"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98b61b2afa7808def8cf0fa0deb7d2e4">epos</a></td></tr>
+<tr class="memdesc:a98b61b2afa7808def8cf0fa0deb7d2e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the index of the last valid element in a collection.  <br /></td></tr>
+<tr class="separator:a98b61b2afa7808def8cf0fa0deb7d2e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Events</h2></td></tr>
 <tr class="memitem:a219cbdeb915c754ae0d643c088ac5239" id="r_a219cbdeb915c754ae0d643c088ac5239"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1list__control.html">list_control</a>, <a class="el" href="group__events.html#ga154af19f81ec830b3d4c0cc8a477cf0d">event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a219cbdeb915c754ae0d643c088ac5239">selected_index_changed</a></td></tr>
@@ -1453,12 +1459,65 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>This is a special value equal to the maximum value representable by the type size_t. </p>
+<p>Represents a value that is not a valid position in a collection. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">xtd::size</a>. </dd></dl>
+
+</div>
+</div>
+<a id="ad2fba8e325f7b736eaa3564ee10e59c8" name="ad2fba8e325f7b736eaa3564ee10e59c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2fba8e325f7b736eaa3564ee10e59c8">&#9670;&#160;</a></span>bpos</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> xtd::forms::list_control::bpos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Represents the index of the first valid element in a collection. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike xtd::npos (which means "no position"), xtd::bpos points to the first accessible element of a collection. It is equivalent to <code>0</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a98b61b2afa7808def8cf0fa0deb7d2e4" name="a98b61b2afa7808def8cf0fa0deb7d2e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98b61b2afa7808def8cf0fa0deb7d2e4">&#9670;&#160;</a></span>epos</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> xtd::forms::list_control::epos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Represents the index of the last valid element in a collection. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike xtd::npos (which means "no position"), xtd::epos points to the last accessible element of a collection. It is equivalent to <code>items.count() - 1</code>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This constant is provided for readability and convenience. For example, <code>items[xtd::epos]</code> directly accesses the last element without manually subtracting one from the collection count. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The epos is equivalent to <code>~1_z</code>. With bitwise operator the code is more concise. </dd></dl>
 
 </div>
 </div>
@@ -1503,7 +1562,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 9 2025 21:29:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Sep 10 2025 22:52:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
