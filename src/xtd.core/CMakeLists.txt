@@ -84,6 +84,8 @@ add_sources(
   "include/xtd/box_integer"
   "include/xtd/boxing.hpp"
   "include/xtd/boxing"
+  "include/xtd/bpos.hpp"
+  "include/xtd/bpos"
   "include/xtd/build_type.hpp"
   "include/xtd/build_type"
   "include/xtd/byte.hpp"
