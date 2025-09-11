@@ -22,6 +22,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    using const_control_ref = std::reference_wrapper<const control>;
+    using const_control_ref = xtd::ref<const control>;
   }
 }

@@ -156,7 +156,7 @@ namespace xtd {
       
       /// @brief Gets the xtd::forms::status_bar control that the status bar panel is assigned to.
       /// @return The xtd::forms::status_bar control that the xtd::forms::status_bar_panel is assigned to.
-      std::optional<std::reference_wrapper<xtd::forms::status_bar>> parent() const noexcept;
+      std::optional<xtd::ref<xtd::forms::status_bar>> parent() const noexcept;
       
       /// @brief Gets the style of the status bar panel.
       /// @return One of the xtd::forms::status_bar_panel_style values. The default is xtd::forms::status_bar_panel_style::text.
@@ -292,6 +292,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    using status_bar_panel_ref = std::reference_wrapper<status_bar_panel>;
+    using status_bar_panel_ref = xtd::ref<status_bar_panel>;
   }
 }
