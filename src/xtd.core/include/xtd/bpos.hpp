@@ -10,6 +10,11 @@ namespace xtd {
   
   /// @{
   /// @brief Represents the index of the firsy valid element in a collection.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core system
   /// @remarks Unlike xtd::npos (which means "no position"), xtd::bpos points to the first accessible element of a collection. It is equivalent to `0`.
   /// @par Examples
   /// ```cpp
@@ -17,6 +22,6 @@ namespace xtd {
   /// console::write_line(items[bpos]); // Prints 10
   /// console::write_line(items[bpos + 1]); // Prints 20
   /// ```
-  static inline constexpr xtd::size bpos = 0;
+  inline constexpr xtd::size bpos = 0;
   /// @}
 }
