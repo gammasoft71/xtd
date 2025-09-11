@@ -54,9 +54,8 @@ namespace xtd {
         
         /// @{
         /// @brief Creates a new object xtd::forms::control::tab_page_collection with specified allocator (optional).
-        /// @param allocator The allocator associate to the collection (optional).
         /// @remarks If allocator not specified, the std::allocator<value_type> is used.
-        explicit tab_page_collection(const allocator_type& allocator = allocator_type());
+        explicit tab_page_collection() = default;
         /// @}
         
         /// @cond

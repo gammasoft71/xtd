@@ -148,12 +148,12 @@ control& lcd_label::text(const xtd::string& value) {
         case lcd_style::dot_matrix_display: data_->digits.add(xtd::new_sptr<dot_matrix_display_digit>()); break;
         default: throw_helper::throws(exception_case::argument, "lcd_style invalid"_t);
       }
-      dynamic_cast<control*>(data_->digits[data_->digits.count() - 1].get())->parent(*this);
-      dynamic_cast<control*>(data_->digits[data_->digits.count() - 1].get())->double_buffered(double_buffered());
-      dynamic_cast<control*>(data_->digits[data_->digits.count() - 1].get())->click += {*this, &lcd_label::on_digit_click};
-      dynamic_cast<control*>(data_->digits[data_->digits.count() - 1].get())->mouse_down += {*this, &lcd_label::on_digit_mouse_down};
-      dynamic_cast<control*>(data_->digits[data_->digits.count() - 1].get())->mouse_move += {*this, &lcd_label::on_digit_mouse_move};
-      dynamic_cast<control*>(data_->digits[data_->digits.count() - 1].get())->mouse_up += {*this, &lcd_label::on_digit_mouse_up};
+      dynamic_cast<control*>(data_->digits[~1_z].get())->parent(*this);
+      dynamic_cast<control*>(data_->digits[~1_z].get())->double_buffered(double_buffered());
+      dynamic_cast<control*>(data_->digits[~1_z].get())->click += {*this, &lcd_label::on_digit_click};
+      dynamic_cast<control*>(data_->digits[~1_z].get())->mouse_down += {*this, &lcd_label::on_digit_mouse_down};
+      dynamic_cast<control*>(data_->digits[~1_z].get())->mouse_move += {*this, &lcd_label::on_digit_mouse_move};
+      dynamic_cast<control*>(data_->digits[~1_z].get())->mouse_up += {*this, &lcd_label::on_digit_mouse_up};
     }
   for (auto index = 0_z; index < str.size(); ++index)
     data_->digits[index]->character(str[index]);

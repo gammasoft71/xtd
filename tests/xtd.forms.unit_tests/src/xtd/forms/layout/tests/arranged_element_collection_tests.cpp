@@ -24,7 +24,7 @@ namespace xtd::forms::layout::tests {
         assert::fail(string::format("updated index = {}, value = {}", index, value));
       };
       
-      assert::is_true(items.empty());
+      assert::is_true(items.count() == 0);
     }
     
     void test_method_(add_item) {
@@ -47,7 +47,7 @@ namespace xtd::forms::layout::tests {
       
       items.add("a");
       
-      assert::is_false(items.empty());
+      assert::is_false(items.count() == 0);
       assert::are_equal(1_z, items.count());
       assert::are_equal("a", items[0]);
       assert::are_equal(1_z, added_control_check);
@@ -83,7 +83,7 @@ namespace xtd::forms::layout::tests {
       items.add("b");
       items.add("c");
       
-      assert::is_false(items.empty());
+      assert::is_false(items.count() == 0);
       assert::are_equal(3_z, items.count());
       assert::are_equal("a", items[0]);
       assert::are_equal("b", items[1]);
@@ -111,7 +111,7 @@ namespace xtd::forms::layout::tests {
       
       items.add_range({"a"});
       
-      assert::is_false(items.empty());
+      assert::is_false(items.count() == 0);
       assert::are_equal(1_z, items.count());
       assert::are_equal("a", items[0]);
       assert::are_equal(1_z, added_control_check);
@@ -145,7 +145,7 @@ namespace xtd::forms::layout::tests {
       
       items.add_range({"a", "b", "c"});
       
-      assert::is_false(items.empty());
+      assert::is_false(items.count() == 0);
       assert::are_equal(3_z, items.count());
       assert::are_equal("a", items[0]);
       assert::are_equal("b", items[1]);
@@ -333,7 +333,7 @@ namespace xtd::forms::layout::tests {
       items.remove_at(0);
       items.remove_at(0);
       
-      assert::is_true(items.empty());
+      assert::is_true(items.count() == 0);
       assert::are_equal(15_z, erased_control_check);
     }
     
