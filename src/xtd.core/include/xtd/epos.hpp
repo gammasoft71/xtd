@@ -10,6 +10,11 @@ namespace xtd {
   
   /// @{
   /// @brief Represents the index of the last valid element in a collection.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core system
   /// @remarks Unlike xtd::npos (which means "no position"), xtd::epos points to the last accessible element of a collection. It is equivalent to `items.count() - 1`.
   /// @note This constant is provided for readability and convenience. For example, `items[xtd::epos]` directly accesses the last element without manually subtracting one from the collection count.
   /// @remarks The epos is equivalent to `~1_z`. With bitwise operator the code is more concise.
@@ -25,6 +30,6 @@ namespace xtd {
   /// console::write_line(items[~1_z]); // Prints 40
   /// console::write_line(items[~2_z]); // Prints 30
   /// ```
-  static inline constexpr xtd::size epos = xtd::npos - 1;
+  inline constexpr xtd::size epos = xtd::npos - 1;
   /// @}
 }
