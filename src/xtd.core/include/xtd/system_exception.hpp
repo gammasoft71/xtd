@@ -103,7 +103,7 @@ namespace xtd {
     system_exception& operator =(const system_exception&) = default;
     /// @endcond
     
-    /// @name Public Properties
+    /// @name Public Deprecated Properties
     
     /// @{
     /// @brief Gets file path where exception occurred
