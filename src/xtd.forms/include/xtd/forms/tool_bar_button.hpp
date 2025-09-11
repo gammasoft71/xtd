@@ -83,7 +83,7 @@ namespace xtd {
       /// @brief Gets the menu to be displayed in the drop-down toolbar button.
       /// @return A xtd::forms::context_menu to be displayed in the drop-down toolbar button. The default is std::nullopt.
       /// @remarks You can specify a xtd::forms::context_menu to be displayed when the drop-down button is clicked. This property is not used unless the xtd::forms::tool_bar_button::style property value is set to xtd::forms::tool_bar_button_style::drop_down_button.
-      std::optional<std::reference_wrapper<xtd::forms::context_menu>> drop_down_menu() const noexcept;
+      std::optional<xtd::ref<xtd::forms::context_menu>> drop_down_menu() const noexcept;
       /// @brief Sets the menu to be displayed in the drop-down toolbar button.
       /// @param value A xtd::forms::context_menu to be displayed in the drop-down toolbar button. The default is std::nullopt.
       /// @return This current instance.
@@ -127,7 +127,7 @@ namespace xtd {
       
       /// @brief Gets the toolbar control that the toolbar button is assigned to.
       /// @return The xtd::forms::tool_bar control that the xtd::forms::tool_bar_button is assigned to.
-      std::optional<std::reference_wrapper<xtd::forms::tool_bar>> parent() const noexcept;
+      std::optional<xtd::ref<xtd::forms::tool_bar>> parent() const noexcept;
       
       /// @brief Gets a value indicating whether a toggle-style toolbar button is currently in the pushed state.
       /// @return rue if a toggle-style toolbar button is currently in the pushed state; otherwise, `false`. The default is `false`.

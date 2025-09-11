@@ -22,6 +22,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    using control_ref = std::reference_wrapper<control>;
+    using control_ref = xtd::ref<control>;
   }
 }

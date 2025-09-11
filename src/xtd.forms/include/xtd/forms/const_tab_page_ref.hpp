@@ -22,6 +22,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    using const_tab_page_ref = std::reference_wrapper<const tab_page>;
+    using const_tab_page_ref = xtd::ref<const tab_page>;
   }
 }

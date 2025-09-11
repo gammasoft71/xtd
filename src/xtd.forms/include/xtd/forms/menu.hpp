@@ -131,12 +131,12 @@ namespace xtd {
       /// @brief Gets the context_menu that contains this menu.
       /// @return The context_menu that contains this menu. The default is no value.
       /// @remarks This method allows you to obtain a reference to the context_menu that this menu is contained in. This property returns no value if the menu is not contained in a context_menu. This can occur if the menu is contained in a menu_item or main_menu, or if the menu is not contained in any menu. You can use this property to determine whether a menu is currently being used, and also to determine where.
-      std::optional<std::reference_wrapper<context_menu>> get_context_menu() const noexcept;
+      std::optional<xtd::ref<context_menu>> get_context_menu() const noexcept;
       
       /// @brief Gets the main_menu that contains this menu.
       /// @return The main_menu that contains this menu. The default is has no value.
       /// @remarks This method allows you to obtain a reference to the main_menu that this menu is contained in. This property returns no value if the menu is not contained in a main_menu. This can occur if the menu is contained in a menu_item or context_menu, or if the menu is not contained in any menu. You can use this property to determine whether a menu is currently being used, and also to determine where.
-      std::optional<std::reference_wrapper<main_menu>> get_main_menu() const noexcept;
+      std::optional<xtd::ref<main_menu>> get_main_menu() const noexcept;
       
       /// @brief Merges the MenuItem objects of one menu with the current menu.
       /// @param menu_src The menu whose menu items are merged with the menu items of the current menu.
@@ -198,7 +198,7 @@ namespace xtd {
       void recreate_menu();
       
       xtd::sptr<data> data_;
-      static std::map<intptr, std::reference_wrapper<menu>> handles_;
+      static std::map<intptr, xtd::ref<menu>> handles_;
       /// @endcond
     };
   }
