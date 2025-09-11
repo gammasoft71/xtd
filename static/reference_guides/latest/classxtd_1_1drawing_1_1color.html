@@ -675,15 +675,6 @@ The color of each pixel is represented as a 32-bit number: 8 bits each for alpha
 <tr class="separator:adceee81f7a0a0542e4ee31887bdffba9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
-<tr class="memitem:a8351650ddb0b94701d7898f866c5bf3c" id="r_a8351650ddb0b94701d7898f866c5bf3c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8351650ddb0b94701d7898f866c5bf3c">average</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;color1, const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;color2, double weight) noexcept</td></tr>
-<tr class="memdesc:a8351650ddb0b94701d7898f866c5bf3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the weighted average color between the two given colors.  <br /></td></tr>
-<tr class="separator:a8351650ddb0b94701d7898f866c5bf3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0006066077e2d4e4b6aa70f2cae785a8" id="r_a0006066077e2d4e4b6aa70f2cae785a8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0006066077e2d4e4b6aa70f2cae785a8">average</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;color1, const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;color2, double weight, bool average_alpha) noexcept</td></tr>
-<tr class="memdesc:a0006066077e2d4e4b6aa70f2cae785a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the weighted average color between the two given colors.  <br /></td></tr>
-<tr class="separator:a0006066077e2d4e4b6aa70f2cae785a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51840dadcee5d1e69d618233ea1e2cad" id="r_a51840dadcee5d1e69d618233ea1e2cad"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51840dadcee5d1e69d618233ea1e2cad">dark</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;<a class="el" href="classxtd_1_1drawing_1_1color.html">color</a>) noexcept</td></tr>
-<tr class="memdesc:a51840dadcee5d1e69d618233ea1e2cad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new darker color of the specified color with 33% factor.  <br /></td></tr>
-<tr class="separator:a51840dadcee5d1e69d618233ea1e2cad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40449eec4e25b7d2a6ca441abdbdb14a" id="r_a40449eec4e25b7d2a6ca441abdbdb14a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40449eec4e25b7d2a6ca441abdbdb14a">dark</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;<a class="el" href="classxtd_1_1drawing_1_1color.html">color</a>, double percent) noexcept</td></tr>
 <tr class="memdesc:a40449eec4e25b7d2a6ca441abdbdb14a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new darker color of the specified color with specified percent factor.  <br /></td></tr>
 <tr class="separator:a40449eec4e25b7d2a6ca441abdbdb14a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -717,15 +708,26 @@ The color of each pixel is represented as a 32-bit number: 8 bits each for alpha
 <tr class="memitem:af400d8da063ecf6fdb5e76d929c9170f" id="r_af400d8da063ecf6fdb5e76d929c9170f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af400d8da063ecf6fdb5e76d929c9170f">from_yuv</a> (float <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a415290769594460e2e485922904f345d">y</a>, float <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b774effe4a349c6dd82ad4f4f21d34c">u</a>, float <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9e3669d19b675bd57058fd4664205d2a">v</a>) noexcept</td></tr>
 <tr class="memdesc:af400d8da063ecf6fdb5e76d929c9170f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> class from the three YUV components (luma and choma) values.  <br /></td></tr>
 <tr class="separator:af400d8da063ecf6fdb5e76d929c9170f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81854888bb57081e39e9094b2138588f" id="r_a81854888bb57081e39e9094b2138588f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81854888bb57081e39e9094b2138588f">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="classxtd_1_1drawing_1_1color.html">color</a>) noexcept</td></tr>
+<tr class="memdesc:a81854888bb57081e39e9094b2138588f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> class from the specified name.  <br /></td></tr>
+<tr class="separator:a81854888bb57081e39e9094b2138588f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Deprecated Static Methods</h2></td></tr>
+<tr class="memitem:a8351650ddb0b94701d7898f866c5bf3c" id="r_a8351650ddb0b94701d7898f866c5bf3c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8351650ddb0b94701d7898f866c5bf3c">average</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;color1, const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;color2, double weight) noexcept</td></tr>
+<tr class="memdesc:a8351650ddb0b94701d7898f866c5bf3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the weighted average color between the two given colors.  <br /></td></tr>
+<tr class="separator:a8351650ddb0b94701d7898f866c5bf3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0006066077e2d4e4b6aa70f2cae785a8" id="r_a0006066077e2d4e4b6aa70f2cae785a8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0006066077e2d4e4b6aa70f2cae785a8">average</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;color1, const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;color2, double weight, bool average_alpha) noexcept</td></tr>
+<tr class="memdesc:a0006066077e2d4e4b6aa70f2cae785a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the weighted average color between the two given colors.  <br /></td></tr>
+<tr class="separator:a0006066077e2d4e4b6aa70f2cae785a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51840dadcee5d1e69d618233ea1e2cad" id="r_a51840dadcee5d1e69d618233ea1e2cad"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51840dadcee5d1e69d618233ea1e2cad">dark</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;<a class="el" href="classxtd_1_1drawing_1_1color.html">color</a>) noexcept</td></tr>
+<tr class="memdesc:a51840dadcee5d1e69d618233ea1e2cad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new darker color of the specified color with 33% factor.  <br /></td></tr>
+<tr class="separator:a51840dadcee5d1e69d618233ea1e2cad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0902f81caabae78569ff46d1e2e682be" id="r_a0902f81caabae78569ff46d1e2e682be"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0902f81caabae78569ff46d1e2e682be">light</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;<a class="el" href="classxtd_1_1drawing_1_1color.html">color</a>) noexcept</td></tr>
 <tr class="memdesc:a0902f81caabae78569ff46d1e2e682be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new lighter color of the specified color with 33% factor.  <br /></td></tr>
 <tr class="separator:a0902f81caabae78569ff46d1e2e682be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada2acb6f5664788fb7c9666c7dd2dbf4" id="r_ada2acb6f5664788fb7c9666c7dd2dbf4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada2acb6f5664788fb7c9666c7dd2dbf4">light</a> (const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;<a class="el" href="classxtd_1_1drawing_1_1color.html">color</a>, double percent) noexcept</td></tr>
 <tr class="memdesc:ada2acb6f5664788fb7c9666c7dd2dbf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new lighter color of the specified color with specified percent factor.  <br /></td></tr>
 <tr class="separator:ada2acb6f5664788fb7c9666c7dd2dbf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81854888bb57081e39e9094b2138588f" id="r_a81854888bb57081e39e9094b2138588f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81854888bb57081e39e9094b2138588f">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="classxtd_1_1drawing_1_1color.html">color</a>) noexcept</td></tr>
-<tr class="memdesc:a81854888bb57081e39e9094b2138588f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> class from the specified name.  <br /></td></tr>
-<tr class="separator:a81854888bb57081e39e9094b2138588f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -1792,151 +1794,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a8351650ddb0b94701d7898f866c5bf3c" name="a8351650ddb0b94701d7898f866c5bf3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8351650ddb0b94701d7898f866c5bf3c">&#9670;&#160;</a></span>average() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> xtd::drawing::color::average </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color1</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color2</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>weight</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the weighted average color between the two given colors. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">color1</td><td>The first color. </td></tr>
-    <tr><td class="paramname">color2</td><td>The second color. </td></tr>
-    <tr><td class="paramname">weight</td><td>The weighting factor </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The average color. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The alpha of color1 is conserved. </dd>
-<dd>
-The red, green and blue values are averages using the following formula: <div class="fragment"><div class="line"><a class="code hl_function" href="#a0c189d088fc2611f0e3b1026384438ce">color</a> = color1 * (1 - weight) + color2 * weight;</div>
-</div><!-- fragment --> </dd>
-<dd>
-Thus, a weight value of <code>1.0</code> will return the second color, while a value of <code>0.0</code> will return the first color. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000175">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="classxtd_1_1drawing_1_1color__converter.html#a67e579c4877e47a8a7bfde321e91e6c8" title="Returns the weighted average color between the two given colors.">xtd::drawing::color_converter::average</a> - Will be removed in version 0.4.0. </dd></dl>
-
-</div>
-</div>
-<a id="a0006066077e2d4e4b6aa70f2cae785a8" name="a0006066077e2d4e4b6aa70f2cae785a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0006066077e2d4e4b6aa70f2cae785a8">&#9670;&#160;</a></span>average() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> xtd::drawing::color::average </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color1</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color2</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>weight</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>average_alpha</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the weighted average color between the two given colors. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">color1</td><td>The first color. </td></tr>
-    <tr><td class="paramname">color2</td><td>The second color. </td></tr>
-    <tr><td class="paramname">weight</td><td>The weighting factor </td></tr>
-    <tr><td class="paramname">average_alpha</td><td>if <code>true</code> alpha was compute to; otherwise the alpha result is the alpha of color1 </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The average color. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The alpha, red, green and blue values are averages using the following formula: <div class="fragment"><div class="line"><a class="code hl_function" href="#a0c189d088fc2611f0e3b1026384438ce">color</a> = color1 * (1 - weight) + color2 * weight;</div>
-</div><!-- fragment --> </dd>
-<dd>
-Thus, a weight value of 1.0 will return the first color, while a value of 0.0 will return the second color. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000176">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="classxtd_1_1drawing_1_1color__converter.html#a67e579c4877e47a8a7bfde321e91e6c8" title="Returns the weighted average color between the two given colors.">xtd::drawing::color_converter::average</a> - Will be removed in version 0.4.0. </dd></dl>
-
-</div>
-</div>
-<a id="a51840dadcee5d1e69d618233ea1e2cad" name="a51840dadcee5d1e69d618233ea1e2cad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51840dadcee5d1e69d618233ea1e2cad">&#9670;&#160;</a></span>dark() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> xtd::drawing::color::dark </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates a new darker color of the specified color with 33% factor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">color</td><td>The color to dark. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The new color. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000177">Deprecated</a></b></dt><dd>Replaced by xtd::drawing::color_converter::dark - Will be removed in version 0.4.0. </dd></dl>
-
-</div>
-</div>
 <a id="a40449eec4e25b7d2a6ca441abdbdb14a" name="a40449eec4e25b7d2a6ca441abdbdb14a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40449eec4e25b7d2a6ca441abdbdb14a">&#9670;&#160;</a></span>dark() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a40449eec4e25b7d2a6ca441abdbdb14a">&#9670;&#160;</a></span>dark() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2622,6 +2481,183 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 
 </div>
 </div>
+<a id="a81854888bb57081e39e9094b2138588f" name="a81854888bb57081e39e9094b2138588f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81854888bb57081e39e9094b2138588f">&#9670;&#160;</a></span>parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> xtd::drawing::color::parse </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> class from the specified name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>A string that is the name of a predefined color. Valid names are the same as the names of the elements of the <a class="el" href="group__colors.html#gabb6249e3fb8a4388778157257e99049b" title="Specifies the known system colors.">xtd::drawing::known_color</a> enumeration or hexadecimal value that represents argb value, or four decimal values separated by a comma representing respectively a, r, g, b, values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> The <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure that this method creates. </dd></dl>
+
+</div>
+</div>
+<a id="a8351650ddb0b94701d7898f866c5bf3c" name="a8351650ddb0b94701d7898f866c5bf3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8351650ddb0b94701d7898f866c5bf3c">&#9670;&#160;</a></span>average() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> xtd::drawing::color::average </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>weight</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the weighted average color between the two given colors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color1</td><td>The first color. </td></tr>
+    <tr><td class="paramname">color2</td><td>The second color. </td></tr>
+    <tr><td class="paramname">weight</td><td>The weighting factor </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The average color. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The alpha of color1 is conserved. </dd>
+<dd>
+The red, green and blue values are averages using the following formula: <div class="fragment"><div class="line"><a class="code hl_function" href="#a0c189d088fc2611f0e3b1026384438ce">color</a> = color1 * (1 - weight) + color2 * weight;</div>
+</div><!-- fragment --> </dd>
+<dd>
+Thus, a weight value of <code>1.0</code> will return the second color, while a value of <code>0.0</code> will return the first color. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000175">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="classxtd_1_1drawing_1_1color__converter.html#a67e579c4877e47a8a7bfde321e91e6c8" title="Returns the weighted average color between the two given colors.">xtd::drawing::color_converter::average</a> - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="a0006066077e2d4e4b6aa70f2cae785a8" name="a0006066077e2d4e4b6aa70f2cae785a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0006066077e2d4e4b6aa70f2cae785a8">&#9670;&#160;</a></span>average() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> xtd::drawing::color::average </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double</td>          <td class="paramname"><span class="paramname"><em>weight</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>average_alpha</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the weighted average color between the two given colors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color1</td><td>The first color. </td></tr>
+    <tr><td class="paramname">color2</td><td>The second color. </td></tr>
+    <tr><td class="paramname">weight</td><td>The weighting factor </td></tr>
+    <tr><td class="paramname">average_alpha</td><td>if <code>true</code> alpha was compute to; otherwise the alpha result is the alpha of color1 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The average color. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The alpha, red, green and blue values are averages using the following formula: <div class="fragment"><div class="line"><a class="code hl_function" href="#a0c189d088fc2611f0e3b1026384438ce">color</a> = color1 * (1 - weight) + color2 * weight;</div>
+</div><!-- fragment --> </dd>
+<dd>
+Thus, a weight value of 1.0 will return the first color, while a value of 0.0 will return the second color. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000176">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="classxtd_1_1drawing_1_1color__converter.html#a67e579c4877e47a8a7bfde321e91e6c8" title="Returns the weighted average color between the two given colors.">xtd::drawing::color_converter::average</a> - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="a51840dadcee5d1e69d618233ea1e2cad" name="a51840dadcee5d1e69d618233ea1e2cad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51840dadcee5d1e69d618233ea1e2cad">&#9670;&#160;</a></span>dark() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> xtd::drawing::color::dark </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">color</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new darker color of the specified color with 33% factor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>The color to dark. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The new color. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000177">Deprecated</a></b></dt><dd>Replaced by xtd::drawing::color_converter::dark - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
 <a id="a0902f81caabae78569ff46d1e2e682be" name="a0902f81caabae78569ff46d1e2e682be"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0902f81caabae78569ff46d1e2e682be">&#9670;&#160;</a></span>light() <span class="overload">[1/2]</span></h2>
 
@@ -2695,40 +2731,6 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 <dl class="section return"><dt>Returns</dt><dd>The new color. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Thus, a percent value of <code>1.0</code> will return the <a class="el" href="#ad04928a6ddbfa799f6fdaca302cacf11" title="Gets a system-defined color that has an ARGB value of 0xFF000000. This field is constant.">xtd::drawing::color::black</a>, while a value of <code>0.0</code> will return the color. </dd></dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000179">Deprecated</a></b></dt><dd>Replaced by xtd::drawing::color_converter::light - Will be removed in version 0.4.0. </dd></dl>
-
-</div>
-</div>
-<a id="a81854888bb57081e39e9094b2138588f" name="a81854888bb57081e39e9094b2138588f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81854888bb57081e39e9094b2138588f">&#9670;&#160;</a></span>parse()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> xtd::drawing::color::parse </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>color</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates a <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> class from the specified name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">color</td><td>A string that is the name of a predefined color. Valid names are the same as the names of the elements of the <a class="el" href="group__colors.html#gabb6249e3fb8a4388778157257e99049b" title="Specifies the known system colors.">xtd::drawing::known_color</a> enumeration or hexadecimal value that represents argb value, or four decimal values separated by a comma representing respectively a, r, g, b, values. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> The <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure that this method creates. </dd></dl>
 
 </div>
 </div>
@@ -6198,7 +6200,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 10 2025 22:52:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 11 2025 18:08:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
