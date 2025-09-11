@@ -95,10 +95,7 @@ control::control_collection control::top_level_controls_;
 
 list<xtd::sptr<xtd::forms::control>> control::control_collection::controls_;
 
-control::control_collection::control_collection(const control::control_collection::allocator_type& allocator) : control::control_collection::base(allocator) {
-}
-
-control::control_collection::control_collection(bool keep_cloned_controls, const control::control_collection::allocator_type& allocator) : control::control_collection::base(allocator), keep_cloned_controls_ {keep_cloned_controls} {
+control::control_collection::control_collection(bool keep_cloned_controls) : keep_cloned_controls_ {keep_cloned_controls} {
 }
 
 control::control_collection::control_collection(const control::control_collection::base& collection) : control::control_collection::base(collection) {}
@@ -1915,7 +1912,7 @@ void control::do_layout_children_with_dock_style() {
     docking_rect.y = docking_rect.top() + data_->padding.top();
     docking_rect.width = docking_rect.width - data_->padding.left() - data_->padding.right();
     docking_rect.height = docking_rect.height - data_->padding.top() - data_->padding.bottom();
-    for (auto iterator = data_->controls.rbegin(); iterator != data_->controls.rend(); ++iterator) {
+    for (auto iterator = data_->controls.items().rbegin(); iterator != data_->controls.items().rend(); ++iterator) {
       if (!iterator->get().visible()) continue;
       if (iterator->get().dock() == dock_style::top) {
         iterator->get().location({docking_rect.left(), docking_rect.top()});

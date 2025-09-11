@@ -46,6 +46,7 @@ add_projects(
   threading
   time_span
   timers
+  tips_and_tricks
   uri
   version
   web

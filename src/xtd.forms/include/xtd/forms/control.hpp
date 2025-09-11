@@ -162,15 +162,13 @@ namespace xtd {
         
         /// @{
         /// @brief Creates a new object xtd::forms::control::control_collection with specified allocator (optional).
-        /// @param allocator The allocator associate to the collection (optional).
         /// @remarks If allocator not specified, the std::allocator<value_type> is used.
-        explicit control_collection(const allocator_type& allocator = allocator_type());
+        explicit control_collection() = default;
         /// @brief Creates a new object xtd::forms::control::control_collection with specified keep_cloned_controls, and allocator (optional).
         /// @param keep_cloned_controls If `true` the collection clone and keep controls; otherwise none.
-        /// @param allocator The allocator associate to the collection (optional).
         /// @remarks If allocator not specified, the std::allocator<value_type> is used.
         /// @warning Internal use only
-        explicit control_collection(bool keep_cloned_controls, const allocator_type& allocator = allocator_type());
+        explicit control_collection(bool keep_cloned_controls);
         /// @}
         
         /// @cond

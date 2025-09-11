@@ -104,7 +104,7 @@ namespace {
       
       
       // Incase no button was specified, add a custom Close button
-      if (mn.buttons().empty()) {
+      if (mn.buttons().count() == 0) {
         auto btn = xtd::new_uptr<button>();
         btn->parent(v_layout_buttons_)
         .text("&Close")

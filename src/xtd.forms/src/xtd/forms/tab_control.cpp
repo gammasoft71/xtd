@@ -17,9 +17,6 @@ using namespace xtd;
 using namespace xtd::forms;
 using namespace xtd::helpers;
 
-tab_control::tab_page_collection::tab_page_collection(const tab_control::tab_page_collection::allocator_type& allocator) : tab_control::tab_page_collection::base(allocator) {
-}
-
 tab_control::tab_page_collection::tab_page_collection(const tab_control::tab_page_collection::base& collection) : tab_control::tab_page_collection::base(collection) {}
 tab_control::tab_page_collection::tab_page_collection(const tab_control::tab_page_collection& collection) : tab_control::tab_page_collection::base(collection) {}
 tab_control::tab_page_collection& tab_control::tab_page_collection::operator =(const tab_control::tab_page_collection& collection) {

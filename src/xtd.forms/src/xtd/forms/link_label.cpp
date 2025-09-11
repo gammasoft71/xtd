@@ -29,9 +29,6 @@ struct link_label::data {
   std::optional<xtd::drawing::color> visited_link_color;
 };
 
-link_label::link_collection::link_collection(const link_label::link_collection::allocator_type& allocator) : link_label::link_collection::base(allocator) {
-}
-
 link_label::link_collection::link_collection(const link_label::link_collection::base& collection) : link_label::link_collection::base(collection) {}
 link_label::link_collection::link_collection(const link_label::link_collection& collection) : link_label::link_collection::base(collection) {}
 link_label::link_collection& link_label::link_collection::operator =(const link_label::link_collection& collection) {
@@ -474,7 +471,7 @@ void link_label::on_text_align_changed(const event_args& e) {
 }
 
 void link_label::on_text_changed(const event_args& e) {
-  if (data_->links.empty()) data_->links.add({0, text().length()});
+  if (data_->links.count() == 0) data_->links.add({0, text().length()});
   label::on_text_changed(e);
   invalidate();
 }
