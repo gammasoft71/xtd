@@ -40,7 +40,7 @@ namespace xtd {
     format_exception(const format_exception&) = default;
     format_exception& operator =(const format_exception&) = default;
     /// @endcond
-
+    
     /// @name Public Deprecated Constructors
     
     /// @{

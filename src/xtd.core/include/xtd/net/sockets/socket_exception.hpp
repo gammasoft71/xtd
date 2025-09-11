@@ -77,7 +77,7 @@ namespace xtd {
         /// @remarks The parameterless constructor for xtd::net::sockets::socket_exception sets the xtd::net::sockets::socket_exception::socket_error_code property to the last operating system error that occurred. For more information about socket error codes, see the [Windows Sockets version 2 API error code](https://learn.microsoft.com/en-us/windows/desktop/winsock/windows-sockets-error-codes-2) documentation.
         virtual xtd::net::sockets::socket_error socket_error() const noexcept;
         /// @}
-
+        
         /// @name Public Deprecated Constructors
         
         /// @{

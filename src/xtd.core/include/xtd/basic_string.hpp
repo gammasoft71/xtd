@@ -3621,7 +3621,7 @@ namespace xtd {
     [[deprecated("Replaced by typeof_(info).full_name() - Will be removed in version 0.4.0.")]]
     static basic_string full_class_name(const std::type_info & info) {return __xtd_get_full_class_name(info);}
     /// @}
-
+    
   private:
     friend class basic_string<char>;
     friend class basic_string<xtd::char16>;

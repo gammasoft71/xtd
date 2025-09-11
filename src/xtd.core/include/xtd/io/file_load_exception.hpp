@@ -46,12 +46,12 @@ namespace xtd {
       template<class exception_t>
       file_load_exception(const xtd::optional<xtd::string>& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : io_exception(message, inner_exception, stack_frame) {error_code(h_result::make_error_code(h_result::COR_E_FILELOAD));}
       /// @}
-
+      
       /// @cond
       file_load_exception(const file_load_exception&) = default;
       file_load_exception& operator =(const file_load_exception&) = default;
       /// @endcond
-
+      
       /// @name Public Deprecated Constructors
       
       /// @{
