@@ -292,8 +292,7 @@ namespace xtd {
         const value_type & current() const override {
           if (version_ != items_.data_->items.version()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
           if (index_ < items_.count()) return items_[index_];
-          static thread_local auto default_value = value_type {};
-          return default_value;
+          return default_value_;
         }
         
         bool move_next() override {
@@ -306,10 +305,11 @@ namespace xtd {
           index_ = basic_array::npos;
         }
         
-protected:
+      protected:
         const basic_array& items_;
         size_type index_ = basic_array::npos;
         size_type version_ = 0;
+        value_type default_value_;
       };
       return {new_ptr < basic_array_enumerator > (*this, data_->items.version())};
     }

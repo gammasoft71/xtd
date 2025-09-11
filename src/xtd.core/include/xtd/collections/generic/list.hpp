@@ -96,8 +96,7 @@ namespace xtd {
           const type_t& current() const override {
             if (version_ != items_.data_->items.version()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
             if (index_ < items_.count()) return items_[index_];
-            static thread_local auto default_value = value_type {};
-            return default_value;
+            return default_value_;
           }
           
           bool move_next() override {
@@ -114,6 +113,7 @@ namespace xtd {
           const list& items_;
           xtd::size index_ = list::npos;
           xtd::size version_ = 0;
+          type_t default_value_;
         };
         
       public:

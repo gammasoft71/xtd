@@ -135,6 +135,7 @@ namespace xtd {
     private:
       xtd::optional<xtd::string> file_name_;
       bool defined_message_ = false;
+      mutable string message_;
     };
   }
 }

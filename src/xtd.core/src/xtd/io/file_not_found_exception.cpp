@@ -22,9 +22,8 @@ const optional<string>& file_not_found_exception::file_name() const noexcept {
 
 const xtd::string& file_not_found_exception::message() const noexcept {
   if (defined_message_ || !file_name_.has_value()) return exception::message();
-  thread_local static string message;
-  message = string::format("Could not load file '{}'. The system cannot find the file specified.", file_name_.value());
-  return message;
+  message_ = string::format("Could not load file '{}'. The system cannot find the file specified.", file_name_.value());
+  return message_;
 }
 
 /// @todo remove deprecated in version 0.4.0

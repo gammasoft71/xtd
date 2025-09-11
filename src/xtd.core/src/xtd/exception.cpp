@@ -21,6 +21,7 @@ struct exception::data {
   uptr<exception> inner_exception;
   std::error_code error = h_result::make_error_code(h_result::COR_E_EXCEPTION);
   string help_link;
+  mutable xtd::string result_message;
   string source = io::path::get_file_name(reflection::assembly::get_executing_assembly().location());
   diagnostics::stack_frame stack_frame;
   sptr<xtd::diagnostics::stack_trace> stack_trace;
@@ -77,9 +78,8 @@ exception::exception_ref exception::inner_exception() const noexcept {
 }
 
 const xtd::string& exception::message() const noexcept {
-  static thread_local auto message = string::empty_string;
-  message = data_->message.value_or(error_code().value() != h_result::COR_E_EXCEPTION ? string {data_->error.message()} : string::format("Exception of type '{}' was thrown.", typeof_(*this)));
-  return message;
+  data_->result_message = data_->message.value_or(error_code().value() != h_result::COR_E_EXCEPTION ? string {data_->error.message()} : string::format("Exception of type '{}' was thrown.", typeof_(*this)));
+  return data_->result_message;
 }
 
 const xtd::string& exception::source() const noexcept {
