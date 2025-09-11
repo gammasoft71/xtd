@@ -910,41 +910,6 @@ namespace xtd {
       /// @name Public Static Methods
       
       /// @{
-      /// @brief Returns the weighted average color between the two given colors.
-      /// @param color1 The first color.
-      /// @param color2 The second color.
-      /// @param weight The weighting factor
-      /// @return The average color.
-      /// @remarks The alpha of color1 is conserved.
-      /// @remarks The red, green and blue values are averages using the following formula:
-      /// ```cpp
-      /// color = color1 * (1 - weight) + color2 * weight;
-      /// ```
-      /// @remarks Thus, a weight value of `1.0` will return the second color, while a value of `0.0` will return the first color.
-      /// @deprecated Replaced by xtd::drawing::color_converter::average - Will be removed in version 0.4.0.
-      [[deprecated("Replaced by xtd::drawing::color_converter::average - Will be removed in version 0.4.0.")]]
-      static color average(const color& color1, const color& color2, double weight) noexcept;
-      /// @brief Returns the weighted average color between the two given colors.
-      /// @param color1 The first color.
-      /// @param color2 The second color.
-      /// @param weight The weighting factor
-      /// @param average_alpha if `true` alpha was compute to; otherwise the alpha result is the alpha of color1
-      /// @return The average color.
-      /// @remarks The alpha, red, green and blue values are averages using the following formula:
-      /// ```cpp
-      /// color = color1 * (1 - weight) + color2 * weight;
-      /// ```
-      /// @remarks Thus, a weight value of 1.0 will return the first color, while a value of 0.0 will return the second color.
-      /// @deprecated Replaced by xtd::drawing::color_converter::average - Will be removed in version 0.4.0.
-      [[deprecated("Replaced by xtd::drawing::color_converter::average - Will be removed in version 0.4.0.")]]
-      static color average(const color& color1, const color& color2, double weight, bool average_alpha) noexcept;
-      
-      /// @brief Creates a new darker color of the specified color with 33% factor.
-      /// @param color The color to dark.
-      /// @return The new color.
-      /// @deprecated Replaced by xtd::drawing::color_converter::dark - Will be removed in version 0.4.0.
-      [[deprecated("Replaced by xtd::drawing::color_converter::dark - Will be removed in version 0.4.0.")]]
-      static color dark(const color& color) noexcept;
       /// @brief Creates a new darker color of the specified color with specified percent factor.
       /// @param color The color to dark.
       /// @param percent The darker factor in % (from 0.0 to 1.0).
@@ -1256,6 +1221,49 @@ namespace xtd {
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       static xtd::drawing::color from_yuv(float y, float u, float v) noexcept;
       
+      /// @brief Creates a xtd::drawing::color class from the specified name.
+      /// @param color A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration or hexadecimal value that represents argb value, or four decimal values separated by a comma representing respectively a, r, g, b, values.
+      /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
+      static xtd::drawing::color parse(const xtd::string& color) noexcept;
+
+      /// @name Public Deprecated Static Methods
+      
+      /// @{
+      /// @brief Returns the weighted average color between the two given colors.
+      /// @param color1 The first color.
+      /// @param color2 The second color.
+      /// @param weight The weighting factor
+      /// @return The average color.
+      /// @remarks The alpha of color1 is conserved.
+      /// @remarks The red, green and blue values are averages using the following formula:
+      /// ```cpp
+      /// color = color1 * (1 - weight) + color2 * weight;
+      /// ```
+      /// @remarks Thus, a weight value of `1.0` will return the second color, while a value of `0.0` will return the first color.
+      /// @deprecated Replaced by xtd::drawing::color_converter::average - Will be removed in version 0.4.0.
+      [[deprecated("Replaced by xtd::drawing::color_converter::average - Will be removed in version 0.4.0.")]]
+      static color average(const color& color1, const color& color2, double weight) noexcept;
+      /// @brief Returns the weighted average color between the two given colors.
+      /// @param color1 The first color.
+      /// @param color2 The second color.
+      /// @param weight The weighting factor
+      /// @param average_alpha if `true` alpha was compute to; otherwise the alpha result is the alpha of color1
+      /// @return The average color.
+      /// @remarks The alpha, red, green and blue values are averages using the following formula:
+      /// ```cpp
+      /// color = color1 * (1 - weight) + color2 * weight;
+      /// ```
+      /// @remarks Thus, a weight value of 1.0 will return the first color, while a value of 0.0 will return the second color.
+      /// @deprecated Replaced by xtd::drawing::color_converter::average - Will be removed in version 0.4.0.
+      [[deprecated("Replaced by xtd::drawing::color_converter::average - Will be removed in version 0.4.0.")]]
+      static color average(const color& color1, const color& color2, double weight, bool average_alpha) noexcept;
+      
+      /// @brief Creates a new darker color of the specified color with 33% factor.
+      /// @param color The color to dark.
+      /// @return The new color.
+      /// @deprecated Replaced by xtd::drawing::color_converter::dark - Will be removed in version 0.4.0.
+      [[deprecated("Replaced by xtd::drawing::color_converter::dark - Will be removed in version 0.4.0.")]]
+      static color dark(const color& color) noexcept;
       /// @brief Creates a new lighter color of the specified color with 33% factor.
       /// @param color The color to light.
       /// @return The new color.
@@ -1270,11 +1278,6 @@ namespace xtd {
       /// @deprecated Replaced by xtd::drawing::color_converter::light - Will be removed in version 0.4.0.
       [[deprecated("Replaced by xtd::drawing::color_converter::light - Will be removed in version 0.4.0.")]]
       static color light(const color& color, double percent) noexcept;
-      
-      /// @brief Creates a xtd::drawing::color class from the specified name.
-      /// @param color A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration or hexadecimal value that represents argb value, or four decimal values separated by a comma representing respectively a, r, g, b, values.
-      /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
-      static xtd::drawing::color parse(const xtd::string& color) noexcept;
       /// @}
       
     private:

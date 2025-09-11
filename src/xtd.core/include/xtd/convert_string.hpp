@@ -1093,7 +1093,11 @@ namespace xtd {
     /// wstring s1 = string_converter::to_wstring(c1);
     /// ```
     static xtd::wstring to_wstring(wchar* str) noexcept;
+    /// @}
     
+    /// @name Public Deprecated Static Methods
+    
+    /// @{
     /// @brief Converts string_t to xtd::string.
     /// @param str string to convert.
     /// @return The converted string.

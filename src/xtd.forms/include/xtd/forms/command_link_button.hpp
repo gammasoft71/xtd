@@ -102,15 +102,6 @@ namespace xtd {
       /// @return Current control.
       /// @remarks Is equivalent to calling text property with main text and supplementary text separated by "\n".
       void set_texts(const xtd::string& text, const xtd::string& supplementary_text);
-      
-      /// @brief Sets text and supplementary text.
-      /// @param text A string that represent control text
-      /// @param supplementary_text A string that represent supplementary text.
-      /// @return Current control.
-      /// @remarks Is equivalent to calling text property with main text and supplementary text separated by "\n".
-      /// @deprecated Replaced by xtd::forms::command_link_button::set_texts - Will be removed in version 0.4.0.
-      [[deprecated("Replaced by xtd::forms::command_link_button::set_texts - Will be removed in version 0.4.0.")]]
-      control& texts(const xtd::string& text, const xtd::string& supplementary_text);
       /// @}
       
       /// @name Public Static Methods
@@ -221,6 +212,19 @@ namespace xtd {
       static command_link_button create(const control& parent, const std::tuple<xtd::string, xtd::string>& texts, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @}
       
+      /// @name Public Deprecated Methods
+      
+      /// @{
+      /// @brief Sets text and supplementary text.
+      /// @param text A string that represent control text
+      /// @param supplementary_text A string that represent supplementary text.
+      /// @return Current control.
+      /// @remarks Is equivalent to calling text property with main text and supplementary text separated by "\n".
+      /// @deprecated Replaced by xtd::forms::command_link_button::set_texts - Will be removed in version 0.4.0.
+      [[deprecated("Replaced by xtd::forms::command_link_button::set_texts - Will be removed in version 0.4.0.")]]
+      control& texts(const xtd::string& text, const xtd::string& supplementary_text);
+      /// @}
+
     protected:
       /// @name Protected Properties
       

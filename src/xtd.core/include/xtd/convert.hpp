@@ -5120,7 +5120,11 @@ namespace xtd {
     static string to_string(type_t value) noexcept {
       return string::format("{}", value);
     }
+    /// @}
     
+    /// @name Public Deprecated Static Methods
+    
+    /// @{
     /// @brief Convert type_t to string.
     /// @param value object to convert.
     /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
@@ -5135,12 +5139,13 @@ namespace xtd {
     /// @deprecated Replaced by xtd::convert::to_string - Will be removed in version 0.4.0.
     template<class string_t>
     [[deprecated("Replaced by xtd::convert::to_string - Will be removed in version 0.4.0.")]] static string to_ustring(const string_t& value) {return to_string(value);}
+    /// @}
+
     /// @cond
     template<class char_t>
     [[deprecated("Replaced by xtd::convert::to_string - Will be removed in version 0.4.0.")]] static string to_ustring(const char_t* value) {return to_string(value);}
     template<class char_t>
     [[deprecated("Replaced by xtd::convert::to_string - Will be removed in version 0.4.0.")]] static string to_ustring(char_t* value) {return to_string(value);}
     /// @endcond
-    /// @}
   };
 }
