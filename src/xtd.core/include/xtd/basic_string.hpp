@@ -1503,12 +1503,6 @@ namespace xtd {
       return result;
     }
     
-    /// @brief Indicates whether this basic_string is an empty basic_string ("").
-    /// @return `true` if the value parameter is null or an empty basic_string (""); otherwise, `false`.
-    /// @deprecated Replaced by xtd::basic_string::is_empty(const xtd::basic_string&) - Will be removed in version 0.4.0.
-    [[deprecated("Replaced by xtd::basic_string::is_empty(const xtd::basic_string&) - Will be removed in version 0.4.0.")]]
-    bool is_empty() const noexcept {return is_empty(*this);}
-    
     /// @brief Reports the index of the last occurrence of the specified basic_string in this basic_string.
     /// @param value An unicode character to seek
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
@@ -2012,27 +2006,6 @@ namespace xtd {
     /// @name Public Static Methods
     
     /// @{
-    /// @brief Gets the class name of the object_t.
-    /// @return The class name of the object_t.
-    /// @remarks For example, the name of the basic_string type is basic_string.
-    /// @deprecated Replaced by typeof_<object_t>().name() - Will be removed in version 0.4.0.
-    template<class object_t>
-    [[deprecated("Replaced by typeof_<object_t>().name() - Will be removed in version 0.4.0.")]]
-    static basic_string class_name() {return get_class_name(full_class_name<object_t>());}
-    /// @brief Gets the class name of the specified object.
-    /// @return The class name of the specified object.
-    /// @remarks For example, the name of the basic_string type is basic_string.
-    /// @deprecated Replaced by typeof_(object).name() - Will be removed in version 0.4.0.
-    template<class object_t>
-    [[deprecated("Replaced by typeof_(object).name() - Will be removed in version 0.4.0.")]]
-    static basic_string class_name(const object_t& object) {return get_class_name(full_class_name(object));}
-    /// @brief Gets the class name of the specified object.
-    /// @return The class name of the specified object.
-    /// @remarks For example, the name of the basic_string type is basic_string.
-    /// @deprecated Replaced by typeof_(info).name() - Will be removed in version 0.4.0.
-    [[deprecated("Replaced by typeof_(info).name() - Will be removed in version 0.4.0.")]]
-    static basic_string class_name(const std::type_info & info) {return __xtd_get_class_name(info);}
-    
     /// @brief Compares two specified basic_string objects and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first basic_string to compare.
     /// @param str_b The second basic_string to compare.
@@ -2256,27 +2229,6 @@ namespace xtd {
     /// @remarks for more information about format see @ref FormatPage "Format".
     template<class ...args_t>
     static basic_string format(const basic_string<char>& fmt, args_t&& ... args);
-    
-    /// @brief Gets the fully qualified class name of the objec_t, including the namespace of the objec_t.
-    /// @return The fully qualified class name of the objec_t, including the namespace of the objec_t.
-    /// @remarks For example, the fully qualified name of the basic_string type is xtd::basic_string.
-    /// @deprecated Replaced by typeof_<object_t>().full_name() - Will be removed in version 0.4.0.
-    template<class object_t>
-    [[deprecated("Replaced by typeof_<object_t>().full_name() - Will be removed in version 0.4.0.")]]
-    static basic_string full_class_name() {return demangle(typeid(object_t).name());}
-    /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
-    /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
-    /// @remarks For example, the fully qualified name of the basic_string type is xtd::basic_string.
-    /// @deprecated Replaced by typeof_(object).full_name() - Will be removed in version 0.4.0.
-    template<class object_t>
-    [[deprecated("Replaced by typeof_(object).full_name() - Will be removed in version 0.4.0.")]]
-    static basic_string full_class_name(const object_t& object) {return demangle(typeid(object).name());}
-    /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
-    /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
-    /// @remarks For example, the fully qualified name of the basic_string type is xtd::basic_string.
-    /// @deprecated Replaced by typeof_(info).full_name() - Will be removed in version 0.4.0.
-    [[deprecated("Replaced by typeof_(info).full_name() - Will be removed in version 0.4.0.")]]
-    static basic_string full_class_name(const std::type_info & info) {return __xtd_get_full_class_name(info);}
     
     /// @brief Indicates whether the specifeid basic_string is an empty basic_string ("").
     /// @param string The xtd::basic_string to check if empty.
@@ -3617,6 +3569,59 @@ namespace xtd {
     }
     /// @}
     
+    /// Name Public Deprecated Methods
+    
+    /// @brief Indicates whether this basic_string is an empty basic_string ("").
+    /// @return `true` if the value parameter is null or an empty basic_string (""); otherwise, `false`.
+    /// @deprecated Replaced by xtd::basic_string::is_empty(const xtd::basic_string&) - Will be removed in version 0.4.0.
+    [[deprecated("Replaced by xtd::basic_string::is_empty(const xtd::basic_string&) - Will be removed in version 0.4.0.")]]
+    bool is_empty() const noexcept {return is_empty(*this);}
+    /// @brief Gets the class name of the object_t.
+    /// @return The class name of the object_t.
+    /// @remarks For example, the name of the basic_string type is basic_string.
+    /// @deprecated Replaced by typeof_<object_t>().name() - Will be removed in version 0.4.0.
+    /// @}
+    
+    /// Name Public Deprecated Static Methods
+    
+    template<class object_t>
+    [[deprecated("Replaced by typeof_<object_t>().name() - Will be removed in version 0.4.0.")]]
+    static basic_string class_name() {return get_class_name(full_class_name<object_t>());}
+    /// @brief Gets the class name of the specified object.
+    /// @return The class name of the specified object.
+    /// @remarks For example, the name of the basic_string type is basic_string.
+    /// @deprecated Replaced by typeof_(object).name() - Will be removed in version 0.4.0.
+    template<class object_t>
+    [[deprecated("Replaced by typeof_(object).name() - Will be removed in version 0.4.0.")]]
+    static basic_string class_name(const object_t& object) {return get_class_name(full_class_name(object));}
+    /// @brief Gets the class name of the specified object.
+    /// @return The class name of the specified object.
+    /// @remarks For example, the name of the basic_string type is basic_string.
+    /// @deprecated Replaced by typeof_(info).name() - Will be removed in version 0.4.0.
+    [[deprecated("Replaced by typeof_(info).name() - Will be removed in version 0.4.0.")]]
+    static basic_string class_name(const std::type_info & info) {return __xtd_get_class_name(info);}
+    /// @brief Gets the fully qualified class name of the objec_t, including the namespace of the objec_t.
+    /// @return The fully qualified class name of the objec_t, including the namespace of the objec_t.
+    /// @remarks For example, the fully qualified name of the basic_string type is xtd::basic_string.
+    /// @deprecated Replaced by typeof_<object_t>().full_name() - Will be removed in version 0.4.0.
+    template<class object_t>
+    [[deprecated("Replaced by typeof_<object_t>().full_name() - Will be removed in version 0.4.0.")]]
+    static basic_string full_class_name() {return demangle(typeid(object_t).name());}
+    /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
+    /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
+    /// @remarks For example, the fully qualified name of the basic_string type is xtd::basic_string.
+    /// @deprecated Replaced by typeof_(object).full_name() - Will be removed in version 0.4.0.
+    template<class object_t>
+    [[deprecated("Replaced by typeof_(object).full_name() - Will be removed in version 0.4.0.")]]
+    static basic_string full_class_name(const object_t& object) {return demangle(typeid(object).name());}
+    /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
+    /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
+    /// @remarks For example, the fully qualified name of the basic_string type is xtd::basic_string.
+    /// @deprecated Replaced by typeof_(info).full_name() - Will be removed in version 0.4.0.
+    [[deprecated("Replaced by typeof_(info).full_name() - Will be removed in version 0.4.0.")]]
+    static basic_string full_class_name(const std::type_info & info) {return __xtd_get_full_class_name(info);}
+    /// @}
+
   private:
     friend class basic_string<char>;
     friend class basic_string<xtd::char16>;

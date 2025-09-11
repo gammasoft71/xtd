@@ -45,7 +45,16 @@ namespace xtd {
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
       template<class exception_t>
       drive_not_found_exception(const xtd::optional<xtd::string>& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : io_exception(message, inner_exception, stack_frame) {error_code(h_result::make_error_code(h_result::COR_E_DRIVENOTFOUND));}
+      /// @}
       
+      /// @cond
+      drive_not_found_exception(const drive_not_found_exception&) = default;
+      drive_not_found_exception& operator =(const drive_not_found_exception&) = default;
+      /// @endcond
+
+      /// @name Public Deprecated Constructors
+      
+      /// @{
       /// @brief Create a new instance of class drive_not_found_exception
       /// @param message Message string associate to the exception.
       /// @param error Error code associate to the exception.
@@ -108,11 +117,6 @@ namespace xtd {
       [[deprecated("Use xtd::io::drive_not_found_exception (const xtd::string& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame) and manually set the properties xtd::exception::error_code and xtd::exception::help_link - Will be removed in version 0.4.0.")]]
       explicit drive_not_found_exception(const xtd::string& message, const std::exception& inner_exception, const std::error_code& error, const xtd::string& help_link, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @}
-      
-      /// @cond
-      drive_not_found_exception(const drive_not_found_exception&) = default;
-      drive_not_found_exception& operator =(const drive_not_found_exception&) = default;
-      /// @endcond
     };
   }
 }

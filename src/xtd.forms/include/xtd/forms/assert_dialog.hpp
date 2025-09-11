@@ -65,18 +65,6 @@ namespace xtd {
       /// @param value The new dialog message text.
       /// @return Current input_dialog instance.
       assert_dialog& message(const xtd::string& value);
-      
-      /// @brief Gets stack frame.
-      /// @return The stack frame.
-      /// @deprecated Will be removed in version 0.4.0.
-      [[deprecated("Will be removed in version 0.4.0.")]]
-      xtd::diagnostics::stack_frame stack_frame() const noexcept;
-      /// @brief Sets stack frame.
-      /// @param value The stack frame.
-      /// @return Current assert_dialog instance.
-      /// @deprecated Use "Use xtd::forms::assert_dialog::show_dialog ([owner,] stack_frame) or xtd::forms::assert_dialog::show_sheet (owner, stack_frame) - Will be removed in version 0.4.0.
-      [[deprecated("Use xtd::forms::assert_dialog::show_dialog ([owner,] stack_frame) or xtd::forms::assert_dialog::show_sheet (owner, stack_frame) - Will be removed in version 0.4.0.")]]
-      assert_dialog& stack_frame(const xtd::diagnostics::stack_frame& value);
       /// @}
       
       /// @name Public Methods
@@ -106,6 +94,22 @@ namespace xtd {
       event<assert_dialog, dialog_closed_event_handler> dialog_closed;
       /// @}
       
+      /// @name Public Deprecated Properties
+      
+      /// @{
+      /// @brief Gets stack frame.
+      /// @return The stack frame.
+      /// @deprecated Will be removed in version 0.4.0.
+      [[deprecated("Will be removed in version 0.4.0.")]]
+      xtd::diagnostics::stack_frame stack_frame() const noexcept;
+      /// @brief Sets stack frame.
+      /// @param value The stack frame.
+      /// @return Current assert_dialog instance.
+      /// @deprecated Use "Use xtd::forms::assert_dialog::show_dialog ([owner,] stack_frame) or xtd::forms::assert_dialog::show_sheet (owner, stack_frame) - Will be removed in version 0.4.0.
+      [[deprecated("Use xtd::forms::assert_dialog::show_dialog ([owner,] stack_frame) or xtd::forms::assert_dialog::show_sheet (owner, stack_frame) - Will be removed in version 0.4.0.")]]
+      assert_dialog& stack_frame(const xtd::diagnostics::stack_frame& value);
+      /// @}
+
     protected:
       /// @name Protected Methods
       

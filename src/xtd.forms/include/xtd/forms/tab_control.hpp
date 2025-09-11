@@ -98,20 +98,6 @@ namespace xtd {
         /// @param text The text of element to insert.
         /// @param name The name of element to insert.
         void insert_at(size_t index, const xtd::string& text, const xtd::string& name);
-        
-        using xtd::forms::layout::arranged_element_collection<tab_page_ref>::push_back;
-        /// @brief Adds an element to the end.
-        /// @param text The text of element to add.
-        /// @deprecated Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
-        void push_back(const xtd::string& text);
-        /// @brief Adds an element to the end.
-        /// @param text The text of element to add.
-        /// @param name The name of element to add.
-        /// @deprecated Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
-        void push_back(const xtd::string& text, const string& name);
-        
         /// @}
         
         /// @cond
@@ -120,17 +106,6 @@ namespace xtd {
         void add(const char16* text);
         void add(const char32* text);
         void add(const wchar* text);
-        
-        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
-        void push_back(const char* text);
-        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
-        void push_back(const char8* text);
-        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
-        void push_back(const char16* text);
-        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
-        void push_back(const char32* text);
-        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
-        void push_back(const wchar* text);
         /// @endcond
         
         /// @name Operators
@@ -148,6 +123,35 @@ namespace xtd {
         /// @remarks The operator [] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator [] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
         std::optional<value_type> operator [](const xtd::string& name);
         /// @}
+
+        /// @name Public Deprecated Methods
+        
+        /// @{
+        using xtd::forms::layout::arranged_element_collection<tab_page_ref>::push_back;
+        /// @brief Adds an element to the end.
+        /// @param text The text of element to add.
+        /// @deprecated Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
+        void push_back(const xtd::string& text);
+        /// @brief Adds an element to the end.
+        /// @param text The text of element to add.
+        /// @param name The name of element to add.
+        /// @deprecated Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
+        void push_back(const xtd::string& text, const string& name);
+        
+        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
+        void push_back(const char* text);
+        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
+        void push_back(const char8* text);
+        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
+        void push_back(const char16* text);
+        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
+        void push_back(const char32* text);
+        [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
+        void push_back(const wchar* text);
+        /// @}
+
       private:
         friend tab_control;
         event<tab_page_collection, delegate<void(size_t index, const string& text, const string& name)>> text_added;

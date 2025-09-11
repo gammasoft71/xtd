@@ -70,11 +70,6 @@ namespace xtd {
       /// @remarks You must keep the stream open for the lifetime of the xtd::drawing::bitmap.
       /// @remarks Due to a limitation of the GDI+ decoder, an xtd::argument_exception is thrown if you construct a bitmap from a .png image file with a single dimension greater than 65,535 pixels.
       explicit bitmap(std::istream& stream, bool use_icm);
-      /// @brief Initializes a new instance of the bitmap class from the specified data xpm.
-      /// @param bits The data xpm used to load the image.
-      /// @deprecated Replaced by xtd::drawing::image::from_xpm_data - Will be removed in version 0.4.0.
-      [[deprecated("Replaced by xtd::drawing::image::from_xpm_data - Will be removed in version 0.4.0.")]]
-      explicit bitmap(const char* const* bits);
       /// @brief Initializes a new instance of the xtd::drawing::bitmap class with the specified size.
       /// @param width The width, in pixels, of the new bitmap.
       /// @param height The height, in pixels, of the new bitmap.
@@ -195,6 +190,16 @@ namespace xtd {
       static bitmap from_hicon(xtd::intptr icon);
       /// @}
       
+      /// @name Public Deprecated Constructors
+      
+      /// @{
+      /// @brief Initializes a new instance of the bitmap class from the specified data xpm.
+      /// @param bits The data xpm used to load the image.
+      /// @deprecated Replaced by xtd::drawing::image::from_xpm_data - Will be removed in version 0.4.0.
+      [[deprecated("Replaced by xtd::drawing::image::from_xpm_data - Will be removed in version 0.4.0.")]]
+      explicit bitmap(const char* const* bits);
+      /// @}
+
     private:
       bitmap() = default;
     };
