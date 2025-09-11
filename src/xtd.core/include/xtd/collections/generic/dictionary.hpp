@@ -1044,9 +1044,8 @@ private:
             const value_type & current() const override {
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               if (iterator_ != items_.items().cend()) {
-                static thread_local auto value = value_type {};
-                value = value_type {*iterator_};
-                return value;
+                value_ = value_type {*iterator_};
+                return value_;
               }
               static auto default_value_type = value_type {};
               return default_value_type;
@@ -1071,6 +1070,7 @@ protected:
             const dictionary& items_;
             typename dictionary::base_type::const_iterator iterator_ = items_.items().cend();
             size_type version_ = 0;
+            mutable value_type value_;
           };
           return {new_ptr < internal_enumerator > (*this, data_->version)};
         }
