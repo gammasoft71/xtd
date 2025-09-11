@@ -679,33 +679,33 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l01044" name="l01044"></a><span class="lineno"> 1044</span>            <span class="keyword">const</span> <a class="code hl_typedef" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ae2299afc830434c0a0ea06da8c6ce163">value_type</a> &amp; current()<span class="keyword"> const override </span>{</div>
 <div class="line"><a id="l01045" name="l01045"></a><span class="lineno"> 1045</span>              <span class="keywordflow">if</span> (version_ != items_.data_-&gt;version) <a class="code hl_function" href="classxtd_1_1helpers_1_1throw__helper.html#a4fcf5154d41ae7e68038268ea89492d6">xtd::helpers::throw_helper::throws</a>(<a class="code hl_enumvalue" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dcaf1203e404fb6b2467cd1884faa2c71c2">xtd::helpers::exception_case::invalid_operation</a>, <span class="stringliteral">&quot;Collection was modified; enumeration operation may not execute.&quot;</span>);</div>
 <div class="line"><a id="l01046" name="l01046"></a><span class="lineno"> 1046</span>              <span class="keywordflow">if</span> (iterator_ != items_.items().cend()) {</div>
-<div class="line"><a id="l01047" name="l01047"></a><span class="lineno"> 1047</span>                value_ = <a class="code hl_typedef" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ae2299afc830434c0a0ea06da8c6ce163">value_type</a> {*iterator_};</div>
-<div class="line"><a id="l01048" name="l01048"></a><span class="lineno"> 1048</span>                <span class="keywordflow">return</span> value_;</div>
-<div class="line"><a id="l01049" name="l01049"></a><span class="lineno"> 1049</span>              }</div>
-<div class="line"><a id="l01050" name="l01050"></a><span class="lineno"> 1050</span>              <span class="keyword">static</span> <span class="keyword">auto</span> default_value_type = <a class="code hl_typedef" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ae2299afc830434c0a0ea06da8c6ce163">value_type</a> {};</div>
-<div class="line"><a id="l01051" name="l01051"></a><span class="lineno"> 1051</span>              <span class="keywordflow">return</span> default_value_type;</div>
-<div class="line"><a id="l01052" name="l01052"></a><span class="lineno"> 1052</span>            }</div>
-<div class="line"><a id="l01053" name="l01053"></a><span class="lineno"> 1053</span>            </div>
-<div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span>            <span class="keywordtype">bool</span> move_next()<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span>              <span class="keywordflow">if</span> (version_ != items_.data_-&gt;version) <a class="code hl_function" href="classxtd_1_1helpers_1_1throw__helper.html#a4fcf5154d41ae7e68038268ea89492d6">xtd::helpers::throw_helper::throws</a>(<a class="code hl_enumvalue" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dcaf1203e404fb6b2467cd1884faa2c71c2">xtd::helpers::exception_case::invalid_operation</a>, <span class="stringliteral">&quot;Collection was modified; enumeration operation may not execute.&quot;</span>);</div>
-<div class="line"><a id="l01056" name="l01056"></a><span class="lineno"> 1056</span>              <span class="keywordflow">if</span> (!reset_) <span class="keywordflow">return</span> ++iterator_ != items_.items().cend();</div>
-<div class="line"><a id="l01057" name="l01057"></a><span class="lineno"> 1057</span>              reset_ = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l01058" name="l01058"></a><span class="lineno"> 1058</span>              iterator_ = items_.items().cbegin();</div>
-<div class="line"><a id="l01059" name="l01059"></a><span class="lineno"> 1059</span>              <span class="keywordflow">return</span> iterator_ != items_.items().cend();</div>
-<div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span>            }</div>
-<div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span>            </div>
-<div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span>            <span class="keywordtype">void</span> reset()<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l01063" name="l01063"></a><span class="lineno"> 1063</span>              reset_ = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>              version_ = items_.data_-&gt;version;</div>
-<div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span>              iterator_ = items_.items().cend();</div>
-<div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span>            }</div>
-<div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span>            </div>
-<div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span>            <span class="keywordtype">bool</span> reset_ = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span>            <span class="keyword">const</span> <a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a50b15016f1b91a266a8beec12ab89584">dictionary</a>&amp; items_;</div>
-<div class="line"><a id="l01071" name="l01071"></a><span class="lineno"> 1071</span>            <span class="keyword">typename</span> dictionary::base_type::const_iterator iterator_ = items_.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ac5f9fa62ba008a290c60f795e768d74f">items</a>().cend();</div>
-<div class="line"><a id="l01072" name="l01072"></a><span class="lineno"> 1072</span>            <a class="code hl_typedef" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> version_ = 0;</div>
-<div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span>            <span class="keyword">mutable</span> <a class="code hl_typedef" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ae2299afc830434c0a0ea06da8c6ce163">value_type</a> value_;</div>
+<div class="line"><a id="l01047" name="l01047"></a><span class="lineno"> 1047</span>                <span class="keyword">static</span> <span class="keyword">thread_local</span> <span class="keyword">auto</span> value = <a class="code hl_typedef" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ae2299afc830434c0a0ea06da8c6ce163">value_type</a> {};</div>
+<div class="line"><a id="l01048" name="l01048"></a><span class="lineno"> 1048</span>                value = <a class="code hl_typedef" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ae2299afc830434c0a0ea06da8c6ce163">value_type</a> {*iterator_};</div>
+<div class="line"><a id="l01049" name="l01049"></a><span class="lineno"> 1049</span>                <span class="keywordflow">return</span> value;</div>
+<div class="line"><a id="l01050" name="l01050"></a><span class="lineno"> 1050</span>              }</div>
+<div class="line"><a id="l01051" name="l01051"></a><span class="lineno"> 1051</span>              <span class="keyword">static</span> <span class="keyword">auto</span> default_value_type = <a class="code hl_typedef" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ae2299afc830434c0a0ea06da8c6ce163">value_type</a> {};</div>
+<div class="line"><a id="l01052" name="l01052"></a><span class="lineno"> 1052</span>              <span class="keywordflow">return</span> default_value_type;</div>
+<div class="line"><a id="l01053" name="l01053"></a><span class="lineno"> 1053</span>            }</div>
+<div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span>            </div>
+<div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span>            <span class="keywordtype">bool</span> move_next()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l01056" name="l01056"></a><span class="lineno"> 1056</span>              <span class="keywordflow">if</span> (version_ != items_.data_-&gt;version) <a class="code hl_function" href="classxtd_1_1helpers_1_1throw__helper.html#a4fcf5154d41ae7e68038268ea89492d6">xtd::helpers::throw_helper::throws</a>(<a class="code hl_enumvalue" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dcaf1203e404fb6b2467cd1884faa2c71c2">xtd::helpers::exception_case::invalid_operation</a>, <span class="stringliteral">&quot;Collection was modified; enumeration operation may not execute.&quot;</span>);</div>
+<div class="line"><a id="l01057" name="l01057"></a><span class="lineno"> 1057</span>              <span class="keywordflow">if</span> (!reset_) <span class="keywordflow">return</span> ++iterator_ != items_.items().cend();</div>
+<div class="line"><a id="l01058" name="l01058"></a><span class="lineno"> 1058</span>              reset_ = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l01059" name="l01059"></a><span class="lineno"> 1059</span>              iterator_ = items_.items().cbegin();</div>
+<div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span>              <span class="keywordflow">return</span> iterator_ != items_.items().cend();</div>
+<div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span>            }</div>
+<div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span>            </div>
+<div class="line"><a id="l01063" name="l01063"></a><span class="lineno"> 1063</span>            <span class="keywordtype">void</span> reset()<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>              reset_ = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span>              version_ = items_.data_-&gt;version;</div>
+<div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span>              iterator_ = items_.items().cend();</div>
+<div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span>            }</div>
+<div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span>            </div>
+<div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span>            <span class="keywordtype">bool</span> reset_ = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l01071" name="l01071"></a><span class="lineno"> 1071</span>            <span class="keyword">const</span> <a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a50b15016f1b91a266a8beec12ab89584">dictionary</a>&amp; items_;</div>
+<div class="line"><a id="l01072" name="l01072"></a><span class="lineno"> 1072</span>            <span class="keyword">typename</span> dictionary::base_type::const_iterator iterator_ = items_.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ac5f9fa62ba008a290c60f795e768d74f">items</a>().cend();</div>
+<div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span>            <a class="code hl_typedef" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> version_ = 0;</div>
 <div class="line"><a id="l01074" name="l01074"></a><span class="lineno"> 1074</span>          };</div>
 <div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span>          <span class="keywordflow">return</span> {<a class="code hl_function" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr &lt; internal_enumerator &gt;</a> (*<span class="keyword">this</span>, data_-&gt;version)};</div>
 <div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span>        }</div>
@@ -1370,7 +1370,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 11 2025 18:08:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 11 2025 18:50:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
