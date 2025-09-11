@@ -280,7 +280,7 @@ namespace xtd {
           }
         }
         /// @}
-
+        
         /// @name Public Deprecated Methods
         
         /// @{

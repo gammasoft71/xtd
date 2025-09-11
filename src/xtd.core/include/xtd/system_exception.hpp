@@ -68,7 +68,7 @@ namespace xtd {
     [[deprecated("Replaced by xtd::exception::get_type().full_name() - Will be removed in version 0.4.0.")]]
     virtual const xtd::string& name() const noexcept;
     /// @}
-
+    
     /// @name Public Deprecated Constructors
     
     /// @{

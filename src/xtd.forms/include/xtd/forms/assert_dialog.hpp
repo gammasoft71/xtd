@@ -109,7 +109,7 @@ namespace xtd {
       [[deprecated("Use xtd::forms::assert_dialog::show_dialog ([owner,] stack_frame) or xtd::forms::assert_dialog::show_sheet (owner, stack_frame) - Will be removed in version 0.4.0.")]]
       assert_dialog& stack_frame(const xtd::diagnostics::stack_frame& value);
       /// @}
-
+      
     protected:
       /// @name Protected Methods
       

@@ -199,7 +199,7 @@ namespace xtd {
       [[deprecated("Replaced by xtd::drawing::image::from_xpm_data - Will be removed in version 0.4.0.")]]
       explicit bitmap(const char* const* bits);
       /// @}
-
+      
     private:
       bitmap() = default;
     };

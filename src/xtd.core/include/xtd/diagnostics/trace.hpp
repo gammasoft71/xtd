@@ -446,7 +446,7 @@ namespace xtd {
       [[deprecated("Replaced by xtd::diagnostics::default_trace_listener::assert_ui_enabled - Will be removed in version 0.4.0.")]]
       static void show_assert_dialog(bool show_assert_dialog) noexcept;
       /// @}
-
+      
     private:
       static void fail__(const xtd::string& message);
       static void fail__(const xtd::string& message, const xtd::string& detail_message);
