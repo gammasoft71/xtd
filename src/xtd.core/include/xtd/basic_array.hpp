@@ -305,7 +305,7 @@ namespace xtd {
           index_ = basic_array::npos;
         }
         
-      protected:
+protected:
         const basic_array& items_;
         size_type index_ = basic_array::npos;
         size_type version_ = 0;

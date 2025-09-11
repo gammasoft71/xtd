@@ -51,7 +51,7 @@ namespace xtd {
       directory_not_found_exception(const directory_not_found_exception&) = default;
       directory_not_found_exception& operator =(const directory_not_found_exception&) = default;
       /// @endcond
-
+      
       /// @name Public Deprecated Constructors
       
       /// @{

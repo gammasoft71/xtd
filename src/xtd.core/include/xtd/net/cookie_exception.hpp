@@ -46,7 +46,7 @@ namespace xtd {
       cookie_exception(const cookie_exception&) = default;
       cookie_exception& operator =(const cookie_exception&) = default;
       /// @endcond
-
+      
       /// @name Public Deprecated Constructors
       
       /// @{

@@ -684,7 +684,7 @@ namespace xtd {
     [[deprecated("Replaced by xtd::double_object::positive_infinity - Will be removed in version 0.4.0.")]]
     static constexpr double positive_infinity = xtd::double_object::positive_infinity;
     /// @}
-
+    
     /// @name Public Deprecated Static Methods
     
     /// @{

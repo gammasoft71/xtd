@@ -51,7 +51,7 @@ namespace xtd {
       drive_not_found_exception(const drive_not_found_exception&) = default;
       drive_not_found_exception& operator =(const drive_not_found_exception&) = default;
       /// @endcond
-
+      
       /// @name Public Deprecated Constructors
       
       /// @{

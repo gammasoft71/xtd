@@ -5140,7 +5140,7 @@ namespace xtd {
     template<class string_t>
     [[deprecated("Replaced by xtd::convert::to_string - Will be removed in version 0.4.0.")]] static string to_ustring(const string_t& value) {return to_string(value);}
     /// @}
-
+    
     /// @cond
     template<class char_t>
     [[deprecated("Replaced by xtd::convert::to_string - Will be removed in version 0.4.0.")]] static string to_ustring(const char_t* value) {return to_string(value);}

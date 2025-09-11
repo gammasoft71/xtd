@@ -58,7 +58,7 @@ namespace xtd {
       template<class exception_t>
       file_not_found_exception(const xtd::optional<xtd::string>& message, const xtd::optional<xtd::string>& file_name, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : io_exception(message, inner_exception, stack_frame), file_name_ {file_name}, defined_message_ {message.has_value()} {error_code(h_result::make_error_code(h_result::COR_E_FILENOTFOUND));}
       /// @}
-
+      
       /// @cond
       file_not_found_exception(const file_not_found_exception&) = default;
       file_not_found_exception& operator =(const file_not_found_exception&) = default;
@@ -78,7 +78,7 @@ namespace xtd {
       /// @return A string represent a massage associate to the exception
       const xtd::string& message() const noexcept override;
       /// @}
-
+      
       /// @name Public Deprecated Constructors
       
       /// @{
