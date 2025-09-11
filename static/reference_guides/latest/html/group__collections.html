@@ -242,7 +242,7 @@ Typedefs</h2></td></tr>
 <div class="line"><span class="comment">//     size:    3</span></div>
 <div class="line"><span class="comment">//     Capacity: 4</span></div>
 <div class="line"><span class="comment">//     Values:   Hello   World   !</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a077f3f048bbe2f59db4a97ecba08df97"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#a077f3f048bbe2f59db4a97ecba08df97">xtd::collections::generic::list::add</a></div><div class="ttdeci">void add(const type_t &amp;item) override</div><div class="ttdoc">Adds an object to the end of the xtd::collections::generic::list &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> list.hpp:318</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a077f3f048bbe2f59db4a97ecba08df97"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#a077f3f048bbe2f59db4a97ecba08df97">xtd::collections::generic::list::add</a></div><div class="ttdeci">void add(const type_t &amp;item) override</div><div class="ttdoc">Adds an object to the end of the xtd::collections::generic::list &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> list.hpp:311</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition</b> console.hpp:36</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a636319332e94e01197105aab55ca6d76"><div class="ttname"><a href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76">xtd::console::write</a></div><div class="ttdeci">static void write(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> console.hpp:462</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
@@ -814,7 +814,7 @@ The <a class="el" href="group__collections.html#ga1aae82a450c8deb3f3220a385b52ec
 
 <p>Represents a non-generic collection of objects that can be individually accessed by index. </p>
 <div class="fragment"><div class="line"><span class="keyword">using </span><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ilist.html">ilist</a> = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ilist.html">xtd::collections::generic::ilist&lt;xtd::any_object&gt;</a></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1ilist_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1ilist.html">xtd::collections::generic::ilist</a></div><div class="ttdoc">Represents a collection of objects that can be individually accessed by index.</div><div class="ttdef"><b>Definition</b> ilist.hpp:41</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1ilist_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1ilist.html">xtd::collections::generic::ilist</a></div><div class="ttdoc">Represents a collection of objects that can be individually accessed by index.</div><div class="ttdef"><b>Definition</b> ilist.hpp:43</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/ilist&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections.html" title="The xtd::collections namespace contains interfaces and classes that define various collections of obj...">xtd::collections</a> </dd></dl>
@@ -870,7 +870,7 @@ The <a class="el" href="group__collections.html#ga1aae82a450c8deb3f3220a385b52ec
 <div class="line">    <a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a> count_;</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a> npos = ilist::npos;</div>
+<div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a> <a class="code hl_variable" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6">npos</a> = ilist::npos;</div>
 <div class="line"> </div>
 <div class="line">    simple_list() {count_ = 0;}</div>
 <div class="line">    </div>
@@ -908,7 +908,7 @@ The <a class="el" href="group__collections.html#ga1aae82a450c8deb3f3220a385b52ec
 <div class="line">    <a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a> index_of(<span class="keyword">const</span> any_object&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0_z; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; count(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
 <div class="line">        <span class="keywordflow">if</span> (contents_[i] == value) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>;</div>
-<div class="line">      <span class="keywordflow">return</span> npos;</div>
+<div class="line">      <span class="keywordflow">return</span> <a class="code hl_variable" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6">npos</a>;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae0df5f3dfd2650ae5be9993434e2b2c0">insert</a>(size index, <span class="keyword">const</span> any_object&amp; value)<span class="keyword"> override </span>{</div>
@@ -925,7 +925,7 @@ The <a class="el" href="group__collections.html#ga1aae82a450c8deb3f3220a385b52ec
 <div class="line">    <span class="keywordtype">bool</span> remove(<span class="keyword">const</span> any_object&amp; value)<span class="keyword"> override </span>{</div>
 <div class="line">      <span class="keyword">auto</span> index = index_of(value);</div>
 <div class="line">      remove_at(index);</div>
-<div class="line">      <span class="keywordflow">return</span> index != npos;</div>
+<div class="line">      <span class="keywordflow">return</span> index != <a class="code hl_variable" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6">npos</a>;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> remove_at(size index)<span class="keyword"> override </span>{</div>
@@ -992,7 +992,8 @@ The <a class="el" href="group__collections.html#ga1aae82a450c8deb3f3220a385b52ec
 <div class="line"><span class="comment">// Check for specific elements in the list</span></div>
 <div class="line"><span class="comment">// List contains &quot;three&quot;: true</span></div>
 <div class="line"><span class="comment">// List contains &quot;ten&quot;: false</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_aaf70989e6cabeaccefd32e3b760753ef"><div class="ttname"><a href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">xtd::basic_array::length</a></div><div class="ttdeci">virtual size_type length() const noexcept</div><div class="ttdoc">Gets a size that represents the total number of elements in all the dimensions of the array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:192</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__array_html_aaf70989e6cabeaccefd32e3b760753ef"><div class="ttname"><a href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">xtd::basic_array::length</a></div><div class="ttdeci">virtual size_type length() const noexcept</div><div class="ttdoc">Gets a size that represents the total number of elements in all the dimensions of the array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:187</div></div>
+<div class="ttc" id="agroup__system_html_ga94bb9e7be783a1b9d24894b3b23859e6"><div class="ttname"><a href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6">xtd::npos</a></div><div class="ttdeci">constexpr xtd::size npos</div><div class="ttdoc">Represents a value that is not a valid position in a collection.</div><div class="ttdef"><b>Definition</b> npos.hpp:26</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a01bc6f8efa4202821e95f4fdf6298b30"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a01bc6f8efa4202821e95f4fdf6298b30">xtd::console_key::clear</a></div><div class="ttdeci">@ clear</div><div class="ttdoc">The CLEAR key.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a34ec78fcc91ffb1e54cd85e4a0924332"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a34ec78fcc91ffb1e54cd85e4a0924332">xtd::console_key::add</a></div><div class="ttdeci">@ add</div><div class="ttdoc">The Add key.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae0df5f3dfd2650ae5be9993434e2b2c0"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae0df5f3dfd2650ae5be9993434e2b2c0">xtd::console_key::insert</a></div><div class="ttdeci">@ insert</div><div class="ttdoc">The INS (INSERT) key.</div></div>
@@ -1136,7 +1137,7 @@ For the generic version of this interface, see <a class="el" href="classxtd_1_1c
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 9 2025 20:23:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 11 2025 12:30:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

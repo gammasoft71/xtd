@@ -197,8 +197,14 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Fields</h2></td></tr>
 <tr class="memitem:afac88a59e0e3c7a1fd860af8c213dac6"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1domain__up__down.html#afac88a59e0e3c7a1fd860af8c213dac6">npos</a></td></tr>
-<tr class="memdesc:afac88a59e0e3c7a1fd860af8c213dac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a special value equal to the maximum value representable by the type size_t.  <br /></td></tr>
+<tr class="memdesc:afac88a59e0e3c7a1fd860af8c213dac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a value that is not a valid position in a collection.  <br /></td></tr>
 <tr class="separator:afac88a59e0e3c7a1fd860af8c213dac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc65920cf8683bb732553c4a2ccad2cf"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1domain__up__down.html#afc65920cf8683bb732553c4a2ccad2cf">bpos</a></td></tr>
+<tr class="memdesc:afc65920cf8683bb732553c4a2ccad2cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the index of the first valid element in a collection.  <br /></td></tr>
+<tr class="separator:afc65920cf8683bb732553c4a2ccad2cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a593393622f107c03a99dd68495f1369b"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1domain__up__down.html#a593393622f107c03a99dd68495f1369b">epos</a></td></tr>
+<tr class="memdesc:a593393622f107c03a99dd68495f1369b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the index of the last valid element in a collection.  <br /></td></tr>
+<tr class="separator:a593393622f107c03a99dd68495f1369b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Events</h2></td></tr>
 <tr class="memitem:ace9abe565d0e69442033993eee283e0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html">domain_up_down</a>, <a class="el" href="group__events.html#ga226db3bbc8ae6fdf2afaa94a5c947c54">event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1domain__up__down.html#ace9abe565d0e69442033993eee283e0d">selected_item_changed</a></td></tr>
@@ -2067,7 +2073,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">items</td><td>A <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47" title="Represents the collection of items in a list_control.">choice::object_collection</a> representing the items in the <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">domain_up_down</a>. </td></tr>
-    <tr><td class="paramname">selected_index</td><td>A zero-based index of the currently selected item. The <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a149a6eda6cbb9d8d9da7dee7c2872c41" title="This is a special value equal to the maximum value representable by the type size_t.">xtd::forms::domain_up_down::object_collection::npos</a> is returned if no item is selected. </td></tr>
+    <tr><td class="paramname">selected_index</td><td>A zero-based index of the currently selected item. The <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a149a6eda6cbb9d8d9da7dee7c2872c41" title="Represents a value that is not a valid position in a collection.">xtd::forms::domain_up_down::object_collection::npos</a> is returned if no item is selected. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2119,7 +2125,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">items</td><td>A <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47" title="Represents the collection of items in a list_control.">choice::object_collection</a> representing the items in the <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">domain_up_down</a>. </td></tr>
-    <tr><td class="paramname">selected_index</td><td>A zero-based index of the currently selected item. The <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a149a6eda6cbb9d8d9da7dee7c2872c41" title="This is a special value equal to the maximum value representable by the type size_t.">xtd::forms::domain_up_down::object_collection::npos</a> is returned if no item is selected. </td></tr>
+    <tr><td class="paramname">selected_index</td><td>A zero-based index of the currently selected item. The <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a149a6eda6cbb9d8d9da7dee7c2872c41" title="Represents a value that is not a valid position in a collection.">xtd::forms::domain_up_down::object_collection::npos</a> is returned if no item is selected. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">xtd::forms::domain_up_down</a>. </td></tr>
   </table>
   </dd>
@@ -2178,7 +2184,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">items</td><td>A <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47" title="Represents the collection of items in a list_control.">choice::object_collection</a> representing the items in the <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">domain_up_down</a>. </td></tr>
-    <tr><td class="paramname">selected_index</td><td>A zero-based index of the currently selected item. The <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a149a6eda6cbb9d8d9da7dee7c2872c41" title="This is a special value equal to the maximum value representable by the type size_t.">xtd::forms::domain_up_down::object_collection::npos</a> is returned if no item is selected. </td></tr>
+    <tr><td class="paramname">selected_index</td><td>A zero-based index of the currently selected item. The <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a149a6eda6cbb9d8d9da7dee7c2872c41" title="Represents a value that is not a valid position in a collection.">xtd::forms::domain_up_down::object_collection::npos</a> is returned if no item is selected. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">xtd::forms::domain_up_down</a>. </td></tr>
     <tr><td class="paramname">size</td><td>A <a class="el" href="structxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">xtd::forms::domain_up_down</a>. </td></tr>
   </table>
@@ -2244,7 +2250,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">items</td><td>A <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47" title="Represents the collection of items in a list_control.">choice::object_collection</a> representing the items in the <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">domain_up_down</a>. </td></tr>
-    <tr><td class="paramname">selected_index</td><td>A zero-based index of the currently selected item. The <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a149a6eda6cbb9d8d9da7dee7c2872c41" title="This is a special value equal to the maximum value representable by the type size_t.">xtd::forms::domain_up_down::object_collection::npos</a> is returned if no item is selected. </td></tr>
+    <tr><td class="paramname">selected_index</td><td>A zero-based index of the currently selected item. The <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a149a6eda6cbb9d8d9da7dee7c2872c41" title="Represents a value that is not a valid position in a collection.">xtd::forms::domain_up_down::object_collection::npos</a> is returned if no item is selected. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">xtd::forms::domain_up_down</a>. </td></tr>
     <tr><td class="paramname">size</td><td>A <a class="el" href="structxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">xtd::forms::domain_up_down</a>. </td></tr>
     <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">xtd::forms::domain_up_down</a>. </td></tr>
@@ -2720,7 +2726,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
   <table class="params">
     <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">xtd::forms::domain_up_down</a>. </td></tr>
     <tr><td class="paramname">items</td><td>A <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47" title="Represents the collection of items in a list_control.">choice::object_collection</a> representing the items in the <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">domain_up_down</a>. </td></tr>
-    <tr><td class="paramname">selected_index</td><td>A zero-based index of the currently selected item. The <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a149a6eda6cbb9d8d9da7dee7c2872c41" title="This is a special value equal to the maximum value representable by the type size_t.">xtd::forms::domain_up_down::object_collection::npos</a> is returned if no item is selected. </td></tr>
+    <tr><td class="paramname">selected_index</td><td>A zero-based index of the currently selected item. The <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a149a6eda6cbb9d8d9da7dee7c2872c41" title="Represents a value that is not a valid position in a collection.">xtd::forms::domain_up_down::object_collection::npos</a> is returned if no item is selected. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2779,7 +2785,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
   <table class="params">
     <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">xtd::forms::domain_up_down</a>. </td></tr>
     <tr><td class="paramname">items</td><td>A <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47" title="Represents the collection of items in a list_control.">choice::object_collection</a> representing the items in the <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">domain_up_down</a>. </td></tr>
-    <tr><td class="paramname">selected_index</td><td>A zero-based index of the currently selected item. The <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a149a6eda6cbb9d8d9da7dee7c2872c41" title="This is a special value equal to the maximum value representable by the type size_t.">xtd::forms::domain_up_down::object_collection::npos</a> is returned if no item is selected. </td></tr>
+    <tr><td class="paramname">selected_index</td><td>A zero-based index of the currently selected item. The <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a149a6eda6cbb9d8d9da7dee7c2872c41" title="Represents a value that is not a valid position in a collection.">xtd::forms::domain_up_down::object_collection::npos</a> is returned if no item is selected. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">xtd::forms::domain_up_down</a>. </td></tr>
   </table>
   </dd>
@@ -2845,7 +2851,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
   <table class="params">
     <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">xtd::forms::domain_up_down</a>. </td></tr>
     <tr><td class="paramname">items</td><td>A <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47" title="Represents the collection of items in a list_control.">choice::object_collection</a> representing the items in the <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">domain_up_down</a>. </td></tr>
-    <tr><td class="paramname">selected_index</td><td>A zero-based index of the currently selected item. The <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a149a6eda6cbb9d8d9da7dee7c2872c41" title="This is a special value equal to the maximum value representable by the type size_t.">xtd::forms::domain_up_down::object_collection::npos</a> is returned if no item is selected. </td></tr>
+    <tr><td class="paramname">selected_index</td><td>A zero-based index of the currently selected item. The <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a149a6eda6cbb9d8d9da7dee7c2872c41" title="Represents a value that is not a valid position in a collection.">xtd::forms::domain_up_down::object_collection::npos</a> is returned if no item is selected. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">xtd::forms::domain_up_down</a>. </td></tr>
     <tr><td class="paramname">size</td><td>A <a class="el" href="structxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">xtd::forms::domain_up_down</a>. </td></tr>
   </table>
@@ -2918,7 +2924,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
   <table class="params">
     <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">xtd::forms::domain_up_down</a>. </td></tr>
     <tr><td class="paramname">items</td><td>A <a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47" title="Represents the collection of items in a list_control.">choice::object_collection</a> representing the items in the <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">domain_up_down</a>. </td></tr>
-    <tr><td class="paramname">selected_index</td><td>A zero-based index of the currently selected item. The <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a149a6eda6cbb9d8d9da7dee7c2872c41" title="This is a special value equal to the maximum value representable by the type size_t.">xtd::forms::domain_up_down::object_collection::npos</a> is returned if no item is selected. </td></tr>
+    <tr><td class="paramname">selected_index</td><td>A zero-based index of the currently selected item. The <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a149a6eda6cbb9d8d9da7dee7c2872c41" title="Represents a value that is not a valid position in a collection.">xtd::forms::domain_up_down::object_collection::npos</a> is returned if no item is selected. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">xtd::forms::domain_up_down</a>. </td></tr>
     <tr><td class="paramname">size</td><td>A <a class="el" href="structxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">xtd::forms::domain_up_down</a>. </td></tr>
     <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1domain__up__down.html" title="Represents a Windows spin box (also known as an up-down control) that displays string values.">xtd::forms::domain_up_down</a>. </td></tr>
@@ -3254,7 +3260,60 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </table>
 </div><div class="memdoc">
 
-<p>This is a special value equal to the maximum value representable by the type size_t. </p>
+<p>Represents a value that is not a valid position in a collection. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This constant is typically used to indicate the absence of an index or a failed search operation. It is equivalent to the maximum value of <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d" title="Represents a size of any object in bytes.">xtd::size</a>. </dd></dl>
+
+</div>
+</div>
+<a id="afc65920cf8683bb732553c4a2ccad2cf" name="afc65920cf8683bb732553c4a2ccad2cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc65920cf8683bb732553c4a2ccad2cf">&#9670;&#160;</a></span>bpos</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> xtd::forms::domain_up_down::bpos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Represents the index of the first valid element in a collection. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6" title="Represents a value that is not a valid position in a collection.">xtd::npos</a> (which means "no position"), <a class="el" href="group__system.html#gae5b63301b69ce281ee7db98e2e61941f" title="Represents the index of the firsy valid element in a collection.">xtd::bpos</a> points to the first accessible element of a collection. It is equivalent to <code>0</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a593393622f107c03a99dd68495f1369b" name="a593393622f107c03a99dd68495f1369b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a593393622f107c03a99dd68495f1369b">&#9670;&#160;</a></span>epos</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> xtd::forms::domain_up_down::epos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Represents the index of the last valid element in a collection. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike <a class="el" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6" title="Represents a value that is not a valid position in a collection.">xtd::npos</a> (which means "no position"), <a class="el" href="group__system.html#gaa99759e66edbafa9f3ed0b523c924b5c" title="Represents the index of the last valid element in a collection.">xtd::epos</a> points to the last accessible element of a collection. It is equivalent to <code>items.count() - 1</code>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This constant is provided for readability and convenience. For example, <code>items[<a class="el" href="group__system.html#gaa99759e66edbafa9f3ed0b523c924b5c" title="Represents the index of the last valid element in a collection.">xtd::epos</a>]</code> directly accesses the last element without manually subtracting one from the collection count. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The epos is equivalent to <code>~1_z</code>. With bitwise operator the code is more concise. </dd></dl>
 
 </div>
 </div>
@@ -3299,7 +3358,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 9 2025 20:23:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 11 2025 12:30:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
