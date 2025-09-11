@@ -60,7 +60,7 @@ namespace xtd::collections::generic::tests {
     void test_method_(npos) {
       assert::are_equal(size_object::max_value, list<int>::npos);
     }
-
+    
     void test_method_(default_constructor) {
       auto items = list<string> {};
       assert::is_zero(items.capacity());
@@ -887,13 +887,13 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(6, items[items.count() - 1]);
       assert::are_equal(6, items[items.epos]);
       assert::are_equal(6, items[xtd::epos]);
-
+      
       items[xtd::epos] = 7;
       assert::are_equal(7, items[items.count() - 1]);
       assert::are_equal(7, items[items.epos]);
       assert::are_equal(7, items[xtd::epos]);
     }
-
+    
     void test_method_(cast_opertor_to_std_vector) {
       auto items = list {1, 2, 3, 4, 5};
       auto result = std::vector<int> {};
