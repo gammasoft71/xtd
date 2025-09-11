@@ -123,7 +123,7 @@ namespace xtd {
         /// @remarks The operator [] property is case-sensitive when searching for names. That is, if two controls exist with the names "Lname" and "lname", operator [] property will find only the xtd::forms::control with the xtd::forms::control::name() that you specify, not both.
         std::optional<value_type> operator [](const xtd::string& name);
         /// @}
-
+        
         /// @name Public Deprecated Methods
         
         /// @{
@@ -151,7 +151,7 @@ namespace xtd {
         [[deprecated("Replaced by xtd::forms::tab_control::tab_page_collection::add - Will be removed in version 0.4.0.")]]
         void push_back(const wchar* text);
         /// @}
-
+        
       private:
         friend tab_control;
         event<tab_page_collection, delegate<void(size_t index, const string& text, const string& name)>> text_added;

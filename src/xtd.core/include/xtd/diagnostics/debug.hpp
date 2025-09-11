@@ -432,7 +432,7 @@ namespace xtd {
         #endif
       }
       /// @}
-
+      
       /// @cond
       static inline bool __should_aborted__(bool condition, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {return __should_aborted__(condition, xtd::string::empty_string, stack_frame);}
       static inline bool __should_aborted__(bool condition, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {return __should_aborted__(condition, message, xtd::string::empty_string, stack_frame);}
@@ -464,7 +464,7 @@ namespace xtd {
       [[deprecated("Replaced by xtd::diagnostics::default_trace_listener::assert_ui_enabled - Will be removed in version 0.4.0.")]]
       static void show_assert_dialog(bool show_assert_dialog) noexcept;
       /// @}
-
+      
     private:
       friend trace;
       friend xtd::forms::assert_dialog;

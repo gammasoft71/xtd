@@ -87,7 +87,7 @@ namespace xtd {
         using pointer = value_type*;
         /// @brief Represents the const pointer of list value type.
         using const_pointer = const value_type*;
-
+        
         /// @brief Represents the iterator type of the collection.
         using iterator = typename __xtd_raw_array_data__<value_type>::iterator;
         /// @brief Represents the const iterator type of the collection.
@@ -281,7 +281,7 @@ namespace xtd {
           while (count())
             remove_at(0);
         }
-       
+        
         /// @brief Inserts specified element at specified index.
         /// @param index The index before which the content will be inserted.
         /// @param value The element to insert.
@@ -295,7 +295,7 @@ namespace xtd {
           on_item_added(index, items_[index]);
           if (sorted_) sort();
         }
-
+        
         /// @brief Sorts the content.
         virtual arranged_element_collection& sort() {
           sorter_t sorter;
@@ -342,7 +342,7 @@ namespace xtd {
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items::reverse_iterator - Will be removed in version 0.4.0.
         using const_reverse_iterator [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items::const_reverse_iterator - Will be removed in version 0.4.0.")]] = typename __xtd_raw_array_data__<value_type>::const_reverse_iterator;
         /// @}
-
+        
         /// @name Public Deprecatd Properties
         
         /// @{
@@ -351,7 +351,7 @@ namespace xtd {
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().capacity - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().capacity - Will be removed in version 0.4.0.")]]
         size_type capacity() const noexcept {return items_.capacity();}
-
+        
         /// @brief Checks whether the container is empty.
         /// @return `true` if container is empty; otherwise `false`.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().empty - Will be removed in version 0.4.0.
@@ -363,14 +363,14 @@ namespace xtd {
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::max_size().empty - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().max_size - Will be removed in version 0.4.0.")]]
         size_type max_size() const noexcept {return items_.max_size();}
-
+        
         /// @brief Returns the number of elements.
         /// @return The number of elements.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::count - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::count - Will be removed in version 0.4.0.")]]
         size_type size() const noexcept {return count();}
         /// @}
-
+        
         /// @name Public Deprecated Methods
         
         /// @{
@@ -401,7 +401,7 @@ namespace xtd {
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 0.4.0.")]]
         const_reference back() const {return items_.back();}
-
+        
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().crbegin - Will be removed in version 0.4.0.
@@ -412,7 +412,7 @@ namespace xtd {
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().crend - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().crend - Will be removed in version 0.4.0.")]]
         const_reverse_iterator crend() const noexcept {return items_.crend();}
-
+        
         /// @brief Access the first element.
         /// @return The first element.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::operator [0] - Will be removed in version 0.4.0.
@@ -423,7 +423,7 @@ namespace xtd {
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::operator [0] - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::operator [0] - Will be removed in version 0.4.0.")]]
         const_reference front() const {return items_.front();}
-
+        
         /// @brief Returns the associated allocator
         /// @return The associate allocator.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::count - Will be removed in version 0.4.0.
@@ -559,7 +559,7 @@ namespace xtd {
         virtual void insert_at(size_t index, const value_type& value) {
           insert(index, value);
         }
-
+        
         /// @brief Removes the last element of the container.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove(count() - 1) - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove(count() - 1) - Will be removed in version 0.4.0.")]]
@@ -581,7 +581,7 @@ namespace xtd {
         virtual void push_back(value_type&& item) {
           add(std::move(item));
         }
-
+        
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.
@@ -619,7 +619,7 @@ namespace xtd {
         void push_back_range(iterator_t begin, iterator_t end) {
           add_range(begin, end);
         }
-
+        
         /// @brief Gets an array with the elements of the container.
         /// @return The array that contains elements of the container.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::to_array - Will be removed in version 0.4.0.
@@ -636,7 +636,7 @@ namespace xtd {
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().rbegin - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().rbegin - Will be removed in version 0.4.0.")]]
         const_reverse_iterator rbegin() const noexcept {return items_.rbegin();}
-
+        
         /// @brief Returns a reverse iterator to the end.
         /// @return The reverse iterator to the end.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().rend - Will be removed in version 0.4.0.

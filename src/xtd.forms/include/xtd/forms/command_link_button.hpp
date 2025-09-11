@@ -224,7 +224,7 @@ namespace xtd {
       [[deprecated("Replaced by xtd::forms::command_link_button::set_texts - Will be removed in version 0.4.0.")]]
       control& texts(const xtd::string& text, const xtd::string& supplementary_text);
       /// @}
-
+      
     protected:
       /// @name Protected Properties
       
