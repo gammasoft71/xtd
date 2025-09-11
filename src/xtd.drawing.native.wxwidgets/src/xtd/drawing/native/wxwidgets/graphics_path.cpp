@@ -46,9 +46,9 @@ namespace {
     static void start(wxGraphicsPath* path, const wxPoint2DDouble& current_point) {
       auto it = figures_.find(path);
       if (it != figures_.end()) {
-        if (it->second[it->second.count() - 1]) return;
+        if (it->second[~1_z]) return;
         path->MoveToPoint(current_point.m_x, current_point.m_y);
-        it->second[it->second.count() - 1] = true;
+        it->second[~1_z] = true;
       }
     }
     
