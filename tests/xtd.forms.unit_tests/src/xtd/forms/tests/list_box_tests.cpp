@@ -80,7 +80,7 @@ namespace xtd::forms::tests {
       list_box list_box;
       list_box.parent(form);
       list_box.items().add_range({"d", "a", "c", "b"});
-      std::sort(list_box.items().begin(), list_box.items().end());
+      std::sort(list_box.items().items().begin(), list_box.items().items().end());
       
       assert::are_equal(4_z, list_box.items().count());
       assert::are_equal("a", list_box.items()[0]);
