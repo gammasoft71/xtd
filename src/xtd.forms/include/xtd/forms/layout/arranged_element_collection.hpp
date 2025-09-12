@@ -397,6 +397,13 @@ namespace xtd {
           items_[index].owner = const_cast<arranged_element_collection*>(this);
           return items_[index];
         }
+        
+        /// @brief Returns a reference to the underlying base type.
+        /// @return Reference to the underlying base type.
+        operator const_base_type& () const noexcept {return items();}
+        /// @brief Returns a reference to the underlying base type.
+        /// @return Reference to the underlying base type.
+        operator base_type& () noexcept {return items();}
         /// @}
         
         /// @name Public Events
