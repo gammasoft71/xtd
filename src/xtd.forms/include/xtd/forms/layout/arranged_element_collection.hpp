@@ -63,7 +63,7 @@ namespace xtd {
           xtd::size version_ = 0;
           type_t default_value_;
         };
-
+        
       public:
         /// @brief Represents the value type of the collection.
         class value_type : public type_t {
@@ -302,13 +302,13 @@ namespace xtd {
             array[array_index + i++] = item;
           }
         }
-
+        
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::list <type_t>.
         /// @return A xtd::collections::generic::.enumerator for the xtd::collections::generic::list <type_t>.
         xtd::collections::generic::enumerator<type_t> get_enumerator() const noexcept override {
           return {new_ptr<__enumerator__>(self_, items().version())};
         }
-
+        
         /// @brief Inserts specified element at specified index.
         /// @param index The index before which the content will be inserted.
         /// @param value The element to insert.
@@ -761,13 +761,13 @@ namespace xtd {
         const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
         
         struct data_collection {
-          mutable xtd::collections::generic::list<value_type> items;
+          mutable xtd::collections::generic::list < value_type > items;
           bool inserting = false;
           bool erasing = false;
           bool sorted = false;
           xtd::object sync_root;
         };
-        ptr<data_collection> data_ = new_ptr<data_collection>();
+        ptr < data_collection > data_ = new_ptr < data_collection > ();
       };
     }
   }
