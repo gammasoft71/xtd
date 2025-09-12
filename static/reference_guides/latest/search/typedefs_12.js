@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['tab_5fpage_5fref_0',['tab_page_ref',['../group__xtd__forms.html#gad98510bfbc458c7ba615945f2707277e',1,'xtd::forms']]],
+  ['tab_5fpage_5fref_0',['tab_page_ref',['../group__xtd__forms.html#gadbfac6a9332f7d2590795ca48d172dbf',1,'xtd::forms']]],
   ['test_5fcollection_1',['test_collection',['../classxtd_1_1tunit_1_1test__class.html#afe0138abef2c595b5e5677ac5436f251',1,'xtd::tunit::test_class']]],
   ['thread_5fexception_5fevent_5fhandler_2',['thread_exception_event_handler',['../group__events.html#gad78698b7eff7217bd7011375bd513301',1,'xtd::threading']]],
   ['thread_5fstart_3',['thread_start',['../group__delegates.html#gacea3e237aac11920ba29f784740cba69',1,'xtd::threading']]],
@@ -13,9 +13,9 @@ var searchData=
   ['tool_5fbar_5fbutton_10',['tool_bar_button',['../group__style__sheets.html#ga488abf4eb07336158f1d028ae6ed7286',1,'xtd::forms::style_sheets']]],
   ['tool_5fbar_5fbutton_5fclick_5fevent_5fhandler_11',['tool_bar_button_click_event_handler',['../group__events.html#ga9a6114ba043c124d00c93df7f2b27281',1,'xtd::forms']]],
   ['tool_5fbar_5fbutton_5fcollection_12',['tool_bar_button_collection',['../classxtd_1_1forms_1_1tool__bar.html#aba8a86ea0ef23ccb2c48bf9cf59a1d97',1,'xtd::forms::tool_bar']]],
-  ['tool_5fbar_5fbutton_5fref_13',['tool_bar_button_ref',['../group__xtd__forms.html#ga0154c160bd5319c3de597a388ff3bcd4',1,'xtd::forms']]],
+  ['tool_5fbar_5fbutton_5fref_13',['tool_bar_button_ref',['../group__xtd__forms.html#ga1410f17cec9ed56ef01b103676b3906e',1,'xtd::forms']]],
   ['tool_5fbar_5fbuttons_5ft_14',['tool_bar_buttons_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#a06daf163499e05bec6e2841f5739f7dd',1,'xtd::forms::style_sheets::style_sheet']]],
-  ['tool_5fbar_5fref_15',['tool_bar_ref',['../classxtd_1_1forms_1_1form.html#adf5b5f50d72fd45eeec4c8b4cf621784',1,'xtd::forms::form']]],
+  ['tool_5fbar_5fref_15',['tool_bar_ref',['../classxtd_1_1forms_1_1form.html#a3b017bbe4a2561616e91d7917874111f',1,'xtd::forms::form']]],
   ['tool_5fbar_5fstate_16',['tool_bar_state',['../group__xtd__forms.html#ga8769210c9ca50aea4f9292cc915e4313',1,'xtd::forms::visual_styles']]],
   ['tool_5fbars_5ft_17',['tool_bars_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#a138c75bfca71f183958144f968444d00',1,'xtd::forms::style_sheets::style_sheet']]],
   ['translator_5fcollection_18',['translator_collection',['../classxtd_1_1forms_1_1about__box.html#a0c23a1bd70675a48e5d7ab469d5a1bb7',1,'xtd::forms::about_box::translator_collection'],['../classxtd_1_1forms_1_1about__dialog.html#af61d9ca16862c03bb3cc78fedb408978',1,'xtd::forms::about_dialog::translator_collection']]],
