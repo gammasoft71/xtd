@@ -442,7 +442,7 @@ namespace xtd::forms::layout::tests {
         assert::succeed(string::format("updated index = {}, value = {}", index, value));
       };
       
-      std::sort(items.begin(), items.end());
+      std::sort(items.items().begin(), items.items().end());
       
       assert::are_equal("a", items[0]);
       assert::are_equal("z", items[1]);
@@ -462,7 +462,7 @@ namespace xtd::forms::layout::tests {
         assert::succeed(string::format("updated index = {}, value = {}", index, value));
       };
       
-      std::sort(items.begin(), items.end());
+      std::sort(items.items().begin(), items.items().end());
       
       assert::are_equal("a", items[0]);
       assert::are_equal("b", items[1]);
@@ -484,7 +484,7 @@ namespace xtd::forms::layout::tests {
         assert::succeed(string::format("updated index = {}, value = {}", index, value));
       };
       
-      std::sort(items.begin(), items.end());
+      std::sort(items.items().begin(), items.items().end());
       
       assert::are_equal("a", items[0]);
       assert::are_equal("b", items[1]);

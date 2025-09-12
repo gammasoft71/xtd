@@ -551,7 +551,7 @@ void tool_bar::fill() {
   data_->stretchable_separators.clear();
   data_->tool_bar_buttons.clear();
   auto reversed_buttons = data_->buttons;
-  if (!is_system_tool_bar()) std::reverse(reversed_buttons.begin(), reversed_buttons.end());
+  if (!is_system_tool_bar()) std::reverse(reversed_buttons.items().begin(), reversed_buttons.items().end());
   if (!is_system_tool_bar() && auto_size())
     size({padding().left() + padding().right(), padding().top() + padding().bottom()});
   for (auto index = 0_z; index < reversed_buttons.count(); ++index) {
