@@ -362,45 +362,6 @@ namespace xtd {
         }
         /// @}
         
-        /// @name Public Deprecatd Aliases
-        
-        /// @{
-        /// @brief Represents the reverse iterator type of the collection.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items::reverse_iterator - Will be removed in version 0.4.0.
-        using reverse_iterator [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items::reverse_iterator - Will be removed in version 0.4.0.")]] = typename xtd::collections::generic::list<value_type>::base_type::reverse_iterator;
-        /// @brief Represents the const reverse iterator type of the collection.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items::reverse_iterator - Will be removed in version 0.4.0.
-        using const_reverse_iterator [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items::const_reverse_iterator - Will be removed in version 0.4.0.")]] = typename xtd::collections::generic::list<value_type>::base_type::const_reverse_iterator;
-        /// @}
-        
-        /// @name Public Deprecatd Properties
-        
-        /// @{
-        /// @brief Returns the number of elements that can be held in currently allocated storage.
-        /// @return The number of elements that can be held in currently allocated storage.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().capacity - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().capacity - Will be removed in version 0.4.0.")]]
-        size_type capacity() const noexcept {return data_->items.capacity();}
-        
-        /// @brief Checks whether the container is empty.
-        /// @return `true` if container is empty; otherwise `false`.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().empty - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().empty - Will be removed in version 0.4.0.")]]
-        bool empty() const noexcept {return data_->items.empty();}
-        
-        /// @brief Returns the maximum possible number of elements.
-        /// @return The maximum possible number of elements.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::max_size().empty - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().max_size - Will be removed in version 0.4.0.")]]
-        size_type max_size() const noexcept {return data_->items.max_size();}
-        
-        /// @brief Returns the number of elements.
-        /// @return The number of elements.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::count - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::count - Will be removed in version 0.4.0.")]]
-        size_type size() const noexcept {return count();}
-        /// @}
-        
         /// @name Public Operators
         
         /// @{
@@ -447,6 +408,45 @@ namespace xtd {
         event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_removed;
         /// @}
         
+        /// @name Public Deprecatd Aliases
+        
+        /// @{
+        /// @brief Represents the reverse iterator type of the collection.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items::reverse_iterator - Will be removed in version 0.4.0.
+        using reverse_iterator [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items::reverse_iterator - Will be removed in version 0.4.0.")]] = typename xtd::collections::generic::list<value_type>::base_type::reverse_iterator;
+        /// @brief Represents the const reverse iterator type of the collection.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items::reverse_iterator - Will be removed in version 0.4.0.
+        using const_reverse_iterator [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items::const_reverse_iterator - Will be removed in version 0.4.0.")]] = typename xtd::collections::generic::list<value_type>::base_type::const_reverse_iterator;
+        /// @}
+        
+        /// @name Public Deprecatd Properties
+        
+        /// @{
+        /// @brief Returns the number of elements that can be held in currently allocated storage.
+        /// @return The number of elements that can be held in currently allocated storage.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().capacity - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().capacity - Will be removed in version 0.4.0.")]]
+        size_type capacity() const noexcept {return data_->items.capacity();}
+        
+        /// @brief Checks whether the container is empty.
+        /// @return `true` if container is empty; otherwise `false`.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().empty - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().empty - Will be removed in version 0.4.0.")]]
+        bool empty() const noexcept {return data_->items.empty();}
+        
+        /// @brief Returns the maximum possible number of elements.
+        /// @return The maximum possible number of elements.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::max_size().empty - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().max_size - Will be removed in version 0.4.0.")]]
+        size_type max_size() const noexcept {return data_->items.max_size();}
+        
+        /// @brief Returns the number of elements.
+        /// @return The number of elements.
+        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::count - Will be removed in version 0.4.0.
+        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::count - Will be removed in version 0.4.0.")]]
+        size_type size() const noexcept {return count();}
+        /// @}
+
         /// @name Public Deprecated Methods
         
         /// @{
