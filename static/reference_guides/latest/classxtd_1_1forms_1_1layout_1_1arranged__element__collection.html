@@ -119,7 +119,13 @@ class xtd::forms::layout::arranged_element_collection&lt; type_t, sorter_t &gt;<
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1forms_1_1layout.html" title="The xtd::forms::layout namespace contains classes for implementing layout behaviors in your form or c...">xtd::forms::layout</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a></dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> class represents a collection of objects arranged on a design surface or inside a parent <a class="el" href="classxtd_1_1forms_1_1container__control.html" title="Provides focus-management functionality for controls that can function as a container for other contr...">xtd.forms::container_control</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> class represents a collection of objects arranged on a design surface or inside a parent <a class="el" href="classxtd_1_1forms_1_1container__control.html" title="Provides focus-management functionality for controls that can function as a container for other contr...">xtd.forms::container_control</a>. </dd>
+<dd>
+<a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> inherits from xtd::collections::generic::icollection instead of xtd::collections::generic::ilistto allow <code>operator[]</code> to return <code><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html" title="Represents the value type of the collection.">value_type</a></code>, which triggers updates and events on element changes. </dd>
+<dd>
+Returning <code>type_t&amp;</code> would bypass these updates, while returning <code><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html" title="Represents the value type of the collection.">value_type</a>&amp;</code> would break the xtd::collections::generic::ilist interface. </dd>
+<dd>
+This keeps the collection safe and consistent, while most developers can still use <a class="el" href="#aae9ba3688cf3121452e607ccab7eba0d" title="Adds elements to the end.">xtd::forms::layout::arranged_element_collection::add_range()</a> or xtd::forms::layout::arranged_element_collection::operator[] as expected. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -149,6 +155,9 @@ Classes</h2></td></tr>
 <tr class="memitem:ac140826741c297cabae1ab88b4580ae0" id="r_ac140826741c297cabae1ab88b4580ae0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac140826741c297cabae1ab88b4580ae0">const_pointer</a></td></tr>
 <tr class="memdesc:ac140826741c297cabae1ab88b4580ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the const pointer of list value type.  <br /></td></tr>
 <tr class="separator:ac140826741c297cabae1ab88b4580ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac85cef6a608f487e867acd1bb0707ee6" id="r_ac85cef6a608f487e867acd1bb0707ee6"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac85cef6a608f487e867acd1bb0707ee6">read_only_collection</a></td></tr>
+<tr class="memdesc:ac85cef6a608f487e867acd1bb0707ee6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the read only collection of of list.  <br /></td></tr>
+<tr class="separator:ac85cef6a608f487e867acd1bb0707ee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Fields</h2></td></tr>
 <tr class="memitem:a149a6eda6cbb9d8d9da7dee7c2872c41" id="r_a149a6eda6cbb9d8d9da7dee7c2872c41"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a149a6eda6cbb9d8d9da7dee7c2872c41">npos</a></td></tr>
@@ -174,13 +183,41 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a6bb4806772504f9b8db4503c407025a3" id="r_a6bb4806772504f9b8db4503c407025a3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bb4806772504f9b8db4503c407025a3">arranged_element_collection</a> ()=default</td></tr>
-<tr class="memdesc:a6bb4806772504f9b8db4503c407025a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new object <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> with specified allocator (optional).  <br /></td></tr>
+<tr class="memdesc:a6bb4806772504f9b8db4503c407025a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> class that is empty.  <br /></td></tr>
 <tr class="separator:a6bb4806772504f9b8db4503c407025a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05d448cb800680395101430f34eed333" id="r_a05d448cb800680395101430f34eed333"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a05d448cb800680395101430f34eed333">arranged_element_collection</a> (const std::initializer_list&lt; type_t &gt; &amp;il)</td></tr>
-<tr class="memdesc:a05d448cb800680395101430f34eed333"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new object <a class="el" href="classxtd_1_1diagnostics_1_1trace__listener__collection.html" title="Represents a collection of xtd::diagnostics::trace_listener.">xtd::diagnostics::trace_listener_collection</a> with specified initializer list.  <br /></td></tr>
-<tr class="separator:a05d448cb800680395101430f34eed333"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab160c1cc3f3c548a65edbfee86c2e8d1" id="r_ab160c1cc3f3c548a65edbfee86c2e8d1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab160c1cc3f3c548a65edbfee86c2e8d1">arranged_element_collection</a> (<a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a> <a class="el" href="#a2d628678f8c5b3c2259abd9cb274a846">capacity</a>)</td></tr>
+<tr class="memdesc:ab160c1cc3f3c548a65edbfee86c2e8d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with specified count default-inserted instances of type_t. No copies are made.  <br /></td></tr>
+<tr class="separator:ab160c1cc3f3c548a65edbfee86c2e8d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae29c84488df2990c23f133fc0cc6fe8f" id="r_ae29c84488df2990c23f133fc0cc6fe8f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae29c84488df2990c23f133fc0cc6fe8f">arranged_element_collection</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;collection)</td></tr>
+<tr class="memdesc:ae29c84488df2990c23f133fc0cc6fe8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> &lt;type_t&gt; class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.  <br /></td></tr>
+<tr class="separator:ae29c84488df2990c23f133fc0cc6fe8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a223b16140f5bb49df475a17824766ab8" id="r_a223b16140f5bb49df475a17824766ab8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a223b16140f5bb49df475a17824766ab8">arranged_element_collection</a> (const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a> &amp;collection)</td></tr>
+<tr class="memdesc:a223b16140f5bb49df475a17824766ab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default copy constructor with specified list.  <br /></td></tr>
+<tr class="separator:a223b16140f5bb49df475a17824766ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9268e21f7905db347de2f2f36dc2e74" id="r_ab9268e21f7905db347de2f2f36dc2e74"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9268e21f7905db347de2f2f36dc2e74">arranged_element_collection</a> (<a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a> &amp;&amp;collection)</td></tr>
+<tr class="memdesc:ab9268e21f7905db347de2f2f36dc2e74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor with specified list.  <br /></td></tr>
+<tr class="separator:ab9268e21f7905db347de2f2f36dc2e74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1aeb75be8ba2993b022c4e880fc57477" id="r_a1aeb75be8ba2993b022c4e880fc57477"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1aeb75be8ba2993b022c4e880fc57477">arranged_element_collection</a> (const <a class="el" href="#af0d6483e597291d9042efe678f6ab08d">base_type</a> &amp;collection)</td></tr>
+<tr class="memdesc:a1aeb75be8ba2993b022c4e880fc57477"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor with specified base type list.  <br /></td></tr>
+<tr class="separator:a1aeb75be8ba2993b022c4e880fc57477"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28f23009788ce332d757c689d939acf5" id="r_a28f23009788ce332d757c689d939acf5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28f23009788ce332d757c689d939acf5">arranged_element_collection</a> (<a class="el" href="#af0d6483e597291d9042efe678f6ab08d">base_type</a> &amp;&amp;collection)</td></tr>
+<tr class="memdesc:a28f23009788ce332d757c689d939acf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move constructor with specified base type list.  <br /></td></tr>
+<tr class="separator:a28f23009788ce332d757c689d939acf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a170be4478671991ba43e6a94c3aeec5f" id="r_a170be4478671991ba43e6a94c3aeec5f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a170be4478671991ba43e6a94c3aeec5f">arranged_element_collection</a> (std::initializer_list&lt; type_t &gt; <a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb">items</a>)</td></tr>
+<tr class="memdesc:a170be4478671991ba43e6a94c3aeec5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the specified initializer list, and allocator.  <br /></td></tr>
+<tr class="separator:a170be4478671991ba43e6a94c3aeec5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3849e87c673c46ab000f24a1893c93ce" id="r_a3849e87c673c46ab000f24a1893c93ce"><td class="memTemplParams" colspan="2">template&lt;std::input_iterator input_iterator_t&gt; </td></tr>
+<tr class="memitem:a3849e87c673c46ab000f24a1893c93ce"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a3849e87c673c46ab000f24a1893c93ce">arranged_element_collection</a> (input_iterator_t <a class="el" href="namespacextd.html#a31261a8eef815d75bbe44a418ea4023f">first</a>, input_iterator_t <a class="el" href="namespacextd.html#a4587cc977656d48247ea110023c4d79d">last</a>)</td></tr>
+<tr class="memdesc:a3849e87c673c46ab000f24a1893c93ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the range [first, last).  <br /></td></tr>
+<tr class="separator:a3849e87c673c46ab000f24a1893c93ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
+<tr class="memitem:a2d628678f8c5b3c2259abd9cb274a846" id="r_a2d628678f8c5b3c2259abd9cb274a846"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d628678f8c5b3c2259abd9cb274a846">capacity</a> () const noexcept</td></tr>
+<tr class="memdesc:a2d628678f8c5b3c2259abd9cb274a846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the total number of elements the internal data structure can hold without resizing.  <br /></td></tr>
+<tr class="separator:a2d628678f8c5b3c2259abd9cb274a846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0241fb815a562162339d5e8e6218c96d" id="r_a0241fb815a562162339d5e8e6218c96d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0241fb815a562162339d5e8e6218c96d">capacity</a> (<a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a> value)</td></tr>
+<tr class="memdesc:a0241fb815a562162339d5e8e6218c96d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the total number of elements the internal data structure can hold without resizing.  <br /></td></tr>
+<tr class="separator:a0241fb815a562162339d5e8e6218c96d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af921b936ffed8db4a8936e91fbc69b39" id="r_af921b936ffed8db4a8936e91fbc69b39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af921b936ffed8db4a8936e91fbc69b39">count</a> () const noexcept override</td></tr>
 <tr class="memdesc:af921b936ffed8db4a8936e91fbc69b39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:af921b936ffed8db4a8936e91fbc69b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -237,7 +274,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:ab307c154ca86f52bf45952b7ab00663e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the elements of the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> &lt;type_t&gt; to an <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a>, starting at a particular <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> index.  <br /></td></tr>
 <tr class="separator:ab307c154ca86f52bf45952b7ab00663e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a961d6f8e7e487c72358f3c413b18dfaf" id="r_a961d6f8e7e487c72358f3c413b18dfaf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; type_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a961d6f8e7e487c72358f3c413b18dfaf">get_enumerator</a> () const noexcept override</td></tr>
-<tr class="memdesc:a961d6f8e7e487c72358f3c413b18dfaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memdesc:a961d6f8e7e487c72358f3c413b18dfaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:a961d6f8e7e487c72358f3c413b18dfaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f1844eeb73d3cd681555e44128ccc3e" id="r_a7f1844eeb73d3cd681555e44128ccc3e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f1844eeb73d3cd681555e44128ccc3e">insert</a> (<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index, const type_t &amp;value)</td></tr>
 <tr class="memdesc:a7f1844eeb73d3cd681555e44128ccc3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts specified element at specified index.  <br /></td></tr>
@@ -255,21 +292,16 @@ Classes</h2></td></tr>
 <tr class="memdesc:a8d7e3cde1a97b03e109a4851b770b19a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an array with the elements of the container.  <br /></td></tr>
 <tr class="separator:a8d7e3cde1a97b03e109a4851b770b19a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Deprecatd Properties</h2></td></tr>
-<tr class="memitem:a2d628678f8c5b3c2259abd9cb274a846" id="r_a2d628678f8c5b3c2259abd9cb274a846"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d628678f8c5b3c2259abd9cb274a846">capacity</a> () const noexcept</td></tr>
-<tr class="memdesc:a2d628678f8c5b3c2259abd9cb274a846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements that can be held in currently allocated storage.  <br /></td></tr>
-<tr class="separator:a2d628678f8c5b3c2259abd9cb274a846"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac61a6a55f24dd7fe241a595e7450df96" id="r_ac61a6a55f24dd7fe241a595e7450df96"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac61a6a55f24dd7fe241a595e7450df96">empty</a> () const noexcept</td></tr>
-<tr class="memdesc:ac61a6a55f24dd7fe241a595e7450df96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the container is empty.  <br /></td></tr>
-<tr class="separator:ac61a6a55f24dd7fe241a595e7450df96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc9de2babacc03c016422879e6dfcc56" id="r_adc9de2babacc03c016422879e6dfcc56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc9de2babacc03c016422879e6dfcc56">max_size</a> () const noexcept</td></tr>
-<tr class="memdesc:adc9de2babacc03c016422879e6dfcc56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum possible number of elements.  <br /></td></tr>
-<tr class="separator:adc9de2babacc03c016422879e6dfcc56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb54286a414b4a6e00ebc6da4ef1b76a" id="r_afb54286a414b4a6e00ebc6da4ef1b76a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb54286a414b4a6e00ebc6da4ef1b76a">size</a> () const noexcept</td></tr>
-<tr class="memdesc:afb54286a414b4a6e00ebc6da4ef1b76a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements.  <br /></td></tr>
-<tr class="separator:afb54286a414b4a6e00ebc6da4ef1b76a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Operators</h2></td></tr>
+<tr class="memitem:ae2b6378af1d2fbae478ee3a6ebf32cc2" id="r_ae2b6378af1d2fbae478ee3a6ebf32cc2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2b6378af1d2fbae478ee3a6ebf32cc2">operator=</a> (const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>)</td></tr>
+<tr class="memdesc:ae2b6378af1d2fbae478ee3a6ebf32cc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator. Replaces the contents with a copy of the contents of other.  <br /></td></tr>
+<tr class="separator:ae2b6378af1d2fbae478ee3a6ebf32cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad16a187924b9f484f03250580bf1dbdc" id="r_ad16a187924b9f484f03250580bf1dbdc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad16a187924b9f484f03250580bf1dbdc">operator=</a> (<a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a> &amp;&amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept</td></tr>
+<tr class="memdesc:ad16a187924b9f484f03250580bf1dbdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in other is moved from other into this container). other is in a valid but unspecified state afterwards.  <br /></td></tr>
+<tr class="separator:ad16a187924b9f484f03250580bf1dbdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49d1ed4b51bbaac2a565fee1d03b7d30" id="r_a49d1ed4b51bbaac2a565fee1d03b7d30"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49d1ed4b51bbaac2a565fee1d03b7d30">operator=</a> (const std::initializer_list&lt; type_t &gt; &amp;<a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb">items</a>)</td></tr>
+<tr class="memdesc:a49d1ed4b51bbaac2a565fee1d03b7d30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the contents with those identified by initializer list ilist.  <br /></td></tr>
+<tr class="separator:a49d1ed4b51bbaac2a565fee1d03b7d30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7711060868315d32eed6d59dac3fbf01" id="r_a7711060868315d32eed6d59dac3fbf01"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection_1_1value__type.html">value_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7711060868315d32eed6d59dac3fbf01">operator[]</a> (<a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a> index)</td></tr>
 <tr class="memdesc:a7711060868315d32eed6d59dac3fbf01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access specified element.  <br /></td></tr>
 <tr class="separator:a7711060868315d32eed6d59dac3fbf01"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -282,6 +314,23 @@ Classes</h2></td></tr>
 <tr class="memitem:ab3784a9282c0c80415851180786447a9" id="r_ab3784a9282c0c80415851180786447a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3784a9282c0c80415851180786447a9">operator base_type &amp;</a> () noexcept</td></tr>
 <tr class="memdesc:ab3784a9282c0c80415851180786447a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the underlying base type.  <br /></td></tr>
 <tr class="separator:ab3784a9282c0c80415851180786447a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5520b71d762382752403994e501f0415" id="r_a5520b71d762382752403994e501f0415"><td class="memItemLeft" align="right" valign="top"><a id="a5520b71d762382752403994e501f0415" name="a5520b71d762382752403994e501f0415"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a> &amp;value) const</td></tr>
+<tr class="separator:a5520b71d762382752403994e501f0415"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaca9b2d4aed9146083f16fa7b514d214" id="r_aaca9b2d4aed9146083f16fa7b514d214"><td class="memItemLeft" align="right" valign="top"><a id="aaca9b2d4aed9146083f16fa7b514d214" name="aaca9b2d4aed9146083f16fa7b514d214"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a> &amp;value) const</td></tr>
+<tr class="separator:aaca9b2d4aed9146083f16fa7b514d214"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Deprecatd Properties</h2></td></tr>
+<tr class="memitem:ac61a6a55f24dd7fe241a595e7450df96" id="r_ac61a6a55f24dd7fe241a595e7450df96"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac61a6a55f24dd7fe241a595e7450df96">empty</a> () const noexcept</td></tr>
+<tr class="memdesc:ac61a6a55f24dd7fe241a595e7450df96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the container is empty.  <br /></td></tr>
+<tr class="separator:ac61a6a55f24dd7fe241a595e7450df96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc9de2babacc03c016422879e6dfcc56" id="r_adc9de2babacc03c016422879e6dfcc56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc9de2babacc03c016422879e6dfcc56">max_size</a> () const noexcept</td></tr>
+<tr class="memdesc:adc9de2babacc03c016422879e6dfcc56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the maximum possible number of elements.  <br /></td></tr>
+<tr class="separator:adc9de2babacc03c016422879e6dfcc56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb54286a414b4a6e00ebc6da4ef1b76a" id="r_afb54286a414b4a6e00ebc6da4ef1b76a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb54286a414b4a6e00ebc6da4ef1b76a">size</a> () const noexcept</td></tr>
+<tr class="memdesc:afb54286a414b4a6e00ebc6da4ef1b76a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements.  <br /></td></tr>
+<tr class="separator:afb54286a414b4a6e00ebc6da4ef1b76a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Deprecated Methods</h2></td></tr>
 <tr class="memitem:af4b29eadab8e6cf70fdd7c5771755a94" id="r_af4b29eadab8e6cf70fdd7c5771755a94"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1e0cdc297f3dcc50009280ada76158bc">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4b29eadab8e6cf70fdd7c5771755a94">at</a> (<a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a> pos)</td></tr>
@@ -559,9 +608,27 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 
 </div>
 </div>
+<a id="ac85cef6a608f487e867acd1bb0707ee6" name="ac85cef6a608f487e867acd1bb0707ee6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac85cef6a608f487e867acd1bb0707ee6">&#9670;&#160;</a></span>read_only_collection</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::read_only_collection</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Represents the read only collection of of list. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6bb4806772504f9b8db4503c407025a3" name="a6bb4806772504f9b8db4503c407025a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bb4806772504f9b8db4503c407025a3">&#9670;&#160;</a></span>arranged_element_collection() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bb4806772504f9b8db4503c407025a3">&#9670;&#160;</a></span>arranged_element_collection() <span class="overload">[1/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -585,12 +652,110 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Creates a new object <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> with specified allocator (optional). </p>
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> class that is empty. </p>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the default constructor of the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> generic class. The default constructor creates a list with the default capacity, as demonstrated by displaying the <a class="el" href="#a2d628678f8c5b3c2259abd9cb274a846" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::forms::layout::arranged_element_collection::capacity</a> property. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>example {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">    <span class="keyword">auto</span> dinosaurs = list&lt;string&gt; {};</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ncapacity: {0}&quot;</span>, dinosaurs.capacity());</div>
+<div class="line">    </div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Tyrannosaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Amargasaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Mamenchisaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Deinonychus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Compsognathus&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ncapacity: {0}&quot;</span>, dinosaurs.capacity());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;count: {0}&quot;</span>, dinosaurs.count());</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ncontains(\&quot;Deinonychus\&quot;): {0}&quot;</span>, dinosaurs.contains(<span class="stringliteral">&quot;Deinonychus&quot;</span>));</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ninsert(2, \&quot;Compsognathus\&quot;)&quot;</span>);</div>
+<div class="line">    dinosaurs.insert(2, <span class="stringliteral">&quot;Compsognathus&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Shows accessing the list using the Item property.</span></div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ndinosaurs[3]: {0}&quot;</span>, dinosaurs[3]);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nremove(\&quot;Compsognathus\&quot;)&quot;</span>);</div>
+<div class="line">    dinosaurs.remove(<span class="stringliteral">&quot;Compsognathus&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    dinosaurs.trim_excess();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ntrim_excess()&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;capacity: {0}&quot;</span>, dinosaurs.capacity());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;count: {0}&quot;</span>, dinosaurs.count());</div>
+<div class="line">    </div>
+<div class="line">    dinosaurs.clear();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nclear()&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;capacity: {0}&quot;</span>, dinosaurs.capacity());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;count: {0}&quot;</span>, dinosaurs.count());</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(example::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// capacity: 0</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Tyrannosaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Compsognathus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// capacity: 8</span></div>
+<div class="line"><span class="comment">// count: 5</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// contains(&quot;Deinonychus&quot;): true</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// insert(2, &quot;Compsognathus&quot;)</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Tyrannosaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Compsognathus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Compsognathus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// dinosaurs[3]: Mamenchisaurus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// remove(&quot;Compsognathus&quot;)</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Tyrannosaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Compsognathus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// trim_excess()</span></div>
+<div class="line"><span class="comment">// capacity: 5</span></div>
+<div class="line"><span class="comment">// count: 5</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// clear()</span></div>
+<div class="line"><span class="comment">// capacity: 5</span></div>
+<div class="line"><span class="comment">// count: 0</span></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="a05d448cb800680395101430f34eed333" name="a05d448cb800680395101430f34eed333"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05d448cb800680395101430f34eed333">&#9670;&#160;</a></span>arranged_element_collection() <span class="overload">[2/2]</span></h2>
+<a id="ab160c1cc3f3c548a65edbfee86c2e8d1" name="ab160c1cc3f3c548a65edbfee86c2e8d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab160c1cc3f3c548a65edbfee86c2e8d1">&#9670;&#160;</a></span>arranged_element_collection() <span class="overload">[2/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -603,7 +768,144 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::arranged_element_collection </td>
           <td>(</td>
-          <td class="paramtype">const std::initializer_list&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>il</em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a></td>          <td class="paramname"><span class="paramname"><em>capacity</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel explicit">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs the container with specified count default-inserted instances of type_t. No copies are made. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">capacity</td><td>The number of elements that the new list can initially store. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::out_of_memory</td><td>There is not enough memory available on the system. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the default constructor of the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> generic class. The default constructor creates a list with the default capacity, as demonstrated by displaying the <a class="el" href="#a2d628678f8c5b3c2259abd9cb274a846" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::forms::layout::arranged_element_collection::capacity</a> property. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>example {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">    <span class="keyword">auto</span> dinosaurs = list&lt;string&gt; {};</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ncapacity: {0}&quot;</span>, dinosaurs.capacity());</div>
+<div class="line">    </div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Tyrannosaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Amargasaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Mamenchisaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Deinonychus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Compsognathus&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ncapacity: {0}&quot;</span>, dinosaurs.capacity());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;count: {0}&quot;</span>, dinosaurs.count());</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ncontains(\&quot;Deinonychus\&quot;): {0}&quot;</span>, dinosaurs.contains(<span class="stringliteral">&quot;Deinonychus&quot;</span>));</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ninsert(2, \&quot;Compsognathus\&quot;)&quot;</span>);</div>
+<div class="line">    dinosaurs.insert(2, <span class="stringliteral">&quot;Compsognathus&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Shows accessing the list using the Item property.</span></div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ndinosaurs[3]: {0}&quot;</span>, dinosaurs[3]);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nremove(\&quot;Compsognathus\&quot;)&quot;</span>);</div>
+<div class="line">    dinosaurs.remove(<span class="stringliteral">&quot;Compsognathus&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    dinosaurs.trim_excess();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ntrim_excess()&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;capacity: {0}&quot;</span>, dinosaurs.capacity());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;count: {0}&quot;</span>, dinosaurs.count());</div>
+<div class="line">    </div>
+<div class="line">    dinosaurs.clear();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nclear()&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;capacity: {0}&quot;</span>, dinosaurs.capacity());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;count: {0}&quot;</span>, dinosaurs.count());</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(example::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// capacity: 0</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Tyrannosaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Compsognathus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// capacity: 8</span></div>
+<div class="line"><span class="comment">// count: 5</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// contains(&quot;Deinonychus&quot;): true</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// insert(2, &quot;Compsognathus&quot;)</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Tyrannosaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Compsognathus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Compsognathus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// dinosaurs[3]: Mamenchisaurus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// remove(&quot;Compsognathus&quot;)</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Tyrannosaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Compsognathus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// trim_excess()</span></div>
+<div class="line"><span class="comment">// capacity: 5</span></div>
+<div class="line"><span class="comment">// count: 5</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// clear()</span></div>
+<div class="line"><span class="comment">// capacity: 5</span></div>
+<div class="line"><span class="comment">// count: 0</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ae29c84488df2990c23f133fc0cc6fe8f" name="ae29c84488df2990c23f133fc0cc6fe8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae29c84488df2990c23f133fc0cc6fe8f">&#9670;&#160;</a></span>arranged_element_collection() <span class="overload">[3/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::arranged_element_collection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -614,11 +916,401 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Creates a new object <a class="el" href="classxtd_1_1diagnostics_1_1trace__listener__collection.html" title="Represents a collection of xtd::diagnostics::trace_listener.">xtd::diagnostics::trace_listener_collection</a> with specified initializer list. </p>
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> &lt;type_t&gt; class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>The collection whose elements are copied to the new list. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> &lt;type_t&gt; constructor and various methods of the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> &lt;type_t&gt; class that act on ranges. An array of strings is created and passed to the constructor, populating the list with the elements of the array. The <a class="el" href="#a2d628678f8c5b3c2259abd9cb274a846" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::forms::layout::arranged_element_collection::capacity</a> property is then displayed, to show that the initial capacity is exactly what is required to hold the input elements. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>example {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">    <span class="keyword">auto</span> input = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;string&gt;</a> {<span class="stringliteral">&quot;Brachiosaurus&quot;</span>, <span class="stringliteral">&quot;Amargasaurus&quot;</span>, <span class="stringliteral">&quot;Mamenchisaurus&quot;</span>};</div>
+<div class="line">    </div>
+<div class="line">    <span class="keyword">auto</span> dinosaurs = list&lt;string&gt;(input);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ncapacity: {0}&quot;</span>, dinosaurs.capacity());</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nadd_range(dinosaurs)&quot;</span>);</div>
+<div class="line">    dinosaurs.add_range(dinosaurs);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nremove_range(2, 2)&quot;</span>);</div>
+<div class="line">    dinosaurs.remove_range(2, 2);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    input = {<span class="stringliteral">&quot;Tyrannosaurus&quot;</span>, <span class="stringliteral">&quot;Deinonychus&quot;</span>, <span class="stringliteral">&quot;Velociraptor&quot;</span>};</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ninsert_range(3, input)&quot;</span>);</div>
+<div class="line">    dinosaurs.insert_range(3, input);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span>(<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\noutput = dinosaurs.get_range(2, 3).to_array()&quot;</span>);</div>
+<div class="line">    <span class="keyword">auto</span> output = dinosaurs.get_range(2, 3).to_array();</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : output)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(example::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// capacity: 3</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Brachiosaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// add_range(dinosaurs)</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Brachiosaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Brachiosaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// remove_range(2, 2)</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Brachiosaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// insert_range(3, input)</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Brachiosaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Tyrannosaurus</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Velociraptor</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// output = dinosaurs.get_range(2, 3).to_array()</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Tyrannosaurus</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:63</div></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The elements are copied onto the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> &lt;type_t&gt; in the same order they are read by the enumerator of the collection. </dd>
+<dd>
+This constructor is an O(n) operation, where n is the number of elements in collection. </dd></dl>
+
+</div>
+</div>
+<a id="a223b16140f5bb49df475a17824766ab8" name="a223b16140f5bb49df475a17824766ab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a223b16140f5bb49df475a17824766ab8">&#9670;&#160;</a></span>arranged_element_collection() <span class="overload">[4/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::arranged_element_collection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a>&lt; type_t, sorter_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default copy constructor with specified list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collection</td><td>The <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> which elements will be inserted from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab9268e21f7905db347de2f2f36dc2e74" name="ab9268e21f7905db347de2f2f36dc2e74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9268e21f7905db347de2f2f36dc2e74">&#9670;&#160;</a></span>arranged_element_collection() <span class="overload">[5/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::arranged_element_collection </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a>&lt; type_t, sorter_t &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move constructor with specified list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>The <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> which elements will be moved from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1aeb75be8ba2993b022c4e880fc57477" name="a1aeb75be8ba2993b022c4e880fc57477"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1aeb75be8ba2993b022c4e880fc57477">&#9670;&#160;</a></span>arranged_element_collection() <span class="overload">[6/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::arranged_element_collection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#af0d6483e597291d9042efe678f6ab08d">base_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy constructor with specified base type list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>The <a class="el" href="#af0d6483e597291d9042efe678f6ab08d" title="Represents the list base type.">xtd::forms::layout::arranged_element_collection::base_type</a> which elements will be inserted from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a28f23009788ce332d757c689d939acf5" name="a28f23009788ce332d757c689d939acf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28f23009788ce332d757c689d939acf5">&#9670;&#160;</a></span>arranged_element_collection() <span class="overload">[7/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::arranged_element_collection </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#af0d6483e597291d9042efe678f6ab08d">base_type</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>collection</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move constructor with specified base type list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>The <a class="el" href="#af0d6483e597291d9042efe678f6ab08d" title="Represents the list base type.">xtd::forms::layout::arranged_element_collection::base_type</a> which elements will be moved from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a170be4478671991ba43e6a94c3aeec5f" name="a170be4478671991ba43e6a94c3aeec5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a170be4478671991ba43e6a94c3aeec5f">&#9670;&#160;</a></span>arranged_element_collection() <span class="overload">[8/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::arranged_element_collection </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; type_t &gt;</td>          <td class="paramname"><span class="paramname"><em>items</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs the container with the contents of the specified initializer list, and allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">items</td><td>The initializer list to initialize the elements of the container with. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3849e87c673c46ab000f24a1893c93ce" name="a3849e87c673c46ab000f24a1893c93ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3849e87c673c46ab000f24a1893c93ce">&#9670;&#160;</a></span>arranged_element_collection() <span class="overload">[9/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<div class="memtemplate">
+template&lt;std::input_iterator input_iterator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::arranged_element_collection </td>
+          <td>(</td>
+          <td class="paramtype">input_iterator_t</td>          <td class="paramname"><span class="paramname"><em>first</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">input_iterator_t</td>          <td class="paramname"><span class="paramname"><em>last</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs the container with the contents of the range [first, last). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>The first iterator the range to copy the elements from. </td></tr>
+    <tr><td class="paramname">last</td><td>The last iterator the range to copy the elements from. </td></tr>
+    <tr><td class="paramname">alloc</td><td>The allocator to use for all memory allocations of this container. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2d628678f8c5b3c2259abd9cb274a846" name="a2d628678f8c5b3c2259abd9cb274a846"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d628678f8c5b3c2259abd9cb274a846">&#9670;&#160;</a></span>capacity() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a> <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::capacity </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the total number of elements the internal data structure can hold without resizing. </p>
+<dl class="section return"><dt>Returns</dt><dd>Capacity of the currently allocated storage. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#af4ad72063824fdf6ac996a5b6cb041ec" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> is set to a value that is less than <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0241fb815a562162339d5e8e6218c96d" name="a0241fb815a562162339d5e8e6218c96d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0241fb815a562162339d5e8e6218c96d">&#9670;&#160;</a></span>capacity() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::capacity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a></td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the total number of elements the internal data structure can hold without resizing. </p>
+<dl class="section return"><dt>Returns</dt><dd>Capacity of the currently allocated storage. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::out_of_memory</td><td>There is not enough memory available on the system. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#af4ad72063824fdf6ac996a5b6cb041ec" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> is set to a value that is less than <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="af921b936ffed8db4a8936e91fbc69b39" name="af921b936ffed8db4a8936e91fbc69b39"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af921b936ffed8db4a8936e91fbc69b39">&#9670;&#160;</a></span>count()</h2>
 
@@ -1220,8 +1912,8 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns an enumerator that iterates through the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </p>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a>::.enumerator for the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </dd></dl>
+<p>Returns an enumerator that iterates through the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> &lt;type_t&gt;. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a>::.enumerator for the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> &lt;type_t&gt;. </dd></dl>
 
 </div>
 </div>
@@ -1331,7 +2023,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if item was successfully removed from the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> &lt;type_t&gt;; otherwise, <code>false</code>. This method also returns <code>false</code> if item is not found in the original <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html" title="Represents a collection of objects.">xtd::forms::layout::arranged_element_collection</a> &lt;type_t&gt;. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If type <code>typ_t</code> implements the <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> &lt;type_t&gt; generic interface, the equality comparer is the <a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903" title="Indicates whether the current object is equal to another object of the same type.">xtd::iequatable::equals</a> method of that interface; otherwise, the default equality comparer is <a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b" title="Determines whether the specified object is equal to the current object.">xtd::object::equals</a>. </dd>
 <dd>
-This method performs a linear search; therefore, this method is an O(n) operation, where n is <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. </dd></dl>
+This method performs a linear search; therefore, this method is an O(n) operation, where n is <a class="el" href="#af921b936ffed8db4a8936e91fbc69b39" title="Gets the number of elements contained in the xtd::forms::layout::arranged_element_collection &lt;type_t&gt;...">xtd::forms::layout::arranged_element_collection::count</a>. </dd></dl>
 
 </div>
 </div>
@@ -1400,8 +2092,8 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 
 </div>
 </div>
-<a id="a2d628678f8c5b3c2259abd9cb274a846" name="a2d628678f8c5b3c2259abd9cb274a846"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d628678f8c5b3c2259abd9cb274a846">&#9670;&#160;</a></span>capacity()</h2>
+<a id="ae2b6378af1d2fbae478ee3a6ebf32cc2" name="ae2b6378af1d2fbae478ee3a6ebf32cc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2b6378af1d2fbae478ee3a6ebf32cc2">&#9670;&#160;</a></span>operator=() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1412,27 +2104,32 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a> <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::capacity </td>
+          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a> &amp; <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::operator= </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a>&lt; type_t, sorter_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the number of elements that can be held in currently allocated storage. </p>
-<dl class="section return"><dt>Returns</dt><dd>The number of elements that can be held in currently allocated storage. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000205">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb" title="Returns the underlying base type items.">xtd::forms::layout::arranged_element_collection::items()</a>.capacity - Will be removed in version 0.4.0. </dd></dl>
+<p>Copy assignment operator. Replaces the contents with a copy of the contents of other. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Another container to use as data source. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance. </dd></dl>
 
 </div>
 </div>
-<a id="ac61a6a55f24dd7fe241a595e7450df96" name="ac61a6a55f24dd7fe241a595e7450df96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac61a6a55f24dd7fe241a595e7450df96">&#9670;&#160;</a></span>empty()</h2>
+<a id="ad16a187924b9f484f03250580bf1dbdc" name="ad16a187924b9f484f03250580bf1dbdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad16a187924b9f484f03250580bf1dbdc">&#9670;&#160;</a></span>operator=() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1443,10 +2140,10 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::empty </td>
+          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a> &amp; <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::operator= </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a>&lt; type_t, sorter_t &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -1456,14 +2153,19 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Checks whether the container is empty. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if container is empty; otherwise <code>false</code>. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000206">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb" title="Returns the underlying base type items.">xtd::forms::layout::arranged_element_collection::items()</a>.empty - Will be removed in version 0.4.0. </dd></dl>
+<p>Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in other is moved from other into this container). other is in a valid but unspecified state afterwards. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Another base type container to use as data source. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance. </dd></dl>
 
 </div>
 </div>
-<a id="adc9de2babacc03c016422879e6dfcc56" name="adc9de2babacc03c016422879e6dfcc56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc9de2babacc03c016422879e6dfcc56">&#9670;&#160;</a></span>max_size()</h2>
+<a id="a49d1ed4b51bbaac2a565fee1d03b7d30" name="a49d1ed4b51bbaac2a565fee1d03b7d30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49d1ed4b51bbaac2a565fee1d03b7d30">&#9670;&#160;</a></span>operator=() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1474,53 +2176,27 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a> <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::max_size </td>
+          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">arranged_element_collection</a> &amp; <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::operator= </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const std::initializer_list&lt; type_t &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>items</em></span></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the maximum possible number of elements. </p>
-<dl class="section return"><dt>Returns</dt><dd>The maximum possible number of elements. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000207">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#adc9de2babacc03c016422879e6dfcc56" title="Returns the maximum possible number of elements.">xtd::forms::layout::arranged_element_collection::max_size()</a>.empty - Will be removed in version 0.4.0. </dd></dl>
-
-</div>
-</div>
-<a id="afb54286a414b4a6e00ebc6da4ef1b76a" name="afb54286a414b4a6e00ebc6da4ef1b76a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afb54286a414b4a6e00ebc6da4ef1b76a">&#9670;&#160;</a></span>size()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a> <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::size </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the number of elements. </p>
-<dl class="section return"><dt>Returns</dt><dd>The number of elements. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000208">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#af921b936ffed8db4a8936e91fbc69b39" title="Gets the number of elements contained in the xtd::forms::layout::arranged_element_collection &lt;type_t&gt;...">xtd::forms::layout::arranged_element_collection::count</a> - Will be removed in version 0.4.0. </dd></dl>
+<p>Replaces the contents with those identified by initializer list ilist. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">items</td><td>Initializer list to use as data source </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance. </dd></dl>
 
 </div>
 </div>
@@ -1656,6 +2332,99 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 
 </div>
 </div>
+<a id="ac61a6a55f24dd7fe241a595e7450df96" name="ac61a6a55f24dd7fe241a595e7450df96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac61a6a55f24dd7fe241a595e7450df96">&#9670;&#160;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::empty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks whether the container is empty. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if container is empty; otherwise <code>false</code>. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000205">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb" title="Returns the underlying base type items.">xtd::forms::layout::arranged_element_collection::items()</a>.empty - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="adc9de2babacc03c016422879e6dfcc56" name="adc9de2babacc03c016422879e6dfcc56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc9de2babacc03c016422879e6dfcc56">&#9670;&#160;</a></span>max_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a> <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::max_size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the maximum possible number of elements. </p>
+<dl class="section return"><dt>Returns</dt><dd>The maximum possible number of elements. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000206">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#adc9de2babacc03c016422879e6dfcc56" title="Returns the maximum possible number of elements.">xtd::forms::layout::arranged_element_collection::max_size()</a>.empty - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="afb54286a414b4a6e00ebc6da4ef1b76a" name="afb54286a414b4a6e00ebc6da4ef1b76a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb54286a414b4a6e00ebc6da4ef1b76a">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a5d3d85fc681a7d6dd3ca91d52cd5060a">size_type</a> <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">xtd::forms::layout::arranged_element_collection</a>&lt; type_t, sorter_t &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of elements. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of elements. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000207">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#af921b936ffed8db4a8936e91fbc69b39" title="Gets the number of elements contained in the xtd::forms::layout::arranged_element_collection &lt;type_t&gt;...">xtd::forms::layout::arranged_element_collection::count</a> - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
 <a id="af4b29eadab8e6cf70fdd7c5771755a94" name="af4b29eadab8e6cf70fdd7c5771755a94"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af4b29eadab8e6cf70fdd7c5771755a94">&#9670;&#160;</a></span>at() <span class="overload">[1/2]</span></h2>
 
@@ -1694,7 +2463,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000209">Deprecated</a></b></dt><dd>Replaced by xtd::forms::layout::arranged_element_collection::rator [] - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000208">Deprecated</a></b></dt><dd>Replaced by xtd::forms::layout::arranged_element_collection::rator [] - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -1736,7 +2505,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000210">Deprecated</a></b></dt><dd>Replaced by xtd::forms::layout::arranged_element_collection::rator [] - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000209">Deprecated</a></b></dt><dd>Replaced by xtd::forms::layout::arranged_element_collection::rator [] - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -1767,7 +2536,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 
 <p>Access the last element. </p>
 <dl class="section return"><dt>Returns</dt><dd>The last element. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000211">Deprecated</a></b></dt><dd>Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000210">Deprecated</a></b></dt><dd>Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -1798,7 +2567,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 
 <p>Access the last element. </p>
 <dl class="section return"><dt>Returns</dt><dd>The last element. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000212">Deprecated</a></b></dt><dd>Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000211">Deprecated</a></b></dt><dd>Replaced by xtd::forms::layout::arranged_element_collection::operator [~1_z] - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -1829,7 +2598,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 
 <p>Returns a reverse iterator to the end. </p>
 <dl class="section return"><dt>Returns</dt><dd>The reverse iterator to the end. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000213">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb" title="Returns the underlying base type items.">xtd::forms::layout::arranged_element_collection::items()</a>.crbegin - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000212">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb" title="Returns the underlying base type items.">xtd::forms::layout::arranged_element_collection::items()</a>.crbegin - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -1860,7 +2629,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 
 <p>Returns a reverse iterator to the end. </p>
 <dl class="section return"><dt>Returns</dt><dd>The reverse iterator to the end. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000214">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb" title="Returns the underlying base type items.">xtd::forms::layout::arranged_element_collection::items()</a>.crend - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000213">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb" title="Returns the underlying base type items.">xtd::forms::layout::arranged_element_collection::items()</a>.crend - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -1891,7 +2660,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 
 <p>Access the first element. </p>
 <dl class="section return"><dt>Returns</dt><dd>The first element. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000215">Deprecated</a></b></dt><dd>Replaced by xtd::forms::layout::arranged_element_collection::operator [0] - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000214">Deprecated</a></b></dt><dd>Replaced by xtd::forms::layout::arranged_element_collection::operator [0] - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -1922,7 +2691,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 
 <p>Access the first element. </p>
 <dl class="section return"><dt>Returns</dt><dd>The first element. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000216">Deprecated</a></b></dt><dd>Replaced by xtd::forms::layout::arranged_element_collection::operator [0] - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000215">Deprecated</a></b></dt><dd>Replaced by xtd::forms::layout::arranged_element_collection::operator [0] - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -1953,7 +2722,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 
 <p>Returns the associated allocator. </p>
 <dl class="section return"><dt>Returns</dt><dd>The associate allocator. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000217">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#af921b936ffed8db4a8936e91fbc69b39" title="Gets the number of elements contained in the xtd::forms::layout::arranged_element_collection &lt;type_t&gt;...">xtd::forms::layout::arranged_element_collection::count</a> - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000216">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#af921b936ffed8db4a8936e91fbc69b39" title="Gets the number of elements contained in the xtd::forms::layout::arranged_element_collection &lt;type_t&gt;...">xtd::forms::layout::arranged_element_collection::count</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -1996,7 +2765,7 @@ template&lt;class ... args_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000218">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7f1844eeb73d3cd681555e44128ccc3e" title="Inserts specified element at specified index.">xtd::forms::layout::arranged_element_collection::insert</a> - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000217">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7f1844eeb73d3cd681555e44128ccc3e" title="Inserts specified element at specified index.">xtd::forms::layout::arranged_element_collection::insert</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2034,7 +2803,7 @@ template&lt;class ... args_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000219">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a6730feb0636fdc24a3498a4ea9c82fdc" title="Adds an item to the xtd::forms::layout::arranged_element_collection &lt;type_t&gt;.">xtd::forms::layout::arranged_element_collection::add</a> - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000218">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a6730feb0636fdc24a3498a4ea9c82fdc" title="Adds an item to the xtd::forms::layout::arranged_element_collection &lt;type_t&gt;.">xtd::forms::layout::arranged_element_collection::add</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2070,7 +2839,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000220">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7cd0bf57cdb4896d06865a71c647fcb6" title="Erases element at specified index.">xtd::forms::layout::arranged_element_collection::remove_at</a> - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000219">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7cd0bf57cdb4896d06865a71c647fcb6" title="Erases element at specified index.">xtd::forms::layout::arranged_element_collection::remove_at</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2106,7 +2875,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000221">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7cd0bf57cdb4896d06865a71c647fcb6" title="Erases element at specified index.">xtd::forms::layout::arranged_element_collection::remove_at</a> - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000220">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7cd0bf57cdb4896d06865a71c647fcb6" title="Erases element at specified index.">xtd::forms::layout::arranged_element_collection::remove_at</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2147,7 +2916,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000222">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7cd0bf57cdb4896d06865a71c647fcb6" title="Erases element at specified index.">xtd::forms::layout::arranged_element_collection::remove_at</a> - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000221">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7cd0bf57cdb4896d06865a71c647fcb6" title="Erases element at specified index.">xtd::forms::layout::arranged_element_collection::remove_at</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2188,7 +2957,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000223">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7cd0bf57cdb4896d06865a71c647fcb6" title="Erases element at specified index.">xtd::forms::layout::arranged_element_collection::remove_at</a> - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000222">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7cd0bf57cdb4896d06865a71c647fcb6" title="Erases element at specified index.">xtd::forms::layout::arranged_element_collection::remove_at</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2224,7 +2993,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000224">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7cd0bf57cdb4896d06865a71c647fcb6" title="Erases element at specified index.">xtd::forms::layout::arranged_element_collection::remove_at</a> - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000223">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7cd0bf57cdb4896d06865a71c647fcb6" title="Erases element at specified index.">xtd::forms::layout::arranged_element_collection::remove_at</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2265,7 +3034,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000225">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7f1844eeb73d3cd681555e44128ccc3e" title="Inserts specified element at specified index.">xtd::forms::layout::arranged_element_collection::insert</a> - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000224">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7f1844eeb73d3cd681555e44128ccc3e" title="Inserts specified element at specified index.">xtd::forms::layout::arranged_element_collection::insert</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2306,7 +3075,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000226">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7f1844eeb73d3cd681555e44128ccc3e" title="Inserts specified element at specified index.">xtd::forms::layout::arranged_element_collection::insert</a> - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000225">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7f1844eeb73d3cd681555e44128ccc3e" title="Inserts specified element at specified index.">xtd::forms::layout::arranged_element_collection::insert</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2347,7 +3116,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000227">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7f1844eeb73d3cd681555e44128ccc3e" title="Inserts specified element at specified index.">xtd::forms::layout::arranged_element_collection::insert</a> - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000226">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a7f1844eeb73d3cd681555e44128ccc3e" title="Inserts specified element at specified index.">xtd::forms::layout::arranged_element_collection::insert</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2377,7 +3146,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 </div><div class="memdoc">
 
 <p>Removes the last element of the container. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000228">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a766c30fc28eb3c75dca051916993ac54" title="Removes the first occurrence of a specific object from the xtd::forms::layout::arranged_element_colle...">xtd::forms::layout::arranged_element_collection::remove</a>(<a class="el" href="#af921b936ffed8db4a8936e91fbc69b39" title="Gets the number of elements contained in the xtd::forms::layout::arranged_element_collection &lt;type_t&gt;...">count()</a> - 1) - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000227">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a766c30fc28eb3c75dca051916993ac54" title="Removes the first occurrence of a specific object from the xtd::forms::layout::arranged_element_colle...">xtd::forms::layout::arranged_element_collection::remove</a>(<a class="el" href="#af921b936ffed8db4a8936e91fbc69b39" title="Gets the number of elements contained in the xtd::forms::layout::arranged_element_collection &lt;type_t&gt;...">count()</a> - 1) - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2413,7 +3182,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000229">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a6730feb0636fdc24a3498a4ea9c82fdc" title="Adds an item to the xtd::forms::layout::arranged_element_collection &lt;type_t&gt;.">xtd::forms::layout::arranged_element_collection::add</a> - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000228">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a6730feb0636fdc24a3498a4ea9c82fdc" title="Adds an item to the xtd::forms::layout::arranged_element_collection &lt;type_t&gt;.">xtd::forms::layout::arranged_element_collection::add</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2449,7 +3218,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000230">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a6730feb0636fdc24a3498a4ea9c82fdc" title="Adds an item to the xtd::forms::layout::arranged_element_collection &lt;type_t&gt;.">xtd::forms::layout::arranged_element_collection::add</a> - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000229">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a6730feb0636fdc24a3498a4ea9c82fdc" title="Adds an item to the xtd::forms::layout::arranged_element_collection &lt;type_t&gt;.">xtd::forms::layout::arranged_element_collection::add</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2485,7 +3254,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000231">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#aae9ba3688cf3121452e607ccab7eba0d" title="Adds elements to the end.">xtd::forms::layout::arranged_element_collection::add_range</a> - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000230">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#aae9ba3688cf3121452e607ccab7eba0d" title="Adds elements to the end.">xtd::forms::layout::arranged_element_collection::add_range</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2521,7 +3290,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000232">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#aae9ba3688cf3121452e607ccab7eba0d" title="Adds elements to the end.">xtd::forms::layout::arranged_element_collection::add_range</a> - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000231">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#aae9ba3688cf3121452e607ccab7eba0d" title="Adds elements to the end.">xtd::forms::layout::arranged_element_collection::add_range</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2557,7 +3326,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000233">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#aae9ba3688cf3121452e607ccab7eba0d" title="Adds elements to the end.">xtd::forms::layout::arranged_element_collection::add_range</a> - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000232">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#aae9ba3688cf3121452e607ccab7eba0d" title="Adds elements to the end.">xtd::forms::layout::arranged_element_collection::add_range</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2595,7 +3364,7 @@ template&lt;class collection_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000234">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#aae9ba3688cf3121452e607ccab7eba0d" title="Adds elements to the end.">xtd::forms::layout::arranged_element_collection::add_range</a> - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000233">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#aae9ba3688cf3121452e607ccab7eba0d" title="Adds elements to the end.">xtd::forms::layout::arranged_element_collection::add_range</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2637,7 +3406,7 @@ template&lt;class iterator_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000235">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#aae9ba3688cf3121452e607ccab7eba0d" title="Adds elements to the end.">xtd::forms::layout::arranged_element_collection::add_range</a> - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000234">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#aae9ba3688cf3121452e607ccab7eba0d" title="Adds elements to the end.">xtd::forms::layout::arranged_element_collection::add_range</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2668,7 +3437,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 
 <p>Gets an array with the elements of the container. </p>
 <dl class="section return"><dt>Returns</dt><dd>The array that contains elements of the container. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000236">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a8d7e3cde1a97b03e109a4851b770b19a" title="Gets an array with the elements of the container.">xtd::forms::layout::arranged_element_collection::to_array</a> - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000235">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a8d7e3cde1a97b03e109a4851b770b19a" title="Gets an array with the elements of the container.">xtd::forms::layout::arranged_element_collection::to_array</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2699,7 +3468,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 
 <p>Returns a reverse iterator to the end. </p>
 <dl class="section return"><dt>Returns</dt><dd>The reverse iterator to the end. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000237">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb" title="Returns the underlying base type items.">xtd::forms::layout::arranged_element_collection::items()</a>.rbegin - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000236">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb" title="Returns the underlying base type items.">xtd::forms::layout::arranged_element_collection::items()</a>.rbegin - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2730,7 +3499,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 
 <p>Returns a reverse iterator to the end. </p>
 <dl class="section return"><dt>Returns</dt><dd>The reverse iterator to the end. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000238">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb" title="Returns the underlying base type items.">xtd::forms::layout::arranged_element_collection::items()</a>.rbegin - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000237">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb" title="Returns the underlying base type items.">xtd::forms::layout::arranged_element_collection::items()</a>.rbegin - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2761,7 +3530,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 
 <p>Returns a reverse iterator to the end. </p>
 <dl class="section return"><dt>Returns</dt><dd>The reverse iterator to the end. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000239">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb" title="Returns the underlying base type items.">xtd::forms::layout::arranged_element_collection::items()</a>.rend - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000238">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb" title="Returns the underlying base type items.">xtd::forms::layout::arranged_element_collection::items()</a>.rend - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2792,7 +3561,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 
 <p>Returns a reverse iterator to the end. </p>
 <dl class="section return"><dt>Returns</dt><dd>The reverse iterator to the end. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000240">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb" title="Returns the underlying base type items.">xtd::forms::layout::arranged_element_collection::items()</a>.rend - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000239">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb" title="Returns the underlying base type items.">xtd::forms::layout::arranged_element_collection::items()</a>.rend - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2822,7 +3591,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 </div><div class="memdoc">
 
 <p>Reserves storage. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000241">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb" title="Returns the underlying base type items.">xtd::forms::layout::arranged_element_collection::items()</a>.reserve - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000240">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb" title="Returns the underlying base type items.">xtd::forms::layout::arranged_element_collection::items()</a>.reserve - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2852,7 +3621,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 </div><div class="memdoc">
 
 <p>Reduces memory usage by freeing unused memory. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000242">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb" title="Returns the underlying base type items.">xtd::forms::layout::arranged_element_collection::items()</a>.shrink_to_fit - Will be removed in version 0.4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000241">Deprecated</a></b></dt><dd>Replaced by <a class="el" href="#a0dbb8ecc97b75a03224e2b4369aaebdb" title="Returns the underlying base type items.">xtd::forms::layout::arranged_element_collection::items()</a>.shrink_to_fit - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -3006,8 +3775,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">auto</span> controls = control_collection {label1, <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>, choice1};</div>
 <div class="line"><span class="keywordflow">if</span> (<a class="code hl_function" href="#a0dbb8ecc97b75a03224e2b4369aaebdb">items</a>.index_of(label1) == <a class="code hl_function" href="#a0dbb8ecc97b75a03224e2b4369aaebdb">items</a>.npos)</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Value not found&quot;</span>);</div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1layout_1_1arranged__element__collection_html_a0dbb8ecc97b75a03224e2b4369aaebdb"><div class="ttname"><a href="#a0dbb8ecc97b75a03224e2b4369aaebdb">xtd::forms::layout::arranged_element_collection::items</a></div><div class="ttdeci">const auto &amp; items() const</div><div class="ttdoc">Returns the underlying base type items.</div><div class="ttdef"><b>Definition</b> arranged_element_collection.hpp:204</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1layout_1_1arranged__element__collection_html_a0dbb8ecc97b75a03224e2b4369aaebdb"><div class="ttname"><a href="#a0dbb8ecc97b75a03224e2b4369aaebdb">xtd::forms::layout::arranged_element_collection::items</a></div><div class="ttdeci">const auto &amp; items() const</div><div class="ttdoc">Returns the underlying base type items.</div><div class="ttdef"><b>Definition</b> arranged_element_collection.hpp:244</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9"><div class="ttname"><a href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">xtd::forms::message_dialog_default_button::button1</a></div><div class="ttdeci">@ button1</div><div class="ttdoc">The first button on the message box is the default button.</div><div class="ttdef"><b>Definition</b> message_dialog_default_button.hpp:24</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -3146,7 +3914,7 @@ template&lt;class type_t, class sorter_t = sorter_none&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 12 2025 15:57:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Sep 12 2025 19:25:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
