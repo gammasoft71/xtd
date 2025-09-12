@@ -14,7 +14,7 @@ namespace xtd::forms::tests {
       form form;
       link_label label;
       label.parent(form);
-      assert::are_equal(drawing::size(100, 25),  label.size());
+      assert::are_equal(drawing::size(100, 23),  label.size());
     }
   };
 }
