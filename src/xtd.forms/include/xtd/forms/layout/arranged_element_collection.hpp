@@ -35,7 +35,34 @@ namespace xtd {
       /// @ingroup xtd_forms collections
       /// @remarks The xtd::forms::layout::arranged_element_collection class represents a collection of objects arranged on a design surface or inside a parent xtd.forms::container_control.
       template<class type_t, class sorter_t = sorter_none>
-      class arranged_element_collection : public object {
+      class arranged_element_collection : public object, public xtd::collections::generic::ienumerable<type_t> {
+        struct __enumerator__ : public xtd::collections::generic::ienumerator<type_t> {
+        public:
+          explicit __enumerator__(const arranged_element_collection& items, xtd::size version) : items_(items), version_(version) {}
+          
+          const type_t& current() const override {
+            if (version_ != items_.items().version()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
+            if (index_ < items_.count()) return items_[index_];
+            return default_value_;
+          }
+          
+          bool move_next() override {
+            if (version_ != items_.items().version()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
+            return ++index_ < items_.count();
+          }
+          
+          void reset() override {
+            version_ = items_.items().version();
+            index_ = arranged_element_collection::npos;
+          }
+          
+        protected:
+          const arranged_element_collection& items_;
+          xtd::size index_ = arranged_element_collection::npos;
+          xtd::size version_ = 0;
+          type_t default_value_;
+        };
+
       public:
         /// @brief Represents the value type of the collection.
         class value_type : public type_t {
@@ -85,11 +112,7 @@ namespace xtd {
         using pointer = value_type*;
         /// @brief Represents the const pointer of list value type.
         using const_pointer = const value_type*;
-        
-        /// @brief Represents the iterator type of the collection.
-        using iterator = typename xtd::collections::generic::list<value_type>::iterator;
-        /// @brief Represents the const iterator type of the collection.
-        using const_iterator = typename xtd::collections::generic::list<value_type>::const_iterator;
+        /// @}
         
         /// @name Public Fields
         
@@ -198,26 +221,6 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
-        /// @brief Returns an iterator to the beginning.
-        /// @return The iterator to the beginning.
-        iterator begin() noexcept {return items_.begin();}
-        /// @brief Returns an iterator to the beginning.
-        /// @return The iterator to the beginning.
-        const_iterator begin() const noexcept {return items_.begin();}
-        /// @brief Returns an iterator to the beginning.
-        /// @return The iterator to the beginning.
-        const_iterator cbegin() const noexcept {return items_.cbegin();}
-        
-        /// @brief Returns an iterator to the end.
-        /// @return The iterator to the end.
-        iterator end() noexcept {return items_.end();}
-        /// @brief Returns an iterator to the end.
-        /// @return The iterator to the end.
-        const_iterator end() const noexcept {return items_.end();}
-        /// @brief Returns an iterator to the end.
-        /// @return The iterator to the end.
-        const_iterator cend() const noexcept {return items_.cend();}
-        
         /// @brief Adds an element to the end.
         /// @param item The element to add.
         virtual void add(const type_t& item) {
@@ -278,6 +281,12 @@ namespace xtd {
             remove_at(0);
         }
         
+        /// @brief Returns an enumerator that iterates through the xtd::collections::generic::list <type_t>.
+        /// @return A xtd::collections::generic::.enumerator for the xtd::collections::generic::list <type_t>.
+        xtd::collections::generic::enumerator<type_t> get_enumerator() const noexcept override {
+          return {new_ptr<__enumerator__>(self_, items().version())};
+        }
+
         /// @brief Inserts specified element at specified index.
         /// @param index The index before which the content will be inserted.
         /// @param value The element to insert.
@@ -471,8 +480,8 @@ namespace xtd {
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.
         template<class ...args_t>
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.")]]
-        void emplace(const_iterator pos, args_t&& ... args) {
-          auto index = pos - begin();
+        void emplace(xtd::collections::generic::list<value_type>::const_iterator pos, args_t&& ... args) {
+          auto index = pos - items().begin();
           inserting_ = true;
           auto result = items_.insert(pos, args...);
           inserting_ = false;
@@ -501,8 +510,8 @@ namespace xtd {
         /// @param pos The iterator which the content will be erased.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.")]]
-        auto erase(iterator pos) {
-          on_item_removed(pos - begin(), *pos);
+        auto erase(xtd::collections::generic::list<value_type>::iterator pos) {
+          on_item_removed(pos - items().begin(), *pos);
           erasing_ = true;
           auto result = items().erase(pos);
           erasing_ = false;
@@ -512,8 +521,8 @@ namespace xtd {
         /// @param pos The iterator which the content will be erased.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.")]]
-        auto erase(const_iterator pos) {
-          on_item_removed(pos - begin(), const_cast<value_type&>(*pos));
+        auto erase(xtd::collections::generic::list<value_type>::const_iterator pos) {
+          on_item_removed(pos - items().begin(), const_cast<value_type&>(*pos));
           erasing_ = true;
           auto result = items().erase(pos);
           erasing_ = false;
@@ -525,10 +534,10 @@ namespace xtd {
         /// @param first The last iterator range which the content will be erased.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.")]]
-        auto erase(iterator first, iterator last) {
-          iterator result = end();
-          auto index = first - begin();
-          for (iterator it = first; it <= last; ++it)
+        auto erase(xtd::collections::generic::list<value_type>::iterator first, xtd::collections::generic::list<value_type>::iterator last) {
+          auto result = items().end();
+          auto index = first - items().begin();
+          for (auto it = first; it <= last; ++it)
             remove_at(index++);
           return result;
         }
@@ -537,10 +546,10 @@ namespace xtd {
         /// @param first The last iterator range which the content will be erased.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::remove_at - Will be removed in version 0.4.0.")]]
-        auto erase(const_iterator first, const_iterator last) {
-          auto result = end();
-          auto index = first - begin();
-          for (const_iterator it = first; it <= last; ++it)
+        auto erase(xtd::collections::generic::list<value_type>::const_iterator first, xtd::collections::generic::list<value_type>::const_iterator last) {
+          auto result = items().end();
+          auto index = first - items().begin();
+          for (auto it = first; it <= last; ++it)
             remove_at(index++);
           return result;
         }
@@ -558,8 +567,8 @@ namespace xtd {
         /// @param value The element to insert.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.")]]
-        auto insert(const_iterator pos, const type_t& value) {
-          auto index = pos - begin();
+        auto insert(xtd::collections::generic::list<value_type>::const_iterator pos, const type_t& value) {
+          auto index = pos - items().begin();
           inserting_ = true;
           auto result = items().insert(pos, value);
           inserting_ = false;
@@ -574,8 +583,8 @@ namespace xtd {
         /// @param value The element to insert.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.")]]
-        auto insert(const_iterator pos, type_t&& value) {
-          auto index = pos - begin();
+        auto insert(xtd::collections::generic::list<value_type>::const_iterator pos, type_t&& value) {
+          auto index = pos - items().begin();
           inserting_ = true;
           auto result = items().insert(pos, value);
           inserting_ = false;
