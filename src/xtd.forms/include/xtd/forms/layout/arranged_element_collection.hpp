@@ -78,9 +78,9 @@ namespace xtd {
         /// @brief Represents the list size type (usually xtd::size).
         using size_type = xtd::size;
         /// @brief Represents the reference of list value type.
-        using reference = value_type&;
+        using reference = type_t&;
         /// @brief Represents the const reference of list value type.
-        using const_reference = const value_type&;
+        using const_reference = const type_t&;
         /// @brief Represents the pointer of list value type.
         using pointer = value_type*;
         /// @brief Represents the const pointer of list value type.
@@ -137,10 +137,8 @@ namespace xtd {
         
         /// @{
         /// @brief Creates a new object xtd::forms::layout::arranged_element_collection with specified allocator (optional).
-        /// @remarks If allocator not specified, the std::allocator<value_type> is used.
         arranged_element_collection() = default;
         /// @brief Creates a new object xtd::diagnostics::trace_listener_collection with specified initializer list.
-        /// @param il The initializer list that contains items to fill the collection.
         arranged_element_collection(const std::initializer_list<type_t>& il) {
           for (auto item : il)
             add(item);
@@ -222,21 +220,21 @@ namespace xtd {
         
         /// @brief Adds an element to the end.
         /// @param item The element to add.
-        virtual void add(const value_type& item) {
+        virtual void add(const type_t& item) {
           items_.add(item);
           size_t index = items_.count() - 1;
-          self_[index].owner = this;
-          self_[index].pos = index;
+          static_cast<value_type&>(self_[index]).owner = this;
+          static_cast<value_type&>(self_[index]).pos = index;
           on_item_added(index, items_[index]);
           if (sorted_) sort();
         }
         /// @brief Adds an element to the end.
         /// @param item The element to add.
-        virtual void add(value_type&& item) {
+        virtual void add(type_t&& item) {
           items_.add(item);
           size_t index = items_.count() - 1;
-          self_[index].owner = this;
-          self_[index].pos = index;
+          static_cast<value_type&>(self_[index]).owner = this;
+          static_cast<value_type&>(self_[index]).pos = index;
           on_item_added(index, items_[index]);
           if (sorted_) sort();
         }
@@ -244,19 +242,19 @@ namespace xtd {
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
         virtual void add_range(const arranged_element_collection& collection) {
-          for (value_type item : collection)
+          for (const auto& item : collection)
             add(item);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
-        virtual void add_range(const std::vector<value_type>& collection) {
-          for (value_type item : collection)
+        virtual void add_range(const std::vector<type_t>& collection) {
+          for (const auto& item : collection)
             add(item);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
-        virtual void add_range(const std::initializer_list<value_type>& collection) {
-          for (value_type item : collection)
+        virtual void add_range(const std::initializer_list<type_t>& collection) {
+          for (const auto& item : collection)
             add(item);
         }
         /// @brief Adds elements to the end.
@@ -283,13 +281,13 @@ namespace xtd {
         /// @brief Inserts specified element at specified index.
         /// @param index The index before which the content will be inserted.
         /// @param value The element to insert.
-        virtual void insert(xtd::size index, const value_type& value) {
+        virtual void insert(xtd::size index, const type_t& value) {
           if (index > count()) helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           inserting_ = true;
           items().insert(items().begin() + index, value);
           inserting_ = false;
-          self_[index].owner = this;
-          self_[index].pos = index;
+          static_cast<value_type&>(self_[index]).owner = this;
+          static_cast<value_type&>(self_[index]).pos = index;
           on_item_added(index, items_[index]);
           if (sorted_) sort();
         }
@@ -303,7 +301,7 @@ namespace xtd {
         
         /// @brief Removes an element.
         /// @param item The element to remove.
-        virtual bool remove(const value_type& item) {
+        virtual bool remove(const type_t& item) {
           if (count() == 0)  return false;
           for (auto index = size_type {0}; index < count(); ++index) {
             if (!xtd::collections::generic::helpers::equator<type_t> {}(self_[index], item)) continue;
@@ -367,6 +365,45 @@ namespace xtd {
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::count - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::count - Will be removed in version 0.4.0.")]]
         size_type size() const noexcept {return count();}
+        /// @}
+        
+        /// @name Public Operators
+        
+        /// @{
+        /// @brief Access specified element.
+        /// @param index The position of the element to return.
+        /// @return The requested element.
+        value_type& operator [](size_type index) {
+          if ((index >= count() && index <= ~count() - 1) || index == npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+          items_[index].pos = index > npos / 2 ? count() - (npos - index) : index;
+          items_[index].owner = this;
+          return items_[index];
+        }
+        /// @brief Access specified element.
+        /// @param index The position of the element to return.
+        /// @return The requested element.
+        const value_type& operator [](size_type index) const {
+          if ((index >= count() && index <= ~count() - 1) || index == npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+          items_[index].pos = index > npos / 2 ? count() - (npos - index) : index;
+          items_[index].owner = const_cast<arranged_element_collection*>(this);
+          return items_[index];
+        }
+        /// @}
+        
+        /// @name Public Events
+        
+        /// @{
+        /// @brief Occurs when an item is added to the collection.
+        /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
+        event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_added;
+        
+        /// @brief Occurs when an item is updated in the collection.
+        /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
+        event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_updated;
+        
+        /// @brief Occurs when an item is removed from the collection.
+        /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
+        event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_removed;
         /// @}
         
         /// @name Public Deprecated Methods
@@ -521,7 +558,7 @@ namespace xtd {
         /// @param value The element to insert.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.")]]
-        auto insert(const_iterator pos, const value_type& value) {
+        auto insert(const_iterator pos, const type_t& value) {
           auto index = pos - begin();
           inserting_ = true;
           auto result = items().insert(pos, value);
@@ -537,7 +574,7 @@ namespace xtd {
         /// @param value The element to insert.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.")]]
-        auto insert(const_iterator pos, value_type&& value) {
+        auto insert(const_iterator pos, type_t&& value) {
           auto index = pos - begin();
           inserting_ = true;
           auto result = items().insert(pos, value);
@@ -554,7 +591,7 @@ namespace xtd {
         /// @param value The element to insert.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::insert - Will be removed in version 0.4.0.")]]
-        void insert_at(size_t index, const value_type& value) {
+        void insert_at(size_t index, const type_t& value) {
           insert(index, value);
         }
         
@@ -569,14 +606,14 @@ namespace xtd {
         /// @param item The element to add.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.")]]
-        void push_back(const value_type& item) {
+        void push_back(const type_t& item) {
           add(item);
         }
         /// @brief Adds an element to the end.
         /// @param item The element to add.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add - Will be removed in version 0.4.0.")]]
-        void push_back(value_type&& item) {
+        void push_back(type_t&& item) {
           add(std::move(item));
         }
         
@@ -591,14 +628,14 @@ namespace xtd {
         /// @param collection The elements to add.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.")]]
-        void push_back_range(const std::vector<value_type>& collection) {
+        void push_back_range(const std::vector<type_t>& collection) {
           add_range(collection);
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::add_range - Will be removed in version 0.4.0.")]]
-        void push_back_range(const std::initializer_list<value_type>& collection) {
+        void push_back_range(const std::initializer_list<type_t>& collection) {
           add_range(collection);
         }
         /// @brief Adds elements to the end.
@@ -657,45 +694,7 @@ namespace xtd {
         void shrink_to_fit() {items_.shrink_to_fit();}
         /// @}
         
-        /// @name Public Operators
-        
-        /// @{
-        /// @brief Access specified element.
-        /// @param index The position of the element to return.
-        /// @return The requested element.
-        reference operator [](size_type index) {
-          if ((index >= count() && index <= ~count() - 1) || index == npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-          items_[index].pos = index > npos / 2 ? count() - (npos - index) : index;
-          items_[index].owner = this;
-          return items_[index];
-        }
-        /// @brief Access specified element.
-        /// @param index The position of the element to return.
-        /// @return The requested element.
-        const_reference operator [](size_type index) const {
-          if ((index >= count() && index <= ~count() - 1) || index == npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-          items_[index].pos = index > npos / 2 ? count() - (npos - index) : index;
-          items_[index].owner = const_cast<arranged_element_collection*>(this);
-          return items_[index];
-        }
-        /// @}
-        
-        /// @name Public Events
-        
-        /// @{
-        /// @brief Occurs when an item is added to the collection.
-        /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-        event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_added;
-        
-        /// @brief Occurs when an item is updated in the collection.
-        /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-        event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_updated;
-        
-        /// @brief Occurs when an item is removed from the collection.
-        /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
-        event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_removed;
-        /// @}
-        
+      protected:
         /// @name Protected Methods
         
         /// @{

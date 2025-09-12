@@ -117,13 +117,13 @@ std::optional<control::control_collection::value_type> control::control_collecti
   return std::nullopt;
 }
 
-void control::control_collection::insert(size_t index, const value_type& value) {
+void control::control_collection::insert(size_t index, const control_ref& value) {
   for (auto it = begin(); it != end(); ++it)
     if (it->get() == value.get()) return;
   base::insert(index, value);
 }
 
-void control::control_collection::add(const value_type& value) {
+void control::control_collection::add(const control_ref& value) {
   for (auto it = begin(); it != end(); ++it)
     if (it->get() == value.get()) return;
   base::add(value);
