@@ -196,7 +196,22 @@ namespace xtd {
         
         /// @name Public Methods
         
-        /// @{
+        /// @{        
+        void add(const control_ref& value) override;
+        
+        template<class control_t>
+        void add(control_t& value) {
+          for (auto it = begin(); it != end(); ++it)
+            if (it->get() == value) return;
+          if (!keep_cloned_controls_) base::add(value);
+          else {
+            auto control_ptr = as<control>(as<iclonable>(value).clone());
+            auto& control_ref = *control_ptr;
+            controls_.add(std::move(control_ptr));
+            base::add(control_ref);
+          }
+        }
+
         /// @brief Creates and inserts specified control at specified position.
         /// @param pos The iterator before which the content will be inserted. pos may be the xtd::forms::control::control_collection::end iterator.
         /// @param args The arguments to forward to the create method of the control
@@ -250,9 +265,7 @@ namespace xtd {
           return control_ref;
         }
         
-        void insert(size_t index, const value_type& value) override;
-        
-        void add(const value_type& value) override;
+        void insert(size_t index, const control_ref& value) override;
         
         template<class control_t>
         void insert(size_t index, control_t& value) {
@@ -264,19 +277,6 @@ namespace xtd {
             auto& control_ref = *control_ptr;
             controls_.add(std::move(control_ptr));
             base::insert(index, control_ref);
-          }
-        }
-        
-        template<class control_t>
-        void add(control_t& value) {
-          for (auto it = begin(); it != end(); ++it)
-            if (it->get() == value) return;
-          if (!keep_cloned_controls_) base::add(value);
-          else {
-            auto control_ptr = as<control>(as<iclonable>(value).clone());
-            auto& control_ref = *control_ptr;
-            controls_.add(std::move(control_ptr));
-            base::add(control_ref);
           }
         }
         /// @}
