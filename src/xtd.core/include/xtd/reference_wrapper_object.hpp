@@ -346,12 +346,15 @@ namespace xtd {
     /// @param lhs The left hand side value to compare.
     /// @param rhs The right hand side value to compare.
     /// @return `true` if lhs is equal to rhs; otherwise `false`.
-    friend bool operator ==(const reference_wrapper_object& lhs, const type_t& rhs) noexcept {return lhs.equals(rhs);}
+    friend bool operator ==(const reference_wrapper_object& lhs, const type_t& rhs) noexcept {
+      if (!lhs.ref_.has_value()) return false;
+      return &lhs.ref_.value().get() == &rhs;
+    }
     /// @brief Not equal to operator with specidied lhs ans rhs values.
     /// @param lhs The left hand side value to compare.
     /// @param rhs The right hand side value to compare.
     /// @return `true` if lhs is not equal to rhs; otherwise `false`.
-    friend bool operator !=(const reference_wrapper_object& lhs, const type_t& rhs) noexcept {return !lhs.equals(rhs);}
+    friend bool operator !=(const reference_wrapper_object& lhs, const type_t& rhs) noexcept {return !(lhs == rhs);}
     
     /// @brief Three-way comparison operator with specidied lhs ans rhs values.
     /// @param lhs The left hand side value to compare.
@@ -361,11 +364,10 @@ namespace xtd {
     /// * std::strong_ordering::greater : if lhs greater than rhs;
     /// * std::strong_ordering::equivalent : if lhs is equal to rhs.
     friend std::strong_ordering operator <=>(const reference_wrapper_object& lhs, const type_t& rhs) noexcept {
-      auto rhs_ptr = &rhs;
-      if (dynamic_cast<const type_t*>(rhs_ptr) && lhs.compare_to(static_cast<const type_t&>(rhs)) < 0) return std::strong_ordering::less;
-      if (dynamic_cast<const type_t*>(rhs_ptr) && lhs.compare_to(static_cast<const type_t&>(rhs)) > 0) return std::strong_ordering::greater;
-      if (dynamic_cast<const type_t*>(rhs_ptr) && lhs.compare_to(static_cast<const type_t&>(rhs)) == 0) return std::strong_ordering::equivalent;
-      return std::strong_ordering::less;
+      if (!lhs.ref_.has_value()) return std::strong_ordering::less;
+      if (&lhs.ref_.value().get() < &rhs) return std::strong_ordering::less;
+      if (&lhs.ref_.value().get() > &rhs) return std::strong_ordering::greater;
+      return std::strong_ordering::equivalent;
     }
     /// @}
     
