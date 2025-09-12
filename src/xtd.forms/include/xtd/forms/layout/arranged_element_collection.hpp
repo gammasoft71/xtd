@@ -35,6 +35,9 @@ namespace xtd {
       /// xtd.forms
       /// @ingroup xtd_forms collections
       /// @remarks The xtd::forms::layout::arranged_element_collection class represents a collection of objects arranged on a design surface or inside a parent xtd.forms::container_control.
+      /// @remarks xtd::forms::layout::arranged_element_collection inherits from xtd::collections::generic::icollection instead of xtd::collections::generic::ilistto allow `operator[]` to return `value_type`, which triggers updates and events on element changes.
+      /// @remarks Returning `type_t&` would bypass these updates, while returning `value_type&` would break the xtd::collections::generic::ilist interface.
+      /// @remarks This keeps the collection safe and consistent, while most developers can still use xtd::forms::layout::arranged_element_collection::add_range() or xtd::forms::layout::arranged_element_collection::operator[] as expected.
       template<class type_t, class sorter_t = sorter_none>
       class arranged_element_collection : public object, public xtd::collections::generic::icollection<type_t> {
         struct __enumerator__ : public xtd::collections::generic::ienumerator<type_t> {
@@ -113,6 +116,8 @@ namespace xtd {
         using pointer = value_type*;
         /// @brief Represents the const pointer of list value type.
         using const_pointer = const value_type*;
+        /// @brief Represents the read only collection of of list.
+        using read_only_collection = xtd::collections::object_model::read_only_collection<value_type>;
         /// @}
         
         /// @name Public Fields
@@ -160,34 +165,69 @@ namespace xtd {
         /// @name Public Constructors
         
         /// @{
-        /// @brief Creates a new object xtd::forms::layout::arranged_element_collection with specified allocator (optional).
+        /// @brief Initializes a new instance of the xtd::forms::layout::arranged_element_collection class that is empty.
+        /// @par Examples
+        /// The following code example demonstrates the default constructor of the xtd::forms::layout::arranged_element_collection generic class. The default constructor creates a list with the default capacity, as demonstrated by displaying the xtd::forms::layout::arranged_element_collection::capacity property.
+        /// @include generic_list2.cpp
         arranged_element_collection() = default;
-        /// @brief Creates a new object xtd::diagnostics::trace_listener_collection with specified initializer list.
-        arranged_element_collection(const std::initializer_list<type_t>& il) {
-          for (auto item : il)
-            add(item);
+        /// @brief Constructs the container with specified count default-inserted instances of type_t. No copies are made.
+        /// @param capacity The number of elements that the new list can initially store.
+        /// @exception xtd::out_of_memory There is not enough memory available on the system.
+        /// @par Examples
+        /// The following code example demonstrates the default constructor of the xtd::forms::layout::arranged_element_collection generic class. The default constructor creates a list with the default capacity, as demonstrated by displaying the xtd::forms::layout::arranged_element_collection::capacity property.
+        /// @include generic_list2.cpp
+        explicit arranged_element_collection(size_type capacity) {self_.capacity(capacity);}
+        /// @brief Initializes a new instance of the xtd::forms::layout::arranged_element_collection <type_t> class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
+        /// @param collection The collection whose elements are copied to the new list.
+        /// @par Examples
+        /// The following code example demonstrates the xtd::forms::layout::arranged_element_collection <type_t> constructor and various methods of the xtd::forms::layout::arranged_element_collection <type_t> class that act on ranges. An array of strings is created and passed to the constructor, populating the list with the elements of the array. The xtd::forms::layout::arranged_element_collection::capacity property is then displayed, to show that the initial capacity is exactly what is required to hold the input elements.
+        /// @include generic_list3.cpp
+        /// @remarks The elements are copied onto the xtd::forms::layout::arranged_element_collection <type_t> in the same order they are read by the enumerator of the collection.
+        /// @remarks This constructor is an O(n) operation, where n is the number of elements in collection.
+        arranged_element_collection(const xtd::collections::generic::ienumerable<type_t>& collection) {add_range(collection);}
+
+        /// @brief Default copy constructor with specified list.
+        /// @param collection The xtd::forms::layout::arranged_element_collection which elements will be inserted from.
+        arranged_element_collection(const arranged_element_collection& collection) {*data_ = *collection.data_;}
+        /// @brief Move constructor with specified list.
+        /// @param list The xtd::forms::layout::arranged_element_collection which elements will be moved from.
+        arranged_element_collection(arranged_element_collection&& collection) {
+          data_ = std::move(collection.data_);
+          collection.data_ = new_ptr<data_collection>();
+        }
+        /// @brief Copy constructor with specified base type list.
+        /// @param list The xtd::forms::layout::arranged_element_collection::base_type which elements will be inserted from.
+        arranged_element_collection(const base_type& collection) {data_->items = collection;}
+        /// @brief Move constructor with specified base type list.
+        /// @param list The xtd::forms::layout::arranged_element_collection::base_type which elements will be moved from.
+        arranged_element_collection(base_type&& collection) {data_->items = std::move(collection);}
+        /// @brief Constructs the container with the contents of the specified initializer list, and allocator.
+        /// @param items The initializer list to initialize the elements of the container with.
+        arranged_element_collection(std::initializer_list<type_t> items) {add_range(items);}
+        /// @brief Constructs the container with the contents of the range [first, last).
+        /// @param first The first iterator the range to copy the elements from.
+        /// @param last The last iterator the range to copy the elements from.
+        /// @param alloc The allocator to use for all memory allocations of this container.
+        template <std::input_iterator input_iterator_t>
+        arranged_element_collection(input_iterator_t first, input_iterator_t last) {
+          for (auto iterator = first; iterator != last; ++iterator)
+            add(*iterator);
         }
         /// @}
-        
-        /// @cond
-        explicit arranged_element_collection(const std::vector<type_t>& collection) {
-          for (auto item : collection)
-            add(item);
-        }
-        arranged_element_collection(const arranged_element_collection& collection) {add_range(collection);}
-        arranged_element_collection& operator =(const arranged_element_collection& collection) {
-          clear();
-          add_range(collection);
-          return self_;
-        }
-        arranged_element_collection(arranged_element_collection&&) = default;
-        bool operator ==(const arranged_element_collection& value) const {return data_->items == value.data_->items;}
-        bool operator !=(const arranged_element_collection& value) const {return !operator ==(value);}
-        /// @endcond
         
         /// @name Public Properties
         
         /// @{
+        /// @brief Gets the total number of elements the internal data structure can hold without resizing.
+        /// @return Capacity of the currently allocated storage.
+        /// @exception xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
+        size_type capacity() const noexcept {return data_->items.capacity();}
+        /// @brief Sets the total number of elements the internal data structure can hold without resizing.
+        /// @return Capacity of the currently allocated storage.
+        /// @exception xtd::out_of_memory There is not enough memory available on the system.
+        /// @exception xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
+        void capacity(size_type value) {data_->items.capacity(value);}
+
         /// @brief Gets the number of elements contained in the xtd::forms::layout::arranged_element_collection <type_t>.
         /// @return The number of elements contained in the xtd::forms::layout::arranged_element_collection <type_t>.
         size_type count() const noexcept override {return data_->items.count();}
@@ -303,8 +343,8 @@ namespace xtd {
           }
         }
 
-        /// @brief Returns an enumerator that iterates through the xtd::collections::generic::list <type_t>.
-        /// @return A xtd::collections::generic::.enumerator for the xtd::collections::generic::list <type_t>.
+        /// @brief Returns an enumerator that iterates through the xtd::forms::layout::arranged_element_collection <type_t>.
+        /// @return A xtd::collections::generic::.enumerator for the xtd::forms::layout::arranged_element_collection <type_t>.
         xtd::collections::generic::enumerator<type_t> get_enumerator() const noexcept override {
           return {new_ptr<__enumerator__>(self_, items().version())};
         }
@@ -334,7 +374,7 @@ namespace xtd {
         /// @param item The object to remove from the xtd::forms::layout::arranged_element_collection <type_t>.
         /// @return `true` if item was successfully removed from the xtd::forms::layout::arranged_element_collection <type_t>; otherwise, `false`. This method also returns `false` if item is not found in the original xtd::forms::layout::arranged_element_collection <type_t>.
         /// @remarks If type `typ_t` implements the xtd::iequatable <type_t> generic interface, the equality comparer is the xtd::iequatable::equals method of that interface; otherwise, the default equality comparer is xtd::object::equals.
-        /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
+        /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::forms::layout::arranged_element_collection::count.
         bool remove(const type_t& item) override {
           if (count() == 0)  return false;
           for (auto index = size_type {0}; index < count(); ++index) {
@@ -365,6 +405,31 @@ namespace xtd {
         /// @name Public Operators
         
         /// @{
+        /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of other.
+        /// @param other Another container to use as data source.
+        /// @return This current instance.
+        arranged_element_collection& operator =(const arranged_element_collection& other) {
+          clear();
+          add_range(other);
+          return self_;
+        }
+        /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in other is moved from other into this container). other is in a valid but unspecified state afterwards.
+        /// @param other Another base type container to use as data source.
+        /// @return This current instance.
+        arranged_element_collection& operator =(arranged_element_collection&& other) noexcept {
+          clear();
+          add_range(std::move(other.data_->items));
+          return self_;
+        }
+        /// @brief Replaces the contents with those identified by initializer list ilist.
+        /// @param items Initializer list to use as data source
+        /// @return This current instance.
+        arranged_element_collection& operator =(const std::initializer_list<type_t>& items) {
+          clear();
+          add_range(items);
+          return self_;
+        }
+
         /// @brief Access specified element.
         /// @param index The position of the element to return.
         /// @return The requested element.
@@ -390,6 +455,9 @@ namespace xtd {
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
         operator base_type& () noexcept {return items();}
+
+        bool operator ==(const arranged_element_collection& value) const {return data_->items == value.data_->items;}
+        bool operator !=(const arranged_element_collection& value) const {return !operator ==(value);}
         /// @}
         
         /// @name Public Events
@@ -422,12 +490,6 @@ namespace xtd {
         /// @name Public Deprecatd Properties
         
         /// @{
-        /// @brief Returns the number of elements that can be held in currently allocated storage.
-        /// @return The number of elements that can be held in currently allocated storage.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().capacity - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().capacity - Will be removed in version 0.4.0.")]]
-        size_type capacity() const noexcept {return data_->items.capacity();}
-        
         /// @brief Checks whether the container is empty.
         /// @return `true` if container is empty; otherwise `false`.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().empty - Will be removed in version 0.4.0.
