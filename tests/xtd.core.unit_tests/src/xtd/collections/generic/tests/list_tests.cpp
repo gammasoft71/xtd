@@ -133,9 +133,6 @@ namespace xtd::collections::generic::tests {
     
     void test_method_(cend) {
       auto items = list {84, 42, 21};
-      // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
-      // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
-      //assert::throws<argument_out_of_range_exception>(delegate_ {*items.cend();});
       assert::is_true(items.cend() == items.cbegin() + items.count());
     }
     
@@ -150,9 +147,6 @@ namespace xtd::collections::generic::tests {
     
     void test_method_(end) {
       auto items = list {84, 42, 21};
-      // the crend() property unlike end() and cend() is the same as underlying value type (std::vector) so this element acts as a placeholder, attempting to access it results in undefined behavior.
-      // see https://en.cppreference.com/w/cpp/container/vector/rend documentation
-      //assert::throws<argument_out_of_range_exception>(delegate_ {*items.end();});
       assert::is_true(items.end() == items.begin() + items.count());
     }
     
