@@ -119,7 +119,7 @@ namespace xtd::collections::tests {
     
     void test_method_(cend) {
       auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
-      assert::are_equal(any_object {}, *items.cend());
+      assert::is_true(items.cend() == items.cbegin() + items.count());
     }
     
     void test_method_(count) {
@@ -133,7 +133,7 @@ namespace xtd::collections::tests {
     
     void test_method_(end) {
       auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
-      assert::are_equal(any_object {}, *items.end());
+      assert::is_true(items.end() == items.begin() + items.count());
     }
     
     void test_method_(is_fixed_size) {
