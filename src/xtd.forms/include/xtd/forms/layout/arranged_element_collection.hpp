@@ -35,7 +35,7 @@ namespace xtd {
       /// @ingroup xtd_forms collections
       /// @remarks The xtd::forms::layout::arranged_element_collection class represents a collection of objects arranged on a design surface or inside a parent xtd.forms::container_control.
       template<class type_t, class sorter_t = sorter_none>
-      class arranged_element_collection : public object, public xtd::collections::generic::ienumerable<type_t> {
+      class arranged_element_collection : public object, public xtd::collections::generic::icollection<type_t> {
         struct __enumerator__ : public xtd::collections::generic::ienumerator<type_t> {
         public:
           explicit __enumerator__(const arranged_element_collection& items, xtd::size version) : items_(items), version_(version) {}
@@ -187,9 +187,9 @@ namespace xtd {
         /// @name Public Properties
         
         /// @{
-        /// @brief Returns the number of elements.
-        /// @return The number of elements.
-        size_type count() const noexcept {return items_.count();}
+        /// @brief Gets the number of elements contained in the xtd::forms::layout::arranged_element_collection <type_t>.
+        /// @return The number of elements contained in the xtd::forms::layout::arranged_element_collection <type_t>.
+        size_type count() const noexcept override {return items_.count();}
         
         /// @brief Direct access to the underlying array.
         /// @return The underlying array.
@@ -221,9 +221,9 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
-        /// @brief Adds an element to the end.
-        /// @param item The element to add.
-        virtual void add(const type_t& item) {
+        /// @brief Adds an item to the xtd::forms::layout::arranged_element_collection <type_t>.
+        /// @param item The object to add to the xtd::forms::layout::arranged_element_collection <type_t>.
+        void add(const type_t& item) override {
           items_.add(item);
           size_t index = items_.count() - 1;
           static_cast<value_type&>(self_[index]).owner = this;
@@ -231,8 +231,8 @@ namespace xtd {
           on_item_added(index, items_[index]);
           if (sorted_) sort();
         }
-        /// @brief Adds an element to the end.
-        /// @param item The element to add.
+        /// @brief Adds an item to the xtd::forms::layout::arranged_element_collection <type_t>.
+        /// @param item The object to add to the xtd::forms::layout::arranged_element_collection <type_t>.
         virtual void add(type_t&& item) {
           items_.add(item);
           size_t index = items_.count() - 1;
@@ -275,12 +275,33 @@ namespace xtd {
             add(item);
         }
         
-        /// @brief clears the contents.
-        virtual void clear() noexcept {
+        /// @brief Removes all items from the xtd::forms::layout::arranged_element_collection <type_t>.
+        /// @remarks xtd::forms::layout::arranged_element_collection::count must be set to 0, and references to other objects from elements of the collection must be released.
+        void clear() override {
           while (count())
             remove_at(0);
         }
         
+        /// @brief Determines whether the xtd::forms::layout::arranged_element_collection <type_t> contains a specific value.
+        /// @param item The object to locate in the xtd::forms::layout::arranged_element_collection <type_t>.
+        /// @return `true` if item is found in the xtd::forms::layout::arranged_element_collection <type_t>; otherwise, `false`.
+        bool contains(const type_t& item) const noexcept override {
+          return items_.contains(item);
+        }
+        
+        /// @brief Copies the elements of the xtd::forms::layout::arranged_element_collection <type_t> to an xtd::array, starting at a particular xtd::array index.
+        /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::forms::layout::arranged_element_collection <type_t>. The xtd::array must have zero-based indexing.
+        /// @param array_index The zero-based index in `array` at which copying begins.
+        /// @exception xtd::argument_exception The number of elements in the source xtd::forms::layout::arranged_element_collection <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
+        void copy_to(xtd::array<type_t>& array, xtd::size array_index) const override {
+          if (array_index + count() > array.size()) helpers::throw_helper::throws(helpers::exception_case::argument_out_of_range);
+          auto i = size_type {0};
+          for (const type_t& item : self_) {
+            if (i >= count()) return;
+            array[array_index + i++] = item;
+          }
+        }
+
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::list <type_t>.
         /// @return A xtd::collections::generic::.enumerator for the xtd::collections::generic::list <type_t>.
         xtd::collections::generic::enumerator<type_t> get_enumerator() const noexcept override {
@@ -308,9 +329,12 @@ namespace xtd {
           return self_;
         }
         
-        /// @brief Removes an element.
-        /// @param item The element to remove.
-        virtual bool remove(const type_t& item) {
+        /// @brief Removes the first occurrence of a specific object from the xtd::forms::layout::arranged_element_collection <type_t>.
+        /// @param item The object to remove from the xtd::forms::layout::arranged_element_collection <type_t>.
+        /// @return `true` if item was successfully removed from the xtd::forms::layout::arranged_element_collection <type_t>; otherwise, `false`. This method also returns `false` if item is not found in the original xtd::forms::layout::arranged_element_collection <type_t>.
+        /// @remarks If type `typ_t` implements the xtd::iequatable <type_t> generic interface, the equality comparer is the xtd::iequatable::equals method of that interface; otherwise, the default equality comparer is xtd::object::equals.
+        /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
+        bool remove(const type_t& item) override {
           if (count() == 0)  return false;
           for (auto index = size_type {0}; index < count(); ++index) {
             if (!xtd::collections::generic::helpers::equator<type_t> {}(self_[index], item)) continue;
@@ -737,10 +761,15 @@ namespace xtd {
         /// @}
         
       private:
+        bool is_read_only() const noexcept override {return false;}
+        bool is_synchronized() const noexcept override {return false;}
+        const xtd::object& sync_root() const noexcept override {return sync_root_;}
+        
         mutable xtd::collections::generic::list<value_type> items_;
         bool inserting_ = false;
         bool erasing_ = false;
         bool sorted_ = false;
+        xtd::object sync_root_;
       };
     }
   }
