@@ -196,10 +196,10 @@ You cannot create an instance of this class. </dd></dl>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(main_form::main);</div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html_a2656cc128804128258ecad60ecf1cbd1"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debug.html#a2656cc128804128258ecad60ecf1cbd1">xtd::diagnostics::debug::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes a line terminator to the trace listeners in the listeners collection.</div><div class="ttdef"><b>Definition</b> debug.hpp:361</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html_a2656cc128804128258ecad60ecf1cbd1"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debug.html#a2656cc128804128258ecad60ecf1cbd1">xtd::diagnostics::debug::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes a line terminator to the trace listeners in the listeners collection.</div><div class="ttdef"><b>Definition</b> debug.hpp:346</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a1f7d29b0aeda0c96f5acc4e38ad5902a"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a1f7d29b0aeda0c96f5acc4e38ad5902a">xtd::forms::application::exit</a></div><div class="ttdeci">static void exit()</div><div class="ttdoc">Informs all message pumps that they must terminate, and then closes all application windows after the...</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a2ce7b0d4da48e314ed0e02a3629b2954"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">xtd::forms::application::main_form</a></div><div class="ttdeci">static std::optional&lt; form_ref &gt; main_form()</div><div class="ttdoc">Gets the optional main form owned by the application.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a557675a7003dbb78378c86d2b3ae0a3e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a557675a7003dbb78378c86d2b3ae0a3e">xtd::forms::application::thread_exception</a></div><div class="ttdeci">static event&lt; application, threading::thread_exception_event_handler &gt; thread_exception</div><div class="ttdoc">Occurs when an untrapped thread exception is thrown.</div><div class="ttdef"><b>Definition</b> application.hpp:345</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a557675a7003dbb78378c86d2b3ae0a3e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a557675a7003dbb78378c86d2b3ae0a3e">xtd::forms::application::thread_exception</a></div><div class="ttdeci">static event&lt; application, threading::thread_exception_event_handler &gt; thread_exception</div><div class="ttdoc">Occurs when an untrapped thread exception is thrown.</div><div class="ttdef"><b>Definition</b> application.hpp:326</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1message__box_html_a652dfeb393c4deaa7ee4dacfb641ca36"><div class="ttname"><a href="classxtd_1_1forms_1_1message__box.html#a652dfeb393c4deaa7ee4dacfb641ca36">xtd::forms::message_box::show</a></div><div class="ttdeci">static dialog_result show()</div><div class="ttdoc">Displays a message box.</div></div>
 <div class="ttc" id="agroup__events_html_ga226db3bbc8ae6fdf2afaa94a5c947c54"><div class="ttname"><a href="group__events.html#ga226db3bbc8ae6fdf2afaa94a5c947c54">xtd::event_handler</a></div><div class="ttdeci">generic_event_handler&lt; const xtd::event_args &amp; &gt; event_handler</div><div class="ttdoc">Represents the method that will handle an event that has no event data.</div><div class="ttdef"><b>Definition</b> event_handler.hpp:24</div></div>
 <div class="ttc" id="agroup__events_html_gaff7657237134da7d9376bf1ffab3d3b3"><div class="ttname"><a href="group__events.html#gaff7657237134da7d9376bf1ffab3d3b3">xtd::threading::thread_exception_event_handler</a></div><div class="ttdeci">xtd::delegate&lt; void(object &amp;sender, const thread_exception_event_args &amp;e)&gt; thread_exception_event_handler</div><div class="ttdoc">Represents the method that will handle the xtd::forms::application::thread_exception event of an xtd:...</div><div class="ttdef"><b>Definition</b> thread_exception_event_handler.hpp:27</div></div>
@@ -256,9 +256,6 @@ You cannot create an instance of this class. </dd></dl>
 <tr class="memitem:a4661f15e72d4f0844ab55077fb557e3a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a4661f15e72d4f0844ab55077fb557e3a">dark_mode</a> (bool value)</td></tr>
 <tr class="memdesc:a4661f15e72d4f0844ab55077fb557e3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether dark mode is enabled for the application.  <br /></td></tr>
 <tr class="separator:a4661f15e72d4f0844ab55077fb557e3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29a68b46fdee9e2e71d70d89ed296a91"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a29a68b46fdee9e2e71d70d89ed296a91">dark_mode_enabled</a> () noexcept</td></tr>
-<tr class="memdesc:a29a68b46fdee9e2e71d70d89ed296a91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return <code>true</code> if dark mode is enabled for the application; otherwise return <code>false</code>.  <br /></td></tr>
-<tr class="separator:a29a68b46fdee9e2e71d70d89ed296a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14563ddee7ab6430deb48c398295088d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a14563ddee7ab6430deb48c398295088d">executable_name</a> () noexcept</td></tr>
 <tr class="memdesc:a14563ddee7ab6430deb48c398295088d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the executable name for the executable file that started the application, including the executable extension.  <br /></td></tr>
 <tr class="separator:a14563ddee7ab6430deb48c398295088d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -283,10 +280,7 @@ You cannot create an instance of this class. </dd></dl>
 <tr class="memitem:aaf4524268d96e0ea2b4000f0db5ae015"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#aaf4524268d96e0ea2b4000f0db5ae015">light_mode</a> (bool value)</td></tr>
 <tr class="memdesc:aaf4524268d96e0ea2b4000f0db5ae015"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value indicating whether light mode is enabled for the application.  <br /></td></tr>
 <tr class="separator:aaf4524268d96e0ea2b4000f0db5ae015"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2db9c2e2d4a2e7dd2f053987f1e8965e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a2db9c2e2d4a2e7dd2f053987f1e8965e">light_mode_enabled</a> () noexcept</td></tr>
-<tr class="memdesc:a2db9c2e2d4a2e7dd2f053987f1e8965e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return <code>true</code> if dark mode is enabled for the application; otherwise return <code>false</code>.  <br /></td></tr>
-<tr class="separator:a2db9c2e2d4a2e7dd2f053987f1e8965e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ce7b0d4da48e314ed0e02a3629b2954"><td class="memItemLeft" align="right" valign="top">static std::optional&lt; <a class="el" href="group__xtd__forms.html#ga17fc36e024d6f766763e4aeb97855b4a">form_ref</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">main_form</a> ()</td></tr>
+<tr class="memitem:a2ce7b0d4da48e314ed0e02a3629b2954"><td class="memItemLeft" align="right" valign="top">static std::optional&lt; <a class="el" href="group__xtd__forms.html#ga47707038e5c5a078f531338dd9b632c8">form_ref</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">main_form</a> ()</td></tr>
 <tr class="memdesc:a2ce7b0d4da48e314ed0e02a3629b2954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the optional main form owned by the application.  <br /></td></tr>
 <tr class="separator:a2ce7b0d4da48e314ed0e02a3629b2954"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a061bde352f14ce03feb70fa1cc553e1e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a061bde352f14ce03feb70fa1cc553e1e">menu_images</a> () noexcept</td></tr>
@@ -298,7 +292,7 @@ You cannot create an instance of this class. </dd></dl>
 <tr class="memitem:ae514ee1ee37c31c89ab5b75d8b71271e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#ae514ee1ee37c31c89ab5b75d8b71271e">message_loop</a> () noexcept</td></tr>
 <tr class="memdesc:ae514ee1ee37c31c89ab5b75d8b71271e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether a message loop exists on this thread.  <br /></td></tr>
 <tr class="separator:ae514ee1ee37c31c89ab5b75d8b71271e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac28114fe9c673bed528fb73ddad90212"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="group__xtd__forms.html#ga956e4fc7842cf8cc65abc9896368b341">form_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#ac28114fe9c673bed528fb73ddad90212">open_forms</a> () noexcept</td></tr>
+<tr class="memitem:ac28114fe9c673bed528fb73ddad90212"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="group__xtd__forms.html#ga44e6be4472528d41d4e61eb45d535dc0">form_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#ac28114fe9c673bed528fb73ddad90212">open_forms</a> () noexcept</td></tr>
 <tr class="memdesc:ac28114fe9c673bed528fb73ddad90212"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a collection of open forms owned by the application.  <br /></td></tr>
 <tr class="separator:ac28114fe9c673bed528fb73ddad90212"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89e3896cc43911ce49c480dd239a3cfd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a89e3896cc43911ce49c480dd239a3cfd">product_name</a> () noexcept</td></tr>
@@ -340,9 +334,6 @@ You cannot create an instance of this class. </dd></dl>
 <tr class="memitem:a4dd8be3639a61a5cd015655a5b511d4e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a4dd8be3639a61a5cd015655a5b511d4e">user_app_data_path</a> () noexcept</td></tr>
 <tr class="memdesc:a4dd8be3639a61a5cd015655a5b511d4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the path for the application data of a user.  <br /></td></tr>
 <tr class="separator:a4dd8be3639a61a5cd015655a5b511d4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba2ce54cc1670ae96a3282d2b712ef58"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#aba2ce54cc1670ae96a3282d2b712ef58">use_visual_styles</a> () noexcept</td></tr>
-<tr class="memdesc:aba2ce54cc1670ae96a3282d2b712ef58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether visual styles are enabled for the application.  <br /></td></tr>
-<tr class="separator:aba2ce54cc1670ae96a3282d2b712ef58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68359c26b0c2a29616edf441bb1b526c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a68359c26b0c2a29616edf441bb1b526c">use_wait_cursor</a> () noexcept</td></tr>
 <tr class="memdesc:a68359c26b0c2a29616edf441bb1b526c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether the wait cursor is used for all open forms of the application.  <br /></td></tr>
 <tr class="separator:a68359c26b0c2a29616edf441bb1b526c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -363,18 +354,6 @@ You cannot create an instance of this class. </dd></dl>
 <tr class="memitem:a1d4031fa24263d5b25e996ebd2ce9089"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a1d4031fa24263d5b25e996ebd2ce9089">do_events</a> ()</td></tr>
 <tr class="memdesc:a1d4031fa24263d5b25e996ebd2ce9089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes all Windows messages currently in the message queue.  <br /></td></tr>
 <tr class="separator:a1d4031fa24263d5b25e996ebd2ce9089"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad32eba2a91a9e25f66e4cb1f718c8973"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#ad32eba2a91a9e25f66e4cb1f718c8973">enable_button_images</a> ()</td></tr>
-<tr class="memdesc:ad32eba2a91a9e25f66e4cb1f718c8973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables button images for the application.  <br /></td></tr>
-<tr class="separator:ad32eba2a91a9e25f66e4cb1f718c8973"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a055e78c3b5097f08a108c0730360e3b8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a055e78c3b5097f08a108c0730360e3b8">enable_dark_mode</a> ()</td></tr>
-<tr class="memdesc:a055e78c3b5097f08a108c0730360e3b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables dark mode for the application.  <br /></td></tr>
-<tr class="separator:a055e78c3b5097f08a108c0730360e3b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6f2defe8e2722b0fb450f5ae6a2f28d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#ac6f2defe8e2722b0fb450f5ae6a2f28d">enable_light_mode</a> ()</td></tr>
-<tr class="memdesc:ac6f2defe8e2722b0fb450f5ae6a2f28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables light mode for the application.  <br /></td></tr>
-<tr class="separator:ac6f2defe8e2722b0fb450f5ae6a2f28d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38695ee0d586fd727abfb42995f6d9cb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a38695ee0d586fd727abfb42995f6d9cb">enable_menu_images</a> ()</td></tr>
-<tr class="memdesc:a38695ee0d586fd727abfb42995f6d9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables menu images for the application.  <br /></td></tr>
-<tr class="separator:a38695ee0d586fd727abfb42995f6d9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6af4447091dec74038a54c6b9f5f8760"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a6af4447091dec74038a54c6b9f5f8760">enable_visual_styles</a> ()</td></tr>
 <tr class="memdesc:a6af4447091dec74038a54c6b9f5f8760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables visual styles for the application.  <br /></td></tr>
 <tr class="separator:a6af4447091dec74038a54c6b9f5f8760"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -411,6 +390,31 @@ You cannot create an instance of this class. </dd></dl>
 <tr class="memitem:ad9f33fc4a9bfe8735d80ebabdeb7f3f2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#ad9f33fc4a9bfe8735d80ebabdeb7f3f2">run</a> (const <a class="el" href="classxtd_1_1forms_1_1form.html">form</a> &amp;<a class="el" href="classxtd_1_1forms_1_1application.html#a2ce7b0d4da48e314ed0e02a3629b2954">main_form</a>)</td></tr>
 <tr class="memdesc:ad9f33fc4a9bfe8735d80ebabdeb7f3f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins running a standard application message loop on the current thread, and makes the specified form visible.  <br /></td></tr>
 <tr class="separator:ad9f33fc4a9bfe8735d80ebabdeb7f3f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Deprecated Static Properties</h2></td></tr>
+<tr class="memitem:a29a68b46fdee9e2e71d70d89ed296a91"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a29a68b46fdee9e2e71d70d89ed296a91">dark_mode_enabled</a> () noexcept</td></tr>
+<tr class="memdesc:a29a68b46fdee9e2e71d70d89ed296a91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return <code>true</code> if dark mode is enabled for the application; otherwise return <code>false</code>.  <br /></td></tr>
+<tr class="separator:a29a68b46fdee9e2e71d70d89ed296a91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2db9c2e2d4a2e7dd2f053987f1e8965e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a2db9c2e2d4a2e7dd2f053987f1e8965e">light_mode_enabled</a> () noexcept</td></tr>
+<tr class="memdesc:a2db9c2e2d4a2e7dd2f053987f1e8965e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return <code>true</code> if dark mode is enabled for the application; otherwise return <code>false</code>.  <br /></td></tr>
+<tr class="separator:a2db9c2e2d4a2e7dd2f053987f1e8965e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba2ce54cc1670ae96a3282d2b712ef58"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#aba2ce54cc1670ae96a3282d2b712ef58">use_visual_styles</a> () noexcept</td></tr>
+<tr class="memdesc:aba2ce54cc1670ae96a3282d2b712ef58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether visual styles are enabled for the application.  <br /></td></tr>
+<tr class="separator:aba2ce54cc1670ae96a3282d2b712ef58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">PublicDeprecated Static Methods</h2></td></tr>
+<tr class="memitem:ad32eba2a91a9e25f66e4cb1f718c8973"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#ad32eba2a91a9e25f66e4cb1f718c8973">enable_button_images</a> ()</td></tr>
+<tr class="memdesc:ad32eba2a91a9e25f66e4cb1f718c8973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables button images for the application.  <br /></td></tr>
+<tr class="separator:ad32eba2a91a9e25f66e4cb1f718c8973"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a055e78c3b5097f08a108c0730360e3b8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a055e78c3b5097f08a108c0730360e3b8">enable_dark_mode</a> ()</td></tr>
+<tr class="memdesc:a055e78c3b5097f08a108c0730360e3b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables dark mode for the application.  <br /></td></tr>
+<tr class="separator:a055e78c3b5097f08a108c0730360e3b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6f2defe8e2722b0fb450f5ae6a2f28d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#ac6f2defe8e2722b0fb450f5ae6a2f28d">enable_light_mode</a> ()</td></tr>
+<tr class="memdesc:ac6f2defe8e2722b0fb450f5ae6a2f28d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables light mode for the application.  <br /></td></tr>
+<tr class="separator:ac6f2defe8e2722b0fb450f5ae6a2f28d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38695ee0d586fd727abfb42995f6d9cb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1application.html#a38695ee0d586fd727abfb42995f6d9cb">enable_menu_images</a> ()</td></tr>
+<tr class="memdesc:a38695ee0d586fd727abfb42995f6d9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables menu images for the application.  <br /></td></tr>
+<tr class="separator:a38695ee0d586fd727abfb42995f6d9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ab1fd54c56d822b952b01a61d40859fb7" name="ab1fd54c56d822b952b01a61d40859fb7"></a>
@@ -676,35 +680,6 @@ The path will be different depending on whether the Windows Forms application is
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a29a68b46fdee9e2e71d70d89ed296a91" name="a29a68b46fdee9e2e71d70d89ed296a91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a29a68b46fdee9e2e71d70d89ed296a91">&#9670;&#160;</a></span>dark_mode_enabled()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static bool xtd::forms::application::dark_mode_enabled </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Return <code>true</code> if dark mode is enabled for the application; otherwise return <code>false</code>. </p>
-<dl class="section return"><dt>Returns</dt><dd>True is dark mode enabled; otherwise <code>false</code>. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000193">Deprecated:</a></b></dt><dd>Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -990,35 +965,6 @@ This method has an effect only on non Windows operating system. </dd></dl>
 
 </div>
 </div>
-<a id="a2db9c2e2d4a2e7dd2f053987f1e8965e" name="a2db9c2e2d4a2e7dd2f053987f1e8965e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2db9c2e2d4a2e7dd2f053987f1e8965e">&#9670;&#160;</a></span>light_mode_enabled()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static bool xtd::forms::application::light_mode_enabled </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Return <code>true</code> if dark mode is enabled for the application; otherwise return <code>false</code>. </p>
-<dl class="section return"><dt>Returns</dt><dd>True is light mode enabled; otherwise <code>false</code>. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000194">Deprecated:</a></b></dt><dd>Replaced by xtd::application::light_mode - Will be removed in version 0.4.0. </dd></dl>
-
-</div>
-</div>
 <a id="a2ce7b0d4da48e314ed0e02a3629b2954" name="a2ce7b0d4da48e314ed0e02a3629b2954"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2ce7b0d4da48e314ed0e02a3629b2954">&#9670;&#160;</a></span>main_form()</h2>
 
@@ -1029,7 +975,7 @@ This method has an effect only on non Windows operating system. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::optional&lt; <a class="el" href="group__xtd__forms.html#ga17fc36e024d6f766763e4aeb97855b4a">form_ref</a> &gt; xtd::forms::application::main_form </td>
+          <td class="memname">static std::optional&lt; <a class="el" href="group__xtd__forms.html#ga47707038e5c5a078f531338dd9b632c8">form_ref</a> &gt; xtd::forms::application::main_form </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1160,7 +1106,7 @@ This method has an effect only on linux. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static const <a class="el" href="group__xtd__forms.html#ga956e4fc7842cf8cc65abc9896368b341">form_collection</a> xtd::forms::application::open_forms </td>
+          <td class="memname">static const <a class="el" href="group__xtd__forms.html#ga44e6be4472528d41d4e61eb45d535dc0">form_collection</a> xtd::forms::application::open_forms </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1607,36 +1553,6 @@ A typical base path is "C:\Documents and Settings\username\Application Data". </
 
 </div>
 </div>
-<a id="aba2ce54cc1670ae96a3282d2b712ef58" name="aba2ce54cc1670ae96a3282d2b712ef58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba2ce54cc1670ae96a3282d2b712ef58">&#9670;&#160;</a></span>use_visual_styles()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static bool xtd::forms::application::use_visual_styles </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Gets a value that indicates whether visual styles are enabled for the application. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if visual styles are enabled; otherwise, <code>false</code>. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The visual styles can be enabled by calling enable_xtd::forms::application::visual_styles. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000195">Deprecated:</a></b></dt><dd>Replaced by xtd::application::visual_styles - Will be removed in version 0.4.0. </dd></dl>
-
-</div>
-</div>
 <a id="a68359c26b0c2a29616edf441bb1b526c" name="a68359c26b0c2a29616edf441bb1b526c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a68359c26b0c2a29616edf441bb1b526c">&#9670;&#160;</a></span>use_wait_cursor() <span class="overload">[1/2]</span></h2>
 
@@ -1902,150 +1818,6 @@ If you call do_events in your code, your application can handle the other events
 <dd>
 Typically, you use this method in a loop to process messages. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Calling this method causes the current thread to be suspended while all waiting window messages are processed. If a message causes an event to be triggered, then other areas of your application code may execute. This can cause your application to exhibit unexpected behaviors that are difficult to debug. If you perform operations or computations that take a long time, it is often preferable to perform those operations on a new thread. </dd></dl>
-
-</div>
-</div>
-<a id="ad32eba2a91a9e25f66e4cb1f718c8973" name="ad32eba2a91a9e25f66e4cb1f718c8973"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad32eba2a91a9e25f66e4cb1f718c8973">&#9670;&#160;</a></span>enable_button_images()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void xtd::forms::application::enable_button_images </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Enables button images for the application. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This method has an effect only on linux. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000196">Deprecated:</a></b></dt><dd>Replaced by xtd::application::button_images - Will be removed in version 0.4.0. </dd></dl>
-
-</div>
-</div>
-<a id="a055e78c3b5097f08a108c0730360e3b8" name="a055e78c3b5097f08a108c0730360e3b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a055e78c3b5097f08a108c0730360e3b8">&#9670;&#160;</a></span>enable_dark_mode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void xtd::forms::application::enable_dark_mode </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Enables dark mode for the application. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section remark"><dt>Remarks</dt><dd>By default, the dark mode is enabled automatically if the system is in dark mode. </dd>
-<dd>
-<a class="el" href="classxtd_1_1forms_1_1application.html#a055e78c3b5097f08a108c0730360e3b8" title="Enables dark mode for the application.">xtd::forms::application::enable_dark_mode</a> sets the application in dark mode even if your system is in light mode. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000197">Deprecated:</a></b></dt><dd>Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0. </dd></dl>
-
-</div>
-</div>
-<a id="ac6f2defe8e2722b0fb450f5ae6a2f28d" name="ac6f2defe8e2722b0fb450f5ae6a2f28d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6f2defe8e2722b0fb450f5ae6a2f28d">&#9670;&#160;</a></span>enable_light_mode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void xtd::forms::application::enable_light_mode </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Enables light mode for the application. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section remark"><dt>Remarks</dt><dd>By default, the light mode is enabled automatically if the system is in light mode. </dd>
-<dd>
-<a class="el" href="classxtd_1_1forms_1_1application.html#ac6f2defe8e2722b0fb450f5ae6a2f28d" title="Enables light mode for the application.">xtd::forms::application::enable_light_mode</a> sets the application in light mode even if your system is in dark mode. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000198">Deprecated:</a></b></dt><dd>Replaced by xtd::application::light_mode - Will be removed in version 0.4.0. </dd></dl>
-
-</div>
-</div>
-<a id="a38695ee0d586fd727abfb42995f6d9cb" name="a38695ee0d586fd727abfb42995f6d9cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a38695ee0d586fd727abfb42995f6d9cb">&#9670;&#160;</a></span>enable_menu_images()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void xtd::forms::application::enable_menu_images </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Enables menu images for the application. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This method has an effect only on linux. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000199">Deprecated:</a></b></dt><dd>Replaced by xtd::application::menu_images - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2375,7 +2147,7 @@ If your application was originally supplied command-line options when it first e
 <div class="ttc" id="aclassxtd_1_1environment_html_ad648ff7c477babf9f30a3058048c8e7d"><div class="ttname"><a href="classxtd_1_1environment.html#ad648ff7c477babf9f30a3058048c8e7d">xtd::environment::get_environment_variable</a></div><div class="ttdeci">static xtd::string get_environment_variable(const xtd::string &amp;variable)</div><div class="ttdoc">Retrieves the value of an environment variable from the current process.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a9d1de5b2f5e8ee4b46a24aa8f556a5c2"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a9d1de5b2f5e8ee4b46a24aa8f556a5c2">xtd::forms::application::restart</a></div><div class="ttdeci">static void restart()</div><div class="ttdoc">Shuts down the application and starts a new instance immediately.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html_a6a8437802231381f5f91dee9d8c3415e"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html#a6a8437802231381f5f91dee9d8c3415e">xtd::forms::button::create</a></div><div class="ttdeci">static button create()</div><div class="ttdoc">A factory to create an xtd::forms::button.</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a651752ad0a3ec381983aa0b367291a68"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">xtd::forms::control::click</a></div><div class="ttdeci">event&lt; control, event_handler &gt; click</div><div class="ttdoc">Occurs when the xtd::forms::control is clicked.</div><div class="ttdef"><b>Definition</b> control.hpp:1485</div></div>
+<div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a651752ad0a3ec381983aa0b367291a68"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">xtd::forms::control::click</a></div><div class="ttdeci">event&lt; control, event_handler &gt; click</div><div class="ttdoc">Occurs when the xtd::forms::control is clicked.</div><div class="ttdef"><b>Definition</b> control.hpp:1488</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html_aea269af32d571c9c68d4e83400ab2d00"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">xtd::forms::form::create</a></div><div class="ttdeci">static form create()</div><div class="ttdoc">A factory to create an xtd::forms::form.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga8dd4c00484ddac781e23fb7a7a0f5d2e"><div class="ttname"><a href="group__xtd__core.html#ga8dd4c00484ddac781e23fb7a7a0f5d2e">xtd::parse&lt; int &gt;</a></div><div class="ttdeci">int parse&lt; int &gt;(const std::string &amp;str, number_styles styles)</div><div class="ttdoc">Convert a string into a type.</div><div class="ttdef"><b>Definition</b> parse.hpp:136</div></div>
 <div class="ttc" id="astructxtd_1_1box_html_a47284e5c71e959a04a4bbd6b246393cd"><div class="ttname"><a href="structxtd_1_1box.html#a47284e5c71e959a04a4bbd6b246393cd">xtd::box::to_string</a></div><div class="ttdeci">xtd::string to_string() const noexcept override</div><div class="ttdoc">Returns a xtd::string that represents the current object.</div><div class="ttdef"><b>Definition</b> box.hpp:148</div></div>
@@ -2518,6 +2290,238 @@ This method adds an event handler to the main_form parameter for the closed even
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(<a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> {});</div>
 <div class="line">}</div>
 </div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a29a68b46fdee9e2e71d70d89ed296a91" name="a29a68b46fdee9e2e71d70d89ed296a91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29a68b46fdee9e2e71d70d89ed296a91">&#9670;&#160;</a></span>dark_mode_enabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::forms::application::dark_mode_enabled </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return <code>true</code> if dark mode is enabled for the application; otherwise return <code>false</code>. </p>
+<dl class="section return"><dt>Returns</dt><dd>True is dark mode enabled; otherwise <code>false</code>. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000193">Deprecated:</a></b></dt><dd>Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="a2db9c2e2d4a2e7dd2f053987f1e8965e" name="a2db9c2e2d4a2e7dd2f053987f1e8965e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2db9c2e2d4a2e7dd2f053987f1e8965e">&#9670;&#160;</a></span>light_mode_enabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::forms::application::light_mode_enabled </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return <code>true</code> if dark mode is enabled for the application; otherwise return <code>false</code>. </p>
+<dl class="section return"><dt>Returns</dt><dd>True is light mode enabled; otherwise <code>false</code>. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000194">Deprecated:</a></b></dt><dd>Replaced by xtd::application::light_mode - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="aba2ce54cc1670ae96a3282d2b712ef58" name="aba2ce54cc1670ae96a3282d2b712ef58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba2ce54cc1670ae96a3282d2b712ef58">&#9670;&#160;</a></span>use_visual_styles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::forms::application::use_visual_styles </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a value that indicates whether visual styles are enabled for the application. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if visual styles are enabled; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The visual styles can be enabled by calling enable_xtd::forms::application::visual_styles. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000195">Deprecated:</a></b></dt><dd>Replaced by xtd::application::visual_styles - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="ad32eba2a91a9e25f66e4cb1f718c8973" name="ad32eba2a91a9e25f66e4cb1f718c8973"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad32eba2a91a9e25f66e4cb1f718c8973">&#9670;&#160;</a></span>enable_button_images()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::application::enable_button_images </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enables button images for the application. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method has an effect only on linux. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000196">Deprecated:</a></b></dt><dd>Replaced by xtd::application::button_images - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="a055e78c3b5097f08a108c0730360e3b8" name="a055e78c3b5097f08a108c0730360e3b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a055e78c3b5097f08a108c0730360e3b8">&#9670;&#160;</a></span>enable_dark_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::application::enable_dark_mode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enables dark mode for the application. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>By default, the dark mode is enabled automatically if the system is in dark mode. </dd>
+<dd>
+<a class="el" href="classxtd_1_1forms_1_1application.html#a055e78c3b5097f08a108c0730360e3b8" title="Enables dark mode for the application.">xtd::forms::application::enable_dark_mode</a> sets the application in dark mode even if your system is in light mode. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000197">Deprecated:</a></b></dt><dd>Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="ac6f2defe8e2722b0fb450f5ae6a2f28d" name="ac6f2defe8e2722b0fb450f5ae6a2f28d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6f2defe8e2722b0fb450f5ae6a2f28d">&#9670;&#160;</a></span>enable_light_mode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::application::enable_light_mode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enables light mode for the application. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>By default, the light mode is enabled automatically if the system is in light mode. </dd>
+<dd>
+<a class="el" href="classxtd_1_1forms_1_1application.html#ac6f2defe8e2722b0fb450f5ae6a2f28d" title="Enables light mode for the application.">xtd::forms::application::enable_light_mode</a> sets the application in light mode even if your system is in dark mode. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000198">Deprecated:</a></b></dt><dd>Replaced by xtd::application::light_mode - Will be removed in version 0.4.0. </dd></dl>
+
+</div>
+</div>
+<a id="a38695ee0d586fd727abfb42995f6d9cb" name="a38695ee0d586fd727abfb42995f6d9cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38695ee0d586fd727abfb42995f6d9cb">&#9670;&#160;</a></span>enable_menu_images()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::forms::application::enable_menu_images </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enables menu images for the application. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>If this method is called after <a class="el" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e" title="Begins running a standard application message loop on the current thread, without a form.">xtd::forms::application::run</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method has an effect only on linux. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000199">Deprecated:</a></b></dt><dd>Replaced by xtd::application::menu_images - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -2752,7 +2756,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 11 2025 12:30:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Sep 12 2025 20:51:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
