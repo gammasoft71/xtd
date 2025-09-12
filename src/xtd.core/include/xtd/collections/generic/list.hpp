@@ -145,17 +145,19 @@ namespace xtd {
         /// @{
         /// @brief Initializes a new instance of the xtd::collections::generic::list class that is empty.
         /// @par Examples
-        /// The code example adds, inserts, and removes items, showing how the capacity changes as these methods are used.
-        /// @include generic_list.cpp
+        /// The following code example demonstrates the default constructor of the xtd::collections::generic::list generic class. The default constructor creates a list with the default capacity, as demonstrated by displaying the xtd::collections::generic::list::capacity property.
+        /// @include generic_list2.cpp
         /// @remarks The capacity of a xtd::collections::generic::list is the number of elements that the xtd::collections::generic::list can hold. As elements are added to a xtd::collections::generic::list, the capacity is automatically increased as required by reallocating the internal array.
         /// @remarks If the size of the collection can be estimated, using the xtd::collections::generic::list (size_type) constructor and specifying the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the xtd::collections::generic::list.
         /// @remarks The capacity can be decreased by calling the xtd::collections::generic::list::trim_excess method or by setting the xtd::collections::generic::list::capacity property explicitly. Decreasing the capacity reallocates memory and copies all the elements in the xtd::collections::generic::list.
         /// @remarks This constructor is an O(1) operation.
-        /// @remarks The following code example demonstrates the default constructor of the xtd::collections::generic::list generic class. The default constructor creates a list with the default capacity, as demonstrated by displaying the xtd::collections::generic::list::capacity property.
         list() noexcept = default;
         /// @brief Constructs the container with specified count default-inserted instances of type_t. No copies are made.
         /// @param capacity The number of elements that the new list can initially store.
         /// @exception xtd::out_of_memory There is not enough memory available on the system.
+        /// @par Examples
+        /// The following code example demonstrates the default constructor of the xtd::collections::generic::list generic class. The default constructor creates a list with the default capacity, as demonstrated by displaying the xtd::collections::generic::list::capacity property.
+        /// @include generic_list2.cpp
         explicit list(size_type capacity) {self_.capacity(capacity);}
         /// @brief Initializes a new instance of the xtd::collections::generic::list <type_t> class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
         /// @param collection The collection whose elements are copied to the new list.
@@ -164,8 +166,7 @@ namespace xtd {
         /// @include generic_list3.cpp
         /// @remarks The elements are copied onto the xtd::collections::generic::list <type_t> in the same order they are read by the enumerator of the collection.
         /// @remarks This constructor is an O(n) operation, where n is the number of elements in collection.
-        list(const xtd::collections::generic::ienumerable<type_t>& collection) {add_range(collection);}
-        
+        list(const xtd::collections::generic::ienumerable<type_t>& collection) {add_range(collection);}        
         /// @brief Default copy constructor with specified list.
         /// @param list The xtd::collections::generic::list which elements will be inserted from.
         list(const list& list) {*data_ = *list.data_;}
