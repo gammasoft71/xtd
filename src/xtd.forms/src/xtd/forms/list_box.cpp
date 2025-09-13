@@ -195,20 +195,20 @@ list_box list_box::create(const drawing::point& location, const drawing::size& s
 
 list_box list_box::create(const object_collection& items) {
   auto result = list_box {};
-  result.items(items);
+  result.items().add_range(items);
   return result;
 }
 
 list_box list_box::create(const object_collection& items, const drawing::point& location) {
   auto result = list_box {};
-  result.items(items);
+  result.items().add_range(items);
   result.location(location);
   return result;
 }
 
 list_box list_box::create(const object_collection& items, const drawing::point& location, const drawing::size& size) {
   auto result = list_box {};
-  result.items(items);
+  result.items().add_range(items);
   result.location(location);
   result.size(size);
   return result;
@@ -216,7 +216,7 @@ list_box list_box::create(const object_collection& items, const drawing::point& 
 
 list_box list_box::create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = list_box {};
-  result.items(items);
+  result.items().add_range(items);
   result.location(location);
   result.size(size);
   result.name(name);
@@ -225,14 +225,14 @@ list_box list_box::create(const object_collection& items, const drawing::point& 
 
 list_box list_box::create(const object_collection& items, size_t selected_index) {
   auto result = list_box {};
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   return result;
 }
 
 list_box list_box::create(const object_collection& items, size_t selected_index, const drawing::point& location) {
   auto result = list_box {};
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   result.location(location);
   return result;
@@ -240,7 +240,7 @@ list_box list_box::create(const object_collection& items, size_t selected_index,
 
 list_box list_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size) {
   auto result = list_box {};
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   result.location(location);
   result.size(size);
@@ -249,7 +249,7 @@ list_box list_box::create(const object_collection& items, size_t selected_index,
 
 list_box list_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = list_box {};
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   result.location(location);
   result.size(size);
@@ -290,14 +290,14 @@ list_box list_box::create(const control& parent, const drawing::point& location,
 list_box list_box::create(const control& parent, const object_collection& items) {
   auto result = list_box {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   return result;
 }
 
 list_box list_box::create(const control& parent, const object_collection& items, const drawing::point& location) {
   auto result = list_box {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.location(location);
   return result;
 }
@@ -305,7 +305,7 @@ list_box list_box::create(const control& parent, const object_collection& items,
 list_box list_box::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size) {
   auto result = list_box {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.location(location);
   result.size(size);
   return result;
@@ -314,7 +314,7 @@ list_box list_box::create(const control& parent, const object_collection& items,
 list_box list_box::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = list_box {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.location(location);
   result.size(size);
   result.name(name);
@@ -324,7 +324,7 @@ list_box list_box::create(const control& parent, const object_collection& items,
 list_box list_box::create(const control& parent, const object_collection& items, size_t selected_index) {
   auto result = list_box {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   return result;
 }
@@ -332,7 +332,7 @@ list_box list_box::create(const control& parent, const object_collection& items,
 list_box list_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location) {
   auto result = list_box {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   result.location(location);
   return result;
@@ -341,7 +341,7 @@ list_box list_box::create(const control& parent, const object_collection& items,
 list_box list_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size) {
   auto result = list_box {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   result.location(location);
   result.size(size);
@@ -351,7 +351,7 @@ list_box list_box::create(const control& parent, const object_collection& items,
 list_box list_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = list_box {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   result.location(location);
   result.size(size);

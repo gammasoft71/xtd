@@ -187,20 +187,20 @@ checked_list_box checked_list_box::create(const drawing::point& location, const 
 
 checked_list_box checked_list_box::create(const object_collection& items) {
   auto result = checked_list_box {};
-  result.items(items);
+  result.items().add_range(items);
   return result;
 }
 
 checked_list_box checked_list_box::create(const object_collection& items, const drawing::point& location) {
   auto result = checked_list_box {};
-  result.items(items);
+  result.items().add_range(items);
   result.location(location);
   return result;
 }
 
 checked_list_box checked_list_box::create(const object_collection& items, const drawing::point& location, const drawing::size& size) {
   auto result = checked_list_box {};
-  result.items(items);
+  result.items().add_range(items);
   result.location(location);
   result.size(size);
   return result;
@@ -208,7 +208,7 @@ checked_list_box checked_list_box::create(const object_collection& items, const 
 
 checked_list_box checked_list_box::create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = checked_list_box {};
-  result.items(items);
+  result.items().add_range(items);
   result.location(location);
   result.size(size);
   result.name(name);
@@ -217,14 +217,14 @@ checked_list_box checked_list_box::create(const object_collection& items, const 
 
 checked_list_box checked_list_box::create(const object_collection& items, size_t selected_index) {
   auto result = checked_list_box {};
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   return result;
 }
 
 checked_list_box checked_list_box::create(const object_collection& items, size_t selected_index, const drawing::point& location) {
   auto result = checked_list_box {};
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   result.location(location);
   return result;
@@ -232,7 +232,7 @@ checked_list_box checked_list_box::create(const object_collection& items, size_t
 
 checked_list_box checked_list_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size) {
   auto result = checked_list_box {};
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   result.location(location);
   result.size(size);
@@ -241,7 +241,7 @@ checked_list_box checked_list_box::create(const object_collection& items, size_t
 
 checked_list_box checked_list_box::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = checked_list_box {};
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   result.location(location);
   result.size(size);
@@ -282,14 +282,14 @@ checked_list_box checked_list_box::create(const control& parent, const drawing::
 checked_list_box checked_list_box::create(const control& parent, const object_collection& items) {
   auto result = checked_list_box {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   return result;
 }
 
 checked_list_box checked_list_box::create(const control& parent, const object_collection& items, const drawing::point& location) {
   auto result = checked_list_box {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.location(location);
   return result;
 }
@@ -297,7 +297,7 @@ checked_list_box checked_list_box::create(const control& parent, const object_co
 checked_list_box checked_list_box::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size) {
   auto result = checked_list_box {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.location(location);
   result.size(size);
   return result;
@@ -306,7 +306,7 @@ checked_list_box checked_list_box::create(const control& parent, const object_co
 checked_list_box checked_list_box::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = checked_list_box {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.location(location);
   result.size(size);
   result.name(name);
@@ -316,7 +316,7 @@ checked_list_box checked_list_box::create(const control& parent, const object_co
 checked_list_box checked_list_box::create(const control& parent, const object_collection& items, size_t selected_index) {
   auto result = checked_list_box {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   return result;
 }
@@ -324,7 +324,7 @@ checked_list_box checked_list_box::create(const control& parent, const object_co
 checked_list_box checked_list_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location) {
   auto result = checked_list_box {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   result.location(location);
   return result;
@@ -333,7 +333,7 @@ checked_list_box checked_list_box::create(const control& parent, const object_co
 checked_list_box checked_list_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size) {
   auto result = checked_list_box {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   result.location(location);
   result.size(size);
@@ -343,7 +343,7 @@ checked_list_box checked_list_box::create(const control& parent, const object_co
 checked_list_box checked_list_box::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = checked_list_box {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   result.location(location);
   result.size(size);

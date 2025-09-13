@@ -162,20 +162,20 @@ domain_up_down domain_up_down::create(const drawing::point& location, const draw
 
 domain_up_down domain_up_down::create(const object_collection& items) {
   auto result = domain_up_down {};
-  result.items(items);
+  result.items().add_range(items);
   return result;
 }
 
 domain_up_down domain_up_down::create(const object_collection& items, const drawing::point& location) {
   auto result = domain_up_down {};
-  result.items(items);
+  result.items().add_range(items);
   result.location(location);
   return result;
 }
 
 domain_up_down domain_up_down::create(const object_collection& items, const drawing::point& location, const drawing::size& size) {
   auto result = domain_up_down {};
-  result.items(items);
+  result.items().add_range(items);
   result.location(location);
   result.size(size);
   return result;
@@ -183,7 +183,7 @@ domain_up_down domain_up_down::create(const object_collection& items, const draw
 
 domain_up_down domain_up_down::create(const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = domain_up_down {};
-  result.items(items);
+  result.items().add_range(items);
   result.location(location);
   result.size(size);
   result.name(name);
@@ -192,14 +192,14 @@ domain_up_down domain_up_down::create(const object_collection& items, const draw
 
 domain_up_down domain_up_down::create(const object_collection& items, size_t selected_index) {
   auto result = domain_up_down {};
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   return result;
 }
 
 domain_up_down domain_up_down::create(const object_collection& items, size_t selected_index, const drawing::point& location) {
   auto result = domain_up_down {};
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   result.location(location);
   return result;
@@ -207,7 +207,7 @@ domain_up_down domain_up_down::create(const object_collection& items, size_t sel
 
 domain_up_down domain_up_down::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size) {
   auto result = domain_up_down {};
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   result.location(location);
   result.size(size);
@@ -216,7 +216,7 @@ domain_up_down domain_up_down::create(const object_collection& items, size_t sel
 
 domain_up_down domain_up_down::create(const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = domain_up_down {};
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   result.location(location);
   result.size(size);
@@ -257,14 +257,14 @@ domain_up_down domain_up_down::create(const control& parent, const drawing::poin
 domain_up_down domain_up_down::create(const control& parent, const object_collection& items) {
   auto result = domain_up_down {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   return result;
 }
 
 domain_up_down domain_up_down::create(const control& parent, const object_collection& items, const drawing::point& location) {
   auto result = domain_up_down {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.location(location);
   return result;
 }
@@ -272,7 +272,7 @@ domain_up_down domain_up_down::create(const control& parent, const object_collec
 domain_up_down domain_up_down::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size) {
   auto result = domain_up_down {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.location(location);
   result.size(size);
   return result;
@@ -281,7 +281,7 @@ domain_up_down domain_up_down::create(const control& parent, const object_collec
 domain_up_down domain_up_down::create(const control& parent, const object_collection& items, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = domain_up_down {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.location(location);
   result.size(size);
   result.name(name);
@@ -291,7 +291,7 @@ domain_up_down domain_up_down::create(const control& parent, const object_collec
 domain_up_down domain_up_down::create(const control& parent, const object_collection& items, size_t selected_index) {
   auto result = domain_up_down {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   return result;
 }
@@ -299,7 +299,7 @@ domain_up_down domain_up_down::create(const control& parent, const object_collec
 domain_up_down domain_up_down::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location) {
   auto result = domain_up_down {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   result.location(location);
   return result;
@@ -308,7 +308,7 @@ domain_up_down domain_up_down::create(const control& parent, const object_collec
 domain_up_down domain_up_down::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size) {
   auto result = domain_up_down {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   result.location(location);
   result.size(size);
@@ -318,7 +318,7 @@ domain_up_down domain_up_down::create(const control& parent, const object_collec
 domain_up_down domain_up_down::create(const control& parent, const object_collection& items, size_t selected_index, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
   auto result = domain_up_down {};
   result.parent(parent);
-  result.items(items);
+  result.items().add_range(items);
   result.selected_index(selected_index);
   result.location(location);
   result.size(size);
