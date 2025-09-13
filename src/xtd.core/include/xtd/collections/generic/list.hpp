@@ -166,7 +166,7 @@ namespace xtd {
         /// @include generic_list3.cpp
         /// @remarks The elements are copied onto the xtd::collections::generic::list <type_t> in the same order they are read by the enumerator of the collection.
         /// @remarks This constructor is an O(n) operation, where n is the number of elements in collection.
-        list(const xtd::collections::generic::ienumerable<type_t>& collection) {add_range(collection);}        
+        list(const xtd::collections::generic::ienumerable<type_t>& collection) {add_range(collection);}
         /// @brief Default copy constructor with specified list.
         /// @param list The xtd::collections::generic::list which elements will be inserted from.
         list(const list& list) {*data_ = *list.data_;}

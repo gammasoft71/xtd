@@ -185,7 +185,7 @@ namespace xtd {
         /// @remarks The elements are copied onto the xtd::forms::layout::arranged_element_collection <type_t> in the same order they are read by the enumerator of the collection.
         /// @remarks This constructor is an O(n) operation, where n is the number of elements in collection.
         arranged_element_collection(const xtd::collections::generic::ienumerable<type_t>& collection) {add_range(collection);}
-
+        
         /// @brief Default copy constructor with specified list.
         /// @param collection The xtd::forms::layout::arranged_element_collection which elements will be inserted from.
         arranged_element_collection(const arranged_element_collection& collection) {*data_ = *collection.data_;}
@@ -227,7 +227,7 @@ namespace xtd {
         /// @exception xtd::out_of_memory There is not enough memory available on the system.
         /// @exception xtd::argument_out_of_range_exception xtd::collections::generic::list::capacity is set to a value that is less than xtd::collections::generic::list::count.
         void capacity(size_type value) {data_->items.capacity(value);}
-
+        
         /// @brief Gets the number of elements contained in the xtd::forms::layout::arranged_element_collection <type_t>.
         /// @return The number of elements contained in the xtd::forms::layout::arranged_element_collection <type_t>.
         size_type count() const noexcept override {return data_->items.count();}
@@ -342,7 +342,7 @@ namespace xtd {
             array[array_index + i++] = item;
           }
         }
-
+        
         /// @brief Returns an enumerator that iterates through the xtd::forms::layout::arranged_element_collection <type_t>.
         /// @return A xtd::collections::generic::.enumerator for the xtd::forms::layout::arranged_element_collection <type_t>.
         xtd::collections::generic::enumerator<type_t> get_enumerator() const noexcept override {
@@ -429,7 +429,7 @@ namespace xtd {
           add_range(items);
           return self_;
         }
-
+        
         /// @brief Access specified element.
         /// @param index The position of the element to return.
         /// @return The requested element.
@@ -455,7 +455,7 @@ namespace xtd {
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
         operator base_type& () noexcept {return items();}
-
+        
         bool operator ==(const arranged_element_collection& value) const {return data_->items == value.data_->items;}
         bool operator !=(const arranged_element_collection& value) const {return !operator ==(value);}
         /// @}
@@ -508,7 +508,7 @@ namespace xtd {
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::count - Will be removed in version 0.4.0.")]]
         size_type size() const noexcept {return count();}
         /// @}
-
+        
         /// @name Public Deprecated Methods
         
         /// @{
