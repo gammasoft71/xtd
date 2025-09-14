@@ -42,6 +42,8 @@ namespace xtd {
     /// @include binary_reader2.cpp
     /// @remarks The xtd::io::binary_writer class provides methods that simplify writing primitive data types to a stream. For example, you can use the Write method to write a Boolean value to the stream as a one-byte value. The class includes write methods that support different data types.
     /// @remarks When you create a new instance of the xtd::io::binary_writer class, you provide the stream to write to.
+    /// @note xtd xtd::io::binary_reader and xtd::io::binary_writer are fully compatible with .NET [BinaryReader](https://learn.microsoft.com/en-us/dotnet/api/system.io.binaryreader)/[BinaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.io.binarywriter).
+    /// @note Files written with xtd can be read directly in C# and vice versa, following the same binary format conventions (7-bit encoded string lengths, little-endian integers, etc.).
     class core_export_ binary_writer : public xtd::object {
     public:
       /// @name Public Constructors
