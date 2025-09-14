@@ -4,9 +4,9 @@ Shows how to use indexing operators with [xtd::bpos](https://gammasoft71.github.
 
 ## Sources
 
-[src/xtd_collection_indexer.cpp](src/xtd_collection_indexer.cpp)
+* [src/xtd_collection_indexer.cpp](src/xtd_collection_indexer.cpp)
 
-[CMakeLists.txt](CMakeLists.txt)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 
