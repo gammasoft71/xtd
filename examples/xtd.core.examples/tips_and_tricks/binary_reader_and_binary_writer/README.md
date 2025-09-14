@@ -8,17 +8,17 @@ Demonstrates that binary files created with [xtd::io::binary_writer](https://gam
 
 ## Properties
 
-[properties/resources.cmake](properties/resources.cmake)
+* [properties/resources.cmake](properties/resources.cmake)
 
 ## Resources
 
-[resources/BinaryReaderAndBinaryWriter.cs](resources/BinaryReaderAndBinaryWriter.cs)
-[resources/file_dotnet.dat](resources/file_dotnet.dat)
-[resources/file_xtd.dat](resources/file_xtd.dat)
+* [resources/BinaryReaderAndBinaryWriter.cs](resources/BinaryReaderAndBinaryWriter.cs)
+* [resources/file_dotnet.dat](resources/file_dotnet.dat)
+* [resources/file_xtd.dat](resources/file_xtd.dat)
 
 ## CMake files
 
-[CMakeLists.txt](CMakeLists.txt)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 
