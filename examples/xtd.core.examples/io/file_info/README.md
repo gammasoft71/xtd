@@ -4,9 +4,8 @@ Show how to use [xtd::io::file_info](https://gammasoft71.github.io/xtd/reference
 
 ## Sources
 
-[src/file_info.cpp](src/file_info.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/file_info.cpp](src/file_info.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

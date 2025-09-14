@@ -4,9 +4,8 @@ Shows how to create your own [xtd::tunit::valid](https://gammasoft71.github.io/x
 
 ## Sources
 
-[src/math_valid.cpp](src/math_valid.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/math_valid.cpp](src/math_valid.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

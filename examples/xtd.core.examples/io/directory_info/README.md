@@ -4,9 +4,8 @@ Show how to use [xtd::io::directory_info](https://gammasoft71.github.io/xtd/refe
 
 ## Sources
 
-[src/directory_info.cpp](src/directory_info.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/directory_info.cpp](src/directory_info.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

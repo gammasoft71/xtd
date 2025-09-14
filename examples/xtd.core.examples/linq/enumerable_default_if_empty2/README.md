@@ -4,9 +4,8 @@ Shows how to use [xtd::linq::enumerable::default_if_empty](https://gammasoft71.g
 
 ## Sources
 
-[src/enumerable_default_if_empty2.cpp](src/enumerable_default_if_empty2.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/enumerable_default_if_empty2.cpp](src/enumerable_default_if_empty2.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

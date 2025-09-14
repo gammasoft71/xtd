@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::valid::is_zero](https://gammasoft71.github.io/xtd/
 
 ## Sources
 
-[src/valid_is_zero.cpp](src/valid_is_zero.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/valid_is_zero.cpp](src/valid_is_zero.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

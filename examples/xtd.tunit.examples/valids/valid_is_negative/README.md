@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::valid::is_negative](https://gammasoft71.github.io/
 
 ## Sources
 
-[src/valid_is_negative.cpp](src/valid_is_negative.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/valid_is_negative.cpp](src/valid_is_negative.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

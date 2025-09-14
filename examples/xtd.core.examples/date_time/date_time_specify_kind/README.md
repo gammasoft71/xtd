@@ -4,9 +4,8 @@ Shows how to use [xtd::date_time::specify_kind](https://gammasoft71.github.io/xt
 
 ## Sources
 
-[src/date_time_specify_kind.cpp](src/date_time_specify_kind.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/date_time_specify_kind.cpp](src/date_time_specify_kind.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

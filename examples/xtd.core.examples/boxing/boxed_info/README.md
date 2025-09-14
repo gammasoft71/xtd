@@ -4,9 +4,8 @@ Shows how to use [xtd::boxing](https://gammasoft71.github.io/xtd/reference_guide
 
 ## Sources
 
-[src/boxed_info.cpp](src/boxed_info.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/boxed_info.cpp](src/boxed_info.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

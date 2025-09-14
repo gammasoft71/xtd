@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::string_assume::contains](https://gammasoft71.githu
 
 ## Sources
 
-[src/string_assume_contains.cpp](src/string_assume_contains.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/string_assume_contains.cpp](src/string_assume_contains.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

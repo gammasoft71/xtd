@@ -4,9 +4,8 @@ Shows how to use [xtd::net::sockets::tcp_client](https://gammasoft71.github.io/x
 
 ## Sources
 
-[src/tcp_client_ip_v4.cpp](src/tcp_client_ip_v4.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/tcp_client_ip_v4.cpp](src/tcp_client_ip_v4.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

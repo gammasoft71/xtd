@@ -4,9 +4,8 @@ Shows how to use [xtd::delegate::begin_invoke](https://gammasoft71.github.io/xtd
 
 ## Sources
 
-[src/delegate_begin_invoke2.cpp](src/delegate_begin_invoke2.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/delegate_begin_invoke2.cpp](src/delegate_begin_invoke2.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

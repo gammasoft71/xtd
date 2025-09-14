@@ -4,9 +4,8 @@ Shows how to use [xtd::collections::object_model::read_only_collection](https://
 
 ## Sources
 
-[src/read_only_collection.cpp](src/read_only_collection.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/read_only_collection.cpp](src/read_only_collection.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::console](https://gammasoft71.github.io/xtd/reference_guid
 
 ## Sources
 
-[src/fibonacci_series.cpp](src/fibonacci_series.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/fibonacci_series.cpp](src/fibonacci_series.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

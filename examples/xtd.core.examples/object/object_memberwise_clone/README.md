@@ -4,9 +4,8 @@ Shows hows how to use [xtd::object::memberwise_clone](https://gammasoft71.github
 
 ## Sources
 
-[src/object_memberwise_clone.cpp](src/object_memberwise_clone.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/object_memberwise_clone.cpp](src/object_memberwise_clone.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

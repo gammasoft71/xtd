@@ -4,9 +4,8 @@ Shows how to use [xtd::linq::enumerable::all](https://gammasoft71.github.io/xtd/
 
 ## Sources
 
-[src/enumerable_all2.cpp](src/enumerable_all2.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/enumerable_all2.cpp](src/enumerable_all2.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

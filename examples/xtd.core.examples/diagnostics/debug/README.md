@@ -4,9 +4,8 @@ Shows how to use [debug](https://gammasoft71.github.io/xtd/reference_guides/late
 
 ## Sources
 
-[src/debug.cpp](src/debug.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/debug.cpp](src/debug.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::collections::array_list](https://gammasoft71.github.io/xt
 
 ## Sources
 
-[src/array_list2.cpp](src/array_list2.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/array_list2.cpp](src/array_list2.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

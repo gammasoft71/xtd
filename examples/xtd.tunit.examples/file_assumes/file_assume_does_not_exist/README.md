@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::file_assume::does_not_exist](https://gammasoft71.g
 
 ## Sources
 
-[src/file_assume_does_not_exist.cpp](src/file_assume_does_not_exist.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/file_assume_does_not_exist.cpp](src/file_assume_does_not_exist.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

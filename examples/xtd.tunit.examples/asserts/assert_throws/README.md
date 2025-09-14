@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assert::throws](https://gammasoft71.github.io/xtd/
 
 ## Sources
 
-[src/assert_throws.cpp](src/assert_throws.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assert_throws.cpp](src/assert_throws.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

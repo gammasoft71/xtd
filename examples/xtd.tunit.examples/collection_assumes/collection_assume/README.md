@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::collection_assume](https://gammasoft71.github.io/x
 
 ## Sources
 
-[src/collection_assume.cpp](src/collection_assume.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collection_assume.cpp](src/collection_assume.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

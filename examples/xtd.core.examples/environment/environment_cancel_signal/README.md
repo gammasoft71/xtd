@@ -4,9 +4,8 @@ Shows how to use [xtd::environment::cancel_signal](https://gammasoft71.github.io
 
 ## Sources
 
-[src/environment_cancel_signal.cpp](src/environment_cancel_signal.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/environment_cancel_signal.cpp](src/environment_cancel_signal.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

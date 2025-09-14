@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assert::is_negative](https://gammasoft71.github.io
 
 ## Sources
 
-[src/assert_is_negative.cpp](src/assert_is_negative.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assert_is_negative.cpp](src/assert_is_negative.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

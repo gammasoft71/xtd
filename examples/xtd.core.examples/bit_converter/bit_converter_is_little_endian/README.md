@@ -4,9 +4,8 @@ Shows how to use [bit_converter::is_little_endian](https://gammasoft71.github.io
 
 ## Sources
 
-[src/bit_converter_is_little_endian.cpp](src/bit_converter_is_little_endian.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/bit_converter_is_little_endian.cpp](src/bit_converter_is_little_endian.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

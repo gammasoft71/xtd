@@ -4,9 +4,8 @@ Show how to use [xtd::io::file_info::move_to](https://gammasoft71.github.io/xtd/
 
 ## Sources
 
-[src/file_info_move_to.cpp](src/file_info_move_to.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/file_info_move_to.cpp](src/file_info_move_to.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::random::next_bytes](https://gammasoft71.github.io/xtd/ref
 
 ## Sources
 
-[src/random1.cpp](src/random1.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/random1.cpp](src/random1.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

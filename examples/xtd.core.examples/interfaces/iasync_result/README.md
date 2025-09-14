@@ -4,9 +4,8 @@ Shows how to use [xtd:: iasync_result](https://gammasoft71.github.io/xtd/referen
 
 ## Sources
 
-[src/iasync_result.cpp](src/iasync_result.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/iasync_result.cpp](src/iasync_result.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

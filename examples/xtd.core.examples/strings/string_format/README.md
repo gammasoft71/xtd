@@ -4,9 +4,8 @@ Shows how to use [xtd::string::format](https://gammasoft71.github.io/xtd/referen
 
 ## Sources
 
-[src/string_format.cpp](src/string_format.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/string_format.cpp](src/string_format.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

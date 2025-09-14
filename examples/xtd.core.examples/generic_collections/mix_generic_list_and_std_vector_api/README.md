@@ -4,9 +4,8 @@ Shows how to use [xtd::collections::generic::list](https://gammasoft71.github.io
 
 ## Sources
 
-[src/mix_generic_list_and_std_vector_api.cpp](src/mix_generic_list_and_std_vector_api.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/mix_generic_list_and_std_vector_api.cpp](src/mix_generic_list_and_std_vector_api.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

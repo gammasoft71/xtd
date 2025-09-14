@@ -4,9 +4,8 @@ Shows how to use [xtd::console::buffer_height](https://gammasoft71.github.io/xtd
 
 ## Sources
 
-[src/console_buffer.cpp](src/console_buffer.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/console_buffer.cpp](src/console_buffer.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

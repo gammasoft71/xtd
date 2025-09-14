@@ -4,9 +4,8 @@ Shows how to use [xtd::environment::expand_environment_variables](https://gammas
 
 ## Sources
 
-[src/environment_expand_environment_variables.cpp](src/environment_expand_environment_variables.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/environment_expand_environment_variables.cpp](src/environment_expand_environment_variables.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

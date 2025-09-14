@@ -4,9 +4,8 @@ Shows how to set target display with cmake [target_display()](https://gammasoft7
 
 ## Sources
 
-[src/target_display.cpp](src/target_display.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/target_display.cpp](src/target_display.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

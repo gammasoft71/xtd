@@ -4,9 +4,8 @@ Shows how to use [xtd::collections::ilist](https://gammasoft71.github.io/xtd/ref
 
 ## Sources
 
-[src/ilist.cpp](src/ilist.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/ilist.cpp](src/ilist.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

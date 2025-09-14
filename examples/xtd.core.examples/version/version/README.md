@@ -4,9 +4,8 @@ Demonstrates the [xtd::version](https://gammasoft71.github.io/xtd/reference_guid
 
 ## Sources
 
-[src/version.cpp](src/version.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/version.cpp](src/version.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

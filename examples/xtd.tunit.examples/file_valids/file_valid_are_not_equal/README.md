@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::file_valid::are_not_equal](https://gammasoft71.git
 
 ## Sources
 
-[src/file_valid_are_not_equal.cpp](src/file_valid_are_not_equal.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/file_valid_are_not_equal.cpp](src/file_valid_are_not_equal.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

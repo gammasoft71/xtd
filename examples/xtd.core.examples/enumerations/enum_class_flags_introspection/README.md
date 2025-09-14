@@ -4,9 +4,8 @@
 
 ## Sources
 
-[src/enum_class_flags_introspection.cpp](src/enum_class_flags_introspection.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/enum_class_flags_introspection.cpp](src/enum_class_flags_introspection.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

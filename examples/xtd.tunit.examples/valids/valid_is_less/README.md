@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::valid::is_less](https://gammasoft71.github.io/xtd/
 
 ## Sources
 
-[src/valid_is_less.cpp](src/valid_is_less.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/valid_is_less.cpp](src/valid_is_less.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

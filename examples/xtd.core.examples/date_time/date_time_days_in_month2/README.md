@@ -4,9 +4,8 @@ Shows how to use [xtd::date_time::days_in_month](https://gammasoft71.github.io/x
 
 ## Sources
 
-[src/date_time_days_in_month2.cpp](src/date_time_days_in_month2.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/date_time_days_in_month2.cpp](src/date_time_days_in_month2.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

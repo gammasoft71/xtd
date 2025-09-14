@@ -4,9 +4,8 @@ Shows how to use [xtd::linq::enumerable::count_by](https://gammasoft71.github.io
 
 ## Sources
 
-[src/enumerable_count_by.cpp](src/enumerable_count_by.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/enumerable_count_by.cpp](src/enumerable_count_by.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

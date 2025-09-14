@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::valid::is_greater_or_equal](https://gammasoft71.gi
 
 ## Sources
 
-[src/valid_is_greater_or_equal.cpp](src/valid_is_greater_or_equal.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/valid_is_greater_or_equal.cpp](src/valid_is_greater_or_equal.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

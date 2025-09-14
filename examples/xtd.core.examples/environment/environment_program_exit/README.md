@@ -4,9 +4,8 @@ Shows how to use [xtd::environment::program_stopped](https://gammasoft71.github.
 
 ## Sources
 
-[src/environment_program_exit.cpp](src/environment_program_exit.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/environment_program_exit.cpp](src/environment_program_exit.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

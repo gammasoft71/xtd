@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::collection_assert::is_ordered](https://gammasoft71
 
 ## Sources
 
-[src/collection_assert_is_ordered.cpp](src/collection_assert_is_ordered.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collection_assert_is_ordered.cpp](src/collection_assert_is_ordered.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

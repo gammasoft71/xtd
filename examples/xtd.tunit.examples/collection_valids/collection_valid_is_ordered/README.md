@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::collection_valid::is_ordered](https://gammasoft71.
 
 ## Sources
 
-[src/collection_valid_is_ordered.cpp](src/collection_valid_is_ordered.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collection_valid_is_ordered.cpp](src/collection_valid_is_ordered.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

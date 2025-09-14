@@ -4,9 +4,8 @@ Shows how to use generic [xtd::tunit::test_class](https://gammasoft71.github.io/
 
 ## Sources
 
-[src/generic_test_class.cpp](src/generic_test_class.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/generic_test_class.cpp](src/generic_test_class.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

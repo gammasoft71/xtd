@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::collection_assert::does_not_contain](https://gamma
 
 ## Sources
 
-[src/collection_assert_does_not_contain.cpp](src/collection_assert_does_not_contain.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collection_assert_does_not_contain.cpp](src/collection_assert_does_not_contain.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

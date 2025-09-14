@@ -4,9 +4,8 @@ Shows how to use [array_list](https://gammasoft71.github.io/xtd/reference_guides
 
 ## Sources
 
-[src/array_list.cpp](src/array_list.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/array_list.cpp](src/array_list.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

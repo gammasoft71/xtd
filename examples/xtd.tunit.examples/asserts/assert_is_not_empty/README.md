@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assert::is_not_empty](https://gammasoft71.github.i
 
 ## Sources
 
-[src/assert_is_not_empty.cpp](src/assert_is_not_empty.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assert_is_not_empty.cpp](src/assert_is_not_empty.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

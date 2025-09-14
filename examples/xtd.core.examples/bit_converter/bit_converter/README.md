@@ -4,9 +4,8 @@ Shows how to use [xtd::bit_converter](https://gammasoft71.github.io/xtd/referenc
 
 ## Sources
 
-[src/bit_converter.cpp](src/bit_converter.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/bit_converter.cpp](src/bit_converter.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

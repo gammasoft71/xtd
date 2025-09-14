@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::string_valid::starts_with](https://gammasoft71.git
 
 ## Sources
 
-[src/string_valid_starts_with.cpp](src/string_valid_starts_with.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/string_valid_starts_with.cpp](src/string_valid_starts_with.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

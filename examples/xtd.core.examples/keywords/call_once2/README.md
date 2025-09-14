@@ -4,9 +4,8 @@ Shows how to use [call_once](https://gammasoft71.github.io/xtd/reference_guides/
 
 ## Sources
 
-[src/call_once2.cpp](src/call_once2.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/call_once2.cpp](src/call_once2.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

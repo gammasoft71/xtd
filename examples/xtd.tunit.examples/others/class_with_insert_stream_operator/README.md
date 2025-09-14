@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assert](https://gammasoft71.github.io/xtd/referenc
 
 ## Sources
 
-[src/class_with_insert_stream_operator.cpp](src/class_with_insert_stream_operator.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/class_with_insert_stream_operator.cpp](src/class_with_insert_stream_operator.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

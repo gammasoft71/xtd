@@ -4,9 +4,8 @@ Shows how to use [xtd::environment::exit](https://gammasoft71.github.io/xtd/refe
 
 ## Sources
 
-[src/environment_exit.cpp](src/environment_exit.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/environment_exit.cpp](src/environment_exit.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

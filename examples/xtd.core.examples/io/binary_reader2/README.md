@@ -4,9 +4,8 @@ Show how to use [xtd::io::binary_reader](https://gammasoft71.github.io/xtd/refer
 
 ## Sources
 
-[src/binary_reader2.cpp](src/binary_reader2.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/binary_reader2.cpp](src/binary_reader2.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::string::concat](https://gammasoft71.github.io/xtd/referen
 
 ## Sources
 
-[src/concat.cpp](src/concat.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/concat.cpp](src/concat.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

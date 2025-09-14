@@ -4,9 +4,8 @@ Shows how to use [xtd::linq::from](https://gammasoft71.github.io/xtd/reference_g
 
 ## Sources
 
-[src/linq_from5.cpp](src/linq_from5.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/linq_from5.cpp](src/linq_from5.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [argument_exception](https://gammasoft71.github.io/xtd/referenc
 
 ## Sources
 
-[src/argument_exception.cpp](src/argument_exception.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/argument_exception.cpp](src/argument_exception.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

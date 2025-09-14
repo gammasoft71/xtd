@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::directory_assert::does_not_exist](https://gammasof
 
 ## Sources
 
-[src/directory_assert_does_not_exist.cpp](src/directory_assert_does_not_exist.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/directory_assert_does_not_exist.cpp](src/directory_assert_does_not_exist.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

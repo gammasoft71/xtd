@@ -4,9 +4,8 @@ Shows how to use [xtd::string](https://gammasoft71.github.io/xtd/reference_guide
 
 ## Sources
 
-[src/string_unicode.cpp](src/string_unicode.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/string_unicode.cpp](src/string_unicode.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

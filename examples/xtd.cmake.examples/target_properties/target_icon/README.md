@@ -4,9 +4,8 @@ Shows how to set target icon with cmake [target_icon()](https://gammasoft71.gith
 
 ## Sources
 
-[src/target_icon.cpp](src/target_icon.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/target_icon.cpp](src/target_icon.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 [xtd_forms.icns](resources/xtd_forms.icns)
 

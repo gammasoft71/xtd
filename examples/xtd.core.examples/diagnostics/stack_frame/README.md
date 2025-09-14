@@ -4,9 +4,8 @@ Shows how to use [xtd::diagnostics::stack_frame](https://gammasoft71.github.io/x
 
 ## Sources
 
-[src/stack_frame.cpp](src/stack_frame.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/stack_frame.cpp](src/stack_frame.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

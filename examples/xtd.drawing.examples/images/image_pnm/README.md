@@ -4,11 +4,9 @@ Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/referen
 
 ## Sources
 
-[src/image_pnm.cpp](src/image_pnm.cpp)
-
-[resources/gammasoft.pnm](resources/gammasoft.pnm)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/image_pnm.cpp](src/image_pnm.cpp)
+* [resources/gammasoft.pnm](resources/gammasoft.pnm)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

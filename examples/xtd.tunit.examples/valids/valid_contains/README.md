@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::valid::contains](https://gammasoft71.github.io/xtd
 
 ## Sources
 
-[src/valid_contains.cpp](src/valid_contains.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/valid_contains.cpp](src/valid_contains.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

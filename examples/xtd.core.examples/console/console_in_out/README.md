@@ -4,9 +4,8 @@ Shows how to use [xtd::console::in](https://gammasoft71.github.io/xtd/reference_
 
 ## Sources
 
-[src/console_in_out.cpp](src/console_in_out.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/console_in_out.cpp](src/console_in_out.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

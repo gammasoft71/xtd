@@ -4,9 +4,8 @@ Shows how to use [xtd::net::sockets::socket](https://gammasoft71.github.io/xtd/r
 
 ## Sources
 
-[src/socket_udp_ip_v6.cpp](src/socket_udp_ip_v6.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/socket_udp_ip_v6.cpp](src/socket_udp_ip_v6.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

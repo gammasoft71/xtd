@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::collection_assert::all_items_are_instances_of](htt
 
 ## Sources
 
-[src/collection_assert_all_items_are_instances_of.cpp](src/collection_assert_all_items_are_instances_of.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collection_assert_all_items_are_instances_of.cpp](src/collection_assert_all_items_are_instances_of.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assume::is_null](https://gammasoft71.github.io/xtd
 
 ## Sources
 
-[src/assume_is_null.cpp](src/assume_is_null.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assume_is_null.cpp](src/assume_is_null.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

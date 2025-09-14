@@ -4,9 +4,8 @@ Shows how to use [xtd::version](https://gammasoft71.github.io/xtd/reference_guid
 
 ## Sources
 
-[src/version_os.cpp](src/version_os.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/version_os.cpp](src/version_os.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::file_assert::exists](https://gammasoft71.github.io
 
 ## Sources
 
-[src/file_assert_exists.cpp](src/file_assert_exists.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/file_assert_exists.cpp](src/file_assert_exists.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

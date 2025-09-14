@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::string_assert::does_not_matche](https://gammasoft7
 
 ## Sources
 
-[src/string_assert_does_not_matche.cpp](src/string_assert_does_not_matche.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/string_assert_does_not_matche.cpp](src/string_assert_does_not_matche.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

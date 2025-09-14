@@ -4,9 +4,8 @@ Shows how to use [xtd::basic_string](https://gammasoft71.github.io/xtd/reference
 
 ## Sources
 
-[src/strings.cpp](src/strings.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/strings.cpp](src/strings.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

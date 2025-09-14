@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::string_assert](https://gammasoft71.github.io/xtd/r
 
 ## Sources
 
-[src/string_assert.cpp](src/string_assert.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/string_assert.cpp](src/string_assert.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

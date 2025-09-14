@@ -4,9 +4,8 @@ demonstrates the use of [xtd::forms::check_boxes](https://gammasoft71.github.io/
 
 ## Sources
 
-[src/check_boxes.cpp](src/check_boxes.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/check_boxes.cpp](src/check_boxes.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

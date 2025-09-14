@@ -4,9 +4,8 @@ Shows how to use [xtd::convert::to_int32](https://gammasoft71.github.io/xtd/refe
 
 ## Sources
 
-[src/to_int32.cpp](src/to_int32.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/to_int32.cpp](src/to_int32.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [trace](https://gammasoft71.github.io/xtd/reference_guides/late
 
 ## Sources
 
-[src/trace.cpp](src/trace.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/trace.cpp](src/trace.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

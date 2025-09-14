@@ -4,9 +4,8 @@ Shows hows how to use [xtd::object::get_type](https://gammasoft71.github.io/xtd/
 
 ## Sources
 
-[src/object_get_type.cpp](src/object_get_type.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/object_get_type.cpp](src/object_get_type.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

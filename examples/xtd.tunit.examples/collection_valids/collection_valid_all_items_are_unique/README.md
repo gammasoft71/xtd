@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::collection_valid::all_items_are_unique](https://ga
 
 ## Sources
 
-[src/collection_valid_all_items_are_unique.cpp](src/collection_valid_all_items_are_unique.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collection_valid_all_items_are_unique.cpp](src/collection_valid_all_items_are_unique.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

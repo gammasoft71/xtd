@@ -4,9 +4,8 @@ Shows how to use [TUNIT_CONFIG_MAIN](https://gammasoft71.github.io/xtd/reference
 
 ## Sources
 
-[src/tunit_config_main.cpp](src/tunit_config_main.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/tunit_config_main.cpp](src/tunit_config_main.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

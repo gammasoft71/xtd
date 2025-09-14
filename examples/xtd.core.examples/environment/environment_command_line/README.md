@@ -4,9 +4,8 @@ Shows how to use [xtd::environment::command_line](https://gammasoft71.github.io/
 
 ## Sources
 
-[src/environment_command_line.cpp](src/environment_command_line.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/environment_command_line.cpp](src/environment_command_line.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

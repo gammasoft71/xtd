@@ -4,11 +4,9 @@ Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/referen
 
 ## Sources
 
-[src/image_ico.cpp](src/image_ico.cpp)
-
-[resources/gammasoft.ico](resources/gammasoft.ico)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/image_ico.cpp](src/image_ico.cpp)
+* [resources/gammasoft.ico](resources/gammasoft.ico)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

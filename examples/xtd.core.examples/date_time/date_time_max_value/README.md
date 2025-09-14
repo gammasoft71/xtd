@@ -4,9 +4,8 @@ Shows how to use [xtd::date_time::max_value](https://gammasoft71.github.io/xtd/r
 
 ## Sources
 
-[src/date_time_max_valuedate_time_max_value.cpp](src/date_time_max_value.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/date_time_max_valuedate_time_max_value.cpp](src/date_time_max_value.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

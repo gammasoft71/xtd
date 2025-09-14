@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assume::is_not_zero](https://gammasoft71.github.io
 
 ## Sources
 
-[src/assume_is_not_zero.cpp](src/assume_is_not_zero.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assume_is_not_zero.cpp](src/assume_is_not_zero.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

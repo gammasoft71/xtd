@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::string_valid::ends_with](https://gammasoft71.githu
 
 ## Sources
 
-[src/string_valid_ends_with.cpp](src/string_valid_ends_with.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/string_valid_ends_with.cpp](src/string_valid_ends_with.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

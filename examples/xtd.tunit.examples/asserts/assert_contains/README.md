@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assert::contains](https://gammasoft71.github.io/xt
 
 ## Sources
 
-[src/assert_contains.cpp](src/assert_contains.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assert_contains.cpp](src/assert_contains.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assert::throws_any](https://gammasoft71.github.io/
 
 ## Sources
 
-[src/assert_throws_any.cpp](src/assert_throws_any.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assert_throws_any.cpp](src/assert_throws_any.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,11 +4,9 @@ Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/referen
 
 ## Sources
 
-[src/image_pcx.cpp](src/image_pcx.cpp)
-
-[resources/gammasoft.pcx](resources/gammasoft.pcx)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/image_pcx.cpp](src/image_pcx.cpp)
+* [resources/gammasoft.pcx](resources/gammasoft.pcx)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

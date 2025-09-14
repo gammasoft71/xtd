@@ -4,9 +4,8 @@ Show how to use [xtd::io::file_info::open_read](https://gammasoft71.github.io/xt
 
 ## Sources
 
-[src/file_info.cpp](src/file_info_open_read.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/file_info.cpp](src/file_info_open_read.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

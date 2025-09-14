@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::collection_valid](https://gammasoft71.github.io/xt
 
 ## Sources
 
-[src/collection_valid.cpp](src/collection_valid.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collection_valid.cpp](src/collection_valid.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

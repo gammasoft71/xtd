@@ -4,9 +4,8 @@ Shows how to use [xtd::linq::enumerable::where](https://gammasoft71.github.io/xt
 
 ## Sources
 
-[src/enumerable_where.cpp](src/enumerable_where.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/enumerable_where.cpp](src/enumerable_where.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

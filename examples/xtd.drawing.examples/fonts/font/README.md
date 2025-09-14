@@ -4,9 +4,8 @@ Shows how to use [xtd::drawing::font](https://gammasoft71.github.io/xtd/referenc
 
 ## Sources
 
-[src/font.cpp](src/font.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/font.cpp](src/font.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

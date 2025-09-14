@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assert::is_positive](https://gammasoft71.github.io
 
 ## Sources
 
-[src/assert_is_positive.cpp](src/assert_is_positive.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assert_is_positive.cpp](src/assert_is_positive.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::valid::are_not_same](https://gammasoft71.github.io
 
 ## Sources
 
-[src/valid_are_not_same.cpp](src/valid_are_not_same.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/valid_are_not_same.cpp](src/valid_are_not_same.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

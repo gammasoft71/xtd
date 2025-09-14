@@ -4,9 +4,8 @@ Show how to use [xtd::io::drive_info](https://gammasoft71.github.io/xtd/referenc
 
 ## Sources
 
-[src/drive_info.cpp](src/drive_info.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/drive_info.cpp](src/drive_info.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::net::sockets::network_stream](https://gammasoft71.github.
 
 ## Sources
 
-[src/network_stream.cpp](src/network_stream.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/network_stream.cpp](src/network_stream.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Demonstrates how to create a simple [xtd::diagnostics::stack_trace](https://gamm
 
 ## Sources
 
-[src/stack_trace_simple.cpp](src/stack_trace_simple.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/stack_trace_simple.cpp](src/stack_trace_simple.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

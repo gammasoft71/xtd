@@ -4,9 +4,8 @@ Shows how to use [typeof_](https://gammasoft71.github.io/xtd/reference_guides/la
 
 ## Sources
 
-[src/typeof.cpp](src/typeof.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/typeof.cpp](src/typeof.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

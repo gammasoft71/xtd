@@ -4,9 +4,8 @@ Shows how to use [xtd::console::title](https://gammasoft71.github.io/xtd/referen
 
 ## Sources
 
-[src/console_title.cpp](src/console_title.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/console_title.cpp](src/console_title.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

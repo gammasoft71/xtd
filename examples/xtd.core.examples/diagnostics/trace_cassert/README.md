@@ -4,9 +4,8 @@ Shows how to use [trace::cassert_](https://gammasoft71.github.io/xtd/reference_g
 
 ## Sources
 
-[src/trace_cassert.cpp](src/trace_cassert.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/trace_cassert.cpp](src/trace_cassert.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

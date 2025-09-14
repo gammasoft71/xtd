@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::directory_assume](https://gammasoft71.github.io/xt
 
 ## Sources
 
-[src/directory_assume.cpp](src/directory_assume.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/directory_assume.cpp](src/directory_assume.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

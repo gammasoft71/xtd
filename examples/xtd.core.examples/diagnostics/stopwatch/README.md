@@ -4,9 +4,8 @@ Shows how to use [xtd::diagnostics::stopwatch](https://gammasoft71.github.io/xtd
 
 ## Sources
 
-[src/stopwatch.cpp](src/stopwatch.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/stopwatch.cpp](src/stopwatch.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

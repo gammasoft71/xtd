@@ -4,9 +4,8 @@ Shows how to use [xtd::threading::thread](https://gammasoft71.github.io/xtd/refe
 
 ## Sources
 
-[src/thread.cpp](src/thread.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/thread.cpp](src/thread.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

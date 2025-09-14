@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::directory_assert::are_not_equal](https://gammasoft
 
 ## Sources
 
-[src/directory_assert_are_not_equal.cpp](src/directory_assert_are_not_equal.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/directory_assert_are_not_equal.cpp](src/directory_assert_are_not_equal.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

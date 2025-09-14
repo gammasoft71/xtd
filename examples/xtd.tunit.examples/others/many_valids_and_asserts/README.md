@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::valid](https://gammasoft71.github.io/xtd/reference
 
 ## Sources
 
-[src/many_valids_and_asserts.cpp](src/many_valids_and_asserts.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/many_valids_and_asserts.cpp](src/many_valids_and_asserts.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

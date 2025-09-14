@@ -4,9 +4,8 @@ The classic first application "Hello, World!" with [xtd::string](https://gammaso
 
 ## Sources
 
-[src/hello_world_string.cpp](src/hello_world_string.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/hello_world_string.cpp](src/hello_world_string.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

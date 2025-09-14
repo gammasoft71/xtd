@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::file_valid](https://gammasoft71.github.io/xtd/refe
 
 ## Sources
 
-[src/file_valid.cpp](src/file_valid.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/file_valid.cpp](src/file_valid.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

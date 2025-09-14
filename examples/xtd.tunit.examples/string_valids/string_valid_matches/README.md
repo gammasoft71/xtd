@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::string_valid::matches](https://gammasoft71.github.
 
 ## Sources
 
-[src/string_valid_matches.cpp](src/string_valid_matches.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/string_valid_matches.cpp](src/string_valid_matches.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

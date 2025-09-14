@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assume::throws](https://gammasoft71.github.io/xtd/
 
 ## Sources
 
-[src/assume_throws.cpp](src/assume_throws.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assume_throws.cpp](src/assume_throws.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

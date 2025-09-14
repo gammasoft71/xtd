@@ -4,9 +4,8 @@ Shows how to use [xtd::any_object](https://gammasoft71.github.io/xtd/reference_g
 
 ## Sources
 
-[src/any.cpp](src/any.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/any.cpp](src/any.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

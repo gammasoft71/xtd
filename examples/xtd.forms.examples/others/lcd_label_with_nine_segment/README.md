@@ -4,9 +4,8 @@ demonstrates how to use [xtd::forms::lcd_label_with_nine_segment](https://gammas
 
 ## Sources
 
-[src/lcd_label_with_nine_segment.cpp](src/lcd_label_with_nine_segment.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/lcd_label_with_nine_segment.cpp](src/lcd_label_with_nine_segment.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

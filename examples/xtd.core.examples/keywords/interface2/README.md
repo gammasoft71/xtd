@@ -4,9 +4,8 @@ Shows how to use [xtd::interface](https://gammasoft71.github.io/xtd/reference_gu
 
 ## Sources
 
-[src/interface2.cpp](src/interface2.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/interface2.cpp](src/interface2.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

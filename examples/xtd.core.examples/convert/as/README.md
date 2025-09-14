@@ -4,9 +4,8 @@ Shows how to use [xtd::as](https://gammasoft71.github.io/xtd/reference_guides/la
 
 ## Sources
 
-[src/as.cpp](src/as.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/as.cpp](src/as.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

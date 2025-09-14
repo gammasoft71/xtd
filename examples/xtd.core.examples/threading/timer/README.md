@@ -4,9 +4,8 @@ Shows how to use [xtd::threading::timer](https:gammasoft71.github.io/xtd/referen
 
 ## Sources
 
-[src/timer.cpp](src/timer.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/timer.cpp](src/timer.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

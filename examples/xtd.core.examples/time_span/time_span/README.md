@@ -4,9 +4,8 @@ Demonstrates the [xtd::time_span](https://gammasoft71.github.io/xtd/reference_gu
 
 ## Sources
 
-[src/time_span.cpp](src/time_span.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/time_span.cpp](src/time_span.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::environment::tick_count](https://gammasoft71.github.io/xt
 
 ## Sources
 
-[src/environment_tick_count.cpp](src/environment_tick_count.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/environment_tick_count.cpp](src/environment_tick_count.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

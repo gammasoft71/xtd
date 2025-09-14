@@ -4,9 +4,8 @@ Shows how to use [xtd::ranges::views::select_view](https://gammasoft71.github.io
 
 ## Sources
 
-[src/ranges_views_select2.cpp](src/ranges_views_select2.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/ranges_views_select2.cpp](src/ranges_views_select2.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::consiguration::file_settings](https://gammasoft71.github.
 
 ## Sources
 
-[src/file_settings.cpp](src/file_settings.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/file_settings.cpp](src/file_settings.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ This example uses several mathematical and trigonometric functions from the [xtd
 
 ## Sources
 
-[src/math.cpp](src/math.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/math.cpp](src/math.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

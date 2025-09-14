@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::collection_assert::are_not_equal](https://gammasof
 
 ## Sources
 
-[src/collection_assert_are_not_equal.cpp](src/collection_assert_are_not_equal.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collection_assert_are_not_equal.cpp](src/collection_assert_are_not_equal.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

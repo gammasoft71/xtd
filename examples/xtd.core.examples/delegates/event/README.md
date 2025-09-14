@@ -4,9 +4,8 @@ Shows how to use [xtd::event](https://gammasoft71.github.io/xtd/reference_guides
 
 ## Sources
 
-[src/event.cpp](src/event.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/event.cpp](src/event.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

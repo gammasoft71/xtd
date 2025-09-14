@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::directory_valid](https://gammasoft71.github.io/xtd
 
 ## Sources
 
-[src/directory_valid.cpp](src/directory_valid.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/directory_valid.cpp](src/directory_valid.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

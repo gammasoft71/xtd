@@ -4,9 +4,8 @@ Shows how to use [lock_guard_](https://gammasoft71.github.io/xtd/reference_guide
 
 ## Sources
 
-[src/lock_guard_keyword.cpp](src/lock_guard_keyword.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/lock_guard_keyword.cpp](src/lock_guard_keyword.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

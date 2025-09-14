@@ -4,9 +4,8 @@ Shows how to use [xtd::web::css:css_writer](https://gammasoft71.github.io/xtd/re
 
 ## Sources
 
-[src/css_writer.cpp](src/css_writer.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/css_writer.cpp](src/css_writer.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

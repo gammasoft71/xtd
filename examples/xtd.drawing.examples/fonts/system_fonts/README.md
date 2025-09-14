@@ -4,9 +4,8 @@ Shows how to use [xtd::drawing::system_fonts](https://gammasoft71.github.io/xtd/
 
 ## Sources
 
-[src/system_fonts.cpp](src/system_fonts.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/system_fonts.cpp](src/system_fonts.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

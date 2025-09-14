@@ -4,9 +4,8 @@ Shows how to use [xtd::environment::exit_code](https://gammasoft71.github.io/xtd
 
 ## Sources
 
-[src/environment_exit_code.cpp](src/environment_exit_code.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/environment_exit_code.cpp](src/environment_exit_code.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

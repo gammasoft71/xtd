@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::collection_assume::contains](https://gammasoft71.g
 
 ## Sources
 
-[src/collection_assume_contains.cpp](src/collection_assume_contains.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collection_assume_contains.cpp](src/collection_assume_contains.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

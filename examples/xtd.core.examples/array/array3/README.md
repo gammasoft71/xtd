@@ -4,9 +4,8 @@ Shows how to use [xtd::array](https://gammasoft71.github.io/xtd/reference_guides
 
 ## Sources
 
-[src/array3.cpp](src/array3.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/array3.cpp](src/array3.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

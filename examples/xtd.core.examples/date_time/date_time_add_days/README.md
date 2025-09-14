@@ -4,9 +4,8 @@ Shows how to use [xtd::date_time::add_days](https://gammasoft71.github.io/xtd/re
 
 ## Sources
 
-[src/date_time_add_days.cpp](src/date_time_add_days.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/date_time_add_days.cpp](src/date_time_add_days.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

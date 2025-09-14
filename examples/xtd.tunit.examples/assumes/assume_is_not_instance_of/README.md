@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assume::is_not_instance_of](https://gammasoft71.gi
 
 ## Sources
 
-[src/assume_is_not_instance_of.cpp](src/assume_is_not_instance_of.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assume_is_not_instance_of.cpp](src/assume_is_not_instance_of.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

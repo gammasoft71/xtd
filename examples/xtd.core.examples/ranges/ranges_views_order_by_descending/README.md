@@ -4,9 +4,8 @@ Shows how to use [xtd::ranges::views::order_by_descending_view](https://gammasof
 
 ## Sources
 
-[src/ranges_views_order_by_descending.cpp](src/ranges_views_order_by_descending.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/ranges_views_order_by_descending.cpp](src/ranges_views_order_by_descending.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

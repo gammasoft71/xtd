@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::valid::does_not_throw](https://gammasoft71.github.
 
 ## Sources
 
-[src/valid_does_not_throw.cpp](src/valid_does_not_throw.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/valid_does_not_throw.cpp](src/valid_does_not_throw.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

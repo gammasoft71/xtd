@@ -4,9 +4,8 @@ The classic first application "Hello, World!" with cmake [xtd_commands.cmake](ht
 
 ## Sources
 
-[src/hello_world_cmake.cpp](src/hello_world_cmake.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/hello_world_cmake.cpp](src/hello_world_cmake.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

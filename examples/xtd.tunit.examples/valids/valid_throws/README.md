@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::valid::throws](https://gammasoft71.github.io/xtd/r
 
 ## Sources
 
-[src/valid_throws.cpp](src/valid_throws.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/valid_throws.cpp](src/valid_throws.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

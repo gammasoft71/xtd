@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::string_assert::starts_with](https://gammasoft71.gi
 
 ## Sources
 
-[src/string_assert_starts_with.cpp](src/string_assert_starts_with.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/string_assert_starts_with.cpp](src/string_assert_starts_with.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

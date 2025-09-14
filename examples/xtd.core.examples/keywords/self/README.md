@@ -4,9 +4,8 @@ Shows how to use [self_](https://gammasoft71.github.io/xtd/reference_guides/late
 
 ## Sources
 
-[src/sizeof.cpp](src/self.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/sizeof.cpp](src/self.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::hash_code](https://gammasoft71.github.io/xtd/reference_gu
 
 ## Sources
 
-[src/hash_code.cpp](src/hash_code.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/hash_code.cpp](src/hash_code.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

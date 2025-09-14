@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assert::is_instance_of](https://gammasoft71.github
 
 ## Sources
 
-[src/assert_is_instance_of.cpp](src/assert_is_instance_of.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assert_is_instance_of.cpp](src/assert_is_instance_of.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

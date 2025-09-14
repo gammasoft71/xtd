@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assert::abort](https://gammasoft71.github.io/xtd/r
 
 ## Sources
 
-[src/assert_abort.cpp](src/assert_abort.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assert_abort.cpp](src/assert_abort.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

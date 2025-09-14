@@ -4,9 +4,8 @@ Shows how to use and mixing [xtd::threading::thread](https://gammasoft71.github.
 
 ## Sources
 
-[src/mixing_std_and_xtd_threads.cpp](src/mixing_std_and_xtd_threads.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/mixing_std_and_xtd_threads.cpp](src/mixing_std_and_xtd_threads.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

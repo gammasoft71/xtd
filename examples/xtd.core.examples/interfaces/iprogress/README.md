@@ -4,9 +4,8 @@ Shows how to use [xtd::iprogress](https://gammasoft71.github.io/xtd/reference_gu
 
 ## Sources
 
-[src/iprogress.cpp](src/iprogress.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/iprogress.cpp](src/iprogress.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

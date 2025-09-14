@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::string_valid::does_not_matche](https://gammasoft71
 
 ## Sources
 
-[src/string_valid_does_not_matche.cpp](src/string_valid_does_not_matche.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/string_valid_does_not_matche.cpp](src/string_valid_does_not_matche.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

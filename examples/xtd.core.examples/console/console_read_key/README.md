@@ -4,9 +4,8 @@ Shows how to use [xtd::console::read_key](https://gammasoft71.github.io/xtd/refe
 
 ## Sources
 
-[src/console_read_key.cpp](src/console_read_key.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/console_read_key.cpp](src/console_read_key.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

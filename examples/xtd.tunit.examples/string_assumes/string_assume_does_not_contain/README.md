@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::string_assume::does_not_contain](https://gammasoft
 
 ## Sources
 
-[src/string_assume_does_not_contain.cpp](src/string_assume_does_not_contain.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/string_assume_does_not_contain.cpp](src/string_assume_does_not_contain.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

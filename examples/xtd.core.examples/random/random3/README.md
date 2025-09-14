@@ -4,9 +4,8 @@ Shows how to use [xtd::random::next](https://gammasoft71.github.io/xtd/reference
 
 ## Sources
 
-[src/random3.cpp](src/random3.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/random3.cpp](src/random3.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

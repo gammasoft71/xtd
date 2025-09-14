@@ -4,9 +4,8 @@ Shows how to use [xtd::net::dns](https://gammasoft71.github.io/xtd/reference_gui
 
 ## Sources
 
-[src/dns_get_host_addresses.cpp](src/dns_get_host_addresses.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/dns_get_host_addresses.cpp](src/dns_get_host_addresses.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

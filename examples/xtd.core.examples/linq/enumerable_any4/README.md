@@ -4,9 +4,8 @@ Shows how to use [xtd::linq::enumerable::any](https://gammasoft71.github.io/xtd/
 
 ## Sources
 
-[src/enumerable_any4.cpp](src/enumerable_any4.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/enumerable_any4.cpp](src/enumerable_any4.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

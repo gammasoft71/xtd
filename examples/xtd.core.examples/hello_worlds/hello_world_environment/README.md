@@ -4,9 +4,8 @@ The classic first application "Hello, World!" with [xtd::environment](https://ga
 
 ## Sources
 
-[src/hello_world_environment.cpp](src/hello_world_environment.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/hello_world_environment.cpp](src/hello_world_environment.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

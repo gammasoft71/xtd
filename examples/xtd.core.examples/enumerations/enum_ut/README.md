@@ -4,9 +4,8 @@
 
 ## Sources
 
-[src/enum_ut.cpp](src/enum_ut.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/enum_ut.cpp](src/enum_ut.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

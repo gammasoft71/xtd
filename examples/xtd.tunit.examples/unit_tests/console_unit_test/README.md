@@ -4,9 +4,8 @@ Shows how to use generic [xtd::tunit::console_unit_test](https://gammasoft71.git
 
 ## Sources
 
-[src/console_unit_test.cpp](src/console_unit_test.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/console_unit_test.cpp](src/console_unit_test.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

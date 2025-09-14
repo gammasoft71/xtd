@@ -4,9 +4,8 @@ Shows how to create your own [xtd::tunit::assume](https://gammasoft71.github.io/
 
 ## Sources
 
-[src/math_assume.cpp](src/math_assume.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/math_assume.cpp](src/math_assume.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

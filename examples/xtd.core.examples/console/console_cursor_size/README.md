@@ -4,9 +4,8 @@ Shows how to use [xtd::console::cursor_size](https://gammasoft71.github.io/xtd/r
 
 ## Sources
 
-[src/console_cursor_size.cpp](src/console_cursor_size.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/console_cursor_size.cpp](src/console_cursor_size.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

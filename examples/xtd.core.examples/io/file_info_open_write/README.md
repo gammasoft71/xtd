@@ -4,9 +4,8 @@ Show how to use [xtd::io::file_info::open_write](https://gammasoft71.github.io/x
 
 ## Sources
 
-[src/file_info.cpp](src/file_info_open_write.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/file_info.cpp](src/file_info_open_write.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

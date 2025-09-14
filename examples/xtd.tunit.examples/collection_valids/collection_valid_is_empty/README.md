@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::collection_valid::is_empty](https://gammasoft71.gi
 
 ## Sources
 
-[src/collection_valid_is_empty.cpp](src/collection_valid_is_empty.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collection_valid_is_empty.cpp](src/collection_valid_is_empty.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Create a [xtd::span](https://gammasoft71.github.io/xtd/reference_guides/latest/c
 
 ## Sources
 
-[src/span_over_array.cpp](src/span_over_array.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/span_over_array.cpp](src/span_over_array.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

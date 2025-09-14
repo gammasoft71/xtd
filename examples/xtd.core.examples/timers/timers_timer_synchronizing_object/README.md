@@ -4,9 +4,8 @@ Shows how to use [xtd::timers::timer::synchronizing_object](https://gammasoft71.
 
 ## Sources
 
-[src/timers_timer_synchronizing_object.cpp](src/timers_timer_synchronizing_object.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/timers_timer_synchronizing_object.cpp](src/timers_timer_synchronizing_object.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

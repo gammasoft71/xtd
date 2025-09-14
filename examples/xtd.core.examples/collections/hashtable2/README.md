@@ -4,9 +4,8 @@ Shows how to use [hashtable](https://gammasoft71.github.io/xtd/reference_guides/
 
 ## Sources
 
-[src/hashtable2.cpp](src/hashtable2.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/hashtable2.cpp](src/hashtable2.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

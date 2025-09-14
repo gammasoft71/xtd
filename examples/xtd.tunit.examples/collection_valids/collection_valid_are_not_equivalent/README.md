@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::collection_valid::are_not_equivalent](https://gamm
 
 ## Sources
 
-[src/collection_valid_are_not_equivalent.cpp](src/collection_valid_are_not_equivalent.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collection_valid_are_not_equivalent.cpp](src/collection_valid_are_not_equivalent.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

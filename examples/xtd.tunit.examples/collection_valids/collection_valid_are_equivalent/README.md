@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::collection_valid::are_equivalent](https://gammasof
 
 ## Sources
 
-[src/collection_valid_are_equivalent.cpp](src/collection_valid_are_equivalent.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collection_valid_are_equivalent.cpp](src/collection_valid_are_equivalent.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

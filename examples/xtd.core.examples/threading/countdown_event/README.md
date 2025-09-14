@@ -4,9 +4,8 @@ Shows how to use [xtd::threading::countdown_event](https:gammasoft71.github.io/x
 
 ## Sources
 
-[src/countdown_event.cpp](src/countdown_event.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/countdown_event.cpp](src/countdown_event.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

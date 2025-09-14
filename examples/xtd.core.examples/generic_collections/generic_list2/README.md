@@ -4,9 +4,8 @@ Shows how to use [xtd::collections::generic::list](https://gammasoft71.github.io
 
 ## Sources
 
-[src/generic_list2.cpp](src/generic_list2.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/generic_list2.cpp](src/generic_list2.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

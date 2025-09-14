@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::collection_valid::contains](https://gammasoft71.gi
 
 ## Sources
 
-[src/collection_valid_contains.cpp](src/collection_valid_contains.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collection_valid_contains.cpp](src/collection_valid_contains.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::linq::enumerable::append](https://gammasoft71.github.io/x
 
 ## Sources
 
-[src/enumerable_append.cpp](src/enumerable_append.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/enumerable_append.cpp](src/enumerable_append.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

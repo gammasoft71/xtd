@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assert::is_less_or_equal](https://gammasoft71.gith
 
 ## Sources
 
-[src/assert_is_less_or_equal.cpp](src/assert_is_less_or_equal.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assert_is_less_or_equal.cpp](src/assert_is_less_or_equal.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

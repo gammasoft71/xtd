@@ -4,9 +4,8 @@ Shows how to use [xtd::threading::manual_reset_event](https://gammasoft71.github
 
 ## Sources
 
-[src/manual_reset_event.cpp](src/manual_reset_event.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/manual_reset_event.cpp](src/manual_reset_event.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

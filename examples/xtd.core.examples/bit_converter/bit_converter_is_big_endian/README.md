@@ -4,9 +4,8 @@ Shows how to use [bit_converter::is_big_endian](https://gammasoft71.github.io/xt
 
 ## Sources
 
-[src/bit_converter_is_big_endian.cpp](src/bit_converter_is_big_endian.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/bit_converter_is_big_endian.cpp](src/bit_converter_is_big_endian.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

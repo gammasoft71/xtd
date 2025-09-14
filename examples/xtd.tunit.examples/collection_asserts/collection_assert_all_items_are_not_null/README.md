@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::collection_assert::all_items_are_not_null](https:/
 
 ## Sources
 
-[src/collection_assert_all_items_are_not_null.cpp](src/collection_assert_all_items_are_not_null.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collection_assert_all_items_are_not_null.cpp](src/collection_assert_all_items_are_not_null.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

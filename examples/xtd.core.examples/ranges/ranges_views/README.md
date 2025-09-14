@@ -4,9 +4,8 @@ Shows how to use [xtd::ranges::views](https://gammasoft71.github.io/xtd/referenc
 
 ## Sources
 
-[src/ranges_views.cpp](src/ranges_views.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/ranges_views.cpp](src/ranges_views.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

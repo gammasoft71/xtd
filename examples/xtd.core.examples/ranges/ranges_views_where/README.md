@@ -4,9 +4,8 @@ Shows how to use [xtd::ranges::views::where_view](https://gammasoft71.github.io/
 
 ## Sources
 
-[src/ranges_views_where.cpp](src/ranges_views_where.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/ranges_views_where.cpp](src/ranges_views_where.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

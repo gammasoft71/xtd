@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assert](https://gammasoft71.github.io/xtd/referenc
 
 ## Sources
 
-[src/many_asserts.cpp](src/many_asserts.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/many_asserts.cpp](src/many_asserts.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

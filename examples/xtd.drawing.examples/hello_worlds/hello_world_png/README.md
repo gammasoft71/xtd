@@ -4,9 +4,8 @@ The classic first application "Hello, World!" with GDI+ drawing objects.
 
 ## Sources
 
-[src/hello_world_png.cpp](src/hello_world_png.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/hello_world_png.cpp](src/hello_world_png.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

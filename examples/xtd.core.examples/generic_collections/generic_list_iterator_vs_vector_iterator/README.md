@@ -4,9 +4,8 @@ Highlights the difference between [xtd::collections::generic::list](https://gamm
 
 ## Sources
 
-[src/generic_list_iterator_vs_vector_iterator.cpp](src/generic_list_iterator_vs_vector_iterator.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/generic_list_iterator_vs_vector_iterator.cpp](src/generic_list_iterator_vs_vector_iterator.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

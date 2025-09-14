@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::valid::throws_any](https://gammasoft71.github.io/x
 
 ## Sources
 
-[src/valid_throws_any.cpp](src/valid_throws_any.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/valid_throws_any.cpp](src/valid_throws_any.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

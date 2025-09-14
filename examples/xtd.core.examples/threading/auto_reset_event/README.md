@@ -4,9 +4,8 @@ Shows how to use [xtd::threading::auto_reset_event](https://gammasoft71.github.i
 
 ## Sources
 
-[src/auto_reset_event.cpp](src/auto_reset_event.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/auto_reset_event.cpp](src/auto_reset_event.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assert::is_not_zero](https://gammasoft71.github.io
 
 ## Sources
 
-[src/assert_is_not_zero.cpp](src/assert_is_not_zero.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assert_is_not_zero.cpp](src/assert_is_not_zero.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

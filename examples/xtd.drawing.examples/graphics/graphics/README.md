@@ -4,9 +4,8 @@ Shows how to use [xtd::drawing::graphics](https://gammasoft71.github.io/xtd/refe
 
 ## Sources
 
-[src/graphics.cpp](src/graphics.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/graphics.cpp](src/graphics.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

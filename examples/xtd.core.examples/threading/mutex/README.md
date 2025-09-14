@@ -4,9 +4,8 @@ Shows how to use [xtd::threading::mutex](https://gammasoft71.github.io/xtd/refer
 
 ## Sources
 
-[src/mutex.cpp](src/mutex.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/mutex.cpp](src/mutex.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

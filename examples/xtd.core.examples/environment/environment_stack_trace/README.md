@@ -4,9 +4,8 @@ Shows how to use [xtd::environment](https://gammasoft71.github.io/xtd/reference_
 
 ## Sources
 
-[src/environment_stack_trace.cpp](src/environment_stack_trace.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/environment_stack_trace.cpp](src/environment_stack_trace.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::date_time::date](https://gammasoft71.github.io/xtd/refere
 
 ## Sources
 
-[src/date_time_date.cpp](src/date_time_date.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/date_time_date.cpp](src/date_time_date.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 
