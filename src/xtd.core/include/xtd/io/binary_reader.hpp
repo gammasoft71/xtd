@@ -38,6 +38,8 @@ namespace xtd {
     /// @include binary_reader2.cpp
     /// @remarks The xtd:io::binary_reader class provides methods that simplify reading primitive data types from a stream. For example, you can use the xtd:io::binary_reader::read_boolean method to read the next byte as a bool value and advance the current position in the stream by one byte. The class includes read methods that support different data types.
     /// @remarks When you create a new instance of the xtd:io::binary_reader and whether to leave the stream open after disposing the xtd:io::binary_reader object.
+    /// @note xtd xtd::io::binary_reader and xtd::io::binary_writer are fully compatible with .NET [BinaryReader](https://learn.microsoft.com/en-us/dotnet/api/system.io.binaryreader)/[BinaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.io.binarywriter).
+    /// @note Files written with xtd can be read directly in C# and vice versa, following the same binary format conventions (7-bit encoded string lengths, little-endian integers, etc.).
     class core_export_ binary_reader : public xtd::object {
     public:
       /// @name Public Constructors
