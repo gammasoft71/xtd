@@ -50,6 +50,7 @@
 * [Threading](xtd.core.examples/threading/README.md) contains threading examples.
 * [Time span](xtd.core.examples/time_span/README.md) contains time span examples.
 * [Timers](xtd.core.examples/timers/README.md) contains timers examples.
+* [Tips & Tricks](xtd.core.examples/tips_and_tricks/README.md) contains tips & tricks examples.
 * [Uri](xtd.core.examples/uri/README.md) contains uri examples.
 * [Version](xtd.core.examples/version/README.md) contains version examples.
 * [Web](xtd.core.examples/web/README.md) contains web examples.
