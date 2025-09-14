@@ -33,6 +33,7 @@ examples/xtd.cmake.examples/application_properties/application_startup/propertie
 examples/xtd.cmake.examples/project_commands/resources_command/properties/resources.hpp
 examples/xtd.cmake.examples/project_commands/settings_command/properties/settings.hpp
 examples/xtd.cmake.examples/target_properties/target_startup/properties/startup.cpp
+examples/xtd.core.examples/tips_and_tricks/binary_reader_and_binary_writer/properties/resources.hpp
 examples/xtd.drawing.examples/images/image_ani/properties/resources.hpp
 examples/xtd.drawing.examples/images/image_bmp/properties/resources.hpp
 examples/xtd.drawing.examples/images/image_cur/properties/resources.hpp
