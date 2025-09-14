@@ -101,39 +101,59 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><p>Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (<a href="https://en.cppreference.com/w/cpp/language/raii">RAII</a>) technique. It binds resource acquisition and release to initialization and destruction of a variable that holds the resource. There are times when writing a special class for such a variable is not worth the effort. This is when xtd <a class="el" href="structxtd_1_1scope__exit.html" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">xtd::scope_exit</a> comes into play. </p>
+<div class="textblock"><p>Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (<a href="https://en.cppreference.com/w/cpp/language/raii">RAII</a>) technique. It binds resource acquisition and release to initialization and destruction of a variable that holds the resource. There are times when writing a special class for such a variable is not worth the effort. This is when xtd <a class="el" href="structxtd_1_1scope__exit.html" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">xtd::scope_exit</a> comes into play. <a class="el" href="structxtd_1_1scope__exit.html" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">xtd::scope_exit</a> is always executed at the end of the scope. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>See also <a class="el" href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_exit_</a> keyword helper. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Prefer use <a href="https://en.cppreference.com/w/cpp/language/raii">RAII</a> then <a class="el" href="structxtd_1_1scope__exit.html" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">xtd::scope_exit</a>.</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_exit_</a>, <a class="el" href="group__keywords.html#gab71821f492432825aca0b3eaa727b8db" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_success_</a> and <a class="el" href="group__keywords.html#gad88ef78f285d2dba9ac21c05ac5b568a" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_fail_</a> are themselves RAII utilities. </dd>
+<dd>
+They are designed to make scope-based cleanup and control flow more concise and expressive. </dd>
+<dd>
+See also <a class="el" href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98" title="Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...">scope_exit_</a> keyword helper.</dd></dl>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> __scope_exit__ = <a class="code hl_struct" href="structxtd_1_1scope__exit.html">scope_exit</a> {} + [&amp;] {</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;scope_exit&quot;</span>);</div>
-<div class="line">  };</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;begin&quot;</span>);</div>
-<div class="line">  <span class="comment">//...</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;do something...&quot;</span>);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
-<div class="line">  <span class="comment">//...</span></div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;end&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">try</span> {</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98">scope_exit_</a> {</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;always (scope_exit)&quot;</span>);</div>
+<div class="line">    };</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#gab71821f492432825aca0b3eaa727b8db">scope_success_</a> {</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;only on success (scope_success)&quot;</span>);</div>
+<div class="line">    };</div>
+<div class="line">    <a class="code hl_define" href="group__keywords.html#gad88ef78f285d2dba9ac21c05ac5b568a">scope_fail_</a> {</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;only on failure (scope_fail)&quot;</span>);</div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;begin&quot;</span>);</div>
+<div class="line">    <span class="comment">// ...</span></div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;do something...&quot;</span>);</div>
+<div class="line">    <span class="comment">// Remove the comment from the following line to test failure</span></div>
+<div class="line">    <span class="comment">//throw invalid_operation_exception {};</span></div>
+<div class="line">    <span class="comment">// ...</span></div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;end normally&quot;</span>);</div>
+<div class="line">  } <span class="keywordflow">catch</span> (...) {</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;caught exception!&quot;</span>);</div>
+<div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output:</span></div>
+<div class="line"><span class="comment">// This code produces the following output if success :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// begin</span></div>
-<div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// do something...</span></div>
+<div class="line"><span class="comment">// end normally</span></div>
+<div class="line"><span class="comment">// only on success (scope_success)</span></div>
+<div class="line"><span class="comment">// always (scope_exit)</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output if throws exception :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// end</span></div>
-<div class="line"><span class="comment">// scope_exit</span></div>
+<div class="line"><span class="comment">// begin</span></div>
+<div class="line"><span class="comment">// do something...</span></div>
+<div class="line"><span class="comment">// only on failure (scope_fail)</span></div>
+<div class="line"><span class="comment">// always (scope_exit)</span></div>
+<div class="line"><span class="comment">// caught exception!</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
-<div class="ttc" id="astructxtd_1_1scope__exit_html"><div class="ttname"><a href="structxtd_1_1scope__exit.html">xtd::scope_exit</a></div><div class="ttdoc">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...</div><div class="ttdef"><b>Definition</b> scope_exit.hpp:45</div></div>
+<div class="ttc" id="agroup__keywords_html_ga523a9defb7ea3de88cc956948015ef98"><div class="ttname"><a href="group__keywords.html#ga523a9defb7ea3de88cc956948015ef98">scope_exit_</a></div><div class="ttdeci">#define scope_exit_</div><div class="ttdoc">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...</div><div class="ttdef"><b>Definition</b> scope_exit.hpp:128</div></div>
+<div class="ttc" id="agroup__keywords_html_gab71821f492432825aca0b3eaa727b8db"><div class="ttname"><a href="group__keywords.html#gab71821f492432825aca0b3eaa727b8db">scope_success_</a></div><div class="ttdeci">#define scope_success_</div><div class="ttdoc">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...</div><div class="ttdef"><b>Definition</b> scope_success.hpp:128</div></div>
+<div class="ttc" id="agroup__keywords_html_gad88ef78f285d2dba9ac21c05ac5b568a"><div class="ttname"><a href="group__keywords.html#gad88ef78f285d2dba9ac21c05ac5b568a">scope_fail_</a></div><div class="ttdeci">#define scope_fail_</div><div class="ttdoc">Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization (RAII) tech...</div><div class="ttdef"><b>Definition</b> scope_fail.hpp:128</div></div>
 </div><!-- fragment --> </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>xtd.core/include/xtd/<a class="el" href="scope__exit_8hpp_source.html">scope_exit.hpp</a></li>
 </ul>
@@ -141,7 +161,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 20:51:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 14 2025 11:29:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
