@@ -4,9 +4,8 @@ Shows how to use [xtd::console::background_color4](https://gammasoft71.github.io
 
 ## Sources
 
-[src/console_color4.cpp](src/console_color4.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/console_color4.cpp](src/console_color4.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

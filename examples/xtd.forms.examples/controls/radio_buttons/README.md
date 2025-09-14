@@ -4,9 +4,8 @@ demonstrates the use of [xtd::forms::radio_buttons](https://gammasoft71.github.i
 
 ## Sources
 
-[src/radio_buttons.cpp](src/radio_buttons.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/radio_buttons.cpp](src/radio_buttons.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

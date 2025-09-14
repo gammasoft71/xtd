@@ -4,9 +4,8 @@ Shows how to use [debug::cassert](https://gammasoft71.github.io/xtd/reference_gu
 
 ## Sources
 
-[src/debug_cassert.cpp](src/debug_cassert.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/debug_cassert.cpp](src/debug_cassert.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

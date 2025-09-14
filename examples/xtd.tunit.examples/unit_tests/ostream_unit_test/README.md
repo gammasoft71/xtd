@@ -4,9 +4,8 @@ Shows how to use generic [xtd::tunit::ostream_unit_test](https://gammasoft71.git
 
 ## Sources
 
-[src/ostream_unit_test.cpp](src/ostream_unit_test.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/ostream_unit_test.cpp](src/ostream_unit_test.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

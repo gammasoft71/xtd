@@ -4,11 +4,9 @@ Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/referen
 
 ## Sources
 
-[src/image_iif.cpp](src/image_iif.cpp)
-
-[resources/gammasoft.iif](resources/gammasoft.iif)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/image_iif.cpp](src/image_iif.cpp)
+* [resources/gammasoft.iif](resources/gammasoft.iif)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

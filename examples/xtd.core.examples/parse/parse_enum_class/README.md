@@ -4,9 +4,8 @@ Shows how to use format [xtd::parse<num class>](https://gammasoft71.github.io/xt
 
 ## Sources
 
-[src/parse_enum_class.cpp](src/parse_enum_class.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/parse_enum_class.cpp](src/parse_enum_class.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

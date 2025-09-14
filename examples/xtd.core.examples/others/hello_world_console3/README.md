@@ -4,9 +4,8 @@ The classic first application "Hello, World!" with [xtd::console](https://gammas
 
 ## Sources
 
-[src/hello_world_console3.cpp](src/hello_world_console3.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/hello_world_console3.cpp](src/hello_world_console3.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

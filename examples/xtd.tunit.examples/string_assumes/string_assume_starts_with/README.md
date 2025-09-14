@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::string_assume::starts_with](https://gammasoft71.gi
 
 ## Sources
 
-[src/string_assume_starts_with.cpp](src/string_assume_starts_with.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/string_assume_starts_with.cpp](src/string_assume_starts_with.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::startup](https://gammasoft71.github.io/xtd/reference_guid
 
 ## Sources
 
-[src/main3.cpp](src/main3.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/main3.cpp](src/main3.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

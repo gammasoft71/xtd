@@ -4,9 +4,8 @@ Shows how to use [xtd::drawing::color](https://gammasoft71.github.io/xtd/referen
 
 ## Sources
 
-[src/color.cpp](src/color.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/color.cpp](src/color.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

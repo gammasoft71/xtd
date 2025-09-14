@@ -4,9 +4,8 @@ Shows how to use [xtd::collections::generic::list::binary_search](https://gammas
 
 ## Sources
 
-[src/generic_list_binary_search.cpp](src/generic_list_binary_search.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/generic_list_binary_search.cpp](src/generic_list_binary_search.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

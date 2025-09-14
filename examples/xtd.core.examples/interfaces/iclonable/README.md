@@ -4,9 +4,8 @@ Shows how to use [xtd::iequatable](https://gammasoft71.github.io/xtd/reference_g
 
 ## Sources
 
-[src/iclonable.cpp](src/iclonable.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/iclonable.cpp](src/iclonable.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

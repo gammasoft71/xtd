@@ -4,9 +4,8 @@ Shows how to use [xtd::collections::generic::list::for_each](https://gammasoft71
 
 ## Sources
 
-[src/generic_list_for_each.cpp](src/generic_list_for_each.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/generic_list_for_each.cpp](src/generic_list_for_each.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::wconsole](https://gammasoft71.github.io/xtd/reference_gui
 
 ## Sources
 
-[src/wconsole2.cpp](src/wconsole2.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/wconsole2.cpp](src/wconsole2.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

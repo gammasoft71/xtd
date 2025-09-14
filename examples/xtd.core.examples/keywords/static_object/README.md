@@ -4,9 +4,8 @@ Shows how to use [static_object_](https://gammasoft71.github.io/xtd/reference_gu
 
 ## Sources
 
-[src/static_object.cpp](src/static_object.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/static_object.cpp](src/static_object.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

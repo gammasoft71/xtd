@@ -4,9 +4,8 @@ Shows hows how to use [xtd::object](https://gammasoft71.github.io/xtd/reference_
 
 ## Sources
 
-[src/object_and_iequatable.cpp](src/object_and_iequatable.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/object_and_iequatable.cpp](src/object_and_iequatable.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

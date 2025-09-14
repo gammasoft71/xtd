@@ -4,9 +4,8 @@ Shows how to use [xtd::iequatable](https://gammasoft71.github.io/xtd/reference_g
 
 ## Sources
 
-[src/icomparable.cpp](src/icomparable.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/icomparable.cpp](src/icomparable.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

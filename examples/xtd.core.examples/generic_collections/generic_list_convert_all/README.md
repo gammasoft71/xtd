@@ -4,9 +4,8 @@ Shows how to use [xtd::collections::generic::list::convert_all](https://gammasof
 
 ## Sources
 
-[src/generic_list_convert_all.cpp](src/generic_list_convert_all.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/generic_list_convert_all.cpp](src/generic_list_convert_all.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

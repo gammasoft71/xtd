@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::directory_valid::does_not_exist](https://gammasoft
 
 ## Sources
 
-[src/directory_valid_does_not_exist.cpp](src/directory_valid_does_not_exist.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/directory_valid_does_not_exist.cpp](src/directory_valid_does_not_exist.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

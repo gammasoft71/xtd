@@ -4,9 +4,8 @@ Shows how to use [xtd::console::clear](https://gammasoft71.github.io/xtd/referen
 
 ## Sources
 
-[src/console_clear.cpp](src/console_clear.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/console_clear.cpp](src/console_clear.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

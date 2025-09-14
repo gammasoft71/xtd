@@ -4,9 +4,8 @@ Shows how to use [xtd::source_location](https://gammasoft71.github.io/xtd/refere
 
 ## Sources
 
-[src/random1.cpp](src/source_location_invoked_directly.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/random1.cpp](src/source_location_invoked_directly.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

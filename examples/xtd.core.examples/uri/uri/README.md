@@ -4,9 +4,8 @@ Demonstrates the [xtd::uri](https://gammasoft71.github.io/xtd/reference_guides/l
 
 ## Sources
 
-[src/uri.cpp](src/uri.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/uri.cpp](src/uri.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

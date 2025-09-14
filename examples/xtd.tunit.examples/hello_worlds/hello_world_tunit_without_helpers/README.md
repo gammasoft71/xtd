@@ -4,9 +4,8 @@ The classic first application "Hello, World!" with [xtd::tunit::console_unit_tes
 
 ## Sources
 
-[src/hello_world_tunit_without_helpers.cpp](src/hello_world_tunit_without_helpers.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/hello_world_tunit_without_helpers.cpp](src/hello_world_tunit_without_helpers.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

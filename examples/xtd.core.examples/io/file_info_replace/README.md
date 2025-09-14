@@ -4,9 +4,8 @@ Show how to use [xtd::io::file_info::replace](https://gammasoft71.github.io/xtd/
 
 ## Sources
 
-[src/file_info.cpp](src/file_info_replace.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/file_info.cpp](src/file_info_replace.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

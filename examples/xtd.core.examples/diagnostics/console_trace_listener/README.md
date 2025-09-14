@@ -4,9 +4,8 @@ Shows how to use [xtd::diagnostics::console_trace_listener](https://gammasoft71.
 
 ## Sources
 
-[src/console_trace_listener.cpp](src/console_trace_listener.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/console_trace_listener.cpp](src/console_trace_listener.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

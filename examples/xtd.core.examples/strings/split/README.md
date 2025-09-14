@@ -4,9 +4,8 @@ Shows how to use [xtd::string::split](https://gammasoft71.github.io/xtd/referenc
 
 ## Sources
 
-[src/split.cpp](src/split.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/split.cpp](src/split.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

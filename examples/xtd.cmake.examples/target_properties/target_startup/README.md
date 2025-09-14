@@ -4,9 +4,8 @@ Shows how to set target startup with cmake [target_startup()](https://gammasoft7
 
 ## Sources
 
-[src/target_startup.cpp](src/target_startup.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/target_startup.cpp](src/target_startup.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

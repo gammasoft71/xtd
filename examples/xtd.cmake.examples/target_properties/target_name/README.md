@@ -4,9 +4,8 @@ Shows how to set target name with cmake [target_name()](https://gammasoft71.gith
 
 ## Sources
 
-[src/target_name.cpp](src/target_name.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/target_name.cpp](src/target_name.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

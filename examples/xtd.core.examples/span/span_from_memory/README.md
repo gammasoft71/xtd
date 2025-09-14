@@ -4,9 +4,8 @@ Create a [xtd::span](https://gammasoft71.github.io/xtd/reference_guides/latest/c
 
 ## Sources
 
-[src/span_from_memory.cpp](src/span_from_memory.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/span_from_memory.cpp](src/span_from_memory.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

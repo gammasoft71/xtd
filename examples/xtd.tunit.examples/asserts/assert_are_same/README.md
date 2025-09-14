@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assert::are_same](https://gammasoft71.github.io/xt
 
 ## Sources
 
-[src/assert_are_same.cpp](src/assert_are_same.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assert_are_same.cpp](src/assert_are_same.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

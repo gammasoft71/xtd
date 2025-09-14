@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assume::are_same](https://gammasoft71.github.io/xt
 
 ## Sources
 
-[src/assume_are_same.cpp](src/assume_are_same.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assume_are_same.cpp](src/assume_are_same.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

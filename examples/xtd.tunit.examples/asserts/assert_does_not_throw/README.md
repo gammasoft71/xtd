@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assert::does_not_throw](https://gammasoft71.github
 
 ## Sources
 
-[src/assert_does_not_throw.cpp](src/assert_does_not_throw.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assert_does_not_throw.cpp](src/assert_does_not_throw.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use format [xtd::parse<bool>](https://gammasoft71.github.io/xtd/ref
 
 ## Sources
 
-[src/parse_boolean.cpp](src/parse_boolean.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/parse_boolean.cpp](src/parse_boolean.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

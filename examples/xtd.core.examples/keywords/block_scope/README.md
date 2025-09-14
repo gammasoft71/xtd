@@ -4,9 +4,8 @@ Shows how to use [xtd::block_scope](https://gammasoft71.github.io/xtd/reference_
 
 ## Sources
 
-[src/block_scope.cpp](src/block_scope.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/block_scope.cpp](src/block_scope.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

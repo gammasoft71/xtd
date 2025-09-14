@@ -4,9 +4,8 @@ Shows how to use [sizeof_](https://gammasoft71.github.io/xtd/reference_guides/la
 
 ## Sources
 
-[src/sizeof.cpp](src/sizeof.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/sizeof.cpp](src/sizeof.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,7 +4,7 @@ Demonstrates that binary files created with [xtd::io::binary_writer](https://gam
 
 ## Sources
 
-[src/binary_reader_and_binary_writer.cpp](src/binary_reader_and_binary_writer.cpp)
+* [src/binary_reader_and_binary_writer.cpp](src/binary_reader_and_binary_writer.cpp)
 
 ## Properties
 

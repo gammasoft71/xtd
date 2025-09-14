@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::collection_assume::is_not_empty](https://gammasoft
 
 ## Sources
 
-[src/collection_assume_is_not_empty.cpp](src/collection_assume_is_not_empty.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collection_assume_is_not_empty.cpp](src/collection_assume_is_not_empty.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -5,9 +5,8 @@
 
 ## Sources
 
-[src/enum_class_without_helper.cpp](src/enum_class_without_helper.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/enum_class_without_helper.cpp](src/enum_class_without_helper.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

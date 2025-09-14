@@ -4,9 +4,8 @@ Shows how to use [xtd::string::compare](https://gammasoft71.github.io/xtd/refere
 
 ## Sources
 
-[src/compare.cpp](src/compare.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/compare.cpp](src/compare.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

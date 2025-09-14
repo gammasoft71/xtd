@@ -4,9 +4,8 @@ Shows how to set target registered with cmake [target_registered()](https://gamm
 
 ## Sources
 
-[src/target_registered.cpp](src/target_registered.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/target_registered.cpp](src/target_registered.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

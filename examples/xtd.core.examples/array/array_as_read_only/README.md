@@ -4,9 +4,8 @@ Shows how to use [xtd::array::as_read_only](https://gammasoft71.github.io/xtd/re
 
 ## Sources
 
-[src/array.cpp](src/array_as_read_only.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/array.cpp](src/array_as_read_only.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

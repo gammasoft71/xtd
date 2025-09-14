@@ -4,9 +4,8 @@ Shows how to use [xtd::text::basic_string_builder::append](https://gammasoft71.g
 
 ## Sources
 
-[src/string_builder_append.cpp](src/string_builder_append.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/string_builder_append.cpp](src/string_builder_append.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

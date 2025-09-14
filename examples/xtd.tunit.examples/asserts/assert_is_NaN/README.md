@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assert::is_NaN](https://gammasoft71.github.io/xtd/
 
 ## Sources
 
-[src/assert_is_NaN.cpp](src/assert_is_NaN.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assert_is_NaN.cpp](src/assert_is_NaN.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

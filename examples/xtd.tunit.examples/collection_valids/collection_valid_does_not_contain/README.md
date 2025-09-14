@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::collection_valid::does_not_contain](https://gammas
 
 ## Sources
 
-[src/collection_valid_does_not_contain.cpp](src/collection_valid_does_not_contain.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collection_valid_does_not_contain.cpp](src/collection_valid_does_not_contain.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::linq::enumerable::count](https://gammasoft71.github.io/xt
 
 ## Sources
 
-[src/enumerable_count.cpp](src/enumerable_count.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/enumerable_count.cpp](src/enumerable_count.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

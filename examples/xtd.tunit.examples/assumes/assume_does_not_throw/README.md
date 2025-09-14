@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assume::does_not_throw](https://gammasoft71.github
 
 ## Sources
 
-[src/assume_does_not_throw.cpp](src/assume_does_not_throw.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assume_does_not_throw.cpp](src/assume_does_not_throw.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [bit_converter](https://gammasoft71.github.io/xtd/reference_gui
 
 ## Sources
 
-[src/bit_converter_round_trips.cpp](src/bit_converter_round_trips.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/bit_converter_round_trips.cpp](src/bit_converter_round_trips.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

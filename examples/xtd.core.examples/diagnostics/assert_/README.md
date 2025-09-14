@@ -4,9 +4,8 @@ Shows how to use [assert_](https://gammasoft71.github.io/xtd/reference_guides/la
 
 ## Sources
 
-[src/assert_.cpp](src/assert_.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assert_.cpp](src/assert_.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

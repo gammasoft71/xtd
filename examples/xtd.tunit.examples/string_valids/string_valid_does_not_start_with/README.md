@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::string_valid::does_not_start_with](https://gammaso
 
 ## Sources
 
-[src/string_valid_does_not_start_with.cpp](src/string_valid_does_not_start_with.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/string_valid_does_not_start_with.cpp](src/string_valid_does_not_start_with.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assume::is_true](https://gammasoft71.github.io/xtd
 
 ## Sources
 
-[src/assume_is_true.cpp](src/assume_is_true.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assume_is_true.cpp](src/assume_is_true.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

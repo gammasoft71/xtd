@@ -4,9 +4,8 @@ Shows how to use [xtd::console::beep](https://gammasoft71.github.io/xtd/referenc
 
 ## Sources
 
-[src/console_song.cpp](src/console_song.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/console_song.cpp](src/console_song.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

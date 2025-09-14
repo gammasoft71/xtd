@@ -4,9 +4,8 @@ Shows how to use [xtd::net::sockets::udp_client](https://gammasoft71.github.io/x
 
 ## Sources
 
-[src/udp_client_ip_v6.cpp](src/udp_client_ip_v6.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/udp_client_ip_v6.cpp](src/udp_client_ip_v6.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

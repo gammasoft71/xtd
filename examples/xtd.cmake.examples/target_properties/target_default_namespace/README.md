@@ -4,9 +4,8 @@ Shows how to set target default namespace with cmake [target_default_namespace()
 
 ## Sources
 
-[src/target_default_namespace.cpp](src/target_default_namespace.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/target_default_namespace.cpp](src/target_default_namespace.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

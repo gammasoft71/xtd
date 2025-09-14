@@ -4,9 +4,8 @@ Shows how to use [xtd::web::css:css_reader](https://gammasoft71.github.io/xtd/re
 
 ## Sources
 
-[src/css_reader.cpp](src/css_reader.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/css_reader.cpp](src/css_reader.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

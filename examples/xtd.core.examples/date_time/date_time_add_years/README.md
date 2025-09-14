@@ -4,9 +4,8 @@ Shows how to use [xtd::date_time::add_years](https://gammasoft71.github.io/xtd/r
 
 ## Sources
 
-[src/date_time_add_years.cpp](src/date_time_add_years.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/date_time_add_years.cpp](src/date_time_add_years.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

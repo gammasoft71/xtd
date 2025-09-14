@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assume::is_negative](https://gammasoft71.github.io
 
 ## Sources
 
-[src/assume_is_negative.cpp](src/assume_is_negative.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assume_is_negative.cpp](src/assume_is_negative.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

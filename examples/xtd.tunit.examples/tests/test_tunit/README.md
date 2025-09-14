@@ -4,9 +4,8 @@ Is used to test [xtd::tunit](https://gammasoft71.github.io/xtd/reference_guides/
 
 ## Sources
 
-[src/test_tunit.cpp](src/test_tunit.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/test_tunit.cpp](src/test_tunit.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

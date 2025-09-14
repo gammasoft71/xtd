@@ -4,11 +4,9 @@ Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/referen
 
 ## Sources
 
-[src/image_xpm.cpp](src/image_xpm.cpp)
-
-[resources/gammasoft.xpm](resources/gammasoft.xpm)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/image_xpm.cpp](src/image_xpm.cpp)
+* [resources/gammasoft.xpm](resources/gammasoft.xpm)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

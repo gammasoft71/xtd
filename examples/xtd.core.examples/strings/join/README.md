@@ -4,9 +4,8 @@ Shows how to use [xtd::string::join](https://gammasoft71.github.io/xtd/reference
 
 ## Sources
 
-[src/join.cpp](src/join.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/join.cpp](src/join.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::threading::event_wait_handle](https://gammasoft71.github.
 
 ## Sources
 
-[src/event_wait_handle.cpp](src/event_wait_handle.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/event_wait_handle.cpp](src/event_wait_handle.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

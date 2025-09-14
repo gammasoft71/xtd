@@ -4,9 +4,8 @@ Shows how to use [xtd::collections::generic::list::reverse](https://gammasoft71.
 
 ## Sources
 
-[src/generic_list_reverse.cpp](src/generic_list_reverse.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/generic_list_reverse.cpp](src/generic_list_reverse.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::threading::monitor](https://gammasoft71.github.io/xtd/ref
 
 ## Sources
 
-[src/monitor.cpp](src/monitor.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/monitor.cpp](src/monitor.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

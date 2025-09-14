@@ -4,9 +4,8 @@ Shows how to use some [xtd::console](https://gammasoft71.github.io/xtd/reference
 
 ## Sources
 
-[src/console_firework.cpp](src/console_firework.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/console_firework.cpp](src/console_firework.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

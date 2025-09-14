@@ -4,9 +4,8 @@ Shows how to use [xtd::threading::jthread](https://gammasoft71.github.io/xtd/ref
 
 ## Sources
 
-[src/jthread.cpp](src/jthread.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/jthread.cpp](src/jthread.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

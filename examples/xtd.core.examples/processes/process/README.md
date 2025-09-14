@@ -4,9 +4,8 @@ Shows how to use [xtd::process](https://gammasoft71.github.io/xtd/reference_guid
 
 ## Sources
 
-[src/process.cpp](src/process.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/process.cpp](src/process.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

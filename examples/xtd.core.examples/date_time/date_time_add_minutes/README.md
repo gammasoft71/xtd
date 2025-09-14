@@ -4,9 +4,8 @@ Shows how to use [xtd::date_time::add_minutes](https://gammasoft71.github.io/xtd
 
 ## Sources
 
-[src/date_time_add_minutes.cpp](src/date_time_add_minutes.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/date_time_add_minutes.cpp](src/date_time_add_minutes.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

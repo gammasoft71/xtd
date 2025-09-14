@@ -4,9 +4,8 @@ Shows how to use [xtd::threading::semaphore](https://gammasoft71.github.io/xtd/r
 
 ## Sources
 
-[src/semaphore.cpp](src/semaphore.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/semaphore.cpp](src/semaphore.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

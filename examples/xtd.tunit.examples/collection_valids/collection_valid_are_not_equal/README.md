@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::collection_valid::are_not_equal](https://gammasoft
 
 ## Sources
 
-[src/collection_valid_are_not_equal.cpp](src/collection_valid_are_not_equal.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collection_valid_are_not_equal.cpp](src/collection_valid_are_not_equal.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

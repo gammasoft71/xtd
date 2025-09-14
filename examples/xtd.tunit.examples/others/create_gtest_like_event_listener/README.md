@@ -4,9 +4,8 @@ Shows how to create your own [xtd::tunit::event_listener](https://gammasoft71.gi
 
 ## Sources
 
-[src/create_gtest_like_event_listener.cpp](src/create_gtest_like_event_listener.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/create_gtest_like_event_listener.cpp](src/create_gtest_like_event_listener.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

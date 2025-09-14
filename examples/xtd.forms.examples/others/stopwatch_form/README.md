@@ -4,9 +4,8 @@ demonstrates the use of [xtd::forms::button](https://gammasoft71.github.io/xtd/r
 
 ## Sources
 
-[src/stopwatch_form.cpp](src/stopwatch_form.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/stopwatch_form.cpp](src/stopwatch_form.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

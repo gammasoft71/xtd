@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::directory_assume::are_equal](https://gammasoft71.g
 
 ## Sources
 
-[src/directory_assume_are_equal.cpp](src/directory_assume_are_equal.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/directory_assume_are_equal.cpp](src/directory_assume_are_equal.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::threading::thread_pool](https://gammasoft71.github.io/xtd
 
 ## Sources
 
-[src/thread_pool.cpp](src/thread_pool.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/thread_pool.cpp](src/thread_pool.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

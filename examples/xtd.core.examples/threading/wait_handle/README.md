@@ -4,9 +4,8 @@ Shows how to use [xtd::threading::wait_handle](https://gammasoft71.github.io/xtd
 
 ## Sources
 
-[src/wait_handle.cpp](src/wait_handle.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/wait_handle.cpp](src/wait_handle.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

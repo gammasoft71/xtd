@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::string_valid](https://gammasoft71.github.io/xtd/re
 
 ## Sources
 
-[src/string_valid.cpp](src/string_valid.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/string_valid.cpp](src/string_valid.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

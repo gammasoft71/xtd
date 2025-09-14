@@ -4,9 +4,8 @@ Shows how to use [xtd::action](https://gammasoft71.github.io/xtd/reference_guide
 
 ## Sources
 
-[src/action.cpp](src/action.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/action.cpp](src/action.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

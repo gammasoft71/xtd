@@ -4,9 +4,8 @@ Shows how to use [xtd::timers::timer](https:gammasoft71.github.io/xtd/reference_
 
 ## Sources
 
-[src/timers_timer.cpp](src/timers_timer.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/timers_timer.cpp](src/timers_timer.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

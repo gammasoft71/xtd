@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assert::are_equal_with_tolerance](https://gammasof
 
 ## Sources
 
-[src/assert_are_equal_with_tolerance.cpp](src/assert_are_equal_with_tolerance.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assert_are_equal_with_tolerance.cpp](src/assert_are_equal_with_tolerance.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

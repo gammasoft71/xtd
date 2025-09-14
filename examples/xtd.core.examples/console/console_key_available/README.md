@@ -4,9 +4,8 @@ Shows how to use [xtd::console::key_available](https://gammasoft71.github.io/xtd
 
 ## Sources
 
-[src/console_key_available.cpp](src/console_key_available.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/console_key_available.cpp](src/console_key_available.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

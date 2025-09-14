@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assert::succeed](https://gammasoft71.github.io/xtd
 
 ## Sources
 
-[src/assert_succeed.cpp](src/assert_succeed.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assert_succeed.cpp](src/assert_succeed.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::threading::monitor::pulse_all](https://gammasoft71.github
 
 ## Sources
 
-[src/monitor_pulse_all.cpp](src/monitor_pulse_all.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/monitor_pulse_all.cpp](src/monitor_pulse_all.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

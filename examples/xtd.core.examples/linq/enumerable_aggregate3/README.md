@@ -4,9 +4,8 @@ Shows how to use [xtd::linq::enumerable::aggregate](https://gammasoft71.github.i
 
 ## Sources
 
-[src/enumerable_aggregate3.cpp](src/enumerable_aggregate3.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/enumerable_aggregate3.cpp](src/enumerable_aggregate3.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::linq::enumerable::range](https://gammasoft71.github.io/xt
 
 ## Sources
 
-[src/enumerable_range.cpp](src/enumerable_range.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/enumerable_range.cpp](src/enumerable_range.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

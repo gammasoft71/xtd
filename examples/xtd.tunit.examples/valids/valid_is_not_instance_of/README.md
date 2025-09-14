@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::valid::is_not_instance_of](https://gammasoft71.git
 
 ## Sources
 
-[src/valid_is_not_instance_of.cpp](src/valid_is_not_instance_of.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/valid_is_not_instance_of.cpp](src/valid_is_not_instance_of.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

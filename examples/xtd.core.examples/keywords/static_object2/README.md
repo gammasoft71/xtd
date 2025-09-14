@@ -4,9 +4,8 @@ Shows how to use [xtd::static](https://gammasoft71.github.io/xtd/reference_guide
 
 ## Sources
 
-[src/static_object2.cpp](src/static_object2.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/static_object2.cpp](src/static_object2.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

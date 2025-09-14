@@ -4,9 +4,8 @@ Shows how to use [xtd::exception](https://gammasoft71.github.io/xtd/reference_gu
 
 ## Sources
 
-[src/user_defined_exception.cpp](src/user_defined_exception.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/user_defined_exception.cpp](src/user_defined_exception.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

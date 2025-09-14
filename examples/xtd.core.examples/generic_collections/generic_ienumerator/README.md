@@ -4,9 +4,8 @@ Shows how to use [xtd::collections::generic::ienumerator](https://gammasoft71.gi
 
 ## Sources
 
-[src/generic_ienumerator.cpp](src/generic_ienumerator.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/generic_ienumerator.cpp](src/generic_ienumerator.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::string_assert::are_equal_ignoring_case](https://ga
 
 ## Sources
 
-[src/string_assert_are_equal_ignoring_case.cpp](src/string_assert_are_equal_ignoring_case.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/string_assert_are_equal_ignoring_case.cpp](src/string_assert_are_equal_ignoring_case.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

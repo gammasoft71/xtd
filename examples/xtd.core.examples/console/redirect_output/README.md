@@ -4,9 +4,8 @@ Shows how to use [xtd::console](https://gammasoft71.github.io/xtd/reference_guid
 
 ## Sources
 
-[src/redirect_output.cpp](src/redirect_output.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/redirect_output.cpp](src/redirect_output.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

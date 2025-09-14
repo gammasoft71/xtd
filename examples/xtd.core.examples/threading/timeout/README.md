@@ -4,9 +4,8 @@ Shows how to use [xtd::threading::timeout](https://gammasoft71.github.io/xtd/ref
 
 ## Sources
 
-[src/timeout.cpp](src/timeout.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/timeout.cpp](src/timeout.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

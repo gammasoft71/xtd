@@ -4,9 +4,8 @@ Shows how to use [xtd::diagnostics::default_trace_listener](https://gammasoft71.
 
 ## Sources
 
-[src/default_trace_listener.cpp](src/default_trace_listener.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/default_trace_listener.cpp](src/default_trace_listener.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

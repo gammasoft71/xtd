@@ -4,9 +4,8 @@ Shows how to use [xtd::linq::enumerable::to_list](https://gammasoft71.github.io/
 
 ## Sources
 
-[src/enumerable_to_list.cpp](src/enumerable_to_list.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/enumerable_to_list.cpp](src/enumerable_to_list.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [std::exception_ptr](https://en.cppreference.com/w/cpp/error/ex
 
 ## Sources
 
-[src/exception_ptr.cpp](src/exception_ptr.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/exception_ptr.cpp](src/exception_ptr.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

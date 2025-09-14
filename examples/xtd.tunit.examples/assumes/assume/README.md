@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assume](https://gammasoft71.github.io/xtd/referenc
 
 ## Sources
 
-[src/assume.cpp](src/assume.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assume.cpp](src/assume.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

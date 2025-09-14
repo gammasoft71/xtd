@@ -4,9 +4,8 @@ This example simplifies this code by instantiating the xtd::action delegate inst
 
 ## Sources
 
-[src/action2.cpp](src/action2.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/action2.cpp](src/action2.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::console::set_window_size](https://gammasoft71.github.io/x
 
 ## Sources
 
-[src/console_window_size.cpp](src/console_window_size.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/console_window_size.cpp](src/console_window_size.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

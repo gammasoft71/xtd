@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::valid::is_less_or_equal](https://gammasoft71.githu
 
 ## Sources
 
-[src/valid_is_less_or_equal.cpp](src/valid_is_less_or_equal.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/valid_is_less_or_equal.cpp](src/valid_is_less_or_equal.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

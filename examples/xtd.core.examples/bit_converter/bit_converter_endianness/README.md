@@ -4,9 +4,8 @@ Shows how to use [bit_converter::endianness](https://gammasoft71.github.io/xtd/r
 
 ## Sources
 
-[src/bit_converter_endianness.cpp](src/bit_converter_endianness.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/bit_converter_endianness.cpp](src/bit_converter_endianness.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

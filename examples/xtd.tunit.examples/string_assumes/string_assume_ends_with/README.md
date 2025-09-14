@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::string_assume::ends_with](https://gammasoft71.gith
 
 ## Sources
 
-[src/string_assume_ends_with.cpp](src/string_assume_ends_with.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/string_assume_ends_with.cpp](src/string_assume_ends_with.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

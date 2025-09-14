@@ -4,9 +4,8 @@ Shows how to use [xtd::istringable](https://gammasoft71.github.io/xtd/reference_
 
 ## Sources
 
-[src/istringable.cpp](src/istringable.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/istringable.cpp](src/istringable.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

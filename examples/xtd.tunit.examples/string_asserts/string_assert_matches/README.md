@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::string_assert::matches](https://gammasoft71.github
 
 ## Sources
 
-[src/string_assert_matches.cpp](src/string_assert_matches.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/string_assert_matches.cpp](src/string_assert_matches.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

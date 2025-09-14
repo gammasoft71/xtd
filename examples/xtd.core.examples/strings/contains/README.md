@@ -4,9 +4,8 @@ Shows how to use [xtd::string::contains](https://gammasoft71.github.io/xtd/refer
 
 ## Sources
 
-[src/contains.cpp](src/contains.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/contains.cpp](src/contains.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

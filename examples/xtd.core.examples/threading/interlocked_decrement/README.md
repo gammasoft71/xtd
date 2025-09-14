@@ -4,9 +4,8 @@ Shows how to use [xtd::threading::interlocked::decrement](https://gammasoft71.gi
 
 ## Sources
 
-[src/interlocked_decrement.cpp](src/interlocked_decrement.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/interlocked_decrement.cpp](src/interlocked_decrement.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

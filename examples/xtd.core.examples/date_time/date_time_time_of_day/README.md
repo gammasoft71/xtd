@@ -4,9 +4,8 @@ Shows how to use [xtd::date_time::time_of_day](https://gammasoft71.github.io/xtd
 
 ## Sources
 
-[src/date_time_time_of_day.cpp](src/date_time_time_of_day.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/date_time_time_of_day.cpp](src/date_time_time_of_day.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

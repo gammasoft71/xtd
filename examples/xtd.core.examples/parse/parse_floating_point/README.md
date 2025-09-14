@@ -4,9 +4,8 @@ Shows how to use format [xtd::parse](https://gammasoft71.github.io/xtd/reference
 
 ## Sources
 
-[src/parse_floating_point.cpp](src/parse_floating_point.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/parse_floating_point.cpp](src/parse_floating_point.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::linq::enumerable::distinct](https://gammasoft71.github.io
 
 ## Sources
 
-[src/enumerable_distinct.cpp](src/enumerable_distinct.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/enumerable_distinct.cpp](src/enumerable_distinct.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

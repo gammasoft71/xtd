@@ -4,9 +4,8 @@ Shows how to create your own [xtd::tunit::assert](https://gammasoft71.github.io/
 
 ## Sources
 
-[src/math_assert.cpp](src/math_assert.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/math_assert.cpp](src/math_assert.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

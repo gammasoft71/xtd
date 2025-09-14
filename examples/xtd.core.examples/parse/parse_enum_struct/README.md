@@ -4,9 +4,8 @@ Shows how to use format [xtd::parse<num struct>](https://gammasoft71.github.io/x
 
 ## Sources
 
-[src/parse_enum_struct.cpp](src/parse_enum_struct.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/parse_enum_struct.cpp](src/parse_enum_struct.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

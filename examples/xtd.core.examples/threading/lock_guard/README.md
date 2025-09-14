@@ -4,9 +4,8 @@ Shows how to use [xtd::threading::lock_guard](https://gammasoft71.github.io/xtd/
 
 ## Sources
 
-[src/lock_guard.cpp](src/lock_guard.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/lock_guard.cpp](src/lock_guard.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

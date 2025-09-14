@@ -4,9 +4,8 @@ Shows how to use [xtd::delegate](https://gammasoft71.github.io/xtd/reference_gui
 
 ## Sources
 
-[src/delegate_member_method.cpp](src/delegate_member_method.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/delegate_member_method.cpp](src/delegate_member_method.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

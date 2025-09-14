@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::file_valid::does_not_exist](https://gammasoft71.gi
 
 ## Sources
 
-[src/file_valid_does_not_exist.cpp](src/file_valid_does_not_exist.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/file_valid_does_not_exist.cpp](src/file_valid_does_not_exist.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

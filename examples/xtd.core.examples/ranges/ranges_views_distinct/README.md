@@ -4,9 +4,8 @@ Shows how to use [xtd::ranges::views::distinct_view](https://gammasoft71.github.
 
 ## Sources
 
-[src/ranges_views_distinct.cpp](src/ranges_views_distinct.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/ranges_views_distinct.cpp](src/ranges_views_distinct.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

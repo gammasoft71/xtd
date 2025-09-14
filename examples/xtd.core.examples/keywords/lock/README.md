@@ -4,9 +4,8 @@ Shows how to use [xtd::lock](https://gammasoft71.github.io/xtd/reference_guides/
 
 ## Sources
 
-[src/lock.cpp](src/lock.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/lock.cpp](src/lock.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

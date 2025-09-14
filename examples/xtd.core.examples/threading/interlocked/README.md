@@ -4,9 +4,8 @@ Shows how to use [xtd::threading::interlocked](https://gammasoft71.github.io/xtd
 
 ## Sources
 
-[src/interlocked.cpp](src/interlocked.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/interlocked.cpp](src/interlocked.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

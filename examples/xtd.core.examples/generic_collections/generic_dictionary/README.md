@@ -4,9 +4,8 @@ Shows how to use [xtd::collections::generic::dictionary](https://gammasoft71.git
 
 ## Sources
 
-[src/generic_dictionary.cpp](src/generic_dictionary.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/generic_dictionary.cpp](src/generic_dictionary.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

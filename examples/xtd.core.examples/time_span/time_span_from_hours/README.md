@@ -4,9 +4,8 @@ Demonstrates the [xtd::time_span::from_days](https://gammasoft71.github.io/xtd/r
 
 ## Sources
 
-[src/time_span_from_hours.cpp](src/time_span_from_hours.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/time_span_from_hours.cpp](src/time_span_from_hours.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

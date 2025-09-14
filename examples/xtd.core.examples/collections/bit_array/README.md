@@ -4,9 +4,8 @@ Shows how to use [xtd::collections::bit_array](https://gammasoft71.github.io/xtd
 
 ## Sources
 
-[src/bit_array.cpp](src/bit_array.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/bit_array.cpp](src/bit_array.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

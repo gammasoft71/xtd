@@ -4,9 +4,8 @@ Shows how to set target startup with cmake [xtd::console](https://gammasoft71.gi
 
 ## Sources
 
-[src/test_console.cpp](src/test_console.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/test_console.cpp](src/test_console.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

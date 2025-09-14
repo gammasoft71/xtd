@@ -4,9 +4,8 @@ Shows how to use [xtd::date_time::day_of_week](https://gammasoft71.github.io/xtd
 
 ## Sources
 
-[src/date_time_day_of_week.cpp](src/date_time_day_of_week.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/date_time_day_of_week.cpp](src/date_time_day_of_week.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::collection_assume::all_items_are_unique](https://g
 
 ## Sources
 
-[src/collection_assume_all_items_are_unique.cpp](src/collection_assume_all_items_are_unique.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collection_assume_all_items_are_unique.cpp](src/collection_assume_all_items_are_unique.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

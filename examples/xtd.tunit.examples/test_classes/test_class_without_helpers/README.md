@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::test_class](https://gammasoft71.github.io/xtd/refe
 
 ## Sources
 
-[src/test_class_without_helpers.cpp](src/test_class_without_helpers.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/test_class_without_helpers.cpp](src/test_class_without_helpers.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

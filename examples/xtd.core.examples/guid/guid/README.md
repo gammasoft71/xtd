@@ -4,9 +4,8 @@ Shows how to use [xtd::guid](https://gammasoft71.github.io/xtd/reference_guides/
 
 ## Sources
 
-[src/guid.cpp](src/guid.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/guid.cpp](src/guid.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

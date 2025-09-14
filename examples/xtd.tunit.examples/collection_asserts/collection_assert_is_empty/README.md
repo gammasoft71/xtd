@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::collection_assert::is_empty](https://gammasoft71.g
 
 ## Sources
 
-[src/collection_assert_is_empty.cpp](src/collection_assert_is_empty.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collection_assert_is_empty.cpp](src/collection_assert_is_empty.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::environment::current_directory](https://gammasoft71.githu
 
 ## Sources
 
-[src/environment_current_directory.cpp](src/environment_current_directory.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/environment_current_directory.cpp](src/environment_current_directory.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

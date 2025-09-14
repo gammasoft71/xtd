@@ -4,9 +4,8 @@ Shows how to use [system_exception](https://gammasoft71.github.io/xtd/reference_
 
 ## Sources
 
-[src/system_exception.cpp](src/system_exception.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/system_exception.cpp](src/system_exception.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

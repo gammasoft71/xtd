@@ -4,9 +4,8 @@ Shows how tto use [xtd::media::system_sounds](https://gammasoft71.github.io/xtd/
 
 ## Sources
 
-[src/system_sounds.cpp](src/system_sounds.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/system_sounds.cpp](src/system_sounds.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

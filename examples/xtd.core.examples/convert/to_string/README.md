@@ -4,9 +4,8 @@ Shows how to use [xtd::convert::to_string](https://gammasoft71.github.io/xtd/ref
 
 ## Sources
 
-[src/to_string.cpp](src/to_string.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/to_string.cpp](src/to_string.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

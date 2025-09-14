@@ -4,9 +4,8 @@ Shows how to use [xtd::collections::generic::icollection](https://gammasoft71.gi
 
 ## Sources
 
-[src/generic_icollection.cpp](src/generic_icollection.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/generic_icollection.cpp](src/generic_icollection.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

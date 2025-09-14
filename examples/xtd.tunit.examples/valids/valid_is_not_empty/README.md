@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::valid::is_not_empty](https://gammasoft71.github.io
 
 ## Sources
 
-[src/valid_is_not_empty.cpp](src/valid_is_not_empty.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/valid_is_not_empty.cpp](src/valid_is_not_empty.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

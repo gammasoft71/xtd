@@ -4,11 +4,9 @@ Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/referen
 
 ## Sources
 
-[src/image_bmp.cpp](src/image_bmp.cpp)
-
-[resources/gammasoft.bmp](resources/gammasoft.bmp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/image_bmp.cpp](src/image_bmp.cpp)
+* [resources/gammasoft.bmp](resources/gammasoft.bmp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

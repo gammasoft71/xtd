@@ -4,9 +4,8 @@ Show how to use format [xtd::format](https://gammasoft71.github.io/xtd/reference
 
 ## Sources
 
-[src/sprintf_class_with_specified_formating_with_to_string.cpp](src/sprintf_class_with_specified_formating_with_to_string.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/sprintf_class_with_specified_formating_with_to_string.cpp](src/sprintf_class_with_specified_formating_with_to_string.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

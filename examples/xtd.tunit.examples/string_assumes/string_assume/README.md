@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::string_assume](https://gammasoft71.github.io/xtd/r
 
 ## Sources
 
-[src/string_assume.cpp](src/string_assume.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/string_assume.cpp](src/string_assume.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::console::set_cursor_position](https://gammasoft71.github.
 
 ## Sources
 
-[src/console_cursor.cpp](src/console_cursor.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/console_cursor.cpp](src/console_cursor.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

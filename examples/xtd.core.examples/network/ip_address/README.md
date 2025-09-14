@@ -4,9 +4,8 @@ Shows how to use [xtd::net::dns](https://gammasoft71.github.io/xtd/reference_gui
 
 ## Sources
 
-[src/ip_addresses.cpp](src/ip_address.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/ip_addresses.cpp](src/ip_address.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

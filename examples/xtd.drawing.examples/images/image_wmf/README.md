@@ -4,11 +4,9 @@ Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/referen
 
 ## Sources
 
-[src/image_wmf.cpp](src/image_wmf.cpp)
-
-[resources/gammasoft.wmf](resources/gammasoft.wmf)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/image_wmf.cpp](src/image_wmf.cpp)
+* [resources/gammasoft.wmf](resources/gammasoft.wmf)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

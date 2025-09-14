@@ -5,9 +5,8 @@
 
 ## Sources
 
-[src/enum.cpp](src/enum.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/enum.cpp](src/enum.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

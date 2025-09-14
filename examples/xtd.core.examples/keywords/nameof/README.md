@@ -4,9 +4,8 @@ Shows how to use [nameof_](https://gammasoft71.github.io/xtd/reference_guides/la
 
 ## Sources
 
-[src/nameof.cpp](src/nameof.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/nameof.cpp](src/nameof.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,11 +4,9 @@ Shows how to use [xtd::drawing::image](https://gammasoft71.github.io/xtd/referen
 
 ## Sources
 
-[src/image_ani.cpp](src/image_ani.cpp)
-
-[resources/gammasoft.ani](resources/gammasoft.ani)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/image_ani.cpp](src/image_ani.cpp)
+* [resources/gammasoft.ani](resources/gammasoft.ani)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

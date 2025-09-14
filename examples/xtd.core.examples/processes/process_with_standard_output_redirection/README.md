@@ -4,9 +4,8 @@ Shows how to use [xtd::process](https://gammasoft71.github.io/xtd/reference_guid
 
 ## Sources
 
-[src/process_with_standard_output_redirection.cpp](src/process_with_standard_output_redirection.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/process_with_standard_output_redirection.cpp](src/process_with_standard_output_redirection.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

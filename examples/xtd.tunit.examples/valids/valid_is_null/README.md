@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::valid::is_null](https://gammasoft71.github.io/xtd/
 
 ## Sources
 
-[src/valid_is_null.cpp](src/valid_is_null.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/valid_is_null.cpp](src/valid_is_null.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

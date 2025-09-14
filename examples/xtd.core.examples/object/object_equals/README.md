@@ -4,9 +4,8 @@ Shows hows how to use [xtd::object::equals](https://gammasoft71.github.io/xtd/re
 
 ## Sources
 
-[src/object_equals.cpp](src/object_equals.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/object_equals.cpp](src/object_equals.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

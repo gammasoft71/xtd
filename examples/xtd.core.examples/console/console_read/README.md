@@ -4,9 +4,8 @@ Shows how to use [xtd::console::read](https:gammasoft71.github.io/xtd/reference_
 
 ## Sources
 
-[src/console_read.cpp](src/console_read.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/console_read.cpp](src/console_read.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Show how to use format [xtd::format](https://gammasoft71.github.io/xtd/reference
 
 ## Sources
 
-[src/format_string.cpp](src/format_string.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/format_string.cpp](src/format_string.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

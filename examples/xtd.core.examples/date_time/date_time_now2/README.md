@@ -4,9 +4,8 @@ Shows how to use [xtd::date_time::now](https://gammasoft71.github.io/xtd/referen
 
 ## Sources
 
-[src/date_time_now.cpp](src/date_time_now2.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/date_time_now.cpp](src/date_time_now2.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assume::is_NaN](https://gammasoft71.github.io/xtd/
 
 ## Sources
 
-[src/assume_is_NaN.cpp](src/assume_is_NaN.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assume_is_NaN.cpp](src/assume_is_NaN.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

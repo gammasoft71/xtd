@@ -4,9 +4,8 @@ Shows how to use [xtd::iformatable](https://gammasoft71.github.io/xtd/reference_
 
 ## Sources
 
-[src/iformatable_vs_to_string.cpp](src/iformatable_vs_to_string.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/iformatable_vs_to_string.cpp](src/iformatable_vs_to_string.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

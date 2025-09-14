@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::assert::ignore](https://gammasoft71.github.io/xtd/
 
 ## Sources
 
-[src/assert_ignore.cpp](src/assert_ignore.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/assert_ignore.cpp](src/assert_ignore.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

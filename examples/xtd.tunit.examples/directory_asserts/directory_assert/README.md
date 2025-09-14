@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::directory_assert](https://gammasoft71.github.io/xt
 
 ## Sources
 
-[src/directory_assert.cpp](src/directory_assert.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/directory_assert.cpp](src/directory_assert.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

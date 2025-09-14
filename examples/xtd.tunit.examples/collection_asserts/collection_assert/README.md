@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::collection_assert](https://gammasoft71.github.io/x
 
 ## Sources
 
-[src/collection_assert.cpp](src/collection_assert.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/collection_assert.cpp](src/collection_assert.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

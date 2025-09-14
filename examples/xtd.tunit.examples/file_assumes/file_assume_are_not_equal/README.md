@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::file_assume::are_not_equal](https://gammasoft71.gi
 
 ## Sources
 
-[src/file_assume_are_not_equal.cpp](src/file_assume_are_not_equal.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/file_assume_are_not_equal.cpp](src/file_assume_are_not_equal.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

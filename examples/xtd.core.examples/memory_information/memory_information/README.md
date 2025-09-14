@@ -4,9 +4,8 @@ Shows how to use [xtd::memory_information](https://gammasoft71.github.io/xtd/ref
 
 ## Sources
 
-[src/memory_information.cpp](src/memory_information.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/memory_information.cpp](src/memory_information.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

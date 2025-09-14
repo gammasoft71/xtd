@@ -4,9 +4,8 @@ Shows hows how to use [xtd::object::to_string](https://gammasoft71.github.io/xtd
 
 ## Sources
 
-[src/object_to_string.cpp](src/object_to_string.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/object_to_string.cpp](src/object_to_string.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

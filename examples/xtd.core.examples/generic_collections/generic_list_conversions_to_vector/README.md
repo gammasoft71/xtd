@@ -4,9 +4,8 @@ Shows how to convert [xtd::collections::generic::list](https://gammasoft71.githu
 
 ## Sources
 
-[src/generic_list_conversions_to_vector.cpp](src/generic_list_conversions_to_vector.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/generic_list_conversions_to_vector.cpp](src/generic_list_conversions_to_vector.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

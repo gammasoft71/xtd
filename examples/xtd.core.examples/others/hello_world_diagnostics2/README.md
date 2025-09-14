@@ -4,9 +4,8 @@ The classic first application "Hello, World!" with [xtd::ctrace](https://gammaso
 
 ## Sources
 
-[src/hello_world_diagnostics2.cpp](src/hello_world_diagnostics2.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/hello_world_diagnostics2.cpp](src/hello_world_diagnostics2.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

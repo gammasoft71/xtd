@@ -4,9 +4,8 @@ Shows how to use [xtd::iobservable](https://gammasoft71.github.io/xtd/reference_
 
 ## Sources
 
-[src/iobservable_iobserver.cpp](src/iobservable_iobserver.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/iobservable_iobserver.cpp](src/iobservable_iobserver.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

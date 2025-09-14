@@ -4,9 +4,8 @@ Shows how to use [xtd::convert::to_byte](https://gammasoft71.github.io/xtd/refer
 
 ## Sources
 
-[src/to_byte.cpp](src/to_byte.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/to_byte.cpp](src/to_byte.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

@@ -4,9 +4,8 @@ Shows how to use [xtd::date_time::sprintf](https://gammasoft71.github.io/xtd/ref
 
 ## Sources
 
-[src/date_time_sprintf.cpp](src/date_time_sprintf.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/date_time_sprintf.cpp](src/date_time_sprintf.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

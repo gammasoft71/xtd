@@ -4,9 +4,8 @@ Shows how to use [xtd::string::sprintf](https://gammasoft71.github.io/xtd/refere
 
 ## Sources
 
-[src/sprintf_class_with_specified_formating.cpp](src/sprintf_class_with_specified_formating.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/sprintf_class_with_specified_formating.cpp](src/sprintf_class_with_specified_formating.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

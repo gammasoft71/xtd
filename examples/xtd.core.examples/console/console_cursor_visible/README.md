@@ -4,9 +4,8 @@ Shows how to use [xtd::console::cursor_visible](https://gammasoft71.github.io/xt
 
 ## Sources
 
-[src/console_cursor_visible.cpp](src/console_cursor_visible.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/console_cursor_visible.cpp](src/console_cursor_visible.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

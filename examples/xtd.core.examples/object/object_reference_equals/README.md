@@ -4,9 +4,8 @@ Shows hows how to use [xtd::object::reference_equals](https://gammasoft71.github
 
 ## Sources
 
-[src/object_reference_equals.cpp](src/object_reference_equals.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/object_reference_equals.cpp](src/object_reference_equals.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

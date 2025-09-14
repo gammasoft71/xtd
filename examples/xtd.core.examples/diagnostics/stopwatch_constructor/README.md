@@ -4,9 +4,8 @@ Initializes a [xtd::diagnostics::stopwatch](https://gammasoft71.github.io/xtd/re
 
 ## Sources
 
-[src/stopwatch_constructor.cpp](src/stopwatch_constructor.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/stopwatch_constructor.cpp](src/stopwatch_constructor.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

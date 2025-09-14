@@ -4,9 +4,8 @@ Shows how to use [xtd::tunit::string_assert::does_not_end_with](https://gammasof
 
 ## Sources
 
-[src/string_assert_does_not_end_with.cpp](src/string_assert_does_not_end_with.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/string_assert_does_not_end_with.cpp](src/string_assert_does_not_end_with.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 

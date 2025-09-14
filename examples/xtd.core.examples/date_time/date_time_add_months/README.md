@@ -4,9 +4,8 @@ Shows how to use [xtd::date_time::add_months](https://gammasoft71.github.io/xtd/
 
 ## Sources
 
-[src/date_time_add_months.cpp](src/date_time_add_months.cpp)
-
-[CMakeLists.txt](CMakeLists.txt)
+* [src/date_time_add_months.cpp](src/date_time_add_months.cpp)
+* [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
 
