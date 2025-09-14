@@ -22,8 +22,3 @@ auto main() -> int {
 //    at xtd::diagnostics::debug::__should_aborted__(bool, xtd::basic_string<char, std::char_traits<char>, std::allocator<char>> const&, xtd::diagnostics::stack_frame const&)
 //    at xtd::diagnostics::debug::cassert(bool, xtd::basic_string<char, std::char_traits<char>, std::allocator<char>> const&, xtd::diagnostics::stack_frame const&)
 //    at main
-
-libc++abi: terminating due to uncaught exception of type xtd::index_out_of_range_exception: Index was outside the bounds of the array.
-terminating due to uncaught exception of type xtd::index_out_of_range_exception: Index was outside the bounds of the array.
-Message from debugger: killed
-
