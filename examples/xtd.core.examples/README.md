@@ -488,6 +488,11 @@
 * [timers_timer](timers/timers_timer/README.md) shows how to use [xtd::timers:timer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1timers_1_1timer.html) class.
 * [timers_timer_synchronizing_object](timers/timers_timer_synchronizing_object/README.md) shows how to use [xtd::timers:timer::synchronizing_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1timers_1_1timer.html#a0adab36b965cb0b092f3b0df6d73a032) property.
 
+## [Tips & Tricks](tips_and_tricks/README.md)
+
+* [binary_reader_and_binary_writer](tips_and_tricks/binary_reader_and_binary_writer/README.md) demonstrates that binary files created with [xtd::io::binary_writer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1binary__writer) and read with [xtd::io::binary_reader](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1binary__reader) are fully compatible with .NET's [BinaryWriter](https://learn.microsoft.com/en-us/dotnet/api/system.io.binarywriter) and [BinaryReader](https://learn.microsoft.com/en-us/dotnet/api/system.io.binaryreader). The files produced by xtd and .NET are identical, ensuring seamless cross-language interoperability.
+* [xtd_collection_indexer](tips_and_tricks/xtd_collection_indexer/README.md) shows how to use indexing operators with [xtd::bpos](https://gammasoft71.github.io/xtd/reference_guides/latest/group__system.html#gae5b63301b69ce281ee7db98e2e61941f) (bpos, bpos + 1, bpos + 2), [xtd::epos](https://gammasoft71.github.io/xtd/reference_guides/latest/group__system.html#gaa99759e66edbafa9f3ed0b523c924b5c) (epos, epos - 1, epos - 2, ...) and bitwise operators (~1_z, ~2_z, ...) with xtd collections like [xtd::collections::generic::list](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html).
+
 ## [Uri](uri/README.md)
 
 * [uri](uri/uri/uri/README.md) demonstrates the [xtd::uri](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1uri.html) various properties.
