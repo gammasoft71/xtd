@@ -177,11 +177,6 @@ class xtd::basic_array&lt; type_t, allocator_t &gt;</div><p>Base object that rep
 <tr class="memdesc:a29160210c0d2edcac151cbcc42cd81a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the const reverse iterator of array value type.  <br /></td></tr>
 <tr class="separator:a29160210c0d2edcac151cbcc42cd81a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Fields</h2></td></tr>
-<tr class="memitem:a53b8d655a996e1eb424894548a9ed2da" id="r_a53b8d655a996e1eb424894548a9ed2da"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="#af9b44083298196790c9d898bf520828a">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53b8d655a996e1eb424894548a9ed2da">npos</a></td></tr>
-<tr class="memdesc:a53b8d655a996e1eb424894548a9ed2da"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a special value equal to the maximum value representable by the type <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">xtd::size</a>.  <br /></td></tr>
-<tr class="separator:a53b8d655a996e1eb424894548a9ed2da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:ad830194f7a76eec01d6bd96b1f3343bb" id="r_ad830194f7a76eec01d6bd96b1f3343bb"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a6054c9522c7a58c05453b86e0c6f1913">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad830194f7a76eec01d6bd96b1f3343bb">back</a> ()</td></tr>
 <tr class="memdesc:ad830194f7a76eec01d6bd96b1f3343bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the last element in the container.  <br /></td></tr>
@@ -324,7 +319,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memdesc:a63ff23cf9bbd59f42928e36dcc042425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the index of a specific item in the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:a63ff23cf9bbd59f42928e36dcc042425"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a795fd3bff66d49a57311b81cf697953f" id="r_a795fd3bff66d49a57311b81cf697953f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a795fd3bff66d49a57311b81cf697953f">resize</a> (<a class="el" href="#af9b44083298196790c9d898bf520828a">size_type</a> new_size, <a class="el" href="#a8a186922544d50c32678dbeead9d34fe">value_type</a> value)</td></tr>
-<tr class="memdesc:a795fd3bff66d49a57311b81cf697953f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the container to contain <code>count</code> elements, does nothing if <code>count == <a class="el" href="#aaf70989e6cabeaccefd32e3b760753ef" title="Gets a size that represents the total number of elements in all the dimensions of the array.">length()</a>. / @param new_size The new size of the container. / @exception <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a> If</code>new_size<code>is outside greather than <a class="el" href="#a760f9d630aee4ee6076c5f1fb0ba412f">xtd::array::max_size</a>. / @remarks If the current size is greater than</code>count<code>, the container is reduced to its first</code>count<code>elements. / @remarks If the current size is less than</code>count`, additional default-inserted elements are appended. void resize(size_type new_size) {resize(new_size, <a class="el" href="#a8a186922544d50c32678dbeead9d34fe" title="Represents the array value type.">value_type</a> {});}.  <br /></td></tr>
+<tr class="memdesc:a795fd3bff66d49a57311b81cf697953f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the container to contain <code>count</code> elements, does nothing if <code>count == <a class="el" href="#aaf70989e6cabeaccefd32e3b760753ef" title="Gets a size that represents the total number of elements in all the dimensions of the array.">length()</a>. / @param new_size The new size of the container. / @exception <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#af4ad72063824fdf6ac996a5b6cb041ec" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> is set to a value that is less than <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. / @remarks If the current size is greater than</code>count<code>, the container is reduced to its first</code>count<code>elements. / @remarks If the current size is less than</code>count`, additional default-inserted elements are appended. void resize(size_type new_size) {resize(new_size, <a class="el" href="#a8a186922544d50c32678dbeead9d34fe" title="Represents the array value type.">value_type</a> {});}.  <br /></td></tr>
 <tr class="separator:a795fd3bff66d49a57311b81cf697953f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16b80cc0f2926f2b4fcfb5f5c1346eb7" id="r_a16b80cc0f2926f2b4fcfb5f5c1346eb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a16b80cc0f2926f2b4fcfb5f5c1346eb7">set_value</a> (const type_t &amp;value, const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="#af9b44083298196790c9d898bf520828a">size_type</a> &gt; &amp;indexes)</td></tr>
 <tr class="memdesc:a16b80cc0f2926f2b4fcfb5f5c1346eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value to the element at the specified position in the multidimensional array.  <br /></td></tr>
@@ -2022,8 +2017,8 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 </table>
 </div><div class="memdoc">
 
-<p>Resizes the container to contain <code>count</code> elements, does nothing if <code>count == <a class="el" href="#aaf70989e6cabeaccefd32e3b760753ef" title="Gets a size that represents the total number of elements in all the dimensions of the array.">length()</a>. / @param new_size The new size of the container. / @exception <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a> If</code>new_size<code>is outside greather than <a class="el" href="#a760f9d630aee4ee6076c5f1fb0ba412f">xtd::array::max_size</a>. / @remarks If the current size is greater than</code>count<code>, the container is reduced to its first</code>count<code>elements. / @remarks If the current size is less than</code>count`, additional default-inserted elements are appended. void resize(size_type new_size) {resize(new_size, <a class="el" href="#a8a186922544d50c32678dbeead9d34fe" title="Represents the array value type.">value_type</a> {});}. </p>
-<p>/ Resizes the container to contain <code>count</code> elements, does nothing if <code>count == <a class="el" href="#aaf70989e6cabeaccefd32e3b760753ef" title="Gets a size that represents the total number of elements in all the dimensions of the array.">length()</a>. @param new_size The new size of the container. @param value The value to initialize the new elements with. @exception <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a> If</code>new_size<code>is outside greather than <a class="el" href="#a760f9d630aee4ee6076c5f1fb0ba412f">xtd::array::max_size</a>. @remarks If the current size is greater than</code>count<code>, the container is reduced to its first</code>count<code>elements. @remarks If the current size is less than</code>count`, additional default-inserted elements are appended. </p>
+<p>Resizes the container to contain <code>count</code> elements, does nothing if <code>count == <a class="el" href="#aaf70989e6cabeaccefd32e3b760753ef" title="Gets a size that represents the total number of elements in all the dimensions of the array.">length()</a>. / @param new_size The new size of the container. / @exception <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#af4ad72063824fdf6ac996a5b6cb041ec" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> is set to a value that is less than <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. / @remarks If the current size is greater than</code>count<code>, the container is reduced to its first</code>count<code>elements. / @remarks If the current size is less than</code>count`, additional default-inserted elements are appended. void resize(size_type new_size) {resize(new_size, <a class="el" href="#a8a186922544d50c32678dbeead9d34fe" title="Represents the array value type.">value_type</a> {});}. </p>
+<p>/ Resizes the container to contain <code>count</code> elements, does nothing if <code>count == <a class="el" href="#aaf70989e6cabeaccefd32e3b760753ef" title="Gets a size that represents the total number of elements in all the dimensions of the array.">length()</a>. @param new_size The new size of the container. @param value The value to initialize the new elements with. @exception <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#af4ad72063824fdf6ac996a5b6cb041ec" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> is set to a value that is less than <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. @remarks If the current size is greater than</code>count<code>, the container is reduced to its first</code>count<code>elements. @remarks If the current size is less than</code>count`, additional default-inserted elements are appended. </p>
 
 </div>
 </div>
@@ -2987,33 +2982,6 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a53b8d655a996e1eb424894548a9ed2da" name="a53b8d655a996e1eb424894548a9ed2da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53b8d655a996e1eb424894548a9ed2da">&#9670;&#160;</a></span>npos</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#af9b44083298196790c9d898bf520828a">size_type</a> <a class="el" href="classxtd_1_1basic__array.html">xtd::basic_array</a>&lt; type_t, allocator_t &gt;::npos</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>This is a special value equal to the maximum value representable by the type <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">xtd::size</a>. </p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.core/include/xtd/<a class="el" href="basic__array_8hpp_source.html">basic_array.hpp</a></li>
 </ul>
@@ -3021,7 +2989,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 20:51:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 14 2025 11:29:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

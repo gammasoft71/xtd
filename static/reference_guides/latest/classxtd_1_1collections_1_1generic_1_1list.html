@@ -410,11 +410,6 @@ The following example shows the <a class="el" href="namespacextd_1_1ranges_1_1vi
 <tr class="memdesc:ae972471ee3a5ee221127efb60f126ea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the read only collection of of list.  <br /></td></tr>
 <tr class="separator:ae972471ee3a5ee221127efb60f126ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Fields</h2></td></tr>
-<tr class="memitem:a2e4d8d2839c656d4bf456a02346b52fa" id="r_a2e4d8d2839c656d4bf456a02346b52fa"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e4d8d2839c656d4bf456a02346b52fa">npos</a></td></tr>
-<tr class="memdesc:a2e4d8d2839c656d4bf456a02346b52fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a special value equal to the maximum value representable by the type <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a" title="Represents the list size type (usually xtd::size).">size_type</a>.  <br /></td></tr>
-<tr class="separator:a2e4d8d2839c656d4bf456a02346b52fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a84c3e29f04a6474378357709ee06c800" id="r_a84c3e29f04a6474378357709ee06c800"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84c3e29f04a6474378357709ee06c800">list</a> () noexcept=default</td></tr>
 <tr class="memdesc:a84c3e29f04a6474378357709ee06c800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> class that is empty.  <br /></td></tr>
@@ -596,6 +591,9 @@ The following example shows the <a class="el" href="namespacextd_1_1ranges_1_1vi
 <tr class="memitem:a2673e91eea6ae9b2813eac0a8f96526b" id="r_a2673e91eea6ae9b2813eac0a8f96526b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2673e91eea6ae9b2813eac0a8f96526b">remove_range</a> (<a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> index, <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438">count</a>)</td></tr>
 <tr class="memdesc:a2673e91eea6ae9b2813eac0a8f96526b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a range of elements from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:a2673e91eea6ae9b2813eac0a8f96526b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6226af93d8769bc1d2f0185542be4b2" id="r_ab6226af93d8769bc1d2f0185542be4b2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6226af93d8769bc1d2f0185542be4b2">resize</a> (<a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438">count</a>, const <a class="el" href="#aa29dee61f691c52c380fc92c868c311a">value_type</a> &amp;value)</td></tr>
+<tr class="memdesc:ab6226af93d8769bc1d2f0185542be4b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the container to contain <code>count</code> elements, does nothing if <code>count == <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">size()</a>. / @param count The new size of the container. / @exception <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a> <a class="el" href="#af4ad72063824fdf6ac996a5b6cb041ec" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> is set to a value that is less than <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. / @remarks If the current size is greater than</code>count<code>, the container is reduced to its first</code>count<code>elements. / @remarks If the current size is less than</code>count<code>, additional default-inserted elements are appended. virtual void resize(size_type count) {resize(count, <a class="el" href="#aa29dee61f691c52c380fc92c868c311a" title="Represents the list value type.">value_type</a> {});} / @brief Resizes the container to contain</code>count<code>elements, does nothing if</code>count == <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">size()</a>.  <br /></td></tr>
+<tr class="separator:ab6226af93d8769bc1d2f0185542be4b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d383c7bea397d7d8180ec805a794b6b" id="r_a3d383c7bea397d7d8180ec805a794b6b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d383c7bea397d7d8180ec805a794b6b">reverse</a> ()</td></tr>
 <tr class="memdesc:a3d383c7bea397d7d8180ec805a794b6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses the order of the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:a3d383c7bea397d7d8180ec805a794b6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -871,55 +869,55 @@ template&lt;class type_t, class allocator_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> class that is empty. </p>
-<dl class="section user"><dt>Examples</dt><dd>The code example adds, inserts, and removes items, showing how the capacity changes as these methods are used. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// Simple business object. A part_id is used to identify a part</span></div>
-<div class="line"><span class="comment">// but the part name be different for the same Id.</span></div>
-<div class="line"><span class="keyword">class </span>part : <span class="keyword">public</span> <a class="code hl_function" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">iequatable</a>&lt;part&gt; {</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keywordtype">string</span> part_name;</div>
-<div class="line">  <span class="keywordtype">int</span> part_id = 0;</div>
-<div class="line">  </div>
-<div class="line">  part() = <span class="keywordflow">default</span>;</div>
-<div class="line">  part(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name, <span class="keywordtype">int</span> <span class="keywordtype">id</span>) : part_name {name}, part_id {id} {}</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="classxtd_1_1object.html#af2d19ef177db62351b58a42f22138dbe">to_string</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;ID: {}   Name: {}&quot;</span>, part_id, part_name);}</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordtype">bool</span> <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">equals</a>(<span class="keyword">const</span> <span class="keywordtype">object</span>&amp; obj) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> <a class="code hl_function" href="group__xtd__core.html#ga8419620dc289ac0d790372a1616e993f">is&lt;part&gt;</a>(obj) &amp;&amp; <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">equals</a>(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;part&gt;</a>(obj));}</div>
-<div class="line">  <span class="keywordtype">bool</span> <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">equals</a>(<span class="keyword">const</span> part&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> part_id == <a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.part_id;}</div>
-<div class="line">  </div>
-<div class="line">  size get_hash_code() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> object::get_hash_code();}</div>
-<div class="line">};</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the default constructor of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> generic class. The default constructor creates a list with the default capacity, as demonstrated by displaying the <a class="el" href="#af4ad72063824fdf6ac996a5b6cb041ec" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> property. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
-<div class="line">    <span class="keyword">auto</span> parts = list&lt;part&gt; {};</div>
+<div class="line">    <span class="keyword">auto</span> dinosaurs = <a class="code hl_function" href="#a84c3e29f04a6474378357709ee06c800">list&lt;string&gt;</a> {};</div>
 <div class="line">    </div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;\ncapacity: {0}&quot;</span>, parts.capacity());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ncapacity: {0}&quot;</span>, dinosaurs.capacity());</div>
 <div class="line">    </div>
-<div class="line">    parts.add(part {<span class="stringliteral">&quot;crank arm&quot;</span>, 1234});</div>
-<div class="line">    parts.add(part {<span class="stringliteral">&quot;chain ring&quot;</span>, 1334});</div>
-<div class="line">    parts.add(part {<span class="stringliteral">&quot;seat&quot;</span>, 1434});</div>
-<div class="line">    parts.add(part {<span class="stringliteral">&quot;cassette&quot;</span>, 1534});</div>
-<div class="line">    parts.add(part {<span class="stringliteral">&quot;shift lever&quot;</span>, 1634});</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Tyrannosaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Amargasaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Mamenchisaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Deinonychus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Compsognathus&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
 <div class="line">    </div>
-<div class="line">    console::write_line();</div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> part : parts)</div>
-<div class="line">      console::write_line(part);</div>
-<div class="line"> </div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;\ncapacity: {0}&quot;</span>, parts.capacity());</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;count: {0}&quot;</span>, parts.count());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ncapacity: {0}&quot;</span>, dinosaurs.capacity());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;count: {0}&quot;</span>, dinosaurs.count());</div>
 <div class="line">    </div>
-<div class="line">    parts.trim_excess();</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;\ntrim_excess()&quot;</span>);</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;capacity: {0}&quot;</span>, parts.capacity());</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;count: {0}&quot;</span>, parts.count());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ncontains(\&quot;Deinonychus\&quot;): {0}&quot;</span>, dinosaurs.contains(<span class="stringliteral">&quot;Deinonychus&quot;</span>));</div>
 <div class="line">    </div>
-<div class="line">    parts.clear();</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;\nclear()&quot;</span>);</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;capacity: {0}&quot;</span>, parts.capacity());</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;count: {0}&quot;</span>, parts.count());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ninsert(2, \&quot;Compsognathus\&quot;)&quot;</span>);</div>
+<div class="line">    dinosaurs.insert(2, <span class="stringliteral">&quot;Compsognathus&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Shows accessing the list using the Item property.</span></div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ndinosaurs[3]: {0}&quot;</span>, dinosaurs[3]);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nremove(\&quot;Compsognathus\&quot;)&quot;</span>);</div>
+<div class="line">    dinosaurs.remove(<span class="stringliteral">&quot;Compsognathus&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    dinosaurs.trim_excess();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ntrim_excess()&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;capacity: {0}&quot;</span>, dinosaurs.capacity());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;count: {0}&quot;</span>, dinosaurs.count());</div>
+<div class="line">    </div>
+<div class="line">    dinosaurs.clear();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nclear()&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;capacity: {0}&quot;</span>, dinosaurs.capacity());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;count: {0}&quot;</span>, dinosaurs.count());</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -929,19 +927,40 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// capacity: 0</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// ID: 1234   Name: crank arm</span></div>
-<div class="line"><span class="comment">// ID: 1334   Name: chain ring</span></div>
-<div class="line"><span class="comment">// ID: 1434   Name: seat</span></div>
-<div class="line"><span class="comment">// ID: 1534   Name: cassette</span></div>
-<div class="line"><span class="comment">// ID: 1634   Name: shift lever</span></div>
+<div class="line"><span class="comment">// Tyrannosaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Compsognathus</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// capacity: 8</span></div>
 <div class="line"><span class="comment">// count: 5</span></div>
 <div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// contains(&quot;Deinonychus&quot;): true</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// insert(2, &quot;Compsognathus&quot;)</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Tyrannosaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Compsognathus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Compsognathus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// dinosaurs[3]: Mamenchisaurus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// remove(&quot;Compsognathus&quot;)</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Tyrannosaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Compsognathus</span></div>
+<div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// trim_excess()</span></div>
 <div class="line"><span class="comment">// capacity: 5</span></div>
 <div class="line"><span class="comment">// count: 5</span></div>
-<div class="line"><span class="comment">//</span></div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// clear()</span></div>
 <div class="line"><span class="comment">// capacity: 5</span></div>
 <div class="line"><span class="comment">// count: 0</span></div>
@@ -952,9 +971,7 @@ If the size of the collection can be estimated, using the <a class="el" href="cl
 <dd>
 The capacity can be decreased by calling the <a class="el" href="#ac7a2d09541629e3131bceda593461956" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::list &lt;type_t&gt;,...">xtd::collections::generic::list::trim_excess</a> method or by setting the <a class="el" href="#af4ad72063824fdf6ac996a5b6cb041ec" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> property explicitly. Decreasing the capacity reallocates memory and copies all the elements in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a>. </dd>
 <dd>
-This constructor is an O(1) operation. </dd>
-<dd>
-The following code example demonstrates the default constructor of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> generic class. The default constructor creates a list with the default capacity, as demonstrated by displaying the <a class="el" href="#af4ad72063824fdf6ac996a5b6cb041ec" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> property. </dd></dl>
+This constructor is an O(1) operation. </dd></dl>
 
 </div>
 </div>
@@ -996,6 +1013,102 @@ template&lt;class type_t, class allocator_t&gt; </div>
   </table>
   </dd>
 </dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the default constructor of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> generic class. The default constructor creates a list with the default capacity, as demonstrated by displaying the <a class="el" href="#af4ad72063824fdf6ac996a5b6cb041ec" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> property. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>example {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">    <span class="keyword">auto</span> dinosaurs = <a class="code hl_function" href="#a84c3e29f04a6474378357709ee06c800">list&lt;string&gt;</a> {};</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ncapacity: {0}&quot;</span>, dinosaurs.capacity());</div>
+<div class="line">    </div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Tyrannosaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Amargasaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Mamenchisaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Deinonychus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Compsognathus&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ncapacity: {0}&quot;</span>, dinosaurs.capacity());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;count: {0}&quot;</span>, dinosaurs.count());</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ncontains(\&quot;Deinonychus\&quot;): {0}&quot;</span>, dinosaurs.contains(<span class="stringliteral">&quot;Deinonychus&quot;</span>));</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ninsert(2, \&quot;Compsognathus\&quot;)&quot;</span>);</div>
+<div class="line">    dinosaurs.insert(2, <span class="stringliteral">&quot;Compsognathus&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Shows accessing the list using the Item property.</span></div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ndinosaurs[3]: {0}&quot;</span>, dinosaurs[3]);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nremove(\&quot;Compsognathus\&quot;)&quot;</span>);</div>
+<div class="line">    dinosaurs.remove(<span class="stringliteral">&quot;Compsognathus&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    dinosaurs.trim_excess();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\ntrim_excess()&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;capacity: {0}&quot;</span>, dinosaurs.capacity());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;count: {0}&quot;</span>, dinosaurs.count());</div>
+<div class="line">    </div>
+<div class="line">    dinosaurs.clear();</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;\nclear()&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;capacity: {0}&quot;</span>, dinosaurs.capacity());</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;count: {0}&quot;</span>, dinosaurs.count());</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(example::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// capacity: 0</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Tyrannosaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Compsognathus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// capacity: 8</span></div>
+<div class="line"><span class="comment">// count: 5</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// contains(&quot;Deinonychus&quot;): true</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// insert(2, &quot;Compsognathus&quot;)</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Tyrannosaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Compsognathus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Compsognathus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// dinosaurs[3]: Mamenchisaurus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// remove(&quot;Compsognathus&quot;)</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Tyrannosaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Compsognathus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// trim_excess()</span></div>
+<div class="line"><span class="comment">// capacity: 5</span></div>
+<div class="line"><span class="comment">// count: 5</span></div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// clear()</span></div>
+<div class="line"><span class="comment">// capacity: 5</span></div>
+<div class="line"><span class="comment">// count: 0</span></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -4036,7 +4149,7 @@ template&lt;class predicate_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The zero-based index of the first occurrence of an element that matches the conditions defined by match, if found; otherwise, <a class="el" href="#a2e4d8d2839c656d4bf456a02346b52fa" title="This is a special value equal to the maximum value representable by the type size_type.">xtd::collections::generic::list::npos</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The zero-based index of the first occurrence of an element that matches the conditions defined by match, if found; otherwise, <a class="el" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6" title="Represents a value that is not a valid position in a collection.">xtd::collections::generic::list::npos</a>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab" title="Represents a delegate that defines a set of criteria and determines whether the specified object meet...">xtd::predicate</a> &lt;type_t&gt; is a delegate to a method that returns true if the object passed to it matches the conditions defined in the delegate. The elements of the current <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; are individually passed to the <a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab" title="Represents a delegate that defines a set of criteria and determines whether the specified object meet...">xtd::predicate</a> &lt;type_t&gt; delegate, and the elements that match the conditions are removed from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </dd>
 <dd>
 This method performs a linear search; therefore, this method is an O(n) operation, where n is <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. </dd></dl>
@@ -4082,7 +4195,7 @@ template&lt;class predicate_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The zero-based index of the first occurrence of an element that matches the conditions defined by match, if found; otherwise, <a class="el" href="#a2e4d8d2839c656d4bf456a02346b52fa" title="This is a special value equal to the maximum value representable by the type size_type.">xtd::collections::generic::list::npos</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The zero-based index of the first occurrence of an element that matches the conditions defined by match, if found; otherwise, <a class="el" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6" title="Represents a value that is not a valid position in a collection.">xtd::collections::generic::list::npos</a>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>`start_index` is outside the range of valid indexes for the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.. </td></tr>
@@ -4140,7 +4253,7 @@ template&lt;class predicate_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The zero-based index of the first occurrence of an element that matches the conditions defined by match, if found; otherwise, <a class="el" href="#a2e4d8d2839c656d4bf456a02346b52fa" title="This is a special value equal to the maximum value representable by the type size_type.">xtd::collections::generic::list::npos</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The zero-based index of the first occurrence of an element that matches the conditions defined by match, if found; otherwise, <a class="el" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6" title="Represents a value that is not a valid position in a collection.">xtd::collections::generic::list::npos</a>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>`start_index` is outside the range of valid indexes for the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.<br  />
@@ -4317,7 +4430,7 @@ template&lt;class predicate_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The zero-based index of the last occurrence of an element that matches the conditions defined by match, if found; otherwise, <a class="el" href="#a2e4d8d2839c656d4bf456a02346b52fa" title="This is a special value equal to the maximum value representable by the type size_type.">xtd::collections::generic::list::npos</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The zero-based index of the last occurrence of an element that matches the conditions defined by match, if found; otherwise, <a class="el" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6" title="Represents a value that is not a valid position in a collection.">xtd::collections::generic::list::npos</a>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab" title="Represents a delegate that defines a set of criteria and determines whether the specified object meet...">xtd::predicate</a> &lt;type_t&gt; is a delegate to a method that returns true if the object passed to it matches the conditions defined in the delegate. The elements of the current <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; are individually passed to the <a class="el" href="group__xtd__core.html#ga3191b459d2e42564bbf79ab35304ceab" title="Represents a delegate that defines a set of criteria and determines whether the specified object meet...">xtd::predicate</a> &lt;type_t&gt; delegate, and the elements that match the conditions are removed from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </dd>
 <dd>
 This method performs a linear search; therefore, this method is an O(n) operation, where n is <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. </dd></dl>
@@ -4363,7 +4476,7 @@ template&lt;class predicate_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The zero-based index of the last occurrence of an element that matches the conditions defined by match, if found; otherwise, <a class="el" href="#a2e4d8d2839c656d4bf456a02346b52fa" title="This is a special value equal to the maximum value representable by the type size_type.">xtd::collections::generic::list::npos</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The zero-based index of the last occurrence of an element that matches the conditions defined by match, if found; otherwise, <a class="el" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6" title="Represents a value that is not a valid position in a collection.">xtd::collections::generic::list::npos</a>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>`start_index` is outside the range of valid indexes for the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </td></tr>
@@ -4421,7 +4534,7 @@ template&lt;class predicate_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The zero-based index of the last occurrence of an element that matches the conditions defined by match, if found; otherwise, <a class="el" href="#a2e4d8d2839c656d4bf456a02346b52fa" title="This is a special value equal to the maximum value representable by the type size_type.">xtd::collections::generic::list::npos</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The zero-based index of the last occurrence of an element that matches the conditions defined by match, if found; otherwise, <a class="el" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6" title="Represents a value that is not a valid position in a collection.">xtd::collections::generic::list::npos</a>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>`start_index` is outside the range of valid indexes for the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.<br  />
@@ -4976,7 +5089,7 @@ The order of the elements in the collection is preserved in the <a class="el" hr
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The last index of value if found in the list; otherwise, <a class="el" href="#a2e4d8d2839c656d4bf456a02346b52fa" title="This is a special value equal to the maximum value representable by the type size_type.">xtd::collections::generic::list::npos</a>. <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a" title="Represents the list size type (usually xtd::size).">size_type</a> last_index_of(const type_t&amp; value) const noexcept { if (<a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count()</a> == 0) return npos; return last_index_of(value, <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count()</a> - 1, <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count()</a>); } / Determines the last index of a specific item in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The last index of value if found in the list; otherwise, <a class="el" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6" title="Represents a value that is not a valid position in a collection.">xtd::collections::generic::list::npos</a>. <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a" title="Represents the list size type (usually xtd::size).">size_type</a> last_index_of(const type_t&amp; value) const noexcept { if (<a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count()</a> == 0) return npos; return last_index_of(value, <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count()</a> - 1, <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">count()</a>); } / Determines the last index of a specific item in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>The object to locate in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. /</td></tr>
@@ -4984,7 +5097,7 @@ The order of the elements in the collection is preserved in the <a class="el" hr
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The last index of value if found in the list; otherwise, <a class="el" href="#a2e4d8d2839c656d4bf456a02346b52fa" title="This is a special value equal to the maximum value representable by the type size_type.">xtd::collections::generic::list::npos</a>. / </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The last index of value if found in the list; otherwise, <a class="el" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6" title="Represents a value that is not a valid position in a collection.">xtd::collections::generic::list::npos</a>. / </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">xd::argument_out_of_range_exception</td><td>The parameters `indexù is greater than <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count()</a>. </td></tr>
@@ -5037,7 +5150,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The last index of value if found in the list; otherwise, <a class="el" href="#a2e4d8d2839c656d4bf456a02346b52fa" title="This is a special value equal to the maximum value representable by the type size_type.">xtd::collections::generic::list::npos</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The last index of value if found in the list; otherwise, <a class="el" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6" title="Represents a value that is not a valid position in a collection.">xtd::collections::generic::list::npos</a>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">xd::argument_out_of_range_exception</td><td>`index` and `count` do not specify a valid section in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </td></tr>
@@ -5388,6 +5501,55 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <div class="line"><span class="comment">// Deinonychus</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The items are removed and all the elements following them in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; have their indexes reduced by count. </dd></dl>
+
+</div>
+</div>
+<a id="ab6226af93d8769bc1d2f0185542be4b2" name="ab6226af93d8769bc1d2f0185542be4b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6226af93d8769bc1d2f0185542be4b2">&#9670;&#160;</a></span>resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t, class allocator_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::resize </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a></td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="#aa29dee61f691c52c380fc92c868c311a">value_type</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resizes the container to contain <code>count</code> elements, does nothing if <code>count == <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">size()</a>. / @param count The new size of the container. / @exception <a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a> <a class="el" href="#af4ad72063824fdf6ac996a5b6cb041ec" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> is set to a value that is less than <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. / @remarks If the current size is greater than</code>count<code>, the container is reduced to its first</code>count<code>elements. / @remarks If the current size is less than</code>count<code>, additional default-inserted elements are appended. virtual void resize(size_type count) {resize(count, <a class="el" href="#aa29dee61f691c52c380fc92c868c311a" title="Represents the list value type.">value_type</a> {});} / @brief Resizes the container to contain</code>count<code>elements, does nothing if</code>count == <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">size()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">count</td><td>The new size of the container. </td></tr>
+    <tr><td class="paramname">value</td><td>The value to initialize the new elements with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td><a class="el" href="#af4ad72063824fdf6ac996a5b6cb041ec" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> is set to a value that is less than <a class="el" href="#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the current size is greater than <code>count</code>, the container is reduced to its first <code>count</code> elements. </dd>
+<dd>
+If the current size is less than <code>count</code>, additional copies of <code>value</code> are appended. </dd></dl>
 
 </div>
 </div>
@@ -6633,33 +6795,6 @@ template&lt;class type_t, class allocator_t&gt; </div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a2e4d8d2839c656d4bf456a02346b52fa" name="a2e4d8d2839c656d4bf456a02346b52fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e4d8d2839c656d4bf456a02346b52fa">&#9670;&#160;</a></span>npos</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::npos</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel constexpr">constexpr</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>This is a special value equal to the maximum value representable by the type <a class="el" href="#a8cce3f868fe90a8a29735f032fb89d3a" title="Represents the list size type (usually xtd::size).">size_type</a>. </p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.core/include/xtd/collections/generic/<a class="el" href="list_8hpp_source.html">list.hpp</a></li>
 </ul>
@@ -6667,7 +6802,7 @@ template&lt;class type_t, class allocator_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 8 2025 20:51:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Sep 14 2025 11:29:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
