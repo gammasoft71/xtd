@@ -41,7 +41,7 @@
 | 🔴  | #9     | October 27, 2025   | Adding color to console output (text + background)                      | ANSI escape codes                           |
 | 🟡  | #8     | October 13, 2025   | array_list a heterogeneous container supporting multiple types          | C++ modern / Boost / Qt                     |
 | 🟡  | #7     | September 29, 2025 | Creating a simple form with a button                                    | Qt / WinForms                               |
-| 🟡  | #6     | September 15, 2025 | Getting special folders (desktop, app_data, etc.)                       | Win32 API / Qt                              |
+| 🟢  | #6     | September 15, 2025 | Getting special folders (desktop, app_data, etc.)                       | Win32 API / Qt                              |
 | 🟢  | #5     | September 1, 2025  | Applying image effects                                                  | NA                                          |
 | 🟢  | #4     | August 18, 2025    | Why xtd simplifies your code compared to Qt or wxWidgets                | Qt / wxWidgets                              |
 | 🟢  | #3     | August 6, 2025     | Showing a message box in one line                                       | Qt / wxWidgets                              |
