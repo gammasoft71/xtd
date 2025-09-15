@@ -428,141 +428,349 @@ inline std::basic_string<target_t> __xtd_convert_to_string(std::basic_string<sou
   return out;
 }
 
+/// @brief Converts a UTF-8 encoded std::string to a std::basic_string<xtd::char16>, handling surrogate pairs for code points above 0xFFFF and replacing invalid sequences with U+FFFD.
+/// @param str The input UTF-8 encoded std::string (rvalue reference).
+/// @return A std::basic_string<xtd::char16> containing the corresponding UTF-16 code points.
 template<>
 inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, char>(std::basic_string<char>&& str) noexcept {
-  auto out = std::basic_string<xtd::char16> {};
-  auto codepoint = 0u;
-  auto str_ptr = str.data();
+  auto out = std::basic_string<xtd::char16> {}; // Output UTF-16 string
+  auto codepoint = 0u; // Current Unicode code point
+  auto expected_bytes = 0; // Number of continuation bytes expected
+  auto str_ptr = str.data(); // Pointer to traverse input string
+  
   while (*str_ptr != 0) {
-    auto ch = static_cast<unsigned char>(*str_ptr);
-    if (ch <= 0x7f) codepoint = ch;
-    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
-    else if (ch <= 0xdf) codepoint = ch & 0x1f;
-    else if (ch <= 0xef) codepoint = ch & 0x0f;
-    else codepoint = ch & 0x07;
-    ++str_ptr;
-    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
+    auto ch = static_cast<unsigned char>(*str_ptr++);
+    
+    if (expected_bytes == 0) {
+      // Determine the sequence length based on the first byte
+      if (ch <= 0x7f) {
+        codepoint = ch;
+        expected_bytes = 0;
+      } else if (ch <= 0xdf) { codepoint = ch & 0x1f; expected_bytes = 1; }
+      else if (ch <= 0xef) { codepoint = ch & 0x0f; expected_bytes = 2; }
+      else if (ch <= 0xf7) { codepoint = ch & 0x07; expected_bytes = 3; }
+      else {
+        // Invalid first byte → replacement character
+        out.push_back(0xfffd);
+        continue;
+      }
+    } else {
+      // Continuation byte
+      if ((ch & 0xc0) != 0x80) {
+        // Unexpected byte → invalid sequence
+        out.push_back(0xfffd);
+        expected_bytes = 0;
+        --str_ptr; // Re-evaluate this byte as first byte
+        continue;
+      }
+      codepoint = (codepoint << 6) | (ch & 0x3f);
+      --expected_bytes;
+    }
+    
+    // Sequence complete
+    if (expected_bytes == 0) {
+      if (codepoint > 0x10ffff) codepoint = 0xfffd; // Unicode limit
+      
       if (codepoint > 0xffff) {
-        out.append(1, static_cast<xtd::char16>(0xd800 + (static_cast<xtd::char16>(codepoint) >> 10)));
-        out.append(1, static_cast<xtd::char16>(0xdc00 + (static_cast<xtd::char16>(codepoint) & 0x03ff)));
-      } else if (codepoint < 0xd800 || codepoint >= 0xe000)
-        out.append(1, static_cast<xtd::char16>(codepoint));
+        // Code point requires surrogate pair
+        unsigned int high = 0xd800 + ((codepoint - 0x10000) >> 10);
+        unsigned int low  = 0xdc00 + ((codepoint - 0x10000) & 0x3ff);
+        out.push_back(static_cast<xtd::char16>(high));
+        out.push_back(static_cast<xtd::char16>(low));
+      } else if (codepoint < 0xd800 || codepoint >= 0xe000) out.push_back(static_cast<xtd::char16>(codepoint)); // Normal BMP character, not a surrogate
+      else out.push_back(0xfffd); // Surrogate range in input → replace
     }
   }
+  
+  // If string ends prematurely, insert replacement character
+  if (expected_bytes != 0) out.push_back(0xfffd);
   return out;
 }
 
+/// @brief Converts a UTF-8 encoded std::u8string to a std::basic_string<xtd::char16>, handling surrogate pairs for code points above 0xFFFF and replacing invalid sequences with U+FFFD.
+/// @param str The input UTF-8 encoded std::u8string (rvalue reference).
+/// @return A std::basic_string<xtd::char16> containing the corresponding UTF-16 code points.
 template<>
 inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::char8>(std::basic_string<xtd::char8>&& str) noexcept {
-  auto out = std::basic_string<xtd::char16> {};
-  auto codepoint = 0u;
-  auto str_ptr = str.data();
+  auto out = std::basic_string<xtd::char16> {}; // Output UTF-16 string
+  auto codepoint = 0u; // Current Unicode code point
+  auto expected_bytes = 0; // Number of continuation bytes expected
+  auto str_ptr = str.data(); // Pointer to traverse input string
+  
   while (*str_ptr != 0) {
-    auto ch = static_cast<unsigned char>(*str_ptr);
-    if (ch <= 0x7f) codepoint = ch;
-    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
-    else if (ch <= 0xdf) codepoint = ch & 0x1f;
-    else if (ch <= 0xef) codepoint = ch & 0x0f;
-    else codepoint = ch & 0x07;
-    ++str_ptr;
-    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
+    auto ch = static_cast<unsigned char>(*str_ptr++);
+    
+    if (expected_bytes == 0) {
+      // Determine the sequence length based on the first byte
+      if (ch <= 0x7f) {
+        codepoint = ch;
+        expected_bytes = 0;
+      } else if (ch <= 0xdf) { codepoint = ch & 0x1f; expected_bytes = 1; }
+      else if (ch <= 0xef) { codepoint = ch & 0x0f; expected_bytes = 2; }
+      else if (ch <= 0xf7) { codepoint = ch & 0x07; expected_bytes = 3; }
+      else {
+        // Invalid first byte → replacement character
+        out.push_back(0xfffd);
+        continue;
+      }
+    } else {
+      // Continuation byte
+      if ((ch & 0xc0) != 0x80) {
+        // Unexpected byte → invalid sequence
+        out.push_back(0xfffd);
+        expected_bytes = 0;
+        --str_ptr; // Re-evaluate this byte as first byte
+        continue;
+      }
+      codepoint = (codepoint << 6) | (ch & 0x3f);
+      --expected_bytes;
+    }
+    
+    // Sequence complete
+    if (expected_bytes == 0) {
+      if (codepoint > 0x10ffff) codepoint = 0xfffd; // Unicode limit
+      
       if (codepoint > 0xffff) {
-        out.append(1, static_cast<xtd::char16>(0xd800 + (static_cast<xtd::char16>(codepoint) >> 10)));
-        out.append(1, static_cast<xtd::char16>(0xdc00 + (static_cast<xtd::char16>(codepoint) & 0x03ff)));
-      } else if (codepoint < 0xd800 || codepoint >= 0xe000)
-        out.append(1, static_cast<xtd::char16>(codepoint));
+        // Code point requires surrogate pair
+        unsigned int high = 0xd800 + ((codepoint - 0x10000) >> 10);
+        unsigned int low  = 0xdc00 + ((codepoint - 0x10000) & 0x3ff);
+        out.push_back(static_cast<xtd::char16>(high));
+        out.push_back(static_cast<xtd::char16>(low));
+      } else if (codepoint < 0xd800 || codepoint >= 0xe000) out.push_back(static_cast<xtd::char16>(codepoint)); // Normal BMP character, not a surrogate
+      else out.push_back(0xfffd); // Surrogate range in input → replace
     }
   }
+  
+  // If string ends prematurely, insert replacement character
+  if (expected_bytes != 0) out.push_back(0xfffd);
   return out;
 }
 
+/// @brief Converts a UTF-8 encoded std::string to a std::basic_string<xtd::wchar>, handling surrogate pairs if xtd::wchar is 16-bit and replacing invalid sequences with U+FFFD.
+/// @param str The input UTF-8 encoded std::string (rvalue reference).
+/// @return A std::basic_string<xtd::wchar> containing the corresponding UTF-16/UTF-32 code points.
 template<>
 inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, char>(std::basic_string<char>&& str) noexcept {
-  auto out = std::basic_string<xtd::wchar> {};
-  auto codepoint = 0u;
-  auto str_ptr = str.data();
+  auto out = std::basic_string<xtd::wchar> {}; // Output UTF string
+  auto codepoint = 0u; // Current Unicode code point
+  auto expected_bytes = 0; // Continuation bytes expected
+  auto str_ptr = str.data(); // Pointer to traverse input
+  
   while (*str_ptr != 0) {
-    auto ch = static_cast<unsigned char>(*str_ptr);
-    if (ch <= 0x7f) codepoint = ch;
-    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
-    else if (ch <= 0xdf) codepoint = ch & 0x1f;
-    else if (ch <= 0xef) codepoint = ch & 0x0f;
-    else codepoint = ch & 0x07;
-    ++str_ptr;
-    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
-      if (sizeof(xtd::wchar) > 2)
-        out.append(1, static_cast<xtd::wchar>(codepoint));
-      else if (codepoint > 0xffff) {
-        out.append(1, static_cast<xtd::wchar>(0xd800 + (static_cast<xtd::wchar>(codepoint) >> 10)));
-        out.append(1, static_cast<xtd::wchar>(0xdc00 + (static_cast<xtd::wchar>(codepoint) & 0x03ff)));
-      } else if (codepoint < 0xd800 || codepoint >= 0xe000)
-        out.append(1, static_cast<xtd::wchar>(codepoint));
+    auto ch = static_cast<unsigned char>(*str_ptr++);
+    
+    if (expected_bytes == 0) {
+      // Determine sequence length based on first byte
+      if (ch <= 0x7f) {
+        codepoint = ch;
+        expected_bytes = 0;
+      } else if (ch <= 0xdf) { codepoint = ch & 0x1f; expected_bytes = 1; }
+      else if (ch <= 0xef) { codepoint = ch & 0x0f; expected_bytes = 2; }
+      else if (ch <= 0xf7) { codepoint = ch & 0x07; expected_bytes = 3; }
+      else {
+        out.push_back(0xfffd); // Invalid first byte → replace
+        continue;
+      }
+    } else {
+      // Continuation byte
+      if ((ch & 0xc0) != 0x80) {
+        // Unexpected byte → invalid sequence
+        out.push_back(0xfffd);
+        expected_bytes = 0;
+        --str_ptr; // Re-evaluate this byte as first byte
+        continue;
+      }
+      codepoint = (codepoint << 6) | (ch & 0x3f);
+      --expected_bytes;
+    }
+    
+    // Sequence complete
+    if (expected_bytes == 0) {
+      if (codepoint > 0x10ffff) codepoint = 0xfffd;
+      
+      if (sizeof(xtd::wchar) > 2) {
+        // UTF-32 capable
+        out.push_back(static_cast<xtd::wchar>(codepoint));
+      } else {
+        // UTF-16, may need surrogate pairs
+        if (codepoint > 0xffff) {
+          unsigned int high = 0xd800 + ((codepoint - 0x10000) >> 10);
+          unsigned int low  = 0xdc00 + ((codepoint - 0x10000) & 0x3ff);
+          out.push_back(static_cast<xtd::wchar>(high));
+          out.push_back(static_cast<xtd::wchar>(low));
+        } else if (codepoint < 0xd800 || codepoint >= 0xe000) {
+          out.push_back(static_cast<xtd::wchar>(codepoint));
+        } else {
+          // Surrogate range in input → replace
+          out.push_back(0xfffd);
+        }
+      }
     }
   }
+  
+  // If string ends prematurely, insert replacement character
+  if (expected_bytes != 0) out.push_back(0xfffd);
   return out;
 }
 
+/// @brief Converts a UTF-8 encoded std::u8string to a std::basic_string<xtd::wchar>, handling surrogate pairs if xtd::wchar is 16-bit and replacing invalid sequences with U+FFFD.
+/// @param str The input UTF-8 encoded std::u8string (rvalue reference).
+/// @return A std::basic_string<xtd::wchar> containing the corresponding UTF-16/UTF-32 code points.
 template<>
 inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::char8>(std::basic_string<xtd::char8>&& str) noexcept {
-  auto out = std::basic_string<xtd::wchar> {};
-  auto codepoint = 0u;
-  auto str_ptr = str.data();
+  auto out = std::basic_string<xtd::wchar> {}; // Output UTF string
+  auto codepoint = 0u; // Current Unicode code point
+  auto expected_bytes = 0; // Continuation bytes expected
+  auto str_ptr = str.data(); // Pointer to traverse input
+  
   while (*str_ptr != 0) {
-    auto ch = static_cast<unsigned char>(*str_ptr);
-    if (ch <= 0x7f) codepoint = ch;
-    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
-    else if (ch <= 0xdf) codepoint = ch & 0x1f;
-    else if (ch <= 0xef) codepoint = ch & 0x0f;
-    else codepoint = ch & 0x07;
-    ++str_ptr;
-    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
-      if (sizeof(xtd::wchar) > 2)
-        out.append(1, static_cast<xtd::wchar>(codepoint));
-      else if (codepoint > 0xffff) {
-        out.append(1, static_cast<xtd::wchar>(0xd800 + (static_cast<xtd::wchar>(codepoint) >> 10)));
-        out.append(1, static_cast<xtd::wchar>(0xdc00 + (static_cast<xtd::wchar>(codepoint) & 0x03ff)));
-      } else if (codepoint < 0xd800 || codepoint >= 0xe000)
-        out.append(1, static_cast<xtd::wchar>(codepoint));
+    auto ch = static_cast<unsigned char>(*str_ptr++);
+    
+    if (expected_bytes == 0) {
+      // Determine sequence length based on first byte
+      if (ch <= 0x7f) {
+        codepoint = ch;
+        expected_bytes = 0;
+      } else if (ch <= 0xdf) { codepoint = ch & 0x1f; expected_bytes = 1; }
+      else if (ch <= 0xef) { codepoint = ch & 0x0f; expected_bytes = 2; }
+      else if (ch <= 0xf7) { codepoint = ch & 0x07; expected_bytes = 3; }
+      else {
+        out.push_back(0xfffd); // Invalid first byte → replace
+        continue;
+      }
+    } else {
+      // Continuation byte
+      if ((ch & 0xc0) != 0x80) {
+        // Unexpected byte → invalid sequence
+        out.push_back(0xfffd);
+        expected_bytes = 0;
+        --str_ptr; // Re-evaluate this byte as first byte
+        continue;
+      }
+      codepoint = (codepoint << 6) | (ch & 0x3f);
+      --expected_bytes;
+    }
+    
+    // Sequence complete
+    if (expected_bytes == 0) {
+      if (codepoint > 0x10ffff) codepoint = 0xfffd;
+      
+      if (sizeof(xtd::wchar) > 2) {
+        // UTF-32 capable
+        out.push_back(static_cast<xtd::wchar>(codepoint));
+      } else {
+        // UTF-16, may need surrogate pairs
+        if (codepoint > 0xffff) {
+          unsigned int high = 0xd800 + ((codepoint - 0x10000) >> 10);
+          unsigned int low  = 0xdc00 + ((codepoint - 0x10000) & 0x3ff);
+          out.push_back(static_cast<xtd::wchar>(high));
+          out.push_back(static_cast<xtd::wchar>(low));
+        } else if (codepoint < 0xd800 || codepoint >= 0xe000) {
+          out.push_back(static_cast<xtd::wchar>(codepoint));
+        } else {
+          // Surrogate range in input → replace
+          out.push_back(0xfffd);
+        }
+      }
     }
   }
+  
+  // If string ends prematurely, insert replacement character
+  if (expected_bytes != 0) out.push_back(0xfffd);
   return out;
 }
 
+/// @brief Converts a UTF-8 encoded std::string to a UTF-32 string.
+/// @param str The input UTF-8 encoded std::string (rvalue reference).
+/// @return A std::basic_string<xtd::char32> containing the corresponding UTF-32 code points.
 template<>
 inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, char>(std::basic_string<char>&& str) noexcept {
-  auto out = std::basic_string<xtd::char32> {};
-  auto codepoint = 0u;
-  auto str_ptr = str.data();
+  auto out = std::basic_string<xtd::char32> {}; // Output UTF-32 string
+  auto codepoint = 0u; // Current Unicode code point
+  auto expected_bytes = 0; // Number of continuation bytes expected
+  auto str_ptr = str.data();  // Pointer to traverse input string
+  
   while (*str_ptr != 0) {
-    auto ch = static_cast<unsigned char>(*str_ptr);
-    if (ch <= 0x7f) codepoint = ch;
-    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
-    else if (ch <= 0xdf) codepoint = ch & 0x1f;
-    else if (ch <= 0xef) codepoint = ch & 0x0f;
-    else codepoint = ch & 0x07;
-    ++str_ptr;
-    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff))
-      out.append(1, static_cast<xtd::char32>(codepoint));
+    auto ch = static_cast<unsigned char>(*str_ptr++);
+    
+    if (expected_bytes == 0) {
+      // Determine sequence length based on first byte
+      if (ch <= 0x7f) {
+        codepoint = ch;
+        out.push_back(static_cast<xtd::char32>(codepoint));
+      } else if (ch <= 0xdf) { codepoint = ch & 0x1f; expected_bytes = 1; }
+      else if (ch <= 0xef) { codepoint = ch & 0x0f; expected_bytes = 2; }
+      else if (ch <= 0xf7) { codepoint = ch & 0x07; expected_bytes = 3; }
+      else out.push_back(0xfffd); // Invalid first byte → replace
+    } else {
+      // Continuation byte
+      if ((ch & 0xc0) != 0x80) {
+        // Unexpected byte → invalid sequence
+        out.push_back(0xfffd);
+        expected_bytes = 0;
+        --str_ptr; // Re-evaluate this byte as first byte
+        continue;
+      }
+      codepoint = (codepoint << 6) | (ch & 0x3f);
+      --expected_bytes;
+      
+      if (expected_bytes == 0) {
+        // Sequence complete, check valid Unicode range
+        if (codepoint > 0x10ffff) codepoint = 0xfffd;
+        out.push_back(static_cast<xtd::char32>(codepoint));
+      }
+    }
   }
+  
+  // If string ends prematurely, insert replacement character
+  if (expected_bytes != 0) out.push_back(0xfffd);
   return out;
 }
 
+/// @brief Converts a UTF-8 encoded std::u8string to a UTF-32 string.
+/// @param str The input UTF-8 encoded std::u8string (rvalue reference).
+/// @return A std::basic_string<xtd::char32> containing the corresponding UTF-32 code points.
 template<>
 inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::char8>(std::basic_string<xtd::char8>&& str) noexcept {
-  auto out = std::basic_string<xtd::char32> {};
-  auto codepoint = 0u;
-  auto str_ptr = str.data();
+  auto out = std::basic_string<xtd::char32> {}; // Output UTF-32 string
+  auto codepoint = 0u; // Current Unicode code point
+  auto expected_bytes = 0; // Number of continuation bytes expected
+  auto str_ptr = str.data();  // Pointer to traverse input string
+  
   while (*str_ptr != 0) {
-    auto ch = static_cast<unsigned char>(*str_ptr);
-    if (ch <= 0x7f) codepoint = ch;
-    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
-    else if (ch <= 0xdf) codepoint = ch & 0x1f;
-    else if (ch <= 0xef) codepoint = ch & 0x0f;
-    else codepoint = ch & 0x07;
-    ++str_ptr;
-    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff))
-      out.append(1, static_cast<xtd::char32>(codepoint));
+    auto ch = static_cast<unsigned char>(*str_ptr++);
+    
+    if (expected_bytes == 0) {
+      // Determine sequence length based on first byte
+      if (ch <= 0x7f) {
+        codepoint = ch;
+        out.push_back(static_cast<xtd::char32>(codepoint));
+      } else if (ch <= 0xdf) { codepoint = ch & 0x1f; expected_bytes = 1; }
+      else if (ch <= 0xef) { codepoint = ch & 0x0f; expected_bytes = 2; }
+      else if (ch <= 0xf7) { codepoint = ch & 0x07; expected_bytes = 3; }
+      else out.push_back(0xfffd); // Invalid first byte → replace
+    } else {
+      // Continuation byte
+      if ((ch & 0xc0) != 0x80) {
+        // Unexpected byte → invalid sequence
+        out.push_back(0xfffd);
+        expected_bytes = 0;
+        --str_ptr; // Re-evaluate this byte as first byte
+        continue;
+      }
+      codepoint = (codepoint << 6) | (ch & 0x3f);
+      --expected_bytes;
+      
+      if (expected_bytes == 0) {
+        // Sequence complete, check valid Unicode range
+        if (codepoint > 0x10ffff) codepoint = 0xfffd;
+        out.push_back(static_cast<xtd::char32>(codepoint));
+      }
+    }
   }
+  
+  // If string ends prematurely, insert replacement character
+  if (expected_bytes != 0) out.push_back(0xfffd);
   return out;
 }
 
@@ -663,141 +871,349 @@ inline std::basic_string<target_t> __xtd_convert_to_string(const std::basic_stri
   return out;
 }
 
+/// @brief Converts a UTF-8 encoded std::string to a std::basic_string<xtd::char16>, handling surrogate pairs for code points above 0xFFFF and replacing invalid sequences with U+FFFD.
+/// @param str The input UTF-8 encoded std::string.
+/// @return A std::basic_string<xtd::char16> containing the corresponding UTF-16 code points.
 template<>
 inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, char>(const std::basic_string<char>& str) noexcept {
-  auto out = std::basic_string<xtd::char16> {};
-  auto codepoint = 0u;
-  auto str_ptr = str.data();
+  auto out = std::basic_string<xtd::char16> {}; // Output UTF-16 string
+  auto codepoint = 0u; // Current Unicode code point
+  auto expected_bytes = 0; // Number of continuation bytes expected
+  auto str_ptr = str.data(); // Pointer to traverse input string
+  
   while (*str_ptr != 0) {
-    auto ch = static_cast<unsigned char>(*str_ptr);
-    if (ch <= 0x7f) codepoint = ch;
-    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
-    else if (ch <= 0xdf) codepoint = ch & 0x1f;
-    else if (ch <= 0xef) codepoint = ch & 0x0f;
-    else codepoint = ch & 0x07;
-    ++str_ptr;
-    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
+    auto ch = static_cast<unsigned char>(*str_ptr++);
+    
+    if (expected_bytes == 0) {
+      // Determine the sequence length based on the first byte
+      if (ch <= 0x7f) {
+        codepoint = ch;
+        expected_bytes = 0;
+      } else if (ch <= 0xdf) { codepoint = ch & 0x1f; expected_bytes = 1; }
+      else if (ch <= 0xef) { codepoint = ch & 0x0f; expected_bytes = 2; }
+      else if (ch <= 0xf7) { codepoint = ch & 0x07; expected_bytes = 3; }
+      else {
+        // Invalid first byte → replacement character
+        out.push_back(0xfffd);
+        continue;
+      }
+    } else {
+      // Continuation byte
+      if ((ch & 0xc0) != 0x80) {
+        // Unexpected byte → invalid sequence
+        out.push_back(0xfffd);
+        expected_bytes = 0;
+        --str_ptr; // Re-evaluate this byte as first byte
+        continue;
+      }
+      codepoint = (codepoint << 6) | (ch & 0x3f);
+      --expected_bytes;
+    }
+    
+    // Sequence complete
+    if (expected_bytes == 0) {
+      if (codepoint > 0x10ffff) codepoint = 0xfffd; // Unicode limit
+      
       if (codepoint > 0xffff) {
-        out.append(1, static_cast<xtd::char16>(0xd800 + (static_cast<xtd::char16>(codepoint) >> 10)));
-        out.append(1, static_cast<xtd::char16>(0xdc00 + (static_cast<xtd::char16>(codepoint) & 0x03ff)));
-      } else if (codepoint < 0xd800 || codepoint >= 0xe000)
-        out.append(1, static_cast<xtd::char16>(codepoint));
+        // Code point requires surrogate pair
+        unsigned int high = 0xd800 + ((codepoint - 0x10000) >> 10);
+        unsigned int low  = 0xdc00 + ((codepoint - 0x10000) & 0x3ff);
+        out.push_back(static_cast<xtd::char16>(high));
+        out.push_back(static_cast<xtd::char16>(low));
+      } else if (codepoint < 0xd800 || codepoint >= 0xe000) out.push_back(static_cast<xtd::char16>(codepoint)); // Normal BMP character, not a surrogate
+      else out.push_back(0xfffd); // Surrogate range in input → replace
     }
   }
+  
+  // If string ends prematurely, insert replacement character
+  if (expected_bytes != 0) out.push_back(0xfffd);
   return out;
 }
 
+/// @brief Converts a UTF-8 encoded std::u8string to a std::basic_string<xtd::char16>, handling surrogate pairs for code points above 0xFFFF and replacing invalid sequences with U+FFFD.
+/// @param str The input UTF-8 encoded std::u8string.
+/// @return A std::basic_string<xtd::char16> containing the corresponding UTF-16 code points.
 template<>
 inline std::basic_string<xtd::char16> __xtd_convert_to_string<xtd::char16, xtd::char8>(const std::basic_string<xtd::char8>& str) noexcept {
-  auto out = std::basic_string<xtd::char16> {};
-  auto codepoint = 0u;
-  auto str_ptr = str.data();
+  auto out = std::basic_string<xtd::char16> {}; // Output UTF-16 string
+  auto codepoint = 0u; // Current Unicode code point
+  auto expected_bytes = 0; // Number of continuation bytes expected
+  auto str_ptr = str.data(); // Pointer to traverse input string
+  
   while (*str_ptr != 0) {
-    auto ch = static_cast<unsigned char>(*str_ptr);
-    if (ch <= 0x7f) codepoint = ch;
-    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
-    else if (ch <= 0xdf) codepoint = ch & 0x1f;
-    else if (ch <= 0xef) codepoint = ch & 0x0f;
-    else codepoint = ch & 0x07;
-    ++str_ptr;
-    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
+    auto ch = static_cast<unsigned char>(*str_ptr++);
+    
+    if (expected_bytes == 0) {
+      // Determine the sequence length based on the first byte
+      if (ch <= 0x7f) {
+        codepoint = ch;
+        expected_bytes = 0;
+      } else if (ch <= 0xdf) { codepoint = ch & 0x1f; expected_bytes = 1; }
+      else if (ch <= 0xef) { codepoint = ch & 0x0f; expected_bytes = 2; }
+      else if (ch <= 0xf7) { codepoint = ch & 0x07; expected_bytes = 3; }
+      else {
+        // Invalid first byte → replacement character
+        out.push_back(0xfffd);
+        continue;
+      }
+    } else {
+      // Continuation byte
+      if ((ch & 0xc0) != 0x80) {
+        // Unexpected byte → invalid sequence
+        out.push_back(0xfffd);
+        expected_bytes = 0;
+        --str_ptr; // Re-evaluate this byte as first byte
+        continue;
+      }
+      codepoint = (codepoint << 6) | (ch & 0x3f);
+      --expected_bytes;
+    }
+    
+    // Sequence complete
+    if (expected_bytes == 0) {
+      if (codepoint > 0x10ffff) codepoint = 0xfffd; // Unicode limit
+      
       if (codepoint > 0xffff) {
-        out.append(1, static_cast<xtd::char16>(0xd800 + (static_cast<xtd::char16>(codepoint) >> 10)));
-        out.append(1, static_cast<xtd::char16>(0xdc00 + (static_cast<xtd::char16>(codepoint) & 0x03ff)));
-      } else if (codepoint < 0xd800 || codepoint >= 0xe000)
-        out.append(1, static_cast<xtd::char16>(codepoint));
+        // Code point requires surrogate pair
+        unsigned int high = 0xd800 + ((codepoint - 0x10000) >> 10);
+        unsigned int low  = 0xdc00 + ((codepoint - 0x10000) & 0x3ff);
+        out.push_back(static_cast<xtd::char16>(high));
+        out.push_back(static_cast<xtd::char16>(low));
+      } else if (codepoint < 0xd800 || codepoint >= 0xe000) out.push_back(static_cast<xtd::char16>(codepoint)); // Normal BMP character, not a surrogate
+      else out.push_back(0xfffd); // Surrogate range in input → replace
     }
   }
+  
+  // If string ends prematurely, insert replacement character
+  if (expected_bytes != 0) out.push_back(0xfffd);
   return out;
 }
 
+/// @brief Converts a UTF-8 encoded std::string to a std::basic_string<xtd::wchar>, handling surrogate pairs if xtd::wchar is 16-bit and replacing invalid sequences with U+FFFD.
+/// @param str The input UTF-8 encoded std::string.
+/// @return A std::basic_string<xtd::wchar> containing the corresponding UTF-16/UTF-32 code points.
 template<>
 inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, char>(const std::basic_string<char>& str) noexcept {
-  auto out = std::basic_string<xtd::wchar> {};
-  auto codepoint = 0u;
-  auto str_ptr = str.data();
+  auto out = std::basic_string<xtd::wchar> {}; // Output UTF string
+  auto codepoint = 0u; // Current Unicode code point
+  auto expected_bytes = 0; // Continuation bytes expected
+  auto str_ptr = str.data(); // Pointer to traverse input
+  
   while (*str_ptr != 0) {
-    auto ch = static_cast<unsigned char>(*str_ptr);
-    if (ch <= 0x7f) codepoint = ch;
-    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
-    else if (ch <= 0xdf) codepoint = ch & 0x1f;
-    else if (ch <= 0xef) codepoint = ch & 0x0f;
-    else codepoint = ch & 0x07;
-    ++str_ptr;
-    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
-      if (sizeof(xtd::wchar) > 2)
-        out.append(1, static_cast<xtd::wchar>(codepoint));
-      else if (codepoint > 0xffff) {
-        out.append(1, static_cast<xtd::wchar>(0xd800 + (static_cast<xtd::wchar>(codepoint) >> 10)));
-        out.append(1, static_cast<xtd::wchar>(0xdc00 + (static_cast<xtd::wchar>(codepoint) & 0x03ff)));
-      } else if (codepoint < 0xd800 || codepoint >= 0xe000)
-        out.append(1, static_cast<xtd::wchar>(codepoint));
+    auto ch = static_cast<unsigned char>(*str_ptr++);
+    
+    if (expected_bytes == 0) {
+      // Determine sequence length based on first byte
+      if (ch <= 0x7f) {
+        codepoint = ch;
+        expected_bytes = 0;
+      } else if (ch <= 0xdf) { codepoint = ch & 0x1f; expected_bytes = 1; }
+      else if (ch <= 0xef) { codepoint = ch & 0x0f; expected_bytes = 2; }
+      else if (ch <= 0xf7) { codepoint = ch & 0x07; expected_bytes = 3; }
+      else {
+        out.push_back(0xfffd); // Invalid first byte → replace
+        continue;
+      }
+    } else {
+      // Continuation byte
+      if ((ch & 0xc0) != 0x80) {
+        // Unexpected byte → invalid sequence
+        out.push_back(0xfffd);
+        expected_bytes = 0;
+        --str_ptr; // Re-evaluate this byte as first byte
+        continue;
+      }
+      codepoint = (codepoint << 6) | (ch & 0x3f);
+      --expected_bytes;
+    }
+    
+    // Sequence complete
+    if (expected_bytes == 0) {
+      if (codepoint > 0x10ffff) codepoint = 0xfffd;
+      
+      if (sizeof(xtd::wchar) > 2) {
+        // UTF-32 capable
+        out.push_back(static_cast<xtd::wchar>(codepoint));
+      } else {
+        // UTF-16, may need surrogate pairs
+        if (codepoint > 0xffff) {
+          unsigned int high = 0xd800 + ((codepoint - 0x10000) >> 10);
+          unsigned int low  = 0xdc00 + ((codepoint - 0x10000) & 0x3ff);
+          out.push_back(static_cast<xtd::wchar>(high));
+          out.push_back(static_cast<xtd::wchar>(low));
+        } else if (codepoint < 0xd800 || codepoint >= 0xe000) {
+          out.push_back(static_cast<xtd::wchar>(codepoint));
+        } else {
+          // Surrogate range in input → replace
+          out.push_back(0xfffd);
+        }
+      }
     }
   }
+  
+  // If string ends prematurely, insert replacement character
+  if (expected_bytes != 0) out.push_back(0xfffd);
   return out;
 }
 
+/// @brief Converts a UTF-8 encoded std::u8string to a std::basic_string<xtd::wchar>, handling surrogate pairs if xtd::wchar is 16-bit and replacing invalid sequences with U+FFFD.
+/// @param str The input UTF-8 encoded std::u8string.
+/// @return A std::basic_string<xtd::wchar> containing the corresponding UTF-16/UTF-32 code points.
 template<>
 inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::char8>(const std::basic_string<xtd::char8>& str) noexcept {
-  auto out = std::basic_string<xtd::wchar> {};
-  auto codepoint = 0u;
-  auto str_ptr = str.data();
+  auto out = std::basic_string<xtd::wchar> {}; // Output UTF string
+  auto codepoint = 0u; // Current Unicode code point
+  auto expected_bytes = 0; // Continuation bytes expected
+  auto str_ptr = str.data(); // Pointer to traverse input
+  
   while (*str_ptr != 0) {
-    auto ch = static_cast<unsigned char>(*str_ptr);
-    if (ch <= 0x7f) codepoint = ch;
-    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
-    else if (ch <= 0xdf) codepoint = ch & 0x1f;
-    else if (ch <= 0xef) codepoint = ch & 0x0f;
-    else codepoint = ch & 0x07;
-    ++str_ptr;
-    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff)) {
-      if (sizeof(xtd::wchar) > 2)
-        out.append(1, static_cast<xtd::wchar>(codepoint));
-      else if (codepoint > 0xffff) {
-        out.append(1, static_cast<xtd::wchar>(0xd800 + (static_cast<xtd::wchar>(codepoint) >> 10)));
-        out.append(1, static_cast<xtd::wchar>(0xdc00 + (static_cast<xtd::wchar>(codepoint) & 0x03ff)));
-      } else if (codepoint < 0xd800 || codepoint >= 0xe000)
-        out.append(1, static_cast<xtd::wchar>(codepoint));
+    auto ch = static_cast<unsigned char>(*str_ptr++);
+    
+    if (expected_bytes == 0) {
+      // Determine sequence length based on first byte
+      if (ch <= 0x7f) {
+        codepoint = ch;
+        expected_bytes = 0;
+      } else if (ch <= 0xdf) { codepoint = ch & 0x1f; expected_bytes = 1; }
+      else if (ch <= 0xef) { codepoint = ch & 0x0f; expected_bytes = 2; }
+      else if (ch <= 0xf7) { codepoint = ch & 0x07; expected_bytes = 3; }
+      else {
+        out.push_back(0xfffd); // Invalid first byte → replace
+        continue;
+      }
+    } else {
+      // Continuation byte
+      if ((ch & 0xc0) != 0x80) {
+        // Unexpected byte → invalid sequence
+        out.push_back(0xfffd);
+        expected_bytes = 0;
+        --str_ptr; // Re-evaluate this byte as first byte
+        continue;
+      }
+      codepoint = (codepoint << 6) | (ch & 0x3f);
+      --expected_bytes;
+    }
+    
+    // Sequence complete
+    if (expected_bytes == 0) {
+      if (codepoint > 0x10ffff) codepoint = 0xfffd;
+      
+      if (sizeof(xtd::wchar) > 2) {
+        // UTF-32 capable
+        out.push_back(static_cast<xtd::wchar>(codepoint));
+      } else {
+        // UTF-16, may need surrogate pairs
+        if (codepoint > 0xffff) {
+          unsigned int high = 0xd800 + ((codepoint - 0x10000) >> 10);
+          unsigned int low  = 0xdc00 + ((codepoint - 0x10000) & 0x3ff);
+          out.push_back(static_cast<xtd::wchar>(high));
+          out.push_back(static_cast<xtd::wchar>(low));
+        } else if (codepoint < 0xd800 || codepoint >= 0xe000) {
+          out.push_back(static_cast<xtd::wchar>(codepoint));
+        } else {
+          // Surrogate range in input → replace
+          out.push_back(0xfffd);
+        }
+      }
     }
   }
+  
+  // If string ends prematurely, insert replacement character
+  if (expected_bytes != 0) out.push_back(0xfffd);
   return out;
 }
 
+/// @brief Converts a UTF-8 encoded std::string to a UTF-32 string.
+/// @param str The input UTF-8 encoded std::string.
+/// @return A std::basic_string<xtd::char32> containing the corresponding UTF-32 code points.
 template<>
 inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, char>(const std::basic_string<char>& str) noexcept {
-  auto out = std::basic_string<xtd::char32> {};
-  auto codepoint = 0u;
-  auto str_ptr = str.data();
+  auto out = std::basic_string<xtd::char32> {}; // Output UTF-32 string
+  auto codepoint = 0u; // Current Unicode code point
+  auto expected_bytes = 0; // Number of continuation bytes expected
+  auto str_ptr = str.data();  // Pointer to traverse input string
+  
   while (*str_ptr != 0) {
-    auto ch = static_cast<unsigned char>(*str_ptr);
-    if (ch <= 0x7f) codepoint = ch;
-    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
-    else if (ch <= 0xdf) codepoint = ch & 0x1f;
-    else if (ch <= 0xef) codepoint = ch & 0x0f;
-    else codepoint = ch & 0x07;
-    ++str_ptr;
-    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff))
-      out.append(1, static_cast<xtd::char32>(codepoint));
+    auto ch = static_cast<unsigned char>(*str_ptr++);
+    
+    if (expected_bytes == 0) {
+      // Determine sequence length based on first byte
+      if (ch <= 0x7f) {
+        codepoint = ch;
+        out.push_back(static_cast<xtd::char32>(codepoint));
+      } else if (ch <= 0xdf) { codepoint = ch & 0x1f; expected_bytes = 1; }
+      else if (ch <= 0xef) { codepoint = ch & 0x0f; expected_bytes = 2; }
+      else if (ch <= 0xf7) { codepoint = ch & 0x07; expected_bytes = 3; }
+      else out.push_back(0xfffd); // Invalid first byte → replace
+    } else {
+      // Continuation byte
+      if ((ch & 0xc0) != 0x80) {
+        // Unexpected byte → invalid sequence
+        out.push_back(0xfffd);
+        expected_bytes = 0;
+        --str_ptr; // Re-evaluate this byte as first byte
+        continue;
+      }
+      codepoint = (codepoint << 6) | (ch & 0x3f);
+      --expected_bytes;
+      
+      if (expected_bytes == 0) {
+        // Sequence complete, check valid Unicode range
+        if (codepoint > 0x10ffff) codepoint = 0xfffd;
+        out.push_back(static_cast<xtd::char32>(codepoint));
+      }
+    }
   }
+  
+  // If string ends prematurely, insert replacement character
+  if (expected_bytes != 0) out.push_back(0xfffd);
   return out;
 }
 
+/// @brief Converts a UTF-8 encoded std::u8string to a UTF-32 string.
+/// @param str The input UTF-8 encoded std::u8string.
+/// @return A std::basic_string<xtd::char32> containing the corresponding UTF-32 code points.
 template<>
 inline std::basic_string<xtd::char32> __xtd_convert_to_string<xtd::char32, xtd::char8>(const std::basic_string<xtd::char8>& str) noexcept {
-  auto out = std::basic_string<xtd::char32> {};
-  auto codepoint = 0u;
-  auto str_ptr = str.data();
+  auto out = std::basic_string<xtd::char32> {}; // Output UTF-32 string
+  auto codepoint = 0u; // Current Unicode code point
+  auto expected_bytes = 0; // Number of continuation bytes expected
+  auto str_ptr = str.data();  // Pointer to traverse input string
+  
   while (*str_ptr != 0) {
-    auto ch = static_cast<unsigned char>(*str_ptr);
-    if (ch <= 0x7f) codepoint = ch;
-    else if (ch <= 0xbf) codepoint = (codepoint << 6) | (ch & 0x3f);
-    else if (ch <= 0xdf) codepoint = ch & 0x1f;
-    else if (ch <= 0xef) codepoint = ch & 0x0f;
-    else codepoint = ch & 0x07;
-    ++str_ptr;
-    if (((*str_ptr & 0xc0) != 0x80) && (codepoint <= 0x10ffff))
-      out.append(1, static_cast<xtd::char32>(codepoint));
+    auto ch = static_cast<unsigned char>(*str_ptr++);
+    
+    if (expected_bytes == 0) {
+      // Determine sequence length based on first byte
+      if (ch <= 0x7f) {
+        codepoint = ch;
+        out.push_back(static_cast<xtd::char32>(codepoint));
+      } else if (ch <= 0xdf) { codepoint = ch & 0x1f; expected_bytes = 1; }
+      else if (ch <= 0xef) { codepoint = ch & 0x0f; expected_bytes = 2; }
+      else if (ch <= 0xf7) { codepoint = ch & 0x07; expected_bytes = 3; }
+      else out.push_back(0xfffd); // Invalid first byte → replace
+    } else {
+      // Continuation byte
+      if ((ch & 0xc0) != 0x80) {
+        // Unexpected byte → invalid sequence
+        out.push_back(0xfffd);
+        expected_bytes = 0;
+        --str_ptr; // Re-evaluate this byte as first byte
+        continue;
+      }
+      codepoint = (codepoint << 6) | (ch & 0x3f);
+      --expected_bytes;
+      
+      if (expected_bytes == 0) {
+        // Sequence complete, check valid Unicode range
+        if (codepoint > 0x10ffff) codepoint = 0xfffd;
+        out.push_back(static_cast<xtd::char32>(codepoint));
+      }
+    }
   }
+  
+  // If string ends prematurely, insert replacement character
+  if (expected_bytes != 0) out.push_back(0xfffd);
   return out;
 }
 
