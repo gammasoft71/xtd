@@ -10,11 +10,13 @@
 #include "abort_error.hpp"
 #include "assert_error.hpp"
 #include "ignore_error.hpp"
+#include "settings.hpp"
 #include <xtd/math>
 #include <xtd/static>
 #include <xtd/types>
 #include <xtd/typeof>
 #include <xtd/string>
+#include <xtd/diagnostics/assert>
 #include <xtd/diagnostics/stack_frame>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -133,7 +135,15 @@ namespace xtd {
       /// ```cpp
       /// xtd::tunit::assert::fail(actual_str, expected_str, "User message..."); // test throws an assert_error exception.
       /// ```
-      static void fail(const xtd::string& actual, const xtd::string& expected, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
+      static void fail(const xtd::string& actual, const xtd::string& expected, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+        if (!test_fail(actual, expected, message, stack_frame) && xtd::environment::compiler_version().build_type() == build_type::debug) {
+          auto msg = message != xtd::string {""} ? message : xtd::string {"assertion failed!"}; // Force asyle do not remove {}
+          assert_(false, msg);
+        } else if (xtd::environment::target_type().is_test_application()) {
+          if (settings::default_settings().break_on_failure() && xtd::diagnostics::debugger::is_attached()) debug_break_();
+          throw assert_error(message != xtd::string {""} ? message : xtd::string {"assertion failed!"});
+        }
+      }
       
       /// @brief Convert specified value to xtd::string.
       /// @param value The value to convert to xtd::string.
@@ -232,7 +242,7 @@ namespace xtd {
       /// @}
       
     private:
-      static bool is_debug() noexcept;
+      static bool test_fail(const xtd::string& expected, const xtd::string& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame);
     };
   }
 }
