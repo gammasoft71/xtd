@@ -13,6 +13,7 @@ You will find concrete solutions to common problems encountered with xtd in mode
 
 | Category                                                                                                                     | Subject                                                                                                | Date                | Level |
 | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------------- | ----- |
+| [![core](/pictures/xtd.core.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)           | [#6 - Getting special folders (desktop, app_data, etc.)](/docs/documentation/tips_and_tricks/6)        | September 15, 2025  | 🟢    |
 | [![drawing](/pictures/xtd.drawing.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__drawing.html)       | [#5 - Applying image effects](/docs/documentation/tips_and_tricks/5)                                   | September 1, 2025   | 🟢    |
 | [![xxtd](/pictures/xtd32.png)](https://gammasoft71.github.io/xtd/reference_guides/latest)                                    | [#4 - Why xtd simplifies your code compared to Qt or wxWidgets](/docs/documentation/tips_and_tricks/4) | August 18, 2025     | 🟢    |
 | [![forms](/pictures/xtd.forms.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html)        | [#3 - Showing a message box in one line](/docs/documentation/tips_and_tricks/3)                        | August 6, 2025      | 🟢    |
@@ -21,32 +22,19 @@ You will find concrete solutions to common problems encountered with xtd in mode
 
 <details>
   <summary>Legend</summary>
-- [![xtd](/pictures/xtd32.png)](https://gammasoft71.github.io/xtd/reference_guides/latest)
-[xtd](https://gammasoft71.github.io/xtd/reference_guides/latest)
-- [![cmake](/pictures/xtd.cmake.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html)
-[cmake](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html)
-- [![core](/pictures/xtd.core.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html) 
-[core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)
-- [![delegates](/pictures/xtd.delegates.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__delegates.html) 
-[delegates](https://gammasoft71.github.io/xtd/reference_guides/latest/group__delegates.html)
-- [![diagnostics](/pictures/xtd.diagnostics.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__diagnostics.html)
-[diagnostics](https://gammasoft71.github.io/xtd/reference_guides/latest/group__diagnostics.html)
-- [![drawing](/pictures/xtd.drawing.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__drawing.html)
-[drawing](https://gammasoft71.github.io/xtd/reference_guides/latest/group__drawing.html)
-- [![forms](/pictures/xtd.forms.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) 
-[forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html)
-- [![io](/pictures/xtd.io.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__io.html)
-[io](https://gammasoft71.github.io/xtd/reference_guides/latest/group__io.html)
-- [![media](/pictures/xtd.media.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__media.html)
-[media](https://gammasoft71.github.io/xtd/reference_guides/latest/group__media.html)
-- [![network](/pictures/xtd.net.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__net.html)
-[network](https://gammasoft71.github.io/xtd/reference_guides/latest/group__net.html)
-- [![threading](/pictures/xtd.threading.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__threading.html)
-[threading](https://gammasoft71.github.io/xtd/reference_guides/latest/group__threading.html)
-- [![timers](/pictures/xtd.timers.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__timers.html)
-[timers](https://gammasoft71.github.io/xtd/reference_guides/latest/group__timers.html)
-- [![tunit](/pictures/xtd.tunit.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html)
-[test](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html)
+- [![xtd](/pictures/xtd32.png)](https://gammasoft71.github.io/xtd/reference_guides/latest) [xtd](https://gammasoft71.github.io/xtd/reference_guides/latest)
+- [![cmake](/pictures/xtd.cmake.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html) [cmake](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html)
+- [![core](/pictures/xtd.core.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html) [core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html)
+- [![delegates](/pictures/xtd.delegates.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__delegates.html) [delegates](https://gammasoft71.github.io/xtd/reference_guides/latest/group__delegates.html)
+- [![diagnostics](/pictures/xtd.diagnostics.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__diagnostics.html) [diagnostics](https://gammasoft71.github.io/xtd/reference_guides/latest/group__diagnostics.html)
+- [![drawing](/pictures/xtd.drawing.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__drawing.html) [drawing](https://gammasoft71.github.io/xtd/reference_guides/latest/group__drawing.html)
+- [![forms](/pictures/xtd.forms.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) [forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html)
+- [![io](/pictures/xtd.io.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__io.html) [io](https://gammasoft71.github.io/xtd/reference_guides/latest/group__io.html)
+- [![media](/pictures/xtd.media.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__media.html) [media](https://gammasoft71.github.io/xtd/reference_guides/latest/group__media.html)
+- [![network](/pictures/xtd.net.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__net.html) [network](https://gammasoft71.github.io/xtd/reference_guides/latest/group__net.html)
+- [![threading](/pictures/xtd.threading.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__threading.html) [threading](https://gammasoft71.github.io/xtd/reference_guides/latest/group__threading.html)
+- [![timers](/pictures/xtd.timers.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__timers.html) [timers](https://gammasoft71.github.io/xtd/reference_guides/latest/group__timers.html)
+- [![tunit](/pictures/xtd.tunit.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html) [test](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html)
 
 - 🟢 Beginner level
 - 🟡 Intermediate level
