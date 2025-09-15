@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "directory_info.hpp"
+#include "search_option.hpp"
 #include "../array.hpp"
 #include "../core_export.hpp"
 #include "../date_time.hpp"
@@ -726,7 +727,28 @@ namespace xtd {
       /// @remarks The xtd::io::directory::enumerate_directories and xtd::io::directory::get_directories methods differ as follows: When you use xtd::io::directory::enumerate_directories, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_directories, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_directories can be more efficient.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
       static xtd::array<xtd::string> get_directories(const xtd::string& path, const xtd::string& search_pattern);
-      
+      /// @brief eturns the names of the subdirectories (including their paths) that match the specified search pattern in the specified directory, and optionally searches subdirectories.
+      /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
+      /// @param search_pattern The search string to match against the names of subdirectories in path. This parameter can contain a combination of valid literal and wildcard characters, but it doesn't support regular expressions.
+      /// @param search_option One of the enumeration values that specifies whether the search operation should include all subdirectories or only the current directory.
+      /// @return An array of the full names (including paths) of the subdirectories that match the specified criteria, or an empty array if no directories are found.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @remarks This method returns all subdirectories directly under the specified directory that match the specified search pattern. If the specified directory has no subdirectories, or no subdirectories match the search_pattern parameter, this method returns an empty array. Only the top directory is searched.
+      /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
+      /// | Wildcard specifier | Matches                                   |
+      /// | ------------------ | ----------------------------------------- |
+      /// | * (asterisk)       | Zero or more characters in that position. |
+      /// | ? (question mark)  | Zero or one character in that position.   |
+      /// @remarks Characters other than the wildcard are literal characters. For example, the search_attern string "*t" searches for all names in path ending with the letter "t". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
+      /// @remarks search_pattern cannot end in two periods ("..") or contain two periods ("..") followed by xtd::io::path::directory_separator_char or xtd::io::path::alt_directory_separator_char, nor can it contain any invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @remarks The path parameter can specify relative or absolute path information, and is not case-sensitive. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks The xtd::io::directory::enumerate_directories and xtd::io::directory::get_directories methods differ as follows: When you use xtd::io::directory::enumerate_directories, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_directories, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_directories can be more efficient.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
+      static xtd::array<xtd::string> get_directories(const xtd::string& path, const xtd::string& search_pattern, xtd::io::search_option search_option);
       /// @brief Returns the volume information, root information, or both for the specified path.
       /// @param path The path of a file or directory.
       /// @return A string that contains the volume information, root information, or both for the specified path.
@@ -886,7 +908,62 @@ namespace xtd {
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
       static xtd::array<xtd::string> get_files(const xtd::string& path, const xtd::string& search_pattern);
-      
+      /// @brief Returns the names of files (including their paths) that match the specified search pattern in the specified directory, using a value to determine whether to search subdirectories.
+      /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
+      /// @param search_pattern The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
+      /// @param search_option One of the enumeration values that specifies whether the search operation should include all subdirectories or only the current directory.
+      /// @return An array of the full names (including paths) for the files in the specified directory that match the specified search pattern, or an empty array if no files are found.
+      /// @exception xtd::io::io_exception The directory specified by path is a file.
+      /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.
+      /// @exception xtd::io::directory_not_found_exception The specified path is invalid (for example, it is on an unmapped drive).
+      /// @exception xtd::not_supported_exception path contains a colon character (:) that is not part of a drive label ("C:\").
+      /// @par Examples
+      /// The following example counts the number of files that begin with the specified letter.
+      /// ```cpp
+      /// #include <xtd/xtd>
+      ///
+      /// using namespace xtd;
+      /// using namespace xtd::collections::generic;
+      /// using namespace xtd::io;
+      ///
+      /// class program {
+      /// public:
+      ///   static auto main() {
+      ///     try {
+      ///       // Only get files that begin with the letter "c".
+      ///       list<string> dirs = directory::get_files(R"(c:\", "c*)");
+      ///       console::write_line("The number of files starting with c is {0}.", dirs.size());
+      ///       for (string dir : dirs) {
+      ///         console::write_line(dir);
+      ///       }
+      ///     } catch (const exception& e) {
+      ///       console::write_line("The process failed: {0}", e.to_string());
+      ///     }
+      ///   }
+      /// };
+      ///
+      /// startup_(program::main);
+      /// ```
+      /// @remarks The returned file names are appended to the supplied path parameter and the order of the returned file names is not guaranteed; use the std::sort method if a specific sort order is required.
+      /// @remarks search_pattern can be a combination of literal and wildcard characters, but it doesn't support regular expressions. The following wildcard specifiers are permitted in search_pattern.
+      /// | Wildcard specifier | Matches                                   |
+      /// | ------------------ | ----------------------------------------- |
+      /// | * (asterisk)       | Zero or more characters in that position. |
+      /// | ? (question mark)  | Zero or one character in that position.   |
+      /// @remarks Characters other than the wildcard are literal characters. For example, the search_pattern string "*t" searches for all names in path ending with the letter "t". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
+      /// @remarks search_pattern cannot end in two periods ("..") or contain two periods ("..") followed by xtd::io::path::directory_separator_char or xtd::io::path::alt_directory_separator_char, nor can it contain any invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
+      /// @note When you use the asterisk wildcard character in a search_pattern such as "*.txt", the number of characters in the specified extension affects the search as follows:
+      /// * If the specified extension is exactly three characters long, the method returns files with extensions that begin with the specified extension. For example, "*.xls" returns both "book.xls" and "book.xlsx".
+      /// * In all other cases, the method returns files that exactly match the specified extension. For example, "*.ai" returns "file.ai" but not "file.aif".
+      /// <br>When you use the question mark wildcard character, this method returns only files that match the specified file extension. For example, given two files, "file1.txt" and "file1.txtother", in a directory, a search pattern of "file?.txt" returns just the first file, whereas a search pattern of "file*.txt" returns both files.
+      /// @note Because this method checks against file names with both the 8.3 file name format and the long file name format, a search pattern similar to "*1*.txt" may return unexpected file names. For example, using a search pattern of "*1*.txt" returns "longfilename.txt" because the equivalent 8.3 file name format is "LONGFI~1.TXT".
+      /// @remarks The xtd::io::directory::enumerate_files and xtd::io::directory::get_files methods differ as follows: When you use xtd::io::directory::enumerate_files, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_files, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_files can be more efficient.
+      /// @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
+      /// @remarks The path parameter is not case-sensitive.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
+      static xtd::array<xtd::string> get_files(const xtd::string& path, const xtd::string& search_pattern, xtd::io::search_option search_option);
+
       /// @brief Returns the names of all files and subdirectories in a specified path.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
       /// @return An array of the names of files and subdirectories in the specified directory, or an empty array if no files or subdirectories are found.

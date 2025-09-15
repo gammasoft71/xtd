@@ -229,11 +229,21 @@ string directory::get_current_directory() {
 }
 
 xtd::array<string> directory::get_directories(const string& path) {
-  return get_directories(path, "*");
+  return get_directories(path, "*", io::search_option::top_directory_only);
 }
 
 xtd::array<string> directory::get_directories(const string& path, const string& search_pattern) {
-  return {std::begin(enumerate_directories(path, search_pattern)), std::end(enumerate_directories(path, search_pattern))};
+  return get_directories(path, search_pattern, io::search_option::top_directory_only);
+}
+
+xtd::array<xtd::string> directory::get_directories(const xtd::string& path, const xtd::string& search_pattern, xtd::io::search_option search_option) {
+  if (search_option == io::search_option::top_directory_only) return {std::begin(enumerate_directories(path, search_pattern)), std::end(enumerate_directories(path, search_pattern))};
+  auto directories = list<xtd::string> {};
+  for (auto directory : get_directories(path, search_pattern, io::search_option::top_directory_only)) {
+    directories.add(directory);
+    directories.add_range(get_directories(directory, search_pattern, io::search_option::all_directories));
+  }
+  return directories.to_array();
 }
 
 string directory::get_directory_root(const string& path) {
@@ -241,11 +251,19 @@ string directory::get_directory_root(const string& path) {
 }
 
 xtd::array<string> directory::get_files(const string& path) {
-  return get_files(path, "*");
+  return get_files(path, "*", io::search_option::top_directory_only);
 }
 
 xtd::array<string> directory::get_files(const string& path, const string& search_pattern) {
-  return {std::begin(enumerate_files(path, search_pattern)), std::end(enumerate_files(path, search_pattern))};
+  return get_files(path, search_pattern, io::search_option::top_directory_only);
+}
+
+xtd::array<xtd::string> directory::get_files(const xtd::string& path, const xtd::string& search_pattern, io::search_option search_option) {
+  if (search_option == io::search_option::top_directory_only) return {std::begin(enumerate_files(path, search_pattern)), std::end(enumerate_files(path, search_pattern))};
+  auto files = list<xtd::string> {};
+  for (auto directory : get_directories(path, search_pattern, io::search_option::all_directories))
+    files.add_range(get_files(directory, search_pattern, io::search_option::top_directory_only));
+  return files;
 }
 
 xtd::array<string> directory::get_file_system_entries(const string& path) {
