@@ -416,9 +416,9 @@ namespace xtd {
       /// @}
       
       /// @cond
-      static inline bool __should_aborted__(bool condition, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {return __should_aborted__(condition, xtd::string::empty_string, stack_frame);}
-      static inline bool __should_aborted__(bool condition, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {return __should_aborted__(condition, message, xtd::string::empty_string, stack_frame);}
-      static inline bool __should_aborted__(bool condition, const xtd::string& message, const xtd::string& detail_message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      static inline bool __should_aborted__(const xtd::diagnostics::stack_frame& stack_frame, bool condition) {return __should_aborted__(stack_frame, condition, xtd::string::empty_string);}
+      static inline bool __should_aborted__(const xtd::diagnostics::stack_frame& stack_frame, bool condition, const xtd::string& message) {return __should_aborted__(stack_frame, condition, message, xtd::string::empty_string);}
+      static inline bool __should_aborted__(const xtd::diagnostics::stack_frame& stack_frame, bool condition, const xtd::string& message, const xtd::string& detail_message) {
         #if defined(TRACE)
         auto result = xtd::diagnostics::debug::assert_dialog(condition, message, detail_message, stack_frame);
         if (result == xtd::diagnostics::assert_dialog_result::abort) xtd::environment::exit(EXIT_FAILURE);

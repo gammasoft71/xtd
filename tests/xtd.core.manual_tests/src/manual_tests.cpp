@@ -1,20 +1,14 @@
+#define NDEBUG
 #include <xtd/xtd>
 
 auto main() -> int {
-  /*
-  auto numbers = array {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+  auto items = array {10, 20, 30};
   
-  // Gets distinct numbers with xtd::collections::extensions::enumerable extension.
-  auto query1 = numbers | select<bool>([](auto n)->bool {return n % 2 == 0;});
-  console::write_line("query1 = {}", query1);
-   */
-  
-  auto numbers = list {2, 7, 3, 1, 4, 10, 5, 6, 8, 9};
-  console::write_line("numbers = {}", numbers | order_by([](auto n) {return n;}));
-  console::write_line("numbers = {}", numbers | order_by_descending([](auto n) {return n;}));
+  //assert_(items.count() >= 4, "The items count is less than 4");
+  tunit::assert::is_greater_or_equal(items.count(), 4_z, "The items count is less than 4");
+  //println(items[3]);
 }
 
-// This code produces the following output :
+// This code produces the following outputs :
 //
-// distinct numbers = [4, 49, 9, 1, 16, 100, 25, 36, 64, 81]
-// distinct numbers = [4, 49, 9, 1, 16, 100, 25, 36, 64, 81]
+// 20

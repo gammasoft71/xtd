@@ -71,15 +71,15 @@ void debug::use_global_lock(bool use_global_lock) noexcept {
 }
 
 void debug::cassert(bool condition, const xtd::diagnostics::stack_frame& stack_frame) {
-  if (__should_aborted__(condition, string::empty_string, stack_frame)) debug_break_();
+  if (__should_aborted__(stack_frame, condition, string::empty_string)) debug_break_();
 }
 
 void debug::cassert(bool condition, const string& message, const xtd::diagnostics::stack_frame& stack_frame) {
-  if (__should_aborted__(condition, message, stack_frame)) debug_break_();
+  if (__should_aborted__(stack_frame, condition, message)) debug_break_();
 }
 
 void debug::cassert(bool condition, const string& message, const string& detail_message, const xtd::diagnostics::stack_frame& stack_frame) {
-  if (__should_aborted__(condition, message, detail_message, stack_frame)) debug_break_();
+  if (__should_aborted__(stack_frame, condition, message, detail_message)) debug_break_();
 }
 
 void debug::indent() noexcept {
