@@ -1,2 +1,2 @@
 #pragma once
-#include "assert.hpp"
+#include <xtd/diagnostics/assert.hpp>
