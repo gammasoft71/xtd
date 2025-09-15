@@ -11,6 +11,7 @@
 #include "assert_error.hpp"
 #include "ignore_error.hpp"
 #include "settings.hpp"
+#include <xtd/environment>
 #include <xtd/math>
 #include <xtd/static>
 #include <xtd/types>
