@@ -61,24 +61,6 @@ void base_assert::error(const string& expected, const string& actual, const stri
   }
 }
 
-void base_assert::fail(const string& expected, const string& actual, const string& message, const stack_frame& stack_frame) {
-  if (test::has_current_test()) {
-    if (stack_frame != stack_frame::empty()) test::current_test().stack_frame_ = stack_frame;
-    test::current_test().message_ = message == "" && expected == "" && actual == "" ? "Test failed"_s : message;
-    test::current_test().actual_ = actual;
-    test::current_test().expect_ = expected;
-    test::current_test().status_ = test::test_status::failed;
-  }
-  
-  if (!test::has_current_unit_test() && is_debug()) {
-    auto msg = message != ""_s ? message : "assertion failed!"_s; // Force asyle do not remove {}
-    assert_(false, msg);
-  } else {
-    if (settings::default_settings().break_on_failure() && diagnostics::debugger::is_attached()) debug_break_();
-    throw assert_error(message != ""_s ? message : "assertion failed!"_s);
-  }
-}
-
 void base_assert::ignore(const stack_frame& stack_frame) {
   ignore(string::empty_string, stack_frame);
 }
@@ -113,6 +95,14 @@ string base_assert::join_items(const string& str) {
   return __tunit_join__items(str);
 }
 
-bool base_assert::is_debug() noexcept {
-  return environment::compiler_version().build_type() == build_type::debug;
+bool base_assert::test_fail(const string& expected, const string& actual, const string& message, const stack_frame& stack_frame) {
+  if (test::has_current_test()) {
+    if (stack_frame != stack_frame::empty()) test::current_test().stack_frame_ = stack_frame;
+    test::current_test().message_ = message == "" && expected == "" && actual == "" ? "Test failed"_s : message;
+    test::current_test().actual_ = actual;
+    test::current_test().expect_ = expected;
+    test::current_test().status_ = test::test_status::failed;
+  }
+  
+  return test::has_current_unit_test();
 }
