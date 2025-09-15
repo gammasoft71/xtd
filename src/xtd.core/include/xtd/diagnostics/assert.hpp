@@ -23,4 +23,4 @@
 /// The following example shows how to use #assert_ macro with message.
 /// @include assert_with_message.cpp
 #define assert_(...) \
-  if (xtd::diagnostics::debug::__should_aborted__(__VA_ARGS__)) debug_break_()
+  if (xtd::diagnostics::debug::__should_aborted__(xtd::diagnostics::stack_frame::current(), __VA_ARGS__)) debug_break_()
