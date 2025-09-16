@@ -963,7 +963,7 @@ namespace xtd {
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
       static xtd::array<xtd::string> get_files(const xtd::string& path, const xtd::string& search_pattern, xtd::io::search_option search_option);
-
+      
       /// @brief Returns the names of all files and subdirectories in a specified path.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
       /// @return An array of the names of files and subdirectories in the specified directory, or an empty array if no files or subdirectories are found.
