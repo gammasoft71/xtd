@@ -1,2 +1,2 @@
 #pragma once
-#include "hash_set.hpp"
+#include <xtd/collections/generic/hash_set.hpp>

@@ -1,2 +1,2 @@
 #pragma once
-#include "uint16.hpp"
+#include <xtd/literals/uint16.hpp>

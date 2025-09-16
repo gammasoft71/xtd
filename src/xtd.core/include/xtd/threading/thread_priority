@@ -1,2 +1,2 @@
 #pragma once
-#include "thread_priority.hpp"
+#include <xtd/threading/thread_priority.hpp>

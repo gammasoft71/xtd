@@ -1,2 +1,2 @@
 #pragma once
-#include "architecture_id.hpp"
+#include <xtd/architecture_id.hpp>

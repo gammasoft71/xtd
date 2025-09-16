@@ -1,2 +1,2 @@
 #pragma once
-#include "equality_comparer.hpp"
+#include <xtd/collections/generic/equality_comparer.hpp>

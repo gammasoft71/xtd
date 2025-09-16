@@ -1,2 +1,2 @@
 #pragma once
-#include "stack.hpp"
+#include <xtd/collections/stack.hpp>

@@ -1,2 +1,2 @@
 #pragma once
-#include "idictionary.hpp"
+#include <xtd/collections/generic/idictionary.hpp>

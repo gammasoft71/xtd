@@ -1,2 +1,2 @@
 #pragma once
-#include "dns.hpp"
+#include <xtd/net/dns.hpp>

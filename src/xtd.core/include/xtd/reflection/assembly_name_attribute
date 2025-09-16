@@ -1,2 +1,2 @@
 #pragma once
-#include "assembly_name_attribute.hpp"
+#include <xtd/reflection/assembly_name_attribute.hpp>

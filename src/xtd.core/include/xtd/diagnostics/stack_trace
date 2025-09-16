@@ -1,2 +1,2 @@
 #pragma once
-#include "stack_trace.hpp"
+#include <xtd/diagnostics/stack_trace.hpp>

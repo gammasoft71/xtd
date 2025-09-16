@@ -1,2 +1,2 @@
 #pragma once
-#include "new_shared_ptr_object.hpp"
+#include <xtd/new_shared_ptr_object.hpp>

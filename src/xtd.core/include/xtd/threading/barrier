@@ -1,2 +1,2 @@
 #pragma once
-#include "barrier.hpp"
+#include <xtd/threading/barrier.hpp>

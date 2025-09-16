@@ -1,2 +1,2 @@
 #pragma once
-#include "trace_event_type.hpp"
+#include <xtd/diagnostics/trace_event_type.hpp>

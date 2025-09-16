@@ -1,2 +1,2 @@
 #pragma once
-#include "slong_object.hpp"
+#include <xtd/slong_object.hpp>

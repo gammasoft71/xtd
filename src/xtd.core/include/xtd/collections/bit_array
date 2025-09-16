@@ -1,2 +1,2 @@
 #pragma once
-#include "bit_array.hpp"
+#include <xtd/collections/bit_array.hpp>

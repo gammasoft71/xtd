@@ -1,2 +1,2 @@
 #pragma once
-#include "process_priority_class.hpp"
+#include <xtd/diagnostics/process_priority_class.hpp>
