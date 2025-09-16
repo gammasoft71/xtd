@@ -598,9 +598,9 @@ inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, char>(s
           unsigned int low  = 0xdc00 + ((codepoint - 0x10000) & 0x3ff);
           out.push_back(static_cast<xtd::wchar>(high));
           out.push_back(static_cast<xtd::wchar>(low));
-        } else if (codepoint < 0xd800 || codepoint >= 0xe000) {
+        } else if (codepoint < 0xd800 || codepoint >= 0xe000)
           out.push_back(static_cast<xtd::wchar>(codepoint));
-        } else {
+        else {
           // Surrogate range in input → replace
           out.push_back(0xfffd);
         }
@@ -665,9 +665,9 @@ inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::ch
           unsigned int low  = 0xdc00 + ((codepoint - 0x10000) & 0x3ff);
           out.push_back(static_cast<xtd::wchar>(high));
           out.push_back(static_cast<xtd::wchar>(low));
-        } else if (codepoint < 0xd800 || codepoint >= 0xe000) {
+        } else if (codepoint < 0xd800 || codepoint >= 0xe000)
           out.push_back(static_cast<xtd::wchar>(codepoint));
-        } else {
+        else {
           // Surrogate range in input → replace
           out.push_back(0xfffd);
         }
@@ -1041,9 +1041,9 @@ inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, char>(c
           unsigned int low  = 0xdc00 + ((codepoint - 0x10000) & 0x3ff);
           out.push_back(static_cast<xtd::wchar>(high));
           out.push_back(static_cast<xtd::wchar>(low));
-        } else if (codepoint < 0xd800 || codepoint >= 0xe000) {
+        } else if (codepoint < 0xd800 || codepoint >= 0xe000)
           out.push_back(static_cast<xtd::wchar>(codepoint));
-        } else {
+        else {
           // Surrogate range in input → replace
           out.push_back(0xfffd);
         }
@@ -1108,9 +1108,9 @@ inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::ch
           unsigned int low  = 0xdc00 + ((codepoint - 0x10000) & 0x3ff);
           out.push_back(static_cast<xtd::wchar>(high));
           out.push_back(static_cast<xtd::wchar>(low));
-        } else if (codepoint < 0xd800 || codepoint >= 0xe000) {
+        } else if (codepoint < 0xd800 || codepoint >= 0xe000)
           out.push_back(static_cast<xtd::wchar>(codepoint));
-        } else {
+        else {
           // Surrogate range in input → replace
           out.push_back(0xfffd);
         }
