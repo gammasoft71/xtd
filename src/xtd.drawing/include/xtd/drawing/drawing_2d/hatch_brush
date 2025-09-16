@@ -1,2 +1,2 @@
 #pragma once
-#include "hatch_brush.hpp"
+#include <xtd/drawing/drawing_2d/hatch_brush.hpp>

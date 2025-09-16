@@ -1,2 +1,2 @@
 #pragma once
-#include "buffered_graphics.hpp"
+#include <xtd/drawing/buffered_graphics.hpp>

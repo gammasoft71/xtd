@@ -1,2 +1,2 @@
 #pragma once
-#include "find_dialog.hpp"
+#include <xtd/forms/find_dialog.hpp>

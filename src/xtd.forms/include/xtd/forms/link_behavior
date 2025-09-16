@@ -1,2 +1,2 @@
 #pragma once
-#include "link_behavior.hpp"
+#include <xtd/forms/link_behavior.hpp>

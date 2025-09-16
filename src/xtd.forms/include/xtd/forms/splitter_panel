@@ -1,2 +1,2 @@
 #pragma once
-#include "splitter_panel.hpp"
+#include <xtd/forms/splitter_panel.hpp>

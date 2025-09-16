@@ -1,2 +1,2 @@
 #pragma once
-#include "boot_mode.hpp"
+#include <xtd/forms/boot_mode.hpp>

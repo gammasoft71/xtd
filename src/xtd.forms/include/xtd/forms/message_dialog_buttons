@@ -1,2 +1,2 @@
 #pragma once
-#include "message_dialog_buttons.hpp"
+#include <xtd/forms/message_dialog_buttons.hpp>

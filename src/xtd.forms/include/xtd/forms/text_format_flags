@@ -1,2 +1,2 @@
 #pragma once
-#include "text_format_flags.hpp"
+#include <xtd/forms/text_format_flags.hpp>

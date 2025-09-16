@@ -1,2 +1,2 @@
 #pragma once
-#include "component.hpp"
+#include <xtd/forms/component.hpp>

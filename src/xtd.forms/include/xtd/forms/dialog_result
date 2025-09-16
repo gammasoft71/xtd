@@ -1,2 +1,2 @@
 #pragma once
-#include "dialog_result.hpp"
+#include <xtd/forms/dialog_result.hpp>

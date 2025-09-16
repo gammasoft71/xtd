@@ -1,2 +1,2 @@
 #pragma once
-#include "magenta_colors.hpp"
+#include <xtd/drawing/magenta_colors.hpp>

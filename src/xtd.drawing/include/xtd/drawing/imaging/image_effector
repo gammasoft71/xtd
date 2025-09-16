@@ -1,2 +1,2 @@
 #pragma once
-#include "image_effector.hpp"
+#include <xtd/drawing/imaging/image_effector.hpp>

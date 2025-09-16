@@ -1,2 +1,2 @@
 #pragma once
-#include "blue_colors.hpp"
+#include <xtd/drawing/blue_colors.hpp>

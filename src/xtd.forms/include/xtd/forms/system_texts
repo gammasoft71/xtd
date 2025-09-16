@@ -1,2 +1,2 @@
 #pragma once
-#include "system_texts.hpp"
+#include <xtd/forms/system_texts.hpp>

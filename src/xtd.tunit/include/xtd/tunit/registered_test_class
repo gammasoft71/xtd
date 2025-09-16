@@ -1,2 +1,2 @@
 #pragma once
-#include "registered_test_class.hpp"
+#include <xtd/tunit/registered_test_class.hpp>

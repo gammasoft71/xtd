@@ -1,2 +1,2 @@
 #pragma once
-#include "lcd_style.hpp"
+#include <xtd/forms/lcd_style.hpp>

@@ -1,2 +1,2 @@
 #pragma once
-#include "power_line_status.hpp"
+#include <xtd/forms/power_line_status.hpp>

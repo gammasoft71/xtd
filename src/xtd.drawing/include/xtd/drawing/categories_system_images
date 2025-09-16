@@ -1,2 +1,2 @@
 #pragma once
-#include "categories_system_images.hpp"
+#include <xtd/drawing/categories_system_images.hpp>

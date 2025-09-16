@@ -1,2 +1,2 @@
 #pragma once
-#include "exception_dialog.hpp"
+#include <xtd/forms/exception_dialog.hpp>

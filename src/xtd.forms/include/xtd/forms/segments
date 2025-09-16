@@ -1,2 +1,2 @@
 #pragma once
-#include "segments.hpp"
+#include <xtd/forms/segments.hpp>

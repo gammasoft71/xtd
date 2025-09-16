@@ -1,2 +1,2 @@
 #pragma once
-#include "left_right_alignment.hpp"
+#include <xtd/forms/left_right_alignment.hpp>

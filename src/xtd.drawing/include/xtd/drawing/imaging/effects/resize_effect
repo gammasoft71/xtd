@@ -1,2 +1,2 @@
 #pragma once
-#include "resize_effect.hpp"
+#include <xtd/drawing/imaging/effects/resize_effect.hpp>

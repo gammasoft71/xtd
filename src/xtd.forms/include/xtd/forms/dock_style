@@ -1,2 +1,2 @@
 #pragma once
-#include "dock_style.hpp"
+#include <xtd/forms/dock_style.hpp>

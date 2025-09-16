@@ -1,2 +1,2 @@
 #pragma once
-#include "smoothing_mode.hpp"
+#include <xtd/drawing/drawing_2d/smoothing_mode.hpp>
