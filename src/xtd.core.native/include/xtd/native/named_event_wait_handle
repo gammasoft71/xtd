@@ -1,2 +1,2 @@
 #pragma once
-#include "named_event_wait_handle.hpp"
+#include <xtd/native/named_event_wait_handle.hpp>

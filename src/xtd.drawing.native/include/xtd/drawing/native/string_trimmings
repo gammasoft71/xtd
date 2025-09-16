@@ -1,2 +1,2 @@
 #pragma once
-#include "string_trimmings.hpp"
+#include <xtd/drawing/native/string_trimmings.hpp>

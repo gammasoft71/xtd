@@ -1,2 +1,2 @@
 #pragma once
-#include "cursors.hpp"
+#include <xtd/forms/native/cursors.hpp>

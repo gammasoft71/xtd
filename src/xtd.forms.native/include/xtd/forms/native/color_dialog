@@ -1,2 +1,2 @@
 #pragma once
-#include "color_dialog.hpp"
+#include <xtd/forms/native/color_dialog.hpp>

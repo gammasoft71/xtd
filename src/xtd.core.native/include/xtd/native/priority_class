@@ -1,2 +1,2 @@
 #pragma once
-#include "priority_class.hpp"
+#include <xtd/native/priority_class.hpp>

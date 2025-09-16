@@ -1,2 +1,2 @@
 #pragma once
-#include "content_alignment.hpp"
+#include <xtd/forms/native/content_alignment.hpp>

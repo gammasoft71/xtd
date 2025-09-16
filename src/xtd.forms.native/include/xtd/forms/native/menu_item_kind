@@ -1,2 +1,2 @@
 #pragma once
-#include "menu_item_kind.hpp"
+#include <xtd/forms/native/menu_item_kind.hpp>

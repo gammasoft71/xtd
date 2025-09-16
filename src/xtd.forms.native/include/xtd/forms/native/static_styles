@@ -1,2 +1,2 @@
 #pragma once
-#include "static_styles.hpp"
+#include <xtd/forms/native/static_styles.hpp>
