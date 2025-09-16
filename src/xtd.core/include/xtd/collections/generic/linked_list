@@ -1,2 +1,2 @@
 #pragma once
-#include "linked_list.hpp"
+#include <xtd/collections/generic/linked_list.hpp>

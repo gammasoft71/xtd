@@ -1,2 +1,2 @@
 #pragma once
-#include "single_object.hpp"
+#include <xtd/single_object.hpp>

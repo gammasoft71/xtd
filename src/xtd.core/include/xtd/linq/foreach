@@ -1,2 +1,2 @@
 #pragma once
-#include "foreach.hpp"
+#include <xtd/linq/foreach.hpp>

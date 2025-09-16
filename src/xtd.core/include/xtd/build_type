@@ -1,2 +1,2 @@
 #pragma once
-#include "build_type.hpp"
+#include <xtd/build_type.hpp>

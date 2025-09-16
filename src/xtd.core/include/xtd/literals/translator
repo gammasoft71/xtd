@@ -1,2 +1,2 @@
 #pragma once
-#include "translator.hpp"
+#include <xtd/literals/translator.hpp>

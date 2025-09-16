@@ -1,2 +1,2 @@
 #pragma once
-#include "decimal.hpp"
+#include <xtd/decimal.hpp>

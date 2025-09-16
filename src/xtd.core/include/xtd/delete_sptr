@@ -1,2 +1,2 @@
 #pragma once
-#include "delete_sptr.hpp"
+#include <xtd/delete_sptr.hpp>

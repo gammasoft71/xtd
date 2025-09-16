@@ -1,2 +1,2 @@
 #pragma once
-#include "assembly_product_attribute.hpp"
+#include <xtd/reflection/assembly_product_attribute.hpp>

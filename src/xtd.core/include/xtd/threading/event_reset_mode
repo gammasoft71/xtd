@@ -1,2 +1,2 @@
 #pragma once
-#include "event_reset_mode.hpp"
+#include <xtd/threading/event_reset_mode.hpp>

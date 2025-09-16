@@ -1,2 +1,2 @@
 #pragma once
-#include "secure_string.hpp"
+#include <xtd/security/secure_string.hpp>

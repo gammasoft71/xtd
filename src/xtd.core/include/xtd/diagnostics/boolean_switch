@@ -1,2 +1,2 @@
 #pragma once
-#include "boolean_switch.hpp"
+#include <xtd/diagnostics/boolean_switch.hpp>

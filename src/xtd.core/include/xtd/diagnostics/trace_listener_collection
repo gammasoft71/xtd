@@ -1,2 +1,2 @@
 #pragma once
-#include "trace_listener_collection.hpp"
+#include <xtd/diagnostics/trace_listener_collection.hpp>

@@ -1,2 +1,2 @@
 #pragma once
-#include "collection_operators.hpp"
+#include <xtd/collections/generic/extensions/collection_operators.hpp>

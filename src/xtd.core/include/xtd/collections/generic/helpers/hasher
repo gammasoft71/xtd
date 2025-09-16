@@ -1,2 +1,2 @@
 #pragma once
-#include "hasher.hpp"
+#include <xtd/collections/generic/helpers/hasher.hpp>

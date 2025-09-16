@@ -1,2 +1,2 @@
 #pragma once
-#include "wait_handle.hpp"
+#include <xtd/threading/wait_handle.hpp>

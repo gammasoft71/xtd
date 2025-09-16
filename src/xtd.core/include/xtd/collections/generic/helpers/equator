@@ -1,2 +1,2 @@
 #pragma once
-#include "equator.hpp"
+#include <xtd/collections/generic/helpers/equator.hpp>

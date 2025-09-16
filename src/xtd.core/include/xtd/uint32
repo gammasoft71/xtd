@@ -1,2 +1,2 @@
 #pragma once
-#include "uint32.hpp"
+#include <xtd/uint32.hpp>

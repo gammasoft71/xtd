@@ -1,2 +1,2 @@
 #pragma once
-#include "switch_base.hpp"
+#include <xtd/diagnostics/switch_base.hpp>
