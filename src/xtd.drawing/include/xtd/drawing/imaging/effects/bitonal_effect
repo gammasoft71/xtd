@@ -1,2 +1,2 @@
 #pragma once
-#include "bitonal_effect.hpp"
+#include <xtd/drawing/imaging/effects/bitonal_effect.hpp>

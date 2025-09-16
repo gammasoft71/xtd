@@ -1,2 +1,2 @@
 #pragma once
-#include "battery_charge_status.hpp"
+#include <xtd/forms/battery_charge_status.hpp>

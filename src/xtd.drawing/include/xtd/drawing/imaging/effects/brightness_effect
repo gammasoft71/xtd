@@ -1,2 +1,2 @@
 #pragma once
-#include "brightness_effect.hpp"
+#include <xtd/drawing/imaging/effects/brightness_effect.hpp>

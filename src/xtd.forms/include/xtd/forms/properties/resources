@@ -1,2 +1,2 @@
 #pragma once
-#include "resources.hpp"
+#include <xtd/forms/properties/resources.hpp>

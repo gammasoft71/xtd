@@ -1,2 +1,2 @@
 #pragma once
-#include "link_label.hpp"
+#include <xtd/forms/link_label.hpp>

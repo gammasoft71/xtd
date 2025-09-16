@@ -1,2 +1,2 @@
 #pragma once
-#include "scale_effect.hpp"
+#include <xtd/drawing/imaging/effects/scale_effect.hpp>

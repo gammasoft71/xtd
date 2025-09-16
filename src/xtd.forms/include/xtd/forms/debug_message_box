@@ -1,2 +1,2 @@
 #pragma once
-#include "debug_message_box.hpp"
+#include <xtd/forms/debug_message_box.hpp>

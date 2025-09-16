@@ -1,2 +1,2 @@
 #pragma once
-#include "interpolation_mode.hpp"
+#include <xtd/drawing/drawing_2d/interpolation_mode.hpp>

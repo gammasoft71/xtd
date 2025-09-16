@@ -1,2 +1,2 @@
 #pragma once
-#include "encoder_parameter.hpp"
+#include <xtd/drawing/imaging/encoder_parameter.hpp>

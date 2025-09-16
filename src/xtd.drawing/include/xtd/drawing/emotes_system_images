@@ -1,2 +1,2 @@
 #pragma once
-#include "emotes_system_images.hpp"
+#include <xtd/drawing/emotes_system_images.hpp>
