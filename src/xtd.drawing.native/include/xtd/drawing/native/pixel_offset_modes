@@ -1,2 +1,2 @@
 #pragma once
-#include "pixel_offset_modes.hpp"
+#include <xtd/drawing/native/pixel_offset_modes.hpp>

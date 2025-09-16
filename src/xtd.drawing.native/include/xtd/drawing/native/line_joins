@@ -1,2 +1,2 @@
 #pragma once
-#include "line_joins.hpp"
+#include <xtd/drawing/native/line_joins.hpp>

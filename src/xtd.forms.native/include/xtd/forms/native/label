@@ -1,2 +1,2 @@
 #pragma once
-#include "label.hpp"
+#include <xtd/forms/native/label.hpp>

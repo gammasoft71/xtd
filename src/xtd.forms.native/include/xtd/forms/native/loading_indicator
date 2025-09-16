@@ -1,2 +1,2 @@
 #pragma once
-#include "loading_indicator.hpp"
+#include <xtd/forms/native/loading_indicator.hpp>

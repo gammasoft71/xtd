@@ -1,2 +1,2 @@
 #pragma once
-#include "thread.hpp"
+#include <xtd/native/thread.hpp>

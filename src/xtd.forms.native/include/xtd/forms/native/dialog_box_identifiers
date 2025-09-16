@@ -1,2 +1,2 @@
 #pragma once
-#include "dialog_box_identifiers.hpp"
+#include <xtd/forms/native/dialog_box_identifiers.hpp>

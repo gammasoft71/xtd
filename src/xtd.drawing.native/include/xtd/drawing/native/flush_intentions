@@ -1,2 +1,2 @@
 #pragma once
-#include "flush_intentions.hpp"
+#include <xtd/drawing/native/flush_intentions.hpp>
