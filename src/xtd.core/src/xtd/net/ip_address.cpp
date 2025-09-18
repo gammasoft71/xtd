@@ -248,7 +248,7 @@ ip_address ip_address::parse(const string& str) {
   
   block_scope_(list<string> address_parts = work_ip_string.split(':')) {
     for (auto it = address_parts.items().begin(); it != address_parts.items().end(); ++it) {
-      if (it->empty()) {
+      if (xtd::string::is_empty(*it)) {
         *it = "0";
         auto fill_count = 8 - address_parts.items().size();
         for (auto fc = 0_z; fc < fill_count; ++fc)

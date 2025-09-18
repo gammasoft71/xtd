@@ -781,7 +781,7 @@ array<string> style_sheet::split_values_from_text(const string& text) const noex
   };
   list<string> result;
   auto value = text.trim();
-  while (!value.empty()) {
+  while (!xtd::string::is_empty(value)) {
     auto color_keyword = string_starts_with_any(value, color_keywords);
     if (color_keyword != "") {
       result.add(value.substring(0, value.find(')') + 1).trim());
