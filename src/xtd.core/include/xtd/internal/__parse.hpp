@@ -121,7 +121,7 @@ inline value_t __parse_floating_point(const std::basic_string<char_t>& str, int 
   }
   
   result = sign < 0 ? -result : result;
-  if (result < std::numeric_limits<value_t>::lowest() || result > std::numeric_limits<value_t>::max()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::overflow);
+  if (static_cast<value_t>(result) < std::numeric_limits<value_t>::lowest() || static_cast<value_t>(result) > std::numeric_limits<value_t>::max()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::overflow);
   return static_cast<value_t>(result);
 }
 
@@ -137,7 +137,7 @@ inline value_t __parse_signed(const std::basic_string<char_t>& str, int base, in
   }
   
   result = sign < 0 ? -result : result;
-  if (result < std::numeric_limits<value_t>::lowest() || result > std::numeric_limits<value_t>::max()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::overflow);
+  if (static_cast<value_t>(result) < std::numeric_limits<value_t>::lowest() || static_cast<value_t>(result) > std::numeric_limits<value_t>::max()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::overflow);
   return static_cast<value_t>(result);
 }
 
@@ -184,7 +184,7 @@ inline value_t __parse_floating_point_number(const std::basic_string<char_t>& s,
   }
   
   result = sign < 0 ? -result : result;
-  if (result < std::numeric_limits<value_t>::lowest() || result > std::numeric_limits<value_t>::max()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::overflow);
+  if (static_cast<value_t>(result) < std::numeric_limits<value_t>::lowest() || static_cast<value_t>(result) > std::numeric_limits<value_t>::max()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::overflow);
   return static_cast<value_t>(result);
 }
 

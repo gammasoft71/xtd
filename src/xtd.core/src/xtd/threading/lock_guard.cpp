@@ -54,10 +54,10 @@ lock_guard::~lock_guard() {
 void lock_guard::enter() {
   data::mutexes_access.wait_one();
   if (data_->ptr) {
-    if (data::mutexes.contains(data_->ptr)) data_ = data::mutexes[data_->ptr];
+    if (data::mutexes.contains_key(data_->ptr)) data_ = data::mutexes[data_->ptr];
     else data::mutexes[data_->ptr] = data_;
   } else {
-    if (data::named_mutexes.contains(data_->str)) data_ = data::named_mutexes[data_->str];
+    if (data::named_mutexes.contains_key(data_->str)) data_ = data::named_mutexes[data_->str];
     else data::named_mutexes[data_->str] = data_;
   }
   ++data_->used_count;
@@ -68,8 +68,8 @@ void lock_guard::enter() {
   } catch (...) {
     data::mutexes_access.wait_one();
     if (data_->used_count) --data_->used_count;
-    if (data_->ptr && !data_->used_count && data::mutexes.contains(data_->ptr)) data::mutexes.remove(data_->ptr);
-    else if (!data_->used_count && data::named_mutexes.contains(data_->str)) data::named_mutexes.remove(data_->str);
+    if (data_->ptr && !data_->used_count && data::mutexes.contains_key(data_->ptr)) data::mutexes.remove(data_->ptr);
+    else if (!data_->used_count && data::named_mutexes.contains_key(data_->str)) data::named_mutexes.remove(data_->str);
     data::mutexes_access.release_mutex();
     throw;
   }
@@ -80,7 +80,7 @@ void lock_guard::exit() {
   
   data::mutexes_access.wait_one();
   if (data_->used_count) --data_->used_count;
-  if (data_->ptr && !data_->used_count && data::mutexes.contains(data_->ptr)) data::mutexes.remove(data_->ptr);
-  else if (!data_->used_count && data::named_mutexes.contains(data_->str)) data::named_mutexes.remove(data_->str);
+  if (data_->ptr && !data_->used_count && data::mutexes.contains_key(data_->ptr)) data::mutexes.remove(data_->ptr);
+  else if (!data_->used_count && data::named_mutexes.contains_key(data_->str)) data::named_mutexes.remove(data_->str);
   data::mutexes_access.release_mutex();
 }
