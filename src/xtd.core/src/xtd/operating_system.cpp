@@ -52,9 +52,9 @@ const xtd::version& operating_system::version() const noexcept {
 }
 
 string operating_system::version_string() const noexcept {
-  if (!version_string_.empty()) return version_string_;
+  if (!xtd::string::is_empty(version_string_)) return version_string_;
   version_string_ = string::format("{} {}", name(), version_.to_string(version_.build() >= 0 ? 3 : 2));
-  if (!service_pack_.empty()) version_string_ += string::format(" {}", service_pack());
+  if (!xtd::string::is_empty(service_pack_)) version_string_ += string::format(" {}", service_pack());
   return version_string_;
 }
 

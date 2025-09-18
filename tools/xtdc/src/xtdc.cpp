@@ -31,7 +31,7 @@ namespace xtdc_command {
       auto invalid_option = string::empty_string;
       list<string> command_args;
       if (process_xtdc_arguments(show_floppy, show_help, show_info, show_version, command_args, invalid_option) == false) {
-        if (!invalid_option.empty()) write_line_error(string::format("Unknown option: {0}", invalid_option));
+        if (!xtd::string::is_empty(invalid_option)) write_line_error(string::format("Unknown option: {0}", invalid_option));
         else write_line_error("Invalid parameters.");
         console::write_line(string::join("\n", get_help()));
         return EXIT_FAILURE;
@@ -482,7 +482,7 @@ namespace xtdc_command {
       auto name = string::empty_string;
       auto path = string::empty_string;
       if (!process_add_arguments(args, show_help, type, name, path, sdk, invalid_option)) {
-        if (!invalid_option.empty()) write_line_error(string::format("Unknown option: {0}", invalid_option));
+        if (!xtd::string::is_empty(invalid_option)) write_line_error(string::format("Unknown option: {0}", invalid_option));
         else write_line_error("Invalid parameters");
         console::write_line(string::join("\n", get_add_help()));
         return EXIT_FAILURE;
@@ -493,11 +493,11 @@ namespace xtdc_command {
         return EXIT_SUCCESS;
       }
       
-      if (type.empty()) type = "gui";
-      if (sdk.empty()) sdk = "xtd";
-      if (name.empty()) name = get_project_name_from_path(path);
+      if (xtd::string::is_empty(type)) type = "gui";
+      if (xtd::string::is_empty(sdk)) sdk = "xtd";
+      if (xtd::string::is_empty(name)) name = get_project_name_from_path(path);
       
-      if (name.empty()) {
+      if (xtd::string::is_empty(name)) {
         write_line_error("The name is empty.");
         return EXIT_FAILURE;
       }
@@ -535,7 +535,7 @@ namespace xtdc_command {
       auto target = string::empty_string;
       auto path = string::empty_string;
       if (!process_build_arguments(args, show_help, clean_first, release, target, path, invalid_option)) {
-        if (!invalid_option.empty()) write_line_error(string::format("Unknown option: {0}", invalid_option));
+        if (!xtd::string::is_empty(invalid_option)) write_line_error(string::format("Unknown option: {0}", invalid_option));
         else write_line_error("Invalid parameters");
         console::write_line(string::join("\n", get_build_help()));
         return EXIT_FAILURE;
@@ -564,7 +564,7 @@ namespace xtdc_command {
       auto release = false;
       auto path = string::empty_string;
       if (!process_clean_arguments(args, show_help, release, path, invalid_option)) {
-        if (!invalid_option.empty()) write_line_error(string::format("Unknown option: {0}", invalid_option));
+        if (!xtd::string::is_empty(invalid_option)) write_line_error(string::format("Unknown option: {0}", invalid_option));
         else write_line_error("Invalid parameters");
         console::write_line(string::join("\n", get_clean_help()));
         return EXIT_FAILURE;
@@ -591,7 +591,7 @@ namespace xtdc_command {
       auto name = string::empty_string;
       auto path = string::empty_string;
       if (!process_generate_arguments(args, show_help, type, name, path, sdk, invalid_option)) {
-        if (!invalid_option.empty()) write_line_error(string::format("Unknown option: {0}", invalid_option));
+        if (!xtd::string::is_empty(invalid_option)) write_line_error(string::format("Unknown option: {0}", invalid_option));
         else write_line_error("Invalid parameters");
         console::write_line(string::join("\n", get_generate_help()));
         return EXIT_FAILURE;
@@ -600,11 +600,11 @@ namespace xtdc_command {
         console::write_line(string::join("\n", get_generate_help()));
         return EXIT_SUCCESS;
       }
-      if (type.empty()) type = "gui";
-      if (sdk.empty()) sdk = "xtd";
-      if (name.empty()) name = get_project_name_from_path(path);
+      if (xtd::string::is_empty(type)) type = "gui";
+      if (xtd::string::is_empty(sdk)) sdk = "xtd";
+      if (xtd::string::is_empty(name)) name = get_project_name_from_path(path);
       
-      if (name.empty()) {
+      if (xtd::string::is_empty(name)) {
         console::write_line("The name is empty.");
         return EXIT_FAILURE;
       }
@@ -645,7 +645,7 @@ namespace xtdc_command {
       auto release = false;
       auto path = string::empty_string;
       if (!process_install_arguments(args, show_help, release, path, invalid_option)) {
-        if (!invalid_option.empty()) write_line_error(string::format("Unknown option: {0}", invalid_option));
+        if (!xtd::string::is_empty(invalid_option)) write_line_error(string::format("Unknown option: {0}", invalid_option));
         else write_line_error("Invalid parameters");
         console::write_line(string::join("\n", get_install_help()));
         return EXIT_FAILURE;
@@ -669,7 +669,7 @@ namespace xtdc_command {
       auto release = false;
       auto path = string::empty_string;
       if (!process_open_arguments(args, show_help, release, path, invalid_option)) {
-        if (!invalid_option.empty())
+        if (!xtd::string::is_empty(invalid_option))
           console::write_line("Unknown option: {0}", invalid_option);
         else
           write_line_error("Invalid parameters");
@@ -689,7 +689,7 @@ namespace xtdc_command {
       auto target = string::empty_string;
       auto path = string::empty_string;
       if (!process_update_arguments(args, show_help, target, path, invalid_option)) {
-        if (!invalid_option.empty())
+        if (!xtd::string::is_empty(invalid_option))
           console::write_line("Unknown option: {0}", invalid_option);
         else
           write_line_error("Invalid parameters");
@@ -711,7 +711,7 @@ namespace xtdc_command {
       auto target = string::empty_string;
       auto path = string::empty_string;
       if (!process_run_arguments(args, show_help, release, no_wait, target, path, invalid_option)) {
-        if (!invalid_option.empty())
+        if (!xtd::string::is_empty(invalid_option))
           console::write_line("Unknown option: {0}", invalid_option);
         else
           write_line_error("Invalid parameters");
@@ -722,7 +722,7 @@ namespace xtdc_command {
         console::write_line(string::join("\n", get_run_help()));
       else {
         auto result = project_management(get_project_full_path_from_path(path)).run(target, release, !no_wait);
-        if (!result.empty()) console::write_line(result);
+        if (!xtd::string::is_empty(result)) console::write_line(result);
       }
       return EXIT_SUCCESS;
     }
@@ -732,7 +732,7 @@ namespace xtdc_command {
       auto invalid_option = string::empty_string;
       auto path = string::empty_string;
       if (!process_targets_arguments(args, show_help, path, invalid_option)) {
-        if (!invalid_option.empty())
+        if (!xtd::string::is_empty(invalid_option))
           console::write_line("Unknown option: {0}", invalid_option);
         else
           write_line_error("Invalid parameters");
@@ -743,7 +743,7 @@ namespace xtdc_command {
         console::write_line(string::join("\n", get_targets_help()));
       else {
         auto targets = xtd::string::join(", ", project_management(get_project_full_path_from_path(path)).targets());
-        if (targets.empty()) targets = get_project_name_from_path(path);
+        if (xtd::string::is_empty(targets)) targets = get_project_name_from_path(path);
         console::write_line(targets);
       }
       return EXIT_SUCCESS;
@@ -755,7 +755,7 @@ namespace xtdc_command {
       auto release = false;
       auto path = string::empty_string;
       if (!process_test_arguments(args, show_help, release, path, invalid_option)) {
-        if (!invalid_option.empty())
+        if (!xtd::string::is_empty(invalid_option))
           console::write_line("Unknown option: {0}", invalid_option);
         else
           write_line_error("Invalid parameters");
@@ -775,7 +775,7 @@ namespace xtdc_command {
       auto release = false;
       auto path = string::empty_string;
       if (!process_uninstall_arguments(args, show_help, release, path, invalid_option)) {
-        if (!invalid_option.empty())
+        if (!xtd::string::is_empty(invalid_option))
           console::write_line("Unknown option: {0}", invalid_option);
         else
           write_line_error("Invalid parameters");
@@ -844,9 +844,9 @@ namespace xtdc_command {
         } else if (args[i].starts_with('-')) {
           invalid_option = args[i];
           return false;
-        } else if (type.empty())
+        } else if (xtd::string::is_empty(type))
           type = args[i];
-        else if (name.empty())
+        else if (xtd::string::is_empty(name))
           path = args[i];
         else
           return false;
@@ -866,7 +866,7 @@ namespace xtdc_command {
           release = true;
         else if (args[i] == "-t" || args[i] == "--target")
           target = args[++i];
-        else if (path.empty())
+        else if (xtd::string::is_empty(path))
           path = args[i];
         else if (args[i].starts_with('-')) {
           invalid_option = args[i];
@@ -884,7 +884,7 @@ namespace xtdc_command {
           release = false;
         else if (args[i] == "-r" || args[i] == "--release")
           release = true;
-        else if (path.empty())
+        else if (xtd::string::is_empty(path))
           path = args[i];
         else if (args[i].starts_with('-')) {
           invalid_option = args[i];
@@ -907,9 +907,9 @@ namespace xtdc_command {
         } else if (args[i].starts_with('-')) {
           invalid_option = args[i];
           return false;
-        } else if (type.empty())
+        } else if (xtd::string::is_empty(type))
           type = args[i];
-        else if (path.empty())
+        else if (xtd::string::is_empty(path))
           path = args[i];
         else
           return false;
@@ -925,7 +925,7 @@ namespace xtdc_command {
           release = false;
         else if (args[i] == "-r" || args[i] == "--release")
           release = true;
-        else if (path.empty())
+        else if (xtd::string::is_empty(path))
           path = args[i];
         else if (args[i].starts_with('-')) {
           invalid_option = args[i];
@@ -943,7 +943,7 @@ namespace xtdc_command {
           release = false;
         else if (args[i] == "-r" || args[i] == "--release")
           release = true;
-        else if (path.empty())
+        else if (xtd::string::is_empty(path))
           path = args[i];
         else if (args[i].starts_with('-')) {
           invalid_option = args[i];
@@ -959,7 +959,7 @@ namespace xtdc_command {
           show_help = true;
         else if (args[i] == "-t" || args[i] == "--target")
           target = args[++i];
-        else if (path.empty())
+        else if (xtd::string::is_empty(path))
           path = args[i];
         else if (args[i].starts_with('-')) {
           invalid_option = args[i];
@@ -981,7 +981,7 @@ namespace xtdc_command {
           target = args[++i];
         else if (args[i] == "-nw" || args[i] == "--no_wait")
           no_wait = true;
-        else if (path.empty())
+        else if (xtd::string::is_empty(path))
           path = args[i];
         else if (args[i].starts_with('-')) {
           invalid_option = args[i];
@@ -995,7 +995,7 @@ namespace xtdc_command {
       for (auto i = 1_z; i < args.count(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;
-        else if (path.empty())
+        else if (xtd::string::is_empty(path))
           path = args[i];
         else if (args[i].starts_with('-')) {
           invalid_option = args[i];
@@ -1013,7 +1013,7 @@ namespace xtdc_command {
           release = false;
         else if (args[i] == "-r" || args[i] == "--release")
           release = true;
-        else if (path.empty())
+        else if (xtd::string::is_empty(path))
           path = args[i];
         else if (args[i].starts_with('-')) {
           invalid_option = args[i];
@@ -1031,7 +1031,7 @@ namespace xtdc_command {
           release = false;
         else if (args[i] == "-r" || args[i] == "--release")
           release = true;
-        else if (path.empty())
+        else if (xtd::string::is_empty(path))
           path = args[i];
         else if (args[i].starts_with('-')) {
           invalid_option = args[i];

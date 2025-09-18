@@ -14,12 +14,12 @@ void base_assert::abort(const stack_frame& stack_frame) {
 }
 
 void base_assert::abort(const string& message, const stack_frame& stack_frame) {
-  if (!test::has_current_test()) throw abort_error(!message.empty() ? message : "Test aborted"_s);
+  if (!test::has_current_test()) throw abort_error(!xtd::string::is_empty(message) ? message : "Test aborted"_s);
   else {
     if (stack_frame != stack_frame::empty())
       test::current_test().stack_frame_ = stack_frame;
-    if (test::current_test().message_.empty())
-      test::current_test().message_ = !message.empty() ? message : "Test aborted"_s;
+    if (xtd::string::is_empty(test::current_test().message_))
+      test::current_test().message_ = !xtd::string::is_empty(message) ? message : "Test aborted"_s;
     test::current_test().status_ = test::test_status::aborted;
     throw abort_error(test::current_test().message_);
   }
@@ -45,7 +45,7 @@ void base_assert::error(const string& message) {
   settings::default_settings().exit_status(EXIT_FAILURE);
   if (!test::has_current_unit_test()) {
     if (settings::default_settings().break_on_failure()) debug_break_();
-    throw assert_error(!message.empty() ? message : "Test failed"_s);
+    throw assert_error(!xtd::string::is_empty(message) ? message : "Test failed"_s);
   } else test::current_unit_test().event_listener_->on_test_failed(test_event_args(test::current_test(), test::current_test_class(), test::current_unit_test()));
 }
 

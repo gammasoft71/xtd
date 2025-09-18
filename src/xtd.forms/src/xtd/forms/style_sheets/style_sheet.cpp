@@ -318,7 +318,7 @@ const style_sheet::style_sheets_t& style_sheet::style_sheets() noexcept {
     for (auto theme_file : directory::enumerate_files(theme_dir, "*.css"))
       theme_css += file::read_all_text(theme_file);
     auto style = style_sheet {theme_css};
-    if (!style.theme().name().empty())
+    if (!xtd::string::is_empty(style.theme().name()))
       style_sheets_[style.theme().name()] = style;
   }
   return style_sheets_;

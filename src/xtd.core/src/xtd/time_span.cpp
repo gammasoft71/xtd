@@ -345,7 +345,7 @@ string time_span::to_string(const string& format) const {
 
 string time_span::to_string(const string& format, const std::locale& loc) const {
   auto fmt = format;
-  if (fmt.empty()) fmt = "G";
+  if (xtd::string::is_empty(fmt)) fmt = "G";
   if (fmt.size() > 1) throw_helper::throws(exception_case::format, "Invalid format"_t);
   
   switch (fmt[0]) {
@@ -398,7 +398,7 @@ string time_span::make_string_from_duration(bool constant) const {
 int32 time_span::try_parse_internal(const string& value, time_span& result) {
   result = time_span::zero;
   
-  if (value.empty()) return parse_format;
+  if (xtd::string::is_empty(value)) return parse_format;
   
   auto days = 0, hours = 0, minutes = 0, seconds = 0, ticks = 0;
   auto items = value.split({'-', ':', '.', '\0'}, string_split_options::remove_empty_entries);

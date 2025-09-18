@@ -89,7 +89,7 @@ xtd::size renderer::get_hash_code() const noexcept {
 }
 
 xtd::string renderer::to_string() const noexcept {
-  if (!data_->name.empty()) return xtd::string::format("{}, name: {}", get_type().full_name(), data_->name);
+  if (!xtd::string::is_empty(data_->name)) return xtd::string::format("{}, name: {}", get_type().full_name(), data_->name);
   return xtd::string::format(get_type().full_name());
 }
 

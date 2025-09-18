@@ -874,11 +874,11 @@ void main_form::show_about_dialog() {
 
 void main_form::update_open_xtd_examples(const xtd_example_item& item, const xtd::string& context) {
   // Description
-  update_open_xtd_examples_description(item.description().empty() ? "Coming soon..."_s : item.description());
+  update_open_xtd_examples_description(xtd::string::is_empty(item.description()) ? "Coming soon..."_s : item.description());
   // Picture or Output
   if (item.picture() != xtd::drawing::image::empty)
     update_open_xtd_examples_picture(item.picture());
-  else if (!item.output().empty())
+  else if (!xtd::string::is_empty(item.output()))
     update_open_xtd_examples_output(item.output());
   else
     update_open_xtd_examples_picture(images::from_name(context, drawing::size{ 1024, 1024 }));
@@ -887,7 +887,7 @@ void main_form::update_open_xtd_examples(const xtd_example_item& item, const xtd
 void main_form::update_open_xtd_examples_description(const xtd::string& description) {
   open_xtd_examples_information_link_label_.text("");
   //open_xtd_examples_information_link_label_.links().clear();
-  if (description.empty()) return;
+  if (xtd::string::is_empty(description)) return;
   static const std::regex rgx_md_link(R"(\[(.*?)\]\((.*?)\))", std::regex::optimize);
   xtd::string text = description;
   std::sregex_iterator iterator(description.chars().begin(), description.chars().end(), rgx_md_link), end{};

@@ -64,7 +64,7 @@ void monitor::exit_ptr(object_ptr obj) {
 }
 
 intptr monitor::get_string_ptr(const string& str) {
-  if (str.empty()) throw_helper::throws(exception_case::argument);
+  if (xtd::string::is_empty(str)) throw_helper::throws(exception_case::argument);
   get_static_data().monitor_items_critical_section.enter();
   auto ptr = reinterpret_cast<intptr>(&str);
   for (const auto& item : get_static_data().monitor_items)

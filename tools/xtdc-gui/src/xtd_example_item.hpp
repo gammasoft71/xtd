@@ -105,7 +105,7 @@ namespace xtdc_gui {
       bool found_output = false;
       xtd::string output = "";
       for (const xtd::string& line : contents) {
-        if (line.empty()) continue;
+        if (xtd::string::is_empty(line)) continue;
         if (!found_output && line.to_lower().starts_with("# output")) {
           found_output = true;
           continue;

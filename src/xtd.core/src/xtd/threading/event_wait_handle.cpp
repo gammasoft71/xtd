@@ -89,7 +89,7 @@ bool event_wait_handle::equals(const event_wait_handle& other) const noexcept {
 }
 
 event_wait_handle event_wait_handle::open_existing(const string& name) {
-  if (name.empty()) throw_helper::throws(exception_case::argument);
+  if (xtd::string::is_empty(name)) throw_helper::throws(exception_case::argument);
   if (name.size() > native::named_event_wait_handle::max_name_size()) throw_helper::throws(exception_case::path_too_long);
   auto result = event_wait_handle{};
   if (!try_open_existing(name, result)) throw_helper::throws(exception_case::io);
@@ -143,7 +143,7 @@ bool event_wait_handle::wait(int32 milliseconds_timeout) {
 
 void event_wait_handle::create(bool initial_state, bool& created_new) {
   created_new = true;
-  if (data_->name.empty()) {
+  if (xtd::string::is_empty(data_->name)) {
     data_->event_wait_handle = xtd::new_uptr<event_wait_handle::unnamed_event_wait_handle>();
     if (!data_->event_wait_handle->create(initial_state, data_->mode == xtd::threading::event_reset_mode::manual_reset)) throw_helper::throws(exception_case::io);
   } else {

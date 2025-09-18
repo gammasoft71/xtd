@@ -19,7 +19,7 @@ namespace xtdc_command {
       xtd::string name;
       xtd::string path;
       if (!process_arguments(args, show_help, type, name, path, sdk, invalid_option)) {
-        if (!invalid_option.empty())
+        if (!xtd::string::is_empty(invalid_option))
           write_line_error(xtd::string::format("Unknown option: {0}", invalid_option));
         else
           write_line_error("Invalid parameters");
@@ -31,11 +31,11 @@ namespace xtdc_command {
         return EXIT_SUCCESS;
       }
       
-      if (type.empty()) type = "gui";
-      if (sdk.empty()) sdk = "xtd";
-      if (name.empty()) name = get_project_name_from_path(path);
+      if (xtd::string::is_empty(type)) type = "gui";
+      if (xtd::string::is_empty(sdk)) sdk = "xtd";
+      if (xtd::string::is_empty(name)) name = get_project_name_from_path(path);
       
-      if (name.empty()) {
+      if (xtd::string::is_empty(name)) {
         xtd::console::write_line("The name is empty.");
         return EXIT_FAILURE;
       }
@@ -114,9 +114,9 @@ namespace xtdc_command {
         } else if (args[i].starts_with('-')) {
           invalid_option = args[i];
           return false;
-        } else if (type.empty())
+        } else if (xtd::string::is_empty(type))
           type = args[i];
-        else if (path.empty())
+        else if (xtd::string::is_empty(path))
           path = args[i];
         else
           return false;

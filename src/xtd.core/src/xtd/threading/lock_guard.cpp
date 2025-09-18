@@ -18,7 +18,7 @@ struct lock_guard::data {
 };
 
 lock_guard::lock_guard(const xtd::string& str) : data_ {new_ptr<lock_guard::data>()} {
-  if (str.empty()) throw_helper::throws(exception_case::argument);
+  if (xtd::string::is_empty(str)) throw_helper::throws(exception_case::argument);
   data_->str = str;
   data_->mutex = threading::mutex {str};
   enter();

@@ -292,11 +292,6 @@ namespace xtd::text::tests {
       assert::are_equal("C rest string", s.to_string());
     }
     
-    void test_method_(empty) {
-      assert::is_true(basic_string_builder<char_t> {}.empty());
-      assert::is_false(basic_string_builder<char_t> {"A test string"}.empty());
-    }
-    
     void test_method_(end) {
       auto s = basic_string_builder<char_t> {"A test string"};
       auto iterator = s.end();

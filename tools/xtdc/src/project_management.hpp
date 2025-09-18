@@ -122,7 +122,7 @@ namespace xtdc_command {
       auto languages = get_valid_languages(sdk);
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return operation_status::invalid_language;
       if (is_path_already_exist_and_not_empty(path_)) return operation_status::already_exist;
-      if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return operation_status::cmake_prefix_path_not_set;
+      if (sdk == project_sdk::qt5 && xtd::string::is_empty(xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH"))) return operation_status::cmake_prefix_path_not_set;
       if (!xtd::io::file::exists(xtd::io::path::combine(xtd::io::directory::get_parent(path_).full_name(), "CMakeLists.txt"))) return operation_status::unknown_project;
       auto lines = xtd::io::file::read_all_lines(xtd::io::path::combine(xtd::io::directory::get_parent(path_).full_name(), "CMakeLists.txt"));
       //if (std::find_if(lines.begin(), lines.end(), [](const xtd::string & value) {return value.contains("find_package(xtd");}) != lines.end() && sdk != project_sdk::xtd) return operation_status::invalid_sdk_with_current_project;
@@ -150,11 +150,11 @@ namespace xtdc_command {
       if (last_exit_code() != EXIT_SUCCESS) return operation_status::clean_error;
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() && !xtd::environment::os_version().is_macos_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
       if (xtd::environment::os_version().is_windows_platform())
-        launch_and_wait_process("cmake", xtd::string::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? xtd::string::format(" --clean-first {}", target) : ""), false, verbose);
+        launch_and_wait_process("cmake", xtd::string::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), xtd::string::is_empty(target) ? "" : xtd::string::format(" --target {}", target), clean_first ? xtd::string::format(" --clean-first {}", target) : ""), false, verbose);
       else if (xtd::environment::os_version().is_macos_platform())
-        launch_and_wait_process("cmake", xtd::string::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? xtd::string::format(" --clean-first {}", target) : ""), false, verbose);
+        launch_and_wait_process("cmake", xtd::string::format("--build {} --parallel {} --config {}{}{}", build_path(), xtd::environment::processor_count(), (release ? "Release" : "Debug"), xtd::string::is_empty(target) ? "" : xtd::string::format(" --target {}", target), clean_first ? xtd::string::format(" --clean-first {}", target) : ""), false, verbose);
       else
-        launch_and_wait_process("cmake", xtd::string::format("--build {}{}{}", xtd::io::path::combine(build_path(), release ? "Release" : "Debug"), target.empty() ? "" : xtd::string::format(" --target {}", target), clean_first ? xtd::string::format(" --clean-first {}", target) : "", xtd::string::format(" -- -j {}", xtd::environment::processor_count())), false, verbose);
+        launch_and_wait_process("cmake", xtd::string::format("--build {}{}{}", xtd::io::path::combine(build_path(), release ? "Release" : "Debug"), xtd::string::is_empty(target) ? "" : xtd::string::format(" --target {}", target), clean_first ? xtd::string::format(" --clean-first {}", target) : "", xtd::string::format(" -- -j {}", xtd::environment::processor_count())), false, verbose);
       return last_exit_code() == EXIT_SUCCESS ? operation_status::success : operation_status::error;
     }
     
@@ -172,7 +172,7 @@ namespace xtdc_command {
       auto languages = get_valid_languages(sdk);
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return operation_status::invalid_language;
       if (is_path_already_exist_and_not_empty(path_)) return operation_status::already_exist;
-      if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return operation_status::cmake_prefix_path_not_set;
+      if (sdk == project_sdk::qt5 && xtd::string::is_empty(xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH"))) return operation_status::cmake_prefix_path_not_set;
       xtd::io::directory::create_directory(xtd::io::path::combine(path_, "build"));
       create_doxygen_txt(name);
       create_readme_md(name);
@@ -194,7 +194,7 @@ namespace xtdc_command {
       auto languages = get_valid_languages(sdk);
       if (std::find(languages.begin(), languages.end(), language) == languages.end()) return operation_status::invalid_language;
       if (!is_path_already_exist_and_not_empty(path_)) return operation_status::already_exist;
-      if (sdk == project_sdk::qt5 && xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH").empty()) return operation_status::cmake_prefix_path_not_set;
+      if (sdk == project_sdk::qt5 && xtd::string::is_empty(xtd::environment::get_environment_variable("CMAKE_PREFIX_PATH"))) return operation_status::cmake_prefix_path_not_set;
       xtd::io::directory::create_directory(xtd::io::path::combine(path_, "build"));
       create_doxygen_txt(name);
       create_readme_md(name);
@@ -252,8 +252,8 @@ namespace xtdc_command {
       build(target, false, release, false);
       if (last_exit_code() != EXIT_SUCCESS) return "Build error! Run project aborted.";
       change_current_directory current_directory {xtd::environment::os_version().is_unix_platform() && !xtd::environment::os_version().is_macos_platform() ? xtd::io::path::combine(build_path(), release ? "Release" : "Debug") : build_path()};
-      auto target_path = target.empty() ? get_first_target_path(release) : get_target_path(target, release);
-      //if (target_path.empty()) return "The target does not exist! Run project aborted.";
+      auto target_path = xtd::string::is_empty(target) ? get_first_target_path(release) : get_target_path(target, release);
+      //if (xtd::string::is_empty(target_path)) return "The target does not exist! Run project aborted.";
       if (!((xtd::environment::os_version().is_macos_platform() && is_gui(target_path) && xtd::io::directory::exists(target_path)) || xtd::io::file::exists(target_path))) return xtd::string::format("The target \"{}\" does not exist! Run project aborted.", target_path);
       
       xtd::diagnostics::process process;
@@ -304,7 +304,7 @@ namespace xtdc_command {
   private:
     xtd::string& get_name() const {
       static xtd::string name;
-      if (name.empty()) {
+      if (xtd::string::is_empty(name)) {
         for (const auto& line : get_system_information()) {
           if (line.starts_with("CMAKE_PROJECT_NAME:STATIC=")) {
             name = line.replace("CMAKE_PROJECT_NAME:STATIC=", xtd::string::empty_string);
@@ -312,7 +312,7 @@ namespace xtdc_command {
           }
         }
       }
-      if (name.empty()) name = xtd::io::path::get_file_name(path_);
+      if (xtd::string::is_empty(name)) name = xtd::io::path::get_file_name(path_);
       return name;
     }
     
@@ -558,7 +558,7 @@ namespace xtdc_command {
       bool first_generation = !xtd::io::directory::exists(build_path());
       xtd::io::directory::create_directory(build_path());
       change_current_directory current_directory {build_path()};
-      if (!first_generation && name.empty()) name = get_name();
+      if (!first_generation && xtd::string::is_empty(name)) name = get_name();
       if (xtd::environment::os_version().is_windows_platform() && (first_generation || !xtd::io::file::exists(xtd::io::path::combine(build_path(), xtd::string::format("{}.sln", name)))))
         launch_and_wait_process("cmake", xtd::string::format("-S {} -B {}", path_, build_path()), false, verbose);
       else if (xtd::environment::os_version().is_macos_platform() && (first_generation || !xtd::io::directory::exists(xtd::io::path::combine(build_path(), xtd::string::format("{}.xcodeproj", name)))))

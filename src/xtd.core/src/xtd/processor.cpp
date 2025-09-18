@@ -10,7 +10,7 @@ xtd::architecture_id processor::architecture() const noexcept {
 }
 
 xtd::string processor::architecture_string() const noexcept {
-  if (!architecture_string_.empty()) return architecture_string_;
+  if (!xtd::string::is_empty(architecture_string_)) return architecture_string_;
   architecture_string_ = string::format("{}", architecture_);
   if (is_64_bit_) {
     if (architecture_ == architecture_id::x86) architecture_string_ += "_";

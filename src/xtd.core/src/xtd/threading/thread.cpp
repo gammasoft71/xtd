@@ -566,7 +566,7 @@ bool thread::join_all_ptr(const array<thread*>& threads, int32 milliseconds_time
 void thread::thread_proc() {
   if (data_->thread_id == invalid_thread_id) data_->thread_id = get_current_thread_id();
   if (data_->handle == invalid_handle) data_->handle = get_current_thread_handle();
-  if (!data_->name.empty()) native::thread::set_current_thread_name(data_->name);
+  if (!xtd::string::is_empty(data_->name)) native::thread::set_current_thread_name(data_->name);
   if (data_->priority != thread_priority::normal) native::thread::set_priority(data_->handle, as<int32>(data_->priority));
   if (data_->processor_affinity.size() != 0) native::thread::set_processor_affinity(data_->handle, data_->processor_affinity.items());
   

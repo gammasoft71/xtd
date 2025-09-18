@@ -261,8 +261,8 @@ xtd::size tool_bar_button::get_hash_code() const noexcept {
 }
 
 xtd::string tool_bar_button::to_string() const noexcept {
-  if (!data_->text.empty()) return string::format("{}, style: {}, text: {}", get_type().full_name(), data_->style, data_->text);
-  if (!data_->name.empty()) return string::format("{}, style: {}, name: {}", get_type().full_name(), data_->style, data_->name);
+  if (!xtd::string::is_empty(data_->text)) return string::format("{}, style: {}, text: {}", get_type().full_name(), data_->style, data_->text);
+  if (!xtd::string::is_empty(data_->name)) return string::format("{}, style: {}, name: {}", get_type().full_name(), data_->style, data_->name);
   return string::format("{}, style: {}", get_type().full_name(), data_->style);
 }
 

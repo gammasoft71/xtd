@@ -34,13 +34,13 @@ void default_trace_listener::close() {
 }
 
 void default_trace_listener::flush() {
-  if (!message_line_.empty()) write_line("");
+  if (!xtd::string::is_empty(message_line_)) write_line("");
 }
 
 void default_trace_listener::write(const string& message) {
   if (need_indent()) write_indent();
   message_line_ += message;
-  if (!log_file_name_.empty()) xtd::io::file::append_all_text(string(log_file_name_), message);
+  if (!xtd::string::is_empty(log_file_name_)) xtd::io::file::append_all_text(string(log_file_name_), message);
 }
 
 void default_trace_listener::write_line(const string& message) {

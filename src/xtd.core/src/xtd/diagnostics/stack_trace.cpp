@@ -87,7 +87,7 @@ string stack_trace::to_string(size_t skip_frames) const noexcept {
   for (auto index = skip_frames; index < data_->frames.size(); ++index) {
     if (index > skip_frames) str += xtd::environment::new_line();
     str += "   at " + data_->frames[index].get_method();
-    if (data_->need_file_info && !data_->frames[index].get_file_name().empty()) str += string::format(" in {}:line {}", data_->frames[index].get_file_name(), data_->frames[index].get_file_line_number());
+    if (data_->need_file_info && !xtd::string::is_empty(data_->frames[index].get_file_name())) str += string::format(" in {}:line {}", data_->frames[index].get_file_name(), data_->frames[index].get_file_line_number());
   }
   str += environment::new_line();
   return str;

@@ -33,7 +33,7 @@ namespace demangler {
       
       auto sr = io::stream_reader(input_file);
       auto sw = ptr<io::stream_writer> {};
-      if (!output_file.empty()) sw = new_ptr<io::stream_writer>(output_file);
+      if (!xtd::string::is_empty(output_file)) sw = new_ptr<io::stream_writer>(output_file);
       while (!sr.end_of_stream()) {
         auto words = sr.read_line().split(' ');
         for (auto& word : words)
@@ -74,7 +74,7 @@ namespace demangler {
           else if ((args[index] == "-q" || args[index] == "--quiet")) quiet = true;
           else input_file = args[index];
           
-        return show_help || show_version || !input_file.empty();
+        return show_help || show_version || !xtd::string::is_empty(input_file);
       } catch (...) {
         return false;
       }
