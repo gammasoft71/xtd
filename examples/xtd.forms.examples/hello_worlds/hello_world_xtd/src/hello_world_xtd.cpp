@@ -24,11 +24,11 @@ namespace hello_world_xtd_example {
       about_box::show("This is a xtd Hello World example", "About Hello World");
     }
     
-    menu_item hello_menu {"&Hello...", {*this, &main_form::on_hello_menu_click}, shortcut::ctrl_h};
+    menu_item hello_menu {"&Hello...", event_handler {*this, &main_form::on_hello_menu_click}, shortcut::ctrl_h};
     menu_item separator_menu {"-"};
-    menu_item exit_menu {texts::exit(), {*this, &main_form::on_exit_menu_click}, shortcut::alt_f4};
+    menu_item exit_menu {texts::exit(), event_handler {*this, &main_form::on_exit_menu_click}, shortcut::alt_f4};
     
-    menu_item about_menu {texts::about(), {*this, &main_form::on_about_menu_click}};
+    menu_item about_menu {texts::about(), event_handler {*this, &main_form::on_about_menu_click}};
     
     menu_item file_menu_item {texts::file(), {hello_menu, separator_menu, exit_menu}};
     menu_item help_menu_item {texts::help(), {about_menu}};
