@@ -131,56 +131,56 @@ $(function() {
 <div class="line">      <span class="keywordflow">if</span> (file_exit_menu_item == sender) application::exit();</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    menu_item file_open_recent_file1_menu_item {<span class="stringliteral">&quot;Path/File1&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
-<div class="line">    menu_item file_open_recent_file2_menu_item {<span class="stringliteral">&quot;Path/File2&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
-<div class="line">    menu_item file_open_recent_file3_menu_item {<span class="stringliteral">&quot;Path/File3&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
-<div class="line">    menu_item file_open_recent_file4_menu_item {<span class="stringliteral">&quot;Path/File4&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
+<div class="line">    menu_item file_open_recent_file1_menu_item {<span class="stringliteral">&quot;Path/File1&quot;</span>, event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
+<div class="line">    menu_item file_open_recent_file2_menu_item {<span class="stringliteral">&quot;Path/File2&quot;</span>, event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
+<div class="line">    menu_item file_open_recent_file3_menu_item {<span class="stringliteral">&quot;Path/File3&quot;</span>, event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
+<div class="line">    menu_item file_open_recent_file4_menu_item {<span class="stringliteral">&quot;Path/File4&quot;</span>, event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
 <div class="line">    </div>
-<div class="line">    menu_item file_new_menu_item {texts::new_(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_new(), shortcut::ctrl_n};</div>
+<div class="line">    menu_item file_new_menu_item {texts::new_(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_new(), shortcut::ctrl_n};</div>
 <div class="line">    menu_item file_separator1_menu_item {<span class="stringliteral">&quot;-&quot;</span>};</div>
-<div class="line">    menu_item file_open_menu_item {texts::open(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_open(), shortcut::ctrl_o};</div>
+<div class="line">    menu_item file_open_menu_item {texts::open(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_open(), shortcut::ctrl_o};</div>
 <div class="line">    menu_item file_open_recent_menu_item {<span class="stringliteral">&quot;Open recent&quot;</span>, {file_open_recent_file1_menu_item, file_open_recent_file2_menu_item, file_open_recent_file3_menu_item, file_open_recent_file4_menu_item}};</div>
-<div class="line">    menu_item file_close_menu_item {texts::close(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, shortcut::ctrl_w};</div>
+<div class="line">    menu_item file_close_menu_item {texts::close(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, shortcut::ctrl_w};</div>
 <div class="line">    menu_item file_separator2_menu_item {<span class="stringliteral">&quot;-&quot;</span>};</div>
-<div class="line">    menu_item file_save_menu_item {texts::save(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_save(), shortcut::ctrl_s};</div>
-<div class="line">    menu_item file_save_as_menu_item {texts::save_as(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
+<div class="line">    menu_item file_save_menu_item {texts::save(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_save(), shortcut::ctrl_s};</div>
+<div class="line">    menu_item file_save_as_menu_item {texts::save_as(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
 <div class="line">    menu_item file_separator3_menu_item {<span class="stringliteral">&quot;-&quot;</span>};</div>
-<div class="line">    menu_item file_page_setup_menu_item {<span class="stringliteral">&quot;Page &amp;Seup...&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
-<div class="line">    menu_item file_print_menu_item {texts::print(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_print(), shortcut::ctrl_p};</div>
-<div class="line">    menu_item file_print_preview_menu_item {texts::print_preview(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_print_preview()};</div>
+<div class="line">    menu_item file_page_setup_menu_item {<span class="stringliteral">&quot;Page &amp;Seup...&quot;</span>, event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
+<div class="line">    menu_item file_print_menu_item {texts::print(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_print(), shortcut::ctrl_p};</div>
+<div class="line">    menu_item file_print_preview_menu_item {texts::print_preview(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_print_preview()};</div>
 <div class="line">    menu_item file_separator4_menu_item {<span class="stringliteral">&quot;-&quot;</span>};</div>
-<div class="line">    menu_item file_exit_menu_item {texts::exit(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_exit(), shortcut::alt_f4};</div>
+<div class="line">    menu_item file_exit_menu_item {texts::exit(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::file_exit(), shortcut::alt_f4};</div>
 <div class="line">    </div>
-<div class="line">    menu_item edit_undo_menu_item {texts::undo(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::edit_undo(), shortcut::ctrl_z};</div>
-<div class="line">    menu_item edit_redo_menu_item {texts::redo(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::edit_redo(), shortcut::ctrl_shift_z};</div>
+<div class="line">    menu_item edit_undo_menu_item {texts::undo(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::edit_undo(), shortcut::ctrl_z};</div>
+<div class="line">    menu_item edit_redo_menu_item {texts::redo(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::edit_redo(), shortcut::ctrl_shift_z};</div>
 <div class="line">    menu_item edit_separator1_menu_item {<span class="stringliteral">&quot;-&quot;</span>};</div>
-<div class="line">    menu_item edit_cut_menu_item {texts::cut(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::edit_cut(), shortcut::ctrl_x};</div>
-<div class="line">    menu_item edit_copy_menu_item {texts::copy(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::edit_copy(), shortcut::ctrl_c};</div>
-<div class="line">    menu_item edit_paste_menu_item {texts::paste(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::edit_paste(), shortcut::ctrl_v};</div>
+<div class="line">    menu_item edit_cut_menu_item {texts::cut(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::edit_cut(), shortcut::ctrl_x};</div>
+<div class="line">    menu_item edit_copy_menu_item {texts::copy(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::edit_copy(), shortcut::ctrl_c};</div>
+<div class="line">    menu_item edit_paste_menu_item {texts::paste(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::edit_paste(), shortcut::ctrl_v};</div>
 <div class="line">    menu_item edit_separator2_menu_item {<span class="stringliteral">&quot;-&quot;</span>};</div>
-<div class="line">    menu_item edit_select_all_menu_item {texts::select_all(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, shortcut::ctrl_a};</div>
+<div class="line">    menu_item edit_select_all_menu_item {texts::select_all(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, shortcut::ctrl_a};</div>
 <div class="line">    menu_item edit_separator3_menu_item {<span class="stringliteral">&quot;-&quot;</span>};</div>
-<div class="line">    menu_item edit_options_menu_item {texts::options(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
+<div class="line">    menu_item edit_options_menu_item {texts::options(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
 <div class="line">    </div>
-<div class="line">    menu_item view_back_menu_item {texts::back(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::view_back()};</div>
-<div class="line">    menu_item view_forward_menu_item {texts::forward(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::view_forward()};</div>
+<div class="line">    menu_item view_back_menu_item {texts::back(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::view_back()};</div>
+<div class="line">    menu_item view_forward_menu_item {texts::forward(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_images::view_forward()};</div>
 <div class="line">    menu_item view_separator1_menu_item {<span class="stringliteral">&quot;-&quot;</span>};</div>
-<div class="line">    menu_item view_show_menu_item {<span class="stringliteral">&quot;Show&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
-<div class="line">    menu_item view_hide_menu_item {<span class="stringliteral">&quot;Hide&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
+<div class="line">    menu_item view_show_menu_item {<span class="stringliteral">&quot;Show&quot;</span>, event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
+<div class="line">    menu_item view_hide_menu_item {<span class="stringliteral">&quot;Hide&quot;</span>, event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
 <div class="line">    </div>
-<div class="line">    menu_item options_value_a_menu_item {<span class="stringliteral">&quot;Value A&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::check, <span class="keyword">true</span>, shortcut::alt_1};</div>
-<div class="line">    menu_item options_value_b_menu_item {<span class="stringliteral">&quot;Value B&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::check, shortcut::alt_2};</div>
-<div class="line">    menu_item options_value_c_menu_item {<span class="stringliteral">&quot;Value C&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::check, <span class="keyword">true</span>, shortcut::alt_3};</div>
+<div class="line">    menu_item options_value_a_menu_item {<span class="stringliteral">&quot;Value A&quot;</span>, event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::check, <span class="keyword">true</span>, shortcut::alt_1};</div>
+<div class="line">    menu_item options_value_b_menu_item {<span class="stringliteral">&quot;Value B&quot;</span>, event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::check, shortcut::alt_2};</div>
+<div class="line">    menu_item options_value_c_menu_item {<span class="stringliteral">&quot;Value C&quot;</span>, event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::check, <span class="keyword">true</span>, shortcut::alt_3};</div>
 <div class="line">    menu_item options_separator1_menu_item {<span class="stringliteral">&quot;-&quot;</span>};</div>
-<div class="line">    menu_item options_value_d_menu_item {<span class="stringliteral">&quot;Value D&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio, as&lt;shortcut&gt;(keys::alt | keys::d)};</div>
-<div class="line">    menu_item options_value_e_menu_item {<span class="stringliteral">&quot;Value E&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio, <span class="keyword">true</span>, as&lt;shortcut&gt;(keys::alt | keys::e)};</div>
-<div class="line">    menu_item options_value_f_menu_item {<span class="stringliteral">&quot;Value F&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio, as&lt;shortcut&gt;(keys::alt | keys::f)};</div>
+<div class="line">    menu_item options_value_d_menu_item {<span class="stringliteral">&quot;Value D&quot;</span>, event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio, as&lt;shortcut&gt;(keys::alt | keys::d)};</div>
+<div class="line">    menu_item options_value_e_menu_item {<span class="stringliteral">&quot;Value E&quot;</span>, event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio, <span class="keyword">true</span>, as&lt;shortcut&gt;(keys::alt | keys::e)};</div>
+<div class="line">    menu_item options_value_f_menu_item {<span class="stringliteral">&quot;Value F&quot;</span>, event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio, as&lt;shortcut&gt;(keys::alt | keys::f)};</div>
 <div class="line">    menu_item options_separator2_menu_item {<span class="stringliteral">&quot;-&quot;</span>};</div>
-<div class="line">    menu_item options_value_g_menu_item {<span class="stringliteral">&quot;Value G&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio, as&lt;shortcut&gt;(keys::alt | keys::shift | keys::left)};</div>
-<div class="line">    menu_item options_value_h_menu_item {<span class="stringliteral">&quot;Value H&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio};</div>
-<div class="line">    menu_item options_value_i_menu_item {<span class="stringliteral">&quot;Value I&quot;</span>, {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio};</div>
+<div class="line">    menu_item options_value_g_menu_item {<span class="stringliteral">&quot;Value G&quot;</span>, event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio, as&lt;shortcut&gt;(keys::alt | keys::shift | keys::left)};</div>
+<div class="line">    menu_item options_value_h_menu_item {<span class="stringliteral">&quot;Value H&quot;</span>, event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio};</div>
+<div class="line">    menu_item options_value_i_menu_item {<span class="stringliteral">&quot;Value I&quot;</span>, event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio};</div>
 <div class="line">    </div>
-<div class="line">    menu_item help_about_menu_item {texts::about(), {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
+<div class="line">    menu_item help_about_menu_item {texts::about(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}};</div>
 <div class="line">    </div>
 <div class="line">    menu_item file_menu_item {texts::file(), {file_new_menu_item, file_separator1_menu_item, file_open_menu_item, file_open_recent_menu_item, file_close_menu_item, file_separator2_menu_item, file_save_menu_item, file_save_as_menu_item, file_separator3_menu_item, file_page_setup_menu_item, file_print_menu_item, file_print_preview_menu_item, file_separator4_menu_item, file_exit_menu_item}};</div>
 <div class="line">    menu_item edit_menu_item {texts::edit(), {edit_undo_menu_item, edit_redo_menu_item, edit_separator1_menu_item, edit_cut_menu_item, edit_copy_menu_item, edit_paste_menu_item, edit_separator2_menu_item, edit_select_all_menu_item, edit_separator3_menu_item, edit_options_menu_item}};</div>
@@ -201,7 +201,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 14 2025 09:57:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 18 2025 16:57:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

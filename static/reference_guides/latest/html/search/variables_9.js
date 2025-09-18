@@ -34,6 +34,7 @@ var searchData=
   ['item_5fcheck_31',['item_check',['../classxtd_1_1forms_1_1checked__list__box.html#a20d2c75ef01e7ab4ca2ba55f69c1481c',1,'xtd::forms::checked_list_box']]],
   ['item_5fremoved_32',['item_removed',['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#ad37a37d62a7b257ac20274e95a6501f3',1,'xtd::forms::layout::arranged_element_collection']]],
   ['item_5fupdated_33',['item_updated',['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a3ccfbdf5ef99ca06e5c380c2f4de4076',1,'xtd::forms::layout::arranged_element_collection']]],
-  ['ivory_34',['ivory',['../classxtd_1_1drawing_1_1color.html#ad61b49bc957e05fd2ca57b3104f07f40',1,'xtd::drawing::color']]],
-  ['izakaya_5flantern_35',['izakaya_lantern',['../classxtd_1_1forms_1_1emoticons.html#a441cde3d2869900f05a733c32c69c7bd',1,'xtd::forms::emoticons']]]
+  ['items_5fadded_34',['items_added',['../classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a5ed6defd26875862ac7c1f529b73fdd2',1,'xtd::forms::layout::arranged_element_collection']]],
+  ['ivory_35',['ivory',['../classxtd_1_1drawing_1_1color.html#ad61b49bc957e05fd2ca57b3104f07f40',1,'xtd::drawing::color']]],
+  ['izakaya_5flantern_36',['izakaya_lantern',['../classxtd_1_1forms_1_1emoticons.html#a441cde3d2869900f05a733c32c69c7bd',1,'xtd::forms::emoticons']]]
 ];
