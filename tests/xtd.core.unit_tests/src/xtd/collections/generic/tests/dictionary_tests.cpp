@@ -116,7 +116,7 @@ namespace xtd::collections::generic::tests {
       assert::throws<argument_exception>([&] {items.add("OnE", "OnE");});
       assert::throws<argument_exception>([&] {items.add("ONE", "ONE");});
     }
-
+    
     void test_method_(constructor_with_capacity) {
       auto items = dictionary<string, string> {10_z};
       assert::is_greater_or_equal(items.capacity(), 10_z);
@@ -137,7 +137,7 @@ namespace xtd::collections::generic::tests {
       auto init = std::initializer_list<std::pair<int, string>> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}, {5, "six"}};
       assert::throws<argument_exception>([&] {auto items = dictionary<int, string> {init.begin(), init.end()};});
     }
-            
+    
     void test_method_(constructor_with_dictionary) {
       auto items1 = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}};
       auto items2 = dictionary<int, string> {items1};
