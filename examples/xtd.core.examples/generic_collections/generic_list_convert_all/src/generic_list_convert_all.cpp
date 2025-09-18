@@ -13,7 +13,7 @@ public:
     for (const auto& p : lpf)
       console::write_line(p);
     
-    list<drawing::point> lp = lpf.convert_all(converter<drawing::point, const drawing::point_f&> {point_f_to_point});
+    list<drawing::point> lp = lpf.convert_all<drawing::point>(converter<drawing::point, const drawing::point_f&> {point_f_to_point});
     
     console::write_line();
     for (const auto& p : lp)
