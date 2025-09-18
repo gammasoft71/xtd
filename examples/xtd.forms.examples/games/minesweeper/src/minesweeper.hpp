@@ -88,25 +88,25 @@ namespace minesweeper {
     lcd_label stopwatch_label_;
     button start_game_;
     
-    menu_item game_new_game_menu_item_ {"&New games", {[&] {new_game();}}, shortcut::f2};
+    menu_item game_new_game_menu_item_ {"&New games", xtd::event_handler {[&] {new_game();}}, shortcut::f2};
     menu_item game_separator1_menu_item_ {"-"};
-    menu_item game_beginner_menu_item_ {"&Beginner", {[&] {change_level(level::beginner);}}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::beginner};
-    menu_item game_inermediate_menu_item_ {"&Intermediate", {[&] {change_level(level::intermediate);}}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::intermediate};
-    menu_item game_expert_menu_item_ {"&Expert", {[&] {change_level(level::expert);}}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::expert};
-    menu_item game_custom_menu_item_ {"&Custom...", {*this, &minesweeper_form::on_custom_menu_click}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::custom};
+    menu_item game_beginner_menu_item_ {"&Beginner", xtd::event_handler {[&] {change_level(level::beginner);}}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::beginner};
+    menu_item game_inermediate_menu_item_ {"&Intermediate", xtd::event_handler {[&] {change_level(level::intermediate);}}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::intermediate};
+    menu_item game_expert_menu_item_ {"&Expert", xtd::event_handler {[&] {change_level(level::expert);}}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::expert};
+    menu_item game_custom_menu_item_ {"&Custom...", xtd::event_handler {*this, &minesweeper_form::on_custom_menu_click}, menu_item_kind::radio, as<level>(properties::settings::default_settings().level()) == level::custom};
     menu_item game_separator2_menu_item_ {"-"};
-    menu_item game_marks_menu_item_ {"&Marks [?]", {*this, &minesweeper_form::on_marks_menu_click}, menu_item_kind::check, properties::settings::default_settings().marks()};
-    menu_item game_original_color_menu_item_ {"&Original color", {*this, &minesweeper_form::on_original_color_menu_click}, menu_item_kind::check, properties::settings::default_settings().original_color()};
+    menu_item game_marks_menu_item_ {"&Marks [?]", xtd::event_handler {*this, &minesweeper_form::on_marks_menu_click}, menu_item_kind::check, properties::settings::default_settings().marks()};
+    menu_item game_original_color_menu_item_ {"&Original color", xtd::event_handler {*this, &minesweeper_form::on_original_color_menu_click}, menu_item_kind::check, properties::settings::default_settings().original_color()};
     menu_item game_separator3_menu_item_ {"-"};
-    menu_item game_best_times_menu_item_ {"Best &times...", {[&] {high_scores_dialog().show_sheet_dialog(*this);}}};
+    menu_item game_best_times_menu_item_ {"Best &times...", xtd::event_handler {[&] {high_scores_dialog().show_sheet_dialog(*this);}}};
     menu_item game_separator4_menu_item_ {"-"};
-    menu_item game_exit_menu_item_ {drawing::texts::exit(), {overload_<>(application::exit)}};
+    menu_item game_exit_menu_item_ {drawing::texts::exit(), xtd::event_handler {overload_<>(application::exit)}};
     menu_item game_menu_item_ {"&Game", {game_new_game_menu_item_, game_separator1_menu_item_, game_beginner_menu_item_, game_inermediate_menu_item_, game_expert_menu_item_, game_custom_menu_item_, game_separator2_menu_item_, game_marks_menu_item_, game_original_color_menu_item_, game_separator3_menu_item_, game_best_times_menu_item_, game_separator4_menu_item_, game_exit_menu_item_}};
-    menu_item help_content_menu_item_ {"&Contents", {*this, &minesweeper_form::on_help_content_menu_click}, shortcut::f1};
-    menu_item help_search_menu_item_ {"&Search for Help On...", {[&] {}}};
-    menu_item help_how_to_menu_item_ {"&How to Use Help", {[&] {}}};
+    menu_item help_content_menu_item_ {"&Contents", xtd::event_handler {*this, &minesweeper_form::on_help_content_menu_click}, shortcut::f1};
+    menu_item help_search_menu_item_ {"&Search for Help On...", xtd::event_handler {[&] {}}};
+    menu_item help_how_to_menu_item_ {"&How to Use Help", xtd::event_handler {[&] {}}};
     menu_item help_separator1_menu_item_ {"-"};
-    menu_item help_about_menu_item_ {drawing::texts::about(), {*this, &minesweeper_form::on_about_menu_click}};
+    menu_item help_about_menu_item_ {drawing::texts::about(), xtd::event_handler {*this, &minesweeper_form::on_about_menu_click}};
     menu_item help_menu_item_ {drawing::texts::help(), {help_content_menu_item_, help_search_menu_item_, help_how_to_menu_item_, help_separator1_menu_item_, help_about_menu_item_}};
     forms::main_menu main_menu_ {game_menu_item_, help_menu_item_};
     
