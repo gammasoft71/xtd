@@ -93,7 +93,7 @@ namespace xtd {
           }
           /// @}
           
-        private:
+private:
           friend class dictionary;
           hasher() = default;
           explicit hasher(const iequality_comparer<key_t>* comparer) : comparer {comparer} {}
@@ -128,10 +128,10 @@ namespace xtd {
           }
           /// @}
           
-        private:
+private:
           friend class dictionary;
           equator() = default;
-          explicit equator(const iequality_comparer<key_t>* comparer) : comparer {comparer} {}
+          explicit equator(const iequality_comparer < key_t > * comparer) : comparer {comparer} {}
           const iequality_comparer < key_t > * comparer = nullptr;
         };
         /// @}
@@ -140,21 +140,21 @@ namespace xtd {
         
         /// @{
         /// @brief Represents the dictionary key type.
-        using key_type = typename xtd::collections::generic::idictionary<key_t, value_t>::key_type;
+        using key_type = typename xtd::collections::generic::idictionary < key_t, value_t >::key_type;
         /// @brief Represents the dictionary mapped type.
-        using mapped_type = typename xtd::collections::generic::idictionary<key_t, value_t>::mapped_type;
+        using mapped_type = typename xtd::collections::generic::idictionary < key_t, value_t >::mapped_type;
         /// @brief Represents the dictionary value type.
-        using value_type = typename xtd::collections::generic::idictionary<key_type, mapped_type>::value_type;
+        using value_type = typename xtd::collections::generic::idictionary < key_type, mapped_type >::value_type;
         /// @brief Represents the dictionary size type.
         using size_type = xtd::size;
         /// @brief Represents the dictionary base value type.
         using base_value_type = std::pair < const key_t, value_t >;
         /// @brief Represents the dictionary base type.
-        using base_type = std::unordered_map<key_type, mapped_type, hasher, equator, allocator_t>;
+        using base_type = std::unordered_map < key_type, mapped_type, hasher, equator, allocator_t >;
         /// @brief Represents the idictionary key collection type.
-        using key_collection = typename xtd::collections::generic::idictionary<key_type, mapped_type>::key_collection;
+        using key_collection = typename xtd::collections::generic::idictionary < key_type, mapped_type >::key_collection;
         /// @brief Represents the idictionary value collection type.
-        using value_collection = typename xtd::collections::generic::idictionary<key_type, mapped_type>::value_collection;
+        using value_collection = typename xtd::collections::generic::idictionary < key_type, mapped_type >::value_collection;
         /// @}
         
         /// @name Public Constructors
@@ -219,7 +219,7 @@ namespace xtd {
         /// @remarks Every key in a xtd::collections::generic::dictionary <key_t, value_t> must be unique according to the specified comparer.
         /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. If type `key_t` implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation.
         template < class equality_comparer_t >
-        dictionary(const equality_comparer_t& comparer) : data_(xtd::new_ptr < dictionary_data > (new_ptr<equality_comparer_t > (comparer))) {}
+        dictionary(const equality_comparer_t& comparer) : data_(xtd::new_ptr < dictionary_data > (new_ptr < equality_comparer_t > (comparer))) {}
         /// @brief Initializes a new instance of the xtd::collections::generic::dictionary <key_t, value_t> class that is empty, has the specified initial capacit.
         /// @param capacity The initial number of elements that the xtd::collections::generic::dictionary <key_t, value_t> can contain.
         /// @remarks Every key in a xtd::collections::generic::dictionary <key_t, value_t> must be unique according to the specified comparer; likewise, every key in the source `dictionary` must also be unique according to the specified comparer.
@@ -242,7 +242,7 @@ namespace xtd {
         /// @remarks This constructor is an O(1) operation.
         /// @remarks xtd::collections::generic::dictionary::capacity and xtd::collections::generic::dictionary::bucket_count are equivalent properties.
         template < class equality_comparer_t >
-        dictionary(size_t capacity, const equality_comparer_t& comparer) : data_(xtd::new_ptr < dictionary_data > (new_ptr<equality_comparer_t > (comparer))) {
+        dictionary(size_t capacity, const equality_comparer_t& comparer) : data_(xtd::new_ptr < dictionary_data > (new_ptr < equality_comparer_t > (comparer))) {
           ensure_capacity(capacity);
         }
         /// @brief Initializes a new instance of the xtd::collections::generic::dictionary <key_t, value_t> class that contains elements copied from the specified xtd::collections::generic::dictionary <key_t, value_t> and uses the specified xtd::collections::generic::iequality_comparer <type_t>.
@@ -256,7 +256,7 @@ namespace xtd {
         /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. If type `key_t` implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation.
         /// @remarks This constructor is an O(n) operation, where n is the number of elements in dictionary.
         template < class equality_comparer_t >
-        dictionary(const idictionary < key_t, value_t > & dictionary, const equality_comparer_t& comparer) : data_(xtd::new_ptr < dictionary_data>(new_ptr<equality_comparer_t > (comparer))) {
+        dictionary(const idictionary < key_t, value_t > & dictionary, const equality_comparer_t& comparer) : data_(xtd::new_ptr < dictionary_data>(new_ptr < equality_comparer_t > (comparer))) {
           ensure_capacity(dictionary.count());
           for (const auto& item : dictionary)
             add(item);
@@ -266,7 +266,7 @@ namespace xtd {
         /// @param comparer The xtd::collections::generic::iequality_comparer <type_t> implementation to use when comparing keys.
         /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
         template < class equality_comparer_t >
-        dictionary(const ienumerable < value_type > & collection, const equality_comparer_t& comparer) : data_(xtd::new_ptr < dictionary_data>(new_ptr<equality_comparer_t > (comparer))) {
+        dictionary(const ienumerable < value_type > & collection, const equality_comparer_t& comparer) : data_(xtd::new_ptr < dictionary_data>(new_ptr < equality_comparer_t > (comparer))) {
           for (const auto& item : collection)
             add(item);
         }
@@ -312,7 +312,7 @@ namespace xtd {
         /// ```cpp
         /// dictionary(init.begin(), init.end())
         /// ```
-        dictionary(std::initializer_list<base_value_type> init) {
+        dictionary(std::initializer_list < base_value_type > init) {
           for (const auto& [key, value] : init) {
             if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
             self_[key] = value;
@@ -327,7 +327,7 @@ namespace xtd {
         /// ```
         /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
         template < class init_key_t, class init_value_t >
-        explicit dictionary(std::initializer_list<key_value_pair<init_key_t, init_value_t>> init) {
+        explicit dictionary(std::initializer_list < key_value_pair < init_key_t, init_value_t>> init) {
           for (const auto& [key, value] : init) {
             if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
             self_[key] = value;
@@ -452,7 +452,7 @@ namespace xtd {
           for (const auto& item : self_)
             array[array_index + index++] = item;
         }
-                
+        
         /// @brief Ensures that the dictionary can hold up to a specified number of entries without any further expansion of its backing storage.
         /// @param capacity The number of entries.
         /// @return The current capacity of the xtd::collections::generic::dictionary <key_t, value_t>.
@@ -493,7 +493,7 @@ namespace xtd {
               iterator_ = items_.items().cend();
             }
             
-          protected:
+protected:
             bool reset_ = true;
             const dictionary& items_;
             typename dictionary::base_type::const_iterator iterator_ = items_.items().cend();
@@ -649,7 +649,7 @@ namespace xtd {
           ++data_->version;
           return data_->items[key];
         }
-          
+        
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
         operator const base_type & () const noexcept {return data_->items;}
@@ -662,11 +662,11 @@ namespace xtd {
         bool is_read_only() const noexcept override {return false;}
         bool is_synchronized() const noexcept override {return false;}
         const xtd::object & sync_root() const noexcept override {return data_->sync_root;}
-
+        
         struct dictionary_data {
           dictionary_data() : items {size_type {}, hasher {}, equator {}, allocator_t {}} {}
-          dictionary_data(ptr<iequality_comparer<key_t>> comparer) : comparer {comparer},  items {size_type {}, hasher {comparer.get()}, equator {comparer.get()}, allocator_t {}} {}
-          dictionary_data(ptr<iequality_comparer<key_t>> comparer, const base_type & items, size_type version) noexcept : comparer {comparer}, items {size_type {}, hasher {comparer.get()}, equator {comparer.get()}, allocator_t {}}, version {version} {
+          dictionary_data(ptr < iequality_comparer < key_t>> comparer) : comparer {comparer},  items {size_type {}, hasher {comparer.get()}, equator {comparer.get()}, allocator_t {}} {}
+          dictionary_data(ptr < iequality_comparer < key_t>> comparer, const base_type & items, size_type version) noexcept : comparer {comparer}, items {size_type {}, hasher {comparer.get()}, equator {comparer.get()}, allocator_t {}}, version {version} {
             for (const auto& item : items)
               this->items.insert(item);
           }
@@ -675,12 +675,12 @@ namespace xtd {
               this->items.insert(item);
           }
           
-          ptr<iequality_comparer<key_t>> comparer;
+          ptr < iequality_comparer < key_t>> comparer;
           base_type items;
           size_type version = 0;
           xtd::object sync_root;
         };
-        xtd::ptr<dictionary_data> data_ = xtd::new_ptr <dictionary_data> ();
+        xtd::ptr < dictionary_data > data_ = xtd::new_ptr < dictionary_data > ();
       };
       
       /// @cond
@@ -692,13 +692,13 @@ namespace xtd {
       template < class key_t, class value_t >
       dictionary(ienumerable < key_value_pair < key_t, value_t>>) -> dictionary<key_t, value_t, helpers::hasher<key_t>, helpers::equator<key_t >, helpers::allocator < std::pair < const key_t, value_t >>>;
       
-      template < class key_t, class value_t>
-      dictionary(std::initializer_list < key_value_pair < key_t, value_t>>) -> dictionary < key_t, value_t>;
+      template < class key_t, class value_t >
+      dictionary(std::initializer_list < key_value_pair < key_t, value_t>>) -> dictionary < key_t, value_t >;
       
-      template < class key_t, class value_t>
-      dictionary(std::initializer_list < std::pair < key_t, value_t>>) -> dictionary<key_t, value_t>;
+      template < class key_t, class value_t >
+      dictionary(std::initializer_list < std::pair < key_t, value_t>>) -> dictionary < key_t, value_t >;
       
-      template < class input_iterator_t>
+      template < class input_iterator_t >
       dictionary(input_iterator_t, input_iterator_t) -> dictionary < helpers::iterator_key_t < input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t >>;
       // }
       /// @endcond
