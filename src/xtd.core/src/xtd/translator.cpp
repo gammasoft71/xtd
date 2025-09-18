@@ -94,10 +94,10 @@ void translator::parse_file(const string& file, const string& language) {
     line = line.trim();
     if (string::is_empty(line)) continue;
     if (line.starts_with("#")) continue;
-    if (key.empty() && line.starts_with("key ")) key = line.remove(0, 4).trim('"');
-    else if (!key.empty() && line.starts_with("value ")) value = line.remove(0, 6).trim('"');
+    if (xtd::string::is_empty(key) && line.starts_with("key ")) key = line.remove(0, 4).trim('"');
+    else if (!xtd::string::is_empty(key) && line.starts_with("value ")) value = line.remove(0, 6).trim('"');
     else throw_helper::throws(exception_case::format, string::format("file {} has an invalid format at line {}", file, line_count).c_str());
-    if (!key.empty() && !value.empty()) {
+    if (!xtd::string::is_empty(key) && !xtd::string::is_empty(value)) {
       add_value(language, key, value);
       key = value = "";
     }

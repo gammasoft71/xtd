@@ -301,7 +301,7 @@ namespace xtd {
         }
       }
       
-      if (str.empty() || rest > 0) return  xtd::string::format("{}", to_int(value));
+      if (xtd::string::is_empty(str) || rest > 0) return  xtd::string::format("{}", to_int(value));
       
       return str;
     }
@@ -669,7 +669,7 @@ namespace xtd {
   xtd::string enum_object < enum_t >::to_string(const xtd::string& format, const std::locale& loc) const {
     init();
     auto fmt = format;
-    if (fmt.empty()) fmt = "G";
+    if (xtd::string::is_empty(fmt)) fmt = "G";
     
     switch (fmt[0]) {
       case 'b':

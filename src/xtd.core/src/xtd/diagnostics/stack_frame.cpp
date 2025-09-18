@@ -135,7 +135,7 @@ xtd::size stack_frame::get_offset() const noexcept {
 
 string stack_frame::to_string() const noexcept {
   if (*this == empty()) return "";
-  return string::format("{} at offset {} in file:line:column {}:{}:{}{}", data_->method_name.empty() ? "<unknown method>" : data_->method_name, data_->offset == OFFSET_UNKNOWN ? "<unknown offset>" : std::to_string(data_->offset), data_->file_name.empty() ? "<filename unknown>" : data_->file_name, data_->file_line_number, data_->file_column_number, environment::new_line());
+  return string::format("{} at offset {} in file:line:column {}:{}:{}{}", xtd::string::is_empty(data_->method_name) ? "<unknown method>" : data_->method_name, data_->offset == OFFSET_UNKNOWN ? "<unknown offset>" : std::to_string(data_->offset), xtd::string::is_empty(data_->file_name) ? "<filename unknown>" : data_->file_name, data_->file_line_number, data_->file_column_number, environment::new_line());
 }
 
 stack_frame stack_frame::current(const xtd::diagnostics::source_location& value) noexcept {

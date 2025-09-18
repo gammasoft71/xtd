@@ -100,14 +100,14 @@ const xtd::diagnostics::stack_frame& exception::get_last_stack_frame() const noe
 }
 
 string exception::to_string() const noexcept {
-  if (message().empty() && stack_trace().empty()) return get_name();
-  if (message().empty()) return xtd::string::format("{}\n{}", get_name(), stack_trace());
-  if (stack_trace().empty()) return xtd::string::format("{} : {}", get_name(), message());
+  if (xtd::string::is_empty(message()) && xtd::string::is_empty(stack_trace())) return get_name();
+  if (xtd::string::is_empty(message())) return xtd::string::format("{}\n{}", get_name(), stack_trace());
+  if (xtd::string::is_empty(stack_trace())) return xtd::string::format("{} : {}", get_name(), message());
   return xtd::string::format("{} : {}\n{}", get_name(), message(), stack_trace());
 }
 
 const char* exception::what() const noexcept {
-  return message().empty() ? get_name().c_str() : message().c_str();
+  return xtd::string::is_empty(message()) ? get_name().c_str() : message().c_str();
 }
 
 string exception::stack_trace_to_string() const noexcept {

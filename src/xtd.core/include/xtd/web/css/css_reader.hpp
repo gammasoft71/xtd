@@ -61,12 +61,12 @@ namespace xtd {
               status = parse_status::selector;
             } else if (status == parse_status::key && text[index] == ':') {
               current_key = text.substring(start_index, index - start_index).trim().to_lower();
-              if (current_key.empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "key cannot be empty"_t);
+              if (xtd::string::is_empty(current_key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "key cannot be empty"_t);
               start_index = index + 1;
               status = parse_status::value;
             } else if (status == parse_status::value && text[index] == ';') {
               auto value = text.substring(start_index, index - start_index).trim();
-              if (value.empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "value cannot be empty"_t);
+              if (xtd::string::is_empty(value)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "value cannot be empty"_t);
               start_index = index + 1;
               current_selector.properties()[current_key] = property(value);
               status = parse_status::key;

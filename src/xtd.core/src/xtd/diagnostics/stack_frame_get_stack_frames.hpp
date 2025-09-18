@@ -8,7 +8,7 @@
 inline auto xtd::diagnostics::stack_frame::get_stack_frames(const xtd::string& str, xtd::size skip_frames, bool need_file_info) noexcept {
   auto call_stack = xtd::native::stack_trace::get_frames(skip_frames, need_file_info);
   auto skip_frames_before_str = xtd::size {0};
-  if (!str.empty()) {
+  if (!xtd::string::is_empty(str)) {
     skip_frames_before_str = call_stack.size();
     for (auto index = xtd::size {0}; index < call_stack.size(); ++index) {
       auto [file, line, column, method, offset] = call_stack[index];

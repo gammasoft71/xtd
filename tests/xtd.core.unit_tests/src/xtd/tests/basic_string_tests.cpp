@@ -472,12 +472,6 @@ namespace xtd::tests {
       }
     }
     
-    void test_method_(empty) {
-      assert::is_true(basic_string<char_t> {}.empty());
-      assert::is_true(basic_string<char_t>::empty_string.empty());
-      assert::is_false(basic_string<char_t> {"A test string"}.empty());
-    }
-    
     void test_method_(end) {
       auto s = basic_string<char_t> {"A test string"};
       auto iterator = s.end();

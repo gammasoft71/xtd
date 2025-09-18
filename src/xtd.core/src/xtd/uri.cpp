@@ -47,7 +47,7 @@ string uri::authority() const {
 
 string uri::dns_safe_host() const {
   auto str = host();
-  if (!str.empty()) {
+  if (!xtd::string::is_empty(str)) {
     auto address = ip_address();
     if (ip_address::try_parse(str, address) == true && address.address_family() == sockets::address_family::inter_network_v6 && str[0] == '[' && str[str.size() - 1] == ']')
       return str.substring(1, str.size() - 2);
@@ -66,7 +66,7 @@ string uri::host() const {
 uri_host_name_type uri::host_name_type() const {
   if (data_->kind != uri_kind::absolute) throw_helper::throws(exception_case::invalid_operation);
   
-  if (!host().empty()) {
+  if (!xtd::string::is_empty(host())) {
     auto address = ip_address();
     if (ip_address::try_parse(host(), address) == false) return uri_host_name_type::dns;
     if (address.address_family() == sockets::address_family::inter_network) return uri_host_name_type::ip_v4;
@@ -80,7 +80,7 @@ uri_host_name_type uri::host_name_type() const {
 
 string uri::idn_host() const {
   auto str = host();
-  if (!str.empty()) {
+  if (!xtd::string::is_empty(str)) {
     auto address = ip_address();
     if (ip_address::try_parse(str, address) == true && address.address_family() == sockets::address_family::inter_network_v6 && str[0] == '[' && str[str.size() - 1] == ']')
       return str.substring(1, str.size() - 2);
@@ -107,16 +107,16 @@ bool uri::is_file() const {
 
 bool uri::is_loopback() const {
   if (data_->kind != uri_kind::absolute) throw_helper::throws(exception_case::invalid_operation);
-  if (!host().empty()) {
+  if (!xtd::string::is_empty(host())) {
     auto address = ip_address();
     if (ip_address::try_parse(host(), address) == true && ip_address::is_loopback(address)) return true;
   }
-  return host() == ip_address::loopback.to_string() || host() == ip_address::ip_v6_loopback.to_string() || host() == "loopback" || host() == "localhost" || host().empty();
+  return host() == ip_address::loopback.to_string() || host() == ip_address::ip_v6_loopback.to_string() || host() == "loopback" || host() == "localhost" || xtd::string::is_empty(host());
 }
 
 bool uri::is_unc() const {
   if (data_->kind != uri_kind::absolute) throw_helper::throws(exception_case::invalid_operation);
-  return scheme() == uri::uri_scheme_file && !host().empty();
+  return scheme() == uri::uri_scheme_file && !xtd::string::is_empty(host());
 }
 
 string uri::local_path() const {
@@ -155,7 +155,7 @@ string uri::scheme() const {
 
 array<string> uri::segments() const {
   auto path = this->absolute_path();
-  if (path.empty()) return {};
+  if (xtd::string::is_empty(path)) return {};
   
   auto segments = list<string> {};
   auto start_index = 0_z;
@@ -378,7 +378,7 @@ string uri::format_componant(const string& str, uri_format format) {
 }
 
 string uri::format_host_componant(const string& str, uri_format format) {
-  if (!str.empty()) {
+  if (!xtd::string::is_empty(str)) {
     auto address = ip_address();
     if (ip_address::try_parse(str, address) == false) return format_componant(str, format);
     if (address.address_family() == sockets::address_family::inter_network) return str;
@@ -406,7 +406,7 @@ void uri::set_fragment(string& escape_uri) {
 }
 
 void uri::set_host(string& escape_uri) {
-  if (!escape_uri.empty() && escape_uri[0] == '[') {
+  if (!xtd::string::is_empty(escape_uri) && escape_uri[0] == '[') {
     auto index_start = escape_uri.index_of(']');
     if (index_start == string::npos) index_start = escape_uri.size();
     if (index_start != string::npos) {
@@ -431,7 +431,7 @@ void uri::set_path(string& escape_uri) {
     return;
   }
   
-  data_->path = escape_uri.empty() ? "/" : escape_uri;
+  data_->path = xtd::string::is_empty(escape_uri) ? "/" : escape_uri;
   escape_uri = string::empty_string;
 }
 

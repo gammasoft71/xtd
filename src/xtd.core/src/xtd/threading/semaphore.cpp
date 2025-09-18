@@ -84,7 +84,7 @@ bool semaphore::equals(const semaphore& other) const noexcept {
 }
 
 semaphore semaphore::open_existing(const string& name) {
-  if (name.empty()) throw_helper::throws(exception_case::argument);
+  if (xtd::string::is_empty(name)) throw_helper::throws(exception_case::argument);
   if (name.size() > native::named_semaphore::max_name_size()) throw_helper::throws(exception_case::path_too_long);
   auto result = semaphore{};
   if (!try_open_existing(name, result)) throw_helper::throws(exception_case::io);
@@ -141,7 +141,7 @@ void semaphore::create(int32 initial_count, int32 maximum_count, bool& created_n
   data_->count.exchange(initial_count);
   data_->maximum_count = maximum_count;
   created_new = true;
-  if (data_->name.empty()) {
+  if (xtd::string::is_empty(data_->name)) {
     semaphore_ = xtd::new_sptr<semaphore::unnamed_semaphore>();
     if (!semaphore_->create(initial_count, maximum_count)) throw_helper::throws(exception_case::io);
   } else {

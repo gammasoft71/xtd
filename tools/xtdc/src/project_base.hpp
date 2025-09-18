@@ -10,7 +10,7 @@ namespace xtdc_command {
     static xtd::string get_full_path() noexcept {return xtd::environment::get_folder_path(xtd::environment::special_folder::xtd_resources);}
     
     static xtd::string get_project_full_path_from_path(const xtd::string& path) noexcept {
-      if (path.empty() || path == ".") return xtd::environment::current_directory();
+      if (xtd::string::is_empty(path) || path == ".") return xtd::environment::current_directory();
       else if (path == "..") {
         auto directories = xtd::collections::generic::list<xtd::string> {xtd::environment::current_directory().split(xtd::io::path::directory_separator_char())};
         if (directories.count() < 2) return "";

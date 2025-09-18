@@ -799,7 +799,7 @@ void form::fill_in_create_params_border_icons(xtd::forms::create_params& create_
   if (data_->form_border_style == xtd::forms::form_border_style::none)
     create_params.class_style(create_params.class_style() | CS_NOCLOSE);
   else {
-    if (!text().empty())
+    if (!xtd::string::is_empty(text()))
       create_params.style(create_params.style() | WS_CAPTION);
       
     if (data_->control_box)

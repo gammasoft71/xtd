@@ -436,7 +436,7 @@ string environment::get_folder_path_(environment::special_folder folder, environ
   }
   
   auto path = native::environment::get_know_folder_path(static_cast<int32>(folder));
-  if (path.empty()) return path;
+  if (xtd::string::is_empty(path)) return path;
   if (option == environment::special_folder_option::none) return !xtd::io::directory::exists(path) ? "" :  path;
   if (option == environment::special_folder_option::create && !xtd::io::directory::exists(path)) xtd::io::directory::create_directory(path);
   return path;

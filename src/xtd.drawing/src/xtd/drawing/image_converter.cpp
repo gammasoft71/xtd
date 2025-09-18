@@ -13,7 +13,7 @@ using namespace xtd::drawing::helpers;
 using namespace xtd::drawing::imaging;
 
 image image_converter::from_base64_string(const string& value) {
-  if (value.empty()) return image::empty;
+  if (xtd::string::is_empty(value)) return image::empty;
   return to_image(convert::from_base64_string(value));
 }
 

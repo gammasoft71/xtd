@@ -21,7 +21,7 @@ xtd::enum_collection<enum_t> __enum_definition_to_enum_collection__(const xtd::s
     entries.emplace_back(static_cast<enum_t>(__enumeration_introspection::enum_values<enum_t>[num_state]), __enumeration_introspection::enum_names<enum_t>[num_state]);
   #else
   using namespace xtd;
-  if (enum_definition.empty()) return entries;
+  if (xtd::string::is_empty(enum_definition)) return entries;
   xtd::int64 current_value = 0;
   for (auto entry : enum_definition.split({','})) {
     auto key_value = entry.trim().split({'='});

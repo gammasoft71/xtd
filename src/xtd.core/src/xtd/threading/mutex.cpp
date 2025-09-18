@@ -72,7 +72,7 @@ void mutex::lock() {
 }
 
 mutex mutex::open_existing(const string& name) {
-  if (name.empty()) throw_helper::throws(exception_case::argument);
+  if (xtd::string::is_empty(name)) throw_helper::throws(exception_case::argument);
   if (name.size() > native::named_mutex::max_name_size()) throw_helper::throws(exception_case::path_too_long);
   auto result = mutex{};
   if (!try_open_existing(name, result)) throw_helper::throws(exception_case::io);
@@ -143,7 +143,7 @@ bool mutex::wait(int32 milliseconds_timeout) {
 
 void mutex::create(bool initially_owned, bool& created_new) {
   created_new = true;
-  if (name_.empty()) {
+  if (xtd::string::is_empty(name_)) {
     mutex_ = xtd::new_sptr<mutex::unnamed_mutex>();
     if (!mutex_->create(initially_owned)) throw_helper::throws(exception_case::io);
   } else {

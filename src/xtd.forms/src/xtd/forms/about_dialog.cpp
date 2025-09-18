@@ -145,7 +145,7 @@ namespace {
       /// @todo Activate the following commment if about dialog must be modal on Windows.
       // if (show_modal_) start_position(form_start_position::center_parent);
       auto has_credit = !(authors.empty() && documenters.empty() && translators.empty() && artists.empty());
-      auto has_license = !license.empty();
+      auto has_license = !xtd::string::is_empty(license);
       if (icon != bitmap::empty)
         picture_box_icon_.image(bitmap {icon, {64, 64}});
       else
@@ -165,18 +165,18 @@ namespace {
         controls().add_range({panel_about_, label_name_, picture_box_icon_});
       }
       
-      if (!version.empty() && !long_version.empty())
+      if (!xtd::string::is_empty(version) && !xtd::string::is_empty(long_version))
         label_version_.text(string::format("{} ({})", long_version, version));
-      else if (!long_version.empty())
+      else if (!xtd::string::is_empty(long_version))
         label_version_.text(string::format("{}", long_version));
-      else if (!version.empty())
+      else if (!xtd::string::is_empty(version))
         label_version_.text(string::format("({})", version));
         
       label_description_.height(static_cast<int32>(23 * description.split('\n').size()));
       label_description_.text(string::format("{}", description));
       
-      link_label_website_.height(static_cast<int32>(23 * (!website_label.empty() ? website_label : website).split('\n').size()));
-      link_label_website_.text(!website_label.empty() ? website_label : website);
+      link_label_website_.height(static_cast<int32>(23 * (!xtd::string::is_empty(website_label) ? website_label : website).split('\n').size()));
+      link_label_website_.text(!xtd::string::is_empty(website_label) ? website_label : website);
       link_label_website_.link_clicked += [website](object & sender, link_label_clicked_event_args & e) {
         e.visited(true);
         diagnostics::process::start(diagnostics::process_start_info {website}.use_shell_execute(true));
@@ -450,7 +450,7 @@ about_dialog about_dialog::from_assembly(const assembly& assembly) {
   result.copyright(assembly.copyright());
   result.description(assembly.description());
   result.long_version(assembly.version());
-  result.name(assembly.title().empty() ? assembly.name() : assembly.title());
+  result.name(xtd::string::is_empty(assembly.title()) ? assembly.name() : assembly.title());
   return result;
 }
 

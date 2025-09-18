@@ -106,7 +106,7 @@ intptr progress_dialog::create(intptr hwnd, const string& text, const string& me
   #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
   #endif
-  auto dialog = new wx_progress_dialog(text, message.empty() ? " " : message, 0, hwnd ? reinterpret_cast<control_handler*>(hwnd)->control() : nullptr, options_to_wx_style(options));
+  auto dialog = new wx_progress_dialog(text, xtd::string::is_empty(message) ? " " : message, 0, hwnd ? reinterpret_cast<control_handler*>(hwnd)->control() : nullptr, options_to_wx_style(options));
   dialog->Hide();
   dialog->marquee((options & PROGDLG_MARQUEEPROGRESS) == PROGDLG_MARQUEEPROGRESS, animation_speed);
   dialog->minimum(minimum);

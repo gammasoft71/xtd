@@ -15,7 +15,7 @@ struct font_family::data {
 
 font_family::font_family(const string& name) : data_(xtd::new_sptr<data>()) {
   data_->name = name;
-  if (data_->name.empty()) throw_helper::throws(exception_case::argument, "name is an empty string"_t);
+  if (xtd::string::is_empty(data_->name)) throw_helper::throws(exception_case::argument, "name is an empty string"_t);
   data_->handle = native::font_family::create(name);
   if (data_->handle == 0) throw_helper::throws(exception_case::argument, "name specifies a font that is not installed on the computer running the application."_t);
 }

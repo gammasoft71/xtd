@@ -775,7 +775,7 @@ style_sheets::style_sheet control::style_sheet() const noexcept {
 control & control::style_sheet(const style_sheets::style_sheet& value) {
   if (data_->style_sheet == value) return *this;
   data_->style_sheet = value;
-  if (data_->style_sheet.theme().name().empty()) data_->style_sheet.theme_name_("-- user style sheet --");
+  if (xtd::string::is_empty(data_->style_sheet.theme().name())) data_->style_sheet.theme_name_("-- user style sheet --");
   on_style_sheet_changed(event_args::empty);
   return *this;
 }
@@ -1632,8 +1632,8 @@ void control::suspend_layout() {
 }
 
 string control::to_string() const noexcept {
-  if (!data_->name.empty()) return string::format("{}, name: {}", get_type().full_name(), data_->name);
-  if (!data_->text.empty()) return string::format("{}, text: {}", get_type().full_name(), data_->text);
+  if (!xtd::string::is_empty(data_->name)) return string::format("{}, name: {}", get_type().full_name(), data_->name);
+  if (!xtd::string::is_empty(data_->text)) return string::format("{}, text: {}", get_type().full_name(), data_->text);
   return get_type().full_name();
 }
 
