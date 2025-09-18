@@ -25,7 +25,7 @@ namespace example {
       button_previous.click += delegate_ {
         if (current_image_index > 0) picture.image(pictures.images()[--current_image_index]);
         button_previous.enabled(current_image_index > 0);
-        button_next.enabled(current_image_index < pictures.images().size() - 1);
+        button_next.enabled(current_image_index < pictures.images().count() - 1);
       };
       
       button_next.auto_repeat(true);
@@ -33,9 +33,9 @@ namespace example {
       button_next.location({150, 200});
       button_next.enabled(false);
       button_next.click += delegate_ {
-        if (current_image_index < pictures.images().size()) picture.image(pictures.images()[++current_image_index]);
+        if (current_image_index < pictures.images().count()) picture.image(pictures.images()[++current_image_index]);
         button_previous.enabled(current_image_index > 0);
-        button_next.enabled(current_image_index < pictures.images().size() - 1);
+        button_next.enabled(current_image_index < pictures.images().count() - 1);
       };
       
       show();
@@ -54,7 +54,7 @@ namespace example {
         current_image_index = 0;
         picture.image(pictures.images()[current_image_index]);
         button_previous.enabled(current_image_index > 0);
-        button_next.enabled(current_image_index < pictures.images().size() - 1);
+        button_next.enabled(current_image_index < pictures.images().count() - 1);
       }
     }
     
