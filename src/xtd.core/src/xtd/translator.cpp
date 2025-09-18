@@ -132,7 +132,7 @@ void translator::initialize() {
   } catch (...) {
   }
   
-  if (language_.empty()) {
+  if (xtd::string::is_empty(language_)) {
     if (!std::locale {}.name().empty() && std::locale {}.name() != "C") language_ = locale_to_language(std::locale {}.name());
     else language_ = system_language();
   }

@@ -13,7 +13,7 @@ boolean_switch::boolean_switch(const string& display_name, const string& descrip
 }
 
 bool boolean_switch::enabled() const {
-  if (!enabled_.has_value() && !this->value().empty() == true) {
+  if (!enabled_.has_value() && !xtd::string::is_empty(this->value()) == true) {
     auto bool_value = false;
     auto int_value = 0;
     if (string::try_parse(this->value(), bool_value) == true)
