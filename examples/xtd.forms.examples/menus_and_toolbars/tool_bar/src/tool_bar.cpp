@@ -58,11 +58,11 @@ namespace tool_bar_example {
     
     list_box list_box1;
     
-    menu_item context_help_context_menu_item {"Help context", {*this, &form1::on_menu_click}};
-    menu_item context_help_index_menu_item {"Help index", {*this, &form1::on_menu_click}};
-    menu_item context_help_search_menu_item {"Help search", {*this, &form1::on_menu_click}};
+    menu_item context_help_context_menu_item {"Help context", event_handler {*this, &form1::on_menu_click}};
+    menu_item context_help_index_menu_item {"Help index", event_handler {*this, &form1::on_menu_click}};
+    menu_item context_help_search_menu_item {"Help search", event_handler {*this, &form1::on_menu_click}};
     menu_item context_separator_menu_item {"-"};
-    menu_item context_about_menu_item {texts::about(), {*this, &form1::on_menu_click}};
+    menu_item context_about_menu_item {texts::about(), event_handler {*this, &form1::on_menu_click}};
     forms::context_menu context_menu1 {context_help_context_menu_item, context_help_index_menu_item, context_help_search_menu_item, context_separator_menu_item, context_about_menu_item};
     
     forms::tool_bar tool_bar1;
