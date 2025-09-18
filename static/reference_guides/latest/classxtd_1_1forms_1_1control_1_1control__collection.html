@@ -144,10 +144,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>add</b> (const <a cla
 template&lt;class control_t&gt; </td></tr>
 <tr class="memitem:aa0548b639dad6295fe63733a74cafd7f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>add</b> (control_t &amp;value)</td></tr>
 <tr class="separator:aa0548b639dad6295fe63733a74cafd7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a361a8920d371fe4f3f27db99d4e2b5f9" id="r_a361a8920d371fe4f3f27db99d4e2b5f9"><td class="memTemplParams" colspan="2">template&lt;class control_t, class ... args_t&gt; </td></tr>
-<tr class="memitem:a361a8920d371fe4f3f27db99d4e2b5f9"><td class="memTemplItemLeft" align="right" valign="top">control_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a361a8920d371fe4f3f27db99d4e2b5f9">emplace</a> (const_iterator pos, args_t &amp;&amp;...args)</td></tr>
-<tr class="memdesc:a361a8920d371fe4f3f27db99d4e2b5f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and inserts specified control at specified position.  <br /></td></tr>
-<tr class="separator:a361a8920d371fe4f3f27db99d4e2b5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71f7b15e240958cd74f371227db60e1d" id="r_a71f7b15e240958cd74f371227db60e1d"><td class="memTemplParams" colspan="2">template&lt;class control_t, class ... args_t&gt; </td></tr>
+<tr class="memitem:a71f7b15e240958cd74f371227db60e1d"><td class="memTemplItemLeft" align="right" valign="top">control_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a71f7b15e240958cd74f371227db60e1d">emplace_front</a> (args_t &amp;&amp;...args)</td></tr>
+<tr class="memdesc:a71f7b15e240958cd74f371227db60e1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and inserts specified control at specified position.  <br /></td></tr>
+<tr class="separator:a71f7b15e240958cd74f371227db60e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ef80fc1551a8dba58dc35a8347747ca" id="r_a0ef80fc1551a8dba58dc35a8347747ca"><td class="memTemplParams" colspan="2">template&lt;class control_t, class ... args_t&gt; </td></tr>
 <tr class="memitem:a0ef80fc1551a8dba58dc35a8347747ca"><td class="memTemplItemLeft" align="right" valign="top">control_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0ef80fc1551a8dba58dc35a8347747ca">emplace_at</a> (size_t index, args_t &amp;&amp;...args)</td></tr>
 <tr class="memdesc:a0ef80fc1551a8dba58dc35a8347747ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and inserts specified control at specified position.  <br /></td></tr>
@@ -911,8 +911,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const
 
 </div>
 </div>
-<a id="a361a8920d371fe4f3f27db99d4e2b5f9" name="a361a8920d371fe4f3f27db99d4e2b5f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a361a8920d371fe4f3f27db99d4e2b5f9">&#9670;&#160;</a></span>emplace()</h2>
+<a id="a71f7b15e240958cd74f371227db60e1d" name="a71f7b15e240958cd74f371227db60e1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71f7b15e240958cd74f371227db60e1d">&#9670;&#160;</a></span>emplace_front()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -923,14 +923,10 @@ template&lt;class control_t, class ... args_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">control_t &amp; xtd::forms::control::control_collection::emplace </td>
+          <td class="memname">control_t &amp; xtd::forms::control::control_collection::emplace_front </td>
           <td>(</td>
-          <td class="paramtype">const_iterator</td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">args_t &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype">args_t &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -952,18 +948,18 @@ template&lt;class control_t, class ... args_t&gt; </div>
 <dl class="section remark"><dt>Remarks</dt><dd>The control will be destroyed automatically when the control no longer has a parent. </dd>
 <dd>
 For creation and insertion, this method uses the <a class="el" href="classxtd_1_1forms_1_1control.html#a3789586663405e61bedc845f808003f6" title="A factory to create a specified control.">xtd::forms::control::create</a> methods of the various controls. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The folowing example demonstartes the use of <a class="el" href="#a361a8920d371fe4f3f27db99d4e2b5f9" title="Creates and inserts specified control at specified position.">xtd::forms::control::control_collection::emplace</a>, <a class="el" href="#a0ef80fc1551a8dba58dc35a8347747ca" title="Creates and inserts specified control at specified position.">xtd::forms::control::control_collection::emplace_at</a> and <a class="el" href="#acbacd7606d615a5c2c66c4e706644c35" title="Creates and adds a control to the end.">xtd::forms::control::control_collection::emplace_back</a> methods. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The folowing example demonstartes the use of <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#aa6cde490d9b23fa106a830cff4a9253c">xtd::forms::control::control_collection::emplace</a>, <a class="el" href="#a0ef80fc1551a8dba58dc35a8347747ca" title="Creates and inserts specified control at specified position.">xtd::forms::control::control_collection::emplace_at</a> and <a class="el" href="#acbacd7606d615a5c2c66c4e706644c35" title="Creates and adds a control to the end.">xtd::forms::control::control_collection::emplace_back</a> methods. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> button1_clicked = 0, button2_clicked = 0;</div>
 <div class="line">  <span class="keyword">auto</span> form1 = <a class="code hl_function" href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">form::create</a>(<span class="stringliteral">&quot;Emplace example&quot;</span>);</div>
-<div class="line">  form1.controls().emplace&lt;<a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a>&gt;(form1.controls().<a class="code hl_function" href="namespacextd.html#a2b4bd6a98991447f6d1d2b4870a2f3b5">begin</a>(), <span class="stringliteral">&quot;Button 1&quot;</span>, point{50, 50}).<a class="code hl_variable" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">click</a> += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
+<div class="line">  form1.controls().emplace_front&lt;<a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a>&gt;(<span class="stringliteral">&quot;Button 1&quot;</span>, point{50, 50}).<a class="code hl_variable" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">click</a> += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">    form1.controls()[<span class="stringliteral">&quot;label1&quot;</span>].value().get().text(string::format(<span class="stringliteral">&quot;Button 1 clicked {} times&quot;</span>, ++button1_clicked));</div>
 <div class="line">  };</div>
 <div class="line">  form1.controls().emplace_at&lt;<a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a>&gt;(1, <span class="stringliteral">&quot;Button 2&quot;</span>, point {50, 100}, <a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> {200, 75}).auto_repeat(<span class="keyword">true</span>).<a class="code hl_variable" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">click</a> += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">    form1.controls()[<span class="stringliteral">&quot;label2&quot;</span>].value().get().text(string::format(<span class="stringliteral">&quot;Button 2 clicked {} times&quot;</span>, ++button2_clicked));</div>
 <div class="line">  };</div>
-<div class="line">  form1.controls().emplace&lt;<a class="code hl_typedef" href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">label</a>&gt;(form1.controls().<a class="code hl_function" href="namespacextd.html#a3a39828bd6261156752c2d0eda4c625a">end</a>(), <span class="stringliteral">&quot;Button 1 clicked 0 times&quot;</span>, point {50, 200}, drawing::size {200, 23}, <span class="stringliteral">&quot;label1&quot;</span>);</div>
+<div class="line">  form1.controls().emplace_at&lt;<a class="code hl_typedef" href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">label</a>&gt;(2, <span class="stringliteral">&quot;Button 1 clicked 0 times&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9">point</a> {50, 200}, drawing::size {200, 23}, <span class="stringliteral">&quot;label1&quot;</span>);</div>
 <div class="line">  form1.controls().emplace_back&lt;<a class="code hl_typedef" href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">label</a>&gt;(<span class="stringliteral">&quot;Button 2 clicked 0 times&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9">point</a> {50, 230}, drawing::size {200, 23}, <span class="stringliteral">&quot;label2&quot;</span>);</div>
 <div class="line">  application::run(form1);</div>
 <div class="line">}</div>
@@ -973,8 +969,6 @@ For creation and insertion, this method uses the <a class="el" href="classxtd_1_
 <div class="ttc" id="agroup__keywords_html_gac0b0b1a17f583a897eb6b424f2475363"><div class="ttname"><a href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a></div><div class="ttdeci">#define delegate_</div><div class="ttdoc">The declaration of a delegate type is similar to a method signature. It has a return value and any nu...</div><div class="ttdef"><b>Definition</b> delegate.hpp:900</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga41870a8a6c9bb6ef3b585c4ce3a98c58"><div class="ttname"><a href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">xtd::forms::style_sheets::label</a></div><div class="ttdeci">xtd::forms::style_sheets::control label</div><div class="ttdoc">The label data allows you to specify the box of a label control.</div><div class="ttdef"><b>Definition</b> label.hpp:25</div></div>
 <div class="ttc" id="agroup__xtd__drawing_html_gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9"><div class="ttname"><a href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9">xtd::drawing::graphics_unit::point</a></div><div class="ttdeci">@ point</div><div class="ttdoc">Specifies a printer&#39;s point (1/72 inch) as the unit of measure.</div><div class="ttdef"><b>Definition</b> graphics_unit.hpp:25</div></div>
-<div class="ttc" id="anamespacextd_html_a2b4bd6a98991447f6d1d2b4870a2f3b5"><div class="ttname"><a href="namespacextd.html#a2b4bd6a98991447f6d1d2b4870a2f3b5">xtd::begin</a></div><div class="ttdeci">const_iterator begin() const</div><div class="ttdoc">Returns an iterator to the beginning.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:183</div></div>
-<div class="ttc" id="anamespacextd_html_a3a39828bd6261156752c2d0eda4c625a"><div class="ttname"><a href="namespacextd.html#a3a39828bd6261156752c2d0eda4c625a">xtd::end</a></div><div class="ttdeci">const_iterator end() const</div><div class="ttdoc">Returns an iterator to the end.</div><div class="ttdef"><b>Definition</b> read_only_span.hpp:213</div></div>
 <div class="ttc" id="astructxtd_1_1drawing_1_1size_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a></div><div class="ttdoc">Stores an ordered pair of integers, which specify a height and width.</div><div class="ttdef"><b>Definition</b> size.hpp:32</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1021,18 +1015,18 @@ template&lt;class control_t, class ... args_t&gt; </div>
 <dl class="section remark"><dt>Remarks</dt><dd>The control will be destroyed automatically when the control no longer has a parent. </dd>
 <dd>
 For creation and insertion, this method uses the <a class="el" href="classxtd_1_1forms_1_1control.html#a3789586663405e61bedc845f808003f6" title="A factory to create a specified control.">xtd::forms::control::create</a> methods of the various controls. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The folowing example demonstartes the use of <a class="el" href="#a361a8920d371fe4f3f27db99d4e2b5f9" title="Creates and inserts specified control at specified position.">xtd::forms::control::control_collection::emplace</a>, <a class="el" href="#a0ef80fc1551a8dba58dc35a8347747ca" title="Creates and inserts specified control at specified position.">xtd::forms::control::control_collection::emplace_at</a> and <a class="el" href="#acbacd7606d615a5c2c66c4e706644c35" title="Creates and adds a control to the end.">xtd::forms::control::control_collection::emplace_back</a> methods. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The folowing example demonstartes the use of <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#aa6cde490d9b23fa106a830cff4a9253c">xtd::forms::control::control_collection::emplace</a>, <a class="el" href="#a0ef80fc1551a8dba58dc35a8347747ca" title="Creates and inserts specified control at specified position.">xtd::forms::control::control_collection::emplace_at</a> and <a class="el" href="#acbacd7606d615a5c2c66c4e706644c35" title="Creates and adds a control to the end.">xtd::forms::control::control_collection::emplace_back</a> methods. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> button1_clicked = 0, button2_clicked = 0;</div>
 <div class="line">  <span class="keyword">auto</span> form1 = <a class="code hl_function" href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">form::create</a>(<span class="stringliteral">&quot;Emplace example&quot;</span>);</div>
-<div class="line">  form1.controls().emplace&lt;<a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a>&gt;(form1.controls().<a class="code hl_function" href="namespacextd.html#a2b4bd6a98991447f6d1d2b4870a2f3b5">begin</a>(), <span class="stringliteral">&quot;Button 1&quot;</span>, point{50, 50}).<a class="code hl_variable" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">click</a> += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
+<div class="line">  form1.controls().emplace_front&lt;<a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a>&gt;(<span class="stringliteral">&quot;Button 1&quot;</span>, point{50, 50}).<a class="code hl_variable" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">click</a> += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">    form1.controls()[<span class="stringliteral">&quot;label1&quot;</span>].value().get().text(string::format(<span class="stringliteral">&quot;Button 1 clicked {} times&quot;</span>, ++button1_clicked));</div>
 <div class="line">  };</div>
 <div class="line">  form1.controls().emplace_at&lt;<a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a>&gt;(1, <span class="stringliteral">&quot;Button 2&quot;</span>, point {50, 100}, <a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> {200, 75}).auto_repeat(<span class="keyword">true</span>).<a class="code hl_variable" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">click</a> += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">    form1.controls()[<span class="stringliteral">&quot;label2&quot;</span>].value().get().text(string::format(<span class="stringliteral">&quot;Button 2 clicked {} times&quot;</span>, ++button2_clicked));</div>
 <div class="line">  };</div>
-<div class="line">  form1.controls().emplace&lt;<a class="code hl_typedef" href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">label</a>&gt;(form1.controls().<a class="code hl_function" href="namespacextd.html#a3a39828bd6261156752c2d0eda4c625a">end</a>(), <span class="stringliteral">&quot;Button 1 clicked 0 times&quot;</span>, point {50, 200}, drawing::size {200, 23}, <span class="stringliteral">&quot;label1&quot;</span>);</div>
+<div class="line">  form1.controls().emplace_at&lt;<a class="code hl_typedef" href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">label</a>&gt;(2, <span class="stringliteral">&quot;Button 1 clicked 0 times&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9">point</a> {50, 200}, drawing::size {200, 23}, <span class="stringliteral">&quot;label1&quot;</span>);</div>
 <div class="line">  form1.controls().emplace_back&lt;<a class="code hl_typedef" href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">label</a>&gt;(<span class="stringliteral">&quot;Button 2 clicked 0 times&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9">point</a> {50, 230}, drawing::size {200, 23}, <span class="stringliteral">&quot;label2&quot;</span>);</div>
 <div class="line">  application::run(form1);</div>
 <div class="line">}</div>
@@ -1076,18 +1070,18 @@ template&lt;class control_t, class ... args_t&gt; </div>
 <dl class="section remark"><dt>Remarks</dt><dd>The control will be destroyed automatically when the control no longer has a parent. </dd>
 <dd>
 For creation and insertion, this method uses the <a class="el" href="classxtd_1_1forms_1_1control.html#a3789586663405e61bedc845f808003f6" title="A factory to create a specified control.">xtd::forms::control::create</a> methods of the various controls. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The folowing example demonstartes the use of <a class="el" href="#a361a8920d371fe4f3f27db99d4e2b5f9" title="Creates and inserts specified control at specified position.">xtd::forms::control::control_collection::emplace</a>, <a class="el" href="#a0ef80fc1551a8dba58dc35a8347747ca" title="Creates and inserts specified control at specified position.">xtd::forms::control::control_collection::emplace_at</a> and <a class="el" href="#acbacd7606d615a5c2c66c4e706644c35" title="Creates and adds a control to the end.">xtd::forms::control::control_collection::emplace_back</a> methods. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The folowing example demonstartes the use of <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#aa6cde490d9b23fa106a830cff4a9253c">xtd::forms::control::control_collection::emplace</a>, <a class="el" href="#a0ef80fc1551a8dba58dc35a8347747ca" title="Creates and inserts specified control at specified position.">xtd::forms::control::control_collection::emplace_at</a> and <a class="el" href="#acbacd7606d615a5c2c66c4e706644c35" title="Creates and adds a control to the end.">xtd::forms::control::control_collection::emplace_back</a> methods. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> button1_clicked = 0, button2_clicked = 0;</div>
 <div class="line">  <span class="keyword">auto</span> form1 = <a class="code hl_function" href="classxtd_1_1forms_1_1form.html#aea269af32d571c9c68d4e83400ab2d00">form::create</a>(<span class="stringliteral">&quot;Emplace example&quot;</span>);</div>
-<div class="line">  form1.controls().emplace&lt;<a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a>&gt;(form1.controls().<a class="code hl_function" href="namespacextd.html#a2b4bd6a98991447f6d1d2b4870a2f3b5">begin</a>(), <span class="stringliteral">&quot;Button 1&quot;</span>, point{50, 50}).<a class="code hl_variable" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">click</a> += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
+<div class="line">  form1.controls().emplace_front&lt;<a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a>&gt;(<span class="stringliteral">&quot;Button 1&quot;</span>, point{50, 50}).<a class="code hl_variable" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">click</a> += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">    form1.controls()[<span class="stringliteral">&quot;label1&quot;</span>].value().get().text(string::format(<span class="stringliteral">&quot;Button 1 clicked {} times&quot;</span>, ++button1_clicked));</div>
 <div class="line">  };</div>
 <div class="line">  form1.controls().emplace_at&lt;<a class="code hl_class" href="classxtd_1_1forms_1_1button.html">button</a>&gt;(1, <span class="stringliteral">&quot;Button 2&quot;</span>, point {50, 100}, <a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> {200, 75}).auto_repeat(<span class="keyword">true</span>).<a class="code hl_variable" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68">click</a> += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">    form1.controls()[<span class="stringliteral">&quot;label2&quot;</span>].value().get().text(string::format(<span class="stringliteral">&quot;Button 2 clicked {} times&quot;</span>, ++button2_clicked));</div>
 <div class="line">  };</div>
-<div class="line">  form1.controls().emplace&lt;<a class="code hl_typedef" href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">label</a>&gt;(form1.controls().<a class="code hl_function" href="namespacextd.html#a3a39828bd6261156752c2d0eda4c625a">end</a>(), <span class="stringliteral">&quot;Button 1 clicked 0 times&quot;</span>, point {50, 200}, drawing::size {200, 23}, <span class="stringliteral">&quot;label1&quot;</span>);</div>
+<div class="line">  form1.controls().emplace_at&lt;<a class="code hl_typedef" href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">label</a>&gt;(2, <span class="stringliteral">&quot;Button 1 clicked 0 times&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9">point</a> {50, 200}, drawing::size {200, 23}, <span class="stringliteral">&quot;label1&quot;</span>);</div>
 <div class="line">  form1.controls().emplace_back&lt;<a class="code hl_typedef" href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">label</a>&gt;(<span class="stringliteral">&quot;Button 2 clicked 0 times&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__drawing.html#gga35e450ae5d06c5a8ef29e54c607add86a78ee54aa8f813885fe2fe20d232518b9">point</a> {50, 230}, drawing::size {200, 23}, <span class="stringliteral">&quot;label2&quot;</span>);</div>
 <div class="line">  application::run(form1);</div>
 <div class="line">}</div>
@@ -1182,7 +1176,7 @@ For creation and insertion, this method uses the <a class="el" href="classxtd_1_
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 16 2025 15:58:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 18 2025 16:02:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

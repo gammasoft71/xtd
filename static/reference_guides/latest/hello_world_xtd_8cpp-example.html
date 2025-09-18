@@ -146,11 +146,11 @@ $(function(){ initResizable(false); });
 <div class="line">      about_box::show(<span class="stringliteral">&quot;This is a xtd Hello World example&quot;</span>, <span class="stringliteral">&quot;About Hello World&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    menu_item hello_menu {<span class="stringliteral">&quot;&amp;Hello...&quot;</span>, {*<span class="keyword">this</span>, &amp;main_form::on_hello_menu_click}, shortcut::ctrl_h};</div>
+<div class="line">    menu_item hello_menu {<span class="stringliteral">&quot;&amp;Hello...&quot;</span>, event_handler {*<span class="keyword">this</span>, &amp;main_form::on_hello_menu_click}, shortcut::ctrl_h};</div>
 <div class="line">    menu_item separator_menu {<span class="stringliteral">&quot;-&quot;</span>};</div>
-<div class="line">    menu_item exit_menu {texts::exit(), {*<span class="keyword">this</span>, &amp;main_form::on_exit_menu_click}, shortcut::alt_f4};</div>
+<div class="line">    menu_item exit_menu {texts::exit(), event_handler {*<span class="keyword">this</span>, &amp;main_form::on_exit_menu_click}, shortcut::alt_f4};</div>
 <div class="line">    </div>
-<div class="line">    menu_item about_menu {texts::about(), {*<span class="keyword">this</span>, &amp;main_form::on_about_menu_click}};</div>
+<div class="line">    menu_item about_menu {texts::about(), event_handler {*<span class="keyword">this</span>, &amp;main_form::on_about_menu_click}};</div>
 <div class="line">    </div>
 <div class="line">    menu_item file_menu_item {texts::file(), {hello_menu, separator_menu, exit_menu}};</div>
 <div class="line">    menu_item help_menu_item {texts::help(), {about_menu}};</div>
@@ -167,7 +167,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 16 2025 15:58:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 18 2025 16:01:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

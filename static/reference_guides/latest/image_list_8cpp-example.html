@@ -147,7 +147,7 @@ $(function(){ initResizable(false); });
 <div class="line">      button_previous.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
 <div class="line">        <span class="keywordflow">if</span> (current_image_index &gt; 0) picture.image(pictures.images()[--current_image_index]);</div>
 <div class="line">        button_previous.enabled(current_image_index &gt; 0);</div>
-<div class="line">        button_next.enabled(current_image_index &lt; pictures.images().size() - 1);</div>
+<div class="line">        button_next.enabled(current_image_index &lt; pictures.images().count() - 1);</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      button_next.auto_repeat(<span class="keyword">true</span>);</div>
@@ -155,9 +155,9 @@ $(function(){ initResizable(false); });
 <div class="line">      button_next.location({150, 200});</div>
 <div class="line">      button_next.enabled(<span class="keyword">false</span>);</div>
 <div class="line">      button_next.click += <a class="code hl_define" href="group__keywords.html#gac0b0b1a17f583a897eb6b424f2475363">delegate_</a> {</div>
-<div class="line">        <span class="keywordflow">if</span> (current_image_index &lt; pictures.images().size()) picture.image(pictures.images()[++current_image_index]);</div>
+<div class="line">        <span class="keywordflow">if</span> (current_image_index &lt; pictures.images().count()) picture.image(pictures.images()[++current_image_index]);</div>
 <div class="line">        button_previous.enabled(current_image_index &gt; 0);</div>
-<div class="line">        button_next.enabled(current_image_index &lt; pictures.images().size() - 1);</div>
+<div class="line">        button_next.enabled(current_image_index &lt; pictures.images().count() - 1);</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      show();</div>
@@ -176,7 +176,7 @@ $(function(){ initResizable(false); });
 <div class="line">        current_image_index = 0;</div>
 <div class="line">        picture.image(pictures.images()[current_image_index]);</div>
 <div class="line">        button_previous.enabled(current_image_index &gt; 0);</div>
-<div class="line">        button_next.enabled(current_image_index &lt; pictures.images().size() - 1);</div>
+<div class="line">        button_next.enabled(current_image_index &lt; pictures.images().count() - 1);</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
 <div class="line">    </div>
@@ -196,7 +196,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 16 2025 15:58:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 18 2025 16:01:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

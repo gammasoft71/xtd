@@ -386,7 +386,7 @@ Because serializing and deserializing an enumerator for a <a class="el" href="#g
 <div class="line">  </div>
 <div class="line">  <span class="comment">// contains can be used to test keys before inserting</span></div>
 <div class="line">  <span class="comment">// them.</span></div>
-<div class="line">  <span class="keywordflow">if</span> (!open_with.contains(<span class="stringliteral">&quot;ht&quot;</span>)) {</div>
+<div class="line">  <span class="keywordflow">if</span> (!open_with.contains_key(<span class="stringliteral">&quot;ht&quot;</span>)) {</div>
 <div class="line">    open_with[<span class="stringliteral">&quot;ht&quot;</span>] = <span class="stringliteral">&quot;hypertrm.exe&quot;</span>;</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Value added for key = \&quot;ht\&quot;: {0}&quot;</span>, open_with[<span class="stringliteral">&quot;ht&quot;</span>]);</div>
 <div class="line">  }</div>
@@ -399,9 +399,9 @@ Because serializing and deserializing an enumerator for a <a class="el" href="#g
 <div class="line">    </div>
 <div class="line">  <span class="comment">// Use the Remove method to remove a key/value pair.</span></div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;\nerase(\&quot;doc\&quot;)&quot;</span>);</div>
-<div class="line">  open_with.erase(<span class="stringliteral">&quot;doc&quot;</span>);</div>
+<div class="line">  open_with.remove(<span class="stringliteral">&quot;doc&quot;</span>);</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordflow">if</span> (!open_with.contains(<span class="stringliteral">&quot;doc&quot;</span>))</div>
+<div class="line">  <span class="keywordflow">if</span> (!open_with.contains_key(<span class="stringliteral">&quot;doc&quot;</span>))</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;Key \&quot;doc\&quot; is not found.&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -1077,7 +1077,7 @@ For the generic version of this interface, see xtd::collections::generic::ilist 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 16 2025 15:58:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 18 2025 16:02:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
