@@ -27,7 +27,7 @@ auto main() -> int {
   
   // contains can be used to test keys before inserting
   // them.
-  if (!open_with.contains("ht")) {
+  if (!open_with.contains_key("ht")) {
     open_with["ht"] = "hypertrm.exe";
     console::write_line("Value added for key = \"ht\": {0}", open_with["ht"]);
   }
@@ -40,9 +40,9 @@ auto main() -> int {
     
   // Use the Remove method to remove a key/value pair.
   console::write_line("\nerase(\"doc\")");
-  open_with.erase("doc");
+  open_with.remove("doc");
   
-  if (!open_with.contains("doc"))
+  if (!open_with.contains_key("doc"))
     console::write_line("Key \"doc\" is not found.");
 }
 
