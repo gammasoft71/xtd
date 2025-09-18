@@ -46,9 +46,9 @@ namespace ball {
 
     settings_form settings_form_;
     forms::timer animation_timer_;
-    menu_item context_settings_menu_item_ {drawing::texts::settings(), {*this, &main_form::on_settings_menu_item_click}};
+    menu_item context_settings_menu_item_ {drawing::texts::settings(), event_handler {*this, &main_form::on_settings_menu_item_click}};
     menu_item context_separator_menu_item_ {drawing::texts::separator()};
-    menu_item context_exit_menu_item_ {drawing::texts::exit(), {*this, &main_form::on_exit_menu_item_click}};
+    menu_item context_exit_menu_item_ {drawing::texts::exit(), event_handler {*this, &main_form::on_exit_menu_item_click}};
     forms::context_menu context_menu_ {context_settings_menu_item_, context_separator_menu_item_, context_exit_menu_item_};
     bool is_dragging_ = false;
     panel main_panel_;
