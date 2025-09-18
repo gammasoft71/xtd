@@ -270,7 +270,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        }</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>      }</div>
 <div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>      </div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>      <span class="keywordflow">if</span> (str.empty() || rest &gt; 0) <span class="keywordflow">return</span>  xtd::string::format(<span class="stringliteral">&quot;{}&quot;</span>, to_int(<a class="code hl_variable" href="structxtd_1_1enum__object.html#ae25fad9922f39d5bc0aa0efb82b6551d">value</a>));</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>      <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1basic__string.html#a6c9caea8081698b588cb6af9b6da8542">xtd::string::is_empty</a>(str) || rest &gt; 0) <span class="keywordflow">return</span>  xtd::string::format(<span class="stringliteral">&quot;{}&quot;</span>, to_int(<a class="code hl_variable" href="structxtd_1_1enum__object.html#ae25fad9922f39d5bc0aa0efb82b6551d">value</a>));</div>
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>      </div>
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>      <span class="keywordflow">return</span> str;</div>
 <div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    }</div>
@@ -504,7 +504,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>  <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> <a class="code hl_function" href="structxtd_1_1enum__object.html#a773dd7848c4fc85bc2270963f649e230">enum_object &lt; enum_t &gt;::to_string</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; <a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, <span class="keyword">const</span> std::locale&amp; loc) <span class="keyword">const</span> {</div>
 <div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>    init();</div>
 <div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>    <span class="keyword">auto</span> fmt = <a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>;</div>
-<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>    <span class="keywordflow">if</span> (fmt.empty()) fmt = <span class="stringliteral">&quot;G&quot;</span>;</div>
+<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1basic__string.html#a6c9caea8081698b588cb6af9b6da8542">xtd::string::is_empty</a>(fmt)) fmt = <span class="stringliteral">&quot;G&quot;</span>;</div>
 <div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>    </div>
 <div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>    <span class="keywordflow">switch</span> (fmt[0]) {</div>
 <div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>      <span class="keywordflow">case</span> <span class="charliteral">&#39;b&#39;</span>:</div>
@@ -604,7 +604,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 18 2025 16:01:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 18 2025 19:54:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

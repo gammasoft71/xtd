@@ -119,7 +119,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    entries.emplace_back(<span class="keyword">static_cast&lt;</span>enum_t<span class="keyword">&gt;</span>(__enumeration_introspection::enum_values&lt;enum_t&gt;[num_state]), __enumeration_introspection::enum_names&lt;enum_t&gt;[num_state]);</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">  #else</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordflow">if</span> (enum_definition.empty()) <span class="keywordflow">return</span> entries;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1basic__string.html#a6c9caea8081698b588cb6af9b6da8542">xtd::string::is_empty</a>(enum_definition)) <span class="keywordflow">return</span> entries;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <a class="code hl_typedef" href="group__types.html#ga0eb6dff59ca8406d303e3e4b7eaf2cc9">xtd::int64</a> current_value = 0;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> entry : enum_definition.split({<span class="stringliteral">&#39;,&#39;</span>})) {</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">auto</span> key_value = entry.trim().split({<span class="charliteral">&#39;=&#39;</span>});</div>
@@ -161,7 +161,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 18 2025 16:01:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Sep 18 2025 19:54:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
