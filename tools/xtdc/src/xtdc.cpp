@@ -1057,7 +1057,7 @@ namespace xtdc_command {
         return EXIT_SUCCESS;
       }
       static auto commands = dictionary<string, delegate<int(const list<string>&) >> {{"add", {add}}, {"build", {build}}, {"clean", {clean}}, {"documentation", {documentation}}, {"examples", {examples}}, {"generate", {generate}}, {"guide", {guide}}, {"help", {help}}, {"install", {install}}, {"new", {new_project::execute}}, {"open", {open}}, {"update", {update}}, {"run", {run}}, {"targets", {targets}}, {"test", {test}}, {"uninstall", {uninstall}}, {"web", {web}}};
-      if (!commands.contains(command_args[0])) return invalid_command(command_args);
+      if (!commands.contains_key(command_args[0])) return invalid_command(command_args);
       return commands[command_args[0]](command_args);
       //auto iterator = commands.find(command_args[0]);
       //if (iterator == commands.end()) return invalid_command(command_args);
