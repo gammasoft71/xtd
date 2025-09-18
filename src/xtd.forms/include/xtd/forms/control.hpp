@@ -222,11 +222,11 @@ namespace xtd {
         /// The folowing example demonstartes the use of xtd::forms::control::control_collection::emplace, xtd::forms::control::control_collection::emplace_at and xtd::forms::control::control_collection::emplace_back methods.
         /// @include emplace.cpp
         template<class control_t, class ...args_t>
-        control_t& emplace(const_iterator pos, args_t&& ...args) {
+        control_t& emplace_front(args_t&& ...args) {
           auto control_ptr = xtd::new_uptr<control_t>(control_t::create(std::forward<args_t>(args)...));
           auto& control_ref = *control_ptr;
           controls_.add(std::move(control_ptr));
-          base::insert(pos, control_ref);
+          base::insert(0, control_ref);
           return control_ref;
         }
         
