@@ -867,7 +867,6 @@ namespace xtd {
     /// @brief Gets the number of characters in the current xtd::basic_string object.
     /// @return The number of characters in the current string.
     /// @remarks The xtd::basic_string::length property returns the number of xtd::basic_string::value_type objects in this instance, not the number of Unicode characters. The reason is that a Unicode character might be represented by more than one xtd::basic_string::value_type.
-    [[deprecated("using xtd::string::length() intead xtd::string::size()")]]
     virtual size_type count() const noexcept {return chars_.size();}
 
     /// @brief Returns a pointer to the underlying array serving as character storage. The pointer is such that the range [`data()`, `data() + size()`] is valid and the values in it correspond to the values stored in the string.
@@ -891,7 +890,6 @@ namespace xtd {
     /// @brief Gets the number of characters in the current xtd::basic_string object.
     /// @return The number of characters in the current string.
     /// @remarks The xtd::basic_string::length property returns the number of xtd::basic_string::value_type objects in this instance, not the number of Unicode characters. The reason is that a Unicode character might be represented by more than one xtd::basic_string::value_type.
-    [[deprecated("using xtd::string::length() intead xtd::string::size()")]]
     virtual size_type size() const noexcept {return chars_.size();}
     /// @}
     
