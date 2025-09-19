@@ -129,7 +129,7 @@ namespace xtd {
         /// @brief Gets an empty xtd::collections::object_model::read_only_collection <type_t>.
         /// @return An empty xtd::collections::object_model::read_only_collection <type_t>.
         /// @remarks The returned instance is immutable and will always be empty.
-        static const read_only_collection<value_type>& empty() {
+        static const read_only_collection<value_type>& empty_collection() {
           static auto el = empty_list<value_type> {};
           static auto roc_el = read_only_collection<value_type> {el};
           return roc_el;

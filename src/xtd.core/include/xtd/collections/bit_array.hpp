@@ -183,10 +183,6 @@ namespace xtd {
       /// @remarks Retrieving the value of this property is an O(1) operation; setting the property is an O(n) operation, where n is the new capacity.
       xtd::size count() const noexcept override;
       
-      /// @brief Checks if the container has no elements, i.e. whether xtd::collections::bit_array::begin() == xtd::collections::bit_array::end().
-      /// @return `true` if the container is empty, `false` otherwise.
-      virtual bool empty() const noexcept {return !length();}
-      
       /// @brief Returns an iterator to the element following the last element of the enumerable.
       /// @return Iterator to the element following the last element.
       const_iterator end() const noexcept override {return xtd::collections::generic::ienumerable<value_type>::end();}
@@ -378,7 +374,7 @@ namespace xtd {
       bool remove(const bool&) override;
       
       void flush() const noexcept;
-      size get_int32_array_length_from_bit_length(size n) const noexcept;
+      xtd::size get_int32_array_length_from_bit_length(xtd::size n) const noexcept;
       xtd::size get_list_length(xtd::size length_) const noexcept;
       xtd::size get_list_position(xtd::size index) const noexcept;
       xtd::size get_bit_position(xtd::size index) const noexcept;

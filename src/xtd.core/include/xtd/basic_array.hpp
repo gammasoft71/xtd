@@ -147,10 +147,6 @@ namespace xtd {
     /// @remarks The pointer is such that range [xtd::array::data(), xtd::array::data() + xtd::array::size()) is always a valid range, even if the container is empty (xtd::array::data() is not dereferenceable in that case).
     virtual const_pointer data() const noexcept {return (pointer)data_->items.data();}
     
-    /// @brief Checks if the container has no elements, i.e. whether xtd::array::begin() == xtd::array::end().
-    /// @return `true` if the container is empty, `false` otherwise.
-    virtual bool empty() const noexcept {return data_->items.empty();}
-    
     /// @brief Returns an iterator to the element following the last element of the enumerable.
     /// @return Iterator to the element following the last element.
     const_iterator end() const noexcept override {return xtd::collections::generic::ienumerable<value_type>::end();}
@@ -218,10 +214,6 @@ namespace xtd {
     /// @return Reverse iterator to the element following the last element.
     /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
     virtual const_reverse_iterator rend() const noexcept {return data_->items.rend();}
-    
-    /// @brief Returns the number of elements in the container, i.e. std::distance(xtd::array::begin(), xtd::array::end()).
-    /// @return The number of elements in the container.
-    virtual size_type size() const noexcept {return length();}
     
     const xtd::object & sync_root() const noexcept override {return data_->sync_root;}
     /// @}
