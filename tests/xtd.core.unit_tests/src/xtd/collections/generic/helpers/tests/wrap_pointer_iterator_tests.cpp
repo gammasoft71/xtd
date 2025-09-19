@@ -54,8 +54,8 @@ namespace xtd::collections::generic::helpers::tests {
     void test_method_(data) {
       auto a = array {10, 20, 30, 40, 50};
       auto i = wrap_pointer_iterator<int*> {a.data()};
-      i.data() = xtd::as_const(i.data()) + 1;
-      assert::are_equal(a.data() + 1, xtd::as_const(i.data()));
+      *i.data() = 60;
+      assert::are_equal(60, xtd::as_const(*i.data()));
     }
     
     void test_method_(const_reference_operator) {
