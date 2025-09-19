@@ -17,7 +17,7 @@ var searchData=
   ['collapsible_5fpanel_14',['collapsible_panel',['../classxtd_1_1forms_1_1collapsible__panel.html',1,'xtd::forms']]],
   ['collection_5fassert_15',['collection_assert',['../classxtd_1_1tunit_1_1collection__assert.html',1,'xtd::tunit']]],
   ['collection_5fassume_16',['collection_assume',['../classxtd_1_1tunit_1_1collection__assume.html',1,'xtd::tunit']]],
-  ['collection_5foperators_17',['collection_operators',['../classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__operators.html',1,'xtd::collections::generic::extensions']]],
+  ['collection_5fcommon_17',['collection_common',['../classxtd_1_1collections_1_1generic_1_1extensions_1_1collection__common.html',1,'xtd::collections::generic::extensions']]],
   ['collection_5fvalid_18',['collection_valid',['../classxtd_1_1tunit_1_1collection__valid.html',1,'xtd::tunit']]],
   ['color_19',['color',['../classxtd_1_1drawing_1_1color.html',1,'xtd::drawing']]],
   ['color_5fbox_20',['color_box',['../classxtd_1_1forms_1_1color__box.html',1,'xtd::forms']]],

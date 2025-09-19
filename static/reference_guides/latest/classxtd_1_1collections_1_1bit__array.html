@@ -337,9 +337,6 @@ Inheritance diagram for xtd::collections::bit_array:</div>
 <tr class="memitem:a51dad6f4c8af7c827a16ad21194fcc3e" id="r_a51dad6f4c8af7c827a16ad21194fcc3e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51dad6f4c8af7c827a16ad21194fcc3e">count</a> () const noexcept override</td></tr>
 <tr class="memdesc:a51dad6f4c8af7c827a16ad21194fcc3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
 <tr class="separator:a51dad6f4c8af7c827a16ad21194fcc3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c9043b40814ae899ff99f27eb1f0942" id="r_a0c9043b40814ae899ff99f27eb1f0942"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0c9043b40814ae899ff99f27eb1f0942">empty</a> () const noexcept</td></tr>
-<tr class="memdesc:a0c9043b40814ae899ff99f27eb1f0942"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the container has no elements, i.e. whether <a class="el" href="#aa4255b7b70a5476ef62267f361a98c62" title="Returns an iterator to the first element of the enumerable.">xtd::collections::bit_array::begin()</a> == <a class="el" href="#a4ba3e07ade5b15e1d8018c2dc910f0dd" title="Returns an iterator to the element following the last element of the enumerable.">xtd::collections::bit_array::end()</a>.  <br /></td></tr>
-<tr class="separator:a0c9043b40814ae899ff99f27eb1f0942"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af71ff244f64c14b5e08f6984fc1dd8b9" id="r_af71ff244f64c14b5e08f6984fc1dd8b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a784e417e8cf9a2efad245a8cd278b808">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af71ff244f64c14b5e08f6984fc1dd8b9">end</a> () const noexcept override</td></tr>
 <tr class="memdesc:af71ff244f64c14b5e08f6984fc1dd8b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the element following the last element of the enumerable.  <br /></td></tr>
 <tr class="separator:af71ff244f64c14b5e08f6984fc1dd8b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1116,34 +1113,6 @@ template&lt;<a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af
 <p>Gets the number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Retrieving the value of this property is an O(1) operation; setting the property is an O(n) operation, where n is the new capacity. </dd></dl>
-
-</div>
-</div>
-<a id="a0c9043b40814ae899ff99f27eb1f0942" name="a0c9043b40814ae899ff99f27eb1f0942"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c9043b40814ae899ff99f27eb1f0942">&#9670;&#160;</a></span>empty()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool xtd::collections::bit_array::empty </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Checks if the container has no elements, i.e. whether <a class="el" href="#aa4255b7b70a5476ef62267f361a98c62" title="Returns an iterator to the first element of the enumerable.">xtd::collections::bit_array::begin()</a> == <a class="el" href="#a4ba3e07ade5b15e1d8018c2dc910f0dd" title="Returns an iterator to the element following the last element of the enumerable.">xtd::collections::bit_array::end()</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the container is empty, <code>false</code> otherwise. </dd></dl>
 
 </div>
 </div>
@@ -2113,7 +2082,7 @@ This method is an O(n) operation, where n is count. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 18 2025 19:54:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Sep 19 2025 21:39:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

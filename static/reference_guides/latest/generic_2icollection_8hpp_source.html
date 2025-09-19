@@ -103,7 +103,7 @@ $(function(){ initResizable(false); });
 <a href="generic_2icollection_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="generic_2ienumerable_8hpp.html">ienumerable.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="collection__operators_8hpp.html">extensions/collection_operators.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="collection__common_8hpp.html">extensions/collection_common.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define __XTD_CORE_INTERNAL__</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="____array__definition_8hpp.html">../../internal/__array_definition.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#undef __XTD_CORE_INTERNAL__</span></div>
@@ -114,7 +114,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections.html">collections</a> {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">generic</a> {</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      <span class="keyword">class </span>icollection : <span class="keyword">public</span> xtd::collections::generic::ienumerable&lt;type_t&gt;, <span class="keyword">public</span> xtd::collections::generic::extensions::collection_operators&lt;type_t, icollection&lt;type_t &gt;&gt; {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      <span class="keyword">class </span>icollection : <span class="keyword">public</span> xtd::collections::generic::ienumerable&lt;type_t&gt;, <span class="keyword">public</span> xtd::collections::generic::extensions::collection_common&lt;type_t, icollection&lt;type_t &gt;&gt; {</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <span class="keyword">using </span>value_type = <span class="keyword">typename</span> <a class="code hl_typedef" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html#a1b6f4bbb7a3c18056332b28dae525927">xtd::collections::generic::ienumerable&lt;type_t&gt;::value_type</a>;</div>
@@ -144,7 +144,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>}</div>
 <div class="ttc" id="a____array__definition_8hpp_html"><div class="ttname"><a href="____array__definition_8hpp.html">__array_definition.hpp</a></div><div class="ttdoc">Contains xtd::array definitions.</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1ienumerable_html_a1b6f4bbb7a3c18056332b28dae525927"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1ienumerable.html#a1b6f4bbb7a3c18056332b28dae525927">xtd::collections::generic::ienumerable&lt; xtd::any_object &gt;::value_type</a></div><div class="ttdeci">xtd::any_object value_type</div><div class="ttdef"><b>Definition</b> ienumerable.hpp:46</div></div>
-<div class="ttc" id="acollection__operators_8hpp_html"><div class="ttname"><a href="collection__operators_8hpp.html">collection_operators.hpp</a></div><div class="ttdoc">Contains xtd::collections::generic::extensions::collection_operators class.</div></div>
+<div class="ttc" id="acollection__common_8hpp_html"><div class="ttname"><a href="collection__common_8hpp.html">collection_common.hpp</a></div><div class="ttdoc">Contains xtd::collections::generic::extensions::collection_common class.</div></div>
 <div class="ttc" id="ageneric_2ienumerable_8hpp_html"><div class="ttname"><a href="generic_2ienumerable_8hpp.html">ienumerable.hpp</a></div><div class="ttdoc">Contains xtd::collections::generic::ienumerable &lt;type_t&gt; interface.</div></div>
 <div class="ttc" id="agroup__types_html_ga221e5b824352c9046d353e4659af5b87"><div class="ttname"><a href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a01bc6f8efa4202821e95f4fdf6298b30"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a01bc6f8efa4202821e95f4fdf6298b30">xtd::console_key::clear</a></div><div class="ttdeci">@ clear</div><div class="ttdoc">The CLEAR key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:26</div></div>
@@ -160,7 +160,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 18 2025 19:54:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Sep 19 2025 21:39:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

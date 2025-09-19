@@ -211,9 +211,6 @@ class xtd::basic_array&lt; type_t, allocator_t &gt;</div><p>Base object that rep
 <tr class="memitem:a1405502cc9db3c5decf3d44c99fda34b" id="r_a1405502cc9db3c5decf3d44c99fda34b"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a52835b4b627c5d7783f5d523aa265927">const_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1405502cc9db3c5decf3d44c99fda34b">data</a> () const noexcept</td></tr>
 <tr class="memdesc:a1405502cc9db3c5decf3d44c99fda34b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the underlying array serving as element storage.  <br /></td></tr>
 <tr class="separator:a1405502cc9db3c5decf3d44c99fda34b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ecdfcec3616cd38223715dd6f4df224" id="r_a0ecdfcec3616cd38223715dd6f4df224"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ecdfcec3616cd38223715dd6f4df224">empty</a> () const noexcept</td></tr>
-<tr class="memdesc:a0ecdfcec3616cd38223715dd6f4df224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the container has no elements, i.e. whether <a class="el" href="#a7acd2ad2fa08cf8fb94d254f70c91de3">xtd::array::begin()</a> == <a class="el" href="#aabb880053eba2eefbc54d5d312626586">xtd::array::end()</a>.  <br /></td></tr>
-<tr class="separator:a0ecdfcec3616cd38223715dd6f4df224"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69c2af41aeaa2af9847c1d6567df83c6" id="r_a69c2af41aeaa2af9847c1d6567df83c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a27d9a52e3c55ac56d32fd81c5d7d9cee">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a69c2af41aeaa2af9847c1d6567df83c6">end</a> () const noexcept override</td></tr>
 <tr class="memdesc:a69c2af41aeaa2af9847c1d6567df83c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the element following the last element of the enumerable.  <br /></td></tr>
 <tr class="separator:a69c2af41aeaa2af9847c1d6567df83c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -265,9 +262,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_synchronized</b> (
 <tr class="memitem:a3432941b86f8c8e7c78bcf7132843e6d" id="r_a3432941b86f8c8e7c78bcf7132843e6d"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#a29160210c0d2edcac151cbcc42cd81a8">const_reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3432941b86f8c8e7c78bcf7132843e6d">rend</a> () const noexcept</td></tr>
 <tr class="memdesc:a3432941b86f8c8e7c78bcf7132843e6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reverse iterator to the element following the last element of the reversed vector. It corresponds to the element preceding the first element of the non-reversed vector. This element acts as a placeholder, attempting to access it results in undefined behavior.  <br /></td></tr>
 <tr class="separator:a3432941b86f8c8e7c78bcf7132843e6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2ad3488e28e4140835dece83723e7eb" id="r_af2ad3488e28e4140835dece83723e7eb"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="#af9b44083298196790c9d898bf520828a">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2ad3488e28e4140835dece83723e7eb">size</a> () const noexcept</td></tr>
-<tr class="memdesc:af2ad3488e28e4140835dece83723e7eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of elements in the container, i.e. std::distance(<a class="el" href="#a7acd2ad2fa08cf8fb94d254f70c91de3">xtd::array::begin()</a>, <a class="el" href="#aabb880053eba2eefbc54d5d312626586">xtd::array::end()</a>).  <br /></td></tr>
-<tr class="separator:af2ad3488e28e4140835dece83723e7eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee5a20a84786e5ae303364a521972609" id="r_aee5a20a84786e5ae303364a521972609"><td class="memItemLeft" align="right" valign="top"><a id="aee5a20a84786e5ae303364a521972609" name="aee5a20a84786e5ae303364a521972609"></a>
 const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>sync_root</b> () const noexcept override</td></tr>
 <tr class="separator:aee5a20a84786e5ae303364a521972609"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -957,7 +951,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 
 <p>Returns pointer to the underlying array serving as element storage. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The pointer is such that range [<a class="el" href="#a5b5a9ce8373768ab8c68b261b33d5b6f">xtd::array::data()</a>, <a class="el" href="#a5b5a9ce8373768ab8c68b261b33d5b6f">xtd::array::data()</a> + <a class="el" href="#af2ad3488e28e4140835dece83723e7eb">xtd::array::size()</a>) is always a valid range, even if the container is empty (<a class="el" href="#a5b5a9ce8373768ab8c68b261b33d5b6f">xtd::array::data()</a> is not dereferenceable in that case). </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The pointer is such that range [<a class="el" href="#a5b5a9ce8373768ab8c68b261b33d5b6f">xtd::array::data()</a>, <a class="el" href="#a5b5a9ce8373768ab8c68b261b33d5b6f">xtd::array::data()</a> + xtd::array::size()) is always a valid range, even if the container is empty (<a class="el" href="#a5b5a9ce8373768ab8c68b261b33d5b6f">xtd::array::data()</a> is not dereferenceable in that case). </dd></dl>
 
 </div>
 </div>
@@ -988,37 +982,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 
 <p>Returns pointer to the underlying array serving as element storage. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the underlying element storage. For non-empty containers, the returned pointer compares equal to the address of the first element. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The pointer is such that range [<a class="el" href="#a5b5a9ce8373768ab8c68b261b33d5b6f">xtd::array::data()</a>, <a class="el" href="#a5b5a9ce8373768ab8c68b261b33d5b6f">xtd::array::data()</a> + <a class="el" href="#af2ad3488e28e4140835dece83723e7eb">xtd::array::size()</a>) is always a valid range, even if the container is empty (<a class="el" href="#a5b5a9ce8373768ab8c68b261b33d5b6f">xtd::array::data()</a> is not dereferenceable in that case). </dd></dl>
-
-</div>
-</div>
-<a id="a0ecdfcec3616cd38223715dd6f4df224" name="a0ecdfcec3616cd38223715dd6f4df224"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ecdfcec3616cd38223715dd6f4df224">&#9670;&#160;</a></span>empty()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool <a class="el" href="classxtd_1_1basic__array.html">xtd::basic_array</a>&lt; type_t, allocator_t &gt;::empty </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Checks if the container has no elements, i.e. whether <a class="el" href="#a7acd2ad2fa08cf8fb94d254f70c91de3">xtd::array::begin()</a> == <a class="el" href="#aabb880053eba2eefbc54d5d312626586">xtd::array::end()</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the container is empty, <code>false</code> otherwise. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The pointer is such that range [<a class="el" href="#a5b5a9ce8373768ab8c68b261b33d5b6f">xtd::array::data()</a>, <a class="el" href="#a5b5a9ce8373768ab8c68b261b33d5b6f">xtd::array::data()</a> + xtd::array::size()) is always a valid range, even if the container is empty (<a class="el" href="#a5b5a9ce8373768ab8c68b261b33d5b6f">xtd::array::data()</a> is not dereferenceable in that case). </dd></dl>
 
 </div>
 </div>
@@ -1326,7 +1290,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <dl class="section return"><dt>Returns</dt><dd>The rank (number of dimensions) of the array. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates methods to get the rank of an array. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; type_t, rank_, allocator_t &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; byte &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; item &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; item &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; type_t, 1, allocator_t &gt;</a>, <a class="el" href="classxtd_1_1array_3_01type__t_00_011_00_01allocator__t_01_4.html#ad5324486e5498e9173e929f53dfe95f8">xtd::array&lt; type_t, 1, allocator_t &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; type_t, 2, allocator_t &gt;</a>, <a class="el" href="classxtd_1_1array_3_01type__t_00_012_00_01allocator__t_01_4.html#a5cfd24ddc397b46a08ea0cc1044bf390">xtd::array&lt; type_t, 2, allocator_t &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; type_t, 3, allocator_t &gt;</a>, <a class="el" href="classxtd_1_1array_3_01type__t_00_013_00_01allocator__t_01_4.html#a5dacc6a3783b27ebe998d4008e46b177">xtd::array&lt; type_t, 3, allocator_t &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; value_type &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::array&lt; bool &gt; &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::array&lt; bool &gt; &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::array&lt; xtd::byte &gt; &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::basic_string&lt; char &gt; &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::byte &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::diagnostics::stack_frame &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::diagnostics::stack_frame &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::drawing::color &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::drawing::color &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::drawing::imaging::encoder_parameter &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::drawing::point &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::drawing::point &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::forms::shadow &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::forms::shadow &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::net::ip_address &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::size &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::size &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::string &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::string &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::uint16 &gt;</a>, and <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt;&gt;</a>.</p>
+<p>Reimplemented in <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; type_t, rank_, allocator_t &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; byte &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; item &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; item &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; item_t &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; type_t, 1, allocator_t &gt;</a>, <a class="el" href="classxtd_1_1array_3_01type__t_00_011_00_01allocator__t_01_4.html#ad5324486e5498e9173e929f53dfe95f8">xtd::array&lt; type_t, 1, allocator_t &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; type_t, 2, allocator_t &gt;</a>, <a class="el" href="classxtd_1_1array_3_01type__t_00_012_00_01allocator__t_01_4.html#a5cfd24ddc397b46a08ea0cc1044bf390">xtd::array&lt; type_t, 2, allocator_t &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; type_t, 3, allocator_t &gt;</a>, <a class="el" href="classxtd_1_1array_3_01type__t_00_013_00_01allocator__t_01_4.html#a5dacc6a3783b27ebe998d4008e46b177">xtd::array&lt; type_t, 3, allocator_t &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; value_type &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::array&lt; bool &gt; &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::array&lt; bool &gt; &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::array&lt; xtd::byte &gt; &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::basic_string&lt; char &gt; &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::byte &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::diagnostics::stack_frame &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::diagnostics::stack_frame &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::drawing::color &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::drawing::color &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::drawing::imaging::encoder_parameter &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::drawing::point &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::drawing::point &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::forms::shadow &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::forms::shadow &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::net::ip_address &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::size &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::size &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::string &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::string &gt;</a>, <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt; xtd::uint16 &gt;</a>, and <a class="el" href="classxtd_1_1array.html#a2580a0452fad2d6279b669977324fe11">xtd::array&lt;&gt;</a>.</p>
 
 </div>
 </div>
@@ -1451,36 +1415,6 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <p>Returns a reverse iterator to the element following the last element of the reversed vector. It corresponds to the element preceding the first element of the non-reversed vector. This element acts as a placeholder, attempting to access it results in undefined behavior. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reverse iterator to the element following the last element. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This element acts as a placeholder; attempting to access it results in undefined behavior. </dd></dl>
-
-</div>
-</div>
-<a id="af2ad3488e28e4140835dece83723e7eb" name="af2ad3488e28e4140835dece83723e7eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2ad3488e28e4140835dece83723e7eb">&#9670;&#160;</a></span>size()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual <a class="el" href="#af9b44083298196790c9d898bf520828a">size_type</a> <a class="el" href="classxtd_1_1basic__array.html">xtd::basic_array</a>&lt; type_t, allocator_t &gt;::size </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel virtual">virtual</span><span class="mlabel noexcept">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the number of elements in the container, i.e. std::distance(<a class="el" href="#a7acd2ad2fa08cf8fb94d254f70c91de3">xtd::array::begin()</a>, <a class="el" href="#aabb880053eba2eefbc54d5d312626586">xtd::array::end()</a>). </p>
-<dl class="section return"><dt>Returns</dt><dd>The number of elements in the container. </dd></dl>
 
 </div>
 </div>
@@ -2989,7 +2923,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 18 2025 19:54:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Sep 19 2025 21:39:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
