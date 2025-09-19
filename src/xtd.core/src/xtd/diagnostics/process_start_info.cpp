@@ -109,7 +109,7 @@ string process_start_info::password_in_clear_text() const noexcept {
 }
 
 process_start_info& process_start_info::password_in_clear_text(const string& value) noexcept {
-  password_ = secure_string(value.c_str(), value.size());
+  password_ = secure_string(value.c_str(), value.length());
   return *this;
 }
 

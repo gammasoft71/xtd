@@ -237,7 +237,7 @@ ip_address ip_address::parse(const string& str) {
     }
   }
   
-  auto work_ip_string = string((str[0] == '[' && str[str.size() - 1] == ']') ? str.substring(1, str.size() - 2) : str);
+  auto work_ip_string = string((str[0] == '[' && str[str.length() - 1] == ']') ? str.substring(1, str.length() - 2) : str);
   auto value = ip_address {};
   value.address_or_scope_id_ = 0;
   value.address_family_ = sockets::address_family::inter_network_v6;

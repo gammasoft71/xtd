@@ -1785,8 +1785,8 @@ namespace xtd {
       /// @remarks This method performs an ordinal, case-sensitive comparison to identify occurrences of `old_value` in the substring of this current instance. If `new_value` is xtd::basic_string::empty_string, all occurrences of `old_value` are removed.
       basic_string_builder & replace(const xtd::basic_string<char_t>& old_value, const xtd::basic_string<char_t>& new_value, size_type start_index, size_type count) {
         if (start_index > length() || start_index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        auto old_size = old_value.size();
-        auto new_size = new_value.size();
+        auto old_size = old_value.length();
+        auto new_size = new_value.length();
         auto index = xtd::size {0};
         while (true) {
           index = find(old_value, index);
@@ -1794,11 +1794,11 @@ namespace xtd {
           if (index >= start_index) {
             if (old_size == new_size) replace(index, old_size, new_value);
             else {
-              erase(index, old_value.size());
+              erase(index, old_value.length());
               insert(index, new_value);
             }
           }
-          index += new_value.size();
+          index += new_value.length();
         }
         return *this;
       }

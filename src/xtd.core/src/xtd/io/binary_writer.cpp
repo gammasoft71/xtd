@@ -117,7 +117,7 @@ void binary_writer::write(float value) {
 }
 
 void binary_writer::write(const string& value) {
-  write_7bit_encoded_int(static_cast<int32>(value.size()));
+  write_7bit_encoded_int(static_cast<int32>(value.length()));
   for (auto c : value)
     write(c);
 }

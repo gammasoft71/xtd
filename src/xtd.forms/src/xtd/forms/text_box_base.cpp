@@ -130,7 +130,7 @@ text_box_base& text_box_base::word_wrap(bool value) {
 void text_box_base::append_text(const xtd::string& value) {
   suspend_layout();
   text(text() + value);
-  select(text().size(), 0);
+  select(text().length(), 0);
   resume_layout();
 }
 
@@ -140,15 +140,15 @@ void text_box_base::clear() {
 
 void text_box_base::select(size_t start, size_t length) {
   if (data_->selection_start != start || length != data_->selection_length) {
-    if (start > text().size()) throw_helper::throws(exception_case::argument_out_of_range, "start greater than text size"_t);
-    if (start + length > text().size()) throw_helper::throws(exception_case::argument_out_of_range, "start + length greater than text size"_t);
+    if (start > text().length()) throw_helper::throws(exception_case::argument_out_of_range, "start greater than text size"_t);
+    if (start + length > text().length()) throw_helper::throws(exception_case::argument_out_of_range, "start + length greater than text size"_t);
     data_->selection_start = start;
     data_->selection_length = length;
   }
 }
 
 void text_box_base::select_all() {
-  select(0, text().size());
+  select(0, text().length());
 }
 
 text_box_base::text_box_base() : data_(xtd::new_sptr<data>()) {

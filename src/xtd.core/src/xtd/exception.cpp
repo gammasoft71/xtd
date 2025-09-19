@@ -118,7 +118,7 @@ string exception::stack_trace_to_string() const noexcept {
     if (data_->stack_trace->get_frame(index).get_method().starts_with(get_name()))
       skip_frames = index;
   auto stack_trace_string = data_->stack_trace->to_string(skip_frames);
-  if (stack_trace_string[stack_trace_string.size() - 1] == '\n') stack_trace_string = stack_trace_string.remove(stack_trace_string.size() - 1);
+  if (stack_trace_string[stack_trace_string.length() - 1] == '\n') stack_trace_string = stack_trace_string.remove(stack_trace_string.length() - 1);
   return stack_trace_string;
 }
 

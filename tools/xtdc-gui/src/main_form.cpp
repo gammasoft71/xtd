@@ -512,10 +512,10 @@ main_form::main_form() {
   configure_project_name_text_box_.location({50, 210});
   configure_project_name_text_box_.width(550);
   configure_project_name_text_box_.key_press += [&](object & sender, key_press_event_args & e) {
-    e.handled(configure_project_name_text_box_.text().size() >= 128 || !(char32_object::is_letter_or_digit(e.key_char()) || e.key_char() == U'_' || e.key_char() == U'-'));
+    e.handled(configure_project_name_text_box_.text().length() >= 128 || !(char32_object::is_letter_or_digit(e.key_char()) || e.key_char() == U'_' || e.key_char() == U'-'));
   };
   configure_project_name_text_box_.key_up += [&](object & sender, key_event_args & e) {
-    next_button_.enabled(configure_project_name_text_box_.text().size() != 0 && configure_project_location_text_box_.text().size() != 0);
+    next_button_.enabled(configure_project_name_text_box_.text().length() != 0 && configure_project_location_text_box_.text().length() != 0);
   };
   
   configure_project_location_label_.parent(configure_panel_);
@@ -528,7 +528,7 @@ main_form::main_form() {
   configure_project_location_text_box_.width(550);
   configure_project_location_text_box_.text(properties::settings::default_settings().create_propject_folder());
   configure_project_location_text_box_.key_up += [&](object & sender, key_event_args & e) {
-    next_button_.enabled(configure_project_name_text_box_.text().size() != 0 && configure_project_location_text_box_.text().size() != 0);
+    next_button_.enabled(configure_project_name_text_box_.text().length() != 0 && configure_project_location_text_box_.text().length() != 0);
   };
   
   configure_project_location_button_.parent(configure_panel_);
@@ -541,7 +541,7 @@ main_form::main_form() {
     if (dialog.show_sheet_dialog(*this) == dialog_result::ok) {
       properties::settings::default_settings().create_propject_folder(dialog.selected_path()).save();
       configure_project_location_text_box_.text(properties::settings::default_settings().create_propject_folder());
-      next_button_.enabled(configure_project_name_text_box_.text().size() != 0 && configure_project_location_text_box_.text().size() != 0);
+      next_button_.enabled(configure_project_name_text_box_.text().length() != 0 && configure_project_location_text_box_.text().length() != 0);
     }
   };
   

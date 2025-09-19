@@ -130,16 +130,16 @@ control& lcd_label::text(const xtd::string& value) {
   if (text() == value) return *this;
   if (is_handle_created()) suspend_layout();
   auto str = convert_string::to_wstring(value);
-  if (str.size() < data_->digits.count()) {
-    for (auto index = data_->digits.count(); index < str.size(); ++index) {
+  if (str.length() < data_->digits.count()) {
+    for (auto index = data_->digits.count(); index < str.length(); ++index) {
       dynamic_cast<control*>(data_->digits[index].get())->mouse_down -= {*this, &lcd_label::on_digit_mouse_down};
       dynamic_cast<control*>(data_->digits[index].get())->mouse_move -= {*this, &lcd_label::on_digit_mouse_move};
       dynamic_cast<control*>(data_->digits[index].get())->mouse_up -= {*this, &lcd_label::on_digit_mouse_up};
     }
-    data_->digits.remove_range(str.size(), data_->digits.count() - str.size());
+    data_->digits.remove_range(str.length(), data_->digits.count() - str.length());
   }
-  if (str.size() > data_->digits.count())
-    for (auto index = data_->digits.count(); index < str.size(); ++index) {
+  if (str.length() > data_->digits.count())
+    for (auto index = data_->digits.count(); index < str.length(); ++index) {
       switch (data_->lcd_style) {
         case lcd_style::seven_segment_display: data_->digits.add(xtd::new_sptr<seven_segment_display_digit>()); break;
         case lcd_style::nine_segment_display: data_->digits.add(xtd::new_sptr<nine_segment_display_digit>()); break;
@@ -155,7 +155,7 @@ control& lcd_label::text(const xtd::string& value) {
       dynamic_cast<control*>(data_->digits[~1_z].get())->mouse_move += {*this, &lcd_label::on_digit_mouse_move};
       dynamic_cast<control*>(data_->digits[~1_z].get())->mouse_up += {*this, &lcd_label::on_digit_mouse_up};
     }
-  for (auto index = 0_z; index < str.size(); ++index)
+  for (auto index = 0_z; index < str.length(); ++index)
     data_->digits[index]->character(str[index]);
   set_digits_params();
   set_text(value);

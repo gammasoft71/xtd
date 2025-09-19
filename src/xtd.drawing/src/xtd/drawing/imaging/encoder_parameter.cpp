@@ -31,7 +31,7 @@ encoder_parameter::encoder_parameter(const imaging::encoder& encoder, int64 valu
   add_bytes(value_, as<int32>(value));
 }
 
-encoder_parameter::encoder_parameter(const imaging::encoder& encoder, const string& value) : encoder_(encoder), number_of_values_(value.size()), type_(encoder_parameter_value_type::value_type_ascii) {
+encoder_parameter::encoder_parameter(const imaging::encoder& encoder, const string& value) : encoder_(encoder), number_of_values_(value.length()), type_(encoder_parameter_value_type::value_type_ascii) {
   for (auto v : value)
     add_bytes(value_, v);
 }

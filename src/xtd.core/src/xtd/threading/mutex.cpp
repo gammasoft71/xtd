@@ -23,7 +23,7 @@ mutex::mutex(const string& name, bool& created_new) : mutex(false, name, created
 }
 
 mutex::mutex(bool initially_owned, const string& name) : name_(name) {
-  if (name.size() > native::named_mutex::max_name_size()) throw_helper::throws(exception_case::path_too_long);
+  if (name.length() > native::named_mutex::max_name_size()) throw_helper::throws(exception_case::path_too_long);
   auto created_new = false;
   create(initially_owned, created_new);
 }
@@ -73,7 +73,7 @@ void mutex::lock() {
 
 mutex mutex::open_existing(const string& name) {
   if (xtd::string::is_empty(name)) throw_helper::throws(exception_case::argument);
-  if (name.size() > native::named_mutex::max_name_size()) throw_helper::throws(exception_case::path_too_long);
+  if (name.length() > native::named_mutex::max_name_size()) throw_helper::throws(exception_case::path_too_long);
   auto result = mutex{};
   if (!try_open_existing(name, result)) throw_helper::throws(exception_case::io);
   return result;
@@ -110,7 +110,7 @@ bool mutex::try_lock_until(const date_time& timeout_time) noexcept {
 bool mutex::try_open_existing(const string& name, mutex& result) noexcept {
   result.close();
   if (string::is_empty(name)) return false;
-  if (name.size() > native::named_mutex::max_name_size()) return false;
+  if (name.length() > native::named_mutex::max_name_size()) return false;
   auto new_mutex = mutex {};
   new_mutex.name_ = name;
   new_mutex.mutex_ = xtd::new_sptr<mutex::named_mutex>();

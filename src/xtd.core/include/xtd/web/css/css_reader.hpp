@@ -41,7 +41,7 @@ namespace xtd {
           xtd::web::css::selector current_selector;
           xtd::string current_selector_name;
           xtd::string current_key;
-          for (size_t index = 0; index < text.size(); index++) {
+          for (size_t index = 0; index < text.length(); index++) {
             if (text[index] == '/' && text[index + 1] == '*') {
               // Skip comments...
               index = text.index_of("*/", index + 2);

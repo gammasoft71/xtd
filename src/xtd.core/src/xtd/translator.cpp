@@ -158,7 +158,7 @@ void translator::initialize() {
 }
 
 string translator::locale_to_language(string locale) {
-  if (locale.size() < 2) return locale;
+  if (locale.length() < 2) return locale;
   if (locale.find(".") != locale.npos) locale = locale.remove(locale.find("."));
   if (translated_languages_.find(locale) != translated_languages_.end()) return locale;
   return locale.remove(2);
