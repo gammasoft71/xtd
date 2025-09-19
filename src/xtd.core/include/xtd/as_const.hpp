@@ -13,10 +13,10 @@ namespace xtd {
   constexpr std::add_const_t<type_t>& as_const(type_t& type) noexcept {
     return type;
   }
-  /// @brief Obtains a reference to `const` to its argument
-  /// @param type The referecne of `type`.
-  /// @return The const reference of `type`.
-  /// @remarks Forms lvalue reference to const type of `type`.
+  /// @brief Obtains a pointer to `const` to its argument
+  /// @param type The pointer of `type`.
+  /// @return The const pointer of `type`.
+  /// @remarks Forms lvalue pointer to const type of `type`.
   template<class type_t>
   constexpr std::add_const_t<type_t>* as_const(type_t* type) noexcept {
     return type;
