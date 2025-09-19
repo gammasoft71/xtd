@@ -6,8 +6,8 @@ using namespace xtd::forms;
 namespace {
   country get_country(const string& s) {
     auto result = country::empty();
-    if (s.size() == 2) result = country::from_alpha_2_code(s);
-    if (s.size() == 3) result = country::from_alpha_3_code(s);
+    if (s.length() == 2) result = country::from_alpha_2_code(s);
+    if (s.length() == 3) result = country::from_alpha_3_code(s);
     if (result == country::empty()) result = country::from_name(s);
     return result;
   }

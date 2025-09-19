@@ -131,7 +131,7 @@ void file_settings::from_string(const xtd::string& text) {
         auto section_comment = string::empty_string;
         line = separate_comment(line, section_comment);
         if (!line.ends_with(section_end_delimiter)) throw_helper::throws(exception_case::format, string::format("Section start with '{}' but not end with '{}'", section_start_delimiter, section_end_delimiter).c_str());
-        section = unescaping(line.substring(1, line.size() - 2));
+        section = unescaping(line.substring(1, line.length() - 2));
         if (!string::is_empty(section_comment)) section_comment_[section] = section_comment;
         section_key_values_[section] = {};
         if (!string::is_empty(comment)) before_section_comment_[section] = comment;
@@ -229,7 +229,7 @@ string file_settings::to_string() const noexcept {
   if (!string::is_empty(top_file_comment_))
     text += split_comment(top_file_comment_);
   for (auto [section, key_value] : section_key_values_) {
-    text += text.size() == 0 ? "" : environment::new_line();
+    text += text.length() == 0 ? "" : environment::new_line();
     auto bs_it = before_section_comment_.find(section);
     if (bs_it != before_section_comment_.end() && !string::is_empty(bs_it->second)) text += split_comment(bs_it->second);
     auto s_it = section_comment_.find(section);

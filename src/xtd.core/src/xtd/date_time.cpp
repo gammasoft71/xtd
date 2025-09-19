@@ -460,7 +460,7 @@ string date_time::to_string(const string& format) const {
 string date_time::to_string(const string& format, const std::locale& loc) const {
   auto fmt = format;
   if (xtd::string::is_empty(fmt)) fmt = "G";
-  if (fmt.size() > 1) throw_helper::throws(exception_case::format, "Invalid format"_t);
+  if (fmt.length() > 1) throw_helper::throws(exception_case::format, "Invalid format"_t);
   
   [[maybe_unused]] auto [year, month, day, hour, minute, second, day_of_year, day_of_week] = get_date_time();
   switch (fmt[0]) {

@@ -705,7 +705,7 @@ style_sheets::padding style_sheet::padding_top_from_css(const string& css_text, 
 string style_sheet::string_from_css(const string& css_text, const string& default_value) const noexcept {
   auto value = css_text.trim();
   if (!value.starts_with("\"") || !value.ends_with("\"")) return default_value;
-  return value.remove(value.size() - 1, 1).replace("\"", string::empty_string);
+  return value.remove(value.length() - 1, 1).replace("\"", string::empty_string);
 }
 
 content_alignment style_sheet::text_align_from_css(const string& css_text, const content_alignment& default_value) const noexcept {
@@ -786,7 +786,7 @@ array<string> style_sheet::split_values_from_text(const string& text) const noex
     if (color_keyword != "") {
       result.add(value.substring(0, value.find(')') + 1).trim());
       value = value.remove(0, value.find(')') + 1).trim();
-      if (value.size() && value[0] == ',') value = value.remove(0, 1).trim();
+      if (value.length() && value[0] == ',') value = value.remove(0, 1).trim();
     } else if (value.find(',') == string::npos) {
       result.add(value.trim());
       value = "";
@@ -1091,7 +1091,7 @@ bool style_sheet::try_parse_color(const string& text, xtd::drawing::color& resul
 }
 
 bool style_sheet::try_parse_hex_color(const string& text, color& result) const noexcept {
-  if (text.starts_with("#") && text.size() == 4_z) {
+  if (text.starts_with("#") && text.length() == 4_z) {
     xtd::byte r = 0;
     if (xtd::try_parse<xtd::byte>(text.substring(1, 1).chars(), r, number_styles::hex_number) == false) return false;
     r += r * 16;
@@ -1104,7 +1104,7 @@ bool style_sheet::try_parse_hex_color(const string& text, color& result) const n
     result = color::from_argb(r, g, b);
     return true;
   }
-  if (text.starts_with("#") && text.size() == 5_z) {
+  if (text.starts_with("#") && text.length() == 5_z) {
     xtd::byte a = 0;
     if (xtd::try_parse<xtd::byte>(text.substring(1, 1).chars(), a, number_styles::hex_number) == false) return false;
     a += a * 16;
@@ -1120,13 +1120,13 @@ bool style_sheet::try_parse_hex_color(const string& text, color& result) const n
     result = color::from_argb(a, r, g, b);
     return true;
   }
-  if (text.starts_with("#") && text.size() == 7_z) {
+  if (text.starts_with("#") && text.length() == 7_z) {
     auto rgb = 0u;
     if (xtd::try_parse<uint32>(text.substring(1).chars(), rgb, number_styles::hex_number) == false) return false;
     result = color::from_argb(rgb + 0xFF000000u);
     return true;
   }
-  if (text.starts_with("#") && text.size() == 9_z) {
+  if (text.starts_with("#") && text.length() == 9_z) {
     auto argb = 0u;
     if (xtd::try_parse<uint32>(text.substring(1).chars(), argb, number_styles::hex_number) == false) return false;
     result = color::from_argb(argb);
@@ -1136,7 +1136,7 @@ bool style_sheet::try_parse_hex_color(const string& text, color& result) const n
 }
 
 bool style_sheet::try_parse_linear_gradient(const string& text, background_image& result) const noexcept {
-  auto arguments = split_values_from_text(text.remove(text.size() - 1).replace("linear-gradient(", string::empty_string));
+  auto arguments = split_values_from_text(text.remove(text.length() - 1).replace("linear-gradient(", string::empty_string));
   auto colors = list<color> {};
   auto angle = -1;
   for (auto argument : arguments) {
@@ -1177,7 +1177,7 @@ bool style_sheet::try_parse_linear_gradient(const string& text, background_image
 }
 
 bool style_sheet::try_parse_rgb_color(const string& text, color& result) const noexcept {
-  auto value = text.remove(text.size() - 1).replace("rgb(", string::empty_string);
+  auto value = text.remove(text.length() - 1).replace("rgb(", string::empty_string);
   auto color_parts = value.split(',');
   if (color_parts.size() != 3) return false;
   xtd::byte r = 0;
@@ -1191,7 +1191,7 @@ bool style_sheet::try_parse_rgb_color(const string& text, color& result) const n
 }
 
 bool style_sheet::try_parse_rgba_color(const string& text, color& result) const noexcept {
-  auto value = text.remove(text.size() - 1).replace("rgba(", string::empty_string);
+  auto value = text.remove(text.length() - 1).replace("rgba(", string::empty_string);
   auto color_parts = value.split(',');
   if (color_parts.size() != 4) return false;
   xtd::byte r = 0;
@@ -1207,7 +1207,7 @@ bool style_sheet::try_parse_rgba_color(const string& text, color& result) const 
 }
 
 bool style_sheet::try_parse_hsv_color(const string& text, color& result) const noexcept {
-  auto value = text.remove(text.size() - 1).replace("hsv(", string::empty_string);
+  auto value = text.remove(text.length() - 1).replace("hsv(", string::empty_string);
   auto color_parts = value.split(',');
   if (color_parts.size() != 3) return false;
   float h = 0;
@@ -1221,7 +1221,7 @@ bool style_sheet::try_parse_hsv_color(const string& text, color& result) const n
 }
 
 bool style_sheet::try_parse_hsva_color(const string& text, color& result) const noexcept {
-  auto value = text.remove(text.size() - 1).replace("hsva(", string::empty_string);
+  auto value = text.remove(text.length() - 1).replace("hsva(", string::empty_string);
   auto color_parts = value.split(',');
   if (color_parts.size() != 4) return false;
   float h = 0;
@@ -1237,7 +1237,7 @@ bool style_sheet::try_parse_hsva_color(const string& text, color& result) const 
 }
 
 bool style_sheet::try_parse_hsl_color(const string& text, color& result) const noexcept {
-  auto value = text.remove(text.size() - 1).replace("hsl(", string::empty_string);
+  auto value = text.remove(text.length() - 1).replace("hsl(", string::empty_string);
   auto color_parts = value.split(',');
   if (color_parts.size() != 3) return false;
   float h = 0;
@@ -1251,7 +1251,7 @@ bool style_sheet::try_parse_hsl_color(const string& text, color& result) const n
 }
 
 bool style_sheet::try_parse_hsla_color(const string& text, color& result) const noexcept {
-  auto value = text.remove(text.size() - 1).replace("hsla(", string::empty_string);
+  auto value = text.remove(text.length() - 1).replace("hsla(", string::empty_string);
   auto color_parts = value.split(',');
   if (color_parts.size() != 4) return false;
   float h = 0;
@@ -1275,7 +1275,7 @@ bool style_sheet::try_parse_named_color(const string& text, color& result) const
 }
 
 bool style_sheet::try_parse_system_color(const string& text, color& result) const noexcept {
-  auto value = text.remove(text.size() - 1).replace("system-color(", string::empty_string);
+  auto value = text.remove(text.length() - 1).replace("system-color(", string::empty_string);
   auto colors = std::map<string, drawing::color> {{"accent", system_colors().accent()}, {"accent-text", system_colors().accent_text()}, {"active-border", system_colors().active_border()}, {"active-caption", system_colors().active_caption()}, {"active-caption-text", system_colors().active_caption_text()}, {"app-workspace", system_colors().app_workspace()}, {"button-face", system_colors().button_face()}, {"button-highlight", system_colors().button_highlight()}, {"button-shadow", system_colors().button_shadow()}, {"control", system_colors().control()}, {"control-dark", system_colors().control_dark()}, {"control-dark-dark", system_colors().control_dark_dark()}, {"control-light", system_colors().control_light()}, {"control-light-light", system_colors().control_light_light()}, {"control-text", system_colors().control_text()}, {"desktop", system_colors().desktop()}, {"gradient-active-caption", system_colors().gradient_active_caption()}, {"gradient-inactive-caption", system_colors().gradient_inactive_caption()}, {"gray-text", system_colors().gray_text()}, {"highlight", system_colors().highlight()}, {"highlight-text", system_colors().highlight_text()}, {"hot-track", system_colors().hot_track()}, {"inactive-border", system_colors().inactive_border()}, {"inactive-caption", system_colors().inactive_caption()}, {"inactive-caption-text", system_colors().inactive_caption_text()}, {"info", system_colors().info()}, {"info-text", system_colors().info_text()}, {"menu", system_colors().menu()}, {"menu-bar", system_colors().menu_bar()}, {"menu-highlight", system_colors().menu_highlight()}, {"menu-text", system_colors().menu_text()}, {"scroll-bar", system_colors().scroll_bar()}, {"shadow-text", system_colors().shadow_text()}, {"text-box", system_colors().text_box()}, {"text-box-text", system_colors().text_box_text()}, {"window", system_colors().window()}, {"window-frame", system_colors().window_frame()}, {"window-text", system_colors().window_text()}};
   auto it = colors.find(value);
   if (it == colors.end()) return false;
@@ -1285,7 +1285,7 @@ bool style_sheet::try_parse_system_color(const string& text, color& result) cons
 
 bool style_sheet::try_parse_uri(const string& text, xtd::uri& result) const noexcept {
   if (!text.starts_with("url", true) || !text.ends_with(")", true)) return false;
-  result = uri(text.remove(text.size() - 1, 1).remove(0, 4));
+  result = uri(text.remove(text.length() - 1, 1).remove(0, 4));
   return true;
 }
 

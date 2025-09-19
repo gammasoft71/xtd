@@ -100,10 +100,10 @@ xtd::string path::get_random_file_name(size_t name_length, size_t extension_leng
   auto random_file_name = string::empty_string;
   
   for (auto index = 0_z; index < name_length; ++index)
-    random_file_name += valid_chars[rand.next(0, as<int32>(valid_chars.size() - 1))];
+    random_file_name += valid_chars[rand.next(0, as<int32>(valid_chars.length() - 1))];
   if (extension_length) random_file_name += '.';
   for (auto index = 0_z; index < extension_length; ++index)
-    random_file_name += valid_chars[rand.next(0, as<int32>(valid_chars.size() - 1))];
+    random_file_name += valid_chars[rand.next(0, as<int32>(valid_chars.length() - 1))];
     
   return random_file_name;
 }
@@ -120,7 +120,7 @@ string path::get_temp_file_name() {
 
 string path::get_temp_path() noexcept {
   auto temp_path = as<string>(native::path::get_temp_path());
-  if (temp_path.ends_with(directory_separator_char())) temp_path = temp_path.remove(temp_path.size() - 1);
+  if (temp_path.ends_with(directory_separator_char())) temp_path = temp_path.remove(temp_path.length() - 1);
   return temp_path;
 }
 
@@ -142,7 +142,7 @@ char path::volume_separator_char() noexcept {
 
 int32 path::__get_index_path_rooted(const string& path) {
   auto index = path.find(directory_separator_char());
-  return (index == string::npos || index == path.size() || (index != 0 && !__is_drive(path.substring(0, index + 1)))) ? -1 : static_cast<int32>(index);
+  return (index == string::npos || index == path.length() || (index != 0 && !__is_drive(path.substring(0, index + 1)))) ? -1 : static_cast<int32>(index);
 }
 
 bool path::__is_drive(const string& path) noexcept {

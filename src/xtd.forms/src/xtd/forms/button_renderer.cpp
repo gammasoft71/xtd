@@ -150,7 +150,7 @@ void button_renderer::draw_popup_button(const style_sheets::style_sheet& style_s
 namespace {
   xtd::string get_hotkey_prefix_locations(const xtd::string& str, list<xtd::size>& locations) {
     auto offset = 0_z;
-    for (auto index = 0_z; index < str.size(); index++) {
+    for (auto index = 0_z; index < str.length(); index++) {
       if (str[index] == '&' && str[index + 1] != '&')
         locations.add(index + offset);
       else if (str[index] == '&' && str[index + 1] == '&') {

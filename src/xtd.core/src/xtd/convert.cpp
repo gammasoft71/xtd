@@ -16,7 +16,7 @@ namespace {
 // https://stackoverflow.com/questions/180947/base64-decode-snippet-in-c
 array<byte> convert::from_base64_string(const string& s) {
   //if (s.size() % 4 != 0) throw_helper::throws(xtd::helpers::exception_case::format);
-  auto in_len = s.size();
+  auto in_len = s.length();
   auto i = 0_z;
   auto j = 0_z;
   auto in_ = 0_z;
@@ -672,7 +672,7 @@ char convert::to_char(xtd::ulong value) {
 }
 
 char convert::to_char(const string& value) {
-  if (value.size() != 1) throw_helper::throws(exception_case::format);
+  if (value.length() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
@@ -847,7 +847,7 @@ char8 convert::to_char8(xtd::ulong value) {
 }
 
 char8 convert::to_char8(const string& value) {
-  if (value.size() != 1) throw_helper::throws(exception_case::format);
+  if (value.length() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
@@ -1027,7 +1027,7 @@ char16 convert::to_char16(xtd::ulong value) {
 }
 
 char16 convert::to_char16(const string& value) {
-  if (value.size() != 1) throw_helper::throws(exception_case::format);
+  if (value.length() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
@@ -1205,7 +1205,7 @@ char32 convert::to_char32(xtd::ulong value) {
 }
 
 char32 convert::to_char32(const string& value) {
-  if (value.size() != 1) throw_helper::throws(exception_case::format);
+  if (value.length() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
@@ -1385,7 +1385,7 @@ wchar convert::to_wchar(xtd::ulong value) {
 }
 
 wchar convert::to_wchar(const string& value) {
-  if (value.size() != 1) throw_helper::throws(exception_case::format);
+  if (value.length() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 

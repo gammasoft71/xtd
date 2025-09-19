@@ -45,7 +45,7 @@ event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, 
   data_->name = name;
   data_->is_set = initial_state;
   if (!enum_object<>::is_defined(mode)) throw_helper::throws(exception_case::argument);
-  if (name.size() > native::named_event_wait_handle::max_name_size()) throw_helper::throws(exception_case::path_too_long);
+  if (name.length() > native::named_event_wait_handle::max_name_size()) throw_helper::throws(exception_case::path_too_long);
   auto created_new = false;
   create(initial_state, created_new);
 }
@@ -90,7 +90,7 @@ bool event_wait_handle::equals(const event_wait_handle& other) const noexcept {
 
 event_wait_handle event_wait_handle::open_existing(const string& name) {
   if (xtd::string::is_empty(name)) throw_helper::throws(exception_case::argument);
-  if (name.size() > native::named_event_wait_handle::max_name_size()) throw_helper::throws(exception_case::path_too_long);
+  if (name.length() > native::named_event_wait_handle::max_name_size()) throw_helper::throws(exception_case::path_too_long);
   auto result = event_wait_handle{};
   if (!try_open_existing(name, result)) throw_helper::throws(exception_case::io);
   return result;
@@ -117,7 +117,7 @@ bool event_wait_handle::set() {
 bool event_wait_handle::try_open_existing(const string& name, event_wait_handle& result) noexcept {
   result.close();
   if (string::is_empty(name)) return false;
-  if (name.size() > native::named_event_wait_handle::max_name_size()) return false;
+  if (name.length() > native::named_event_wait_handle::max_name_size()) return false;
   auto new_event_wait_handle = event_wait_handle {};
   new_event_wait_handle.data_->name = name;
   new_event_wait_handle.data_->event_wait_handle = xtd::new_uptr<event_wait_handle::named_event_wait_handle>();

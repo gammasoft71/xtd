@@ -43,7 +43,7 @@ namespace xtdc_command {
         write_line_error(xtd::string::format("The name : \"{}\" contains invalid charaters.", name));
         return EXIT_FAILURE;
       }
-      if (name.size() > 128) {
+      if (name.length() > 128) {
         write_line_error("The size of the name is invalid, the size must be less than or equal to 128.");
         return EXIT_FAILURE;
       }

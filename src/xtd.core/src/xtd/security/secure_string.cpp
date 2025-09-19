@@ -15,7 +15,7 @@ namespace {
     auto key = guid.to_string("D");
     auto result = list<xtd::byte> {};
     for (auto index = 0_z; index < length; ++index)
-      result.add(value[index] != key[index % key.size()] ? value[index] ^ key[index % key.size()] : value[index]);
+      result.add(value[index] != key[index % key.length()] ? value[index] ^ key[index % key.length()] : value[index]);
     return result;
   }
   

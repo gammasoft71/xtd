@@ -45,7 +45,7 @@ void string_assert::does_not_end_with(const xtd::string& item, const xtd::string
 }
 
 void string_assert::does_not_end_with(const xtd::string& item, const xtd::string& string, const xtd::string& message, const stack_frame& stack_frame) {
-  if (string.rfind(item) + item.size() != string.size()) assert::succeed(message, stack_frame);
+  if (string.rfind(item) + item.length() != string.length()) assert::succeed(message, stack_frame);
   else fail("not string ending with " + to_string(item), to_string(string), message, stack_frame);
 }
 
@@ -73,7 +73,7 @@ void string_assert::ends_with(const xtd::string& item, const xtd::string& string
 }
 
 void string_assert::ends_with(const xtd::string& item, const xtd::string& string, const xtd::string& message, const stack_frame& stack_frame) {
-  if (string.rfind(item) + item.size() == string.size()) assert::succeed(message, stack_frame);
+  if (string.rfind(item) + item.length() == string.length()) assert::succeed(message, stack_frame);
   else fail("string ending with " + to_string(item), to_string(string), message, stack_frame);
 }
 
