@@ -19,9 +19,9 @@ intptr tool_bar::add_tool_bar_button(intptr tool_bar, const xtd::string& text, c
     return 0;
   }
   
-  auto tool_bar_item = static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->AddTool(wxID_ANY, convert_string::to_wstring(text).c_str(), *reinterpret_cast<wxImage*>(image.handle()));
+  auto tool_bar_item = static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->AddTool(wxID_ANY, convert_string::to_wstring(text).chars().c_str(), *reinterpret_cast<wxImage*>(image.handle()));
   tool_bar_item->Enable(enabled && visible);
-  tool_bar_item->SetShortHelp(convert_string::to_wstring(tool_tip_text).c_str());
+  tool_bar_item->SetShortHelp(convert_string::to_wstring(tool_tip_text).chars().c_str());
   return static_cast<intptr>(tool_bar_item->GetId());
 }
 
@@ -32,10 +32,10 @@ intptr tool_bar::add_tool_bar_drop_down_button(intptr tool_bar, const xtd::strin
     return 0;
   }
   
-  auto tool_bar_item = static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->AddTool(wxID_ANY, convert_string::to_wstring(text).c_str(), *reinterpret_cast<wxImage*>(image.handle()), wxEmptyString, wxITEM_DROPDOWN);
+  auto tool_bar_item = static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->AddTool(wxID_ANY, convert_string::to_wstring(text).chars().c_str(), *reinterpret_cast<wxImage*>(image.handle()), wxEmptyString, wxITEM_DROPDOWN);
   tool_bar_item->Enable(enabled && visible);
   tool_bar_item->SetDropdownMenu(reinterpret_cast<wxMenu*>(drop_down_menu));
-  tool_bar_item->SetShortHelp(convert_string::to_wstring(tool_tip_text).c_str());
+  tool_bar_item->SetShortHelp(convert_string::to_wstring(tool_tip_text).chars().c_str());
   return static_cast<intptr>(tool_bar_item->GetId());
 }
 
@@ -46,9 +46,9 @@ intptr tool_bar::add_tool_bar_toggle_button(intptr tool_bar, const xtd::string& 
     return 0;
   }
   
-  auto tool_bar_item = static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->AddTool(wxID_ANY, convert_string::to_wstring(text).c_str(), *reinterpret_cast<wxImage*>(image.handle()), wxEmptyString, wxITEM_CHECK);
+  auto tool_bar_item = static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->AddTool(wxID_ANY, convert_string::to_wstring(text).chars().c_str(), *reinterpret_cast<wxImage*>(image.handle()), wxEmptyString, wxITEM_CHECK);
   tool_bar_item->Enable(enabled && visible);
-  tool_bar_item->SetShortHelp(convert_string::to_wstring(tool_tip_text).c_str());
+  tool_bar_item->SetShortHelp(convert_string::to_wstring(tool_tip_text).chars().c_str());
   tool_bar_item->Toggle(pushed);
   return static_cast<intptr>(tool_bar_item->GetId());
 }
@@ -87,8 +87,8 @@ intptr tool_bar::add_tool_bar_control(intptr tool_bar, intptr control, const xtd
     return 0;
   }
   
-  auto tool_bar_item = static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->AddControl(control ? static_cast<wxControl*>(reinterpret_cast<control_handler*>(control)->control()) : new wxControl(reinterpret_cast<control_handler*>(tool_bar)->control(), wxID_ANY), convert_string::to_wstring(text).c_str());
-  tool_bar_item->SetShortHelp(convert_string::to_wstring(tool_tip_text).c_str());
+  auto tool_bar_item = static_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->AddControl(control ? static_cast<wxControl*>(reinterpret_cast<control_handler*>(control)->control()) : new wxControl(reinterpret_cast<control_handler*>(tool_bar)->control(), wxID_ANY), convert_string::to_wstring(text).chars().c_str());
+  tool_bar_item->SetShortHelp(convert_string::to_wstring(tool_tip_text).chars().c_str());
   return static_cast<intptr>(tool_bar_item->GetId());
 }
 
@@ -122,9 +122,9 @@ void tool_bar::update_tool_bar_item(intptr tool_bar, intptr handle, const xtd::s
   auto tool_bar_item = dynamic_cast<wxToolBar*>(reinterpret_cast<control_handler*>(tool_bar)->control())->FindById(static_cast<int32>(handle));
   if (!tool_bar_item) throw_helper::throws(exception_case::argument);
   
-  tool_bar_item->SetLabel(convert_string::to_wstring(text).c_str());
+  tool_bar_item->SetLabel(convert_string::to_wstring(text).chars().c_str());
   tool_bar_item->SetNormalBitmap(*reinterpret_cast<wxImage*>(image.handle()));
-  tool_bar_item->SetShortHelp(convert_string::to_wstring(tool_tip_text).c_str());
+  tool_bar_item->SetShortHelp(convert_string::to_wstring(tool_tip_text).chars().c_str());
   tool_bar_item->SetToggle(pushed);
   tool_bar_item->Enable(enabled && visible);
 }

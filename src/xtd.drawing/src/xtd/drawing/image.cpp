@@ -145,7 +145,7 @@ namespace {
     auto data = new char*[lines.count()];
     for (auto index = 0_z; index < lines.count() - 2; ++index) {
       lines[index + 1] = lines[index + 1].trim().replace("\"", "").replace(",", "");
-      data[index] = const_cast<char*>(lines[index + 1].c_str());
+      data[index] = const_cast<char*>(lines[index + 1].chars().c_str());
     }
     return ptr<char *[]> {data};
   }
@@ -180,7 +180,7 @@ image::image(const string& filename) : image::image(filename, false) {
 }
 
 image::image(const string& filename, bool use_icm) : data_(xtd::new_sptr<data>()) {
-  if (!xtd::io::file::exists(filename)) throw_helper::throws(exception_case::argument, string::format("`{}` file not found", filename).c_str());
+  if (!xtd::io::file::exists(filename)) throw_helper::throws(exception_case::argument, string::format("`{}` file not found", filename).chars().c_str());
   auto frame_resolutions = std::map<xtd::size, xtd::size> {};
   if (path::get_extension(filename) == ".xbm") {
     auto [bits, width, height] = get_data_from_xbm(filename);

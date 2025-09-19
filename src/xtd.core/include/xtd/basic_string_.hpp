@@ -145,7 +145,7 @@ inline xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> xtd
     
     if (should_add && keep_empty) {
       if (result.size() == count - 1) {
-        result.push_back(sub_string + basic_string(c_str(), it - chars().begin() + (is_separator ? 0 : 1), length() - (it - chars().begin()) + (is_separator ? 0 : 1)));
+        result.push_back(sub_string + basic_string(chars().c_str(), it - chars().begin() + (is_separator ? 0 : 1), length() - (it - chars().begin()) + (is_separator ? 0 : 1)));
         return result;
       }
       result.push_back(sub_string);
@@ -331,7 +331,7 @@ inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t
   }
   
   __basic_string_extract_format_arg(result, formats, std::forward<args_t>(args)...);
-  return result.c_str();
+  return result.chars().c_str();
 }
 
 template<class char_t, class traits_t, class allocator_t>

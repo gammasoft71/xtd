@@ -77,7 +77,7 @@ namespace xtdc_command {
     };
     
   public:
-    explicit project_management(const xtd::string& output) : path_(output.c_str()) {}
+    explicit project_management(const xtd::string& output) : path_(output.chars().c_str()) {}
     
     static xtd::array<project_sdk> get_valid_sdks(project_type type) {
       switch (type) {

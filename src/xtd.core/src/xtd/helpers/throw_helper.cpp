@@ -156,7 +156,7 @@ void throw_helper::throws(enum exception_case exception_case, const char* messag
 
 void throw_helper::throws(enum exception_case exception_case, const xtd::type& type, const source_location& location) {
   if (exception_case != exception_case::format_not_iformatable) throw argument_exception {"This overload can only be used with the xtd::helpers::exception_case::format_not_iformatable value."};
-  throws(exception_case, string::format("The `{0}` type does not inherit from `xtd::iformat` or the specialisation for the `{0}` type in the `xtd::to_string` specialisation method does not exist.", typeof_(type).full_name()).c_str(), location);
+  throws(exception_case, string::format("The `{0}` type does not inherit from `xtd::iformat` or the specialisation for the `{0}` type in the `xtd::to_string` specialisation method does not exist.", typeof_(type).full_name()).chars().c_str(), location);
 }
 
 void throw_helper::throws(xtd::helpers::exception_case exception_case, const xtd::net::sockets::socket_error& error, const source_location& location) {

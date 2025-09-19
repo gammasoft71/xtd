@@ -51,8 +51,8 @@ namespace {
       [alert addButtonWithTitle:[NSString stringWithUTF8String:"OK"_t]];
       [alert addButtonWithTitle:[NSString stringWithUTF8String:"Cancel"_t]];
     } else [alert addButtonWithTitle:[NSString stringWithUTF8String:"OK"_t]];
-    [alert setMessageText:[NSString stringWithUTF8String:caption.c_str()]];
-    [alert setInformativeText:[NSString stringWithUTF8String:text.c_str()]];
+    [alert setMessageText:[NSString stringWithUTF8String:caption.chars().c_str()]];
+    [alert setInformativeText:[NSString stringWithUTF8String:text.chars().c_str()]];
     [alert setAlertStyle:convert_to_icon(style)];
     if (display_help_button)
       [alert setShowsHelp:YES];

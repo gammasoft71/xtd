@@ -50,7 +50,7 @@ intptr find_dialog::create(intptr hwnd, const std::optional<xtd::drawing::point>
   if (match_case) find_replace_flags |= wxFindReplaceFlags::wxFR_MATCHCASE;
   wxFindReplaceData* find_replace_data = new wxFindReplaceData();
   find_replace_data->SetFlags(find_replace_flags);
-  find_replace_data->SetFindString(convert_string::to_wstring(find_string).c_str());
+  find_replace_data->SetFindString(convert_string::to_wstring(find_string).chars().c_str());
   
   #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
@@ -60,7 +60,7 @@ intptr find_dialog::create(intptr hwnd, const std::optional<xtd::drawing::point>
   if (!show_up_down) style |= wxFR_NOUPDOWN;
   if (!show_whole_word) style |= wxFR_NOWHOLEWORD;
   if (!show_match_case) style |= wxFR_NOMATCHCASE;
-  wxFindDialog* find_dialog = new wxFindDialog(hwnd, find_replace_data, convert_string::to_wstring(title).c_str(), style, find_next, dialog_closed);
+  wxFindDialog* find_dialog = new wxFindDialog(hwnd, find_replace_data, convert_string::to_wstring(title).chars().c_str(), style, find_next, dialog_closed);
   #if !defined(__WXMSW__)
   find_dialog->SetMinSize(find_dialog->GetSize());
   find_dialog->SetMaxSize(find_dialog->GetSize());
@@ -69,7 +69,7 @@ intptr find_dialog::create(intptr hwnd, const std::optional<xtd::drawing::point>
   find_dialog->downwards = downwards;
   find_dialog->whole_word = whole_word;
   find_dialog->match_case = match_case;
-  find_dialog->find_string = convert_string::to_wstring(find_string).c_str();
+  find_dialog->find_string = convert_string::to_wstring(find_string).chars().c_str();
   
   find_dialog->Bind(wxEVT_FIND_CLOSE, [find_dialog, dialog_closed](wxFindDialogEvent & event) {
     find_dialog->Hide();

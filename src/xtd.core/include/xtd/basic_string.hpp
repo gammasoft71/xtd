@@ -842,20 +842,6 @@ namespace xtd {
     /// @name Public Properties
     
     /// @{
-    /// @brief Returns a pointer to a null-terminated character array with data equivalent to those stored in the string.
-    /// @return Pointer to the underlying character storage.
-    /// @remarks The pointer is such that the range [`c_str()`, `c_str() + size()`] is valid and the values in it correspond to the values stored in the string with an additional null character after the last position.
-    /// @remarks The pointer obtained from c_str() may be invalidated by:
-    /// * Passing a non-const reference to the string to any standard library function, or
-    /// * Calling non-const member functions on the string, excluding operator[], at(), front(), back(), begin(), rbegin(), end() and rend().
-    /// @remarks Writing to the character array accessed through c_str() is undefined behavior.
-    /// @remarks c_str() and data() perform the same function.
-    const_pointer c_str() const noexcept {return chars_.c_str();}
-    
-    /// @brief Returns the number of characters that the string has currently allocated space for.
-    /// @return Capacity of the currently allocated storage, i.e. the storage available for storing elements.
-    size_type capacity() const noexcept {return chars_.capacity();}
-    
     /// @brief Returns a reference to the underlying base type.
     /// @return Reference to the underlying base type.
     const base_type & chars() const noexcept {return chars_;}
@@ -2311,7 +2297,7 @@ namespace xtd {
     /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char8 value (or a wchar) before formatting it for output.
     /// @remarks you can use std::basic_string or std::wstring with format param %%s.
     template<class ...args_t>
-    static basic_string sprintf(const basic_string & fmt, args_t&& ... args) noexcept {return __sprintf(fmt.c_str(), convert_param(std::forward<args_t>(args)) ...);}
+    static basic_string sprintf(const basic_string & fmt, args_t&& ... args) noexcept {return __sprintf(fmt.chars().c_str(), convert_param(std::forward<args_t>(args)) ...);}
     
     /// @brief Try to convert a basic_string into a value_t type.
     /// @param str An xtd::basic_string to convert to value_t

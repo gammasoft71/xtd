@@ -641,7 +641,7 @@ forms::create_params month_calendar::create_params() const noexcept {
 
 xtd::uptr<xtd::object> month_calendar::clone() const {
   auto result = xtd::new_uptr<month_calendar>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).chars().c_str());
   return result;
 }
 

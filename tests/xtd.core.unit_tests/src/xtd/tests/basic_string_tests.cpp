@@ -417,18 +417,18 @@ namespace xtd::tests {
     
     void test_method_(c_str) {
       // Linker error on macOS : Undefined symbol: typeinfo for char8_t
-      assert::is_empty(basic_string<char_t> {}.c_str());
-      assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string<char_t> {"A test string"}.c_str());
+      assert::is_empty(basic_string<char_t> {}.chars().c_str());
+      assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string<char_t> {"A test string"}.chars().c_str());
       if constexpr(std::is_same<char_t, char8>::value) return;
       else {
-        assert::are_equal(typeof_<const char_t*>(), typeof_(basic_string<char_t> {}.c_str()));
-        assert::is_empty(basic_string<char_t> {}.c_str());
-        assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string<char_t> {"A test string"}.c_str());
+        assert::are_equal(typeof_<const char_t*>(), typeof_(basic_string<char_t> {}.chars().c_str()));
+        assert::is_empty(basic_string<char_t> {}.chars().c_str());
+        assert::are_equal(std::basic_string<char_t> {'A', ' ', 't', 'e', 's', 't', ' ', 's', 't', 'r', 'i', 'n', 'g'}, basic_string<char_t> {"A test string"}.chars().c_str());
       }
     }
     
     void test_method_(capacity) {
-      assert::is_not_zero(basic_string<char_t> {}.capacity());
+      assert::is_not_zero(basic_string<char_t> {}.chars().capacity());
     }
     
     void test_method_(cbegin) {

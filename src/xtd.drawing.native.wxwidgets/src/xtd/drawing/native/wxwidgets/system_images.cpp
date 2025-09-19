@@ -24,7 +24,7 @@ intptr system_images::from_name(const string& name, int32 width, int32 height) {
   if (icon) return reinterpret_cast<intptr>(new wxImage(wxBitmap(icon).ConvertToImage()));
   return 0;
   #elif defined(__WXOSX__)
-  intptr icon = __macos_get_image_from_name__(name.c_str(), width, height);
+  intptr icon = __macos_get_image_from_name__(name.chars().c_str(), width, height);
   if (icon) return icon;
   return 0;
   #endif

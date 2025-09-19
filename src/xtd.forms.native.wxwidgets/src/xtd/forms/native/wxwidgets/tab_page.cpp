@@ -30,5 +30,5 @@ void tab_page::text(intptr control, const string& text) {
   }
   auto page = static_cast<wxNotebookPage*>(reinterpret_cast<control_handler*>(control)->control());
   auto note_book = static_cast<wxNotebookBase*>(page->GetParent());
-  if (note_book) note_book->SetPageText(note_book->FindPage(page), convert_string::to_wstring(text).c_str());
+  if (note_book) note_book->SetPageText(note_book->FindPage(page), convert_string::to_wstring(text).chars().c_str());
 }
