@@ -101,11 +101,11 @@ namespace xtd {
     /// @brief Returns a reference to the last element in the container.
     /// @return Reference to the first element.
     /// @remarks Calling front on an empty container causes undefined behavior.
-    virtual reference back() {return at(size() - 1);}
+    virtual reference back() {return at(length() - 1);}
     /// @brief Returns a reference to the last element in the container.
     /// @return Reference to the first element.
     /// @remarks Calling front on an empty container causes undefined behavior.
-    virtual const_reference back() const {return at(size() - 1);}
+    virtual const_reference back() const {return at(length() - 1);}
     
     /// @brief Returns an iterator to the first element of the enumerable.
     /// @return Iterator to the first element.
