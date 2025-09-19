@@ -112,9 +112,16 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  }</div>
 </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="namespacextd.html#aacbd2f5780a3a0e2aa51480648286bc2">as_const</a>(<span class="keyword">const</span> type_t&amp;&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="namespacextd.html#a13ff766fbd20141856904226da9aff07">   21</a></span>  <span class="keyword">constexpr</span> std::add_const_t&lt;type_t&gt;* <a class="code hl_function" href="namespacextd.html#aacbd2f5780a3a0e2aa51480648286bc2">as_const</a>(type_t* <a class="code hl_typedef" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">type</a>) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordflow">return</span> <a class="code hl_typedef" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">type</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  }</div>
+</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="namespacextd.html#aacbd2f5780a3a0e2aa51480648286bc2">as_const</a>(<span class="keyword">const</span> type_t&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
 <div class="ttc" id="agroup__types_html_ga03b6109bac255dc61a3df38c5d80a46c"><div class="ttname"><a href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">xtd::type</a></div><div class="ttdeci">std::type_info type</div><div class="ttdoc">Stores information about a type.</div><div class="ttdef"><b>Definition</b> type.hpp:23</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 <div class="ttc" id="anamespacextd_html_aacbd2f5780a3a0e2aa51480648286bc2"><div class="ttname"><a href="namespacextd.html#aacbd2f5780a3a0e2aa51480648286bc2">xtd::as_const</a></div><div class="ttdeci">constexpr std::add_const_t&lt; type_t &gt; &amp; as_const(type_t &amp;type) noexcept</div><div class="ttdoc">Obtains a reference to const to its argument.</div><div class="ttdef"><b>Definition</b> as_const.hpp:13</div></div>
@@ -122,7 +129,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 18 2025 19:54:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Sep 19 2025 21:39:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
