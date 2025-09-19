@@ -15,8 +15,6 @@
 #include <xtd/object>
 #include <xtd/new_ptr>
 #include <xtd/size_object>
-#include <ostream>
-#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -24,6 +22,46 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::layout namespace contains classes for implementing layout behaviors in your form or control.
     namespace layout {
+      template<class item_t>
+      class items_added_event_args : public xtd::event_args {
+      public:
+        /// @name Public Consturctors
+        
+        /// @{
+        items_added_event_args(xtd::size index, const xtd::array<item_t>& items) : index_ {index}, items_ {items} {}
+        /// @}
+
+        /// @name Public Properties
+        
+        /// @{
+        xtd::size index() const noexcept {return index_;}
+        const xtd::array<item_t>& items() const noexcept {return items_;}
+        /// @}
+        
+      private:
+        xtd::size index_;
+        xtd::array<item_t> items_;
+      };
+      
+      /// @brief Represents the method that will handle the items added event of a xtd::forms::layout::arranged_element_colleciton.
+      /// ```cpp
+      /// template<class item_t>
+      /// using items_added_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::layout::items_added_event_args<type_t>& e)>;
+      /// ```
+      /// @param sender The source of the event.
+      /// @param e A xtd::forms::layout::items_added_event_args that contains the event data.
+      /// @par Header
+      /// ```cpp
+      /// #include <xtd/forms/layout/items_added_event_handler>
+      /// ```
+      /// @par Namespace
+      /// xtd::forms
+      /// @par Library
+      /// xtd.forms
+      /// @ingroup xtd_forms events
+      template<class item_t>
+      using items_added_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::layout::items_added_event_args<item_t>& e)>;
+      
       /// @brief Represents a collection of objects.
       /// @par Header
       /// ```cpp
@@ -298,8 +336,10 @@ namespace xtd {
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
         virtual void add_range(const std::initializer_list<type_t>& collection) {
+          auto index = data_->items.count() - 1;
           for (const auto& item : collection)
             add(item);
+          on_items_added(items_added_event_args<type_t> {index, xtd::array<type_t> {collection}});
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
@@ -363,6 +403,51 @@ namespace xtd {
           if (data_->sorted) sort();
         }
         
+        /*
+        /// @brief Adds elements to the end.
+        /// @param collection The elements to add.
+        virtual void insert_range(xtd::size index, const arranged_element_collection& collection) {
+          auto idx = index;
+          for (const auto& item : collection)
+            insert(idx++, item);
+          on_items_added(items_added_event_args<type_t> {index, xtd::array<type_t> {collection.begin(), collection.end()}});
+        }
+        /// @brief Adds elements to the end.
+        /// @param collection The elements to add.
+        virtual void insert_range(xtd::size index, const std::vector<type_t>& collection) {
+          auto idx = index;
+          for (const auto& item : collection)
+            insert(idx++, item);
+          on_items_added(items_added_event_args<type_t> {index, xtd::array<type_t> {collection}});
+        }
+        /// @brief Adds elements to the end.
+        /// @param collection The elements to add.
+        virtual void insert_range(xtd::size index, const std::initializer_list<type_t>& collection) {
+          auto idx = index;
+          for (const auto& item : collection)
+            insert(idx++, item);
+          on_items_added(items_added_event_args<type_t> {index, xtd::array<type_t> {collection}});
+        }
+        /// @brief Adds elements to the end.
+        /// @param collection The elements to add.
+        template<class collection_t>
+        void insert_range(xtd::size index, collection_t&& collection) {
+          auto idx = index;
+          for (const auto& item : collection)
+            insert(idx++, type_t {item});
+          on_items_added(items_added_event_args<type_t> {index, xtd::array<type_t> {collection}});
+        }
+        /// @brief Adds elements to the end.
+        /// @param collection The elements to add.
+        template<class collection_t>
+        void insert_range(xtd::size index, const collection_t& collection) {
+          auto idx = index;
+          for (const auto& item : collection)
+            insert(idx++, type_t {item});
+          on_items_added(items_added_event_args<type_t> {index, xtd::array<type_t> {collection}});
+        }
+         */
+
         /// @brief Sorts the content.
         virtual arranged_element_collection& sort() {
           sorter_t sorter;
@@ -466,7 +551,10 @@ namespace xtd {
         /// @brief Occurs when an item is added to the collection.
         /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
         event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_added;
-        
+        /// @brief Occurs when an item is added to the collection.
+        /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
+        event<arranged_element_collection, items_added_event_handler<type_t>> items_added;
+
         /// @brief Occurs when an item is updated in the collection.
         /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
         event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_updated;
@@ -490,23 +578,11 @@ namespace xtd {
         /// @name Public Deprecatd Properties
         
         /// @{
-        /// @brief Checks whether the container is empty.
-        /// @return `true` if container is empty; otherwise `false`.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::items().empty - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().empty - Will be removed in version 0.4.0.")]]
-        bool empty() const noexcept {return data_->items.empty();}
-        
         /// @brief Returns the maximum possible number of elements.
         /// @return The maximum possible number of elements.
         /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::max_size().empty - Will be removed in version 0.4.0.
         [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::items().max_size - Will be removed in version 0.4.0.")]]
         size_type max_size() const noexcept {return data_->items.max_size();}
-        
-        /// @brief Returns the number of elements.
-        /// @return The number of elements.
-        /// @deprecated Replaced by xtd::forms::layout::arranged_element_collection::count - Will be removed in version 0.4.0.
-        [[deprecated("Replaced by xtd::forms::layout::arranged_element_collection::count - Will be removed in version 0.4.0.")]]
-        size_type size() const noexcept {return count();}
         /// @}
         
         /// @name Public Deprecated Methods
@@ -805,7 +881,11 @@ namespace xtd {
         /// @param index The index of the item.
         /// @param item The item added.
         virtual void on_item_added(size_t index, type_t& item) {item_added(index, item);}
-        
+        /// @brief Raises the xtd::forms::layout::arranged_element_collection::item_added event.
+        /// @param index The index of the item.
+        /// @param item The item added.
+        virtual void on_items_added(const items_added_event_args<type_t>& e) {items_added(self_, e);}
+
         /// @brief Raises the xtd::forms::layout::arranged_element_collection::item_updated event.
         /// @param index The index of the item.
         /// @param item The item updated.
