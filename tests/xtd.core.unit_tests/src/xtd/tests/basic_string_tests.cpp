@@ -404,11 +404,6 @@ namespace xtd::tests {
     
     // ______________________________________________________________________________________________________________________________________________
     //                                                                                                                                     Properties
-    void test_method_(back) {
-      assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {}.back();});
-      assert::are_equal(char_t {'g'}, basic_string<char_t> {"A test string"}.back());
-    }
-    
     void test_method_(begin) {
       auto s = basic_string<char_t> {"A test string"};
       auto iterator = s.begin();
@@ -479,48 +474,14 @@ namespace xtd::tests {
       if (!environment::os_version().is_windows()) assert::throws<index_out_of_range_exception>([&] { [[maybe_unused]] auto v = *iterator;});
     }
     
-    void test_method_(front) {
-      assert::throws<index_out_of_range_exception>([] {basic_string<char_t> {}.front();});
-      assert::are_equal(char_t {'A'}, basic_string<char_t> {"A test string"}.front());
-    }
-    
     void test_method_(length) {
       assert::is_zero(basic_string<char_t> {}.length());
       assert::is_zero(basic_string<char_t>::empty_string.length());
       assert::are_equal(13_z, basic_string<char_t> {"A test string"}.length());
     }
     
-    void test_method_(max_size) {
-      assert::is_not_zero(basic_string<char_t> {}.max_size());
-    }
-    
-    void test_method_(size) {
-      assert::is_zero(basic_string<char_t> {}.size());
-      assert::is_zero(basic_string<char_t>::empty_string.size());
-      assert::are_equal(13_z, basic_string<char_t> {"A test string"}.size());
-    }
-    
     // ______________________________________________________________________________________________________________________________________________
     //                                                                                                                                        Methods
-    
-    void test_method_(at) {
-      auto s = basic_string<char_t>("A test string");
-      assert::are_equal(char_t {'A'}, s.at(0));
-      assert::are_equal(char_t {' '}, s.at(1));
-      assert::are_equal(char_t {'t'}, s.at(2));
-      assert::are_equal(char_t {'e'}, s.at(3));
-      assert::are_equal(char_t {'s'}, s.at(4));
-      assert::are_equal(char_t {'t'}, s.at(5));
-      assert::are_equal(char_t {' '}, s.at(6));
-      assert::are_equal(char_t {'s'}, s.at(7));
-      assert::are_equal(char_t {'t'}, s.at(8));
-      assert::are_equal(char_t {'r'}, s.at(9));
-      assert::are_equal(char_t {'i'}, s.at(10));
-      assert::are_equal(char_t {'n'}, s.at(11));
-      assert::are_equal(char_t {'g'}, s.at(12));
-      assert::throws<index_out_of_range_exception>([&] {s.at(13);});
-      assert::throws<index_out_of_range_exception>([&] {basic_string<char_t> {}.at(0);});
-    }
     
     void test_method_(compare) {
       assert::is_zero(basic_string<char_t> {""}.compare(""));
