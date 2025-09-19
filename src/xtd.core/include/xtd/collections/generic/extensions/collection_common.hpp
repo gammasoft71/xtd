@@ -37,12 +37,12 @@ namespace xtd {
           /// @brief Checks whether the container is empty.
           /// @return `true` if container is empty; otherwise `false`.
           virtual bool empty() const noexcept {return static_cast<const collection_t&>(self_).count() == 0;}
-
+          
           /// @brief Gets the number of elements contained in the xtd::collections::generic::icollection <type_t>.
           /// @return The number of elements contained in the xtd::collections::generic::icollection <type_t>.
           virtual xtd::size size() const noexcept {return static_cast<const collection_t&>(self_).count();}
           /// @}
-
+          
           /// @name Public Operators
           
           /// @{

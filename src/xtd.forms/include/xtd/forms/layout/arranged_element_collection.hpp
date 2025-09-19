@@ -30,7 +30,7 @@ namespace xtd {
         /// @{
         items_added_event_args(xtd::size index, const xtd::array<item_t>& items) : index_ {index}, items_ {items} {}
         /// @}
-
+        
         /// @name Public Properties
         
         /// @{
@@ -447,7 +447,7 @@ namespace xtd {
           on_items_added(items_added_event_args<type_t> {index, xtd::array<type_t> {collection}});
         }
          */
-
+        
         /// @brief Sorts the content.
         virtual arranged_element_collection& sort() {
           sorter_t sorter;
@@ -554,7 +554,7 @@ namespace xtd {
         /// @brief Occurs when an item is added to the collection.
         /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
         event<arranged_element_collection, items_added_event_handler<type_t>> items_added;
-
+        
         /// @brief Occurs when an item is updated in the collection.
         /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
         event<arranged_element_collection, delegate<void(size_t, type_t& item)>> item_updated;
@@ -885,7 +885,7 @@ namespace xtd {
         /// @param index The index of the item.
         /// @param item The item added.
         virtual void on_items_added(const items_added_event_args<type_t>& e) {items_added(self_, e);}
-
+        
         /// @brief Raises the xtd::forms::layout::arranged_element_collection::item_updated event.
         /// @param index The index of the item.
         /// @param item The item updated.
