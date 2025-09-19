@@ -30,7 +30,7 @@ using namespace xtdc_gui;
 namespace {
   static void copy_directory(const string& source_dir, const string& destination_dir, bool recursive) {
     auto dir = directory_info(source_dir);
-    if (!dir.exists()) throw_helper::throws(exception_case::directory_not_found, string::format("Source directory not found: {}", dir.full_name()).c_str());
+    if (!dir.exists()) throw_helper::throws(exception_case::directory_not_found, string::format("Source directory not found: {}", dir.full_name()).chars().c_str());
     
     directory::create_directory(destination_dir);
     
@@ -91,7 +91,7 @@ main_form::main_form() {
   
   startup_open_recent_projects_list_box_.double_click += [&] {
     if (startup_open_recent_projects_list_box_.selected_index() != startup_open_recent_projects_list_box_.npos) {
-      if (!directory::exists(properties::settings::default_settings().open_recent_propjects().split(';')[startup_open_recent_projects_list_box_.selected_index()].c_str())) message_box::show(*this, string::format("Project \"{}\" does not exists!", properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]), "Open project", message_box_buttons::ok, message_box_icon::error);
+      if (!directory::exists(properties::settings::default_settings().open_recent_propjects().split(';')[startup_open_recent_projects_list_box_.selected_index()].chars().c_str())) message_box::show(*this, string::format("Project \"{}\" does not exists!", properties::settings::default_settings().open_recent_propjects()[startup_open_recent_projects_list_box_.selected_index()]), "Open project", message_box_buttons::ok, message_box_icon::error);
       else open_project(properties::settings::default_settings().open_recent_propjects().split(';')[startup_open_recent_projects_list_box_.selected_index()]);
     }
   };
@@ -754,8 +754,8 @@ void main_form::new_project(const string& project_path, project_type type, proje
       progress_dialog_->marquee(true);
       progress_dialog_->show_sheet_dialog(*this);
     });
-    process::start(process_start_info().file_name("xtdc").arguments(string::format("new {} -s {} {}", std::get<0>(new_project), std::get<1>(new_project), std::get<2>(new_project)).c_str()).create_no_window(true)).wait_for_exit();
-    process::start(process_start_info().file_name("xtdc").arguments(string::format("open {}", std::get<2>(new_project)).c_str()).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(string::format("new {} -s {} {}", std::get<0>(new_project), std::get<1>(new_project), std::get<2>(new_project)).chars().c_str()).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(string::format("open {}", std::get<2>(new_project)).chars().c_str()).create_no_window(true)).wait_for_exit();
   };
   background_worker_->run_worker_completed += [&] {
     begin_invoke([&] {

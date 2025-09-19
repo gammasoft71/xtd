@@ -96,7 +96,7 @@ void translator::parse_file(const string& file, const string& language) {
     if (line.starts_with("#")) continue;
     if (xtd::string::is_empty(key) && line.starts_with("key ")) key = line.remove(0, 4).trim('"');
     else if (!xtd::string::is_empty(key) && line.starts_with("value ")) value = line.remove(0, 6).trim('"');
-    else throw_helper::throws(exception_case::format, string::format("file {} has an invalid format at line {}", file, line_count).c_str());
+    else throw_helper::throws(exception_case::format, string::format("file {} has an invalid format at line {}", file, line_count).chars().c_str());
     if (!xtd::string::is_empty(key) && !xtd::string::is_empty(value)) {
       add_value(language, key, value);
       key = value = "";
@@ -109,7 +109,7 @@ string translator::translate(const string& value) noexcept {
 }
 
 string translator::translate(const string& language, const string& value) noexcept {
-  return translate(language, value.c_str());
+  return translate(language, value.chars().c_str());
 }
 
 const char* translator::translate(const char* value) noexcept {
@@ -122,7 +122,7 @@ const char* translator::translate(const string& language, const char* value) noe
   if (language_iterator == language_values_.end()) return value;
   auto value_iterator = language_iterator->second.find(value);
   if (value_iterator == language_iterator->second.end()) return value;
-  return value_iterator->second.c_str();
+  return value_iterator->second.chars().c_str();
 }
 
 void translator::initialize() {

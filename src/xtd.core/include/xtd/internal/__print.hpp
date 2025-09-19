@@ -19,13 +19,13 @@
 inline void __xtd_print_with_file_write__(bool new_line, FILE* file, xtd::string&& s) {
   if (!file) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
   if (new_line) s += xtd::environment::new_line();
-  if (fwrite(s.c_str(), 1, s.length(), file) != s.length())
+  if (fwrite(s.chars().c_str(), 1, s.length(), file) != s.length())
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
 }
 
 inline void __xtd_print_with_ostream_write__(bool new_line, std::ostream& os, xtd::string&& s) {
   if (!os.good()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
   if (new_line) s += xtd::environment::new_line();
-  os.write(s.c_str(), s.length());
+  os.write(s.chars().c_str(), s.length());
 }
 /// @endcond

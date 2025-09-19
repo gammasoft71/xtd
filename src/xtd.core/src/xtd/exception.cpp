@@ -107,7 +107,7 @@ string exception::to_string() const noexcept {
 }
 
 const char* exception::what() const noexcept {
-  return xtd::string::is_empty(message()) ? get_name().c_str() : message().c_str();
+  return xtd::string::is_empty(message()) ? get_name().chars().c_str() : message().chars().c_str();
 }
 
 string exception::stack_trace_to_string() const noexcept {

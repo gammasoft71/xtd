@@ -149,14 +149,14 @@ namespace xtd::text::tests {
     
     void test_method_(constructor_with_count_and_pointer) {
       auto b = basic_string<char_t>("A test string\U0001F603");
-      auto p = b.c_str();
+      auto p = b.chars().c_str();
       auto s = basic_string_builder<char_t>(p);
       assert::are_equal("A test string\U0001F603", s.to_string());
     }
     
     void test_method_(constructor_with_count_and_pointer_and_count) {
       auto b = basic_string<char_t>("A test string");
-      auto p = b.c_str();
+      auto p = b.chars().c_str();
       auto s = basic_string_builder<char_t>(p, 6);
       assert::are_equal("A test", s.to_string());
     }
@@ -1132,7 +1132,7 @@ namespace xtd::text::tests {
     void test_method_(equal_operator_pointer) {
       auto s1 = basic_string_builder<char_t> {};
       auto b = basic_string<char_t> {"A test string"};
-      auto s2 = b.c_str();
+      auto s2 = b.chars().c_str();
       s1 = s2;
       assert::are_equal("A test string", s1.to_string());
     }
@@ -1171,7 +1171,7 @@ namespace xtd::text::tests {
     void test_method_(addition_assignment_operator_value_type_pointer) {
       auto s = basic_string_builder<char_t> {"A test"};
       auto b = basic_string<char_t> {" string"};
-      s += b.c_str();
+      s += b.chars().c_str();
       assert::are_equal("A test string", s.to_string());
     }
     
@@ -1220,7 +1220,7 @@ namespace xtd::text::tests {
     void test_method_(addition_operator_value_type_pointer_rhs) {
       auto s1 = basic_string_builder<char_t> {"A test"};
       auto b = basic_string<char_t> {" string"};
-      auto s2 = b.c_str();
+      auto s2 = b.chars().c_str();
       auto s3 = s1 + s2;
       assert::are_equal("A test string", s3.to_string());
       assert::are_equal("A test", s1.to_string());
@@ -1229,7 +1229,7 @@ namespace xtd::text::tests {
     void test_method_(addition_operator_move_lhs_char_pointer_rhs) {
       auto s1 = basic_string_builder<char_t> {"A test"};
       auto b = basic_string<char_t> {" string"};
-      auto s2 = b.c_str();
+      auto s2 = b.chars().c_str();
       auto s3 = std::move(s1) + s2;
       assert::are_equal("A test string", s3.to_string());
       assert::is_empty(s1);
@@ -1237,7 +1237,7 @@ namespace xtd::text::tests {
     
     void test_method_(addition_operator_value_type_pointer_lhs) {
       auto b = basic_string<char_t> {"A test"};
-      auto s1 = b.c_str();
+      auto s1 = b.chars().c_str();
       auto s2 = basic_string_builder<char_t> {" string"};
       auto s3 = s1 + s2;
       assert::are_equal("A test string", s3.to_string());
@@ -1246,7 +1246,7 @@ namespace xtd::text::tests {
     
     void test_method_(addition_operator_value_type_pointer_lhs_move_rhs) {
       auto b = basic_string<char_t> {"A test"};
-      auto s1 = b.c_str();
+      auto s1 = b.chars().c_str();
       auto s2 = basic_string_builder<char_t> {" string"};
       auto s3 = s1 + std::move(s2);
       assert::are_equal("A test string", s3.to_string());

@@ -14,7 +14,7 @@ public:
   xtd::char32 character() const noexcept override {return character_;}
   void character(xtd::char32 value) override {
     if (character_ == value) return;
-    if (!characters_.contains_key(value)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, xtd::string::format(xtd::translator::translate("Only characters : \"{}\" are valid"), valid_characters()).c_str());
+    if (!characters_.contains_key(value)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, xtd::string::format(xtd::translator::translate("Only characters : \"{}\" are valid"), valid_characters()).chars().c_str());
     character_ = value;
     seven_segment_display_digit::value(characters_[value]);
   }

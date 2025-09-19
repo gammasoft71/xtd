@@ -39,8 +39,8 @@ void message_notifier::show(intptr hwnd, const xtd::string& title,
   if (!wxTheApp) throw_helper::throws(exception_case::argument);
   auto notifmsg = xtd::new_uptr<wxNotificationMessage>();
   notifmsg->SetParent(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control());
-  notifmsg->SetTitle(convert_string::to_wstring(title).c_str());
-  notifmsg->SetMessage(convert_string::to_wstring(message).c_str());
+  notifmsg->SetTitle(convert_string::to_wstring(title).chars().c_str());
+  notifmsg->SetMessage(convert_string::to_wstring(message).chars().c_str());
   if (icon != xtd::drawing::icon::empty)
     notifmsg->SetIcon(reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon());
   else

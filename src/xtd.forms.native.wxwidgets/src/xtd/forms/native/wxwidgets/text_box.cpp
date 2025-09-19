@@ -41,7 +41,7 @@ void text_box::append(intptr control, const string& text) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
   }
-  static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->AppendText(convert_string::to_wstring(text).c_str());
+  static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->AppendText(convert_string::to_wstring(text).chars().c_str());
 }
 
 void text_box::select(intptr control, size_t start, size_t length) {
@@ -69,8 +69,8 @@ void text_box::text(intptr control, const string& text) {
   }
   switch (reinterpret_cast<wx_text_box*>(control)->character_casing_) {
     case wx_text_box::character_casing::normal: static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetValue(wxString(convert_string::to_wstring(text))); break;
-    case wx_text_box::character_casing::upper: static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetValue(convert_string::to_wstring(text.to_upper()).c_str()); break;
-    case wx_text_box::character_casing::lower: static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetValue(convert_string::to_wstring(text.to_lower()).c_str()); break;
+    case wx_text_box::character_casing::upper: static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetValue(convert_string::to_wstring(text.to_upper()).chars().c_str()); break;
+    case wx_text_box::character_casing::lower: static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetValue(convert_string::to_wstring(text.to_lower()).chars().c_str()); break;
   }
 }
 
@@ -82,7 +82,7 @@ void text_box::placeholder_text(intptr control, const string& text) {
   }
   switch (reinterpret_cast<wx_text_box*>(control)->character_casing_) {
     case wx_text_box::character_casing::normal: static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetHint(wxString(convert_string::to_wstring(text))); break;
-    case wx_text_box::character_casing::upper: static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetHint(convert_string::to_wstring(text.to_upper()).c_str()); break;
-    case wx_text_box::character_casing::lower: static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetHint(convert_string::to_wstring(text.to_lower()).c_str()); break;
+    case wx_text_box::character_casing::upper: static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetHint(convert_string::to_wstring(text.to_upper()).chars().c_str()); break;
+    case wx_text_box::character_casing::lower: static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetHint(convert_string::to_wstring(text.to_lower()).chars().c_str()); break;
   }
 }

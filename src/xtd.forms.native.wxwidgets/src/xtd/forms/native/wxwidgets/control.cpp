@@ -496,7 +496,7 @@ void control::text(intptr control, const string& text) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
   }
-  reinterpret_cast<control_handler*>(control)->SetLabel(convert_string::to_wstring(text).c_str());
+  reinterpret_cast<control_handler*>(control)->SetLabel(convert_string::to_wstring(text).chars().c_str());
 }
 
 intptr control::toolkit_handle(intptr control) {

@@ -64,6 +64,6 @@ void stream_writer::flush() {
 }
 
 void stream_writer::write(const string& value) {
-  if (stream_) stream_->write(value.c_str(), value.length());
+  if (stream_) stream_->write(value.chars().c_str(), value.length());
   if (auto_flush_) flush();
 }

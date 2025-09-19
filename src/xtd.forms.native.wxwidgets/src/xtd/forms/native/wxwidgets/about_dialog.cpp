@@ -29,10 +29,10 @@ namespace {
 
 void about_dialog::show(intptr hwnd, const xtd::drawing::icon& icon, const string& name, const string& description, const string& version, const string& long_version, const string& copyright, const string& website, const string& website_label, const array<string>& creators, const array<string>& designers, const array<string>& doc_writers, const array<string>& translators, const string& license) {
   wxAboutDialogInfo about_info;
-  about_info.SetName(convert_string::to_wstring(name).c_str());
-  about_info.SetDescription(convert_string::to_wstring(description).c_str());
-  if (!xtd::string::is_empty(long_version) || !xtd::string::is_empty(version)) about_info.SetVersion(xtd::string::is_empty(version) ? convert_string::to_wstring(long_version).c_str() : convert_string::to_wstring(version).c_str(), convert_string::to_wstring(long_version).c_str());
-  about_info.SetCopyright(convert_string::to_wstring(string(copyright).replace(u8"\u00A9"_s, u8"(c)"_s)).c_str());
+  about_info.SetName(convert_string::to_wstring(name).chars().c_str());
+  about_info.SetDescription(convert_string::to_wstring(description).chars().c_str());
+  if (!xtd::string::is_empty(long_version) || !xtd::string::is_empty(version)) about_info.SetVersion(xtd::string::is_empty(version) ? convert_string::to_wstring(long_version).chars().c_str() : convert_string::to_wstring(version).chars().c_str(), convert_string::to_wstring(long_version).chars().c_str());
+  about_info.SetCopyright(convert_string::to_wstring(string(copyright).replace(u8"\u00A9"_s, u8"(c)"_s)).chars().c_str());
   #if defined(__WXGTK__)
   about_info.SetIcon(reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon());
   about_info.SetWebSite(convert_string::to_wstring(website).c_str(), convert_string::to_wstring(website_label).c_str());

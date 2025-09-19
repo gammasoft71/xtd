@@ -396,7 +396,7 @@ string date_time::sprintf(const string& format, const date_time& value) {
   auto result = std::stringstream {};
   result.imbue(std::locale());
   auto tm_value = value.to_tm();
-  result << std::put_time(&tm_value, format.c_str());
+  result << std::put_time(&tm_value, format.chars().c_str());
   return result.str();
 }
 
@@ -510,7 +510,7 @@ string date_time::to_string(const string& format, const std::locale& loc) const 
     case 'y': return string::format("{} {:D}", sprintf("%B", *this), year % 100);
     case 'Y': return string::format("{} {:D}", sprintf("%B", *this), year);
     case 'z':
-    case 'Z': return kind_ == date_time_kind::local ? time_zone_info::local().id().c_str() : time_zone_info::utc().id().c_str();
+    case 'Z': return kind_ == date_time_kind::local ? time_zone_info::local().id().chars().c_str() : time_zone_info::utc().id().chars().c_str();
   }
   throw_helper::throws(exception_case::format, "Invalid format"_t);
 }

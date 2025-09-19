@@ -24,5 +24,5 @@ string string_writer::to_string() const noexcept {
 }
 
 void string_writer::write(const string& value) {
-  stream_.write(value.c_str(), value.length());
+  stream_.write(value.chars().c_str(), value.length());
 }

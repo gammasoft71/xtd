@@ -112,7 +112,7 @@ int32 font_family::get_cell_ascent(intptr font_family, int32 em_height, bool bol
   toolkit::initialize(); // Must be first
   if (!wxTheApp) return em_height;
   wxScreenDC hdc;
-  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<string*>(font_family)).c_str());
+  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<string*>(font_family)).chars().c_str());
   font.SetStrikethrough(strikeout);
   wxFont default_font = hdc.GetFont();
   hdc.SetFont(font);
@@ -125,7 +125,7 @@ int32 font_family::get_cell_descent(intptr font_family, int32 em_height, bool bo
   toolkit::initialize(); // Must be first
   if (!wxTheApp) return 0;
   wxScreenDC hdc;
-  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<string*>(font_family)).c_str());
+  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<string*>(font_family)).chars().c_str());
   font.SetStrikethrough(strikeout);
   wxFont default_font = hdc.GetFont();
   hdc.SetFont(font);
@@ -138,7 +138,7 @@ int32 font_family::get_line_spacing(intptr font_family, int32 em_height, bool bo
   toolkit::initialize(); // Must be first
   if (!wxTheApp) return em_height;
   wxScreenDC hdc;
-  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<string*>(font_family)).c_str());
+  wxFont font(pixel_to_native_font_graphics_untit(em_height), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, convert_string::to_wstring(*reinterpret_cast<string*>(font_family)).chars().c_str());
   font.SetStrikethrough(strikeout);
   wxFont default_font = hdc.GetFont();
   hdc.SetFont(font);
