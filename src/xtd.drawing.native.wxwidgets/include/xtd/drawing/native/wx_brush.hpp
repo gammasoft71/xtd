@@ -86,6 +86,7 @@ namespace xtd {
           texture_brush_.texture = texture;
         }
         
+        bool is_gradient_brush() const {return is_conical_gradiant_brush() || is_linear_gradiant_brush() || is_radial_gradiant_brush();}
         bool is_conical_gradiant_brush() const {return brush_type_ == brush_type::conical_gradient;}
         bool is_linear_gradiant_brush() const {return brush_type_ == brush_type::linear_gradient;}
         bool is_radial_gradiant_brush() const {return brush_type_ == brush_type::radial_gradient;}
