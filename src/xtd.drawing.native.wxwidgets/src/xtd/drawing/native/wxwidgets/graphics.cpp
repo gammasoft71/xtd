@@ -75,6 +75,100 @@ namespace {
     else if (line_alignment == SA_FAR) result += wxAlignment::wxALIGN_BOTTOM;
     return static_cast<wxAlignment>(result);
   }
+
+  wxBitmap render_brush_to_bitmap_with_mask(const wxSize& size, const wx_brush* brush, const std::function<void(wxMemoryDC&)>& draw_mask) {
+    if (!brush->is_gradient_brush()) return wxBitmap {size};
+
+    auto gradient_bitmap = wxBitmap {size};
+    if (brush->is_conical_gradiant_brush()) gradient_bitmap = wxConicalGradient::CreateBitmap(size, brush->get_conical_gradiant_brush().colors, brush->get_conical_gradiant_brush().center_point, brush->get_conical_gradiant_brush().angle);
+    else {
+      auto dc = wxMemoryDC(gradient_bitmap);
+      auto graphics = wxGraphicsContext::Create(dc);
+      graphics->SetPen(wxNullPen);
+      graphics->SetBrush(wx_brush::to_graphics_brush(*graphics, *brush));
+      graphics->DrawRectangle(.0, .0, static_cast<double>(size.GetWidth()), static_cast<double>(size.GetHeight()));
+    }
+
+    auto gradient_image = gradient_bitmap.ConvertToImage();
+    
+    auto mask_bitmap = wxBitmap {size};
+    {
+      auto mask_dc = wxMemoryDC {mask_bitmap};
+      mask_dc.SetBrush(*wxWHITE_BRUSH);
+      mask_dc.Clear();
+      mask_dc.SetBrush(*wxBLACK_BRUSH);
+      mask_dc.SetPen(*wxTRANSPARENT_PEN);
+      draw_mask(mask_dc); // ex: ellipse, pie, polygon...
+    }
+    
+    gradient_image.SetMaskFromImage(mask_bitmap.ConvertToImage(), 255, 255, 255);
+
+    return wxBitmap(gradient_image);
+  }
+  
+  wxPoint2DDouble eval_cubic(const wxPoint2DDouble& P0, const wxPoint2DDouble& P1, const wxPoint2DDouble& P2, const wxPoint2DDouble& P3, double t) {
+    // Horner form: ((a*t + b)*t + c)*t + d where a,b,c,d are vector coeffs
+    double ax = -P0.m_x + 3.0*P1.m_x - 3.0*P2.m_x + P3.m_x;
+    double bx =  3.0*P0.m_x - 6.0*P1.m_x + 3.0*P2.m_x;
+    double cx = -3.0*P0.m_x + 3.0*P1.m_x;
+    double dx =  P0.m_x;
+    double x = ((ax * t + bx) * t + cx) * t + dx;
+    
+    double ay = -P0.m_y + 3.0*P1.m_y - 3.0*P2.m_y + P3.m_y;
+    double by =  3.0*P0.m_y - 6.0*P1.m_y + 3.0*P2.m_y;
+    double cy = -3.0*P0.m_y + 3.0*P1.m_y;
+    double dy =  P0.m_y;
+    double y = ((ay * t + by) * t + cy) * t + dy;
+    
+    return wxPoint2DDouble(x, y);
+  }
+  
+  // Expand bbox to include cubic bezier segment P0..P3 (including internal extrema)
+  void expand_bbox_for_cubic(const wxPoint2DDouble& P0, const wxPoint2DDouble& P1, const wxPoint2DDouble& P2, const wxPoint2DDouble& P3, double& minx, double& miny, double& maxx, double& maxy) {
+    // include control points / endpoints
+    auto include_point = [&](const wxPoint2DDouble& p) {
+      minx = std::min(minx, p.m_x);
+      miny = std::min(miny, p.m_y);
+      maxx = std::max(maxx, p.m_x);
+      maxy = std::max(maxy, p.m_y);
+    };
+    include_point(P0); include_point(P1); include_point(P2); include_point(P3);
+    
+    // derivative coefficients: B'(t) = 3a t^2 + 2b t + c
+    auto ax = -P0.m_x + 3.0*P1.m_x - 3.0*P2.m_x + P3.m_x;
+    auto bx =  3.0*P0.m_x - 6.0*P1.m_x + 3.0*P2.m_x;
+    auto cx = -3.0*P0.m_x + 3.0*P1.m_x;
+    auto ay = -P0.m_y + 3.0*P1.m_y - 3.0*P2.m_y + P3.m_y;
+    auto by =  3.0*P0.m_y - 6.0*P1.m_y + 3.0*P2.m_y;
+    auto cy = -3.0*P0.m_y + 3.0*P1.m_y;
+    
+    // Solve 3a t^2 + 2b t + c = 0  (for x and y separately)
+    auto solve_quadratic_and_add = [&](double A, double B, double C) {
+      const auto EPS = 1e-12;
+      if (std::abs(A) < EPS) {
+        if (std::abs(B) < EPS) return; // constant -> no root
+        auto t = -C / B;
+        if (t > 0.0 && t < 1.0) {
+          // later we'll evaluate full curve at t
+          wxPoint2DDouble p = eval_cubic(P0,P1,P2,P3,t);
+          include_point(p);
+        }
+        return;
+      }
+      auto disc = B*B - 4.0*A*C;
+      if (disc < 0.0) return;
+      auto s = std::sqrt(disc);
+      auto t1 = (-B + s) / (2.0*A);
+      auto t2 = (-B - s) / (2.0*A);
+      if (t1 > 0.0 && t1 < 1.0) include_point(eval_cubic(P0,P1,P2,P3,t1));
+      if (t2 > 0.0 && t2 < 1.0) include_point(eval_cubic(P0,P1,P2,P3,t2));
+    };
+    
+    // For x: A = 3*ax, B = 2*bx, C = cx
+    solve_quadratic_and_add(3.0*ax, 2.0*bx, cx);
+    // For y:
+    solve_quadratic_and_add(3.0*ay, 2.0*by, cy);
+  }
 }
 
 void graphics::copy_from_graphics(intptr handle, intptr handle_source, int32 source_x, int32 source_y, int32 destination_x, int32 destination_y, int32 block_region_width, int32 block_region_height, int32 copy_pixel_operation) {
@@ -372,16 +466,88 @@ void graphics::draw_string(intptr handle, const xtd::string& text, intptr font, 
 }
 
 void graphics::fill_closed_curve(intptr handle, intptr brush, const array<key_value_pair<float, float>> points, uint32 fill_mode, float tension) {
-  /// @todo Using graphics_path when done...
   if (!handle) throw_helper::throws(exception_case::argument);
+
   graphics_context gc(handle);
-  wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
-  dc.SetBrush(wx_brush::to_brush(*reinterpret_cast<wx_brush*>(brush)));
-  dc.SetPen(*wxTRANSPARENT_PEN);
-  std::vector<wxPoint> wx_points;
+  wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
+
+  auto pts = std::vector<wxPoint2DDouble> {};
   for (auto [x, y] : points)
-    wx_points.push_back(wxPoint(as<int32>(x), as<int32>(y)));
-  dc.DrawSpline(as<int32>(wx_points.size()), wx_points.data());
+    pts.emplace_back(x, y);
+  
+  if (pts.size() < 2) return;
+  
+  pts.push_back(pts[0]);
+  pts.push_back(pts[1]);
+  
+  auto s = tension == 0 ? 0.5 : static_cast<double>(tension);
+  
+  auto minx = std::numeric_limits<double>::infinity();
+  auto miny = std::numeric_limits<double>::infinity();
+  auto maxx = -std::numeric_limits<double>::infinity();
+  auto maxy = -std::numeric_limits<double>::infinity();
+  
+  for (auto i = 1_z; i + 2 < pts.size(); ++i) {
+    wxPoint2DDouble p0 = pts[i-1];
+    wxPoint2DDouble p1 = pts[i];
+    wxPoint2DDouble p2 = pts[i+1];
+    wxPoint2DDouble p3 = pts[i+2];
+    
+    wxPoint2DDouble c1(p1.m_x + (p2.m_x - p0.m_x) * (s / 3.0), p1.m_y + (p2.m_y - p0.m_y) * (s / 3.0));
+    wxPoint2DDouble c2(p2.m_x - (p3.m_x - p1.m_x) * (s / 3.0), p2.m_y - (p3.m_y - p1.m_y) * (s / 3.0));
+    expand_bbox_for_cubic(p0, c1, c2, p2, minx, miny, maxx, maxy);
+  }
+  
+  const auto PADDING = 2;
+  auto bx = static_cast<int>(std::floor(minx)) - PADDING;
+  auto by = static_cast<int>(std::floor(miny)) - PADDING;
+  auto bwidth  = std::max(1, static_cast<int>(std::ceil(maxx)) - bx + PADDING);
+  auto bheight = std::max(1, static_cast<int>(std::ceil(maxy)) - by + PADDING);
+  
+  auto path = graphics.CreatePath();
+  path.MoveToPoint(pts[0]);
+  for (auto i = 1_z; i + 2 < pts.size(); ++i) {
+    auto p0 = pts[i-1];
+    auto p1 = pts[i];
+    auto p2 = pts[i+1];
+    auto p3 = pts[i+2];
+    
+    auto c1 = wxPoint2DDouble(p1.m_x + (p2.m_x - p0.m_x) * (s / 3.0), p1.m_y + (p2.m_y - p0.m_y) * (s / 3.0));
+    auto c2 = wxPoint2DDouble(p2.m_x - (p3.m_x - p1.m_x) * (s / 3.0), p2.m_y - (p3.m_y - p1.m_y) * (s / 3.0));
+    path.AddCurveToPoint(c1, c2, p2);
+  }
+  path.CloseSubpath();
+  if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
+    auto gradient_bitmap = wxConicalGradient::CreateBitmap(wxSize(bwidth, bheight), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().colors, reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().center_point - wxPoint(bx, by), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().angle);
+    
+    auto mask_bitmap = wxBitmap(bwidth, bheight, 32);
+    {
+      auto mask_dc = wxMemoryDC(mask_bitmap);
+      mask_dc.SetBackground(*wxBLACK_BRUSH);
+      mask_dc.Clear();
+      
+      auto mask_gc = wxGraphicsContext::Create(mask_dc);
+      if (mask_gc) {
+        auto mask_path = path; // copie du path existant
+        auto m = mask_gc->CreateMatrix();
+        m.Translate(-bx, -by);
+        mask_path.Transform(m);
+        
+        mask_gc->SetBrush(*wxWHITE_BRUSH);
+        mask_gc->SetPen(*wxTRANSPARENT_PEN);
+        mask_gc->FillPath(mask_path);
+        
+        delete mask_gc;
+      }
+    }
+    
+    gradient_bitmap.SetMask(new wxMask(mask_bitmap, *wxBLACK));
+    graphics.DrawBitmap(gradient_bitmap, bx, by, bwidth, bheight);
+  } else {
+    graphics.SetBrush(wx_brush::to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
+    graphics.FillPath(path, fill_mode == 0 ? wxODDEVEN_RULE : wxWINDING_RULE);
+  }
+  
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
@@ -389,15 +555,9 @@ void graphics::fill_ellipse(intptr handle, intptr brush, float x, float y, float
   if (!handle) throw_helper::throws(exception_case::argument);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
-    wxBitmap conical_gradient_bitmap = wxConicalGradient::CreateBitmap(wxSize(width, height), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().colors, reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().center_point - wxPoint(x, y), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().angle);
-    wxImage conical_gradient_image = conical_gradient_bitmap.ConvertToImage();
-    wxBitmap conical_gradient_bitmap_mask(width, height);
-    auto conical_gradient_mask_graphics = wxGraphicsContext::Create(wxMemoryDC(conical_gradient_bitmap_mask));
-    conical_gradient_mask_graphics->SetBrush(conical_gradient_mask_graphics->CreateBrush(wxBrush(wxColour(255, 255, 255))));
-    conical_gradient_mask_graphics->DrawEllipse(0, 0, width, height);
-    conical_gradient_image.SetMaskFromImage(conical_gradient_bitmap_mask.ConvertToImage(), 0, 0, 0);
-    conical_gradient_bitmap = conical_gradient_image;
-    graphics.DrawBitmap(conical_gradient_bitmap, x, y, width, height);
+    auto& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
+    wxBitmap bitmap = render_brush_to_bitmap_with_mask(wxSize(width, height), reinterpret_cast<wx_brush*>(brush), [&](wxMemoryDC& mask_dc) {mask_dc.DrawEllipse(0, 0, width, height);});
+    dc.DrawBitmap(bitmap, x, y, true);
   } else {
     graphics.SetPen(wxNullPen);
     graphics.SetBrush(wx_brush::to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
@@ -431,37 +591,69 @@ void graphics::fill_path(intptr handle, intptr brush, intptr graphics_path, int3
 
 void graphics::fill_pie(intptr handle, intptr brush, float x, float y, float width, float height, float start_angle, float sweep_angle) {
   if (!handle) throw_helper::throws(exception_case::argument);
-  graphics_context gc(handle);
-  wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
+  
   if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
-    wxBitmap conical_gradient_bitmap = wxConicalGradient::CreateBitmap(wxSize(width, height), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().colors, reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().center_point - wxPoint(x, y), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().angle);
-    wxImage conical_gradient_image = conical_gradient_bitmap.ConvertToImage();
-    wxBitmap conical_gradient_bitmap_mask(width, height);
-    auto conical_gradient_bitmap_mask_dc = wxMemoryDC(conical_gradient_bitmap_mask);
-    conical_gradient_bitmap_mask_dc.SetBrush(wxBrush(wxColour(255, 255, 255)));
-    conical_gradient_bitmap_mask_dc.DrawEllipticArc(0, y, width, height, 360 - start_angle - sweep_angle, 360 - start_angle);
-    conical_gradient_image.SetMaskFromImage(conical_gradient_bitmap_mask.ConvertToImage(), 0, 0, 0);
-    conical_gradient_bitmap = conical_gradient_image;
-    dc.DrawBitmap(conical_gradient_bitmap, x, y);
+    auto& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
+    wxBitmap bitmap = render_brush_to_bitmap_with_mask(wxSize(width, height), reinterpret_cast<wx_brush*>(brush), [&](wxMemoryDC& mask_dc) {mask_dc.DrawEllipticArc(0, 0, width, height, 360 - start_angle - sweep_angle, 360 - start_angle);});
+    dc.DrawBitmap(bitmap, x, y, true);
   } else {
-    dc.SetBrush(wx_brush::to_brush(*reinterpret_cast<wx_brush*>(brush)));
-    dc.SetPen(*wxTRANSPARENT_PEN);
-    dc.DrawEllipticArc(x, y, width, height, 360 - start_angle - sweep_angle, 360 - start_angle);
+    auto& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
+    wxGraphicsPath path = graphics.CreatePath();
+    
+    path.MoveToPoint(0, 0);
+    path.AddArc(0, 0, 1.0, wxDegToRad(start_angle), wxDegToRad(start_angle + sweep_angle), true);
+    path.CloseSubpath();
+    
+    wxGraphicsMatrix m = graphics.CreateMatrix();
+    m.Translate(x + width / 2.0, y + height / 2.0);
+    m.Scale(width / 2.0, height / 2.0);
+    path.Transform(m);
+    
+    graphics.SetPen(*wxTRANSPARENT_PEN);
+    graphics.SetBrush(wx_brush::to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
+    graphics.FillPath(path);
   }
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
 void graphics::fill_polygon(intptr handle, intptr brush, const array<key_value_pair<float, float>>& points, int32 fill_mode) {
   if (!handle) throw_helper::throws(exception_case::argument);
-  /// @todo Using graphics_path when done...
-  std::vector<wxPoint2DDouble> wx_points;
-  for (auto [x, y] : points)
-    wx_points.push_back(wxPoint(as<double>(x), as<double>(y)));
-  wx_points.push_back(wx_points[0]);
-  wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
-  graphics.SetBrush(wx_brush::to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
-  graphics.SetPen(wxNullPen);
-  graphics.DrawLines(wx_points.size(), wx_points.data());
+  
+  if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
+    float min_x = std::numeric_limits<float>::max();
+    float min_y = std::numeric_limits<float>::max();
+    float max_x = std::numeric_limits<float>::lowest();
+    float max_y = std::numeric_limits<float>::lowest();
+    for (auto [x, y] : points) {
+      min_x = std::min(min_x, x);
+      min_y = std::min(min_y, y);
+      max_x = std::max(max_x, x);
+      max_y = std::max(max_y, y);
+    }
+    auto width  = static_cast<int>(max_x - min_x);
+    auto height = static_cast<int>(max_y - min_y);
+    
+    auto& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
+    
+    auto bitmap = render_brush_to_bitmap_with_mask(wxSize(width, height), reinterpret_cast<wx_brush*>(brush), [&](wxMemoryDC& mask_dc) {
+      auto wx_points = std::vector<wxPoint> {};
+      wx_points.reserve(points.size());
+      for (auto [x, y] : points)
+        wx_points.emplace_back(static_cast<int>(x - min_x), static_cast<int>(y - min_y));
+      mask_dc.DrawPolygon(static_cast<int>(wx_points.size()), wx_points.data());
+    });
+    dc.DrawBitmap(bitmap, static_cast<int>(min_x), static_cast<int>(min_y), true);
+  } else {
+    std::vector<wxPoint2DDouble> wx_points;
+    for (auto [x, y] : points)
+      wx_points.push_back(wxPoint(as<double>(x), as<double>(y)));
+    wx_points.push_back(wx_points[0]);
+    wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
+    graphics.SetBrush(wx_brush::to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
+    graphics.SetPen(wxNullPen);
+    graphics.DrawLines(wx_points.size(), wx_points.data());
+  }
+  
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
