@@ -26,7 +26,7 @@ namespace {
 intptr status_bar::add_status_bar_panel(intptr status_bar, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, int32 alignment, int32 auto_size, int32 border_style, int32 min_width, int32 width) {
   if (!status_bar || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(status_bar)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(status_bar)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(status_bar)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
     return 0;
   }
   
@@ -45,12 +45,12 @@ intptr status_bar::add_status_bar_panel(intptr status_bar, const xtd::string& te
 intptr status_bar::add_status_bar_control(intptr status_bar, intptr control, const xtd::string& text) {
   if (!status_bar || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(status_bar)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(status_bar)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(status_bar)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
     return 0;
   }
   
   if (control && !dynamic_cast<wxControl*>(reinterpret_cast<control_handler*>(control)->control())) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(status_bar)->control() == 0, "Must be a control", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(status_bar)->control() == 0, "Must be a control", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
     return 0;
   }
   
@@ -70,7 +70,7 @@ bool status_bar::set_system_status_bar(intptr control, intptr status_bar) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (status_bar != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) throw_helper::throws(exception_case::argument, "dialog can't have tool bar"_t);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
     return false;
   }
   
@@ -96,7 +96,7 @@ xtd::string status_bar::sizing_grip_cursor_name() {
 void status_bar::update_status_bar_item(intptr status_bar, intptr handle, int32 border_style, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, bool visible, int32 width, bool stretchable) {
   if (!status_bar || !handle || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(status_bar)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(status_bar)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(status_bar)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
     return;
   }
   
