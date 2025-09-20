@@ -842,6 +842,16 @@ namespace xtd {
     /// @name Public Properties
     
     /// @{
+    /// @brief Returns a pointer to a null-terminated character array with data equivalent to those stored in the string.
+    /// @return Pointer to the underlying character storage.
+    /// @remarks The pointer is such that the range [`c_str()`, `c_str() + size()`] is valid and the values in it correspond to the values stored in the string with an additional null character after the last position.
+    /// @remarks The pointer obtained from c_str() may be invalidated by:
+    /// * Passing a non-const reference to the string to any standard library function, or
+    /// * Calling non-const member functions on the string, excluding operator[], at(), front(), back(), begin(), rbegin(), end() and rend().
+    /// @remarks Writing to the character array accessed through c_str() is undefined behavior.
+    /// @remarks c_str() and data() perform the same function.
+    const_pointer c_str() const noexcept {return chars_.c_str();}
+
     /// @brief Returns a reference to the underlying base type.
     /// @return Reference to the underlying base type.
     const base_type & chars() const noexcept {return chars_;}
