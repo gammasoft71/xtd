@@ -23,7 +23,6 @@ namespace xtd {
   namespace forms {
     /// @brief The xtd::forms::layout namespace contains classes for implementing layout behaviors in your form or control.
     namespace layout {
-        /// @}
       /// @brief Represents a collection of objects.
       /// @par Header
       /// ```cpp
