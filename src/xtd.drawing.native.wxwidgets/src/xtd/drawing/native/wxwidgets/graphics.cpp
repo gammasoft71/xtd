@@ -572,7 +572,7 @@ void graphics::fill_path(intptr handle, intptr brush, intptr graphics_path, int3
   if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
     double x, y, width, height;
     reinterpret_cast<wxGraphicsPath*>(graphics_path)->GetBox(&x, &y, &width, &height);
-    wxBitmap conical_gradient_bitmap = wxConicalGradient::CreateBitmap(wxSize(width, height), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().colors, reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().center_point - wxPoint(x, y), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().angle);
+    wxBitmap conical_gradient_bitmap = wxConicalGradient::CreateBitmap(wxSize(x + width, y + height), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().colors, reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().center_point, reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().angle);
     wxImage conical_gradient_image = conical_gradient_bitmap.ConvertToImage();
     wxBitmap conical_gradient_bitmap_mask(x + width, y + height);
     auto conical_gradient_mask_graphics = wxGraphicsContext::Create(wxMemoryDC(conical_gradient_bitmap_mask));
@@ -580,7 +580,7 @@ void graphics::fill_path(intptr handle, intptr brush, intptr graphics_path, int3
     conical_gradient_mask_graphics->FillPath(*reinterpret_cast<wxGraphicsPath*>(graphics_path));
     conical_gradient_image.SetMaskFromImage(conical_gradient_bitmap_mask.ConvertToImage(), 0, 0, 0);
     conical_gradient_bitmap = conical_gradient_image;
-    graphics.DrawBitmap(conical_gradient_bitmap, x, y, width, height);
+    graphics.DrawBitmap(conical_gradient_bitmap, 0, 0, x + width, y + height);
   } else {
     graphics.SetPen(wxNullPen);
     graphics.SetBrush(wx_brush::to_graphics_brush(graphics, *reinterpret_cast<wx_brush*>(brush)));
