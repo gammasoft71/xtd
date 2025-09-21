@@ -76,7 +76,9 @@ var searchData=
   ['isynchronize_5finvoke_2ehpp_73',['isynchronize_invoke.hpp',['../isynchronize__invoke_8hpp.html',1,'']]],
   ['item_5fcheck_5fevent_5fargs_2ehpp_74',['item_check_event_args.hpp',['../item__check__event__args_8hpp.html',1,'']]],
   ['item_5fcheck_5fevent_5fhandler_2ehpp_75',['item_check_event_handler.hpp',['../item__check__event__handler_8hpp.html',1,'']]],
-  ['iterator_2ehpp_76',['iterator.hpp',['../iterator_8hpp.html',1,'']]],
-  ['itext_5fmodel_2ehpp_77',['itext_model.hpp',['../itext__model_8hpp.html',1,'']]],
-  ['iwin32_5fwindow_2ehpp_78',['iwin32_window.hpp',['../iwin32__window_8hpp.html',1,'']]]
+  ['items_5fadded_5fevent_5fargs_2ehpp_76',['items_added_event_args.hpp',['../items__added__event__args_8hpp.html',1,'']]],
+  ['items_5fadded_5fevent_5fhandler_2ehpp_77',['items_added_event_handler.hpp',['../items__added__event__handler_8hpp.html',1,'']]],
+  ['iterator_2ehpp_78',['iterator.hpp',['../iterator_8hpp.html',1,'']]],
+  ['itext_5fmodel_2ehpp_79',['itext_model.hpp',['../itext__model_8hpp.html',1,'']]],
+  ['iwin32_5fwindow_2ehpp_80',['iwin32_window.hpp',['../iwin32__window_8hpp.html',1,'']]]
 ];
