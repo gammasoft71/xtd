@@ -244,7 +244,7 @@ template&lt;class output_t, class input_t&gt; </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; p : lpf)</div>
 <div class="line">      console::write_line(p);</div>
 <div class="line">    </div>
-<div class="line">    list&lt;drawing::point&gt; lp = lpf.convert_all(converter&lt;drawing::point, const drawing::point_f&amp;&gt; {point_f_to_point});</div>
+<div class="line">    list&lt;drawing::point&gt; lp = lpf.convert_all&lt;drawing::point&gt;(converter&lt;drawing::point, const drawing::point_f&amp;&gt; {point_f_to_point});</div>
 <div class="line">    </div>
 <div class="line">    console::write_line();</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; p : lp)</div>
@@ -507,7 +507,7 @@ If you want to pass information to your callback method, create an object that c
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 15 2025 13:29:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 22 2025 15:07:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
