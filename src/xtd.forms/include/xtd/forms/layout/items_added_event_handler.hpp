@@ -29,5 +29,6 @@ namespace xtd {
       /// @ingroup xtd_forms events
       template<class item_t>
       using items_added_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::forms::layout::items_added_event_args<item_t>& e)>;
+    }
   }
-}
+  
