@@ -20,7 +20,7 @@ intptr system_images::from_name(const string& name, int32 width, int32 height) {
   #if defined(__WXMSW__)
   return 0;
   #elif defined(__WXGTK__)
-  GdkPixbuf* icon = __gtk_get_image_from_name__(name.c_str(), width, height);
+  GdkPixbuf* icon = __gtk_get_image_from_name__(name.chrs().c_str(), width, height);
   if (icon) return reinterpret_cast<intptr>(new wxImage(wxBitmap(icon).ConvertToImage()));
   return 0;
   #elif defined(__WXOSX__)
