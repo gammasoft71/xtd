@@ -31,7 +31,7 @@ namespace {
 
 #if defined(__WXGTK__)
 bool color_dialog::run_dialog(intptr hwnd, const xtd::string& title, drawing::color& color, array<xtd::drawing::color>& custom_colors, size_t options) {
-  auto dialog = gtk_color_chooser_dialog_new(title == "" ? "Color" : title.c_str(), hwnd == 0 ? nullptr : GTK_WINDOW(reinterpret_cast<control_handler*>(hwnd)->control()->GetHandle()));
+  auto dialog = gtk_color_chooser_dialog_new(title == "" ? "Color" : title.chars().c_str(), hwnd == 0 ? nullptr : GTK_WINDOW(reinterpret_cast<control_handler*>(hwnd)->control()->GetHandle()));
   gtk_color_chooser_set_use_alpha(GTK_COLOR_CHOOSER(dialog), (options & CC_ALPHACOLOR) == CC_ALPHACOLOR);
   GdkRGBA gdk_rgba {static_cast<double>(color.r()) / 255, static_cast<double>(color.g()) / 255, static_cast<double>(color.b()) / 255, static_cast<double>(color.a()) / 255};
   gtk_color_chooser_set_rgba(GTK_COLOR_CHOOSER(dialog), &gdk_rgba);
