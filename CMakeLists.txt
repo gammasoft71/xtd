@@ -59,7 +59,7 @@ endif ()
 
 if (XTD_KEEP_CLONED_CONTROLS)
   message(WARNING "The XTD_KEEP_CLONED_CONTROLS option can only be used for debugging.\nUse xtd::application::keep_cloned_controls() instead.\nSee https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#a28ad4db693e3bf228e5f0902fdf5882a for more information")
-  add_definitions(-D__ XTD_KEEP_CLONED_CONTROLS__)
+  add_definitions(-D__XTD_KEEP_CLONED_CONTROLS__)
 endif ()
 
 if (XTD_USE_SYSTEM_CONTROLS)
