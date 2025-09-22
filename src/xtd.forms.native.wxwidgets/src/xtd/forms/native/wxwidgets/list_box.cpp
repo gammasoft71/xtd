@@ -17,7 +17,7 @@ using namespace xtd::helpers;
 void list_box::begin_update(intptr control) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
     return;
   }
   reinterpret_cast<control_handler*>(control)->control()->Freeze();
@@ -26,7 +26,7 @@ void list_box::begin_update(intptr control) {
 void list_box::delete_item(intptr control, size_t index) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
     return;
   }
   static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Delete(static_cast<int32>(index));
@@ -35,7 +35,7 @@ void list_box::delete_item(intptr control, size_t index) {
 void list_box::end_update(intptr control) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
     return;
   }
   reinterpret_cast<control_handler*>(control)->control()->Thaw();
@@ -44,7 +44,7 @@ void list_box::end_update(intptr control) {
 void list_box::insert_item(intptr control, size_t index, const string& value) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
     return;
   }
   static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->Insert(convert_string::to_wstring(value).chars().c_str(), static_cast<int32>(index));
@@ -53,7 +53,7 @@ void list_box::insert_item(intptr control, size_t index, const string& value) {
 size_t list_box::selected_index(intptr control) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
     return 0;
   }
   if (static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->HasMultipleSelection()) {
@@ -67,7 +67,7 @@ size_t list_box::selected_index(intptr control) {
 void list_box::selected_index(intptr control, size_t index) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
     return;
   }
   return static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(static_cast<int32>(index));
@@ -76,7 +76,7 @@ void list_box::selected_index(intptr control, size_t index) {
 array<xtd::size> list_box::selected_indices(intptr control) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
     return {};
   }
   std::vector<xtd::size> indices;
@@ -89,7 +89,7 @@ array<xtd::size> list_box::selected_indices(intptr control) {
 void list_box::update_item(intptr control, size_t index, const string& value) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
     return;
   }
   static_cast<wxListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetString(static_cast<int32>(index), convert_string::to_wstring(value).chars().c_str());

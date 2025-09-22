@@ -160,7 +160,7 @@ namespace set_path {
         return 1;
       }
       
-      status = RegSetValueEx(environment_key, L"Path", 0, REG_SZ, reinterpret_cast<const BYTE*>(new_path.c_str()), static_cast<DWORD>(new_path.size() + 1));
+      status = RegSetValueEx(environment_key, L"Path", 0, REG_SZ, reinterpret_cast<const BYTE*>(new_path.chars().c_str()), static_cast<DWORD>(new_path.length() + 1));
       if (status != ERROR_SUCCESS) {
         console::write_line("An error 0x{:X8} occured when writing path in registry", status);
         return 2;

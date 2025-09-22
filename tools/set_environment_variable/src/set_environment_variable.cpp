@@ -139,7 +139,7 @@ namespace set_path {
       wchar value[4097] = L"";
       #if defined(_WIN32)
       DWORD size = 4097;
-      auto status = RegGetValue(environment_variable_system ? HKEY_LOCAL_MACHINE : HKEY_CURRENT_USER, environment_variable_system ? L"SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment" : L"Environment", convert_string::to_wstring(key).c_str(), RRF_RT_REG_SZ, nullptr, reinterpret_cast<PVOID>(value), &size);
+      auto status = RegGetValue(environment_variable_system ? HKEY_LOCAL_MACHINE : HKEY_CURRENT_USER, environment_variable_system ? L"SYSTEM\\CurrentControlSet\\Control\\Session Manager\\Environment" : L"Environment", convert_string::to_wstring(key).chars().c_str(), RRF_RT_REG_SZ, nullptr, reinterpret_cast<PVOID>(value), &size);
       if (status != ERROR_SUCCESS && status != ERROR_FILE_NOT_FOUND) {
         console::write_line("An error 0x{:X8} occurred when reading path in registry", status);
         return string::empty_string;
@@ -160,7 +160,7 @@ namespace set_path {
       }
       
       if (string::is_empty(value)) {
-        status = RegDeleteKey(environment_key, convert_string::to_wstring(key).c_str());
+        status = RegDeleteKey(environment_key, convert_string::to_wstring(key).chars().c_str());
         if (status != ERROR_SUCCESS) {
           console::write_line("An error 0x{:X8} occurred when erase key \"{}\" from registry", status, key);
           return 5;
@@ -169,7 +169,7 @@ namespace set_path {
       }
       
       auto new_value = convert_string::to_wstring(value);
-      status = RegSetValueEx(environment_key, convert_string::to_wstring(key).c_str(), 0, REG_SZ, reinterpret_cast<const BYTE*>(convert_string::to_wstring(new_value).c_str()), static_cast<DWORD>((new_value.size() + 1) * sizeof(wchar_t)));
+      status = RegSetValueEx(environment_key, convert_string::to_wstring(key).chars().c_str(), 0, REG_SZ, reinterpret_cast<const BYTE*>(convert_string::to_wstring(new_value).chars().c_str()), static_cast<DWORD>((new_value.size() + 1) * sizeof(wchar_t)));
       if (status != ERROR_SUCCESS) {
         console::write_line("An error 0x{:X8} occurred when writing key \"{}\" with value \"{}\" in registry", status, key, value);
         return 2;

@@ -48,9 +48,9 @@ bool folder_browser_dialog::run_dialog(intptr hwnd, const string& description, e
   SHGetSpecialFolderLocation(reinterpret_cast<HWND>(hwnd), static_cast<int32>(root_folder), &pidlRoot);
   browserInfo.lpfn = OnBrowserCalllback;
   auto wselected_path = xtd::convert_string::to_wstring(selected_path);
-  browserInfo.lParam = reinterpret_cast<LPARAM>(wselected_path.c_str());
+  browserInfo.lParam = reinterpret_cast<LPARAM>(wselected_path.chars().c_str());
   auto wdescription = xtd::convert_string::to_wstring(description);
-  browserInfo.lpszTitle = wdescription.c_str();
+  browserInfo.lpszTitle = wdescription.chars().c_str();
   
   browserInfo.ulFlags = options;
   

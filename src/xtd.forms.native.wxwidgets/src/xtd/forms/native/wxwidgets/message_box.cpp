@@ -31,7 +31,7 @@ namespace {
 
 int32 message_box::show(intptr control, const string& text, const string& caption, uint32 style, bool displayHelpButton) {
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
-  return MessageBoxW(control == 0 ? ((!control && wxTheApp && wxTheApp->GetTopWindow()) ? wxTheApp->GetTopWindow()->GetHandle() : 0) : reinterpret_cast<control_handler*>(control)->control()->GetHandle(), convert_string::to_wstring(text).c_str(), convert_string::to_wstring(caption).c_str(), style + (displayHelpButton ? 0x00004000L : 0));
+  return MessageBoxW(control == 0 ? ((!control && wxTheApp && wxTheApp->GetTopWindow()) ? wxTheApp->GetTopWindow()->GetHandle() : 0) : reinterpret_cast<control_handler*>(control)->control()->GetHandle(), convert_string::to_wstring(text).chars().c_str(), convert_string::to_wstring(caption).chars().c_str(), style + (displayHelpButton ? 0x00004000L : 0));
 }
 
 void message_box::show_sheet(xtd::delegate<void(int32)> on_dialog_closed, intptr control, const string& text, const string& caption, uint32 style, bool display_help_button) {
