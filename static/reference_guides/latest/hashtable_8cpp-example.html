@@ -126,7 +126,7 @@ $(function(){ initResizable(false); });
 <div class="line">  </div>
 <div class="line">  <span class="comment">// contains can be used to test keys before inserting</span></div>
 <div class="line">  <span class="comment">// them.</span></div>
-<div class="line">  <span class="keywordflow">if</span> (!open_with.contains(<span class="stringliteral">&quot;ht&quot;</span>)) {</div>
+<div class="line">  <span class="keywordflow">if</span> (!open_with.contains_key(<span class="stringliteral">&quot;ht&quot;</span>)) {</div>
 <div class="line">    open_with[<span class="stringliteral">&quot;ht&quot;</span>] = <span class="stringliteral">&quot;hypertrm.exe&quot;</span>;</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;Value added for key = \&quot;ht\&quot;: {0}&quot;</span>, open_with[<span class="stringliteral">&quot;ht&quot;</span>]);</div>
 <div class="line">  }</div>
@@ -139,9 +139,9 @@ $(function(){ initResizable(false); });
 <div class="line">    </div>
 <div class="line">  <span class="comment">// Use the Remove method to remove a key/value pair.</span></div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;\nerase(\&quot;doc\&quot;)&quot;</span>);</div>
-<div class="line">  open_with.erase(<span class="stringliteral">&quot;doc&quot;</span>);</div>
+<div class="line">  open_with.remove(<span class="stringliteral">&quot;doc&quot;</span>);</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordflow">if</span> (!open_with.contains(<span class="stringliteral">&quot;doc&quot;</span>))</div>
+<div class="line">  <span class="keywordflow">if</span> (!open_with.contains_key(<span class="stringliteral">&quot;doc&quot;</span>))</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;Key \&quot;doc\&quot; is not found.&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -164,7 +164,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 15 2025 13:29:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 22 2025 15:07:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

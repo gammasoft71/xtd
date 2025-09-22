@@ -37,7 +37,7 @@ var searchData=
   ['collapsible_5fpanel_2ehpp_34',['collapsible_panel.hpp',['../collapsible__panel_8hpp.html',1,'']]],
   ['collection_5fassert_2ehpp_35',['collection_assert.hpp',['../collection__assert_8hpp.html',1,'']]],
   ['collection_5fassume_2ehpp_36',['collection_assume.hpp',['../collection__assume_8hpp.html',1,'']]],
-  ['collection_5foperators_2ehpp_37',['collection_operators.hpp',['../collection__operators_8hpp.html',1,'']]],
+  ['collection_5fcommon_2ehpp_37',['collection_common.hpp',['../collection__common_8hpp.html',1,'']]],
   ['collection_5fvalid_2ehpp_38',['collection_valid.hpp',['../collection__valid_8hpp.html',1,'']]],
   ['color_2ehpp_39',['color.hpp',['../drawing_2color_8hpp.html',1,'(Global Namespace)'],['../literals_2color_8hpp.html',1,'(Global Namespace)']]],
   ['color_5fbox_2ehpp_40',['color_box.hpp',['../color__box_8hpp.html',1,'']]],

@@ -1407,6 +1407,10 @@ Functions</h2></td></tr>
 <tr class="memitem:aacbd2f5780a3a0e2aa51480648286bc2"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::add_const_t&lt; type_t &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aacbd2f5780a3a0e2aa51480648286bc2">as_const</a> (type_t &amp;<a class="el" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">type</a>) noexcept</td></tr>
 <tr class="memdesc:aacbd2f5780a3a0e2aa51480648286bc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains a reference to <code>const</code> to its argument.  <br /></td></tr>
 <tr class="separator:aacbd2f5780a3a0e2aa51480648286bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13ff766fbd20141856904226da9aff07" id="r_a13ff766fbd20141856904226da9aff07"><td class="memTemplParams" colspan="2">template&lt;class type_t&gt; </td></tr>
+<tr class="memitem:a13ff766fbd20141856904226da9aff07"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::add_const_t&lt; type_t &gt; *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a13ff766fbd20141856904226da9aff07">as_const</a> (type_t *<a class="el" href="group__types.html#ga03b6109bac255dc61a3df38c5d80a46c">type</a>) noexcept</td></tr>
+<tr class="memdesc:a13ff766fbd20141856904226da9aff07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains a pointer to <code>const</code> to its argument.  <br /></td></tr>
+<tr class="separator:a13ff766fbd20141856904226da9aff07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5a5584949bd381cfe6226427741595c6" id="r_ga5a5584949bd381cfe6226427741595c6"><td class="memItemLeft" align="right" valign="top">std::ostream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga5a5584949bd381cfe6226427741595c6">cnull</a> (nullptr)</td></tr>
 <tr class="memdesc:ga5a5584949bd381cfe6226427741595c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a null std::ostream.  <br /></td></tr>
 <tr class="separator:ga5a5584949bd381cfe6226427741595c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -7011,7 +7015,7 @@ template&lt;class type_t&gt; </td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="aacbd2f5780a3a0e2aa51480648286bc2" name="aacbd2f5780a3a0e2aa51480648286bc2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aacbd2f5780a3a0e2aa51480648286bc2">&#9670;&#160;</a></span>as_const()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aacbd2f5780a3a0e2aa51480648286bc2">&#9670;&#160;</a></span>as_const() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -7044,6 +7048,43 @@ template&lt;class type_t&gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The const reference of <code>type</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Forms lvalue reference to const type of <code>type</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a13ff766fbd20141856904226da9aff07" name="a13ff766fbd20141856904226da9aff07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13ff766fbd20141856904226da9aff07">&#9670;&#160;</a></span>as_const() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::add_const_t&lt; type_t &gt; * xtd::as_const </td>
+          <td>(</td>
+          <td class="paramtype">type_t *</td>          <td class="paramname"><span class="paramname"><em>type</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel constexpr">constexpr</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtains a pointer to <code>const</code> to its argument. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>The pointer of <code>type</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The const pointer of <code>type</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Forms lvalue pointer to const type of <code>type</code>. </dd></dl>
 
 </div>
 </div>
@@ -10447,7 +10488,7 @@ template&lt;class type_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 15 2025 13:29:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 22 2025 15:07:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
