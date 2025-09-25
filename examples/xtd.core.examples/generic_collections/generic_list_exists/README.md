@@ -19,4 +19,34 @@ xtdc run
 
 ```
 
+Compsognathus
+Amargasaurus
+Oviraptor
+Velociraptor
+Deinonychus
+Dilophosaurus
+Gallimimus
+Triceratops
+
+true_for_all(ends_with_saurus): false
+
+find(ends_with_saurus): Amargasaurus
+
+findLast(ends_with_saurus): Dilophosaurus
+
+find_all(ends_with_saurus):
+Amargasaurus
+Dilophosaurus
+
+2 elements removed by remove_all(ends_with_saurus).
+
+list now contains:
+Compsognathus
+Oviraptor
+Velociraptor
+Deinonychus
+Gallimimus
+Triceratops
+
+exists(ends_with_saurus): false
 ```
