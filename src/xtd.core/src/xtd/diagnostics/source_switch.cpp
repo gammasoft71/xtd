@@ -23,7 +23,6 @@ bool source_switch::should_trace(trace_event_type event_type) noexcept {
   return (switch_setting() & static_cast<int32>(event_type)) != 0;
 }
 
-
 void source_switch::on_value_changed() {
   switch_setting(static_cast<int32>(parse<source_levels>(value())));
 }

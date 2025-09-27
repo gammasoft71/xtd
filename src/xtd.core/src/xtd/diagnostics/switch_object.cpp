@@ -47,8 +47,8 @@ bool switch_object::equals(const switch_object& other) const noexcept {
 switch_object::switch_object(const string& display_name, const string& description) : switch_object(display_name, description, "0") {
 }
 
-switch_object::switch_object(const string& display_name, const string& description, const string& default_switch_value) : display_name_(display_name), description_(description), value_(default_switch_value) {
-  set_switch_setting();
+switch_object::switch_object(const string& display_name, const string& description, const string& default_switch_value) : display_name_(display_name), description_(description) {
+  value(default_switch_value);
 }
 
 int32 switch_object::switch_setting() const noexcept {
@@ -69,13 +69,7 @@ void switch_object::on_switch_setting_changed() {
 }
 
 void switch_object::on_value_changed() {
-  set_switch_setting();
-}
-
-void switch_object::set_switch_setting() {
-  auto bool_value = false;
   auto int_value = 0;
-  if (string::try_parse(value(), bool_value) == true) switch_setting_ = as<int32>(bool_value);
-  else if (string::try_parse(value(), int_value) == true) switch_setting_ = int_value;
-  else throw_helper::throws(exception_case::format, "Input xtd::string was not in a correct format."_t);
+  if (!string::try_parse(value(), int_value)) throw_helper::throws(exception_case::format, "Input xtd::string was not in a correct format."_t);
+  switch_setting(int_value);
 }
