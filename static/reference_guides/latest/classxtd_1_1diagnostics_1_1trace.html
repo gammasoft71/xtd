@@ -114,7 +114,7 @@ Inheritance diagram for xtd::diagnostics::trace:</div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>Provides a set of methods and properties that help you debug the execution of your code. This class cannot be inherited. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_class" href="classxtd_1_1diagnostics_1_1trace.html">trace</a> <a class="code hl_define" href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1trace_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1trace.html">xtd::diagnostics::trace</a></div><div class="ttdoc">Provides a set of methods and properties that help you debug the execution of your code....</div><div class="ttdef"><b>Definition</b> trace.hpp:40</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1trace_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1trace.html">xtd::diagnostics::trace</a></div><div class="ttdoc">Provides a set of methods and properties that help you debug the execution of your code....</div><div class="ttdef"><b>Definition</b> trace.hpp:38</div></div>
 <div class="ttc" id="agroup__keywords_html_ga28796443ec37b938df7072c79595e3f6"><div class="ttname"><a href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a></div><div class="ttdeci">#define static_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can&#39;t be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.hpp:37</div></div>
 <div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.hpp:13</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1static__object.html" title="Represent a static object. A static class can&#39;t be instantiated (constructors are deleted).">xtd::static_object</a> → <a class="el" href="classxtd_1_1diagnostics_1_1trace.html" title="Provides a set of methods and properties that help you debug the execution of your code....">xtd::diagnostics::trace</a> </dd></dl>
@@ -132,18 +132,11 @@ You can customize the tracing output's target by adding <a class="el" href="clas
 <dl class="section note"><dt>Note</dt><dd>Adding a trace listener to the listeners collection can cause an exception to be thrown while tracing, if a resource used by the trace listener is not available. The conditions and the exception thrown depend on the trace listener and cannot be enumerated in this topic. It may be useful to place calls to the debug methods in try/catch blocks to detect and handle any exceptions from trace listeners. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The debug class provides properties to get or set the level of indent, the indent_size, and whether to auto_flush after each write. </dd>
 <dd>
-You must enable debug or trace mode to use a trace listener. The syntax is compiler specific. If you use other than cmake to manage your build, refer to the documentation of your build manager.<ul>
-<li>To enable debug mode with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your project, or you can add #define DEBUG to the top of your file.</li>
-<li>To enable trace mode with cmake, add the add_definitions(-DTRACE) command line in the CMakeLists.txt of your project, or you can add #define TRACE to the top of your file. </li>
-</ul>
-</dd>
-<dd>
-To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if defined(DEBUG) ... #endif block, and add the /DDEBUG option to the compiler command line or add #define DEBUG to the file. </dd>
-<dd>
-To activate your code if TRACE is defined, you must enclose calls to the methods of Debug in an #if defined(TRACE) ... #endif block, and add the /DTRACE option to the compiler command line or add #define TRACE to the file. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example uses debug to indicate the beginning and the end of a program's execution. The example also uses the <a class="el" href="classxtd_1_1diagnostics_1_1debug.html#a1e85e29f94c54388d35a9b24d16a52c1" title="Increases the current indent_level by one.">debug::indent</a> and <a class="el" href="classxtd_1_1diagnostics_1_1debug.html#adb62c53bf313739efafec28bc0739b65" title="Decreases the current indent_level by one.">debug::unindent</a> methods to distinguish the tracing output. <div class="fragment"><div class="line"><span class="comment">// Specify -DTRACE when compiling or add #define TRACE in the source file.</span></div>
-<div class="line"><span class="preprocessor">#define DEBUG</span></div>
-<div class="line"> </div>
+To disable trace mode with CMake, add the command line <code>add_definitions(-DNTRACE)</code> in your CMakeLists.txt, or define NTRACE at the top of your file. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If you define <code>#define TRACE</code> above your includes, trace mode will still be active even if NTRACE is defined. /// </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To activate your code if TRACE is defined, you must enclose calls to the methods of Debug in an #if TRACE ... #endif block. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example uses debug to indicate the beginning and the end of a program's execution. The example also uses the <a class="el" href="classxtd_1_1diagnostics_1_1debug.html#a1e85e29f94c54388d35a9b24d16a52c1" title="Increases the current indent_level by one.">debug::indent</a> and <a class="el" href="classxtd_1_1diagnostics_1_1debug.html#adb62c53bf313739efafec28bc0739b65" title="Decreases the current indent_level by one.">debug::unindent</a> methods to distinguish the tracing output. <div class="fragment"><div class="line"><span class="preprocessor">#define DEBUG 1 </span><span class="comment">// Force debug mode even if example is builded in release.</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -163,7 +156,7 @@ To activate your code if TRACE is defined, you must enclose calls to the methods
 <div class="line"><span class="comment">//     Exiting Main</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a923837ac84baf01726703e0474ca4888"><div class="ttname"><a href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">xtd::console::out</a></div><div class="ttdeci">static std::ostream out</div><div class="ttdoc">Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...</div><div class="ttdef"><b>Definition</b> console.hpp:52</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1diagnostics_1_1trace_html_a0cf0960a97a2e45829917c931e1cf9bb"><div class="ttname"><a href="#a0cf0960a97a2e45829917c931e1cf9bb">xtd::diagnostics::trace::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes a line terminator to the trace listeners in the listeners collection.</div><div class="ttdef"><b>Definition</b> trace.hpp:328</div></div>
+<div class="ttc" id="aclassxtd_1_1diagnostics_1_1trace_html_a0cf0960a97a2e45829917c931e1cf9bb"><div class="ttname"><a href="#a0cf0960a97a2e45829917c931e1cf9bb">xtd::diagnostics::trace::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes a line terminator to the trace listeners in the listeners collection.</div><div class="ttdef"><b>Definition</b> trace.hpp:326</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1trace_html_a315726e6dae274cc31aa0e37dd45196b"><div class="ttname"><a href="#a315726e6dae274cc31aa0e37dd45196b">xtd::diagnostics::trace::auto_flush</a></div><div class="ttdeci">static bool auto_flush() noexcept</div><div class="ttdoc">Gets whether Flush should be called on the Listeners after every write.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1trace_html_a8e4635956642fba7833b8bbdff59a0c9"><div class="ttname"><a href="#a8e4635956642fba7833b8bbdff59a0c9">xtd::diagnostics::trace::listeners</a></div><div class="ttdeci">static listener_collection &amp; listeners() noexcept</div><div class="ttdoc">Gets the collection of listeners that is monitoring the trace output.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1trace_html_ad98f4b992d8440e6e8e9e852c90f3183"><div class="ttname"><a href="#ad98f4b992d8440e6e8e9e852c90f3183">xtd::diagnostics::trace::unindent</a></div><div class="ttdeci">static void unindent() noexcept</div><div class="ttdoc">Decreases the current indent_level by one.</div></div>
@@ -1955,13 +1948,13 @@ This method calls the write method of the trace listener. </dd></dl>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>xtd.core/include/xtd/diagnostics/<a class="el" href="trace_8hpp_source.html">trace.hpp</a></li>
+<li>xtd.core/include/xtd/diagnostics/<a class="el" href="diagnostics_2trace_8hpp_source.html">trace.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 25 2025 17:22:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Sep 27 2025 21:49:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

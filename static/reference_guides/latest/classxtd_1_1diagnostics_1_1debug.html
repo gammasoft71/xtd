@@ -134,14 +134,10 @@ You can customize the tracing output's target by adding <a class="el" href="clas
 <dd>
 The debug class provides properties to get or set the level of indent, the <a class="el" href="#ad4ea1dd9fb6c0082d2da46782a91699e" title="Gets the number of spaces in an indent.">xtd::diagnostics::debug::indent_size</a>, and whether to <a class="el" href="#a60740400c74b23c28654d16583abd892" title="Gets whether xtd::diagnostics::debug::flush should be called on the xtd::diagnostics::debug::Listener...">xtd::diagnostics::debug::auto_flush</a> after each write. </dd>
 <dd>
-You must enable debug mode to use a trace listener. The syntax is compiler specific. If you use other than cmake to manage your build, refer to the documentation of your build manager.<ul>
-<li>To enable debug mode with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your project, or you can add #define DEBUG to the top of your file. </li>
-</ul>
-</dd>
-<dd>
-To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if defined(DEBUG) ... #endif block, and add the /DDEBUG option to the compiler command line or add #define DEBUG to the file. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example uses debug to indicate the beginning and the end of a program's execution. The example also uses the <a class="el" href="#a1e85e29f94c54388d35a9b24d16a52c1" title="Increases the current indent_level by one.">debug::indent</a> and <a class="el" href="#adb62c53bf313739efafec28bc0739b65" title="Decreases the current indent_level by one.">debug::unindent</a> methods to distinguish the tracing output. <div class="fragment"><div class="line"><span class="comment">// Specify -DDEBUG when compiling or add #define DEBUG in the source file.</span></div>
-<div class="line"> </div>
+To disable debug mode with CMake, add the command line <code>add_definitions(-DNDEBUG)</code> in your CMakeLists.txt, or define NDEBUG at the top of your file. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If you define <code>#define DEBUG</code> above your includes, debug mode will still be active even if NDEBUG is defined. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if DEBUG ... #endif block. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example uses debug to indicate the beginning and the end of a program's execution. The example also uses the <a class="el" href="#a1e85e29f94c54388d35a9b24d16a52c1" title="Increases the current indent_level by one.">debug::indent</a> and <a class="el" href="#adb62c53bf313739efafec28bc0739b65" title="Decreases the current indent_level by one.">debug::unindent</a> methods to distinguish the tracing output. <div class="fragment"><div class="line"><span class="preprocessor">#define DEBUG 1 </span><span class="comment">// Force debug mode even if example is builded in release.</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -1950,13 +1946,13 @@ This method calls the write method of the trace listener. </dd></dl>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>xtd.core/include/xtd/diagnostics/<a class="el" href="debug_8hpp_source.html">debug.hpp</a></li>
+<li>xtd.core/include/xtd/diagnostics/<a class="el" href="diagnostics_2debug_8hpp_source.html">debug.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 25 2025 17:22:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Sep 27 2025 21:49:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -128,12 +128,14 @@ Inheritance diagram for xtd::diagnostics::trace_listener:</div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>For examples of how to implement a <a class="el" href="classxtd_1_1diagnostics_1_1trace__listener.html" title="Provides the abstract base class for the listeners who monitor trace and debug output.">trace_listener</a>, see the <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">default_trace_listener</a>, text_writer_trace_listener and the event_log_trace_listener classes. </dd>
 <dd>
-You must enable tracing or debugging to use a trace listener. The syntax is compiler specific. If you use other than cmake to manage your build, refer to the documentation of your build manager.<ul>
-<li>To enable debugging with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your project, or you can add #define DEBUG to the top of your file but in this case, the compiler options for debug is not activated.</li>
-<li>To enable tracing with cmake, add the add_definitions(-DTRACE) command line in the CMakeLists.txt of your project, or you can add #define TRACE to the top of your file. </li>
-</ul>
-</dd></dl>
-<dl class="section note"><dt>Note</dt><dd><b>to Inheritors:</b> Inherit from this class to implement a custom listener for the debug and trace classes. At a minimum, you must implement the write and write_line methods. Additionally, you can implement the fail, close and flush methods. </dd></dl>
+To disable debug mode with CMake, add the command line <code>add_definitions(-DNDEBUG)</code> in your CMakeLists.txt, or define NDEBUG at the top of your file. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If you define <code>#define DEBUG</code> above your includes, debug mode will still be active even if NDEBUG is defined. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if DEBUG ... #endif block. </dd>
+<dd>
+To disable trace mode with CMake, add the command line <code>add_definitions(-DNTRACE)</code> in your CMakeLists.txt, or define NTRACE at the top of your file. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If you define <code>#define TRACE</code> above your includes, trace mode will still be active even if NTRACE is defined. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To activate your code if TRACE is defined, you must enclose calls to the methods of Debug in an #if TRACE ... #endif block. </dd></dl>
+<dl class="section user"><dt>Notes to Inheritors</dt><dd>Inherit from this class to implement a custom listener for the debug and trace classes. At a minimum, you must implement the write and write_line methods. Additionally, you can implement the fail, close and flush methods. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a9023e15b65504ab05db0351a0645f751" id="r_a9023e15b65504ab05db0351a0645f751"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9023e15b65504ab05db0351a0645f751">trace_listener</a> ()=default</td></tr>
@@ -1557,7 +1559,7 @@ template&lt;class <a class="el" href="classxtd_1_1object.html">object</a>&gt; </
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 25 2025 17:22:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Sep 27 2025 21:49:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
