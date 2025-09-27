@@ -97,7 +97,18 @@ namespace xtd {
       /// @brief Sets a value indicating whether the switch is enabled or disabled.
       /// @param enabled `true` if the switch is enabled; otherwise, `false`. The default is `false`.
       /// @remarks By default, this field is set to `false` (disabled). To enable the switch, assign this field the value of `true`. To disable the switch, assign the value to `false`. The value of this property is determined by the value of the base class property xtd::diagnostics::boolean_switch::switch_setting.
-      void enabled(bool enabled);      
+      void enabled(bool enabled);
+      
+      /// @}
+      
+    protected:
+      /// @name Protected Methods
+      /// @{
+      
+      /// @brief Determines whether the new value of the Value property can be parsed as a Boolean value.
+      /// @remarks The xtd::diagnostics::boolean_switch::on_value_changed method determines whether the new value is a valid string representation of a boolean value ("false" or "true"). If so, the method sets the xtd::diagnostics::boolean_switch::switch_setting property to 0 or 1. Otherwise, the base method is called, which converts the string value to an integer value, which is then used to set the xtd::diagnostics::boolean_switch::switch_setting property.
+      void on_value_changed() override;
+      
       /// @}
     };
   }

@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
-#include "../collections/generic/sorted_dictionary.hpp"
+#include "../collections/specialized/string_dictionary.hpp"
 #include "../array.hpp"
 #include "../iequatable.hpp"
 #include "../object.hpp"
@@ -44,20 +44,20 @@ namespace xtd {
       
       /// @{
       /// @brief Represents the attributes collection.
-      using attribute_collection = std::map<xtd::string, xtd::string>;
+      using attribute_collection = xtd::collections::specialized::string_dictionary;
       
       /// @}
       /// @name Public Properties
       
       /// @{
       /// @brief Gets the custom switch attributes
-      /// @return nA StringDictionary containing the case-insensitive custom attributes for the trace switch.
+      /// @return A xtd::collections::specialized::string_dictionary containing the case-insensitive custom attributes for the trace switch.
       const attribute_collection& attributes() const noexcept;
       /// @brief Gets the custom switch attributes
-      /// @return A StringDictionary containing the case-insensitive custom attributes for the trace switch.
+      /// @return A xtd::collections::specialized::string_dictionary containing the case-insensitive custom attributes for the trace switch.
       attribute_collection& attributes() noexcept;
       /// @brief Sets the custom switch attributes
-      /// @param attributes A StringDictionary containing the case-insensitive custom attributes for the trace switch.
+      /// @param attributes A xtd::collections::specialized::string_dictionary containing the case-insensitive custom attributes for the trace switch.
       void attributes(const attribute_collection& attributes) noexcept;
       
       /// @brief Gets a description of the switch
@@ -148,7 +148,6 @@ namespace xtd {
       /// @}
       
     private:
-      void set_switch_setting();
       xtd::string display_name_;
       xtd::string description_;
       attribute_collection attributes_;
