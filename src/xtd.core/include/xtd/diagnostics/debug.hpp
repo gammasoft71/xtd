@@ -50,9 +50,9 @@ namespace xtd {
     /// @note Adding a trace listener to the xtd::diagnostics::debug::listeners collection can cause an exception to be thrown while tracing, if a resource used by the trace listener is not available. The conditions and the exception thrown depend on the trace listener and cannot be enumerated in this topic. It may be useful to place calls to the debug methods in try/catch blocks to detect and handle any exceptions from trace listeners.
     /// @remarks You can modify the level of indentation using the xtd::diagnostics::debug::indent method or the xtd::diagnostics::debug::indent_level property. To modify the indent spacing, use the xtd::diagnostics::debug::indent_size property. You can specify whether to automatically flush the output buffer after each write by setting the xtd::diagnostics::debug::auto_flush property to `true`.
     /// @remarks The debug class provides properties to get or set the level of indent, the xtd::diagnostics::debug::indent_size, and whether to xtd::diagnostics::debug::auto_flush after each write.
-    /// @remarks You must enable debug mode to use a trace listener. The syntax is compiler specific. If you use other than cmake to manage your build, refer to the documentation of your build manager.
-    ///  * To enable debug mode with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your project, or you can add #define DEBUG to the top of your file.
-    /// @remarks To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if defined(DEBUG) ... #endif block, and add the /DDEBUG option to the compiler command line or add #define DEBUG to the file.
+    /// @remarks To disable debug mode with CMake, add the command line `add_definitions(-DNDEBUG)` in your CMakeLists.txt, or define NDEBUG at the top of your file.
+    /// @note If you define `#define DEBUG` above your includes, debug mode will still be active even if NDEBUG is defined.
+    /// @remarks To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if defined(DEBUG) ... #endif block.
     /// @par Examples
     /// The following example uses debug to indicate the beginning and the end of a program's execution. The example also uses the debug::indent and debug::unindent methods to distinguish the tracing output.
     /// @include debug.cpp
