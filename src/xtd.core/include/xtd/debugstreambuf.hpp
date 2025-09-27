@@ -25,7 +25,7 @@ namespace xtd {
     /// @{
     /// @brief Synchronizes the buffers with the associated character sequence
     int32 sync() override {
-      #if defined(DEBUG)
+      #if DEBUG
       if (!str().empty()) {
         if (str() == "\n") xtd::diagnostics::debug::write_line();
         else if (xtd::string(str()).ends_with('\n')) xtd::diagnostics::debug::write_line(xtd::string(str()).trim_end('\n'));

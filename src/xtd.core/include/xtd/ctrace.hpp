@@ -7,7 +7,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  #if defined(TRACE)
+  #if TRACE
   /// @brief A xtd::tracestreambuf variable used by xtd::ctrace ostream.
   inline xtd::tracestreambuf ctracestreambuf;
   

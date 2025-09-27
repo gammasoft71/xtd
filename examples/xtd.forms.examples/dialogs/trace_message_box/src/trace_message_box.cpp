@@ -1,4 +1,4 @@
-#define TRACE // Force to trace even if example is builded with -DNTRACE.
+#define TRACE 1 // Force to trace even if example is builded with -DNTRACE.
 #include <xtd/xtd>
 
 class form_main : public form {

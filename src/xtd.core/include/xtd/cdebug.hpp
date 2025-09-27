@@ -7,7 +7,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  #if defined(DEBUG)
+  #if DEBUG
   /// @brief A xtd::debugstreambuf variable used by xtd::cdebug ostream.
   inline xtd::debugstreambuf cdebugstreambuf;
   

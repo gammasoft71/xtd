@@ -52,7 +52,7 @@ namespace xtd {
       /// @param message The text message.
       /// @return Current debug_message_dialog instance.
       debug_message_dialog& message(const xtd::string& message) {
-        #if defined(DEBUG)
+        #if DEBUG
         dialog_.message(message);
         #endif
         return *this;
@@ -67,7 +67,7 @@ namespace xtd {
       
       /// @brief Runs message dialog box.
       xtd::forms::dialog_result show_dialog() {
-        #if defined(DEBUG)
+        #if DEBUG
         xtd::diagnostics::debug::write_line(dialog_.message());
         return dialog_.show_dialog();
         #else
@@ -76,7 +76,7 @@ namespace xtd {
       }
       /// @brief Runs message dialog box.
       xtd::forms::dialog_result show_dialog(const iwin32_window& owner) {
-        #if defined(DEBUG)
+        #if DEBUG
         xtd::diagnostics::debug::write_line(dialog_.message());
         return dialog_.show_dialog(owner);
         #else
@@ -85,14 +85,14 @@ namespace xtd {
       }
       /// @brief Runs message dialog box.
       void show_sheet(const iwin32_window& owner) {
-        #if defined(DEBUG)
+        #if DEBUG
         xtd::diagnostics::debug::write_line(dialog_.message());
         dialog_.show_sheet(owner);
         #endif
       }
       /// @brief Runs message dialog box.
       xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner) {
-        #if defined(DEBUG)
+        #if DEBUG
         xtd::diagnostics::debug::write_line(dialog_.message());
         return dialog_.show_sheet_dialog(owner);
         #else

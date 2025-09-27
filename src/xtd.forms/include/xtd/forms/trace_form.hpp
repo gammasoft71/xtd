@@ -24,7 +24,7 @@ namespace xtd {
     /// @remarks This form is used in a development phase to trace all written trace with xtd::diagnostics::trace class.
     /// @remarks To disable trace mode with CMake, add the command line `add_definitions(-DNTRACE)` in your CMakeLists.txt, or define NTRACE at the top of your file.
     /// @note If you define `#define TRACE` above your includes, trace mode will still be active even if NTRACE is defined.
-    /// @remarks To activate your code if TRACE is defined, you must enclose calls to the methods of Debug in an #if defined(TRACE) ... #endif block.
+    /// @remarks To activate your code if TRACE is defined, you must enclose calls to the methods of Debug in an #if TRACE ... #endif block.
     /// @par Appearance
     /// |       | Windows                              | macOS                                | Gnome                                |
     /// | ----- | ------------------------------------ | ------------------------------------ | ------------------------------------ |
@@ -41,7 +41,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the trace_form class.
       trace_form() : trace_form_base("Trace") {
         xtd::diagnostics::trace::listeners().add(listener_);
-        #if defined(TRACE)
+        #if TRACE
         visible(true);
         defined = true;
         #endif
