@@ -6,7 +6,6 @@
 /// @endcond
 #include <xtd/typeof>
 #if defined(__WXOSX__)
-#undef DEBUG
 #include <Carbon/Carbon.h>
 #endif
 #if defined(__WXGTK__)
