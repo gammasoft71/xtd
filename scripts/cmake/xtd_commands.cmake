@@ -1835,7 +1835,7 @@ macro(write_windows_target_informations_file)
     " FILEVERSION ${FILE_VERSION}\n"
     " PRODUCTVERSION ${PRODUCT_VERSION}\n"
     " FILEFLAGSMASK 0x0L\n"
-    "#if !defined(NDEBUG)\n"
+    "#if defined(DEBUG)\n"
     " FILEFLAGS VS_FF_DEBUG\n"
     "#endif\n"
     " FILEOS VOS_NT\n"

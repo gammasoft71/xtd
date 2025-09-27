@@ -9,7 +9,7 @@
 #include "../build_type.hpp"
 
 /// @cond
-#if !defined(NDEBUG)
+#if defined(DEBUG)
 #  define __build_type xtd::build_type::debug;
 #else
 #  define __build_type xtd::build_type::release;
