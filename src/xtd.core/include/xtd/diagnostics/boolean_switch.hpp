@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../optional.hpp"
-#include "switch_base.hpp"
+#include "switch_object.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -11,10 +11,10 @@ namespace xtd {
   namespace diagnostics {
     /// @brief Provides a simple on/off switch that controls debugging and tracing output.
     /// ```cpp
-    /// class core_export_ boolean_switch : public xtd::diagnostics::switch_base
+    /// class core_export_ boolean_switch : public xtd::diagnostics::switch_object
     /// ```
     /// @par Inheritance
-    /// xtd::object → xtd::diagnostics::switch_base → xtd::diagnostics::boolean_switch
+    /// xtd::object → xtd::diagnostics::switch_object → xtd::diagnostics::boolean_switch
     /// @par Header
     /// ```cpp
     /// #include <xtd/diagnostics/boolean_switch>
@@ -47,7 +47,7 @@ namespace xtd {
     /// @note These debug and trace compiler switches are not required when using the xtd::diagnostics::boolean_switch class in isolation. They are only required in conjunction with xtd::diagnostics::trace or xtd::diagnostics::debug methods that are conditionally compiled.
     /// @remarks For more information on instrumenting your application, see xtd::diagnostics::debug and xtd::diagnostics::trace.
     /// @note To improve performance, you can make xtd::diagnostics::boolean_switch members static in your class.
-    class core_export_ boolean_switch : public xtd::diagnostics::switch_base {
+    class core_export_ boolean_switch : public xtd::diagnostics::switch_object {
     public:
       /// @name Public Constructors
       /// @{
@@ -97,22 +97,8 @@ namespace xtd {
       /// @brief Sets a value indicating whether the switch is enabled or disabled.
       /// @param enabled `true` if the switch is enabled; otherwise, `false`. The default is `false`.
       /// @remarks By default, this field is set to `false` (disabled). To enable the switch, assign this field the value of `true`. To disable the switch, assign the value to `false`. The value of this property is determined by the value of the base class property xtd::diagnostics::boolean_switch::switch_setting.
-      void enabled(bool enabled);
-      
+      void enabled(bool enabled);      
       /// @}
-      
-    protected:
-      /// @name Protected Methods
-      /// @{
-      
-      /// @brief Determines whether the new value of the Value property can be parsed as a Boolean value.
-      /// @remarks The xtd::diagnostics::boolean_switch::on_value_changed method determines whether the new value is a valid string representation of a boolean value ("false" or "true"). If so, the method sets the xtd::diagnostics::boolean_switch::switch_setting property to 0 or 1. Otherwise, the base method is called, which converts the string value to an integer value, which is then used to set the xtd::diagnostics::boolean_switch::switch_setting property.
-      void on_value_changed() override;
-      
-      /// @}
-      
-    private:
-      mutable std::optional<bool> enabled_;
     };
   }
 }
