@@ -41,8 +41,10 @@ namespace xtd {
     ///     }
     ///   }
     /// ```
+    /// @remarks To disable debug mode with CMake, add the command line `add_definitions(-DNDEBUG)` in your CMakeLists.txt, or define NDEBUG at the top of your file.
     /// @note If you define `#define DEBUG` above your includes, debug mode will still be active even if NDEBUG is defined.
     /// @remarks To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if defined(DEBUG) ... #endif block.
+    /// @remarks To disable trace mode with CMake, add the command line `add_definitions(-DNTRACE)` in your CMakeLists.txt, or define NTRACE at the top of your file.
     /// @note If you define `#define TRACE` above your includes, trace mode will still be active even if NTRACE is defined.
     /// @remarks To activate your code if TRACE is defined, you must enclose calls to the methods of Debug in an #if defined(TRACE) ... #endif block.
     /// @remarks For more information on instrumenting your application, see xtd::diagnostics::debug and xtd::diagnostics::trace.
