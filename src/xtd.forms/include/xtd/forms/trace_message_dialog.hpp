@@ -26,10 +26,10 @@ namespace xtd {
     /// | Dark  |  @image html dialog_trace_message_box_wd.png  |  @image html dialog_trace_message_box_md.png  |  @image html dialog_trace_message_box_gd.png  |
     /// @remarks To disable debug mode with CMake, add the command line `add_definitions(-DNDEBUG)` in your CMakeLists.txt, or define NDEBUG at the top of your file.
     /// @note If you define `#define DEBUG` above your includes, debug mode will still be active even if NDEBUG is defined.
-    /// @remarks To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if defined(DEBUG) ... #endif block.
+    /// @remarks To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if DEBUG ... #endif block.
     /// @remarks To disable trace mode with CMake, add the command line `add_definitions(-DNTRACE)` in your CMakeLists.txt, or define NTRACE at the top of your file.
     /// @note If you define `#define TRACE` above your includes, trace mode will still be active even if NTRACE is defined.
-    /// @remarks To activate your code if TRACE is defined, you must enclose calls to the methods of Debug in an #if defined(DEBUG) || defined(TRACE) ... #endif block.
+    /// @remarks To activate your code if TRACE is defined, you must enclose calls to the methods of Debug in an #if DEBUG || TRACE ... #endif block.
     /// @par Examples
     /// The following code example demonstrates the use of trace_message_dialog dialog.
     /// @include trace_message_dialog.cpp
@@ -58,7 +58,7 @@ namespace xtd {
       /// @param message The text message.
       /// @return Current trace_message_dialog instance.
       trace_message_dialog& message(const xtd::string& message) {
-        #if defined(DEBUG) || defined(TRACE)
+        #if DEBUG || TRACE
         dialog_.message(message);
         #endif
         return *this;
@@ -73,7 +73,7 @@ namespace xtd {
       
       /// @brief Runs message dialog box.
       xtd::forms::dialog_result show_dialog() {
-        #if defined(DEBUG) || defined(TRACE)
+        #if DEBUG || TRACE
         xtd::diagnostics::trace::write_line(dialog_.message());
         return dialog_.show_dialog();
         #else
@@ -82,7 +82,7 @@ namespace xtd {
       }
       /// @brief Runs message dialog box.
       xtd::forms::dialog_result show_dialog(const iwin32_window& owner) {
-        #if defined(DEBUG) || defined(TRACE)
+        #if DEBUG || TRACE
         xtd::diagnostics::trace::write_line(dialog_.message());
         return dialog_.show_dialog(owner);
         #else
@@ -91,14 +91,14 @@ namespace xtd {
       }
       /// @brief Runs message dialog box.
       void show_sheet(const iwin32_window& owner) {
-        #if defined(DEBUG) || defined(TRACE)
+        #if DEBUG || TRACE
         xtd::diagnostics::trace::write_line(dialog_.message());
         dialog_.show_sheet(owner);
         #endif
       }
       /// @brief Runs message dialog box.
       xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner) {
-        #if defined(DEBUG) || defined(TRACE)
+        #if DEBUG || TRACE
         xtd::diagnostics::trace::write_line(dialog_.message());
         return dialog_.show_sheet_dialog(owner);
         #else

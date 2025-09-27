@@ -22,10 +22,10 @@ namespace xtd {
     /// @par Examples
     /// @remarks To disable debug mode with CMake, add the command line `add_definitions(-DNDEBUG)` in your CMakeLists.txt, or define NDEBUG at the top of your file.
     /// @note If you define `#define DEBUG` above your includes, debug mode will still be active even if NDEBUG is defined.
-    /// @remarks To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if defined(DEBUG) ... #endif block.
+    /// @remarks To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if DEBUG ... #endif block.
     /// @remarks To disable trace mode with CMake, add the command line `add_definitions(-DNTRACE)` in your CMakeLists.txt, or define NTRACE at the top of your file.
     /// @note If you define `#define TRACE` above your includes, trace mode will still be active even if NTRACE is defined.
-    /// @remarks To activate your code if TRACE is defined, you must enclose calls to the methods of Debug in an #if defined(TRACE) ... #endif block.
+    /// @remarks To activate your code if TRACE is defined, you must enclose calls to the methods of Debug in an #if TRACE ... #endif block.
     class control_trace_listener : public xtd::diagnostics::trace_listener {
     public:
       /// @name Public Constructors
@@ -58,7 +58,7 @@ namespace xtd {
       void close() override { }
       
       void flush() override {
-        #if defined(DEBUG) || defined(TRACE)
+        #if DEBUG || TRACE
         if (control_trace_) control_trace_->flush();
         #endif
       }
@@ -67,7 +67,7 @@ namespace xtd {
       /// @brief Writes the message to the listener you create when you implement the trace_listener class.
       /// @param message A string you want to write.
       void write(const xtd::string& message) override {
-        #if defined(DEBUG) || defined(TRACE)
+        #if DEBUG || TRACE
         if (need_indent()) write_indent();
         if (control_trace_) control_trace_->write(message);
         #endif
@@ -77,7 +77,7 @@ namespace xtd {
       /// @brief Writes the message to the listener you create when you implement the trace_listener class.
       /// @param message A string you want to write.
       void write_line(const xtd::string& message) override {
-        #if defined(DEBUG) || defined(TRACE)
+        #if DEBUG || TRACE
         //write(message + "\n");
         if (need_indent()) write_indent();
         if (control_trace_) control_trace_->write_line(message);

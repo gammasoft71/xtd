@@ -54,21 +54,21 @@ namespace xtd {
       /// @{
       void close() override;
       void flush() override {
-        #if defined(DEBUG) || defined(TRACE)
+        #if DEBUG || TRACE
         flush_();
         #endif
       }
       
       using xtd::diagnostics::trace_listener::write;
       void write(const xtd::string& message) override {
-        #if defined(DEBUG) || defined(TRACE)
+        #if DEBUG || TRACE
         write_(message);
         #endif
       }
       
       using xtd::diagnostics::trace_listener::write_line;
       void write_line(const xtd::string& message) override {
-        #if defined(DEBUG) || defined(TRACE)
+        #if DEBUG || TRACE
         write_line_(message);
         #endif
       }

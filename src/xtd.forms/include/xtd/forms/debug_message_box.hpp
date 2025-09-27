@@ -49,7 +49,7 @@ namespace xtd {
       
     private:
       static xtd::forms::dialog_result show_message_dialog(const xtd::forms::iwin32_window* owner, const xtd::string& text = xtd::string::empty_string, const xtd::string& caption = xtd::string::empty_string, xtd::forms::message_box_buttons buttons = xtd::forms::message_box_buttons::ok, xtd::forms::message_box_icon icon = xtd::forms::message_box_icon::none, xtd::forms::message_box_default_button default_button = xtd::forms::message_box_default_button::button1, xtd::forms::message_box_options options = static_cast<xtd::forms::message_box_options>(0), bool display_help_button = false) {
-        #if defined(DEBUG)
+        #if DEBUG
         xtd::diagnostics::debug::write_line(text);
         message_dialog dialog;
         dialog.buttons(buttons);

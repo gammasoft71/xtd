@@ -24,7 +24,7 @@ namespace xtd {
     /// @remarks This form is used in a development phase to trace all written debug with xtd::diagnostics::debug class.
     /// @remarks To disable debug mode with CMake, add the command line `add_definitions(-DNDEBUG)` in your CMakeLists.txt, or define NDEBUG at the top of your file.
     /// @note If you define `#define DEBUG` above your includes, debug mode will still be active even if NDEBUG is defined.
-    /// @remarks To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if defined(DEBUG) ... #endif block.
+    /// @remarks To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if DEBUG ... #endif block.
     /// @par Appearance
     /// |       | Windows                              | macOS                                | Gnome                                |
     /// | ----- | ------------------------------------ | ------------------------------------ | ------------------------------------ |
@@ -41,7 +41,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the debug_form class.
       debug_form() : trace_form_base("Debug") {
         xtd::diagnostics::debug::listeners().add(listener_);
-        #if defined(DEBUG)
+        #if DEBUG
         visible(true);
         defined = true;
         #endif
