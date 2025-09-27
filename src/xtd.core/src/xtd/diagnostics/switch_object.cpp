@@ -44,7 +44,7 @@ bool switch_object::equals(const switch_object& other) const noexcept {
   return display_name_ == other.display_name_ && description_ == other.description_ && attributes_ == other.attributes_ && switch_setting_ == other.switch_setting_ && value_ == other.value_;
 }
 
-switch_object::switch_object(const string& display_name, const string& description) : display_name_(display_name), description_(description) {
+switch_object::switch_object(const string& display_name, const string& description) : switch_object(display_name, description, "0") {
 }
 
 switch_object::switch_object(const string& display_name, const string& description, const string& default_switch_value) : display_name_(display_name), description_(description), value_(default_switch_value) {

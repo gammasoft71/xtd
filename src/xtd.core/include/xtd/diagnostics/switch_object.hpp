@@ -153,7 +153,7 @@ namespace xtd {
       xtd::string description_;
       attribute_collection attributes_;
       int32 switch_setting_ = 0;
-      xtd::string value_;
+      xtd::string value_ = "0";
     };
   }
 }
