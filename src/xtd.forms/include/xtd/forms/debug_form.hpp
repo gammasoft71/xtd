@@ -22,9 +22,9 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms forms debug
     /// @remarks This form is used in a development phase to trace all written debug with xtd::diagnostics::debug class.
-    /// @remarks You must enable debug mode to use a debug form. The syntax is compiler specific. If you use other than cmake to manage your build, refer to the documentation of your build manager.
-    ///  * To enable debug mode with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your project, or you can add #define DEBUG to the top of your file.
-    /// @remarks To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if defined(DEBUG) ... #endif block, and add the /DDEBUG option to the compiler command line or add #define DEBUG to the file.
+    /// @remarks To disable debug mode with CMake, add the command line `add_definitions(-DNDEBUG)` in your CMakeLists.txt, or define NDEBUG at the top of your file.
+    /// @note If you define `#define DEBUG` above your includes, debug mode will still be active even if NDEBUG is defined.
+    /// @remarks To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if defined(DEBUG) ... #endif block.
     /// @par Appearance
     /// |       | Windows                              | macOS                                | Gnome                                |
     /// | ----- | ------------------------------------ | ------------------------------------ | ------------------------------------ |

@@ -41,10 +41,10 @@ namespace xtd {
     ///     }
     ///   }
     /// ```
-    /// @remarks You must enable tracing or debugging to use a switch. The syntax is compiler specific. If you use other than cmake to manage your build, refer to the documentation of your build manager.
-    ///  * To enable debug mode with cmake, add the add_definitions(-DDEBUG) command line in the CMakeLists.txt of your project, or you can add #define DEBUG to the top of your file.
-    ///  * To enable trace mode with cmake, add the add_definitions(-DTRACE) command line in the CMakeLists.txt of your project, or you can add #define TRACE to the top of your file.
-    /// @note These debug and trace compiler switches are not required when using the xtd::diagnostics::boolean_switch class in isolation. They are only required in conjunction with xtd::diagnostics::trace or xtd::diagnostics::debug methods that are conditionally compiled.
+    /// @note If you define `#define DEBUG` above your includes, debug mode will still be active even if NDEBUG is defined.
+    /// @remarks To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if defined(DEBUG) ... #endif block.
+    /// @note If you define `#define TRACE` above your includes, trace mode will still be active even if NTRACE is defined.
+    /// @remarks To activate your code if TRACE is defined, you must enclose calls to the methods of Debug in an #if defined(TRACE) ... #endif block.
     /// @remarks For more information on instrumenting your application, see xtd::diagnostics::debug and xtd::diagnostics::trace.
     /// @note To improve performance, you can make xtd::diagnostics::boolean_switch members static in your class.
     class core_export_ boolean_switch : public xtd::diagnostics::switch_object {
