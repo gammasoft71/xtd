@@ -8,7 +8,6 @@
 #undef interface
 #endif
 
-#define TRACE
 #define __XTD_FORMS_NATIVE_LIBRARY__
 #include "../../../../../include/xtd/forms/native/wxwidgets/dark_mode.hpp"
 #undef __XTD_FORMS_NATIVE_LIBRARY__

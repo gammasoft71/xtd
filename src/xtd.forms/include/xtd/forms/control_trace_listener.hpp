@@ -52,7 +52,7 @@ namespace xtd {
       void close() override { }
       
       void flush() override {
-        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NTRACE)
         if (control_trace_) control_trace_->flush();
         #endif
       }
@@ -61,7 +61,7 @@ namespace xtd {
       /// @brief Writes the message to the listener you create when you implement the trace_listener class.
       /// @param message A string you want to write.
       void write(const xtd::string& message) override {
-        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NTRACE)
         if (need_indent()) write_indent();
         if (control_trace_) control_trace_->write(message);
         #endif
@@ -71,7 +71,7 @@ namespace xtd {
       /// @brief Writes the message to the listener you create when you implement the trace_listener class.
       /// @param message A string you want to write.
       void write_line(const xtd::string& message) override {
-        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
+        #if !defined(NTRACE)
         //write(message + "\n");
         if (need_indent()) write_indent();
         if (control_trace_) control_trace_->write_line(message);
