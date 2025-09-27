@@ -174,7 +174,7 @@ var searchData=
   ['iequatable_3c_20stack_5fframe_20_3e_171',['iequatable&lt; stack_frame &gt;',['../classxtd_1_1iequatable.html',1,'xtd']]],
   ['iequatable_3c_20status_5fbar_5fpanel_20_3e_172',['iequatable&lt; status_bar_panel &gt;',['../classxtd_1_1iequatable.html',1,'xtd']]],
   ['iequatable_3c_20style_5fsheet_20_3e_173',['iequatable&lt; style_sheet &gt;',['../classxtd_1_1iequatable.html',1,'xtd']]],
-  ['iequatable_3c_20switch_5fbase_20_3e_174',['iequatable&lt; switch_base &gt;',['../classxtd_1_1iequatable.html',1,'xtd']]],
+  ['iequatable_3c_20switch_5fobject_20_3e_174',['iequatable&lt; switch_object &gt;',['../classxtd_1_1iequatable.html',1,'xtd']]],
   ['iequatable_3c_20system_5fcolors_20_3e_175',['iequatable&lt; system_colors &gt;',['../classxtd_1_1iequatable.html',1,'xtd']]],
   ['iequatable_3c_20tcp_5fclient_20_3e_176',['iequatable&lt; tcp_client &gt;',['../classxtd_1_1iequatable.html',1,'xtd']]],
   ['iequatable_3c_20tcp_5flistener_20_3e_177',['iequatable&lt; tcp_listener &gt;',['../classxtd_1_1iequatable.html',1,'xtd']]],
