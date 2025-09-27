@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "message_dialog.hpp"
+#include <xtd/diagnostics/trace>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -51,7 +52,7 @@ namespace xtd {
       /// @param message The text message.
       /// @return Current trace_message_dialog instance.
       trace_message_dialog& message(const xtd::string& message) {
-        #if defined(TRACE)
+        #if !defined(NTRACE)
         dialog_.message(message);
         #endif
         return *this;
@@ -66,7 +67,7 @@ namespace xtd {
       
       /// @brief Runs message dialog box.
       xtd::forms::dialog_result show_dialog() {
-        #if defined(TRACE)
+        #if !defined(NTRACE)
         xtd::diagnostics::trace::write_line(dialog_.message());
         return dialog_.show_dialog();
         #else
@@ -75,7 +76,7 @@ namespace xtd {
       }
       /// @brief Runs message dialog box.
       xtd::forms::dialog_result show_dialog(const iwin32_window& owner) {
-        #if defined(TRACE)
+        #if !defined(NTRACE)
         xtd::diagnostics::trace::write_line(dialog_.message());
         return dialog_.show_dialog(owner);
         #else
@@ -84,14 +85,14 @@ namespace xtd {
       }
       /// @brief Runs message dialog box.
       void show_sheet(const iwin32_window& owner) {
-        #if defined(TRACE)
+        #if !defined(NTRACE)
         xtd::diagnostics::trace::write_line(dialog_.message());
         dialog_.show_sheet(owner);
         #endif
       }
       /// @brief Runs message dialog box.
       xtd::forms::dialog_result show_sheet_dialog(const iwin32_window& owner) {
-        #if defined(TRACE)
+        #if !defined(NTRACE)
         xtd::diagnostics::trace::write_line(dialog_.message());
         return dialog_.show_sheet_dialog(owner);
         #else

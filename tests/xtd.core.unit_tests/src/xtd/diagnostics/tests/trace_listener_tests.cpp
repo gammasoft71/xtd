@@ -1,4 +1,3 @@
-#define TRACE
 #include <xtd/diagnostics/trace_options>
 #include <xtd/diagnostics/trace_listener>
 #include <sstream>

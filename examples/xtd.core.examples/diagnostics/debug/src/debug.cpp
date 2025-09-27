@@ -1,5 +1,4 @@
-// Specify -DDEBUG when compiling or add #define DEBUG in the source file.
-
+#define DEBUG // Force debug mode even if example is builded in release.
 #include <xtd/xtd>
 
 auto main() -> int {

@@ -1,4 +1,4 @@
-#define DEBUG
+#define DEBUG // Force debug mode even if example is builded in release.
 #include <xtd/xtd>
 
 class form1 : public form {

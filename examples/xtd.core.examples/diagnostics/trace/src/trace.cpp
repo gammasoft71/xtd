@@ -1,6 +1,4 @@
-// Specify -DTRACE when compiling or add #define TRACE in the source file.
-#define DEBUG
-
+#define DEBUG // Force debug mode even if example is builded in release.
 #include <xtd/xtd>
 
 auto main() -> int {

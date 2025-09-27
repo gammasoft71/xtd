@@ -1,4 +1,4 @@
-#define TRACE
+#define TRACE // Force to trace even if example is builded with -DNTRACE.
 #include <xtd/xtd>
 
 namespace numeric_tex_box_example {

@@ -41,7 +41,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the trace_form class.
       trace_form() : trace_form_base("Trace") {
         xtd::diagnostics::trace::listeners().add(listener_);
-        #if defined(TRACE)
+        #if !defined(NTRACE)
         visible(true);
         defined = true;
         #endif

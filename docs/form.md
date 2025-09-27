@@ -164,7 +164,6 @@ A form can be shown with different states:
 The folloing example demonstates the different ways to display a [xtd::forms::form](https://github.com/gammasoft71/xtd/blob/master/src/xtd.forms/include/xtd/forms/form.h).
 
 ```cpp
-#define TRACE
 #include <xtd/xtd>
 
 using namespace xtd;
