@@ -190,7 +190,7 @@
 | [stack_frame](../src/xtd.core/include/xtd/diagnostics/stack_frame.h)                                 | class        | ![progress](pictures/progress100.png) |
 | [stack_trace](../src/xtd.core/include/xtd/diagnostics/stack_trace.h)                                 | class        | ![progress](pictures/progress100.png) |
 | [stopwatch](../src/xtd.core/include/xtd/diagnostics/stopwatch.h)                                     | class        | ![progress](pictures/progress100.png) |
-| [switch_base](../src/xtd.core/include/xtd/diagnostics/switch_base.h)                                 | class        | ![progress](pictures/progress100.png) |
+| [switch_object](../src/xtd.core/include/xtd/diagnostics/switch_object.h)                                 | class        | ![progress](pictures/progress100.png) |
 | [trace](../src/xtd.core/include/xtd/diagnostics/trace.h)                                             | static class | ![progress](pictures/progress100.png) |
 | [trace_event_cache](../src/xtd.core/include/xtd/diagnostics/trace_event_cache.h)                     | class        | ![progress](pictures/progress100.png) |
 | [trace_event_type](../src/xtd.core/include/xtd/diagnostics/trace_event_type.h)                       | enumeration  | ![progress](pictures/progress100.png) |

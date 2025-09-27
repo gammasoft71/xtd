@@ -5,7 +5,7 @@
 #include "../string.hpp"
 #include "source_levels.hpp"
 #include "trace_event_type.hpp"
-#include "switch_base.hpp"
+#include "switch_object.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -13,10 +13,10 @@ namespace xtd {
   namespace diagnostics {
     /// @brief Provides a multilevel switch to control tracing and debug output without recompiling your code.
     /// ```cpp
-    /// class core_export_ source_switch : public xtd::diagnostics::switch_base
+    /// class core_export_ source_switch : public xtd::diagnostics::switch_object
     /// ```
     /// @par Inheritance
-    /// xtd::object → xtd::diagnostics::switch_base → xtd::diagnostics::source_switch
+    /// xtd::object → xtd::diagnostics::switch_object → xtd::diagnostics::source_switch
     /// @par Header
     /// ```cpp
     /// #include <xtd/diagnostics/source_switch>
@@ -28,7 +28,7 @@ namespace xtd {
     /// @ingroup xtd_core
     /// @remarks The switch property of the trace_source class is a source_switch object. The source_switch class provides a level property to test the event level of the switch. The level property gets or sets the switch's trace_level value.
     /// @remarks The switch is used to check whether a trace should be propagated or ignored. Each trace_source trace method calls the should_trace method before calling the listeners. If the should_trace method returns `false`, the trace is ignored and the trace method exits. If the should_trace method returns `true`, the trace is passed to the listeners.
-    class core_export_ source_switch : public xtd::diagnostics::switch_base {
+    class core_export_ source_switch : public xtd::diagnostics::switch_object {
     public:
       /// @name Public Constructors
       

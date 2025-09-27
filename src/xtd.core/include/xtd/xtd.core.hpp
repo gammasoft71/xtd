@@ -90,7 +90,7 @@
 #include "diagnostics/stack_frame.hpp"
 #include "diagnostics/stack_trace.hpp"
 #include "diagnostics/stopwatch.hpp"
-#include "diagnostics/switch_base.hpp"
+#include "diagnostics/switch_object.hpp"
 #include "diagnostics/trace.hpp"
 #include "diagnostics/trace_event_cache.hpp"
 #include "diagnostics/trace_event_type.hpp"
