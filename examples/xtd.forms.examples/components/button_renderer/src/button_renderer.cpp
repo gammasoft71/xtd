@@ -68,10 +68,10 @@ namespace button_renderer_example {
     
   private:
     void set_color(const color& color) {
-      cdebug << string::format("color = {}", color.to_string()) << environment::new_line;
+      cdebug << string::format("color = {}", color.to_string()) << environment::new_line << std::flush;
     }
     void set_color(nullptr_t) {
-      cdebug << "color = (nullptr)" << environment::new_line;
+      cdebug << "color = (nullptr)" << environment::new_line << std::flush;
     }
     std::optional<color> bcolor;
     std::optional<color> fcolor;

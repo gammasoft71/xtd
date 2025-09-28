@@ -14,7 +14,7 @@ namespace numeric_up_down_example {
         label1.text(string::format("value = {}", numeric_up_down1.value()));
       };
       numeric_up_down1.text_changed += delegate_ {
-        cdebug << string::format("text = {}", numeric_up_down1.text()) << environment::new_line;
+        cdebug << string::format("text = {}", numeric_up_down1.text()) << environment::new_line << std::flush;
       };
       numeric_up_down1.value(50);
       

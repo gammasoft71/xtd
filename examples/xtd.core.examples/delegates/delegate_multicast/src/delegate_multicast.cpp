@@ -4,17 +4,17 @@
 using writer = delegate<void(const string& str)>;
 
 void write_debug(const string& str) {
-  cdebug << str << environment::new_line;
+  cdebug << str << environment::new_line << std::flush;
 }
 
 class tracer {
 public:
   void write_trace(const string& str) {
-    ctrace << str << environment::new_line;
+    ctrace << str << environment::new_line << std::flush;
   }
   
   void write_trace2(const string& str) {
-    ctrace << "2 " << str << environment::new_line;
+    ctrace << "2 " << str << environment::new_line << std::flush;
   }
 };
 
