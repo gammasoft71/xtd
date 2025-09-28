@@ -2,7 +2,7 @@
 #include <xtd/xtd>
 
 auto main() -> int {
-  ctrace << "Hello, World!" << environment::new_line;
+  ctrace << "Hello, World!" << environment::new_line << std::flush;
 }
 
 // This code produces the following debug output :
