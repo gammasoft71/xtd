@@ -70,7 +70,7 @@ void trace_listener::write_event_cache(const trace_event_cache& event_cache) {
   if (((int32)trace_output_options_ & (int32)xtd::diagnostics::trace_options::thread_id) == (int32)xtd::diagnostics::trace_options::thread_id)
     write_line(string::format("{0}ThreadId={1}", string(indent_size_, ' '), event_cache.thread_id()));
   if (((int32)trace_output_options_ & (int32)xtd::diagnostics::trace_options::date_time) == (int32)xtd::diagnostics::trace_options::date_time)
-    write_line(string::format("{0}DateTime={1:D}T{1:T}", string(indent_size_, ' '), event_cache.date_time()));
+    write_line(string::format("{0}DateTime={1:s}", string(indent_size_, ' '), event_cache.date_time()));
   if (((int32)trace_output_options_ & (int32)xtd::diagnostics::trace_options::timestamp) == (int32)xtd::diagnostics::trace_options::timestamp)
     write_line(string::format("{0}Timestamp={1}", string(indent_size_, ' '), event_cache.timestamp()));
   if (((int32)trace_output_options_ & (int32)xtd::diagnostics::trace_options::callstack) == (int32)xtd::diagnostics::trace_options::callstack)
