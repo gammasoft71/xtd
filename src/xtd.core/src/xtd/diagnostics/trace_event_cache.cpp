@@ -12,7 +12,7 @@ string trace_event_cache::call_stack() const noexcept {
 
 const date_time& trace_event_cache::date_time() const noexcept {
   if (date_time_ == date_time::min_value)
-    date_time_ = date_time::now();
+    date_time_ = date_time::utc_now();
   return date_time_;
 }
 
