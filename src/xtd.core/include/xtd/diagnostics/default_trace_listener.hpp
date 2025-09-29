@@ -51,6 +51,9 @@ namespace xtd {
       ///   default_listener->log_file_name(args[1]);
       /// ```
       default_trace_listener();
+      /// @brief Initializes a new instance of the default_trace_listener class with "default" as its xtd::diagnostics::default_trace_listener::name property value.
+      /// @param log_file_name The name of a log file to write trace or debug messages to.
+      default_trace_listener(const xtd::string log_file_name);
       /// @cond
       ~default_trace_listener();
       /// @endcond
