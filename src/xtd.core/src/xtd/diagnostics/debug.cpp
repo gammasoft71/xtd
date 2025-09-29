@@ -123,7 +123,7 @@ const std::tuple<const xtd::diagnostics::trace_listener_collection&, const xtd::
         listener->name(key);
         listeners.add(listener);
       }
-
+      
       // switches
       for (const auto& [key, value] : file_settings.key_values("switches"))
         switches[key] = value;
