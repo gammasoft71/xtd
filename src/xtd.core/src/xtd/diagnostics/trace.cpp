@@ -1,7 +1,9 @@
+#include "../../../include/xtd/collections/specialized/string_dictionary.hpp"
 #include "../../../include/xtd/diagnostics/trace.hpp"
 #include "../../../include/xtd/diagnostics/debugger.hpp"
 #include "../../../include/xtd/diagnostics/default_trace_listener.hpp"
 #include "../../../include/xtd/reflection/assembly.hpp"
+#include "../../../include/xtd/call_once.hpp"
 #include "../../../include/xtd/lock.hpp"
 #include <mutex>
 
@@ -11,9 +13,9 @@ using namespace xtd::reflection;
 
 extern std::recursive_mutex __debug_mutex__;
 extern trace_listener_collection __listeners__;
+const std::tuple<const xtd::diagnostics::trace_listener_collection&, const xtd::collections::specialized::string_dictionary&>& __xtd___read_diagnostics_fonfig__();
 
 trace_listener_collection& trace::listeners_ = __listeners__;
-string trace::source_name_ = assembly::get_executing_assembly().location();
 
 bool trace::auto_flush() noexcept {
   return auto_flush_;
@@ -39,11 +41,16 @@ void trace::indent_size(uint32 indent_size) noexcept {
   indent_size_ = indent_size;
 }
 
-trace_listener_collection& trace::listeners() noexcept {
+trace_listener_collection& trace::listeners() {
+  if (listeners_.count()) return listeners_;
+  call_once_ {
+    const auto& [listeners, switches] = __xtd___read_diagnostics_fonfig__();
+    listeners_ = listeners;
+  };
   return listeners_;
 }
 
-void trace::listeners(const trace_listener_collection& listeners) noexcept {
+void trace::listeners(const trace_listener_collection& listeners) {
   listeners_ = listeners;
 }
 
@@ -86,7 +93,7 @@ void trace::unindent() noexcept {
 }
 
 void trace::fail__(const string& message) {
-  for (auto listener : listeners_) {
+  for (auto listener : listeners()) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && use_global_lock_) {
@@ -99,7 +106,7 @@ void trace::fail__(const string& message) {
 }
 
 void trace::fail__(const string& message, const string& detail_message) {
-  for (auto listener : listeners_) {
+  for (auto listener : listeners()) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && use_global_lock_) {
@@ -112,25 +119,25 @@ void trace::fail__(const string& message, const string& detail_message) {
 }
 
 void trace::flush_() {
-  for (auto listener : listeners_)
+  for (auto listener : listeners())
     listener->flush();
 }
 
 void trace::trace_event_(trace_event_type trace_event_type, const string& message) {
-  for (auto listener : listeners_) {
+  for (auto listener : listeners()) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && use_global_lock_) {
       auto lock = std::lock_guard<std::recursive_mutex> {__debug_mutex__};
-      listener->trace_event(trace_event_cache(), source_name_, trace_event_type, 0, message);
+      listener->trace_event(trace_event_cache(), assembly::get_executing_assembly().name_or_file_name(), trace_event_type, 0, message);
     } else
-      listener->trace_event(trace_event_cache(), source_name_, trace_event_type, 0, message);
+      listener->trace_event(trace_event_cache(), assembly::get_executing_assembly().name_or_file_name(), trace_event_type, 0, message);
   }
   if (auto_flush_) flush();
 }
 
 void trace::write_(const string& message) {
-  for (auto listener : listeners_) {
+  for (auto listener : listeners()) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && use_global_lock_) {
@@ -143,7 +150,7 @@ void trace::write_(const string& message) {
 }
 
 void trace::write_(const string& message, const string& category) {
-  for (auto listener : listeners_) {
+  for (auto listener : listeners()) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && use_global_lock_) {
@@ -156,7 +163,7 @@ void trace::write_(const string& message, const string& category) {
 }
 
 void trace::write_line_(const string& message) {
-  for (auto listener : listeners_) {
+  for (auto listener : listeners()) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && use_global_lock_) {
@@ -169,7 +176,7 @@ void trace::write_line_(const string& message) {
 }
 
 void trace::write_line_(const string& message, const string& category) {
-  for (auto listener : listeners_) {
+  for (auto listener : listeners()) {
     if (listener->indent_level() != indent_level_) listener->indent_level(indent_level_);
     if (listener->indent_size() != indent_size_) listener->indent_size(indent_size_);
     if (!listener->is_thread_safe() && use_global_lock_) {

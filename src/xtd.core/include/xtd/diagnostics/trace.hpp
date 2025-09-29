@@ -80,12 +80,12 @@ namespace xtd {
       /// @return A listener_collection that represents a collection of type trace_listener monitoring the trace output.
       /// @remarks The listeners produce formatted output from the trace output. By default, the collection contains an instance of the default_trace_listener class. If you want to remove the default listener, call the Remove method, and pass it the instance of the default_trace_listener. To redirect output to the console window, add an instance of the console_trace_listener class.
       /// @note The Listeners collection is shared by both the Debug and the Trace classes; adding a trace listener to either class adds the listener to both.
-      static listener_collection& listeners() noexcept;
+      static listener_collection& listeners();
       /// @brief Sets the collection of listeners that is monitoring the trace output.
       /// @param listeners A listener_collection that represents a collection of type trace_listener monitoring the trace output.
       /// @remarks The listeners produce formatted output from the trace output. By default, the collection contains an instance of the default_trace_listener class. If you want to remove the default listener, call the Remove method, and pass it the instance of the default_trace_listener. To redirect output to the console window, add an instance of the console_trace_listener class.
       /// @note The Listeners collection is shared by both the Debug and the Trace classes; adding a trace listener to either class adds the listener to both.
-      static void listeners(const listener_collection& listeners) noexcept;
+      static void listeners(const listener_collection& listeners);
       
       /// @brief Gets a value indicating whether the global lock should be used.
       /// @return `true` if the global lock is to be used; otherwise, `false`. The default is `true`.
@@ -460,7 +460,6 @@ namespace xtd {
       inline static uint32 indent_size_ = 4;
       static listener_collection& listeners_;
       inline static bool use_global_lock_ = true;
-      static xtd::string source_name_;
     };
   }
 }
