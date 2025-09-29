@@ -7,7 +7,10 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-default_trace_listener::default_trace_listener() : trace_listener("default") {
+default_trace_listener::default_trace_listener() : default_trace_listener("") {
+}
+
+default_trace_listener::default_trace_listener(const xtd::string log_file_name) : trace_listener("default"), log_file_name_ {log_file_name} {
 }
 
 default_trace_listener::~default_trace_listener() {
