@@ -27,6 +27,10 @@ const string& assembly::description() const noexcept {
   return description_;
 }
 
+string assembly::file_name() const noexcept {
+  return path::get_file_name(location());
+}
+
 const string& assembly::file_version() const noexcept {
   return file_version_;
 }
@@ -45,6 +49,10 @@ string assembly::location() const noexcept {
 
 const string& assembly::name() const noexcept {
   return name_;
+}
+
+string assembly::name_or_file_name() const noexcept {
+  return string::is_empty(name_) ? file_name() : name_;
 }
 
 const string& assembly::product() const noexcept {

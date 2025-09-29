@@ -54,7 +54,11 @@ namespace xtd {
       /// @brief Gets decription information.
       /// @return A string containing the decription information.
       const string& description() const noexcept;
-      
+
+      /// @brief Gets file_name information.
+      /// @return A string containing the file_name information.
+      string file_name() const noexcept;
+
       /// @brief Gets file version information.
       /// @return A string containing the file version information.
       const string& file_version() const noexcept;
@@ -71,17 +75,21 @@ namespace xtd {
       /// @return A string containing the location_of the executable file.
       string location() const noexcept;
       
-      /// @brief Gets name information.
-      /// @return A string containing the name information.
-      const string& name() const noexcept;
-      
-      /// @brief Gets product information.
-      /// @return A string containing the product information.
-      const string& product() const noexcept;
-      
       /// @brief Gets the path for the executable file that started the application, not including the executable name.
       /// @return The path for the executable file that started the application.
       string location_path() const noexcept;
+
+      /// @brief Gets name information.
+      /// @return A string containing the name information.
+      const string& name() const noexcept;
+
+      /// @brief Gets name or file_name if empty information.
+      /// @return A string containing the name or file_name if empty information.
+      string name_or_file_name() const noexcept;
+
+      /// @brief Gets product information.
+      /// @return A string containing the product information.
+      const string& product() const noexcept;
       
       /// @brief Gets title information.
       /// @return A string containing the title information.
