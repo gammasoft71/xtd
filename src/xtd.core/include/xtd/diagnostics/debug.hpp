@@ -101,12 +101,12 @@ namespace xtd {
       /// @return A xtd::diagnostics::debug::listener_collection that represents a collection of type xtd::diagnostics::trace_listener monitoring the trace output.
       /// @remarks The xtd::diagnostics::debug::listeners produce formatted output from the trace output. By default, the collection contains an instance of the xtd::diagnostics::default_trace_listener class. If you want to remove the default listener, call the erase method, and pass it the instance of the xtd::diagnostics::default_trace_listener. To redirect output to the console window, add an instance of the xtd::diagnostics::console_trace_listener class.
       /// @note The xtd::diagnostics::debug::listeners collection is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; adding a trace listener to either class adds the listener to both.
-      static listener_collection& listeners() noexcept;
+      static listener_collection& listeners();
       /// @brief Sets the collection of listeners that is monitoring the trace output.
       /// @paral$m listeners A xtd::diagnostics::debug::listener_collection that represents a collection of type xtd::diagnostics::trace_listener monitoring the trace output.
       /// @remarks The xtd::diagnostics::debug::listeners produce formatted output from the trace output. By default, the collection contains an instance of the xtd::diagnostics::default_trace_listener class. If you want to remove the default listener, call the erase method, and pass it the instance of the xtd::diagnostics::default_trace_listener. To redirect output to the console window, add an instance of the xtd::diagnostics::console_trace_listener class.
       /// @note The xtd::diagnostics::debug::listeners collection is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; adding a trace listener to either class adds the listener to both.
-      static void listeners(const listener_collection& listeners) noexcept;
+      static void listeners(const listener_collection& listeners);
       
       /// @brief Gets a value indicating whether the global lock should be used.
       /// @return `true` if the global lock is to be used; otherwise, `false`. The default is `true`.
@@ -484,7 +484,6 @@ namespace xtd {
       inline static uint32 indent_level_ = 0;
       inline static uint32 indent_size_ = 4;
       static listener_collection& listeners_;
-      static xtd::string source_name_;
     };
   }
 }
