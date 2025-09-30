@@ -13,7 +13,7 @@ using namespace xtd::reflection;
 
 extern std::recursive_mutex __debug_mutex__;
 extern trace_listener_collection __listeners__;
-const std::tuple<const xtd::diagnostics::trace_listener_collection&, const xtd::collections::specialized::string_dictionary&>& __xtd___read_diagnostics_fonfig__();
+const std::tuple<const xtd::diagnostics::trace_listener_collection&, const xtd::collections::specialized::string_dictionary&>& __xtd___read_diagnostics_config__();
 
 trace_listener_collection& trace::listeners_ = __listeners__;
 
@@ -44,7 +44,7 @@ void trace::indent_size(uint32 indent_size) noexcept {
 trace_listener_collection& trace::listeners() {
   if (listeners_.count()) return listeners_;
   call_once_ {
-    const auto& [listeners, switches] = __xtd___read_diagnostics_fonfig__();
+    const auto& [listeners, switches] = __xtd___read_diagnostics_config__();
     listeners_ = listeners;
   };
   return listeners_;
