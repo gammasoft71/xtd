@@ -5,9 +5,11 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 
 trace_switch::trace_switch(const string& display_name, const string& description) : switch_object(display_name, description) {
+  value(value());
 }
 
-trace_switch::trace_switch(const string& display_name, const string& description, const string& default_switch_value) : switch_object(display_name, description, default_switch_value) {
+trace_switch::trace_switch(const string& display_name, const string& description, const string& default_switch_value) : switch_object(display_name, description) {
+  value(default_switch_value);
 }
 
 trace_level trace_switch::level() const noexcept {

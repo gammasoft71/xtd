@@ -1,10 +1,15 @@
 #include "../../../include/xtd/diagnostics/switch_object.hpp"
+#include "../../../include/xtd/diagnostics/trace_listener_collection.hpp"
 #include "../../../include/xtd/as.hpp"
+#include "../../../include/xtd/call_once.hpp"
 
 using namespace xtd;
 using namespace xtd::collections::generic;
+using namespace xtd::collections::specialized;
 using namespace xtd::diagnostics;
 using namespace xtd::helpers;
+
+const std::tuple<const trace_listener_collection&, const string_dictionary&>& __xtd___read_diagnostics_config__();
 
 const switch_object::attribute_collection& switch_object::attributes() const noexcept {
   return attributes_;
@@ -31,8 +36,19 @@ const string& switch_object::value() const noexcept {
 }
 
 void switch_object::value(const string& value) {
-  if (value_ == value) return;
-  value_ = value;
+  auto new_value = value;
+  call_once_ {
+    if (switches_.size()) return;
+    const auto& [listeners, switches] = __xtd___read_diagnostics_config__();
+    switches_ = switches;
+  };
+  
+  if (value_ == new_value) {
+    if (switches_.contains_key(display_name_)) new_value = switches_[display_name_];
+    else return;
+  }
+  value_ = new_value;
+  switches_[display_name_] = value_;
   on_value_changed();
 }
 
@@ -44,11 +60,7 @@ bool switch_object::equals(const switch_object& other) const noexcept {
   return display_name_ == other.display_name_ && description_ == other.description_ && attributes_ == other.attributes_ && switch_setting_ == other.switch_setting_ && value_ == other.value_;
 }
 
-switch_object::switch_object(const string& display_name, const string& description) : switch_object(display_name, description, "0") {
-}
-
-switch_object::switch_object(const string& display_name, const string& description, const string& default_switch_value) : display_name_(display_name), description_(description) {
-  value(default_switch_value);
+switch_object::switch_object(const string& display_name, const string& description) : display_name_(display_name), description_(description) {
 }
 
 int32 switch_object::switch_setting() const noexcept {

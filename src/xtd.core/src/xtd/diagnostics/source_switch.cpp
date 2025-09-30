@@ -5,12 +5,12 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 
 source_switch::source_switch(const string& name) : switch_object(name, string::empty_string) {
+  value(value());
 }
 
 source_switch::source_switch(const string& display_name, const string& default_switch_value) : switch_object(display_name, string::empty_string) {
   value(default_switch_value);
 }
-
 
 source_levels source_switch::level() const noexcept {
   return as<source_levels>(switch_setting());
