@@ -484,6 +484,7 @@ namespace xtd {
       inline static uint32 indent_level_ = 0;
       inline static uint32 indent_size_ = 4;
       static listener_collection& listeners_;
+      inline static bool use_global_lock_ = true;
     };
   }
 }

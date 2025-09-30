@@ -1326,6 +1326,7 @@ add_sources(
   "src/xtd/diagnostics/ostream_trace_listener.cpp"
   "src/xtd/diagnostics/process.cpp"
   "src/xtd/diagnostics/process_start_info.cpp"
+  "src/xtd/diagnostics/read_diagnostics_config.cpp"
   "src/xtd/diagnostics/source_filter.cpp"
   "src/xtd/diagnostics/source_location.cpp"
   "src/xtd/diagnostics/source_switch.cpp"
