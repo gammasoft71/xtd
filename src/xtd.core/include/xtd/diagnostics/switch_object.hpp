@@ -108,12 +108,6 @@ namespace xtd {
       /// @par Notes to inheritors
       /// To set the value of the switch, set the switch_setting property in the constructor.
       switch_object(const xtd::string& display_name, const xtd::string& description);
-      /// @brief Initializes a new instance of the switch_object class.
-      /// @param display_name The name of the switch.
-      /// @param description The description for the switch.
-      /// @param default_switch_value The default value for the switch.
-      /// @remarks The display_name parameter is used to set the value of the display_name property, and the description parameter is use to set the value of the description property. The default_switch_value parameter is the value for the switch if the value property is not set by code.
-      switch_object(const xtd::string& display_name, const xtd::string& description, const xtd::string& default_switch_value);
       /// @}
       
       /// @name Protected Properties
@@ -153,6 +147,7 @@ namespace xtd {
       attribute_collection attributes_;
       int32 switch_setting_ = 0;
       xtd::string value_ = "0";
+      inline static xtd::collections::specialized::string_dictionary switches_;
     };
   }
 }

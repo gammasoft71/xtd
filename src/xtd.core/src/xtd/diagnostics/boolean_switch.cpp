@@ -6,6 +6,7 @@ using namespace xtd::diagnostics;
 using namespace xtd::helpers;
 
 boolean_switch::boolean_switch(const string& display_name, const string& description) : switch_object(display_name, description) {
+  value(value());
 }
 
 boolean_switch::boolean_switch(const string& display_name, const string& description, const string& default_switch_value) : switch_object(display_name, description) {
