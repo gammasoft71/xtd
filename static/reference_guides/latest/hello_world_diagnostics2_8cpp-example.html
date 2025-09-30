@@ -97,11 +97,11 @@ $(function(){ initResizable(false); });
 </div><!--header-->
 <div class="contents">
 <p>The classic first application "Hello, World!" with <a class="el" href="group__debug.html#ga20a8c5c8813e84b0831d7b236d1f1459" title="Provides an std::ostream for xtd::diagnostics::trace.">xtd::ctrace</a> class.</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#define TRACE</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#define TRACE 1 </span><span class="comment">// Force to trace even if example is builded with -DNTRACE.</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  ctrace &lt;&lt; <span class="stringliteral">&quot;Hello, World!&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">  ctrace &lt;&lt; <span class="stringliteral">&quot;Hello, World!&quot;</span> &lt;&lt; environment::new_line &lt;&lt; std::flush;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following debug output :</span></div>
@@ -111,7 +111,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 22 2025 15:18:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 29 2025 21:02:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

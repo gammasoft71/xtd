@@ -120,7 +120,7 @@ $(function(){ initResizable(false); });
 <img src="form_window_state_gd.png" alt=""/>
 </div>
 </dd></dl>
-<div class="fragment"><div class="line"><span class="preprocessor">#define TRACE</span></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#define TRACE 1 </span><span class="comment">// Force to trace even if example is builded with -DNTRACE.</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
@@ -134,7 +134,7 @@ $(function(){ initResizable(false); });
 <div class="line">      button_normal.enabled(window_state() != form_window_state::normal);</div>
 <div class="line">      button_minimize.enabled(window_state() != form_window_state::minimized&amp;&amp; window_state() != form_window_state::full_screen);</div>
 <div class="line">      </div>
-<div class="line">      ctrace &lt;&lt; string::format(<span class="stringliteral">&quot;resize: {}, {}&quot;</span>, size(), window_state()) &lt;&lt; environment::new_line;</div>
+<div class="line">      ctrace &lt;&lt; string::format(<span class="stringliteral">&quot;resize: {}, {}&quot;</span>, size(), window_state()) &lt;&lt; environment::new_line &lt;&lt; std::flush;</div>
 <div class="line">    };</div>
 <div class="line">    client_size({410, 200});</div>
 <div class="line">    window_state(form_window_state::maximized);</div>
@@ -183,7 +183,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 22 2025 15:18:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 29 2025 21:02:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
