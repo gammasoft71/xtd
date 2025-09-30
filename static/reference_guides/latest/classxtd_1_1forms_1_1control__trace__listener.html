@@ -119,7 +119,14 @@ Inheritance diagram for xtd::forms::control_trace_listener:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd::forms</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a></dd></dl>
-<dl class="section user"><dt>Examples </dt><dd></dd></dl>
+<dl class="section user"><dt>Examples</dt><dd></dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To disable debug mode with CMake, add the command line <code>add_definitions(-DNDEBUG)</code> in your CMakeLists.txt, or define NDEBUG at the top of your file. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If you define <code>#define DEBUG</code> above your includes, debug mode will still be active even if NDEBUG is defined. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To activate your code if DEBUG is defined, you must enclose calls to the methods of Debug in an #if DEBUG ... #endif block. </dd>
+<dd>
+To disable trace mode with CMake, add the command line <code>add_definitions(-DNTRACE)</code> in your CMakeLists.txt, or define NTRACE at the top of your file. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If you define <code>#define TRACE</code> above your includes, trace mode will still be active even if NTRACE is defined. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To activate your code if TRACE is defined, you must enclose calls to the methods of Debug in an #if TRACE ... #endif block. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a1f3cfac049e03a195b611068c1cf2eb5" id="r_a1f3cfac049e03a195b611068c1cf2eb5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f3cfac049e03a195b611068c1cf2eb5">control_trace_listener</a> (<a class="el" href="classxtd_1_1forms_1_1icontrol__trace.html">xtd::forms::icontrol_trace</a> &amp;<a class="el" href="#a6b25a3837dcd614b25bc9783964e984c">control_trace</a>)</td></tr>
@@ -540,7 +547,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 22 2025 15:18:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Sep 29 2025 21:02:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

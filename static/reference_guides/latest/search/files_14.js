@@ -73,7 +73,7 @@ var searchData=
   ['tool_5fbar_5fstate_2ehpp_70',['tool_bar_state.hpp',['../tool__bar__state_8hpp.html',1,'']]],
   ['tool_5fbar_5ftext_5falign_2ehpp_71',['tool_bar_text_align.hpp',['../tool__bar__text__align_8hpp.html',1,'']]],
   ['toolkit_2ehpp_72',['toolkit.hpp',['../toolkit_8hpp.html',1,'']]],
-  ['trace_2ehpp_73',['trace.hpp',['../trace_8hpp.html',1,'']]],
+  ['trace_2ehpp_73',['trace.hpp',['../diagnostics_2trace_8hpp.html',1,'(Global Namespace)'],['../trace_8hpp.html',1,'(Global Namespace)']]],
   ['trace_5fevent_5fcache_2ehpp_74',['trace_event_cache.hpp',['../trace__event__cache_8hpp.html',1,'']]],
   ['trace_5fevent_5ftype_2ehpp_75',['trace_event_type.hpp',['../trace__event__type_8hpp.html',1,'']]],
   ['trace_5ffilter_2ehpp_76',['trace_filter.hpp',['../trace__filter_8hpp.html',1,'']]],

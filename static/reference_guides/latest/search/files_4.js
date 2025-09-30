@@ -11,7 +11,7 @@ var searchData=
   ['date_5ftime_5fpicker_5fformat_2ehpp_8',['date_time_picker_format.hpp',['../date__time__picker__format_8hpp.html',1,'']]],
   ['day_2ehpp_9',['day.hpp',['../day_8hpp.html',1,'']]],
   ['day_5fof_5fweek_2ehpp_10',['day_of_week.hpp',['../day__of__week_8hpp.html',1,'']]],
-  ['debug_2ehpp_11',['debug.hpp',['../debug_8hpp.html',1,'']]],
+  ['debug_2ehpp_11',['debug.hpp',['../debug_8hpp.html',1,'(Global Namespace)'],['../diagnostics_2debug_8hpp.html',1,'(Global Namespace)']]],
   ['debug_5fbreak_2ehpp_12',['debug_break.hpp',['../debug__break_8hpp.html',1,'']]],
   ['debug_5fform_2ehpp_13',['debug_form.hpp',['../debug__form_8hpp.html',1,'']]],
   ['debug_5fmessage_5fbox_2ehpp_14',['debug_message_box.hpp',['../debug__message__box_8hpp.html',1,'']]],
