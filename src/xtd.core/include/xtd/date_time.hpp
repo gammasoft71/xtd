@@ -1172,6 +1172,7 @@ namespace xtd {
     xtd::ticks utc_offset() const;
     std::tuple<uint32, uint32, uint32, uint32, uint32, uint32, uint32, int32> get_date_time() const;
     void set_date_time(uint32 year, uint32 month, uint32 day, uint32 hour, uint32 minute, uint32 second, uint32 millisecond, date_time_kind kind);
+    string to_string_custom(const string& format, const std::locale& loc) const;
     
     xtd::ticks value_ {0};
     date_time_kind kind_ {date_time_kind::unspecified};
