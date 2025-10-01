@@ -37,7 +37,7 @@
 
 /// @cond
 template<class ...args_t>
-void __basic_string_extract_format_arg(xtd::basic_string<char>& fmt, xtd::array<__format_information<char >> & formats, args_t&&... args);
+void __basic_string_extract_format_arg(const std::locale& loc, xtd::basic_string<char>& fmt, xtd::array<__format_information<char >> & formats, args_t&&... args);
 template<class target_t, class source_t>
 std::basic_string<target_t> __xtd_convert_to_string(std::basic_string<source_t>&& str) noexcept;
 template<class target_t, class source_t>
@@ -2170,6 +2170,16 @@ namespace xtd {
     /// @remarks for more information about format see @ref FormatPage "Format".
     template<class ...args_t>
     static basic_string format(const basic_string<char>& fmt, args_t&& ... args);
+    
+    /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
+    /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
+    /// @param fmt A composite format string.
+    /// @param args arguments list to write using format.
+    /// @return string formatted.
+    /// @ingroup format_parse
+    /// @remarks for more information about format see @ref FormatPage "Format".
+    template<class ...args_t>
+    static basic_string format(const std::locale& loc, const basic_string<char>& fmt, args_t&& ... args);
     
     /// @brief Indicates whether the specifeid basic_string is an empty basic_string ("").
     /// @param string The xtd::basic_string to check if empty.

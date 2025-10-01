@@ -154,7 +154,7 @@ namespace xtd {
     /// @param format A value type format string.
     /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
     /// @return The string representation of the value of this instance as specified by format.
-    xtd::string to_string(const xtd::string& format, const std::locale& loc) const override {return xtd::string::format(xtd::string::format("{{:{}}}", format), value);}
+    xtd::string to_string(const xtd::string& format, const std::locale& loc) const override {return xtd::string::format(loc, xtd::string::format("{{:{}}}", format), value);}
     /// @}
     
     /// @name Public Static Methods
