@@ -41,6 +41,10 @@ auto print_date_time(const string& text, const date_time& value, cap c) {
   console::out <<  "│ " << text.pad_right(37) << " │ {:O}       │ " << format("{:O}", value).pad_right(40) << " │" << environment::new_line;
   console::out <<  "│ " << text.pad_right(37) << " │ {:p}       │ " << format("{:p}", value).pad_right(40) << " │" << environment::new_line;
   console::out <<  "│ " << text.pad_right(37) << " │ {:P}       │ " << format("{:P}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(37) << " │ {:q}       │ " << format("{:q}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(37) << " │ {:Q}       │ " << format("{:Q}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(37) << " │ {:r}       │ " << format("{:r}", value).pad_right(40) << " │" << environment::new_line;
+  console::out <<  "│ " << text.pad_right(37) << " │ {:R}       │ " << format("{:R}", value).pad_right(40) << " │" << environment::new_line;
   console::out <<  "│ " << text.pad_right(37) << " │ {:s}       │ " << format("{:s}", value).pad_right(40) << " │" << environment::new_line;
   console::out <<  "│ " << text.pad_right(37) << " │ {:S}       │ " << format("{:S}", value).pad_right(40) << " │" << environment::new_line;
   console::out <<  "│ " << text.pad_right(37) << " │ {:t}       │ " << format("{:t}", value).pad_right(40) << " │" << environment::new_line;
