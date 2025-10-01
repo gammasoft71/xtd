@@ -462,7 +462,7 @@ string date_time::to_string(const string& format) const {
 string date_time::to_string(const string& format, const std::locale& loc) const {
   auto fmt = format;
   if (xtd::string::is_empty(fmt)) fmt = "G";
-  if (fmt.length() > 1) to_string_custom(format, loc);
+  if (fmt.length() > 1) return to_string_custom(format, loc);
   
   [[maybe_unused]] auto [year, month, day, hour, minute, second, day_of_year, day_of_week] = get_date_time();
   [[maybe_unused]] auto [utc_year, utc_month, utc_day, utc_hour, utc_minute, utc_second, utc_day_of_year, utc_day_of_week] = to_universal_time().get_date_time();
@@ -496,7 +496,7 @@ string date_time::to_string(const string& format, const std::locale& loc) const 
     case 'M': return string::format("{} {:D}", sprintf("%B", self_), day);
     case 'n': return string::format("{}, {:D} {} {:D}", sprintf("%A", self_), day, sprintf("%B", self_), year);
     case 'N': return string::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A", self_), day, sprintf("%B", self_), year, hour, minute, second);
-    case 'o': return string::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}Z", utc_year, utc_month, utc_day, utc_hour, utc_minute, utc_second,value_.count() % ticks_per_second);
+    case 'o': return string::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}Z", utc_year, utc_month, utc_day, utc_hour, utc_minute, utc_second, value_.count() % ticks_per_second);
     case 'O': return string::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}{}{:D2}:{:D2}", year, month, day, hour, minute, second, value_.count() % ticks_per_second, offset_iso8601 >= 0 ? "+" : "-", std::abs(offset_iso8601 / 3600), (std::abs(offset_iso8601) % 3600) / 60);
     case 'p': return string::format("{:D2}", minute);
     case 'P': return string::format("{}", minute);
@@ -664,5 +664,62 @@ void date_time::set_date_time(uint32 year, uint32 month, uint32 day, uint32 hour
 }
 
 string date_time::to_string_custom(const string& format, const std::locale& loc) const {
-  throw_helper::throws(exception_case::format, "Invalid format"_t)
+  [[maybe_unused]] auto [year, month, day, hour, minute, second, day_of_year, day_of_week] = get_date_time();
+  auto utc = to_universal_time();
+  auto offset_sec = kind_ == date_time_kind::utc ? 0 : utc_offset().count() / ticks_per_second;
+
+  string result;
+  for (auto i = 0_z; i < format.length(); ++i) {
+    switch (format[i]) {
+      case 'y':
+        if (i + 3 < format.length() && format.substr(i, 4) == "yyyy") {result += string::format("{:D4}", year); i += 3;}
+        else if (i+1 < format.length() && format.substr(i, 2) == "yy") {result += string::format("{:D2}", year % 100); i += 1;}
+        break;
+      case 'M':
+        if (i + 1 < format.length() && format.substr(i, 2) == "MM") {result += string::format("{:D2}", month); i += 1;}
+        else if (i+2 < format.length() && format.substr(i, 3) == "MMM") {result += sprintf("%b", self_); i += 2;}
+        else if (i+3 < format.length() && format.substr(i, 4) == "MMMM") {result += sprintf("%B", self_); i += 3;}
+        break;
+      case 'd':
+        if (i + 1 < format.length() && format.substr(i, 2) == "dd") {result += string::format("{:D2}", day); i += 1;}
+        else result += string::format("{:D}", day);
+        break;
+      case 'H':
+        if (i + 1 < format.length() && format.substr(i, 2) == "HH") {result += string::format("{:D2}", hour); i += 1;}
+        else result += string::format("{:D}", hour);
+        break;
+      case 'h':
+        if (i + 1 < format.length() && format.substr(i, 2) == "hh") {result += string::format("{:D2}", hour % 12 == 0 && hour != 0 ? 12 : hour % 12); i += 1;}
+        else result += string::format("{:D}", hour % 12 == 0 && hour != 0 ? 12 : hour % 12);
+        break;
+      case 'm':
+        if (i + 1 < format.length() && format.substr(i, 2) == "mm") {result += string::format("{:D2}", minute); i += 1;}
+        else result += string::format("{:D}", minute);
+        break;
+      case 's':
+        if (i + 1 < format.length() && format.substr(i, 2) == "ss") {result += string::format("{:D2}", second); i += 1;}
+        else result += string::format("{:D}", second);
+        break;
+      case 'f': {
+        auto count = 1_z;
+        while (i + count < format.length() && format[i + count] == 'f') count++;
+        result += string::format(string::format("{{:D{}}}", math::min(7_z, count)), value_.count() % ticks_per_second / static_cast<int64>(math::pow(10, 7 - math::min(7_z, count))));
+        i += count - 1;
+      }
+        break;
+      case 't':
+        if (i + 1 < format.length() && format.substr(i, 2) == "tt") {result += hour / 12 ? "PM" : "AM"; i += 1;}
+        else  result += (hour / 12 ? 'P' : 'A');
+        break;
+      case 'z':
+        if (i + 2 < format.length() && format.substr(i, 3) == "zzz") {result += string::format("{:+03}:{:02}", offset_sec / 3600, std::abs(offset_sec % 3600) / 60); i += 2;}
+        else if (i + 1 < format.length() && format.substr(i, 2) == "zz") {result += string::format("{:+03}", offset_sec / 3600); i += 1;}
+        else result += string::format("{:+03}", offset_sec / 3600);
+        break;
+      case 'Z': result += kind_ == date_time_kind::local ? "LOCAL" : "UTC"; break;
+      default: result += format[i]; break;
+    }
+  }
+  
+  return result;
 }
