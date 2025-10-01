@@ -382,7 +382,9 @@ bool date_time::is_leap_year(uint32 year) {
 }
 
 date_time date_time::parse(const xtd::string& s) {
-  throw_helper::throws(exception_case::not_implemented);
+  auto result = date_time {};
+  if (!try_parse(s, result)) throw_helper::throws(exception_case::not_implemented);
+  return result;
 }
 
 date_time date_time::specify_kind(const date_time& value, date_time_kind kind) {
