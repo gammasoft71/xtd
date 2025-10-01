@@ -147,7 +147,7 @@ namespace xtd::tests {
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_ordinary_date_argument) {
-      assert::are_equal(L"2 January 2019", format(L"{0:O}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal(L"2 January 2019", format(L"{0:Q}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_sortable_argument) {

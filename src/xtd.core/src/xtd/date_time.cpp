@@ -424,7 +424,7 @@ int64 date_time::to_file_time_utc() const {
 }
 
 date_time date_time::to_local_time() const {
-  if (kind_ == date_time_kind::local) return *this;
+  if (kind_ == date_time_kind::local) return self_;
   
   auto utc_offset = this->utc_offset();
   if (value_ + utc_offset > max_value.value_) return date_time(value_, date_time_kind::local);
@@ -463,6 +463,9 @@ string date_time::to_string(const string& format, const std::locale& loc) const 
   if (fmt.length() > 1) throw_helper::throws(exception_case::format, "Invalid format"_t);
   
   [[maybe_unused]] auto [year, month, day, hour, minute, second, day_of_year, day_of_week] = get_date_time();
+  [[maybe_unused]] auto [utc_year, utc_month, utc_day, utc_hour, utc_minute, utc_second, utc_day_of_year, utc_day_of_week] = to_universal_time().get_date_time();
+  auto offset_iso8601 = kind_ == date_time_kind::utc ? 0 : utc_offset().count() / ticks_per_second;
+  
   switch (fmt[0]) {
     case 'a': return string::format("{}", hour / 12 ? "PM" : "AM");
     case 'b': return string::format("{:D3}", millisecond());
@@ -473,42 +476,46 @@ string date_time::to_string(const string& format, const std::locale& loc) const 
     case 'D': return string::format("{:D}/{:D2}/{:D}", month, day, year);
     case 'e': return string::format("{:D2}", second);
     case 'E': return string::format("{}", second);
-    case 'f': return sprintf("%Ec", *this);
-    case 'F': return sprintf("%c", *this);
-    case 'g': return sprintf("%Ec", *this);
+    case 'f': return sprintf("%Ec", self_);
+    case 'F': return sprintf("%c", self_);
+    case 'g': return sprintf("%Ec", self_);
     case 'G': return string::format("{:D}-{:D2}-{:D2} {:D2}:{:D2}:{:D2}", year, month, day, hour, minute, second);
-    case 'h': return sprintf("%a", *this);
-    case 'H': return sprintf("%A", *this);
+    case 'h': return sprintf("%a", self_);
+    case 'H': return sprintf("%A", self_);
     case 'i': return string::format("{:D2}", day);
     case 'I': return string::format("{:D}", day);
-    case 'j': return sprintf("%b", *this);
-    case 'J': return sprintf("%B", *this);
+    case 'j': return sprintf("%b", self_);
+    case 'J': return sprintf("%B", self_);
     case 'k': return string::format("{:D2}", month);
     case 'K': return string::format("{:D}", month);
     case 'l': return string::format("{:D2}", year % 100);
     case 'L': return string::format("{:D4}", year);
     case 'm': return string::format("{:D}", year);
-    case 'M': return string::format("{} {:D}", sprintf("%B", *this), day);
-    case 'n': return string::format("{}, {:D} {} {:D}", sprintf("%A", *this), day, sprintf("%B", *this), year);
-    case 'N': return string::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A", *this), day, sprintf("%B", *this), year, hour, minute, second);
-    case 'o':
-    case 'O': return string::format("{:D} {} {:D}", day, sprintf("%B", *this), year);
+    case 'M': return string::format("{} {:D}", sprintf("%B", self_), day);
+    case 'n': return string::format("{}, {:D} {} {:D}", sprintf("%A", self_), day, sprintf("%B", self_), year);
+    case 'N': return string::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A", self_), day, sprintf("%B", self_), year, hour, minute, second);
+    case 'o': return string::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}Z", utc_year, utc_month, utc_day, utc_hour, utc_minute, utc_second,value_.count() % ticks_per_second);
+    case 'O': return string::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}{}{:D2}:{:D2}", year, month, day, hour, minute, second, value_.count() % ticks_per_second, offset_iso8601 >= 0 ? "+" : "-", std::abs(offset_iso8601 / 3600), (std::abs(offset_iso8601) % 3600) / 60);
     case 'p': return string::format("{:D2}", minute);
     case 'P': return string::format("{}", minute);
+    case 'q':
+    case 'Q': return string::format("{:D} {} {:D}", day, sprintf("%B", self_), year);
+    case 'r':
+    case 'R': return string::format("{}, {:D2} {} {:D4} {:D2}:{:D2}:{:D2} GMT", sprintf("%a", to_universal_time()), utc_day, sprintf("%b", to_universal_time()), utc_year, utc_hour, utc_minute, utc_second);
     case 's': return string::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}", year, month, day, hour, minute, second, value_.count() % ticks_per_second);
     case 'S': return string::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D3}", year, month, day, hour, minute, second, value_.count() % ticks_per_second / 10000);
     case 't': return string::format("{:D2}:{:D2}:{:D2}", hour, minute, second);
     case 'T': return string::format("{:D}:{:D2}:{:D2}", hour, minute, second);
     case 'u': return string::format("{:D}-{:D2}-{:D2} {:D2}:{:D2}:{:D2}", year, month, day, hour, minute, second);
-    case 'U': return string::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A", *this), day, sprintf("%B", *this), year, hour, minute, second);
+    case 'U': return string::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A", self_), day, sprintf("%B", self_), year, hour, minute, second);
     case 'v': return string::format("{:D2}:{:D2}", hour, minute);
     case 'V': return string::format("{:D}:{:D2}", hour, minute);
     case 'w': return string::format("{:D2}", hour);
     case 'W': return string::format("{:D}", hour);
     case 'x': return string::format("{:D2}", hour % 12);
     case 'X': return string::format("{:D}", hour % 12);
-    case 'y': return string::format("{} {:D}", sprintf("%B", *this), year % 100);
-    case 'Y': return string::format("{} {:D}", sprintf("%B", *this), year);
+    case 'y': return string::format("{} {:D}", sprintf("%B", self_), year % 100);
+    case 'Y': return string::format("{} {:D}", sprintf("%B", self_), year);
     case 'z':
     case 'Z': return kind_ == date_time_kind::local ? time_zone_info::local().id().chars().c_str() : time_zone_info::utc().id().chars().c_str();
   }
@@ -516,7 +523,7 @@ string date_time::to_string(const string& format, const std::locale& loc) const 
 }
 
 std::time_t date_time::to_time_t() const {
-  return (std::chrono::duration_cast<std::chrono::seconds>(date_time::specify_kind(*this, date_time_kind::utc).value_) - seconds_offset_1970).count();
+  return (std::chrono::duration_cast<std::chrono::seconds>(date_time::specify_kind(self_, date_time_kind::utc).value_) - seconds_offset_1970).count();
 }
 
 std::tm date_time::to_tm() const {
@@ -539,7 +546,7 @@ date_time::operator time_span() const {
 }
 
 date_time date_time::to_universal_time() const {
-  if (kind_ == date_time_kind::utc) return *this;
+  if (kind_ == date_time_kind::utc) return self_;
   
   auto utc_offset = this->utc_offset();
   if (value_ < utc_offset) return date_time(value_, date_time_kind::utc);
@@ -572,7 +579,7 @@ date_time date_time::operator -() {
 }
 
 date_time date_time::operator +(const time_span& value) const {
-  auto result = *this;
+  auto result = self_;
   result.value_ += value.ticks_duration();
   return result;
 }
@@ -582,14 +589,14 @@ time_span date_time::operator -(const date_time& value) const {
 }
 
 date_time date_time::operator -(const time_span& value) const {
-  auto result = *this;
+  auto result = self_;
   result.value_ -= value.ticks_duration();
   return result;
 }
 
 date_time& date_time::operator ++() {
   ++value_;
-  return *this;
+  return self_;
 }
 
 date_time date_time::operator ++(int32) {
@@ -598,7 +605,7 @@ date_time date_time::operator ++(int32) {
 
 date_time& date_time::operator --() {
   --value_;
-  return *this;
+  return self_;
 }
 
 date_time date_time::operator --(int32) {

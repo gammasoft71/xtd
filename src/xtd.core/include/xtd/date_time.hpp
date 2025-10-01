@@ -789,10 +789,14 @@ namespace xtd {
     /// | 'M'    | writes full month name and day, e.g. October, 5 (locale dependent).                                                         |
     /// | 'n'    | writes full weekday name, day, fulll month and year, e.g. Tuesday, 1 April 2008                                             |
     /// | 'N'    | writes full weekday name, day, fulll month, year, hour, minute ans second, e.g. Tuesday, 1 April 2008 18:07:05              |
-    /// | 'o'    | writes day, full month and year, e.g. 5 January 42                                                                          |
-    /// | 'O'    | writes day, full month and year, e.g. 5 January 42                                                                          |
+    /// | 'o'    | writes ISO 8601 UTC date/time with "Z", e.g. 2025-09-30T18:33:44.2347810Z                                                   |
+    /// | 'O'    | writes ISO 8601 local date/time with offset, e.g. 2025-09-30T20:33:44.2347810+02:00                                         |
     /// | 'p'    | writes 2 digit minute, e.G. 06                                                                                              |
     /// | 'P'    | writes minute, e.G. 6                                                                                                       |
+    /// | 'q'    | writes day, full month and year, e.g. 5 January 42                                                                          |
+    /// | 'Q'    | writes day, full month and year, e.g. 5 January 42                                                                          |
+    /// | 'r'    | writes RFC1123 pattern (GMT), e.g. Tue, 01 Oct 2025 18:44:23 GMT                                                            |
+    /// | 'R'    | writes RFC1123 pattern (GMT), e.g. Tue, 01 Oct 2025 18:44:23 GMT (same as 'r')                                              |
     /// | 's'    | writes sortable date/time pattern yyyy-MM-ddThh:mm:ss.ttttttt. e.g. 1971-05-01T21:32:24:42.004567                           |
     /// | 't'    | writes time hh/mm/ss, e.g. 02:04:06                                                                                         |
     /// | 'T'    | writes time h/mm/ss, e.g. 2:04:06                                                                                           |
@@ -847,10 +851,14 @@ namespace xtd {
     /// | 'M'    | writes full month name and day, e.g. October, 5 (locale dependent).                                                         |
     /// | 'n'    | writes full weekday name, day, fulll month and year, e.g. Tuesday, 1 April 2008                                             |
     /// | 'N'    | writes full weekday name, day, fulll month, year, hour, minute ans second, e.g. Tuesday, 1 April 2008 18:07:05              |
-    /// | 'o'    | writes day, full month and year, e.g. 5 January 42                                                                          |
-    /// | 'O'    | writes day, full month and year, e.g. 5 January 42                                                                          |
+    /// | 'o'    | writes ISO 8601 UTC date/time with "Z", e.g. 2025-09-30T18:33:44.2347810Z                                                   |
+    /// | 'O'    | writes ISO 8601 local date/time with offset, e.g. 2025-09-30T20:33:44.2347810+02:00                                         |
     /// | 'p'    | writes 2 digit minute, e.G. 06                                                                                              |
     /// | 'P'    | writes minute, e.G. 6                                                                                                       |
+    /// | 'q'    | writes day, full month and year, e.g. 5 January 42                                                                          |
+    /// | 'Q'    | writes day, full month and year, e.g. 5 January 42                                                                          |
+    /// | 'r'    | writes RFC1123 pattern (GMT), e.g. Tue, 01 Oct 2025 18:44:23 GMT                                                            |
+    /// | 'R'    | writes RFC1123 pattern (GMT), e.g. Tue, 01 Oct 2025 18:44:23 GMT (same as 'r')                                              |
     /// | 's'    | writes sortable date/time pattern yyyy-MM-ddThh:mm:ss.ttttttt. e.g. 1971-05-01T21:32:24:42.004567                           |
     /// | 't'    | writes time hh/mm/ss, e.g. 02:04:06                                                                                         |
     /// | 'T'    | writes time h/mm/ss, e.g. 2:04:06                                                                                           |
