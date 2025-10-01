@@ -116,6 +116,86 @@ namespace {
     auto [month, day] = get_month_and_day(day_of_year, year);
     return day;
   }
+
+  static size to_string_custom_char_count(const string& format, size& index, size max_char) {
+    auto character = format[index];
+    auto count = 1_z;
+    while (index + count < format.length() && format[index + count] == character) ++count;
+    index += count - 1;
+    return math::min(max_char, count);
+  }
+  
+  static string to_string_custom_day(const string& format, size& index, uint32 day, const date_time& dt, const std::locale& loc) {
+    auto count = to_string_custom_char_count(format, index, 4_z);
+    if (count == 4) return date_time::sprintf("%A", dt, loc);
+    if (count == 3) return date_time::sprintf("%a", dt, loc);
+    if (count == 2) return string::format("{:D2}", day);
+    return string::format("{:D}", day);
+  }
+  
+  static string to_string_custom_fraction(const string& format, size& index, int64 ticks) {
+    bool remove_trailing_zeros = (format[index] == 'F');
+    auto count = to_string_custom_char_count(format, index, 7_z);
+    auto fraction = ticks % ticks_per_second / static_cast<int64>(math::pow(10, 7 - count));
+    auto result = string::format(string::format("{{:D{}}}", count), fraction);
+    if (!remove_trailing_zeros) return result;
+    while (!string::is_empty(result) && result[result.length() - 1] == '0')
+      result = result.substr(0, result.length() - 1);
+    return result;
+  }
+  
+  static string to_string_custom_hour(const string& format, size& index, uint32 hour) {
+    auto count = to_string_custom_char_count(format, index, 2_z);
+    if (count == 2) return string::format("{:D2}", hour);
+    return string::format("{:D}", hour);
+  }
+  
+  static string to_string_custom_minute(const string& format, size& index, uint32 minute) {
+    auto count = to_string_custom_char_count(format, index, 2_z);
+    if (count == 2) return string::format("{:D2}", minute);
+    return string::format("{:D}", minute);
+  }
+  
+  static string to_string_custom_month(const string& format, size& index, uint32 month, const date_time& dt, const std::locale& loc) {
+    auto count = to_string_custom_char_count(format, index, 4_z);
+    if (count == 4) return date_time::sprintf("%B", dt, loc);
+    if (count == 3) return date_time::sprintf("%b", dt, loc);
+    if (count == 2) return string::format("{:D2}", month);
+    return string::format("{:D}", month);
+  }
+  
+  static string to_string_custom_offset_utc(const string& format, size& index, int64 offset_sec) {
+    auto count = to_string_custom_char_count(format, index, 3_z);
+    if (count == 3) return string::format("{}{:D2}:{:D2}", offset_sec >= 0 ? "+" : "", offset_sec / 3600, math::abs(offset_sec % 3600) / 60);
+    if (count == 2) return string::format("{}{:D2}", offset_sec >= 0 ? "+" : "", offset_sec / 3600);
+    return string::format("{}{:D}", offset_sec >= 0 ? "+" : "", offset_sec / 3600);
+  }
+  
+  static string to_string_custom_second(const string& format, size& index, uint32 second) {
+    auto count = to_string_custom_char_count(format, index, 2_z);
+    if (count == 2) return string::format("{:D2}", second);
+    return string::format("{:D}", second);
+  }
+  
+  static string to_string_custom_time_suffix(const string& format, size& index, uint32 hour, const date_time& dt, const std::locale& loc) {
+    auto count = to_string_custom_char_count(format, index, 2_z);
+    auto ampm = date_time::sprintf("%p", dt, loc);
+    if (string::is_empty(ampm)) ampm = date_time::sprintf("%p", dt, std::locale("en_US"));
+    if (string::is_empty(ampm)) ampm = hour / 12 ? "PM" : "AM";
+    if (count == 2) return ampm;
+    return string::format("{}", ampm[0]);
+  }
+  
+  static string to_string_custom_time_zone_information(const string& format, size& index, date_time_kind kind, int64 offset_sec) {
+    auto tmp_index = 0_z;
+    return kind == date_time_kind::local ? to_string_custom_offset_utc("zzz", tmp_index, offset_sec) : "Z";
+  }
+  
+  static string to_string_custom_year(const string& format, size& index, uint32 year) {
+    auto count = to_string_custom_char_count(format, index, 4_z);
+    if (count >= 3) return string::format("{:D4}", year);
+    return string::format("{:D2}", year % 100);
+  }
 }
 
 const date_time date_time::max_value {max_ticks};
@@ -263,13 +343,13 @@ date_time date_time::add_months(int32 months) const {
   if (months < -120000 || months > 120000) throw_helper::throws(exception_case::argument_out_of_range);
   
   [[maybe_unused]] auto [year, month, day, hour, minute, second, day_of_year, day_of_week] = get_date_time();
-  auto i = as<int32>(month - 1 + months);
-  if (i >= 0) {
-    month = as<uint32>(i % 12 + 1);
-    year = year + as<uint32>(i / 12);
+  auto index = as<int32>(month - 1 + months);
+  if (index >= 0) {
+    month = as<uint32>(index % 12 + 1);
+    year = year + as<uint32>(index / 12);
   } else {
-    month = as<uint32>(12 + (i + 1) % 12);
-    year = year + as<uint32>((i - 11) / 12);
+    month = as<uint32>(12 + (index + 1) % 12);
+    year = year + as<uint32>((index - 11) / 12);
   }
   if (year < 1u || year > 9999u) throw_helper::throws(exception_case::argument_out_of_range);
   auto days = as<uint32>(days_in_month(year, month));
@@ -395,8 +475,12 @@ date_time date_time::specify_kind(const date_time& value, date_time_kind kind) {
 }
 
 string date_time::sprintf(const string& format, const date_time& value) {
+  return sprintf(format, value, std::locale {});
+}
+
+string date_time::sprintf(const string& format, const date_time& value, const std::locale& loc) {
   auto result = std::stringstream {};
-  result.imbue(std::locale());
+  result.imbue(loc);
   auto tm_value = value.to_tm();
   result << std::put_time(&tm_value, format.chars().c_str());
   return result.str();
@@ -665,59 +749,24 @@ void date_time::set_date_time(uint32 year, uint32 month, uint32 day, uint32 hour
 
 string date_time::to_string_custom(const string& format, const std::locale& loc) const {
   [[maybe_unused]] auto [year, month, day, hour, minute, second, day_of_year, day_of_week] = get_date_time();
-  auto utc = to_universal_time();
   auto offset_sec = kind_ == date_time_kind::utc ? 0 : utc_offset().count() / ticks_per_second;
 
   string result;
-  for (auto i = 0_z; i < format.length(); ++i) {
-    switch (format[i]) {
-      case 'y':
-        if (i + 3 < format.length() && format.substr(i, 4) == "yyyy") {result += string::format("{:D4}", year); i += 3;}
-        else if (i+1 < format.length() && format.substr(i, 2) == "yy") {result += string::format("{:D2}", year % 100); i += 1;}
-        break;
-      case 'M':
-        if (i + 1 < format.length() && format.substr(i, 2) == "MM") {result += string::format("{:D2}", month); i += 1;}
-        else if (i+2 < format.length() && format.substr(i, 3) == "MMM") {result += sprintf("%b", self_); i += 2;}
-        else if (i+3 < format.length() && format.substr(i, 4) == "MMMM") {result += sprintf("%B", self_); i += 3;}
-        break;
-      case 'd':
-        if (i + 1 < format.length() && format.substr(i, 2) == "dd") {result += string::format("{:D2}", day); i += 1;}
-        else result += string::format("{:D}", day);
-        break;
-      case 'H':
-        if (i + 1 < format.length() && format.substr(i, 2) == "HH") {result += string::format("{:D2}", hour); i += 1;}
-        else result += string::format("{:D}", hour);
-        break;
-      case 'h':
-        if (i + 1 < format.length() && format.substr(i, 2) == "hh") {result += string::format("{:D2}", hour % 12 == 0 && hour != 0 ? 12 : hour % 12); i += 1;}
-        else result += string::format("{:D}", hour % 12 == 0 && hour != 0 ? 12 : hour % 12);
-        break;
-      case 'm':
-        if (i + 1 < format.length() && format.substr(i, 2) == "mm") {result += string::format("{:D2}", minute); i += 1;}
-        else result += string::format("{:D}", minute);
-        break;
-      case 's':
-        if (i + 1 < format.length() && format.substr(i, 2) == "ss") {result += string::format("{:D2}", second); i += 1;}
-        else result += string::format("{:D}", second);
-        break;
-      case 'f': {
-        auto count = 1_z;
-        while (i + count < format.length() && format[i + count] == 'f') count++;
-        result += string::format(string::format("{{:D{}}}", math::min(7_z, count)), value_.count() % ticks_per_second / static_cast<int64>(math::pow(10, 7 - math::min(7_z, count))));
-        i += count - 1;
-      }
-        break;
-      case 't':
-        if (i + 1 < format.length() && format.substr(i, 2) == "tt") {result += hour / 12 ? "PM" : "AM"; i += 1;}
-        else  result += (hour / 12 ? 'P' : 'A');
-        break;
-      case 'z':
-        if (i + 2 < format.length() && format.substr(i, 3) == "zzz") {result += string::format("{:+03}:{:02}", offset_sec / 3600, std::abs(offset_sec % 3600) / 60); i += 2;}
-        else if (i + 1 < format.length() && format.substr(i, 2) == "zz") {result += string::format("{:+03}", offset_sec / 3600); i += 1;}
-        else result += string::format("{:+03}", offset_sec / 3600);
-        break;
-      case 'Z': result += kind_ == date_time_kind::local ? "LOCAL" : "UTC"; break;
-      default: result += format[i]; break;
+  for (auto index = 0_z; index < format.length(); ++index) {
+    switch (format[index]) {
+      case 'd': result += to_string_custom_day(format, index, day, self_, loc); break;
+      case 'f':
+      case 'F': result += to_string_custom_fraction(format, index, ticks()); break;
+      case 'h': result += to_string_custom_hour(format, index, hour % 12 == 0 && hour != 0 ? 12 : hour % 12); break;
+      case 'H': result += to_string_custom_hour(format, index, hour); break;
+      case 'K': result += to_string_custom_time_zone_information(format, index, kind_, offset_sec); break;
+      case 'm': result += to_string_custom_minute(format, index, minute); break;
+      case 'M': result += to_string_custom_month(format, index, month, self_, loc); break;
+      case 's': result += to_string_custom_second(format, index, second); break;
+      case 't': result += to_string_custom_time_suffix(format, index, hour, self_, loc); break;
+      case 'y': result += to_string_custom_year(format, index, year); break;
+      case 'z': result += to_string_custom_offset_utc(format, index, offset_sec); break;
+      default: result += format[index]; break;
     }
   }
   
