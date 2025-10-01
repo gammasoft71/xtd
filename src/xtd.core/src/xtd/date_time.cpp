@@ -460,7 +460,7 @@ string date_time::to_string(const string& format) const {
 string date_time::to_string(const string& format, const std::locale& loc) const {
   auto fmt = format;
   if (xtd::string::is_empty(fmt)) fmt = "G";
-  if (fmt.length() > 1) throw_helper::throws(exception_case::format, "Invalid format"_t);
+  if (fmt.length() > 1) to_string_custom(format, loc);
   
   [[maybe_unused]] auto [year, month, day, hour, minute, second, day_of_year, day_of_week] = get_date_time();
   [[maybe_unused]] auto [utc_year, utc_month, utc_day, utc_hour, utc_minute, utc_second, utc_day_of_year, utc_day_of_week] = to_universal_time().get_date_time();
@@ -659,4 +659,8 @@ void date_time::set_date_time(uint32 year, uint32 month, uint32 day, uint32 hour
   days += (year * days_per_year) + (year / 4) - (year / 100) + (year / 400);
   value_ = xtd::ticks(days * ticks_per_day + hour * ticks_per_hour + minute * ticks_per_minute + second * ticks_per_second + millisecond * ticks_per_millisecond);
   kind_ = kind;
+}
+
+string date_time::to_string_custom(const string& format, const std::locale& loc) const {
+  throw_helper::throws(exception_case::format, "Invalid format"_t)
 }
