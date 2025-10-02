@@ -16,7 +16,7 @@ public:
     console::write_line();
 
     // Create an array of some custom format strings.
-    auto custom_fmts = {"%I:%M:%S %p", "%e %b %G", "%H:%M:%S", "%%Month: %m", "%H:%M:%S%z"};
+    auto custom_fmts = {"%I:%M:%S %p", "%e %b %G", "%H:%M:%S", "%e %b %H:%M:%S", "%%Month: %m", "%H:%M:%S%z"};
     // Output date and time using each custom format string.
     for (auto custom_fmt : custom_fmts)
       console::write_line("'{0}': {1}", custom_fmt, date_time::sprintf(custom_fmt, date_value));
@@ -84,5 +84,6 @@ startup_(program::main);
 // '%I:%M:%S %p': 09:15:07 PM
 // '%e %b %G': 15 Jun 2008
 // '%H:%M:%S': 21:15:07
+// '%e %b %H:%M:%S': 15 Jun 21:15:07
 // '%%Month: %m': %Month: 06
 // '%H:%M:%S%z': 21:15:07+0100
