@@ -3,55 +3,19 @@
 class program {
 public:
   static auto main() {
-    auto date1 = date_time {2008, 4, 1, 18, 7, 5, 16};
-    console::write_line(date1.to_string("a")); // PM
-    console::write_line(date1.to_string("b")); // 016
-    console::write_line(date1.to_string("B")); // 16
-    console::write_line(date1.to_string("c")); // 0160000
-    console::write_line(date1.to_string("c")); // 160000
-    console::write_line(date1.to_string("d")); // 04/01/2008
-    console::write_line(date1.to_string("D")); // 4/01/2008
-    console::write_line(date1.to_string("e")); // 05
-    console::write_line(date1.to_string("E")); // 5
-    console::write_line(date1.to_string("f")); // Tue Apr  1 18:07:05 2008
-    console::write_line(date1.to_string("F")); // Tue Apr  1 18:07:05 2008
-    console::write_line(date1.to_string("g")); // Tue Apr  1 18:07:05 2008
-    console::write_line(date1.to_string("G")); // 2008-04-01 18:07:05
-    console::write_line(date1.to_string("h")); // Tue
-    console::write_line(date1.to_string("H")); // Tuesday
-    console::write_line(date1.to_string("i")); // 01
-    console::write_line(date1.to_string("I")); // 1
-    console::write_line(date1.to_string("j")); // Apr
-    console::write_line(date1.to_string("J")); // April
-    console::write_line(date1.to_string("k")); // 04
-    console::write_line(date1.to_string("K")); // 4
-    console::write_line(date1.to_string("l")); // 08
-    console::write_line(date1.to_string("L")); // 2008
-    console::write_line(date1.to_string("m")); // 2008
-    console::write_line(date1.to_string("M")); // April 1
-    console::write_line(date1.to_string("n")); // Tuesday, 1 April 2008
-    console::write_line(date1.to_string("N")); // Tuesday, 1 April 2008 18:07:05
-    console::write_line(date1.to_string("o")); // 1 April 2008
-    console::write_line(date1.to_string("O")); // 1 April 2008
-    console::write_line(date1.to_string("p")); // 07
-    console::write_line(date1.to_string("P")); // 7
-    console::write_line(date1.to_string("s")); // 2008-04-01T18:07:05.0160000
-    console::write_line(date1.to_string("t")); // 18:07:05
-    console::write_line(date1.to_string("T")); // 18:07:05
-    console::write_line(date1.to_string("u")); // 2008-04-01 18:07:05
-    console::write_line(date1.to_string("U")); // Tuesday, 1 April 2008 18:07:05
-    console::write_line(date1.to_string("v")); // 18:07
-    console::write_line(date1.to_string("V")); // 18:07
-    console::write_line(date1.to_string("w")); // 18
-    console::write_line(date1.to_string("W")); // 18
-    console::write_line(date1.to_string("x")); // 06
-    console::write_line(date1.to_string("X")); // 6
-    console::write_line(date1.to_string("y")); // April 8
-    console::write_line(date1.to_string("Y")); // April 2008
-    console::write_line(date1.to_string("z")); // UTC
-    console::write_line(date1.to_string("Z")); // UTC
+    auto date_value = date_time {2008, 6, 15, 21, 15, 07};
+    // Create an array of standard format strings.
+    auto standard_fmts = {"d", "D", "f", "F", "g", "G", "m", "o", "R", "s", "t", "T", "u", "U", "y"};
+    // Output date and time using each standard format string.
+    for (auto standard_fmt : standard_fmts)
+      console::write_line("{}: {}", standard_fmt, date_value.to_string(standard_fmt));
+    console::write_line();
     
-    // Other format generate a xtd::format_exception exception
+    // Create an array of some custom format strings.
+    auto custom_fmts = {"h:mm:ss.ff t", "d MMM yyyy", "HH:mm:ss.f", "dd MMM HH:mm:ss", "\\Mon\\t\\h\\: M", "HH:mm:ss.ffffzzz"};
+    // Output date and time using each custom format string.
+    for (auto custom_fmt : custom_fmts)
+      console::write_line("'{0}': {1}", custom_fmt, date_value.to_string(custom_fmt));
   }
 };
 
@@ -59,49 +23,25 @@ startup_(program::main);
 
 // This code produces the following output :
 //
-// PM
-// 016
-// 16
-// 0160000
-// 160000
-// 04/01/2008
-// 4/01/2008
-// 05
-// 5
-// Tue Apr  1 18:07:05 2008
-// Tue Apr  1 18:07:05 2008
-// Tue Apr  1 18:07:05 2008
-// 2008-04-01 18:07:05
-// Tue
-// Tuesday
-// 01
-// 1
-// Apr
-// April
-// 04
-// 4
-// 08
-// 2008
-// 2008
-// April 1
-// Tuesday, 1 April 2008
-// Tuesday, 1 April 2008 18:07:05
-// 1 April 2008
-// 1 April 2008
-// 07
-// 7
-// 2008-04-01T18:07:05.0160000
-// 18:07:05
-// 18:07:05
-// 2008-04-01 18:07:05
-// Tuesday, 1 April 2008 18:07:05
-// 18:07
-// 18:07
-// 18
-// 18
-// 06
-// 6
-// April 8
-// April 2008
-// UTC
-// UTC
+// d: 6/15/2008
+// D: Sunday, June 15, 2008
+// f: Sunday, June 15, 2008 21:15
+// F: Sunday, June 15, 2008 21:15:07
+// g: 6/15/2008 21:15
+// G: 6/15/2008 21:15:07
+// m: June 15
+// o: 2008-06-15T21:15:07.0000000Z
+// R: Sun, 15 Jun 2008 21:15:07 G6T
+// s: 2008-06-15T21:15:07
+// t: 21:15
+// T: 21:15:07
+// u: 2008-06-15 21:15:07Z
+// U: Sunday, June 15, 2008 21:15:07
+// y: June 2008
+//
+// 'h:mm:ss.ff t': 9:15:07.00 P
+// 'd MMM yyyy': 15 Jun 2008
+// 'HH:mm:ss.f': 21:15:07.0
+// 'dd MMM HH:mm:ss': 15 Jun 21:15:07
+// '\Mon\t\h\: M': Month: 6
+// 'HH:mm:ss.ffffzzz': 21:15:07.0000+02:00

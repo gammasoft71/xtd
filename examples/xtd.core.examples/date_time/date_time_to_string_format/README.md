@@ -18,42 +18,26 @@ xtdc run
 ## Output
 
 ```
-PM
-04/01/2008
-4/01/2008
-Tue Apr  1 18:07:05 2008
-Tue Apr  1 18:07:05 2008
-Tue Apr  1 18:07:05 2008
-2008-04-01 18:07:05
-Tue
-Tuesday
-01
-1
-Apr
-April
-04
-4
-08
-2008
-April 1
-April 1
-Tuesday, 1 April 2008
-Tuesday, 1 April 2008 18:07:05
-1 April 2008
-1 April 2008
-2008-04-01T18:07:05
-18:07:05
-18:07:05
-2008-04-01 18:07:05
-Tuesday, 1 April 2008 18:07:05
-18:07
-18:07
-18
-18
-06
-6
-April 8
-April 2008
-UTC
-UTC
+d: 6/15/2008
+D: Sunday, June 15, 2008
+f: Sunday, June 15, 2008 21:15
+F: Sunday, June 15, 2008 21:15:07
+g: 6/15/2008 21:15
+G: 6/15/2008 21:15:07
+m: June 15
+o: 2008-06-15T21:15:07.0000000Z
+R: Sun, 15 Jun 2008 21:15:07 G6T
+s: 2008-06-15T21:15:07
+t: 21:15
+T: 21:15:07
+u: 2008-06-15 21:15:07Z
+U: Sunday, June 15, 2008 21:15:07
+y: June 2008
+
+'h:mm:ss.ff t': 9:15:07.00 P
+'d MMM yyyy': 15 Jun 2008
+'HH:mm:ss.f': 21:15:07.0
+'dd MMM HH:mm:ss': 15 Jun 21:15:07
+'\Mon\t\h\: M': Month: 6
+'HH:mm:ss.ffffzzz': 21:15:07.0000+02:00
 ```
