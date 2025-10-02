@@ -99,181 +99,230 @@ namespace xtd::tests {
       std::locale::global(previous_locale);
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_default_argument) {
-      assert::are_equal(u8"2019-01-02 03:04:05", format(u8"{0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    void test_method_(format_with_none) {
+      assert::are_equal(u8"1/2/2019 03:04", format(u8"{}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_left_alignment) {
-      assert::are_equal(u8"                2019-01-02 03:04:05", format(u8"{0, 35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    void test_method_(format_with_sequence_number) {
+      assert::are_equal(u8"1/2/2019 03:04", format(u8"{0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_left_alignment_wth_plus) {
-      assert::are_equal(u8"                2019-01-02 03:04:05", format(u8"{0,+35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    void test_method_(format_with_none_and_left_alignment) {
+      assert::are_equal(u8"                     1/2/2019 03:04", format(u8"{, 35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_left_to_zero) {
-      assert::are_equal(u8"2019-01-02 03:04:05", format(u8"{0,0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    void test_method_(format_with_none_and_left_alignment_2) {
+      assert::are_equal(u8"                     1/2/2019 03:04", format(u8"{, +35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_right_alignment) {
-      assert::are_equal(u8"2019-01-02 03:04:05                ", format(u8"{0,-35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    void test_method_(format_with_sequence_number_and_left_alignment) {
+      assert::are_equal(u8"                     1/2/2019 03:04", format(u8"{0, 35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_right_alignment_to_zero) {
-      assert::are_equal(u8"2019-01-02 03:04:05", format(u8"{0,-0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    void test_method_(format_with_sequence_number_and_left_alignment_2) {
+      assert::are_equal(u8"                     1/2/2019 03:04", format(u8"{0, +35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_alignment_empty) {
-      assert::are_equal(u8"2019-01-02 03:04:05", format(u8"{0,}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    void test_method_(format_with_none_and_left_alignment_to_zero) {
+      assert::are_equal(u8"1/2/2019 03:04", format(u8"{, 0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_alignment_invalid) {
+    void test_method_(format_with_none_and_left_alignment_to_zero_2) {
+      assert::are_equal(u8"1/2/2019 03:04", format(u8"{, +0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_with_sequence_number_and_left_alignment_to_zero) {
+      assert::are_equal(u8"1/2/2019 03:04", format(u8"{0, 0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_with_sequence_number_and_left_alignment_to_zero_2) {
+      assert::are_equal(u8"1/2/2019 03:04", format(u8"{0, +0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_with_none_and__right_alignment) {
+      assert::are_equal(u8"1/2/2019 03:04                     ", format(u8"{,-35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_with_sequence_number_and__right_alignment) {
+      assert::are_equal(u8"1/2/2019 03:04                     ", format(u8"{0,-35}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_with_none_and_right_alignment_to_zero) {
+      assert::are_equal(u8"1/2/2019 03:04", format(u8"{, 0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_with_sequence_number_and_right_alignment_to_zero) {
+      assert::are_equal(u8"1/2/2019 03:04", format(u8"{0, 0}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_with_none_and_right_alignment_empty) {
+      assert::are_equal(u8"1/2/2019 03:04", format(u8"{,}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_with_sequence_number_and_right_alignment_empty) {
+      assert::are_equal(u8"1/2/2019 03:04", format(u8"{0,}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_with_none_and_alignment_invalid) {
+      assert::throws<format_exception>([] {format(u8"{,a}", make_time<value_t>(2019, 1, 2, 3, 4, 5));});
+      assert::throws<format_exception>([] {format(u8"{, }", make_time<value_t>(2019, 1, 2, 3, 4, 5));});
+    }
+    
+    void test_method_(format_with_sequence_number_and_alignment_invalid) {
       assert::throws<format_exception>([] {format(u8"{0,a}", make_time<value_t>(2019, 1, 2, 3, 4, 5));});
+      assert::throws<format_exception>([] {format(u8"{0, }", make_time<value_t>(2019, 1, 2, 3, 4, 5));});
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_date_argument_and_zero_fill) {
-      assert::are_equal(u8"01/02/2019", format(u8"{0:d}", make_time<value_t>(2019, 1, 2)));
+    void test_method_(format_short_date_with_none) {
+      assert::are_equal(u8"1/2/2019", format(u8"{:d}", make_time<value_t>(2019, 1, 2)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_date_argument) {
-      assert::are_equal(u8"1/02/2019", format(u8"{0:D}", make_time<value_t>(2019, 1, 2)));
+    void test_method_(format_short_date_with_sequence_number) {
+      assert::are_equal(u8"1/2/2019", format(u8"{0:d}", make_time<value_t>(2019, 1, 2)));
     }
     
-    void test_method_(format_date_time_utc_with_std_tm_with_alternative_full_date_time_argument) {
-      #if defined(__APPLE__)
-      assert::are_equal(u8"Wed Jan  2 03:04:05 2019", format(u8"{0:f}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
-      #elif defined(_WIN32)
-      assert::are_equal(u8"1/2/2019 3:04:05 AM", format(u8"{0:f}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
-      #else
-      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", format(u8"{0:f}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
-      #endif
+    void test_method_(format_long_date_with_none) {
+      assert::are_equal(u8"Wednesday, January 2, 2019", format(u8"{:D}", make_time<value_t>(2019, 1, 2)));
     }
     
-    void test_method_(format_date_time_utc_with_std_tm_with_full_date_time_argument) {
-      #if defined(__APPLE__)
-      assert::are_equal(u8"Wed Jan  2 03:04:05 2019", format(u8"{0:F}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
-      #elif defined(_WIN32)
-      assert::are_equal(u8"1/2/2019 3:04:05 AM", format(u8"{0:F}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
-      #else
-      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", format(u8"{0:F}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
-      #endif
+    void test_method_(format_long_date_with_sequence_number) {
+      assert::are_equal(u8"Wednesday, January 2, 2019", format(u8"{0:D}", make_time<value_t>(2019, 1, 2)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_alternative_general_argument) {
-      #if defined(__APPLE__)
-      assert::are_equal(u8"Wed Jan  2 03:04:05 2019", format(u8"{0:g}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
-      #elif defined(_WIN32)
-      assert::are_equal(u8"1/2/2019 3:04:05 AM", format(u8"{0:g}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
-      #else
-      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", format(u8"{0:g}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
-      #endif
+    void test_method_(format_full_date_short_time_with_none) {
+      assert::are_equal(u8"Wednesday, January 2, 2019 03:04", format(u8"{:f}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_general_argument) {
-      assert::are_equal(u8"2019-01-02 03:04:05", format(u8"{0:G}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    void test_method_(format_full_date_short_time_with_sequence_number) {
+      assert::are_equal(u8"Wednesday, January 2, 2019 03:04", format(u8"{0:f}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_brief_weekday_name_argument) {
-      assert::are_equal(u8"Wed", format(u8"{0:h}", make_time<value_t>(2019, 1, 2)));
+    void test_method_(format_full_date_long_time_with_none) {
+      assert::are_equal(u8"Wednesday, January 2, 2019 03:04:05", format(u8"{:F}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_weekday_name_argument) {
-      assert::are_equal(u8"Wednesday", format(u8"{0:H}", make_time<value_t>(2019, 1, 2)));
+    void test_method_(format_full_date_long_time_with_sequence_number) {
+      assert::are_equal(u8"Wednesday, January 2, 2019 03:04:05", format(u8"{0:F}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_day_argument_and_zero_fill) {
-      assert::are_equal(u8"02", format(u8"{0:i}", make_time<value_t>(2019, 1, 2)));
+    void test_method_(format_general_short_with_none) {
+      assert::are_equal(u8"1/2/2019 03:04", format(u8"{:g}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_day_argument) {
-      assert::are_equal(u8"2", format(u8"{0:I}", make_time<value_t>(2019, 1, 2)));
+    void test_method_(format_general_short_with_sequence_number) {
+      assert::are_equal(u8"1/2/2019 03:04", format(u8"{0:g}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_brief_month_name_argument) {
-      assert::are_equal(u8"Jan", format(u8"{0:j}", make_time<value_t>(2019, 1, 2)));
+    void test_method_(format_general_long_with_none) {
+      assert::are_equal(u8"1/2/2019 03:04:05", format(u8"{:G}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_month_name_argument) {
-      assert::are_equal(u8"January", format(u8"{0:J}", make_time<value_t>(2019, 1, 2)));
+    void test_method_(format_general_long_with_sequence_number) {
+      assert::are_equal(u8"1/2/2019 03:04:05", format(u8"{0:G}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_month_argument_and_zero_fill) {
-      assert::are_equal(u8"01", format(u8"{0:k}", make_time<value_t>(2019, 1, 2)));
+    void test_method_(format_month_day_with_none) {
+      assert::are_equal(u8"January 2", format(u8"{:m}", make_time<value_t>(2019, 1, 2)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_month_argument) {
-      assert::are_equal(u8"1", format(u8"{0:K}", make_time<value_t>(2019, 1, 2)));
+    void test_method_(format_month_day_with_none_2) {
+      assert::are_equal(u8"January 2", format(u8"{:M}", make_time<value_t>(2019, 1, 2)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_year_on_two_digits_argument) {
-      assert::are_equal(u8"19", format(u8"{0:l}", make_time<value_t>(2019, 1, 2)));
+    void test_method_(format_month_day_with_sequence_number) {
+      assert::are_equal(u8"January 2", format(u8"{0:m}", make_time<value_t>(2019, 1, 2)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_year_argument) {
-      assert::are_equal(u8"2019", format(u8"{0:L}", make_time<value_t>(2019, 1, 2)));
-    }
-    
-    void test_method_(format_date_time_local_with_std_tm_with_month_and_day_argument) {
+    void test_method_(format_month_day_with_sequence_number_2) {
       assert::are_equal(u8"January 2", format(u8"{0:M}", make_time<value_t>(2019, 1, 2)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_natural_date_argument) {
-      assert::are_equal(u8"Wednesday, 2 January 2019", format(u8"{0:n}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    void test_method_(format_iso_8601_with_none) {
+      assert::are_equal(u8"2019-01-02T03:04:05.0000000Z", format(u8"{:o}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_natural_date_time_argument) {
-      assert::are_equal(u8"Wednesday, 2 January 2019 3:04:05", format(u8"{0:N}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    void test_method_(format_iso_8601_with_none_2) {
+      assert::are_equal(u8"2019-01-02T03:04:05.0000000Z", format(u8"{:O}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_ordinary_date_argument) {
-      assert::are_equal(u8"2 January 2019", format(u8"{0:O}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    void test_method_(format_iso_8601_with_sequence_number) {
+      assert::are_equal(u8"2019-01-02T03:04:05.0000000Z", format(u8"{0:o}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_sortable_argument) {
-      assert::are_equal(u8"2019-01-02T03:04:05.0000000", format(u8"{0:s}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    void test_method_(format_iso_8601_with_sequence_number_2) {
+      assert::are_equal(u8"2019-01-02T03:04:05.0000000Z", format(u8"{0:O}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_time_argument_and_zero_fill) {
-      assert::are_equal(u8"03:04:05", format(u8"{0:t}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    void test_method_(format_rfc1123_with_none) {
+      assert::are_equal(u8"Wed, 02 Jan 2019 03:04:05 G1T", format(u8"{:r}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_time_argument) {
-      assert::are_equal(u8"3:04:05", format(u8"{0:T}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    void test_method_(format_rfc1123_with_none_2) {
+      assert::are_equal(u8"Wed, 02 Jan 2019 03:04:05 G1T", format(u8"{:R}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_alternative_universale_argument_and_zero_fill) {
-      assert::are_equal(u8"2019-01-02 03:04:05", format(u8"{0:u}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    void test_method_(format_rfc1123_with_sequence_number) {
+      assert::are_equal(u8"Wed, 02 Jan 2019 03:04:05 G1T", format(u8"{0:r}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_universale_argument_and_zero_fill) {
-      assert::are_equal(u8"Wednesday, 2 January 2019 3:04:05", format(u8"{0:U}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    void test_method_(format_rfc1123_with_sequence_number_2) {
+      assert::are_equal(u8"Wed, 02 Jan 2019 03:04:05 G1T", format(u8"{0:R}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_time_without_seconds_argument_and_zero_fill) {
-      assert::are_equal(u8"03:04", format(u8"{0:v}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    void test_method_(format_sortable_with_none) {
+      assert::are_equal(u8"2019-01-02T03:04:05", format(u8"{:s}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_time_without_seconds_argument) {
-      assert::are_equal(u8"3:04", format(u8"{0:V}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    void test_method_(format_sortable_with_sequence_number) {
+      assert::are_equal(u8"2019-01-02T03:04:05", format(u8"{0:s}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_month_and_year_on_two_digits_argument) {
-      assert::are_equal(u8"January 19", format(u8"{0:y}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    void test_method_(format_short_time_with_none) {
+      assert::are_equal(u8"03:04", format(u8"{:t}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
     }
     
-    void test_method_(format_date_time_local_with_std_tm_with_month_and_year_argument) {
+    void test_method_(format_short_time_with_sequence_number) {
+      assert::are_equal(u8"03:04", format(u8"{0:t}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_long_time_with_none) {
+      assert::are_equal(u8"03:04:05", format(u8"{:T}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_long_time_with_sequence_number) {
+      assert::are_equal(u8"03:04:05", format(u8"{0:T}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_universal_sortable_with_none) {
+      assert::are_equal(u8"2019-01-02 03:04:05Z", format(u8"{:u}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_universal_sortable_with_sequence_number) {
+      assert::are_equal(u8"2019-01-02 03:04:05Z", format(u8"{0:u}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_universal_full_with_none) {
+      assert::are_equal(u8"Wednesday, January 2, 2019 03:04:05", format(u8"{:U}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_universal_full_with_sequence_number) {
+      assert::are_equal(u8"Wednesday, January 2, 2019 03:04:05", format(u8"{0:U}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_year_month_with_none) {
+      assert::are_equal(u8"January 2019", format(u8"{:y}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_year_month_with_none_2) {
+      assert::are_equal(u8"January 2019", format(u8"{:Y}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_year_month_with_sequence_number) {
+      assert::are_equal(u8"January 2019", format(u8"{0:y}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
+    }
+    
+    void test_method_(format_year_month_with_sequence_number_2) {
       assert::are_equal(u8"January 2019", format(u8"{0:Y}", make_time<value_t>(2019, 1, 2, 3, 4, 5)));
-    }
-    
-    void test_method_(format_date_time_local_with_std_tm_with_time_zone_argument) {
-      #if defined(__APPLE__)
-      assert::are_equal(u8"UTC", format(u8"{0:Z}", to_universal_time(make_time<value_t>(2019, 1, 2, 3, 4, 5))));
-      #elif defined(_WIN32)
-      // This test is commented, because the result is time zone dependent.
-      // assert::are_equal(u8"Coordinated Universal time_t", format(u8"{0:Z}", to_universal_time(make_time<value_t>(2019, 1, 2, 3, 4, 5))));
-      #else
-      assert::are_equal(u8"GMT", format(u8"{0:Z}", to_universal_time(make_time<value_t>(2019, 1, 2, 3, 4, 5))));
-      #endif
     }
   };
 }
