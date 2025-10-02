@@ -102,60 +102,23 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> date1 = date_time {2008, 4, 1, 18, 7, 5, 16};</div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%a&quot;</span>, date1));  <span class="comment">// Tue</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%A&quot;</span>, date1));  <span class="comment">// Tuesday</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%b&quot;</span>, date1));  <span class="comment">// Apr</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%B&quot;</span>, date1));  <span class="comment">// April</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%c&quot;</span>, date1));  <span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%C&quot;</span>, date1));  <span class="comment">// 20</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%d&quot;</span>, date1));  <span class="comment">// 01</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%D&quot;</span>, date1));  <span class="comment">// 04/01/08</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%e&quot;</span>, date1));  <span class="comment">//  1</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%Ec&quot;</span>, date1)); <span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%EC&quot;</span>, date1)); <span class="comment">// 20</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%Ex&quot;</span>, date1)); <span class="comment">// 04/01/08</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%EX&quot;</span>, date1)); <span class="comment">// 18:07:05</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%Ey&quot;</span>, date1)); <span class="comment">// 08</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%EY&quot;</span>, date1)); <span class="comment">// 2008</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%F&quot;</span>, date1));  <span class="comment">// 2008-04-01</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%g&quot;</span>, date1));  <span class="comment">// 08</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%G&quot;</span>, date1));  <span class="comment">// 2008</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%h&quot;</span>, date1));  <span class="comment">// Apr</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%H&quot;</span>, date1));  <span class="comment">// 18</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%I&quot;</span>, date1));  <span class="comment">// 06</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%j&quot;</span>, date1));  <span class="comment">// 093</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%m&quot;</span>, date1));  <span class="comment">// 04</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%M&quot;</span>, date1));  <span class="comment">// 07</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%p&quot;</span>, date1));  <span class="comment">// PM</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%r&quot;</span>, date1));  <span class="comment">// 06:07:05 PM</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%R&quot;</span>, date1));  <span class="comment">// 18:07</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%S&quot;</span>, date1));  <span class="comment">// 05</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%T&quot;</span>, date1));  <span class="comment">// 18:07:05</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%u&quot;</span>, date1));  <span class="comment">// 2</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%U&quot;</span>, date1));  <span class="comment">// 13</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%V&quot;</span>, date1));  <span class="comment">// 14</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%w&quot;</span>, date1));  <span class="comment">// 2</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%W&quot;</span>, date1));  <span class="comment">// 14</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%x&quot;</span>, date1));  <span class="comment">// 04/01/08</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%X&quot;</span>, date1));  <span class="comment">// 18:07:05</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%y&quot;</span>, date1));  <span class="comment">// 08</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%Y&quot;</span>, date1));  <span class="comment">// 2008</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%z&quot;</span>, date1));  <span class="comment">// +0100</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%Z&quot;</span>, date1));  <span class="comment">// CET</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%Od&quot;</span>, date1)); <span class="comment">// 01</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%Oe&quot;</span>, date1)); <span class="comment">//  1</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%OH&quot;</span>, date1)); <span class="comment">// 18</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%OI&quot;</span>, date1)); <span class="comment">// 06</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%Om&quot;</span>, date1)); <span class="comment">// 04</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%OM&quot;</span>, date1)); <span class="comment">// 07</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%OS&quot;</span>, date1)); <span class="comment">// 05</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%Ou&quot;</span>, date1)); <span class="comment">// 2</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%OU&quot;</span>, date1)); <span class="comment">// 13</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%OV&quot;</span>, date1)); <span class="comment">// 14</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%Ow&quot;</span>, date1)); <span class="comment">// 2</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%OW&quot;</span>, date1)); <span class="comment">// 14</span></div>
-<div class="line">    console::write_line(date_time::sprintf(<span class="stringliteral">&quot;%Oy&quot;</span>, date1)); <span class="comment">// 08</span></div>
+<div class="line">    <span class="keyword">auto</span> date_value = date_time {2008, 6, 15, 21, 15, 07};</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Create an array of standard format strings.</span></div>
+<div class="line">    <span class="keyword">auto</span> standard_fmts = {<span class="stringliteral">&quot;%a&quot;</span>, <span class="stringliteral">&quot;%A&quot;</span>, <span class="stringliteral">&quot;%b&quot;</span>, <span class="stringliteral">&quot;%B&quot;</span>, <span class="stringliteral">&quot;%c&quot;</span>, <span class="stringliteral">&quot;%C&quot;</span>, <span class="stringliteral">&quot;%d&quot;</span>, <span class="stringliteral">&quot;%D&quot;</span>, <span class="stringliteral">&quot;%e&quot;</span>, <span class="stringliteral">&quot;%Ec&quot;</span>, <span class="stringliteral">&quot;%EC&quot;</span>, <span class="stringliteral">&quot;%Ex&quot;</span>, <span class="stringliteral">&quot;%EX&quot;</span>, <span class="stringliteral">&quot;%Ey&quot;</span>,</div>
+<div class="line">      <span class="stringliteral">&quot;%EY&quot;</span>, <span class="stringliteral">&quot;%F&quot;</span>, <span class="stringliteral">&quot;%g&quot;</span>, <span class="stringliteral">&quot;%G&quot;</span>, <span class="stringliteral">&quot;%h&quot;</span>, <span class="stringliteral">&quot;%H&quot;</span>, <span class="stringliteral">&quot;%I&quot;</span>, <span class="stringliteral">&quot;%j&quot;</span>, <span class="stringliteral">&quot;%m&quot;</span>, <span class="stringliteral">&quot;%M&quot;</span>, <span class="stringliteral">&quot;%p&quot;</span>, <span class="stringliteral">&quot;%r&quot;</span>, <span class="stringliteral">&quot;%R&quot;</span>, <span class="stringliteral">&quot;%S&quot;</span>, <span class="stringliteral">&quot;%T&quot;</span>, <span class="stringliteral">&quot;%u&quot;</span>, <span class="stringliteral">&quot;%U&quot;</span>, <span class="stringliteral">&quot;%V&quot;</span>,</div>
+<div class="line">      <span class="stringliteral">&quot;%w&quot;</span>, <span class="stringliteral">&quot;%W&quot;</span>, <span class="stringliteral">&quot;%x&quot;</span>, <span class="stringliteral">&quot;%X&quot;</span>, <span class="stringliteral">&quot;%y&quot;</span>, <span class="stringliteral">&quot;%Y&quot;</span>, <span class="stringliteral">&quot;%z&quot;</span>, <span class="stringliteral">&quot;%Z&quot;</span>, <span class="stringliteral">&quot;%Od&quot;</span>, <span class="stringliteral">&quot;%Oe&quot;</span>, <span class="stringliteral">&quot;%OH&quot;</span>, <span class="stringliteral">&quot;%OI&quot;</span>, <span class="stringliteral">&quot;%Om&quot;</span>, <span class="stringliteral">&quot;%OM&quot;</span>, <span class="stringliteral">&quot;%OS&quot;</span>, <span class="stringliteral">&quot;%Ou&quot;</span>,</div>
+<div class="line">      <span class="stringliteral">&quot;%OU&quot;</span>, <span class="stringliteral">&quot;%OV&quot;</span>, <span class="stringliteral">&quot;%Ow&quot;</span>, <span class="stringliteral">&quot;%OW&quot;</span>, <span class="stringliteral">&quot;%Oy&quot;</span>};</div>
+<div class="line">    <span class="comment">// Output date and time using each standard format string.</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> standard_fmt : standard_fmts)</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{}: {}&quot;</span>, standard_fmt, date_time::sprintf(standard_fmt, date_value));</div>
+<div class="line">    console::write_line();</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Create an array of some custom format strings.</span></div>
+<div class="line">    <span class="keyword">auto</span> custom_fmts = {<span class="stringliteral">&quot;%I:%M:%S %p&quot;</span>, <span class="stringliteral">&quot;%e %b %G&quot;</span>, <span class="stringliteral">&quot;%H:%M:%S&quot;</span>, <span class="stringliteral">&quot;%e %b %H:%M:%S&quot;</span>, <span class="stringliteral">&quot;%%Month: %m&quot;</span>, <span class="stringliteral">&quot;%H:%M:%S%z&quot;</span>};</div>
+<div class="line">    <span class="comment">// Output date and time using each custom format string.</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> custom_fmt : custom_fmts)</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;&#39;{0}&#39;: {1}&quot;</span>, custom_fmt, date_time::sprintf(custom_fmt, date_value));</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -163,65 +126,72 @@ $(function(){ initResizable(false); });
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Tue</span></div>
-<div class="line"><span class="comment">// Tuesday</span></div>
-<div class="line"><span class="comment">// Apr</span></div>
-<div class="line"><span class="comment">// April</span></div>
-<div class="line"><span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line"><span class="comment">// 20</span></div>
-<div class="line"><span class="comment">// 01</span></div>
-<div class="line"><span class="comment">// 04/01/08</span></div>
-<div class="line"><span class="comment">//  1</span></div>
-<div class="line"><span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line"><span class="comment">// 20</span></div>
-<div class="line"><span class="comment">// 04/01/08</span></div>
-<div class="line"><span class="comment">// 18:07:05</span></div>
-<div class="line"><span class="comment">// 08</span></div>
-<div class="line"><span class="comment">// 2008</span></div>
-<div class="line"><span class="comment">// 2008-04-01</span></div>
-<div class="line"><span class="comment">// 08</span></div>
-<div class="line"><span class="comment">// 2008</span></div>
-<div class="line"><span class="comment">// Apr</span></div>
-<div class="line"><span class="comment">// 18</span></div>
-<div class="line"><span class="comment">// 06</span></div>
-<div class="line"><span class="comment">// 093</span></div>
-<div class="line"><span class="comment">// 04</span></div>
-<div class="line"><span class="comment">// 07</span></div>
-<div class="line"><span class="comment">// PM</span></div>
-<div class="line"><span class="comment">// 06:07:05 PM</span></div>
-<div class="line"><span class="comment">// 18:07</span></div>
-<div class="line"><span class="comment">// 05</span></div>
-<div class="line"><span class="comment">// 18:07:05</span></div>
-<div class="line"><span class="comment">// 2</span></div>
-<div class="line"><span class="comment">// 13</span></div>
-<div class="line"><span class="comment">// 14</span></div>
-<div class="line"><span class="comment">// 2</span></div>
-<div class="line"><span class="comment">// 14</span></div>
-<div class="line"><span class="comment">// 04/01/08</span></div>
-<div class="line"><span class="comment">// 18:07:05</span></div>
-<div class="line"><span class="comment">// 08</span></div>
-<div class="line"><span class="comment">// 2008</span></div>
-<div class="line"><span class="comment">// +0100</span></div>
-<div class="line"><span class="comment">// CET</span></div>
-<div class="line"><span class="comment">// 01</span></div>
-<div class="line"><span class="comment">//  1</span></div>
-<div class="line"><span class="comment">// 18</span></div>
-<div class="line"><span class="comment">// 06</span></div>
-<div class="line"><span class="comment">// 04</span></div>
-<div class="line"><span class="comment">// 07</span></div>
-<div class="line"><span class="comment">// 05</span></div>
-<div class="line"><span class="comment">// 2</span></div>
-<div class="line"><span class="comment">// 13</span></div>
-<div class="line"><span class="comment">// 14</span></div>
-<div class="line"><span class="comment">// 2</span></div>
-<div class="line"><span class="comment">// 14</span></div>
-<div class="line"><span class="comment">// 08</span></div>
+<div class="line"><span class="comment">// %a: Sun</span></div>
+<div class="line"><span class="comment">// %A: Sunday</span></div>
+<div class="line"><span class="comment">// %b: Jun</span></div>
+<div class="line"><span class="comment">// %B: June</span></div>
+<div class="line"><span class="comment">// %c: Sun Jun 15 21:15:07 2008</span></div>
+<div class="line"><span class="comment">// %C: 20</span></div>
+<div class="line"><span class="comment">// %d: 15</span></div>
+<div class="line"><span class="comment">// %D: 06/15/08</span></div>
+<div class="line"><span class="comment">// %e: 15</span></div>
+<div class="line"><span class="comment">// %Ec: Sun Jun 15 21:15:07 2008</span></div>
+<div class="line"><span class="comment">// %EC: 20</span></div>
+<div class="line"><span class="comment">// %Ex: 06/15/08</span></div>
+<div class="line"><span class="comment">// %EX: 21:15:07</span></div>
+<div class="line"><span class="comment">// %Ey: 08</span></div>
+<div class="line"><span class="comment">// %EY: 2008</span></div>
+<div class="line"><span class="comment">// %F: 2008-06-15</span></div>
+<div class="line"><span class="comment">// %g: 08</span></div>
+<div class="line"><span class="comment">// %G: 2008</span></div>
+<div class="line"><span class="comment">// %h: Jun</span></div>
+<div class="line"><span class="comment">// %H: 21</span></div>
+<div class="line"><span class="comment">// %I: 09</span></div>
+<div class="line"><span class="comment">// %j: 168</span></div>
+<div class="line"><span class="comment">// %m: 06</span></div>
+<div class="line"><span class="comment">// %M: 15</span></div>
+<div class="line"><span class="comment">// %p: PM</span></div>
+<div class="line"><span class="comment">// %r: 09:15:07 PM</span></div>
+<div class="line"><span class="comment">// %R: 21:15</span></div>
+<div class="line"><span class="comment">// %S: 07</span></div>
+<div class="line"><span class="comment">// %T: 21:15:07</span></div>
+<div class="line"><span class="comment">// %u: 7</span></div>
+<div class="line"><span class="comment">// %U: 24</span></div>
+<div class="line"><span class="comment">// %V: 24</span></div>
+<div class="line"><span class="comment">// %w: 0</span></div>
+<div class="line"><span class="comment">// %W: 24</span></div>
+<div class="line"><span class="comment">// %x: 06/15/08</span></div>
+<div class="line"><span class="comment">// %X: 21:15:07</span></div>
+<div class="line"><span class="comment">// %y: 08</span></div>
+<div class="line"><span class="comment">// %Y: 2008</span></div>
+<div class="line"><span class="comment">// %z: +0100</span></div>
+<div class="line"><span class="comment">// %Z: CET</span></div>
+<div class="line"><span class="comment">// %Od: 15</span></div>
+<div class="line"><span class="comment">// %Oe: 15</span></div>
+<div class="line"><span class="comment">// %OH: 21</span></div>
+<div class="line"><span class="comment">// %OI: 09</span></div>
+<div class="line"><span class="comment">// %Om: 06</span></div>
+<div class="line"><span class="comment">// %OM: 15</span></div>
+<div class="line"><span class="comment">// %OS: 07</span></div>
+<div class="line"><span class="comment">// %Ou: 7</span></div>
+<div class="line"><span class="comment">// %OU: 24</span></div>
+<div class="line"><span class="comment">// %OV: 24</span></div>
+<div class="line"><span class="comment">// %Ow: 0</span></div>
+<div class="line"><span class="comment">// %OW: 24</span></div>
+<div class="line"><span class="comment">// %Oy: 08</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// &#39;%I:%M:%S %p&#39;: 09:15:07 PM</span></div>
+<div class="line"><span class="comment">// &#39;%e %b %G&#39;: 15 Jun 2008</span></div>
+<div class="line"><span class="comment">// &#39;%H:%M:%S&#39;: 21:15:07</span></div>
+<div class="line"><span class="comment">// &#39;%e %b %H:%M:%S&#39;: 15 Jun 21:15:07</span></div>
+<div class="line"><span class="comment">// &#39;%%Month: %m&#39;: %Month: 06</span></div>
+<div class="line"><span class="comment">// &#39;%H:%M:%S%z&#39;: 21:15:07+0100</span></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 30 2025 17:53:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Oct 2 2025 23:53:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

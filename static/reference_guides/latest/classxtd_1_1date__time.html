@@ -479,6 +479,9 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <tr class="memitem:a58209959ca12a3589fa44ea680eddd47" id="r_a58209959ca12a3589fa44ea680eddd47"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58209959ca12a3589fa44ea680eddd47">sprintf</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, const <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;value)</td></tr>
 <tr class="memdesc:a58209959ca12a3589fa44ea680eddd47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a>.  <br /></td></tr>
 <tr class="separator:a58209959ca12a3589fa44ea680eddd47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bc27432d6c1995b275813980da9c8ad" id="r_a0bc27432d6c1995b275813980da9c8ad"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bc27432d6c1995b275813980da9c8ad">sprintf</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, const <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;value, const std::locale &amp;loc)</td></tr>
+<tr class="memdesc:a0bc27432d6c1995b275813980da9c8ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a>.  <br /></td></tr>
+<tr class="separator:a0bc27432d6c1995b275813980da9c8ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2e38ca4b0606e03e81fd27c377efbd1" id="r_ab2e38ca4b0606e03e81fd27c377efbd1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2e38ca4b0606e03e81fd27c377efbd1">try_parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>, <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;result) noexcept</td></tr>
 <tr class="memdesc:ab2e38ca4b0606e03e81fd27c377efbd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the specified string representation of a date and time to its <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> equivalent and returns a value that indicates whether the conversion succeeded.  <br /></td></tr>
 <tr class="separator:ab2e38ca4b0606e03e81fd27c377efbd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3292,60 +3295,24 @@ The length si greater than 1. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The foloowwing example shows how to use xtd::date_time::to_string(const xtd::string&amp;) with differentt formats. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use xtd::date_time::to_string(const xtd::string&amp;) with differentt formats. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> date1 = <a class="code hl_function" href="#a9af33e7a4b6e3f10f19133e026c1bc0e">date_time</a> {2008, 4, 1, 18, 7, 5, 16};</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;a&quot;</span>)); <span class="comment">// PM</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;b&quot;</span>)); <span class="comment">// 016</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;B&quot;</span>)); <span class="comment">// 16</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;c&quot;</span>)); <span class="comment">// 0160000</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;c&quot;</span>)); <span class="comment">// 160000</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;d&quot;</span>)); <span class="comment">// 04/01/2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;D&quot;</span>)); <span class="comment">// 4/01/2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;e&quot;</span>)); <span class="comment">// 05</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;E&quot;</span>)); <span class="comment">// 5</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;f&quot;</span>)); <span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;F&quot;</span>)); <span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;g&quot;</span>)); <span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;G&quot;</span>)); <span class="comment">// 2008-04-01 18:07:05</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;h&quot;</span>)); <span class="comment">// Tue</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;H&quot;</span>)); <span class="comment">// Tuesday</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;i&quot;</span>)); <span class="comment">// 01</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;I&quot;</span>)); <span class="comment">// 1</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;j&quot;</span>)); <span class="comment">// Apr</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;J&quot;</span>)); <span class="comment">// April</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;k&quot;</span>)); <span class="comment">// 04</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;K&quot;</span>)); <span class="comment">// 4</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;l&quot;</span>)); <span class="comment">// 08</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;L&quot;</span>)); <span class="comment">// 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;m&quot;</span>)); <span class="comment">// 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;M&quot;</span>)); <span class="comment">// April 1</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;n&quot;</span>)); <span class="comment">// Tuesday, 1 April 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;N&quot;</span>)); <span class="comment">// Tuesday, 1 April 2008 18:07:05</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;o&quot;</span>)); <span class="comment">// 1 April 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;O&quot;</span>)); <span class="comment">// 1 April 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;p&quot;</span>)); <span class="comment">// 07</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;P&quot;</span>)); <span class="comment">// 7</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;s&quot;</span>)); <span class="comment">// 2008-04-01T18:07:05.0160000</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;t&quot;</span>)); <span class="comment">// 18:07:05</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;T&quot;</span>)); <span class="comment">// 18:07:05</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;u&quot;</span>)); <span class="comment">// 2008-04-01 18:07:05</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;U&quot;</span>)); <span class="comment">// Tuesday, 1 April 2008 18:07:05</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;v&quot;</span>)); <span class="comment">// 18:07</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;V&quot;</span>)); <span class="comment">// 18:07</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;w&quot;</span>)); <span class="comment">// 18</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;W&quot;</span>)); <span class="comment">// 18</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;x&quot;</span>)); <span class="comment">// 06</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;X&quot;</span>)); <span class="comment">// 6</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;y&quot;</span>)); <span class="comment">// April 8</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;Y&quot;</span>)); <span class="comment">// April 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;z&quot;</span>)); <span class="comment">// UTC</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;Z&quot;</span>)); <span class="comment">// UTC</span></div>
+<div class="line">    <span class="keyword">auto</span> date_value = <a class="code hl_function" href="#a9af33e7a4b6e3f10f19133e026c1bc0e">date_time</a> {2008, 6, 15, 21, 15, 07};</div>
+<div class="line">    <span class="comment">// Create an array of standard format strings.</span></div>
+<div class="line">    <span class="keyword">auto</span> standard_fmts = {<span class="stringliteral">&quot;d&quot;</span>, <span class="stringliteral">&quot;D&quot;</span>, <span class="stringliteral">&quot;f&quot;</span>, <span class="stringliteral">&quot;F&quot;</span>, <span class="stringliteral">&quot;g&quot;</span>, <span class="stringliteral">&quot;G&quot;</span>, <span class="stringliteral">&quot;m&quot;</span>, <span class="stringliteral">&quot;o&quot;</span>, <span class="stringliteral">&quot;R&quot;</span>, <span class="stringliteral">&quot;s&quot;</span>, <span class="stringliteral">&quot;t&quot;</span>, <span class="stringliteral">&quot;T&quot;</span>, <span class="stringliteral">&quot;u&quot;</span>, <span class="stringliteral">&quot;U&quot;</span>, <span class="stringliteral">&quot;y&quot;</span>};</div>
+<div class="line">    <span class="comment">// Output date and time using each standard format string.</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> standard_fmt : standard_fmts)</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{}: {}&quot;</span>, standard_fmt, date_value.to_string(standard_fmt));</div>
+<div class="line">    console::write_line();</div>
 <div class="line">    </div>
-<div class="line">    <span class="comment">// Other format generate a xtd::format_exception exception</span></div>
+<div class="line">    <span class="comment">// Create an array of some custom format strings.</span></div>
+<div class="line">    <span class="keyword">auto</span> custom_fmts = {<span class="stringliteral">&quot;h:mm:ss.ff t&quot;</span>, <span class="stringliteral">&quot;d MMM yyyy&quot;</span>, <span class="stringliteral">&quot;HH:mm:ss.f&quot;</span>, <span class="stringliteral">&quot;dd MMM HH:mm:ss&quot;</span>, <span class="stringliteral">&quot;\\Mon\\t\\h\\: M&quot;</span>, <span class="stringliteral">&quot;HH:mm:ss.ffffzzz&quot;</span>};</div>
+<div class="line">    <span class="comment">// Output date and time using each custom format string.</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> custom_fmt : custom_fmts)</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;&#39;{0}&#39;: {1}&quot;</span>, custom_fmt, date_value.to_string(custom_fmt));</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -3353,148 +3320,114 @@ The length si greater than 1. </td></tr>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// PM</span></div>
-<div class="line"><span class="comment">// 016</span></div>
-<div class="line"><span class="comment">// 16</span></div>
-<div class="line"><span class="comment">// 0160000</span></div>
-<div class="line"><span class="comment">// 160000</span></div>
-<div class="line"><span class="comment">// 04/01/2008</span></div>
-<div class="line"><span class="comment">// 4/01/2008</span></div>
-<div class="line"><span class="comment">// 05</span></div>
-<div class="line"><span class="comment">// 5</span></div>
-<div class="line"><span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line"><span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line"><span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line"><span class="comment">// 2008-04-01 18:07:05</span></div>
-<div class="line"><span class="comment">// Tue</span></div>
-<div class="line"><span class="comment">// Tuesday</span></div>
-<div class="line"><span class="comment">// 01</span></div>
-<div class="line"><span class="comment">// 1</span></div>
-<div class="line"><span class="comment">// Apr</span></div>
-<div class="line"><span class="comment">// April</span></div>
-<div class="line"><span class="comment">// 04</span></div>
-<div class="line"><span class="comment">// 4</span></div>
-<div class="line"><span class="comment">// 08</span></div>
-<div class="line"><span class="comment">// 2008</span></div>
-<div class="line"><span class="comment">// 2008</span></div>
-<div class="line"><span class="comment">// April 1</span></div>
-<div class="line"><span class="comment">// Tuesday, 1 April 2008</span></div>
-<div class="line"><span class="comment">// Tuesday, 1 April 2008 18:07:05</span></div>
-<div class="line"><span class="comment">// 1 April 2008</span></div>
-<div class="line"><span class="comment">// 1 April 2008</span></div>
-<div class="line"><span class="comment">// 07</span></div>
-<div class="line"><span class="comment">// 7</span></div>
-<div class="line"><span class="comment">// 2008-04-01T18:07:05.0160000</span></div>
-<div class="line"><span class="comment">// 18:07:05</span></div>
-<div class="line"><span class="comment">// 18:07:05</span></div>
-<div class="line"><span class="comment">// 2008-04-01 18:07:05</span></div>
-<div class="line"><span class="comment">// Tuesday, 1 April 2008 18:07:05</span></div>
-<div class="line"><span class="comment">// 18:07</span></div>
-<div class="line"><span class="comment">// 18:07</span></div>
-<div class="line"><span class="comment">// 18</span></div>
-<div class="line"><span class="comment">// 18</span></div>
-<div class="line"><span class="comment">// 06</span></div>
-<div class="line"><span class="comment">// 6</span></div>
-<div class="line"><span class="comment">// April 8</span></div>
-<div class="line"><span class="comment">// April 2008</span></div>
-<div class="line"><span class="comment">// UTC</span></div>
-<div class="line"><span class="comment">// UTC</span></div>
+<div class="line"><span class="comment">// d: 6/15/2008</span></div>
+<div class="line"><span class="comment">// D: Sunday, June 15, 2008</span></div>
+<div class="line"><span class="comment">// f: Sunday, June 15, 2008 21:15</span></div>
+<div class="line"><span class="comment">// F: Sunday, June 15, 2008 21:15:07</span></div>
+<div class="line"><span class="comment">// g: 6/15/2008 21:15</span></div>
+<div class="line"><span class="comment">// G: 6/15/2008 21:15:07</span></div>
+<div class="line"><span class="comment">// m: June 15</span></div>
+<div class="line"><span class="comment">// o: 2008-06-15T21:15:07.0000000Z</span></div>
+<div class="line"><span class="comment">// R: Sun, 15 Jun 2008 21:15:07 G6T</span></div>
+<div class="line"><span class="comment">// s: 2008-06-15T21:15:07</span></div>
+<div class="line"><span class="comment">// t: 21:15</span></div>
+<div class="line"><span class="comment">// T: 21:15:07</span></div>
+<div class="line"><span class="comment">// u: 2008-06-15 21:15:07Z</span></div>
+<div class="line"><span class="comment">// U: Sunday, June 15, 2008 21:15:07</span></div>
+<div class="line"><span class="comment">// y: June 2008</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// &#39;h:mm:ss.ff t&#39;: 9:15:07.00 P</span></div>
+<div class="line"><span class="comment">// &#39;d MMM yyyy&#39;: 15 Jun 2008</span></div>
+<div class="line"><span class="comment">// &#39;HH:mm:ss.f&#39;: 21:15:07.0</span></div>
+<div class="line"><span class="comment">// &#39;dd MMM HH:mm:ss&#39;: 15 Jun 21:15:07</span></div>
+<div class="line"><span class="comment">// &#39;\Mon\t\h\: M&#39;: Month: 6</span></div>
+<div class="line"><span class="comment">// &#39;HH:mm:ss.ffffzzz&#39;: 21:15:07.0000+02:00</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The formatting codes for <a class="el" href="#a0337274cf6d6900b883fc5551b19bba6" title="Converts the value of the current xtd::date_time object to its equivalent string representation using...">xtd::date_time::to_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a>&amp;) are listed below: <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Format   </th><th class="markdownTableHeadNone">Print    </th></tr>
+<th class="markdownTableHeadNone">Format   </th><th class="markdownTableHeadNone">Description   </th><th class="markdownTableHeadNone">examples    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'a'   </td><td class="markdownTableBodyNone">writes "PM" or "AM"    </td></tr>
+<td class="markdownTableBodyNone"><code>"d"</code>   </td><td class="markdownTableBodyNone">Short date pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 6/15/2009 (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 15/06/2009 (fr-FR) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 2009/06/15 (ja-JP)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'b'   </td><td class="markdownTableBodyNone">writes 3 digit millisecond, e.G. 012    </td></tr>
+<td class="markdownTableBodyNone"><code>"D"</code>   </td><td class="markdownTableBodyNone">Long date pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Monday, June 15, 2009 (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; понедельник, 15 июня 2009 г. (ru-RU) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Montag, 15. Juni 2009 (de-DE)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'B'   </td><td class="markdownTableBodyNone">wrties millisecond, eg 12    </td></tr>
+<td class="markdownTableBodyNone"><code>"f"</code>   </td><td class="markdownTableBodyNone">Full date/time pattern (short time).   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Monday, June 15, 2009 1:45 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; den 15 juni 2009 13:45 (sv-SE) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Δευτέρα, 15 Ιουνίου 2009 1:45 μμ (el-GR)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'c'   </td><td class="markdownTableBodyNone">writes 7 digit tick, e.G. 0000123    </td></tr>
+<td class="markdownTableBodyNone"><code>"F"</code>   </td><td class="markdownTableBodyNone">Full date/time pattern (long time).   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Monday, June 15, 2009 1:45:30 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; den 15 juni 2009 13:45:30 (sv-SE) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Δευτέρα, 15 Ιουνίου 2009 1:45:30 μμ (el-GR)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'C'   </td><td class="markdownTableBodyNone">writes tick, e.G. 123    </td></tr>
+<td class="markdownTableBodyNone"><code>"g"</code>   </td><td class="markdownTableBodyNone">General date/time pattern (short time).   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 6/15/2009 1:45 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 15/06/2009 13:45 (es-ES) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 2009/6/15 13:45 (zh-CN)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'d'   </td><td class="markdownTableBodyNone">writes date MM/dd/y, e.g. 01/05/42    </td></tr>
+<td class="markdownTableBodyNone"><code>"G"</code>   </td><td class="markdownTableBodyNone">General date/time pattern (long time).   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 6/15/2009 1:45:30 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 15/06/2009 13:45:30 (es-ES) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 2009/6/15 13:45:30 (zh-CN)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'D'   </td><td class="markdownTableBodyNone">writes date M/dd/y, e.g. 1/055/42    </td></tr>
+<td class="markdownTableBodyNone"><code>"M"</code>, <code>"m"</code>   </td><td class="markdownTableBodyNone">Month/day pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; June 15 (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 15. juni (da-DK) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 15 Juni (id-ID)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'e'   </td><td class="markdownTableBodyNone">writes 2 digit second, e.G. 03    </td></tr>
+<td class="markdownTableBodyNone"><code>"O"</code>, <code>"o"</code>   </td><td class="markdownTableBodyNone">round-trip date/time pattern. <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaaf5ddaf0ca7929578b408c909429f68f2" title="The time represented is local time.">date_time_kind::local</a>) --&gt; 2009-06-15T13:45:30.0000000-07:00 <br  />
+<br  />
+ 2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaa52d33cb937bbdab234ab1729a0f8225b" title="The time represented is UTC.">date_time_kind::utc</a>) --&gt; 2009-06-15T13:45:30.0000000Z <br  />
+<br  />
+ 2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaad415f0e30c471dfdd9bc4f827329ef48" title="The time represented is not specified as either local time or Coordinated Universal Time (UTC).">date_time_kind::unspecified</a>) --&gt; 2009-06-15T13:45:30.0000000    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'B'   </td><td class="markdownTableBodyNone">writes second, e.G. 3    </td></tr>
+<td class="markdownTableBodyNone"><code>"R"</code>, <code>"r"</code>   </td><td class="markdownTableBodyNone">RFC1123 pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Mon, 15 Jun 2009 13:45:30 GMT    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'f'   </td><td class="markdownTableBodyNone">writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>"s"</code>   </td><td class="markdownTableBodyNone">Sortable date/time pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaaf5ddaf0ca7929578b408c909429f68f2" title="The time represented is local time.">date_time_kind::local</a>) -&gt; 2009-06-15T13:45:30 <br  />
+<br  />
+ 2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaa52d33cb937bbdab234ab1729a0f8225b" title="The time represented is UTC.">date_time_kind::utc</a>) -&gt; 2009-06-15T13:45:30    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'F'   </td><td class="markdownTableBodyNone">writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>"t"</code>   </td><td class="markdownTableBodyNone">Short time pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 1:45 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13:45 (hr-HR) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 01:45 م (ar-EG)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'g'   </td><td class="markdownTableBodyNone">writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>"T"</code>   </td><td class="markdownTableBodyNone">Long time pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 1:45:30 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13:45:30 (hr-HR) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 01:45:30 م (ar-EG)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'G'   </td><td class="markdownTableBodyNone">writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>"u"</code>   </td><td class="markdownTableBodyNone">Universal sortable date/time pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 2009-06-15 13:45:30Z    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'h'   </td><td class="markdownTableBodyNone">writes abbreviated weekday name, e.g. Fri (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>"U"</code>   </td><td class="markdownTableBodyNone">Universal full date/time pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Monday, June 15, 2009 8:45:30 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; den 15 juni 2009 20:45:30 (sv-SE) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Δευτέρα, 15 Ιουνίου 2009 8:45:30 μμ (el-GR)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'H'   </td><td class="markdownTableBodyNone">writes full weekday name, e.g. Friday (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>"Y"</code>, <code>"y"</code>   </td><td class="markdownTableBodyNone">Year month pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; June 2009 (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; juni 2009 (da-DK) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Juni 2009 (id-ID)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'i'   </td><td class="markdownTableBodyNone">writes 2 digit day, e.g. 05    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'I'   </td><td class="markdownTableBodyNone">writes day, e.G. 5    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'j'   </td><td class="markdownTableBodyNone">writes abbreviated month name, e.g. Oct (locale dependent)    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'J'   </td><td class="markdownTableBodyNone">writes full month name, e.g. October (locale dependent).    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'k'   </td><td class="markdownTableBodyNone">writes 2 digit month, e.g. 01    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'K'   </td><td class="markdownTableBodyNone">writes month, e.g. 1    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'l'   </td><td class="markdownTableBodyNone">writes 2 digit year, e.g. 71    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'L'   </td><td class="markdownTableBodyNone">writes 4 digit year, e.g. 1971    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'m'   </td><td class="markdownTableBodyNone">writes year, e.g. 42    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'M'   </td><td class="markdownTableBodyNone">writes full month name and day, e.g. October, 5 (locale dependent).    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'n'   </td><td class="markdownTableBodyNone">writes full weekday name, day, fulll month and year, e.g. Tuesday, 1 April 2008    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'N'   </td><td class="markdownTableBodyNone">writes full weekday name, day, fulll month, year, hour, minute ans second, e.g. Tuesday, 1 April 2008 18:07:05    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'o'   </td><td class="markdownTableBodyNone">writes day, full month and year, e.g. 5 January 42    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'O'   </td><td class="markdownTableBodyNone">writes day, full month and year, e.g. 5 January 42    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'p'   </td><td class="markdownTableBodyNone">writes 2 digit minute, e.G. 06    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'P'   </td><td class="markdownTableBodyNone">writes minute, e.G. 6    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'s'   </td><td class="markdownTableBodyNone">writes sortable date/time pattern yyyy-MM-ddThh:mm:ss.ttttttt. e.g. 1971-05-01T21:32:24:42.004567    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'t'   </td><td class="markdownTableBodyNone">writes time hh/mm/ss, e.g. 02:04:06    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'T'   </td><td class="markdownTableBodyNone">writes time h/mm/ss, e.g. 2:04:06    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'u'   </td><td class="markdownTableBodyNone">writes sortable short date/time pattern y-MM-dd hh:mm:ss. e.g. 1971-05-01 9:32:24:42    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'U'   </td><td class="markdownTableBodyNone">writes full weekday name, day, fulll month, year, hour, minute ans second, e.g. Tuesday, 1 April 2008 18:07:05    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'v'   </td><td class="markdownTableBodyNone">writes time hh/mm, e.g. 02:04    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'V'   </td><td class="markdownTableBodyNone">writes time h/mm, e.g. 2:04    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'w'   </td><td class="markdownTableBodyNone">writes 2 digit hour (24H), e.g. 07    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'W'   </td><td class="markdownTableBodyNone">writes hour (24H), e.g. 7    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'x'   </td><td class="markdownTableBodyNone">writes 2 digit hour (12H), e.g. 07    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'X'   </td><td class="markdownTableBodyNone">writes hour (12H), e.g. 7    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'y'   </td><td class="markdownTableBodyNone">writes full month name and year, e.g. October, 71 (locale dependent).    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'Y'   </td><td class="markdownTableBodyNone">writes full month name and year, e.g. October, 1971 (locale dependent).    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'z'   </td><td class="markdownTableBodyNone">writes time zone "local" or "UTC".    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'Z'   </td><td class="markdownTableBodyNone">writes time zone "local" or "UTC".   </td></tr>
+<td class="markdownTableBodyNone">Any other single character   </td><td class="markdownTableBodyNone">Unknown specifier.   </td><td class="markdownTableBodyNone">Throws a run-time <a class="el" href="classxtd_1_1format__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::format_exception</a>.   </td></tr>
 </table>
 </dd></dl>
 
@@ -3544,60 +3477,24 @@ The length si greater than 1. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The foloowwing example shows how to use xtd::date_time::to_string(const xtd::string&amp;) with differentt formats. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use xtd::date_time::to_string(const xtd::string&amp;) with differentt formats. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> date1 = <a class="code hl_function" href="#a9af33e7a4b6e3f10f19133e026c1bc0e">date_time</a> {2008, 4, 1, 18, 7, 5, 16};</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;a&quot;</span>)); <span class="comment">// PM</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;b&quot;</span>)); <span class="comment">// 016</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;B&quot;</span>)); <span class="comment">// 16</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;c&quot;</span>)); <span class="comment">// 0160000</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;c&quot;</span>)); <span class="comment">// 160000</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;d&quot;</span>)); <span class="comment">// 04/01/2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;D&quot;</span>)); <span class="comment">// 4/01/2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;e&quot;</span>)); <span class="comment">// 05</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;E&quot;</span>)); <span class="comment">// 5</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;f&quot;</span>)); <span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;F&quot;</span>)); <span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;g&quot;</span>)); <span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;G&quot;</span>)); <span class="comment">// 2008-04-01 18:07:05</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;h&quot;</span>)); <span class="comment">// Tue</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;H&quot;</span>)); <span class="comment">// Tuesday</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;i&quot;</span>)); <span class="comment">// 01</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;I&quot;</span>)); <span class="comment">// 1</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;j&quot;</span>)); <span class="comment">// Apr</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;J&quot;</span>)); <span class="comment">// April</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;k&quot;</span>)); <span class="comment">// 04</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;K&quot;</span>)); <span class="comment">// 4</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;l&quot;</span>)); <span class="comment">// 08</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;L&quot;</span>)); <span class="comment">// 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;m&quot;</span>)); <span class="comment">// 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;M&quot;</span>)); <span class="comment">// April 1</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;n&quot;</span>)); <span class="comment">// Tuesday, 1 April 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;N&quot;</span>)); <span class="comment">// Tuesday, 1 April 2008 18:07:05</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;o&quot;</span>)); <span class="comment">// 1 April 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;O&quot;</span>)); <span class="comment">// 1 April 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;p&quot;</span>)); <span class="comment">// 07</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;P&quot;</span>)); <span class="comment">// 7</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;s&quot;</span>)); <span class="comment">// 2008-04-01T18:07:05.0160000</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;t&quot;</span>)); <span class="comment">// 18:07:05</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;T&quot;</span>)); <span class="comment">// 18:07:05</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;u&quot;</span>)); <span class="comment">// 2008-04-01 18:07:05</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;U&quot;</span>)); <span class="comment">// Tuesday, 1 April 2008 18:07:05</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;v&quot;</span>)); <span class="comment">// 18:07</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;V&quot;</span>)); <span class="comment">// 18:07</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;w&quot;</span>)); <span class="comment">// 18</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;W&quot;</span>)); <span class="comment">// 18</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;x&quot;</span>)); <span class="comment">// 06</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;X&quot;</span>)); <span class="comment">// 6</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;y&quot;</span>)); <span class="comment">// April 8</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;Y&quot;</span>)); <span class="comment">// April 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;z&quot;</span>)); <span class="comment">// UTC</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(date1.to_string(<span class="stringliteral">&quot;Z&quot;</span>)); <span class="comment">// UTC</span></div>
+<div class="line">    <span class="keyword">auto</span> date_value = <a class="code hl_function" href="#a9af33e7a4b6e3f10f19133e026c1bc0e">date_time</a> {2008, 6, 15, 21, 15, 07};</div>
+<div class="line">    <span class="comment">// Create an array of standard format strings.</span></div>
+<div class="line">    <span class="keyword">auto</span> standard_fmts = {<span class="stringliteral">&quot;d&quot;</span>, <span class="stringliteral">&quot;D&quot;</span>, <span class="stringliteral">&quot;f&quot;</span>, <span class="stringliteral">&quot;F&quot;</span>, <span class="stringliteral">&quot;g&quot;</span>, <span class="stringliteral">&quot;G&quot;</span>, <span class="stringliteral">&quot;m&quot;</span>, <span class="stringliteral">&quot;o&quot;</span>, <span class="stringliteral">&quot;R&quot;</span>, <span class="stringliteral">&quot;s&quot;</span>, <span class="stringliteral">&quot;t&quot;</span>, <span class="stringliteral">&quot;T&quot;</span>, <span class="stringliteral">&quot;u&quot;</span>, <span class="stringliteral">&quot;U&quot;</span>, <span class="stringliteral">&quot;y&quot;</span>};</div>
+<div class="line">    <span class="comment">// Output date and time using each standard format string.</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> standard_fmt : standard_fmts)</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{}: {}&quot;</span>, standard_fmt, date_value.to_string(standard_fmt));</div>
+<div class="line">    console::write_line();</div>
 <div class="line">    </div>
-<div class="line">    <span class="comment">// Other format generate a xtd::format_exception exception</span></div>
+<div class="line">    <span class="comment">// Create an array of some custom format strings.</span></div>
+<div class="line">    <span class="keyword">auto</span> custom_fmts = {<span class="stringliteral">&quot;h:mm:ss.ff t&quot;</span>, <span class="stringliteral">&quot;d MMM yyyy&quot;</span>, <span class="stringliteral">&quot;HH:mm:ss.f&quot;</span>, <span class="stringliteral">&quot;dd MMM HH:mm:ss&quot;</span>, <span class="stringliteral">&quot;\\Mon\\t\\h\\: M&quot;</span>, <span class="stringliteral">&quot;HH:mm:ss.ffffzzz&quot;</span>};</div>
+<div class="line">    <span class="comment">// Output date and time using each custom format string.</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> custom_fmt : custom_fmts)</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;&#39;{0}&#39;: {1}&quot;</span>, custom_fmt, date_value.to_string(custom_fmt));</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -3605,148 +3502,114 @@ The length si greater than 1. </td></tr>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// PM</span></div>
-<div class="line"><span class="comment">// 016</span></div>
-<div class="line"><span class="comment">// 16</span></div>
-<div class="line"><span class="comment">// 0160000</span></div>
-<div class="line"><span class="comment">// 160000</span></div>
-<div class="line"><span class="comment">// 04/01/2008</span></div>
-<div class="line"><span class="comment">// 4/01/2008</span></div>
-<div class="line"><span class="comment">// 05</span></div>
-<div class="line"><span class="comment">// 5</span></div>
-<div class="line"><span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line"><span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line"><span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line"><span class="comment">// 2008-04-01 18:07:05</span></div>
-<div class="line"><span class="comment">// Tue</span></div>
-<div class="line"><span class="comment">// Tuesday</span></div>
-<div class="line"><span class="comment">// 01</span></div>
-<div class="line"><span class="comment">// 1</span></div>
-<div class="line"><span class="comment">// Apr</span></div>
-<div class="line"><span class="comment">// April</span></div>
-<div class="line"><span class="comment">// 04</span></div>
-<div class="line"><span class="comment">// 4</span></div>
-<div class="line"><span class="comment">// 08</span></div>
-<div class="line"><span class="comment">// 2008</span></div>
-<div class="line"><span class="comment">// 2008</span></div>
-<div class="line"><span class="comment">// April 1</span></div>
-<div class="line"><span class="comment">// Tuesday, 1 April 2008</span></div>
-<div class="line"><span class="comment">// Tuesday, 1 April 2008 18:07:05</span></div>
-<div class="line"><span class="comment">// 1 April 2008</span></div>
-<div class="line"><span class="comment">// 1 April 2008</span></div>
-<div class="line"><span class="comment">// 07</span></div>
-<div class="line"><span class="comment">// 7</span></div>
-<div class="line"><span class="comment">// 2008-04-01T18:07:05.0160000</span></div>
-<div class="line"><span class="comment">// 18:07:05</span></div>
-<div class="line"><span class="comment">// 18:07:05</span></div>
-<div class="line"><span class="comment">// 2008-04-01 18:07:05</span></div>
-<div class="line"><span class="comment">// Tuesday, 1 April 2008 18:07:05</span></div>
-<div class="line"><span class="comment">// 18:07</span></div>
-<div class="line"><span class="comment">// 18:07</span></div>
-<div class="line"><span class="comment">// 18</span></div>
-<div class="line"><span class="comment">// 18</span></div>
-<div class="line"><span class="comment">// 06</span></div>
-<div class="line"><span class="comment">// 6</span></div>
-<div class="line"><span class="comment">// April 8</span></div>
-<div class="line"><span class="comment">// April 2008</span></div>
-<div class="line"><span class="comment">// UTC</span></div>
-<div class="line"><span class="comment">// UTC</span></div>
+<div class="line"><span class="comment">// d: 6/15/2008</span></div>
+<div class="line"><span class="comment">// D: Sunday, June 15, 2008</span></div>
+<div class="line"><span class="comment">// f: Sunday, June 15, 2008 21:15</span></div>
+<div class="line"><span class="comment">// F: Sunday, June 15, 2008 21:15:07</span></div>
+<div class="line"><span class="comment">// g: 6/15/2008 21:15</span></div>
+<div class="line"><span class="comment">// G: 6/15/2008 21:15:07</span></div>
+<div class="line"><span class="comment">// m: June 15</span></div>
+<div class="line"><span class="comment">// o: 2008-06-15T21:15:07.0000000Z</span></div>
+<div class="line"><span class="comment">// R: Sun, 15 Jun 2008 21:15:07 G6T</span></div>
+<div class="line"><span class="comment">// s: 2008-06-15T21:15:07</span></div>
+<div class="line"><span class="comment">// t: 21:15</span></div>
+<div class="line"><span class="comment">// T: 21:15:07</span></div>
+<div class="line"><span class="comment">// u: 2008-06-15 21:15:07Z</span></div>
+<div class="line"><span class="comment">// U: Sunday, June 15, 2008 21:15:07</span></div>
+<div class="line"><span class="comment">// y: June 2008</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// &#39;h:mm:ss.ff t&#39;: 9:15:07.00 P</span></div>
+<div class="line"><span class="comment">// &#39;d MMM yyyy&#39;: 15 Jun 2008</span></div>
+<div class="line"><span class="comment">// &#39;HH:mm:ss.f&#39;: 21:15:07.0</span></div>
+<div class="line"><span class="comment">// &#39;dd MMM HH:mm:ss&#39;: 15 Jun 21:15:07</span></div>
+<div class="line"><span class="comment">// &#39;\Mon\t\h\: M&#39;: Month: 6</span></div>
+<div class="line"><span class="comment">// &#39;HH:mm:ss.ffffzzz&#39;: 21:15:07.0000+02:00</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The formatting codes for <a class="el" href="#a0337274cf6d6900b883fc5551b19bba6" title="Converts the value of the current xtd::date_time object to its equivalent string representation using...">xtd::date_time::to_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a>&amp;) are listed below: <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Format   </th><th class="markdownTableHeadNone">Print    </th></tr>
+<th class="markdownTableHeadNone">Format   </th><th class="markdownTableHeadNone">Description   </th><th class="markdownTableHeadNone">examples    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'a'   </td><td class="markdownTableBodyNone">writes "PM" or "AM"    </td></tr>
+<td class="markdownTableBodyNone"><code>"d"</code>   </td><td class="markdownTableBodyNone">Short date pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 6/15/2009 (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 15/06/2009 (fr-FR) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 2009/06/15 (ja-JP)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'b'   </td><td class="markdownTableBodyNone">writes 3 digit millisecond, e.G. 012    </td></tr>
+<td class="markdownTableBodyNone"><code>"D"</code>   </td><td class="markdownTableBodyNone">Long date pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Monday, June 15, 2009 (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; понедельник, 15 июня 2009 г. (ru-RU) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Montag, 15. Juni 2009 (de-DE)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'B'   </td><td class="markdownTableBodyNone">wrties millisecond, eg 12    </td></tr>
+<td class="markdownTableBodyNone"><code>"f"</code>   </td><td class="markdownTableBodyNone">Full date/time pattern (short time).   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Monday, June 15, 2009 1:45 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; den 15 juni 2009 13:45 (sv-SE) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Δευτέρα, 15 Ιουνίου 2009 1:45 μμ (el-GR)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'c'   </td><td class="markdownTableBodyNone">writes 7 digit tick, e.G. 0000123    </td></tr>
+<td class="markdownTableBodyNone"><code>"F"</code>   </td><td class="markdownTableBodyNone">Full date/time pattern (long time).   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Monday, June 15, 2009 1:45:30 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; den 15 juni 2009 13:45:30 (sv-SE) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Δευτέρα, 15 Ιουνίου 2009 1:45:30 μμ (el-GR)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'C'   </td><td class="markdownTableBodyNone">writes tick, e.G. 123    </td></tr>
+<td class="markdownTableBodyNone"><code>"g"</code>   </td><td class="markdownTableBodyNone">General date/time pattern (short time).   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 6/15/2009 1:45 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 15/06/2009 13:45 (es-ES) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 2009/6/15 13:45 (zh-CN)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'d'   </td><td class="markdownTableBodyNone">writes date MM/dd/y, e.g. 01/05/42    </td></tr>
+<td class="markdownTableBodyNone"><code>"G"</code>   </td><td class="markdownTableBodyNone">General date/time pattern (long time).   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 6/15/2009 1:45:30 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 15/06/2009 13:45:30 (es-ES) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 2009/6/15 13:45:30 (zh-CN)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'D'   </td><td class="markdownTableBodyNone">writes date M/dd/y, e.g. 1/055/42    </td></tr>
+<td class="markdownTableBodyNone"><code>"M"</code>, <code>"m"</code>   </td><td class="markdownTableBodyNone">Month/day pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; June 15 (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 15. juni (da-DK) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 15 Juni (id-ID)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'e'   </td><td class="markdownTableBodyNone">writes 2 digit second, e.G. 03    </td></tr>
+<td class="markdownTableBodyNone"><code>"O"</code>, <code>"o"</code>   </td><td class="markdownTableBodyNone">round-trip date/time pattern. <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaaf5ddaf0ca7929578b408c909429f68f2" title="The time represented is local time.">date_time_kind::local</a>) --&gt; 2009-06-15T13:45:30.0000000-07:00 <br  />
+<br  />
+ 2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaa52d33cb937bbdab234ab1729a0f8225b" title="The time represented is UTC.">date_time_kind::utc</a>) --&gt; 2009-06-15T13:45:30.0000000Z <br  />
+<br  />
+ 2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaad415f0e30c471dfdd9bc4f827329ef48" title="The time represented is not specified as either local time or Coordinated Universal Time (UTC).">date_time_kind::unspecified</a>) --&gt; 2009-06-15T13:45:30.0000000    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'B'   </td><td class="markdownTableBodyNone">writes second, e.G. 3    </td></tr>
+<td class="markdownTableBodyNone"><code>"R"</code>, <code>"r"</code>   </td><td class="markdownTableBodyNone">RFC1123 pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Mon, 15 Jun 2009 13:45:30 GMT    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'f'   </td><td class="markdownTableBodyNone">writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>"s"</code>   </td><td class="markdownTableBodyNone">Sortable date/time pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaaf5ddaf0ca7929578b408c909429f68f2" title="The time represented is local time.">date_time_kind::local</a>) -&gt; 2009-06-15T13:45:30 <br  />
+<br  />
+ 2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaa52d33cb937bbdab234ab1729a0f8225b" title="The time represented is UTC.">date_time_kind::utc</a>) -&gt; 2009-06-15T13:45:30    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'F'   </td><td class="markdownTableBodyNone">writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>"t"</code>   </td><td class="markdownTableBodyNone">Short time pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 1:45 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13:45 (hr-HR) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 01:45 م (ar-EG)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'g'   </td><td class="markdownTableBodyNone">writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>"T"</code>   </td><td class="markdownTableBodyNone">Long time pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 1:45:30 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13:45:30 (hr-HR) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 01:45:30 م (ar-EG)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'G'   </td><td class="markdownTableBodyNone">writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>"u"</code>   </td><td class="markdownTableBodyNone">Universal sortable date/time pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 2009-06-15 13:45:30Z    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'h'   </td><td class="markdownTableBodyNone">writes abbreviated weekday name, e.g. Fri (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>"U"</code>   </td><td class="markdownTableBodyNone">Universal full date/time pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Monday, June 15, 2009 8:45:30 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; den 15 juni 2009 20:45:30 (sv-SE) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Δευτέρα, 15 Ιουνίου 2009 8:45:30 μμ (el-GR)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'H'   </td><td class="markdownTableBodyNone">writes full weekday name, e.g. Friday (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>"Y"</code>, <code>"y"</code>   </td><td class="markdownTableBodyNone">Year month pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; June 2009 (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; juni 2009 (da-DK) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Juni 2009 (id-ID)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'i'   </td><td class="markdownTableBodyNone">writes 2 digit day, e.g. 05    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'I'   </td><td class="markdownTableBodyNone">writes day, e.G. 5    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'j'   </td><td class="markdownTableBodyNone">writes abbreviated month name, e.g. Oct (locale dependent)    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'J'   </td><td class="markdownTableBodyNone">writes full month name, e.g. October (locale dependent).    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'k'   </td><td class="markdownTableBodyNone">writes 2 digit month, e.g. 01    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'K'   </td><td class="markdownTableBodyNone">writes month, e.g. 1    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'l'   </td><td class="markdownTableBodyNone">writes 2 digit year, e.g. 71    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'L'   </td><td class="markdownTableBodyNone">writes 4 digit year, e.g. 1971    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'m'   </td><td class="markdownTableBodyNone">writes year, e.g. 42    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'M'   </td><td class="markdownTableBodyNone">writes full month name and day, e.g. October, 5 (locale dependent).    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'n'   </td><td class="markdownTableBodyNone">writes full weekday name, day, fulll month and year, e.g. Tuesday, 1 April 2008    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'N'   </td><td class="markdownTableBodyNone">writes full weekday name, day, fulll month, year, hour, minute ans second, e.g. Tuesday, 1 April 2008 18:07:05    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'o'   </td><td class="markdownTableBodyNone">writes day, full month and year, e.g. 5 January 42    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'O'   </td><td class="markdownTableBodyNone">writes day, full month and year, e.g. 5 January 42    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'p'   </td><td class="markdownTableBodyNone">writes 2 digit minute, e.G. 06    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'P'   </td><td class="markdownTableBodyNone">writes minute, e.G. 6    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'s'   </td><td class="markdownTableBodyNone">writes sortable date/time pattern yyyy-MM-ddThh:mm:ss.ttttttt. e.g. 1971-05-01T21:32:24:42.004567    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'t'   </td><td class="markdownTableBodyNone">writes time hh/mm/ss, e.g. 02:04:06    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'T'   </td><td class="markdownTableBodyNone">writes time h/mm/ss, e.g. 2:04:06    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'u'   </td><td class="markdownTableBodyNone">writes sortable short date/time pattern y-MM-dd hh:mm:ss. e.g. 1971-05-01 9:32:24:42    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'U'   </td><td class="markdownTableBodyNone">writes full weekday name, day, fulll month, year, hour, minute ans second, e.g. Tuesday, 1 April 2008 18:07:05    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'v'   </td><td class="markdownTableBodyNone">writes time hh/mm, e.g. 02:04    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'V'   </td><td class="markdownTableBodyNone">writes time h/mm, e.g. 2:04    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'w'   </td><td class="markdownTableBodyNone">writes 2 digit hour (24H), e.g. 07    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'W'   </td><td class="markdownTableBodyNone">writes hour (24H), e.g. 7    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'x'   </td><td class="markdownTableBodyNone">writes 2 digit hour (12H), e.g. 07    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'X'   </td><td class="markdownTableBodyNone">writes hour (12H), e.g. 7    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'y'   </td><td class="markdownTableBodyNone">writes full month name and year, e.g. October, 71 (locale dependent).    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'Y'   </td><td class="markdownTableBodyNone">writes full month name and year, e.g. October, 1971 (locale dependent).    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">'z'   </td><td class="markdownTableBodyNone">writes time zone "local" or "UTC".    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">'Z'   </td><td class="markdownTableBodyNone">writes time zone "local" or "UTC".   </td></tr>
+<td class="markdownTableBodyNone">Any other single character   </td><td class="markdownTableBodyNone">Unknown specifier.   </td><td class="markdownTableBodyNone">Throws a run-time <a class="el" href="classxtd_1_1format__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::format_exception</a>.   </td></tr>
 </table>
 </dd></dl>
 
@@ -5062,7 +4925,7 @@ This overload attempts to parse s by using DateTimeStyles.AllowWhiteSpaces style
 </div>
 </div>
 <a id="a58209959ca12a3589fa44ea680eddd47" name="a58209959ca12a3589fa44ea680eddd47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58209959ca12a3589fa44ea680eddd47">&#9670;&#160;</a></span>sprintf()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a58209959ca12a3589fa44ea680eddd47">&#9670;&#160;</a></span>sprintf() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5097,65 +4960,28 @@ This overload attempts to parse s by using DateTimeStyles.AllowWhiteSpaces style
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The foloowwing example shows how to use <a class="el" href="#a58209959ca12a3589fa44ea680eddd47" title="Returns a xtd::string that represents the current xtd::date_time.">xtd::date_time::sprintf</a> with differentt formats. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a58209959ca12a3589fa44ea680eddd47" title="Returns a xtd::string that represents the current xtd::date_time.">xtd::date_time::sprintf</a> with differentt formats. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
-<div class="line">    <span class="keyword">auto</span> date1 = <a class="code hl_function" href="#a9af33e7a4b6e3f10f19133e026c1bc0e">date_time</a> {2008, 4, 1, 18, 7, 5, 16};</div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%a&quot;</span>, date1));  <span class="comment">// Tue</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%A&quot;</span>, date1));  <span class="comment">// Tuesday</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%b&quot;</span>, date1));  <span class="comment">// Apr</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%B&quot;</span>, date1));  <span class="comment">// April</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%c&quot;</span>, date1));  <span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%C&quot;</span>, date1));  <span class="comment">// 20</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%d&quot;</span>, date1));  <span class="comment">// 01</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%D&quot;</span>, date1));  <span class="comment">// 04/01/08</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%e&quot;</span>, date1));  <span class="comment">//  1</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%Ec&quot;</span>, date1)); <span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%EC&quot;</span>, date1)); <span class="comment">// 20</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%Ex&quot;</span>, date1)); <span class="comment">// 04/01/08</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%EX&quot;</span>, date1)); <span class="comment">// 18:07:05</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%Ey&quot;</span>, date1)); <span class="comment">// 08</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%EY&quot;</span>, date1)); <span class="comment">// 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%F&quot;</span>, date1));  <span class="comment">// 2008-04-01</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%g&quot;</span>, date1));  <span class="comment">// 08</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%G&quot;</span>, date1));  <span class="comment">// 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%h&quot;</span>, date1));  <span class="comment">// Apr</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%H&quot;</span>, date1));  <span class="comment">// 18</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%I&quot;</span>, date1));  <span class="comment">// 06</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%j&quot;</span>, date1));  <span class="comment">// 093</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%m&quot;</span>, date1));  <span class="comment">// 04</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%M&quot;</span>, date1));  <span class="comment">// 07</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%p&quot;</span>, date1));  <span class="comment">// PM</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%r&quot;</span>, date1));  <span class="comment">// 06:07:05 PM</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%R&quot;</span>, date1));  <span class="comment">// 18:07</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%S&quot;</span>, date1));  <span class="comment">// 05</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%T&quot;</span>, date1));  <span class="comment">// 18:07:05</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%u&quot;</span>, date1));  <span class="comment">// 2</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%U&quot;</span>, date1));  <span class="comment">// 13</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%V&quot;</span>, date1));  <span class="comment">// 14</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%w&quot;</span>, date1));  <span class="comment">// 2</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%W&quot;</span>, date1));  <span class="comment">// 14</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%x&quot;</span>, date1));  <span class="comment">// 04/01/08</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%X&quot;</span>, date1));  <span class="comment">// 18:07:05</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%y&quot;</span>, date1));  <span class="comment">// 08</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%Y&quot;</span>, date1));  <span class="comment">// 2008</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%z&quot;</span>, date1));  <span class="comment">// +0100</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%Z&quot;</span>, date1));  <span class="comment">// CET</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%Od&quot;</span>, date1)); <span class="comment">// 01</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%Oe&quot;</span>, date1)); <span class="comment">//  1</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%OH&quot;</span>, date1)); <span class="comment">// 18</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%OI&quot;</span>, date1)); <span class="comment">// 06</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%Om&quot;</span>, date1)); <span class="comment">// 04</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%OM&quot;</span>, date1)); <span class="comment">// 07</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%OS&quot;</span>, date1)); <span class="comment">// 05</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%Ou&quot;</span>, date1)); <span class="comment">// 2</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%OU&quot;</span>, date1)); <span class="comment">// 13</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%OV&quot;</span>, date1)); <span class="comment">// 14</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%Ow&quot;</span>, date1)); <span class="comment">// 2</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%OW&quot;</span>, date1)); <span class="comment">// 14</span></div>
-<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="#a58209959ca12a3589fa44ea680eddd47">date_time::sprintf</a>(<span class="stringliteral">&quot;%Oy&quot;</span>, date1)); <span class="comment">// 08</span></div>
+<div class="line">    <span class="keyword">auto</span> date_value = <a class="code hl_function" href="#a9af33e7a4b6e3f10f19133e026c1bc0e">date_time</a> {2008, 6, 15, 21, 15, 07};</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Create an array of standard format strings.</span></div>
+<div class="line">    <span class="keyword">auto</span> standard_fmts = {<span class="stringliteral">&quot;%a&quot;</span>, <span class="stringliteral">&quot;%A&quot;</span>, <span class="stringliteral">&quot;%b&quot;</span>, <span class="stringliteral">&quot;%B&quot;</span>, <span class="stringliteral">&quot;%c&quot;</span>, <span class="stringliteral">&quot;%C&quot;</span>, <span class="stringliteral">&quot;%d&quot;</span>, <span class="stringliteral">&quot;%D&quot;</span>, <span class="stringliteral">&quot;%e&quot;</span>, <span class="stringliteral">&quot;%Ec&quot;</span>, <span class="stringliteral">&quot;%EC&quot;</span>, <span class="stringliteral">&quot;%Ex&quot;</span>, <span class="stringliteral">&quot;%EX&quot;</span>, <span class="stringliteral">&quot;%Ey&quot;</span>,</div>
+<div class="line">      <span class="stringliteral">&quot;%EY&quot;</span>, <span class="stringliteral">&quot;%F&quot;</span>, <span class="stringliteral">&quot;%g&quot;</span>, <span class="stringliteral">&quot;%G&quot;</span>, <span class="stringliteral">&quot;%h&quot;</span>, <span class="stringliteral">&quot;%H&quot;</span>, <span class="stringliteral">&quot;%I&quot;</span>, <span class="stringliteral">&quot;%j&quot;</span>, <span class="stringliteral">&quot;%m&quot;</span>, <span class="stringliteral">&quot;%M&quot;</span>, <span class="stringliteral">&quot;%p&quot;</span>, <span class="stringliteral">&quot;%r&quot;</span>, <span class="stringliteral">&quot;%R&quot;</span>, <span class="stringliteral">&quot;%S&quot;</span>, <span class="stringliteral">&quot;%T&quot;</span>, <span class="stringliteral">&quot;%u&quot;</span>, <span class="stringliteral">&quot;%U&quot;</span>, <span class="stringliteral">&quot;%V&quot;</span>,</div>
+<div class="line">      <span class="stringliteral">&quot;%w&quot;</span>, <span class="stringliteral">&quot;%W&quot;</span>, <span class="stringliteral">&quot;%x&quot;</span>, <span class="stringliteral">&quot;%X&quot;</span>, <span class="stringliteral">&quot;%y&quot;</span>, <span class="stringliteral">&quot;%Y&quot;</span>, <span class="stringliteral">&quot;%z&quot;</span>, <span class="stringliteral">&quot;%Z&quot;</span>, <span class="stringliteral">&quot;%Od&quot;</span>, <span class="stringliteral">&quot;%Oe&quot;</span>, <span class="stringliteral">&quot;%OH&quot;</span>, <span class="stringliteral">&quot;%OI&quot;</span>, <span class="stringliteral">&quot;%Om&quot;</span>, <span class="stringliteral">&quot;%OM&quot;</span>, <span class="stringliteral">&quot;%OS&quot;</span>, <span class="stringliteral">&quot;%Ou&quot;</span>,</div>
+<div class="line">      <span class="stringliteral">&quot;%OU&quot;</span>, <span class="stringliteral">&quot;%OV&quot;</span>, <span class="stringliteral">&quot;%Ow&quot;</span>, <span class="stringliteral">&quot;%OW&quot;</span>, <span class="stringliteral">&quot;%Oy&quot;</span>};</div>
+<div class="line">    <span class="comment">// Output date and time using each standard format string.</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> standard_fmt : standard_fmts)</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{}: {}&quot;</span>, standard_fmt, date_time::sprintf(standard_fmt, date_value));</div>
+<div class="line">    console::write_line();</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Create an array of some custom format strings.</span></div>
+<div class="line">    <span class="keyword">auto</span> custom_fmts = {<span class="stringliteral">&quot;%I:%M:%S %p&quot;</span>, <span class="stringliteral">&quot;%e %b %G&quot;</span>, <span class="stringliteral">&quot;%H:%M:%S&quot;</span>, <span class="stringliteral">&quot;%e %b %H:%M:%S&quot;</span>, <span class="stringliteral">&quot;%%Month: %m&quot;</span>, <span class="stringliteral">&quot;%H:%M:%S%z&quot;</span>};</div>
+<div class="line">    <span class="comment">// Output date and time using each custom format string.</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> custom_fmt : custom_fmts)</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;&#39;{0}&#39;: {1}&quot;</span>, custom_fmt, date_time::sprintf(custom_fmt, date_value));</div>
 <div class="line">  }</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -5163,176 +4989,436 @@ This overload attempts to parse s by using DateTimeStyles.AllowWhiteSpaces style
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Tue</span></div>
-<div class="line"><span class="comment">// Tuesday</span></div>
-<div class="line"><span class="comment">// Apr</span></div>
-<div class="line"><span class="comment">// April</span></div>
-<div class="line"><span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line"><span class="comment">// 20</span></div>
-<div class="line"><span class="comment">// 01</span></div>
-<div class="line"><span class="comment">// 04/01/08</span></div>
-<div class="line"><span class="comment">//  1</span></div>
-<div class="line"><span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line"><span class="comment">// 20</span></div>
-<div class="line"><span class="comment">// 04/01/08</span></div>
-<div class="line"><span class="comment">// 18:07:05</span></div>
-<div class="line"><span class="comment">// 08</span></div>
-<div class="line"><span class="comment">// 2008</span></div>
-<div class="line"><span class="comment">// 2008-04-01</span></div>
-<div class="line"><span class="comment">// 08</span></div>
-<div class="line"><span class="comment">// 2008</span></div>
-<div class="line"><span class="comment">// Apr</span></div>
-<div class="line"><span class="comment">// 18</span></div>
-<div class="line"><span class="comment">// 06</span></div>
-<div class="line"><span class="comment">// 093</span></div>
-<div class="line"><span class="comment">// 04</span></div>
-<div class="line"><span class="comment">// 07</span></div>
-<div class="line"><span class="comment">// PM</span></div>
-<div class="line"><span class="comment">// 06:07:05 PM</span></div>
-<div class="line"><span class="comment">// 18:07</span></div>
-<div class="line"><span class="comment">// 05</span></div>
-<div class="line"><span class="comment">// 18:07:05</span></div>
-<div class="line"><span class="comment">// 2</span></div>
-<div class="line"><span class="comment">// 13</span></div>
-<div class="line"><span class="comment">// 14</span></div>
-<div class="line"><span class="comment">// 2</span></div>
-<div class="line"><span class="comment">// 14</span></div>
-<div class="line"><span class="comment">// 04/01/08</span></div>
-<div class="line"><span class="comment">// 18:07:05</span></div>
-<div class="line"><span class="comment">// 08</span></div>
-<div class="line"><span class="comment">// 2008</span></div>
-<div class="line"><span class="comment">// +0100</span></div>
-<div class="line"><span class="comment">// CET</span></div>
-<div class="line"><span class="comment">// 01</span></div>
-<div class="line"><span class="comment">//  1</span></div>
-<div class="line"><span class="comment">// 18</span></div>
-<div class="line"><span class="comment">// 06</span></div>
-<div class="line"><span class="comment">// 04</span></div>
-<div class="line"><span class="comment">// 07</span></div>
-<div class="line"><span class="comment">// 05</span></div>
-<div class="line"><span class="comment">// 2</span></div>
-<div class="line"><span class="comment">// 13</span></div>
-<div class="line"><span class="comment">// 14</span></div>
-<div class="line"><span class="comment">// 2</span></div>
-<div class="line"><span class="comment">// 14</span></div>
-<div class="line"><span class="comment">// 08</span></div>
-<div class="ttc" id="aclassxtd_1_1date__time_html_a58209959ca12a3589fa44ea680eddd47"><div class="ttname"><a href="#a58209959ca12a3589fa44ea680eddd47">xtd::date_time::sprintf</a></div><div class="ttdeci">static xtd::string sprintf(const string &amp;format, const date_time &amp;value)</div><div class="ttdoc">Returns a xtd::string that represents the current xtd::date_time.</div></div>
+<div class="line"><span class="comment">// %a: Sun</span></div>
+<div class="line"><span class="comment">// %A: Sunday</span></div>
+<div class="line"><span class="comment">// %b: Jun</span></div>
+<div class="line"><span class="comment">// %B: June</span></div>
+<div class="line"><span class="comment">// %c: Sun Jun 15 21:15:07 2008</span></div>
+<div class="line"><span class="comment">// %C: 20</span></div>
+<div class="line"><span class="comment">// %d: 15</span></div>
+<div class="line"><span class="comment">// %D: 06/15/08</span></div>
+<div class="line"><span class="comment">// %e: 15</span></div>
+<div class="line"><span class="comment">// %Ec: Sun Jun 15 21:15:07 2008</span></div>
+<div class="line"><span class="comment">// %EC: 20</span></div>
+<div class="line"><span class="comment">// %Ex: 06/15/08</span></div>
+<div class="line"><span class="comment">// %EX: 21:15:07</span></div>
+<div class="line"><span class="comment">// %Ey: 08</span></div>
+<div class="line"><span class="comment">// %EY: 2008</span></div>
+<div class="line"><span class="comment">// %F: 2008-06-15</span></div>
+<div class="line"><span class="comment">// %g: 08</span></div>
+<div class="line"><span class="comment">// %G: 2008</span></div>
+<div class="line"><span class="comment">// %h: Jun</span></div>
+<div class="line"><span class="comment">// %H: 21</span></div>
+<div class="line"><span class="comment">// %I: 09</span></div>
+<div class="line"><span class="comment">// %j: 168</span></div>
+<div class="line"><span class="comment">// %m: 06</span></div>
+<div class="line"><span class="comment">// %M: 15</span></div>
+<div class="line"><span class="comment">// %p: PM</span></div>
+<div class="line"><span class="comment">// %r: 09:15:07 PM</span></div>
+<div class="line"><span class="comment">// %R: 21:15</span></div>
+<div class="line"><span class="comment">// %S: 07</span></div>
+<div class="line"><span class="comment">// %T: 21:15:07</span></div>
+<div class="line"><span class="comment">// %u: 7</span></div>
+<div class="line"><span class="comment">// %U: 24</span></div>
+<div class="line"><span class="comment">// %V: 24</span></div>
+<div class="line"><span class="comment">// %w: 0</span></div>
+<div class="line"><span class="comment">// %W: 24</span></div>
+<div class="line"><span class="comment">// %x: 06/15/08</span></div>
+<div class="line"><span class="comment">// %X: 21:15:07</span></div>
+<div class="line"><span class="comment">// %y: 08</span></div>
+<div class="line"><span class="comment">// %Y: 2008</span></div>
+<div class="line"><span class="comment">// %z: +0100</span></div>
+<div class="line"><span class="comment">// %Z: CET</span></div>
+<div class="line"><span class="comment">// %Od: 15</span></div>
+<div class="line"><span class="comment">// %Oe: 15</span></div>
+<div class="line"><span class="comment">// %OH: 21</span></div>
+<div class="line"><span class="comment">// %OI: 09</span></div>
+<div class="line"><span class="comment">// %Om: 06</span></div>
+<div class="line"><span class="comment">// %OM: 15</span></div>
+<div class="line"><span class="comment">// %OS: 07</span></div>
+<div class="line"><span class="comment">// %Ou: 7</span></div>
+<div class="line"><span class="comment">// %OU: 24</span></div>
+<div class="line"><span class="comment">// %OV: 24</span></div>
+<div class="line"><span class="comment">// %Ow: 0</span></div>
+<div class="line"><span class="comment">// %OW: 24</span></div>
+<div class="line"><span class="comment">// %Oy: 08</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// &#39;%I:%M:%S %p&#39;: 09:15:07 PM</span></div>
+<div class="line"><span class="comment">// &#39;%e %b %G&#39;: 15 Jun 2008</span></div>
+<div class="line"><span class="comment">// &#39;%H:%M:%S&#39;: 21:15:07</span></div>
+<div class="line"><span class="comment">// &#39;%e %b %H:%M:%S&#39;: 15 Jun 21:15:07</span></div>
+<div class="line"><span class="comment">// &#39;%%Month: %m&#39;: %Month: 06</span></div>
+<div class="line"><span class="comment">// &#39;%H:%M:%S%z&#39;: 21:15:07+0100</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The formatting codes for sprintf are listed below: <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Format   </th><th class="markdownTableHeadNone">Print    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%a   </td><td class="markdownTableBodyNone">writes abbreviated weekday name, e.g. Fri (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%a</code>   </td><td class="markdownTableBodyNone">writes abbreviated weekday name, e.g. Fri (locale dependent).    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%A   </td><td class="markdownTableBodyNone">writes full weekday name, e.g. Friday (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%A</code>   </td><td class="markdownTableBodyNone">writes full weekday name, e.g. Friday (locale dependent).    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%b   </td><td class="markdownTableBodyNone">writes abbreviated month name, e.g. Oct (locale dependent)    </td></tr>
+<td class="markdownTableBodyNone"><code>%b</code>   </td><td class="markdownTableBodyNone">writes abbreviated month name, e.g. Oct (locale dependent)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%B   </td><td class="markdownTableBodyNone">writes full month name, e.g. October (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%B</code>   </td><td class="markdownTableBodyNone">writes full month name, e.g. October (locale dependent).    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%c   </td><td class="markdownTableBodyNone">writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%c</code>   </td><td class="markdownTableBodyNone">writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%C   </td><td class="markdownTableBodyNone">writes first 2 digits of year as a decimal number (range [00,99]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%C</code>   </td><td class="markdownTableBodyNone">writes first 2 digits of year as a decimal number (range [00,99]).    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%d   </td><td class="markdownTableBodyNone">writes day of the month as a decimal number (range [01,31]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%d</code>   </td><td class="markdownTableBodyNone">writes day of the month as a decimal number (range [01,31]).    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%D   </td><td class="markdownTableBodyNone">equivalent to "%m/%d/%y".    </td></tr>
+<td class="markdownTableBodyNone"><code>%D</code>   </td><td class="markdownTableBodyNone">equivalent to <code>%m/%d/%y</code>.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%e   </td><td class="markdownTableBodyNone">writes day of the month as a decimal number (range [1,31]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%e</code>   </td><td class="markdownTableBodyNone">writes day of the month as a decimal number (range [1,31]).    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%Ec   </td><td class="markdownTableBodyNone">writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Ec</code>   </td><td class="markdownTableBodyNone">writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%EC   </td><td class="markdownTableBodyNone">Writes name of the base year (period) in the locale's alternative representation, e.g. 平成 (Heisei era) in ja_JP    </td></tr>
+<td class="markdownTableBodyNone"><code>%EC</code>   </td><td class="markdownTableBodyNone">Writes name of the base year (period) in the locale's alternative representation, e.g. 平成 (Heisei era) in ja_JP    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%Ex   </td><td class="markdownTableBodyNone">writes alternative date representation, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Ex</code>   </td><td class="markdownTableBodyNone">writes alternative date representation, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%EX   </td><td class="markdownTableBodyNone">writes alternative time representation (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%EX</code>   </td><td class="markdownTableBodyNone">writes alternative time representation (locale dependent).    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%Ey   </td><td class="markdownTableBodyNone">writes year as offset from locale's alternative calendar period EC.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Ey</code>   </td><td class="markdownTableBodyNone">writes year as offset from locale's alternative calendar period <code>%EC</code>.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%EY   </td><td class="markdownTableBodyNone">writes year in the alternative representation, e.g.平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%EY</code>   </td><td class="markdownTableBodyNone">writes year in the alternative representation, e.g.平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%F   </td><td class="markdownTableBodyNone">equivalent to "%Y-%m-%d" (the ISO 8601 date format).    </td></tr>
+<td class="markdownTableBodyNone"><code>%F</code>   </td><td class="markdownTableBodyNone">equivalent to <code>%Y-%m-%d</code> (the ISO 8601 date format).    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%g   </td><td class="markdownTableBodyNone">writes last 2 digits of ISO 8601 week-based year, i.e. the year that contains the specified week (range [00,99]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%g</code>   </td><td class="markdownTableBodyNone">writes last 2 digits of ISO 8601 week-based year, i.e. the year that contains the specified week (range [00,99]).    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%G   </td><td class="markdownTableBodyNone">writes ISO 8601 week-based year, i.e. the year that contains the specified week.    </td></tr>
+<td class="markdownTableBodyNone"><code>%G</code>   </td><td class="markdownTableBodyNone">writes ISO 8601 week-based year, i.e. the year that contains the specified week.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%h   </td><td class="markdownTableBodyNone">synonym of b.    </td></tr>
+<td class="markdownTableBodyNone"><code>%h</code>   </td><td class="markdownTableBodyNone">synonym of b.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%H   </td><td class="markdownTableBodyNone">writes hour as a decimal number, 24 hour clock (range [00-23]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%H</code>   </td><td class="markdownTableBodyNone">writes hour as a decimal number, 24 hour clock (range [00-23]).    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%I   </td><td class="markdownTableBodyNone">writes hour as a decimal number, 12 hour clock (range [01,12]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%I</code>   </td><td class="markdownTableBodyNone">writes hour as a decimal number, 12 hour clock (range [01,12]).    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%j   </td><td class="markdownTableBodyNone">writes day of the year as a decimal number (range [001,366]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%j</code>   </td><td class="markdownTableBodyNone">writes day of the year as a decimal number (range [001,366]).    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%m   </td><td class="markdownTableBodyNone">writes month as a decimal number (range [01,12]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%m</code>   </td><td class="markdownTableBodyNone">writes month as a decimal number (range [01,12]).    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%M   </td><td class="markdownTableBodyNone">writes minute as a decimal number (range [00,59]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%M</code>   </td><td class="markdownTableBodyNone">writes minute as a decimal number (range [00,59]).    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%Od   </td><td class="markdownTableBodyNone">writes zero-based day of the month using the alternative numeric system, e.g 二十七 instead of 27 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Od</code>   </td><td class="markdownTableBodyNone">writes zero-based day of the month using the alternative numeric system, e.g 二十七 instead of 27 in ja_JP locale.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%Oe   </td><td class="markdownTableBodyNone">writes one-based day of the month using the alternative numeric system, e.g. 二十七 instead of 27 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Oe</code>   </td><td class="markdownTableBodyNone">writes one-based day of the month using the alternative numeric system, e.g. 二十七 instead of 27 in ja_JP locale.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%OH   </td><td class="markdownTableBodyNone">writes hour from 24-hour clock using the alternative numeric system, e.g. 十八 instead of 18 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OH</code>   </td><td class="markdownTableBodyNone">writes hour from 24-hour clock using the alternative numeric system, e.g. 十八 instead of 18 in ja_JP locale.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%OI   </td><td class="markdownTableBodyNone">writes hour from 12-hour clock using the alternative numeric system, e.g. 六 instead of 06 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OI</code>   </td><td class="markdownTableBodyNone">writes hour from 12-hour clock using the alternative numeric system, e.g. 六 instead of 06 in ja_JP locale.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%Om   </td><td class="markdownTableBodyNone">writes month using the alternative numeric system, e.g. 十二 instead of 12 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Om</code>   </td><td class="markdownTableBodyNone">writes month using the alternative numeric system, e.g. 十二 instead of 12 in ja_JP locale.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%OM   </td><td class="markdownTableBodyNone">writes minute using the alternative numeric system, e.g. 二十五 instead of 25 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OM</code>   </td><td class="markdownTableBodyNone">writes minute using the alternative numeric system, e.g. 二十五 instead of 25 in ja_JP locale.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%OS   </td><td class="markdownTableBodyNone">writes second using the alternative numeric system, e.g. 二十四 instead of 24 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OS</code>   </td><td class="markdownTableBodyNone">writes second using the alternative numeric system, e.g. 二十四 instead of 24 in ja_JP locale.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%Ou   </td><td class="markdownTableBodyNone">writes weekday, where Monday is 1, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Ou</code>   </td><td class="markdownTableBodyNone">writes weekday, where Monday is 1, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%OU   </td><td class="markdownTableBodyNone">writes week of the year, as by U, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OU</code>   </td><td class="markdownTableBodyNone">writes week of the year, as by <code>%U</code>, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%OV   </td><td class="markdownTableBodyNone">writes week of the year, as by V, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OV</code>   </td><td class="markdownTableBodyNone">writes week of the year, as by <code>%V</code>, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%Ow   </td><td class="markdownTableBodyNone">writes weekday, where Sunday is 0, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Ow</code>   </td><td class="markdownTableBodyNone">writes weekday, where Sunday is 0, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%OW   </td><td class="markdownTableBodyNone">writes week of the year, as by W, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OW</code>   </td><td class="markdownTableBodyNone">writes week of the year, as by <code>%W</code>, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%Oy   </td><td class="markdownTableBodyNone">writes last 2 digits of year using the alternative numeric system, e.g. 十一 instead of 11 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Oy</code>   </td><td class="markdownTableBodyNone">writes last 2 digits of year using the alternative numeric system, e.g. 十一 instead of 11 in ja_JP locale.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%p   </td><td class="markdownTableBodyNone">writes localized a.m. or p.m. (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%p</code>   </td><td class="markdownTableBodyNone">writes localized a.m. or p.m. (locale dependent).    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%r   </td><td class="markdownTableBodyNone">writes localized 12-hour clock time (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%r</code>   </td><td class="markdownTableBodyNone">writes localized 12-hour clock time (locale dependent).    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%R   </td><td class="markdownTableBodyNone">equivalent to "%H:%M".    </td></tr>
+<td class="markdownTableBodyNone"><code>%R</code>   </td><td class="markdownTableBodyNone">equivalent to <code>%H:%M</code>.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%S   </td><td class="markdownTableBodyNone">writes second as a decimal number (range [00,60]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%S</code>   </td><td class="markdownTableBodyNone">writes second as a decimal number (range [00,60]).    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%T   </td><td class="markdownTableBodyNone">equivalent to "%H:%M:%S" (the ISO 8601 time format)    </td></tr>
+<td class="markdownTableBodyNone"><code>%T</code>   </td><td class="markdownTableBodyNone">equivalent to <code>%H:%M:%S</code> (the ISO 8601 time format)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%u   </td><td class="markdownTableBodyNone">writes weekday as a decimal number, where Monday is 1 (ISO 8601 format) (range [1-7]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%u</code>   </td><td class="markdownTableBodyNone">writes weekday as a decimal number, where Monday is 1 (ISO 8601 format) (range [1-7]).    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%U   </td><td class="markdownTableBodyNone">writes week of the year as a decimal number (Sunday is the first day of the week) (range [00,53]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%U</code>   </td><td class="markdownTableBodyNone">writes week of the year as a decimal number (Sunday is the first day of the week) (range [00,53]).    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%V   </td><td class="markdownTableBodyNone">writes ISO 8601 week of the year (range [01,53]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%V</code>   </td><td class="markdownTableBodyNone">writes ISO 8601 week of the year (range [01,53]).    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%w   </td><td class="markdownTableBodyNone">writes weekday as a decimal number, where Sunday is 0 (range [0-6]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%w</code>   </td><td class="markdownTableBodyNone">writes weekday as a decimal number, where Sunday is 0 (range [0-6]).    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%W   </td><td class="markdownTableBodyNone">writes week of the year as a decimal number (Monday is the first day of the week) (range [00,53]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%W</code>   </td><td class="markdownTableBodyNone">writes week of the year as a decimal number (Monday is the first day of the week) (range [00,53]).    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%x   </td><td class="markdownTableBodyNone">writes localized date representation (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%x</code>   </td><td class="markdownTableBodyNone">writes localized date representation (locale dependent).    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%X   </td><td class="markdownTableBodyNone">writes localized time representation, e.g. 18:40:20 or 6:40:20 PM (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%X</code>   </td><td class="markdownTableBodyNone">writes localized time representation, e.g. 18:40:20 or 6:40:20 PM (locale dependent).    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%y   </td><td class="markdownTableBodyNone">writes last 2 digits of year as a decimal number (range [00,99]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%y</code>   </td><td class="markdownTableBodyNone">writes last 2 digits of year as a decimal number (range [00,99]).    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%Y   </td><td class="markdownTableBodyNone">writes year as a decimal number, e.g. 2017.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Y</code>   </td><td class="markdownTableBodyNone">writes year as a decimal number, e.g. 2017.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%z   </td><td class="markdownTableBodyNone">writes offset from UTC in the ISO 8601 format (e.g. -0430), or no characters if the time zone information is not available.    </td></tr>
+<td class="markdownTableBodyNone"><code>%z</code>   </td><td class="markdownTableBodyNone">writes offset from UTC in the ISO 8601 format (e.g. -0430), or no characters if the time zone information is not available.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%Z   </td><td class="markdownTableBodyNone">writes locale-dependent time zone name or abbreviation, or no characters if the time zone information is not available.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Z</code>   </td><td class="markdownTableBodyNone">writes locale-dependent time zone name or abbreviation, or no characters if the time zone information is not available.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%%   </td><td class="markdownTableBodyNone">writes literal %. The full conversion specification must be %%.    </td></tr>
+<td class="markdownTableBodyNone"><code>%%</code>   </td><td class="markdownTableBodyNone">writes literal <code>%</code>. The full conversion specification must be <code>%%</code>.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">%n   </td><td class="markdownTableBodyNone">writes newline character.    </td></tr>
+<td class="markdownTableBodyNone"><code>%n</code>   </td><td class="markdownTableBodyNone">writes newline character.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">%t   </td><td class="markdownTableBodyNone">writes horizontal tab character.   </td></tr>
+<td class="markdownTableBodyNone"><code>%t</code>   </td><td class="markdownTableBodyNone">writes horizontal tab character.   </td></tr>
+</table>
+</dd>
+<dd>
+See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time</a> for more information. </dd></dl>
+
+</div>
+</div>
+<a id="a0bc27432d6c1995b275813980da9c8ad" name="a0bc27432d6c1995b275813980da9c8ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bc27432d6c1995b275813980da9c8ad">&#9670;&#160;</a></span>sprintf() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::date_time::sprintf </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>format</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::locale &amp;</td>          <td class="paramname"><span class="paramname"><em>loc</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>Format-control String. </td></tr>
+    <tr><td class="paramname">value</td><td>The <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to format. </td></tr>
+    <tr><td class="paramname">loc</td><td>An std::locale object that contains locale information (see <a href="https://en.cppreference.com/w/cpp/locale/locale">std::locale</a>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a>. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a58209959ca12a3589fa44ea680eddd47" title="Returns a xtd::string that represents the current xtd::date_time.">xtd::date_time::sprintf</a> with differentt formats. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>program {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
+<div class="line">    <span class="keyword">auto</span> date_value = <a class="code hl_function" href="#a9af33e7a4b6e3f10f19133e026c1bc0e">date_time</a> {2008, 6, 15, 21, 15, 07};</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Create an array of standard format strings.</span></div>
+<div class="line">    <span class="keyword">auto</span> standard_fmts = {<span class="stringliteral">&quot;%a&quot;</span>, <span class="stringliteral">&quot;%A&quot;</span>, <span class="stringliteral">&quot;%b&quot;</span>, <span class="stringliteral">&quot;%B&quot;</span>, <span class="stringliteral">&quot;%c&quot;</span>, <span class="stringliteral">&quot;%C&quot;</span>, <span class="stringliteral">&quot;%d&quot;</span>, <span class="stringliteral">&quot;%D&quot;</span>, <span class="stringliteral">&quot;%e&quot;</span>, <span class="stringliteral">&quot;%Ec&quot;</span>, <span class="stringliteral">&quot;%EC&quot;</span>, <span class="stringliteral">&quot;%Ex&quot;</span>, <span class="stringliteral">&quot;%EX&quot;</span>, <span class="stringliteral">&quot;%Ey&quot;</span>,</div>
+<div class="line">      <span class="stringliteral">&quot;%EY&quot;</span>, <span class="stringliteral">&quot;%F&quot;</span>, <span class="stringliteral">&quot;%g&quot;</span>, <span class="stringliteral">&quot;%G&quot;</span>, <span class="stringliteral">&quot;%h&quot;</span>, <span class="stringliteral">&quot;%H&quot;</span>, <span class="stringliteral">&quot;%I&quot;</span>, <span class="stringliteral">&quot;%j&quot;</span>, <span class="stringliteral">&quot;%m&quot;</span>, <span class="stringliteral">&quot;%M&quot;</span>, <span class="stringliteral">&quot;%p&quot;</span>, <span class="stringliteral">&quot;%r&quot;</span>, <span class="stringliteral">&quot;%R&quot;</span>, <span class="stringliteral">&quot;%S&quot;</span>, <span class="stringliteral">&quot;%T&quot;</span>, <span class="stringliteral">&quot;%u&quot;</span>, <span class="stringliteral">&quot;%U&quot;</span>, <span class="stringliteral">&quot;%V&quot;</span>,</div>
+<div class="line">      <span class="stringliteral">&quot;%w&quot;</span>, <span class="stringliteral">&quot;%W&quot;</span>, <span class="stringliteral">&quot;%x&quot;</span>, <span class="stringliteral">&quot;%X&quot;</span>, <span class="stringliteral">&quot;%y&quot;</span>, <span class="stringliteral">&quot;%Y&quot;</span>, <span class="stringliteral">&quot;%z&quot;</span>, <span class="stringliteral">&quot;%Z&quot;</span>, <span class="stringliteral">&quot;%Od&quot;</span>, <span class="stringliteral">&quot;%Oe&quot;</span>, <span class="stringliteral">&quot;%OH&quot;</span>, <span class="stringliteral">&quot;%OI&quot;</span>, <span class="stringliteral">&quot;%Om&quot;</span>, <span class="stringliteral">&quot;%OM&quot;</span>, <span class="stringliteral">&quot;%OS&quot;</span>, <span class="stringliteral">&quot;%Ou&quot;</span>,</div>
+<div class="line">      <span class="stringliteral">&quot;%OU&quot;</span>, <span class="stringliteral">&quot;%OV&quot;</span>, <span class="stringliteral">&quot;%Ow&quot;</span>, <span class="stringliteral">&quot;%OW&quot;</span>, <span class="stringliteral">&quot;%Oy&quot;</span>};</div>
+<div class="line">    <span class="comment">// Output date and time using each standard format string.</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> standard_fmt : standard_fmts)</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{}: {}&quot;</span>, standard_fmt, date_time::sprintf(standard_fmt, date_value));</div>
+<div class="line">    console::write_line();</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Create an array of some custom format strings.</span></div>
+<div class="line">    <span class="keyword">auto</span> custom_fmts = {<span class="stringliteral">&quot;%I:%M:%S %p&quot;</span>, <span class="stringliteral">&quot;%e %b %G&quot;</span>, <span class="stringliteral">&quot;%H:%M:%S&quot;</span>, <span class="stringliteral">&quot;%e %b %H:%M:%S&quot;</span>, <span class="stringliteral">&quot;%%Month: %m&quot;</span>, <span class="stringliteral">&quot;%H:%M:%S%z&quot;</span>};</div>
+<div class="line">    <span class="comment">// Output date and time using each custom format string.</span></div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> custom_fmt : custom_fmts)</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;&#39;{0}&#39;: {1}&quot;</span>, custom_fmt, date_time::sprintf(custom_fmt, date_value));</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// %a: Sun</span></div>
+<div class="line"><span class="comment">// %A: Sunday</span></div>
+<div class="line"><span class="comment">// %b: Jun</span></div>
+<div class="line"><span class="comment">// %B: June</span></div>
+<div class="line"><span class="comment">// %c: Sun Jun 15 21:15:07 2008</span></div>
+<div class="line"><span class="comment">// %C: 20</span></div>
+<div class="line"><span class="comment">// %d: 15</span></div>
+<div class="line"><span class="comment">// %D: 06/15/08</span></div>
+<div class="line"><span class="comment">// %e: 15</span></div>
+<div class="line"><span class="comment">// %Ec: Sun Jun 15 21:15:07 2008</span></div>
+<div class="line"><span class="comment">// %EC: 20</span></div>
+<div class="line"><span class="comment">// %Ex: 06/15/08</span></div>
+<div class="line"><span class="comment">// %EX: 21:15:07</span></div>
+<div class="line"><span class="comment">// %Ey: 08</span></div>
+<div class="line"><span class="comment">// %EY: 2008</span></div>
+<div class="line"><span class="comment">// %F: 2008-06-15</span></div>
+<div class="line"><span class="comment">// %g: 08</span></div>
+<div class="line"><span class="comment">// %G: 2008</span></div>
+<div class="line"><span class="comment">// %h: Jun</span></div>
+<div class="line"><span class="comment">// %H: 21</span></div>
+<div class="line"><span class="comment">// %I: 09</span></div>
+<div class="line"><span class="comment">// %j: 168</span></div>
+<div class="line"><span class="comment">// %m: 06</span></div>
+<div class="line"><span class="comment">// %M: 15</span></div>
+<div class="line"><span class="comment">// %p: PM</span></div>
+<div class="line"><span class="comment">// %r: 09:15:07 PM</span></div>
+<div class="line"><span class="comment">// %R: 21:15</span></div>
+<div class="line"><span class="comment">// %S: 07</span></div>
+<div class="line"><span class="comment">// %T: 21:15:07</span></div>
+<div class="line"><span class="comment">// %u: 7</span></div>
+<div class="line"><span class="comment">// %U: 24</span></div>
+<div class="line"><span class="comment">// %V: 24</span></div>
+<div class="line"><span class="comment">// %w: 0</span></div>
+<div class="line"><span class="comment">// %W: 24</span></div>
+<div class="line"><span class="comment">// %x: 06/15/08</span></div>
+<div class="line"><span class="comment">// %X: 21:15:07</span></div>
+<div class="line"><span class="comment">// %y: 08</span></div>
+<div class="line"><span class="comment">// %Y: 2008</span></div>
+<div class="line"><span class="comment">// %z: +0100</span></div>
+<div class="line"><span class="comment">// %Z: CET</span></div>
+<div class="line"><span class="comment">// %Od: 15</span></div>
+<div class="line"><span class="comment">// %Oe: 15</span></div>
+<div class="line"><span class="comment">// %OH: 21</span></div>
+<div class="line"><span class="comment">// %OI: 09</span></div>
+<div class="line"><span class="comment">// %Om: 06</span></div>
+<div class="line"><span class="comment">// %OM: 15</span></div>
+<div class="line"><span class="comment">// %OS: 07</span></div>
+<div class="line"><span class="comment">// %Ou: 7</span></div>
+<div class="line"><span class="comment">// %OU: 24</span></div>
+<div class="line"><span class="comment">// %OV: 24</span></div>
+<div class="line"><span class="comment">// %Ow: 0</span></div>
+<div class="line"><span class="comment">// %OW: 24</span></div>
+<div class="line"><span class="comment">// %Oy: 08</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// &#39;%I:%M:%S %p&#39;: 09:15:07 PM</span></div>
+<div class="line"><span class="comment">// &#39;%e %b %G&#39;: 15 Jun 2008</span></div>
+<div class="line"><span class="comment">// &#39;%H:%M:%S&#39;: 21:15:07</span></div>
+<div class="line"><span class="comment">// &#39;%e %b %H:%M:%S&#39;: 15 Jun 21:15:07</span></div>
+<div class="line"><span class="comment">// &#39;%%Month: %m&#39;: %Month: 06</span></div>
+<div class="line"><span class="comment">// &#39;%H:%M:%S%z&#39;: 21:15:07+0100</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The formatting codes for sprintf are listed below: <table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Format   </th><th class="markdownTableHeadNone">Print    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%a</code>   </td><td class="markdownTableBodyNone">writes abbreviated weekday name, e.g. Fri (locale dependent).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%A</code>   </td><td class="markdownTableBodyNone">writes full weekday name, e.g. Friday (locale dependent).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%b</code>   </td><td class="markdownTableBodyNone">writes abbreviated month name, e.g. Oct (locale dependent)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%B</code>   </td><td class="markdownTableBodyNone">writes full month name, e.g. October (locale dependent).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%c</code>   </td><td class="markdownTableBodyNone">writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%C</code>   </td><td class="markdownTableBodyNone">writes first 2 digits of year as a decimal number (range [00,99]).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%d</code>   </td><td class="markdownTableBodyNone">writes day of the month as a decimal number (range [01,31]).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%D</code>   </td><td class="markdownTableBodyNone">equivalent to <code>%m/%d/%y</code>.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%e</code>   </td><td class="markdownTableBodyNone">writes day of the month as a decimal number (range [1,31]).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%Ec</code>   </td><td class="markdownTableBodyNone">writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%EC</code>   </td><td class="markdownTableBodyNone">Writes name of the base year (period) in the locale's alternative representation, e.g. 平成 (Heisei era) in ja_JP    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%Ex</code>   </td><td class="markdownTableBodyNone">writes alternative date representation, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%EX</code>   </td><td class="markdownTableBodyNone">writes alternative time representation (locale dependent).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%Ey</code>   </td><td class="markdownTableBodyNone">writes year as offset from locale's alternative calendar period <code>%EC</code>.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%EY</code>   </td><td class="markdownTableBodyNone">writes year in the alternative representation, e.g.平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%F</code>   </td><td class="markdownTableBodyNone">equivalent to <code>%Y-%m-%d</code> (the ISO 8601 date format).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%g</code>   </td><td class="markdownTableBodyNone">writes last 2 digits of ISO 8601 week-based year, i.e. the year that contains the specified week (range [00,99]).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%G</code>   </td><td class="markdownTableBodyNone">writes ISO 8601 week-based year, i.e. the year that contains the specified week.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%h</code>   </td><td class="markdownTableBodyNone">synonym of b.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%H</code>   </td><td class="markdownTableBodyNone">writes hour as a decimal number, 24 hour clock (range [00-23]).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%I</code>   </td><td class="markdownTableBodyNone">writes hour as a decimal number, 12 hour clock (range [01,12]).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%j</code>   </td><td class="markdownTableBodyNone">writes day of the year as a decimal number (range [001,366]).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%m</code>   </td><td class="markdownTableBodyNone">writes month as a decimal number (range [01,12]).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%M</code>   </td><td class="markdownTableBodyNone">writes minute as a decimal number (range [00,59]).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%Od</code>   </td><td class="markdownTableBodyNone">writes zero-based day of the month using the alternative numeric system, e.g 二十七 instead of 27 in ja_JP locale.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%Oe</code>   </td><td class="markdownTableBodyNone">writes one-based day of the month using the alternative numeric system, e.g. 二十七 instead of 27 in ja_JP locale.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%OH</code>   </td><td class="markdownTableBodyNone">writes hour from 24-hour clock using the alternative numeric system, e.g. 十八 instead of 18 in ja_JP locale.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%OI</code>   </td><td class="markdownTableBodyNone">writes hour from 12-hour clock using the alternative numeric system, e.g. 六 instead of 06 in ja_JP locale.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%Om</code>   </td><td class="markdownTableBodyNone">writes month using the alternative numeric system, e.g. 十二 instead of 12 in ja_JP locale.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%OM</code>   </td><td class="markdownTableBodyNone">writes minute using the alternative numeric system, e.g. 二十五 instead of 25 in ja_JP locale.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%OS</code>   </td><td class="markdownTableBodyNone">writes second using the alternative numeric system, e.g. 二十四 instead of 24 in ja_JP locale.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%Ou</code>   </td><td class="markdownTableBodyNone">writes weekday, where Monday is 1, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%OU</code>   </td><td class="markdownTableBodyNone">writes week of the year, as by <code>%U</code>, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%OV</code>   </td><td class="markdownTableBodyNone">writes week of the year, as by <code>%V</code>, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%Ow</code>   </td><td class="markdownTableBodyNone">writes weekday, where Sunday is 0, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%OW</code>   </td><td class="markdownTableBodyNone">writes week of the year, as by <code>%W</code>, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%Oy</code>   </td><td class="markdownTableBodyNone">writes last 2 digits of year using the alternative numeric system, e.g. 十一 instead of 11 in ja_JP locale.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%p</code>   </td><td class="markdownTableBodyNone">writes localized a.m. or p.m. (locale dependent).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%r</code>   </td><td class="markdownTableBodyNone">writes localized 12-hour clock time (locale dependent).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%R</code>   </td><td class="markdownTableBodyNone">equivalent to <code>%H:%M</code>.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%S</code>   </td><td class="markdownTableBodyNone">writes second as a decimal number (range [00,60]).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%T</code>   </td><td class="markdownTableBodyNone">equivalent to <code>%H:%M:%S</code> (the ISO 8601 time format)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%u</code>   </td><td class="markdownTableBodyNone">writes weekday as a decimal number, where Monday is 1 (ISO 8601 format) (range [1-7]).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%U</code>   </td><td class="markdownTableBodyNone">writes week of the year as a decimal number (Sunday is the first day of the week) (range [00,53]).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%V</code>   </td><td class="markdownTableBodyNone">writes ISO 8601 week of the year (range [01,53]).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%w</code>   </td><td class="markdownTableBodyNone">writes weekday as a decimal number, where Sunday is 0 (range [0-6]).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%W</code>   </td><td class="markdownTableBodyNone">writes week of the year as a decimal number (Monday is the first day of the week) (range [00,53]).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%x</code>   </td><td class="markdownTableBodyNone">writes localized date representation (locale dependent).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%X</code>   </td><td class="markdownTableBodyNone">writes localized time representation, e.g. 18:40:20 or 6:40:20 PM (locale dependent).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%y</code>   </td><td class="markdownTableBodyNone">writes last 2 digits of year as a decimal number (range [00,99]).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%Y</code>   </td><td class="markdownTableBodyNone">writes year as a decimal number, e.g. 2017.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%z</code>   </td><td class="markdownTableBodyNone">writes offset from UTC in the ISO 8601 format (e.g. -0430), or no characters if the time zone information is not available.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%Z</code>   </td><td class="markdownTableBodyNone">writes locale-dependent time zone name or abbreviation, or no characters if the time zone information is not available.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%%</code>   </td><td class="markdownTableBodyNone">writes literal <code>%</code>. The full conversion specification must be <code>%%</code>.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%n</code>   </td><td class="markdownTableBodyNone">writes newline character.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%t</code>   </td><td class="markdownTableBodyNone">writes horizontal tab character.   </td></tr>
 </table>
 </dd>
 <dd>
@@ -5512,7 +5598,7 @@ See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time<
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Sep 30 2025 17:54:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Oct 2 2025 23:53:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
