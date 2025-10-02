@@ -3,60 +3,23 @@
 class program {
 public:
   static auto main() {
-    auto date1 = date_time {2008, 4, 1, 18, 7, 5, 16};
-    console::write_line(date_time::sprintf("%a", date1));  // Tue
-    console::write_line(date_time::sprintf("%A", date1));  // Tuesday
-    console::write_line(date_time::sprintf("%b", date1));  // Apr
-    console::write_line(date_time::sprintf("%B", date1));  // April
-    console::write_line(date_time::sprintf("%c", date1));  // Tue Apr  1 18:07:05 2008
-    console::write_line(date_time::sprintf("%C", date1));  // 20
-    console::write_line(date_time::sprintf("%d", date1));  // 01
-    console::write_line(date_time::sprintf("%D", date1));  // 04/01/08
-    console::write_line(date_time::sprintf("%e", date1));  //  1
-    console::write_line(date_time::sprintf("%Ec", date1)); // Tue Apr  1 18:07:05 2008
-    console::write_line(date_time::sprintf("%EC", date1)); // 20
-    console::write_line(date_time::sprintf("%Ex", date1)); // 04/01/08
-    console::write_line(date_time::sprintf("%EX", date1)); // 18:07:05
-    console::write_line(date_time::sprintf("%Ey", date1)); // 08
-    console::write_line(date_time::sprintf("%EY", date1)); // 2008
-    console::write_line(date_time::sprintf("%F", date1));  // 2008-04-01
-    console::write_line(date_time::sprintf("%g", date1));  // 08
-    console::write_line(date_time::sprintf("%G", date1));  // 2008
-    console::write_line(date_time::sprintf("%h", date1));  // Apr
-    console::write_line(date_time::sprintf("%H", date1));  // 18
-    console::write_line(date_time::sprintf("%I", date1));  // 06
-    console::write_line(date_time::sprintf("%j", date1));  // 093
-    console::write_line(date_time::sprintf("%m", date1));  // 04
-    console::write_line(date_time::sprintf("%M", date1));  // 07
-    console::write_line(date_time::sprintf("%p", date1));  // PM
-    console::write_line(date_time::sprintf("%r", date1));  // 06:07:05 PM
-    console::write_line(date_time::sprintf("%R", date1));  // 18:07
-    console::write_line(date_time::sprintf("%S", date1));  // 05
-    console::write_line(date_time::sprintf("%T", date1));  // 18:07:05
-    console::write_line(date_time::sprintf("%u", date1));  // 2
-    console::write_line(date_time::sprintf("%U", date1));  // 13
-    console::write_line(date_time::sprintf("%V", date1));  // 14
-    console::write_line(date_time::sprintf("%w", date1));  // 2
-    console::write_line(date_time::sprintf("%W", date1));  // 14
-    console::write_line(date_time::sprintf("%x", date1));  // 04/01/08
-    console::write_line(date_time::sprintf("%X", date1));  // 18:07:05
-    console::write_line(date_time::sprintf("%y", date1));  // 08
-    console::write_line(date_time::sprintf("%Y", date1));  // 2008
-    console::write_line(date_time::sprintf("%z", date1));  // +0100
-    console::write_line(date_time::sprintf("%Z", date1));  // CET
-    console::write_line(date_time::sprintf("%Od", date1)); // 01
-    console::write_line(date_time::sprintf("%Oe", date1)); //  1
-    console::write_line(date_time::sprintf("%OH", date1)); // 18
-    console::write_line(date_time::sprintf("%OI", date1)); // 06
-    console::write_line(date_time::sprintf("%Om", date1)); // 04
-    console::write_line(date_time::sprintf("%OM", date1)); // 07
-    console::write_line(date_time::sprintf("%OS", date1)); // 05
-    console::write_line(date_time::sprintf("%Ou", date1)); // 2
-    console::write_line(date_time::sprintf("%OU", date1)); // 13
-    console::write_line(date_time::sprintf("%OV", date1)); // 14
-    console::write_line(date_time::sprintf("%Ow", date1)); // 2
-    console::write_line(date_time::sprintf("%OW", date1)); // 14
-    console::write_line(date_time::sprintf("%Oy", date1)); // 08
+    auto date_value = date_time {2008, 6, 15, 21, 15, 07};
+
+    // Create an array of standard format strings.
+    auto standard_fmts = {"%a", "%A", "%b", "%B", "%c", "%C", "%d", "%D", "%e", "%Ec", "%EC", "%Ex", "%EX", "%Ey",
+      "%EY", "%F", "%g", "%G", "%h", "%H", "%I", "%j", "%m", "%M", "%p", "%r", "%R", "%S", "%T", "%u", "%U", "%V",
+      "%w", "%W", "%x", "%X", "%y", "%Y", "%z", "%Z", "%Od", "%Oe", "%OH", "%OI", "%Om", "%OM", "%OS", "%Ou",
+      "%OU", "%OV", "%Ow", "%OW", "%Oy"};
+    // Output date and time using each standard format string.
+    for (auto standard_fmt : standard_fmts)
+      console::write_line("{}: {}", standard_fmt, date_time::sprintf(standard_fmt, date_value));
+    console::write_line();
+
+    // Create an array of some custom format strings.
+    auto custom_fmts = {"%I:%M:%S %p", "%e %b %G", "%H:%M:%S", "%%Month: %m", "%H:%M:%S%z"};
+    // Output date and time using each custom format string.
+    for (auto custom_fmt : custom_fmts)
+      console::write_line("'{0}': {1}", custom_fmt, date_time::sprintf(custom_fmt, date_value));
   }
 };
 
@@ -64,56 +27,62 @@ startup_(program::main);
 
 // This code produces the following output :
 //
-// Tue
-// Tuesday
-// Apr
-// April
-// Tue Apr  1 18:07:05 2008
-// 20
-// 01
-// 04/01/08
-//  1
-// Tue Apr  1 18:07:05 2008
-// 20
-// 04/01/08
-// 18:07:05
-// 08
-// 2008
-// 2008-04-01
-// 08
-// 2008
-// Apr
-// 18
-// 06
-// 093
-// 04
-// 07
-// PM
-// 06:07:05 PM
-// 18:07
-// 05
-// 18:07:05
-// 2
-// 13
-// 14
-// 2
-// 14
-// 04/01/08
-// 18:07:05
-// 08
-// 2008
-// +0100
-// CET
-// 01
-//  1
-// 18
-// 06
-// 04
-// 07
-// 05
-// 2
-// 13
-// 14
-// 2
-// 14
-// 08
+// %a: Sun
+// %A: Sunday
+// %b: Jun
+// %B: June
+// %c: Sun Jun 15 21:15:07 2008
+// %C: 20
+// %d: 15
+// %D: 06/15/08
+// %e: 15
+// %Ec: Sun Jun 15 21:15:07 2008
+// %EC: 20
+// %Ex: 06/15/08
+// %EX: 21:15:07
+// %Ey: 08
+// %EY: 2008
+// %F: 2008-06-15
+// %g: 08
+// %G: 2008
+// %h: Jun
+// %H: 21
+// %I: 09
+// %j: 168
+// %m: 06
+// %M: 15
+// %p: PM
+// %r: 09:15:07 PM
+// %R: 21:15
+// %S: 07
+// %T: 21:15:07
+// %u: 7
+// %U: 24
+// %V: 24
+// %w: 0
+// %W: 24
+// %x: 06/15/08
+// %X: 21:15:07
+// %y: 08
+// %Y: 2008
+// %z: +0100
+// %Z: CET
+// %Od: 15
+// %Oe: 15
+// %OH: 21
+// %OI: 09
+// %Om: 06
+// %OM: 15
+// %OS: 07
+// %Ou: 7
+// %OU: 24
+// %OV: 24
+// %Ow: 0
+// %OW: 24
+// %Oy: 08
+//
+// '%I:%M:%S %p': 09:15:07 PM
+// '%e %b %G': 15 Jun 2008
+// '%H:%M:%S': 21:15:07
+// '%%Month: %m': %Month: 06
+// '%H:%M:%S%z': 21:15:07+0100
