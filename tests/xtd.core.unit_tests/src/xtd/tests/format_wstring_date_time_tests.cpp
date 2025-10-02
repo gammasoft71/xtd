@@ -126,19 +126,19 @@ namespace xtd::tests {
       assert::are_equal(L"Wednesday, January 2, 2019 03:04:05", format(L"{0:F}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
-    void test_method_(format_genral_short_with_none) {
+    void test_method_(format_general_short_with_none) {
       assert::are_equal(L"1/2/2019 03:04", format(L"{:g}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
-    void test_method_(format_genral_short_with_sequence_number) {
+    void test_method_(format_general_short_with_sequence_number) {
       assert::are_equal(L"1/2/2019 03:04", format(L"{0:g}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
-    void test_method_(format_genral_long_with_none) {
+    void test_method_(format_general_long_with_none) {
       assert::are_equal(L"1/2/2019 03:04:05", format(L"{:G}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
-    void test_method_(format_genral_long_with_sequence_number) {
+    void test_method_(format_general_long_with_sequence_number) {
       assert::are_equal(L"1/2/2019 03:04:05", format(L"{0:G}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
