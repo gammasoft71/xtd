@@ -731,20 +731,23 @@ string date_time::to_string_custom(const string& format, const std::locale& loc)
 
   string result;
   for (auto index = 0_z; index < format.length(); ++index) {
-    switch (format[index]) {
-      case 'd': result += to_string_custom_day(format, index, day, self_, loc); break;
-      case 'f':
-      case 'F': result += to_string_custom_fraction(format, index, ticks()); break;
-      case 'h': result += to_string_custom_hour(format, index, hour % 12 == 0 && hour != 0 ? 12 : hour % 12); break;
-      case 'H': result += to_string_custom_hour(format, index, hour); break;
-      case 'K': result += to_string_custom_time_zone_information(format, index, kind_, offset_sec); break;
-      case 'm': result += to_string_custom_minute(format, index, minute); break;
-      case 'M': result += to_string_custom_month(format, index, month, self_, loc); break;
-      case 's': result += to_string_custom_second(format, index, second); break;
-      case 't': result += to_string_custom_time_suffix(format, index, hour, self_, loc); break;
-      case 'y': result += to_string_custom_year(format, index, year); break;
-      case 'z': result += to_string_custom_offset_utc(format, index, offset_sec); break;
-      default: result += format[index]; break;
+    if (format[index] == '\\') result += index + 1 < format.length() ? as<string>(format[++index]) : ""_s;
+    else {
+      switch (format[index]) {
+        case 'd': result += to_string_custom_day(format, index, day, self_, loc); break;
+        case 'f':
+        case 'F': result += to_string_custom_fraction(format, index, ticks()); break;
+        case 'h': result += to_string_custom_hour(format, index, hour % 12 == 0 && hour != 0 ? 12 : hour % 12); break;
+        case 'H': result += to_string_custom_hour(format, index, hour); break;
+        case 'K': result += to_string_custom_time_zone_information(format, index, kind_, offset_sec); break;
+        case 'm': result += to_string_custom_minute(format, index, minute); break;
+        case 'M': result += to_string_custom_month(format, index, month, self_, loc); break;
+        case 's': result += to_string_custom_second(format, index, second); break;
+        case 't': result += to_string_custom_time_suffix(format, index, hour, self_, loc); break;
+        case 'y': result += to_string_custom_year(format, index, year); break;
+        case 'z': result += to_string_custom_offset_utc(format, index, offset_sec); break;
+        default: result += format[index]; break;
+      }
     }
   }
   
