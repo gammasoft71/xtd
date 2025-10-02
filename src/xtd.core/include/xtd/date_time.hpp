@@ -757,61 +757,27 @@ namespace xtd {
     /// @return A string representation of value of the current xtd::date_time object as specified by format.
     /// @exception xtd::format_excpetion The length of format is 1, and it is not a valid format characters<br>-or-<br>The length si greater than 1.
     /// @par Examples
-    /// The foloowwing example shows how to use xtd::date_time::to_string(const xtd::string&) with differentt formats.
+    /// The following example shows how to use xtd::date_time::to_string(const xtd::string&) with differentt formats.
     /// @include date_time_to_string_format.cpp
     /// @remarks The formatting codes for xtd::date_time::to_string (const xtd::string&) are listed below:
-    /// | Format | Print                                                                                                                       |
-    /// | ------ | --------------------------------------------------------------------------------------------------------------------------- |
-    /// | 'a'    | writes "PM" or "AM"                                                                                                         |
-    /// | 'b'    | writes 3 digit millisecond, e.G. 012                                                                                        |
-    /// | 'B'    | wrties millisecond, eg 12                                                                                                   |
-    /// | 'c'    | writes 7 digit tick, e.G. 0000123                                                                                           |
-    /// | 'C'    | writes tick, e.G. 123                                                                                                       |
-    /// | 'd'    | writes date MM/dd/y, e.g. 01/05/42                                                                                          |
-    /// | 'D'    | writes date M/dd/y, e.g. 1/055/42                                                                                           |
-    /// | 'e'    | writes 2 digit second, e.G. 03                                                                                              |
-    /// | 'B'    | writes second, e.G. 3                                                                                                       |
-    /// | 'f'    | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
-    /// | 'F'    | writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).                                     |
-    /// | 'g'    | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
-    /// | 'G'    | writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).                                     |
-    /// | 'h'    | writes abbreviated weekday name, e.g. Fri (locale dependent).                                                               |
-    /// | 'H'    | writes full weekday name, e.g. Friday (locale dependent).                                                                   |
-    /// | 'i'    | writes 2 digit day, e.g. 05                                                                                                 |
-    /// | 'I'    | writes day, e.G. 5                                                                                                          |
-    /// | 'j'    | writes abbreviated month name, e.g. Oct (locale dependent)                                                                  |
-    /// | 'J'    | writes full month name, e.g. October (locale dependent).                                                                    |
-    /// | 'k'    | writes 2 digit month, e.g. 01                                                                                               |
-    /// | 'K'    | writes month, e.g. 1                                                                                                        |
-    /// | 'l'    | writes 2 digit year, e.g. 71                                                                                                |
-    /// | 'L'    | writes 4 digit year, e.g. 1971                                                                                              |
-    /// | 'm'    | writes year, e.g. 42                                                                                                        |
-    /// | 'M'    | writes full month name and day, e.g. October, 5 (locale dependent).                                                         |
-    /// | 'n'    | writes full weekday name, day, fulll month and year, e.g. Tuesday, 1 April 2008                                             |
-    /// | 'N'    | writes full weekday name, day, fulll month, year, hour, minute ans second, e.g. Tuesday, 1 April 2008 18:07:05              |
-    /// | 'o'    | writes ISO 8601 UTC date/time with "Z", e.g. 2025-09-30T18:33:44.2347810Z                                                   |
-    /// | 'O'    | writes ISO 8601 local date/time with offset, e.g. 2025-09-30T20:33:44.2347810+02:00                                         |
-    /// | 'p'    | writes 2 digit minute, e.G. 06                                                                                              |
-    /// | 'P'    | writes minute, e.G. 6                                                                                                       |
-    /// | 'q'    | writes day, full month and year, e.g. 5 January 42                                                                          |
-    /// | 'Q'    | writes day, full month and year, e.g. 5 January 42                                                                          |
-    /// | 'r'    | writes RFC1123 pattern (GMT), e.g. Tue, 01 Oct 2025 18:44:23 GMT                                                            |
-    /// | 'R'    | writes RFC1123 pattern (GMT), e.g. Tue, 01 Oct 2025 18:44:23 GMT (same as 'r')                                              |
-    /// | 's'    | writes sortable date/time pattern yyyy-MM-ddThh:mm:ss.ttttttt. e.g. 1971-05-01T21:32:24:42.004567                           |
-    /// | 't'    | writes time hh/mm/ss, e.g. 02:04:06                                                                                         |
-    /// | 'T'    | writes time h/mm/ss, e.g. 2:04:06                                                                                           |
-    /// | 'u'    | writes sortable short date/time pattern y-MM-dd hh:mm:ss. e.g. 1971-05-01 9:32:24:42                                        |
-    /// | 'U'    | writes full weekday name, day, fulll month, year, hour, minute ans second, e.g. Tuesday, 1 April 2008 18:07:05              |
-    /// | 'v'    | writes time hh/mm, e.g. 02:04                                                                                               |
-    /// | 'V'    | writes time h/mm, e.g. 2:04                                                                                                 |
-    /// | 'w'    | writes 2 digit hour (24H), e.g. 07                                                                                          |
-    /// | 'W'    | writes hour (24H), e.g. 7                                                                                                   |
-    /// | 'x'    | writes 2 digit hour (12H), e.g. 07                                                                                          |
-    /// | 'X'    | writes hour (12H), e.g. 7                                                                                                   |
-    /// | 'y'    | writes full month name and year, e.g. October, 71 (locale dependent).                                                       |
-    /// | 'Y'    | writes full month name and year, e.g. October, 1971 (locale dependent).                                                     |
-    /// | 'z'    | writes time zone "local" or "UTC".                                                                                          |
-    /// | 'Z'    | writes time zone "local" or "UTC".                                                                                          |
+    /// | Format                     | Description                                                                      | Custom format equivalent          | examples                                                                                                                                                                                                                                                         |
+    /// | -------------------------- | -------------------------------------------------------------------------------- | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    /// | `"d"`                      | Short date pattern.                                                              | `"M/d/yyyy"`                      | 2009-06-15T13:45:30 -> 6/15/2009 (en-US) <br><br> 2009-06-15T13:45:30 -> 15/06/2009 (fr-FR) <br><br> 2009-06-15T13:45:30 -> 2009/06/15 (ja-JP)                                                                                                                   |
+    /// | `"D"`                      | Long date pattern.                                                               | `"dddd, MMMM d, yyyy"`            | 2009-06-15T13:45:30 -> Monday, June 15, 2009 (en-US) <br><br> 2009-06-15T13:45:30 -> понедельник, 15 июня 2009 г. (ru-RU) <br><br> 2009-06-15T13:45:30 -> Montag, 15. Juni 2009 (de-DE)                                                                          |
+    /// | `"f"`                      | Full date/time pattern (short time).                                             | `"dddd, MMMM d, yyyy HH:mm"`      | 2009-06-15T13:45:30 -> Monday, June 15, 2009 1:45 PM (en-US) <br><br> 2009-06-15T13:45:30 -> den 15 juni 2009 13:45 (sv-SE) <br><br> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 1:45 μμ (el-GR)                                                             |
+    /// | `"F"`                      | Full date/time pattern (long time).                                              | `"dddd, MMMM d, yyyy HH:mm:ss"`   | 2009-06-15T13:45:30 -> Monday, June 15, 2009 1:45:30 PM (en-US) <br><br> 2009-06-15T13:45:30 -> den 15 juni 2009 13:45:30 (sv-SE) <br><br> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 1:45:30 μμ (el-GR)                                                    |
+    /// | `"g"`                      | General date/time pattern (short time).                                          | `"M/d/yyyy HH:mm"`                | 2009-06-15T13:45:30 -> 6/15/2009 1:45 PM (en-US) <br><br> 2009-06-15T13:45:30 -> 15/06/2009 13:45 (es-ES) <br><br> 2009-06-15T13:45:30 -> 2009/6/15 13:45 (zh-CN)                                                                                                |
+    /// | `"G"`                      | General date/time pattern (long time).                                           | `"M/d/yyyy HH:mm:ss"`             | 2009-06-15T13:45:30 -> 6/15/2009 1:45:30 PM (en-US) <br><br> 2009-06-15T13:45:30 -> 15/06/2009 13:45:30 (es-ES) <br><br> 2009-06-15T13:45:30 -> 2009/6/15 13:45:30 (zh-CN)                                                                                       |
+    /// | `"M"`, `"m"`               | Month/day pattern.                                                               | `"MMMM d"`                        | 2009-06-15T13:45:30 -> June 15 (en-US) <br><br> 2009-06-15T13:45:30 -> 15. juni (da-DK) <br><br> 2009-06-15T13:45:30 -> 15 Juni (id-ID)                                                                                                                          |
+    /// | `"O"`, `"o"`               | round-trip date/time pattern. [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) | `"yyyy-MM-ddTHH:mm:ss.fffffffK"`  | 2009-06-15T13:45:30 (date_time_kind::local) --> 2009-06-15T13:45:30.0000000-07:00 <br><br> 2009-06-15T13:45:30 (date_time_kind::utc) --> 2009-06-15T13:45:30.0000000Z <br><br> 2009-06-15T13:45:30 (date_time_kind::unspecified) --> 2009-06-15T13:45:30.0000000 |
+    /// | `"R"`, `"r"`               | RFC1123 pattern.                                                                 | `"ddd, dd MMM yyyy HH:mm:ss GMT"` | 2009-06-15T13:45:30 -> Mon, 15 Jun 2009 13:45:30 GMT                                                                                                                                                                                                             |
+    /// | `"s"`                      | Sortable date/time pattern.                                                      | `"yyyy-MM-ddTHH:mm:ss"`           | 2009-06-15T13:45:30 (date_time_kind::local) -> 2009-06-15T13:45:30 <br><br> 2009-06-15T13:45:30 (date_time_kind::utc) -> 2009-06-15T13:45:30                                                                                                                     |
+    /// | `"t"`                      | Short time pattern.                                                              | `"HH:mm"`                         | 2009-06-15T13:45:30 -> 1:45 PM (en-US) <br><br> 2009-06-15T13:45:30 -> 13:45 (hr-HR) <br><br> 2009-06-15T13:45:30 -> 01:45 م (ar-EG)                                                                                                                             |
+    /// | `"T"`                      | Long time pattern.                                                               | `"HH:mm:ss"`                      | 2009-06-15T13:45:30 -> 1:45:30 PM (en-US) <br><br> 2009-06-15T13:45:30 -> 13:45:30 (hr-HR) <br><br> 2009-06-15T13:45:30 -> 01:45:30 م (ar-EG)                                                                                                                    |
+    /// | `"u"`                      | Universal sortable date/time pattern.                                            | `"yyyy-MM-dd HH:mm:ssZ"`          | 2009-06-15T13:45:30 -> 2009-06-15 13:45:30Z                                                                                                                                                                                                                      |
+    /// | `"U"`                      | Universal full date/time pattern.                                                | `"dddd, MMMM d, yyyy HH:mm:ss"`   | 2009-06-15T13:45:30 -> Monday, June 15, 2009 8:45:30 PM (en-US) <br><br>  2009-06-15T13:45:30 -> den 15 juni 2009 20:45:30 (sv-SE) <br><br> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 8:45:30 μμ (el-GR)                                                   |
+    /// | `"Y"`, `"y"`               | Year month pattern.                                                              | `"MMMM yyyy"`                     | 2009-06-15T13:45:30 -> June 2009 (en-US) <br><br> 2009-06-15T13:45:30 -> juni 2009 (da-DK) <br><br> 2009-06-15T13:45:30 -> Juni 2009 (id-ID)                                                                                                                     |
+    /// | Any other single character | Unknown specifier.                                                               |                                   | Throws a run-time xtd::format_exception.                                                                                                                                                                                                                         |
     xtd::string to_string(const string& format) const;
     /// @brief Converts the value of the current xtd::date_time object to its equivalent string representation using the specified format and the formatting conventions of the current culture.
     /// @param format A standard or custom date and time format string.
@@ -819,61 +785,27 @@ namespace xtd {
     /// @return A string representation of value of the current xtd::date_time object as specified by format.
     /// @exception xtd::format_excpetion The length of format is 1, and it is not a valid format characters<br>-or-<br>The length si greater than 1.
     /// @par Examples
-    /// The foloowwing example shows how to use xtd::date_time::to_string(const xtd::string&) with differentt formats.
+    /// The following example shows how to use xtd::date_time::to_string(const xtd::string&) with differentt formats.
     /// @include date_time_to_string_format.cpp
     /// @remarks The formatting codes for xtd::date_time::to_string (const xtd::string&) are listed below:
-    /// | Format | Print                                                                                                                       |
-    /// | ------ | --------------------------------------------------------------------------------------------------------------------------- |
-    /// | 'a'    | writes "PM" or "AM"                                                                                                         |
-    /// | 'b'    | writes 3 digit millisecond, e.G. 012                                                                                        |
-    /// | 'B'    | wrties millisecond, eg 12                                                                                                   |
-    /// | 'c'    | writes 7 digit tick, e.G. 0000123                                                                                           |
-    /// | 'C'    | writes tick, e.G. 123                                                                                                       |
-    /// | 'd'    | writes date MM/dd/y, e.g. 01/05/42                                                                                          |
-    /// | 'D'    | writes date M/dd/y, e.g. 1/055/42                                                                                           |
-    /// | 'e'    | writes 2 digit second, e.G. 03                                                                                              |
-    /// | 'B'    | writes second, e.G. 3                                                                                                       |
-    /// | 'f'    | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
-    /// | 'F'    | writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).                                     |
-    /// | 'g'    | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
-    /// | 'G'    | writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).                                     |
-    /// | 'h'    | writes abbreviated weekday name, e.g. Fri (locale dependent).                                                               |
-    /// | 'H'    | writes full weekday name, e.g. Friday (locale dependent).                                                                   |
-    /// | 'i'    | writes 2 digit day, e.g. 05                                                                                                 |
-    /// | 'I'    | writes day, e.G. 5                                                                                                          |
-    /// | 'j'    | writes abbreviated month name, e.g. Oct (locale dependent)                                                                  |
-    /// | 'J'    | writes full month name, e.g. October (locale dependent).                                                                    |
-    /// | 'k'    | writes 2 digit month, e.g. 01                                                                                               |
-    /// | 'K'    | writes month, e.g. 1                                                                                                        |
-    /// | 'l'    | writes 2 digit year, e.g. 71                                                                                                |
-    /// | 'L'    | writes 4 digit year, e.g. 1971                                                                                              |
-    /// | 'm'    | writes year, e.g. 42                                                                                                        |
-    /// | 'M'    | writes full month name and day, e.g. October, 5 (locale dependent).                                                         |
-    /// | 'n'    | writes full weekday name, day, fulll month and year, e.g. Tuesday, 1 April 2008                                             |
-    /// | 'N'    | writes full weekday name, day, fulll month, year, hour, minute ans second, e.g. Tuesday, 1 April 2008 18:07:05              |
-    /// | 'o'    | writes ISO 8601 UTC date/time with "Z", e.g. 2025-09-30T18:33:44.2347810Z                                                   |
-    /// | 'O'    | writes ISO 8601 local date/time with offset, e.g. 2025-09-30T20:33:44.2347810+02:00                                         |
-    /// | 'p'    | writes 2 digit minute, e.G. 06                                                                                              |
-    /// | 'P'    | writes minute, e.G. 6                                                                                                       |
-    /// | 'q'    | writes day, full month and year, e.g. 5 January 42                                                                          |
-    /// | 'Q'    | writes day, full month and year, e.g. 5 January 42                                                                          |
-    /// | 'r'    | writes RFC1123 pattern (GMT), e.g. Tue, 01 Oct 2025 18:44:23 GMT                                                            |
-    /// | 'R'    | writes RFC1123 pattern (GMT), e.g. Tue, 01 Oct 2025 18:44:23 GMT (same as 'r')                                              |
-    /// | 's'    | writes sortable date/time pattern yyyy-MM-ddThh:mm:ss.ttttttt. e.g. 1971-05-01T21:32:24:42.004567                           |
-    /// | 't'    | writes time hh/mm/ss, e.g. 02:04:06                                                                                         |
-    /// | 'T'    | writes time h/mm/ss, e.g. 2:04:06                                                                                           |
-    /// | 'u'    | writes sortable short date/time pattern y-MM-dd hh:mm:ss. e.g. 1971-05-01 9:32:24:42                                        |
-    /// | 'U'    | writes full weekday name, day, fulll month, year, hour, minute ans second, e.g. Tuesday, 1 April 2008 18:07:05              |
-    /// | 'v'    | writes time hh/mm, e.g. 02:04                                                                                               |
-    /// | 'V'    | writes time h/mm, e.g. 2:04                                                                                                 |
-    /// | 'w'    | writes 2 digit hour (24H), e.g. 07                                                                                          |
-    /// | 'W'    | writes hour (24H), e.g. 7                                                                                                   |
-    /// | 'x'    | writes 2 digit hour (12H), e.g. 07                                                                                          |
-    /// | 'X'    | writes hour (12H), e.g. 7                                                                                                   |
-    /// | 'y'    | writes full month name and year, e.g. October, 71 (locale dependent).                                                       |
-    /// | 'Y'    | writes full month name and year, e.g. October, 1971 (locale dependent).                                                     |
-    /// | 'z'    | writes time zone "local" or "UTC".                                                                                          |
-    /// | 'Z'    | writes time zone "local" or "UTC".                                                                                          |
+    /// | Format                     | Description                                                                      | Custom format equivalent        | examples                                                                                                                                                                                                                                                         |
+    /// | -------------------------- | -------------------------------------------------------------------------------- | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+    /// | `"d"`                      | Short date pattern.                                                              | `"M/d/yyyy"`                      | 2009-06-15T13:45:30 -> 6/15/2009 (en-US) <br><br> 2009-06-15T13:45:30 -> 15/06/2009 (fr-FR) <br><br> 2009-06-15T13:45:30 -> 2009/06/15 (ja-JP)                                                                                                                   |
+    /// | `"D"`                      | Long date pattern.                                                               | `"dddd, MMMM d, yyyy"`            | 2009-06-15T13:45:30 -> Monday, June 15, 2009 (en-US) <br><br> 2009-06-15T13:45:30 -> понедельник, 15 июня 2009 г. (ru-RU) <br><br> 2009-06-15T13:45:30 -> Montag, 15. Juni 2009 (de-DE)                                                                          |
+    /// | `"f"`                      | Full date/time pattern (short time).                                             | `"dddd, MMMM d, yyyy HH:mm"`      | 2009-06-15T13:45:30 -> Monday, June 15, 2009 1:45 PM (en-US) <br><br> 2009-06-15T13:45:30 -> den 15 juni 2009 13:45 (sv-SE) <br><br> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 1:45 μμ (el-GR)                                                             |
+    /// | `"F"`                      | Full date/time pattern (long time).                                              | `"dddd, MMMM d, yyyy HH:mm:ss"`   | 2009-06-15T13:45:30 -> Monday, June 15, 2009 1:45:30 PM (en-US) <br><br> 2009-06-15T13:45:30 -> den 15 juni 2009 13:45:30 (sv-SE) <br><br> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 1:45:30 μμ (el-GR)                                                    |
+    /// | `"g"`                      | General date/time pattern (short time).                                          | `"M/d/yyyy HH:mm"`                | 2009-06-15T13:45:30 -> 6/15/2009 1:45 PM (en-US) <br><br> 2009-06-15T13:45:30 -> 15/06/2009 13:45 (es-ES) <br><br> 2009-06-15T13:45:30 -> 2009/6/15 13:45 (zh-CN)                                                                                                |
+    /// | `"G"`                      | General date/time pattern (long time).                                           | `"M/d/yyyy HH:mm:ss"`             | 2009-06-15T13:45:30 -> 6/15/2009 1:45:30 PM (en-US) <br><br> 2009-06-15T13:45:30 -> 15/06/2009 13:45:30 (es-ES) <br><br> 2009-06-15T13:45:30 -> 2009/6/15 13:45:30 (zh-CN)                                                                                       |
+    /// | `"M"`, `"m"`               | Month/day pattern.                                                               | `"MMMM d"`                        | 2009-06-15T13:45:30 -> June 15 (en-US) <br><br> 2009-06-15T13:45:30 -> 15. juni (da-DK) <br><br> 2009-06-15T13:45:30 -> 15 Juni (id-ID)                                                                                                                          |
+    /// | `"O"`, `"o"`               | round-trip date/time pattern. [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) | `"yyyy-MM-ddTHH:mm:ss.fffffffK"`  | 2009-06-15T13:45:30 (date_time_kind::local) --> 2009-06-15T13:45:30.0000000-07:00 <br><br> 2009-06-15T13:45:30 (date_time_kind::utc) --> 2009-06-15T13:45:30.0000000Z <br><br> 2009-06-15T13:45:30 (date_time_kind::unspecified) --> 2009-06-15T13:45:30.0000000 |
+    /// | `"R"`, `"r"`               | RFC1123 pattern.                                                                 | `"ddd, dd MMM yyyy HH:mm:ss GMT"` | 2009-06-15T13:45:30 -> Mon, 15 Jun 2009 13:45:30 GMT                                                                                                                                                                                                             |
+    /// | `"s"`                      | Sortable date/time pattern.                                                      | `"yyyy-MM-ddTHH:mm:ss"`           | 2009-06-15T13:45:30 (date_time_kind::local) -> 2009-06-15T13:45:30 <br><br> 2009-06-15T13:45:30 (date_time_kind::utc) -> 2009-06-15T13:45:30                                                                                                                     |
+    /// | `"t"`                      | Short time pattern.                                                              | `"HH:mm"`                         | 2009-06-15T13:45:30 -> 1:45 PM (en-US) <br><br> 2009-06-15T13:45:30 -> 13:45 (hr-HR) <br><br> 2009-06-15T13:45:30 -> 01:45 م (ar-EG)                                                                                                                             |
+    /// | `"T"`                      | Long time pattern.                                                               | `"HH:mm:ss"`                      | 2009-06-15T13:45:30 -> 1:45:30 PM (en-US) <br><br> 2009-06-15T13:45:30 -> 13:45:30 (hr-HR) <br><br> 2009-06-15T13:45:30 -> 01:45:30 م (ar-EG)                                                                                                                    |
+    /// | `"u"`                      | Universal sortable date/time pattern.                                            | `"yyyy-MM-dd HH:mm:ssZ"`          | 2009-06-15T13:45:30 -> 2009-06-15 13:45:30Z                                                                                                                                                                                                                      |
+    /// | `"U"`                      | Universal full date/time pattern.                                                | `"dddd, MMMM d, yyyy HH:mm:ss"`   | 2009-06-15T13:45:30 -> Monday, June 15, 2009 8:45:30 PM (en-US) <br><br>  2009-06-15T13:45:30 -> den 15 juni 2009 20:45:30 (sv-SE) <br><br> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 8:45:30 μμ (el-GR)                                                   |
+    /// | `"Y"`, `"y"`               | Year month pattern.                                                              | `"MMMM yyyy"`                     | 2009-06-15T13:45:30 -> June 2009 (en-US) <br><br> 2009-06-15T13:45:30 -> juni 2009 (da-DK) <br><br> 2009-06-15T13:45:30 -> Juni 2009 (id-ID)                                                                                                                     |
+    /// | Any other single character | Unknown specifier.                                                               |                                   | Throws a run-time xtd::format_exception.                                                                                                                                                                                                                         |
     xtd::string to_string(const string& format, const std::locale& loc) const override;
     
     /// @brief Converts the value of the current xtd::date_time object to [std::time_t](https://en.cppreference.com/w/cpp/chrono/c/time_t).
@@ -1077,67 +1009,67 @@ namespace xtd {
     /// @param value The xtd::date_time object to format.
     /// @return A xtd::string that represents the current xtd::date_time.
     /// @par Examples
-    /// The foloowwing example shows how to use xtd::date_time::sprintf with differentt formats.
+    /// The following example shows how to use xtd::date_time::sprintf with differentt formats.
     /// @include date_time_sprintf.cpp
     /// @remarks The formatting codes for sprintf are listed below:
     /// | Format | Print                                                                                                                       |
     /// | ------ | --------------------------------------------------------------------------------------------------------------------------- |
-    /// | \%a    | writes abbreviated weekday name, e.g. Fri (locale dependent).                                                               |
-    /// | \%A    | writes full weekday name, e.g. Friday (locale dependent).                                                                   |
-    /// | \%b    | writes abbreviated month name, e.g. Oct (locale dependent)                                                                  |
-    /// | \%B    | writes full month name, e.g. October (locale dependent).                                                                    |
-    /// | \%c    | writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).                                     |
-    /// | \%C    | writes first 2 digits of year as a decimal number (range [00,99]).                                                          |
-    /// | \%d    | writes day of the month as a decimal number (range [01,31]).                                                                |
-    /// | \%D    | equivalent to "%m/%d/%y".                                                                                                   |
-    /// | \%e    | writes day of the month as a decimal number (range [1,31]).                                                                 |
-    /// | \%Ec   | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
-    /// | \%EC   | Writes name of the base year (period) in the locale's alternative representation, e.g. 平成 (Heisei era) in ja_JP            |
-    /// | \%Ex   | writes alternative date representation, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.   |
-    /// | \%EX   | writes alternative time representation (locale dependent).                                                                  |
-    /// | \%Ey   | writes year as offset from locale's alternative calendar period %EC.                                                        |
-    /// | \%EY   | writes year in the alternative representation, e.g.平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.   |
-    /// | \%F    | equivalent to "%Y-%m-%d" (the ISO 8601 date format).                                                                        |
-    /// | \%g    | writes last 2 digits of ISO 8601 week-based year, i.e. the year that contains the specified week (range [00,99]).           |
-    /// | \%G    | writes ISO 8601 week-based year, i.e. the year that contains the specified week.                                            |
-    /// | \%h    | synonym of b.                                                                                                               |
-    /// | \%H    | writes hour as a decimal number, 24 hour clock (range [00-23]).                                                             |
-    /// | \%I    | writes hour as a decimal number, 12 hour clock (range [01,12]).                                                             |
-    /// | \%j    | writes day of the year as a decimal number (range [001,366]).                                                               |
-    /// | \%m    | writes month as a decimal number (range [01,12]).                                                                           |
-    /// | \%M    | writes minute as a decimal number (range [00,59]).                                                                          |
-    /// | \%Od   | writes zero-based day of the month using the alternative numeric system, e.g 二十七 instead of 27 in ja_JP locale.           |
-    /// | \%Oe   | writes one-based day of the month using the alternative numeric system, e.g. 二十七 instead of 27 in ja_JP locale.           |
-    /// | \%OH   | writes hour from 24-hour clock using the alternative numeric system, e.g. 十八 instead of 18 in ja_JP locale.                |
-    /// | \%OI   | writes hour from 12-hour clock using the alternative numeric system, e.g. 六 instead of 06 in ja_JP locale.                 |
-    /// | \%Om   | writes month using the alternative numeric system, e.g. 十二 instead of 12 in ja_JP locale.                                  |
-    /// | \%OM   | writes minute using the alternative numeric system, e.g. 二十五 instead of 25 in ja_JP locale.                               |
-    /// | \%OS   | writes second using the alternative numeric system, e.g. 二十四 instead of 24 in ja_JP locale.                               |
-    /// | \%Ou   | writes weekday, where Monday is 1, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.              |
-    /// | \%OU   | writes week of the year, as by %U, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.           |
-    /// | \%OV   | writes week of the year, as by %V, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.           |
-    /// | \%Ow   | writes weekday, where Sunday is 0, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.               |
-    /// | \%OW   | writes week of the year, as by %W, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.           |
-    /// | \%Oy   | writes last 2 digits of year using the alternative numeric system, e.g. 十一 instead of 11 in ja_JP locale.                  |
-    /// | \%p    | writes localized a.m. or p.m. (locale dependent).                                                                           |
-    /// | \%r    | writes localized 12-hour clock time (locale dependent).                                                                     |
-    /// | \%R    | equivalent to "%H:%M".                                                                                                      |
-    /// | \%S    | writes second as a decimal number (range [00,60]).                                                                          |
-    /// | \%T    | equivalent to "%H:%M:%S" (the ISO 8601 time format)                                                                         |
-    /// | \%u    | writes weekday as a decimal number, where Monday is 1 (ISO 8601 format) (range [1-7]).                                      |
-    /// | \%U    | writes week of the year as a decimal number (Sunday is the first day of the week) (range [00,53]).                          |
-    /// | \%V    | writes ISO 8601 week of the year (range [01,53]).                                                                           |
-    /// | \%w    | writes weekday as a decimal number, where Sunday is 0 (range [0-6]).                                                        |
-    /// | \%W    | writes week of the year as a decimal number (Monday is the first day of the week) (range [00,53]).                          |
-    /// | \%x    | writes localized date representation (locale dependent).                                                                    |
-    /// | \%X    | writes localized time representation, e.g. 18:40:20 or 6:40:20 PM (locale dependent).                                       |
-    /// | \%y    | writes last 2 digits of year as a decimal number (range [00,99]).                                                           |
-    /// | \%Y    | writes year as a decimal number, e.g. 2017.                                                                                 |
-    /// | \%z    | writes offset from UTC in the ISO 8601 format (e.g. -0430), or no characters if the time zone information is not available. |
-    /// | \%Z    | writes locale-dependent time zone name or abbreviation, or no characters if the time zone information is not available.     |
-    /// | \%\%   | writes literal %. The full conversion specification must be %%.                                                             |
-    /// | \%n    | writes newline character.                                                                                                   |
-    /// | \%t    | writes horizontal tab character.                                                                                            |
+    /// | `%%a`  | writes abbreviated weekday name, e.g. Fri (locale dependent).                                                               |
+    /// | `%%A`  | writes full weekday name, e.g. Friday (locale dependent).                                                                   |
+    /// | `%%b`  | writes abbreviated month name, e.g. Oct (locale dependent)                                                                  |
+    /// | `%%B`  | writes full month name, e.g. October (locale dependent).                                                                    |
+    /// | `%%c`  | writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).                                     |
+    /// | `%%C`  | writes first 2 digits of year as a decimal number (range [00,99]).                                                          |
+    /// | `%%d`  | writes day of the month as a decimal number (range [01,31]).                                                                |
+    /// | `%%D`  | equivalent to `%%m/%%d/%%y`.                                                                                                |
+    /// | `%%e`  | writes day of the month as a decimal number (range [1,31]).                                                                 |
+    /// | `%%Ec` | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
+    /// | `%%EC` | Writes name of the base year (period) in the locale's alternative representation, e.g. 平成 (Heisei era) in ja_JP            |
+    /// | `%%Ex` | writes alternative date representation, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.   |
+    /// | `%%EX` | writes alternative time representation (locale dependent).                                                                  |
+    /// | `%%Ey` | writes year as offset from locale's alternative calendar period `%%EC`.                                                     |
+    /// | `%%EY` | writes year in the alternative representation, e.g.平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.   |
+    /// | `%%F`  | equivalent to `%%Y-%%m-%%d` (the ISO 8601 date format).                                                                     |
+    /// | `%%g`  | writes last 2 digits of ISO 8601 week-based year, i.e. the year that contains the specified week (range [00,99]).           |
+    /// | `%%G`  | writes ISO 8601 week-based year, i.e. the year that contains the specified week.                                            |
+    /// | `%%h`  | synonym of b.                                                                                                               |
+    /// | `%%H`  | writes hour as a decimal number, 24 hour clock (range [00-23]).                                                             |
+    /// | `%%I`  | writes hour as a decimal number, 12 hour clock (range [01,12]).                                                             |
+    /// | `%%j`  | writes day of the year as a decimal number (range [001,366]).                                                               |
+    /// | `%%m`  | writes month as a decimal number (range [01,12]).                                                                           |
+    /// | `%%M`  | writes minute as a decimal number (range [00,59]).                                                                          |
+    /// | `%%Od` | writes zero-based day of the month using the alternative numeric system, e.g 二十七 instead of 27 in ja_JP locale.           |
+    /// | `%%Oe` | writes one-based day of the month using the alternative numeric system, e.g. 二十七 instead of 27 in ja_JP locale.           |
+    /// | `%%OH` | writes hour from 24-hour clock using the alternative numeric system, e.g. 十八 instead of 18 in ja_JP locale.                |
+    /// | `%%OI` | writes hour from 12-hour clock using the alternative numeric system, e.g. 六 instead of 06 in ja_JP locale.                 |
+    /// | `%%Om` | writes month using the alternative numeric system, e.g. 十二 instead of 12 in ja_JP locale.                                  |
+    /// | `%%OM` | writes minute using the alternative numeric system, e.g. 二十五 instead of 25 in ja_JP locale.                               |
+    /// | `%%OS` | writes second using the alternative numeric system, e.g. 二十四 instead of 24 in ja_JP locale.                               |
+    /// | `%%Ou` | writes weekday, where Monday is 1, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.              |
+    /// | `%%OU` | writes week of the year, as by `%%U`, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.        |
+    /// | `%%OV` | writes week of the year, as by `%%V`, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.        |
+    /// | `%%Ow` | writes weekday, where Sunday is 0, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.               |
+    /// | `%%OW` | writes week of the year, as by `%%W`, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.        |
+    /// | `%%Oy` | writes last 2 digits of year using the alternative numeric system, e.g. 十一 instead of 11 in ja_JP locale.                  |
+    /// | `%%p`  | writes localized a.m. or p.m. (locale dependent).                                                                           |
+    /// | `%%r`  | writes localized 12-hour clock time (locale dependent).                                                                     |
+    /// | `%%R`  | equivalent to `%%H:%%M`.                                                                                                    |
+    /// | `%%S`  | writes second as a decimal number (range [00,60]).                                                                          |
+    /// | `%%T`  | equivalent to `%%H:%%M:%%S` (the ISO 8601 time format)                                                                      |
+    /// | `%%u`  | writes weekday as a decimal number, where Monday is 1 (ISO 8601 format) (range [1-7]).                                      |
+    /// | `%%U`  | writes week of the year as a decimal number (Sunday is the first day of the week) (range [00,53]).                          |
+    /// | `%%V`  | writes ISO 8601 week of the year (range [01,53]).                                                                           |
+    /// | `%%w`  | writes weekday as a decimal number, where Sunday is 0 (range [0-6]).                                                        |
+    /// | `%%W`  | writes week of the year as a decimal number (Monday is the first day of the week) (range [00,53]).                          |
+    /// | `%%x`  | writes localized date representation (locale dependent).                                                                    |
+    /// | `%%X`  | writes localized time representation, e.g. 18:40:20 or 6:40:20 PM (locale dependent).                                       |
+    /// | `%%y`  | writes last 2 digits of year as a decimal number (range [00,99]).                                                           |
+    /// | `%%Y`  | writes year as a decimal number, e.g. 2017.                                                                                 |
+    /// | `%%z`  | writes offset from UTC in the ISO 8601 format (e.g. -0430), or no characters if the time zone information is not available. |
+    /// | `%%Z`  | writes locale-dependent time zone name or abbreviation, or no characters if the time zone information is not available.     |
+    /// | `%%`   | writes literal `%`. The full conversion specification must be `%%`.                                                         |
+    /// | `%%n`  | writes newline character.                                                                                                   |
+    /// | `%%t`  | writes horizontal tab character.                                                                                            |
     /// @remarks See [std::put_time](https://en.cppreference.com/w/cpp/io/manip/put_time) for more information.
     static xtd::string sprintf(const string& format, const date_time& value);
     /// @brief Returns a xtd::string that represents the current xtd::date_time.
@@ -1146,67 +1078,67 @@ namespace xtd {
     /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
     /// @return A xtd::string that represents the current xtd::date_time.
     /// @par Examples
-    /// The foloowwing example shows how to use xtd::date_time::sprintf with differentt formats.
+    /// The following example shows how to use xtd::date_time::sprintf with differentt formats.
     /// @include date_time_sprintf.cpp
     /// @remarks The formatting codes for sprintf are listed below:
     /// | Format | Print                                                                                                                       |
     /// | ------ | --------------------------------------------------------------------------------------------------------------------------- |
-    /// | \%a    | writes abbreviated weekday name, e.g. Fri (locale dependent).                                                               |
-    /// | \%A    | writes full weekday name, e.g. Friday (locale dependent).                                                                   |
-    /// | \%b    | writes abbreviated month name, e.g. Oct (locale dependent)                                                                  |
-    /// | \%B    | writes full month name, e.g. October (locale dependent).                                                                    |
-    /// | \%c    | writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).                                     |
-    /// | \%C    | writes first 2 digits of year as a decimal number (range [00,99]).                                                          |
-    /// | \%d    | writes day of the month as a decimal number (range [01,31]).                                                                |
-    /// | \%D    | equivalent to "%m/%d/%y".                                                                                                   |
-    /// | \%e    | writes day of the month as a decimal number (range [1,31]).                                                                 |
-    /// | \%Ec   | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
-    /// | \%EC   | Writes name of the base year (period) in the locale's alternative representation, e.g. 平成 (Heisei era) in ja_JP            |
-    /// | \%Ex   | writes alternative date representation, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.   |
-    /// | \%EX   | writes alternative time representation (locale dependent).                                                                  |
-    /// | \%Ey   | writes year as offset from locale's alternative calendar period %EC.                                                        |
-    /// | \%EY   | writes year in the alternative representation, e.g.平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.   |
-    /// | \%F    | equivalent to "%Y-%m-%d" (the ISO 8601 date format).                                                                        |
-    /// | \%g    | writes last 2 digits of ISO 8601 week-based year, i.e. the year that contains the specified week (range [00,99]).           |
-    /// | \%G    | writes ISO 8601 week-based year, i.e. the year that contains the specified week.                                            |
-    /// | \%h    | synonym of b.                                                                                                               |
-    /// | \%H    | writes hour as a decimal number, 24 hour clock (range [00-23]).                                                             |
-    /// | \%I    | writes hour as a decimal number, 12 hour clock (range [01,12]).                                                             |
-    /// | \%j    | writes day of the year as a decimal number (range [001,366]).                                                               |
-    /// | \%m    | writes month as a decimal number (range [01,12]).                                                                           |
-    /// | \%M    | writes minute as a decimal number (range [00,59]).                                                                          |
-    /// | \%Od   | writes zero-based day of the month using the alternative numeric system, e.g 二十七 instead of 27 in ja_JP locale.           |
-    /// | \%Oe   | writes one-based day of the month using the alternative numeric system, e.g. 二十七 instead of 27 in ja_JP locale.           |
-    /// | \%OH   | writes hour from 24-hour clock using the alternative numeric system, e.g. 十八 instead of 18 in ja_JP locale.                |
-    /// | \%OI   | writes hour from 12-hour clock using the alternative numeric system, e.g. 六 instead of 06 in ja_JP locale.                 |
-    /// | \%Om   | writes month using the alternative numeric system, e.g. 十二 instead of 12 in ja_JP locale.                                  |
-    /// | \%OM   | writes minute using the alternative numeric system, e.g. 二十五 instead of 25 in ja_JP locale.                               |
-    /// | \%OS   | writes second using the alternative numeric system, e.g. 二十四 instead of 24 in ja_JP locale.                               |
-    /// | \%Ou   | writes weekday, where Monday is 1, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.              |
-    /// | \%OU   | writes week of the year, as by %U, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.           |
-    /// | \%OV   | writes week of the year, as by %V, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.           |
-    /// | \%Ow   | writes weekday, where Sunday is 0, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.               |
-    /// | \%OW   | writes week of the year, as by %W, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.           |
-    /// | \%Oy   | writes last 2 digits of year using the alternative numeric system, e.g. 十一 instead of 11 in ja_JP locale.                  |
-    /// | \%p    | writes localized a.m. or p.m. (locale dependent).                                                                           |
-    /// | \%r    | writes localized 12-hour clock time (locale dependent).                                                                     |
-    /// | \%R    | equivalent to "%H:%M".                                                                                                      |
-    /// | \%S    | writes second as a decimal number (range [00,60]).                                                                          |
-    /// | \%T    | equivalent to "%H:%M:%S" (the ISO 8601 time format)                                                                         |
-    /// | \%u    | writes weekday as a decimal number, where Monday is 1 (ISO 8601 format) (range [1-7]).                                      |
-    /// | \%U    | writes week of the year as a decimal number (Sunday is the first day of the week) (range [00,53]).                          |
-    /// | \%V    | writes ISO 8601 week of the year (range [01,53]).                                                                           |
-    /// | \%w    | writes weekday as a decimal number, where Sunday is 0 (range [0-6]).                                                        |
-    /// | \%W    | writes week of the year as a decimal number (Monday is the first day of the week) (range [00,53]).                          |
-    /// | \%x    | writes localized date representation (locale dependent).                                                                    |
-    /// | \%X    | writes localized time representation, e.g. 18:40:20 or 6:40:20 PM (locale dependent).                                       |
-    /// | \%y    | writes last 2 digits of year as a decimal number (range [00,99]).                                                           |
-    /// | \%Y    | writes year as a decimal number, e.g. 2017.                                                                                 |
-    /// | \%z    | writes offset from UTC in the ISO 8601 format (e.g. -0430), or no characters if the time zone information is not available. |
-    /// | \%Z    | writes locale-dependent time zone name or abbreviation, or no characters if the time zone information is not available.     |
-    /// | \%\%   | writes literal %. The full conversion specification must be %%.                                                             |
-    /// | \%n    | writes newline character.                                                                                                   |
-    /// | \%t    | writes horizontal tab character.                                                                                            |
+    /// | `%%a`  | writes abbreviated weekday name, e.g. Fri (locale dependent).                                                               |
+    /// | `%%A`  | writes full weekday name, e.g. Friday (locale dependent).                                                                   |
+    /// | `%%b`  | writes abbreviated month name, e.g. Oct (locale dependent)                                                                  |
+    /// | `%%B`  | writes full month name, e.g. October (locale dependent).                                                                    |
+    /// | `%%c`  | writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).                                     |
+    /// | `%%C`  | writes first 2 digits of year as a decimal number (range [00,99]).                                                          |
+    /// | `%%d`  | writes day of the month as a decimal number (range [01,31]).                                                                |
+    /// | `%%D`  | equivalent to `%%m/%%d/%%y`.                                                                                                |
+    /// | `%%e`  | writes day of the month as a decimal number (range [1,31]).                                                                 |
+    /// | `%%Ec` | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
+    /// | `%%EC` | Writes name of the base year (period) in the locale's alternative representation, e.g. 平成 (Heisei era) in ja_JP            |
+    /// | `%%Ex` | writes alternative date representation, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.   |
+    /// | `%%EX` | writes alternative time representation (locale dependent).                                                                  |
+    /// | `%%Ey` | writes year as offset from locale's alternative calendar period `%%EC`.                                                     |
+    /// | `%%EY` | writes year in the alternative representation, e.g.平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.   |
+    /// | `%%F`  | equivalent to `%%Y-%%m-%%d` (the ISO 8601 date format).                                                                     |
+    /// | `%%g`  | writes last 2 digits of ISO 8601 week-based year, i.e. the year that contains the specified week (range [00,99]).           |
+    /// | `%%G`  | writes ISO 8601 week-based year, i.e. the year that contains the specified week.                                            |
+    /// | `%%h`  | synonym of b.                                                                                                               |
+    /// | `%%H`  | writes hour as a decimal number, 24 hour clock (range [00-23]).                                                             |
+    /// | `%%I`  | writes hour as a decimal number, 12 hour clock (range [01,12]).                                                             |
+    /// | `%%j`  | writes day of the year as a decimal number (range [001,366]).                                                               |
+    /// | `%%m`  | writes month as a decimal number (range [01,12]).                                                                           |
+    /// | `%%M`  | writes minute as a decimal number (range [00,59]).                                                                          |
+    /// | `%%Od` | writes zero-based day of the month using the alternative numeric system, e.g 二十七 instead of 27 in ja_JP locale.           |
+    /// | `%%Oe` | writes one-based day of the month using the alternative numeric system, e.g. 二十七 instead of 27 in ja_JP locale.           |
+    /// | `%%OH` | writes hour from 24-hour clock using the alternative numeric system, e.g. 十八 instead of 18 in ja_JP locale.                |
+    /// | `%%OI` | writes hour from 12-hour clock using the alternative numeric system, e.g. 六 instead of 06 in ja_JP locale.                 |
+    /// | `%%Om` | writes month using the alternative numeric system, e.g. 十二 instead of 12 in ja_JP locale.                                  |
+    /// | `%%OM` | writes minute using the alternative numeric system, e.g. 二十五 instead of 25 in ja_JP locale.                               |
+    /// | `%%OS` | writes second using the alternative numeric system, e.g. 二十四 instead of 24 in ja_JP locale.                               |
+    /// | `%%Ou` | writes weekday, where Monday is 1, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.              |
+    /// | `%%OU` | writes week of the year, as by `%%U`, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.        |
+    /// | `%%OV` | writes week of the year, as by `%%V`, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.        |
+    /// | `%%Ow` | writes weekday, where Sunday is 0, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.               |
+    /// | `%%OW` | writes week of the year, as by `%%W`, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.        |
+    /// | `%%Oy` | writes last 2 digits of year using the alternative numeric system, e.g. 十一 instead of 11 in ja_JP locale.                  |
+    /// | `%%p`  | writes localized a.m. or p.m. (locale dependent).                                                                           |
+    /// | `%%r`  | writes localized 12-hour clock time (locale dependent).                                                                     |
+    /// | `%%R`  | equivalent to `%%H:%%M`.                                                                                                    |
+    /// | `%%S`  | writes second as a decimal number (range [00,60]).                                                                          |
+    /// | `%%T`  | equivalent to `%%H:%%M:%%S` (the ISO 8601 time format)                                                                      |
+    /// | `%%u`  | writes weekday as a decimal number, where Monday is 1 (ISO 8601 format) (range [1-7]).                                      |
+    /// | `%%U`  | writes week of the year as a decimal number (Sunday is the first day of the week) (range [00,53]).                          |
+    /// | `%%V`  | writes ISO 8601 week of the year (range [01,53]).                                                                           |
+    /// | `%%w`  | writes weekday as a decimal number, where Sunday is 0 (range [0-6]).                                                        |
+    /// | `%%W`  | writes week of the year as a decimal number (Monday is the first day of the week) (range [00,53]).                          |
+    /// | `%%x`  | writes localized date representation (locale dependent).                                                                    |
+    /// | `%%X`  | writes localized time representation, e.g. 18:40:20 or 6:40:20 PM (locale dependent).                                       |
+    /// | `%%y`  | writes last 2 digits of year as a decimal number (range [00,99]).                                                           |
+    /// | `%%Y`  | writes year as a decimal number, e.g. 2017.                                                                                 |
+    /// | `%%z`  | writes offset from UTC in the ISO 8601 format (e.g. -0430), or no characters if the time zone information is not available. |
+    /// | `%%Z`  | writes locale-dependent time zone name or abbreviation, or no characters if the time zone information is not available.     |
+    /// | `%%`   | writes literal `%`. The full conversion specification must be `%%`.                                                         |
+    /// | `%%n`  | writes newline character.                                                                                                   |
+    /// | `%%t`  | writes horizontal tab character.                                                                                            |
     /// @remarks See [std::put_time](https://en.cppreference.com/w/cpp/io/manip/put_time) for more information.
     static xtd::string sprintf(const string& format, const date_time& value, const std::locale& loc);
 
