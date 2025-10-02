@@ -196,6 +196,22 @@ namespace {
     if (count >= 3) return string::format("{:D4}", year);
     return string::format("{:D2}", year % 100);
   }
+#if defined(_WIN32)
+  inline struct tm* to_tm(const time_t* timer, struct tm* buf) noexcept {
+    localtime_s(buf, timer);
+    return buf;
+  }
+#else
+  inline struct tm* to_tm(const time_t* timer, struct tm* buf) noexcept {
+    return localtime_r(timer, buf);
+  }
+#endif
+  
+  string date_time_formatter(string fmt, const std::tm& time, uint32 nanoseconds, const std::locale& loc) {
+    auto dt = xtd::date_time(time.tm_year + 1900, time.tm_mon + 1, time.tm_mday, time.tm_hour, time.tm_min, time.tm_sec, xtd::date_time_kind::local);
+    dt.add_ticks(nanoseconds * 100);
+    return dt.to_string(fmt, loc);
+  }
 }
 
 const date_time date_time::max_value {max_ticks};
@@ -520,7 +536,7 @@ date_time date_time::to_local_time() const {
 }
 
 const xtd::string date_time::to_long_date_string() const {
-  return to_string("n");
+  return to_string("D");
 }
 
 const xtd::string date_time::to_long_time_string() const {
@@ -528,11 +544,11 @@ const xtd::string date_time::to_long_time_string() const {
 }
 
 const xtd::string date_time::to_short_date_string() const {
-  return to_string("D");
+  return to_string("d");
 }
 
 const xtd::string date_time::to_short_time_string() const {
-  return to_string("V");
+  return to_string("t");
 }
 
 xtd::string date_time::to_string() const noexcept {
@@ -544,68 +560,30 @@ string date_time::to_string(const string& format) const {
 }
 
 string date_time::to_string(const string& format, const std::locale& loc) const {
-  auto fmt = format;
-  if (xtd::string::is_empty(fmt)) fmt = "G";
-  if (fmt.length() > 1) return to_string_custom(format, loc);
-  
-  [[maybe_unused]] auto [year, month, day, hour, minute, second, day_of_year, day_of_week] = get_date_time();
-  [[maybe_unused]] auto [utc_year, utc_month, utc_day, utc_hour, utc_minute, utc_second, utc_day_of_year, utc_day_of_week] = to_universal_time().get_date_time();
-  auto offset_iso8601 = kind_ == date_time_kind::utc ? 0 : utc_offset().count() / ticks_per_second;
-  
+  if (format.length() > 1) return to_string_custom(format, loc);
+  auto fmt = xtd::string::is_empty(format) ? "g" : format;
   switch (fmt[0]) {
-    case 'a': return string::format("{}", hour / 12 ? "PM" : "AM");
-    case 'b': return string::format("{:D3}", millisecond());
-    case 'B': return string::format("{}", millisecond());
-    case 'c': return string::format("{:D7}", ticks() % ticks_per_millisecond);
-    case 'C': return string::format("{}", ticks() % ticks_per_millisecond);
-    case 'd': return string::format("{:D2}/{:D2}/{:D}", month, day, year);
-    case 'D': return string::format("{:D}/{:D2}/{:D}", month, day, year);
-    case 'e': return string::format("{:D2}", second);
-    case 'E': return string::format("{}", second);
-    case 'f': return sprintf("%Ec", self_);
-    case 'F': return sprintf("%c", self_);
-    case 'g': return sprintf("%Ec", self_);
-    case 'G': return string::format("{:D}-{:D2}-{:D2} {:D2}:{:D2}:{:D2}", year, month, day, hour, minute, second);
-    case 'h': return sprintf("%a", self_);
-    case 'H': return sprintf("%A", self_);
-    case 'i': return string::format("{:D2}", day);
-    case 'I': return string::format("{:D}", day);
-    case 'j': return sprintf("%b", self_);
-    case 'J': return sprintf("%B", self_);
-    case 'k': return string::format("{:D2}", month);
-    case 'K': return string::format("{:D}", month);
-    case 'l': return string::format("{:D2}", year % 100);
-    case 'L': return string::format("{:D4}", year);
-    case 'm': return string::format("{:D}", year);
-    case 'M': return string::format("{} {:D}", sprintf("%B", self_), day);
-    case 'n': return string::format("{}, {:D} {} {:D}", sprintf("%A", self_), day, sprintf("%B", self_), year);
-    case 'N': return string::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A", self_), day, sprintf("%B", self_), year, hour, minute, second);
-    case 'o': return string::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}Z", utc_year, utc_month, utc_day, utc_hour, utc_minute, utc_second, value_.count() % ticks_per_second);
-    case 'O': return string::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}{}{:D2}:{:D2}", year, month, day, hour, minute, second, value_.count() % ticks_per_second, offset_iso8601 >= 0 ? "+" : "-", std::abs(offset_iso8601 / 3600), (std::abs(offset_iso8601) % 3600) / 60);
-    case 'p': return string::format("{:D2}", minute);
-    case 'P': return string::format("{}", minute);
-    case 'q':
-    case 'Q': return string::format("{:D} {} {:D}", day, sprintf("%B", self_), year);
+    case 'd': return to_string_custom("M/d/yyyy", loc); // short date
+    case 'D': return to_string_custom("dddd, MMMM d, yyyy", loc); // long date
+    case 'f': return to_string_custom("dddd, MMMM d, yyyy HH:mm", loc); // full date short time
+    case 'F': return to_string_custom("dddd, MMMM d, yyyy HH:mm:ss", loc); // full date long time
+    case 'g': return to_string_custom("M/d/yyyy HH:mm", loc); // general short
+    case 'G': return to_string_custom("M/d/yyyy HH:mm:ss", loc); // general long
+    case 'm':
+    case 'M': return to_string_custom("MMMM d", loc); // month/day
+    case 'o':
+    case 'O': return to_string_custom("yyyy-MM-ddTHH:mm:ss.fffffffK", loc); // ISO 8601
     case 'r':
-    case 'R': return string::format("{}, {:D2} {} {:D4} {:D2}:{:D2}:{:D2} GMT", sprintf("%a", to_universal_time()), utc_day, sprintf("%b", to_universal_time()), utc_year, utc_hour, utc_minute, utc_second);
-    case 's': return string::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D7}", year, month, day, hour, minute, second, value_.count() % ticks_per_second);
-    case 'S': return string::format("{:D4}-{:D2}-{:D2}T{:D2}:{:D2}:{:D2}.{:D3}", year, month, day, hour, minute, second, value_.count() % ticks_per_second / 10000);
-    case 't': return string::format("{:D2}:{:D2}:{:D2}", hour, minute, second);
-    case 'T': return string::format("{:D}:{:D2}:{:D2}", hour, minute, second);
-    case 'u': return string::format("{:D}-{:D2}-{:D2} {:D2}:{:D2}:{:D2}", year, month, day, hour, minute, second);
-    case 'U': return string::format("{}, {:D} {} {:D} {:D}:{:D2}:{:D2}", sprintf("%A", self_), day, sprintf("%B", self_), year, hour, minute, second);
-    case 'v': return string::format("{:D2}:{:D2}", hour, minute);
-    case 'V': return string::format("{:D}:{:D2}", hour, minute);
-    case 'w': return string::format("{:D2}", hour);
-    case 'W': return string::format("{:D}", hour);
-    case 'x': return string::format("{:D2}", hour % 12);
-    case 'X': return string::format("{:D}", hour % 12);
-    case 'y': return string::format("{} {:D}", sprintf("%B", self_), year % 100);
-    case 'Y': return string::format("{} {:D}", sprintf("%B", self_), year);
-    case 'z':
-    case 'Z': return kind_ == date_time_kind::local ? time_zone_info::local().id().chars().c_str() : time_zone_info::utc().id().chars().c_str();
+    case 'R': return to_string_custom("ddd, dd MMM yyyy HH:mm:ss GMT", loc); // RFC1123
+    case 's': return to_string_custom("yyyy-MM-ddTHH:mm:ss", loc); // sortable
+    case 't': return to_string_custom("HH:mm", loc); // short time
+    case 'T': return to_string_custom("HH:mm:ss", loc); // long time
+    case 'u': return to_string_custom("yyyy-MM-dd HH:mm:ssZ", loc); // universal sortable
+    case 'U': return to_string_custom("dddd, MMMM d, yyyy HH:mm:ss", loc); // universal full
+    case 'y':
+    case 'Y': return to_string_custom("MMMM yyyy", loc); // year/month
+    default: throw_helper::throws(exception_case::format, "Invalid format"_t);
   }
-  throw_helper::throws(exception_case::format, "Invalid format"_t);
 }
 
 std::time_t date_time::to_time_t() const {
@@ -771,4 +749,23 @@ string date_time::to_string_custom(const string& format, const std::locale& loc)
   }
   
   return result;
+}
+
+// These four following metheds are defined in include/xtd/internal/__date_time_formater.hpp file
+std::string __date_time_formatter(std::string fmt, const std::tm& time, xtd::uint32 nanoseconds, const std::locale& loc) {
+  return date_time_formatter(fmt, time, nanoseconds, loc);
+}
+
+std::wstring __date_time_formatter(std::wstring fmt, const std::tm& time, xtd::uint32 nanoseconds, const std::locale& loc) {
+  return date_time_formatter(fmt, time, nanoseconds, loc).to_wstring();
+}
+
+std::string __date_time_formatter(const std::string& fmt, time_t time, xtd::uint32 nanoseconds, const std::locale& loc) {
+  tm buf;
+  return date_time_formatter(fmt, *to_tm(&time, &buf), nanoseconds, loc);
+}
+
+std::wstring __date_time_formatter(const std::wstring& fmt, time_t time, xtd::uint32 nanoseconds, const std::locale& loc) {
+  tm buf;
+  return date_time_formatter(fmt, *to_tm(&time, &buf), nanoseconds, loc).to_wstring();
 }
