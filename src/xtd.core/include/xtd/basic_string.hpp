@@ -2179,7 +2179,7 @@ namespace xtd {
     /// @ingroup format_parse
     /// @remarks for more information about format see @ref FormatPage "Format".
     template<class ...args_t>
-    static basic_string format(const std::locale& loc, const basic_string<char>& fmt, args_t&& ... args);
+    static basic_string format(const std::locale & loc, const basic_string<char>& fmt, args_t&& ... args);
     
     /// @brief Indicates whether the specifeid basic_string is an empty basic_string ("").
     /// @param string The xtd::basic_string to check if empty.
