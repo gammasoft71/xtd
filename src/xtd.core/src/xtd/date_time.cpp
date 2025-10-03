@@ -116,7 +116,7 @@ namespace {
     auto [month, day] = get_month_and_day(day_of_year, year);
     return day;
   }
-
+  
   static size to_string_custom_char_count(const string& format, size& index, size max_char) {
     auto character = format[index];
     auto count = 1_z;
@@ -196,16 +196,16 @@ namespace {
     if (count >= 3) return string::format("{:D4}", year);
     return string::format("{:D2}", year % 100);
   }
-#if defined(_WIN32)
+  #if defined(_WIN32)
   inline struct tm* to_tm(const time_t* timer, struct tm* buf) noexcept {
     localtime_s(buf, timer);
     return buf;
   }
-#else
+  #else
   inline struct tm* to_tm(const time_t* timer, struct tm* buf) noexcept {
     return localtime_r(timer, buf);
   }
-#endif
+  #endif
   
   string date_time_formatter(string fmt, const std::tm& time, uint32 nanoseconds, const std::locale& loc) {
     auto dt = xtd::date_time(time.tm_year + 1900, time.tm_mon + 1, time.tm_mday, time.tm_hour, time.tm_min, time.tm_sec);
@@ -728,7 +728,7 @@ void date_time::set_date_time(uint32 year, uint32 month, uint32 day, uint32 hour
 string date_time::to_string_custom(const string& format, const std::locale& loc) const {
   [[maybe_unused]] auto [year, month, day, hour, minute, second, day_of_year, day_of_week] = get_date_time();
   auto offset_sec = kind_ == date_time_kind::utc ? 0 : utc_offset().count() / ticks_per_second;
-
+  
   string result;
   for (auto index = 0_z; index < format.length(); ++index) {
     if (format[index] == '\\') result += index + 1 < format.length() ? as<string>(format[++index]) : ""_s;
