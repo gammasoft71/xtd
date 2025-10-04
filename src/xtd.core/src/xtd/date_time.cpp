@@ -122,6 +122,69 @@ namespace {
     return day;
   }
   
+  static std::tm make_tm_time(int year, int month, int day, int hour, int minute, int second) {
+    std::tm time;
+    time.tm_year = year - 1900;
+    time.tm_mon = month - 1;
+    time.tm_mday = day;
+    time.tm_hour = hour;
+    time.tm_min = minute;
+    time.tm_sec = second;
+    time.tm_wday = 0;
+    time.tm_yday = 0;
+    time.tm_isdst = -1;
+#if !defined(_WIN32)
+    time.tm_gmtoff = 0;
+    time.tm_zone = nullptr;
+#endif
+    
+    return time;
+  }
+  
+  static array<string> get_days(const std::locale& loc) {
+    auto days = list<string> {};
+    for (auto index = 1; index <= 7; ++index)
+      days.add(date_time::sprintf("%A", date_time::from_tm(make_tm_time(1970, 1, index + 4, 0, 0, 0)), loc));
+    return days.to_array();
+  }
+  
+  static array<string> get_months(const std::locale& loc) {
+    auto months = list<string> {};
+    for (auto index = 1; index <= 12; ++index)
+      months.add(date_time::sprintf("%B", date_time::from_tm(make_tm_time(1970, index, 1, 0, 0, 0)), loc));
+    return months.to_array();
+  }
+  
+  static array<string> get_short_days(const std::locale& loc) {
+    auto days = list<string> {};
+    for (auto index = 1; index <= 7; ++index)
+      days.add(date_time::sprintf("%a", date_time::from_tm(make_tm_time(1970, 1, index + 4, 0, 0, 0)), loc));
+    return days.to_array();
+  }
+  
+  static array<string> get_short_months(const std::locale& loc) {
+    static auto months = list<string> {};
+    if (months.count()) return months.to_array();
+    for (auto index = 1; index <= 12; ++index)
+      months.add(date_time::sprintf("%b", date_time::from_tm(make_tm_time(1970, index, 1, 0, 0, 0)), loc));
+    return months.to_array();
+  }
+
+  static string get_time_suffix(const date_time& dt, const std::locale& loc) {
+    auto suffix = date_time::sprintf("%p", dt, loc);
+    if (!string::is_empty(suffix)) return suffix;
+    suffix = date_time::sprintf("%p", dt, std::locale("en_US"));
+    if (!string::is_empty(suffix)) return suffix;
+    return dt.hour() / 12 ? "PM" : "AM";
+  }
+  
+  static array<string> get_time_suffixes(const std::locale& loc) {
+    auto suffixes = list<string> {};
+    for (auto dt : {date_time::from_tm(make_tm_time(1970, 1, 1, 1, 0, 0)), date_time::from_tm(make_tm_time(1970, 1, 1, 13, 0, 0))})
+      suffixes.add(get_time_suffix(dt, loc));
+    return suffixes.to_array();
+  }
+  
   static size to_string_custom_char_count(const string& format, size& index, size max_char) {
     auto character = format[index];
     auto count = 1_z;
@@ -184,11 +247,7 @@ namespace {
   
   static string to_string_custom_time_suffix(const string& format, size& index, uint32 hour, const date_time& dt, const std::locale& loc) {
     auto count = to_string_custom_char_count(format, index, 2_z);
-    auto ampm = date_time::sprintf("%p", dt, loc);
-    if (string::is_empty(ampm)) ampm = date_time::sprintf("%p", dt, std::locale("en_US"));
-    if (string::is_empty(ampm)) ampm = hour / 12 ? "PM" : "AM";
-    if (count == 2) return ampm;
-    return string::format("{}", ampm[0]);
+    return get_time_suffix(dt, loc).substring(0, count);
   }
   
   static string to_string_custom_time_zone_information(const string& format, size& index, date_time_kind kind, int64 offset_sec) {
@@ -633,8 +692,16 @@ namespace {
   
   bool try_parse_exact_month(const string& text, const string& format, size& text_index, size& format_index, uint32& month, const std::locale& loc) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 4_z);
-    if (count == 3) return false; // fix to scan jan, feb, ... with locale
-    if (count == 4) return false; // fix to scan january, february, ... with locale
+    if (count == 3 || count == 4) {
+      auto months = count == 3 ? get_short_months(loc) : get_months(loc);
+      for (auto index = 0_z; index < months.length(); ++index)
+        if (text.substring(text_index).starts_with(months[index])) {
+          month = as<int32>(index + 1);
+          text_index += months[index].length();
+          return true;
+        }
+      return false;
+    }
     if (uint32_object::try_parse(text.substring(text_index, count), month) == false) return false;
     text_index += count;
     return true;
@@ -642,9 +709,17 @@ namespace {
   
   bool try_parse_exact_day(const string& text, const string& format, size& text_index, size& format_index, uint32& day, const std::locale& loc) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 4_z);
-    if (count == 3) return false; // fix to scan mon, tue, ... with locale
-    if (count == 4) return false; // fix to scan mon, tue, ... with locale
-    auto parsed_day = 0u;
+    if (count == 3 || count == 4) {
+      auto days = count == 3 ? get_short_days(loc) : get_days(loc);
+      for (auto index = 0_z; index < days.length(); ++index)
+        if (text.substring(text_index).starts_with(days[index])) {
+          //day = as<int32>(index + 1);
+          text_index += days[index].length();
+          return true;
+        }
+      return false;
+    }
+    auto parsed_day = 0_u32;
     if (uint32_object::try_parse(text.substring(text_index, count), parsed_day) == false) return false;
     if (parsed_day < 1 || parsed_day > 31) return false;
     day = parsed_day;
@@ -654,7 +729,7 @@ namespace {
   
   bool try_parse_exact_hour_12(const string& text, const string& format, size& text_index, size& format_index, uint32& hour) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 2_z);
-    auto parsed_hour = 0u;
+    auto parsed_hour = 0_u32;
     if (uint32_object::try_parse(text.substring(text_index, count), parsed_hour) == false) return false;
     if (parsed_hour > 12) return false;
     hour = parsed_hour;
@@ -664,7 +739,7 @@ namespace {
   
   bool try_parse_exact_hour_24(const string& text, const string& format, size& text_index, size& format_index, uint32& hour) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 2_z);
-    auto parsed_hour = 0u;
+    auto parsed_hour = 0_u32;
     if (uint32_object::try_parse(text.substring(text_index, count), parsed_hour) == false) return false;
     if (parsed_hour > 23) return false;
     hour = parsed_hour;
@@ -674,7 +749,7 @@ namespace {
   
   bool try_parse_exact_minute(const string& text, const string& format, size& text_index, size& format_index, uint32& minute) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 2_z);
-    auto parsed_minute = 0u;
+    auto parsed_minute = 0_u32;
     if (uint32_object::try_parse(text.substring(text_index, count), parsed_minute) == false) return false;
     if (parsed_minute > 59) return false;
     minute = parsed_minute;
@@ -684,7 +759,7 @@ namespace {
   
   bool try_parse_exact_second(const string& text, const string& format, size& text_index, size& format_index, uint32& second) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 2_z);
-    auto parsed_second = 0u;
+    auto parsed_second = 0_u32;
     if (uint32_object::try_parse(text.substring(text_index, count), parsed_second) == false) return false;
     if (parsed_second > 59) return false;
     second = parsed_second;
@@ -694,10 +769,46 @@ namespace {
   
   bool try_parse_exact_fraction(const string& text, const string& format, size& text_index, size& format_index, int64& fraction) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 7_z);
-    auto parsed_fraction = 0u;
-    if (uint32_object::try_parse(text.substring(text_index, count), parsed_fraction) == false) return false;
+    auto parsed_fraction = 0_u64;
+    if (uint64_object::try_parse(text.substring(text_index, count), parsed_fraction) == false) return false;
     fraction = parsed_fraction * static_cast<int64>(std::pow(10, 7 - count));
     text_index += count;
+    return true;
+  }
+  
+  bool try_parse_exact_time_suffix(const string& text, const string& format, size& text_index, size& format_index, uint32& hour, const std::locale& loc) noexcept {
+    auto count = to_string_custom_char_count(format, format_index, 2_z);
+    auto suffix = text.substring(text_index, count);
+    if (suffix == get_time_suffixes(loc)[0].substring(0, count)) {
+      if (hour == 12) hour = 0;
+    } else if (suffix == get_time_suffixes(loc)[1].substring(0, count)) {
+      if (hour < 12) hour += 12;
+    } else return false;
+    text_index += count;
+    return true;
+  }
+  
+  bool try_parse_exact_offset_utc(const string& text, const string& format, size& text_index, size& format_index, int64& ticks) noexcept {
+    if (text[text_index] == 'Z') {
+      text_index++;
+      return true;
+    }
+
+    auto negative = (text[text_index] == '-');
+    if (text[text_index] != '+' && text[text_index] != '-') return false;
+    ++text_index;
+    auto offset_hour = 0_u32;
+    if (uint32_object::try_parse(text.substring(text_index, 2), offset_hour) == false) return false;
+    text_index += 2;
+    auto offset_minute = 0_u32;
+    if (text[text_index] == ':') {
+      ++text_index;
+      if (uint32_object::try_parse(text.substring(text_index, 2), offset_minute) == false) return false;
+      text_index += 2;
+    }
+    auto offset_ticks = ((offset_hour * 60 + offset_minute) * 60ll * 10000000ll);
+    if (negative) offset_ticks = -offset_ticks;
+    ticks -= offset_ticks;
     return true;
   }
 }
@@ -722,7 +833,8 @@ bool date_time::try_parse_exact(const string& text, const string& format, date_t
       case 'm': valid = try_parse_exact_minute(txt, fmt, txt_index, fmt_index, minute); break;
       case 's': valid = try_parse_exact_second(txt, fmt, txt_index, fmt_index, second); break;
       case 'f': valid = try_parse_exact_fraction(txt, fmt, txt_index, fmt_index, ticks); break;
-        
+      case 't': valid = try_parse_exact_time_suffix(txt, fmt, txt_index, fmt_index, hour, loc); break;
+      case 'K': valid = try_parse_exact_offset_utc(txt, fmt, txt_index, fmt_index, ticks); break;
       default: valid = fmt[fmt_index] == text[txt_index++]; break;
     }
   }
