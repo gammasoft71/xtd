@@ -260,7 +260,8 @@ namespace {
     if (count >= 3) return string::format("{:D4}", year);
     return string::format("{:D2}", year % 100);
   }
-  #if defined(_WIN32)
+
+#if defined(_WIN32)
   inline struct tm* to_tm(const time_t* timer, struct tm* buf) noexcept {
     localtime_s(buf, timer);
     return buf;
