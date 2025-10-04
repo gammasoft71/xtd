@@ -21,7 +21,7 @@ xtdc run
 ┌───────────────────────────────────────┬─────────────────────┬──────────────────────────────────────────┐
 │  date_time                            │     format          │      representation                      │
 ├───────────────────────────────────────┼─────────────────────┼──────────────────────────────────────────┤
-│ date_time {}                          │ {}                  │ 1/1/0001 00:00                           │
+│ date_time {}                          │ {}                  │ 1/1/0001 00:00:00                        │
 │ date_time {}                          │ {:d}                │ 1/1/0001                                 │
 │ date_time {}                          │ {:D}                │ Monday, January 1, 0001                  │
 │ date_time {}                          │ {:f}                │ Monday, January 1, 0001 00:00            │
@@ -48,7 +48,7 @@ xtdc run
 │ date_time {}                          │ {:\Mon\t\h\: M}     │ Month: 1                                 │
 │ date_time {}                          │ {:HH:mm:ss.ffffzzz} │ 00:00:00.0000+00:17                      │
 ├───────────────────────────────────────┼─────────────────────┼──────────────────────────────────────────┤
-│ date_time {123456789123456789}        │ {}                  │ 3/21/0392 19:15                          │
+│ date_time {123456789123456789}        │ {}                  │ 3/21/0392 19:15:12                       │
 │ date_time {123456789123456789}        │ {:d}                │ 3/21/0392                                │
 │ date_time {123456789123456789}        │ {:D}                │ Saturday, March 21, 0392                 │
 │ date_time {123456789123456789}        │ {:f}                │ Saturday, March 21, 0392 19:15           │
@@ -75,7 +75,7 @@ xtdc run
 │ date_time {123456789123456789}        │ {:\Mon\t\h\: M}     │ Month: 3                                 │
 │ date_time {123456789123456789}        │ {:HH:mm:ss.ffffzzz} │ 19:15:12.3456+00:17                      │
 ├───────────────────────────────────────┼─────────────────────┼──────────────────────────────────────────┤
-│ date_time {1971, 1, 5}                │ {}                  │ 1/5/1971 00:00                           │
+│ date_time {1971, 1, 5}                │ {}                  │ 1/5/1971 00:00:00                        │
 │ date_time {1971, 1, 5}                │ {:d}                │ 1/5/1971                                 │
 │ date_time {1971, 1, 5}                │ {:D}                │ Tuesday, January 5, 1971                 │
 │ date_time {1971, 1, 5}                │ {:f}                │ Tuesday, January 5, 1971 00:00           │
@@ -102,7 +102,7 @@ xtdc run
 │ date_time {1971, 1, 5}                │ {:\Mon\t\h\: M}     │ Month: 1                                 │
 │ date_time {1971, 1, 5}                │ {:HH:mm:ss.ffffzzz} │ 00:00:00.0000+01:00                      │
 ├───────────────────────────────────────┼─────────────────────┼──────────────────────────────────────────┤
-│ date_time {1971, 1, 5, 21, 30, 3}     │ {}                  │ 1/5/1971 21:30                           │
+│ date_time {1971, 1, 5, 21, 30, 3}     │ {}                  │ 1/5/1971 21:30:03                        │
 │ date_time {1971, 1, 5, 21, 30, 3}     │ {:d}                │ 1/5/1971                                 │
 │ date_time {1971, 1, 5, 21, 30, 3}     │ {:D}                │ Tuesday, January 5, 1971                 │
 │ date_time {1971, 1, 5, 21, 30, 3}     │ {:f}                │ Tuesday, January 5, 1971 21:30           │
@@ -129,7 +129,7 @@ xtdc run
 │ date_time {1971, 1, 5, 21, 30, 3}     │ {:\Mon\t\h\: M}     │ Month: 1                                 │
 │ date_time {1971, 1, 5, 21, 30, 3}     │ {:HH:mm:ss.ffffzzz} │ 21:30:03.0000+01:00                      │
 ├───────────────────────────────────────┼─────────────────────┼──────────────────────────────────────────┤
-│ date_time {1971, 1, 5, 21, 30, 3, 42} │ {}                  │ 1/5/1971 21:30                           │
+│ date_time {1971, 1, 5, 21, 30, 3, 42} │ {}                  │ 1/5/1971 21:30:03                        │
 │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:d}                │ 1/5/1971                                 │
 │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:D}                │ Tuesday, January 5, 1971                 │
 │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:f}                │ Tuesday, January 5, 1971 21:30           │
@@ -156,61 +156,61 @@ xtdc run
 │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:\Mon\t\h\: M}     │ Month: 1                                 │
 │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:HH:mm:ss.ffffzzz} │ 21:30:03.0420+01:00                      │
 ├───────────────────────────────────────┼─────────────────────┼──────────────────────────────────────────┤
-│ date_time::now()                      │ {}                  │ 10/4/2025 16:21                          │
-│ date_time::now()                      │ {:d}                │ 10/4/2025                                │
-│ date_time::now()                      │ {:D}                │ Saturday, October 4, 2025                │
-│ date_time::now()                      │ {:f}                │ Saturday, October 4, 2025 16:21          │
-│ date_time::now()                      │ {:F}                │ Saturday, October 4, 2025 16:21:06       │
-│ date_time::now()                      │ {:g}                │ 10/4/2025 16:21                          │
-│ date_time::now()                      │ {:G}                │ 10/4/2025 16:21:06                       │
-│ date_time::now()                      │ {:m}                │ October 4                                │
-│ date_time::now()                      │ {:M}                │ October 4                                │
-│ date_time::now()                      │ {:o}                │ 2025-10-04T16:21:06.0732370+02:00        │
-│ date_time::now()                      │ {:O}                │ 2025-10-04T16:21:06.0732370+02:00        │
-│ date_time::now()                      │ {:r}                │ Sat, 04 Oct 2025 16:21:06 GMT            │
-│ date_time::now()                      │ {:R}                │ Sat, 04 Oct 2025 16:21:06 GMT            │
-│ date_time::now()                      │ {:s}                │ 2025-10-04T16:21:06                      │
-│ date_time::now()                      │ {:t}                │ 16:21                                    │
-│ date_time::now()                      │ {:T}                │ 16:21:06                                 │
-│ date_time::now()                      │ {:u}                │ 2025-10-04 16:21:06Z                     │
-│ date_time::now()                      │ {:U}                │ Saturday, October 4, 2025 16:21:06       │
+│ date_time::now()                      │ {}                  │ 10/5/2025 00:27:47                       │
+│ date_time::now()                      │ {:d}                │ 10/5/2025                                │
+│ date_time::now()                      │ {:D}                │ Sunday, October 5, 2025                  │
+│ date_time::now()                      │ {:f}                │ Sunday, October 5, 2025 00:27            │
+│ date_time::now()                      │ {:F}                │ Sunday, October 5, 2025 00:27:47         │
+│ date_time::now()                      │ {:g}                │ 10/5/2025 00:27                          │
+│ date_time::now()                      │ {:G}                │ 10/5/2025 00:27:47                       │
+│ date_time::now()                      │ {:m}                │ October 5                                │
+│ date_time::now()                      │ {:M}                │ October 5                                │
+│ date_time::now()                      │ {:o}                │ 2025-10-05T00:27:47.6607280+02:00        │
+│ date_time::now()                      │ {:O}                │ 2025-10-05T00:27:47.6607280+02:00        │
+│ date_time::now()                      │ {:r}                │ Sun, 05 Oct 2025 00:27:47 GMT            │
+│ date_time::now()                      │ {:R}                │ Sun, 05 Oct 2025 00:27:47 GMT            │
+│ date_time::now()                      │ {:s}                │ 2025-10-05T00:27:47                      │
+│ date_time::now()                      │ {:t}                │ 00:27                                    │
+│ date_time::now()                      │ {:T}                │ 00:27:47                                 │
+│ date_time::now()                      │ {:u}                │ 2025-10-05 00:27:47Z                     │
+│ date_time::now()                      │ {:U}                │ Sunday, October 5, 2025 00:27:47         │
 │ date_time::now()                      │ {:y}                │ October 2025                             │
 │ date_time::now()                      │ {:Y}                │ October 2025                             │
-│ date_time::now()                      │ {:h:mm:ss.ff t}     │ 4:21:06.07 P                             │
-│ date_time::now()                      │ {:d MMM yyyy}       │ 4 Oct 2025                               │
-│ date_time::now()                      │ {:HH:mm:ss.f}       │ 16:21:06.0                               │
-│ date_time::now()                      │ {:dd MMM HH:mm:ss}  │ 04 Oct 16:21:06                          │
+│ date_time::now()                      │ {:h:mm:ss.ff t}     │ 0:27:47.66 A                             │
+│ date_time::now()                      │ {:d MMM yyyy}       │ 5 Oct 2025                               │
+│ date_time::now()                      │ {:HH:mm:ss.f}       │ 00:27:47.6                               │
+│ date_time::now()                      │ {:dd MMM HH:mm:ss}  │ 05 Oct 00:27:47                          │
 │ date_time::now()                      │ {:\Mon\t\h\: M}     │ Month: 10                                │
-│ date_time::now()                      │ {:HH:mm:ss.ffffzzz} │ 16:21:06.0732+02:00                      │
+│ date_time::now()                      │ {:HH:mm:ss.ffffzzz} │ 00:27:47.6607+02:00                      │
 ├───────────────────────────────────────┼─────────────────────┼──────────────────────────────────────────┤
-│ date_time::utc_now()                  │ {}                  │ 10/4/2025 14:21                          │
+│ date_time::utc_now()                  │ {}                  │ 10/4/2025 22:27:47                       │
 │ date_time::utc_now()                  │ {:d}                │ 10/4/2025                                │
 │ date_time::utc_now()                  │ {:D}                │ Saturday, October 4, 2025                │
-│ date_time::utc_now()                  │ {:f}                │ Saturday, October 4, 2025 14:21          │
-│ date_time::utc_now()                  │ {:F}                │ Saturday, October 4, 2025 14:21:06       │
-│ date_time::utc_now()                  │ {:g}                │ 10/4/2025 14:21                          │
-│ date_time::utc_now()                  │ {:G}                │ 10/4/2025 14:21:06                       │
+│ date_time::utc_now()                  │ {:f}                │ Saturday, October 4, 2025 22:27          │
+│ date_time::utc_now()                  │ {:F}                │ Saturday, October 4, 2025 22:27:47       │
+│ date_time::utc_now()                  │ {:g}                │ 10/4/2025 22:27                          │
+│ date_time::utc_now()                  │ {:G}                │ 10/4/2025 22:27:47                       │
 │ date_time::utc_now()                  │ {:m}                │ October 4                                │
 │ date_time::utc_now()                  │ {:M}                │ October 4                                │
-│ date_time::utc_now()                  │ {:o}                │ 2025-10-04T14:21:06.0747740Z             │
-│ date_time::utc_now()                  │ {:O}                │ 2025-10-04T14:21:06.0747740Z             │
-│ date_time::utc_now()                  │ {:r}                │ Sat, 04 Oct 2025 14:21:06 GMT            │
-│ date_time::utc_now()                  │ {:R}                │ Sat, 04 Oct 2025 14:21:06 GMT            │
-│ date_time::utc_now()                  │ {:s}                │ 2025-10-04T14:21:06                      │
-│ date_time::utc_now()                  │ {:t}                │ 14:21                                    │
-│ date_time::utc_now()                  │ {:T}                │ 14:21:06                                 │
-│ date_time::utc_now()                  │ {:u}                │ 2025-10-04 14:21:06Z                     │
-│ date_time::utc_now()                  │ {:U}                │ Saturday, October 4, 2025 14:21:06       │
+│ date_time::utc_now()                  │ {:o}                │ 2025-10-04T22:27:47.6620820Z             │
+│ date_time::utc_now()                  │ {:O}                │ 2025-10-04T22:27:47.6620820Z             │
+│ date_time::utc_now()                  │ {:r}                │ Sat, 04 Oct 2025 22:27:47 GMT            │
+│ date_time::utc_now()                  │ {:R}                │ Sat, 04 Oct 2025 22:27:47 GMT            │
+│ date_time::utc_now()                  │ {:s}                │ 2025-10-04T22:27:47                      │
+│ date_time::utc_now()                  │ {:t}                │ 22:27                                    │
+│ date_time::utc_now()                  │ {:T}                │ 22:27:47                                 │
+│ date_time::utc_now()                  │ {:u}                │ 2025-10-04 22:27:47Z                     │
+│ date_time::utc_now()                  │ {:U}                │ Saturday, October 4, 2025 22:27:47       │
 │ date_time::utc_now()                  │ {:y}                │ October 2025                             │
 │ date_time::utc_now()                  │ {:Y}                │ October 2025                             │
-│ date_time::utc_now()                  │ {:h:mm:ss.ff t}     │ 2:21:06.07 P                             │
+│ date_time::utc_now()                  │ {:h:mm:ss.ff t}     │ 10:27:47.66 P                            │
 │ date_time::utc_now()                  │ {:d MMM yyyy}       │ 4 Oct 2025                               │
-│ date_time::utc_now()                  │ {:HH:mm:ss.f}       │ 14:21:06.0                               │
-│ date_time::utc_now()                  │ {:dd MMM HH:mm:ss}  │ 04 Oct 14:21:06                          │
+│ date_time::utc_now()                  │ {:HH:mm:ss.f}       │ 22:27:47.6                               │
+│ date_time::utc_now()                  │ {:dd MMM HH:mm:ss}  │ 04 Oct 22:27:47                          │
 │ date_time::utc_now()                  │ {:\Mon\t\h\: M}     │ Month: 10                                │
-│ date_time::utc_now()                  │ {:HH:mm:ss.ffffzzz} │ 14:21:06.0747+00:00                      │
+│ date_time::utc_now()                  │ {:HH:mm:ss.ffffzzz} │ 22:27:47.6620+00:00                      │
 ├───────────────────────────────────────┼─────────────────────┼──────────────────────────────────────────┤
-│ date_time::min_value                  │ {}                  │ 1/1/0001 00:00                           │
+│ date_time::min_value                  │ {}                  │ 1/1/0001 00:00:00                        │
 │ date_time::min_value                  │ {:d}                │ 1/1/0001                                 │
 │ date_time::min_value                  │ {:D}                │ Monday, January 1, 0001                  │
 │ date_time::min_value                  │ {:f}                │ Monday, January 1, 0001 00:00            │
@@ -237,7 +237,7 @@ xtdc run
 │ date_time::min_value                  │ {:\Mon\t\h\: M}     │ Month: 1                                 │
 │ date_time::min_value                  │ {:HH:mm:ss.ffffzzz} │ 00:00:00.0000+00:17                      │
 ├───────────────────────────────────────┼─────────────────────┼──────────────────────────────────────────┤
-│ date_time::max_value                  │ {}                  │ 12/31/9999 23:59                         │
+│ date_time::max_value                  │ {}                  │ 12/31/9999 23:59:59                      │
 │ date_time::max_value                  │ {:d}                │ 12/31/9999                               │
 │ date_time::max_value                  │ {:D}                │ Friday, December 31, 9999                │
 │ date_time::max_value                  │ {:f}                │ Friday, December 31, 9999 23:59          │
