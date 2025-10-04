@@ -175,19 +175,19 @@ namespace xtd::tests {
     }
     
     void test_method_(format_rfc1123_with_none) {
-      assert::are_equal("Wed, 02 Jan 2019 03:04:05 G1T", format("{:r}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal("Wed, 02 Jan 2019 03:04:05 GMT", format("{:r}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_rfc1123_with_none_2) {
-      assert::are_equal("Wed, 02 Jan 2019 03:04:05 G1T", format("{:R}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal("Wed, 02 Jan 2019 03:04:05 GMT", format("{:R}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_rfc1123_with_sequence_number) {
-      assert::are_equal("Wed, 02 Jan 2019 03:04:05 G1T", format("{0:r}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal("Wed, 02 Jan 2019 03:04:05 GMT", format("{0:r}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_rfc1123_with_sequence_number_2) {
-      assert::are_equal("Wed, 02 Jan 2019 03:04:05 G1T", format("{0:R}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal("Wed, 02 Jan 2019 03:04:05 GMT", format("{0:R}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_sortable_with_none) {
