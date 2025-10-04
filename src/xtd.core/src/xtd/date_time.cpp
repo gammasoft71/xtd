@@ -629,7 +629,7 @@ string date_time::to_string(const string& format) const {
 
 string date_time::to_string(const string& format, const std::locale& loc) const {
   if (format.length() > 1) return to_string_custom(format, loc);
-  if (xtd::string::is_empty(format)) return to_string_custom(custom_formats['g'], loc);
+  if (xtd::string::is_empty(format)) return to_string_custom(custom_formats['G'], loc);
 
   if (!custom_formats.contains_key(format[0])) throw_helper::throws(exception_case::format, "Invalid format"_t);
   return to_string_custom(custom_formats[format[0]], loc);
