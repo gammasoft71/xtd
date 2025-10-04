@@ -51,9 +51,9 @@ namespace {
   constexpr auto days_to_10000 = days_per_400_years * 25 - 366; // 3652059
   
   constexpr auto min_ticks = ticks {0};
-  constexpr auto max_ticks = ticks {days_to_10000 * ticks_per_day - 1};
+  constexpr auto max_ticks = ticks {days_to_10000* ticks_per_day - 1};
   
-  constexpr auto file_time_offset = ticks {days_to_1601* ticks_per_day};
+  constexpr auto file_time_offset = ticks {days_to_1601 * ticks_per_day};
   
   constexpr auto seconds_offset_1970 = std::chrono::seconds(seconds_per_day* days_to_1970);
   
@@ -133,10 +133,10 @@ namespace {
     time.tm_wday = 0;
     time.tm_yday = 0;
     time.tm_isdst = -1;
-#if !defined(_WIN32)
+    #if !defined(_WIN32)
     time.tm_gmtoff = 0;
     time.tm_zone = nullptr;
-#endif
+    #endif
     
     return time;
   }
@@ -169,7 +169,7 @@ namespace {
       months.add(date_time::sprintf("%b", date_time::from_tm(make_tm_time(1970, index, 1, 0, 0, 0)), loc));
     return months.to_array();
   }
-
+  
   static string get_time_suffix(const date_time& dt, const std::locale& loc) {
     auto suffix = date_time::sprintf("%p", dt, loc);
     if (!string::is_empty(suffix)) return suffix;
@@ -631,7 +631,7 @@ string date_time::to_string(const string& format) const {
 string date_time::to_string(const string& format, const std::locale& loc) const {
   if (format.length() > 1) return to_string_custom(format, loc);
   if (xtd::string::is_empty(format)) return to_string_custom(custom_formats['G'], loc);
-
+  
   if (!custom_formats.contains_key(format[0])) throw_helper::throws(exception_case::format, "Invalid format"_t);
   return to_string_custom(custom_formats[format[0]], loc);
 }
@@ -794,7 +794,7 @@ namespace {
       text_index++;
       return true;
     }
-
+    
     auto negative = (text[text_index] == '-');
     if (text[text_index] != '+' && text[text_index] != '-') return false;
     ++text_index;
@@ -819,10 +819,10 @@ bool date_time::try_parse_exact(const string& text, const string& format, date_t
   auto fmt = (format.length() == 1_z && custom_formats.contains_key(format[0])) ? custom_formats[format[0]] : format;
   auto txt = text;
   auto valid = true;
-
+  
   auto year = 1_u32, month = 1_u32, day = 1_u32, hour = 0_u32, minute = 0_u32, second = 0_u32;
   auto ticks = 0_s64;
-
+  
   auto txt_index = 0_z;
   for (auto fmt_index = 0_z; valid && fmt_index < fmt.length(); ++fmt_index) {
     switch (fmt[fmt_index]) {
