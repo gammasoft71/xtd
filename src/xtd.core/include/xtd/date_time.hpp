@@ -1002,7 +1002,7 @@ namespace xtd {
     /// @remarks This overload attempts to parse s by using the formatting conventions of the current culture. The current culture is indicated by the CurrentCulture property. To parse a string using the formatting conventions of a specific culture, call the Parse(String, IFormatProvider) or the Parse(String, IFormatProvider, DateTimeStyles) overloads.
     /// @remarks This overload attempts to parse s by using DateTimeStyles.AllowWhiteSpaces style.
     static date_time parse(const xtd::string& s, const std::locale& loc);
-
+    
     /// @brief Creates a new xtd::date_time object that has the same number of ticks as the specified xtd::date_time, but is designated as either local time, Coordinated Universal Time (UTC), or neither, as indicated by the specified xtd::date_time_kind value.
     /// @param value A date and time.
     /// @param kind One of the enumeration values that indicates whether the new object represents local time, UTC, or neither.
@@ -1162,7 +1162,7 @@ namespace xtd {
     /// @return `true` if the s parameter was converted successfully; otherwise, `false`.
     /// @remarks The xtd::date_time::try_parse method is similar to the xtd::date_time::parse method, except that the xtd::date_time::try_parse method does not throw an exception if the conversion fails.
     static bool try_parse(const string& s, date_time& result, const std::locale& loc) noexcept;
-
+    
     static bool try_parse_exact(const string& text, const string& format, date_time& result) noexcept;
     static bool try_parse_exact(const string& text, const string& format, date_time& result, const std::locale& loc) noexcept;
     static bool try_parse_exact(const string& text, const array<string>& formats, date_time& result) noexcept;
