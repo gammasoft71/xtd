@@ -21,67 +21,67 @@ namespace xtd::tests {
     }
     
     void test_method_(format_with_none) {
-      assert::are_equal("1/2/2019 03:04", format("{}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal("1/2/2019 03:04:05", format("{}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_with_sequence_number) {
-      assert::are_equal("1/2/2019 03:04", format("{0}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal("1/2/2019 03:04:05", format("{0}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_with_none_and_left_alignment) {
-      assert::are_equal("                     1/2/2019 03:04", format("{, 35}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal("                  1/2/2019 03:04:05", format("{, 35}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_with_none_and_left_alignment_2) {
-      assert::are_equal("                     1/2/2019 03:04", format("{, +35}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal("                  1/2/2019 03:04:05", format("{, +35}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_with_sequence_number_and_left_alignment) {
-      assert::are_equal("                     1/2/2019 03:04", format("{0, 35}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal("                  1/2/2019 03:04:05", format("{0, 35}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_with_sequence_number_and_left_alignment_2) {
-      assert::are_equal("                     1/2/2019 03:04", format("{0, +35}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal("                  1/2/2019 03:04:05", format("{0, +35}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_with_none_and_left_alignment_to_zero) {
-      assert::are_equal("1/2/2019 03:04", format("{, 0}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal("1/2/2019 03:04:05", format("{, 0}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_with_none_and_left_alignment_to_zero_2) {
-      assert::are_equal("1/2/2019 03:04", format("{, +0}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal("1/2/2019 03:04:05", format("{, +0}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_with_sequence_number_and_left_alignment_to_zero) {
-      assert::are_equal("1/2/2019 03:04", format("{0, 0}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal("1/2/2019 03:04:05", format("{0, 0}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_with_sequence_number_and_left_alignment_to_zero_2) {
-      assert::are_equal("1/2/2019 03:04", format("{0, +0}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal("1/2/2019 03:04:05", format("{0, +0}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_with_none_and__right_alignment) {
-      assert::are_equal("1/2/2019 03:04                     ", format("{,-35}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal("1/2/2019 03:04:05                  ", format("{,-35}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_with_sequence_number_and__right_alignment) {
-      assert::are_equal("1/2/2019 03:04                     ", format("{0,-35}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal("1/2/2019 03:04:05                  ", format("{0,-35}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_with_none_and_right_alignment_to_zero) {
-      assert::are_equal("1/2/2019 03:04", format("{, 0}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal("1/2/2019 03:04:05", format("{, 0}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_with_sequence_number_and_right_alignment_to_zero) {
-      assert::are_equal("1/2/2019 03:04", format("{0, 0}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal("1/2/2019 03:04:05", format("{0, 0}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_with_none_and_right_alignment_empty) {
-      assert::are_equal("1/2/2019 03:04", format("{,}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal("1/2/2019 03:04:05", format("{,}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_with_sequence_number_and_right_alignment_empty) {
-      assert::are_equal("1/2/2019 03:04", format("{0,}", date_time {2019, 1, 2, 3, 4, 5}));
+      assert::are_equal("1/2/2019 03:04:05", format("{0,}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_with_none_and_alignment_invalid) {
