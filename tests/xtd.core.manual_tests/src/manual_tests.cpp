@@ -1,6 +1,6 @@
 #include <xtd/xtd>
 
-auto main() -> int {  
+auto main() -> int {
   auto date_formats = array<std::tuple<string, string>> {
     {"2025-10-03T10:49:12.1234567Z", "O"},
     {"2025/10/03", "yyyy/MM/dd"},
