@@ -96,7 +96,9 @@ var searchData=
   ['crop_5feffect_93',['crop_effect',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1crop__effect.html',1,'xtd::drawing::imaging::effects']]],
   ['css_5freader_94',['css_reader',['../classxtd_1_1web_1_1css_1_1css__reader.html',1,'xtd::web::css']]],
   ['css_5fwriter_95',['css_writer',['../classxtd_1_1web_1_1css_1_1css__writer.html',1,'xtd::web::css']]],
-  ['cursor_96',['cursor',['../classxtd_1_1forms_1_1cursor.html',1,'xtd::forms']]],
-  ['cursors_97',['cursors',['../classxtd_1_1forms_1_1cursors.html',1,'xtd::forms']]],
-  ['cyan_5fcolors_98',['cyan_colors',['../classxtd_1_1drawing_1_1cyan__colors.html',1,'xtd::drawing']]]
+  ['culture_5finfo_96',['culture_info',['../classxtd_1_1globalization_1_1culture__info.html',1,'xtd::globalization']]],
+  ['culture_5fnot_5ffound_5fexception_97',['culture_not_found_exception',['../classxtd_1_1globalization_1_1culture__not__found__exception.html',1,'xtd::globalization']]],
+  ['cursor_98',['cursor',['../classxtd_1_1forms_1_1cursor.html',1,'xtd::forms']]],
+  ['cursors_99',['cursors',['../classxtd_1_1forms_1_1cursors.html',1,'xtd::forms']]],
+  ['cyan_5fcolors_100',['cyan_colors',['../classxtd_1_1drawing_1_1cyan__colors.html',1,'xtd::drawing']]]
 ];
