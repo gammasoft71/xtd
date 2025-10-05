@@ -1,6 +1,6 @@
 #include "../../../include/xtd/collections/generic/key_not_found_exception.hpp"
 #include "../../../include/xtd/diagnostics/stack_frame.hpp"
-#include "../../../include/xtd/globalization/culture_info_not_found_exception.hpp"
+#include "../../../include/xtd/globalization/culture_not_found_exception.hpp"
 #include "../../../include/xtd/helpers/throw_helper.hpp"
 #include "../../../include/xtd/io/directory_not_found_exception.hpp"
 #include "../../../include/xtd/io/end_of_stream_exception.hpp"
@@ -67,7 +67,7 @@ void throw_helper::throws(enum exception_case exception_case, const source_locat
     case exception_case::argument_out_of_range: throw argument_out_of_range_exception {to_stack_frame(location)};
     case exception_case::arithmetic: throw arithmetic_exception {to_stack_frame(location)};
     case exception_case::barrier_post_phase: throw barrier_post_phase_exception {to_stack_frame(location)};
-    case exception_case::culture_info_not_found: throw culture_info_not_found_exception {to_stack_frame(location)};
+    case exception_case::culture_not_found: throw culture_not_found_exception {to_stack_frame(location)};
     case exception_case::directory_not_found: throw directory_not_found_exception {to_stack_frame(location)};
     case exception_case::divided_by_zero: throw divided_by_zero_exception {to_stack_frame(location)};
     case exception_case::end_of_stream: throw end_of_stream_exception {to_stack_frame(location)};
@@ -118,7 +118,7 @@ void throw_helper::throws(enum exception_case exception_case, const char* messag
     case exception_case::argument_out_of_range: throw argument_out_of_range_exception {message, to_stack_frame(location)};
     case exception_case::arithmetic: throw arithmetic_exception {message, to_stack_frame(location)};
     case exception_case::barrier_post_phase: throw barrier_post_phase_exception {message, to_stack_frame(location)};
-    case exception_case::culture_info_not_found: throw culture_info_not_found_exception {to_stack_frame(location)};
+    case exception_case::culture_not_found: throw culture_not_found_exception {to_stack_frame(location)};
     case exception_case::directory_not_found: throw directory_not_found_exception {message, to_stack_frame(location)};
     case exception_case::divided_by_zero: throw divided_by_zero_exception {message, to_stack_frame(location)};
     case exception_case::end_of_stream: throw end_of_stream_exception {message, to_stack_frame(location)};

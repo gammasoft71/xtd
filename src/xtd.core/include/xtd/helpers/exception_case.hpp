@@ -37,8 +37,8 @@ namespace xtd {
       arithmetic,
       /// @brief The post-phase action of a xtd::threading::barrier fails.
       barrier_post_phase,
-      /// @brief The culture info is not found.
-      culture_info_not_found,
+      /// @brief The culture is not found.
+      culture_not_found,
       /// @brief The directory is not found.
       directory_not_found,
       /// @brief The divisor is equal to 0.

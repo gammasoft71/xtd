@@ -129,7 +129,7 @@ void culture_info::fill_from_name(const string& name) {
     self_ = culture;
     return;
   }
-  throw_helper::throws(xtd::helpers::exception_case::culture_not_found_exception);
+  throw_helper::throws(exception_case::culture_not_found);
 }
 
 string culture_info::to_cldr_name(const string& name) {
