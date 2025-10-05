@@ -351,11 +351,12 @@ var searchData=
   ['ctrl_5fx_348',['ctrl_x',['../group__xtd__forms.html#gga1b02a3f72bd94bc7624745543998956ca0c416116c05a6c8f709f8ea905440501',1,'xtd::forms']]],
   ['ctrl_5fy_349',['ctrl_y',['../group__xtd__forms.html#gga1b02a3f72bd94bc7624745543998956ca90199273c2598721560e254ea25f68f9',1,'xtd::forms']]],
   ['ctrl_5fz_350',['ctrl_z',['../group__xtd__forms.html#gga1b02a3f72bd94bc7624745543998956cae7df54789bcecd3558b2a1a917fe1809',1,'xtd::forms']]],
-  ['currency_351',['currency',['../group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686a1af0389838508d7016a9841eb6273962',1,'xtd']]],
-  ['current_352',['current',['../group__xtd__core.html#gga7a589c8f2da82ae9a6f693b968cb7afca43b5c9175984c071f30b873fdce0a000',1,'xtd::io']]],
-  ['current_5fculture_353',['current_culture',['../group__xtd__core.html#gga04dd6c532656e286dfbf2f9aea3d8ccdadd68349b09c4864734705d08e1ea33e5',1,'xtd']]],
-  ['current_5fculture_5fignore_5fcase_354',['current_culture_ignore_case',['../group__xtd__core.html#gga04dd6c532656e286dfbf2f9aea3d8ccdac146979323b94d563b508887920f38a3',1,'xtd']]],
-  ['custom_355',['custom',['../group__xtd__drawing.html#ggaf3c876b96fe581fd839e9586377f02b8a8b9035807842a4e4dbe009f3f1478127',1,'xtd::drawing::drawing_2d::custom'],['../group__xtd__forms.html#gga3aba202fc852006258f3a8da4f7bd0d1a8b9035807842a4e4dbe009f3f1478127',1,'xtd::forms::custom']]],
-  ['custom_5ftarget_356',['custom_target',['../group__xtd__core.html#gga5ecb92392db71dc0bde6ce6588f06912a4428dbc1f663e1961334cf40c7901269',1,'xtd']]],
-  ['cyan_357',['cyan',['../group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a6411532ba4971f378391776a9db629d3',1,'xtd::cyan'],['../group__colors.html#ggabb6249e3fb8a4388778157257e99049ba6411532ba4971f378391776a9db629d3',1,'xtd::drawing::cyan']]]
+  ['culture_5fnot_5ffound_351',['culture_not_found',['../group__helpers.html#gga9449ffb8e13ad8c25c987085078568dca73db4d123e6f49478c0ade4fc3140b6a',1,'xtd::helpers']]],
+  ['currency_352',['currency',['../group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686a1af0389838508d7016a9841eb6273962',1,'xtd']]],
+  ['current_353',['current',['../group__xtd__core.html#gga7a589c8f2da82ae9a6f693b968cb7afca43b5c9175984c071f30b873fdce0a000',1,'xtd::io']]],
+  ['current_5fculture_354',['current_culture',['../group__xtd__core.html#gga04dd6c532656e286dfbf2f9aea3d8ccdadd68349b09c4864734705d08e1ea33e5',1,'xtd']]],
+  ['current_5fculture_5fignore_5fcase_355',['current_culture_ignore_case',['../group__xtd__core.html#gga04dd6c532656e286dfbf2f9aea3d8ccdac146979323b94d563b508887920f38a3',1,'xtd']]],
+  ['custom_356',['custom',['../group__xtd__drawing.html#ggaf3c876b96fe581fd839e9586377f02b8a8b9035807842a4e4dbe009f3f1478127',1,'xtd::drawing::drawing_2d::custom'],['../group__xtd__forms.html#gga3aba202fc852006258f3a8da4f7bd0d1a8b9035807842a4e4dbe009f3f1478127',1,'xtd::forms::custom']]],
+  ['custom_5ftarget_357',['custom_target',['../group__xtd__core.html#gga5ecb92392db71dc0bde6ce6588f06912a4428dbc1f663e1961334cf40c7901269',1,'xtd']]],
+  ['cyan_358',['cyan',['../group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a6411532ba4971f378391776a9db629d3',1,'xtd::cyan'],['../group__colors.html#ggabb6249e3fb8a4388778157257e99049ba6411532ba4971f378391776a9db629d3',1,'xtd::drawing::cyan']]]
 ];
