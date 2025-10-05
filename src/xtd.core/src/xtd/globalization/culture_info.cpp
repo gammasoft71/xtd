@@ -71,7 +71,7 @@ const string& culture_info::native_name() const noexcept {
 culture_info culture_info::current_culture() noexcept {
   auto local_name = !current_culture_.has_value() ? xtd::native::culture_info::current_name() : std::locale {}.name();
   if (local_name == "C" || local_name == "POSIX") local_name = "en_US.utf-8";
-  if (!current_culture_.has_value()) current_culture_ = culture_info{},
+  if (!current_culture_.has_value()) current_culture_ = culture_info{};
   current_culture_.value().fill_from_name(to_cldr_name(local_name));
   return current_culture_.value();
 }
