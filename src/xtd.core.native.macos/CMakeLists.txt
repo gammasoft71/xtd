@@ -26,6 +26,7 @@ add_sources(
 add_sources(
   "src/xtd/native/macos/console.mm"
   "src/xtd/native/macos/condition_variable.mm"
+  "src/xtd/native/macos/culture_info.mm"
   "src/xtd/native/macos/critical_section.mm"
   "src/xtd/native/macos/cryptography.mm"
   "src/xtd/native/macos/date_time.mm"
