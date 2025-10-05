@@ -50,6 +50,7 @@ namespace xtd {
       xtd::globalization::culture_types culture_types() const noexcept;
       const xtd::string& display_name() const noexcept;
       const xtd::string& english_name() const noexcept;
+      bool is_locale_available() const noexcept;
       xtd::size keyboard_layout_id() const noexcept;
       xtd::size lc_id() const noexcept;
       const std::locale& locale() const noexcept;
