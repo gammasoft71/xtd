@@ -101,7 +101,7 @@ namespace xtd {
       culture_info& operator =(std::locale&& locale);
       culture_info& operator =(const std::locale& locale);
       
-      operator const std::locale&() const noexcept;
+      operator const std::locale& () const noexcept;
       /// @}
       
     private:

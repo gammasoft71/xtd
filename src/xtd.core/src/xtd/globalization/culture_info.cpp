@@ -99,7 +99,7 @@ culture_info& culture_info::operator =(const std::locale& locale) {
   return self_;
 }
 
-culture_info::operator const std::locale&() const noexcept {
+culture_info::operator const std::locale& () const noexcept {
   return data_->locale;
 }
 
@@ -111,7 +111,7 @@ culture_info::culture_info(globalization::culture_types culture_types, string&& 
   data_->lc_id = lc_id;
   try {
     data_->locale = std::locale {to_locale_name(name)};
-  } catch(...) {
+  } catch (...) {
     data_->locale = std::locale {"C"};
   }
   data_->name = std::move(name);
