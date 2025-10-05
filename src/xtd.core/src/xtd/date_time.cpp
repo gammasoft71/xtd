@@ -204,7 +204,7 @@ namespace {
   static string to_string_custom_fraction(const string& format, size& index, int64 ticks) {
     bool remove_trailing_zeros = (format[index] == 'F');
     auto count = to_string_custom_char_count(format, index, 7_z);
-    auto fraction = ticks % ticks_per_second / static_cast<int64>(math::pow(10, 7 - count));
+    auto fraction = ticks % ticks_per_second / static_cast<int64>(math::pow(10, 7 - as<double>(count)));
     auto result = string::format(string::format("{{:D{}}}", count), fraction);
     if (!remove_trailing_zeros) return result;
     while (!string::is_empty(result) && result[result.length() - 1] == '0')
