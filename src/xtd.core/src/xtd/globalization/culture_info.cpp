@@ -127,7 +127,7 @@ culture_info::culture_info(globalization::culture_types culture_types, string&& 
   data_->lcid = lcid;
   try {
     data_->locale = std::locale {to_locale_name(name)};
-  } catch (...) {
+  } catch (const std::runtime_error& e) {
     data_->locale = std::locale {"C"};
   }
   data_->name = std::move(name);
