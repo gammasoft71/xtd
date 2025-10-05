@@ -8,6 +8,7 @@ using namespace xtd;
 using namespace xtd::globalization;
 
 array<culture_info> culture_info::cultures_ = {
+  {globalization::culture_types::specific_cultures, "Invariant Language (Invariant Country)", "Invariant Language (Invariant Country)", 127, 127, "", "Invariant Language (Invariant Country)"},
   {globalization::culture_types::neutral_cultures, "Afrikaans", "Afrikaans", 54, 54, "af", "Afrikaans"},
   {globalization::culture_types::specific_cultures, "Afrikaans (Namibia)", "Afrikaans (Namibia)", 1033, 4096, "af-NA", "Afrikaans (Namibië)"},
   {globalization::culture_types::specific_cultures, "Afrikaans (South Africa)", "Afrikaans (South Africa)", 1078, 1078, "af-ZA", "Afrikaans (Suid-Afrika)"},
@@ -1075,7 +1076,7 @@ class GenerateCultureInfoCpp {
     sb.AppendLine("array<culture_info> culture_info::cultures_ = {");
     
     // --- Body ---
-    var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures).Where(c => !string.IsNullOrEmpty(c.Name)).OrderBy(c => c.Name).ToList();
+    var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures).OrderBy(c => c.Name).ToList();
     
     for (var i = 0; i < cultures.Count; i++) {
       var ci = cultures[i];
