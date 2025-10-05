@@ -9,14 +9,27 @@ using namespace xtd::collections::generic;
 using namespace xtd::globalization;
 using namespace xtd::helpers;
 
-culture_info culture_info::current_culture_;
+optional<culture_info> culture_info::current_culture_;
+
+culture_info::culture_info() {
+}
 
 culture_info::culture_info(const std::locale& locale) {
   fill_from_name(to_cldr_name(locale.name()));
 }
 
+culture_info::culture_info(size culture) {
+  for (const auto& c : cultures_) {
+    //if (string::equals(culture.data_->name, name, string_comparison::ordinal_ignore_case))
+    if (c.data_->lcid != culture) continue;
+    self_ = c;
+    return;
+  }
+  throw_helper::throws(exception_case::culture_not_found);
+}
+
 culture_info::culture_info(const string& name) {
-  if (!string::is_empty(name)) fill_from_name(name);
+  fill_from_name(name);
 }
 
 globalization::culture_types culture_info::culture_types() const noexcept {
@@ -39,8 +52,8 @@ xtd::size culture_info::keyboard_layout_id() const noexcept {
   return data_->keyboard_layout_id;
 }
 
-xtd::size culture_info::lc_id() const noexcept {
-  return data_->lc_id;
+xtd::size culture_info::lcid() const noexcept {
+  return data_->lcid;
 }
 
 const std::locale& culture_info::locale() const noexcept {
@@ -56,22 +69,21 @@ const string& culture_info::native_name() const noexcept {
 }
 
 culture_info culture_info::current_culture() noexcept {
-  auto local_name = string::is_empty(current_culture_.name()) ?  xtd::native::culture_info::current_name() : std::locale {}.name();
-  if (local_name == "" || local_name == "C" || local_name == "POSIX") local_name = "en_US.utf-8";
-  current_culture_.fill_from_name(to_cldr_name(local_name));
-  return current_culture_;
+  auto local_name = !current_culture_.has_value() ? xtd::native::culture_info::current_name() : std::locale {}.name();
+  if (local_name == "C" || local_name == "POSIX") local_name = "en_US.utf-8";
+  if (!current_culture_.has_value()) current_culture_ = culture_info{},
+  current_culture_.value().fill_from_name(to_cldr_name(local_name));
+  return current_culture_.value();
 }
 
 void culture_info::current_culture(const culture_info& value) {
-  if (current_culture_ == value) return;
+  if (current_culture_.has_value() && current_culture_ == value) return;
   current_culture_ = value;
-  auto locale_name = to_locale_name(current_culture_.name());
-  std::locale::global(std::locale {locale_name});
+  std::locale::global(std::locale {to_locale_name(current_culture_.value().name())});
 }
 
 culture_info culture_info::invariant_culture() noexcept {
-  static auto inv = culture_info {globalization::culture_types::neutral_cultures, "Invariant Language (Invariant Country)", "Invariant Language (Invariant Country)", 0, 127, "", "Invariant Language (Invariant Country)"};
-  return inv;
+  return cultures_[0];
 }
 
 bool culture_info::equals(const object& obj) const noexcept {
@@ -107,12 +119,12 @@ culture_info::operator const std::locale& () const noexcept {
   return data_->locale;
 }
 
-culture_info::culture_info(globalization::culture_types culture_types, string&& display_name, string&& english_name, size keyboard_layout_id, size lc_id, string&& name, string&& native_name) {
+culture_info::culture_info(globalization::culture_types culture_types, string&& display_name, string&& english_name, size keyboard_layout_id, size lcid, string&& name, string&& native_name) {
   data_->culture_types = culture_types;
   data_->display_name = std::move(display_name);
   data_->english_name = std::move(english_name);
   data_->keyboard_layout_id = keyboard_layout_id;
-  data_->lc_id = lc_id;
+  data_->lcid = lcid;
   try {
     data_->locale = std::locale {to_locale_name(name)};
   } catch (...) {

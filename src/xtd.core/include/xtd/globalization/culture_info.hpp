@@ -2,11 +2,13 @@
 /// @brief Contains xtd::globalization::culture_info class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+
 #include "culture_not_found_exception.hpp"
 #include "culture_types.hpp"
 #include "../core_export.hpp"
 #include "../iequatable.hpp"
 #include "../object.hpp"
+#include "../optional.hpp"
 #include "../string.hpp"
 #include <locale>
 
@@ -37,11 +39,25 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
-      culture_info() = default;
+      /// @brief Initializes a new instance of the xtd::globalization::culture_info class.
+      culture_info();
+      /// @brief Initializes a new instance of the xtd::globalization::culture_info class with specified culture.
+      /// @param culture The culture to inititalise this instance.
       culture_info(culture_info&& culture) = default;
+      /// @brief Initializes a new instance of the xtd::globalization::culture_info class with specified culture.
+      /// @param culture The culture to inititalise this instance.
       culture_info(const culture_info& culture) = default;
+      /// @brief Initializes a new instance of the xtd::globalization::culture_info class with specified locale.
+      /// @param locale The locale to inititalise this instance.
       culture_info(const std::locale& locale);
-      culture_info(const xtd::string& name);
+      /// @brief Initializes a new instance of the xtd::globalization::culture_info class based on the culture specified by the culture identifier.
+      /// @param culture A predefined xtd::globalization::culture_info identifier, xtd::globalization::culture_info::lcid property of an existing xtd::globalization::culture_info object, or Windows-only culture identifier.
+      /// @exception xtd::globalization::culture_not_found_exception culture is not a valid culture identifier. See the Notes to Callers section for more information.
+      /// @remarks Predefined culture identifiers for cultures available on Windows system are listed in the Language tag column in the [list of language/region names supported by Windows](https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c). Culture names follow the standard defined by [BCP 47](https://tools.ietf.org/html/bcp47).
+      /// @remarks In most cases, the `culture` parameter is mapped to the corresponding National Language Support (NLS) locale identifier. The value of the `culture` parameter becomes the value of the xtd::globalization::culture_info::lcid property of the new xtd::globalization::culture_info.
+      /// @remarks We recommend that you call the locale name constructor xtd::globalization::culture_info::culture_info (const xtd::string& name), because locale names are preferable to LCIDs. For custom locales, a locale name is required.
+      explicit culture_info(xtd::size culture);
+      explicit culture_info(const xtd::string& name);
       /// @}
       
       /// @name Public Properties
@@ -52,7 +68,7 @@ namespace xtd {
       const xtd::string& english_name() const noexcept;
       bool is_locale_available() const noexcept;
       xtd::size keyboard_layout_id() const noexcept;
-      xtd::size lc_id() const noexcept;
+      xtd::size lcid() const noexcept;
       const std::locale& locale() const noexcept;
       const xtd::string& name() const noexcept;
       const xtd::string& native_name() const noexcept;
@@ -106,25 +122,25 @@ namespace xtd {
       /// @}
       
     private:
-      culture_info(xtd::globalization::culture_types culture_types, string&& display_name, string&& english_name, xtd::size keyboard_layout_id, xtd::size lc_id, string&& name, string&& native_name);
+      culture_info(xtd::globalization::culture_types culture_types, string&& display_name, string&& english_name, xtd::size keyboard_layout_id, xtd::size lcid, string&& name, string&& native_name);
       
       void fill_from_name(const xtd::string& name);
       static xtd::string to_cldr_name(const xtd::string& name);
       static xtd::string to_locale_name(const xtd::string& name);
       
       struct data {
-        xtd::globalization::culture_types culture_types = xtd::globalization::culture_types::neutral_cultures;
-        xtd::string display_name;
-        xtd::string english_name;
-        xtd::size keyboard_layout_id = 0;
-        xtd::size lc_id = 0;
+        xtd::globalization::culture_types culture_types = xtd::globalization::culture_types::specific_cultures;
+        xtd::string display_name = "Invariant Language (Invariant Country)";
+        xtd::string english_name = "Invariant Language (Invariant Country)";
+        xtd::size keyboard_layout_id = 127;
+        xtd::size lcid = 127;
         std::locale locale;
         xtd::string name;
-        xtd::string native_name;
+        xtd::string native_name = "Invariant Language (Invariant Country)";
       };
       ptr<data> data_ = new_ptr<data>();
       static xtd::array<culture_info> cultures_;
-      static culture_info current_culture_;
+      static xtd::optional<culture_info> current_culture_;
     };
   }
 }
