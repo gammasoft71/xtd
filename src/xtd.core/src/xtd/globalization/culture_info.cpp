@@ -31,6 +31,10 @@ const string& culture_info::english_name() const noexcept {
   return data_->english_name;
 }
 
+bool culture_info::is_locale_available() const noexcept {
+  return data_->locale.name() != "C";
+}
+
 xtd::size culture_info::keyboard_layout_id() const noexcept {
   return data_->keyboard_layout_id;
 }
@@ -52,7 +56,7 @@ const string& culture_info::native_name() const noexcept {
 }
 
 culture_info culture_info::current_culture() noexcept {
-  auto local_name = string::is_empty(current_culture_.name()) ? std::locale {}.name() : xtd::native::culture_info::current_name();
+  auto local_name = string::is_empty(current_culture_.name()) ?  xtd::native::culture_info::current_name() : std::locale {}.name();
   if (local_name == "" || local_name == "C" || local_name == "POSIX") local_name = "en_US.utf-8";
   current_culture_.fill_from_name(to_cldr_name(local_name));
   return current_culture_;
@@ -85,7 +89,7 @@ xtd::string culture_info::to_string() const noexcept {
 array<culture_info> culture_info::get_cultures(xtd::globalization::culture_types types) noexcept {
   auto result = list<culture_info> {};
   for (const auto& culture : cultures_)
-    if ((culture.culture_types() & types) == types)
+    if ((culture.culture_types() & types) == types || types == xtd::globalization::culture_types::all_cultures)
       result.add(culture);
   return result;
 }
