@@ -1048,11 +1048,17 @@ array<culture_info> culture_info::cultures_ = {
 
 /*
 using System.Globalization;
+using System.Reflection;
 using System.Text;
 
 class GenerateCultureInfoCpp {
   static void Main() {
     var outputPath = "culture_info_cultures.cpp";
+    
+    if (IsUsingNls()) {
+      Console.WriteLine("⚠️  Skipped: The current .NET runtime is using NLS globalization mode.");
+      return;
+    }
     
     var sb = new StringBuilder();
     
@@ -1071,11 +1077,11 @@ class GenerateCultureInfoCpp {
     // --- Body ---
     var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures).Where(c => !string.IsNullOrEmpty(c.Name)).OrderBy(c => c.Name).ToList();
     
-    for (int i = 0; i < cultures.Count; i++) {
+    for (var i = 0; i < cultures.Count; i++) {
       var ci = cultures[i];
       
       // Gets needed values
-      var cultureType = ToCutureType(cultures[i].CultureTypes & CultureTypes.AllCultures);
+      var cultureType = ToCutureTypeString(cultures[i].CultureTypes & CultureTypes.AllCultures);
       var displayName = Escape(ci.DisplayName);
       var englishName = Escape(ci.EnglishName);
       var nativeName = Escape(ci.NativeName);
@@ -1093,10 +1099,16 @@ class GenerateCultureInfoCpp {
     Console.WriteLine($"✅ Generated {outputPath} with {cultures.Count} cultures.");
   }
   
+  public static bool IsUsingNls() {
+    var type = typeof(CultureInfo).Assembly.GetType("System.Globalization.GlobalizationMode");
+    var property = type?.GetProperty("UseNls", BindingFlags.Static | BindingFlags.NonPublic);
+    return property != null && (bool)property.GetValue(null)!;
+  }
+  
   static string Escape(string text) =>
   text.Replace("\\", "\\\\").Replace("\"", "\\\"");
   
-  static string ToCutureType(CultureTypes type) {
+  static string ToCutureTypeString(CultureTypes type) {
     var result = "";
     if ((type & CultureTypes.NeutralCultures) == CultureTypes.NeutralCultures) result+= string.Format("{0}{1}", string.IsNullOrEmpty(result) ? "" : " | ", "globalization::culture_types::neutral_cultures");
     if ((type & CultureTypes.SpecificCultures) == CultureTypes.SpecificCultures) result += string.Format("{0}{1}", string.IsNullOrEmpty(result) ? "" : " | ", "globalization::culture_types::specific_cultures");
