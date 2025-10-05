@@ -22,6 +22,8 @@ add_sources(
   "include/xtd/native/constant_special_item_id_list"
   "include/xtd/native/condition_variable.hpp"
   "include/xtd/native/condition_variable"
+  "include/xtd/native/culture_info.hpp"
+  "include/xtd/native/culture_info"
   "include/xtd/native/critical_section.hpp"
   "include/xtd/native/critical_section"
   "include/xtd/native/cryptography.hpp"

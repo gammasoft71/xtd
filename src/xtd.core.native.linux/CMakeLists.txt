@@ -51,6 +51,7 @@ add_sources(
 add_sources(
   "src/xtd/native/linux/condition_variable.cpp"
   "src/xtd/native/linux/console.cpp"
+  "src/xtd/native/linux/culture_info.cpp"
   "src/xtd/native/linux/critical_section.cpp"
   "src/xtd/native/linux/cryptography.cpp"
   "src/xtd/native/linux/date_time.cpp"

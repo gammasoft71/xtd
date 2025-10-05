@@ -46,6 +46,7 @@ add_sources(
 add_sources(
   "src/xtd/native/posix/condition_variable.cpp"
   "src/xtd/native/posix/console.cpp"
+  "src/xtd/native/posix/culture_info.cpp"
   "src/xtd/native/posix/critical_section.cpp"
   "src/xtd/native/posix/cryptography.cpp"
   "src/xtd/native/posix/date_time.cpp"
