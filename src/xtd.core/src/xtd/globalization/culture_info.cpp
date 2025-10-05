@@ -12,7 +12,7 @@ using namespace xtd::helpers;
 culture_info culture_info::current_culture_;
 
 culture_info::culture_info(const std::locale& locale) {
-  fill_from_name(from_locale_name(locale.name()));
+  fill_from_name(to_cldr_name(locale.name()));
 }
 
 culture_info::culture_info(const string& name) {
@@ -54,7 +54,7 @@ const string& culture_info::native_name() const noexcept {
 culture_info culture_info::current_culture() noexcept {
   auto local_name = string::is_empty(current_culture_.name()) ? std::locale {}.name() : xtd::native::culture_info::current_name();
   if (local_name == "" || local_name == "C" || local_name == "POSIX") local_name = "en_US.utf-8";
-  current_culture_.fill_from_name(from_locale_name(local_name));
+  current_culture_.fill_from_name(to_cldr_name(local_name));
   return current_culture_;
 }
 
@@ -129,7 +129,7 @@ void culture_info::fill_from_name(const string& name) {
   throw culture_not_found_exception {};
 }
 
-string culture_info::from_locale_name(const string& name) {
+string culture_info::to_cldr_name(const string& name) {
   return name.to_lower().replace(".utf-8", "").replace("_", "-");
 }
 

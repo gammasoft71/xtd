@@ -108,7 +108,7 @@ namespace xtd {
       culture_info(xtd::globalization::culture_types culture_types, string&& display_name, string&& english_name, xtd::size keyboard_layout_id, xtd::size lc_id, string&& name, string&& native_name);
       
       void fill_from_name(const xtd::string& name);
-      static xtd::string from_locale_name(const xtd::string& name);
+      static xtd::string to_cldr_name(const xtd::string& name);
       static xtd::string to_locale_name(const xtd::string& name);
       
       struct data {
