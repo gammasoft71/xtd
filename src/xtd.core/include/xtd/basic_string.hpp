@@ -1107,7 +1107,7 @@ namespace xtd {
     /// @return `true` if value matches the end of this instance; otherwise, `false`.
     bool ends_with(value_type value, bool ignore_case) const noexcept {
       if (ignore_case) return to_lower().rfind(static_cast<value_type>(tolower(value))) == length() - 1;
-      return rfind(value) == length() - 1;
+      return chars_.rfind(value) == length() - 1;
     }
     /// @brief Determines whether the end of this basic_string matches the specified basic_string.
     /// @param value The basic_string to compare to the substring at the end of this instance.
@@ -1123,8 +1123,8 @@ namespace xtd {
     /// @param comparison_type One of the enumeration values that determines how this basic_string and value are compared.
     /// @return bool `true` if value matches the end of the specified basic_string; otherwise, `false`.
     bool ends_with(const basic_string & value, xtd::string_comparison comparison_type) const noexcept {
-      if (comparison_type == xtd::string_comparison::ordinal_ignore_case) return to_lower().rfind(value.to_lower()) + value.to_lower().length() == length();
-      return rfind(value) + value.length() == length();
+      if (comparison_type == xtd::string_comparison::ordinal_ignore_case) return to_lower().chars_.rfind(value.to_lower()) + value.to_lower().length() == length();
+      return chars_.rfind(value) + value.length() == length();
     }
     
     /// @brief Finds the first substring equal to the given character sequence. Search begins at `0`, i.e. the found substring must not begin in a position preceding `0`.
@@ -1471,7 +1471,7 @@ namespace xtd {
     /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
     xtd::size last_index_of(const basic_string & value, xtd::size start_index, xtd::size count) const {
       if (start_index > length() || start_index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-      auto result = rfind(value, start_index + count - value.length());
+      auto result = chars_.rfind(value, start_index + count - value.length());
       return result < start_index ? npos : result;
     }
     /// @brief Reports the index of the last occurrence of the specified character in this tring.
@@ -1493,7 +1493,7 @@ namespace xtd {
     /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
     xtd::size last_index_of(value_type value, xtd::size start_index, xtd::size count) const {
       if (start_index > length() || start_index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
-      auto result = rfind(value, start_index + count - 1);
+      auto result = chars_.rfind(value, start_index + count - 1);
       return result < start_index ? npos : result;
     }
     
