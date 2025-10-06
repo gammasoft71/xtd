@@ -636,6 +636,10 @@ string date_time::to_string(const string& format, const std::locale& loc) const 
   return to_string_custom(custom_formats[format[0]], loc);
 }
 
+string date_time::to_string(const std::locale& loc) const {
+  return to_string("", loc);
+}
+
 std::time_t date_time::to_time_t() const {
   return (std::chrono::duration_cast<std::chrono::seconds>(date_time::specify_kind(self_, date_time_kind::utc).value_) - seconds_offset_1970).count();
 }
