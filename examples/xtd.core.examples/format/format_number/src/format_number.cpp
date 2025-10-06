@@ -1,5 +1,7 @@
 #include <xtd/xtd>
 
+using namespace globalization;
+
 enum class cap {title, middle, end};
 
 template<typename number_t>
@@ -49,7 +51,7 @@ auto print_number(const string& text, number_t value, cap c) {
 }
 
 auto main() -> int {
-  std::locale::global(std::locale {"en_US.UTF-8"}); // change to us for currency
+  culture_info::current_culture(culture_info {"en-US"}); // change to us for currency
   print_number("0", 0, cap::title);
   print_number("42_s8", 42_s8, cap::middle);
   print_number("123456789ull", 123456789ull, cap::middle);
