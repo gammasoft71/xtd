@@ -1,5 +1,7 @@
 #include <xtd/xtd>
 
+using namespace globalization;
+
 // The following simple class throws an `xtd::format_exception`exception with the `xtd::console::write_line` method,
 // and generates the invalid result "(unregistered)" with output stream.
 // Remarks: You needs to write to_strings methods.
@@ -68,7 +70,7 @@ public:
   string to_string() const noexcept {return string::format("{}", value_);}
   string to_string(const string& format, const std::locale& loc) const override {return string::format(string::format("{{:{}}}", format), value_);}
 
-  friend std::ostream& operator <<(std::ostream& stream, const foo5& value) {return stream << value.to_string("", std::locale {});}
+  friend std::ostream& operator <<(std::ostream& stream, const foo5& value) {return stream << value.to_string("", culture_info::current_culture());}
   
 private:
   int value_ = 0;
@@ -81,7 +83,7 @@ class foo6 {
 public:
   explicit foo6(int value) : value_ {value} {}
   
-  string to_string() const noexcept {return to_string("", std::locale {});}
+  string to_string() const noexcept {return to_string("", culture_info::current_culture());}
   string to_string(const string& format, const std::locale& loc) const {return string::format(string::format("{{:{}}}", format), value_);}
   
   friend std::ostream& operator <<(std::ostream& stream, const foo6& value) {return stream << value.to_string();}
@@ -123,7 +125,7 @@ auto main() -> int {
   } catch(const format_exception& e) {
     console::out << "  " << foreground_color(console_color::red) << "exception : " << e.message() << foreground_color(console_color::default_color) << environment::new_line;
   }
-  console::out << "  0b" << f1.to_string("b8", std::locale {}) << environment::new_line;
+  console::out << "  0b" << f1.to_string("b8", culture_info::current_culture()) << environment::new_line;
   console::write_line();
   console::write_line("foo1 write_line :");
   console::write("  ");
@@ -145,7 +147,7 @@ auto main() -> int {
     console::out << "  " << foreground_color(console_color::red) << "exception : " << e.message() << foreground_color(console_color::default_color) << environment::new_line;
   }
   console::write("  0b");
-  console::write_line(f1.to_string("b8", std::locale {}));
+  console::write_line(f1.to_string("b8", culture_info::current_culture()));
   console::write_line();
 
   auto f2 = foo2 {42};
@@ -154,7 +156,7 @@ auto main() -> int {
   console::out << "  " << f2.to_string() << environment::new_line;
   console::out << string::format("  {}", f2) << environment::new_line;
   console::out << string::format("  0b{:b8}", f2) << environment::new_line;
-  console::out << "  0b" << f2.to_string("b8", std::locale {}) << environment::new_line;
+  console::out << "  0b" << f2.to_string("b8", culture_info::current_culture()) << environment::new_line;
   console::write_line();
   console::write_line("foo2 write_line :");
   console::write("  ");
@@ -164,7 +166,7 @@ auto main() -> int {
   console::write_line("  {}", f2);
   console::write_line("  0b{:b8}", f2);
   console::write("  0b");
-  console::write_line(f2.to_string("b8", std::locale {}));
+  console::write_line(f2.to_string("b8", culture_info::current_culture()));
   console::write_line();
 
   auto f3 = foo3 {42};
@@ -173,7 +175,7 @@ auto main() -> int {
   console::out << "  " << f3.to_string() << environment::new_line;
   console::out << string::format("  {}", f3) << environment::new_line;
   console::out << string::format("  0b{:b8}", f3) << environment::new_line;
-  console::out << "  0b" << f3.to_string("b8", std::locale {}) << environment::new_line;
+  console::out << "  0b" << f3.to_string("b8", culture_info::current_culture()) << environment::new_line;
   console::write_line();
   console::write_line("foo3 write_line :");
   console::write("  ");
@@ -183,7 +185,7 @@ auto main() -> int {
   console::write_line("  {}", f3);
   console::write_line("  0b{:b8}", f3);
   console::write("  0b");
-  console::write_line(f3.to_string("b8", std::locale {}));
+  console::write_line(f3.to_string("b8", culture_info::current_culture()));
   console::write_line();
 
   auto f4 = foo4 {42};
@@ -192,7 +194,7 @@ auto main() -> int {
   console::out << "  " << f4.to_string() << environment::new_line;
   console::out << string::format("  {}", f4) << environment::new_line;
   console::out << string::format("  0b{:b8}", f4) << environment::new_line;
-  console::out << "  0b" << f4.to_string("b8", std::locale {}) << environment::new_line;
+  console::out << "  0b" << f4.to_string("b8", culture_info::current_culture()) << environment::new_line;
   console::write_line();
   console::write_line("foo4 write_line :");
   console::write("  ");
@@ -202,7 +204,7 @@ auto main() -> int {
   console::write_line("  {}", f4);
   console::write_line("  0b{:b8}", f4);
   console::write("  0b");
-  console::write_line(f4.to_string("b8", std::locale {}));
+  console::write_line(f4.to_string("b8", culture_info::current_culture()));
   console::write_line();
 
   auto f5 = foo5 {42};
@@ -211,7 +213,7 @@ auto main() -> int {
   console::out << "  " << f5.to_string() << environment::new_line;
   console::out << string::format("  {}", f5) << environment::new_line;
   console::out << string::format("  0b{:b8}", f5) << environment::new_line;
-  console::out << "  0b" << f5.to_string("b8", std::locale {}) << environment::new_line;
+  console::out << "  0b" << f5.to_string("b8", culture_info::current_culture()) << environment::new_line;
   console::write_line();
   console::write_line("foo5 write_line :");
   console::write("  ");
@@ -221,7 +223,7 @@ auto main() -> int {
   console::write_line("  {}", f5);
   console::write_line("  0b{:b8}", f5);
   console::write("  0b");
-  console::write_line(f5.to_string("b8", std::locale {}));
+  console::write_line(f5.to_string("b8", culture_info::current_culture()));
   console::write_line();
 
   auto f6 = foo6 {42};
@@ -230,7 +232,7 @@ auto main() -> int {
   console::out << "  " << f6.to_string() << environment::new_line;
   console::out << string::format("  {}", f6) << environment::new_line;
   console::out << string::format("  0b{:b8}", f6) << environment::new_line;
-  console::out << "  0b" << f6.to_string("b8", std::locale {}) << environment::new_line;
+  console::out << "  0b" << f6.to_string("b8", culture_info::current_culture()) << environment::new_line;
   console::write_line();
   console::write_line("foo6 write_line :");
   console::write("  ");
@@ -240,7 +242,7 @@ auto main() -> int {
   console::write_line("  {}", f6);
   console::write_line("  0b{:b8}", f6);
   console::write("  0b");
-  console::write_line(f6.to_string("b8", std::locale {}));
+  console::write_line(f6.to_string("b8", culture_info::current_culture()));
   console::write_line();
 
   auto f7 = foo7 {42};
@@ -249,7 +251,7 @@ auto main() -> int {
   console::out << "  " << f7.to_string() << environment::new_line;
   console::out << string::format("  {}", f7) << environment::new_line;
   console::out << string::format("  0b{:b8}", f7) << environment::new_line;
-  console::out << "  0b" << f7.to_string("b8", std::locale {}) << environment::new_line;
+  console::out << "  0b" << f7.to_string("b8", culture_info::current_culture()) << environment::new_line;
   console::write_line();
   console::write_line("foo7 write_line :");
   console::write("  ");
@@ -259,7 +261,7 @@ auto main() -> int {
   console::write_line("  {}", f7);
   console::write_line("  0b{:b8}", f7);
   console::write("  0b");
-  console::write_line(f7.to_string("b8", std::locale {}));
+  console::write_line(f7.to_string("b8", culture_info::current_culture()));
   console::write_line();
 }
 
