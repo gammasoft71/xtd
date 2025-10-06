@@ -99,8 +99,10 @@ $(function(){ initResizable(false); });
 <p>Shows how to use format <a class="el" href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4" title="Convert a string into a type.">xtd::parse</a> method with numeric values (int8, int16, int32, int64, uint8, uint16, uint32 and uint64).</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>globalization;</div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  std::locale::global(std::locale {<span class="stringliteral">&quot;en_US.UTF-8&quot;</span>}); <span class="comment">// change to us for currency</span></div>
+<div class="line">  culture_info::current_culture(culture_info {<span class="stringliteral">&quot;en-US&quot;</span>}); <span class="comment">// change to us for currency</span></div>
 <div class="line">  <span class="keyword">auto</span> i1 = <a id="a0" name="a0"></a><a class="code hl_function" href="group__xtd__core.html#ga8dd4c00484ddac781e23fb7a7a0f5d2e">xtd::parse&lt;int&gt;</a>(<span class="stringliteral">&quot;42&quot;</span>);</div>
 <div class="line">  console::write_line(i1);</div>
 <div class="line">  <span class="keyword">auto</span> i2 = <a class="code hl_function" href="group__xtd__core.html#ga8dd4c00484ddac781e23fb7a7a0f5d2e">xtd::parse&lt;int&gt;</a>(<span class="stringliteral">&quot;+42.8&quot;</span>, number_styles::number);</div>
@@ -141,7 +143,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 6 2025 13:29:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Oct 6 2025 23:57:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

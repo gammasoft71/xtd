@@ -99,6 +99,8 @@ $(function(){ initResizable(false); });
 <p>Show how to use format <a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14" title="Writes the text representation of the specified arguments list, to string using the specified format ...">xtd::format</a> class.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>globalization;</div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">class </span>character {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  character(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; rank) noexcept : name_(name), rank_(rank) {}</div>
@@ -106,8 +108,8 @@ $(function(){ initResizable(false); });
 <div class="line">  <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> name_;}</div>
 <div class="line">  <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; rank() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> rank_;}</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">string</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> to_string(<span class="stringliteral">&quot;F&quot;</span>, std::locale {});}</div>
-<div class="line">  <span class="keywordtype">string</span> to_string(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fmt) <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> to_string(fmt, std::locale {});}</div>
+<div class="line">  <span class="keywordtype">string</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> to_string(<span class="stringliteral">&quot;F&quot;</span>, culture_info::current_culture());}</div>
+<div class="line">  <span class="keywordtype">string</span> to_string(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fmt) <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> to_string(fmt, culture_info::current_culture());}</div>
 <div class="line">  <span class="keywordtype">string</span> to_string(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc)<span class="keyword"> const </span>{</div>
 <div class="line">    <span class="keywordflow">if</span> (fmt == <span class="stringliteral">&quot;F&quot;</span>) <span class="keywordflow">return</span> name_ + <span class="stringliteral">&quot; (&quot;</span> + rank_ + <span class="stringliteral">&quot;)&quot;</span>;</div>
 <div class="line">    <span class="keywordflow">if</span> (fmt == <span class="stringliteral">&quot;N&quot;</span>) <span class="keywordflow">return</span> name_;</div>
@@ -147,7 +149,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 6 2025 13:29:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Oct 6 2025 23:57:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
