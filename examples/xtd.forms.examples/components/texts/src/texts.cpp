@@ -1,5 +1,7 @@
 #include <xtd/xtd>
 
+using namespace globalization;
+
 class form1 : public form {
 public:
   form1() {
@@ -17,8 +19,8 @@ private:
 
 auto main() -> int {
   try {
-    //std::locale::global(std::locale {"fr_FR.utf-8"});
-    //std::locale::global(std::locale {"zh_CN.utf-8"});
+    //culture_info::current_culture(culture_info {"fr_FR.utf-8"});
+    //culture_info::current_culture(culture_info {"zh_CN.utf-8"});
   } catch (const std::exception& e) {
     message_box::show(string::format("Make sure specified locale is installed on your system :\n\n{}", e.what()), "Exception");
     return -1;
