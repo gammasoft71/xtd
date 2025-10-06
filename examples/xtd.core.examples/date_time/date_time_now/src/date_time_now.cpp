@@ -1,20 +1,22 @@
 #include <xtd/xtd>
 
+using namespace globalization;
+
 class program {
 public:
   static auto main() {
     auto local_date = date_time::now();
     auto utc_date = date_time::utc_now();
-    auto locale_names = array {"en_US", "en_GB", "fr_FR", "de_DE", "ru_RU"};
+    auto culture_names = array {"en-US", "en-GB", "fr-FR", "de-DE", "ru-RU"};
     
-    for (auto locale_name : locale_names) {
+    for (auto culture_name : culture_names) {
       try {
-        std::locale::global(std::locale {locale_name + ".utf-8"_s});
-        console::write_line("{}:", locale_name);
+        culture_info::current_culture(culture_info {culture_name});
+        console::write_line("{}:", culture_name);
         console::write_line("   Local date and time: {:f}, {}", local_date, local_date.kind());
         console::write_line("   UTC date and time: {:f}, {}\n", utc_date, utc_date.kind());
       } catch (const std::exception& e) {
-        console::write_line("Make sure {} locale is installed on your system :\n\n{}\n", locale_name, e);
+        console::write_line("Make sure {} locale is installed on your system :\n\n{}\n", culture_name, e);
       }
     }
   }
@@ -24,22 +26,22 @@ startup_(program::main);
 
 // This code can produce the following output :
 //
-// en_US
-//    Local date and time: Sun Jan  2 09:50:36 2022, local
-//    UTC date and time: Sun Jan  2 08:50:36 2022, utc
+// en_US:
+//    Local date and time: Monday, October 6, 2025 19:03, local
+//    UTC date and time: Monday, October 6, 2025 17:03, utc
 //
-// en_GB
-//    Local date and time: Sun  2 Jan 09:50:36 2022, local
-//    UTC date and time: Sun  2 Jan 08:50:36 2022, utc
+// en_GB:
+//    Local date and time: Monday, October 6, 2025 19:03, local
+//    UTC date and time: Monday, October 6, 2025 17:03, utc
 //
-// fr_FR
-//    Local date and time: Dim  2 jan 09:50:36 2022, local
-//    UTC date and time: Dim  2 jan 08:50:36 2022, utc
+// fr_FR:
+//    Local date and time: lundi, octobre 6, 2025 19:03, local
+//    UTC date and time: lundi, octobre 6, 2025 17:03, utc
 //
-// de_DE
-//    Local date and time: So  2 Jan 09:50:36 2022, local
-//    UTC date and time: So  2 Jan 08:50:36 2022, utc
+// de_DE:
+//    Local date and time: Montag, Oktober 6, 2025 19:03, local
+//    UTC date and time: Montag, Oktober 6, 2025 17:03, utc
 //
-// ru_RU
-//    Local date and time: воскресенье,  2 января 2022 г. 09:50:36, local
-//    UTC date and time: воскресенье,  2 января 2022 г. 08:50:36, utc
+// ru_RU:
+//    Local date and time: понедельник, октября 6, 2025 19:03, local
+//    UTC date and time: понедельник, октября 6, 2025 17:03, utc
