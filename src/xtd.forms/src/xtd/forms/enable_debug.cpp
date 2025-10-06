@@ -22,6 +22,7 @@ enable_debug enable_debug::operator +(const enable_debug& value) const  noexcept
 }
 
 xtd::diagnostics::trace_switch& enable_debug::trace_switch() noexcept {
+  static auto trace_switch_ = xtd::diagnostics::trace_switch {"trace_switch_xtd_forms", "The trace switch for xtd forms library"};
   return trace_switch_;
 }
 
@@ -48,5 +49,4 @@ void enable_debug::set(const enable_debug& flags, bool on) {
 enable_debug::enable_debug(uint64 value) : value_(value) {
 }
 
-trace_switch enable_debug::trace_switch_ {"trace_switch_xtd_forms", "The trace switch for xtd forms library"};
 enable_debug enable_debug::values_;
