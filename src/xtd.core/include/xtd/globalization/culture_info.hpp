@@ -80,8 +80,11 @@ namespace xtd {
       /// @name Public Properties
       
       /// @{
-      /// @brief Gets the culture types that pertain to the current CultureInfo object.
-      /// @return A bitwise combination of one or more CultureTypes values. There is no default value.
+      /// @brief Gets the culture types that pertain to the current xtd::globalization::culture_info object.
+      /// @return A bitwise combination of one or more xtd::globalization::culture_types values. There is no default value.
+      /// @par Examples
+      /// The following example demonstrates the xtd::globalization::culture_types enumeration and the xtd::globalization::culture_info::culture_types property.
+      /// @include culture_info_culture_types.cpp
       xtd::globalization::culture_types culture_types() const noexcept;
       const xtd::string& display_name() const noexcept;
       const xtd::string& english_name() const noexcept;
