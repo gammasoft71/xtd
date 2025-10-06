@@ -1,4 +1,5 @@
 #include "../../../include/xtd/globalization/culture_info.hpp"
+#include "../../../include/xtd/collections/generic/dictionary.hpp"
 #include "../../../include/xtd/collections/generic/list.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/culture_info>
@@ -70,7 +71,6 @@ const string& culture_info::native_name() const noexcept {
 
 culture_info culture_info::current_culture() noexcept {
   auto local_name = !current_culture_.has_value() ? xtd::native::culture_info::current_name() : std::locale {}.name();
-  if (local_name == "C" || local_name == "POSIX") local_name = "en_US.utf-8";
   if (!current_culture_.has_value()) current_culture_ = culture_info{};
   current_culture_.value().fill_from_name(to_cldr_name(local_name));
   return current_culture_.value();
@@ -79,7 +79,8 @@ culture_info culture_info::current_culture() noexcept {
 void culture_info::current_culture(const culture_info& value) {
   if (current_culture_.has_value() && current_culture_ == value) return;
   current_culture_ = value;
-  std::locale::global(std::locale {to_locale_name(current_culture_.value().name())});
+  auto locale_name = to_locale_name(current_culture_.value().name());
+  std::locale::global(std::locale {locale_name});
 }
 
 culture_info culture_info::invariant_culture() noexcept {
@@ -145,11 +146,29 @@ void culture_info::fill_from_name(const string& name) {
 }
 
 string culture_info::to_cldr_name(const string& name) {
-  return name.to_lower().replace(".utf-8", "").replace("_", "-");
+  if (string::is_empty(name)) return "";
+  if (name == "C" || name == "POSIX") return "en-US";
+  static const dictionary<string, string> locale_to_cldr_fixups = {{"zh_cn", "zh-Hans-CN"}, {"zh_sg", "zh-Hans-SG"}, {"zh_hk", "zh-Hant-HK"}, {"zh_tw", "zh-Hant-TW"}, {"zh_mo", "zh-Hant-MO"}, {"sr_rs", "sr-Cyrl-RS"}, {"sr_me", "sr-Latn-ME"}, {"sr_ba", "sr-Latn-BA"}, {"uz_uz", "uz-Latn-UZ"}, {"uz_af", "uz-Arab-AF"}, {"bs_ba", "bs-Latn-BA"}, {"az_az", "az-Latn-AZ"}, {"kk_kz", "kk-Cyrl-KZ"}, {"ur_pk", "ur-Arab-PK"}};
+  auto cldr_name = name.to_lower().replace(".utf-8", "");
+  return locale_to_cldr_fixups.contains_key(cldr_name) ? locale_to_cldr_fixups[cldr_name] : cldr_name.replace("_", "-");
 }
 
 string culture_info::to_locale_name(const string& name) {
-  auto locale_name = name.replace("-", "_");
-  if (locale_name.to_lower().ends_with(".utf-8")) locale_name += ".utf-8";
+  if (string::is_empty(name)) return "";
+  static const array<string> unsupported_scripts = {"-Adlm", "-Arab", "-Aran", "-Beng", "-Bopo", "-Cyrl", "-Deva", "-Ethi", "-Grek", "-Guru", "-Hans", "-Hant", "-Hebr", "-Latn", "-Kana", "-Mtei", "-Olck", "-Orya", "-Rohg", "-Telu", "-Tfng", "-Thai", "-Vaii", "-POSIX"};
+  auto locale_name = name;
+  for (const auto& unsupported_script : unsupported_scripts) {
+    if (!locale_name.contains(unsupported_script)) continue;
+    locale_name = locale_name.replace(unsupported_script, "");
+    break;
+  }
+  locale_name = locale_name.replace("-", "_");
+  auto index = locale_name.last_index_of("_");
+  if (!string::is_empty(locale_name) && index == npos) locale_name += "_" + locale_name.to_upper();
+  else if (index != npos && char_object::is_digit(locale_name, index + 1)) {
+    locale_name = locale_name.remove(index);
+    locale_name += "_" + locale_name.to_upper();
+  }
+  if (!string::is_empty(locale_name)) locale_name += ".utf-8";
   return locale_name;
 }
