@@ -93,7 +93,9 @@ const std::tuple<const trace_listener_collection&, const string_dictionary&>& __
   call_once_ {
     auto product_name = assembly::get_executing_assembly().product() != string::empty_string ? assembly::get_executing_assembly().product() : path::get_file_name_without_extension(assembly::get_executing_assembly().location());
     auto company_name = assembly::get_executing_assembly().company() != string::empty_string ? assembly::get_executing_assembly().company() : product_name;
-    auto file_name = path::combine(environment::get_folder_path(environment::special_folder::application_data), company_name, product_name + ".diagnostics.config");
+    auto file_path = path::combine(environment::get_folder_path(environment::special_folder::application_data), company_name);
+    if (!directory::exists(file_path)) directory::create_directory(file_path);
+    auto file_name = path::combine(file_path, product_name + ".diagnostics.config");
     if (!file::exists(file_name)) file::write_all_lines(file_name, empty_diagnostics_content);
     else {
       auto file_settings = configuration::file_settings(file_name);
