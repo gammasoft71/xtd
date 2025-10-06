@@ -1,6 +1,8 @@
 # build folders
 build
 build*
+tools/GenerateCultureInfoCpp/bin
+tools/GenerateCultureInfoCpp/obj
 cmake-build*
 
 # build folders
