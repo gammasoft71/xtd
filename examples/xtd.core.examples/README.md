@@ -227,6 +227,10 @@
 * [generic_list_reverse](generic_Collections/generic_list_reverse/README.md) shows how to use [xtd::collections::generic::list::reverse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) method.
 * [mix_generic_list_and_std_vector_api](generic_Collections/mix_generic_list_and_std_vector_api/README.md) shows how to use [xtd::collections::generic::list](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) class.
 
+## [globalization](globalization/README.md)
+
+* [culture_info_with_name](globalization/culture_info_with_name/README.md) shows how to use [xtd::globalization::culture_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1culture__info.html) class.
+
 ## [Guid](guid/README.md)
 
 * [guid](guid/guid/README.md) shows how to use [xtd::guid](https://gammasoft71.github.io/xtd/reference_guides/latest/structxtd_1_1guid.html) class.

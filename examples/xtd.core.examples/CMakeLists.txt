@@ -21,6 +21,7 @@ add_projects(
   exceptions
   format
   generic_collections
+  globalization
   guid
   hash_code
   interfaces
