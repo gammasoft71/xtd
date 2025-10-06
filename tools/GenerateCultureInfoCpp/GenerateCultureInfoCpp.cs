@@ -35,16 +35,8 @@ class GenerateCultureInfoCpp {
       sb.AppendLine();
       sb.AppendLine("array<culture_info> culture_info::cultures_ = {");
 
-      foreach (var cultureInfo in CultureInfo.GetCultures(CultureTypes.AllCultures).OrderBy(culture => culture.Name)) {
-        var cultureType = ToString(cultureInfo.CultureTypes & CultureTypes.AllCultures);
-        var displayName = Escape(cultureInfo.DisplayName);
-        var englishName = Escape(cultureInfo.EnglishName);
-        var keyboardLayoutId = cultureInfo.KeyboardLayoutId;
-        var lcid = cultureInfo.LCID;
-        var name = Escape(cultureInfo.Name);
-        var nativeName = Escape(cultureInfo.NativeName);
-        sb.AppendLine($"  {{{cultureType}, \"{displayName}\", \"{englishName}\", {keyboardLayoutId}, {lcid}, \"{name}\", \"{nativeName}\"}},");
-      }
+      foreach (var cultureInfo in CultureInfo.GetCultures(CultureTypes.AllCultures).OrderBy(culture => culture.Name))
+        sb.AppendLine(ToString(cultureInfo));
       sb.AppendLine("};");
       File.WriteAllText(file_path, sb.ToString(), Encoding.UTF8);
       return true;
@@ -66,6 +58,17 @@ class GenerateCultureInfoCpp {
   static bool IsUsingNls() {
     var property = typeof(CultureInfo).Assembly.GetType("System.Globalization.GlobalizationMode")?.GetProperty("UseNls", BindingFlags.Static | BindingFlags.NonPublic);
     return property != null && (bool)property.GetValue(null)!;
+  }
+
+  static string ToString(CultureInfo cultureInfo) {
+    var cultureType = ToString(cultureInfo.CultureTypes & CultureTypes.AllCultures);
+    var displayName = Escape(cultureInfo.DisplayName);
+    var englishName = Escape(cultureInfo.EnglishName);
+    var keyboardLayoutId = cultureInfo.KeyboardLayoutId;
+    var lcid = cultureInfo.LCID;
+    var name = Escape(cultureInfo.Name);
+    var nativeName = Escape(cultureInfo.NativeName);
+    return $"  {{{cultureType}, \"{displayName}\", \"{englishName}\", {keyboardLayoutId}, {lcid}, \"{name}\", \"{nativeName}\"}},";
   }
 
   static string ToString(CultureTypes type) {
