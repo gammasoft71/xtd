@@ -1,5 +1,7 @@
 #include <xtd/xtd>
 
+using namespace globalization;
+
 class foo : public object, public iformatable {
 public:
   explicit foo(int value) : value_ {value} {}
@@ -18,7 +20,7 @@ auto main() -> int {
   console::out << "  " << f.to_string() << environment::new_line;
   console::out << string::format("  {}", f) << environment::new_line;
   console::out << string::format("  0b{:b8}", f) << environment::new_line;
-  console::out << "  0b" << f.to_string("b8", std::locale {}) << environment::new_line;
+  console::out << "  0b" << f.to_string("b8", culture_info::current_culture()) << environment::new_line;
   console::write_line();
 
   console::write_line("write_line :");
@@ -29,7 +31,7 @@ auto main() -> int {
   console::write_line("  {}", f);
   console::write_line("  0b{:b8}", f);
   console::write("  0b");
-  console::write_line(f.to_string("b8", std::locale {}));
+  console::write_line(f.to_string("b8", culture_info::current_culture()));
 }
 
 // This code produces the following output :
