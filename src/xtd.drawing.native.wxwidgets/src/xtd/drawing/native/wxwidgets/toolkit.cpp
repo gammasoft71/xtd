@@ -25,9 +25,9 @@ __declspec(dllimport) extern char** __argv;
 
 namespace {
   wxAssertHandler_t original_assert_handler = nullptr;
-  boolean_switch show_wx_assert("wx_assert", "Shows wxAssert log", "true");
   
   void xtd_assert_handler(const wxString& file, int32 line, const wxString& func, const wxString& cond, const wxString& msg) noexcept {
+    static boolean_switch show_wx_assert("wx_assert", "Shows wxAssert log", "true");
     try {
       // Workaround : wxWidgets generates an unknown assertion when there is a double mouse click event on an empty area of wxCalendarCtrl.
       if (func == "wxCalendarCtrl::HitTest" && cond == "\"Assert failure\"" && msg == "unexpected") return;
