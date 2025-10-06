@@ -1,5 +1,7 @@
 #include <xtd/xtd>
 
+using namespace globalization;
+
 enum class cap {title, middle, end};
 
 template<typename number_t>
@@ -35,7 +37,7 @@ auto print_floating_point(const string& text, number_t value, cap c) {
 }
 
 auto main() -> int {
-  std::locale::global(std::locale {"en_US.UTF-8"}); // change to us for currency
+  culture_info::current_culture(culture_info {"en-US"}); // change to us for currency
   print_floating_point(".0", .0, cap::title);
   print_floating_point("12.345f", 12.345f, cap::middle);
   print_floating_point("3.1415e-4", 3.1415e-4, cap::middle);
