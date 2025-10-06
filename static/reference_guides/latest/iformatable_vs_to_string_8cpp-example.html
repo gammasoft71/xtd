@@ -99,6 +99,8 @@ $(function(){ initResizable(false); });
 <p>Shows how to use <a class="el" href="classxtd_1_1iformatable.html" title="Provides functionality to format the value of an object into a string representation.">xtd::iformatable</a> interface and <a class="el" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0" title="Returns the string representation of this xtd::read_only_span &lt;type_t&gt; object.">xtd::to_string</a> method.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>globalization;</div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// The following simple class throws an `xtd::format_exception`exception with the `xtd::console::write_line` method,</span></div>
 <div class="line"><span class="comment">// and generates the invalid result &quot;(unregistered)&quot; with output stream.</span></div>
 <div class="line"><span class="comment">// Remarks: You needs to write to_strings methods.</span></div>
@@ -167,7 +169,7 @@ $(function(){ initResizable(false); });
 <div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>() const noexcept {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{}&quot;</span>, value_);}</div>
 <div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; format, <span class="keyword">const</span> std::locale&amp; loc)<span class="keyword"> const override </span>{<span class="keywordflow">return</span> string::format(string::format(<span class="stringliteral">&quot;{{:{}}}&quot;</span>, format), value_);}</div>
 <div class="line"> </div>
-<div class="line">  <span class="keyword">friend</span> std::ostream&amp; operator &lt;&lt;(std::ostream&amp; stream, <span class="keyword">const</span> foo5&amp; value) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b">stream</a> &lt;&lt; value.to_string(<span class="stringliteral">&quot;&quot;</span>, std::locale {});}</div>
+<div class="line">  <span class="keyword">friend</span> std::ostream&amp; operator &lt;&lt;(std::ostream&amp; stream, <span class="keyword">const</span> foo5&amp; value) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b">stream</a> &lt;&lt; value.to_string(<span class="stringliteral">&quot;&quot;</span>, culture_info::current_culture());}</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keywordtype">int</span> value_ = 0;</div>
@@ -180,7 +182,7 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">explicit</span> foo6(<span class="keywordtype">int</span> value) : value_ {value} {}</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>() const noexcept {<span class="keywordflow">return</span> <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>(<span class="stringliteral">&quot;&quot;</span>, std::locale {});}</div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>() const noexcept {<span class="keywordflow">return</span> <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>(<span class="stringliteral">&quot;&quot;</span>, culture_info::current_culture());}</div>
 <div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a2ed47ae86e395ccbe84ab1857c78c4e0">to_string</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; format, <span class="keyword">const</span> std::locale&amp; loc)<span class="keyword"> const </span>{<span class="keywordflow">return</span> string::format(string::format(<span class="stringliteral">&quot;{{:{}}}&quot;</span>, format), value_);}</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">friend</span> std::ostream&amp; operator &lt;&lt;(std::ostream&amp; stream, <span class="keyword">const</span> foo6&amp; value) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b">stream</a> &lt;&lt; value.to_string();}</div>
@@ -222,7 +224,7 @@ $(function(){ initResizable(false); });
 <div class="line">  } <span class="keywordflow">catch</span>(<span class="keyword">const</span> format_exception&amp; e) {</div>
 <div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; foreground_color(console_color::red) &lt;&lt; <span class="stringliteral">&quot;exception : &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.message() &lt;&lt; foreground_color(console_color::default_color) &lt;&lt; environment::new_line;</div>
 <div class="line">  }</div>
-<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  0b&quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, std::locale {}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  0b&quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, culture_info::current_culture()) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;foo1 write_line :&quot;</span>);</div>
 <div class="line">  console::write(<span class="stringliteral">&quot;  &quot;</span>);</div>
@@ -244,7 +246,7 @@ $(function(){ initResizable(false); });
 <div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; foreground_color(console_color::red) &lt;&lt; <span class="stringliteral">&quot;exception : &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.message() &lt;&lt; foreground_color(console_color::default_color) &lt;&lt; environment::new_line;</div>
 <div class="line">  }</div>
 <div class="line">  console::write(<span class="stringliteral">&quot;  0b&quot;</span>);</div>
-<div class="line">  console::write_line(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, std::locale {}));</div>
+<div class="line">  console::write_line(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2abd19836ddb62c11c55ab251ccaca5645">f1</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, culture_info::current_culture()));</div>
 <div class="line">  console::write_line();</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a3667f6a0c97490758d7dc9659d01ea34">f2</a> = foo2 {42};</div>
@@ -253,7 +255,7 @@ $(function(){ initResizable(false); });
 <div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a3667f6a0c97490758d7dc9659d01ea34">f2</a>.to_string() &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;  {}&quot;</span>, f2) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;  0b{:b8}&quot;</span>, f2) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  0b&quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a3667f6a0c97490758d7dc9659d01ea34">f2</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, std::locale {}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  0b&quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a3667f6a0c97490758d7dc9659d01ea34">f2</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, culture_info::current_culture()) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;foo2 write_line :&quot;</span>);</div>
 <div class="line">  console::write(<span class="stringliteral">&quot;  &quot;</span>);</div>
@@ -263,7 +265,7 @@ $(function(){ initResizable(false); });
 <div class="line">  console::write_line(<span class="stringliteral">&quot;  {}&quot;</span>, f2);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;  0b{:b8}&quot;</span>, f2);</div>
 <div class="line">  console::write(<span class="stringliteral">&quot;  0b&quot;</span>);</div>
-<div class="line">  console::write_line(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a3667f6a0c97490758d7dc9659d01ea34">f2</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, std::locale {}));</div>
+<div class="line">  console::write_line(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a3667f6a0c97490758d7dc9659d01ea34">f2</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, culture_info::current_culture()));</div>
 <div class="line">  console::write_line();</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a1779cf3aa50c413afc7e05adb7e1b0de">f3</a> = foo3 {42};</div>
@@ -272,7 +274,7 @@ $(function(){ initResizable(false); });
 <div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a1779cf3aa50c413afc7e05adb7e1b0de">f3</a>.to_string() &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;  {}&quot;</span>, f3) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;  0b{:b8}&quot;</span>, f3) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  0b&quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a1779cf3aa50c413afc7e05adb7e1b0de">f3</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, std::locale {}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  0b&quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a1779cf3aa50c413afc7e05adb7e1b0de">f3</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, culture_info::current_culture()) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;foo3 write_line :&quot;</span>);</div>
 <div class="line">  console::write(<span class="stringliteral">&quot;  &quot;</span>);</div>
@@ -282,7 +284,7 @@ $(function(){ initResizable(false); });
 <div class="line">  console::write_line(<span class="stringliteral">&quot;  {}&quot;</span>, f3);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;  0b{:b8}&quot;</span>, f3);</div>
 <div class="line">  console::write(<span class="stringliteral">&quot;  0b&quot;</span>);</div>
-<div class="line">  console::write_line(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a1779cf3aa50c413afc7e05adb7e1b0de">f3</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, std::locale {}));</div>
+<div class="line">  console::write_line(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a1779cf3aa50c413afc7e05adb7e1b0de">f3</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, culture_info::current_culture()));</div>
 <div class="line">  console::write_line();</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a6e1fcd704528ad8bf6d6bbedb9210096">f4</a> = foo4 {42};</div>
@@ -291,7 +293,7 @@ $(function(){ initResizable(false); });
 <div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a6e1fcd704528ad8bf6d6bbedb9210096">f4</a>.to_string() &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;  {}&quot;</span>, f4) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;  0b{:b8}&quot;</span>, f4) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  0b&quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a6e1fcd704528ad8bf6d6bbedb9210096">f4</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, std::locale {}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  0b&quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a6e1fcd704528ad8bf6d6bbedb9210096">f4</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, culture_info::current_culture()) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;foo4 write_line :&quot;</span>);</div>
 <div class="line">  console::write(<span class="stringliteral">&quot;  &quot;</span>);</div>
@@ -301,7 +303,7 @@ $(function(){ initResizable(false); });
 <div class="line">  console::write_line(<span class="stringliteral">&quot;  {}&quot;</span>, f4);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;  0b{:b8}&quot;</span>, f4);</div>
 <div class="line">  console::write(<span class="stringliteral">&quot;  0b&quot;</span>);</div>
-<div class="line">  console::write_line(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a6e1fcd704528ad8bf6d6bbedb9210096">f4</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, std::locale {}));</div>
+<div class="line">  console::write_line(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a6e1fcd704528ad8bf6d6bbedb9210096">f4</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, culture_info::current_culture()));</div>
 <div class="line">  console::write_line();</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a74ce2e1a498f2fa27b5542040be774dc">f5</a> = foo5 {42};</div>
@@ -310,7 +312,7 @@ $(function(){ initResizable(false); });
 <div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a74ce2e1a498f2fa27b5542040be774dc">f5</a>.to_string() &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;  {}&quot;</span>, f5) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;  0b{:b8}&quot;</span>, f5) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  0b&quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a74ce2e1a498f2fa27b5542040be774dc">f5</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, std::locale {}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  0b&quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a74ce2e1a498f2fa27b5542040be774dc">f5</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, culture_info::current_culture()) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;foo5 write_line :&quot;</span>);</div>
 <div class="line">  console::write(<span class="stringliteral">&quot;  &quot;</span>);</div>
@@ -320,7 +322,7 @@ $(function(){ initResizable(false); });
 <div class="line">  console::write_line(<span class="stringliteral">&quot;  {}&quot;</span>, f5);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;  0b{:b8}&quot;</span>, f5);</div>
 <div class="line">  console::write(<span class="stringliteral">&quot;  0b&quot;</span>);</div>
-<div class="line">  console::write_line(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a74ce2e1a498f2fa27b5542040be774dc">f5</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, std::locale {}));</div>
+<div class="line">  console::write_line(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a74ce2e1a498f2fa27b5542040be774dc">f5</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, culture_info::current_culture()));</div>
 <div class="line">  console::write_line();</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a64e4cda19b3f3ea4a7a56b5ba8cc33ca">f6</a> = foo6 {42};</div>
@@ -329,7 +331,7 @@ $(function(){ initResizable(false); });
 <div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a64e4cda19b3f3ea4a7a56b5ba8cc33ca">f6</a>.to_string() &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;  {}&quot;</span>, f6) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;  0b{:b8}&quot;</span>, f6) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  0b&quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a64e4cda19b3f3ea4a7a56b5ba8cc33ca">f6</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, std::locale {}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  0b&quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a64e4cda19b3f3ea4a7a56b5ba8cc33ca">f6</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, culture_info::current_culture()) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;foo6 write_line :&quot;</span>);</div>
 <div class="line">  console::write(<span class="stringliteral">&quot;  &quot;</span>);</div>
@@ -339,7 +341,7 @@ $(function(){ initResizable(false); });
 <div class="line">  console::write_line(<span class="stringliteral">&quot;  {}&quot;</span>, f6);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;  0b{:b8}&quot;</span>, f6);</div>
 <div class="line">  console::write(<span class="stringliteral">&quot;  0b&quot;</span>);</div>
-<div class="line">  console::write_line(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a64e4cda19b3f3ea4a7a56b5ba8cc33ca">f6</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, std::locale {}));</div>
+<div class="line">  console::write_line(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a64e4cda19b3f3ea4a7a56b5ba8cc33ca">f6</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, culture_info::current_culture()));</div>
 <div class="line">  console::write_line();</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a6c664eeed34d9c29a711bdb374831b49">f7</a> = foo7 {42};</div>
@@ -348,7 +350,7 @@ $(function(){ initResizable(false); });
 <div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a6c664eeed34d9c29a711bdb374831b49">f7</a>.to_string() &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;  {}&quot;</span>, f7) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;  0b{:b8}&quot;</span>, f7) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  0b&quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a6c664eeed34d9c29a711bdb374831b49">f7</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, std::locale {}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  0b&quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a6c664eeed34d9c29a711bdb374831b49">f7</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, culture_info::current_culture()) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;foo7 write_line :&quot;</span>);</div>
 <div class="line">  console::write(<span class="stringliteral">&quot;  &quot;</span>);</div>
@@ -358,7 +360,7 @@ $(function(){ initResizable(false); });
 <div class="line">  console::write_line(<span class="stringliteral">&quot;  {}&quot;</span>, f7);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;  0b{:b8}&quot;</span>, f7);</div>
 <div class="line">  console::write(<span class="stringliteral">&quot;  0b&quot;</span>);</div>
-<div class="line">  console::write_line(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a6c664eeed34d9c29a711bdb374831b49">f7</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, std::locale {}));</div>
+<div class="line">  console::write_line(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a6c664eeed34d9c29a711bdb374831b49">f7</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, culture_info::current_culture()));</div>
 <div class="line">  console::write_line();</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -475,7 +477,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 6 2025 13:29:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Oct 6 2025 23:57:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

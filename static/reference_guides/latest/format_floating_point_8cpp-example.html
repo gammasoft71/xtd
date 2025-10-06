@@ -99,6 +99,8 @@ $(function(){ initResizable(false); });
 <p>Show how to use format <a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14" title="Writes the text representation of the specified arguments list, to string using the specified format ...">xtd::format</a> class with floating points.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>globalization;</div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">enum class</span> cap {title, middle, end};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> number_t&gt;</div>
@@ -134,7 +136,7 @@ $(function(){ initResizable(false); });
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  std::locale::global(std::locale {<span class="stringliteral">&quot;en_US.UTF-8&quot;</span>}); <span class="comment">// change to us for currency</span></div>
+<div class="line">  culture_info::current_culture(culture_info {<span class="stringliteral">&quot;en-US&quot;</span>}); <span class="comment">// change to us for currency</span></div>
 <div class="line">  print_floating_point(<span class="stringliteral">&quot;.0&quot;</span>, .0, cap::title);</div>
 <div class="line">  print_floating_point(<span class="stringliteral">&quot;12.345f&quot;</span>, 12.345f, cap::middle);</div>
 <div class="line">  print_floating_point(<span class="stringliteral">&quot;3.1415e-4&quot;</span>, 3.1415e-4, cap::middle);</div>
@@ -294,12 +296,12 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="comment">// │ double_object::max_value            │ {:x}       │ 0x1.fffffffffffffp+1023                                          │</span></div>
 <div class="line"><span class="comment">// │ double_object::max_value            │ {:X}       │ 0x1.fffffffffffffp+1023                                          │</span></div>
 <div class="line"><span class="comment">// └─────────────────────────────────────┴────────────┴──────────────────────────────────────────────────────────────────┘</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__string_html_abe37d71513cd7f2585290402bd45afb2"><div class="ttname"><a href="classxtd_1_1basic__string.html#abe37d71513cd7f2585290402bd45afb2">xtd::basic_string::pad_right</a></div><div class="ttdeci">basic_string pad_right(xtd::size total_width) const noexcept</div><div class="ttdoc">Left-aligns the characters in this basic_string, padding with spaces on the right for a specified tot...</div><div class="ttdef"><b>Definition</b> basic_string.hpp:1531</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html_abe37d71513cd7f2585290402bd45afb2"><div class="ttname"><a href="classxtd_1_1basic__string.html#abe37d71513cd7f2585290402bd45afb2">xtd::basic_string::pad_right</a></div><div class="ttdeci">basic_string pad_right(xtd::size total_width) const noexcept</div><div class="ttdoc">Left-aligns the characters in this basic_string, padding with spaces on the right for a specified tot...</div><div class="ttdef"><b>Definition</b> basic_string.hpp:1540</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 6 2025 13:29:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Oct 6 2025 23:57:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

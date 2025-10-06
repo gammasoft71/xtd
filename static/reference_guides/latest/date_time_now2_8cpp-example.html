@@ -99,19 +99,17 @@ $(function(){ initResizable(false); });
 <p>Shows how to use <a class="el" href="classxtd_1_1date__time.html#ad94505e74efe9f353836901eda9230ed" title="Gets a xtd::date_time object that is set to the current date and time on this computer,...">xtd::date_time::now</a> property.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>globalization;</div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() {</div>
 <div class="line">    <span class="keyword">auto</span> local_date = date_time::now();</div>
-<div class="line">    <span class="keyword">auto</span> locale_names = array {<span class="stringliteral">&quot;en_US&quot;</span>, <span class="stringliteral">&quot;en_GB&quot;</span>, <span class="stringliteral">&quot;fr_FR&quot;</span>, <span class="stringliteral">&quot;de_DE&quot;</span>, <span class="stringliteral">&quot;ru_RU&quot;</span>};</div>
+<div class="line">    <span class="keyword">auto</span> culture_names = array {<span class="stringliteral">&quot;en-US&quot;</span>, <span class="stringliteral">&quot;en-GB&quot;</span>, <span class="stringliteral">&quot;fr-FR&quot;</span>, <span class="stringliteral">&quot;de-DE&quot;</span>, <span class="stringliteral">&quot;ru-RU&quot;</span>};</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> locale_name : locale_names) {</div>
-<div class="line">      <span class="keywordflow">try</span> {</div>
-<div class="line">        std::locale::global(std::locale {locale_name + <span class="stringliteral">&quot;.utf-8&quot;</span>_s});</div>
-<div class="line">        console::write_line(<span class="stringliteral">&quot;{}: {}&quot;</span>, locale_name, date_time::sprintf(<span class="stringliteral">&quot;%x %T&quot;</span>, local_date));</div>
-<div class="line">      } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
-<div class="line">        console::write_line(<span class="stringliteral">&quot;Make sure {} locale is installed on your system :\n\n{}\n&quot;</span>, locale_name, e);</div>
-<div class="line">      }</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> culture_name : culture_names) {</div>
+<div class="line">      <span class="keyword">auto</span> culture = culture_info {culture_name};</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{}: {}&quot;</span>, culture_name, local_date.to_string(culture));</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">};</div>
@@ -130,7 +128,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 6 2025 13:29:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Oct 6 2025 23:57:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

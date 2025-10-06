@@ -156,6 +156,8 @@ The xtd::iformattable interface is implemented by the base data types. </dd></dl
 <dl class="section user"><dt>Notes to Implementers</dt><dd>Classes that require more control over the formatting of strings than xtd::iformattable::to_string() provides should implement xtd::iformattable. A class that implements xtd::iformattable must support the "G" (general) format specifier. Besides the "G" specifier, the class can define the list of format specifiers that it supports. In addition, the class must be prepared to handle a format specifier that is null. For more information about formatting and formatting codes, see [Formatting Type]()s </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="classxtd_1_1iformatable.html" title="Provides functionality to format the value of an object into a string representation.">xtd::iformatable</a> interface. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1globalization.html">globalization</a>;</div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">class </span>foo : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iformatable.html">iformatable</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">explicit</span> foo(<span class="keywordtype">int</span> value) : value_ {value} {}</div>
@@ -174,7 +176,7 @@ The xtd::iformattable interface is implemented by the base data types. </dd></dl
 <div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">f</a>.to_string() &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;  {}&quot;</span>, f) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt; string::format(<span class="stringliteral">&quot;  0b{:b8}&quot;</span>, f) &lt;&lt; environment::new_line;</div>
-<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  0b&quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">f</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, std::locale {}) &lt;&lt; environment::new_line;</div>
+<div class="line">  console::out &lt;&lt; <span class="stringliteral">&quot;  0b&quot;</span> &lt;&lt; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">f</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, culture_info::current_culture()) &lt;&lt; environment::new_line;</div>
 <div class="line">  console::write_line();</div>
 <div class="line"> </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;write_line :&quot;</span>);</div>
@@ -185,7 +187,7 @@ The xtd::iformattable interface is implemented by the base data types. </dd></dl
 <div class="line">  console::write_line(<span class="stringliteral">&quot;  {}&quot;</span>, f);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;  0b{:b8}&quot;</span>, f);</div>
 <div class="line">  console::write(<span class="stringliteral">&quot;  0b&quot;</span>);</div>
-<div class="line">  console::write_line(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">f</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, std::locale {}));</div>
+<div class="line">  console::write_line(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">f</a>.to_string(<span class="stringliteral">&quot;b8&quot;</span>, culture_info::current_culture()));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -208,6 +210,7 @@ The xtd::iformattable interface is implemented by the base data types. </dd></dl
 <div class="ttc" id="aclassxtd_1_1object_html_af2d19ef177db62351b58a42f22138dbe"><div class="ttname"><a href="classxtd_1_1object.html#af2d19ef177db62351b58a42f22138dbe">xtd::object::to_string</a></div><div class="ttdeci">virtual xtd::string to_string() const noexcept</div><div class="ttdoc">Returns a xtd::string that represents the current object.</div></div>
 <div class="ttc" id="agroup__format__parse_html_ga73705cb16c7db5a2b7567456ff4e7e14"><div class="ttname"><a href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">xtd::format</a></div><div class="ttdeci">xtd::string format(const xtd::string &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> format.hpp:20</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">xtd::console_key::f</a></div><div class="ttdeci">@ f</div><div class="ttdoc">The F key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:98</div></div>
+<div class="ttc" id="anamespacextd_1_1globalization_html"><div class="ttname"><a href="namespacextd_1_1globalization.html">xtd::globalization</a></div><div class="ttdoc">Contains classes that define culture-related information, including language, country/region,...</div><div class="ttdef"><b>Definition</b> culture_info.hpp:18</div></div>
 </div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
@@ -266,7 +269,7 @@ The xtd::iformattable interface is implemented by the base data types. </dd></dl
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 6 2025 13:29:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Oct 6 2025 23:58:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
