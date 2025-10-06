@@ -1111,9 +1111,9 @@ class GenerateCultureInfoCpp {
 
   static string ToCutureTypeString(CultureTypes type) {
     var result = "";
-    if ((type & CultureTypes.NeutralCultures) == CultureTypes.NeutralCultures) result+= string.Format("{0}{1}", string.IsNullOrEmpty(result) ? "" : " | ", "globalization::culture_types::neutral_cultures");
-    if ((type & CultureTypes.SpecificCultures) == CultureTypes.SpecificCultures) result += string.Format("{0}{1}", string.IsNullOrEmpty(result) ? "" : " | ", "globalization::culture_types::specific_cultures");
-    if ((type & CultureTypes.InstalledWin32Cultures) == CultureTypes.InstalledWin32Cultures) result += string.Format("{0}{1}", string.IsNullOrEmpty(result) ? "" : " | ", "globalization::culture_types::installed_win32_cultures");
+    if (type.HasFlag(CultureTypes.NeutralCultures)) result+= string.Format("{0}{1}", string.IsNullOrEmpty(result) ? "" : " | ", "globalization::culture_types::neutral_cultures");
+    if (type.HasFlag(CultureTypes.SpecificCultures)) result += string.Format("{0}{1}", string.IsNullOrEmpty(result) ? "" : " | ", "globalization::culture_types::specific_cultures");
+    if (type.HasFlag(CultureTypes.InstalledWin32Cultures)) result += string.Format("{0}{1}", string.IsNullOrEmpty(result) ? "" : " | ", "globalization::culture_types::installed_win32_cultures");
     return result;
   }
 }
