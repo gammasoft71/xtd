@@ -807,7 +807,11 @@ namespace xtd {
     /// | `"Y"`, `"y"`               | Year month pattern.                                                              | 2009-06-15T13:45:30 -> June 2009 (en-US) <br><br> 2009-06-15T13:45:30 -> juni 2009 (da-DK) <br><br> 2009-06-15T13:45:30 -> Juni 2009 (id-ID)                                                                                                                     |
     /// | Any other single character | Unknown specifier.                                                               | Throws a run-time xtd::format_exception.                                                                                                                                                                                                                         |
     xtd::string to_string(const string& format, const std::locale& loc) const override;
-    
+    /// @brief Converts the value of the current xtd::date_time object to its equivalent string representation using the specified culture.
+    /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
+    /// @return A string representation of value of the current xtd::date_time object as specifiedc ulture.
+    xtd::string to_string(const std::locale& loc) const;
+
     /// @brief Converts the value of the current xtd::date_time object to [std::time_t](https://en.cppreference.com/w/cpp/chrono/c/time_t).
     /// @return The value of the current xtd::date_time object expressed as [std::time_t](https://en.cppreference.com/w/cpp/chrono/c/time_t).
     /// @remarks [std::time_t](https://en.cppreference.com/w/cpp/chrono/c/time_t) is almost always an integral value holding the number of seconds (not counting leap seconds) since 00:00, Jan 1 1970 UTC, corresponding to POSIX time.
