@@ -1,18 +1,16 @@
 #include <xtd/xtd>
 
+using namespace globalization;
+
 class program {
 public:
   static auto main() {
     auto local_date = date_time::now();
-    auto locale_names = array {"en_US", "en_GB", "fr_FR", "de_DE", "ru_RU"};
+    auto culture_names = array {"en-US", "en-GB", "fr-FR", "de-DE", "ru-RU"};
     
-    for (auto locale_name : locale_names) {
-      try {
-        std::locale::global(std::locale {locale_name + ".utf-8"_s});
-        console::write_line("{}: {}", locale_name, date_time::sprintf("%x %T", local_date));
-      } catch (const std::exception& e) {
-        console::write_line("Make sure {} locale is installed on your system :\n\n{}\n", locale_name, e);
-      }
+    for (auto culture_name : culture_names) {
+      auto culture = culture_info {culture_name};
+      console::write_line("{}: {}", culture_name, local_date.to_string(culture));
     }
   }
 };
