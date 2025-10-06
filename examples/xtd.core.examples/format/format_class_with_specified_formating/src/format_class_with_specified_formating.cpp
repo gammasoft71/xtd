@@ -1,5 +1,7 @@
 #include <xtd/xtd>
 
+using namespace globalization;
+
 class character : public iformatable {
 public:
   character() = default;
@@ -8,7 +10,7 @@ public:
   const string& name() const noexcept {return name_;}
   const string& rank() const noexcept {return rank_;}
   
-  string to_string() const noexcept {return to_string("", std::locale {});}
+  string to_string() const noexcept {return to_string("", culture_info::current_culture());}
   string to_string(const string& format, const std::locale& loc) const override {
     auto fmt = string::is_empty(format) ? "F" : format;
     if (fmt == "F") return name_ + " (" + rank_ + ")";
