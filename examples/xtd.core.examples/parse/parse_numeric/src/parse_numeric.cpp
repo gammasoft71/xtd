@@ -1,7 +1,9 @@
 #include <xtd/xtd>
 
+using namespace globalization;
+
 auto main() -> int {
-  std::locale::global(std::locale {"en_US.UTF-8"}); // change to us for currency
+  culture_info::current_culture(culture_info {"en-US"}); // change to us for currency
   auto i1 = xtd::parse<int>("42");
   console::write_line(i1);
   auto i2 = xtd::parse<int>("+42.8", number_styles::number);
