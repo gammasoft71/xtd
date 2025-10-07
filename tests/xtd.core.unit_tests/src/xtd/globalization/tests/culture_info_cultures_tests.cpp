@@ -16,6 +16,7 @@ namespace xtd::globalization::tests {
     static void test_cleanup_(test_cleanup) {
       std::locale::global(current_locale_);
     }
+
     void test_method_(invariant) {
       auto culture = culture_info {""};
       assert::are_equal(globalization::culture_types::specific_cultures, culture.culture_types());
