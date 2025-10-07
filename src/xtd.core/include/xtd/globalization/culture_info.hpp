@@ -147,6 +147,8 @@ namespace xtd {
       culture_info(xtd::globalization::culture_types culture_types, string&& display_name, string&& english_name, xtd::size keyboard_layout_id, xtd::size lcid, string&& name, string&& native_name);
       
       void fill_from_name(const xtd::string& name);
+      static bool is_system_locale_available(const xtd::string& name) noexcept;
+
       static xtd::string to_cldr_name(const xtd::string& name);
       static xtd::string to_locale_name(const xtd::string& name);
       
@@ -156,7 +158,7 @@ namespace xtd {
         xtd::string english_name = "Invariant Language (Invariant Country)";
         xtd::size keyboard_layout_id = 127;
         xtd::size lcid = 127;
-        std::locale locale;
+        std::locale locale = std::locale {""};
         xtd::string name;
         xtd::string native_name = "Invariant Language (Invariant Country)";
       };
