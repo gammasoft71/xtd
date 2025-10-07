@@ -148,7 +148,7 @@ namespace xtd {
       
       void fill_from_name(const xtd::string& name);
       static bool is_system_locale_available(const xtd::string& name) noexcept;
-
+      
       static xtd::string to_cldr_name(const xtd::string& name);
       static xtd::string to_locale_name(const xtd::string& name);
       
