@@ -19,6 +19,9 @@ namespace xtd {
   /// @cond
   namespace globalization {
     class culture_info;
+    namespace tests {
+      class culture_info_tests;
+    }
   }
   /// @endcond
   
@@ -35,15 +38,20 @@ namespace xtd {
     class core_native_export_ culture_info final {
       culture_info() = delete;
       friend xtd::globalization::culture_info;
+      friend xtd::globalization::tests::culture_info_tests;
     protected:
       /// @name Protected Static Methods
       
       /// @{
-      /// @brief Gets the current culture infi name.
-      /// @return A std::string that contains the current culture name.
-      /// @remarks The current culture is the locale name of the OS.
+      /// @brief Gets the current locale name.
+      /// @return A std::string that contains the current locale name.
       /// @warning Internal use only
-      static std::string current_name();
+      static std::string current_locale_name();
+
+      /// @brief Gets system locale names.
+      /// @return A std::vector<std::string> that contains the system locale names.
+      /// @warning Internal use only
+      static std::vector<std::string> system_locale_names();
       /// @}
     };
   }
