@@ -24,6 +24,7 @@ add_sources(
   "src/xtd/diagnostics/tests/trace_event_type_tests.cpp"
   "src/xtd/diagnostics/tests/trace_level_tests.cpp"
   "src/xtd/diagnostics/tests/trace_listener_tests.cpp"
+  "src/xtd/globalization/tests/culture_info_tests.cpp"
   "src/xtd/internal/tests/xtd_raw_array_data_tests.cpp"
   "src/xtd/io/tests/binary_reader_tests.cpp"
   "src/xtd/io/tests/directory_tests.cpp"
