@@ -18,12 +18,7 @@ private:
 };
 
 auto main() -> int {
-  try {
-    //culture_info::current_culture(culture_info {"fr-FR"});
-    //culture_info::current_culture(culture_info {"zh-Hans-CN"});
-  } catch (const std::exception& e) {
-    message_box::show(string::format("Make sure specified locale is installed on your system :\n\n{}", e.what()), "Exception");
-    return -1;
-  }
+  //culture_info::current_culture(culture_info {"fr-FR"});
+  //culture_info::current_culture(culture_info {"zh-Hans-CN"});
   application::run(form1 {});
 }
