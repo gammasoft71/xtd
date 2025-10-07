@@ -18,4 +18,11 @@ xtdc run
 ## Output
 
 ```
+Invariant Language (Invariant Country) ():  spsecific_culture
+Afrikaans (af):  neutral_culture
+Afrikaans (Namibia) (af-NA):  spsecific_culture
+...
+Chinese, Traditional (Taiwan) (zh-Hant-TW):  spsecific_culture
+Zulu (zu):  neutral_culture
+Zulu (South Africa) (zu-ZA):  spsecific_culture
 ```
