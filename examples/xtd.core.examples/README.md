@@ -229,6 +229,7 @@
 
 ## [globalization](globalization/README.md)
 
+* [culture_info_culture_types](globalization/culture_info_culture_types/README.md) shows how to use [xtd::globalization::culture_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1culture__info.html) class.
 * [culture_info_with_name](globalization/culture_info_with_name/README.md) shows how to use [xtd::globalization::culture_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1culture__info.html) class.
 
 ## [Guid](guid/README.md)
