@@ -52,7 +52,7 @@ std::string culture_info::current_locale_name() {
 std::vector<std::string> culture_info::system_locale_names() {
   auto locales = std::vector<std::string> {"", "C", "POSIX"};
   locales.reserve(800);
-
+  
   auto callback = [](LPWSTR locale_name, DWORD, LPARAM lparam) -> BOOL {
     auto* locales = reinterpret_cast<std::vector<std::string>*>(lparam);
     locales->push_back(to_locale_name(win32::strings::to_string(locale_name)));

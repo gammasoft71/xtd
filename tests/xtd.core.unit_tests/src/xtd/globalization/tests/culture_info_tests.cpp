@@ -32,7 +32,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("", culture.name());
       assert::are_equal("Invariant Language (Invariant Country)", culture.native_name());
     }
-
+    
     void test_method_(create_with_valid_lcid_and_valid_locale) {
       auto culture = culture_info {1033_z};
       assert::are_equal(globalization::culture_types::specific_cultures, culture.culture_types());
@@ -58,7 +58,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("as", culture.name());
       assert::are_equal("অসমীয়া", culture.native_name());
     }
-
+    
     void test_method_(create_with_empty_string) {
       auto culture = culture_info {""};
       assert::are_equal(globalization::culture_types::specific_cultures, culture.culture_types());
@@ -71,7 +71,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("", culture.name());
       assert::are_equal("Invariant Language (Invariant Country)", culture.native_name());
     }
-
+    
     void test_method_(create_with_valid_string_and_valid_locale) {
       auto culture = culture_info {"en-US"};
       assert::are_equal(globalization::culture_types::specific_cultures, culture.culture_types());
@@ -84,7 +84,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("en-US", culture.name());
       assert::are_equal("English (United States)", culture.native_name());
     }
-
+    
     void test_method_(create_with_valid_string_and_invalid_locale) {
       auto culture = culture_info {"agq"};
       assert::are_equal(globalization::culture_types::neutral_cultures, culture.culture_types());
@@ -97,21 +97,21 @@ namespace xtd::globalization::tests {
       assert::are_equal("agq", culture.name());
       assert::are_equal("Aghem", culture.native_name());
     }
-
+    
     void test_method_(create_with_lower_case_string) {
       auto culture = culture_info {"en-us"};
       assert::are_equal("en-US", culture.name());
     }
-
+    
     void test_method_(create_with_upper_case_string) {
       auto culture = culture_info {"EN-US"};
       assert::are_equal("en-US", culture.name());
     }
-
+    
     void test_method_(create_with_invalid_string) {
       assert::throws<culture_not_found_exception>(delegate_ {culture_info {"en-USS"};});
     }
-
+    
     void test_method_(create_with_valid_locale) {
       auto culture = culture_info {std::locale {"en_US.utf-8"}};
       assert::are_equal(globalization::culture_types::specific_cultures, culture.culture_types());
@@ -124,7 +124,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("en-US", culture.name());
       assert::are_equal("English (United States)", culture.native_name());
     }
-
+    
     void test_method_(create_with_empty_locale) {
       auto culture = culture_info {std::locale {""}};
       assert::are_equal(globalization::culture_types::specific_cultures, culture.culture_types());
@@ -137,7 +137,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("", culture.name());
       assert::are_equal("Invariant Language (Invariant Country)", culture.native_name());
     }
-
+    
     void test_method_(create_with_c_locale) {
       auto culture = culture_info {std::locale {"C"}};
       assert::are_equal(globalization::culture_types::specific_cultures, culture.culture_types());
@@ -150,7 +150,7 @@ namespace xtd::globalization::tests {
       assert::are_equal("en-US", culture.name());
       assert::are_equal("English (United States)", culture.native_name());
     }
-
+    
     void test_method_(create_with_posix_locale) {
       auto culture = culture_info {std::locale {"POSIX"}};
       assert::are_equal(globalization::culture_types::specific_cultures, culture.culture_types());
@@ -163,11 +163,11 @@ namespace xtd::globalization::tests {
       assert::are_equal("en-US", culture.name());
       assert::are_equal("English (United States)", culture.native_name());
     }
-
+    
     void test_method_(create_with_invalid_locale) {
       assert::throws<std::runtime_error>(delegate_ {culture_info {std::locale {"en_USS.utf-8"}};});
     }
-
+    
     void test_method_(current_culture) {
       auto culture = culture_info::current_culture();
       assert::are_equal(globalization::culture_types::specific_cultures, culture.culture_types());

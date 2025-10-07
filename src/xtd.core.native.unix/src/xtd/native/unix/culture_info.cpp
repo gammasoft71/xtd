@@ -20,7 +20,7 @@ std::string culture_info::current_locale_name() {
 std::vector<std::string> culture_info::system_locale_names() {
   auto locales = std::vector<std::string> {"", "C", "POSIX"};
   locales.reserve(800);
-
+  
   auto lines = unix::shell_execute::run("locale", "-a");
   for (auto line : unix::strings::split(lines, {'\n'})) {
     auto pos = line.find(".UTF-8");

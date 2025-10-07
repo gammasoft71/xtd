@@ -47,7 +47,7 @@ namespace xtd {
       /// @return A std::string that contains the current locale name.
       /// @warning Internal use only
       static std::string current_locale_name();
-
+      
       /// @brief Gets system locale names.
       /// @return A std::vector<std::string> that contains the system locale names.
       /// @warning Internal use only
