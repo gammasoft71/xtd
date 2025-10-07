@@ -70,15 +70,6 @@ const string& culture_info::native_name() const noexcept {
   return data_->native_name;
 }
 
-/*
-culture_info culture_info::current_culture() noexcept {
-  auto local_name = !current_culture_.has_value() ? xtd::native::culture_info::current_locale_name() : std::locale {}.name();
-  if (!current_culture_.has_value()) current_culture_ = culture_info{};
-  current_culture_.value().fill_from_name(to_cldr_name(local_name));
-  return current_culture_.value();
-}
- */
-
 culture_info culture_info::current_culture() noexcept {
   auto locale = !current_culture_.has_value() ? std::locale {xtd::native::culture_info::current_locale_name()} : std::locale {};
   if (!current_culture_.has_value()) current_culture_ = culture_info {locale};
