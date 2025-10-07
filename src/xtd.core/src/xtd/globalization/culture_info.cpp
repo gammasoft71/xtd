@@ -1,6 +1,7 @@
 #include "../../../include/xtd/globalization/culture_info.hpp"
 #include "../../../include/xtd/collections/generic/dictionary.hpp"
 #include "../../../include/xtd/collections/generic/list.hpp"
+#include "../../../include/xtd/call_once.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/culture_info>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -69,18 +70,26 @@ const string& culture_info::native_name() const noexcept {
   return data_->native_name;
 }
 
+/*
 culture_info culture_info::current_culture() noexcept {
-  auto local_name = !current_culture_.has_value() ? xtd::native::culture_info::current_name() : std::locale {}.name();
+  auto local_name = !current_culture_.has_value() ? xtd::native::culture_info::current_locale_name() : std::locale {}.name();
   if (!current_culture_.has_value()) current_culture_ = culture_info{};
   current_culture_.value().fill_from_name(to_cldr_name(local_name));
+  return current_culture_.value();
+}
+ */
+
+culture_info culture_info::current_culture() noexcept {
+  auto locale = !current_culture_.has_value() ? std::locale {xtd::native::culture_info::current_locale_name()} : std::locale {};
+  if (!current_culture_.has_value()) current_culture_ = culture_info {locale};
+  else if (locale.name() != "C") current_culture_ = culture_info {locale};
   return current_culture_.value();
 }
 
 void culture_info::current_culture(const culture_info& value) {
   if (current_culture_.has_value() && current_culture_ == value) return;
   current_culture_ = value;
-  auto locale_name = to_locale_name(current_culture_.value().name());
-  std::locale::global(std::locale {locale_name});
+  std::locale::global(value.locale());
 }
 
 culture_info culture_info::invariant_culture() noexcept {
@@ -126,11 +135,7 @@ culture_info::culture_info(globalization::culture_types culture_types, string&& 
   data_->english_name = std::move(english_name);
   data_->keyboard_layout_id = keyboard_layout_id;
   data_->lcid = lcid;
-  try {
-    data_->locale = std::locale {to_locale_name(name)};
-  } catch (const std::runtime_error& e) {
-    data_->locale = std::locale {"C"};
-  }
+  data_->locale = std::locale {is_system_locale_available(to_locale_name(name)) ? to_locale_name(name) : "C"};
   data_->name = std::move(name);
   data_->native_name = std::move(native_name);
 }
@@ -143,6 +148,15 @@ void culture_info::fill_from_name(const string& name) {
     return;
   }
   throw_helper::throws(exception_case::culture_not_found);
+}
+
+bool culture_info::is_system_locale_available(const string& name) noexcept {
+  static auto system_locale_names = array<string> {};
+  call_once_ {
+    auto native_system_locale_names = native::culture_info::system_locale_names();
+    system_locale_names = array<string>(native_system_locale_names.begin(), native_system_locale_names.end());
+  };
+  return system_locale_names.contains(name);
 }
 
 string culture_info::to_cldr_name(const string& name) {
