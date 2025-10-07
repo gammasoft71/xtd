@@ -25,6 +25,7 @@ auto main() -> int {
   content.append_line("    static void test_cleanup_(test_cleanup) {");
   content.append_line("      std::locale::global(current_locale_);");
   content.append_line("    }");
+  content.append_line();
   
   for (auto culture : culture_info::get_cultures(culture_types::all_cultures)) {
     content.append_format("    void test_method_({}) {{\n", culture.name() == "or" ? "or_" : string::is_empty(culture.name()) ? "invariant" : culture.name().replace("-", "_"));
