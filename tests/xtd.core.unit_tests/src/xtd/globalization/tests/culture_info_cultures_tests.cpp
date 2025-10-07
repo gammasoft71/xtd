@@ -8,15 +8,6 @@ using namespace xtd::tunit;
 
 namespace xtd::globalization::tests {
   class test_class_(culture_info_cultures_tests) {
-    inline static std::locale current_locale_;
-    static void test_initialize_(test_initialize) {
-      current_locale_ = std::locale {};
-    }
-    
-    static void test_cleanup_(test_cleanup) {
-      std::locale::global(current_locale_);
-    }
-
     void test_method_(invariant) {
       auto culture = culture_info {""};
       assert::are_equal(globalization::culture_types::specific_cultures, culture.culture_types());
