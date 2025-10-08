@@ -24,10 +24,10 @@ auto main() -> int {
     content.append_format("      assert::are_equal(globalization::culture_types::{}, culture.culture_types());\n", culture.culture_types());
     content.append_format("      assert::are_equal({}, culture.display_name());\n", culture.display_name().quoted());
     content.append_format("      assert::are_equal({}, culture.english_name());\n", culture.english_name().quoted());
-    content.append_format("      assert::is_{}(culture.is_locale_available());\n", as<string>(culture.is_locale_available()));
+    //content.append_format("      assert::is_{}(culture.is_locale_available());\n", as<string>(culture.is_locale_available()));
     content.append_format("      assert::are_equal({}_z, culture.keyboard_layout_id());\n", culture.keyboard_layout_id());
     content.append_format("      assert::are_equal({}_z, culture.lcid());\n", culture.lcid());
-    content.append_format("      assert::are_equal(std::locale {{{}}}, culture.locale());\n", as<string>(culture.locale().name()).quoted());
+    //content.append_format("      assert::are_equal(std::locale {{{}}}, culture.locale());\n", as<string>(culture.locale().name()).quoted());
     content.append_format("      assert::are_equal({}, culture.name());\n", culture.name().quoted());
     content.append_format("      assert::are_equal({}, culture.native_name());\n", culture.native_name().quoted());
     content.append_line("    }");

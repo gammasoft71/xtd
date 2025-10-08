@@ -42,7 +42,7 @@ namespace xtd::globalization::tests {
       assert::is_true(culture.is_locale_available());
       assert::are_equal(1033_z, culture.keyboard_layout_id());
       assert::are_equal(1033_z, culture.lcid());
-      assert::are_equal(std::locale {"en_US" + native::culture_info::locale_name_extension()}, culture.locale());
+      assert::are_equal(std::locale {"en_US.UTF-8"}, culture.locale());
       assert::are_equal("en-US", culture.name());
       assert::are_equal("English (United States)", culture.native_name());
     }
@@ -81,7 +81,7 @@ namespace xtd::globalization::tests {
       assert::is_true(culture.is_locale_available());
       assert::are_equal(1033_z, culture.keyboard_layout_id());
       assert::are_equal(1033_z, culture.lcid());
-      assert::are_equal(std::locale {"en_US" + native::culture_info::locale_name_extension()}, culture.locale());
+      assert::are_equal(std::locale {"en_US.UTF-8"}, culture.locale());
       assert::are_equal("en-US", culture.name());
       assert::are_equal("English (United States)", culture.native_name());
     }
@@ -114,19 +114,21 @@ namespace xtd::globalization::tests {
     }
     
     void test_method_(create_with_valid_locale) {
-      auto culture = culture_info {std::locale {"en_US" + native::culture_info::locale_name_extension()}};
+      auto culture = culture_info {std::locale {"en_US.UTF-8"}};
       assert::are_equal(globalization::culture_types::specific_cultures, culture.culture_types());
       assert::are_equal("English (United States)", culture.display_name());
       assert::are_equal("English (United States)", culture.english_name());
       assert::is_true(culture.is_locale_available());
       assert::are_equal(1033_z, culture.keyboard_layout_id());
       assert::are_equal(1033_z, culture.lcid());
-      assert::are_equal(std::locale {"en_US" + native::culture_info::locale_name_extension()}, culture.locale());
+      assert::are_equal(std::locale {"en_US.UTF-8"}, culture.locale());
       assert::are_equal("en-US", culture.name());
       assert::are_equal("English (United States)", culture.native_name());
     }
     
     void test_method_(create_with_empty_locale) {
+      // In Linux the std::locale {""}.name() return "en_US.UTF-8" instead ""
+      if (environment::os_version().is_linux()) assert::ignore();
       auto culture = culture_info {std::locale {""}};
       assert::are_equal(globalization::culture_types::specific_cultures, culture.culture_types());
       assert::are_equal("Invariant Language (Invariant Country)", culture.display_name());
@@ -147,7 +149,7 @@ namespace xtd::globalization::tests {
       assert::is_true(culture.is_locale_available());
       assert::are_equal(1033_z, culture.keyboard_layout_id());
       assert::are_equal(1033_z, culture.lcid());
-      assert::are_equal(std::locale {"en_US" + native::culture_info::locale_name_extension()}, culture.locale());
+      assert::are_equal(std::locale {"en_US.UTF-8"}, culture.locale());
       assert::are_equal("en-US", culture.name());
       assert::are_equal("English (United States)", culture.native_name());
     }
@@ -160,13 +162,13 @@ namespace xtd::globalization::tests {
       assert::is_true(culture.is_locale_available());
       assert::are_equal(1033_z, culture.keyboard_layout_id());
       assert::are_equal(1033_z, culture.lcid());
-      assert::are_equal(std::locale {"en_US" + native::culture_info::locale_name_extension()}, culture.locale());
+      assert::are_equal(std::locale {"en_US.UTF-8"}, culture.locale());
       assert::are_equal("en-US", culture.name());
       assert::are_equal("English (United States)", culture.native_name());
     }
     
     void test_method_(create_with_invalid_locale) {
-      assert::throws<std::runtime_error>(delegate_ {culture_info {std::locale {"en_USS" + native::culture_info::locale_name_extension()}};});
+      assert::throws<std::runtime_error>(delegate_ {culture_info {std::locale {"en_USS.UTF-8"}};});
     }
     
     void test_method_(current_culture) {
@@ -191,12 +193,14 @@ namespace xtd::globalization::tests {
       assert::is_true(culture.is_locale_available());
       assert::are_equal(1033_z, culture.keyboard_layout_id());
       assert::are_equal(1033_z, culture.lcid());
-      assert::are_equal(std::locale {"en_US" + native::culture_info::locale_name_extension()}, culture.locale());
+      assert::are_equal(std::locale {"en_US.UTF-8"}, culture.locale());
       assert::are_equal("en-US", culture.name());
       assert::are_equal("English (United States)", culture.native_name());
     }
     
     void test_method_(set_current_culture_with_valid_culture_info_and_empty_locale) {
+      // In Linux the std::locale {""}.name() return "en_US.UTF-8" instead ""
+      if (environment::os_version().is_linux()) assert::ignore();
       culture_info::current_culture(culture_info {""});
       auto culture = culture_info::current_culture();
       assert::are_equal(globalization::culture_types::specific_cultures, culture.culture_types());

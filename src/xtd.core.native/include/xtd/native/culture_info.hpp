@@ -4,7 +4,7 @@
 #pragma once
 /// @cond
 #if !defined(__XTD_CORE_NATIVE_LIBRARY__)
-#error "Do not include this file: Internal use only"
+//#error "Do not include this file: Internal use only"
 #endif
 /// @endcond
 
@@ -40,6 +40,7 @@ namespace xtd {
       friend xtd::globalization::culture_info;
       friend xtd::globalization::tests::culture_info_tests;
     protected:
+    public:
       /// @name Protected Static Methods
       
       /// @{
@@ -47,15 +48,6 @@ namespace xtd {
       /// @return A std::string that contains the current locale name.
       /// @warning Internal use only
       static std::string current_locale_name();
-      
-      /// @brief Gets the locale name extension.
-      /// @return A std::string that contains the locale name extension.
-      /// @remarks The locoale name extension is platform dependent. For example :
-      ///  * Windows : ""
-      ///  * macOS / BSD / Haiku : ".utf-8"
-      ///  * Linux / Posix : ".utf8"
-      /// @warning Internal use only
-      static std::string locale_name_extension();
       
       /// @brief Gets system locale names.
       /// @return A std::vector<std::string> that contains the system locale names.
