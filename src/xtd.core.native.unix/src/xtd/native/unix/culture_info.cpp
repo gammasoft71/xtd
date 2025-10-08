@@ -30,7 +30,7 @@ std::string culture_info::current_locale_name() {
 std::vector<std::string> culture_info::system_locale_names() {
   auto locales = std::vector<std::string> {"", "C", "POSIX"};
   locales.reserve(800);
-  for (auto name: unix::strings::split(unix::shell_execute::run("locale", "-a"), {'\n'}))
+  for (auto name : unix::strings::split(unix::shell_execute::run("locale", "-a"), {'\n'}))
     locales.push_back(to_locale_name(name));
   std::sort(locales.begin(), locales.end());
   locales.erase(std::unique(locales.begin(), locales.end()), locales.end());
