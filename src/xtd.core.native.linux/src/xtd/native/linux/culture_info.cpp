@@ -17,15 +17,25 @@ std::string culture_info::current_locale_name() {
   return "C";
 }
 
+#if defined(defined(__HAIKU__)
+std::string culture_info::locale_name_extension() {
+  return ".utf-8";
+}
+#else
+std::string culture_info::locale_name_extension() {
+  return ".utf8";
+}
+#endif
+
 std::vector<std::string> culture_info::system_locale_names() {
   auto locales = std::vector<std::string> {"", "C", "POSIX"};
   locales.reserve(800);
   
   auto lines = linux::shell_execute::run("locale", "-a");
   for (auto line : linux::strings::split(lines, {'\n'})) {
-    auto pos = line.find(".UTF-8");
+    auto pos = line.find(native::linux::strings::to_upper(locale_name_extension()));
     if (pos == std::string::npos) continue;
-    std::string locale_name = line.substr(0, pos) + ".utf-8";
+    std::string locale_name = line.substr(0, pos) + locale_name_extension();
     locales.push_back(locale_name);
   }
   std::sort(locales.begin(), locales.end());
