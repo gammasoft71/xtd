@@ -56,7 +56,7 @@ namespace xtd {
       ///  * Linux / Posix : ".utf8"
       /// @warning Internal use only
       static std::string locale_name_extension();
-
+      
       /// @brief Gets system locale names.
       /// @return A std::vector<std::string> that contains the system locale names.
       /// @warning Internal use only

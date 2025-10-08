@@ -313,7 +313,7 @@ namespace xtd::globalization::tests {
       assert::is_true(culture_info::get_cultures(xtd::globalization::culture_types::specific_cultures).contains(culture_info {"en-US"}));
       assert::is_false(culture_info::get_cultures(xtd::globalization::culture_types::specific_cultures).contains(culture_info {"agq"}));
     }
-
+    
     void test_method_(get_cultures_wth_neutral_cultures) {
       assert::are_equal(329_z, culture_info::get_cultures(xtd::globalization::culture_types::neutral_cultures).length());
       assert::is_false(culture_info::get_cultures(xtd::globalization::culture_types::neutral_cultures).contains(culture_info {"en-US"}));
