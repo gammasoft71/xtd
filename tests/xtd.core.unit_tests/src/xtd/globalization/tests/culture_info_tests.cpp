@@ -12,6 +12,7 @@ using namespace xtd::tunit;
 namespace xtd::globalization::tests {
   class test_class_(culture_info_tests) {
     inline static std::locale current_locale_;
+    
     static void test_initialize_(test_initialize) {
       current_locale_ = std::locale {};
     }
@@ -221,6 +222,108 @@ namespace xtd::globalization::tests {
       assert::are_equal(std::locale {"C"}, culture.locale());
       assert::are_equal("agq", culture.name());
       assert::are_equal("Aghem", culture.native_name());
+    }
+    
+    void test_method_(invariant_culture) {
+      auto culture = culture_info::invariant_culture();
+      assert::are_equal(globalization::culture_types::specific_cultures, culture.culture_types());
+      assert::are_equal("Invariant Language (Invariant Country)", culture.display_name());
+      assert::are_equal("Invariant Language (Invariant Country)", culture.english_name());
+      assert::is_true(culture.is_locale_available());
+      assert::are_equal(127_z, culture.keyboard_layout_id());
+      assert::are_equal(127_z, culture.lcid());
+      assert::are_equal(std::locale {""}, culture.locale());
+      assert::are_equal("", culture.name());
+      assert::are_equal("Invariant Language (Invariant Country)", culture.native_name());
+    }
+    
+    void test_method_(equals) {
+      auto c1 = culture_info {"fr-BE"};
+      auto c2 = culture_info {"fr-CH"};
+      auto c3 = culture_info {"fr-BE"};
+      auto c4 = culture_info {"fr-CH"};
+      
+      assert::is_true(c1.equals(c1));
+      assert::is_false(c1.equals(c2));
+      assert::is_true(c1.equals(c3));
+      assert::is_false(c1.equals(c4));
+      
+      assert::is_false(c2.equals(c1));
+      assert::is_true(c2.equals(c2));
+      assert::is_false(c2.equals(c3));
+      assert::is_true(c2.equals(c4));
+      
+      assert::is_true(c3.equals(c1));
+      assert::is_false(c3.equals(c2));
+      assert::is_true(c3.equals(c3));
+      assert::is_false(c3.equals(c4));
+      
+      assert::is_false(c4.equals(c1));
+      assert::is_true(c4.equals(c2));
+      assert::is_false(c4.equals(c3));
+      assert::is_true(c4.equals(c4));
+    }
+    
+    void test_method_(equals_with_object) {
+      auto c1 = culture_info {"fr-BE"};
+      auto c2 = culture_info {"fr-CH"};
+      auto c3 = culture_info {"fr-BE"};
+      auto c4 = culture_info {"fr-CH"};
+      auto& o1 = c1;
+      auto& o2 = c2;
+      auto& o3 = c3;
+      auto& o4 = c4;
+      
+      assert::is_true(c1.equals(o1));
+      assert::is_false(c1.equals(o2));
+      assert::is_true(c1.equals(o3));
+      assert::is_false(c1.equals(o4));
+      
+      assert::is_false(c2.equals(o1));
+      assert::is_true(c2.equals(o2));
+      assert::is_false(c2.equals(o3));
+      assert::is_true(c2.equals(o4));
+      
+      assert::is_true(c3.equals(o1));
+      assert::is_false(c3.equals(o2));
+      assert::is_true(c3.equals(o3));
+      assert::is_false(c3.equals(o4));
+      
+      assert::is_false(c4.equals(o1));
+      assert::is_true(c4.equals(o2));
+      assert::is_false(c4.equals(o3));
+      assert::is_true(c4.equals(o4));
+    }
+    
+    void test_method_(to_string) {
+      assert::are_equal("en-US", culture_info {"en-US"}.to_string());
+      assert::are_equal("fr-BE", culture_info {"fr-be"}.to_string());
+      assert::are_equal("zh-Hans-CN", culture_info {"ZH-HANS-CN"}.to_string());
+      assert::are_equal("", culture_info {""}.to_string());
+    }
+    
+    void test_method_(get_cultures_wth_all_cultures) {
+      assert::are_equal(1035_z, culture_info::get_cultures(xtd::globalization::culture_types::all_cultures).length());
+      assert::is_true(culture_info::get_cultures(xtd::globalization::culture_types::all_cultures).contains(culture_info {"en-US"}));
+      assert::is_true(culture_info::get_cultures(xtd::globalization::culture_types::all_cultures).contains(culture_info {"agq"}));
+    }
+    
+    void test_method_(get_cultures_wth_specific_cultures) {
+      assert::are_equal(706_z, culture_info::get_cultures(xtd::globalization::culture_types::specific_cultures).length());
+      assert::is_true(culture_info::get_cultures(xtd::globalization::culture_types::specific_cultures).contains(culture_info {"en-US"}));
+      assert::is_false(culture_info::get_cultures(xtd::globalization::culture_types::specific_cultures).contains(culture_info {"agq"}));
+    }
+
+    void test_method_(get_cultures_wth_neutral_cultures) {
+      assert::are_equal(329_z, culture_info::get_cultures(xtd::globalization::culture_types::neutral_cultures).length());
+      assert::is_false(culture_info::get_cultures(xtd::globalization::culture_types::neutral_cultures).contains(culture_info {"en-US"}));
+      assert::is_true(culture_info::get_cultures(xtd::globalization::culture_types::neutral_cultures).contains(culture_info {"agq"}));
+    }
+    
+    void test_method_(get_cultures_wth_installed_win32_cultures) {
+      assert::are_equal(0_z, culture_info::get_cultures(xtd::globalization::culture_types::installed_win32_cultures).length());
+      assert::is_false(culture_info::get_cultures(xtd::globalization::culture_types::installed_win32_cultures).contains(culture_info {"en-US"}));
+      assert::is_false(culture_info::get_cultures(xtd::globalization::culture_types::installed_win32_cultures).contains(culture_info {"agq"}));
     }
   };
 }
