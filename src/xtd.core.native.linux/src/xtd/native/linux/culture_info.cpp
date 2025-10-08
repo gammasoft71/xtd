@@ -17,7 +17,7 @@ std::string culture_info::current_locale_name() {
   return "C";
 }
 
-#if defined(defined(__HAIKU__)
+#if defined(__HAIKU__)
 std::string culture_info::locale_name_extension() {
   return ".utf-8";
 }
