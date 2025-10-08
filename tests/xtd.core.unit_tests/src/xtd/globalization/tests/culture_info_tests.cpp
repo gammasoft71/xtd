@@ -42,7 +42,7 @@ namespace xtd::globalization::tests {
       assert::is_true(culture.is_locale_available());
       assert::are_equal(1033_z, culture.keyboard_layout_id());
       assert::are_equal(1033_z, culture.lcid());
-      assert::are_equal(std::locale {"en_US.utf-8"}, culture.locale());
+      assert::are_equal(std::locale {"en_US" + native::culture_info::locale_name_extension()}, culture.locale());
       assert::are_equal("en-US", culture.name());
       assert::are_equal("English (United States)", culture.native_name());
     }
@@ -81,7 +81,7 @@ namespace xtd::globalization::tests {
       assert::is_true(culture.is_locale_available());
       assert::are_equal(1033_z, culture.keyboard_layout_id());
       assert::are_equal(1033_z, culture.lcid());
-      assert::are_equal(std::locale {"en_US.utf-8"}, culture.locale());
+      assert::are_equal(std::locale {"en_US" + native::culture_info::locale_name_extension()}, culture.locale());
       assert::are_equal("en-US", culture.name());
       assert::are_equal("English (United States)", culture.native_name());
     }
@@ -114,14 +114,14 @@ namespace xtd::globalization::tests {
     }
     
     void test_method_(create_with_valid_locale) {
-      auto culture = culture_info {std::locale {"en_US.utf-8"}};
+      auto culture = culture_info {std::locale {"en_US" + native::culture_info::locale_name_extension()}};
       assert::are_equal(globalization::culture_types::specific_cultures, culture.culture_types());
       assert::are_equal("English (United States)", culture.display_name());
       assert::are_equal("English (United States)", culture.english_name());
       assert::is_true(culture.is_locale_available());
       assert::are_equal(1033_z, culture.keyboard_layout_id());
       assert::are_equal(1033_z, culture.lcid());
-      assert::are_equal(std::locale {"en_US.utf-8"}, culture.locale());
+      assert::are_equal(std::locale {"en_US" + native::culture_info::locale_name_extension()}, culture.locale());
       assert::are_equal("en-US", culture.name());
       assert::are_equal("English (United States)", culture.native_name());
     }
@@ -147,7 +147,7 @@ namespace xtd::globalization::tests {
       assert::is_true(culture.is_locale_available());
       assert::are_equal(1033_z, culture.keyboard_layout_id());
       assert::are_equal(1033_z, culture.lcid());
-      assert::are_equal(std::locale {"en_US.utf-8"}, culture.locale());
+      assert::are_equal(std::locale {"en_US" + native::culture_info::locale_name_extension()}, culture.locale());
       assert::are_equal("en-US", culture.name());
       assert::are_equal("English (United States)", culture.native_name());
     }
@@ -160,13 +160,13 @@ namespace xtd::globalization::tests {
       assert::is_true(culture.is_locale_available());
       assert::are_equal(1033_z, culture.keyboard_layout_id());
       assert::are_equal(1033_z, culture.lcid());
-      assert::are_equal(std::locale {"en_US.utf-8"}, culture.locale());
+      assert::are_equal(std::locale {"en_US" + native::culture_info::locale_name_extension()}, culture.locale());
       assert::are_equal("en-US", culture.name());
       assert::are_equal("English (United States)", culture.native_name());
     }
     
     void test_method_(create_with_invalid_locale) {
-      assert::throws<std::runtime_error>(delegate_ {culture_info {std::locale {"en_USS.utf-8"}};});
+      assert::throws<std::runtime_error>(delegate_ {culture_info {std::locale {"en_USS" + native::culture_info::locale_name_extension()}};});
     }
     
     void test_method_(current_culture) {
@@ -191,7 +191,7 @@ namespace xtd::globalization::tests {
       assert::is_true(culture.is_locale_available());
       assert::are_equal(1033_z, culture.keyboard_layout_id());
       assert::are_equal(1033_z, culture.lcid());
-      assert::are_equal(std::locale {"en_US.utf-8"}, culture.locale());
+      assert::are_equal(std::locale {"en_US" + native::culture_info::locale_name_extension()}, culture.locale());
       assert::are_equal("en-US", culture.name());
       assert::are_equal("English (United States)", culture.native_name());
     }
