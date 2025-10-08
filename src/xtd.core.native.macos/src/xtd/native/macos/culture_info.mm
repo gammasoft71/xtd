@@ -17,9 +17,13 @@ std::string culture_info::current_locale_name() {
   if (!locale) return name;
   char buffer[256];
   if (CFStringGetCString((CFStringRef)CFLocaleGetIdentifier(locale), buffer, sizeof(buffer), kCFStringEncodingUTF8))
-    name = std::regex_replace(std::string {buffer}, std::regex("@rg=[a-zA-Z]{2}zzzz"), "") + ".utf-8";
+    name = std::regex_replace(std::string {buffer}, std::regex("@rg=[a-zA-Z]{2}zzzz"), "") + locale_name_extension();
   CFRelease(locale);
   return name;
+}
+
+std::string culture_info::locale_name_extension() {
+  return ".utf-8";
 }
 
 std::vector<std::string> culture_info::system_locale_names() {
@@ -28,9 +32,9 @@ std::vector<std::string> culture_info::system_locale_names() {
   
   auto lines = macos::shell_execute::run("locale", "-a");
   for (auto line : macos::strings::split(lines, {'\n'})) {
-    auto pos = line.find(".UTF-8");
+    auto pos = line.find(native::macos::strings::to_upper(locale_name_extension()));
     if (pos == std::string::npos) continue;
-    std::string locale_name = line.substr(0, pos) + ".utf-8";
+    std::string locale_name = line.substr(0, pos) + locale_name_extension();
     locales.push_back(locale_name);
   }
   std::sort(locales.begin(), locales.end());
