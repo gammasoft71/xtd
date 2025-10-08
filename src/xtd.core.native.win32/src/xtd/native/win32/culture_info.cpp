@@ -38,7 +38,7 @@ namespace {
         locale_name += "_" + upper;
       }
     }
-    if (!locale_name.empty()) locale_name;
+    if (!locale_name.empty()) locale_name += ".UTF-8";
     return locale_name;
   }
 }
@@ -46,11 +46,7 @@ namespace {
 std::string culture_info::current_locale_name() {
   WCHAR locale_name[LOCALE_NAME_MAX_LENGTH];
   if (!GetUserDefaultLocaleName(locale_name, LOCALE_NAME_MAX_LENGTH)) return "C";
-  return win32::strings::to_string(locale_name);
-}
-
-std::string culture_info::locale_name_extension() {
-  return "";
+  return to_locale_name(win32::strings::to_string(locale_name));
 }
 
 std::vector<std::string> culture_info::system_locale_names() {

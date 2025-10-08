@@ -11,28 +11,29 @@
 using namespace xtd::native;
 
 std::string culture_info::current_locale_name() {
-  const char* locale_env = std::getenv("LC_ALL");
-  if (!locale_env || !*locale_env) locale_env = std::getenv("LANG");
-  if (locale_env && *locale_env) return locale_env;
-  return "C";
-}
-
-std::string culture_info::locale_name_extension() {
-  return ".utf8";
-}
-
-std::vector<std::string> culture_info::system_locale_names() {
-  auto locales = std::vector<std::string> {"", "C", "POSIX"};
-  locales.reserve(800);
-  
-  auto lines = posix::shell_execute::run("locale", "-a");
-  for (auto line : posix::strings::split(lines, {'\n'})) {
-    auto pos = line.find(native::posix::strings::to_upper(locale_name_extension()));
-    if (pos == std::string::npos) continue;
-    std::string locale_name = line.substr(0, pos) + locale_name_extension();
-    locales.push_back(locale_name);
+  namespace {
+    std::string to_locale_name(const std::string& name) {
+      if (name.empty() || name == "C" || name == "POSIX") return name;
+      auto locale_name = name;
+      auto pos = locale_name.find(".");
+      if (pos != std::string::npos) locale_name = locale_name.substr(0, pos);
+      return locale_name + ".UTF-8";
+    }
   }
-  std::sort(locales.begin(), locales.end());
-  locales.erase(std::unique(locales.begin(), locales.end()), locales.end());
-  return locales;
-}
+  
+  std::string culture_info::current_locale_name() {
+    const char* locale_env = std::getenv("LC_ALL");
+    if (!locale_env) locale_env = std::getenv("LANG");
+    if (!locale_env) return "C";
+    return to_locale_name(std::string {locale_env});
+  }
+  
+  std::vector<std::string> culture_info::system_locale_names() {
+    auto locales = std::vector<std::string> {"", "C", "POSIX"};
+    locales.reserve(800);
+    for (auto name: posix::strings::split(posix::shell_execute::run("locale", "-a"), {'\n'}))
+      locales.push_back(to_locale_name(name));
+    std::sort(locales.begin(), locales.end());
+    locales.erase(std::unique(locales.begin(), locales.end()), locales.end());
+    return locales;
+  }
