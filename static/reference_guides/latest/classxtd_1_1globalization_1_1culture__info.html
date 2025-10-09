@@ -451,7 +451,7 @@ LCIDs are being deprecated, and implementers are strongly encouraged to use newe
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> current = culture_info::current_culture();</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The current culture is {0}&quot;</span>, current.name());</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;The current culture is {}&quot;</span>, current.name());</div>
 <div class="line">  <span class="keyword">auto</span> new_culture = <a class="code hl_function" href="#ab6650b7f1523d0e92fc1fd3b31bd37af">culture_info</a> {};</div>
 <div class="line">  <span class="keywordflow">if</span> (current.name().equals(<span class="stringliteral">&quot;fr-FR&quot;</span>))</div>
 <div class="line">    new_culture = <a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {<span class="stringliteral">&quot;fr-LU&quot;</span>};</div>
@@ -459,7 +459,7 @@ LCIDs are being deprecated, and implementers are strongly encouraged to use newe
 <div class="line">    new_culture = culture_info {<span class="stringliteral">&quot;fr-FR&quot;</span>};</div>
 <div class="line">  </div>
 <div class="line">  culture_info::current_culture(new_culture);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;The current culture is now {0}&quot;</span>, culture_info::current_culture().name());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;The current culture is now {}&quot;</span>, culture_info::current_culture().name());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -709,7 +709,7 @@ For example, suppose that Arabic (Saudi Arabia) is the current Windows culture a
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 8 2025 21:57:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Oct 9 2025 12:08:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
