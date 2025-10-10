@@ -95,7 +95,7 @@ bool translator::load_language(const xtd::string& language, const xtd::string& x
     if (directory::exists(application_locale_path)) succeed = parse_locale(application_locale_path, language);
     if (succeed) languages_[language] = language;
   }
-
+  
   return language_values_.contains_key(languages_[language]);
 }
 
