@@ -1,5 +1,7 @@
 #include <xtd/xtd>
 
+using namespace globalization;
+
 class form1 : public form {
 public:
   form1() {
@@ -25,14 +27,9 @@ private:
 };
 
 auto main() -> int {
-  try {
-    //translator::locale("ar_MA");
-    //translator::locale("es_ES");
-    //translator::locale("fr_FR");
-    translator::locale("ru_RU");
-  } catch (const std::exception& e) {
-    message_box::show(string::format("Make sure specified locale is installed on your system :\n\n{}", e.what()), "Exception");
-    return -1;
-  }
+  //culture_info::current_culture(culture_info {"ar-MA"});
+  //culture_info::current_culture(culture_info {"es-ES"});
+  culture_info::current_culture(culture_info {"fr-FR"});
+  //culture_info::current_culture(culture_info {"ru-RU"});
   application::run(form1 {});
 }
