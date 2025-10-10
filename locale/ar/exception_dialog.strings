@@ -20,7 +20,6 @@ key "Quit"
 value "إنهاء"
 
 key "Use try and catch to handle std::exception or xtd::system_exception instead{0}of this dialog box. For more information, see the xtd documentation.{0}{0}"
-value "استخدم try و catch للتعامل مع std::exception أو xtd::system_exception بدلاً من هذا الصندوق التفاعلي. للمزيد من المعلومات، راجع توثيق xtd.{0}{0}"
 value "{0}{0} بدلا{0}من هذا الصندوق التفاعلي. للمزيد من المعلومات، راجع التوثيق  std::exception أو xtd::system_exception للتعامل مع try و catch استخدم"
 
 key "{0} Exception text {0}{1}"
