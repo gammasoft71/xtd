@@ -15,13 +15,19 @@ public:
     text_label.location({10, 50});
     text_label.auto_size(true);
     
-    translator::language("fr-FR");
+    en_us_menu_item.tag("en-US");
+    ar_ma_menu_item.tag("ar-MA");
+    es_es_menu_item.tag("es-ES");
+    fr_fr_menu_item.tag("fr-BE");
+    ru_ru_menu_item.tag("ru-RU");
+
+    translator::language("fr-BE");
     update_texts();
   }
   
 private:
   void on_menu_click(object& sender, const event_args& e) {
-    translator::language(as<menu_item>(sender).text());
+    translator::language(as<string>(as<menu_item>(sender).tag()));
     update_texts();
   }
   
@@ -33,11 +39,11 @@ private:
     text_label.text("The quick brown fox jumps over the lazy dog."_t);
   }
   
-  menu_item en_us_menu_item {"en-US", event_handler {*this, &form1::on_menu_click}, menu_item_kind::radio};
-  menu_item ar_ma_menu_item {"ar-MA", event_handler {*this, &form1::on_menu_click}, menu_item_kind::radio};
-  menu_item es_es_menu_item {"es-ES", event_handler {*this, &form1::on_menu_click}, menu_item_kind::radio};
-  menu_item fr_fr_menu_item {"fr-FR", event_handler {*this, &form1::on_menu_click}, menu_item_kind::radio, true};
-  menu_item ru_ru_menu_item {"ru-RU", event_handler {*this, &form1::on_menu_click}, menu_item_kind::radio};
+  menu_item en_us_menu_item {culture_info {"en-US"}.native_name(), event_handler {*this, &form1::on_menu_click}, menu_item_kind::radio};
+  menu_item ar_ma_menu_item {culture_info {"ar-MA"}.native_name(), event_handler {*this, &form1::on_menu_click}, menu_item_kind::radio};
+  menu_item es_es_menu_item {culture_info {"es-ES"}.native_name(), event_handler {*this, &form1::on_menu_click}, menu_item_kind::radio};
+  menu_item fr_fr_menu_item {culture_info {"fr-BE"}.native_name(), event_handler {*this, &form1::on_menu_click}, menu_item_kind::radio, true};
+  menu_item ru_ru_menu_item {culture_info {"ru-RU"}.native_name(), event_handler {*this, &form1::on_menu_click}, menu_item_kind::radio};
   menu_item language_menu_item {"&Languages"_t, {en_us_menu_item, ar_ma_menu_item, es_es_menu_item, fr_fr_menu_item, ru_ru_menu_item}};
   main_menu main_menu1 {language_menu_item};
   
