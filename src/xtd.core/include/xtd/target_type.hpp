@@ -39,7 +39,7 @@ namespace xtd {
     
     /// @brief Gets target id is gui application.
     /// @return `true` if target id is gui application; otherwise `false`.
-    bool is_guid_application() const noexcept;
+    bool is_gui_application() const noexcept;
     
     /// @brief Gets target id is test application.
     /// @return `true` if target id is test application; otherwise `false`.
