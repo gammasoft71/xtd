@@ -128,7 +128,7 @@ namespace xtd::tests {
     void test_method_(target_type) {
       xtd::target_type tt = environment::target_type();
       assert::is_false(tt.is_console_application());
-      assert::is_false(tt.is_guid_application());
+      assert::is_false(tt.is_gui_application());
       assert::is_false(tt.is_shared_library());
       assert::is_false(tt.is_static_library());
       assert::is_true(tt.is_test_application());
