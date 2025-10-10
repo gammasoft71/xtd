@@ -6,7 +6,7 @@
 #include <xtd/forms/native/find_dialog>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/chrono>
-#include <xtd/literals/translator>
+#include <xtd/translator>
 #include <memory>
 #include <vector>
 

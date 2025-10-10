@@ -2,7 +2,7 @@
 #include "../../../include/xtd/forms/message_dialog.hpp"
 #include <xtd/diagnostics/debug>
 #include <xtd/as>
-#include <xtd/literals/translator>
+#include <xtd/translator>
 
 using namespace xtd;
 using namespace xtd::forms;

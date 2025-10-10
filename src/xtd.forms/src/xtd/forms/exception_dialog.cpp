@@ -9,8 +9,8 @@
 #include "../../../include/xtd/forms/toggle_button.hpp"
 #include <xtd/drawing/system_icons>
 #include <xtd/io/path>
-#include <xtd/literals/translator>
 #include <xtd/exception>
+#include <xtd/translator>
 #include <xtd/typeof>
 #include <memory>
 
