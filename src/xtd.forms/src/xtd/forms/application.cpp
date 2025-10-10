@@ -18,7 +18,7 @@
 #include <xtd/reflection/assembly>
 #include <xtd/environment>
 #include <xtd/invalid_operation_exception>
-#include <xtd/translator>
+#include <xtd/globalization/translator>
 
 using namespace xtd;
 using namespace xtd::diagnostics;

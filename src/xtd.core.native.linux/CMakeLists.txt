@@ -76,7 +76,6 @@ add_sources(
   "src/xtd/native/linux/stack_trace.cpp"
   "src/xtd/native/linux/system_sound.cpp"
   "src/xtd/native/linux/thread.cpp"
-  "src/xtd/native/linux/translator.cpp"
   "src/xtd/native/linux/types.cpp"
   "src/xtd/native/linux/unnamed_event_wait_handle.cpp"
   "src/xtd/native/linux/unnamed_mutex.cpp"

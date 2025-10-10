@@ -6,7 +6,7 @@
 #include <xtd/forms/native/window_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_out_of_range_exception>
-#include <xtd/translator>
+#include <xtd/globalization/translator>
 
 using namespace xtd;
 using namespace xtd::drawing;

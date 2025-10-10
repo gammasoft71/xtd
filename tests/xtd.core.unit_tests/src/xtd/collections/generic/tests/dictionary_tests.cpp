@@ -7,7 +7,7 @@
 #include <xtd/environment>
 #include <xtd/size_object>
 #include <xtd/string_comparer>
-#include <xtd/translator>
+#include <xtd/globalization/translator>
 
 using namespace xtd;
 using namespace xtd::collections::generic;

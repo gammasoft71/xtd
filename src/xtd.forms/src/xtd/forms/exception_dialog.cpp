@@ -10,7 +10,7 @@
 #include <xtd/drawing/system_icons>
 #include <xtd/io/path>
 #include <xtd/exception>
-#include <xtd/translator>
+#include <xtd/globalization/translator>
 #include <xtd/typeof>
 #include <memory>
 

@@ -1,17 +1,14 @@
-#include "../../include/xtd/translator.hpp"
-#include "../../include/xtd/environment.hpp"
-#include "../../include/xtd/format_exception.hpp"
-#include "../../include/xtd/string.hpp"
-#include "../../include/xtd/collections/generic/list.hpp"
-#include "../../include/xtd/collections/specialized/string_dictionary.hpp"
-#include "../../include/xtd/globalization/culture_info.hpp"
-#include "../../include/xtd/io/directory.hpp"
-#include "../../include/xtd/io/file.hpp"
-#include "../../include/xtd/io/path.hpp"
-#include "../../include/xtd/threading/lock.hpp"
-#define __XTD_CORE_NATIVE_LIBRARY__
-#include <xtd/native/translator>
-#undef __XTD_CORE_NATIVE_LIBRARY__
+#include "../../../include/xtd/globalization/translator.hpp"
+#include "../../../include/xtd/environment.hpp"
+#include "../../../include/xtd/format_exception.hpp"
+#include "../../../include/xtd/string.hpp"
+#include "../../../include/xtd/collections/generic/list.hpp"
+#include "../../../include/xtd/collections/specialized/string_dictionary.hpp"
+#include "../../../include/xtd/globalization/culture_info.hpp"
+#include "../../../include/xtd/io/directory.hpp"
+#include "../../../include/xtd/io/file.hpp"
+#include "../../../include/xtd/io/path.hpp"
+#include "../../../include/xtd/threading/lock.hpp"
 
 using namespace xtd;
 using namespace xtd::collections::generic;

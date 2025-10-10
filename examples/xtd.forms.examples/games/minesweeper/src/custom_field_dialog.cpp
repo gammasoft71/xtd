@@ -1,5 +1,5 @@
 #include <xtd/drawing/texts>
-#include <xtd/translator>
+#include <xtd/globalization/translator>
 #include "custom_field_dialog.hpp"
 #include "../properties/settings.hpp"
 

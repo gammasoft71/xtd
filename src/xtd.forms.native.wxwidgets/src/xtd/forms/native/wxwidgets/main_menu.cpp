@@ -6,7 +6,7 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_exception>
 #include <xtd/convert_string>
-#include <xtd/translator>
+#include <xtd/globalization/translator>
 
 using namespace xtd;
 using namespace xtd::drawing;

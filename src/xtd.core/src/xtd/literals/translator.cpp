@@ -1,4 +1,4 @@
-#include "../../../include/xtd/translator.hpp"
+#include "../../../include/xtd/globalization/translator.hpp"
 
 using namespace xtd;
 

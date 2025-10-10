@@ -1,5 +1,5 @@
 #include "../../../include/xtd/forms/countries.hpp"
-#include <xtd/translator>
+#include <xtd/globalization/translator>
 
 using namespace xtd;
 using namespace xtd::forms;
