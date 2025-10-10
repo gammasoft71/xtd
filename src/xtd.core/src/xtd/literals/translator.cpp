@@ -1,24 +1,11 @@
-#include "../../../include/xtd/literals/translator.hpp"
 #include "../../../include/xtd/translator.hpp"
 
 using namespace xtd;
 
-const char* xtd::literals::operator""_t(const char* s, xtd::size n) noexcept {
-  return translator::translate(s);
-}
-
-string xtd::literals::operator""_t(const char8* s, xtd::size n) noexcept {
-  return translator::translate(u8string(s, s + n));
-}
-
-string xtd::literals::operator""_t(const char16* s, xtd::size n) noexcept {
-  return translator::translate(u16string(s, s + n));
-}
-
-string xtd::literals::operator""_t(const char32* s, xtd::size n) noexcept {
-  return translator::translate(u32string(s, s + n));
-}
-
-string xtd::literals::operator""_t(const wchar* s, xtd::size n) noexcept {
-  return translator::translate(wstring(s, s + n));
-}
+//  The following methods are defined in xtd/translator.hpp file :
+//
+//  * const char* xtd::literals::operator""_t(const char* s, xtd::size n) noexcept;
+//  * string xtd::literals::operator""_t(const char8* s, xtd::size n) noexcept;
+//  * string xtd::literals::operator""_t(const char16* s, xtd::size n) noexcept;
+//  * string xtd::literals::operator""_t(const char32* s, xtd::size n) noexcept;
+//  * string xtd::literals::operator""_t(const wchar* s, xtd::size n) noexcept;
