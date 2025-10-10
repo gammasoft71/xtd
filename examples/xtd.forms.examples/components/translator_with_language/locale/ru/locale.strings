@@ -2,6 +2,10 @@
 key "Translator example"
 value "Пример перевода"
 
+# Main menu
+key "&Languages"
+value "&Языки"
+
 # Open button text
 key "Open"
 value "Oткрыто"
