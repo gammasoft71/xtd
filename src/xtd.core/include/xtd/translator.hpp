@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "collections/specialized/string_dictionary.hpp"
+#include "literals/translator.hpp"
 #include "io/path.hpp"
 #include "environment.hpp"
 #include "optional.hpp"
@@ -124,4 +125,24 @@ namespace xtd {
     static xtd::collections::specialized::string_dictionary languages_;
     static xtd::optional<xtd::string> language_;
   };
+}
+
+inline const char* xtd::literals::operator""_t(const char* s, xtd::size n) noexcept {
+  return xtd::translator::translate(s);
+}
+
+inline xtd::string xtd::literals::operator""_t(const char8* s, xtd::size n) noexcept {
+  return xtd::translator::translate(xtd::u8string(s, s + n));
+}
+
+inline xtd::string xtd::literals::operator""_t(const char16* s, xtd::size n) noexcept {
+  return xtd::translator::translate(xtd::u16string(s, s + n));
+}
+
+inline xtd::string xtd::literals::operator""_t(const char32* s, xtd::size n) noexcept {
+  return xtd::translator::translate(xtd::u32string(s, s + n));
+}
+
+inline xtd::string xtd::literals::operator""_t(const wchar* s, xtd::size n) noexcept {
+  return xtd::translator::translate(xtd::wstring(s, s + n));
 }

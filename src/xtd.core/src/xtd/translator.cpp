@@ -89,18 +89,14 @@ bool translator::parse_file(const string& file, const string& language) {
 }
 
 bool translator::load_language(const xtd::string& language, const xtd::string& xtd_locale_path, const xtd::string& application_locale_path) {
-  auto language_name  = to_language_name(language);
-  if (!directory::exists(path::combine(application_locale_path, language_name)))
-    language_name = to_fallback_name(language_name);
-  
-  if (!languages_.contains_key(language_name) || !language_values_.contains_key(languages_[language_name])) {
+  if (!languages_.contains_key(language) || !language_values_.contains_key(language)) {
     auto succeed = false;
-    if (directory::exists(xtd_locale_path)) succeed = parse_locale(xtd_locale_path, language_name);
-    if (directory::exists(application_locale_path)) succeed = parse_locale(application_locale_path, language_name);
-    if (succeed) languages_[language_name] = language_name;
+    if (directory::exists(xtd_locale_path)) succeed = parse_locale(xtd_locale_path, language);
+    if (directory::exists(application_locale_path)) succeed = parse_locale(application_locale_path, language);
+    if (succeed) languages_[language] = language;
   }
 
-  return language_values_.contains_key(languages_[language_name]);
+  return language_values_.contains_key(languages_[language]);
 }
 
 string translator::to_language_name(const xtd::string& language) {
