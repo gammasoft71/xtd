@@ -8,17 +8,17 @@ const char* xtd::literals::operator""_t(const char* s, xtd::size n) noexcept {
 }
 
 string xtd::literals::operator""_t(const char8* s, xtd::size n) noexcept {
-  return translator::translate(std::u8string(s, s + n));
+  return translator::translate(u8string(s, s + n));
 }
 
 string xtd::literals::operator""_t(const char16* s, xtd::size n) noexcept {
-  return translator::translate(std::u16string(s, s + n));
+  return translator::translate(u16string(s, s + n));
 }
 
 string xtd::literals::operator""_t(const char32* s, xtd::size n) noexcept {
-  return translator::translate(std::u32string(s, s + n));
+  return translator::translate(u32string(s, s + n));
 }
 
 string xtd::literals::operator""_t(const wchar* s, xtd::size n) noexcept {
-  return translator::translate(std::wstring(s, s + n));
+  return translator::translate(wstring(s, s + n));
 }
