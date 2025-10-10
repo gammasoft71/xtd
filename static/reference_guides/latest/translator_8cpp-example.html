@@ -122,6 +122,8 @@ $(function(){ initResizable(false); });
 </dd></dl>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>globalization;</div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  form1() {</div>
@@ -147,23 +149,17 @@ $(function(){ initResizable(false); });
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    <span class="comment">//translator::locale(&quot;ar_MA&quot;);</span></div>
-<div class="line">    <span class="comment">//translator::locale(&quot;es_ES&quot;);</span></div>
-<div class="line">    <span class="comment">//translator::locale(&quot;fr_FR&quot;);</span></div>
-<div class="line">    translator::locale(<span class="stringliteral">&quot;ru_RU&quot;</span>);</div>
-<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
-<div class="line">    message_box::show(string::format(<span class="stringliteral">&quot;Make sure specified locale is installed on your system :\n\n{}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.what()), <span class="stringliteral">&quot;Exception&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">return</span> -1;</div>
-<div class="line">  }</div>
+<div class="line">  <span class="comment">//culture_info::current_culture(culture_info {&quot;ar-MA&quot;});</span></div>
+<div class="line">  <span class="comment">//culture_info::current_culture(culture_info {&quot;es-ES&quot;});</span></div>
+<div class="line">  culture_info::current_culture(culture_info {<span class="stringliteral">&quot;fr-FR&quot;</span>});</div>
+<div class="line">  <span class="comment">//culture_info::current_culture(culture_info {&quot;ru-RU&quot;});</span></div>
 <div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 9 2025 12:08:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Oct 10 2025 21:11:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
