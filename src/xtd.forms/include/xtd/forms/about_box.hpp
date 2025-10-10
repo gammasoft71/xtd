@@ -3,9 +3,9 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "about_dialog.hpp"
-#include <xtd/literals/translator>
 #include <xtd/static>
 #include <xtd/string>
+#include <xtd/translator>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

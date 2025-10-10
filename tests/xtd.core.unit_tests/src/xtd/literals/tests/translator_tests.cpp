@@ -1,4 +1,4 @@
-#include <xtd/literals/translator>
+#include <xtd/translator>
 #include <xtd/environment>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
