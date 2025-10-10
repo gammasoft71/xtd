@@ -399,17 +399,20 @@ void console::register_cancel_key_press() {
 }
 
 void console::write_(const string& value) {
+  register_cancel_key_press(); // Must be first...
   auto lock = std::lock_guard<std::recursive_mutex> {__console_mutex__};
   out << value;
   if (auto_flush_out()) out.flush();
 }
 
 void console::write_line_(const string& value) {
+  register_cancel_key_press(); // Must be first...
   auto lock = std::lock_guard<std::recursive_mutex> {__console_mutex__};
   out << value << '\n';
   if (auto_flush_out()) out.flush();
 }
 
 void console::__internal_rstc__() {
+  register_cancel_key_press(); // Must be first...
   native::console::reset_console();
 }
