@@ -103,8 +103,6 @@ add_sources(
   "include/xtd/native/system_sound"
   "include/xtd/native/thread.hpp"
   "include/xtd/native/thread"
-  "include/xtd/native/translator.hpp"
-  "include/xtd/native/translator"
   "include/xtd/native/types.hpp"
   "include/xtd/native/types"
   "include/xtd/native/unnamed_event_wait_handle.hpp"

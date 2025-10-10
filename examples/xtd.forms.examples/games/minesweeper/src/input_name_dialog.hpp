@@ -4,7 +4,7 @@
 #include <xtd/forms/form>
 #include <xtd/forms/label>
 #include <xtd/forms/text_box>
-#include <xtd/translator>
+#include <xtd/globalization/translator>
 
 /// @brief The namespace minesweeper contains all classes and enums needed for the game.
 namespace minesweeper {

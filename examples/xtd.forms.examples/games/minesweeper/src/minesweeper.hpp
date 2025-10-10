@@ -8,7 +8,7 @@
 #include <xtd/forms/panel>
 #include <xtd/forms/timer>
 #include <xtd/overload>
-#include <xtd/translator>
+#include <xtd/globalization/translator>
 #include "cell.hpp"
 #include "high_scores_dialog.hpp"
 #include "level.hpp"

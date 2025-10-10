@@ -6,7 +6,7 @@
 #include <xtd/forms/native/replace_dialog>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/chrono>
-#include <xtd/translator>
+#include <xtd/globalization/translator>
 #include <memory>
 #include <vector>
 

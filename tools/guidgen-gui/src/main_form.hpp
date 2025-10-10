@@ -1,5 +1,5 @@
 #include <xtd/startup>
-#include <xtd/translator>
+#include <xtd/globalization/translator>
 #include <xtd/forms/application>
 #include <xtd/forms/button>
 #include <xtd/forms/choice>

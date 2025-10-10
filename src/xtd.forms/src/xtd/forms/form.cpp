@@ -18,7 +18,7 @@
 #include <xtd/invalid_operation_exception>
 #include <xtd/is>
 #include <xtd/random>
-#include <xtd/translator>
+#include <xtd/globalization/translator>
 
 using namespace xtd;
 using namespace xtd::drawing;
