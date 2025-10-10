@@ -127,6 +127,8 @@ namespace xtd {
   };
 }
 
+/// @cond
+// The following method implementation are defined in xtd/literals/translater.hpp
 inline const char* xtd::literals::operator""_t(const char* s, xtd::size n) noexcept {
   return xtd::translator::translate(s);
 }
@@ -146,3 +148,4 @@ inline xtd::string xtd::literals::operator""_t(const char32* s, xtd::size n) noe
 inline xtd::string xtd::literals::operator""_t(const wchar* s, xtd::size n) noexcept {
   return xtd::translator::translate(xtd::wstring(s, s + n));
 }
+/// @endcond
