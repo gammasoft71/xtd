@@ -122,42 +122,66 @@ $(function(){ initResizable(false); });
 </dd></dl>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>globalization;</div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  form1() {</div>
 <div class="line">    text(<span class="stringliteral">&quot;Translator example&quot;</span>_t);</div>
 <div class="line">    client_size({500, 300});</div>
 <div class="line">    controls().add_range({open_button, close_button, text_label});</div>
-<div class="line">    </div>
+<div class="line">    menu(main_menu1);</div>
+<div class="line"> </div>
 <div class="line">    open_button.location({10, 10});</div>
-<div class="line">    open_button.text(<span class="stringliteral">&quot;Open&quot;</span>_t);</div>
-<div class="line">    </div>
 <div class="line">    close_button.location({100, 10});</div>
-<div class="line">    close_button.text(<span class="stringliteral">&quot;Close&quot;</span>_t);</div>
-<div class="line">    </div>
 <div class="line">    text_label.location({10, 50});</div>
 <div class="line">    text_label.auto_size(<span class="keyword">true</span>);</div>
-<div class="line">    text_label.text(<span class="stringliteral">&quot;The quick brown fox jumps over the lazy dog.&quot;</span>_t);</div>
+<div class="line">    </div>
+<div class="line">    en_us_menu_item.tag(<span class="stringliteral">&quot;en-US&quot;</span>);</div>
+<div class="line">    ar_ma_menu_item.tag(<span class="stringliteral">&quot;ar-MA&quot;</span>);</div>
+<div class="line">    es_es_menu_item.tag(<span class="stringliteral">&quot;es-ES&quot;</span>);</div>
+<div class="line">    fr_fr_menu_item.tag(<span class="stringliteral">&quot;fr-BE&quot;</span>);</div>
+<div class="line">    ru_ru_menu_item.tag(<span class="stringliteral">&quot;ru-RU&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    translator::language(<span class="stringliteral">&quot;fr-BE&quot;</span>);</div>
+<div class="line">    update_texts();</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
+<div class="line">  <span class="keywordtype">void</span> on_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) {</div>
+<div class="line">    translator::language(as&lt;string&gt;(as&lt;menu_item&gt;(sender).tag()));</div>
+<div class="line">    update_texts();</div>
+<div class="line">  }</div>
+<div class="line">  </div>
+<div class="line">  <span class="keywordtype">void</span> update_texts() {</div>
+<div class="line">    console::write_line(environment::get_folder_path(environment::special_folder::application_resources));</div>
+<div class="line">    language_menu_item.text(<span class="stringliteral">&quot;&amp;Languages&quot;</span>_t);</div>
+<div class="line">    open_button.text(<span class="stringliteral">&quot;Open&quot;</span>_t);</div>
+<div class="line">    close_button.text(<span class="stringliteral">&quot;Close&quot;</span>_t);</div>
+<div class="line">    text_label.text(<span class="stringliteral">&quot;The quick brown fox jumps over the lazy dog.&quot;</span>_t);</div>
+<div class="line">  }</div>
+<div class="line">  </div>
+<div class="line">  menu_item en_us_menu_item {culture_info {<span class="stringliteral">&quot;en-US&quot;</span>}.native_name(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio};</div>
+<div class="line">  menu_item ar_ma_menu_item {culture_info {<span class="stringliteral">&quot;ar-MA&quot;</span>}.native_name(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio};</div>
+<div class="line">  menu_item es_es_menu_item {culture_info {<span class="stringliteral">&quot;es-ES&quot;</span>}.native_name(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio};</div>
+<div class="line">  menu_item fr_fr_menu_item {culture_info {<span class="stringliteral">&quot;fr-BE&quot;</span>}.native_name(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio, <span class="keyword">true</span>};</div>
+<div class="line">  menu_item ru_ru_menu_item {culture_info {<span class="stringliteral">&quot;ru-RU&quot;</span>}.native_name(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio};</div>
+<div class="line">  menu_item language_menu_item {<span class="stringliteral">&quot;&amp;Languages&quot;</span>_t, {en_us_menu_item, ar_ma_menu_item, es_es_menu_item, fr_fr_menu_item, ru_ru_menu_item}};</div>
+<div class="line">  main_menu main_menu1 {language_menu_item};</div>
+<div class="line">  </div>
 <div class="line">  button open_button;</div>
 <div class="line">  button close_button;</div>
 <div class="line">  label text_label;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="comment">//translator::language(&quot;ar&quot;);</span></div>
-<div class="line">  <span class="comment">//translator::language(&quot;es&quot;);</span></div>
-<div class="line">  <span class="comment">//translator::language(&quot;fr&quot;);</span></div>
-<div class="line">  translator::language(<span class="stringliteral">&quot;ru&quot;</span>);</div>
 <div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 9 2025 12:08:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Oct 10 2025 21:11:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

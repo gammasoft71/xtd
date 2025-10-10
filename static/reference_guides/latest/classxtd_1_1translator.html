@@ -120,6 +120,8 @@ Inheritance diagram for xtd::translator:</div>
 For more information about internationalization, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/internationalization">Internationalizations</a>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following shows how to use translator with std::locale method, litteral operator <code>_t</code> and translation files. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1globalization.html">globalization</a>;</div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  form1() {</div>
@@ -145,20 +147,15 @@ For more information about internationalization, see <a href="https://gammasoft7
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    <span class="comment">//translator::locale(&quot;ar_MA&quot;);</span></div>
-<div class="line">    <span class="comment">//translator::locale(&quot;es_ES&quot;);</span></div>
-<div class="line">    <span class="comment">//translator::locale(&quot;fr_FR&quot;);</span></div>
-<div class="line">    translator::locale(<span class="stringliteral">&quot;ru_RU&quot;</span>);</div>
-<div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
-<div class="line">    message_box::show(string::format(<span class="stringliteral">&quot;Make sure specified locale is installed on your system :\n\n{}&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.what()), <span class="stringliteral">&quot;Exception&quot;</span>);</div>
-<div class="line">    <span class="keywordflow">return</span> -1;</div>
-<div class="line">  }</div>
+<div class="line">  <span class="comment">//culture_info::current_culture(culture_info {&quot;ar-MA&quot;});</span></div>
+<div class="line">  <span class="comment">//culture_info::current_culture(culture_info {&quot;es-ES&quot;});</span></div>
+<div class="line">  culture_info::current_culture(culture_info {<span class="stringliteral">&quot;fr-FR&quot;</span>});</div>
+<div class="line">  <span class="comment">//culture_info::current_culture(culture_info {&quot;ru-RU&quot;});</span></div>
 <div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__style__sheets_html_ga41870a8a6c9bb6ef3b585c4ce3a98c58"><div class="ttname"><a href="group__style__sheets.html#ga41870a8a6c9bb6ef3b585c4ce3a98c58">xtd::forms::style_sheets::label</a></div><div class="ttdeci">xtd::forms::style_sheets::control label</div><div class="ttdoc">The label data allows you to specify the box of a label control.</div><div class="ttdef"><b>Definition</b> label.hpp:25</div></div>
 <div class="ttc" id="agroup__style__sheets_html_ga902d7ba89795f62756de856e06822883"><div class="ttname"><a href="group__style__sheets.html#ga902d7ba89795f62756de856e06822883">xtd::forms::style_sheets::button</a></div><div class="ttdeci">xtd::forms::style_sheets::control button</div><div class="ttdoc">The buttton data allows you to specify the box of a button control.</div><div class="ttdef"><b>Definition</b> button.hpp:25</div></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
+<div class="ttc" id="anamespacextd_1_1globalization_html"><div class="ttname"><a href="namespacextd_1_1globalization.html">xtd::globalization</a></div><div class="ttdoc">Contains classes that define culture-related information, including language, country/region,...</div><div class="ttdef"><b>Definition</b> culture_info.hpp:18</div></div>
 <div class="ttc" id="anamespacextd_1_1text_html"><div class="ttname"><a href="namespacextd_1_1text.html">xtd::text</a></div><div class="ttdoc">Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:17</div></div>
 </div><!-- fragment --> <div class="fragment"><div class="line"># Main window caption</div>
 <div class="line">key &quot;Translator example&quot;</div>
@@ -184,15 +181,9 @@ For more information about internationalization, see <a href="https://gammasoft7
 <tr class="memitem:a7f7654b21d416c2f933d8e2ee7add83c" id="r_a7f7654b21d416c2f933d8e2ee7add83c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f7654b21d416c2f933d8e2ee7add83c">language</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;language)</td></tr>
 <tr class="memdesc:a7f7654b21d416c2f933d8e2ee7add83c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current application language.  <br /></td></tr>
 <tr class="separator:a7f7654b21d416c2f933d8e2ee7add83c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8304f2cc15d2ea1368153b645bc0a313" id="r_a8304f2cc15d2ea1368153b645bc0a313"><td class="memItemLeft" align="right" valign="top">static std::locale&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8304f2cc15d2ea1368153b645bc0a313">locale</a> ()</td></tr>
-<tr class="memdesc:a8304f2cc15d2ea1368153b645bc0a313"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the global locale.  <br /></td></tr>
-<tr class="separator:a8304f2cc15d2ea1368153b645bc0a313"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a53822de3e2667a2e79f259bf8b143039" id="r_a53822de3e2667a2e79f259bf8b143039"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53822de3e2667a2e79f259bf8b143039">locale</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value)</td></tr>
-<tr class="memdesc:a53822de3e2667a2e79f259bf8b143039"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the global locale.  <br /></td></tr>
-<tr class="separator:a53822de3e2667a2e79f259bf8b143039"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8b5bbe5b3e64ccc8a6525cacc6e6335" id="r_ad8b5bbe5b3e64ccc8a6525cacc6e6335"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8b5bbe5b3e64ccc8a6525cacc6e6335">locale</a> (const std::locale &amp;value)</td></tr>
-<tr class="memdesc:ad8b5bbe5b3e64ccc8a6525cacc6e6335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the global locale.  <br /></td></tr>
-<tr class="separator:ad8b5bbe5b3e64ccc8a6525cacc6e6335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3025173515fbdc78b2b89f269fd99d2d" id="r_a3025173515fbdc78b2b89f269fd99d2d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3025173515fbdc78b2b89f269fd99d2d">language</a> (<a class="el" href="group__types.html#ga49f5db03cbcf82bf3a15a3e20b443fef">xtd::null_ptr</a>)</td></tr>
+<tr class="memdesc:a3025173515fbdc78b2b89f269fd99d2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current application language.  <br /></td></tr>
+<tr class="separator:a3025173515fbdc78b2b89f269fd99d2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdf624942080b0a8dbce5ffce1376ae2" id="r_abdf624942080b0a8dbce5ffce1376ae2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abdf624942080b0a8dbce5ffce1376ae2">languages</a> ()</td></tr>
 <tr class="memdesc:abdf624942080b0a8dbce5ffce1376ae2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an array of languages supported by the application.  <br /></td></tr>
 <tr class="separator:abdf624942080b0a8dbce5ffce1376ae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -204,12 +195,18 @@ For more information about internationalization, see <a href="https://gammasoft7
 <tr class="memitem:a0055d78956b037bdc399c651afdb8b22" id="r_a0055d78956b037bdc399c651afdb8b22"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0055d78956b037bdc399c651afdb8b22">add_value</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="#a3bf48b60c2efdb998607e2e16da6a45c">language</a>, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;key, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value)</td></tr>
 <tr class="memdesc:a0055d78956b037bdc399c651afdb8b22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Manually adds a translation for a specified key and language.  <br /></td></tr>
 <tr class="separator:a0055d78956b037bdc399c651afdb8b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf9fb59dfe616efe54f76a31b1f6bf72" id="r_aaf9fb59dfe616efe54f76a31b1f6bf72"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf9fb59dfe616efe54f76a31b1f6bf72">parse_locale</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;locale_path)</td></tr>
-<tr class="memdesc:aaf9fb59dfe616efe54f76a31b1f6bf72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a specified path that contains translations.  <br /></td></tr>
-<tr class="separator:aaf9fb59dfe616efe54f76a31b1f6bf72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacbc01da1313cdfa8edcf8c8d8f4c4c3" id="r_aacbc01da1313cdfa8edcf8c8d8f4c4c3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aacbc01da1313cdfa8edcf8c8d8f4c4c3">parse_file</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="#a3bf48b60c2efdb998607e2e16da6a45c">language</a>)</td></tr>
-<tr class="memdesc:aacbc01da1313cdfa8edcf8c8d8f4c4c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a specified file that contains translations for a specified language.  <br /></td></tr>
-<tr class="separator:aacbc01da1313cdfa8edcf8c8d8f4c4c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc0ae2832f91efb40ad923e5c590a63c" id="r_adc0ae2832f91efb40ad923e5c590a63c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc0ae2832f91efb40ad923e5c590a63c">parse_locale</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;locale_path)</td></tr>
+<tr class="memdesc:adc0ae2832f91efb40ad923e5c590a63c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a specified path that contains translations.  <br /></td></tr>
+<tr class="separator:adc0ae2832f91efb40ad923e5c590a63c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a161b3e0391a1d38f6597bb0b61a9f2d6" id="r_a161b3e0391a1d38f6597bb0b61a9f2d6"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a161b3e0391a1d38f6597bb0b61a9f2d6">parse_locale</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;locale_path, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="#a3bf48b60c2efdb998607e2e16da6a45c">language</a>)</td></tr>
+<tr class="memdesc:a161b3e0391a1d38f6597bb0b61a9f2d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a specified path that contains translations.  <br /></td></tr>
+<tr class="separator:a161b3e0391a1d38f6597bb0b61a9f2d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a431be3b1c442a8d96b899efcbf824854" id="r_a431be3b1c442a8d96b899efcbf824854"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a431be3b1c442a8d96b899efcbf824854">parse_file</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file)</td></tr>
+<tr class="memdesc:a431be3b1c442a8d96b899efcbf824854"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a specified file that contains translations for a specified language.  <br /></td></tr>
+<tr class="separator:a431be3b1c442a8d96b899efcbf824854"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae58f854e9de41842d65f816cc6e2eb99" id="r_ae58f854e9de41842d65f816cc6e2eb99"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae58f854e9de41842d65f816cc6e2eb99">parse_file</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;file, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="#a3bf48b60c2efdb998607e2e16da6a45c">language</a>)</td></tr>
+<tr class="memdesc:ae58f854e9de41842d65f816cc6e2eb99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a specified file that contains translations for a specified language.  <br /></td></tr>
+<tr class="separator:ae58f854e9de41842d65f816cc6e2eb99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82371b9a6bfd3fbb0e4e7b07d0af043f" id="r_a82371b9a6bfd3fbb0e4e7b07d0af043f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82371b9a6bfd3fbb0e4e7b07d0af043f">translate</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;value) noexcept</td></tr>
 <tr class="memdesc:a82371b9a6bfd3fbb0e4e7b07d0af043f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Translates a string into the lganguage specified by the xtd::translate::language property.  <br /></td></tr>
 <tr class="separator:a82371b9a6bfd3fbb0e4e7b07d0af043f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -219,7 +216,7 @@ For more information about internationalization, see <a href="https://gammasoft7
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a3bf48b60c2efdb998607e2e16da6a45c" name="a3bf48b60c2efdb998607e2e16da6a45c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3bf48b60c2efdb998607e2e16da6a45c">&#9670;&#160;</a></span>language() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bf48b60c2efdb998607e2e16da6a45c">&#9670;&#160;</a></span>language() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -248,7 +245,7 @@ For more information about internationalization, see <a href="https://gammasoft7
 </div>
 </div>
 <a id="a7f7654b21d416c2f933d8e2ee7add83c" name="a7f7654b21d416c2f933d8e2ee7add83c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f7654b21d416c2f933d8e2ee7add83c">&#9670;&#160;</a></span>language() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f7654b21d416c2f933d8e2ee7add83c">&#9670;&#160;</a></span>language() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -282,8 +279,8 @@ For more information about internationalization, see <a href="https://gammasoft7
 
 </div>
 </div>
-<a id="a8304f2cc15d2ea1368153b645bc0a313" name="a8304f2cc15d2ea1368153b645bc0a313"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8304f2cc15d2ea1368153b645bc0a313">&#9670;&#160;</a></span>locale() <span class="overload">[1/3]</span></h2>
+<a id="a3025173515fbdc78b2b89f269fd99d2d" name="a3025173515fbdc78b2b89f269fd99d2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3025173515fbdc78b2b89f269fd99d2d">&#9670;&#160;</a></span>language() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -292,9 +289,9 @@ For more information about internationalization, see <a href="https://gammasoft7
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::locale xtd::translator::locale </td>
+          <td class="memname">static void xtd::translator::language </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga49f5db03cbcf82bf3a15a3e20b443fef">xtd::null_ptr</a></td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -305,77 +302,15 @@ For more information about internationalization, see <a href="https://gammasoft7
 </table>
 </div><div class="memdoc">
 
-<p>Gets the global locale. </p>
-<dl class="section return"><dt>Returns</dt><dd>The global locale. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>is same a call <code>std::locale {};</code> </dd></dl>
-
-</div>
-</div>
-<a id="a53822de3e2667a2e79f259bf8b143039" name="a53822de3e2667a2e79f259bf8b143039"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53822de3e2667a2e79f259bf8b143039">&#9670;&#160;</a></span>locale() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void xtd::translator::locale </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the global locale. </p>
+<p>Sets the current application language. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>The global locale. </td></tr>
+    <tr><td class="paramname">language</td><td>The current application language. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>is same a call <code>std::locale::global(std::locale {value});</code> </dd></dl>
-
-</div>
-</div>
-<a id="ad8b5bbe5b3e64ccc8a6525cacc6e6335" name="ad8b5bbe5b3e64ccc8a6525cacc6e6335"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8b5bbe5b3e64ccc8a6525cacc6e6335">&#9670;&#160;</a></span>locale() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void xtd::translator::locale </td>
-          <td>(</td>
-          <td class="paramtype">const std::locale &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Sets the global locale. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>The global locale. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section remark"><dt>Remarks</dt><dd>is same a call <code>std::locale::global(value);</code> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Normally you should use the std::locale() method. This function only exists if you have a good reason to bypass std::locale(). </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>If you set the language with this method, and you use the std::locale method afterwards, translator will use the language initialized with this method and not with std::locale(). </dd></dl>
 
 </div>
 </div>
@@ -462,7 +397,7 @@ For more information about internationalization, see <a href="https://gammasoft7
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -479,8 +414,8 @@ For more information about internationalization, see <a href="https://gammasoft7
 
 </div>
 </div>
-<a id="aaf9fb59dfe616efe54f76a31b1f6bf72" name="aaf9fb59dfe616efe54f76a31b1f6bf72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf9fb59dfe616efe54f76a31b1f6bf72">&#9670;&#160;</a></span>parse_locale()</h2>
+<a id="adc0ae2832f91efb40ad923e5c590a63c" name="adc0ae2832f91efb40ad923e5c590a63c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc0ae2832f91efb40ad923e5c590a63c">&#9670;&#160;</a></span>parse_locale() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -489,7 +424,7 @@ For more information about internationalization, see <a href="https://gammasoft7
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void xtd::translator::parse_locale </td>
+          <td class="memname">static bool xtd::translator::parse_locale </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>locale_path</em></span></td><td>)</td>
           <td></td>
@@ -509,11 +444,13 @@ For more information about internationalization, see <a href="https://gammasoft7
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if parse succeed; otherwhise <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>parse path with <a class="el" href="#a3bf48b60c2efdb998607e2e16da6a45c" title="Gets the current application language.">xtd::translator::language()</a> language. </dd></dl>
 
 </div>
 </div>
-<a id="aacbc01da1313cdfa8edcf8c8d8f4c4c3" name="aacbc01da1313cdfa8edcf8c8d8f4c4c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aacbc01da1313cdfa8edcf8c8d8f4c4c3">&#9670;&#160;</a></span>parse_file()</h2>
+<a id="a161b3e0391a1d38f6597bb0b61a9f2d6" name="a161b3e0391a1d38f6597bb0b61a9f2d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a161b3e0391a1d38f6597bb0b61a9f2d6">&#9670;&#160;</a></span>parse_locale() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -522,7 +459,80 @@ For more information about internationalization, see <a href="https://gammasoft7
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void xtd::translator::parse_file </td>
+          <td class="memname">static bool xtd::translator::parse_locale </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>locale_path</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>language</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parses a specified path that contains translations. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">locale_path</td><td>Path that contains translations. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if parse succeed; otherwhise <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a431be3b1c442a8d96b899efcbf824854" name="a431be3b1c442a8d96b899efcbf824854"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a431be3b1c442a8d96b899efcbf824854">&#9670;&#160;</a></span>parse_file() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::translator::parse_file </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parses a specified file that contains translations for a specified language. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>The file that contains translations. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if parse succeed; otherwhise <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>parse file with <a class="el" href="#a3bf48b60c2efdb998607e2e16da6a45c" title="Gets the current application language.">xtd::translator::language()</a> language. </dd></dl>
+
+</div>
+</div>
+<a id="ae58f854e9de41842d65f816cc6e2eb99" name="ae58f854e9de41842d65f816cc6e2eb99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae58f854e9de41842d65f816cc6e2eb99">&#9670;&#160;</a></span>parse_file() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool xtd::translator::parse_file </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>file</em></span>, </td>
         </tr>
@@ -547,6 +557,7 @@ For more information about internationalization, see <a href="https://gammasoft7
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if parse succeed; otherwhise <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -568,7 +579,7 @@ For more information about internationalization, see <a href="https://gammasoft7
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -601,7 +612,7 @@ For more information about internationalization, see <a href="https://gammasoft7
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -625,7 +636,7 @@ For more information about internationalization, see <a href="https://gammasoft7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 9 2025 12:08:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Oct 10 2025 21:11:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
