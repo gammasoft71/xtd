@@ -63,7 +63,7 @@ var searchData=
   ['tracestreambuf_60',['tracestreambuf',['../classxtd_1_1tracestreambuf.html',1,'xtd']]],
   ['track_5fbar_61',['track_bar',['../classxtd_1_1forms_1_1track__bar.html',1,'xtd::forms']]],
   ['transition_5ftime_62',['transition_time',['../classxtd_1_1time__zone__info_1_1transition__time.html',1,'xtd::time_zone_info']]],
-  ['translator_63',['translator',['../classxtd_1_1translator.html',1,'xtd']]],
+  ['translator_63',['translator',['../classxtd_1_1globalization_1_1translator.html',1,'xtd::globalization']]],
   ['tunit_5fevent_5fargs_64',['tunit_event_args',['../classxtd_1_1tunit_1_1tunit__event__args.html',1,'xtd::tunit']]],
   ['type_5fobject_65',['type_object',['../classxtd_1_1type__object.html',1,'xtd']]]
 ];

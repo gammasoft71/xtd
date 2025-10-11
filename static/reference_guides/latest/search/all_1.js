@@ -122,7 +122,7 @@ var searchData=
   ['add_5ftest_5finitialize_119',['add_test_initialize',['../classxtd_1_1tunit_1_1test__class.html#ad3eafe33ea9c61d6ca57cfe0d77d7c30',1,'xtd::tunit::test_class']]],
   ['add_5ftest_5fmethod_120',['add_test_method',['../classxtd_1_1tunit_1_1test__class.html#a24a418a5edf9ca9774632649ae69ec09',1,'xtd::tunit::test_class']]],
   ['add_5fticks_121',['add_ticks',['../classxtd_1_1date__time.html#a254ac8b92cd3db3bc31665a24d0b00f3',1,'xtd::date_time']]],
-  ['add_5fvalue_122',['add_value',['../classxtd_1_1translator.html#a0055d78956b037bdc399c651afdb8b22',1,'xtd::translator']]],
+  ['add_5fvalue_122',['add_value',['../classxtd_1_1globalization_1_1translator.html#ae980f17919f08a2776109468f4577850',1,'xtd::globalization::translator']]],
   ['add_5fyears_123',['add_years',['../classxtd_1_1date__time.html#a503546326baaf6b2d0a0cb678a949836',1,'xtd::date_time']]],
   ['additional_5finformation_124',['additional_information',['../classxtd_1_1compiler.html#a6dfe14049c6df4ffbaf15464432c7a2e',1,'xtd::compiler']]],
   ['address_125',['address',['../classxtd_1_1net_1_1ip__end__point.html#abe1e072819dd804e0784443619c4959d',1,'xtd::net::ip_end_point::address() const noexcept'],['../classxtd_1_1net_1_1ip__end__point.html#acf07db343ba3d00c69dccf1e345f5f85',1,'xtd::net::ip_end_point::address(const xtd::net::ip_address &amp;value)'],['../classxtd_1_1net_1_1sockets_1_1ip__packet__information.html#af3c829b3739310996ec7ce8d9df5ea65',1,'xtd::net::sockets::ip_packet_information::address()']]],

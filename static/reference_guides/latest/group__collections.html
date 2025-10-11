@@ -858,10 +858,10 @@ The <a class="el" href="#gaf08e1c4c9551b36c55a00283f6431e5d" title="Defines meth
 <div class="line">  <span class="keyword">class </span>simple_list : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">object</a>, <span class="keyword">public</span> <a class="code hl_typedef" href="#ga564fa21e6bb9787ccd4b37201081cf6b">collections::ilist</a> {</div>
 <div class="line">  <span class="keyword">private</span>:</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1array.html">array&lt;any_object&gt;</a> contents_ = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;any_object&gt;</a>(8);</div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> count_;</div>
+<div class="line">    <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> count_;</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">public</span>:</div>
-<div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> <a class="code hl_variable" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6">npos</a> = ilist::npos;</div>
+<div class="line">    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> <a class="code hl_variable" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6">npos</a> = ilist::npos;</div>
 <div class="line"> </div>
 <div class="line">    simple_list() {count_ = 0;}</div>
 <div class="line">    </div>
@@ -896,17 +896,17 @@ The <a class="el" href="#gaf08e1c4c9551b36c55a00283f6431e5d" title="Defines meth
 <div class="line">      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> index_of(<span class="keyword">const</span> any_object&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
+<div class="line">    <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index_of(<span class="keyword">const</span> any_object&amp; value) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0_z; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; count(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
 <div class="line">        <span class="keywordflow">if</span> (contents_[i] == value) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>;</div>
 <div class="line">      <span class="keywordflow">return</span> <a class="code hl_variable" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6">npos</a>;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae0df5f3dfd2650ae5be9993434e2b2c0">insert</a>(size index, <span class="keyword">const</span> any_object&amp; value)<span class="keyword"> override </span>{</div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae0df5f3dfd2650ae5be9993434e2b2c0">insert</a>(<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index, <span class="keyword">const</span> any_object&amp; value)<span class="keyword"> override </span>{</div>
 <div class="line">      <span class="keywordflow">if</span> (count_ + 1 &lt;= contents_.<a class="code hl_function" href="classxtd_1_1basic__array.html#aaf70989e6cabeaccefd32e3b760753ef">length</a>() &amp;&amp; index &lt; count()) {</div>
 <div class="line">        ++count_;</div>
 <div class="line">        </div>
-<div class="line">        <span class="keywordflow">for</span> (size i = count() - 1; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &gt; index; --<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
+<div class="line">        <span class="keywordflow">for</span> (<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> i = count() - 1; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &gt; index; --<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
 <div class="line">          contents_[i] = contents_[i - 1];</div>
 <div class="line">        </div>
 <div class="line">        contents_[index] = value;</div>
@@ -919,24 +919,24 @@ The <a class="el" href="#gaf08e1c4c9551b36c55a00283f6431e5d" title="Defines meth
 <div class="line">      <span class="keywordflow">return</span> index != <a class="code hl_variable" href="group__system.html#ga94bb9e7be783a1b9d24894b3b23859e6">npos</a>;</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> remove_at(size index)<span class="keyword"> override </span>{</div>
+<div class="line">    <span class="keywordtype">void</span> remove_at(<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index)<span class="keyword"> override </span>{</div>
 <div class="line">      <span class="keywordflow">if</span> (index &lt; count()) {</div>
-<div class="line">        <span class="keywordflow">for</span> (size i = index; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; count() - 1; ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
+<div class="line">        <span class="keywordflow">for</span> (<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> i = index; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; count() - 1; ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
 <div class="line">          contents_[i] = contents_[i + 1];</div>
 <div class="line">        --count_;</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
 <div class="line">    </div>
-<div class="line">    <span class="keyword">const</span> any_object&amp; operator [] (size index)<span class="keyword"> const override </span>{</div>
+<div class="line">    <span class="keyword">const</span> any_object&amp; operator [] (<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index)<span class="keyword"> const override </span>{</div>
 <div class="line">      <span class="keywordflow">return</span> contents_[index];</div>
 <div class="line">    }</div>
-<div class="line">    any_object&amp; operator [] (size index)<span class="keyword"> override </span>{</div>
+<div class="line">    any_object&amp; operator [] (<a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index)<span class="keyword"> override </span>{</div>
 <div class="line">      <span class="keywordflow">return</span> contents_[index];</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">    <span class="comment">// xtd::collections::icollection members.</span></div>
 <div class="line">    </div>
-<div class="line">    <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">size</a> count() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> count_;}</div>
+<div class="line">    <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> count() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> count_;}</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">bool</span> is_synchronized() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> <span class="keyword">false</span>;}</div>
 <div class="line">    </div>
@@ -944,7 +944,7 @@ The <a class="el" href="#gaf08e1c4c9551b36c55a00283f6431e5d" title="Defines meth
 <div class="line">    <span class="comment">// publicly available.</span></div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">object</span>&amp; sync_root() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> *<span class="keyword">this</span>;}</div>
 <div class="line">    </div>
-<div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="namespacextd.html#a308b91f8df5043299f180a996d60cadf">copy_to</a>(xtd::array&lt;any_object&gt;&amp; array, size index) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_function" href="namespacextd.html#a308b91f8df5043299f180a996d60cadf">copy_to</a>(xtd::array&lt;any_object&gt;&amp; array, <a class="code hl_typedef" href="group__types.html#ga221e5b824352c9046d353e4659af5b87">xtd::size</a> index) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
 <div class="line">      <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0_z; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; count(); ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>)</div>
 <div class="line">        array[index + i] = contents_[i];</div>
 <div class="line">    }</div>
@@ -1077,7 +1077,7 @@ For the generic version of this interface, see xtd::collections::generic::ilist 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 10 2025 21:11:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Oct 11 2025 09:30:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
