@@ -1393,7 +1393,6 @@ add_sources(
   "src/xtd/literals/size.cpp"
   "src/xtd/literals/string.cpp"
   "src/xtd/literals/time_span.cpp"
-  "src/xtd/literals/translator.cpp"
   "src/xtd/literals/uint16.cpp"
   "src/xtd/literals/uint32.cpp"
   "src/xtd/literals/uint64.cpp"
