@@ -20,7 +20,7 @@ namespace xtd::collections::generic::tests {
   class test_class_(key_not_found_exception_tests) {
     inline static bool stack_trace_enabled = false;
     inline static xtd::globalization::culture_info previous_culture;
-
+    
     static void test_initialize_(test_initialize) {
       previous_culture = xtd::globalization::culture_info::current_culture();
       xtd::globalization::culture_info::current_culture(xtd::globalization::culture_info {"en-US"});
