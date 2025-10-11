@@ -48,7 +48,7 @@ public:
     box_collection(const std::initializer_list<program::box>& boxes) : boxes_(boxes) {}
     
     // Public Properties :
-    size count() const noexcept override {return boxes_.count();}
+    xtd::size count() const noexcept override {return boxes_.count();}
     
     bool is_fixed_size() const noexcept override {return false;}
     bool is_read_only() const noexcept override {return false;}
@@ -74,35 +74,35 @@ public:
       return false;
     }
     
-    void copy_to(array<program::box>& array, size array_index) const override {boxes_.copy_to(array, array_index);}
+    void copy_to(array<program::box>& array, xtd::size array_index) const override {boxes_.copy_to(array, array_index);}
     
     enumerator<program::box> get_enumerator() const override {return {new_ptr<box_enumerator>(boxes_)};}
     
-    size index_of(const program::box& item) const noexcept override {
+    xtd::size index_of(const program::box& item) const noexcept override {
       for (auto index = 0_z; index  < count(); ++index)
         if (boxes_[index] == item) return index;
       return npos;
     }
     
-    void insert(size index, const program::box& item) override {
+    void insert(xtd::size index, const program::box& item) override {
       if (index >= count()) throw argument_out_of_range_exception {};
       boxes_.insert(index, item);
     }
     
     bool remove(const program::box& item) override {return boxes_.remove(item);}
     
-    void remove_at(size index) override {
+    void remove_at(xtd::size index) override {
       if (index >= count()) throw argument_out_of_range_exception {};
       boxes_.remove_at(index);
     }
     
     // Public Operators :
-    const program::box& operator [](size index) const override {
+    const program::box& operator [](xtd::size index) const override {
       if (index >= count()) throw argument_out_of_range_exception {};
       return boxes_[index];
     }
     
-    program::box& operator [](size index) override {
+    program::box& operator [](xtd::size index) override {
       if (index >= count()) throw argument_out_of_range_exception {};
       return boxes_[index];
     }
