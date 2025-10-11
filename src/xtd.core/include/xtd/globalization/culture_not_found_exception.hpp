@@ -51,7 +51,7 @@ namespace xtd {
       culture_not_found_exception(const culture_not_found_exception&) = default;
       culture_not_found_exception& operator =(const culture_not_found_exception&) = default;
       /// @endcond
-    
+      
     private:
       static const xtd::string& get_default_message();
     };
