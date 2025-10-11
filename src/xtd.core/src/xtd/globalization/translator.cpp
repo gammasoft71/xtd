@@ -23,7 +23,8 @@ string translator::language() {
 
 void translator::language(const string& language) {
   if (language_.has_value() && language_ == language) return;
-  language_ = language;
+  if (string::is_empty(language) || language.any([](auto c) {return !char_object::is_letter(c) && c != '-' && c != '_';})) throw_helper::throws(xtd::helpers::exception_case::argument);
+  language_ = to_language_name(language);
 }
 
 void translator::language(xtd::null_ptr) {
@@ -38,7 +39,7 @@ array<string> translator::languages() {
 }
 
 string translator::system_language() {
-  return to_language_name(culture_info::current_culture().name());
+  return to_language_name(to_language_name(culture_info::current_culture().name()));
 }
 
 bool translator::parse_locale(const string& locale_path) {
