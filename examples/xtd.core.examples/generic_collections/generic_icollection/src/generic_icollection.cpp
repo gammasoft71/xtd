@@ -48,7 +48,7 @@ public:
     box_collection(const std::initializer_list<program::box>& boxes) : boxes_(boxes) {}
     
     // Public Properties :
-    size count() const noexcept override {return boxes_.count();}
+    xtd::size count() const noexcept override {return boxes_.count();}
     
     bool is_read_only() const noexcept override {return false;}
     
@@ -74,7 +74,7 @@ public:
       return false;
     }
     
-    void copy_to(array<program::box>& array, size array_index) const override {boxes_.copy_to(array, array_index);}
+    void copy_to(array<program::box>& array, xtd::size array_index) const override {boxes_.copy_to(array, array_index);}
     
     enumerator<program::box> get_enumerator() const override {return {new_ptr<box_enumerator>(boxes_)};}
     
