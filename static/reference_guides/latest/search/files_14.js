@@ -89,7 +89,7 @@ var searchData=
   ['trace_5fswitch_2ehpp_86',['trace_switch.hpp',['../trace__switch_8hpp.html',1,'']]],
   ['tracestreambuf_2ehpp_87',['tracestreambuf.hpp',['../tracestreambuf_8hpp.html',1,'']]],
   ['track_5fbar_2ehpp_88',['track_bar.hpp',['../track__bar_8hpp.html',1,'']]],
-  ['translator_2ehpp_89',['translator.hpp',['../literals_2translator_8hpp.html',1,'(Global Namespace)'],['../translator_8hpp.html',1,'(Global Namespace)']]],
+  ['translator_2ehpp_89',['translator.hpp',['../globalization_2translator_8hpp.html',1,'(Global Namespace)'],['../literals_2translator_8hpp.html',1,'(Global Namespace)']]],
   ['transmit_5ffile_5foptions_2ehpp_90',['transmit_file_options.hpp',['../transmit__file__options_8hpp.html',1,'']]],
   ['tunit_5fevent_5fargs_2ehpp_91',['tunit_event_args.hpp',['../tunit__event__args_8hpp.html',1,'']]],
   ['tunit_5fexport_2ehpp_92',['tunit_export.hpp',['../tunit__export_8hpp.html',1,'']]],
