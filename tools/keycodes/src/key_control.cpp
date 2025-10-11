@@ -1,4 +1,5 @@
 #include "key_control.hpp"
+#include <xtd/globalization/translator>
 #include <xtd/forms/application>
 
 using namespace xtd;
