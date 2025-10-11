@@ -1,4 +1,5 @@
 #include <xtd/io/end_of_stream_exception>
+#include <xtd/globalization/culture_info>
 #include <xtd/argument_exception>
 #include <xtd/environment>
 #include <xtd/io/path>
@@ -16,15 +17,17 @@ using namespace xtd::tunit;
 namespace xtd::io::tests {
   class test_class_(end_of_stream_exception_tests) {
     inline static bool stack_trace_enabled = false;
-    inline static std::locale previous_locale;
+    inline static xtd::globalization::culture_info previous_culture;
+    
     static void test_initialize_(test_initialize) {
-      previous_locale = std::locale::global(std::locale("en_US.UTF-8"));
+      previous_culture = xtd::globalization::culture_info::current_culture();
+      xtd::globalization::culture_info::current_culture(xtd::globalization::culture_info {"en-US"});
       stack_trace_enabled = end_of_stream_exception::enable_stack_trace();
       end_of_stream_exception::enable_stack_trace(false);
     }
     
     static void test_cleanup_(test_cleanup) {
-      std::locale::global(previous_locale);
+      xtd::globalization::culture_info::current_culture(previous_culture);
       end_of_stream_exception::enable_stack_trace(stack_trace_enabled);
     }
     
