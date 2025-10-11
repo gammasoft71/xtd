@@ -46,10 +46,10 @@ public:
   class simple_list : public object, public collections::ilist {
   private:
     array<any_object> contents_ = array<any_object>(8);
-    size count_;
+    xtd::size count_;
     
   public:
-    inline static constexpr size npos = ilist::npos;
+    inline static constexpr xtd::size npos = ilist::npos;
 
     simple_list() {count_ = 0;}
     
@@ -84,17 +84,17 @@ public:
       return false;
     }
     
-    size index_of(const any_object& value) const noexcept override {
+    xtd::size index_of(const any_object& value) const noexcept override {
       for (auto i = 0_z; i < count(); ++i)
         if (contents_[i] == value) return i;
       return npos;
     }
     
-    void insert(size index, const any_object& value) override {
+    void insert(xtd::size index, const any_object& value) override {
       if (count_ + 1 <= contents_.length() && index < count()) {
         ++count_;
         
-        for (size i = count() - 1; i > index; --i)
+        for (xtd::size i = count() - 1; i > index; --i)
           contents_[i] = contents_[i - 1];
         
         contents_[index] = value;
@@ -107,24 +107,24 @@ public:
       return index != npos;
     }
     
-    void remove_at(size index) override {
+    void remove_at(xtd::size index) override {
       if (index < count()) {
-        for (size i = index; i < count() - 1; ++i)
+        for (xtd::size i = index; i < count() - 1; ++i)
           contents_[i] = contents_[i + 1];
         --count_;
       }
     }
     
-    const any_object& operator [] (size index) const override {
+    const any_object& operator [] (xtd::size index) const override {
       return contents_[index];
     }
-    any_object& operator [] (size index) override {
+    any_object& operator [] (xtd::size index) override {
       return contents_[index];
     }
     
     // xtd::collections::icollection members.
     
-    size count() const noexcept override {return count_;}
+    xtd::size count() const noexcept override {return count_;}
     
     bool is_synchronized() const noexcept override {return false;}
     
@@ -132,7 +132,7 @@ public:
     // publicly available.
     const object& sync_root() const noexcept override {return *this;}
     
-    void copy_to(xtd::array<any_object>& array, size index) const noexcept override {
+    void copy_to(xtd::array<any_object>& array, xtd::size index) const noexcept override {
       for (auto i = 0_z; i < count(); ++i)
         array[index + i] = contents_[i];
     }
