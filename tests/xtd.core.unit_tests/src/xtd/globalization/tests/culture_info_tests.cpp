@@ -11,14 +11,14 @@ using namespace xtd::tunit;
 
 namespace xtd::globalization::tests {
   class test_class_(culture_info_tests) {
-    inline static std::locale current_locale_;
+    inline static culture_info current_ulture_;
     
     static void test_initialize_(test_initialize) {
-      current_locale_ = std::locale {};
+      current_ulture_ = culture_info::current_culture();
     }
     
     static void test_cleanup_(test_cleanup) {
-      std::locale::global(current_locale_);
+      culture_info::current_culture(current_ulture_);
     }
     
     void test_method_(create_default) {
