@@ -89,7 +89,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      const char* default_message() const noexcept {return "No handle of the given name exists."_t;}
+      const char* default_message() const noexcept {return "No handle of the given name exists.";}
     };
   }
 }

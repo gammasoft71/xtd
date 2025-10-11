@@ -51,6 +51,6 @@ file_format_exception::file_format_exception(const xtd::string& message, const s
 }
 
 xtd::string file_format_exception::default_message() noexcept {
-  return "Input file or data stream does not conform to the expected file format specification."_t;
+  return "Input file or data stream does not conform to the expected file format specification.";
 }
 /// @}

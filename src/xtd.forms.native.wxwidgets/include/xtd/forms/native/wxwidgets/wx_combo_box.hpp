@@ -23,7 +23,7 @@ namespace xtd {
         friend xtd::forms::native::control;
       private:
         explicit wx_combo_box(const xtd::forms::native::create_params& create_params) {
-          if (!create_params.parent) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "control must have a parent"_t);
+          if (!create_params.parent) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "control must have a parent");
           #if defined(__WXMSW__)
           int32 height = (create_params.style & CBS_SIMPLE) == CBS_SIMPLE ? 163 : 23;
           #elif defined(__WXGTK__)

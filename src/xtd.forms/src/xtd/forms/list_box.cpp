@@ -90,7 +90,7 @@ const list_box& list_box::items(const object_collection& items) {
 }
 
 list_control& list_box::selected_index(size_t selected_index) {
-  if (selected_index != npos && selected_index >= data_->items.count()) throw_helper::throws(exception_case::argument_out_of_range, "Selected index greater than items size"_t);
+  if (selected_index != npos && selected_index >= data_->items.count()) throw_helper::throws(exception_case::argument_out_of_range, "Selected index greater than items size");
   if (this->selected_index() == selected_index) return *this;
   set_selected_index(selected_index);
   if (is_handle_created()) native::list_box::selected_index(handle(), this->selected_index());

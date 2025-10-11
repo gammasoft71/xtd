@@ -290,7 +290,7 @@ bool process::start() {
         process.data_->standard_output = std::move(standard_output);
         process.data_->standard_error = std::move(standard_error);
       }
-      if (process.data_->handle == 0) throw_helper::throws(exception_case::invalid_operation, "The system cannot find the file specified"_t);
+      if (process.data_->handle == 0) throw_helper::throws(exception_case::invalid_operation, "The system cannot find the file specified");
       process.data_->allow_to_continue = true;
       debug::write_line_if(show_debug_process().enabled(), string::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle, string::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : string::format(" {}", process.start_info().arguments())), process.data_->start_time, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time.ticks_duration())).count() % 1000000));
       auto exit_code = 0;

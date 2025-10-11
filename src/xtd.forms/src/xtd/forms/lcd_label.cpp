@@ -48,7 +48,7 @@ double lcd_label::back_digit_opacity() const noexcept {
 }
 
 lcd_label& lcd_label::back_digit_opacity(double value) {
-  if (value < 0.0 || value > 1.0) throw_helper::throws(exception_case::argument_out_of_range, "value must be between 0.0 and 1.0."_t);
+  if (value < 0.0 || value > 1.0) throw_helper::throws(exception_case::argument_out_of_range, "value must be between 0.0 and 1.0.");
   if (data_->back_digit_opacity == value) return *this;
   data_->back_digit_opacity = value;
   set_digits_params();
@@ -71,7 +71,7 @@ int32 lcd_label::digit_spacing() const noexcept {
 }
 
 lcd_label& lcd_label::digit_spacing(int32 value) {
-  if (value < 0) throw_helper::throws(exception_case::argument_out_of_range, "value must be positive"_t);
+  if (value < 0) throw_helper::throws(exception_case::argument_out_of_range, "value must be positive");
   if (data_->digit_spacing == value) return *this;
   data_->digit_spacing = value;
   set_digits_params();
@@ -146,7 +146,7 @@ control& lcd_label::text(const xtd::string& value) {
         case lcd_style::fourteen_segment_display: data_->digits.add(xtd::new_sptr<fourteen_segment_display_digit>()); break;
         case lcd_style::sixteen_segment_display: data_->digits.add(xtd::new_sptr<sixteen_segment_display_digit>()); break;
         case lcd_style::dot_matrix_display: data_->digits.add(xtd::new_sptr<dot_matrix_display_digit>()); break;
-        default: throw_helper::throws(exception_case::argument, "lcd_style invalid"_t);
+        default: throw_helper::throws(exception_case::argument, "lcd_style invalid");
       }
       dynamic_cast<control*>(data_->digits[~1_z].get())->parent(*this);
       dynamic_cast<control*>(data_->digits[~1_z].get())->double_buffered(double_buffered());
@@ -170,7 +170,7 @@ array<char32> lcd_label::valid_characters() {
     case lcd_style::fourteen_segment_display: return fourteen_segment_display_digit {}.valid_characters();
     case lcd_style::sixteen_segment_display: return sixteen_segment_display_digit {}.valid_characters();
     case lcd_style::dot_matrix_display: return dot_matrix_display_digit {}.valid_characters();
-    default: throw_helper::throws(exception_case::argument, "lcd_style invalid"_t);
+    default: throw_helper::throws(exception_case::argument, "lcd_style invalid");
   }
 }
 

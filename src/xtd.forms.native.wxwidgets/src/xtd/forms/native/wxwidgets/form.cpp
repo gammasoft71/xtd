@@ -114,7 +114,7 @@ void form::maximize(intptr control, bool maximize) {
 
 void form::menu(intptr control, intptr menu) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
-  if (menu != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) throw_helper::throws(exception_case::argument, "dialog can't have menu"_t);
+  if (menu != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) throw_helper::throws(exception_case::argument, "dialog can't have menu");
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
     return;
@@ -170,7 +170,7 @@ int32 form::show_dialog(intptr control) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
     return 0;
   }
-  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw_helper::throws(exception_case::argument, "show_dialog work only with dialog"_t);
+  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw_helper::throws(exception_case::argument, "show_dialog work only with dialog");
   auto dialog = static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control());
   return dialog->ShowModal();
 }
@@ -181,7 +181,7 @@ void form::show_sheet(intptr control) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
     return;
   }
-  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw_helper::throws(exception_case::argument, "show_sheet work only with dialog"_t);
+  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw_helper::throws(exception_case::argument, "show_sheet work only with dialog");
   #if defined(__WXOSX__)
   static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())->ShowWindowModal();
   #else
@@ -195,7 +195,7 @@ int32 form::show_sheet_dialog(intptr control) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
     return 0;
   }
-  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw_helper::throws(exception_case::argument, "show_sheet_dialog work only with dialog"_t);
+  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw_helper::throws(exception_case::argument, "show_sheet_dialog work only with dialog");
   auto dialog = static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control());
   #if defined(__WXOSX__)
   if (!dialog->GetParent()) return dialog->ShowModal();
@@ -223,7 +223,7 @@ void form::end_dialog(intptr control, int32 result) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().chars().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().chars().c_str());
     return;
   }
-  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw_helper::throws(exception_case::argument, "end_dialog work only with dialog"_t);
+  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw_helper::throws(exception_case::argument, "end_dialog work only with dialog");
   static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())->EndModal(result);
 }
 

@@ -12,7 +12,7 @@ culture_not_found_exception::culture_not_found_exception(const std::optional<str
 }
 
 const string& culture_not_found_exception::get_default_message() {
-  static auto message = string {"Culture is not supported."_t};
+  static auto message = string {"Culture is not supported."};
   return message;
 }
 

@@ -73,9 +73,9 @@ void throw_helper::throws(enum exception_case exception_case, const source_locat
     case exception_case::end_of_stream: throw end_of_stream_exception {to_stack_frame(location)};
     case exception_case::file_not_found: throw file_not_found_exception {to_stack_frame(location)};
     case exception_case::format: throw format_exception {to_stack_frame(location)};
-    case exception_case::format_closing_bracket_without_open_bracket: throw format_exception("Invalid format expression : closing bracket '{' without open bracket '}'"_t, to_stack_frame(location));
-    case exception_case::format_opened_bracket_without_end_bracket: throw format_exception("Invalid format expression : open bracket '}' without end bracket '{'"_t, to_stack_frame(location));
-    case exception_case::format_no_start_colon: throw format_exception("Invalid format expression : format argument must be start by ':'"_t, to_stack_frame(location));
+    case exception_case::format_closing_bracket_without_open_bracket: throw format_exception("Invalid format expression : closing bracket '{' without open bracket '}'", to_stack_frame(location));
+    case exception_case::format_opened_bracket_without_end_bracket: throw format_exception("Invalid format expression : open bracket '}' without end bracket '{'", to_stack_frame(location));
+    case exception_case::format_no_start_colon: throw format_exception("Invalid format expression : format argument must be start by ':'", to_stack_frame(location));
     case exception_case::format_not_iformatable: throw format_exception(to_stack_frame(location));
     case exception_case::index_out_of_range: throw index_out_of_range_exception {to_stack_frame(location)};
     case exception_case::invalid_cast: throw invalid_cast_exception {to_stack_frame(location)};

@@ -45,8 +45,8 @@ font::font(const font& prototype, font_style style) : data_(xtd::new_sptr<data>(
 }
 
 font::font(string family_name, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set, bool gdi_vertical_font) : data_(xtd::new_sptr<data>()) {
-  if (em_size <= 0 || em_size == single_object::positive_infinity || single_object::is_NaN(em_size)) throw_helper::throws(exception_case::argument, "em_size is less than or equal to 0, evaluates to infinity, or is not a valid number."_t);
-  if (unit == graphics_unit::display) throw_helper::throws(exception_case::argument, "unit can't be equal to graphics_unit::display."_t);
+  if (em_size <= 0 || em_size == single_object::positive_infinity || single_object::is_NaN(em_size)) throw_helper::throws(exception_case::argument, "em_size is less than or equal to 0, evaluates to infinity, or is not a valid number.");
+  if (unit == graphics_unit::display) throw_helper::throws(exception_case::argument, "unit can't be equal to graphics_unit::display.");
   try {
     data_->font_family_ = drawing::font_family(family_name);
   } catch (...) {

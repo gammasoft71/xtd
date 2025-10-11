@@ -4,6 +4,7 @@
 #pragma once
 #include "progress_box_options.hpp"
 #include "progress_dialog.hpp"
+#include <xtd/globalization/translator>
 #include <xtd/static>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

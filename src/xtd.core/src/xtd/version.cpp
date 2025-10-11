@@ -82,7 +82,7 @@ xtd::string version::to_string() const noexcept {
 }
 
 xtd::string version::to_string(size_t field_count) const {
-  if (field_count > 4 || (field_count >= 3 && build_ == -1) || (field_count == 4 && revision_ == -1)) throw_helper::throws(exception_case::argument, "Field count invalid"_t);
+  if (field_count > 4 || (field_count >= 3 && build_ == -1) || (field_count == 4 && revision_ == -1)) throw_helper::throws(exception_case::argument, "Field count invalid");
   auto result = string::empty_string;
   if (field_count >= 1) result += string::format("{}", major_);
   if (field_count >= 2) result += string::format(".{}", minor_);

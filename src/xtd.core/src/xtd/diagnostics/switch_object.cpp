@@ -82,6 +82,6 @@ void switch_object::on_switch_setting_changed() {
 
 void switch_object::on_value_changed() {
   auto int_value = 0;
-  if (!string::try_parse(value(), int_value)) throw_helper::throws(exception_case::format, "Input xtd::string was not in a correct format."_t);
+  if (!string::try_parse(value(), int_value)) throw_helper::throws(exception_case::format, "Input xtd::string was not in a correct format.");
   switch_setting(int_value);
 }

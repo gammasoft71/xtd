@@ -141,7 +141,7 @@ namespace xtd {
             wxpen.SetJoin(pen.line_join());
             return wxpen;
           }
-          xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "brush not defined"_t);
+          xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "brush not defined");
         }
         
         static wxGraphicsPen to_graphics_pen(wxGraphicsContext& graphics, const wx_pen& pen) {
@@ -204,7 +204,7 @@ namespace xtd {
             return graphics.CreatePen(pen_info);
           }
           
-          xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "brush not defined"_t);
+          xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "brush not defined");
         }
         
       private:
