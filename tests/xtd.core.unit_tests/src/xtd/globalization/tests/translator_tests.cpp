@@ -2,6 +2,7 @@
 #include <xtd/globalization/culture_info>
 #include <xtd/environment>
 #include <xtd/tunit/assert>
+#include <xtd/tunit/collection_assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
@@ -22,7 +23,7 @@ namespace xtd {
         }
 
         void test_method_(language) {
-          assert::are_equal(culture_info::current_culture().name().replace("-", "-"), translator::language());
+          assert::are_equal(culture_info::current_culture().name().replace("-", "_"), translator::language());
         }
         
         void test_method_(language_with_fr) {
@@ -52,11 +53,18 @@ namespace xtd {
           assert::throws<argument_exception>([] {translator::language(" fr");});
           assert::throws<argument_exception>([] {translator::language("fr ");});
         }
-
+        
         void test_method_(language_with_null) {
+        }
+        
+        void test_method_(languages) {
+          collection_assert::contains({"fr"_s}, translator::languages());
+        }
+        
+        void test_method_(system_language) {
+          assert::are_equal(culture_info::current_culture().name().replace("-", "_"), translator::system_language());
           translator::language("fr");
-          translator::language(null);
-          assert::are_equal(culture_info::current_culture().name().replace("-", "-"), translator::language());
+          assert::are_equal(culture_info::current_culture().name().replace("-", "_"), translator::system_language());
         }
         
         void test_method_(translate_with_char_ptr) {
