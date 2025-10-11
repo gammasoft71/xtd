@@ -23,7 +23,6 @@ add_sources(
   enumeration.strings
   environment.strings
   exception_dialog.strings
-  exceptions.strings
   font.strings
   font_family.strings
   form.strings

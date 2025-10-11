@@ -11,6 +11,7 @@
 #include <xtd/forms/native/message_box_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/convert_string>
+#include <xtd/globalization/translator>
 
 using namespace xtd;
 using namespace xtd::forms::native;

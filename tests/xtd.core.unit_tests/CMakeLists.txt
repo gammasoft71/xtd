@@ -27,6 +27,7 @@ add_sources(
   "src/xtd/globalization/tests/culture_info_tests.cpp"
   "src/xtd/globalization/tests/culture_info_cultures_tests.cpp"
   "src/xtd/globalization/tests/culture_not_found_exception_tests.cpp"
+  "src/xtd/globalization/tests/culture_types_tests.cpp"
   "src/xtd/internal/tests/xtd_raw_array_data_tests.cpp"
   "src/xtd/io/tests/binary_reader_tests.cpp"
   "src/xtd/io/tests/directory_tests.cpp"

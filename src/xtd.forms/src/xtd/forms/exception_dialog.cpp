@@ -12,7 +12,6 @@
 #include <xtd/exception>
 #include <xtd/globalization/translator>
 #include <xtd/typeof>
-#include <memory>
 
 using namespace xtd;
 using namespace forms;

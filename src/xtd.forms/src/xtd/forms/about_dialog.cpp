@@ -16,7 +16,6 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/chrono>
 #include <xtd/globalization/translator>
-#include <memory>
 
 using namespace xtd;
 using namespace xtd::collections::generic;

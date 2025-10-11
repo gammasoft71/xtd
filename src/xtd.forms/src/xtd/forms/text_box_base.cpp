@@ -140,8 +140,8 @@ void text_box_base::clear() {
 
 void text_box_base::select(size_t start, size_t length) {
   if (data_->selection_start != start || length != data_->selection_length) {
-    if (start > text().length()) throw_helper::throws(exception_case::argument_out_of_range, "start greater than text size"_t);
-    if (start + length > text().length()) throw_helper::throws(exception_case::argument_out_of_range, "start + length greater than text size"_t);
+    if (start > text().length()) throw_helper::throws(exception_case::argument_out_of_range, "start greater than text size");
+    if (start + length > text().length()) throw_helper::throws(exception_case::argument_out_of_range, "start + length greater than text size");
     data_->selection_start = start;
     data_->selection_length = length;
   }

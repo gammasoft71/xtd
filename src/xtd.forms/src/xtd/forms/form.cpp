@@ -253,7 +253,7 @@ form& form::owner(std::nullptr_t) {
 }
 
 control& form::parent(const control& parent) {
-  throw_helper::throws(exception_case::invalid_operation, "Top-level control cannot be added to a control."_t);
+  throw_helper::throws(exception_case::invalid_operation, "Top-level control cannot be added to a control.");
 }
 
 bool form::show_icon() const noexcept {

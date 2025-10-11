@@ -204,7 +204,7 @@ xtd::diagnostics::assert_dialog_result debug::assert_dialog(bool condition, cons
 }
 
 xtd::string debug::assert_dialog_caption() {
-  return "Assertion Failed: Abort=Quit, Retry=Debug, Ignore=Continue"_t;
+  return "Assertion Failed: Abort=Quit, Retry=Debug, Ignore=Continue";
 }
 
 bool debug::internal_show_assert_dialog() noexcept {
