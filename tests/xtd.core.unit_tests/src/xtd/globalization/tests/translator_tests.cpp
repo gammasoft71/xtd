@@ -16,11 +16,11 @@ namespace xtd {
         static void class_initialize_(class_initialize) {
           translator::add_value("fr", "globalization_translator_key1", "globalization_translator_key1_fr");
         }
-
+        
         static void test_cleanup_(test_cleanup) {
           translator::language(null);
         }
-
+        
         void test_method_(language) {
           assert::are_equal(culture_info::current_culture().name().replace("-", "-"), translator::language());
         }
@@ -52,7 +52,7 @@ namespace xtd {
           assert::throws<argument_exception>([] {translator::language(" fr");});
           assert::throws<argument_exception>([] {translator::language("fr ");});
         }
-
+        
         void test_method_(language_with_null) {
           translator::language("fr");
           translator::language(null);
@@ -94,12 +94,12 @@ namespace xtd {
         void test_method_(translate_with_language_and_char32_ptr) {
           assert::are_equal("globalization_translator_key1_fr", translator::translate("fr", U"globalization_translator_key1"));
         }
-
+        
         void test_method_(translate_with_wchar_ptr) {
           translator::language("fr");
           assert::are_equal("globalization_translator_key1_fr", translator::translate(L"globalization_translator_key1"));
         }
-
+        
         void test_method_(translate_with_language_and_wchar_ptr) {
           assert::are_equal("globalization_translator_key1_fr", translator::translate("fr", L"globalization_translator_key1"));
         }
