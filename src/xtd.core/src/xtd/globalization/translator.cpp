@@ -1,9 +1,5 @@
 #include "../../../include/xtd/globalization/translator.hpp"
-#include "../../../include/xtd/environment.hpp"
-#include "../../../include/xtd/format_exception.hpp"
-#include "../../../include/xtd/string.hpp"
 #include "../../../include/xtd/collections/generic/list.hpp"
-#include "../../../include/xtd/collections/specialized/string_dictionary.hpp"
 #include "../../../include/xtd/globalization/culture_info.hpp"
 #include "../../../include/xtd/io/directory.hpp"
 #include "../../../include/xtd/io/file.hpp"
@@ -22,7 +18,7 @@ string_dictionary translator::languages_;
 optional<string> translator::language_;
 
 string translator::language() {
-  return language_.value_or(culture_info::current_culture().name());
+  return language_.value_or(system_language());
 }
 
 void translator::language(const string& language) {
@@ -86,13 +82,14 @@ bool translator::parse_file(const string& file, const string& language) {
 }
 
 bool translator::load_language(const xtd::string& language, const xtd::string& xtd_locale_path, const xtd::string& application_locale_path) {
-  if (!languages_.contains_key(language) || !language_values_.contains_key(language)) {
-    auto succeed = false;
-    if (directory::exists(xtd_locale_path)) succeed = parse_locale(xtd_locale_path, language);
-    if (directory::exists(application_locale_path)) succeed = parse_locale(application_locale_path, language);
-    if (succeed) languages_[language] = language;
+  lock_(languages_) {
+    if (!languages_.contains_key(language) || !language_values_.contains_key(language)) {
+      auto succeed = false;
+      if (directory::exists(xtd_locale_path)) succeed = parse_locale(xtd_locale_path, language);
+      if (directory::exists(application_locale_path)) succeed = parse_locale(application_locale_path, language);
+      if (succeed) languages_[language] = language;
+    }
   }
-  
   return language_values_.contains_key(languages_[language]);
 }
 
