@@ -169,8 +169,7 @@ string culture_info::to_locale_name(const string& name) {
   }
   locale_name = locale_name.replace("-", "_");
   auto index = locale_name.last_index_of("_");
-  if (!string::is_empty(locale_name) && index == npos) locale_name += "_" + locale_name.to_upper();
-  else if (index != npos && char_object::is_digit(locale_name, index + 1)) {
+  if (index != npos && char_object::is_digit(locale_name, index + 1)) {
     locale_name = locale_name.remove(index);
     locale_name += "_" + locale_name.to_upper();
   }
