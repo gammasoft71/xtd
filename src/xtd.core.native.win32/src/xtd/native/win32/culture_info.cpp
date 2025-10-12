@@ -13,6 +13,10 @@
 using namespace xtd::native;
 
 namespace {
+  char to_upper(char v) {
+    return static_cast<char>(std::toupper(static_cast<unsigned char>(v)));
+  }
+
   std::string to_locale_name(const std::string& name) {
     if (name.empty()) return "";
     static const std::vector<std::string> unsupported_scripts = {"-Adlm", "-Arab", "-Aran", "-Beng", "-Bopo", "-Cyrl", "-Deva", "-Ethi", "-Grek", "-Guru", "-Hans", "-Hant", "-Hebr", "-Latn", "-Kana", "-Mtei", "-Olck", "-Orya", "-Rohg", "-Telu", "-Tfng", "-Thai", "-Vaii", "-POSIX"};
@@ -27,14 +31,14 @@ namespace {
     auto index = locale_name.rfind('_');
     if (!locale_name.empty() && index == std::string::npos) {
       std::string upper = locale_name;
-      std::transform(upper.begin(), upper.end(), upper.begin(), ::toupper);
+      std::transform(upper.begin(), upper.end(), upper.begin(), to_upper);
       locale_name += "_" + upper;
     } else if (index != std::string::npos && index + 1 < locale_name.size()) {
       auto c = locale_name[index + 1];
       if (std::isdigit(static_cast<unsigned char>(c))) {
         locale_name.erase(index);
         std::string upper = locale_name;
-        std::transform(upper.begin(), upper.end(), upper.begin(), ::toupper);
+        std::transform(upper.begin(), upper.end(), upper.begin(), to_upper);
         locale_name += "_" + upper;
       }
     }
