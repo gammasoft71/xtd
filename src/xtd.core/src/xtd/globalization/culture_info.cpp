@@ -153,13 +153,15 @@ bool culture_info::is_system_locale_available(const string& name) noexcept {
 string culture_info::to_cldr_name(const string& name) {
   if (string::is_empty(name)) return "";
   if (name == "C" || name == "POSIX") return "en-US";
-  static const dictionary<string, string> locale_to_cldr_fixups = {{"zh_cn", "zh-Hans-CN"}, {"zh_sg", "zh-Hans-SG"}, {"zh_hk", "zh-Hant-HK"}, {"zh_tw", "zh-Hant-TW"}, {"zh_mo", "zh-Hant-MO"}, {"sr_rs", "sr-Cyrl-RS"}, {"sr_me", "sr-Latn-ME"}, {"sr_ba", "sr-Latn-BA"}, {"uz_uz", "uz-Latn-UZ"}, {"uz_af", "uz-Arab-AF"}, {"bs_ba", "bs-Latn-BA"}, {"az_az", "az-Latn-AZ"}, {"kk_kz", "kk-Cyrl-KZ"}, {"ur_pk", "ur-Arab-PK"}};
+  static const dictionary<string, string> locale_to_cldr_fixups = {{"ar_ar", "ar"}, {"az_az", "az-Latn-AZ"}, {"bs_ba", "bs-Latn-BA"}, {"en_en", "en"}, {"eo_eo", "eo"}, {"ff_bf", "ff-Latn-BF"}, {"ff_cm", "ff-Latn-CM"}, {"ff_gh", "ff-Latn-GH"}, {"ff_gm", "ff-Latn-GM"}, {"ff_gn", "ff-Latn-GN"}, {"ff_gw", "ff-Latn-GW"}, {"ff_lr", "ff-Latn-LR"}, {"ff_mr", "ff-Latn-MR"}, {"ff_ne", "ff-Latn-NE"}, {"ff_ng", "ff-Latn-NG"}, {"ff_sl", "ff-Latn-SL"}, {"ff_sn", "ff-Latn-SN"}, {"ia_ia", "ia"}, {"id_id", "id"}, {"kok_in", "kok-Deva-IN"}, {"ks_in", "ks-Arab-IN"}, {"mni_in", "mni-Beng-IN"}, {"pa_pk", "pa-Arab-PK"}, {"pa_in", "pa-Guru-IN"}, {"sat_in", "sat-Deva-IN"}, {"sd_pk", "sd-Arab-PK"}, {"sd_in", "sd-Deva-IN"}, {"shi_ma", "shi-Latn-MA"}, {"sr_xk", "sr-Latn-XK"}, {"sr_rs", "sr-Cyrl-RS"}, {"sr_me", "sr-Latn-ME"}, {"sr_ba", "sr-Latn-BA"}, {"su_id", "su-Latn-ID"}, {"ur_in", "ur-Arab-IN"}, {"ur_pk", "ur-Arab-PK"}, {"uz_uz", "uz-Latn-UZ"}, {"uz_af", "uz-Arab-AF"}, {"vai_lr", "vai-Latn-LR"}, {"zh_cn", "zh-Hans-CN"}, {"zh_sg", "zh-Hans-SG"}, {"zh_hk", "zh-Hant-HK"}, {"zh_tw", "zh-Hant-TW"}, {"zh_mo", "zh-Hant-MO"}};
   auto cldr_name = name.replace(".UTF-8", "");
-  return locale_to_cldr_fixups.contains_key(cldr_name) ? locale_to_cldr_fixups[cldr_name] : cldr_name.replace("_", "-");
+  return locale_to_cldr_fixups.contains_key(cldr_name.to_lower()) ? locale_to_cldr_fixups[cldr_name.to_lower()] : cldr_name.replace("_", "-");
 }
 
 string culture_info::to_locale_name(const string& name) {
   if (string::is_empty(name) || name == "C" || name == "POSIX") return name;
+  static const auto cldr_to_locale_fixups = dictionary<string, string> {{"ar", "ar_AR.UTF-8"}, {"en", "en_EN.UTF-8"}, {"eo", "eo_EN.UTF-8"}, {"ia", "ia_IA.UTF-8"}, {"id", "ia_ID.UTF-8"}};
+  if (cldr_to_locale_fixups.contains_key(name.to_lower())) return cldr_to_locale_fixups[name.to_lower()];
   static const array<string> unsupported_scripts = {"-Adlm", "-Arab", "-Aran", "-Beng", "-Bopo", "-Cyrl", "-Deva", "-Ethi", "-Grek", "-Guru", "-Hans", "-Hant", "-Hebr", "-Latn", "-Kana", "-Mtei", "-Olck", "-Orya", "-Rohg", "-Telu", "-Tfng", "-Thai", "-Vaii", "-POSIX"};
   auto locale_name = name;
   for (const auto& unsupported_script : unsupported_scripts) {
