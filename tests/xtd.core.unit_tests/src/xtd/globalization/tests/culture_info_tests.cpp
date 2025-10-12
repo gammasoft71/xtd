@@ -155,6 +155,8 @@ namespace xtd::globalization::tests {
     }
     
     void test_method_(create_with_posix_locale) {
+      // In Windows the std::locale {"POSIX"} does not work
+      if (environment::os_version().is_windows()) assert::ignore();
       auto culture = culture_info {std::locale {"POSIX"}};
       assert::are_equal(globalization::culture_types::specific_cultures, culture.culture_types());
       assert::are_equal("English (United States)", culture.display_name());
