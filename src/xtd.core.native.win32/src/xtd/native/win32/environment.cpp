@@ -30,7 +30,7 @@ namespace {
     // https://stackoverflow.com/questions/32115255/c-how-to-detect-windows-10
     NTSTATUS(WINAPI * RtlGetVersion)(LPOSVERSIONINFOEXW);
     auto os_info = OSVERSIONINFOEXW {};
-
+    
     *reinterpret_cast<FARPROC*>(&RtlGetVersion) = GetProcAddress(GetModuleHandleA("ntdll"), "RtlGetVersion");
     if (RtlGetVersion != nullptr) {
       os_info.dwOSVersionInfoSize = sizeof(os_info);
@@ -55,7 +55,7 @@ namespace {
 #pragma warning(pop)
     }
   }
-
+  
   tuple<string, string, string> get_windows_information() {
     // https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions
     auto major = -1, minor = -1, build = -1, revision = -1;

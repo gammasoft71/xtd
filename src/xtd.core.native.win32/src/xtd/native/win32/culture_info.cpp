@@ -16,7 +16,7 @@ namespace {
   char to_upper(char v) {
     return static_cast<char>(std::toupper(static_cast<unsigned char>(v)));
   }
-
+  
   std::string to_locale_name(const std::string& name) {
     if (name.empty()) return "";
     static const std::vector<std::string> unsupported_scripts = {"-Adlm", "-Arab", "-Aran", "-Beng", "-Bopo", "-Cyrl", "-Deva", "-Ethi", "-Grek", "-Guru", "-Hans", "-Hant", "-Hebr", "-Latn", "-Kana", "-Mtei", "-Olck", "-Orya", "-Rohg", "-Telu", "-Tfng", "-Thai", "-Vaii", "-POSIX"};
