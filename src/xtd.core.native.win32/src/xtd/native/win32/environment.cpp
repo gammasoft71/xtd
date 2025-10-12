@@ -25,12 +25,12 @@ auto __process_envs__ = map<string, string> {};
 auto __user_envs__ = map<string, string> {};
 
 namespace {
-  void get_windows_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) {
+  void get_windows_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision, bool& server) {
     // GetVersionEx (https://docs.microsoft.com/en-us/windows/win32/api/sysinfoapi/nf-sysinfoapi-getversionexa) allows you to get the version for a Windows 8 at most. For Windows 10 and more see :
     // https://stackoverflow.com/questions/32115255/c-how-to-detect-windows-10
     NTSTATUS(WINAPI * RtlGetVersion)(LPOSVERSIONINFOEXW);
     auto os_info = OSVERSIONINFOEXW {};
-    
+
     *reinterpret_cast<FARPROC*>(&RtlGetVersion) = GetProcAddress(GetModuleHandleA("ntdll"), "RtlGetVersion");
     if (RtlGetVersion != nullptr) {
       os_info.dwOSVersionInfoSize = sizeof(os_info);
@@ -39,6 +39,7 @@ namespace {
       minor = os_info.dwMinorVersion;
       build = os_info.dwBuildNumber;
       revision = (os_info.wServicePackMajor << 10) | os_info.wServicePackMinor;
+      server = os_info.wProductType != VER_NT_WORKSTATION;
     } else {
 #pragma warning(push)
 #pragma warning(disable : 4996)
@@ -49,44 +50,62 @@ namespace {
         minor = version_info.dwMinorVersion;
         build = version_info.dwBuildNumber;
         revision = (version_info.wServicePackMajor << 16) | version_info.wServicePackMinor;
+        server = version_info.wProductType != VER_NT_WORKSTATION;
       }
 #pragma warning(pop)
     }
   }
-  
+
   tuple<string, string, string> get_windows_information() {
     // https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions
     auto major = -1, minor = -1, build = -1, revision = -1;
-    get_windows_version(major, minor, build, revision);
-    if (build >= 26200) return make_tuple("Windows 11", "Selenium", "25H2");
-    if (build >= 26100) return make_tuple("Windows 11", "Germanium", "24H2");
-    if (build >= 22631) return make_tuple("Windows 11", "Nickel", "23H2");
-    if (build >= 22621) return make_tuple("Windows 11", "Nickel", "22H2");
-    if (build >= 22000) return make_tuple("Windows 11", "Cobalt", "21H2");
-    if (build >= 19045) return make_tuple("Windows 10", "Vibranium", "22H2");
-    if (build >= 19044) return make_tuple("Windows 10", "Vibranium", "21H2");
-    if (build >= 19043) return make_tuple("Windows 10", "Vibranium", "21H1");
-    if (build >= 19042) return make_tuple("Windows 10", "Vibranium", "20H2");
-    if (build >= 19041) return make_tuple("Windows 10", "Vibranium", "2004");
-    if (build >= 18363) return make_tuple("Windows 10", "Vanadium", "1909");
-    if (build >= 18362) return make_tuple("Windows 10", "19H1", "1903");
-    if (build >= 17763) return make_tuple("Windows 10", "Redstone 5", "1809");
-    if (build >= 17134) return make_tuple("Windows 10", "Redstone 4", "1803");
-    if (build >= 16299) return make_tuple("Windows 10", "Redstone 3", "1709");
-    if (build >= 15063) return make_tuple("Windows 10", "Redstone 2", "1703");
-    if (build >= 14393) return make_tuple("Windows 10", "Redstone 1", "1607");
-    if (build >= 10586) return make_tuple("Windows 10", "Threshold 2", "1511");
-    if (build >= 10240) return make_tuple("Windows 10", "Threshold", "1507");
-    if (build >= 9600) return make_tuple("Windows 8.1", "Blue", "");
-    if (build >= 9200) return make_tuple("Windows 8", "Windows 8", "");
-    if (build >= 7601) return make_tuple("Windows 7", "Windows 7", "");
-    if (build >= 6002) return make_tuple("Windows Vista", "Longhorn", "");
-    if (build >= 3790) return make_tuple("Windows XP", "Anvil", "");
-    if (build >= 3000) return make_tuple("Windows Me", "Millennium", "");
-    if (build >= 2710) return make_tuple("Windows XP", "Emerald", "");
-    if (build >= 2700) return make_tuple("Windows XP", "Symphony", "");
-    if (build >= 2600) return make_tuple("Windows XP", "Whistler", "");
-    if (build >= 2222) return make_tuple("Windows Windows 98 Second Edition", "", "");
+    auto server = false;
+    get_windows_version(major, minor, build, revision, server);
+    if (!server && build >= 26200) return make_tuple("Windows 11", "Selenium", "25H2");
+    if (!server && build >= 26100) return make_tuple("Windows 11", "Germanium", "24H2");
+    if (server && build >= 26100) return make_tuple("Windows Server 2025", "Germanium", "24H2");
+    if (server && build >= 25398) return make_tuple("Windows Server, version 23H2", "Zinc", "23H2");
+    if (!server && build >= 22631) return make_tuple("Windows 11", "Nickel", "23H2");
+    if (!server && build >= 22621) return make_tuple("Windows 11", "Nickel", "22H2");
+    if (!server && build >= 22000) return make_tuple("Windows 11", "Cobalt", "21H2");
+    if (server && build >= 20348) return make_tuple("Windows Server 2022", "Iron", "21H2");
+    if (!server && build >= 19045) return make_tuple("Windows 10", "Vibranium", "22H2");
+    if (!server && build >= 19044) return make_tuple("Windows 10", "Vibranium", "21H2");
+    if (!server && build >= 19043) return make_tuple("Windows 10", "Vibranium", "21H1");
+    if (!server && build >= 19042) return make_tuple("Windows 10", "Vibranium", "20H2");
+    if (server && build >= 19042) return make_tuple("Windows Server, version 20H2", "Iron", "20H2");
+    if (!server && build >= 19041) return make_tuple("Windows 10", "Vibranium", "2004");
+    if (server && build >= 19041) return make_tuple("Windows Server, version 2004", "Vibranium", "2004");
+    if (!server && build >= 18363) return make_tuple("Windows 10", "Vanadium", "1909");
+    if (server && build >= 18363) return make_tuple("Windows Server, version 1909", "Vanadium", "1909");
+    if (!server && build >= 18362) return make_tuple("Windows 10", "19H1", "1903");
+    if (server && build >= 18362) return make_tuple("Windows Server, version 1903", "Redstone 5", "1903");
+    if (!server && build >= 17763) return make_tuple("Windows 10", "Redstone 5", "1809");
+    if (server && build >= 17763) return make_tuple("Windows Server 2019", "Redstone 5", "1809");
+    if (!server && build >= 17134) return make_tuple("Windows 10", "Redstone 4", "1803");
+    if (server && build >= 17134) return make_tuple("Windows Server, version 1803", "Redstone 4", "1803");
+    if (!server && build >= 16299) return make_tuple("Windows 10", "Redstone 3", "1709");
+    if (server && build >= 16299) return make_tuple("Windows Server, version 1709", "Redstone 3", "1709");
+    if (!server && build >= 15063) return make_tuple("Windows 10", "Redstone 2", "1703");
+    if (!server && build >= 14393) return make_tuple("Windows 10", "Redstone 1", "1607");
+    if (server && build >= 14393) return make_tuple("Windows Server 2016", "Redstone", "1607");
+    if (!server && build >= 10586) return make_tuple("Windows 10", "Threshold 2", "1511");
+    if (!server && build >= 10240) return make_tuple("Windows 10", "Threshold", "1507");
+    if (!server && build >= 9600) return make_tuple("Windows 8.1", "Blue", "");
+    if (server && build >= 9600) return make_tuple("Windows Server 2012 R2", "Windows Server Blue", "");
+    if (!server && build >= 9200) return make_tuple("Windows 8", "Windows 8", "");
+    if (server && build >= 9200) return make_tuple("Windows Server 2012", "Windows Server 8", "");
+    if (!server && build >= 7601) return make_tuple("Windows 7", "Windows 7", "");
+    if (server && build >= 7601) return make_tuple("Windows Server 2008 R2", "Windows Server 7", "");
+    if (server && build >= 6003) return make_tuple("Windows Server 2008", "Longhorn Server", "");
+    if (!server && build >= 6002) return make_tuple("Windows Vista", "Longhorn", "");
+    if (!server && build >= 3790) return make_tuple("Windows XP", "Anvil", "");
+    if (server && build >= 3790) return make_tuple("Windows Server 2003 R2", "Whistler Server", "");
+    if (!server && build >= 3000) return make_tuple("Windows Me", "Millennium", "");
+    if (!server && build >= 2710) return make_tuple("Windows XP", "Emerald", "");
+    if (!server && build >= 2700) return make_tuple("Windows XP", "Symphony", "");
+    if (!server && build >= 2600) return make_tuple("Windows XP", "Whistler", "");
+    if (!server && build >= 2222) return make_tuple("Windows Windows 98 Second Edition", "", "");
     if (build >= 2195) return make_tuple("Windows 2000", "Windows NT 5.0", "");
     if (build >= 1998) return make_tuple("Windows Windows 98", "Memphis", "");
     if (build >= 1381) return make_tuple("Windows NT 4.0", "Shell Update Release", "");
@@ -98,7 +117,8 @@ namespace {
     if (build >= 153) return make_tuple("Windows 3.2", "", "");
     if (build >= 103) return make_tuple("Windows 3.1", "", "");
     if (build >= 102) return make_tuple("Windows 3.1", "Sparta", "");
-    return {"Windows", "", ""};
+    if (!server) return make_tuple("Windows", "", "");
+    return make_tuple("Windows Server", "", "");
   }
 }
 
@@ -257,7 +277,8 @@ int32_t environment::get_os_platform_id() {
 }
 
 void environment::get_os_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) {
-  return get_windows_version(major, minor, build, revision);
+  auto server = false;
+  return get_windows_version(major, minor, build, revision, server);
 }
 
 uint32_t environment::get_processor_count() {
