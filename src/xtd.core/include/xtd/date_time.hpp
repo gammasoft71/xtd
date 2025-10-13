@@ -15,9 +15,6 @@
 #include "time_span.hpp"
 #include "string.hpp"
 #include <ctime>
-#if defined(__xtd__cpp_lib_format)
-#include <format>
-#endif
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -215,8 +212,7 @@ namespace xtd {
     /// @remarks This constructor can be used for example to convert [std::chrono::system_clock::time_point](https://en.cppreference.com/w/cpp/chrono/system_clock) to xtd::date_time.
     template<class clock_t, class duration_t = clock_t::duration> // Can't be explicit by design.
     date_time(const std::chrono::time_point<clock_t, duration_t>& time_point) {
-      using namespace std::chrono;
-      *this = from_time_t(system_clock::to_time_t(system_clock::now() + duration_cast<system_clock::duration>(time_point - clock_t::now())), date_time_kind::local);
+      *this = from_time_t(std::chrono::system_clock::to_time_t(std::chrono::system_clock::now() + std::chrono::duration_cast<std::chrono::system_clock::duration>(time_point - clock_t::now())), date_time_kind::local);
     }
     
     /// @brief Initializes a new instance of the xtd::date_time structure to a specified time point, and Coordinated Universal Time (UTC) or local time.
@@ -225,8 +221,7 @@ namespace xtd {
     /// @remarks This constructor can be used for example to convert [std::chrono::system_clock::time_point](https://en.cppreference.com/w/cpp/chrono/system_clock) to xtd::date_time.
     template<class clock_t, class duration_t = clock_t::duration>
     date_time(const std::chrono::time_point<clock_t, duration_t>& time_point, date_time_kind kind) {
-      using namespace std::chrono;
-      *this = from_time_t(system_clock::to_time_t(system_clock::now() + duration_cast<system_clock::duration>(time_point - clock_t::now())), kind);
+      *this = from_time_t(std::chrono::system_clock::to_time_t(std::chrono::system_clock::now() + std::chrono::duration_cast<std::chrono::system_clock::duration>(time_point - clock_t::now())), kind);
     }
     /// @}
     
