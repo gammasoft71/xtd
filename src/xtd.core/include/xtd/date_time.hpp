@@ -2,6 +2,7 @@
 /// @brief Contains xtd::date_time class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+#include "globalization/culture_info.hpp"
 #include "chrono.hpp"
 #include "date_time_kind.hpp"
 #include "day_of_week.hpp"
@@ -781,7 +782,7 @@ namespace xtd {
     xtd::string to_string(const string& format) const;
     /// @brief Converts the value of the current xtd::date_time object to its equivalent string representation using the specified format and the formatting conventions of the current culture.
     /// @param format A standard or custom date and time format string.
-    /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
+    /// @param culture An xtd::globalization::culture_info object that contains culture information.
     /// @return A string representation of value of the current xtd::date_time object as specified by format.
     /// @exception xtd::format_excpetion The length of format is 1, and it is not a valid format characters<br>-or-<br>The length si greater than 1.
     /// @par Examples
@@ -806,11 +807,11 @@ namespace xtd {
     /// | `"U"`                      | Universal full date/time pattern.                                                | 2009-06-15T13:45:30 -> Monday, June 15, 2009 8:45:30 PM (en-US) <br><br>  2009-06-15T13:45:30 -> den 15 juni 2009 20:45:30 (sv-SE) <br><br> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 8:45:30 μμ (el-GR)                                                   |
     /// | `"Y"`, `"y"`               | Year month pattern.                                                              | 2009-06-15T13:45:30 -> June 2009 (en-US) <br><br> 2009-06-15T13:45:30 -> juni 2009 (da-DK) <br><br> 2009-06-15T13:45:30 -> Juni 2009 (id-ID)                                                                                                                     |
     /// | Any other single character | Unknown specifier.                                                               | Throws a run-time xtd::format_exception.                                                                                                                                                                                                                         |
-    xtd::string to_string(const string& format, const std::locale& loc) const override;
+    xtd::string to_string(const string& format, const std::locale& culture) const override;
     /// @brief Converts the value of the current xtd::date_time object to its equivalent string representation using the specified culture.
-    /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
+    /// @param loc An xtd::globalization::culture_info object that contains culture information.
     /// @return A string representation of value of the current xtd::date_time object as specifiedc ulture.
-    xtd::string to_string(const std::locale& loc) const;
+    xtd::string to_string(const xtd::globalization::culture_info& culture) const;
     
     /// @brief Converts the value of the current xtd::date_time object to [std::time_t](https://en.cppreference.com/w/cpp/chrono/c/time_t).
     /// @return The value of the current xtd::date_time object expressed as [std::time_t](https://en.cppreference.com/w/cpp/chrono/c/time_t).
@@ -1005,7 +1006,7 @@ namespace xtd {
     /// @remarks If s contains time zone information, this method returns a xtd::date_time value whose xtd::date_time::kind property is xtd::date_time_kind::local and converts the date and time in s to local time. Otherwise, it performs no time zone conversion and returns a xtd::date_time value whose Kind property is DateTimeKind.Unspecified.
     /// @remarks This overload attempts to parse s by using the formatting conventions of the current culture. The current culture is indicated by the CurrentCulture property. To parse a string using the formatting conventions of a specific culture, call the Parse(String, IFormatProvider) or the Parse(String, IFormatProvider, DateTimeStyles) overloads.
     /// @remarks This overload attempts to parse s by using DateTimeStyles.AllowWhiteSpaces style.
-    static date_time parse(const xtd::string& s, const std::locale& loc);
+    static date_time parse(const xtd::string& s, const xtd::globalization::culture_info& culture);
     
     /// @brief Creates a new xtd::date_time object that has the same number of ticks as the specified xtd::date_time, but is designated as either local time, Coordinated Universal Time (UTC), or neither, as indicated by the specified xtd::date_time_kind value.
     /// @param value A date and time.
@@ -1087,7 +1088,7 @@ namespace xtd {
     /// @brief Returns a xtd::string that represents the current xtd::date_time.
     /// @param format Format-control String.
     /// @param value The xtd::date_time object to format.
-    /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
+    /// @param culture An xtd::globalization::culture_info object that contains culture information.
     /// @return A xtd::string that represents the current xtd::date_time.
     /// @par Examples
     /// The following example shows how to use xtd::date_time::sprintf with differentt formats.
@@ -1152,7 +1153,7 @@ namespace xtd {
     /// | `%%n`  | writes newline character.                                                                                                   |
     /// | `%%t`  | writes horizontal tab character.                                                                                            |
     /// @remarks See [std::put_time](https://en.cppreference.com/w/cpp/io/manip/put_time) for more information.
-    static xtd::string sprintf(const string& format, const date_time& value, const std::locale& loc);
+    static xtd::string sprintf(const string& format, const date_time& value, const xtd::globalization::culture_info& culture);
     
     /// @brief Converts the specified string representation of a date and time to its xtd::date_time equivalent and returns a value that indicates whether the conversion succeeded.
     /// @param s A string containing a date and time to convert.
@@ -1165,12 +1166,12 @@ namespace xtd {
     /// @param result When this method returns, contains the xtd::date_time value equivalent to the date and time contained in s, if the conversion succeeded, or xtd::date_time::min_value if the conversion failed. The conversion fails if the s parameter is an empty string (""), or does not contain a valid string representation of a date and time.
     /// @return `true` if the s parameter was converted successfully; otherwise, `false`.
     /// @remarks The xtd::date_time::try_parse method is similar to the xtd::date_time::parse method, except that the xtd::date_time::try_parse method does not throw an exception if the conversion fails.
-    static bool try_parse(const string& s, date_time& result, const std::locale& loc) noexcept;
+    static bool try_parse(const string& s, date_time& result, const xtd::globalization::culture_info& culture) noexcept;
     
     static bool try_parse_exact(const string& text, const string& format, date_time& result) noexcept;
-    static bool try_parse_exact(const string& text, const string& format, date_time& result, const std::locale& loc) noexcept;
+    static bool try_parse_exact(const string& text, const string& format, date_time& result, const xtd::globalization::culture_info& culture) noexcept;
     static bool try_parse_exact(const string& text, const array<string>& formats, date_time& result) noexcept;
-    static bool try_parse_exact(const string& text, const array<string>& formats, date_time& result, const std::locale& loc) noexcept;
+    static bool try_parse_exact(const string& text, const array<string>& formats, date_time& result, const xtd::globalization::culture_info& culture) noexcept;
     /// @}
     
     /// @cond
@@ -1196,8 +1197,9 @@ namespace xtd {
     xtd::ticks utc_offset() const;
     std::tuple<uint32, uint32, uint32, uint32, uint32, uint32, uint32, int32> get_date_time() const;
     void set_date_time(uint32 year, uint32 month, uint32 day, uint32 hour, uint32 minute, uint32 second, uint32 millisecond, date_time_kind kind);
-    string to_string_custom(const string& format, const std::locale& loc) const;
-    
+    string to_string_custom(const string& format, const xtd::globalization::culture_info& culture) const;
+    string to_string_put_time(const string& format, const xtd::globalization::culture_info& culture) const;
+
     xtd::ticks value_ {0};
     date_time_kind kind_ {date_time_kind::unspecified};
   };

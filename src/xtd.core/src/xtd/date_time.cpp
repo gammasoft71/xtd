@@ -19,6 +19,7 @@
 using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::helpers;
+using namespace xtd::globalization;
 using namespace xtd::text;
 
 namespace {
@@ -141,47 +142,47 @@ namespace {
     return time;
   }
   
-  static array<string> get_days(const std::locale& loc) {
+  static array<string> get_days(const culture_info& culture) {
     auto days = list<string> {};
     for (auto index = 1; index <= 7; ++index)
-      days.add(date_time::sprintf("%A", date_time::from_tm(make_tm_time(1970, 1, index + 4, 0, 0, 0)), loc));
+      days.add(date_time::sprintf("%A", date_time::from_tm(make_tm_time(1970, 1, index + 4, 0, 0, 0)), culture));
     return days.to_array();
   }
   
-  static array<string> get_months(const std::locale& loc) {
+  static array<string> get_months(const culture_info& culture) {
     auto months = list<string> {};
     for (auto index = 1; index <= 12; ++index)
-      months.add(date_time::sprintf("%B", date_time::from_tm(make_tm_time(1970, index, 1, 0, 0, 0)), loc));
+      months.add(date_time::sprintf("%B", date_time::from_tm(make_tm_time(1970, index, 1, 0, 0, 0)), culture));
     return months.to_array();
   }
   
-  static array<string> get_short_days(const std::locale& loc) {
+  static array<string> get_short_days(const culture_info& culture) {
     auto days = list<string> {};
     for (auto index = 1; index <= 7; ++index)
-      days.add(date_time::sprintf("%a", date_time::from_tm(make_tm_time(1970, 1, index + 4, 0, 0, 0)), loc));
+      days.add(date_time::sprintf("%a", date_time::from_tm(make_tm_time(1970, 1, index + 4, 0, 0, 0)), culture));
     return days.to_array();
   }
   
-  static array<string> get_short_months(const std::locale& loc) {
+  static array<string> get_short_months(const culture_info& culture) {
     static auto months = list<string> {};
     if (months.count()) return months.to_array();
     for (auto index = 1; index <= 12; ++index)
-      months.add(date_time::sprintf("%b", date_time::from_tm(make_tm_time(1970, index, 1, 0, 0, 0)), loc));
+      months.add(date_time::sprintf("%b", date_time::from_tm(make_tm_time(1970, index, 1, 0, 0, 0)), culture));
     return months.to_array();
   }
   
-  static string get_time_suffix(const date_time& dt, const std::locale& loc) {
-    auto suffix = date_time::sprintf("%p", dt, loc);
+  static string get_time_suffix(const date_time& dt, const culture_info& culture) {
+    auto suffix = date_time::sprintf("%p", dt, culture);
     if (!string::is_empty(suffix)) return suffix;
-    suffix = date_time::sprintf("%p", dt, std::locale("en_US"));
+    suffix = date_time::sprintf("%p", dt, culture_info {"en-US"});
     if (!string::is_empty(suffix)) return suffix;
     return dt.hour() / 12 ? "PM" : "AM";
   }
   
-  static array<string> get_time_suffixes(const std::locale& loc) {
+  static array<string> get_time_suffixes(const culture_info& culture) {
     auto suffixes = list<string> {};
     for (auto dt : {date_time::from_tm(make_tm_time(1970, 1, 1, 1, 0, 0)), date_time::from_tm(make_tm_time(1970, 1, 1, 13, 0, 0))})
-      suffixes.add(get_time_suffix(dt, loc));
+      suffixes.add(get_time_suffix(dt, culture));
     return suffixes.to_array();
   }
   
@@ -193,10 +194,10 @@ namespace {
     return math::min(max_char, count);
   }
   
-  static string to_string_custom_day(const string& format, size& index, uint32 day, const date_time& dt, const std::locale& loc) {
+  static string to_string_custom_day(const string& format, size& index, uint32 day, const date_time& dt, const culture_info& culture) {
     auto count = to_string_custom_char_count(format, index, 4_z);
-    if (count == 4) return date_time::sprintf("%A", dt, loc);
-    if (count == 3) return date_time::sprintf("%a", dt, loc);
+    if (count == 4) return date_time::sprintf("%A", dt, culture);
+    if (count == 3) return date_time::sprintf("%a", dt, culture);
     if (count == 2) return string::format("{:D2}", day);
     return string::format("{:D}", day);
   }
@@ -224,10 +225,10 @@ namespace {
     return string::format("{:D}", minute);
   }
   
-  static string to_string_custom_month(const string& format, size& index, uint32 month, const date_time& dt, const std::locale& loc) {
+  static string to_string_custom_month(const string& format, size& index, uint32 month, const date_time& dt, const culture_info& culture) {
     auto count = to_string_custom_char_count(format, index, 4_z);
-    if (count == 4) return date_time::sprintf("%B", dt, loc);
-    if (count == 3) return date_time::sprintf("%b", dt, loc);
+    if (count == 4) return date_time::sprintf("%B", dt, culture);
+    if (count == 3) return date_time::sprintf("%b", dt, culture);
     if (count == 2) return string::format("{:D2}", month);
     return string::format("{:D}", month);
   }
@@ -245,9 +246,9 @@ namespace {
     return string::format("{:D}", second);
   }
   
-  static string to_string_custom_time_suffix(const string& format, size& index, uint32 hour, const date_time& dt, const std::locale& loc) {
+  static string to_string_custom_time_suffix(const string& format, size& index, uint32 hour, const date_time& dt, const culture_info& culture) {
     auto count = to_string_custom_char_count(format, index, 2_z);
-    return get_time_suffix(dt, loc).substring(0, count);
+    return get_time_suffix(dt, culture).substring(0, count);
   }
   
   static string to_string_custom_time_zone_information(const string& format, size& index, date_time_kind kind, int64 offset_sec) {
@@ -272,10 +273,10 @@ namespace {
   }
   #endif
   
-  string date_time_formatter(string fmt, const std::tm& time, uint32 nanoseconds, const std::locale& loc) {
+  string date_time_formatter(string fmt, const std::tm& time, uint32 nanoseconds, const culture_info& culture) {
     auto dt = xtd::date_time(time.tm_year + 1900, time.tm_mon + 1, time.tm_mday, time.tm_hour, time.tm_min, time.tm_sec);
     dt.add_ticks(nanoseconds * 100);
-    return dt.to_string(fmt, loc);
+    return dt.to_string(fmt, culture);
   }
 }
 
@@ -543,12 +544,12 @@ bool date_time::is_leap_year(uint32 year) {
 }
 
 date_time date_time::parse(const xtd::string& s) {
-  return parse(s, std::locale {});
+  return parse(s, culture_info::current_culture());
 }
 
-date_time date_time::parse(const xtd::string& s, const std::locale& loc) {
+date_time date_time::parse(const xtd::string& s, const culture_info& culture) {
   auto result = date_time {};
-  if (!try_parse(s, result, loc)) throw_helper::throws(exception_case::format);
+  if (!try_parse(s, result, culture)) throw_helper::throws(exception_case::format);
   return result;
 }
 
@@ -560,15 +561,11 @@ date_time date_time::specify_kind(const date_time& value, date_time_kind kind) {
 }
 
 string date_time::sprintf(const string& format, const date_time& value) {
-  return sprintf(format, value, std::locale {});
+  return sprintf(format, value, culture_info::current_culture());
 }
 
-string date_time::sprintf(const string& format, const date_time& value, const std::locale& loc) {
-  auto result = std::stringstream {};
-  result.imbue(loc);
-  auto tm_value = value.to_tm();
-  result << std::put_time(&tm_value, format.chars().c_str());
-  return result.str();
+string date_time::sprintf(const string& format, const date_time& value, const culture_info& culture) {
+  return value.to_string_put_time(format, culture);
 }
 
 time_span date_time::subtract(const date_time& value) const {
@@ -625,10 +622,11 @@ xtd::string date_time::to_string() const noexcept {
 }
 
 string date_time::to_string(const string& format) const {
-  return to_string(format, std::locale {});
+  return to_string(format, culture_info::current_culture());
 }
 
 string date_time::to_string(const string& format, const std::locale& loc) const {
+  if (format.length() > 1 && format.find_first_of('%') != npos) return to_string_put_time(format, loc);
   if (format.length() > 1) return to_string_custom(format, loc);
   if (xtd::string::is_empty(format)) return to_string_custom(custom_formats['G'], loc);
   
@@ -636,8 +634,8 @@ string date_time::to_string(const string& format, const std::locale& loc) const 
   return to_string_custom(custom_formats[format[0]], loc);
 }
 
-string date_time::to_string(const std::locale& loc) const {
-  return to_string("", loc);
+string date_time::to_string(const culture_info& culture) const {
+  return to_string("", culture);
 }
 
 std::time_t date_time::to_time_t() const {
@@ -673,15 +671,15 @@ date_time date_time::to_universal_time() const {
 }
 
 bool date_time::try_parse(const string& s, date_time& result) noexcept {
-  return try_parse(s, result, std::locale {});
+  return try_parse(s, result, culture_info::current_culture());
 }
 
-bool date_time::try_parse(const string& s, date_time& result, const std::locale& loc) noexcept {
-  return try_parse_exact(s, array<string> {"d", "D", "f", "F", "g", "G", "m", "M", "o", "O", "r", "R", "s", "t", "T", "u", "U", "y", "Y"}, result, loc);
+bool date_time::try_parse(const string& s, date_time& result, const culture_info& culture) noexcept {
+  return try_parse_exact(s, array<string> {"d", "D", "f", "F", "g", "G", "m", "M", "o", "O", "r", "R", "s", "t", "T", "u", "U", "y", "Y"}, result, culture);
 }
 
 bool date_time::try_parse_exact(const string& text, const string& format, date_time& result) noexcept {
-  return try_parse_exact(text, format, result, std::locale {});
+  return try_parse_exact(text, format, result, culture_info::current_culture());
 }
 
 namespace {
@@ -695,10 +693,10 @@ namespace {
     return true;
   }
   
-  bool try_parse_exact_month(const string& text, const string& format, size& text_index, size& format_index, uint32& month, const std::locale& loc) noexcept {
+  bool try_parse_exact_month(const string& text, const string& format, size& text_index, size& format_index, uint32& month, const culture_info& culture) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 4_z);
     if (count == 3 || count == 4) {
-      auto months = count == 3 ? get_short_months(loc) : get_months(loc);
+      auto months = count == 3 ? get_short_months(loc) : get_months(culture);
       for (auto index = 0_z; index < months.length(); ++index)
         if (text.substring(text_index).starts_with(months[index])) {
           month = as<int32>(index + 1);
@@ -712,10 +710,10 @@ namespace {
     return true;
   }
   
-  bool try_parse_exact_day(const string& text, const string& format, size& text_index, size& format_index, uint32& day, const std::locale& loc) noexcept {
+  bool try_parse_exact_day(const string& text, const string& format, size& text_index, size& format_index, uint32& day, const culture_info& culture) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 4_z);
     if (count == 3 || count == 4) {
-      auto days = count == 3 ? get_short_days(loc) : get_days(loc);
+      auto days = count == 3 ? get_short_days(loc) : get_days(culture);
       for (auto index = 0_z; index < days.length(); ++index)
         if (text.substring(text_index).starts_with(days[index])) {
           //day = as<int32>(index + 1);
@@ -781,7 +779,7 @@ namespace {
     return true;
   }
   
-  bool try_parse_exact_time_suffix(const string& text, const string& format, size& text_index, size& format_index, uint32& hour, const std::locale& loc) noexcept {
+  bool try_parse_exact_time_suffix(const string& text, const string& format, size& text_index, size& format_index, uint32& hour, const culture_info& culture) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 2_z);
     auto suffix = text.substring(text_index, count);
     if (suffix == get_time_suffixes(loc)[0].substring(0, count)) {
@@ -818,7 +816,7 @@ namespace {
   }
 }
 
-bool date_time::try_parse_exact(const string& text, const string& format, date_time& result, const std::locale& loc) noexcept {
+bool date_time::try_parse_exact(const string& text, const string& format, date_time& result, const culture_info& culture) noexcept {
   if (string::is_empty(text) || string::is_empty(format)) return false;
   auto fmt = (format.length() == 1_z && custom_formats.contains_key(format[0])) ? custom_formats[format[0]] : format;
   auto txt = text;
@@ -831,14 +829,14 @@ bool date_time::try_parse_exact(const string& text, const string& format, date_t
   for (auto fmt_index = 0_z; valid && fmt_index < fmt.length(); ++fmt_index) {
     switch (fmt[fmt_index]) {
       case 'y': valid = try_parse_exact_year(txt, fmt, txt_index, fmt_index, year); break;
-      case 'M': valid = try_parse_exact_month(txt, fmt, txt_index, fmt_index, month, loc); break;
-      case 'd': valid = try_parse_exact_day(txt, fmt, txt_index, fmt_index, day, loc); break;
+      case 'M': valid = try_parse_exact_month(txt, fmt, txt_index, fmt_index, month, culture); break;
+      case 'd': valid = try_parse_exact_day(txt, fmt, txt_index, fmt_index, day, culture); break;
       case 'H': valid = try_parse_exact_hour_24(txt, fmt, txt_index, fmt_index, hour); break;
       case 'h': valid = try_parse_exact_hour_12(txt, fmt, txt_index, fmt_index, hour); break;
       case 'm': valid = try_parse_exact_minute(txt, fmt, txt_index, fmt_index, minute); break;
       case 's': valid = try_parse_exact_second(txt, fmt, txt_index, fmt_index, second); break;
       case 'f': valid = try_parse_exact_fraction(txt, fmt, txt_index, fmt_index, ticks); break;
-      case 't': valid = try_parse_exact_time_suffix(txt, fmt, txt_index, fmt_index, hour, loc); break;
+      case 't': valid = try_parse_exact_time_suffix(txt, fmt, txt_index, fmt_index, hour, culture); break;
       case 'K': valid = try_parse_exact_offset_utc(txt, fmt, txt_index, fmt_index, ticks); break;
       default: valid = fmt[fmt_index] == text[txt_index++]; break;
     }
@@ -851,12 +849,12 @@ bool date_time::try_parse_exact(const string& text, const string& format, date_t
 }
 
 bool date_time::try_parse_exact(const string& text, const array<string>& formats, date_time& result) noexcept {
-  return try_parse_exact(text, formats, result, std::locale {});
+  return try_parse_exact(text, formats, result, culture_info::current_culture());
 }
 
-bool date_time::try_parse_exact(const string& text, const array<string>& formats, date_time& result, const std::locale& loc) noexcept {
+bool date_time::try_parse_exact(const string& text, const array<string>& formats, date_time& result, const culture_info& culture) noexcept {
   for (auto& format : formats)
-    if (try_parse_exact(text, format, result, loc)) return true;
+    if (try_parse_exact(text, format, result, culture)) return true;
   return false;
 }
 
@@ -963,7 +961,7 @@ void date_time::set_date_time(uint32 year, uint32 month, uint32 day, uint32 hour
   kind_ = kind;
 }
 
-string date_time::to_string_custom(const string& format, const std::locale& loc) const {
+string date_time::to_string_custom(const string& format, const culture_info& culture) const {
   [[maybe_unused]] auto [year, month, day, hour, minute, second, day_of_year, day_of_week] = get_date_time();
   auto offset_sec = kind_ == date_time_kind::utc ? 0 : utc_offset().count() / ticks_per_second;
   
@@ -972,16 +970,16 @@ string date_time::to_string_custom(const string& format, const std::locale& loc)
     if (format[index] == '\\') result += index + 1 < format.length() ? as<string>(format[++index]) : ""_s;
     else {
       switch (format[index]) {
-        case 'd': result += to_string_custom_day(format, index, day, self_, loc); break;
+        case 'd': result += to_string_custom_day(format, index, day, self_, culture); break;
         case 'f':
         case 'F': result += to_string_custom_fraction(format, index, ticks()); break;
         case 'h': result += to_string_custom_hour(format, index, hour % 12 == 0 && hour != 0 ? 12 : hour % 12); break;
         case 'H': result += to_string_custom_hour(format, index, hour); break;
         case 'K': result += to_string_custom_time_zone_information(format, index, kind_, offset_sec); break;
         case 'm': result += to_string_custom_minute(format, index, minute); break;
-        case 'M': result += to_string_custom_month(format, index, month, self_, loc); break;
+        case 'M': result += to_string_custom_month(format, index, month, self_, culture); break;
         case 's': result += to_string_custom_second(format, index, second); break;
-        case 't': result += to_string_custom_time_suffix(format, index, hour, self_, loc); break;
+        case 't': result += to_string_custom_time_suffix(format, index, hour, self_, culture); break;
         case 'y': result += to_string_custom_year(format, index, year); break;
         case 'z': result += to_string_custom_offset_utc(format, index, offset_sec); break;
         default: result += format[index]; break;
@@ -990,6 +988,14 @@ string date_time::to_string_custom(const string& format, const std::locale& loc)
   }
   
   return result;
+}
+
+string date_time::to_string_put_time(const string& format, const culture_info& culture) const {
+  auto result = std::stringstream {};
+  result.imbue(culture);
+  auto tm_value = to_tm();
+  result << std::put_time(&tm_value, format.chars().c_str());
+  return result.str();
 }
 
 // These four following metheds are defined in include/xtd/internal/__date_time_formater.hpp file
