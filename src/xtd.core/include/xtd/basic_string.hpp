@@ -27,9 +27,6 @@
 #include "types.hpp"
 #include "unused.hpp"
 #include <cctype>
-#if defined(__xtd__cpp_lib_format)
-#include <format>
-#endif
 #include <iomanip>
 #include <ostream>
 #include <sstream>
