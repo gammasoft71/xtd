@@ -696,7 +696,7 @@ namespace {
   bool try_parse_exact_month(const string& text, const string& format, size& text_index, size& format_index, uint32& month, const culture_info& culture) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 4_z);
     if (count == 3 || count == 4) {
-      auto months = count == 3 ? get_short_months(loc) : get_months(culture);
+      auto months = count == 3 ? get_short_months(culture) : get_months(culture);
       for (auto index = 0_z; index < months.length(); ++index)
         if (text.substring(text_index).starts_with(months[index])) {
           month = as<int32>(index + 1);
@@ -713,7 +713,7 @@ namespace {
   bool try_parse_exact_day(const string& text, const string& format, size& text_index, size& format_index, uint32& day, const culture_info& culture) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 4_z);
     if (count == 3 || count == 4) {
-      auto days = count == 3 ? get_short_days(loc) : get_days(culture);
+      auto days = count == 3 ? get_short_days(culture) : get_days(culture);
       for (auto index = 0_z; index < days.length(); ++index)
         if (text.substring(text_index).starts_with(days[index])) {
           //day = as<int32>(index + 1);
@@ -782,9 +782,9 @@ namespace {
   bool try_parse_exact_time_suffix(const string& text, const string& format, size& text_index, size& format_index, uint32& hour, const culture_info& culture) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 2_z);
     auto suffix = text.substring(text_index, count);
-    if (suffix == get_time_suffixes(loc)[0].substring(0, count)) {
+    if (suffix == get_time_suffixes(culture)[0].substring(0, count)) {
       if (hour == 12) hour = 0;
-    } else if (suffix == get_time_suffixes(loc)[1].substring(0, count)) {
+    } else if (suffix == get_time_suffixes(culture)[1].substring(0, count)) {
       if (hour < 12) hour += 12;
     } else return false;
     text_index += count;
