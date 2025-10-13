@@ -4,7 +4,7 @@
 #pragma once
 
 #if !defined(__XTD_ARRAY_INTERNAL__)
-#error "Do not include this file: Internal use only. Include <xtd/array> or <xtd/array.h> instead."
+#error "Do not include this file: Internal use only. Include <xtd/array> or <xtd/array.hpp> instead."
 #endif
 
 #include "string.hpp"
