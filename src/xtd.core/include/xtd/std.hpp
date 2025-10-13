@@ -89,7 +89,7 @@
 #include <ios>
 #include <iosfwd>
 #include <iostream>
-#include <iso646.h>
+#include <ciso646>
 #include <istream>
 #include <iterator>
 #ifdef __cpp_lib_latch
