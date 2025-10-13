@@ -140,7 +140,7 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <dl class="section remark"><dt>Remarks</dt><dd>For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>. For example, a ticks value of 31241376000000000LL represents the date, Friday, January 01, 0100 12:00:00 midnight. A <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value is always expressed in the context of an explicit or default calendar. </dd></dl>
 <dl class="section user"><dt>Instantiating a xtd::date_time object</dt><dd>You can create a new xtd::dateTime value in any of the following ways:<ul>
 <li>By calling any of the overloads of the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> constructor that allow you to specify specific elements of the date and time value (such as the year, month, and day, or the number of ticks). The following statement illustrates a call to one of the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> constructors to create a date with a specific year, month, day, hour, minute, and second. <div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1date__time.html">xtd::date_time</a> date1(2008, 5, 1, 8, 30, 52);</div>
-<div class="ttc" id="aclassxtd_1_1date__time_html"><div class="ttname"><a href="classxtd_1_1date__time.html">xtd::date_time</a></div><div class="ttdoc">Represents an instant in time, typically expressed as a date and time of day.</div><div class="ttdef"><b>Definition</b> date_time.hpp:85</div></div>
+<div class="ttc" id="aclassxtd_1_1date__time_html"><div class="ttname"><a href="classxtd_1_1date__time.html">xtd::date_time</a></div><div class="ttdoc">Represents an instant in time, typically expressed as a date and time of day.</div><div class="ttdef"><b>Definition</b> date_time.hpp:83</div></div>
 </div><!-- fragment --></li>
 <li>By assigning the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object a date and time value returned by a property or method. The following example assigns the current date and time, the current Coordinated Universal Time (UTC) date and time, and the current date to three new <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">date_time</a> variables. <div class="fragment"><div class="line"><a class="code hl_function" href="#a9af33e7a4b6e3f10f19133e026c1bc0e">date_time</a> date1 = <a class="code hl_function" href="#ad94505e74efe9f353836901eda9230ed">date_time::now</a>();</div>
 <div class="line"><a class="code hl_function" href="#a9af33e7a4b6e3f10f19133e026c1bc0e">date_time</a> date2 = <a class="code hl_function" href="#a15f9bf48847f8d981f8c37bde44308b0">date_time::utc_now</a>();</div>
@@ -160,7 +160,7 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dat1.<a class="code hl_function" href="#ae3ad2eb3f1137d4497ed010a412ae932">equals</a>(<a class="code hl_variable" href="#a2052693f474e549778be006a9bf9ffcd">date_time::min_value</a>));</div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html_a0337274cf6d6900b883fc5551b19bba6"><div class="ttname"><a href="#a0337274cf6d6900b883fc5551b19bba6">xtd::date_time::to_string</a></div><div class="ttdeci">xtd::string to_string() const noexcept override</div><div class="ttdoc">Converts the value of the current xtd::date_time object to its equivalent string representation using...</div></div>
-<div class="ttc" id="aclassxtd_1_1date__time_html_a2052693f474e549778be006a9bf9ffcd"><div class="ttname"><a href="#a2052693f474e549778be006a9bf9ffcd">xtd::date_time::min_value</a></div><div class="ttdeci">static const date_time min_value</div><div class="ttdoc">Represents the smallest possible value of xtd::date_time. This field is read-only.</div><div class="ttdef"><b>Definition</b> date_time.hpp:107</div></div>
+<div class="ttc" id="aclassxtd_1_1date__time_html_a2052693f474e549778be006a9bf9ffcd"><div class="ttname"><a href="#a2052693f474e549778be006a9bf9ffcd">xtd::date_time::min_value</a></div><div class="ttdeci">static const date_time min_value</div><div class="ttdoc">Represents the smallest possible value of xtd::date_time. This field is read-only.</div><div class="ttdef"><b>Definition</b> date_time.hpp:105</div></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html_ae3ad2eb3f1137d4497ed010a412ae932"><div class="ttname"><a href="#ae3ad2eb3f1137d4497ed010a412ae932">xtd::date_time::equals</a></div><div class="ttdeci">bool equals(const object &amp;obj) const noexcept override</div><div class="ttdoc">Determines whether the specified object is equal to the current object.</div></div>
 </div><!-- fragment --> </li>
 </ul>
@@ -411,12 +411,12 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <tr class="memitem:a76c3fe933b9540760eeb9b59094b5e17" id="r_a76c3fe933b9540760eeb9b59094b5e17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76c3fe933b9540760eeb9b59094b5e17">to_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>) const</td></tr>
 <tr class="memdesc:a76c3fe933b9540760eeb9b59094b5e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to its equivalent string representation using the specified format and the formatting conventions of the current culture.  <br /></td></tr>
 <tr class="separator:a76c3fe933b9540760eeb9b59094b5e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14ef41e325a14cbfa8c194c5a412fa33" id="r_a14ef41e325a14cbfa8c194c5a412fa33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14ef41e325a14cbfa8c194c5a412fa33">to_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, const std::locale &amp;loc) const override</td></tr>
-<tr class="memdesc:a14ef41e325a14cbfa8c194c5a412fa33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to its equivalent string representation using the specified format and the formatting conventions of the current culture.  <br /></td></tr>
-<tr class="separator:a14ef41e325a14cbfa8c194c5a412fa33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc54e9bc7a2e2d9e664d480fdf05052f" id="r_abc54e9bc7a2e2d9e664d480fdf05052f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc54e9bc7a2e2d9e664d480fdf05052f">to_string</a> (const std::locale &amp;loc) const</td></tr>
-<tr class="memdesc:abc54e9bc7a2e2d9e664d480fdf05052f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to its equivalent string representation using the specified culture.  <br /></td></tr>
-<tr class="separator:abc54e9bc7a2e2d9e664d480fdf05052f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a316eed486a3d514d7f3a32658e0877da" id="r_a316eed486a3d514d7f3a32658e0877da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a316eed486a3d514d7f3a32658e0877da">to_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, const std::locale &amp;culture) const override</td></tr>
+<tr class="memdesc:a316eed486a3d514d7f3a32658e0877da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to its equivalent string representation using the specified format and the formatting conventions of the current culture.  <br /></td></tr>
+<tr class="separator:a316eed486a3d514d7f3a32658e0877da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3e8c4346aef7b246df37a97575cff56" id="r_af3e8c4346aef7b246df37a97575cff56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3e8c4346aef7b246df37a97575cff56">to_string</a> (const <a class="el" href="classxtd_1_1globalization_1_1culture__info.html">xtd::globalization::culture_info</a> &amp;culture) const</td></tr>
+<tr class="memdesc:af3e8c4346aef7b246df37a97575cff56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to its equivalent string representation using the specified culture.  <br /></td></tr>
+<tr class="separator:af3e8c4346aef7b246df37a97575cff56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37a28c97ecddc59c671fcf659ed44763" id="r_a37a28c97ecddc59c671fcf659ed44763"><td class="memItemLeft" align="right" valign="top">std::time_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37a28c97ecddc59c671fcf659ed44763">to_time_t</a> () const</td></tr>
 <tr class="memdesc:a37a28c97ecddc59c671fcf659ed44763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a>.  <br /></td></tr>
 <tr class="separator:a37a28c97ecddc59c671fcf659ed44763"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -476,36 +476,36 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <tr class="memitem:a608851b4e0fbbc0ce027788f4796f3a2" id="r_a608851b4e0fbbc0ce027788f4796f3a2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1date__time.html">date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a608851b4e0fbbc0ce027788f4796f3a2">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>)</td></tr>
 <tr class="memdesc:a608851b4e0fbbc0ce027788f4796f3a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string representation of a date and time to its <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> equivalent by using the conventions of the current culture.  <br /></td></tr>
 <tr class="separator:a608851b4e0fbbc0ce027788f4796f3a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46004ad5b46f0cd3827eeaae376fa370" id="r_a46004ad5b46f0cd3827eeaae376fa370"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1date__time.html">date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46004ad5b46f0cd3827eeaae376fa370">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>, const std::locale &amp;loc)</td></tr>
-<tr class="memdesc:a46004ad5b46f0cd3827eeaae376fa370"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string representation of a date and time to its <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> equivalent by using the conventions of the current culture.  <br /></td></tr>
-<tr class="separator:a46004ad5b46f0cd3827eeaae376fa370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5855c037814dc919818d4ffd5fe8126" id="r_aa5855c037814dc919818d4ffd5fe8126"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1date__time.html">date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa5855c037814dc919818d4ffd5fe8126">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>, const <a class="el" href="classxtd_1_1globalization_1_1culture__info.html">xtd::globalization::culture_info</a> &amp;culture)</td></tr>
+<tr class="memdesc:aa5855c037814dc919818d4ffd5fe8126"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string representation of a date and time to its <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> equivalent by using the conventions of the current culture.  <br /></td></tr>
+<tr class="separator:aa5855c037814dc919818d4ffd5fe8126"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adcb67f5e68f1830781c7d2b4e90f757c" id="r_adcb67f5e68f1830781c7d2b4e90f757c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1date__time.html">date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcb67f5e68f1830781c7d2b4e90f757c">specify_kind</a> (const <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;value, <a class="el" href="group__xtd__core.html#ga03b78d9831d31a0a2ea100078219f2ea">date_time_kind</a> <a class="el" href="#ac49ab9e61e6b546f483de527819a840f">kind</a>)</td></tr>
 <tr class="memdesc:adcb67f5e68f1830781c7d2b4e90f757c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object that has the same number of ticks as the specified <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a>, but is designated as either local time, Coordinated Universal Time (UTC), or neither, as indicated by the specified <a class="el" href="group__xtd__core.html#ga03b78d9831d31a0a2ea100078219f2ea" title="Specifies whether a DateTime object represents a local time, a Coordinated Universal Time (UTC),...">xtd::date_time_kind</a> value.  <br /></td></tr>
 <tr class="separator:adcb67f5e68f1830781c7d2b4e90f757c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58209959ca12a3589fa44ea680eddd47" id="r_a58209959ca12a3589fa44ea680eddd47"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58209959ca12a3589fa44ea680eddd47">sprintf</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, const <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;value)</td></tr>
 <tr class="memdesc:a58209959ca12a3589fa44ea680eddd47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a>.  <br /></td></tr>
 <tr class="separator:a58209959ca12a3589fa44ea680eddd47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bc27432d6c1995b275813980da9c8ad" id="r_a0bc27432d6c1995b275813980da9c8ad"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bc27432d6c1995b275813980da9c8ad">sprintf</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, const <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;value, const std::locale &amp;loc)</td></tr>
-<tr class="memdesc:a0bc27432d6c1995b275813980da9c8ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a>.  <br /></td></tr>
-<tr class="separator:a0bc27432d6c1995b275813980da9c8ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21fddbdf5f134403063146d4dd6abbe9" id="r_a21fddbdf5f134403063146d4dd6abbe9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21fddbdf5f134403063146d4dd6abbe9">sprintf</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, const <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;value, const <a class="el" href="classxtd_1_1globalization_1_1culture__info.html">xtd::globalization::culture_info</a> &amp;culture)</td></tr>
+<tr class="memdesc:a21fddbdf5f134403063146d4dd6abbe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a>.  <br /></td></tr>
+<tr class="separator:a21fddbdf5f134403063146d4dd6abbe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2e38ca4b0606e03e81fd27c377efbd1" id="r_ab2e38ca4b0606e03e81fd27c377efbd1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2e38ca4b0606e03e81fd27c377efbd1">try_parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>, <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;result) noexcept</td></tr>
 <tr class="memdesc:ab2e38ca4b0606e03e81fd27c377efbd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the specified string representation of a date and time to its <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> equivalent and returns a value that indicates whether the conversion succeeded.  <br /></td></tr>
 <tr class="separator:ab2e38ca4b0606e03e81fd27c377efbd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ff46a5fc5e898319e33354cdfe3ddf9" id="r_a8ff46a5fc5e898319e33354cdfe3ddf9"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ff46a5fc5e898319e33354cdfe3ddf9">try_parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>, <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;result, const std::locale &amp;loc) noexcept</td></tr>
-<tr class="memdesc:a8ff46a5fc5e898319e33354cdfe3ddf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the specified string representation of a date and time to its <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> equivalent and returns a value that indicates whether the conversion succeeded.  <br /></td></tr>
-<tr class="separator:a8ff46a5fc5e898319e33354cdfe3ddf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa2d0814381b74cb26fa0f7d2f5afa2a" id="r_afa2d0814381b74cb26fa0f7d2f5afa2a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa2d0814381b74cb26fa0f7d2f5afa2a">try_parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>, <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;result, const <a class="el" href="classxtd_1_1globalization_1_1culture__info.html">xtd::globalization::culture_info</a> &amp;culture) noexcept</td></tr>
+<tr class="memdesc:afa2d0814381b74cb26fa0f7d2f5afa2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the specified string representation of a date and time to its <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> equivalent and returns a value that indicates whether the conversion succeeded.  <br /></td></tr>
+<tr class="separator:afa2d0814381b74cb26fa0f7d2f5afa2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad726cada1d04506a474f9397b27a672f" id="r_ad726cada1d04506a474f9397b27a672f"><td class="memItemLeft" align="right" valign="top"><a id="ad726cada1d04506a474f9397b27a672f" name="ad726cada1d04506a474f9397b27a672f"></a>
 static bool&#160;</td><td class="memItemRight" valign="bottom"><b>try_parse_exact</b> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;result) noexcept</td></tr>
 <tr class="separator:ad726cada1d04506a474f9397b27a672f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c12acaa4dbe9039b7ce831b48761808" id="r_a1c12acaa4dbe9039b7ce831b48761808"><td class="memItemLeft" align="right" valign="top"><a id="a1c12acaa4dbe9039b7ce831b48761808" name="a1c12acaa4dbe9039b7ce831b48761808"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>try_parse_exact</b> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;result, const std::locale &amp;loc) noexcept</td></tr>
-<tr class="separator:a1c12acaa4dbe9039b7ce831b48761808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a995d2d1813a168c6373cc32b10a1f6e3" id="r_a995d2d1813a168c6373cc32b10a1f6e3"><td class="memItemLeft" align="right" valign="top"><a id="a995d2d1813a168c6373cc32b10a1f6e3" name="a995d2d1813a168c6373cc32b10a1f6e3"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>try_parse_exact</b> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;text, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;result, const <a class="el" href="classxtd_1_1globalization_1_1culture__info.html">xtd::globalization::culture_info</a> &amp;culture) noexcept</td></tr>
+<tr class="separator:a995d2d1813a168c6373cc32b10a1f6e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afff601e1def1da957403d7e49c5c4d5c" id="r_afff601e1def1da957403d7e49c5c4d5c"><td class="memItemLeft" align="right" valign="top"><a id="afff601e1def1da957403d7e49c5c4d5c" name="afff601e1def1da957403d7e49c5c4d5c"></a>
 static bool&#160;</td><td class="memItemRight" valign="bottom"><b>try_parse_exact</b> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;text, const <a class="el" href="classxtd_1_1array.html">array</a>&lt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &gt; &amp;formats, <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;result) noexcept</td></tr>
 <tr class="separator:afff601e1def1da957403d7e49c5c4d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86e68ec1528c8924be7cd832b1956292" id="r_a86e68ec1528c8924be7cd832b1956292"><td class="memItemLeft" align="right" valign="top"><a id="a86e68ec1528c8924be7cd832b1956292" name="a86e68ec1528c8924be7cd832b1956292"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>try_parse_exact</b> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;text, const <a class="el" href="classxtd_1_1array.html">array</a>&lt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &gt; &amp;formats, <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;result, const std::locale &amp;loc) noexcept</td></tr>
-<tr class="separator:a86e68ec1528c8924be7cd832b1956292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe8fdacee2834f03ff71e1014aade465" id="r_abe8fdacee2834f03ff71e1014aade465"><td class="memItemLeft" align="right" valign="top"><a id="abe8fdacee2834f03ff71e1014aade465" name="abe8fdacee2834f03ff71e1014aade465"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>try_parse_exact</b> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &amp;text, const <a class="el" href="classxtd_1_1array.html">array</a>&lt; <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">string</a> &gt; &amp;formats, <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;result, const <a class="el" href="classxtd_1_1globalization_1_1culture__info.html">xtd::globalization::culture_info</a> &amp;culture) noexcept</td></tr>
+<tr class="separator:abe8fdacee2834f03ff71e1014aade465"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -629,9 +629,9 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><span class="comment">// 3) The custom  date and time is 01/05/1971 21:10:30</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The custom date and time is created from 621675546300000000 ticks.</span></div>
-<div class="ttc" id="aclassxtd_1_1date__time_html_af86fd0f8e3f55ca8f3ffa6daeb7187bb"><div class="ttname"><a href="#af86fd0f8e3f55ca8f3ffa6daeb7187bb">xtd::date_time::max_value</a></div><div class="ttdeci">static const date_time max_value</div><div class="ttdoc">Represents the largest possible value of xtd::date_time. This field is read-only.</div><div class="ttdef"><b>Definition</b> date_time.hpp:97</div></div>
+<div class="ttc" id="aclassxtd_1_1date__time_html_af86fd0f8e3f55ca8f3ffa6daeb7187bb"><div class="ttname"><a href="#af86fd0f8e3f55ca8f3ffa6daeb7187bb">xtd::date_time::max_value</a></div><div class="ttdeci">static const date_time max_value</div><div class="ttdoc">Represents the largest possible value of xtd::date_time. This field is read-only.</div><div class="ttdef"><b>Definition</b> date_time.hpp:95</div></div>
 <div class="ttc" id="agroup__diagnostics_html_gga897ca504c8b1ff350135bff87494c0dfad611c46f8e65d9e049afe165de18c264"><div class="ttname"><a href="group__diagnostics.html#gga897ca504c8b1ff350135bff87494c0dfad611c46f8e65d9e049afe165de18c264">xtd::diagnostics::trace_options::date_time</a></div><div class="ttdeci">@ date_time</div><div class="ttdoc">Write the date and time.</div><div class="ttdef"><b>Definition</b> trace_options.hpp:31</div></div>
-<div class="ttc" id="agroup__format__parse_html_ga73705cb16c7db5a2b7567456ff4e7e14"><div class="ttname"><a href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">xtd::format</a></div><div class="ttdeci">xtd::string format(const xtd::string &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> format.hpp:20</div></div>
+<div class="ttc" id="agroup__format__parse_html_ga73705cb16c7db5a2b7567456ff4e7e14"><div class="ttname"><a href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">xtd::format</a></div><div class="ttdeci">xtd::string format(const xtd::string &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> format.hpp:21</div></div>
 <div class="ttc" id="agroup__types_html_gae9583bdae49d0f6becba7ce72906b56a"><div class="ttname"><a href="group__types.html#gae9583bdae49d0f6becba7ce72906b56a">xtd::ticks</a></div><div class="ttdeci">std::chrono::duration&lt; int64, tick &gt; ticks</div><div class="ttdoc">Represents a tick duration.</div><div class="ttdef"><b>Definition</b> ticks.hpp:21</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -3454,8 +3454,8 @@ The length si greater than 1. </td></tr>
 
 </div>
 </div>
-<a id="a14ef41e325a14cbfa8c194c5a412fa33" name="a14ef41e325a14cbfa8c194c5a412fa33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14ef41e325a14cbfa8c194c5a412fa33">&#9670;&#160;</a></span>to_string() <span class="overload">[3/4]</span></h2>
+<a id="a316eed486a3d514d7f3a32658e0877da" name="a316eed486a3d514d7f3a32658e0877da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a316eed486a3d514d7f3a32658e0877da">&#9670;&#160;</a></span>to_string() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3471,7 +3471,7 @@ The length si greater than 1. </td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::locale &amp;</td>          <td class="paramname"><span class="paramname"><em>loc</em></span>&#160;) const</td>
+          <td class="paramtype">const std::locale &amp;</td>          <td class="paramname"><span class="paramname"><em>culture</em></span>&#160;) const</td>
         </tr>
       </table>
   </td>
@@ -3485,7 +3485,7 @@ The length si greater than 1. </td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">format</td><td>A standard or custom date and time format string. </td></tr>
-    <tr><td class="paramname">loc</td><td>An std::locale object that contains locale information (see <a href="https://en.cppreference.com/w/cpp/locale/locale">std::locale</a>). </td></tr>
+    <tr><td class="paramname">culture</td><td>An <a class="el" href="classxtd_1_1globalization_1_1culture__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::culture_info</a> object that contains culture information. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3638,8 +3638,8 @@ The length si greater than 1. </td></tr>
 
 </div>
 </div>
-<a id="abc54e9bc7a2e2d9e664d480fdf05052f" name="abc54e9bc7a2e2d9e664d480fdf05052f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc54e9bc7a2e2d9e664d480fdf05052f">&#9670;&#160;</a></span>to_string() <span class="overload">[4/4]</span></h2>
+<a id="af3e8c4346aef7b246df37a97575cff56" name="af3e8c4346aef7b246df37a97575cff56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3e8c4346aef7b246df37a97575cff56">&#9670;&#160;</a></span>to_string() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3647,7 +3647,7 @@ The length si greater than 1. </td></tr>
         <tr>
           <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::date_time::to_string </td>
           <td>(</td>
-          <td class="paramtype">const std::locale &amp;</td>          <td class="paramname"><span class="paramname"><em>loc</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1globalization_1_1culture__info.html">xtd::globalization::culture_info</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>culture</em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -3656,7 +3656,7 @@ The length si greater than 1. </td></tr>
 <p>Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to its equivalent string representation using the specified culture. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">loc</td><td>An std::locale object that contains locale information (see <a href="https://en.cppreference.com/w/cpp/locale/locale">std::locale</a>). </td></tr>
+    <tr><td class="paramname">loc</td><td>An <a class="el" href="classxtd_1_1globalization_1_1culture__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::culture_info</a> object that contains culture information. </td></tr>
   </table>
   </dd>
 </dl>
@@ -4829,8 +4829,8 @@ This overload attempts to parse s by using DateTimeStyles.AllowWhiteSpaces style
 
 </div>
 </div>
-<a id="a46004ad5b46f0cd3827eeaae376fa370" name="a46004ad5b46f0cd3827eeaae376fa370"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a46004ad5b46f0cd3827eeaae376fa370">&#9670;&#160;</a></span>parse() <span class="overload">[2/2]</span></h2>
+<a id="aa5855c037814dc919818d4ffd5fe8126" name="aa5855c037814dc919818d4ffd5fe8126"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5855c037814dc919818d4ffd5fe8126">&#9670;&#160;</a></span>parse() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4846,7 +4846,7 @@ This overload attempts to parse s by using DateTimeStyles.AllowWhiteSpaces style
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::locale &amp;</td>          <td class="paramname"><span class="paramname"><em>loc</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1globalization_1_1culture__info.html">xtd::globalization::culture_info</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>culture</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -5269,8 +5269,8 @@ See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time<
 
 </div>
 </div>
-<a id="a0bc27432d6c1995b275813980da9c8ad" name="a0bc27432d6c1995b275813980da9c8ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0bc27432d6c1995b275813980da9c8ad">&#9670;&#160;</a></span>sprintf() <span class="overload">[2/2]</span></h2>
+<a id="a21fddbdf5f134403063146d4dd6abbe9" name="a21fddbdf5f134403063146d4dd6abbe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21fddbdf5f134403063146d4dd6abbe9">&#9670;&#160;</a></span>sprintf() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5291,7 +5291,7 @@ See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time<
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::locale &amp;</td>          <td class="paramname"><span class="paramname"><em>loc</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1globalization_1_1culture__info.html">xtd::globalization::culture_info</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>culture</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -5306,7 +5306,7 @@ See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time<
   <table class="params">
     <tr><td class="paramname">format</td><td>Format-control String. </td></tr>
     <tr><td class="paramname">value</td><td>The <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to format. </td></tr>
-    <tr><td class="paramname">loc</td><td>An std::locale object that contains locale information (see <a href="https://en.cppreference.com/w/cpp/locale/locale">std::locale</a>). </td></tr>
+    <tr><td class="paramname">culture</td><td>An <a class="el" href="classxtd_1_1globalization_1_1culture__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::culture_info</a> object that contains culture information. </td></tr>
   </table>
   </dd>
 </dl>
@@ -5563,8 +5563,8 @@ See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time<
 
 </div>
 </div>
-<a id="a8ff46a5fc5e898319e33354cdfe3ddf9" name="a8ff46a5fc5e898319e33354cdfe3ddf9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ff46a5fc5e898319e33354cdfe3ddf9">&#9670;&#160;</a></span>try_parse() <span class="overload">[2/2]</span></h2>
+<a id="afa2d0814381b74cb26fa0f7d2f5afa2a" name="afa2d0814381b74cb26fa0f7d2f5afa2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa2d0814381b74cb26fa0f7d2f5afa2a">&#9670;&#160;</a></span>try_parse() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5585,7 +5585,7 @@ See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time<
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::locale &amp;</td>          <td class="paramname"><span class="paramname"><em>loc</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1globalization_1_1culture__info.html">xtd::globalization::culture_info</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>culture</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -5740,7 +5740,7 @@ See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time<
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 12 2025 21:27:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Oct 13 2025 22:39:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
