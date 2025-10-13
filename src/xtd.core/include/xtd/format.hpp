@@ -64,7 +64,7 @@ namespace xtd {
   template<class ...args_t>
   xtd::wstring format(const wchar_t* fmt, args_t&& ... args) {return xtd::string::format(std::wstring {fmt}, std::forward<args_t>(args)...);}
   /// @endcond
-
+  
   /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
   /// @param fmt A composite format string.
   /// @param args arguments list to write using format.
