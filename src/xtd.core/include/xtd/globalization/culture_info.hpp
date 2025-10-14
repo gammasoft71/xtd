@@ -5,6 +5,7 @@
 
 #include "culture_not_found_exception.hpp"
 #include "culture_types.hpp"
+#include "../collections/generic/dictionary.hpp"
 #include "../core_export.hpp"
 #include "../iequatable.hpp"
 #include "../object.hpp"
@@ -163,7 +164,7 @@ namespace xtd {
         xtd::string native_name = "Invariant Language (Invariant Country)";
       };
       ptr<data> data_ = new_ptr<data>();
-      static xtd::array<culture_info> cultures_;
+      static xtd::collections::generic::dictionary<xtd::string, culture_info> cultures_;
       static xtd::optional<culture_info> current_culture_;
     };
   }

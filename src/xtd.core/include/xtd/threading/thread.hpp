@@ -9,7 +9,7 @@
 #include "thread_state.hpp"
 #include "../as.hpp"
 #include "../core_export.hpp"
-#include "../date_time.hpp"
+//#include "../date_time.hpp"
 #include "../intptr.hpp"
 #include "../object.hpp"
 #include "../time_span.hpp"
@@ -17,6 +17,10 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  class date_time;
+  /// @endcond
+  
   /// @brief The xtd::threading namespace provides classes and interfaces that enable multithreaded programming. In addition to classes for synchronizing thread activities and access to data ( xtd::threading::mutex, xtd::threading::monitor, xtd::threading::interlocked, xtd::threading::auto_reset_event, and so on), this namespace includes a xtd::threading::thread_pool class that allows you to use a pool of system-supplied threads, and a xtd::threading::timer class that executes callback methods on thread pool threads.
   namespace threading {
     /// @cond

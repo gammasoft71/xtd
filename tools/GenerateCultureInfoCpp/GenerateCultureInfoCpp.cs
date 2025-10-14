@@ -31,9 +31,10 @@ class GenerateCultureInfoCpp {
       sb.AppendLine("#include \"../../../include/xtd/globalization/culture_info\"");
       sb.AppendLine();
       sb.AppendLine("using namespace xtd;");
+      sb.AppendLine("using namespace xtd::collections::generic;");
       sb.AppendLine("using namespace xtd::globalization;");
       sb.AppendLine();
-      sb.AppendLine("array<culture_info> culture_info::cultures_ = {");
+      sb.AppendLine("dictionary<string, culture_info> culture_info::cultures_ = {");
 
       foreach (var cultureInfo in CultureInfo.GetCultures(CultureTypes.AllCultures).OrderBy(culture => culture.Name))
         sb.AppendLine(ToString(cultureInfo));
@@ -65,10 +66,11 @@ class GenerateCultureInfoCpp {
     var displayName = Escape(cultureInfo.DisplayName);
     var englishName = Escape(cultureInfo.EnglishName);
     var keyboardLayoutId = cultureInfo.KeyboardLayoutId;
+    var key = Escape(cultureInfo.Name.ToLower());
     var lcid = cultureInfo.LCID;
     var name = Escape(cultureInfo.Name);
     var nativeName = Escape(cultureInfo.NativeName);
-    return $"  {{{cultureType}, \"{displayName}\", \"{englishName}\", {keyboardLayoutId}, {lcid}, \"{name}\", \"{nativeName}\"}},";
+    return $"  {{\"{ key}\", {{{cultureType}, \"{displayName}\", \"{englishName}\", {keyboardLayoutId}, {lcid}, \"{name}\", \"{nativeName}\"}}}},";
   }
 
   static string ToString(CultureTypes type) {
