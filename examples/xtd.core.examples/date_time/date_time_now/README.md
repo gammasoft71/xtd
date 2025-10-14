@@ -18,23 +18,23 @@ xtdc run
 ## Output
 
 ```
-en_US
-   Local date and time: Sun Jan  2 09:50:36 2022, local
-   UTC date and time: Sun Jan  2 08:50:36 2022, utc
+en-US:
+   Local date and time: Tuesday, October 14, 2025 10:04, local
+   UTC date and time: Tuesday, October 14, 2025 08:04, utc
 
-en_GB
-   Local date and time: Sun  2 Jan 09:50:36 2022, local
-   UTC date and time: Sun  2 Jan 08:50:36 2022, utc
+en-GB:
+   Local date and time: Tuesday, October 14, 2025 10:04, local
+   UTC date and time: Tuesday, October 14, 2025 08:04, utc
 
-fr_FR
-   Local date and time: Dim  2 jan 09:50:36 2022, local
-   UTC date and time: Dim  2 jan 08:50:36 2022, utc
+fr-FR:
+   Local date and time: mardi, octobre 14, 2025 10:04, local
+   UTC date and time: mardi, octobre 14, 2025 08:04, utc
 
-de_DE
-   Local date and time: So  2 Jan 09:50:36 2022, local
-   UTC date and time: So  2 Jan 08:50:36 2022, utc
+de-DE:
+   Local date and time: Dienstag, Oktober 14, 2025 10:04, local
+   UTC date and time: Dienstag, Oktober 14, 2025 08:04, utc
 
-ru_RU
-   Local date and time: воскресенье,  2 января 2022 г. 09:50:36, local
-   UTC date and time: воскресенье,  2 января 2022 г. 08:50:36, utc
+ru-RU:
+   Local date and time: вторник, октября 14, 2025 10:04, local
+   UTC date and time: вторник, октября 14, 2025 08:04, utc
 ```
