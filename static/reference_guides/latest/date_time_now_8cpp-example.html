@@ -109,14 +109,10 @@ $(function(){ initResizable(false); });
 <div class="line">    <span class="keyword">auto</span> culture_names = array {<span class="stringliteral">&quot;en-US&quot;</span>, <span class="stringliteral">&quot;en-GB&quot;</span>, <span class="stringliteral">&quot;fr-FR&quot;</span>, <span class="stringliteral">&quot;de-DE&quot;</span>, <span class="stringliteral">&quot;ru-RU&quot;</span>};</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> culture_name : culture_names) {</div>
-<div class="line">      <span class="keywordflow">try</span> {</div>
-<div class="line">        culture_info::current_culture(culture_info {culture_name});</div>
-<div class="line">        console::write_line(<span class="stringliteral">&quot;{}:&quot;</span>, culture_name);</div>
-<div class="line">        console::write_line(<span class="stringliteral">&quot;   Local date and time: {:f}, {}&quot;</span>, local_date, local_date.kind());</div>
-<div class="line">        console::write_line(<span class="stringliteral">&quot;   UTC date and time: {:f}, {}\n&quot;</span>, utc_date, utc_date.kind());</div>
-<div class="line">      } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
-<div class="line">        console::write_line(<span class="stringliteral">&quot;Make sure {} locale is installed on your system :\n\n{}\n&quot;</span>, culture_name, e);</div>
-<div class="line">      }</div>
+<div class="line">      culture_info::current_culture(culture_info {culture_name});</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{}:&quot;</span>, culture_name);</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;   Local date and time: {:f}, {}&quot;</span>, local_date, local_date.kind());</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;   UTC date and time: {:f}, {}\n&quot;</span>, utc_date, utc_date.kind());</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">};</div>
@@ -125,31 +121,31 @@ $(function(){ initResizable(false); });
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produce the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// en_US:</span></div>
-<div class="line"><span class="comment">//    Local date and time: Monday, October 6, 2025 19:03, local</span></div>
-<div class="line"><span class="comment">//    UTC date and time: Monday, October 6, 2025 17:03, utc</span></div>
+<div class="line"><span class="comment">// en-US:</span></div>
+<div class="line"><span class="comment">//    Local date and time: Tuesday, October 14, 2025 10:04, local</span></div>
+<div class="line"><span class="comment">//    UTC date and time: Tuesday, October 14, 2025 08:04, utc</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// en_GB:</span></div>
-<div class="line"><span class="comment">//    Local date and time: Monday, October 6, 2025 19:03, local</span></div>
-<div class="line"><span class="comment">//    UTC date and time: Monday, October 6, 2025 17:03, utc</span></div>
+<div class="line"><span class="comment">// en-GB:</span></div>
+<div class="line"><span class="comment">//    Local date and time: Tuesday, October 14, 2025 10:04, local</span></div>
+<div class="line"><span class="comment">//    UTC date and time: Tuesday, October 14, 2025 08:04, utc</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// fr_FR:</span></div>
-<div class="line"><span class="comment">//    Local date and time: lundi, octobre 6, 2025 19:03, local</span></div>
-<div class="line"><span class="comment">//    UTC date and time: lundi, octobre 6, 2025 17:03, utc</span></div>
+<div class="line"><span class="comment">// fr-FR:</span></div>
+<div class="line"><span class="comment">//    Local date and time: mardi, octobre 14, 2025 10:04, local</span></div>
+<div class="line"><span class="comment">//    UTC date and time: mardi, octobre 14, 2025 08:04, utc</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// de_DE:</span></div>
-<div class="line"><span class="comment">//    Local date and time: Montag, Oktober 6, 2025 19:03, local</span></div>
-<div class="line"><span class="comment">//    UTC date and time: Montag, Oktober 6, 2025 17:03, utc</span></div>
+<div class="line"><span class="comment">// de-DE:</span></div>
+<div class="line"><span class="comment">//    Local date and time: Dienstag, Oktober 14, 2025 10:04, local</span></div>
+<div class="line"><span class="comment">//    UTC date and time: Dienstag, Oktober 14, 2025 08:04, utc</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// ru_RU:</span></div>
-<div class="line"><span class="comment">//    Local date and time: понедельник, октября 6, 2025 19:03, local</span></div>
-<div class="line"><span class="comment">//    UTC date and time: понедельник, октября 6, 2025 17:03, utc</span></div>
+<div class="line"><span class="comment">// ru-RU:</span></div>
+<div class="line"><span class="comment">//    Local date and time: вторник, октября 14, 2025 10:04, local</span></div>
+<div class="line"><span class="comment">//    UTC date and time: вторник, октября 14, 2025 08:04, utc</span></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:168</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 13 2025 22:39:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Oct 14 2025 10:53:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
