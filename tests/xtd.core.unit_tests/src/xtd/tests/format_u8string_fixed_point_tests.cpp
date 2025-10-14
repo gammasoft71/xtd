@@ -28,7 +28,7 @@ namespace xtd::tests {
     static void class_cleanup_(class_cleanup) {
       xtd::globalization::culture_info::current_culture(previous_culture);
     }
-
+    
     void test_method_(format_with_default_argument) {
       assert::are_equal(u8"42", format(u8"{0}", static_cast<value_t>(42.0)));
     }

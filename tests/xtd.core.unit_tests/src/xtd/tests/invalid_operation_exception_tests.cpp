@@ -31,7 +31,7 @@ namespace xtd::tests {
       xtd::globalization::culture_info::current_culture(previous_culture);
       invalid_operation_exception::enable_stack_trace(stack_trace_enabled);
     }
-
+    
     void test_method_(default_constructor) {
       auto e = invalid_operation_exception {};
       assert::are_equal("xtd::invalid_operation_exception", e.get_type().full_name());
