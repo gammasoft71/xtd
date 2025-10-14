@@ -47,7 +47,7 @@ namespace xtd::tests {
     static void class_cleanup_(class_cleanup) {
       xtd::globalization::culture_info::current_culture(previous_culture);
     }
-
+    
     void test_method_(parse_styles_none) {
       assert::are_equal(static_cast<value_t>(42), xtd::parse<value_t>("42", number_styles::none));
     }
