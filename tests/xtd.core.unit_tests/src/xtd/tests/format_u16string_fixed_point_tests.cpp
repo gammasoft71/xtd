@@ -1,5 +1,6 @@
 #include <xtd/format>
 #include <xtd/format_exception>
+#include <xtd/globalization/culture_info>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
@@ -17,13 +18,15 @@ namespace xtd::tests {
   
   template<class value_t>
   class format_u16string_fixed_point_tests : public test_class {
-    inline static std::locale previous_locale;
+    inline static xtd::globalization::culture_info previous_culture;
+    
     static void class_initialize_(class_initialize) {
-      previous_locale = std::locale::global(std::locale("en_US.UTF-8"));
+      previous_culture = xtd::globalization::culture_info::current_culture();
+      xtd::globalization::culture_info::current_culture(xtd::globalization::culture_info {"en-US"});
     }
     
     static void class_cleanup_(class_cleanup) {
-      std::locale::global(previous_locale);
+      xtd::globalization::culture_info::current_culture(previous_culture);
     }
     
     void test_method_(format_with_default_argument) {
