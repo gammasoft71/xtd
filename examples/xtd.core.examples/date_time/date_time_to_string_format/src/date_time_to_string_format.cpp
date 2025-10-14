@@ -16,6 +16,13 @@ public:
     // Output date and time using each custom format string.
     for (auto custom_fmt : custom_fmts)
       console::write_line("'{0}': {1}", custom_fmt, date_value.to_string(custom_fmt));
+    console::write_line();
+
+    // Create an array of some put time format strings.
+    auto put_time_fmts = {"%I:%M:%S %p", "%e %b %G", "%H:%M:%S", "%e %b %H:%M:%S", "%%Month: %m", "%H:%M:%S%z"};
+    // Output date and time using each custom format string.
+    for (auto put_time_fmt : put_time_fmts)
+      console::write_line("'{0}': {1}", put_time_fmt, date_value.to_string(put_time_fmt));
   }
 };
 
@@ -45,3 +52,10 @@ startup_(program::main);
 // 'dd MMM HH:mm:ss': 15 Jun 21:15:07
 // '\Mon\t\h\: M': Month: 6
 // 'HH:mm:ss.ffffzzz': 21:15:07.0000+02:00
+//
+// '%I:%M:%S %p': 09:15:07 PM
+// '%e %b %G': 15 Jun 2008
+// '%H:%M:%S': 21:15:07
+// '%e %b %H:%M:%S': 15 Jun 21:15:07
+// '%%Month: %m': %Month: 06
+// '%H:%M:%S%z': 21:15:07+0100

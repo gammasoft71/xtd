@@ -40,4 +40,11 @@ y: June 2008
 'dd MMM HH:mm:ss': 15 Jun 21:15:07
 '\Mon\t\h\: M': Month: 6
 'HH:mm:ss.ffffzzz': 21:15:07.0000+02:00
+
+'%I:%M:%S %p': 09:15:07 PM
+'%e %b %G': 15 Jun 2008
+'%H:%M:%S': 21:15:07
+'%e %b %H:%M:%S': 15 Jun 21:15:07
+'%%Month: %m': %Month: 06
+'%H:%M:%S%z': 21:15:07+0100
 ```
