@@ -1,5 +1,4 @@
 #include "main_form.hpp"
-#include <ctype.h>
 #include <list>
 #include <xtd/char32_object>
 #include <xtd/environment>
