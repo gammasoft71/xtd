@@ -21,7 +21,7 @@ culture_info::culture_info(const std::locale& locale) {
 }
 
 culture_info::culture_info(size culture) {
-  for (const auto& c : cultures_) {
+  for (const auto& [n, c] : cultures_) {
     //if (string::equals(culture.data_->name, name, string_comparison::ordinal_ignore_case))
     if (c.data_->lcid != culture) continue;
     self_ = c;
@@ -84,7 +84,7 @@ void culture_info::current_culture(const culture_info& value) {
 }
 
 culture_info culture_info::invariant_culture() noexcept {
-  return cultures_[0];
+  return cultures_[""];
 }
 
 bool culture_info::equals(const object& obj) const noexcept {
@@ -101,7 +101,7 @@ xtd::string culture_info::to_string() const noexcept {
 
 array<culture_info> culture_info::get_cultures(xtd::globalization::culture_types types) noexcept {
   auto result = list<culture_info> {};
-  for (const auto& culture : cultures_)
+  for (const auto& [name, culture] : cultures_)
     if ((culture.culture_types() & types) == types || types == xtd::globalization::culture_types::all_cultures)
       result.add(culture);
   return result;
@@ -132,13 +132,9 @@ culture_info::culture_info(globalization::culture_types culture_types, string&& 
 }
 
 void culture_info::fill_from_name(const string& name) {
-  for (const auto& culture : cultures_) {
-    //if (string::equals(culture.data_->name, name, string_comparison::ordinal_ignore_case))
-    if (culture.data_->name.to_lower() != name.to_lower()) continue;
-    self_ = culture;
-    return;
-  }
-  throw_helper::throws(exception_case::culture_not_found);
+  auto lower_name = name.to_lower();
+  if (!cultures_.contains_key(lower_name)) throw_helper::throws(exception_case::culture_not_found);
+  self_ = cultures_[lower_name];
 }
 
 bool culture_info::is_system_locale_available(const string& name) noexcept {
