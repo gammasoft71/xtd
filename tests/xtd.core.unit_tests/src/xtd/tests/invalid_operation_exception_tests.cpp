@@ -1,4 +1,5 @@
 #include <xtd/invalid_operation_exception>
+#include <xtd/globalization/culture_info>
 #include <xtd/argument_exception>
 #include <xtd/environment>
 #include <xtd/nullopt>
@@ -17,18 +18,20 @@ using namespace xtd::tunit;
 namespace xtd::tests {
   class test_class_(invalid_operation_exception_tests) {
     inline static bool stack_trace_enabled = false;
-    inline static std::locale previous_locale;
-    static void test_initialize_(test_initialize) {
-      previous_locale = std::locale::global(std::locale("en_US.UTF-8"));
-      stack_trace_enabled = invalid_operation_exception::enable_stack_trace();
-      invalid_operation_exception::enable_stack_trace(false);
-    }
+    inline static xtd::globalization::culture_info previous_culture;
     
-    static void test_cleanup_(test_cleanup) {
-      std::locale::global(previous_locale);
+    static void test_initialize_(test_initialize) {
+      previous_culture = xtd::globalization::culture_info::current_culture();
+      xtd::globalization::culture_info::current_culture(xtd::globalization::culture_info {"en-US"});
+      stack_trace_enabled = invalid_operation_exception::enable_stack_trace();
       invalid_operation_exception::enable_stack_trace(stack_trace_enabled);
     }
     
+    static void test_cleanup_(test_cleanup) {
+      xtd::globalization::culture_info::current_culture(previous_culture);
+      invalid_operation_exception::enable_stack_trace(stack_trace_enabled);
+    }
+
     void test_method_(default_constructor) {
       auto e = invalid_operation_exception {};
       assert::are_equal("xtd::invalid_operation_exception", e.get_type().full_name());
