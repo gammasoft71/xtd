@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <xtd/format>
 #include <xtd/format_exception>
+#include <xtd/globalization/culture_info>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/string_assert>
 #include <xtd/tunit/test_class_attribute>
@@ -11,13 +12,15 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(format_string_date_time_tests) {
-    inline static std::locale previous_locale;
+    inline static xtd::globalization::culture_info previous_culture;
+    
     static void class_initialize_(class_initialize) {
-      previous_locale = std::locale::global(std::locale("en_US.UTF-8"));
+      previous_culture = xtd::globalization::culture_info::current_culture();
+      xtd::globalization::culture_info::current_culture(xtd::globalization::culture_info {"en-US"});
     }
     
     static void class_cleanup_(class_cleanup) {
-      std::locale::global(previous_locale);
+      xtd::globalization::culture_info::current_culture(previous_culture);
     }
     
     void test_method_(format_with_none) {
