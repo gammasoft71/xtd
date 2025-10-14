@@ -22,7 +22,7 @@ namespace xtd::tests {
     static void class_cleanup_(class_cleanup) {
       xtd::globalization::culture_info::current_culture(previous_culture);
     }
-
+    
     void test_method_(format_with_none) {
       assert::are_equal(L"1/2/2019 03:04:05", format(L"{}", date_time {2019, 1, 2, 3, 4, 5}));
     }
