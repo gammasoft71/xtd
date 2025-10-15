@@ -49,7 +49,7 @@ namespace unit_tests {
   class test;
 
   // Register generic test class with 'std:string' as generic parameter.
-  test_class_attribute<test<std::string>> test_class_string_attr {"test<string>"};
+  test_class_attribute<test<xtd::string>> test_class_string_attr {"test<string>"};
 
   // Register generic test class with 'int' as generic parameter.
   test_class_attribute<test<int>> test_class_int_attr {"test<int>"};

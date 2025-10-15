@@ -216,22 +216,22 @@ public:
   my_control(const my_control&) = default;
   my_control& my_control& operator =(const my_control& my_control);
   
-  const std::string base_name() const {return base_name_;}
+  const xtd::string base_name() const {return base_name_;}
   intptr_t handle() const {return handle_;}
   
   xtd::event<my_control, event_handler<xtd::forms::control>> name_changed;
   
-  std::string to_string() const override {return name_generator();}
+  xtd::string to_string() const override {return name_generator();}
 
 protected:
-  virtual std::string name_generator() const {return base_name_;}
+  virtual xtd::string name_generator() const {return base_name_;}
 
   intptr_t handle_ = 0;
   
 private:
   my_control(intptr_t handle);
 
-  std::string base_name_ = "BaseName";
+  xtd::string base_name_ = "BaseName";
 };
 ```
 
@@ -310,7 +310,7 @@ class my_class {
 /// @param name A string that contains the name.
 /// @remarks The name must be begin by a uppercase; otherwise std::invalid_argument throws.
 /// @exception std::invalid_argument name not started by uppercase.
-void my_func(const std::string& name) {
+void my_func(const xtd::string& name) {
 };
 ```
 

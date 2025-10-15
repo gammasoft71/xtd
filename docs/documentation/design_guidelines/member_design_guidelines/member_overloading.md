@@ -6,7 +6,7 @@ Member overloading means creating two or more members on the same type that diff
 class console static_ {
 public:
   static void write_line();
-  static void write_line(const std::string& value);
+  static void write_line(const xtd::string& value);
   static void write_line(bool value);
   ...
 };
