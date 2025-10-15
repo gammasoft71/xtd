@@ -6,7 +6,7 @@
 #include "internal/__string_definitions.hpp"
 #undef __XTD_CORE_INTERNAL__
 #include "interface.hpp"
-#include "intptr.hpp"
+//#include "globalization/culture_info.hpp"
 #include <locale>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -39,14 +39,9 @@ namespace xtd {
     /// @{
     /// @brief Formats the value of the current instance using the specified format.
     /// @param format The format to use <br>-or-<br> A xtd::string::empty_string ("") to use the default format defined for the type of the xtd::iformattable implementation.
-    /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
+    /// @param culture An xtd::globalization::culture_info object that contains culture information.
     /// @return The value of the current instance in the specified format.
-    virtual xtd::string to_string(const xtd::string& format, const std::locale& loc) const = 0;
+    virtual xtd::string to_string(const xtd::string& format, const std::locale& culture) const = 0;
     /// @}
-    
-    
-    /// @cond
-    std::string __opague_internal_formatable__(intptr, intptr, intptr, intptr) const;
-    /// @endcond
   };
 }
