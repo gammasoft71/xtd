@@ -67,7 +67,7 @@ class ienumerable interface_ {
 ```cpp
 class control {
 public:
-  virtual std::string to_string() const;
+  virtual xtd::string to_string() const;
 };
 ```
 
@@ -102,7 +102,7 @@ enum class values {
 ```cpp
 class convert {
 public:
-  static int to_int32(const std::string& value);
+  static int to_int32(const xtd::string& value);
 };
 ```
 

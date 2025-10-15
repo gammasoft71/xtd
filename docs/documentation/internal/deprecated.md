@@ -24,7 +24,7 @@ void xtd::old_function_name(int32_t old_param) {
 
 /// @bref The new function do something.
 /// @param new_param The new specifie parameter.
-void xtd::new_function_name(const std::string& new_param) {
+void xtd::new_function_name(const xtd::string& new_param) {
   // ...
 }
 ```
@@ -36,7 +36,7 @@ void xtd::new_function_name(const std::string& new_param) {
 ```cpp
 /// @bref The new function do something.
 /// @param new_param The new specifie parameter.
-void xtd::new_function_name(const std::string& new_param) {
+void xtd::new_function_name(const xtd::string& new_param) {
   // ...
 }
 ```
