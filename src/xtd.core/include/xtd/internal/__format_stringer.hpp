@@ -152,55 +152,7 @@ namespace xtd {
   inline std::string to_string(const xtd::collections::generic::ienumerable<type_t>& values, const std::string& fmt, const std::locale& loc);
   template<class type_t>
   inline std::string to_string(const __xtd_raw_array_data__<type_t>& values, const std::string& fmt, const std::locale& loc);
-  
-  template<class value_t>
-  inline std::wstring to_string(const value_t& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const bool& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const xtd::sbyte& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const char& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const unsigned char& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const short& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const unsigned short& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const int& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const unsigned int& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const long& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const unsigned long& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const long long& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const unsigned long long& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const float& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const double& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const long double& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const std::chrono::system_clock::time_point& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const std::tm& value, const std::wstring& fmt, const std::locale& loc);
-  
-  template<class type_t, class period_t = std::ratio<1>>
-  inline std::wstring to_string(const std::chrono::duration<type_t, period_t>& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const xtd::char8& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const xtd::char16& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const xtd::char32& value, const std::wstring& fmt, const std::locale& loc);
-  template<>
-  inline std::wstring to_string(const xtd::wchar& value, const std::wstring& fmt, const std::locale& loc);
-  
+    
   template<class type_t, class string_t>
   inline string_t to_string(type_t value, const std::map<type_t, string_t, std::greater<type_t>>& values) {
     auto it = values.find(value);
@@ -228,13 +180,6 @@ namespace xtd {
   template<class type_t>
   inline std::string to_string(type_t value, const std::initializer_list<std::pair<type_t, std::string>>& il) {
     std::map<type_t, std::string, std::greater<type_t>> values;
-    for (auto item : il) values[item.first] = item.second;
-    return to_string(value, values);
-  }
-  
-  template<class type_t>
-  inline std::wstring to_string(type_t value, const std::initializer_list<std::pair<type_t, std::wstring>>& il) {
-    std::map<type_t, std::wstring, std::greater<type_t>> values;
     for (auto item : il) values[item.first] = item.second;
     return to_string(value, values);
   }
@@ -604,118 +549,5 @@ inline std::string __format_stringer < char, xtd::char16& > (xtd::char16& value)
 template < >
 inline std::string __format_stringer < char, xtd::char32& > (xtd::char32& value) {
   return xtd::to_string(value, "G", std::locale());
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, std::u8string& > (std::u8string& value) {
-  std::basic_stringstream < xtd::wchar > ss;
-  ss << std::wstring(value.begin(), value.end());
-  return ss.str();
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, const std::u16string& > (const std::u16string& value) {
-  std::basic_stringstream < xtd::wchar > ss;
-  ss << __to_string < xtd::wchar > (value);
-  return ss.str();
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, const std::u32string& > (const std::u32string& value) {
-  std::basic_stringstream < xtd::wchar > ss;
-  ss << __to_string < xtd::wchar > (value);
-  return ss.str();
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, const std::string& > (const std::string& value) {
-  std::basic_stringstream < xtd::wchar > ss;
-  ss << __to_string < xtd::wchar > (value);
-  return ss.str();
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, bool& > (bool& value) {
-  return xtd::to_string(value, L"G", std::locale());
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, xtd::sbyte& > (xtd::sbyte& value) {
-  return xtd::to_string(value, L"G", std::locale());
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, char& > (char& value) {
-  return xtd::to_string(value, L"G", std::locale());
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, unsigned char& > (unsigned char& value) {
-  return xtd::to_string(value, L"G", std::locale());
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, short& > (short& value) {
-  return xtd::to_string(value, L"G", std::locale());
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, unsigned short& > (unsigned short& value) {
-  return xtd::to_string(value, L"G", std::locale());
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, int& > (int& value) {
-  return xtd::to_string(value, L"G", std::locale());
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, unsigned int& > (unsigned int& value) {
-  return xtd::to_string(value, L"G", std::locale());
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, long& > (long& value) {
-  return xtd::to_string(value, L"G", std::locale());
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, unsigned long& > (unsigned long& value) {
-  return xtd::to_string(value, L"G", std::locale());
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, long long& > (long long& value) {
-  return xtd::to_string(value, L"G", std::locale());
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, unsigned long long& > (unsigned long long& value) {
-  return xtd::to_string(value, L"G", std::locale());
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, float& > (float& value) {
-  return xtd::to_string(value, L"G", std::locale());
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, double& > (double& value) {
-  return xtd::to_string(value, L"G", std::locale());
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, long double& > (long double& value) {
-  return xtd::to_string(value, L"G", std::locale());
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, std::chrono::system_clock::time_point& > (std::chrono::system_clock::time_point& value) {
-  return xtd::to_string(value, L"G", std::locale());
-}
-
-template < >
-inline std::wstring __format_stringer < xtd::wchar, std::tm& > (tm& value) {
-  return xtd::to_string(value, L"G", std::locale());
 }
 /// @endcond
