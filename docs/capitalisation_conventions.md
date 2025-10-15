@@ -67,7 +67,7 @@ class ienumerable interface_ {
 ```cpp
 class control {
 public:
-  virtual std::string to_string() const;
+  virtual string to_string() const;
 };
 ```
 
