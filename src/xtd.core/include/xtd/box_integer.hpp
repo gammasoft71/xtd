@@ -82,7 +82,7 @@ namespace xtd {
     /// @brief Converts the string to its type_t equivalent.
     /// @param value A string containing a type_t to convert.
     /// @return A type_t equivalent to the number contained in value.
-    static bool parse(const xtd::string& value, type_t& result, xtd::number_styles styles) {return xtd::try_parse<type_t>(value, result, styles);}
+    static bool try_parse(const xtd::string& value, type_t& result, xtd::number_styles styles) {return xtd::try_parse<type_t>(value, result, styles);}
     /// @}
   };
 }
