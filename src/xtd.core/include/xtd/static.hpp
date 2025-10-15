@@ -14,7 +14,7 @@ namespace xtd {
   /// ```cpp
   /// class foo : public static_object {
   /// public:
-  ///   static std::string to_string() {return "foo";}
+  ///   static xtd::string to_string() {return "foo";}
   /// };
   /// ```
   class static_object {
@@ -31,7 +31,7 @@ namespace xtd {
   /// ```cpp
   /// class foo static_ {
   /// public:
-  ///   static std::string to_string() {return "foo";}
+  ///   static xtd::string to_string() {return "foo";}
   /// };
   /// ```
 #define static_ \
@@ -47,7 +47,7 @@ namespace xtd {
   /// ```cpp
   /// class foo static_object_ {
   /// public:
-  ///   static std::string to_string() {return "foo";}
+  ///   static xtd::string to_string() {return "foo";}
   /// };
   /// ```
 #define static_object_ \

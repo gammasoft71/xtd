@@ -19,7 +19,7 @@ namespace xtd {
   /// ```cpp
   /// class foo abstract_ {
   /// public:
-  ///   virtual std::string to_string() = 0;
+  ///   virtual xtd::string to_string() = 0;
   /// };
   /// ```
 #define abstract_ \

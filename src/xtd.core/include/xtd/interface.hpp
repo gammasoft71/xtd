@@ -18,14 +18,14 @@ namespace xtd {
   ///
   /// class istringable : public interface {
   /// public:
-  ///   virtual std::string to_string() const = 0;
+  ///   virtual xtd::string to_string() const = 0;
   /// };
   ///
   /// class foo : public istringable {
   /// public:
   ///   foo() = default;
   ///
-  ///   std:string to_string() const override {return "foo";}
+  ///   xtd:string to_string() const override {return "foo";}
   /// };
   /// ```
   class interface {
@@ -45,7 +45,7 @@ namespace xtd {
   ///
   /// class istringable interface_ {
   /// public:
-  ///   virtual std::string to_string() const = 0;
+  ///   virtual xtd::string to_string() const = 0;
   /// };
   ///
   /// class foo : public istringable {
