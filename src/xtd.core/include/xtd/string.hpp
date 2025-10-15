@@ -6,6 +6,7 @@
 #include "internal/__string_definitions.hpp"
 #undef __XTD_CORE_INTERNAL__
 #include "basic_string.hpp"
+#include "collections/generic/key_value_pair.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -100,7 +101,7 @@ struct std::formatter<xtd::string> : std::formatter<std::string> {
 
 /// @cond
 template<class key_t, class value_t>
-inline xtd::string xtd::collections::generic::key_value_pair<key_t, value_t>::to_string() const noexcept {return xtd::string::format("({0}, {1})", first, second);}
+inline xtd::string xtd::collections::generic::key_value_pair<key_t, value_t>::to_string() const noexcept {return xtd::string::format("({}, {})", first, second);}
 
 template<class type_t>
 inline xtd::string __opaque_xtd_linq_enumerable_collection__<type_t>::to_string() const {return xtd::string::format("[{}]", xtd::string::join(", ", *this));}
