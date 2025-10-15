@@ -43,115 +43,119 @@
 namespace xtd {
   class iformatable;
   class object;
-  
+  using string = basic_string<char>;
+  namespace globalization {
+    class culture_info;
+  }
+
   template<class value_t>
-  inline std::string to_string(const value_t& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const value_t& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const bool& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const bool& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const xtd::sbyte& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const xtd::sbyte& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const char& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const char& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const unsigned char& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const unsigned char& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const short& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const short& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const unsigned short& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const unsigned short& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const int& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const int& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const unsigned int& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const unsigned int& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const long& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const long& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const unsigned long& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const unsigned long& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const long long& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const long long& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const unsigned long long& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const unsigned long long& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const float& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const float& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const double& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const double& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const long double& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const long double& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const std::chrono::system_clock::time_point& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::chrono::system_clock::time_point& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const std::tm& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::tm& value, const xtd::string& fmt, const std::locale& loc);
   template<class type_t, class period_t = std::ratio<1>>
-  inline std::string to_string(const std::chrono::duration<type_t, period_t>& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::chrono::duration<type_t, period_t>& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const xtd::char8& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const xtd::char8& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const xtd::char16& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const xtd::char16& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const xtd::char32& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const xtd::char32& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const xtd::wchar& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const xtd::wchar& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const std::partial_ordering& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::partial_ordering& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const std::strong_ordering& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::strong_ordering& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const std::weak_ordering& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::weak_ordering& value, const xtd::string& fmt, const std::locale& loc);
   template<class value_t>
-  inline std::string to_string(const value_t* value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const value_t* value, const xtd::string& fmt, const std::locale& loc);
   template<class value_t>
-  inline std::string to_string(value_t* const value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(value_t* const value, const xtd::string& fmt, const std::locale& loc);
   template<class type_t>
-  inline std::string to_string(const std::shared_ptr<type_t>& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::shared_ptr<type_t>& value, const xtd::string& fmt, const std::locale& loc);
   template<class type_t>
-  inline std::string to_string(const std::unique_ptr<type_t>& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::unique_ptr<type_t>& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const xtd::any& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const xtd::any& value, const xtd::string& fmt, const std::locale& loc);
   template<class type_t>
-  inline std::string to_string(const std::optional<type_t>& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::optional<type_t>& value, const xtd::string& fmt, const std::locale& loc);
   template<>
-  inline std::string to_string(const std::nullopt_t& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::nullopt_t& value, const xtd::string& fmt, const std::locale& loc);
   template<class type1_t, class type2_t>
-  inline std::string to_string(const std::pair<type1_t, type2_t>& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::pair<type1_t, type2_t>& value, const xtd::string& fmt, const std::locale& loc);
   template<class ...types_t>
-  inline std::string to_string(const std::tuple<types_t ...>& value, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::tuple<types_t ...>& value, const xtd::string& fmt, const std::locale& loc);
   template<class type_t, size_t size>
-  inline std::string to_string(const std::array<type_t, size>& values, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::array<type_t, size>& values, const xtd::string& fmt, const std::locale& loc);
   template<class type_t, class allocator_t = std::allocator<type_t>>
-  inline std::string to_string(const std::deque<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::deque<type_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
   template<class type_t, class allocator_t = std::allocator<type_t>>
-  inline std::string to_string(const std::forward_list<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::forward_list<type_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
   template<class type_t>
-  inline std::string to_string(const std::initializer_list<type_t>& values, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::initializer_list<type_t>& values, const xtd::string& fmt, const std::locale& loc);
   template<class type_t, class allocator_t = std::allocator<type_t>>
-  inline std::string to_string(const std::list<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::list<type_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
   template<class type_t>
-  inline std::string to_string(const std::valarray<type_t>& values, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::valarray<type_t>& values, const xtd::string& fmt, const std::locale& loc);
   template<class type_t, class allocator_t = std::allocator<type_t>>
-  inline std::string to_string(const std::vector<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::vector<type_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
   template<class key_t, class value_t, class compare_t = std::less<key_t>, class allocator_t = std::allocator<std::pair<const key_t, value_t >>>
-  inline std::string to_string(const std::map<key_t, value_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::map<key_t, value_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
   template<class key_t, class value_t, class compare_t = std::less<key_t>, class allocator_t = std::allocator<std::pair<const key_t, value_t >>>
-  inline std::string to_string(const std::multimap<key_t, value_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::multimap<key_t, value_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
   template<class key_t, class compare_t = std::less<key_t>, class allocator_t = std::allocator<key_t >>
-  inline std::string to_string(const std::multiset<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::multiset<key_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
   template<class key_t, class compare_t = std::less<key_t>, class allocator_t = std::allocator<key_t >>
-  inline std::string to_string(const std::set<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::set<key_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
   template<class key_t, class value_t, class compare_t = std::less<key_t>, class allocator_t = std::allocator<std::pair<const key_t, value_t >>>
-  inline std::string to_string(const std::unordered_map<key_t, value_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::unordered_map<key_t, value_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
   template<class key_t, class value_t, class compare_t = std::less<key_t>, class allocator_t = std::allocator<std::pair<const key_t, value_t >>>
-  inline std::string to_string(const std::unordered_multimap<key_t, value_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::unordered_multimap<key_t, value_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
   template<class key_t, class compare_t = std::less<key_t>, class allocator_t = std::allocator<key_t >>
-  inline std::string to_string(const std::unordered_multiset<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::unordered_multiset<key_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
   template<class key_t, class compare_t = std::less<key_t>, class allocator_t = std::allocator<key_t >>
-  inline std::string to_string(const std::unordered_set<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const std::unordered_set<key_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
   #if defined(__xtd__cpp_lib_ranges)
   //template <std::ranges::range range_t>
-  //inline std::string to_string(const range_t& values, const std::string& fmt, const std::locale& loc);
+  //inline xtd::string to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc);
   #endif
   template<class type_t>
-  inline std::string to_string(const xtd::collections::generic::ienumerable<type_t>& values, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const xtd::collections::generic::ienumerable<type_t>& values, const xtd::string& fmt, const std::locale& loc);
   template<class type_t>
-  inline std::string to_string(const __xtd_raw_array_data__<type_t>& values, const std::string& fmt, const std::locale& loc);
+  inline xtd::string to_string(const __xtd_raw_array_data__<type_t>& values, const xtd::string& fmt, const std::locale& loc);
     
   template<class type_t, class string_t>
   inline string_t to_string(type_t value, const std::map<type_t, string_t, std::greater<type_t>>& values) {
@@ -178,11 +182,7 @@ namespace xtd {
   }
   
   template<class type_t>
-  inline std::string to_string(type_t value, const std::initializer_list<std::pair<type_t, std::string>>& il) {
-    std::map<type_t, std::string, std::greater<type_t>> values;
-    for (auto item : il) values[item.first] = item.second;
-    return to_string(value, values);
-  }
+  inline xtd::string to_string(type_t value, const std::initializer_list<std::pair<type_t, xtd::string>>& il);
 }
 
 template<class char_t>
@@ -447,107 +447,65 @@ inline std::string __format_stringer < char, const std::wstring& > (const std::w
 }
 
 template < >
-inline std::string __format_stringer < char, bool& > (bool& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, bool& > (bool& value);
 
 template < >
-inline std::string __format_stringer < char, xtd::sbyte& > (xtd::sbyte& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, xtd::sbyte& > (xtd::sbyte& value);
 
 template < >
-inline std::string __format_stringer < char, const unsigned char& > (const unsigned char& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, const unsigned char& > (const unsigned char& value);
 
 template < >
-inline std::string __format_stringer < char, unsigned char& > (unsigned char& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, unsigned char& > (unsigned char& value);
 
 template < >
-inline std::string __format_stringer < char, short& > (short& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, short& > (short& value);
 
 template < >
-inline std::string __format_stringer < char, unsigned short& > (unsigned short& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, unsigned short& > (unsigned short& value);
 
 template < >
-inline std::string __format_stringer < char, int& > (int& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, int& > (int& value);
 
 template < >
-inline std::string __format_stringer < char, unsigned int& > (unsigned int& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, unsigned int& > (unsigned int& value);
 
 template < >
-inline std::string __format_stringer < char, long& > (long& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, long& > (long& value);
 
 template < >
-inline std::string __format_stringer < char, unsigned long& > (unsigned long& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, unsigned long& > (unsigned long& value);
 
 template < >
-inline std::string __format_stringer < char, long long& > (long long& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, long long& > (long long& value);
 
 template < >
-inline std::string __format_stringer < char, unsigned long long& > (unsigned long long& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, unsigned long long& > (unsigned long long& value);
 
 template < >
-inline std::string __format_stringer < char, float& > (float& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, float& > (float& value);
 
 template < >
-inline std::string __format_stringer < char, double& > (double& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, double& > (double& value);
 
 template < >
-inline std::string __format_stringer < char, long double& > (long double& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, long double& > (long double& value);
 
 template < >
-inline std::string __format_stringer < char, std::chrono::system_clock::time_point& > (std::chrono::system_clock::time_point& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, std::chrono::system_clock::time_point& > (std::chrono::system_clock::time_point& value);
 
 template < >
-inline std::string __format_stringer < char, std::tm& > (tm& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, std::tm& > (tm& value);
 
 template < >
-inline std::string __format_stringer < char, xtd::wchar& > (xtd::wchar& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, xtd::wchar& > (xtd::wchar& value);
 
 template < >
-inline std::string __format_stringer < char, xtd::char8& > (xtd::char8& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, xtd::char8& > (xtd::char8& value);
 
 template < >
-inline std::string __format_stringer < char, xtd::char16& > (xtd::char16& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, xtd::char16& > (xtd::char16& value);
 
 template < >
-inline std::string __format_stringer < char, xtd::char32& > (xtd::char32& value) {
-  return xtd::to_string(value, "G", std::locale());
-}
+inline std::string __format_stringer < char, xtd::char32& > (xtd::char32& value);
 /// @endcond

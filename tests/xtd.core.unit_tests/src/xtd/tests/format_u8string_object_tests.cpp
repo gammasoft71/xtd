@@ -23,7 +23,7 @@ namespace {
 
 namespace xtd {
   template<>
-  std::string to_string(const point& p, const std::string& fmt, const std::locale& loc) {
+  xtd::string to_string(const point& p, const xtd::string& fmt, const std::locale& loc) {
     if (fmt.empty()) return format("({}, {})", p.x, p.y);
     if (fmt.size() > 1) throw_helper::throws(exception_case::format, "Format can contains only one character.");
     

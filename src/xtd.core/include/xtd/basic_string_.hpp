@@ -8,6 +8,7 @@
 #endif
 
 #include "array.hpp"
+#include "to_string.hpp"
 //#include "formatter.hpp"
 
 /// @cond

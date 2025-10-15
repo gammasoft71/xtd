@@ -21,7 +21,7 @@ namespace xtd {
   /// ```cpp
   /// class foo abstract_object {
   /// public:
-  ///   virtual std::string to_string() = 0;
+  ///   virtual xtd::string to_string() = 0;
   /// };
   /// ```
   class abstract_object : public xtd::object {
@@ -52,7 +52,7 @@ namespace xtd {
   /// ```cpp
   /// class foo abstract_object_ {
   /// public:
-  ///   virtual std::string to_string() = 0;
+  ///   virtual xtd::string to_string() = 0;
   /// };
   /// ```
 #define abstract_object_ \

@@ -23,7 +23,6 @@
 #include "types.hpp"
 #include "object.hpp"
 #include "parse.hpp"
-#include "to_string.hpp"
 #include "types.hpp"
 #include "unused.hpp"
 #include <cctype>
