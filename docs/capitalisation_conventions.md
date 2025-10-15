@@ -102,7 +102,7 @@ enum class values {
 ```cpp
 class convert {
 public:
-  static int to_int32(const std::string& value);
+  static int to_int32(const string& value);
 };
 ```
 
