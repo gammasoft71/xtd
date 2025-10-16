@@ -2,7 +2,11 @@
 /// @brief Contains xtd::threading::thread_priority enumeration.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include "../enum.hpp"
+#include "../enum_attribute.hpp"
+#include "../enum_collection.hpp"
+#include "../enum_object.hpp"
+#include "../enum_register.hpp"
+#include "../enum_set_attribute.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
