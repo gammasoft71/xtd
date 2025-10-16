@@ -51,7 +51,7 @@
 ///
 /// ```cpp
 /// double cost = 1632.54;
-/// xtd::console::write_line(xtd::to_string(cost, "C", std::locale("en_US.UTF-8")));
+/// xtd::console::write_line(xtd::to_string(cost, "C", xtd::globalization::culture_info {"en-US"}));
 ///
 /// // The example displays the following output:
 /// //
