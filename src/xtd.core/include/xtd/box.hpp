@@ -13,7 +13,6 @@
 #include "iformatable.hpp"
 #include "istringable.hpp"
 #include "is.hpp"
-#include "enum.hpp"
 #include "object.hpp"
 #include "string.hpp"
 #include "types.hpp"
@@ -55,106 +54,106 @@ namespace xtd {
   /// ```
   template<class type_t>
   struct box : xtd::object, xtd::icomparable<box<type_t>>, xtd::iequatable<box<type_t >>, xtd::iformatable {
-    /// @name Public Aliases
-    
-    /// @{
-    /// Represents the value type.
-    using value_type = type_t;
-    
-    /// Represents the reference type.
-    using reference = type_t&;
-    
-    /// Represents the cont reference type.
-    using const_reference = const type_t&;
-    
-    /// Represents the reference type.
-    using pointer = type_t*;
-    
-    /// Represents the cont reference type.
-    using const_pointer = const type_t*;
-    /// @}
-    
-    /// @name Public Constructors
-    
-    /// @{
-    /// @brief Initialize a new xtd::box object.
-    box() = default;
-    /// @brief Initialize a new xtd::box object with specified value.
-    /// @param value Value used to initialize object.
-    box(const_reference value) : value(value) {}
-    /// @brief Initialize a new xtd::box object with specified value.
-    /// @param ...args_t Params used to initialize object.
-    template<class ...args_t>
-    box(args_t&& ...args) : value(args...) {}
-    /// @}
-    
-    /// @cond
-    box(box&&) = default;
-    box(const box&) = default;
-    box& operator =(box&&) = default;
-    box& operator =(const box&) = default;
-    box& operator =(const_reference value) {
-      this->value = value;
-      return *this;
-    };
-    /// @endcond
-    
-    /// @name Public Properties
-    
-    /// @{
-    /// @brief Gets or sets the underlying value.
-    /// @param value The value to set to the underlying value.
-    value_type value {};
-    /// @}
-    
-    /// @name Public Opertors
-    
-    /// @{
-    /// @brief Cast operator to the value type.
-    /// @return The xtd::box current instnce to `value_type`.
-    operator value_type() const noexcept {return value;}
-    /// @}
-    
-    /// @name Public Methods
-    
-    /// @{
-    /// @brief Compares the current instance with another object of the same type.
-    /// @param value An object to compare with this instance.
-    /// @return A 32-bit signed integer that indicates the relative order of the objects being compared.
-    /// The return value has these meanings:
-    ///
-    /// | Value             | Condition                          |
-    /// | ----------------- | ---------------------------------- |
-    /// | Less than zero    | This instance is less than obj.    |
-    /// | Zero              | This instance is equal to obj.     |
-    /// | Greater than zero | This instance is greater than obj. |
-    int32 compare_to(const box& value) const noexcept override {return xtd::collections::generic::helpers::comparer<value_type> {}(this->value, value.value);}
-    
-    /// @brief Determines whether the specified object is equal to the current object.
-    /// @param obj The object to compare with the current object.
-    /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const object& obj) const noexcept override {return is<box<value_type>>(obj) && equals(static_cast<const box<value_type>& > (obj));}
-    /// @brief Indicates whether the current object is equal to another object of the same type.
-    /// @param obj An object to compare with this object.
-    /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-    bool equals(const box& value) const noexcept override {return xtd::collections::generic::helpers::equator<value_type> {}(this->value, value.value);}
-    
-    /// @brief Serves as a hash function for a particular type.
-    /// @return size_t A hash code for the current object.
-    xtd::size get_hash_code() const noexcept override {return hash_code::combine(value);}
-    
-    /// @brief Returns a xtd::string that represents the current object.
-    /// @return A string that represents the current object.
-    xtd::string to_string() const noexcept override {return std::is_integral<value_type>::value || std::is_floating_point<value_type>::value || std::is_enum<type>::value || std::is_pointer<type>::value || std::is_base_of<xtd::istringable, value_type>::value || std::is_base_of<xtd::object, value_type>::value ? xtd::string::format("{}", value) : typeof_<value_type>().full_name();}
+  /// @name Public Aliases
+  
+  /// @{
+  /// Represents the value type.
+  using value_type = type_t;
+  
+  /// Represents the reference type.
+  using reference = type_t&;
+  
+  /// Represents the cont reference type.
+  using const_reference = const type_t&;
+  
+  /// Represents the reference type.
+  using pointer = type_t*;
+  
+  /// Represents the cont reference type.
+  using const_pointer = const type_t*;
+  /// @}
+  
+  /// @name Public Constructors
+  
+  /// @{
+  /// @brief Initialize a new xtd::box object.
+  box() = default;
+  /// @brief Initialize a new xtd::box object with specified value.
+  /// @param value Value used to initialize object.
+  box(const_reference value) : value(value) {}
+  /// @brief Initialize a new xtd::box object with specified value.
+  /// @param ...args_t Params used to initialize object.
+  template<class ...args_t>
+  box(args_t&& ...args) : value(args...) {}
+  /// @}
+  
+  /// @cond
+  box(box&&) = default;
+  box(const box&) = default;
+  box& operator =(box&&) = default;
+  box& operator =(const box&) = default;
+  box& operator =(const_reference value) {
+    this->value = value;
+    return *this;
+  };
+  /// @endcond
+  
+  /// @name Public Properties
+  
+  /// @{
+  /// @brief Gets or sets the underlying value.
+  /// @param value The value to set to the underlying value.
+  value_type value {};
+  /// @}
+  
+  /// @name Public Opertors
+  
+  /// @{
+  /// @brief Cast operator to the value type.
+  /// @return The xtd::box current instnce to `value_type`.
+  operator value_type() const noexcept {return value;}
+  /// @}
+  
+  /// @name Public Methods
+  
+  /// @{
+  /// @brief Compares the current instance with another object of the same type.
+  /// @param value An object to compare with this instance.
+  /// @return A 32-bit signed integer that indicates the relative order of the objects being compared.
+  /// The return value has these meanings:
+  ///
+  /// | Value             | Condition                          |
+  /// | ----------------- | ---------------------------------- |
+  /// | Less than zero    | This instance is less than obj.    |
+  /// | Zero              | This instance is equal to obj.     |
+  /// | Greater than zero | This instance is greater than obj. |
+  int32 compare_to(const box& value) const noexcept override {return xtd::collections::generic::helpers::comparer<value_type> {}(this->value, value.value);}
+  
+  /// @brief Determines whether the specified object is equal to the current object.
+  /// @param obj The object to compare with the current object.
+  /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+  bool equals(const object& obj) const noexcept override {return is<box<value_type>>(obj) && equals(static_cast<const box<value_type>& > (obj));}
+  /// @brief Indicates whether the current object is equal to another object of the same type.
+  /// @param obj An object to compare with this object.
+  /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
+  bool equals(const box& value) const noexcept override {return xtd::collections::generic::helpers::equator<value_type> {}(this->value, value.value);}
+  
+  /// @brief Serves as a hash function for a particular type.
+  /// @return size_t A hash code for the current object.
+  xtd::size get_hash_code() const noexcept override {return hash_code::combine(value);}
+  
+  /// @brief Returns a xtd::string that represents the current object.
+  /// @return A string that represents the current object.
+  xtd::string to_string() const noexcept override {return std::is_integral<value_type>::value || std::is_floating_point<value_type>::value || std::is_enum<type>::value || std::is_pointer<type>::value || std::is_base_of<xtd::istringable, value_type>::value || std::is_base_of<xtd::object, value_type>::value ? xtd::string::format("{}", value) : typeof_<value_type>().full_name();}
     /// @brief Converts the value of this instance to its equivalent string representation, using the specified format.
     /// @param format A value type format string.
     /// @return The string representation of the value of this instance as specified by format.
     xtd::string to_string(const xtd::string& format) const {return to_string(format, std::locale {});}
     /// @brief Converts the value of this instance to its equivalent string representation, using the specified format, and locale.
     /// @param format A value type format string.
-    /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
+    /// @param culture An xtd::globalization::culture_info object that contains culture information.
     /// @return The string representation of the value of this instance as specified by format.
-    xtd::string to_string(const xtd::string& format, const std::locale& loc) const override {return xtd::string::format(loc, xtd::string::format("{{:{}}}", format), value);}
+    xtd::string to_string(const xtd::string& format, const globalization::culture_info& culture) const override;
     /// @}
     
     /// @name Public Static Methods
