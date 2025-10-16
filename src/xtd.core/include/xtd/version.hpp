@@ -4,6 +4,7 @@
 #pragma once
 #include "icomparable.hpp"
 #include "string.hpp"
+#include "parse.hpp"
 
 /// @cond
 #if defined(major)
@@ -343,6 +344,19 @@ namespace xtd {
     int32 build_ = -1;
     int32 revision_ = -1;
   };
+
+  /// @brief Converts the string representation of a version to its xtd::versiob equivalent.
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @param value A string that specifies the time interval to convert.
+  /// @return A time interval that corresponds to value.
+  /// @exception xtd::format_exception value has an invalid format.
+  /// @exception value represents a number that is less than xtd::time_span::min_value or greater than xtd::time_span::max_value.<br>-or-<br>At least one of the days, hours, minutes, or seconds components is outside its valid range.
+  template<>
+  inline xtd::version parse<xtd::version>(const std::string& str) {return xtd::version::parse(str);}
 }
 
 #include "literals/version.hpp"
