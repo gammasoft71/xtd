@@ -21,17 +21,17 @@ template<>
 inline xtd::string xtd::to_string(const bool& value, const xtd::string& fmt, const std::locale& loc) {
   return __boolean_formatter(fmt.chars(), value, loc);
 }
-  
+
 template<>
 inline xtd::string xtd::to_string(const sbyte& value, const xtd::string& fmt, const std::locale& loc) {
   return __numeric_formatter(fmt.chars(), value, loc);
 }
-  
+
 template<>
 inline xtd::string xtd::to_string(const char& value, const xtd::string& fmt, const std::locale& loc) {
   return __character_formatter(fmt.chars(), value, loc);
 }
-  
+
 template<>
 inline xtd::string xtd::to_string(const unsigned char& value, const xtd::string& fmt, const std::locale& loc) {
   return __numeric_formatter(fmt.chars(), value, loc);
@@ -41,7 +41,7 @@ template<>
 inline xtd::string xtd::to_string(const short& value, const xtd::string& fmt, const std::locale& loc) {
   return __numeric_formatter(fmt.chars(), value, loc);
 }
-  
+
 template<>
 inline xtd::string xtd::to_string(const unsigned short& value, const xtd::string& fmt, const std::locale& loc) {
   return __numeric_formatter(fmt.chars(), value, loc);
@@ -206,7 +206,7 @@ template<class type1_t, class type2_t>
 inline xtd::string xtd::to_string(const std::pair<type1_t, type2_t>& value, const xtd::string& fmt, const std::locale& loc) {
   return std::string {"("} + to_string(value.first, fmt, loc).chars() + std::string {", "} + to_string(value.second, fmt, loc).chars() + std::string {")"};
 }
-  
+
 template<class type_t, unsigned n_t, unsigned last_t>
 inline xtd::string xtd::__xtd_tuple_stringer<type_t, n_t, last_t>::to_string(const std::string& str, const type_t& value, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_tuple_stringer < type_t, n_t + 1, last_t >::to_string(str + xtd::to_string(std::get<n_t>(value), fmt, loc).chars() + ", ", value, fmt, loc);
@@ -216,7 +216,7 @@ template<class type_t, unsigned n_t>
 inline xtd::string xtd::__xtd_tuple_stringer<type_t, n_t, n_t>::to_string(const std::string& str, const type_t& value, const xtd::string& fmt, const std::locale& loc) {
   return str + xtd::to_string(std::get<n_t>(value), fmt, loc).chars();
 }
-  
+
 template<class ...types_t>
 inline xtd::string xtd::to_string(const std::tuple<types_t ...>& value, const xtd::string& fmt, const std::locale& loc) {
   return __xtd_tuple_stringer < std::tuple<types_t ...>, 0, sizeof...(types_t) - 1 >::to_string(std::string {"("}, value, fmt, loc) + ")";
@@ -496,7 +496,7 @@ std::basic_ostream<char_t>& operator <<(std::basic_ostream<char_t>& os, const st
 
 template < class char_t, class type_t >
 struct __enum_ostream__ < char_t, type_t, std::false_type > {
-  std::basic_ostream < char_t > & to_stream(std::basic_ostream < char_t > & os, const type_t& value) noexcept {
+  std::basic_ostream < char_t >& to_stream(std::basic_ostream < char_t >& os, const type_t& value) noexcept {
     //return os << value;
     return os << xtd::to_string(value, std::basic_string < char_t > {}, std::locale {});
   }
