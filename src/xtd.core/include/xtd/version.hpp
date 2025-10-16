@@ -344,7 +344,7 @@ namespace xtd {
     int32 build_ = -1;
     int32 revision_ = -1;
   };
-
+  
   /// @brief Converts the string representation of a version to its xtd::versiob equivalent.
   /// @par Namespace
   /// xtd

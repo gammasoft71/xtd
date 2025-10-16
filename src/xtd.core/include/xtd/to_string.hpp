@@ -448,10 +448,10 @@ namespace xtd {
   
   template<class key_t, class compare_t, class allocator_t>
   inline xtd::string to_string(const std::unordered_set<key_t, compare_t, allocator_t>& values, const xtd::string& fmt, const std::locale& loc);
-
+  
   template<class type_t>
   inline xtd::string to_string(type_t value, const std::initializer_list<std::pair<type_t, xtd::string>>& il);
-
+  
   #if defined(__xtd__cpp_lib_ranges)
   //template <std::ranges::range range_t>
   //inline xtd::string to_string(const range_t& values, const xtd::string& fmt, const std::locale& loc);

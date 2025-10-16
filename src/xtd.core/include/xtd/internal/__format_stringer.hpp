@@ -117,10 +117,10 @@ inline std::basic_string<char_t> __to_string(const arg_t* str) {
   return result;
 }
 
-std::ostream & operator <<(std::ostream& os, const xtd::char8* str);
-std::ostream & operator <<(std::ostream& os, const xtd::char16* str);
-std::ostream & operator <<(std::ostream& os, const xtd::char32* str);
-std::ostream & operator <<(std::ostream& os, const xtd::wchar* str);
+std::ostream& operator <<(std::ostream& os, const xtd::char8* str);
+std::ostream& operator <<(std::ostream& os, const xtd::char16* str);
+std::ostream& operator <<(std::ostream& os, const xtd::char32* str);
+std::ostream& operator <<(std::ostream& os, const xtd::wchar* str);
 
 template<class enum_t>
 std::string __enum_to_string__(enum_t value) noexcept;
@@ -132,7 +132,7 @@ struct __enum_ostream__ {};
 
 template < class char_t, class type_t >
 struct __enum_ostream__ < char_t, type_t, std::true_type > {
-  std::basic_ostream < char_t > & to_stream(std::basic_ostream < char_t > & os, const type_t& value) noexcept {
+  std::basic_ostream < char_t >& to_stream(std::basic_ostream < char_t >& os, const type_t& value) noexcept {
     return os << __enum_to_string__(value);
   }
 };
@@ -142,7 +142,7 @@ struct __enum_or_polymorphic_ostream__ {};
 
 template < class char_t, class type_t >
 struct __enum_or_polymorphic_ostream__ < char_t, type_t, std::true_type > {
-  std::basic_ostream < char_t > & to_stream(std::basic_ostream < char_t > & os, const type_t& value) noexcept {
+  std::basic_ostream < char_t >& to_stream(std::basic_ostream < char_t >& os, const type_t& value) noexcept {
     if (dynamic_cast < const xtd::iformatable* > (&value)) return os << __iformatable_to_string(dynamic_cast < const xtd::iformatable& > (value));
     if (dynamic_cast < const xtd::object* > (&value)) return os << __object_to_string__(dynamic_cast < const xtd::object& > (value));
     return os << value;
@@ -151,7 +151,7 @@ struct __enum_or_polymorphic_ostream__ < char_t, type_t, std::true_type > {
 
 template < class char_t, class type_t >
 struct __enum_or_polymorphic_ostream__ < char_t, type_t, std::false_type > {
-  std::basic_ostream < char_t > & to_stream(std::basic_ostream < char_t > & os, const type_t& value) noexcept {
+  std::basic_ostream < char_t >& to_stream(std::basic_ostream < char_t >& os, const type_t& value) noexcept {
     __enum_ostream__ < char, type_t, typename std::is_enum < type_t>::type > ().to_stream(os, value);
     return os;
   }
