@@ -1,6 +1,7 @@
 #define __XTD_CORE_INTERNAL__
 #include "../../../include/xtd/internal/__iformatable_formatter.hpp"
 #undef __XTD_CORE_INTERNAL__
+#include "../../../include/xtd/globalization/culture_info.hpp"
 #include "../../../include/xtd/iformatable.hpp"
 #include "../../../include/xtd/object.hpp"
 #include "../../../include/xtd/string.hpp"
