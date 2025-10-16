@@ -13,14 +13,25 @@ using namespace xtd::helpers;
 
 optional<culture_info> culture_info::current_culture_;
 
-culture_info::culture_info() {
+struct culture_info::data {
+  xtd::globalization::culture_types culture_types = xtd::globalization::culture_types::specific_cultures;
+  xtd::string display_name = "Invariant Language (Invariant Country)";
+  xtd::string english_name = "Invariant Language (Invariant Country)";
+  xtd::size keyboard_layout_id = 127;
+  xtd::size lcid = 127;
+  std::locale locale = std::locale {""};
+  xtd::string name;
+  xtd::string native_name = "Invariant Language (Invariant Country)";
+};
+
+culture_info::culture_info() : data_ {new_ptr<data>()} {
 }
 
-culture_info::culture_info(const std::locale& locale) {
+culture_info::culture_info(const std::locale& locale) : data_ {new_ptr<data>()} {
   fill_from_name(to_cldr_name(locale.name()));
 }
 
-culture_info::culture_info(size culture) {
+culture_info::culture_info(size culture) : data_ {new_ptr<data>()} {
   for (const auto& [n, c] : cultures_) {
     //if (string::equals(culture.data_->name, name, string_comparison::ordinal_ignore_case))
     if (c.data_->lcid != culture) continue;
@@ -30,7 +41,7 @@ culture_info::culture_info(size culture) {
   throw_helper::throws(exception_case::culture_not_found);
 }
 
-culture_info::culture_info(const string& name) {
+culture_info::culture_info(const string& name) : data_ {new_ptr<data>()} {
   fill_from_name(name);
 }
 
@@ -120,7 +131,7 @@ culture_info::operator const std::locale& () const noexcept {
   return data_->locale;
 }
 
-culture_info::culture_info(globalization::culture_types culture_types, string&& display_name, string&& english_name, size keyboard_layout_id, size lcid, string&& name, string&& native_name) {
+culture_info::culture_info(globalization::culture_types culture_types, string&& display_name, string&& english_name, size keyboard_layout_id, size lcid, string&& name, string&& native_name) : data_ {new_ptr<data>()} {
   data_->culture_types = culture_types;
   data_->display_name = std::move(display_name);
   data_->english_name = std::move(english_name);

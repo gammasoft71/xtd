@@ -4,7 +4,6 @@
 #pragma once
 
 #include "culture_not_found_exception.hpp"
-#include "culture_types.hpp"
 #include "../collections/generic/dictionary.hpp"
 #include "../core_export.hpp"
 #include "../iequatable.hpp"
@@ -17,6 +16,10 @@
 namespace xtd {
   /// @brief Contains classes that define culture-related information, including language, country/region, calendars in use, format patterns for dates, currency, and numbers, and sort order for strings. These classes are useful for writing globalized (internationalized) applications. Classes such as xtd::globalization::string_info and xtd::globalization::text_info provide advanced globalization functionalities, including surrogate support and text element processing.
   namespace globalization {
+    /// @cond
+    enum class culture_types;
+    /// @endcond
+    
     /// @brief Provides information about a specific culture (called a locale for unmanaged code development). The information includes the names for the culture, the writing system, the calendar used, the sort order of strings, and formatting for dates and numbers.
     /// ```cpp
     /// class culture_info : public xtd::object, public xtd::iequatable<xtd::globalization::culture_info>
@@ -153,19 +156,18 @@ namespace xtd {
       static xtd::string to_cldr_name(const xtd::string& name);
       static xtd::string to_locale_name(const xtd::string& name);
       
-      struct data {
-        xtd::globalization::culture_types culture_types = xtd::globalization::culture_types::specific_cultures;
-        xtd::string display_name = "Invariant Language (Invariant Country)";
-        xtd::string english_name = "Invariant Language (Invariant Country)";
-        xtd::size keyboard_layout_id = 127;
-        xtd::size lcid = 127;
-        std::locale locale = std::locale {""};
-        xtd::string name;
-        xtd::string native_name = "Invariant Language (Invariant Country)";
-      };
-      ptr<data> data_ = new_ptr<data>();
+      struct data;
+      ptr<data> data_;
       static xtd::collections::generic::dictionary<xtd::string, culture_info> cultures_;
       static xtd::optional<culture_info> current_culture_;
     };
   }
 }
+
+#include "culture_types.hpp"
+#define __XTD_BOX_INTERNAL__
+#include "../box_.hpp"
+#undef  __XTD_BOX_INTERNAL__
+#define __XTD_ENUM_OBJECT_INTERNAL__
+#include "../enum_object_.hpp"
+#undef  __XTD_ENUM_OBJECT_INTERNAL__
