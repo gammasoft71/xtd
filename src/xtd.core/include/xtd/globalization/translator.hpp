@@ -36,13 +36,13 @@ namespace xtd {
       static xtd::string language();
       /// @brief Sets the current application language.
       /// @param language The current application language.
-      /// @remarks Normally you should use the std::locale() method. This function only exists if you have a good reason to bypass std::locale().
-      /// @warning If you set the language with this method, and you use the std::locale method afterwards, translator will use the language initialized with this method and not with std::locale().
+      /// @remarks Normally you should use the xtd::globalization::culture_info::current_culture property. This function only exists if you have a good reason to bypass xtd::globalization::culture_info::current_culture.
+      /// @warning If you set the language with this method, and you use the xtd::globalization::culture_info::current_culture property afterwards, translator will use the language initialized with this method and not with xtd::globalization::culture_info::current_culture.
       static void language(const xtd::string& language);
       /// @brief Sets the current application language.
       /// @param language The current application language.
-      /// @remarks Normally you should use the std::locale() method. This function only exists if you have a good reason to bypass std::locale().
-      /// @warning If you set the language with this method, and you use the std::locale method afterwards, translator will use the language initialized with this method and not with std::locale().
+      /// @remarks Normally you should use the xtd::globalization::culture_info::current_culture property. This function only exists if you have a good reason to bypass xtd::globalization::culture_info::current_culture.
+      /// @warning If you set the language with this method, and you use the xtd::globalization::culture_info::current_culture property afterwards, translator will use the language initialized with this method and not with xtd::globalization::culture_info::current_culture.
       static void language(xtd::null_ptr);
       
       /// @brief Gets an array of languages supported by the application.
