@@ -379,7 +379,7 @@ namespace xtd {
     
     /// @brief Converts the value of the current xtd::time_span object to its equivalent string representation by using the specified format, and locale.
     /// @param format A single format specifier that indicates how to format the value of this xtd::time_span.
-    /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
+    /// @param culture An xtd::globalization::culture_info object that contains culture information.
     /// @return The string representation of the current xtd::time_span value in the format specified by the format parameter.
     /// @exception xtd::format_exception The format parameter is not recognized or is not supported.
     /// @remarks The format parameter can be any valid standard specifier for XTD::time_span values. If format is equal to xtd::string::empty_string (""), the return value of the current xtd::time_span object is formatted with the common format specifier ("c").
@@ -405,7 +405,7 @@ namespace xtd {
     /// | 'S'    | write absolute value of seconds ss                                                                                          |
     /// | 't'    | write absolute value of ticks                                                                                               |
     /// | 'T'    | write absolute value of ticks fixed at 7 digits                                                                             |
-    string to_string(const string& format, const std::locale& loc) const override;
+    string to_string(const string& format, const globalization::culture_info& culture) const override;
     /// @}
     
     /// @name Public Static Methods

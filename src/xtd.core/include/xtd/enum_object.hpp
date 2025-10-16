@@ -199,7 +199,7 @@ namespace xtd {
     
     /// @brief Converts the value of this instance to its equivalent string representation using the specified format, and locale.
     /// @param format A format string.
-    /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
+    /// @param culture An xtd::globalization::culture_info object that contains culture information.
     /// @return The string representation of the value of this instance as specified by format.
     /// @exception xtd::format_exception format contains an invalid specification.
     /// @remarks The format parameter can be one of the following format strings: "G" or "g", "D" or "d", "X" or "x", and "F" or "f" (the format string is not case-sensitive). If format is null or an empty string (""), the general format specifier ("G") is used. For more information about the enumeration format strings and formatting enumeration values, see [Enumeration Format Strings](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Format%20number%20dates%20other%20types/enumeration_format_strings). For more information about formatting in general, see [Formatting Types](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Format%20number%20dates%20other%20types/overview).
@@ -214,7 +214,7 @@ namespace xtd {
     /// ```cpp
     /// string shade_name = enum_object<shade>(as<shade>(1)).to_string("F");
     /// ```
-    xtd::string to_string(const xtd::string& format, const std::locale& loc) const override;
+    xtd::string to_string(const xtd::string& format, const globalization::culture_info& culture) const override;
     /// @}
     
     /// @name Public Static Methods
@@ -663,31 +663,6 @@ namespace xtd {
     /// @}
   };
   /// @}
-  
-  /// @cond
-  template < class enum_t >
-  xtd::string enum_object < enum_t >::to_string(const xtd::string& format, const std::locale& loc) const {
-    init();
-    auto fmt = format;
-    if (xtd::string::is_empty(fmt)) fmt = "G";
-    
-    switch (fmt[0]) {
-      case 'b':
-      case 'B':
-      case 'd':
-      case 'D':
-      case 'o':
-      case 'O':
-      case 'x':
-      case 'X': return __numeric_formatter(fmt.chars(), static_cast < long long int > (value), std::locale());
-      case 'f':
-      case 'F':
-      case 'g':
-      case 'G': return xtd::enum_object < >::get_name(value);
-    }
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
-  }
-  /// @endcond
 }
 
 /// @cond

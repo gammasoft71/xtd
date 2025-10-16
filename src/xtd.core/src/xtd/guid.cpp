@@ -1,3 +1,4 @@
+#include "../../include/xtd/globalization/culture_info.hpp"
 #include "../../include/xtd/as.hpp"
 #include "../../include/xtd/guid.hpp"
 #include "../../include/xtd/argument_exception.hpp"
@@ -110,7 +111,7 @@ string guid::to_string(const string& format) const {
   return to_string(format, std::locale {});
 }
 
-string guid::to_string(const string& format, const std::locale& loc) const {
+string guid::to_string(const string& format, const globalization::culture_info& culture) const {
   auto fmt = xtd::string::is_empty(format) ? "d" : format.to_lower();
   
   if (fmt.length() != 1 || string("ndbpx").index_of(fmt) == string::npos) throw_helper::throws(exception_case::format);

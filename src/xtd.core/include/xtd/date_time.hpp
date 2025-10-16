@@ -802,7 +802,7 @@ namespace xtd {
     /// | `"U"`                      | Universal full date/time pattern.                                                | 2009-06-15T13:45:30 -> Monday, June 15, 2009 8:45:30 PM (en-US) <br><br>  2009-06-15T13:45:30 -> den 15 juni 2009 20:45:30 (sv-SE) <br><br> 2009-06-15T13:45:30 -> Δευτέρα, 15 Ιουνίου 2009 8:45:30 μμ (el-GR)                                                   |
     /// | `"Y"`, `"y"`               | Year month pattern.                                                              | 2009-06-15T13:45:30 -> June 2009 (en-US) <br><br> 2009-06-15T13:45:30 -> juni 2009 (da-DK) <br><br> 2009-06-15T13:45:30 -> Juni 2009 (id-ID)                                                                                                                     |
     /// | Any other single character | Unknown specifier.                                                               | Throws a run-time xtd::format_exception.                                                                                                                                                                                                                         |
-    xtd::string to_string(const string& format, const std::locale& culture) const override;
+    xtd::string to_string(const string& format, const xtd::globalization::culture_info& culture) const override;
     /// @brief Converts the value of the current xtd::date_time object to its equivalent string representation using the specified culture.
     /// @param loc An xtd::globalization::culture_info object that contains culture information.
     /// @return A string representation of value of the current xtd::date_time object as specifiedc ulture.

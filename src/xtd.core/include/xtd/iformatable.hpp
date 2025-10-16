@@ -11,6 +11,12 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  namespace globalization {
+    class culture_info;
+  }
+  /// @endcond
+  
   /// @brief Provides functionality to format the value of an object into a string representation.
   /// @par Namespace
   /// xtd
@@ -41,7 +47,7 @@ namespace xtd {
     /// @param format The format to use <br>-or-<br> A xtd::string::empty_string ("") to use the default format defined for the type of the xtd::iformattable implementation.
     /// @param culture An xtd::globalization::culture_info object that contains culture information.
     /// @return The value of the current instance in the specified format.
-    virtual xtd::string to_string(const xtd::string& format, const std::locale& culture) const = 0;
+    virtual xtd::string to_string(const xtd::string& format, const globalization::culture_info& culture) const = 0;
     /// @}
   };
 }

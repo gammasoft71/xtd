@@ -186,7 +186,7 @@ namespace xtd {
     string to_string(const string& format) const;
     /// @brief Returns a string representation of the value of this xtd::guid instance, according to the provided format specifier, and locale.
     /// @param format A single format specifier that indicates how to format the value of this xtd::guid. The format parameter can be "N", "D", "B", "P", or "X". If format is null or an empty string (""), "D" is used.
-    /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
+    /// @param culture An xtd::globalization::culture_info object that contains culture information.
     /// @return The value of this xtd::guid, represented as a series of lowercase hexadecimal digits in the specified format.
     /// @exception xtd::format_exception The value of format is not null, an empty string (""), "N", "D", "B", "P", or "X".
     /// @remarks The following table shows the accepted format specifiers for the format parameter. "0" represents a digit; hyphens ("-"), braces ("{", "}"), and parentheses ("(", ")") appear as shown.
@@ -202,7 +202,7 @@ namespace xtd {
     /// |           | (00000000-0000-0000-0000-000000000000)                                                                                                      |
     /// | X         | Four hexadecimal values enclosed in braces, where the fourth value is a subset of eight hexadecimal values that is also enclosed in braces: |
     /// |           | {0x00000000,0x0000,0x0000,{0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00}                                                                         |
-    string to_string(const string& format, const std::locale& loc) const override;
+    string to_string(const string& format, const globalization::culture_info& culture) const override;
     /// @}
     
     /// @name Public Static Methods

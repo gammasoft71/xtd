@@ -1,3 +1,4 @@
+#include "../../include/xtd/globalization/culture_info.hpp"
 #include "../../include/xtd/time_span.hpp"
 #include "../../include/xtd/as.hpp"
 #include "../../include/xtd/divided_by_zero_exception.hpp"
@@ -343,7 +344,7 @@ string time_span::to_string(const string& format) const {
   return to_string(format, std::locale {});
 }
 
-string time_span::to_string(const string& format, const std::locale& loc) const {
+string time_span::to_string(const string& format, const globalization::culture_info& culture) const {
   auto fmt = format;
   if (xtd::string::is_empty(fmt)) fmt = "G";
   if (fmt.length() > 1) throw_helper::throws(exception_case::format, "Invalid format");
