@@ -509,6 +509,7 @@ add_sources(
   "include/xtd/time_zone_not_found_exception"
   "include/xtd/to_string.hpp"
   "include/xtd/to_string"
+  "include/xtd/to_string_.hpp"
   "include/xtd/toolkit.hpp"
   "include/xtd/toolkit"
   "include/xtd/trace.hpp"
