@@ -625,13 +625,13 @@ string date_time::to_string(const string& format) const {
   return to_string(format, culture_info::current_culture());
 }
 
-string date_time::to_string(const string& format, const std::locale& loc) const {
-  if (format.length() > 1 && format.find_first_of('%') != npos) return to_string_put_time(format, loc);
-  if (format.length() > 1) return to_string_custom(format, loc);
-  if (xtd::string::is_empty(format)) return to_string_custom(custom_formats['G'], loc);
+string date_time::to_string(const string& format, const globalization::culture_info& culture) const {
+  if (format.length() > 1 && format.find_first_of('%') != npos) return to_string_put_time(format, culture);
+  if (format.length() > 1) return to_string_custom(format, culture);
+  if (xtd::string::is_empty(format)) return to_string_custom(custom_formats['G'], culture);
   
   if (!custom_formats.contains_key(format[0])) throw_helper::throws(exception_case::format, "Invalid format");
-  return to_string_custom(custom_formats[format[0]], loc);
+  return to_string_custom(custom_formats[format[0]], culture);
 }
 
 string date_time::to_string(const culture_info& culture) const {

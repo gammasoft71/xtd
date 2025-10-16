@@ -1,3 +1,4 @@
+#include "../../include/xtd/globalization/culture_info.hpp"
 #include "../../include/xtd/as.hpp"
 #include "../../include/xtd/hash_code.hpp"
 #include "../../include/xtd/iformatable.hpp"
@@ -9,6 +10,7 @@
 
 using namespace xtd;
 using namespace xtd::collections::generic;
+using namespace xtd::globalization;
 
 bool object::operator ==(const object& obj) const noexcept {
   return equals(obj);
@@ -31,7 +33,7 @@ type_object object::get_type() const noexcept {
 }
 
 string object::to_string() const noexcept {
-  if (dynamic_cast<const iformatable*>(this)) return dynamic_cast<const iformatable*>(this)->to_string("", std::locale {});
+  if (dynamic_cast<const iformatable*>(this)) return dynamic_cast<const iformatable*>(this)->to_string("", culture_info::current_culture());
   return get_type().full_name();
 }
 
