@@ -8,6 +8,7 @@
 #include "enum_register.hpp"
 #include "enum_set_attribute.hpp"
 #include "flags_attribute.hpp"
+#include "globalization/culture_info.hpp"
 
 /// @brief Provides the registration struct for enum with specified underlying type.
 /// @par Header
