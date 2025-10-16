@@ -1,13 +1,15 @@
 #define __XTD_CORE_INTERNAL__
 #include "../../../include/xtd/internal/__format_stringer.hpp"
 #undef __XTD_CORE_INTERNAL__
+#include "../../../include/xtd/globalization/culture_info.hpp"
 #include "../../../include/xtd/iformatable.hpp"
 #include "../../../include/xtd/string.hpp"
 
 using namespace xtd;
+using namespace xtd::globalization;
 
 std::string __iformatable_to_string(const iformatable& value) noexcept {
-  return value.to_string("", std::locale {});
+  return value.to_string("", culture_info::current_culture());
 }
 
 std::ostream& operator <<(std::ostream& os, const char8* str) {
