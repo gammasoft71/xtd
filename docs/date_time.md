@@ -115,9 +115,9 @@ The second format uses a form supported by the ISO 8601 standard for a represent
 
 ```cpp
 auto date_string = "5/1/2008 8:30:52 AM";
-date_time date1 = date_time::parse(date_string, std::locale());
+date_time date1 = date_time::parse(date_string, culture_info::current_culture());
 auto iso8601_string = "20080501T08:30:52Z";
-date_time date_iso8602 = date_time::parse_exact(iso8601_string, "yyyyMMddTHH:mm:ssZ", std::locale());
+date_time date_iso8602 = date_time::parse_exact(iso8601_string, "yyyyMMddTHH:mm:ssZ", culture_info::current_culture());
 ```
 
 ## See also
