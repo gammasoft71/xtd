@@ -6,6 +6,7 @@
 #include "../../../include/xtd/threading/thread.hpp"
 #include "../../../include/xtd/threading/thread_pool.hpp"
 #include "../../../include/xtd/threading/timeout.hpp"
+#include "../../../include/xtd/globalization/culture_info.hpp"
 #include "../../../include/xtd/collections/generic/list.hpp"
 #include "../../../include/xtd/io/io_exception.hpp"
 #include "../../../include/xtd/diagnostics/stopwatch.hpp"

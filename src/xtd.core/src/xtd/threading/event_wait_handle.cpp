@@ -6,6 +6,7 @@
 #include "../../../include/xtd/io/path_too_long_exception.hpp"
 #include "../../../include/xtd/threading/abandoned_mutex_exception.hpp"
 #include "../../../include/xtd/threading/event_wait_handle.hpp"
+#include "../../../include/xtd/globalization/culture_info.hpp"
 #include <atomic>
 
 using namespace xtd;
