@@ -184,9 +184,6 @@
 /// @example date_time_specify_kind.cpp
 /// Shows how to use xtd::date_time::specify_kind method.
 ///
-/// @example date_time_sprintf.cpp
-/// Shows how to use xtd::date_time::sprintf method.
-///
 /// @example date_time_subtract.cpp
 /// Shows how to use xtd::date_time::subtract method.
 ///
