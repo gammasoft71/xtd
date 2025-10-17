@@ -22,7 +22,7 @@ namespace {
   //static std::tm to_local_time(const std::chrono::system_clock::time_point& time) noexcept {return to_local_time(std::chrono::system_clock::to_time_t(time));}
   static std::tm to_local_time(std::tm time) noexcept {
     auto dt = date_time::from_tm(time);
-    if (xtd::date_time::sprintf("%Z", dt) != "" && xtd::date_time::sprintf("%Z", dt) == "UTC") return to_local_time(__make_utc_date_time(&time));
+    if (dt.to_string("%Z") != "" && dt.to_string("%Z") == "UTC") return to_local_time(__make_utc_date_time(&time));
     return to_local_time(mktime(&time));
   }
   
@@ -32,7 +32,7 @@ namespace {
   #endif
   [[maybe_unused]] static std::tm to_universal_time(std::tm time) noexcept {
     auto dt = date_time::from_tm(time);
-    if (xtd::date_time::sprintf("%Z", dt) != "" && xtd::date_time::sprintf("%Z", dt) == "UTC") return to_universal_time(mktime(&time));
+    if (dt.to_string("%Z") != "" && dt.to_string("%Z") == "UTC") return to_universal_time(mktime(&time));
     return to_universal_time(__make_utc_date_time(&time));
   }
   
