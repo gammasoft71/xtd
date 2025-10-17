@@ -145,21 +145,21 @@ namespace {
   static array<string> get_days(const culture_info& culture) {
     auto days = list<string> {};
     for (auto index = 1; index <= 7; ++index)
-      days.add(date_time::sprintf("%A", date_time::from_tm(make_tm_time(1970, 1, index + 4, 0, 0, 0)), culture));
+      days.add(date_time::from_tm(make_tm_time(1970, 1, index + 4, 0, 0, 0)).to_string("%A", culture));
     return days.to_array();
   }
   
   static array<string> get_months(const culture_info& culture) {
     auto months = list<string> {};
     for (auto index = 1; index <= 12; ++index)
-      months.add(date_time::sprintf("%B", date_time::from_tm(make_tm_time(1970, index, 1, 0, 0, 0)), culture));
+      months.add(date_time::from_tm(make_tm_time(1970, index, 1, 0, 0, 0)).to_string("%B", culture));
     return months.to_array();
   }
   
   static array<string> get_short_days(const culture_info& culture) {
     auto days = list<string> {};
     for (auto index = 1; index <= 7; ++index)
-      days.add(date_time::sprintf("%a", date_time::from_tm(make_tm_time(1970, 1, index + 4, 0, 0, 0)), culture));
+      days.add(date_time::from_tm(make_tm_time(1970, 1, index + 4, 0, 0, 0)).to_string("%a", culture));
     return days.to_array();
   }
   
@@ -167,14 +167,14 @@ namespace {
     static auto months = list<string> {};
     if (months.count()) return months.to_array();
     for (auto index = 1; index <= 12; ++index)
-      months.add(date_time::sprintf("%b", date_time::from_tm(make_tm_time(1970, index, 1, 0, 0, 0)), culture));
+      months.add(date_time::from_tm(make_tm_time(1970, index, 1, 0, 0, 0)).to_string("%b", culture));
     return months.to_array();
   }
   
   static string get_time_suffix(const date_time& dt, const culture_info& culture) {
-    auto suffix = date_time::sprintf("%p", dt, culture);
+    auto suffix = dt.to_string("%p", culture);
     if (!string::is_empty(suffix)) return suffix;
-    suffix = date_time::sprintf("%p", dt, culture_info {"en-US"});
+    suffix = dt.to_string("%p", culture_info {"en-US"});
     if (!string::is_empty(suffix)) return suffix;
     return dt.hour() / 12 ? "PM" : "AM";
   }
@@ -196,8 +196,8 @@ namespace {
   
   static string to_string_custom_day(const string& format, size& index, uint32 day, const date_time& dt, const culture_info& culture) {
     auto count = to_string_custom_char_count(format, index, 4_z);
-    if (count == 4) return date_time::sprintf("%A", dt, culture);
-    if (count == 3) return date_time::sprintf("%a", dt, culture);
+    if (count == 4) return dt.to_string("%A", culture);
+    if (count == 3) return dt.to_string("%a", culture);
     if (count == 2) return string::format("{:D2}", day);
     return string::format("{:D}", day);
   }
@@ -227,8 +227,8 @@ namespace {
   
   static string to_string_custom_month(const string& format, size& index, uint32 month, const date_time& dt, const culture_info& culture) {
     auto count = to_string_custom_char_count(format, index, 4_z);
-    if (count == 4) return date_time::sprintf("%B", dt, culture);
-    if (count == 3) return date_time::sprintf("%b", dt, culture);
+    if (count == 4) return dt.to_string("%B", culture);
+    if (count == 3) return dt.to_string("%b", culture);
     if (count == 2) return string::format("{:D2}", month);
     return string::format("{:D}", month);
   }
