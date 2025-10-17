@@ -889,7 +889,7 @@ namespace xtd {
     /// @{
     /// @brief Compares two character sequences.
     /// @param str The other string to compare to.
-    /// @return
+    /// @return A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter:
     /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
     /// * Zero if both character sequences compare equivalent.
     /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
@@ -910,7 +910,7 @@ namespace xtd {
     /// @param pos1 The position of the first character in this string to compare.
     /// @param count1 The number of characters of this string to compare.
     /// @param str The other string to compare to.
-    /// @return
+    /// @return A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter:
     /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
     /// * Zero if both character sequences compare equivalent.
     /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
@@ -933,7 +933,7 @@ namespace xtd {
     /// @param count1 The number of characters of this string to compare.
     /// @param str The other string to compare to.
     /// @param pos2 The position of the first character of the given string to compare.
-    /// @return
+    /// @return A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter:
     /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
     /// * Zero if both character sequences compare equivalent.
     /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
@@ -979,7 +979,7 @@ namespace xtd {
     int32 compare(size_type pos1, size_type count1, const basic_string & str, size_type pos2, size_type count2) const {return chars_.compare(pos1, count1, str, pos2, count2);}
     /// @brief Compares two character sequences.
     /// @param s pointer to the character string to compare to.
-    /// @return
+    /// @return A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter:
     /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
     /// * Zero if both character sequences compare equivalent.
     /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
@@ -1000,7 +1000,7 @@ namespace xtd {
     /// @param pos1 The position of the first character in this string to compare.
     /// @param count1 The number of characters of this string to compare.
     /// @param s pointer to the character string to compare to.
-    /// @return
+    /// @return A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter:
     /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
     /// * Zero if both character sequences compare equivalent.
     /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
@@ -1023,7 +1023,7 @@ namespace xtd {
     /// @param count1 The number of characters of this string to compare.
     /// @param s pointer to the character string to compare to.
     /// @param count2 The number of characters of the given string to compare.
-    /// @return
+    /// @return A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter:
     /// * Negative value if `*this` appears before the character sequence specified by the arguments, in lexicographical order.
     /// * Zero if both character sequences compare equivalent.
     /// * Positive value if `*this` appears after the character sequence specified by the arguments, in lexicographical order.
