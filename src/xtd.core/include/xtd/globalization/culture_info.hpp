@@ -171,3 +171,6 @@ namespace xtd {
 #define __XTD_ENUM_OBJECT_INTERNAL__
 #include "../enum_object_.hpp"
 #undef  __XTD_ENUM_OBJECT_INTERNAL__
+#define __XTD_TO_STRING_INTERNAL__
+#include "../to_string_.hpp"
+#undef  __XTD_TO_STRING_INTERNAL__
