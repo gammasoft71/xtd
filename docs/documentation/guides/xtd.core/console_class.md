@@ -24,7 +24,6 @@ For more information on formatting strings, see [Formatting types](/docs/documen
 > Console applications lack a message pump that starts by default.
 
 ## See also
-​
 * [Formatting types](/docs/documentation/guides/xtd.core/format_number_dates_other_types/overview)
 * [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)
