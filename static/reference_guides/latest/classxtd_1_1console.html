@@ -1514,7 +1514,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"><span class="comment">// Type any text then press Enter. Type &#39;+&#39; in the first column to show</span></div>
 <div class="line"><span class="comment">// the cursor, &#39;-&#39; to hide the cursor, or lowercase &#39;x&#39; to quit:</span></div>
 <div class="line"><span class="comment">// x</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__string_html_a6c9caea8081698b588cb6af9b6da8542"><div class="ttname"><a href="classxtd_1_1basic__string.html#a6c9caea8081698b588cb6af9b6da8542">xtd::basic_string&lt; char &gt;::is_empty</a></div><div class="ttdeci">bool is_empty() const noexcept</div><div class="ttdef"><b>Definition</b> basic_string.hpp:3535</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html_a6c9caea8081698b588cb6af9b6da8542"><div class="ttname"><a href="classxtd_1_1basic__string.html#a6c9caea8081698b588cb6af9b6da8542">xtd::basic_string&lt; char &gt;::is_empty</a></div><div class="ttdeci">bool is_empty() const noexcept</div><div class="ttdef"><b>Definition</b> basic_string.hpp:3534</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae45a442bc3942b2270998ae8c574abe9"><div class="ttname"><a href="#ae45a442bc3942b2270998ae8c574abe9">xtd::console::cursor_visible</a></div><div class="ttdeci">static bool cursor_visible()</div><div class="ttdoc">Gets a value indicating whether the cursor is visible.</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -2697,7 +2697,7 @@ Use the key_available method in conjunction with only the read_key method, not t
 <div class="line"><span class="keyword">auto</span> main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> = 0;</div>
 <div class="line">  <span class="comment">//</span></div>
-<div class="line">  <span class="keywordflow">if</span> ((argc == 2) &amp;&amp; (<a class="code hl_function" href="structxtd_1_1box.html#a5e274cc04e1882aca9dc519e8f7235ba">int32_object::try_parse</a>(argv[1], <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>) == <span class="keyword">true</span>) &amp;&amp; ((<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> &gt;= 1) &amp;&amp; (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> &lt;= 9))) {</div>
+<div class="line">  <span class="keywordflow">if</span> ((argc == 2) &amp;&amp; (<a class="code hl_function" href="classxtd_1_1box__integer.html#a9f3925bfeb0b97e6460217daa694840e">int32_object::try_parse</a>(argv[1], <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>) == <span class="keyword">true</span>) &amp;&amp; ((<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> &gt;= 1) &amp;&amp; (<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a> &lt;= 9))) {</div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 1; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt;= <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9dd4e461268c8034f5c8564e155c67a6">x</a>; ++<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>) {</div>
 <div class="line">      <a class="code hl_function" href="#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;Beep number {}.&quot;</span>, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>);</div>
 <div class="line">      <a class="code hl_function" href="#aab2e161c3a72cb14f808ed40e2b59ef2">console::beep</a>();</div>
@@ -2713,9 +2713,9 @@ Use the key_available method in conjunction with only the read_key method, not t
 <div class="line"><span class="comment">// Beep number 2.</span></div>
 <div class="line"><span class="comment">// Beep number 3.</span></div>
 <div class="line"> </div>
+<div class="ttc" id="aclassxtd_1_1box__integer_html_a9f3925bfeb0b97e6460217daa694840e"><div class="ttname"><a href="classxtd_1_1box__integer.html#a9f3925bfeb0b97e6460217daa694840e">xtd::box_integer&lt; int32 &gt;::try_parse</a></div><div class="ttdeci">static bool try_parse(const xtd::string &amp;value, int32 &amp;result, xtd::number_styles styles)</div><div class="ttdef"><b>Definition</b> box_integer.hpp:85</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_aab2e161c3a72cb14f808ed40e2b59ef2"><div class="ttname"><a href="#aab2e161c3a72cb14f808ed40e2b59ef2">xtd::console::beep</a></div><div class="ttdeci">static void beep()</div><div class="ttdoc">Plays the sound of a beep through the console speaker.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:104</div></div>
-<div class="ttc" id="astructxtd_1_1box_html_a5e274cc04e1882aca9dc519e8f7235ba"><div class="ttname"><a href="structxtd_1_1box.html#a5e274cc04e1882aca9dc519e8f7235ba">xtd::box::try_parse</a></div><div class="ttdeci">static bool try_parse(const xtd::string &amp;value, reference result) noexcept</div><div class="ttdoc">Converts the string to its value_type equivalent. A return value indicates whether the conversion suc...</div><div class="ttdef"><b>Definition</b> box.hpp:172</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -4053,7 +4053,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 14 2025 15:57:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Oct 16 2025 13:20:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

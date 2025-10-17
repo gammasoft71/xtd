@@ -283,9 +283,10 @@ Macros</h2></td></tr>
 <dl class="section remark"><dt>Remarks</dt><dd>This keyword has no other use than to tag a class to abstract. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">class </span>foo <a class="code hl_define" href="#gac618f4bf4029759cf6ca31a94b89151a">abstract_object_</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">virtual</span> std::string to_string() = 0;</div>
+<div class="line">  <span class="keyword">virtual</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> to_string() = 0;</div>
 <div class="line">};</div>
 <div class="ttc" id="agroup__keywords_html_gac618f4bf4029759cf6ca31a94b89151a"><div class="ttname"><a href="#gac618f4bf4029759cf6ca31a94b89151a">abstract_object_</a></div><div class="ttdeci">#define abstract_object_</div><div class="ttdoc">This keyword is used to represents an abstract class.</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:58</div></div>
+<div class="ttc" id="agroup__strings_html_ga60154d7201cef3f8d0d5e241ef54b25e"><div class="ttname"><a href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></div><div class="ttdeci">xtd::basic_string&lt; char &gt; string</div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> __string_definitions.hpp:43</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -500,7 +501,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="comment">// values = [0, 1, 2, 3]</span></div>
 <div class="line"><span class="comment">// names = [value_one, value_two, value_three, value_four]</span></div>
 <div class="line"><span class="comment">// entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]</span></div>
-<div class="ttc" id="agroup__keywords_html_gab2f79c6b0b3afc4eb78cb892fe72b373"><div class="ttname"><a href="#gab2f79c6b0b3afc4eb78cb892fe72b373">enum_ut_</a></div><div class="ttdeci">#define enum_ut_(namespace_name, enum_t, underlying_t,...)</div><div class="ttdoc">Provides the registration struct for enum with specified underlying type.</div><div class="ttdef"><b>Definition</b> enum.hpp:30</div></div>
+<div class="ttc" id="agroup__keywords_html_gab2f79c6b0b3afc4eb78cb892fe72b373"><div class="ttname"><a href="#gab2f79c6b0b3afc4eb78cb892fe72b373">enum_ut_</a></div><div class="ttdeci">#define enum_ut_(namespace_name, enum_t, underlying_t,...)</div><div class="ttdoc">Provides the registration struct for enum with specified underlying type.</div><div class="ttdef"><b>Definition</b> enum.hpp:31</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_ut_8cpp-example.html#a0">enum_ut.cpp</a>.</dd>
 </dl>
@@ -576,7 +577,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="comment">// values = [0, 1, 2, 3]</span></div>
 <div class="line"><span class="comment">// names = [value_one, value_two, value_three, value_four]</span></div>
 <div class="line"><span class="comment">// entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]</span></div>
-<div class="ttc" id="agroup__keywords_html_ga5f48a70a2aa3ba1ba74bd8a4cfc44691"><div class="ttname"><a href="#ga5f48a70a2aa3ba1ba74bd8a4cfc44691">enum_</a></div><div class="ttdeci">#define enum_(namespace_name, enum_t,...)</div><div class="ttdoc">Provides the registration struct for enum.</div><div class="ttdef"><b>Definition</b> enum.hpp:52</div></div>
+<div class="ttc" id="agroup__keywords_html_ga5f48a70a2aa3ba1ba74bd8a4cfc44691"><div class="ttname"><a href="#ga5f48a70a2aa3ba1ba74bd8a4cfc44691">enum_</a></div><div class="ttdeci">#define enum_(namespace_name, enum_t,...)</div><div class="ttdoc">Provides the registration struct for enum.</div><div class="ttdef"><b>Definition</b> enum.hpp:53</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_8cpp-example.html#a0">enum.cpp</a>, and <a class="el" href="parse_enum_8cpp-example.html#a0">parse_enum.cpp</a>.</dd>
 </dl>
@@ -1086,7 +1087,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="comment">// │ text_styles::strikeout                        │ {:X}       │ 8                                │</span></div>
 <div class="line"><span class="comment">// │ text_styles::strikeout                        │ {:X2}      │ 08                               │</span></div>
 <div class="line"><span class="comment">// └───────────────────────────────────────────────┴────────────┴──────────────────────────────────┘</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__string_html_abe37d71513cd7f2585290402bd45afb2"><div class="ttname"><a href="classxtd_1_1basic__string.html#abe37d71513cd7f2585290402bd45afb2">xtd::basic_string::pad_right</a></div><div class="ttdeci">basic_string pad_right(xtd::size total_width) const noexcept</div><div class="ttdoc">Left-aligns the characters in this basic_string, padding with spaces on the right for a specified tot...</div><div class="ttdef"><b>Definition</b> basic_string.hpp:1537</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__string_html_abe37d71513cd7f2585290402bd45afb2"><div class="ttname"><a href="classxtd_1_1basic__string.html#abe37d71513cd7f2585290402bd45afb2">xtd::basic_string::pad_right</a></div><div class="ttdeci">basic_string pad_right(xtd::size total_width) const noexcept</div><div class="ttdoc">Left-aligns the characters in this basic_string, padding with spaces on the right for a specified tot...</div><div class="ttdef"><b>Definition</b> basic_string.hpp:1536</div></div>
 <div class="ttc" id="agroup__format__parse_html_ga73705cb16c7db5a2b7567456ff4e7e14"><div class="ttname"><a href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">xtd::format</a></div><div class="ttdeci">xtd::string format(const xtd::string &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> format.hpp:21</div></div>
 <div class="ttc" id="agroup__keywords_html_gaea49fae71107df8769685efb159c181a"><div class="ttname"><a href="#gaea49fae71107df8769685efb159c181a">flags_attribute_</a></div><div class="ttdeci">#define flags_attribute_(namespace_name, enum_type)</div><div class="ttdoc">Provides the set attribute struct for enumerations helper.</div><div class="ttdef"><b>Definition</b> flags_attribute.hpp:34</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga292bc25e10c2a6b7d9439b94d566d346"><div class="ttname"><a href="group__xtd__core.html#ga292bc25e10c2a6b7d9439b94d566d346">xtd::enum_collection</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; enum_t, xtd::string &gt; &gt; enum_collection</div><div class="ttdoc">Represents a pair of an enum_t value and a string of an enum of type enum_t.</div><div class="ttdef"><b>Definition</b> enum_collection.hpp:24</div></div>
@@ -1120,7 +1121,7 @@ Macros</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>istringable <a class="code hl_define" href="#ga64c32b24bd922fc8189a487213592ccf">interface_</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">virtual</span> std::string to_string() <span class="keyword">const</span> = 0;</div>
+<div class="line">  <span class="keyword">virtual</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> to_string() <span class="keyword">const</span> = 0;</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>foo : <span class="keyword">public</span> istringable {</div>
@@ -3528,7 +3529,7 @@ See also <a class="el" href="structxtd_1_1scope__success.html" title="Nowadays, 
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">class </span>foo <a class="code hl_define" href="#ga28796443ec37b938df7072c79595e3f6">static_</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">static</span> std::string to_string() {<span class="keywordflow">return</span> <span class="stringliteral">&quot;foo&quot;</span>;}</div>
+<div class="line">  <span class="keyword">static</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> to_string() {<span class="keywordflow">return</span> <span class="stringliteral">&quot;foo&quot;</span>;}</div>
 <div class="line">};</div>
 <div class="ttc" id="agroup__keywords_html_ga28796443ec37b938df7072c79595e3f6"><div class="ttname"><a href="#ga28796443ec37b938df7072c79595e3f6">static_</a></div><div class="ttdeci">#define static_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can&#39;t be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.hpp:37</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -3554,7 +3555,7 @@ See also <a class="el" href="structxtd_1_1scope__success.html" title="Nowadays, 
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><span class="keyword">class </span>foo <a class="code hl_define" href="#gadf2fc01c525cce1b8255c8308b2fb004">static_object_</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="keyword">static</span> std::string to_string() {<span class="keywordflow">return</span> <span class="stringliteral">&quot;foo&quot;</span>;}</div>
+<div class="line">  <span class="keyword">static</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> to_string() {<span class="keywordflow">return</span> <span class="stringliteral">&quot;foo&quot;</span>;}</div>
 <div class="line">};</div>
 <div class="ttc" id="agroup__keywords_html_gadf2fc01c525cce1b8255c8308b2fb004"><div class="ttname"><a href="#gadf2fc01c525cce1b8255c8308b2fb004">static_object_</a></div><div class="ttdeci">#define static_object_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can&#39;t be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.hpp:53</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -3719,7 +3720,7 @@ See also <a class="el" href="structxtd_1_1scope__success.html" title="Nowadays, 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Oct 14 2025 15:57:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Oct 16 2025 13:20:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
