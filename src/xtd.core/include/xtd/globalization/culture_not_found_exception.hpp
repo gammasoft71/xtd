@@ -22,7 +22,7 @@ namespace xtd {
     /// xtd::collections
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core globalization
     /// @par Examples
     /// The following example demonstrates how to throw and catch an culture_not_found_exception.
     /// @include culture_not_found_exception.cpp

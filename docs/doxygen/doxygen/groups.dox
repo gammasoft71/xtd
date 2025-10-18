@@ -109,7 +109,7 @@
     |   |- menus_and_toolbars
     |   |     /// @brief Contains menus and toolbars definitions.
     |   |     /// @ingroup gui
-    |   |     /// @defgroup menus_and_toolbars  menus and toolbars
+    |   |     /// @defgroup menus_and_toolbars menus and toolbars
     |   |- renderers
     |         /// @brief Contains control renderers definitions.
     |         /// @ingroup gui
@@ -138,9 +138,9 @@
     |   |   |   | /// @ingroup collections
     |   |   |   | /// @defgroup generic_collections generic
     |   |   |   |- extensions_generic_collections
-    |   |   |         /// @brief Contain generic collections and interfaces extensions.
-    |   |   |         /// @ingroup generic_collections
-    |   |   |         /// @defgroup extensions_generic_collections extensions
+    |   |   |   |     /// @brief Contain generic collections and interfaces extensions.
+    |   |   |   |     /// @ingroup generic_collections
+    |   |   |   |     /// @defgroup extensions_generic_collections extensions
     |   |   |   |- helpers_generic_collections
     |   |   |         /// @brief Contains generic collections helpers definitions.
     |   |   |         /// @ingroup generic_collections
@@ -165,6 +165,10 @@
     |   |     /// @brief Contains interfaces extensions.
     |   |     /// @ingroup system
     |   |     /// @defgroup extensions extensions
+    |   |- globalization
+    |   |     /// @brief Contains globalization objects.
+    |   |     /// @ingroup system
+    |   |     /// @defgroup globalization globalization
     |   |- helpers
     |   |     /// @brief Contains object helpers.
     |   |     /// @ingroup system
@@ -224,9 +228,6 @@
     |- system_information
     |     /// @brief System information contains classes that provides informations about the current system environment.
     |     /// @defgroup system_information system information
-    |- translate
-    |     /// @brief Contains translator definitions.
-    |     /// @defgroup translate translate
     |- types
     |     /// @brief Contains types definitions
     |     /// @defgroup types types
