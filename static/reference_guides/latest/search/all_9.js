@@ -373,7 +373,7 @@ var searchData=
   ['install_5fpackage_370',['install_package',['../_c_make_commands.html#InstallPackageSubSection',1,'']]],
   ['installed_5ffont_5fcollection_371',['installed_font_collection',['../classxtd_1_1drawing_1_1text_1_1installed__font__collection.html',1,'xtd::drawing::text::installed_font_collection'],['../classxtd_1_1drawing_1_1text_1_1installed__font__collection.html#aa04364500b3a7bd6ec711b226f577b63',1,'xtd::drawing::text::installed_font_collection::installed_font_collection()']]],
   ['installed_5ffont_5fcollection_2ehpp_372',['installed_font_collection.hpp',['../installed__font__collection_8hpp.html',1,'']]],
-  ['installed_5fwin32_5fcultures_373',['installed_win32_cultures',['../group__xtd__core.html#gga27becfc96240a075bb60e6f45f8071e6a4b9da79ac89e70be6c397bd59e8820e7',1,'xtd::globalization']]],
+  ['installed_5fwin32_5fcultures_373',['installed_win32_cultures',['../group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a4b9da79ac89e70be6c397bd59e8820e7',1,'xtd::globalization']]],
   ['int16_374',['int16',['../group__types.html#gac1b58c138d196c1ee8710d40e7d28751',1,'xtd']]],
   ['int16_2ehpp_375',['int16.hpp',['../int16_8hpp.html',1,'(Global Namespace)'],['../literals_2int16_8hpp.html',1,'(Global Namespace)']]],
   ['int16_5fobject_376',['int16_object',['../group__types.html#gad832bbb32c3d3bba1a68745c30016221',1,'xtd']]],

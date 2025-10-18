@@ -7,7 +7,6 @@ var searchData=
   ['threading_4',['threading',['../group__threading.html',1,'']]],
   ['timers_5',['timers',['../group__timers.html',1,'']]],
   ['toolbars_6',['menus and toolbars',['../group__menus__and__toolbars.html',1,'']]],
-  ['translate_7',['translate',['../group__translate.html',1,'']]],
-  ['tunit_8',['xtd.tunit',['../group__xtd__tunit.html',1,'']]],
-  ['types_9',['types',['../group__types.html',1,'']]]
+  ['tunit_7',['xtd.tunit',['../group__xtd__tunit.html',1,'']]],
+  ['types_8',['types',['../group__types.html',1,'']]]
 ];

@@ -16,7 +16,7 @@ var searchData=
   ['network_5freset_13',['network_reset',['../group__xtd__core.html#gga0c933b52bdbb9399c8ec4b1dcf3e2e71a0e1d200ae35ede416bf85f84093ce37a',1,'xtd::net::sockets']]],
   ['network_5fshortcuts_14',['network_shortcuts',['../classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057ab3d126f7e81c60164e560b1a266934e1',1,'xtd::environment']]],
   ['network_5funreachable_15',['network_unreachable',['../group__xtd__core.html#gga0c933b52bdbb9399c8ec4b1dcf3e2e71a608a68344b4eb1fe0690861a83828816',1,'xtd::net::sockets']]],
-  ['neutral_5fcultures_16',['neutral_cultures',['../group__xtd__core.html#gga27becfc96240a075bb60e6f45f8071e6a9ef876aa619b0c2e8358b1ef574f33ac',1,'xtd::globalization']]],
+  ['neutral_5fcultures_16',['neutral_cultures',['../group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a9ef876aa619b0c2e8358b1ef574f33ac',1,'xtd::globalization']]],
   ['never_5funderline_17',['never_underline',['../group__xtd__forms.html#gga9cd361fe4470dd0f0f0a628b4df62a08a2641c0974e8ee79a23f0dd9d7eaf6b31',1,'xtd::forms']]],
   ['next_18',['next',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dead0cab90d8d20d57e2f2b9be52f7dd25d',1,'xtd::forms']]],
   ['next_5fmonth_5fbutton_19',['next_month_button',['../classxtd_1_1forms_1_1month__calendar.html#adbf081e69d9c32aebd315f4b05c69177aaae866c414d8dcdb3d89fe5198ce7b27',1,'xtd::forms::month_calendar']]],
