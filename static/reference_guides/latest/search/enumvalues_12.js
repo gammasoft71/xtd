@@ -114,7 +114,7 @@ var searchData=
   ['sparse_5ffile_111',['sparse_file',['../group__xtd__core.html#ggaaf346227f9a44012acb58d9e7e4020a4a7106194b9dd887f3f9b6e9baf191a6ea',1,'xtd::io']]],
   ['speaking_112',['speaking',['../group__xtd__core.html#gga5c8403b567e6ebc9f597002c2efd0850ad1715efc5a67ac1c988152b8136e3dfa',1,'xtd::speech::synthesis']]],
   ['special_5ffolders_113',['special_folders',['../classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050ba8c088a59f39bd9699da5130e026c35ef',1,'xtd::system_report']]],
-  ['specific_5fcultures_114',['specific_cultures',['../group__xtd__core.html#gga27becfc96240a075bb60e6f45f8071e6a0bfcfc8f41e5ee1d585b0ca075307541',1,'xtd::globalization']]],
+  ['specific_5fcultures_114',['specific_cultures',['../group__globalization.html#gga27becfc96240a075bb60e6f45f8071e6a0bfcfc8f41e5ee1d585b0ca075307541',1,'xtd::globalization']]],
   ['sphere_115',['sphere',['../group__xtd__drawing.html#ggae7711973ea9941238900716fbd331fcca34248a9bfcbd589d9b5fccb6a0ac6963',1,'xtd::drawing::drawing_2d']]],
   ['spring_116',['spring',['../group__xtd__forms.html#ggae0566fb9fcc2f1df08ed5dd0dde01ad6a2a2d595e6ed9a0b24f027f2b63b134d6',1,'xtd::forms']]],
   ['spring_5fgreen_117',['spring_green',['../group__colors.html#ggabb6249e3fb8a4388778157257e99049ba67485a137fce2085007d93aa115cd093',1,'xtd::drawing']]],
