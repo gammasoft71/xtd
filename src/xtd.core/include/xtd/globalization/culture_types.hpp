@@ -17,7 +17,7 @@ namespace xtd {
     /// xtd
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core globalization
     enum class culture_types {
       /// @brief Cultures that are associated with a language but are not specific to a country/region.
       neutral_cultures = 0b1,
