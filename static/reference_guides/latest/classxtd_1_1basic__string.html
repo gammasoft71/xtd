@@ -219,7 +219,7 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>/ * Negative value if <code>*this</code> appears before the character sequence specified by the arguments, in lexicographical order. / * Zero if both character sequences compare equivalent. / * Positive value if <code>*this</code> appears after the character sequence specified by the arguments, in lexicographical order. / </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter: / * Negative value if <code>*this</code> appears before the character sequence specified by the arguments, in lexicographical order. / * Zero if both character sequences compare equivalent. / * Positive value if <code>*this</code> appears after the character sequence specified by the arguments, in lexicographical order. / </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Compares this string to str. / </dd>
 <dd>
 A character sequence consisting of <code>count1</code> characters starting at <code>data1</code> is compared to a character sequence consisting of <code>count2</code> characters starting at <code>data2</code> as follows: / * First, calculate the number of characters to compare, as if by <code>size_type rlen = std::min(count1, count2)</code>. / * Then compare the sequences by calling <code>traits_t::compare(data1, data2, rlen)</code>. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows: / </dd>
@@ -233,7 +233,7 @@ A character sequence consisting of <code>count1</code> characters starting at <c
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>/ * Negative value if <code>*this</code> appears before the character sequence specified by the arguments, in lexicographical order. / * Zero if both character sequences compare equivalent. / * Positive value if <code>*this</code> appears after the character sequence specified by the arguments, in lexicographical order. / </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter: / * Negative value if <code>*this</code> appears before the character sequence specified by the arguments, in lexicographical order. / * Zero if both character sequences compare equivalent. / * Positive value if <code>*this</code> appears after the character sequence specified by the arguments, in lexicographical order. / </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Compares a [<code>pos1</code>, <code>pos1 + count1</code>) substring of this string to <code>str</code>. / * If <code>count1 &gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">size()</a> - pos1</code>, the substring is [<code>pos1</code>, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">size()</a>). / </dd>
 <dd>
 A character sequence consisting of <code>count1</code> characters starting at <code>data1</code> is compared to a character sequence consisting of <code>count2</code> characters starting at <code>data2</code> as follows: / * First, calculate the number of characters to compare, as if by <code>size_type rlen = std::min(count1, count2)</code>. / * Then compare the sequences by calling <code>traits_t::compare(data1, data2, rlen)</code>. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows: / </dd>
@@ -248,7 +248,7 @@ A character sequence consisting of <code>count1</code> characters starting at <c
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>/ * Negative value if <code>*this</code> appears before the character sequence specified by the arguments, in lexicographical order. / * Zero if both character sequences compare equivalent. / * Positive value if <code>*this</code> appears after the character sequence specified by the arguments, in lexicographical order. / </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter: / * Negative value if <code>*this</code> appears before the character sequence specified by the arguments, in lexicographical order. / * Zero if both character sequences compare equivalent. / * Positive value if <code>*this</code> appears after the character sequence specified by the arguments, in lexicographical order. / </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Compares a [<code>pos1</code>, <code>pos1 + count1</code>) substring of this string to a substring [<code>pos2</code>, <code>pos2 + count2</code>) of <code>str</code>. / * If <code>count1 &gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">size()</a> - pos1</code>, the first substring is [<code>pos1</code>, <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">size()</a>). / * If <code>count2 &gt; str.size() - pos2</code>, the second substring is [<code>pos2</code>, <code>str.size()</code>). / </dd>
 <dd>
 A character sequence consisting of <code>count1</code> characters starting at <code>data1</code> is compared to a character sequence consisting of <code>count2</code> characters starting at <code>data2</code> as follows: / * First, calculate the number of characters to compare, as if by <code>size_type rlen = std::min(count1, count2)</code>. / * Then compare the sequences by calling <code>traits_t::compare(data1, data2, rlen)</code>. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows: / </dd>
@@ -276,7 +276,7 @@ A character sequence consisting of <code>count1</code> characters starting at <c
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>/ * Negative value if <code>*this</code> appears before the character sequence specified by the arguments, in lexicographical order. / * Zero if both character sequences compare equivalent. / * Positive value if <code>*this</code> appears after the character sequence specified by the arguments, in lexicographical order. / </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter: / * Negative value if <code>*this</code> appears before the character sequence specified by the arguments, in lexicographical order. / * Zero if both character sequences compare equivalent. / * Positive value if <code>*this</code> appears after the character sequence specified by the arguments, in lexicographical order. / </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Compares this string to the null-terminated character sequence beginning at the character pointed to by <code>s</code> with length <code>traits_t::length(s)</code>. / </dd>
 <dd>
 A character sequence consisting of <code>count1</code> characters starting at <code>data1</code> is compared to a character sequence consisting of <code>count2</code> characters starting at <code>data2</code> as follows: / * First, calculate the number of characters to compare, as if by <code>size_type rlen = std::min(count1, count2)</code>. / * Then compare the sequences by calling <code>traits_t::compare(data1, data2, rlen)</code>. For standard strings this function performs character-by-character lexicographical comparison. If the result is zero (the character sequences are equal so far), then their sizes are compared as follows: / </dd>
@@ -290,7 +290,7 @@ A character sequence consisting of <code>count1</code> characters starting at <c
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>/ * Negative value if <code>*this</code> appears before the character sequence specified by the arguments, in lexicographical order. / * Zero if both character sequences compare equivalent. / * Positive value if <code>*this</code> appears after the character sequence specified by the arguments, in lexicographical order. / </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter: / * Negative value if <code>*this</code> appears before the character sequence specified by the arguments, in lexicographical order. / * Zero if both character sequences compare equivalent. / * Positive value if <code>*this</code> appears after the character sequence specified by the arguments, in lexicographical order. / </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Compares a [<code>pos1</code>, <code>pos1 + count1</code>) substring of this string to the null-terminated character sequence beginning at the character pointed to by <code>s</code> with length <code>traits_t::length(s)</code>. / * If <code>count1 &gt; <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">size()</a> - pos1</code>, the substring is [<code>pos1$ , <a class="el" href="group__types.html#ga221e5b824352c9046d353e4659af5b87" title="Represents a size of any object in bytes.">size()</a>). @remarks A character sequence consisting of</code>count1<code>characters starting at</code>data1<code>is compared to a character sequence consisting of</code>count2<code>characters starting at</code>data2<code>as follows:<ul>
 <li>First, calculate the number of characters to compare, as if by</li>
 </ul>
@@ -1878,7 +1878,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><ul>
+<dl class="section return"><dt>Returns</dt><dd>A 32-bit signed integer that indicates whether this instance precedes, follows, or appears in the same position in the sort order as the value parameter:<ul>
 <li>Negative value if <code>*this</code> appears before the character sequence specified by the arguments, in lexicographical order.</li>
 <li>Zero if both character sequences compare equivalent.</li>
 <li>Positive value if <code>*this</code> appears after the character sequence specified by the arguments, in lexicographical order. </li>
@@ -5514,7 +5514,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 17 2025 18:28:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Oct 18 2025 18:45:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

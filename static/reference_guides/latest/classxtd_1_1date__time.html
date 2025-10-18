@@ -3316,7 +3316,7 @@ The length si greater than 1. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use xtd::date_time::to_string(const xtd::string&amp;) with differentt formats. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a0337274cf6d6900b883fc5551b19bba6" title="Converts the value of the current xtd::date_time object to its equivalent string representation using...">xtd::date_time::to_string</a> with differentt formats. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -3378,9 +3378,9 @@ The length si greater than 1. </td></tr>
 <div class="line"><span class="comment">// &#39;%%Month: %m&#39;: %Month: 06</span></div>
 <div class="line"><span class="comment">// &#39;%H:%M:%S%z&#39;: 21:15:07+0100</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The formatting codes for <a class="el" href="#a0337274cf6d6900b883fc5551b19bba6" title="Converts the value of the current xtd::date_time object to its equivalent string representation using...">xtd::date_time::to_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a>&amp;) are listed below: <table class="markdownTable">
+<dl class="section remark"><dt>Remarks</dt><dd>The standard formatting codes for <a class="el" href="#a0337274cf6d6900b883fc5551b19bba6" title="Converts the value of the current xtd::date_time object to its equivalent string representation using...">xtd::date_time::to_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a>&amp; format) are listed below: <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Format   </th><th class="markdownTableHeadNone">Description   </th><th class="markdownTableHeadNone">examples    </th></tr>
+<th class="markdownTableHeadNone">Format   </th><th class="markdownTableHeadNone">Description   </th><th class="markdownTableHeadNone">Examples    </th></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>"d"</code>   </td><td class="markdownTableBodyNone">Short date pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 6/15/2009 (en-US) <br  />
 <br  />
@@ -3424,11 +3424,11 @@ The length si greater than 1. </td></tr>
 <br  />
  2009-06-15T13:45:30 -&gt; 15 Juni (id-ID)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>"O"</code>, <code>"o"</code>   </td><td class="markdownTableBodyNone">round-trip date/time pattern. <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaaf5ddaf0ca7929578b408c909429f68f2" title="The time represented is local time.">date_time_kind::local</a>) --&gt; 2009-06-15T13:45:30.0000000-07:00 <br  />
+<td class="markdownTableBodyNone"><code>"O"</code>, <code>"o"</code>   </td><td class="markdownTableBodyNone">round-trip date/time pattern. <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaaf5ddaf0ca7929578b408c909429f68f2" title="The time represented is local time.">date_time_kind::local</a>) -&gt; 2009-06-15T13:45:30.0000000-07:00 <br  />
 <br  />
- 2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaa52d33cb937bbdab234ab1729a0f8225b" title="The time represented is UTC.">date_time_kind::utc</a>) --&gt; 2009-06-15T13:45:30.0000000Z <br  />
+ 2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaa52d33cb937bbdab234ab1729a0f8225b" title="The time represented is UTC.">date_time_kind::utc</a>) -&gt; 2009-06-15T13:45:30.0000000Z <br  />
 <br  />
- 2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaad415f0e30c471dfdd9bc4f827329ef48" title="The time represented is not specified as either local time or Coordinated Universal Time (UTC).">date_time_kind::unspecified</a>) --&gt; 2009-06-15T13:45:30.0000000    </td></tr>
+ 2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaad415f0e30c471dfdd9bc4f827329ef48" title="The time represented is not specified as either local time or Coordinated Universal Time (UTC).">date_time_kind::unspecified</a>) -&gt; 2009-06-15T13:45:30.0000000    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>"R"</code>, <code>"r"</code>   </td><td class="markdownTableBodyNone">RFC1123 pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Mon, 15 Jun 2009 13:45:30 GMT    </td></tr>
 <tr class="markdownTableRowEven">
@@ -3463,6 +3463,401 @@ The length si greater than 1. </td></tr>
  2009-06-15T13:45:30 -&gt; Juni 2009 (id-ID)    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Any other single character   </td><td class="markdownTableBodyNone">Unknown specifier.   </td><td class="markdownTableBodyNone">Throws a run-time <a class="el" href="classxtd_1_1format__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::format_exception</a>.   </td></tr>
+</table>
+</dd>
+<dd>
+<br  />
+The custom formatting codes for <a class="el" href="#a0337274cf6d6900b883fc5551b19bba6" title="Converts the value of the current xtd::date_time object to its equivalent string representation using...">xtd::date_time::to_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a>&amp; format) are listed below: <table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Format   </th><th class="markdownTableHeadNone">Description   </th><th class="markdownTableHeadNone">Examples    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"d"</code>   </td><td class="markdownTableBodyNone">The day of the month, from 1 to 31.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"dd"</code>   </td><td class="markdownTableBodyNone">The day of the month, from 01 to 31.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 01    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"ddd"</code>   </td><td class="markdownTableBodyNone">The abbreviated name of the day of the week.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Mon (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Пн (ru-RU) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; lun. (fr-FR)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"dddd"</code>   </td><td class="markdownTableBodyNone">The full name of the day of the week.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Monday (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt;понедельник (ru-RU) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; lundi (fr-FR)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"f"</code>   </td><td class="markdownTableBodyNone">The tenths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6170000 -&gt; 6 <br  />
+<br  />
+ 2009-06-15T13:45:30.05 -&gt; 0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"ff"</code>   </td><td class="markdownTableBodyNone">The hundredths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6170000 -&gt; 61 <br  />
+<br  />
+ 2009-06-15T13:45:30.0050000 -&gt; 00    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"fff"</code>   </td><td class="markdownTableBodyNone">The milliseconds in a date and time value.   </td><td class="markdownTableBodyNone">6/15/2009 13:45:30.617 -&gt; 617 <br  />
+<br  />
+ 6/15/2009 13:45:30.0005 -&gt; 000    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"ffff"</code>   </td><td class="markdownTableBodyNone">The ten thousandths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6175000 -&gt; 6175 <br  />
+<br  />
+ 6/15/2009 13:45:30.000005 -&gt; 0000    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"fffff"</code>   </td><td class="markdownTableBodyNone">The hundred thousandths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6175400 -&gt; 61754 <br  />
+<br  />
+ 6/15/2009 13:45:30.000005 -&gt; 00000    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"ffffff"</code>   </td><td class="markdownTableBodyNone">The millionths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6175420 -&gt; 617542 <br  />
+<br  />
+ 2009-06-15T13:45:30.0000005 -&gt; 000000    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"fffffff"</code>   </td><td class="markdownTableBodyNone">The ten millionths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6175425 -&gt; 6175425 <br  />
+<br  />
+ 2009-06-15T13:45:30.0001150 -&gt; 0001150    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"F"</code>   </td><td class="markdownTableBodyNone">If non-zero, the tenths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6170000 -&gt; 6 <br  />
+<br  />
+ 2009-06-15T13:45:30.0500000 -&gt; (no output)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"FF"</code>   </td><td class="markdownTableBodyNone">If non-zero, the hundredths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6170000 -&gt; 61 <br  />
+<br  />
+ 2009-06-15T13:45:30.0050000 -&gt; (no output)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"FFF"</code>   </td><td class="markdownTableBodyNone">If non-zero, the milliseconds in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6170000 -&gt; 617 <br  />
+<br  />
+ 2009-06-15T13:45:30.0005000 -&gt; (no output)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"FFFF"</code>   </td><td class="markdownTableBodyNone">If non-zero, the ten thousandths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.5275000 -&gt; 5275 <br  />
+<br  />
+ 2009-06-15T13:45:30.0000500 -&gt; (no output)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"FFFFF"</code>   </td><td class="markdownTableBodyNone">If non-zero, the hundred thousandths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6175400 -&gt; 61754 <br  />
+<br  />
+ 2009-06-15T13:45:30.0000050 -&gt; (no output)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"FFFFFF"</code>   </td><td class="markdownTableBodyNone">If non-zero, the millionths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6175420 -&gt; 617542 <br  />
+<br  />
+ 2009-06-15T13:45:30.0000005 -&gt; (no output)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"FFFFFFF"</code>   </td><td class="markdownTableBodyNone">If non-zero, the ten millionths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6175425 -&gt; 6175425 <br  />
+<br  />
+ 2009-06-15T13:45:30.0001150 -&gt; 000115    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"g", "gg"</code>   </td><td class="markdownTableBodyNone">The period or era.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6170000 -&gt; A.D.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"h"</code>   </td><td class="markdownTableBodyNone">The hour, using a 12-hour clock from 1 to 12.   </td><td class="markdownTableBodyNone">2009-06-15T01:45:30 -&gt; 1 <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"hh"</code>   </td><td class="markdownTableBodyNone">The hour, using a 12-hour clock from 01 to 12.   </td><td class="markdownTableBodyNone">2009-06-15T01:45:30 -&gt; 01 <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 01    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"H"</code>   </td><td class="markdownTableBodyNone">The hour, using a 24-hour clock from 0 to 23.   </td><td class="markdownTableBodyNone">2009-06-15T01:45:30 -&gt; 1 <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"HH"</code>   </td><td class="markdownTableBodyNone">The hour, using a 24-hour clock from 00 to 23.   </td><td class="markdownTableBodyNone">2009-06-15T01:45:30 -&gt; 01 <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"k"</code>   </td><td class="markdownTableBodyNone">Time zone information.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30, Kind Unspecified -&gt; <br  />
+<br  />
+ 2009-06-15T13:45:30, Kind Utc -&gt; Z <br  />
+<br  />
+ 2009-06-15T13:45:30, Kind Local -&gt; -07:00 (depends on local computer settings)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"m"</code>   </td><td class="markdownTableBodyNone">The minute, from 0 to 59.   </td><td class="markdownTableBodyNone">2009-06-15T01:09:30 -&gt; 9 <br  />
+<br  />
+ 2009-06-15T13:29:30 -&gt; 29    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"mm"</code>   </td><td class="markdownTableBodyNone">The minute, from 00 to 59.   </td><td class="markdownTableBodyNone">2009-06-15T01:09:30 -&gt; 09 <br  />
+<br  />
+ 2009-06-15T13:29:30 -&gt; 29    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"M"</code>   </td><td class="markdownTableBodyNone">The month, from 1 to 12.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 6    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"MM"</code>   </td><td class="markdownTableBodyNone">The month, from 01 to 12.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 06    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"MMM"</code>   </td><td class="markdownTableBodyNone">The abbreviated name of the month.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Jun (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; juin (fr-FR) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Jun (zu-ZA)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"MMMM"</code>   </td><td class="markdownTableBodyNone">The full name of the month.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; June (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; juni (da-DK) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; uJuni (zu-ZA)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"> <code>"s"</code>   </td><td class="markdownTableBodyNone">The second, from 0 to 59.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:09 -&gt; 9    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"> <code>"ss"</code>   </td><td class="markdownTableBodyNone">The second, from 00 to 59.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:09 -&gt; 09    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"t"</code>   </td><td class="markdownTableBodyNone">The first character of the AM/PM designator.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; P (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 午 (ja-JP) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; (fr-FR)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"tt"</code>   </td><td class="markdownTableBodyNone">The AM/PM designator.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 午後 (ja-JP) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; (fr-FR)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"y"</code>   </td><td class="markdownTableBodyNone">The year, from 0 to 99.   </td><td class="markdownTableBodyNone">0001-01-01T00:00:00 -&gt; 1 <br  />
+<br  />
+ 0900-01-01T00:00:00 -&gt; 0 <br  />
+<br  />
+ 1900-01-01T00:00:00 -&gt; 0 <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 9 <br  />
+<br  />
+ 2019-06-15T13:45:30 -&gt; 19    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"yy"</code>   </td><td class="markdownTableBodyNone">The year, from 00 to 99.   </td><td class="markdownTableBodyNone">0001-01-01T00:00:00 -&gt; 01 <br  />
+<br  />
+ 0900-01-01T00:00:00 -&gt; 00 <br  />
+<br  />
+ 1900-01-01T00:00:00 -&gt; 00 <br  />
+<br  />
+ 2019-06-15T13:45:30 -&gt; 19    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"yyy"</code>   </td><td class="markdownTableBodyNone">The year, with a minimum of three digits.   </td><td class="markdownTableBodyNone">0001-01-01T00:00:00 -&gt; 001 <br  />
+<br  />
+ 0900-01-01T00:00:00 -&gt; 000 <br  />
+<br  />
+ 1900-01-01T00:00:00 -&gt; 900 <br  />
+<br  />
+ 2019-06-15T13:45:30 -&gt; 019    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"yyyy"</code>   </td><td class="markdownTableBodyNone">The year as a four-digit number.   </td><td class="markdownTableBodyNone">0001-01-01T00:00:00 -&gt; 0001 <br  />
+<br  />
+ 0900-01-01T00:00:00 -&gt; 0900 <br  />
+<br  />
+ 1900-01-01T00:00:00 -&gt; 1900 <br  />
+<br  />
+ 2019-06-15T13:45:30 -&gt; 2019    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"yyyyy"</code>   </td><td class="markdownTableBodyNone">The year as a five-digit number.   </td><td class="markdownTableBodyNone">0001-01-01T00:00:00 -&gt; 00001 <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 02009    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"z"</code>   </td><td class="markdownTableBodyNone">Hours offset from UTC, with no leading zeros.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30-07:00 -&gt; -7    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"zz"</code>   </td><td class="markdownTableBodyNone">Hours offset from UTC, with a leading zero for a single-digit value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30-07:00 -&gt; -07    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"zzz"</code>   </td><td class="markdownTableBodyNone">Hours and minutes offset from UTC.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30-07:00 -&gt; -07:00    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>":"</code>   </td><td class="markdownTableBodyNone">The time separator.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; : (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; . (it-IT) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; : (ja-JP)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"/"</code>   </td><td class="markdownTableBodyNone">The date separator.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; / (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; - (ar-DZ) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; . (tr-TR)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"\"</code>   </td><td class="markdownTableBodyNone">The escape character.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (h \h) -&gt; 1 h    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Any other character   </td><td class="markdownTableBodyNone">The character is copied to the result string unchanged.   </td><td class="markdownTableBodyNone">2009-06-15T01:45:30 (arr hh:mm t) -&gt; arr 01:45 A   </td></tr>
+</table>
+</dd>
+<dd>
+<br  />
+The put string formatting codes for <a class="el" href="#a0337274cf6d6900b883fc5551b19bba6" title="Converts the value of the current xtd::date_time object to its equivalent string representation using...">xtd::date_time::to_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a>&amp; format) are listed below (See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time</a> for more information.) : <table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Format   </th><th class="markdownTableHeadNone">Description   </th><th class="markdownTableHeadNone">Examples    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%a</code>   </td><td class="markdownTableBodyNone">The abbreviated weekday name.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Mon (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Пн (ru-RU) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; lun. (fr-FR)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%A</code>   </td><td class="markdownTableBodyNone">The full weekday name.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Monday (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; понедельник (ru-RU) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; lundi (fr-FR)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%b</code>   </td><td class="markdownTableBodyNone">The abbreviated month name.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Jun (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; juin (fr-FR) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Jun (zu-ZA)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%B</code>   </td><td class="markdownTableBodyNone">The full month name.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; June (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; juni (da-DK) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; uJuni (zu-ZA)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%c</code>   </td><td class="markdownTableBodyNone">The standard date and time string.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Mon Jun 15 13:45:30 2009 (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 月 6/15 13:45:30 2009 (ja-JP) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; lun. 15 juin 13:45:30 2009 (fr-FR)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%C</code>   </td><td class="markdownTableBodyNone">The first 2 digits of year as a decimal number (range [00,99]).   </td><td class="markdownTableBodyNone">0001-01-01T00:00:00 -&gt; 00 <br  />
+<br  />
+ 0900-01-01T00:00:00 -&gt; 09 <br  />
+<br  />
+ 1900-01-01T00:00:00 -&gt; 19 <br  />
+<br  />
+ 2019-06-15T13:45:30 -&gt; 20    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%d</code>   </td><td class="markdownTableBodyNone">The day of the month as a decimal number (range [01,31]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 01    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%D</code>   </td><td class="markdownTableBodyNone">The equivalent of <code>%m/%d/%y</code>.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 06/01/09    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%e</code>   </td><td class="markdownTableBodyNone">The day of the month as a decimal number (range [1,31]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%Ec</code>   </td><td class="markdownTableBodyNone">The alternative date and time string.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; Mon Jun 1 13:45:30 2009 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 月 6/ 1 13:45:30 2009 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; lun. 1 juin 13:45:30 2009 (fr-FR)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%EC</code>   </td><td class="markdownTableBodyNone">The name of the base year (period) in the alternative representation.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 20 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 20 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 20 (fr-FR)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%Ex</code>   </td><td class="markdownTableBodyNone">The alternative date representation.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 6/1/2009 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 2009/06/01 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 01/06/2009 (fr-FR)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%EX</code>   </td><td class="markdownTableBodyNone">The alternative time representation.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1:45:30 PM (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 13:45:30 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 13:45:30 (fr-FR)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%Ey</code>   </td><td class="markdownTableBodyNone">The year as offset from alternative calendar period <code>%EC</code>.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 09 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 09 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 09 (fr-FR)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%EY</code>   </td><td class="markdownTableBodyNone">The year in the alternative representation.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 2009 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 2009 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 2009 (fr-FR)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%F</code>   </td><td class="markdownTableBodyNone">The equivalent of <code>%Y-%m-%d</code> (the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> date format).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 2009-06-01    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%g</code>   </td><td class="markdownTableBodyNone">The last 2 digits of <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> week-based year.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 09    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%G</code>   </td><td class="markdownTableBodyNone">The <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> week-based year.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 2009    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%h</code>   </td><td class="markdownTableBodyNone">The <code>%b</code> synonym.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Jun (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; juin (fr-FR) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Jun (zu-ZA)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%H</code>   </td><td class="markdownTableBodyNone">The hour as a decimal number, 24 hour clock (range [00-23]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 13    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%I</code>   </td><td class="markdownTableBodyNone">The hour as a decimal number, 12 hour clock (range [01,12]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 01    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%j</code>   </td><td class="markdownTableBodyNone">The day of the year as a decimal number (range [001,366]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 153    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%m</code>   </td><td class="markdownTableBodyNone">The month as a decimal number (range [01,12]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 06    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%M</code>   </td><td class="markdownTableBodyNone">The minute as a decimal number (range [00,59]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 30    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%Od</code>   </td><td class="markdownTableBodyNone">The zero-based day of the month using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 01    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%Oe</code>   </td><td class="markdownTableBodyNone">The one-based day of the month using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%OH</code>   </td><td class="markdownTableBodyNone">The hour from 24-hour clock using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 13    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%OI</code>   </td><td class="markdownTableBodyNone">The hour from 12-hour clock using the alternative numeric system   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 01    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%Om</code>   </td><td class="markdownTableBodyNone">The month using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 06    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%OM</code>   </td><td class="markdownTableBodyNone">The minute using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 45    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%OS</code>   </td><td class="markdownTableBodyNone">The second using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 30    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%Ou</code>   </td><td class="markdownTableBodyNone">The weekday, where Monday is 1, using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%OU</code>   </td><td class="markdownTableBodyNone">The week of the year, as by <code>%U</code>, using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 22    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%OV</code>   </td><td class="markdownTableBodyNone">The week of the year, as by <code>%V</code>, using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 23    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%Ow</code>   </td><td class="markdownTableBodyNone">The weekday, where Sunday is 0, using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%OW</code>   </td><td class="markdownTableBodyNone">The week of the year, as by <code>%W</code>, using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 22    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%Oy</code>   </td><td class="markdownTableBodyNone">The last 2 digits of year using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 09    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%p</code>   </td><td class="markdownTableBodyNone">The a.m. / p.m. designator.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 午後 (ja-JP) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; (fr-FR)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%r</code>   </td><td class="markdownTableBodyNone">The localized 12-hour clock time.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 1:45:30 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13:45:30 (ja-JP) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13:45:30 (fr-FR)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%R</code>   </td><td class="markdownTableBodyNone">The equivalent of <code>%H:%M</code>.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 13:45    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%S</code>   </td><td class="markdownTableBodyNone">The second as a decimal number (range [00,60]).   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 30    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%T</code>   </td><td class="markdownTableBodyNone">The equivalent of <code>%H:%M:%S</code> (the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> time format).   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 13:45:30    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%u</code>   </td><td class="markdownTableBodyNone">The weekday as a decimal number, where Monday is 1 (<a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format) (range [1-7]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%U</code>   </td><td class="markdownTableBodyNone">The week of the year as a decimal number (Sunday is the first day of the week) (range [00,53]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 22    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%V</code>   </td><td class="markdownTableBodyNone">The <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> week of the year (range [01,53]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 23    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%w</code>   </td><td class="markdownTableBodyNone">The weekday as a decimal number, where Sunday is 0 (range [0-6]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%W</code>   </td><td class="markdownTableBodyNone">The week of the year as a decimal number (Monday is the first day of the week) (range [00,53]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 22    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%x</code>   </td><td class="markdownTableBodyNone">The localized date representation.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 6/1/2009 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 2009/06/01 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 01/06/2009 (fr-FR)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%X</code>   </td><td class="markdownTableBodyNone">The localized time representation.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 1:45:30 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13:45:30 (ja-JP) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13:45:30 (fr-FR)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%y</code>   </td><td class="markdownTableBodyNone">The last 2 digits of year as a decimal number (range [00,99]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 09    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%Y</code>   </td><td class="markdownTableBodyNone">The year as a decimal number.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 2009    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%z</code>   </td><td class="markdownTableBodyNone">The offset from UTC in the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30+01:00 -&gt; +0100    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%Z</code>   </td><td class="markdownTableBodyNone">The time zone name or abbreviation.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30+01:00 -&gt; Romance Standard Time    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%%</code>   </td><td class="markdownTableBodyNone">The literal <code>%</code>. The full conversion specification must be <code>%%</code>.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (%H %%) -&gt; 13 %    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%n</code>   </td><td class="markdownTableBodyNone">The newline character.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (%H%nM) -&gt; 13<br  />
+45    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%t</code>   </td><td class="markdownTableBodyNone">The horizontal tab character.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (%H%tM) -&gt; 13 45    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Any other character   </td><td class="markdownTableBodyNone">The character is copied to the result string unchanged.   </td><td class="markdownTableBodyNone">2009-06-15T01:45:30 (arr %H:%MT) -&gt; arr 13:45T   </td></tr>
 </table>
 </dd></dl>
 
@@ -3512,7 +3907,7 @@ The length si greater than 1. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use xtd::date_time::to_string(const xtd::string&amp;) with differentt formats. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example shows how to use <a class="el" href="#a0337274cf6d6900b883fc5551b19bba6" title="Converts the value of the current xtd::date_time object to its equivalent string representation using...">xtd::date_time::to_string</a> with differentt formats. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -3574,9 +3969,9 @@ The length si greater than 1. </td></tr>
 <div class="line"><span class="comment">// &#39;%%Month: %m&#39;: %Month: 06</span></div>
 <div class="line"><span class="comment">// &#39;%H:%M:%S%z&#39;: 21:15:07+0100</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The formatting codes for <a class="el" href="#a0337274cf6d6900b883fc5551b19bba6" title="Converts the value of the current xtd::date_time object to its equivalent string representation using...">xtd::date_time::to_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a>&amp;) are listed below: <table class="markdownTable">
+<dl class="section remark"><dt>Remarks</dt><dd>The standard formatting codes for <a class="el" href="#a0337274cf6d6900b883fc5551b19bba6" title="Converts the value of the current xtd::date_time object to its equivalent string representation using...">xtd::date_time::to_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a>&amp; format, const <a class="el" href="classxtd_1_1globalization_1_1culture__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::culture_info</a>&amp; culture) are listed below: <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Format   </th><th class="markdownTableHeadNone">Description   </th><th class="markdownTableHeadNone">examples    </th></tr>
+<th class="markdownTableHeadNone">Format   </th><th class="markdownTableHeadNone">Description   </th><th class="markdownTableHeadNone">Examples    </th></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>"d"</code>   </td><td class="markdownTableBodyNone">Short date pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 6/15/2009 (en-US) <br  />
 <br  />
@@ -3620,11 +4015,11 @@ The length si greater than 1. </td></tr>
 <br  />
  2009-06-15T13:45:30 -&gt; 15 Juni (id-ID)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>"O"</code>, <code>"o"</code>   </td><td class="markdownTableBodyNone">round-trip date/time pattern. <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaaf5ddaf0ca7929578b408c909429f68f2" title="The time represented is local time.">date_time_kind::local</a>) --&gt; 2009-06-15T13:45:30.0000000-07:00 <br  />
+<td class="markdownTableBodyNone"><code>"O"</code>, <code>"o"</code>   </td><td class="markdownTableBodyNone">round-trip date/time pattern. <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaaf5ddaf0ca7929578b408c909429f68f2" title="The time represented is local time.">date_time_kind::local</a>) -&gt; 2009-06-15T13:45:30.0000000-07:00 <br  />
 <br  />
- 2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaa52d33cb937bbdab234ab1729a0f8225b" title="The time represented is UTC.">date_time_kind::utc</a>) --&gt; 2009-06-15T13:45:30.0000000Z <br  />
+ 2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaa52d33cb937bbdab234ab1729a0f8225b" title="The time represented is UTC.">date_time_kind::utc</a>) -&gt; 2009-06-15T13:45:30.0000000Z <br  />
 <br  />
- 2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaad415f0e30c471dfdd9bc4f827329ef48" title="The time represented is not specified as either local time or Coordinated Universal Time (UTC).">date_time_kind::unspecified</a>) --&gt; 2009-06-15T13:45:30.0000000    </td></tr>
+ 2009-06-15T13:45:30 (<a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaad415f0e30c471dfdd9bc4f827329ef48" title="The time represented is not specified as either local time or Coordinated Universal Time (UTC).">date_time_kind::unspecified</a>) -&gt; 2009-06-15T13:45:30.0000000    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>"R"</code>, <code>"r"</code>   </td><td class="markdownTableBodyNone">RFC1123 pattern.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Mon, 15 Jun 2009 13:45:30 GMT    </td></tr>
 <tr class="markdownTableRowEven">
@@ -3660,6 +4055,401 @@ The length si greater than 1. </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Any other single character   </td><td class="markdownTableBodyNone">Unknown specifier.   </td><td class="markdownTableBodyNone">Throws a run-time <a class="el" href="classxtd_1_1format__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::format_exception</a>.   </td></tr>
 </table>
+</dd>
+<dd>
+<br  />
+The custom formatting codes for <a class="el" href="#a0337274cf6d6900b883fc5551b19bba6" title="Converts the value of the current xtd::date_time object to its equivalent string representation using...">xtd::date_time::to_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a>&amp; format, const <a class="el" href="classxtd_1_1globalization_1_1culture__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::culture_info</a>&amp; culture) are listed below: <table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Format   </th><th class="markdownTableHeadNone">Description   </th><th class="markdownTableHeadNone">Examples    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"d"</code>   </td><td class="markdownTableBodyNone">The day of the month, from 1 to 31.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"dd"</code>   </td><td class="markdownTableBodyNone">The day of the month, from 01 to 31.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 01    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"ddd"</code>   </td><td class="markdownTableBodyNone">The abbreviated name of the day of the week.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Mon (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Пн (ru-RU) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; lun. (fr-FR)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"dddd"</code>   </td><td class="markdownTableBodyNone">The full name of the day of the week.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Monday (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt;понедельник (ru-RU) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; lundi (fr-FR)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"f"</code>   </td><td class="markdownTableBodyNone">The tenths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6170000 -&gt; 6 <br  />
+<br  />
+ 2009-06-15T13:45:30.05 -&gt; 0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"ff"</code>   </td><td class="markdownTableBodyNone">The hundredths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6170000 -&gt; 61 <br  />
+<br  />
+ 2009-06-15T13:45:30.0050000 -&gt; 00    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"fff"</code>   </td><td class="markdownTableBodyNone">The milliseconds in a date and time value.   </td><td class="markdownTableBodyNone">6/15/2009 13:45:30.617 -&gt; 617 <br  />
+<br  />
+ 6/15/2009 13:45:30.0005 -&gt; 000    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"ffff"</code>   </td><td class="markdownTableBodyNone">The ten thousandths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6175000 -&gt; 6175 <br  />
+<br  />
+ 6/15/2009 13:45:30.000005 -&gt; 0000    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"fffff"</code>   </td><td class="markdownTableBodyNone">The hundred thousandths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6175400 -&gt; 61754 <br  />
+<br  />
+ 6/15/2009 13:45:30.000005 -&gt; 00000    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"ffffff"</code>   </td><td class="markdownTableBodyNone">The millionths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6175420 -&gt; 617542 <br  />
+<br  />
+ 2009-06-15T13:45:30.0000005 -&gt; 000000    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"fffffff"</code>   </td><td class="markdownTableBodyNone">The ten millionths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6175425 -&gt; 6175425 <br  />
+<br  />
+ 2009-06-15T13:45:30.0001150 -&gt; 0001150    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"F"</code>   </td><td class="markdownTableBodyNone">If non-zero, the tenths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6170000 -&gt; 6 <br  />
+<br  />
+ 2009-06-15T13:45:30.0500000 -&gt; (no output)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"FF"</code>   </td><td class="markdownTableBodyNone">If non-zero, the hundredths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6170000 -&gt; 61 <br  />
+<br  />
+ 2009-06-15T13:45:30.0050000 -&gt; (no output)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"FFF"</code>   </td><td class="markdownTableBodyNone">If non-zero, the milliseconds in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6170000 -&gt; 617 <br  />
+<br  />
+ 2009-06-15T13:45:30.0005000 -&gt; (no output)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"FFFF"</code>   </td><td class="markdownTableBodyNone">If non-zero, the ten thousandths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.5275000 -&gt; 5275 <br  />
+<br  />
+ 2009-06-15T13:45:30.0000500 -&gt; (no output)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"FFFFF"</code>   </td><td class="markdownTableBodyNone">If non-zero, the hundred thousandths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6175400 -&gt; 61754 <br  />
+<br  />
+ 2009-06-15T13:45:30.0000050 -&gt; (no output)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"FFFFFF"</code>   </td><td class="markdownTableBodyNone">If non-zero, the millionths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6175420 -&gt; 617542 <br  />
+<br  />
+ 2009-06-15T13:45:30.0000005 -&gt; (no output)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"FFFFFFF"</code>   </td><td class="markdownTableBodyNone">If non-zero, the ten millionths of a second in a date and time value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6175425 -&gt; 6175425 <br  />
+<br  />
+ 2009-06-15T13:45:30.0001150 -&gt; 000115    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"g", "gg"</code>   </td><td class="markdownTableBodyNone">The period or era.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30.6170000 -&gt; A.D.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"h"</code>   </td><td class="markdownTableBodyNone">The hour, using a 12-hour clock from 1 to 12.   </td><td class="markdownTableBodyNone">2009-06-15T01:45:30 -&gt; 1 <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"hh"</code>   </td><td class="markdownTableBodyNone">The hour, using a 12-hour clock from 01 to 12.   </td><td class="markdownTableBodyNone">2009-06-15T01:45:30 -&gt; 01 <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 01    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"H"</code>   </td><td class="markdownTableBodyNone">The hour, using a 24-hour clock from 0 to 23.   </td><td class="markdownTableBodyNone">2009-06-15T01:45:30 -&gt; 1 <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"HH"</code>   </td><td class="markdownTableBodyNone">The hour, using a 24-hour clock from 00 to 23.   </td><td class="markdownTableBodyNone">2009-06-15T01:45:30 -&gt; 01 <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"k"</code>   </td><td class="markdownTableBodyNone">Time zone information.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30, Kind Unspecified -&gt; <br  />
+<br  />
+ 2009-06-15T13:45:30, Kind Utc -&gt; Z <br  />
+<br  />
+ 2009-06-15T13:45:30, Kind Local -&gt; -07:00 (depends on local computer settings)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"m"</code>   </td><td class="markdownTableBodyNone">The minute, from 0 to 59.   </td><td class="markdownTableBodyNone">2009-06-15T01:09:30 -&gt; 9 <br  />
+<br  />
+ 2009-06-15T13:29:30 -&gt; 29    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"mm"</code>   </td><td class="markdownTableBodyNone">The minute, from 00 to 59.   </td><td class="markdownTableBodyNone">2009-06-15T01:09:30 -&gt; 09 <br  />
+<br  />
+ 2009-06-15T13:29:30 -&gt; 29    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"M"</code>   </td><td class="markdownTableBodyNone">The month, from 1 to 12.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 6    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"MM"</code>   </td><td class="markdownTableBodyNone">The month, from 01 to 12.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 06    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"MMM"</code>   </td><td class="markdownTableBodyNone">The abbreviated name of the month.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Jun (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; juin (fr-FR) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Jun (zu-ZA)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"MMMM"</code>   </td><td class="markdownTableBodyNone">The full name of the month.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; June (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; juni (da-DK) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; uJuni (zu-ZA)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"> <code>"s"</code>   </td><td class="markdownTableBodyNone">The second, from 0 to 59.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:09 -&gt; 9    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"> <code>"ss"</code>   </td><td class="markdownTableBodyNone">The second, from 00 to 59.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:09 -&gt; 09    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"t"</code>   </td><td class="markdownTableBodyNone">The first character of the AM/PM designator.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; P (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 午 (ja-JP) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; (fr-FR)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"tt"</code>   </td><td class="markdownTableBodyNone">The AM/PM designator.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 午後 (ja-JP) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; (fr-FR)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"y"</code>   </td><td class="markdownTableBodyNone">The year, from 0 to 99.   </td><td class="markdownTableBodyNone">0001-01-01T00:00:00 -&gt; 1 <br  />
+<br  />
+ 0900-01-01T00:00:00 -&gt; 0 <br  />
+<br  />
+ 1900-01-01T00:00:00 -&gt; 0 <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 9 <br  />
+<br  />
+ 2019-06-15T13:45:30 -&gt; 19    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"yy"</code>   </td><td class="markdownTableBodyNone">The year, from 00 to 99.   </td><td class="markdownTableBodyNone">0001-01-01T00:00:00 -&gt; 01 <br  />
+<br  />
+ 0900-01-01T00:00:00 -&gt; 00 <br  />
+<br  />
+ 1900-01-01T00:00:00 -&gt; 00 <br  />
+<br  />
+ 2019-06-15T13:45:30 -&gt; 19    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"yyy"</code>   </td><td class="markdownTableBodyNone">The year, with a minimum of three digits.   </td><td class="markdownTableBodyNone">0001-01-01T00:00:00 -&gt; 001 <br  />
+<br  />
+ 0900-01-01T00:00:00 -&gt; 000 <br  />
+<br  />
+ 1900-01-01T00:00:00 -&gt; 900 <br  />
+<br  />
+ 2019-06-15T13:45:30 -&gt; 019    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"yyyy"</code>   </td><td class="markdownTableBodyNone">The year as a four-digit number.   </td><td class="markdownTableBodyNone">0001-01-01T00:00:00 -&gt; 0001 <br  />
+<br  />
+ 0900-01-01T00:00:00 -&gt; 0900 <br  />
+<br  />
+ 1900-01-01T00:00:00 -&gt; 1900 <br  />
+<br  />
+ 2019-06-15T13:45:30 -&gt; 2019    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"yyyyy"</code>   </td><td class="markdownTableBodyNone">The year as a five-digit number.   </td><td class="markdownTableBodyNone">0001-01-01T00:00:00 -&gt; 00001 <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 02009    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"z"</code>   </td><td class="markdownTableBodyNone">Hours offset from UTC, with no leading zeros.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30-07:00 -&gt; -7    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"zz"</code>   </td><td class="markdownTableBodyNone">Hours offset from UTC, with a leading zero for a single-digit value.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30-07:00 -&gt; -07    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"zzz"</code>   </td><td class="markdownTableBodyNone">Hours and minutes offset from UTC.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30-07:00 -&gt; -07:00    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>":"</code>   </td><td class="markdownTableBodyNone">The time separator.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; : (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; . (it-IT) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; : (ja-JP)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>"/"</code>   </td><td class="markdownTableBodyNone">The date separator.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; / (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; - (ar-DZ) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; . (tr-TR)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>"\"</code>   </td><td class="markdownTableBodyNone">The escape character.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (h \h) -&gt; 1 h    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Any other character   </td><td class="markdownTableBodyNone">The character is copied to the result string unchanged.   </td><td class="markdownTableBodyNone">2009-06-15T01:45:30 (arr hh:mm t) -&gt; arr 01:45 A   </td></tr>
+</table>
+</dd>
+<dd>
+<br  />
+The put string formatting codes for <a class="el" href="#a0337274cf6d6900b883fc5551b19bba6" title="Converts the value of the current xtd::date_time object to its equivalent string representation using...">xtd::date_time::to_string</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a>&amp; format, const <a class="el" href="classxtd_1_1globalization_1_1culture__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::culture_info</a>&amp; culture) are listed below (See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time</a> for more information.) : <table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Format   </th><th class="markdownTableHeadNone">Description   </th><th class="markdownTableHeadNone">Examples    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%a</code>   </td><td class="markdownTableBodyNone">The abbreviated weekday name.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Mon (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Пн (ru-RU) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; lun. (fr-FR)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%A</code>   </td><td class="markdownTableBodyNone">The full weekday name.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Monday (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; понедельник (ru-RU) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; lundi (fr-FR)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%b</code>   </td><td class="markdownTableBodyNone">The abbreviated month name.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Jun (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; juin (fr-FR) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Jun (zu-ZA)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%B</code>   </td><td class="markdownTableBodyNone">The full month name.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; June (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; juni (da-DK) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; uJuni (zu-ZA)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%c</code>   </td><td class="markdownTableBodyNone">The standard date and time string.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Mon Jun 15 13:45:30 2009 (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 月 6/15 13:45:30 2009 (ja-JP) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; lun. 15 juin 13:45:30 2009 (fr-FR)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%C</code>   </td><td class="markdownTableBodyNone">The first 2 digits of year as a decimal number (range [00,99]).   </td><td class="markdownTableBodyNone">0001-01-01T00:00:00 -&gt; 00 <br  />
+<br  />
+ 0900-01-01T00:00:00 -&gt; 09 <br  />
+<br  />
+ 1900-01-01T00:00:00 -&gt; 19 <br  />
+<br  />
+ 2019-06-15T13:45:30 -&gt; 20    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%d</code>   </td><td class="markdownTableBodyNone">The day of the month as a decimal number (range [01,31]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 01    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%D</code>   </td><td class="markdownTableBodyNone">The equivalent of <code>%m/%d/%y</code>.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 06/01/09    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%e</code>   </td><td class="markdownTableBodyNone">The day of the month as a decimal number (range [1,31]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%Ec</code>   </td><td class="markdownTableBodyNone">The alternative date and time string.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; Mon Jun 1 13:45:30 2009 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 月 6/ 1 13:45:30 2009 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; lun. 1 juin 13:45:30 2009 (fr-FR)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%EC</code>   </td><td class="markdownTableBodyNone">The name of the base year (period) in the alternative representation.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 20 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 20 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 20 (fr-FR)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%Ex</code>   </td><td class="markdownTableBodyNone">The alternative date representation.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 6/1/2009 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 2009/06/01 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 01/06/2009 (fr-FR)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%EX</code>   </td><td class="markdownTableBodyNone">The alternative time representation.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1:45:30 PM (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 13:45:30 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 13:45:30 (fr-FR)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%Ey</code>   </td><td class="markdownTableBodyNone">The year as offset from alternative calendar period <code>%EC</code>.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 09 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 09 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 09 (fr-FR)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%EY</code>   </td><td class="markdownTableBodyNone">The year in the alternative representation.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 2009 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 2009 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 2009 (fr-FR)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%F</code>   </td><td class="markdownTableBodyNone">The equivalent of <code>%Y-%m-%d</code> (the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> date format).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 2009-06-01    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%g</code>   </td><td class="markdownTableBodyNone">The last 2 digits of <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> week-based year.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 09    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%G</code>   </td><td class="markdownTableBodyNone">The <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> week-based year.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 2009    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%h</code>   </td><td class="markdownTableBodyNone">The <code>%b</code> synonym.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Jun (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; juin (fr-FR) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Jun (zu-ZA)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%H</code>   </td><td class="markdownTableBodyNone">The hour as a decimal number, 24 hour clock (range [00-23]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 13    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%I</code>   </td><td class="markdownTableBodyNone">The hour as a decimal number, 12 hour clock (range [01,12]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 01    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%j</code>   </td><td class="markdownTableBodyNone">The day of the year as a decimal number (range [001,366]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 153    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%m</code>   </td><td class="markdownTableBodyNone">The month as a decimal number (range [01,12]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 06    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%M</code>   </td><td class="markdownTableBodyNone">The minute as a decimal number (range [00,59]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 30    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%Od</code>   </td><td class="markdownTableBodyNone">The zero-based day of the month using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 01    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%Oe</code>   </td><td class="markdownTableBodyNone">The one-based day of the month using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%OH</code>   </td><td class="markdownTableBodyNone">The hour from 24-hour clock using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 13    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%OI</code>   </td><td class="markdownTableBodyNone">The hour from 12-hour clock using the alternative numeric system   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 01    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%Om</code>   </td><td class="markdownTableBodyNone">The month using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 06    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%OM</code>   </td><td class="markdownTableBodyNone">The minute using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 45    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%OS</code>   </td><td class="markdownTableBodyNone">The second using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 30    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%Ou</code>   </td><td class="markdownTableBodyNone">The weekday, where Monday is 1, using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%OU</code>   </td><td class="markdownTableBodyNone">The week of the year, as by <code>%U</code>, using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 22    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%OV</code>   </td><td class="markdownTableBodyNone">The week of the year, as by <code>%V</code>, using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 23    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%Ow</code>   </td><td class="markdownTableBodyNone">The weekday, where Sunday is 0, using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%OW</code>   </td><td class="markdownTableBodyNone">The week of the year, as by <code>%W</code>, using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 22    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%Oy</code>   </td><td class="markdownTableBodyNone">The last 2 digits of year using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 09    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%p</code>   </td><td class="markdownTableBodyNone">The a.m. / p.m. designator.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 午後 (ja-JP) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; (fr-FR)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%r</code>   </td><td class="markdownTableBodyNone">The localized 12-hour clock time.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 1:45:30 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13:45:30 (ja-JP) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13:45:30 (fr-FR)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%R</code>   </td><td class="markdownTableBodyNone">The equivalent of <code>%H:%M</code>.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 13:45    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%S</code>   </td><td class="markdownTableBodyNone">The second as a decimal number (range [00,60]).   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 30    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%T</code>   </td><td class="markdownTableBodyNone">The equivalent of <code>%H:%M:%S</code> (the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> time format).   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 13:45:30    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%u</code>   </td><td class="markdownTableBodyNone">The weekday as a decimal number, where Monday is 1 (<a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format) (range [1-7]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%U</code>   </td><td class="markdownTableBodyNone">The week of the year as a decimal number (Sunday is the first day of the week) (range [00,53]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 22    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%V</code>   </td><td class="markdownTableBodyNone">The <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> week of the year (range [01,53]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 23    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%w</code>   </td><td class="markdownTableBodyNone">The weekday as a decimal number, where Sunday is 0 (range [0-6]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%W</code>   </td><td class="markdownTableBodyNone">The week of the year as a decimal number (Monday is the first day of the week) (range [00,53]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 22    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%x</code>   </td><td class="markdownTableBodyNone">The localized date representation.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 6/1/2009 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 2009/06/01 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 01/06/2009 (fr-FR)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%X</code>   </td><td class="markdownTableBodyNone">The localized time representation.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 1:45:30 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13:45:30 (ja-JP) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13:45:30 (fr-FR)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%y</code>   </td><td class="markdownTableBodyNone">The last 2 digits of year as a decimal number (range [00,99]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 09    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%Y</code>   </td><td class="markdownTableBodyNone">The year as a decimal number.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 2009    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%z</code>   </td><td class="markdownTableBodyNone">The offset from UTC in the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30+01:00 -&gt; +0100    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%Z</code>   </td><td class="markdownTableBodyNone">The time zone name or abbreviation.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30+01:00 -&gt; Romance Standard Time    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%%</code>   </td><td class="markdownTableBodyNone">The literal <code>%</code>. The full conversion specification must be <code>%%</code>.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (%H %%) -&gt; 13 %    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>%n</code>   </td><td class="markdownTableBodyNone">The newline character.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (%H%nM) -&gt; 13<br  />
+45    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>%t</code>   </td><td class="markdownTableBodyNone">The horizontal tab character.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (%H%tM) -&gt; 13 45    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Any other character   </td><td class="markdownTableBodyNone">The character is copied to the result string unchanged.   </td><td class="markdownTableBodyNone">2009-06-15T01:45:30 (arr %H:%MT) -&gt; arr 13:45T   </td></tr>
+</table>
 </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1iformatable.html#a76dcf190c16d7426f26dcbf0961669ca">xtd::iformatable</a>.</p>
@@ -3684,7 +4474,7 @@ The length si greater than 1. </td></tr>
 <p>Converts the value of the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> object to its equivalent string representation using the specified culture. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">loc</td><td>An <a class="el" href="classxtd_1_1globalization_1_1culture__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::culture_info</a> object that contains culture information. </td></tr>
+    <tr><td class="paramname">culture</td><td>An <a class="el" href="classxtd_1_1globalization_1_1culture__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::culture_info</a> object that contains culture information. </td></tr>
   </table>
   </dd>
 </dl>
@@ -5171,125 +5961,196 @@ This overload attempts to parse s by using DateTimeStyles.AllowWhiteSpaces style
 <div class="line"><span class="comment">// &#39;%%Month: %m&#39;: %Month: 06</span></div>
 <div class="line"><span class="comment">// &#39;%H:%M:%S%z&#39;: 21:15:07+0100</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The formatting codes for sprintf are listed below: <table class="markdownTable">
+<dl class="section remark"><dt>Remarks</dt><dd>The put string formatting codes for <a class="el" href="#a58209959ca12a3589fa44ea680eddd47" title="Returns a xtd::string that represents the current xtd::date_time.">xtd::date_time::sprintf</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a>&amp; format, const <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a>&amp; value) are listed below (See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time</a> for more information.) : <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Format   </th><th class="markdownTableHeadNone">Print    </th></tr>
+<th class="markdownTableHeadNone">Format   </th><th class="markdownTableHeadNone">Description   </th><th class="markdownTableHeadNone">Examples    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%a</code>   </td><td class="markdownTableBodyNone">writes abbreviated weekday name, e.g. Fri (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%a</code>   </td><td class="markdownTableBodyNone">The abbreviated weekday name.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Mon (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Пн (ru-RU) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; lun. (fr-FR)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%A</code>   </td><td class="markdownTableBodyNone">writes full weekday name, e.g. Friday (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%A</code>   </td><td class="markdownTableBodyNone">The full weekday name.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Monday (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; понедельник (ru-RU) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; lundi (fr-FR)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%b</code>   </td><td class="markdownTableBodyNone">writes abbreviated month name, e.g. Oct (locale dependent)    </td></tr>
+<td class="markdownTableBodyNone"><code>%b</code>   </td><td class="markdownTableBodyNone">The abbreviated month name.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Jun (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; juin (fr-FR) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Jun (zu-ZA)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%B</code>   </td><td class="markdownTableBodyNone">writes full month name, e.g. October (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%B</code>   </td><td class="markdownTableBodyNone">The full month name.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; June (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; juni (da-DK) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; uJuni (zu-ZA)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%c</code>   </td><td class="markdownTableBodyNone">writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%c</code>   </td><td class="markdownTableBodyNone">The standard date and time string.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Mon Jun 15 13:45:30 2009 (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 月 6/15 13:45:30 2009 (ja-JP) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; lun. 15 juin 13:45:30 2009 (fr-FR)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%C</code>   </td><td class="markdownTableBodyNone">writes first 2 digits of year as a decimal number (range [00,99]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%C</code>   </td><td class="markdownTableBodyNone">The first 2 digits of year as a decimal number (range [00,99]).   </td><td class="markdownTableBodyNone">0001-01-01T00:00:00 -&gt; 00 <br  />
+<br  />
+ 0900-01-01T00:00:00 -&gt; 09 <br  />
+<br  />
+ 1900-01-01T00:00:00 -&gt; 19 <br  />
+<br  />
+ 2019-06-15T13:45:30 -&gt; 20    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%d</code>   </td><td class="markdownTableBodyNone">writes day of the month as a decimal number (range [01,31]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%d</code>   </td><td class="markdownTableBodyNone">The day of the month as a decimal number (range [01,31]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 01    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%D</code>   </td><td class="markdownTableBodyNone">equivalent to <code>%m/%d/%y</code>.    </td></tr>
+<td class="markdownTableBodyNone"><code>%D</code>   </td><td class="markdownTableBodyNone">The equivalent of <code>%m/%d/%y</code>.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 06/01/09    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%e</code>   </td><td class="markdownTableBodyNone">writes day of the month as a decimal number (range [1,31]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%e</code>   </td><td class="markdownTableBodyNone">The day of the month as a decimal number (range [1,31]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%Ec</code>   </td><td class="markdownTableBodyNone">writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Ec</code>   </td><td class="markdownTableBodyNone">The alternative date and time string.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; Mon Jun 1 13:45:30 2009 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 月 6/ 1 13:45:30 2009 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; lun. 1 juin 13:45:30 2009 (fr-FR)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%EC</code>   </td><td class="markdownTableBodyNone">Writes name of the base year (period) in the locale's alternative representation, e.g. 平成 (Heisei era) in ja_JP    </td></tr>
+<td class="markdownTableBodyNone"><code>%EC</code>   </td><td class="markdownTableBodyNone">The name of the base year (period) in the alternative representation.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 20 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 20 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 20 (fr-FR)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%Ex</code>   </td><td class="markdownTableBodyNone">writes alternative date representation, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Ex</code>   </td><td class="markdownTableBodyNone">The alternative date representation.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 6/1/2009 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 2009/06/01 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 01/06/2009 (fr-FR)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%EX</code>   </td><td class="markdownTableBodyNone">writes alternative time representation (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%EX</code>   </td><td class="markdownTableBodyNone">The alternative time representation.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1:45:30 PM (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 13:45:30 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 13:45:30 (fr-FR)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%Ey</code>   </td><td class="markdownTableBodyNone">writes year as offset from locale's alternative calendar period <code>%EC</code>.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Ey</code>   </td><td class="markdownTableBodyNone">The year as offset from alternative calendar period <code>%EC</code>.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 09 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 09 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 09 (fr-FR)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%EY</code>   </td><td class="markdownTableBodyNone">writes year in the alternative representation, e.g.平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%EY</code>   </td><td class="markdownTableBodyNone">The year in the alternative representation.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 2009 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 2009 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 2009 (fr-FR)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%F</code>   </td><td class="markdownTableBodyNone">equivalent to <code>%Y-%m-%d</code> (the ISO 8601 date format).    </td></tr>
+<td class="markdownTableBodyNone"><code>%F</code>   </td><td class="markdownTableBodyNone">The equivalent of <code>%Y-%m-%d</code> (the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> date format).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 2009-06-01    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%g</code>   </td><td class="markdownTableBodyNone">writes last 2 digits of ISO 8601 week-based year, i.e. the year that contains the specified week (range [00,99]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%g</code>   </td><td class="markdownTableBodyNone">The last 2 digits of <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> week-based year.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 09    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%G</code>   </td><td class="markdownTableBodyNone">writes ISO 8601 week-based year, i.e. the year that contains the specified week.    </td></tr>
+<td class="markdownTableBodyNone"><code>%G</code>   </td><td class="markdownTableBodyNone">The <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> week-based year.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 2009    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%h</code>   </td><td class="markdownTableBodyNone">synonym of b.    </td></tr>
+<td class="markdownTableBodyNone"><code>%h</code>   </td><td class="markdownTableBodyNone">The <code>%b</code> synonym.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Jun (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; juin (fr-FR) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Jun (zu-ZA)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%H</code>   </td><td class="markdownTableBodyNone">writes hour as a decimal number, 24 hour clock (range [00-23]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%H</code>   </td><td class="markdownTableBodyNone">The hour as a decimal number, 24 hour clock (range [00-23]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 13    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%I</code>   </td><td class="markdownTableBodyNone">writes hour as a decimal number, 12 hour clock (range [01,12]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%I</code>   </td><td class="markdownTableBodyNone">The hour as a decimal number, 12 hour clock (range [01,12]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 01    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%j</code>   </td><td class="markdownTableBodyNone">writes day of the year as a decimal number (range [001,366]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%j</code>   </td><td class="markdownTableBodyNone">The day of the year as a decimal number (range [001,366]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 153    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%m</code>   </td><td class="markdownTableBodyNone">writes month as a decimal number (range [01,12]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%m</code>   </td><td class="markdownTableBodyNone">The month as a decimal number (range [01,12]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 06    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%M</code>   </td><td class="markdownTableBodyNone">writes minute as a decimal number (range [00,59]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%M</code>   </td><td class="markdownTableBodyNone">The minute as a decimal number (range [00,59]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 30    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%Od</code>   </td><td class="markdownTableBodyNone">writes zero-based day of the month using the alternative numeric system, e.g 二十七 instead of 27 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Od</code>   </td><td class="markdownTableBodyNone">The zero-based day of the month using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 01    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%Oe</code>   </td><td class="markdownTableBodyNone">writes one-based day of the month using the alternative numeric system, e.g. 二十七 instead of 27 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Oe</code>   </td><td class="markdownTableBodyNone">The one-based day of the month using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%OH</code>   </td><td class="markdownTableBodyNone">writes hour from 24-hour clock using the alternative numeric system, e.g. 十八 instead of 18 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OH</code>   </td><td class="markdownTableBodyNone">The hour from 24-hour clock using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 13    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%OI</code>   </td><td class="markdownTableBodyNone">writes hour from 12-hour clock using the alternative numeric system, e.g. 六 instead of 06 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OI</code>   </td><td class="markdownTableBodyNone">The hour from 12-hour clock using the alternative numeric system   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 01    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%Om</code>   </td><td class="markdownTableBodyNone">writes month using the alternative numeric system, e.g. 十二 instead of 12 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Om</code>   </td><td class="markdownTableBodyNone">The month using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 06    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%OM</code>   </td><td class="markdownTableBodyNone">writes minute using the alternative numeric system, e.g. 二十五 instead of 25 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OM</code>   </td><td class="markdownTableBodyNone">The minute using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 45    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%OS</code>   </td><td class="markdownTableBodyNone">writes second using the alternative numeric system, e.g. 二十四 instead of 24 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OS</code>   </td><td class="markdownTableBodyNone">The second using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 30    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%Ou</code>   </td><td class="markdownTableBodyNone">writes weekday, where Monday is 1, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Ou</code>   </td><td class="markdownTableBodyNone">The weekday, where Monday is 1, using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%OU</code>   </td><td class="markdownTableBodyNone">writes week of the year, as by <code>%U</code>, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OU</code>   </td><td class="markdownTableBodyNone">The week of the year, as by <code>%U</code>, using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 22    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%OV</code>   </td><td class="markdownTableBodyNone">writes week of the year, as by <code>%V</code>, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OV</code>   </td><td class="markdownTableBodyNone">The week of the year, as by <code>%V</code>, using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 23    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%Ow</code>   </td><td class="markdownTableBodyNone">writes weekday, where Sunday is 0, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Ow</code>   </td><td class="markdownTableBodyNone">The weekday, where Sunday is 0, using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%OW</code>   </td><td class="markdownTableBodyNone">writes week of the year, as by <code>%W</code>, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OW</code>   </td><td class="markdownTableBodyNone">The week of the year, as by <code>%W</code>, using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 22    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%Oy</code>   </td><td class="markdownTableBodyNone">writes last 2 digits of year using the alternative numeric system, e.g. 十一 instead of 11 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Oy</code>   </td><td class="markdownTableBodyNone">The last 2 digits of year using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 09    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%p</code>   </td><td class="markdownTableBodyNone">writes localized a.m. or p.m. (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%p</code>   </td><td class="markdownTableBodyNone">The a.m. / p.m. designator.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 午後 (ja-JP) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; (fr-FR)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%r</code>   </td><td class="markdownTableBodyNone">writes localized 12-hour clock time (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%r</code>   </td><td class="markdownTableBodyNone">The localized 12-hour clock time.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 1:45:30 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13:45:30 (ja-JP) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13:45:30 (fr-FR)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%R</code>   </td><td class="markdownTableBodyNone">equivalent to <code>%H:%M</code>.    </td></tr>
+<td class="markdownTableBodyNone"><code>%R</code>   </td><td class="markdownTableBodyNone">The equivalent of <code>%H:%M</code>.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 13:45    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%S</code>   </td><td class="markdownTableBodyNone">writes second as a decimal number (range [00,60]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%S</code>   </td><td class="markdownTableBodyNone">The second as a decimal number (range [00,60]).   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 30    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%T</code>   </td><td class="markdownTableBodyNone">equivalent to <code>%H:%M:%S</code> (the ISO 8601 time format)    </td></tr>
+<td class="markdownTableBodyNone"><code>%T</code>   </td><td class="markdownTableBodyNone">The equivalent of <code>%H:%M:%S</code> (the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> time format).   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 13:45:30    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%u</code>   </td><td class="markdownTableBodyNone">writes weekday as a decimal number, where Monday is 1 (ISO 8601 format) (range [1-7]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%u</code>   </td><td class="markdownTableBodyNone">The weekday as a decimal number, where Monday is 1 (<a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format) (range [1-7]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%U</code>   </td><td class="markdownTableBodyNone">writes week of the year as a decimal number (Sunday is the first day of the week) (range [00,53]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%U</code>   </td><td class="markdownTableBodyNone">The week of the year as a decimal number (Sunday is the first day of the week) (range [00,53]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 22    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%V</code>   </td><td class="markdownTableBodyNone">writes ISO 8601 week of the year (range [01,53]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%V</code>   </td><td class="markdownTableBodyNone">The <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> week of the year (range [01,53]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 23    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%w</code>   </td><td class="markdownTableBodyNone">writes weekday as a decimal number, where Sunday is 0 (range [0-6]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%w</code>   </td><td class="markdownTableBodyNone">The weekday as a decimal number, where Sunday is 0 (range [0-6]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%W</code>   </td><td class="markdownTableBodyNone">writes week of the year as a decimal number (Monday is the first day of the week) (range [00,53]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%W</code>   </td><td class="markdownTableBodyNone">The week of the year as a decimal number (Monday is the first day of the week) (range [00,53]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 22    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%x</code>   </td><td class="markdownTableBodyNone">writes localized date representation (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%x</code>   </td><td class="markdownTableBodyNone">The localized date representation.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 6/1/2009 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 2009/06/01 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 01/06/2009 (fr-FR)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%X</code>   </td><td class="markdownTableBodyNone">writes localized time representation, e.g. 18:40:20 or 6:40:20 PM (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%X</code>   </td><td class="markdownTableBodyNone">The localized time representation.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 1:45:30 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13:45:30 (ja-JP) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13:45:30 (fr-FR)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%y</code>   </td><td class="markdownTableBodyNone">writes last 2 digits of year as a decimal number (range [00,99]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%y</code>   </td><td class="markdownTableBodyNone">The last 2 digits of year as a decimal number (range [00,99]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 09    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%Y</code>   </td><td class="markdownTableBodyNone">writes year as a decimal number, e.g. 2017.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Y</code>   </td><td class="markdownTableBodyNone">The year as a decimal number.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 2009    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%z</code>   </td><td class="markdownTableBodyNone">writes offset from UTC in the ISO 8601 format (e.g. -0430), or no characters if the time zone information is not available.    </td></tr>
+<td class="markdownTableBodyNone"><code>%z</code>   </td><td class="markdownTableBodyNone">The offset from UTC in the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30+01:00 -&gt; +0100    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%Z</code>   </td><td class="markdownTableBodyNone">writes locale-dependent time zone name or abbreviation, or no characters if the time zone information is not available.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Z</code>   </td><td class="markdownTableBodyNone">The time zone name or abbreviation.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30+01:00 -&gt; Romance Standard Time    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%%</code>   </td><td class="markdownTableBodyNone">writes literal <code>%</code>. The full conversion specification must be <code>%%</code>.    </td></tr>
+<td class="markdownTableBodyNone"><code>%%</code>   </td><td class="markdownTableBodyNone">The literal <code>%</code>. The full conversion specification must be <code>%%</code>.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (%H %%) -&gt; 13 %    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%n</code>   </td><td class="markdownTableBodyNone">writes newline character.    </td></tr>
+<td class="markdownTableBodyNone"><code>%n</code>   </td><td class="markdownTableBodyNone">The newline character.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (%H%nM) -&gt; 13<br  />
+45    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%t</code>   </td><td class="markdownTableBodyNone">writes horizontal tab character.   </td></tr>
+<td class="markdownTableBodyNone"><code>%t</code>   </td><td class="markdownTableBodyNone">The horizontal tab character.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (%H%tM) -&gt; 13 45    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Any other character   </td><td class="markdownTableBodyNone">The character is copied to the result string unchanged.   </td><td class="markdownTableBodyNone">2009-06-15T01:45:30 (arr %H:%MT) -&gt; arr 13:45T   </td></tr>
 </table>
-</dd>
-<dd>
-See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time</a> for more information. </dd></dl>
+</dd></dl>
 
 </div>
 </div>
@@ -5425,125 +6286,196 @@ See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time<
 <div class="line"><span class="comment">// &#39;%%Month: %m&#39;: %Month: 06</span></div>
 <div class="line"><span class="comment">// &#39;%H:%M:%S%z&#39;: 21:15:07+0100</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The formatting codes for sprintf are listed below: <table class="markdownTable">
+<dl class="section remark"><dt>Remarks</dt><dd>The put string formatting codes for <a class="el" href="#a58209959ca12a3589fa44ea680eddd47" title="Returns a xtd::string that represents the current xtd::date_time.">xtd::date_time::sprintf</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a>&amp; format, const <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a>&amp; value, const <a class="el" href="classxtd_1_1globalization_1_1culture__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::culture_info</a>&amp; culture) are listed below (See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time</a> for more information.) : <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Format   </th><th class="markdownTableHeadNone">Print    </th></tr>
+<th class="markdownTableHeadNone">Format   </th><th class="markdownTableHeadNone">Description   </th><th class="markdownTableHeadNone">Examples    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%a</code>   </td><td class="markdownTableBodyNone">writes abbreviated weekday name, e.g. Fri (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%a</code>   </td><td class="markdownTableBodyNone">The abbreviated weekday name.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Mon (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Пн (ru-RU) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; lun. (fr-FR)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%A</code>   </td><td class="markdownTableBodyNone">writes full weekday name, e.g. Friday (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%A</code>   </td><td class="markdownTableBodyNone">The full weekday name.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Monday (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; понедельник (ru-RU) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; lundi (fr-FR)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%b</code>   </td><td class="markdownTableBodyNone">writes abbreviated month name, e.g. Oct (locale dependent)    </td></tr>
+<td class="markdownTableBodyNone"><code>%b</code>   </td><td class="markdownTableBodyNone">The abbreviated month name.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Jun (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; juin (fr-FR) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Jun (zu-ZA)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%B</code>   </td><td class="markdownTableBodyNone">writes full month name, e.g. October (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%B</code>   </td><td class="markdownTableBodyNone">The full month name.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; June (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; juni (da-DK) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; uJuni (zu-ZA)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%c</code>   </td><td class="markdownTableBodyNone">writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%c</code>   </td><td class="markdownTableBodyNone">The standard date and time string.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Mon Jun 15 13:45:30 2009 (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 月 6/15 13:45:30 2009 (ja-JP) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; lun. 15 juin 13:45:30 2009 (fr-FR)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%C</code>   </td><td class="markdownTableBodyNone">writes first 2 digits of year as a decimal number (range [00,99]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%C</code>   </td><td class="markdownTableBodyNone">The first 2 digits of year as a decimal number (range [00,99]).   </td><td class="markdownTableBodyNone">0001-01-01T00:00:00 -&gt; 00 <br  />
+<br  />
+ 0900-01-01T00:00:00 -&gt; 09 <br  />
+<br  />
+ 1900-01-01T00:00:00 -&gt; 19 <br  />
+<br  />
+ 2019-06-15T13:45:30 -&gt; 20    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%d</code>   </td><td class="markdownTableBodyNone">writes day of the month as a decimal number (range [01,31]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%d</code>   </td><td class="markdownTableBodyNone">The day of the month as a decimal number (range [01,31]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 01    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%D</code>   </td><td class="markdownTableBodyNone">equivalent to <code>%m/%d/%y</code>.    </td></tr>
+<td class="markdownTableBodyNone"><code>%D</code>   </td><td class="markdownTableBodyNone">The equivalent of <code>%m/%d/%y</code>.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 06/01/09    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%e</code>   </td><td class="markdownTableBodyNone">writes day of the month as a decimal number (range [1,31]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%e</code>   </td><td class="markdownTableBodyNone">The day of the month as a decimal number (range [1,31]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%Ec</code>   </td><td class="markdownTableBodyNone">writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Ec</code>   </td><td class="markdownTableBodyNone">The alternative date and time string.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; Mon Jun 1 13:45:30 2009 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 月 6/ 1 13:45:30 2009 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; lun. 1 juin 13:45:30 2009 (fr-FR)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%EC</code>   </td><td class="markdownTableBodyNone">Writes name of the base year (period) in the locale's alternative representation, e.g. 平成 (Heisei era) in ja_JP    </td></tr>
+<td class="markdownTableBodyNone"><code>%EC</code>   </td><td class="markdownTableBodyNone">The name of the base year (period) in the alternative representation.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 20 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 20 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 20 (fr-FR)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%Ex</code>   </td><td class="markdownTableBodyNone">writes alternative date representation, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Ex</code>   </td><td class="markdownTableBodyNone">The alternative date representation.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 6/1/2009 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 2009/06/01 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 01/06/2009 (fr-FR)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%EX</code>   </td><td class="markdownTableBodyNone">writes alternative time representation (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%EX</code>   </td><td class="markdownTableBodyNone">The alternative time representation.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1:45:30 PM (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 13:45:30 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 13:45:30 (fr-FR)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%Ey</code>   </td><td class="markdownTableBodyNone">writes year as offset from locale's alternative calendar period <code>%EC</code>.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Ey</code>   </td><td class="markdownTableBodyNone">The year as offset from alternative calendar period <code>%EC</code>.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 09 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 09 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 09 (fr-FR)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%EY</code>   </td><td class="markdownTableBodyNone">writes year in the alternative representation, e.g.平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%EY</code>   </td><td class="markdownTableBodyNone">The year in the alternative representation.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 2009 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 2009 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 2009 (fr-FR)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%F</code>   </td><td class="markdownTableBodyNone">equivalent to <code>%Y-%m-%d</code> (the ISO 8601 date format).    </td></tr>
+<td class="markdownTableBodyNone"><code>%F</code>   </td><td class="markdownTableBodyNone">The equivalent of <code>%Y-%m-%d</code> (the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> date format).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 2009-06-01    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%g</code>   </td><td class="markdownTableBodyNone">writes last 2 digits of ISO 8601 week-based year, i.e. the year that contains the specified week (range [00,99]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%g</code>   </td><td class="markdownTableBodyNone">The last 2 digits of <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> week-based year.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 09    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%G</code>   </td><td class="markdownTableBodyNone">writes ISO 8601 week-based year, i.e. the year that contains the specified week.    </td></tr>
+<td class="markdownTableBodyNone"><code>%G</code>   </td><td class="markdownTableBodyNone">The <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> week-based year.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 2009    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%h</code>   </td><td class="markdownTableBodyNone">synonym of b.    </td></tr>
+<td class="markdownTableBodyNone"><code>%h</code>   </td><td class="markdownTableBodyNone">The <code>%b</code> synonym.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; Jun (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; juin (fr-FR) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; Jun (zu-ZA)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%H</code>   </td><td class="markdownTableBodyNone">writes hour as a decimal number, 24 hour clock (range [00-23]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%H</code>   </td><td class="markdownTableBodyNone">The hour as a decimal number, 24 hour clock (range [00-23]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 13    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%I</code>   </td><td class="markdownTableBodyNone">writes hour as a decimal number, 12 hour clock (range [01,12]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%I</code>   </td><td class="markdownTableBodyNone">The hour as a decimal number, 12 hour clock (range [01,12]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 01    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%j</code>   </td><td class="markdownTableBodyNone">writes day of the year as a decimal number (range [001,366]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%j</code>   </td><td class="markdownTableBodyNone">The day of the year as a decimal number (range [001,366]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 153    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%m</code>   </td><td class="markdownTableBodyNone">writes month as a decimal number (range [01,12]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%m</code>   </td><td class="markdownTableBodyNone">The month as a decimal number (range [01,12]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 06    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%M</code>   </td><td class="markdownTableBodyNone">writes minute as a decimal number (range [00,59]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%M</code>   </td><td class="markdownTableBodyNone">The minute as a decimal number (range [00,59]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 30    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%Od</code>   </td><td class="markdownTableBodyNone">writes zero-based day of the month using the alternative numeric system, e.g 二十七 instead of 27 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Od</code>   </td><td class="markdownTableBodyNone">The zero-based day of the month using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 01    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%Oe</code>   </td><td class="markdownTableBodyNone">writes one-based day of the month using the alternative numeric system, e.g. 二十七 instead of 27 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Oe</code>   </td><td class="markdownTableBodyNone">The one-based day of the month using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%OH</code>   </td><td class="markdownTableBodyNone">writes hour from 24-hour clock using the alternative numeric system, e.g. 十八 instead of 18 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OH</code>   </td><td class="markdownTableBodyNone">The hour from 24-hour clock using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 13    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%OI</code>   </td><td class="markdownTableBodyNone">writes hour from 12-hour clock using the alternative numeric system, e.g. 六 instead of 06 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OI</code>   </td><td class="markdownTableBodyNone">The hour from 12-hour clock using the alternative numeric system   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 01    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%Om</code>   </td><td class="markdownTableBodyNone">writes month using the alternative numeric system, e.g. 十二 instead of 12 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Om</code>   </td><td class="markdownTableBodyNone">The month using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 06    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%OM</code>   </td><td class="markdownTableBodyNone">writes minute using the alternative numeric system, e.g. 二十五 instead of 25 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OM</code>   </td><td class="markdownTableBodyNone">The minute using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 45    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%OS</code>   </td><td class="markdownTableBodyNone">writes second using the alternative numeric system, e.g. 二十四 instead of 24 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OS</code>   </td><td class="markdownTableBodyNone">The second using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 30    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%Ou</code>   </td><td class="markdownTableBodyNone">writes weekday, where Monday is 1, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Ou</code>   </td><td class="markdownTableBodyNone">The weekday, where Monday is 1, using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%OU</code>   </td><td class="markdownTableBodyNone">writes week of the year, as by <code>%U</code>, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OU</code>   </td><td class="markdownTableBodyNone">The week of the year, as by <code>%U</code>, using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 22    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%OV</code>   </td><td class="markdownTableBodyNone">writes week of the year, as by <code>%V</code>, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OV</code>   </td><td class="markdownTableBodyNone">The week of the year, as by <code>%V</code>, using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 23    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%Ow</code>   </td><td class="markdownTableBodyNone">writes weekday, where Sunday is 0, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Ow</code>   </td><td class="markdownTableBodyNone">The weekday, where Sunday is 0, using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%OW</code>   </td><td class="markdownTableBodyNone">writes week of the year, as by <code>%W</code>, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%OW</code>   </td><td class="markdownTableBodyNone">The week of the year, as by <code>%W</code>, using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 22    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%Oy</code>   </td><td class="markdownTableBodyNone">writes last 2 digits of year using the alternative numeric system, e.g. 十一 instead of 11 in ja_JP locale.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Oy</code>   </td><td class="markdownTableBodyNone">The last 2 digits of year using the alternative numeric system.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 09    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%p</code>   </td><td class="markdownTableBodyNone">writes localized a.m. or p.m. (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%p</code>   </td><td class="markdownTableBodyNone">The a.m. / p.m. designator.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 午後 (ja-JP) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; (fr-FR)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%r</code>   </td><td class="markdownTableBodyNone">writes localized 12-hour clock time (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%r</code>   </td><td class="markdownTableBodyNone">The localized 12-hour clock time.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 1:45:30 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13:45:30 (ja-JP) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13:45:30 (fr-FR)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%R</code>   </td><td class="markdownTableBodyNone">equivalent to <code>%H:%M</code>.    </td></tr>
+<td class="markdownTableBodyNone"><code>%R</code>   </td><td class="markdownTableBodyNone">The equivalent of <code>%H:%M</code>.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 13:45    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%S</code>   </td><td class="markdownTableBodyNone">writes second as a decimal number (range [00,60]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%S</code>   </td><td class="markdownTableBodyNone">The second as a decimal number (range [00,60]).   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 30    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%T</code>   </td><td class="markdownTableBodyNone">equivalent to <code>%H:%M:%S</code> (the ISO 8601 time format)    </td></tr>
+<td class="markdownTableBodyNone"><code>%T</code>   </td><td class="markdownTableBodyNone">The equivalent of <code>%H:%M:%S</code> (the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> time format).   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 13:45:30    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%u</code>   </td><td class="markdownTableBodyNone">writes weekday as a decimal number, where Monday is 1 (ISO 8601 format) (range [1-7]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%u</code>   </td><td class="markdownTableBodyNone">The weekday as a decimal number, where Monday is 1 (<a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format) (range [1-7]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%U</code>   </td><td class="markdownTableBodyNone">writes week of the year as a decimal number (Sunday is the first day of the week) (range [00,53]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%U</code>   </td><td class="markdownTableBodyNone">The week of the year as a decimal number (Sunday is the first day of the week) (range [00,53]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 22    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%V</code>   </td><td class="markdownTableBodyNone">writes ISO 8601 week of the year (range [01,53]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%V</code>   </td><td class="markdownTableBodyNone">The <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> week of the year (range [01,53]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 23    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%w</code>   </td><td class="markdownTableBodyNone">writes weekday as a decimal number, where Sunday is 0 (range [0-6]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%w</code>   </td><td class="markdownTableBodyNone">The weekday as a decimal number, where Sunday is 0 (range [0-6]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 1    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%W</code>   </td><td class="markdownTableBodyNone">writes week of the year as a decimal number (Monday is the first day of the week) (range [00,53]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%W</code>   </td><td class="markdownTableBodyNone">The week of the year as a decimal number (Monday is the first day of the week) (range [00,53]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 22    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%x</code>   </td><td class="markdownTableBodyNone">writes localized date representation (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%x</code>   </td><td class="markdownTableBodyNone">The localized date representation.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 6/1/2009 (en-US) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 2009/06/01 (jp-JA) <br  />
+<br  />
+ 2009-06-01T13:45:30 -&gt; 01/06/2009 (fr-FR)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%X</code>   </td><td class="markdownTableBodyNone">writes localized time representation, e.g. 18:40:20 or 6:40:20 PM (locale dependent).    </td></tr>
+<td class="markdownTableBodyNone"><code>%X</code>   </td><td class="markdownTableBodyNone">The localized time representation.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 -&gt; 1:45:30 PM (en-US) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13:45:30 (ja-JP) <br  />
+<br  />
+ 2009-06-15T13:45:30 -&gt; 13:45:30 (fr-FR)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%y</code>   </td><td class="markdownTableBodyNone">writes last 2 digits of year as a decimal number (range [00,99]).    </td></tr>
+<td class="markdownTableBodyNone"><code>%y</code>   </td><td class="markdownTableBodyNone">The last 2 digits of year as a decimal number (range [00,99]).   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 09    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%Y</code>   </td><td class="markdownTableBodyNone">writes year as a decimal number, e.g. 2017.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Y</code>   </td><td class="markdownTableBodyNone">The year as a decimal number.   </td><td class="markdownTableBodyNone">2009-06-01T13:45:30 -&gt; 2009    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%z</code>   </td><td class="markdownTableBodyNone">writes offset from UTC in the ISO 8601 format (e.g. -0430), or no characters if the time zone information is not available.    </td></tr>
+<td class="markdownTableBodyNone"><code>%z</code>   </td><td class="markdownTableBodyNone">The offset from UTC in the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30+01:00 -&gt; +0100    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%Z</code>   </td><td class="markdownTableBodyNone">writes locale-dependent time zone name or abbreviation, or no characters if the time zone information is not available.    </td></tr>
+<td class="markdownTableBodyNone"><code>%Z</code>   </td><td class="markdownTableBodyNone">The time zone name or abbreviation.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30+01:00 -&gt; Romance Standard Time    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%%</code>   </td><td class="markdownTableBodyNone">writes literal <code>%</code>. The full conversion specification must be <code>%%</code>.    </td></tr>
+<td class="markdownTableBodyNone"><code>%%</code>   </td><td class="markdownTableBodyNone">The literal <code>%</code>. The full conversion specification must be <code>%%</code>.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (%H %%) -&gt; 13 %    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>%n</code>   </td><td class="markdownTableBodyNone">writes newline character.    </td></tr>
+<td class="markdownTableBodyNone"><code>%n</code>   </td><td class="markdownTableBodyNone">The newline character.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (%H%nM) -&gt; 13<br  />
+45    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>%t</code>   </td><td class="markdownTableBodyNone">writes horizontal tab character.   </td></tr>
+<td class="markdownTableBodyNone"><code>%t</code>   </td><td class="markdownTableBodyNone">The horizontal tab character.   </td><td class="markdownTableBodyNone">2009-06-15T13:45:30 (%H%tM) -&gt; 13 45    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Any other character   </td><td class="markdownTableBodyNone">The character is copied to the result string unchanged.   </td><td class="markdownTableBodyNone">2009-06-15T01:45:30 (arr %H:%MT) -&gt; arr 13:45T   </td></tr>
 </table>
-</dd>
-<dd>
-See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time</a> for more information. </dd></dl>
+</dd></dl>
 
 </div>
 </div>
@@ -5764,7 +6696,7 @@ See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time<
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Oct 17 2025 18:28:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Oct 18 2025 18:45:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
