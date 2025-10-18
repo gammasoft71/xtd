@@ -172,11 +172,7 @@ namespace {
   }
   
   static string get_time_suffix(const date_time& dt, const culture_info& culture) {
-    auto suffix = dt.to_string("%p", culture);
-    if (!string::is_empty(suffix)) return suffix;
-    suffix = dt.to_string("%p", culture_info {"en-US"});
-    if (!string::is_empty(suffix)) return suffix;
-    return dt.hour() / 12 ? "PM" : "AM";
+    return dt.to_string("%p", culture);
   }
   
   static array<string> get_time_suffixes(const culture_info& culture) {
@@ -248,7 +244,10 @@ namespace {
   
   static string to_string_custom_time_suffix(const string& format, size& index, uint32 hour, const date_time& dt, const culture_info& culture) {
     auto count = to_string_custom_char_count(format, index, 2_z);
-    return get_time_suffix(dt, culture).substring(0, count);
+    auto suffix = get_time_suffix(dt, culture).to_u32string();
+    if (string::is_empty(suffix)) return suffix;
+    if (count == 1) return suffix.substring(0, 1);
+    return suffix;
   }
   
   static string to_string_custom_time_zone_information(const string& format, size& index, date_time_kind kind, int64 offset_sec) {
@@ -257,9 +256,12 @@ namespace {
   }
   
   static string to_string_custom_year(const string& format, size& index, uint32 year) {
-    auto count = to_string_custom_char_count(format, index, 4_z);
-    if (count >= 3) return string::format("{:D4}", year);
-    return string::format("{:D2}", year % 100);
+    auto count = to_string_custom_char_count(format, index, 5_z);
+    if (count == 5) return string::format("{:D5}", year);
+    if (count == 4) return string::format("{:D4}", year);
+    if (count == 3) return string::format("{:D3}", year);
+    if (count == 2) return string::format("{:D2}", year % 100);
+    return string::format("{:D}", year % 100);
   }
   
   #if defined(_WIN32)
