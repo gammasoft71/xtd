@@ -205,7 +205,7 @@ namespace {
       result += get_date_separator(culture);
     return result;
   }
-
+  
   static string to_string_custom_day(const string& format, size& index, uint32 day, const date_time& dt, const culture_info& culture) {
     auto count = to_string_custom_char_count(format, index, 4_z);
     if (count == 4) return dt.to_string("%A", culture);
