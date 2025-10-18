@@ -142,6 +142,10 @@ namespace {
     return time;
   }
   
+  static string get_date_separator(const culture_info& culture) {
+    return "/";
+  }
+  
   static array<string> get_days(const culture_info& culture) {
     auto days = list<string> {};
     for (auto index = 1; index <= 7; ++index)
@@ -171,6 +175,10 @@ namespace {
     return months.to_array();
   }
   
+  static string get_time_separator(const culture_info& culture) {
+    return ":";
+  }
+  
   static string get_time_suffix(const date_time& dt, const culture_info& culture) {
     return dt.to_string("%p", culture);
   }
@@ -190,6 +198,14 @@ namespace {
     return math::min(max_char, count);
   }
   
+  static string to_string_custom_date_separator(const string& format, size& index, const culture_info& culture) {
+    auto count = to_string_custom_char_count(format, index, size_object::max_value);
+    auto result = string {};
+    for (auto index = 0_z; index < count; ++index)
+      result += get_date_separator(culture);
+    return result;
+  }
+
   static string to_string_custom_day(const string& format, size& index, uint32 day, const date_time& dt, const culture_info& culture) {
     auto count = to_string_custom_char_count(format, index, 4_z);
     if (count == 4) return dt.to_string("%A", culture);
@@ -240,6 +256,14 @@ namespace {
     auto count = to_string_custom_char_count(format, index, 2_z);
     if (count == 2) return string::format("{:D2}", second);
     return string::format("{:D}", second);
+  }
+  
+  static string to_string_custom_time_separator(const string& format, size& index, const culture_info& culture) {
+    auto count = to_string_custom_char_count(format, index, size_object::max_value);
+    auto result = string {};
+    for (auto index = 0_z; index < count; ++index)
+      result += get_time_separator(culture);
+    return result;
   }
   
   static string to_string_custom_time_suffix(const string& format, size& index, uint32 hour, const date_time& dt, const culture_info& culture) {
@@ -984,6 +1008,8 @@ string date_time::to_string_custom(const string& format, const culture_info& cul
         case 't': result += to_string_custom_time_suffix(format, index, hour, self_, culture); break;
         case 'y': result += to_string_custom_year(format, index, year); break;
         case 'z': result += to_string_custom_offset_utc(format, index, offset_sec); break;
+        case ':': result += to_string_custom_time_separator(format, index, culture); break;
+        case '/': result += to_string_custom_date_separator(format, index, culture); break;
         default: result += format[index]; break;
       }
     }
