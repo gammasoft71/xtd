@@ -385,8 +385,8 @@ void __basic_string_extract_format_arg(const std::locale& loc, std::basic_string
         } catch (...) {
           xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
         }
-        if (alignment > 0) arg_str = arg_str.pad_left(alignment);
-        else if (alignment < 0) arg_str = arg_str.pad_right(-alignment);
+        if (alignment > 0) arg_str = arg_str.to_u32string().pad_left(alignment);
+        else if (alignment < 0) arg_str = arg_str.to_u32string().pad_right(-alignment);
       }
       fmt.insert(format.location, arg_str);
       offset += arg_str.length();
