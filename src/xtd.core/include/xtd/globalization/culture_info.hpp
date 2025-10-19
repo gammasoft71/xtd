@@ -25,13 +25,13 @@ namespace xtd {
     /// class culture_info : public xtd::object, public xtd::iequatable<xtd::globalization::culture_info>
     /// ```
     /// @par Inheritance
-    /// xtd::object → xtd::collections::culture_not_found_exception
+    /// xtd::object → xtd::globalization::culture_info
     /// @par Header
     /// ```cpp
     /// #include <xtd/globalization/culture_not_found_exception>
     /// ```
     /// @par Namespace
-    /// xtd::collections
+    /// xtd::globalization
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core globalization
