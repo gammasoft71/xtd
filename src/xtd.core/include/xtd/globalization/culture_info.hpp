@@ -90,21 +90,60 @@ namespace xtd {
       /// The following example demonstrates the xtd::globalization::culture_types enumeration and the xtd::globalization::culture_info::culture_types property.
       /// @include culture_info_culture_types.cpp
       xtd::globalization::culture_types culture_types() const noexcept;
+      
+      /// @brief Gets the full localized culture name.
+      /// @return The full localized culture name in the format languagefull [country/regionfull], where languagefull is the full name of the language and country/regionfull is the full name of the country/region.
+      /// @remarks This property represents the localized name of the xtd::globalization::culture_info object.
+      /// @remarks Culture names may vary due to scripting or formatting conventions. You should use the returned name for display, and not attempt to parse it.
+      /// @par Examples
+      /// The following code example displays several properties of the neutral cultures.
+      /// @include culture_info_properties.cpp
+      /// @remarks This property represents the localized name of the xtd::globalization::culture_info object.
+      /// @remarks Culture names may vary due to scripting or formatting conventions. You should use the returned name for display, and not attempt to parse it.
       const xtd::string& display_name() const noexcept;
+      
+      /// @brief Gets the culture name in the format languagefull [country/regionfull] in English.
+      /// @return The culture name in the format languagefull [country/regionfull] in English, where languagefull is the full name of the language and country/regionfull is the full name of the country/region.
+      /// @par Examples
+      /// The following code example displays several properties of the neutral cultures.
+      /// @include culture_info_properties.cpp
+      /// @remarks For example, the xtd::globalization::culture_info::english_name for the specific culture name en-US is "English (United States)".
+      /// @remarks The value of this property is the same, regardless of the language version of the xtd.
       const xtd::string& english_name() const noexcept;
+      
+      /// @brief Gets if the [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) corresponding to this instance is available.
+      /// @return `true` if the [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) is available; otherwise `false`.
       bool is_locale_available() const noexcept;
+      
+      bool is_neutral_culture() const noexcept;
+
       xtd::size keyboard_layout_id() const noexcept;
       xtd::size lcid() const noexcept;
       const std::locale& locale() const noexcept;
       const xtd::string& name() const noexcept;
       const xtd::string& native_name() const noexcept;
+      const xtd::string& three_letter_iso_language_name() const noexcept;
+      const xtd::string& three_letter_windows_language_name() const noexcept;
+      const xtd::string& two_letter_iso_language_name() const noexcept;
       /// @}
       
       /// @name Public Static Properties
       
       /// @{
+      /// @brief Gets the xtd::globalization::culture_info object that represents the culture used by the current application.
+      /// @return The culture used by the current application.
+      /// @par Examples
+      /// The following example demonstrates how to change the xtd::globalization::culture_info::current_culture of the current application.
+      /// @include culture_info_current_culture.cpp
       static culture_info current_culture() noexcept;
+      /// @brief Sets the xtd::globalization::culture_info object that represents the culture used by the current application.
+      /// @param value The culture used by the current application.
+      /// @par Examples
+      /// The following example demonstrates how to change the xtd::globalization::culture_info::current_culture of the current application.
       static void current_culture(const culture_info& value);
+      
+      /// @brief Gets the CultureInfo object that is culture-independent (invariant).
+      /// @return The object that is culture-independent (invariant).
       static culture_info invariant_culture() noexcept;
       /// @}
       
@@ -134,6 +173,7 @@ namespace xtd {
       
       /// @{
       static xtd::array<culture_info> get_cultures(xtd::globalization::culture_types types) noexcept;
+      static xtd::array<std::locale> get_system_locales() noexcept;
       /// @}
       
       /// @name Public Operators
@@ -148,7 +188,7 @@ namespace xtd {
       /// @}
       
     private:
-      culture_info(xtd::globalization::culture_types culture_types, string&& display_name, string&& english_name, xtd::size keyboard_layout_id, xtd::size lcid, string&& name, string&& native_name);
+      culture_info(xtd::globalization::culture_types culture_types, string&& display_name, string&& english_name, xtd::size keyboard_layout_id, xtd::size lcid, string&& name, string&& native_name, string&& three_letter_iso_language_name, string&& three_letter_windows_language_name, string&& two_letter_iso_language_name);
       
       void fill_from_name(const xtd::string& name);
       static bool is_system_locale_available(const xtd::string& name) noexcept;
