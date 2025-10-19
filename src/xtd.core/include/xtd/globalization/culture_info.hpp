@@ -116,7 +116,7 @@ namespace xtd {
       bool is_locale_available() const noexcept;
       
       bool is_neutral_culture() const noexcept;
-
+      
       xtd::size keyboard_layout_id() const noexcept;
       xtd::size lcid() const noexcept;
       const std::locale& locale() const noexcept;
