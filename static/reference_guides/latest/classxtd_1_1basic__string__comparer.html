@@ -322,7 +322,7 @@ template&lt;class char_t&gt; </div>
 
 <p>Gets a <a class="el" href="classxtd_1_1basic__string__comparer.html" title="Represents a string comparison operation that uses specific case and culture-based or ordinal compari...">xtd::basic_string_comparer</a> object that performs case-insensitive string comparisons using the word comparison rules of the current culture. </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1basic__string__comparer.html" title="Represents a string comparison operation that uses specific case and culture-based or ordinal compari...">xtd::basic_string_comparer</a> object. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The current culture is the <a class="el" href="classxtd_1_1globalization_1_1culture__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::culture_info</a> object associated with the current thread; it is returned by the xtd::globalization::culture_info::current_culture property. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The current culture is the <a class="el" href="classxtd_1_1globalization_1_1culture__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::culture_info</a> object associated with the current thread; it is returned by the <a class="el" href="classxtd_1_1globalization_1_1culture__info.html#a35208a728629a5fca8cfd4d38568a07a" title="Gets the xtd::globalization::culture_info object that represents the culture used by the current appl...">xtd::globalization::culture_info::current_culture</a> property. </dd>
 <dd>
 The <a class="el" href="classxtd_1_1basic__string__comparer.html" title="Represents a string comparison operation that uses specific case and culture-based or ordinal compari...">xtd::basic_string_comparer</a> returned by the <a class="el" href="#a0e6eb03d9fd133a70701fde762e5940d" title="Gets a xtd::basic_string_comparer object that performs case-insensitive string comparisons using the ...">xtd::basic_string_comparer::current_culture_ignore_case</a> property can be used when strings are linguistically relevant but their case is not. For example, if strings are displayed to the user but case is unimportant, culture-sensitive, case-insensitive string comparison should be used to order the string data. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>xtd running on Linux and macOS systems only: The collation behavior for the C and Posix cultures is always case-sensitive because these cultures do not use the expected Unicode collation order. We recommend that you use a culture other than C or Posix for performing culture-sensitive, case-insensitive sorting operations. </dd></dl>
@@ -931,7 +931,7 @@ template&lt;class char_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Oct 18 2025 22:55:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Oct 19 2025 19:55:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

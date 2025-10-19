@@ -483,8 +483,8 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>        } <span class="keywordflow">catch</span> (...) {</div>
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>          <a class="code hl_function" href="classxtd_1_1helpers_1_1throw__helper.html#a4fcf5154d41ae7e68038268ea89492d6">xtd::helpers::throw_helper::throws</a>(<a class="code hl_enumvalue" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dca1ddcb92ade31c8fbd370001f9b29a7d9">xtd::helpers::exception_case::format</a>);</div>
 <div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>        }</div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>        <span class="keywordflow">if</span> (alignment &gt; 0) arg_str = arg_str.<a class="code hl_function" href="classxtd_1_1basic__string.html#a0841b4ac447cc426dfc86857696a59d3">pad_left</a>(alignment);</div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (alignment &lt; 0) arg_str = arg_str.<a class="code hl_function" href="classxtd_1_1basic__string.html#abe37d71513cd7f2585290402bd45afb2">pad_right</a>(-alignment);</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>        <span class="keywordflow">if</span> (alignment &gt; 0) arg_str = arg_str.to_u32string().<a class="code hl_function" href="classxtd_1_1basic__string.html#a0841b4ac447cc426dfc86857696a59d3">pad_left</a>(alignment);</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (alignment &lt; 0) arg_str = arg_str.to_u32string().<a class="code hl_function" href="classxtd_1_1basic__string.html#abe37d71513cd7f2585290402bd45afb2">pad_right</a>(-alignment);</div>
 <div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>      }</div>
 <div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>      fmt.insert(<a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>.location, arg_str);</div>
 <div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>      offset += arg_str.length();</div>
@@ -1394,7 +1394,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Oct 18 2025 22:55:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Oct 19 2025 19:55:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
