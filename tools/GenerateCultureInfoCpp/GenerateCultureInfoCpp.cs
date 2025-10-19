@@ -61,7 +61,8 @@ class GenerateCultureInfoCpp {
     return property != null && (bool)property.GetValue(null)!;
   }
 
-  static string ToString(CultureInfo cultureInfo) {
+  static string ToString(CultureInfo cultureInfo)
+  {
     var cultureType = ToString(cultureInfo.CultureTypes & CultureTypes.AllCultures);
     var displayName = Escape(cultureInfo.DisplayName);
     var englishName = Escape(cultureInfo.EnglishName);
@@ -70,7 +71,10 @@ class GenerateCultureInfoCpp {
     var lcid = cultureInfo.LCID;
     var name = Escape(cultureInfo.Name);
     var nativeName = Escape(cultureInfo.NativeName);
-    return $"  {{\"{ key}\", {{{cultureType}, \"{displayName}\", \"{englishName}\", {keyboardLayoutId}, {lcid}, \"{name}\", \"{nativeName}\"}}}},";
+    var threeLetterISOLanguageName = Escape(cultureInfo.ThreeLetterISOLanguageName);
+    var threeLetterWindowsLanguageName = Escape(cultureInfo.ThreeLetterWindowsLanguageName);
+    var twoLetterISOLanguageName = Escape(cultureInfo.TwoLetterISOLanguageName);
+    return $"  {{\"{key}\", {{{cultureType}, \"{displayName}\", \"{englishName}\", {keyboardLayoutId}, {lcid}, \"{name}\", \"{nativeName}\", \"{threeLetterISOLanguageName}\", \"{threeLetterWindowsLanguageName}\", \"{twoLetterISOLanguageName}\"}}}},";
   }
 
   static string ToString(CultureTypes type) {
@@ -79,6 +83,20 @@ class GenerateCultureInfoCpp {
     if (type.HasFlag(CultureTypes.SpecificCultures)) result += (string.IsNullOrEmpty(result) ? "" : "|") + "globalization::culture_types::specific_cultures";
     if (type.HasFlag(CultureTypes.InstalledWin32Cultures)) result += (string.IsNullOrEmpty(result) ? "" : "|") + "globalization::culture_types::installed_win32_cultures";
     if (string.IsNullOrEmpty(result)) result = "globalization::culture_types::none";
+    return result;
+  }
+  
+  static string ToString(DateTimeFormatInfo dateTimeFormat) {
+    var abbreviatedDayNames = ToString(dateTimeFormat.AbbreviatedDayNames);
+    return $"  {{{abbreviatedDayNames}}},";
+  }
+  
+  static string ToString(string[] values) {
+    var result = "array<string> {{";
+    foreach (var value in values)
+      result += Escape(value) + ", ";
+    if (result.EndsWith(", ")) result = result.Substring(0, result.Length - 2);
+    result += "}}";
     return result;
   }
 }

@@ -22,6 +22,9 @@ struct culture_info::data {
   std::locale locale = std::locale {""};
   xtd::string name;
   xtd::string native_name = "Invariant Language (Invariant Country)";
+  xtd::string three_letter_iso_language_name = "ivl";
+  xtd::string three_letter_windows_language_name = "IVL";
+  xtd::string two_letter_iso_language_name = "iv";
 };
 
 culture_info::culture_info() : data_ {new_ptr<data>()} {
@@ -61,6 +64,10 @@ bool culture_info::is_locale_available() const noexcept {
   return data_->locale.name() != "C";
 }
 
+bool culture_info::is_neutral_culture() const noexcept {
+  return enum_object<>(culture.culture_types().types()).has_flag(xtd::globalization::culture_types::neutral_cultures);
+}
+
 xtd::size culture_info::keyboard_layout_id() const noexcept {
   return data_->keyboard_layout_id;
 }
@@ -79,6 +86,18 @@ const string& culture_info::name() const noexcept {
 
 const string& culture_info::native_name() const noexcept {
   return data_->native_name;
+}
+
+const string& culture_info::three_letter_iso_language_name() const noexcept {
+  return data_->three_letter_iso_language_name;
+}
+
+const string& culture_info::three_letter_windows_language_name() const noexcept {
+  return data_->three_letter_windows_language_name;
+}
+
+const string& culture_info::two_letter_iso_language_name() const noexcept {
+  return data_->two_letter_iso_language_name;
 }
 
 culture_info culture_info::current_culture() noexcept {
@@ -113,8 +132,19 @@ xtd::string culture_info::to_string() const noexcept {
 array<culture_info> culture_info::get_cultures(xtd::globalization::culture_types types) noexcept {
   auto result = list<culture_info> {};
   for (const auto& [name, culture] : cultures_)
-    if ((culture.culture_types() & types) == types || types == xtd::globalization::culture_types::all_cultures)
+    if ((enum_object<>(culture.culture_types())).has_flag(types) || types == xtd::globalization::culture_types::all_cultures)
       result.add(culture);
+  result.sort({[](auto v1, auto v2) {return v1.name() < v2.name() ? -1 : v1.name() > v2.name() ? 1 : 0;}});
+  return result;
+}
+
+array<std::locale> culture_info::get_system_locales() noexcept {
+  static auto result = list<std::locale> {};
+  call_once_ {
+    for (auto system_locale_name : native::culture_info::system_locale_names())
+      result.add(std::locale {system_locale_name});
+    result.sort({[](auto v1, auto v2) {return v1.name() < v2.name() ? -1 : v1.name() > v2.name() ? 1 : 0;}});
+  };
   return result;
 }
 
@@ -131,7 +161,7 @@ culture_info::operator const std::locale& () const noexcept {
   return data_->locale;
 }
 
-culture_info::culture_info(globalization::culture_types culture_types, string&& display_name, string&& english_name, size keyboard_layout_id, size lcid, string&& name, string&& native_name) : data_ {new_ptr<data>()} {
+culture_info::culture_info(globalization::culture_types culture_types, string&& display_name, string&& english_name, size keyboard_layout_id, size lcid, string&& name, string&& native_name, string&& three_letter_iso_language_name, string&& three_letter_windows_language_name, string&& two_letter_iso_language_name) : data_ {new_ptr<data>()} {
   data_->culture_types = culture_types;
   data_->display_name = std::move(display_name);
   data_->english_name = std::move(english_name);
@@ -140,6 +170,9 @@ culture_info::culture_info(globalization::culture_types culture_types, string&& 
   data_->locale = std::locale {is_system_locale_available(to_locale_name(name)) ? to_locale_name(name) : "C"};
   data_->name = std::move(name);
   data_->native_name = std::move(native_name);
+  data_->three_letter_iso_language_name = std::move(three_letter_iso_language_name);
+  data_->three_letter_windows_language_name = std::move(three_letter_windows_language_name);
+  data_->two_letter_iso_language_name = std::move(two_letter_iso_language_name);
 }
 
 void culture_info::fill_from_name(const string& name) {
