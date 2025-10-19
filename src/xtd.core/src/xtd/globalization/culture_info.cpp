@@ -65,7 +65,7 @@ bool culture_info::is_locale_available() const noexcept {
 }
 
 bool culture_info::is_neutral_culture() const noexcept {
-  return enum_object<>(culture.culture_types().types()).has_flag(xtd::globalization::culture_types::neutral_cultures);
+  return enum_object<globalization::culture_types>(culture_types()).has_flag(xtd::globalization::culture_types::neutral_cultures);
 }
 
 xtd::size culture_info::keyboard_layout_id() const noexcept {
@@ -132,7 +132,7 @@ xtd::string culture_info::to_string() const noexcept {
 array<culture_info> culture_info::get_cultures(xtd::globalization::culture_types types) noexcept {
   auto result = list<culture_info> {};
   for (const auto& [name, culture] : cultures_)
-    if ((enum_object<>(culture.culture_types())).has_flag(types) || types == xtd::globalization::culture_types::all_cultures)
+    if (enum_object<globalization::culture_types>(culture.culture_types()).has_flag(types) || types == xtd::globalization::culture_types::all_cultures)
       result.add(culture);
   result.sort({[](auto v1, auto v2) {return v1.name() < v2.name() ? -1 : v1.name() > v2.name() ? 1 : 0;}});
   return result;
