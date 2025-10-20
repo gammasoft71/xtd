@@ -55,7 +55,7 @@ namespace sleepfor {
     }
     
     static string get_version() {
-      return string::format("sleepfor version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
+      return string::format("sleepfor version {}, (c) {} by Gammasoft", environment::version(), date_time::now().year());
     }
     
     static bool process_arguments(const list<string>& args, int32& duration, period_type& type, bool& indefinitely, bool& show_version, bool& show_help) {

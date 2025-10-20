@@ -62,7 +62,7 @@ namespace demangler {
     }
     
     static auto get_version() noexcept -> string {
-      return string::format("demangler version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
+      return string::format("demangler version {}, (c) {} by Gammasoft", environment::version(), date_time::now().year());
     }
     
     static auto process_arguments(const array<string>& args, string& input_file, string& output_file, bool& quiet, bool& show_version, bool& show_help) noexcept -> bool {

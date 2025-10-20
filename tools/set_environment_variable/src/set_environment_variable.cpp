@@ -89,7 +89,7 @@ namespace set_path {
     }
     
     static string get_version() {
-      return string::format("set_environment_variable version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
+      return string::format("set_environment_variable version {}, (c) {} by Gammasoft", environment::version(), date_time::now().year());
     }
     
     static bool process_arguments(const list<string>& args, string& key, string& value, bool& add, bool& remove, bool& system_path, bool& show_version, bool& show_help) {

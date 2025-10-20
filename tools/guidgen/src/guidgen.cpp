@@ -55,7 +55,7 @@ namespace guidgen {
     }
     
     static auto get_version() noexcept -> string {
-      return string::format("guidgen version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
+      return string::format("guidgen version {}, (c) {} by Gammasoft", environment::version(), date_time::now().year());
     }
     
     static auto process_arguments(const array<string>& args, string& format, int& count, bool& show_version, bool& show_help) noexcept -> bool {
