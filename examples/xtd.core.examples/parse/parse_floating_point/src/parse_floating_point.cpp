@@ -1,6 +1,6 @@
 #include <xtd/xtd>
 
-using namespace globalization;
+using namespace xtd::globalization;
 
 auto main() -> int {
   culture_info::current_culture(culture_info {"en-US"}); // change to us for currency
