@@ -194,14 +194,37 @@ namespace xtd {
       /// @par Examples
       /// The following code example determines which cultures using the Chinese language.
       /// @include culture_info_parent.cpp
+      /// @remarks The cultures have a hierarchy in which the parent of a specific culture is a neutral culture, the parent of a neutral culture is the xtd::globalization::culture_info::invariant_culture, and the parent of the xtd::globalization::culture_info::invariant_culture is the invariant culture itself. The parent culture encompasses only the set of information that is common among its children.
+      /// @remarks If the language/respurces for the specific culture are not available in the system, the language/respurces for the neutral culture are used. If the language/respurces for the neutral culture are not available, the resources embedded in the main assembly are used.
       virtual xtd::globalization::culture_info parent() const noexcept;
       
+      /// @brief Gets the ISO 639-2 three-letter code for the language of the current xtd::globalization::culture_info.
+      /// @return The ISO 639-2 three-letter code for the language of the current xtd::globalization::culture_info.
+      /// @par Examples
+      /// The following code example determines which cultures using the Chinese language are neutral cultures.
+      /// @include culture_info_is_neutral_culture.cpp
+      /// @remarks For example, the three-letter abbreviation for English is "eng".
       const xtd::string& three_letter_iso_language_name() const noexcept;
-      
+
+      /// @brief Gets the three-letter code for the language as defined in the Windows API.
+      /// @return The three-letter code for the language as defined in the Windows API.
+      /// @par Examples
+      /// The following code example determines which cultures using the Chinese language are neutral cultures.
+      /// @include culture_info_is_neutral_culture.cpp
       const xtd::string& three_letter_windows_language_name() const noexcept;
-      
+
+      /// @brief Gets the ISO 639-1 two-letter or ISO 639-3 three-letter code for the language of the current xtd::globalization::culture_info.
+      /// @return The ISO 639-1 two-letter code for the language of the current xtd::globalization::culture_info. If no two-letter code is available, the three-letter code from ISO 639-3 is used.
+      /// @par Examples
+      /// The following code example determines which cultures using the Chinese language are neutral cultures.
+      /// @include culture_info_is_neutral_culture.cpp
+      /// @remarks For example, the two-letter abbreviation for English is "en". The xtd::globalization::culture_info::two_letter_iso_language_name property value for the invariant culture is "iv".
+      /// @note When communicating between processes or persisting data it is usually better to use the full xtd::globalization::culture_info::name. Using just the language can lose context and data.
+      /// @remarks If ISO 639-1 does not define a two-letter language code for a particular culture, the xtd::globalization::culture_info::two_letter_iso_language_name property returns a string that consists of three or more letters. For more information, see the example.
       const xtd::string& two_letter_iso_language_name() const noexcept;
 
+      /// @brief Gets a value indicating whether the current xtd::globalization::culture_info object uses the user-selected culture settings.
+      /// @return `true` if the current xtd::globalization::culture_info uses the user-selected culture settings; otherwise, `false`.
       bool use_user_override() const noexcept;
       /// @}
       
