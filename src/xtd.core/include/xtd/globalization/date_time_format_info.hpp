@@ -4,13 +4,16 @@
 #pragma once
 
 #include "../core_export.hpp"
-#include "../day_of_week.hpp"
 #include "../object.hpp"
 #include "../string.hpp"
 #include <locale>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  enum class day_of_week;
+  ///@endcond
+  
   /// @brief Contains classes that define culture-related information, including language, country/region, calendars in use, format patterns for dates, currency, and numbers, and sort order for strings. These classes are useful for writing globalized (internationalized) applications. Classes such as xtd::globalization::string_info and xtd::globalization::text_info provide advanced globalization functionalities, including surrogate support and text element processing.
   namespace globalization {
     /// @cond
@@ -64,7 +67,7 @@ namespace xtd {
       
       const xtd::array<xtd::string>& day_names() const noexcept;
       
-      day_of_week first_day_of_week() const noexcept;
+      xtd::day_of_week first_day_of_week() const noexcept;
       
       const string& full_date_time_pattern() const noexcept;
 

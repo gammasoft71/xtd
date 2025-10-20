@@ -1,5 +1,6 @@
 #include "../../../include/xtd/globalization/culture_info.hpp"
 #include "../../../include/xtd/globalization/date_time_format_info.hpp"
+#include "../../../include/xtd/day_of_week.hpp"
 
 using namespace xtd;
 using namespace xtd::globalization;
@@ -138,4 +139,23 @@ date_time_format_info::date_time_format_info(array<string>&& abreviated_day_name
   data_->abreviated_month_genitive_names = std::move(abreviated_month_genitive_names);
   data_->abreviated_month_names = std::move(abreviated_month_names);
   data_->am_designator = std::move(am_designator);
+  //data_->date_separator = std::move(date_separator);
+  //data_->day_names = std::move(day_names);
+  //data_->first_day_of_week = first_day_of_week;
+  //data_->full_date_time_pattern = std::move(full_date_time_pattern);
+  //data_->long_date_pattern = std::move(long_date_pattern);
+  //data_->long_time_pattern = std::move(long_time_pattern);
+  //data_->month_day_pattern = std::move(month_day_pattern);
+  //data_->month_genitive_names = std::move(month_genitive_names);
+  //data_->month_names = std::move(month_names);
+  //data_->native_calendar_name = std::move(native_calendar_name);
+  //data_->pm_designator = std::move(pm_designator);
+  //data_->rfc_1123_pattern = std::move(rfc_1123_pattern);
+  //data_->short_date_pattern = std::move(short_date_pattern());
+  //data_->short_time_pattern = std::move(short_time_pattern());
+  //data_->shortest_day_names = std::move(shortest_day_names);
+  //data_->sortable_date_time_pattern = std::move(sortable_date_time_pattern);
+  //data_->time_separator = std::move(time_separator);
+  //data_->universal_sortable_date_time_pattern = std::move(universal_sortable_date_time_pattern);
+  //data_->year_month_pattern = std::move(year_month_pattern);
 }

@@ -214,6 +214,18 @@ namespace {
     return string::format("{:D}", day);
   }
   
+  static string to_string_custom_escaped_char(const string& format, size& index) {
+    return index + 1 < format.length() ? as<string>(format[++index]) : ""_s;
+  }
+  
+  static string to_string_custom_escaped_string(const string& format, size& index) {
+    auto next_index = format.find_first_of(format[index], index + 1);
+    if (next_index == npos) throw_helper::throws(xtd::helpers::exception_case::format);
+    auto result = format.substring(index + 1, next_index - index - 1);
+    index = next_index;
+    return result;
+  }
+
   static string to_string_custom_fraction(const string& format, size& index, int64 ticks) {
     bool remove_trailing_zeros = (format[index] == 'F');
     auto count = to_string_custom_char_count(format, index, 7_z);
@@ -993,25 +1005,24 @@ string date_time::to_string_custom(const string& format, const culture_info& cul
   
   string result;
   for (auto index = 0_z; index < format.length(); ++index) {
-    if (format[index] == '\\') result += index + 1 < format.length() ? as<string>(format[++index]) : ""_s;
-    else {
-      switch (format[index]) {
-        case 'd': result += to_string_custom_day(format, index, day, self_, culture); break;
-        case 'f':
-        case 'F': result += to_string_custom_fraction(format, index, ticks()); break;
-        case 'h': result += to_string_custom_hour(format, index, hour % 12 == 0 && hour != 0 ? 12 : hour % 12); break;
-        case 'H': result += to_string_custom_hour(format, index, hour); break;
-        case 'K': result += to_string_custom_time_zone_information(format, index, kind_, offset_sec); break;
-        case 'm': result += to_string_custom_minute(format, index, minute); break;
-        case 'M': result += to_string_custom_month(format, index, month, self_, culture); break;
-        case 's': result += to_string_custom_second(format, index, second); break;
-        case 't': result += to_string_custom_time_suffix(format, index, hour, self_, culture); break;
-        case 'y': result += to_string_custom_year(format, index, year); break;
-        case 'z': result += to_string_custom_offset_utc(format, index, offset_sec); break;
-        case ':': result += to_string_custom_time_separator(format, index, culture); break;
-        case '/': result += to_string_custom_date_separator(format, index, culture); break;
-        default: result += format[index]; break;
-      }
+    switch (format[index]) {
+      case 'd': result += to_string_custom_day(format, index, day, self_, culture); break;
+      case 'f':
+      case 'F': result += to_string_custom_fraction(format, index, ticks()); break;
+      case 'h': result += to_string_custom_hour(format, index, hour % 12 == 0 && hour != 0 ? 12 : hour % 12); break;
+      case 'H': result += to_string_custom_hour(format, index, hour); break;
+      case 'K': result += to_string_custom_time_zone_information(format, index, kind_, offset_sec); break;
+      case 'm': result += to_string_custom_minute(format, index, minute); break;
+      case 'M': result += to_string_custom_month(format, index, month, self_, culture); break;
+      case 's': result += to_string_custom_second(format, index, second); break;
+      case 't': result += to_string_custom_time_suffix(format, index, hour, self_, culture); break;
+      case 'y': result += to_string_custom_year(format, index, year); break;
+      case 'z': result += to_string_custom_offset_utc(format, index, offset_sec); break;
+      case ':': result += to_string_custom_time_separator(format, index, culture); break;
+      case '/': result += to_string_custom_date_separator(format, index, culture); break;
+      case '\\': result += to_string_custom_escaped_char(format, index); break;
+      case '\'': result += to_string_custom_escaped_string(format, index); break;
+      default: result += format[index]; break;
     }
   }
   
