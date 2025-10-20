@@ -1042,7 +1042,8 @@ namespace xtdc_command {
     }
     
     static int invalid_command(const list<string>& command_args) {
-      console::write_line("Invalid command");
+      if (command_args.count()) write_line_error(string::format("Invalid command: {}", command_args[0]));
+      else write_line_error("Invalid command");
       console::write_line(string::join("\n", get_help()));
       return EXIT_FAILURE;
     }
