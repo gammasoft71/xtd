@@ -467,7 +467,7 @@ namespace xtdc_command {
     }
     
     static string get_version() noexcept {
-      return string::format("xtdc version {}, (c) {:L} by Gammasoft", get_version_number(), xtd::date_time::now());
+      return string::format("xtdc version {}, (c) {} by Gammasoft", get_version_number(), xtd::date_time::now().year());
     }
     
     static string get_version_number() noexcept {
