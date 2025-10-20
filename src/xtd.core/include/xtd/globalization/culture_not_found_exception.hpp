@@ -26,7 +26,7 @@ namespace xtd {
     /// @par Examples
     /// The following example demonstrates how to throw and catch an culture_not_found_exception.
     /// @include culture_not_found_exception.cpp
-    class culture_not_found_exception : public xtd::system_exception {
+    class core_export_ culture_not_found_exception : public xtd::system_exception {
     public:
       /// @name Public Constructors
       
