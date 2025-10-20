@@ -148,7 +148,7 @@ bool culture_info::equals(const culture_info& obj) const noexcept {
   return data_->name == obj.data_->name;;
 }
 
-xtd::size culture_info::get_hash_code() const noexcept override {
+xtd::size culture_info::get_hash_code() const noexcept {
   return xtd::hash_code::combine(data_->name);
 }
 
