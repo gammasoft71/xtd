@@ -8,6 +8,7 @@ add_projects(
   culture_info_current_culture
   culture_info_is_neutral_culture
   culture_info_lcid
+  culture_info_parent
   culture_info_properties
   culture_info_with_name
 )
