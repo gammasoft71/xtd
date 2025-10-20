@@ -19,5 +19,11 @@ xtdc run
 
 ```
 The current culture is en-US.
-The current culture is now th-TH.
+The current locale is C.
+
+The current culture is now ar-MA.
+The current locale is now ar_MA.UTF-8.
+
+The current culture is now fr-FR.
+The current locale is now fr_FR.UTF-8.
 ```
