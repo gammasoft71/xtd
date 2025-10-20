@@ -205,14 +205,14 @@ namespace xtd {
       /// @include culture_info_is_neutral_culture.cpp
       /// @remarks For example, the three-letter abbreviation for English is "eng".
       const xtd::string& three_letter_iso_language_name() const noexcept;
-
+      
       /// @brief Gets the three-letter code for the language as defined in the Windows API.
       /// @return The three-letter code for the language as defined in the Windows API.
       /// @par Examples
       /// The following code example determines which cultures using the Chinese language are neutral cultures.
       /// @include culture_info_is_neutral_culture.cpp
       const xtd::string& three_letter_windows_language_name() const noexcept;
-
+      
       /// @brief Gets the ISO 639-1 two-letter or ISO 639-3 three-letter code for the language of the current xtd::globalization::culture_info.
       /// @return The ISO 639-1 two-letter code for the language of the current xtd::globalization::culture_info. If no two-letter code is available, the three-letter code from ISO 639-3 is used.
       /// @par Examples
