@@ -7,7 +7,7 @@ public:
   explicit foo(int value) : value_ {value} {}
   
   using object::to_string;
-  string to_string(const string& format, const std::locale& loc) const override {return string::format(string::format("{{:{}}}", format), value_);}
+  string to_string(const string& format, const culture_info& culture) const override {return string::format(string::format("{{:{}}}", format), value_);}
   
 private:
   int value_ = 0;

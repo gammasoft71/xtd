@@ -19,7 +19,7 @@ struct foo2 {
 };
 
 template<>
-std::string xtd::to_string(const foo2& value, const std::string& fmt, const std::locale& loc) {return xtd::int32_object {value.value}.to_string(fmt, loc);}
+string xtd::to_string(const foo2& value, const string& fmt, const std::locale& loc) {return xtd::int32_object {value.value}.to_string(fmt, loc);}
 
 template<>
 struct std::hash<foo2> {
