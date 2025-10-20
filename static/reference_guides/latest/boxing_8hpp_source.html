@@ -179,7 +179,9 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keyword">inline</span> <a class="code hl_typedef" href="group__types.html#ga0623cafc84dca79fb8c1209b1399a0d7">single_object</a> <a class="code hl_function" href="group__system.html#ga7352fcff0da12feb0aff421fc8c41d15">boxing</a>(<span class="keywordtype">float</span>&amp; value) <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__types.html#ga0623cafc84dca79fb8c1209b1399a0d7">single_object</a>(value);}</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  <span class="keyword">inline</span> <a class="code hl_typedef" href="group__types.html#ga61722ba8d9b774764930359fb670f428">double_object</a> <a class="code hl_function" href="group__system.html#ga7352fcff0da12feb0aff421fc8c41d15">boxing</a>(<span class="keywordtype">double</span>&amp; value) <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__types.html#ga61722ba8d9b774764930359fb670f428">double_object</a>(value);}</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keyword">inline</span> <a class="code hl_typedef" href="group__types.html#ga73a2f843c332c0718cfbeb5671c43680">decimal_object</a> <a class="code hl_function" href="group__system.html#ga7352fcff0da12feb0aff421fc8c41d15">boxing</a>(<a class="code hl_typedef" href="group__types.html#ga7d41c91f9bcab8feb762da96973525fd">decimal</a>&amp; value) <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__types.html#ga73a2f843c332c0718cfbeb5671c43680">decimal_object</a>(value);}</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="keyword">inline</span> xtd::collections::generic::list&lt;value_t&gt; <a class="code hl_function" href="group__system.html#ga7352fcff0da12feb0aff421fc8c41d15">boxing</a>(std::vector&lt;value_t&gt;&amp;&amp; value) <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> std::move(value);}</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>}</div>
 <div class="ttc" id="a____box__enum__or__object_8hpp_html"><div class="ttname"><a href="____box__enum__or__object_8hpp.html">__box_enum_or_object.hpp</a></div><div class="ttdoc">Contains box_enum_or_object struct.</div></div>
 <div class="ttc" id="abox_8hpp_html"><div class="ttname"><a href="box_8hpp.html">box.hpp</a></div><div class="ttdoc">Contains xtd::box struct.</div></div>
 <div class="ttc" id="abyte__object_8hpp_html"><div class="ttname"><a href="byte__object_8hpp.html">byte_object.hpp</a></div><div class="ttdoc">Contains xtd::byte_object alias.</div></div>
@@ -247,7 +249,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 19 2025 21:04:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Oct 20 2025 15:52:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

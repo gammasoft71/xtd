@@ -122,12 +122,12 @@ $(function(){ initResizable(false); });
 </dd></dl>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>globalization;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1globalization.html">xtd::globalization</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  form1() {</div>
-<div class="line">    text(<span class="stringliteral">&quot;Translator example&quot;</span>_t);</div>
+<div class="line">    <a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>(<span class="stringliteral">&quot;Translator example&quot;</span>_t);</div>
 <div class="line">    client_size({500, 300});</div>
 <div class="line">    controls().add_range({open_button, close_button, text_label});</div>
 <div class="line">    menu(main_menu1);</div>
@@ -143,29 +143,29 @@ $(function(){ initResizable(false); });
 <div class="line">    fr_fr_menu_item.tag(<span class="stringliteral">&quot;fr-BE&quot;</span>);</div>
 <div class="line">    ru_ru_menu_item.tag(<span class="stringliteral">&quot;ru-RU&quot;</span>);</div>
 <div class="line"> </div>
-<div class="line">    translator::language(<span class="stringliteral">&quot;fr-BE&quot;</span>);</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1globalization_1_1translator.html#a645eb1ede7039e5d7d1a94e67097bf99">translator::language</a>(<span class="stringliteral">&quot;fr-BE&quot;</span>);</div>
 <div class="line">    update_texts();</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <span class="keywordtype">void</span> on_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> event_args&amp; e) {</div>
-<div class="line">    translator::language(as&lt;string&gt;(as&lt;menu_item&gt;(sender).tag()));</div>
+<div class="line">  <span class="keywordtype">void</span> on_menu_click(<span class="keywordtype">object</span>&amp; sender, <span class="keyword">const</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>) {</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1globalization_1_1translator.html#a645eb1ede7039e5d7d1a94e67097bf99">translator::language</a>(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;string&gt;</a>(<a class="code hl_function" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as&lt;menu_item&gt;</a>(sender).tag()));</div>
 <div class="line">    update_texts();</div>
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">void</span> update_texts() {</div>
-<div class="line">    console::write_line(environment::get_folder_path(environment::special_folder::application_resources));</div>
+<div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<a class="code hl_function" href="classxtd_1_1environment.html#a465e71972e122d4bbdaa943ae02d4cd8">environment::get_folder_path</a>(<a class="code hl_enumvalue" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057abc73f4c521c13afa85faba7cbb37ec88">environment::special_folder::application_resources</a>));</div>
 <div class="line">    language_menu_item.text(<span class="stringliteral">&quot;&amp;Languages&quot;</span>_t);</div>
 <div class="line">    open_button.text(<span class="stringliteral">&quot;Open&quot;</span>_t);</div>
 <div class="line">    close_button.text(<span class="stringliteral">&quot;Close&quot;</span>_t);</div>
 <div class="line">    text_label.text(<span class="stringliteral">&quot;The quick brown fox jumps over the lazy dog.&quot;</span>_t);</div>
 <div class="line">  }</div>
 <div class="line">  </div>
-<div class="line">  menu_item en_us_menu_item {culture_info {<span class="stringliteral">&quot;en-US&quot;</span>}.native_name(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio};</div>
-<div class="line">  menu_item ar_ma_menu_item {culture_info {<span class="stringliteral">&quot;ar-MA&quot;</span>}.native_name(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio};</div>
-<div class="line">  menu_item es_es_menu_item {culture_info {<span class="stringliteral">&quot;es-ES&quot;</span>}.native_name(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio};</div>
-<div class="line">  menu_item fr_fr_menu_item {culture_info {<span class="stringliteral">&quot;fr-BE&quot;</span>}.native_name(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio, <span class="keyword">true</span>};</div>
-<div class="line">  menu_item ru_ru_menu_item {culture_info {<span class="stringliteral">&quot;ru-RU&quot;</span>}.native_name(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio};</div>
+<div class="line">  menu_item en_us_menu_item {<a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {<span class="stringliteral">&quot;en-US&quot;</span>}.<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1globalization_1_1culture__info.html#a8359bba31592be88bf9c551de7882d6c">native_name</a>(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio};</div>
+<div class="line">  menu_item ar_ma_menu_item {<a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {<span class="stringliteral">&quot;ar-MA&quot;</span>}.<a class="code hl_function" href="classxtd_1_1globalization_1_1culture__info.html#a8359bba31592be88bf9c551de7882d6c">native_name</a>(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio};</div>
+<div class="line">  menu_item es_es_menu_item {<a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {<span class="stringliteral">&quot;es-ES&quot;</span>}.<a class="code hl_function" href="classxtd_1_1globalization_1_1culture__info.html#a8359bba31592be88bf9c551de7882d6c">native_name</a>(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio};</div>
+<div class="line">  menu_item fr_fr_menu_item {<a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {<span class="stringliteral">&quot;fr-BE&quot;</span>}.<a class="code hl_function" href="classxtd_1_1globalization_1_1culture__info.html#a8359bba31592be88bf9c551de7882d6c">native_name</a>(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio, <span class="keyword">true</span>};</div>
+<div class="line">  menu_item ru_ru_menu_item {<a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {<span class="stringliteral">&quot;ru-RU&quot;</span>}.<a class="code hl_function" href="classxtd_1_1globalization_1_1culture__info.html#a8359bba31592be88bf9c551de7882d6c">native_name</a>(), event_handler {*<span class="keyword">this</span>, &amp;form1::on_menu_click}, menu_item_kind::radio};</div>
 <div class="line">  menu_item language_menu_item {<span class="stringliteral">&quot;&amp;Languages&quot;</span>_t, {en_us_menu_item, ar_ma_menu_item, es_es_menu_item, fr_fr_menu_item, ru_ru_menu_item}};</div>
 <div class="line">  main_menu main_menu1 {language_menu_item};</div>
 <div class="line">  </div>
@@ -177,11 +177,22 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+<div class="ttc" id="aclassxtd_1_1environment_html_a2fb2b59eded52f8745b88b44ae9e7057abc73f4c521c13afa85faba7cbb37ec88"><div class="ttname"><a href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057abc73f4c521c13afa85faba7cbb37ec88">xtd::environment::special_folder::application_resources</a></div><div class="ttdeci">@ application_resources</div><div class="ttdoc">The application resources folder.</div><div class="ttdef"><b>Definition</b> environment.hpp:245</div></div>
+<div class="ttc" id="aclassxtd_1_1environment_html_a465e71972e122d4bbdaa943ae02d4cd8"><div class="ttname"><a href="classxtd_1_1environment.html#a465e71972e122d4bbdaa943ae02d4cd8">xtd::environment::get_folder_path</a></div><div class="ttdeci">static xtd::string get_folder_path(environment::special_folder folder)</div><div class="ttdoc">Gets the path to the system special folder that is identified by the specified enumeration.</div><div class="ttdef"><b>Definition</b> environment.hpp:613</div></div>
+<div class="ttc" id="aclassxtd_1_1event__args_html"><div class="ttname"><a href="classxtd_1_1event__args.html">xtd::event_args</a></div><div class="ttdoc">Represents the base class for classes that contain event data, and provides a value to use for events...</div><div class="ttdef"><b>Definition</b> event_args.hpp:18</div></div>
+<div class="ttc" id="aclassxtd_1_1globalization_1_1culture__info_html"><div class="ttname"><a href="classxtd_1_1globalization_1_1culture__info.html">xtd::globalization::culture_info</a></div><div class="ttdoc">Provides information about a specific culture (called a locale for unmanaged code development)....</div><div class="ttdef"><b>Definition</b> culture_info.hpp:41</div></div>
+<div class="ttc" id="aclassxtd_1_1globalization_1_1culture__info_html_a8359bba31592be88bf9c551de7882d6c"><div class="ttname"><a href="classxtd_1_1globalization_1_1culture__info.html#a8359bba31592be88bf9c551de7882d6c">xtd::globalization::culture_info::native_name</a></div><div class="ttdeci">const xtd::string &amp; native_name() const noexcept</div><div class="ttdoc">Gets the culture name, consisting of the language, the country/region, and the optional script,...</div></div>
+<div class="ttc" id="aclassxtd_1_1globalization_1_1translator_html_a645eb1ede7039e5d7d1a94e67097bf99"><div class="ttname"><a href="classxtd_1_1globalization_1_1translator.html#a645eb1ede7039e5d7d1a94e67097bf99">xtd::globalization::translator::language</a></div><div class="ttdeci">static xtd::string language()</div><div class="ttdoc">Gets the current application language.</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga7950c22da6547a30812729fb21dcbea7"><div class="ttname"><a href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">xtd::as</a></div><div class="ttdeci">type_t as(any_object &amp;o)</div><div class="ttdoc">Casts a type into another type.</div><div class="ttdef"><b>Definition</b> __as_any_object.hpp:59</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
+<div class="ttc" id="anamespacextd_1_1globalization_html"><div class="ttname"><a href="namespacextd_1_1globalization.html">xtd::globalization</a></div><div class="ttdoc">Contains classes that define culture-related information, including language, country/region,...</div><div class="ttdef"><b>Definition</b> culture_info.hpp:18</div></div>
+<div class="ttc" id="anamespacextd_1_1text_html"><div class="ttname"><a href="namespacextd_1_1text.html">xtd::text</a></div><div class="ttdoc">Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:17</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 19 2025 21:04:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Oct 20 2025 15:52:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -122,12 +122,12 @@ $(function(){ initResizable(false); });
 </dd></dl>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span>globalization;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1globalization.html">xtd::globalization</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>form1 : <span class="keyword">public</span> form {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  form1() {</div>
-<div class="line">    text(<span class="stringliteral">&quot;Translator example&quot;</span>_t);</div>
+<div class="line">    <a class="code hl_namespace" href="namespacextd_1_1text.html">text</a>(<span class="stringliteral">&quot;Translator example&quot;</span>_t);</div>
 <div class="line">    client_size({500, 300});</div>
 <div class="line">    controls().add_range({open_button, close_button, text_label});</div>
 <div class="line">    </div>
@@ -151,15 +151,19 @@ $(function(){ initResizable(false); });
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">//culture_info::current_culture(culture_info {&quot;ar-MA&quot;});</span></div>
 <div class="line">  <span class="comment">//culture_info::current_culture(culture_info {&quot;es-ES&quot;});</span></div>
-<div class="line">  culture_info::current_culture(culture_info {<span class="stringliteral">&quot;fr-FR&quot;</span>});</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1globalization_1_1culture__info.html#a35208a728629a5fca8cfd4d38568a07a">culture_info::current_culture</a>(<a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {<span class="stringliteral">&quot;fr-FR&quot;</span>});</div>
 <div class="line">  <span class="comment">//culture_info::current_culture(culture_info {&quot;ru-RU&quot;});</span></div>
 <div class="line">  application::run(form1 {});</div>
 <div class="line">}</div>
+<div class="ttc" id="aclassxtd_1_1globalization_1_1culture__info_html"><div class="ttname"><a href="classxtd_1_1globalization_1_1culture__info.html">xtd::globalization::culture_info</a></div><div class="ttdoc">Provides information about a specific culture (called a locale for unmanaged code development)....</div><div class="ttdef"><b>Definition</b> culture_info.hpp:41</div></div>
+<div class="ttc" id="aclassxtd_1_1globalization_1_1culture__info_html_a35208a728629a5fca8cfd4d38568a07a"><div class="ttname"><a href="classxtd_1_1globalization_1_1culture__info.html#a35208a728629a5fca8cfd4d38568a07a">xtd::globalization::culture_info::current_culture</a></div><div class="ttdeci">static culture_info current_culture() noexcept</div><div class="ttdoc">Gets the xtd::globalization::culture_info object that represents the culture used by the current appl...</div></div>
+<div class="ttc" id="anamespacextd_1_1globalization_html"><div class="ttname"><a href="namespacextd_1_1globalization.html">xtd::globalization</a></div><div class="ttdoc">Contains classes that define culture-related information, including language, country/region,...</div><div class="ttdef"><b>Definition</b> culture_info.hpp:18</div></div>
+<div class="ttc" id="anamespacextd_1_1text_html"><div class="ttname"><a href="namespacextd_1_1text.html">xtd::text</a></div><div class="ttdoc">Contains classes that represent ASCII and Unicode character encodings; abstract base classes for conv...</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:17</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 19 2025 21:04:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Oct 20 2025 15:52:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

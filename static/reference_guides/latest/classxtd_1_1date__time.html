@@ -4692,7 +4692,7 @@ The value returned by the <a class="el" href="#a60d4fa67380ada97048d0691c3143e81
 <dl class="section return"><dt>Returns</dt><dd>An object whose value is the current local date and time. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example uses the <a class="el" href="#ad94505e74efe9f353836901eda9230ed" title="Gets a xtd::date_time object that is set to the current date and time on this computer,...">xtd::date_time::now</a> and <a class="el" href="#a15f9bf48847f8d981f8c37bde44308b0" title="Gets a xtd::date_time object that is set to the current date and time on this computer,...">xtd::date_time::utc_now</a> properties to retrieve the current local date and time and the current universal coordinated (UTC) date and time. It then uses the formatting conventions of a number of locale to display the strings, along with the values of the their xtd::datte_time::kind properties. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1globalization.html">globalization</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1globalization.html">xtd::globalization</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -4702,10 +4702,10 @@ The value returned by the <a class="el" href="#a60d4fa67380ada97048d0691c3143e81
 <div class="line">    <span class="keyword">auto</span> culture_names = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {<span class="stringliteral">&quot;en-US&quot;</span>, <span class="stringliteral">&quot;en-GB&quot;</span>, <span class="stringliteral">&quot;fr-FR&quot;</span>, <span class="stringliteral">&quot;de-DE&quot;</span>, <span class="stringliteral">&quot;ru-RU&quot;</span>};</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> culture_name : culture_names) {</div>
-<div class="line">      culture_info::current_culture(culture_info {culture_name});</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;{}:&quot;</span>, culture_name);</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;   Local date and time: {:f}, {}&quot;</span>, local_date, local_date.kind());</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;   UTC date and time: {:f}, {}\n&quot;</span>, utc_date, utc_date.kind());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1globalization_1_1culture__info.html#a35208a728629a5fca8cfd4d38568a07a">culture_info::current_culture</a>(<a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {culture_name});</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{}:&quot;</span>, culture_name);</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   Local date and time: {:f}, {}&quot;</span>, local_date, local_date.kind());</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;   UTC date and time: {:f}, {}\n&quot;</span>, utc_date, utc_date.kind());</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">};</div>
@@ -4734,11 +4734,13 @@ The value returned by the <a class="el" href="#a60d4fa67380ada97048d0691c3143e81
 <div class="line"><span class="comment">//    Local date and time: вторник, октября 14, 2025 10:04, local</span></div>
 <div class="line"><span class="comment">//    UTC date and time: вторник, октября 14, 2025 08:04, utc</span></div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:63</div></div>
+<div class="ttc" id="aclassxtd_1_1globalization_1_1culture__info_html"><div class="ttname"><a href="classxtd_1_1globalization_1_1culture__info.html">xtd::globalization::culture_info</a></div><div class="ttdoc">Provides information about a specific culture (called a locale for unmanaged code development)....</div><div class="ttdef"><b>Definition</b> culture_info.hpp:41</div></div>
+<div class="ttc" id="aclassxtd_1_1globalization_1_1culture__info_html_a35208a728629a5fca8cfd4d38568a07a"><div class="ttname"><a href="classxtd_1_1globalization_1_1culture__info.html#a35208a728629a5fca8cfd4d38568a07a">xtd::globalization::culture_info::current_culture</a></div><div class="ttdeci">static culture_info current_culture() noexcept</div><div class="ttdoc">Gets the xtd::globalization::culture_info object that represents the culture used by the current appl...</div></div>
 <div class="ttc" id="anamespacextd_1_1globalization_html"><div class="ttname"><a href="namespacextd_1_1globalization.html">xtd::globalization</a></div><div class="ttdoc">Contains classes that define culture-related information, including language, country/region,...</div><div class="ttdef"><b>Definition</b> culture_info.hpp:18</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="#ad94505e74efe9f353836901eda9230ed" title="Gets a xtd::date_time object that is set to the current date and time on this computer,...">xtd::date_time::now</a> property returns a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value that represents the current date and time on the local computer. Note that there is a difference between a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value, which represents the number of ticks that have elapsed since midnight of January 1, 0001, and the string representation of that <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value, which expresses a date and time value in a culture-specific-specific format. For information on formatting date and time values, see the to_string method. The following example displays the short date and time string in a number of culture-specific formats. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1globalization.html">globalization</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1globalization.html">xtd::globalization</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>program {</div>
 <div class="line"><span class="keyword">public</span>:</div>
@@ -4747,8 +4749,8 @@ The value returned by the <a class="el" href="#a60d4fa67380ada97048d0691c3143e81
 <div class="line">    <span class="keyword">auto</span> culture_names = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {<span class="stringliteral">&quot;en-US&quot;</span>, <span class="stringliteral">&quot;en-GB&quot;</span>, <span class="stringliteral">&quot;fr-FR&quot;</span>, <span class="stringliteral">&quot;de-DE&quot;</span>, <span class="stringliteral">&quot;ru-RU&quot;</span>};</div>
 <div class="line">    </div>
 <div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> culture_name : culture_names) {</div>
-<div class="line">      <span class="keyword">auto</span> culture = culture_info {culture_name};</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;{}: {}&quot;</span>, culture_name, local_date.to_string(culture));</div>
+<div class="line">      <span class="keyword">auto</span> culture = <a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {culture_name};</div>
+<div class="line">      <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;{}: {}&quot;</span>, culture_name, local_date.to_string(culture));</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">};</div>
@@ -6696,7 +6698,7 @@ This overload attempts to parse s by using DateTimeStyles.AllowWhiteSpaces style
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 19 2025 21:04:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Oct 20 2025 15:53:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
