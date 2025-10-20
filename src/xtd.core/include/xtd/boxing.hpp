@@ -112,5 +112,7 @@ namespace xtd {
   inline single_object boxing(float& value) noexcept {return single_object(value);}
   inline double_object boxing(double& value) noexcept {return double_object(value);}
   inline decimal_object boxing(decimal& value) noexcept {return decimal_object(value);}
+  template<class value_t>
+  inline xtd::collections::generic::list<value_t> boxing(std::vector<value_t>&& value) noexcept {return std::move(value);}
   /// @endcond
 }
