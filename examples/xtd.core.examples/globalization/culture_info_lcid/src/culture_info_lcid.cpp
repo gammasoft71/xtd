@@ -6,7 +6,7 @@ auto main() -> int {
   // Creates and initializes the culture_info.
   auto my_ci = culture_info {3082};
   
-  // Displays the properties of each culture.
+  // Displays the properties of the culture.
   console::write_line("{,-35}{,-47}", "PROPERTY", "VALUE");
   console::write_line("{,-35}{,-47}", "display_name", my_ci.display_name());
   console::write_line("{,-35}{,-47}", "english_name", my_ci.english_name());
@@ -24,18 +24,15 @@ auto main() -> int {
 
 // This code produces the following output :
 //
-// zh          Chinese                                 : neutral
-// zh-Hans     Chinese, Simplified                     : neutral
-// zh-Hans-CN  Chinese, Simplified (China mainland)    : specific
-// zh-Hans-HK  Chinese, Simplified (Hong Kong)         : specific
-// zh-Hans-JP  Chinese, Simplified (Japan)             : specific
-// zh-Hans-MO  Chinese, Simplified (Macao)             : specific
-// zh-Hans-MY  Chinese, Simplified (Malaysia)          : specific
-// zh-Hans-SG  Chinese, Simplified (Singapore)         : specific
-// zh-Hant     Chinese, Traditional                    : neutral
-// zh-Hant-CN  Chinese, Traditional (China mainland)   : specific
-// zh-Hant-HK  Chinese, Traditional (Hong Kong)        : specific
-// zh-Hant-JP  Chinese, Traditional (Japan)            : specific
-// zh-Hant-MO  Chinese, Traditional (Macao)            : specific
-// zh-Hant-MY  Chinese, Traditional (Malaysia)         : specific
-// zh-Hant-TW  Chinese, Traditional (Taiwan)           : specific
+// PROPERTY                           VALUE
+// display_name                       Spanish (Spain)
+// english_name                       Spanish (Spain)
+// is_neutral_culture                 false
+// is_read_only                       false
+// lcid                               3082
+// name                               es-ES
+// native_name                        español (España)
+// parent                             es
+// three_letter_iso_language_name     spa
+// three_letter_windows_language_name ESN
+// two_letter_iso_language_name       es
