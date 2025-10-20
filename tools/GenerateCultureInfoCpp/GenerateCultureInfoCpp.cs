@@ -28,7 +28,8 @@ class GenerateCultureInfoCpp {
       sb.AppendLine("//");
       sb.AppendLine("// Changes to this file may cause incorrect behavior and will be lost if the code is regenerated.");
       sb.AppendLine();
-      sb.AppendLine("#include \"../../../include/xtd/globalization/culture_info\"");
+      sb.AppendLine("#include \"../../../include/xtd/globalization/culture_info.hpp\"");
+      sb.AppendLine("#include \"../../../include/xtd/day_of_week.hpp\"");
       sb.AppendLine();
       sb.AppendLine("using namespace xtd;");
       sb.AppendLine("using namespace xtd::collections::generic;");
@@ -111,7 +112,7 @@ class GenerateCultureInfoCpp {
     var timeSeparator = Escape(dateTimeFormat.TimeSeparator);
     var universalSortableDateTimePattern = Escape(dateTimeFormat.UniversalSortableDateTimePattern);
     var yearMonthPattern = Escape(dateTimeFormat.YearMonthPattern);
-    return $"{{{abbreviatedDayNames}, {abbreviatedMonthGenitiveNames}, {abbreviatedMonthNames}, \"{amDesignator}\"}}";
+    return $"{{{abbreviatedDayNames}, {abbreviatedMonthGenitiveNames}, {abbreviatedMonthNames}, \"{amDesignator}\", \"{dateSeparator}\", {dayNames}, {firstDayOfWeek}, \"{fullDateTimePattern}\", \"{longDatePattern}\", \"{longTimePattern}\", \"{monthDayPattern}\", {monthGenitiveNames}, {monthNames}, \"{nativeCalendarName}\", \"{pmDesignator}\", \"{rfc1123Pattern}\", \"{shortatePattern}\", \"{shortTimePattern}\", {shortestDayNames}, \"{sortableDateTimePattern}\", \"{timeSeparator}\", \"{universalSortableDateTimePattern}\", \"{yearMonthPattern}\"}}";
   }
 
   static string ToString(DayOfWeek dayOfWeek) {

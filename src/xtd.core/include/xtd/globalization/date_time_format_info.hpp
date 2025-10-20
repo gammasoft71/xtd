@@ -132,7 +132,7 @@ namespace xtd {
       
     private:
       friend class culture_info;
-      date_time_format_info(xtd::array<xtd::string>&& abreviated_day_names, xtd::array<xtd::string>&& abreviated_genitive_month_names, xtd::array<xtd::string>&& abreviated_month_names, xtd::string&& am_designator);
+      date_time_format_info(xtd::array<xtd::string>&& abreviated_day_names, xtd::array<xtd::string>&& abreviated_genitive_month_names, xtd::array<xtd::string>&& abreviated_month_names, xtd::string&& am_designator, xtd::string&& date_separator, xtd::array<xtd::string>&& day_names, xtd::day_of_week first_day_of_week, xtd::string&& full_date_time_pattern, xtd::string&& long_date_pattern, xtd::string&& long_time_pattern, xtd::string&& month_day_pattern, xtd::array<xtd::string>&& month_genitive_names, xtd::array<xtd::string>&& month_names, xtd::string&& native_calendar_name, xtd::string&& pm_designator, xtd::string&& rfc_1123_pattern, xtd::string&& short_date_pattern, xtd::string&& short_time_pattern, xtd::array<xtd::string>&& shortest_day_names, xtd::string&& sortable_date_time_pattern, xtd::string&& time_separator, xtd::string&& universal_sortable_date_time_pattern, xtd::string&& year_month_pattern);
       
       struct data;
       ptr<data> data_;
