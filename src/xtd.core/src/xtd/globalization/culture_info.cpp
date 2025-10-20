@@ -148,11 +148,15 @@ bool culture_info::equals(const culture_info& obj) const noexcept {
   return data_->name == obj.data_->name;;
 }
 
+xtd::size culture_info::get_hash_code() const noexcept override {
+  return xtd::hash_code::combine(data_->name);
+}
+
 xtd::string culture_info::to_string() const noexcept {
   return data_->name;
 }
 
-array<culture_info> culture_info::get_cultures(xtd::globalization::culture_types types) noexcept {
+array<culture_info> culture_info::get_cultures(xtd::globalization::culture_types types) {
   auto result = list<culture_info> {};
   for (const auto& [name, culture] : cultures_)
     if (enum_object<globalization::culture_types>(culture.culture_types()).has_flag(types) || types == xtd::globalization::culture_types::all_cultures)

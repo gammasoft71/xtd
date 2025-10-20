@@ -262,6 +262,11 @@ namespace xtd {
       /// @param obj An object to compare with this object.
       /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
       bool equals(const culture_info& obj) const noexcept override;
+
+      /// @brief Returns the hash code for this basic_string.
+      /// @return A hash code.
+      xtd::size get_hash_code() const noexcept override;
+
       /// @brief Returns a xtd::string that represents the current object.
       /// @return A string that represents the current object.
       /// @par Examples
@@ -273,20 +278,42 @@ namespace xtd {
       /// @name Public Static Methods
       
       /// @{
-      static xtd::array<culture_info> get_cultures(xtd::globalization::culture_types types) noexcept;
+      /// @brief Gets the list of supported cultures filtered by the specified xtd::globalization::culture_types parameter.
+      /// @param types A bitwise combination of the enumeration values that filter the cultures to retrieve.
+      /// @return An array that contains the cultures specified by the `types` parameter. The array of cultures is sorted.
+      /// @exception xtd::argument_out_of_rangeexception types specifies an invalid combination of xtd::globalization::culture_types values.
+      /// @par Examples
+      /// The following code example determines which cultures using the Chinese language are neutral cultures.
+      /// @include culture_info_is_neutral_culture.cpp
+      /// @remarks The xtd::globalization::culture_info::get_cultures method is most commonly called with the types parameter set to the following values:
+      ///   * xtd::globalization::culture_types:specific_cultures, which returns all specific cultures.
+      ///   * xtd::globalization::culture_types::neutral_cultures, which returns all neutral cultures and the invariant culture.
+      ///   * xtd::globalization::culture_types::all_cultures, which returns all neutral and specific cultures, cultures installed in the Windows system.
+      static xtd::array<culture_info> get_cultures(xtd::globalization::culture_types types);
+      /// @brief Gets the lists of system locales.
+      /// @return An array that contains system locales.
+      /// @remarks On unix base system is the same as `locale -a` terminal command.
       static xtd::array<std::locale> get_system_locales() noexcept;
       /// @}
       
       /// @name Public Operators
       
       /// @{
+      /// @brief The [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) operator that convert this xtd::globalization::culture_info in [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) associate.
+      /// @return The [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) associate for the current xtd::globalization::culture_info.
+      /// @remarks If xtd::globalization::culture_info::is_locale_available return `true`, the xtd::globalization::culture_info::locale property returns a valid [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) with name corresponding to this instance otherwise a generic [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) with name equal to `"C"`.
+      /// @par Examples
+      /// The following example demonstrates how to change the xtd::globalization::culture_info::current_culture of the current application.
+      /// @include culture_info_current_culture.cpp
+      operator const std::locale& () const noexcept;
+      /// @}
+      
+      /// @cond
       culture_info& operator =(culture_info&& culture) = default;
       culture_info& operator =(const culture_info& culture) = default;
       culture_info& operator =(std::locale&& locale);
       culture_info& operator =(const std::locale& locale);
-      
-      operator const std::locale& () const noexcept;
-      /// @}
+      /// @endcond
       
     private:
       culture_info(xtd::globalization::culture_types culture_types, string&& display_name, string&& english_name, xtd::size keyboard_layout_id, xtd::size lcid, string&& name, string&& native_name, string&& parent_name, string&& three_letter_iso_language_name, string&& three_letter_windows_language_name, string&& two_letter_iso_language_name);
