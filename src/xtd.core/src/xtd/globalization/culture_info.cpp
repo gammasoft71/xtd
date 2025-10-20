@@ -15,6 +15,7 @@ optional<culture_info> culture_info::current_culture_;
 
 struct culture_info::data {
   xtd::globalization::culture_types culture_types = xtd::globalization::culture_types::specific_cultures;
+  date_time_format_info date_time_format;
   xtd::string display_name = "Invariant Language (Invariant Country)";
   xtd::string english_name = "Invariant Language (Invariant Country)";
   bool is_read_only = false;
@@ -33,14 +34,14 @@ struct culture_info::data {
 culture_info::culture_info() : data_ {new_ptr<data>()} {
 }
 
-culture_info::culture_info(const std::locale& locale) : data_ {new_ptr<data>()} {
+culture_info::culture_info(const std::locale& locale) : culture_info() {
   fill_from_name(to_cldr_name(locale.name()));
 }
 
 culture_info::culture_info(size culture) : culture_info {culture, false} {
 }
 
-culture_info::culture_info(size culture, bool use_user_override) : data_ {new_ptr<data>()} {
+culture_info::culture_info(size culture, bool use_user_override) : culture_info() {
   for (const auto& [n, c] : cultures_) {
     //if (string::equals(culture.data_->name, name, string_comparison::ordinal_ignore_case))
     if (c.data_->lcid != culture) continue;
@@ -54,13 +55,17 @@ culture_info::culture_info(size culture, bool use_user_override) : data_ {new_pt
 culture_info::culture_info(const string& name) : culture_info {name, false} {
 }
 
-culture_info::culture_info(const string& name, bool use_user_override) : data_ {new_ptr<data>()} {
+culture_info::culture_info(const string& name, bool use_user_override) : culture_info() {
   fill_from_name(name);
   data_->use_user_override = use_user_override;
 }
 
 globalization::culture_types culture_info::culture_types() const noexcept {
   return data_->culture_types;
+}
+
+const date_time_format_info& culture_info::date_time_format() const noexcept {
+  return data_->date_time_format;
 }
 
 const string& culture_info::display_name() const noexcept {
@@ -188,8 +193,9 @@ culture_info::operator const std::locale& () const noexcept {
   return data_->locale;
 }
 
-culture_info::culture_info(globalization::culture_types culture_types, string&& display_name, string&& english_name, size keyboard_layout_id, size lcid, string&& name, string&& native_name, string&& parent_name, string&& three_letter_iso_language_name, string&& three_letter_windows_language_name, string&& two_letter_iso_language_name) : data_ {new_ptr<data>()} {
+culture_info::culture_info(globalization::culture_types culture_types, date_time_format_info&& date_time_format, string&& display_name, string&& english_name, size keyboard_layout_id, size lcid, string&& name, string&& native_name, string&& parent_name, string&& three_letter_iso_language_name, string&& three_letter_windows_language_name, string&& two_letter_iso_language_name) : culture_info() {
   data_->culture_types = culture_types;
+  data_->date_time_format = std::move(date_time_format);
   data_->display_name = std::move(display_name);
   data_->english_name = std::move(english_name);
   data_->keyboard_layout_id = keyboard_layout_id;

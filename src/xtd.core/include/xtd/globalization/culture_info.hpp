@@ -4,6 +4,7 @@
 #pragma once
 
 #include "culture_not_found_exception.hpp"
+#include "date_time_format_info.hpp"
 #include "../collections/generic/dictionary.hpp"
 #include "../core_export.hpp"
 #include "../iequatable.hpp"
@@ -28,7 +29,7 @@ namespace xtd {
     /// xtd::object → xtd::globalization::culture_info
     /// @par Header
     /// ```cpp
-    /// #include <xtd/globalization/culture_not_found_exception>
+    /// #include <xtd/globalization/culture_info>
     /// ```
     /// @par Namespace
     /// xtd::globalization
@@ -38,7 +39,7 @@ namespace xtd {
     /// @par Examples
     /// The following example shows how to create a xtd::globalization::culture_info object for Spanish (Spain) with the international sort and another xtd::globalization::culture_info object with the traditional sort.
     /// @include culture_info.cpp
-    class culture_info : public xtd::object, public xtd::iequatable<xtd::globalization::culture_info> {
+    class core_export_ culture_info : public xtd::object, public xtd::iequatable<xtd::globalization::culture_info> {
     public:
       /// @name Public Constructors
       
@@ -118,6 +119,8 @@ namespace xtd {
       /// @include culture_info_culture_types.cpp
       xtd::globalization::culture_types culture_types() const noexcept;
       
+      const xtd::globalization::date_time_format_info& date_time_format() const noexcept;
+      
       /// @brief Gets the full localized culture name.
       /// @return The full localized culture name in the format languagefull [country/regionfull], where languagefull is the full name of the language and country/regionfull is the full name of the country/region.
       /// @remarks This property represents the localized name of the xtd::globalization::culture_info object.
@@ -143,7 +146,7 @@ namespace xtd {
       /// @remarks If xtd::globalization::culture_info::is_locale_available return `true`, the xtd::globalization::culture_info::locale property returns a valid [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) with name corresponding to the current xtd::globalization::culture_info; otherwise a generic [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) with name equal to `"C"`.
       bool is_locale_available() const noexcept;
       
-      /// @brief Gets a value indicating whether the current CultureInfo is read-only.
+      /// @brief Gets a value indicating whether the current xtd::globalization::culture_info is read-only.
       /// @return `true` if the current xtd::globalization::culture_info is read-only; otherwise, `false`. The default is `false`.
       /// @par Examples
       /// The following code example shows how to create a current xtd::globalization::culture_info for Spanish (Spain).
@@ -151,7 +154,7 @@ namespace xtd {
       bool is_read_only() const noexcept;
       
       /// @brief Gets a value indicating whether the current xtd::globalization::culture_info represents a neutral culture.
-      /// @return `true` if the current CultureInfo represents a neutral culture; otherwise, `false`.
+      /// @return `true` if the current xtd::globalization::culture_info represents a neutral culture; otherwise, `false`.
       /// @par Examples
       /// The following code example determines which cultures using the Chinese language are neutral cultures.
       /// @include culture_info_is_neutral_culture.cpp
@@ -189,7 +192,7 @@ namespace xtd {
       /// @remarks The value of this property is the same, regardless of the language version of the xtd.
       const xtd::string& native_name() const noexcept;
       
-      /// @brief Gets the CultureInfo that represents the parent culture of the current xtd::globalization::culture_info.
+      /// @brief Gets the xtd::globalization::culture_info that represents the parent culture of the current xtd::globalization::culture_info.
       /// @return The xtd::globalization::culture_info that represents the parent culture of the current xtd::globalization::culture_info.
       /// @par Examples
       /// The following code example determines which cultures using the Chinese language.
@@ -243,7 +246,7 @@ namespace xtd {
       /// The following example demonstrates how to change the xtd::globalization::culture_info::current_culture of the current application.
       static void current_culture(const culture_info& value);
       
-      /// @brief Gets the CultureInfo object that is culture-independent (invariant).
+      /// @brief Gets the xtd::globalization::culture_info object that is culture-independent (invariant).
       /// @return The object that is culture-independent (invariant).
       static culture_info invariant_culture() noexcept;
       /// @}
@@ -316,7 +319,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      culture_info(xtd::globalization::culture_types culture_types, string&& display_name, string&& english_name, xtd::size keyboard_layout_id, xtd::size lcid, string&& name, string&& native_name, string&& parent_name, string&& three_letter_iso_language_name, string&& three_letter_windows_language_name, string&& two_letter_iso_language_name);
+      culture_info(xtd::globalization::culture_types culture_types, xtd::globalization::date_time_format_info&& date_time_format_info, string&& display_name, string&& english_name, xtd::size keyboard_layout_id, xtd::size lcid, string&& name, string&& native_name, string&& parent_name, string&& three_letter_iso_language_name, string&& three_letter_windows_language_name, string&& two_letter_iso_language_name);
       
       void fill_from_name(const xtd::string& name);
       static bool is_system_locale_available(const xtd::string& name) noexcept;
