@@ -1043,7 +1043,7 @@ namespace xtdc_command {
     
     static int invalid_command(const list<string>& command_args) {
       if (!
-          command_args.count()) write_line_error("No parameters.");
+        command_args.count()) write_line_error("No parameters.");
       else write_line_error(string::format("Invalid command: {}", command_args[0]));
       console::write_line(string::join("\n", get_help()));
       return EXIT_FAILURE;

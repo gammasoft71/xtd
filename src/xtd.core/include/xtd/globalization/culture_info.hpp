@@ -142,14 +142,14 @@ namespace xtd {
       /// @return `true` if the [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) is available; otherwise `false`.
       /// @remarks If xtd::globalization::culture_info::is_locale_available return `true`, the xtd::globalization::culture_info::locale property returns a valid [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) with name corresponding to the current xtd::globalization::culture_info; otherwise a generic [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) with name equal to `"C"`.
       bool is_locale_available() const noexcept;
-
+      
       /// @brief Gets a value indicating whether the current CultureInfo is read-only.
       /// @return `true` if the current xtd::globalization::culture_info is read-only; otherwise, `false`. The default is `false`.
       /// @par Examples
       /// The following code example shows how to create a current xtd::globalization::culture_info for Spanish (Spain).
       /// @include culture_info_lcid.cpp
       bool is_read_only() const noexcept;
-
+      
       /// @brief Gets a value indicating whether the current xtd::globalization::culture_info represents a neutral culture.
       /// @return `true` if the current CultureInfo represents a neutral culture; otherwise, `false`.
       /// @par Examples
@@ -168,7 +168,7 @@ namespace xtd {
       /// The following code example shows how to create a current xtd::globalization::culture_info for Spanish (Spain).
       /// @include culture_info_lcid.cpp
       xtd::size lcid() const noexcept;
-
+      
       /// @brief Gets the [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) associate for the current xtd::globalization::culture_info.
       /// @return The [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) associate for the current xtd::globalization::culture_info.
       /// @remarks If xtd::globalization::culture_info::is_locale_available return `true`, the xtd::globalization::culture_info::locale property returns a valid [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) with name corresponding to this instance otherwise a generic [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) with name equal to `"C"`.
@@ -222,7 +222,7 @@ namespace xtd {
       /// @note When communicating between processes or persisting data it is usually better to use the full xtd::globalization::culture_info::name. Using just the language can lose context and data.
       /// @remarks If ISO 639-1 does not define a two-letter language code for a particular culture, the xtd::globalization::culture_info::two_letter_iso_language_name property returns a string that consists of three or more letters. For more information, see the example.
       const xtd::string& two_letter_iso_language_name() const noexcept;
-
+      
       /// @brief Gets a value indicating whether the current xtd::globalization::culture_info object uses the user-selected culture settings.
       /// @return `true` if the current xtd::globalization::culture_info uses the user-selected culture settings; otherwise, `false`.
       bool use_user_override() const noexcept;
