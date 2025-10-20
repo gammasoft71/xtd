@@ -145,6 +145,9 @@ namespace xtd {
 
       /// @brief Gets a value indicating whether the current CultureInfo is read-only.
       /// @return `true` if the current xtd::globalization::culture_info is read-only; otherwise, `false`. The default is `false`.
+      /// @par Examples
+      /// The following code example shows how to create a current xtd::globalization::culture_info for Spanish (Spain).
+      /// @include culture_info_lcid.cpp
       bool is_read_only() const noexcept;
 
       /// @brief Gets a value indicating whether the current xtd::globalization::culture_info represents a neutral culture.
@@ -169,6 +172,9 @@ namespace xtd {
       /// @brief Gets the [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) associate for the current xtd::globalization::culture_info.
       /// @return The [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) associate for the current xtd::globalization::culture_info.
       /// @remarks If xtd::globalization::culture_info::is_locale_available return `true`, the xtd::globalization::culture_info::locale property returns a valid [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) with name corresponding to this instance otherwise a generic [std::locale](https://en.cppreference.com/w/cpp/locale/locale.html) with name equal to `"C"`.
+      /// @par Examples
+      /// The following example demonstrates how to change the xtd::globalization::culture_info::current_culture of the current application.
+      /// @include culture_info_current_culture.cpp
       const std::locale& locale() const noexcept;
       
       /// @brief Gets the culture name in the format languagecode2-country/regioncode2.
@@ -178,8 +184,16 @@ namespace xtd {
       /// @include culture_info_is_neutral_culture.cpp
       const xtd::string& name() const noexcept;
       
+      /// @brief Gets the culture name, consisting of the language, the country/region, and the optional script, that the culture is set to display.
+      /// @return The culture name, consisting of the full name of the language, the full name of the country/region, and the optional script. The format is discussed in the description of the xtd::globalization::culture_info class.
+      /// @remarks The value of this property is the same, regardless of the language version of the xtd.
       const xtd::string& native_name() const noexcept;
       
+      /// @brief Gets the CultureInfo that represents the parent culture of the current xtd::globalization::culture_info.
+      /// @return The xtd::globalization::culture_info that represents the parent culture of the current xtd::globalization::culture_info.
+      /// @par Examples
+      /// The following code example determines which cultures using the Chinese language.
+      /// @include culture_info_parent.cpp
       virtual xtd::globalization::culture_info parent() const noexcept;
       
       const xtd::string& three_letter_iso_language_name() const noexcept;
