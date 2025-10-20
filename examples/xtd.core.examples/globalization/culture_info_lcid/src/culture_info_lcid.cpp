@@ -13,6 +13,7 @@ auto main() -> int {
   console::write_line("{,-35}{,-47}", "is_neutral_culture", my_ci.is_neutral_culture());
   console::write_line("{,-35}{,-47}", "is_read_only", my_ci.is_read_only());
   console::write_line("{,-35}{,-47}", "lcid", my_ci.lcid());
+  console::write_line("{,-35}{,-47}", "locale", my_ci.locale().name());
   console::write_line("{,-35}{,-47}", "name", my_ci.name());
   console::write_line("{,-35}{,-47}", "native_name", my_ci.native_name());
   console::write_line("{,-35}{,-47}", "parent", my_ci.parent());
@@ -31,6 +32,7 @@ auto main() -> int {
 // is_read_only                       false
 // lcid                               3082
 // name                               es-ES
+// locale                             es_ES.UTF-8
 // native_name                        español (España)
 // parent                             es
 // three_letter_iso_language_name     spa
