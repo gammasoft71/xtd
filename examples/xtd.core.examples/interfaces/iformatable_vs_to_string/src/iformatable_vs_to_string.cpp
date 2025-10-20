@@ -1,6 +1,6 @@
 #include <xtd/xtd>
 
-using namespace globalization;
+using namespace xtd::globalization;
 
 // The following simple class throws an `xtd::format_exception`exception with the `xtd::console::write_line` method,
 // and generates the invalid result "(unregistered)" with output stream.

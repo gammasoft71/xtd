@@ -1,6 +1,6 @@
 #include <xtd/xtd>
 
-using namespace globalization;
+using namespace xtd::globalization;
 
 class foo : public object, public iformatable {
 public:

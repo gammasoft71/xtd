@@ -1,6 +1,6 @@
 #include <xtd/xtd>
 
-using namespace globalization;
+using namespace xtd::globalization;
 
 auto main() -> int {
   // Displays several properties of the neutral cultures.
