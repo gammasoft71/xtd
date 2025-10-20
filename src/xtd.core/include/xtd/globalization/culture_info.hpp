@@ -262,11 +262,11 @@ namespace xtd {
       /// @param obj An object to compare with this object.
       /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
       bool equals(const culture_info& obj) const noexcept override;
-
+      
       /// @brief Returns the hash code for this basic_string.
       /// @return A hash code.
       xtd::size get_hash_code() const noexcept override;
-
+      
       /// @brief Returns a xtd::string that represents the current object.
       /// @return A string that represents the current object.
       /// @par Examples
