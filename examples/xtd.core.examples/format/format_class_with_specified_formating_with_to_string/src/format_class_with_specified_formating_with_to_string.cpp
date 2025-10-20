@@ -25,7 +25,7 @@ private:
 };
 
 template<>
-std::string xtd::to_string(const character& value, const std::string& fmt, const std::locale& loc) {return value.to_string(fmt, loc);}
+string xtd::to_string(const character& value, const string& fmt, const std::locale& loc) {return value.to_string(fmt, loc);}
 
 enum class cap {title, middle, end};
 

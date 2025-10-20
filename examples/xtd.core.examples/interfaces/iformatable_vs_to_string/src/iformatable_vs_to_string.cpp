@@ -31,7 +31,7 @@ private:
 
 // xtd::to_string specialisation for foo2 class.
 template<>
-std::string xtd::to_string(const foo2& value, const std::string& format, const std::locale& loc) {return value.to_string(format, loc);}
+string xtd::to_string(const foo2& value, const string& format, const std::locale& loc) {return value.to_string(format, loc);}
 
 // The following class which inherits from `xtd::iformatable` works correctly with the `xtd::console::write_line` method,
 // and generates the invalid result "(unregistered)" with output stream.
@@ -41,7 +41,7 @@ public:
   explicit foo3(int value) : value_ {value} {}
   
   string to_string() const noexcept {return string::format("{}", value_);}
-  string to_string(const string& format, const std::locale& loc) const override {return string::format(string::format("{{:{}}}", format), value_);}
+  string to_string(const string& format, const culture_info& culture) const override {return string::format(string::format("{{:{}}}", format), value_);}
   
 private:
   int value_ = 0;
@@ -54,7 +54,7 @@ class foo4 : public object {
 public:
   explicit foo4(int value) : value_ {value} {}
   string to_string() const noexcept override {return string::format("{}", value_);}
-  string to_string(const string& format, const std::locale& loc) const {return string::format(string::format("{{:{}}}", format), value_);}
+  string to_string(const string& format, const culture_info& culture) const {return string::format(string::format("{{:{}}}", format), value_);}
 
 private:
   int value_ = 0;
@@ -68,7 +68,7 @@ public:
   explicit foo5(int value) : value_ {value} {}
 
   string to_string() const noexcept {return string::format("{}", value_);}
-  string to_string(const string& format, const std::locale& loc) const override {return string::format(string::format("{{:{}}}", format), value_);}
+  string to_string(const string& format, const culture_info& culture) const override {return string::format(string::format("{{:{}}}", format), value_);}
 
   friend std::ostream& operator <<(std::ostream& stream, const foo5& value) {return stream << value.to_string("", culture_info::current_culture());}
   
@@ -94,7 +94,7 @@ private:
 
 // xtd::to_string specialisation for foo6 class.
 template<>
-std::string xtd::to_string(const foo6& value, const std::string& format, const std::locale& loc) {return value.to_string(format, loc);}
+string xtd::to_string(const foo6& value, const string& format, const std::locale& loc) {return value.to_string(format, loc);}
 
 // The following class which inherits from `xtd::object` and `xtd::iformatable` works correctly with the `xtd::console::write_line` method
 // and with output stream.
@@ -104,7 +104,7 @@ public:
   explicit foo7(int value) : value_ {value} {}
   
   using object::to_string;
-  string to_string(const string& format, const std::locale& loc) const override {return string::format(string::format("{{:{}}}", format), value_);}
+  string to_string(const string& format, const culture_info& culture) const override {return string::format(string::format("{{:{}}}", format), value_);}
   
 private:
   int value_ = 0;
