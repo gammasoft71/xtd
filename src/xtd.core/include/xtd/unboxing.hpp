@@ -45,18 +45,18 @@ namespace xtd {
   /// @ingroup xtd_core system
   /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/types).
   template<class type_t>
-  inline type_t unboxing(const xtd::box<type_t>& value) noexcept {return value.value();}
+  inline type_t unboxing(const xtd::box<type_t>& value) noexcept {return value.value;}
   /// @}
   
   /// @cond
   template<class type_t>
-  inline type_t unboxing(xtd::box<type_t>& value) noexcept {return value.value();}
+  inline type_t unboxing(xtd::box<type_t>& value) noexcept {return value.value;}
   
   template<class type_t>
-  inline type_t unboxing(const xtd::enum_object<type_t>& value) noexcept {return value.value();}
+  inline type_t unboxing(const xtd::enum_object<type_t>& value) noexcept {return value.value;}
   
   template<class type_t>
-  inline type_t unboxing(xtd::enum_object<type_t>& value) noexcept {return value.value();}
+  inline type_t unboxing(xtd::enum_object<type_t>& value) noexcept {return value.value;}
   
   inline const object& unboxing(const object& value) noexcept {return value;}
   inline object& unboxing(object& value) noexcept {return value;}
