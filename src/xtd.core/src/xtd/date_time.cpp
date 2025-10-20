@@ -225,7 +225,7 @@ namespace {
     index = next_index;
     return result;
   }
-
+  
   static string to_string_custom_fraction(const string& format, size& index, int64 ticks) {
     bool remove_trailing_zeros = (format[index] == 'F');
     auto count = to_string_custom_char_count(format, index, 7_z);
