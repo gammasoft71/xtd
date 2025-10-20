@@ -71,10 +71,11 @@ class GenerateCultureInfoCpp {
     var lcid = cultureInfo.LCID;
     var name = Escape(cultureInfo.Name);
     var nativeName = Escape(cultureInfo.NativeName);
+    var parentName = Escape(cultureInfo.Parent.Name);
     var threeLetterISOLanguageName = Escape(cultureInfo.ThreeLetterISOLanguageName);
     var threeLetterWindowsLanguageName = Escape(cultureInfo.ThreeLetterWindowsLanguageName);
     var twoLetterISOLanguageName = Escape(cultureInfo.TwoLetterISOLanguageName);
-    return $"  {{\"{key}\", {{{cultureType}, \"{displayName}\", \"{englishName}\", {keyboardLayoutId}, {lcid}, \"{name}\", \"{nativeName}\", \"{threeLetterISOLanguageName}\", \"{threeLetterWindowsLanguageName}\", \"{twoLetterISOLanguageName}\"}}}},";
+    return $"  {{\"{key}\", {{{cultureType}, \"{displayName}\", \"{englishName}\", {keyboardLayoutId}, {lcid}, \"{name}\", \"{nativeName}\", \"{parentName}\", \"{threeLetterISOLanguageName}\", \"{threeLetterWindowsLanguageName}\", \"{twoLetterISOLanguageName}\"}}}},";
   }
 
   static string ToString(CultureTypes type) {
