@@ -4,7 +4,7 @@ Shows how to use [xtd::globalization::culture_info::is_neutral_culture](https://
 
 ## Sources
 
-* [src/culture_info_properties.cpp](src/culture_info_is_neutral_culture.cpp)
+* [src/culture_info_is_neutral_culture.cpp](src/culture_info_is_neutral_culture.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
