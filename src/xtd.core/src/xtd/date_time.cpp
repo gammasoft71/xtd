@@ -57,9 +57,7 @@ namespace {
   constexpr auto file_time_offset = ticks {days_to_1601 * ticks_per_day};
   
   constexpr auto seconds_offset_1970 = std::chrono::seconds(seconds_per_day* days_to_1970);
-  
-  const auto custom_formats = dictionary<char, string> {{'d', "M/d/yyyy"}, {'D', "dddd, MMMM d, yyyy"}, {'f', "dddd, MMMM d, yyyy HH:mm"}, {'F', "dddd, MMMM d, yyyy HH:mm:ss"}, {'g', "M/d/yyyy HH:mm"}, {'G', "M/d/yyyy HH:mm:ss"}, {'m', "MMMM d"}, {'M', "MMMM d"}, {'o', "yyyy-MM-ddTHH:mm:ss.fffffffK"}, {'O', "yyyy-MM-ddTHH:mm:ss.fffffffK"}, {'r', "ddd, dd MMM yyyy HH:mm:ss G\\MT"}, {'R', "ddd, dd MMM yyyy HH:mm:ss G\\MT"}, {'s', "yyyy-MM-ddTHH:mm:ss"}, {'t', "HH:mm"}, {'T', "HH:mm:ss"}, {'u', "yyyy-MM-dd HH:mm:ssZ"}, {'U', "dddd, MMMM d, yyyy HH:mm:ss"}, {'y', "MMMM yyyy"}, {'Y', "MMMM yyyy"}};
-  
+    
   static std::tuple<uint32, uint32> get_year_and_day_of_year(int64 days) {
     auto year = 1_s64;
     auto day_of_year = days;
@@ -142,10 +140,6 @@ namespace {
     return time;
   }
   
-  static string get_date_separator(const culture_info& culture) {
-    return "/";
-  }
-  
   static array<string> get_days(const culture_info& culture) {
     auto days = list<string> {};
     for (auto index = 1; index <= 7; ++index)
@@ -175,10 +169,6 @@ namespace {
     return months.to_array();
   }
   
-  static string get_time_separator(const culture_info& culture) {
-    return ":";
-  }
-  
   static string get_time_suffix(const date_time& dt, const culture_info& culture) {
     return dt.to_string("%p", culture);
   }
@@ -202,7 +192,7 @@ namespace {
     auto count = to_string_custom_char_count(format, index, size_object::max_value);
     auto result = string {};
     for (auto index = 0_z; index < count; ++index)
-      result += get_date_separator(culture);
+      result += culture.date_time_format().date_separator();
     return result;
   }
   
@@ -225,7 +215,7 @@ namespace {
     index = next_index;
     return result;
   }
-  
+
   static string to_string_custom_fraction(const string& format, size& index, int64 ticks) {
     bool remove_trailing_zeros = (format[index] == 'F');
     auto count = to_string_custom_char_count(format, index, 7_z);
@@ -274,7 +264,7 @@ namespace {
     auto count = to_string_custom_char_count(format, index, size_object::max_value);
     auto result = string {};
     for (auto index = 0_z; index < count; ++index)
-      result += get_time_separator(culture);
+      result += culture.date_time_format().time_separator();
     return result;
   }
   
@@ -666,10 +656,7 @@ string date_time::to_string(const string& format) const {
 string date_time::to_string(const string& format, const globalization::culture_info& culture) const {
   if (format.length() > 1 && format.find_first_of('%') != npos) return to_string_put_time(format, culture);
   if (format.length() > 1) return to_string_custom(format, culture);
-  if (xtd::string::is_empty(format)) return to_string_custom(custom_formats['G'], culture);
-  
-  if (!custom_formats.contains_key(format[0])) throw_helper::throws(exception_case::format, "Invalid format");
-  return to_string_custom(custom_formats[format[0]], culture);
+  return to_string_standard(xtd::string::is_empty(format) ? 'G' : format[0], culture);
 }
 
 string date_time::to_string(const culture_info& culture) const {
@@ -856,7 +843,7 @@ namespace {
 
 bool date_time::try_parse_exact(const string& text, const string& format, date_time& result, const culture_info& culture) noexcept {
   if (string::is_empty(text) || string::is_empty(format)) return false;
-  auto fmt = (format.length() == 1_z && custom_formats.contains_key(format[0])) ? custom_formats[format[0]] : format;
+  auto fmt = (format.length() == 1_z && !string::is_empty(standard_format_to_custom_format(format[0], culture))) ? standard_format_to_custom_format(format[0], culture) : format;
   auto txt = text;
   auto valid = true;
   
@@ -999,6 +986,31 @@ void date_time::set_date_time(uint32 year, uint32 month, uint32 day, uint32 hour
   kind_ = kind;
 }
 
+string date_time::standard_format_to_custom_format(char format, const xtd::globalization::culture_info& culture) noexcept {
+  switch (format) {
+    case 'd': return culture.date_time_format().short_date_pattern();
+    case 'D': return culture.date_time_format().long_date_pattern();
+    case 'f': return culture.date_time_format().long_date_pattern() + " " + culture.date_time_format().short_time_pattern();
+    case 'F': return culture.date_time_format().full_date_time_pattern();
+    case 'g': return culture.date_time_format().short_date_pattern() + " " + culture.date_time_format().short_time_pattern();
+    case 'G': return culture.date_time_format().short_date_pattern() + " " + culture.date_time_format().long_time_pattern();
+    case 'm': return culture.date_time_format().month_day_pattern();
+    case 'M': return culture.date_time_format().month_day_pattern();
+    case 'o': return "yyyy-MM-ddTHH:mm:ss.fffffffK";
+    case 'O': return "yyyy-MM-ddTHH:mm:ss.fffffffK";
+    case 'r': return culture.date_time_format().rfc_1123_pattern();
+    case 'R': return culture.date_time_format().rfc_1123_pattern();
+    case 's': return culture.date_time_format().sortable_date_time_pattern();
+    case 't': return culture.date_time_format().short_time_pattern();
+    case 'T': return culture.date_time_format().long_time_pattern();
+    case 'u': return culture_info::invariant_culture().date_time_format().universal_sortable_date_time_pattern();
+    case 'U': return culture.date_time_format().full_date_time_pattern();
+    case 'y': return culture.date_time_format().year_month_pattern();
+    case 'Y': return culture.date_time_format().year_month_pattern();
+    default: return "";
+  }
+}
+
 string date_time::to_string_custom(const string& format, const culture_info& culture) const {
   [[maybe_unused]] auto [year, month, day, hour, minute, second, day_of_year, day_of_week] = get_date_time();
   auto offset_sec = kind_ == date_time_kind::utc ? 0 : utc_offset().count() / ticks_per_second;
@@ -1035,6 +1047,12 @@ string date_time::to_string_put_time(const string& format, const culture_info& c
   auto tm_value = to_tm();
   result << std::put_time(&tm_value, format.chars().c_str());
   return result.str();
+}
+
+string date_time::to_string_standard(char format, const culture_info& culture) const {
+  const auto custom_format = standard_format_to_custom_format(format, culture);
+  if (string::is_empty(custom_format)) throw_helper::throws(exception_case::format, "Invalid format");
+  return format == 'U' || format == 'u' ? to_universal_time().to_string_custom(custom_format, culture) : to_string_custom(custom_format, culture);
 }
 
 // These four following metheds are defined in include/xtd/internal/__date_time_formater.hpp file
