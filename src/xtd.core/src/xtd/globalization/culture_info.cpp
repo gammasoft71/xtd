@@ -45,7 +45,7 @@ culture_info::culture_info(size culture, bool use_user_override) : culture_info(
   for (const auto& [n, c] : cultures_) {
     //if (string::equals(culture.data_->name, name, string_comparison::ordinal_ignore_case))
     if (c.data_->lcid != culture) continue;
-    data_ = c.data_;
+    *data_ = *c.data_;
     data_->use_user_override = use_user_override;
     return;
   }
@@ -145,6 +145,12 @@ culture_info culture_info::invariant_culture() noexcept {
   return cultures_[""];
 }
 
+culture_info culture_info::clone() const noexcept {
+  auto result = culture_info {};
+  *result.data_ = *data_;
+  return result;
+}
+
 bool culture_info::equals(const object& obj) const noexcept {
   return is<culture_info>(obj) && equals(static_cast<const culture_info&>(obj));
 }
@@ -184,6 +190,7 @@ culture_info& culture_info::operator =(std::locale&& locale) {
   data_->locale = std::move(locale);
   return self_;
 }
+
 culture_info& culture_info::operator =(const std::locale& locale) {
   data_->locale = locale;
   return self_;
@@ -212,7 +219,7 @@ culture_info::culture_info(globalization::culture_types culture_types, date_time
 void culture_info::fill_from_name(const string& name) {
   auto lower_name = name.to_lower();
   if (!cultures_.contains_key(lower_name)) throw_helper::throws(exception_case::culture_not_found);
-  self_ = cultures_[lower_name];
+  *data_ = *cultures_[lower_name].data_;
 }
 
 bool culture_info::is_system_locale_available(const string& name) noexcept {
