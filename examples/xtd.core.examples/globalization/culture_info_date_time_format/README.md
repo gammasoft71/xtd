@@ -18,9 +18,9 @@ xtdc run
 ## Output
 
 ```
-dtfi/nfi PROPERTY         ORIGINAL        MODIFIED CLONE
-dtfi.am_designator        AM              a.m.
-dfi.date_separator        /               -
-nfi.currency_symbol       $               USD
-nfi.number_decimal_digits 2               4
+dtfi/nfi PROPERTY           ORIGINAL         LOCAL            MODIFIED COPY    MODIFIED CLONE
+dtfi.am_designator          AM               A.M.             A.M.             a.m.            
+dtfi.date_separator         /                -                -                .               
+nfi.currency_symbol         $                USD              USD              usd             
+nfi.number_decimal_digits   2                4                4                3               
 ```
