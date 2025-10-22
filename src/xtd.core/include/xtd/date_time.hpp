@@ -1414,7 +1414,7 @@ namespace xtd {
     string to_string_custom(const string& format, const xtd::globalization::culture_info& culture) const;
     string to_string_put_time(const string& format, const xtd::globalization::culture_info& culture) const;
     string to_string_standard(char format, const xtd::globalization::culture_info& culture) const;
-
+    
     xtd::ticks value_ {0};
     date_time_kind kind_ {date_time_kind::unspecified};
   };
