@@ -57,7 +57,7 @@ namespace {
   constexpr auto file_time_offset = ticks {days_to_1601 * ticks_per_day};
   
   constexpr auto seconds_offset_1970 = std::chrono::seconds(seconds_per_day* days_to_1970);
-    
+  
   static std::tuple<uint32, uint32> get_year_and_day_of_year(int64 days) {
     auto year = 1_s64;
     auto day_of_year = days;
@@ -176,7 +176,7 @@ namespace {
     index = next_index;
     return result;
   }
-
+  
   static string to_string_custom_fraction(const string& format, size& index, int64 ticks) {
     bool remove_trailing_zeros = (format[index] == 'F');
     auto count = to_string_custom_char_count(format, index, 7_z);
