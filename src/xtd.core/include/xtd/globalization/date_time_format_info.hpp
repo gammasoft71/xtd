@@ -49,7 +49,7 @@ namespace xtd {
       date_time_format_info(date_time_format_info&& info) = default;
       /// @brief Initializes a new instance of the xtd::globalization::date_time_format_info class with specified infp.
       /// @param info The xtd::globalization::date_time_format_info to inititalise this instance.
-      date_time_format_info(const date_time_format_info& info) = default;
+      date_time_format_info(const date_time_format_info& info);
       /// @}
       
       /// @name Public Properties
@@ -150,7 +150,7 @@ namespace xtd {
       
       /// @cond
       date_time_format_info& operator =(date_time_format_info&& culture) = default;
-      date_time_format_info& operator =(const date_time_format_info& culture) = default;
+      date_time_format_info& operator =(const date_time_format_info& culture);
       /// @endcond
       
     private:
