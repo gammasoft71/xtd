@@ -140,30 +140,6 @@ namespace {
     return time;
   }
   
-  static array<string> get_days(const culture_info& culture) {
-    return culture.date_time_format().day_names();
-  }
-  
-  static array<string> get_months(const culture_info& culture) {
-    return culture.date_time_format().month_names();
-  }
-  
-  static array<string> get_short_days(const culture_info& culture) {
-    return culture.date_time_format().abreviated_day_names();
-  }
-  
-  static array<string> get_short_months(const culture_info& culture) {
-    return culture.date_time_format().abreviated_month_names();
-  }
-  
-  static string get_time_suffix(const date_time& dt, const culture_info& culture) {
-    return dt.hour() < 12 ? culture.date_time_format().am_designator() : culture.date_time_format().pm_designator();
-  }
-  
-  static array<string> get_time_suffixes(const culture_info& culture) {
-    return {culture.date_time_format().am_designator(), culture.date_time_format().pm_designator()};
-  }
-  
   static size to_string_custom_char_count(const string& format, size& index, size max_char) {
     auto character = format[index];
     auto count = 1_z;
@@ -255,7 +231,7 @@ namespace {
   
   static string to_string_custom_time_suffix(const string& format, size& index, uint32 hour, const date_time& dt, const culture_info& culture) {
     auto count = to_string_custom_char_count(format, index, 2_z);
-    auto suffix = get_time_suffix(dt, culture).to_u32string();
+    auto suffix = dt.hour() < 12 ? culture.date_time_format().am_designator().to_u32string() : culture.date_time_format().pm_designator().to_u32string();
     if (string::is_empty(suffix)) return suffix;
     if (count == 1) return suffix.substring(0, 1);
     return suffix;
@@ -706,7 +682,7 @@ namespace {
   bool try_parse_exact_month(const string& text, const string& format, size& text_index, size& format_index, uint32& month, const culture_info& culture) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 4_z);
     if (count == 3 || count == 4) {
-      auto months = count == 3 ? get_short_months(culture) : get_months(culture);
+      auto months = count == 3 ? culture.date_time_format().abreviated_month_names() : culture.date_time_format().month_names();
       for (auto index = 0_z; index < months.length(); ++index)
         if (text.substring(text_index).starts_with(months[index])) {
           month = as<int32>(index + 1);
@@ -723,7 +699,7 @@ namespace {
   bool try_parse_exact_day(const string& text, const string& format, size& text_index, size& format_index, uint32& day, const culture_info& culture) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 4_z);
     if (count == 3 || count == 4) {
-      auto days = count == 3 ? get_short_days(culture) : get_days(culture);
+      auto days = count == 3 ? culture.date_time_format().abreviated_day_names() : culture.date_time_format().day_names();
       for (auto index = 0_z; index < days.length(); ++index)
         if (text.substring(text_index).starts_with(days[index])) {
           //day = as<int32>(index + 1);
@@ -791,10 +767,11 @@ namespace {
   
   bool try_parse_exact_time_suffix(const string& text, const string& format, size& text_index, size& format_index, uint32& hour, const culture_info& culture) noexcept {
     auto count = to_string_custom_char_count(format, format_index, 2_z);
+    auto suffixes = array<string> {culture.date_time_format().am_designator(), culture.date_time_format().pm_designator()};
     auto suffix = text.substring(text_index, count);
-    if (suffix == get_time_suffixes(culture)[0].substring(0, count)) {
+    if (suffix == suffixes[0].substring(0, count)) {
       if (hour == 12) hour = 0;
-    } else if (suffix == get_time_suffixes(culture)[1].substring(0, count)) {
+    } else if (suffix == suffixes[1].substring(0, count)) {
       if (hour < 12) hour += 12;
     } else return false;
     text_index += count;
