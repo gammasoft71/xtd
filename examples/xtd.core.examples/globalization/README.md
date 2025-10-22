@@ -4,6 +4,7 @@
 
 * [culture_info_culture_types](culture_info_culture_types/README.md) shows how to use [xtd::globalization::culture_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1culture__info.html) class.
 * [culture_info_current_culture](culture_info_current_culture/README.md) shows how to use [xtd::globalization::culture_info::current_culture](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1culture__info.html) property.
+* [culture_info_date_time_format](culture_info_date_time_format/README.md) shows how to use [xtd::globalization::culture_info::date_time_format](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1culture__info.html) property.
 * [culture_info_is_neutral_culture](culture_info_is_neutral_culture/README.md) shows how to use [xtd::globalization::culture_info::is_neutral_culture](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1culture__info.html) property.
 * [culture_info_lcid](culture_info_lcid/README.md) shows how to use [xtd::globalization::culture_info::lcid](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1culture__info.html) property.
 * [culture_info_parent](culture_info_parent/README.md) shows how to use [xtd::globalization::culture_info::parent](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1culture__info.html) property.
