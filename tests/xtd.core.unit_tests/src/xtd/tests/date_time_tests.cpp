@@ -31,7 +31,7 @@ namespace xtd::tests {
       assert::is_zero(d.minute());
       assert::is_zero(d.second());
       assert::is_zero(d.millisecond());
-      assert::are_equal("1/1/0001 00:00:00", d.to_string());
+      assert::are_equal("1/1/0001 0:00:00 AM", d.to_string());
     }
     
     void test_method_(create_date_with_ticks) {
@@ -45,7 +45,7 @@ namespace xtd::tests {
       assert::is_zero(d.minute());
       assert::are_equal(42u, d.second());
       assert::is_zero(d.millisecond());
-      assert::are_equal("1/1/0001 00:00:42", d.to_string());
+      assert::are_equal("1/1/0001 0:00:42 AM", d.to_string());
     }
     
     void test_method_(create_date_with_ticks_and_date_time_kind_unspecified) {
@@ -59,7 +59,7 @@ namespace xtd::tests {
       assert::are_equal(24u, d.minute());
       assert::is_zero(d.second());
       assert::is_zero(d.millisecond());
-      assert::are_equal("1/1/0001 00:24:00", d.to_string());
+      assert::are_equal("1/1/0001 0:24:00 AM", d.to_string());
     }
     
     void test_method_(create_date_with_ticks_and_date_time_kind_loacal) {
@@ -73,7 +73,7 @@ namespace xtd::tests {
       assert::are_equal(24u, d.minute());
       assert::is_zero(d.second());
       assert::is_zero(d.millisecond());
-      assert::are_equal("1/1/0001 00:24:00", d.to_string());
+      assert::are_equal("1/1/0001 0:24:00 AM", d.to_string());
     }
     
     void test_method_(create_date_with_ticks_and_date_time_kind_utc) {
@@ -87,7 +87,7 @@ namespace xtd::tests {
       assert::is_zero(d.minute());
       assert::is_zero(d.second());
       assert::is_zero(d.millisecond());
-      assert::are_equal("1/1/0001 12:00:00", d.to_string());
+      assert::are_equal("1/1/0001 12:00:00 PM", d.to_string());
     }
     
     void test_method_(create_date_with_year_month_day) {
@@ -100,7 +100,7 @@ namespace xtd::tests {
       assert::is_zero(d.minute());
       assert::is_zero(d.second());
       assert::is_zero(d.millisecond());
-      assert::are_equal("1/5/1971 00:00:00", d.to_string());
+      assert::are_equal("1/5/1971 0:00:00 AM", d.to_string());
     }
     
     void test_method_(create_date_with_year_month_day_hour_minute_second) {
@@ -113,7 +113,7 @@ namespace xtd::tests {
       assert::are_equal(10u, d.minute());
       assert::are_equal(30u, d.second());
       assert::is_zero(d.millisecond());
-      assert::are_equal("1/5/1971 21:10:30", d.to_string());
+      assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
     void test_method_(create_date_with_year_month_day_hour_minute_second_and_date_time_kind_unspecified) {
@@ -126,7 +126,7 @@ namespace xtd::tests {
       assert::are_equal(10u, d.minute());
       assert::are_equal(30u, d.second());
       assert::is_zero(d.millisecond());
-      assert::are_equal("1/5/1971 21:10:30", d.to_string());
+      assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
     void test_method_(create_date_with_year_month_day_hour_minute_second_and_date_time_kind_local) {
@@ -138,7 +138,7 @@ namespace xtd::tests {
       assert::are_equal(21u, d.hour());
       assert::are_equal(10u, d.minute());
       assert::are_equal(30u, d.second());
-      assert::are_equal("1/5/1971 21:10:30", d.to_string());
+      assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
     void test_method_(create_date_with_year_month_day_hour_minute_second_and_date_time_kind_utc) {
@@ -151,7 +151,7 @@ namespace xtd::tests {
       assert::are_equal(10u, d.minute());
       assert::are_equal(30u, d.second());
       assert::is_zero(d.millisecond());
-      assert::are_equal("1/5/1971 21:10:30", d.to_string());
+      assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
     void test_method_(create_date_with_year_month_day_hour_minute_second_millisecond) {
@@ -164,7 +164,7 @@ namespace xtd::tests {
       assert::are_equal(10u, d.minute());
       assert::are_equal(30u, d.second());
       assert::are_equal(242u, d.millisecond());
-      assert::are_equal("1/5/1971 21:10:30", d.to_string());
+      assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
     void test_method_(create_date_with_year_month_day_hour_minute_second_millisecond_and_date_time_kind_unspecified) {
@@ -177,7 +177,7 @@ namespace xtd::tests {
       assert::are_equal(10u, d.minute());
       assert::are_equal(30u, d.second());
       assert::are_equal(242u, d.millisecond());
-      assert::are_equal("1/5/1971 21:10:30", d.to_string());
+      assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
     void test_method_(create_date_with_year_month_day_hour_minute_second_millisecond_and_date_time_kind_local) {
@@ -190,7 +190,7 @@ namespace xtd::tests {
       assert::are_equal(10u, d.minute());
       assert::are_equal(30u, d.second());
       assert::are_equal(242u, d.millisecond());
-      assert::are_equal("1/5/1971 21:10:30", d.to_string());
+      assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
     void test_method_(create_date_with_year_month_day_hour_minute_second_millisecond_and_date_time_kind_utc) {
@@ -203,7 +203,7 @@ namespace xtd::tests {
       assert::are_equal(10u, d.minute());
       assert::are_equal(30u, d.second());
       assert::are_equal(242u, d.millisecond());
-      assert::are_equal("1/5/1971 21:10:30", d.to_string());
+      assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
     void test_method_(create_date_max_value) {
@@ -217,7 +217,7 @@ namespace xtd::tests {
       assert::are_equal(59u, d.minute());
       assert::are_equal(59u, d.second());
       assert::are_equal(999u, d.millisecond());
-      assert::are_equal("12/31/9999 23:59:59", d.to_string());
+      assert::are_equal("12/31/9999 11:59:59 PM", d.to_string());
     }
     
     void test_method_(create_date_min_value) {
@@ -231,7 +231,7 @@ namespace xtd::tests {
       assert::is_zero(d.minute());
       assert::is_zero(d.second());
       assert::is_zero(d.millisecond());
-      assert::are_equal("1/1/0001 00:00:00", d.to_string());
+      assert::are_equal("1/1/0001 0:00:00 AM", d.to_string());
     }
     
     void test_method_(create_date_now) {
@@ -257,7 +257,7 @@ namespace xtd::tests {
       assert::is_zero(d.minute());
       assert::is_zero(d.second());
       assert::is_zero(d.millisecond());
-      assert::are_equal("1/1/0001 12:00:00", d.to_string());
+      assert::are_equal("1/1/0001 12:00:00 PM", d.to_string());
     }
     
     void test_method_(from_duration_local) {
@@ -271,7 +271,7 @@ namespace xtd::tests {
       assert::is_zero(d.minute());
       assert::is_zero(d.second());
       assert::is_zero(d.millisecond());
-      assert::are_equal("1/1/0001 12:00:00", d.to_string());
+      assert::are_equal("1/1/0001 12:00:00 PM", d.to_string());
     }
     
     void test_method_(from_duration_utc) {
@@ -285,7 +285,7 @@ namespace xtd::tests {
       assert::is_zero(d.minute());
       assert::is_zero(d.second());
       assert::is_zero(d.millisecond());
-      assert::are_equal("1/1/0001 12:00:00", d.to_string());
+      assert::are_equal("1/1/0001 12:00:00 PM", d.to_string());
     }
     
     void test_method_(from_time_t) {
@@ -319,7 +319,7 @@ namespace xtd::tests {
       assert::are_equal(10u, d.minute());
       assert::are_equal(30u, d.second());
       assert::is_zero(d.millisecond());
-      assert::are_equal("1/5/1971 21:10:30", d.to_string());
+      assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
     void test_method_(from_tm_local) {
@@ -332,7 +332,7 @@ namespace xtd::tests {
       assert::are_equal(10u, d.minute());
       assert::are_equal(30u, d.second());
       assert::is_zero(d.millisecond());
-      assert::are_equal("1/5/1971 21:10:30", d.to_string());
+      assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
     void test_method_(from_tm_utc) {
@@ -345,7 +345,7 @@ namespace xtd::tests {
       assert::are_equal(10u, d.minute());
       assert::are_equal(30u, d.second());
       assert::is_zero(d.millisecond());
-      assert::are_equal("1/5/1971 21:10:30", d.to_string());
+      assert::are_equal("1/5/1971 9:10:30 PM", d.to_string());
     }
     
     void test_method_(add_duration) {
@@ -387,7 +387,7 @@ namespace xtd::tests {
       assert::are_equal(10u, d2.minute());
       assert::are_equal(30u, d2.second());
       assert::is_zero(d2.millisecond());
-      assert::are_equal("1/12/1971 09:10:30", d2.to_string());
+      assert::are_equal("1/12/1971 9:10:30 AM", d2.to_string());
     }
     
     void test_method_(add_hours) {
@@ -401,7 +401,7 @@ namespace xtd::tests {
       assert::are_equal(40u, d2.minute());
       assert::are_equal(30u, d2.second());
       assert::is_zero(d2.millisecond());
-      assert::are_equal("1/6/1971 03:40:30", d2.to_string());
+      assert::are_equal("1/6/1971 3:40:30 AM", d2.to_string());
     }
     
     void test_method_(add_milliseconds) {
@@ -415,7 +415,7 @@ namespace xtd::tests {
       assert::are_equal(10u, d2.minute());
       assert::are_equal(30u, d2.second());
       assert::are_equal(6u, d2.millisecond());
-      assert::are_equal("1/5/1971 21:10:30", d2.to_string());
+      assert::are_equal("1/5/1971 9:10:30 PM", d2.to_string());
     }
     
     void test_method_(add_minutes) {
@@ -429,7 +429,7 @@ namespace xtd::tests {
       assert::are_equal(17u, d2.minute());
       assert::are_equal(0u, d2.second());
       assert::is_zero(d2.millisecond());
-      assert::are_equal("1/5/1971 21:17:00", d2.to_string());
+      assert::are_equal("1/5/1971 9:17:00 PM", d2.to_string());
     }
     
     void test_method_(add_months) {
@@ -443,7 +443,7 @@ namespace xtd::tests {
       assert::are_equal(10u, d2.minute());
       assert::are_equal(30u, d2.second());
       assert::is_zero(d2.millisecond());
-      assert::are_equal("7/5/1971 21:10:30", d2.to_string());
+      assert::are_equal("7/5/1971 9:10:30 PM", d2.to_string());
     }
     
     void test_method_(add_seconds) {
@@ -457,7 +457,7 @@ namespace xtd::tests {
       assert::are_equal(10u, d2.minute());
       assert::are_equal(36u, d2.second());
       assert::are_equal(500u, d2.millisecond());
-      assert::are_equal("1/5/1971 21:10:36", d2.to_string());
+      assert::are_equal("1/5/1971 9:10:36 PM", d2.to_string());
     }
     
     void test_method_(add_ticks) {
@@ -471,7 +471,7 @@ namespace xtd::tests {
       assert::are_equal(10u, d2.minute());
       assert::are_equal(36u, d2.second());
       assert::are_equal(500u, d2.millisecond());
-      assert::are_equal("1/5/1971 21:10:36", d2.to_string());
+      assert::are_equal("1/5/1971 9:10:36 PM", d2.to_string());
     }
     
     void test_method_(add_years) {
@@ -485,7 +485,7 @@ namespace xtd::tests {
       assert::are_equal(10u, d2.minute());
       assert::are_equal(30u, d2.second());
       assert::is_zero(d2.millisecond());
-      assert::are_equal("1/5/1977 21:10:30", d2.to_string());
+      assert::are_equal("1/5/1977 9:10:30 PM", d2.to_string());
     }
   };
 }
