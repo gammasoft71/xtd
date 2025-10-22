@@ -119,13 +119,13 @@ namespace xtd {
       /// @include culture_info_culture_types.cpp
       xtd::globalization::culture_types culture_types() const noexcept;
       
-      /// @briefGets or sets a xtd::globalization::date_time_format_info that defines the culturally appropriate format of displaying dates and times.
+      /// @brief Gets or sets a xtd::globalization::date_time_format_info that defines the culturally appropriate format of displaying dates and times.
       /// @return A xtd::globalization::date_time_format_info that defines the culturally appropriate format of displaying dates and times.
       /// @par Example
       /// The following code example shows that xtd::globalization::culture_info::clone also clones the xtd::globalization::date_time_format_info and xtd::globalization::number_format_info instances associated with the xtd::globalization::culture_info.
       /// @include culture_info_date_time_format.cpp
       const xtd::globalization::date_time_format_info& date_time_format() const noexcept;
-      /// @briefGets or sets a xtd::globalization::date_time_format_info that defines the culturally appropriate format of displaying dates and times.
+      /// @brief Gets or sets a xtd::globalization::date_time_format_info that defines the culturally appropriate format of displaying dates and times.
       /// @return A xtd::globalization::date_time_format_info that defines the culturally appropriate format of displaying dates and times.
       /// @par Example
       /// The following code example shows that xtd::globalization::culture_info::clone also clones the xtd::globalization::date_time_format_info and xtd::globalization::number_format_info instances associated with the xtd::globalization::culture_info.
