@@ -34,6 +34,10 @@ struct date_time_format_info::data {
 date_time_format_info::date_time_format_info() : data_ {new_ptr<data>()} {
 }
 
+date_time_format_info::date_time_format_info(const date_time_format_info& info) : date_time_format_info() {
+  *data_ = *info.data_;
+}
+
 const array<string>& date_time_format_info::abreviated_day_names() const noexcept {
   return data_->abreviated_day_names;
 }
@@ -247,6 +251,11 @@ const date_time_format_info& date_time_format_info::current_info() noexcept {
 
 const date_time_format_info& date_time_format_info::invariant_info() noexcept {
   return culture_info::invariant_culture().date_time_format();
+}
+
+date_time_format_info& date_time_format_info::operator =(const date_time_format_info& info) {
+  *data_ = *info.data_;
+  return self_;
 }
 
 date_time_format_info::date_time_format_info(array<string>&& abreviated_day_names, array<string>&& abreviated_month_genitive_names, array<string>&& abreviated_month_names, string&& am_designator, string&& date_separator, array<string>&& day_names, day_of_week first_day_of_week, string&& full_date_time_pattern, string&& long_date_pattern, string&& long_time_pattern, string&& month_day_pattern, array<string>&& month_genitive_names, array<string>&& month_names, string&& native_calendar_name, string&& pm_designator, string&& rfc_1123_pattern, string&& short_date_pattern, string&& short_time_pattern, array<string>&& shortest_day_names, string&& sortable_date_time_pattern, string&& time_separator, string&& universal_sortable_date_time_pattern, string&& year_month_pattern) : date_time_format_info() {
