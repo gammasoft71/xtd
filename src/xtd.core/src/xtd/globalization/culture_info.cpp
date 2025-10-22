@@ -171,7 +171,7 @@ array<culture_info> culture_info::get_cultures(xtd::globalization::culture_types
   auto result = list<culture_info> {};
   for (const auto& [name, culture] : cultures_)
     if (enum_object<globalization::culture_types>(culture.culture_types()).has_flag(types) || types == xtd::globalization::culture_types::all_cultures)
-      result.add(culture);
+      result.add(culture.clone());
   result.sort({[](auto v1, auto v2) {return v1.name() < v2.name() ? -1 : v1.name() > v2.name() ? 1 : 0;}});
   return result;
 }
