@@ -56,50 +56,73 @@ namespace xtd {
       
       /// @{
       const xtd::array<xtd::string>& abreviated_day_names() const noexcept;
-      
+      date_time_format_info& abreviated_day_names(const xtd::array<xtd::string>& value) noexcept;
+
       const xtd::array<xtd::string>& abreviated_month_genitive_names() const noexcept;
-      
+      date_time_format_info& abreviated_month_genitive_names(const xtd::array<xtd::string>& value) noexcept;
+
       const xtd::array<xtd::string>& abreviated_month_names() const noexcept;
-      
+      date_time_format_info& abreviated_month_names(const xtd::array<xtd::string>& value) noexcept;
+
       const xtd::string& am_designator() const noexcept;
-      
+      date_time_format_info& am_designator(const xtd::string& value) noexcept;
+
       const xtd::string& date_separator() const noexcept;
-      
+      date_time_format_info& date_separator(const xtd::string& value) noexcept;
+
       const xtd::array<xtd::string>& day_names() const noexcept;
-      
+      date_time_format_info& day_names(const xtd::array<xtd::string>& value) noexcept;
+
       xtd::day_of_week first_day_of_week() const noexcept;
-      
+      date_time_format_info& first_day_of_week(xtd::day_of_week value) noexcept;
+
       const string& full_date_time_pattern() const noexcept;
-      
+      date_time_format_info& full_date_time_pattern(const string& value) noexcept;
+
       const string& long_date_pattern() const noexcept;
-      
+      date_time_format_info& long_date_pattern(const string& value) noexcept;
+
       const string& long_time_pattern() const noexcept;
-      
+      date_time_format_info& long_time_pattern(const string& value) noexcept;
+
       const string& month_day_pattern() const noexcept;
-      
+      date_time_format_info& month_day_pattern(const string& value) noexcept;
+
       const xtd::array<xtd::string>& month_genitive_names() const noexcept;
-      
+      date_time_format_info& month_genitive_names(const xtd::array<xtd::string>& value) noexcept;
+
       const xtd::array<xtd::string>& month_names() const noexcept;
-      
+      date_time_format_info& month_names(const xtd::array<xtd::string>& value) noexcept;
+
       const xtd::string& native_calendar_name() const noexcept;
-      
+      date_time_format_info& native_calendar_name(const xtd::string& value) noexcept;
+
       const xtd::string& pm_designator() const noexcept;
-      
+      date_time_format_info& pm_designator(const xtd::string& value) noexcept;
+
       const string& rfc_1123_pattern() const noexcept;
-      
+      date_time_format_info& rfc_1123_pattern(const string& value) noexcept;
+
       const string& short_date_pattern() const noexcept;
-      
+      date_time_format_info& short_date_pattern(const string& value) noexcept;
+
       const string& short_time_pattern() const noexcept;
-      
+      date_time_format_info& short_time_pattern(const string& value) noexcept;
+
       const xtd::array<xtd::string>& shortest_day_names() const noexcept;
-      
+      date_time_format_info& shortest_day_names(const xtd::array<xtd::string>& value) noexcept;
+
       const string& sortable_date_time_pattern() const noexcept;
-      
+      date_time_format_info& sortable_date_time_pattern(const string& value) noexcept;
+
       const xtd::string& time_separator() const noexcept;
-      
+      date_time_format_info& time_separator(const xtd::string& value) noexcept;
+
       const string& universal_sortable_date_time_pattern() const noexcept;
-      
+      date_time_format_info& universal_sortable_date_time_pattern(const string& value) noexcept;
+
       const string& year_month_pattern() const noexcept;
+      date_time_format_info& year_month_pattern(const string& value) noexcept;
       /// @}
       
       /// @name Public Static Properties
