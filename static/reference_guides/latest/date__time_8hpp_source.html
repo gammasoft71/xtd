@@ -312,36 +312,38 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l01410" name="l01410"></a><span class="lineno"> 1410</span>    <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_function" href="classxtd_1_1date__time.html#a1aba401d57acd3b150c6ac29609025be">ticks</a> utc_offset() const;</div>
 <div class="line"><a id="l01411" name="l01411"></a><span class="lineno"> 1411</span>    std::tuple&lt;<a class="code hl_typedef" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a>, <a class="code hl_typedef" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a>, <a class="code hl_typedef" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a>, <a class="code hl_typedef" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a>, <a class="code hl_typedef" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a>, <a class="code hl_typedef" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a>, <a class="code hl_typedef" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a>, <a class="code hl_typedef" href="group__types.html#gaa9a6cd7d720cd7466a0acb01f807b0c5">int32</a>&gt; get_date_time() const;</div>
 <div class="line"><a id="l01412" name="l01412"></a><span class="lineno"> 1412</span>    <span class="keywordtype">void</span> set_date_time(<a class="code hl_typedef" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="code hl_function" href="classxtd_1_1date__time.html#a9f66207e64a3cdc030e9a3d98fc0c416">year</a>, <a class="code hl_typedef" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="code hl_function" href="classxtd_1_1date__time.html#a800ef26e317f901a263d31e18319b4d7">month</a>, <a class="code hl_typedef" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="code hl_function" href="classxtd_1_1date__time.html#a64d8c6b7c2a6ad3628934e5058cca23a">day</a>, <a class="code hl_typedef" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="code hl_function" href="classxtd_1_1date__time.html#af6d5ec7775b954da23afcf5543cb7fbc">hour</a>, <a class="code hl_typedef" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="code hl_function" href="classxtd_1_1date__time.html#a55d9fe3569709cbbb4b229cbf615d306">minute</a>, <a class="code hl_typedef" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="code hl_function" href="classxtd_1_1date__time.html#ae084c4d68a46500b8e64f4aec4869a15">second</a>, <a class="code hl_typedef" href="group__types.html#ga0eb9264ad13083b74194b8e7d467e1ce">uint32</a> <a class="code hl_function" href="classxtd_1_1date__time.html#aab8d1f41e620866ff93a0a04a611940a">millisecond</a>, <a class="code hl_enumeration" href="group__xtd__core.html#ga03b78d9831d31a0a2ea100078219f2ea">date_time_kind</a> <a class="code hl_function" href="classxtd_1_1date__time.html#ac49ab9e61e6b546f483de527819a840f">kind</a>);</div>
-<div class="line"><a id="l01413" name="l01413"></a><span class="lineno"> 1413</span>    <span class="keywordtype">string</span> to_string_custom(const <span class="keywordtype">string</span>&amp; <a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1globalization.html">globalization</a>::culture_info&amp; culture) const;</div>
-<div class="line"><a id="l01414" name="l01414"></a><span class="lineno"> 1414</span>    <span class="keywordtype">string</span> to_string_put_time(const <span class="keywordtype">string</span>&amp; <a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1globalization.html">globalization</a>::culture_info&amp; culture) const;</div>
-<div class="line"><a id="l01415" name="l01415"></a><span class="lineno"> 1415</span>    </div>
-<div class="line"><a id="l01416" name="l01416"></a><span class="lineno"> 1416</span>    <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_function" href="classxtd_1_1date__time.html#a1aba401d57acd3b150c6ac29609025be">ticks</a> value_ {0};</div>
-<div class="line"><a id="l01417" name="l01417"></a><span class="lineno"> 1417</span>    <a class="code hl_enumeration" href="group__xtd__core.html#ga03b78d9831d31a0a2ea100078219f2ea">date_time_kind</a> kind_ {<a class="code hl_enumvalue" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaad415f0e30c471dfdd9bc4f827329ef48">date_time_kind::unspecified</a>};</div>
-<div class="line"><a id="l01418" name="l01418"></a><span class="lineno"> 1418</span>  };</div>
+<div class="line"><a id="l01413" name="l01413"></a><span class="lineno"> 1413</span>    static <span class="keywordtype">string</span> standard_format_to_custom_format(<span class="keywordtype">char</span> standard_format, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1globalization.html">globalization</a>::culture_info&amp; culture) noexcept;</div>
+<div class="line"><a id="l01414" name="l01414"></a><span class="lineno"> 1414</span>    <span class="keywordtype">string</span> to_string_custom(const <span class="keywordtype">string</span>&amp; <a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1globalization.html">globalization</a>::culture_info&amp; culture) const;</div>
+<div class="line"><a id="l01415" name="l01415"></a><span class="lineno"> 1415</span>    <span class="keywordtype">string</span> to_string_put_time(const <span class="keywordtype">string</span>&amp; <a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1globalization.html">globalization</a>::culture_info&amp; culture) const;</div>
+<div class="line"><a id="l01416" name="l01416"></a><span class="lineno"> 1416</span>    <span class="keywordtype">string</span> to_string_standard(<span class="keywordtype">char</span> <a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_namespace" href="namespacextd_1_1globalization.html">globalization</a>::culture_info&amp; culture) const;</div>
+<div class="line"><a id="l01417" name="l01417"></a><span class="lineno"> 1417</span> </div>
+<div class="line"><a id="l01418" name="l01418"></a><span class="lineno"> 1418</span>    <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_function" href="classxtd_1_1date__time.html#a1aba401d57acd3b150c6ac29609025be">ticks</a> value_ {0};</div>
+<div class="line"><a id="l01419" name="l01419"></a><span class="lineno"> 1419</span>    <a class="code hl_enumeration" href="group__xtd__core.html#ga03b78d9831d31a0a2ea100078219f2ea">date_time_kind</a> kind_ {<a class="code hl_enumvalue" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaad415f0e30c471dfdd9bc4f827329ef48">date_time_kind::unspecified</a>};</div>
+<div class="line"><a id="l01420" name="l01420"></a><span class="lineno"> 1420</span>  };</div>
 </div>
-<div class="line"><a id="l01419" name="l01419"></a><span class="lineno"> 1419</span></div>
-<div class="line"><a id="l01420" name="l01420"></a><span class="lineno"> 1420</span>}</div>
-<div class="line"><a id="l01421" name="l01421"></a><span class="lineno"> 1421</span> </div>
-<div class="line"><a id="l01422" name="l01422"></a><span class="lineno"> 1422</span><span class="comment">/*</span></div>
-<div class="line"><a id="l01425" name="l01425"></a><span class="lineno"> 1425</span>#if defined(__xtd__cpp_lib_format)</div>
-<div class="line"><a id="l01426" name="l01426"></a><span class="lineno"> 1426</span>template &lt;&gt;</div>
-<div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span>struct std::formatter&lt;xtd::date_time&gt; : std::formatter&lt;std::string&gt; {</div>
-<div class="line"><a id="l01428" name="l01428"></a><span class="lineno"> 1428</span>  template&lt;class format_context_t&gt;</div>
-<div class="line"><a id="l01429" name="l01429"></a><span class="lineno"> 1429</span>  constexpr auto parse(format_context_t&amp; ctx) {</div>
-<div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span>    auto iterator = ctx.begin();</div>
-<div class="line"><a id="l01431" name="l01431"></a><span class="lineno"> 1431</span>    for (; iterator != ctx.end() &amp;&amp; *iterator != &#39;}&#39;; ++iterator)</div>
-<div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span>      format_value += *iterator;</div>
-<div class="line"><a id="l01433" name="l01433"></a><span class="lineno"> 1433</span>    return iterator;</div>
-<div class="line"><a id="l01434" name="l01434"></a><span class="lineno"> 1434</span>  }</div>
-<div class="line"><a id="l01435" name="l01435"></a><span class="lineno"> 1435</span> </div>
-<div class="line"><a id="l01436" name="l01436"></a><span class="lineno"> 1436</span>  template&lt;class object_t, class format_context_t&gt;</div>
-<div class="line"><a id="l01437" name="l01437"></a><span class="lineno"> 1437</span>  auto format(const object_t&amp; obj, format_context_t&amp; ctx) const {return std::format_to(ctx.out(), &quot;{}&quot;, std::string {obj.to_string(format_value)});}</div>
-<div class="line"><a id="l01438" name="l01438"></a><span class="lineno"> 1438</span> </div>
-<div class="line"><a id="l01439" name="l01439"></a><span class="lineno"> 1439</span>private:</div>
-<div class="line"><a id="l01440" name="l01440"></a><span class="lineno"> 1440</span>  std::string format_value;</div>
-<div class="line"><a id="l01441" name="l01441"></a><span class="lineno"> 1441</span>};</div>
-<div class="line"><a id="l01442" name="l01442"></a><span class="lineno"> 1442</span>#endif</div>
-<div class="line"><a id="l01444" name="l01444"></a><span class="lineno"> 1444</span>*/</div>
+<div class="line"><a id="l01421" name="l01421"></a><span class="lineno"> 1421</span></div>
+<div class="line"><a id="l01422" name="l01422"></a><span class="lineno"> 1422</span>}</div>
+<div class="line"><a id="l01423" name="l01423"></a><span class="lineno"> 1423</span> </div>
+<div class="line"><a id="l01424" name="l01424"></a><span class="lineno"> 1424</span><span class="comment">/*</span></div>
+<div class="line"><a id="l01427" name="l01427"></a><span class="lineno"> 1427</span>#if defined(__xtd__cpp_lib_format)</div>
+<div class="line"><a id="l01428" name="l01428"></a><span class="lineno"> 1428</span>template &lt;&gt;</div>
+<div class="line"><a id="l01429" name="l01429"></a><span class="lineno"> 1429</span>struct std::formatter&lt;xtd::date_time&gt; : std::formatter&lt;std::string&gt; {</div>
+<div class="line"><a id="l01430" name="l01430"></a><span class="lineno"> 1430</span>  template&lt;class format_context_t&gt;</div>
+<div class="line"><a id="l01431" name="l01431"></a><span class="lineno"> 1431</span>  constexpr auto parse(format_context_t&amp; ctx) {</div>
+<div class="line"><a id="l01432" name="l01432"></a><span class="lineno"> 1432</span>    auto iterator = ctx.begin();</div>
+<div class="line"><a id="l01433" name="l01433"></a><span class="lineno"> 1433</span>    for (; iterator != ctx.end() &amp;&amp; *iterator != &#39;}&#39;; ++iterator)</div>
+<div class="line"><a id="l01434" name="l01434"></a><span class="lineno"> 1434</span>      format_value += *iterator;</div>
+<div class="line"><a id="l01435" name="l01435"></a><span class="lineno"> 1435</span>    return iterator;</div>
+<div class="line"><a id="l01436" name="l01436"></a><span class="lineno"> 1436</span>  }</div>
+<div class="line"><a id="l01437" name="l01437"></a><span class="lineno"> 1437</span> </div>
+<div class="line"><a id="l01438" name="l01438"></a><span class="lineno"> 1438</span>  template&lt;class object_t, class format_context_t&gt;</div>
+<div class="line"><a id="l01439" name="l01439"></a><span class="lineno"> 1439</span>  auto format(const object_t&amp; obj, format_context_t&amp; ctx) const {return std::format_to(ctx.out(), &quot;{}&quot;, std::string {obj.to_string(format_value)});}</div>
+<div class="line"><a id="l01440" name="l01440"></a><span class="lineno"> 1440</span> </div>
+<div class="line"><a id="l01441" name="l01441"></a><span class="lineno"> 1441</span>private:</div>
+<div class="line"><a id="l01442" name="l01442"></a><span class="lineno"> 1442</span>  std::string format_value;</div>
+<div class="line"><a id="l01443" name="l01443"></a><span class="lineno"> 1443</span>};</div>
+<div class="line"><a id="l01444" name="l01444"></a><span class="lineno"> 1444</span>#endif</div>
+<div class="line"><a id="l01446" name="l01446"></a><span class="lineno"> 1446</span>*/</div>
 <div class="ttc" id="achrono_8hpp_html"><div class="ttname"><a href="chrono_8hpp.html">chrono.hpp</a></div><div class="ttdoc">Contains std::chrono::days, std::chrono::weeks, std::chrono::months and std::chrono::years duration t...</div></div>
 <div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:63</div></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html"><div class="ttname"><a href="classxtd_1_1date__time.html">xtd::date_time</a></div><div class="ttdoc">Represents an instant in time, typically expressed as a date and time of day.</div><div class="ttdef"><b>Definition</b> date_time.hpp:83</div></div>
@@ -452,7 +454,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Oct 20 2025 23:48:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Oct 22 2025 15:23:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
