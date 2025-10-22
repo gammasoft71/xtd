@@ -125,6 +125,12 @@ namespace xtd {
       /// The following code example shows that xtd::globalization::culture_info::clone also clones the xtd::globalization::date_time_format_info and xtd::globalization::number_format_info instances associated with the xtd::globalization::culture_info.
       /// @include culture_info_date_time_format.cpp
       const xtd::globalization::date_time_format_info& date_time_format() const noexcept;
+      /// @briefGets or sets a xtd::globalization::date_time_format_info that defines the culturally appropriate format of displaying dates and times.
+      /// @return A xtd::globalization::date_time_format_info that defines the culturally appropriate format of displaying dates and times.
+      /// @par Example
+      /// The following code example shows that xtd::globalization::culture_info::clone also clones the xtd::globalization::date_time_format_info and xtd::globalization::number_format_info instances associated with the xtd::globalization::culture_info.
+      /// @include culture_info_date_time_format.cpp
+      xtd::globalization::date_time_format_info& date_time_format() noexcept;
       
       /// @brief Gets the full localized culture name.
       /// @return The full localized culture name in the format languagefull [country/regionfull], where languagefull is the full name of the language and country/regionfull is the full name of the country/region.
