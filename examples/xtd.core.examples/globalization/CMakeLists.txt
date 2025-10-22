@@ -6,6 +6,7 @@ find_package(xtd REQUIRED)
 add_projects(
   culture_info_culture_types
   culture_info_current_culture
+  culture_info_date_time_format
   culture_info_is_neutral_culture
   culture_info_lcid
   culture_info_parent
