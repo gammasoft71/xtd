@@ -161,6 +161,8 @@ Inheritance diagram for xtd::globalization::culture_info:</div>
 <tr class="separator:a8dbb78f0f65e9ef60f5c8f62d6653a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b7336e75221ddcd8731a31ccba8d19d" id="r_a6b7336e75221ddcd8731a31ccba8d19d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1globalization_1_1date__time__format__info.html">xtd::globalization::date_time_format_info</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b7336e75221ddcd8731a31ccba8d19d">date_time_format</a> () const noexcept</td></tr>
 <tr class="separator:a6b7336e75221ddcd8731a31ccba8d19d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f09389d9639c37e0ad897fa3968f771" id="r_a6f09389d9639c37e0ad897fa3968f771"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1globalization_1_1date__time__format__info.html">xtd::globalization::date_time_format_info</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f09389d9639c37e0ad897fa3968f771">date_time_format</a> () noexcept</td></tr>
+<tr class="separator:a6f09389d9639c37e0ad897fa3968f771"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4df94024eb5af9a7d581f29ae366df1b" id="r_a4df94024eb5af9a7d581f29ae366df1b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4df94024eb5af9a7d581f29ae366df1b">display_name</a> () const noexcept</td></tr>
 <tr class="memdesc:a4df94024eb5af9a7d581f29ae366df1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the full localized culture name.  <br /></td></tr>
 <tr class="separator:a4df94024eb5af9a7d581f29ae366df1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -704,7 +706,7 @@ For example, suppose that Arabic (Saudi Arabia) is the current Windows culture a
 </div>
 </div>
 <a id="a6b7336e75221ddcd8731a31ccba8d19d" name="a6b7336e75221ddcd8731a31ccba8d19d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b7336e75221ddcd8731a31ccba8d19d">&#9670;&#160;</a></span>date_time_format()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b7336e75221ddcd8731a31ccba8d19d">&#9670;&#160;</a></span>date_time_format() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -726,7 +728,109 @@ For example, suppose that Arabic (Saudi Arabia) is the current Windows culture a
 </table>
 </div><div class="memdoc">
 <p>@briefGets or sets a <a class="el" href="classxtd_1_1globalization_1_1date__time__format__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::date_time_format_info</a> that defines the culturally appropriate format of displaying dates and times. </p><dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1globalization_1_1date__time__format__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::date_time_format_info</a> that defines the culturally appropriate format of displaying dates and times. </dd></dl>
-<dl class="section user"><dt>Example</dt><dd>The following code example shows that <a class="el" href="#a97006ec7bd5d2d6aa20d893add6ca7b7" title="Creates a copy of the current xtd::globalization::culture_info.">xtd::globalization::culture_info::clone</a> also clones the <a class="el" href="classxtd_1_1globalization_1_1date__time__format__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::date_time_format_info</a> and xtd::globalization::number_format_info instances associated with the <a class="el" href="classxtd_1_1globalization_1_1culture__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::culture_info</a>. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Example</dt><dd>The following code example shows that <a class="el" href="#a97006ec7bd5d2d6aa20d893add6ca7b7" title="Creates a copy of the current xtd::globalization::culture_info.">xtd::globalization::culture_info::clone</a> also clones the <a class="el" href="classxtd_1_1globalization_1_1date__time__format__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::date_time_format_info</a> and xtd::globalization::number_format_info instances associated with the <a class="el" href="classxtd_1_1globalization_1_1culture__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::culture_info</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1globalization.html">xtd::globalization</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// Creates and initializes a xtd::globalization::culture_info.</span></div>
+<div class="line">  <span class="keyword">auto</span> my_ci = <a class="code hl_function" href="#ab6650b7f1523d0e92fc1fd3b31bd37af">culture_info</a> {<span class="stringliteral">&quot;en-US&quot;</span>};</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Copy my_ci and modifies the DTFI and NFI instances associated with the copy.</span></div>
+<div class="line">  <span class="keyword">auto</span> my_ci_copy = my_ci;</div>
+<div class="line">  my_ci_copy.date_time_format().am_designator(<span class="stringliteral">&quot;A.M.&quot;</span>);</div>
+<div class="line">  my_ci_copy.date_time_format().date_separator(<span class="stringliteral">&quot;-&quot;</span>);</div>
+<div class="line">  <span class="comment">//my_ci_copy.number_format().currency_symbol(&quot;USD&quot;);</span></div>
+<div class="line">  <span class="comment">//my_ci_copy.number_format().number_decimal_digits(4);</span></div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Clones my_ci and modifies the DTFI and NFI instances associated with the clone.</span></div>
+<div class="line">  <span class="keyword">auto</span> my_ci_clone = my_ci.clone();</div>
+<div class="line">  my_ci_clone.date_time_format().am_designator(<span class="stringliteral">&quot;a.m.&quot;</span>);</div>
+<div class="line">  my_ci_clone.date_time_format().date_separator(<span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line">  <span class="comment">//my_ci_clone.number_format().currency_symbol(&quot;usd&quot;);</span></div>
+<div class="line">  <span class="comment">//my_ci_clone.number_format().number_decimal_digits(3);</span></div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Displays the properties of the DTFI and NFI instances associated with the original and with the clone.</span></div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;dtfi/nfi PROPERTY           ORIGINAL         LOCAL            MODIFIED COPY    MODIFIED CLONE&quot;</span> );</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;dtfi.am_designator          {,-16} {,-16} {,-16} {,-16}&quot;</span>, <a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {<span class="stringliteral">&quot;en-US&quot;</span>}.<a class="code hl_function" href="#a6b7336e75221ddcd8731a31ccba8d19d">date_time_format</a>().am_designator(), my_ci.date_time_format().am_designator(), my_ci_copy.date_time_format().am_designator(), my_ci_clone.date_time_format().am_designator());</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;dtfi.date_separator         {,-16} {,-16} {,-16} {,-16}&quot;</span>, <a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {<span class="stringliteral">&quot;en-US&quot;</span>}.<a class="code hl_function" href="#a6b7336e75221ddcd8731a31ccba8d19d">date_time_format</a>().date_separator(), my_ci.date_time_format().date_separator(), my_ci_copy.date_time_format().date_separator(), my_ci_clone.date_time_format().date_separator());</div>
+<div class="line">  <span class="comment">//console::write_line(&quot;nfi.currency_symbol         {,-16} {,-16} {,-16} {,-16}&quot;, culture_info {&quot;en-US&quot;}.number_format().currency_symbol(), my_ci.number_format().currency_symbol(), my_ci_copy.number_format().currency_symbol(), my_ci_clone.number_format().currency_symbol());</span></div>
+<div class="line">  <span class="comment">//console::write_line(&quot;nfi.number_decimal_digits   {,-16} {,-16} {,-16} {,-16}&quot;, culture_info {&quot;en-US&quot;}.number_format().number_decimal_digits(), my_ci.number_format().number_decimal_digits(), my_ci_copy.number_format().number_decimal_digits(), my_ci_clone.number_format().number_decimal_digits());</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// dtfi/nfi PROPERTY           ORIGINAL         LOCAL            MODIFIED COPY    MODIFIED CLONE</span></div>
+<div class="line"><span class="comment">// dtfi.am_designator          AM               A.M.             A.M.             a.m.</span></div>
+<div class="line"><span class="comment">// dtfi.date_separator         /                -                -                .</span></div>
+<div class="line"><span class="comment">// nfi.currency_symbol         $                USD              USD              usd</span></div>
+<div class="line"><span class="comment">// nfi.number_decimal_digits   2                4                4                3</span></div>
+<div class="ttc" id="aclassxtd_1_1globalization_1_1culture__info_html_a6b7336e75221ddcd8731a31ccba8d19d"><div class="ttname"><a href="#a6b7336e75221ddcd8731a31ccba8d19d">xtd::globalization::culture_info::date_time_format</a></div><div class="ttdeci">const xtd::globalization::date_time_format_info &amp; date_time_format() const noexcept</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a6f09389d9639c37e0ad897fa3968f771" name="a6f09389d9639c37e0ad897fa3968f771"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f09389d9639c37e0ad897fa3968f771">&#9670;&#160;</a></span>date_time_format() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1globalization_1_1date__time__format__info.html">xtd::globalization::date_time_format_info</a> &amp; xtd::globalization::culture_info::date_time_format </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>@briefGets or sets a <a class="el" href="classxtd_1_1globalization_1_1date__time__format__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::date_time_format_info</a> that defines the culturally appropriate format of displaying dates and times. </p><dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1globalization_1_1date__time__format__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::date_time_format_info</a> that defines the culturally appropriate format of displaying dates and times. </dd></dl>
+<dl class="section user"><dt>Example</dt><dd>The following code example shows that <a class="el" href="#a97006ec7bd5d2d6aa20d893add6ca7b7" title="Creates a copy of the current xtd::globalization::culture_info.">xtd::globalization::culture_info::clone</a> also clones the <a class="el" href="classxtd_1_1globalization_1_1date__time__format__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::date_time_format_info</a> and xtd::globalization::number_format_info instances associated with the <a class="el" href="classxtd_1_1globalization_1_1culture__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::culture_info</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1globalization.html">xtd::globalization</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// Creates and initializes a xtd::globalization::culture_info.</span></div>
+<div class="line">  <span class="keyword">auto</span> my_ci = <a class="code hl_function" href="#ab6650b7f1523d0e92fc1fd3b31bd37af">culture_info</a> {<span class="stringliteral">&quot;en-US&quot;</span>};</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Copy my_ci and modifies the DTFI and NFI instances associated with the copy.</span></div>
+<div class="line">  <span class="keyword">auto</span> my_ci_copy = my_ci;</div>
+<div class="line">  my_ci_copy.date_time_format().am_designator(<span class="stringliteral">&quot;A.M.&quot;</span>);</div>
+<div class="line">  my_ci_copy.date_time_format().date_separator(<span class="stringliteral">&quot;-&quot;</span>);</div>
+<div class="line">  <span class="comment">//my_ci_copy.number_format().currency_symbol(&quot;USD&quot;);</span></div>
+<div class="line">  <span class="comment">//my_ci_copy.number_format().number_decimal_digits(4);</span></div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Clones my_ci and modifies the DTFI and NFI instances associated with the clone.</span></div>
+<div class="line">  <span class="keyword">auto</span> my_ci_clone = my_ci.clone();</div>
+<div class="line">  my_ci_clone.date_time_format().am_designator(<span class="stringliteral">&quot;a.m.&quot;</span>);</div>
+<div class="line">  my_ci_clone.date_time_format().date_separator(<span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line">  <span class="comment">//my_ci_clone.number_format().currency_symbol(&quot;usd&quot;);</span></div>
+<div class="line">  <span class="comment">//my_ci_clone.number_format().number_decimal_digits(3);</span></div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Displays the properties of the DTFI and NFI instances associated with the original and with the clone.</span></div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;dtfi/nfi PROPERTY           ORIGINAL         LOCAL            MODIFIED COPY    MODIFIED CLONE&quot;</span> );</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;dtfi.am_designator          {,-16} {,-16} {,-16} {,-16}&quot;</span>, <a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {<span class="stringliteral">&quot;en-US&quot;</span>}.<a class="code hl_function" href="#a6b7336e75221ddcd8731a31ccba8d19d">date_time_format</a>().am_designator(), my_ci.date_time_format().am_designator(), my_ci_copy.date_time_format().am_designator(), my_ci_clone.date_time_format().am_designator());</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;dtfi.date_separator         {,-16} {,-16} {,-16} {,-16}&quot;</span>, <a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {<span class="stringliteral">&quot;en-US&quot;</span>}.<a class="code hl_function" href="#a6b7336e75221ddcd8731a31ccba8d19d">date_time_format</a>().date_separator(), my_ci.date_time_format().date_separator(), my_ci_copy.date_time_format().date_separator(), my_ci_clone.date_time_format().date_separator());</div>
+<div class="line">  <span class="comment">//console::write_line(&quot;nfi.currency_symbol         {,-16} {,-16} {,-16} {,-16}&quot;, culture_info {&quot;en-US&quot;}.number_format().currency_symbol(), my_ci.number_format().currency_symbol(), my_ci_copy.number_format().currency_symbol(), my_ci_clone.number_format().currency_symbol());</span></div>
+<div class="line">  <span class="comment">//console::write_line(&quot;nfi.number_decimal_digits   {,-16} {,-16} {,-16} {,-16}&quot;, culture_info {&quot;en-US&quot;}.number_format().number_decimal_digits(), my_ci.number_format().number_decimal_digits(), my_ci_copy.number_format().number_decimal_digits(), my_ci_clone.number_format().number_decimal_digits());</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// dtfi/nfi PROPERTY           ORIGINAL         LOCAL            MODIFIED COPY    MODIFIED CLONE</span></div>
+<div class="line"><span class="comment">// dtfi.am_designator          AM               A.M.             A.M.             a.m.</span></div>
+<div class="line"><span class="comment">// dtfi.date_separator         /                -                -                .</span></div>
+<div class="line"><span class="comment">// nfi.currency_symbol         $                USD              USD              usd</span></div>
+<div class="line"><span class="comment">// nfi.number_decimal_digits   2                4                4                3</span></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -1700,7 +1804,44 @@ If the language/respurces for the specific culture are not available in the syst
 
 <p>Creates a copy of the current <a class="el" href="classxtd_1_1globalization_1_1culture__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::culture_info</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>A copy of the current <a class="el" href="classxtd_1_1globalization_1_1culture__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::culture_info</a>. </dd></dl>
-<dl class="section user"><dt>Example</dt><dd>The following code example shows that <a class="el" href="#a97006ec7bd5d2d6aa20d893add6ca7b7" title="Creates a copy of the current xtd::globalization::culture_info.">xtd::globalization::culture_info::clone</a> also clones the <a class="el" href="classxtd_1_1globalization_1_1date__time__format__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::date_time_format_info</a> and xtd::globalization::number_format_info instances associated with the <a class="el" href="classxtd_1_1globalization_1_1culture__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::culture_info</a>. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Example</dt><dd>The following code example shows that <a class="el" href="#a97006ec7bd5d2d6aa20d893add6ca7b7" title="Creates a copy of the current xtd::globalization::culture_info.">xtd::globalization::culture_info::clone</a> also clones the <a class="el" href="classxtd_1_1globalization_1_1date__time__format__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::date_time_format_info</a> and xtd::globalization::number_format_info instances associated with the <a class="el" href="classxtd_1_1globalization_1_1culture__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::culture_info</a>. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1globalization.html">xtd::globalization</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="comment">// Creates and initializes a xtd::globalization::culture_info.</span></div>
+<div class="line">  <span class="keyword">auto</span> my_ci = <a class="code hl_function" href="#ab6650b7f1523d0e92fc1fd3b31bd37af">culture_info</a> {<span class="stringliteral">&quot;en-US&quot;</span>};</div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Copy my_ci and modifies the DTFI and NFI instances associated with the copy.</span></div>
+<div class="line">  <span class="keyword">auto</span> my_ci_copy = my_ci;</div>
+<div class="line">  my_ci_copy.date_time_format().am_designator(<span class="stringliteral">&quot;A.M.&quot;</span>);</div>
+<div class="line">  my_ci_copy.date_time_format().date_separator(<span class="stringliteral">&quot;-&quot;</span>);</div>
+<div class="line">  <span class="comment">//my_ci_copy.number_format().currency_symbol(&quot;USD&quot;);</span></div>
+<div class="line">  <span class="comment">//my_ci_copy.number_format().number_decimal_digits(4);</span></div>
+<div class="line">  </div>
+<div class="line">  <span class="comment">// Clones my_ci and modifies the DTFI and NFI instances associated with the clone.</span></div>
+<div class="line">  <span class="keyword">auto</span> my_ci_clone = my_ci.clone();</div>
+<div class="line">  my_ci_clone.date_time_format().am_designator(<span class="stringliteral">&quot;a.m.&quot;</span>);</div>
+<div class="line">  my_ci_clone.date_time_format().date_separator(<span class="stringliteral">&quot;.&quot;</span>);</div>
+<div class="line">  <span class="comment">//my_ci_clone.number_format().currency_symbol(&quot;usd&quot;);</span></div>
+<div class="line">  <span class="comment">//my_ci_clone.number_format().number_decimal_digits(3);</span></div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Displays the properties of the DTFI and NFI instances associated with the original and with the clone.</span></div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;dtfi/nfi PROPERTY           ORIGINAL         LOCAL            MODIFIED COPY    MODIFIED CLONE&quot;</span> );</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;dtfi.am_designator          {,-16} {,-16} {,-16} {,-16}&quot;</span>, <a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {<span class="stringliteral">&quot;en-US&quot;</span>}.<a class="code hl_function" href="#a6b7336e75221ddcd8731a31ccba8d19d">date_time_format</a>().am_designator(), my_ci.date_time_format().am_designator(), my_ci_copy.date_time_format().am_designator(), my_ci_clone.date_time_format().am_designator());</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;dtfi.date_separator         {,-16} {,-16} {,-16} {,-16}&quot;</span>, <a class="code hl_class" href="classxtd_1_1globalization_1_1culture__info.html">culture_info</a> {<span class="stringliteral">&quot;en-US&quot;</span>}.<a class="code hl_function" href="#a6b7336e75221ddcd8731a31ccba8d19d">date_time_format</a>().date_separator(), my_ci.date_time_format().date_separator(), my_ci_copy.date_time_format().date_separator(), my_ci_clone.date_time_format().date_separator());</div>
+<div class="line">  <span class="comment">//console::write_line(&quot;nfi.currency_symbol         {,-16} {,-16} {,-16} {,-16}&quot;, culture_info {&quot;en-US&quot;}.number_format().currency_symbol(), my_ci.number_format().currency_symbol(), my_ci_copy.number_format().currency_symbol(), my_ci_clone.number_format().currency_symbol());</span></div>
+<div class="line">  <span class="comment">//console::write_line(&quot;nfi.number_decimal_digits   {,-16} {,-16} {,-16} {,-16}&quot;, culture_info {&quot;en-US&quot;}.number_format().number_decimal_digits(), my_ci.number_format().number_decimal_digits(), my_ci_copy.number_format().number_decimal_digits(), my_ci_clone.number_format().number_decimal_digits());</span></div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// dtfi/nfi PROPERTY           ORIGINAL         LOCAL            MODIFIED COPY    MODIFIED CLONE</span></div>
+<div class="line"><span class="comment">// dtfi.am_designator          AM               A.M.             A.M.             a.m.</span></div>
+<div class="line"><span class="comment">// dtfi.date_separator         /                -                -                .</span></div>
+<div class="line"><span class="comment">// nfi.currency_symbol         $                USD              USD              usd</span></div>
+<div class="line"><span class="comment">// nfi.number_decimal_digits   2                4                4                3</span></div>
+</div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The clone is writable even if the original <a class="el" href="classxtd_1_1globalization_1_1culture__info.html" title="Provides information about a specific culture (called a locale for unmanaged code development)....">xtd::globalization::culture_info</a> is read-only. Therefore, the properties of the clone can be modified. </dd></dl>
 
 </div>
@@ -2065,7 +2206,7 @@ If the language/respurces for the specific culture are not available in the syst
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Oct 22 2025 15:23:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Oct 22 2025 21:27:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
