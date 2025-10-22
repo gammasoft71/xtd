@@ -141,43 +141,27 @@ namespace {
   }
   
   static array<string> get_days(const culture_info& culture) {
-    auto days = list<string> {};
-    for (auto index = 1; index <= 7; ++index)
-      days.add(date_time::from_tm(make_tm_time(1970, 1, index + 4, 0, 0, 0)).to_string("%A", culture));
-    return days.to_array();
+    return culture.date_time_format().day_names();
   }
   
   static array<string> get_months(const culture_info& culture) {
-    auto months = list<string> {};
-    for (auto index = 1; index <= 12; ++index)
-      months.add(date_time::from_tm(make_tm_time(1970, index, 1, 0, 0, 0)).to_string("%B", culture));
-    return months.to_array();
+    return culture.date_time_format().month_names();
   }
   
   static array<string> get_short_days(const culture_info& culture) {
-    auto days = list<string> {};
-    for (auto index = 1; index <= 7; ++index)
-      days.add(date_time::from_tm(make_tm_time(1970, 1, index + 4, 0, 0, 0)).to_string("%a", culture));
-    return days.to_array();
+    return culture.date_time_format().abreviated_day_names();
   }
   
   static array<string> get_short_months(const culture_info& culture) {
-    static auto months = list<string> {};
-    if (months.count()) return months.to_array();
-    for (auto index = 1; index <= 12; ++index)
-      months.add(date_time::from_tm(make_tm_time(1970, index, 1, 0, 0, 0)).to_string("%b", culture));
-    return months.to_array();
+    return culture.date_time_format().abreviated_month_names();
   }
   
   static string get_time_suffix(const date_time& dt, const culture_info& culture) {
-    return dt.to_string("%p", culture);
+    return dt.hour() < 12 ? culture.date_time_format().am_designator() : culture.date_time_format().pm_designator();
   }
   
   static array<string> get_time_suffixes(const culture_info& culture) {
-    auto suffixes = list<string> {};
-    for (auto dt : {date_time::from_tm(make_tm_time(1970, 1, 1, 1, 0, 0)), date_time::from_tm(make_tm_time(1970, 1, 1, 13, 0, 0))})
-      suffixes.add(get_time_suffix(dt, culture));
-    return suffixes.to_array();
+    return {culture.date_time_format().am_designator(), culture.date_time_format().pm_designator()};
   }
   
   static size to_string_custom_char_count(const string& format, size& index, size max_char) {
@@ -198,8 +182,9 @@ namespace {
   
   static string to_string_custom_day(const string& format, size& index, uint32 day, const date_time& dt, const culture_info& culture) {
     auto count = to_string_custom_char_count(format, index, 4_z);
-    if (count == 4) return dt.to_string("%A", culture);
-    if (count == 3) return dt.to_string("%a", culture);
+    auto day_of_week = as<int>(dt.day_of_week()) + as<int>(culture.date_time_format().first_day_of_week()) % 6;
+    if (count == 4) return culture.date_time_format().day_names()[day_of_week];
+    if (count == 3) return culture.date_time_format().abreviated_day_names()[day_of_week];
     if (count == 2) return string::format("{:D2}", day);
     return string::format("{:D}", day);
   }
@@ -241,8 +226,8 @@ namespace {
   
   static string to_string_custom_month(const string& format, size& index, uint32 month, const date_time& dt, const culture_info& culture) {
     auto count = to_string_custom_char_count(format, index, 4_z);
-    if (count == 4) return dt.to_string("%B", culture);
-    if (count == 3) return dt.to_string("%b", culture);
+    if (count == 4) return culture.date_time_format().month_names()[month - 1];
+    if (count == 3) return culture.date_time_format().abreviated_month_names()[month - 1];
     if (count == 2) return string::format("{:D2}", month);
     return string::format("{:D}", month);
   }
