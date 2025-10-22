@@ -68,6 +68,10 @@ const date_time_format_info& culture_info::date_time_format() const noexcept {
   return data_->date_time_format;
 }
 
+date_time_format_info& culture_info::date_time_format() noexcept {
+  return data_->date_time_format;
+}
+
 const string& culture_info::display_name() const noexcept {
   return data_->display_name;
 }
