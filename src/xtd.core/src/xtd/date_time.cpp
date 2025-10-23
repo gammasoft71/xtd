@@ -120,26 +120,7 @@ namespace {
     auto [month, day] = get_month_and_day(day_of_year, year);
     return day;
   }
-  
-  static std::tm make_tm_time(int year, int month, int day, int hour, int minute, int second) {
-    std::tm time;
-    time.tm_year = year - 1900;
-    time.tm_mon = month - 1;
-    time.tm_mday = day;
-    time.tm_hour = hour;
-    time.tm_min = minute;
-    time.tm_sec = second;
-    time.tm_wday = 0;
-    time.tm_yday = 0;
-    time.tm_isdst = -1;
-    #if !defined(_WIN32)
-    time.tm_gmtoff = 0;
-    time.tm_zone = nullptr;
-    #endif
     
-    return time;
-  }
-  
   static size to_string_custom_char_count(const string& format, size& index, size max_char) {
     auto character = format[index];
     auto count = 1_z;
@@ -151,7 +132,7 @@ namespace {
   static string to_string_custom_date_separator(const string& format, size& index, const culture_info& culture) {
     auto count = to_string_custom_char_count(format, index, size_object::max_value);
     auto result = string {};
-    for (auto index = 0_z; index < count; ++index)
+    for (auto i = 0_z; i < count; ++i)
       result += culture.date_time_format().date_separator();
     return result;
   }
@@ -224,7 +205,7 @@ namespace {
   static string to_string_custom_time_separator(const string& format, size& index, const culture_info& culture) {
     auto count = to_string_custom_char_count(format, index, size_object::max_value);
     auto result = string {};
-    for (auto index = 0_z; index < count; ++index)
+    for (auto i = 0_z; i < count; ++i)
       result += culture.date_time_format().time_separator();
     return result;
   }
