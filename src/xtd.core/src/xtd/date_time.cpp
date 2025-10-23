@@ -120,7 +120,7 @@ namespace {
     auto [month, day] = get_month_and_day(day_of_year, year);
     return day;
   }
-    
+  
   static size to_string_custom_char_count(const string& format, size& index, size max_char) {
     auto character = format[index];
     auto count = 1_z;
