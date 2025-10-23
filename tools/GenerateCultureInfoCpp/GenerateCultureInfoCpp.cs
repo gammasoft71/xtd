@@ -5,13 +5,13 @@ using System.Text;
 
 class GenerateCultureInfoCpp {
   static void Main() {
+    Console.WriteLine("Generation started");
     if (IsUsingNls()) {
       Trace.WriteLine("ERROR: The current .NET runtime is not using ICU/CLDR for globalization.");
       Environment.Exit(1);
     }
     
     var xtdSourcesPath = Path.Combine(new[] { "..", "..", "..", "..", "..", "src", "xtd.core", "src", "xtd" });
-    Console.WriteLine("Generation started");
     Console.Write("  * Generate Cultures...         ");
     Console.WriteLine(GenerateCultures(Path.Combine(new[] {xtdSourcesPath, "globalization", "culture_info_cultures.cpp"})) ? "[SUCCEED]" : "[FAILED ]");
     Console.Write("  * Generate DateTimeFormats...  ");
