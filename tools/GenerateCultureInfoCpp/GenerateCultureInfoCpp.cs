@@ -36,7 +36,7 @@ class GenerateCultureInfoCpp {
       sb.AppendLine("using namespace xtd::collections::generic;");
       sb.AppendLine("using namespace xtd::globalization;");
       sb.AppendLine();
-      sb.AppendLine("dictionary<string, culture_info> culture_info::cultures_ = {");
+      sb.AppendLine("dictionary<string, culture_info> culture_info::cultures_ = dictionary<string, culture_info> {");
 
       foreach (var cultureInfo in CultureInfo.GetCultures(CultureTypes.AllCultures).OrderBy(culture => culture.Name))
         sb.AppendLine(ToString(cultureInfo, Escape(cultureInfo.Name.ToLower())));
@@ -64,7 +64,7 @@ class GenerateCultureInfoCpp {
       sb.AppendLine("using namespace xtd::collections::generic;");
       sb.AppendLine("using namespace xtd::globalization;");
       sb.AppendLine();
-      sb.AppendLine("dictionary<string, date_time_format_info> date_time_format_info::formats_ = {");
+      sb.AppendLine("dictionary<string, date_time_format_info> date_time_format_info::formats_ = dictionary<string, date_time_format_info> {");
 
       foreach (var cultureInfo in CultureInfo.GetCultures(CultureTypes.AllCultures).OrderBy(culture => culture.Name))
         sb.AppendLine(ToString(cultureInfo.DateTimeFormat, Escape(cultureInfo.Name.ToLower())));
@@ -92,7 +92,7 @@ class GenerateCultureInfoCpp {
   }
 
   static string ToString(CultureInfo cultureInfo, string key) {
-    return $"  {{\"{key}\", {ToString(cultureInfo)}}},";
+    return $"  key_value_pair<string, culture_info>(\"{key}\", {ToString(cultureInfo)}),";
   }
 
   static string ToString(CultureInfo cultureInfo) {
@@ -120,7 +120,7 @@ class GenerateCultureInfoCpp {
   }
   
   static string ToString(DateTimeFormatInfo dateTimeFormat, string key) {
-    return $"  {{\"{key}\", {ToString(dateTimeFormat)}}},";
+    return $"  key_value_pair<string, date_time_format_info>(\"{key}\", {ToString(dateTimeFormat)}),";
   }
   
   static string ToString(DateTimeFormatInfo dateTimeFormat) {
