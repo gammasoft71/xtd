@@ -10,10 +10,10 @@ public:
     auto culture_names = array {"en-US", "en-GB", "fr-FR", "de-DE", "ru-RU"};
     
     for (auto culture_name : culture_names) {
-      culture_info::current_culture(culture_info {culture_name});
-      console::write_line("{}:", culture_name);
-      console::write_line("   Local date and time: {:f}, {}", local_date, local_date.kind());
-      console::write_line("   UTC date and time: {:f}, {}\n", utc_date, utc_date.kind());
+      auto culture = culture_info {culture_name};
+      console::write_line("{}:", culture.native_name());
+      console::write_line("   Local date and time: {}, {}", local_date.to_string(culture), local_date.kind());
+      console::write_line("   UTC date and time: {}, {}\n", utc_date.to_string(culture), utc_date.kind());
     }
   }
 };
@@ -22,22 +22,22 @@ startup_(program::main);
 
 // This code can produce the following output :
 //
-// en-US:
-//    Local date and time: Tuesday, October 14, 2025 10:04, local
-//    UTC date and time: Tuesday, October 14, 2025 08:04, utc
+// English (United States):
+//    Local date and time: 10/23/2025 0:59:10 AM, local
+//    UTC date and time: 10/22/2025 10:59:10 PM, utc
 //
-// en-GB:
-//    Local date and time: Tuesday, October 14, 2025 10:04, local
-//    UTC date and time: Tuesday, October 14, 2025 08:04, utc
+// English (United Kingdom):
+//    Local date and time: 23/10/2025 00:59:10, local
+//    UTC date and time: 22/10/2025 22:59:10, utc
 //
-// fr-FR:
-//    Local date and time: mardi, octobre 14, 2025 10:04, local
-//    UTC date and time: mardi, octobre 14, 2025 08:04, utc
+// français (France):
+//    Local date and time: 23/10/2025 00:59:10, local
+//    UTC date and time: 22/10/2025 22:59:10, utc
 //
-// de-DE:
-//    Local date and time: Dienstag, Oktober 14, 2025 10:04, local
-//    UTC date and time: Dienstag, Oktober 14, 2025 08:04, utc
+// Deutsch (Deutschland):
+//    Local date and time: 23.10.2025 00:59:10, local
+//    UTC date and time: 22.10.2025 22:59:10, utc
 //
-// ru-RU:
-//    Local date and time: вторник, октября 14, 2025 10:04, local
-//    UTC date and time: вторник, октября 14, 2025 08:04, utc
+// русский (Россия):
+//    Local date and time: 23.10.2025 00:59:10, local
+//    UTC date and time: 22.10.2025 22:59:10, utc
