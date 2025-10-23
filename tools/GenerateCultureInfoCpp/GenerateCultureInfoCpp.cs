@@ -12,12 +12,12 @@ class GenerateCultureInfoCpp {
     
     var xtdSourcesPath = Path.Combine(new[] { "..", "..", "..", "..", "..", "src", "xtd.core", "src", "xtd" });
     Console.WriteLine("Generation started");
-    Console.Write("  * Generate Cultures...  ");
-    Console.WriteLine(GenerateCultures(Path.Combine(new[] { xtdSourcesPath, "globalization", "culture_info_cultures.cpp" })) ? "[SUCCEED]" : "[FAILED ]");
+    Console.Write("  * Generate Cultures...         ");
+    Console.WriteLine(GenerateCultures(Path.Combine(new[] {xtdSourcesPath, "globalization", "culture_info_cultures.cpp"})) ? "[SUCCEED]" : "[FAILED ]");
     Console.Write("  * Generate DateTimeFormats...  ");
-    Console.WriteLine(GenerateDateTimeFormats(Path.Combine(new[] { xtdSourcesPath, "globalization", "date_time_format_info_formats.cpp" })) ? "[SUCCEED]" : "[FAILED ]");
-    Console.Write("  * Generate TimeZones... ");
-    Console.WriteLine(GenerateTimeZones(Path.Combine(new[] { xtdSourcesPath, "time_zone_info_system_time_zones.cpp" })) ? "[SUCCEED]" : "[FAILED ]");
+    Console.WriteLine(GenerateDateTimeFormats(Path.Combine(new[] {xtdSourcesPath, "globalization", "date_time_format_info_formats.cpp"})) ? "[SUCCEED]" : "[FAILED ]");
+    Console.Write("  * Generate TimeZones...        ");
+    Console.WriteLine(GenerateTimeZones(Path.Combine(new[] {xtdSourcesPath, "time_zone_info_system_time_zones.cpp"})) ? "[SUCCEED]" : "[FAILED ]");
     Console.WriteLine("Generation ended");
     Environment.Exit(Environment.ExitCode);
   }
@@ -38,7 +38,7 @@ class GenerateCultureInfoCpp {
       sb.AppendLine("dictionary<string, culture_info> culture_info::cultures_ = dictionary<string, culture_info> {");
 
       foreach (var cultureInfo in CultureInfo.GetCultures(CultureTypes.AllCultures).OrderBy(culture => culture.Name))
-        sb.AppendLine(ToString(cultureInfo, Escape(cultureInfo.Name.ToLower())));
+        sb.AppendLine(ToString(cultureInfo, ToString(cultureInfo.Name.ToLower())));
       sb.AppendLine("};");
       File.WriteAllText(file_path, sb.ToString(), Encoding.UTF8);
       return true;
@@ -66,24 +66,22 @@ class GenerateCultureInfoCpp {
       sb.AppendLine("dictionary<string, date_time_format_info> date_time_format_info::formats_ = dictionary<string, date_time_format_info> {");
 
       foreach (var cultureInfo in CultureInfo.GetCultures(CultureTypes.AllCultures).OrderBy(culture => culture.Name))
-        sb.AppendLine(ToString(cultureInfo.DateTimeFormat, Escape(cultureInfo.Name.ToLower())));
+        sb.AppendLine(ToString(cultureInfo.DateTimeFormat, ToString(cultureInfo.Name.ToLower())));
       sb.AppendLine("};");
       File.WriteAllText(file_path, sb.ToString(), Encoding.UTF8);
       return true;
     } catch (Exception e) {
       Trace.WriteLine("ERROR: " + e.Message);
-      Environment.ExitCode = 2;
+      Environment.ExitCode = 3;
       return false;
     }
   }
 
   static bool GenerateTimeZones(string file_path) {
     Trace.WriteLine("ERROR: Not yet implemented.");
-      Environment.ExitCode = 3;
+    Environment.ExitCode = 4;
     return false;
   }
-
-  static string Escape(string text) => text.Replace("\\", "\\\\").Replace("\"", "\\\"");
 
   static bool IsUsingNls() {
     var property = typeof(CultureInfo).Assembly.GetType("System.Globalization.GlobalizationMode")?.GetProperty("UseNls", BindingFlags.Static | BindingFlags.NonPublic);
@@ -91,7 +89,7 @@ class GenerateCultureInfoCpp {
   }
 
   static string ToString(CultureInfo cultureInfo, string key) {
-    return $"  key_value_pair<string, culture_info>(\"{key}\", {ToString(cultureInfo)}),";
+    return $"  key_value_pair<string, culture_info>({key}, {ToString(cultureInfo)}),";
   }
 
   static string ToString(CultureInfo cultureInfo) {
@@ -119,7 +117,7 @@ class GenerateCultureInfoCpp {
   }
   
   static string ToString(DateTimeFormatInfo dateTimeFormat, string key) {
-    return $"  key_value_pair<string, date_time_format_info>(\"{key}\", {ToString(dateTimeFormat)}),";
+    return $"  key_value_pair<string, date_time_format_info>({key}, {ToString(dateTimeFormat)}),";
   }
   
   static string ToString(DateTimeFormatInfo dateTimeFormat) {
@@ -150,7 +148,7 @@ class GenerateCultureInfoCpp {
   }
    
   static string ToString(NumberFormatInfo numberFormat, string key) {
-    return $"  key_value_pair<string, number_format_info>(\"{key}\", {ToString(numberFormat)}),";
+    return $"  key_value_pair<string, number_format_info>({key}, {ToString(numberFormat)}),";
   }
 
   static string ToString(NumberFormatInfo numberFormat) {
@@ -172,10 +170,10 @@ class GenerateCultureInfoCpp {
   }
   
   static string ToString(string value) {
-    return $"\"{Escape(value)}\"";
+    return $"\"{value.Replace("\\", "\\\\").Replace("\"", "\\\"")}\"";
   }
   
   static string ToString(string[] values) {
-    return $"array<string> {{{string.Join(", ", values.Select(v => ToString(v)))}}}";
+    return $"array<string> {{{string.Join(", ", values.Select(value => ToString(value)))}}}";
   }
 }
