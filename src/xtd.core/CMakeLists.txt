@@ -1355,6 +1355,7 @@ add_sources(
   "src/xtd/globalization/culture_info_cultures.cpp"
   "src/xtd/globalization/culture_not_found_exception.cpp"
   "src/xtd/globalization/date_time_format_info.cpp"
+  "src/xtd/globalization/date_time_format_info_formats.cpp"
   "src/xtd/globalization/translator.cpp"
   "src/xtd/helpers/throw_helper.cpp"
   "src/xtd/internal/__format_stringer.cpp"

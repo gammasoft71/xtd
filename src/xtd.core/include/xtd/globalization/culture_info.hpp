@@ -337,7 +337,7 @@ namespace xtd {
       /// @endcond
       
     private:
-      culture_info(xtd::globalization::culture_types culture_types, xtd::globalization::date_time_format_info&& date_time_format_info, string&& display_name, string&& english_name, xtd::size keyboard_layout_id, xtd::size lcid, string&& name, string&& native_name, string&& parent_name, string&& three_letter_iso_language_name, string&& three_letter_windows_language_name, string&& two_letter_iso_language_name);
+      culture_info(xtd::globalization::culture_types culture_types, string&& display_name, string&& english_name, xtd::size keyboard_layout_id, xtd::size lcid, string&& name, string&& native_name, string&& parent_name, string&& three_letter_iso_language_name, string&& three_letter_windows_language_name, string&& two_letter_iso_language_name);
       
       void fill_from_name(const xtd::string& name);
       static bool is_system_locale_available(const xtd::string& name) noexcept;

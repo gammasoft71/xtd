@@ -4,6 +4,7 @@
 #pragma once
 
 #include "../core_export.hpp"
+#include "../collections/generic/dictionary.hpp"
 #include "../object.hpp"
 #include "../string.hpp"
 #include <locale>
@@ -159,6 +160,7 @@ namespace xtd {
       
       struct data;
       ptr<data> data_;
+      static xtd::collections::generic::dictionary<xtd::string, date_time_format_info> formats_;
     };
   }
 }
