@@ -30,7 +30,6 @@ class GenerateCultureInfoCpp {
       sb.AppendLine("// Changes to this file may cause incorrect behavior and will be lost if the code is regenerated.");
       sb.AppendLine();
       sb.AppendLine("#include \"../../../include/xtd/globalization/culture_info.hpp\"");
-      sb.AppendLine("#include \"../../../include/xtd/day_of_week.hpp\"");
       sb.AppendLine();
       sb.AppendLine("using namespace xtd;");
       sb.AppendLine("using namespace xtd::collections::generic;");
@@ -97,17 +96,17 @@ class GenerateCultureInfoCpp {
 
   static string ToString(CultureInfo cultureInfo) {
     var cultureType = ToString(cultureInfo.CultureTypes & CultureTypes.AllCultures);
-    var displayName = Escape(cultureInfo.DisplayName);
-    var englishName = Escape(cultureInfo.EnglishName);
+    var displayName = ToString(cultureInfo.DisplayName);
+    var englishName = ToString(cultureInfo.EnglishName);
     var keyboardLayoutId = cultureInfo.KeyboardLayoutId;
     var lcid = cultureInfo.LCID;
-    var name = Escape(cultureInfo.Name);
-    var nativeName = Escape(cultureInfo.NativeName);
-    var parentName = Escape(cultureInfo.Parent.Name);
-    var threeLetterISOLanguageName = Escape(cultureInfo.ThreeLetterISOLanguageName);
-    var threeLetterWindowsLanguageName = Escape(cultureInfo.ThreeLetterWindowsLanguageName);
-    var twoLetterISOLanguageName = Escape(cultureInfo.TwoLetterISOLanguageName);
-    return $"culture_info({cultureType}, \"{displayName}\", \"{englishName}\", {keyboardLayoutId}, {lcid}, \"{name}\", \"{nativeName}\", \"{parentName}\", \"{threeLetterISOLanguageName}\", \"{threeLetterWindowsLanguageName}\", \"{twoLetterISOLanguageName}\")";
+    var name = ToString(cultureInfo.Name);
+    var nativeName = ToString(cultureInfo.NativeName);
+    var parentName = ToString(cultureInfo.Parent.Name);
+    var threeLetterISOLanguageName = ToString(cultureInfo.ThreeLetterISOLanguageName);
+    var threeLetterWindowsLanguageName = ToString(cultureInfo.ThreeLetterWindowsLanguageName);
+    var twoLetterISOLanguageName = ToString(cultureInfo.TwoLetterISOLanguageName);
+    return $"culture_info({cultureType}, {displayName}, {englishName}, {keyboardLayoutId}, {lcid}, {name}, {nativeName}, {parentName}, {threeLetterISOLanguageName}, {threeLetterWindowsLanguageName}, {twoLetterISOLanguageName})";
   }
 
   static string ToString(CultureTypes type) {
@@ -127,39 +126,56 @@ class GenerateCultureInfoCpp {
     var abbreviatedDayNames = ToString(dateTimeFormat.AbbreviatedDayNames);
     var abbreviatedMonthGenitiveNames = ToString(dateTimeFormat.AbbreviatedMonthGenitiveNames);
     var abbreviatedMonthNames = ToString(dateTimeFormat.AbbreviatedMonthNames);
-    var amDesignator = Escape(dateTimeFormat.AMDesignator);
-    var dateSeparator = Escape(dateTimeFormat.DateSeparator);
+    var amDesignator = ToString(dateTimeFormat.AMDesignator);
+    var dateSeparator = ToString(dateTimeFormat.DateSeparator);
     var dayNames = ToString(dateTimeFormat.DayNames);
     var firstDayOfWeek = ToString(dateTimeFormat.FirstDayOfWeek);
-    var fullDateTimePattern = Escape(dateTimeFormat.FullDateTimePattern);
-    var longDatePattern = Escape(dateTimeFormat.LongDatePattern);
-    var longTimePattern = Escape(dateTimeFormat.LongTimePattern);
-    var monthDayPattern = Escape(dateTimeFormat.MonthDayPattern);
+    var fullDateTimePattern = ToString(dateTimeFormat.FullDateTimePattern);
+    var longDatePattern = ToString(dateTimeFormat.LongDatePattern);
+    var longTimePattern = ToString(dateTimeFormat.LongTimePattern);
+    var monthDayPattern = ToString(dateTimeFormat.MonthDayPattern);
     var monthGenitiveNames = ToString(dateTimeFormat.MonthGenitiveNames);
     var monthNames = ToString(dateTimeFormat.MonthNames);
-    var nativeCalendarName = Escape(dateTimeFormat.NativeCalendarName);
-    var pmDesignator = Escape(dateTimeFormat.PMDesignator);
-    var rfc1123Pattern = Escape(dateTimeFormat.RFC1123Pattern);
-    var shortatePattern = Escape(dateTimeFormat.ShortDatePattern);
-    var shortTimePattern = Escape(dateTimeFormat.ShortTimePattern);
+    var nativeCalendarName = ToString(dateTimeFormat.NativeCalendarName);
+    var pmDesignator = ToString(dateTimeFormat.PMDesignator);
+    var rfc1123Pattern = ToString(dateTimeFormat.RFC1123Pattern);
+    var shortatePattern = ToString(dateTimeFormat.ShortDatePattern);
+    var shortTimePattern = ToString(dateTimeFormat.ShortTimePattern);
     var shortestDayNames = ToString(dateTimeFormat.ShortestDayNames);
-    var sortableDateTimePattern = Escape(dateTimeFormat.SortableDateTimePattern);
-    var timeSeparator = Escape(dateTimeFormat.TimeSeparator);
-    var universalSortableDateTimePattern = Escape(dateTimeFormat.UniversalSortableDateTimePattern);
-    var yearMonthPattern = Escape(dateTimeFormat.YearMonthPattern);
-    return $"date_time_format_info({abbreviatedDayNames}, {abbreviatedMonthGenitiveNames}, {abbreviatedMonthNames}, \"{amDesignator}\", \"{dateSeparator}\", {dayNames}, {firstDayOfWeek}, \"{fullDateTimePattern}\", \"{longDatePattern}\", \"{longTimePattern}\", \"{monthDayPattern}\", {monthGenitiveNames}, {monthNames}, \"{nativeCalendarName}\", \"{pmDesignator}\", \"{rfc1123Pattern}\", \"{shortatePattern}\", \"{shortTimePattern}\", {shortestDayNames}, \"{sortableDateTimePattern}\", \"{timeSeparator}\", \"{universalSortableDateTimePattern}\", \"{yearMonthPattern}\")";
+    var sortableDateTimePattern = ToString(dateTimeFormat.SortableDateTimePattern);
+    var timeSeparator = ToString(dateTimeFormat.TimeSeparator);
+    var universalSortableDateTimePattern = ToString(dateTimeFormat.UniversalSortableDateTimePattern);
+    var yearMonthPattern = ToString(dateTimeFormat.YearMonthPattern);
+    return $"date_time_format_info({abbreviatedDayNames}, {abbreviatedMonthGenitiveNames}, {abbreviatedMonthNames}, {amDesignator}, {dateSeparator}, {dayNames}, {firstDayOfWeek}, {fullDateTimePattern}, {longDatePattern}, {longTimePattern}, {monthDayPattern}, {monthGenitiveNames}, {monthNames}, {nativeCalendarName}, {pmDesignator}, {rfc1123Pattern}, {shortatePattern}, {shortTimePattern}, {shortestDayNames}, {sortableDateTimePattern}, {timeSeparator}, {universalSortableDateTimePattern}, {yearMonthPattern})";
+  }
+   
+  static string ToString(NumberFormatInfo numberFormat, string key) {
+    return $"  key_value_pair<string, number_format_info>(\"{key}\", {ToString(numberFormat)}),";
+  }
+
+  static string ToString(NumberFormatInfo numberFormat) {
+    var currencyDecimalDigits = ToString(numberFormat.CurrencyDecimalDigits);
+    var currencyDecimalSeparator = ToString(numberFormat.CurrencyDecimalSeparator);
+    return $"date_time_format_info({currencyDecimalDigits}, {currencyDecimalSeparator})";
   }
 
   static string ToString(DayOfWeek dayOfWeek) {
     return $"xtd::day_of_week::{dayOfWeek.ToString().ToLower()}";
   }
   
+  static string ToString(int value) {
+    return $"{value}";
+  }
+  
+  static string ToString(int[] values) {
+    return $"array<string> {{{string.Join(", ", values)}}}";
+  }
+  
+  static string ToString(string value) {
+    return $"\"{Escape(value)}\"";
+  }
+  
   static string ToString(string[] values) {
-    var result = "array<string> {";
-    foreach (var value in values)
-      result += $"\"{Escape(value)}\", ";
-    if (result.EndsWith(", ")) result = result.Substring(0, result.Length - 2);
-    result += "}";
-    return result;
+    return $"array<string> {{{string.Join(", ", values.Select(v => ToString(v)))}}}";
   }
 }
