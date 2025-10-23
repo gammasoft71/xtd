@@ -3,7 +3,6 @@
 // Changes to this file may cause incorrect behavior and will be lost if the code is regenerated.
 
 #include "../../../include/xtd/globalization/culture_info.hpp"
-#include "../../../include/xtd/day_of_week.hpp"
 
 using namespace xtd;
 using namespace xtd::collections::generic;
