@@ -107,7 +107,7 @@ class GenerateCultureInfoCpp {
     var threeLetterISOLanguageName = Escape(cultureInfo.ThreeLetterISOLanguageName);
     var threeLetterWindowsLanguageName = Escape(cultureInfo.ThreeLetterWindowsLanguageName);
     var twoLetterISOLanguageName = Escape(cultureInfo.TwoLetterISOLanguageName);
-    return $"{{{cultureType}, \"{displayName}\", \"{englishName}\", {keyboardLayoutId}, {lcid}, \"{name}\", \"{nativeName}\", \"{parentName}\", \"{threeLetterISOLanguageName}\", \"{threeLetterWindowsLanguageName}\", \"{twoLetterISOLanguageName}\"}}";
+    return $"culture_info({cultureType}, \"{displayName}\", \"{englishName}\", {keyboardLayoutId}, {lcid}, \"{name}\", \"{nativeName}\", \"{parentName}\", \"{threeLetterISOLanguageName}\", \"{threeLetterWindowsLanguageName}\", \"{twoLetterISOLanguageName}\")";
   }
 
   static string ToString(CultureTypes type) {
@@ -147,7 +147,7 @@ class GenerateCultureInfoCpp {
     var timeSeparator = Escape(dateTimeFormat.TimeSeparator);
     var universalSortableDateTimePattern = Escape(dateTimeFormat.UniversalSortableDateTimePattern);
     var yearMonthPattern = Escape(dateTimeFormat.YearMonthPattern);
-    return $"{{{abbreviatedDayNames}, {abbreviatedMonthGenitiveNames}, {abbreviatedMonthNames}, \"{amDesignator}\", \"{dateSeparator}\", {dayNames}, {firstDayOfWeek}, \"{fullDateTimePattern}\", \"{longDatePattern}\", \"{longTimePattern}\", \"{monthDayPattern}\", {monthGenitiveNames}, {monthNames}, \"{nativeCalendarName}\", \"{pmDesignator}\", \"{rfc1123Pattern}\", \"{shortatePattern}\", \"{shortTimePattern}\", {shortestDayNames}, \"{sortableDateTimePattern}\", \"{timeSeparator}\", \"{universalSortableDateTimePattern}\", \"{yearMonthPattern}\"}}";
+    return $"date_time_format_info({abbreviatedDayNames}, {abbreviatedMonthGenitiveNames}, {abbreviatedMonthNames}, \"{amDesignator}\", \"{dateSeparator}\", {dayNames}, {firstDayOfWeek}, \"{fullDateTimePattern}\", \"{longDatePattern}\", \"{longTimePattern}\", \"{monthDayPattern}\", {monthGenitiveNames}, {monthNames}, \"{nativeCalendarName}\", \"{pmDesignator}\", \"{rfc1123Pattern}\", \"{shortatePattern}\", \"{shortTimePattern}\", {shortestDayNames}, \"{sortableDateTimePattern}\", \"{timeSeparator}\", \"{universalSortableDateTimePattern}\", \"{yearMonthPattern}\")";
   }
 
   static string ToString(DayOfWeek dayOfWeek) {
@@ -155,7 +155,7 @@ class GenerateCultureInfoCpp {
   }
   
   static string ToString(string[] values) {
-    var result = "{";
+    var result = "array<string> {";
     foreach (var value in values)
       result += $"\"{Escape(value)}\", ";
     if (result.EndsWith(", ")) result = result.Substring(0, result.Length - 2);
