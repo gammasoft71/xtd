@@ -32,13 +32,15 @@ class GenerateCultureInfoCpp {
       sb.AppendLine("// Changes to this file may cause incorrect behavior and will be lost if the code is regenerated.");
       sb.AppendLine();
       sb.AppendLine("#include \"../../../include/xtd/globalization/culture_info.hpp\"");
+      sb.AppendLine("#include \"../../../include/xtd/call_once.hpp\"");
       sb.AppendLine();
       sb.AppendLine("using namespace xtd;");
       sb.AppendLine("using namespace xtd::collections::generic;");
       sb.AppendLine("using namespace xtd::globalization;");
       sb.AppendLine();
       sb.AppendLine("dictionary<string, culture_info>& culture_info::cultures() {");
-      sb.AppendLine("  static auto cultures = dictionary<string, culture_info> {");
+      sb.AppendLine("  static auto cultures = dictionary<string, culture_info> {};");
+      sb.AppendLine("  call_once_ {");
       foreach (var cultureInfo in CultureInfo.GetCultures(CultureTypes.AllCultures).OrderBy(culture => culture.Name))
         sb.AppendLine(ToString(cultureInfo, ToString(cultureInfo.Name.ToLower())));
       sb.AppendLine("  };");
@@ -62,13 +64,15 @@ class GenerateCultureInfoCpp {
       sb.AppendLine();
       sb.AppendLine("#include \"../../../include/xtd/globalization/date_time_format_info.hpp\"");
       sb.AppendLine("#include \"../../../include/xtd/day_of_week.hpp\"");
+      sb.AppendLine("#include \"../../../include/xtd/call_once.hpp\"");
       sb.AppendLine();
       sb.AppendLine("using namespace xtd;");
       sb.AppendLine("using namespace xtd::collections::generic;");
       sb.AppendLine("using namespace xtd::globalization;");
       sb.AppendLine();
       sb.AppendLine("dictionary<string, date_time_format_info>& date_time_format_info::formats() {");
-      sb.AppendLine("  static auto formats = dictionary<string, date_time_format_info> {");
+      sb.AppendLine("  static auto formats = dictionary<string, date_time_format_info> {};");
+      sb.AppendLine("  call_once_ {");
       foreach (var cultureInfo in CultureInfo.GetCultures(CultureTypes.AllCultures).OrderBy(culture => culture.Name))
         sb.AppendLine(ToString(cultureInfo.DateTimeFormat, ToString(cultureInfo.Name.ToLower())));
       sb.AppendLine("  };");
@@ -91,14 +95,15 @@ class GenerateCultureInfoCpp {
       sb.AppendLine("// Changes to this file may cause incorrect behavior and will be lost if the code is regenerated.");
       sb.AppendLine();
       sb.AppendLine("#include \"../../../include/xtd/globalization/number_format_info.hpp\"");
-      sb.AppendLine("#include \"../../../include/xtd/day_of_week.hpp\"");
+      sb.AppendLine("#include \"../../../include/xtd/call_once.hpp\"");
       sb.AppendLine();
       sb.AppendLine("using namespace xtd;");
       sb.AppendLine("using namespace xtd::collections::generic;");
       sb.AppendLine("using namespace xtd::globalization;");
       sb.AppendLine();
       sb.AppendLine("dictionary<string, number_format_info>& number_format_info::formats() {");
-      sb.AppendLine("  static auto formats = dictionary<string, number_format_info> {");
+      sb.AppendLine("  static auto formats = dictionary<string, number_format_info> {};");
+      sb.AppendLine("  call_once_ {");
       foreach (var cultureInfo in CultureInfo.GetCultures(CultureTypes.AllCultures).OrderBy(culture => culture.Name))
         sb.AppendLine(ToString(cultureInfo.NumberFormat, ToString(cultureInfo.Name.ToLower())));
       sb.AppendLine("  };");
@@ -125,7 +130,7 @@ class GenerateCultureInfoCpp {
   }
 
   static string ToString(CultureInfo cultureInfo, string key) {
-    return $"    key_value_pair<string, culture_info>({key}, {ToString(cultureInfo)}),";
+    return $"    cultures[{key}] = {ToString(cultureInfo)};";
   }
 
   static string ToString(CultureInfo cultureInfo) {
@@ -142,7 +147,7 @@ class GenerateCultureInfoCpp {
   }
   
   static string ToString(DateTimeFormatInfo dateTimeFormat, string key) {
-    return $"    key_value_pair<string, date_time_format_info>({key}, {ToString(dateTimeFormat)}),";
+    return $"    formats[{key}] = {ToString(dateTimeFormat)};";
   }
   
   static string ToString(DateTimeFormatInfo dateTimeFormat) {
@@ -150,7 +155,7 @@ class GenerateCultureInfoCpp {
   }
    
   static string ToString(NumberFormatInfo numberFormat, string key) {
-    return $"    key_value_pair<string, number_format_info>({key}, {ToString(numberFormat)}),";
+    return $"    formats[{key}] = {ToString(numberFormat)};";
   }
 
   static string ToString(NumberFormatInfo numberFormat) {
