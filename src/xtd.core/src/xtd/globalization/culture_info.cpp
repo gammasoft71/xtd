@@ -15,7 +15,7 @@ optional<culture_info> culture_info::current_culture_;
 
 struct culture_info::data {
   xtd::globalization::culture_types culture_types = xtd::globalization::culture_types::specific_cultures;
-  date_time_format_info date_time_format;
+  optional<date_time_format_info> date_time_format;
   xtd::string display_name = "Invariant Language (Invariant Country)";
   xtd::string english_name = "Invariant Language (Invariant Country)";
   bool is_read_only = false;
@@ -65,11 +65,13 @@ globalization::culture_types culture_info::culture_types() const noexcept {
 }
 
 const date_time_format_info& culture_info::date_time_format() const noexcept {
-  return data_->date_time_format;
+  if (data_->date_time_format == nullopt) data_->date_time_format = date_time_format_info::formats_[data_->name.to_lower()];
+  return data_->date_time_format.value();
 }
 
 date_time_format_info& culture_info::date_time_format() noexcept {
-  return data_->date_time_format;
+  if (data_->date_time_format == nullopt) data_->date_time_format = date_time_format_info::formats_[data_->name.to_lower()];
+  return data_->date_time_format.value();
 }
 
 const string& culture_info::display_name() const noexcept {
@@ -204,9 +206,8 @@ culture_info::operator const std::locale& () const noexcept {
   return data_->locale;
 }
 
-culture_info::culture_info(globalization::culture_types culture_types, date_time_format_info&& date_time_format, string&& display_name, string&& english_name, size keyboard_layout_id, size lcid, string&& name, string&& native_name, string&& parent_name, string&& three_letter_iso_language_name, string&& three_letter_windows_language_name, string&& two_letter_iso_language_name) : culture_info() {
+culture_info::culture_info(globalization::culture_types culture_types, string&& display_name, string&& english_name, size keyboard_layout_id, size lcid, string&& name, string&& native_name, string&& parent_name, string&& three_letter_iso_language_name, string&& three_letter_windows_language_name, string&& two_letter_iso_language_name) : culture_info() {
   data_->culture_types = culture_types;
-  data_->date_time_format = std::move(date_time_format);
   data_->display_name = std::move(display_name);
   data_->english_name = std::move(english_name);
   data_->keyboard_layout_id = keyboard_layout_id;
