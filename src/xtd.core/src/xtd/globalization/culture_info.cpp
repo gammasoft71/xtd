@@ -42,7 +42,7 @@ culture_info::culture_info(size culture) : culture_info {culture, false} {
 }
 
 culture_info::culture_info(size culture, bool use_user_override) : culture_info() {
-  for (const auto& [n, c] : cultures_) {
+  for (const auto& [n, c] : cultures()) {
     //if (string::equals(culture.data_->name, name, string_comparison::ordinal_ignore_case))
     if (c.data_->lcid != culture) continue;
     *data_ = *c.data_;
@@ -65,12 +65,12 @@ globalization::culture_types culture_info::culture_types() const noexcept {
 }
 
 const date_time_format_info& culture_info::date_time_format() const noexcept {
-  if (data_->date_time_format == nullopt) data_->date_time_format = date_time_format_info::formats_[data_->name.to_lower()];
+  if (data_->date_time_format == nullopt) data_->date_time_format = date_time_format_info::formats()[data_->name.to_lower()];
   return data_->date_time_format.value();
 }
 
 date_time_format_info& culture_info::date_time_format() noexcept {
-  if (data_->date_time_format == nullopt) data_->date_time_format = date_time_format_info::formats_[data_->name.to_lower()];
+  if (data_->date_time_format == nullopt) data_->date_time_format = date_time_format_info::formats()[data_->name.to_lower()];
   return data_->date_time_format.value();
 }
 
@@ -148,7 +148,7 @@ void culture_info::current_culture(const culture_info& value) {
 }
 
 culture_info culture_info::invariant_culture() noexcept {
-  return cultures_[""];
+  return cultures()[""];
 }
 
 culture_info culture_info::clone() const noexcept {
@@ -175,7 +175,7 @@ xtd::string culture_info::to_string() const noexcept {
 
 array<culture_info> culture_info::get_cultures(xtd::globalization::culture_types types) {
   auto result = list<culture_info> {};
-  for (const auto& [name, culture] : cultures_)
+  for (const auto& [name, culture] : cultures())
     if (enum_object<globalization::culture_types>(culture.culture_types()).has_flag(types) || types == xtd::globalization::culture_types::all_cultures)
       result.add(culture.clone());
   result.sort({[](auto v1, auto v2) {return v1.name() < v2.name() ? -1 : v1.name() > v2.name() ? 1 : 0;}});
@@ -223,8 +223,8 @@ culture_info::culture_info(globalization::culture_types culture_types, string&& 
 
 void culture_info::fill_from_name(const string& name) {
   auto lower_name = name.to_lower();
-  if (!cultures_.contains_key(lower_name)) throw_helper::throws(exception_case::culture_not_found);
-  *data_ = *cultures_[lower_name].data_;
+  if (!cultures().contains_key(lower_name)) throw_helper::throws(exception_case::culture_not_found);
+  *data_ = *cultures()[lower_name].data_;
 }
 
 bool culture_info::is_system_locale_available(const string& name) noexcept {

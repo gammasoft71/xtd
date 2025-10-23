@@ -340,6 +340,7 @@ namespace xtd {
       culture_info(xtd::globalization::culture_types culture_types, string&& display_name, string&& english_name, xtd::size keyboard_layout_id, xtd::size lcid, string&& name, string&& native_name, string&& parent_name, string&& three_letter_iso_language_name, string&& three_letter_windows_language_name, string&& two_letter_iso_language_name);
       
       void fill_from_name(const xtd::string& name);
+      static xtd::collections::generic::dictionary<xtd::string, culture_info>& cultures();
       static bool is_system_locale_available(const xtd::string& name) noexcept;
       
       static xtd::string to_cldr_name(const xtd::string& name);
@@ -347,7 +348,6 @@ namespace xtd {
       
       struct data;
       ptr<data> data_;
-      static xtd::collections::generic::dictionary<xtd::string, culture_info> cultures_;
       static xtd::optional<culture_info> current_culture_;
     };
   }
