@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Reflection;
 using System.Text;
 
-class GenerateCultureInfoCpp {
+class xtd_data_generator {
   static void Main() {
     Console.WriteLine("Generation started");
     if (IsUsingNls()) {
