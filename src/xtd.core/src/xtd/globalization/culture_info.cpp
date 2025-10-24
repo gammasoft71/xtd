@@ -1,7 +1,10 @@
 #include "../../../include/xtd/globalization/culture_info.hpp"
+#include "../../../include/xtd/helpers/throw_helper"
+#include "../../../include/xtd/io/binary_reader.hpp"
 #include "../../../include/xtd/collections/generic/dictionary.hpp"
 #include "../../../include/xtd/collections/generic/list.hpp"
 #include "../../../include/xtd/call_once.hpp"
+#include "../../../include/xtd/environment.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/culture_info>
 #undef __XTD_CORE_NATIVE_LIBRARY__
@@ -10,6 +13,7 @@ using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::globalization;
 using namespace xtd::helpers;
+using namespace xtd::io;
 
 optional<culture_info> culture_info::current_culture_;
 
@@ -64,12 +68,12 @@ globalization::culture_types culture_info::culture_types() const noexcept {
   return data_->culture_types;
 }
 
-const date_time_format_info& culture_info::date_time_format() const noexcept {
+const date_time_format_info& culture_info::date_time_format() const {
   if (data_->date_time_format == nullopt) data_->date_time_format = date_time_format_info::formats()[data_->name.to_lower()];
   return data_->date_time_format.value();
 }
 
-date_time_format_info& culture_info::date_time_format() noexcept {
+date_time_format_info& culture_info::date_time_format() {
   if (data_->date_time_format == nullopt) data_->date_time_format = date_time_format_info::formats()[data_->name.to_lower()];
   return data_->date_time_format.value();
 }
@@ -225,6 +229,24 @@ void culture_info::fill_from_name(const string& name) {
   auto lower_name = name.to_lower();
   if (!cultures().contains_key(lower_name)) throw_helper::throws(exception_case::culture_not_found);
   *data_ = *cultures()[lower_name].data_;
+}
+
+dictionary<string, culture_info>& culture_info::cultures() {
+  static auto cultures = dictionary<string, culture_info> {{"", culture_info {}}, {"en-us", culture_info {globalization::culture_types::specific_cultures, "English (United States)", "English (United States)", 1033, 1033, "en-US", "English (United States)", "en", "eng", "ENU", "en"}}};
+  call_once_ {
+    auto culture_bin = path::combine({environment::get_folder_path(environment::special_folder::xtd_install), "share", "xtd", "data", "cultures.bin"});
+    if (!file::exists(culture_bin)) return;
+    auto br = binary_reader {culture_bin};
+    if (br.read_bytes(7) != array<byte> {'X','T','D','_','C','L','T'}) throw_helper::throws(exception_case::format, "The file does not contain the signature 'XTD_CLT'.");
+    if (br.read_int32() > 1) throw_helper::throws(exception_case::format, "The file version is not supported");
+    auto count = br.read_int32();
+    for (auto i = 0; i < count; ++i) {
+      auto key = br.read_string();
+      auto culture = culture_info(as<xtd::globalization::culture_types>(br.read_int32()), br.read_string(), br.read_string(), as<size>(br.read_int32()), as<size>(br.read_int32()), br.read_string(), br.read_string(), br.read_string(), br.read_string(), br.read_string(), br.read_string());
+      cultures[key] = culture;
+    }
+  };
+  return cultures;
 }
 
 bool culture_info::is_system_locale_available(const string& name) noexcept {
