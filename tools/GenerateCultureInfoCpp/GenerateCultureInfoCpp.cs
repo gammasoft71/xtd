@@ -143,13 +143,53 @@ class GenerateCultureInfoCpp {
   }
 
   static bool GenerateTimeZones(string file_path, int version) {
-    Trace.WriteLine("ERROR: Not yet implemented.");
-    Environment.ExitCode = 4;
-    return false;
+    try {
+      var bw = new System.IO.BinaryWriter(File.Open(file_path, FileMode.Create), Encoding.UTF8);
+      bw.Write(new byte[] {(byte)'X', (byte)'T', (byte)'D', 0, (byte)'T', (byte)'Z', (byte)'O', (byte)'N', (byte)'E'});
+      bw.Write(version);
+      var timeZones = TimeZoneInfo.GetSystemTimeZones();
+      bw.Write(timeZones.Count);
+      foreach (var tz in timeZones.OrderBy(tz => tz.Id)) {
+        bw.Write(tz.Id);
+        bw.Write(tz.DisplayName);
+        bw.Write(tz.StandardName);
+        bw.Write(tz.DaylightName);
+        bw.Write(tz.BaseUtcOffset.TotalMinutes);
+
+        var adjustmentRules = tz.GetAdjustmentRules();
+        bw.Write(adjustmentRules.Length);
+        foreach (var rule in adjustmentRules) {
+          bw.Write(rule.DateStart.ToBinary());
+          bw.Write(rule.DateEnd.ToBinary());
+          bw.Write(rule.DaylightDelta.TotalMinutes);
+
+          // Transition vers l’heure d’été
+          bw.Write(rule.DaylightTransitionStart.IsFixedDateRule);
+          bw.Write(rule.DaylightTransitionStart.Month);
+          bw.Write(rule.DaylightTransitionStart.Week);
+          bw.Write(rule.DaylightTransitionStart.Day);
+          bw.Write(rule.DaylightTransitionStart.DayOfWeek.ToString());
+          bw.Write(rule.DaylightTransitionStart.TimeOfDay.Ticks);
+
+          // Transition vers l’heure standard
+          bw.Write(rule.DaylightTransitionEnd.IsFixedDateRule);
+          bw.Write(rule.DaylightTransitionEnd.Month);
+          bw.Write(rule.DaylightTransitionEnd.Week);
+          bw.Write(rule.DaylightTransitionEnd.Day);
+          bw.Write(rule.DaylightTransitionEnd.DayOfWeek.ToString());
+          bw.Write(rule.DaylightTransitionEnd.TimeOfDay.Ticks);
+        }
+      }
+      bw.Close();
+      return true;
+    } catch (Exception e) {
+      Trace.WriteLine("ERROR: " + e.Message);
+      Environment.ExitCode = 4;
+      return false;
+    }
   }
 
-  static bool IsUsingNls()
-  {
+  static bool IsUsingNls(){
     var property = typeof(CultureInfo).Assembly.GetType("System.Globalization.GlobalizationMode")?.GetProperty("UseNls", BindingFlags.Static | BindingFlags.NonPublic);
     return property != null && (bool)property.GetValue(null)!;
   }
