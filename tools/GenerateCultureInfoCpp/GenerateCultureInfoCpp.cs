@@ -58,7 +58,7 @@ class GenerateCultureInfoCpp {
   static bool GenerateDateTimeFormats(string file_path, int version) {
     try {
       var bw = new System.IO.BinaryWriter(File.Open(file_path, FileMode.Create), Encoding.UTF8);
-      bw.Write(new byte[] {(byte)'X', (byte)'T', (byte)'D', 0, (byte)'D', (byte)'T', (byte)'F'});
+      bw.Write(new byte[] {(byte)'X', (byte)'T', (byte)'D', 0, (byte)'D', (byte)'T', (byte)'F', (byte)'M'});
       bw.Write(version);
       var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
       bw.Write(cultures.Length);
@@ -100,7 +100,7 @@ class GenerateCultureInfoCpp {
   static bool GenerateNumberFormats(string file_path, int version) {
     try {
       var bw = new System.IO.BinaryWriter(File.Open(file_path, FileMode.Create), Encoding.UTF8);
-      bw.Write(new byte[] {(byte)'X', (byte)'T', (byte)'D', 0, (byte)'N', (byte)'B', (byte)'F'});
+      bw.Write(new byte[] {(byte)'X', (byte)'T', (byte)'D', 0, (byte)'N', (byte)'U', (byte)'M', (byte)'F'});
       bw.Write(version);
       var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
       bw.Write(cultures.Length);
@@ -145,7 +145,7 @@ class GenerateCultureInfoCpp {
   static bool GenerateTimeZones(string file_path, int version) {
     try {
       var bw = new System.IO.BinaryWriter(File.Open(file_path, FileMode.Create), Encoding.UTF8);
-      bw.Write(new byte[] {(byte)'X', (byte)'T', (byte)'D', 0, (byte)'T', (byte)'Z', (byte)'O', (byte)'N', (byte)'E'});
+      bw.Write(new byte[] {(byte)'X', (byte)'T', (byte)'D', 0, (byte)'T', (byte)'Z', (byte)'O', (byte)'N'});
       bw.Write(version);
       var timeZones = TimeZoneInfo.GetSystemTimeZones();
       bw.Write(timeZones.Count);
