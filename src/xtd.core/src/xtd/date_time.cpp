@@ -444,9 +444,7 @@ int32 date_time::days_in_month(uint32 year, month_of_year month) {
 
 int32 date_time::days_in_month(uint32 year, uint32 month) {
   if (month < 1 || month > 12) throw_helper::throws(exception_case::argument_out_of_range);
-  if (month == 2) return is_leap_year(year) ? 29 : 28;
-  if (month == 4 || month == 6 || month == 9 || month == 11) return 30;
-  return 31;
+  return (is_leap_year(year) ? days_in_month_366 : days_in_month_365)[month - 1];
 }
 
 bool date_time::equals(const object& obj) const noexcept {
