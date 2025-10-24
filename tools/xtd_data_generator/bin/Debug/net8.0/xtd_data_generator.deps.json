@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "xtd_data_generator/1.0.0": {
+        "runtime": {
+          "xtd_data_generator.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "xtd_data_generator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
