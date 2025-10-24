@@ -167,14 +167,14 @@ class GenerateCultureInfoCpp {
           bw.Write(rule.DaylightTransitionStart.Month);
           bw.Write(rule.DaylightTransitionStart.Week);
           bw.Write(rule.DaylightTransitionStart.Day);
-          bw.Write(rule.DaylightTransitionStart.DayOfWeek.ToString());
+          bw.Write((int)rule.DaylightTransitionStart.DayOfWeek);
           bw.Write(rule.DaylightTransitionStart.TimeOfDay.Ticks);
 
           bw.Write(rule.DaylightTransitionEnd.IsFixedDateRule);
           bw.Write(rule.DaylightTransitionEnd.Month);
           bw.Write(rule.DaylightTransitionEnd.Week);
           bw.Write(rule.DaylightTransitionEnd.Day);
-          bw.Write(rule.DaylightTransitionEnd.DayOfWeek.ToString());
+          bw.Write((int)rule.DaylightTransitionEnd.DayOfWeek);
           bw.Write(rule.DaylightTransitionEnd.TimeOfDay.Ticks);
         }
       }
