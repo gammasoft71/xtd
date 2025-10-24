@@ -1,8 +1,8 @@
 # build folders
 build
 build*
-tools/GenerateCultureInfoCpp/bin
-tools/GenerateCultureInfoCpp/obj
+tools/xtd_data_generator/bin
+tools/xtd_data_generator/obj
 cmake-build*
 
 # build folders
