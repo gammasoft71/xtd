@@ -232,7 +232,7 @@ void culture_info::fill_from_name(const string& name) {
 }
 
 dictionary<string, culture_info>& culture_info::cultures() {
-  static auto cultures = dictionary<string, culture_info> {{"", culture_info {}}, {"en-us", culture_info {globalization::culture_types::specific_cultures, "English (United States)", "English (United States)", 1033, 1033, "en-US", "English (United States)", "en", "eng", "ENU", "en"}}};
+  static auto cultures = dictionary<string, culture_info> {{"", {}}, {"en-us", {globalization::culture_types::specific_cultures, "English (United States)", "English (United States)", 1033, 1033, "en-US", "English (United States)", "en", "eng", "ENU", "en"}}};
   call_once_ {
     auto culture_bin = path::combine({environment::get_folder_path(environment::special_folder::xtd_install), "share", "xtd", "data", "cultures.bin"});
     if (!file::exists(culture_bin)) return;
@@ -242,7 +242,7 @@ dictionary<string, culture_info>& culture_info::cultures() {
     auto count = br.read_int32();
     for (auto i = 0; i < count; ++i) {
       auto key = br.read_string();
-      auto culture = culture_info(as<xtd::globalization::culture_types>(br.read_int32()), br.read_string(), br.read_string(), as<size>(br.read_int32()), as<size>(br.read_int32()), br.read_string(), br.read_string(), br.read_string(), br.read_string(), br.read_string(), br.read_string());
+      auto culture = culture_info {as<xtd::globalization::culture_types>(br.read_int32()), br.read_string(), br.read_string(), as<size>(br.read_int32()), as<size>(br.read_int32()), br.read_string(), br.read_string(), br.read_string(), br.read_string(), br.read_string(), br.read_string()};
       cultures[key] = culture;
     }
   };
