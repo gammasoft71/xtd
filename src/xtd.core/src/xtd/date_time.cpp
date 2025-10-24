@@ -65,8 +65,8 @@ namespace {
   constexpr auto seconds_offset_1970 = std::chrono::seconds(seconds_per_day* days_to_1970);
   
   static uint32 days_to_year(uint32 year) {
-    uint y = year - 1;
-    uint cent = y / 100;
+    uint32 y = year - 1;
+    uint32 cent = y / 100;
     return y * (365 * 4 + 1) / 4 - cent + cent / 4;
   }
 
@@ -408,7 +408,7 @@ date_time date_time::add_months(int32 months) const {
   [[maybe_unused]] auto [year, month, day, hour, minute, second, day_of_year, day_of_week] = get_date_time();
   auto y = as<int32>(year), d = as<int32>(day);
   auto m = as<int32>(month) + months;
-  auto q = m > 0 ? as<int32>(as<uint>(m - 1) / 12) : m / 12 - 1;
+  auto q = m > 0 ? as<int32>(as<uint32>(m - 1) / 12) : m / 12 - 1;
   y += q;
   m -= q * 12;
   if (y < 1 || y > 9999) throw_helper::throws(exception_case::argument_out_of_range);
