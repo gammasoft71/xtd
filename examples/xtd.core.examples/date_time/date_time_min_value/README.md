@@ -18,5 +18,5 @@ xtdc run
 ## Output
 
 ```
-01/01/0001 00:00:00  (Equals date_time.min_value)
+1/1/0001 0:00:00 AM  (equals date_time::min_value)
 ```
