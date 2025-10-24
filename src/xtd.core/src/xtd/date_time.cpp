@@ -69,7 +69,7 @@ namespace {
     uint32 cent = y / 100;
     return y * (365 * 4 + 1) / 4 - cent + cent / 4;
   }
-
+  
   static std::tuple<uint32, uint32> get_year_and_day_of_year(int64 days) {
     auto year = 1_s64;
     auto day_of_year = days;
