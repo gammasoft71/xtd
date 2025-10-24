@@ -12,14 +12,15 @@ public:
     console::write_line(date_only.to_string("d"));
     // Display date using 24-hour clock.
     console::write_line(date_only.to_string("g"));
-    console::write_line(date_only.to_string("u"));
+    console::write_line(date_only.to_string("MM/dd/yyyy HH:mm"));
   }
 };
 
 startup_(program::main);
 
 // This code produces the following output :
-// 008-06-01 07:47:00
-// 06/01/2008
-// Sun Jun  1 00:00:00 2008
-// 2008-06-01 00:00:00
+//
+// 6/1/2008 7:47:00 AM
+// 6/1/2008
+// 6/1/2008 0:00 AM
+// 06/01/2008 00:00
