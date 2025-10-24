@@ -28,7 +28,7 @@ class GenerateCultureInfoCpp {
   static bool GenerateCultures(string file_path, int version) {
     try {
       var bw = new System.IO.BinaryWriter(File.Open(file_path, FileMode.Create), Encoding.UTF8);
-      bw.Write(new byte[] {(byte)'X', (byte)'T', (byte)'D', (byte)'_', (byte)'C', (byte)'L', (byte)'T'});
+      bw.Write(new byte[] {(byte)'X', (byte)'T', (byte)'D', 0, (byte)'C', (byte)'U', (byte)'L', (byte)'T'});
       bw.Write(version);
       var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
       bw.Write(cultures.Length);
@@ -58,7 +58,7 @@ class GenerateCultureInfoCpp {
   static bool GenerateDateTimeFormats(string file_path, int version) {
     try {
       var bw = new System.IO.BinaryWriter(File.Open(file_path, FileMode.Create), Encoding.UTF8);
-      bw.Write(new byte[] {(byte)'X', (byte)'T', (byte)'D', (byte)'_', (byte)'D', (byte)'T', (byte)'F'});
+      bw.Write(new byte[] {(byte)'X', (byte)'T', (byte)'D', 0, (byte)'D', (byte)'T', (byte)'F'});
       bw.Write(version);
       var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
       bw.Write(cultures.Length);
@@ -100,7 +100,7 @@ class GenerateCultureInfoCpp {
   static bool GenerateNumberFormats(string file_path, int version) {
     try {
       var bw = new System.IO.BinaryWriter(File.Open(file_path, FileMode.Create), Encoding.UTF8);
-      bw.Write(new byte[] {(byte)'X', (byte)'T', (byte)'D', (byte)'_', (byte)'N', (byte)'B', (byte)'F'});
+      bw.Write(new byte[] {(byte)'X', (byte)'T', (byte)'D', 0, (byte)'N', (byte)'B', (byte)'F'});
       bw.Write(version);
       var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
       bw.Write(cultures.Length);

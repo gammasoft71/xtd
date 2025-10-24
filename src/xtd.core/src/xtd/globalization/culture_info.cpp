@@ -237,7 +237,7 @@ dictionary<string, culture_info>& culture_info::cultures() {
     auto culture_bin = path::combine({environment::get_folder_path(environment::special_folder::xtd_install), "share", "xtd", "data", "cultures.bin"});
     if (!file::exists(culture_bin)) return;
     auto br = binary_reader {culture_bin};
-    if (br.read_bytes(7) != array<byte> {'X','T','D','_','C','L','T'}) throw_helper::throws(exception_case::format, "The file does not contain the signature 'XTD_CLT'.");
+    if (br.read_bytes(8) != array<byte> {'X', 'T', 'D', 0, 'C', 'U', 'L', 'T'}) throw_helper::throws(exception_case::format, "The file does not contain the signature 'XTD_CLT'.");
     if (br.read_int32() > 1) throw_helper::throws(exception_case::format, "The file version is not supported");
     auto count = br.read_int32();
     for (auto i = 0; i < count; ++i) {
