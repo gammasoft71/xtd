@@ -295,7 +295,7 @@ date_time_format_info::date_time_format_info(array<string>&& abreviated_day_name
 dictionary<string, date_time_format_info>& date_time_format_info::formats() {
   static auto formats = dictionary<string, date_time_format_info> {{"", {}}, {"en-us", {array<string> {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"}, array<string> {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, array<string> {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", ""}, "AM", "/", array<string> {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"}, xtd::day_of_week::sunday, "dddd, MMMM d, yyyy h:mm:ss tt", "dddd, MMMM d, yyyy", "h:mm:ss tt", "MMMM d", array<string> {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", ""}, array<string> {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December", ""}, "Gregorian Calendar", "PM", "ddd, dd MMM yyyy HH':'mm':'ss 'GMT'", "M/d/yyyy", "h:mm tt", array<string> {"Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"}, "yyyy'-'MM'-'dd'T'HH':'mm':'ss", ":", "yyyy'-'MM'-'dd HH':'mm':'ss'Z'", "MMMM yyyy"}}};
   call_once_ {
-    auto read_strings = [](binary_reader & br, int count) {
+    auto read_strings = [](auto& br, auto count) {
       auto strings = list<string> {};
       for (auto i = 0; i < count; ++i)
         strings.add(br.read_string());
@@ -304,13 +304,12 @@ dictionary<string, date_time_format_info>& date_time_format_info::formats() {
     auto file = path::combine({environment::get_folder_path(environment::special_folder::xtd_install), "share", "xtd", "data", "date_time_formats.bin"});
     if (!file::exists(file)) return;
     auto br = binary_reader {file};
-    if (br.read_bytes(7) != array<byte> {'X', 'T', 'D', 0, 'D', 'T', 'F'}) throw_helper::throws(exception_case::format, "The file does not contain the signature 'XTD_DTF'.");
+    if (br.read_bytes(7) != array<byte> {'X', 'T', 'D', 0, 'D', 'T', 'F'}) throw_helper::throws(exception_case::format, "The file does not contain the signature 'XTD\0DTF'.");
     if (br.read_int32() > 1) throw_helper::throws(exception_case::format, "The file version is not supported");
     auto count = br.read_int32();
     for (auto i = 0; i < count; ++i) {
       auto key = br.read_string();
-      auto format = date_time_format_info {read_strings(br, br.read_int32()), read_strings(br, br.read_int32()), read_strings(br, br.read_int32()), br.read_string(), br.read_string(), read_strings(br, br.read_int32()), as<day_of_week>(br.read_int32()), br.read_string(), br.read_string(), br.read_string(), br.read_string(), read_strings(br, br.read_int32()), read_strings(br, br.read_int32()), br.read_string(), br.read_string(), br.read_string(), br.read_string(), br.read_string(), read_strings(br, br.read_int32()), br.read_string(), br.read_string(), br.read_string(), br.read_string()};
-      formats[key] = format;
+      formats[key] = date_time_format_info {read_strings(br, br.read_int32()), read_strings(br, br.read_int32()), read_strings(br, br.read_int32()), br.read_string(), br.read_string(), read_strings(br, br.read_int32()), as<day_of_week>(br.read_int32()), br.read_string(), br.read_string(), br.read_string(), br.read_string(), read_strings(br, br.read_int32()), read_strings(br, br.read_int32()), br.read_string(), br.read_string(), br.read_string(), br.read_string(), br.read_string(), read_strings(br, br.read_int32()), br.read_string(), br.read_string(), br.read_string(), br.read_string()};
     }
   };
   return formats;
