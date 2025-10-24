@@ -18,18 +18,18 @@ xtdc run
 ## Output
 
 ```
-utc_now: ........... 2021-12-31 17:08:41, Kind = utc
-now: ............... 2021-12-31 18:08:41, Kind = local
+utc_now: ........... 10/24/2025 08:59:24 PM, kind = utc
+now: ............... 10/24/2025 10:59:24 PM, kind = local
 
-utc: ............... 2021-12-31 17:08:41, Kind = utc
-  to_local_time:     2021-12-31 18:08:41, Kind = local
-  to_universal_time: 2021-12-31 17:08:41, Kind = utc
+utc: ............... 10/24/2025 8:59:24 PM, kind = utc
+  to_local_time:     10/24/2025 10:59:24 PM, kind = local
+  to_universal_time: 10/24/2025 08:59:24 PM, kind = utc
 
-local: ............. 2021-12-31 18:08:41, Kind = local
-  to_local_time:     2021-12-31 18:08:41, Kind = local
-  to_universal_time: 2021-12-31 17:08:41, Kind = utc
+local: ............. 10/24/2025 10:59:24 PM, kind = local
+  to_local_time:     10/24/2025 10:59:24 PM, kind = local
+  to_universal_time: 10/24/2025 08:59:24 PM, kind = utc
 
-unspecified: ....... 2021-12-31 18:08:41, Kind = unspecified
-  to_local_time:     2021-12-31 19:08:41, Kind = local
-  to_universal_time: 2021-12-31 17:08:41, Kind = utc
+unspecified: ....... 10/24/2025 10:59:24 PM, kind = unspecified
+  to_local_time:     10/25/2025 00:59:24 AM, kind = local
+  to_universal_time: 10/24/2025 08:59:24 PM, kind = utc
 ```
