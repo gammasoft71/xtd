@@ -51,6 +51,12 @@ namespace {
   // Number of days from 1/1/0001 to 12/31/9999
   constexpr auto days_to_10000 = days_per_400_years * 25 - 366; // 3652059
   
+  const auto days_to_month_365 = array {0_u32, 31_u32, 59_u32, 90_u32, 120_u32, 151_u32, 181_u32, 212_u32, 243_u32, 273_u32, 304_u32, 334_u32, 365_u32};
+  const auto days_to_month_366 = array {0_u32, 31_u32, 60_u32, 91_u32, 121_u32, 152_u32, 182_u32, 213_u32, 244_u32, 274_u32, 305_u32, 335_u32, 366_u32};
+  
+  const auto days_in_month_365 = array {31_u32, 28_u32, 31_u32, 30_u32, 31_u32, 30_u32, 31_u32, 31_u32, 30_u32, 31_u32, 30_u32, 31_u32};
+  const auto days_in_month_366 = array {31_u32, 29_u32, 31_u32, 30_u32, 31_u32, 30_u32, 31_u32, 31_u32, 30_u32, 31_u32, 30_u32, 31_u32};
+  
   constexpr auto min_ticks = ticks {0};
   constexpr auto max_ticks = ticks {days_to_10000* ticks_per_day - 1};
   
@@ -58,6 +64,12 @@ namespace {
   
   constexpr auto seconds_offset_1970 = std::chrono::seconds(seconds_per_day* days_to_1970);
   
+  static uint32 days_to_year(uint32 year) {
+    uint y = year - 1;
+    uint cent = y / 100;
+    return y * (365 * 4 + 1) / 4 - cent + cent / 4;
+  }
+
   static std::tuple<uint32, uint32> get_year_and_day_of_year(int64 days) {
     auto year = 1_s64;
     auto day_of_year = days;
@@ -393,20 +405,19 @@ date_time date_time::add_minutes(double minute) const {
 
 date_time date_time::add_months(int32 months) const {
   if (months < -120000 || months > 120000) throw_helper::throws(exception_case::argument_out_of_range);
-  
   [[maybe_unused]] auto [year, month, day, hour, minute, second, day_of_year, day_of_week] = get_date_time();
-  auto index = as<int32>(month - 1 + months);
-  if (index >= 0) {
-    month = as<uint32>(index % 12 + 1);
-    year = year + as<uint32>(index / 12);
-  } else {
-    month = as<uint32>(12 + (index + 1) % 12);
-    year = year + as<uint32>((index - 11) / 12);
-  }
-  if (year < 1u || year > 9999u) throw_helper::throws(exception_case::argument_out_of_range);
-  auto days = as<uint32>(days_in_month(year, month));
-  if (day > days) day = days;
-  return date_time(year, month, day, hour, minute, second, kind_);
+  auto y = as<int32>(year), d = as<int32>(day);
+  auto m = as<int32>(month) + months;
+  auto q = m > 0 ? as<int32>(as<uint>(m - 1) / 12) : m / 12 - 1;
+  y += q;
+  m -= q * 12;
+  if (y < 1 || y > 9999) throw_helper::throws(exception_case::argument_out_of_range);
+  auto days_to = is_leap_year(y) ? days_to_month_366 : days_to_month_365;
+  auto days_to_month = days_to[m - 1];
+  int days = as<int32>(days_to[m] - days_to_month);
+  if (d > days) d = days;
+  auto n = days_to_year(as<uint32>(y)) + days_to_month + as<uint32>(d) - 1;
+  return date_time(n * ticks_per_day + ticks() % ticks_per_day, kind_);
 }
 
 date_time date_time::add_seconds(double value) const {
