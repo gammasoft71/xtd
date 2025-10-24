@@ -44,13 +44,14 @@ public:
   // date_time structure converted to local time, and the date_time
   // structure converted to universal time.
   
+  inline static const string date_patt = "M/d/yyyy hh:mm:ss tt";  
   static void display(const string& title, const date_time& input_dt) {
     auto disp_dt = input_dt;
     auto dt_string = string::empty_string;
     
     // display the original date_time.
     
-    dt_string = disp_dt.to_string("u");
+    dt_string = disp_dt.to_string("");
     console::write_line("{0} {1}, kind = {2}", title, dt_string, disp_dt.kind());
     
     // Convert input_dt to local time and display the result.
@@ -60,7 +61,7 @@ public:
     // performed as if input_dt was universal time.
     
     disp_dt = input_dt.to_local_time();
-    dt_string = disp_dt.to_string("u");
+    dt_string = disp_dt.to_string(date_patt);
     console::write_line("  to_local_time:     {0}, kind = {1}", dt_string, disp_dt.kind());
     
     // Convert input_dt to universal time and display the result.
@@ -70,7 +71,7 @@ public:
     // performed as if input_dt was local time.
     
     disp_dt = input_dt.to_universal_time();
-    dt_string = disp_dt.to_string("u");
+    dt_string = disp_dt.to_string(date_patt);
     console::write_line("  to_universal_time: {0}, kind = {1}", dt_string, disp_dt.kind());
     console::write_line();
   }
@@ -78,7 +79,7 @@ public:
   // display the value and kind property for date_time::now() and date_time::utc_now().
   
   static void display_now(const string& title, const date_time& input_dt) {
-    auto dt_string = input_dt.to_string("u");
+    auto dt_string = input_dt.to_string(date_patt);
     console::write_line("{0} {1}, kind = {2}", title, dt_string, input_dt.kind());
   }
 };
@@ -87,17 +88,17 @@ startup_(program::main);
 
 // This code can produce the following output :
 //
-// utc_now: ........... 2021-12-31 17:08:41, Kind = utc
-// now: ............... 2021-12-31 18:08:41, Kind = local
+// utc_now: ........... 10/24/2025 08:59:24 PM, kind = utc
+// now: ............... 10/24/2025 10:59:24 PM, kind = local
 //
-// utc: ............... 2021-12-31 17:08:41, Kind = utc
-//   to_local_time:     2021-12-31 18:08:41, Kind = local
-//   to_universal_time: 2021-12-31 17:08:41, Kind = utc
+// utc: ............... 10/24/2025 8:59:24 PM, kind = utc
+//   to_local_time:     10/24/2025 10:59:24 PM, kind = local
+//   to_universal_time: 10/24/2025 08:59:24 PM, kind = utc
 //
-// local: ............. 2021-12-31 18:08:41, Kind = local
-//   to_local_time:     2021-12-31 18:08:41, Kind = local
-//   to_universal_time: 2021-12-31 17:08:41, Kind = utc
+// local: ............. 10/24/2025 10:59:24 PM, kind = local
+//   to_local_time:     10/24/2025 10:59:24 PM, kind = local
+//   to_universal_time: 10/24/2025 08:59:24 PM, kind = utc
 //
-// unspecified: ....... 2021-12-31 18:08:41, Kind = unspecified
-//   to_local_time:     2021-12-31 19:08:41, Kind = local
-//   to_universal_time: 2021-12-31 17:08:41, Kind = utc
+// unspecified: ....... 10/24/2025 10:59:24 PM, kind = unspecified
+//   to_local_time:     10/25/2025 00:59:24 AM, kind = local
+//   to_universal_time: 10/24/2025 08:59:24 PM, kind = utc
