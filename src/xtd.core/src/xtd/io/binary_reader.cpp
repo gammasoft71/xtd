@@ -139,6 +139,7 @@ size binary_reader::read_size() {
 
 string binary_reader::read_string() {
   auto length = read_7bit_encoded_int();
+  if (length == 0) return {};
   return string(read_chars(length).data(), static_cast<size_t>(length));
 }
 
