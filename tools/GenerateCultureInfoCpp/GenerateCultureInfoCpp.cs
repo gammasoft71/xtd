@@ -163,7 +163,6 @@ class GenerateCultureInfoCpp {
           bw.Write(rule.DateEnd.ToBinary());
           bw.Write(rule.DaylightDelta.TotalMinutes);
 
-          // Transition vers l’heure d’été
           bw.Write(rule.DaylightTransitionStart.IsFixedDateRule);
           bw.Write(rule.DaylightTransitionStart.Month);
           bw.Write(rule.DaylightTransitionStart.Week);
@@ -171,7 +170,6 @@ class GenerateCultureInfoCpp {
           bw.Write(rule.DaylightTransitionStart.DayOfWeek.ToString());
           bw.Write(rule.DaylightTransitionStart.TimeOfDay.Ticks);
 
-          // Transition vers l’heure standard
           bw.Write(rule.DaylightTransitionEnd.IsFixedDateRule);
           bw.Write(rule.DaylightTransitionEnd.Month);
           bw.Write(rule.DaylightTransitionEnd.Week);
