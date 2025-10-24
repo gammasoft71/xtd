@@ -18,6 +18,6 @@ xtdc run
 ## Output
 
 ```
-Is Thursday the day of the week for 05/01/2003?: true
-The day of the week for 05/01/2003 is thursday.
+Is Thursday the day of the week for 5/1/2003?: true
+The day of the week for 5/1/2003 is thursday.
 ```
