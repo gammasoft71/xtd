@@ -304,7 +304,7 @@ dictionary<string, date_time_format_info>& date_time_format_info::formats() {
     auto file = path::combine({environment::get_folder_path(environment::special_folder::xtd_install), "share", "xtd", "data", "date_time_formats.bin"});
     if (!file::exists(file)) return;
     auto br = binary_reader {file};
-    if (br.read_bytes(7) != array<byte> {'X','T','D','_','D','T','F'}) throw_helper::throws(exception_case::format, "The file does not contain the signature 'XTD_DTF'.");
+    if (br.read_bytes(7) != array<byte> {'X', 'T', 'D', 0, 'D', 'T', 'F'}) throw_helper::throws(exception_case::format, "The file does not contain the signature 'XTD_DTF'.");
     if (br.read_int32() > 1) throw_helper::throws(exception_case::format, "The file version is not supported");
     auto count = br.read_int32();
     for (auto i = 0; i < count; ++i) {
