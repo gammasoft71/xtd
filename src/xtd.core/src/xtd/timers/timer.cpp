@@ -117,6 +117,8 @@ void timer::stop() {
 }
 
 void timer::on_elpased(const elapsed_event_args& e) {
-  if (data_->synchronizing_object) data_->synchronizing_object->invoke([&] {elapsed(*this, e);});
-  else elapsed(*this, e);
+  auto safe_elapsed = elapsed;
+  if (safe_elapsed.is_empty()) return;
+  if (data_->synchronizing_object) data_->synchronizing_object->invoke([&] {safe_elapsed(self_, e);});
+  else safe_elapsed(self_, e);
 }
