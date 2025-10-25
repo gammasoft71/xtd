@@ -298,12 +298,12 @@ namespace xtd {
       
       /// @name Public Static Methods
       
-      /// @{      
+      /// @{
       static culture_info get_culture_info(const xtd::string& name);
       static culture_info get_culture_info(const xtd::string& name, bool predefined_only);
       static culture_info get_culture_info(const xtd::string& name, const xtd::string& alt_name);
       static culture_info get_culture_info(xtd::size culture);
-
+      
       /// @brief Gets the list of supported cultures filtered by the specified xtd::globalization::culture_types parameter.
       /// @param types A bitwise combination of the enumeration values that filter the cultures to retrieve.
       /// @return An array that contains the cultures specified by the `types` parameter. The array of cultures is sorted.
@@ -316,7 +316,7 @@ namespace xtd {
       ///   * xtd::globalization::culture_types::neutral_cultures, which returns all neutral cultures and the invariant culture.
       ///   * xtd::globalization::culture_types::all_cultures, which returns all neutral and specific cultures, cultures installed in the Windows system.
       static xtd::array<culture_info> get_cultures(xtd::globalization::culture_types types);
-
+      
       /// @brief Gets the lists of system locales.
       /// @return An array that contains system locales.
       /// @remarks On unix base system is the same as `locale -a` terminal command.
