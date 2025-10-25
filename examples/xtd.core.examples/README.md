@@ -237,6 +237,7 @@
 * [culture_info_parent](globalization/[culture_info_parent]/README.md) shows how to use [xtd::globalization::culture_info::parent](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1culture__info.html) property.
 * [culture_info_properties](globalization/culture_info_properties/README.md) shows how to use [xtd::globalization::culture_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1culture__info.html) properties.
 * [culture_info_with_name](globalization/culture_info_with_name/README.md) shows how to use [xtd::globalization::culture_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1culture__info.html) class.
+* [date_time_format_info](globalization/date_time_format_info/README.md) shows how to use [xtd::globalization:: date_time_format_info](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1 date__time__format__info.html) class.
 
 ## [Guid](guid/README.md)
 
