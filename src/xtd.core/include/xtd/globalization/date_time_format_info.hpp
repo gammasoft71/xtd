@@ -20,7 +20,7 @@ namespace xtd {
     /// @cond
     class culture_info;
     /// @endcond
-    /// @brief Provides information about a specific culture (called a locale for unmanaged code development). The information includes the names for the culture, the writing system, the calendar used, the sort order of strings, and formatting for dates and numbers.
+    /// @brief Provides culture-specific information about the format of date and time values.
     /// ```cpp
     /// class date_time_format_info : public xtd::object
     /// ```
