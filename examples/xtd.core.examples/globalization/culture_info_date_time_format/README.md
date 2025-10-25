@@ -1,6 +1,6 @@
 # culture_info_date_time_format
 
-Shows how to use [xtd::globalization::culture_info::parent](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1culture__info.html) property.
+Shows how to use [xtd::globalization::culture_info::date_time_format](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1globalization_1_1culture__info.html) property.
 
 ## Sources
 
