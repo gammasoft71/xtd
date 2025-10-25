@@ -403,13 +403,13 @@ void environment::__signal_catcher_check__() {
 }
 
 void environment::on_cancel_signal(signal_cancel_event_args& e) {
-  auto signal = cancel_signal;
-  if (!signal.is_empty()) signal(e);
+  auto safe_cancel_signal = cancel_signal;
+  if (!safe_cancel_signal.is_empty()) safe_cancel_signal(e);
 }
 
 void environment::on_program_exit(const program_exit_event_args& e) {
-  auto event = program_exit;
-  if (!event.is_empty()) event(e);
+  auto safe_program_exit = program_exit;
+  if (!safe_program_exit.is_empty()) safe_program_exit(e);
 }
 
 string environment::get_folder_path_(environment::special_folder folder, environment::special_folder_option option, bool is_gui_application) {
