@@ -206,7 +206,8 @@ xtd::uptr<xtd::object> animation::clone() const {
 }
 
 void animation::on_updated(const animation_updated_event_args& e) {
-  updated(*this, e);
+  auto safe_updated = updated;
+  if (!safe_updated.is_empty()) safe_updated(*this, e);
 }
 
 void animation::on_frames_timer_tick(object& timer, const event_args& e) {
