@@ -59,18 +59,20 @@ void speech_synthesizer::speak_async(xtd::speech::synthesis::prompt& prompt) {
 
 void speech_synthesizer::on_speak_completed() {
   set_state(synthesizer_state::ready);
-  speak_completed(*this, {false, nullptr, data_->used_prompt});
+  auto safe_speak_completed = speak_completed;
+  if (!safe_speak_completed.is_empty()) safe_speak_completed(self_, {false, nullptr, data_->used_prompt});
 }
 
 void speech_synthesizer::on_speak_started() {
   set_state(synthesizer_state::speaking);
-  speak_started(*this, {false, nullptr, data_->used_prompt});
+  auto safe_speak_started = speak_started;
+  if (!safe_speak_started.is_empty()) safe_speak_started(self_, {false, nullptr, data_->used_prompt});
 }
 
 void speech_synthesizer::set_state(synthesizer_state value) {
-  if (data_->state != value) {
-    auto previous_state = data_->state;
-    data_->state = value;
-    state_changed(*this, {previous_state, data_->state});
-  }
+  if (data_->state == value) return;
+  auto previous_state = data_->state;
+  data_->state = value;
+  auto safe_state_changed = state_changed;
+  if (!safe_state_changed.is_empty()) safe_state_changed(self_, {previous_state, data_->state});
 }
