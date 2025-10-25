@@ -253,10 +253,10 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00260" data-start="{" data-end="}">
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno"><a class="line" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#aeb7d506d2678b798fc86d75ea35c069c">  260</a></span>    result_t <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07_08_4.html#aeb7d506d2678b798fc86d75ea35c069c">operator()</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>      <span class="keywordflow">if</span> (data_-&gt;functions.size() == 0) {</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_void_v&lt;result_t&gt;) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_reference_v&lt;result_t&gt;) {</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>          <span class="keyword">using </span>underlying_t = std::remove_reference_t&lt;result_t&gt;;</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>          <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_const_v&lt;underlying_t&gt;) {</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_void_v &lt; result_t &gt;) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_reference_v &lt; result_t &gt;) {</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>          <span class="keyword">using </span>underlying_t = std::remove_reference_t &lt; result_t &gt;;</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>          <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_const_v &lt; underlying_t &gt;) {</div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>            <span class="keyword">static</span> <span class="keyword">const</span> underlying_t empty_value{};</div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>            <span class="keywordflow">return</span> empty_value;</div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>          } <span class="keywordflow">else</span> {</div>
@@ -265,7 +265,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>          }</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        } <span class="keywordflow">else</span> <span class="keywordflow">return</span> result_t{};</div>
 <div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>      }</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>      </div>
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; data_-&gt;functions.size() - 1; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>++) {</div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        <span class="keywordflow">if</span> (data_-&gt;functions[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>] == <span class="keyword">nullptr</span>) <a class="code hl_function" href="classxtd_1_1helpers_1_1throw__helper.html#a4fcf5154d41ae7e68038268ea89492d6">xtd::helpers::throw_helper::throws</a>(<a class="code hl_enumvalue" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dcac9a8d97c437d119a4bfc720d704b21f7">xtd::helpers::exception_case::argument_null</a>);</div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        data_-&gt;functions[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>]();</div>
@@ -625,10 +625,10 @@ $(function(){ initResizable(false); });
 <div class="foldopen" id="foldopen00733" data-start="{" data-end="}">
 <div class="line"><a id="l00733" name="l00733"></a><span class="lineno"><a class="line" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_01_4.html#a22e01da6cfa39bb83e146bc4d268d722">  733</a></span>    result_t <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_01_4.html#a22e01da6cfa39bb83e146bc4d268d722">operator()</a>(arguments_t... arguments)<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>      <span class="keywordflow">if</span> (data_-&gt;no_arguments_functions.size() == 0 &amp;&amp; data_-&gt;functions.size() == 0) {</div>
-<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_void_v&lt;result_t&gt;) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_reference_v&lt;result_t&gt;) {</div>
-<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>          <span class="keyword">using </span>underlying_t = std::remove_reference_t&lt;result_t&gt;;</div>
-<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>          <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_const_v&lt;underlying_t&gt;) {</div>
+<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_void_v &lt; result_t &gt;) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_reference_v &lt; result_t &gt;) {</div>
+<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>          <span class="keyword">using </span>underlying_t = std::remove_reference_t &lt; result_t &gt;;</div>
+<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>          <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_const_v &lt; underlying_t &gt;) {</div>
 <div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>            <span class="keyword">static</span> <span class="keyword">const</span> underlying_t empty_value{};</div>
 <div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>            <span class="keywordflow">return</span> empty_value;</div>
 <div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>          } <span class="keywordflow">else</span> {</div>
@@ -637,7 +637,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span>          }</div>
 <div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span>        } <span class="keywordflow">else</span> <span class="keywordflow">return</span> result_t{};</div>
 <div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>      }</div>
-<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span> </div>
+<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>      </div>
 <div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>      <span class="keywordflow">if</span> (data_-&gt;no_arguments_functions.size()) {</div>
 <div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> = 0; <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a> &lt; data_-&gt;no_arguments_functions.size() - (data_-&gt;functions.size() == 0 ? 1 : 0); <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>++) {</div>
 <div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>          <span class="keywordflow">if</span> (data_-&gt;no_arguments_functions[<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">i</a>] == <span class="keyword">nullptr</span>) <a class="code hl_function" href="classxtd_1_1helpers_1_1throw__helper.html#a4fcf5154d41ae7e68038268ea89492d6">xtd::helpers::throw_helper::throws</a>(<a class="code hl_enumvalue" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dcac9a8d97c437d119a4bfc720d704b21f7">xtd::helpers::exception_case::argument_null</a>);</div>
@@ -887,7 +887,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Oct 25 2025 13:55:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Oct 25 2025 20:43:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
