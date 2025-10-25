@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::helpers::exception_case enum class.
+/// @brief Contains xtd::helpers::throw_helper class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../internal/__xtd_source_location.hpp"
