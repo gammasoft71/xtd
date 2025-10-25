@@ -12,4 +12,5 @@ add_projects(
   culture_info_parent
   culture_info_properties
   culture_info_with_name
+  date_time_format_info
 )
