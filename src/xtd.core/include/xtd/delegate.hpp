@@ -258,8 +258,20 @@ namespace xtd {
     /// @param arguments The parameter list.
     /// @return result_t The return value.
     result_t operator()() const {
-      if (data_->functions.size() == 0) return result_t();
-      
+      if (data_->functions.size() == 0) {
+        if constexpr (std::is_void_v<result_t>) return;
+        else if constexpr (std::is_reference_v<result_t>) {
+          using underlying_t = std::remove_reference_t<result_t>;
+          if constexpr (std::is_const_v<underlying_t>) {
+            static const underlying_t empty_value{};
+            return empty_value;
+          } else {
+            static underlying_t empty_value{};
+            return empty_value;
+          }
+        } else return result_t{};
+      }
+
       for (size_t i = 0; i < data_->functions.size() - 1; i++) {
         if (data_->functions[i] == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
         data_->functions[i]();
@@ -719,8 +731,20 @@ namespace xtd {
     /// @param arguments The parameter list.
     /// @return result_t The return value.
     result_t operator()(arguments_t... arguments) const {
-      if (data_->no_arguments_functions.size() == 0 && data_->functions.size() == 0) return result_t();
-      
+      if (data_->no_arguments_functions.size() == 0 && data_->functions.size() == 0) {
+        if constexpr (std::is_void_v<result_t>) return;
+        else if constexpr (std::is_reference_v<result_t>) {
+          using underlying_t = std::remove_reference_t<result_t>;
+          if constexpr (std::is_const_v<underlying_t>) {
+            static const underlying_t empty_value{};
+            return empty_value;
+          } else {
+            static underlying_t empty_value{};
+            return empty_value;
+          }
+        } else return result_t{};
+      }
+
       if (data_->no_arguments_functions.size()) {
         for (size_t i = 0; i < data_->no_arguments_functions.size() - (data_->functions.size() == 0 ? 1 : 0); i++) {
           if (data_->no_arguments_functions[i] == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
