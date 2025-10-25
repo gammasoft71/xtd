@@ -177,6 +177,29 @@ xtd::string culture_info::to_string() const noexcept {
   return data_->name;
 }
 
+culture_info culture_info::get_culture_info(const xtd::string& name) {
+  return culture_info(name);
+}
+
+culture_info culture_info::get_culture_info(const xtd::string& name, bool predefined_only) {
+  if (predefined_only || cultures().contains_key(name)) return culture_info(name);
+  auto culture = culture_info {""};
+  culture.data_->name = name;
+  return culture;
+}
+
+culture_info culture_info::get_culture_info(const xtd::string& name, const xtd::string& alt_name) {
+  auto alt_culture = culture_info {alt_name};
+  auto culture = culture_info {name};
+  //*culture.data_->compare_info = *alt_culture.data_->compare_info;
+  //*culture.data_->text_info = *alt_culture.data_->text_info;
+  return culture;
+}
+
+culture_info culture_info::get_culture_info(xtd::size culture) {
+  return culture_info {culture};
+}
+
 array<culture_info> culture_info::get_cultures(xtd::globalization::culture_types types) {
   auto result = list<culture_info> {};
   for (const auto& [name, culture] : cultures())
