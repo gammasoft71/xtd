@@ -437,7 +437,10 @@ drawing::size check_box::measure_control() const noexcept {
 }
 
 void check_box::on_appearance_changed(const event_args& e) {
-  appearance_changed(*this, e);
+  if (can_raise_events()) {
+    auto safe_appearance_changed = appearance_changed;
+    if (!safe_appearance_changed.is_empty()) safe_appearance_changed(*this, e);
+  }
   if (flat_style() != xtd::forms::flat_style::system) invalidate();
 }
 
@@ -447,7 +450,10 @@ void check_box::on_checked_changed(const event_args& e) {
     else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_normal;
     else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_normal;
   }
-  checked_changed(*this, e);
+  if (can_raise_events()) {
+    auto safe_checked_changed = checked_changed;
+    if (!safe_checked_changed.is_empty()) safe_checked_changed(*this, e);
+  }
   if (flat_style() != xtd::forms::flat_style::system) invalidate();
 }
 
@@ -457,7 +463,10 @@ void check_box::on_check_state_changed(const event_args& e) {
     else if (data_->check_state == xtd::forms::check_state::checked) data_->state = xtd::forms::visual_styles::check_box_state::checked_normal;
     else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::check_box_state::mixed_normal;
   }
-  check_state_changed(*this, e);
+  if (can_raise_events()) {
+    auto safe_check_state_changed = check_state_changed;
+    if (!safe_check_state_changed.is_empty()) safe_check_state_changed(*this, e);
+  }
   if (flat_style() != xtd::forms::flat_style::system) invalidate();
 }
 
