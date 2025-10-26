@@ -289,7 +289,10 @@ intptr menu_item::menu_id() const noexcept {
 }
 
 void menu_item::on_click(const event_args& e) {
-  click(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_click = click;
+  if (safe_click.is_empty()) return;
+  safe_click(*this, e);
 }
 
 void menu_item::on_item_added(size_t pos, menu_item_ref item) {
