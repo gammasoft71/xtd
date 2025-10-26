@@ -181,7 +181,10 @@ void find_dialog::destroy_handle() {
 
 void find_dialog::on_dialog_closed() {
   data_->visible = false;
-  dialog_closed(*this, dialog_closed_event_args(forms::dialog_result::cancel));
+  if (!can_raise_events()) return;
+  auto safe_dialog_closed = dialog_closed;
+  if (safe_dialog_closed.is_empty()) return;
+  safe_dialog_closed(*this, dialog_closed_event_args(forms::dialog_result::cancel));
 }
 
 void find_dialog::on_dialog_find(const xtd::drawing::point& location, const string& find_string, bool downwards, bool whole_word, bool match_case) {
@@ -190,7 +193,10 @@ void find_dialog::on_dialog_find(const xtd::drawing::point& location, const stri
   data_->search_direction = downwards ? xtd::forms::search_direction::down : xtd::forms::search_direction::up;
   data_->whole_word = whole_word;
   data_->match_case = match_case;
-  find_next(*this, find_event_args(data_->find_string, data_->match_case, data_->search_direction, data_->whole_word));
+  if (!can_raise_events()) return;
+  auto safe_find_next = find_next;
+  if (safe_find_next.is_empty()) return;
+  safe_find_next(*this, find_event_args(data_->find_string, data_->match_case, data_->search_direction, data_->whole_word));
 }
 
 void find_dialog::recreate_handle() {
