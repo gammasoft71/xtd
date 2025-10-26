@@ -16,7 +16,7 @@
 #include <sys/resource.h>
 #include <sys/wait.h>
 
-#if defined(__HAIKU__)
+#if defined(__HAIKU__) || defined(__serenity__)
 #define PRIO_MIN -20
 #define PRIO_MAX 20
 #endif

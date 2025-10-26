@@ -17,7 +17,7 @@ namespace {
 }
 
 void dns::cleanup() {
-  #if !defined(__ANDROID__)
+  #if !defined(__ANDROID__) && !defined(__serenity__)
   endhostent();
   #endif
 }
@@ -72,7 +72,7 @@ int32_t dns::get_host_name(string& host_name) {
 }
 
 void dns::startup() {
-  #if !defined(__ANDROID__)
+  #if !defined(__ANDROID__) && !defined(__serenity__)
   sethostent(true);
   #endif
 }

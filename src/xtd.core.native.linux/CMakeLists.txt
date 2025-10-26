@@ -11,6 +11,8 @@ if (${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "Android")
   add_references()
 elseif (${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "Haiku")
   add_references(network)
+elseif (${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "SerenityOS")
+  add_references()
 elseif (UNIX)
   find_package(PkgConfig REQUIRED)
 

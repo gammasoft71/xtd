@@ -3,6 +3,8 @@
 #include "../../../../include/xtd/native/linux/semaphore.hpp"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
+#include <errno.h>
+
 using namespace xtd::native;
 
 intmax_t named_semaphore::create(int32_t initial_count, int32_t max_count, const std::string& name) {
