@@ -177,17 +177,29 @@ forms::cursor text_box_base::default_cursor() const noexcept {
 }
 
 void text_box_base::on_accepts_tab_changed(const event_args& e) {
-  if (can_raise_events()) accepts_tab_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_accepts_tab_changed = accepts_tab_changed;
+  if (safe_accepts_tab_changed.is_empty()) return;
+  safe_accepts_tab_changed(*this, e);
 }
 
 void text_box_base::on_border_style_changed(const event_args& e) {
-  if (can_raise_events()) border_style_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_border_style_changed = border_style_changed;
+  if (safe_border_style_changed.is_empty()) return;
+  safe_border_style_changed(*this, e);
 }
 
 void text_box_base::on_multiline_changed(const event_args& e) {
-  if (can_raise_events()) multiline_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_multiline_changed = multiline_changed;
+  if (safe_multiline_changed.is_empty()) return;
+  safe_multiline_changed(*this, e);
 }
 
 void text_box_base::on_read_only_changed(const event_args& e) {
-  if (can_raise_events()) read_only_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_read_only_changed = read_only_changed;
+  if (safe_read_only_changed.is_empty()) return;
+  safe_read_only_changed(*this, e);
 }
