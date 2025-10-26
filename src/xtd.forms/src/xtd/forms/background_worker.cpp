@@ -56,15 +56,22 @@ void background_worker::cancel_async() {
 }
 
 void background_worker::on_do_work(do_work_event_args& e) {
-  do_work(*this, e);
+  auto safe_do_work = do_work;
+  if (safe_do_work.is_empty()) return;
+  safe_do_work(*this, e);
 }
 
 void background_worker::on_progress_changed(const progress_changed_event_args& e) {
-  progress_changed(*this, e);
+  auto safe_progress_changed = progress_changed;
+  if (safe_progress_changed.is_empty()) return;
+  safe_progress_changed(*this, e);
 }
 
 void background_worker::on_run_worker_completed(const run_worker_completed_event_args& e) {
-  run_worker_completed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_run_worker_completed = run_worker_completed;
+  if (safe_run_worker_completed.is_empty()) return;
+  safe_run_worker_completed(*this, e);
 }
 
 void background_worker::report_progress(int32 percent_progress) {
