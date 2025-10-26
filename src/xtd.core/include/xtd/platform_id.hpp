@@ -46,7 +46,7 @@ namespace xtd {
     free_bsd,
     /// @brief The operating system is Haiku.
     haiku,
-     /// @brief The operating system is SerenityOS.
+    /// @brief The operating system is SerenityOS.
     serenityos,
     /// @brief The operating system is AIX.
     aix,

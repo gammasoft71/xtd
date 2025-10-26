@@ -67,9 +67,9 @@ namespace {
     distribution_key_values.insert({"PRETTY_NAME", name + " " + version + " (" + codename + ")"});
     distribution_key_values.insert({"VERSION", version});
     distribution_key_values.insert({"VERSION_ID", version});
-    distribution_key_values.insert({"VERSION_CODENAME", codename}); // No codename for SerenityOS   
-    
-    return distribution_key_values; 
+    distribution_key_values.insert({"VERSION_CODENAME", codename}); // No codename for SerenityOS
+  
+    return distribution_key_values;
   }
   #else
   const distribution_dictionary& get_distribution_key_values() {

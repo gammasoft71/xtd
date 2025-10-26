@@ -260,20 +260,20 @@ bool date_time::is_daylight(time_t time) {
 }
 
 time_t date_time::utc_offset(time_t time) {
-#if defined(__serenity__) || !defined(_POSIX_C_SOURCE) || _POSIX_C_SOURCE < 200112L
-    // Fallback for platforms lacking tm_gmtoff (e.g., SerenityOS)
-    struct tm local = {};
-    struct tm gmt = {};
-    localtime_r(&time, &local);
-    gmtime_r(&time, &gmt);
-
-    // Calculate difference in seconds
-    time_t local_time = mktime(&local);
-    time_t gmt_time = mktime(&gmt);
-    return difftime(local_time, gmt_time);
-#else
+  #if defined(__serenity__) || !defined(_POSIX_C_SOURCE) || _POSIX_C_SOURCE < 200112L
+  // Fallback for platforms lacking tm_gmtoff (e.g., SerenityOS)
+  struct tm local = {};
+  struct tm gmt = {};
+  localtime_r(&time, &local);
+  gmtime_r(&time, &gmt);
+  
+  // Calculate difference in seconds
+  time_t local_time = mktime(&local);
+  time_t gmt_time = mktime(&gmt);
+  return difftime(local_time, gmt_time);
+  #else
   auto value = tm {};
   localtime_r(&time, &value);
   return value.tm_gmtoff;
-#endif
+  #endif
 }
