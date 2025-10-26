@@ -646,11 +646,17 @@ xtd::uptr<xtd::object> month_calendar::clone() const {
 }
 
 void month_calendar::on_date_changed(const date_range_event_args& e) {
-  if (can_raise_events()) date_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_date_changed = date_changed;
+  if (safe_date_changed.is_empty()) return;
+  safe_date_changed(*this, e);
 }
 
 void month_calendar::on_date_selected(const date_range_event_args& e) {
-  if (can_raise_events()) date_selected(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_date_selected = date_selected;
+  if (safe_date_selected.is_empty()) return;
+  safe_date_selected(*this, e);
 }
 
 void month_calendar::on_handle_created(const event_args& e) {
