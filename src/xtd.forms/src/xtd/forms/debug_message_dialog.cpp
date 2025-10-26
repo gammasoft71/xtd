@@ -25,6 +25,8 @@ void debug_message_dialog::reset() {
 }
 
 void debug_message_dialog::on_dialog_closed(const dialog_closed_event_args& e) {
-  auto raise_event = dialog_closed;
-  if (!raise_event.is_empty()) raise_event(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_dialog_closed = dialog_closed;
+  if (safe_dialog_closed.is_empty()) return;
+  safe_dialog_closed(*this, e);
 }
