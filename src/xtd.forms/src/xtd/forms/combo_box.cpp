@@ -354,17 +354,26 @@ xtd::uptr<xtd::object> combo_box::clone() const {
 }
 
 void combo_box::on_drop_down(const event_args& e) {
+  if (!can_raise_events()) return;
   data_->drop_down = true;
-  drop_down(*this, e);
+  auto safe_drop_down = drop_down;
+  if (safe_drop_down.is_empty()) return;
+  safe_drop_down(*this, e);
 }
 
 void combo_box::on_drop_down_closed(const event_args& e) {
+  if (!can_raise_events()) return;
   data_->drop_down = false;
-  drop_down_closed(*this, e);
+  auto safe_drop_down_closed = drop_down_closed;
+  if (safe_drop_down_closed.is_empty()) return;
+  safe_drop_down_closed(*this, e);
 }
 
 void combo_box::on_drop_down_style_changed(const event_args& e) {
-  drop_down_style_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_drop_down_style_changed = drop_down_style_changed;
+  if (safe_drop_down_style_changed.is_empty()) return;
+  safe_drop_down_style_changed(*this, e);
 }
 
 void combo_box::on_handle_created(const event_args& e) {
