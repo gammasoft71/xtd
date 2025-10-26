@@ -424,7 +424,10 @@ void checked_list_box::on_handle_created(const event_args& e) {
 }
 
 void checked_list_box::on_item_check(item_check_event_args& e) {
-  item_check(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_item_check = item_check;
+  if (safe_item_check.is_empty()) return;
+  safe_item_check(*this, e);
 }
 
 void checked_list_box::on_selected_value_changed(const event_args& e) {
