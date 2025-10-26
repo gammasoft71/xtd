@@ -169,7 +169,10 @@ void font_dialog::reset() noexcept {
 }
 
 void font_dialog::on_apply(const event_args& e) {
-  apply(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_apply = apply;
+  if (safe_apply.is_empty()) return;
+  safe_apply(*this, e);
 }
 
 bool font_dialog::run_dialog(intptr owner) {
