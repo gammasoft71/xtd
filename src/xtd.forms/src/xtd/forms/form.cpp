@@ -649,11 +649,17 @@ xtd::uptr<xtd::object> form::clone() const {
 }
 
 void form::on_activated(const event_args& e) {
-  activated(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_activated = activated;
+  if (safe_activated.is_empty()) return;
+  safe_activated(*this, e);
 }
 
 void form::on_deactivate(const event_args& e) {
-  deactivate(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_deactivate = deactivate;
+  if (safe_deactivate.is_empty()) return;
+  safe_deactivate(*this, e);
 }
 
 void form::on_handle_created(const event_args& e) {
@@ -675,12 +681,18 @@ void form::on_form_closed(const form_closed_event_args& e) {
   static auto closing = false;
   if (closing) return;
   closing = true;
-  form_closed(*this, e);
+  if (can_raise_events()) {
+    auto safe_form_closed = form_closed;
+    if (!safe_form_closed.is_empty()) safe_form_closed(*this, e);
+  }
   closing = false;
 }
 
 void form::on_form_closing(form_closing_event_args& e) {
-  form_closing(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_form_closing = form_closing;
+  if (safe_form_closing.is_empty()) return;
+  safe_form_closing(*this, e);
 }
 
 void form::on_layout(const event_args& e) {
