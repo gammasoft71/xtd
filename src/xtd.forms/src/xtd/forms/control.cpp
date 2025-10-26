@@ -1167,27 +1167,42 @@ drawing::size control::measure_text() const noexcept {
 
 void control::on_auto_size_changed(const event_args& e) {
   perform_layout();
-  if (can_raise_events()) auto_size_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_auto_size_changed = auto_size_changed;
+  if (safe_auto_size_changed.is_empty()) return;
+  safe_auto_size_changed(*this, e);
 }
 
 void control::on_back_color_changed(const event_args& e) {
   refresh();
-  if (can_raise_events()) back_color_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_back_color_changed = back_color_changed;
+  if (safe_back_color_changed.is_empty()) return;
+  safe_back_color_changed(*this, e);
 }
 
 void control::on_background_image_changed(const event_args& e) {
   refresh();
-  if (can_raise_events()) background_image_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_background_image_changed = background_image_changed;
+  if (safe_background_image_changed.is_empty()) return;
+  safe_background_image_changed(*this, e);
 }
 
 void control::on_background_image_layout_changed(const event_args& e) {
   refresh();
-  if (can_raise_events()) background_image_layout_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_background_image_layout_changed = background_image_layout_changed;
+  if (safe_background_image_layout_changed.is_empty()) return;
+  safe_background_image_layout_changed(*this, e);
 }
 
 void control::on_control_appearance_changed(const event_args& e) {
   post_recreate_handle();
-  if (can_raise_events()) control_appearance_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_control_appearance_changed = control_appearance_changed;
+  if (safe_control_appearance_changed.is_empty()) return;
+  safe_control_appearance_changed(*this, e);
 }
 
 void control::on_create_control() {
@@ -1201,27 +1216,42 @@ void control::on_create_control() {
 }
 
 void control::on_click(const event_args& e) {
-  if (can_raise_events()) click(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_click = click;
+  if (safe_click.is_empty()) return;
+  safe_click(*this, e);
 }
 
 void control::on_client_size_changed(const event_args& e) {
-  if (can_raise_events()) client_size_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_client_size_changed = client_size_changed;
+  if (safe_client_size_changed.is_empty()) return;
+  safe_client_size_changed(*this, e);
 }
 
 void control::on_control_added(const control_event_args& e) {
   perform_layout();
   size_changed += {e.control(), &control::on_parent_size_changed};
-  if (can_raise_events()) control_added(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_control_added = control_added;
+  if (safe_control_added.is_empty()) return;
+  safe_control_added(*this, e);
 }
 
 void control::on_control_removed(const control_event_args& e) {
   perform_layout();
   size_changed -= {e.control(), &control::on_parent_size_changed};
-  if (can_raise_events()) control_removed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_control_removed = control_removed;
+  if (safe_control_removed.is_empty()) return;
+  safe_control_removed(*this, e);
 }
 
 void control::on_cursor_changed(const event_args& e) {
-  if (can_raise_events()) cursor_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_cursor_changed = cursor_changed;
+  if (safe_cursor_changed.is_empty()) return;
+  safe_cursor_changed(*this, e);
 }
 
 void control::on_destroy_control() {
@@ -1231,33 +1261,51 @@ void control::on_destroy_control() {
 void control::on_dock_changed(const event_args& e) {
   if (parent().has_value()) parent().value().get().perform_layout();
   perform_layout();
-  if (can_raise_events()) dock_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_dock_changed = dock_changed;
+  if (safe_dock_changed.is_empty()) return;
+  safe_dock_changed(*this, e);
 }
 
 void control::on_double_click(const event_args& e) {
-  if (can_raise_events()) double_click(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_double_click = double_click;
+  if (safe_double_click.is_empty()) return;
+  safe_double_click(*this, e);
 }
 
 void control::on_enabled_changed(const event_args& e) {
   if (is_handle_created()) set_state(state::enabled, native::control::enabled(handle()));
   if (control_appearance() == xtd::forms::control_appearance::standard) data_->control_state = enabled() ? xtd::forms::visual_styles::control_state::normal : xtd::forms::visual_styles::control_state::disabled;
   refresh();
-  if (can_raise_events()) enabled_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_enabled_changed = enabled_changed;
+  if (safe_enabled_changed.is_empty()) return;
+  safe_enabled_changed(*this, e);
 }
 
 void control::on_fore_color_changed(const event_args& e) {
   refresh();
-  if (can_raise_events()) fore_color_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_fore_color_changed = fore_color_changed;
+  if (safe_fore_color_changed.is_empty()) return;
+  safe_fore_color_changed(*this, e);
 }
 
 void control::on_font_changed(const event_args& e) {
   if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
   perform_layout();
-  if (can_raise_events()) font_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_font_changed = font_changed;
+  if (safe_font_changed.is_empty()) return;
+  safe_font_changed(*this, e);
 }
 
 void control::on_got_focus(const event_args& e) {
-  if (can_raise_events()) got_focus(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_got_focus = got_focus;
+  if (safe_got_focus.is_empty()) return;
+  safe_got_focus(*this, e);
 }
 
 void control::on_handle_created(const event_args& e) {
@@ -1288,7 +1336,11 @@ void control::on_handle_created(const event_args& e) {
   
   native::control::right_to_left(handle(), static_cast < int32 > (right_to_left()));
   
-  if (can_raise_events()) handle_created(*this, e);
+  if (can_raise_events()) {
+    auto safe_handle_created = handle_created;
+    if (safe_handle_created.is_empty()) return;
+    safe_handle_created(*this, e);
+  }
   
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::creation), string::format("on handle created control={}, location={}, size={}, client_size={}", *this, location(), this->size(), client_size()));
   
@@ -1298,47 +1350,77 @@ void control::on_handle_created(const event_args& e) {
 }
 
 void control::on_handle_destroyed(const event_args& e) {
-  if (can_raise_events()) handle_destroyed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_handle_destroyed = handle_destroyed;
+  if (safe_handle_destroyed.is_empty()) return;
+  safe_handle_destroyed(*this, e);
 }
 
 void control::on_help_requested(help_event_args& e) {
-  if (can_raise_events()) help_requested(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_help_requested = help_requested;
+  if (safe_help_requested.is_empty()) return;
+  safe_help_requested(*this, e);
 }
 
 void control::on_key_down(key_event_args& e) {
-  if (can_raise_events()) key_down(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_key_down = key_down;
+  if (safe_key_down.is_empty()) return;
+  safe_key_down(*this, e);
 }
 
 void control::on_key_press(key_press_event_args& e) {
-  if (can_raise_events()) key_press(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_key_press = key_press;
+  if (safe_key_press.is_empty()) return;
+  safe_key_press(*this, e);
 }
 
 void control::on_key_up(key_event_args& e) {
-  if (can_raise_events()) key_up(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_key_up = key_up;
+  if (safe_key_up.is_empty()) return;
+  safe_key_up(*this, e);
 }
 
 void control::on_layout(const event_args& e) {
   do_layout_with_anchor_styles();
   do_layout_with_auto_size_mode();
   do_layout_children_with_dock_style();
-  if (can_raise_events()) layout(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_layout = layout;
+  if (safe_layout.is_empty()) return;
+  safe_layout(*this, e);
 }
 
 void control::on_location_changed(const event_args& e) {
   if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
-  if (can_raise_events()) location_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_location_changed = location_changed;
+  if (safe_location_changed.is_empty()) return;
+  safe_location_changed(*this, e);
 }
 
 void control::on_lost_focus(const event_args& e) {
-  if (can_raise_events()) lost_focus(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_lost_focus = lost_focus;
+  if (lost_focus.is_empty()) return;
+  lost_focus(*this, e);
 }
 
 void control::on_mouse_click(const mouse_event_args& e) {
-  if (can_raise_events()) mouse_click(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_mouse_click = mouse_click;
+  if (safe_mouse_click.is_empty()) return;
+  safe_mouse_click(*this, e);
 }
 
 void control::on_mouse_double_click(const mouse_event_args& e) {
-  if (can_raise_events()) mouse_double_click(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_mouse_double_click = mouse_double_click;
+  if (safe_mouse_double_click.is_empty()) return;
+  safe_mouse_double_click(*this, e);
 }
 
 void control::on_mouse_down(const mouse_event_args& e) {
@@ -1348,11 +1430,17 @@ void control::on_mouse_down(const mouse_event_args& e) {
     data_->control_state = xtd::forms::visual_styles::control_state::pressed;
     //invalidate();
   }
-  if (can_raise_events()) mouse_down(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_mouse_down = mouse_down;
+  if (safe_mouse_down.is_empty()) return;
+  safe_mouse_down(*this, e);
 }
 
 void control::on_mouse_horizontal_wheel(const mouse_event_args& e) {
-  if (can_raise_events()) mouse_horizontal_wheel(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_mouse_horizontal_wheel = mouse_horizontal_wheel;
+  if (safe_mouse_horizontal_wheel.is_empty()) return;
+  safe_mouse_horizontal_wheel(*this, e);
 }
 
 void control::on_mouse_enter(const event_args& e) {
@@ -1360,7 +1448,10 @@ void control::on_mouse_enter(const event_args& e) {
     data_->control_state = (mouse_buttons() & mouse_buttons::left) == mouse_buttons::left ? xtd::forms::visual_styles::control_state::pressed : xtd::forms::visual_styles::control_state::hot;
     //invalidate();
   }
-  if (can_raise_events()) mouse_enter(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_mouse_enter = mouse_enter;
+  if (safe_mouse_enter.is_empty()) return;
+  safe_mouse_enter(*this, e);
 }
 
 void control::on_mouse_leave(const event_args& e) {
@@ -1368,11 +1459,17 @@ void control::on_mouse_leave(const event_args& e) {
     data_->control_state = xtd::forms::visual_styles::control_state::normal;
     //invalidate();
   }
-  if (can_raise_events()) mouse_leave(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_mouse_leave = mouse_leave;
+  if (safe_mouse_leave.is_empty()) return;
+  safe_mouse_leave(*this, e);
 }
 
 void control::on_mouse_move(const mouse_event_args& e) {
-  if (can_raise_events()) mouse_move(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_mouse_move = mouse_move;
+  if (safe_mouse_move.is_empty()) return;
+  safe_mouse_move(*this, e);
 }
 
 void control::on_mouse_up(const mouse_event_args& e) {
@@ -1380,21 +1477,33 @@ void control::on_mouse_up(const mouse_event_args& e) {
     data_->control_state = xtd::forms::visual_styles::control_state::hot;
     //invalidate();
   }
-  if (can_raise_events()) mouse_up(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_mouse_up = mouse_up;
+  if (safe_mouse_up.is_empty()) return;
+  safe_mouse_up(*this, e);
 }
 
 void control::on_mouse_wheel(const mouse_event_args& e) {
-  if (can_raise_events()) mouse_wheel(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_mouse_wheel = mouse_wheel;
+  if (safe_mouse_wheel.is_empty()) return;
+  safe_mouse_wheel(*this, e);
 }
 
 void control::on_move(const event_args& e) {
-  if (can_raise_events()) move(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_move = move;
+  if (safe_move.is_empty()) return;
+  safe_move(*this, e);
 }
 
 void control::on_paint(paint_event_args& e) {
   def_wnd_proc(e.message_);
   if (data_->background_image != xtd::drawing::image::empty) control_paint::draw_image(e.graphics(), data_->background_image, e.clip_rectangle(), data_->background_image_layout);
-  if (can_raise_events()) paint(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_paint = paint;
+  if (safe_paint.is_empty()) return;
+  safe_paint(*this, e);
 }
 
 void control::on_paint_background(paint_event_args& e) {
@@ -1412,7 +1521,10 @@ void control::on_parent_back_color_changed(const event_args& e) {
 
 void control::on_parent_changed(const event_args& e) {
   if (!get_state(state::destroying) && parent().has_value() && !parent().value().get().get_state(state::destroying)) perform_layout();
-  if (can_raise_events()) parent_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_parent_changed = parent_changed;
+  if (safe_parent_changed.is_empty()) return;
+  safe_parent_changed(*this, e);
 }
 
 void control::on_parent_cursor_changed(const event_args& e) {
@@ -1452,7 +1564,10 @@ void control::on_parent_font_changed(const event_args& e) {
 }
 
 void control::on_region_changed(const event_args& e) {
-  if (can_raise_events()) region_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_region_changed = region_changed;
+  if (safe_region_changed.is_empty()) return;
+  safe_region_changed(*this, e);
 }
 
 void control::on_resize(const event_args& e) {
@@ -1485,16 +1600,25 @@ void control::on_resize(const event_args& e) {
   perform_layout();
   invalidate();
   
-  if (can_raise_events()) resize(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_resize = resize;
+  if (safe_resize.is_empty()) return;
+  safe_resize(*this, e);
 }
 
 void control::on_right_to_left_changed(const event_args& e) {
-  if (can_raise_events()) right_to_left_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_right_to_left_changed = right_to_left_changed;
+  if (safe_right_to_left_changed.is_empty()) return;
+  safe_right_to_left_changed(*this, e);
 }
 
 void control::on_size_changed(const event_args& e) {
   if (is_handle_created()) data_->client_rectangle = native::control::client_rectangle(handle());
-  if (can_raise_events()) size_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_size_changed = size_changed;
+  if (safe_size_changed.is_empty()) return;
+  safe_size_changed(*this, e);
 }
 
 void control::on_style_sheet_changed(const event_args& e) {
@@ -1506,7 +1630,10 @@ void control::on_style_sheet_changed(const event_args& e) {
   }
   invalidate(true);
   refresh();
-  if (can_raise_events()) style_sheet_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_style_sheet_changed = style_sheet_changed;
+  if (safe_style_sheet_changed.is_empty()) return;
+  safe_style_sheet_changed(*this, e);
 }
 
 void control::on_system_colors_changed(const event_args& e) {
@@ -1522,19 +1649,28 @@ void control::on_system_colors_changed(const event_args& e) {
   }
   for (auto control : controls())
     control.get().on_system_colors_changed(e);
-  if (can_raise_events()) system_colors_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_system_colors_changed = system_colors_changed;
+  if (safe_system_colors_changed.is_empty()) return;
+  safe_system_colors_changed(*this, e);
 }
 
 void control::on_tab_stop_changed(const event_args& e) {
   post_recreate_handle();
-  if (can_raise_events()) tab_stop_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_tab_stop_changed = tab_stop_changed;
+  if (safe_tab_stop_changed.is_empty()) return;
+  safe_tab_stop_changed(*this, e);
 }
 
 void control::on_text_changed(const event_args& e) {
   if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
   if (data_->control_appearance == forms::control_appearance::standard) invalidate();
   perform_layout();
-  if (can_raise_events()) text_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_text_changed = text_changed;
+  if (safe_text_changed.is_empty()) return;
+  safe_text_changed(*this, e);
 }
 
 void control::on_visible_changed(const event_args& e) {
@@ -1544,7 +1680,10 @@ void control::on_visible_changed(const event_args& e) {
   for (auto item : data_->controls)
     if (item.get().focused()) item.get().focus();
   if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
-  if (can_raise_events()) visible_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_visible_changed = visible_changed;
+  if (safe_visible_changed.is_empty()) return;
+  safe_visible_changed(*this, e);
 }
 
 void control::perform_layout() {
