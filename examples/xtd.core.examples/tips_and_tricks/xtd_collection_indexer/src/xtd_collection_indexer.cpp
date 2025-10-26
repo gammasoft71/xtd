@@ -30,7 +30,7 @@ auto main() -> int {
   //println(items[npos]);     // exception index_out_of_range_exception
 }
 
-// This code produces the following outputs :
+// This code produces the following output :
 //
 // 10
 // 20

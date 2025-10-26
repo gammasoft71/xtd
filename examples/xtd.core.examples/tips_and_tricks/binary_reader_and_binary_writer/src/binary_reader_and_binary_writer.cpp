@@ -39,7 +39,7 @@ auto main() -> int {
   console::write_line("```");
 }
 
-// This code produces the following outputs :
+// This code produces the following output :
 //
 // Write binary file
 //

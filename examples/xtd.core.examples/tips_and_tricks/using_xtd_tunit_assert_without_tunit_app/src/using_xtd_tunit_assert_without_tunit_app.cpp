@@ -15,7 +15,7 @@ public:
 
 startup_(program::main);
 
-// This code produces the following outputs :
+// This code produces the following output :
 //
 // ---- DEBUG ASSERTION FAILED ----
 // ---- Assert Short Message----
