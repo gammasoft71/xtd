@@ -40,5 +40,6 @@ void socket_async_event_args::set_buffer(const xtd::array<xtd::byte>& buffer, si
 
 void socket_async_event_args::on_complete(const socket_async_event_args& e) {
   auto safe_completed = completed;
-  if (!safe_completed.is_empty()) safe_completed(e);
+  if (safe_completed.is_empty()) return;
+  safe_completed(e);
 }
