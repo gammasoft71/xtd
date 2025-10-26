@@ -41,29 +41,26 @@ size_t memory::get_total_virtual_memory() {
 }
 
 size_t memory::get_used_physical_memory() {
-#if defined(__serenity__)
-    FILE* fp = popen("memstat", "r");
-    if (!fp) {
-      return 0;
+  #if defined(__serenity__)
+  FILE* fp = popen("memstat", "r");
+  if (!fp)
+    return 0;
+  size_t physical_pages_in_use = 0;
+  size_t page_size = sysconf(_SC_PAGE_SIZE);
+  while (!feof(fp)) {
+    char buffer[256];
+    if (fgets(buffer, sizeof(buffer), fp)) {
+      if (sscanf(buffer, "Physical pages (in use) count: %zu", &physical_pages_in_use) == 1)
+        break;
     }
-    size_t physical_pages_in_use = 0;
-    size_t page_size = sysconf(_SC_PAGE_SIZE);
-    while (!feof(fp)) {
-      char buffer[256];
-      if (fgets(buffer, sizeof(buffer), fp)) {
-        if (sscanf(buffer, "Physical pages (in use) count: %zu", &physical_pages_in_use) == 1) {
-          break;
-        }
-      }
-    }
-    pclose(fp);
-    if (page_size == (size_t)-1) {
-      page_size = 4096;
-    }
-    return physical_pages_in_use * page_size;
-#else
+  }
+  pclose(fp);
+  if (page_size == (size_t) -1)
+    page_size = 4096;
+  return physical_pages_in_use * page_size;
+  #else
   return get_total_physical_memory() - sysconf(_SC_AVPHYS_PAGES) * sysconf(_SC_PAGE_SIZE);
-#endif
+  #endif
 }
 
 size_t memory::get_used_process_memory() {

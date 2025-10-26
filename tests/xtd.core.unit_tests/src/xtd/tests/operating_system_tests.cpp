@@ -335,7 +335,7 @@ namespace xtd::tests {
       assert::is_false(operating_system {platform_id::other, xtd::version {}}.is_haiku());
     }
     
-    void test_method_(is_serenityos){
+    void test_method_(is_serenityos) {
       assert::is_false(operating_system {platform_id::unknown, xtd::version {}}.is_serenityos());
       assert::is_false(operating_system {platform_id::win32s, xtd::version {}}.is_serenityos());
       assert::is_false(operating_system {platform_id::win32_windows, xtd::version {}}.is_serenityos());
