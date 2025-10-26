@@ -473,9 +473,10 @@ bool application::on_app_thread_exception() {
 }
 
 bool application::on_thread_exception(const threading::thread_exception_event_args& e) {
-  if (thread_exception.is_empty()) return (main_form().has_value() ? exception_box::show(main_form().value().get(), e.exception(), product_name()) : exception_box::show(e.exception(), product_name())) == dialog_result::ok;
+  auto safe_thread_exception = thread_exception;
+  if (safe_thread_exception.is_empty()) return (main_form().has_value() ? exception_box::show(main_form().value().get(), e.exception(), product_name()) : exception_box::show(e.exception(), product_name())) == dialog_result::ok;
   auto obj = object {};
-  thread_exception(obj, e);
+  safe_thread_exception(obj, e);
   return true;
 }
 
