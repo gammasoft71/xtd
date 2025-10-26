@@ -364,7 +364,10 @@ void label::on_font_changed(const xtd::event_args& e) {
 
 void label::on_image_changed(const xtd::event_args& e) {
   if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
-  if (can_raise_events()) image_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_image_changed = image_changed;
+  if (safe_image_changed.is_empty()) return;
+  safe_image_changed(*this, e);
 }
 
 void label::on_paint(paint_event_args& e) {
@@ -375,7 +378,10 @@ void label::on_paint(paint_event_args& e) {
 }
 
 void label::on_text_align_changed(const xtd::event_args& e) {
-  text_align_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_text_align_changed = text_align_changed;
+  if (safe_text_align_changed.is_empty()) return;
+  safe_text_align_changed(*this, e);
 }
 
 void label::on_text_changed(const xtd::event_args& e) {
