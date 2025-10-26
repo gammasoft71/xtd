@@ -389,7 +389,8 @@ void console::write_line() {
 bool console::on_cancel_key_press(int32 special_key) {
   auto e = console_cancel_event_args(as<console_special_key>(special_key));
   auto safe_cancel_key_press = cancel_key_press;
-  if (!safe_cancel_key_press.is_empty()) safe_cancel_key_press(e);
+  if (safe_cancel_key_press.is_empty()) return e.cancel();;
+  safe_cancel_key_press(e);
   return e.cancel();
 }
 
