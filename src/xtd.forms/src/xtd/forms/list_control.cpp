@@ -68,11 +68,17 @@ bool list_control::allow_selection() const noexcept {
 }
 
 void list_control::on_selected_index_changed(const event_args& e) {
-  selected_index_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_selected_index_changed = selected_index_changed;
+  if (safe_selected_index_changed.is_empty()) return;
+  safe_selected_index_changed(*this, e);
 }
 
 void list_control::on_selected_value_changed(const event_args& e) {
-  selected_value_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_selected_value_changed = selected_value_changed;
+  if (safe_selected_value_changed.is_empty()) return;
+  safe_selected_value_changed(*this, e);
 }
 
 void list_control::set_selected_index(size_t value) {
