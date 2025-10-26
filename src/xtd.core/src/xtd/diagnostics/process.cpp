@@ -365,5 +365,6 @@ process& process::wait_for_exit(int32 milliseconds) {
 void process::on_exited() {
   if (!data_->enable_raising_events) return;
   auto safe_exit_callback = data_->exit_callback;
-  if (!safe_exit_callback.is_empty()) safe_exit_callback(self_, event_args::empty);
+  if (safe_exit_callback.is_empty()) return;
+  safe_exit_callback(self_, event_args::empty);
 }
