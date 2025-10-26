@@ -257,7 +257,10 @@ void font_picker::on_handle_created(const event_args& e) {
 }
 
 void font_picker::on_font_picker_changed(const font_picker_event_args& e) {
-  if (can_raise_events()) font_picker_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_font_picker_changed = font_picker_changed;
+  if (safe_font_picker_changed.is_empty()) return;
+  safe_font_picker_changed(*this, e);
 }
 
 void font_picker::wnd_proc(message& message) {
