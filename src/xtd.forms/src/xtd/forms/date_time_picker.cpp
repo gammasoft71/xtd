@@ -376,11 +376,17 @@ xtd::uptr<xtd::object> date_time_picker::clone() const {
 }
 
 void date_time_picker::on_close_up(const event_args& e) {
-  if (can_raise_events()) close_up(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_close_up = close_up;
+  if (safe_close_up.is_empty()) return;
+  safe_close_up(*this, e);
 }
 
 void date_time_picker::on_drop_down(const event_args& e) {
-  if (can_raise_events()) drop_down(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_close_up = drop_down;
+  if (safe_close_up.is_empty()) return;
+  safe_close_up(*this, e);
 }
 
 void date_time_picker::on_handle_created(const event_args& e) {
@@ -390,7 +396,10 @@ void date_time_picker::on_handle_created(const event_args& e) {
 }
 
 void date_time_picker::on_value_changed(const event_args& e) {
-  if (can_raise_events()) value_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_value_changed = value_changed;
+  if (safe_value_changed.is_empty()) return;
+  safe_value_changed(*this, e);
 }
 
 void date_time_picker::wnd_proc(message& message) {
