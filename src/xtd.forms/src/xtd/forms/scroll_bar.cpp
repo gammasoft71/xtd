@@ -94,11 +94,17 @@ void scroll_bar::on_handle_created(const event_args& e) {
 
 void scroll_bar::on_scroll(const event_args& e) {
   if (is_handle_created()) data_->value = native::scroll_bar::value(handle());
-  scroll(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_scroll = scroll;
+  if (safe_scroll.is_empty()) return;
+  safe_scroll(*this, e);
 }
 
 void scroll_bar::on_value_changed(const event_args& e) {
-  value_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_value_changed = value_changed;
+  if (safe_value_changed.is_empty()) return;
+  safe_value_changed(*this, e);
 }
 
 void scroll_bar::wnd_proc(message& message) {
