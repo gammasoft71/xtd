@@ -327,7 +327,10 @@ drawing::size radio_button::measure_control() const noexcept {
 
 void radio_button::on_appearance_changed(const event_args& e) {
   if (flat_style() != xtd::forms::flat_style::system) invalidate();
-  appearance_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_appearance_changed = appearance_changed;
+  if (safe_appearance_changed.is_empty()) return;
+  safe_appearance_changed(*this, e);
 }
 
 void radio_button::on_checked_changed(const event_args& e) {
@@ -336,7 +339,10 @@ void radio_button::on_checked_changed(const event_args& e) {
     else data_->state = xtd::forms::visual_styles::radio_button_state::checked_normal;
     invalidate();
   }
-  checked_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_checked_changed = checked_changed;
+  if (safe_checked_changed.is_empty()) return;
+  safe_checked_changed(*this, e);
 }
 
 void radio_button::on_enabled_changed(const event_args& e) {
