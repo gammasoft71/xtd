@@ -381,7 +381,10 @@ void domain_up_down::on_text_changed(const event_args& e) {
 }
 
 void domain_up_down::on_selected_item_changed(const event_args& e) {
-  if (can_raise_events()) selected_item_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_selected_item_changed = selected_item_changed;
+  if (safe_selected_item_changed.is_empty()) return;
+  safe_selected_item_changed(*this, e);
 }
 
 void domain_up_down::wnd_proc(message& message) {
