@@ -283,7 +283,10 @@ drawing::size text_box::measure_control() const noexcept {
 }
 
 void text_box::on_accepts_return_changed(const event_args& e) {
-  if (can_raise_events()) accepts_return_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_accepts_return_changed = accepts_return_changed;
+  if (safe_accepts_return_changed.is_empty()) return;
+  safe_accepts_return_changed(*this, e);
 }
 
 void text_box::on_handle_created(const event_args& e) {
