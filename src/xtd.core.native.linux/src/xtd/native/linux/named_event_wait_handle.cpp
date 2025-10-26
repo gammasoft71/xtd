@@ -3,6 +3,8 @@
 #include "../../../../include/xtd/native/linux/semaphore.hpp"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
+#include <errno.h>
+
 using namespace xtd::native;
 
 intmax_t named_event_wait_handle::create(bool initial_state, bool manual_reset, const std::string& name) {

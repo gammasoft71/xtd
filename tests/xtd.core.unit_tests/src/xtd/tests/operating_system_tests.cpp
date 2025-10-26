@@ -183,6 +183,7 @@ namespace xtd::tests {
       assert::is_false(operating_system {platform_id::watchos, xtd::version {}}.is_aix());
       assert::is_false(operating_system {platform_id::free_bsd, xtd::version {}}.is_aix());
       assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_aix());
+      assert::is_false(operating_system {platform_id::serenityos, xtd::version {}}.is_aix());
       assert::is_true(operating_system {platform_id::aix, xtd::version {}}.is_aix());
       assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_aix());
       assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_aix());
@@ -206,6 +207,7 @@ namespace xtd::tests {
       assert::is_false(operating_system {platform_id::watchos, xtd::version {}}.is_android());
       assert::is_false(operating_system {platform_id::free_bsd, xtd::version {}}.is_android());
       assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_android());
+      assert::is_false(operating_system {platform_id::serenityos, xtd::version {}}.is_android());
       assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_android());
       assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_android());
       assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_android());
@@ -229,6 +231,7 @@ namespace xtd::tests {
       assert::is_true(operating_system {platform_id::watchos, xtd::version {}}.is_apple_platform());
       assert::is_false(operating_system {platform_id::free_bsd, xtd::version {}}.is_apple_platform());
       assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_apple_platform());
+      assert::is_false(operating_system {platform_id::serenityos, xtd::version {}}.is_apple_platform());
       assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_apple_platform());
       assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_apple_platform());
       assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_apple_platform());
@@ -252,6 +255,7 @@ namespace xtd::tests {
       assert::is_true(operating_system {platform_id::watchos, xtd::version {}}.is_bsd_platform());
       assert::is_true(operating_system {platform_id::free_bsd, xtd::version {}}.is_bsd_platform());
       assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_bsd_platform());
+      assert::is_false(operating_system {platform_id::serenityos, xtd::version {}}.is_bsd_platform());
       assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_bsd_platform());
       assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_bsd_platform());
       assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_bsd_platform());
@@ -275,6 +279,7 @@ namespace xtd::tests {
       assert::is_true(operating_system {platform_id::watchos, xtd::version {}}.is_darwin());
       assert::is_false(operating_system {platform_id::free_bsd, xtd::version {}}.is_darwin());
       assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_darwin());
+      assert::is_false(operating_system {platform_id::serenityos, xtd::version {}}.is_darwin());
       assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_darwin());
       assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_darwin());
       assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_darwin());
@@ -298,6 +303,7 @@ namespace xtd::tests {
       assert::is_false(operating_system {platform_id::watchos, xtd::version {}}.is_free_bsd());
       assert::is_true(operating_system {platform_id::free_bsd, xtd::version {}}.is_free_bsd());
       assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_free_bsd());
+      assert::is_false(operating_system {platform_id::serenityos, xtd::version {}}.is_free_bsd());
       assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_free_bsd());
       assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_free_bsd());
       assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_free_bsd());
@@ -321,11 +327,36 @@ namespace xtd::tests {
       assert::is_false(operating_system {platform_id::watchos, xtd::version {}}.is_haiku());
       assert::is_false(operating_system {platform_id::free_bsd, xtd::version {}}.is_haiku());
       assert::is_true(operating_system {platform_id::haiku, xtd::version {}}.is_haiku());
+      assert::is_false(operating_system {platform_id::serenityos, xtd::version {}}.is_haiku());
       assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_haiku());
       assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_haiku());
       assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_haiku());
       assert::is_false(operating_system {platform_id::posix, xtd::version {}}.is_haiku());
       assert::is_false(operating_system {platform_id::other, xtd::version {}}.is_haiku());
+    }
+    
+    void test_method_(is_serenityos){
+      assert::is_false(operating_system {platform_id::unknown, xtd::version {}}.is_serenityos());
+      assert::is_false(operating_system {platform_id::win32s, xtd::version {}}.is_serenityos());
+      assert::is_false(operating_system {platform_id::win32_windows, xtd::version {}}.is_serenityos());
+      assert::is_false(operating_system {platform_id::win32_nt, xtd::version {}}.is_serenityos());
+      assert::is_false(operating_system {platform_id::win_ce, xtd::version {}}.is_serenityos());
+      assert::is_false(operating_system {platform_id::unix, xtd::version {}}.is_serenityos());
+      assert::is_false(operating_system {platform_id::xbox, xtd::version {}}.is_serenityos());
+      assert::is_false(operating_system {platform_id::macos, xtd::version {}}.is_serenityos());
+      assert::is_false(operating_system {platform_id::ios, xtd::version {}}.is_serenityos());
+      assert::is_false(operating_system {platform_id::android, xtd::version {}}.is_serenityos());
+      assert::is_false(operating_system {platform_id::linux, xtd::version {}}.is_serenityos());
+      assert::is_false(operating_system {platform_id::tvos, xtd::version {}}.is_serenityos());
+      assert::is_false(operating_system {platform_id::watchos, xtd::version {}}.is_serenityos());
+      assert::is_false(operating_system {platform_id::free_bsd, xtd::version {}}.is_serenityos());
+      assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_serenityos());
+      assert::is_true(operating_system {platform_id::serenityos, xtd::version {}}.is_serenityos());
+      assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_serenityos());
+      assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_serenityos());
+      assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_serenityos());
+      assert::is_false(operating_system {platform_id::posix, xtd::version {}}.is_serenityos());
+      assert::is_false(operating_system {platform_id::other, xtd::version {}}.is_serenityos());
     }
     
     void test_method_(is_ios) {
@@ -344,6 +375,7 @@ namespace xtd::tests {
       assert::is_false(operating_system {platform_id::watchos, xtd::version {}}.is_ios());
       assert::is_false(operating_system {platform_id::free_bsd, xtd::version {}}.is_ios());
       assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_ios());
+      assert::is_false(operating_system {platform_id::serenityos, xtd::version {}}.is_ios());
       assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_ios());
       assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_ios());
       assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_ios());
@@ -367,6 +399,7 @@ namespace xtd::tests {
       assert::is_false(operating_system {platform_id::watchos, xtd::version {}}.is_linux());
       assert::is_false(operating_system {platform_id::free_bsd, xtd::version {}}.is_linux());
       assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_linux());
+      assert::is_false(operating_system {platform_id::serenityos, xtd::version {}}.is_linux());
       assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_linux());
       assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_linux());
       assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_linux());
@@ -390,6 +423,7 @@ namespace xtd::tests {
       assert::is_false(operating_system {platform_id::watchos, xtd::version {}}.is_macos());
       assert::is_false(operating_system {platform_id::free_bsd, xtd::version {}}.is_macos());
       assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_macos());
+      assert::is_false(operating_system {platform_id::serenityos, xtd::version {}}.is_macos());
       assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_macos());
       assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_macos());
       assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_macos());
@@ -413,6 +447,7 @@ namespace xtd::tests {
       assert::is_true(operating_system {platform_id::watchos, xtd::version {}}.is_macos_platform());
       assert::is_false(operating_system {platform_id::free_bsd, xtd::version {}}.is_macos_platform());
       assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_macos_platform());
+      assert::is_false(operating_system {platform_id::serenityos, xtd::version {}}.is_macos_platform());
       assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_macos_platform());
       assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_macos_platform());
       assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_macos_platform());
@@ -436,6 +471,7 @@ namespace xtd::tests {
       assert::is_false(operating_system {platform_id::watchos, xtd::version {}}.is_mingw());
       assert::is_false(operating_system {platform_id::free_bsd, xtd::version {}}.is_mingw());
       assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_mingw());
+      assert::is_false(operating_system {platform_id::serenityos, xtd::version {}}.is_mingw());
       assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_mingw());
       assert::is_true(operating_system {platform_id::mingw, xtd::version {}}.is_mingw());
       assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_mingw());
@@ -459,6 +495,7 @@ namespace xtd::tests {
       assert::is_false(operating_system {platform_id::watchos, xtd::version {}}.is_msys());
       assert::is_false(operating_system {platform_id::free_bsd, xtd::version {}}.is_msys());
       assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_msys());
+      assert::is_false(operating_system {platform_id::serenityos, xtd::version {}}.is_msys());
       assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_msys());
       assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_msys());
       assert::is_true(operating_system {platform_id::msys, xtd::version {}}.is_msys());
@@ -482,6 +519,7 @@ namespace xtd::tests {
       assert::is_false(operating_system {platform_id::watchos, xtd::version {}}.is_posix());
       assert::is_false(operating_system {platform_id::free_bsd, xtd::version {}}.is_posix());
       assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_posix());
+      assert::is_false(operating_system {platform_id::serenityos, xtd::version {}}.is_posix());
       assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_posix());
       assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_posix());
       assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_posix());
@@ -505,6 +543,7 @@ namespace xtd::tests {
       assert::is_true(operating_system {platform_id::watchos, xtd::version {}}.is_posix_platform());
       assert::is_true(operating_system {platform_id::free_bsd, xtd::version {}}.is_posix_platform());
       assert::is_true(operating_system {platform_id::haiku, xtd::version {}}.is_posix_platform());
+      assert::is_true(operating_system {platform_id::serenityos, xtd::version {}}.is_posix_platform());
       assert::is_true(operating_system {platform_id::aix, xtd::version {}}.is_posix_platform());
       assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_posix_platform());
       assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_posix_platform());
@@ -528,6 +567,7 @@ namespace xtd::tests {
       assert::is_true(operating_system {platform_id::watchos, xtd::version {}}.is_unix_platform());
       assert::is_true(operating_system {platform_id::free_bsd, xtd::version {}}.is_unix_platform());
       assert::is_true(operating_system {platform_id::haiku, xtd::version {}}.is_unix_platform());
+      assert::is_true(operating_system {platform_id::serenityos, xtd::version {}}.is_unix_platform());
       assert::is_true(operating_system {platform_id::aix, xtd::version {}}.is_unix_platform());
       assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_unix_platform());
       assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_unix_platform());
@@ -551,6 +591,7 @@ namespace xtd::tests {
       assert::is_false(operating_system {platform_id::watchos, xtd::version {}}.is_tvos());
       assert::is_false(operating_system {platform_id::free_bsd, xtd::version {}}.is_tvos());
       assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_tvos());
+      assert::is_false(operating_system {platform_id::serenityos, xtd::version {}}.is_tvos());
       assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_tvos());
       assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_tvos());
       assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_tvos());
@@ -574,6 +615,7 @@ namespace xtd::tests {
       assert::is_true(operating_system {platform_id::watchos, xtd::version {}}.is_watchos());
       assert::is_false(operating_system {platform_id::free_bsd, xtd::version {}}.is_watchos());
       assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_watchos());
+      assert::is_false(operating_system {platform_id::serenityos, xtd::version {}}.is_watchos());
       assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_watchos());
       assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_watchos());
       assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_watchos());
@@ -597,6 +639,7 @@ namespace xtd::tests {
       assert::is_false(operating_system {platform_id::watchos, xtd::version {}}.is_windows());
       assert::is_false(operating_system {platform_id::free_bsd, xtd::version {}}.is_windows());
       assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_windows());
+      assert::is_false(operating_system {platform_id::serenityos, xtd::version {}}.is_windows());
       assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_windows());
       assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_windows());
       assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_windows());
@@ -620,6 +663,7 @@ namespace xtd::tests {
       assert::is_false(operating_system {platform_id::watchos, xtd::version {}}.is_windows_ce());
       assert::is_false(operating_system {platform_id::free_bsd, xtd::version {}}.is_windows_ce());
       assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_windows_ce());
+      assert::is_false(operating_system {platform_id::serenityos, xtd::version {}}.is_windows_ce());
       assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_windows_ce());
       assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_windows_ce());
       assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_windows_ce());
@@ -643,6 +687,7 @@ namespace xtd::tests {
       assert::is_false(operating_system {platform_id::watchos, xtd::version {}}.is_windows_platform());
       assert::is_false(operating_system {platform_id::free_bsd, xtd::version {}}.is_windows_platform());
       assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_windows_platform());
+      assert::is_false(operating_system {platform_id::serenityos, xtd::version {}}.is_windows_platform());
       assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_windows_platform());
       assert::is_true(operating_system {platform_id::mingw, xtd::version {}}.is_windows_platform());
       assert::is_true(operating_system {platform_id::msys, xtd::version {}}.is_windows_platform());
@@ -666,6 +711,7 @@ namespace xtd::tests {
       assert::is_false(operating_system {platform_id::watchos, xtd::version {}}.is_xbox());
       assert::is_false(operating_system {platform_id::free_bsd, xtd::version {}}.is_xbox());
       assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_xbox());
+      assert::is_false(operating_system {platform_id::serenityos, xtd::version {}}.is_xbox());
       assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_xbox());
       assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_xbox());
       assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_xbox());

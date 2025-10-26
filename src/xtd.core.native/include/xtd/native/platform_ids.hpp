@@ -150,4 +150,11 @@ constexpr std::int32_t PLATFORM_POSIX = 17;
 /// @ingroup xtd_core_native platform_id
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
+constexpr std::int32_t PLATFORM_SERENITYOS= 18;
+/// @brief The operating system is other.
+/// @par Library
+/// xtd.core.native
+/// @ingroup xtd_core_native platform_id
+/// @remarks Added specifically for xtd.
+/// @warning Internal use only
 constexpr std::int32_t PLATFORM_OTHER = 32767;

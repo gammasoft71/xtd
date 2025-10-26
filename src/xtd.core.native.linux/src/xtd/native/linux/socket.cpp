@@ -21,7 +21,7 @@
 #include <sys/socket.h>
 #include <sys/ioctl.h>
 
-#if defined(__HAIKU__)
+#if defined(__HAIKU__) || defined(__serenity__)
 #define ESOCKTNOSUPPORT 0
 #define IPPROTO_IPIP 0
 #define IPPROTO_PUP 0
@@ -32,6 +32,15 @@
 #define SOCK_RDM 0
 #define AF_SNA 0
 #define AF_DECnet 0
+#endif
+
+#if defined(__serenity__)
+#define IPPROTO_ROUTING 43
+#define IPPROTO_FRAGMENT 44
+#define IPPROTO_NONE 59
+#define IPPROTO_DSTOPTS 60
+#define IP_HDRINCL 2
+#define AF_APPLETALK 16
 #endif
 
 using namespace std;

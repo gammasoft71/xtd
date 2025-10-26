@@ -33,7 +33,7 @@ distribution operating_system::distribution() const noexcept {
 }
 
 string operating_system::name() const noexcept {
-  static auto operating_system_names = std::map<platform_id, string> {{platform_id::win32s, "Microsoft Win32S"}, {platform_id::win32_windows, "Microsoft Windows 95"}, {platform_id::win32_nt, "Microsoft Windows"}, {platform_id::win_ce, "Microsoft Windows CE"}, {platform_id::unix, "Unix"}, {platform_id::xbox, "Xbox"}, {platform_id::macos, "macOS"}, {platform_id::ios, "iOS"}, {platform_id::android, "Android"}, {platform_id::linux, "Linux"}, {platform_id::tvos, "tvOS"}, {platform_id::watchos, "watchOS"}, {platform_id::free_bsd, "FreeBSD"}, {platform_id::haiku, "Haiku"}, {platform_id::aix, "AIX"}, {platform_id::mingw, "MINGW"}, {platform_id::msys, "MSYS"}, {platform_id::other, "Other"}, {platform_id::unknown, "<Unknown>"}};
+  static auto operating_system_names = std::map<platform_id, string> {{platform_id::win32s, "Microsoft Win32S"}, {platform_id::win32_windows, "Microsoft Windows 95"}, {platform_id::win32_nt, "Microsoft Windows"}, {platform_id::win_ce, "Microsoft Windows CE"}, {platform_id::unix, "Unix"}, {platform_id::xbox, "Xbox"}, {platform_id::macos, "macOS"}, {platform_id::ios, "iOS"}, {platform_id::android, "Android"}, {platform_id::linux, "Linux"}, {platform_id::tvos, "tvOS"}, {platform_id::watchos, "watchOS"}, {platform_id::free_bsd, "FreeBSD"}, {platform_id::haiku, "Haiku"}, {platform_id::serenityos, "SerenityOS"}, {platform_id::aix, "AIX"}, {platform_id::mingw, "MINGW"}, {platform_id::msys, "MSYS"}, {platform_id::other, "Other"}, {platform_id::unknown, "<Unknown>"}};
   if (platform_ == xtd::platform_id::win32_windows && (version_.major() > 4 || (version_.major() == 4 && version_.minor() > 0))) return "Microsoft Windows 98";
   auto it = operating_system_names.find(platform_);
   return it != operating_system_names.end() ? it->second : "<Unknown>";
@@ -90,6 +90,10 @@ bool operating_system::is_haiku() const noexcept {
   return platform_ == xtd::platform_id::haiku;
 }
 
+bool operating_system::is_serenityos() const noexcept {
+  return platform_ == xtd::platform_id::serenityos;
+}
+
 bool operating_system::is_ios() const noexcept {
   return platform_ == xtd::platform_id::ios;
 }
@@ -123,7 +127,7 @@ bool operating_system::is_posix_platform() const noexcept {
 }
 
 bool operating_system::is_unix_platform() const noexcept {
-  return platform_ == xtd::platform_id::unix || is_aix() || is_android() || is_free_bsd() || is_haiku() || is_linux() || is_darwin();
+  return platform_ == xtd::platform_id::unix || is_aix() || is_android() || is_free_bsd() || is_haiku() || is_serenityos() || is_linux() || is_darwin();
 }
 
 bool operating_system::is_tvos() const noexcept {
