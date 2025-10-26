@@ -229,7 +229,10 @@ xtd::uptr<xtd::object> switch_button::clone() const {
 }
 
 void switch_button::on_checked_changed(const event_args& e) {
-  checked_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_checked_changed = checked_changed;
+  if (safe_checked_changed.is_empty()) return;
+  safe_checked_changed(*this, e);
 }
 
 void switch_button::on_mouse_down(const mouse_event_args& e) {
