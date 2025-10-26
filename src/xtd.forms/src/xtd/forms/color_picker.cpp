@@ -184,7 +184,10 @@ void color_picker::on_handle_created(const event_args& e) {
 }
 
 void color_picker::on_color_picker_changed(const color_picker_event_args& e) {
-  if (can_raise_events()) color_picker_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_color_picker_changed = color_picker_changed;
+  if (safe_color_picker_changed.is_empty()) return;
+  safe_color_picker_changed(*this, e);
 }
 
 void color_picker::wnd_proc(message& message) {
