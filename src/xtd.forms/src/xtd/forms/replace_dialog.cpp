@@ -157,7 +157,10 @@ void replace_dialog::show(const iwin32_window& owner) {
 
 void replace_dialog::on_dialog_closed() {
   data_->visible = false;
-  dialog_closed(*this, dialog_closed_event_args(forms::dialog_result::cancel));
+  if (!can_raise_events()) return;
+  auto safe_dialog_closed = dialog_closed;
+  if (safe_dialog_closed.is_empty()) return;
+  safe_dialog_closed(*this, dialog_closed_event_args(forms::dialog_result::cancel));
 }
 
 void replace_dialog::on_dialog_find(const xtd::drawing::point& location, const string& find_string, const string& replace_string, bool whole_word, bool match_case) {
@@ -166,7 +169,10 @@ void replace_dialog::on_dialog_find(const xtd::drawing::point& location, const s
   data_->replace_string = replace_string;
   data_->whole_word = whole_word;
   data_->match_case = match_case;
-  find_next(*this, find_event_args(data_->find_string, data_->match_case, search_direction::down, data_->whole_word));
+  if (!can_raise_events()) return;
+  auto safe_find_next = find_next;
+  if (safe_find_next.is_empty()) return;
+  safe_find_next(*this, find_event_args(data_->find_string, data_->match_case, search_direction::down, data_->whole_word));
 }
 
 void replace_dialog::on_dialog_replace(const xtd::drawing::point& location, const string& find_string, const string& replace_string, bool replace_all, bool whole_word, bool match_case) {
@@ -175,8 +181,17 @@ void replace_dialog::on_dialog_replace(const xtd::drawing::point& location, cons
   data_->replace_string = replace_string;
   data_->whole_word = whole_word;
   data_->match_case = match_case;
-  if (replace_all) this->replace_all(*this, replace_event_args(data_->find_string, data_->replace_string, data_->match_case, data_->whole_word));
-  else replace(*this, replace_event_args(data_->find_string, data_->replace_string, data_->match_case, data_->whole_word));
+  if (replace_all) {
+    if (!can_raise_events()) return;
+    auto safe_replace_all = self_.replace_all;
+    if (safe_replace_all.is_empty()) return;
+    safe_replace_all(*this, replace_event_args(data_->find_string, data_->replace_string, data_->match_case, data_->whole_word));
+    return;
+  }
+  if (!can_raise_events()) return;
+  auto safe_replace = replace;
+  if (safe_replace.is_empty()) return;
+  safe_replace(*this, replace_event_args(data_->find_string, data_->replace_string, data_->match_case, data_->whole_word));
 }
 
 void replace_dialog::create_handle() {
