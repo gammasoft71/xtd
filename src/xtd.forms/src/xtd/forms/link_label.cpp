@@ -371,7 +371,10 @@ void link_label::on_mouse_click(const mouse_event_args& e) {
   auto& link = point_in_link(e.location());
   if (link != link_empty && link.enabled()) {
     link_label_clicked_event_args args(link, e.button());
-    link_clicked(*this, args);
+    if (can_raise_events()) {
+      auto safe_link_clicked = link_clicked;
+      if (!safe_link_clicked.is_empty()) safe_link_clicked(*this, args);
+    }
     if (args.visited()) {
       link.visited(true);
       invalidate();
