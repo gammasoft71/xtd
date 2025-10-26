@@ -90,7 +90,10 @@ void timer::stop() {
 }
 
 void timer::on_tick(const event_args& e) {
-  tick(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_tick = tick;
+  if (safe_tick.is_empty()) return;
+  safe_tick(*this, e);
 }
 
 void timer::restart() {
