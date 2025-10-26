@@ -391,11 +391,17 @@ void up_down_button::on_handle_created(const event_args& e) {
 }
 
 void up_down_button::on_scroll(const event_args& e) {
-  if (can_raise_events()) scroll(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_scroll = scroll;
+  if (safe_scroll.is_empty()) return;
+  safe_scroll(*this, e);
 }
 
 void up_down_button::on_value_changed(const event_args& e) {
-  if (can_raise_events()) value_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_value_changed = value_changed;
+  if (safe_value_changed.is_empty()) return;
+  safe_value_changed(*this, e);
 }
 
 void up_down_button::wnd_proc(message& message) {
