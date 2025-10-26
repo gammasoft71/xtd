@@ -410,7 +410,10 @@ void numeric_up_down::on_handle_created(const event_args& e) {
 }
 
 void numeric_up_down::on_value_changed(const event_args& e) {
-  if (can_raise_events()) value_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_value_changed = value_changed;
+  if (safe_value_changed.is_empty()) return;
+  safe_value_changed(*this, e);
 }
 
 void numeric_up_down::on_lost_focus(const event_args& e) {
