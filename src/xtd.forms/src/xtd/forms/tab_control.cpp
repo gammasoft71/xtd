@@ -273,7 +273,10 @@ void tab_control::on_handle_created(const event_args& e) {
 }
 
 void tab_control::on_selected_index_changed(const event_args& e) {
-  selected_index_changed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_selected_index_changed = selected_index_changed;
+  if (safe_selected_index_changed.is_empty()) return;
+  safe_selected_index_changed(*this, e);
 }
 
 void tab_control::wnd_proc(message& message) {
