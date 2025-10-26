@@ -403,7 +403,7 @@ void toggle_button::on_check_state_changed(const event_args& e) {
     else if (data_->check_state == xtd::forms::check_state::indeterminate) data_->state = xtd::forms::visual_styles::toggle_button_state::mixed_normal;
   }
   if (can_raise_events()) {
-    auto safe_check_state_changed= check_state_changed;
+    auto safe_check_state_changed = check_state_changed;
     if (!safe_check_state_changed.is_empty()) safe_check_state_changed(*this, e);
   }
   if (flat_style() != xtd::forms::flat_style::system) invalidate();
