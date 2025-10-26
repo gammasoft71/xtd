@@ -58,11 +58,17 @@ xtd::forms::dialog_result common_dialog::show_sheet_dialog(const iwin32_window& 
 
 void common_dialog::on_dialog_closed(const dialog_closed_event_args& e) {
   data_->dialog_result = e.dialog_result();
-  dialog_closed(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_dialog_closed = dialog_closed;
+  if (safe_dialog_closed.is_empty()) return;
+  safe_dialog_closed(*this, e);
 }
 
 void common_dialog::on_help_request(help_event_args& e) {
-  help_request(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_help_request = help_request;
+  if (safe_help_request.is_empty()) return;
+  safe_help_request(*this, e);
 }
 
 void common_dialog::set_dialog_result(xtd::forms::dialog_result value) {
