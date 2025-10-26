@@ -763,7 +763,8 @@ void style_sheet::on_style_sheet_changed(const xtd::event_args& e) {
   for (auto h : xtd::forms::control::handles_)
     h.second->send_message(h.first, WM_STYLE_SHEET_CHANGED, 0, 0);
   auto safe_style_sheet_changed = style_sheet_changed;
-  if (!safe_style_sheet_changed.is_empty()) safe_style_sheet_changed(current_style_sheet_, e);
+  if (safe_style_sheet_changed.is_empty()) return;
+  safe_style_sheet_changed(current_style_sheet_, e);
 }
 
 void style_sheet::on_system_colors_changed(const event_args& e) {
