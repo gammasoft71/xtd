@@ -488,13 +488,19 @@ xtd::uptr<xtd::object> tool_bar::clone() const {
 }
 
 void tool_bar::on_button_click(const xtd::forms::tool_bar_button_click_event_args& e) {
-  button_click(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_button_click = button_click;
+  if (safe_button_click.is_empty()) return;
+  safe_button_click(*this, e);
 }
 
 void tool_bar::on_button_drop_down(const xtd::forms::tool_bar_button_click_event_args& e) {
   if (e.button().drop_down_menu().has_value() && e.handle())
     e.button().drop_down_menu().value().get().show(*this, xtd::drawing::point(reinterpret_cast<tool_bar_button_control*>(e.handle())->left(), reinterpret_cast<tool_bar_button_control*>(e.handle())->bottom() + 2));
-  button_drop_down(*this, e);
+  if (!can_raise_events()) return;
+  auto safe_button_drop_downk = button_drop_down;
+  if (safe_button_drop_downk.is_empty()) return;
+  safe_button_drop_downk(*this, e);
 }
 
 void tool_bar::on_handle_created(const event_args& e) {
