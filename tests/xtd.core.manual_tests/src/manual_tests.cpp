@@ -4,6 +4,6 @@ auto main() -> int {
   println("Hello, World!");
 }
 
-// This code produces the following outputs :
+// This code produces the following output :
 //
 // Hello, World!
