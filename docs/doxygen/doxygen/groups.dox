@@ -5,21 +5,26 @@
     | // Contains class list by category.
     |- libraries
     |   | /// @brief The xtd libraries.
+    |   | /// @image html xtd256.png
     |   | /// @defgroup libraries ﹡ libraries
     |   |- xtd_core
     |   |     /// @brief The xtd.core library contains all fundamental classes to access Hardware, Os, System, and more.
+    |   |     /// @image html xtd_core_header.png
     |   |     /// @ingroup libraries
     |   |     /// @defgroup xtd_core xtd.core
     |   |- xtd_drawing
     |   |     /// @brief The xtd.drawing library provides access to GDI+ basic graphics functionality.
+    |   |     /// @image html xtd_drawing_header.png
     |   |     /// @ingroup libraries
     |   |     /// @defgroup xtd_drawing xtd.drawing
     |   |- xtd_forms
     |   |     /// @brief The xtd.forms library contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
+    |   |     /// @image html xtd_forms_header.png
     |   |     /// @ingroup libraries
     |   |     /// @defgroup xtd_forms xtd.forms
     |   |- xtd_tunit
     |         /// @brief The xtd.tunit library contains components needed for unit testing.
+    |   |     /// @image html xtd_tunit_header.png
     |         /// @ingroup libraries
     |         /// @defgroup xtd_tunit xtd.tunit
     |- debug
