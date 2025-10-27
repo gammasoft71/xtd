@@ -10,15 +10,20 @@ if [ -z ${xtd_version+x} ]; then
   echo ""
   exit 1
 fi
-
-if [[ "$(id -u)" -ne 0 && -z "$(command -v sudo)" ]]; then
-  echo "---------------------------------------------------------------"
-  echo ""
-  echo "ERROR : Impossible to install: no root or 'sudo' available."
-  echo ""
-  echo "---------------------------------------------------------------"
-  echo ""
-  exit 1
+# Check if the system is SerenityOS
+if [[ "$(uname -s)" == "SerenityOS" ]]; then
+  # SerenityOS does not require sudo or root privileges
+  echo "Running on SerenityOS, no sudo required."
+else
+    if [[ "$(id -u)" -ne 0 && -z "$(command -v sudo)" ]]; then
+      echo "---------------------------------------------------------------"
+      echo ""
+      echo "ERROR : Impossible to install: no root or 'sudo' available."
+      echo ""
+      echo "---------------------------------------------------------------"
+      echo ""
+      exit 1
+    fi
 fi
 
 echo "Install xtd libraries version $xtd_version, copyright © 2025 Gammasoft"
@@ -43,6 +48,8 @@ elif [[ "$OS_NAME" == *"Linux"* ]]; then
   echo "  Operating System is Linux"; 
 elif [[ "$OS_NAME" == *"Haiku"* ]]; then
   echo "  Operating System is Haiku"; 
+elif [[ "$OS_NAME" == *"SerenityOS"* ]]; then
+  echo "  Operating System is SerenityOS"; 
 else
   echo "  Operating System is Unknown"
 fi
@@ -50,7 +57,10 @@ fi
 #_______________________________________________________________________________
 #                                                      Check the number of cores
 if [[ "$OS_NAME" == *"Darwin"* ]]; then
-  build_cores=$(sysctl -n hw.ncpu); else
+  build_cores=$(sysctl -n hw.ncpu); 
+elif [[ "$OS_NAME" == *"SerenityOS"* ]]; then
+  build_cores=""; # SerenityOS does not support nproc or sysctl
+else
   build_cores=$(nproc)
 fi
 if [[ $build_cores -ne 1 ]]; then
@@ -107,7 +117,7 @@ echo "cmake_install_prefix=\"$cmake_install_prefix\""
 
 #_______________________________________________________________________________
 #                                                    Check and install wxWidgets
-if [[ "$OS_NAME" != "Haiku" ]]; then
+if [ "$OS_NAME" != "Haiku"] && [“$OS_NAME” != "SerenityOS"] && [“$(uname -s)” != "SerenityOS"]; then
   echo "Checks wxWidgets..."
   if [ -d "build" ]; then rm -rf "build"; fi
   mkdir build
@@ -140,18 +150,30 @@ pushd build
 mkdir Release && mkdir Debug
 pushd Release
 cmake ../.. -DCMAKE_BUILD_TYPE=Release "$@" || exit 1
-cmake --build . -- -j$build_cores || exit 1
+if [[ "$OS_NAME" == *"SerenityOS"* ]]; then
+    cmake --build . || exit 1
+else
+    cmake --build . -- -j$build_cores || exit 1
+fi
 if [[ "$OS_NAME" == *"CLANGARM64"* ]] || [[ "$OS_NAME" == *"CLANG32"* ]] || [[ "$OS_NAME" == *"CLANG64"* ]] || [[ "$OS_NAME" == *"MINGW32"* ]] || [[ "$OS_NAME" == *"MINGW64"* ]] || [[ "$OS_NAME" == *"UCRT64"* ]]; then
   cmake --build . --target install || exit 1
+elif [[ "$OS_NAME" == *"SerenityOS"* ]]; then
+  su -c "cmake --build . --target install || exit 1"
 else
   sudo cmake --build . --target install || exit 1
 fi
 popd
 pushd Debug
 cmake ../.. -DCMAKE_BUILD_TYPE=Debug "$@" || exit 1
-cmake --build . -- -j$build_cores || exit 1
+if [[ "$OS_NAME" == *"SerenityOS"* ]]; then
+    cmake --build . || exit 1
+else
+    cmake --build . -- -j$build_cores || exit 1
+fi
 if [[ "$OS_NAME" == *"CLANGARM64"* ]] || [[ "$OS_NAME" == *"CLANG32"* ]] || [[ "$OS_NAME" == *"CLANG64"* ]] || [[ "$OS_NAME" == *"MINGW32"* ]] || [[ "$OS_NAME" == *"MINGW64"* ]] || [[ "$OS_NAME" == *"UCRT64"* ]]; then
   cmake --build . --target install || exit 1
+elif [[ "$OS_NAME" == *"SerenityOS"* ]]; then
+  su -c "cmake --build . --target install || exit 1"
 else
   sudo cmake --build . --target install || exit 1
 fi
@@ -224,7 +246,11 @@ else
     sudo cp build/Release/install_manifest.txt $cmake_install_prefix/share/xtd/xtd_release_install_manifest.txt
   fi
   if test -f build/Debug/install_manifest.txt; then
+    if [[ "$OS_NAME" == *"SerenityOS"* ]]; then
+      su -c "cp build/Debug/install_manifest.txt $cmake_install_prefix/share/xtd/xtd_debug_install_manifest.txt"
+    else
     sudo cp build/Debug/install_manifest.txt $cmake_install_prefix/share/xtd/xtd_debug_install_manifest.txt
+    fi
   fi
 fi
 
@@ -235,6 +261,8 @@ if [[ "$OS_NAME" == *"CLANGARM64"* ]] || [[ "$OS_NAME" == *"CLANG32"* ]] || [[ "
   "$cmake_install_prefix/xtd/bin/xtdc-gui.exe"
 elif [[ "$OS_NAME" == *"Darwin"* ]]; then
   open $cmake_install_prefix/bin/xtdc-gui.app; 
+elif [[ "$OS_NAME" == *"SerenityOS"* ]]; then
+  echo "SerenityOS does not support xtdc-gui now."
 else
   $cmake_install_prefix/bin/xtdc-gui &>/dev/null &
 fi

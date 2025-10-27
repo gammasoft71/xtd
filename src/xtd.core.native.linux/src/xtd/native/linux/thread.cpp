@@ -5,6 +5,7 @@
 #include <pthread.h>
 #include <chrono>
 #include <thread>
+#include <sched.h>
 
 #define PTHREAD_FAILED ((pthread_t)-1)
 
@@ -12,6 +13,30 @@
 #define thread_cast_ reinterpret_cast
 #else
 #define thread_cast_ static_cast
+#endif
+
+#if defined(__serenity__)
+#include <cstdint>
+#include <vector>
+#include <pthread.h>
+#include <thread>
+
+using cpu_set_t = uint64_t;
+
+#define CPU_ZERO(set) (*(set) = 0)
+
+#define CPU_SET(cpu, set) do { \
+    if ((cpu) < 64) (*(set) |= (1ULL << (cpu))); \
+  } while (0)
+
+#define CPU_ISSET(cpu, set) (((cpu) < 64) && (*(set) & (1ULL << (cpu))))
+
+int pthread_setaffinity_np(pthread_t thread, size_t cpusetsize, const cpu_set_t* set) {
+  (void)thread;
+  (void)cpusetsize;
+  (void)set;
+  return 0;
+}
 #endif
 
 using namespace xtd::native;
@@ -77,6 +102,24 @@ bool thread::set_priority(intmax_t handle, int32_t priority) {
 }
 
 bool thread::set_processor_affinity(intmax_t handle, const std::vector<size_t>& processor_affinity) {
+  #if defined(__serenity__)
+  if (!handle) return false;
+  cpu_set_t mask;
+  CPU_ZERO(&mask);
+  
+  if (processor_affinity.empty()) {
+    auto nprocs = std::thread::hardware_concurrency() != 0 ? std::thread::hardware_concurrency() : 1;
+    for (unsigned int cpu = 0; cpu < nprocs && cpu < 64; ++cpu)
+      CPU_SET(cpu, &mask);
+  } else {
+    for (auto cpu : processor_affinity) {
+      if (cpu < 64)
+        CPU_SET(cpu, &mask);
+    }
+  }
+  
+  return pthread_setaffinity_np(static_cast<pthread_t>(handle), sizeof(mask), &mask) == 0;
+  #else
   if (thread_cast_<pthread_t>(handle) == PTHREAD_FAILED) return false;
   
   auto mask = cpu_set_t {};
@@ -90,8 +133,9 @@ bool thread::set_processor_affinity(intmax_t handle, const std::vector<size_t>& 
   
   for (auto cpu : processor_affinity)
     CPU_SET(cpu, &mask);
-    
+  
   return pthread_setaffinity_np(thread_cast_<pthread_t>(handle), sizeof(mask), &mask) == 0;
+  #endif
 }
 
 void thread::sleep(int32_t milliseconds_timeout) {

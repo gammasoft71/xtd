@@ -3,6 +3,8 @@
 #include "../../../../include/xtd/native/linux/semaphore.hpp"
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
+#include <errno.h>
+
 using namespace xtd::native;
 
 intmax_t named_mutex::create(bool initially_owned, const std::string& name) {

@@ -4,7 +4,7 @@
 #include <algorithm>
 #include <numeric>
 #include <random>
-#if !defined(__ANDROID__) && !defined(__HAIKU__)
+#if !defined(__ANDROID__) && !defined(__HAIKU__) && !defined(__serenity__)
 #include <uuid/uuid.h>
 #endif
 
@@ -12,7 +12,7 @@ using namespace xtd::native;
 
 std::vector<uint8_t> guid::new_guid() {
   auto guid = std::vector<uint8_t>(16);
-  #if !defined(__ANDROID__) && !defined(__HAIKU__)
+  #if !defined(__ANDROID__) && !defined(__HAIKU__) && !defined(__serenity__)
   uuid_generate(guid.data());
   #else
   // http://tools.ietf.org/html/rfc4122
