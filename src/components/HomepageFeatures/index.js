@@ -30,6 +30,7 @@ const FeatureList = [
         <a href="docs/documentation/portability"><img src="pictures/os/Android_h100.png"/></a>
         <a href="docs/documentation/portability"><img src="pictures/os/FreeBSD_h100.png"/></a>
         <a href="docs/documentation/portability"><img src="pictures/os/Haiku_h100.png"/></a>
+        <a href="docs/documentation/portability"><img src="pictures/os/SerenityOS_h100.png"/></a>
       </div>
       <br/>
       </>

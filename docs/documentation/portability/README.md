@@ -76,6 +76,10 @@ xtd is supported on Windows 10 or later, where Win32 APIs are used for native in
 
 [![Haiku](/pictures/os/Haiku.png)](https://haiku-os.org)
 
+#### SerenityOS
+
+[![SerenityOS](/pictures/os/SerenityOS.png)](https://serenityos.org)
+
 ### iOS 64 bits [manual installation]
 
 [![iOS](/pictures/os/iOS.png)](https://apple.com/ios)
@@ -98,6 +102,7 @@ xtd is supported on Windows 10 or later, where Win32 APIs are used for native in
 | [iOS](https://apple.com/ios)             | ✔️                                                                                           | ❌                                                                                                 | ❌                                                                                             | ✔️                                                                                             |
 | [Linux](https://linux.org)               | ✔️                                                                                           | ✔️                                                                                                 | ✔️                                                                                             | ✔️                                                                                             |
 | [macOS](https://apple.com/macos/)        | ✔️                                                                                           | ✔️                                                                                                 | ✔️                                                                                             | ✔️                                                                                             |
+| [SerenityOS](https://serenityos.org)     | ✔️                                                                                           | ❌                                                                                                 | ❌                                                                                             | ✔️                                                                                             |
 | [Windows](https://microsoft.com/windows) | ✔️                                                                                           | ✔️                                                                                                 | ✔️                                                                                             | ✔️                                                                                             |
 
 ## Tests and coverage
