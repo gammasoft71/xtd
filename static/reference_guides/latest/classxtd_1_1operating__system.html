@@ -192,6 +192,9 @@ By design, the <a class="el" href="classxtd_1_1operating__system.html" title="Re
 <tr class="memitem:aa57d773f9c7a1d953d8e4f3d28c75ff4" id="r_aa57d773f9c7a1d953d8e4f3d28c75ff4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa57d773f9c7a1d953d8e4f3d28c75ff4">is_haiku</a> () const noexcept</td></tr>
 <tr class="memdesc:aa57d773f9c7a1d953d8e4f3d28c75ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current platform is Haiku.  <br /></td></tr>
 <tr class="separator:aa57d773f9c7a1d953d8e4f3d28c75ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4f1e91cbe1c2d14dce41489f2f31501" id="r_af4f1e91cbe1c2d14dce41489f2f31501"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4f1e91cbe1c2d14dce41489f2f31501">is_serenityos</a> () const noexcept</td></tr>
+<tr class="memdesc:af4f1e91cbe1c2d14dce41489f2f31501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current platform is SerenityOS.  <br /></td></tr>
+<tr class="separator:af4f1e91cbe1c2d14dce41489f2f31501"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e9b12c468d18b5c7e34e7cf4d294c5b" id="r_a9e9b12c468d18b5c7e34e7cf4d294c5b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e9b12c468d18b5c7e34e7cf4d294c5b">is_ios</a> () const noexcept</td></tr>
 <tr class="memdesc:a9e9b12c468d18b5c7e34e7cf4d294c5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the current platform is iOS.  <br /></td></tr>
 <tr class="separator:a9e9b12c468d18b5c7e34e7cf4d294c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1046,6 +1049,34 @@ The service pack version, if available, is already correctly formatted for displ
 
 </div>
 </div>
+<a id="af4f1e91cbe1c2d14dce41489f2f31501" name="af4f1e91cbe1c2d14dce41489f2f31501"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4f1e91cbe1c2d14dce41489f2f31501">&#9670;&#160;</a></span>is_serenityos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool xtd::operating_system::is_serenityos </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether the current platform is SerenityOS. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current platform is SerenityOS; otherwise, <code>false</code>. </dd></dl>
+
+</div>
+</div>
 <a id="a9e9b12c468d18b5c7e34e7cf4d294c5b" name="a9e9b12c468d18b5c7e34e7cf4d294c5b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9e9b12c468d18b5c7e34e7cf4d294c5b">&#9670;&#160;</a></span>is_ios()</h2>
 
@@ -1268,7 +1299,7 @@ The service pack version, if available, is already correctly formatted for displ
 
 <p>Determines whether the current platform is Posix family. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current platform is Posix family; otherwise, <code>false</code>. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Returns true if the current platform is Posix. This includes Linux, Android, macOS, iOS, tvOS, watchOS, BSD variants, Haiku, Solaris, and AIX. It excludes platforms like Windows, and other non-posix environments. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Returns true if the current platform is Posix. This includes Linux, Android, macOS, iOS, tvOS, watchOS, BSD variants, Haiku, SerenityOS, Solaris, and AIX. It excludes platforms like Windows, and other non-posix environments. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>In this implementation, Unix and POSIX platforms overlap significantly but are semantically distinguished. </dd></dl>
 
 </div>
@@ -1298,7 +1329,7 @@ The service pack version, if available, is already correctly formatted for displ
 
 <p>Determines whether the current platform is Unix family. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current platform is Unix family; otherwise, <code>false</code>. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Returns true if the current platform is a Unix or Unix-like operating system. This includes Linux, macOS, iOS, tvOS, watchOS, BSD variants, Haiku, Solaris, and AIX. It excludes platforms like Windows, Android, and other non-Unix environments. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Returns true if the current platform is a Unix or Unix-like operating system. This includes Linux, macOS, iOS, tvOS, watchOS, BSD variants, Haiku, SerenityOS, Solaris, and AIX. It excludes platforms like Windows, Android, and other non-Unix environments. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>In this implementation, Unix and POSIX platforms overlap significantly but are semantically distinguished. </dd></dl>
 
 </div>
@@ -1538,7 +1569,7 @@ The service pack version, if available, is already correctly formatted for displ
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 26 2025 22:05:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Oct 27 2025 09:29:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
