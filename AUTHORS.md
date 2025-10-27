@@ -20,6 +20,7 @@ This file lists all persons who contributed to xtd (in alphabetical order). If y
 * [MCCLXXXVII](https://github.com/MCCLXXXVII) - Developer
 * [niansa](https://github.com/niansa) - Developer
 * [qingyiwebt](https://github.com/qingyiwebt) - Translator
+* [steveriemannx](https://github.com/steveriemannx) - Developer
 * [yfiumefreddo](https://github.com/yfiumefreddo) - Developer
 
 ## Remarks
