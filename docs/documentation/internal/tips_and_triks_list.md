@@ -38,7 +38,7 @@
 | 🔴  | #12    | December 8, 2025   | Using timers (interval, elapsed event)                                  | std::thread + sleep, Qt Timer               |
 | 🔴  | #11    | November 24, 2025  | Formatting strings with xtd::string::format                             | C++20 std::format / Qt QString::arg         |
 | 🔴  | #10    | November 10, 2025  | Unit testing with xtd::tunit                                            | Catch2 / gtest                              |
-| 🟡  | #9     | October 27, 2025   | Adding color to console output (text + background)                      | ANSI escape codes                           |
+| 🟢  | #9     | October 27, 2025   | Adding color to console output (text + background)                      | ANSI escape codes                           |
 | 🟢  | #8     | October 13, 2025   | array_list a heterogeneous container supporting multiple types          | C++ modern / Boost / Qt                     |
 | 🟢  | #7     | September 29, 2025 | Creating a simple form with a button                                    | Qt / WinForms                               |
 | 🟢  | #6     | September 15, 2025 | Getting special folders                                                 | Win32 API / Qt                              |
