@@ -14,11 +14,6 @@
 #include <termios.h>
 #include <unistd.h>
 #include <sys/ioctl.h>
-#if defined(__XTD_USE_ASOUND__)
-#define ALSA_PCM_NEW_HW_PARAMS_API
-#include <alsa/asoundlib.h>
-#include <linux/kd.h>
-#endif
 
 using namespace xtd::native;
 
@@ -613,44 +608,14 @@ namespace {
     static bool beep(uint32_t frequency, uint32_t duration) {
       auto& a = get_instance();
       std::lock_guard<std::mutex> lock {a.mutex_};
-      #if defined(__XTD_USE_ASOUND__)
-      if (!pcm_handle || frequency < 37 || frequency > 32767) return false;
-      
-      unsigned int total_frames = (duration / 1000.0) * sample_rate;
-      unsigned int frames_per_buffer = sample_rate / 10; // ex: buffer for 100ms
-      unsigned char* buffer = new unsigned char[frames_per_buffer];
-      
-      for (unsigned int frame_index = 0; frame_index < total_frames; frame_index += frames_per_buffer) {
-        snd_pcm_prepare(pcm_handle);
-        for (unsigned int buffer_index = 0; buffer_index < frames_per_buffer; ++buffer_index)
-          buffer[buffer_index] = (buffer_index % (sample_rate / frequency) < (sample_rate / frequency) / 2) ? 255 : 0;
-          
-        int written_frames = snd_pcm_writei(pcm_handle, buffer, frames_per_buffer);
-        if (written_frames < 0) snd_pcm_recover(pcm_handle, written_frames, 0);
-      }
-      
-      delete[] buffer;
-      return true;
-      #else
       return frequency >= 37 && frequency <= 32767;
-      #endif
     }
     
   private:
     audio() noexcept {
-      #if defined(__XTD_USE_ASOUND__)
-      if (snd_pcm_open(&pcm_handle, "default", SND_PCM_STREAM_PLAYBACK, 0)) return;
-      if (snd_pcm_set_params(pcm_handle, SND_PCM_FORMAT_U8, SND_PCM_ACCESS_RW_INTERLEAVED, 1, sample_rate, 1, 20000) < 0) {
-        snd_pcm_close(pcm_handle);
-        pcm_handle = nullptr;
-      }
-      #endif
     }
     
     ~audio() noexcept {
-      #if defined(__XTD_USE_ASOUND__)
-      if (pcm_handle) snd_pcm_close(pcm_handle);
-      #endif
     }
     
     static audio& get_instance() {
@@ -660,9 +625,6 @@ namespace {
     
     std::mutex mutex_;
     inline static constexpr auto sample_rate = 8000u;
-    #if defined(__XTD_USE_ASOUND__)
-    inline static snd_pcm_t* pcm_handle = nullptr;
-    #endif
   };
 }
 
