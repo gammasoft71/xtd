@@ -1,2 +1,2 @@
 #pragma once
-#include <cxtd/ore_native_export.hpp>
+#include <xtd/core_native_export.hpp>
