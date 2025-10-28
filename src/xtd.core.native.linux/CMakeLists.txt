@@ -7,9 +7,7 @@ include("../../scripts/cmake/xtd_version.cmake")
 add_include_directories("include")
 
 # add external packages
-if (${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "Android")
-  add_references()
-elseif (${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "Haiku")
+if (${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "Haiku")
   add_references(network)
 elseif (${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "SerenityOS")
   add_references()
@@ -39,16 +37,13 @@ endif ()
 add_references(xtd.core.native)
 
 add_sources(
+  "include/xtd/core_native_export"
+  "include/xtd/core_native_export.hpp"
   "include/xtd/xtd.core.native.linux.hpp"
-  "include/xtd/xtd.core.native.linux"
   "include/xtd/native/linux/mutex.hpp"
-  "include/xtd/native/linux/mutex"
   "include/xtd/native/linux/semaphore.hpp"
-  "include/xtd/native/linux/semaphore"
   "include/xtd/native/linux/shell_execute.hpp"
-  "include/xtd/native/linux/shell_execute"
   "include/xtd/native/linux/strings.hpp"
-  "include/xtd/native/linux/strings"
 )
 add_sources(
   "src/xtd/native/linux/condition_variable.cpp"
