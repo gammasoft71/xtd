@@ -41,7 +41,7 @@ namespace {
       if (key_value.size() != 2) continue;
       distribution_key_values.insert({key_value[0], xtd::native::android::strings::replace(key_value[1], "\"", "")});
     }
-  
+    
     return distribution_key_values;
   }
 }
