@@ -20,14 +20,14 @@ namespace {
   int32_t environment_argc = 0;
   char** environment_argv = nullptr;
   
-#if defined (__clang__) || defined(__GNUC__)
+  #if defined (__clang__) || defined(__GNUC__)
   __attribute__((constructor)) void startup_program(int32_t argc, char** argv) {
     environment_argc = argc;
     environment_argv = argv;
   }
-#else
+  #else
 #  warning "The compiler is unknown, please check how to get command line arguments from the compiler."
-#endif
+  #endif
   
   using distribution_dictionary = map<string, string>;
   
