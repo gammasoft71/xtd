@@ -122,13 +122,13 @@ int32_t file_system::set_attributes(const std::string& path, int32_t attributes)
   else if ((attributes & FILE_ATTRIBUTE_READONLY) == FILE_ATTRIBUTE_READONLY)
     s.st_mode &= ~S_IWUSR;
     
-  // The other attributes can be modified under linux.
+  // The other attributes can be modified under unix.
   
   return chmod(path.c_str(), s.st_mode);
 }
 
 int32_t file_system::set_creation_time(const std::string& path, time_t creation_time) {
-  // There is no creation time on linux so we update the last modification time instead...
+  // There is no creation time on unix so we update the last modification time instead...
   utimbuf times;
   time_t creation_time_old = 0, last_access_time = 0, last_write_time = 0;
   get_file_times(path, creation_time_old, last_access_time, last_write_time);
