@@ -97,7 +97,7 @@ int32_t socket::bind(intmax_t handle, const std::vector<uint8_t>& socket_address
 }
 
 void socket::cleanup() {
-  // Nothing to do on linux and macOS.
+  // Nothing to do on macos.
 }
 
 int32_t socket::connect(intmax_t handle, const std::vector<uint8_t>& socket_address) {
@@ -364,5 +364,5 @@ int32_t socket::shutdown(intmax_t handle, std::int32_t how) {
 }
 
 void socket::startup() {
-  // Nothing on linux and macOS
+  // Nothing on macos
 }
