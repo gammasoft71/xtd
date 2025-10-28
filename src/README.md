@@ -12,9 +12,9 @@ Contains xtd sources.
 * [xtd.core.native.ios](xtd.core.native.ios) library is based on [iOS](https://apple.com/ios) operating system.
 * [xtd.core.native.linux](xtd.core.native.linux) library is based on [Linux](https://kernel.org/doc/html/latest/) operating system.
 * [xtd.core.native.macos](xtd.core.native.macos) library is based on [macOS](https://apple.com/macos) operating system.
-* [xtd.core.native.posix](xtd.core.native.posix) library is based on Generic [Posix](https://posix.opengroup.org) operating system.
+* [xtd.core.native.posix](xtd.core.native.posix) library is based on generic [Posix](https://posix.opengroup.org) operating system.
 * [xtd.core.native.serenityos](xtd.core.native.serenityos) library is based on [SerenityOS](https://serenityos.org) operating system.
-* [xtd.core.native.unix](xtd.core.native.unix) library is based on Generic [Unix](https://opengroup.org/membership/forums/platform/unix) operating system.
+* [xtd.core.native.unix](xtd.core.native.unix) library is based on generic [Unix](https://opengroup.org/membership/forums/platform/unix) operating system.
 * [xtd.core.native.windows](xtd.core.native.windows) library is based on [Windows](https://microsoft.com/en-gb/windows) operating system.
 
 ## Drawing
