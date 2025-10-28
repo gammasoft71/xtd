@@ -12,6 +12,8 @@ add_references("-framework Foundation -framework Cocoa -framework AudioUnit")
 add_references(xtd.core.native)
 
 add_sources(
+  "include/xtd/core_native_export"
+  "include/xtd/core_native_export.hpp"
   "include/xtd/xtd.core.native.macos.hpp"
   "include/xtd/native/macos/mutex.hpp"
   "include/xtd/native/macos/semaphore.hpp"
