@@ -45,7 +45,7 @@ namespace {
     distribution_key_values.insert({"VERSION", version});
     distribution_key_values.insert({"VERSION_ID", version});
     distribution_key_values.insert({"VERSION_CODENAME", codename}); // No codename for SerenityOS
-  
+    
     return distribution_key_values;
   }
   
