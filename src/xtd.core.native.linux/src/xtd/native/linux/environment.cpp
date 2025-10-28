@@ -20,30 +20,18 @@ namespace {
   int32_t environment_argc = 0;
   char** environment_argv = nullptr;
   
-  #if defined (__clang__) || defined(__GNUC__)
+#if defined (__clang__) || defined(__GNUC__)
   __attribute__((constructor)) void startup_program(int32_t argc, char** argv) {
     environment_argc = argc;
     environment_argv = argv;
   }
-  #else
+#else
 #  warning "The compiler is unknown, please check how to get command line arguments from the compiler."
-  #endif
+#endif
   
   using distribution_dictionary = map<string, string>;
   
   const distribution_dictionary& get_distribution_key_values() {
-    static auto distribution_key_values = distribution_dictionary {};
-    if (!distribution_key_values.empty()) return distribution_key_values;
-    auto name = string {"Haiku"};
-    auto codename = string {"R1/beta5"};
-    auto version = string {"0.1.5"};
-    distribution_key_values.insert({"BUG_REPORT_URL", "https://www.haiku-os.org/contact"});
-    distribution_key_values.insert({"HOME_URL", "https://www.haiku-os.org"});
-    distribution_key_values.insert({"ID", xtd::native::linux::strings::replace(xtd::native::linux::strings::to_lower(name), " ", "")});
-    distribution_key_values.insert({"ID_LIKE", "haiku"});
-    distribution_key_values.insert({"NAME", name});
-    distribution_key_values.insert({"PRETTY_NAME", name + " " + version + " (" + codename + ")"});
-    distribution_key_values.  const distribution_dictionary& get_distribution_key_values() {
     static auto distribution_key_values = distribution_dictionary {};
     if (!distribution_key_values.empty()) return distribution_key_values;
     auto distribution_string = linux::shell_execute::run("cat", "/etc/os-release");
@@ -53,7 +41,7 @@ namespace {
       if (key_value.size() != 2) continue;
       distribution_key_values.insert({key_value[0], xtd::native::linux::strings::replace(key_value[1], "\"", "")});
     }
-  
+    
     return distribution_key_values;
   }
 }
