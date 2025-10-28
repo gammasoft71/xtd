@@ -37,11 +37,8 @@ add_sources(
   "include/xtd/xtd.core.native.posix.hpp"
   "include/xtd/xtd.core.native.posix"
   "include/xtd/native/posix/mutex.hpp"
-  "include/xtd/native/posix/mutex"
   "include/xtd/native/posix/semaphore.hpp"
-  "include/xtd/native/posix/semaphore"
   "include/xtd/native/posix/strings.hpp"
-  "include/xtd/native/posix/strings"
 )
 add_sources(
   "src/xtd/native/posix/condition_variable.cpp"
