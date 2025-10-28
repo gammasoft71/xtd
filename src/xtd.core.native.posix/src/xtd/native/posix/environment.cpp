@@ -249,7 +249,7 @@ string environment::get_user_name() {
 }
 
 bool environment::has_shutdown_started() {
-  // return always false on linux and macos.
+  // return always false on posix.
   return false;
 }
 

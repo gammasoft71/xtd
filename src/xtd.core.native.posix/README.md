@@ -3,7 +3,7 @@
 
 xtd.core is made to have many Operating System: Windows, linux, macOS, ...
 
-The [xtd.core.native.unix](.) is based on unix Operating System.
+The [xtd.core.native.posix](.) is based on generic posix Operating System.
 
 ______________________________________________________________________________________________
 

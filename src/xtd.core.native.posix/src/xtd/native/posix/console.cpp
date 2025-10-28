@@ -13,8 +13,6 @@
 #include <termios.h>
 #include <unistd.h>
 #include <sys/ioctl.h>
-#define ALSA_PCM_NEW_HW_PARAMS_API
-#include <alsa/asoundlib.h>
 
 using namespace xtd::native;
 
@@ -648,31 +646,31 @@ bool console::beep(uint32_t frequency, uint32_t duration) {
 }
 
 int32_t console::buffer_height() {
-  /// @todo console buffer Height on linux and macOS
+  /// @todo console buffer Height on posix
   if (::buffer_height == -1) ::buffer_height = console::window_height();
   return ::buffer_height;
 }
 
 bool console::buffer_height(int32_t height) {
-  /// @todo set console buffer height on linux and macOS
+  /// @todo set console buffer height on posix
   ::buffer_height = height;
   return true;
 }
 
 int32_t console::buffer_width() {
-  /// @todo console buffer Width on linux and macOS
+  /// @todo console buffer Width on posix
   if (::buffer_width == -1) ::buffer_width = console::window_width();
   return ::buffer_width;
 }
 
 bool console::buffer_width(int32_t width) {
-  /// @todo set console buffer width on linux and macOS
+  /// @todo set console buffer width on posix
   ::buffer_width = width;
   return true;
 }
 
 bool console::caps_lock() {
-  /// @todo caps lock status on linux and macOS
+  /// @todo caps lock status on posix
   return ::caps_lock;
 }
 
@@ -772,7 +770,7 @@ int32_t console::largest_window_width() {
 }
 
 bool console::number_lock() {
-  /// @todo number lock status on linux and macOS
+  /// @todo number lock status on posix
   return ::number_lock;
 }
 
@@ -819,7 +817,7 @@ bool console::set_cursor_position(int32_t left, int32_t top) {
 }
 
 std::string console::title() {
-  /// @todo get console get title on linux and macOS
+  /// @todo get console get title on posix
   /** Didn't work correctly!
    std::cout << "\x1b[21t" << std::endl;
   
@@ -859,29 +857,29 @@ int32_t console::window_height() {
 }
 
 bool console::window_height(int32_t height) {
-  /// @todo set console window height on linux and macOS
+  /// @todo set console window height on posix
   ::window_height = height;
   return true;
 }
 
 int32_t console::window_left() {
-  /// @todo get console window left on linux and macOS
+  /// @todo get console window left on posix
   return ::window_left;
 }
 
 bool console::window_left(int32_t left) {
-  /// @todo set console window left on linux and macOS
+  /// @todo set console window left on posix
   ::window_left = left;
   return true;
 }
 
 int32_t console::window_top() {
-  /// @todo get console window top on linux and macOS
+  /// @todo get console window top on posix
   return ::window_top;
 }
 
 bool console::window_top(int32_t top) {
-  /// @todo set console window top on linux and macOS
+  /// @todo set console window top on posix
   ::window_top = top;
   return true;
 }
@@ -897,7 +895,7 @@ int32_t console::window_width() {
 }
 
 bool console::window_width(int32_t width) {
-  /// @todo set console window width on linux and macOS
+  /// @todo set console window width on posix
   ::window_width = width;
   return true;
 }
