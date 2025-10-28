@@ -9,6 +9,8 @@ add_include_directories("include")
 add_references(xtd.core.native)
 
 add_sources(
+  "include/xtd/core_native_export"
+  "include/xtd/core_native_export.hpp"
   "include/xtd/xtd.core.native.android.hpp"
   "include/xtd/native/android/mutex.hpp"
   "include/xtd/native/android/semaphore.hpp"
