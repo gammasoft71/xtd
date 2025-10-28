@@ -8,9 +8,7 @@
 #include <cstdio>
 #include <string>
 
-#undef linux
-
-namespace xtd::native::linux {
+namespace xtd::native::haiku {
   class shell_execute final {
   public:
     static std::string run(const std::string& file_name) {return run(file_name, {});}

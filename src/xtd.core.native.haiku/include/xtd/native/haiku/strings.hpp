@@ -11,9 +11,7 @@
 #include <sstream>
 #include <string>
 
-#undef linux
-
-namespace xtd::native::linux {
+namespace xtd::native::haiku {
   class strings final {
   public:
     strings() = delete;

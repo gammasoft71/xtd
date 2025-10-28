@@ -105,7 +105,7 @@ int32_t socket::bind(intmax_t handle, const vector<uint8_t>& socket_address) {
 }
 
 void socket::cleanup() {
-  // Nothing to do on linux and macOS.
+  // Nothing to do on haiku.
 }
 
 int32_t socket::connect(intmax_t handle, const vector<uint8_t>& socket_address) {
@@ -364,5 +364,5 @@ int32_t socket::shutdown(intmax_t handle, int32_t how) {
 }
 
 void socket::startup() {
-  // Nothing on linux and macOS
+  // Nothing on haiku
 }

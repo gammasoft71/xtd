@@ -91,6 +91,6 @@ bool drive::get_volume_information(const std::string& root_path_name, std::strin
 }
 
 bool drive::set_Volume_label(const std::string& root_path_name, const std::string& volume_name) {
-  // There is no API to change the volume label on macOS and linux.
+  // There is no API to change the volume label on haiku.
   return false;
 }
