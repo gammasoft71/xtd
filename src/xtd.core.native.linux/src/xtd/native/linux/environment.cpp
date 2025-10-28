@@ -8,9 +8,7 @@
 #include <map>
 #include <numeric>
 #include <thread>
-#if !defined(__HAIKU__) && !defined(__serenity__)
 #include <sys/sysinfo.h>
-#endif
 #include <sys/param.h>
 #include <unistd.h>
 
@@ -33,7 +31,6 @@ namespace {
   
   using distribution_dictionary = map<string, string>;
   
-  #if defined(__HAIKU__)
   const distribution_dictionary& get_distribution_key_values() {
     static auto distribution_key_values = distribution_dictionary {};
     if (!distribution_key_values.empty()) return distribution_key_values;
@@ -46,33 +43,7 @@ namespace {
     distribution_key_values.insert({"ID_LIKE", "haiku"});
     distribution_key_values.insert({"NAME", name});
     distribution_key_values.insert({"PRETTY_NAME", name + " " + version + " (" + codename + ")"});
-    distribution_key_values.insert({"VERSION", version});
-    distribution_key_values.insert({"VERSION_ID", version});
-    distribution_key_values.insert({"VERSION_CODENAME", codename});
-    
-    return distribution_key_values;
-  }
-  #elif defined(__serenity__)
-  const distribution_dictionary& get_distribution_key_values() {
-    static auto distribution_key_values = distribution_dictionary {};
-    if (!distribution_key_values.empty()) return distribution_key_values;
-    auto name = string {"SerenityOS"};
-    auto codename = string {"R1/beta1"};
-    auto version = string {"1.0.0"};
-    distribution_key_values.insert({"BUG_REPORT_URL", "https://www.github.com/SerenityOS/serenity/issues"});
-    distribution_key_values.insert({"HOME_URL", "https://www.serenityos.org"});
-    distribution_key_values.insert({"ID", xtd::native::linux::strings::replace(xtd::native::linux::strings::to_lower(name), " ", "")});
-    distribution_key_values.insert({"ID_LIKE", "serenityos"});
-    distribution_key_values.insert({"NAME", name});
-    distribution_key_values.insert({"PRETTY_NAME", name + " " + version + " (" + codename + ")"});
-    distribution_key_values.insert({"VERSION", version});
-    distribution_key_values.insert({"VERSION_ID", version});
-    distribution_key_values.insert({"VERSION_CODENAME", codename}); // No codename for SerenityOS
-  
-    return distribution_key_values;
-  }
-  #else
-  const distribution_dictionary& get_distribution_key_values() {
+    distribution_key_values.  const distribution_dictionary& get_distribution_key_values() {
     static auto distribution_key_values = distribution_dictionary {};
     if (!distribution_key_values.empty()) return distribution_key_values;
     auto distribution_string = linux::shell_execute::run("cat", "/etc/os-release");
@@ -85,22 +56,10 @@ namespace {
   
     return distribution_key_values;
   }
-  #endif
-  
-  #if defined(__HAIKU__) || defined(__serenity__)
-  /// Workaround std::quick_exit and std::at_quick_exit are not implemented on Haiku !
-  void (*__on_quick_exit__)(void) = nullptr;
-  #endif
 }
 
 int32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
-  #if defined(__HAIKU__) || defined(__serenity__)
-  /// Workaround std::quick_exit and std::at_quick_exit are not implemented on Haiku !
-  __on_quick_exit__ = on_quick_exit;
-  return 0;
-  #else
   return std::at_quick_exit(on_quick_exit);
-  #endif
 }
 
 vector<string> environment::get_command_line_args() {
@@ -236,16 +195,8 @@ string environment::get_machine_name() {
 }
 
 int32_t environment::get_os_platform_id() {
-  #if defined(__ANDROID__)
-  return PLATFORM_ANDROID;
-  #elif defined(__HAIKU__)
-  return PLATFORM_HAIKU;
-  #elif defined(__serenity__)
-  return PLATFORM_SERENITYOS;
-  #else
   if (linux::shell_execute::run("uname", "-a").find("Linux") != string::npos) return PLATFORM_LINUX;
   return PLATFORM_UNIX;
-  #endif
 }
 
 void environment::get_os_version(int32_t& major, int32_t& minor, int32_t& build, int32_t& revision) {
@@ -275,15 +226,11 @@ size_t environment::get_system_page_size() {
 }
 
 uint32_t environment::get_tick_count() {
-  #if defined(__HAIKU__) || defined(__serenity__)
-  return 0;
-  #else
   // https://stackoverflow.com/questions/1540627/what-api-do-i-call-to-get-the-system-uptime
   using struct_sysinfo = struct sysinfo;
   auto info = struct_sysinfo {};
   sysinfo(&info);
   return info.uptime * 1000;
-  #endif
 }
 
 bool environment::get_user_administrator() {
@@ -302,7 +249,7 @@ string environment::get_user_name() {
 }
 
 bool environment::has_shutdown_started() {
-  // return always false on linux and macos.
+  // return always false on linux.
   return false;
 }
 
@@ -320,13 +267,7 @@ string environment::new_line() {
 }
 
 void environment::quick_exit(int32_t exit_code) noexcept {
-  #if defined(__HAIKU__) || defined(__serenity__)
-  /// Workaround std::quick_exit and std::at_quick_exit are not implemented on Haiku !
-  if (__on_quick_exit__) __on_quick_exit__();
-  std::_Exit(exit_code);
-  #else
   std::quick_exit(exit_code);
-  #endif
 }
 
 void environment::set_environment_variable(const string& name, const string& value, int32_t target) {

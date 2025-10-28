@@ -21,28 +21,6 @@
 #include <sys/socket.h>
 #include <sys/ioctl.h>
 
-#if defined(__HAIKU__) || defined(__serenity__)
-#define ESOCKTNOSUPPORT 0
-#define IPPROTO_IPIP 0
-#define IPPROTO_PUP 0
-#define IPPROTO_IDP 0
-#define IP_NODEFRAG 0
-#define IP_PKTINFO 0
-#define SOCK_CLOEXEC 0
-#define SOCK_RDM 0
-#define AF_SNA 0
-#define AF_DECnet 0
-#endif
-
-#if defined(__serenity__)
-#define IPPROTO_ROUTING 43
-#define IPPROTO_FRAGMENT 44
-#define IPPROTO_NONE 59
-#define IPPROTO_DSTOPTS 60
-#define IP_HDRINCL 2
-#define AF_APPLETALK 16
-#endif
-
 using namespace std;
 using namespace xtd::native;
 
@@ -116,7 +94,7 @@ int32_t socket::bind(intmax_t handle, const vector<uint8_t>& socket_address) {
 }
 
 void socket::cleanup() {
-  // Nothing to do on linux and macOS.
+  // Nothing to do on linux.
 }
 
 int32_t socket::connect(intmax_t handle, const vector<uint8_t>& socket_address) {
@@ -375,5 +353,5 @@ int32_t socket::shutdown(intmax_t handle, int32_t how) {
 }
 
 void socket::startup() {
-  // Nothing on linux and macOS
+  // Nothing on linux
 }

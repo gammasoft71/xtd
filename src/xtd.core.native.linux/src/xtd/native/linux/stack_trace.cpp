@@ -32,16 +32,6 @@ stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool n
 using namespace std;
 using namespace xtd::native;
 
-#if defined(__ANDROID__) || defined(__CYGWIN__) || defined(__HAIKU__) || defined(__MINGW32__) || defined(__serenity__)
-
-size_t stack_trace::get_native_offset() {
-  return 0;
-}
-
-stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool need_file_info) {
-  return {};
-}
-#else
 #include <execinfo.h>
 #include <dlfcn.h>
 #include <link.h>
@@ -142,5 +132,4 @@ stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool n
   }
   return frames;
 }
-#endif
 #endif

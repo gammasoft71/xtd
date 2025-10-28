@@ -14,8 +14,8 @@
 // Define a constant for failed mutex
 inline static const pthread_mutex_t* MUTEX_FAILED = reinterpret_cast<pthread_mutex_t*>(-1);
 
-// Check for SerenityOS or if pthread_mutex_timedlock is unavailable
-#if defined(__serenity__) || !defined(_POSIX_TIMEOUTS) || (_POSIX_TIMEOUTS < 0)
+// Check if pthread_mutex_timedlock is unavailable
+#if !defined(_POSIX_TIMEOUTS) || (_POSIX_TIMEOUTS < 0)
 // Fallback implementation for platforms lacking pthread_mutex_timedlock
 static inline int pthread_mutex_milliseconds_timedlock(pthread_mutex_t* mut, int32_t milliseconds_timeout) {
   if (!mut) return EINVAL;

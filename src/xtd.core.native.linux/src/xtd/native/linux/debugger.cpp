@@ -1,4 +1,3 @@
-#if !defined(__APPLE__)
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/debugger>
 #include <xtd/native/assert_dialog_results>
@@ -67,4 +66,3 @@ void debugger::log(int32_t level, const std::string& category, const std::string
   syslog(LOG_EMERG | LOG_USER, "%s", message.c_str());
   std::cerr << message << std::flush;
 }
-#endif

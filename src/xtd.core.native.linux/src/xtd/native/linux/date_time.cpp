@@ -260,7 +260,7 @@ bool date_time::is_daylight(time_t time) {
 }
 
 time_t date_time::utc_offset(time_t time) {
-  #if defined(__serenity__) || !defined(_POSIX_C_SOURCE) || _POSIX_C_SOURCE < 200112L
+  #if !defined(_POSIX_C_SOURCE) || _POSIX_C_SOURCE < 200112L
   // Fallback for platforms lacking tm_gmtoff (e.g., SerenityOS)
   struct tm local = {};
   struct tm gmt = {};
