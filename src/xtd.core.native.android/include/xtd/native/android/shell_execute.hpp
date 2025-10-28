@@ -8,8 +8,6 @@
 #include <cstdio>
 #include <string>
 
-#undef linux
-
 namespace xtd::native::android {
   class shell_execute final {
   public:

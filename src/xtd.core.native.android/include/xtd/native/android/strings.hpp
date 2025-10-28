@@ -11,8 +11,6 @@
 #include <sstream>
 #include <string>
 
-#undef linux
-
 namespace xtd::native::android {
   class strings final {
   public:
