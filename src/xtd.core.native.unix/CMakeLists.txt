@@ -38,15 +38,10 @@ add_references(xtd.core.native)
 
 add_sources(
   "include/xtd/xtd.core.native.unix.hpp"
-  "include/xtd/xtd.core.native.unix"
   "include/xtd/native/unix/mutex.hpp"
-  "include/xtd/native/unix/mutex"
   "include/xtd/native/unix/semaphore.hpp"
-  "include/xtd/native/unix/semaphore"
   "include/xtd/native/unix/shell_execute.hpp"
-  "include/xtd/native/unix/shell_execute"
   "include/xtd/native/unix/strings.hpp"
-  "include/xtd/native/unix/strings"
 )
 add_sources(
   "src/xtd/native/unix/condition_variable.cpp"
