@@ -13,6 +13,8 @@
 #include <termios.h>
 #include <unistd.h>
 #include <sys/ioctl.h>
+#define ALSA_PCM_NEW_HW_PARAMS_API
+#include <alsa/asoundlib.h>
 
 using namespace xtd::native;
 
