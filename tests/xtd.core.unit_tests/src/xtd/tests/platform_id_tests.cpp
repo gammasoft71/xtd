@@ -122,7 +122,7 @@ namespace xtd::tests {
       assert::are_equal("serenityos", enum_object<>::to_string(platform_id::serenityos));
       assert::are_equal(platform_id::serenityos, enum_object<>::parse<platform_id>("serenityos"));
     }
-
+    
     void test_method_(aix) {
       assert::are_equal(15, enum_object<>::to_int32(platform_id::aix));
       assert::are_equal(PLATFORM_AIX, enum_object<>::to_int32(platform_id::aix));
