@@ -42,7 +42,6 @@ add_sources(
   "include/xtd/native/freebsd/semaphore.hpp"
   "include/xtd/native/freebsd/shell_execute.hpp"
   "include/xtd/native/freebsd/strings.hpp"
-  "include/xtd/native/freebsd/strings"
 )
 add_sources(
   "src/xtd/native/freebsd/condition_variable.cpp"
