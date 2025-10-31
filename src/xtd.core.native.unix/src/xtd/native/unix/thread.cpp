@@ -71,21 +71,7 @@ bool thread::set_priority(intmax_t handle, int32_t priority) {
 }
 
 bool thread::set_processor_affinity(intmax_t handle, const std::vector<size_t>& processor_affinity) {
-  if (reinterpret_cast<pthread_t>(handle) == PTHREAD_FAILED) return false;
-  
-  auto mask = cpuset_t {};
-  CPU_ZERO(&mask);
-  
-  if (processor_affinity.empty()) {
-    auto nprocs = std::thread::hardware_concurrency() != 0 ? std::thread::hardware_concurrency() : 1;
-    for (auto cpu = 0u; cpu < nprocs; ++cpu)
-      CPU_SET(cpu, &mask);
-  }
-  
-  for (auto cpu : processor_affinity)
-    CPU_SET(cpu, &mask);
-    
-  return pthread_setaffinity_np(reinterpret_cast<pthread_t>(handle), sizeof(mask), &mask) == 0;
+  return false;
 }
 
 void thread::sleep(int32_t milliseconds_timeout) {
