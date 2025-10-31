@@ -15,14 +15,13 @@ class xtd_data_generator {
     var generationNumber = 0;
     var stopwatch = Stopwatch.StartNew();
     var version = 1;
-    var xtdDataPath = Path.Combine(new[] { "..", "..", "..", "..", "..", "data" });
     Console.OutputEncoding = Encoding.UTF8;
     Console.WriteLine("Start generations");
-    WriteStatus("Generate Cultures", Execute(() => GenerateCultures(Path.Combine(new[] { xtdDataPath, "cultures.bin" }), version), ++generationNumber));
-    WriteStatus("Generate DateTimeFormats", Execute(() => GenerateDateTimeFormats(Path.Combine(new[] { xtdDataPath, "date_time_formats.bin" }), version), ++generationNumber));
-    WriteStatus("Generate NumberFormats", Execute(() => GenerateNumberFormats(Path.Combine(new[] { xtdDataPath, "number_formats.bin" }), version), ++generationNumber));
-    WriteStatus("Generate Regions", Execute(() => GenerateRegions(Path.Combine(new[] { xtdDataPath, "regions.bin" }), version), ++generationNumber));
-    WriteStatus("Generate TimeZones", Execute(() => GenerateTimeZones(Path.Combine(new[] { xtdDataPath, "time_zones.bin" }), version), ++generationNumber));
+    WriteStatus("Generate Cultures", Execute(() => GenerateCultures(GetDataPathFile("cultures.bin"), version), ++generationNumber));
+    WriteStatus("Generate DateTimeFormats", Execute(() => GenerateDateTimeFormats(GetDataPathFile("date_time_formats.bin"), version), ++generationNumber));
+    WriteStatus("Generate NumberFormats", Execute(() => GenerateNumberFormats(GetDataPathFile("number_formats.bin"), version), ++generationNumber));
+    WriteStatus("Generate Regions", Execute(() => GenerateRegions(GetDataPathFile("regions.bin"), version), ++generationNumber));
+    WriteStatus("Generate TimeZones", Execute(() => GenerateTimeZones(GetDataPathFile("time_zones.bin"), version), ++generationNumber));
     stopwatch.Stop();
     Console.WriteLine($"End {generationNumber} generations ran. [{stopwatch.Elapsed.TotalSeconds:F4} seconds]");
     Environment.Exit(Environment.ExitCode);
@@ -158,12 +157,15 @@ class xtd_data_generator {
     }
   }
 
-  static void GenerateTimeZones(string file_path, int version) {
-    using (var bw = new System.IO.BinaryWriter(File.Open(file_path, FileMode.Create), Encoding.UTF8)) {
+  static void GenerateTimeZones(string file_path, int version)
+  {
+    using (var bw = new System.IO.BinaryWriter(File.Open(file_path, FileMode.Create), Encoding.UTF8))
+    {
       WriteHeader(bw, "TZON", version);
       var timeZones = TimeZoneInfo.GetSystemTimeZones();
       bw.Write(timeZones.Count);
-      foreach (var tz in timeZones.OrderBy(tz => tz.Id)) {
+      foreach (var tz in timeZones.OrderBy(tz => tz.Id))
+      {
         bw.Write(tz.Id);
         bw.Write(tz.DisplayName);
         bw.Write(tz.StandardName);
@@ -172,7 +174,8 @@ class xtd_data_generator {
 
         var adjustmentRules = tz.GetAdjustmentRules();
         bw.Write(adjustmentRules.Length);
-        foreach (var rule in adjustmentRules) {
+        foreach (var rule in adjustmentRules)
+        {
           bw.Write(rule.DateStart.ToBinary());
           bw.Write(rule.DateEnd.ToBinary());
           bw.Write(rule.DaylightDelta.TotalMinutes);
@@ -193,6 +196,10 @@ class xtd_data_generator {
         }
       }
     }
+  }
+  
+  static string GetDataPathFile(string file) {
+    return Path.Combine(new[] {"..", "..", "..", "..", "..", "data", file});
   }
 
   static bool IsUsingNls() {
