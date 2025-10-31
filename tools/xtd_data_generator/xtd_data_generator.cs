@@ -137,35 +137,31 @@ class xtd_data_generator {
       var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures).Where(c => TryCreateRegion(c.Name, out _)).OrderBy(c => c.Name).ToArray();
       bw.Write(cultures.Length);
       foreach (var cultureInfo in cultures) {
-        if (TryCreateRegion(cultureInfo.Name, out var region)) {
-          bw.Write(cultureInfo.Name.ToLower());
-          bw.Write(region.CurrencyEnglishName);
-          bw.Write(region.CurrencyNativeName);
-          bw.Write(region.CurrencySymbol);
-          bw.Write(region.DisplayName);
-          bw.Write(region.EnglishName);
-          bw.Write(region.GeoId);
-          bw.Write(region.IsMetric);
-          bw.Write(region.ISOCurrencySymbol);
-          bw.Write(region.Name);
-          bw.Write(region.NativeName);
-          bw.Write(region.ThreeLetterISORegionName);
-          bw.Write(region.ThreeLetterWindowsRegionName);
-          bw.Write(region.TwoLetterISORegionName);
-        }
+        var region = new RegionInfo(cultureInfo.Name);
+        bw.Write(cultureInfo.Name.ToLower());
+        bw.Write(region.CurrencyEnglishName);
+        bw.Write(region.CurrencyNativeName);
+        bw.Write(region.CurrencySymbol);
+        bw.Write(region.DisplayName);
+        bw.Write(region.EnglishName);
+        bw.Write(region.GeoId);
+        bw.Write(region.IsMetric);
+        bw.Write(region.ISOCurrencySymbol);
+        bw.Write(region.Name);
+        bw.Write(region.NativeName);
+        bw.Write(region.ThreeLetterISORegionName);
+        bw.Write(region.ThreeLetterWindowsRegionName);
+        bw.Write(region.TwoLetterISORegionName);
       }
     }
   }
 
-  static void GenerateTimeZones(string file_path, int version)
-  {
-    using (var bw = new System.IO.BinaryWriter(File.Open(file_path, FileMode.Create), Encoding.UTF8))
-    {
+  static void GenerateTimeZones(string file_path, int version) {
+    using (var bw = new System.IO.BinaryWriter(File.Open(file_path, FileMode.Create), Encoding.UTF8)) {
       WriteHeader(bw, "TZON", version);
       var timeZones = TimeZoneInfo.GetSystemTimeZones();
       bw.Write(timeZones.Count);
-      foreach (var tz in timeZones.OrderBy(tz => tz.Id))
-      {
+      foreach (var tz in timeZones.OrderBy(tz => tz.Id)) {
         bw.Write(tz.Id);
         bw.Write(tz.DisplayName);
         bw.Write(tz.StandardName);
@@ -174,8 +170,7 @@ class xtd_data_generator {
 
         var adjustmentRules = tz.GetAdjustmentRules();
         bw.Write(adjustmentRules.Length);
-        foreach (var rule in adjustmentRules)
-        {
+        foreach (var rule in adjustmentRules) {
           bw.Write(rule.DateStart.ToBinary());
           bw.Write(rule.DateEnd.ToBinary());
           bw.Write(rule.DaylightDelta.TotalMinutes);
@@ -235,13 +230,6 @@ class xtd_data_generator {
   }
   
   static void WriteStatus(string title, bool success) {
-    /*
-    Console.Write("  ");
-    Console.ForegroundColor = success ? ConsoleColor.Green : ConsoleColor.Red;
-    Console.Write(success ? "SUCCEED" : "FAILED ");
-    Console.ResetColor();
-    Console.WriteLine($" {title}");
-    */
     Console.WriteLine($"  {(success ? "✅" : "❌")} {title}");
   }
 }
