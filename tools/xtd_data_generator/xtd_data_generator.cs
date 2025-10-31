@@ -13,17 +13,18 @@ class xtd_data_generator {
     }
 
     var generationNumber = 0;
-    var sw = Stopwatch.StartNew();
+    var stopwatch = Stopwatch.StartNew();
     var version = 1;
     var xtdDataPath = Path.Combine(new[] { "..", "..", "..", "..", "..", "data" });
+    Console.OutputEncoding = Encoding.UTF8;
     Console.WriteLine("Start generations");
     WriteStatus("Generate Cultures", Execute(() => GenerateCultures(Path.Combine(new[] { xtdDataPath, "cultures.bin" }), version), ++generationNumber));
     WriteStatus("Generate DateTimeFormats", Execute(() => GenerateDateTimeFormats(Path.Combine(new[] { xtdDataPath, "date_time_formats.bin" }), version), ++generationNumber));
     WriteStatus("Generate NumberFormats", Execute(() => GenerateNumberFormats(Path.Combine(new[] { xtdDataPath, "number_formats.bin" }), version), ++generationNumber));
     WriteStatus("Generate Regions", Execute(() => GenerateRegions(Path.Combine(new[] { xtdDataPath, "regions.bin" }), version), ++generationNumber));
     WriteStatus("Generate TimeZones", Execute(() => GenerateTimeZones(Path.Combine(new[] { xtdDataPath, "time_zones.bin" }), version), ++generationNumber));
-    sw.Stop();
-    Console.WriteLine($"End {generationNumber} generations ran. [{sw.Elapsed.TotalSeconds:F4} seconds]");
+    stopwatch.Stop();
+    Console.WriteLine($"End {generationNumber} generations ran. [{stopwatch.Elapsed.TotalSeconds:F4} seconds]");
     Environment.Exit(Environment.ExitCode);
   }
 
