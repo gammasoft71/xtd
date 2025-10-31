@@ -62,6 +62,9 @@ The xtd guides provide an explanation on how to use the important features of th
       * [Explicitly throw exceptions](/docs/documentation/guides/xtd.core/Exceptions/how_tos/explicitly_throw_exception)
       * [Create user-defined exceptions](/docs/documentation/guides/xtd.core/Exceptions/how_tos/create_user_defined_exceptions)
     * [Best practices](/docs/documentation/guides/xtd.core/Exceptions/exceptions_best_practices)
+  * Globalization
+      * [Languages supported by xtd](/docs/documentation/guides/xtd.core/globalization/languages)
+      * [Internationalization](/docs/documentation/guides/xtd.core/globalization/internationalization)
   * Format number, dates other types
     * [Overview](/docs/documentation/guides/xtd.core/format_number_dates_other_types/overview)
     * [Standard numeric format strings](/docs/documentation/guides/xtd.core/format_number_dates_other_types/standard_numeric_format_strings)
@@ -103,7 +106,6 @@ The xtd guides provide an explanation on how to use the important features of th
       * [Use tcp_client_and_tcp_listener](/docs/documentation/guides/xtd.core/Networking/Sockets/tcp_client_and_tcp_listener)
   * Threading
     * [Compare threading features with other libraries](/docs/documentation/guides/xtd.core/threading/threading_functionalities)
-  * [Internationalization](/docs/documentation/guides/xtd.core/internationalization)
   * [Resources](/docs/documentation/guides/xtd.core/resources)
   * [Settings](/docs/documentation/guides/xtd.core/settings)
 * xtd.drawing
