@@ -1045,6 +1045,11 @@ The following table represents the languages list ordered by name.
 
 > Total supported cultures: 1035
 
+# See also
+​
+* [Guides](/docs/documentation/guides)
+* [Documentation](/docs/documentation)
+
 [//]: # // The following csharp code generates the table above.
 [//]: # using System.Globalization;
 [//]: # 
