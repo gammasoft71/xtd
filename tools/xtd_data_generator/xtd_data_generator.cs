@@ -5,32 +5,35 @@ using System.Text;
 
 class xtd_data_generator {
   static void Main() {
-    var exitCode = 1;
-    Console.WriteLine("Generation started");
     if (IsUsingNls()) {
-      Trace.WriteLine("ERROR: The current .NET runtime is not using ICU/CLDR for globalization.");
-      Environment.Exit(exitCode);
+      Console.ForegroundColor = ConsoleColor.Red;
+      Console.WriteLine("ERROR: The current .NET runtime is not using ICU/CLDR for globalization.");
+      Console.ResetColor();
+      Environment.Exit(1);
     }
 
-    var xtdDataPath = Path.Combine(new[] { "..", "..", "..", "..", "..", "data" });
-    var version = 1;
+    var generationNumber = 0;
     var sw = Stopwatch.StartNew();
-    WriteStatus("Generate Cultures", Execute(() => GenerateCultures(Path.Combine(new[] { xtdDataPath, "cultures.bin" }), version), ++exitCode));
-    WriteStatus("Generate DateTimeFormats", Execute(() => GenerateDateTimeFormats(Path.Combine(new[] { xtdDataPath, "date_time_formats.bin" }), version), ++exitCode));
-    WriteStatus("Generate NumberFormats", Execute(() => GenerateNumberFormats(Path.Combine(new[] { xtdDataPath, "number_formats.bin" }), version), ++exitCode));
-    WriteStatus("Generate Regions", Execute(() => GenerateRegions(Path.Combine(new[] { xtdDataPath, "regions.bin" }), version), ++exitCode));
-    WriteStatus("Generate TimeZones", Execute(() => GenerateTimeZones(Path.Combine(new[] { xtdDataPath, "time_zones.bin" }), version), ++exitCode));
+    var version = 1;
+    var xtdDataPath = Path.Combine(new[] { "..", "..", "..", "..", "..", "data" });
+    Console.WriteLine("Start generations");
+    WriteStatus("Generate Cultures", Execute(() => GenerateCultures(Path.Combine(new[] { xtdDataPath, "cultures.bin" }), version), ++generationNumber));
+    WriteStatus("Generate DateTimeFormats", Execute(() => GenerateDateTimeFormats(Path.Combine(new[] { xtdDataPath, "date_time_formats.bin" }), version), ++generationNumber));
+    WriteStatus("Generate NumberFormats", Execute(() => GenerateNumberFormats(Path.Combine(new[] { xtdDataPath, "number_formats.bin" }), version), ++generationNumber));
+    WriteStatus("Generate Regions", Execute(() => GenerateRegions(Path.Combine(new[] { xtdDataPath, "regions.bin" }), version), ++generationNumber));
+    WriteStatus("Generate TimeZones", Execute(() => GenerateTimeZones(Path.Combine(new[] { xtdDataPath, "time_zones.bin" }), version), ++generationNumber));
     sw.Stop();
-    Console.WriteLine($"Generation ended in {sw.Elapsed.TotalSeconds:F2}s");    Environment.Exit(Environment.ExitCode);
+    Console.WriteLine($"End {generationNumber} generations ran. [{sw.Elapsed.TotalSeconds:F4} seconds]");
+    Environment.Exit(Environment.ExitCode);
   }
 
-  static bool Execute(Action action, int exitCode) {
+  static bool Execute(Action action, int generationNumber) {
     try {
       action();
       return true;
     } catch (Exception e) {
       Trace.WriteLine("ERROR: " + e.Message);
-      Environment.ExitCode = exitCode;
+      Environment.ExitCode = generationNumber + 1;
       return false;
     }
   }
@@ -224,9 +227,10 @@ class xtd_data_generator {
   }
   
   static void WriteStatus(string title, bool success) {
-    Console.Write("  * {0,-28}", title + "...");
+    Console.Write("  ");
     Console.ForegroundColor = success ? ConsoleColor.Green : ConsoleColor.Red;
-    Console.WriteLine(success ? "[SUCCEED]" : "[FAILED ]");
+    Console.Write(success ? "SUCCEED" : "FAILED ");
     Console.ResetColor();
+    Console.WriteLine($" {title}");
   }
 }
