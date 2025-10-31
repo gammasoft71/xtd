@@ -32,9 +32,9 @@ class xtd_data_generator {
       using (var bw = new System.IO.BinaryWriter(File.Open(file_path, FileMode.Create), Encoding.UTF8)) {
         bw.Write(new byte[] { (byte)'X', (byte)'T', (byte)'D', 0, (byte)'C', (byte)'U', (byte)'L', (byte)'T' });
         bw.Write(version);
-        var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
+        var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures).OrderBy(culture => culture.Name).ToArray();
         bw.Write(cultures.Length);
-        foreach (var cultureInfo in cultures.OrderBy(culture => culture.Name)) {
+        foreach (var cultureInfo in cultures) {
           bw.Write(cultureInfo.Name.ToLower());
           bw.Write((int)(cultureInfo.CultureTypes & CultureTypes.AllCultures));
           bw.Write(cultureInfo.DisplayName);
@@ -62,9 +62,9 @@ class xtd_data_generator {
       using (var bw = new System.IO.BinaryWriter(File.Open(file_path, FileMode.Create), Encoding.UTF8)) {
         bw.Write(new byte[] { (byte)'X', (byte)'T', (byte)'D', 0, (byte)'D', (byte)'T', (byte)'F', (byte)'M' });
         bw.Write(version);
-        var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
+        var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures).OrderBy(culture => culture.Name).ToArray();
         bw.Write(cultures.Length);
-        foreach (var cultureInfo in cultures.OrderBy(culture => culture.Name)) {
+        foreach (var cultureInfo in cultures) {
           bw.Write(cultureInfo.Name.ToLower());
           Write(bw, cultureInfo.DateTimeFormat.AbbreviatedDayNames);
           Write(bw, cultureInfo.DateTimeFormat.AbbreviatedMonthGenitiveNames);
@@ -104,9 +104,9 @@ class xtd_data_generator {
       using (var bw = new System.IO.BinaryWriter(File.Open(file_path, FileMode.Create), Encoding.UTF8)) {
         bw.Write(new byte[] { (byte)'X', (byte)'T', (byte)'D', 0, (byte)'N', (byte)'U', (byte)'M', (byte)'F' });
         bw.Write(version);
-        var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
+        var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures).OrderBy(culture => culture.Name).ToArray();
         bw.Write(cultures.Length);
-        foreach (var cultureInfo in cultures.OrderBy(culture => culture.Name)) {
+        foreach (var cultureInfo in cultures) {
           bw.Write(cultureInfo.Name.ToLower());
           bw.Write(cultureInfo.NumberFormat.CurrencyDecimalDigits);
           bw.Write(cultureInfo.NumberFormat.CurrencyDecimalSeparator);
@@ -149,9 +149,9 @@ class xtd_data_generator {
       using (var bw = new System.IO.BinaryWriter(File.Open(file_path, FileMode.Create), Encoding.UTF8)) {
         bw.Write(new byte[] { (byte)'X', (byte)'T', (byte)'D', 0, (byte)'N', (byte)'U', (byte)'M', (byte)'F' });
         bw.Write(version);
-        var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
-        bw.Write(cultures.Count(c => TryCreateRegion(c.Name, out _)));
-        foreach (var cultureInfo in cultures.OrderBy(culture => culture.Name)) {
+        var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures).Where(c => TryCreateRegion(c.Name, out _)).OrderBy(c => c.Name).ToArray();
+        bw.Write(cultures.Length);
+        foreach (var cultureInfo in cultures) {
           if (TryCreateRegion(cultureInfo.Name, out var region)) {
             bw.Write(cultureInfo.Name.ToLower());
             bw.Write(region.CurrencyEnglishName);
