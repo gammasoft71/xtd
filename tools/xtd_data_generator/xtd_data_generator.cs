@@ -228,10 +228,13 @@ class xtd_data_generator {
   }
   
   static void WriteStatus(string title, bool success) {
+    /*
     Console.Write("  ");
     Console.ForegroundColor = success ? ConsoleColor.Green : ConsoleColor.Red;
     Console.Write(success ? "SUCCEED" : "FAILED ");
     Console.ResetColor();
     Console.WriteLine($" {title}");
+    */
+    Console.WriteLine($"  {(success ? "✅" : "❌")} {title}");
   }
 }
