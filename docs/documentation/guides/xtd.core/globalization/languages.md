@@ -1050,52 +1050,54 @@ The following table represents the languages list ordered by name.
 * [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)
 
-[//]: # // The following csharp code generates the table above.
-[//]: # using System.Globalization;
-[//]: # 
-[//]: # class Program {
-[//]: #   static void Main() {
-[//]: #     var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures)
-[//]: #       .OrderBy(c => c.EnglishName)
-[//]: #       .ToArray();
-[//]: # 
-[//]: #     Console.WriteLine("| Language                                 | Region/Locale            | Language ID | Language tag |");
-[//]: #     Console.WriteLine("| ---------------------------------------- | ------------------------ | ----------- | ------------ |");
-[//]: # 
-[//]: #     foreach (var culture in cultures) {
-[//]: #       //TryCreateRegion(culture.Name, out var region);
-[//]: #       RegionInfo? region = null;
-[//]: #       if (!culture.IsNeutralCulture && !string.IsNullOrEmpty(culture.Name) && culture.Name.Contains('-')) TryCreateRegion(culture.Name, out region);
-[//]: #       Console.WriteLine($"| {culture.EnglishName,-40} | {region?.EnglishName ?? "(neutral)",-24} | 0x{culture.LCID:X4}      | {culture.Name,-12} |");
-[//]: #     }
-[//]: # 
-[//]: #     Console.WriteLine($"\n> Total supported cultures: {cultures.Length}");
-[//]: #   }
-[//]: #     
-[//]: #   static bool TryCreateRegion(string name, out RegionInfo? region) {
-[//]: #     try {
-[//]: #       region = new RegionInfo(name);
-[//]: #       return true;
-[//]: #     } catch {
-[//]: #       region = null!;
-[//]: #       return false;
-[//]: #     }
-[//]: #   }
-[//]: # }
-[//]: # 
-[//]: # // This code produces the following outputs :
-[//]: # //
-[//]: # // | Language                                 | Region/Locale            | Language ID | Language tag |
-[//]: # // | ---------------------------------------- | ------------------------ | ----------- | ------------ |
-[//]: # // | Afrikaans                                | (neutral)                | 0x0036      | af           |
-[//]: # // | Afrikaans (Namibia)                      | Namibia                  | 0x1000      | af-NA        |
-[//]: # // | Afrikaans (South Africa)                 | South Africa             | 0x0436      | af-ZA        |
-[//]: # // | Aghem                                    | (neutral)                | 0x1000      | agq          |
-[//]: # // | Aghem (Cameroon)                         | Cameroon                 | 0x1000      | agq-CM       |
-[//]: # // ...
-[//]: # // | Zhuang                                   | (neutral)                | 0x1000      | za           |
-[//]: # // | Zhuang (China mainland)                  | China mainland           | 0x1000      | za-CN        |
-[//]: # // | Zulu                                     | (neutral)                | 0x0035      | zu           |
-[//]: # // | Zulu (South Africa)                      | South Africa             | 0x0435      | zu-ZA        |
-[//]: # // 
-[//]: # // > Total supported cultures: 1035
+<!--
+// The following csharp code generates the table above.
+using System.Globalization;
+
+class Program {
+  static void Main() {
+    var cultures = CultureInfo.GetCultures(CultureTypes.AllCultures)
+      .OrderBy(c => c.EnglishName)
+      .ToArray();
+
+    Console.WriteLine("| Language                                 | Region/Locale            | Language ID | Language tag |");
+    Console.WriteLine("| ---------------------------------------- | ------------------------ | ----------- | ------------ |");
+
+    foreach (var culture in cultures) {
+      //TryCreateRegion(culture.Name, out var region);
+      RegionInfo? region = null;
+      if (!culture.IsNeutralCulture && !string.IsNullOrEmpty(culture.Name) && culture.Name.Contains('-')) TryCreateRegion(culture.Name, out region);
+      Console.WriteLine($"| {culture.EnglishName,-40} | {region?.EnglishName ?? "(neutral)",-24} | 0x{culture.LCID:X4}      | {culture.Name,-12} |");
+    }
+
+    Console.WriteLine($"\n> Total supported cultures: {cultures.Length}");
+  }
+    
+  static bool TryCreateRegion(string name, out RegionInfo? region) {
+    try {
+      region = new RegionInfo(name);
+      return true;
+    } catch {
+      region = null!;
+      return false;
+    }
+  }
+}
+
+// This code produces the following outputs :
+//
+// | Language                                 | Region/Locale            | Language ID | Language tag |
+// | ---------------------------------------- | ------------------------ | ----------- | ------------ |
+// | Afrikaans                                | (neutral)                | 0x0036      | af           |
+// | Afrikaans (Namibia)                      | Namibia                  | 0x1000      | af-NA        |
+// | Afrikaans (South Africa)                 | South Africa             | 0x0436      | af-ZA        |
+// | Aghem                                    | (neutral)                | 0x1000      | agq          |
+// | Aghem (Cameroon)                         | Cameroon                 | 0x1000      | agq-CM       |
+// ...
+// | Zhuang                                   | (neutral)                | 0x1000      | za           |
+// | Zhuang (China mainland)                  | China mainland           | 0x1000      | za-CN        |
+// | Zulu                                     | (neutral)                | 0x0035      | zu           |
+// | Zulu (South Africa)                      | South Africa             | 0x0435      | zu-ZA        |
+// 
+// > Total supported cultures: 1035
+-->
