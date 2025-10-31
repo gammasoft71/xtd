@@ -266,7 +266,7 @@ For localized applications, you should provide a localized message string for ev
 You use `locale` files to provide localized error messages.
 For information on localizing applications and retrieving localized strings, see the following article:
 
-* [Internationalization](/docs/documentation/guides/xtd.core/internationalization)
+* [Internationalization](/docs/documentation/guides/xtd.core/globalization/internationalization)
 
 ### Use proper grammar
 
