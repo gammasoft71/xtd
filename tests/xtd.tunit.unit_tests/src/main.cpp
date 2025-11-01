@@ -10,4 +10,4 @@ namespace xtd::tunit {
   };
 }
 
-startup_(xtd::tunit::unit_tests::main);
+startup_(unit_tests::main);
