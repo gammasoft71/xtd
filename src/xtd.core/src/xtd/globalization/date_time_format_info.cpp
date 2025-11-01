@@ -51,6 +51,7 @@ const array<string>& date_time_format_info::abreviated_day_names() const noexcep
 }
 
 date_time_format_info& date_time_format_info::abreviated_day_names(const array<string>& value) noexcept {
+  if (value.length() != 7_z) throw_helper::throws(xtd::helpers::exception_case::argument);
   data_->abreviated_day_names = value;
   return self_;
 }
