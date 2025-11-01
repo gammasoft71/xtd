@@ -362,6 +362,10 @@ namespace xtd {
       /// @remarks On unix base system is the same as `locale -a` terminal command.
       static xtd::array<std::locale> get_system_locales() noexcept;
       
+      /// @brief Initializes all cultures available in xtd and prevents lazy-loading.
+      /// @details This method preloads all culture-related data (including xtd::globalization::date_time_format_info, xtd::globalization::number_format_info, and xtd::globalization::region_info) for all supported cultures. By calling this method, you avoid lazy-loading of cultures when they are first accessed, which can improve performance in scenarios where multiple cultures are accessed repeatedly, or when deterministic initialization order is required.
+      /// @note This method is typically called automatically by xtd when needed, but it can be invoked explicitly if you want to ensure that all cultures are loaded upfront, for example in a unit testing setup or at application startup.
+      /// @remarks After calling this method, accessing any culture (via xtd::globalization::culture_info::current_culture(), xtd::globalization::culture_info::invariant_culture(), or any specific culture) will not trigger any further initialization or lazy-loading.
       static void initialize_all_cultures() noexcept;
       /// @}
       
