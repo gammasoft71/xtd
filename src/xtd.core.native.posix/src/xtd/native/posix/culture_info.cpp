@@ -40,3 +40,4 @@ std::string culture_info::current_locale_name() {
     return locales;
   }
   
+  
