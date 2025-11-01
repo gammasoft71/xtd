@@ -27,6 +27,7 @@ add_sources(
   "src/xtd/globalization/tests/culture_info_tests.cpp"
   "src/xtd/globalization/tests/culture_info_cultures_tests.cpp"
   "src/xtd/globalization/tests/culture_info_date_time_formats_tests.cpp"
+  "src/xtd/globalization/tests/culture_info_number_formats_tests.cpp"
   "src/xtd/globalization/tests/culture_not_found_exception_tests.cpp"
   "src/xtd/globalization/tests/culture_types_tests.cpp"
   "src/xtd/globalization/tests/translator_tests.cpp"
