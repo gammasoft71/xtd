@@ -235,7 +235,7 @@ array<std::locale> culture_info::get_system_locales() noexcept {
 }
 
 void culture_info::initialize_all_cultures() noexcept {
-  [[maybe_unused]] auto ci = globalization::culture_info {"en-US"};
+  [[maybe_unused]] auto ci = culture_info {"en-US"};
   [[maybe_unused]] auto dtf = ci.date_time_format();
   [[maybe_unused]] auto nf = ci.number_format();
 }
