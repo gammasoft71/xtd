@@ -20,6 +20,7 @@ namespace xtd {
     /// @cond
     class culture_info;
     /// @endcond
+
     /// @brief Provides culture-specific information about the format of date and time values.
     /// ```cpp
     /// class date_time_format_info : public xtd::object
@@ -44,6 +45,8 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the xtd::globalization::date_time_format_info class.
+      /// @remarks This constructor creates a xtd::globalization::date_time_format_info object that represents the date and time information of the invariant culture. To create a xtd::globalization::date_time_format_info object for a specific culture, create a xtd::globalization::culture_info object for that culture and retrieve the xtd::globalization::date_time_format_info object returned by its xtd::globalization::culture_info::date_time_format property.
+      /// @remarks The properties of the xtd::globalization::date_time_format_info object created by this constructor can be modified. However, you cannot modify the xtd::globalization::date_time_format_info::calendar property, because the invariant culture supports only a localized version of the Gregorian calendar. To create a xtd::globalization::date_time_format_info object that uses a specific calendar, you must instantiate a xtd::globalization::culture_info object that supports that calendar and assign the calendar to the xtd::globalization::date_time_format_info::calendar property of the xtd::globalization::date_time_format_info object returned by the xtd::globalization::culture_info::date_time_format property.
       date_time_format_info();
       /// @brief Initializes a new instance of the xtd::globalization::date_time_format_info class with specified info.
       /// @param info The xtd::globalization::date_time_format_info to inititalise this instance.
@@ -56,7 +59,12 @@ namespace xtd {
       /// @name Public Properties
       
       /// @{
+      /// @brief Gets a one-dimensional array of type String containing the culture-specific abbreviated names of the days of the week.
+      /// @return A one-dimensional array of type xtd::string containing the culture-specific abbreviated names of the days of the week. The array for xtd::globalization::date_time_format_info::invariant_info contains "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", and "Sat".
       const xtd::array<xtd::string>& abreviated_day_names() const noexcept;
+      /// @brief Sets a one-dimensional array of type String containing the culture-specific abbreviated names of the days of the week.
+      /// @param value A one-dimensional array of type xtd::string containing the culture-specific abbreviated names of the days of the week. The array for xtd::globalization::date_time_format_info::invariant_info contains "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", and "Sat".
+      /// @exception xtd::argument_exception The property is being set to an array that has a length that is not exactly 7.
       date_time_format_info& abreviated_day_names(const xtd::array<xtd::string>& value) noexcept;
       
       const xtd::array<xtd::string>& abreviated_month_genitive_names() const noexcept;
