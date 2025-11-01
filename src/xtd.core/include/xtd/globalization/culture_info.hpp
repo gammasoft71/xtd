@@ -5,6 +5,7 @@
 
 #include "culture_not_found_exception.hpp"
 #include "date_time_format_info.hpp"
+#include "number_format_info.hpp"
 #include "../collections/generic/dictionary.hpp"
 #include "../core_export.hpp"
 #include "../iequatable.hpp"
@@ -203,6 +204,9 @@ namespace xtd {
       /// @remarks The value of this property is the same, regardless of the language version of the xtd.
       const xtd::string& native_name() const noexcept;
       
+      const xtd::globalization::number_format_info& number_format() const;
+      xtd::globalization::number_format_info& number_format();
+
       /// @brief Gets the xtd::globalization::culture_info that represents the parent culture of the current xtd::globalization::culture_info.
       /// @return The xtd::globalization::culture_info that represents the parent culture of the current xtd::globalization::culture_info.
       /// @par Examples

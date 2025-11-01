@@ -28,6 +28,7 @@ struct culture_info::data {
   std::locale locale = std::locale {""};
   xtd::string name;
   xtd::string native_name = "Invariant Language (Invariant Country)";
+  optional<number_format_info> number_format;
   xtd::string parent_name;
   xtd::string three_letter_iso_language_name = "ivl";
   xtd::string three_letter_windows_language_name = "IVL";
@@ -116,6 +117,16 @@ const string& culture_info::name() const noexcept {
 
 const string& culture_info::native_name() const noexcept {
   return data_->native_name;
+}
+
+const xtd::globalization::number_format_info& culture_info::number_format() const {
+  if (data_->number_format == nullopt) data_->number_format = number_format_info::formats()[data_->name.to_lower()];
+  return data_->number_format.value();
+}
+
+xtd::globalization::number_format_info& culture_info::number_format() {
+  if (data_->number_format == nullopt) data_->number_format = number_format_info::formats()[data_->name.to_lower()];
+  return data_->number_format.value();
 }
 
 culture_info culture_info::parent() const noexcept {
