@@ -4,7 +4,7 @@
 namespace xtd::tunit {
   class unit_tests {
   public:
-    static auto main() -> int {
+    static auto main() {
       return assert_unit_tests::register_assert_unit_test::run_all_tests();
     }
   };
