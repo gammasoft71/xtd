@@ -1,3 +1,4 @@
+#include "../../../include/xtd/diagnostics/trace.hpp"
 #include "../../../include/xtd/globalization/culture_info.hpp"
 #include "../../../include/xtd/helpers/throw_helper"
 #include "../../../include/xtd/io/binary_reader.hpp"
@@ -250,7 +251,10 @@ culture_info::culture_info(globalization::culture_types culture_types, string&& 
 
 void culture_info::fill_from_name(const string& name) {
   auto lower_name = name.to_lower();
-  if (!cultures().contains_key(lower_name)) throw_helper::throws(exception_case::culture_not_found);
+  if (!cultures().contains_key(lower_name)) {
+    diagnostics::trace::write_line("ERROR: the `{}` (`{}`) culture does not exist!", name, lower_name);
+    throw_helper::throws(exception_case::culture_not_found);
+  }
   *data_ = *cultures()[lower_name].data_;
 }
 
