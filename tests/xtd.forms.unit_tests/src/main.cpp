@@ -4,10 +4,8 @@
 namespace xtd::forms {
   class unit_tests {
   public:
-    static auto main() -> int {
-      #if defined(__XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM__)
-      xtd::tunit::settings::default_settings().brief(true);
-      #endif
+    static auto main() {
+      xtd::tunit::settings::default_settings().brief(environment::get_environment_variable("CI") == "true");
       return xtd::tunit::console_unit_test {}.run();
     }
   };
