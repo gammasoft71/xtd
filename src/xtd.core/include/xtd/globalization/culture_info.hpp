@@ -299,9 +299,45 @@ namespace xtd {
       /// @name Public Static Methods
       
       /// @{
+      /// @brief Retrieves a cached, read-only instance of a culture using the specified culture name.
+      /// @param name The name of a culture. `name` is not case-sensitive.
+      /// @return A read-only xtd::globalization::culture_info object.
+      /// @exception xtd::globalization::culture_not_found_exception `name` specifies a culture that is not supported. See the Notes to Callers section for more information.
+      /// @remarks For a list of predefined culture names on xtd, see the `Language tag` column in the [list of language/region names supported by xtd](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/globalization/languages). Culture names follow the standard defined by [BCP 47](https://tools.ietf.org/html/bcp47).
+      /// @remarks The xtd::globalization::culture_info::get_culture_info method retrieves a cached, read-only xtd::globalization::culture_info object. It offers better performance than a corresponding call to the xtd::globalization::culture_info::culture_info constructor.
+      /// @remarks If `name` is the name of the current culture, the returned xtd::globalization::culture_info object does not reflect any user overrides. This makes the method suitable for server applications or tools that do not have a real user account on the system and that need to load multiple cultures efficiently.
+      /// @remarks If `name` is xtd::string::empty_string, the method returns the invariant culture. This is equivalent to retrieving the value of the xtd::globalization::culture_info::invariant_culture property.
+      /// @par Notes to Callers
+      /// This method throws a xtd::globalization::culture_not_found_exception if `name` is not a valid culture name.
       static culture_info get_culture_info(const xtd::string& name);
+      /// @brief Retrieves a cached, read-only instance of a culture.
+      /// @param name The name of a culture. `name` is not case-sensitive.
+      /// @param predefined_only `true` if requesting to create an instance of a culture that is known by the platform. `false` if it is ok to retreive a made-up culture even if the platform does not carry data for it.
+      /// @return A read-only xtd::globalization::culture_info object.
+      /// @remarks By default, when trying to create any culture and the underlying platform (ICU) does not carry specific data for this culture, the platform will try constructing a culture with data from other cultures or some constant values.
+      /// @remarks Setting `predefined_only` to true will ensure a culture is created only if the platform has real data for that culture.
       static culture_info get_culture_info(const xtd::string& name, bool predefined_only);
+      /// @brief Retrieves a cached, read-only instance of a culture. Parameters specify a culture that is initialized with the TextInfo and CompareInfo objects specified by another culture.
+      /// @param name The name of a culture. `name` is not case-sensitive.
+      /// @param alt_name The name of a culture that supplies the xtd::globalization::text_info and xtd::globalization::compare_info objects used to initialize name. `alt_name` is not case-sensitive.
+      /// @return A read-only xtd::globalization::culture_info object.
+      /// @exception xtd::globalization::culture_not_found_exception `name` or `alt_name` specifies a culture that is not supported. See the Notes to Callers section for more information.
+      /// @remarks For a list of predefined culture names on xtd, see the `Language tag` column in the [list of language/region names supported by xtd](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/globalization/languages). Culture names follow the standard defined by [BCP 47](https://tools.ietf.org/html/bcp47).
+      /// @remarks The xtd::globalization::culture_info::get_culture_info method retrieves a cached, read-only xtd::globalization::culture_info object. It offers better performance than a corresponding call to the xtd::globalization::culture_info::culture_info constructor.
+      /// @remarks If `name` or `alt_name` is the name of the current culture, the returned xtd::globalization::culture_info object does not reflect any user overrides. This makes the method suitable for server applications or tools that do not have a real user account on the system and that need to load multiple cultures efficiently.
+      /// @remarks If `name` is xtd::string::empty_string, the method returns the invariant culture. This is equivalent to retrieving the value of the xtd::globalization::culture_info::invariant_culture property.
+      /// @par Notes to Callers
+      /// This method throws a xtd::globalization::culture_not_found_exception if `name` or `alt_name` is not a valid culture name.
       static culture_info get_culture_info(const xtd::string& name, const xtd::string& alt_name);
+      /// @brief Retrieves a cached, read-only instance of a culture by using the specified culture identifier.
+      /// @param culture A locale identifier (LCID).
+      /// @return A read-only xtd::globalization::culture_info object.
+      /// @exception xtd::globalization::culture_not_found_exception `culture` specifies a culture that is not supported. See the Notes to Caller section for more information.
+      /// @remarks We recommend that you use the string overload of this method (xtd::globalization::culture_info::get_culture_info (const string&)), because locale names should be used instead of LCIDs. For custom locales, the locale name is required.
+      /// @remarks If `culture` is the locale identifier of the current culture, the returned xtd::globalization::culture_info object does not reflect any user overrides.
+      /// @note LCIDs are being deprecated, and implementers are strongly encouraged to use newer versions of APIs that support BCP 47 locale names instead. Each LCID can be represented by a BCP 47 locale name, but the reverse is not true. The LCID range is restricted and unable to uniquely identify all the possible combinations of language and region.
+      /// @par Notes to Callers
+      /// This method throws a xtd::globalization::culture_not_found_exception if `culture` is not a valid culture identifier.
       static culture_info get_culture_info(xtd::size culture);
       
       /// @brief Gets the list of supported cultures filtered by the specified xtd::globalization::culture_types parameter.
