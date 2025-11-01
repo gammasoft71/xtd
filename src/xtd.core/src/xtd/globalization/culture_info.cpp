@@ -246,12 +246,14 @@ culture_info::culture_info(globalization::culture_types culture_types, string&& 
   data_->three_letter_iso_language_name = std::move(three_letter_iso_language_name);
   data_->three_letter_windows_language_name = std::move(three_letter_windows_language_name);
   data_->two_letter_iso_language_name = std::move(two_letter_iso_language_name);
+  data_->is_read_only = true;
 }
 
 void culture_info::fill_from_name(const string& name) {
   auto lower_name = name.to_lower();
   if (!cultures().contains_key(lower_name)) throw_helper::throws(exception_case::culture_not_found);
   *data_ = *cultures()[lower_name].data_;
+  data_->is_read_only = false;
 }
 
 dictionary<string, culture_info>& culture_info::cultures() {
@@ -290,6 +292,8 @@ string culture_info::to_cldr_name(const string& name) {
 
 string culture_info::to_locale_name(const string& name) {
   if (string::is_empty(name) || name == "C" || name == "POSIX") return name;
+  if (name == "C.UTF-8") return "C";
+  if (name == "POSIX.UTF-8") return "POSIX";
   static const auto cldr_to_locale_fixups = dictionary<string, string> {{"ar", "ar_AR.UTF-8"}, {"en", "en_EN.UTF-8"}, {"eo", "eo_EN.UTF-8"}, {"ia", "ia_IA.UTF-8"}, {"id", "ia_ID.UTF-8"}};
   if (cldr_to_locale_fixups.contains_key(name.to_lower())) return cldr_to_locale_fixups[name.to_lower()];
   static const array<string> unsupported_scripts = {"-Adlm", "-Arab", "-Aran", "-Beng", "-Bopo", "-Cyrl", "-Deva", "-Ethi", "-Grek", "-Guru", "-Hans", "-Hant", "-Hebr", "-Latn", "-Kana", "-Mtei", "-Olck", "-Orya", "-Rohg", "-Telu", "-Tfng", "-Thai", "-Vaii", "-POSIX"};

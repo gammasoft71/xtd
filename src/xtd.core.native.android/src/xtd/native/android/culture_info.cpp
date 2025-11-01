@@ -13,6 +13,8 @@ using namespace xtd::native;
 namespace {
   std::string to_locale_name(const std::string& name) {
     if (name.empty() || name == "C" || name == "POSIX") return name;
+    if (name == "C.UTF-8") return "C";
+    if (name == "POSIX.UTF-8") return "POSIX";
     auto locale_name = name;
     auto pos = locale_name.find(".");
     if (pos != std::string::npos) locale_name = locale_name.substr(0, pos);
