@@ -327,10 +327,10 @@ dictionary<string, number_format_info>& number_format_info::formats() {
   static auto formats = dictionary<string, number_format_info> {{"", {}}, {"en-us", {2, ".", ",", array<int32> {3}, 1, 0, "$", 1, "NaN", "-∞", "-", 3, ".", ",", array<int32> {3}, 1, 3, ".", ",", array<int32> {3}, 1, 1, "%", "‰", "∞", "+"}}};
   call_once_ {
     auto read_int32s = [](auto & br, auto count) {
-      auto ints = list<int32> {};
+      auto ints = array<int32>(as<size>(count));
       for (auto i = 0; i < count; ++i)
-        ints.add(br.read_int32());
-      return ints.to_array();
+        ints[i] = br.read_int32();
+      return ints;
     };
     auto file = path::combine({environment::get_folder_path(environment::special_folder::xtd_install), "share", "xtd", "data", "number_formats.bin"});
     if (!file::exists(file)) return;
