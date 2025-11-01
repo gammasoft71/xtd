@@ -361,6 +361,8 @@ namespace xtd {
       /// @return An array that contains system locales.
       /// @remarks On unix base system is the same as `locale -a` terminal command.
       static xtd::array<std::locale> get_system_locales() noexcept;
+      
+      static void initialize_all_cultures() noexcept;
       /// @}
       
       /// @name Public Operators
