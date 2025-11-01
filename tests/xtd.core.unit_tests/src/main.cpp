@@ -2,7 +2,7 @@
 #include <xtd/startup>
 
 struct __xtd_initialize_all_cultures__ {
-  __xtd_initialize_all_cultures__() {culture_info::initialize_all_cultures();}
+  __xtd_initialize_all_cultures__() {globalization::culture_info::initialize_all_cultures();}
 } __initialize_all_cultures__;
 
 namespace xtd::core {
