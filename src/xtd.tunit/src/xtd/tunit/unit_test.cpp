@@ -1,4 +1,5 @@
 #include "../../../include/xtd/tunit/unit_test.hpp"
+#include <xtd/globalization/culture_info>
 #include <xtd/environment>
 #include <xtd/random>
 #include <xtd/startup>
@@ -6,6 +7,7 @@
 using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::diagnostics;
+using namespace xtd::globalization;
 using namespace xtd::tunit;
 
 unit_test::unit_test(xtd::uptr<event_listener> event_listener) noexcept : arguments(environment::get_command_line_args()), name_(get_filename(environment::get_command_line_args()[0])), event_listener_(std::move(event_listener)) {
@@ -136,6 +138,7 @@ int32 unit_test::run() noexcept {
       return list_tests(tests.to_array());
     }
     
+    culture_info::initialize_all_cultures();
     exception::enable_stack_trace(settings::default_settings().enable_stack_trace());
     
     auto random = settings::default_settings().random_seed() ? xtd::random(settings::default_settings().random_seed()) : xtd::random();
