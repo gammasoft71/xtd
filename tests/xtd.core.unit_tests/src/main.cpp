@@ -1,7 +1,7 @@
 #include <xtd/tunit/console_unit_test>
 #include <xtd/startup>
 
-namespace xtd::core {
+namespace xtd {
   class unit_tests {
   public:
     static auto main() {
@@ -11,4 +11,4 @@ namespace xtd::core {
   };
 }
 
-startup_(xtd::core::unit_tests::main);
+startup_(unit_tests::main);
