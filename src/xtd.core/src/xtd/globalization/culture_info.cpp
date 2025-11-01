@@ -178,19 +178,23 @@ xtd::string culture_info::to_string() const noexcept {
 }
 
 culture_info culture_info::get_culture_info(const xtd::string& name) {
-  return culture_info(name);
+  auto culture = culture_info {name};
+  culture.data_->is_read_only = true;
+  return culture;
 }
 
 culture_info culture_info::get_culture_info(const xtd::string& name, bool predefined_only) {
   if (predefined_only || cultures().contains_key(name)) return culture_info(name);
   auto culture = culture_info {""};
   culture.data_->name = name;
+  culture.data_->is_read_only = true;
   return culture;
 }
 
 culture_info culture_info::get_culture_info(const xtd::string& name, const xtd::string& alt_name) {
   auto alt_culture = culture_info {alt_name};
   auto culture = culture_info {name};
+  culture.data_->is_read_only = true;
   //*culture.data_->compare_info = *alt_culture.data_->compare_info;
   //*culture.data_->text_info = *alt_culture.data_->text_info;
   return culture;
