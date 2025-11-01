@@ -20,7 +20,7 @@ namespace xtd {
     /// @cond
     class culture_info;
     /// @endcond
-
+    
     /// @brief Provides culture-specific information about the format of date and time values.
     /// ```cpp
     /// class date_time_format_info : public xtd::object

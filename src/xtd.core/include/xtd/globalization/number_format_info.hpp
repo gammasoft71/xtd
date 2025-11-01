@@ -16,7 +16,7 @@ namespace xtd {
     /// @cond
     class culture_info;
     /// @endcond
-
+    
     /// @brief Provides culture-specific information about the format of numbers, currency, and percentages.
     /// ```cpp
     /// class number_format_info : public xtd::object
@@ -138,7 +138,7 @@ namespace xtd {
       friend class culture_info;
       number_format_info(int32 currency_decimal_digits, xtd::string&& currency_decimal_separator, xtd::string&& currency_group_separator, xtd::array<int32>&& currency_group_sizes, int32 currency_negative_pattern, int32 currency_positive_pattern, xtd::string&& currency_symbol, int32 digit_substitution, xtd::string&& nan_symbol, xtd::string&& negative_infinity_symbol, xtd::string&& negative_sign, int32 number_decimal_digits, xtd::string&& number_decimal_separator, xtd::string&& number_group_separator, xtd::array<int32>&& number_group_sizes, int32 number_negative_pattern, int32 percent_decimal_digits, xtd::string&& percent_decimal_separator, xtd::string&& percent_group_separator, xtd::array<int32>&& percent_group_sizes, int32 percent_negative_pattern, int32 percent_positive_pattern, xtd::string&& percent_symbol, xtd::string&& per_mille_symbol, xtd::string&& positive_infinity_symbol, xtd::string&& positive_sign);
       static xtd::collections::generic::dictionary<xtd::string, number_format_info>& formats();
-
+      
       struct data;
       ptr<data> data_;
     };

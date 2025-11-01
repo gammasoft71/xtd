@@ -324,10 +324,10 @@ number_format_info::number_format_info(int32 currency_decimal_digits, xtd::strin
 }
 
 dictionary<string, number_format_info>& number_format_info::formats() {
-  static auto formats = dictionary<string, number_format_info>{{"", {}}, {"en-us", {2, ".", ",", array<int32> {3}, 1, 0, "$", 1, "NaN", "-∞", "-", 3, ".", ",", array<int32> {3}, 1, 3, ".", ",", array<int32> {3}, 1, 1, "%", "‰", "∞", "+"}}};
+  static auto formats = dictionary<string, number_format_info> {{"", {}}, {"en-us", {2, ".", ",", array<int32> {3}, 1, 0, "$", 1, "NaN", "-∞", "-", 3, ".", ",", array<int32> {3}, 1, 3, ".", ",", array<int32> {3}, 1, 1, "%", "‰", "∞", "+"}}};
   call_once_ {
-    auto read_int32s = [](auto& br, auto count) {
-      auto ints = list<int32>{};
+    auto read_int32s = [](auto & br, auto count) {
+      auto ints = list<int32> {};
       for (auto i = 0; i < count; ++i)
         ints.add(br.read_int32());
       return ints.to_array();

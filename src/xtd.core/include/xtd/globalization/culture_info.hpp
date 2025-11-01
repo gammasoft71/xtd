@@ -206,7 +206,7 @@ namespace xtd {
       
       const xtd::globalization::number_format_info& number_format() const;
       xtd::globalization::number_format_info& number_format();
-
+      
       /// @brief Gets the xtd::globalization::culture_info that represents the parent culture of the current xtd::globalization::culture_info.
       /// @return The xtd::globalization::culture_info that represents the parent culture of the current xtd::globalization::culture_info.
       /// @par Examples
