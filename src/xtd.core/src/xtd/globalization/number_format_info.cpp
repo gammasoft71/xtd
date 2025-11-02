@@ -19,7 +19,7 @@ struct number_format_info::data {
   array<int32> currency_group_sizes = {3};
   int32 currency_negative_pattern = 0;
   int32 currency_positive_pattern = 0;
-  string currency_symbol = "$";
+  string currency_symbol = "¤";
   int32 digit_substitution = 1;
   string nan_symbol = "NaN";
   string negative_infinity_symbol = "-Infinity";
