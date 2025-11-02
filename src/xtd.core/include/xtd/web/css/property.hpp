@@ -70,7 +70,7 @@ namespace xtd {
         static property from(uint32 value) {return property(string::format("{}", value));}
         static property from(uint64 value) {return property(string::format("{}", value));}
         template<class value_t>
-    inline static property from(value_t value) {return property(string::format("{}", value));}
+        inline static property from(value_t value) {return property(string::format("{}", value));}
         /// @}
         
       private:
