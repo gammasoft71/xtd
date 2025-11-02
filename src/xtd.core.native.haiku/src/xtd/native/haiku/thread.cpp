@@ -75,10 +75,13 @@ bool thread::set_priority(intmax_t handle, int32_t priority) {
 }
 
 bool thread::set_processor_affinity(intmax_t handle, const std::vector<size_t>& processor_affinity) {
+  /*
   if (thread_cast_<pthread_t>(handle) == PTHREAD_FAILED) return false;
   if (processor_affinity.empty()) return set_thread_cpu_affinity(thread_cast_<pthread_t>(handle), B_THREAD_ALL_CPUS) == B_OK;
   int32 cpu = static_cast<int32>(processor_affinity.front());
   return set_thread_cpu_affinity(thread_cast_<pthread_t>(handle), cpu) == B_OK;
+   */
+  return true;
 }
 
 void thread::sleep(int32_t milliseconds_timeout) {
