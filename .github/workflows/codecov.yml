@@ -22,6 +22,7 @@ jobs:
         mkdir build && cd build
         cmake .. \
           -DCMAKE_BUILD_TYPE=Debug \
+          -DCMAKE_INSTALL_PREFIX=~/local \
           -DXTD_BUILD_CPP_STANDARD=23 \
           -DXTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM=ON \
           -DXTD_BUILD_TESTS_XTD_CORE=ON \
@@ -34,7 +35,10 @@ jobs:
     - name: Build xtd
       run: cmake --build build -- -j $(nproc)
 
-    - name: Run tests
+    - name: Installing xtd
+      run: cmake --build build --target install
+
+    - name: Running xtd unit tests
       run: |
         cd build
         ctest --output-on-failure
