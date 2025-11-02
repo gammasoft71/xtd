@@ -49,7 +49,7 @@ jobs:
     - name: Running xtd unit tests
       run: |
         cd build
-        ctest -j8 --output-on-failure --build-config ${{ matrix.build_type }}
+        ctest --output-on-failure --build-config ${{ matrix.build_type }}
 
 #    - name: Upload test results
 #      uses: actions/upload-artifact@v3.1.4
