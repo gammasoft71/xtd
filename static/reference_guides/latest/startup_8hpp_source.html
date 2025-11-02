@@ -119,14 +119,14 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> main_function_t&gt;</div>
 <div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classxtd_1_1startup.html#a9301437f9e6012fa2a487878639e7d23">   47</a></span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classxtd_1_1startup.html#a9301437f9e6012fa2a487878639e7d23">safe_run</a>(main_function_t main_function) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classxtd_1_1startup.html#a9301437f9e6012fa2a487878639e7d23">   47</a></span>    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classxtd_1_1startup.html#a9301437f9e6012fa2a487878639e7d23">safe_run</a>(main_function_t main_function) {</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      <span class="keywordflow">return</span> internal_safe_run(main_function, std::nullopt, std::nullopt);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
 </div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    </div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> main_function_t&gt;</div>
 <div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classxtd_1_1startup.html#a052f759ab4cf62333e6f61622cb5be32">   72</a></span>    <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classxtd_1_1startup.html#a052f759ab4cf62333e6f61622cb5be32">safe_run</a>(main_function_t main_function, <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classxtd_1_1startup.html#a052f759ab4cf62333e6f61622cb5be32">   72</a></span>    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">int</span> <a class="code hl_function" href="classxtd_1_1startup.html#a052f759ab4cf62333e6f61622cb5be32">safe_run</a>(main_function_t main_function, <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span>* argv[]) {</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      <span class="keywordflow">return</span> internal_safe_run(main_function, argc, argv);</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
 </div>
@@ -155,7 +155,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    </div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> main_function_t&gt;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> internal_safe_run(main_function_t main_function, std::optional&lt;int&gt; argc, std::optional&lt;char**&gt; argv) {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">int</span> internal_safe_run(main_function_t main_function, std::optional&lt;int&gt; argc, std::optional&lt;char**&gt; argv) {</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      <span class="keywordflow">try</span> {</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        init_safe_run();</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keyword">auto</span> exit_code = argc == std::nullopt &amp;&amp; argv == std::nullopt ? run(main_function) : run(main_function, argc.value(), argv.value());</div>
@@ -235,7 +235,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 2 2025 00:06:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 2 2025 11:16:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

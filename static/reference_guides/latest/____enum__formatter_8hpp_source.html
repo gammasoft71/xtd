@@ -133,18 +133,18 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">static</span> std::string __to_string_enum(<span class="keyword">const</span> value_t&amp; value, <span class="keyword">const</span> std::string&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc, std::true_type) {<span class="keywordflow">return</span> __enum_formatter(fmt, value, loc);}</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">inline</span> <span class="keyword">static</span> std::string __to_string_enum(<span class="keyword">const</span> value_t&amp; value, <span class="keyword">const</span> std::string&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc, std::true_type) {<span class="keywordflow">return</span> __enum_formatter(fmt, value, loc);}</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">static</span> std::string __to_string_enum(<span class="keyword">const</span> value_t&amp; value, <span class="keyword">const</span> std::string&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc, std::false_type) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">inline</span> <span class="keyword">static</span> std::string __to_string_enum(<span class="keyword">const</span> value_t&amp; value, <span class="keyword">const</span> std::string&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc, std::false_type) {</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <a class="code hl_function" href="classxtd_1_1helpers_1_1throw__helper.html#a4fcf5154d41ae7e68038268ea89492d6">xtd::helpers::throw_helper::throws</a>(<a class="code hl_enumvalue" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dca00fab1e8a2af936f4f794d97271bd266">xtd::helpers::exception_case::format_not_iformatable</a>, <span class="keyword">typeid</span>(value));</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">static</span> std::wstring __to_string_enum(<span class="keyword">const</span> value_t&amp; value, <span class="keyword">const</span> std::wstring&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc, std::true_type) {<span class="keywordflow">return</span> __enum_formatter(fmt, value, loc);}</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">inline</span> <span class="keyword">static</span> std::wstring __to_string_enum(<span class="keyword">const</span> value_t&amp; value, <span class="keyword">const</span> std::wstring&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc, std::true_type) {<span class="keywordflow">return</span> __enum_formatter(fmt, value, loc);}</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">static</span> std::wstring __to_string_enum(<span class="keyword">const</span> value_t&amp; value, <span class="keyword">const</span> std::wstring&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc, std::false_type) {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">inline</span> <span class="keyword">static</span> std::wstring __to_string_enum(<span class="keyword">const</span> value_t&amp; value, <span class="keyword">const</span> std::wstring&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc, std::false_type) {</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <a class="code hl_function" href="classxtd_1_1helpers_1_1throw__helper.html#a4fcf5154d41ae7e68038268ea89492d6">xtd::helpers::throw_helper::throws</a>(<a class="code hl_enumvalue" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dca00fab1e8a2af936f4f794d97271bd266">xtd::helpers::exception_case::format_not_iformatable</a>, <span class="keyword">typeid</span>(value));</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
 <div class="ttc" id="a____numeric__formatter_8hpp_html"><div class="ttname"><a href="____numeric__formatter_8hpp.html">__numeric_formatter.hpp</a></div><div class="ttdoc">Contains __numeric_formatter method.</div></div>
@@ -157,7 +157,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 2 2025 00:06:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 2 2025 11:16:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

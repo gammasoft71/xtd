@@ -151,7 +151,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    </div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    template&lt;class object_a_t, class object_b_t&gt;</div>
 <div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">  122</a></span>    static <span class="keywordtype">bool</span> <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">equals</a>(const object_a_t&amp; object_a, const object_b_t&amp; object_b) noexcept {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">  122</a></span>    inline static <span class="keywordtype">bool</span> <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">equals</a>(const object_a_t&amp; object_a, const object_b_t&amp; object_b) noexcept {</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      <span class="keyword">static_assert</span>(std::is_base_of&lt;xtd::object, object_a_t&gt;::value, <span class="stringliteral">&quot;object_a does not inherit from xtd::object&quot;</span>);</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      <span class="keyword">static_assert</span>(std::is_base_of&lt;xtd::object, object_b_t&gt;::value, <span class="stringliteral">&quot;object_b does not inherit from xtd::object&quot;</span>);</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      <span class="keywordflow">return</span> object_a == object_b;</div>
@@ -160,7 +160,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    </div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">object</span>_a_t, <span class="keyword">class</span> <span class="keywordtype">object</span>_b_t&gt;</div>
 <div class="foldopen" id="foldopen00136" data-start="{" data-end="}">
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">  136</a></span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">reference_equals</a>(<span class="keyword">const</span> object_a_t&amp; object_a, <span class="keyword">const</span> object_b_t&amp; object_b) <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">  136</a></span>    <span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">reference_equals</a>(<span class="keyword">const</span> object_a_t&amp; object_a, <span class="keyword">const</span> object_b_t&amp; object_b) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>      <span class="keyword">static_assert</span>(std::is_base_of&lt;xtd::object, object_a_t&gt;::value, <span class="stringliteral">&quot;object_a does not inherit from xtd::object&quot;</span>);</div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>      <span class="keyword">static_assert</span>(std::is_base_of&lt;xtd::object, object_b_t&gt;::value, <span class="stringliteral">&quot;object_b does not inherit from xtd::object&quot;</span>);</div>
 <div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>      <span class="keywordflow">return</span> &amp;object_a == &amp;object_b;</div>
@@ -208,7 +208,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 2 2025 00:06:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Nov 2 2025 11:16:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
