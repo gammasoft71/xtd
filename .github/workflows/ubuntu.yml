@@ -46,7 +46,7 @@ jobs:
     - name: Running xtd unit tests
       run: |
         cd build
-        ctest -j$(nproc) --output-on-failure
+        ctest --output-on-failure
 
 #    - name: Upload test results
 #      uses: actions/upload-artifact@v3.1.4
