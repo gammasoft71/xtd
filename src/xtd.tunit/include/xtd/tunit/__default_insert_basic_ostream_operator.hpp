@@ -63,22 +63,22 @@ template<> struct __tunit_is_printable<std::u32string> : std::true_type {};
 template<> struct __tunit_is_printable<std::wstring> : std::true_type {};
 
 template<class char_t, class char_traits_t, class value_t>
-static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, const value_t& value, std::true_type) {
+inline static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, const value_t& value, std::true_type) {
   os.operator << (value);
 }
 
 template<class char_t, class char_traits_t, class value_t>
-static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, value_t* value, std::true_type) {
+inline static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, value_t* value, std::true_type) {
   os.operator << (value);
 }
 
 template<class char_t, class char_traits_t, class value_t>
-static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, const value_t* value, std::true_type) {
+inline static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, const value_t* value, std::true_type) {
   os.operator << (value);
 }
 
 template<class char_t, class char_traits_t, class value_t>
-static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, const value_t& value, std::false_type) {
+inline static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, const value_t& value, std::false_type) {
   size_t size = sizeof(value) > 32 ? 32 : sizeof(value);
   os << size << "-byte object <";
   for (size_t index = 0; index != size; index++)
@@ -87,17 +87,17 @@ static void __tunit_print_value(std::basic_ostream<char_t, char_traits_t>& os, c
 }
 
 template<class char_t, class char_traits_t, class value_t>
-static void __print(std::basic_ostream<char_t, char_traits_t>& os, const value_t& value) {
+inline static void __print(std::basic_ostream<char_t, char_traits_t>& os, const value_t& value) {
   __tunit_print_value(os, value, __tunit_is_printable<value_t>());
 }
 
 template<class char_t, class char_traits_t, class value_t>
-static void __print(std::basic_ostream<char_t, char_traits_t>& os, value_t* value) {
+inline static void __print(std::basic_ostream<char_t, char_traits_t>& os, value_t* value) {
   __tunit_print_value(os, value, __tunit_is_printable<value_t>());
 }
 
 template<class char_t, class char_traits_t, class value_t>
-static void __print(std::basic_ostream<char_t, char_traits_t>& os, const value_t* value) {
+inline static void __print(std::basic_ostream<char_t, char_traits_t>& os, const value_t* value) {
   __tunit_print_value(os, value, __tunit_is_printable<value_t>());
 }
 

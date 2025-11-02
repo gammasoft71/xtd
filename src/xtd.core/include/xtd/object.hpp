@@ -119,7 +119,7 @@ namespace xtd {
     /// The following code example compares different objects.
     /// @include object_equals2.cpp
     template<class object_a_t, class object_b_t>
-    static bool equals(const object_a_t& object_a, const object_b_t& object_b) noexcept {
+    inline static bool equals(const object_a_t& object_a, const object_b_t& object_b) noexcept {
       static_assert(std::is_base_of<xtd::object, object_a_t>::value, "object_a does not inherit from xtd::object");
       static_assert(std::is_base_of<xtd::object, object_b_t>::value, "object_b does not inherit from xtd::object");
       return object_a == object_b;
@@ -133,7 +133,7 @@ namespace xtd {
     /// The following code example uses xtd::object::reference_equals to determine if two objects are the same instance.
     /// @include object_reference_equals.cpp
     template<class object_a_t, class object_b_t>
-    static bool reference_equals(const object_a_t& object_a, const object_b_t& object_b) noexcept {
+    inline static bool reference_equals(const object_a_t& object_a, const object_b_t& object_b) noexcept {
       static_assert(std::is_base_of<xtd::object, object_a_t>::value, "object_a does not inherit from xtd::object");
       static_assert(std::is_base_of<xtd::object, object_b_t>::value, "object_b does not inherit from xtd::object");
       return &object_a == &object_b;

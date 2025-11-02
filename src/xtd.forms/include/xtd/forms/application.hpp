@@ -113,11 +113,11 @@ namespace xtd {
       
       /// @brief Gets the executable name for the executable file that started the application, including the executable extension.
       /// @return The executable name and executable name for the executable file that started the application.<br><br>
-      static xtd::string executable_name() noexcept;
+      inline static xtd::string executable_name() noexcept;
       
       /// @brief Gets the path for the executable file that started the application, including the executable name.
       /// @return The path and executable name for the executable file that started the application.<br><br>
-      static xtd::string executable_path() noexcept;
+      inline static xtd::string executable_path() noexcept;
       
       /// @brief Gets a value indicating whether font size correction is enabled.
       /// @return `true` if font size correction is enabled; otherwise `false`.

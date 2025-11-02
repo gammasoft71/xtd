@@ -92,28 +92,28 @@ namespace xtd {
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
     /// @exception xtd::argument_null_exception `argument` is null.
     template<class object_t>
-    static void throw_if_null(const object_t* argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {if (!argument) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null, string::format("The value cannot benull. (Parameter '{}')", param_name, stack_frame).chars().c_str());}
+    inline static void throw_if_null(const object_t* argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {if (!argument) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null, string::format("The value cannot benull. (Parameter '{}')", param_name, stack_frame).chars().c_str());}
     /// @brief Throws an xtd::argument_null_exception if argument is null.
     /// @param argument The xtd::uptr type argument to validate as non-null.
     /// @param param_name (optional) The name of the parameter with which `argument` corresponds. If you omit this parameter, the name of `argument` is used.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
     /// @exception xtd::argument_null_exception `argument` is null.
     template<class object_t>
-    static void throw_if_null(const std::optional<object_t>& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {if (!argument) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null, string::format("The value cannot be null. (Parameter '{}')", param_name, stack_frame).chars().c_str());}
+    inline static void throw_if_null(const std::optional<object_t>& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {if (!argument) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null, string::format("The value cannot be null. (Parameter '{}')", param_name, stack_frame).chars().c_str());}
     /// @brief Throws an xtd::argument_null_exception if argument is null.
     /// @param argument The xtd::sptr type argument to validate as non-null.
     /// @param param_name (optional) The name of the parameter with which `argument` corresponds. If you omit this parameter, the name of `argument` is used.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
     /// @exception xtd::argument_null_exception `argument` is null.
     template<class object_t>
-    static void throw_if_null(const xtd::sptr<object_t>& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {if (!argument) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null, string::format("The value cannot be null. (Parameter '{}')", param_name, stack_frame).chars().c_str());}
+    inline static void throw_if_null(const xtd::sptr<object_t>& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {if (!argument) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null, string::format("The value cannot be null. (Parameter '{}')", param_name, stack_frame).chars().c_str());}
     /// @brief Throws an xtd::argument_null_exception if argument is null.
     /// @param argument The xtd::uptr type argument to validate as non-null.
     /// @param param_name (optional) The name of the parameter with which `argument` corresponds. If you omit this parameter, the name of `argument` is used.
     /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
     /// @exception xtd::argument_null_exception `argument` is null.
     template<class object_t>
-    static void throw_if_null(const xtd::uptr<object_t>& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {if (!argument) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null, string::format("The value cannot be null. (Parameter '{}')", param_name, stack_frame).chars().c_str());}
+    inline static void throw_if_null(const xtd::uptr<object_t>& argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {if (!argument) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null, string::format("The value cannot be null. (Parameter '{}')", param_name, stack_frame).chars().c_str());}
     /// @cond
     static void throw_if_null(std::nullptr_t argument, const xtd::string& param_name = xtd::string::empty_string, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null, string::format("The value cannot be null. (Parameter '{}')", param_name, stack_frame).chars().c_str());}
     /// @endcond

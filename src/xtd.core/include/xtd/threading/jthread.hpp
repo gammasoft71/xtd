@@ -85,7 +85,7 @@ namespace xtd {
       
       static jthread start_new(start_t start) {return start_new(thread_start {start});}
       template<class start_t>
-      static jthread start_new(start_t start, const xtd::any_object& obj) {return start_new(parameterized_thread_start {start}, obj);}
+      inline static jthread start_new(start_t start, const xtd::any_object& obj) {return start_new(parameterized_thread_start {start}, obj);}
       /// @endcond
       
     private:

@@ -206,7 +206,7 @@ namespace xtd {
       /// xtd::tunit::directory_assume::does_not_exist("Test1.txt"); // test throws an abort_error exception.
       /// ```
       template<class char_t>
-      static void does_not_exist(const xtd::basic_string<char_t>& directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_exist(directory, xtd::string::empty_string, stack_frame);}
+      inline static void does_not_exist(const xtd::basic_string<char_t>& directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_exist(directory, xtd::string::empty_string, stack_frame);}
       /// @brief Assumes that file not exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -221,7 +221,7 @@ namespace xtd {
       /// xtd::tunit::directory_assume::does_not_exist("Test1.txt", "User message..."); // test throws an abort_error exception.
       /// ```
       template<class char_t>
-      static void does_not_exist(const xtd::basic_string<char_t>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void does_not_exist(const xtd::basic_string<char_t>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           directory_assert::does_not_exist(directory, message, stack_frame);
         } catch (...) {
@@ -231,9 +231,9 @@ namespace xtd {
       
       /// @cond
       template<class char_t>
-      static void does_not_exist(const char_t* directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_exist(directory, xtd::string::empty_string, stack_frame);}
+      inline static void does_not_exist(const char_t* directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_exist(directory, xtd::string::empty_string, stack_frame);}
       template<class char_t>
-      static void does_not_exist(const char_t* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_exist(xtd::basic_string<char_t>(directory), message, stack_frame);}
+      inline static void does_not_exist(const char_t* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_exist(xtd::basic_string<char_t>(directory), message, stack_frame);}
       /// @endcond
       
       /// @brief Assumes that directory exists.
@@ -304,7 +304,7 @@ namespace xtd {
       /// xtd::tunit::directory_assume::exists("Test2.txt"); // test throws an abort_error exception.
       /// ```
       template<class char_t>
-      static void exists(const xtd::basic_string<char_t>& directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {exists(directory, xtd::string::empty_string, stack_frame);}
+      inline static void exists(const xtd::basic_string<char_t>& directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {exists(directory, xtd::string::empty_string, stack_frame);}
       /// @brief Assumes that directory exists.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -319,7 +319,7 @@ namespace xtd {
       /// xtd::tunit::directory_assume::exists("Test2.txt", "User message..."); // test throws an abort_error exception.
       /// ```
       template<class char_t>
-      static void exists(const xtd::basic_string<char_t>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void exists(const xtd::basic_string<char_t>& directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           directory_assert::exists(directory, message, stack_frame);
         } catch (...) {
@@ -329,9 +329,9 @@ namespace xtd {
       
       /// @cond
       template<class char_t>
-      static void exists(const char_t* directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {exists(directory, xtd::string::empty_string, stack_frame);}
+      inline static void exists(const char_t* directory, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {exists(directory, xtd::string::empty_string, stack_frame);}
       template<class char_t>
-      static void exists(const char_t* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {exists(xtd::basic_string<char_t>(directory), message, stack_frame);}
+      inline static void exists(const char_t* directory, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {exists(xtd::basic_string<char_t>(directory), message, stack_frame);}
       /// @endcond
       /// @}
     };

@@ -171,7 +171,7 @@ namespace xtd {
           /// @note This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this.
           /// @remarks The distance to move the target iterator is calculated with `std::distance(source_collection.begin(), value);`. Then simply move the target iterator from `target_collection.begin();`.
           template<class source_collection_t, class target_collection_t>
-          static typename target_collection_t::const_iterator to_const_iterator(typename source_collection_t::const_iterator& value, const source_collection_t& source_collection, const target_collection_t& target_collection) noexcept {
+      inline static typename target_collection_t::const_iterator to_const_iterator(typename source_collection_t::const_iterator& value, const source_collection_t& source_collection, const target_collection_t& target_collection) noexcept {
             if (value == source_collection.cbegin()) return target_collection.cbegin();
             if (value == source_collection.cend()) return target_collection.cend();
             
@@ -189,7 +189,7 @@ namespace xtd {
           /// @note This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this.
           /// @remarks The distance to move the target iterator is calculated with `std::distance(source_collection.begin(), value);`. Then simply move the target iterator from `target_collection.begin();`.
           template<class source_collection_t, class target_collection_t>
-          static typename target_collection_t::const_iterator to_const_iterator(typename source_collection_t::const_iterator& value, source_collection_t& source_collection, target_collection_t& target_collection) noexcept {
+      inline static typename target_collection_t::const_iterator to_const_iterator(typename source_collection_t::const_iterator& value, source_collection_t& source_collection, target_collection_t& target_collection) noexcept {
             if (value == source_collection.cbegin()) return target_collection.cbegin();
             if (value == source_collection.cend()) return target_collection.cend();
             
@@ -207,7 +207,7 @@ namespace xtd {
           /// @note This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this.
           /// @remarks The distance to move the target iterator is calculated with `std::distance(source_collection.begin(), value);`. Then simply move the target iterator from `target_collection.begin();`.
           template<class source_collection_t, class target_collection_t>
-          static typename target_collection_t::const_iterator to_iterator(typename source_collection_t::const_iterator& value, const source_collection_t& source_collection, const target_collection_t& target_collection) noexcept {
+      inline static typename target_collection_t::const_iterator to_iterator(typename source_collection_t::const_iterator& value, const source_collection_t& source_collection, const target_collection_t& target_collection) noexcept {
             if (value == source_collection.cbegin()) return target_collection.cbegin();
             if (value == source_collection.cend()) return target_collection.cend();
             
@@ -225,7 +225,7 @@ namespace xtd {
           /// @note This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this.
           /// @remarks The distance to move the target iterator is calculated with `std::distance(source_collection.begin(), value);`. Then simply move the target iterator from `target_collection.begin();`.
           template<class source_collection_t, class target_collection_t>
-          static typename target_collection_t::iterator to_iterator(typename source_collection_t::iterator& value, const source_collection_t& source_collection, const target_collection_t& target_collection) noexcept {
+      inline static typename target_collection_t::iterator to_iterator(typename source_collection_t::iterator& value, const source_collection_t& source_collection, const target_collection_t& target_collection) noexcept {
             if (value == source_collection.begin()) return target_collection.begin();
             if (value == source_collection.end()) return target_collection.end();
             
@@ -243,7 +243,7 @@ namespace xtd {
           /// @note This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this.
           /// @remarks The distance to move the target iterator is calculated with `std::distance(source_collection.begin(), value);`. Then simply move the target iterator from `target_collection.begin();`.
           template<class source_collection_t, class target_collection_t>
-          static typename target_collection_t::const_iterator to_iterator(typename source_collection_t::const_iterator& value, source_collection_t& source_collection, target_collection_t& target_collection) noexcept {
+      inline static typename target_collection_t::const_iterator to_iterator(typename source_collection_t::const_iterator& value, source_collection_t& source_collection, target_collection_t& target_collection) noexcept {
             if (value == source_collection.cbegin()) return target_collection.cbegin();
             if (value == source_collection.cend()) return target_collection.cend();
             
@@ -261,7 +261,7 @@ namespace xtd {
           /// @note This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this.
           /// @remarks The distance to move the target iterator is calculated with `std::distance(source_collection.begin(), value);`. Then simply move the target iterator from `target_collection.begin();`.
           template<class source_collection_t, class target_collection_t>
-          static typename target_collection_t::iterator to_iterator(typename source_collection_t::iterator& value, source_collection_t& source_collection, target_collection_t& target_collection) noexcept {
+      inline static typename target_collection_t::iterator to_iterator(typename source_collection_t::iterator& value, source_collection_t& source_collection, target_collection_t& target_collection) noexcept {
             if (value == source_collection.begin()) return target_collection.begin();
             if (value == source_collection.end()) return target_collection.end();
             

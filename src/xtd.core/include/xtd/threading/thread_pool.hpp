@@ -163,9 +163,9 @@ namespace xtd {
       
       /// @cond
       template<class callback_t>
-      static bool queue_user_work_item(callback_t callback) {return queue_user_work_item(wait_callback {callback});}
+      inline static bool queue_user_work_item(callback_t callback) {return queue_user_work_item(wait_callback {callback});}
       template<class callback_t>
-      static bool queue_user_work_item(callback_t callback, const xtd::any_object& state) {return queue_user_work_item(wait_callback {callback}, state);}
+      inline static bool queue_user_work_item(callback_t callback, const xtd::any_object& state) {return queue_user_work_item(wait_callback {callback}, state);}
       /// @endcond
       
       /// @brief Registers a delegate to wait for a xtd::threading::wait_handle, specifying a 32-bit signed integer for the time-out in milliseconds.
@@ -207,13 +207,13 @@ namespace xtd {
       
       /// @cond
       template<class callback_t>
-      static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, const xtd::any_object& state, int32 milliseconds_timeout_interval, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, milliseconds_timeout_interval, execute_only_once);}
+      inline static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, const xtd::any_object& state, int32 milliseconds_timeout_interval, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, milliseconds_timeout_interval, execute_only_once);}
       template<class callback_t>
-      static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, const xtd::any_object& state, int64 milliseconds_timeout_interval, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, milliseconds_timeout_interval, execute_only_once);}
+      inline static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, const xtd::any_object& state, int64 milliseconds_timeout_interval, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, milliseconds_timeout_interval, execute_only_once);}
       template<class callback_t>
-      static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, const xtd::any_object& state, const time_span& timeout, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, timeout, execute_only_once);}
+      inline static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, const xtd::any_object& state, const time_span& timeout, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, timeout, execute_only_once);}
       template<class callback_t>
-      static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, const xtd::any_object& state, uint32 milliseconds_timeout_interval, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, milliseconds_timeout_interval, execute_only_once);}
+      inline static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, const xtd::any_object& state, uint32 milliseconds_timeout_interval, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, milliseconds_timeout_interval, execute_only_once);}
       /// @endcond
       
       /// @brief Sets the number of requests to the thread pool that can be active concurrently. All requests above that number remain queued until thread pool threads become available.

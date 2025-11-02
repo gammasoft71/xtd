@@ -111,7 +111,7 @@ namespace xtd {
         /// The following code shows how to use enumerator<>::create method to create a simple enumerator on any std or xtd collections.
         /// @include generic_ienumerable3.cpp
         template <class collection_t, class version_t = std::nullptr_t>
-        static auto create(const collection_t& items, const version_t* current_version = nullptr) noexcept {
+    inline static auto create(const collection_t& items, const version_t* current_version = nullptr) noexcept {
           using value_type = typename collection_t::value_type;
           using const_iterator = typename collection_t::const_iterator;
           struct internal_enumerator : public ienumerator<value_type> {

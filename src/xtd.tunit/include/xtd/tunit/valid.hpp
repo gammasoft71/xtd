@@ -38,7 +38,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal(23, int(24)); // test fails.
       /// ```
       template<class expected_t, class actual_t>
-      static void are_equal(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_equal(expected, actual, xtd::string::empty_string, stack_frame);}
+      inline static void are_equal(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_equal(expected, actual, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -50,7 +50,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_equal(23, int(24), "User message..."); // test fails.
       /// ```
       template<class expected_t, class actual_t>
-      static void are_equal(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void are_equal(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::are_equal(expected, actual, message, stack_frame);
         } catch (...) {
@@ -155,7 +155,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_not_equal(24, int(24)); // test fails.
       /// ```
       template<class expected_t, class actual_t>
-      static void are_not_equal(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_not_equal(expected, actual, xtd::string::empty_string, stack_frame);}
+      inline static void are_not_equal(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_not_equal(expected, actual, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that two type are not equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -167,7 +167,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_not_equal(24, int(24), "User message..."); // test fails.
       /// ```
       template<class expected_t, class actual_t>
-      static void are_not_equal(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void are_not_equal(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::are_not_equal(expected, actual, message, stack_frame);
         } catch (...) {
@@ -196,7 +196,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_not_same(b, a, stack_frame); // test fails.
       /// ```
       template<class expected_t, class actual_t>
-      static void are_not_same(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_not_same(expected, actual, xtd::string::empty_string, stack_frame);}
+      inline static void are_not_same(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_not_same(expected, actual, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that two objects do refer to different objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -211,7 +211,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_not_same(b, a, "User message...", stack_frame); // test fails.
       /// ```
       template<class expected_t, class actual_t>
-      static void are_not_same(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void are_not_same(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::are_not_same(expected, actual, message, stack_frame);
         } catch (...) {
@@ -232,7 +232,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_same(c, a); // test fails.
       /// ```
       template<class expected_t, class actual_t>
-      static void are_same(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_same(expected, actual, xtd::string::empty_string, stack_frame);}
+      inline static void are_same(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_same(expected, actual, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that two objects do refer to different objects.
       /// @param expected the expected value.
       /// @param actual the actual value.
@@ -247,7 +247,7 @@ namespace xtd {
       /// xtd::tunit::valid::are_same(c, a, "User message..."); // test fails.
       /// ```
       template<class expected_t, class actual_t>
-      static void are_same(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void are_same(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::are_same(expected, actual, message, stack_frame);
         } catch (...) {
@@ -266,7 +266,7 @@ namespace xtd {
       /// xtd::tunit::valid::contains(4, v1); // test fails.
       /// ```
       template<class item_t, class collection_t>
-      static void contains(const item_t& item, const collection_t& collection, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {contains(item, collection, xtd::string::empty_string, stack_frame);}
+      inline static void contains(const item_t& item, const collection_t& collection, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {contains(item, collection, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that collection contains an item.
       /// @param item object to verify.
       /// @param collection that contains object.
@@ -279,7 +279,7 @@ namespace xtd {
       /// xtd::tunit::valid::contains(4, v1, "User message..."); // test fails.
       /// ```
       template<class item_t, class collection_t>
-      static void contains(const item_t& item, const collection_t& collection, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void contains(const item_t& item, const collection_t& collection, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::contains(item, collection, message, stack_frame);
         } catch (...) {
@@ -289,9 +289,9 @@ namespace xtd {
       
       /// @cond
       template<class item_t, class value_t>
-      static void contains(const item_t& item, const std::initializer_list<value_t>& values, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {contains(item, values, xtd::string::empty_string, stack_frame);}
+      inline static void contains(const item_t& item, const std::initializer_list<value_t>& values, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {contains(item, values, xtd::string::empty_string, stack_frame);}
       template<class item_t, class value_t>
-      static void contains(const item_t& item, const std::initializer_list<value_t>& values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void contains(const item_t& item, const std::initializer_list<value_t>& values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::contains(item, values, message, stack_frame);
         } catch (...) {
@@ -339,7 +339,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_empty(v2); // test fails.
       /// ```
       template<class value_t>
-      static void is_empty(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_empty(value, xtd::string::empty_string, stack_frame);}
+      inline static void is_empty(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_empty(value, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that collection contains an item.
       /// @param value The value to check is empty.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -352,7 +352,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_empty(v2, "User message..."); // test fails.
       /// ```
       template<class value_t>
-      static void is_empty(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_empty(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_empty(value, message, stack_frame);
         } catch (...) {
@@ -362,9 +362,9 @@ namespace xtd {
       
       /// @cond
       template<class value_t>
-      static void is_empty(const std::initializer_list<value_t>& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_empty(value, xtd::string::empty_string, stack_frame);}
+      inline static void is_empty(const std::initializer_list<value_t>& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_empty(value, xtd::string::empty_string, stack_frame);}
       template<class value_t>
-      static void is_empty(const std::initializer_list<value_t>& values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_empty(const std::initializer_list<value_t>& values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_empty(values, message, stack_frame);
         } catch (...) {
@@ -413,7 +413,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_greater(24, 48); // test fails.
       /// ```
       template<class value1_t, class value2_t>
-      static void is_greater(const value1_t& val1, const value2_t& val2, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_greater(val1, val2, xtd::string::empty_string, stack_frame);}
+      inline static void is_greater(const value1_t& val1, const value2_t& val2, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_greater(val1, val2, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that the first value is greater than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
@@ -425,7 +425,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_greater(24, 48, "User message..."); // test fails.
       /// ```
       template<class value1_t, class value2_t>
-      static void is_greater(const value1_t& val1, const value2_t& val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_greater(const value1_t& val1, const value2_t& val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_greater(val1, val2, message, stack_frame);
         } catch (...) {
@@ -452,7 +452,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_greater_or_equal(24, 48); // test fails.
       /// ```
       template<class value1_t, class value2_t>
-      static void is_greater_or_equal(const value1_t& val1, const value2_t& val2, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_greater_or_equal(val1, val2, xtd::string::empty_string, stack_frame);}
+      inline static void is_greater_or_equal(const value1_t& val1, const value2_t& val2, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_greater_or_equal(val1, val2, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that the first value is greater than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
@@ -465,7 +465,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_greater_or_equal(24, 48, "User message..."); // test fails.
       /// ```
       template<class value1_t, class value2_t>
-      static void is_greater_or_equal(const value1_t& val1, const value2_t& val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_greater_or_equal(const value1_t& val1, const value2_t& val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_greater_or_equal(val1, val2, message, stack_frame);
         } catch (...) {
@@ -491,7 +491,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_instance_of<std::bad_cast>(except); // test fails
       /// ```
       template<class type_t, class value_t>
-      static void is_instance_of(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_instance_of<type_t>(value, xtd::string::empty_string, stack_frame);}
+      inline static void is_instance_of(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_instance_of<type_t>(value, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that an object is of the type supplied or a derived type.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -503,7 +503,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_instance_of<std::bad_cast>(except, "User message..."); // test fails
       /// ```
       template<class type_t, class value_t>
-      static void is_instance_of(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_instance_of(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_instance_of<type_t>(value, message, stack_frame);
         } catch (...) {
@@ -521,7 +521,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_less(24, 12); // test fails.
       /// ```
       template<class value1_t, class value2_t>
-      static void is_less(const value1_t& val1, const value2_t& val2, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_less(val1, val2, xtd::string::empty_string, stack_frame);}
+      inline static void is_less(const value1_t& val1, const value2_t& val2, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_less(val1, val2, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that the first value is is_less than the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
@@ -533,7 +533,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_less(24, 12, "User message..."); // test fails.
       /// ```
       template<class value1_t, class value2_t>
-      static void is_less(const value1_t& val1, const value2_t& val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_less(const value1_t& val1, const value2_t& val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_less(val1, val2, message, stack_frame);
         } catch (...) {
@@ -560,7 +560,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_less_or_equal(24, 12); // test fails.
       /// ```
       template<class value1_t, class value2_t>
-      static void is_less_or_equal(const value1_t& val1, const value2_t& val2, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_less_or_equal(val1, val2, xtd::string::empty_string, stack_frame);}
+      inline static void is_less_or_equal(const value1_t& val1, const value2_t& val2, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_less_or_equal(val1, val2, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that the first value is is_less than or equal to the second value.
       /// @param val1 the first value.
       /// @param val2 the second value.
@@ -573,7 +573,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_less_or_equal(24, 12, "User message..."); // test fails.
       /// ```
       template<class value1_t, class value2_t>
-      static void is_less_or_equal(const value1_t& val1, const value2_t& val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_less_or_equal(const value1_t& val1, const value2_t& val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_less_or_equal(val1, val2, message, stack_frame);
         } catch (...) {
@@ -670,7 +670,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_negative(i2); // test fails.
       /// ```
       template<class value_t>
-      static void is_negative(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_negative(value, xtd::string::empty_string, stack_frame);}
+      inline static void is_negative(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_negative(value, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that ta condition is negative.
       /// @param value The value to check is negative.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -683,7 +683,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_negative(i2, "User message..."); // test fails.
       /// ```
       template<class value_t>
-      static void is_negative(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_negative(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_negative(value, message, stack_frame);
         } catch (...) {
@@ -702,7 +702,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_empty(v2); // test fails.
       /// ```
       template<class value_t>
-      static void is_not_empty(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_empty(value, xtd::string::empty_string, stack_frame);}
+      inline static void is_not_empty(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_empty(value, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that collection does not contain any item.
       /// @param value The value to check is empty.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -715,7 +715,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_empty(v2, "User message..."); // test fails.
       /// ```
       template<class value_t>
-      static void is_not_empty(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_not_empty(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_not_empty(value, message, stack_frame);
         } catch (...) {
@@ -725,9 +725,9 @@ namespace xtd {
       
       /// @cond
       template<class value_t>
-      static void is_not_empty(const std::initializer_list<value_t>& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_empty(value, xtd::string::empty_string, stack_frame);}
+      inline static void is_not_empty(const std::initializer_list<value_t>& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_empty(value, xtd::string::empty_string, stack_frame);}
       template<class value_t>
-      static void is_not_empty(const std::initializer_list<value_t>& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_not_empty(const std::initializer_list<value_t>& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_not_empty(value, message, stack_frame);
         } catch (...) {
@@ -752,7 +752,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_instance_of<std::logic_error>(except); // test fails
       /// ```
       template<class type_t, class value_t>
-      static void is_not_instance_of(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_instance_of<type_t>(value, xtd::string::empty_string, stack_frame);}
+      inline static void is_not_instance_of(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_instance_of<type_t>(value, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that an object is not of the type supplied or a derived type.
       /// @param value The object to verify
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -764,7 +764,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_instance_of<std::logic_error>(except, "User message..."); // test fails
       /// ```
       template<class type_t, class value_t>
-      static void is_not_instance_of(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_not_instance_of(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_not_instance_of<type_t>(value, message, stack_frame);
         } catch (...) {
@@ -784,7 +784,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_null(s2); // test fails.
       /// ```
       template<class pointer_t>
-      static void is_not_null(const pointer_t* pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_null(pointer, xtd::string::empty_string, stack_frame);}
+      inline static void is_not_null(const pointer_t* pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_null(pointer, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -798,7 +798,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_null(s2, "User message..."); // test fails.
       /// ```
       template<class pointer_t>
-      static void is_not_null(const pointer_t* pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_not_null(const pointer_t* pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_not_null(pointer, message, stack_frame);
         } catch (...) {
@@ -816,7 +816,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_null(s2); // test fails.
       /// ```
       template<class optional_t>
-      static void is_not_null(const std::optional<optional_t>& opt, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_null(opt, xtd::string::empty_string, stack_frame);}
+      inline static void is_not_null(const std::optional<optional_t>& opt, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_null(opt, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that the optional is not std::nullopt.
       /// @param opt The optional to check is std::nullopt.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -829,7 +829,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_null(s2, "User message..."); // test fails.
       /// ```
       template<class optional_t>
-      static void is_not_null(const std::optional<optional_t>& opt, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_not_null(const std::optional<optional_t>& opt, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_not_null(opt, message, stack_frame);
         } catch (...) {
@@ -847,7 +847,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_null(s2); // test fails.
       /// ```
       template<class pointer_t>
-      static void is_not_null(const xtd::uptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_null(pointer, xtd::string::empty_string, stack_frame);}
+      inline static void is_not_null(const xtd::uptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_null(pointer, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -860,7 +860,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_null(s2, "User message..."); // test fails.
       /// ```
       template<class pointer_t>
-      static void is_not_null(const xtd::uptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_not_null(const xtd::uptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_not_null(pointer, message, stack_frame);
         } catch (...) {
@@ -878,7 +878,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_null(s2); // test fails.
       /// ```
       template<class pointer_t>
-      static void is_not_null(const xtd::sptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_null(pointer, xtd::string::empty_string, stack_frame);}
+      inline static void is_not_null(const xtd::sptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_null(pointer, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -891,7 +891,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_null(s2, "User message..."); // test fails.
       /// ```
       template<class pointer_t>
-      static void is_not_null(const xtd::sptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_not_null(const xtd::sptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_not_null(pointer, message, stack_frame);
         } catch (...) {
@@ -911,7 +911,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_null(s2); // test ok.
       /// ```
       template<class pointer_t>
-      static void is_not_null(const xtd::wptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_null(pointer, xtd::string::empty_string, stack_frame);}
+      inline static void is_not_null(const xtd::wptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_null(pointer, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -926,7 +926,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_null(s2, "User message..."); // test ok.
       /// ```
       template<class pointer_t>
-      static void is_not_null(const xtd::wptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {assert::succeed(message, stack_frame);}
+      inline static void is_not_null(const xtd::wptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {assert::succeed(message, stack_frame);}
       /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
@@ -958,7 +958,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_zero(i2); // test fails.
       /// ```
       template<class value_t>
-      static void is_not_zero(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_zero(value, xtd::string::empty_string, stack_frame);}
+      inline static void is_not_zero(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_zero(value, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that ta condition is not zero.
       /// @param value The value to check is not zero.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -971,7 +971,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_not_zero(i2, "User message..."); // test fails.
       /// ```
       template<class value_t>
-      static void is_not_zero(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_not_zero(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_not_zero(value, message, stack_frame);
         } catch (...) {
@@ -991,7 +991,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_null(s2); // test fails.
       /// ```
       template<class pointer_t>
-      static void is_null(const pointer_t* pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_null(pointer, xtd::string::empty_string, stack_frame);}
+      inline static void is_null(const pointer_t* pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_null(pointer, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1005,7 +1005,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_null(s2, "User message..."); // test fails.
       /// ```
       template<class pointer_t>
-      static void is_null(const pointer_t* pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_null(const pointer_t* pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_null(pointer, message, stack_frame);
         } catch (...) {
@@ -1023,7 +1023,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_null(s2); // test fails.
       /// ```
       template<class optional_t>
-      static void is_null(const std::optional<optional_t>& opt, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_null(opt, xtd::string::empty_string, stack_frame);}
+      inline static void is_null(const std::optional<optional_t>& opt, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_null(opt, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that the optional is std::nullopt.
       /// @param opt The optional to check is std::nullopt.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1036,7 +1036,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_null(s2, "User message..."); // test fails.
       /// ```
       template<class optional_t>
-      static void is_null(const std::optional<optional_t>& opt, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_null(const std::optional<optional_t>& opt, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_null(opt, message, stack_frame);
         } catch (...) {
@@ -1054,7 +1054,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_null(s2); // test fails.
       /// ```
       template<class pointer_t>
-      static void is_null(const xtd::uptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_null(pointer, xtd::string::empty_string, stack_frame);}
+      inline static void is_null(const xtd::uptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_null(pointer, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1067,7 +1067,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_null(s2, "User message..."); // test fails.
       /// ```
       template<class pointer_t>
-      static void is_null(const xtd::uptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_null(const xtd::uptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_null(pointer, message, stack_frame);
         } catch (...) {
@@ -1085,7 +1085,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_null(s2); // test fails.
       /// ```
       template<class pointer_t>
-      static void is_null(const xtd::sptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_null(pointer, xtd::string::empty_string, stack_frame);}
+      inline static void is_null(const xtd::sptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_null(pointer, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1098,7 +1098,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_null(s2, "User message..."); // test fails.
       /// ```
       template<class pointer_t>
-      static void is_null(const xtd::sptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_null(const xtd::sptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_null(pointer, message, stack_frame);
         } catch (...) {
@@ -1118,7 +1118,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_null(s2); // test fails.
       /// ```
       template<class pointer_t>
-      static void is_null(const xtd::wptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_null(pointer, xtd::string::empty_string, stack_frame);}
+      inline static void is_null(const xtd::wptr<pointer_t>& pointer, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_null(pointer, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1133,7 +1133,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_null(s2, "User message..."); // test fails.
       /// ```
       template<class pointer_t>
-      static void is_null(const xtd::wptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_null(const xtd::wptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_null(pointer, message, stack_frame);
         } catch (...) {
@@ -1171,7 +1171,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_positive(i2); // test fails.
       /// ```
       template<class value_t>
-      static void is_positive(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_positive(value, xtd::string::empty_string, stack_frame);}
+      inline static void is_positive(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_positive(value, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that ta condition is positive.
       /// @param value The value to check is positive.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1184,7 +1184,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_positive(i2, "User message..."); // test fails.
       /// ```
       template<class value_t>
-      static void is_positive(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_positive(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_positive(value, message, stack_frame);
         } catch (...) {
@@ -1227,7 +1227,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_zero(i2); // test fails.
       /// ```
       template<class value_t>
-      static void is_zero(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_zero(value, xtd::string::empty_string, stack_frame);}
+      inline static void is_zero(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_zero(value, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that ta condition is zero.
       /// @param value The value to check is zero.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
@@ -1240,7 +1240,7 @@ namespace xtd {
       /// xtd::tunit::valid::is_zero(i2, "User message..."); // test fails.
       /// ```
       template<class value_t>
-      static void is_zero(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void is_zero(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_zero(value, message, stack_frame);
         } catch (...) {
@@ -1259,7 +1259,7 @@ namespace xtd {
       /// xtd::tunit::valid::throws<std::out_of_range>([&] {v1.at(2);}); // test fails.
       /// ```
       template<class exception_t>
-      static void throws(const std::function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {throws<exception_t>(statement, xtd::string::empty_string, stack_frame);}
+      inline static void throws(const std::function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {throws<exception_t>(statement, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that the statement throws a particular exception when called.
       /// @tparam exception_t The exception type that must be throw.
       /// @param statement The statement that verify.
@@ -1272,7 +1272,7 @@ namespace xtd {
       /// xtd::tunit::valid::throws<std::out_of_range>([&] {v1.at(2);}, "User message..."); // test fails.
       /// ```
       template<class exception_t>
-      static void throws(const std::function<void()>& statement, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
+      inline static void throws(const std::function<void()>& statement, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::throws<exception_t>(statement, message, stack_frame);
         } catch (...) {

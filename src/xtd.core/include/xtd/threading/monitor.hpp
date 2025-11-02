@@ -142,14 +142,14 @@ namespace xtd {
       /// @param obj The object on which to acquire the monitor lock.
       /// @remarks Use xtd::threading::monotor::enter to acquire the xtd::threading::monotor on the object passed as the parameter. If another thread has executed an xtd::threading::monotor::enter on the object, but has not yet executed the corresponding xtd::threading::monitor::exit, the current thread will block until the other thread releases the object. It is legal for the same thread to invoke xtd::threading::monotor::enter more than once without it blocking; however, an equal number of xtd::threading::monitor::exit calls must be invoked before other threads waiting on the object will unblock.
       template<class object_t>
-      static void enter(const object_t& obj) {
+      inline static void enter(const object_t& obj) {
         auto lock_taken = false;
         enter_ptr(get_ptr(obj), lock_taken);
       }
       
       /// @cond
       template<class type_t>
-      static void enter(const type_t* str) {enter(string(str));}
+      inline static void enter(const type_t* str) {enter(string(str));}
       /// @endcond
       
       /// @brief Acquires an exclusive lock on the specified obj.
@@ -158,13 +158,13 @@ namespace xtd {
       /// @note If no exception occurs, the output of this method is always `true`.
       /// @remarks Use xtd::threading::monotor::enter to acquire the xtd::threading::monotor on the object passed as the parameter. If another thread has executed an xtd::threading::monotor::enter on the object, but has not yet executed the corresponding xtd::threading::monitor::exit, the current thread will block until the other thread releases the object. It is legal for the same thread to invoke xtd::threading::monotor::enter more than once without it blocking; however, an equal number of xtd::threading::monitor::exit calls must be invoked before other threads waiting on the object will unblock.
       template<class object_t>
-      static void enter(const object_t& obj, bool& lock_taken) {
+      inline static void enter(const object_t& obj, bool& lock_taken) {
         enter_ptr(get_ptr(obj), lock_taken);
       }
       
       /// @cond
       template<class type_t>
-      static void enter(const type_t* str, bool& lock_taken) {enter(string(str), lock_taken);}
+      inline static void enter(const type_t* str, bool& lock_taken) {enter(string(str), lock_taken);}
       /// @endcond
       
       /// @brief Releases an exclusive lock on the specified obj.
@@ -172,13 +172,13 @@ namespace xtd {
       /// @remarks The calling thread must own the lock on the obj parameter. If the calling thread owns the lock on the specified object, and has made an equal number of xtd::threading::monitor::exit and xtd::threading::monotor::enter calls for the object, then the lock is released. If the calling thread has not invoked xtd::threading::monitor::exit as many times as xtd::threading::monotor::enter, the lock is not released.
       /// @remarks If the lock is released and other threads are in the ready queue for the object, one of the threads acquires the lock. If other threads are in the waiting queue waiting to acquire the lock, they are not automatically moved to the ready queue when the owner of the lock calls xtd::threading::monitor::exit. To move one or more waiting threads into the ready queue, call xtd::threading::monitor::pulse or xtd::threading::monitor::xtd::threading::monitor::pulse_all before invoking xtd::threading::monitor::exit.
       template<class object_t>
-      static void exit(const object_t& obj) {
+      inline static void exit(const object_t& obj) {
         exit_ptr(get_ptr(obj));
       }
       
       /// @cond
       template<class type_t>
-      static void exit(const type_t* str) {exit(string(str));}
+      inline static void exit(const type_t* str) {exit(string(str));}
       /// @endcond
       
       /// @brief Determines whether the current thread holds the lock on the specified object.
@@ -187,13 +187,13 @@ namespace xtd {
       /// @remarks This method works only for locks that are acquired by using the methods of the xtd::threading::monitor class, or the xtd::threading::lock class, or by using the #lock_ keyword, which are implemented with xtd::threading::monitor.
       /// @remarks Use this method with diagnostic tools, such as the xtd::diagnostics::debug::assert method, to debug locking issues that involve the xtd::threading::monitor class.
       template<class object_t>
-      static bool is_entered(const object_t& obj) {
+      inline static bool is_entered(const object_t& obj) {
         return is_entered_ptr(get_ptr(obj));
       }
       
       /// @cond
       template<class type_t>
-      static bool is_entered(const type_t* str) {return is_entered(string(str));}
+      inline static bool is_entered(const type_t* str) {return is_entered(string(str));}
       /// @endcond
       
       /// @brief Notifies a thread in the waiting queue of a change in the locked object's state.
@@ -206,13 +206,13 @@ namespace xtd {
       /// @remarks The xtd::threading::monitor::pulse, xtd::threading::monitor::pulse_all, and xtd::threading::monitor::wait methods must be invoked from within a synchronized block of code.
       /// @remarks To signal multiple threads, use the xtd::threading::monitor::pulse_all method.
       template<class object_t>
-      static void pulse(const object_t& obj) {
+      inline static void pulse(const object_t& obj) {
         pulse_ptr(get_ptr(obj));
       }
       
       /// @cond
       template<class type_t>
-      static void pulse(const type_t* str) {pulse(string(str));}
+      inline static void pulse(const type_t* str) {pulse(string(str));}
       /// @endcond
       
       /// @brief Notifies all waiting threads of a change in the object's state.
@@ -224,13 +224,13 @@ namespace xtd {
       /// @remarks The remarks for the xtd::threading::monitor::pulse method explain what happens if xtd::threading::monitor::pulse is called when no threads are waiting.
       /// @remarks To signal a single thread, use the xtd::threading::monitor::pulse method.
       template<class object_t>
-      static void pulse_all(const object_t& obj) {
+      inline static void pulse_all(const object_t& obj) {
         pulse_all_ptr(get_ptr(obj));
       }
       
       /// @cond
       template<class type_t>
-      static void pulse_all(const type_t* str) {pulse_all(string(str));}
+      inline static void pulse_all(const type_t* str) {pulse_all(string(str));}
       /// @endcond
       
       /// @brief Attempts to acquire an exclusive lock on the specified object.
@@ -239,14 +239,14 @@ namespace xtd {
       /// @remarks If successful, this method acquires an exclusive lock on the obj parameter. This method returns immediately, whether or not the lock is available.
       /// @remarks This method is similar to xtd::threading::monotor::enter, but it will never block. If the thread cannot enter without blocking, the method returns `false`, and the thread does not enter the critical section.
       template<class object_t>
-      static bool try_enter(const object_t& obj) noexcept {
+      inline static bool try_enter(const object_t& obj) noexcept {
         auto lock_taken = false;
         return try_enter_ptr(get_ptr(obj), timeout::infinite, lock_taken);
       }
       
       /// @cond
       template<class type_t>
-      static bool try_enter(const type_t* str) {return try_enter(string(str));}
+      inline static bool try_enter(const type_t* str) {return try_enter(string(str));}
       /// @endcond
       
       /// @brief Attempts to acquire an exclusive lock on the specified object.
@@ -257,13 +257,13 @@ namespace xtd {
       /// @remarks If successful, this method acquires an exclusive lock on the obj parameter. This method returns immediately, whether or not the lock is available.
       /// @remarks This method is similar to xtd::threading::monotor::enter, but it will never block. If the thread cannot enter without blocking, the method returns `false`, and the thread does not enter the critical section.
       template<class object_t>
-      static bool try_enter(const object_t& obj, bool& lock_taken) noexcept {
+      inline static bool try_enter(const object_t& obj, bool& lock_taken) noexcept {
         return try_enter_ptr(get_ptr(obj), timeout::infinite, lock_taken);
       }
       
       /// @cond
       template<class type_t>
-      static bool try_enter(const type_t* str, bool& lock_taken) {return try_enter(string(str), lock_taken);}
+      inline static bool try_enter(const type_t* str, bool& lock_taken) {return try_enter(string(str), lock_taken);}
       /// @endcond
       
       /// @brief Attempts, for the specified number of milliseconds, to acquire an exclusive lock on the specified object.
@@ -272,14 +272,14 @@ namespace xtd {
       /// @return bool `true` if the current thread acquires the lock; otherwise, `false`
       /// @remarks If the milliseconds_timeout parameter equals Timeout::Infinite, this method is equivalent to xtd::threading::monotor::enter. If milliseconds_timeout equals 0, this method is equivalent to try_enter.
       template<class object_t>
-      static bool try_enter(const object_t& obj, int32 milliseconds_timeout) noexcept {
+      inline static bool try_enter(const object_t& obj, int32 milliseconds_timeout) noexcept {
         auto lock_taken = false;
         return try_enter_ptr(get_ptr(obj), milliseconds_timeout, lock_taken);
       }
       
       /// @cond
       template<class type_t>
-      static bool try_enter(const type_t* str, int32 milliseconds_timeout) {return try_enter(string(str), milliseconds_timeout);}
+      inline static bool try_enter(const type_t* str, int32 milliseconds_timeout) {return try_enter(string(str), milliseconds_timeout);}
       /// @endcond
       
       /// @brief Attempts, for the specified number of milliseconds, to acquire an exclusive lock on the specified object.
@@ -290,13 +290,13 @@ namespace xtd {
       /// @return bool `true` if the current thread acquires the lock; otherwise, `false`
       /// @remarks If the milliseconds_timeout parameter equals Timeout::Infinite, this method is equivalent to xtd::threading::monotor::enter. If milliseconds_timeout equals 0, this method is equivalent to try_enter.
       template<class object_t>
-      static bool try_enter(const object_t& obj, int32 milliseconds_timeout, bool& lock_taken) noexcept {
+      inline static bool try_enter(const object_t& obj, int32 milliseconds_timeout, bool& lock_taken) noexcept {
         return try_enter_ptr(get_ptr(obj), milliseconds_timeout, lock_taken);
       }
       
       /// @cond
       template<class type_t>
-      static bool try_enter(const type_t* str, int32 milliseconds_timeout, bool& lock_taken) {return try_enter(string(str), milliseconds_timeout, lock_taken);}
+      inline static bool try_enter(const type_t* str, int32 milliseconds_timeout, bool& lock_taken) {return try_enter(string(str), milliseconds_timeout, lock_taken);}
       /// @endcond
       
       /// @brief Attempts, for the specified number of milliseconds, to acquire an exclusive lock on the specified object.
@@ -305,14 +305,14 @@ namespace xtd {
       /// @return bool `true` if the current thread acquires the lock; otherwise, `false`
       /// @remarks If the milliseconds_timeout parameter equals Timeout::Infinite, this method is equivalent to xtd::threading::monotor::enter. If milliseconds_timeout equals 0, this method is equivalent to try_enter.
       template<class object_t>
-      static bool try_enter(const object_t& obj, int64 milliseconds_timeout) noexcept {
+      inline static bool try_enter(const object_t& obj, int64 milliseconds_timeout) noexcept {
         auto lock_taken = false;
         return try_enter_ptr(get_ptr(obj), static_cast<int32>(milliseconds_timeout), lock_taken);
       }
       
       /// @cond
       template<class type_t>
-      static bool try_enter(const type_t* str, int64 milliseconds_timeout) {return try_enter(string(str), milliseconds_timeout);}
+      inline static bool try_enter(const type_t* str, int64 milliseconds_timeout) {return try_enter(string(str), milliseconds_timeout);}
       /// @endcond
       
       /// @brief Attempts, for the specified number of milliseconds, to acquire an exclusive lock on the specified object.
@@ -323,13 +323,13 @@ namespace xtd {
       /// @return bool `true` if the current thread acquires the lock; otherwise, `false`
       /// @remarks If the milliseconds_timeout parameter equals Timeout::Infinite, this method is equivalent to xtd::threading::monotor::enter. If milliseconds_timeout equals 0, this method is equivalent to try_enter.
       template<class object_t>
-      static bool try_enter(const object_t& obj, int64 milliseconds_timeout, bool& lock_taken) noexcept {
+      inline static bool try_enter(const object_t& obj, int64 milliseconds_timeout, bool& lock_taken) noexcept {
         return try_enter_ptr(get_ptr(obj), static_cast<int32>(milliseconds_timeout), lock_taken);
       }
       
       /// @cond
       template<class type_t>
-      static bool try_enter(const type_t* str, int64 milliseconds_timeout, bool& lock_taken) {return try_enter(string(str), milliseconds_timeout, lock_taken);}
+      inline static bool try_enter(const type_t* str, int64 milliseconds_timeout, bool& lock_taken) {return try_enter(string(str), milliseconds_timeout, lock_taken);}
       /// @endcond
       
       /// @brief Attempts, for the specified amount of time, to acquire an exclusive lock on the specified object.
@@ -338,14 +338,14 @@ namespace xtd {
       /// @return bool `true` if the current thread acquires the lock; otherwise, `false`
       /// @remarks If the value of the timeout parameter converted to milliseconds equals -1, this method is equivalent to xtd::threading::monotor::enter. If the value of timeout equals 0, this method is equivalent to try_enter.
       template<class object_t>
-      static bool try_enter(const object_t& obj, const time_span& timeout) noexcept {
+      inline static bool try_enter(const object_t& obj, const time_span& timeout) noexcept {
         auto lock_taken = false;
         return try_enter_ptr(get_ptr(obj), timeout.total_milliseconds_duration().count(), lock_taken);
       }
       
       /// @cond
       template<class type_t>
-      static bool try_enter(const type_t* str, const time_span& timeout) {return try_enter(string(str), timeout);}
+      inline static bool try_enter(const type_t* str, const time_span& timeout) {return try_enter(string(str), timeout);}
       /// @endcond
       
       /// @brief Attempts, for the specified amount of time, to acquire an exclusive lock on the specified object.
@@ -356,7 +356,7 @@ namespace xtd {
       /// @return bool `true` if the current thread acquires the lock; otherwise, `false`
       /// @remarks If the value of the timeout parameter converted to milliseconds equals -1, this method is equivalent to xtd::threading::monotor::enter. If the value of timeout equals 0, this method is equivalent to try_enter.
       template<class object_t>
-      static bool try_enter(const object_t& obj, const time_span& timeout, bool& lock_taken) noexcept {
+      inline static bool try_enter(const object_t& obj, const time_span& timeout, bool& lock_taken) noexcept {
         return try_enter_ptr(get_ptr(obj), timeout.total_milliseconds_duration().count(), lock_taken);
       }
       
@@ -375,7 +375,7 @@ namespace xtd {
       /// @remarks The xtd::threading::monitor::pulse, xtd::threading::monitor::pulse_all, and Wait methods must be invoked from within a synchronized block of code.
       /// @remarks The remarks for the xtd::threading::monitor::pulse method explain what happens if xtd::threading::monitor::pulse is called when no threads are waiting.
       template<class object_t>
-      static bool wait(const object_t& obj, int32 milliseconds_timeout) {
+      inline static bool wait(const object_t& obj, int32 milliseconds_timeout) {
         return wait_ptr(get_ptr(obj), milliseconds_timeout);
       }
       
@@ -394,7 +394,7 @@ namespace xtd {
       /// @remarks The xtd::threading::monitor::pulse, xtd::threading::monitor::pulse_all, and Wait methods must be invoked from within a synchronized block of code.
       /// @remarks The remarks for the xtd::threading::monitor::pulse method explain what happens if xtd::threading::monitor::pulse is called when no threads are waiting.
       template<class object_t>
-      static bool wait(const object_t& obj, const time_span& timeout) {
+      inline static bool wait(const object_t& obj, const time_span& timeout) {
         return wait_ptr(get_ptr(obj), as<int32>(timeout.total_milliseconds()));
       }
       
@@ -412,14 +412,14 @@ namespace xtd {
       /// @remarks The xtd::threading::monitor::pulse, xtd::threading::monitor::pulse_all, and Wait methods must be invoked from within a synchronized block of code.
       /// @remarks The remarks for the xtd::threading::monitor::pulse method explain what happens if xtd::threading::monitor::pulse is called when no threads are waiting.
       template<class object_t>
-      static bool wait(const object_t& obj) {
+      inline static bool wait(const object_t& obj) {
         return wait_ptr(get_ptr(obj), timeout::infinite);
       }
       /// @}
       
       /// @cond
       template<class type_t>
-      static bool try_enter(const type_t* str, const time_span& timeout, bool& lock_taken) {return try_enter(string(str), timeout, lock_taken);}
+      inline static bool try_enter(const type_t* str, const time_span& timeout, bool& lock_taken) {return try_enter(string(str), timeout, lock_taken);}
       /// @endcond
       
     private:
@@ -428,14 +428,14 @@ namespace xtd {
       static static_data& get_static_data();
       
       template<class object_t>
-      static object_ptr get_ptr(const object_t& obj) noexcept {
+      inline static object_ptr get_ptr(const object_t& obj) noexcept {
         bool is_string = is<string>(obj);
         // The newly created string will be deleted when the exit method is called, or if the lock has already been entered.
         return std::make_pair(is_string ? get_string_ptr(*(new string(as<string>(obj)))) : reinterpret_cast<intptr>(&obj), is_string);
       }
       
       template<class type_t>
-      static object_ptr get_ptr(const type_t* str) {return get_ptr(string(str));}
+      inline static object_ptr get_ptr(const type_t* str) {return get_ptr(string(str));}
       
       static void enter_ptr(object_ptr obj);
       static void enter_ptr(object_ptr obj, bool& lock_taken);

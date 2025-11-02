@@ -27,10 +27,10 @@ namespace xtd::native::macos {
     }
     
     template<class separator_t, class collection_t>
-    static std::string join(const separator_t& separator, const collection_t& values) noexcept {return join(separator, values, 0, values.size());}
+    inline static std::string join(const separator_t& separator, const collection_t& values) noexcept {return join(separator, values, 0, values.size());}
     
     template<class separator_t, class collection_t>
-    static std::string join(const separator_t& separator, const collection_t& values, size_t index, size_t count) noexcept {
+    inline static std::string join(const separator_t& separator, const collection_t& values, size_t index, size_t count) noexcept {
       auto i = size_t {};
       auto ss = std::stringstream {};
       for (const auto& item : values) {

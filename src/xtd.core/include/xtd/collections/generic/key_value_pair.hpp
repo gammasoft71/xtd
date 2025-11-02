@@ -156,7 +156,7 @@ namespace xtd {
         /// @param value The value of the key_value_pair.
         /// @return The key_value_pair value type.
         template < class key_t, class value_t >
-        static key_value_pair < key_t, value_t > create(key_t key, value_t value) {return key_value_pair < key_t, value_t > (key, value);}
+    inline static key_value_pair < key_t, value_t > create(key_t key, value_t value) {return key_value_pair < key_t, value_t > (key, value);}
         /// @}
       };
       

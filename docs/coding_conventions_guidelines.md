@@ -265,7 +265,7 @@ public:
 math() = delete;
   // equivalent : #define max(value1, value2) (value1 >= value2 ? value1 : value2)
   template<class T>
-  static T max(T value1, T value2) {return value1 >= value2 ? value1 : value2;}
+  inline static T max(T value1, T value2) {return value1 >= value2 ? value1 : value2;}
 };
 ```
 

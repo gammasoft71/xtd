@@ -43,7 +43,7 @@ namespace xtd {
     /// const control* result = convert::to_ptr<xtd::forms::control>(value);
     /// ```
     template<class new_type_t, class current_type_t>
-    static const new_type_t* to_ptr(const current_type_t* value) {
+    inline static const new_type_t* to_ptr(const current_type_t* value) {
       if (value == nullptr) return nullptr;
       return &to_ref<new_type_t>(*value);
     }
@@ -60,7 +60,7 @@ namespace xtd {
     /// control* result = convert::to_ptr<xtd::forms::control>(value);
     /// ```
     template<class new_type_t, class current_type_t>
-    static new_type_t* to_ptr(current_type_t* value) {
+    inline static new_type_t* to_ptr(current_type_t* value) {
       if (value == nullptr) return nullptr;
       return &to_ref<new_type_t>(*value);
     }
@@ -77,7 +77,7 @@ namespace xtd {
     /// const control* result = convert::to_ptr<xtd::forms::control>(value);
     /// ```
     template<class new_type_t, class current_type_t>
-    static const new_type_t* to_ptr(const current_type_t& value) {
+    inline static const new_type_t* to_ptr(const current_type_t& value) {
       return &to_ref<new_type_t>(value);
     }
     
@@ -93,7 +93,7 @@ namespace xtd {
     /// control* result = convert::to_ptr<xtd::forms::control>(value);
     /// ```
     template<class new_type_t, class current_type_t>
-    static new_type_t* to_ptr(current_type_t& value) {
+    inline static new_type_t* to_ptr(current_type_t& value) {
       return &to_ref<new_type_t>(value);
     }
     
@@ -110,7 +110,7 @@ namespace xtd {
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<class new_type_t, class current_type_t>
-    static xtd::ptr<new_type_t> to_ptr(const xtd::ptr<current_type_t>& value) {
+    inline static xtd::ptr<new_type_t> to_ptr(const xtd::ptr<current_type_t>& value) {
       return to_shared_ptr<new_type_t>(value);
     }
     
@@ -126,7 +126,7 @@ namespace xtd {
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<class new_type_t, class current_type_t>
-    static xtd::ptr<new_type_t> to_ptr(xtd::ptr<current_type_t>& value) {
+    inline static xtd::ptr<new_type_t> to_ptr(xtd::ptr<current_type_t>& value) {
       return to_shared_ptr<new_type_t>(value);
     }
     
@@ -143,7 +143,7 @@ namespace xtd {
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<class new_type_t, class current_type_t>
-    static xtd::ptr<new_type_t> to_ptr(xtd::ptr<current_type_t>&& value) {
+    inline static xtd::ptr<new_type_t> to_ptr(xtd::ptr<current_type_t>&& value) {
       return to_shared_ptr<new_type_t>(std::move(value));
     }
     
@@ -160,7 +160,7 @@ namespace xtd {
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<class new_type_t, class current_type_t>
-    static const new_type_t& to_ref(const current_type_t& value) {
+    inline static const new_type_t& to_ref(const current_type_t& value) {
       try {
         return dynamic_cast<const new_type_t&>(value);
       } catch (const std::exception& e) {
@@ -182,7 +182,7 @@ namespace xtd {
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<class new_type_t, class current_type_t>
-    static new_type_t& to_ref(current_type_t& value) {
+    inline static new_type_t& to_ref(current_type_t& value) {
       try {
         return dynamic_cast<new_type_t&>(value);
       } catch (const std::exception& e) {
@@ -204,7 +204,7 @@ namespace xtd {
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<class new_type_t, class current_type_t>
-    static const new_type_t& to_ref(const current_type_t* value) {
+    inline static const new_type_t& to_ref(const current_type_t* value) {
       if (value == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
       try {
         return dynamic_cast<const new_type_t&>(*value);
@@ -227,7 +227,7 @@ namespace xtd {
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<class new_type_t, class current_type_t>
-    static new_type_t& to_ref(current_type_t* value) {
+    inline static new_type_t& to_ref(current_type_t* value) {
       if (value == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
       try {
         return dynamic_cast<new_type_t&>(*value);
@@ -250,7 +250,7 @@ namespace xtd {
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<class new_type_t, class current_type_t>
-    static xtd::sptr<new_type_t> to_shared_ptr(const xtd::sptr<current_type_t>& value) {
+    inline static xtd::sptr<new_type_t> to_shared_ptr(const xtd::sptr<current_type_t>& value) {
       try {
         unused_(dynamic_cast<new_type_t&>(*value.get()));
       } catch (const std::exception& e) {
@@ -271,7 +271,7 @@ namespace xtd {
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<class new_type_t, class current_type_t>
-    static xtd::sptr<new_type_t> to_shared_ptr(xtd::sptr<current_type_t>& value) {
+    inline static xtd::sptr<new_type_t> to_shared_ptr(xtd::sptr<current_type_t>& value) {
       try {
         unused_(dynamic_cast<new_type_t&>(*value.get()));
       } catch (const std::exception& e) {
@@ -293,7 +293,7 @@ namespace xtd {
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<class new_type_t, class current_type_t>
-    static xtd::sptr<new_type_t> to_shared_ptr(xtd::sptr<current_type_t>&& value) {
+    inline static xtd::sptr<new_type_t> to_shared_ptr(xtd::sptr<current_type_t>&& value) {
       try {
         unused_(dynamic_cast<new_type_t&>(*value.get()));
       } catch (const std::exception& e) {
@@ -316,7 +316,7 @@ namespace xtd {
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<class new_type_t, class current_type_t>
-    static xtd::sptr<new_type_t> to_sptr(const xtd::sptr<current_type_t>& value) {
+    inline static xtd::sptr<new_type_t> to_sptr(const xtd::sptr<current_type_t>& value) {
       return to_shared_ptr<new_type_t>(value);
     }
     
@@ -332,7 +332,7 @@ namespace xtd {
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<class new_type_t, class current_type_t>
-    static xtd::sptr<new_type_t> to_sptr(xtd::sptr<current_type_t>& value) {
+    inline static xtd::sptr<new_type_t> to_sptr(xtd::sptr<current_type_t>& value) {
       return to_shared_ptr<new_type_t>(value);
     }
     
@@ -349,7 +349,7 @@ namespace xtd {
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<class new_type_t, class current_type_t>
-    static xtd::sptr<new_type_t> to_sptr(xtd::sptr<current_type_t>&& value) {
+    inline static xtd::sptr<new_type_t> to_sptr(xtd::sptr<current_type_t>&& value) {
       return to_shared_ptr<new_type_t>(std::move(value));
     }
     
@@ -366,7 +366,7 @@ namespace xtd {
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<class new_type_t, class current_type_t>
-    static xtd::uptr<new_type_t> to_unique_ptr(xtd::uptr<current_type_t>& value) {
+    inline static xtd::uptr<new_type_t> to_unique_ptr(xtd::uptr<current_type_t>& value) {
       auto ptr = value.release();
       try {
         return xtd::uptr<new_type_t>(__convert_value__<new_type_t>(ptr));
@@ -389,7 +389,7 @@ namespace xtd {
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<class new_type_t, class current_type_t>
-    static xtd::uptr<new_type_t> to_unique_ptr(xtd::uptr<current_type_t>&& value) {
+    inline static xtd::uptr<new_type_t> to_unique_ptr(xtd::uptr<current_type_t>&& value) {
       auto ptr = value.release();
       try {
         return xtd::uptr<new_type_t>(__convert_value__<new_type_t>(ptr));
@@ -413,7 +413,7 @@ namespace xtd {
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<class new_type_t, class current_type_t>
-    static xtd::uptr<new_type_t> to_uptr(xtd::uptr<current_type_t>& value) {
+    inline static xtd::uptr<new_type_t> to_uptr(xtd::uptr<current_type_t>& value) {
       return to_unique_ptr<new_type_t>(value);
     }
     
@@ -429,7 +429,7 @@ namespace xtd {
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<class new_type_t, class current_type_t>
-    static xtd::uptr<new_type_t> to_uptr(xtd::uptr<current_type_t>&& value) {
+    inline static xtd::uptr<new_type_t> to_uptr(xtd::uptr<current_type_t>&& value) {
       return to_unique_ptr<new_type_t>(std::move(value));
     }
     /// @}

@@ -35,18 +35,18 @@ inline std::basic_string<char_t> __enum_formatter(const std::basic_string<char_t
 }
 
 template<class value_t>
-static std::string __to_string_enum(const value_t& value, const std::string& fmt, const std::locale& loc, std::true_type) {return __enum_formatter(fmt, value, loc);}
+inline static std::string __to_string_enum(const value_t& value, const std::string& fmt, const std::locale& loc, std::true_type) {return __enum_formatter(fmt, value, loc);}
 
 template<class value_t>
-static std::string __to_string_enum(const value_t& value, const std::string& fmt, const std::locale& loc, std::false_type) {
+inline static std::string __to_string_enum(const value_t& value, const std::string& fmt, const std::locale& loc, std::false_type) {
   xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format_not_iformatable, typeid(value));
 }
 
 template<class value_t>
-static std::wstring __to_string_enum(const value_t& value, const std::wstring& fmt, const std::locale& loc, std::true_type) {return __enum_formatter(fmt, value, loc);}
+inline static std::wstring __to_string_enum(const value_t& value, const std::wstring& fmt, const std::locale& loc, std::true_type) {return __enum_formatter(fmt, value, loc);}
 
 template<class value_t>
-static std::wstring __to_string_enum(const value_t& value, const std::wstring& fmt, const std::locale& loc, std::false_type) {
+inline static std::wstring __to_string_enum(const value_t& value, const std::wstring& fmt, const std::locale& loc, std::false_type) {
   xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format_not_iformatable, typeid(value));
 }
 /// @endcond

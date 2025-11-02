@@ -44,7 +44,7 @@ namespace xtd {
     /// This example show a main_function with argument and return code
     /// @include startup4.cpp
     template<class main_function_t>
-    static int safe_run(main_function_t main_function) {
+    inline static int safe_run(main_function_t main_function) {
       return internal_safe_run(main_function, std::nullopt, std::nullopt);
     }
     
@@ -69,7 +69,7 @@ namespace xtd {
     /// This example show a main_function with argument and return code
     /// @include startup4.cpp
     template<class main_function_t>
-    static int safe_run(main_function_t main_function, int argc, char* argv[]) {
+    inline static int safe_run(main_function_t main_function, int argc, char* argv[]) {
       return internal_safe_run(main_function, argc, argv);
     }
     /// @}
@@ -99,7 +99,7 @@ namespace xtd {
     
   private:
     template<class main_function_t>
-    static int internal_safe_run(main_function_t main_function, std::optional<int> argc, std::optional<char**> argv) {
+    inline static int internal_safe_run(main_function_t main_function, std::optional<int> argc, std::optional<char**> argv) {
       try {
         init_safe_run();
         auto exit_code = argc == std::nullopt && argv == std::nullopt ? run(main_function) : run(main_function, argc.value(), argv.value());

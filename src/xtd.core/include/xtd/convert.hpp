@@ -261,7 +261,7 @@ namespace xtd {
     /// any result = convert::to_any(value);
     /// ```
     template<class type_t>
-    static xtd::any to_any(type_t value) {
+    inline static xtd::any to_any(type_t value) {
       try {
         return xtd::any(value);
       } catch (...) {
@@ -503,7 +503,7 @@ namespace xtd {
     /// bool result = convert::to_boolean(value);
     /// ```
     template<class type_t>
-    static bool to_boolean(type_t value) noexcept {
+    inline static bool to_boolean(type_t value) noexcept {
       return static_cast<bool>(value);
     }
     
@@ -752,7 +752,7 @@ namespace xtd {
     /// xtd::byte result = convert::to_byte(value);
     /// ```
     template<class type_t>
-    static xtd::byte to_byte(type_t value) noexcept {
+    inline static xtd::byte to_byte(type_t value) noexcept {
       return static_cast<xtd::byte>(value);
     }
     
@@ -989,7 +989,7 @@ namespace xtd {
     /// char result = convert::to_char(value);
     /// ```
     template<class type_t>
-    static char to_char(type_t value) noexcept {
+    inline static char to_char(type_t value) noexcept {
       return static_cast<char>(value);
     }
     
@@ -1226,7 +1226,7 @@ namespace xtd {
     /// char8 result = convert::to_char8(value);
     /// ```
     template<class type_t>
-    static char8 to_char8(type_t value) noexcept {
+    inline static char8 to_char8(type_t value) noexcept {
       return static_cast<char8>(value);
     }
     
@@ -1460,7 +1460,7 @@ namespace xtd {
     /// char16 result = convert::to_char16(value);
     /// ```
     template<class type_t>
-    static char16 to_char16(type_t value) noexcept {
+    inline static char16 to_char16(type_t value) noexcept {
       return static_cast<char16>(value);
     }
     
@@ -1692,7 +1692,7 @@ namespace xtd {
     /// char32 result = convert::to_char32(value);
     /// ```
     template<class type_t>
-    static char32 to_char32(type_t value) noexcept {
+    inline static char32 to_char32(type_t value) noexcept {
       return static_cast<char32>(value);
     }
     
@@ -1926,7 +1926,7 @@ namespace xtd {
     /// wchar result = convert::to_wchar(value);
     /// ```
     template<class type_t>
-    static wchar to_wchar(type_t value) noexcept {
+    inline static wchar to_wchar(type_t value) noexcept {
       return static_cast<wchar>(value);
     }
     
@@ -2149,7 +2149,7 @@ namespace xtd {
     /// decimal result = convert::to_decimal(value);
     /// ```
     template<class type_t>
-    static decimal to_decimal(type_t value) noexcept {
+    inline static decimal to_decimal(type_t value) noexcept {
       return static_cast<decimal>(value);
     }
     
@@ -2372,7 +2372,7 @@ namespace xtd {
     /// double result = convert::to_double(value);
     /// ```
     template<class type_t>
-    static double to_double(type_t value) noexcept {
+    inline static double to_double(type_t value) noexcept {
       return static_cast<double>(value);
     }
     
@@ -2595,7 +2595,7 @@ namespace xtd {
     /// float result = convert::to_single(value);
     /// ```
     template<class type_t>
-    static float to_single(type_t value) noexcept {
+    inline static float to_single(type_t value) noexcept {
       return static_cast<float>(value);
     }
     
@@ -2840,7 +2840,7 @@ namespace xtd {
     /// int16 result = convert::to_int16(value);
     /// ```
     template<class type_t>
-    static int16 to_int16(type_t value) noexcept {
+    inline static int16 to_int16(type_t value) noexcept {
       return static_cast<int16>(value);
     }
     
@@ -3081,7 +3081,7 @@ namespace xtd {
     /// int32 result = convert::to_int32(value);
     /// ```
     template<class type_t>
-    static int32 to_int32(type_t value) noexcept {
+    inline static int32 to_int32(type_t value) noexcept {
       return static_cast<int32>(value);
     }
     
@@ -3317,7 +3317,7 @@ namespace xtd {
     /// int64 result = convert::to_int64(value);
     /// ```
     template<class type_t>
-    static int64 to_int64(type_t value) noexcept {
+    inline static int64 to_int64(type_t value) noexcept {
       return static_cast<int64>(value);
     }
     
@@ -3553,7 +3553,7 @@ namespace xtd {
     /// slong result = convert::to_llong(value);
     /// ```
     template<class type_t>
-    static slong to_llong(type_t value) noexcept {
+    inline static slong to_llong(type_t value) noexcept {
       return static_cast<slong>(value);
     }
     
@@ -3802,7 +3802,7 @@ namespace xtd {
     /// sbyte result = convert::to_sbyte(value);
     /// ```
     template<class type_t>
-    static sbyte to_sbyte(type_t value) noexcept {
+    inline static sbyte to_sbyte(type_t value) noexcept {
       return static_cast<sbyte>(value);
     }
     
@@ -4048,7 +4048,7 @@ namespace xtd {
     /// uint16 result = convert::to_uint16(value);
     /// ```
     template<class type_t>
-    static uint16 to_uint16(type_t value) noexcept {
+    inline static uint16 to_uint16(type_t value) noexcept {
       return static_cast<uint16>(value);
     }
     
@@ -4292,7 +4292,7 @@ namespace xtd {
     /// uint32 result = convert::to_uint32(value);
     /// ```
     template<class type_t>
-    static uint32 to_uint32(type_t value) noexcept {
+    inline static uint32 to_uint32(type_t value) noexcept {
       return static_cast<uint32>(value);
     }
     
@@ -4534,7 +4534,7 @@ namespace xtd {
     /// uint64 result = convert::to_uint64(value);
     /// ```
     template<class type_t>
-    static uint64 to_uint64(type_t value) noexcept {
+    inline static uint64 to_uint64(type_t value) noexcept {
       return static_cast<uint64>(value);
     }
     
@@ -4776,7 +4776,7 @@ namespace xtd {
     /// xtd::ulong result = convert::to_ullong(value);
     /// ```
     template<class type_t>
-    static xtd::ulong to_ullong(type_t value) noexcept {
+    inline static xtd::ulong to_ullong(type_t value) noexcept {
       return static_cast<xtd::ulong>(value);
     }
     
@@ -5117,7 +5117,7 @@ namespace xtd {
     /// string result = convert::to_string(value);
     /// ```
     template<class type_t>
-    static string to_string(type_t value) noexcept {
+    inline static string to_string(type_t value) noexcept {
       return string::format("{}", value);
     }
     /// @}

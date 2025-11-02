@@ -47,7 +47,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the alt_directory_separator_char() property.
       /// @include directory_separator_char.cpp
       template<class char_t>
-      static char_t alt_directory_separator_char() noexcept {return static_cast<char_t>(alt_directory_separator_char());}
+      inline static char_t alt_directory_separator_char() noexcept {return static_cast<char_t>(alt_directory_separator_char());}
       
       /// @brief Provides a platform-specific alternate character used to separate directory levels in a path string that reflects a hierarchical file system organization.
       /// @return char character used to separate directory levels.
@@ -65,7 +65,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the directory_separator_char() property.
       /// @include directory_separator_char.cpp
       template<class char_t>
-      static char_t directory_separator_char() noexcept {
+      inline static char_t directory_separator_char() noexcept {
         return static_cast<char_t>(directory_separator_char());
       }
       
@@ -82,7 +82,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the PathSeparator() property.
       /// @include directory_separator_char.cpp
       template<class char_t>
-      static char_t path_separator() noexcept {return static_cast<char_t>(path_separator());}
+      inline static char_t path_separator() noexcept {return static_cast<char_t>(path_separator());}
       
       /// @brief A platform-specific separator character used to separate path strings in environment variables.
       /// @par Examples
@@ -95,7 +95,7 @@ namespace xtd {
       /// The following code example demonstrates the use of the volume_separator_char() property.
       /// @include directory_separator_char.cpp
       template<class char_t>
-      static char_t volume_separator_char() noexcept {return  static_cast<char_t>(volume_separator_char());}
+      inline static char_t volume_separator_char() noexcept {return  static_cast<char_t>(volume_separator_char());}
       
       /// @brief Provides a platform-specific volume separator character.
       /// @par Examples
@@ -134,7 +134,7 @@ namespace xtd {
       /// @return A string containing the combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.
       /// @remarks an empty string if path contains one or more of the invalid characters.
       template<class type1_t, class type2_t, class type3_t>
-      static auto combine(type1_t path1, type2_t path2, type3_t path3) noexcept {
+      inline static auto combine(type1_t path1, type2_t path2, type3_t path3) noexcept {
         return combine(combine(path1, path2), path3);
       }
       
@@ -146,7 +146,7 @@ namespace xtd {
       /// @return A string containing the combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.
       /// @remarks an empty string if path contains one or more of the invalid characters.
       template<class type1_t, class type2_t, class type3_t, class type4_t>
-      static auto combine(type1_t path1, type2_t path2, type3_t path3, type4_t path4) noexcept {
+      inline static auto combine(type1_t path1, type2_t path2, type3_t path3, type4_t path4) noexcept {
         return combine(combine(combine(path1, path2), path3), path4);
       }
       
@@ -155,7 +155,7 @@ namespace xtd {
       /// @return A string containing the combined paths. If one of the specified paths is a zero-length string, this method returns the other path. If path2 contains an absolute path, this method returns path2.
       /// @remarks an empty string if path contains one or more of the invalid characters.
       template<class path_t>
-      static xtd::string combine(path_t paths) noexcept {
+      inline static xtd::string combine(path_t paths) noexcept {
         xtd::string result;
         std::for_each(paths.begin(), paths.end(), [&](auto path) {result = combine(result, path);});
         return result;
@@ -200,7 +200,7 @@ namespace xtd {
       /// @return An array containing the characters that are not allowed in path names.
       /// @remarks The array returned from this method is not guaranteed to contain the complete set of characters that are invalid in file and directory names. The full set of invalid characters can vary by file system. For example, on Windows-based desktop platforms, invalid path characters might include ASCII/Unicode characters 1 through 31, as well as quote ("), less than (<), greater than (>), pipe (|), backspace (\b), null (\0) and tab (\t).
       template<class char_t>
-      static xtd::array<char_t> get_invalid_path_chars() noexcept {return {34, 60, 62, 124, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 0};}
+      inline static xtd::array<char_t> get_invalid_path_chars() noexcept {return {34, 60, 62, 124, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 0};}
       
       /// @brief Gets an array containing the characters that are not allowed in path names.
       /// @return An array containing the characters that are not allowed in path names.

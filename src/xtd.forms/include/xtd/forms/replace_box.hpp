@@ -39,7 +39,7 @@ namespace xtd {
       /// @param replace The callback called when the user click the replace button.
       /// @param replace_all The callback called when the user click the replace all button.
       template<class find_next_callback_t, class replace_callback_t, class replace_all_callback_t>
-      static void show(const iwin32_window& owner, find_next_callback_t find_next, replace_callback_t replace, replace_all_callback_t replace_all) {show_replace_box(owner, xtd::forms::find_event_handler(find_next), xtd::forms::replace_event_handler(replace), xtd::forms::replace_event_handler(replace_all));}
+      inline static void show(const iwin32_window& owner, find_next_callback_t find_next, replace_callback_t replace, replace_all_callback_t replace_all) {show_replace_box(owner, xtd::forms::find_event_handler(find_next), xtd::forms::replace_event_handler(replace), xtd::forms::replace_event_handler(replace_all));}
       
       /// @brief Displays a replace dialog box.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the replace dialog box.
@@ -48,7 +48,7 @@ namespace xtd {
       /// @param replace The callback called when the user click the replace button.
       /// @param replace_all The callback called when the user click the replace all button.
       template<class find_next_callback_t, class replace_callback_t, class replace_all_callback_t>
-      static void show(const iwin32_window& owner, const xtd::string& find_string, find_next_callback_t find_next, replace_callback_t replace, replace_all_callback_t replace_all) {show_replace_box(owner, xtd::forms::find_event_handler(find_next), xtd::forms::replace_event_handler(replace), xtd::forms::replace_event_handler(replace_all), find_string);}
+      inline static void show(const iwin32_window& owner, const xtd::string& find_string, find_next_callback_t find_next, replace_callback_t replace, replace_all_callback_t replace_all) {show_replace_box(owner, xtd::forms::find_event_handler(find_next), xtd::forms::replace_event_handler(replace), xtd::forms::replace_event_handler(replace_all), find_string);}
       
       /// @brief Displays a replace dialog box.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the replace dialog box.
@@ -58,7 +58,7 @@ namespace xtd {
       /// @param replace The callback called when the user click the replace button.
       /// @param replace_all The callback called when the user click the replace all button.
       template<class find_next_callback_t, class replace_callback_t, class replace_all_callback_t>
-      static void show(const iwin32_window& owner, const xtd::string& find_string, const xtd::string& replace_string, find_next_callback_t find_next, replace_callback_t replace, replace_all_callback_t replace_all) {show_replace_box(owner, xtd::forms::find_event_handler(find_next), xtd::forms::replace_event_handler(replace), xtd::forms::replace_event_handler(replace_all), find_string, replace_string);}
+      inline static void show(const iwin32_window& owner, const xtd::string& find_string, const xtd::string& replace_string, find_next_callback_t find_next, replace_callback_t replace, replace_all_callback_t replace_all) {show_replace_box(owner, xtd::forms::find_event_handler(find_next), xtd::forms::replace_event_handler(replace), xtd::forms::replace_event_handler(replace_all), find_string, replace_string);}
       
       /// @brief Displays a replace dialog box.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the replace dialog box.
@@ -69,7 +69,7 @@ namespace xtd {
       /// @param replace The callback called when the user click the replace button.
       /// @param replace_all The callback called when the user click the replace all button.
       template<class find_next_callback_t, class replace_callback_t, class replace_all_callback_t>
-      static void show(const iwin32_window& owner, const xtd::string& find_string, const xtd::string& replace_string, const xtd::string& title, find_next_callback_t find_next, replace_callback_t replace, replace_all_callback_t replace_all) {show_replace_box(owner, xtd::forms::find_event_handler(find_next), xtd::forms::replace_event_handler(replace), xtd::forms::replace_event_handler(replace_all), find_string, replace_string, title);}
+      inline static void show(const iwin32_window& owner, const xtd::string& find_string, const xtd::string& replace_string, const xtd::string& title, find_next_callback_t find_next, replace_callback_t replace, replace_all_callback_t replace_all) {show_replace_box(owner, xtd::forms::find_event_handler(find_next), xtd::forms::replace_event_handler(replace), xtd::forms::replace_event_handler(replace_all), find_string, replace_string, title);}
       
       /// @brief Displays a replace dialog box.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the replace dialog box.
@@ -81,7 +81,7 @@ namespace xtd {
       /// @param replace The callback called when the user click the replace button.
       /// @param replace_all The callback called when the user click the replace all button.
       template<class find_next_callback_t, class replace_callback_t, class replace_all_callback_t>
-      static void show(const iwin32_window& owner, const xtd::string& find_string, const xtd::string& replace_string, const xtd::string& title, bool match_case, find_next_callback_t find_next, replace_callback_t replace, replace_all_callback_t replace_all) {show_replace_box(owner, xtd::forms::find_event_handler(find_next), xtd::forms::replace_event_handler(replace), xtd::forms::replace_event_handler(replace_all), find_string, replace_string, title, match_case);}
+      inline static void show(const iwin32_window& owner, const xtd::string& find_string, const xtd::string& replace_string, const xtd::string& title, bool match_case, find_next_callback_t find_next, replace_callback_t replace, replace_all_callback_t replace_all) {show_replace_box(owner, xtd::forms::find_event_handler(find_next), xtd::forms::replace_event_handler(replace), xtd::forms::replace_event_handler(replace_all), find_string, replace_string, title, match_case);}
       
       /// @brief Displays a replace dialog box.
       /// @param owner An xtd::forms::iwin32_window that represents the owner window of the replace dialog box.
@@ -94,7 +94,7 @@ namespace xtd {
       /// @param replace The callback called when the user click the replace button.
       /// @param replace_all The callback called when the user click the replace all button.
       template<class find_next_callback_t, class replace_callback_t, class replace_all_callback_t>
-      static void show(const iwin32_window& owner, const xtd::string& find_string, const xtd::string& replace_string, const xtd::string& title, bool match_case, bool whole_word, find_next_callback_t find_next, replace_callback_t replace, replace_all_callback_t replace_all) {show_replace_box(owner, xtd::forms::find_event_handler(find_next), xtd::forms::replace_event_handler(replace), xtd::forms::replace_event_handler(replace_all), find_string, replace_string, title, match_case, whole_word);}
+      inline static void show(const iwin32_window& owner, const xtd::string& find_string, const xtd::string& replace_string, const xtd::string& title, bool match_case, bool whole_word, find_next_callback_t find_next, replace_callback_t replace, replace_all_callback_t replace_all) {show_replace_box(owner, xtd::forms::find_event_handler(find_next), xtd::forms::replace_event_handler(replace), xtd::forms::replace_event_handler(replace_all), find_string, replace_string, title, match_case, whole_word);}
       /// @}
       
     private:

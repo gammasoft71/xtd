@@ -240,7 +240,7 @@ namespace xtd {
       
     private:
       template<const bool multiselect, class output_t>
-      static xtd::forms::dialog_result show_open_file_box(output_t& output, const xtd::string& title, const xtd::string& initial_directory = xtd::string::empty_string, const xtd::string& filter = xtd::string::empty_string, const open_file_box_options options = open_file_box_options::none, const xtd::forms::iwin32_window* owner = nullptr) {
+      inline static xtd::forms::dialog_result show_open_file_box(output_t& output, const xtd::string& title, const xtd::string& initial_directory = xtd::string::empty_string, const xtd::string& filter = xtd::string::empty_string, const open_file_box_options options = open_file_box_options::none, const xtd::forms::iwin32_window* owner = nullptr) {
         auto dialog = xtd::forms::open_file_dialog {};
         dialog.multiselect(multiselect)
           .title(title)

@@ -31,7 +31,7 @@ namespace xtd {
     /// @param method is the pointer to the (member) method
     /// @return Pointer to an overloaded method.
     template<class result_t, class type_t>
-    static constexpr auto of(result_t (type_t::*method)(args_t...)) noexcept -> decltype(method) {return method;}
+    inline static constexpr auto of(result_t (type_t::*method)(args_t...)) noexcept -> decltype(method) {return method;}
     /// @}
   };
   
@@ -58,7 +58,7 @@ namespace xtd {
     /// @param method is the pointer to the (member) method
     /// @return Pointer to an overloaded method.
     template<class result_t, class type_t>
-    static constexpr auto of(result_t (type_t::*method)(args_t...) const) noexcept -> decltype(method) {return method;}
+    inline static constexpr auto of(result_t (type_t::*method)(args_t...) const) noexcept -> decltype(method) {return method;}
     /// @}
   };
   
@@ -92,7 +92,7 @@ namespace xtd {
     /// @param method is the pointer to the (member) method
     /// @return Pointer to an overloaded method.
     template<class result_t>
-    static constexpr auto of(result_t (*method)(args_t...)) noexcept -> decltype(method) {return method;}
+    inline static constexpr auto of(result_t (*method)(args_t...)) noexcept -> decltype(method) {return method;}
     /// @}
   };
   

@@ -2040,7 +2040,7 @@ namespace xtd {
     /// @param obj_d The fourth object to concatenate.
     /// @return The concatenation of obj_a, obj_b, obj_c and obj_d.
     template<class object_a_t, class object_b_t, class object_c_t, class object_d_t>
-    static basic_string concat(object_a_t obj_a, object_b_t obj_b, object_c_t obj_c, object_d_t obj_d) noexcept {return format("{}{}{}{}", obj_a, obj_b, obj_c, obj_d);}
+    inline static basic_string concat(object_a_t obj_a, object_b_t obj_b, object_c_t obj_c, object_d_t obj_d) noexcept {return format("{}{}{}{}", obj_a, obj_b, obj_c, obj_d);}
     /// @brief Concatenates three specified instances of basic_string.
     /// @param str_a The first basic_string to concatenate.
     /// @param str_b The second basic_string to concatenate.
@@ -2053,7 +2053,7 @@ namespace xtd {
     /// @param obj_c The third object to concatenate.
     /// @return The concatenation of obj_a, obj_b and obj_c.
     template<class object_a_t, class object_b_t, class object_c_t>
-    static basic_string concat(object_a_t obj_a, object_b_t obj_b, object_c_t obj_c) noexcept {return format("{}{}{}", obj_a, obj_b, obj_c);}
+    inline static basic_string concat(object_a_t obj_a, object_b_t obj_b, object_c_t obj_c) noexcept {return format("{}{}{}", obj_a, obj_b, obj_c);}
     /// @brief Concatenates two specified instances of basic_string.
     /// @param str_a The first basic_string to concatenate.
     /// @param str_b The second basic_string to concatenate.
@@ -2064,7 +2064,7 @@ namespace xtd {
     /// @param obj_b The second object to concatenate.
     /// @return The concatenation of obj_a and obj_b.
     template<class object_a_t, class object_b_t>
-    static basic_string concat(object_a_t obj_a, object_b_t obj_b) noexcept {return format("{}{}", obj_a, obj_b);}
+    inline static basic_string concat(object_a_t obj_a, object_b_t obj_b) noexcept {return format("{}{}", obj_a, obj_b);}
     /// @brief Concatenates the elements of a specified basic_string array.
     /// @param values An array of basic_string instances.
     /// @return The concatenated elements of values.
@@ -2072,7 +2072,7 @@ namespace xtd {
     /// @cond
     static basic_string concat(const xtd::array<const_pointer>& values) noexcept;
     template<class other_char_t>
-    static basic_string concat(const xtd::array<const other_char_t*>& values) noexcept;
+    inline static basic_string concat(const xtd::array<const other_char_t*>& values) noexcept;
     static basic_string concat(const std::initializer_list<basic_string>& values) noexcept {
       auto result = basic_string::empty_string;
       std::for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
@@ -2084,7 +2084,7 @@ namespace xtd {
       return result;
     }
     template<class other_char_t>
-    static basic_string concat(const std::initializer_list<const other_char_t*>& values) noexcept {
+    inline static basic_string concat(const std::initializer_list<const other_char_t*>& values) noexcept {
       auto result = basic_string::empty_string;
       std::for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
       return result;
@@ -2094,10 +2094,10 @@ namespace xtd {
     /// @param args An object array that contains the elements to concatenate.
     /// @return The concatenated basic_string representations of the values of the elements in args.
     template<class object_t>
-    static basic_string concat(const xtd::array<object_t>& args) noexcept;
+    inline static basic_string concat(const xtd::array<object_t>& args) noexcept;
     /// @cond
     template<class object_t>
-    static basic_string concat(const std::initializer_list<object_t>& args) noexcept {
+    inline static basic_string concat(const std::initializer_list<object_t>& args) noexcept {
       basic_string result;
       for (const auto& arg : args)
         result += format("{}", arg);
@@ -2108,7 +2108,7 @@ namespace xtd {
     /// @param value The object to represent.
     /// @return The basic_string representation of the value of arg.
     template<class value_t>
-    static basic_string concat(value_t value) noexcept {
+    inline static basic_string concat(value_t value) noexcept {
       return format("{}", value);
     }
     
@@ -2149,7 +2149,7 @@ namespace xtd {
     /// @return `true` if the value of `a` is the same as the value of `b`; otherwise, `false`.
     /// @remarks This method performs an ordinal (case-sensitive) comparison.
     template<class char_a_t, class char_b_t>
-    static bool equals(const char_a_t* a, const char_b_t* b) noexcept{return basic_string {a}.equals(basic_string {b});}
+    inline static bool equals(const char_a_t* a, const char_b_t* b) noexcept{return basic_string {a}.equals(basic_string {b});}
     
     /// @brief Determines whether two specified xtd::basic_string objects have the same value, ignoring or honoring their case.
     /// @param a The first basic_string to compare.
@@ -2165,7 +2165,7 @@ namespace xtd {
     /// @return `true` if the value of `a` is the same as the value of `b`; otherwise, `false`.
     /// @remarks This method performs an ordinal comparison.
     template<class char_a_t, class char_b_t>
-    static bool equals(const char_a_t* a, const char_b_t* b, bool ignore_case) noexcept{return basic_string {a}.equals(basic_string {b}, ignore_case);}
+    inline static bool equals(const char_a_t* a, const char_b_t* b, bool ignore_case) noexcept{return basic_string {a}.equals(basic_string {b}, ignore_case);}
     
     /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
     /// @param fmt A composite format string.
@@ -2174,7 +2174,7 @@ namespace xtd {
     /// @ingroup format_parse
     /// @remarks for more information about format see @ref FormatPage "Format".
     template<class ...args_t>
-    static basic_string format(const basic_string<char>& fmt, args_t&& ... args);
+    inline static basic_string format(const basic_string<char>& fmt, args_t&& ... args);
     
     /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
     /// @param loc An std::locale object that contains locale information (see [std::locale](https://en.cppreference.com/w/cpp/locale/locale)).
@@ -2184,7 +2184,7 @@ namespace xtd {
     /// @ingroup format_parse
     /// @remarks for more information about format see @ref FormatPage "Format".
     template<class ...args_t>
-    static basic_string format(const std::locale & loc, const basic_string<char>& fmt, args_t&& ... args);
+    inline static basic_string format(const std::locale & loc, const basic_string<char>& fmt, args_t&& ... args);
     
     /// @brief Indicates whether the specifeid basic_string is an empty basic_string ("").
     /// @param string The xtd::basic_string to check if empty.
@@ -2198,7 +2198,7 @@ namespace xtd {
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
     template<class collection_t>
-    static basic_string join(const basic_string separator, const collection_t& values) noexcept {
+    inline static basic_string join(const basic_string separator, const collection_t& values) noexcept {
       xtd::size i = 0;
       basic_string result;
       for (const auto& item : values)
@@ -2213,7 +2213,7 @@ namespace xtd {
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
     template<class collection_t>
-    static basic_string join(const basic_string & separator, const collection_t& values, xtd::size index) {return join(separator, values, index, values.size() - index);}
+    inline static basic_string join(const basic_string & separator, const collection_t& values, xtd::size index) {return join(separator, values, index, values.size() - index);}
     /// @brief Concatenates a specified separator basic_string between each element of a specified Object array, yielding a single concatenated basic_string.
     /// @param separator A basic_string separator.
     /// @param values An array of Object.
@@ -2223,7 +2223,7 @@ namespace xtd {
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
     template<class collection_t>
-    static basic_string join(const basic_string & separator, const collection_t& values, xtd::size index, xtd::size count) {
+    inline static basic_string join(const basic_string & separator, const collection_t& values, xtd::size index, xtd::size count) {
       if (index > values.size() || index + count > values.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       xtd::size i = 0;
       basic_string result;
@@ -2236,18 +2236,18 @@ namespace xtd {
     
     /// @cond
     template<class value_t>
-    static basic_string join(const basic_string & separator, const std::initializer_list<value_t>& values) noexcept;
+    inline static basic_string join(const basic_string & separator, const std::initializer_list<value_t>& values) noexcept;
     template<class value_t>
-    static basic_string join(const basic_string & separator, const std::initializer_list<value_t>& values, xtd::size index);
+    inline static basic_string join(const basic_string & separator, const std::initializer_list<value_t>& values, xtd::size index);
     template<class value_t>
-    static basic_string join(const basic_string & separator, const std::initializer_list<value_t>& values, xtd::size index, xtd::size count);
+    inline static basic_string join(const basic_string & separator, const std::initializer_list<value_t>& values, xtd::size index, xtd::size count);
     /// @endcond
     
     /// @brief Converts a basic_string into a value_t type.
     /// @param str Ax xtd::basic_string to convert to value_t
     /// @return The value_t object parsed.
     template<class value_t>
-    static value_t parse(const basic_string & str) {
+    inline static value_t parse(const basic_string & str) {
       if constexpr(std::is_same_v<char, char_t>) return xtd::parse<value_t>(str.chars());
       else return xtd::parse<value_t>(__xtd_convert_to_string<char>(str.chars()));
     }
@@ -2312,14 +2312,14 @@ namespace xtd {
     /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char8 value (or a wchar) before formatting it for output.
     /// @remarks you can use std::basic_string or std::wstring with format param %%s.
     template<class ...args_t>
-    static basic_string sprintf(const basic_string & fmt, args_t&& ... args) noexcept {return __sprintf(fmt.chars().c_str(), convert_param(std::forward<args_t>(args)) ...);}
+    inline static basic_string sprintf(const basic_string & fmt, args_t&& ... args) noexcept {return __sprintf(fmt.chars().c_str(), convert_param(std::forward<args_t>(args)) ...);}
     
     /// @brief Try to convert a basic_string into a value_t type.
     /// @param str An xtd::basic_string to convert to value_t
     /// @param value The value that will contain the parsed xtd::basic_string.
     /// @return `true` if xtd::basic_string:=:try_parse succed; otherwise, `false`.
     template<class value_t>
-    static bool try_parse(const basic_string & str, value_t& value) noexcept {
+    inline static bool try_parse(const basic_string & str, value_t& value) noexcept {
       try {
         value = parse<value_t>(str);
         return true;
@@ -3589,7 +3589,7 @@ namespace xtd {
     static const xtd::array<value_type> default_trim_chars;
     
     template<class arg_t>
-    static auto convert_param(arg_t&& arg) noexcept {
+    inline static auto convert_param(arg_t&& arg) noexcept {
       if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::string>::value) return std::forward<arg_t>(arg).c_str();
       else if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::u16string>::value) return std::forward<arg_t>(arg).c_str();
       else if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::u32string>::value) return std::forward<arg_t>(arg).c_str();

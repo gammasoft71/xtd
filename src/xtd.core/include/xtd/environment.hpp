@@ -438,7 +438,7 @@ namespace xtd {
     /// @param os Output stream object affected. Because this function is a manipulator, it is designed to be used alone with no arguments in conjunction with the insertion (<<) operations on output streams (see example below).
     /// @return Argument os.
     template<class char_t, class traits_t>
-    static std::basic_ostream<char_t, traits_t>& new_line(std::basic_ostream<char_t, traits_t>& os) {
+    inline static std::basic_ostream<char_t, traits_t>& new_line(std::basic_ostream<char_t, traits_t>& os) {
       for (auto c : new_line())
         os.put(os.widen(c));
       return os;

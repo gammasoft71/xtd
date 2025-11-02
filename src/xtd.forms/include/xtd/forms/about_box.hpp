@@ -451,7 +451,7 @@ namespace xtd {
       
     private:
       template<class icon_t>
-      static void show_about_dialog(const iwin32_window* owner, const xtd::string& text = "About box..."_t, const xtd::string& caption = xtd::string::empty_string, const icon_t& icon = icon_t::empty, const xtd::string& version = xtd::string::empty_string, const xtd::string& long_version = xtd::string::empty_string, const xtd::string& copyright = xtd::string::empty_string, const xtd::string& website = xtd::string::empty_string, const xtd::string& website_label = xtd::string::empty_string, const author_collection& authors = author_collection {}, const documenter_collection& documenters = documenter_collection {}, const translator_collection& translators = translator_collection {}, const artist_collection& artists = artist_collection {}, const xtd::string& license = "") {
+      inline static void show_about_dialog(const iwin32_window* owner, const xtd::string& text = "About box..."_t, const xtd::string& caption = xtd::string::empty_string, const icon_t& icon = icon_t::empty, const xtd::string& version = xtd::string::empty_string, const xtd::string& long_version = xtd::string::empty_string, const xtd::string& copyright = xtd::string::empty_string, const xtd::string& website = xtd::string::empty_string, const xtd::string& website_label = xtd::string::empty_string, const author_collection& authors = author_collection {}, const documenter_collection& documenters = documenter_collection {}, const translator_collection& translators = translator_collection {}, const artist_collection& artists = artist_collection {}, const xtd::string& license = "") {
         static auto dialog = about_dialog {};
         dialog.description(text);
         dialog.name(caption);
