@@ -269,6 +269,9 @@ const <a class="el" href="classxtd_1_1globalization_1_1number__format__info.html
 <tr class="memitem:aa8864cf5151e5d3ca7df11bff3710679" id="r_aa8864cf5151e5d3ca7df11bff3710679"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; std::locale &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8864cf5151e5d3ca7df11bff3710679">get_system_locales</a> () noexcept</td></tr>
 <tr class="memdesc:aa8864cf5151e5d3ca7df11bff3710679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the lists of system locales.  <br /></td></tr>
 <tr class="separator:aa8864cf5151e5d3ca7df11bff3710679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa62233554d17a425be9662cba9026b0e" id="r_aa62233554d17a425be9662cba9026b0e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa62233554d17a425be9662cba9026b0e">initialize_all_cultures</a> () noexcept</td></tr>
+<tr class="memdesc:aa62233554d17a425be9662cba9026b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes all cultures available in xtd and prevents lazy-loading.  <br /></td></tr>
+<tr class="separator:aa62233554d17a425be9662cba9026b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -2333,6 +2336,35 @@ If <code>culture</code> is the locale identifier of the current culture, the ret
 
 </div>
 </div>
+<a id="aa62233554d17a425be9662cba9026b0e" name="aa62233554d17a425be9662cba9026b0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa62233554d17a425be9662cba9026b0e">&#9670;&#160;</a></span>initialize_all_cultures()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void xtd::globalization::culture_info::initialize_all_cultures </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel noexcept">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes all cultures available in xtd and prevents lazy-loading. </p>
+<p>This method preloads all culture-related data (including <a class="el" href="classxtd_1_1globalization_1_1date__time__format__info.html" title="Provides culture-specific information about the format of date and time values.">xtd::globalization::date_time_format_info</a>, <a class="el" href="classxtd_1_1globalization_1_1number__format__info.html" title="Provides culture-specific information about the format of numbers, currency, and percentages.">xtd::globalization::number_format_info</a>, and xtd::globalization::region_info) for all supported cultures. By calling this method, you avoid lazy-loading of cultures when they are first accessed, which can improve performance in scenarios where multiple cultures are accessed repeatedly, or when deterministic initialization order is required. </p><dl class="section note"><dt>Note</dt><dd>This method is typically called automatically by xtd when needed, but it can be invoked explicitly if you want to ensure that all cultures are loaded upfront, for example in a unit testing setup or at application startup. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>After calling this method, accessing any culture (via <a class="el" href="#a35208a728629a5fca8cfd4d38568a07a" title="Gets the xtd::globalization::culture_info object that represents the culture used by the current appl...">xtd::globalization::culture_info::current_culture()</a>, <a class="el" href="#ad0b3aa669acf5e05f756a251abd5b0fb" title="Gets the xtd::globalization::culture_info object that is culture-independent (invariant).">xtd::globalization::culture_info::invariant_culture()</a>, or any specific culture) will not trigger any further initialization or lazy-loading. </dd></dl>
+
+</div>
+</div>
 <a id="a206f178e86c99f13ebec07764bd61019" name="a206f178e86c99f13ebec07764bd61019"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a206f178e86c99f13ebec07764bd61019">&#9670;&#160;</a></span>operator const std::locale &amp;()</h2>
 
@@ -2402,7 +2434,7 @@ If <code>culture</code> is the locale identifier of the current culture, the ret
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 1 2025 20:53:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Nov 1 2025 23:59:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
