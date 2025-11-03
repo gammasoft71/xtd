@@ -1049,69 +1049,46 @@
 using namespace xtd::globalization;
 using namespace xtd::text;
 
-auto escape_md(const string& s) -> string {
-  string result;
-  for (auto c : s) {
-    if (c == '|') result += "\\|";
-    else result += c;
-  }
-  return result;
+auto escape_md(const string& s) {
+  return s.aggregate<string>("", delegate_(const string& result, const char& c) {return result + (c == '|' ? "\\|" : as<string>(c));});
 }
 
 auto main() -> int {
+  auto columns = ordered_dictionary<string, delegate<string(const culture_info&)>> {
+    {"Name", {delegate_(const culture_info& c) {return c.name().empty() ? "Invariant" : c.name();}}},
+    {"currency decimal digits", {delegate_(const culture_info& c) {return as<string>(c.number_format().currency_decimal_digits());}}},
+    {"currency decimal separator", {delegate_(const culture_info& c) {return c.number_format().currency_decimal_separator();}}},
+    {"currency group separator", {delegate_(const culture_info& c) {return c.number_format().currency_group_separator();}}},
+    {"currency group sizes", {delegate_(const culture_info& c) {return string::join(", ", c.number_format().currency_group_sizes());}}},
+    {"currency negative pattern", {delegate_(const culture_info& c) {return as<string>(c.number_format().currency_negative_pattern());}}},
+    {"currency positive pattern", {delegate_(const culture_info& c) {return as<string>(c.number_format().currency_positive_pattern());}}},
+    {"currency symbol", {delegate_(const culture_info& c) {return c.number_format().currency_symbol();}}},
+    {"digit substitution", {delegate_(const culture_info& c) {return as<string>(c.number_format().digit_substitution());}}},
+    {"nan symbol", {delegate_(const culture_info& c) {return c.number_format().nan_symbol();}}},
+    {"negative infinity symbol", {delegate_(const culture_info& c) {return c.number_format().negative_infinity_symbol();}}},
+    {"negative sign", {delegate_(const culture_info& c) {return c.number_format().negative_sign();}}},
+    {"number decimal digits", {delegate_(const culture_info& c) {return as<string>(c.number_format().number_decimal_digits());}}},
+    {"number decimal separator", {delegate_(const culture_info& c) {return c.number_format().number_decimal_separator();}}},
+    {"number group separator", {delegate_(const culture_info& c) {return c.number_format().number_group_separator();}}},
+    {"number group sizes", {delegate_(const culture_info& c) {return string::join(", ", c.number_format().number_group_sizes());}}},
+    {"number negative pattern", {delegate_(const culture_info& c) {return as<string>(c.number_format().number_negative_pattern());}}},
+    {"percent decimal digits", {delegate_(const culture_info& c) {return as<string>(c.number_format().percent_decimal_digits());}}},
+    {"percent decimal separator", {delegate_(const culture_info& c) {return c.number_format().percent_decimal_separator();}}},
+    {"percent group separator", {delegate_(const culture_info& c) {return c.number_format().percent_group_separator();}}},
+    {"percent group sizes", {delegate_(const culture_info& c) {return string::join(", ", c.number_format().percent_group_sizes());}}},
+    {"percent negative pattern", {delegate_(const culture_info& c) {return as<string>(c.number_format().percent_negative_pattern());}}},
+    {"percent positive pattern", {delegate_(const culture_info& c) {return as<string>(c.number_format().percent_positive_pattern());}}},
+    {"percent symbol", {delegate_(const culture_info& c) {return c.number_format().percent_symbol();}}},
+    {"per mille symbol", {delegate_(const culture_info& c) {return c.number_format().per_mille_symbol();}}},
+    {"positive infinity symbol", {delegate_(const culture_info& c) {return c.number_format().positive_infinity_symbol();}}},
+    {"positive sign", {delegate_(const culture_info& c) {return c.number_format().positive_sign();}}}
+  };
+
   auto content = string_builder {};
   content.append_line("# Number formats supported by xtd\n");
-  
-  array<string> headers = {
-    "Name", "currency decimal digits", "currency decimal separator", "currency group separator", "currency group sizes",
-    "currency negative pattern", "currency positive pattern", "currency symbol", "digit substitution", "nan symbol",
-    "negative infinity symbol", "negative sign", "number decimal digits", "number decimal separator", "number group separator",
-    "number group sizes", "number negative pattern", "percent decimal digits", "percent decimal separator",
-    "percent group separator", "percent group sizes", "percent negative pattern", "percent positive pattern",
-    "percent symbol", "per mille symbol", "positive infinity symbol", "positive sign"
-  };
-  
-  content.append("| ");
-  for (auto& h : headers) content.append(h + " | ");
-  content.append_line();
-  
-  content.append("| ");
-  for (auto& h : headers) content.append(std::string(h.size(), '-') + " | ");
-  content.append_line();
-  
-  for (auto& culture : culture_info::get_cultures(culture_types::all_cultures)) {
-    auto nf = culture.number_format();
-    content.append_format("| {0} | {1} | {2} | {3} | {4} | {5} | {6} | {7} | {8} | {9} | {10} | {11} | {12} | {13} | {14} | {15} | {16} | {17} | {18} | {19} | {20} | {21} | {22} | {23} | {24} | {25} | {26} |\n",
-                          escape_md(culture.name().empty() ? "Invariant" : culture.name()),
-                          nf.currency_decimal_digits(),
-                          escape_md(nf.currency_decimal_separator()),
-                          escape_md(nf.currency_group_separator()),
-                          escape_md(string::join(", ", nf.currency_group_sizes())),
-                          nf.currency_negative_pattern(),
-                          nf.currency_positive_pattern(),
-                          escape_md(nf.currency_symbol()),
-                          nf.digit_substitution(),
-                          escape_md(nf.nan_symbol()),
-                          escape_md(nf.negative_infinity_symbol()),
-                          escape_md(nf.negative_sign()),
-                          nf.number_decimal_digits(),
-                          escape_md(nf.number_decimal_separator()),
-                          escape_md(nf.number_group_separator()),
-                          escape_md(string::join(", ", nf.number_group_sizes())),
-                          nf.number_negative_pattern(),
-                          nf.percent_decimal_digits(),
-                          escape_md(nf.percent_decimal_separator()),
-                          escape_md(nf.percent_group_separator()),
-                          escape_md(string::join(", ", nf.percent_group_sizes())),
-                          nf.percent_negative_pattern(),
-                          nf.percent_positive_pattern(),
-                          escape_md(nf.percent_symbol()),
-                          escape_md(nf.per_mille_symbol()),
-                          escape_md(nf.positive_infinity_symbol()),
-                          escape_md(nf.positive_sign())
-                          );
-  }
-  
+  content.append_format("| {} |\n", string::join(" | ", columns.keys()));
+  content.append_format("| {} |\n", string::join(" | ", columns.keys().select(delegate_(auto v) {return string('-', v.length());})));
+  culture_info::get_cultures(culture_types::all_cultures).to_list().for_each(delegate_(auto c) {content.append_format("| {} |\n", string::join(" | ", columns.values().select<string>([&](auto v) {return v(c);})));});
   file::write_all_text("number_formats.md", content.to_string());
   console::write_line("Markdown table generated in number_formats.md");
 }
