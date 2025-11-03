@@ -41,7 +41,7 @@ var searchData=
   ['list_3c_20xtd_3a_3asptr_3c_20xtd_3a_3aforms_3a_3acontrol_20_3e_20_3e_38',['list&lt; xtd::sptr&lt; xtd::forms::control &gt; &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
   ['list_3c_20xtd_3a_3asptr_3c_20xtd_3a_3aforms_3a_3amenu_5fitem_20_3e_20_3e_39',['list&lt; xtd::sptr&lt; xtd::forms::menu_item &gt; &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
   ['list_3c_20xtd_3a_3astring_20_3e_40',['list&lt; xtd::string &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
-  ['list_3c_20xtd_3a_3atime_5fzone_5finfo_3a_3aadjustement_5frule_20_3e_41',['list&lt; xtd::time_zone_info::adjustement_rule &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
+  ['list_3c_20xtd_3a_3atime_5fzone_5finfo_3a_3aadjustment_5frule_20_3e_41',['list&lt; xtd::time_zone_info::adjustment_rule &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
   ['list_3c_20xtd_3a_3atunit_3a_3atest_20_3e_42',['list&lt; xtd::tunit::test &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
   ['list_3c_20xtd_5flibrary_20_3e_43',['list&lt; xtd_library &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
   ['list_5fbox_44',['list_box',['../classxtd_1_1forms_1_1list__box.html',1,'xtd::forms']]],
