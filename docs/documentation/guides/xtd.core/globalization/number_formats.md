@@ -1039,7 +1039,7 @@
 | zu-ZA | 2 | . | , | 3 | 1 | 0 | R | 1 | NaN | -∞ | - | 3 | . | , | 3 | 1 | 3 | . | , | 3 | 1 | 1 | % | ‰ | ∞ | + |
 
 # See also
-​
+
 * [Guides](/docs/documentation/guides)
 * [Documentation](/docs/documentation)
 
