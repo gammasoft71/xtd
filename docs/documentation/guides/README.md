@@ -64,6 +64,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Best practices](/docs/documentation/guides/xtd.core/Exceptions/exceptions_best_practices)
   * Globalization
       * [Languages supported by xtd](/docs/documentation/guides/xtd.core/globalization/languages)
+      * [Date time formats supported by xtd](/docs/documentation/guides/xtd.core/globalization/date_time_formats)
       * [Number formats supported by xtd](/docs/documentation/guides/xtd.core/globalization/number_formats)
       * [Internationalization](/docs/documentation/guides/xtd.core/globalization/internationalization)
   * Format number, dates other types
