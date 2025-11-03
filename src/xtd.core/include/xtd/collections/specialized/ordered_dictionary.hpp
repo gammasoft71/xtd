@@ -60,7 +60,7 @@ namespace xtd {
         /// @{
         ordered_dictionary() noexcept = default;
         ordered_dictionary(const xtd::collections::generic::idictionary<key_t, value_t>& dictionary) {
-          data_->list_items.capaciy(dictionary.count());
+          data_->list_items.capacity(dictionary.count());
           data_->dictionary_items.ensure_capacity(dictionary.count());
           for (const auto& item : dictionary)
             add(item);
@@ -70,7 +70,7 @@ namespace xtd {
             add(item);
         }
         ordered_dictionary(size_t capacity) {
-          data_->list_items.capaciy(capacity);
+          data_->list_items.capacity(capacity);
           data_->dictionary_items.ensure_capacity(capacity);
         }
         template < class input_iterator_t >
@@ -204,9 +204,10 @@ namespace xtd {
         bool remove(const key_t & key) noexcept override {
           if (!contains_key(key)) return false;
           lock_(data_->sync_op) {
-            data_->dictionary_items.remove(key);
             remove_at(get_index(key));
+            data_->dictionary_items.remove(key);
           }
+          ++data_->version;
           return true;
         }
         
@@ -216,6 +217,7 @@ namespace xtd {
             if (!result) return false;
             data_->dictionary_items.remove(item.first);
           }
+          ++data_->version;
           return true;
         }
         
@@ -225,6 +227,7 @@ namespace xtd {
             data_->list_items.remove_at(index);
             data_->dictionary_items.remove(key);
           }
+          ++data_->version;
         }
         
         /// @brief Gets a string that represents the current object.
@@ -266,6 +269,7 @@ namespace xtd {
           clear();
           for (const auto& [key, value] : ilist)
             add(key, value);
+          return self_;
         }
         /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `other`.
         /// @param ilist The initializer list to use as data source.
@@ -275,6 +279,7 @@ namespace xtd {
           clear();
           for (const auto& [key, value] : ilist)
             add(key, value);
+          return self_;
         }
         
         const value_t& operator [](const key_t & key) const override {
