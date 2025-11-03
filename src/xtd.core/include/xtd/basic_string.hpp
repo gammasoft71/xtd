@@ -2198,7 +2198,7 @@ namespace xtd {
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
     template<class collection_t>
-    inline static basic_string join(const basic_string separator, const collection_t& values) noexcept {
+    inline static basic_string join(const basic_string& separator, const collection_t& values) noexcept {
       xtd::size i = 0;
       basic_string result;
       for (const auto& item : values)
