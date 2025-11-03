@@ -1087,6 +1087,9 @@ auto main() -> int {
   content.append_format("| {} |\n", string::join(" | ", columns.keys().select([](auto v) {return string('-', v.length());})));
   auto escape_md = [](const u32string& s) {return s.aggregate<u32string>(U"", [](const u32string& r, const char32& c) {return r + (c == U'|' ? U"\\" : U"") + c;});};
   culture_info::get_cultures(culture_types::all_cultures).to_list().for_each([&](auto c) {content.append_format("| {} |\n", string::join(" | ", columns.values().select<string>([&](auto v) {return escape_md(v(c).to_u32string()).to_string();})));});
+  content.append_line("\n# See also\n");
+  content.append_line("* [Guides](/docs/documentation/guides)");
+  content.append_line("* [Documentation](/docs/documentation)");
   file::write_all_text("number_formats.md", content.to_string());
   console::write_line("Markdown table generated in number_formats.md");
 }
