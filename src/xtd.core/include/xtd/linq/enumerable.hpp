@@ -132,7 +132,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate2.cpp
       template<class accumulate_t, class source_t>
-      inline static accumulate_t aggregate(const ienumerable<source_t>& source, const accumulate_t& seed, const std::function<accumulate_t(const source_t&, const accumulate_t&)>& func) {
+      inline static accumulate_t aggregate(const ienumerable<source_t>& source, const accumulate_t& seed, const std::function<accumulate_t(const accumulate_t&, const source_t&)>& func) {
         auto aggregated = seed;
         for (const auto& item : source)
           aggregated = func(aggregated, item);
@@ -168,7 +168,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate3.cpp
       template<class result_t, class accumulate_t, class source_t>
-      inline static result_t aggregate(const ienumerable<source_t>& source, const accumulate_t& seed, const std::function<accumulate_t(const source_t&, const accumulate_t&)>& func, const std::function<result_t(const accumulate_t&)>& result_selector) {
+      inline static result_t aggregate(const ienumerable<source_t>& source, const accumulate_t& seed, const std::function<accumulate_t(const accumulate_t&, const source_t&)>& func, const std::function<result_t(const accumulate_t&)>& result_selector) {
         auto aggregated = seed;
         for (const auto& item : source)
           aggregated = func(aggregated, item);
