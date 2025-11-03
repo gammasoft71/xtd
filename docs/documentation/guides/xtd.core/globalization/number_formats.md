@@ -1,8 +1,8 @@
 # Number formats supported by xtd
 
-| Name | currency decimal digits | currency decimal separator | currency group separator | currency group sizes | currency negative pattern | currency positive pattern | currency symbol | digit substitution | nan symbol | negative infinity symbol | negative sign | number decimal digits | number decimal separator | number group separator | number group sizes | number negative pattern | percent decimal digits | percent decimal separator | percent group separator | percent group sizes | percent negative pattern | percent positive pattern | percent symbol | per mille symbol | positive infinity symbol | positive sign | 
-| ---- | ----------------------- | -------------------------- | ------------------------ | -------------------- | ------------------------- | ------------------------- | --------------- | ------------------ | ---------- | ------------------------ | ------------- | --------------------- | ------------------------ | ---------------------- | ------------------ | ----------------------- | ---------------------- | ------------------------- | ----------------------- | ------------------- | ------------------------ | ------------------------ | -------------- | ---------------- | ------------------------ | ------------- | 
-| Invariant | 2 | . | , | 3 | 0 | 0 | ¤ | 1 | NaN | -Infinity | - | 2 | . | , | 3 | 1 | 2 | . | , | 3 | 0 | 0 | % | ‰ | Infinity | + |
+| Name | currency decimal digits | currency decimal separator | currency group separator | currency group sizes | currency negative pattern | currency positive pattern | currency symbol | digit substitution | nan symbol | negative infinity symbol | negative sign | number decimal digits | number decimal separator | number group separator | number group sizes | number negative pattern | percent decimal digits | percent decimal separator | percent group separator | percent group sizes | percent negative pattern | percent positive pattern | percent symbol | per mille symbol | positive infinity symbol | positive sign |
+| ---- | ----------------------- | -------------------------- | ------------------------ | -------------------- | ------------------------- | ------------------------- | --------------- | ------------------ | ---------- | ------------------------ | ------------- | --------------------- | ------------------------ | ---------------------- | ------------------ | ----------------------- | ---------------------- | ------------------------- | ----------------------- | ------------------- | ------------------------ | ------------------------ | -------------- | ---------------- | ------------------------ | ------------- |
+| **Invariant** | 2 | . | , | 3 | 0 | 0 | ¤ | 1 | NaN | -Infinity | - | 2 | . | , | 3 | 1 | 2 | . | , | 3 | 0 | 0 | % | ‰ | Infinity | + |
 | af | 2 | , |   | 3 | 1 | 0 | ¤ | 1 | NaN | -∞ | - | 3 | , |   | 3 | 1 | 3 | , |   | 3 | 1 | 1 | % | ‰ | ∞ | + |
 | af-NA | 2 | , |   | 3 | 1 | 0 | $ | 1 | NaN | -∞ | - | 3 | , |   | 3 | 1 | 3 | , |   | 3 | 1 | 1 | % | ‰ | ∞ | + |
 | af-ZA | 2 | , |   | 3 | 1 | 0 | R | 1 | NaN | -∞ | - | 3 | , |   | 3 | 1 | 3 | , |   | 3 | 1 | 1 | % | ‰ | ∞ | + |
@@ -1046,49 +1046,47 @@
 <!--
 #include <xtd/xtd>
 
+using namespace xtd::collections::specialized;
 using namespace xtd::globalization;
 using namespace xtd::text;
 
-auto escape_md(const string& s) {
-  return s.aggregate<string>("", delegate_(const string& result, const char& c) {return result + (c == '|' ? "\\|" : as<string>(c));});
-}
-
 auto main() -> int {
-  auto columns = ordered_dictionary<string, delegate<string(const culture_info&)>> {
-    {"Name", {delegate_(const culture_info& c) {return c.name().empty() ? "Invariant" : c.name();}}},
-    {"currency decimal digits", {delegate_(const culture_info& c) {return as<string>(c.number_format().currency_decimal_digits());}}},
-    {"currency decimal separator", {delegate_(const culture_info& c) {return c.number_format().currency_decimal_separator();}}},
-    {"currency group separator", {delegate_(const culture_info& c) {return c.number_format().currency_group_separator();}}},
-    {"currency group sizes", {delegate_(const culture_info& c) {return string::join(", ", c.number_format().currency_group_sizes());}}},
-    {"currency negative pattern", {delegate_(const culture_info& c) {return as<string>(c.number_format().currency_negative_pattern());}}},
-    {"currency positive pattern", {delegate_(const culture_info& c) {return as<string>(c.number_format().currency_positive_pattern());}}},
-    {"currency symbol", {delegate_(const culture_info& c) {return c.number_format().currency_symbol();}}},
-    {"digit substitution", {delegate_(const culture_info& c) {return as<string>(c.number_format().digit_substitution());}}},
-    {"nan symbol", {delegate_(const culture_info& c) {return c.number_format().nan_symbol();}}},
-    {"negative infinity symbol", {delegate_(const culture_info& c) {return c.number_format().negative_infinity_symbol();}}},
-    {"negative sign", {delegate_(const culture_info& c) {return c.number_format().negative_sign();}}},
-    {"number decimal digits", {delegate_(const culture_info& c) {return as<string>(c.number_format().number_decimal_digits());}}},
-    {"number decimal separator", {delegate_(const culture_info& c) {return c.number_format().number_decimal_separator();}}},
-    {"number group separator", {delegate_(const culture_info& c) {return c.number_format().number_group_separator();}}},
-    {"number group sizes", {delegate_(const culture_info& c) {return string::join(", ", c.number_format().number_group_sizes());}}},
-    {"number negative pattern", {delegate_(const culture_info& c) {return as<string>(c.number_format().number_negative_pattern());}}},
-    {"percent decimal digits", {delegate_(const culture_info& c) {return as<string>(c.number_format().percent_decimal_digits());}}},
-    {"percent decimal separator", {delegate_(const culture_info& c) {return c.number_format().percent_decimal_separator();}}},
-    {"percent group separator", {delegate_(const culture_info& c) {return c.number_format().percent_group_separator();}}},
-    {"percent group sizes", {delegate_(const culture_info& c) {return string::join(", ", c.number_format().percent_group_sizes());}}},
-    {"percent negative pattern", {delegate_(const culture_info& c) {return as<string>(c.number_format().percent_negative_pattern());}}},
-    {"percent positive pattern", {delegate_(const culture_info& c) {return as<string>(c.number_format().percent_positive_pattern());}}},
-    {"percent symbol", {delegate_(const culture_info& c) {return c.number_format().percent_symbol();}}},
-    {"per mille symbol", {delegate_(const culture_info& c) {return c.number_format().per_mille_symbol();}}},
-    {"positive infinity symbol", {delegate_(const culture_info& c) {return c.number_format().positive_infinity_symbol();}}},
-    {"positive sign", {delegate_(const culture_info& c) {return c.number_format().positive_sign();}}}
-  };
+  using ci_action = delegate<string(const culture_info&)>;
+  auto columns = ordered_dictionary<string, ci_action> {};
+  columns["Name"] = ci_action {delegate_(const culture_info& c) {return c.name().empty() ? "**Invariant**" : c.name();}};
+  columns["currency decimal digits"] = ci_action {delegate_(const culture_info& c) {return as<string>(c.number_format().currency_decimal_digits());}};
+  columns["currency decimal separator"] = ci_action {delegate_(const culture_info& c) {return c.number_format().currency_decimal_separator();}};
+  columns["currency group separator"] = ci_action {delegate_(const culture_info& c) {return c.number_format().currency_group_separator();}};
+  columns["currency group sizes"] = ci_action {delegate_(const culture_info& c) {return string::join(", ", c.number_format().currency_group_sizes());}};
+  columns["currency negative pattern"] = ci_action {delegate_(const culture_info& c) {return as<string>(c.number_format().currency_negative_pattern());}};
+  columns["currency positive pattern"] = ci_action {delegate_(const culture_info& c) {return as<string>(c.number_format().currency_positive_pattern());}};
+  columns["currency symbol"] = ci_action {delegate_(const culture_info& c) {return c.number_format().currency_symbol();}};
+  columns["digit substitution"] = ci_action {delegate_(const culture_info& c) {return as<string>(c.number_format().digit_substitution());}};
+  columns["nan symbol"] = ci_action {delegate_(const culture_info& c) {return c.number_format().nan_symbol();}};
+  columns["negative infinity symbol"] = ci_action {delegate_(const culture_info& c) {return c.number_format().negative_infinity_symbol();}};
+  columns["negative sign"] = ci_action {delegate_(const culture_info& c) {return c.number_format().negative_sign();}};
+  columns["number decimal digits"] = ci_action {delegate_(const culture_info& c) {return as<string>(c.number_format().number_decimal_digits());}};
+  columns["number decimal separator"] = ci_action {delegate_(const culture_info& c) {return c.number_format().number_decimal_separator();}};
+  columns["number group separator"] = ci_action {delegate_(const culture_info& c) {return c.number_format().number_group_separator();}};
+  columns["number group sizes"] = ci_action {delegate_(const culture_info& c) {return string::join(", ", c.number_format().number_group_sizes());}};
+  columns["number negative pattern"] = ci_action {delegate_(const culture_info& c) {return as<string>(c.number_format().number_negative_pattern());}};
+  columns["percent decimal digits"] = ci_action {delegate_(const culture_info& c) {return as<string>(c.number_format().percent_decimal_digits());}};
+  columns["percent decimal separator"] = ci_action {delegate_(const culture_info& c) {return c.number_format().percent_decimal_separator();}};
+  columns["percent group separator"] = ci_action {delegate_(const culture_info& c) {return c.number_format().percent_group_separator();}};
+  columns["percent group sizes"] = ci_action {delegate_(const culture_info& c) {return string::join(", ", c.number_format().percent_group_sizes());}};
+  columns["percent negative pattern"] = ci_action {delegate_(const culture_info& c) {return as<string>(c.number_format().percent_negative_pattern());}};
+  columns["percent positive pattern"] = ci_action {delegate_(const culture_info& c) {return as<string>(c.number_format().percent_positive_pattern());}};
+  columns["percent symbol"] = ci_action {delegate_(const culture_info& c) {return c.number_format().percent_symbol();}};
+  columns["per mille symbol"] = ci_action {delegate_(const culture_info& c) {return c.number_format().per_mille_symbol();}};
+  columns["positive infinity symbol"] = ci_action {delegate_(const culture_info& c) {return c.number_format().positive_infinity_symbol();}};
+  columns["positive sign"] = ci_action {delegate_(const culture_info& c) {return c.number_format().positive_sign();}};
 
   auto content = string_builder {};
   content.append_line("# Number formats supported by xtd\n");
   content.append_format("| {} |\n", string::join(" | ", columns.keys()));
   content.append_format("| {} |\n", string::join(" | ", columns.keys().select(delegate_(auto v) {return string('-', v.length());})));
-  culture_info::get_cultures(culture_types::all_cultures).to_list().for_each(delegate_(auto c) {content.append_format("| {} |\n", string::join(" | ", columns.values().select<string>([&](auto v) {return v(c);})));});
+  auto escape_md = delegate_(const string& s) {return s.aggregate<string>("", delegate_(const string& result, const char& c) {return result + (c == '|' ? "\\|" : as<string>(c));});};
+  culture_info::get_cultures(culture_types::all_cultures).to_list().for_each(delegate_(auto c) {content.append_format("| {} |\n", string::join(" | ", columns.values().select<string>(delegate_(auto v) {return escape_md(v(c));})));});
   file::write_all_text("number_formats.md", content.to_string());
   console::write_line("Markdown table generated in number_formats.md");
 }
