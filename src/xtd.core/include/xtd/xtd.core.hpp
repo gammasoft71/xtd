@@ -62,6 +62,7 @@
 #include "collections/generic/helpers/wrap_pointer_iterator.hpp"
 #include "collections/generic/helpers/wrap_pointer_reverse_iterator.hpp"
 #include "collections/object_model/read_only_collection.hpp"
+#include "collections/specialized/ordered_dictionary.hpp"
 #include "collections/specialized/string_collection.hpp"
 #include "collections/specialized/string_dictionary.hpp"
 #include "collections/specialized/string_key_value_pair.hpp"

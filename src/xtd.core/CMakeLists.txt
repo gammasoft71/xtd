@@ -719,6 +719,8 @@ add_sources(
   "include/xtd/collections/generic/helpers/wrap_pointer_reverse_iterator"
   "include/xtd/collections/object_model/read_only_collection.hpp"
   "include/xtd/collections/object_model/read_only_collection"
+  "include/xtd/collections/specialized/ordered_dictionary.hpp"
+  "include/xtd/collections/specialized/ordered_dictionary"
   "include/xtd/collections/specialized/string_collection.hpp"
   "include/xtd/collections/specialized/string_collection"
   "include/xtd/collections/specialized/string_dictionary.hpp"
