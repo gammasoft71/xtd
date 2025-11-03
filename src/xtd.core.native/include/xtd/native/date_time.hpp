@@ -46,7 +46,7 @@ namespace xtd {
           std::uint32_t week {0};
         };
         
-        struct adjustement_rule {
+        struct adjustment_rule {
           std::uint32_t date_start_year;
           std::uint32_t date_start_month;
           std::uint32_t date_start_day;
@@ -70,7 +70,7 @@ namespace xtd {
         std::string display_name;
         std::string standard_name;
         bool supports_daylight_saving_time {false};
-        std::vector<time_zone_info::adjustement_rule> adjustement_rules;
+        std::vector<time_zone_info::adjustment_rule> adjustment_rules;
       };
       
     private:

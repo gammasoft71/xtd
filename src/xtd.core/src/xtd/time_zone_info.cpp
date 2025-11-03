@@ -70,35 +70,35 @@ size time_zone_info::transition_time::get_hash_code() const noexcept {
   return hash_code::combine(day_, day_of_week_, is_fixed_date_rule_, month_, time_of_day_, week_);
 }
 
-const xtd::date_time& time_zone_info::adjustement_rule::date_end() const noexcept {
+const xtd::date_time& time_zone_info::adjustment_rule::date_end() const noexcept {
   return date_end_;
 }
 
-const xtd::date_time& time_zone_info::adjustement_rule::date_start() const noexcept {
+const xtd::date_time& time_zone_info::adjustment_rule::date_start() const noexcept {
   return date_start_;
 }
 
-xtd::time_span time_zone_info::adjustement_rule::daylight_delta() const noexcept {
+xtd::time_span time_zone_info::adjustment_rule::daylight_delta() const noexcept {
   return xtd::time_span {daylight_delta_};
 }
 
-time_zone_info::transition_time time_zone_info::adjustement_rule::daylight_transition_end() const noexcept {
+time_zone_info::transition_time time_zone_info::adjustment_rule::daylight_transition_end() const noexcept {
   return daylight_transition_end_;
 }
 
-time_zone_info::transition_time time_zone_info::adjustement_rule::daylight_transition_start() const noexcept {
+time_zone_info::transition_time time_zone_info::adjustment_rule::daylight_transition_start() const noexcept {
   return daylight_transition_start_;
 }
 
-bool time_zone_info::adjustement_rule::equals(const object& obj) const noexcept {
-  return is<adjustement_rule>(obj) && equals(static_cast<const adjustement_rule&>(obj));
+bool time_zone_info::adjustment_rule::equals(const object& obj) const noexcept {
+  return is<adjustment_rule>(obj) && equals(static_cast<const adjustment_rule&>(obj));
 }
 
-bool time_zone_info::adjustement_rule::equals(const adjustement_rule& ar) const noexcept {
+bool time_zone_info::adjustment_rule::equals(const adjustment_rule& ar) const noexcept {
   return date_end_ == ar.date_end_ && date_start_ == ar.date_start_ && daylight_delta_ == ar.daylight_delta_ && daylight_transition_end_ == ar.daylight_transition_end_ && daylight_transition_start_ == ar.daylight_transition_start_;
 }
 
-size time_zone_info::adjustement_rule::get_hash_code() const noexcept {
+size time_zone_info::adjustment_rule::get_hash_code() const noexcept {
   return hash_code::combine(date_end_, date_start_, daylight_delta_.count(), daylight_transition_end_, daylight_transition_start_);
 }
 
@@ -215,8 +215,8 @@ bool time_zone_info::equals(const time_zone_info& tzi) const noexcept {
   return id_.equals(tzi.id_);
 }
 
-array<time_zone_info::adjustement_rule> time_zone_info::get_adjustement_rules() const noexcept {
-  return adjustement_rules_.to_array();
+array<time_zone_info::adjustment_rule> time_zone_info::get_adjustment_rules() const noexcept {
+  return adjustment_rules_.to_array();
 }
 
 size time_zone_info::get_hash_code() const noexcept {

@@ -181,10 +181,10 @@ namespace xtd {
     
     /// @brief Provides information about a time zone adjustment, such as the transition to and from daylight saving time.
     /// ```cpp
-    /// class adjustement_rule : public xtd::iequatable<adjustement_rule>, public xtd::object
+    /// class adjustment_rule : public xtd::iequatable<adjustment_rule>, public xtd::object
     /// ```
     /// @par Inheritance
-    /// xtd::object → xtd::adjustement_rule
+    /// xtd::object → xtd::adjustment_rule
     /// @par Implements
     /// xtd::iequatable <>
     /// @par Namespace
@@ -195,13 +195,13 @@ namespace xtd {
     /// @remarks The xtd::time_zone_info::adjustment_rule class defines the effective start and end dates of a particular time change to and from daylight saving time, respectively, as well as its delta (the exact amount by which the adjustment causes the time zone's standard time to change). In addition, two properties return xtd::txtd::time_zone_info::transition_time objects that define when each transition to and from standard time occurs.
     /// @note An instance of the xtd::time_zone_info::adjustment_rule class is immutable. Once an object has been created, its values cannot be modified.
     /// @remarks To create a xtd::time_zone_info::adjustment_rule object, call the static xtd::time_zone_info::adjustment_rule::create_adjustment_rule method. You can then supply an array of xtd::time_zone_info::adjustment_rule objects to two of the overloads of the xtd::time_zone_info::create_custom_time_zone method. To retrieve the adjustment rules of a particular time zone, call its xtd::time_zone_info::get_adjustment_rules method, which returns an array of xtd::time_zone_info::adjustment_rule objects.
-    class adjustement_rule : public xtd::iequatable<adjustement_rule>, public xtd::object {
+    class adjustment_rule : public xtd::iequatable<adjustment_rule>, public xtd::object {
     public:
       /// @cond
-      adjustement_rule() = default;
-      adjustement_rule(const adjustement_rule&) = default;
-      adjustement_rule(adjustement_rule&&) = default;
-      adjustement_rule& operator =(const adjustement_rule&) = default;
+      adjustment_rule() = default;
+      adjustment_rule(const adjustment_rule&) = default;
+      adjustment_rule(adjustment_rule&&) = default;
+      adjustment_rule& operator =(const adjustment_rule&) = default;
       /// @endcond
       
       /// @name Public Properties
@@ -209,15 +209,15 @@ namespace xtd {
       /// @{
       /// @brief Gets the date when the adjustment rule ceases to be in effect.
       /// @return A xtd::date_time value that indicates the end date of the adjustment rule.
-      /// @remarks The value of the xtd::time_zone_info::adjustement_rule::date_end property is a date value without a time component.
-      /// @remarks Because the end date of the current adjustment rule is typically not known, you can assign @verbatim date_time::max_value().date() @endverbatim to the xtd::time_zone_info::adjustement_rule::date_end property when you create a custom adjustment rule.
+      /// @remarks The value of the xtd::time_zone_info::adjustment_rule::date_end property is a date value without a time component.
+      /// @remarks Because the end date of the current adjustment rule is typically not known, you can assign @verbatim date_time::max_value().date() @endverbatim to the xtd::time_zone_info::adjustment_rule::date_end property when you create a custom adjustment rule.
       /// @warning Unless there is a compelling reason to do otherwise, you should define the adjustment rule's end date to occur within the time interval during which the time zone observes standard time. Unless there is a compelling reason to do so, you should not define the adjustment rule's end date to occur within the time interval during which the time zone observes daylight saving time. For example, if a time zone's transition from daylight saving time occurs on the third Sunday of March and its transition to daylight saving time occurs on the first Sunday of October, the effective end date of the adjustment rule should not be December 31 of a particular year, since that date occurs within the period of daylight saving time.
       const xtd::date_time& date_end() const noexcept;
       
       /// @brief Gets the date when the adjustment rule takes effect.
       /// @return A xtd::date_time value that indicates when the adjustment rule takes effect.
-      /// @remarks The value of the xtd::time_zone_info::adjustement_rule::date_start property is a date value without a time component. It defines the date on which a particular adjustment rule goes into effect. This is the date in which a set of transitions (which typically are defined by one transition to daylight savings time and one transition back to standard time) go into effect. For example, an adjustment rule might go into effect on January 1, 2017, that provides for a transition to daylight savings time on the second Sunday of March and for a transition back to standard time on the first Sunday of November. Note that the starting date of the adjustment rule is not tied to the date of the first transition.
-      /// @remarks You can assign @verbatim date_time::min_value().date() @endverbatim to the xtd::time_zone_info::adjustement_rule::date_end property when you create a custom adjustment rule for use in a time zone-aware application that does not have to work with historic time zone information.
+      /// @remarks The value of the xtd::time_zone_info::adjustment_rule::date_start property is a date value without a time component. It defines the date on which a particular adjustment rule goes into effect. This is the date in which a set of transitions (which typically are defined by one transition to daylight savings time and one transition back to standard time) go into effect. For example, an adjustment rule might go into effect on January 1, 2017, that provides for a transition to daylight savings time on the second Sunday of March and for a transition back to standard time on the first Sunday of November. Note that the starting date of the adjustment rule is not tied to the date of the first transition.
+      /// @remarks You can assign @verbatim date_time::min_value().date() @endverbatim to the xtd::time_zone_info::adjustment_rule::date_end property when you create a custom adjustment rule for use in a time zone-aware application that does not have to work with historic time zone information.
       /// @warning Unless there is a compelling reason to do otherwise, you should define the adjustment rule's start date to occur within the time interval during which the time zone observes standard time. Unless there is a compelling reason to do so, you should not define the adjustment rule's start date to occur within the time interval during which the time zone observes daylight saving time. For example, if a time zone's transition from daylight saving time occurs on the third Sunday of March and its transition to daylight saving time occurs on the first Sunday of October, the effective start date of the adjustment rule should not be January 1 of a particular year, since that date occurs within the period of daylight saving time.
       const xtd::date_time& date_start() const noexcept;
       
@@ -227,9 +227,9 @@ namespace xtd {
       /// ```cpp
       /// time_tone_time = base_utc_offset + daylight_delta + utc_time
       /// ```
-      /// @remarks The value of the xtd::time_zone_info::adjustement_rule::daylight_delta property can range from 14 hours to -14 hours.
-      /// @note The xtd::time_zone_info::adjustement_rule::daylight_delta property measures the difference between the time zone's standard time and its daylight saving time. It does not apply to changes in a time zone's standard offset from Coordinated Universal Time (UTC). To represent a time zone that has changed its standard time offset from UTC, you must call the CreateCustomTimeZone method to create a new time zone.
-      /// @remarks The most common value of the xtd::time_zone_info::adjustement_rule::daylight_delta property is 1.0 hours. The application of the daylight saving time adjustment rule increases the time zone's offset from Coordinated Universal Time (UTC) by one hour.
+      /// @remarks The value of the xtd::time_zone_info::adjustment_rule::daylight_delta property can range from 14 hours to -14 hours.
+      /// @note The xtd::time_zone_info::adjustment_rule::daylight_delta property measures the difference between the time zone's standard time and its daylight saving time. It does not apply to changes in a time zone's standard offset from Coordinated Universal Time (UTC). To represent a time zone that has changed its standard time offset from UTC, you must call the CreateCustomTimeZone method to create a new time zone.
+      /// @remarks The most common value of the xtd::time_zone_info::adjustment_rule::daylight_delta property is 1.0 hours. The application of the daylight saving time adjustment rule increases the time zone's offset from Coordinated Universal Time (UTC) by one hour.
       xtd::time_span daylight_delta() const noexcept;
       
       /// @brief Gets information about the annual transition from daylight saving time back to standard time.
@@ -253,7 +253,7 @@ namespace xtd {
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param ar The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const adjustement_rule& ar) const noexcept override;
+      bool equals(const adjustment_rule& ar) const noexcept override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
@@ -356,7 +356,7 @@ namespace xtd {
     
     /// @brief Retrieves an array of xtd::time_zone_info::adjustment_rule objects that apply to the current xtd::time_zone_info object.
     /// @return An array of objects for this time zone.
-    array<adjustement_rule> get_adjustement_rules() const noexcept;
+    array<adjustment_rule> get_adjustment_rules() const noexcept;
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
@@ -441,6 +441,6 @@ namespace xtd {
     string display_name_;
     string standard_name_;
     bool supports_daylight_saving_time_ = false;
-    xtd::collections::generic::list<adjustement_rule> adjustement_rules_;
+    xtd::collections::generic::list<adjustment_rule> adjustment_rules_;
   };
 }
