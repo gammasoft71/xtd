@@ -493,7 +493,7 @@ private:
               iterator_ = items_.items().cend();
             }
             
-protected:
+          protected:
             bool reset_ = true;
             const dictionary& items_;
             typename dictionary::base_type::const_iterator iterator_ = items_.items().cend();
