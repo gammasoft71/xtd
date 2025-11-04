@@ -65,7 +65,7 @@ namespace xtd {
           for (const auto& item : dictionary)
             add(item);
         }
-        ordered_dictionary(const xtd::collections::generic::ienumerable < value_type > & collection) {
+        ordered_dictionary(const xtd::collections::generic::ienumerable < value_type >& collection) {
           for (const auto& item : collection)
             add(item);
         }
@@ -351,7 +351,7 @@ namespace xtd {
       // C++17 deduction guides for xtd::collections::specialized::ordered_dictionary
       // {
       template < class key_t, class value_t >
-      ordered_dictionary(xtd::collections::generic::idictionary<key_t, value_t >) -> ordered_dictionary<key_t, value_t, xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>;
+      ordered_dictionary(xtd::collections::generic::idictionary<key_t, value_t >) -> ordered_dictionary<key_t, value_t, xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t >>>;
       
       template < class key_t, class value_t >
       ordered_dictionary(xtd::collections::generic::ienumerable<key_value_pair<key_t, value_t>>) -> ordered_dictionary<key_t, value_t, xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t >>>;
