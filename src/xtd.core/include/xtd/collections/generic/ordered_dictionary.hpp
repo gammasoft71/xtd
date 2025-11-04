@@ -46,9 +46,9 @@ namespace xtd {
         /// @brief Represents the dictionary base value type.
         using base_value_type = xtd::collections::generic::key_value_pair<key_type, mapped_type>;
         /// @brief Represents the dictionary base type.
-        using base_type = xtd::collections::generic::list<xtd::collections::generic::key_value_pair<key_type, mapped_type>>;
+        using base_type = xtd::collections::generic::dictionary<key_type, mapped_type>;
         /// @brief Represents the dictionary base type.
-        using dictionary_type = xtd::collections::generic::dictionary<key_type, mapped_type*>;
+        using list_type = xtd::collections::generic::list<key_type>;
         /// @brief Represents the idictionary key collection type.
         using key_collection = typename xtd::collections::generic::idictionary<key_type, mapped_type>::key_collection;
         /// @brief Represents the idictionary value collection type.
@@ -60,40 +60,34 @@ namespace xtd {
         /// @{
         ordered_dictionary() noexcept = default;
         ordered_dictionary(const xtd::collections::generic::idictionary<key_t, value_t>& dictionary) {
-          data_->list_items.capacity(dictionary.count());
-          data_->dictionary_items.ensure_capacity(dictionary.count());
+          data_->items = dictionary;
+          data_->keys.capacity(dictionary.count());
           for (const auto& item : dictionary)
-            add(item);
+            data_->keys.add(item.first);
         }
         ordered_dictionary(const xtd::collections::generic::ienumerable < value_type >& collection) {
           for (const auto& item : collection)
             add(item);
         }
         ordered_dictionary(size_t capacity) {
-          data_->list_items.capacity(capacity);
-          data_->dictionary_items.ensure_capacity(capacity);
+          data_->keys.capacity(capacity);
+          data_->items.ensure_capacity(capacity);
         }
         template < class input_iterator_t >
         explicit ordered_dictionary(input_iterator_t first, input_iterator_t last) {
-          for (auto iterator = first; iterator != last; ++iterator) {
-            const auto& [key, value] = *iterator;
-            add(key, value);
-          }
+          for (auto iterator = first; iterator != last; ++iterator)
+            add(*iterator);
         }
-        ordered_dictionary(const ordered_dictionary & other) noexcept : data_(xtd::new_ptr<dictionary_data>(other.data_->list_items, other.data_->version)) {}
+        ordered_dictionary(const ordered_dictionary & other) noexcept : data_(xtd::new_ptr<dictionary_data>(other.data_->items, other.data_->version)) {}
         ordered_dictionary(ordered_dictionary&& other) noexcept = default;
         ordered_dictionary(std::initializer_list<base_value_type> init) {
-          for (const auto& [key, value] : init) {
-            if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-            self_[key] = value;
-          }
+          for (const auto& [key, value] : init)
+            add(key, value);
         }
         template < class init_key_t, class init_value_t >
         explicit ordered_dictionary(std::initializer_list<key_value_pair<init_key_t, init_value_t>> init) {
-          for (const auto& [key, value] : init) {
-            if (contains_key(key)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+          for (const auto& [key, value] : init)
             add(key, value);
-          }
         }
         /// @}
         
@@ -105,26 +99,26 @@ namespace xtd {
         /// @remarks The capacity of a xtd::collections::generic::dictionary <key_t, value_t> is the number of elements that the xtd::collections::generic::dictionary <key_t, value_t> can store. The xtd::collections::generic::dictionary::count property is the number of elements that are actually in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @remarks The capacity is always greater than or equal to xtd::collections::generic::dictionary::count. If xtd::collections::generic::dictionary::count exceeds the capacity while adding elements, the capacity is increased by automatically reallocating the internal array before copying the old elements and adding the new elements.
         /// @remarks Getting the value of this property is an O(1) operation.
-        size_type count() const noexcept override {return data_->list_items.count();}
+        size_type count() const noexcept override {return data_->items.count();}
         
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
-        virtual const base_type & items() const noexcept {return data_->list_items;}
+        virtual const base_type & items() const noexcept {return data_->items;}
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
-        virtual base_type & items() noexcept {return data_->list_items;}
+        virtual base_type & items() noexcept {return data_->items;}
         
         key_collection keys() const noexcept override {
           auto keys = key_collection {};
-          for (const auto& [key, value] : data_->list_items)
+          for (const auto& key : data_->keys)
             keys.add(key);
           return keys;
         }
         
         value_collection values() const noexcept override {
           auto values = value_collection {};
-          for (const auto& [key, value] : data_->list_items)
-            values.add(value);
+          for (const auto& key : data_->keys)
+            values.add(data_->items[key]);
           return values;
         }
         /// @}
@@ -147,8 +141,8 @@ namespace xtd {
         /// @remarks The xtd::collections::generic::dictionary::count property is set to 0, and references to other objects from elements of the collection are also released. The capacity remains unchanged.
         void clear() noexcept override {
           lock_(data_->sync_op) {
-            data_->list_items.clear();
-            data_->dictionary_items.clear();
+            data_->keys.clear();
+            data_->items.clear();
           }
           ++data_->version;
         }
@@ -157,7 +151,7 @@ namespace xtd {
         /// @param item The object to be added to the end of the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @return `true` if the xtd::collections::generic::dictionary <key_t, value_t> contains an element with the specified `item` ; otherwise, `false`.
         bool contains(const value_type & item) const noexcept override {
-          return data_->list_items.contains(item);
+          return data_->items.contains(item);
         }
         
         /// @brief Determines whether the xtd::collections::generic::dictionary <key_t, value_t> contains the specified key.
@@ -165,13 +159,11 @@ namespace xtd {
         /// @return `true` if the xtd::collections::generic::dictionary <key_t, value_t> contains an element with the specified `key` ; otherwise, `false`.
         /// @remarks This method approaches an O(1) operation.
         bool contains_key(const key_t & key) const noexcept override {
-          return data_->dictionary_items.contains_key(key);
+          return data_->items.contains_key(key);
         }
         
         bool contains_value(const value_t& value) const noexcept {
-          for (const auto& [item_key, item_value] : self_)
-            if (item_value == value) return true;
-          return false;
+          return data_->items.contains_value(value);
         }
         
         /// @brief Copies the elements of the xtd::collections::generic::icollection <type_t> to an xtd::array, starting at a particular xtd::array index.
@@ -186,7 +178,7 @@ namespace xtd {
         }
         
         xtd::collections::generic::enumerator<value_type> get_enumerator() const noexcept override {
-          return data_->list_items.get_enumerator();
+          return {new_ptr<__enumerator__>(self_, data_->version)};
         }
         
         void insert(xtd::size index, const key_t & key) {
@@ -196,8 +188,8 @@ namespace xtd {
         void insert(xtd::size index, const key_t & key, const value_t& value) {
           if (contains_key(key)) return xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           lock_(data_->sync_op) {
-            data_->list_items.insert(index, {key, value});
-            data_->dictionary_items.add(key, &data_->list_items[index].second);
+            data_->items.add(key, value);
+            data_->keys.insert(index, key);
           }
           ++data_->version;
         }
@@ -206,7 +198,6 @@ namespace xtd {
           if (!contains_key(key)) return false;
           lock_(data_->sync_op) {
             remove_at(get_index(key));
-            data_->dictionary_items.remove(key);
           }
           ++data_->version;
           return true;
@@ -214,19 +205,18 @@ namespace xtd {
         
         bool remove(const value_type & item) noexcept override {
           lock_(data_->sync_op) {
-            auto result = data_->list_items.remove(item);
+            auto result = data_->items.remove(item.first);
             if (!result) return false;
-            data_->dictionary_items.remove(item.first);
+            data_->keys.remove_at(get_index(item.first));
           }
           ++data_->version;
           return true;
         }
         
         void remove_at(xtd::size index) {
-          const auto& key = data_->list_items[index].first;
           lock_(data_->sync_op) {
-            data_->list_items.remove_at(index);
-            data_->dictionary_items.remove(key);
+            data_->items.remove(data_->keys[index]);
+            data_->keys.remove_at(index);
           }
           ++data_->version;
         }
@@ -240,10 +230,7 @@ namespace xtd {
         /// @param value When this method returns, contains the value associated with the specified key, if the key is found; otherwise, the default value for the type of the value parameter.
         /// @return `true` if the xtd::collections::generic::dictionary <key_t, value_t> contains an element with the specified key; otherwise, `false`.
         bool try_get_value(const key_t & key, value_t& value) const override {
-          auto ptr = &value;
-          auto result = data_->dictionary_items.try_get_value(key, ptr);
-          if (result) value = *ptr;
-          return result;
+          return data_->items.try_get_value(key, value);
         }
         /// @}
         
@@ -253,16 +240,14 @@ namespace xtd {
         /// @brief Move assignment operator. Replaces the contents with a copy of the contents of `other`.
         /// @param other Another container to use as data source.
         /// @return This current instance.
-        ordered_dictionary& operator =(ordered_dictionary&& other) noexcept {
-          data_->list_items = std::move(other.data_->list_items);
-          data_->dictionary_items = std::move(other.data_->dictionary_items);
-          data_->version = std::move(other.data_->version);
-          return self_;
-        }
+        ordered_dictionary& operator =(ordered_dictionary&& other) noexcept = default;
         /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `other`.
         /// @param other Another container to use as data source.
         /// @return This current instance.
-        ordered_dictionary& operator =(const ordered_dictionary & other) noexcept = default;
+        ordered_dictionary& operator =(const ordered_dictionary & other) noexcept {
+          *data_ = *other.data_;
+          return self_;
+        }
         /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `other`.
         /// @param ilist The initializer list to use as data source.
         /// @return This current instance.
@@ -284,37 +269,30 @@ namespace xtd {
         }
         
         const value_t& operator [](const key_t & key) const override {
-          return *data_->dictionary_items[key];
+          return data_->items[key];
         }
         
         value_t& operator [](const key_t & key) override {
-          if (!data_->dictionary_items.contains_key(key))
-            add(key, value_t {});
-          return *data_->dictionary_items[key];
+          auto iterator = data_->items.items().find(key);
+          if (iterator != data_->items.items().end())
+            return iterator->second;
+          data_->keys.add(key);
+          return data_->items[key];
         }
         
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
-        operator const base_type &() const noexcept {return data_->list_items;}
+        operator const base_type &() const noexcept {return data_->items;}
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
-        operator base_type &() noexcept {return data_->list_items;}
+        operator base_type &() noexcept {return data_->items;}
         /// @}
         
       private:
         xtd::size get_index(const key_t & key) const noexcept {
           auto index = xtd::size {0};
-          for (const auto& [item_key, item_value] : self_) {
+          for (const auto& item_key : data_->keys) {
             if (item_key == key) return index;
-            ++index;
-          }
-          return xtd::npos;
-        }
-        
-        xtd::size get_index(const value_type & value) const noexcept {
-          auto index = xtd::size {0};
-          for (const auto& item : self_) {
-            if (item == value) return index;
             ++index;
           }
           return xtd::npos;
@@ -324,23 +302,52 @@ namespace xtd {
         bool is_synchronized() const noexcept override {return false;}
         const xtd::object & sync_root() const noexcept override {return data_->sync_root;}
         
-        struct dictionary_data {
-          dictionary_data() noexcept = default;
-          dictionary_data(const base_type & items, size_type version) noexcept : list_items {size_type {}}, version {version} {
-            for (const auto& item : items) {
-              this->list_items.add(item);
-              this->dictionary_items.add(this->list_items[this->list_items.count() - 1].first, &this->list_items[this->list_items.count() - 1].second);
+        struct __enumerator__ : public ienumerator<value_type> {
+        public:
+          explicit __enumerator__(const ordered_dictionary& items, xtd::size version) : items_(items), version_(version) {}
+          
+          const value_type& current() const override {
+            if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
+            if (index_ < items_.count()) {
+              auto key = items_.data_->keys[index_];
+              auto value = items_.data_->items[key];
+              value_ = {key, value};
+              return value_;
             }
-          }
-          dictionary_data(base_type&& items, size_type version) noexcept : list_items {size_type {}}, version {version} {
-            for (auto&& item : items) {
-              this->list_items.add(item);
-              this->dictionary_items.add(this->list_items[this->list_items.count() - 1].first, &this->list_items[this->list_items.count() - 1].second);
-            }
+            return default_value_;
           }
           
-          base_type list_items;
-          dictionary_type dictionary_items;
+          bool move_next() override {
+            if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
+            return ++index_ < items_.data_->keys.count();
+          }
+          
+          void reset() override {
+            version_ = items_.data_->version;
+            index_ = xtd::npos;
+          }
+          
+        protected:
+          const ordered_dictionary& items_;
+          xtd::size index_ = xtd::npos;
+          xtd::size version_ = 0;
+          mutable value_type value_;
+          value_type default_value_;
+        };
+
+        struct dictionary_data {
+          dictionary_data() noexcept = default;
+          dictionary_data(const base_type & items, size_type version) noexcept : items {items}, version {version} {
+            for (const auto& item : this->items)
+              keys.add(item.first);
+          }
+          dictionary_data(base_type&& items, size_type version) noexcept : items {items}, version {version} {
+            for (const auto& item : this->items)
+              keys.add(item.first);
+          }
+          
+          list_type keys;
+          base_type items;
           size_type version = 0;
           xtd::object sync_root;
           xtd::object sync_op;
