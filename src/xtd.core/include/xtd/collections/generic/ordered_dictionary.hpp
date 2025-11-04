@@ -2,18 +2,18 @@
 /// @brief Contains xtd::collections::specialized::ordered_dictionary <key_t, value_t> class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include "../generic/dictionary.hpp"
-#include "../generic/list.hpp"
-#include "../generic/key_not_found_exception.hpp"
-#include "../generic/helpers/iterator.hpp"
+#include "dictionary.hpp"
+#include "list.hpp"
+#include "key_not_found_exception.hpp"
+#include "helpers/iterator.hpp"
 #include "../../threading/lock.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::collections namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries.
   namespace collections {
-    /// @brief The xtd::collections::specialized namespace contains specialized and strongly-typed collections; for example, a linked list dictionary, a bit vector, and collections that contain only strings.
-    namespace specialized {
+    /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
+    namespace generic {
       /// @brief Represents a collection of key/value pairs that are accessible by the key or index.
       /// @par Definition
       /// ```cpp
