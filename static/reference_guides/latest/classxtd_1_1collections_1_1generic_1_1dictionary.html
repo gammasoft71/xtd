@@ -128,9 +128,9 @@ class xtd::collections::generic::dictionary&lt; key_t, value_t, hasher_t, equato
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example creates an empty <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; of strings with string keys and uses the Add method to add some elements. The example demonstrates that the <a class="el" href="#a8e4b572d70b69d4b688a2835a3258522" title="Adds an element with the provided key and value to the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::add</a> method throws an <a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a> when attempting to add a duplicate key.</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example creates an empty <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; of strings with string keys and uses the Add method to add some elements. The example demonstrates that the <a class="el" href="#ace9a2200f3aa31e64bde849e25c6eee9" title="Adds an element with the provided key and value to the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::add</a> method throws an <a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a> when attempting to add a duplicate key.</dd></dl>
 <p>The example uses the xtd::collections::generic::dictionary::operator [] to retrieve values, demonstrating that a <a class="el" href="classxtd_1_1collections_1_1generic_1_1key__not__found__exception.html" title="The exception that is thrown when the key specified for accessing an element in a collection does not...">xtd::collections::generic::key_not_found_exception</a> is thrown when a requested key is not present, and showing that the value associated with a key can be replaced.</p>
-<p>The example shows how to use the xtd::collections::generic::dictionary::try_get_vValue method as a more efficient way to retrieve values if a program often must try key values that are not in the dictionary, and it shows how to use the <a class="el" href="#acf27b6ece343e1dd7450de296277f892" title="Determines whether the xtd::collections::generic::dictionary &lt;key_t, value_t&gt; contains the specified ...">xtd::collections::generic::dictionary::contains_key</a> method to test whether a key exists before calling the <a class="el" href="#a8e4b572d70b69d4b688a2835a3258522" title="Adds an element with the provided key and value to the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::add</a> method.</p>
+<p>The example shows how to use the xtd::collections::generic::dictionary::try_get_vValue method as a more efficient way to retrieve values if a program often must try key values that are not in the dictionary, and it shows how to use the <a class="el" href="#acf27b6ece343e1dd7450de296277f892" title="Determines whether the xtd::collections::generic::dictionary &lt;key_t, value_t&gt; contains the specified ...">xtd::collections::generic::dictionary::contains_key</a> method to test whether a key exists before calling the <a class="el" href="#ace9a2200f3aa31e64bde849e25c6eee9" title="Adds an element with the provided key and value to the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::add</a> method.</p>
 <p>The example shows how to enumerate the keys and values in the dictionary and how to enumerate the keys and values alone using the <a class="el" href="#ac2a9b4d312798abd41548c6c97ee3312" title="Gets a collection containing the keys in the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::keys</a> property and the <a class="el" href="#aa5519d6518ce9849e89b90fd573839f2" title="Gets a collection containing the values in the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::values</a> property.</p>
 <p>Finally, the example demonstrates the <a class="el" href="#a73cb9a204619fd297fb77f09b86b4b29" title="Removes the value with the specified key from the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::remove</a> method. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
@@ -392,9 +392,9 @@ Classes</h2></td></tr>
 <tr class="separator:aa5519d6518ce9849e89b90fd573839f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a8e4b572d70b69d4b688a2835a3258522" id="r_a8e4b572d70b69d4b688a2835a3258522"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e4b572d70b69d4b688a2835a3258522">add</a> (const key_t &amp;key, const value_t value) override</td></tr>
-<tr class="memdesc:a8e4b572d70b69d4b688a2835a3258522"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an element with the provided key and value to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
-<tr class="separator:a8e4b572d70b69d4b688a2835a3258522"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace9a2200f3aa31e64bde849e25c6eee9" id="r_ace9a2200f3aa31e64bde849e25c6eee9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace9a2200f3aa31e64bde849e25c6eee9">add</a> (const key_t &amp;key, const value_t &amp;value) override</td></tr>
+<tr class="memdesc:ace9a2200f3aa31e64bde849e25c6eee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an element with the provided key and value to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
+<tr class="separator:ace9a2200f3aa31e64bde849e25c6eee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22f323cd7289784e6380117b8bfadf8b" id="r_a22f323cd7289784e6380117b8bfadf8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22f323cd7289784e6380117b8bfadf8b">add</a> (const <a class="el" href="#ae2299afc830434c0a0ea06da8c6ce163">value_type</a> &amp;item) override</td></tr>
 <tr class="memdesc:a22f323cd7289784e6380117b8bfadf8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an item to the xtd::collections::generic::icollection &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:a22f323cd7289784e6380117b8bfadf8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -704,7 +704,7 @@ template&lt;class key_t, class value_t, class hasher_t = helpers::hasher&lt;key_
 <dl class="section remark"><dt>Remarks</dt><dd>Constructs empty container. Sets xtd::collections::generic::dictionary::max_load_factor() to 1.0. For the default constructor, the number of buckets is implementation-defined. </dd>
 <dd>
 This constructor is an O(1) operation. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example creates an empty <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; of strings with string keys and uses the Add method to add some elements. The example demonstrates that the <a class="el" href="#a8e4b572d70b69d4b688a2835a3258522" title="Adds an element with the provided key and value to the xtd::collections::generic::dictionary &lt;key_t,...">dictionary::add</a> method throws an <a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a> when attempting to add a duplicate key.</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example creates an empty <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; of strings with string keys and uses the Add method to add some elements. The example demonstrates that the <a class="el" href="#ace9a2200f3aa31e64bde849e25c6eee9" title="Adds an element with the provided key and value to the xtd::collections::generic::dictionary &lt;key_t,...">dictionary::add</a> method throws an <a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a> when attempting to add a duplicate key.</dd></dl>
 <p>This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class. </p><div class="fragment"><div class="line"><span class="comment">// Create a new dictionary of strings, with string keys.</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="keyword">auto</span> open_with = <a class="code hl_function" href="#a50b15016f1b91a266a8beec12ab89584">dictionary&lt;string, string&gt;</a> {};</div>
@@ -1617,8 +1617,8 @@ Getting the value of this property is an O(1) operation. </dd></dl>
 
 </div>
 </div>
-<a id="a8e4b572d70b69d4b688a2835a3258522" name="a8e4b572d70b69d4b688a2835a3258522"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e4b572d70b69d4b688a2835a3258522">&#9670;&#160;</a></span>add() <span class="overload">[1/2]</span></h2>
+<a id="ace9a2200f3aa31e64bde849e25c6eee9" name="ace9a2200f3aa31e64bde849e25c6eee9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace9a2200f3aa31e64bde849e25c6eee9">&#9670;&#160;</a></span>add() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1636,7 +1636,7 @@ template&lt;class key_t, class value_t, class hasher_t = helpers::hasher&lt;key_
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const value_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+          <td class="paramtype">const value_t &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1661,9 +1661,9 @@ template&lt;class key_t, class value_t, class hasher_t = helpers::hasher&lt;key_
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>You can also use the <code>operator []</code> to add new elements by setting the value of a key that does not exist in the dictionary; for example, <code>my_collection["my_nonexistent_key"] = my_value</code>. However, if the specified key already exists in the dictionary, setting the <code>operator []</code> overwrites the old value. In contrast, the <a class="el" href="#a8e4b572d70b69d4b688a2835a3258522" title="Adds an element with the provided key and value to the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::add</a> method does not modify existing elements. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>You can also use the <code>operator []</code> to add new elements by setting the value of a key that does not exist in the dictionary; for example, <code>my_collection["my_nonexistent_key"] = my_value</code>. However, if the specified key already exists in the dictionary, setting the <code>operator []</code> overwrites the old value. In contrast, the <a class="el" href="#ace9a2200f3aa31e64bde849e25c6eee9" title="Adds an element with the provided key and value to the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::add</a> method does not modify existing elements. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#ae5306bbad7df56d8b4ce4089b78befdc">xtd::collections::generic::idictionary&lt; key_t, value_t &gt;</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#afbe4cf9e4466426c4ced32dc30777f79">xtd::collections::generic::idictionary&lt; key_t, value_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -2221,7 +2221,7 @@ template&lt;class key_t, class value_t, class hasher_t = helpers::hasher&lt;key_
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the key/value pair was added to the dictionary successfully; otherwise, <code>false</code>. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Unlike the <a class="el" href="#a8e4b572d70b69d4b688a2835a3258522" title="Adds an element with the provided key and value to the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::add</a> method, this method doesn't throw an exception if the element with the given key exists in the dictionary. Unlike the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> indexer (operator []), <a class="el" href="#a5609a2b1e1555fe690d1b86368f36a64" title="Attempts to add the specified key and value to the dictionary.">xtd::collections::generic::dictionary::try_add</a> doesn't override the element if the element with the given key exists in the dictionary. If the key already exists, <a class="el" href="#a5609a2b1e1555fe690d1b86368f36a64" title="Attempts to add the specified key and value to the dictionary.">xtd::collections::generic::dictionary::try_add</a> does nothing and returns <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike the <a class="el" href="#ace9a2200f3aa31e64bde849e25c6eee9" title="Adds an element with the provided key and value to the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::add</a> method, this method doesn't throw an exception if the element with the given key exists in the dictionary. Unlike the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> indexer (operator []), <a class="el" href="#a5609a2b1e1555fe690d1b86368f36a64" title="Attempts to add the specified key and value to the dictionary.">xtd::collections::generic::dictionary::try_add</a> doesn't override the element if the element with the given key exists in the dictionary. If the key already exists, <a class="el" href="#a5609a2b1e1555fe690d1b86368f36a64" title="Attempts to add the specified key and value to the dictionary.">xtd::collections::generic::dictionary::try_add</a> does nothing and returns <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -2528,7 +2528,7 @@ template&lt;class key_t, class value_t, class hasher_t = helpers::hasher&lt;key_
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This property provides the ability to access a specific element in the collection by using the following syntax: <code>my_collection[key]</code>. </dd>
 <dd>
-You can also use the <code>operator []</code> to add new elements by setting the value of a key that does not exist in the dictionary; for example, <code>my_collection["my_nonexistent_key"] = my_value</code>. However, if the specified key already exists in the dictionary, setting the <code>operator []</code> overwrites the old value. In contrast, the <a class="el" href="#a8e4b572d70b69d4b688a2835a3258522" title="Adds an element with the provided key and value to the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::add</a> method does not modify existing elements. </dd></dl>
+You can also use the <code>operator []</code> to add new elements by setting the value of a key that does not exist in the dictionary; for example, <code>my_collection["my_nonexistent_key"] = my_value</code>. However, if the specified key already exists in the dictionary, setting the <code>operator []</code> overwrites the old value. In contrast, the <a class="el" href="#ace9a2200f3aa31e64bde849e25c6eee9" title="Adds an element with the provided key and value to the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::add</a> method does not modify existing elements. </dd></dl>
 
 </div>
 </div>
@@ -2573,7 +2573,7 @@ template&lt;class key_t, class value_t, class hasher_t = helpers::hasher&lt;key_
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This property provides the ability to access a specific element in the collection by using the following syntax: <code>my_collection[key]</code>. </dd>
 <dd>
-You can also use the <code>operator []</code> to add new elements by setting the value of a key that does not exist in the dictionary; for example, <code>my_collection["my_nonexistent_key"] = my_value</code>. However, if the specified key already exists in the dictionary, setting the <code>operator []</code> overwrites the old value. In contrast, the <a class="el" href="#a8e4b572d70b69d4b688a2835a3258522" title="Adds an element with the provided key and value to the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::add</a> method does not modify existing elements. </dd></dl>
+You can also use the <code>operator []</code> to add new elements by setting the value of a key that does not exist in the dictionary; for example, <code>my_collection["my_nonexistent_key"] = my_value</code>. However, if the specified key already exists in the dictionary, setting the <code>operator []</code> overwrites the old value. In contrast, the <a class="el" href="#ace9a2200f3aa31e64bde849e25c6eee9" title="Adds an element with the provided key and value to the xtd::collections::generic::dictionary &lt;key_t,...">xtd::collections::generic::dictionary::add</a> method does not modify existing elements. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a1428322c2f912bd597f667bd1aec0bdc">xtd::collections::generic::idictionary&lt; key_t, value_t &gt;</a>.</p>
 
@@ -2646,7 +2646,7 @@ template&lt;class key_t, class value_t, class hasher_t = helpers::hasher&lt;key_
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 4 2025 10:02:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Nov 4 2025 22:21:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -10,7 +10,7 @@ var searchData=
   ['orange_5fcolors_7',['orange_colors',['../classxtd_1_1drawing_1_1orange__colors.html',1,'xtd::drawing']]],
   ['order_5fby_5fdescending_5fview_8',['order_by_descending_view',['../classxtd_1_1ranges_1_1views_1_1order__by__descending__view.html',1,'xtd::ranges::views']]],
   ['order_5fby_5fview_9',['order_by_view',['../classxtd_1_1ranges_1_1views_1_1order__by__view.html',1,'xtd::ranges::views']]],
-  ['ordered_5fdictionary_10',['ordered_dictionary',['../classxtd_1_1collections_1_1specialized_1_1ordered__dictionary.html',1,'xtd::collections::specialized']]],
+  ['ordered_5fdictionary_10',['ordered_dictionary',['../classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html',1,'xtd::collections::generic']]],
   ['ostream_5fevent_5flistener_11',['ostream_event_listener',['../classxtd_1_1tunit_1_1ostream__event__listener.html',1,'xtd::tunit']]],
   ['ostream_5ftrace_5flistener_12',['ostream_trace_listener',['../classxtd_1_1diagnostics_1_1ostream__trace__listener.html',1,'xtd::diagnostics']]],
   ['ostream_5funit_5ftest_13',['ostream_unit_test',['../classxtd_1_1tunit_1_1ostream__unit__test.html',1,'xtd::tunit']]],
