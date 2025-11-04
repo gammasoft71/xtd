@@ -397,7 +397,7 @@ private:
         /// @exception xtd::argument_exception An element with the same key already exists in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @exception xtd::not_supported_exception The xtd::collections::generic::dictionary <key_t, value_t> is read-only.
         /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `operator []` overwrites the old value. In contrast, the xtd::collections::generic::dictionary::add method does not modify existing elements.
-        void add(const key_t & key, const value_t value) override {
+        void add(const key_t & key, const value_t& value) override {
           if (!try_add(key, value)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
         }
         

@@ -120,6 +120,7 @@ namespace xtd {
             keys.add(key);
           return keys;
         }
+        
         value_collection values() const noexcept override {
           auto values = value_collection {};
           for (const auto& [key, value] : data_->list_items)
@@ -131,7 +132,7 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
-        void add(const key_t & key, const value_t value) override {
+        void add(const key_t & key, const value_t& value) override {
           insert(count(), key, value);
         }
         
@@ -192,10 +193,10 @@ namespace xtd {
           insert(index, key, value_t {});
         }
         
-        void insert(xtd::size index, const key_t & key, const value_t value) {
+        void insert(xtd::size index, const key_t & key, const value_t& value) {
           if (contains_key(key)) return xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           lock_(data_->sync_op) {
-            data_->list_items.insert(index, std::forward<base_value_type>({key, value}));
+            data_->list_items.insert(index, {key, value});
             data_->dictionary_items.add(key, &data_->list_items[index].second);
           }
           ++data_->version;

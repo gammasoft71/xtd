@@ -87,7 +87,7 @@ namespace xtd {
         /// @exception xtd::not_supported_exception The xtd::collections::generic::idictionary <key_t, value_t> is read-only.
         /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `operator []` overwrites the old value. In contrast, the xtd::collections::generic::idictionary::add method does not modify existing elements.
         /// @remarks Implementations can vary in how they determine equality of objects; for example, the xtd::collections::generic::list <type_t> class uses xtd::collections::generic::comparer::default_comparer, whereas the xtd::collections::generic::dictionary <key_t,value_t> class allows the user to specify the xtd::collections::generic::icomparer <type_t> implementation to use for comparing keys.
-        virtual void add(const key_t& key, const value_t value) = 0;
+        virtual void add(const key_t& key, const value_t& value) = 0;
         
         /// @brief Determines whether the xtd::collections::generic::idictionary <key_t, value_t> contains an element with the specified key.
         /// @param key The key to locate in the xtd::collections::generic::idictionary <key_t, value_t>.
