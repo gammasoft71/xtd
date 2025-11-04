@@ -14,11 +14,11 @@ namespace xtd {
   namespace collections {
     /// @brief The xtd::collections::specialized namespace contains specialized and strongly-typed collections; for example, a linked list dictionary, a bit vector, and collections that contain only strings.
     namespace specialized {
-      /// @brief Represents a collection of keys and values.
+      /// @brief Represents a collection of key/value pairs that are accessible by the key or index.
       /// @par Definition
       /// ```cpp
       /// template<class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
-      /// class ordered_dictionary : public xtd::object, public xtd::collections::generic::iordered_dictionary<key_t, value_t>;
+      /// class ordered_dictionary : public xtd::object, public xtd::collections::generic::idictionary<key_t, value_t>;
       /// ```
       /// @par Header
       /// ```cpp
