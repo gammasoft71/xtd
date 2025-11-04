@@ -40,6 +40,7 @@ add_projects(
   random
   ranges
   span
+  specialized_collections
   sprintf
   startups
   strings
