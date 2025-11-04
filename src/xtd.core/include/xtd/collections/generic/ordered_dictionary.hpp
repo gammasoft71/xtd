@@ -304,9 +304,9 @@ namespace xtd {
         
         struct __enumerator__ : public ienumerator<value_type> {
         public:
-          explicit __enumerator__(const ordered_dictionary& items, xtd::size version) : items_(items), version_(version) {}
+          explicit __enumerator__(const ordered_dictionary & items, xtd::size version) : items_(items), version_(version) {}
           
-          const value_type& current() const override {
+          const value_type & current() const override {
             if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
             if (index_ < items_.count()) {
               auto key = items_.data_->keys[index_];
@@ -327,14 +327,14 @@ namespace xtd {
             index_ = xtd::npos;
           }
           
-        protected:
+protected:
           const ordered_dictionary& items_;
           xtd::size index_ = xtd::npos;
           xtd::size version_ = 0;
           mutable value_type value_;
           value_type default_value_;
         };
-
+        
         struct dictionary_data {
           dictionary_data() noexcept = default;
           dictionary_data(const base_type & items, size_type version) noexcept : items {items}, version {version} {
@@ -352,23 +352,23 @@ namespace xtd {
           xtd::object sync_root;
           xtd::object sync_op;
         };
-        xtd::ptr<dictionary_data> data_ = xtd::new_ptr<dictionary_data>();
+        xtd::ptr < dictionary_data > data_ = xtd::new_ptr < dictionary_data > ();
       };
       
       /// @cond
       // C++17 deduction guides for xtd::collections::specialized::ordered_dictionary
       // {
       template < class key_t, class value_t >
-      ordered_dictionary(xtd::collections::generic::idictionary<key_t, value_t >) -> ordered_dictionary<key_t, value_t, xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t >>>;
+      ordered_dictionary(xtd::collections::generic::idictionary < key_t, value_t >) -> ordered_dictionary < key_t, value_t, xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t >>>;
       
       template < class key_t, class value_t >
-      ordered_dictionary(xtd::collections::generic::ienumerable<key_value_pair<key_t, value_t>>) -> ordered_dictionary<key_t, value_t, xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t >>>;
+      ordered_dictionary(xtd::collections::generic::ienumerable < key_value_pair < key_t, value_t>>) -> ordered_dictionary<key_t, value_t, xtd::collections::generic::helpers::allocator<std::pair < const key_t, value_t >>>;
       
       template < class key_t, class value_t >
-      ordered_dictionary(std::initializer_list<key_value_pair<key_t, value_t>>) -> ordered_dictionary<key_t, value_t>;
+      ordered_dictionary(std::initializer_list < key_value_pair < key_t, value_t>>) -> ordered_dictionary < key_t, value_t >;
       
       template < class key_t, class value_t >
-      ordered_dictionary(std::initializer_list<std::pair<key_t, value_t>>) -> ordered_dictionary <key_t, value_t>;
+      ordered_dictionary(std::initializer_list < std::pair < key_t, value_t>>) -> ordered_dictionary < key_t, value_t >;
       
       template < class input_iterator_t >
       ordered_dictionary(input_iterator_t, input_iterator_t) -> ordered_dictionary < xtd::collections::generic::helpers::iterator_key_t < input_iterator_t>, xtd::collections::generic::helpers::iterator_mapped_t<input_iterator_t >>;
