@@ -130,7 +130,7 @@ xtd::globalization::number_format_info& culture_info::number_format() {
 }
 
 culture_info culture_info::parent() const noexcept {
-  return culture_info {data_->parent_name};
+  return culture_info::get_culture_info(data_->parent_name, cultures().contains_key(data_->parent_name.to_lower()));
 }
 
 const string& culture_info::three_letter_iso_language_name() const noexcept {
