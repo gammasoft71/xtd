@@ -108,7 +108,7 @@ namespace xtd {
           }
           value_type& value() {
             if (!has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-            if (data_->value.has_value()) return data_->value;
+            if (data_->value.has_value()) return data_->value.value();
             return *data_->iterator;
           }
 
@@ -201,6 +201,16 @@ namespace xtd {
           return {self_, result};
         }
         
+        void add_after(const node& node, class node& new_node) {
+          if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          if (new_node.data_->list || !new_node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          auto iterator = node.data_->iterator;
+          if (iterator != data_->items.end()) ++iterator;
+          auto result = data_->items.insert(iterator, new_node.data_->value.value());
+          new_node = {self_, result};
+          ++data_->version;
+        }
+        
         node add_before(const node& node, const type_t& value) {
           if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           auto iterator = node.data_->iterator;
@@ -209,9 +219,25 @@ namespace xtd {
           return {self_, result};
         }
         
+        node add_before(const node& node, class node& new_node) {
+          if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          if (new_node.data_->list || !new_node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          auto iterator = node.data_->iterator;
+          auto result = data_->items.insert(iterator, new_node.data_->value.value());
+          ++data_->version;
+          new_node = {self_, result};
+        }
+
         void add_first(const type_t& value) {
           data_->items.push_front(value);
           ++data_->version;
+        }
+        
+        void add_first(node& node) {
+          if (node.data_->list || !node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          data_->items.push_front(node.data_->value.value());
+          ++data_->version;
+          node = {self_, data_->items.begin()};
         }
         
         void add_last(const type_t& value) {
@@ -219,6 +245,14 @@ namespace xtd {
           ++data_->version;
         }
         
+        void add_last(node& node) {
+          if (node.data_->list || !node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          data_->items.push_back(node.data_->value.value());
+          ++data_->version;
+          auto tmp = data_->items.end();
+          node = {self_, --tmp};
+        }
+
         /// @brief Removes all elements from the xtd::collections::generic::list <type_t>.
         /// @remarks xtd::collections::generic::list::count is set to 0, and references to other objects from elements of the collection are also released.
         /// @remarks xtd::collections::generic::list::capacity remains unchanged. To reset the capacity of the xtd::collections::generic::list <type_t>, call the xtd::collections::generic::list::trim_excess method or set the xtd::collections::generic::list::capacity property directly. Decreasing the capacity reallocates memory and copies all the elements in the xtd::collections::generic::list <type_t>. Trimming an empty xtd::collections::generic::list <type_t> sets the capacity of the xtd::collections::generic::list <type_t> to the default capacity.
@@ -250,7 +284,19 @@ namespace xtd {
           for (auto item : data_->items)
             array[index++] = item;
         }
-
+        
+        node find(const type_t value) const noexcept {
+          for (auto node = first(); node.has_value(); node = node.next())
+            if (node.value() == value) return node;
+          return {self_, data_->items.end()};
+        }
+        
+        node find_last(const type_t value) const noexcept {
+          for (auto node = last(); node.has_value(); node = node.previous())
+            if (node.value() == value) return node;
+          return {self_, data_->items.end()};
+        }
+        
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::list <type_t>.
         /// @return A xtd::collections::generic::.enumerator for the xtd::collections::generic::list <type_t>.
         enumerator<value_type> get_enumerator() const noexcept override {
@@ -271,9 +317,52 @@ namespace xtd {
           return false;
         }
         
+        void remove(node& node) {
+          if (!count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          data_->items.erase(node.data_->iterator);
+        }
+        
+        void remove_first() {
+          remove(first());
+        }
+        
+        void remove_last() {
+          remove(last());
+        }
+
         /// @brief Returns a xtd::string that represents the current object.
         /// @return A string that represents the current object.
         string to_string() const noexcept override {return xtd::string::format("[{}]", xtd::string::join(", ", self_));}
+        /// @}
+        /// @name Public Operators
+        
+        /// @{
+        /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of other.
+        /// @param other Another container to use as data source.
+        /// @return This current instance.
+        linked_list& operator =(const linked_list& other) = default;
+        /// @brief Move assignment operator. Replaces the contents with those of other using move semantics (i.e. the data in other is moved from other into this container). other is in a valid but unspecified state afterwards.
+        /// @param other Another base type container to use as data source.
+        /// @return This current instance.
+        linked_list& operator =(linked_list&& other) noexcept {
+          data_->items = std::move(other.data_->items);
+          return self_;
+        }
+        /// @brief Replaces the contents with those identified by initializer list ilist.
+        /// @param items Initializer list to use as data source
+        /// @return This current instance.
+        linked_list& operator =(const std::initializer_list<type_t>& items) {
+          data_->items = items;
+          return self_;
+        }
+        
+        /// @brief Returns a reference to the underlying base type.
+        /// @return Reference to the underlying base type.
+        operator const_base_type& () const noexcept {return data_->items;}
+        /// @brief Returns a reference to the underlying base type.
+        /// @return Reference to the underlying base type.
+        operator base_type& () noexcept {return data_->items;}
         /// @}
 
       private:
