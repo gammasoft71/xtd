@@ -48,6 +48,7 @@
 #include "collections/generic/key_value_pair.hpp"
 #include "collections/generic/list.hpp"
 #include "collections/generic/linked_list.hpp"
+#include "collections/generic/linked_list_node.hpp"
 #include "collections/generic/ordered_dictionary.hpp"
 #include "collections/generic/queue.hpp"
 #include "collections/generic/sorted_dictionary.hpp"
