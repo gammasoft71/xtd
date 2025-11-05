@@ -11,7 +11,7 @@ public:
   
   string to_string() const noexcept {return to_string("F", culture_info::current_culture());}
   string to_string(const string& fmt) const noexcept {return to_string(fmt, culture_info::current_culture());}
-  string to_string(const string& fmt, const std::locale& loc) const override {
+  string to_string(const string& fmt, const globalization::culture_info& culture) const override {
     if (fmt == "F") return name_ + " (" + rank_ + ")";
     if (fmt == "N") return name_;
     if (fmt == "R") return rank_;
