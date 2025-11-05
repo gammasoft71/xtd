@@ -2,10 +2,6 @@
 
 namespace timer_example {
   class status_checker {
-  private:
-    int invoke_count = 0;
-    int max_count = 0;
-    
   public:
     status_checker(int count) {
       invoke_count = 0;
@@ -15,10 +11,7 @@ namespace timer_example {
     // This method is called by the timer delegate.
     void check_status(any_object state_info) {
       auto auto_event = as<auto_reset_event>(state_info);
-      auto now = date_time::now();
-      console::write_line("{:t}.{:D3} Checking status {,2}.",
-                          now, now.millisecond(),
-                          ++invoke_count);
+      console::write_line("{} Checking status {,2}.", date_time::now().to_string("h:mm:ss.fff"), ++invoke_count);
       
       if (invoke_count == max_count) {
         // Reset the counter and signal the waiting thread.
@@ -26,6 +19,10 @@ namespace timer_example {
         auto_event.set();
       }
     }
+  
+  private:
+    int invoke_count = 0;
+    int max_count = 0;
   };
 
   class program {
@@ -39,11 +36,8 @@ namespace timer_example {
       
       // Create a timer that invokes check_status after one second,
       // and every 1/4 second thereafter.
-      auto now = date_time::now();
-      console::write_line("{:t}.{:D3} Creating timer.\n",
-                          now, now.millisecond());
-      auto state_timer = timer {{status_checker, &timer_example::status_checker::check_status},
-                                auto_event, 1000, 250};
+      console::write_line("{:h:mm:ss.fff} Creating timer.\n", date_time::now());
+      auto state_timer = timer {{status_checker, &timer_example::status_checker::check_status}, auto_event, 1000, 250};
       
       // When auto_event signals, change the period to every half second.
       auto_event.wait_one();
