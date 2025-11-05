@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::collections::generic::list <value_t> class.
+/// @brief Contains xtd::collections::generic::list <type_t> class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "helpers/allocator.hpp"
