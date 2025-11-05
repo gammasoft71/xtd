@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::collections::specialized::string_vector typedef.
+/// @brief Contains xtd::collections::specialized::string_vector alias.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #if defined(_MSC_VER) && __cplusplus < 202302L
