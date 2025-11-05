@@ -687,6 +687,8 @@ add_sources(
   "include/xtd/collections/generic/key_not_found_exception"
   "include/xtd/collections/generic/key_value_pair.hpp"
   "include/xtd/collections/generic/key_value_pair"
+  "include/xtd/collections/generic/linked_list_node.hpp"
+  "include/xtd/collections/generic/linked_list_node"
   "include/xtd/collections/generic/linked_list.hpp"
   "include/xtd/collections/generic/linked_list"
   "include/xtd/collections/generic/list.hpp"

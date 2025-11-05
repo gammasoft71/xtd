@@ -1,0 +1,2 @@
+#pragma once
+#include <xtd/collections/generic/linked_list_node.hpp>
