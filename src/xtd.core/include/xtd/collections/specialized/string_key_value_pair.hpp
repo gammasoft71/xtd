@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::collections::specialized::string_key_value_pair typedef.
+/// @brief Contains xtd::collections::specialized::string_key_value_pair alias.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include <utility>

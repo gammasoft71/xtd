@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::collections::specialized::string_dictionary typedef.
+/// @brief Contains xtd::collections::specialized::string_dictionary alias.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../../string.hpp"

@@ -1,12 +1,10 @@
 #include <xtd/xtd>
 
-using namespace xtd::collections::specialized;
-
 class example {
 public:
   static auto main() -> void {
     // Creates and initializes a ordered_dictionary.
-    auto my_ordered_dictionary = ordered_dictionary<string, string> {};
+    auto my_ordered_dictionary = xtd::collections::specialized::ordered_dictionary {};
     my_ordered_dictionary.add("test_key1", "test_value1");
     my_ordered_dictionary.add("test_key2", "test_value2");
     my_ordered_dictionary.add("key_to_delete", "value_to_delete");
@@ -16,7 +14,7 @@ public:
     display_contents(my_ordered_dictionary.keys(), my_ordered_dictionary.values(), my_ordered_dictionary.count());
     
     // Modifying the ordered_dictionary
-    if (!as<idictionary<string, string>>(my_ordered_dictionary).is_read_only()) {
+    if (!as<xtd::collections::idictionary>(my_ordered_dictionary).is_read_only()) {
       // Insert a new key to the beginning of the ordered_dictionary
       my_ordered_dictionary.insert(0, "inserted_key", "inserted_value1");
       
@@ -50,8 +48,8 @@ public:
   // Displays the contents of the OrderedDictionary from its keys and values
   template<class key_t, class value_t>
   static void display_contents(const icollection<key_t>& key_collection, const icollection<value_t>& value_collection, size dictionary_size) {
-    auto my_keys = array<string>(dictionary_size);
-    auto my_values = array<string>(dictionary_size);
+    auto my_keys = array<any_object>(dictionary_size);
+    auto my_values = array<any_object>(dictionary_size);
     key_collection.copy_to(my_keys, 0);
     value_collection.copy_to(my_values, 0);
     
@@ -63,7 +61,7 @@ public:
   }
   
   // Displays the contents of the OrderedDictionary using its enumerator
-  static void display_enumerator(enumerator<key_value_pair<string, string>>& my_enumerator) {
+  static void display_enumerator(enumerator<xtd::collections::dictionary_entry>& my_enumerator) {
     console::write_line("   KEY                       VALUE");
     while (my_enumerator.move_next())
       console::write_line("   {0,-25} {1}", my_enumerator.current().key(), my_enumerator.current().value());
