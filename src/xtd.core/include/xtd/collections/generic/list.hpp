@@ -89,9 +89,9 @@ namespace xtd {
           xtd::comparison<const type_t&> comparison_;
         };
         
-        struct __enumerator__ : public ienumerator<type_t> {
+        struct internal_enumerator : public ienumerator<type_t> {
         public:
-          explicit __enumerator__(const list& items, xtd::size version) : items_(items), version_(version) {}
+          explicit internal_enumerator(const list& items, xtd::size version) : items_(items), version_(version) {}
           
           const type_t& current() const override {
             if (version_ != items_.data_->items.version()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
@@ -298,7 +298,7 @@ namespace xtd {
         /// @{
         /// @brief Adds an object to the end of the xtd::collections::generic::list <type_t>.
         /// @param item The object to be added to the end of the xtd::collections::generic::list <type_t>.
-        /// @)ar Examples
+        /// @par Examples
         /// The following example demonstrates how to add, remove, and insert a simple business object in a xtd::collections::generic::list <type_t>.
         /// @include generic_list4.cpp
         /// The following example demonstrates several properties and methods of the xtd::collections::generic::list <type_t> generic class, including the xtd::collections::generic::list::add method.
@@ -312,7 +312,7 @@ namespace xtd {
         void add(const type_t& item) override {data_->items.push_back(item);}
         /// @brief Adds an object to the end of the xtd::collections::generic::list <type_t>.
         /// @param item The object to be added to the end of the xtd::collections::generic::list <type_t>.
-        /// @)ar Examples
+        /// @par Examples
         /// The following example demonstrates how to add, remove, and insert a simple business object in a xtd::collections::generic::list <type_t>.
         /// @include generic_list4.cpp
         /// The following example demonstrates several properties and methods of the xtd::collections::generic::list <type_t> generic class, including the xtd::collections::generic::list::add method.
@@ -669,7 +669,7 @@ namespace xtd {
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::list <type_t>.
         /// @return A xtd::collections::generic::.enumerator for the xtd::collections::generic::list <type_t>.
         enumerator<value_type> get_enumerator() const noexcept override {
-          return {new_ptr<__enumerator__>(self_, data_->items.version())};
+          return {new_ptr<internal_enumerator>(self_, data_->items.version())};
         }
         
         /// @brief Creates a shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.

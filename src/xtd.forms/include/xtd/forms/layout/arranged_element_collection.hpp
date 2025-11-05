@@ -39,9 +39,9 @@ namespace xtd {
       /// @remarks This keeps the collection safe and consistent, while most developers can still use xtd::forms::layout::arranged_element_collection::add_range() or xtd::forms::layout::arranged_element_collection::operator[] as expected.
       template<class type_t, class sorter_t = sorter_none>
       class arranged_element_collection : public object, public xtd::collections::generic::icollection<type_t> {
-        struct __enumerator__ : public xtd::collections::generic::ienumerator<type_t> {
+        struct internal_enumerator : public xtd::collections::generic::ienumerator<type_t> {
         public:
-          explicit __enumerator__(const arranged_element_collection& items, xtd::size version) : items_(items), version_(version) {}
+          explicit internal_enumerator(const arranged_element_collection& items, xtd::size version) : items_(items), version_(version) {}
           
           const type_t& current() const override {
             if (version_ != items_.items().version()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
@@ -345,7 +345,7 @@ namespace xtd {
         /// @brief Returns an enumerator that iterates through the xtd::forms::layout::arranged_element_collection <type_t>.
         /// @return A xtd::collections::generic::.enumerator for the xtd::forms::layout::arranged_element_collection <type_t>.
         xtd::collections::generic::enumerator<type_t> get_enumerator() const noexcept override {
-          return {new_ptr<__enumerator__>(self_, items().version())};
+          return {new_ptr<internal_enumerator>(self_, items().version())};
         }
         
         /// @brief Inserts specified element at specified index.

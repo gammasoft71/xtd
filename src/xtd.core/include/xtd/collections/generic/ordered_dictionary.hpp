@@ -178,7 +178,7 @@ namespace xtd {
         }
         
         xtd::collections::generic::enumerator<value_type> get_enumerator() const noexcept override {
-          return {new_ptr<__enumerator__>(self_, data_->version)};
+          return {new_ptr<internal_enumerator>(self_, data_->version)};
         }
         
         void insert(xtd::size index, const key_t & key) {
@@ -302,9 +302,9 @@ namespace xtd {
         bool is_synchronized() const noexcept override {return false;}
         const xtd::object & sync_root() const noexcept override {return data_->sync_root;}
         
-        struct __enumerator__ : public ienumerator<value_type> {
+        struct internal_enumerator : public ienumerator<value_type> {
         public:
-          explicit __enumerator__(const ordered_dictionary & items, xtd::size version) : items_(items), version_(version) {}
+          explicit internal_enumerator(const ordered_dictionary & items, xtd::size version) : items_(items), version_(version) {}
           
           const value_type & current() const override {
             if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
