@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::collections::generic::linked_list_node <value_t> class.
+/// @brief Contains xtd::collections::generic::linked_list_node <type_t> class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "linked_list.hpp"
