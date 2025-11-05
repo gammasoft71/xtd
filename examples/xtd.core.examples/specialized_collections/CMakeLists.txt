@@ -4,5 +4,5 @@ project(specialized_collections)
 find_package(xtd REQUIRED)
 
 add_projects(
-  ordered_dictionary
+  specialized_ordered_dictionary
 )

@@ -1,0 +1,93 @@
+#include <xtd/xtd>
+
+class example {
+public:
+  static auto main() -> void {
+    // Creates and initializes a ordered_dictionary.
+    auto my_ordered_dictionary = ordered_dictionary<string, string> {};
+    my_ordered_dictionary.add("test_key1", "test_value1");
+    my_ordered_dictionary.add("test_key2", "test_value2");
+    my_ordered_dictionary.add("key_to_delete", "value_to_delete");
+    my_ordered_dictionary.add("test_key3", "test_value3");
+    
+    // Display the contents using the key and value collections
+    display_contents(my_ordered_dictionary.keys(), my_ordered_dictionary.values(), my_ordered_dictionary.count());
+    
+    // Modifying the ordered_dictionary
+    if (!as<idictionary<string, string>>(my_ordered_dictionary).is_read_only()) {
+      // Insert a new key to the beginning of the ordered_dictionary
+      my_ordered_dictionary.insert(0, "inserted_key", "inserted_value1");
+      
+      // Modify the value of the entry with the key "test_key2"
+      my_ordered_dictionary["test_key2"] = "modified_value";
+      
+      // Remove the last entry from the ordered_dictionary: "test_key3"
+      my_ordered_dictionary.remove_at(my_ordered_dictionary.count() - 1);
+      
+      // Remove the "key_to_delete" entry, if it exists
+      if (my_ordered_dictionary.contains_key("key_to_delete"))
+        my_ordered_dictionary.remove("key_to_delete");
+    }
+    
+    console::write_line("{}Displaying the entries of a modified ordered_dictionary.", environment::new_line());
+    display_contents(my_ordered_dictionary.keys(), my_ordered_dictionary.values(), my_ordered_dictionary.count());
+    
+    // Clear the ordered_dictionary and add new values
+    my_ordered_dictionary.clear();
+    my_ordered_dictionary.add("new_key1", "new_value1");
+    my_ordered_dictionary.add("new_key2", "new_value2");
+    my_ordered_dictionary.add("new_key3", "new_value3");
+    
+    // Display the contents of the "new" dictionary using an enumerator
+    auto my_enumerator = my_ordered_dictionary.get_enumerator();
+    
+    console::write_line("{}Displaying the entries of a \"new\" ordered_dictionary.", environment::new_line());
+    display_enumerator(my_enumerator);
+  }
+  
+  // Displays the contents of the ordered_dictionary from its keys and values
+  template<class key_t, class value_t>
+  static auto display_contents(const icollection<key_t>& key_collection, const icollection<value_t>& value_collection, size dictionary_size) -> void {
+    auto my_keys = array<string>(dictionary_size);
+    auto my_values = array<string>(dictionary_size);
+    key_collection.copy_to(my_keys, 0);
+    value_collection.copy_to(my_values, 0);
+    
+    // Displays the contents of the ordered_dictionary
+    console::write_line("   INDEX KEY                       VALUE");
+    for (auto i = 0_z; i < dictionary_size; ++i)
+      console::write_line("   {,-5} {,-25} {}", i, my_keys[i], my_values[i]);
+    console::write_line();
+  }
+  
+  // Displays the contents of the ordered_dictionary using its enumerator
+  static auto display_enumerator(enumerator<key_value_pair<string, string>>& my_enumerator) -> void {
+    console::write_line("   KEY                       VALUE");
+    while (my_enumerator.move_next())
+      console::write_line("   {,-25} {}", my_enumerator.current().key(), my_enumerator.current().value());
+  }
+};
+
+startup_(example::main);
+
+// This code produces the following output :
+//
+//    INDEX KEY                       VALUE
+//    0     test_key1                 test_value1
+//    1     test_key2                 test_value2
+//    2     key_to_delete             value_to_delete
+//    3     test_key3                 test_value3
+//
+//
+// Displaying the entries of a modified ordered_dictionary.
+//    INDEX KEY                       VALUE
+//    0     inserted_key              inserted_value1
+//    1     test_key1                 test_value1
+//    2     test_key2                 modified_value
+//
+//
+// Displaying the entries of a "new" ordered_dictionary.
+//    KEY                       VALUE
+//    new_key1                  new_value1
+//    new_key2                  new_value2
+//    new_key3                  new_value3
