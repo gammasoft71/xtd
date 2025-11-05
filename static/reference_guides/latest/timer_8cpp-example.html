@@ -101,10 +101,6 @@ $(function(){ initResizable(false); });
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>timer_example {</div>
 <div class="line">  <span class="keyword">class </span>status_checker {</div>
-<div class="line">  <span class="keyword">private</span>:</div>
-<div class="line">    <span class="keywordtype">int</span> invoke_count = 0;</div>
-<div class="line">    <span class="keywordtype">int</span> max_count = 0;</div>
-<div class="line">    </div>
 <div class="line">  <span class="keyword">public</span>:</div>
 <div class="line">    status_checker(<span class="keywordtype">int</span> count) {</div>
 <div class="line">      invoke_count = 0;</div>
@@ -114,10 +110,7 @@ $(function(){ initResizable(false); });
 <div class="line">    <span class="comment">// This method is called by the timer delegate.</span></div>
 <div class="line">    <span class="keywordtype">void</span> check_status(any_object state_info) {</div>
 <div class="line">      <span class="keyword">auto</span> auto_event = as&lt;auto_reset_event&gt;(state_info);</div>
-<div class="line">      <span class="keyword">auto</span> now = date_time::now();</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;{:t}.{:D3} Checking status {,2}.&quot;</span>,</div>
-<div class="line">                          now, now.millisecond(),</div>
-<div class="line">                          ++invoke_count);</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{} Checking status {,2}.&quot;</span>, date_time::now().to_string(<span class="stringliteral">&quot;h:mm:ss.fff&quot;</span>), ++invoke_count);</div>
 <div class="line">      </div>
 <div class="line">      <span class="keywordflow">if</span> (invoke_count == max_count) {</div>
 <div class="line">        <span class="comment">// Reset the counter and signal the waiting thread.</span></div>
@@ -125,6 +118,10 @@ $(function(){ initResizable(false); });
 <div class="line">        auto_event.set();</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">private</span>:</div>
+<div class="line">    <span class="keywordtype">int</span> invoke_count = 0;</div>
+<div class="line">    <span class="keywordtype">int</span> max_count = 0;</div>
 <div class="line">  };</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">class </span>program {</div>
@@ -138,11 +135,8 @@ $(function(){ initResizable(false); });
 <div class="line">      </div>
 <div class="line">      <span class="comment">// Create a timer that invokes check_status after one second,</span></div>
 <div class="line">      <span class="comment">// and every 1/4 second thereafter.</span></div>
-<div class="line">      <span class="keyword">auto</span> now = date_time::now();</div>
-<div class="line">      console::write_line(<span class="stringliteral">&quot;{:t}.{:D3} Creating timer.\n&quot;</span>,</div>
-<div class="line">                          now, now.millisecond());</div>
-<div class="line">      <span class="keyword">auto</span> state_timer = timer {{status_checker, &amp;timer_example::status_checker::check_status},</div>
-<div class="line">                                auto_event, 1000, 250};</div>
+<div class="line">      console::write_line(<span class="stringliteral">&quot;{:h:mm:ss.fff} Creating timer.\n&quot;</span>, date_time::now());</div>
+<div class="line">      <span class="keyword">auto</span> state_timer = timer {{status_checker, &amp;timer_example::status_checker::check_status}, auto_event, 1000, 250};</div>
 <div class="line">      </div>
 <div class="line">      <span class="comment">// When auto_event signals, change the period to every half second.</span></div>
 <div class="line">      auto_event.wait_one();</div>
@@ -193,7 +187,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 4 2025 22:21:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Nov 5 2025 19:03:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
