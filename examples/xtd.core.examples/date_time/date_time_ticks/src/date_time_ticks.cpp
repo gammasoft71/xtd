@@ -5,7 +5,7 @@ public:
   static auto main() {
     // Instead of using the implicit, default "G" date and time format string, we
     // use a custom format string that aligns the results and inserts leading zeroes.
-    auto format = "{0}) The {1} date and time is {2:k}/{2:i}/{2:L} {2:t}";
+    auto format = "{0}) The {1} date and time is {2:MM/dd/yyyy HH::mm:ss}";
     
     // Create a DateTime for the maximum date and time using ticks.
     auto dt1 = date_time {date_time::max_value.ticks()};
