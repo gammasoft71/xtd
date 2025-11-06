@@ -95,11 +95,11 @@ public:
 
     // Public Methods :
     bool move_next() override {return ++index_ < items_.count();}
-    void reset() override {index_ = box_integer<size>::max_value;}
+    void reset() override {index_ = size_object::max_value;}
     
   protected:
     const list<program::box>& items_;
-    size index_ = box_integer<size>::max_value;
+    size index_ = size_object::max_value;
   };
 
   // Defines two boxes as equal if they have the same dimensions.
