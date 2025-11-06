@@ -39,33 +39,6 @@ namespace xtd {
       /// @remarks This keeps the collection safe and consistent, while most developers can still use xtd::forms::layout::arranged_element_collection::add_range() or xtd::forms::layout::arranged_element_collection::operator[] as expected.
       template<class type_t, class sorter_t = sorter_none>
       class arranged_element_collection : public object, public xtd::collections::generic::icollection<type_t> {
-        struct internal_enumerator : public xtd::collections::generic::ienumerator<type_t> {
-        public:
-          explicit internal_enumerator(const arranged_element_collection& items, xtd::size version) : items_(items), version_(version) {}
-          
-          const type_t& current() const override {
-            if (version_ != items_.items().version()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
-            if (index_ < items_.count()) return items_[index_];
-            return default_value_;
-          }
-          
-          bool move_next() override {
-            if (version_ != items_.items().version()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
-            return ++index_ < items_.count();
-          }
-          
-          void reset() override {
-            version_ = items_.items().version();
-            index_ = arranged_element_collection::npos;
-          }
-          
-        protected:
-          const arranged_element_collection& items_;
-          xtd::size index_ = arranged_element_collection::npos;
-          xtd::size version_ = 0;
-          type_t default_value_;
-        };
-        
       public:
         /// @brief Represents the value type of the collection.
         class value_type : public type_t {
@@ -345,7 +318,32 @@ namespace xtd {
         /// @brief Returns an enumerator that iterates through the xtd::forms::layout::arranged_element_collection <type_t>.
         /// @return A xtd::collections::generic::.enumerator for the xtd::forms::layout::arranged_element_collection <type_t>.
         xtd::collections::generic::enumerator<type_t> get_enumerator() const noexcept override {
-          return {new_ptr<internal_enumerator>(self_, items().version())};
+          struct arranged_element_collection_enumerator : public xtd::collections::generic::ienumerator<type_t> {
+            explicit arranged_element_collection_enumerator(const arranged_element_collection& items, xtd::size version) : items_(items), version_(version) {}
+            
+            const type_t& current() const override {
+              if (index_ >= items_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+              if (version_ != items_.items().version()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
+              return items_[index_];
+            }
+            
+            bool move_next() override {
+              if (version_ != items_.items().version()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
+              return ++index_ < items_.count();
+            }
+            
+            void reset() override {
+              version_ = items_.items().version();
+              index_ = arranged_element_collection::npos;
+            }
+            
+          private:
+            size_type index_ = arranged_element_collection::npos;
+            const arranged_element_collection& items_;
+            size_type version_ = 0;
+          };
+
+          return {new_ptr<arranged_element_collection_enumerator>(self_, items().version())};
         }
         
         /// @brief Inserts specified element at specified index.
