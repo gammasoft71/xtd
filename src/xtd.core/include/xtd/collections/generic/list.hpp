@@ -89,33 +89,6 @@ namespace xtd {
           xtd::comparison<const type_t&> comparison_;
         };
         
-        struct internal_enumerator : public ienumerator<type_t> {
-        public:
-          explicit internal_enumerator(const list& items, xtd::size version) : items_(items), version_(version) {}
-          
-          const type_t& current() const override {
-            if (version_ != items_.data_->items.version()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
-            if (index_ < items_.count()) return items_[index_];
-            return default_value_;
-          }
-          
-          bool move_next() override {
-            if (version_ != items_.data_->items.version()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
-            return ++index_ < items_.count();
-          }
-          
-          void reset() override {
-            version_ = items_.data_->items.version();
-            index_ = list::npos;
-          }
-          
-        protected:
-          const list& items_;
-          xtd::size index_ = list::npos;
-          xtd::size version_ = 0;
-          type_t default_value_;
-        };
-        
       public:
         /// @name Public Aliases
         
@@ -669,7 +642,32 @@ namespace xtd {
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::list <type_t>.
         /// @return A xtd::collections::generic::.enumerator for the xtd::collections::generic::list <type_t>.
         enumerator<value_type> get_enumerator() const noexcept override {
-          return {new_ptr<internal_enumerator>(self_, data_->items.version())};
+          struct list_enumerator : public ienumerator<value_type> {
+            explicit list_enumerator(const list& items, xtd::size version) : items_(items), version_(version) {}
+            
+            const value_type& current() const override {
+              if (index_ >= items_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+              if (version_ != items_.data_->items.version()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
+              return items_[index_];
+            }
+            
+            bool move_next() override {
+              if (version_ != items_.data_->items.version()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
+              return ++index_ < items_.count();
+            }
+            
+            void reset() override {
+              version_ = items_.data_->items.version();
+              index_ = list::npos;
+            }
+            
+          private:
+            size_type index_ = list::npos;
+            const list& items_;
+            size_type version_ = 0;
+          };
+          
+          return {new_ptr<list_enumerator>(self_, data_->items.version())};
         }
         
         /// @brief Creates a shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.
