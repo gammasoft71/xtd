@@ -2,11 +2,12 @@
 /// @brief Contains xtd::collections::generic::linked_list <type_t> class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include "helpers/allocator.hpp"
 #include "helpers/comparer.hpp"
+#include "../object_model/read_only_collection.hpp"
 #include "icollection.hpp"
-#include "../../object.hpp"
+#include "linked_list_node.hpp"
 #include "../../size.hpp"
+#include "../../string.hpp"
 #include <list>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -30,7 +31,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core generic_collections
-      template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+      template<class type_t, class allocator_t>
       class linked_list : public xtd::object, public xtd::collections::generic::icollection<type_t> {
       public:
         /// @name Public Aliases
@@ -51,95 +52,7 @@ namespace xtd {
         /// @brief Represents the read only collection of of list.
         using read_only_collection = xtd::collections::object_model::read_only_collection<value_type>;
         /// @}
-        
-        class node : public xtd::object {
-        public:
-          /// @name Public Aliases
-          
-          /// @{
-          /// @brief Represents the list value type.
-          using value_type = type_t;
-          /// @brief Represents the list base type.
-          using linked_list_type = linked_list<value_type>;
-          /// @brief Represents the list base type.
-          using base_type = typename linked_list_type::base_type;
-          /// @}
-          
-          /// @name Public Constructors
-          
-          /// @{
-          node(node&&) = default;
-          node(const node&) = default;
-          node(value_type&& value) {
-            data_->value = std::move(value);
-          }
-          node(const value_type & value) {
-            data_->value = value;
-          }
-          
-          /// @}
-          
-          /// @name Public Properties
-          bool has_value() const noexcept {return  data_->value.has_value() || (data_->list && data_->iterator != end());}
-          
-          bool is_valid() const noexcept {return has_value();}
-          
-          node next() const noexcept {
-            if (!data_->list) return self_;
-            if (!data_->list->count() || data_->iterator == end()) return {*data_->list, end()};
-            auto tmp = data_->iterator;
-            return {*data_->list, ++tmp};
-          }
-          
-          node previous() const noexcept {
-            if (!data_->list) return self_;
-            if (!data_->list->count() || data_->iterator == begin()) return {*data_->list, end()};
-            auto tmp = data_->iterator;
-            return {*data_->list, --tmp};
-          }
-          
-          const value_type & value() const {
-            if (!has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-            return *data_->iterator;
-          }
-          value_type & value() {
-            if (!has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-            if (data_->value.has_value()) return data_->value.value();
-            return *data_->iterator;
-          }
-          
-          value_type value_or(const value_type & default_value) const {
-            if (!has_value()) return default_value;
-            return value();
-          }
-          /// @}
-          
-          /// @cond
-          node& operator =(node&&) = default;
-          node& operator =(const node&) = default;
-          /// @endcond
-          
-        private:
-          friend class linked_list;
-          using iterator_type = typename base_type::iterator;
-          
-          node(linked_list_type & list, iterator_type iterator) {
-            data_->list = &list;
-            data_->iterator = iterator;
-          }
-          
-          iterator_type begin() const {return data_->list->items().begin();}
-          iterator_type end() const {return data_->list->items().end();}
-          
-          struct node_data {
-            linked_list* list = null;
-            iterator_type iterator;
-            xtd::optional < value_type > value;
-          };
-          
-          xtd::ptr < node_data > data_ = xtd::new_ptr < node_data > ();
-        };
-        
+                
         /// @name Public Constructors
         
         /// @{
@@ -172,23 +85,23 @@ namespace xtd {
         /// @name Public Properties
         size_type count() const noexcept override {return data_->items.size();}
         
-        node first() {
-          if (!count()) return node {self_, data_->items.end()};
-          return node {self_, data_->items.begin()};
+        linked_list_node<type_t> first() {
+          if (!count()) return linked_list_node<type_t> {self_, data_->items.end()};
+          return linked_list_node<type_t> {self_, data_->items.begin()};
         }
         
         const base_type & items() const noexcept {return data_->items;}
         base_type & items() noexcept {return data_->items;}
         
-        node last() {
-          if (!count()) return node {self_, data_->items.end()};
+        linked_list_node<type_t> last() {
+          if (!count()) return linked_list_node<type_t> {self_, data_->items.end()};
           auto tmp = data_->items.end();
-          return node {self_, --tmp};
+          return linked_list_node<type_t> {self_, --tmp};
         }
         /// @}
         
         /// @name Public Methods
-        node add_after(const node & node, const type_t& value) {
+        linked_list_node<type_t> add_after(const linked_list_node<type_t> & node, const type_t& value) {
           if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           auto iterator = node.data_->iterator;
           if (iterator != data_->items.end()) ++iterator;
@@ -197,7 +110,7 @@ namespace xtd {
           return {self_, result};
         }
         
-        void add_after(const node & node, class node & new_node) {
+        void add_after(const linked_list_node<type_t> & node, linked_list_node<type_t>& new_node) {
           if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           if (new_node.data_->list || !new_node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           auto iterator = node.data_->iterator;
@@ -207,7 +120,7 @@ namespace xtd {
           ++data_->version;
         }
         
-        node add_before(const node & node, const type_t& value) {
+        linked_list_node<type_t> add_before(const linked_list_node<type_t> & node, const type_t& value) {
           if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           auto iterator = node.data_->iterator;
           auto result = data_->items.insert(iterator, value);
@@ -215,7 +128,7 @@ namespace xtd {
           return {self_, result};
         }
         
-        node add_before(const node & node, class node & new_node) {
+        linked_list_node<type_t> add_before(const linked_list_node<type_t> & node, linked_list_node<type_t> & new_node) {
           if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           if (new_node.data_->list || !new_node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           auto iterator = node.data_->iterator;
@@ -229,7 +142,7 @@ namespace xtd {
           ++data_->version;
         }
         
-        void add_first(node & node) {
+        void add_first(linked_list_node<type_t> & node) {
           if (node.data_->list || !node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           data_->items.push_front(node.data_->value.value());
           ++data_->version;
@@ -241,7 +154,7 @@ namespace xtd {
           ++data_->version;
         }
         
-        void add_last(node & node) {
+        void add_last(linked_list_node<type_t> & node) {
           if (node.data_->list || !node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           data_->items.push_back(node.data_->value.value());
           ++data_->version;
@@ -281,13 +194,13 @@ namespace xtd {
             array[index++] = item;
         }
         
-        node find(const type_t value) const noexcept {
+        linked_list_node<type_t> find(const type_t value) const noexcept {
           for (auto node = first(); node.has_value(); node = node.next())
             if (node.value() == value) return node;
           return {self_, data_->items.end()};
         }
         
-        node find_last(const type_t value) const noexcept {
+        linked_list_node<type_t> find_last(const type_t value) const noexcept {
           for (auto node = last(); node.has_value(); node = node.previous())
             if (node.value() == value) return node;
           return {self_, data_->items.end()};
@@ -296,7 +209,35 @@ namespace xtd {
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::linked_list <type_t>.
         /// @return A xtd::collections::generic::.enumerator for the xtd::collections::generic::linked_list <type_t>.
         enumerator < value_type > get_enumerator() const noexcept override {
-          return {new_ptr < internal_enumerator > (self_, data_->version)};
+          struct linked_list_enumerator : public ienumerator < value_type > {
+            explicit linked_list_enumerator(const linked_list & items, xtd::size version) : items_(items), version_(version) {}
+            
+            const value_type& current() const override {
+              if (iterator_ == items_.data_->items.cend()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+              if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
+              return *iterator_;
+            }
+            
+            bool move_next() override {
+              if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
+              if (index_++ && iterator_ != items_.data_->items.cend()) ++iterator_;
+              else iterator_ = items_.data_->items.cbegin();
+              return iterator_ != items_.data_->items.cend();
+            }
+            
+            void reset() override {
+              index_ = 0;
+              version_ = items_.data_->version;
+              iterator_ = items_.data_->items.cend();
+            }
+            
+          private:
+            size_type index_ = 0;
+            const linked_list& items_;
+            typename base_type::const_iterator iterator_ = items_.data_->items.cend();
+            size_type version_ = 0;
+          };
+          return {new_ptr < linked_list_enumerator > (self_, data_->version)};
         }
         
         /// @brief Removes the first occurrence of a specific object from the xtd::collections::generic::linked_list <type_t>.
@@ -313,7 +254,7 @@ namespace xtd {
           return false;
         }
         
-        void remove(node & node) {
+        void remove(linked_list_node<type_t> & node) {
           if (!count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           data_->items.erase(node.data_->iterator);
@@ -366,38 +307,6 @@ namespace xtd {
         bool is_read_only() const noexcept override {return false;}
         bool is_synchronized() const noexcept override {return false;}
         const xtd::object & sync_root() const noexcept override {return data_->sync_root;}
-        
-        struct internal_enumerator : public ienumerator < type_t > {
-        public:
-          explicit internal_enumerator(const linked_list & items, xtd::size version) : items_(items), version_(version) {}
-          
-          const type_t& current() const override {
-            if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
-            if (iterator_ != items_.data_->items.end()) return *iterator_;
-            return default_value_;
-          }
-          
-          bool move_next() override {
-            if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
-            if (first_iteration) {
-              first_iteration = false;
-              return iterator_ != items_.data_->items.end();
-            }
-            return ++iterator_ != items_.data_->items.end();
-          }
-          
-          void reset() override {
-            version_ = items_.data_->version;
-            iterator_ = items_.data_->items.begin();
-          }
-          
-protected:
-          const linked_list& items_;
-          bool first_iteration = true;
-          typename base_type::iterator iterator_ = items_.data_->items.begin();
-          xtd::size version_ = 0;
-          type_t default_value_;
-        };
         
         struct linked_list_data {
           base_type items;
