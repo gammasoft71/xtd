@@ -18,10 +18,10 @@ xtdc run
 ## Output
 
 ```
-Elapsed from the beginning of the century to Wed Aug 16 22:46:16 2023:
-   713918776070706048 nanoseconds
-   7139187760707060 ticks
-   713918776.07 seconds
-   11898646.27 minutes
-   8262 days, 22 hours, 46 minutes, 16 seconds
+Elapsed from the beginning of the century to Wednesday, November 5, 2025 9:16 PM:
+   784070197635266048 nanoseconds
+   7840701976352660 ticks
+   784070197.64 seconds
+   13067836.63 minutes
+   9074 days, 21 hours, 16 minutes, 37 seconds
 ```
