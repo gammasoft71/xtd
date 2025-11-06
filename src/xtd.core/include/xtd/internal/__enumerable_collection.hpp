@@ -20,6 +20,19 @@ namespace xtd::linq {
 template<class type_t, class param_t>
 struct __opaque_xtd_linq_lazy_enumerable__ : xtd::collections::generic::ienumerable<type_t>, xtd::istringable {
   xtd::collections::generic::enumerator<type_t> get_enumerator() const override {
+    struct lazy_enumerator : xtd::collections::generic::ienumerator<type_t> {
+      lazy_enumerator(param_type& params, move_next_type& move_next, reset_type& reset) : params_ {params}, move_next_ {move_next}, reset_ {reset} {}
+      
+      const type_t& current() const override {return std::get<0>(params_);}
+      bool move_next() override {return move_next_(params_);}
+      void reset() override {reset_(params_);}
+      
+    private:
+      param_type& params_;
+      move_next_type& move_next_;
+      reset_type& reset_;
+    };
+    
     return {xtd::new_ptr<lazy_enumerator>(data_->params, data_->move_next, data_->reset)};
   }
   
@@ -41,25 +54,6 @@ private:
     data_->reset = reset;
   }
   
-  struct lazy_enumerator : xtd::collections::generic::ienumerator<type_t> {
-    lazy_enumerator(param_type& params, move_next_type& move_next, reset_type& reset) : params_ {params}, move_next_ {move_next}, reset_ {reset} {}
-    
-    const type_t& current() const override {
-      return std::get<0>(params_);
-    }
-    bool move_next() override {
-      return move_next_(params_);
-    }
-    void reset() override {
-      reset_(params_);
-    }
-    
-  private:
-    param_type& params_;
-    move_next_type& move_next_;
-    reset_type& reset_;
-  };
-  
   struct data {
     param_type params;
     move_next_type move_next;
@@ -71,9 +65,7 @@ private:
 
 template<class type_t>
 struct __opaque_xtd_linq_enumerable_collection__ : xtd::collections::generic::ienumerable<type_t>, xtd::istringable {
-  xtd::collections::generic::enumerator<type_t> get_enumerator() const override {
-    return xtd::collections::generic::enumerator<>::create(items);
-  }
+  xtd::collections::generic::enumerator<type_t> get_enumerator() const override {return xtd::collections::generic::enumerator<>::create(items);}
   
   xtd::string to_string() const override;
   
