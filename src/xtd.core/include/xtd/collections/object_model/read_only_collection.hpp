@@ -44,15 +44,13 @@ namespace xtd {
           
           bool contains(const list_type_t& item) const noexcept override {return false;}
           void copy_to(xtd::array<list_type_t>& array, xtd::size array_index) const override {}
-          generic::enumerator<list_type_t> get_enumerator() const noexcept {
-            class empty_enumerator : public generic::ienumerator<list_type_t> {
-            public:
+          generic::enumerator<list_type_t> get_enumerator() const noexcept override {
+            struct empty_list_enumerator : public generic::ienumerator<list_type_t> {
               const list_type_t& current() const override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
               bool move_next() override {return false;}
               void reset() override {}
-            private:
             };
-            return {new_ptr<empty_enumerator>()};
+            return {new_ptr<empty_list_enumerator>()};
           }
           xtd::size index_of(const list_type_t& item) const noexcept override {return npos;}
           
@@ -189,7 +187,7 @@ namespace xtd {
         /// @remarks The enumerator does not have exclusive access to the collection; therefore, enumerating through a collection is intrinsically not a thread-safe procedure. To guarantee thread safety during enumeration, you can lock the collection during the entire enumeration. To allow the collection to be accessed by multiple threads for reading and writing, you must implement your own synchronization.
         /// @remarks Default implementations of collections in xtd::collections::generic are not synchronized.
         /// @remarks This method is an O(1) operation
-        generic::enumerator<type_t> get_enumerator() const noexcept override {return items_.get_enumerator();}
+        generic::enumerator<value_type> get_enumerator() const noexcept override {return items_.get_enumerator();}
         
         /// @brief Searches for the specified object and returns the zero-based index of the first occurrence within the entire xtd::collections::object_model::read_only_collection <type_t>.
         /// @param item The object to locate in the xtd::collections::object_model::read_only_collection <type_t>.
