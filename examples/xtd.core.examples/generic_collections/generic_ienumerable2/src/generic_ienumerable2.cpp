@@ -40,11 +40,11 @@ public:
         explicit box_enumerator(const list<program::box>& items) : items_(items) {}
         const program::box& current() const override {return items_[index_];}
         bool move_next() override {return ++index_ < items_.count();}
-        void reset() override {index_ = box_integer<size>::max_value;}
+        void reset() override {index_ = size_object::max_value;}
         
       protected:
         const list<program::box>& items_;
-        size index_ = box_integer<size>::max_value;
+        size index_ = size_object::max_value;
       };
       return {new_ptr<box_enumerator>(boxes_)};
     }
