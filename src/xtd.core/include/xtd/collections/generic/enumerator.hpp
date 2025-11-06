@@ -119,28 +119,26 @@ namespace xtd {
             explicit internal_enumerator(const collection_t& items, const version_t* current_version) : items_(items), version_(current_version ? * current_version : version_t {}), current_version_(current_version) {}
             
             const value_type& current() const override {
+              if (iterator_ == items_.cend()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
               if (current_version_ && version_ != *current_version_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
-              if (iterator_ != items_.cend()) return *iterator_;
-              static auto default_value_type = value_type {};
-              return default_value_type;
+              return *iterator_;
             }
             
             bool move_next() override {
               if (current_version_ && version_ != *current_version_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
-              if (!reset_) return ++iterator_ != items_.cend();
-              reset_ = false;
-              iterator_ = items_.cbegin();
+              if (index_++ && iterator_ != items_.cend()) ++iterator_;
+              else iterator_ = items_.cbegin();
               return iterator_ != items_.cend();
             }
             
             void reset() override {
-              reset_ = true;
+              index_ = 0;
               version_ = current_version_ ? *current_version_ : version_t {};
               iterator_ = items_.cend();
             }
             
           protected:
-            bool reset_ = true;
+            xtd::size index_ = 0;
             const collection_t& items_;
             const_iterator iterator_ = items_.cend();
             version_t version_ = version_t {};
