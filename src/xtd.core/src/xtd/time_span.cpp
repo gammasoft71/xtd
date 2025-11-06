@@ -50,7 +50,7 @@ time_span::time_span(uint32 days, uint32 hours, uint32 minutes, uint32 seconds, 
 time_span::time_span(uint32 days, uint32 hours, uint32 minutes, uint32 seconds, uint32 millisocnds, uint32 microseconds) : time_span(days, hours, minutes, seconds, millisocnds, microseconds, 0u)  {
 }
 
-time_span::time_span(uint32 days, uint32 hours, uint32 minutes, uint32 seconds, uint32 millisocnds, uint32 microseconds, uint32 nanoseconds) : ticks_(as<int32>(ticks_per_day * days + ticks_per_hour * hours + ticks_per_minute * minutes + ticks_per_second * seconds + ticks_per_millisecond * millisocnds + ticks_per_microsecond * microseconds + nanoseconds / nanoseconds_per_tick))  {
+time_span::time_span(uint32 days, uint32 hours, uint32 minutes, uint32 seconds, uint32 millisocnds, uint32 microseconds, uint32 nanoseconds) : ticks_(as<int64>(ticks_per_day * days + ticks_per_hour * hours + ticks_per_minute * minutes + ticks_per_second * seconds + ticks_per_millisecond * millisocnds + ticks_per_microsecond * microseconds + nanoseconds / nanoseconds_per_tick))  {
 }
 
 time_span& time_span::operator +=(const time_span& value) {
