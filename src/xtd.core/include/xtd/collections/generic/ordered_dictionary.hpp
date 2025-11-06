@@ -178,7 +178,33 @@ namespace xtd {
         }
         
         xtd::collections::generic::enumerator<value_type> get_enumerator() const noexcept override {
-          return {new_ptr<internal_enumerator>(self_, data_->version)};
+          struct ordered_dictionary_enumerator : public ienumerator<value_type> {
+            explicit ordered_dictionary_enumerator(const ordered_dictionary & items, xtd::size version) : items_(items), version_(version) {}
+            
+            const value_type & current() const override {
+              if (index_ >= items_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+              if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
+              return (value_ = value_type {key_t {items_.data_->keys[index_]}, value_t {items_.data_->items[items_.data_->keys[index_]]}});
+            }
+            
+            bool move_next() override {
+              if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
+              return ++index_ < items_.data_->keys.count();
+            }
+            
+            void reset() override {
+              version_ = items_.data_->version;
+              index_ = xtd::npos;
+            }
+            
+          private:
+            size_type index_ = xtd::npos;
+            const ordered_dictionary& items_;
+            mutable value_type value_;
+            size_type version_ = 0;
+          };
+          
+          return {new_ptr<ordered_dictionary_enumerator>(self_, data_->version)};
         }
         
         void insert(xtd::size index, const key_t & key) {
@@ -301,39 +327,6 @@ namespace xtd {
         bool is_read_only() const noexcept override {return false;}
         bool is_synchronized() const noexcept override {return false;}
         const xtd::object & sync_root() const noexcept override {return data_->sync_root;}
-        
-        struct internal_enumerator : public ienumerator<value_type> {
-        public:
-          explicit internal_enumerator(const ordered_dictionary & items, xtd::size version) : items_(items), version_(version) {}
-          
-          const value_type & current() const override {
-            if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
-            if (index_ < items_.count()) {
-              auto key = items_.data_->keys[index_];
-              auto value = items_.data_->items[key];
-              value_ = {key, value};
-              return value_;
-            }
-            return default_value_;
-          }
-          
-          bool move_next() override {
-            if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
-            return ++index_ < items_.data_->keys.count();
-          }
-          
-          void reset() override {
-            version_ = items_.data_->version;
-            index_ = xtd::npos;
-          }
-          
-protected:
-          const ordered_dictionary& items_;
-          xtd::size index_ = xtd::npos;
-          xtd::size version_ = 0;
-          mutable value_type value_;
-          value_type default_value_;
-        };
         
         struct dictionary_data {
           dictionary_data() noexcept = default;
