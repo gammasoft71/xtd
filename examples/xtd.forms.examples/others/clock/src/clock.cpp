@@ -23,11 +23,11 @@ auto main() -> int {
   label.back_color(color_converter::average(color::black, label.fore_color(), 0.20));
   label.segment_style(segment_style::modern);
   label.show_back_digit(false);
-  label.text(date_time::now().to_long_time_string());
+  label.text(date_time::now().to_string("HH:mm:ss"));
   
   clock_timer.tick += delegate_ {
     auto now = date_time::now();
-    label.text(show_seconds ? now.to_long_time_string() : now.to_short_time_string().replace(':', now.second() % 2 ? ' ' : ':'));
+    label.text(show_seconds ? now.to_string("HH:mm:ss") : now.to_string("HH:mm:ss").replace(':', now.second() % 2 ? ' ' : ':'));
     form_main.center_to_screen();
   };
   
