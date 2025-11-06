@@ -8,9 +8,8 @@ var searchData=
   ['link_5flabel_5fclicked_5fevent_5fhandler_5',['link_label_clicked_event_handler',['../group__events.html#ga94519710514118363cbbf0753535273c',1,'xtd::forms']]],
   ['link_5flabel_5fstate_6',['link_label_state',['../group__xtd__forms.html#ga45d425f41662925523887cc91625f8f7',1,'xtd::forms::visual_styles']]],
   ['link_5flabels_5ft_7',['link_labels_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#a85e8986defa85032d79151580f46504d',1,'xtd::forms::style_sheets::style_sheet']]],
-  ['linked_5flist_5fnode_8',['linked_list_node',['../group__generic__collections.html#gad7679c2023be40c72b54715b8abea20e',1,'xtd::collections::generic']]],
-  ['linked_5flist_5ftype_9',['linked_list_type',['../classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html#a29e2189f20684e46eb0d5415cedbd3b7',1,'xtd::collections::generic::linked_list::node']]],
-  ['list_10',['list',['../classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a417e4adb1792949e9a54516bee2ca3d2',1,'xtd::collections::generic::extensions::enumerable::list'],['../classxtd_1_1linq_1_1enumerable.html#a4ff59be55b7be66d275f28741e2f1f0a',1,'xtd::linq::enumerable::list']]],
-  ['list_5ftype_11',['list_type',['../classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a608b83fdc20d5869ad48e1647284d093',1,'xtd::collections::generic::ordered_dictionary']]],
-  ['listener_5fcollection_12',['listener_collection',['../classxtd_1_1diagnostics_1_1debug.html#a5f2023248b2a37b78e2b4f364c29909a',1,'xtd::diagnostics::debug::listener_collection'],['../classxtd_1_1diagnostics_1_1trace.html#a951774bf53b93b1c0a428bb3773953e2',1,'xtd::diagnostics::trace::listener_collection']]]
+  ['linked_5flist_5ftype_8',['linked_list_type',['../classxtd_1_1collections_1_1generic_1_1linked__list__node.html#ac01adf02802b20350fa7b056c3a444bf',1,'xtd::collections::generic::linked_list_node']]],
+  ['list_9',['list',['../classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a417e4adb1792949e9a54516bee2ca3d2',1,'xtd::collections::generic::extensions::enumerable::list'],['../classxtd_1_1linq_1_1enumerable.html#a4ff59be55b7be66d275f28741e2f1f0a',1,'xtd::linq::enumerable::list']]],
+  ['list_5ftype_10',['list_type',['../classxtd_1_1collections_1_1generic_1_1ordered__dictionary.html#a608b83fdc20d5869ad48e1647284d093',1,'xtd::collections::generic::ordered_dictionary']]],
+  ['listener_5fcollection_11',['listener_collection',['../classxtd_1_1diagnostics_1_1debug.html#a5f2023248b2a37b78e2b4f364c29909a',1,'xtd::diagnostics::debug::listener_collection'],['../classxtd_1_1diagnostics_1_1trace.html#a951774bf53b93b1c0a428bb3773953e2',1,'xtd::diagnostics::trace::listener_collection']]]
 ];

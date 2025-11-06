@@ -98,7 +98,6 @@ $(function(){ initResizable(false); });
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="classxtd_1_1collections_1_1generic_1_1linked__list-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">xtd::collections::generic::linked_list&lt; type_t, allocator_t &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__core.html">xtd.core</a> &#124; <a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__collections.html">collections</a> &raquo; <a class="el" href="group__generic__collections.html">generic</a></div></div></div>
 </div><!--header-->
@@ -113,7 +112,7 @@ Inheritance diagram for xtd::collections::generic::linked_list&lt; type_t, alloc
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;class type_t, class allocator_t&gt;<br />
 class xtd::collections::generic::linked_list&lt; type_t, allocator_t &gt;</div><p>Represents a doubly linked list. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
 <div class="line"><span class="keyword">using </span>linked_list = std::list&lt;type_t, xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt;;</div>
@@ -123,11 +122,6 @@ class xtd::collections::generic::linked_list&lt; type_t, allocator_t &gt;</div><
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
 </div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
 <tr class="memitem:a8e935a6198ebd6b27a78a776b0c2358a" id="r_a8e935a6198ebd6b27a78a776b0c2358a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e935a6198ebd6b27a78a776b0c2358a">value_type</a></td></tr>
 <tr class="memdesc:a8e935a6198ebd6b27a78a776b0c2358a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the list value type.  <br /></td></tr>
@@ -179,44 +173,44 @@ Classes</h2></td></tr>
 <tr class="memitem:a0e7521b6d906ae506d1a757a51ef26b0" id="r_a0e7521b6d906ae506d1a757a51ef26b0"><td class="memItemLeft" align="right" valign="top"><a id="a0e7521b6d906ae506d1a757a51ef26b0" name="a0e7521b6d906ae506d1a757a51ef26b0"></a>
 <a class="el" href="#a71826fe6b10c770a63535a5bf1b06409">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><b>count</b> () const noexcept override</td></tr>
 <tr class="separator:a0e7521b6d906ae506d1a757a51ef26b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8653e75c3129515607a139fe9efd2c47" id="r_a8653e75c3129515607a139fe9efd2c47"><td class="memItemLeft" align="right" valign="top"><a id="a8653e75c3129515607a139fe9efd2c47" name="a8653e75c3129515607a139fe9efd2c47"></a>
-<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a>&#160;</td><td class="memItemRight" valign="bottom"><b>first</b> ()</td></tr>
-<tr class="separator:a8653e75c3129515607a139fe9efd2c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a843ba1bd7e77d210ed33ab8469f0db1c" id="r_a843ba1bd7e77d210ed33ab8469f0db1c"><td class="memItemLeft" align="right" valign="top"><a id="a843ba1bd7e77d210ed33ab8469f0db1c" name="a843ba1bd7e77d210ed33ab8469f0db1c"></a>
+<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>first</b> ()</td></tr>
+<tr class="separator:a843ba1bd7e77d210ed33ab8469f0db1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a248727f32865e83edffc080baf836513" id="r_a248727f32865e83edffc080baf836513"><td class="memItemLeft" align="right" valign="top"><a id="a248727f32865e83edffc080baf836513" name="a248727f32865e83edffc080baf836513"></a>
 const <a class="el" href="#ad8eea0c7ad628e3cf01bbddbc5d19df6">base_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>items</b> () const noexcept</td></tr>
 <tr class="separator:a248727f32865e83edffc080baf836513"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab84df0585ef3be9587c4e2a61d4a6e32" id="r_ab84df0585ef3be9587c4e2a61d4a6e32"><td class="memItemLeft" align="right" valign="top"><a id="ab84df0585ef3be9587c4e2a61d4a6e32" name="ab84df0585ef3be9587c4e2a61d4a6e32"></a>
 <a class="el" href="#ad8eea0c7ad628e3cf01bbddbc5d19df6">base_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>items</b> () noexcept</td></tr>
 <tr class="separator:ab84df0585ef3be9587c4e2a61d4a6e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d8d499a3e20f1078aaf8a48abd81f8b" id="r_a1d8d499a3e20f1078aaf8a48abd81f8b"><td class="memItemLeft" align="right" valign="top"><a id="a1d8d499a3e20f1078aaf8a48abd81f8b" name="a1d8d499a3e20f1078aaf8a48abd81f8b"></a>
-<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a>&#160;</td><td class="memItemRight" valign="bottom"><b>last</b> ()</td></tr>
-<tr class="separator:a1d8d499a3e20f1078aaf8a48abd81f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec9a444fad7a9cb9daf7e986bd02c9b0" id="r_aec9a444fad7a9cb9daf7e986bd02c9b0"><td class="memItemLeft" align="right" valign="top"><a id="aec9a444fad7a9cb9daf7e986bd02c9b0" name="aec9a444fad7a9cb9daf7e986bd02c9b0"></a>
+<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>last</b> ()</td></tr>
+<tr class="separator:aec9a444fad7a9cb9daf7e986bd02c9b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:aed77031432c0f661da93b8ec7a9197d6" id="r_aed77031432c0f661da93b8ec7a9197d6"><td class="memItemLeft" align="right" valign="top"><a id="aed77031432c0f661da93b8ec7a9197d6" name="aed77031432c0f661da93b8ec7a9197d6"></a>
-<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a>&#160;</td><td class="memItemRight" valign="bottom"><b>add_after</b> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a> &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a>, const type_t &amp;value)</td></tr>
-<tr class="separator:aed77031432c0f661da93b8ec7a9197d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a715dc0a62126b7be71391a7c01f50e67" id="r_a715dc0a62126b7be71391a7c01f50e67"><td class="memItemLeft" align="right" valign="top"><a id="a715dc0a62126b7be71391a7c01f50e67" name="a715dc0a62126b7be71391a7c01f50e67"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>add_after</b> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a> &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a>, class <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a> &amp;new_node)</td></tr>
-<tr class="separator:a715dc0a62126b7be71391a7c01f50e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d14a25f0197ff1489196041259c6d6f" id="r_a4d14a25f0197ff1489196041259c6d6f"><td class="memItemLeft" align="right" valign="top"><a id="a4d14a25f0197ff1489196041259c6d6f" name="a4d14a25f0197ff1489196041259c6d6f"></a>
-<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a>&#160;</td><td class="memItemRight" valign="bottom"><b>add_before</b> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a> &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a>, const type_t &amp;value)</td></tr>
-<tr class="separator:a4d14a25f0197ff1489196041259c6d6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48e49086c5e0dae525c4bd0f4ce9004d" id="r_a48e49086c5e0dae525c4bd0f4ce9004d"><td class="memItemLeft" align="right" valign="top"><a id="a48e49086c5e0dae525c4bd0f4ce9004d" name="a48e49086c5e0dae525c4bd0f4ce9004d"></a>
-<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a>&#160;</td><td class="memItemRight" valign="bottom"><b>add_before</b> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a> &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a>, class <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a> &amp;new_node)</td></tr>
-<tr class="separator:a48e49086c5e0dae525c4bd0f4ce9004d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09740442f751c3905ae76caa8fc80a08" id="r_a09740442f751c3905ae76caa8fc80a08"><td class="memItemLeft" align="right" valign="top"><a id="a09740442f751c3905ae76caa8fc80a08" name="a09740442f751c3905ae76caa8fc80a08"></a>
+<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>add_after</b> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &amp;node, const type_t &amp;value)</td></tr>
+<tr class="separator:a09740442f751c3905ae76caa8fc80a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a352c7b08e9690cee725bb87c42583103" id="r_a352c7b08e9690cee725bb87c42583103"><td class="memItemLeft" align="right" valign="top"><a id="a352c7b08e9690cee725bb87c42583103" name="a352c7b08e9690cee725bb87c42583103"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>add_after</b> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &amp;node, <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &amp;new_node)</td></tr>
+<tr class="separator:a352c7b08e9690cee725bb87c42583103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae966ed2b1088eeb44e994bfaaef17dc1" id="r_ae966ed2b1088eeb44e994bfaaef17dc1"><td class="memItemLeft" align="right" valign="top"><a id="ae966ed2b1088eeb44e994bfaaef17dc1" name="ae966ed2b1088eeb44e994bfaaef17dc1"></a>
+<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>add_before</b> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &amp;node, const type_t &amp;value)</td></tr>
+<tr class="separator:ae966ed2b1088eeb44e994bfaaef17dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dafdd744ba74ebb6e9f49f33daab351" id="r_a6dafdd744ba74ebb6e9f49f33daab351"><td class="memItemLeft" align="right" valign="top"><a id="a6dafdd744ba74ebb6e9f49f33daab351" name="a6dafdd744ba74ebb6e9f49f33daab351"></a>
+<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>add_before</b> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &amp;node, <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &amp;new_node)</td></tr>
+<tr class="separator:a6dafdd744ba74ebb6e9f49f33daab351"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4849a7256c1871237a43fa2a769e22e4" id="r_a4849a7256c1871237a43fa2a769e22e4"><td class="memItemLeft" align="right" valign="top"><a id="a4849a7256c1871237a43fa2a769e22e4" name="a4849a7256c1871237a43fa2a769e22e4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>add_first</b> (const type_t &amp;value)</td></tr>
 <tr class="separator:a4849a7256c1871237a43fa2a769e22e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fba3fda0db1882edcde4cc172786245" id="r_a1fba3fda0db1882edcde4cc172786245"><td class="memItemLeft" align="right" valign="top"><a id="a1fba3fda0db1882edcde4cc172786245" name="a1fba3fda0db1882edcde4cc172786245"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>add_first</b> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a> &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a>)</td></tr>
-<tr class="separator:a1fba3fda0db1882edcde4cc172786245"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a2bf983c6a6fc54dd7bfc1b0aee8e53" id="r_a3a2bf983c6a6fc54dd7bfc1b0aee8e53"><td class="memItemLeft" align="right" valign="top"><a id="a3a2bf983c6a6fc54dd7bfc1b0aee8e53" name="a3a2bf983c6a6fc54dd7bfc1b0aee8e53"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>add_first</b> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &amp;node)</td></tr>
+<tr class="separator:a3a2bf983c6a6fc54dd7bfc1b0aee8e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb5c7c43522732ae9860ed0c91917493" id="r_aeb5c7c43522732ae9860ed0c91917493"><td class="memItemLeft" align="right" valign="top"><a id="aeb5c7c43522732ae9860ed0c91917493" name="aeb5c7c43522732ae9860ed0c91917493"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>add_last</b> (const type_t &amp;value)</td></tr>
 <tr class="separator:aeb5c7c43522732ae9860ed0c91917493"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68e26aabb33796a539c3df57b3cb60e1" id="r_a68e26aabb33796a539c3df57b3cb60e1"><td class="memItemLeft" align="right" valign="top"><a id="a68e26aabb33796a539c3df57b3cb60e1" name="a68e26aabb33796a539c3df57b3cb60e1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>add_last</b> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a> &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a>)</td></tr>
-<tr class="separator:a68e26aabb33796a539c3df57b3cb60e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12a62ca990f439aa1bf4d0a6dedbfb2d" id="r_a12a62ca990f439aa1bf4d0a6dedbfb2d"><td class="memItemLeft" align="right" valign="top"><a id="a12a62ca990f439aa1bf4d0a6dedbfb2d" name="a12a62ca990f439aa1bf4d0a6dedbfb2d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>add_last</b> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &amp;node)</td></tr>
+<tr class="separator:a12a62ca990f439aa1bf4d0a6dedbfb2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a353e5d6958158501eaa6d8651d74f709" id="r_a353e5d6958158501eaa6d8651d74f709"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a353e5d6958158501eaa6d8651d74f709">clear</a> () override</td></tr>
 <tr class="memdesc:a353e5d6958158501eaa6d8651d74f709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all elements from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:a353e5d6958158501eaa6d8651d74f709"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -226,21 +220,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>add_last</b> (<a clas
 <tr class="memitem:a9c6a47142d7dbf789779b4ad19cb749b" id="r_a9c6a47142d7dbf789779b4ad19cb749b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c6a47142d7dbf789779b4ad19cb749b">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>, <a class="el" href="#a71826fe6b10c770a63535a5bf1b06409">size_type</a> array_index) const override</td></tr>
 <tr class="memdesc:a9c6a47142d7dbf789779b4ad19cb749b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the entire xtd::colllections::generic::linked_list &lt;type_t&gt; to a compatible one-dimensional array, starting at the specified index of the target array.  <br /></td></tr>
 <tr class="separator:a9c6a47142d7dbf789779b4ad19cb749b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad39c8b400707785b5f591d228a15b282" id="r_ad39c8b400707785b5f591d228a15b282"><td class="memItemLeft" align="right" valign="top"><a id="ad39c8b400707785b5f591d228a15b282" name="ad39c8b400707785b5f591d228a15b282"></a>
-<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a>&#160;</td><td class="memItemRight" valign="bottom"><b>find</b> (const type_t value) const noexcept</td></tr>
-<tr class="separator:ad39c8b400707785b5f591d228a15b282"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1f0c939a9ff2c0ba0a8fe74a4d3950c" id="r_ae1f0c939a9ff2c0ba0a8fe74a4d3950c"><td class="memItemLeft" align="right" valign="top"><a id="ae1f0c939a9ff2c0ba0a8fe74a4d3950c" name="ae1f0c939a9ff2c0ba0a8fe74a4d3950c"></a>
-<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a>&#160;</td><td class="memItemRight" valign="bottom"><b>find_last</b> (const type_t value) const noexcept</td></tr>
-<tr class="separator:ae1f0c939a9ff2c0ba0a8fe74a4d3950c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba6c3b8229219fe0d8698d77bd6750e8" id="r_aba6c3b8229219fe0d8698d77bd6750e8"><td class="memItemLeft" align="right" valign="top"><a id="aba6c3b8229219fe0d8698d77bd6750e8" name="aba6c3b8229219fe0d8698d77bd6750e8"></a>
+<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>find</b> (const type_t value) const noexcept</td></tr>
+<tr class="separator:aba6c3b8229219fe0d8698d77bd6750e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04e8459de66d6f7b976be63090880c98" id="r_a04e8459de66d6f7b976be63090880c98"><td class="memItemLeft" align="right" valign="top"><a id="a04e8459de66d6f7b976be63090880c98" name="a04e8459de66d6f7b976be63090880c98"></a>
+<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>find_last</b> (const type_t value) const noexcept</td></tr>
+<tr class="separator:a04e8459de66d6f7b976be63090880c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe5d9425d102f5c7cea31d077a75d6aa" id="r_abe5d9425d102f5c7cea31d077a75d6aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">enumerator</a>&lt; <a class="el" href="#a8e935a6198ebd6b27a78a776b0c2358a">value_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe5d9425d102f5c7cea31d077a75d6aa">get_enumerator</a> () const noexcept override</td></tr>
 <tr class="memdesc:abe5d9425d102f5c7cea31d077a75d6aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:abe5d9425d102f5c7cea31d077a75d6aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abadcb4987e6776b13d8dabadcd1e1e34" id="r_abadcb4987e6776b13d8dabadcd1e1e34"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abadcb4987e6776b13d8dabadcd1e1e34">remove</a> (const type_t &amp;item) noexcept override</td></tr>
 <tr class="memdesc:abadcb4987e6776b13d8dabadcd1e1e34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the first occurrence of a specific object from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html" title="Represents a doubly linked list.">xtd::collections::generic::linked_list</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:abadcb4987e6776b13d8dabadcd1e1e34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01988b86912fdf2d6850b08555535830" id="r_a01988b86912fdf2d6850b08555535830"><td class="memItemLeft" align="right" valign="top"><a id="a01988b86912fdf2d6850b08555535830" name="a01988b86912fdf2d6850b08555535830"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>remove</b> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a> &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list_1_1node.html">node</a>)</td></tr>
-<tr class="separator:a01988b86912fdf2d6850b08555535830"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37dd9f3366120f7e11bac70bbf317141" id="r_a37dd9f3366120f7e11bac70bbf317141"><td class="memItemLeft" align="right" valign="top"><a id="a37dd9f3366120f7e11bac70bbf317141" name="a37dd9f3366120f7e11bac70bbf317141"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>remove</b> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list__node.html">linked_list_node</a>&lt; type_t &gt; &amp;node)</td></tr>
+<tr class="separator:a37dd9f3366120f7e11bac70bbf317141"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c0ab835376e2bed277b76aa32b11f0a" id="r_a7c0ab835376e2bed277b76aa32b11f0a"><td class="memItemLeft" align="right" valign="top"><a id="a7c0ab835376e2bed277b76aa32b11f0a" name="a7c0ab835376e2bed277b76aa32b11f0a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>remove_first</b> ()</td></tr>
 <tr class="separator:a7c0ab835376e2bed277b76aa32b11f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -302,7 +296,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t, class allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::value_type</td>
@@ -320,7 +314,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t, class allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::base_type</td>
@@ -338,7 +332,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t, class allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::const_base_type</td>
@@ -356,7 +350,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t, class allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::size_type</td>
@@ -374,7 +368,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t, class allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::reference</td>
@@ -392,7 +386,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t, class allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::const_reference</td>
@@ -410,7 +404,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t, class allocator_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1linked__list.html">xtd::collections::generic::linked_list</a>&lt; type_t, allocator_t &gt;::read_only_collection</td>
@@ -429,7 +423,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t, class allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -464,7 +458,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t, class allocator_t&gt; </div>
 <div class="memtemplate">
 template&lt;std::input_iterator input_iterator_t&gt; </div>
 <table class="mlabels">
@@ -508,7 +502,7 @@ template&lt;std::input_iterator input_iterator_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t, class allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -542,7 +536,7 @@ This method is an O(n) operation, where n is xtd::collections::generic::linked_l
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t, class allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -578,7 +572,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t, class allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -629,7 +623,7 @@ This method is an O(n) operation, where n is xtd::colllections::generic::linked_
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t, class allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -659,7 +653,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t, class allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -698,7 +692,7 @@ This method performs a linear search; therefore, this method is an O(n) operatio
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t, class allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -730,7 +724,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t, class allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -766,7 +760,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t, class allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -802,7 +796,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t, class allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -838,7 +832,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t, class allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -868,7 +862,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t, class allocator_t&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -899,7 +893,7 @@ template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 5 2025 19:03:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Nov 6 2025 19:58:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
