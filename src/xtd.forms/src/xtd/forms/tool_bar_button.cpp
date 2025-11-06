@@ -35,14 +35,14 @@ std::optional<xtd::ref<xtd::forms::context_menu>> tool_bar_button::drop_down_men
   return data_->drop_down_menu ? std::optional<xtd::ref<xtd::forms::context_menu>>(*data_->drop_down_menu) : std::nullopt;
 }
 
-tool_bar_button & tool_bar_button::drop_down_menu(const xtd::forms::context_menu& value) {
+tool_bar_button& tool_bar_button::drop_down_menu(const xtd::forms::context_menu& value) {
   if (data_->drop_down_menu.has_value() && data_->drop_down_menu.value() == value) return *this;
   data_->drop_down_menu = const_cast<xtd::forms::context_menu&>(value);
   if (data_->parent) data_->parent->post_recreate_handle();
   return *this;
 }
 
-tool_bar_button & tool_bar_button::drop_down_menu(std::nullptr_t value) {
+tool_bar_button& tool_bar_button::drop_down_menu(std::nullptr_t value) {
   if (!data_->drop_down_menu.has_value()) return *this;
   data_->drop_down_menu.reset();
   if (data_->parent) data_->parent->post_recreate_handle();
@@ -53,7 +53,7 @@ bool tool_bar_button::enabled() const noexcept {
   return data_->enabled;
 }
 
-tool_bar_button & tool_bar_button::enabled(bool value) {
+tool_bar_button& tool_bar_button::enabled(bool value) {
   if (data_->enabled == value) return *this;
   data_->enabled = value;
   if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().count() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
@@ -64,18 +64,18 @@ size_t tool_bar_button::image_index() const noexcept {
   return data_->image_index;
 }
 
-tool_bar_button & tool_bar_button::image_index(size_t value) {
+tool_bar_button& tool_bar_button::image_index(size_t value) {
   if (data_->image_index == value) return *this;
   data_->image_index = value;
   if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().count() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
   return *this;
 }
 
-const string & tool_bar_button::name() const noexcept {
+const string& tool_bar_button::name() const noexcept {
   return data_->name;
 }
 
-tool_bar_button & tool_bar_button::name(const xtd::string& value) {
+tool_bar_button& tool_bar_button::name(const xtd::string& value) {
   data_->name = value;
   return *this;
 }
@@ -88,7 +88,7 @@ bool tool_bar_button::pushed() const noexcept {
   return data_->pushed;
 }
 
-tool_bar_button & tool_bar_button::pushed(bool value) {
+tool_bar_button& tool_bar_button::pushed(bool value) {
   if (data_->pushed == value) return *this;
   data_->pushed = value;
   if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().count() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
@@ -99,42 +99,42 @@ xtd::forms::tool_bar_button_style tool_bar_button::style() const noexcept {
   return data_->style;
 }
 
-tool_bar_button & tool_bar_button::style(xtd::forms::tool_bar_button_style value) {
+tool_bar_button& tool_bar_button::style(xtd::forms::tool_bar_button_style value) {
   if (data_->style == value) return *this;
   data_->style = value;
   if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().count() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
   return *this;
 }
 
-const xtd::drawing::rectangle & tool_bar_button::rectangle() const noexcept {
+const xtd::drawing::rectangle& tool_bar_button::rectangle() const noexcept {
   return data_->rectangle;
 }
 
-const any_object & tool_bar_button::tag() const noexcept {
+const any_object& tool_bar_button::tag() const noexcept {
   return data_->tag;
 }
 
-tool_bar_button & tool_bar_button::tag(const any_object& value) {
+tool_bar_button& tool_bar_button::tag(const any_object& value) {
   data_->tag = value;
   return *this;
 }
 
-const string & tool_bar_button::text() const noexcept {
+const string& tool_bar_button::text() const noexcept {
   return data_->text;
 }
 
-tool_bar_button & tool_bar_button::text(const xtd::string& value) {
+tool_bar_button& tool_bar_button::text(const xtd::string& value) {
   if (data_->text == value) return *this;
   data_->text = value;
   if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().count() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
   return *this;
 }
 
-const string & tool_bar_button::tool_tip_text() const noexcept {
+const string& tool_bar_button::tool_tip_text() const noexcept {
   return data_->tool_tip_text;
 }
 
-tool_bar_button & tool_bar_button::tool_tip_text(const xtd::string& value) {
+tool_bar_button& tool_bar_button::tool_tip_text(const xtd::string& value) {
   if (data_->tool_tip_text == value) return *this;
   data_->tool_tip_text = value;
   if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().count() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);
@@ -145,7 +145,7 @@ bool tool_bar_button::visible() const noexcept {
   return data_->visible;
 }
 
-tool_bar_button & tool_bar_button::visible(bool value) {
+tool_bar_button& tool_bar_button::visible(bool value) {
   if (data_->visible == value) return *this;
   data_->visible = value;
   if (data_->parent) data_->parent->update_toolbar_button_control(data_->handle, data_->text, data_->tool_tip_text, data_->image_index  < data_->parent->image_list().images().count() ? data_->parent->image_list().images()[data_->image_index] : xtd::drawing::image::empty, data_->pushed, data_->enabled, data_->visible);

@@ -147,8 +147,8 @@ namespace xtd {
     time_span(uint32 days, uint32 hours, uint32 minutes, uint32 seconds, uint32 milliseconds, uint32 microseconds, uint32 nanoseconds);
     
     time_span& operator =(const time_span&) = default;
-    time_span & operator +=(const time_span& value);
-    time_span & operator -=(const time_span& value);
+    time_span& operator +=(const time_span& value);
+    time_span& operator -=(const time_span& value);
     time_span operator +(const time_span& value);
     time_span operator -(const time_span& value);
     double operator *(const time_span& value);
@@ -157,9 +157,9 @@ namespace xtd {
     time_span operator /(double value);
     time_span operator +();
     time_span operator -();
-    time_span & operator ++();
+    time_span& operator ++();
     time_span operator ++(int);
-    time_span & operator --();
+    time_span& operator --();
     time_span operator --(int);
     /// @endcond
     

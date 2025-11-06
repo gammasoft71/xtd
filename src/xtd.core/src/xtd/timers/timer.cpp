@@ -92,11 +92,11 @@ std::optional<ref<isynchronize_invoke>> timer::synchronizing_object() const noex
   return std::optional<ref<isynchronize_invoke>> {*data_->synchronizing_object};
 }
 
-timer & timer::synchronizing_object(isynchronize_invoke& value) {
+timer& timer::synchronizing_object(isynchronize_invoke& value) {
   data_->synchronizing_object = &value;
   return *this;
 }
-timer & timer::synchronizing_object(std::nullptr_t value) {
+timer& timer::synchronizing_object(std::nullptr_t value) {
   data_->synchronizing_object = nullptr;
   return *this;
 }

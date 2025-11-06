@@ -33,7 +33,7 @@
 
 /// @cond
 template<class ...args_t>
-void __basic_string_extract_format_arg(const std::locale& loc, xtd::basic_string<char>& fmt, xtd::array<__format_information<char >> & formats, args_t&&... args);
+void __basic_string_extract_format_arg(const std::locale& loc, xtd::basic_string<char>& fmt, xtd::array<__format_information<char >>& formats, args_t&&... args);
 template<class target_t, class source_t>
 std::basic_string<target_t> __xtd_convert_to_string(std::basic_string<source_t>&& str) noexcept;
 template<class target_t, class source_t>
@@ -849,11 +849,11 @@ namespace xtd {
     const_pointer c_str() const noexcept {return chars_.c_str();}
     /// @brief Returns a reference to the underlying base type.
     /// @return Reference to the underlying base type.
-    const base_type & chars() const noexcept {return chars_;}
+    const base_type& chars() const noexcept {return chars_;}
     
     /// @brief Returns a reference to the underlying base type.
     /// @return Reference to the underlying base type.
-    base_type & chars() noexcept {return chars_;}
+    base_type& chars() noexcept {return chars_;}
     
     /// @brief Gets the number of characters in the current xtd::basic_string object.
     /// @return The number of characters in the current string.
@@ -1348,7 +1348,7 @@ namespace xtd {
     
     /// @brief Returns the underlying base type.
     /// @return The underlying base type.
-    virtual const base_type & get_base_type() const noexcept {return chars_;}
+    virtual const base_type& get_base_type() const noexcept {return chars_;}
     
     /// @brief Returns the hash code for this basic_string.
     /// @return A hash code.
@@ -1357,7 +1357,7 @@ namespace xtd {
     enumerator_type get_enumerator() const noexcept override {
       struct basic_string_enumerator : public xtd::collections::generic::ienumerator<value_type> {
         explicit basic_string_enumerator(const basic_string & chars) : chars_(chars) {}
-        const value_type & current() const override {
+        const value_type& current() const override {
           if (index_ >= chars_.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           return chars_[index_];
         }
@@ -2141,14 +2141,14 @@ namespace xtd {
     /// @param b The second basic_string to compare.
     /// @return `true` if the value of `a` is the same as the value of `b`; otherwise, `false`.
     /// @remarks This method performs an ordinal (case-sensitive) comparison.
-    static bool equals(const basic_string & a, const basic_string & b) noexcept{return a.equals(b);}
+    static bool equals(const basic_string & a, const basic_string & b) noexcept {return a.equals(b);}
     /// @brief Determines whether two specified xtd::basic_string objects have the same value.
     /// @param a The first basic_string to compare.
     /// @param b The second basic_string to compare.
     /// @return `true` if the value of `a` is the same as the value of `b`; otherwise, `false`.
     /// @remarks This method performs an ordinal (case-sensitive) comparison.
     template<class char_a_t, class char_b_t>
-    inline static bool equals(const char_a_t* a, const char_b_t* b) noexcept{return basic_string {a}.equals(basic_string {b});}
+    inline static bool equals(const char_a_t* a, const char_b_t* b) noexcept {return basic_string {a}.equals(basic_string {b});}
     
     /// @brief Determines whether two specified xtd::basic_string objects have the same value, ignoring or honoring their case.
     /// @param a The first basic_string to compare.
@@ -2164,7 +2164,7 @@ namespace xtd {
     /// @return `true` if the value of `a` is the same as the value of `b`; otherwise, `false`.
     /// @remarks This method performs an ordinal comparison.
     template<class char_a_t, class char_b_t>
-    inline static bool equals(const char_a_t* a, const char_b_t* b, bool ignore_case) noexcept{return basic_string {a}.equals(basic_string {b}, ignore_case);}
+    inline static bool equals(const char_a_t* a, const char_b_t* b, bool ignore_case) noexcept {return basic_string {a}.equals(basic_string {b}, ignore_case);}
     
     /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
     /// @param fmt A composite format string.
@@ -2342,7 +2342,7 @@ namespace xtd {
     
     /// @brief Returns a reference to the underlying base type.
     /// @return Reference to the underlying base type.
-    operator const base_type & () const noexcept {return chars_;}
+    operator const base_type& () const noexcept {return chars_;}
     
     /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of str.
     /// @param str String to use as data source.
@@ -2634,7 +2634,7 @@ namespace xtd {
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(const basic_string<char>& str) {
+    basic_string& operator +=(const basic_string<char>& str) {
       if constexpr(std::is_same_v<char, char_t>) chars_ += str.chars_;
       else chars_ += __xtd_convert_to_string<value_type>(str.chars_);
       return self_;
@@ -2642,7 +2642,7 @@ namespace xtd {
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(const basic_string<xtd::char16>& str) {
+    basic_string& operator +=(const basic_string<xtd::char16>& str) {
       if constexpr(std::is_same_v<xtd::char16, char_t>) chars_ += str.chars_;
       else chars_ += __xtd_convert_to_string<value_type>(str.chars_);
       return self_;
@@ -2650,7 +2650,7 @@ namespace xtd {
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(const basic_string<xtd::char32>& str) {
+    basic_string& operator +=(const basic_string<xtd::char32>& str) {
       if constexpr(std::is_same_v<xtd::char32, char_t>) chars_ += str.chars_;
       else chars_ += __xtd_convert_to_string<value_type>(str.chars_);
       return self_;
@@ -2658,7 +2658,7 @@ namespace xtd {
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(const basic_string<xtd::char8>& str) {
+    basic_string& operator +=(const basic_string<xtd::char8>& str) {
       if constexpr(std::is_same_v<xtd::char8, char_t>) chars_ += str.chars_;
       else chars_ += __xtd_convert_to_string<value_type>(str.chars_);
       return self_;
@@ -2666,7 +2666,7 @@ namespace xtd {
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(const basic_string<xtd::wchar>& str) {
+    basic_string& operator +=(const basic_string<xtd::wchar>& str) {
       if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ += str.chars_;
       else chars_ += __xtd_convert_to_string<value_type>(str.chars_);
       return self_;
@@ -2675,7 +2675,7 @@ namespace xtd {
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(basic_string<char>&& str) {
+    basic_string& operator +=(basic_string<char>&& str) {
       if constexpr(std::is_same_v<char, char_t>) chars_ += std::move(str.chars_);
       else chars_ += __xtd_convert_to_string<value_type>(std::move(str.chars_));
       return self_;
@@ -2683,7 +2683,7 @@ namespace xtd {
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(basic_string<xtd::char16>&& str) {
+    basic_string& operator +=(basic_string<xtd::char16>&& str) {
       if constexpr(std::is_same_v<xtd::char16, char_t>) chars_ += std::move(str.chars_);
       else chars_ += __xtd_convert_to_string<value_type>(std::move(str.chars_));
       return self_;
@@ -2691,7 +2691,7 @@ namespace xtd {
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(basic_string<xtd::char32>&& str) {
+    basic_string& operator +=(basic_string<xtd::char32>&& str) {
       if constexpr(std::is_same_v<xtd::char32, char_t>) chars_ += std::move(str.chars_);
       else chars_ += __xtd_convert_to_string<value_type>(std::move(str.chars_));
       return self_;
@@ -2699,7 +2699,7 @@ namespace xtd {
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(basic_string<xtd::char8>&& str) {
+    basic_string& operator +=(basic_string<xtd::char8>&& str) {
       if constexpr(std::is_same_v<xtd::char8, char_t>) chars_ += std::move(str.chars_);
       else chars_ += __xtd_convert_to_string<value_type>(std::move(str.chars_));
       return self_;
@@ -2707,7 +2707,7 @@ namespace xtd {
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(basic_string<xtd::wchar>&& str) {
+    basic_string& operator +=(basic_string<xtd::wchar>&& str) {
       if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ += std::move(str.chars_);
       else chars_ += __xtd_convert_to_string<value_type>(std::move(str.chars_));
       return self_;
@@ -2716,7 +2716,7 @@ namespace xtd {
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(const std::basic_string<char>& str) {
+    basic_string& operator +=(const std::basic_string<char>& str) {
       if constexpr(std::is_same_v<char, char_t>) chars_ += str;
       else chars_ += __xtd_convert_to_string<value_type>(str);
       return self_;
@@ -2724,7 +2724,7 @@ namespace xtd {
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(const std::basic_string<xtd::char16>& str) {
+    basic_string& operator +=(const std::basic_string<xtd::char16>& str) {
       if constexpr(std::is_same_v<xtd::char16, char_t>) chars_ += str;
       else chars_ += __xtd_convert_to_string<value_type>(str);
       return self_;
@@ -2732,7 +2732,7 @@ namespace xtd {
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(const std::basic_string<xtd::char32>& str) {
+    basic_string& operator +=(const std::basic_string<xtd::char32>& str) {
       if constexpr(std::is_same_v<xtd::char32, char_t>) chars_ += str;
       else chars_ += __xtd_convert_to_string<value_type>(str);
       return self_;
@@ -2740,7 +2740,7 @@ namespace xtd {
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(const std::basic_string<xtd::char8>& str) {
+    basic_string& operator +=(const std::basic_string<xtd::char8>& str) {
       if constexpr(std::is_same_v<xtd::char8, char_t>) chars_ += str;
       else chars_ += __xtd_convert_to_string<value_type>(str);
       return self_;
@@ -2748,7 +2748,7 @@ namespace xtd {
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(const std::basic_string<xtd::wchar>& str) {
+    basic_string& operator +=(const std::basic_string<xtd::wchar>& str) {
       if constexpr(std::is_same_v<xtd::wchar, char_t>) chars_ += str;
       else chars_ += __xtd_convert_to_string<value_type>(str);
       return self_;
@@ -2757,69 +2757,69 @@ namespace xtd {
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(const char* str) {
+    basic_string& operator +=(const char* str) {
       chars_ += basic_string(str).chars_;
       return self_;
     }
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(const xtd::char16 * str) {
+    basic_string& operator +=(const xtd::char16 * str) {
       chars_.append(basic_string(str).chars_); return self_;
     }
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(const xtd::char32 * str) {
+    basic_string& operator +=(const xtd::char32 * str) {
       chars_ += basic_string(str).chars_;
       return self_;
     }
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(const xtd::char8 * str) {
+    basic_string& operator +=(const xtd::char8 * str) {
       chars_ += basic_string(str).chars_;
       return self_;
     }
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param str string to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(const xtd::wchar * str) {
+    basic_string& operator +=(const xtd::wchar * str) {
       chars_ += basic_string(str).chars_;
       return self_;
     }
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param ch Character value to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(char ch) {
+    basic_string& operator +=(char ch) {
       chars_ += basic_string(1, ch).chars_;
       return self_;
     }
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param ch Character value to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(xtd::char16 ch) {
+    basic_string& operator +=(xtd::char16 ch) {
       chars_ += basic_string(1, ch).chars_;
       return self_;
     }
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param ch Character value to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(xtd::char32 ch) {
+    basic_string& operator +=(xtd::char32 ch) {
       chars_ += basic_string(1, ch).chars_;
       return self_;
     }
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param ch Character value to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(xtd::char8 ch) {
+    basic_string& operator +=(xtd::char8 ch) {
       chars_ += basic_string(1, ch).chars_;
       return self_;
     }
     /// @brief Addition assignment operator. Appends additional characters to the string.
     /// @param ch Character value to append.
     /// @return This current instance with characters added.
-    basic_string & operator +=(xtd::wchar ch) {
+    basic_string& operator +=(xtd::wchar ch) {
       chars_ += basic_string(1, ch).chars_;
       return self_;
     }

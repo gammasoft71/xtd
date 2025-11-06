@@ -79,11 +79,11 @@ namespace xtd {
           return {*data_->list, --tmp};
         }
         
-        const value_type & value() const {
+        const value_type& value() const {
           if (!has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           return *data_->iterator;
         }
-        value_type & value() {
+        value_type& value() {
           if (!has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           if (data_->value.has_value()) return data_->value.value();
           return *data_->iterator;

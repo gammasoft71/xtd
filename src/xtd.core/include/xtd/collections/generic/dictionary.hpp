@@ -93,7 +93,7 @@ namespace xtd {
           }
           /// @}
           
-private:
+        private:
           friend class dictionary;
           hasher() = default;
           explicit hasher(const iequality_comparer<key_t>* comparer) : comparer {comparer} {}
@@ -128,11 +128,11 @@ private:
           }
           /// @}
           
-private:
+        private:
           friend class dictionary;
           equator() = default;
-          explicit equator(const iequality_comparer < key_t > * comparer) : comparer {comparer} {}
-          const iequality_comparer < key_t > * comparer = nullptr;
+          explicit equator(const iequality_comparer < key_t >* comparer) : comparer {comparer} {}
+          const iequality_comparer < key_t >* comparer = nullptr;
         };
         /// @}
         
@@ -201,7 +201,7 @@ private:
         /// @par Examples
         /// The following code example shows how to use the xtd::collections::generic::dictionary <key_t, value_t>(xtd::collections::generic::iequality_comparer <key_t>) constructor to initialize a xtd::collections::generic::dictionary <key_t, value_t> with sorted content from another dictionary. The code example creates a xtd::collections::generic::sorted_dictionary <key_t, value_t> and populates it with data in random order, then passes the xtd::collections::generic::sorted_dictionary <key_t, value_t> to the xtd::collections::generic::dictionary <key_t, value_t>(xtd::collections::generic::iequality_comparer <key_t>) constructor, creating a xtd::collections::generic::dictionary <key_t, value_t> that is sorted. This is useful if you need to build a sorted dictionary that at some point becomes static; copying the data from a xtd::collections::generic::sorted_dictionary <key_t, value_t> to a xtd::collections::generic::dictionary <key_t, value_t> improves retrieval speed.
         /// @include generic_dictionary_constructor_with_idicationary.cpp
-        dictionary(const idictionary < key_t, value_t > & dictionary) {
+        dictionary(const idictionary < key_t, value_t >& dictionary) {
           ensure_capacity(dictionary.count());
           for (const auto& item : dictionary)
             add(item);
@@ -209,7 +209,7 @@ private:
         /// @brief Initializes a new instance of the xtd::collections::generic::dictionary <key_t, value_t> class that contains elements copied from the specified xtd::collections::generic::ienumerable <type_t>.
         /// @param collection The xtd::collections::generic::ienumerable <type_t> whose elements are copied to the new xtd::collections::generic::dictionary <key_t, value_t>
         /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
-        dictionary(const ienumerable < value_type > & collection) {
+        dictionary(const ienumerable < value_type >& collection) {
           for (const auto& item : collection)
             add(item);
         }
@@ -256,7 +256,7 @@ private:
         /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. If type `key_t` implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation.
         /// @remarks This constructor is an O(n) operation, where n is the number of elements in dictionary.
         template < class equality_comparer_t >
-        dictionary(const idictionary < key_t, value_t > & dictionary, const equality_comparer_t& comparer) : data_(xtd::new_ptr < dictionary_data>(new_ptr < equality_comparer_t > (comparer))) {
+        dictionary(const idictionary < key_t, value_t >& dictionary, const equality_comparer_t& comparer) : data_(xtd::new_ptr < dictionary_data>(new_ptr < equality_comparer_t > (comparer))) {
           ensure_capacity(dictionary.count());
           for (const auto& item : dictionary)
             add(item);
@@ -266,7 +266,7 @@ private:
         /// @param comparer The xtd::collections::generic::iequality_comparer <type_t> implementation to use when comparing keys.
         /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
         template < class equality_comparer_t >
-        dictionary(const ienumerable < value_type > & collection, const equality_comparer_t& comparer) : data_(xtd::new_ptr < dictionary_data>(new_ptr < equality_comparer_t > (comparer))) {
+        dictionary(const ienumerable < value_type >& collection, const equality_comparer_t& comparer) : data_(xtd::new_ptr < dictionary_data>(new_ptr < equality_comparer_t > (comparer))) {
           for (const auto& item : collection)
             add(item);
         }
@@ -291,7 +291,7 @@ private:
         /// @param other Another container to be used as source to initialize the elements of the container with.
         /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
         /// @remarks Copy constructor. Constructs the container with the copy of the contents of `other`, copies the load factor, the predicate, and the hash function as well. If `alloc` is not provided, allocator is obtained by calling
-        dictionary(const std::unordered_map < key_t, value_t > & other) {
+        dictionary(const std::unordered_map < key_t, value_t >& other) {
           for (auto iterator = other.begin(); iterator != other.end(); ++iterator) {
             const auto& [key, value] = *iterator;
             add(key, value);
@@ -346,7 +346,7 @@ private:
         /// @brief Gets the td::collections::generic::iequality_comparer <type_t> that is used to determine equality of keys for the dictionary.
         /// @return The xtd::collections::generic::iequality_comparer <type_t> generic interface implementation that is used to determine equality of keys for the current xtd::collections::generic::dictionary <key_t, value_t> and to provide hash values for the keys.
         /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. You can specify an implementation of the td::collections::generic::iequality_comparer <type_t> generic interface by using a constructor that accepts a comparer parameter; if you do not specify one, the default generic equality comparer td::collections::generic::equality_comparer::default_equality_comparer is used.
-        const iequality_comparer < key_t > & comparer() const noexcept {
+        const iequality_comparer < key_t >& comparer() const noexcept {
           if (data_->comparer) return *data_->comparer;
           return equality_comparer < key_t >::default_equality_comparer();
         }
@@ -360,10 +360,10 @@ private:
         
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
-        virtual const base_type & items() const noexcept {return data_->items;}
+        virtual const base_type& items() const noexcept {return data_->items;}
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
-        virtual base_type & items() noexcept {return data_->items;}
+        virtual base_type& items() noexcept {return data_->items;}
         
         /// @brief Gets a collection containing the keys in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @return A xtd::collections::generic::dictionary::key_collection containing the keys in the xtd::collections::generic::dictionary <key_t, value_t>.
@@ -446,7 +446,7 @@ private:
         /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::generic::icollection <type_t>. The xtd::array must have zero-based indexing.
         /// @param array_index The zero-based index in `array` at which copying begins.
         /// @exception xtd::argument_exception The number of elements in the source xtd::collections::generic::icollection <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
-        void copy_to(xtd::array < value_type > & array, xtd::size array_index) const override {
+        void copy_to(xtd::array < value_type >& array, xtd::size array_index) const override {
           if (array_index + count() > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           auto index = size_type {0};
           for (const auto& item : self_)
@@ -467,7 +467,7 @@ private:
           struct dictionary_enumerator : public ienumerator < value_type > {
             explicit dictionary_enumerator(const dictionary & items, size_type version) : items_(items), version_(version) {}
             
-            const value_type & current() const override {
+            const value_type& current() const override {
               if (iterator_ == items_.items().cend()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               return (value_ = value_type {*iterator_});
@@ -598,7 +598,7 @@ private:
         /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `other`.
         /// @param other Another container to use as data source.
         /// @return This current instance.
-        dictionary& operator =(const std::unordered_map < key_t, value_t > & other) noexcept {
+        dictionary& operator =(const std::unordered_map < key_t, value_t >& other) noexcept {
           data_->items.clear();
           for (const auto& [key, value] : other)
             add(key, value);
@@ -646,16 +646,16 @@ private:
         
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
-        operator const base_type & () const noexcept {return data_->items;}
+        operator const base_type& () const noexcept {return data_->items;}
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
-        operator base_type & () noexcept {return data_->items;}
+        operator base_type& () noexcept {return data_->items;}
         /// @}
         
       private:
         bool is_read_only() const noexcept override {return false;}
         bool is_synchronized() const noexcept override {return false;}
-        const xtd::object & sync_root() const noexcept override {return data_->sync_root;}
+        const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
         
         struct dictionary_data {
           dictionary_data() : items {size_type {}, hasher {}, equator {}, allocator_t {}} {}

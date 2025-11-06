@@ -342,7 +342,7 @@ namespace xtd {
             const arranged_element_collection& items_;
             size_type version_ = 0;
           };
-
+          
           return {new_ptr<arranged_element_collection_enumerator>(self_, items().version())};
         }
         

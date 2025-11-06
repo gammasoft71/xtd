@@ -239,30 +239,30 @@ namespace xtd {
       /// @}
       
       /// @cond
-      binary_writer & operator <<(bool value) {write(value); return *this;}
-      binary_writer & operator <<(byte value) {write(value); return *this;}
-      binary_writer & operator <<(char value) {write(value); return *this;}
+      binary_writer& operator <<(bool value) {write(value); return *this;}
+      binary_writer& operator <<(byte value) {write(value); return *this;}
+      binary_writer& operator <<(char value) {write(value); return *this;}
       template<size_t size>
-      binary_writer & operator <<(const xtd::fixed_array<xtd::byte, size>& value) {write(value); return *this;}
+      binary_writer& operator <<(const xtd::fixed_array<xtd::byte, size>& value) {write(value); return *this;}
       template<size_t size>
-      binary_writer & operator <<(const xtd::fixed_array<char, size>& value) {write(value); return *this;}
-      binary_writer & operator <<(const xtd::array<xtd::byte>& value) {write(value, 0, value.size()); return *this;}
-      binary_writer & operator <<(const xtd::array<char>& value) {write(value, 0, value.size()); return *this;}
-      binary_writer & operator <<(double value) {write(value); return *this;}
-      binary_writer & operator <<(int16 value) {write(value); return *this;}
-      binary_writer & operator <<(int32 value) {write(value); return *this;}
-      binary_writer & operator <<(int64 value) {write(value); return *this;}
-      binary_writer & operator <<(sbyte value) {write(value); return *this;}
-      binary_writer & operator <<(float value) {write(value); return *this;}
-      binary_writer & operator <<(const string& value) {write(value); return *this;}
-      binary_writer & operator <<(const char* value) {write(value); return *this;}
-      binary_writer & operator <<(const char8* value) {write(value); return *this;}
-      binary_writer & operator <<(const char16* value) {write(value); return *this;}
-      binary_writer & operator <<(const char32* value) {write(value); return *this;}
-      binary_writer & operator <<(const wchar* value) {write(value); return *this;}
-      binary_writer & operator <<(uint16 value) {write(value); return *this;}
-      binary_writer & operator <<(uint32 value) {write(value); return *this;}
-      binary_writer & operator <<(uint64 value) {write(value); return *this;}
+      binary_writer& operator <<(const xtd::fixed_array<char, size>& value) {write(value); return *this;}
+      binary_writer& operator <<(const xtd::array<xtd::byte>& value) {write(value, 0, value.size()); return *this;}
+      binary_writer& operator <<(const xtd::array<char>& value) {write(value, 0, value.size()); return *this;}
+      binary_writer& operator <<(double value) {write(value); return *this;}
+      binary_writer& operator <<(int16 value) {write(value); return *this;}
+      binary_writer& operator <<(int32 value) {write(value); return *this;}
+      binary_writer& operator <<(int64 value) {write(value); return *this;}
+      binary_writer& operator <<(sbyte value) {write(value); return *this;}
+      binary_writer& operator <<(float value) {write(value); return *this;}
+      binary_writer& operator <<(const string& value) {write(value); return *this;}
+      binary_writer& operator <<(const char* value) {write(value); return *this;}
+      binary_writer& operator <<(const char8* value) {write(value); return *this;}
+      binary_writer& operator <<(const char16* value) {write(value); return *this;}
+      binary_writer& operator <<(const char32* value) {write(value); return *this;}
+      binary_writer& operator <<(const wchar* value) {write(value); return *this;}
+      binary_writer& operator <<(uint16 value) {write(value); return *this;}
+      binary_writer& operator <<(uint32 value) {write(value); return *this;}
+      binary_writer& operator <<(uint64 value) {write(value); return *this;}
       /// @endcond
       
     private:

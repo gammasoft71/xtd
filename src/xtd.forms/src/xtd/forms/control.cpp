@@ -231,7 +231,7 @@ anchor_styles control::anchor() const noexcept {
   return data_->anchor;
 }
 
-control & control::anchor(anchor_styles anchor) {
+control& control::anchor(anchor_styles anchor) {
   if (data_->anchor == anchor) return *this;
   data_->anchor = anchor;
   set_state(state::docked, false);
@@ -248,7 +248,7 @@ bool control::auto_size() const noexcept {
   return get_state(state::auto_size);
 }
 
-control & control::auto_size(bool auto_size) {
+control& control::auto_size(bool auto_size) {
   if (get_state(state::auto_size) == auto_size) return *this;
   set_state(state::auto_size, auto_size);
   on_auto_size_changed(event_args::empty);
@@ -262,7 +262,7 @@ color control::back_color() const noexcept {
   return default_back_color();
 }
 
-control & control::back_color(const color& color) {
+control& control::back_color(const color& color) {
   if (data_->back_color.has_value() && data_->back_color == color) return *this;
   data_->back_color = color;
   if (is_handle_created()) native::control::back_color(handle(), data_->back_color.value());
@@ -272,7 +272,7 @@ control & control::back_color(const color& color) {
   return *this;
 }
 
-control & control::back_color(std::nullptr_t) {
+control& control::back_color(std::nullptr_t) {
   if (!data_->back_color.has_value()) return *this;
   data_->back_color.reset();
   post_recreate_handle();
@@ -282,11 +282,11 @@ control & control::back_color(std::nullptr_t) {
   return *this;
 }
 
-const xtd::drawing::image & control::background_image() const noexcept {
+const xtd::drawing::image& control::background_image() const noexcept {
   return data_->background_image;
 }
 
-control & control::background_image(const xtd::drawing::image& background_image) {
+control& control::background_image(const xtd::drawing::image& background_image) {
   if (data_->background_image == background_image) return *this;
   data_->background_image = background_image;
   on_background_image_changed(event_args::empty);
@@ -297,7 +297,7 @@ xtd::forms::image_layout control::background_image_layout() const noexcept {
   return data_->background_image_layout;
 }
 
-control & control::background_image_layout(xtd::forms::image_layout background_image_layout) {
+control& control::background_image_layout(xtd::forms::image_layout background_image_layout) {
   if (data_->background_image_layout == background_image_layout) return *this;
   data_->background_image_layout = background_image_layout;
   on_background_image_layout_changed(event_args::empty);
@@ -312,7 +312,7 @@ drawing::rectangle control::bounds() const noexcept {
   return {location(), size()};
 }
 
-control & control::bounds(const drawing::rectangle& bounds) {
+control& control::bounds(const drawing::rectangle& bounds) {
   set_bounds_core(bounds.x, bounds.y, bounds.width, bounds.height, bounds_specified::all);
   return *this;
 }
@@ -350,7 +350,7 @@ void control::check_for_illegal_cross_thread_calls(bool value) {
   check_for_illegal_cross_thread_calls_ = value;
 }
 
-const drawing::rectangle & control::client_rectangle() const noexcept {
+const drawing::rectangle& control::client_rectangle() const noexcept {
   try {
     if (!handle()) data_->client_rectangle = {point {0, 0}, client_size()};
   } catch (...) {
@@ -358,7 +358,7 @@ const drawing::rectangle & control::client_rectangle() const noexcept {
   return data_->client_rectangle;
 }
 
-const drawing::size & control::client_size() const noexcept {
+const drawing::size& control::client_size() const noexcept {
   try {
     if (!handle() && data_->client_size.width == 0 && width() != 0) data_->client_size = {width(), data_->client_size.height};
     if (!handle() && data_->client_size.height == 0 && height() != 0) data_->client_size = {data_->client_size.width, height()};
@@ -367,7 +367,7 @@ const drawing::size & control::client_size() const noexcept {
   return data_->client_size;
 }
 
-control & control::client_size(const drawing::size& client_size) {
+control& control::client_size(const drawing::size& client_size) {
   if (get_state(state::client_size_setted) && data_->client_size == client_size) return *this;
   set_state(state::client_size_setted, true);
   set_client_size_core(client_size.width, client_size.height);
@@ -382,13 +382,13 @@ std::optional < control::context_menu_ref > control::context_menu() const noexce
   return data_->context_menu;
 }
 
-control & control::context_menu(xtd::forms::context_menu& value) {
+control& control::context_menu(xtd::forms::context_menu& value) {
   if (data_->context_menu.has_value() && &data_->context_menu.value().get() == &value) return *this;
   data_->context_menu = const_cast < forms::context_menu& > (value);
   return *this;
 }
 
-control & control::context_menu(std::nullptr_t) {
+control& control::context_menu(std::nullptr_t) {
   if (!data_->context_menu.has_value()) return *this;
   data_->context_menu.reset();
   if (is_handle_created()) native::control::context_menu(handle(), 0, xtd::drawing::point::empty);
@@ -399,18 +399,18 @@ forms::control_appearance control::control_appearance() const noexcept {
   return data_->control_appearance;
 }
 
-control & control::control_appearance(forms::control_appearance value) {
+control& control::control_appearance(forms::control_appearance value) {
   if (data_->control_appearance == value) return *this;
   data_->control_appearance = value;
   on_control_appearance_changed(event_args::empty);
   return *this;
 }
 
-control::control_collection & control::controls() noexcept {
+control::control_collection& control::controls() noexcept {
   return data_->controls;
 }
 
-const control::control_collection & control::controls() const noexcept {
+const control::control_collection& control::controls() const noexcept {
   return data_->controls;
 }
 
@@ -425,7 +425,7 @@ forms::cursor control::cursor() const noexcept {
   return default_cursor();
 }
 
-control & control::cursor(const forms::cursor& cursor) {
+control& control::cursor(const forms::cursor& cursor) {
   if (data_->cursor == cursor) return *this;
   data_->cursor = cursor;
   if (is_handle_created()) native::control::cursor(handle(), data_->cursor.value().handle());
@@ -435,7 +435,7 @@ control & control::cursor(const forms::cursor& cursor) {
   return *this;
 }
 
-control & control::cursor(std::nullptr_t) {
+control& control::cursor(std::nullptr_t) {
   if (!data_->cursor.has_value()) return *this;
   data_->cursor.reset();
   post_recreate_handle();
@@ -453,7 +453,7 @@ dock_style control::dock() const noexcept {
   return data_->dock;
 }
 
-control & control::dock(dock_style dock) {
+control& control::dock(dock_style dock) {
   if (data_->dock == dock) return *this;
   data_->dock = dock;
   set_state(state::docked, true);
@@ -465,7 +465,7 @@ bool control::double_buffered() const noexcept {
   return get_state(state::double_buffered);
 }
 
-control & control::double_buffered(bool double_buffered) {
+control& control::double_buffered(bool double_buffered) {
   if (get_state(state::double_buffered) == double_buffered) return *this;
   set_state(state::double_buffered, double_buffered);
   if (is_handle_created()) native::control::double_buffered(handle(), double_buffered);
@@ -476,7 +476,7 @@ bool control::enabled() const noexcept {
   return get_state(state::enabled);
 }
 
-control & control::enabled(bool enabled) {
+control& control::enabled(bool enabled) {
   if (get_state(state::enabled) == enabled) return *this;
   set_state(state::enabled, enabled);
   if (is_handle_created()) native::control::enabled(handle(), get_state(state::enabled));
@@ -497,7 +497,7 @@ drawing::font control::font() const noexcept {
   return default_font();
 }
 
-control & control::font(const drawing::font& font) {
+control& control::font(const drawing::font& font) {
   if (data_->font == font) return *this;
   data_->font = font;
   if (is_handle_created()) native::control::font(handle(), data_->font.value());
@@ -507,7 +507,7 @@ control & control::font(const drawing::font& font) {
   return *this;
 }
 
-control & control::font(std::nullptr_t) {
+control& control::font(std::nullptr_t) {
   if (!data_->font.has_value()) return *this;
   data_->font.reset();
   post_recreate_handle();
@@ -524,7 +524,7 @@ color control::fore_color() const noexcept {
   return default_fore_color();
 }
 
-control & control::fore_color(const color& color) {
+control& control::fore_color(const color& color) {
   if (data_->fore_color.has_value() && data_->fore_color == color) return *this;
   data_->fore_color = color;
   if (is_handle_created()) native::control::fore_color(handle(), data_->fore_color.value());
@@ -534,7 +534,7 @@ control & control::fore_color(const color& color) {
   return *this;
 }
 
-control & control::fore_color(std::nullptr_t) {
+control& control::fore_color(std::nullptr_t) {
   if (!data_->fore_color.has_value()) return *this;
   data_->fore_color.reset();
   post_recreate_handle();
@@ -554,7 +554,7 @@ int32 control::height() const noexcept {
   return size().height;
 }
 
-control & control::height(int32 height) {
+control& control::height(int32 height) {
   if (size().height == height) return *this;
   set_bounds_core(0, 0, 0, height, bounds_specified::height);
   return *this;
@@ -572,7 +572,7 @@ int32 control::left() const noexcept {
   return data_->location.x;
 }
 
-control & control::left(int32 left) {
+control& control::left(int32 left) {
   if (data_->location.x == left) return *this;
   set_bounds_core(left, 0, 0, 0, bounds_specified::x);
   return *this;
@@ -582,7 +582,7 @@ drawing::point control::location() const noexcept {
   return data_->location;
 }
 
-control & control::location(const drawing::point& location) {
+control& control::location(const drawing::point& location) {
   if (data_->location == location) return *this;
   set_bounds_core(location.x, location.y, 0, 0, bounds_specified::location);
   return *this;
@@ -592,16 +592,16 @@ forms::padding control::margin() const noexcept {
   return data_->margin;
 }
 
-control & control::margin(const forms::padding& margin) {
+control& control::margin(const forms::padding& margin) {
   data_->margin = margin;
   return *this;
 }
 
-const drawing::size & control::maximum_client_size() const noexcept {
+const drawing::size& control::maximum_client_size() const noexcept {
   return data_->maximum_client_size;
 }
 
-control & control::maximum_client_size(const drawing::size& size) {
+control& control::maximum_client_size(const drawing::size& size) {
   if (data_->maximum_client_size == size) return *this;
   data_->maximum_client_size = size;
   client_size({this->client_size().width > maximum_client_size().width ? data_->maximum_client_size.width : client_size().width, this->client_size().height > maximum_client_size().height ? maximum_client_size().height : client_size().height});
@@ -609,11 +609,11 @@ control & control::maximum_client_size(const drawing::size& size) {
   return *this;
 }
 
-const drawing::size & control::maximum_size() const noexcept {
+const drawing::size& control::maximum_size() const noexcept {
   return data_->maximum_size;
 }
 
-control & control::maximum_size(const drawing::size& size) {
+control& control::maximum_size(const drawing::size& size) {
   if (data_->maximum_size == size) return *this;
   data_->maximum_size = size;
   this->size({this->size().width > maximum_size().width ? maximum_size().width : this->size().width, this->size().height > maximum_size().height ? maximum_size().height : this->size().height});
@@ -621,11 +621,11 @@ control & control::maximum_size(const drawing::size& size) {
   return *this;
 }
 
-const drawing::size & control::minimum_client_size() const noexcept {
+const drawing::size& control::minimum_client_size() const noexcept {
   return data_->minimum_client_size;
 }
 
-control & control::minimum_client_size(const drawing::size& size) {
+control& control::minimum_client_size(const drawing::size& size) {
   if (data_->minimum_client_size == size) return *this;
   data_->minimum_client_size = size;
   client_size({this->client_size().width < minimum_client_size().width ? minimum_client_size().width : client_size().width, this->client_size().height < minimum_client_size().height ? minimum_client_size().height : client_size().height});
@@ -633,11 +633,11 @@ control & control::minimum_client_size(const drawing::size& size) {
   return *this;
 }
 
-const drawing::size & control::minimum_size() const noexcept {
+const drawing::size& control::minimum_size() const noexcept {
   return data_->minimum_size;
 }
 
-control & control::minimum_size(const drawing::size& size) {
+control& control::minimum_size(const drawing::size& size) {
   if (data_->minimum_size == size) return *this;
   data_->minimum_size = size;
   this->size({this->size().width < minimum_size().width ? minimum_size().width : this->size().width, this->size().height < minimum_size().height ? minimum_size().height : this->size().height});
@@ -657,11 +657,11 @@ xtd::drawing::point control::mouse_position() noexcept {
   return xtd::forms::cursor::position();
 }
 
-const xtd::string & control::name() const noexcept {
+const xtd::string& control::name() const noexcept {
   return data_->name;
 }
 
-control & control::name(const xtd::string& name) {
+control& control::name(const xtd::string& name) {
   data_->name = name;
   return*this;
 }
@@ -678,7 +678,7 @@ forms::padding control::padding() const noexcept {
   return data_->padding;
 }
 
-control & control::padding(const forms::padding& padding) {
+control& control::padding(const forms::padding& padding) {
   data_->padding = padding;
   return *this;
 }
@@ -687,7 +687,7 @@ std::optional < control_ref > control::parent() const noexcept {
   return from_handle(data_->parent);
 }
 
-control & control::parent(const control& value) {
+control& control::parent(const control& value) {
   if (value.handle() != data_->parent) {
     if (parent().has_value()) parent(nullptr);
     else on_parent_changed(event_args::empty);
@@ -697,7 +697,7 @@ control & control::parent(const control& value) {
   return *this;
 }
 
-control & control::parent(std::nullptr_t) {
+control& control::parent(std::nullptr_t) {
   if (!is_handle_created() || data_->parent == 0) return *this;
   auto current_parent = from_handle(data_->parent);
   for (auto index = 0_z; index < current_parent.value().get().data_->controls.count(); ++index) {
@@ -719,11 +719,11 @@ bool control::recreating_handle() const noexcept {
   return get_state(state::recreate);
 }
 
-const xtd::drawing::region & control::region() const noexcept {
+const xtd::drawing::region& control::region() const noexcept {
   return data_->region;
 }
 
-control & control::region(const xtd::drawing::region& value) {
+control& control::region(const xtd::drawing::region& value) {
   if (value == data_->region) return *this;
   data_->region = value;
   on_region_changed(event_args::empty);
@@ -741,7 +741,7 @@ xtd::forms::right_to_left control::right_to_left() const noexcept {
   return xtd::forms::right_to_left::inherit;
 }
 
-control & control::right_to_left(xtd::forms::right_to_left value) {
+control& control::right_to_left(xtd::forms::right_to_left value) {
   if (data_->right_to_left.has_value() && value == data_->right_to_left) return *this;
   data_->right_to_left = value;
   if (is_handle_created()) native::control::right_to_left(handle(), static_cast < int32 > (value));
@@ -749,7 +749,7 @@ control & control::right_to_left(xtd::forms::right_to_left value) {
   return *this;
 }
 
-control & control::right_to_left(std::nullptr_t) {
+control& control::right_to_left(std::nullptr_t) {
   if (!data_->right_to_left.has_value()) return *this;
   data_->right_to_left.reset();
   post_recreate_handle();
@@ -761,7 +761,7 @@ drawing::size control::size() const noexcept {
   return data_->size.value_or(default_size());
 }
 
-control & control::size(const drawing::size& size) {
+control& control::size(const drawing::size& size) {
   if (!get_state(state::client_size_setted) && this->size() == size) return *this;
   set_state(state::client_size_setted, false);
   set_bounds_core(0, 0, size.width, size.height, bounds_specified::size);
@@ -772,7 +772,7 @@ style_sheets::style_sheet control::style_sheet() const noexcept {
   return data_->style_sheet;
 }
 
-control & control::style_sheet(const style_sheets::style_sheet& value) {
+control& control::style_sheet(const style_sheets::style_sheet& value) {
   if (data_->style_sheet == value) return *this;
   data_->style_sheet = value;
   if (xtd::string::is_empty(data_->style_sheet.theme().name())) data_->style_sheet.theme_name_("-- user style sheet --");
@@ -780,14 +780,14 @@ control & control::style_sheet(const style_sheets::style_sheet& value) {
   return *this;
 }
 
-control & control::style_sheet(std::nullptr_t) {
+control& control::style_sheet(std::nullptr_t) {
   if (data_->style_sheet == style_sheets::style_sheet()) return *this;
   data_->style_sheet = style_sheets::style_sheet();
   on_style_sheet_changed(event_args::empty);
   return *this;
 }
 
-control & control::style_sheet(const string& value) {
+control& control::style_sheet(const string& value) {
   return control::style_sheet(style_sheets::style_sheet(value));
 }
 
@@ -795,7 +795,7 @@ bool control::tab_stop() const noexcept {
   return get_state(control::state::tab_stop);
 }
 
-control & control::tab_stop(bool value) {
+control& control::tab_stop(bool value) {
   if (get_state(control::state::tab_stop) == value) return *this;
   set_state(control::state::tab_stop, value);
   on_tab_stop_changed(event_args::empty);
@@ -806,16 +806,16 @@ any_object control::tag() const noexcept {
   return data_->tag;
 }
 
-control & control::tag(const any_object& tag) {
+control& control::tag(const any_object& tag) {
   data_->tag = tag;
   return*this;
 }
 
-const xtd::string & control::text() const noexcept {
+const xtd::string& control::text() const noexcept {
   return data_->text;
 }
 
-control & control::text(const string& text) {
+control& control::text(const string& text) {
   if (data_->text == text) return *this;
   data_->text = text;
   if (is_handle_created()) native::control::text(handle(), data_->text);
@@ -835,7 +835,7 @@ int32 control::top() const noexcept {
   return data_->location.y;
 }
 
-control & control::top(int32 top) {
+control& control::top(int32 top) {
   if (data_->location.y == top) return *this;
   set_bounds_core(0, top, 0, 0, bounds_specified::y);
   return *this;
@@ -853,7 +853,7 @@ bool control::visible() const noexcept {
   return get_state(state::visible);
 }
 
-control & control::visible(bool visible) {
+control& control::visible(bool visible) {
   if (get_state(state::visible) == visible) return *this;
   set_state(state::visible, visible);
   if (is_handle_created()) native::control::visible(handle(), get_state(state::visible));
@@ -865,7 +865,7 @@ int32 control::width() const noexcept {
   return size().width;
 }
 
-control & control::width(int32 width) {
+control& control::width(int32 width) {
   if (size().width == width) return *this;
   set_bounds_core(0, 0, width, 0, bounds_specified::width);
   return *this;
@@ -875,7 +875,7 @@ async_result control::begin_invoke(delegate < void() > method) {
   return begin_invoke(delegate < void(array < any_object>) > (method), {});
 }
 
-async_result control::begin_invoke(delegate < void(array < any_object>)> method, const array < any_object > & args) {
+async_result control::begin_invoke(delegate < void(array < any_object>)> method, const array < any_object >& args) {
   xtd::sptr < async_result_invoke > async = xtd::new_sptr < async_result_invoke > (this);
   if (is_handle_created()) native::control::invoke_in_control_thread(data_->handle, method, args, async->data_->async_event, async->data_->is_completed);
   threading::thread::yield();
@@ -1091,7 +1091,7 @@ std::optional < object_ref > control::invoke(delegate < void() > method) {
   return invoke(delegate < void(array < any_object>)>(method), array < any_object > {});
 }
 
-std::optional < object_ref > control::invoke(delegate < void(array<any_object>) > method, const array < any_object > & args) {
+std::optional < object_ref > control::invoke(delegate < void(array<any_object>) > method, const array < any_object >& args) {
   return end_invoke(begin_invoke(method, args));
 }
 
@@ -1780,12 +1780,12 @@ void control::update() const {
   if (is_handle_created()) native::control::update(handle());
 }
 
-control & control::operator <<(control& child) {
+control& control::operator <<(control& child) {
   child.parent(*this);
   return *this;
 }
 
-control & control::operator >>(control& child) {
+control& control::operator >>(control& child) {
   if (child.parent().has_value() && &child.parent().value().get() == this)
     child.parent(nullptr);
   return *this;

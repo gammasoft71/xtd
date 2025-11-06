@@ -154,7 +154,7 @@ generic::enumerator<bool> bit_array::get_enumerator() const {
       if (index_ >= items_.length()) throw_helper::throws(exception_case::invalid_operation);
       return items_[index_];
     }
-
+    
     bool move_next() override {return ++index_ < items_.length();}
     void reset() override {index_ = npos;}
     
@@ -296,7 +296,7 @@ bool bit_array::is_synchronized() const noexcept {
   return as<icollection<int32>>(bit_array_).is_synchronized();
 }
 
-const object & bit_array::sync_root() const noexcept {
+const object& bit_array::sync_root() const noexcept {
   flush(); // Must be call first
   return as<icollection<int32>>(bit_array_).sync_root();
 }

@@ -169,10 +169,10 @@ namespace xtd {
     
     /// @brief Returns the underlying base type items.
     /// @return The underlying base type items.
-    virtual const base_type & items() const noexcept {return data_->items;}
+    virtual const base_type& items() const noexcept {return data_->items;}
     /// @brief Returns the underlying base type items.
     /// @return The underlying base type items.
-    virtual base_type & items() noexcept {return data_->items;}
+    virtual base_type& items() noexcept {return data_->items;}
     
     /// @brief Gets a size that represents the total number of elements in all the dimensions of the array.
     /// @return A size that represents the total number of elements in all the dimensions of the array; zero if there are no elements in the array.
@@ -215,7 +215,7 @@ namespace xtd {
     /// @remarks This element acts as a placeholder; attempting to access it results in undefined behavior.
     virtual const_reverse_iterator rend() const noexcept {return data_->items.rend();}
     
-    const xtd::object & sync_root() const noexcept override {return data_->sync_root;}
+    const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
     /// @}
     
     /// @name Public Methods
@@ -251,7 +251,7 @@ namespace xtd {
       if (rank() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::rank);
       if (index + length() > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       for (auto increment = size_type {0}; increment < length(); ++increment)
-      array[index + increment] = at(increment);
+        array[index + increment] = at(increment);
     }
     
     /// @brief Copies all the elements of the current one-dimensional array to the specified one-dimensional array starting at the specified destination array index. The index is specified as a 64-bit integer.
@@ -280,7 +280,7 @@ namespace xtd {
       struct basic_array_enumerator : public xtd::collections::generic::ienumerator < value_type > {
         explicit basic_array_enumerator(const basic_array & items, size_type version) : items_(items), version_(version) {}
         
-        const value_type & current() const override {
+        const value_type& current() const override {
           if (index_ >= items_.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           if (version_ != items_.data_->items.version()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
           return items_[index_];
@@ -350,7 +350,7 @@ namespace xtd {
     /// @param indexes An array that represents the position of the element to get.
     /// @return The value at the specified position in the multidimensional array.
     /// @exception xtd::index_out_of_range_exception If `indexes` is outside the range of valid indexes for the corresponding dimension of the current array.
-    const value_type & get_value(const xtd::array < size_type > & indexes) const;
+    const value_type& get_value(const xtd::array < size_type >& indexes) const;
     
     /// @brief Determines the index of a specific item in the xtd::array <type_t>.
     /// @param value The object to locate in the xtd::array.
@@ -381,7 +381,7 @@ namespace xtd {
     /// @param value The new value for the specified element.
     /// @param indexes An array that represents the position of the element to set.
     /// @exception xtd::index_out_of_range_exception Either `indexes` is outside the range of valid indexes for the current array.
-    void set_value(const type_t& value, const xtd::array < size_type > & indexes) {operator()(indexes) = value;}
+    void set_value(const type_t& value, const xtd::array < size_type >& indexes) {operator()(indexes) = value;}
     
     /// @brief Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
     /// @remarks All iterators and references remain valid. The xtd::array::end() iterator is invalidated.
@@ -462,14 +462,14 @@ namespace xtd {
     /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
     /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
     /// @remarks The following code example demonstrates the xtd::collections::generic::list::sort method overload and the xtd::collections::generic::list::binary_search method overload. A xtd::collections::generic::list <type_t> of strings is created and populated with four strings, in no particular order. The list is displayed, sorted, and displayed again.
-    basic_array < type_t > & sort() {return sort(xtd::collections::generic::comparer < type_t >::default_comparer);}
+    basic_array < type_t >& sort() {return sort(xtd::collections::generic::comparer < type_t >::default_comparer);}
     
     /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified xtd::comparison <type_t>.
     /// @exception xtd::argument_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
     /// @remarks If comparison is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the method represented by the delegate.
     /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
     /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
-    basic_array < type_t > & sort(comparison_comparer comparison) {
+    basic_array < type_t >& sort(comparison_comparer comparison) {
       data_->items.increment_version();
       std::sort(data_->items.begin(), data_->items.end(), comparison_comparer {comparison});
       return self_;
@@ -481,7 +481,7 @@ namespace xtd {
     /// @remarks If comparer is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.
     /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
     /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
-    basic_array < type_t > & sort(const xtd::collections::generic::icomparer < type_t > & comparer) {
+    basic_array < type_t >& sort(const xtd::collections::generic::icomparer < type_t >& comparer) {
       return sort(0, count(), comparer);
     }
     
@@ -493,7 +493,7 @@ namespace xtd {
     /// @remarks If comparer is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.
     /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
     /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
-    basic_array < type_t > & sort(xtd::size index, xtd::size count, const xtd::collections::generic::icomparer < type_t > & comparer) {
+    basic_array < type_t >& sort(xtd::size index, xtd::size count, const xtd::collections::generic::icomparer < type_t >& comparer) {
       if (index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
       data_->items.increment_version();
       std::sort(data_->items.begin(), data_->items.end(), __comparer__ {comparer});
@@ -518,7 +518,7 @@ namespace xtd {
     /// @brief Replaces the contents with those identified by initializer list ilist.
     /// @param items Initializer list to use as data source
     /// @return This current instance.
-    basic_array& operator =(std::initializer_list < type_t > & items) {
+    basic_array& operator =(std::initializer_list < type_t >& items) {
       data_->items = items;
       data_->upper_bound[0] = data_->items.size() - 1;
       return *this;
@@ -537,10 +537,10 @@ namespace xtd {
     
     /// @brief Returns a reference to the underlying base type.
     /// @return Reference to the underlying base type.
-    operator const base_type & () const noexcept {return data_->items;}
+    operator const base_type& () const noexcept {return data_->items;}
     /// @brief Returns a reference to the underlying base type.
     /// @return Reference to the underlying base type.
-    operator base_type & () noexcept {return data_->items;}
+    operator base_type& () noexcept {return data_->items;}
     
     /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
     /// @param indexes An array that represents the multidimension index of the array element to get.
@@ -549,7 +549,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to use operator [] to list the elements of an array.
     /// @include array_array_operator_functor.cpp
-    type_t& operator()(const xtd::array < size_type > & indexes);
+    type_t& operator()(const xtd::array < size_type >& indexes);
     
     /// @brief Gets the value at the specified position in the multidimensional array. The indexes are specified as a 32-bit integer array.
     /// @param indexes An array that represents the multidimension index of the array element to get.
@@ -558,7 +558,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to use operator [] to list the elements of an array.
     /// @include array_array_operator_functor.cpp
-    const type_t& operator()(const xtd::array < size_type > & indexes) const;
+    const type_t& operator()(const xtd::array < size_type >& indexes) const;
     /// @}
     
   private:
@@ -566,8 +566,8 @@ namespace xtd {
     friend class array;
     
     basic_array() = default;
-    basic_array(const array < size_type, 1 > & lengths);
-    basic_array(const array < size_type, 1 > & lengths, const value_type & value);
+    basic_array(const array < size_type, 1 >& lengths);
+    basic_array(const array < size_type, 1 >& lengths, const value_type & value);
     
     basic_array(const_pointer array, size_type length) {
       if (array == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
@@ -575,13 +575,13 @@ namespace xtd {
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
-    basic_array(const xtd::collections::generic::ienumerable < type_t > & enumerable) {
+    basic_array(const xtd::collections::generic::ienumerable < type_t >& enumerable) {
       for (const auto& value : enumerable)
         data_->items.push_back(value);
       data_->upper_bound[0] = data_->items.size() - 1;
     }
     
-    basic_array(const std::vector < type_t > & array) {
+    basic_array(const std::vector < type_t >& array) {
       data_->items = array;
       data_->upper_bound[0] = data_->items.size() - 1;
     }
@@ -597,7 +597,7 @@ namespace xtd {
     }
     
     basic_array(std::initializer_list < std::initializer_list < type_t>> il)  {
-      for (const std::initializer_list < type_t > & il1 : il)
+      for (const std::initializer_list < type_t >& il1 : il)
         data_->items.insert(data_->items.end(), il1.begin(), il1.end());
       data_->upper_bound[0] = il.size() - 1;
       data_->lower_bound.push_back(0);
@@ -606,7 +606,7 @@ namespace xtd {
     
     basic_array(std::initializer_list < std::initializer_list < std::initializer_list<type_t>>> il)  {
       for (const std::initializer_list < std::initializer_list < type_t>>& il1 : il)
-        for (const std::initializer_list < type_t > & il2 : il1)
+        for (const std::initializer_list < type_t >& il2 : il1)
           data_->items.insert(data_->items.end(), il2.begin(), il2.end());
       data_->upper_bound[0] = il.size() - 1;
       data_->lower_bound.push_back(0);

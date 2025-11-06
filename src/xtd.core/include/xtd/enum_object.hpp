@@ -355,7 +355,7 @@ namespace xtd {
     /// @brief Retrieves an array of the xtd::enum_collection<enum_t> of the constants in a specified enumeration.
     /// @return A xtd::string array of the values and names of the constants in enumType.
     template < class enum_t >
-    inline static const xtd::enum_collection < enum_t > & get_entries() noexcept {
+    inline static const xtd::enum_collection < enum_t >& get_entries() noexcept {
       return enum_object < enum_t > ().entries();
     }
     

@@ -122,7 +122,7 @@ namespace {
     return false;
   }
   
-  static NSView * CreateFilterViewForFileDialog(NSSavePanel * savePanel, const std::vector<std::pair<std::string, std::vector<std::string>>>& filters, int filterIndex) {
+  static NSView* CreateFilterViewForFileDialog(NSSavePanel * savePanel, const std::vector<std::pair<std::string, std::vector<std::string>>>& filters, int filterIndex) {
     NSPopUpButton* popUpButton = [[[NSPopUpButton alloc ] initWithFrame:NSMakeRect(62, 0, 256, 30) pullsDown:NO] autorelease];
     for (auto filter : filters)
       [popUpButton addItemWithTitle:[NSString stringWithUTF8String:filter.first.c_str()]];

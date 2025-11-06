@@ -369,7 +369,7 @@ template<class char_t, class traits_t, class allocator_t>
 inline const xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>::value_type> xtd::basic_string<char_t, traits_t, allocator_t>::default_trim_chars = {9, 10, 11, 12, 13, 32};
 
 template<class arg_t>
-void __basic_string_extract_format_arg(const std::locale& loc, std::basic_string<char>& fmt, xtd::size& index, std::vector<__format_information<char >> & formats, arg_t&& arg) {
+void __basic_string_extract_format_arg(const std::locale& loc, std::basic_string<char>& fmt, xtd::size& index, std::vector<__format_information<char >>& formats, arg_t&& arg) {
   //void __basic_string_extract_format_arg(const std::locale& loc, xtd::basic_string<char>& fmt, xtd::size& index, std::vector<__format_information<char>>& formats, arg_t&& arg) {
   auto offset = xtd::size {0};
   for (auto& format : formats) {
@@ -396,7 +396,7 @@ void __basic_string_extract_format_arg(const std::locale& loc, std::basic_string
 }
 
 template<class ...args_t>
-void __basic_string_extract_format_arg(const std::locale& loc, xtd::basic_string<char>& fmt, std::vector<__format_information<char >> & formats, args_t&&... args) {
+void __basic_string_extract_format_arg(const std::locale& loc, xtd::basic_string<char>& fmt, std::vector<__format_information<char >>& formats, args_t&&... args) {
   auto index = xtd::size {0};
   (__basic_string_extract_format_arg(loc, const_cast<std::basic_string<char>& > (fmt.chars()), index, formats, args), ...);
   //(__basic_string_extract_format_arg(loc, fmt, index, formats, args), ...);

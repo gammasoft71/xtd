@@ -485,12 +485,12 @@ intptr thread::get_current_thread_id() noexcept {
   return native::thread::get_thread_id(get_current_thread_handle());
 }
 
-thread::static_data & thread::get_static_data() {
+thread::static_data& thread::get_static_data() {
   static auto data = static_data {};
   return data;
 }
 
-thread & thread::get_thread(intptr thread_id) {
+thread& thread::get_thread(intptr thread_id) {
   static auto& ut = unmanaged_thread();
   try {
     if (thread_id == main_thread_id_) return main_thread();
@@ -589,7 +589,7 @@ void thread::thread_proc() {
   get_static_data().threads.remove_at(index);
 }
 
-thread & thread::unmanaged_thread() {
+thread& thread::unmanaged_thread() {
   static auto unmanaged_thread = threading::thread {};
   if (unmanaged_thread.is_unstarted()) {
     unmanaged_thread.data_->state &= ~threading::thread_state::unstarted;

@@ -66,14 +66,14 @@ public:
     reference operator *() const {return reinterpret_cast<reference>(*it_);}
     pointer operator ->() const {return reinterpret_cast<pointer>(std::addressof(*it_));}
     
-    iterator & operator ++() {++it_; return *this;}
+    iterator& operator ++() {++it_; return *this;}
     iterator operator ++(int) {iterator tmp(*this); ++(*this); return tmp;}
-    iterator & operator --() {--it_; return *this;}
+    iterator& operator --() {--it_; return *this;}
     iterator operator --(int) {iterator tmp(*this); --(*this); return tmp;}
     
-    iterator & operator +=(difference_type n) {it_ += n; return *this;}
+    iterator& operator +=(difference_type n) {it_ += n; return *this;}
     iterator operator +(difference_type n) const {return iterator(it_ + n);}
-    iterator & operator -=(difference_type n) {it_ -= n; return *this;}
+    iterator& operator -=(difference_type n) {it_ -= n; return *this;}
     iterator operator -(difference_type n) const {return iterator(it_ - n);}
     difference_type operator -(const iterator & other) const {return it_ - other.it_;}
     
@@ -109,14 +109,14 @@ public:
     reference operator*() const {return reinterpret_cast<reference>(*it_);}
     pointer operator->() const {return reinterpret_cast<pointer>(std::addressof(*it_));}
     
-    const_iterator & operator ++() {++it_; return *this;}
+    const_iterator& operator ++() {++it_; return *this;}
     const_iterator operator ++(int) {const_iterator tmp(*this); ++(*this); return tmp;}
-    const_iterator & operator --() {--it_; return *this;}
+    const_iterator& operator --() {--it_; return *this;}
     const_iterator operator --(int) {const_iterator tmp(*this); --(*this); return tmp;}
     
-    const_iterator & operator +=(difference_type n) {it_ += n; return *this;}
+    const_iterator& operator +=(difference_type n) {it_ += n; return *this;}
     const_iterator operator +(difference_type n) const {return const_iterator(it_ + n);}
-    const_iterator & operator -=(difference_type n) {it_ -= n; return *this;}
+    const_iterator& operator -=(difference_type n) {it_ -= n; return *this;}
     const_iterator operator -(difference_type n) const {return const_iterator(it_ - n);}
     difference_type operator -(const const_iterator & other) const {return it_ - other.it_;}
     
@@ -197,8 +197,8 @@ public:
   reference front() {return at(0);}
   const_reference front() const {return at(0);}
   
-  const_base_type & items() const noexcept {return items_;}
-  base_type & items() noexcept {return items_;}
+  const_base_type& items() const noexcept {return items_;}
+  base_type& items() noexcept {return items_;}
   
   size_type max_size() const noexcept {return std::min(items_.max_size(), npos / 2);}
   
@@ -360,8 +360,8 @@ public:
   const_reference operator [](size_type index) const {return at(index);}
   reference operator [](size_type index) {return at(index);}
   
-  operator const base_type & () const noexcept {return items_;}
-  operator base_type & () noexcept {return items_;}
+  operator const base_type& () const noexcept {return items_;}
+  operator base_type& () noexcept {return items_;}
   /// }
   
 private:

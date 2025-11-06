@@ -269,19 +269,19 @@ namespace xtd {
       /// @}
       
       /// @cond
-      binary_reader & operator >>(bool& value) {value = read_boolean(); return *this;}
-      binary_reader & operator >>(xtd::byte& value) {value = read_byte(); return *this;}
-      binary_reader & operator >>(char& value) {value = read_char(); return *this;}
-      binary_reader & operator >>(double& value) {value = read_double(); return *this;}
-      binary_reader & operator >>(int16& value) {value = read_int16(); return *this;}
-      binary_reader & operator >>(int32& value) {value = read_int32(); return *this;}
-      binary_reader & operator >>(int64& value) {value = read_int64(); return *this;}
-      binary_reader & operator >>(sbyte& value) {value = read_sbyte(); return *this;}
-      binary_reader & operator >>(float& value) {value = read_single(); return *this;}
-      binary_reader & operator >>(string& value) {value = read_string(); return *this;}
-      binary_reader & operator >>(uint16& value) {value = read_uint16(); return *this;}
-      binary_reader & operator >>(uint32& value) {value = read_uint32(); return *this;}
-      binary_reader & operator >>(uint64& value) {value = read_uint64(); return *this;}
+      binary_reader& operator >>(bool& value) {value = read_boolean(); return *this;}
+      binary_reader& operator >>(xtd::byte& value) {value = read_byte(); return *this;}
+      binary_reader& operator >>(char& value) {value = read_char(); return *this;}
+      binary_reader& operator >>(double& value) {value = read_double(); return *this;}
+      binary_reader& operator >>(int16& value) {value = read_int16(); return *this;}
+      binary_reader& operator >>(int32& value) {value = read_int32(); return *this;}
+      binary_reader& operator >>(int64& value) {value = read_int64(); return *this;}
+      binary_reader& operator >>(sbyte& value) {value = read_sbyte(); return *this;}
+      binary_reader& operator >>(float& value) {value = read_single(); return *this;}
+      binary_reader& operator >>(string& value) {value = read_string(); return *this;}
+      binary_reader& operator >>(uint16& value) {value = read_uint16(); return *this;}
+      binary_reader& operator >>(uint32& value) {value = read_uint32(); return *this;}
+      binary_reader& operator >>(uint64& value) {value = read_uint64(); return *this;}
       /// @endcond
       
     private:

@@ -103,10 +103,10 @@ namespace xtd {
         
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
-        virtual const base_type & items() const noexcept {return data_->items;}
+        virtual const base_type& items() const noexcept {return data_->items;}
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
-        virtual base_type & items() noexcept {return data_->items;}
+        virtual base_type& items() noexcept {return data_->items;}
         
         key_collection keys() const noexcept override {
           auto keys = key_collection {};
@@ -181,7 +181,7 @@ namespace xtd {
           struct ordered_dictionary_enumerator : public ienumerator<value_type> {
             explicit ordered_dictionary_enumerator(const ordered_dictionary & items, xtd::size version) : items_(items), version_(version) {}
             
-            const value_type & current() const override {
+            const value_type& current() const override {
               if (index_ >= items_.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               return (value_ = value_type {key_t {items_.data_->keys[index_]}, value_t {items_.data_->items[items_.data_->keys[index_]]}});
@@ -308,10 +308,10 @@ namespace xtd {
         
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
-        operator const base_type &() const noexcept {return data_->items;}
+        operator const base_type& () const noexcept {return data_->items;}
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
-        operator base_type &() noexcept {return data_->items;}
+        operator base_type& () noexcept {return data_->items;}
         /// @}
         
       private:
@@ -326,7 +326,7 @@ namespace xtd {
         
         bool is_read_only() const noexcept override {return false;}
         bool is_synchronized() const noexcept override {return false;}
-        const xtd::object & sync_root() const noexcept override {return data_->sync_root;}
+        const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
         
         struct dictionary_data {
           dictionary_data() noexcept = default;

@@ -80,14 +80,14 @@ file_settings::string_collection file_settings::sections() const noexcept {
 }
 
 std::optional<ref<std::iostream>> file_settings::stream() const noexcept {
-return stream_ ? std::optional<ref<std::iostream>> {*stream_} : std::nullopt;
+  return stream_ ? std::optional<ref<std::iostream>> {*stream_} : std::nullopt;
 }
 
 xtd::string file_settings::top_file_comment() const noexcept {
   return convert_comment_to_text(top_file_comment_);
 }
 
-file_settings & file_settings::top_file_comment(const xtd::string& value) noexcept {
+file_settings& file_settings::top_file_comment(const xtd::string& value) noexcept {
   top_file_comment_ = convert_text_to_comment(value);
   return *this;
 }
@@ -266,11 +266,11 @@ void file_settings::write(const string& section, const string& key, const string
   write_string(section, key, value);
 }
 
-const file_settings::string_dictionary & file_settings::operator [](const string& section) const noexcept {
+const file_settings::string_dictionary& file_settings::operator [](const string& section) const noexcept {
   return section_key_values_.at(section);
 }
 
-file_settings::string_dictionary & file_settings::operator [](const string& section) noexcept {
+file_settings::string_dictionary& file_settings::operator [](const string& section) noexcept {
   return section_key_values_[section];
 }
 

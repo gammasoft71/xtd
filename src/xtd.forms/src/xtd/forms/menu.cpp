@@ -65,19 +65,19 @@ bool menu::is_parent() const noexcept {
   return data_->menu_items.count() != 0;
 }
 
-const menu_item & menu::mdi_list_item() const noexcept {
+const menu_item& menu::mdi_list_item() const noexcept {
   return *data_->mdi_list_item;
 }
 
-const menu::menu_item_collection & menu::menu_items() const noexcept {
+const menu::menu_item_collection& menu::menu_items() const noexcept {
   return data_->menu_items;
 }
 
-menu::menu_item_collection & menu::menu_items() noexcept {
+menu::menu_item_collection& menu::menu_items() noexcept {
   return data_->menu_items;
 }
 
-menu & menu::menu_items(const menu_item_collection& value) {
+menu& menu::menu_items(const menu_item_collection& value) {
   if (&data_->menu_items != &value) {
     data_->menu_items.clear();
     data_->menu_items = value;
@@ -85,34 +85,34 @@ menu & menu::menu_items(const menu_item_collection& value) {
   return *this;
 }
 
-menu & menu::menu_items(const std::initializer_list<menu_item_ref>& value) {
+menu& menu::menu_items(const std::initializer_list<menu_item_ref>& value) {
   data_->menu_items.clear();
   for (const auto& item : value)
     data_->menu_items.add(item);
   return *this;
 }
 
-menu & menu::menu_items(const std::vector<menu_item_ref>& value) {
+menu& menu::menu_items(const std::vector<menu_item_ref>& value) {
   data_->menu_items.clear();
   for (const auto& item : value)
     data_->menu_items.add(item);
   return *this;
 }
 
-const xtd::string & menu::name() const noexcept {
+const xtd::string& menu::name() const noexcept {
   return data_->name;
 }
 
-menu & menu::name(const xtd::string& value) {
+menu& menu::name(const xtd::string& value) {
   data_->name = value;
   return *this;
 }
 
-const any_object & menu::tag() const noexcept {
+const any_object& menu::tag() const noexcept {
   return data_->tag;
 }
 
-menu & menu::tag(const any_object& value) {
+menu& menu::tag(const any_object& value) {
   data_->tag = value;
   return *this;
 }

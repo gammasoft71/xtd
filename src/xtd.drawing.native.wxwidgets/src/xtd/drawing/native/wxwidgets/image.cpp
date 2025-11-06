@@ -367,13 +367,13 @@ intptr image::from_hicon(intptr icon) {
   return reinterpret_cast<intptr>(img);
 }
 
-xtd::byte * image::get_alpha(intptr image) {
+xtd::byte* image::get_alpha(intptr image) {
   if (image == 0) return 0;
   if (!reinterpret_cast<wxImage*>(image)->HasAlpha()) reinterpret_cast<wxImage*>(image)->InitAlpha();
   return reinterpret_cast<xtd::byte*>(reinterpret_cast<wxImage*>(image)->GetAlpha());
 }
 
-xtd::byte * image::get_data(intptr image) {
+xtd::byte* image::get_data(intptr image) {
   if (image == 0) return 0;
   return reinterpret_cast<xtd::byte*>(reinterpret_cast<wxImage*>(image)->GetData());
 }

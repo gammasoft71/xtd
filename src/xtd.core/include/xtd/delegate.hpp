@@ -63,7 +63,7 @@ namespace xtd {
     public:
       async_result_invoke(xtd::async_callback async_callback, const xtd::any_object & async_state);
       xtd::any_object async_state() const noexcept override;
-      xtd::threading::wait_handle & async_wait_handle() noexcept override;
+      xtd::threading::wait_handle& async_wait_handle() noexcept override;
       bool completed_synchronously() const noexcept override;
       bool is_completed() const noexcept override;
       
@@ -197,7 +197,7 @@ namespace xtd {
     /// @return Delegate A new delegate with an invocation list that concatenates the invocation lists of the delegates in the delegates array. Returns null if delegates is null, if delegates contains zero elements, || if every entry in delegates is null.
     /// @remarks If the delegates array contains entries that are null, those entries are ignored.
     /// @remarks The invocation list can contain duplicate entries; that is, entries that refer to the same method on the same object.
-    static delegate combine(const array < delegate > & delegates) noexcept {
+    static delegate combine(const array < delegate >& delegates) noexcept {
       delegate result;
       for (const delegate& delegate : delegates) {
         for (const function_t& function : delegate.data_->functions)
@@ -259,10 +259,10 @@ namespace xtd {
     /// @return result_t The return value.
     result_t operator()() const {
       if (data_->functions.size() == 0) {
-        if constexpr (std::is_void_v < result_t >) return;
-        else if constexpr (std::is_reference_v < result_t >) {
+        if constexpr(std::is_void_v < result_t >) return;
+        else if constexpr(std::is_reference_v < result_t >) {
           using underlying_t = std::remove_reference_t < result_t >;
-          if constexpr (std::is_const_v < underlying_t >) {
+          if constexpr(std::is_const_v < underlying_t >) {
             static const underlying_t empty_value{};
             return empty_value;
           } else {
@@ -307,18 +307,18 @@ namespace xtd {
       return result;
     }
     
-    delegate & operator +=(const delegate& delegate) noexcept {
+    delegate& operator +=(const delegate& delegate) noexcept {
       *this = delegate::combine(*this, delegate);
       return *this;
     }
     
-    delegate & operator +=(const function_t& function) noexcept {
+    delegate& operator +=(const function_t& function) noexcept {
       *this = delegate::combine(*this, delegate(function));
       return *this;
     }
     
     template < class fn_t >
-    delegate & operator +=(fn_t function) noexcept {
+    delegate& operator +=(fn_t function) noexcept {
       *this = delegate::combine(*this, delegate(function));
       return *this;
     }
@@ -342,25 +342,25 @@ namespace xtd {
       return result;
     }
     
-    delegate & operator -=(const delegate& delegate) noexcept {
+    delegate& operator -=(const delegate& delegate) noexcept {
       *this = delegate::remove(*this, delegate);
       return *this;
     }
     
-    delegate & operator -=(const function_t& function) noexcept {
+    delegate& operator -=(const function_t& function) noexcept {
       *this = delegate::remove(*this, delegate(function));
       return *this;
     }
     
     template < class fn_t >
-    delegate & operator -=(fn_t function) noexcept {
+    delegate& operator -=(fn_t function) noexcept {
       *this = delegate::remove(*this, delegate(function));
       return *this;
     }
     /// @endcond
     
   private:
-    static bool are_equals(const std::function < result_t() > & fct1, const std::function < result_t() > & fct2) noexcept {
+    static bool are_equals(const std::function < result_t() >& fct1, const std::function < result_t() >& fct2) noexcept {
       return fct1.target_type() == fct2.target_type() && (fct1.template target < result_t(*)() > () == fct2.template target < result_t(*)()>() || *fct1.template target<result_t(*)() > () == *fct2.template target < result_t(*)() > ());
     }
     
@@ -398,7 +398,7 @@ namespace xtd {
     public:
       async_result_invoke(xtd::async_callback async_callback, const xtd::any_object & async_state);
       xtd::any_object async_state() const noexcept override;
-      xtd::threading::wait_handle & async_wait_handle() noexcept override;
+      xtd::threading::wait_handle& async_wait_handle() noexcept override;
       bool completed_synchronously() const noexcept override;
       bool is_completed() const noexcept override;
       
@@ -428,7 +428,7 @@ namespace xtd {
     delegate(delegate&&) = default;
     delegate(const delegate&) = default;
     delegate& operator =(const delegate & delegate) = default;
-    delegate(const delegate < result_t() > & delegate) noexcept {data_->no_arguments_functions = delegate.functions();}
+    delegate(const delegate < result_t() >& delegate) noexcept {data_->no_arguments_functions = delegate.functions();}
     /// @endcond
     
     /// @brief Initializes a delegate that invokes the specified instance method.
@@ -563,11 +563,11 @@ namespace xtd {
     /// @{
     /// @brief Gets the no arguments delegates array
     /// @return The delegates array.
-    const no_arguments_function_collection & no_arguments_functions() const {return data_->no_arguments_functions;}
+    const no_arguments_function_collection& no_arguments_functions() const {return data_->no_arguments_functions;}
     
     /// @brief Gets the delegates array
     /// @return The delegates array.
-    const function_collection & functions() const {return data_->functions;}
+    const function_collection& functions() const {return data_->functions;}
     
     /// @brief Return if the delegate is empty.
     /// @return bool Return `true` if delegate is empty; otherwise `false`.
@@ -652,7 +652,7 @@ namespace xtd {
     /// @return Delegate A new delegate with an invocation list that concatenates the invocation lists of the delegates in the delegates array. Returns null if delegates is null, if delegates contains zero elements, || if every entry in delegates is null.
     /// @remarks If the delegates array contains entries that are null, those entries are ignored.
     /// @remarks The invocation list can contain duplicate entries; that is, entries that refer to the same method on the same object.
-    static delegate combine(const array < delegate > & delegates) noexcept {
+    static delegate combine(const array < delegate >& delegates) noexcept {
       delegate result;
       for (const delegate& delegate : delegates) {
         for (const no_arguments_function_t& function : delegate.data_->no_arguments_functions)
@@ -732,10 +732,10 @@ namespace xtd {
     /// @return result_t The return value.
     result_t operator()(arguments_t... arguments) const {
       if (data_->no_arguments_functions.size() == 0 && data_->functions.size() == 0) {
-        if constexpr (std::is_void_v < result_t >) return;
-        else if constexpr (std::is_reference_v < result_t >) {
+        if constexpr(std::is_void_v < result_t >) return;
+        else if constexpr(std::is_reference_v < result_t >) {
           using underlying_t = std::remove_reference_t < result_t >;
-          if constexpr (std::is_const_v < underlying_t >) {
+          if constexpr(std::is_const_v < underlying_t >) {
             static const underlying_t empty_value{};
             return empty_value;
           } else {
@@ -814,23 +814,23 @@ namespace xtd {
       return result;
     }
     
-    delegate & operator +=(const delegate & delegate) noexcept {
+    delegate& operator +=(const delegate & delegate) noexcept {
       *this = delegate::combine(*this, delegate);
       return *this;
     }
     
-    delegate & operator +=(const no_arguments_function_t& function) noexcept {
+    delegate& operator +=(const no_arguments_function_t& function) noexcept {
       *this = delegate::combine(*this, delegate(function));
       return *this;
     }
     
-    delegate & operator +=(const function_t& function) noexcept {
+    delegate& operator +=(const function_t& function) noexcept {
       *this = delegate::combine(*this, delegate(function));
       return *this;
     }
     
     template < class fn_t >
-    delegate & operator +=(fn_t function) noexcept {
+    delegate& operator +=(fn_t function) noexcept {
       *this = delegate::combine(*this, delegate(function));
       return *this;
     }
@@ -860,23 +860,23 @@ namespace xtd {
       return result;
     }
     
-    delegate & operator -=(const delegate & delegate) noexcept {
+    delegate& operator -=(const delegate & delegate) noexcept {
       *this = delegate::remove(*this, delegate);
       return *this;
     }
     
-    delegate & operator -=(const no_arguments_function_t& function) noexcept {
+    delegate& operator -=(const no_arguments_function_t& function) noexcept {
       *this = delegate::remove(*this, delegate(function));
       return *this;
     }
     
-    delegate & operator -=(const function_t& function) noexcept {
+    delegate& operator -=(const function_t& function) noexcept {
       *this = delegate::remove(*this, delegate(function));
       return *this;
     }
     
     template < class fn_t >
-    delegate & operator -=(fn_t function) noexcept {
+    delegate& operator -=(fn_t function) noexcept {
       *this = delegate::remove(*this, delegate(function));
       return *this;
     }
@@ -885,11 +885,11 @@ namespace xtd {
   private:
     struct delegate_async_state;
     
-    static bool are_equals(const std::function < result_t(arguments_t...) > & fct1, const std::function < result_t(arguments_t...) > & fct2) noexcept {
+    static bool are_equals(const std::function < result_t(arguments_t...) >& fct1, const std::function < result_t(arguments_t...) >& fct2) noexcept {
       return fct1.target_type() == fct2.target_type() && (fct1.template target < result_t(*)(arguments_t...) > () == fct2.template target < result_t(*)(arguments_t...)>() || *fct1.template target<result_t(*)(arguments_t...) > () == *fct2.template target < result_t(*)(arguments_t...) > ());
     }
     
-    static bool are_equals(const std::function < result_t() > & fct1, const std::function < result_t() > & fct2) noexcept {
+    static bool are_equals(const std::function < result_t() >& fct1, const std::function < result_t() >& fct2) noexcept {
       return fct1.target_type() == fct2.target_type() && (fct1.template target < result_t(*)() > () == fct2.template target < result_t(*)()>() || *fct1.template target<result_t(*)() > () == *fct2.template target < result_t(*)() > ());
     }
     
