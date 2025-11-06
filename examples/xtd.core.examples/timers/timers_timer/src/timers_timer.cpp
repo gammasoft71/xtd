@@ -7,7 +7,7 @@ namespace timer_example {
       set_timer();
       
       console::write_line("\nPress the Enter key to exit the application...\n");
-      console::write_line("The application started at {:t}.{:d3}", date_time::now(), date_time::now().millisecond());
+      console::write_line("The application started at {:HH:mm:ss:fff}", date_time::now());
       console::read_line();
       a_timer.stop();
       a_timer.close();
@@ -23,8 +23,7 @@ namespace timer_example {
     }
     
     static void on_timed_event(object& source, const timers::elapsed_event_args& e) {
-      console::write_line("The elapsed event was raised at {:t}.{:d3}",
-                          e.signal_time(), e.signal_time().millisecond());
+      console::write_line("The elapsed event was raised at {:HH:mm:ss:fff}", e.signal_time());
     }
     
   private:
