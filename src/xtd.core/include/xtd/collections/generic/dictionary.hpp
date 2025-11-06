@@ -464,42 +464,36 @@ private:
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @return A xtd::collections::enumerator structure for the xtd::collections::generic::dictionary <key_t, value_t>.
         enumerator < value_type > get_enumerator() const noexcept override {
-          struct internal_enumerator : public ienumerator < value_type > {
-          public:
-            explicit internal_enumerator(const dictionary & items, size_type version) : items_(items), version_(version) {}
+          struct dictionary_enumerator : public ienumerator < value_type > {
+            explicit dictionary_enumerator(const dictionary & items, size_type version) : items_(items), version_(version) {}
             
             const value_type & current() const override {
+              if (iterator_ == items_.items().cend()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
-              if (iterator_ != items_.items().cend()) {
-                static thread_local auto value = value_type {};
-                value = value_type {*iterator_};
-                return value;
-              }
-              static auto default_value_type = value_type {};
-              return default_value_type;
+              return (value_ = value_type {*iterator_});
             }
             
             bool move_next() override {
               if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
-              if (!reset_) return ++iterator_ != items_.items().cend();
-              reset_ = false;
-              iterator_ = items_.items().cbegin();
-              return iterator_ != items_.items().cend();
+              if (index_++ && iterator_ != items_.data_->items.cend()) ++iterator_;
+              else iterator_ = items_.items().cbegin();
+              return  iterator_ != items_.data_->items.cend();
             }
             
             void reset() override {
-              reset_ = true;
+              index_ = 0;
               version_ = items_.data_->version;
               iterator_ = items_.items().cend();
             }
             
-protected:
-            bool reset_ = true;
+          private:
+            size_type index_ = 0;
             const dictionary& items_;
-            typename dictionary::base_type::const_iterator iterator_ = items_.items().cend();
+            typename dictionary::base_type::const_iterator iterator_ = items_.data_->items.cend();
+            mutable value_type value_;
             size_type version_ = 0;
           };
-          return {new_ptr < internal_enumerator > (self_, data_->version)};
+          return {new_ptr < dictionary_enumerator > (self_, data_->version)};
         }
         
         /// @brief Removes the value with the specified key from the xtd::collections::generic::dictionary <key_t, value_t>.
