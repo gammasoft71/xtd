@@ -1355,19 +1355,18 @@ namespace xtd {
     xtd::size get_hash_code() const noexcept override {return xtd::hash_code::combine(chars_);}
     
     enumerator_type get_enumerator() const noexcept override {
-      class basic_string_enumerator : public xtd::collections::generic::ienumerator<value_type> {
-      public:
+      struct basic_string_enumerator : public xtd::collections::generic::ienumerator<value_type> {
         explicit basic_string_enumerator(const basic_string & chars) : chars_(chars) {}
-        
-        const value_type & current() const override {return chars_[index_];}
-        
+        const value_type & current() const override {
+          if (index_ >= chars_.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          return chars_[index_];
+        }
         bool move_next() override {return ++index_ < chars_.length();}
-        
         void reset() override {index_ = basic_string::npos;}
         
-      protected:
+      private:
         const basic_string& chars_;
-        xtd::size index_ = basic_string::npos;
+        size_type index_ = basic_string::npos;
       };
       return {new_ptr<basic_string_enumerator>(self_)};
     }
