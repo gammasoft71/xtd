@@ -452,7 +452,7 @@ namespace xtd::tests {
       auto s = basic_string<char_t> {"A test string"};
       auto iterator = s.cend();
       // Attempting to access cend results in undefined behaviour in Windows.
-      if (!environment::os_version().is_windows()) assert::throws<index_out_of_range_exception>([&] { [[maybe_unused]] auto v = *iterator;});
+      if (!environment::os_version().is_windows()) assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto v = *iterator;});
     }
     
     void test_method_(data) {
@@ -471,7 +471,7 @@ namespace xtd::tests {
       auto s = basic_string<char_t> {"A test string"};
       auto iterator = s.end();
       // Attempting to access end results in undefined behaviour in Windows.
-      if (!environment::os_version().is_windows()) assert::throws<index_out_of_range_exception>([&] { [[maybe_unused]] auto v = *iterator;});
+      if (!environment::os_version().is_windows()) assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto v = *iterator;});
     }
     
     void test_method_(length) {
