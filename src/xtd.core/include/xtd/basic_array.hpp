@@ -278,13 +278,12 @@ namespace xtd {
     
     xtd::collections::generic::enumerator<value_type> get_enumerator() const noexcept override {
       struct basic_array_enumerator : public xtd::collections::generic::ienumerator < value_type > {
-      public:
         explicit basic_array_enumerator(const basic_array & items, size_type version) : items_(items), version_(version) {}
         
         const value_type & current() const override {
+          if (index_ >= items_.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           if (version_ != items_.data_->items.version()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
-          if (index_ < items_.count()) return items_[index_];
-          return default_value_;
+          return items_[index_];
         }
         
         bool move_next() override {
@@ -297,11 +296,10 @@ namespace xtd {
           index_ = basic_array::npos;
         }
         
-protected:
-        const basic_array& items_;
+      private:
         size_type index_ = basic_array::npos;
+        const basic_array& items_;
         size_type version_ = 0;
-        value_type default_value_;
       };
       return {new_ptr < basic_array_enumerator > (*this, data_->items.version())};
     }
