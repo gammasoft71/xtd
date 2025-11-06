@@ -147,24 +147,23 @@ bool& bit_array::get(xtd::size index) {
 }
 
 generic::enumerator<bool> bit_array::get_enumerator() const {
-  class enumerator : public object, public generic::ienumerator<bool> {
-  public:
-    enumerator(bit_array* bit_array) : bit_array_(bit_array) {}
-    bool move_next() override {return ++pos_ < bit_array_->length();}
+  struct bit_array_enumerator : public object, public generic::ienumerator<bool> {
+    explicit bit_array_enumerator(const bit_array& items) : items_(items) {}
     
-    void reset() override {pos_ = npos;}
     const bool& current() const override {
-      if (pos_ == npos || pos_ >= bit_array_->length()) throw_helper::throws(exception_case::invalid_operation);
-      return (*bit_array_)[pos_];
+      if (index_ >= items_.length()) throw_helper::throws(exception_case::invalid_operation);
+      return items_[index_];
     }
+
+    bool move_next() override {return ++index_ < items_.length();}
+    void reset() override {index_ = npos;}
     
   private:
-    xtd::size npos = xtd::npos;
-    xtd::size pos_ = npos;
-    bit_array* bit_array_ = null;
+    xtd::size index_ = npos;
+    const bit_array& items_;
   };
   flush(); // Must be call first
-  return generic::enumerator<bool>(new_ptr<enumerator>(const_cast<bit_array*>(this)));
+  return {new_ptr<bit_array_enumerator>(self_)};
 }
 
 bool bit_array::has_all_set() const noexcept {
