@@ -33,7 +33,7 @@ startup_(uri_example::program::main);
 
 // This code produces the following output :
 //
-// Wed Aug 18 13:30:30 2010 - Fri Jan  1 08:00:15 2010 = 229.05:30:15
+// 8/18/2010 1:30:30 PM - 1/1/2010 8:00:15 AM = 229.05:30:15
 //    Value of Days Component:                             229
 //    Total Number of Days:                   229.229340277778
 //    Value of Hours Component:                              5
