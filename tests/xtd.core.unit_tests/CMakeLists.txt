@@ -10,6 +10,8 @@ add_sources(
   "src/xtd/collections/generic/tests/comparer_tests.cpp"
   "src/xtd/collections/generic/tests/dictionary_tests.cpp"
   "src/xtd/collections/generic/tests/key_not_found_exception_tests.cpp"
+  "src/xtd/collections/generic/tests/linked_list_node_tests.cpp"
+  "src/xtd/collections/generic/tests/linked_list_tests.cpp"
   "src/xtd/collections/generic/tests/list_tests.cpp"
   "src/xtd/collections/tests/array_list_tests.cpp"
   "src/xtd/collections/tests/bit_array_tests.cpp"
