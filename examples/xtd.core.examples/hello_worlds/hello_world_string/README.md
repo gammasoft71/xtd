@@ -18,6 +18,6 @@ xtdc run
 ## Output
 
 ```
-Hello,     World!
+Hello   ,   World!
 ```
 
