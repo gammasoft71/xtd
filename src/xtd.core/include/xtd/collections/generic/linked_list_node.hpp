@@ -4,7 +4,10 @@
 #pragma once
 #include "helpers/allocator.hpp"
 #include "../../null.hpp"
+#include "../../nullopt.hpp"
 #include "../../object.hpp"
+#include "../../optional.hpp"
+#include "../../ref.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -61,37 +64,31 @@ namespace xtd {
         /// @}
         
         /// @name Public Properties
-        bool has_value() const noexcept {return  data_->value.has_value() || (data_->list && data_->iterator != end());}
-        
-        bool is_valid() const noexcept {return has_value();}
-        
-        linked_list_node next() const noexcept {
+        xtd::ref<const linked_list<type_t>> list() const noexcept {return data_->list ? ref {*data_->list} : xtd::ref<const linked_list<type_t>> {};}
+
+        xtd::optional<linked_list_node> next() const noexcept {
           if (!data_->list) return self_;
-          if (!data_->list->count() || data_->iterator == end()) return {*data_->list, end()};
+          if (!data_->list->count() || data_->iterator == end()) return xtd::nullopt;
           auto tmp = data_->iterator;
-          return {*data_->list, ++tmp};
+          return linked_list_node {*data_->list, ++tmp, data_->version};
         }
         
-        linked_list_node previous() const noexcept {
+        xtd::optional<linked_list_node> previous() const noexcept {
           if (!data_->list) return self_;
-          if (!data_->list->count() || data_->iterator == begin()) return {*data_->list, end()};
+          if (!data_->list->count() || data_->iterator == begin()) return xtd::nullopt;
           auto tmp = data_->iterator;
-          return {*data_->list, --tmp};
+          return linked_list_node {*data_->list, --tmp, data_->version};
         }
         
         const value_type& value() const {
-          if (!has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+          if (data_->value.has_value()) return data_->value.value();
+          if (data_->list->data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; node operation may not execute.");
           return *data_->iterator;
         }
         value_type& value() {
-          if (!has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           if (data_->value.has_value()) return data_->value.value();
+          if (data_->list->data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; node operation may not execute.");
           return *data_->iterator;
-        }
-        
-        value_type value_or(const value_type & default_value) const {
-          if (!has_value()) return default_value;
-          return value();
         }
         /// @}
         
@@ -102,20 +99,22 @@ namespace xtd {
         
       private:
         friend class linked_list<type_t>;
-        using iterator_type = typename base_type::iterator;
+        using iterator = typename base_type::iterator;
         
-        linked_list_node(linked_list_type & list, iterator_type iterator) {
+        linked_list_node(linked_list_type & list, iterator iterator, xtd::size version) {
           data_->list = &list;
           data_->iterator = iterator;
+          data_->version = version;
         }
         
-        iterator_type begin() const {return data_->list->items().begin();}
-        iterator_type end() const {return data_->list->items().end();}
+        iterator begin() const {return data_->list->data_->items.begin();}
+        iterator end() const {return data_->list->data_->items.end();}
         
         struct node_data {
           linked_list<type_t>* list = null;
-          iterator_type iterator;
+          iterator iterator;
           xtd::optional < value_type > value;
+          xtd::size version;
         };
         
         xtd::ptr < node_data > data_ = xtd::new_ptr < node_data > ();

@@ -85,18 +85,34 @@ namespace xtd {
         /// @name Public Properties
         size_type count() const noexcept override {return data_->items.size();}
         
-        linked_list_node<type_t> first() {
-          if (!count()) return linked_list_node<type_t> {self_, data_->items.end()};
-          return linked_list_node<type_t> {self_, data_->items.begin()};
+        xtd::optional<linked_list_node<type_t>> first() const {
+          if (!count()) return xtd::nullopt;
+          return linked_list_node<type_t> {const_cast<linked_list&>(self_), data_->items.begin(), data_->version};
         }
         
-        const base_type& items() const noexcept {return data_->items;}
-        base_type& items() noexcept {return data_->items;}
+        xtd::optional<linked_list_node<type_t>> first() {
+          if (!count()) return xtd::nullopt;
+          return linked_list_node<type_t> {self_, data_->items.begin(), data_->version};
+        }
         
-        linked_list_node<type_t> last() {
-          if (!count()) return linked_list_node<type_t> {self_, data_->items.end()};
+        const base_type& items() const noexcept {
+          return data_->items;
+        }
+        
+        base_type& items() noexcept {
+          return data_->items;
+        }
+
+        xtd::optional<linked_list_node<type_t>> last() const {
+          if (!count()) return xtd::nullopt;
           auto tmp = data_->items.end();
-          return linked_list_node<type_t> {self_, --tmp};
+          return linked_list_node<type_t> {const_cast<linked_list&>(self_), --tmp, data_->version};
+        }
+
+        xtd::optional<linked_list_node<type_t>> last() {
+          if (!count()) return xtd::nullopt;
+          auto tmp = data_->items.end();
+          return linked_list_node<type_t> {self_, --tmp, data_->version};
         }
         /// @}
         
@@ -194,16 +210,16 @@ namespace xtd {
             array[index++] = item;
         }
         
-        linked_list_node<type_t> find(const type_t value) const noexcept {
-          for (auto node = first(); node.has_value(); node = node.next())
-            if (node.value() == value) return node;
-          return {self_, data_->items.end()};
+        xtd::optional<linked_list_node<type_t>> find(const type_t value) const noexcept {
+          for (auto node = first(); node; node = node->next())
+            if (node->value() == value) return node;
+          return xtd::nullopt;
         }
         
-        linked_list_node<type_t> find_last(const type_t value) const noexcept {
-          for (auto node = last(); node.has_value(); node = node.previous())
-            if (node.value() == value) return node;
-          return {self_, data_->items.end()};
+        xtd::optional<linked_list_node<type_t>> find_last(const type_t value) const noexcept {
+          for (auto node = last(); node; node = node->previous())
+            if (node->value() == value) return node;
+          return xtd::nullopt;
         }
         
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::linked_list <type_t>.
@@ -257,15 +273,22 @@ namespace xtd {
         void remove(linked_list_node<type_t>& node) {
           if (!count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          node.data_->value = *node.data_->iterator;
           data_->items.erase(node.data_->iterator);
+          ++data_->version;
+          node.data_->list = null;
         }
         
         void remove_first() {
-          remove(first());
+          if (!count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          data_->items.erase(data_->items.begin());
+          ++data_->version;
         }
         
         void remove_last() {
-          remove(last());
+          if (!count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+          data_->items.erase(--data_->items.end());
+          ++data_->version;
         }
         
         /// @brief Returns a xtd::string that represents the current object.
@@ -303,6 +326,7 @@ namespace xtd {
         /// @}
         
       private:
+        friend class linked_list_node<type_t>;
         void add(const type_t& item) override {add_last(item);}
         bool is_read_only() const noexcept override {return false;}
         bool is_synchronized() const noexcept override {return false;}
