@@ -102,13 +102,13 @@ namespace xtd {
         base_type& items() noexcept {
           return data_->items;
         }
-
+        
         xtd::optional<linked_list_node<type_t>> last() const {
           if (!count()) return xtd::nullopt;
           auto tmp = data_->items.end();
           return linked_list_node<type_t> {const_cast<linked_list&>(self_), --tmp, data_->version};
         }
-
+        
         xtd::optional<linked_list_node<type_t>> last() {
           if (!count()) return xtd::nullopt;
           auto tmp = data_->items.end();
