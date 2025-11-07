@@ -12,6 +12,7 @@ add_projects(
   generic_ienumerable3
   generic_ienumerator
   generic_ilist
+  generic_linked_list
   generic_list
   generic_list2
   generic_list3
