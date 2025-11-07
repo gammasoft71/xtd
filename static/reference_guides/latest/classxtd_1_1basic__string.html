@@ -585,7 +585,7 @@ A character sequence consisting of <code>count1</code> characters starting at <c
   </table>
   </dd>
 </dl>
-<p>/ Returns a reference to the underlying base type. / </p><dl class="section return"><dt>Returns</dt><dd>Reference to the underlying base type. operator const base_type &amp; () const noexcept {return chars_;}</dd></dl>
+<p>/ Returns a reference to the underlying base type. / </p><dl class="section return"><dt>Returns</dt><dd>Reference to the underlying base type. operator const base_type&amp; () const noexcept {return chars_;}</dd></dl>
 <p>/ Copy assignment operator. Replaces the contents with a copy of the contents of str. /</p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>String to use as data source. / </td></tr>
@@ -867,175 +867,175 @@ A character sequence consisting of <code>count1</code> characters starting at <c
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(const basic_string&lt;char&gt;&amp; str) { if constexpr(std::is_same_v&lt;char, char_t&gt;) chars_ += str.chars_; else chars_ += __xtd_convert_to_string&lt;value_type&gt;(str.chars_); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(const basic_string&lt;char&gt;&amp; str) { if constexpr(std::is_same_v&lt;char, char_t&gt;) chars_ += str.chars_; else chars_ += __xtd_convert_to_string&lt;value_type&gt;(str.chars_); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>string to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(const basic_string&lt;xtd::char16&gt;&amp; str) { if constexpr(std::is_same_v&lt;xtd::char16, char_t&gt;) chars_ += str.chars_; else chars_ += __xtd_convert_to_string&lt;value_type&gt;(str.chars_); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(const basic_string&lt;xtd::char16&gt;&amp; str) { if constexpr(std::is_same_v&lt;xtd::char16, char_t&gt;) chars_ += str.chars_; else chars_ += __xtd_convert_to_string&lt;value_type&gt;(str.chars_); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>string to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(const basic_string&lt;xtd::char32&gt;&amp; str) { if constexpr(std::is_same_v&lt;xtd::char32, char_t&gt;) chars_ += str.chars_; else chars_ += __xtd_convert_to_string&lt;value_type&gt;(str.chars_); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(const basic_string&lt;xtd::char32&gt;&amp; str) { if constexpr(std::is_same_v&lt;xtd::char32, char_t&gt;) chars_ += str.chars_; else chars_ += __xtd_convert_to_string&lt;value_type&gt;(str.chars_); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>string to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(const basic_string&lt;xtd::char8&gt;&amp; str) { if constexpr(std::is_same_v&lt;xtd::char8, char_t&gt;) chars_ += str.chars_; else chars_ += __xtd_convert_to_string&lt;value_type&gt;(str.chars_); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(const basic_string&lt;xtd::char8&gt;&amp; str) { if constexpr(std::is_same_v&lt;xtd::char8, char_t&gt;) chars_ += str.chars_; else chars_ += __xtd_convert_to_string&lt;value_type&gt;(str.chars_); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>string to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(const basic_string&lt;xtd::wchar&gt;&amp; str) { if constexpr(std::is_same_v&lt;xtd::wchar, char_t&gt;) chars_ += str.chars_; else chars_ += __xtd_convert_to_string&lt;value_type&gt;(str.chars_); return self_; }</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(const basic_string&lt;xtd::wchar&gt;&amp; str) { if constexpr(std::is_same_v&lt;xtd::wchar, char_t&gt;) chars_ += str.chars_; else chars_ += __xtd_convert_to_string&lt;value_type&gt;(str.chars_); return self_; }</dd></dl>
 <p>/ Addition assignment operator. Appends additional characters to the string. /</p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>string to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(basic_string&lt;char&gt;&amp;&amp; str) { if constexpr(std::is_same_v&lt;char, char_t&gt;) chars_ += std::move(str.chars_); else chars_ += __xtd_convert_to_string&lt;value_type&gt;(std::move(str.chars_)); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(basic_string&lt;char&gt;&amp;&amp; str) { if constexpr(std::is_same_v&lt;char, char_t&gt;) chars_ += std::move(str.chars_); else chars_ += __xtd_convert_to_string&lt;value_type&gt;(std::move(str.chars_)); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>string to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(basic_string&lt;xtd::char16&gt;&amp;&amp; str) { if constexpr(std::is_same_v&lt;xtd::char16, char_t&gt;) chars_ += std::move(str.chars_); else chars_ += __xtd_convert_to_string&lt;value_type&gt;(std::move(str.chars_)); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(basic_string&lt;xtd::char16&gt;&amp;&amp; str) { if constexpr(std::is_same_v&lt;xtd::char16, char_t&gt;) chars_ += std::move(str.chars_); else chars_ += __xtd_convert_to_string&lt;value_type&gt;(std::move(str.chars_)); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>string to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(basic_string&lt;xtd::char32&gt;&amp;&amp; str) { if constexpr(std::is_same_v&lt;xtd::char32, char_t&gt;) chars_ += std::move(str.chars_); else chars_ += __xtd_convert_to_string&lt;value_type&gt;(std::move(str.chars_)); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(basic_string&lt;xtd::char32&gt;&amp;&amp; str) { if constexpr(std::is_same_v&lt;xtd::char32, char_t&gt;) chars_ += std::move(str.chars_); else chars_ += __xtd_convert_to_string&lt;value_type&gt;(std::move(str.chars_)); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>string to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(basic_string&lt;xtd::char8&gt;&amp;&amp; str) { if constexpr(std::is_same_v&lt;xtd::char8, char_t&gt;) chars_ += std::move(str.chars_); else chars_ += __xtd_convert_to_string&lt;value_type&gt;(std::move(str.chars_)); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(basic_string&lt;xtd::char8&gt;&amp;&amp; str) { if constexpr(std::is_same_v&lt;xtd::char8, char_t&gt;) chars_ += std::move(str.chars_); else chars_ += __xtd_convert_to_string&lt;value_type&gt;(std::move(str.chars_)); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>string to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(basic_string&lt;xtd::wchar&gt;&amp;&amp; str) { if constexpr(std::is_same_v&lt;xtd::wchar, char_t&gt;) chars_ += std::move(str.chars_); else chars_ += __xtd_convert_to_string&lt;value_type&gt;(std::move(str.chars_)); return self_; }</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(basic_string&lt;xtd::wchar&gt;&amp;&amp; str) { if constexpr(std::is_same_v&lt;xtd::wchar, char_t&gt;) chars_ += std::move(str.chars_); else chars_ += __xtd_convert_to_string&lt;value_type&gt;(std::move(str.chars_)); return self_; }</dd></dl>
 <p>/ Addition assignment operator. Appends additional characters to the string. /</p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>string to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(const std::basic_string&lt;char&gt;&amp; str) { if constexpr(std::is_same_v&lt;char, char_t&gt;) chars_ += str; else chars_ += __xtd_convert_to_string&lt;value_type&gt;(str); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(const std::basic_string&lt;char&gt;&amp; str) { if constexpr(std::is_same_v&lt;char, char_t&gt;) chars_ += str; else chars_ += __xtd_convert_to_string&lt;value_type&gt;(str); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>string to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(const std::basic_string&lt;xtd::char16&gt;&amp; str) { if constexpr(std::is_same_v&lt;xtd::char16, char_t&gt;) chars_ += str; else chars_ += __xtd_convert_to_string&lt;value_type&gt;(str); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(const std::basic_string&lt;xtd::char16&gt;&amp; str) { if constexpr(std::is_same_v&lt;xtd::char16, char_t&gt;) chars_ += str; else chars_ += __xtd_convert_to_string&lt;value_type&gt;(str); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>string to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(const std::basic_string&lt;xtd::char32&gt;&amp; str) { if constexpr(std::is_same_v&lt;xtd::char32, char_t&gt;) chars_ += str; else chars_ += __xtd_convert_to_string&lt;value_type&gt;(str); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(const std::basic_string&lt;xtd::char32&gt;&amp; str) { if constexpr(std::is_same_v&lt;xtd::char32, char_t&gt;) chars_ += str; else chars_ += __xtd_convert_to_string&lt;value_type&gt;(str); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>string to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(const std::basic_string&lt;xtd::char8&gt;&amp; str) { if constexpr(std::is_same_v&lt;xtd::char8, char_t&gt;) chars_ += str; else chars_ += __xtd_convert_to_string&lt;value_type&gt;(str); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(const std::basic_string&lt;xtd::char8&gt;&amp; str) { if constexpr(std::is_same_v&lt;xtd::char8, char_t&gt;) chars_ += str; else chars_ += __xtd_convert_to_string&lt;value_type&gt;(str); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>string to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(const std::basic_string&lt;xtd::wchar&gt;&amp; str) { if constexpr(std::is_same_v&lt;xtd::wchar, char_t&gt;) chars_ += str; else chars_ += __xtd_convert_to_string&lt;value_type&gt;(str); return self_; }</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(const std::basic_string&lt;xtd::wchar&gt;&amp; str) { if constexpr(std::is_same_v&lt;xtd::wchar, char_t&gt;) chars_ += str; else chars_ += __xtd_convert_to_string&lt;value_type&gt;(str); return self_; }</dd></dl>
 <p>/ Addition assignment operator. Appends additional characters to the string. /</p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>string to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(const char* str) { chars_ += basic_string(str).chars_; return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(const char* str) { chars_ += basic_string(str).chars_; return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>string to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(const xtd::char16 * str) { chars_.append(basic_string(str).chars_); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(const xtd::char16 * str) { chars_.append(basic_string(str).chars_); return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>string to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(const xtd::char32 * str) { chars_ += basic_string(str).chars_; return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(const xtd::char32 * str) { chars_ += basic_string(str).chars_; return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>string to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(const xtd::char8 * str) { chars_ += basic_string(str).chars_; return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(const xtd::char8 * str) { chars_ += basic_string(str).chars_; return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">str</td><td>string to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(const xtd::wchar * str) { chars_ += basic_string(str).chars_; return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(const xtd::wchar * str) { chars_ += basic_string(str).chars_; return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ch</td><td>Character value to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(char ch) { chars_ += basic_string(1, ch).chars_; return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(char ch) { chars_ += basic_string(1, ch).chars_; return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ch</td><td>Character value to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(xtd::char16 ch) { chars_ += basic_string(1, ch).chars_; return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(xtd::char16 ch) { chars_ += basic_string(1, ch).chars_; return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ch</td><td>Character value to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(xtd::char32 ch) { chars_ += basic_string(1, ch).chars_; return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(xtd::char32 ch) { chars_ += basic_string(1, ch).chars_; return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ch</td><td>Character value to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(xtd::char8 ch) { chars_ += basic_string(1, ch).chars_; return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(xtd::char8 ch) { chars_ += basic_string(1, ch).chars_; return self_; } / Addition assignment operator. Appends additional characters to the string. /</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ch</td><td>Character value to append. / </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> &amp; operator +=(xtd::wchar ch) { chars_ += basic_string(1, ch).chars_; return self_; }</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>This current instance with characters added. <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>&amp; operator +=(xtd::wchar ch) { chars_ += basic_string(1, ch).chars_; return self_; }</dd></dl>
 <p>/ Addition operator. Returns a string containing characters from <code>lhs</code> followed by the characters from <code>rhs</code>. /</p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lhs</td><td>The string characters who will precede the <code>rhs</code>. /</td></tr>
@@ -5514,7 +5514,7 @@ template&lt;class char_t, class traits_t, class allocator_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 6 2025 19:58:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Nov 7 2025 21:25:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
