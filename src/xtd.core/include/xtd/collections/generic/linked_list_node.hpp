@@ -41,53 +41,51 @@ namespace xtd {
         /// @name Public Aliases
         
         /// @{
-        /// @brief Represents the list value type.
+        /// @brief Represents the linked list node value type.
         using value_type = type_t;
-        /// @brief Represents the list base type.
+        /// @brief Represents the linked list type.
         using linked_list_type = linked_list<value_type>;
-        /// @brief Represents the list base type.
+        /// @brief Represents the linked list base type.
         using base_type = typename linked_list_type::base_type;
+        /// @brief Represents the size type.
+        using size_type = typename linked_list_type::size_type;
         /// @}
         
         /// @name Public Constructors
         
         /// @{
+        linked_list_node(const value_type & value) {data_->value = value;}
+        linked_list_node(value_type&& value) {data_->value = std::move(value);}
         linked_list_node(linked_list_node&&) = default;
         linked_list_node(const linked_list_node&) = default;
-        linked_list_node(value_type&& value) {
-          data_->value = std::move(value);
-        }
-        linked_list_node(const value_type & value) {
-          data_->value = value;
-        }
-        
         /// @}
         
         /// @name Public Properties
-        xtd::ref<const linked_list<type_t>> list() const noexcept {return data_->list ? ref {*data_->list} : xtd::ref<const linked_list<type_t>> {};}
+        xtd::ref<const linked_list<type_t>> list() const noexcept {return data_->list ? ref {*data_->list} : xtd::ref<linked_list<type_t>> {};}
 
-        xtd::optional<linked_list_node> next() const noexcept {
-          if (!data_->list) return self_;
-          if (!data_->list->count() || data_->iterator == end()) return xtd::nullopt;
+        xtd::optional<linked_list_node> next() const {
+          if (data_->list && data_->list->data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; node operation may not execute.");
+          if (!data_->list || !data_->list->count() || data_->iterator == end()) return xtd::nullopt;
           auto tmp = data_->iterator;
-          return linked_list_node {*data_->list, ++tmp, data_->version};
+          if (++tmp == end()) return xtd::nullopt;
+          return linked_list_node {*data_->list, tmp, data_->version};
         }
         
-        xtd::optional<linked_list_node> previous() const noexcept {
-          if (!data_->list) return self_;
-          if (!data_->list->count() || data_->iterator == begin()) return xtd::nullopt;
+        xtd::optional<linked_list_node> previous() const {
+          if (data_->list && data_->list->data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; node operation may not execute.");
+          if (!data_->list || !data_->list->count() || data_->iterator == begin()) return xtd::nullopt;
           auto tmp = data_->iterator;
           return linked_list_node {*data_->list, --tmp, data_->version};
         }
         
         const value_type& value() const {
+          if (data_->list && data_->list->data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; node operation may not execute.");
           if (data_->value.has_value()) return data_->value.value();
-          if (data_->list->data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; node operation may not execute.");
           return *data_->iterator;
         }
         value_type& value() {
+          if (data_->list && data_->list->data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; node operation may not execute.");
           if (data_->value.has_value()) return data_->value.value();
-          if (data_->list->data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; node operation may not execute.");
           return *data_->iterator;
         }
         /// @}
@@ -101,7 +99,7 @@ namespace xtd {
         friend class linked_list<type_t>;
         using iterator = typename base_type::iterator;
         
-        linked_list_node(linked_list_type & list, iterator iterator, xtd::size version) {
+        linked_list_node(linked_list_type & list, iterator iterator, size_type version) {
           data_->list = &list;
           data_->iterator = iterator;
           data_->version = version;
@@ -114,7 +112,7 @@ namespace xtd {
           linked_list<type_t>* list = null;
           iterator iterator;
           xtd::optional < value_type > value;
-          xtd::size version;
+          size_type version;
         };
         
         xtd::ptr < node_data > data_ = xtd::new_ptr < node_data > ();

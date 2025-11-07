@@ -123,7 +123,7 @@ namespace xtd {
           if (iterator != data_->items.end()) ++iterator;
           auto result = data_->items.insert(iterator, value);
           ++data_->version;
-          return {self_, result};
+          return {self_, result, data_->version};
         }
         
         void add_after(const linked_list_node<type_t>& node, linked_list_node<type_t>& new_node) {
@@ -132,7 +132,7 @@ namespace xtd {
           auto iterator = node.data_->iterator;
           if (iterator != data_->items.end()) ++iterator;
           auto result = data_->items.insert(iterator, new_node.data_->value.value());
-          new_node = {self_, result};
+          new_node = {self_, result, data_->version};
           ++data_->version;
         }
         
@@ -141,7 +141,7 @@ namespace xtd {
           auto iterator = node.data_->iterator;
           auto result = data_->items.insert(iterator, value);
           ++data_->version;
-          return {self_, result};
+          return {self_, result, data_->version};
         }
         
         linked_list_node<type_t> add_before(const linked_list_node<type_t>& node, linked_list_node<type_t>& new_node) {
@@ -150,7 +150,7 @@ namespace xtd {
           auto iterator = node.data_->iterator;
           auto result = data_->items.insert(iterator, new_node.data_->value.value());
           ++data_->version;
-          new_node = {self_, result};
+          new_node = {self_, result, data_->version};
         }
         
         void add_first(const type_t& value) {
@@ -162,7 +162,7 @@ namespace xtd {
           if (node.data_->list || !node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           data_->items.push_front(node.data_->value.value());
           ++data_->version;
-          node = {self_, data_->items.begin()};
+          node = {self_, data_->items.begin(), data_->version};
         }
         
         void add_last(const type_t& value) {
@@ -175,7 +175,7 @@ namespace xtd {
           data_->items.push_back(node.data_->value.value());
           ++data_->version;
           auto tmp = data_->items.end();
-          node = {self_, --tmp};
+          node = {self_, --tmp, data_->version};
         }
         
         /// @brief Removes all elements from the xtd::collections::generic::linked_list <type_t>.
