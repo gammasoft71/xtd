@@ -482,10 +482,10 @@ namespace xtd::collections::generic::tests {
     }
     
     void test_method_(contains_not_empty_list) {
-      assert::is_true(linked_list<int> {42, 84, 21}.contains(42));
-      assert::is_true(linked_list<int> {42, 84, 21}.contains(84));
-      assert::is_true(linked_list<int> {42, 84, 21}.contains(21));
-      assert::is_false(linked_list<int> {42, 84, 21}.contains(12));
+      assert::is_true(linked_list {42, 84, 21}.contains(42));
+      assert::is_true(linked_list {42, 84, 21}.contains(84));
+      assert::is_true(linked_list {42, 84, 21}.contains(21));
+      assert::is_false(linked_list {42, 84, 21}.contains(12));
     }
     
     void test_method_(copy_to_an_empty_list) {
@@ -496,12 +496,12 @@ namespace xtd::collections::generic::tests {
     
     void test_method_(copy_to_an_not_empty_list) {
       auto items = array<int>(5_z);
-      linked_list<int> {42, 84, 21}.copy_to(items, 0_z);
+      linked_list {42, 84, 21}.copy_to(items, 0_z);
       collection_assert::are_equal({42, 84, 21, 0, 0}, items);
       items.fill(0);
-      linked_list<int> {42, 84, 21}.copy_to(items, 2_z);
+      linked_list {42, 84, 21}.copy_to(items, 2_z);
       collection_assert::are_equal({0, 0, 42, 84, 21}, items);
-      assert::throws<argument_out_of_range_exception>([&] {linked_list<int> {42, 84, 21}.copy_to(items, 3_z);});
+      assert::throws<argument_out_of_range_exception>([&] {linked_list {42, 84, 21}.copy_to(items, 3_z);});
     }
     
     void test_method_(find_on_empty_list) {
@@ -509,7 +509,7 @@ namespace xtd::collections::generic::tests {
     }
     
     void test_method_(find_on_not_empty_list) {
-      auto list = linked_list<int> {42, 84, 21, 42};
+      auto list = linked_list {42, 84, 21, 42};
 
       assert::are_equal(list, list.find(42)->list());
       assert::are_equal(84, list.find(42)->next()->value());
@@ -534,7 +534,7 @@ namespace xtd::collections::generic::tests {
     }
     
     void test_method_(find_last_on_not_empty_list) {
-      auto list = linked_list<int> {42, 84, 21, 42};
+      auto list = linked_list {42, 84, 21, 42};
       
       assert::are_equal(list, list.find_last(42)->list());
       assert::is_null(list.find_last(42)->next());
@@ -552,6 +552,28 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(84, list.find_last(84)->value());
       
       assert::is_null(linked_list<int> {}.find_last(12));
+    }
+    
+    void test_method_(get_enumerator_on_empty_list) {
+      auto list = linked_list<int> {};
+      auto enumerator = list.get_enumerator();
+      assert::throws<invalid_operation_exception>([&] {enumerator.current();});
+      assert::is_false(enumerator.move_next());
+      assert::throws<invalid_operation_exception>([&] {enumerator.current();});
+    }
+    
+    void test_method_(get_enumerator_on_not_empty_list) {
+      auto list = linked_list {42, 84, 21};
+      auto enumerator = list.get_enumerator();
+      assert::throws<invalid_operation_exception>([&] {enumerator.current();});
+      assert::is_true(enumerator.move_next());
+      assert::are_equal(42, enumerator.current());
+      assert::is_true(enumerator.move_next());
+      assert::are_equal(84, enumerator.current());
+      assert::is_true(enumerator.move_next());
+      assert::are_equal(21, enumerator.current());
+      assert::is_false(enumerator.move_next());
+      assert::throws<invalid_operation_exception>([&] {enumerator.current();});
     }
   };
 }
