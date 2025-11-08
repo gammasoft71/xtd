@@ -9,19 +9,19 @@ namespace xtd::collections::generic::tests {
     void test_method_(value_type) {
       assert::are_equal(typeof_<int>(), typeof_<linked_list<int>::value_type>());
     }
-
+    
     void test_method_(base_type) {
       assert::are_equal(typeof_<std::list<int>>(), typeof_<linked_list<int>::base_type>());
     }
-
+    
     void test_method_(size_type) {
       assert::are_equal(typeof_<const size>(), typeof_<linked_list<int>::size_type>());
     }
-
+    
     void test_method_(reference) {
       assert::are_equal(typeof_<int&>(), typeof_<linked_list<int>::reference>());
     }
-
+    
     void test_method_(const_reference) {
       assert::are_equal(typeof_<const int&>(), typeof_<linked_list<int>::const_reference>());
     }
@@ -117,7 +117,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(3_z, list.items().size());
       assert::is_not_null(list.last());
     }
-
+    
     void test_method_(count_on_empty_list) {
       assert::is_zero(linked_list<int> {}.count());
     }
@@ -129,7 +129,7 @@ namespace xtd::collections::generic::tests {
     void test_method_(count_on_items_list) {
       assert::are_equal(3_z, linked_list {42, 84, 21}.count());
     }
-
+    
     void test_method_(first_on_empty_list) {
       auto list = linked_list<int> {};
       assert::is_null(list.first());
@@ -158,7 +158,7 @@ namespace xtd::collections::generic::tests {
     void test_method_(items_on_items_list) {
       collection_assert::are_equal({42, 84}, linked_list {42, 84}.items());
     }
-
+    
     void test_method_(last_on_empty_list) {
       assert::is_null(linked_list<int> {}.last());
     }

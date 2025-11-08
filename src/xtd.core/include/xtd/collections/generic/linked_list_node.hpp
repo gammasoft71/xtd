@@ -102,7 +102,7 @@ namespace xtd {
           data_->iterator = iterator;
           data_->version = version;
         }
-                
+        
         iterator begin() const {return data_->list->data_->items.begin();}
         void check_stale() const {if (data_->list && data_->list->data_->version != data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; node operation may not execute.");}
         iterator end() const {return data_->list->data_->items.end();}

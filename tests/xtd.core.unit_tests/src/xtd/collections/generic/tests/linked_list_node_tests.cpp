@@ -41,7 +41,7 @@ namespace xtd::collections::generic::tests {
       assert::is_null(node.previous());
       assert::is_null(node.next());
     }
-
+    
     void test_method_(copy_constructor) {
       auto node1 = linked_list_node {42};
       auto node2 = node1;
@@ -59,7 +59,7 @@ namespace xtd::collections::generic::tests {
       assert::is_null(node2.previous());
       assert::is_null(node2.next());
     }
-
+    
     void test_method_(create_from_linked_list_with_one_item) {
       auto list = linked_list<int> {42};
       auto node = *list.first();
@@ -111,7 +111,7 @@ namespace xtd::collections::generic::tests {
       list.clear();
       assert::throws<invalid_operation_exception>([&] {node.previous();});
     }
-
+    
     void test_method_(copy_operator) {
       auto node1 = linked_list_node {42};
       auto node2 = linked_list_node {84};
