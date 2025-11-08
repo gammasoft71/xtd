@@ -62,7 +62,7 @@ namespace xtd {
         
         /// @name Public Properties
         xtd::ref<const linked_list<type_t>> list() const noexcept {return data_->list ? ref {*data_->list} : xtd::ref<linked_list<type_t>> {};}
-
+        
         xtd::optional<linked_list_node> next() const {
           check_stale();
           if (!data_->list || !data_->list->count() || data_->iterator == end()) return xtd::nullopt;
