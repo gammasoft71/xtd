@@ -597,8 +597,7 @@ namespace xtd::collections::generic::tests {
     }
     
     void test_method_(remove_value_on_empty_list) {
-      auto list = linked_list<int> {};
-      assert::is_false(list.remove(42));
+      assert::is_false(linked_list<int> {}.remove(42));
     }
     
     void test_method_(remove_value_on_not_empty_list) {
@@ -610,6 +609,40 @@ namespace xtd::collections::generic::tests {
       assert::is_true(list.remove(21));
       collection_assert::are_equal({42}, list);
       assert::is_true(list.remove(42));
+      collection_assert::is_empty(list);
+    }
+    
+    void test_method_(remove_node_on_empty_list) {
+      auto list = linked_list<int> {};
+      /// @todo Does not work as xtd::optional is an alias on std::optional. Remove following commnt when xtd::optional will an alias on xtd::nullable.
+      //assert::throws<argument_null_exception>([&] {list.remove(*list.first());
+    }
+    
+    void test_method_(remove_node_on_not_empty_list) {
+      auto list = linked_list {42, 84, 21, 42};
+
+      auto node = *list.find(84);
+      list.remove(node);
+      assert::is_true(node.list().is_empty());
+      assert::are_equal(84, node.value());
+      collection_assert::are_equal({42, 21, 42}, list);
+
+      node = *list.find(42);
+      list.remove(node);
+      assert::is_true(node.list().is_empty());
+      assert::are_equal(42, node.value());
+      collection_assert::are_equal({21, 42}, list);
+
+      node = *list.find(42);
+      list.remove(node);
+      assert::is_true(node.list().is_empty());
+      assert::are_equal(42, node.value());
+      collection_assert::are_equal({21}, list);
+
+      node = *list.find(21);
+      list.remove(node);
+      assert::is_true(node.list().is_empty());
+      assert::are_equal(21, node.value());
       collection_assert::is_empty(list);
     }
   };
