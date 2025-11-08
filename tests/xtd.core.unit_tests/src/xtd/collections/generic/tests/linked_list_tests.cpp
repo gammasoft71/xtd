@@ -528,5 +528,30 @@ namespace xtd::collections::generic::tests {
 
       assert::is_null(linked_list<int> {}.find(12));
     }
+    
+    void test_method_(find_last_on_empty_list) {
+      assert::is_null(linked_list<int> {}.find_last(42));
+    }
+    
+    void test_method_(find_last_on_not_empty_list) {
+      auto list = linked_list<int> {42, 84, 21, 42};
+      
+      assert::are_equal(list, list.find_last(42)->list());
+      assert::is_null(list.find_last(42)->next());
+      assert::are_equal(21, list.find_last(42)->previous()->value());
+      assert::are_equal(42, list.find_last(42)->value());
+      
+      assert::are_equal(list, list.find_last(21)->list());
+      assert::are_equal(42, list.find_last(21)->next()->value());
+      assert::are_equal(84, list.find_last(21)->previous()->value());
+      assert::are_equal(21, list.find_last(21)->value());
+
+      assert::are_equal(list, list.find_last(84)->list());
+      assert::are_equal(21, list.find_last(84)->next()->value());
+      assert::are_equal(42, list.find_last(84)->previous()->value());
+      assert::are_equal(84, list.find_last(84)->value());
+      
+      assert::is_null(linked_list<int> {}.find_last(12));
+    }
   };
 }
