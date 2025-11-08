@@ -41,16 +41,12 @@ namespace xtd {
         using value_type = typename icollection<type_t>::value_type;
         /// @brief Represents the list base type.
         using base_type = std::list<value_type>;
-        /// @brief Represents the list base type.
-        using const_base_type = const base_type;
         /// @brief Represents the list size type (usually xtd::size).
         using size_type = xtd::size;
         /// @brief Represents the reference of list value type.
         using reference = value_type&;
         /// @brief Represents the const reference of list value type.
         using const_reference = const value_type&;
-        /// @brief Represents the read only collection of of list.
-        using read_only_collection = xtd::collections::object_model::read_only_collection<value_type>;
         /// @}
         
         /// @name Public Constructors
@@ -132,8 +128,8 @@ namespace xtd {
           auto iterator = node.data_->iterator;
           if (iterator != data_->items.end()) ++iterator;
           auto result = data_->items.insert(iterator, new_node.data_->value.value());
-          new_node = {self_, result, data_->version};
           ++data_->version;
+          new_node = {self_, result, data_->version};
         }
         
         linked_list_node<type_t> add_before(const linked_list_node<type_t>& node, const type_t& value) {
@@ -319,7 +315,7 @@ namespace xtd {
         
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
-        operator const_base_type& () const noexcept {return data_->items;}
+        operator const base_type& () const noexcept {return data_->items;}
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.
         operator base_type& () noexcept {return data_->items;}
