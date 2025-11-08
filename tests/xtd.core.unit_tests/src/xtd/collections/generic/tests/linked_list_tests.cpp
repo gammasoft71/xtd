@@ -487,5 +487,21 @@ namespace xtd::collections::generic::tests {
       assert::is_true(linked_list<int> {42, 84, 21}.contains(21));
       assert::is_false(linked_list<int> {42, 84, 21}.contains(12));
     }
+    
+    void test_method_(copy_to_an_empty_list) {
+      auto items = array<int>(0_z);
+      linked_list<int> {}.copy_to(items, 0_z);
+      assert::throws<argument_out_of_range_exception>([&] {linked_list<int> {}.copy_to(items, 1_z);});
+    }
+    
+    void test_method_(copy_to_an_non_empty_list) {
+      auto items = array<int>(5_z);
+      linked_list<int> {42, 84, 21}.copy_to(items, 0_z);
+      collection_assert::are_equal({42, 84, 21, 0, 0}, items);
+      items.fill(0);
+      linked_list<int> {42, 84, 21}.copy_to(items, 2_z);
+      collection_assert::are_equal({0, 0, 42, 84, 21}, items);
+      assert::throws<argument_out_of_range_exception>([&] {linked_list<int> {42, 84, 21}.copy_to(items, 3_z);});
+    }
   };
 }
