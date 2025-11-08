@@ -645,5 +645,19 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(21, node.value());
       collection_assert::is_empty(list);
     }
+    
+    void test_method_(remove_first_on_empty_list) {
+      assert::throws<invalid_operation_exception>([] {linked_list<int> {}.remove_first();});
+    }
+    
+    void test_method_(remove_first_on_not_empty_list) {
+      auto list = linked_list {42, 84, 21};
+      list.remove_first();
+      collection_assert::are_equal({84, 21}, list);
+      list.remove_first();
+      collection_assert::are_equal({21}, list);
+      list.remove_first();
+      collection_assert::is_empty(list);
+    }
   };
 }
