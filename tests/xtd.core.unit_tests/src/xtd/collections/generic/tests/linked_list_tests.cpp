@@ -673,5 +673,17 @@ namespace xtd::collections::generic::tests {
       list.remove_last();
       collection_assert::is_empty(list);
     }
+    
+    void test_method_(to_string_empty_list) {
+      assert::are_equal("[]", linked_list<int> {}.to_string());
+      assert::are_equal("[]", to_string(linked_list<int> {}));
+      assert::are_equal("[]", to_string(linked_list<int> {}.items()));
+    }
+    
+    void test_method_(to_string_not_empty_list) {
+      assert::are_equal("[42, 84, 21]", linked_list<int> {42, 84, 21}.to_string());
+      assert::are_equal("[42, 84, 21]", to_string(linked_list<int> {42, 84, 21}));
+      assert::are_equal("[42, 84, 21]", to_string(linked_list<int> {42, 84, 21}.items()));
+    }
   };
 }
