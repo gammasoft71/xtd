@@ -140,7 +140,7 @@ namespace xtd {
           return {self_, result, data_->version};
         }
         
-        linked_list_node<type_t> add_before(const linked_list_node<type_t>& node, linked_list_node<type_t>& new_node) {
+        void add_before(const linked_list_node<type_t>& node, linked_list_node<type_t>& new_node) {
           if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           if (new_node.data_->list || !new_node.data_->value.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
           auto iterator = node.data_->iterator;
