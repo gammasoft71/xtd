@@ -685,5 +685,34 @@ namespace xtd::collections::generic::tests {
       assert::are_equal("[42, 84, 21]", to_string(linked_list<int> {42, 84, 21}));
       assert::are_equal("[42, 84, 21]", to_string(linked_list<int> {42, 84, 21}.items()));
     }
+    
+    void test_method_(copy_opertor_with_items_initializer_list) {
+      auto list = linked_list<int> {};
+      list = {42, 84, 21};
+      collection_assert::are_equal({42, 84, 21}, list);
+    }
+    
+    void test_method_(copy_opertor_with_items_linked_list) {
+      auto list = linked_list<int> {};
+      list = linked_list {42, 84, 21};
+      collection_assert::are_equal({42, 84, 21}, list);
+    }
+    
+    void test_method_(copy_opertor_with_items_std_list) {
+      auto list = linked_list<int> {};
+      list = std::list {42, 84, 21};
+      collection_assert::are_equal({42, 84, 21}, list);
+    }
+    
+    void test_method_(create_std_list_from_linked_list) {
+      std::list<int> list = linked_list {42, 84, 21};
+      collection_assert::are_equal({42, 84, 21}, list);
+    }
+    
+    void test_method_(assign_std_list_from_linked_list) {
+      auto list = std::list<int> {};
+      list = linked_list {42, 84, 21};
+      collection_assert::are_equal({42, 84, 21}, list);
+    }
   };
 }
