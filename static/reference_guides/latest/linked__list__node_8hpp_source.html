@@ -169,7 +169,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>          data_-&gt;iterator = iterator;</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>          data_-&gt;version = version;</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        }</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        </div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        iterator begin()<span class="keyword"> const </span>{<span class="keywordflow">return</span> data_-&gt;list-&gt;data_-&gt;items.begin();}</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordtype">void</span> check_stale()<span class="keyword"> const </span>{<span class="keywordflow">if</span> (data_-&gt;list &amp;&amp; data_-&gt;list-&gt;data_-&gt;version != data_-&gt;version) <a class="code hl_function" href="classxtd_1_1helpers_1_1throw__helper.html#a4fcf5154d41ae7e68038268ea89492d6">xtd::helpers::throw_helper::throws</a>(<a class="code hl_enumvalue" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dcaf1203e404fb6b2467cd1884faa2c71c2">xtd::helpers::exception_case::invalid_operation</a>, <span class="stringliteral">&quot;Collection was modified; node operation may not execute.&quot;</span>);}</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        iterator end()<span class="keyword"> const </span>{<span class="keywordflow">return</span> data_-&gt;list-&gt;data_-&gt;items.end();}</div>
@@ -217,7 +217,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 8 2025 11:43:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Nov 8 2025 21:25:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
