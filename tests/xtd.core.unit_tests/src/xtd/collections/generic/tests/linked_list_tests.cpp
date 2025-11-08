@@ -557,15 +557,15 @@ namespace xtd::collections::generic::tests {
     void test_method_(get_enumerator_on_empty_list) {
       auto list = linked_list<int> {};
       auto enumerator = list.get_enumerator();
-      assert::throws<invalid_operation_exception>([&] {enumerator.current();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto value = enumerator.current();});
       assert::is_false(enumerator.move_next());
-      assert::throws<invalid_operation_exception>([&] {enumerator.current();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto value = enumerator.current();});
     }
     
     void test_method_(get_enumerator_on_not_empty_list) {
       auto list = linked_list {42, 84, 21};
       auto enumerator = list.get_enumerator();
-      assert::throws<invalid_operation_exception>([&] {enumerator.current();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto value = enumerator.current();});
       assert::is_true(enumerator.move_next());
       assert::are_equal(42, enumerator.current());
       assert::is_true(enumerator.move_next());
@@ -573,7 +573,27 @@ namespace xtd::collections::generic::tests {
       assert::is_true(enumerator.move_next());
       assert::are_equal(21, enumerator.current());
       assert::is_false(enumerator.move_next());
-      assert::throws<invalid_operation_exception>([&] {enumerator.current();});
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto value = enumerator.current();});
+    }
+    
+    void test_method_(iterator_on_empty_list) {
+      auto list = linked_list<int> {};
+      auto iterator = list.begin();
+      assert::are_equal(list.end(), iterator);
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto value = *iterator;});
+    }
+    
+    void test_method_(iterator_on_not_empty_list) {
+      auto list = linked_list {42, 84, 21};
+      auto iterator = list.begin();
+      assert::are_not_equal(list.end(), iterator);
+      assert::are_equal(42, *iterator);
+      assert::are_not_equal(list.end(), ++iterator);
+      assert::are_equal(84, *iterator);
+      assert::are_not_equal(list.end(), ++iterator);
+      assert::are_equal(21, *iterator);
+      assert::are_equal(list.end(), ++iterator);
+      assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto value = *iterator;});
     }
   };
 }
