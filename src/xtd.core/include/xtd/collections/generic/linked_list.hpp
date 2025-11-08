@@ -255,12 +255,10 @@ namespace xtd {
         /// @remarks If type `typ_t` implements the xtd::iequatable <type_t> generic interface, the equality comparer is the xtd::iequatable::equals method of that interface; otherwise, the default equality comparer is xtd::object::equals.
         /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::linked_list::count.
         bool remove(const type_t& item) noexcept override {
-          for (auto iterator = data_->items.begin(); iterator != data_->items.end(); ++iterator)
-            if (*iterator == item) {
-              data_->items.erase(iterator);
-              return true;
-            }
-          return false;
+          auto node = find(item);
+          if (node == nullopt) return false;
+          remove(*node);
+          return true;
         }
         
         void remove(linked_list_node<type_t>& node) {

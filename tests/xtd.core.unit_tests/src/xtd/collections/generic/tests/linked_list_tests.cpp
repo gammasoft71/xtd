@@ -595,5 +595,22 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(list.end(), ++iterator);
       assert::throws<invalid_operation_exception>([&] {[[maybe_unused]] auto value = *iterator;});
     }
+    
+    void test_method_(remove_value_on_empty_list) {
+      auto list = linked_list<int> {};
+      assert::is_false(list.remove(42));
+    }
+    
+    void test_method_(remove_value_on_not_empty_list) {
+      auto list = linked_list {42, 84, 21, 42};
+      assert::is_true(list.remove(42));
+      collection_assert::are_equal({84, 21, 42}, list);
+      assert::is_true(list.remove(84));
+      collection_assert::are_equal({21, 42}, list);
+      assert::is_true(list.remove(21));
+      collection_assert::are_equal({42}, list);
+      assert::is_true(list.remove(42));
+      collection_assert::is_empty(list);
+    }
   };
 }
