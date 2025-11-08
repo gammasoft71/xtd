@@ -218,13 +218,13 @@ namespace xtd::collections::generic::tests {
       collection_assert::are_equal({42, 84, 21}, list);
     }
     
-    void test_method_(add_after_winth_invalid_node) {
+    void test_method_(add_after_with_invalid_node) {
       auto list = linked_list {42, 84};
       auto node = linked_list_node {21};
       assert::throws<invalid_operation_exception>([&] {list.add_after(*linked_list {42, 84}.first()->next(), node);});
     }
     
-    void test_method_(add_after_winth_invalid_new_node) {
+    void test_method_(add_after_with_invalid_new_node) {
       auto list = linked_list {42, 84};
       auto node = *list.first();
       assert::throws<invalid_operation_exception>([&] {list.add_after(*list.first()->next(), node);});
@@ -241,6 +241,77 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(84, node.value());
       assert::are_equal(21, last_node.value());
       list.add_after(node, 12);
+      assert::throws<invalid_operation_exception>([&] {first_node.value();});
+      assert::throws<invalid_operation_exception>([&] {node.value();});
+      assert::throws<invalid_operation_exception>([&] {last_node.value();});
+    }
+    
+    void test_method_(add_before_value_on_empty_list) {
+      auto list = linked_list<int> {};
+      /// @todo Does not work as xtd::optional is an alias on std::optional. Remove following commnt when xtd::optional will an alias on xtd::nullable.
+      //assert::throws<argument_null_exception>([&] {list.add_before(*list.first(), 42);});
+    }
+    
+    void test_method_(add_before_value_on_one_item_list) {
+      auto list = linked_list {84};
+      auto node = list.add_before(*list.first(), 42);
+      assert::are_equal(42, node.value());
+      collection_assert::are_equal({42, 84}, list);
+    }
+    
+    void test_method_(add_before_value_on_items_list) {
+      auto list = linked_list {42, 21};
+      auto node = list.add_before(*list.first()->next(), 84);
+      assert::are_equal(84, node.value());
+      collection_assert::are_equal({42, 84, 21}, list);
+    }
+    
+    void test_method_(add_before_new_node_on_empty_list) {
+      auto list = linked_list<int> {};
+      /// @todo Does not work as xtd::optional is an alias on std::optional. Remove following commnt when xtd::optional will an alias on xtd::nullable.
+      //auto node = linked_list_node {42}:
+      //assert::throws<argument_null_exception>([&] {list.add_before(*list.first(), node);});
+    }
+    
+    void test_method_(add_before_new_node_on_one_item_list) {
+      auto list = linked_list {84};
+      auto node = linked_list_node {42};
+      list.add_before(*list.first(), node);
+      assert::are_equal(42, node.value());
+      collection_assert::are_equal({42, 84}, list);
+    }
+    
+    void test_method_(add_before_new_node_on_items_list) {
+      auto list = linked_list {42, 21};
+      auto node = linked_list_node {84};
+      list.add_before(*list.first()->next(), node);
+      assert::are_equal(84, node.value());
+      collection_assert::are_equal({42, 84, 21}, list);
+    }
+    
+    void test_method_(add_before_with_invalid_node) {
+      auto list = linked_list {42, 21};
+      auto node = linked_list_node {84};
+      assert::throws<invalid_operation_exception>([&] {list.add_before(*linked_list {42, 21}.first()->next(), node);});
+    }
+    
+    void test_method_(add_before_with_invalid_new_node) {
+      auto list = linked_list {42, 21};
+      auto node = *list.first();
+      assert::throws<invalid_operation_exception>([&] {list.add_before(*list.first()->next(), node);});
+      node = *linked_list {42, 21}.first();
+      assert::throws<invalid_operation_exception>([&] {list.add_before(*list.first()->next(), node);});
+    }
+    
+    void test_method_(add_before_node_stale) {
+      auto list = linked_list {42, 84, 12};
+      auto first_node = *list.first();
+      auto node = *list.first()->next();
+      auto last_node = *list.last();
+      assert::are_equal(42, first_node.value());
+      assert::are_equal(84, node.value());
+      assert::are_equal(12, last_node.value());
+      list.add_before(node, 21);
       assert::throws<invalid_operation_exception>([&] {first_node.value();});
       assert::throws<invalid_operation_exception>([&] {node.value();});
       assert::throws<invalid_operation_exception>([&] {last_node.value();});
