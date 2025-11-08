@@ -450,5 +450,31 @@ namespace xtd::collections::generic::tests {
       assert::throws<invalid_operation_exception>([&] {node.value();});
       assert::throws<invalid_operation_exception>([&] {last_node.value();});
     }
+    
+    void test_method_(clear_empty_list) {
+      auto list = linked_list<int> {};
+      list.clear();
+      collection_assert::is_empty(list);
+    }
+    
+    void test_method_(clear_not_empty_list) {
+      auto list = linked_list {42, 84, 21};
+      list.clear();
+      collection_assert::is_empty(list);
+    }
+    
+    void test_method_(clear_stale) {
+      auto list = linked_list {42, 84, 21};
+      auto first_node = *list.first();
+      auto node = *list.first()->next();
+      auto last_node = *list.last();
+      assert::are_equal(42, first_node.value());
+      assert::are_equal(84, node.value());
+      assert::are_equal(21, last_node.value());
+      list.clear();
+      assert::throws<invalid_operation_exception>([&] {first_node.value();});
+      assert::throws<invalid_operation_exception>([&] {node.value();});
+      assert::throws<invalid_operation_exception>([&] {last_node.value();});
+    }
   };
 }
