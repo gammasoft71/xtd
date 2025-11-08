@@ -316,5 +316,72 @@ namespace xtd::collections::generic::tests {
       assert::throws<invalid_operation_exception>([&] {node.value();});
       assert::throws<invalid_operation_exception>([&] {last_node.value();});
     }
+    
+    void test_method_(add_first_value_on_empty_list) {
+      auto list = linked_list<int> {};
+      auto node = list.add_first(42);
+      assert::are_equal(42, node.value());
+      collection_assert::are_equal({42}, list);
+    }
+    
+    void test_method_(add_first_value_on_one_item_list) {
+      auto list = linked_list {84};
+      auto node = list.add_first(42);
+      assert::are_equal(42, node.value());
+      collection_assert::are_equal({42, 84}, list);
+    }
+    
+    void test_method_(add_first_value_on_items_list) {
+      auto list = linked_list {84, 21};
+      auto node = list.add_first(42);
+      assert::are_equal(42, node.value());
+      collection_assert::are_equal({42, 84, 21}, list);
+    }
+    
+    void test_method_(add_first_new_node_on_empty_list) {
+      auto list = linked_list<int> {};
+      auto node = linked_list_node {42};
+      list.add_first(node);
+      assert::are_equal(42, node.value());
+      collection_assert::are_equal({42}, list);
+    }
+    
+    void test_method_(add_first_new_node_on_one_item_list) {
+      auto list = linked_list {84};
+      auto node = linked_list_node {42};
+      list.add_first(node);
+      assert::are_equal(42, node.value());
+      collection_assert::are_equal({42, 84}, list);
+    }
+    
+    void test_method_(add_first_new_node_on_items_list) {
+      auto list = linked_list {84, 21};
+      auto node = linked_list_node {42};
+      list.add_first(node);
+      assert::are_equal(42, node.value());
+      collection_assert::are_equal({42, 84, 21}, list);
+    }
+    
+    void test_method_(add_first_with_invalid_new_node) {
+      auto list = linked_list {42, 21};
+      auto node = *list.first();
+      assert::throws<invalid_operation_exception>([&] {list.add_first(node);});
+      node = *linked_list {42, 21}.first();
+      assert::throws<invalid_operation_exception>([&] {list.add_first(node);});
+    }
+    
+    void test_method_(add_first_node_stale) {
+      auto list = linked_list {84, 21, 12};
+      auto first_node = *list.first();
+      auto node = *list.first()->next();
+      auto last_node = *list.last();
+      assert::are_equal(84, first_node.value());
+      assert::are_equal(21, node.value());
+      assert::are_equal(12, last_node.value());
+      list.add_first(42);
+      assert::throws<invalid_operation_exception>([&] {first_node.value();});
+      assert::throws<invalid_operation_exception>([&] {node.value();});
+      assert::throws<invalid_operation_exception>([&] {last_node.value();});
+    }
   };
 }
