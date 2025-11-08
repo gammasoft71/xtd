@@ -114,12 +114,9 @@ namespace xtd {
         
         /// @name Public Methods
         linked_list_node<type_t> add_after(const linked_list_node<type_t>& node, const type_t& value) {
-          if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
-          auto iterator = node.data_->iterator;
-          if (iterator != data_->items.end()) ++iterator;
-          auto result = data_->items.insert(iterator, value);
-          ++data_->version;
-          return {self_, result, data_->version};
+          auto new_node = linked_list_node {value};
+          add_after(node, new_node);
+          return new_node;
         }
         
         void add_after(const linked_list_node<type_t>& node, linked_list_node<type_t>& new_node) {
@@ -133,11 +130,9 @@ namespace xtd {
         }
         
         linked_list_node<type_t> add_before(const linked_list_node<type_t>& node, const type_t& value) {
-          if (node.data_->list != this) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
-          auto iterator = node.data_->iterator;
-          auto result = data_->items.insert(iterator, value);
-          ++data_->version;
-          return {self_, result, data_->version};
+          auto new_node = linked_list_node {value};
+          add_before(node, new_node);
+          return new_node;
         }
         
         void add_before(const linked_list_node<type_t>& node, linked_list_node<type_t>& new_node) {
@@ -149,9 +144,10 @@ namespace xtd {
           new_node = {self_, result, data_->version};
         }
         
-        void add_first(const type_t& value) {
-          data_->items.push_front(value);
-          ++data_->version;
+        linked_list_node<type_t> add_first(const type_t& value) {
+          auto new_node = linked_list_node {value};
+          add_first(new_node);
+          return new_node;
         }
         
         void add_first(linked_list_node<type_t>& node) {
@@ -161,9 +157,10 @@ namespace xtd {
           node = {self_, data_->items.begin(), data_->version};
         }
         
-        void add_last(const type_t& value) {
-          data_->items.push_back(value);
-          ++data_->version;
+        linked_list_node<type_t> add_last(const type_t& value) {
+          auto new_node = linked_list_node {value};
+          add_last(new_node);
+          return new_node;
         }
         
         void add_last(linked_list_node<type_t>& node) {
@@ -187,7 +184,7 @@ namespace xtd {
         /// @param value The object to locate in the xtd::colllections::generic::linked_list <type_t>. The value can be null for reference types.
         /// @return `true` if item is found in the xtd::colllections::generic::linked_list <type_t>; otherwise, `false`.
         bool contains(const type_t& value) const noexcept override {
-          for (auto item : data_->items)
+          for (const auto& item : data_->items)
             if (item == value) return true;
           return false;
         }
