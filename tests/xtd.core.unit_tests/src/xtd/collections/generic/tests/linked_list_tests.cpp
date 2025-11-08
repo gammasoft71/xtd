@@ -494,7 +494,7 @@ namespace xtd::collections::generic::tests {
       assert::throws<argument_out_of_range_exception>([&] {linked_list<int> {}.copy_to(items, 1_z);});
     }
     
-    void test_method_(copy_to_an_non_empty_list) {
+    void test_method_(copy_to_an_not_empty_list) {
       auto items = array<int>(5_z);
       linked_list<int> {42, 84, 21}.copy_to(items, 0_z);
       collection_assert::are_equal({42, 84, 21, 0, 0}, items);
@@ -502,6 +502,31 @@ namespace xtd::collections::generic::tests {
       linked_list<int> {42, 84, 21}.copy_to(items, 2_z);
       collection_assert::are_equal({0, 0, 42, 84, 21}, items);
       assert::throws<argument_out_of_range_exception>([&] {linked_list<int> {42, 84, 21}.copy_to(items, 3_z);});
+    }
+    
+    void test_method_(find_on_empty_list) {
+      assert::is_null(linked_list<int> {}.find(42));
+    }
+    
+    void test_method_(find_on_not_empty_list) {
+      auto list = linked_list<int> {42, 84, 21, 42};
+
+      assert::are_equal(list, list.find(42)->list());
+      assert::are_equal(84, list.find(42)->next()->value());
+      assert::is_null(list.find(42)->previous());
+      assert::are_equal(42, list.find(42)->value());
+
+      assert::are_equal(list, list.find(84)->list());
+      assert::are_equal(21, list.find(84)->next()->value());
+      assert::are_equal(42, list.find(84)->previous()->value());
+      assert::are_equal(84, list.find(84)->value());
+
+      assert::are_equal(list, list.find(21)->list());
+      assert::are_equal(42, list.find(21)->next()->value());
+      assert::are_equal(84, list.find(21)->previous()->value());
+      assert::are_equal(21, list.find(21)->value());
+
+      assert::is_null(linked_list<int> {}.find(12));
     }
   };
 }
